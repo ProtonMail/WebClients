@@ -1,8 +1,8 @@
 import React, { useState, ChangeEvent, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { TYPES, COMPARATORS } from 'proton-shared/lib/filters/constants';
-import { Condition, FilterStatement, ConditionType, ConditionComparator } from 'proton-shared/lib/filters/interfaces';
+import { TYPES, COMPARATORS, getConditionTypeLabels, getComparatorLabels } from '../constants';
+import { Condition, FilterStatement, ConditionType, ConditionComparator } from '../interfaces';
 import { Input, Select, Radio, Tooltip, Icon, Button } from '../../../components';
 import { classnames } from '../../../helpers';
 import { OptionProps } from '../../../components/select/Select';
@@ -19,6 +19,7 @@ interface Props {
     handleDelete: (index: number) => void;
     handleUpdateCondition: (index: number, condition: Condition) => void;
     displayDelete: boolean;
+    isEdit: boolean;
 }
 
 const FilterConditionsRow = ({
@@ -29,21 +30,22 @@ const FilterConditionsRow = ({
     handleDelete,
     handleUpdateCondition,
     displayDelete,
+    isEdit,
 }: Props) => {
-    const typeOptions = TYPES.map(({ label: text, value }, i) => {
-        const option: OptionProps = { text, value };
+    const typeOptions = TYPES.map(({ value }, i) => {
+        const option: OptionProps = { text: getConditionTypeLabels(value), value };
         if (i === 0) {
             option.disabled = true;
         }
         return option;
     });
-    const ConditionComparatorOptions = COMPARATORS.map(({ label: text, value }) => ({
-        text,
+    const ConditionComparatorOptions = COMPARATORS.map(({ value }) => ({
+        text: getComparatorLabels(value),
         value,
     }));
     const [isOpen, setIsOpen] = useState(condition.isOpen);
     const [tokens, setTokens] = useState<string[]>(condition.values || []);
-    const [inputValue, setInputValue] = useState('');
+    const [inputValue, setInputValue] = useState(!isEdit && condition.defaultValue ? condition.defaultValue : '');
 
     const { type, comparator } = condition;
 
@@ -188,8 +190,8 @@ const FilterConditionsRow = ({
             label = c('Label').jt`The email was sent ${attachmentStrong}`;
             title = c('Label').t`The email was sent ${attachment}`;
         } else {
-            const typeLabel = TYPES.find((t) => t.value === type)?.label;
-            const comparatorLabel = COMPARATORS.find((t) => t.value === comparator)?.label;
+            const typeLabel = getConditionTypeLabels(type);
+            const comparatorLabel = getComparatorLabels(comparator);
             const values = condition?.values?.map((v, i) => {
                 return i > 0 ? (
                     <React.Fragment key={`${v}${i}`}>

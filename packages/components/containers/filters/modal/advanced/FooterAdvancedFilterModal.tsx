@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { StepSieve, AdvancedSimpleFilterModalModel, ErrorsSieve } from './interfaces';
+import { StepSieve, AdvancedSimpleFilterModalModel, ErrorsSieve } from '../../interfaces';
 import { Button, PrimaryButton } from '../../../../components';
 
 interface Props {

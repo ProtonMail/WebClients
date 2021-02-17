@@ -2,12 +2,13 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Label } from 'proton-shared/lib/interfaces/Label';
-import { Actions } from 'proton-shared/lib/filters/interfaces';
 import { Checkbox, Button, Tooltip, Icon, LabelStack } from '../../../components';
 import { classnames } from '../../../helpers';
 import { useModals } from '../../../hooks';
 
 import EditLabelModal from '../../labels/modals/EditLabelModal';
+
+import { Actions } from '../interfaces';
 
 interface Props {
     labels: Label[];

@@ -3,11 +3,12 @@ import { c } from 'ttag';
 
 import { Folder } from 'proton-shared/lib/interfaces/Folder';
 import { Label } from 'proton-shared/lib/interfaces/Label';
-import { SimpleFilterModalModel } from 'proton-shared/lib/filters/interfaces';
 import { classnames } from '../../../helpers';
 
 import FilterPreviewActions from './FilterPreviewActions';
 import FilterPreviewConditions from './FilterPreviewConditions';
+
+import { SimpleFilterModalModel } from '../interfaces';
 
 interface Props {
     labels: Label[];

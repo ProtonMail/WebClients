@@ -2,12 +2,13 @@ import React, { useRef, useState, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { noop } from 'proton-shared/lib/helpers/function';
-import { Actions } from 'proton-shared/lib/filters/interfaces';
 import { Toggle, Tooltip, SimpleSquireEditor } from '../../../components';
 import { useUser } from '../../../hooks';
 import { classnames } from '../../../helpers';
 
 import { SquireEditorRef } from '../../../components/editor/SquireEditor';
+
+import { Actions } from '../interfaces';
 
 interface Props {
     isNarrow: boolean;

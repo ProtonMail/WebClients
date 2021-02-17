@@ -3,13 +3,13 @@ import { c } from 'ttag';
 
 import { Folder } from 'proton-shared/lib/interfaces/Folder';
 import { Label } from 'proton-shared/lib/interfaces/Label';
-import { SimpleFilterModalModel } from 'proton-shared/lib/filters/interfaces';
 import { toMap } from 'proton-shared/lib/helpers/object';
 
 import { Icon, LabelStack } from '../../../components';
 import { classnames } from '../../../helpers';
 
-import { DEFAULT_FOLDERS } from './FilterActionsFormFolderRow';
+import { getDefaultFolders } from '../constants';
+import { SimpleFilterModalModel } from '../interfaces';
 
 interface Props {
     labels: Label[];
@@ -20,14 +20,14 @@ interface Props {
     isOpen: boolean;
 }
 
-const LABELS_ACTION = {
-    labelAs: c('Action').t`label emails as`,
-    moveTo: c('Action').t`move emails to`,
-    markAs: c('Action').t`mark emails as`,
-    autoReply: c('Action').t`send auto-reply email`,
-};
-
 const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, model }: Props) => {
+    const LABELS_ACTION = {
+        labelAs: c('Action').t`label emails as`,
+        moveTo: c('Action').t`move emails to`,
+        markAs: c('Action').t`mark emails as`,
+        autoReply: c('Action').t`send auto-reply email`,
+    };
+
     const { actions } = model;
     const labelsMap = toMap(labels, 'Name');
 
@@ -73,8 +73,9 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
 
         if (actions.moveTo.folder) {
             const isDefault = ['archive', 'inbox', 'spam', 'trash'].includes(actions.moveTo.folder);
+            const defaultFolders = getDefaultFolders();
             const selectedFolder = isDefault
-                ? DEFAULT_FOLDERS.find((f) => f.value === actions.moveTo.folder)?.text
+                ? defaultFolders.find((f) => f.value === actions.moveTo.folder)?.text
                 : folders.find((f) => f.Path === actions.moveTo.folder)?.Name;
 
             const folderElement = isOpen ? (
