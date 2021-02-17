@@ -1,6 +1,6 @@
 import React, { Ref } from 'react';
 import { UserModel } from 'proton-shared/lib/interfaces';
-import { getInitial } from 'proton-shared/lib/helpers/string';
+import { getInitials } from 'proton-shared/lib/helpers/string';
 
 interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     user: UserModel;
@@ -13,7 +13,7 @@ const UserDropdownButton = ({ user, isOpen, buttonRef, ...rest }: Props) => {
     const { Email, DisplayName, Name } = user;
     const nameToDisplay = DisplayName || Name; // nameToDisplay can be falsy for external account
     // DisplayName is null for VPN users without any addresses, cast to undefined in case Name would be null too.
-    const initials = getInitial(nameToDisplay || Email || '');
+    const initials = getInitials(nameToDisplay || Email || '');
 
     return (
         <button
