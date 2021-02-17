@@ -1,13 +1,13 @@
 import { Meta, Source } from '@storybook/addon-docs/blocks';
 
-<Meta title="CSS / Front-End helpers / Absolute - Fixed - Relative" />
+<Meta title="CSS / Front-End helpers / Absolute - Sticky - Fixed - Relative" />
 
-# Relative, fixed, absolute and other helpers
+# Relative, sticky, fixed, absolute and other helpers
 
 ## Relative and fixed
 
 <div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
-  <div class="w49 flex-align-self-center">
+<div class="w49 flex-align-self-center">
     Applies <code>position: relative</code> to element.
   </div>
   <div class="w49">
@@ -41,7 +41,7 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
   </div>
 </div>
 
-## Absolute and other helpers
+## Absolute, sticky and other helpers
 
 <div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
   <div class="w49 flex-align-self-center">
@@ -58,6 +58,25 @@ import { Meta, Source } from '@storybook/addon-docs/blocks';
 />
   </div>
 </div>
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies <code>position: sticky</code> to element + <code>z-index: 1</code> + <code>top: 0</code>.
+    <code>sticky-bottom</code> does the same but with <code>bottom: 0</code>.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="sticky-top">…</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
 
 <br /><br />
 

@@ -1,3 +1,7 @@
+# 0.0.9 (17 February, 2021)
+
+Added missing documentation for `position: sticky` helpers.
+
 # 0.0.8 (15 February, 2021)
 
 Added "variant" property to meter (default, thin).
