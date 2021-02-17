@@ -1,4 +1,4 @@
-import { isMac } from 'proton-shared/lib/helpers/browser';
+import { isMac, isSafari as checkIsSafari } from 'proton-shared/lib/helpers/browser';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { useRef } from 'react';
 import { useHandler, useHotkeys, useMailSettings } from 'react-components';
@@ -28,6 +28,8 @@ export const useComposerHotkeys = ({
     lock,
     saving,
 }: ComposerHotkeysHandlers) => {
+    const isSafari = checkIsSafari();
+
     const [mailSettings] = useMailSettings();
 
     const composerRef = useRef<HTMLDivElement>(null);
@@ -112,7 +114,7 @@ export const useComposerHotkeys = ({
                 }
                 break;
             case 'm':
-                if (Shortcuts && ctrlOrMetaKey(e)) {
+                if (!isSafari && Shortcuts && ctrlOrMetaKey(e)) {
                     if (e.shiftKey) {
                         keyHandlers?.maximize(e);
                         return;
@@ -145,8 +147,22 @@ export const useComposerHotkeys = ({
         [['Meta', 'Enter'], keyHandlers.send],
         [['Meta', 'Alt', 'Backspace'], keyHandlers.delete],
         [['Meta', 'S'], keyHandlers.save],
-        [['Meta', 'M'], keyHandlers.minimize],
-        [['Meta', 'Shift', 'M'], keyHandlers.maximize],
+        [
+            ['Meta', 'M'],
+            (e) => {
+                if (!isSafari) {
+                    keyHandlers.minimize(e);
+                }
+            },
+        ],
+        [
+            ['Meta', 'Shift', 'M'],
+            (e) => {
+                if (!isSafari) {
+                    keyHandlers.maximize(e);
+                }
+            },
+        ],
         [['Meta', 'Shift', 'A'], keyHandlers.addAttachment],
         [['Meta', 'Shift', 'E'], keyHandlers.encrypt],
         [['Meta', 'Shift', 'X'], keyHandlers.addExpiration],
