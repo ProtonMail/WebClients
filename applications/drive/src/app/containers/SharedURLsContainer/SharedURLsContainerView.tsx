@@ -1,5 +1,5 @@
 import React from 'react';
-import { PrivateMainArea } from 'react-components';
+import { PrivateMainArea, useAppTitle } from 'react-components';
 import { c } from 'ttag';
 import SharedLinks from '../../components/SharedLinks/SharedLinks';
 import SharedLinksContentProvider from '../../components/SharedLinks/SharedLinksContentProvider';
@@ -10,6 +10,8 @@ interface Props {
 }
 
 const SharedURLsContainerView = ({ shareId }: Props) => {
+    useAppTitle(c('Title').t`Shared`);
+
     return (
         <SharedLinksContentProvider shareId={shareId}>
             <SharedLinksToolbar shareId={shareId} />
