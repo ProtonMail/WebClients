@@ -2,24 +2,10 @@ import React, { useState, useMemo, FormEvent, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { normalize } from 'proton-shared/lib/helpers/string';
-import {
-    SimpleFilterModalModel,
-    Filter,
-    Step,
-    Errors,
-    Condition,
-    Actions,
-    FilterStatement,
-    FilterOperator,
-    FilterActions,
-    FilterCondition,
-} from 'proton-shared/lib/filters/interfaces';
 import { isDarkTheme } from 'proton-shared/lib/themes/helpers';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { addTreeFilter, updateFilter } from 'proton-shared/lib/api/filters';
-import { convertModel } from 'proton-shared/lib/filters/utils';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
-import { computeFromTree } from 'proton-shared/lib/filters/sieve';
 import { FormModal, ConfirmModal, Alert, Loader, ErrorButton } from '../../../components';
 import {
     useLoading,
@@ -41,7 +27,22 @@ import FilterActionsForm from './FilterActionsForm';
 import FilterConditionsForm from './FilterConditionsForm';
 import FilterPreview from './FilterPreview';
 
-import { DEFAULT_FOLDERS } from './FilterActionsFormFolderRow';
+import { DEFAULT_FOLDERS } from '../constants';
+
+import {
+    SimpleFilterModalModel,
+    Filter,
+    Step,
+    Errors,
+    Condition,
+    Actions,
+    FilterStatement,
+    FilterOperator,
+    FilterActions,
+    FilterCondition,
+} from '../interfaces';
+import { computeFromTree, convertModel } from '../utils';
+
 import { generateUID } from '../../../helpers';
 
 interface Props {
@@ -112,8 +113,9 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
     const { createModal } = useModals();
     const [userSettings] = useUserSettings();
     const isDark = useMemo(() => isDarkTheme(), [userSettings.Theme]);
+    const isEdit = !!filter?.ID;
 
-    const initFilter = (filter?: Filter) => {
+    const initializeModel = (filter?: Filter) => {
         const computedFilter = filter ? computeFromTree(filter) : {};
 
         const {
@@ -124,7 +126,7 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
             Operator?: FilterOperator;
             Actions?: FilterActions;
             Conditions?: FilterCondition[];
-        } = computedFilter;
+        } = computedFilter || {};
 
         const foldersLabelsMap = Actions?.FileInto.reduce(
             (
@@ -155,8 +157,9 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
                 Conditions?.map((cond) => ({
                     type: cond.Type.value,
                     comparator: cond.Comparator.value,
-                    values: cond.Values,
+                    values: isEdit ? cond.Values : [],
                     isOpen: true,
+                    defaultValue: cond.Values[0] || '',
                     id: generateUID('condition'),
                 })) || [],
             actions: {
@@ -178,16 +181,15 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
         };
     };
 
-    const [model, setModel] = useState<SimpleFilterModalModel>(initFilter());
+    const [model, setModel] = useState<SimpleFilterModalModel>(initializeModel());
 
-    const isEdit = !!filter?.ID;
     const title = isEdit ? c('Title').t`Edit filter` : c('Title').t`Add filter`;
 
     const { name, conditions, actions } = model;
 
     const errors = useMemo<Errors>(() => {
         return {
-            name: filter?.Name !== name ? checkNameErrors(filters, name) : '',
+            name: !model.name || filter?.Name !== name ? checkNameErrors(filters, name) : '',
             conditions: checkConditionsErrors(conditions),
             actions: checkActionsErrors(actions),
         };
@@ -231,7 +233,7 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
     };
 
     const handleClose = () => {
-        if (!modelHasChanged(model, initFilter(filter))) {
+        if (!modelHasChanged(model, initializeModel(filter))) {
             return onClose();
         }
 
@@ -256,10 +258,19 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
                         model={model}
                         onChange={(newModel) => setModel(newModel as SimpleFilterModalModel)}
                         errors={errors}
+                        loading={loading}
                     />
                 );
             case Step.CONDITIONS:
-                return <FilterConditionsForm isDark={isDark} isNarrow={isNarrow} model={model} onChange={setModel} />;
+                return (
+                    <FilterConditionsForm
+                        isEdit={isEdit}
+                        isDark={isDark}
+                        isNarrow={isNarrow}
+                        model={model}
+                        onChange={setModel}
+                    />
+                );
             case Step.ACTIONS:
                 return (
                     <FilterActionsForm
@@ -281,7 +292,7 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
 
     useEffect(() => {
         if (filter && !loadingFolders && !loadingLabels) {
-            setModel(initFilter(filter));
+            setModel(initializeModel(filter));
         }
     }, [loadingFolders, loadingLabels]);
 

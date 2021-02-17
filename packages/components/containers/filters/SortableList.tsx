@@ -1,11 +1,18 @@
 import React from 'react';
+import { SortEndHandler, ContainerGetter } from 'react-sortable-hoc';
 import { c } from 'ttag';
-import PropTypes from 'prop-types';
 import { OrderableTable, OrderableTableHeader, OrderableTableBody } from '../../components';
 
 import FilterItemRow from './FilterItemRow';
+import { Filter } from './interfaces';
 
-const FilterSortableList = ({ items, ...rest }) => (
+interface Props {
+    items: Filter[];
+    getContainer: ContainerGetter;
+    onSortEnd: SortEndHandler;
+}
+
+const FilterSortableList = ({ items, ...rest }: Props) => (
     <OrderableTable className="no-border border-collapse mt1 simple-table--has-actions" {...rest}>
         <caption className="sr-only">{c('Settings/filters').t`Filters`}</caption>
         <OrderableTableHeader>
@@ -22,16 +29,12 @@ const FilterSortableList = ({ items, ...rest }) => (
                 </th>
             </tr>
         </OrderableTableHeader>
-        <OrderableTableBody>
+        <OrderableTableBody colSpan={0}>
             {items.map((filter, index) => (
                 <FilterItemRow key={`item-${index}`} index={index} filter={filter} />
             ))}
         </OrderableTableBody>
     </OrderableTable>
 );
-
-FilterSortableList.propTypes = {
-    items: PropTypes.array.isRequired,
-};
 
 export default FilterSortableList;

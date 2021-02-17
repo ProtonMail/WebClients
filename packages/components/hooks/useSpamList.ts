@@ -1,32 +1,31 @@
 import { useState } from 'react';
 import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from 'proton-shared/lib/constants';
+import { IncomingDefault } from 'proton-shared/lib/interfaces/IncomingDefault';
+
+import { WHITE_OR_BLACK_LOCATION } from '../containers/filters/interfaces';
 
 const getFilterSearch = (input = '') => {
-    const defaultFilter = (i) => i;
+    const defaultFilter = (i: IncomingDefault) => i;
 
     if (!input) {
         return defaultFilter;
     }
 
-    return ({ Email = '', Domain = '' }) =>
+    return ({ Email = '', Domain = '' }: IncomingDefault) =>
         Email.toLowerCase().includes(input.toLowerCase()) || Domain.toLowerCase().includes(input.toLowerCase());
 };
 
 const useSpamList = () => {
-    const [whiteList, setWhiteList] = useState([]);
-    const [blackList, setBlackList] = useState([]);
+    const [whiteList, setWhiteList] = useState<IncomingDefault[]>([]);
+    const [blackList, setBlackList] = useState<IncomingDefault[]>([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [whiteListFiltered, filterWhiteList] = useState(whiteList);
     const [blackListFiltered, filterBlackList] = useState(blackList);
 
-    /**
-     * Manage the data for the view as we will need
-     *     - a state with the list
-     *     - a state with the filtered version of the list
-     * @param  {String} type  Type of list
-     * @return {Function}       (data:<Array>, updateRawList:<Boolean:true>)
-     */
-    const refreshList = (type) => (data, { updateRawList = true, refreshSearch = true } = {}) => {
+    const refreshList = (type: 'blackList' | 'whitelist') => (
+        data: IncomingDefault[],
+        { updateRawList = true, refreshSearch = true } = {}
+    ) => {
         const filter = getFilterSearch(searchQuery);
 
         if (type === 'blackList') {
@@ -46,14 +45,7 @@ const useSpamList = () => {
     const refreshWhiteList = refreshList('whitelist');
     const refreshBlackList = refreshList('blackList');
 
-    /**
-     * Search through the list for matches.
-     * Only update the filtered list as we don't want to lose the satte
-     * @param  {String} input search value
-     * @param  {Array}  data data coming from the API
-     * @return {void}
-     */
-    const search = (input = '', data) => {
+    const search = (input = '', data?: IncomingDefault[]) => {
         const filter = getFilterSearch(input);
         const config = { updateRawList: false, refreshSearch: false };
         setSearchQuery(input);
@@ -63,7 +55,10 @@ const useSpamList = () => {
             return refreshBlackList(blackList.filter(filter), config);
         }
 
-        const { white, black } = data.reduce(
+        const { white, black } = data.reduce<{
+            white: IncomingDefault[];
+            black: IncomingDefault[];
+        }>(
             (acc, item) => {
                 const key = item.Location === WHITELIST_LOCATION ? 'white' : 'black';
                 acc[key].push(item);
@@ -76,13 +71,7 @@ const useSpamList = () => {
         refreshBlackList(black.filter(filter), config);
     };
 
-    /**
-     * Move an email from a list to another
-     * @param  {String} dest
-     * @param  {Object} data
-     * @return {void}
-     */
-    const move = (dest, data) => {
+    const move = (dest: WHITE_OR_BLACK_LOCATION, data: IncomingDefault) => {
         if (dest === WHITELIST_LOCATION) {
             refreshBlackList(blackList.filter((item) => item.ID !== data.ID));
             refreshWhiteList(whiteList.concat(data));
@@ -94,13 +83,7 @@ const useSpamList = () => {
         }
     };
 
-    /**
-     * Remove an email from a list
-     * @param  {String} options.ID       Email's ID
-     * @param  {Number} options.Location Email's Location, either Spam or not
-     * @return {void}
-     */
-    const remove = ({ ID, Location }) => {
+    const remove = ({ ID, Location }: IncomingDefault) => {
         if (Location === WHITELIST_LOCATION) {
             refreshWhiteList(whiteList.filter((item) => item.ID !== ID));
         }
@@ -110,13 +93,7 @@ const useSpamList = () => {
         }
     };
 
-    /**
-     * Move an email from a list to another
-     * @param  {String} dest
-     * @param  {Object} data
-     * @return {void}
-     */
-    const create = (dest, data) => {
+    const create = (dest: WHITE_OR_BLACK_LOCATION, data: IncomingDefault) => {
         if (dest === WHITELIST_LOCATION) {
             refreshWhiteList(whiteList.concat(data));
         }
@@ -126,13 +103,7 @@ const useSpamList = () => {
         }
     };
 
-    /**
-     * Move an email from a list to another
-     * @param  {String} dest
-     * @param  {Object} data
-     * @return {void}
-     */
-    const edit = (dest, data) => {
+    const edit = (dest: WHITE_OR_BLACK_LOCATION, data: IncomingDefault) => {
         if (dest === WHITELIST_LOCATION) {
             refreshWhiteList(whiteList.filter(({ ID }) => ID !== data.ID).concat(data));
         }
