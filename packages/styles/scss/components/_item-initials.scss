@@ -1,0 +1,7 @@
+.item-icon {
+	width: $conversation-icon-size;
+	height: $conversation-icon-size;
+	font-size: 1.2rem;
+	border: 1px solid var(--bordercolor-input, $pm-global-border);
+	background-color: var(--bordercolor-input, $white);
+}
