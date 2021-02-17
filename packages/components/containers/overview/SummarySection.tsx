@@ -1,7 +1,7 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
 import { UserModel, UserSettings, Organization, Subscription, Plan } from 'proton-shared/lib/interfaces';
-import { getInitial } from 'proton-shared/lib/helpers/string';
+import { getInitials } from 'proton-shared/lib/helpers/string';
 import { getPlan } from 'proton-shared/lib/helpers/subscription';
 import { PLAN_SERVICES, APPS, PLANS } from 'proton-shared/lib/constants';
 import { getAccountSettingsApp, getAppName } from 'proton-shared/lib/apps/helper';
@@ -23,7 +23,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
     const { APP_NAME, LOCALES = {} } = useConfig();
     const { Email, DisplayName, Name, canPay, isAdmin } = user;
     const { UsedMembers = 0, UsedDomains = 0, MaxMembers = 0, MaxDomains = 0 } = organization || {};
-    const initials = getInitial(DisplayName || Name || Email || '');
+    const initials = getInitials(DisplayName || Name || Email || '');
     const vpnPlan = subscription ? getPlan(subscription, PLAN_SERVICES.VPN) : undefined;
     const mailPlan = subscription ? getPlan(subscription, PLAN_SERVICES.MAIL) : undefined;
 

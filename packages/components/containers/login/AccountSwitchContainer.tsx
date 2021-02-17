@@ -6,7 +6,7 @@ import { resumeSession, getActiveSessions } from 'proton-shared/lib/authenticati
 import { getPersistedSession, removePersistedSession } from 'proton-shared/lib/authentication/persistedSessionStorage';
 import { InvalidPersistentSessionError } from 'proton-shared/lib/authentication/error';
 import { LocalSessionResponse } from 'proton-shared/lib/authentication/interface';
-import { getInitial } from 'proton-shared/lib/helpers/string';
+import { getInitials } from 'proton-shared/lib/helpers/string';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { withUIDHeaders } from 'proton-shared/lib/fetch/headers';
 import { revoke } from 'proton-shared/lib/api/auth';
@@ -117,7 +117,7 @@ const AccountSwitchContainer = ({ Layout, toApp, onLogin, activeSessions, onAddA
         }
         return sortSessions(localActiveSessions).map(({ DisplayName, Username, LocalID, PrimaryEmail }) => {
             const nameToDisplay = DisplayName || Username || PrimaryEmail || '';
-            const initials = getInitial(nameToDisplay);
+            const initials = getInitials(nameToDisplay);
             return (
                 <button
                     key={LocalID}
