@@ -3,7 +3,7 @@ import React, { useEffect, createContext, ReactNode, useContext, useLayoutEffect
 import { useInstance, useEventManager } from 'react-components';
 import createCache, { Cache } from 'proton-shared/lib/helpers/cache';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
-
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { Event } from '../models/event';
 import { MessageExtended, PartialMessageExtended } from '../models/message';
 import { parseLabelIDsInEvent } from '../helpers/elements';
@@ -69,12 +69,24 @@ const messageEventListener = (cache: MessageCache) => ({ Messages }: Event) => {
 
             if (currentValue.data) {
                 const MessageToUpdate = parseLabelIDsInEvent(currentValue.data, Message);
+                let removeBody: Partial<Message> = {};
+                let removeInit: Partial<MessageExtended> = {};
+
+                // Draft updates can contains body updates but will not contains it in the event
+                // By removing the current body value in the cache, we will reload it next time we need it
+                if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
+                    removeBody = { Body: undefined };
+                    removeInit = { initialized: undefined, document: undefined, plainText: undefined };
+                }
+
                 cache.set(localID, {
                     ...currentValue,
                     data: {
                         ...currentValue.data,
                         ...MessageToUpdate,
+                        ...removeBody,
                     },
+                    ...removeInit,
                 });
             }
         }

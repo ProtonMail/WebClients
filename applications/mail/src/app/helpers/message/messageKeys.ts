@@ -42,8 +42,10 @@ export const extractKeysFromAttachments = async (
  * Autocrypt is an old norm almost deprecated
  * There is no plan to have a full support of autocrypt, just take advantage of the header opportunistically if present
  */
-export const extractKeysFromAutocrypt = async (parsedHeaders: { [key: string]: string | string[] | undefined }) => {
-    if (!parsedHeaders.Autocrypt) {
+export const extractKeysFromAutocrypt = async (
+    parsedHeaders: { [key: string]: string | string[] | undefined } | undefined
+) => {
+    if (!parsedHeaders?.Autocrypt) {
         return [];
     }
 
