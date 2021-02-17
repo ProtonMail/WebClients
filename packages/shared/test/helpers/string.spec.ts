@@ -1,10 +1,10 @@
 import {
     capitalize,
     getRandomString,
-    getInitial,
     findLongestMatchingIndex,
     truncate,
     truncateMore,
+    getInitials,
 } from '../../lib/helpers/string';
 
 describe('string', () => {
@@ -41,25 +41,29 @@ describe('string', () => {
         });
     });
 
-    describe('getInitial', () => {
+    describe('getInitials', () => {
         it('should handle empty parameter', () => {
-            expect(getInitial()).toEqual('');
+            expect(getInitials()).toEqual('');
         });
 
-        it('should handle uniq word', () => {
-            expect(getInitial('熊猫')).toEqual('熊');
+        it('should handle single character', () => {
+            expect(getInitials('q')).toEqual('Q');
+        });
+
+        it('should handle unique word', () => {
+            expect(getInitials('熊猫')).toEqual('熊');
         });
 
         it('should return 2 first initials and capitalize it', () => {
-            expect(getInitial('Lorem ipsum dolor sit amet')).toEqual('LI');
+            expect(getInitials('Lorem ipsum dolor sit amet')).toEqual('LA');
         });
 
         it('should handle emoji', () => {
-            expect(getInitial('🐼')).toEqual('🐼');
+            expect(getInitials('🐼 Dog')).toEqual('🐼D');
         });
 
         it('should keep only character and number', () => {
-            expect(getInitial('22 - Name')).toEqual('2N');
+            expect(getInitials('22 - Name Mame')).toEqual('2M');
         });
     });
 
