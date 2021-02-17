@@ -98,7 +98,7 @@ export const useDeleteDraft = () => {
             await api(
                 deleteMessages(
                     [message.data?.ID],
-                    hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS
+                    Number(hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS)
                 )
             );
             messageCache.delete(message.localID || '');
