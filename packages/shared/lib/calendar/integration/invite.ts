@@ -379,41 +379,157 @@ export const generateVtimezonesComponents = async (
     return Object.values(vtimezonesObject).map(({ vtimezone }) => vtimezone);
 };
 
-export const generateEmailSubject = (method: ICAL_METHOD, vevent: VcalVeventComponent, isCreateEvent?: boolean) => {
+const getFormattedDateInfo = (vevent: VcalVeventComponent) => {
+    const { dtstart, dtend } = vevent;
+    const { isAllDay, isSingleAllDay } = getAllDayInfo(dtstart, dtend);
+    if (isAllDay) {
+        return {
+            formattedStart: formatUTC(toUTCDate(dtstart.value), 'PP', { locale: dateLocale }),
+            formattedEnd: dtend ? formatUTC(toUTCDate(dtend.value), 'PP', { locale: dateLocale }) : undefined,
+            isAllDay,
+            isSingleAllDay,
+        };
+    }
+    const formattedStartDateTime = formatUTC(toUTCDate(dtstart.value), 'PPp', { locale: dateLocale });
+    const formattedEndDateTime = dtend ? formatUTC(toUTCDate(dtend.value), 'PPp', { locale: dateLocale }) : undefined;
+    const { offset: startOffset } = getTimezoneOffset(propertyToUTCDate(dtstart), getPropertyTzid(dtstart) || 'UTC');
+    const { offset: endOffset } = dtend
+        ? getTimezoneOffset(propertyToUTCDate(dtend), getPropertyTzid(dtstart) || 'UTC')
+        : { offset: 0 };
+    const formattedStartOffset = `GMT${formatTimezoneOffset(startOffset)}`;
+    const formattedEndOffset = `GMT${formatTimezoneOffset(endOffset)}`;
+    return {
+        formattedStart: `${formattedStartDateTime} (${formattedStartOffset})`,
+        formattedEnd: formattedEndDateTime ? `${formattedEndDateTime} (${formattedEndOffset})` : undefined,
+        isAllDay,
+        isSingleAllDay,
+    };
+};
+
+export const generateEmailSubject = ({
+    method,
+    vevent,
+    isCreateEvent,
+}: {
+    method: ICAL_METHOD;
+    vevent: VcalVeventComponent;
+    isCreateEvent?: boolean;
+}) => {
     if ([ICAL_METHOD.REQUEST, ICAL_METHOD.CANCEL].includes(method)) {
-        const { dtstart, dtend } = vevent;
-        const { isAllDay, isSingleAllDay } = getAllDayInfo(dtstart, dtend);
+        const { formattedStart, isAllDay, isSingleAllDay } = getFormattedDateInfo(vevent);
         if (isAllDay) {
-            const formattedStartDate = formatUTC(toUTCDate(dtstart.value), 'PP', { locale: dateLocale });
             if (isSingleAllDay) {
                 if (method === ICAL_METHOD.CANCEL) {
-                    return c('Email subject').t`Cancellation of an event on ${formattedStartDate}`;
+                    return c('Email subject').t`Cancellation of an event on ${formattedStart}`;
                 }
                 return isCreateEvent
-                    ? c('Email subject').t`Invitation for an event on ${formattedStartDate}`
-                    : c('Email subject').t`Update for an event on ${formattedStartDate}`;
+                    ? c('Email subject').t`Invitation for an event on ${formattedStart}`
+                    : c('Email subject').t`Update for an event on ${formattedStart}`;
             }
             if (method === ICAL_METHOD.CANCEL) {
-                return c('Email subject').t`Cancellation of an event starting on ${formattedStartDate}`;
+                return c('Email subject').t`Cancellation of an event starting on ${formattedStart}`;
             }
             return isCreateEvent
-                ? c('Email subject').t`Invitation for an event starting on ${formattedStartDate}`
-                : c('Email subject').t`Update for an event starting on ${formattedStartDate}`;
+                ? c('Email subject').t`Invitation for an event starting on ${formattedStart}`
+                : c('Email subject').t`Update for an event starting on ${formattedStart}`;
         }
-        const formattedStartDateTime = formatUTC(toUTCDate(vevent.dtstart.value), 'PPp', { locale: dateLocale });
-        const { offset } = getTimezoneOffset(propertyToUTCDate(dtstart), getPropertyTzid(dtstart) || 'UTC');
-        const formattedOffset = `GMT${formatTimezoneOffset(offset)}`;
         if (method === ICAL_METHOD.CANCEL) {
-            return c('Email subject')
-                .t`Cancellation of an event starting on ${formattedStartDateTime} (${formattedOffset})`;
+            return c('Email subject').t`Cancellation of an event starting on ${formattedStart}`;
         }
         return isCreateEvent
-            ? c('Email subject').t`Invitation for an event starting on ${formattedStartDateTime} (${formattedOffset})`
-            : c('Email subject').t`Update for an event starting on ${formattedStartDateTime} (${formattedOffset})`;
+            ? c('Email subject').t`Invitation for an event starting on ${formattedStart}`
+            : c('Email subject').t`Update for an event starting on ${formattedStart}`;
     }
     if (method === ICAL_METHOD.REPLY) {
         const eventTitle = getDisplayTitle(vevent.summary?.value);
         return formatSubject(c('Email subject').t`Invitation: ${eventTitle}`, RE_PREFIX);
+    }
+    throw new Error('Unexpected method');
+};
+
+const getWhenText = (vevent: VcalVeventComponent) => {
+    const { formattedStart, formattedEnd, isAllDay, isSingleAllDay } = getFormattedDateInfo(vevent);
+    if (isAllDay) {
+        return isSingleAllDay || !formattedEnd
+            ? c('Email body for invitation (date part)').t`When: ${formattedStart} (all day)`
+            : c('Email body for invitation (date part)').t`When: ${formattedStart} - ${formattedEnd}`;
+    }
+    return formattedEnd
+        ? c('Email body for invitation (date part)').t`When: ${formattedStart} - ${formattedEnd}`
+        : c('Email body for invitation (date part)').t`When: ${formattedStart}`;
+};
+
+const getEmailBodyTexts = (vevent: VcalVeventComponent) => {
+    const { summary, location, description } = vevent;
+    const eventTitle = getDisplayTitle(summary?.value);
+    const eventLocation = location?.value;
+    const eventDescription = description?.value;
+
+    const whenText = getWhenText(vevent);
+    const locationText = eventLocation
+        ? c('Email body for invitation (location part)').t`Where: ${eventLocation}`
+        : undefined;
+    const descriptionText = eventDescription
+        ? c('Email body for description (description part)').t`Description: ${eventDescription}`
+        : undefined;
+    const locationAndDescriptionText =
+        locationText && descriptionText
+            ? `${locationText}
+${descriptionText}`
+            : locationText || descriptionText
+            ? `${locationText || descriptionText}`
+            : '';
+    const eventDetailsText = locationAndDescriptionText
+        ? `${whenText}
+${locationAndDescriptionText}`
+        : `${whenText}`;
+
+    return { eventTitle, eventDetailsText };
+};
+
+export const generateEmailBody = ({
+    method,
+    vevent,
+    isCreateEvent,
+    partstat,
+    emailAddress,
+}: {
+    method: ICAL_METHOD;
+    vevent: VcalVeventComponent;
+    isCreateEvent?: boolean;
+    emailAddress?: string;
+    partstat?: ICAL_ATTENDEE_STATUS;
+}) => {
+    const { eventTitle, eventDetailsText } = getEmailBodyTexts(vevent);
+
+    if (method === ICAL_METHOD.REQUEST) {
+        if (isCreateEvent) {
+            return c('Email body for invitation').t`You are invited to ${eventTitle}
+${eventDetailsText}`;
+        }
+        return c('Email body for invitation').t`${eventTitle} has been updated.
+${eventDetailsText}`;
+    }
+    if (method === ICAL_METHOD.CANCEL) {
+        return c('Email body for invitation').t`${eventTitle} has been cancelled.`;
+    }
+    if (method === ICAL_METHOD.REPLY) {
+        if (!partstat || !emailAddress) {
+            throw new Error('Missing parameters for reply body');
+        }
+        if (partstat === ICAL_ATTENDEE_STATUS.ACCEPTED) {
+            return c('Email body for response to invitation')
+                .t`${emailAddress} has accepted your invitation to: ${eventTitle}`;
+        }
+        if (partstat === ICAL_ATTENDEE_STATUS.TENTATIVE) {
+            return c('Email body for response to invitation')
+                .t`${emailAddress} has tentatively accepted your invitation to: ${eventTitle}`;
+        }
+        if (partstat === ICAL_ATTENDEE_STATUS.DECLINED) {
+            return c('Email body for response to invitation')
+                .t`${emailAddress} has declined your invitation to: ${eventTitle}`;
+        }
+        throw new Error('Unanswered partstat');
     }
     throw new Error('Unexpected method');
 };
