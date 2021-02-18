@@ -20,11 +20,16 @@ interface Props {
 const AddressesSummary = ({ message, mapSendInfo, toggleExpanded, onFocus }: Props) => {
     const { getRecipientsOrGroups, getRecipientsOrGroupsLabels, getRecipientOrGroupLabel } = useRecipientLabel();
     const title = getRecipientsOrGroupsLabels(getRecipientsOrGroups(getRecipients(message))).join(', ');
-
     return (
-        <div className="flex flex-row flex-nowrap flex-align-items-center m0-5 pl0-5 pr0-5" onClick={onFocus}>
+        <div className="flex flex-row flex-nowrap flex-align-items-center m0-5 pl0-5 pr0-5 relative">
             <Label className="composer-meta-label pr0-5 pt0 text-bold">{c('Title').t`To`}</Label>
-            <div className="field flex composer-addresses-fakefield flex-row flex-item-fluid w100 relative">
+            <div
+                className="field flex composer-addresses-fakefield flex-row flex-item-fluid w100"
+                onClick={onFocus}
+                onFocus={onFocus}
+                tabIndex={0}
+                role="button"
+            >
                 <span className="text-ellipsis composer-addresses-fakefield-inner" title={title}>
                     {getRecipients(message).length === 0 ? (
                         <span className="placeholder">{c('Placeholder').t`Email address`}</span>
@@ -80,14 +85,14 @@ const AddressesSummary = ({ message, mapSendInfo, toggleExpanded, onFocus }: Pro
                         );
                     })}
                 </span>
-                <LinkButton
-                    className="composer-addresses-ccbcc text-no-decoration text-strong"
-                    title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
-                    onClick={toggleExpanded}
-                >
-                    {c('Action').t`CC, BCC`}
-                </LinkButton>
             </div>
+            <LinkButton
+                className="composer-addresses-ccbcc composer-addresses-ccbcc-fakefield text-no-decoration text-strong"
+                title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
+                onClick={toggleExpanded}
+            >
+                {c('Action').t`CC, BCC`}
+            </LinkButton>
         </div>
     );
 };

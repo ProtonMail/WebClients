@@ -23,10 +23,13 @@ interface Props {
     onChange: MessageChange;
     expanded: boolean;
     toggleExpanded: (e: MouseEvent<HTMLButtonElement>) => void;
-    inputFocusRef: MutableRefObject<() => void>;
+    inputFocusRefs: {
+        to: MutableRefObject<() => void>;
+        cc: MutableRefObject<() => void>;
+    };
 }
 
-const AddressesEditor = ({ message, messageSendInfo, onChange, expanded, toggleExpanded, inputFocusRef }: Props) => {
+const AddressesEditor = ({ message, messageSendInfo, onChange, expanded, toggleExpanded, inputFocusRefs }: Props) => {
     const [uid] = useState(generateUID('composer'));
     const { createModal } = useModals();
 
@@ -59,7 +62,7 @@ const AddressesEditor = ({ message, messageSendInfo, onChange, expanded, toggleE
                     recipients={message.data?.ToList}
                     messageSendInfo={messageSendInfo}
                     onChange={handleChange('ToList')}
-                    inputFocusRef={inputFocusRef}
+                    inputFocusRef={inputFocusRefs.to}
                     placeholder={c('Placeholder').t`Email address`}
                     data-test-id="composer:to"
                     expanded={expanded}
@@ -95,6 +98,7 @@ const AddressesEditor = ({ message, messageSendInfo, onChange, expanded, toggleE
                             onChange={handleChange('CCList')}
                             placeholder={c('Placeholder').t`Email address`}
                             data-test-id="composer:cc"
+                            inputFocusRef={inputFocusRefs.cc}
                         />
                     </div>
                     <div className="flex flex-row w100">
