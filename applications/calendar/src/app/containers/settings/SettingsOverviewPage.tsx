@@ -1,5 +1,5 @@
 import React from 'react';
-import { PrivateMainArea, useAppTitle, OverviewLayout } from 'react-components';
+import { PrivateMainArea, useAppTitle, OverviewLayout, useEarlyAccess } from 'react-components';
 import { c } from 'ttag';
 
 import { getGeneralSettingsPage } from './SettingsGeneralPage';
@@ -15,10 +15,11 @@ export const getOverviewSettingsPage = () => {
 
 const SettingsOverviewPage = () => {
     useAppTitle(c('Title').t`Overview`);
+    const { hasEarlyAccess } = useEarlyAccess();
     return (
         <PrivateMainArea className="flex">
             <OverviewLayout
-                pages={[getGeneralSettingsPage(), getCalendarSettingsPage()]}
+                pages={[getGeneralSettingsPage({ hasEarlyAccess }), getCalendarSettingsPage()]}
                 title={c('Title').t`Calendar settings`}
             />
         </PrivateMainArea>
