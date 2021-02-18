@@ -113,6 +113,7 @@
     min-height: 3.5rem;
     max-height: 2.5em;
     padding-right: 5em;
+    cursor: text;
 }
 
 .composer-addresses-container-line:not(:first-child) {
@@ -239,6 +240,10 @@
     top: 0;
     bottom: 0;
     right: 0.5em;
+
+    &-fakefield {
+        right: 1em;
+    }
 }
 
 .addresses-contacts-table {
@@ -295,7 +300,6 @@
 }
 
 .composer-body-container {
-
     overflow-y: auto;
     overflow-x: hidden;
 
@@ -327,6 +331,11 @@
         background: radial-gradient(closest-side, $white, $pm-global-border 90%);
         box-shadow: none;
     }
+
+    /* Fix for Safari */
+    input[type='file']::-webkit-file-upload-button {
+        display: none;
+    }
 }
 
 .composer .editor-squire-wrapper {
@@ -352,7 +361,6 @@
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
     }
-
 }
 
 // overrides only in composer case

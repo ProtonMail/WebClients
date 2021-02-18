@@ -18,7 +18,13 @@ interface Props {
 }
 
 const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlurRef, addressesFocusRef }: Props) => {
-    const inputFocusRef = useRef<() => void>(noop);
+    const toFocusRef = useRef<() => void>(noop);
+    const ccFocusRef = useRef<() => void>(noop);
+
+    const inputFocusRefs = {
+        to: toFocusRef,
+        cc: ccFocusRef,
+    };
 
     // Summary of selected addresses or addresses editor
     const { state: editor, set: setEditor } = useToggle(false);
@@ -29,10 +35,13 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
     useEffect(() => {
         addressesBlurRef.current = () => setEditor(false);
         addressesFocusRef.current = () => {
+            if (message.data?.CCList.length || message.data?.BCCList.length) {
+                setExpanded(true);
+            }
             setEditor(true);
-            setTimeout(() => inputFocusRef.current());
+            setTimeout(() => inputFocusRefs.to.current(), 100);
         };
-    }, []);
+    }, [message.data?.CCList, message.data?.BCCList]);
 
     const handleFocus = useCallback(() => {
         if (disabled) {
@@ -41,13 +50,14 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
 
         setEditor(true);
         setExpanded(false);
-        setTimeout(() => addressesFocusRef.current());
+        setTimeout(() => addressesFocusRef.current(), 100);
     }, [disabled]);
 
     const handleToggleExpanded = useCallback((e: MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
         setEditor(true);
         setExpanded(true);
+        setTimeout(() => inputFocusRefs.cc.current(), 100);
     }, []);
 
     return editor ? (
@@ -57,7 +67,7 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
             onChange={onChange}
             expanded={expanded}
             toggleExpanded={handleToggleExpanded}
-            inputFocusRef={inputFocusRef}
+            inputFocusRefs={inputFocusRefs}
         />
     ) : (
         <AddressesSummary
