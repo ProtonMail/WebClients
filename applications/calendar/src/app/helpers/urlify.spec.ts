@@ -1,4 +1,4 @@
-import urlify from '../../src/app/helpers/urlify';
+import urlify from './urlify';
 
 describe('urlify', () => {
     it('urlifies', () => {

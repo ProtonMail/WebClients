@@ -11,7 +11,7 @@ import {
     VcalValarmComponent,
     VcalVeventComponent,
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { WEEK, DAY, HOUR, MINUTE, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../src/app/constants';
+import { WEEK, DAY, HOUR, MINUTE, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../constants';
 import {
     filterFutureNotifications,
     getAlarmMessage,
@@ -21,8 +21,8 @@ import {
     dedupeNotifications,
     dedupeAlarmsWithNormalizedTriggers,
     sortNotificationsByAscendingTrigger,
-} from '../../src/app/helpers/alarms';
-import { NotificationModel } from '../../src/app/interfaces/NotificationModel';
+} from './alarms';
+import { NotificationModel } from '../interfaces/NotificationModel';
 
 const formatOptions = { locale: enUS };
 

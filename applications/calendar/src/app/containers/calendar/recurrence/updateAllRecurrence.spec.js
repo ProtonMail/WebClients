@@ -1,7 +1,7 @@
 import { parse, serialize } from 'proton-shared/lib/calendar/vcal';
 import { getDateOrDateTimeProperty } from 'proton-shared/lib/calendar/vcalConverter';
-import updateAllRecurrence from '../../src/app/containers/calendar/recurrence/updateAllRecurrence';
-import { UpdateAllPossibilities } from '../../src/app/containers/calendar/eventActions/getRecurringUpdateAllPossibilities';
+import updateAllRecurrence from './updateAllRecurrence';
+import { UpdateAllPossibilities } from '../eventActions/getRecurringUpdateAllPossibilities';
 
 const getRecurrence = (start, end) => {
     return {

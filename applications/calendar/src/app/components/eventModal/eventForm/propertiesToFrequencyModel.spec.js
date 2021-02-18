@@ -1,6 +1,6 @@
 import { END_TYPE, FREQUENCY, MONTHLY_TYPE, WEEKLY_TYPE } from 'proton-shared/lib/calendar/constants';
-import { getInitialFrequencyModel } from '../../src/app/components/eventModal/eventForm/state';
-import { propertiesToFrequencyModel } from '../../src/app/components/eventModal/eventForm/propertiesToFrequencyModel';
+import { getInitialFrequencyModel } from './state';
+import { propertiesToFrequencyModel } from './propertiesToFrequencyModel';
 
 const startModel = {
     date: new Date(2020, 0, 20),

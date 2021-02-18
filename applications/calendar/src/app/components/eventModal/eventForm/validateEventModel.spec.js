@@ -1,4 +1,4 @@
-import { getExcessiveNotificationsIndices } from '../../src/app/components/eventModal/eventForm/validateEventModel';
+import { getExcessiveNotificationsIndices } from './validateEventModel';
 
 describe('getExcessiveNotificationsIndices()', () => {
     it('should correctly identify notifications exceeding the MAX_NOTIFICATION limit', () => {
