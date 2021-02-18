@@ -234,6 +234,10 @@ export interface VcalVeventComponent {
     rdate?: VcalDateTimeProperty[];
 }
 
+export interface VcalPmVeventComponent extends Omit<VcalVeventComponent, 'attendee'> {
+    attendee?: VcalAttendeePropertyWithToken[];
+}
+
 export interface VcalVtodoComponent {
     component: 'vtodo';
     components?: VcalValarmComponent[]; // Not complete. Can be other components.
