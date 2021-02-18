@@ -1,4 +1,4 @@
-import { getAttendeeEmail } from 'proton-shared/lib/calendar/attendees';
+import { getAttendeeEmail, getDuplicateAttendees } from 'proton-shared/lib/calendar/attendees';
 import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import {
     createInviteIcs,
@@ -45,6 +45,23 @@ const getAttendeesDiff = (newVevent: VcalVeventComponent, oldVevent: VcalVeventC
         return !normalizedNewEmails.includes(normalizedOldEmail);
     });
     return { addedAttendees, removedAttendees };
+};
+
+export const getDuplicateAttendeesSend = (vevent: VcalVeventComponent, inviteActions: InviteActions) => {
+    const { type, addedAttendees, removedAttendees } = inviteActions;
+    // we only need to check for duplicates among the attendees newly added to the event
+    if (type === INVITE_ACTION_TYPES.SEND_INVITATION) {
+        if (!addedAttendees?.length && !removedAttendees?.length) {
+            // it's a new invitation
+            return getDuplicateAttendees(vevent.attendee);
+        }
+        if (addedAttendees?.length) {
+            return getDuplicateAttendees(addedAttendees);
+        }
+    }
+    if (type === INVITE_ACTION_TYPES.SEND_UPDATE) {
+        return getDuplicateAttendees(vevent.attendee);
+    }
 };
 
 export const getUpdatedSaveInviteActions = ({

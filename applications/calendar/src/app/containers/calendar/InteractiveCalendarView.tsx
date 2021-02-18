@@ -122,6 +122,7 @@ import {
     TimeGridRef,
 } from './interface';
 import { getInitialTargetEventData } from './targetEventHelper';
+import DuplicateAttendeesModal from './confirmationModals/DuplicateAttendeesModal';
 
 const getNormalizedTime = (isAllDay: boolean, initial: DateTimeModel, dateFromCalendar: Date) => {
     if (!isAllDay) {
@@ -887,6 +888,12 @@ const InteractiveCalendarView = ({
         await call();
     };
 
+    const handleDuplicateAttendees = async (duplicateAttendees: string[][]) => {
+        return new Promise<void>((_resolve, reject) =>
+            createModal(<DuplicateAttendeesModal duplicateAttendees={duplicateAttendees} onClose={reject} />)
+        );
+    };
+
     const handleSaveEvent = async (temporaryEvent: CalendarViewEventTemporaryEvent, inviteActions: InviteActions) => {
         try {
             isSavingEvent.current = true;
@@ -897,6 +904,7 @@ const InteractiveCalendarView = ({
                 inviteActions,
                 api,
                 onSaveConfirmation: handleSaveConfirmation,
+                onDuplicateAttendees: handleDuplicateAttendees,
                 getEventDecrypted,
                 getCalendarBootstrap: readCalendarBootstrap,
                 getCanonicalEmails,

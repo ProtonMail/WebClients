@@ -24,6 +24,7 @@ interface SaveEventHelperArguments {
     sendIcs: (
         data: SendIcsActionData
     ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions }>;
+    onDuplicateAttendees: (veventComponent: VcalVeventComponent, inviteActions: InviteActions) => Promise<void>;
 }
 const getSaveSingleEventActions = async ({
     oldEditEventData,
@@ -37,6 +38,7 @@ const getSaveSingleEventActions = async ({
     onSaveConfirmation,
     inviteActions,
     sendIcs,
+    onDuplicateAttendees,
 }: SaveEventHelperArguments): Promise<{
     multiSyncActions: SyncEventActionOperations[];
     inviteActions: InviteActions;
@@ -51,32 +53,36 @@ const getSaveSingleEventActions = async ({
     const isUpdateEvent = !!oldEvent;
     const isSwitchCalendar = isUpdateEvent && oldCalendarID !== newCalendarID;
 
+    await onDuplicateAttendees(newVeventComponent, inviteActions);
+
     if (isSwitchCalendar) {
         if (!oldEvent || !oldVeventComponent) {
             throw new Error('Missing event');
         }
         const isSendType = [SEND_INVITATION, SEND_UPDATE].includes(inviteType);
         const method = isSendType ? ICAL_METHOD.REQUEST : undefined;
-        let updatedVeventComponent = getUpdatedInviteVevent(newVeventComponent, oldVeventComponent, method);
-        let updatedInviteActions = inviteActions;
+        const updatedVeventComponent = getUpdatedInviteVevent(newVeventComponent, oldVeventComponent, method);
+        const updatedInviteActions = inviteActions;
         if (!oldCalendarID || !oldAddressID || !oldMemberID) {
             throw new Error('Missing parameters to switch calendar');
         }
         if (isSendType) {
-            await onSaveConfirmation({
-                type: SAVE_CONFIRMATION_TYPES.SINGLE,
-                inviteActions,
-                isInvitation: false,
-            });
-            const { veventComponent: cleanVeventComponent, inviteActions: cleanInviteActions } = await sendIcs({
-                inviteActions,
-                vevent: updatedVeventComponent,
-                cancelVevent: oldVeventComponent,
-            });
-            if (cleanVeventComponent) {
-                updatedVeventComponent = cleanVeventComponent;
-                updatedInviteActions = cleanInviteActions;
-            }
+            throw new Error('Cannot change the calendar of an event you are organizing');
+            // If we ever change this behavior, the following code would become relevant
+            // await onSaveConfirmation({
+            //     type: SAVE_CONFIRMATION_TYPES.SINGLE,
+            //     inviteActions,
+            //     isInvitation: false,
+            // });
+            // const { veventComponent: cleanVeventComponent, inviteActions: cleanInviteActions } = await sendIcs({
+            //     inviteActions,
+            //     vevent: updatedVeventComponent,
+            //     cancelVevent: oldVeventComponent,
+            // });
+            // if (cleanVeventComponent) {
+            //     updatedVeventComponent = cleanVeventComponent;
+            //     updatedInviteActions = cleanInviteActions;
+            // }
         }
         const updateOperation = getUpdateSyncOperation(updatedVeventComponent, oldEvent);
         const deleteOperation = getDeleteSyncOperation(oldEvent);
