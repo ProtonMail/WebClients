@@ -3,6 +3,7 @@ import { getAttendeeEmail, getSupportedAttendee } from 'proton-shared/lib/calend
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import {
     CALENDAR_FLAGS,
+    ICAL_ATTENDEE_STATUS,
     ICAL_EXTENSIONS,
     ICAL_METHOD,
     ICAL_METHODS_ATTENDEE,
@@ -113,8 +114,10 @@ export interface InvitationModel {
     isPartyCrasher?: boolean;
     isAddressDisabled: boolean;
     canCreateCalendar: boolean;
+    maxUserCalendarsDisabled: boolean;
     hasNoCalendars: boolean;
     isOutdated?: boolean;
+    isFromFuture?: boolean;
     updateAction?: UPDATE_ACTION;
     hideSummary?: boolean;
     hideLink?: boolean;
@@ -217,11 +220,29 @@ export const getIsInvitationOutdated = ({
     const updateTimeDiff = timestampIcs !== undefined && updateTime !== undefined ? timestampIcs - updateTime : 0;
     const sequenceDiff = getSequence(veventIcs) - getSequence(veventApi);
 
-    const isSurelyOutdated = timestampDiff < 0 || sequenceDiff < 0;
     if (isOrganizerMode) {
-        return isSurelyOutdated || updateTimeDiff < 0;
+        return sequenceDiff < 0 || updateTimeDiff < 0;
     }
-    return isSurelyOutdated;
+    return sequenceDiff < 0 || timestampDiff < 0;
+};
+
+export const getIsInvitationFromFuture = ({
+    invitationIcs,
+    invitationApi,
+    isOrganizerMode,
+}: {
+    invitationIcs: EventInvitation;
+    invitationApi?: EventInvitation;
+    isOrganizerMode: boolean;
+}) => {
+    const veventIcs = invitationIcs.vevent;
+    const veventApi = invitationApi?.vevent;
+    if (!veventApi) {
+        return false;
+    }
+    const sequenceDiff = getSequence(veventIcs) - getSequence(veventApi);
+    // return true when the attendee replies to an instance of the event with higher sequence
+    return isOrganizerMode && sequenceDiff > 0;
 };
 
 /**
@@ -387,6 +408,7 @@ interface GetInitialInvitationModelArgs {
     isFreeUser: boolean;
     hasNoCalendars: boolean;
     canCreateCalendar: boolean;
+    maxUserCalendarsDisabled: boolean;
 }
 export const getInitialInvitationModel = ({
     invitationOrError,
@@ -397,6 +419,7 @@ export const getInitialInvitationModel = ({
     isFreeUser,
     hasNoCalendars,
     canCreateCalendar,
+    maxUserCalendarsDisabled,
 }: GetInitialInvitationModelArgs) => {
     if (invitationOrError instanceof EventInvitationError) {
         return {
@@ -404,6 +427,7 @@ export const getInitialInvitationModel = ({
             isAddressDisabled: false,
             isFreeUser,
             canCreateCalendar,
+            maxUserCalendarsDisabled,
             hasNoCalendars,
             timeStatus: EVENT_TIME_STATUS.FUTURE,
             error: invitationOrError,
@@ -421,6 +445,7 @@ export const getInitialInvitationModel = ({
         isFreeUser,
         isAddressDisabled,
         canCreateCalendar,
+        maxUserCalendarsDisabled,
         hasNoCalendars,
         invitationIcs: invitation,
         isPartyCrasher: isOrganizerMode ? false : !invitation.attendee,
@@ -759,21 +784,33 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
         isPartyCrasher,
         isOutdated,
         calendarData,
-        invitationIcs: { method },
+        invitationIcs: { method, attendee: attendeeIcs },
         invitationApi,
         isFreeUser,
         canCreateCalendar,
+        hasNoCalendars,
+        hasDecryptionError,
     } = model;
 
     if (hideLink) {
         return {};
     }
 
+    const hasAlsoReplied =
+        attendeeIcs?.partstat &&
+        [ICAL_ATTENDEE_STATUS.ACCEPTED, ICAL_ATTENDEE_STATUS.TENTATIVE, ICAL_ATTENDEE_STATUS.DECLINED].includes(
+            attendeeIcs?.partstat
+        );
     const canBeAnswered = !isOrganizerMode && method === ICAL_METHOD.REQUEST && !isOutdated;
-    const canBeManaged = isOrganizerMode && method === ICAL_METHOD.REPLY;
+    const canBeManaged =
+        isOrganizerMode && (method === ICAL_METHOD.REPLY || (method === ICAL_METHOD.COUNTER && hasAlsoReplied));
+    const canBeSeenUpdated =
+        [ICAL_METHOD.CANCEL, ICAL_METHOD.COUNTER, ICAL_METHOD.REFRESH].includes(method) ||
+        (!isOrganizerMode && method === ICAL_METHOD.REQUEST && isOutdated);
 
     if (isFreeUser && !isPartyCrasher) {
         if (canBeAnswered) {
+            // must return a non-empty to given how AppLink works
             return {
                 to: '',
                 text: c('Link').t`Create a new calendar to answer this invitation`,
@@ -787,29 +824,52 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
         }
     }
 
+    const safeCalendarNeedsUserAction = calendarData?.calendarNeedsUserAction && !isPartyCrasher;
+    const noCalendarIsActiveYet = !hasNoCalendars && !calendarData;
     // the calendar needs a user action to be active
-    if (calendarData?.calendarNeedsUserAction && !isPartyCrasher) {
+    if (safeCalendarNeedsUserAction || noCalendarIsActiveYet) {
         if (canBeManaged) {
             return {
                 to: '',
-                text: c('Link').t`You need to activate your calendar keys to manage your invitations`,
+                text: c('Link').t`You need to activate your calendar keys to manage this invitation`,
             };
         }
-        if (method === ICAL_METHOD.CANCEL) {
+        if (canBeAnswered) {
             return {
                 to: '',
-                text: c('Link').t`You need to activate your calendar keys to see the updated invitation`,
+                text: c('Link').t`You need to activate your calendar keys to answer this invitation`,
             };
         }
-        return {
-            to: '',
-            text: c('Link').t`You need to activate your calendar keys to answer this invitation`,
-        };
+        if (canBeSeenUpdated && invitationApi) {
+            const text = isOrganizerMode
+                ? c('Link').t`You need to activate your calendar keys to see the updated event`
+                : c('Link').t`You need to activate your calendar keys to see the updated invitation`;
+            return { to: '', text };
+        }
+        return {};
     }
 
     // the invitation is unanswered
     if (!invitationApi) {
-        if (canCreateCalendar && canBeAnswered && !calendarData && !isPartyCrasher) {
+        if (hasDecryptionError) {
+            // the event exists in the db but couldn't be decrypted
+            const to = `/settings/security#addresses`;
+            const toApp = APPS.PROTONMAIL;
+            if (canBeManaged) {
+                return {
+                    to,
+                    toApp,
+                    text: c('Link').t`You need to reactivate your keys to manage this invitation`,
+                };
+            }
+            if (canBeSeenUpdated) {
+                const text = isOrganizerMode
+                    ? c('Link').t`You need to reactivate your keys to see the updated event`
+                    : c('Link').t`You need to reactivate your keys to see the updated invitation`;
+                return { to, toApp, text };
+            }
+        }
+        if (!calendarData && canCreateCalendar && canBeAnswered && !isPartyCrasher) {
             return {
                 to: '',
                 text: c('Link').t`Create a new calendar to answer this invitation`,

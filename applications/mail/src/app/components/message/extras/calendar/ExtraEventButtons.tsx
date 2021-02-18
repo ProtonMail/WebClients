@@ -20,14 +20,14 @@ const ExtraEventButtons = ({ model, setModel, message }: Props) => {
     ) : (
         <ExtraEventAttendeeButtons model={model} setModel={setModel} message={message} />
     );
-    const { to, text } = getCalendarEventLink(model);
-    const displayBorderBottom = to !== undefined || !!buttons;
+    const { to, toApp, text } = getCalendarEventLink(model);
+    const displayBorderBottom = !!text || !!buttons;
 
     return (
         <div className={classnames(['pt0-5 mt0-5 mb0-5 border-top', displayBorderBottom && 'border-bottom'])}>
             {buttons}
             <ExtraEventAlert model={model} />
-            <ExtraEventLink to={to} text={text} />
+            <ExtraEventLink to={to} text={text} toApp={toApp} />
         </div>
     );
 };

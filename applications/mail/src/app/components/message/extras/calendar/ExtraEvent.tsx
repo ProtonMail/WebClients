@@ -26,6 +26,7 @@ import {
     getHasInvitation,
     getInitialInvitationModel,
     getInvitationHasEventID,
+    getIsInvitationFromFuture,
     getIsInvitationOutdated,
     InvitationModel,
     UPDATE_ACTION,
@@ -54,6 +55,7 @@ interface Props {
     invitationOrError: RequireSome<EventInvitation, 'method'> | EventInvitationError;
     calendars: Calendar[];
     canCreateCalendar: boolean;
+    maxUserCalendarsDisabled: boolean;
     defaultCalendar?: Calendar;
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
@@ -66,6 +68,7 @@ const ExtraEvent = ({
     calendars,
     defaultCalendar,
     canCreateCalendar,
+    maxUserCalendarsDisabled,
     contactEmails,
     ownAddresses,
     user,
@@ -81,6 +84,7 @@ const ExtraEvent = ({
             calendar: defaultCalendar,
             hasNoCalendars: calendars.length === 0,
             canCreateCalendar,
+            maxUserCalendarsDisabled,
             isFreeUser,
         })
     );
@@ -104,6 +108,7 @@ const ExtraEvent = ({
                 isFreeUser,
                 hasNoCalendars: calendars.length === 0,
                 canCreateCalendar,
+                maxUserCalendarsDisabled,
             })
         );
     };
@@ -154,6 +159,7 @@ const ExtraEvent = ({
                 singleEditData = singleData;
                 hasDecryptionError = hasDecryptError;
                 const isOutdated = getIsInvitationOutdated({ invitationIcs, invitationApi, isOrganizerMode });
+                const isFromFuture = getIsInvitationFromFuture({ invitationIcs, invitationApi, isOrganizerMode });
                 if (parentInvitation) {
                     parentInvitationApi = parentInvitation;
                 }
@@ -163,7 +169,10 @@ const ExtraEvent = ({
                 if (!unmounted) {
                     setModel({
                         ...model,
+                        invitationApi,
+                        parentInvitationApi,
                         isOutdated,
+                        isFromFuture,
                         calendarData,
                         singleEditData,
                         hasDecryptionError,
@@ -205,6 +214,11 @@ const ExtraEvent = ({
                     updateAction !== UPDATE_ACTION.NONE
                         ? false
                         : getIsInvitationOutdated({ invitationIcs, invitationApi: newInvitationApi, isOrganizerMode });
+                const isFromFuture = getIsInvitationFromFuture({
+                    invitationIcs,
+                    invitationApi: newInvitationApi,
+                    isOrganizerMode,
+                });
                 if (!unmounted) {
                     setModel({
                         ...model,
@@ -213,6 +227,7 @@ const ExtraEvent = ({
                         calendarData,
                         timeStatus: getEventTimeStatus(newInvitationApi.vevent, Date.now()),
                         isOutdated,
+                        isFromFuture,
                         updateAction,
                         hasDecryptionError,
                         isFreeUser,
