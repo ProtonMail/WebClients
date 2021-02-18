@@ -27,7 +27,7 @@ import getRecurringSaveType from './getRecurringSaveType';
 import getRecurringUpdateAllPossibilities from './getRecurringUpdateAllPossibilities';
 import getSaveRecurringEventActions from './getSaveRecurringEventActions';
 import getSaveSingleEventActions from './getSaveSingleEventActions';
-import { getUpdatedSaveInviteActions } from './inviteActions';
+import { getDuplicateAttendeesSend, getUpdatedSaveInviteActions } from './inviteActions';
 import { getOriginalEvent } from './recurringHelper';
 import { withVeventSequence } from './sequence';
 
@@ -37,6 +37,7 @@ const getSaveSingleEventActionsHelper = async ({
     onSaveConfirmation,
     sendIcs,
     inviteActions,
+    onDuplicateAttendees,
 }: {
     newEditEventData: EventNewData;
     oldEditEventData: EventOldData;
@@ -45,6 +46,7 @@ const getSaveSingleEventActionsHelper = async ({
     ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions }>;
     onSaveConfirmation: OnSaveConfirmationCb;
     inviteActions: InviteActions;
+    onDuplicateAttendees: (veventComponent: VcalVeventComponent, inviteActions: InviteActions) => Promise<void>;
 }) => {
     if (!oldEditEventData.veventComponent) {
         throw new Error('Cannot update event without old data');
@@ -64,6 +66,7 @@ const getSaveSingleEventActionsHelper = async ({
         onSaveConfirmation,
         inviteActions: updatedInviteActions,
         sendIcs,
+        onDuplicateAttendees,
     });
     const successText = getSingleEventText(oldEditEventData, newEditEventData, saveInviteActions);
     return {
@@ -82,6 +85,7 @@ interface Arguments {
     addresses: Address[];
     inviteActions: InviteActions;
     onSaveConfirmation: OnSaveConfirmationCb;
+    onDuplicateAttendees: (attendees: string[][]) => Promise<void>;
     api: Api;
     getEventDecrypted: GetDecryptedEventCb;
     getCalendarBootstrap: (CalendarID: string) => CalendarBootstrap;
@@ -97,6 +101,7 @@ const getSaveEventActions = async ({
     addresses,
     inviteActions,
     onSaveConfirmation,
+    onDuplicateAttendees,
     api,
     getEventDecrypted,
     getCalendarBootstrap,
@@ -146,6 +151,12 @@ const getSaveEventActions = async ({
         ? modelVeventComponent
         : withVeventRruleWkst(omit(modelVeventComponent, ['exdate']), weekStartsOn);
     const newVeventComponent = await withPmAttendees(veventComponentWithRruleWkst, getCanonicalEmails);
+    const handleDuplicateAttendees = async (vevent: VcalVeventComponent, inviteActions: InviteActions) => {
+        const duplicateAttendees = getDuplicateAttendeesSend(vevent, inviteActions);
+        if (duplicateAttendees) {
+            await onDuplicateAttendees(duplicateAttendees);
+        }
+    };
 
     const newEditEventData = {
         veventComponent: newVeventComponent,
@@ -173,6 +184,7 @@ const getSaveEventActions = async ({
             onSaveConfirmation,
             inviteActions: updatedInviteActions,
             sendIcs,
+            onDuplicateAttendees: handleDuplicateAttendees,
         });
         const successText = getSingleEventText(undefined, newEditEventData, saveInviteActions);
         return {
@@ -208,6 +220,7 @@ const getSaveEventActions = async ({
             onSaveConfirmation,
             sendIcs,
             inviteActions: inviteActionsWithSelfAddress,
+            onDuplicateAttendees: handleDuplicateAttendees,
         });
     }
 
@@ -222,6 +235,7 @@ const getSaveEventActions = async ({
             onSaveConfirmation,
             sendIcs,
             inviteActions: inviteActionsWithSelfAddress,
+            onDuplicateAttendees: handleDuplicateAttendees,
         });
     }
 
@@ -263,6 +277,7 @@ const getSaveEventActions = async ({
     const isSendInviteType = [INVITE_ACTION_TYPES.SEND_INVITATION, INVITE_ACTION_TYPES.SEND_UPDATE].includes(
         updatedSaveInviteActions.type
     );
+    await handleDuplicateAttendees(newEditEventData.veventComponent, updatedSaveInviteActions);
     const hasAttendees = getHasAttendees(newEditEventData.veventComponent);
 
     const { type: saveType, inviteActions: updatedInviteActions } = await getRecurringSaveType({
