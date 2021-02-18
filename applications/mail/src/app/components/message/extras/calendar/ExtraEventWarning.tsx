@@ -17,7 +17,9 @@ const ExtraEventWarning = ({ model }: Props) => {
         isOrganizerMode,
         invitationIcs: { method, vevent: veventIcs },
         invitationApi,
+        hasDecryptionError,
         isOutdated,
+        isFromFuture,
         timeStatus,
         isPartyCrasher,
     } = model;
@@ -32,11 +34,11 @@ const ExtraEventWarning = ({ model }: Props) => {
             </Alert>
         );
     }
-    if (isOutdated && method !== ICAL_METHOD.REFRESH) {
+    if ((isOutdated || isFromFuture) && method !== ICAL_METHOD.REFRESH) {
         return null;
     }
     if (isOrganizerMode) {
-        if (!invitationApi) {
+        if (!invitationApi && !hasDecryptionError) {
             return null;
         }
         if (method === ICAL_METHOD.REFRESH) {

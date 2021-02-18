@@ -20,6 +20,7 @@ const ExtraEventAlert = ({ model }: Props) => {
         isFreeUser,
         isAddressDisabled,
         canCreateCalendar,
+        maxUserCalendarsDisabled,
         hasNoCalendars,
     } = model;
     const isCancel = method === ICAL_METHOD.CANCEL;
@@ -75,10 +76,12 @@ const ExtraEventAlert = ({ model }: Props) => {
             );
         }
         if (!calendarData) {
+            // no default calendar was found, which means that either the user has no calendar,
+            // all user calendars are disabled, or no calendar is active yet
+            if (hasNoCalendars) {
+                return null;
+            }
             if (canCreateCalendar) {
-                if (hasNoCalendars) {
-                    return null;
-                }
                 return (
                     <Alert type="warning">
                         <span className="mr0-5">{c('Info').t`All your calendars are disabled.`}</span>
@@ -88,22 +91,24 @@ const ExtraEventAlert = ({ model }: Props) => {
                     </Alert>
                 );
             }
-            return (
-                <Alert type="warning">
-                    <span className="mr0-5">{c('Info').t`All your calendars are disabled.`}</span>
-                    <span className="mr0-5">
-                        <AppLink to="/settings/addresses" toApp={APPS.PROTONMAIL}>
-                            {c('Link').t`Enable an email address linked to one of your calendars.`}
-                        </AppLink>
-                    </span>
-                    <span>
-                        <AppLink to="/settings/calendars" toApp={APPS.PROTONCALENDAR}>
-                            {c('Link')
-                                .t`Or you can delete one of your calendars and create a new one linked to an active email address.`}
-                        </AppLink>
-                    </span>
-                </Alert>
-            );
+            if (maxUserCalendarsDisabled) {
+                return (
+                    <Alert type="warning">
+                        <span className="mr0-5">{c('Info').t`All your calendars are disabled.`}</span>
+                        <span className="mr0-5">
+                            <AppLink to="/settings/addresses" toApp={APPS.PROTONMAIL}>
+                                {c('Link').t`Enable an email address linked to one of your calendars.`}
+                            </AppLink>
+                        </span>
+                        <span>
+                            <AppLink to="/settings/calendars" toApp={APPS.PROTONCALENDAR}>
+                                {c('Link')
+                                    .t`Or you can delete one of your calendars and create a new one linked to an active email address.`}
+                            </AppLink>
+                        </span>
+                    </Alert>
+                );
+            }
         }
         return null;
     }

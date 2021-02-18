@@ -65,6 +65,7 @@ import {
     EventInvitation,
     getCanCreateSingleEdit,
     getInvitationHasAttendee,
+    getIsInvitationFromFuture,
     getIsInvitationOutdated,
     getSingleEditWidgetData,
     processEventInvitation,
@@ -372,6 +373,7 @@ export const updateEventInvitation = async ({
     if (
         calendarData.isCalendarDisabled ||
         getIsInvitationOutdated({ invitationIcs, invitationApi, isOrganizerMode }) ||
+        getIsInvitationFromFuture({ invitationIcs, invitationApi, isOrganizerMode }) ||
         !attendeeIcs ||
         !attendeeApi
     ) {

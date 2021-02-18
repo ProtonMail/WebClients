@@ -17,9 +17,12 @@ const { REQUIRED, OPTIONAL } = ICAL_ATTENDEE_ROLE;
 const { KEEP_PARTSTAT, RESET_PARTSTAT } = UPDATE_ACTION;
 
 export const getHasBeenUpdatedText = (model: RequireSome<InvitationModel, 'invitationIcs'>) => {
-    const { invitationIcs, invitationApi, isOutdated, updateAction } = model;
+    const { invitationIcs, invitationApi, isOutdated, isFromFuture, updateAction } = model;
     const { method } = invitationIcs;
 
+    if (isFromFuture) {
+        return;
+    }
     if (method === REPLY && invitationApi && invitationIcs.attendee?.partstat && isOutdated) {
         return c('Calendar invite info').t`This response is out of date. This event has been updated.`;
     }
@@ -34,24 +37,44 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
         invitationIcs: { method, attendee: attendeeIcs, vevent: veventIcs },
         invitationApi,
         hasNoCalendars,
+        hasDecryptionError,
         isOutdated,
+        isFromFuture,
     } = model;
     const isSingleEdit = !!veventIcs['recurrence-id'];
 
     if (method === REPLY) {
-        if (!invitationApi) {
-            if (hasNoCalendars) {
-                return c('Calendar invite info').t`This response is out of date. You have no calendars.`;
-            }
-            return c('Calendar invite info')
-                .t`This response is out of date. The event does not exist in your calendar anymore.`;
-        }
-
         if (!attendeeIcs?.partstat) {
             return;
         }
         const { partstat } = attendeeIcs;
         const participantName = attendeeIcs.displayName;
+
+        if (!invitationApi) {
+            if (hasNoCalendars) {
+                return c('Calendar invite info').t`This response is out of date. You have no calendars.`;
+            }
+            if (hasDecryptionError) {
+                // the event exists in the calendar but we couldn't decrypt it
+                if (partstat === ACCEPTED) {
+                    return c('Calendar invite info').jt`${participantName} accepted your invitation.`;
+                }
+                if (partstat === DECLINED) {
+                    return c('Calendar invite info').jt`${participantName} declined your invitation.`;
+                }
+                if (partstat === TENTATIVE) {
+                    return c('Calendar invite info').jt`${participantName} tentatively accepted your invitation.`;
+                }
+            }
+
+            return c('Calendar invite info')
+                .t`This response is out of date. The event does not exist in your calendar anymore.`;
+        }
+
+        if (isFromFuture) {
+            return c('Calendar invite info')
+                .t` This response doesn't match your invitation details. Please verify the invitation details in your calendar.`;
+        }
 
         if (!isOutdated) {
             if (partstat === ACCEPTED) {
@@ -116,12 +139,51 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
                     return c('Calendar invite info')
                         .jt`${participantName} had proposed a new time for this event. This proposal is out of date. You have no calendars.`;
                 }
+                if (hasDecryptionError) {
+                    // the event exists in the calendar but we couldn't decrypt it
+                    if (hasAlsoReplied) {
+                        if (partstat === ACCEPTED) {
+                            if (isSingleEdit) {
+                                return c('Calendar invite info')
+                                    .jt`${participantName} accepted your invitation and proposed a new time for one occurrence of this event.`;
+                            }
+                            return c('Calendar invite info')
+                                .jt`${participantName} accepted your invitation and proposed a new time for this event.`;
+                        }
+                        if (partstat === DECLINED) {
+                            if (isSingleEdit) {
+                                return c('Calendar invite info')
+                                    .jt`${participantName} declined your invitation and proposed a new time for one occurrence of this event.`;
+                            }
+                            return c('Calendar invite info')
+                                .jt`${participantName} declined your invitation and proposed a new time for this event.`;
+                        }
+                        if (partstat === TENTATIVE) {
+                            if (isSingleEdit) {
+                                return c('Calendar invite info')
+                                    .jt`${participantName} tentatively accepted your invitation and proposed a new time for one occurrence of this event.`;
+                            }
+                            return c('Calendar invite info')
+                                .jt`${participantName} tentatively accepted your invitation and proposed a new time for this event.`;
+                        }
+                    }
+                    if (isSingleEdit) {
+                        return c('Calendar invite info')
+                            .jt`${participantName} proposed a new time for one occurrence of this event.`;
+                    }
+                    return c('Calendar invite info').jt`${participantName} proposed a new time for this event.`;
+                }
+
                 if (isSingleEdit) {
                     return c('Calendar invite info')
                         .jt`${participantName} had proposed a new time for one occurrence of this event. This proposal is out of date. The event does not exist in your calendar anymore.`;
                 }
                 return c('Calendar invite info')
                     .jt`${participantName} had proposed a new time for this event. This proposal is out of date. The event does not exist in your calendar anymore.`;
+            }
+            if (isFromFuture) {
+                return c('Calendar invite info')
+                    .t` This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.`;
             }
             if (isOutdated) {
                 if (hasAlsoReplied) {
@@ -200,6 +262,10 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
                 if (hasNoCalendars) {
                     return c('Calendar invite info')
                         .jt`${participantName} asked for the latest updates to an event which does not exist anymore. You have no calendars.`;
+                }
+                if (hasDecryptionError) {
+                    // the event exists in the calendar but we couldn't decrypt it
+                    return c('Calendar invite info').jt`${participantName} asked for the latest event updates.`;
                 }
                 return c('Calendar invite info')
                     .jt`${participantName} asked for the latest updates to an event which does not exist in your calendar anymore.`;

@@ -17,6 +17,7 @@ import {
     getCanCreateCalendar,
     getDefaultCalendar,
     getIsCalendarDisabled,
+    getMaxUserCalendarsDisabled,
     getProbablyActiveCalendars,
 } from 'proton-shared/lib/calendar/calendar';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
@@ -56,8 +57,11 @@ const ExtraEvents = ({ message }: Props) => {
     const [invitations, setInvitations] = useState<(RequireSome<EventInvitation, 'method'> | EventInvitationError)[]>(
         []
     );
-    const [defaultCalendar, setDefaultCalendar] = useState<Calendar | undefined>();
-    const [canCreateCalendar, setCanCreateCalendar] = useState<boolean>(true);
+    const [calData, setCalData] = useState<{
+        defaultCalendar?: Calendar;
+        canCreateCalendar: boolean;
+        maxUserCalendarsDisabled: boolean;
+    }>({ canCreateCalendar: true, maxUserCalendarsDisabled: false });
     const loadingConfigs =
         loadingContactEmails || loadingAddresses || loadingCalendars || loadingUserSettings || loadingUser;
 
@@ -74,19 +78,20 @@ const ExtraEvents = ({ message }: Props) => {
         let unmounted = false;
         const run = async () => {
             const activeCalendars = getProbablyActiveCalendars(calendars);
+            let defaultCalendar;
             if (calendars.length) {
                 const { DefaultCalendarID } = await getCalendarUserSettings();
-                if (unmounted) {
-                    return;
-                }
-                setDefaultCalendar(getDefaultCalendar(activeCalendars, DefaultCalendarID));
+                defaultCalendar = getDefaultCalendar(activeCalendars, DefaultCalendarID);
             }
-
             const disabledCalendars = calendars.filter((calendar) => getIsCalendarDisabled(calendar));
             if (unmounted) {
                 return;
             }
-            setCanCreateCalendar(getCanCreateCalendar(activeCalendars, disabledCalendars));
+            setCalData({
+                defaultCalendar,
+                canCreateCalendar: getCanCreateCalendar(activeCalendars, disabledCalendars, calendars),
+                maxUserCalendarsDisabled: getMaxUserCalendarsDisabled(disabledCalendars),
+            });
             const invitations = (
                 await Promise.all(
                     eventAttachments.map(async (attachment: Attachment) => {
@@ -144,8 +149,9 @@ const ExtraEvents = ({ message }: Props) => {
                         invitationOrError={invitation}
                         message={message}
                         calendars={calendars}
-                        defaultCalendar={defaultCalendar}
-                        canCreateCalendar={canCreateCalendar}
+                        defaultCalendar={calData.defaultCalendar}
+                        canCreateCalendar={calData.canCreateCalendar}
+                        maxUserCalendarsDisabled={calData.maxUserCalendarsDisabled}
                         contactEmails={contactEmails}
                         ownAddresses={addresses}
                         user={user}
