@@ -5,7 +5,7 @@ import {
     Icon,
     Href,
     Alert,
-    ConfirmModal,
+    FormModal,
     InlineLinkButton,
     generateUID,
     useNotifications,
@@ -14,6 +14,9 @@ import {
     useModals,
     useApi,
     useEventManager,
+    Label,
+    Field,
+    Row,
 } from 'react-components';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
@@ -56,17 +59,19 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
         if (unsubscribeMethods.OneClick) {
             await new Promise((resolve, reject) => {
                 createModal(
-                    <ConfirmModal
+                    <FormModal
                         title={c('Title').t`Unsubscribe`}
-                        onConfirm={() => resolve(undefined)}
+                        onSubmit={() => resolve(undefined)}
                         onClose={reject}
-                        confirm={c('Action').t`Unsubscribe`}
+                        submit={c('Action').t`Unsubscribe`}
+                        small={false}
+                        className="pm-modal--shorterLabels"
                     >
                         <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/avoid-spam/">
                             {c('Info')
                                 .t`A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.`}
                         </Alert>
-                    </ConfirmModal>
+                    </FormModal>
                 );
             });
             await api(oneClickUnsubscribe(messageID));
@@ -84,20 +89,49 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
 
             await new Promise((resolve, reject) => {
                 createModal(
-                    <ConfirmModal
+                    <FormModal
                         title={c('Title').t`Unsubscribe`}
-                        onConfirm={() => resolve(undefined)}
+                        onSubmit={() => resolve(undefined)}
                         onClose={reject}
-                        confirm={c('Action').t`Unsubscribe`}
+                        submit={c('Action').t`Unsubscribe`}
+                        className="pm-modal--shorterLabels"
                     >
                         <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/avoid-spam/">
                             {c('Info')
                                 .jt`To unsubscribe from this mailing list, an email will be sent from ${boldFromEmail} with following details as defined by the sender of the newsletter:`}
-                            <div>{c('Info').t`Recipient: ${toEmails}`}</div>
-                            <div>{c('Info').t`Subject: ${Subject}`}</div>
-                            <div>{c('Info').t`Body: ${Body}`}</div>
                         </Alert>
-                    </ConfirmModal>
+
+                        <Row>
+                            <Label className="cursor-default">
+                                <span className="mr0-5">{c('Info').t`Recipient: `}</span>
+                            </Label>
+                            <Field className="bordered-container bg-global-muted-dm">
+                                <div className="pl1 pr1 pt0-5 pb0-5 text-ellipsis" title={toEmails}>
+                                    {toEmails}
+                                </div>
+                            </Field>
+                        </Row>
+                        <Row>
+                            <Label className="cursor-default">
+                                <span className="mr0-5">{c('Info').t`Subject: `}</span>
+                            </Label>
+                            <Field className="bordered-container bg-global-muted-dm">
+                                <div className="pl1 pr1 pt0-5 pb0-5 text-ellipsis" title={Subject}>
+                                    {Subject}
+                                </div>
+                            </Field>
+                        </Row>
+                        <Row>
+                            <Label className="cursor-default">
+                                <span className="mr0-5">{c('Info').t`Body: `}</span>
+                            </Label>
+                            <Field className="bordered-container bg-global-muted-dm">
+                                <div className="pl1 pr1 pt0-5 pb0-5 text-ellipsis" title={Body}>
+                                    {Body}
+                                </div>
+                            </Field>
+                        </Row>
+                    </FormModal>
                 );
             });
 
@@ -123,18 +157,32 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
         } else if (unsubscribeMethods.HttpClient) {
             await new Promise((resolve, reject) => {
                 createModal(
-                    <ConfirmModal
+                    <FormModal
                         title={c('Title').t`Unsubscribe`}
-                        onConfirm={() => resolve(undefined)}
+                        onSubmit={() => resolve(undefined)}
                         onClose={reject}
-                        confirm={c('Action').t`Unsubscribe`}
+                        submit={c('Action').t`Unsubscribe`}
+                        className="pm-modal--shorterLabels"
                     >
                         <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/avoid-spam/">
                             {c('Info')
                                 .jt`To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:`}
                             <div className="text-bold">{c('Info').t`URL: ${unsubscribeMethods.HttpClient}`}</div>
                         </Alert>
-                    </ConfirmModal>
+                        <Row>
+                            <Label className="cursor-default">
+                                <span className="mr0-5">{c('Info').t`URL: `}</span>
+                            </Label>
+                            <Field className="bordered-container bg-global-muted-dm">
+                                <div
+                                    className="pl1 pr1 pt0-5 pb0-5 text-ellipsis"
+                                    title={unsubscribeMethods.HttpClient}
+                                >
+                                    {unsubscribeMethods.HttpClient}
+                                </div>
+                            </Field>
+                        </Row>
+                    </FormModal>
                 );
             });
             openNewTab(unsubscribeMethods.HttpClient);
