@@ -316,7 +316,7 @@ const useListNotifications = () => {
                           failedCount
                       );
 
-            createNotification({ text: notificationText });
+            createNotification({ text: notificationText, type: 'error' });
         }
     };
 

@@ -14,7 +14,7 @@ import useDrive from './useDrive';
 import useEvents from './useEvents';
 import FileSaver from '../../utils/FileSaver/FileSaver';
 import { getMetaForTransfer } from '../../utils/transfer';
-import { getSuccessfulSettled, logSettledErrors } from '../../utils/async';
+import { logSettledErrors } from '../../utils/async';
 import { LinkType } from '../../interfaces/link';
 import { useDriveActiveFolder } from '../../components/Drive/DriveFolderProvider';
 import { FileBrowserItem } from '../../components/FileBrowser/interfaces';
@@ -213,10 +213,8 @@ function useToolbarActions() {
                 }
             });
 
-            const deletedCount = (await Promise.allSettled(deleteSharePromiseList).then(getSuccessfulSettled)).length;
-
-            await events.call(shareId);
-            return deletedCount;
+            await Promise.all(deleteSharePromiseList);
+            return deletedSharedUrlIds.length;
         };
 
         openConfirmModal({
@@ -227,6 +225,7 @@ function useToolbarActions() {
             onConfirm: async () => {
                 const deletedCount = await deleteLinks(itemsToStopSharing);
                 const failedCount = itemsToStopSharing.length - deletedCount;
+                await events.callAll(shareId);
                 createDeleteSharedLinksNotifications(deletedCount, failedCount);
             },
         });
