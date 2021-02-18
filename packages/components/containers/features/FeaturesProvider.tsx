@@ -11,6 +11,8 @@ interface Props {
 const FeaturesProvider = ({ children }: Props) => {
     const api = useApi();
 
+    const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
+
     const [features, setFeatures] = useState<{ [key: string]: Feature }>({});
 
     const featureGetPromiseRef = useRef<{ [key: string]: Promise<Feature> }>({});
@@ -28,7 +30,7 @@ const FeaturesProvider = ({ children }: Props) => {
 
         const createFeatureGetPromise = async () => {
             try {
-                const { Feature } = await api<{ Feature: Feature }>(getFeature(code));
+                const { Feature } = await silentApi<{ Feature: Feature }>(getFeature(code));
 
                 addFeature(code, Feature);
 
@@ -48,7 +50,7 @@ const FeaturesProvider = ({ children }: Props) => {
     };
 
     const put = async (code: FeatureCode, value: any) => {
-        const { Feature } = await api<{ Feature: Feature }>(updateFeatureValue(code, value));
+        const { Feature } = await silentApi<{ Feature: Feature }>(updateFeatureValue(code, value));
 
         updateFeature(code, Feature);
 
