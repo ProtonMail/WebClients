@@ -421,12 +421,21 @@ const useDriveCacheState = () => {
         return links.map((childLinkId) => getLinkMeta(shareId, childLinkId)).filter(isTruthy);
     };
 
+    const areAncestorsTrashed = (shareId: string, meta?: LinkMeta): boolean => {
+        if (!meta || !meta.ParentLinkID) {
+            return false;
+        }
+        if (meta.Trashed) {
+            return true;
+        }
+
+        const parent = getLinkMeta(shareId, meta.ParentLinkID);
+        return areAncestorsTrashed(shareId, parent);
+    };
+
     const getSharedLinkMetas = (shareId: string) => {
         const links = getSharedLinks(shareId);
-        return links
-            .map((childLinkId) => getLinkMeta(shareId, childLinkId))
-            .filter(isTruthy)
-            .filter((meta) => !meta.Trashed);
+        return links.map((childLinkId) => getLinkMeta(shareId, childLinkId)).filter(isTruthy);
     };
 
     const getChildrenInitialized = (
@@ -676,6 +685,7 @@ const useDriveCacheState = () => {
             shareIds: getShareIds,
             isTrashLocked,
             isLinkLocked,
+            areAncestorsTrashed,
         },
         delete: {
             links: deleteLinks,

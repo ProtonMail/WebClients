@@ -17,20 +17,20 @@ export const queryFileRevision = (
     revisionId: number,
     pagination?: { FromBlockIndex: number; PageSize: number }
 ) => {
-    if (pagination) {
-        return {
-            method: 'get',
-            params: pagination,
-            url: `drive/shares/${shareId}/files/${linkId}/revisions/${revisionId}`,
-            silence: true,
-        };
-    }
-
-    return {
+    const query = {
         method: 'get',
         url: `drive/shares/${shareId}/files/${linkId}/revisions/${revisionId}`,
         silence: true,
     };
+
+    if (pagination) {
+        return {
+            ...query,
+            params: pagination,
+        };
+    }
+
+    return query;
 };
 
 export const queryRequestUpload = (data: {

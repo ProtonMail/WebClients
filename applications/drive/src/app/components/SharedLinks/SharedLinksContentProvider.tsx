@@ -25,7 +25,9 @@ const SharedLinksContentProvider = ({ children, shareId }: { children: React.Rea
     const [loading, setLoading] = useState(false);
     const [, setError] = useState();
 
-    const sharedLinks = cache.get.sharedLinkMetas(shareId);
+    const sharedLinks = cache.get
+        .sharedLinkMetas(shareId)
+        .filter((meta) => !cache.get.areAncestorsTrashed(shareId, meta));
     const complete = cache.get.sharedLinksComplete(shareId);
     const contents = mapLinksToChildren(sharedLinks, (linkId) => cache.get.isLinkLocked(shareId, linkId));
 
