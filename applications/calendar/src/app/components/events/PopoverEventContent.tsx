@@ -10,7 +10,7 @@ import React, { useMemo, useState } from 'react';
 import { Icon, Info, Tabs, Tooltip } from 'react-components';
 import { c, msgid } from 'ttag';
 import { getOrganizerDisplayData } from '../../helpers/attendees';
-import { sanitizeDescription, buildMSTeamsLinks } from '../../helpers/sanitize';
+import { sanitizeDescription } from '../../helpers/sanitize';
 import {
     CalendarViewEvent,
     CalendarViewEventTemporaryEvent,
@@ -21,6 +21,7 @@ import AttendeeStatusIcon from './AttendeeStatusIcon';
 import PopoverNotification from './PopoverNotification';
 import Participant from './Participant';
 import getAttendanceTooltip from './getAttendanceTooltip';
+import urlify from '../../helpers/urlify';
 
 type AttendeeViewModel = {
     title: string;
@@ -70,9 +71,9 @@ const PopoverEventContent = ({
         displayNameEmailMap
     );
     const organizerString = c('Event info').t`Organized by:`;
-    const trimmedLocation = model.location.trim();
+    const trimmedLocation = useMemo(() => sanitizeDescription(urlify(model.location.trim())), [model.location]);
     const htmlString = useMemo(() => {
-        const description = buildMSTeamsLinks(model.description.trim());
+        const description = urlify(model.description.trim());
         return sanitizeDescription(description);
     }, [model.description]);
 
@@ -125,7 +126,10 @@ const PopoverEventContent = ({
             {trimmedLocation ? (
                 <div className={wrapClassName}>
                     <Icon name="address" className={iconClassName} />
-                    <span className="text-hyphens scroll-if-needed">{trimmedLocation}</span>
+                    <span
+                        className="text-hyphens scroll-if-needed"
+                        dangerouslySetInnerHTML={{ __html: trimmedLocation }}
+                    />
                 </div>
             ) : null}
             {hasOrganizer && (isInvitation || numberOfParticipants) ? (
