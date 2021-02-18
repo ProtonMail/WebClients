@@ -1,3 +1,4 @@
+export { default as EarlyAccessSection } from './EarlyAccessSection';
 export { default as ShortcutsSection } from './ShortcutsSection';
 export { default as LanguageSection } from './LanguageSection';
 export { default as AutoSaveContactsToggle } from './AutoSaveContactsToggle';

@@ -29,6 +29,7 @@ import KeyBackgroundManager from './KeyBackgroundManager';
 import InternalEmailAddressGeneration from './InternalEmailAddressGeneration';
 import StorageListener from './StorageListener';
 import DelinquentContainer from './DelinquentContainer';
+import { FeaturesProvider } from '../features';
 
 interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
     locales?: TtagLocaleMap;
@@ -160,21 +161,23 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
     return (
         <EventManagerProvider eventManager={eventManagerRef.current}>
             <ContactProvider>
-                <EventModelListener models={eventModels} />
-                <EventNotices />
-                <ThemeInjector />
-                <DensityInjector />
-                {!noModals && <ModalsChildren />}
-                <InternalEmailAddressGeneration externalEmailAddress={onceRef.current?.externalEmailAddress}>
-                    <KeyBackgroundManager
-                        hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
-                        hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
-                    />
-                    <StorageListener />
-                    <ForceRefreshProvider>
-                        <LoadedApp />
-                    </ForceRefreshProvider>
-                </InternalEmailAddressGeneration>
+                <FeaturesProvider>
+                    <EventModelListener models={eventModels} />
+                    <EventNotices />
+                    <ThemeInjector />
+                    <DensityInjector />
+                    {!noModals && <ModalsChildren />}
+                    <InternalEmailAddressGeneration externalEmailAddress={onceRef.current?.externalEmailAddress}>
+                        <KeyBackgroundManager
+                            hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
+                            hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
+                        />
+                        <StorageListener />
+                        <ForceRefreshProvider>
+                            <LoadedApp />
+                        </ForceRefreshProvider>
+                    </InternalEmailAddressGeneration>
+                </FeaturesProvider>
             </ContactProvider>
         </EventManagerProvider>
     );
