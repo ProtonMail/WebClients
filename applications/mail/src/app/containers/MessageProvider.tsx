@@ -1,4 +1,4 @@
-import { DRAFT_ID_PREFIX } from 'proton-shared/lib/mail/messages';
+import { DRAFT_ID_PREFIX, isSent } from 'proton-shared/lib/mail/messages';
 import React, { useEffect, createContext, ReactNode, useContext, useLayoutEffect } from 'react';
 import { useInstance, useEventManager } from 'react-components';
 import createCache, { Cache } from 'proton-shared/lib/helpers/cache';
@@ -76,7 +76,12 @@ const messageEventListener = (cache: MessageCache) => ({ Messages }: Event) => {
                 // By removing the current body value in the cache, we will reload it next time we need it
                 if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
                     removeBody = { Body: undefined };
-                    removeInit = { initialized: undefined, document: undefined, plainText: undefined };
+
+                    // Update draft and sent means it just passed from draft to sent status
+                    // It can have been done from outside of the app and will have to be reinitialized to use it
+                    if (isSent(Message)) {
+                        removeInit = { initialized: undefined, document: undefined, plainText: undefined };
+                    }
                 }
 
                 cache.set(localID, {
