@@ -13,6 +13,7 @@ import {
     SidebarNav,
     SidebarListItemsWithSubsections,
     MainLogo,
+    useEarlyAccess,
 } from 'react-components';
 import { hasPermission } from 'proton-shared/lib/helpers/permissions';
 import { c } from 'ttag';
@@ -34,7 +35,9 @@ const MainContainer = () => {
     const location = useLocation();
 
     const [activeSection, setActiveSection] = useState('');
-    const filteredPages = getPages(user).filter(({ permissions: pagePermissions = [] }) =>
+    const { hasEarlyAccess } = useEarlyAccess();
+
+    const filteredPages = getPages(user, hasEarlyAccess).filter(({ permissions: pagePermissions = [] }) =>
         hasPermission(userPermissions, pagePermissions)
     );
 
