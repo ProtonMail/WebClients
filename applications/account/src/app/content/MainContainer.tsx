@@ -15,6 +15,7 @@ import {
     useOrganization,
     useModals,
     useWelcomeFlags,
+    useEarlyAccess,
 } from 'react-components';
 
 import { getPages } from '../pages';
@@ -36,6 +37,7 @@ const MainContainer = () => {
     const { isNarrow } = useActiveBreakpoint();
     const [welcomeFlags, setWelcomeFlagDone] = useWelcomeFlags();
     const { createModal } = useModals();
+    const { hasEarlyAccess } = useEarlyAccess();
 
     useEffect(() => {
         setExpand(false);
@@ -64,7 +66,7 @@ const MainContainer = () => {
             <SidebarNav>
                 <SidebarList>
                     <SidebarListItemsWithSubsections
-                        list={getPages(user, organization)}
+                        list={getPages(user, organization, hasEarlyAccess)}
                         pathname={location.pathname}
                         activeSection={activeSection}
                     />

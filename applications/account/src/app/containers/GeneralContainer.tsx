@@ -7,6 +7,8 @@ import {
     TimeFormatSection,
     DateFormatSection,
     WeekStartSection,
+    EarlyAccessSection,
+    useEarlyAccess,
 } from 'react-components';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import locales from 'proton-shared/lib/i18n/locales';
@@ -14,7 +16,7 @@ import { IS_DATE_FORMAT_ENABLED } from 'proton-shared/lib/i18n/dateFnLocale';
 
 import PrivateMainSettingsAreaWithPermissions from '../components/PrivateMainSettingsAreaWithPermissions';
 
-export const getGeneralPage = () => {
+export const getGeneralPage = ({ hasEarlyAccess }: { hasEarlyAccess: boolean }) => {
     return {
         text: c('Title').t`General`,
         to: '/general',
@@ -42,15 +44,23 @@ export const getGeneralPage = () => {
                 text: c('Title').t`Week start`,
                 id: 'week-start',
             },
+            hasEarlyAccess
+                ? {
+                      text: c('Title').t`Early Access`,
+                      id: 'early-access',
+                  }
+                : undefined,
         ].filter(isTruthy),
     };
 };
 
 const GeneralContainer = ({ location, setActiveSection }: SettingsPropsShared) => {
+    const { hasEarlyAccess } = useEarlyAccess();
+
     return (
         <PrivateMainSettingsAreaWithPermissions
             location={location}
-            config={getGeneralPage()}
+            config={getGeneralPage({ hasEarlyAccess })}
             setActiveSection={setActiveSection}
         >
             <LanguageSection locales={locales} />
@@ -58,6 +68,7 @@ const GeneralContainer = ({ location, setActiveSection }: SettingsPropsShared) =
             <TimeFormatSection />
             {IS_DATE_FORMAT_ENABLED ? <DateFormatSection /> : null}
             <WeekStartSection />
+            {hasEarlyAccess ? <EarlyAccessSection /> : null}
         </PrivateMainSettingsAreaWithPermissions>
     );
 };
