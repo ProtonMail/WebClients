@@ -67,7 +67,7 @@
 }
 
 // .max-w50e { max-width: 50em; }
-@each $max-width in (5, 7, 8, 13, 15, 18, 30, 37, 40, 50) {
+@each $max-width in (5, 7, 8, 13, 15, 18, 30, 37, 40, 43, 46, 50, 69) {
 	.max-w#{$max-width}e {
 		max-width: #{$max-width}em;
 	}
