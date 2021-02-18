@@ -22,6 +22,7 @@ export interface SendIcsParams {
     ics: string;
     from: RequireSome<Recipient, 'Address' | 'Name'>;
     addressID: string;
+    parentID?: string;
     to: RequireSome<Recipient, 'Address' | 'Name'>[];
     subject: string;
     plainTextBody?: string;
@@ -41,6 +42,7 @@ const useSendIcs = () => {
             ics,
             from,
             addressID,
+            parentID,
             to,
             subject,
             plainTextBody = '',
@@ -116,16 +118,19 @@ const useSendIcs = () => {
                 publicKeys,
                 privateKeys,
             });
-            await api({
-                ...sendMessageDirect({
-                    Message: directMessage,
-                    AttachmentKeys: uint8ArrayToBase64String(packets.keys),
-                    Action: -1,
-                    AutoSaveContacts,
-                    Packages: Object.values(packages),
-                } as any),
-                silence: true,
-            });
+            const payload: any = {
+                Message: directMessage,
+                AttachmentKeys: uint8ArrayToBase64String(packets.keys),
+                // do not save organizer address as contact on REPLY (it could be a calendar group address)
+                AutoSaveContacts: method === ICAL_METHOD.REPLY ? 0 : AutoSaveContacts,
+                Packages: Object.values(packages),
+            };
+            if (parentID) {
+                // we set the action to 0 to tell the API that this is a response to the message with ID = parentID
+                payload.ParentID = parentID;
+                payload.Action = 0;
+            }
+            await api({ ...sendMessageDirect(payload), silence: true });
         },
         [api, getMailSettings, getAddressKeys, getEncryptionPreferences]
     );
