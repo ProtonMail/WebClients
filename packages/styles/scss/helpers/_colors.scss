@@ -27,7 +27,10 @@
 	background-color: $pm-global-muted;
 }
 
-.bg-global-muted-dm {
+.bg-global-muted-dm,
+.bg-global-muted-dm-on-hover:focus,
+.bg-global-muted-dm-on-hover:focus-within,
+.bg-global-muted-dm-on-hover:hover {
 	background-color: var(--bgcolor-muted, $pm-global-muted);
 }
 
