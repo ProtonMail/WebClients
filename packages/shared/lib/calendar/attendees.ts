@@ -1,10 +1,18 @@
 import { arrayToHexString, binaryStringToArray, unsafeSHA1 } from 'pmcrypto';
-import { buildMailTo, getEmailTo, validateEmailAddress } from '../helpers/email';
+import { groupWith } from '../helpers/array';
+import { buildMailTo, canonizeEmailByGuess, getEmailTo, validateEmailAddress } from '../helpers/email';
+import { omit } from '../helpers/object';
 import { GetCanonicalEmails } from '../interfaces';
 import { Attendee } from '../interfaces/calendar';
-import { VcalAttendeeProperty, VcalOrganizerProperty, VcalVeventComponent } from '../interfaces/calendar/VcalModel';
+import {
+    VcalAttendeeProperty,
+    VcalOrganizerProperty,
+    VcalPmVeventComponent,
+    VcalVeventComponent,
+} from '../interfaces/calendar/VcalModel';
 import { RequireSome, SimpleMap } from '../interfaces/utils';
 import { ATTENDEE_PERMISSIONS, ATTENDEE_STATUS_API, ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from './constants';
+import { getAttendeeHasToken, getAttendeesHaveToken } from './vcalHelper';
 
 export const generateAttendeeToken = async (normalizedEmail: string, uid: string) => {
     const uidEmail = `${uid}${normalizedEmail}`;
@@ -161,10 +169,10 @@ export const getSupportedAttendee = (attendee: VcalAttendeeProperty) => {
 export const withPmAttendees = async (
     vevent: VcalVeventComponent,
     getCanonicalEmails: GetCanonicalEmails
-): Promise<VcalVeventComponent> => {
+): Promise<VcalPmVeventComponent> => {
     const { uid, attendee: vcalAttendee } = vevent;
     if (!vcalAttendee?.length) {
-        return { ...vevent };
+        return omit(vevent, ['attendee']);
     }
     const attendeesWithEmail = vcalAttendee.map((attendee) => {
         const emailAddress = getAttendeeEmail(attendee);
@@ -181,7 +189,7 @@ export const withPmAttendees = async (
     const pmAttendees = await Promise.all(
         attendeesWithEmail.map(async ({ attendee, emailAddress }) => {
             const supportedAttendee = getSupportedAttendee(attendee);
-            if (supportedAttendee.parameters?.['x-pm-token']) {
+            if (getAttendeeHasToken(supportedAttendee)) {
                 return supportedAttendee;
             }
             const canonicalEmail = canonicalEmailMap[emailAddress];
@@ -202,4 +210,35 @@ export const withPmAttendees = async (
         ...vevent,
         attendee: pmAttendees,
     };
+};
+
+export const getDuplicateAttendees = (attendees?: VcalAttendeeProperty[]) => {
+    if (!attendees?.length) {
+        return;
+    }
+    if (getAttendeesHaveToken(attendees)) {
+        const attendeesWithToken = attendees.map((attendee) => ({
+            token: attendee.parameters['x-pm-token'],
+            email: getAttendeeEmail(attendee),
+        }));
+        const duplicateAttendees = groupWith((a, b) => a.token === b.token, attendeesWithToken).map((group) =>
+            group.map(({ email }) => email)
+        );
+        return duplicateAttendees.length < attendees.length
+            ? duplicateAttendees.filter((group) => group.length > 1)
+            : undefined;
+    }
+    // not all attendees have token, so we're gonna canonize emails and compare based on that
+    const attendeesWithCanonicalEmail = attendees.map((attendee) => {
+        const email = getAttendeeEmail(attendee);
+        const canonicalEmail = canonizeEmailByGuess(email);
+        return { email, canonicalEmail };
+    });
+    const duplicateAttendees = groupWith(
+        (a, b) => a.canonicalEmail === b.canonicalEmail,
+        attendeesWithCanonicalEmail
+    ).map((group) => group.map(({ email }) => email));
+    return duplicateAttendees.length < attendees.length
+        ? duplicateAttendees.filter((group) => group.length > 1)
+        : undefined;
 };
