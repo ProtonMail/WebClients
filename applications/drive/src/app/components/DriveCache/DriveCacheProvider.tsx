@@ -423,7 +423,10 @@ const useDriveCacheState = () => {
 
     const getSharedLinkMetas = (shareId: string) => {
         const links = getSharedLinks(shareId);
-        return links.map((childLinkId) => getLinkMeta(shareId, childLinkId)).filter(isTruthy);
+        return links
+            .map((childLinkId) => getLinkMeta(shareId, childLinkId))
+            .filter(isTruthy)
+            .filter((meta) => !meta.Trashed);
     };
 
     const getChildrenInitialized = (
