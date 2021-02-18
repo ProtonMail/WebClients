@@ -39,7 +39,7 @@ const DetailsModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
     const modalTitleID = 'details-modal';
     const isFile = item.Type === LinkType.FILE;
     const title = isFile ? c('Title').t`File details` : c('Title').t`Folder details`;
-    const isShared = item.SharedUrl ? c('Info').t`Yes` : c('Info').t`No`;
+    const isShared = item.SharedUrl && !item.UrlsExpired ? c('Info').t`Yes` : c('Info').t`No`;
 
     return (
         <DialogModal modalTitleID={modalTitleID} onClose={onClose} {...rest}>
