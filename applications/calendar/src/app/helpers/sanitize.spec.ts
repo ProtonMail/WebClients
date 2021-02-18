@@ -1,4 +1,4 @@
-import { sanitizeDescription } from '../../src/app/helpers/sanitize';
+import { sanitizeDescription } from './sanitize';
 
 describe('sanitize description', () => {
     test('should drop disallowed tags', () => {

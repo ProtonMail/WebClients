@@ -1,7 +1,7 @@
 import { toTriggerString } from 'proton-shared/lib/calendar/vcal';
 import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar/Calendar';
-import { getValarmTrigger } from '../../src/app/components/eventModal/eventForm/getValarmTrigger';
-import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../src/app/constants';
+import { getValarmTrigger } from './getValarmTrigger';
+import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
 
 const { DEVICE } = SETTINGS_NOTIFICATION_TYPE;
 const { DAY, HOURS, WEEK, MINUTES } = NOTIFICATION_UNITS;
@@ -16,7 +16,7 @@ describe('model to properties positive trigger', () => {
                     value: 0,
                     unit: MINUTES,
                     type: DEVICE,
-                    when: BEFORE
+                    when: BEFORE,
                 })
             )
         ).toEqual('PT0S');
@@ -30,7 +30,7 @@ describe('model to properties positive trigger', () => {
                     value: 1,
                     unit: MINUTES,
                     type: DEVICE,
-                    when: AFTER
+                    when: AFTER,
                 })
             )
         ).toEqual('PT1M');
@@ -45,7 +45,7 @@ describe('model to properties positive trigger', () => {
                     unit: DAY,
                     type: DEVICE,
                     when: AFTER,
-                    at: new Date(2000, 0, 1, 13, 50)
+                    at: new Date(2000, 0, 1, 13, 50),
                 })
             )
         ).toEqual('PT13H50M');
@@ -60,7 +60,7 @@ describe('model to properties positive trigger', () => {
                     unit: DAY,
                     type: DEVICE,
                     when: AFTER,
-                    at: new Date(2000, 0, 1, 0, 0)
+                    at: new Date(2000, 0, 1, 0, 0),
                 })
             )
         ).toEqual('P1D');
@@ -75,7 +75,7 @@ describe('model to properties positive trigger', () => {
                     unit: DAY,
                     type: DEVICE,
                     when: AFTER,
-                    at: new Date(2000, 0, 1, 13, 50)
+                    at: new Date(2000, 0, 1, 13, 50),
                 })
             )
         ).toEqual('P1DT13H50M');
@@ -90,7 +90,7 @@ describe('model to properties positive trigger', () => {
                     unit: WEEK,
                     type: DEVICE,
                     when: AFTER,
-                    at: new Date(2000, 0, 1, 13, 50)
+                    at: new Date(2000, 0, 1, 13, 50),
                 })
             )
         ).toEqual('P1WT13H50M');
@@ -107,7 +107,7 @@ describe('model to properties negative trigger', () => {
                     unit: DAY,
                     type: DEVICE,
                     when: BEFORE,
-                    at: new Date(2000, 0, 1, 0, 0)
+                    at: new Date(2000, 0, 1, 0, 0),
                 })
             )
         ).toEqual('-P1D');
@@ -122,7 +122,7 @@ describe('model to properties negative trigger', () => {
                     unit: DAY,
                     type: DEVICE,
                     when: BEFORE,
-                    at: new Date(2000, 0, 1, 13, 50)
+                    at: new Date(2000, 0, 1, 13, 50),
                 })
             )
         ).toEqual('-PT10H10M');
@@ -137,7 +137,7 @@ describe('model to properties negative trigger', () => {
                     unit: DAY,
                     type: DEVICE,
                     when: BEFORE,
-                    at: new Date(2000, 0, 1, 0, 0)
+                    at: new Date(2000, 0, 1, 0, 0),
                 })
             )
         ).toEqual('-P2D');
@@ -152,7 +152,7 @@ describe('model to properties negative trigger', () => {
                     unit: DAY,
                     type: DEVICE,
                     when: BEFORE,
-                    at: new Date(2000, 0, 1, 13, 50)
+                    at: new Date(2000, 0, 1, 13, 50),
                 })
             )
         ).toEqual('-P1DT10H10M');
@@ -167,7 +167,7 @@ describe('model to properties negative trigger', () => {
                     unit: WEEK,
                     type: DEVICE,
                     when: BEFORE,
-                    at: new Date(2000, 0, 1, 13, 50)
+                    at: new Date(2000, 0, 1, 13, 50),
                 })
             )
         ).toEqual('-PT10H10M');
@@ -182,7 +182,7 @@ describe('model to properties negative trigger', () => {
                     unit: WEEK,
                     type: DEVICE,
                     when: BEFORE,
-                    at: new Date(2000, 0, 1, 13, 50)
+                    at: new Date(2000, 0, 1, 13, 50),
                 })
             )
         ).toEqual('-P6DT10H10M');
@@ -197,7 +197,7 @@ describe('model to properties negative trigger', () => {
                     unit: WEEK,
                     type: DEVICE,
                     when: BEFORE,
-                    at: new Date(2000, 0, 1, 13, 50)
+                    at: new Date(2000, 0, 1, 13, 50),
                 })
             )
         ).toEqual('-P1W6DT10H10M');
@@ -212,7 +212,7 @@ describe('model to properties negative trigger', () => {
                     unit: WEEK,
                     type: DEVICE,
                     when: BEFORE,
-                    at: new Date(2000, 0, 1, 0, 0)
+                    at: new Date(2000, 0, 1, 0, 0),
                 })
             )
         ).toEqual('-P1W');
@@ -227,7 +227,7 @@ describe('model to properties negative trigger', () => {
                     unit: WEEK,
                     type: DEVICE,
                     when: BEFORE,
-                    at: new Date(2000, 0, 1, 0, 0)
+                    at: new Date(2000, 0, 1, 0, 0),
                 })
             )
         ).toEqual('-P2W');
@@ -241,7 +241,7 @@ describe('model to properties negative trigger', () => {
                     value: 2,
                     unit: WEEK,
                     type: DEVICE,
-                    when: BEFORE
+                    when: BEFORE,
                 })
             )
         ).toEqual('-P2W');
@@ -255,7 +255,7 @@ describe('model to properties negative trigger', () => {
                     value: 15,
                     unit: MINUTES,
                     type: DEVICE,
-                    when: BEFORE
+                    when: BEFORE,
                 })
             )
         ).toEqual('-PT15M');
@@ -269,7 +269,7 @@ describe('model to properties negative trigger', () => {
                     value: 1,
                     unit: HOURS,
                     type: DEVICE,
-                    when: BEFORE
+                    when: BEFORE,
                 })
             )
         ).toEqual('-PT1H');

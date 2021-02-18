@@ -1,4 +1,4 @@
-import { getFutureRecurrenceUID } from '../../src/app/containers/calendar/recurrence/createFutureRecurrence';
+import { getFutureRecurrenceUID } from './createFutureRecurrence';
 
 describe('create future recurrence', () => {
     it('should append a recurrence offset', () => {

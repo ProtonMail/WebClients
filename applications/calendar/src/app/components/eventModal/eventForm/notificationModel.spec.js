@@ -1,8 +1,8 @@
 import { fromTriggerString } from 'proton-shared/lib/calendar/vcal';
 import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar/Calendar';
 
-import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../src/app/constants';
-import { triggerToModel } from '../../src/app/components/eventModal/eventForm/notificationModel';
+import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
+import { triggerToModel } from './notificationModel';
 
 const { DEVICE } = SETTINGS_NOTIFICATION_TYPE;
 const { WEEK, DAY, HOURS, MINUTES } = NOTIFICATION_UNITS;
@@ -14,14 +14,14 @@ describe('properties to model positive trigger', () => {
             triggerToModel({
                 isAllDay: false,
                 type: DEVICE,
-                trigger: fromTriggerString('PT0S')
+                trigger: fromTriggerString('PT0S'),
             })
         ).toEqual({
             isAllDay: false,
             value: 0,
             unit: MINUTES,
             type: DEVICE,
-            when: AFTER
+            when: AFTER,
         });
     });
 
@@ -30,14 +30,14 @@ describe('properties to model positive trigger', () => {
             triggerToModel({
                 isAllDay: false,
                 type: DEVICE,
-                trigger: fromTriggerString('PT1M')
+                trigger: fromTriggerString('PT1M'),
             })
         ).toEqual({
             isAllDay: false,
             value: 1,
             unit: MINUTES,
             type: DEVICE,
-            when: AFTER
+            when: AFTER,
         });
     });
 
@@ -46,7 +46,7 @@ describe('properties to model positive trigger', () => {
             triggerToModel({
                 isAllDay: true,
                 type: DEVICE,
-                trigger: fromTriggerString('PT10H1M')
+                trigger: fromTriggerString('PT10H1M'),
             })
         ).toEqual({
             isAllDay: true,
@@ -54,7 +54,7 @@ describe('properties to model positive trigger', () => {
             unit: DAY,
             type: DEVICE,
             when: AFTER,
-            at: new Date(2000, 0, 1, 10, 1)
+            at: new Date(2000, 0, 1, 10, 1),
         });
     });
 
@@ -63,7 +63,7 @@ describe('properties to model positive trigger', () => {
             triggerToModel({
                 isAllDay: true,
                 type: DEVICE,
-                trigger: fromTriggerString('PT1D10H1M')
+                trigger: fromTriggerString('PT1D10H1M'),
             })
         ).toEqual({
             isAllDay: true,
@@ -71,7 +71,7 @@ describe('properties to model positive trigger', () => {
             unit: DAY,
             type: DEVICE,
             when: AFTER,
-            at: new Date(2000, 0, 1, 10, 1)
+            at: new Date(2000, 0, 1, 10, 1),
         });
     });
 });
@@ -82,14 +82,14 @@ describe('properties to model negative trigger', () => {
             triggerToModel({
                 isAllDay: false,
                 type: DEVICE,
-                trigger: fromTriggerString('-PT15H')
+                trigger: fromTriggerString('-PT15H'),
             })
         ).toEqual({
             isAllDay: false,
             value: 15,
             unit: HOURS,
             type: DEVICE,
-            when: BEFORE
+            when: BEFORE,
         });
     });
 
@@ -98,14 +98,14 @@ describe('properties to model negative trigger', () => {
             triggerToModel({
                 isAllDay: false,
                 type: DEVICE,
-                trigger: fromTriggerString('-PT1D')
+                trigger: fromTriggerString('-PT1D'),
             })
         ).toEqual({
             isAllDay: false,
             value: 1,
             unit: DAY,
             type: DEVICE,
-            when: BEFORE
+            when: BEFORE,
         });
     });
 
@@ -114,14 +114,14 @@ describe('properties to model negative trigger', () => {
             triggerToModel({
                 isAllDay: false,
                 type: DEVICE,
-                trigger: fromTriggerString('-PT1D15H')
+                trigger: fromTriggerString('-PT1D15H'),
             })
         ).toEqual({
             isAllDay: false,
             value: 1,
             unit: DAY,
             type: DEVICE,
-            when: BEFORE
+            when: BEFORE,
         });
     });
 
@@ -130,7 +130,7 @@ describe('properties to model negative trigger', () => {
             triggerToModel({
                 isAllDay: true,
                 type: DEVICE,
-                trigger: fromTriggerString('-PT1D')
+                trigger: fromTriggerString('-PT1D'),
             })
         ).toEqual({
             isAllDay: true,
@@ -138,7 +138,7 @@ describe('properties to model negative trigger', () => {
             unit: DAY,
             type: DEVICE,
             when: BEFORE,
-            at: new Date(2000, 0, 1, 0, 0)
+            at: new Date(2000, 0, 1, 0, 0),
         });
     });
 
@@ -147,7 +147,7 @@ describe('properties to model negative trigger', () => {
             triggerToModel({
                 isAllDay: true,
                 type: DEVICE,
-                trigger: fromTriggerString('-PT10H10M')
+                trigger: fromTriggerString('-PT10H10M'),
             })
         ).toEqual({
             isAllDay: true,
@@ -155,7 +155,7 @@ describe('properties to model negative trigger', () => {
             unit: DAY,
             type: DEVICE,
             when: BEFORE,
-            at: new Date(2000, 0, 1, 13, 50)
+            at: new Date(2000, 0, 1, 13, 50),
         });
     });
 
@@ -164,7 +164,7 @@ describe('properties to model negative trigger', () => {
             triggerToModel({
                 isAllDay: true,
                 type: DEVICE,
-                trigger: fromTriggerString('-PT1W')
+                trigger: fromTriggerString('-PT1W'),
             })
         ).toEqual({
             isAllDay: true,
@@ -172,7 +172,7 @@ describe('properties to model negative trigger', () => {
             unit: WEEK,
             type: DEVICE,
             when: BEFORE,
-            at: new Date(2000, 0, 1, 0, 0)
+            at: new Date(2000, 0, 1, 0, 0),
         });
     });
 
@@ -181,7 +181,7 @@ describe('properties to model negative trigger', () => {
             triggerToModel({
                 isAllDay: true,
                 type: DEVICE,
-                trigger: fromTriggerString('-PT1W6D')
+                trigger: fromTriggerString('-PT1W6D'),
             })
         ).toEqual({
             isAllDay: true,
@@ -189,7 +189,7 @@ describe('properties to model negative trigger', () => {
             unit: WEEK,
             type: DEVICE,
             when: BEFORE,
-            at: new Date(2000, 0, 1, 0, 0)
+            at: new Date(2000, 0, 1, 0, 0),
         });
     });
 
@@ -198,7 +198,7 @@ describe('properties to model negative trigger', () => {
             triggerToModel({
                 isAllDay: true,
                 type: DEVICE,
-                trigger: fromTriggerString('-PT6D10H10M')
+                trigger: fromTriggerString('-PT6D10H10M'),
             })
         ).toEqual({
             isAllDay: true,
@@ -206,7 +206,7 @@ describe('properties to model negative trigger', () => {
             unit: WEEK,
             type: DEVICE,
             when: BEFORE,
-            at: new Date(2000, 0, 1, 13, 50)
+            at: new Date(2000, 0, 1, 13, 50),
         });
     });
 
@@ -215,7 +215,7 @@ describe('properties to model negative trigger', () => {
             triggerToModel({
                 isAllDay: true,
                 type: DEVICE,
-                trigger: fromTriggerString('-PT1W6D10H10M')
+                trigger: fromTriggerString('-PT1W6D10H10M'),
             })
         ).toEqual({
             isAllDay: true,
@@ -223,7 +223,7 @@ describe('properties to model negative trigger', () => {
             unit: WEEK,
             type: DEVICE,
             when: BEFORE,
-            at: new Date(2000, 0, 1, 13, 50)
+            at: new Date(2000, 0, 1, 13, 50),
         });
     });
 
@@ -232,7 +232,7 @@ describe('properties to model negative trigger', () => {
             triggerToModel({
                 isAllDay: true,
                 type: DEVICE,
-                trigger: fromTriggerString('-PT1W5D10H10M')
+                trigger: fromTriggerString('-PT1W5D10H10M'),
             })
         ).toEqual({
             isAllDay: true,
@@ -240,7 +240,7 @@ describe('properties to model negative trigger', () => {
             unit: WEEK,
             type: DEVICE,
             when: BEFORE,
-            at: new Date(2000, 0, 1, 13, 50)
+            at: new Date(2000, 0, 1, 13, 50),
         });
     });
 });

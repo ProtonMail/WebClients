@@ -1,6 +1,6 @@
 import { fromUTCDate } from 'proton-shared/lib/date/timezone';
 import { getDateProperty, getDateTimeProperty } from 'proton-shared/lib/calendar/vcalConverter';
-import { getStartDateTimeMerged } from '../../src/app/containers/calendar/recurrence/getDateTimeMerged';
+import { getStartDateTimeMerged } from './getDateTimeMerged';
 
 const d = (year = 2000, month = 1, date = 1, hours = 0, minutes = 0) =>
     new Date(Date.UTC(year, month - 1, date, hours, minutes));

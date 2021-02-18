@@ -1,5 +1,5 @@
 import { END_TYPE, FREQUENCY } from 'proton-shared/lib/calendar/constants';
-import getFrequencyModelChange from '../../src/app/components/eventModal/eventForm/getFrequencyModelChange';
+import getFrequencyModelChange from './getFrequencyModelChange';
 
 const frequencyModel = {
     type: FREQUENCY.CUSTOM,

@@ -1,5 +1,5 @@
 import { parse } from 'proton-shared/lib/calendar/vcal';
-import { propertiesToModel } from '../../src/app/components/eventModal/eventForm/propertiesToModel';
+import { propertiesToModel } from './propertiesToModel';
 
 describe('properties to model', () => {
     test('can parse start and end time correctly', () => {
