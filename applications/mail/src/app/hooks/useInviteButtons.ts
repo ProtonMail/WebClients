@@ -1,5 +1,9 @@
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
-import { createInviteIcs, getParticipantHasAddressID } from 'proton-shared/lib/calendar/integration/invite';
+import {
+    createInviteIcs,
+    generateEmailBody,
+    getParticipantHasAddressID,
+} from 'proton-shared/lib/calendar/integration/invite';
 import { getProdId } from 'proton-shared/lib/calendar/vcalHelper';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import {
@@ -94,6 +98,12 @@ const useInviteButtons = ({
                     from: { Address: attendee.emailAddress, Name: attendee.name || attendee.emailAddress },
                     to: [{ Address: organizer.emailAddress, Name: organizer.name }],
                     subject,
+                    plainTextBody: generateEmailBody({
+                        method: ICAL_METHOD.REPLY,
+                        vevent,
+                        emailAddress: attendee.emailAddress,
+                        partstat,
+                    }),
                     contactEmailsMap,
                 });
                 onEmailSuccess();
