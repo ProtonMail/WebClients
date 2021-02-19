@@ -1,3 +1,16 @@
+# [4.0.0-beta.14] - 2021-02-24
+## Added
+- Add plain text body for invitations 
+- Recognise secure links in event description
+
+## Updated
+- Keep notifications when changing the calendar of an event
+- Improve participation status design
+- Improve selectors design
+
+## Fixed
+- Merge event duplicate notifications
+
 # [4.0.0-beta.13] - 2021-02-09
 ## Updated
 - Add participants to events without pressing enter
