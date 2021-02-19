@@ -1,3 +1,9 @@
 User-agent: *
 Disallow: /eo
 Disallow: https://old.protonmail.com
+User-agent: ia_archiver-web.archive.org
+Disallow:
+User-agent: archive.org_bot
+Disallow:
+User-agent: ia_archiver
+Disallow:
