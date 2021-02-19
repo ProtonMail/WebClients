@@ -6,6 +6,7 @@ import {
     useMailSettings,
     useLabels,
     useFolders,
+    useModals,
     useConversationCounts,
     useMessageCounts,
     useLocalState,
@@ -15,6 +16,8 @@ import {
     SidebarListItemHeaderLink,
     useHotkeys,
     HotkeyTuple,
+    LabelModal,
+    Icon,
 } from 'react-components';
 import { SHOW_MOVED, MAILBOX_LABEL_IDS, APPS } from 'proton-shared/lib/constants';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
@@ -47,6 +50,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
     const [displayLabels, toggleLabels] = useLocalState(true, `${user.ID}-display-labels`);
     const [labels, loadingLabels] = useLabels();
     const [folders, loadingFolders] = useFolders();
+    const { createModal } = useModals();
 
     const sidebarRef = useRef<HTMLDivElement>(null);
 
@@ -301,13 +305,25 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                     id="toggle-folders"
                     onFocus={() => setFocusedItem('toggle-folders')}
                     right={
-                        <SidebarListItemHeaderLink
-                            to="/settings/labels"
-                            toApp={APPS.PROTONMAIL}
-                            icon="settings-singular"
-                            title={c('Info').t`Manage your folders`}
-                            info={c('Link').t`Manage your folders`}
-                        />
+                        <div className="flex flex-align-items-center no-mobile">
+                            {folders?.length ? (
+                                <button
+                                    type="button"
+                                    className="flex navigation-link-header-group-link flex-item-noshrink mr1"
+                                    onClick={() => createModal(<LabelModal type="folder" />)}
+                                    title={c('Title').t`Create a new folder`}
+                                >
+                                    <Icon name="plus" />
+                                </button>
+                            ) : null}
+                            <SidebarListItemHeaderLink
+                                to="/settings/labels"
+                                toApp={APPS.PROTONMAIL}
+                                icon="settings-singular"
+                                title={c('Info').t`Manage your folders`}
+                                info={c('Link').t`Manage your folders`}
+                            />
+                        </div>
                     }
                 />
                 {displayFolders && (
@@ -329,13 +345,25 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                     id="toggle-labels"
                     onFocus={() => setFocusedItem('toggle-labels')}
                     right={
-                        <SidebarListItemHeaderLink
-                            to="/settings/labels"
-                            toApp={APPS.PROTONMAIL}
-                            icon="settings-singular"
-                            title={c('Info').t`Manage your labels`}
-                            info={c('Link').t`Manage your labels`}
-                        />
+                        <div className="flex flex-align-items-center no-mobile">
+                            {labels?.length ? (
+                                <button
+                                    type="button"
+                                    className="flex navigation-link-header-group-link flex-item-noshrink mr1"
+                                    onClick={() => createModal(<LabelModal />)}
+                                    title={c('Title').t`Create a new label`}
+                                >
+                                    <Icon name="plus" />
+                                </button>
+                            ) : null}
+                            <SidebarListItemHeaderLink
+                                to="/settings/labels"
+                                toApp={APPS.PROTONMAIL}
+                                icon="settings-singular"
+                                title={c('Info').t`Manage your labels`}
+                                info={c('Link').t`Manage your labels`}
+                            />
+                        </div>
                     }
                 />
                 {displayLabels && (
