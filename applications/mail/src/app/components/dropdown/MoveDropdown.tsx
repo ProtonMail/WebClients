@@ -17,11 +17,14 @@ import { normalize } from 'proton-shared/lib/helpers/string';
 import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
 import { buildTreeview } from 'proton-shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { useMoveToFolder } from '../../hooks/useApplyLabels';
 import { Breakpoints } from '../../models/utils';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElementsCache';
+import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
 
 import './MoveDropdown.scss';
 
@@ -69,15 +72,28 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
     useEffect(() => onLock(!containFocus), [containFocus]);
 
     const treeview = buildTreeview(folders);
+    const elements = getElementsFromIDs(selectedIDs);
+    const isMessage = testIsMessage(elements[0]);
+    const canMoveToInbox = isMessage ? !!getMessagesAuthorizedToMove(elements as Message[], INBOX).length : true;
+    const canMoveToSpam = isMessage ? !!getMessagesAuthorizedToMove(elements as Message[], SPAM).length : true;
 
     const list = treeview
         .reduce<FolderItem[]>((acc, folder) => folderReducer(acc, folder), [])
         .concat([
-            { ID: INBOX, Name: c('Mailbox').t`Inbox`, icon: 'inbox' },
+            canMoveToInbox && {
+                ID: INBOX,
+                Name: c('Mailbox').t`Inbox`,
+                icon: 'inbox',
+            },
             { ID: ARCHIVE, Name: c('Mailbox').t`Archive`, icon: 'archive' },
-            { ID: SPAM, Name: c('Mailbox').t`Spam`, icon: 'spam' },
+            canMoveToSpam && {
+                ID: SPAM,
+                Name: c('Mailbox').t`Spam`,
+                icon: 'spam',
+            },
             { ID: TRASH, Name: c('Mailbox').t`Trash`, icon: 'trash' },
         ] as FolderItem[])
+        .filter(isTruthy)
         .filter(({ Name = '' }: { Name: string }) => {
             if (!search) {
                 return true;
@@ -87,8 +103,6 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
         });
 
     const handleMove = async (folder?: Folder) => {
-        const elements = getElementsFromIDs(selectedIDs);
-        const isMessage = testIsMessage(elements[0]);
         await moveToFolder(elements, folder?.ID || '', folder?.Name || '', labelID);
         onClose();
 
