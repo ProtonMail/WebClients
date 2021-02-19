@@ -1,5 +1,7 @@
 import { OpenPGPKey, OpenPGPSignature, SessionKey } from 'pmcrypto';
+import { CreateCalendarEventBlobData } from '../api/calendars';
 import { uint8ArrayToBase64String } from '../helpers/encoding';
+import { RequireSome } from '../interfaces/utils';
 
 import { getVeventParts } from './veventHelper';
 import { createSessionKey, encryptPart, getEncryptedSessionKey, signPart } from './encrypt';
@@ -13,6 +15,10 @@ const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
 
 // Wrong typings in openpgp.d.ts...
 const getArmoredSignatureString = (signature: OpenPGPSignature) => (signature.armor() as unknown) as string;
+
+export const getHasSharedKeyPacket = (
+    data: CreateCalendarEventBlobData
+): data is RequireSome<CreateCalendarEventBlobData, 'SharedKeyPacket'> => !!data.SharedKeyPacket;
 
 /**
  * Format the data into what the API expects.
