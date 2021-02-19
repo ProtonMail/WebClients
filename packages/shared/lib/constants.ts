@@ -59,14 +59,14 @@ export const APPS_CONFIGURATION = {
     [APPS.PROTONDRIVE]: {
         publicPath: '/drive',
         subdomain: 'drive',
-        name: 'Proton Drive',
+        name: 'ProtonDrive',
         clientID: 'WebDrive',
         icon: 'protondrive',
     },
     [APPS.PROTONCALENDAR]: {
         publicPath: '/calendar',
         subdomain: 'calendar',
-        name: 'Proton Calendar',
+        name: 'ProtonCalendar',
         clientID: 'WebCalendar',
         icon: 'protoncalendar',
     },
