@@ -110,7 +110,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
         if (reset) {
             return UNDEFINED;
         }
-        const value = isNarrow ? keyword : keywordToString(fullInput);
+        const value = isNarrow ? keyword : keywordToString(keyword);
         if (value) {
             return value;
         }
@@ -152,7 +152,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
 
                 return {
                     ...DEFAULT_MODEL, // labelID re-initialized to ALL_MAIL
-                    keyword: keyword || '',
+                    keyword: keyword || fullInput || '',
                     address,
                     attachments,
                     wildcard,
