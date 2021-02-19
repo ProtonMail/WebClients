@@ -1,61 +1,108 @@
 import React from 'react';
 import { c } from 'ttag';
-
 import { CryptoProcessingError } from 'proton-shared/lib/contacts/decrypt';
 import { CRYPTO_PROCESSING_TYPES } from 'proton-shared/lib/contacts/constants';
 import Icon from '../../components/icon/Icon';
 import Href from '../../components/link/Href';
+import { SmallButton } from '../../components';
+import { classnames } from '../../helpers';
+import { useModals } from '../../hooks';
+import ContactDecryptionErrorModal from './modals/ContactDecryptionErrorModal';
+import ContactSignatureErrorModal from './modals/ContactSignatureErrorModal';
 
-const { SIGNATURE_NOT_VERIFIED, FAIL_TO_READ, FAIL_TO_DECRYPT } = CRYPTO_PROCESSING_TYPES;
+const { SIGNATURE_NOT_VERIFIED, FAIL_TO_READ, FAIL_TO_LOAD, FAIL_TO_DECRYPT } = CRYPTO_PROCESSING_TYPES;
+
+const importanceOrder = [FAIL_TO_LOAD, FAIL_TO_READ, FAIL_TO_DECRYPT, SIGNATURE_NOT_VERIFIED];
+
+const matchType = (errors: CryptoProcessingError[], type: CRYPTO_PROCESSING_TYPES) =>
+    errors.find((error) => error.type === type);
+
+const selectError = (errors: CryptoProcessingError[]) =>
+    importanceOrder.map((type) => matchType(errors, type)).filter(Boolean)[0];
+
+const getText = (errorType: CRYPTO_PROCESSING_TYPES) => {
+    switch (errorType) {
+        case FAIL_TO_DECRYPT:
+            return c('Warning').t`The decryption of the encrypted content failed.`;
+        case SIGNATURE_NOT_VERIFIED:
+            return c('Warning').t`The verification of the contact details' signature failed.`;
+        default:
+            return c('Warning').t`The contact failed to load.`;
+    }
+};
+
+const getButtonText = (errorType: CRYPTO_PROCESSING_TYPES) => {
+    switch (errorType) {
+        case FAIL_TO_DECRYPT:
+            return c('Action').t`Recover data`;
+        case SIGNATURE_NOT_VERIFIED:
+            return c('Action').t`Re-sign`;
+        default:
+            return null;
+    }
+};
 
 interface Props {
+    contactID: string;
     errors?: CryptoProcessingError[];
+    onReload: () => void;
 }
 
-const ContactViewErrors = ({ errors }: Props) => {
-    if (!errors) {
+const ContactViewErrors = ({ contactID, errors, onReload }: Props) => {
+    const { createModal } = useModals();
+
+    if (!errors?.length) {
         return null;
     }
 
-    const errorTypes = errors.map(({ type }) => type);
+    const error = selectError(errors);
 
-    if (errorTypes.includes(SIGNATURE_NOT_VERIFIED)) {
-        return (
-            <div className="bg-global-attention p1">
-                <Icon name="attention" className="mr1" />
-                <span className="mr1">{c('Warning')
-                    .t`Warning: the verification of this contact's signature failed.`}</span>
-                <Href url="https://protonmail.com/support/knowledge-base/encrypted-contacts/">{c('Link')
-                    .t`Learn more`}</Href>
-            </div>
-        );
+    // Should not happen but satisfy type checking
+    if (!error) {
+        return null;
     }
 
-    if (errorTypes.includes(FAIL_TO_READ)) {
-        return (
-            <div className="bg-global-warning p1">
-                <Icon name="attention" className="mr1" />
-                <span className="mr1">{c('Warning')
-                    .t`Error: the encrypted content failed decryption and cannot be read.`}</span>
-                <Href url="https://protonmail.com/support/knowledge-base/encrypted-contacts/">{c('Link')
-                    .t`Learn more`}</Href>
-            </div>
-        );
-    }
+    const isWarning = error.type === SIGNATURE_NOT_VERIFIED;
 
-    if (errorTypes.includes(FAIL_TO_DECRYPT)) {
-        return (
-            <div className="bg-global-warning p1">
-                <Icon name="attention" className="mr1" />
-                <span className="mr1">{c('Warning')
-                    .t`Error: the encrypted content failed decryption and cannot be read.`}</span>
-                <Href url="https://protonmail.com/support/knowledge-base/encrypted-contacts/">{c('Link')
-                    .t`Learn more`}</Href>
-            </div>
-        );
-    }
+    const bgColor = isWarning ? 'bg-global-attention' : 'bg-global-warning';
+    const textColor = isWarning ? 'color-black' : 'color-white';
+    const text = getText(error.type);
 
-    return null;
+    const buttonText = getButtonText(error.type);
+
+    const handleDescriptionErrorAction = () => {
+        createModal(<ContactDecryptionErrorModal contactID={contactID} />);
+    };
+
+    const handleSignatureErrorAction = () => {
+        createModal(<ContactSignatureErrorModal contactID={contactID} />);
+    };
+
+    const handleAction = () => {
+        if (error.type === FAIL_TO_DECRYPT) {
+            return handleDescriptionErrorAction();
+        }
+        if (error.type === SIGNATURE_NOT_VERIFIED) {
+            return handleSignatureErrorAction();
+        }
+        onReload();
+    };
+
+    return (
+        <div className={classnames([bgColor, textColor, 'rounded p0-5 mt1 flex flex-nowrap flex-align-items-center'])}>
+            <Icon name="attention" className="flex-item-noshrink mtauto mbauto" />
+            <span className="flex-item-fluid pl0-5 pr0-5">
+                <span className="mr0-5">{text}</span>
+                <Href
+                    className="underline inline-block color-currentColor"
+                    url="https://protonmail.com/support/knowledge-base/encrypted-contacts/"
+                >{c('Link').t`Learn more`}</Href>
+            </span>
+            <span className="flex-item-noshrink flex">
+                <SmallButton onClick={handleAction}>{buttonText}</SmallButton>
+            </span>
+        </div>
+    );
 };
 
 export default ContactViewErrors;

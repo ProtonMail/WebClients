@@ -30,7 +30,7 @@ const ContactDetailsModal = ({ contactID, onClose = noop, ...rest }: Props) => {
     const { contactEmailsMap } = useContactList({ contactEmails, contacts });
     const [contact, contactLoading] = useContact(contactID);
 
-    const { properties } = useContactProperties({ contact, userKeysList });
+    const [{ properties }] = useContactProperties({ contact, userKeysList });
 
     const openContactModal = () => {
         createModal(<ContactModal properties={properties} contactID={contactID} />);
