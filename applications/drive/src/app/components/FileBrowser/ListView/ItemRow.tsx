@@ -127,10 +127,15 @@ const ItemRow = ({
                 )}
 
                 {columns.includes('share_expires') && (
-                    <TableCell className="m0 w20">
+                    <TableCell className="m0 w30">
                         {item.SharedUrl &&
                             (item.SharedUrl.ExpireTime ? (
-                                <TimeCell time={item.SharedUrl.ExpireTime} />
+                                <div className="flex flex-nowrap">
+                                    <TimeCell time={item.SharedUrl.ExpireTime} />
+                                    {item.UrlsExpired ? (
+                                        <span className="ml0-25">{c('Label').t`(Expired)`}</span>
+                                    ) : null}
+                                </div>
                             ) : (
                                 c('Label').t`Never`
                             ))}
