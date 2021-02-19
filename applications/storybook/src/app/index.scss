@@ -54,3 +54,9 @@ body {
 .icon-ko button {
 	display: none; // don't copy shit!
 }
+
+table.no-bg {
+	tr {
+		background: none !important;
+	}
+}
