@@ -2,17 +2,12 @@ import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { useCallback } from 'react';
 import { useApi, useEventManager, useMailSettings } from 'react-components';
 import { deleteMessages } from 'proton-shared/lib/api/messages';
-import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { MAILBOX_LABEL_IDS, SHOW_MOVED } from 'proton-shared/lib/constants';
-
 import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { mergeMessages } from '../../helpers/message/messages';
 import { useMessageCache, updateMessageCache } from '../../containers/MessageProvider';
 import { createMessage, updateMessage } from '../../helpers/message/messageExport';
 import { createEquivalentEmbeddeds } from '../../helpers/embedded/embeddeds';
-
-const { ALL_DRAFTS, DRAFTS } = MAILBOX_LABEL_IDS;
 
 /**
  * Only takes technical stuff from the updated message
@@ -97,8 +92,9 @@ export const useDeleteDraft = () => {
         async (message: MessageExtended) => {
             await api(
                 deleteMessages(
-                    [message.data?.ID],
-                    Number(hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS)
+                    [message.data?.ID]
+                    // There is an issue in the API, restore that line when fixed
+                    // hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS
                 )
             );
             messageCache.delete(message.localID || '');
