@@ -1,0 +1,46 @@
+/*
+ * Static colors that keep the same between each visual theme
+ */
+
+:root {
+	--signal-danger-darken-40: #a01537;
+	--signal-danger-darken-20: #bc1934;
+	--signal-danger: #e32939;
+	--signal-danger-lighten-20: #f24055;
+	--signal-danger-lighten-40: #f26176;
+	--signal-danger-contrast: white;
+
+	--signal-warning-darken-40: #eaa119;
+	--signal-warning-darken-20: #eab219;
+	--signal-warning: #eac819;
+	--signal-warning-lighten-20: #f4d44e;
+	--signal-warning-lighten-40: #f9e073;
+	--signal-warning-contrast: #222222;
+
+	--signal-success-darken-40: #1f7736;
+	--signal-success-darken-20: #2c9146;
+	--signal-success: #36a657;
+	--signal-success-lighten-20: #46bc64;
+	--signal-success-lighten-40: #5ecc7a;
+	--signal-success-contrast: white;
+
+	--signal-info-darken-40: #007aaa;
+	--signal-info-darken-20: #008ec6;
+	--signal-info: #00a3f5;
+	--signal-info-lighten-20: #03b6fc;
+	--signal-info-lighten-40: #27ccff;
+	--signal-info-contrast: white;
+
+	@each $signal in (danger, warning, success, info) {
+		--interaction-#{$signal}: var(--signal-#{$signal});
+		--interaction-#{$signal}-hover: var(--signal-#{$signal}-darken-20);
+		--interaction-#{$signal}-active: var(--signal-#{$signal}-darken-40);
+		--interaction-#{$signal}-disabled: var(--signal-#{$signal}-lighten-40);
+		--interaction-#{$signal}-contrast: var(--signal-#{$signal}-contrast);
+	}
+
+	--shadow-norm: 0 calc(var(--px)) calc(var(--px) * 4)
+		rgb(0 0 0 / var(--shadow-norm-opacity, 0.1));
+	--shadow-lifted: 0 calc(var(--px) * 8) calc(var(--px) * 24)
+		rgb(0 0 0 / var(--shadow-lifted-opacity, 0.2));
+}

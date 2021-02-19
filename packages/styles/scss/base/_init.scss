@@ -4,6 +4,10 @@
 	box-sizing: inherit; // From html
 }
 
+:root {
+	--px: 1em / $base-font-size; // For pixel-based calculation on css variables
+}
+
 html {
 	box-sizing: border-box;
 
