@@ -6,7 +6,7 @@ import {
     UpdateCalendarEventSyncData,
 } from 'proton-shared/lib/api/calendars';
 import getCreationKeys from 'proton-shared/lib/calendar/integration/getCreationKeys';
-import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
+import { createCalendarEvent, getHasSharedKeyPacket } from 'proton-shared/lib/calendar/serialize';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { useGetAddressKeys, useGetCalendarKeys } from 'react-components';
@@ -184,10 +184,15 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                 };
 
                 if (isSwitchCalendar) {
+                    if (!getHasSharedKeyPacket(dataComplete)) {
+                        throw new Error('Missing shared key packet');
+                    }
                     return {
-                        Event: dataComplete,
-                        UID: veventComponent.uid.value,
-                        SharedEventID: Event.SharedEventID,
+                        Event: {
+                            ...dataComplete,
+                            UID: veventComponent.uid.value,
+                            SharedEventID: Event.SharedEventID,
+                        },
                     };
                 }
 
