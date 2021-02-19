@@ -23,17 +23,17 @@ const CalendarOnboardingModal = (props: any) => {
                 };
                 return (
                     <OnboardingStep
-                        title={c(`Onboarding Proton Calendar`).t`Your secure calendar is ready`}
-                        submit={c(`Onboarding Proton Calendar`).t`Start using ${appName}`}
+                        title={c(`Onboarding ProtonCalendar`).t`Your secure calendar is ready`}
+                        submit={c(`Onboarding ProtonCalendar`).t`Start using ${appName}`}
                         onSubmit={onClose}
-                        close={c(`Onboarding Proton Calendar`).t`Import your events`}
+                        close={c(`Onboarding ProtonCalendar`).t`Import your events`}
                         onClose={handleClose}
                     >
                         <OnboardingContent
-                            description={c(`Onboarding Proton Calendar`)
+                            description={c(`Onboarding ProtonCalendar`)
                                 .t`${CALENDAR_APP_NAME} keeps your plans secure with end-to-end encryption, so we can’t see what you’re doing.`}
                             img={<img src={getLightOrDark(onboardingWelcome, onboardingWelcomeDark)} alt={appName} />}
-                            text={c(`Onboarding Proton Calendar`)
+                            text={c(`Onboarding ProtonCalendar`)
                                 .t`We recommend importing your events from your existing calendar. Our import tool is quick and easy, and works with any other provider.`}
                         />
                     </OnboardingStep>
