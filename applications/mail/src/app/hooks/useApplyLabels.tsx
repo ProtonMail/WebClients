@@ -4,9 +4,12 @@ import { useApi, useNotifications, useEventManager, useLabels, classnames } from
 import { labelMessages, unlabelMessages } from 'proton-shared/lib/api/messages';
 import { labelConversations, unlabelConversations } from 'proton-shared/lib/api/conversations';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import UndoButton from '../components/notifications/UndoButton';
 import { isMessage as testIsMessage } from '../helpers/elements';
+import { getMessagesAuthorizedToMove } from '../helpers/message/messages';
 import { Element } from '../models/element';
 import { useOptimisticApplyLabels } from './optimistic/useOptimisticApplyLabels';
 
@@ -80,22 +83,35 @@ const getNotificationTextAdded = (isMessage: boolean, elementsCount: number, lab
     );
 };
 
+const joinSentences = (success: string, notAuthorized: string) => [success, notAuthorized].filter(isTruthy).join(' ');
+
 const getNotificationTextMoved = (
     isMessage: boolean,
     elementsCount: number,
+    messagesNotAuthorizedToMove: number,
     folderName: string,
     folderID?: string,
     fromLabelID?: string
 ) => {
+    const notAuthorized = messagesNotAuthorizedToMove
+        ? c('Info').ngettext(
+              msgid`${messagesNotAuthorizedToMove} message could not be moved.`,
+              `${messagesNotAuthorizedToMove} messages could not be moved.`,
+              messagesNotAuthorizedToMove
+          )
+        : '';
     if (folderID === SPAM) {
         if (isMessage) {
             if (elementsCount === 1) {
                 return c('Success').t`Message moved to spam and sender added to Block List.`;
             }
-            return c('Success').ngettext(
-                msgid`${elementsCount} message moved to spam and sender added to Block List.`,
-                `${elementsCount} messages moved to spam and sender added to Block List.`,
-                elementsCount
+            return joinSentences(
+                c('Success').ngettext(
+                    msgid`${elementsCount} message moved to spam and sender added to Block List.`,
+                    `${elementsCount} messages moved to spam and sender added to Block List.`,
+                    elementsCount
+                ),
+                notAuthorized
             );
         }
         if (elementsCount === 1) {
@@ -113,10 +129,13 @@ const getNotificationTextMoved = (
             if (elementsCount === 1) {
                 return c('Success').t`Message moved to ${folderName} and sender removed from Block List.`;
             }
-            return c('Success').ngettext(
-                msgid`${elementsCount} message moved to ${folderName} and sender removed from Block List.`,
-                `${elementsCount} messages moved to ${folderName} and sender removed from Block List.`,
-                elementsCount
+            return joinSentences(
+                c('Success').ngettext(
+                    msgid`${elementsCount} message moved to ${folderName} and sender removed from Block List.`,
+                    `${elementsCount} messages moved to ${folderName} and sender removed from Block List.`,
+                    elementsCount
+                ),
+                notAuthorized
             );
         }
         if (elementsCount === 1) {
@@ -133,10 +152,13 @@ const getNotificationTextMoved = (
         if (elementsCount === 1) {
             return c('Success').t`Message moved to ${folderName}.`;
         }
-        return c('Success').ngettext(
-            msgid`${elementsCount} message moved to ${folderName}.`,
-            `${elementsCount} messages moved to ${folderName}.`,
-            elementsCount
+        return joinSentences(
+            c('Success').ngettext(
+                msgid`${elementsCount} message moved to ${folderName}.`,
+                `${elementsCount} messages moved to ${folderName}.`,
+                elementsCount
+            ),
+            notAuthorized
         );
     }
 
@@ -241,8 +263,19 @@ export const useMoveToFolder = () => {
                 ? !([ALL_MAIL, ALL_DRAFTS, ALL_SENT, SPAM] as string[]).includes(fromLabelID)
                 : ![...labelIDs, ALL_DRAFTS, DRAFTS, ALL_SENT, SENT, STARRED, ALL_MAIL, SPAM].includes(fromLabelID);
             const elementIDs = elements.map((element) => element.ID);
+            const authorizedToMove = isMessage
+                ? getMessagesAuthorizedToMove(elements as Message[], folderID)
+                : elements;
 
-            const rollback = optimisticApplyLabels(elements, { [folderID]: true }, true);
+            if (!authorizedToMove.length) {
+                createNotification({
+                    text: c('Error display when performing invalid move on message').t`This action cannot be performed`,
+                    type: 'error',
+                });
+                return;
+            }
+
+            const rollback = optimisticApplyLabels(authorizedToMove, { [folderID]: true }, true);
 
             const handleDo = async () => {
                 try {
@@ -264,7 +297,8 @@ export const useMoveToFolder = () => {
 
             const notificationText = getNotificationTextMoved(
                 isMessage,
-                elementIDs.length,
+                authorizedToMove.length,
+                elementIDs.length - authorizedToMove.length,
                 folderName,
                 folderID,
                 fromLabelID
