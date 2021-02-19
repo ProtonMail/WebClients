@@ -1,3 +1,4 @@
+import { RequireSome } from '../interfaces/utils';
 import { PaginationParams } from './interface';
 import { Attendee, Calendar, CalendarEventData, CalendarSettings, CalendarUserSettings } from '../interfaces/calendar';
 
@@ -178,6 +179,11 @@ export interface CreateCalendarEventData extends CreateCalendarEventBlobData {
 export interface CreateSingleCalendarEventData extends CreateCalendarEventData {
     MemberID: string;
 }
+export interface CreateLinkedCalendarEventData
+    extends RequireSome<Partial<CreateCalendarEventData>, 'SharedKeyPacket'> {
+    UID: string;
+    SharedEventID: string;
+}
 export const createEvent = (calendarID: string, data: CreateSingleCalendarEventData) => ({
     url: `${CALENDAR_V1}/${calendarID}/events`,
     method: 'post',
@@ -269,9 +275,7 @@ export interface UpdateCalendarEventSyncData {
     Event?: Omit<CreateCalendarEventData, 'SharedKeyPacket' | 'CalendarKeyPacket'>;
 }
 export interface CreateLinkedCalendarEventsSyncData {
-    UID: string;
-    SharedEventID: string;
-    Event: CreateCalendarEventData;
+    Event: CreateLinkedCalendarEventData;
 }
 export interface SyncMultipleEventsData {
     MemberID: string;
