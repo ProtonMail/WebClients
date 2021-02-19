@@ -49,6 +49,7 @@ export const decrypt = async (
 
     try {
         const { data } = await decryptMessage({ message, privateKeys });
+
         if (data && typeof data !== 'string') {
             throw new Error('Unknown data');
         }
@@ -90,11 +91,19 @@ export const decryptSigned = async (
     { Data, Signature }: ContactCard,
     { publicKeys, privateKeys }: KeysPair
 ): Promise<ContactClearTextData> => {
+    let message;
+    let signature;
+
     try {
         if (!Signature) {
             return { type: FAIL_TO_LOAD, error: new Error(c('Error').t`Missing signature`) };
         }
-        const [message, signature] = await Promise.all([getMessage(Data), getSignature(Signature)]);
+        [message, signature] = await Promise.all([getMessage(Data), getSignature(Signature)]);
+    } catch (error) {
+        return { type: FAIL_TO_READ, error };
+    }
+
+    try {
         const { data, verified } = await decryptMessage({
             message,
             privateKeys,
@@ -112,7 +121,7 @@ export const decryptSigned = async (
 
         return { type: SUCCESS, data };
     } catch (error) {
-        return { type: FAIL_TO_READ, error };
+        return { type: FAIL_TO_DECRYPT, error };
     }
 };
 
