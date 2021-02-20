@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useApi, useGetCalendarEventRaw } from 'react-components';
 import { fromUnixTime, differenceInMilliseconds } from 'date-fns';
 import { getEvent as getEventRoute } from 'proton-shared/lib/api/calendars';
-import { create, isEnabled, request } from 'proton-shared/lib/helpers/desktopNotification';
+import { create } from 'proton-shared/lib/helpers/desktopNotification';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { CalendarAlarm, CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -42,13 +42,6 @@ const AlarmWatcher = ({ alarms = [], tzid, calendarsEventsCacheRef }: Props) => 
     const api = useApi();
     const getCalendarEventRaw = useGetCalendarEventRaw();
     const cacheRef = useRef<Set<string>>();
-
-    // temporary code for standalone app
-    useEffect(() => {
-        if (!isEnabled()) {
-            request();
-        }
-    }, []);
 
     useEffect(() => {
         let timeoutHandle = 0;
