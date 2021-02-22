@@ -154,3 +154,15 @@ export const updateDelaySend = (DelaySendSeconds: number) => ({
     method: 'put',
     data: { DelaySendSeconds },
 });
+
+export const updateEnableFolderColor = (EnableFolderColor: number) => ({
+    url: 'mail/v4/settings/enablefoldercolor',
+    method: 'put',
+    data: { EnableFolderColor },
+});
+
+export const updateInheritParentFolderColor = (InheritParentFolderColor: number) => ({
+    url: 'mail/v4/settings/inheritparentfoldercolor',
+    method: 'put',
+    data: { InheritParentFolderColor },
+});
