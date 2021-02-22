@@ -534,6 +534,10 @@
 	<path d="M15,14H1V2H6V4h9ZM2,13H14V5H5V3H2Z" />
 </g>
 
+<g id="shape-folder-filled">
+	<path d="M15 14H1V2h5v2h9v10z"/>
+</g>
+
 <g id="shape-folder-label">
 	<path d="M14.05,3.22l-.46,0-.18-1.86L9,.89,8.64,1,1.53,8.06,2.8,9.33,2.16,10l5.15,5.15L14.42,8l.05-.33ZM2.94,8.06,9.09,1.91l3.41.33.08.84-3-.28-.33,0L3.5,8.62Zm4.37,5.63L3.58,10,9.72,3.81l3.41.33.33,3.4Z" />
 </g>
@@ -908,6 +912,12 @@
 <g id="shape-parent-folder">
 	<path d="M8,2H3V5H1v9H13V12h2V4H8Zm4,11H2V6H5V8h7Zm2-8v6H13V7H6V5H4V3H7V5Z" />
 </g>
+
+<g id="shape-parent-folder-filled">
+	<path d="M15 15H1V3h5v2h9v10z"/>
+	<path d="M7 2H2V1h6v2h7v1H7V2z"/>
+</g>
+
 
 <g id="shape-pause">
 	<rect x="5" y="3" width="1" height="10" />
