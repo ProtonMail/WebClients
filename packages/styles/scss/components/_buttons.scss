@@ -1,7 +1,7 @@
 /*
  * Button shape
  */
-.button {
+.button-henlo {
 	padding: em(5) em(16) em(6); // design want 34px height
 	border: 1px solid var(--button-default-border-color, transparent);
 	border-radius: $global-border-radius;
@@ -53,7 +53,7 @@
  */
 @each $color in (norm, weak, danger, warning, success, info) {
 	// Default shape
-	.button-#{$color} {
+	.button-solid-#{$color} {
 		--button-default-background-color: var(--interaction-#{$color});
 		--button-default-text-color: var(--interaction-#{$color}-contrast);
 
@@ -124,20 +124,29 @@
 /*
  * Modifiers
  */
-.button-large {
-	padding: em(10) em(20) em(9); // design want 42px height
-}
 
 .button-small {
 	padding: em(1) em(12) em(2); // design want 26px height
 }
 
-.button-for-icon {
-	padding: em(8);
+.button-large {
+	padding: em(10) em(20) em(9); // design want 42px height
 }
 
-.button-small-for-icon {
-	padding: em(4);
+.button-for-icon {
+	padding: em(8);
+
+	&.button-small {
+		padding: em(4);
+	}
+
+	&.button-large {
+		padding: em(12);
+	}
+
+	svg {
+		display: block;
+	}
 }
 
 .button-pill {
@@ -171,7 +180,7 @@
 /*
  * For select component
  */
-.button.select {
+.button-henlo.select {
 	background-color: transparent;
 	color: var(--text-norm);
 	// height: $default-height-fields;

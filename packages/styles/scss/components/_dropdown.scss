@@ -201,10 +201,6 @@
 			flex: 0 0 0.3rem;
 			background: var(--dropdown-bg-color);
 		}
-
-		button:not(.button) {
-			color: currentColor;
-		}
 	}
 
 	@include respond-to($breakpoint-small, 'max') {
