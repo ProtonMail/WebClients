@@ -519,15 +519,15 @@ ${eventDetailsText}`;
         }
         if (partstat === ICAL_ATTENDEE_STATUS.ACCEPTED) {
             return c('Email body for response to invitation')
-                .t`${emailAddress} has accepted your invitation to: ${eventTitle}`;
+                .t`${emailAddress} has accepted your invitation to ${eventTitle}`;
         }
         if (partstat === ICAL_ATTENDEE_STATUS.TENTATIVE) {
             return c('Email body for response to invitation')
-                .t`${emailAddress} has tentatively accepted your invitation to: ${eventTitle}`;
+                .t`${emailAddress} has tentatively accepted your invitation to ${eventTitle}`;
         }
         if (partstat === ICAL_ATTENDEE_STATUS.DECLINED) {
             return c('Email body for response to invitation')
-                .t`${emailAddress} has declined your invitation to: ${eventTitle}`;
+                .t`${emailAddress} has declined your invitation to ${eventTitle}`;
         }
         throw new Error('Unanswered partstat');
     }
