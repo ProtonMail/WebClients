@@ -36,9 +36,6 @@
 
 	&[disabled],
 	&.is-disabled {
-		border-color: var(--button-disabled-border-color, transparent);
-		background-color: var(--button-disabled-background-color, transparent);
-		color: var(--button-disabled-text-color, inherit);
 		pointer-events: none;
 
 		&:not([aria-busy='true']) {
@@ -60,7 +57,7 @@
 		--button-default-background-color: var(--interaction-#{$color});
 		--button-default-text-color: var(--interaction-#{$color}-contrast);
 
-		@each $state in (hover, active, disabled) {
+		@each $state in (hover, active) {
 			--button-#{$state}-background-color: var(
 				--interaction-#{$color}-#{$state}
 			);
@@ -80,7 +77,7 @@
 			--button-default-text-color: var(--interaction-#{$color});
 		}
 
-		@each $state in (hover, active, disabled) {
+		@each $state in (hover, active) {
 			--button-#{$state}-border-color: var(
 				--interaction-#{$color}-#{$state}
 			);
@@ -112,14 +109,6 @@
 			--button-#{$state}-text-color: var(
 				--interaction-#{$color}-contrast
 			);
-		}
-
-		--button-disabled-background-color: transparent;
-
-		@if $color == 'weak' {
-			--button-disabled-text-color: var(--interaction-weak-contrast);
-		} @else {
-			--button-disabled-text-color: var(--interaction-#{$color}-disabled);
 		}
 	}
 }

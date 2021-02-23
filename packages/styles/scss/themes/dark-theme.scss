@@ -216,24 +216,22 @@ summary {
 	/*
 	* TO BE REMOVED!
 	*/
-	--primary-darken-40: #3c4b88;
-	--primary-darken-20: #5064b6;
-	--primary: #657ee4;
-	--primary-lighten-20: #8498e9;
 	--primary-lighten-40: #a2b1ee;
+	--primary-lighten-20: #8498e9;
+	--primary: #657ee4;
+	--primary-darken-20: #5064b6;
+	--primary-darken-40: #3c4b88;
 
 	--text-norm: white;
 
 	--interaction-norm: var(--primary);
 	--interaction-norm-hover: var(--primary-darken-20);
 	--interaction-norm-active: var(--primary-darken-40);
-	--interaction-norm-disabled: var(--primary-lighten-40);
 	--interaction-norm-contrast: white;
 
 	--interaction-weak: #3c414e;
 	--interaction-weak-hover: #494e5b;
 	--interaction-weak-active: #5c6270;
-	--interaction-weak-disabled: #303540;
 	--interaction-weak-contrast: var(--text-norm);
 	/*
 	* / TO BE REMOVED!
