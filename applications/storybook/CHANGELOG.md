@@ -1,3 +1,9 @@
+# 0.0.10 (23 February, 2021)
+
+Added new Button API https://design-system.protontech.ch/?path=/docs/components-button
+
+Opt into new Button API possible by using any of the three new props `shape`, `color` or `size`.
+
 # 0.0.9 (17 February, 2021)
 
 Added missing documentation for `position: sticky` helpers.
