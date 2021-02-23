@@ -72,6 +72,35 @@ describe('FocusTrap', () => {
         expect(getByTestId('root')).toHaveAttribute('tabIndex', '-1');
     });
 
+    it('should focus root with ignored elements', () => {
+        const Component = () => {
+            const rootRef = useRef<HTMLDivElement>(null);
+            const props = useFocusTrap({ rootRef });
+            return (
+                <div ref={rootRef} {...props} data-testid="root">
+                    <button data-focus-ignore="true" data-testid="button" />
+                </div>
+            );
+        };
+        const { getByTestId } = render(<Component />);
+        expect(getByTestId('root')).toHaveFocus();
+    });
+
+    it('should not focus ignored elements', () => {
+        const Component = () => {
+            const rootRef = useRef<HTMLDivElement>(null);
+            const props = useFocusTrap({ rootRef });
+            return (
+                <div ref={rootRef} {...props} data-testid="root">
+                    <button data-focus-ignore="true" data-testid="button" />
+                    <button data-testid="button2" />
+                </div>
+            );
+        };
+        const { getByTestId } = render(<Component />);
+        expect(getByTestId('button2')).toHaveFocus();
+    });
+
     it('should set tabIndex on root when active', () => {
         const Component = () => {
             const [active, setActive] = useState(false);

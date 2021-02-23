@@ -58,6 +58,7 @@ const Info = ({
                 {...tooltipHandlers}
                 aria-describedby={uid}
                 type="button"
+                data-focus-ignore="true"
             >
                 <Icon className={classnames(['icon-16p color-primary', className])} name="info" {...rest} />
             </button>
