@@ -224,7 +224,7 @@ const loginContainer = (
                     handleLogin(username, password).catch((e) => {
                         state = {};
                         // Api error, already shown
-                        if (e.status) {
+                        if (!e || !e.message || e.status) {
                             return;
                         }
                         notification.error(e.message);
@@ -251,7 +251,6 @@ const loginContainer = (
                 }
                 track(
                     handleUnlock(password).catch((e) => {
-                        console.log(e);
                         if (e.name !== 'PasswordError') {
                             handleCancel();
                         } else {

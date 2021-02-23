@@ -12,7 +12,7 @@ function handle9001($http, humanVerificationModal) {
                         humanVerificationModal.deactivate();
 
                         if (!parameters) {
-                            return reject();
+                            return reject({});
                         }
 
                         return resolve(
