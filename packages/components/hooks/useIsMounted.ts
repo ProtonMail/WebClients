@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 const useIsMounted = () => {
     const ref = useRef(false);
@@ -10,9 +10,9 @@ const useIsMounted = () => {
         };
     }, []);
 
-    return () => {
+    return useCallback(() => {
         return ref.current;
-    };
+    }, []);
 };
 
 export default useIsMounted;
