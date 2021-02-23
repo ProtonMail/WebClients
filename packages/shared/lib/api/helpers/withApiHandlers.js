@@ -261,7 +261,7 @@ export default ({ call, UID, onUnlock, onError, onVerification }) => {
                     const onVerify = (token, tokenType) => {
                         return call({
                             ...options,
-                            silence: [...silence, API_CUSTOM_ERROR_CODES.TOKEN_INVALID],
+                            silence: [...(Array.isArray(silence) ? silence : []), API_CUSTOM_ERROR_CODES.TOKEN_INVALID],
                             headers: {
                                 ...options.headers,
                                 'x-pm-human-verification-token': token,
