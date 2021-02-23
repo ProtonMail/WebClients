@@ -12,13 +12,13 @@ import {
     useConfig,
     useModals,
     useUser,
-    useLoading,
     useApi,
     useEventManager,
     useUserSettings,
     useOrganization,
+    useLoading,
 } from '../../hooks';
-import { usePopperAnchor, Dropdown, Icon, Toggle, PrimaryButton, AppLink, Href } from '../../components';
+import { usePopperAnchor, Dropdown, Icon, Toggle, AppLink, Href, Button } from '../../components';
 import { generateUID } from '../../helpers';
 import { ToggleState } from '../../components/toggle/Toggle';
 import UserDropdownButton from './UserDropdownButton';
@@ -37,7 +37,7 @@ const UserDropdown = ({ ...rest }) => {
     const { createModal } = useModals();
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const [loading, withLoading] = useLoading();
+    const [loading, withLoading] = useLoading(false);
 
     const handleSupportUsClick = () => {
         createModal(<DonateModal />);
@@ -57,10 +57,13 @@ const UserDropdown = ({ ...rest }) => {
         close();
     };
 
-    const handleThemeToggle = async () => {
-        const newThemeType = userSettings.ThemeType === ThemeTypes.Dark ? ThemeTypes.Default : ThemeTypes.Dark;
-        await api(updateThemeType(newThemeType));
+    const handleThemeChange = async (themeType: ThemeTypes) => {
+        await api(updateThemeType(themeType));
         await call();
+    };
+
+    const handleThemeToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
+        withLoading(handleThemeChange(e.target.checked ? ThemeTypes.Dark : ThemeTypes.Default));
     };
 
     return (
@@ -143,7 +146,7 @@ const UserDropdown = ({ ...rest }) => {
                                 title={c('Title').t`Toggle display mode`}
                                 checked={userSettings.ThemeType === ThemeTypes.Dark}
                                 loading={loading}
-                                onChange={() => withLoading(handleThemeToggle())}
+                                onChange={handleThemeToggle}
                                 label={(key: ToggleState) => {
                                     const alt =
                                         key === ToggleState.on
@@ -164,13 +167,14 @@ const UserDropdown = ({ ...rest }) => {
                     </li>
                     <li className="dropdown-item-hr mb0-5" aria-hidden="false" />
                     <li className="pt0-5 pb0-5 pl1 pr1 flex">
-                        <PrimaryButton
+                        <Button
+                            color="norm"
                             className="w100 text-center navigationUser-logout"
                             onClick={handleLogout}
                             data-cy-header-user-dropdown="logout"
                         >
                             {c('Action').t`Sign out`}
-                        </PrimaryButton>
+                        </Button>
                     </li>
                 </ul>
             </Dropdown>

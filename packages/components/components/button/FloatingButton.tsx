@@ -1,13 +1,14 @@
 import React from 'react';
 import Icon from '../icon/Icon';
-import PrimaryButton from './PrimaryButton';
+import PrimaryButton, { PrimaryButtonProps } from './PrimaryButton';
 import { classnames } from '../../helpers';
 
-interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+interface Props extends PrimaryButtonProps {
     icon: string;
     title?: string;
     className?: string;
 }
+
 const FloatingButton = ({ icon, title, className, ...rest }: Props) => {
     return (
         <PrimaryButton className={classnames(['fab flex', className])} {...rest}>

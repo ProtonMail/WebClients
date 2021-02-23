@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Props as ButtonProps } from '../button/Button';
+import { ButtonProps } from '../button/Button';
 import PrimaryButton from '../button/PrimaryButton';
 import { classnames } from '../../helpers';
 
