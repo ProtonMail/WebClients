@@ -2,7 +2,8 @@
 import themeDarkSvg from 'design-system/assets/img/pm-images/theme-dark.svg';
 import themeTestSvg from 'design-system/assets/img/pm-images/theme-company.svg';
 import themeDarkmodeSvg from 'design-system/assets/img/pm-images/theme-darkmode.svg';
-import darkMode from 'design-system/_sass/pm-styles/_pm-dark-theme.scss';
+import defaultTheme from 'design-system/scss/themes/default-theme.scss';
+import darkTheme from 'design-system/scss/themes/dark-theme.scss';
 
 import { c } from 'ttag';
 
@@ -23,18 +24,18 @@ export enum ThemeTypes {
 export const PROTON_THEMES = {
     DEFAULT: {
         getI18NLabel() {
-            return c('Theme').t`Default mode`;
+            return c('Theme').t`Default`;
         },
         identifier: ThemeTypes.Default,
         src: themeDarkSvg,
-        theme: '',
+        theme: defaultTheme.toString(),
     },
     DARK: {
         getI18NLabel() {
-            return c('Theme').t`Dark mode`;
+            return c('Theme').t`Dark`;
         },
         identifier: ThemeTypes.Dark,
         src: themeDarkmodeSvg,
-        theme: darkMode.toString(),
+        theme: darkTheme.toString(),
     },
 } as const;
