@@ -5,6 +5,8 @@ import { traceError } from 'proton-shared/lib/helpers/sentry';
 
 import useNotifications from './useNotifications';
 
+const ignoreErrors = ['RetryAfterError', 'InactiveSession', 'AppVersionBadError', 'CancelVerification', 'CancelUnlock'];
+
 const useErrorHandler = () => {
     const { createNotification } = useNotifications();
 
@@ -13,7 +15,7 @@ const useErrorHandler = () => {
         const errorMessage = error.message || c('Error').t`Unknown error`;
 
         // Bad app version and unreachable errors are handled in a top banner
-        const shouldNotify = notify && error.name !== 'AppVersionBadError' && !getIsUnreachableError(error);
+        const shouldNotify = notify && !ignoreErrors.includes(error.name) && !getIsUnreachableError(error);
         if (shouldNotify) {
             createNotification({ type: 'error', text: apiErrorMessage || errorMessage });
         }
