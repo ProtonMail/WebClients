@@ -46,12 +46,9 @@ export const Sandbox = () => {
     const [selectedShape, setSelectedShape] = useState<Required<ButtonProps>['shape']>('solid');
     const [selectedColor, setSelectedColor] = useState<Required<ButtonProps>['color']>('weak');
     const [selectedSize, setSelectedSize] = useState<Required<ButtonProps>['size']>('medium');
-    const [selectedTag, setSelectedTag] = useState('button');
-
-    const href = selectedTag === 'a' ? 'https://protonmail.com' : undefined;
 
     const button = (
-        <Button href={href} shape={selectedShape} color={selectedColor} size={selectedSize}>
+        <Button shape={selectedShape} color={selectedColor} size={selectedSize}>
             {selectedShape} {selectedColor} {selectedSize}
         </Button>
     );
@@ -84,18 +81,6 @@ export const Sandbox = () => {
                         onChange={(v) => setSelectedSize(v)}
                         value={selectedSize}
                         options={sizes.map((size) => ({ value: size, label: size }))}
-                    />
-                </div>
-                <div>
-                    <strong className="block mb1">Tag</strong>
-                    <RadioGroup
-                        name="selected-tag"
-                        onChange={(v) => setSelectedTag(v)}
-                        value={selectedTag}
-                        options={[
-                            { value: 'button', label: '<button />' },
-                            { value: 'a', label: '<a />' },
-                        ]}
                     />
                 </div>
                 <div className={buttonContainerClassName}>{button}</div>
