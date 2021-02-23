@@ -2,7 +2,7 @@
  * Come to the Dark Mode, we have wookies
  */
 
-@import './pm-buttons-mixins';
+@import '../pm-styles/pm-buttons-mixins';
 
 // forms/buttons
 .button:not(.button-blue):not(.pv-button-green):not(.button--primary):not(.button--primaryborderEvenInDarkMode):not(.button--link):not(.button--error):not(.button--warning):not(.button--redborder):not(.button--primaryborder):not(.button--primaryborder-dark),
@@ -166,7 +166,7 @@ summary {
 }
 
 .appConfigBody-darkmode, // for Angular
- .isDarkMode {
+  .isDarkMode {
 	.display-on-darkmode {
 		display: flex;
 	}
