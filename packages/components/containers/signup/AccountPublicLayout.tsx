@@ -54,7 +54,7 @@ const AccountPublicLayout = ({ children, title, subtitle, aside, larger, left, c
                             <main className="on-mobile-p1 flex-item-fluid sign-layout-main flex-no-min-children flex-column flex-nowrap">
                                 <header className="flex flex-align-items-center flex-nowrap mb2">
                                     <span className="flex-item-fluid flex">{left}</span>
-                                    <span className="text-center flex w70p">{center}</span>
+                                    <span className="text-center flex w90p">{center}</span>
                                     <span className="flex-item-fluid flex text-right" />
                                 </header>
                                 <div className="mb2 flex-item-fluid sign-layout-main-content">
