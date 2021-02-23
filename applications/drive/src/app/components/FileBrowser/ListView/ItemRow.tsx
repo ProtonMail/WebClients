@@ -63,6 +63,26 @@ const ItemRow = ({
 
     const { isDesktop } = useActiveBreakpoint();
 
+    const generateExpiresCell = () => {
+        const expiredPart = isDesktop ? (
+            <span className="ml0-25">{c('Label').t`(Expired)`}</span>
+        ) : (
+            <span>{c('Label').t`Expired`}</span>
+        );
+
+        return (
+            item.SharedUrl &&
+            (item.SharedUrl.ExpireTime ? (
+                <div className="flex flex-nowrap">
+                    {(isDesktop || !item.UrlsExpired) && <TimeCell time={item.SharedUrl.ExpireTime} />}
+                    {item.UrlsExpired ? expiredPart : null}
+                </div>
+            ) : (
+                c('Label').t`Never`
+            ))
+        );
+    };
+
     return (
         <>
             {draggable && dragMoveControls && (
@@ -126,21 +146,7 @@ const ItemRow = ({
                     </TableCell>
                 )}
 
-                {columns.includes('share_expires') && (
-                    <TableCell className="m0 w30">
-                        {item.SharedUrl &&
-                            (item.SharedUrl.ExpireTime ? (
-                                <div className="flex flex-nowrap">
-                                    <TimeCell time={item.SharedUrl.ExpireTime} />
-                                    {item.UrlsExpired ? (
-                                        <span className="ml0-25">{c('Label').t`(Expired)`}</span>
-                                    ) : null}
-                                </div>
-                            ) : (
-                                c('Label').t`Never`
-                            ))}
-                    </TableCell>
-                )}
+                {columns.includes('share_expires') && <TableCell className="m0 w30">{generateExpiresCell()}</TableCell>}
 
                 {columns.includes('size') && (
                     <TableCell className={classnames(['m0', isDesktop ? 'w10' : 'w15'])}>
