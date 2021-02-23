@@ -1,4 +1,5 @@
 export { default as Button } from './Button';
+export * from './Button';
 export { default as ButtonGroup } from './ButtonGroup';
 export { default as Copy } from './Copy';
 export { default as ErrorButton } from './ErrorButton';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { classnames } from '../../helpers';
 
-export interface Props extends React.ComponentPropsWithRef<'button'> {
+export interface Props extends Omit<React.ComponentPropsWithRef<'button'>, 'color'> {
     loading?: boolean;
     isSelected?: boolean;
     /*

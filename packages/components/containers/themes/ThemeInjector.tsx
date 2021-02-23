@@ -5,9 +5,14 @@ import { DARK_MODE_CLASS } from 'proton-shared/lib/constants';
 import { useUserSettings } from '../../hooks';
 
 const getStyle = (themeType: ThemeTypes) => {
+    if (themeType === ThemeTypes.Default) {
+        return PROTON_THEMES.DEFAULT.theme;
+    }
+
     if (themeType === ThemeTypes.Dark) {
         return PROTON_THEMES.DARK.theme;
     }
+
     return '';
 };
 

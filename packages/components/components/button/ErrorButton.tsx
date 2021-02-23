@@ -1,5 +1,5 @@
 import React from 'react';
-import Button, { Props as ButtonProps } from './Button';
+import Button, { ButtonProps } from './Button';
 import { classnames } from '../../helpers';
 
 const ErrorButton = ({ children, className, ...rest }: ButtonProps) => {
