@@ -1,3 +1,9 @@
+# [4.0.0-beta.10] - 2021-02-24
+
+## Fixed
+
+- Downloading of large files (1GB or more) should be more stable, due to the implemented pagination
+
 # [4.0.0-beta.9] - 2021-02-10
 
 Improvements and fixes to make your everyday experience with Proton Drive better.
