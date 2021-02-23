@@ -236,7 +236,7 @@ const Composer = ({
         let timeout: number | undefined;
 
         if (!opening) {
-            timeout = setTimeout(() => {
+            timeout = window.setTimeout(() => {
                 if (getRecipients(syncedMessage.data).length === 0) {
                     addressesFocusRef.current();
                 } else {
