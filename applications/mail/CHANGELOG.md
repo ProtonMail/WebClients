@@ -1,3 +1,35 @@
+# [4.0.0 - Beta 37] - 2021-02-24
+
+## Improvements
+
+-   Improved translations in the custom filter creation flow
+-   Added the ability to use the "Esc" key to close the "Encryption" and "Expiration" modals
+-   Improved the implementation of the focus trap to make keyboard navigation easier
+-   Added scrollbar styling to the "Expiration" modal
+-   Added the ability to sort labels alphabetically in Label settings
+-   Improved focus in composer navigation when using "Tab" key
+-   Improved the handling of various cases related to failed signature verification
+-   Added the ability to create new folders and labels directly from the lefthand menu
+-   Improved the handling of unauthorized actions like moving messages from Draft to Spam, Sent to Spam, Draft to Inbox and Sent to Inbox
+
+## Fixes
+
+-   Fixed an issue where saving a Draft would be possible several times at once
+-   Fixed an issue where quotation marks would appear in messages that have been forwarded/replied to
+-   Fixed an issue where empty drafts would be saved automatically
+-   Fixed an issue where the signature would be misplaced when switching between different sender aliases
+-   Fixed an issue where hyperlinks would not work in certain Safari versions
+-   Fixed an issue where some messages would reappear in the current list for less than a second after performing a "Move" action
+-   Fixed an issue where the number of participants in conversation would be displayed incorrectly when sending messages to own aliases
+-   Fixed an issue where a "Parent message in outbox" error would show if trying to forward a message while the "Undo" option is active
+-   Fixed an issue where beta.protonmail.com would be added to inserted links that have been modified several times
+-   Fixed an issue where using a keyword in advanced search would not return search results
+-   Fixed an issue where a filter title condition could not be modified when creating a filter directly from a message
+-   Fixed an issue where editing a Sieve filter using space or backspace key would move the focus to the bottom of the filter
+-   Fixed an issue where the draft would not be updated on web if updated manually from mobile
+-   Fixed an issue where a second opened composer draft could not be discarded using the Ctrl + Alt + Backspace shortcut
+-   Import Assistant: fixed a case where some folders were not shown during import customization
+
 # [4.0.0 - Beta 36] - 2021-02-09
 
 ## Improvements
