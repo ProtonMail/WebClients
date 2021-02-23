@@ -90,3 +90,4 @@ export { default as useErrorHandler } from './useErrorHandler';
 export { default as usePromoModalState } from './usePromoModalState';
 export * from './useHotkeys';
 export { default as useDragOver } from './useDragOver';
+export { default as useIsMounted } from './useIsMounted';
