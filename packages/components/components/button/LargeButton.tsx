@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Button, { Props as ButtonProps } from './Button';
+import Button, { ButtonProps } from './Button';
 import { classnames } from '../../helpers';
 
 const LargeButton = ({ children, className = '', ...rest }: ButtonProps) => {
