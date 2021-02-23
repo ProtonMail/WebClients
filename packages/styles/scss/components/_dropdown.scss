@@ -201,10 +201,6 @@
 			flex: 0 0 0.3rem;
 			background: var(--dropdown-bg-color);
 		}
-
-		button:not(.button) {
-			color: currentColor;
-		}
 	}
 
 	@include respond-to($breakpoint-small, 'max') {
@@ -258,7 +254,7 @@
 
 			&[disabled],
 			&.is-disabled {
-				@include button-disabled-state;
+				// @include button-disabled-state;
 				border: none;
 			}
 		}
@@ -391,7 +387,7 @@
 	&-link {
 		&[disabled],
 		&.is-disabled {
-			@include button-disabled-state-dm;
+			// @include button-disabled-state-dm;
 			border: none;
 		}
 	}

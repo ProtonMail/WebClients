@@ -2,7 +2,7 @@
  * Come to the Dark Mode, we have wookies
  */
 
-@import './pm-buttons-mixins';
+@import '../../_sass/pm-styles/pm-buttons-mixins';
 
 // forms/buttons
 .button:not(.button-blue):not(.pv-button-green):not(.button--primary):not(.button--primaryborderEvenInDarkMode):not(.button--link):not(.button--error):not(.button--warning):not(.button--redborder):not(.button--primaryborder):not(.button--primaryborder-dark),
@@ -166,7 +166,7 @@ summary {
 }
 
 .appConfigBody-darkmode, // for Angular
- .isDarkMode {
+  .isDarkMode {
 	.display-on-darkmode {
 		display: flex;
 	}
@@ -212,4 +212,28 @@ summary {
 	--color-input: #{$white};
 	--dropdown-box-shadow: rgb(0 0 0 / 0.75);
 	--bgcolor-meter-bar: rgb(0 0 0 / 0.375);
+
+	/*
+	* TO BE REMOVED!
+	*/
+	--primary-lighten-40: #a2b1ee;
+	--primary-lighten-20: #8498e9;
+	--primary: #657ee4;
+	--primary-darken-20: #5064b6;
+	--primary-darken-40: #3c4b88;
+
+	--text-norm: white;
+
+	--interaction-norm: var(--primary);
+	--interaction-norm-hover: var(--primary-darken-20);
+	--interaction-norm-active: var(--primary-darken-40);
+	--interaction-norm-contrast: white;
+
+	--interaction-weak: #3c414e;
+	--interaction-weak-hover: #494e5b;
+	--interaction-weak-active: #5c6270;
+	--interaction-weak-contrast: var(--text-norm);
+	/*
+	* / TO BE REMOVED!
+	*/
 }

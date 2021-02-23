@@ -4,6 +4,6 @@
  * @param {Number} $base - The base pixel value of the app
  * @return {Number} - The $px value converted in em
  */
-@function em($px, $base: $base-font) {
+@function em($px, $base: $base-font-size) {
 	@return ($px / $base) * 1em;
 }

@@ -1,0 +1,37 @@
+/*
+ * Static colors that keep the same between each visual theme
+ */
+
+:root {
+	--signal-danger: #d13f44;
+	--signal-danger-darken-20: #bf2b26;
+	--signal-danger-darken-40: #ad2111;
+	--signal-danger-contrast: white;
+
+	--signal-warning: #e6bb2e;
+	--signal-warning-darken-20: #dfa316;
+	--signal-warning-darken-40: #d98900;
+	--signal-warning-contrast: black;
+
+	--signal-success: #0e875b;
+	--signal-success-darken-20: #067852;
+	--signal-success-darken-40: #006949;
+	--signal-success-contrast: white;
+
+	--signal-info: #1578cf;
+	--signal-info-darken-20: #0a65cc;
+	--signal-info-darken-40: #0051c9;
+	--signal-info-contrast: white;
+
+	@each $signal in (danger, warning, success, info) {
+		--interaction-#{$signal}: var(--signal-#{$signal});
+		--interaction-#{$signal}-hover: var(--signal-#{$signal}-darken-20);
+		--interaction-#{$signal}-active: var(--signal-#{$signal}-darken-40);
+		--interaction-#{$signal}-contrast: var(--signal-#{$signal}-contrast);
+	}
+
+	--shadow-norm: 0 calc(var(--px)) calc(var(--px) * 4)
+		rgb(0 0 0 / var(--shadow-norm-opacity, 0.1));
+	--shadow-lifted: 0 calc(var(--px) * 8) calc(var(--px) * 24)
+		rgb(0 0 0 / var(--shadow-lifted-opacity, 0.2));
+}

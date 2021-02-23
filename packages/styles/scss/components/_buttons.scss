@@ -1,618 +1,219 @@
-/****************************************
- * MIXINS
- ****************************************/
-
-@mixin button-disabled-state($color: null) {
-	pointer-events: none;
-
-	@if $color==null {
-		background-color: $pm-global-muted;
-		border-color: $pm-global-border;
-		color: #{rgba($pm-global-grey, 0.3)};
-	} @else {
-		background-color: #{rgba($color, 0.2)};
-		border-color: #{rgba($color, 0.25)};
-		color: #{rgba($color, 0.5)};
-	}
-}
-
-@mixin button-disabled-state-dm() {
-	background-color: $pm-global-grey;
-	color: #{rgba($pm-global-muted, 0.3)};
-	pointer-events: none;
-	border-color: #{rgba($pm-global-muted, 0.3)};
-
-	& svg {
-		fill: #{rgba($pm-global-muted, 0.3)};
-	}
-}
-
-@mixin button-dark {
-	color: $white;
-	background-color: $pm-global-grey;
-	border-color: var(--bordercolor-input, $pm-global-border);
-
-	&:focus,
-	&:hover,
-	&.is-hover {
-		color: $white;
-		background-color: rgb(0 0 0 / 0.2);
-	}
-
-	&:not(div):active,
-	// not(div) prevents active state in case of button groups with dropdowns
-	&.is-active {
-		background-color: rgb(0 0 0 / 0.5);
-	}
-
-	&[disabled],
-	&.is-disabled {
-		@include button-disabled-state-dm;
-	}
-
-	/* just to cancel examples  */
-	&.is-hover:hover {
-		background-color: rgb(0 0 0 / 0.2);
-	}
-}
-
-@mixin button-blueborder-dark {
-	border-color: $pm-primary-light;
-	color: $pm-primary-light;
-	background-color: $pm-global-grey;
-
-	&:focus,
-	&:hover,
-	&:focus-within,
-	&.is-hover,
-	&:not(div):active,
-	// not(div) prevents active state in case of button groups with dropdowns
-	&.is-active {
-		background-color: rgb(0 0 0 / 0.2);
-		border-color: $pm-primary-light;
-		color: $pm-primary-dark;
-	}
-
-	&:not(div):active,
-	// not(div) prevents active state in case of button groups with dropdowns
-	&.is-active {
-		background-color: rgb(0 0 0 / 0.5);
-	}
-
-	&[disabled],
-	&.is-disabled {
-		@include button-disabled-state-dm;
-	}
-}
-
-@mixin pv-button-greenborder-dark {
-	border-color: $pv-green-light;
-	color: $pv-green-light;
-	background-color: $pm-global-grey;
-
-	&:focus,
-	&:hover,
-	&:focus-within,
-	&.is-hover,
-	&:active,
-	&.is-active {
-		background-color: rgb(0 0 0 / 0.2);
-		border-color: $pv-green-dark;
-		color: $pv-green-dark;
-	}
-
-	&:not(div):active,
-	// not(div) prevents active state in case of button groups with dropdowns
-	&.is-active {
-		background-color: rgb(0 0 0 / 0.5);
-	}
-
-	&[disabled],
-	&.is-disabled {
-		@include button-disabled-state-dm;
-	}
-}
-
-/****************************************
- * CLASSES
- ****************************************/
-
-%button {
-	border-radius: $global-border-radius;
+/*
+ * Button shape
+ */
+.button-henlo {
 	padding: em(5) em(16) em(6); // design want 34px height
-	border-style: solid;
-	border-width: 1px;
-	text-decoration: none;
+	border: 1px solid var(--button-default-border-color, transparent);
+	border-radius: $global-border-radius;
+	background-color: var(--button-default-background-color, transparent);
+	color: var(--button-default-text-color, inherit);
 	transition: 0.15s easing(easeOutQuint), background-position 0s;
 
-	& > button {
-		// this is for drop down buttons
-		color: inherit;
-	}
-
+	&,
 	&:hover,
 	&:focus,
 	&:focus-within,
 	&:active {
 		text-decoration: none;
 	}
-}
-
-.button {
-	@extend %button;
-	border-color: $pm-global-border;
-	background-color: $white;
-	color: $pm-global-grey;
 
 	&:hover,
 	&:focus,
 	&:focus-within,
 	&.is-hover {
-		color: $pm-global-grey;
-		box-shadow: 0 0 em(5) 0 rgb(0 0 0 / 0.2);
+		border-color: var(--button-hover-border-color, transparent);
+		background-color: var(--button-hover-background-color, transparent);
+		color: var(--button-hover-text-color, inherit);
 	}
 
 	&:not(div):active,
 	// not(div) prevents active state in case of button groups with dropdowns
 	&.is-active {
-		//background-color: $pm-global-border;
-		background-image: radial-gradient(
-			closest-side,
-			transparent,
-			rgb(0 0 0 / 0.1)
-		);
-		box-shadow: none;
+		border-color: var(--button-active-border-color, transparent);
+		background-color: var(--button-active-background-color, transparent);
+		color: var(--button-active-text-color, inherit);
 	}
 
 	&[disabled],
 	&.is-disabled {
-		@include button-disabled-state;
-	}
+		pointer-events: none;
 
-	/* just to cancel examples  */
-	&.is-active:hover {
-		box-shadow: none;
-	}
-
-	&.is-hover:hover {
-		background-color: $white;
-	}
-
-	&.p0 {
-		padding: 0;
+		&:not([aria-busy='true']) {
+			opacity: 0.5;
+		}
 	}
 
 	&[aria-expanded='true'] .caret-like {
 		@extend .rotateX-180;
 	}
+}
 
-	&.select {
-		border: 1px solid var(--bordercolor-input, $input-defaut-border);
-		padding: em(6) em(16); // design want 34px height (actually 35 to avoid .5px)
-		background-color: var(--bgcolor-input, $pm-input-background);
-		border-radius: $global-border-radius;
-		color: var(--color-input, $pm-global-grey);
-		outline: 0;
-		height: $default-height-fields;
+/*
+ * Button variants
+ */
+@each $color in (norm, weak, danger, warning, success, info) {
+	// Default shape
+	.button-solid-#{$color} {
+		--button-default-background-color: var(--interaction-#{$color});
+		--button-default-text-color: var(--interaction-#{$color}-contrast);
 
-		.mauto {
-			display: flex;
-			width: 100%;
+		@each $state in (hover, active) {
+			--button-#{$state}-background-color: var(
+				--interaction-#{$color}-#{$state}
+			);
+			--button-#{$state}-text-color: var(
+				--interaction-#{$color}-contrast
+			);
 		}
-		.mr0-5 {
-			flex: 1 1 0px;
-			@extend .text-ellipsis;
+	}
+
+	// Outline shape
+	.button-outline-#{$color} {
+		--button-default-border-color: var(--interaction-#{$color});
+
+		@if $color == 'weak' {
+			--button-default-text-color: var(--interaction-weak-contrast);
+		} @else {
+			--button-default-text-color: var(--interaction-#{$color});
+		}
+
+		@each $state in (hover, active) {
+			--button-#{$state}-border-color: var(
+				--interaction-#{$color}-#{$state}
+			);
+
+			@if $color == 'weak' {
+				--button-#{$state}-text-color: var(--interaction-weak-contrast);
+			} @else {
+				--button-#{$state}-text-color: var(
+					--interaction-#{$color}-#{$state}
+				);
+			}
+		}
+	}
+
+	// Ghost shape
+	.button-ghost-#{$color} {
+		--button-default-background-color: transparent;
+
+		@if $color == 'weak' {
+			--button-default-text-color: var(--interaction-weak-contrast);
+		} @else {
+			--button-default-text-color: var(--interaction-#{$color});
+		}
+
+		@each $state in (hover, active) {
+			--button-#{$state}-background-color: var(
+				--interaction-#{$color}-#{$state}
+			);
+			--button-#{$state}-text-color: var(
+				--interaction-#{$color}-contrast
+			);
 		}
 	}
 }
 
-.button-dark {
-	@extend %button;
-	@include button-dark;
+/*
+ * Modifiers
+ */
+
+.button-small {
+	padding: em(1) em(12) em(2); // design want 26px height
 }
 
-.button-blue {
-	@extend %button;
-	color: $white;
-	background-color: $pm-primary;
-	border: 1px solid $pm-primary;
+.button-large {
+	padding: em(10) em(20) em(9); // design want 42px height
+}
 
-	&:focus,
-	&:hover,
-	&:focus-within,
-	&.is-hover {
-		color: $white;
-		box-shadow: 0 0 em(5) 0 rgb(0 0 0 / 0.2);
-		background-color: $pm-primary-dark;
+.button-for-icon {
+	padding: em(8);
+
+	&.button-small {
+		padding: em(4);
 	}
 
+	&.button-large {
+		padding: em(12);
+	}
+
+	svg {
+		display: block;
+	}
+}
+
+.button-pill {
+	border-radius: 2em;
+}
+
+.button-link {
+	padding-left: 0;
+	padding-right: 0;
+	border: none;
+	background: none;
+	color: var(--interaction-norm);
+	text-decoration: underline;
+
+	&:focus,
+	&:hover {
+		color: var(--interaction-norm-hover);
+	}
 	&:not(div):active,
-	// not(div) prevents active state in case of button groups with dropdowns
-	&.is-active {
-		background-color: $pm-primary-dark;
-		text-shadow: 1px 1px 10px #{rgba($white, 0.3)},
-			-1px -1px 10px #{rgba($white, 0.3)};
-		box-shadow: none;
+	&:active {
+		color: var(--interaction-norm-active);
 	}
 
 	&[disabled],
 	&.is-disabled {
-		@include button-disabled-state($pm-primary);
-	}
-
-	/* just to cancel examples  */
-	&.is-hover:hover {
-		background-color: $pm-primary-dark;
+		color: var(--interaction-norm-disabled);
+		pointer-events: none;
 	}
 }
 
-.button-blueborder {
-	@extend %button;
-	border-color: $pm-primary;
-	color: $pm-primary;
-	background-color: $white;
+/*
+ * For select component
+ */
+.button-henlo.select {
+	background-color: transparent;
+	color: var(--text-norm);
+	// height: $default-height-fields;
 
-	&:focus,
-	&:hover,
-	&:focus-within,
-	&.is-hover {
-		box-shadow: 0 0 em(5) 0 rgb(0 0 0 / 0.2);
-		border-color: $pm-primary-dark;
-		color: $pm-primary-dark;
+	.mauto {
+		display: flex;
+		width: 100%;
 	}
 
-	&:not(div):active,
-	// not(div) prevents active state in case of button groups with dropdowns
-	&.is-active {
-		border-color: $pm-primary-dark;
-		color: $pm-primary-dark;
-		background-image: radial-gradient(
-			closest-side,
-			transparent,
-			rgb(0 0 0 / 0.1)
-		);
-		box-shadow: none;
-	}
-
-	&[disabled],
-	&.is-disabled {
-		@include button-disabled-state;
+	.mr0-5 {
+		flex: 1 1 0px;
+		@extend .text-ellipsis;
 	}
 }
 
-.button-blueborder-dark {
-	@extend %button;
-	@include button-blueborder-dark;
-}
-
-.pv-button-green {
-	@extend %button;
-	color: $white;
-	background-color: $pv-green;
-	border: 1px solid $pv-green;
-
-	&:focus,
-	&:hover,
-	&:focus-within,
-	&.is-hover {
-		color: $white;
-		box-shadow: 0 0 em(5) 0 rgb(0 0 0 / 0.2);
-		background-color: $pv-green-dark;
-	}
-
-	&:not(div):active,
-	// not(div) prevents active state in case of button groups with dropdowns
-	&.is-active {
-		background-color: $pv-green-dark;
-		text-shadow: 1px 1px 10px #{rgba($white, 0.3)},
-			-1px -1px 10px #{rgba($white, 0.3)};
-		box-shadow: none;
-	}
-
-	&[disabled],
-	&.is-disabled {
-		@include button-disabled-state($pv-green);
-	}
-
-	/* just to cancel examples  */
-	&.is-hover:hover {
-		background-color: $pv-green-dark;
-	}
-}
-
-.pv-button-greenborder {
-	@extend %button;
-	border-color: $pv-green;
-	color: $pv-green;
-	background-color: $white;
-
-	&:focus,
-	&:hover,
-	&:focus-within,
-	&.is-hover {
-		box-shadow: 0 0 em(5) 0 rgb(0 0 0 / 0.2);
-		border-color: $pv-green-dark;
-		color: $pv-green-dark;
-	}
-
-	&:not(div):active,
-	// not(div) prevents active state in case of button groups with dropdowns
-	&.is-active {
-		border-color: $pv-green-dark;
-		color: $pv-green-dark;
-		background-image: radial-gradient(
-			closest-side,
-			transparent,
-			rgb(0 0 0 / 0.1)
-		);
-		box-shadow: none;
-	}
-
-	&[disabled],
-	&.is-disabled {
-		@include button-disabled-state;
-	}
-}
-
-.pv-button-greenborder-dark {
-	@extend %button;
-	@include pv-button-greenborder-dark;
-}
-
-/* button group */
+/*
+ * Button group
+*/
 .grouped-buttons {
 	@extend .inline-flex;
 	@extend .flex-nowrap;
 }
 
-.grouped-button,
-.grouped-button.is-active,
-.grouped-button:hover,
-.grouped-button:focus,
-.grouped-button:active {
+.grouped-button {
+	margin-right: -1px; // Border size
 	border-radius: 0;
-	border-left-width: 0;
-}
 
-.grouped-button:hover,
-.grouped-button:focus,
-.grouped-button:active {
-	position: relative;
+	&:hover,
+	&:focus,
+	&:active {
+		position: relative;
+	}
 }
 
 .grouped-buttons > .grouped-button:first-child {
-	border-radius: $global-border-radius 0 0 $global-border-radius;
-	border-left-width: 1px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
 }
 
 .grouped-buttons > .grouped-button:last-child {
-	border-radius: 0 $global-border-radius $global-border-radius 0;
-}
-
-@if $rtl-option==true {
-	[dir='rtl'] {
-		.grouped-buttons > .grouped-button:not(.pagination-expand):first-child {
-			border-radius: 0 $global-border-radius $global-border-radius 0;
-			border-right-width: 1px;
-			border-left-width: 0;
-		}
-
-		.grouped-buttons > .grouped-button:not(.pagination-expand):last-child {
-			border-radius: $global-border-radius 0 0 $global-border-radius;
-			border-left-width: 1px;
-		}
-	}
-}
-
-/* special case for group button with primary colors */
-.grouped-buttons > .grouped-button.button--primary {
-	border-color: $pm-primary;
-	border-left-width: 0;
-
-	&:first-child {
-		border-left-width: 1px;
-	}
-
-	&:not(:last-child) {
-		border-right-color: var(--bgcolor-main-area, $white);
-	}
-}
-
-/* exception for group buttons, disabled state should keep the border */
-.grouped-button {
-	&[disabled],
-	&.is-disabled {
-		&.button {
-			border-color: $pm-global-border;
-		}
-
-		&.button-blueborder {
-			border-color: $pm-primary;
-		}
-
-		&.pv-button-greenborder {
-			border-color: $pv-green;
-		}
-	}
-}
-
-/* aliases for buttons => different per project */
-/* primary/link/error/warning/info */
-@if ($pm-primary==$pm-blue) {
-	.button--primary {
-		@extend .button-blue;
-	}
-
-	.button--primaryborder,
-	.button--primaryborderEvenInDarkMode {
-		@extend .button-blueborder;
-	}
-
-	.button--primaryborder-dark {
-		@extend .button-blueborder-dark;
-	}
-} @else {
-	.button--primary {
-		@extend .pv-button-green;
-	}
-
-	.button--primaryborder,
-	.button--primaryborderEvenInDarkMode {
-		@extend .pv-button-greenborder;
-	}
-
-	.button--primaryborder-dark {
-		@extend .pv-button-greenborder-dark;
-	}
-}
-
-.button--link,
-.button.button--link {
-	@extend %button;
-	color: $color-links;
-	border-width: 0;
-	box-shadow: none;
-	text-decoration: underline;
-	background-color: transparent; // to avoid heriting from other classes
-	padding-left: 0;
-	padding-right: 0;
-
-	&:focus,
-	&:hover,
-	&:not(div):active,
-	&:active {
-		color: $color-hover;
-		text-decoration: underline;
-		box-shadow: none;
-		background: transparent; // to avoid heriting from other classes
-	}
-
-	&[disabled],
-	&.is-disabled {
-		color: #{rgba($pm-global-grey, 0.5)};
-		pointer-events: none;
-		text-decoration: none;
-		background-color: transparent; // to avoid heriting from other classes
-	}
-
-	&.text-no-decoration {
-		text-decoration: none;
-	}
-
-	&.button--currentColor {
-		color: currentColor;
-	}
-}
-
-.button--error,
-.button.button--error {
-	@extend .button-blue;
-	background-color: $pm-global-warning;
-	border-color: $pm-global-warning;
-
-	&:focus,
-	&:hover,
-	&:not(div):active {
-		// not div is here for a specificity issue for another fix
-		background-color: $pm-global-warning;
-		border-color: $pm-global-warning;
-	}
-
-	&[disabled],
-	&.is-disabled {
-		@include button-disabled-state($pm-global-warning);
-	}
-}
-
-.button--warning,
-.button.button--warning {
-	@extend .button-blue;
-	background-color: $pm-global-attention;
-	border-color: $pm-global-attention;
-
-	&:focus,
-	&:hover,
-	&:not(div):active {
-		// not div is here for a specificity issue for another fix
-		background-color: $pm-global-attention;
-		border-color: $pm-global-attention;
-	}
-
-	&[disabled],
-	&.is-disabled {
-		@include button-disabled-state($pm-global-attention);
-	}
-}
-
-.button--info {
-	@extend .button;
-}
-
-/* other aliases requested */
-.button--redborder,
-.button.button--redborder {
-	@extend .button;
-	border-color: $pm-global-warning;
-	color: $pm-global-warning;
-
-	&:focus,
-	&:hover,
-	&:not(div):active,
-	&:active {
-		color: $pm-global-warning;
-	}
-}
-
-.button--whiteborder,
-.button--primary.button.button--whiteborder {
-	border: 1px solid $white;
-}
-
-/* modifiers */
-.button--large,
-.button.button--large {
-	padding: em(10) em(20) em(9); // design want 42px height
-}
-
-.button--small,
-.button.button--small {
-	padding: em(1) em(12) em(2); // design want 26px height
-}
-
-.button--for-icon {
-	padding-left: 0.75em;
-	padding-right: 0.75em;
-}
-
-.button--for-smallicon {
-	padding-left: 0.25em;
-	padding-right: 0.25em;
-}
-
-/* other modifiers requested */
-.button--no-border {
-	border: 0;
-}
-
-.button--currentColor {
-	color: currentColor;
-}
-
-.button--pill {
-	border-radius: 2em;
-}
-
-.button--transparent {
-	/* When using currentColor, you need to set the color you want on a container */
-	@extend %button;
-	border: 1px solid currentColor;
-	color: currentColor;
-
-	&:focus,
-	&:hover,
-	&:not(div):active,
-	&:active {
-		background-color: rgb(0 0 0 / 0.2);
-		color: currentColor;
-	}
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	margin-right: 0;
 }
