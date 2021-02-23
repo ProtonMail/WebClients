@@ -107,9 +107,13 @@ const useFocusTrap = ({
                 return;
             }
             // Preference to elements with focus-fallback
-            const tabbableElementsSorted = [...tabbableElements].sort(
-                (a, b) => parseInt(b.dataset.focusFallback || '0', 10) - parseInt(a.dataset.focusFallback || '0', 10)
-            );
+            const tabbableElementsSorted = [...tabbableElements]
+                .filter((el) => {
+                    return !el.dataset.focusIgnore;
+                })
+                .sort((a, b) => {
+                    return parseInt(b.dataset.focusFallback || '0', 10) - parseInt(a.dataset.focusFallback || '0', 10);
+                });
             focusElement(tabbableElementsSorted[0], rootElement);
         };
 
