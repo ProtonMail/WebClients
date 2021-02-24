@@ -1,4 +1,4 @@
-# [4.0.0-beta.14] - 2021-02-24
+# [4.0.0-beta.14] - 2021-02-25
 ## Added
 - Add plain text body for invitations 
 - Recognise secure links in event description
