@@ -187,33 +187,3 @@
 		@extend .text-ellipsis;
 	}
 }
-
-/*
- * Button group
-*/
-.grouped-buttons {
-	@extend .inline-flex;
-	@extend .flex-nowrap;
-}
-
-.grouped-button {
-	margin-right: -1px; // Border size
-	border-radius: 0;
-
-	&:hover,
-	&:focus,
-	&:active {
-		position: relative;
-	}
-}
-
-.grouped-buttons > .grouped-button:first-child {
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-}
-
-.grouped-buttons > .grouped-button:last-child {
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
-	margin-right: 0;
-}
