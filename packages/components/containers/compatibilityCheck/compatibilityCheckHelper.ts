@@ -1,5 +1,5 @@
 const isGoodPrngAvailable = () => {
-    if (window.crypto && window.crypto.getRandomValues) {
+    if (window.crypto && !!window.crypto.getRandomValues) {
         return true;
     }
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
