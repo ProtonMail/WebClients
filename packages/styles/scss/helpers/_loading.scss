@@ -11,7 +11,8 @@ button[aria-busy='true'] {
 	background-repeat: no-repeat;
 }
 
-.button[aria-busy='true'] {
+.button[aria-busy='true'],
+.button-henlo[aria-busy='true'] {
 	padding-left: em(5);
 	padding-right: em(27);
 }
