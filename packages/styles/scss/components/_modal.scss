@@ -225,6 +225,18 @@ $modal-smaller-width: 28em !default;
 		// only for Safari the ugly
 		min-height: 3.4rem;
 	}
+
+	// single button on right
+	[class*='button']:only-child {
+		margin-left: auto;
+	}
+
+	// for vertically displayed buttons
+	&.flex-column {
+		[class*='button'] + [class*='button'] {
+			margin-top: 0.75em;
+		}
+	}
 }
 
 .modal-content-inner {
@@ -261,11 +273,6 @@ $pm-label-shorter-width: 10em !default;
 // modal with title visually hidden
 .modal-header--no-title {
 	padding-top: 2rem;
-}
-
-// single button on right
-.modal-footer [class*='button']:only-child {
-	margin-left: auto;
 }
 
 @if $rtl-option==true {

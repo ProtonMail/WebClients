@@ -525,3 +525,197 @@ $pm-label-icon-width: 2.4em !default;
 		padding: em(10) em(16); // design want 42px height (actually 41 to avoid .5px)
 	}
 }
+
+/**
+ * New input form
+ */
+$inputform-border-color: #b5bac4 !default;
+$inputform-border-color-hover: #989da9 !default;
+$inputform-assistive-color: #6b7180 !default;
+$inputform-suffix-color: #6b7180 !default;
+$inputform-bg-color: $white !default;
+$inputform-border-color-focus: $pm-primary !default;
+$inputform-default-spacing-text: 0.4rem !default;
+
+.inputform {
+	&-container {
+		@extend .field-container;
+	}
+
+	&-label {
+		padding-bottom: $inputform-default-spacing-text;
+	}
+	&-label-hint,
+	&-assist {
+		font-size: 1.2rem;
+		color: $inputform-assistive-color;
+	}
+	&-label-hint {
+		padding-bottom: 0.1rem; // just to compensate the difference of text size
+	}
+	&-assist {
+		min-height: 1.9em;
+		padding-top: $inputform-default-spacing-text;
+	}
+	&-label-text {
+		font-weight: 600;
+	}
+
+	&-suffix {
+		color: $inputform-suffix-color;
+	}
+
+	&-field {
+		filter: none; // fixes Firefox autofill color
+		border: 1px solid var(--bordercolor-input, $inputform-border-color);
+		padding: em(6) em(12); // design want 34px height (actually 35 to avoid .5px)
+		background-color: var(--bgcolor-input, $inputform-bg-color);
+		border-radius: $global-border-radius;
+		color: var(--color-input, $pm-global-grey);
+		outline: 0;
+		height: $default-height-fields-inputforms;
+
+		&.error {
+			border-color: $pm-global-warning;
+		}
+
+		&:hover,
+		&.hover {
+			border-color: $inputform-border-color-hover;
+		}
+
+		&:focus,
+		&.focus,
+		&:focus-within {
+			border-color: $inputform-border-color-focus;
+		}
+
+		&:-moz-ui-invalid {
+			// fixes some Firefox issues with HTML5 validation
+			box-shadow: none;
+		}
+		&[type='search'] {
+			background: url('#{$path-images}sprite-for-css-only.svg#css-search')
+				6px 50% no-repeat;
+			background-size: 1.6rem;
+			padding-left: 2em;
+
+			&::-webkit-search-cancel-button {
+				display: none;
+			}
+		}
+
+		@at-root {
+			select#{&} {
+				background: var(--bgcolor-input, $inputform-bg-color)
+					url('#{$path-images}sprite-for-css-only.svg#css-caret')
+					calc(100% - 6px) 50% no-repeat;
+				background-size: 1.5rem;
+				padding-right: 20px;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				cursor: pointer;
+
+				&::-ms-expand {
+					display: none;
+				}
+
+				& > optgroup {
+					background-color: var(
+						--bgcolor-highlight,
+						$pm-global-light
+					);
+				}
+			}
+		}
+	}
+
+	// global error state on container
+	&-container--invalid {
+		.inputform {
+			&-label-text,
+			&-assist {
+				color: $pm-global-warning;
+				font-weight: 600;
+			}
+			&-field {
+				border-color: $pm-global-warning;
+			}
+		}
+	}
+
+	// field icon container
+	&-icon-container {
+		@extend .inputform-field; // added focus-within inside on inputform-field for this fake-field :)
+		padding: 0;
+
+		.inputform-field {
+			height: 100%;
+
+			&,
+			&:focus {
+				border: 0;
+				width: calc(100% - 1.5em);
+				outline: 0;
+			}
+		}
+
+		&-empty {
+			// for drive, to keep the same height
+			min-height: calc(#{$default-height-fields-inputforms} + 2px);
+		}
+
+		&:focus-within {
+			.inputform-field {
+				background-color: transparent;
+				box-shadow: none;
+				outline: 0;
+				border: 0;
+			}
+		}
+	}
+
+	// bigger inputs
+	&-container--bigger {
+		.right-icon,
+		.inputform-field,
+		.inputform-icon-container {
+			height: $bigger-height-fields-inputforms;
+		}
+		.inputform-field {
+			&[type='search'] {
+				background-size: 2rem;
+				padding-left: 2.2em;
+			}
+		}
+		.inputform-icon-container {
+			&-empty {
+				// for drive, to keep the same height
+				min-height: calc(#{$bigger-height-fields-inputforms} + 2px);
+			}
+			.inputform-field {
+				height: 100%;
+			}
+		}
+	}
+
+	// disabled input
+	&-container--disabled {
+		&,
+		& .inputform-field,
+		& .inputform-label-hint,
+		& .inputform-assist {
+			color: $inputform-border-color;
+			cursor: auto;
+		}
+		& .inputform-label {
+			cursor: auto;
+		}
+		& .inputform-field {
+			&:hover,
+			&.hover {
+				border-color: $inputform-border-color;
+			}
+		}
+	}
+}
