@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { LoaderPage, ModalsChildren, useLoading, useWelcomeFlags } from 'react-components';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 
 import DriveEventManagerProvider from '../components/DriveEventManager/DriveEventManagerProvider';
 import DriveCacheProvider from '../components/DriveCache/DriveCacheProvider';
@@ -69,9 +68,7 @@ const InitContainer = () => {
             <TransferManager />
             <Switch>
                 <Route path="/trash" component={TrashContainer} />
-                {FEATURE_FLAGS.includes('drive-sharing') && (
-                    <Route path="/shared-urls" component={SharedURLsContainer} />
-                )}
+                <Route path="/shared-urls" component={SharedURLsContainer} />
                 <Route path="/" component={DriveContainer} />
                 <Redirect to="/" />
             </Switch>
