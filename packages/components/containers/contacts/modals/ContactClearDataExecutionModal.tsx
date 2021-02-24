@@ -76,7 +76,7 @@ const ContactClearDataExecutionModal = ({ onClose = noop, errorKey, ...rest }: P
             {...rest}
         >
             <Alert type="info">{c('Info')
-                .t`Please wait while all contacts are checked to see if they contain encrypted data with the selected inactive key and clear it.`}</Alert>
+                .t`Please wait while we look for contacts that contain data encrypted with the inactive key.`}</Alert>
             <DynamicProgress
                 id="clear-data-execution-progress"
                 value={progress}
