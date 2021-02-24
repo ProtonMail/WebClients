@@ -91,8 +91,7 @@ export const parseURL = (url = '') => {
 
 export const getActiveXObject = (name: string) => {
     try {
-        // @ts-expect-error
-        // eslint-disable-next-line no-undef
+        // @ts-ignore
         return new ActiveXObject(name);
     } catch (error) {
         return undefined;
