@@ -12,3 +12,13 @@
 
 // Helpers
 @import 'helpers/';
+
+// Theme color overrides
+// REMOVE THIS AS SOON AS POSSIBLE!
+:root {
+	--primary-lighten-40: #7dc282 !important;
+	--primary-lighten-20: #5fb364 !important;
+	--primary: #4da358 !important;
+	--primary-darken-20: #3e8447 !important;
+	--primary-darken-40: #2e7037 !important;
+}
