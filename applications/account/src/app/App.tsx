@@ -8,7 +8,7 @@ import Setup from './Setup';
 import './app.scss';
 
 const enhancedConfig = {
-    APP_VERSION_DISPLAY: '4.0.0-beta.9',
+    APP_VERSION_DISPLAY: '4.0.0-beta.10',
     ...config,
 };
 

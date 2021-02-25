@@ -1,3 +1,12 @@
+# [4.0.0-beta.10] - 2021-02-25
+
+## Improvements
+- Moved storage display to the sidebar
+- Prepared support for opting into early access programs
+- Added warning when removing the primary admin role from another user
+
+---
+
 # [4.0.0-beta.9] - 2021-01-26
 
 ## Fixes
