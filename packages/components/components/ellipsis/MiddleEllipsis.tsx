@@ -3,9 +3,15 @@ import { classnames } from '../../helpers';
 
 interface Props extends React.HTMLProps<HTMLSpanElement> {
     text: string;
+    /**
+     * number of characters you want to keep at the end: 6 will give “blablabla…bla.bla’”
+     */
     charsToDisplayEnd?: number;
     className?: string;
-    displayTitle?: Boolean; // when you embed it into something with title/tooltip, you might not want to display it
+    /**
+     * when you embed it into something with title/tooltip, you might not want to display it
+     */
+    displayTitle?: Boolean;
 }
 
 const MiddleEllipsis = ({ text, className = '', displayTitle = true, charsToDisplayEnd = 6, ...rest }: Props) => {
