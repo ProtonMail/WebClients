@@ -18,6 +18,7 @@ export * from './editableText';
 export * from './editor';
 export * from './ellipsis';
 export * from './fileIcon';
+export * from './fileNameDisplay';
 export * from './focus';
 export * from './globalLoader';
 export * from './icon';

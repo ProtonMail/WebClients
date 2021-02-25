@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Icon, FileIcon } from '../../components';
+import { Icon, FileIcon, FileNameDisplay } from '../../components';
 
 interface Props {
     name?: string;
@@ -13,11 +13,9 @@ interface Props {
 const Header = ({ mimeType, name, onClose, onSave, children }: Props) => {
     return (
         <div className="flex flex-justify-space-between flex-align-items-center p2 relative">
-            <div title={name} className="file-preview-filename flex flex-align-items-center flex-nowrap">
+            <div className="file-preview-filename flex flex-align-items-center flex-nowrap">
                 {mimeType && <FileIcon mimeType={mimeType} />}
-                <span className="text-ellipsis">
-                    <span className="text-pre">{name}</span>
-                </span>
+                <FileNameDisplay text={name} />
             </div>
             {children}
             <div className="flex flex-align-items-center">
@@ -28,7 +26,7 @@ const Header = ({ mimeType, name, onClose, onSave, children }: Props) => {
                         onClick={onSave}
                         className="color-global-light ml1-5"
                     >
-                        <Icon name="download" size={20} />
+                        <Icon name="download" size={20} alt={c('Action').t`Download`} />
                     </button>
                 )}
                 {onClose && (
