@@ -3,7 +3,8 @@ import { c } from 'ttag';
 
 import { dateLocale } from 'proton-shared/lib/i18n';
 import readableTime from 'proton-shared/lib/helpers/readableTime';
-import { Icon, LargeButton } from 'react-components';
+
+import { Icon, LargeButton, FileNameDisplay } from 'react-components';
 
 import DownloadProgressBar from './DownloadProgressBar';
 import SizeCell from '../FileBrowser/ListView/Cells/SizeCell';
@@ -69,14 +70,11 @@ const DownloadSharedInfo = ({ name, size, expirationTime, downloadFile }: Props)
         <>
             <h3 className="text-bold mt2 mb0-25">{contents.title}</h3>
             <p className="m0">{contents.info}</p>
-            <div
-                style={{ height: '7em' }}
-                className="flex flex-column flex-nowrap flex-align-items-center flex-justify-center mt1 mb1 w100"
-            >
+            <div className="flex flex-column flex-nowrap flex-align-items-center flex-justify-center mt2 mb2 pt1 pb1 w100">
                 {contents.content}
             </div>
-            <div style={{ maxHeight: '6em' }} title={name} className="text-bold mb0-5 scroll-if-needed w100">
-                {name}
+            <div className="text-bold mb0-5 mw100 flex w100 text-center">
+                <FileNameDisplay text={name} />
             </div>
             <SizeCell size={size} />
         </>
