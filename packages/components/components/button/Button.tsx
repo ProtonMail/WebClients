@@ -34,6 +34,8 @@ export interface ButtonProps extends React.ComponentPropsWithoutRef<'button'> {
     size?: Size;
     /** Puts the button in a disabled state. */
     disabled?: boolean;
+    /** If true, the button will take up the full width of its container. */
+    fullWidth?: boolean;
 }
 
 const Button = ({
@@ -49,6 +51,7 @@ const Button = ({
     shape: shapeProp,
     color: colorProp,
     size: sizeProp,
+    fullWidth,
     ...rest
 }: ButtonProps) => {
     const shape = shapeProp || 'solid';
@@ -74,6 +77,7 @@ const Button = ({
         isUsingLegacyApi ? 'button' : 'button-henlo',
         !isUsingLegacyApi && size !== 'medium' && `button-${size}`,
         !isUsingLegacyApi && `button-${shape}-${color}`,
+        fullWidth && 'w100',
         !children && iconButtonClass,
         className,
     ]);
