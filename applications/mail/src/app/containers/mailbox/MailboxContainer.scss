@@ -7,7 +7,7 @@
     width: 6.6rem;
     border-radius: 50%;
     padding: 0.5em;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-lifted);
 
     svg {
         height: 25px;

@@ -73,10 +73,10 @@ const HeaderCollapsed = ({
                 )}
 
                 {messageLoaded && isDraftMessage && (
-                    <span className="badge-label--success ml0-5 flex-item-noshrink">{c('Info').t`Draft`}</span>
+                    <span className="badge-label-success ml0-5 flex-item-noshrink">{c('Info').t`Draft`}</span>
                 )}
                 {messageLoaded && isOutboxMessage && (
-                    <span className="badge-label--primary ml0-5 flex-item-noshrink">{c('Info').t`Sending`}</span>
+                    <span className="badge-label-primary ml0-5 flex-item-noshrink">{c('Info').t`Sending`}</span>
                 )}
             </div>
             <div className="flex flex-align-items-center flex-nowrap flex-item-noshrink">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { SimpleDropdown, DropdownMenu, DropdownMenuButton, Icon } from 'react-components';
+import { SimpleDropdown, DropdownMenu, Button, DropdownMenuButton, Icon } from 'react-components';
 import { c } from 'ttag';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
@@ -50,8 +50,8 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate, c
 
     return (
         <SimpleDropdown
-            as="button"
-            type="button"
+            as={Button}
+            shape="ghost"
             hasCaret={hasCaret}
             className={className}
             content={

@@ -41,7 +41,7 @@ const ItemStar = ({ element = {} }: Props) => {
                     <>
                         {title}
                         <br />
-                        <kbd className="bg-global-altgrey no-border">*</kbd>
+                        <kbd className="no-border">*</kbd>
                     </>
                 ) : (
                     title

@@ -25,7 +25,7 @@ const ItemAttachmentIcon = ({ element = {}, className }: Props) => {
 
     return (
         <Tooltip title={title}>
-            <div className={classnames(['pill-icon pill-icon-attachment flex', className])}>
+            <div className={classnames(['pill-icon bg-strong flex', className])}>
                 <Icon name="attach" size={14} alt={title} />
             </div>
         </Tooltip>

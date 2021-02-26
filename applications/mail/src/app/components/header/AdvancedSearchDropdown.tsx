@@ -198,7 +198,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
             <DropdownButton
                 as="button"
                 type="button"
-                className={classnames([isNarrow ? 'topnav-link' : 'searchbox-advanced-search-button color-white'])}
+                className={classnames([isNarrow ? 'topnav-link' : 'searchbox-advanced-search-button'])}
                 ref={anchorRef}
                 isOpen={isOpen}
                 onClick={toggle}

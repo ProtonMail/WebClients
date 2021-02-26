@@ -160,9 +160,9 @@ const AddressesRecipientItem = ({
         <>
             <div
                 className={classnames([
-                    'composer-addresses-item bordered-container mt0-25 mb0-25 mr0-5 flex flex-nowrap flex-row max-w100 stop-propagation',
+                    'composer-addresses-item bordered mt0-25 mb0-25 mr0-5 flex flex-nowrap flex-row max-w100 stop-propagation',
                     !valid && 'invalid',
-                    cannotSend && 'color-global-warning invalid',
+                    cannotSend && 'color-danger invalid',
                     dragged && 'composer-addresses-item-dragged',
                     !editableMode && 'cursor-grab',
                 ])}

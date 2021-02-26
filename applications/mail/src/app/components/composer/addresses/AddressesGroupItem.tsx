@@ -102,7 +102,7 @@ const AddressesGroupItem = ({
         <>
             <div
                 className={classnames([
-                    'composer-addresses-item mt0-25 mb0-25 mr0-5 bordered-container flex flex-nowrap flex-row max-w100 stop-propagation cursor-grab',
+                    'composer-addresses-item mt0-25 mb0-25 mr0-5 bordered flex flex-nowrap flex-row max-w100 stop-propagation cursor-grab',
                     dragged && 'composer-addresses-item-dragged',
                 ])}
                 draggable

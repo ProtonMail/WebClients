@@ -16,22 +16,15 @@ interface Props {
 
 const ListSettings = ({ sort, onSort, onFilter, onNavigate, filter, labelID, conversationMode }: Props) => {
     return (
-        <div className="sticky-top z10 bg-white-dm border-bottom pl0-5 pr0-5 pt0-25 pb0-25 flex flex-wrap flex-justify-space-between">
+        <div className="sticky-top z10 bg-norm border-bottom--weak pl0-5 pr0-5 pt0-25 pb0-25 flex flex-wrap flex-justify-space-between">
             <FilterDropdown
                 labelID={labelID}
                 filter={filter}
                 onFilter={onFilter}
                 onNavigate={onNavigate}
                 hasCaret={false}
-                className="bg-global-muted-dm-on-hover opacity-65 on-hover-opacity-100 rounded pl0-5 pr0-5 pt0-25 pb0-25"
             />
-            <SortDropdown
-                conversationMode={conversationMode}
-                sort={sort}
-                onSort={onSort}
-                hasCaret={false}
-                className="bg-global-muted-dm-on-hover opacity-65 on-hover-opacity-100 rounded pl0-5 pr0-5 pt0-25 pb0-25"
-            />
+            <SortDropdown conversationMode={conversationMode} sort={sort} onSort={onSort} hasCaret={false} />
         </div>
     );
 };

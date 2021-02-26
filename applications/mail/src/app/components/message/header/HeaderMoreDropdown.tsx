@@ -190,7 +190,7 @@ const HeaderMoreDropdown = ({
         <>
             {c('Title').t`Move to inbox (not spam)`}
             <br />
-            <kbd className="bg-global-altgrey no-border">I</kbd>
+            <kbd className="no-border">I</kbd>
         </>
     ) : (
         c('Title').t`Move to inbox (not spam)`
@@ -199,7 +199,7 @@ const HeaderMoreDropdown = ({
         <>
             {c('Title').t`Mark as unread`}
             <br />
-            <kbd className="bg-global-altgrey no-border">U</kbd>
+            <kbd className="no-border">U</kbd>
         </>
     ) : (
         c('Title').t`Mark as unread`
@@ -208,7 +208,7 @@ const HeaderMoreDropdown = ({
         <>
             {c('Title').t`Move to inbox`}
             <br />
-            <kbd className="bg-global-altgrey no-border">I</kbd>
+            <kbd className="no-border">I</kbd>
         </>
     ) : (
         c('Title').t`Move to inbox`
@@ -217,7 +217,7 @@ const HeaderMoreDropdown = ({
         <>
             {c('Title').t`Move to trash`}
             <br />
-            <kbd className="bg-global-altgrey no-border">T</kbd>
+            <kbd className="no-border">T</kbd>
         </>
     ) : (
         c('Title').t`Move to trash`

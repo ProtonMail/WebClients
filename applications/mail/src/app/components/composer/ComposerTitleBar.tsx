@@ -16,7 +16,7 @@ const TitleBarButton = ({ onClick, children, className = '', title, disabled = f
         <Tooltip title={title}>
             <button
                 type="button"
-                className={classnames(['composer-title-bar-button flex p0-5', className])}
+                className={classnames(['composer-title-bar-button interactive flex p0-5', className])}
                 onClick={onClick}
                 disabled={disabled}
                 data-test-id="composer:close-composer"
@@ -54,8 +54,7 @@ const ComposerTitleBar = ({ title, minimized, maximized, toggleMinimized, toggle
             <>
                 {minimized ? c('Action').t`Maximize composer` : c('Action').t`Minimize composer`}
                 <br />
-                <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
-                <kbd className="bg-global-altgrey no-border">M</kbd>
+                <kbd className="no-border">{metaKey}</kbd> + <kbd className="no-border">M</kbd>
             </>
         ) : minimized ? (
             c('Action').t`Maximize composer`
@@ -68,9 +67,8 @@ const ComposerTitleBar = ({ title, minimized, maximized, toggleMinimized, toggle
             <>
                 {maximized ? c('Action').t`Contract composer` : c('Action').t`Expand composer`}
                 <br />
-                <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
-                <kbd className="bg-global-altgrey no-border">{shiftKey}</kbd> +{' '}
-                <kbd className="bg-global-altgrey no-border">M</kbd>
+                <kbd className="no-border">{metaKey}</kbd> + <kbd className="no-border">{shiftKey}</kbd> +{' '}
+                <kbd className="no-border">M</kbd>
             </>
         ) : maximized ? (
             c('Action').t`Contract composer`
@@ -82,7 +80,7 @@ const ComposerTitleBar = ({ title, minimized, maximized, toggleMinimized, toggle
         <>
             {c('Action').t`Close composer`}
             <br />
-            <kbd className="bg-global-altgrey no-border">Escape</kbd>
+            <kbd className="no-border">Escape</kbd>
         </>
     ) : (
         c('Action').t`Close composer`
@@ -90,7 +88,7 @@ const ComposerTitleBar = ({ title, minimized, maximized, toggleMinimized, toggle
 
     return (
         <header
-            className="composer-title-bar flex flex-row flex-align-items-center flex-nowrap pl0-5 pr0-5 w100 color-global-light"
+            className="composer-title-bar ui-prominent flex flex-row flex-align-items-center flex-nowrap pl0-5 pr0-5 w100"
             onDoubleClick={handleDoubleClick}
         >
             <span className="flex-item-fluid p0-5 pr1 text-ellipsis">{title}</span>

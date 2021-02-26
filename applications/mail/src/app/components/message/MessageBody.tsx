@@ -53,7 +53,7 @@ const MessageBody = ({
             className={classnames([
                 'message-content scroll-horizontal-if-needed relative bodyDecrypted',
                 plain && 'plain',
-                !loadingMode && getLightOrDark('', 'bg-white color-global-grey'),
+                !loadingMode && getLightOrDark('', 'bg-norm color-weak'),
             ])}
         >
             {encryptedMode && <pre>{message.data?.Body}</pre>}

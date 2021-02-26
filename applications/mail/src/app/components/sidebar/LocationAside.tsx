@@ -31,10 +31,7 @@ const LocationAside = ({ unreadCount = 0, active = false, refreshing = false }: 
     return (
         <>
             {active && (
-                <Icon
-                    className={classnames(['mr0-5 color-global-light', refreshing && 'location-refresh-rotate'])}
-                    name="reload"
-                />
+                <Icon className={classnames(['mr0-5', refreshing && 'location-refresh-rotate'])} name="reload" />
             )}
             {unreadCount ? (
                 <span className="navigation-counter-item flex-item-noshrink" title={getUnreadTitle()}>

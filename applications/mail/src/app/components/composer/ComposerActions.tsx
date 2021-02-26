@@ -70,9 +70,8 @@ const ComposerActions = ({
         <>
             {c('Title').t`Attachments`}
             <br />
-            <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey no-border">{shiftKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey no-border">A</kbd>
+            <kbd className="no-border">{metaKey}</kbd> + <kbd className="no-border">{shiftKey}</kbd> +{' '}
+            <kbd className="no-border">A</kbd>
         </>
     ) : (
         c('Title').t`Attachments`
@@ -81,9 +80,8 @@ const ComposerActions = ({
         <>
             {c('Title').t`Expiration time`}
             <br />
-            <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey no-border">{shiftKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey no-border">X</kbd>
+            <kbd className="no-border">{metaKey}</kbd> + <kbd className="no-border">{shiftKey}</kbd> +{' '}
+            <kbd className="no-border">X</kbd>
         </>
     ) : (
         c('Title').t`Expiration time`
@@ -92,9 +90,8 @@ const ComposerActions = ({
         <>
             {c('Title').t`Encryption`}
             <br />
-            <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey no-border">{shiftKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey no-border">E</kbd>
+            <kbd className="no-border">{metaKey}</kbd> + <kbd className="no-border">{shiftKey}</kbd> +{' '}
+            <kbd className="no-border">E</kbd>
         </>
     ) : (
         c('Title').t`Encryption`
@@ -103,9 +100,8 @@ const ComposerActions = ({
         <>
             {c('Title').t`Delete draft`}
             <br />
-            <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey no-border">{altKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey no-border">Backspace</kbd>
+            <kbd className="no-border">{metaKey}</kbd> + <kbd className="no-border">{altKey}</kbd> +{' '}
+            <kbd className="no-border">Backspace</kbd>
         </>
     ) : (
         c('Title').t`Delete draft`
@@ -114,8 +110,7 @@ const ComposerActions = ({
         <>
             {c('Title').t`Send email`}
             <br />
-            <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey no-border">Enter</kbd>
+            <kbd className="no-border">{metaKey}</kbd> + <kbd className="no-border">Enter</kbd>
         </>
     ) : null;
 

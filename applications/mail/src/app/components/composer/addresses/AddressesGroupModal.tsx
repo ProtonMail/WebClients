@@ -66,10 +66,7 @@ const AddressesGroupModal = ({ recipientGroup, contacts, messageSendInfo, onSubm
                             <span className="min-w1-4e inline-flex align-middle">
                                 {(icon || loading) && <EncryptionStatusIcon loading={loading} {...icon} />}
                             </span>
-                            <Label
-                                htmlFor={id}
-                                className={classnames(['pt0 pl0-5', cannotSend && 'color-global-warning'])}
-                            >
+                            <Label htmlFor={id} className={classnames(['pt0 pl0-5', cannotSend && 'color-danger'])}>
                                 {contactToInput(contact)}
                             </Label>
                         </li>

@@ -138,7 +138,7 @@ const ComposerContent = ({
                     showDownloadAll={false}
                     onRemoveAttachment={onRemoveAttachment}
                     onRemoveUpload={onRemoveUpload}
-                    className="composer-attachments-list bg-global-highlight"
+                    className="composer-attachments-list bg-weak"
                 />
             )}
         </section>

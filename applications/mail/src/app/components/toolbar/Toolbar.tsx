@@ -65,7 +65,7 @@ const Toolbar = ({
         <>
             {c('Title').t`Move to`}
             <br />
-            <kbd className="bg-global-altgrey no-border">M</kbd>
+            <kbd className="no-border">M</kbd>
         </>
     ) : (
         c('Title').t`Move to`
@@ -75,14 +75,14 @@ const Toolbar = ({
         <>
             {c('Title').t`Label as`}
             <br />
-            <kbd className="bg-global-altgrey no-border">L</kbd>
+            <kbd className="no-border">L</kbd>
         </>
     ) : (
         c('Title').t`Label as`
     );
 
     return (
-        <nav className="toolbar toolbar--heavy flex no-print flex-justify-space-between">
+        <nav className="toolbar toolbar--heavy ui-prominent flex no-print flex-justify-space-between">
             <div className="flex">
                 {listInView ? (
                     <SelectAll

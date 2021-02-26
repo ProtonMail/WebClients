@@ -3,34 +3,16 @@
 }
 
 .message-attachmentList-item {
-    background-color: $white;
+    background-color: var(--background-norm);
 }
 
 .message-attachmentPrimaryAction,
 .message-attachmentSecondaryAction {
-
     &:hover,
     &:focus-within {
-        box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
+        box-shadow: var(--shadow-norm);
     }
 }
-
-.isDarkMode {
-
-    .message-attachmentList-item {
-        background-color: $pm-global-grey;
-    }
-
-    .message-attachmentPrimaryAction,
-    .message-attachmentSecondaryAction {
-
-        &:hover,
-        &:focus-within {
-            background-color: rgba(0, 0, 0, 0.2);
-        }
-    }
-}
-
 
 .message-attachmentSecondaryAction {
     svg[aria-busy="true"] {
@@ -89,7 +71,7 @@
 
 .message-attachmentList-item {
     &--uploadInProgress {
-        background-color: var(--bordercolor-input, $pm-global-muted);
+        background-color: var(--background-weak);
 
         .message-attachmentSecondaryAction {
             border: 0;
@@ -97,22 +79,18 @@
     }
 
     &--loading {
-        background: var(--bordercolor-input, $pm-global-muted);
+        background-color: var(--background-weak);
     }
 }
 
 $message-attachment-icon-width: 2.6em !default;
 .message-attachmentIcon {
     width: $message-attachment-icon-width;
-
-    svg:not([class*='fill-']) {
-        fill: var(--color-main-area, $black);
-    }
 }
 
 
 .message-attachmentInfo {
-    border-left: 1px solid var(--bordercolor-input, $pm-global-border);
+    border-left: 1px solid var(--border-norm);
     padding: .3em .7em;
     max-width: calc(100% - #{$message-attachment-icon-width});
 }

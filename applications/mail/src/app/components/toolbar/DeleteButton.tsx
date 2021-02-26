@@ -23,8 +23,7 @@ const DeleteButton = ({ labelID = '', selectedIDs = [] }: Props) => {
         <>
             {c('Action').t`Delete permanently`}
             <br />
-            <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey no-border">Backspace</kbd>
+            <kbd className="no-border">{metaKey}</kbd> + <kbd className="no-border">Backspace</kbd>
         </>
     ) : (
         c('Action').t`Delete permanently`

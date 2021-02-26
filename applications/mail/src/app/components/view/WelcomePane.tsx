@@ -73,7 +73,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                     <p>{c('Info')
                         .jt`Upgrade to a paid plan starting from ${startingPrice} only and get additional storage capacity and more addresses with ProtonMail Plus.`}</p>
                     <div className="boxes-placeholder-container flex flex-nowrap max-w50e center mt2">
-                        <div className="bordered-container flex-item-fluid flex flex-column text-center p1 mr2">
+                        <div className="bordered flex-item-fluid flex flex-column text-center p1 mr2">
                             <img className="mb1 hauto" src={storageSvg} alt={c('Alt').t`Storage`} />
                             <p className="mt0 mb1 text-bold">{c('Info').t`5GB Storage`}</p>
                             <p className="mt0 mb1">{c('Info')
@@ -86,7 +86,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                                 className="mtauto"
                             >{c('Action').t`Upgrade`}</ButtonLike>
                         </div>
-                        <div className="bordered-container flex-item-fluid flex flex-column text-center p1 mr2">
+                        <div className="bordered flex-item-fluid flex flex-column text-center p1 mr2">
                             <img className="mb1 hauto" src={customSvg} alt={c('Alt').t`Mail`} />
                             <p className="mt0 mb1 text-bold">{c('Info').t`5 Email Addresses`}</p>
                             <p className="mt0 mb1">{c('Info')
@@ -99,7 +99,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                                 className="mtauto"
                             >{c('Action').t`Upgrade`}</ButtonLike>
                         </div>
-                        <div className="bordered-container flex-item-fluid flex flex-column text-center p1">
+                        <div className="bordered flex-item-fluid flex flex-column text-center p1">
                             <img className="mb1 hauto" src={customSvg} alt={c('Alt').t`Customization`} />
                             <p className="mt0 mb1 text-bold">{c('Info').t`Customization`}</p>
                             <p className="mt0 mb1">{c('Info')

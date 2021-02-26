@@ -247,7 +247,7 @@ describe('MessageView', () => {
 
             const icon = await findByTestId('encryption-icon');
 
-            expect(icon.classList.contains('color-pm-blue')).toBe(true);
+            expect(icon.classList.contains('color-info')).toBe(true);
             expect((icon.firstChild as Element).getAttribute('xlink:href')).toBe('#shape-locks-check');
         });
 
@@ -293,7 +293,7 @@ describe('MessageView', () => {
 
             const icon = await findByTestId('encryption-icon');
 
-            expect(icon.classList.contains('color-global-success')).toBe(true);
+            expect(icon.classList.contains('color-success')).toBe(true);
             expect((icon.firstChild as Element).getAttribute('xlink:href')).toBe('#shape-locks-check');
         });
 
@@ -330,7 +330,7 @@ describe('MessageView', () => {
 
             const icon = await findByTestId('encryption-icon');
 
-            expect(icon.classList.contains('color-pm-blue')).toBe(true);
+            expect(icon.classList.contains('color-info')).toBe(true);
             expect((icon.firstChild as Element).getAttribute('xlink:href')).toBe('#shape-locks-warning');
         });
 

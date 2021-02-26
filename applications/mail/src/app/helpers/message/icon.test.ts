@@ -38,7 +38,7 @@ describe('icon', () => {
                 isPublicKeyPinned: false,
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
-                colorClassName: 'color-pm-blue',
+                colorClassName: 'color-info',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
                 text: 'End-to-end encrypted',
@@ -56,7 +56,7 @@ describe('icon', () => {
                 isPublicKeyPinned: true,
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
-                colorClassName: 'color-pm-blue',
+                colorClassName: 'color-info',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.CHECKMARK,
                 text: 'End-to-end encrypted to verified recipient',
@@ -78,7 +78,7 @@ describe('icon', () => {
                 ),
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
-                colorClassName: 'color-global-warning',
+                colorClassName: 'color-danger',
                 isEncrypted: false,
                 fill: STATUS_ICONS_FILLS.FAIL,
                 text: 'test error',
@@ -96,7 +96,7 @@ describe('icon', () => {
                 isPublicKeyPinned: false,
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
-                colorClassName: 'color-global-success',
+                colorClassName: 'color-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
                 text: 'End-to-end encrypted',
@@ -114,7 +114,7 @@ describe('icon', () => {
                 isPublicKeyPinned: true,
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
-                colorClassName: 'color-global-success',
+                colorClassName: 'color-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.CHECKMARK,
                 text: 'End-to-end encrypted to verified recipient',
@@ -136,7 +136,7 @@ describe('icon', () => {
                 ),
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
-                colorClassName: 'color-global-warning',
+                colorClassName: 'color-danger',
                 isEncrypted: false,
                 fill: STATUS_ICONS_FILLS.FAIL,
                 text: 'test error',
@@ -155,7 +155,7 @@ describe('icon', () => {
                 warnings: ['warning test 1', 'warning test 2'],
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
-                colorClassName: 'color-global-success',
+                colorClassName: 'color-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.WARNING,
                 text: "End-to-end encrypted. Recipient's key validation failed: warning test 1; warning test 2",
@@ -174,7 +174,7 @@ describe('icon', () => {
                 warnings: ['warning test 1', 'warning test 2'],
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
-                colorClassName: 'color-global-success',
+                colorClassName: 'color-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.WARNING,
                 text: "End-to-end encrypted. Recipient's key validation failed: warning test 1; warning test 2",
@@ -191,7 +191,7 @@ describe('icon', () => {
                 hasPinnedKeys: false,
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
-                colorClassName: 'color-global-success',
+                colorClassName: 'color-success',
                 isEncrypted: false,
                 fill: STATUS_ICONS_FILLS.SIGN,
                 text: 'PGP-signed',
@@ -209,7 +209,7 @@ describe('icon', () => {
                 isPublicKeyPinned: false,
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
-                colorClassName: 'color-global-success',
+                colorClassName: 'color-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.SIGN,
                 text: 'PGP-encrypted',
@@ -227,7 +227,7 @@ describe('icon', () => {
                 isPublicKeyPinned: true,
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
-                colorClassName: 'color-global-success',
+                colorClassName: 'color-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.CHECKMARK,
                 text: 'PGP-encrypted to verified recipient',
@@ -246,7 +246,7 @@ describe('icon', () => {
                 warnings: ['warning test 1', 'warning test 2'],
             };
             expect(getSendStatusIcon(sendPreferences)).toMatchObject({
-                colorClassName: 'color-global-success',
+                colorClassName: 'color-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.WARNING,
                 text: "PGP-encrypted. Recipient's key validation failed: warning test 1; warning test 2",
@@ -297,7 +297,7 @@ describe('icon', () => {
             };
             const icon = getIconFromHeaders(headers, email);
             expect(icon).toMatchObject({
-                colorClassName: 'color-global-success',
+                colorClassName: 'color-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
                 text: 'Encrypted by ProtonMail to PGP recipient',
@@ -312,7 +312,7 @@ describe('icon', () => {
             };
             const icon = getIconFromHeaders(headers, email);
             expect(icon).toMatchObject({
-                colorClassName: 'color-global-success',
+                colorClassName: 'color-success',
                 isEncrypted: false,
                 fill: STATUS_ICONS_FILLS.SIGN,
                 text: 'PGP-signed',
@@ -327,7 +327,7 @@ describe('icon', () => {
             };
             const icon = getIconFromHeaders(headers, email);
             expect(icon).toMatchObject({
-                colorClassName: 'color-pm-blue',
+                colorClassName: 'color-info',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.CHECKMARK,
                 text: 'End-to-end encrypted to verified recipient',
@@ -342,7 +342,7 @@ describe('icon', () => {
             };
             const icon = getIconFromHeaders(headers, email);
             expect(icon).toMatchObject({
-                colorClassName: 'color-global-success',
+                colorClassName: 'color-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.CHECKMARK,
                 text: 'End-to-end encrypted to verified PGP recipient',
@@ -357,7 +357,7 @@ describe('icon', () => {
             };
             const icon = getIconFromHeaders(headers, email);
             expect(icon).toMatchObject({
-                colorClassName: 'color-pm-blue',
+                colorClassName: 'color-info',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
                 text: 'End-to-end encrypted',
@@ -372,7 +372,7 @@ describe('icon', () => {
             };
             const icon = getIconFromHeaders(headers, email);
             expect(icon).toMatchObject({
-                colorClassName: 'color-pm-blue',
+                colorClassName: 'color-info',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
                 text: 'Encrypted by ProtonMail',
@@ -387,7 +387,7 @@ describe('icon', () => {
             };
             const icon = getIconFromHeaders(headers, email);
             expect(icon).toMatchObject({
-                colorClassName: 'color-pm-blue',
+                colorClassName: 'color-info',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.CHECKMARK,
                 text: 'Encrypted by ProtonMail to verified recipient',
@@ -402,7 +402,7 @@ describe('icon', () => {
             };
             const icon = getIconFromHeaders(headers, email);
             expect(icon).toMatchObject({
-                colorClassName: 'color-global-success',
+                colorClassName: 'color-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.CHECKMARK,
                 text: 'Encrypted by ProtonMail to verified PGP recipient',
@@ -417,7 +417,7 @@ describe('icon', () => {
             };
             const icon = getIconFromHeaders(headers, email);
             expect(icon).toMatchObject({
-                colorClassName: 'color-pm-blue',
+                colorClassName: 'color-info',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
                 text: 'End-to-end encrypted',
@@ -461,7 +461,7 @@ describe('icon', () => {
             };
             const icon = getIconFromHeaders(headers);
             expect(icon).toMatchObject({
-                colorClassName: 'color-pm-blue',
+                colorClassName: 'color-info',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.CHECKMARK,
                 text: 'Sent by you with end-to-end encryption to verified recipients',
@@ -476,7 +476,7 @@ describe('icon', () => {
             };
             const icon = getIconFromHeaders(headers);
             expect(icon).toMatchObject({
-                colorClassName: 'color-global-success',
+                colorClassName: 'color-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.CHECKMARK,
                 text: 'Sent by ProtonMail with zero-access encryption to verified recipients',
@@ -491,7 +491,7 @@ describe('icon', () => {
             };
             const icon = getIconFromHeaders(headers);
             expect(icon).toMatchObject({
-                colorClassName: 'color-pm-blue',
+                colorClassName: 'color-info',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
                 text: 'Sent by you with end-to-end encryption',
@@ -506,7 +506,7 @@ describe('icon', () => {
             };
             const icon = getIconFromHeaders(headers);
             expect(icon).toMatchObject({
-                colorClassName: 'color-global-success',
+                colorClassName: 'color-success',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
                 text: 'Sent by ProtonMail with zero-access encryption',
@@ -521,7 +521,7 @@ describe('icon', () => {
             };
             const icon = getIconFromHeaders(headers);
             expect(icon).toMatchObject({
-                colorClassName: 'color-pm-blue',
+                colorClassName: 'color-info',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
                 text: 'Sent by you with end-to-end encryption',
@@ -538,7 +538,7 @@ describe('icon', () => {
             };
             const icon = getIconFromHeaders(headers);
             expect(icon).toMatchObject({
-                colorClassName: 'color-pm-blue',
+                colorClassName: 'color-info',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
                 text: 'Stored with zero-access encryption',
@@ -551,7 +551,7 @@ describe('icon', () => {
             };
             const icon = getIconFromHeaders(headers);
             expect(icon).toMatchObject({
-                colorClassName: 'color-pm-blue',
+                colorClassName: 'color-info',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
                 text: 'Stored with zero-access encryption',
@@ -562,7 +562,7 @@ describe('icon', () => {
             const headers = {};
             const icon = getIconFromHeaders(headers);
             expect(icon).toMatchObject({
-                colorClassName: 'color-pm-blue',
+                colorClassName: 'color-info',
                 isEncrypted: true,
                 fill: STATUS_ICONS_FILLS.PLAIN,
                 text: 'Stored with zero-access encryption',
@@ -572,21 +572,21 @@ describe('icon', () => {
 
     describe('getReceivedStatusIcon', () => {
         it.each`
-            origin        | encryption       | pinnedKeys    | verificationStatus    | colorClassName            | iconName                | text
-            ${'internal'} | ${'on-delivery'} | ${[]}         | ${NOT_VERIFIED}       | ${'color-pm-blue'}        | ${'locks-closed'}       | ${'Sent by ProtonMail with zero-access encryption'}
-            ${'internal'} | ${'end-to-end'}  | ${[]}         | ${NOT_SIGNED}         | ${'color-pm-blue'}        | ${'locks-closed'}       | ${'End-to-end encrypted message'}
-            ${'internal'} | ${'end-to-end'}  | ${[fakeKey1]} | ${NOT_SIGNED}         | ${'color-pm-blue'}        | ${'locks-warning'}      | ${'Sender could not be verified: Message not signed'}
-            ${'internal'} | ${'end-to-end'}  | ${[]}         | ${NOT_VERIFIED}       | ${'color-pm-blue'}        | ${'locks-closed'}       | ${'End-to-end encrypted and signed message'}
-            ${'internal'} | ${'end-to-end'}  | ${[fakeKey1]} | ${SIGNED_AND_VALID}   | ${'color-pm-blue'}        | ${'locks-check'}        | ${'End-to-end encrypted message from verified sender'}
-            ${'internal'} | ${'end-to-end'}  | ${[fakeKey1]} | ${SIGNED_AND_INVALID} | ${'color-pm-blue'}        | ${'locks-warning'}      | ${'Sender verification failed'}
-            ${'external'} | ${'end-to-end'}  | ${[]}         | ${NOT_SIGNED}         | ${'color-global-success'} | ${'locks-closed'}       | ${'PGP-encrypted message'}
-            ${'external'} | ${'end-to-end'}  | ${[]}         | ${NOT_VERIFIED}       | ${'color-global-success'} | ${'locks-signed'}       | ${'PGP-encrypted and signed message'}
-            ${'external'} | ${'end-to-end'}  | ${[fakeKey1]} | ${SIGNED_AND_VALID}   | ${'color-global-success'} | ${'locks-check'}        | ${'PGP-encrypted message from verified sender'}
-            ${'external'} | ${'end-to-end'}  | ${[fakeKey1]} | ${SIGNED_AND_INVALID} | ${'color-global-success'} | ${'locks-warning'}      | ${'Sender verification failed'}
-            ${'external'} | ${'on-delivery'} | ${[]}         | ${NOT_VERIFIED}       | ${'color-global-success'} | ${'locks-open-signed'}  | ${'PGP-signed message'}
-            ${'external'} | ${'on-delivery'} | ${[fakeKey1]} | ${SIGNED_AND_VALID}   | ${'color-global-success'} | ${'locks-open-check'}   | ${'PGP-signed message from verified sender'}
-            ${'external'} | ${'on-delivery'} | ${[fakeKey1]} | ${SIGNED_AND_INVALID} | ${'color-global-success'} | ${'locks-open-warning'} | ${'PGP-signed message. Sender verification failed'}
-            ${'external'} | ${'on-delivery'} | ${[]}         | ${NOT_SIGNED}         | ${'color-global-grey-dm'} | ${'locks-closed'}       | ${'Stored with zero-access encryption'}
+            origin        | encryption       | pinnedKeys    | verificationStatus    | colorClassName     | iconName                | text
+            ${'internal'} | ${'on-delivery'} | ${[]}         | ${NOT_VERIFIED}       | ${'color-info'}    | ${'locks-closed'}       | ${'Sent by ProtonMail with zero-access encryption'}
+            ${'internal'} | ${'end-to-end'}  | ${[]}         | ${NOT_SIGNED}         | ${'color-info'}    | ${'locks-closed'}       | ${'End-to-end encrypted message'}
+            ${'internal'} | ${'end-to-end'}  | ${[fakeKey1]} | ${NOT_SIGNED}         | ${'color-info'}    | ${'locks-warning'}      | ${'Sender could not be verified: Message not signed'}
+            ${'internal'} | ${'end-to-end'}  | ${[]}         | ${NOT_VERIFIED}       | ${'color-info'}    | ${'locks-closed'}       | ${'End-to-end encrypted and signed message'}
+            ${'internal'} | ${'end-to-end'}  | ${[fakeKey1]} | ${SIGNED_AND_VALID}   | ${'color-info'}    | ${'locks-check'}        | ${'End-to-end encrypted message from verified sender'}
+            ${'internal'} | ${'end-to-end'}  | ${[fakeKey1]} | ${SIGNED_AND_INVALID} | ${'color-info'}    | ${'locks-warning'}      | ${'Sender verification failed'}
+            ${'external'} | ${'end-to-end'}  | ${[]}         | ${NOT_SIGNED}         | ${'color-success'} | ${'locks-closed'}       | ${'PGP-encrypted message'}
+            ${'external'} | ${'end-to-end'}  | ${[]}         | ${NOT_VERIFIED}       | ${'color-success'} | ${'locks-signed'}       | ${'PGP-encrypted and signed message'}
+            ${'external'} | ${'end-to-end'}  | ${[fakeKey1]} | ${SIGNED_AND_VALID}   | ${'color-success'} | ${'locks-check'}        | ${'PGP-encrypted message from verified sender'}
+            ${'external'} | ${'end-to-end'}  | ${[fakeKey1]} | ${SIGNED_AND_INVALID} | ${'color-success'} | ${'locks-warning'}      | ${'Sender verification failed'}
+            ${'external'} | ${'on-delivery'} | ${[]}         | ${NOT_VERIFIED}       | ${'color-success'} | ${'locks-open-signed'}  | ${'PGP-signed message'}
+            ${'external'} | ${'on-delivery'} | ${[fakeKey1]} | ${SIGNED_AND_VALID}   | ${'color-success'} | ${'locks-open-check'}   | ${'PGP-signed message from verified sender'}
+            ${'external'} | ${'on-delivery'} | ${[fakeKey1]} | ${SIGNED_AND_INVALID} | ${'color-success'} | ${'locks-open-warning'} | ${'PGP-signed message. Sender verification failed'}
+            ${'external'} | ${'on-delivery'} | ${[]}         | ${NOT_SIGNED}         | ${'color-norm'}    | ${'locks-closed'}       | ${'Stored with zero-access encryption'}
         `(
             'should use color $colorClassName, lock $iconName when origin $origin, encryption $encryption and verification status $verificationStatus',
             ({ origin, encryption, pinnedKeys, verificationStatus, colorClassName, iconName, text }) => {
