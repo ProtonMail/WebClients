@@ -11,7 +11,7 @@ import './Plan.scss';
 const PlanDetails = ({ selectedPlan, cycle, currency }) => {
     const { planName, title, features } = selectedPlan;
     return (
-        <div className="flex flex-column bordered-container">
+        <div className="flex flex-column bordered">
             <h6 className="p0-5 mb0 w100 text-center color-primary">{c('Title').t`${title} plan details`}</h6>
             <div className="p1">
                 <ul className="selected-plan-list unstyled m0 selected-plan-list--negative">

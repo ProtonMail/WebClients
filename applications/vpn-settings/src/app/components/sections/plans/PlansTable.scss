@@ -11,7 +11,7 @@
 	td,
 	th {
 		padding: em(16);
-		border: 1px solid $pm-global-border;
+		border: 1px solid var(--border-norm);
 		border-bottom: 0;
 		border-right: 0;
 
@@ -30,7 +30,7 @@
 
 	tr td:last-child,
 	tr th:last-child {
-		border-right: 1px solid $pm-global-border;
+		border-right: 1px solid var(--border-norm);
 	}
 
 	thead {
@@ -54,7 +54,7 @@
 			&:last-of-type {
 				td,
 				th {
-					border-bottom: 1px solid $pm-global-border;
+					border-bottom: 1px solid var(--border-norm);
 				}
 
 				& :first-child {
@@ -91,18 +91,18 @@ $nb-plans-max: 4 !default;
 	.pm-table--highlight[data-plan-number='#{$i}'] {
 		& tr td:nth-child(#{$i + 1}),
 		& tr th:nth-child(#{$i + 1}) {
-			border-left: #{$border-width} solid $pm-primary;
-			border-right: #{$border-width} solid $pm-primary;
+			border-left: #{$border-width} solid var(--primary);
+			border-right: #{$border-width} solid var(--primary);
 		}
 
 		& tr:last-child td:nth-child(#{$i + 1}) {
-			border-bottom: #{$border-width} solid $pm-primary;
+			border-bottom: #{$border-width} solid var(--primary);
 		}
 
 		& tr th:nth-child(#{$i + 1}) {
-			border-top: #{$border-width} solid $pm-primary;
+			border-top: #{$border-width} solid var(--primary);
 			position: relative;
-			color: $pm-primary;
+			color: var(--primary);
 
 			&::before {
 				content: attr(data-highlight);
@@ -111,8 +111,8 @@ $nb-plans-max: 4 !default;
 				bottom: 100%;
 				left: -#{$border-width};
 				right: -#{$border-width};
-				background-color: $pm-primary;
-				color: $white;
+				background-color: var(--primary);
+				color: var(--primary-contrast);
 				text-align: center;
 				font-weight: bold;
 				text-transform: uppercase;
