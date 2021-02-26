@@ -37,7 +37,7 @@ const PriceInfo = ({ plan, cycle, currency }) => {
                 </div>
             )}
             {(plan.couponDiscount || billingCycleI18n.discount) && (
-                <div className="flex color-global-success flex-justify-space-between">
+                <div className="flex color-success flex-justify-space-between">
                     <span className="mr0-25">
                         {plan.couponDiscount
                             ? `${plan.couponDescription} (${discountPercentage}%)`

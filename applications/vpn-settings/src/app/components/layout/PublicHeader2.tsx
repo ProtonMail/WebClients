@@ -12,7 +12,7 @@ const PublicHeader2 = ({ action }: Props) => (
             <span className="opacity-50">{c('Label').t`Back to:`}</span>{' '}
             <Href
                 url="https://protonvpn.com"
-                className="inline-block color-white text-no-decoration hover-same-color"
+                className="inline-block text-no-decoration hover-same-color"
                 target="_self"
             >{c('Link').t`protonvpn.com`}</Href>
         </div>

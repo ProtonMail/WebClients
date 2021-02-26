@@ -22,7 +22,7 @@ const RedeemContainer = ({ history }) => (
         </div>
         <div className="redeem-heading-bg pt1 pl2 pr2">
             <div className="max-w80 on-tablet-max-w100 center">
-                <Title className="redeem-heading-title mt2 mb1-5 color-white text-bold">
+                <Title className="redeem-heading-title mt2 mb1-5 text-bold">
                     {c('Title').t`Redeem your coupon and start protecting your online privacy`}
                 </Title>
                 <div className="flex">
@@ -36,7 +36,7 @@ const RedeemContainer = ({ history }) => (
                 </div>
             </div>
         </div>
-        <div className="bg-global-light p2">
+        <div className="bg-weak p2">
             <div className="flex flex-justify-space-between on-mobile-flex-column text-center on-tablet-max-w100 max-w80 center mt2">
                 {[
                     {
@@ -81,7 +81,7 @@ const RedeemContainer = ({ history }) => (
                             .t`Defend your Internet connection with AES-256, the highest strength encryption.`,
                     },
                 ].map(({ icon, alt, title, about }) => (
-                    <figure key={title} className="shadow-container w30 mb2 bg-white color-global-altgrey p1">
+                    <figure key={title} className="shadow-norm w30 mb2 bg-norm color-norm p1">
                         <img src={icon} alt={alt} className="redeem-promo-img center mt1 mb1" />
                         <figcaption>
                             <h2>{title}</h2>
