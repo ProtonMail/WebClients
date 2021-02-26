@@ -15,6 +15,7 @@ const EnterPasswordInfo = ({ submitPassword }: Props) => {
         <>
             <h3 className="text-bold mt1 mb2">{c('Title').t`Enter file password to download`}</h3>
             <form
+                className="w100"
                 onSubmit={(e) => {
                     e.preventDefault();
                     withLoading(submitPassword(password)).catch(console.error);
