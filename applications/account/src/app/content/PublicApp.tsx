@@ -1,4 +1,5 @@
 import React, { useCallback, useRef, useState } from 'react';
+import * as H from 'history';
 import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 import ForceRefreshContext from 'react-components/containers/forceRefresh/context';
@@ -23,6 +24,10 @@ import { APP_NAME } from '../config';
 import AccountPublicApp from './AccountPublicApp';
 import EmailUnsubscribeContainer from '../containers/EmailUnsubscribeContainer';
 
+const getPathFromLocation = (location: H.Location) => {
+    return [location.pathname, location.search, location.hash].join('');
+};
+
 interface Props {
     onLogin: ProtonLoginCallback;
     locales: TtagLocaleMap;
@@ -30,7 +35,7 @@ interface Props {
 
 const PublicApp = ({ onLogin, locales }: Props) => {
     const history = useHistory();
-    const location = useLocation();
+    const location = useLocation<{ from?: H.Location }>();
     const [, setState] = useState(1);
     const refresh = useCallback(() => setState((i) => i + 1), []);
     const api = useApi();
@@ -53,7 +58,15 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             await produceFork({ api, UID, keyPassword, ...forkState, type });
             return;
         }
-        return onLogin(args);
+        const previousLocation = location.state?.from ? getPathFromLocation(location.state.from) : undefined;
+        return onLogin(
+            previousLocation
+                ? {
+                      ...args,
+                      path: previousLocation,
+                  }
+                : args
+        );
     };
 
     const handleActiveSessionsFork = (newForkState: ProduceForkParameters, { sessions }: GetActiveSessionsResult) => {
@@ -158,7 +171,12 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                     onBack={hasBackToSwitch ? () => history.push('/switch') : undefined}
                                 />
                             </Route>
-                            <Redirect to={SSO_PATHS.LOGIN} />
+                            <Redirect
+                                to={{
+                                    pathname: SSO_PATHS.LOGIN,
+                                    state: { from: location },
+                                }}
+                            />
                         </Switch>
                     </ForceRefreshContext.Provider>
                 </AccountPublicApp>
