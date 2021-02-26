@@ -137,7 +137,7 @@ const AccountSwitchContainer = ({ Layout, toApp, onLogin, activeSessions, onAddA
                             {PrimaryEmail}
                         </span>
                     </span>
-                    <span className="visibility-hidden block no-scroll button-show-on-hover-element button-account-login text-semibold text-sm m0">
+                    <span className="block no-scroll button-show-on-hover-element button-account-login text-semibold text-sm m0">
                         {loadingMap[LocalID] ? <LoaderIcon /> : c('Action').t`Sign in`}
                     </span>
                 </button>
