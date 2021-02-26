@@ -35,7 +35,7 @@ const LocalizedMiniCalendar = ({ weekStartsOn, ...rest }: Props) => {
             weekdaysLong={weekdaysLong}
             weekdaysShort={weekdaysShort}
             months={months}
-            weekStartsOn={weekStartsOn || getWeekStartsOn(dateLocale)}
+            weekStartsOn={weekStartsOn !== undefined ? weekStartsOn : getWeekStartsOn(dateLocale)}
             formatDay={formatDay}
             {...rest}
         />
