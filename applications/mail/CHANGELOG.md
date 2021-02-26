@@ -9,7 +9,6 @@
 -   Added the ability to sort labels alphabetically in Label settings
 -   Improved focus in composer navigation when using "Tab" key
 -   Added the ability to create new folders and labels directly from the lefthand menu
--   Improved the handling of unauthorized actions like moving messages from Draft to Spam, Sent to Spam, Draft to Inbox and Sent to Inbox
 
 ## Fixes
 
