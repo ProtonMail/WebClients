@@ -144,7 +144,7 @@ export const switchPlan = ({
     plans: Plan[];
     planID: string | undefined;
     service: PLAN_SERVICES;
-    organization: Organization;
+    organization?: Organization;
 }) => {
     // Handle FREE VPN and FREE Mail
     if (planID === undefined) {
@@ -157,7 +157,7 @@ export const switchPlan = ({
         return { [plansMap[VISIONARY].ID]: 1 };
     }
 
-    const { UsedDomains = 0, UsedAddresses = 0, UsedSpace = 0, UsedVPN = 0, UsedMembers = 0 } = organization;
+    const { UsedDomains = 0, UsedAddresses = 0, UsedSpace = 0, UsedVPN = 0, UsedMembers = 0 } = organization || {};
     const selectedPlan = plans.find(({ ID }) => ID === planID);
 
     const transferDomains = (from: PLANS, to: PLANS) => {
@@ -253,4 +253,26 @@ export const clearPlanIDs = (planIDs: PlanIDs) => {
         acc[planID] = quantity;
         return acc;
     }, {});
+};
+
+export const getSupportedAddons = (planIDs: PlanIDs, plans: Plan[]) => {
+    const plansMap = toMap(plans, 'Name');
+    const supported: Partial<Record<ADDON_NAMES, boolean>> = {};
+
+    if (planIDs[plansMap[PLANS.PLUS].ID]) {
+        supported[ADDON_NAMES.SPACE] = true;
+        supported[ADDON_NAMES.ADDRESS] = true;
+        supported[ADDON_NAMES.DOMAIN] = true;
+    }
+
+    if (planIDs[plansMap[PLANS.PROFESSIONAL].ID]) {
+        supported[ADDON_NAMES.MEMBER] = true;
+        supported[ADDON_NAMES.DOMAIN] = true;
+    }
+
+    if (planIDs[plansMap[PLANS.PROFESSIONAL].ID] && planIDs[plansMap[PLANS.VPNPLUS].ID]) {
+        supported[ADDON_NAMES.VPN] = true;
+    }
+
+    return supported;
 };
