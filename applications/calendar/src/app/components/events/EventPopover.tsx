@@ -274,7 +274,7 @@ const EventPopover = ({
     return (
         <PopoverContainer style={mergedStyle} className={mergedClassName} ref={popoverRef}>
             <PopoverHeader className="flex-item-noshrink" onClose={onClose}>
-                <div className="color-subheader">{dateHeader}</div>
+                <div className="color-weak">{dateHeader}</div>
                 {isCancelled && (
                     <Badge type="error" tooltip={c('Calendar invite info').t`This event has been cancelled`}>
                         {c('Title').t`CANCELLED`}

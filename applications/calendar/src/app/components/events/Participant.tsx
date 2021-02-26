@@ -13,7 +13,7 @@ const Participant = ({ icon, text, title, tooltip, initials }: Props) => {
     return (
         <div className="participant flex flex-nowrap flex-align-items-center">
             <Tooltip title={tooltip}>
-                <div className="participant-display item-icon relative flex flex-item-noshrink flex-align-items-center flex-justify-center bordered-container">
+                <div className="participant-display item-icon relative flex flex-item-noshrink flex-align-items-center flex-justify-center bordered">
                     <div className="item-abbr">{initials}</div>
                     <span className="participant-status">{icon}</span>
                 </div>

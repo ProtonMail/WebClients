@@ -1,6 +1,6 @@
 .calendar-monthgrid {
 	&-day {
-		color: var(--color-main-area, $pm-global-grey);
+		color: var(--text-norm);
 
 		&-number {
 			display: inline-flex;
@@ -9,20 +9,25 @@
 			border-radius: 50%;
 		}
 
+		&:hover &-number {
+			background-color: var(--interaction-default-hover);
+			color: var(--text-norm);
+		}
+
 		&[aria-current='date'] &-number {
-			background-color: $calendar-today-color;
-			color: $white;
+			background-color: var(--interaction-norm);
+			color: var(--interaction-norm-contrast);
 			font-weight: bold;
 		}
 
 		&[aria-pressed='true'] &-number {
-			background-color: $calendar-selected-day-color;
-			color: $white;
+			background-color: var(--interaction-norm);
+			color: var(--interaction-norm-contrast);
 
 			&:not([aria-current='date'] .calendar-monthgrid-day-number) {
 				@include respond-to($breakpoint-small, 'min') {
-					background-color: inherit;
-					color: inherit;
+					background-color: var(--background-strong);
+					color: var(--text-norm);
 				}
 			}
 		}

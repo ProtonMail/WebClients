@@ -1,5 +1,5 @@
 import React from 'react';
-import { LinkButton, ErrorZone, Icon, classnames, Tooltip, generateUID } from 'react-components';
+import { LinkButton, ErrorZone, classnames, Tooltip, generateUID, Button, Icon } from 'react-components';
 import { c } from 'ttag';
 
 import NotificationInput from './inputs/NotificationInput';
@@ -41,14 +41,15 @@ const Notifications = ({
                             error={errors?.notifications?.fields.includes(index) ? '' : undefined}
                         />
                         <Tooltip title={c('Action').t`Remove this notification`}>
-                            <LinkButton
+                            <Button
+                                icon
+                                shape="ghost"
                                 data-test-id="delete-notification"
-                                className="w2e flex flex-item-noshrink"
+                                className="flex flex-item-noshrink ml0-5"
                                 onClick={() => onChange(removeItem(notifications, index))}
                             >
-                                <Icon name="trash" className="mauto" />
-                                <span className="sr-only">{c('Action').t`Remove this notification`}</span>
-                            </LinkButton>
+                                <Icon name="trash" alt={c('Action').t`Remove this notification`} />
+                            </Button>
                         </Tooltip>
                     </div>
                 );

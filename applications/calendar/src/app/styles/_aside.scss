@@ -5,16 +5,16 @@
 
 .calendar-primary-timezone-cell,
 .calendar-secondary-timezone-cell {
-	border-bottom: $calendar-grid-border;
+	border-bottom: 1px solid var(--border-norm);
 }
 
 .calendar-secondary-timezone-cell {
-	border-right: $calendar-grid-border;
-	background-color: var(--bgcolor-context-bar, $pm-global-light);
+	border-right: 1px solid var(--border-norm);
+	background-color: var(--background-weak);
 
 	&--header {
-		border-top: $calendar-grid-border;
-		border-right: $calendar-grid-border;
+		border-top: 1px solid var(--border-norm);
+		border-right: 1px solid var(--border-norm);
 		border-top-right-radius: $global-border-radius;
 		border-top-left-radius: $global-border-radius;
 	}

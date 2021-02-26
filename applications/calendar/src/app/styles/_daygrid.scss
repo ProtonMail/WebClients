@@ -4,7 +4,7 @@
 	&-weeknumber {
 		border-bottom: $calendar-grid-border;
 		border-right: $calendar-grid-border;
-		background-color: var(--bgcolor-context-bar, $pm-global-light);
+		background-color: var(--background-weak);
 
 		&-width {
 			width: 2.5rem;

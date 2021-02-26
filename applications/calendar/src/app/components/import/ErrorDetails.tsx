@@ -44,7 +44,7 @@ const ErrorDetail = ({ error, ...rest }: { error: ImportEventError }) => {
     return (
         <div {...rest}>
             <span>{`${getErrorIdentifierText(error)}: `}</span>
-            <span className="color-global-warning">{error.message}</span>
+            <span className="color-danger">{error.message}</span>
         </div>
     );
 };
