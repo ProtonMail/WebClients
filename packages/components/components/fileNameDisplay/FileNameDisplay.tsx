@@ -6,12 +6,13 @@ const CHARACTERS_BEFORE_EXTENSION = 3;
 
 interface Props {
     text?: string;
+    charsToDisplayEnd?: number;
 }
 
-const FileNameDisplay = ({ text = '' }: Props) => {
+const FileNameDisplay = ({ text = '', charsToDisplayEnd = 6 }: Props) => {
     const [, extension] = splitExtension(text);
-    const extensionOffset = extension.length + CHARACTERS_BEFORE_EXTENSION;
-
+    const extensionOffset =
+        extension.length < charsToDisplayEnd ? extension.length + CHARACTERS_BEFORE_EXTENSION : charsToDisplayEnd;
     return <MiddleEllipsis charsToDisplayEnd={extensionOffset} className="center" text={text} />;
 };
 
