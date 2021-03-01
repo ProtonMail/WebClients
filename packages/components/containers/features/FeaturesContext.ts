@@ -19,6 +19,9 @@ export enum FeatureCode {
     EarlyAccess = 'EarlyAccess',
     WelcomeImportModalShown = 'WelcomeImportModalShown',
     BlackFridayPromoShown = 'BlackFridayPromoShown',
+    BundlePromoShown = 'BundlePromoShown',
+    UsedMailMobileApp = 'UsedMailMobileApp',
+    UsedContactsImport = 'UsedContactsImport',
 }
 
 export interface FeaturesContextValue {
