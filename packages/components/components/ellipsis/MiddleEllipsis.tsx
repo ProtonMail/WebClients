@@ -26,10 +26,10 @@ const MiddleEllipsis = ({ text, className = '', displayTitle = true, charsToDisp
             className={classnames(['inline-flex flex-nowrap mw100', className])}
             {...rest}
         >
-            <span className="text-ellipsis" aria-hidden="true">
+            <span className="text-ellipsis text-pre" aria-hidden="true">
                 {start}
             </span>
-            <span className="flex-item-noshrink" aria-hidden="true">
+            <span className="flex-item-noshrink text-pre" aria-hidden="true">
                 {end}
             </span>
         </span>
