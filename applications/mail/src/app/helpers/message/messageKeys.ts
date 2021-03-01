@@ -1,9 +1,9 @@
-import { binaryStringToArray, getKeys, arrayToBinaryString } from 'pmcrypto';
-import { decodeBase64 } from 'proton-shared/lib/helpers/base64';
+import { getKeys, arrayToBinaryString } from 'pmcrypto';
 import { splitExtension } from 'proton-shared/lib/helpers/file';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { Api } from 'proton-shared/lib/interfaces';
 import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
+import { getParsedAutocryptHeader } from 'proton-shared/lib/mail/autocrypt';
 import { LARGE_KEY_SIZE } from '../../constants';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { MessageKeys } from '../../models/message';
@@ -43,7 +43,8 @@ export const extractKeysFromAttachments = async (
  * There is no plan to have a full support of autocrypt, just take advantage of the header opportunistically if present
  */
 export const extractKeysFromAutocrypt = async (
-    parsedHeaders: { [key: string]: string | string[] | undefined } | undefined
+    parsedHeaders: { [key: string]: string | string[] | undefined } | undefined,
+    senderAddress: string
 ) => {
     if (!parsedHeaders?.Autocrypt) {
         return [];
@@ -54,24 +55,12 @@ export const extractKeysFromAutocrypt = async (
     return (
         await Promise.all(
             autocrypt.map(async (header) => {
-                const match = header.match(
-                    /^(\s*(_[^;\s]*|addr|prefer-encrypt)\s*=\s*[^;\s]*\s*;)*\s*keydata\s*=([^;]*)$/
-                );
-                if (!match) {
-                    return null;
-                }
-                const preferEncryptMutual = header.match(
-                    /^(\s*(_[^;\s]*|addr)\s*=\s*[^;\s]*\s*;)*\s*prefer-encrypt\s*=\s*mutual\s*;/
-                );
-                if (!preferEncryptMutual) {
-                    return null;
-                }
-                const keydata = header.match(/^(?:\s*(?:[^;\s]*)\s*=\s*[^;\s]*\s*;)*\s*keydata\s*=([^;]*)$/);
                 try {
-                    if (keydata === null) {
-                        return null;
+                    const result = getParsedAutocryptHeader(header, senderAddress);
+                    if (!result) {
+                        return;
                     }
-                    const [key] = await getKeys(binaryStringToArray(decodeBase64(keydata[1])));
+                    const [key] = await getKeys(result.keydata);
                     return key;
                 } catch (e) {
                     // not encoded correctly
