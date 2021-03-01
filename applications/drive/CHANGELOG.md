@@ -1,13 +1,13 @@
 # [4.0.0-beta.11] - 2021-03-03
 
 Among other improvements, this update provides a more convenient way to manage your shared links.
-​
+
 ## Fixed
-​
+
 - "End-to-end Encryption by Proton" label removed in order to streamline the look & feel across the Proton products family
-​
+
 ## Added
-​
+
 - A new section to overview your shared links. Edit, delete or create a new shared link easily without leaving the section
 - Storage space quota is now visible at the left bottom of the side menu bar
 
