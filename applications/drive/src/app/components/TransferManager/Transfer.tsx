@@ -1,5 +1,6 @@
 import React from 'react';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
+import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { classnames, Loader, FileIcon, FileNameDisplay } from 'react-components';
 import ProgressBar from './ProgressBar';
 import TransferStateIndicator from './TransferStateIndicator';
@@ -56,9 +57,18 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
                         <FileIcon mimeType={transfer.meta.mimeType} />
                     )}
                 </span>
-                <span className={classnames(['flex', isNameUnresolved && 'opacity-50'])}>
-                    <FileNameDisplay text={transfer.meta.filename} />
-                </span>
+                {FEATURE_FLAGS.includes('file-name-display') ? (
+                    <span className={classnames(['flex', isNameUnresolved && 'opacity-50'])}>
+                        <FileNameDisplay text={transfer.meta.filename} />
+                    </span>
+                ) : (
+                    <span
+                        className={classnames(['text-ellipsis', isNameUnresolved && 'opacity-50'])}
+                        title={transfer.meta.filename}
+                    >
+                        <span className="text-pre">{transfer.meta.filename}</span>
+                    </span>
+                )}
             </div>
 
             <div className="transfers-manager-list-item-size text-right text-ellipsis" title={`${percentageDone}%`}>
