@@ -281,8 +281,8 @@ export const getReceivedStatusIcon = (
     }
     const origin = message.ParsedHeaders['X-Pm-Origin'];
     const encryption = message.ParsedHeaders['X-Pm-Content-Encryption'];
-    const { verificationStatus, senderVerified } = verification;
-    const hasPinnedKeys = !!verification.senderPinnedKeys?.length;
+    const { verificationStatus, senderVerified, senderPinnedKeys } = verification;
+    const hasPinnedKeys = !!senderPinnedKeys?.length;
 
     if (origin === INTERNAL) {
         const result = { colorClassName: 'color-pm-blue', isEncrypted: true };
@@ -306,39 +306,39 @@ export const getReceivedStatusIcon = (
             if (warningsText) {
                 return { ...result, fill: WARNING, text: warningsText };
             }
-            if (verificationStatus === SIGNED_AND_INVALID) {
-                if (hasPinnedKeys) {
-                    return {
-                        ...result,
-                        fill: WARNING,
-                        text: c('Signature verification warning').t`Sender verification failed`,
-                    };
-                }
+            if (verificationStatus === NOT_SIGNED) {
+                return {
+                    ...result,
+                    fill: PLAIN,
+                    text: c('Received email icon').t`End-to-end encrypted message`,
+                };
+            }
+            if (verificationStatus === NOT_VERIFIED) {
                 return {
                     ...result,
                     fill: PLAIN,
                     text: c('Received email icon').t`End-to-end encrypted and signed message`,
                 };
             }
+            if (verificationStatus === SIGNED_AND_INVALID) {
+                return {
+                    ...result,
+                    fill: WARNING,
+                    text: c('Signature verification warning').t`Sender verification failed`,
+                };
+            }
             if (verificationStatus === SIGNED_AND_VALID) {
-                if (hasPinnedKeys) {
-                    if (!senderVerified) {
-                        return {
-                            ...result,
-                            fill: WARNING,
-                            text: c('Signature verification warning').t`Sender's trusted keys verification failed`,
-                        };
-                    }
+                if (!senderVerified) {
                     return {
                         ...result,
-                        fill: CHECKMARK,
-                        text: c('Received email icon').t`End-to-end encrypted message from verified sender`,
+                        fill: WARNING,
+                        text: c('Signature verification warning').t`Sender's trusted keys verification failed`,
                     };
                 }
                 return {
                     ...result,
-                    fill: PLAIN,
-                    text: c('Received email icon').t`End-to-end encrypted and signed message`,
+                    fill: CHECKMARK,
+                    text: c('Received email icon').t`End-to-end encrypted message from verified sender`,
                 };
             }
             return { ...result, fill: PLAIN, text: c('Received email icon').t`End-to-end encrypted message` };
@@ -367,45 +367,45 @@ export const getReceivedStatusIcon = (
             if (warningsText) {
                 return { ...result, fill: WARNING, text: warningsText };
             }
-            if (verificationStatus === SIGNED_AND_INVALID) {
-                if (hasPinnedKeys) {
-                    return {
-                        ...result,
-                        fill: WARNING,
-                        text: c('Signature verification warning').t`Sender verification failed`,
-                    };
-                }
+            if (verificationStatus === NOT_SIGNED) {
                 return {
                     ...result,
                     fill: PLAIN,
+                    text: c('Received email icon').t`PGP-encrypted message`,
+                };
+            }
+            if (verificationStatus === NOT_VERIFIED) {
+                return {
+                    ...result,
+                    fill: SIGN,
                     text: c('Received email icon').t`PGP-encrypted and signed message`,
                 };
             }
+            if (verificationStatus === SIGNED_AND_INVALID) {
+                return {
+                    ...result,
+                    fill: WARNING,
+                    text: c('Signature verification warning').t`Sender verification failed`,
+                };
+            }
             if (verificationStatus === SIGNED_AND_VALID) {
-                if (hasPinnedKeys) {
-                    if (!senderVerified) {
-                        return {
-                            ...result,
-                            fill: WARNING,
-                            text: c('Signature verification warning').t`Sender's trusted keys verification failed`,
-                        };
-                    }
+                if (!senderVerified) {
                     return {
                         ...result,
-                        fill: CHECKMARK,
-                        text: c('Received email icon').t`PGP-encrypted message from verified sender`,
+                        fill: WARNING,
+                        text: c('Signature verification warning').t`Sender's trusted keys verification failed`,
                     };
                 }
                 return {
                     ...result,
-                    fill: PLAIN,
-                    text: c('Received email icon').t`PGP-encrypted and signed message`,
+                    fill: CHECKMARK,
+                    text: c('Received email icon').t`PGP-encrypted message from verified sender`,
                 };
             }
             return { ...result, fill: PLAIN, text: c('Received email icon').t`PGP-encrypted message` };
         }
         if (encryption === ON_DELIVERY) {
-            if ([NOT_SIGNED, NOT_VERIFIED].includes(verificationStatus)) {
+            if (verificationStatus === NOT_SIGNED) {
                 return {
                     colorClassName: 'color-global-grey-dm',
                     isEncrypted: false,
@@ -427,25 +427,25 @@ export const getReceivedStatusIcon = (
             if (warningsText) {
                 return { ...result, fill: WARNING, text: warningsText };
             }
-            if (verificationStatus === SIGNED_AND_VALID) {
-                if (hasPinnedKeys) {
-                    if (!senderVerified) {
-                        return {
-                            ...result,
-                            fill: WARNING,
-                            text: c('Signature verification warning').t`Sender's trusted keys verification failed`,
-                        };
-                    }
-                    return {
-                        ...result,
-                        fill: CHECKMARK,
-                        text: c('Received email icon').t`PGP-signed message from verified sender`,
-                    };
-                }
+            if (verificationStatus === NOT_VERIFIED) {
                 return {
                     ...result,
                     fill: SIGN,
                     text: c('Received email icon').t`PGP-signed message`,
+                };
+            }
+            if (verificationStatus === SIGNED_AND_VALID) {
+                if (!senderVerified) {
+                    return {
+                        ...result,
+                        fill: WARNING,
+                        text: c('Signature verification warning').t`Sender's trusted keys verification failed`,
+                    };
+                }
+                return {
+                    ...result,
+                    fill: CHECKMARK,
+                    text: c('Received email icon').t`PGP-signed message from verified sender`,
                 };
             }
             if (verificationStatus === SIGNED_AND_INVALID) {

@@ -30,7 +30,6 @@ export const useVerifyMessage = (localID: string) => {
             let verification;
             let signingPublicKey;
             let attachedPublicKeys;
-            let verificationStatus;
 
             try {
                 encryptionPreferences = await getEncryptionPreferences(
@@ -48,7 +47,7 @@ export const useVerifyMessage = (localID: string) => {
                     encryptionPreferences.pinnedKeys
                 );
 
-                const attachedKeys = await extractKeysFromAttachments(
+                attachedPublicKeys = await extractKeysFromAttachments(
                     getData().Attachments,
                     messageKeys,
                     attachmentsCache,
@@ -59,7 +58,7 @@ export const useVerifyMessage = (localID: string) => {
                 const allSenderPublicKeys = [
                     ...encryptionPreferences.pinnedKeys,
                     ...encryptionPreferences.apiKeys,
-                    ...attachedKeys,
+                    ...attachedPublicKeys,
                     ...autocryptKeys,
                 ];
 
@@ -68,7 +67,6 @@ export const useVerifyMessage = (localID: string) => {
                     signed && verification.signature
                         ? await getMatchingKey(verification.signature, allSenderPublicKeys)
                         : undefined;
-                verificationStatus = verification.verified;
             } catch (error) {
                 errors.signature = [error];
             } finally {
@@ -78,7 +76,7 @@ export const useVerifyMessage = (localID: string) => {
                         signingPublicKey,
                         attachedPublicKeys,
                         senderVerified: encryptionPreferences?.isContactSignatureVerified,
-                        verificationStatus,
+                        verificationStatus: verification?.verified,
                         verificationErrors: verification?.verificationErrors,
                     },
                     errors,

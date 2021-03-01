@@ -26,7 +26,7 @@ import { getContactEmail } from '../../../helpers/addresses';
 import { MessageVerification } from '../../../models/message';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 
-const { SIGNED_AND_INVALID } = VERIFICATION_STATUS;
+const { NOT_VERIFIED, SIGNED_AND_INVALID } = VERIFICATION_STATUS;
 
 enum PROMPT_KEY_PINNING_TYPE {
     AUTOPROMPT = 1,
@@ -65,7 +65,10 @@ const getPromptKeyPinningType = ({
         firstAttachedPublicKey &&
         messageVerification?.senderPinnedKeys?.map((key) => key.armor()).includes(firstAttachedPublicKey.armor());
 
-    if (messageVerification?.verificationStatus === SIGNED_AND_INVALID) {
+    if (
+        messageVerification?.verificationStatus === SIGNED_AND_INVALID ||
+        messageVerification?.verificationStatus === NOT_VERIFIED
+    ) {
         if (!messageVerification.signingPublicKey) {
             if (firstAttachedPublicKey) {
                 return PROMPT_KEY_PINNING_TYPE.PIN_ATTACHED;
@@ -148,7 +151,13 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
     const loading = loadingDisablePromptPin || !senderAddress || (isPinUnseen && !contactID) || !bePinnedPublicKey;
     const bannerColorClassName = isPinUnseen ? 'bg-global-attention color-black' : 'bg-white-dm';
 
-    if (promptKeyPinningType === undefined) {
+    // Prevent to propose an already pinned key even if for a strange reason,
+    // the suggested key is already pinned yet the verification still fails
+    const signingPublicKeyAlreadyPinned = messageVerification?.senderPinnedKeys?.some(
+        (pinKey) => pinKey.armor() === bePinnedPublicKey?.armor()
+    );
+
+    if (promptKeyPinningType === undefined || signingPublicKeyAlreadyPinned) {
         return null;
     }
 

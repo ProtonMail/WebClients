@@ -104,6 +104,7 @@ export interface MessageExtended {
 
     /**
      * Message signature obtained after decryption, if any
+     * Warning, there could also be a signature in the mime content which is different
      */
     signature?: OpenPGPSignature;
 

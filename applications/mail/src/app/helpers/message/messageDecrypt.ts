@@ -7,9 +7,9 @@ import {
     DecryptResultPmcrypto,
 } from 'pmcrypto';
 import processMIMESource from 'pmcrypto/lib/message/processMIME';
-import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
-import { getDate, getSender, isMIME } from 'proton-shared/lib/mail/messages';
+import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { getDate, getParsedHeadersFirstValue, getSender, isMIME } from 'proton-shared/lib/mail/messages';
 import { c } from 'ttag';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { MessageErrors } from '../../models/message';
@@ -17,11 +17,12 @@ import { AttachmentMime } from '../../models/attachment';
 import { convert } from '../attachment/attachmentConverter';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
-const { NOT_VERIFIED } = VERIFICATION_STATUS;
+const { NOT_VERIFIED, NOT_SIGNED } = VERIFICATION_STATUS;
 
 interface MimeProcessOptions {
     headerFilename?: string;
     sender?: string;
+    publicKeys?: OpenPGPKey[];
 }
 interface MimeProcessResult {
     body: string;
@@ -85,7 +86,7 @@ const decryptMimeMessage = async (
         decryptedRawContent: decryption.data,
         attachments: convert(message, processing.attachments, 0, attachmentsCache),
         decryptedSubject: processing.encryptedSubject,
-        signature: decryption.signatures[0] || processing.signatures[0],
+        signature: decryption.signatures[0],
         mimetype: processing.mimetype,
         errors: decryption.errors?.length ? { decryption: decryption.errors } : undefined,
     };
@@ -137,12 +138,13 @@ export const decryptMessage = async (
 
 /**
  * Verify the extracted `signature` of a decryption result against its `decryptedRawContent`
+ * Also parse mime messages to look for embedded signature
  * The `publicKeys` are the public keys on which the compare the signature
- * The `message` is only used to get the date which is needed for the verification
+ * The `message` is only used to detect mime format
  */
 export const verifyMessage = async (
     decryptedRawContent: string,
-    signature: OpenPGPSignature | undefined,
+    cryptoSignature: OpenPGPSignature | undefined,
     message: Message,
     publicKeys: OpenPGPKey[]
 ): Promise<{
@@ -150,23 +152,46 @@ export const verifyMessage = async (
     signature?: OpenPGPSignature;
     verificationErrors?: Error[];
 }> => {
-    let result;
-
     try {
-        result = await pmcryptoVerifyMessage({
-            message: createCleartextMessage(decryptedRawContent),
-            signature,
-            publicKeys,
-        });
+        let cryptoVerified: VERIFICATION_STATUS | undefined;
+        let mimeSignature: OpenPGPSignature | undefined;
+        let mimeVerified: VERIFICATION_STATUS | undefined;
+
+        const contentType = getParsedHeadersFirstValue(message, 'Content-Type');
+
+        if (publicKeys.length && cryptoSignature) {
+            const cryptoVerify = await pmcryptoVerifyMessage({
+                message: createCleartextMessage(decryptedRawContent),
+                signature: cryptoSignature,
+                publicKeys,
+            });
+            cryptoVerified = cryptoVerify.verified;
+        }
+
+        if (contentType === MIME_TYPES.MIME) {
+            const mimeVerify = await processMIME({ publicKeys }, decryptedRawContent);
+            [mimeSignature] = mimeVerify.signatures;
+            mimeVerified = mimeVerify.verified;
+        }
+
+        if (!cryptoSignature && !mimeSignature) {
+            return { verified: NOT_SIGNED, signature: undefined };
+        }
+
+        if (!publicKeys.length) {
+            return { verified: NOT_VERIFIED, signature: cryptoSignature };
+        }
+
+        if (cryptoSignature) {
+            return { verified: cryptoVerified as VERIFICATION_STATUS, signature: cryptoSignature };
+        }
+
+        // mimeSignature can't be undefined at this point
+        return { verified: mimeVerified as VERIFICATION_STATUS, signature: mimeSignature };
     } catch (error) {
         return {
             verified: NOT_VERIFIED,
             verificationErrors: [error],
         };
     }
-
-    return {
-        verified: result.verified,
-        signature,
-    };
 };

@@ -6,11 +6,11 @@ import {
 } from 'proton-shared/lib/mail/encryptionPreferences';
 import { MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { STATUS_ICONS_FILLS } from '../../models/crypto';
+import { StatusIcon, STATUS_ICONS_FILLS } from '../../models/crypto';
 import { MessageExtended, MessageVerification } from '../../models/message';
-import { getReceivedStatusIcon, getSendStatusIcon, getSentStatusIconInfo } from './icon';
+import { getReceivedStatusIcon, getSendStatusIcon, getSentStatusIconInfo, getStatusIconName } from './icon';
 
-const { NOT_VERIFIED, SIGNED_AND_VALID, SIGNED_AND_INVALID } = VERIFICATION_STATUS;
+const { NOT_SIGNED, NOT_VERIFIED, SIGNED_AND_VALID, SIGNED_AND_INVALID } = VERIFICATION_STATUS;
 
 const fakeKey1: OpenPGPKey = {
     getFingerprint() {
@@ -571,105 +571,46 @@ describe('icon', () => {
     });
 
     describe('getReceivedStatusIcon', () => {
-        const getIconFromHeaders = (
-            headers: { [key: string]: string },
-            senderPinnedKeys: OpenPGPKey[],
-            verificationStatus: VERIFICATION_STATUS
-        ) => {
-            const message = {
-                Time: SIGNATURE_START.USER + 10 * 1000,
-                ParsedHeaders: headers,
-            } as Message;
-            const verification = {
-                senderVerified: true,
-                senderPinnedKeys,
-                verificationStatus,
-            } as MessageVerification;
-            return getReceivedStatusIcon(message, verification);
-        };
+        it.each`
+            origin        | encryption       | pinnedKeys    | verificationStatus    | colorClassName            | iconName                | text
+            ${'internal'} | ${'on-delivery'} | ${[]}         | ${NOT_VERIFIED}       | ${'color-pm-blue'}        | ${'locks-closed'}       | ${'Sent by ProtonMail with zero-access encryption'}
+            ${'internal'} | ${'end-to-end'}  | ${[]}         | ${NOT_SIGNED}         | ${'color-pm-blue'}        | ${'locks-closed'}       | ${'End-to-end encrypted message'}
+            ${'internal'} | ${'end-to-end'}  | ${[fakeKey1]} | ${NOT_SIGNED}         | ${'color-pm-blue'}        | ${'locks-warning'}      | ${'Sender could not be verified: Message not signed'}
+            ${'internal'} | ${'end-to-end'}  | ${[]}         | ${NOT_VERIFIED}       | ${'color-pm-blue'}        | ${'locks-closed'}       | ${'End-to-end encrypted and signed message'}
+            ${'internal'} | ${'end-to-end'}  | ${[fakeKey1]} | ${SIGNED_AND_VALID}   | ${'color-pm-blue'}        | ${'locks-check'}        | ${'End-to-end encrypted message from verified sender'}
+            ${'internal'} | ${'end-to-end'}  | ${[fakeKey1]} | ${SIGNED_AND_INVALID} | ${'color-pm-blue'}        | ${'locks-warning'}      | ${'Sender verification failed'}
+            ${'external'} | ${'end-to-end'}  | ${[]}         | ${NOT_SIGNED}         | ${'color-global-success'} | ${'locks-closed'}       | ${'PGP-encrypted message'}
+            ${'external'} | ${'end-to-end'}  | ${[]}         | ${NOT_VERIFIED}       | ${'color-global-success'} | ${'locks-signed'}       | ${'PGP-encrypted and signed message'}
+            ${'external'} | ${'end-to-end'}  | ${[fakeKey1]} | ${SIGNED_AND_VALID}   | ${'color-global-success'} | ${'locks-check'}        | ${'PGP-encrypted message from verified sender'}
+            ${'external'} | ${'end-to-end'}  | ${[fakeKey1]} | ${SIGNED_AND_INVALID} | ${'color-global-success'} | ${'locks-warning'}      | ${'Sender verification failed'}
+            ${'external'} | ${'on-delivery'} | ${[]}         | ${NOT_VERIFIED}       | ${'color-global-success'} | ${'locks-open-signed'}  | ${'PGP-signed message'}
+            ${'external'} | ${'on-delivery'} | ${[fakeKey1]} | ${SIGNED_AND_VALID}   | ${'color-global-success'} | ${'locks-open-check'}   | ${'PGP-signed message from verified sender'}
+            ${'external'} | ${'on-delivery'} | ${[fakeKey1]} | ${SIGNED_AND_INVALID} | ${'color-global-success'} | ${'locks-open-warning'} | ${'PGP-signed message. Sender verification failed'}
+            ${'external'} | ${'on-delivery'} | ${[]}         | ${NOT_SIGNED}         | ${'color-global-grey-dm'} | ${'locks-closed'}       | ${'Stored with zero-access encryption'}
+        `(
+            'should use color $colorClassName, lock $iconName when origin $origin, encryption $encryption and verification status $verificationStatus',
+            ({ origin, encryption, pinnedKeys, verificationStatus, colorClassName, iconName, text }) => {
+                const headers = {
+                    'X-Pm-Origin': origin,
+                    'X-Pm-Content-Encryption': encryption,
+                } as any;
+                const message = {
+                    Time: SIGNATURE_START.USER + 10 * 1000,
+                    ParsedHeaders: headers,
+                } as Message;
+                const verification = {
+                    senderVerified: true,
+                    senderPinnedKeys: pinnedKeys,
+                    verificationStatus,
+                } as MessageVerification;
 
-        it('should return a blue lock with in case of decryption error for internal users (end-to-end encryption)', () => {
-            const headers = {
-                'X-Pm-Origin': 'internal',
-                'X-Pm-Content-Encryption': 'end-to-end',
-            };
-            const icon = getIconFromHeaders(headers, [fakeKey1], NOT_VERIFIED);
-            expect(icon).toMatchObject({
-                colorClassName: 'color-pm-blue',
-                isEncrypted: true,
-                fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'End-to-end encrypted message',
-            });
-        });
+                const icon = getReceivedStatusIcon(message, verification);
+                const statusIconName = getStatusIconName(icon as StatusIcon);
 
-        it('should return a blue lock with in case of decryption error for internal users (on-delivery encryption)', () => {
-            const headers = {
-                'X-Pm-Origin': 'internal',
-                'X-Pm-Content-Encryption': 'on-delivery',
-            };
-            const icon = getIconFromHeaders(headers, [fakeKey1], NOT_VERIFIED);
-            expect(icon).toMatchObject({
-                colorClassName: 'color-pm-blue',
-                isEncrypted: true,
-                fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'Sent by ProtonMail with zero-access encryption',
-            });
-        });
-
-        it('should return a green lock with in case of decryption error for external users (end-to-end encryption)', () => {
-            const headers = {
-                'X-Pm-Origin': 'external',
-                'X-Pm-Content-Encryption': 'end-to-end',
-            };
-            const icon = getIconFromHeaders(headers, [fakeKey1], NOT_VERIFIED);
-            expect(icon).toMatchObject({
-                colorClassName: 'color-global-success',
-                isEncrypted: true,
-                fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'PGP-encrypted message',
-            });
-        });
-
-        it('should return a green open lock in case of not encrypted, signed and verified (on-delivery signed)', () => {
-            const headers = {
-                'X-Pm-Origin': 'external',
-                'X-Pm-Content-Encryption': 'on-delivery',
-            };
-            const icon = getIconFromHeaders(headers, [fakeKey1], SIGNED_AND_VALID);
-            expect(icon).toMatchObject({
-                colorClassName: 'color-global-success',
-                isEncrypted: false,
-                fill: STATUS_ICONS_FILLS.CHECKMARK,
-                text: 'PGP-signed message from verified sender',
-            });
-        });
-
-        it('should return a green open lock with warning sign in case of not encrypted, signed and not verified (on-delivery signed)', () => {
-            const headers = {
-                'X-Pm-Origin': 'external',
-                'X-Pm-Content-Encryption': 'on-delivery',
-            };
-            const icon = getIconFromHeaders(headers, [fakeKey1], SIGNED_AND_INVALID);
-            expect(icon).toMatchObject({
-                colorClassName: 'color-global-success',
-                isEncrypted: false,
-                fill: STATUS_ICONS_FILLS.WARNING,
-                text: 'PGP-signed message. Sender verification failed',
-            });
-        });
-
-        it('should return a black lock with in case of decryption error for internal users (on-delivery encryption)', () => {
-            const headers = {
-                'X-Pm-Origin': 'external',
-                'X-Pm-Content-Encryption': 'on-delivery',
-            };
-            const icon = getIconFromHeaders(headers, [fakeKey1], NOT_VERIFIED);
-            expect(icon).toMatchObject({
-                colorClassName: 'color-global-grey-dm',
-                isEncrypted: false,
-                fill: STATUS_ICONS_FILLS.PLAIN,
-                text: 'Stored with zero-access encryption',
-            });
-        });
+                expect(icon?.colorClassName).toBe(colorClassName);
+                expect(icon?.text).toBe(text);
+                expect(statusIconName).toBe(iconName);
+            }
+        );
     });
 });
