@@ -1,5 +1,5 @@
 .folder-tree {
-    @extend .bordered-container;
+    @extend .bordered;
     @extend .scroll-if-needed;
 
     border-radius: $global-border-radius;

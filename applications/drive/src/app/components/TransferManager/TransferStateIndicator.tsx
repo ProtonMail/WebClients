@@ -73,9 +73,9 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
         <div
             className={classnames([
                 'text-ellipsis flex-no-min-children flex-align-items-center flex-nowrap',
-                isTransferPaused(transfer) && 'color-global-info',
-                isTransferDone(transfer) && 'color-global-success',
-                isTransferError(transfer) && 'color-global-warning',
+                isTransferPaused(transfer) && 'color-info',
+                isTransferDone(transfer) && 'color-success',
+                isTransferError(transfer) && 'color-danger',
             ])}
             id={transfer.id}
             title={transferTitle}

@@ -3,8 +3,8 @@
     right: 0;
     bottom: 0;
     z-index: 80;
-    box-shadow: 0 0 1.5rem 0.3rem rgba(0, 0, 0, 0.16);
-    color: var(--color-main-area, $pm-global-grey);
+    box-shadow: var(--shadow-lifted);
+    color: var(--text-norm);
     transition: 0.15s cubic-bezier(0.22, 1, 0.36, 1);
 
     @include respond-to($breakpoint-small, 'max') {
@@ -19,7 +19,8 @@
     }
 
     &-heading {
-        background: var(--bgcolor-main-area, $pm-global-altgrey);
+        background: var(--background-norm);
+        color: var(--text-norm);
 
         @include respond-to($breakpoint-small, 'min') {
             border-radius: $global-border-radius $global-border-radius 0 0;
@@ -36,19 +37,9 @@
         }
     }
 
-    &-heading-button {
-        &:hover,
-        &:focus {
-            background-color: rgba(white, 0.05);
-        }
-        &[disabled] {
-            opacity: 0.25;
-            pointer-events: none;
-        }
-    }
-
     &-list {
-        background-color: var(--bgcolor-input, $pm-global-light);
+        background-color: var(--background-weak);
+        color: var(--text-norm);
         transition: inherit;
     }
 

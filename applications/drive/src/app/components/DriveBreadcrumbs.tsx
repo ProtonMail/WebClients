@@ -43,7 +43,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                 highlighted: dropTarget === meta.LinkID,
                 collapsedText: (
                     <>
-                        <Icon name="folder" className="mt0-25 mr0-5 mr0-25 flex-item-noshrink color-global-attention" />
+                        <Icon name="folder" className="mt0-25 mr0-5 mr0-25 flex-item-noshrink color-warning" />
                         <span title={text} className="text-ellipsis">
                             {text}
                         </span>

@@ -25,7 +25,7 @@ const DiscountBanner = ({ contentState, onClose }: Props) => {
     const appName = getAppName(APPS.PROTONDRIVE);
 
     return (
-        <div className="discount-banner bg-primary color-white-dm p0-25 mb1 mr1 w100 on-mobile-m0 on-mobile-max-w100">
+        <div className="discount-banner bg-primary p0-25 mb1 mr1 w100 on-mobile-m0 on-mobile-max-w100">
             {onClose ? (
                 <button type="button" className="float-right mr0-25" onClick={onClose}>
                     <Icon name="off" size={12} />

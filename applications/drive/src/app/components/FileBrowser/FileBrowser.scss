@@ -10,18 +10,14 @@
 }
 
 .file-browser-grid-item {
-    background-color: var(--bgcolor-input, $pm-input-background);
+    background-color: var(--background-norm);
 
     &:hover,
     &:focus {
-        @extend .bg-global-highlight;
+        background-color: var(--background-weak);
     }
 }
 
-.isDarkMode .file-browser-grid-item {
-    @extend .bg-global-grey;
-}
-
 .file-browser-grid-item.file-browser-grid-item--highlight {
-    @extend .bg-global-highlight;
+    background-color: var(--background-strong);
 }
