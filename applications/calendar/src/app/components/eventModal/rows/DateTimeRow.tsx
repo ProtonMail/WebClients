@@ -66,18 +66,20 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
             <div className={classnames([isAllDay && 'w50 on-mobile-w100'])}>
                 <div className="flex flex-nowrap on-mobile-flex-column mb0-5">
                     <div className="flex flex-nowrap flex-item-fluid flex-item-grow-2">
-                        <DateInput
-                            id={DATE_INPUT_ID}
-                            className="flex-item-fluid flex-item-grow-2"
-                            required
-                            value={start.date}
-                            onChange={handleChangeStartDate}
-                            displayWeekNumbers={displayWeekNumbers}
-                            weekStartsOn={weekStartsOn}
-                            min={MINIMUM_DATE}
-                            max={MAXIMUM_DATE}
-                            title={c('Title').t`Select event start date`}
-                        />
+                        <div className="flex-no-min-children flex-item-fluid flex-column flex-item-grow-2">
+                            <DateInput
+                                id={DATE_INPUT_ID}
+                                className="flex-item-fluid"
+                                required
+                                value={start.date}
+                                onChange={handleChangeStartDate}
+                                displayWeekNumbers={displayWeekNumbers}
+                                weekStartsOn={weekStartsOn}
+                                min={MINIMUM_DATE}
+                                max={MAXIMUM_DATE}
+                                title={c('Title').t`Select event start date`}
+                            />
+                        </div>
 
                         {!isAllDay && (
                             <TimeInput
@@ -105,19 +107,21 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
 
                 <div className="flex flex-nowrap on-mobile-flex-column mb0-5">
                     <div className="flex flex-nowrap flex-item-fluid flex-item-grow-2">
-                        <DateInput
-                            id="event-endDate"
-                            className="flex-item-fluid flex-item-grow-2"
-                            required
-                            value={end.date}
-                            onChange={handleChangeEndDate}
-                            aria-invalid={!!endError}
-                            displayWeekNumbers={displayWeekNumbers}
-                            weekStartsOn={weekStartsOn}
-                            min={minEndDate}
-                            max={MAXIMUM_DATE}
-                            title={c('Title').t`Select event end date`}
-                        />
+                        <div className="flex-no-min-children flex-item-fluid flex-column flex-item-grow-2">
+                            <DateInput
+                                id="event-endDate"
+                                className="flex-item-fluid"
+                                required
+                                value={end.date}
+                                onChange={handleChangeEndDate}
+                                aria-invalid={!!endError}
+                                displayWeekNumbers={displayWeekNumbers}
+                                weekStartsOn={weekStartsOn}
+                                min={minEndDate}
+                                max={MAXIMUM_DATE}
+                                title={c('Title').t`Select event end date`}
+                            />
+                        </div>
 
                         {!isAllDay && (
                             <TimeInput
