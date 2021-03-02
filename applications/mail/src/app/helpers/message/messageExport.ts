@@ -14,6 +14,7 @@ import { constructMimeFromSource } from '../send/sendMimeBuilder';
 import { splitMail, combineHeaders } from '../mail';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
+import { insertActualRemoteImages } from '../transforms/transformRemote';
 
 export const prepareExport = (message: MessageExtended) => {
     if (!message.document) {
@@ -21,8 +22,13 @@ export const prepareExport = (message: MessageExtended) => {
     }
 
     const document = message.document.cloneNode(true) as Element;
+
+    // Embedded images
     const embeddeds = find(message, document);
     mutateHTMLCid(embeddeds, document);
+
+    // Remote images
+    insertActualRemoteImages(document);
 
     return document;
 };

@@ -2,7 +2,7 @@ import { MailSettings } from 'proton-shared/lib/interfaces';
 import { isDraft } from 'proton-shared/lib/mail/messages';
 
 import { MessageExtended } from '../../models/message';
-import { getContent, setContent } from '../message/messageContent';
+import { getContent, getDocumentContent, setDocumentContent } from '../message/messageContent';
 import { hasShowRemote } from '../settings';
 
 const WHITELIST = ['notify@protonmail.com'];
@@ -75,6 +75,13 @@ function prepareInjection(html: Element) {
     return attributes;
 }
 
+export const insertActualRemoteImages = (document: Element | undefined) => {
+    const regex = new RegExp(REGEXP_FIXER, 'g');
+    const content = getDocumentContent(document);
+    const newContent = content.replace(regex, (_, $1) => $1.substring(7));
+    setDocumentContent(document, newContent);
+};
+
 export const transformRemote = (message: MessageExtended, mailSettings?: Partial<MailSettings>) => {
     const regex = new RegExp(REGEXP_FIXER, 'g');
     const showImages =
@@ -95,11 +102,7 @@ export const transformRemote = (message: MessageExtended, mailSettings?: Partial
             //     dispatcher['message.open']('remote.injected', { action, list, message, hasSVG });
             // }
         } else {
-            // message.document.innerHTML = content.replace(regex, (match, $1) => $1.substring(7));
-            setContent(
-                message,
-                content.replace(regex, (match, $1) => $1.substring(7))
-            );
+            insertActualRemoteImages(message.document);
         }
     }
     return { document, showRemoteImages: hasImages ? showImages : undefined };
