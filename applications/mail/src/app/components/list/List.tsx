@@ -9,8 +9,9 @@ import EmptyView from '../view/EmptyView';
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
 import { Breakpoints } from '../../models/utils';
-import { Page } from '../../models/tools';
+import { Page, Sort, Filter } from '../../models/tools';
 import { usePaging } from '../../hooks/usePaging';
+import ListSettings from './ListSettings';
 
 const defaultCheckedIDs: string[] = [];
 const defaultElements: Element[] = [];
@@ -34,6 +35,11 @@ interface Props {
     breakpoints: Breakpoints;
     page: Page;
     onPage: (page: number) => void;
+    sort: Sort;
+    onSort: (sort: Sort) => void;
+    filter: Filter;
+    onFilter: (filter: Filter) => void;
+    onNavigate: (labelID: string) => void;
 }
 
 const List = (
@@ -56,6 +62,11 @@ const List = (
         onPage,
         onFocus,
         onCheckOne,
+        sort,
+        onSort,
+        onNavigate,
+        filter,
+        onFilter,
     }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
@@ -104,11 +115,20 @@ const List = (
             <h1 className="sr-only">
                 {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}
             </h1>
-            <div className="items-column-list-inner flex flex-nowrap flex-column">
+            <div className="items-column-list-inner flex flex-nowrap flex-column relative">
                 {expectedLength === 0 ? (
                     <EmptyView labelID={labelID} isSearch={isSearch} />
                 ) : (
                     <>
+                        <ListSettings
+                            sort={sort}
+                            onSort={onSort}
+                            onFilter={onFilter}
+                            onNavigate={onNavigate}
+                            filter={filter}
+                            labelID={labelID}
+                            conversationMode={conversationMode}
+                        />
                         {elements.map((element, index) => (
                             <Item
                                 key={element.ID}

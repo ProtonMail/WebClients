@@ -214,13 +214,8 @@ const MailboxContainer = ({
                     onCheck={handleCheck}
                     page={page}
                     onPage={handlePage}
-                    sort={sort}
-                    onSort={handleSort}
-                    filter={filter}
-                    onFilter={handleFilter}
                     onBack={handleBack}
                     onElement={handleElement}
-                    onNavigate={handleNavigate}
                     labelDropdownToggleRef={labelDropdownToggleRef}
                     moveDropdownToggleRef={moveDropdownToggleRef}
                 />
@@ -247,6 +242,11 @@ const MailboxContainer = ({
                         onPage={handlePage}
                         onFocus={handleFocus}
                         onCheckOne={handleCheckOne}
+                        sort={sort}
+                        onSort={handleSort}
+                        filter={filter}
+                        onFilter={handleFilter}
+                        onNavigate={handleNavigate}
                     />
                 )}
                 {showContentPanel && (

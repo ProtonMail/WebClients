@@ -9,14 +9,12 @@ import ToolbarDropdown from './ToolbarDropdown';
 import LayoutDropdown from './LayoutDropdown';
 import MoveButtons from './MoveButtons';
 import EmptyButton from './EmptyButton';
-import SortDropdown from './SortDropdown';
-import FilterDropdown from './FilterDropdown';
 import SelectAll from './SelectAll';
 import MoveDropdown from '../dropdown/MoveDropdown';
 import LabelDropdown from '../dropdown/LabelDropdown';
 import BackButton from './BackButton';
 import PagingControls from './PagingControls';
-import { Page, Sort, Filter } from '../../models/tools';
+import { Page } from '../../models/tools';
 import { Breakpoints } from '../../models/utils';
 import NavigationControls from './NavigationControls';
 
@@ -35,13 +33,8 @@ interface Props {
     breakpoints: Breakpoints;
     page: Page;
     onPage: (page: number) => void;
-    sort: Sort;
-    onSort: (sort: Sort) => void;
-    filter: Filter;
-    onFilter: (filter: Filter) => void;
     onBack: () => void;
     onElement: (elementID: string | undefined) => void;
-    onNavigate: (labelID: string) => void;
     labelDropdownToggleRef: React.MutableRefObject<() => void>;
     moveDropdownToggleRef: React.MutableRefObject<() => void>;
 }
@@ -57,15 +50,10 @@ const Toolbar = ({
     selectedIDs = defaultSelectedIDs,
     elementIDs,
     loading = false,
-    onSort,
-    sort,
-    onFilter,
-    filter,
     onBack,
     page,
     onPage,
     onElement,
-    onNavigate,
     labelDropdownToggleRef,
     moveDropdownToggleRef,
 }: Props) => {
@@ -185,23 +173,6 @@ const Toolbar = ({
             <div className="flex">
                 {breakpoints.isDesktop && (
                     <>
-                        {listInView && (
-                            <>
-                                <FilterDropdown
-                                    labelID={labelID}
-                                    loading={loading}
-                                    filter={filter}
-                                    onFilter={onFilter}
-                                    onNavigate={onNavigate}
-                                />
-                                <SortDropdown
-                                    loading={loading}
-                                    conversationMode={conversationMode}
-                                    sort={sort}
-                                    onSort={onSort}
-                                />
-                            </>
-                        )}
                         <LayoutDropdown mailSettings={mailSettings} />
                         <ToolbarSeparator />
                     </>
