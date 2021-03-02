@@ -1,14 +1,6 @@
 import _ from 'lodash';
 import vCard from 'vcf';
-import {
-    arrayToBinaryString,
-    binaryStringToArray,
-    decodeBase64,
-    decryptMessageLegacy,
-    getFingerprint,
-    getMatchingKey,
-    keyInfo
-} from 'pmcrypto';
+import { arrayToBinaryString, decryptMessageLegacy, getFingerprint, getMatchingKey, keyInfo } from 'pmcrypto';
 
 import { VERIFICATION_STATUS, EMAIL_FORMATING, KEY_FLAGS, LARGE_KEY_SIZE, SEND_TYPES } from '../../constants';
 import { toList } from '../../../helpers/arrayHelper';
@@ -16,6 +8,7 @@ import { getGroup } from '../../../helpers/vcard';
 import { normalizeEmail } from '../../../helpers/string';
 import { addGetKeys, getKeyAsUri } from '../../../helpers/key';
 import { isInternal, getDate } from '../../../helpers/message';
+import { getParsedAutocryptHeader } from './autocryptHelper';
 
 const { OPEN_TAG_AUTOCOMPLETE_RAW, CLOSE_TAG_AUTOCOMPLETE_RAW } = EMAIL_FORMATING;
 const { SIGNED_AND_INVALID } = VERIFICATION_STATUS;
@@ -138,33 +131,21 @@ function attachedPublicKey(
         return publicKey.armor();
     };
 
-    const extractPublicKeysFromAutocrypt = (message) => {
+    const extractPublicKeysFromAutocrypt = async (message, keyParser) => {
         if (!_.has(message.ParsedHeaders, 'Autocrypt')) {
             return [];
         }
         const autocrypt = toList(message.ParsedHeaders.Autocrypt);
         return _.filter(
-            autocrypt.map((header) => {
-                const match = header.match(
-                    /^(\s*(_[^;\s]*|addr|prefer-encrypt)\s*=\s*[^;\s]*\s*;)*\s*keydata\s*=([^;]*)$/
-                );
-                if (!match) {
-                    return null;
-                }
-                const preferEncryptMutual = header.match(
-                    /^(\s*(_[^;\s]*|addr)\s*=\s*[^;\s]*\s*;)*\s*prefer-encrypt\s*=\s*mutual\s*;/
-                );
-                if (!preferEncryptMutual) {
-                    return null;
-                }
-                const keydata = header.match(/^(?:\s*(?:[^;\s]*)\s*=\s*[^;\s]*\s*;)*\s*keydata\s*=([^;]*)$/);
-                try {
-                    return binaryStringToArray(decodeBase64(keydata[1]));
-                } catch (e) {
-                    // not encoded correctly
-                    return null;
-                }
-            })
+            await Promise.all(
+                autocrypt.map(async (header) => {
+                    const result = getParsedAutocryptHeader(header, message.Sender.Address);
+                    if (!result) {
+                        return;
+                    }
+                    return keyParser(result.keydata);
+                })
+            )
         );
     };
 
@@ -229,21 +210,21 @@ function attachedPublicKey(
             return false;
         }
 
-        const isKey = (key) =>
-            keyInfo(key).catch(() => {
+        const keyParser = (key) => {
+            return keyInfo(key).catch(() => {
                 return false;
             });
+        };
 
         const buffers = (
             await Promise.all(candidates.map((c) => AttachmentLoader.get(c, message).catch(() => false)))
         ).filter(Boolean);
         const armoredFiles = buffers.map(arrayToBinaryString);
-        const keyInfos = _.filter(await Promise.all(armoredFiles.map(isKey)));
+        const keyInfos = _.filter(await Promise.all(armoredFiles.map(keyParser)));
 
         if (keyInfos.length === 0) {
             // try to get them from the autocrypt headers
-            const autocryptdata = extractPublicKeysFromAutocrypt(message);
-            keyInfos.push(..._.filter(await Promise.all(autocryptdata.map(isKey))));
+            keyInfos.push(...(await extractPublicKeysFromAutocrypt(message, keyParser)));
         }
 
         const keyInfoObject = await getMatchingKeyInfo(keyInfos, message);
@@ -343,4 +324,5 @@ function attachedPublicKey(
         attachPublicKey
     };
 }
+
 export default attachedPublicKey;
