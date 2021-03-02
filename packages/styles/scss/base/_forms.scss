@@ -536,6 +536,7 @@ $inputform-suffix-color: #6b7180 !default;
 $inputform-bg-color: $white !default;
 $inputform-border-color-focus: $pm-primary !default;
 $inputform-default-spacing-text: 0.4rem !default;
+$inputform-error-color: #d13f44 !default;
 
 .inputform {
 	&-container {
@@ -635,11 +636,11 @@ $inputform-default-spacing-text: 0.4rem !default;
 		.inputform {
 			&-label-text,
 			&-assist {
-				color: $pm-global-warning;
+				color: $inputform-error-color;
 				font-weight: 600;
 			}
 			&-field {
-				border-color: $pm-global-warning;
+				border-color: $inputform-error-color;
 			}
 		}
 	}
