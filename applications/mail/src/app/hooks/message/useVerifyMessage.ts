@@ -32,11 +32,9 @@ export const useVerifyMessage = (localID: string) => {
             let attachedPublicKeys;
 
             try {
-                encryptionPreferences = await getEncryptionPreferences(
-                    getData().Sender.Address as string,
-                    0,
-                    contactsMap
-                );
+                const senderAddress = getData().Sender.Address;
+
+                encryptionPreferences = await getEncryptionPreferences(senderAddress, 0, contactsMap);
 
                 const messageKeys = await getMessageKeys(getData());
 
@@ -53,7 +51,7 @@ export const useVerifyMessage = (localID: string) => {
                     attachmentsCache,
                     api
                 );
-                const autocryptKeys = await extractKeysFromAutocrypt(getData().ParsedHeaders);
+                const autocryptKeys = await extractKeysFromAutocrypt(getData().ParsedHeaders, senderAddress);
 
                 const allSenderPublicKeys = [
                     ...encryptionPreferences.pinnedKeys,
