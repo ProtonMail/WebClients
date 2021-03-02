@@ -9,11 +9,15 @@
 - storyBook styles
 - refactor all design system arbo ^^
 - refactor numerous namespaces ^^
+- new input fields!
+- new buttons API!
+- new themes coming soon
+- new `modal--tiny` modifier for Signup
 
 ### New helpers
 
 - added `z-index`, `min-w7e`, `onmobile-min-h0`, `mr-2e`, `flex-flex-items-center` helpers
-- added `tv`, `broken-link`, `keyboard`, `netshield`, `nologs`, `world`, `parent-folder-filled`, `folder-filled` icons
+- added `tv`, `broken-link`, `keyboard`, `netshield`, `nologs`, `world`, `sort`, `parent-folder-filled`, `folder-filled`, `exclamation-circle-filled` icons
 - added `pm-field-icon-container-empty` class (to avoid layout shift for Drive)
 - added `bg-global-muted-dm-on-hover` class
 
@@ -31,6 +35,8 @@
 - change `is-thin` meterbar class
 - fixes for new select
 - add sizing values
+- updated logos
+- hotfixed `text-capitalize` helper
 
 # [1.8.6] - 2020-12-18
 

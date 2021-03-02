@@ -14,6 +14,7 @@ $modal-full-dimension: 98% !default;
 $modal-full-max-width: 150rem !default;
 
 $modal-smaller-width: 28em !default;
+$modal-tiny-width: em(288) !default;
 
 /* overlay covers everything */
 .modal-overlay {
@@ -141,6 +142,9 @@ $modal-smaller-width: 28em !default;
 
 .modal--smaller {
 	width: $modal-smaller-width;
+}
+.modal--tiny {
+	width: $modal-tiny-width;
 }
 
 .modal--wider {
@@ -302,13 +306,17 @@ $pm-label-shorter-width: 10em !default;
 
 // small viewports
 @media (max-width: $modal-breakpoint-width) {
-	.modal {
+	.modal:not(.modal--tiny) {
 		margin: 1%;
 		min-width: 0;
 		width: 98%;
 		max-width: 98%;
 		max-height: 98%;
 		align-self: center;
+	}
+	.modal--tiny {
+		max-width: 95%;
+		max-height: 95%;
 	}
 }
 
