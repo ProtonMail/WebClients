@@ -9,12 +9,17 @@ import { ObserverStream, untilStreamEnd } from '../../utils/stream';
 import { TransferCancel } from '../../interfaces/transfer';
 import runInQueue from '../../utils/runInQueue';
 import { waitUntil } from '../../utils/async';
-import { MAX_THREADS_PER_DOWNLOAD, DOWNLOAD_TIMEOUT, STATUS_CODE, DOWNLOAD_RETRIES_ON_TIMEOUT } from '../../constants';
+import {
+    MAX_THREADS_PER_DOWNLOAD,
+    DOWNLOAD_TIMEOUT,
+    STATUS_CODE,
+    DOWNLOAD_RETRIES_ON_TIMEOUT,
+    BATCH_REQUEST_SIZE,
+} from '../../constants';
 import { isTransferCancelError } from '../../utils/transfer';
 
 const MAX_TOTAL_BUFFER_SIZE = 10; // number of blocks
 const MAX_RETRIES_BEFORE_FAIL = 3;
-const PAGE_SIZE = 150;
 
 const toPolyfillReadable = createReadableStreamWrapper(ReadableStream);
 
@@ -70,7 +75,7 @@ export const initDownload = ({
         let blocksOrBuffer: DriveFileBlock[] | Uint8Array[] = [];
         let fromBlockIndex = 1;
 
-        const hasMorePages = (currentPageLength: number) => currentPageLength === PAGE_SIZE;
+        const hasMorePages = (currentPageLength: number) => currentPageLength === BATCH_REQUEST_SIZE;
 
         const getBlocksPaged = async (pagination: { FromBlockIndex: number; PageSize: number }) => {
             try {
@@ -89,7 +94,7 @@ export const initDownload = ({
         };
 
         // Downloads initial page
-        if (!(await getBlocksPaged({ FromBlockIndex: fromBlockIndex, PageSize: PAGE_SIZE }))) {
+        if (!(await getBlocksPaged({ FromBlockIndex: fromBlockIndex, PageSize: BATCH_REQUEST_SIZE }))) {
             return false;
         }
 
@@ -102,9 +107,9 @@ export const initDownload = ({
             }
 
             while (hasMorePages(blocksOrBuffer.length)) {
-                fromBlockIndex += PAGE_SIZE;
+                fromBlockIndex += BATCH_REQUEST_SIZE;
 
-                if (await getBlocksPaged({ FromBlockIndex: fromBlockIndex, PageSize: PAGE_SIZE })) {
+                if (await getBlocksPaged({ FromBlockIndex: fromBlockIndex, PageSize: BATCH_REQUEST_SIZE })) {
                     for (const buffer of blocksOrBuffer) {
                         await fsWriter.write(buffer as Uint8Array);
                     }
@@ -265,9 +270,9 @@ export const initDownload = ({
 
         const downloadTheRestOfBlocks = async () => {
             while (hasMorePages(blocksOrBuffer.length)) {
-                fromBlockIndex += PAGE_SIZE;
+                fromBlockIndex += BATCH_REQUEST_SIZE;
 
-                if (await getBlocksPaged({ FromBlockIndex: fromBlockIndex, PageSize: PAGE_SIZE })) {
+                if (await getBlocksPaged({ FromBlockIndex: fromBlockIndex, PageSize: BATCH_REQUEST_SIZE })) {
                     blocks = blocksOrBuffer as DriveFileBlock[];
                     activeIndex = 1;
                     await startDownload(getBlockQueue());

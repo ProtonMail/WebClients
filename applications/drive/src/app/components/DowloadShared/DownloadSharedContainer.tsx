@@ -15,7 +15,7 @@ import LinkDoesNotExistInfo from './LinkDoesNotExistInfo';
 import { InitHandshake, SharedLinkInfo } from '../../interfaces/sharing';
 import DiscountBanner from './DiscountBanner/DiscountBanner';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
-import { STATUS_CODE, DOWNLOAD_SHARED_STATE } from '../../constants';
+import { STATUS_CODE, DOWNLOAD_SHARED_STATE, BATCH_REQUEST_SIZE } from '../../constants';
 
 const REPORT_ABUSE_EMAIL = 'abuse@protonmail.com';
 const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
@@ -54,7 +54,10 @@ const DownloadSharedContainer = () => {
                 return;
             }
 
-            await getSharedLinkPayload(token, password, handshakeInfo)
+            await getSharedLinkPayload(token, password, handshakeInfo, {
+                FromBlockIndex: 1,
+                PageSize: BATCH_REQUEST_SIZE,
+            })
                 .then((linkInfo) => {
                     setLinkInfo(linkInfo);
                     setHandshakeInfo(null);
@@ -98,7 +101,7 @@ const DownloadSharedContainer = () => {
             mimeType: MIMEType,
         };
 
-        const fileStream = await startSharedFileTransfer(Blocks, SessionKey, NodeKey, transferMeta);
+        const fileStream = await startSharedFileTransfer(SessionKey, NodeKey, transferMeta, token, password, Blocks);
         return preventLeave(FileSaver.saveAsFile(fileStream, transferMeta)).catch(console.error);
     };
 

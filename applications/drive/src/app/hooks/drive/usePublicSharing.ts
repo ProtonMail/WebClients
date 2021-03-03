@@ -25,7 +25,11 @@ function usePublicSharing() {
     const getSharedLinkPayload = async (
         token: string,
         password: string,
-        initHandshake: InitHandshake
+        initHandshake: InitHandshake,
+        pagination?: {
+            FromBlockIndex: number;
+            PageSize: number;
+        }
     ): Promise<SharedLinkInfo> => {
         const { Modulus, ServerEphemeral, UrlPasswordSalt, SRPSession, Version } = initHandshake;
 
@@ -39,7 +43,7 @@ function usePublicSharing() {
                 Salt: UrlPasswordSalt,
                 SRPSession,
             },
-            config: queryGetSharedLinkPayload(token),
+            config: queryGetSharedLinkPayload(token, pagination),
         });
 
         const Blocks: DriveFileBlock[] = Payload.Blocks.map((URL: string, Index: number) => {
@@ -94,18 +98,42 @@ function usePublicSharing() {
         return data as ReadableStream<Uint8Array>;
     };
 
+    const getSharedFileBlocks = async (
+        token: string,
+        password: string,
+        pagination?: {
+            FromBlockIndex: number;
+            PageSize: number;
+        }
+    ) => {
+        const handshakeInfo = await initSRPHandshake(token);
+        const payload = await getSharedLinkPayload(token, password, handshakeInfo, pagination);
+        return payload.Blocks;
+    };
+
     const startSharedFileTransfer = (
-        blocks: DriveFileBlock[],
         sessionKey: SessionKey,
         privateKey: OpenPGPKey,
-        meta: TransferMeta
+        meta: TransferMeta,
+        token: string,
+        password: string,
+        initailBlocks: DriveFileBlock[]
     ) => {
         return addToDownloadQueue(
             meta,
             { ShareID: 'SharedFile', LinkID: 'SharedFile' },
             {
                 transformBlockStream: decryptSharedBlockStream(sessionKey, privateKey),
-                getBlocks: async () => blocks,
+                getBlocks: async (
+                    _abortSignal: AbortSignal,
+                    pagination?:
+                        | {
+                              FromBlockIndex: number;
+                              PageSize: number;
+                          }
+                        | undefined
+                ) =>
+                    pagination?.FromBlockIndex === 1 ? initailBlocks : getSharedFileBlocks(token, password, pagination),
             }
         );
     };

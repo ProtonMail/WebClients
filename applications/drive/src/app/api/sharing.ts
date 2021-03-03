@@ -8,11 +8,18 @@ export const queryInitSRPHandshake = (token: string) => {
     };
 };
 
-export const queryGetSharedLinkPayload = (token: string) => {
+export const queryGetSharedLinkPayload = (
+    token: string,
+    pagination?: {
+        FromBlockIndex: number;
+        PageSize: number;
+    }
+) => {
     return {
         method: 'post',
         url: `drive/urls/${token}/file`,
         silence: true,
+        data: pagination,
     };
 };
 
