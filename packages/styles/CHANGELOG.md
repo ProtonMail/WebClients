@@ -37,6 +37,8 @@
 - add sizing values
 - updated logos
 - hotfixed `text-capitalize` helper
+- udpated `hover-same-color` to work with `color-currentColor`
+- fixed tab header layout 
 
 # [1.8.6] - 2020-12-18
 
