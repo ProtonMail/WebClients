@@ -5,8 +5,11 @@ import { LABEL_TYPE } from 'proton-shared/lib/constants';
 import { Alert, Input, Label, Row, Field, ColorPicker, Toggle, Info } from '../../components';
 
 import ParentFolderSelector from './ParentFolderSelector';
+import { useMailSettings } from '../../hooks';
 
 function NewLabelForm({ label, onChangeColor, onChangeName, onChangeParentID, onChangeNotify }) {
+    const [mailSettings] = useMailSettings();
+
     return (
         <div className="center flex-item-fluid">
             {!label.ID && label.Type === LABEL_TYPE.MESSAGE_FOLDER ? (
@@ -55,6 +58,18 @@ function NewLabelForm({ label, onChangeColor, onChangeName, onChangeParentID, on
                             />
                         </Field>
                     </Row>
+                    {mailSettings?.EnableFolderColor ? (
+                        <Row>
+                            <Label htmlFor="accountType">{c('New Label form').t`Color`} </Label>
+                            <Field>
+                                {mailSettings?.InheritParentFolderColor && label.ParentID ? (
+                                    <div className="mt0-5">{c('Info').t`Inherited from parent`}</div>
+                                ) : (
+                                    <ColorPicker color={label.Color} onChange={onChangeColor} />
+                                )}
+                            </Field>
+                        </Row>
+                    ) : null}
                     <Row>
                         <Label htmlFor="notification">
                             <span className="mr0-5">{c('Label').t`Notification`}</span>
