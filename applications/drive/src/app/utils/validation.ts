@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { MAX_NAME_LENGTH, MIN_SHARED_URL_PASSWORD_LENGTH } from '../constants';
+import { MAX_NAME_LENGTH } from '../constants';
 import { GLOBAL_FORBIDDEN_CHARACTERS } from './link';
 
 export class ValidationError extends Error {
@@ -61,20 +61,4 @@ export const validateLinkNameField = composeValidators([
     validateNameLength,
     validateInvalidName,
     validateInvalidCharacters,
-]);
-const validatePasswordLength = (length: number) => (str: string) => {
-    return str.length < length
-        ? c('Validation Error').t`Password must be at least ${length} characters long`
-        : undefined;
-};
-
-const validatePasswordStrength = (str: string) => {
-    return !/[A-Z]/.test(str) || !/[a-z]/.test(str) || !/[1-9]/.test(str)
-        ? c('Validation Error').t`Password must include a mix of lower-case, upper-case letters and numbers`
-        : undefined;
-};
-
-export const validateSharedURLPassword = composeValidators([
-    validatePasswordLength(MIN_SHARED_URL_PASSWORD_LENGTH),
-    validatePasswordStrength,
 ]);
