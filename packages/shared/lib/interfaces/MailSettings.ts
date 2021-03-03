@@ -43,4 +43,6 @@ export interface MailSettings {
     StickyLabels: number;
     ConfirmLink: number;
     DelaySendSeconds: number;
+    EnableFolderColor: number;
+    InheritParentFolderColor: number;
 }
