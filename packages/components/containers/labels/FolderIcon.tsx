@@ -5,8 +5,9 @@ import { Icon } from '../../components';
 import { useFolderColor } from '../../hooks';
 import { Props as IconProps } from '../../components/icon/Icon';
 
-interface Props extends IconProps {
+interface Props extends Omit<IconProps, 'name'> {
     folder: Folder;
+    name?: string;
 }
 
 const getIconName = (isRoot?: boolean, color?: string) => {
