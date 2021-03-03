@@ -8,17 +8,7 @@ import { createContactGroup, updateLabel } from 'proton-shared/lib/api/labels';
 import { labelContactEmails, unLabelContactEmails } from 'proton-shared/lib/api/contacts';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts/Contact';
 
-import {
-    FormModal,
-    Input,
-    Row,
-    Field,
-    Label,
-    ColorPicker,
-    ContactGroupTable,
-    Icon,
-    Autocomplete,
-} from '../../../components';
+import { FormModal, Input, Row, Field, Label, ColorPicker, ContactGroupTable, Autocomplete } from '../../../components';
 import { useContactEmails, useNotifications, useContactGroups, useApi, useEventManager } from '../../../hooks';
 
 import './ContactGroupModal.scss';
@@ -123,10 +113,6 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
             onClose={onClose}
             {...rest}
         >
-            <h4 className="mb1 flex flex-align-items-center">
-                <Icon className="mr0-5" name="info" />
-                <span>{c('Title').t`Group information`}</span>
-            </h4>
             <Row>
                 <Label htmlFor="contactGroupName">{c('Label for contact group name').t`Name`}</Label>
                 <Field>
@@ -138,17 +124,12 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
                     />
                 </Field>
             </Row>
-            <Row className="border-bottom pb1 mb1">
+            <Row>
                 <Label htmlFor="contactGroupColor">{c('Label for contact group color').t`Color`}</Label>
                 <Field>
                     <ColorPicker color={model.color} onChange={handleChangeColor} />
                 </Field>
             </Row>
-            <h4 className="mb1 flex flex-align-items-center">
-                <Icon className="mr0-5" name="contacts-groups" />
-                <span>{c('Title').t`Group members`}</span>
-            </h4>
-
             {options.length ? (
                 <Row>
                     <Label htmlFor="contactGroupEmail">{c('Label').t`Add email address`}</Label>
