@@ -20,15 +20,12 @@ import useDebouncedRequest from '../util/useDebouncedRequest';
 import {
     BATCH_REQUEST_SIZE,
     DEFAULT_SHARE_MAX_ACCESSES,
-    EXPIRATION_DAYS,
     FOLDER_PAGE_SIZE,
     MAX_THREADS_PER_REQUEST,
     RESPONSE_CODE,
 } from '../../constants';
 import { SharedURLFlags, SharedURLSessionKeyPayload, ShareURL, UpdateSharedURL } from '../../interfaces/sharing';
 import { LinkMeta } from '../../interfaces/link';
-import { validateSharedURLPassword, ValidationError } from '../../utils/validation';
-import { getDurationInSeconds } from '../../components/Drive/helpers';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 
 function useSharing() {
@@ -139,29 +136,12 @@ function useSharing() {
         };
     };
 
-    const updateSharedLinkExpirationTime = async (shareId: string, token: string, newDuration: EXPIRATION_DAYS) => {
-        const fieldsToUpdate: Partial<UpdateSharedURL> = {
-            ExpirationDuration: getDurationInSeconds(newDuration),
-        };
-
-        const { ShareURL } = await api(queryUpdateSharedLink(shareId, token, fieldsToUpdate));
-        return {
-            ExpirationTime: ShareURL.ExpirationTime,
-        };
-    };
-
-    const updateSharedLinkPassword = async (
+    const getFieldsToUpdateForPassword = async (
         shareId: string,
         token: string,
         newPassword: string,
         keyInfo: SharedURLSessionKeyPayload
     ): Promise<Partial<UpdateSharedURL>> => {
-        const error = validateSharedURLPassword(newPassword);
-
-        if (error) {
-            throw new ValidationError(error);
-        }
-
         const { sharePasswordSalt, shareSessionKey } = keyInfo;
 
         const [
@@ -191,9 +171,32 @@ function useSharing() {
         };
         await api(queryUpdateSharedLink(shareId, token, fieldsToUpdate));
 
+        return fieldsToUpdate;
+    };
+
+    const updateSharedLink = async (
+        shareId: string,
+        token: string,
+        keyInfo: SharedURLSessionKeyPayload,
+        newDuration?: number | null,
+        newPassword?: string
+    ) => {
+        let fieldsToUpdate: Partial<UpdateSharedURL> = {};
+        if (newDuration !== undefined) {
+            fieldsToUpdate = { ExpirationDuration: newDuration };
+        }
+        if (newPassword) {
+            const fieldsToUpdateForPassword = await getFieldsToUpdateForPassword(shareId, token, newPassword, keyInfo);
+            fieldsToUpdate = {
+                ...fieldsToUpdateForPassword,
+                ...fieldsToUpdate,
+            };
+        }
+
+        const { ShareURL } = await api(queryUpdateSharedLink(shareId, token, fieldsToUpdate));
         return {
-            ...fieldsToUpdate,
-            Password: newPassword,
+            ExpirationTime: ShareURL.ExpirationTime,
+            Password: ShareURL.Password,
         };
     };
 
@@ -305,8 +308,7 @@ function useSharing() {
     };
 
     return {
-        updateSharedLinkExpirationTime,
-        updateSharedLinkPassword,
+        updateSharedLink,
         decryptSharedLink,
         createSharedLink,
         getSharedURLs,
