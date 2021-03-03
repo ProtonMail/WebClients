@@ -209,6 +209,9 @@
 		&.primary-link {
 			color: $pm-primary;
 		}
+		&.color-currentColor {
+			color: currentColor;
+		}
 	}
 }
 
