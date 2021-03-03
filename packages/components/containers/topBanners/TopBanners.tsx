@@ -5,6 +5,7 @@ import DelinquentTopBanner from './DelinquentTopBanner';
 import StorageLimitTopBanner from './StorageLimitTopBanner';
 import OnlineTopBanner from './OnlineTopBanner';
 import SubUserTopBanner from './SubUserTopBanner';
+import DeskopNotificationTopBanner from './DeskopNotificationTopBanner';
 
 const TopBanners = () => {
     return (
@@ -14,6 +15,7 @@ const TopBanners = () => {
             <StorageLimitTopBanner />
             <NewVersionTopBanner />
             <SubUserTopBanner />
+            <DeskopNotificationTopBanner />
         </>
     );
 };
