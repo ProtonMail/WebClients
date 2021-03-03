@@ -286,153 +286,166 @@ textarea[required].field.field-pristine:invalid {
 	}
 }
 
-/* toggle */
-$width: 5.5em !default;
+/* New toggle */
+$toggle-width: em(40) !default;
+$toggle-width-button: em(24) !default;
+$toggle-bg-container: var(
+	--toggle-bg-container,
+	#e7e9ee
+) !default; // dark mode 3c414e
+$toggle-bg-loading: #989da9 !default;
+$toggle-bg-default: var(
+	--toggle-bg-default,
+	#b5bac4
+) !default; // dark mode 5c6270
+$toggle-bg-disabled: var(
+	--toggle-bg-disabled,
+	#d7d9e0
+) !default; // dark mode 494e5b
+$toggle-active-bg: $pm-blue !default;
+$toggle-active-focus-bg: #5064b6 !default;
 
 .toggle-label {
-	margin-top: 0.15em;
-	// height: 2em;
-	width: $width;
+	margin-top: 0.5em;
+	min-height: $toggle-width-button;
+	width: $toggle-width;
 	display: inline-flex;
-	border: 1px solid var(--bordercolor-input, $pm-global-border);
-	background: var(--bgcolor-view-column-detail, $pm-input-background);
-	border-radius: 2rem;
-	padding: 2px;
+	background: $toggle-bg-container;
+	border-radius: #{$toggle-width/2};
 	position: relative;
-	transition: border-color 0.15s ease-out;
 
 	&::before {
 		content: '';
+		z-index: 2;
 		position: absolute;
-		width: calc(#{$width/2} - 2px);
-		transition: transform 0.25s ease, background-color 0.25s ease,
-			border-color 0.25s linear;
-		border-radius: 2rem;
-		background: var(--bgcolor-context-bar, $pm-global-muted);
-		top: 2px;
+		width: #{$toggle-width-button};
+		transition: transform 0.25s ease, background-color 0.25s ease;
+		border-radius: $toggle-width-button;
+		background: $toggle-bg-default;
+		top: 0;
 		left: 0;
-		bottom: 2px;
-		transform: translateX(2px);
-		border: 1px solid var(--bordercolor-input, $pm-global-border);
+		bottom: 0;
+		transform: translateX(0);
 	}
 
 	& > .toggle-label-text {
-		align-self: center;
-		margin: 0;
-		text-align: center;
-		border-radius: 2rem;
-		padding: em(6) 0;
-		width: #{$width/2};
-		position: relative;
+		border-radius: $toggle-width-button;
+		width: $toggle-width-button;
+		position: absolute;
 		z-index: 2;
+		left: 0;
+		top: 0;
+		bottom: 0;
 		display: inline-flex;
 
+		&:first-child {
+			z-index: 3;
+		}
+		&:last-child {
+			z-index: 1;
+		}
+
 		& .toggle-label-img {
-			transition: fill 0.1s steps(1, end);
+			transition: 0s; // transition for disappear
+			fill: transparent;
+			margin: auto;
+		}
+
+		+ .toggle-label-text {
+			right: 0;
+			left: auto;
 		}
 	}
-}
 
-@if $rtl-option==true {
-	[dir='rtl'] {
-		.toggle-label {
-			&::before {
-				left: auto;
-				right: 0;
-				transform: translateX(-2px);
-			}
-		}
-	}
-}
+	// will be done later
+	// &--with-icons {
 
-.toggle-label-img {
-	margin: auto;
-	width: 1.6rem;
-	height: 1.6rem;
-	fill: var(--bordercolor-input, $black);
-
-	.toggle-label--theme-toggle & {
-		fill: black;
-	}
+	// }
 }
 
 // checked state
 .toggle-checkbox {
-	@extend .invisible;
+	@extend .sr-only;
 
 	&:checked + .toggle-label {
-		& > .toggle-label-text:first-child .toggle-label-img {
-			fill: var(--bordercolor-input, $black);
-		}
-
-		& > .toggle-label-text:last-child .toggle-label-img {
-			fill: $white;
-		}
-
-		&::before {
-			background: $pm-primary;
-			transform: translateX(#{$width/2}) translateX(-2px);
-			// transform: translateX( calc( 2.5rem - 2px) ); does NOT work in IE11
-			border-color: $pm-primary-dark;
-		}
-	}
-
-	&:checked + .toggle-label--theme-toggle {
-		// Theme toggle inside user dropdown
-		& > .toggle-label-text:last-child .toggle-label-img {
-			fill: #fce988;
+		& > .toggle-label-text {
+			&:first-child {
+				z-index: 1;
+			}
+			&:last-child {
+				z-index: 3;
+				.toggle-label-img {
+					fill: $white;
+					transition: fill 0.1s steps(1, end) 0.1s; // transition for appear
+				}
+			}
 		}
 
 		&::before {
-			background: rgb(0 0 0 / 0.75);
-			border-color: rgb(255 255 255 / 0.25);
+			transform: translateX(#{$toggle-width - $toggle-width-button});
+			background-color: $pm-primary-dark;
 		}
-	}
-
-	&:focus + .toggle-label {
-		box-shadow: 0 0 10px 0 $input-shadow-color;
 	}
 
 	&[disabled] + .toggle-label {
-		background: #{rgba($pm-global-muted, 0.6)};
-
-		.toggle-label-text {
-			opacity: 0.3;
+		&::before {
+			background-color: $toggle-bg-disabled;
 		}
 	}
 
-	&[aria-busy='true'] + .toggle-label {
-		border-color: $pm-global-border;
+	&[aria-busy='true'][disabled] {
+		// because aria-busy and disabled
 
-		&::before {
-			border-color: transparent;
-			transform: translateX(#{$width/4}) translateX(-2px);
-			background: transparent url(#{$path-images}loading-atom-smaller.svg)
-				50% 50% no-repeat;
+		+ .toggle-label {
+			opacity: 1;
+
+			&::before {
+				background-color: $toggle-bg-loading;
+				background-image: url(#{$path-images}infinite-loader.svg);
+				background-position: 50% 50%;
+				background-repeat: no-repeat;
+				background-size: em(14);
+			}
+
+			& > .toggle-label-text {
+				opacity: 0;
+			}
 		}
 
-		& > .toggle-label-text {
-			opacity: 0;
+		&:checked {
+			+ .toggle-label {
+				&::before {
+					background-color: $toggle-active-bg;
+				}
+			}
+		}
+	}
+
+	&:focus,
+	&:hover {
+		+ .toggle-label {
+			&::before {
+				background-color: $toggle-bg-loading;
+			}
+		}
+	}
+	&:checked:focus,
+	&:checked:hover {
+		+ .toggle-label {
+			&::before {
+				background-color: $toggle-active-focus-bg;
+			}
 		}
 	}
 }
-
-@if $rtl-option==true {
-	[dir='rtl'] {
-		.toggle-checkbox {
-			&:checked + .toggle-label {
-				&::before {
-					transform: translateX(-#{$width/2}) translateX(2px);
-				}
-			}
-
-			&[aria-busy='true'] + .toggle-label {
-				&::before {
-					//background-color: $pm-primary;
-					transform: translateX(-#{$width/4}) translateX(2px);
-				}
-			}
-		}
+/*
+ * TO REMOVE WITH COLOR REWORK !!!!
+ */
+.isDarkMode {
+	.toggle-label {
+		--toggle-bg-container: #3c414e;
+		--toggle-bg-default: #5c6270;
+		--toggle-bg-disabled: #494e5b;
 	}
 }
 

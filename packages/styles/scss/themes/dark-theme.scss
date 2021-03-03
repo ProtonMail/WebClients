@@ -97,26 +97,9 @@ select.field {
 		background-image: url('#{$path-images}sprite-for-css-only.svg#css-dash-white');
 	}
 }
-.toggle-checkbox {
-	&[aria-busy='true'] + .toggle-label {
-		&::before {
-			background-image: url(#{$path-images}loading-atom-smaller-dark.svg);
-		}
-	}
-	&[disabled] + .toggle-label {
-		background-color: transparent;
-		opacity: 0.6;
-	}
-}
 
 .searchbox-field[type='search'] {
 	background-image: none;
-}
-
-.toggle-label {
-	& > .toggle-label-text:first-child .toggle-label-img {
-		fill: $white;
-	}
 }
 
 .checkbox:focus + .checkbox-fakecheck,
