@@ -1,5 +1,5 @@
 import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
-import { getAttachments, getRecipients, hasFlag } from 'proton-shared/lib/mail/messages';
+import { getAttachments, hasFlag } from 'proton-shared/lib/mail/messages';
 import React, { MutableRefObject } from 'react';
 import { c } from 'ttag';
 import { isToday, isYesterday } from 'date-fns';
@@ -73,8 +73,7 @@ const ComposerActions = ({
     const isAttachments = getAttachments(message.data).length > 0;
     const isPassword = hasFlag(MESSAGE_FLAGS.FLAG_INTERNAL)(message.data) && message.data?.Password;
     const isExpiration = !!message.expiresIn;
-    const hasRecipients = getRecipients(message.data).length > 0;
-    const sendDisabled = !hasRecipients || lock;
+    const sendDisabled = lock;
     const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
 
     let dateMessage: string | string[];
@@ -153,33 +152,7 @@ const ComposerActions = ({
             <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
             <kbd className="bg-global-altgrey no-border">Enter</kbd>
         </>
-    ) : null;
-
-    const sendButton = Shortcuts ? (
-        <Tooltip title={titleSendButton}>
-            <Button
-                className="button--primary composer-send-button"
-                disabled={sendDisabled}
-                loading={sending}
-                onClick={onSend}
-                data-testid="send-button"
-            >
-                <Icon name="sent" className="no-desktop no-tablet on-mobile-flex" />
-                <span className="pl1 pr1 no-mobile">{buttonSendLabel}</span>
-            </Button>
-        </Tooltip>
-    ) : (
-        <Button
-            className="button--primary composer-send-button"
-            disabled={sendDisabled}
-            loading={sending}
-            onClick={onSend}
-            data-testid="send-button"
-        >
-            <Icon name="sent" className="no-desktop no-tablet on-mobile-flex" />
-            <span className="pl1 pr1 no-mobile">{buttonSendLabel}</span>
-        </Button>
-    );
+    ) : undefined;
 
     return (
         <footer
@@ -189,7 +162,18 @@ const ComposerActions = ({
             ])}
             onClick={addressesBlurRef.current}
         >
-            {sendButton}
+            <Tooltip title={titleSendButton}>
+                <Button
+                    className="button--primary composer-send-button"
+                    disabled={sendDisabled}
+                    loading={sending}
+                    onClick={onSend}
+                    data-testid="send-button"
+                >
+                    <Icon name="sent" className="no-desktop no-tablet on-mobile-flex" />
+                    <span className="pl1 pr1 no-mobile">{buttonSendLabel}</span>
+                </Button>
+            </Tooltip>
             <div className="flex flex-item-fluid">
                 <div className="flex">
                     <Tooltip title={titleAttachment} className="flex">

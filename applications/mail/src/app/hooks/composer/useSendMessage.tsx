@@ -2,7 +2,7 @@ import { SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
 import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { EncryptionPreferencesError } from 'proton-shared/lib/mail/encryptionPreferences';
-import { getRecipientsAddresses, isAttachPublicKey } from 'proton-shared/lib/mail/messages';
+import { getRecipients, getRecipientsAddresses, isAttachPublicKey } from 'proton-shared/lib/mail/messages';
 import React, { useCallback } from 'react';
 import { useHistory } from 'react-router';
 import { c, msgid } from 'ttag';
@@ -55,6 +55,23 @@ export const useSendVerifications = () => {
         mapSendPrefs: SimpleMap<SendPreferences>;
         hasChanged: boolean;
     }> => {
+        // No recipients
+        if (!getRecipients(message.data).length) {
+            await new Promise((resolve, reject) => {
+                createModal(
+                    <ConfirmModal
+                        onConfirm={reject}
+                        onClose={reject}
+                        title={c('Title').t`No recipient`}
+                        confirm={c('Action').t`OK`}
+                        cancel={null}
+                    >
+                        <Alert type="warning">{c('Info').t`Please add at a least one recipient before sending.`}</Alert>
+                    </ConfirmModal>
+                );
+            });
+        }
+
         // Empty subject
         if (!message.data.Subject) {
             await new Promise((resolve, reject) => {
@@ -303,7 +320,7 @@ export const useSendMessage = () => {
                     }
                 };
 
-                endSending();
+                void endSending();
 
                 updateMessageCache(messageCache, localID, {
                     data: Sent,
