@@ -1,3 +1,8 @@
+# 0.0.11 (1 March, 2021)
+
+Commented/added new toggle design (icon case).
+Added new icons
+
 # 0.0.10 (23 February, 2021)
 
 Added new Button API https://design-system.protontech.ch/?path=/docs/components-button
