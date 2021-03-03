@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { DesktopNotificationSection, MessagesSection, ShortcutsSection, SettingsPropsShared } from 'react-components';
+import { MessagesSection, ShortcutsSection, SettingsPropsShared } from 'react-components';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/settings/PrivateMainSettingsAreaWithPermissions';
 
@@ -10,10 +10,6 @@ export const getGeneralPage = () => {
         to: '/settings/general',
         icon: 'general',
         subsections: [
-            {
-                text: c('Title').t`Desktop notifications`,
-                id: 'desktop-notifications',
-            },
             {
                 text: c('Title').t`Messages`,
                 id: 'messages',
@@ -37,7 +33,6 @@ const GeneralContainer = ({ setActiveSection, location, onOpenShortcutsModal }: 
             config={getGeneralPage()}
             setActiveSection={setActiveSection}
         >
-            <DesktopNotificationSection />
             <MessagesSection />
             <ShortcutsSection onOpenShortcutsModal={onOpenShortcutsModal} />
         </PrivateMainSettingsAreaWithPermissions>

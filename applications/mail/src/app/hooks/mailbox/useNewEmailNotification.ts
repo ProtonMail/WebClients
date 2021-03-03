@@ -1,9 +1,8 @@
 import { isImported } from 'proton-shared/lib/mail/messages';
-import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useFolders, useMailSettings, useSubscribeEventManager } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import { create, isEnabled, request } from 'proton-shared/lib/helpers/desktopNotification';
+import { create } from 'proton-shared/lib/helpers/desktopNotification';
 import { c } from 'ttag';
 
 import { Event } from '../../models/event';
@@ -51,12 +50,6 @@ const useNewEmailNotification = (onOpenElement: () => void) => {
             });
         });
     });
-
-    useEffect(() => {
-        if (!isEnabled()) {
-            request();
-        }
-    }, []);
 };
 
 export default useNewEmailNotification;
