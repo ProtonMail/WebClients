@@ -20,7 +20,6 @@ import {
 } from '../../hooks';
 import { usePopperAnchor, Dropdown, Icon, Toggle, AppLink, Href, Button } from '../../components';
 import { generateUID } from '../../helpers';
-import { ToggleState } from '../../components/toggle/Toggle';
 import UserDropdownButton from './UserDropdownButton';
 import { DonateModal } from '../payments';
 
@@ -138,30 +137,14 @@ const UserDropdown = ({ ...rest }) => {
                     ) : null}
                     <li className="dropdown-item-hr mt0-5" aria-hidden="false" />
                     <li>
-                        <div className="pl1 pr1 pt0-5 pb0-5 w100 flex flex-nowrap flex-justify-space-between flex-align-items-center">
-                            <label htmlFor="theme-toggle" className="mr1">{c('Action').t`Display mode`}</label>
+                        <div className="pl1 pr1 pt0-5 pb0-5 w100 flex-no-min-children flex-nowrap flex-justify-space-between flex-align-items-center">
+                            <label htmlFor="theme-toggle" className="mr1">{c('Action').t`Dark mode`}</label>
                             <Toggle
                                 id="theme-toggle"
-                                className="toggle-label--theme-toggle"
                                 title={c('Title').t`Toggle display mode`}
                                 checked={userSettings.ThemeType === ThemeTypes.Dark}
                                 loading={loading}
                                 onChange={handleThemeToggle}
-                                label={(key: ToggleState) => {
-                                    const alt =
-                                        key === ToggleState.on
-                                            ? c('Toggle button').t`Normal`
-                                            : c('Toggle button').t`Dark`;
-                                    return (
-                                        <span className="toggle-label-text">
-                                            <Icon
-                                                name={key === ToggleState.on ? 'crescent-moon' : 'half-moon'}
-                                                alt={alt}
-                                                className="toggle-label-img"
-                                            />
-                                        </span>
-                                    );
-                                }}
                             />
                         </div>
                     </li>

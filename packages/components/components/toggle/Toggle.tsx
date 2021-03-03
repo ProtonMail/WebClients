@@ -23,7 +23,7 @@ const Toggle = ({
     label = (key: ToggleState) => {
         return (
             <span className="toggle-label-text" aria-hidden="true">
-                <Icon name={key} alt="" className="toggle-label-img" />
+                <Icon name={key} alt="" size={16} className="toggle-label-img" />
             </span>
         );
     },
@@ -41,7 +41,7 @@ const Toggle = ({
                 id={id}
                 onChange={handleChange}
                 type="checkbox"
-                className="toggle-checkbox"
+                className={classnames(['toggle-checkbox', className])}
                 checked={checked}
                 aria-busy={loading}
                 {...rest}
