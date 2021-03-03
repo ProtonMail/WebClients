@@ -1,8 +1,9 @@
 import React from 'react';
-import { Icon, useFolders, Tooltip, useMailSettings, classnames } from 'react-components';
+import { useFolders, Tooltip, useMailSettings, classnames } from 'react-components';
 
 import { getCurrentFolders } from '../../helpers/labels';
 import { Element } from '../../models/element';
+import ItemIcon from './ItemIcon';
 
 interface Props {
     element: Element | undefined;
@@ -35,14 +36,14 @@ const ItemLocation = ({
 
     return (
         <>
-            {infos.map(({ icon, name, to }) => (
+            {infos.map((folderInfo) => (
                 <Tooltip
                     className={classnames([withDefaultMargin && 'mr0-25'])}
-                    title={showTooltip ? name : undefined}
-                    key={to}
+                    title={showTooltip ? folderInfo.name : undefined}
+                    key={folderInfo.to}
                 >
                     <span className="flex flex-item-noshrink pt0-125">
-                        <Icon name={icon} alt={name} />
+                        <ItemIcon folderInfo={folderInfo} />
                     </span>
                 </Tooltip>
             ))}

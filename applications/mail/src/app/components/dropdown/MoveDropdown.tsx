@@ -11,6 +11,7 @@ import {
     Tooltip,
     useLoading,
     generateUID,
+    FolderIcon,
 } from 'react-components';
 import { MAILBOX_LABEL_IDS, LABEL_COLORS, ROOT_FOLDER, LABEL_TYPE } from 'proton-shared/lib/constants';
 import { normalize } from 'proton-shared/lib/helpers/string';
@@ -159,7 +160,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                                     className="dropdown-item-button w100 flex flex-nowrap flex-align-items-center pl1 pr1 pt0-5 pb0-5"
                                     onClick={() => withLoading(handleMove(folder))}
                                 >
-                                    <Icon name={folder.icon || 'folder'} className="flex-item-noshrink mr0-5" />
+                                    <FolderIcon folder={folder} className="flex-item-noshrink mr0-5" />
                                     <span className="text-ellipsis" title={folder.Name}>
                                         <Mark value={search}>{folder.Name}</Mark>
                                     </span>
