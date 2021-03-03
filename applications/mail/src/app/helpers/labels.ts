@@ -15,11 +15,12 @@ const { INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, ALL_SENT, ALL_DRAFTS } = MAIL
 
 export type LabelChanges = { [labelID: string]: boolean };
 
-interface FolderInfo {
+export interface FolderInfo {
     icon: string;
     name: string;
     to: string;
     color?: string;
+    parentID?: string | number;
 }
 
 interface FolderMap {
@@ -140,6 +141,7 @@ export const getCurrentFolders = (
                 name: folder?.Name,
                 to: `/${folder?.ID}`,
                 color: folder?.Color,
+                parentID: folder?.ParentID,
             };
         });
 };

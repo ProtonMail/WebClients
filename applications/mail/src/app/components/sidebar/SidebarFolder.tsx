@@ -1,5 +1,5 @@
 import React from 'react';
-import { classnames, Icon, HotkeyTuple } from 'react-components';
+import { classnames, Icon, HotkeyTuple, FolderIcon } from 'react-components';
 import { FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
 import { formatFolderName } from 'proton-shared/lib/helpers/folder';
 
@@ -49,10 +49,7 @@ const SidebarFolder = ({ currentLabelID, folder, level, onToggle, unreadCount, e
             onFocus={onFocus}
             content={
                 <div className="flex flex-nowrap flex-align-items-center" data-level={level}>
-                    <Icon
-                        className="mr0-5 navigation-icon flex-item-noshrink"
-                        name={folder.subfolders?.length ? 'parent-folder' : 'folder'}
-                    />
+                    <FolderIcon className="mr0-5 navigation-icon flex-item-noshrink" folder={folder} />
                     <span className="text-ellipsis pr0-5">{formatFolderName(level, folder.Name)}</span>
                     {folder.subfolders?.length ? (
                         <button
