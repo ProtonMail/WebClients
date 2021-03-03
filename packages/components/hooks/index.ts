@@ -24,6 +24,7 @@ export * from './useMailSettings';
 export * from './useCalendarUserSettings';
 export { default as useMembers } from './useMembers';
 export { useLabels, useFolders, useContactGroups } from './useCategories';
+export { default as useFolderColor } from './useFolderColor';
 export { default as useFilters } from './useFilters';
 export { default as usePaymentMethods } from './usePaymentMethods';
 export { default as useAppTitle } from './useAppTitle';
