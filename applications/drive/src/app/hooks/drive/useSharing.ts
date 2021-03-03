@@ -143,6 +143,7 @@ function useSharing() {
         const fieldsToUpdate: Partial<UpdateSharedURL> = {
             ExpirationDuration: getDurationInSeconds(newDuration),
         };
+
         const { ShareURL } = await api(queryUpdateSharedLink(shareId, token, fieldsToUpdate));
         return {
             ExpirationTime: ShareURL.ExpirationTime,
