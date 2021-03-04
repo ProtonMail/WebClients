@@ -305,7 +305,8 @@ $toggle-bg-disabled: var(
 $toggle-active-bg: $pm-blue !default;
 $toggle-active-focus-bg: #5064b6 !default;
 
-.toggle-label {
+.toggle-label.toggle-label {
+	// specificity issue with flex helpers
 	margin-top: 0.5em;
 	min-height: $toggle-width-button;
 	max-height: $toggle-width-button;
