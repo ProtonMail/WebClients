@@ -66,7 +66,7 @@ export const useSendVerifications = () => {
                         confirm={c('Action').t`OK`}
                         cancel={null}
                     >
-                        <Alert type="warning">{c('Info').t`Please add at a least one recipient before sending.`}</Alert>
+                        <Alert type="warning">{c('Info').t`Please add at least one recipient before sending.`}</Alert>
                     </ConfirmModal>
                 );
             });
