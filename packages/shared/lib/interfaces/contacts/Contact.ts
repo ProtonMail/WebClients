@@ -33,7 +33,6 @@ export interface Contact {
 
 export interface ContactFormatted extends Contact {
     emails: string[];
-    isChecked: boolean;
 }
 
 export interface ContactWithBePinnedPublicKey {
