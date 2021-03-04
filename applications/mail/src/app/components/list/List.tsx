@@ -142,7 +142,6 @@ const List = (
                                 checked={checkedIDs.includes(element.ID || '')}
                                 onCheck={onCheckOne}
                                 onClick={onClick}
-                                userSettings={userSettings}
                                 mailSettings={mailSettings}
                                 onDragStart={handleDragStart}
                                 onDragEnd={handleDragEnd}

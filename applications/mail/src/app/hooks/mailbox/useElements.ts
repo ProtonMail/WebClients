@@ -333,7 +333,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                         : (event as MessageEvent).Message;
 
                     if (Action === EVENT_ACTIONS.CREATE) {
-                        toCreate.push(Element);
+                        toCreate.push(Element as Element);
                     } else if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
                         toUpdate.push({ ID, ...Element });
                     } else if (Action === EVENT_ACTIONS.DELETE) {

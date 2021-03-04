@@ -6,10 +6,10 @@ import { isDraft } from 'proton-shared/lib/mail/messages';
 import { VIEW_MODE } from 'proton-shared/lib/constants';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 import { getSearchParams } from 'proton-shared/lib/helpers/url';
-import { Sort, Filter, Page, SearchParameters } from '../models/tools';
-import { useMailboxPageTitle } from '../hooks/mailbox/useMailboxPageTitle';
-import { useElements } from '../hooks/mailbox/useElements';
-import { isColumnMode, isConversationMode } from '../helpers/mailSettings';
+import { Sort, Filter, Page, SearchParameters } from '../../models/tools';
+import { useMailboxPageTitle } from '../../hooks/mailbox/useMailboxPageTitle';
+import { useElements } from '../../hooks/mailbox/useElements';
+import { isColumnMode, isConversationMode } from '../../helpers/mailSettings';
 import {
     pageFromUrl,
     sortFromUrl,
@@ -19,23 +19,23 @@ import {
     setFilterInUrl,
     setParamsInLocation,
     extractSearchParameters,
-} from '../helpers/mailboxUrl';
-import Toolbar from '../components/toolbar/Toolbar';
-import List from '../components/list/List';
-import ConversationView from '../components/conversation/ConversationView';
-import PlaceholderView from '../components/view/PlaceholderView';
-import MessageOnlyView from '../components/message/MessageOnlyView';
-import { PAGE_SIZE } from '../constants';
-import { isMessage, isSearch as testIsSearch } from '../helpers/elements';
-import { Breakpoints } from '../models/utils';
-import { OnCompose } from '../hooks/composer/useCompose';
-import { useWelcomeFlag } from '../hooks/mailbox/useWelcomeFlag';
-import useNewEmailNotification from '../hooks/mailbox/useNewEmailNotification';
-import { pageCount } from '../helpers/paging';
-import { useDeepMemo } from '../hooks/useDeepMemo';
-import { useGetElementsFromIDs } from '../hooks/mailbox/useElementsCache';
-import { useMailboxHotkeys } from '../hooks/mailbox/useMailboxHotkeys';
-import { useMailboxFocus } from '../hooks/mailbox/useMailboxFocus';
+} from '../../helpers/mailboxUrl';
+import Toolbar from '../../components/toolbar/Toolbar';
+import List from '../../components/list/List';
+import ConversationView from '../../components/conversation/ConversationView';
+import PlaceholderView from '../../components/view/PlaceholderView';
+import MessageOnlyView from '../../components/message/MessageOnlyView';
+import { PAGE_SIZE } from '../../constants';
+import { isMessage, isSearch as testIsSearch } from '../../helpers/elements';
+import { Breakpoints } from '../../models/utils';
+import { OnCompose } from '../../hooks/composer/useCompose';
+import { useWelcomeFlag } from '../../hooks/mailbox/useWelcomeFlag';
+import useNewEmailNotification from '../../hooks/mailbox/useNewEmailNotification';
+import { pageCount } from '../../helpers/paging';
+import { useDeepMemo } from '../../hooks/useDeepMemo';
+import { useGetElementsFromIDs } from '../../hooks/mailbox/useElementsCache';
+import { useMailboxHotkeys } from '../../hooks/mailbox/useMailboxHotkeys';
+import { useMailboxFocus } from '../../hooks/mailbox/useMailboxFocus';
 
 import './MailboxContainer.scss';
 

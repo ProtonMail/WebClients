@@ -37,7 +37,8 @@ import SendingMessageNotification, {
     createSendingMessageNotificationManager,
 } from '../notifications/SendingMessageNotification';
 import SavingDraftNotification from '../notifications/SavingDraftNotification';
-import { useMessageCache } from '../../containers/MessageProvider';
+import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
+import { ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
 
 enum ComposerInnerModal {
     None,
@@ -209,19 +210,6 @@ const Composer = ({
         }
     }, [syncInProgress, syncedMessage.document, syncedMessage.data?.ID]);
 
-    // Manage opening
-    useEffect(() => {
-        const attachmentToCreate = !syncedMessage.data?.ID && !!syncedMessage.data?.Attachments?.length;
-
-        if (!syncInProgress && attachmentToCreate) {
-            void addAction(() => saveDraft(syncedMessage as MessageExtendedWithData));
-        }
-
-        if (editorReady && !syncInProgress && !attachmentToCreate) {
-            setOpening(false);
-        }
-    }, [editorReady, syncInProgress, syncedMessage.data]);
-
     // Automatic maximize if height too small
     useEffect(() => {
         const shouldMaximized = shouldBeMaximized(windowSize.height);
@@ -351,6 +339,33 @@ const Composer = ({
         handleRemoveAttachment,
         handleRemoveUpload,
     } = useAttachments(modelMessage, handleChange, handleSaveNow, editorActionsRef);
+
+    // Manage opening
+    useEffect(() => {
+        // Attachments from reference message to re-encrypt
+        const attachmentToCreate = !syncedMessage.data?.ID && !!syncedMessage.data?.Attachments?.length;
+
+        // New attachments to upload from scratch
+        const attachmentToUpload = !!syncedMessage.initialAttachments?.length;
+
+        if (!syncInProgress && attachmentToCreate) {
+            void addAction(() => saveDraft(syncedMessage as MessageExtendedWithData));
+        }
+
+        if (attachmentToUpload) {
+            const uploadInitialAttachments = async () => {
+                const files = syncedMessage.initialAttachments;
+                updateMessageCache(messageCache, messageID, { initialAttachments: undefined });
+                await addAction(() => saveDraft(syncedMessage as MessageExtendedWithData));
+                handleAddAttachmentsUpload(ATTACHMENT_ACTION.ATTACHMENT, files);
+            };
+            uploadInitialAttachments();
+        }
+
+        if (editorReady && !syncInProgress && !attachmentToCreate && !attachmentToUpload) {
+            setOpening(false);
+        }
+    }, [editorReady, syncInProgress, syncedMessage.data]);
 
     useEffect(() => {
         if (uploadInProgress) {

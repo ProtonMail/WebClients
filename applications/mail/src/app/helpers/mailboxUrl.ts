@@ -63,7 +63,7 @@ const stringToInt = (string: string | undefined): number | undefined => {
     return isNumber(string) ? parseInt(string, 10) : undefined;
 };
 
-const sortToString = (sort: Sort): string | undefined =>
+export const sortToString = (sort: Sort): string | undefined =>
     sort.sort === 'Time' ? (sort.desc ? undefined : 'date') : sort.desc ? '-size' : 'size';
 
 const stringToFilter = (string: string | undefined): Filter => {
@@ -77,7 +77,7 @@ const stringToFilter = (string: string | undefined): Filter => {
     }
 };
 
-const filterToString = (filter: Filter): string | undefined =>
+export const filterToString = (filter: Filter): string | undefined =>
     filter.Unread === undefined ? undefined : filter.Unread === 0 ? 'read' : 'unread';
 
 export const keywordToString = (keyword: string): string | undefined => {

@@ -4,7 +4,7 @@ import { useInstance, useEventManager } from 'react-components';
 import createCache, { Cache } from 'proton-shared/lib/helpers/cache';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { Event } from '../models/event';
+import { Event, LabelIDsChanges } from '../models/event';
 import { MessageExtended, PartialMessageExtended } from '../models/message';
 import { parseLabelIDsInEvent } from '../helpers/elements';
 import { mergeMessages } from '../helpers/message/messages';
@@ -68,7 +68,7 @@ const messageEventListener = (cache: MessageCache) => ({ Messages }: Event) => {
             const currentValue = cache.get(localID) as MessageExtended;
 
             if (currentValue.data) {
-                const MessageToUpdate = parseLabelIDsInEvent(currentValue.data, Message);
+                const MessageToUpdate = parseLabelIDsInEvent(currentValue.data, Message as Message & LabelIDsChanges);
                 let removeBody: Partial<Message> = {};
                 let removeInit: Partial<MessageExtended> = {};
 

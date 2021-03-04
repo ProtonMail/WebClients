@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { CacheProvider, NotificationsProvider, ModalsProvider, PrivateAuthenticationStore } from 'react-components';
 import { MemoryRouter } from 'react-router';
-import { render as originalRender, RenderResult, act } from '@testing-library/react';
+import { render as originalRender, RenderResult as OriginalRenderResult, act } from '@testing-library/react';
 import { renderHook as originalRenderHook } from '@testing-library/react-hooks';
 import ApiContext from 'react-components/containers/api/apiContext';
 import ConfigProvider from 'react-components/containers/config/Provider';
@@ -14,6 +14,10 @@ import { minimalCache, cache, messageCache, conversationCache, attachmentsCache,
 import { api } from './api';
 import AttachmentProvider from '../../containers/AttachmentProvider';
 import ContactProvider from '../../containers/ContactProvider';
+
+interface RenderResult extends OriginalRenderResult {
+    rerender: (ui: React.ReactElement) => Promise<void>;
+}
 
 export const authentication = ({
     getUID: jest.fn(),
@@ -59,13 +63,19 @@ const TestProvider = ({ children }: Props) => {
  */
 export const tick = () => act(() => wait(0));
 
-export const render = async (component: JSX.Element, useMinimalCache = true): Promise<RenderResult> => {
+export const render = async (ui: ReactElement, useMinimalCache = true): Promise<RenderResult> => {
     if (useMinimalCache) {
         minimalCache();
     }
-    const result = originalRender(<TestProvider>{component}</TestProvider>);
+    const result = originalRender(<TestProvider>{ui}</TestProvider>);
     await tick(); // Should not be necessary, would be better not to use it, but fails without
-    return result;
+
+    const rerender = async (ui: ReactElement) => {
+        result.rerender(<TestProvider>{ui}</TestProvider>);
+        await tick(); // Should not be necessary, would be better not to use it, but fails without
+    };
+
+    return { ...result, rerender };
 };
 
 export const renderHook = (callback: (props: any) => any, useMinimalCache = true) => {
