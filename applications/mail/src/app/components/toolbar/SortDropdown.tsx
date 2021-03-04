@@ -50,7 +50,7 @@ const SortDropdown = ({ loading, conversationMode, sort: { sort, desc }, onSort,
             <DropdownMenu>
                 <DropdownMenuButton
                     data-test-id="toolbar:sort-new-to-old"
-                    disabled={sort === TIME && desc}
+                    isSelected={sort === TIME && desc}
                     className="text-left"
                     loading={loading}
                     onClick={() => onSort({ sort: TIME, desc: true })}
@@ -59,7 +59,7 @@ const SortDropdown = ({ loading, conversationMode, sort: { sort, desc }, onSort,
                 </DropdownMenuButton>
                 <DropdownMenuButton
                     data-test-id="toolbar:sort-old-to-new"
-                    disabled={sort === TIME && !desc}
+                    isSelected={sort === TIME && !desc}
                     className="text-left"
                     loading={loading}
                     onClick={() => onSort({ sort: TIME, desc: false })}
@@ -68,7 +68,7 @@ const SortDropdown = ({ loading, conversationMode, sort: { sort, desc }, onSort,
                 </DropdownMenuButton>
                 <DropdownMenuButton
                     data-test-id="toolbar:sort-desc"
-                    disabled={sort === SIZE && desc}
+                    isSelected={sort === SIZE && desc}
                     className="text-left"
                     loading={loading}
                     onClick={() => onSort({ sort: SIZE, desc: true })}
@@ -77,7 +77,7 @@ const SortDropdown = ({ loading, conversationMode, sort: { sort, desc }, onSort,
                 </DropdownMenuButton>
                 <DropdownMenuButton
                     data-test-id="toolbar:sort-asc"
-                    disabled={sort === SIZE && !desc}
+                    isSelected={sort === SIZE && !desc}
                     className="text-left"
                     loading={loading}
                     onClick={() => onSort({ sort: SIZE, desc: false })}

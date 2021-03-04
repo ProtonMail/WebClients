@@ -63,7 +63,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate, c
             <DropdownMenu>
                 <DropdownMenuButton
                     data-test-id="filter-dropdown:show-all"
-                    disabled={noFilterApply}
+                    isSelected={noFilterApply}
                     className="text-left"
                     loading={loading}
                     onClick={() => onFilter({})}
@@ -72,7 +72,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate, c
                 </DropdownMenuButton>
                 <DropdownMenuButton
                     data-test-id="filter-dropdown:show-read"
-                    disabled={filter.Unread === 0}
+                    isSelected={filter.Unread === 0}
                     className="text-left"
                     loading={loading}
                     onClick={() => onFilter({ Unread: 0 })}
@@ -81,7 +81,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate, c
                 </DropdownMenuButton>
                 <DropdownMenuButton
                     data-test-id="filter-dropdown:show-unread"
-                    disabled={filter.Unread === 1}
+                    isSelected={filter.Unread === 1}
                     className="text-left"
                     loading={loading}
                     onClick={() => onFilter({ Unread: 1 })}
@@ -94,7 +94,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate, c
                         key={0}
                         className="text-left"
                         loading={loading}
-                        disabled={isShowMoved}
+                        isSelected={isShowMoved}
                         onClick={handleMovedMessage}
                     >
                         {FILTER_OPTIONS.SHOW_MOVED_MESSAGE}
@@ -104,7 +104,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate, c
                         key={1}
                         className="text-left"
                         loading={loading}
-                        disabled={!isShowMoved}
+                        isSelected={!isShowMoved}
                         onClick={handleMovedMessage}
                     >
                         {FILTER_OPTIONS.HIDE_MOVED_MESSAGE}
