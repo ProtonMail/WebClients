@@ -45,12 +45,6 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate, c
         if (filter.Unread === 0) {
             return FILTER_OPTIONS.SHOW_READ;
         }
-        if (showMovedMessage && isShowMoved) {
-            return FILTER_OPTIONS.SHOW_MOVED_MESSAGE;
-        }
-        if (showMovedMessage && !isShowMoved) {
-            return FILTER_OPTIONS.HIDE_MOVED_MESSAGE;
-        }
         return FILTER_OPTIONS.SHOW_ALL;
     };
 

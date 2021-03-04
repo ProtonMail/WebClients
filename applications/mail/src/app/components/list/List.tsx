@@ -116,19 +116,19 @@ const List = (
                 {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}
             </h1>
             <div className="items-column-list-inner flex flex-nowrap flex-column relative">
+                <ListSettings
+                    sort={sort}
+                    onSort={onSort}
+                    onFilter={onFilter}
+                    onNavigate={onNavigate}
+                    filter={filter}
+                    labelID={labelID}
+                    conversationMode={conversationMode}
+                />
                 {expectedLength === 0 ? (
                     <EmptyView labelID={labelID} isSearch={isSearch} />
                 ) : (
                     <>
-                        <ListSettings
-                            sort={sort}
-                            onSort={onSort}
-                            onFilter={onFilter}
-                            onNavigate={onNavigate}
-                            filter={filter}
-                            labelID={labelID}
-                            conversationMode={conversationMode}
-                        />
                         {elements.map((element, index) => (
                             <Item
                                 key={element.ID}
