@@ -6,7 +6,7 @@ describe('sanitize description', () => {
             sanitizeDescription(
                 `<div><img src="https://protonmail.com" alt="test"/></span><a href="https://protonmail.com">protonmail</a></div>`
             )
-        ).toEqual(`<a href="https://protonmail.com" rel="noopener noreferrer">protonmail</a>`);
+        ).toEqual(`<a href="https://protonmail.com" rel="noopener noreferrer" target="_blank">protonmail</a>`);
     });
 
     test('should drop disallowed attributes', () => {
