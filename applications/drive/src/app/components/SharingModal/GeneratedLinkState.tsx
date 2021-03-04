@@ -68,7 +68,9 @@ function GeneratedLinkState({
     const [additionalSettingsExpanded, setAdditionalSettingsExpanded] = useState(customPassword || !!initialExpiration);
 
     const isFormDirty =
-        expiration !== initialExpiration || password !== initialPassword || (!!expiration && !includeExpirationTime);
+        (expiration !== initialExpiration && includeExpirationTime) ||
+        (initialExpiration && !includeExpirationTime) ||
+        password !== initialPassword;
 
     const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPassword(e.target.value);
