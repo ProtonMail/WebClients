@@ -308,6 +308,7 @@ $toggle-active-focus-bg: #5064b6 !default;
 .toggle-label {
 	margin-top: 0.5em;
 	min-height: $toggle-width-button;
+	max-height: $toggle-width-button;
 	width: $toggle-width;
 	display: inline-flex;
 	background: $toggle-bg-container;
