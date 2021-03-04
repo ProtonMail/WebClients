@@ -47,7 +47,7 @@ const MiniCalendar = ({
     weekdaysLong = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     weekdaysShort = ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
     nextMonth = 'Next month',
-    prevMonth = 'Prev month',
+    prevMonth = 'Previous month',
     markers = {},
     months = [
         'January',
