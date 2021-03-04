@@ -31,7 +31,7 @@ const LocalizedMiniCalendar = ({ weekStartsOn, ...rest }: Props) => {
     return (
         <MiniCalendar
             nextMonth={c('Action').t`Next month`}
-            prevMonth={c('Action').t`Prev month`}
+            prevMonth={c('Action').t`Previous month`}
             weekdaysLong={weekdaysLong}
             weekdaysShort={weekdaysShort}
             months={months}
