@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileIcon, Checkbox, classnames, DragMoveContainer } from 'react-components';
+import { FileIcon, Checkbox, classnames, DragMoveContainer, FileNameDisplay } from 'react-components';
 import { LinkType } from '../../../interfaces/link';
 import { ItemProps } from '../interfaces';
 import ItemContextMenu from '../ItemContextMenu';
@@ -104,8 +104,8 @@ function ItemCell({
                         />
                     </div>
                 </div>
-                <div className="w100 pt0-25 pb0-25 pl0-5 pr0-5 border-top text-ellipsis" title={item.Name}>
-                    <span className="text-pre">{item.Name}</span>
+                <div className="w100 pt0-25 pb0-25 pl0-5 pr0-5 border-top flex" title={item.Name}>
+                    <FileNameDisplay text={item.Name} />
                 </div>
             </div>
         </div>
