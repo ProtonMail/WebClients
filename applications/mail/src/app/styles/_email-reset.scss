@@ -21,6 +21,10 @@
     }
 
     blockquote {
+        padding: 0 0 0 1.6rem;
+        margin: 0;
+        border-left: 4px solid #e5e5e5;
+
         &::after,
         &::before {
             content: none;
