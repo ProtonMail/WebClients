@@ -19,6 +19,7 @@ import useBlackFriday from './useBlackFriday';
 interface Props extends HeaderProps {
     logo?: React.ReactNode;
     settingsButton?: React.ReactNode;
+    contactsButton?: React.ReactNode;
     backUrl?: string;
     floatingButton?: React.ReactNode;
     searchBox?: React.ReactNode;
@@ -35,6 +36,7 @@ const PrivateHeader = ({
     hasAppsDropdown = true,
     logo,
     settingsButton,
+    contactsButton,
     backUrl,
     searchBox,
     searchDropdown,
@@ -97,6 +99,7 @@ const PrivateHeader = ({
                         <UpgradeVPNButton />
                     </TopNavbarItem>
                 )}
+                {!contactsButton ? null : <TopNavbarItem>{contactsButton}</TopNavbarItem>}
                 {!settingsButton ? null : <TopNavbarItem>{settingsButton}</TopNavbarItem>}
                 <TopNavbarItem>{supportDropdown || <SupportDropdown />}</TopNavbarItem>
                 <TopNavbarItem className="relative">
