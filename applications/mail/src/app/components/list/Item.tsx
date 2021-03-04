@@ -1,12 +1,10 @@
 import React, { useEffect, useState, useRef, ChangeEvent, MouseEvent, DragEvent, memo, useMemo } from 'react';
-import { classnames, Checkbox } from 'react-components';
-import { getInitials } from 'proton-shared/lib/helpers/string';
+import { classnames, ItemCheckbox } from 'react-components';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from 'proton-shared/lib/mail/messages';
-import { MAILBOX_LABEL_IDS, DENSITY, VIEW_MODE } from 'proton-shared/lib/constants';
+import { MAILBOX_LABEL_IDS, VIEW_MODE } from 'proton-shared/lib/constants';
 import { Label } from 'proton-shared/lib/interfaces/Label';
-import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
-import ItemCheckbox from './ItemCheckbox';
+import { MailSettings } from 'proton-shared/lib/interfaces';
 import { isUnread, isMessage } from '../../helpers/elements';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
@@ -26,7 +24,6 @@ interface Props {
     labelID: string;
     loading: boolean;
     elementID?: string;
-    userSettings: UserSettings;
     mailSettings: MailSettings;
     columnLayout: boolean;
     element: Element;
@@ -49,7 +46,6 @@ const Item = ({
     element,
     elementID,
     columnLayout,
-    userSettings,
     mailSettings,
     checked = false,
     onCheck,
@@ -68,7 +64,6 @@ const Item = ({
         isSent(element) ||
         isDraft(element);
     const { getRecipientLabel, getRecipientsOrGroups, getRecipientsOrGroupsLabels } = useRecipientLabel();
-    const isCompactView = userSettings.Density === DENSITY.COMPACT;
     const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
     const isSelected =
         isConversationContentView && isMessage(element)
@@ -116,18 +111,6 @@ const Item = ({
         setHasFocus(false);
     };
 
-    const itemCheckboxType = isCompactView ? (
-        <Checkbox className="item-icon-compact mr0-75 stop-propagation" checked={checked} onChange={handleCheck} />
-    ) : (
-        <ItemCheckbox
-            className={classnames(['item-checkbox-label ml0-1', columnLayout ? 'mr0-6' : 'mr0-5'])}
-            checked={checked}
-            onChange={handleCheck}
-        >
-            {getInitials(displayRecipients ? recipientsLabels[0] : sendersLabels[0])}
-        </ItemCheckbox>
-    );
-
     useEffect(() => {
         if (hasFocus) {
             elementRef?.current?.scrollIntoView?.({ block: 'nearest' });
@@ -157,8 +140,16 @@ const Item = ({
             data-element-id={element.ID}
             data-shortcut-target="item-container"
             data-shortcut-target-selected={isSelected}
+            data-testid="item"
         >
-            {itemCheckboxType}
+            <ItemCheckbox
+                ID={element.ID}
+                name={displayRecipients ? recipientsLabels[0] : sendersLabels[0]}
+                checked={checked}
+                onChange={handleCheck}
+                compactClassName="mr0-75 stop-propagation"
+                normalClassName={classnames(['ml0-1', columnLayout ? 'mr0-6' : 'mr0-5'])}
+            />
             <ItemLayout
                 labelID={labelID}
                 labels={labels}

@@ -22,12 +22,12 @@ import { Event } from '../../models/event';
  * @param messageCache Message cache
  */
 const processContactUpdate = async (
-    contact: Contact,
+    contact: Contact | undefined,
     publicKeys: OpenPGPKey[],
     globalCache: Cache<string, any>,
     messageCache: MessageCache
 ) => {
-    const signedCard = contact.Cards.find(({ Type }) => Type === CONTACT_CARD_TYPE.SIGNED);
+    const signedCard = contact?.Cards.find(({ Type }) => Type === CONTACT_CARD_TYPE.SIGNED);
     if (!signedCard) {
         return;
     }

@@ -8,7 +8,7 @@ import { Api } from 'proton-shared/lib/interfaces';
 import { getConversation } from 'proton-shared/lib/api/conversations';
 import { identity } from 'proton-shared/lib/helpers/function';
 
-import { Event } from '../models/event';
+import { Event, LabelIDsChanges } from '../models/event';
 import { ConversationResult } from '../hooks/conversation/useConversation';
 import { parseLabelIDsInEvent } from '../helpers/elements';
 import { useExpirationCheck } from '../hooks/useExpiration';
@@ -45,7 +45,7 @@ const conversationListener = (cache: ConversationCache, api: Api) => {
                 const data = Message && cache.get(Message.ConversationID);
 
                 if (Action === EVENT_ACTIONS.CREATE && data) {
-                    toCreate.push(Message);
+                    toCreate.push(Message as Message);
                 } else if ((Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) && data) {
                     toUpdate.push({ ID, ...(Message as Omit<Message, 'ID'>) });
                 } else if (Action === EVENT_ACTIONS.DELETE) {
@@ -108,7 +108,7 @@ const conversationListener = (cache: ConversationCache, api: Api) => {
                 try {
                     const updatedConversation: Conversation = parseLabelIDsInEvent(
                         currentValue.Conversation,
-                        Conversation
+                        Conversation as Conversation & LabelIDsChanges
                     );
 
                     if (updatedConversation.NumMessages !== currentValue.Messages?.length) {

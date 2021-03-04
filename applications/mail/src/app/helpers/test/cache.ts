@@ -48,6 +48,7 @@ export const minimalCache = () => {
     addToCache('User', {});
     addToCache('Addresses', []);
     addToCache('MailSettings', {});
+    addToCache('UserSettings', {});
     addToCache('ContactEmails', []);
     addToCache('Labels', []);
     cache.set('ADDRESS_KEYS', addressKeysCache);

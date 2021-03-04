@@ -10,9 +10,10 @@ import {
     MainLogo,
     SettingsButton,
     SupportDropdown,
+    ContactsWidget,
 } from 'react-components';
 import { MAILBOX_LABEL_IDS, APPS } from 'proton-shared/lib/constants';
-
+import { Recipient } from 'proton-shared/lib/interfaces';
 import AdvancedSearchDropdown from './AdvancedSearchDropdown';
 import { extractSearchParameters, setParamsInUrl } from '../../helpers/mailboxUrl';
 import { Breakpoints } from '../../models/utils';
@@ -72,6 +73,13 @@ const MailHeader = ({
         />
     );
 
+    const handleContactsCompose = (emails: Recipient[], attachments: File[]) => {
+        onCompose({
+            action: MESSAGE_ACTIONS.NEW,
+            referenceMessage: { data: { ToList: emails }, initialAttachments: attachments },
+        });
+    };
+
     const backUrl = setParamsInUrl(history.location, { labelID });
     const showBackButton = breakpoints.isNarrow && elementID;
     const labelName = getLabelName(labelID, labels, folders);
@@ -83,6 +91,7 @@ const MailHeader = ({
             backUrl={showBackButton && backUrl ? backUrl : undefined}
             title={labelName}
             settingsButton={<SettingsButton to="/settings/overview" toApp={APPS.PROTONMAIL} target="_self" />}
+            contactsButton={<ContactsWidget onCompose={handleContactsCompose} />}
             searchBox={searchBox}
             searchDropdown={searchDropdown}
             expanded={!!expanded}

@@ -207,6 +207,7 @@ export const createNewDraft = (
 
     const originalTo = getOriginalTo(referenceMessage?.data);
     const originalAddressID = referenceMessage?.data?.AddressID;
+    const initialAttachments = referenceMessage?.initialAttachments;
 
     const senderAddress = getFromAddress(addresses, originalTo, referenceMessage?.data?.AddressID);
 
@@ -250,6 +251,7 @@ export const createNewDraft = (
         originalAddressID,
         initialized: true,
         embeddeds,
+        initialAttachments,
     };
 };
 

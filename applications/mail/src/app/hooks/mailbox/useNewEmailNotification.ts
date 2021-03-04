@@ -5,6 +5,7 @@ import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { create } from 'proton-shared/lib/helpers/desktopNotification';
 import { c } from 'ttag';
 
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { Event } from '../../models/event';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { setParamsInLocation } from '../../helpers/mailboxUrl';
@@ -25,10 +26,10 @@ const useNewEmailNotification = (onOpenElement: () => void) => {
             ({ Action, Message }) =>
                 !isImported(Message) &&
                 Action === 1 &&
-                Message.Unread === 1 &&
+                Message?.Unread === 1 &&
                 Message.LabelIDs.some((labelID) => notifier.includes(labelID))
         ).forEach(({ Message }) => {
-            const { Subject, Sender, ID, ConversationID, LabelIDs } = Message;
+            const { Subject, Sender, ID, ConversationID, LabelIDs } = Message as Message;
             const sender = Sender.Name || Sender.Address;
             const title = c('Desktop notification title').t`New email received`;
             const labelID = LabelIDs.find((labelID) => notifier.includes(labelID)) || MAILBOX_LABEL_IDS.ALL_MAIL;

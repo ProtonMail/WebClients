@@ -119,17 +119,19 @@ export const useAttachments = (
     /**
      * Start uploading a file, the choice between attachment or inline is done.
      */
-    const handleAddAttachmentsUpload = async (action: ATTACHMENT_ACTION, files = pendingFiles || []) => {
-        setPendingFiles(undefined);
+    const handleAddAttachmentsUpload = useHandler(
+        async (action: ATTACHMENT_ACTION, files: File[] = pendingFiles || []) => {
+            setPendingFiles(undefined);
 
-        const messageFromCache = await ensureMessageIsCreated();
-        const messageKeys = await getMessageKeys(messageFromCache.data);
-        const uploads = upload(files, messageFromCache, messageKeys, action, auth.UID);
-        const pendingUploads = files.map((file, i) => ({ file, upload: uploads[i] }));
-        addPendingUploads(pendingUploads);
+            const messageFromCache = await ensureMessageIsCreated();
+            const messageKeys = await getMessageKeys(messageFromCache.data);
+            const uploads = upload(files, messageFromCache, messageKeys, action, auth.UID);
+            const pendingUploads = files.map((file, i) => ({ file, upload: uploads[i] }));
+            addPendingUploads(pendingUploads);
 
-        pendingUploads.forEach((pendingUpload) => handleAddAttachmentEnd(action, pendingUpload));
-    };
+            pendingUploads.forEach((pendingUpload) => handleAddAttachmentEnd(action, pendingUpload));
+        }
+    );
 
     /**
      * Trigger an directly an embedded upload.

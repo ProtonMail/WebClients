@@ -23,15 +23,15 @@ export interface Event {
 }
 
 export interface ConversationEvent extends EventType {
-    Conversation: Conversation & LabelIDsChanges;
+    Conversation?: Conversation & LabelIDsChanges;
 }
 
 export interface MessageEvent extends EventType {
-    Message: Message & LabelIDsChanges;
+    Message?: Message & LabelIDsChanges;
 }
 
 export interface ContactEvent extends EventType {
-    Contact: Contact;
+    Contact?: Contact;
 }
 
 export type ElementEvent = ConversationEvent | MessageEvent;

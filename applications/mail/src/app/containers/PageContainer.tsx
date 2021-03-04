@@ -12,7 +12,7 @@ import {
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import PrivateLayout from '../components/layout/PrivateLayout';
-import MailboxContainer from './MailboxContainer';
+import MailboxContainer from './mailbox/MailboxContainer';
 import { HUMAN_TO_LABEL_IDS } from '../constants';
 import { Breakpoints } from '../models/utils';
 import { useLinkHandler } from '../hooks/useLinkHandler';

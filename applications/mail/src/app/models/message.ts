@@ -194,6 +194,12 @@ export interface MessageExtended {
      * true when sending message
      */
     sending?: boolean;
+
+    /**
+     * Attachments prepared during the creation of a draft to upload
+     * when the draft will be created
+     */
+    initialAttachments?: File[];
 }
 
 /**
