@@ -1,18 +1,16 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import { c } from 'ttag';
-
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { noop } from 'proton-shared/lib/helpers/function';
-
+import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import ContactContainer from '../ContactContainer';
-import { useContactEmails, useModals, useContactGroups, useAddresses, useUserKeys } from '../../../hooks';
+import { useModals, useContactGroups, useAddresses, useUserKeys } from '../../../hooks';
 import useContactList from '../useContactList';
 import useContact from '../useContact';
 import useContactProperties from '../useContactProperties';
 import ErrorBoundary from '../../app/ErrorBoundary';
 import GenericError from '../../error/GenericError';
 import FormModal from '../../../components/modal/FormModal';
-
 import ContactModal from './ContactModal';
 
 interface Props {
@@ -22,15 +20,28 @@ interface Props {
 
 const ContactDetailsModal = ({ contactID, onClose = noop, ...rest }: Props) => {
     const { createModal } = useModals();
-    const [contactEmails, loadingContactEmails] = useContactEmails();
-    const [contacts, loadingContacts] = useContactEmails();
     const [contactGroups = [], loadingContactGroups] = useContactGroups();
     const [userKeysList, loadingUserKeys] = useUserKeys();
     const [addresses = [], loadingAddresses] = useAddresses();
-    const { contactEmailsMap } = useContactList({ contactEmails, contacts });
-    const [contact, contactLoading] = useContact(contactID);
+    const { loading: loadingContacts, contactEmailsMap } = useContactList({});
+    const [contact, loadingContact] = useContact(contactID);
+    const modalRef = useRef<HTMLDivElement>(null);
 
     const [{ properties }] = useContactProperties({ contact, userKeysList });
+
+    // Close the modal on a click on a mailto, useLinkHandler will open the composer
+    useEffect(() => {
+        const handleClick = (event: MouseEvent) => {
+            const link = (event.target as Element).closest('a');
+            const src = link?.getAttribute('href');
+            if (src?.startsWith('mailto:')) {
+                onClose();
+            }
+        };
+
+        modalRef.current?.addEventListener('click', handleClick);
+        return () => modalRef.current?.removeEventListener('click', handleClick);
+    }, []);
 
     const openContactModal = () => {
         createModal(<ContactModal properties={properties} contactID={contactID} />);
@@ -40,13 +51,7 @@ const ContactDetailsModal = ({ contactID, onClose = noop, ...rest }: Props) => {
     const ownAddresses = useMemo(() => addresses.map(({ Email }) => Email), [addresses]);
     const contactGroupsMap = useMemo(() => toMap(contactGroups), [contactGroups]);
 
-    const isLoading =
-        contactLoading ||
-        loadingContactEmails ||
-        loadingContactGroups ||
-        loadingUserKeys ||
-        loadingAddresses ||
-        loadingContacts;
+    const isLoading = loadingContacts || loadingContactGroups || loadingUserKeys || loadingAddresses || loadingContact;
 
     return (
         <FormModal
@@ -63,15 +68,17 @@ const ContactDetailsModal = ({ contactID, onClose = noop, ...rest }: Props) => {
                 key={contactID}
                 component={<GenericError className="pt2 view-column-detail flex-item-fluid" />}
             >
-                <ContactContainer
-                    contactID={contactID}
-                    contactEmails={contactEmailsMap[contactID]}
-                    contactGroupsMap={contactGroupsMap}
-                    ownAddresses={ownAddresses}
-                    userKeysList={userKeysList}
-                    onDelete={() => onClose()}
-                    isModal
-                />
+                <div ref={modalRef}>
+                    <ContactContainer
+                        contactID={contactID}
+                        contactEmails={contactEmailsMap[contactID] as ContactEmail[]}
+                        contactGroupsMap={contactGroupsMap}
+                        ownAddresses={ownAddresses}
+                        userKeysList={userKeysList}
+                        onDelete={onClose}
+                        isModal
+                    />
+                </div>
             </ErrorBoundary>
         </FormModal>
     );

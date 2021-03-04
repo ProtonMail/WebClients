@@ -3,13 +3,14 @@ import { classnames } from '../../helpers';
 
 interface Props {
     className?: string;
+    illustrationClassName?: string;
     title?: string;
     url: string;
     uppercase?: boolean;
     children?: ReactNode;
 }
 
-const IllustrationPlaceholder = ({ className, title, url, uppercase, children }: Props) => {
+const IllustrationPlaceholder = ({ className, illustrationClassName, title, url, uppercase, children }: Props) => {
     return (
         <div
             className={classnames([
@@ -17,8 +18,8 @@ const IllustrationPlaceholder = ({ className, title, url, uppercase, children }:
                 className,
             ])}
         >
-            <img src={url} alt={title} className="p1 mb1" />
-            <h2 className={classnames(['text-bold', uppercase && 'text-uppercase'])}>{title}</h2>
+            <img src={url} alt={title} className={classnames(['p1 mb1', illustrationClassName])} />
+            {!!title && <h2 className={classnames(['text-bold', uppercase && 'text-uppercase'])}>{title}</h2>}
             {children}
         </div>
     );
