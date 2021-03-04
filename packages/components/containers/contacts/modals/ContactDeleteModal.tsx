@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 import { clearContacts, deleteContacts } from 'proton-shared/lib/api/contacts';
 import { allSucceded } from 'proton-shared/lib/api/helpers/response';
 import { noop } from 'proton-shared/lib/helpers/function';
-
+import { wait } from 'proton-shared/lib/helpers/promise';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { useContacts, useApi, useNotifications, useLoading, useEventManager } from '../../../hooks';
 import { ErrorButton, Alert, FormModal } from '../../../components';
@@ -26,17 +26,22 @@ const DeleteModal = ({ contactIDs = [], deleteAll, onDelete, onClose = noop, ...
     const submit = <ErrorButton type="submit" loading={loadingDelete}>{c('Action').t`Delete`}</ErrorButton>;
 
     const handleDelete = async () => {
+        // Call the callback and close the modal and wait a bit to trigger the event manager
+        // In order eventual contact view can be closed and will not try to request the contact
+        const delayedClosing = async () => {
+            onDelete?.();
+            onClose();
+            await wait(1000);
+            await call();
+        };
+
         if (deleteAll) {
             await api(clearContacts());
-            onDelete?.();
-            await call();
-            onClose();
+            void delayedClosing();
             return createNotification({ text: c('Success').t`Contacts deleted` });
         }
         const apiSuccess = allSucceded(await api(deleteContacts(contactIDs)));
-        onDelete?.();
-        await call();
-        onClose();
+        void delayedClosing();
         if (!apiSuccess) {
             return createNotification({ text: c('Error').t`Some contacts could not be deleted`, type: 'warning' });
         }
