@@ -1,3 +1,25 @@
+# [4.0.0 - Beta 38] - 2021-03-10
+
+## New features
+
+-   Introducing a contact widget in the top navigation bar for quick contact lookups while using ProtonMail
+-   Ability to share a contact's card by email from the contacts widget
+-   Ability to enable folder colors in folders settings for additional interface customization
+
+## Improvements
+
+-   Improved the look&feel and changed location of the mail sorting and filtering options
+-   Improved the handling of unauthorized actions like moving messages from Draft to Spam, Sent to Spam, Draft to Inbox and Sent to Inbox
+-   Added UI messaging indicating that the recipient is missing when trying to send an email without recipients
+
+## Fixes
+
+-   Fixed an issue where the lock icon indicating failed sender verification would be missing if received a message signed with a different key than the one saved to a contact
+-   Fixed an issue where verification would fail when decrypting particular MIME messages
+-   Fixed an issue where trusting a public key would revert to the key not being trusted again
+-   Fixed an issue where forwarding remote images to an external email address would not work if auto-loading remote images is disabled
+-   Fixed an issue where quoted text would not be displayed properly on recipient side
+
 # [4.0.0 - Beta 37] - 2021-02-25
 
 ## Improvements
