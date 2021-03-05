@@ -8,12 +8,6 @@
 	position: absolute;
 	z-index: 1;
 }
-.z10 {
-	z-index: 10; // Factorize later
-}
-.z667 {
-	z-index: 667; // Factorize this!
-}
 
 /* to centered absolute */
 .centered-absolute {
@@ -103,4 +97,11 @@
 	&-bottom {
 		bottom: 0;
 	}
+}
+
+.z10 {
+	z-index: 10; // Factorize later
+}
+.z667 {
+	z-index: 667; // Factorize this!
 }
