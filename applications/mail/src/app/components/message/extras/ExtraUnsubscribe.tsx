@@ -5,7 +5,7 @@ import {
     Icon,
     Href,
     Alert,
-    FormModal,
+    ConfirmModal,
     InlineLinkButton,
     generateUID,
     useNotifications,
@@ -57,13 +57,13 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
 
     const handleClick = async () => {
         if (unsubscribeMethods.OneClick) {
-            await new Promise((resolve, reject) => {
+            await new Promise<void>((resolve, reject) => {
                 createModal(
-                    <FormModal
+                    <ConfirmModal
                         title={c('Title').t`Unsubscribe`}
-                        onSubmit={() => resolve(undefined)}
+                        onConfirm={resolve}
                         onClose={reject}
-                        submit={c('Action').t`Unsubscribe`}
+                        confirm={c('Action').t`Unsubscribe`}
                         small={false}
                         className="pm-modal--shorterLabels"
                     >
@@ -71,7 +71,7 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
                             {c('Info')
                                 .t`A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.`}
                         </Alert>
-                    </FormModal>
+                    </ConfirmModal>
                 );
             });
             await api(oneClickUnsubscribe(messageID));
@@ -87,13 +87,14 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
             const boldFromEmail = <strong key="email">{senderName || senderAddress}</strong>;
             const toEmails = ToList.join(', ');
 
-            await new Promise((resolve, reject) => {
+            await new Promise<void>((resolve, reject) => {
                 createModal(
-                    <FormModal
+                    <ConfirmModal
                         title={c('Title').t`Unsubscribe`}
-                        onSubmit={() => resolve(undefined)}
+                        onConfirm={resolve}
                         onClose={reject}
-                        submit={c('Action').t`Unsubscribe`}
+                        confirm={c('Action').t`Unsubscribe`}
+                        small={false}
                         className="pm-modal--shorterLabels"
                     >
                         <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/avoid-spam/">
@@ -131,7 +132,7 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
                                 </div>
                             </Field>
                         </Row>
-                    </FormModal>
+                    </ConfirmModal>
                 );
             });
 
@@ -155,13 +156,14 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
             const { cleanMessage, mapSendPrefs } = await sendVerification(inputMessage as MessageExtendedWithData);
             await addAction(() => sendMessage(cleanMessage, mapSendPrefs, onCompose));
         } else if (unsubscribeMethods.HttpClient) {
-            await new Promise((resolve, reject) => {
+            await new Promise<void>((resolve, reject) => {
                 createModal(
-                    <FormModal
+                    <ConfirmModal
                         title={c('Title').t`Unsubscribe`}
-                        onSubmit={() => resolve(undefined)}
+                        onConfirm={resolve}
                         onClose={reject}
-                        submit={c('Action').t`Unsubscribe`}
+                        confirm={c('Action').t`Unsubscribe`}
+                        small={false}
                         className="pm-modal--shorterLabels"
                     >
                         <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/avoid-spam/">
@@ -182,7 +184,7 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
                                 </div>
                             </Field>
                         </Row>
-                    </FormModal>
+                    </ConfirmModal>
                 );
             });
             openNewTab(unsubscribeMethods.HttpClient);
