@@ -41,7 +41,7 @@ const SortDropdown = ({ loading, conversationMode, sort: { sort, desc }, onSort,
             className={className}
             content={
                 <span className="flex flex-align-items-center flex-nowrap" data-test-id="toolbar:sort-dropdown">
-                    <small className="mr0-5">{getTextContent()}</small>
+                    <span className="text-sm m0 mr0-5">{getTextContent()}</span>
                     <Icon className="toolbar-icon" name="sort" />
                 </span>
             }

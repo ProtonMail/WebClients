@@ -55,7 +55,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate, c
             content={
                 <span className="flex flex-align-items-center flex-nowrap" data-test-id="toolbar:filter-dropdown">
                     <Icon className="toolbar-icon mr0-5" name="filter" />
-                    <small>{getTextContent()}</small>
+                    <span className="text-sm m0">{getTextContent()}</span>
                 </span>
             }
             title={c('Title').t`Filters`}
