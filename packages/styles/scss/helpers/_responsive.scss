@@ -325,14 +325,12 @@
 		'on-tiny-mobile-'
 	);
 
-	/*
 	@include padding-generator(
 		// coordinates
 		(p, pt, pr, pb, pl),
 		// padding sizes
-		(0, 1, 2),
+		(0),
 		// prefix
-		"on-tiny-mobile-"
+		'on-tiny-mobile-'
 	);
-	*/
 }
