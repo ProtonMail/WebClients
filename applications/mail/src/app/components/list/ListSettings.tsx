@@ -16,7 +16,7 @@ interface Props {
 
 const ListSettings = ({ sort, onSort, onFilter, onNavigate, filter, labelID, conversationMode }: Props) => {
     return (
-        <div className="sticky-top bg-white-dm border-bottom pl0-5 pr0-5 pt0-25 pb0-25 flex flex-wrap flex-justify-space-between">
+        <div className="sticky-top z10 bg-white-dm border-bottom pl0-5 pr0-5 pt0-25 pb0-25 flex flex-wrap flex-justify-space-between">
             <FilterDropdown
                 labelID={labelID}
                 filter={filter}
