@@ -13,4 +13,6 @@ module.exports = {
         '\\.(css|scss|less)$': 'react-components/__mocks__/styleMock.js',
         'sieve.js': 'react-components/__mocks__/sieve.js',
     },
+    reporters: ['default', ['jest-junit', { outputName: 'test-report.xml' }]],
+    coverageReporters: ['text', 'lcov', 'cobertura'],
 };
