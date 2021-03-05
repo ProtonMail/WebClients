@@ -106,15 +106,15 @@ export const getTotal = ({
 
 export const removeService = (planIDs: PlanIDs, plans: Plan[], service: PLAN_SERVICES = PLAN_SERVICES.MAIL) => {
     const plansMap = toMap(plans);
-    return Object.entries(planIDs).reduce<PlanIDs>((acc, [planID = '', quantity = 0]) => {
+    return Object.entries(planIDs).reduce<PlanIDs>((acc, [planID = '']) => {
         const { Services } = plansMap[planID];
 
-        if (!hasBit(Services, service)) {
-            acc[planID] = quantity;
+        if (hasBit(Services, service)) {
+            acc[planID] = 0;
         }
 
         return acc;
-    }, {});
+    }, planIDs);
 };
 
 const getAddonQuantity = (plan: Plan | undefined, used = 0, key: MaxKeys, addon: Plan) => {
