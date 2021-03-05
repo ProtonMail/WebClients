@@ -1,3 +1,9 @@
+# 0.0.12 (5 March, 2021)
+
+Added new icons
+Rebumped - for proper styling for new toggle
+
+
 # 0.0.11 (1 March, 2021)
 
 Commented/added new toggle design (icon case).
