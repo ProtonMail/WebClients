@@ -552,6 +552,7 @@ $inputform-bg-color: $white !default;
 $inputform-border-color-focus: $pm-primary !default;
 $inputform-default-spacing-text: 0.4rem !default;
 $inputform-error-color: #d13f44 !default;
+$inputform-height-phone-prefix: 2.8rem !default;
 
 .inputform {
 	&-container {
@@ -577,7 +578,8 @@ $inputform-error-color: #d13f44 !default;
 		font-weight: 600;
 	}
 
-	&-suffix {
+	&-suffix,
+	&-prefix {
 		color: $inputform-suffix-color;
 	}
 
@@ -646,6 +648,10 @@ $inputform-error-color: #d13f44 !default;
 		}
 	}
 
+	.inputform-prefix-phone {
+		height: $inputform-height-phone-prefix; // no variation for bigger - select of content needs to be "fixed"
+	}
+
 	// global error state on container
 	&-container--invalid {
 		.inputform {
@@ -673,6 +679,11 @@ $inputform-error-color: #d13f44 !default;
 				border: 0;
 				width: calc(100% - 1.5em);
 				outline: 0;
+			}
+
+			&[type='tel'] {
+				width: 100%;
+				padding-left: 0.5em;
 			}
 		}
 
@@ -720,7 +731,8 @@ $inputform-error-color: #d13f44 !default;
 		&,
 		& .inputform-field,
 		& .inputform-label-hint,
-		& .inputform-assist {
+		& .inputform-assist,
+		& .inputform-prefix {
 			color: $inputform-border-color;
 			cursor: auto;
 		}
