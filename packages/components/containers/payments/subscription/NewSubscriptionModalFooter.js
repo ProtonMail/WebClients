@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { CYCLE, COUPON_CODES, PLANS, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
-import { clearPlanIDs } from 'proton-shared/lib/helpers/subscription';
+import { clearPlanIDs } from 'proton-shared/lib/helpers/planIDs';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import shieldSvg from 'design-system/assets/img/shared/shield.svg';
 import percentageSvg from 'design-system/assets/img/shared/percentage.svg';
