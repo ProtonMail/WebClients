@@ -47,6 +47,14 @@ export type PlanIDs = {
     [planID: string]: number;
 };
 
+export interface Additions {
+    [ADDON_NAMES.ADDRESS]?: number;
+    [ADDON_NAMES.DOMAIN]?: number;
+    [ADDON_NAMES.MEMBER]?: number;
+    [ADDON_NAMES.SPACE]?: number;
+    [ADDON_NAMES.VPN]?: number;
+}
+
 export interface SubscriptionCheckResponse {
     Amount: number;
     AmountDue: number;
@@ -61,4 +69,6 @@ export interface SubscriptionCheckResponse {
     Currency: Currency;
     Cycle: Cycle;
     Gift?: number;
+    Additions: null | Additions;
+    PeriodEnd: number;
 }
