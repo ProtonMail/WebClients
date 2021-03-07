@@ -19,7 +19,7 @@ import {
 import { toMap } from 'proton-shared/lib/helpers/object';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { switchPlan } from 'proton-shared/lib/helpers/subscription';
+import { switchPlan } from 'proton-shared/lib/helpers/planIDs';
 
 import { Alert, Price, Loader } from '../../../components';
 import { useConfig, useAddresses } from '../../../hooks';

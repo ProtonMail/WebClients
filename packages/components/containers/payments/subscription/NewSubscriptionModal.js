@@ -4,7 +4,8 @@ import { c } from 'ttag';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE, CYCLE, CURRENCIES, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { checkSubscription, subscribe, deleteSubscription } from 'proton-shared/lib/api/payments';
 import { hasBonuses } from 'proton-shared/lib/helpers/organization';
-import { clearPlanIDs, getPlanIDs } from 'proton-shared/lib/helpers/subscription';
+import { getPlanIDs } from 'proton-shared/lib/helpers/subscription';
+import { clearPlanIDs } from 'proton-shared/lib/helpers/planIDs';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
