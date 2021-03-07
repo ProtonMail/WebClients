@@ -3,14 +3,8 @@ import { c } from 'ttag';
 
 import { checkSubscription, deleteSubscription } from 'proton-shared/lib/api/payments';
 import { CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES, APPS } from 'proton-shared/lib/constants';
-import {
-    getPlans,
-    isBundleEligible,
-    getPlan,
-    switchPlan,
-    getPlanIDs,
-    clearPlanIDs,
-} from 'proton-shared/lib/helpers/subscription';
+import { getPlans, isBundleEligible, getPlan, getPlanIDs } from 'proton-shared/lib/helpers/subscription';
+import { switchPlan, clearPlanIDs } from 'proton-shared/lib/helpers/planIDs';
 import { hasBonuses } from 'proton-shared/lib/helpers/organization';
 
 import { Alert, Loader } from '../../components';
