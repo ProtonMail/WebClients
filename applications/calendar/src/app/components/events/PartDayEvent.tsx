@@ -1,5 +1,6 @@
 import React, { CSSProperties, Ref, useMemo } from 'react';
 import { classnames, Icon } from 'react-components';
+
 import { getEventStatusTraits } from '../../helpers/event';
 
 import useReadEvent from './useReadEvent';
@@ -16,8 +17,18 @@ interface Props {
     isBeforeNow: boolean;
     eventRef?: Ref<HTMLDivElement>;
     tzid: string;
+    isEventPartLessThanAnHour: boolean;
 }
-const PartDayEvent = ({ style, formatTime, event, isSelected, isBeforeNow, eventRef, tzid }: Props) => {
+const PartDayEvent = ({
+    style,
+    formatTime,
+    event,
+    isSelected,
+    isBeforeNow,
+    eventRef,
+    tzid,
+    isEventPartLessThanAnHour,
+}: Props) => {
     const { start, end, data: targetEventData } = event;
     const model = useReadEvent(targetEventData.eventReadResult?.result, tzid);
 
@@ -53,9 +64,7 @@ const PartDayEvent = ({ style, formatTime, event, isSelected, isBeforeNow, event
         const timeEnd = formatTime(end);
         return `${timeStart} - ${timeEnd}`;
     }, [start, end]);
-
-    const isLessThanOneHour = +end - +start < 3600000;
-    const shouldHideTime = isEventReadLoading || (isLessThanOneHour && titleString);
+    const shouldHideTime = isEventReadLoading || (isEventPartLessThanAnHour && titleString);
 
     const content = (() => {
         if (eventReadError) {

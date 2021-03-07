@@ -1,9 +1,33 @@
 import React, { Ref, useMemo } from 'react';
+import { isNextDay } from 'proton-shared/lib/date-fns-utc';
+import { HOUR } from 'proton-shared/lib/constants';
+
 import { layout, LayoutEvent } from '../layout';
 import { toPercent } from '../mouseHelpers/mathHelpers';
 import getIsBeforeNow from '../getIsBeforeNow';
 import PartDayEvent from '../../events/PartDayEvent';
 import { CalendarViewEvent, TargetEventData } from '../../../containers/calendar/interface';
+
+/**
+ * Splits 2-day events into parts that represent the actual length in the UI
+ * and determines whether those parts are less than an hour in length or not
+ */
+const getIsEventPartLessThanAnHour = ({ start, end, colEnd }: { start: Date; end: Date; colEnd: number }) => {
+    const eventPartEnd = new Date(end);
+    const eventPartStart = new Date(start);
+
+    if (isNextDay(start, end)) {
+        // The event part ends at the end of the day
+        if (colEnd === 24 * 60) {
+            eventPartEnd.setUTCHours(0, 0, 0, 0);
+        } else {
+            eventPartStart.setUTCDate(end.getUTCDate());
+            eventPartStart.setUTCHours(0, 0, 0, 0);
+        }
+    }
+
+    return +eventPartEnd - +eventPartStart < HOUR;
+};
 
 interface Props {
     tzid: string;
@@ -51,8 +75,10 @@ const DayEvents = ({
     }
 
     const result = eventsInDay.map((eventTimeDay, i) => {
-        const { idx } = eventTimeDay;
+        const { idx, end: colEnd } = eventTimeDay;
         const event = events[idx];
+        const { start, end } = event;
+
         const style = eventsLaidOut[i];
 
         const isTemporary = event.id === 'tmp';
@@ -62,10 +88,12 @@ const DayEvents = ({
 
         const eventRef = isThisSelected ? targetEventRef : undefined;
 
+        const isEventPartLessThanAnHour = getIsEventPartLessThanAnHour({ start, end, colEnd });
         const isBeforeNow = getIsBeforeNow(event, now);
 
         return (
             <PartDayEvent
+                isEventPartLessThanAnHour={isEventPartLessThanAnHour}
                 event={event}
                 style={style}
                 key={event.id}
