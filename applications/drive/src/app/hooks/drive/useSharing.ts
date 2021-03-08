@@ -188,15 +188,21 @@ function useSharing() {
         if (newPassword) {
             const fieldsToUpdateForPassword = await getFieldsToUpdateForPassword(shareId, token, newPassword, keyInfo);
             fieldsToUpdate = {
-                ...fieldsToUpdateForPassword,
                 ...fieldsToUpdate,
+                ...fieldsToUpdateForPassword,
             };
         }
 
         const { ShareURL } = await api(queryUpdateSharedLink(shareId, token, fieldsToUpdate));
+
+        // Update password value to decrypted one.
+        if (newPassword) {
+            fieldsToUpdate.Password = newPassword;
+        }
+
         return {
+            ...fieldsToUpdate,
             ExpirationTime: ShareURL.ExpirationTime,
-            Password: ShareURL.Password,
         };
     };
 

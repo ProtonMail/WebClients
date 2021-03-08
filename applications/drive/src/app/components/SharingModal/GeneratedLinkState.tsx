@@ -28,8 +28,8 @@ interface Props {
     initialPassword: string;
     initialExpiration: number | null;
     token: string;
-    includePassword: boolean;
-    includeExpirationTime: boolean;
+    passwordToggledOn: boolean;
+    expirationToggledOn: boolean;
     customPassword: boolean;
     modalTitleID: string;
     deleting?: boolean;
@@ -51,8 +51,8 @@ function GeneratedLinkState({
     customPassword,
     deleting,
     saving,
-    includePassword,
-    includeExpirationTime,
+    passwordToggledOn,
+    expirationToggledOn,
     onSaveLinkClick,
     onDeleteLinkClick,
     onIncludePasswordToggle,
@@ -68,9 +68,11 @@ function GeneratedLinkState({
     const [additionalSettingsExpanded, setAdditionalSettingsExpanded] = useState(customPassword || !!initialExpiration);
 
     const isFormDirty =
-        (expiration !== initialExpiration && includeExpirationTime) ||
-        (initialExpiration && !includeExpirationTime) ||
-        password !== initialPassword;
+        (expiration !== initialExpiration && expirationToggledOn) ||
+        (initialExpiration && !expirationToggledOn) ||
+        (password !== initialPassword && passwordToggledOn);
+
+    const isSaveDisabled = !isFormDirty || (passwordToggledOn && !password) || (expirationToggledOn && !expiration);
 
     const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPassword(e.target.value);
@@ -79,7 +81,7 @@ function GeneratedLinkState({
     const handleCopyURLClick = () => {
         if (contentRef.current) {
             textToClipboard(
-                includePassword ? `${baseUrl}/${token}#${password}` : `${baseUrl}/${token}`,
+                !passwordToggledOn ? `${baseUrl}/${token}#${password}` : `${baseUrl}/${token}`,
                 contentRef.current
             );
             createNotification({ text: c('Success').t`The link to your file was successfully copied.` });
@@ -96,7 +98,7 @@ function GeneratedLinkState({
     const handleSubmit = () => {
         const newPassword = password !== initialPassword ? password : undefined;
         let newDuration: number | null | undefined = null;
-        if (includeExpirationTime) {
+        if (expirationToggledOn) {
             newDuration =
                 expiration && expiration !== initialExpiration ? expiration - getUnixTime(Date.now()) : undefined;
         }
@@ -124,7 +126,7 @@ function GeneratedLinkState({
         </b>
     );
 
-    const url = `${baseUrl}/${token}${includePassword ? `#${password}` : ''}`;
+    const url = `${baseUrl}/${token}${!passwordToggledOn ? `#${password}` : ''}`;
 
     return (
         <>
@@ -191,13 +193,13 @@ function GeneratedLinkState({
                                             className="on-mobile-mb0-5"
                                             disabled={customPassword}
                                             id="passwordModeToggle"
-                                            checked={!includePassword}
+                                            checked={passwordToggledOn}
                                             onChange={onIncludePasswordToggle}
                                             data-testid="sharing-modal-passwordModeToggle"
                                         />
                                     </div>
                                     <div className="flex-no-min-children flex-item-fluid flex-align-items-center on-mobile-mb0-5 field-icon-container-empty on-mobile-min-h0">
-                                        {!includePassword && (
+                                        {passwordToggledOn && (
                                             <>
                                                 <Label htmlFor="sharing-modal-password" className="sr-only">
                                                     {c('Label').t`Password`}
@@ -206,6 +208,7 @@ function GeneratedLinkState({
                                                     id="sharing-modal-password"
                                                     data-testid="sharing-modal-password"
                                                     className="no-scroll text-ellipsis"
+                                                    maxLength={50}
                                                     value={password}
                                                     onChange={handleChangePassword}
                                                 />
@@ -215,7 +218,7 @@ function GeneratedLinkState({
                                     <div className="flex-no-min-children flex-justify-end ml0-5 on-mobile-ml0">
                                         <Button
                                             id="copy-password-button"
-                                            hidden={includePassword}
+                                            hidden={!passwordToggledOn}
                                             onClick={handleCopyPasswordClick}
                                             className="min-w7e"
                                         >{c('Action').t`Copy`}</Button>
@@ -229,13 +232,13 @@ function GeneratedLinkState({
                                         <Toggle
                                             className="on-mobile-mb0-5"
                                             id="expirationTimeModeToggle"
-                                            checked={includeExpirationTime}
+                                            checked={expirationToggledOn}
                                             onChange={onIncludeExpirationTimeToogle}
                                             data-testid="sharing-modal-passwordModeToggle"
                                         />
                                     </div>
                                     <div className="flex-no-min-children flex-item-fluid flex-align-items-center on-mobile-mb0-5 field-icon-container-empty on-mobile-min-h0">
-                                        {includeExpirationTime ? (
+                                        {expirationToggledOn ? (
                                             <ExpirationTimeDatePicker
                                                 expiration={expiration}
                                                 handleExpirationChange={(exp: number) => setExpiration(exp)}
@@ -256,7 +259,7 @@ function GeneratedLinkState({
                                 .t`Stop sharing`}</Button>
                             <div>
                                 <ResetButton autoFocus>{c('Action').t`Close`}</ResetButton>
-                                <PrimaryButton loading={saving} disabled={!isFormDirty} className="ml1" type="submit">
+                                <PrimaryButton loading={saving} disabled={isSaveDisabled} className="ml1" type="submit">
                                     {c('Action').t`Save`}
                                 </PrimaryButton>
                             </div>
