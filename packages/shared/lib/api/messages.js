@@ -162,3 +162,8 @@ export const cancelSend = (messageID) => ({
     method: 'post',
     url: `mail/v4/messages/${messageID}/cancel_send`,
 });
+
+export const forceSend = (messageID) => ({
+    method: 'post',
+    url: `mail/v4/messages/${messageID}/force_send`,
+});
