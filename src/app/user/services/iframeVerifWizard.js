@@ -1,6 +1,7 @@
 import CONFIG from '../../config';
-import { IFRAME_SECURE_ORIGIN, CANCEL_REQUEST } from '../../constants';
+import { CANCEL_REQUEST } from '../../constants';
 import { uniqID } from '../../../helpers/string';
+import { getRelativeApiHostname } from '../../core/directives/signupIframe';
 
 /* @ngInject */
 function iframeVerifWizard(dispatchers, User, $q) {
@@ -10,9 +11,14 @@ function iframeVerifWizard(dispatchers, User, $q) {
     const ORIGIN = getOrigin();
 
     function getOrigin() {
+        const { apiUrl } = CONFIG;
+        const url = new URL(apiUrl, window.location.origin);
+        url.hostname = getRelativeApiHostname(url.hostname);
+
         return {
             app: window.location.origin,
-            iframe: CONFIG.securedIframe || IFRAME_SECURE_ORIGIN
+            iframe: url.origin,
+            iframeUrl: url.toString()
         };
     }
 

@@ -1,9 +1,15 @@
 import _ from 'lodash';
-import CONFIG from '../../config';
-import { isIE11, isEdge, getBrowser, getDevice, getOS } from '../../../helpers/browser';
+import { isIE11, getBrowser, getDevice, getOS } from '../../../helpers/browser';
 import { formatLocale } from '../../../helpers/momentHelper';
 
 const BASE_TIMEOUT = 15; // in seconds
+
+export const getRelativeApiHostname = (hostname) => {
+    const idx = hostname.indexOf('.');
+    const first = hostname.substr(0, idx);
+    const second = hostname.substr(idx + 1);
+    return `${first}-api.${second}`;
+};
 
 /* @ngInject */
 function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gettextCatalog, $injector) {
@@ -15,8 +21,6 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
     };
 
     const ORIGIN = iframeVerifWizard.getOrigin();
-    const IFRAME =
-        isIE11() || isEdge() ? `${ORIGIN.iframe}/abusev2.ie11.iframe.html` : `${ORIGIN.iframe}/abusev2.iframe.html`;
 
     const getConfig = (name, { username = '' } = {}) => {
         const I18N = {
@@ -113,11 +117,18 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
         };
     };
 
-    const getChallenge = (mode) => {
+    const getChallengeIframeURL = (mode, retry = 0) => {
         const id = mode === 'top' ? 0 : 1;
-        const { apiUrl } = CONFIG;
-        const url = apiUrl.startsWith('/') ? `${window.location.origin}${apiUrl}` : apiUrl;
-        return `${url}/challenge/js?Type=${id}`;
+        const url = new URL(`${ORIGIN.iframeUrl}/challenge/html`);
+        url.searchParams.append('Type', id);
+        url.searchParams.append('name', mode);
+        if (isIE11()) {
+            url.searchParams.append('IE11', 1);
+        }
+        if (retry > 0) {
+            url.searchParams.append('retry', '' + retry);
+        }
+        return url.toString();
     };
 
     /**
@@ -134,7 +145,7 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
         el.className = name;
         el.dataset.name = name;
         el.sandbox = 'allow-scripts allow-same-origin allow-popups allow-top-navigation';
-        el.src = `${IFRAME}?name=${name}`;
+        el.src = `${getChallengeIframeURL(name)}`;
         return el;
     };
 
@@ -193,7 +204,7 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
                     timeoutID = setTimeout(() => {
                         handleRetry();
                     }, (BASE_TIMEOUT + attempts * 10 - jitter) * 1000);
-                    iframe.src = `${IFRAME}?name=${name}&retry=${attempts}`;
+                    iframe.src = getChallengeIframeURL(name, attempts);
                     return;
                 }
 
@@ -226,14 +237,12 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
 
             wizard.onLoad(name, () => {
                 addStep('iframe onload');
-                const challengeSrc = getChallenge(name);
 
                 iframe.contentWindow.postMessage(
                     {
                         type: 'init.challenge',
                         data: {
                             name,
-                            src: challengeSrc,
                             config: getConfig(name, scope.account || scope.model)
                         }
                     },
