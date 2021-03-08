@@ -35,7 +35,7 @@ interface Props {
     deleting?: boolean;
     saving?: boolean;
     onClose?: () => void;
-    onSaveLinkClick: (password?: string, duration?: number | null) => void;
+    onSaveLinkClick: (password?: string, duration?: number | null) => Promise<void>;
     onDeleteLinkClick: () => void;
     onIncludePasswordToggle: () => void;
     onIncludeExpirationTimeToogle: () => void;
@@ -81,7 +81,7 @@ function GeneratedLinkState({
     const handleCopyURLClick = () => {
         if (contentRef.current) {
             textToClipboard(
-                !passwordToggledOn ? `${baseUrl}/${token}#${password}` : `${baseUrl}/${token}`,
+                !passwordToggledOn ? `${baseUrl}/${token}#${initialPassword}` : `${baseUrl}/${token}`,
                 contentRef.current
             );
             createNotification({ text: c('Success').t`The link to your file was successfully copied.` });
@@ -89,13 +89,13 @@ function GeneratedLinkState({
     };
 
     const handleCopyPasswordClick = () => {
-        if (contentRef.current) {
+        if (contentRef.current && password) {
             textToClipboard(password, contentRef.current);
             createNotification({ text: c('Success').t`The password to access your file was copied.` });
         }
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         const newPassword = password !== initialPassword ? password : undefined;
         let newDuration: number | null | undefined = null;
         if (expirationToggledOn) {
@@ -103,7 +103,7 @@ function GeneratedLinkState({
                 expiration && expiration !== initialExpiration ? expiration - getUnixTime(Date.now()) : undefined;
         }
 
-        onSaveLinkClick(newPassword, newDuration);
+        await onSaveLinkClick(newPassword, newDuration);
     };
 
     const handleClose = () => {
@@ -126,7 +126,7 @@ function GeneratedLinkState({
         </b>
     );
 
-    const url = `${baseUrl}/${token}${!passwordToggledOn ? `#${password}` : ''}`;
+    const url = `${baseUrl}/${token}${!passwordToggledOn ? `#${initialPassword}` : ''}`;
 
     return (
         <>
@@ -194,7 +194,12 @@ function GeneratedLinkState({
                                             disabled={customPassword}
                                             id="passwordModeToggle"
                                             checked={passwordToggledOn}
-                                            onChange={onIncludePasswordToggle}
+                                            onChange={() => {
+                                                onIncludePasswordToggle();
+                                                if (!passwordToggledOn) {
+                                                    setPassword(initialPassword);
+                                                }
+                                            }}
                                             data-testid="sharing-modal-passwordModeToggle"
                                         />
                                     </div>
@@ -233,7 +238,9 @@ function GeneratedLinkState({
                                             className="on-mobile-mb0-5"
                                             id="expirationTimeModeToggle"
                                             checked={expirationToggledOn}
-                                            onChange={onIncludeExpirationTimeToogle}
+                                            onChange={() => {
+                                                onIncludeExpirationTimeToogle();
+                                            }}
                                             data-testid="sharing-modal-passwordModeToggle"
                                         />
                                     </div>
