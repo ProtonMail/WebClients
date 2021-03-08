@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-npm i svgo;
+npm i svgo@2.2.0;
 
 for file in $(find . -type f -name "*.svg" -not -path "./node_modules/*"); do
 	echo "[LINT]: $file";
