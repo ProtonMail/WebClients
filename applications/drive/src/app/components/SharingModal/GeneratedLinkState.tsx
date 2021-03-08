@@ -72,7 +72,8 @@ function GeneratedLinkState({
         (initialExpiration && !expirationToggledOn) ||
         (password !== initialPassword && passwordToggledOn);
 
-    const isSaveDisabled = !isFormDirty || (passwordToggledOn && !password) || (expirationToggledOn && !expiration);
+    const isSaveDisabled =
+        !isFormDirty || deleting || (passwordToggledOn && !password) || (expirationToggledOn && !expiration);
 
     const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPassword(e.target.value);
@@ -130,7 +131,7 @@ function GeneratedLinkState({
 
     return (
         <>
-            <HeaderModal modalTitleID={modalTitleID} onClose={handleClose}>
+            <HeaderModal modalTitleID={modalTitleID} hasClose={!saving && !deleting} onClose={handleClose}>
                 {c('Title').t`Share with link`}
             </HeaderModal>
             <ContentModal
@@ -174,12 +175,16 @@ function GeneratedLinkState({
                                 ])}
                                 onClick={(e) => {
                                     e.stopPropagation();
-                                    e.currentTarget.blur();
-
                                     setAdditionalSettingsExpanded(!additionalSettingsExpanded);
                                 }}
+                                onKeyPress={(e) => {
+                                    e.stopPropagation();
+                                    setAdditionalSettingsExpanded(!additionalSettingsExpanded);
+                                }}
+                                tabIndex={0}
                                 size={20}
                                 name="caret"
+                                alt={c('Title').t`Additional settings`}
                             />
                         </div>
                         {additionalSettingsExpanded && (
@@ -190,9 +195,9 @@ function GeneratedLinkState({
                                     </Label>
                                     <div className="flex flex-justify-start mr0-5 on-mobile-mr0">
                                         <Toggle
-                                            className="on-mobile-mb0-5"
-                                            disabled={customPassword}
                                             id="passwordModeToggle"
+                                            className="on-mobile-mb0-5"
+                                            disabled={customPassword || saving}
                                             checked={passwordToggledOn}
                                             onChange={() => {
                                                 onIncludePasswordToggle();
@@ -213,6 +218,7 @@ function GeneratedLinkState({
                                                     id="sharing-modal-password"
                                                     data-testid="sharing-modal-password"
                                                     className="no-scroll text-ellipsis"
+                                                    disabled={saving}
                                                     maxLength={50}
                                                     value={password}
                                                     onChange={handleChangePassword}
@@ -235,18 +241,18 @@ function GeneratedLinkState({
                                     </Label>
                                     <div className="flex flex-justify-start mr0-5 on-mobile-mr0">
                                         <Toggle
-                                            className="on-mobile-mb0-5"
                                             id="expirationTimeModeToggle"
+                                            className="on-mobile-mb0-5"
+                                            disabled={saving}
                                             checked={expirationToggledOn}
-                                            onChange={() => {
-                                                onIncludeExpirationTimeToogle();
-                                            }}
+                                            onChange={onIncludeExpirationTimeToogle}
                                             data-testid="sharing-modal-passwordModeToggle"
                                         />
                                     </div>
                                     <div className="flex-no-min-children flex-item-fluid flex-align-items-center on-mobile-mb0-5 field-icon-container-empty on-mobile-min-h0">
                                         {expirationToggledOn ? (
                                             <ExpirationTimeDatePicker
+                                                disabled={saving}
                                                 expiration={expiration}
                                                 handleExpirationChange={(exp: number) => setExpiration(exp)}
                                             />
@@ -262,10 +268,10 @@ function GeneratedLinkState({
                 {additionalSettingsExpanded && (
                     <FooterModal>
                         <div className="flex flex-justify-space-between w100 flex-nowrap">
-                            <Button loading={deleting} onClick={onDeleteLinkClick}>{c('Action')
+                            <Button loading={deleting} disabled={saving} onClick={onDeleteLinkClick}>{c('Action')
                                 .t`Stop sharing`}</Button>
                             <div>
-                                <ResetButton autoFocus>{c('Action').t`Close`}</ResetButton>
+                                <ResetButton disabled={saving || deleting}>{c('Action').t`Close`}</ResetButton>
                                 <PrimaryButton loading={saving} disabled={isSaveDisabled} className="ml1" type="submit">
                                     {c('Action').t`Save`}
                                 </PrimaryButton>

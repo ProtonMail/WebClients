@@ -73,9 +73,11 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
                       return getShareMetaAsync({ ID: shareUrlShareID, sessionKey });
                   })
                 : await getShareMetaAsync();
+
+            setShareUrlInfo(shareUrlInfo);
+
             setPasswordToggledOn(isCustomSharedURLPassword(shareUrlInfo.ShareURL));
             setExpirationToggledOn(!!shareUrlInfo.ShareURL?.ExpirationTime);
-            setShareUrlInfo(shareUrlInfo);
             setInitialPassword(shareUrlInfo.ShareURL.Password);
             setInitialExpiration(shareUrlInfo.ShareURL?.ExpirationTime);
         };
@@ -192,7 +194,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
     };
 
     return (
-        <DialogModal modalTitleID={modalTitleID} onClose={onClose} {...rest}>
+        <DialogModal modalTitleID={modalTitleID} {...rest}>
             {renderModalState()}
         </DialogModal>
     );
