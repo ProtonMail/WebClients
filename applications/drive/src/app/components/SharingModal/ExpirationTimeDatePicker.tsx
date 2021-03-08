@@ -74,7 +74,7 @@ const ExpirationTimeDatePicker = ({ expiration, handleExpirationChange, disabled
     return (
         <>
             <DateInput
-                id="dateInputId"
+                id="epirationDateInputId"
                 className="flex-item-fluid flex-item-grow-2"
                 disabled={disabled}
                 value={expDate}
@@ -84,16 +84,18 @@ const ExpirationTimeDatePicker = ({ expiration, handleExpirationChange, disabled
                 max={MAX_DATE}
                 placeholder={c('Title').t`Date`}
                 title={c('Title').t`Select link expiration date`}
+                data-testid="epirationDateInputId"
             />
             {expTime && (
                 <TimeInput
-                    id="event-startTime"
+                    id="epirationTimeInputId"
                     className="ml0-5 flex-item-fluid"
                     disabled={disabled}
                     value={expTime}
                     onChange={handleChangeTime}
                     max={maxTime}
                     title={c('Title').t`Select link expiration time`}
+                    data-testid="epirationTimeInputId"
                 />
             )}
         </>

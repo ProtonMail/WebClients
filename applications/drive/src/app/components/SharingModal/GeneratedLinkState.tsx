@@ -246,7 +246,7 @@ function GeneratedLinkState({
                                             disabled={saving}
                                             checked={expirationToggledOn}
                                             onChange={onIncludeExpirationTimeToogle}
-                                            data-testid="sharing-modal-passwordModeToggle"
+                                            data-testid="sharing-modal-expirationTimeModeToggle"
                                         />
                                     </div>
                                     <div className="flex-no-min-children flex-item-fluid flex-align-items-center on-mobile-mb0-5 field-icon-container-empty on-mobile-min-h0">
