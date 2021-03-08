@@ -154,7 +154,15 @@ const DateInput = ({
                 autoFocus={autoFocus}
                 {...rest}
             />
-            <Dropdown disableFocusTrap id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} autoClose={false}>
+            <Dropdown
+                disableFocusTrap
+                autoClose={false}
+                autoCloseOutside={false}
+                id={uid}
+                isOpen={isOpen}
+                anchorRef={anchorRef}
+                onClose={close}
+            >
                 <LocalizedMiniCalendar
                     date={actualValue}
                     min={min}
