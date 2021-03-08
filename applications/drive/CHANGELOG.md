@@ -1,3 +1,17 @@
+# [4.0.0-beta.12] - 2021-03-10
+
+We have further improved sharing a link user experience. 
+
+## Fixed
+
+- Share with link modal layout is now collapsed by default in order to provide less distractions for users who want to generate a link and copy it
+- There are no restrictions when using a custom password for a shared link
+- Long file and folder names now conveniently shortened and gives users full name on tooltip
+
+## Added
+
+- User can now set expiration date of a shared link by choosing date & time from calendar component
+
 # [4.0.0-beta.11] - 2021-03-03
 
 Among other improvements, this update provides a more convenient way to manage your shared links.
