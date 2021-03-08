@@ -35,6 +35,9 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
     const [shareUrlInfo, setShareUrlInfo] = useState<{ ShareURL: ShareURL; keyInfo: SharedURLSessionKeyPayload }>();
     const [passwordToggledOn, setPasswordToggledOn] = useState(false);
     const [expirationToggledOn, setExpirationToggledOn] = useState(false);
+
+    const [initialPassword, setInitialPassword] = useState('');
+    const [initialExpiration, setInitialExpiration] = useState<number | null>(null);
     const [error, setError] = useState(false);
     const { getShareMetaShort, deleteShare, getShareKeys } = useDrive();
     const { createSharedLink, getSharedURLs, decryptSharedLink, updateSharedLink, deleteSharedLink } = useSharing();
@@ -73,6 +76,8 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
             setPasswordToggledOn(isCustomSharedURLPassword(shareUrlInfo.ShareURL));
             setExpirationToggledOn(!!shareUrlInfo.ShareURL?.ExpirationTime);
             setShareUrlInfo(shareUrlInfo);
+            setInitialPassword(shareUrlInfo.ShareURL.Password);
+            setInitialExpiration(shareUrlInfo.ShareURL?.ExpirationTime);
         };
 
         getToken()
@@ -111,6 +116,13 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
                 ...updatedFields,
             },
         });
+
+        if (updatedFields && updatedFields.Password !== undefined) {
+            setInitialPassword(updatedFields.Password);
+        }
+        if (updatedFields && updatedFields.ExpirationTime !== undefined) {
+            setInitialExpiration(updatedFields.ExpirationTime);
+        }
     };
 
     const handleToggleIncludePassword = () => {
@@ -169,8 +181,8 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
                     onIncludeExpirationTimeToogle={handleToggleIncludeExpirationTime}
                     onSaveLinkClick={handleSaveSharedLink}
                     onDeleteLinkClick={handleDeleteLinkClick}
-                    initialPassword={shareUrlInfo.ShareURL.Password}
-                    initialExpiration={shareUrlInfo.ShareURL.ExpirationTime}
+                    initialPassword={initialPassword}
+                    initialExpiration={initialExpiration}
                     token={shareUrlInfo.ShareURL.Token}
                     deleting={deleting}
                     saving={saving}
