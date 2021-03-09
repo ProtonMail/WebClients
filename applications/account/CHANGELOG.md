@@ -1,3 +1,10 @@
+# [4.0.0-beta.11] - 2021-03-10
+
+## Improvements
+- Various UI improvements
+
+---
+
 # [4.0.0-beta.10] - 2021-02-25
 
 ## Improvements
