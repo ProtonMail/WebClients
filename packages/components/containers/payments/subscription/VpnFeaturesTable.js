@@ -124,7 +124,7 @@ const VpnFeaturesTable = ({ cycle, currency }) => {
                         <td className="scroll-if-needed">{c('Feature').t`ProtonMail included`}</td>
                     </tr>
                     <tr>
-                        <td colSpan={4}>{c('Feature').t`No logs / no ads`}</td>
+                        <td colSpan={4}>{c('Feature').t`Strict no-logs policy`}</td>
                     </tr>
                     <tr>
                         <td colSpan={4}>{c('Feature').t`Perfect Forward Secrecy (PFS)`}</td>
