@@ -1,6 +1,6 @@
 .breadcrumb {
 	&-container {
-		@extend .bordered-container;
+		@extend .bordered;
 	}
 
 	&-item:not(:last-of-type)::after {
