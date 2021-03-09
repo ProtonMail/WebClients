@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from 'proton-shared/lib/constants';
+import {
+    DEFAULT_ENCRYPTION_CONFIG,
+    ENCRYPTION_CONFIGS,
+    ENCRYPTION_TYPES,
+    MEMBER_PRIVATE,
+} from 'proton-shared/lib/constants';
 import { missingKeysMemberProcess, missingKeysSelfProcess } from 'proton-shared/lib/keys';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { Address, Member, CachedOrganizationKey } from 'proton-shared/lib/interfaces';
@@ -129,7 +134,10 @@ const CreateMissingKeysAddressModal = ({ onClose, member, addressesToGenerate, o
     const handleSubmit = () => {
         if (step === STEPS.INIT) {
             withLoading(
-                (!member || member.Self ? processSelf() : processMember(member))
+                (!member || (member.Self && member.Private === MEMBER_PRIVATE.UNREADABLE)
+                    ? processSelf()
+                    : processMember(member)
+                )
                     .then(() => setStep(STEPS.DONE))
                     .catch(() => setStep(STEPS.ERROR))
             );
