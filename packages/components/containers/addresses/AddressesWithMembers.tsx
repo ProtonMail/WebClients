@@ -40,6 +40,7 @@ interface Props {
     organization: Organization;
     isOnlySelf?: boolean;
 }
+
 const AddressesWithMembers = ({ user, organization, isOnlySelf }: Props) => {
     const match = useRouteMatch<{ memberID?: string }>();
     const { createModal } = useModals();
@@ -112,9 +113,6 @@ const AddressesWithMembers = ({ user, organization, isOnlySelf }: Props) => {
             .t`activate`}</AppLink>
     );
 
-    // Non-private admins targeting themselves cannot add addresses because they cannot create keys for them
-    const isNonPrivateSelf = currentMember && currentMember.Private === MEMBER_PRIVATE.READABLE && currentMember.Self;
-
     return (
         <>
             <Alert>{c('Info')
@@ -129,7 +127,7 @@ const AddressesWithMembers = ({ user, organization, isOnlySelf }: Props) => {
                     />
                 </Block>
             ) : null}
-            {!currentMember || memberIndex === ALL_MEMBERS_ID || isNonPrivateSelf ? null : (
+            {!currentMember || memberIndex === ALL_MEMBERS_ID ? null : (
                 <Block>
                     {mustActivateOrganizationKey ? (
                         <Alert type="warning">
@@ -144,7 +142,7 @@ const AddressesWithMembers = ({ user, organization, isOnlySelf }: Props) => {
                 </Block>
             )}
             {isSelfSelected ? (
-                <AddressesWithUser user={user} />
+                <AddressesWithUser user={user} member={currentMember} organizationKey={organizationKey} />
             ) : (
                 <Table className="simple-table--has-actions">
                     <TableHeader
