@@ -24,7 +24,7 @@ export const getStatus = (address: Address, i: number) => {
 export const getPermissions = ({
     member,
     address: { Status, HasKeys, Type, Order },
-    user: { isAdmin, isPrivate },
+    user: { isAdmin },
     organizationKey,
 }: {
     member?: Member;
@@ -38,11 +38,9 @@ export const getPermissions = ({
     const isSelf = !member || !!member.Self;
     const isMemberReadable = member?.Private === READABLE;
 
-    // non-private admins cannot generate keys for themselves
-    const canGenerateMember = organizationKey && isAdmin && isMemberReadable && !isSelf;
-    const canGenerateSelf = isSelf && isPrivate;
+    const canGenerateMember = organizationKey && isAdmin && isMemberReadable;
     return {
-        canGenerate: !HasKeys && (canGenerateMember || canGenerateSelf),
+        canGenerate: !HasKeys && (canGenerateMember || isSelf),
         canDisable: Status === ADDRESS_STATUS.STATUS_ENABLED && isAdmin && !isSpecialAddress && !isPrimaryAddress,
         canEnable: Status === ADDRESS_STATUS.STATUS_DISABLED && isAdmin && !isSpecialAddress,
         canDelete: Type === TYPE_CUSTOM_DOMAIN && isAdmin,
