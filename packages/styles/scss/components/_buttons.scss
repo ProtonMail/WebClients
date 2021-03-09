@@ -2,9 +2,16 @@
  * Button shape
  */
 .button-henlo {
-	padding: em(5) em(16) em(6); // design want 34px height
-	border: 1px solid var(--button-default-border-color, transparent);
+	// design want 34px height
+	padding: em(5) em(16) em(6);
+
+	// usage of box-shadow instead of border to enable increasing size of _visual_ border without shifting button size
+	box-shadow: inset 0 0 0 var(--button-default-box-shadow-width, 0)
+		var(--button-default-border-color, transparent);
+
+	border: none;
 	border-radius: $global-border-radius;
+	outline: none; // be careful of a11y
 	background-color: var(--button-default-background-color, transparent);
 	color: var(--button-default-text-color, inherit);
 	transition: 0.15s easing(easeOutQuint), background-position 0s;
@@ -22,6 +29,8 @@
 	&:focus-within,
 	&.is-hover {
 		border-color: var(--button-hover-border-color, transparent);
+		box-shadow: inset 0 0 0 var(--button-hover-box-shadow-width, 0)
+			var(--button-hover-border-color, transparent);
 		background-color: var(--button-hover-background-color, transparent);
 		color: var(--button-hover-text-color, inherit);
 	}
@@ -30,6 +39,8 @@
 	// not(div) prevents active state in case of button groups with dropdowns
 	&.is-active {
 		border-color: var(--button-active-border-color, transparent);
+		box-shadow: inset 0 0 0 var(--button-active-box-shadow-width, 0)
+			var(--button-active-border-color, transparent);
 		background-color: var(--button-active-background-color, transparent);
 		color: var(--button-active-text-color, inherit);
 	}
@@ -52,41 +63,47 @@
  * Button variants
  */
 @each $color in (norm, weak, danger, warning, success, info) {
+	// Initialize namespace
+	$group: 'signal-';
+	@if $color == 'norm' or $color == 'weak' {
+		$group: 'interaction-';
+	}
+
 	// Default shape
 	.button-solid-#{$color} {
-		--button-default-background-color: var(--interaction-#{$color});
-		--button-default-text-color: var(--interaction-#{$color}-contrast);
+		--button-default-background-color: var(--#{$group + $color});
+		--button-default-text-color: var(--#{$group + $color}-contrast);
 
 		@each $state in (hover, active) {
 			--button-#{$state}-background-color: var(
-				--interaction-#{$color}-#{$state}
+				--#{$group + $color}-#{$state}
 			);
-			--button-#{$state}-text-color: var(
-				--interaction-#{$color}-contrast
-			);
+			--button-#{$state}-text-color: var(--#{$group + $color}-contrast);
 		}
 	}
 
 	// Outline shape
 	.button-outline-#{$color} {
-		--button-default-border-color: var(--interaction-#{$color});
+		--button-default-box-shadow-width: 1px;
+		--button-default-border-color: var(--#{$group + $color});
 
 		@if $color == 'weak' {
-			--button-default-text-color: var(--interaction-weak-contrast);
+			--button-default-text-color: var(--text-norm);
 		} @else {
-			--button-default-text-color: var(--interaction-#{$color});
+			--button-default-text-color: var(--#{$group + $color});
 		}
 
 		@each $state in (hover, active) {
+			--button-#{$state}-box-shadow-width: 2px;
 			--button-#{$state}-border-color: var(
-				--interaction-#{$color}-#{$state}
+				--#{$group + $color}-#{$state}
 			);
 
 			@if $color == 'weak' {
-				--button-#{$state}-text-color: var(--interaction-weak-contrast);
+				--button-#{$state}-text-color: var(--text-norm);
 			} @else {
 				--button-#{$state}-text-color: var(
-					--interaction-#{$color}-#{$state}
+					--#{$group + $color}-#{$state}
 				);
 			}
 		}
@@ -94,21 +111,26 @@
 
 	// Ghost shape
 	.button-ghost-#{$color} {
-		--button-default-background-color: transparent;
+		--button-default-background-color: var(--interaction-ghost);
 
 		@if $color == 'weak' {
-			--button-default-text-color: var(--interaction-weak-contrast);
+			--button-default-text-color: var(--text-norm);
 		} @else {
-			--button-default-text-color: var(--interaction-#{$color});
+			--button-default-text-color: var(--#{$group + $color});
 		}
 
 		@each $state in (hover, active) {
 			--button-#{$state}-background-color: var(
-				--interaction-#{$color}-#{$state}
+				--interaction-ghost-#{$state}
 			);
-			--button-#{$state}-text-color: var(
-				--interaction-#{$color}-contrast
-			);
+
+			@if $color == 'weak' {
+				--button-#{$state}-text-color: var(--text-norm);
+			} @else {
+				--button-#{$state}-text-color: var(
+					--#{$group + $color}-#{$state}
+				);
+			}
 		}
 	}
 }
@@ -146,10 +168,7 @@
 }
 
 .button-link {
-	padding-left: 0;
-	padding-right: 0;
-	border: none;
-	background: none;
+	padding: em(5) 0 em(6);
 	color: var(--interaction-norm);
 	text-decoration: underline;
 
