@@ -35,7 +35,7 @@ interface Props {
     deleting?: boolean;
     saving?: boolean;
     onClose?: () => void;
-    onSaveLinkClick: (password?: string, duration?: number | null) => Promise<void>;
+    onSaveLinkClick: (password?: string, duration?: number | null) => Promise<any>;
     onDeleteLinkClick: () => void;
     onIncludePasswordToggle: () => void;
     onIncludeExpirationTimeToogle: () => void;
@@ -85,14 +85,18 @@ function GeneratedLinkState({
                 !passwordToggledOn ? `${baseUrl}/${token}#${initialPassword}` : `${baseUrl}/${token}`,
                 contentRef.current
             );
-            createNotification({ text: c('Success').t`The link to your file was successfully copied.` });
+            createNotification({
+                text: c('Success').t`The link to your file was successfully copied.`,
+            });
         }
     };
 
     const handleCopyPasswordClick = () => {
         if (contentRef.current && password) {
             textToClipboard(password, contentRef.current);
-            createNotification({ text: c('Success').t`The password to access your file was copied.` });
+            createNotification({
+                text: c('Success').t`The password to access your file was copied.`,
+            });
         }
     };
 
@@ -104,7 +108,12 @@ function GeneratedLinkState({
                 expiration && expiration !== initialExpiration ? expiration - getUnixTime(Date.now()) : undefined;
         }
 
-        await onSaveLinkClick(newPassword, newDuration);
+        const result = await onSaveLinkClick(newPassword, newDuration);
+
+        // Because we are dealing with duration, ExpirationTime on server is expiration + request time.
+        if (result && result?.ExpirationTime) {
+            setExpiration(result.ExpirationTime);
+        }
     };
 
     const handleClose = () => {
