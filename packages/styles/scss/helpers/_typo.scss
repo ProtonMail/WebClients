@@ -202,16 +202,7 @@
 .hover-same-color {
 	&:focus,
 	&:hover {
-		&.color-white {
-			color: $white;
-		}
-
-		&.primary-link {
-			color: $pm-primary;
-		}
-		&.color-currentColor {
-			color: currentColor;
-		}
+		color: currentColor;
 	}
 }
 

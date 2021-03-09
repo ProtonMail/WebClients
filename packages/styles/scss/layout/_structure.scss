@@ -198,7 +198,7 @@ $height-for-mobile: 8em !default;
 .main-full {
 	height: 100%;
 	overflow: auto;
-	@extend .bg-global-altgrey-gradient;
+	background-color: var(--background-norm);
 }
 
 .main-area--no-header {

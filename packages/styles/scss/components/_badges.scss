@@ -9,56 +9,22 @@ $border-width: 2px !default;
 	border-radius: $global-border-radius;
 	border-width: $border-width;
 	border-style: solid;
-	color: white;
 }
 
-.badge-label--success {
-	@extend .bg-global-success;
-	border-color: $pm-global-success;
-}
-
-.badge-label--blue {
-	@extend .bg-pm-blue;
-	border-color: $pm-blue;
-}
-
-.badge-label--green {
-	@extend .bg-pv-green;
-	border-color: $pv-green;
-}
-
-@if ($pm-primary==$pm-blue) {
-	.badge-label--primary,
-	.badge-label {
-		@extend .bg-pm-blue;
-		border-color: $pm-blue;
+@each $color in (primary, danger, warning, success, info) {
+	$prefix: '';
+	@if $color != 'primary' {
+		$prefix: 'signal-';
 	}
-} @else {
-	.badge-label--primary,
-	.badge-label {
-		@extend .bg-pv-green;
-		border-color: $pv-green;
+
+	.badge-label-#{$color} {
+		background-color: var(--#{$color});
+		color: var(--#{$color}-contrast);
 	}
 }
 
-.badge-label--grey {
-	@extend .bg-global-grey;
-	border-color: $pm-global-grey;
-}
-
-.badge-label--greylight {
-	background: var(--bordercolor-input, $pm-global-muted);
-	border-color: var(--bordercolor-input, $pm-global-muted);
-	color: var(--color-main-area, $black);
-}
-
-.badge-label--warning {
-	@extend .bg-global-attention;
-	border-color: $pm-global-attention;
-	color: $black;
-}
-
-.badge-label--error {
-	@extend .bg-global-warning;
-	border-color: $pm-global-warning;
+@each $color in (norm, weak, strong) {
+	.badge-label-#{$color} {
+		background-color: var(--background-#{$color});
+	}
 }

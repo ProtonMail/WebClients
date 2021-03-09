@@ -1,6 +1,6 @@
 $tooltip-width: 14em !default;
 $arrow-width: 0.5em !default;
-$tooltip-bg-color: var(--bgcolor-tooltip, $black) !default;
+$tooltip-bg-color: #1a1d24;
 
 /* basic tooltip styles */
 .tooltip {
@@ -10,7 +10,7 @@ $tooltip-bg-color: var(--bgcolor-tooltip, $black) !default;
 	max-width: $tooltip-width;
 	border-radius: $global-border-radius;
 	background: $tooltip-bg-color;
-	color: $pm-global-light;
+	color: white;
 	padding: 0.5em 0.75em;
 	text-align: center;
 	word-break: break-word;
@@ -131,5 +131,9 @@ $tooltip-bg-color: var(--bgcolor-tooltip, $black) !default;
 
 		// contrasts
 		color: $black;
+	}
+
+	kbd {
+		background-color: #464b58;
 	}
 }

@@ -1,6 +1,9 @@
 .file-preview {
-	@extend .color-white;
-	@extend .bg-global-grey;
+	color: var(--file-preview-text-color, var(--text-norm));
+	background-color: var(
+		--file-preview-background-color,
+		var(--background-norm)
+	);
 	@extend .flex-item-fluid-auto;
 	@extend .flex-column;
 	position: fixed;
@@ -24,14 +27,14 @@
 	}
 
 	&-text {
-		@extend .bg-white;
-		@extend .color-black;
+		background-color: whitesmoke;
+		color: black;
 		@extend .p2;
 		@extend .center;
 		@extend .flex-item-fluid-auto;
 		@extend .w100;
 		@extend .mt0;
-		@extend .mb0;
+		@extend .mb2;
 		word-break: break-word;
 		white-space: pre-wrap;
 		max-width: 800px;
