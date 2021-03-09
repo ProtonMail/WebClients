@@ -14,6 +14,7 @@ function iframeVerifWizard(dispatchers, User, $q) {
         const { apiUrl } = CONFIG;
         const url = new URL(apiUrl, window.location.origin);
         url.hostname = getRelativeApiHostname(url.hostname);
+        url.pathname = '';
 
         return {
             app: window.location.origin,

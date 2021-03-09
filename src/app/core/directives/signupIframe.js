@@ -119,7 +119,7 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
 
     const getChallengeIframeURL = (mode, retry = 0) => {
         const id = mode === 'top' ? 0 : 1;
-        const url = new URL(`${ORIGIN.iframeUrl}/challenge/html`);
+        const url = new URL(`${ORIGIN.iframeUrl}challenge/html`);
         url.searchParams.append('Type', id);
         url.searchParams.append('name', mode);
         if (isIE11()) {
