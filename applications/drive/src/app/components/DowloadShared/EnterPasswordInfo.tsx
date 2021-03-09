@@ -36,7 +36,7 @@ const EnterPasswordInfo = ({ submitPassword }: Props) => {
                     onChange={({ target: { value } }) => setPassword(value)}
                 />
                 <PrimaryButton
-                    className="button--large center mt2 w150p"
+                    className="button--large center mt2 min-w7e"
                     disabled={!password}
                     loading={loading}
                     type="submit"
