@@ -6,7 +6,7 @@
 	padding: em(5) em(16) em(6);
 
 	// usage of box-shadow instead of border to enable increasing size of _visual_ border without shifting button size
-	box-shadow: inset 0 0 0 var(--button-default-box-shadow-width, 0)
+	box-shadow: inset 0 0 0 var(--button-default-border-width, 0)
 		var(--button-default-border-color, transparent);
 
 	border: none;
@@ -28,8 +28,7 @@
 	&:focus,
 	&:focus-within,
 	&.is-hover {
-		border-color: var(--button-hover-border-color, transparent);
-		box-shadow: inset 0 0 0 var(--button-hover-box-shadow-width, 0)
+		box-shadow: inset 0 0 0 var(--button-hover-border-width, 0)
 			var(--button-hover-border-color, transparent);
 		background-color: var(--button-hover-background-color, transparent);
 		color: var(--button-hover-text-color, inherit);
@@ -38,8 +37,7 @@
 	&:not(div):active,
 	// not(div) prevents active state in case of button groups with dropdowns
 	&.is-active {
-		border-color: var(--button-active-border-color, transparent);
-		box-shadow: inset 0 0 0 var(--button-active-box-shadow-width, 0)
+		box-shadow: inset 0 0 0 var(--button-active-border-width, 0)
 			var(--button-active-border-color, transparent);
 		background-color: var(--button-active-background-color, transparent);
 		color: var(--button-active-text-color, inherit);
@@ -84,7 +82,7 @@
 
 	// Outline shape
 	.button-outline-#{$color} {
-		--button-default-box-shadow-width: 1px;
+		--button-default-border-width: 1px;
 		--button-default-border-color: var(--#{$group + $color});
 
 		@if $color == 'weak' {
@@ -94,7 +92,7 @@
 		}
 
 		@each $state in (hover, active) {
-			--button-#{$state}-box-shadow-width: 2px;
+			--button-#{$state}-border-width: 2px;
 			--button-#{$state}-border-color: var(
 				--#{$group + $color}-#{$state}
 			);
@@ -204,5 +202,41 @@
 	.mr0-5 {
 		flex: 1 1 0px;
 		@extend .text-ellipsis;
+	}
+}
+
+/*
+ * Button group
+*/
+.grouped-buttons {
+	@extend .inline-flex;
+	@extend .flex-nowrap;
+}
+
+.grouped-button {
+	border-radius: 0;
+
+	&[class*='button-outline'] {
+		margin-right: -1px; // Border size
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		position: relative;
+	}
+}
+
+.grouped-buttons > .grouped-button:first-child {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.grouped-buttons > .grouped-button:last-child {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+
+	&[class*='button-outline'] {
+		margin-right: 0;
 	}
 }
