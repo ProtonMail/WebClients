@@ -1,40 +1,59 @@
 /*
  * Default Proton theme: Yin Yang theme
  */
-
 :root {
-	--primary-lighten-40: #a2b1ee;
-	--primary-lighten-20: #8498e9;
 	--primary: #657ee4;
-	--primary-darken-20: #5064b6;
-	--primary-darken-40: #3c4b88;
+	--primary-contrast: white;
+
+	--signal-danger: #d13f44;
+	--signal-danger-hover: #bf262b;
+	--signal-danger-active: #ad1116;
+	--signal-danger-contrast: white;
+
+	--signal-warning: #e6bb2e;
+	--signal-warning-hover: #dfa916;
+	--signal-warning-active: #d99800;
+	--signal-warning-contrast: black;
+
+	--signal-success: #0e875b;
+	--signal-success-hover: #067852;
+	--signal-success-active: #006949;
+	--signal-success-contrast: white;
+
+	--signal-info: #1578cf;
+	--signal-info-hover: #0a65cc;
+	--signal-info-active: #0051c9;
+	--signal-info-contrast: white;
 
 	--text-norm: #262a33;
-	--text-weak: #6b7180;
-	--text-hint: #989da9;
-	--text-disabled: #b5bac4;
+	--text-weak: #696f7d;
+	--text-hint: #a4a9b5;
+	--text-disabled: #babec7;
 	--text-invert: white;
 
-	--field-norm: #b5bac4;
-	--field-hover: #989da9;
-	--field-disabled: #d7d9e0;
+	--field-norm: #babec7;
+	--field-hover: #a4a9b5;
+	--field-disabled: #d0d3da;
 
-	--border-norm: #b5bac4;
-	--border-weak: #d7d9e0;
+	--border-norm: #d0d3da;
+	--border-weak: #e7e9ec;
 
 	--background-norm: white;
-	--background-weak: #f6f7fa;
-	--background-strong: #e7e9ee;
+	--background-weak: #f3f4f6;
+	--background-strong: #e7e9ec;
 
-	--interaction-norm: var(--primary);
-	--interaction-norm-hover: var(--primary-darken-20);
-	--interaction-norm-active: var(--primary-darken-40);
+	--interaction-norm: #657ee4;
+	--interaction-norm-hover: #5064b6;
+	--interaction-norm-active: #3c4b88;
 	--interaction-norm-contrast: white;
 
-	--interaction-weak: #e7e9ee;
-	--interaction-weak-hover: #d7d9e0;
-	--interaction-weak-active: #b5bac4;
-	--interaction-weak-contrast: var(--text-norm);
+	--interaction-weak: #d0d3da;
+	--interaction-weak-hover: #babec7;
+	--interaction-weak-active: #a4a9b5;
+
+	--interaction-ghost: transparent;
+	--interaction-ghost-hover: #babec740;
+	--interaction-ghost-active: #babec773;
 
 	--shadow-norm-opacity: 0.1;
 	--shadow-lifted-opacity: 0.16;
