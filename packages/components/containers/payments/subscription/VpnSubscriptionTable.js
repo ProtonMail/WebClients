@@ -49,7 +49,7 @@ const VpnSubscriptionTable = ({
                 { icon: 'arrow-right', content: c('Feature').t`1 VPN connection` },
                 { icon: 'arrow-right', content: c('Feature').t`Servers in ${vpnCountries.free.length} countries` },
                 { icon: 'arrow-right', content: c('Feature').t`Medium speed` },
-                { icon: 'arrow-right', content: c('Feature').t`No logs/No ads` },
+                { icon: 'arrow-right', content: c('Feature').t`Strict no-logs policy` },
                 {
                     icon: 'close',
                     content: (
@@ -129,7 +129,7 @@ const VpnSubscriptionTable = ({
                 { icon: 'arrow-right', content: c('Feature').t`2 VPN connections` },
                 { icon: 'arrow-right', content: c('Feature').t`Servers in ${vpnCountries.basic.length} countries` },
                 { icon: 'arrow-right', content: c('Feature').t`High speed` },
-                { icon: 'arrow-right', content: c('Feature').t`No logs/No ads` },
+                { icon: 'arrow-right', content: c('Feature').t`Strict no-logs policy` },
                 {
                     icon: 'arrow-right',
                     content: (
@@ -207,7 +207,7 @@ const VpnSubscriptionTable = ({
                 { icon: 'arrow-right', content: c('Feature').t`5 VPN connections` },
                 { icon: 'arrow-right', content: c('Feature').t`Servers in ${vpnCountries.all.length} countries` },
                 { icon: 'arrow-right', content: c('Feature').t`Highest speed (up to 10 Gbps)` },
-                { icon: 'arrow-right', content: c('Feature').t`No logs/No ads` },
+                { icon: 'arrow-right', content: c('Feature').t`Strict no-logs policy` },
                 {
                     icon: 'arrow-right',
                     content: (
