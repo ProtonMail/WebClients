@@ -32,7 +32,10 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
     const [modalState, setModalState] = useState(SharingModalState.Loading);
     const [deleting, withDeleting] = useLoading(false);
     const [saving, withSaving] = useLoading(false);
-    const [shareUrlInfo, setShareUrlInfo] = useState<{ ShareURL: ShareURL; keyInfo: SharedURLSessionKeyPayload }>();
+    const [shareUrlInfo, setShareUrlInfo] = useState<{
+        ShareURL: ShareURL;
+        keyInfo: SharedURLSessionKeyPayload;
+    }>();
     const [passwordToggledOn, setPasswordToggledOn] = useState(false);
     const [expirationToggledOn, setExpirationToggledOn] = useState(false);
 
@@ -110,7 +113,9 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
         };
 
         const updatedFields = await withSaving(update());
-        createNotification({ text: c('Notification').t`Your settings have been changed successfully.` });
+        createNotification({
+            text: c('Notification').t`Your settings have been changed successfully.`,
+        });
         setShareUrlInfo({
             ...shareUrlInfo,
             ShareURL: {
@@ -125,6 +130,8 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
         if (updatedFields && updatedFields.ExpirationTime !== undefined) {
             setInitialExpiration(updatedFields.ExpirationTime);
         }
+
+        return updatedFields;
     };
 
     const handleToggleIncludePassword = () => {
@@ -145,7 +152,9 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
             await deleteSharedLink(ShareID, Token);
             await deleteShare(ShareID);
             await events.call(shareId);
-            createNotification({ text: c('Notification').t`The link to your file was deleted.` });
+            createNotification({
+                text: c('Notification').t`The link to your file was deleted.`,
+            });
             onClose?.();
         };
 
