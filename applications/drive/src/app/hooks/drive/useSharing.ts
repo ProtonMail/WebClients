@@ -137,8 +137,6 @@ function useSharing() {
     };
 
     const getFieldsToUpdateForPassword = async (
-        shareId: string,
-        token: string,
         newPassword: string,
         keyInfo: SharedURLSessionKeyPayload
     ): Promise<Partial<UpdateSharedURL>> => {
@@ -169,7 +167,6 @@ function useSharing() {
             SRPModulusID,
             UrlPasswordSalt,
         };
-        await api(queryUpdateSharedLink(shareId, token, fieldsToUpdate));
 
         return fieldsToUpdate;
     };
@@ -186,7 +183,7 @@ function useSharing() {
             fieldsToUpdate = { ExpirationDuration: newDuration };
         }
         if (newPassword) {
-            const fieldsToUpdateForPassword = await getFieldsToUpdateForPassword(shareId, token, newPassword, keyInfo);
+            const fieldsToUpdateForPassword = await getFieldsToUpdateForPassword(newPassword, keyInfo);
             fieldsToUpdate = {
                 ...fieldsToUpdate,
                 ...fieldsToUpdateForPassword,
