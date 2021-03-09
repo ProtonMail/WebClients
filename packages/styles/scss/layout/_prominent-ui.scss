@@ -1,0 +1,143 @@
+.prominent-ui {
+	--primary: var(--prominent-ui-primary, var(--primary));
+	--primary-contrast: var(
+		--prominent-ui-primary-contrast,
+		var(--primary-contrast)
+	);
+
+	--signal-danger: var(--prominent-ui-signal-danger, var(--signal-danger));
+	--signal-danger-hover: var(
+		--prominent-ui-signal-danger-hover,
+		var(--signal-danger-hover)
+	);
+	--signal-danger-active: var(
+		--prominent-ui-signal-danger-active,
+		var(--signal-danger-active)
+	);
+	--signal-danger-contrast: var(
+		--prominent-ui-signal-danger-contrast,
+		var(--signal-danger-contrast)
+	);
+
+	--signal-warning: var(--prominent-ui-signal-warning, var(--signal-warning));
+	--signal-warning-hover: var(
+		--prominent-ui-signal-warning-hover,
+		var(--signal-warning-hover)
+	);
+	--signal-warning-active: var(
+		--prominent-ui-signal-warning-active,
+		var(--signal-warning-active)
+	);
+	--signal-warning-contrast: var(
+		--prominent-ui-signal-warning-contrast,
+		var(--signal-warning-contrast)
+	);
+
+	--signal-success: var(--prominent-ui-signal-success, var(--signal-success));
+	--signal-success-hover: var(
+		--prominent-ui-signal-success-hover,
+		var(--signal-success-hover)
+	);
+	--signal-success-active: var(
+		--prominent-ui-signal-success-active,
+		var(--signal-success-active)
+	);
+	--signal-success-contrast: var(
+		--prominent-ui-signal-success-contrast,
+		var(--signal-success-contrast)
+	);
+
+	--signal-info: var(--prominent-ui-signal-info, var(--signal-info));
+	--signal-info-hover: var(
+		--prominent-ui-signal-info-hover,
+		var(--signal-info-hover)
+	);
+	--signal-info-active: var(
+		--prominent-ui-signal-info-active,
+		var(--signal-info-active)
+	);
+	--signal-info-contrast: var(
+		--prominent-ui-signal-info-contrast,
+		var(--signal-info-contrast)
+	);
+
+	--text-norm: var(--prominent-ui-text-norm, var(--text-norm));
+	--text-weak: var(--prominent-ui-text-weak, var(--text-weak));
+	--text-hint: var(--prominent-ui-text-hint, var(--text-hint));
+	--text-disabled: var(--prominent-ui-text-disabled, var(--text-disabled));
+	--text-invert: var(--prominent-ui-text-invert, var(--text-invert));
+
+	--field-norm: var(--prominent-ui-field-norm, var(--field-norm));
+	--field-hover: var(--prominent-ui-field-hover, var(--field-hover));
+	--field-disabled: var(--prominent-ui-field-disabled, var(--field-disabled));
+
+	--border-norm: var(--prominent-ui-border-norm, var(--border-norm));
+	--border-weak: var(--prominent-ui-border-weak, var(--border-weak));
+
+	--background-norm: var(
+		--prominent-ui-background-norm,
+		var(--background-norm)
+	);
+	--background-weak: var(
+		--prominent-ui-background-weak,
+		var(--background-weak)
+	);
+	--background-strong: var(
+		--prominent-ui-background-strong,
+		var(--background-strong)
+	);
+
+	--interaction-norm: var(
+		--prominent-ui-interaction-norm,
+		var(--interaction-norm)
+	);
+	--interaction-norm-hover: var(
+		--prominent-ui-interaction-norm-hover,
+		var(--interaction-norm-hover)
+	);
+	--interaction-norm-active: var(
+		--prominent-ui-interaction-norm-active,
+		var(--interaction-norm-active)
+	);
+	--interaction-norm-contrast: var(
+		--prominent-ui-interaction-norm-contrast,
+		var(--interaction-norm-contrast)
+	);
+
+	--interaction-weak: var(
+		--prominent-ui-interaction-weak,
+		var(--interaction-weak)
+	);
+	--interaction-weak-hover: var(
+		--prominent-ui-interaction-weak-hover,
+		var(--interaction-weak-hover)
+	);
+	--interaction-weak-active: var(
+		--prominent-ui-interaction-weak-active,
+		var(--interaction-weak-active)
+	);
+
+	--interaction-ghost: var(
+		--prominent-ui-interaction-ghost,
+		var(--interaction-ghost)
+	);
+	--interaction-ghost-hover: var(
+		--prominent-ui-interaction-ghost-hover,
+		var(--interaction-ghost-hover)
+	);
+	--interaction-ghost-active: var(
+		--prominent-ui-interaction-ghost-active,
+		var(--interaction-ghost-active)
+	);
+
+	--shadow-norm-opacity: var(
+		--prominent-ui-shadow-norm-opacity,
+		var(--shadow-norm-opacity)
+	);
+	--shadow-lifted-opacity: var(
+		--prominent-ui-shadow-lifted-opacity,
+		var(--shadow-lifted-opacity)
+	);
+
+	--backdrop-norm: var(--prominent-ui-backdrop-norm, var(--backdrop-norm));
+}
