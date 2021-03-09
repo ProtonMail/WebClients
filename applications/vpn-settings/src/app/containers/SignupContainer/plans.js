@@ -51,7 +51,7 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                 ),
                 c('Plan Feature').t`Servers in ${countries.free.length} countries`,
                 c('Plan Feature').t`Medium speed`,
-                c('Plan Feature').t`No logs/No ads`,
+                c('Plan Feature').t`Strict no-logs policy`,
                 <>
                     <del className="opacity-50 mr0-5">{c('Plan feature').t`P2P filesharing/BitTorrent support`}</del>
                     <Info
@@ -111,7 +111,7 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                 ),
                 c('Plan Feature').t`Servers in ${countries.basic.length} countries`,
                 c('Plan Feature').t`High speed`,
-                c('Plan Feature').t`No logs/No ads`,
+                c('Plan Feature').t`Strict no-logs policy`,
                 <>
                     <span className="mr0-5">{c('Plan feature').t`P2P filesharing/BitTorrent support`}</span>
                     <Info
@@ -164,7 +164,7 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                 ),
                 c('Plan Feature').t`Servers in ${countries.all.length} countries`,
                 c('Plan Feature').t`Highest speed (up to 10Gbps)`,
-                c('Plan Feature').t`No logs/No ads`,
+                c('Plan Feature').t`Strict no-logs policy`,
                 <>
                     <span className="mr0-5">{c('Plan feature').t`P2P filesharing/BitTorrent support`}</span>
                     <Info
@@ -236,7 +236,7 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                 ),
                 c('Plan Feature').t`Servers in ${countries.all.length} countries`,
                 c('Plan Feature').t`Highest speed (10Gbps)`,
-                c('Plan Feature').t`No logs/No ads`,
+                c('Plan Feature').t`Strict no-logs policy`,
                 <>
                     <span className="mr0-5">{c('Plan feature').t`P2P filesharing/BitTorrent support`}</span>
                     <Info
