@@ -62,7 +62,7 @@ export const exportContacts = (contactIDs: string[], userKeys: DecryptedKey[], a
  * Export contacts from a labelID full featured with batch requests, callbacks, abort
  */
 export const exportContactsFromLabel = async (
-    labelID = '',
+    labelID: string | undefined,
     count: number,
     userKeys: DecryptedKey[],
     signal: AbortSignal,
