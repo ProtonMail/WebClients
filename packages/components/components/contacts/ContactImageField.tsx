@@ -1,5 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
+import { formatImage } from 'proton-shared/lib/helpers/image';
 
 import { Button } from '../button';
 
@@ -12,7 +13,7 @@ const ContactImageField = ({ value, onChange }: Props) => {
     return (
         <div>
             {value ? (
-                <img className="max-w13e" src={value} referrerPolicy="no-referrer" />
+                <img className="max-w13e" src={formatImage(value)} referrerPolicy="no-referrer" />
             ) : (
                 <Button onClick={onChange}>{c('Action').t`Upload picture`}</Button>
             )}
