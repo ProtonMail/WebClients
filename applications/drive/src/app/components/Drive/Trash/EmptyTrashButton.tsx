@@ -4,7 +4,7 @@ import { classnames, useNotifications, FloatingButton, SidebarPrimaryButton } fr
 import useTrash from '../../../hooks/drive/useTrash';
 import useConfirm from '../../../hooks/util/useConfirm';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
-import useEvents from '../../../hooks/drive/useEvents';
+import useDrive from '../../../hooks/drive/useDrive';
 
 interface Props {
     shareId: string;
@@ -14,7 +14,7 @@ interface Props {
 
 const EmptyTrashButton = ({ shareId, floating, className }: Props) => {
     const cache = useDriveCache();
-    const events = useEvents();
+    const { events } = useDrive();
     const { emptyTrash } = useTrash();
     const { openConfirmModal } = useConfirm();
     const { createNotification } = useNotifications();

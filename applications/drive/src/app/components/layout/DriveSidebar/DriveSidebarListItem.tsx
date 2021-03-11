@@ -9,7 +9,7 @@ import {
     useLoading,
 } from 'react-components';
 import { useRouteMatch } from 'react-router-dom';
-import useEvents from '../../../hooks/drive/useEvents';
+import useDrive from '../../../hooks/drive/useDrive';
 import LocationAside from './ReloadSpinner';
 
 interface Props {
@@ -20,7 +20,7 @@ interface Props {
 }
 const DriveSidebarListItem = ({ to, children, icon, shareId }: Props) => {
     const match = useRouteMatch();
-    const { callAll } = useEvents();
+    const { events } = useDrive();
     const [refreshing, withRefreshing] = useLoading(false);
 
     const isActive = match.path === to;
@@ -30,7 +30,7 @@ const DriveSidebarListItem = ({ to, children, icon, shareId }: Props) => {
 
     const handleClick = () => {
         if (!refreshing && shareId) {
-            withRefreshing(Promise.all([callAll(shareId), wait(1000)])).catch(noop);
+            withRefreshing(Promise.all([events.callAll(shareId), wait(1000)])).catch(noop);
         }
     };
 

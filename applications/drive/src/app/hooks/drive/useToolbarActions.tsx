@@ -11,7 +11,6 @@ import useListNotifications from '../util/useListNotifications';
 import useConfirm from '../util/useConfirm';
 import useSharing from './useSharing';
 import useDrive from './useDrive';
-import useEvents from './useEvents';
 import FileSaver from '../../utils/FileSaver/FileSaver';
 import { getMetaForTransfer } from '../../utils/transfer';
 import { logSettledErrors } from '../../utils/async';
@@ -34,7 +33,7 @@ function useToolbarActions() {
     const { createModal } = useModals();
     const { deleteTrashedLinks, restoreLinks, trashLinks } = useTrash();
     const { deleteMultipleSharedLinks } = useSharing();
-    const { deleteShare } = useDrive();
+    const { events, deleteShare } = useDrive();
 
     const {
         createDeleteLinksNotifications,
@@ -43,7 +42,6 @@ function useToolbarActions() {
         createDeleteSharedLinksNotifications,
     } = useListNotifications();
     const { openConfirmModal } = useConfirm();
-    const events = useEvents();
 
     const download = async (itemsToDownload: FileBrowserItem[]) => {
         if (!folder) {
