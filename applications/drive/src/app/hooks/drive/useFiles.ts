@@ -37,7 +37,6 @@ import useQueuedFunction from '../util/useQueuedFunction';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 import { countFilesToUpload, isFile } from '../../utils/file';
 import { getMetaForTransfer, isTransferCancelError } from '../../utils/transfer';
-import useEvents from './useEvents';
 import { mimeTypeFromFile } from '../../utils/MimeTypeParser/MimeTypeParser';
 import useConfirm from '../util/useConfirm';
 import { adjustName, splitLinkName } from '../../utils/link';
@@ -46,7 +45,7 @@ const HASH_CHECK_AMOUNT = 10;
 
 function useFiles() {
     const api = useApi();
-    const { deleteChildrenLinks } = useDrive();
+    const { events, deleteChildrenLinks } = useDrive();
     const getUser = useGetUser();
     const cache = useDriveCache();
     const debouncedRequest = useDebouncedRequest();
@@ -54,7 +53,6 @@ function useFiles() {
     const { createNotification } = useNotifications();
     const { getPrimaryAddressKey, sign } = useDriveCrypto();
     const { getLinkMeta, getLinkKeys, fetchAllFolderPages, createNewFolder } = useDrive();
-    const events = useEvents();
     const { addToDownloadQueue, addFolderToDownloadQueue } = useDownloadProvider();
     const { addToUploadQueue, getUploadsImmediate, getUploadsProgresses, getAbortController } = useUploadProvider();
     const { preventLeave } = usePreventLeave();

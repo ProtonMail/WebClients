@@ -6,7 +6,6 @@ import { getRandomString } from 'proton-shared/lib/helpers/string';
 import { DialogModal, useLoading, useNotifications } from 'react-components';
 
 import useDrive from '../../hooks/drive/useDrive';
-import useEvents from '../../hooks/drive/useEvents';
 import useSharing from '../../hooks/drive/useSharing';
 import useConfirm from '../../hooks/util/useConfirm';
 import { SharedURLSessionKeyPayload, ShareURL } from '../../interfaces/sharing';
@@ -42,9 +41,8 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
     const [initialPassword, setInitialPassword] = useState('');
     const [initialExpiration, setInitialExpiration] = useState<number | null>(null);
     const [error, setError] = useState(false);
-    const { getShareMetaShort, deleteShare, getShareKeys } = useDrive();
+    const { events, getShareMetaShort, deleteShare, getShareKeys } = useDrive();
     const { createSharedLink, getSharedURLs, decryptSharedLink, updateSharedLink, deleteSharedLink } = useSharing();
-    const events = useEvents();
     const { createNotification } = useNotifications();
     const { openConfirmModal } = useConfirm();
 
