@@ -1,8 +1,10 @@
 import React, { ReactNode } from 'react';
 import { c } from 'ttag';
+import { formatImage } from 'proton-shared/lib/helpers/image';
 import { getPreferredValue } from 'proton-shared/lib/contacts/properties';
 import { formatAdr } from 'proton-shared/lib/contacts/property';
 import { ContactProperties } from 'proton-shared/lib/interfaces/contacts';
+
 import ContactImageSummary from './ContactImageSummary';
 import './ContactSummary.scss';
 import Tooltip from '../tooltip/Tooltip';
@@ -31,8 +33,7 @@ const ContactSummary = ({
     hasError = false,
 }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
-
-    const photo = getPreferredValue(properties, 'photo') as string;
+    const photo = formatImage(getPreferredValue(properties, 'photo') as string);
     const name = getPreferredValue(properties, 'fn') as string;
     const email = getPreferredValue(properties, 'email');
     const tel = getPreferredValue(properties, 'tel');

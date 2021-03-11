@@ -33,9 +33,7 @@ const ContactImageSummary = ({ photo, name }: Props) => {
     const [loadingResize, withLoadingResize] = useLoading(true);
     const loading = loadingMailSettings || loadingResize;
     const shouldShow =
-        showAnyway ||
-        ShowImages === SHOW_IMAGES.ALL ||
-        (isBase64 ? ShowImages === SHOW_IMAGES.EMBEDDED : ShowImages === SHOW_IMAGES.REMOTE);
+        showAnyway || ShowImages === SHOW_IMAGES.ALL || (isBase64 ? true : ShowImages === SHOW_IMAGES.REMOTE);
 
     useEffect(() => {
         if (!photo || !shouldShow) {
