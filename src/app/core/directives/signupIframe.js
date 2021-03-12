@@ -177,7 +177,7 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
             };
 
             const log = async (fatal = false) => {
-                if (!steps.filter((x) => x.type === 'error').length) {
+                if (!steps.some((x) => x.type === 'error')) {
                     return;
                 }
                 const extra = {
@@ -257,6 +257,12 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
                 log();
             });
 
+            const cb = (e) => {
+                addStep('data', e.data, 'message');
+            };
+
+            window.addEventListener('message', cb, false);
+
             el[0].querySelector('.signupIframe-iframe').appendChild(iframe);
             addStep('added iframe');
 
@@ -270,6 +276,7 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
                 clearTimeout(timeoutID);
                 clearTimeout(retryID);
                 helpButton.removeEventListener('click', onClick);
+                window.removeEventListener('message', cb, false);
             });
         }
     };
