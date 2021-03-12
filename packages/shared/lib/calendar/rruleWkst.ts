@@ -31,7 +31,7 @@ export const withRruleWkst = (rrule: VcalRrulePropertyValue, wkst = VcalDays.MO)
     return omit(rrule, ['wkst']);
 };
 
-const withVeventRruleWkst = (vevent: VcalVeventComponent, wkst: VcalDays): VcalVeventComponent => {
+const withVeventRruleWkst = <T>(vevent: VcalVeventComponent & T, wkst: VcalDays): VcalVeventComponent & T => {
     if (!vevent.rrule) {
         return vevent;
     }
