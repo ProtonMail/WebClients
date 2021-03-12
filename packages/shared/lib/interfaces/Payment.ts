@@ -23,11 +23,16 @@ export interface CardDetails {
     Brand: string;
 }
 
-export type PaymentMethodDetails = CardDetails | PayPalDetails;
-
-export interface PaymentMethod {
-    Order: number;
-    ID: string;
-    Type: PAYMENT_METHOD_TYPES;
-    Details: PaymentMethodDetails;
-}
+export type PaymentMethod =
+    | {
+          Order: number;
+          ID: string;
+          Type: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT;
+          Details: PayPalDetails;
+      }
+    | {
+          Order: number;
+          ID: string;
+          Type: PAYMENT_METHOD_TYPES.CARD;
+          Details: CardDetails;
+      };
