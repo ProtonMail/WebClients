@@ -1,3 +1,9 @@
+# [3.16.60] - 2021-03-12
+
+## Fixes
+
+-   Fix url support on older versions of chrome
+
 # [3.16.59] - 2021-03-08
 
 ## Improvements
