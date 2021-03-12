@@ -12,6 +12,7 @@ export * from './SignedKeyList';
 export * from './User';
 export * from './UserSettings';
 export * from './Subscription';
+export * from './Payment';
 export * from './config';
 export { GetCanonicalEmails } from './hooks/GetCanonicalEmails';
 export { GetVTimezones } from './hooks/GetVTimezones';
