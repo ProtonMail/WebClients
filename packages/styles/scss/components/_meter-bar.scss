@@ -27,7 +27,7 @@
 	@include meter-bar-size;
 
 	width: 100%;
-	background: var(--bgcolor-meter-bar, $pm-global-muted);
+	background: var(--background-strong);
 
 	//-webkit-appearance: none; // Can't. Well, because Chrome.
 	// -moz-appearance: none;
@@ -45,39 +45,39 @@
 
 	&:not(#{&}--primary) {
 		&::-webkit-meter-optimum-value {
-			background: $pm-global-success;
+			background: var(--signal-success);
 		}
 		&::-webkit-meter-suboptimum-value {
-			background: $pm-global-attention;
+			background: var(--signal-warning);
 		}
 		&::-webkit-meter-even-less-good-value {
-			background: $pm-global-warning;
+			background: var(--signal-danger);
 		}
 
 		&:-moz-meter-optimum::-moz-meter-bar {
-			background: $pm-global-success;
+			background: var(--signal-success);
 		}
 		&:-moz-meter-sub-optimum::-moz-meter-bar {
-			background: $pm-global-attention;
+			background: var(--signal-warning);
 		}
 		&:-moz-meter-sub-sub-optimum::-moz-meter-bar {
-			background: $pm-global-warning;
+			background: var(--signal-danger);
 		}
 	}
 
 	&--primary {
 		&::-webkit-meter-optimum-value {
-			background: $pm-primary;
+			background: var(--primary);
 		}
 		&::-webkit-meter-suboptimum-value {
-			background: $pm-primary;
+			background: var(--primary);
 		}
 		&::-webkit-meter-even-less-good-value {
-			background: $pm-primary;
+			background: var(--primary);
 		}
 
 		&::-moz-meter-bar {
-			background: $pm-primary;
+			background: var(--primary);
 		}
 	}
 
