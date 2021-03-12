@@ -5,7 +5,7 @@
 }
 
 :root {
-	--px: 1em / $base-font-size; // For pixel-based calculation on css variables
+	--px: #{1em / $base-font-size}; // For pixel-based calculation on css variables
 }
 
 html {
