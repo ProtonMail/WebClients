@@ -1,4 +1,3 @@
-import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
 import {
     getDateOrDateTimeProperty,
     getDtendProperty,
@@ -21,8 +20,7 @@ const getRecurringUpdateAllPossibilities = (
     originalVeventComponent: VcalVeventComponent,
     oldVeventComponent: VcalVeventComponent,
     newVeventComponent: VcalVeventComponent,
-    recurrence: CalendarEventRecurring,
-    weekStartsOn: WeekStartsOn
+    recurrence: CalendarEventRecurring
 ) => {
     // If editing a single edit, we can use the dtstart as is...
     const oldStartProperty = oldVeventComponent['recurrence-id']
@@ -62,7 +60,7 @@ const getRecurringUpdateAllPossibilities = (
     if (
         isSameDay(oldLocalStartDate, newLocalStartDate) &&
         originalVeventComponent.rrule &&
-        getIsRruleEqual(originalVeventComponent.rrule, newVeventComponent.rrule, weekStartsOn)
+        getIsRruleEqual(originalVeventComponent.rrule, newVeventComponent.rrule)
     ) {
         return {
             updateAllPossibilities: UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME,
