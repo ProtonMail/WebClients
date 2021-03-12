@@ -1,28 +1,29 @@
 /*
  * Default Proton theme: Yin Yang theme
  */
-:root {
+:root,
+.ui-standard {
 	--primary: #657ee4;
 	--primary-contrast: white;
 
-	--signal-danger: #d13f44;
-	--signal-danger-hover: #bf262b;
-	--signal-danger-active: #ad1116;
+	--signal-danger: #d42f34;
+	--signal-danger-hover: #c7262b;
+	--signal-danger-active: #ba1e23;
 	--signal-danger-contrast: white;
 
-	--signal-warning: #e6bb2e;
-	--signal-warning-hover: #dfa916;
-	--signal-warning-active: #d99800;
+	--signal-warning: #f2ba00;
+	--signal-warning-hover: #e8aa00;
+	--signal-warning-active: #de9b00;
 	--signal-warning-contrast: black;
 
-	--signal-success: #0e875b;
-	--signal-success-hover: #067852;
-	--signal-success-active: #006949;
+	--signal-success: #1b874d;
+	--signal-success-hover: #157a44;
+	--signal-success-active: #0f6e3b;
 	--signal-success-contrast: white;
 
 	--signal-info: #1578cf;
-	--signal-info-hover: #0a65cc;
-	--signal-info-active: #0051c9;
+	--signal-info-hover: #0e6dc2;
+	--signal-info-active: #0764b5;
 	--signal-info-contrast: white;
 
 	--text-norm: #262a33;
@@ -51,12 +52,76 @@
 	--interaction-weak-hover: #babec7;
 	--interaction-weak-active: #a4a9b5;
 
-	--interaction-ghost: transparent;
-	--interaction-ghost-hover: #babec740;
-	--interaction-ghost-active: #babec773;
+	--interaction-default: transparent;
+	--interaction-default-hover: #babec740;
+	--interaction-default-active: #babec773;
 
 	--shadow-norm-opacity: 0.1;
 	--shadow-lifted-opacity: 0.16;
 
 	--backdrop-norm: rgb(0 0 0 / 0.48);
+
+	// Optional colors
+
+	--scrollbar-thumb-color: rgb(0 0 0 / 0.35);
+	--scrollbar-thumb-hover-color: rgb(0 0 0 / 0.5);
+}
+
+// Prominent UI specifics
+
+.ui-prominent {
+	--signal-danger: #ed4c51;
+	--signal-danger-hover: #f5565b;
+	--signal-danger-active: #fc6065;
+	--signal-danger-contrast: white;
+
+	--signal-warning: #f2ba00;
+	--signal-warning-hover: #fac507;
+	--signal-warning-active: #ffcf0f;
+	--signal-warning-contrast: black;
+
+	--signal-success: #2e9960;
+	--signal-success-hover: #35a167;
+	--signal-success-active: #3da86f;
+	--signal-success-contrast: white;
+
+	--signal-info: #2c89db;
+	--signal-info-hover: #3491e3;
+	--signal-info-active: #3d99eb;
+	--signal-info-contrast: white;
+
+	--text-norm: white;
+	--text-weak: #a4a9b5;
+	--text-hint: #696f7d;
+	--text-disabled: #575d6b;
+	--text-invert: #262a33;
+
+	--field-norm: #575d6b;
+	--field-hover: #696f7d;
+	--field-disabled: #464b58;
+
+	--border-norm: #464b58;
+	--border-weak: #363a46;
+
+	--background-norm: #262a33;
+	--background-weak: #2e323c;
+	--background-strong: #363a46;
+
+	--interaction-norm: #657ee4;
+	--interaction-norm-hover: #7d92e8;
+	--interaction-norm-active: #98a9ee;
+	--interaction-norm-contrast: white;
+
+	--interaction-weak: #464b58;
+	--interaction-weak-hover: #575d6b;
+	--interaction-weak-active: #696f7d;
+
+	--interaction-default: transparent;
+	--interaction-default-hover: #575d6b40;
+	--interaction-default-active: #575d6b73;
+
+	// Optional colors
+
+	--scrollbar-thumb-color: rgb(255 255 255 / 0.2);
+	--scrollbar-thumb-hover-color: rgb(255 255 255 / 0.5);
 }

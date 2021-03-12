@@ -109,7 +109,7 @@
 
 	// Ghost shape
 	.button-ghost-#{$color} {
-		--button-default-background-color: var(--interaction-ghost);
+		--button-default-background-color: var(--interaction-default);
 
 		@if $color == 'weak' {
 			--button-default-text-color: var(--text-norm);
@@ -119,7 +119,7 @@
 
 		@each $state in (hover, active) {
 			--button-#{$state}-background-color: var(
-				--interaction-ghost-#{$state}
+				--interaction-default-#{$state}
 			);
 
 			@if $color == 'weak' {
@@ -183,6 +183,39 @@
 	&.is-disabled {
 		color: var(--interaction-norm-disabled);
 		pointer-events: none;
+	}
+}
+
+/*
+ * Interactive gives only default colors on every states
+ */
+.interactive {
+	outline: none; // be careful of a11y
+	background-color: var(--interaction-default);
+	color: inherit;
+	transition: 0.15s easing(easeOutQuint), background-position 0s;
+
+	&:hover,
+	&:focus,
+	&:focus-within {
+		background-color: var(--interaction-default-hover);
+		color: inherit;
+	}
+
+	&:not(div):active,
+	&.is-active,
+	&[aria-expanded='true'] {
+		background-color: var(--interaction-default-active);
+		color: inherit;
+	}
+
+	&[disabled],
+	&.is-disabled {
+		pointer-events: none;
+
+		&:not([aria-busy='true']) {
+			opacity: 0.5;
+		}
 	}
 }
 
