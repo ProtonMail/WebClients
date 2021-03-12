@@ -119,16 +119,15 @@ function signupIframe(dispatchers, iframeVerifWizard, pmDomainModel, User, gette
 
     const getChallengeIframeURL = (mode, retry = 0) => {
         const id = mode === 'top' ? 0 : 1;
-        const url = new URL(`${ORIGIN.iframeUrl}challenge/html`);
-        url.searchParams.append('Type', id);
-        url.searchParams.append('name', mode);
-        if (isIE11()) {
-            url.searchParams.append('IE11', 1);
-        }
-        if (retry > 0) {
-            url.searchParams.append('retry', '' + retry);
-        }
-        return url.toString();
+        return [
+            `${ORIGIN.iframeUrl}challenge/html`,
+            `?Type=${id}`,
+            `&name=${mode}`,
+            isIE11() ? '&IE11=1' : '',
+            retry > 0 ? `&retry=${retry}` : ''
+        ]
+            .filter(Boolean)
+            .join('');
     };
 
     /**
