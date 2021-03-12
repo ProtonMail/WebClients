@@ -1,25 +1,14 @@
-$navigation-fillcolor-icons: #6d7178 !default;
 $padding-left-link: 2rem !default;
 
 .navigation-link,
 .navigation-link-header-group {
 	padding: 0.95rem 1em 0.95rem $padding-left-link;
-	color: var(--color-nav-link, $white);
 	text-decoration: none;
 	display: block;
 }
 
-@if $rtl-option==true {
-	[dir='rtl'] {
-		.navigation-link,
-		.navigation-link-header-group {
-			padding: 0.95rem $padding-left-link 0.95rem 1em;
-		}
-	}
-}
-
 .navigation-icon {
-	color: var(--fillcolor-icons, $navigation-fillcolor-icons);
+	color: var(--text-weak);
 }
 
 .navigation-refresh {
@@ -27,6 +16,8 @@ $padding-left-link: 2rem !default;
 }
 
 .navigation-link {
+	@extend .interactive;
+
 	position: relative;
 
 	&::after {
@@ -42,27 +33,28 @@ $padding-left-link: 2rem !default;
 		border-left: 4px solid transparent;
 	}
 
-	&:focus,
-	&:hover {
-		background: $navigation-hover-bg-color;
-		color: var(--color-nav-link, $pm-global-light);
+	&:hover,
+	&:focus {
 		text-decoration: none;
-		outline: none;
 	}
 
 	&:focus::after {
-		border-left: 4px solid $pm-primary-light;
+		border-left: 4px solid
+			var(--navigation-current-item-marker-color, var(--primary));
 	}
 }
 
 [aria-current='page'].navigation-link {
-	background: $navigation-hover-bg-color;
-	color: var(--color-nav-active, $white);
+	background-color: var(
+		--navigation-current-item-background-color,
+		var(--interaction-default-hover)
+	);
+	color: var(--navigation-current-item-text-color, var(--text-norm));
 	font-weight: bold;
 
 	&:hover .navigation-icon:not(.navigation-icon--expand),
 	.navigation-icon {
-		color: var(--color-nav-active, $white);
+		color: inherit;
 	}
 
 	.navigation-refresh {
@@ -72,18 +64,22 @@ $padding-left-link: 2rem !default;
 
 // labels/folders sections
 .navigation-link-header-group-link {
-	color: var(--fillcolor-icons, $navigation-fillcolor-icons);
+	@extend .interactive;
+
+	padding: 0.5em;
+	border-radius: $global-border-radius;
+	color: var(--text-weak);
 
 	.navigation-icon--expand {
-		color: var(--fillcolor-icons, $navigation-fillcolor-icons);
+		color: var(--text-weak);
 	}
 
 	//&:focus, // gimme focus-visible !!!!
 	&:hover {
-		color: var(--color-nav-link, $pm-global-light);
+		color: var(--text-norm);
 
 		.navigation-icon {
-			color: var(--fillcolor-icons, $white);
+			color: inherit;
 		}
 	}
 }
@@ -93,14 +89,14 @@ $padding-left-link: 2rem !default;
 //.navigation-link-header-group-link:focus,
 .navigation-link-header-group-link:hover {
 	.navigation-icon--expand {
-		color: var(--fillcolor-icons, $white);
+		color: inherit;
 	}
 }
 
 /* items counters */
 .navigation-counter-item {
-	background: $pm-primary;
-	color: $white;
+	background: var(--navigation-item-count-background-color, var(--primary));
+	color: var(--navigation-item-count-text-color, var(--primary-contrast));
 	font-size: 1.1rem;
 	padding: 0.2rem 0.4em 0; // em value for top gives non rounded value, so rem
 	border-radius: 1.1rem;
@@ -153,56 +149,21 @@ $padding-left-link: 2rem !default;
 }
 
 .navigation-sublink {
-	border-left: 2px solid $navigation-fillcolor-icons;
+	@extend .interactive;
+
+	border-left: 2px solid var(--border-norm);
 	display: block;
 	padding: 0.75rem 1rem 0.75rem 1.5rem;
 	text-decoration: none;
-	color: var(--color-nav-link, $white);
-
-	&:focus,
-	&:hover {
-		background: $navigation-hover-bg-color;
-		color: var(--color-nav-link, $pm-global-light);
-		text-decoration: none;
-	}
-
-	&:hover {
-		border-left: 2px solid
-			var(--color-nav-link, #{rgba($pm-global-light, 0.5)});
-	}
 
 	&[aria-current='true'] {
-		border-left: 2px solid var(--color-nav-active, $white);
+		background-color: var(
+			--navigation-current-item-background-color,
+			var(--interaction-default-hover)
+		);
+		color: var(--navigation-current-item-text-color, var(--text-norm));
+		border-left: 2px solid
+			var(--navigation-current-item-marker-color, var(--primary));
 		font-weight: bold;
-	}
-}
-
-@if $rtl-option==true {
-	[dir='rtl'] {
-		.navigation-sublist {
-			margin-left: 0;
-			margin-right: $padding-left-link;
-		}
-
-		.navigation-subitem {
-			margin-left: 0;
-			margin-right: 0.7rem;
-		}
-
-		.navigation-sublink {
-			border-left: 0;
-			border-right: 2px solid $navigation-fillcolor-icons;
-			padding: 0.75rem 1.5rem 0.75rem 1rem;
-
-			&:hover {
-				border-left: 0;
-				border-right: 2px solid var(--color-nav-link, $pm-global-light);
-			}
-
-			&[aria-current='true'] {
-				border-left: 0;
-				border-right: 2px solid var(--color-nav-active, $pm-primary);
-			}
-		}
 	}
 }

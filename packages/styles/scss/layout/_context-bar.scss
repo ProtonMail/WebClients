@@ -1,15 +1,15 @@
 .context-bar {
-	background: var(--bgcolor-context-bar, $pm-global-muted);
+	background: var(--background-weak);
 
 	@include respond-to($breakpoint-medium, 'min') {
 		width: $context-bar-width;
 		min-width: $context-bar-min-width;
 		max-width: var(--width-context-bar, $context-bar-max-width);
-		border-left: 1px solid var(--bordercolor-input, $pm-global-border);
+		border-left: 1px solid var(--border-norm);
 	}
 
 	@include respond-to($breakpoint-medium) {
-		border-top: 1px solid var(--bordercolor-input, $pm-global-border);
+		border-top: 1px solid var(--border-norm);
 	}
 
 	&-inner {
