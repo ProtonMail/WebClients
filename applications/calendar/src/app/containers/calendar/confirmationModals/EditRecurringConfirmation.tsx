@@ -111,7 +111,7 @@ const getTexts = (types: RECURRING_TYPES[], inviteActions: InviteActions) => {
             return {
                 ...defaultTexts,
                 alertText: c('Info')
-                    .t`You will update all the events in this series. An invitation update will be sent to the event participants.`,
+                    .t`You will update all the events in this series. An invitation will be sent to the event participants.`,
             };
         }
         return {

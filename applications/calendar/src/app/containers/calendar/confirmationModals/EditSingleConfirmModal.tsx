@@ -76,7 +76,7 @@ const getTexts = ({ type, addedAttendees, removedAttendees, hasRemovedAllAttende
         return {
             title: c('Title').t`Update event`,
             submit: c('Action').t`Update`,
-            alertText: c('Info').t`An invitation update will be sent to the event participants.`,
+            alertText: c('Info').t`An invitation will be sent to the event participants.`,
         };
     }
     // should never fall here
