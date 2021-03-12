@@ -2,14 +2,15 @@ import { withPmAttendees } from 'proton-shared/lib/calendar/attendees';
 import getMemberAndAddress from 'proton-shared/lib/calendar/integration/getMemberAndAddress';
 import { getSelfAttendeeToken } from 'proton-shared/lib/calendar/integration/invite';
 import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
+import { getIsRruleEqual } from 'proton-shared/lib/calendar/rruleEqual';
 import withVeventRruleWkst from 'proton-shared/lib/calendar/rruleWkst';
-import { buildVcalOrganizer } from 'proton-shared/lib/calendar/vcalConverter';
+import { buildVcalOrganizer, dayToNumericDay } from 'proton-shared/lib/calendar/vcalConverter';
 import { getHasAttendees } from 'proton-shared/lib/calendar/vcalHelper';
 import { noop } from 'proton-shared/lib/helpers/function';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { Address, Api, GetCanonicalEmails } from 'proton-shared/lib/interfaces';
-import { CalendarBootstrap } from 'proton-shared/lib/interfaces/calendar';
+import { CalendarBootstrap, VcalDays } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { getRecurringEventUpdatedText, getSingleEventText } from '../../../components/eventModal/eventForm/i18n';
 import { modelToVeventComponent } from '../../../components/eventModal/eventForm/modelToProperties';
@@ -146,11 +147,7 @@ const getSaveEventActions = async ({
     if (!inviteActions.selfAddress) {
         inviteActionsWithSelfAddress.selfAddress = selfAddress;
     }
-    // Do not touch RRULE for invitations
-    const veventComponentWithRruleWkst = isInvitation
-        ? modelVeventComponent
-        : withVeventRruleWkst(omit(modelVeventComponent, ['exdate']), weekStartsOn);
-    const newVeventComponent = await withPmAttendees(veventComponentWithRruleWkst, getCanonicalEmails);
+    const newVeventComponent = await withPmAttendees(modelVeventComponent, getCanonicalEmails);
     const handleDuplicateAttendees = async (vevent: VcalVeventComponent, inviteActions: InviteActions) => {
         const duplicateAttendees = getDuplicateAttendeesSend(vevent, inviteActions);
         if (duplicateAttendees) {
@@ -167,8 +164,9 @@ const getSaveEventActions = async ({
 
     // Creation
     if (!oldEventData) {
+        // add sequence and WKST (if needed)
         const newVeventWithSequence = {
-            ...newEditEventData.veventComponent,
+            ...withVeventRruleWkst(omit(newVeventComponent, ['exdate']), weekStartsOn),
             sequence: { value: 0 },
         };
         const updatedInviteActions = getUpdatedSaveInviteActions({
@@ -210,6 +208,14 @@ const getSaveEventActions = async ({
         eventResult: eventReadResult.result,
         memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, oldEventData.Author),
     });
+
+    // WKST should be preserved unless the user edited the RRULE explicitly. Otherwise, add it here (if needed)
+    const oldWkstDay = dayToNumericDay(oldEditEventData.veventComponent?.rrule?.value.wkst || 'MO');
+    const oldWkst = oldWkstDay === undefined ? VcalDays.MO : oldWkstDay;
+    const newWkst = getIsRruleEqual(oldEditEventData.veventComponent?.rrule, newVeventComponent.rrule, true)
+        ? oldWkst
+        : weekStartsOn;
+    newEditEventData.veventComponent = withVeventRruleWkst(omit(newVeventComponent, ['exdate']), newWkst);
 
     const isSingleEdit = !!oldEditEventData.recurrenceID;
     // If it's not an occurrence of a recurring event, or a single edit of a recurring event
@@ -258,8 +264,7 @@ const getSaveEventActions = async ({
         originalEditEventData.mainVeventComponent,
         oldEditEventData.mainVeventComponent,
         newEditEventData.veventComponent,
-        actualEventRecurrence,
-        weekStartsOn
+        actualEventRecurrence
     );
 
     const selfAttendeeToken = getSelfAttendeeToken(newEditEventData.veventComponent, addresses);
