@@ -11,7 +11,7 @@ describe('getIsRruleSupported for invitations', () => {
         const vevents = [
             `BEGIN:VEVENT\r\nRRULE:FREQ=DAILY;UNTIL=20200330T150000Z;INTERVAL=100;BYMONTH=3\r\nEND:VEVENT`,
             `BEGIN:VEVENT\r\nRRULE:FREQ=DAILY;INTERVAL=2;BYSECOND=30;BYMINUTE=5,10,15;BYHOUR=10\r\nEND:VEVENT`,
-            `BEGIN:VEVENT\r\nRRULE:FREQ=DAILY;INTERVAL=2;BYWEEKNO=13;COUNT=499;WKST=TH\r\nEND:VEVENT`
+            `BEGIN:VEVENT\r\nRRULE:FREQ=DAILY;INTERVAL=2;BYWEEKNO=13;COUNT=499;WKST=TH\r\nEND:VEVENT`,
         ];
         const rrules = vevents.map((vevent) => {
             const parsedVevent = parse(vevent) as RequireSome<VcalVeventComponent, 'rrule'>;
@@ -23,7 +23,7 @@ describe('getIsRruleSupported for invitations', () => {
     test('should refuse events with invalid daily recurring rules', () => {
         const vevents = [
             `BEGIN:VEVENT\r\nRRULE:FREQ=DAILY;COUNT=500\r\nEND:VEVENT`,
-            `BEGIN:VEVENT\r\nRRULE:FREQ=DAILY;INTERVAL=1000;BYMONTHDAY=11,22\r\nEND:VEVENT`
+            `BEGIN:VEVENT\r\nRRULE:FREQ=DAILY;INTERVAL=1000;BYMONTHDAY=11,22\r\nEND:VEVENT`,
         ];
         const rrules = vevents.map((vevent) => {
             const parsedVevent = parse(vevent) as RequireSome<VcalVeventComponent, 'rrule'>;
@@ -36,7 +36,7 @@ describe('getIsRruleSupported for invitations', () => {
         const vevents = [
             `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;UNTIL=20200330T150000Z;INTERVAL=1;BYDAY=MO,SU,TH;BYMONTHDAY=30,31;BYMONTH=3\r\nEND:VEVENT`,
             `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=2;BYSECOND=30;BYHOUR=10;BYMONTH=5\r\nEND:VEVENT`,
-            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=2;BYMONTHDAY=17,22;COUNT=499\r\nEND:VEVENT`
+            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=2;BYMONTH=3;BYMONTHDAY=17,22;COUNT=499\r\nEND:VEVENT`,
         ];
         const rrules = vevents.map((vevent) => {
             const parsedVevent = parse(vevent) as RequireSome<VcalVeventComponent, 'rrule'>;
@@ -48,7 +48,8 @@ describe('getIsRruleSupported for invitations', () => {
     test('should refuse events with invalid yearly recurring rules', () => {
         const vevents = [
             `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;COUNT=500\r\nEND:VEVENT`,
-            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=100;BYMONTHDAY=11,22\r\nEND:VEVENT`
+            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=100;BYMONTHDAY=11,22\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=11\r\nEND:VEVENT`,
         ];
         const rrules = vevents.map((vevent) => {
             const parsedVevent = parse(vevent) as RequireSome<VcalVeventComponent, 'rrule'>;
@@ -110,7 +111,7 @@ describe('formatStartDateTime', () => {
     test('should format all-day times as expected for single-day events', () => {
         const dtstart: VcalDateProperty = {
             parameters: { type: 'date' },
-            value: { year: 2020, month: 10, day: 13 }
+            value: { year: 2020, month: 10, day: 13 },
         };
         expect(formatStartDateTime(dtstart, enUS, true, true)).toEqual('Oct 13, 2020 (all day)');
     });
@@ -118,7 +119,7 @@ describe('formatStartDateTime', () => {
     test('should format all-day times as expected for multiple-day events', () => {
         const dtstart: VcalDateProperty = {
             parameters: { type: 'date' },
-            value: { year: 2020, month: 10, day: 13 }
+            value: { year: 2020, month: 10, day: 13 },
         };
         expect(formatStartDateTime(dtstart, enUS, true, false)).toEqual('Oct 13, 2020');
     });
@@ -128,7 +129,7 @@ describe('formatEndDateTime', () => {
     test('should format all-day times as expected for multiple-day events', () => {
         const dtend: VcalDateProperty = {
             parameters: { type: 'date' },
-            value: { year: 2020, month: 10, day: 13 }
+            value: { year: 2020, month: 10, day: 13 },
         };
         expect(formatEndDateTime(dtend, enUS, true)).toEqual('Oct 12, 2020');
     });
