@@ -40,6 +40,10 @@
 	visibility: hidden;
 }
 
+.opacity-65 {
+	opacity: 0.65;
+}
+
 .opacity-50 {
 	opacity: 0.5;
 }
@@ -50,6 +54,14 @@
 
 .opacity-30 {
 	opacity: 0.3;
+}
+
+.on-hover-opacity-100 {
+	&:hover,
+	&:focus,
+	&:focus-within {
+		opacity: 1;
+	}
 }
 
 .filter-blur {
