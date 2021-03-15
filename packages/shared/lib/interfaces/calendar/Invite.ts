@@ -33,7 +33,7 @@ export interface Participant {
     emailAddress: string;
     displayName: string;
     displayEmail: string;
-    partstat?: ICAL_ATTENDEE_STATUS;
+    partstat: ICAL_ATTENDEE_STATUS;
     role?: ICAL_ATTENDEE_ROLE;
     addressID?: string;
     attendeeIndex?: number;
