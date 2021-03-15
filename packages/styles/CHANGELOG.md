@@ -11,15 +11,22 @@
 - refactor numerous namespaces ^^
 - new input fields!
 - new buttons API!
+- new toggle!
 - new themes coming soon
 - new `modal--tiny` modifier for Signup
+- add table new style `alternate-table-bg-row-rounded`
+- styles for new phone input
 
 ### New helpers
 
-- added `z-index`, `min-w7e`, `onmobile-min-h0`, `mr-2e`, `flex-flex-items-center` helpers
+- added `z-index`, `min-w7e`, `onmobile-min-h0`, `mr-2e`, `flex-flex-items-center`, `w3e` helpers
 - added `tv`, `broken-link`, `keyboard`, `netshield`, `nologs`, `world`, `sort`, `parent-folder-filled`, `folder-filled`, `exclamation-circle-filled` icons
 - added `pm-field-icon-container-empty` class (to avoid layout shift for Drive)
 - added `bg-global-muted-dm-on-hover` class
+- added `on-mobile-center` helper
+- added `on-hover-opacity-100` and `opacity-65` helpers
+- added negative margin helpers: `mt-0-5` and `mb-0-5`
+- added `on-tinymobile-p(l/r/b/t)0` helpers
 
 ## Updated/fixes
 
@@ -39,6 +46,11 @@
 - hotfixed `text-capitalize` helper
 - udpated `hover-same-color` to work with `color-currentColor`
 - fixed tab header layout 
+- added `remote-content` icons
+
+### Misc 
+
+- fix SVGO temporary issue
 
 # [1.8.6] - 2020-12-18
 
@@ -126,7 +138,7 @@
 - added `button-showOnHover` and `.button-showOnHover-element` helper (to display something when hovering a parent)
 - added `flex-flex-children` helper
 - added `bottom` and `centered-absolute-horizontal` helpers
-- added `min-h5e`, `w11e` helper
+- added `min-h5e`, `w11e` helpers
 
 ### New fixes/reset
 
@@ -143,7 +155,7 @@
 
 - documentation for responsive helpers, 2-columns list and sizing helpers
 - add “broken file” image
-- add “TOR”, “P2P”, `empty-folder`, `proton-account`, `contact-full` icons
+- add “TOR”, “P2P”, `empty-folder`, `proton-account`, `contact-full` icons 
 
 
 ## Updated/bugfixes

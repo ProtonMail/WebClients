@@ -114,3 +114,31 @@
 		top: -0.15em;
 	}
 }
+
+.alternate-table-bg-row-rounded {
+	@extend .no-border;
+	@extend .w100;
+	border-spacing: 0; // no border-collapse for radius ^^
+
+	td,
+	th {
+		padding: em(9);
+	}
+
+	/* alternate bg for rows */
+	tbody tr:nth-child(odd) {
+		// bg on all cells
+		> * {
+			background-color: var(--bgcolor-input, $pm-global-light);
+		}
+		// radiuses
+		> :first-child {
+			border-top-left-radius: $global-bigger-border-radius;
+			border-bottom-left-radius: $global-bigger-border-radius;
+		}
+		> :last-child {
+			border-top-right-radius: $global-bigger-border-radius;
+			border-bottom-right-radius: $global-bigger-border-radius;
+		}
+	}
+}
