@@ -23,14 +23,14 @@ const ListSettings = ({ sort, onSort, onFilter, onNavigate, filter, labelID, con
                 onFilter={onFilter}
                 onNavigate={onNavigate}
                 hasCaret={false}
-                className="bg-global-muted-dm-on-hover opacity-50 rounded pl0-5 pr0-5 pt0-25 pb0-25"
+                className="bg-global-muted-dm-on-hover opacity-65 on-hover-opacity-100 rounded pl0-5 pr0-5 pt0-25 pb0-25"
             />
             <SortDropdown
                 conversationMode={conversationMode}
                 sort={sort}
                 onSort={onSort}
                 hasCaret={false}
-                className="bg-global-muted-dm-on-hover opacity-50 rounded pl0-5 pr0-5 pt0-25 pb0-25"
+                className="bg-global-muted-dm-on-hover opacity-65 on-hover-opacity-100 rounded pl0-5 pr0-5 pt0-25 pb0-25"
             />
         </div>
     );
