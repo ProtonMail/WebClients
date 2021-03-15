@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     UsernameSection,
     PasswordsSection,
@@ -52,6 +52,10 @@ export const getAccountPage = () => {
 };
 
 const AccountContainer = ({ setActiveSection, location }: SettingsPropsShared) => {
+    const [action] = useState(() => {
+        return new URLSearchParams(location.search).get('action');
+    });
+
     return (
         <PrivateMainSettingsAreaWithPermissions
             location={location}
@@ -59,7 +63,7 @@ const AccountContainer = ({ setActiveSection, location }: SettingsPropsShared) =
             setActiveSection={setActiveSection}
         >
             <UsernameSection />
-            <PasswordsSection />
+            <PasswordsSection open={action === 'change-password'} />
             <TwoFactorSection />
             <OpenVPNAccountSection />
             <RecoveryMethodsSection />
