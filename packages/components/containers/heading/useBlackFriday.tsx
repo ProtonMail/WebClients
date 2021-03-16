@@ -14,11 +14,12 @@ import {
     useApi,
     useConfig,
     useProductPayerPeriod,
-    usePromoModalState,
+    useFeature,
     useBlackFridayPeriod,
 } from '../../hooks';
 import { MailBlackFridayModal, NewSubscriptionModal, VPNBlackFridayModal } from '../payments';
 import { SUBSCRIPTION_STEPS } from '../payments/subscription/constants';
+import { FeatureCode } from '../features';
 
 const useBlackFriday = () => {
     const api = useApi();
@@ -28,9 +29,10 @@ const useBlackFriday = () => {
     const [subscription] = useSubscription();
     const isBlackFridayPeriod = useBlackFridayPeriod();
     const isProductPayerPeriod = useProductPayerPeriod();
-    const [modalState, loadingModalState, setModalState] = usePromoModalState(
-        isFree ? 'BlackFridayPromoShown' : 'BundlePromoShown'
+    const { feature, loading: loadingModalState, update: setModalState } = useFeature(
+        isFree ? FeatureCode.BlackFridayPromoShown : FeatureCode.BundlePromoShown
     );
+    const modalState = feature?.Value;
     const [isEligible, setEligibility] = useState(false);
     const location = useLocation();
     const { createModal } = useModals();
