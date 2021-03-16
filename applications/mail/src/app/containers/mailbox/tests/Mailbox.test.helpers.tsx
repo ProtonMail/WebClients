@@ -5,6 +5,7 @@ import loudRejection from 'loud-rejection';
 import { range } from 'proton-shared/lib/helpers/array';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
+import { VIEW_MODE } from 'proton-shared/lib/constants';
 import { filterToString, keywordToString, sortToString } from '../../../helpers/mailboxUrl';
 import { addApiMock } from '../../../helpers/test/api';
 import { addToCache } from '../../../helpers/test/cache';
@@ -19,7 +20,10 @@ import MailboxContainer from '../MailboxContainer';
 
 loudRejection();
 
+window.HTMLElement.prototype.scrollIntoView = jest.fn();
+
 interface PropsArgs {
+    elementID?: string;
     page?: number;
     sort?: Sort;
     filter?: Filter;
@@ -36,7 +40,7 @@ interface SetupArgs extends PropsArgs {
 
 export const props = {
     labelID: 'labelID',
-    mailSettings: {} as MailSettings,
+    mailSettings: { ViewMode: VIEW_MODE.GROUP } as MailSettings,
     userSettings: {} as UserSettings,
     breakpoints: {} as Breakpoints,
     elementID: undefined,
@@ -60,6 +64,7 @@ export const getElements = (count: number, label = props.labelID, elementProps: 
     }));
 
 export const getProps = ({
+    elementID,
     page = 0,
     sort = defaultSort,
     filter = defaultFilter,
@@ -81,7 +86,7 @@ export const getProps = ({
 
     const location = { pathname: '/', search: urlSearchParams.toString() } as Location;
 
-    return { ...props, location };
+    return { ...props, location, elementID };
 };
 
 export const setup = async ({

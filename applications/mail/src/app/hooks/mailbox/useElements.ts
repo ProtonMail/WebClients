@@ -70,6 +70,7 @@ const emptyCache = (
         elements: {},
         pages: [],
         updatedElements: [],
+        bypassFilter: [],
     };
 };
 
@@ -129,6 +130,9 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                 if (!isFilter(filter)) {
                     return true;
                 }
+                if (cache.bypassFilter.includes(element.ID || '')) {
+                    return true;
+                }
                 const elementUnread = isUnread(element, labelID);
                 return filter.Unread ? elementUnread : !elementUnread;
             });
@@ -136,7 +140,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         return sorted.slice(startIndex, endIndex);
     }, [cache]);
 
-    const expectedLength = useMemo(() => expectedPageLength(cache.page), [cache.page]);
+    const expectedLength = useMemo(() => expectedPageLength(cache.page) + cache.bypassFilter.length, [cache.page]);
     const expectedLengthMismatch = useMemo(() => Math.abs(elements.length - expectedLength), [
         elements.length,
         expectedLength,
@@ -267,11 +271,30 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                         ...elementsMap,
                     },
                     updatedElements,
+                    bypassFilter: cache.bypassFilter,
                 };
             });
         } catch {
             setCache((cache) => ({ ...cache, beforeFirstLoad: false, invalidated: false, pendingRequest: true }));
         }
+    };
+
+    const getTotal = (counts: ElementCountEvent[]) => {
+        const count = counts.find((count) => count.LabelID === labelID);
+
+        if (!count) {
+            return cache.page.total;
+        }
+
+        const unreadFilter = filter.Unread as number | undefined;
+
+        if (unreadFilter === undefined) {
+            return count.Total;
+        }
+        if (unreadFilter > 0) {
+            return count.Unread;
+        }
+        return count.Total - count.Unread;
     };
 
     // Main effect watching all inputs and responsible to trigger actions on the cache
@@ -319,7 +342,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                 return;
             }
 
-            const count = Counts.find((count) => count.LabelID === labelID);
+            const total = getTotal(Counts);
 
             const { toCreate, toUpdate, toDelete } = Elements.reduce<{
                 toCreate: (Element & LabelIDsChanges)[];
@@ -383,10 +406,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                 return {
                     ...cache,
                     elements: newElements,
-                    page: {
-                        ...cache.page,
-                        total: count ? count.Total : cache.page.total,
-                    },
+                    page: { ...cache.page, total },
                     updatedElements,
                 };
             });
