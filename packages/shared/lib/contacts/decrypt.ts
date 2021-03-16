@@ -148,6 +148,7 @@ export const prepareContact = async (
             return ACTIONS[card.Type](card, { publicKeys, privateKeys });
         })
     );
+
     // remove UIDs put by mistake in encrypted cards
     const sanitizedCards = decryptedCards.map((card, i) => {
         if (![ENCRYPTED_AND_SIGNED, ENCRYPTED].includes(Cards[i].Type) || !card.data) {

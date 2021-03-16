@@ -76,7 +76,7 @@ export const parse = (vcard = ''): ContactProperties => {
             }
 
             const group = splitProperty[1] ? splitProperty[0] : undefined;
-            const prop = { pref, field, group, type, value: getValue(property) };
+            const prop = { pref, field, group, type, value: getValue(property, field) };
 
             acc.push(prop);
 
