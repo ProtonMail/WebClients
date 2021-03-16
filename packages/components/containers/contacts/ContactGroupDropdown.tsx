@@ -1,21 +1,10 @@
 import React, { useState, useEffect, useMemo, ReactNode, ChangeEvent } from 'react';
-import { c, msgid } from 'ttag';
-
+import { c } from 'ttag';
 import { normalize } from 'proton-shared/lib/helpers/string';
-import { labelContactEmails, unLabelContactEmails } from 'proton-shared/lib/api/contacts';
-import { ContactEmail, ContactGroup, Contact } from 'proton-shared/lib/interfaces/contacts/Contact';
-
+import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts/Contact';
 import ContactGroupDropdownButton from '../../components/contacts/ContactGroupDropdownButton';
 import { usePopperAnchor } from '../../components/popper';
-import {
-    useLoading,
-    useContacts,
-    useApi,
-    useNotifications,
-    useEventManager,
-    useContactGroups,
-    useModals,
-} from '../../hooks';
+import { useLoading, useContactGroups, useModals } from '../../hooks';
 import { generateUID } from '../../helpers';
 import Dropdown from '../../components/dropdown/Dropdown';
 import Tooltip from '../../components/tooltip/Tooltip';
@@ -24,9 +13,9 @@ import SearchInput from '../../components/input/SearchInput';
 import { SmallButton, PrimaryButton } from '../../components/button';
 import Mark from '../../components/text/Mark';
 import Checkbox from '../../components/input/Checkbox';
-
 import ContactGroupModal from './modals/ContactGroupModal';
-import SelectEmailsModal from './modals/SelectEmailsModal';
+import useApplyGroups from './useApplyGroups';
+
 import './ContactGroupDropdown.scss';
 
 const UNCHECKED = 0;
@@ -48,36 +37,13 @@ const getModel = (contactGroups: ContactGroup[] = [], contactEmails: ContactEmai
         const inGroup = contactEmails.filter(({ LabelIDs = [] }) => {
             return LabelIDs.includes(ID);
         });
-        acc[ID] = inGroup.length ? (contactEmails.length === inGroup.length ? CHECKED : INDETERMINATE) : UNCHECKED;
+        if (inGroup.length) {
+            acc[ID] = contactEmails.length === inGroup.length ? CHECKED : INDETERMINATE;
+        } else {
+            acc[ID] = UNCHECKED;
+        }
         return acc;
     }, Object.create(null));
-};
-
-/**
- * Collect contacts having multiple emails
- * Used for <SelectEmailsModal />
- * @param contactEmails
- * @returns result.contacts
- */
-export const collectContacts = (contactEmails: ContactEmail[] = [], contacts: Contact[]) => {
-    return contactEmails.reduce(
-        (acc, { ContactID }) => {
-            acc.duplicate[ContactID] = (acc.duplicate[ContactID] || 0) + 1;
-
-            if (acc.duplicate[ContactID] === 2) {
-                const contact = contacts.find(({ ID }: { ID: string }) => ID === ContactID);
-                if (contact) {
-                    acc.contacts.push(contact);
-                }
-            }
-
-            return acc;
-        },
-        {
-            contacts: [] as Contact[],
-            duplicate: Object.create(null),
-        }
-    );
 };
 
 interface Props {
@@ -92,14 +58,12 @@ const ContactGroupDropdown = ({ children, className, contactEmails, disabled = f
     const [keyword, setKeyword] = useState('');
     const [loading, withLoading] = useLoading();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor();
-    const { createNotification } = useNotifications();
-    const { call } = useEventManager();
-    const api = useApi();
     const { createModal } = useModals();
-    const [contacts] = useContacts();
     const [contactGroups = []] = useContactGroups();
+    const [initialModel, setInitialModel] = useState<{ [groupID: string]: number }>(Object.create(null));
     const [model, setModel] = useState<{ [groupID: string]: number }>(Object.create(null));
     const [uid] = useState(generateUID('contactGroupDropdown'));
+    const applyGroups = useApplyGroups();
 
     const handleAdd = () => {
         createModal(<ContactGroupModal selectedContactEmails={contactEmails} />);
@@ -109,61 +73,23 @@ const ContactGroupDropdown = ({ children, className, contactEmails, disabled = f
         setModel({ ...model, [contactGroupID]: +target.checked });
 
     const handleApply = async () => {
-        let selectedContactEmails = [...contactEmails];
-        const { contacts: collectedContacts } = collectContacts(contactEmails, contacts);
+        const changes = Object.entries(model).reduce<{ [groupID: string]: boolean }>((acc, [groupID, isChecked]) => {
+            if (isChecked !== initialModel[groupID]) {
+                acc[groupID] = isChecked === CHECKED;
+            }
+            return acc;
+        }, {});
 
-        if (collectedContacts.length) {
-            const groupIDs = Object.entries(model)
-                .filter(([, isChecked]) => isChecked)
-                .map(([groupID]) => groupID);
-            selectedContactEmails = await new Promise<ContactEmail[]>((resolve, reject) => {
-                createModal(
-                    <SelectEmailsModal
-                        groupIDs={groupIDs}
-                        contacts={collectedContacts}
-                        onSubmit={resolve}
-                        onClose={reject}
-                    />
-                );
-            });
-        }
-        const groupEntries = Object.entries(model);
-        await Promise.all(
-            groupEntries.map(([contactGroupID, isChecked]) => {
-                if (isChecked === INDETERMINATE) {
-                    return Promise.resolve();
-                }
+        await applyGroups(contactEmails, changes);
 
-                if (isChecked === CHECKED) {
-                    const toLabel = selectedContactEmails
-                        .filter(({ LabelIDs = [] }) => !LabelIDs.includes(contactGroupID))
-                        .map(({ ID }) => ID);
-                    if (!toLabel.length) {
-                        return Promise.resolve();
-                    }
-                    return api(labelContactEmails({ LabelID: contactGroupID, ContactEmailIDs: toLabel }));
-                }
-
-                const toUnlabel = selectedContactEmails
-                    .filter(({ LabelIDs = [] }) => LabelIDs.includes(contactGroupID))
-                    .map(({ ID }) => ID);
-
-                if (!toUnlabel.length) {
-                    return Promise.resolve();
-                }
-                return api(unLabelContactEmails({ LabelID: contactGroupID, ContactEmailIDs: toUnlabel }));
-            })
-        );
-        await call();
-        createNotification({
-            text: c('Info').ngettext(msgid`Contact group apply`, `Contact groups apply`, groupEntries.length),
-        });
         close();
     };
 
     useEffect(() => {
         if (isOpen) {
-            setModel(getModel(contactGroups, contactEmails));
+            const initialModel = getModel(contactGroups, contactEmails);
+            setInitialModel(initialModel);
+            setModel(initialModel);
         }
     }, [contactGroups, contactEmails, isOpen]);
 
@@ -250,7 +176,8 @@ const ContactGroupDropdown = ({ children, className, contactEmails, disabled = f
                                 );
                             })}
                         </ul>
-                    ) : keyword ? (
+                    ) : null}
+                    {!filteredContactGroups.length && keyword ? (
                         <div className="w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1">
                             <Icon name="attention" className="mr0-5" />
                             {c('Info').t`No group found`}

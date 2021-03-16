@@ -12,3 +12,4 @@ export { default as ContactProvider } from './ContactProvider';
 export { default as ContactsWidget } from './widget/ContactsWidget';
 export { default as ContactsRow } from './ContactRow';
 export { default as ContactsList } from './ContactsList';
+export { default as useApplyGroups } from './useApplyGroups';
