@@ -32,6 +32,7 @@ export interface ElementsCache {
     pages: number[];
     elements: { [ID: string]: Element };
     updatedElements: string[];
+    bypassFilter: string[];
 }
 
 /**

@@ -26,7 +26,14 @@ export const conversationCache = createCache<string, ConversationResult>();
 export const attachmentsCache = createCache<string, DecryptResultPmcrypto>();
 export const addressKeysCache = createCache<string, { status: number; value: Partial<DecryptedKey>[] }>();
 
-export const elementsCache = { elements: {}, params: { sort: {} }, pages: [], page: {}, updatedElements: [] };
+export const elementsCache = {
+    elements: {},
+    params: { sort: {} },
+    pages: [],
+    page: {},
+    updatedElements: [],
+    bypassFilter: [],
+};
 export const contactCache = {
     contactsMap: {} as { [email: string]: any },
     contactsMapWithDuplicates: {} as { [email: string]: any[] },
