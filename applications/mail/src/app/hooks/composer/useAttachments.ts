@@ -1,6 +1,6 @@
 import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
 import { getAttachments, isPlainText } from 'proton-shared/lib/mail/messages';
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { useApi, useNotifications, useAuthentication, useHandler } from 'react-components';
 import { c } from 'ttag';
 import { removeAttachment } from 'proton-shared/lib/api/attachments';
@@ -20,6 +20,8 @@ import { MessageChange } from '../../components/composer/Composer';
 import { useMessageCache } from '../../containers/MessageProvider';
 import { useAttachmentCache } from '../../containers/AttachmentProvider';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
+import { useLongLivingState } from '../useLongLivingState';
+import { usePromise } from '../usePromise';
 
 export interface PendingUpload {
     file: File;
@@ -43,21 +45,38 @@ export const useAttachments = (
     const [pendingFiles, setPendingFiles] = useState<File[]>();
 
     // Pending uploads
-    const [pendingUploads, setPendingUploads] = useState<PendingUpload[]>();
+    // Long living because we have to track upload progress after closing
+    const [pendingUploads, setPendingUploads, getPendingUpload] = useLongLivingState<PendingUpload[]>([]);
+
+    const {
+        promise: promiseUpload,
+        resolver: resolveUpload,
+        rejecter: rejectUpload,
+        renew: newUpload,
+        isPending: uploadInProgress,
+    } = usePromise<void>();
 
     const { localID } = message;
 
-    const uploadInProgress = useMemo(() => {
-        return (pendingUploads?.length || 0) > 0;
-    }, [pendingUploads]);
+    const updatePendingUpload = useHandler((pendingUploads: PendingUpload[], error?: any) => {
+        const previousValue = getPendingUpload();
+        setPendingUploads(pendingUploads);
 
-    const addPendingUploads = (newPendingUploads: PendingUpload[]) => {
-        setPendingUploads((pendingUploads) => [...(pendingUploads || []), ...newPendingUploads]);
+        if (error) {
+            rejectUpload(error);
+        } else if (!pendingUploads.length && previousValue.length) {
+            resolveUpload();
+        }
+    });
+
+    const addPendingUploads = (pendingUploads: PendingUpload[]) => {
+        updatePendingUpload([...getPendingUpload(), ...pendingUploads]);
     };
 
-    const removePendingUpload = (pendingUpload: PendingUpload) => {
-        setPendingUploads((pendingUploads) =>
-            pendingUploads?.filter((aPendingUpload) => aPendingUpload !== pendingUpload)
+    const removePendingUpload = (pendingUpload: PendingUpload, error?: any) => {
+        updatePendingUpload(
+            getPendingUpload().filter((aPendingUpload) => aPendingUpload !== pendingUpload),
+            error
         );
     };
 
@@ -100,8 +119,9 @@ export const useAttachments = (
 
                 return { embeddeds, data: { Attachments } };
             });
-        } finally {
             removePendingUpload(pendingUpload);
+        } catch (error) {
+            removePendingUpload(pendingUpload, error);
         }
     });
 
@@ -122,6 +142,12 @@ export const useAttachments = (
     const handleAddAttachmentsUpload = useHandler(
         async (action: ATTACHMENT_ACTION, files: File[] = pendingFiles || []) => {
             setPendingFiles(undefined);
+
+            // Trigger upload state before ensureMessageIsCreated
+            // In case of the user close or send even before
+            if (getPendingUpload().length === 0) {
+                newUpload();
+            }
 
             const messageFromCache = await ensureMessageIsCreated();
             const messageKeys = await getMessageKeys(messageFromCache.data);
@@ -202,6 +228,7 @@ export const useAttachments = (
     return {
         pendingFiles,
         pendingUploads,
+        promiseUpload,
         uploadInProgress,
         handleAddAttachmentsStart,
         handleAddEmbeddedImages,

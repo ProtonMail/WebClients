@@ -1,14 +1,30 @@
-import React, { useState, useEffect, useRef, useCallback, DragEvent } from 'react';
+import React, {
+    useState,
+    useEffect,
+    useRef,
+    useCallback,
+    DragEvent,
+    Ref,
+    RefObject,
+    forwardRef,
+    useImperativeHandle,
+} from 'react';
 import { c } from 'ttag';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { getRecipients } from 'proton-shared/lib/mail/messages';
-import { classnames, useToggle, useNotifications, useMailSettings, useHandler } from 'react-components';
+import {
+    classnames,
+    useNotifications,
+    useHandler,
+    useModals,
+    ConfirmModal,
+    ErrorButton,
+    Alert,
+} from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { setBit, clearBit } from 'proton-shared/lib/helpers/bitset';
-import { COMPOSER_MODE } from 'proton-shared/lib/constants';
-import { wait } from 'proton-shared/lib/helpers/promise';
+import useIsMounted from 'react-components/hooks/useIsMounted';
 import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
-import ComposerTitleBar from './ComposerTitleBar';
 import ComposerMeta from './ComposerMeta';
 import ComposerContent from './ComposerContent';
 import ComposerActions from './ComposerActions';
@@ -19,26 +35,22 @@ import ComposerExpirationModal from './ComposerExpirationModal';
 import { useMessage } from '../../hooks/message/useMessage';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
 import { useSaveDraft, useDeleteDraft } from '../../hooks/message/useSaveDraft';
-import { useSendMessage, useSendVerifications } from '../../hooks/composer/useSendMessage';
 import { isNewDraft } from '../../helpers/message/messageDraft';
 import { useAttachments } from '../../hooks/composer/useAttachments';
 import { getDate } from '../../helpers/elements';
-import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerPositioning';
-import { WindowSize, Breakpoints } from '../../models/utils';
+import { Breakpoints } from '../../models/utils';
 import { EditorActionsRef } from './editor/SquireEditorWrapper';
 import { useHasScroll } from '../../hooks/useHasScroll';
 import { useReloadSendInfo, useMessageSendInfo } from '../../hooks/useSendInfo';
 import { useDebouncedHandler } from '../../hooks/useDebouncedHandler';
 import { DRAG_ADDRESS_KEY } from '../../constants';
-import { usePromiseFromState } from '../../hooks/usePromiseFromState';
 import { OnCompose } from '../../hooks/composer/useCompose';
 import { useComposerHotkeys } from '../../hooks/composer/useComposerHotkeys';
-import SendingMessageNotification, {
-    createSendingMessageNotificationManager,
-} from '../notifications/SendingMessageNotification';
-import SavingDraftNotification from '../notifications/SavingDraftNotification';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
+
+import { useSendHandler } from '../../hooks/composer/useSendHandler';
+import { useCloseHandler } from '../../hooks/composer/useCloseHandler';
 
 enum ComposerInnerModal {
     None,
@@ -56,58 +68,47 @@ export interface MessageChangeFlag {
     (changes: Map<number, boolean>, reloadSendInfo?: boolean): void;
 }
 
+export interface ComposerAction {
+    close: () => void;
+}
+
 interface Props {
-    index: number;
-    count: number;
-    focus: boolean;
     messageID: string;
-    windowSize: WindowSize;
+    composerFrameRef: RefObject<HTMLDivElement>;
     breakpoints: Breakpoints;
+    toggleMinimized: () => void;
+    toggleMaximized: () => void;
     onFocus: () => void;
     onClose: () => void;
+    onSubject: (subject: string) => void;
     onCompose: OnCompose;
 }
 
-const Composer = ({
-    index,
-    count,
-    focus,
-    messageID,
-    windowSize,
-    breakpoints,
-    onFocus,
-    onClose: inputOnClose,
-    onCompose,
-}: Props) => {
+const Composer = (
+    {
+        messageID,
+        composerFrameRef,
+        breakpoints,
+        toggleMinimized,
+        toggleMaximized,
+        onFocus,
+        onClose: inputOnClose,
+        onCompose,
+        onSubject,
+    }: Props,
+    ref: Ref<ComposerAction>
+) => {
+    const { createModal } = useModals();
     const messageCache = useMessageCache();
-    const [mailSettings] = useMailSettings();
-    const { createNotification, hideNotification } = useNotifications();
+    const { createNotification } = useNotifications();
+    const isMounted = useIsMounted();
 
     const bodyRef = useRef<HTMLDivElement>(null);
     const [hasVerticalScroll] = useHasScroll(bodyRef);
 
-    // Minimized status of the composer
-    const { state: minimized, toggle: toggleMinimized } = useToggle(false);
-
-    // Maximized status of the composer
-    const { state: maximized, toggle: toggleMaximized } = useToggle(
-        mailSettings?.ComposerMode === COMPOSER_MODE.MAXIMIZED
-    );
-
     // Indicates that the composer is in its initial opening
     // Needed to be able to force focus only at first time
     const [opening, setOpening] = useState(true);
-
-    // Indicates that the composer is being closed
-    // Needed to keep component alive while saving/deleting on close
-    const [closing, setClosing] = useState(false);
-
-    // Indicates that the composer is sending the message
-    // Some behavior has to change, example, stop auto saving
-    const [sending, setSending] = useState(false);
-
-    // Indicates that the composer is saving a draft
-    const [saving, setSaving] = useState(false);
 
     // Indicates that the composer is open but the edited message is not yet ready
     // Needed to prevent edition while data is not ready
@@ -131,14 +132,12 @@ const Composer = ({
     // All message actions
     const initialize = useInitializeMessage(syncedMessage.localID);
     const saveDraft = useSaveDraft();
-    const sendVerifications = useSendVerifications();
-    const sendMessage = useSendMessage();
     const deleteDraft = useDeleteDraft();
 
     // Computed composer status
     const syncInProgress = !!syncedMessage.actionInProgress;
-    const hasRecipients = getRecipients(syncedMessage.data).length > 0;
-    const lock = opening || sending || closing;
+    const hasRecipients = getRecipients(modelMessage.data).length > 0;
+    const lock = opening;
 
     // Manage focus from the container yet keeping logic in each component
     const addressesBlurRef = useRef<() => void>(noop);
@@ -210,15 +209,6 @@ const Composer = ({
         }
     }, [syncInProgress, syncedMessage.document, syncedMessage.data?.ID]);
 
-    // Automatic maximize if height too small
-    useEffect(() => {
-        const shouldMaximized = shouldBeMaximized(windowSize.height);
-
-        if (!maximized && shouldMaximized) {
-            toggleMaximized();
-        }
-    }, [windowSize.height]);
-
     // Manage focus at opening
     useEffect(() => {
         let timeout: number | undefined;
@@ -240,6 +230,11 @@ const Composer = ({
         };
     }, [opening]);
 
+    // Update subject on ComposerFrame
+    useEffect(() => {
+        onSubject(modelMessage.data?.Subject || c('Title').t`New message`);
+    }, [modelMessage.data?.Subject]);
+
     const actualSave = (message: MessageExtended) => {
         return addAction(() => saveDraft(message as MessageExtendedWithData));
     };
@@ -252,9 +247,11 @@ const Composer = ({
     } = useDebouncedHandler(actualSave, 2000);
 
     const handleChange: MessageChange = useHandler((update, shouldReloadSendInfo) => {
-        // On rare occasion, composer can trigger events after sending or closing
-        // We should absolutely avoid calling auto save and can forget about these events
-        if (closing || sending) {
+        if (!isMounted()) {
+            // Can happen when we finish an upload with the composer closed
+            const messageChanges = update instanceof Function ? update(modelMessage) : update;
+            const newModelMessage = mergeMessages(modelMessage, messageChanges);
+            void autoSave(newModelMessage);
             return;
         }
         setModelMessage((modelMessage) => {
@@ -270,9 +267,9 @@ const Composer = ({
 
     const handleChangeContent = useHandler(
         (content: string, refreshEditor: boolean = false, silent: boolean = false) => {
-            // On rare occasion, composer can trigger events after sending or closing
+            // On rare occasion, composer can trigger events after sending
             // We should absolutely avoid calling auto save and can forget about these events
-            if (closing || sending) {
+            if (!isMounted()) {
                 return;
             }
             setModelMessage((modelMessage) => {
@@ -332,6 +329,7 @@ const Composer = ({
     const {
         pendingFiles,
         pendingUploads,
+        promiseUpload,
         uploadInProgress,
         handleAddAttachmentsStart,
         handleAddAttachmentsUpload,
@@ -357,9 +355,9 @@ const Composer = ({
                 const files = syncedMessage.initialAttachments;
                 updateMessageCache(messageCache, messageID, { initialAttachments: undefined });
                 await addAction(() => saveDraft(syncedMessage as MessageExtendedWithData));
-                handleAddAttachmentsUpload(ATTACHMENT_ACTION.ATTACHMENT, files);
+                await handleAddAttachmentsUpload(ATTACHMENT_ACTION.ATTACHMENT, files);
             };
-            uploadInitialAttachments();
+            void uploadInitialAttachments();
         }
 
         if (editorReady && !syncInProgress && !attachmentToCreate && !attachmentToUpload) {
@@ -374,8 +372,6 @@ const Composer = ({
             restartAutoSave();
         }
     }, [uploadInProgress]);
-
-    const promiseUploadInProgress = usePromiseFromState(!uploadInProgress);
 
     const handlePassword = () => {
         setInnerModal(ComposerInnerModal.Password);
@@ -396,7 +392,18 @@ const Composer = ({
     };
 
     const handleDelete = async () => {
-        setClosing(true);
+        await new Promise<void>((resolve, reject) => {
+            createModal(
+                <ConfirmModal
+                    onConfirm={resolve}
+                    onClose={reject}
+                    title={c('Title').t`Delete draft`}
+                    confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
+                >
+                    <Alert type="error">{c('Info').t`Are you sure you want to permanently delete this draft?`}</Alert>
+                </ConfirmModal>
+            );
+        });
         autoSave.abort?.();
         try {
             await handleDiscard();
@@ -405,128 +412,43 @@ const Composer = ({
         }
     };
 
-    const handleManualSaveAfterUploads = useHandler(async () => {
-        let notificationID: number | undefined;
-        autoSave.abort?.();
-        try {
-            const promise = actualSave(modelMessage);
-            notificationID = createNotification({
-                text: (
-                    <SavingDraftNotification
-                        promise={promise}
-                        onDiscard={() => {
-                            if (notificationID) {
-                                hideNotification(notificationID);
-                            }
-                            void handleDiscard();
-                        }}
-                    />
-                ),
-                expiration: -1,
-                disableAutoClose: true,
-            });
-            await promise;
-            await wait(3000);
-        } finally {
-            if (notificationID) {
-                hideNotification(notificationID);
-            }
-            setSaving(false);
-        }
+    const { saving, handleManualSave, handleClose } = useCloseHandler({
+        modelMessage,
+        ensureMessageContent,
+        actualSave,
+        autoSave,
+        onClose,
+        onCompose,
+        onDicard: handleDiscard,
+        pendingSave,
+        promiseUpload,
+        uploadInProgress,
     });
 
-    const handleManualSave = async () => {
-        setSaving(true);
-        ensureMessageContent();
-        await promiseUploadInProgress.current;
-        // Split handlers to have the updated version of the message
-        await handleManualSaveAfterUploads();
-    };
-
-    const handleSendAfterUploads = useHandler(async () => {
-        let verificationResults;
-        try {
-            verificationResults = await sendVerifications(modelMessage as MessageExtendedWithData);
-        } catch {
-            setSending(false);
-            return;
-        }
-
-        const { cleanMessage, mapSendPrefs, hasChanged } = verificationResults;
-        const alreadySaved = !!cleanMessage.data.ID && !pendingSave.current && !hasChanged;
-        autoSave.abort?.();
-
-        const manager = createSendingMessageNotificationManager();
-        // Display growler to receive direct feedback (UX) since sendMessage function is added to queue (and other async process could need to complete first)
-        manager.ID = createNotification({
-            text: <SendingMessageNotification manager={manager} />,
-            expiration: -1,
-            disableAutoClose: true,
-        });
-
-        // No await here to close the composer directly
-        void addAction(async () => {
-            try {
-                await sendMessage(cleanMessage, mapSendPrefs, onCompose, alreadySaved, manager);
-            } catch (error) {
-                hideNotification(manager.ID);
-                createNotification({
-                    text: c('Error').t`Error while sending the message. Message is not sent`,
-                    type: 'error',
-                });
-                console.error('Error while sending the message.', error);
-                setSending(false);
-                throw error;
-            }
-        });
-        onClose();
+    const handleSend = useSendHandler({
+        modelMessage,
+        ensureMessageContent,
+        promiseUpload,
+        pendingSave,
+        autoSave,
+        addAction,
+        onCompose,
+        onClose,
     });
 
-    const handleSend = useHandler(async () => {
-        ensureMessageContent();
-        setSending(true);
-        await promiseUploadInProgress.current;
-        // Split handlers to have the updated version of the message
-        await handleSendAfterUploads();
-    });
+    useImperativeHandle(ref, () => ({
+        close: handleClose,
+    }));
 
-    const handleClick = async () => {
-        if (minimized) {
-            toggleMinimized();
-        }
-        onFocus();
-    };
-    const handleClose = async () => {
-        ensureMessageContent();
-        setClosing(true);
-        try {
-            if (pendingSave.current || uploadInProgress) {
-                void handleManualSave().catch(() => {
-                    createNotification({
-                        text: c('Error').t`Draft could not be saved. Try again.`,
-                        type: 'error',
-                    });
-                    onCompose({
-                        existingDraft: {
-                            localID: syncedMessage.localID,
-                            data: syncedMessage.data,
-                        },
-                    });
-                });
-            }
-        } finally {
-            onClose();
-        }
-    };
     const handleEditorReady = useCallback(() => setEditorReady(true), []);
+
     const handleContentFocus = useCallback(() => {
         addressesBlurRef.current();
         onFocus(); // Events on the main div will not fire because the editor is in an iframe
     }, []);
 
-    const style = computeComposerStyle(index, count, focus, minimized, maximized, breakpoints.isNarrow, windowSize);
-
-    const { squireKeydownHandler, composerRef, attachmentTriggerRef } = useComposerHotkeys({
+    const { squireKeydownHandler, attachmentTriggerRef } = useComposerHotkeys({
+        composerRef: composerFrameRef,
         handleClose,
         handleDelete,
         handleExpiration,
@@ -541,104 +463,82 @@ const Composer = ({
 
     return (
         <div
-            className={classnames([
-                'composer flex flex-column no-outline',
-                !focus && 'composer--is-blur',
-                minimized && 'composer--is-minimized',
-                maximized && 'composer--is-maximized',
-            ])}
-            style={style}
-            onFocus={onFocus}
-            onClick={handleClick}
+            className="composer-container flex flex-column flex-item-fluid relative w100"
             onDragEnter={handleDragEnter}
-            ref={composerRef}
-            tabIndex={-1}
         >
-            <ComposerTitleBar
-                message={modelMessage}
-                closing={closing}
-                minimized={minimized}
-                maximized={maximized}
-                toggleMinimized={toggleMinimized}
-                toggleMaximized={toggleMaximized}
-                onClose={handleClose}
-            />
-            <div className="composer-container flex flex-column flex-item-fluid relative w100">
-                {innerModal === ComposerInnerModal.Password && (
-                    <ComposerPasswordModal
-                        message={modelMessage.data}
-                        onClose={handleCloseInnerModal}
-                        onChange={handleChange}
-                    />
-                )}
-                {innerModal === ComposerInnerModal.Expiration && (
-                    <ComposerExpirationModal
-                        message={modelMessage}
-                        onClose={handleCloseInnerModal}
-                        onChange={handleChange}
-                    />
-                )}
+            {innerModal === ComposerInnerModal.Password && (
+                <ComposerPasswordModal
+                    message={modelMessage.data}
+                    onClose={handleCloseInnerModal}
+                    onChange={handleChange}
+                />
+            )}
+            {innerModal === ComposerInnerModal.Expiration && (
+                <ComposerExpirationModal
+                    message={modelMessage}
+                    onClose={handleCloseInnerModal}
+                    onChange={handleChange}
+                />
+            )}
+            <div
+                className={classnames([
+                    'composer-blur-container flex flex-column flex-item-fluid max-w100',
+                    // Only hide the editor not to unload it each time a modal is on top
+                    innerModal === ComposerInnerModal.None ? 'flex' : 'hidden',
+                ])}
+            >
                 <div
-                    className={classnames([
-                        'composer-blur-container flex flex-column flex-item-fluid max-w100',
-                        // Only hide the editor not to unload it each time a modal is on top
-                        innerModal === ComposerInnerModal.None ? 'flex' : 'hidden',
-                    ])}
+                    ref={bodyRef}
+                    className="composer-body-container flex flex-column flex-nowrap flex-item-fluid max-w100 mt0-5"
                 >
-                    <div
-                        ref={bodyRef}
-                        className="composer-body-container flex flex-column flex-nowrap flex-item-fluid max-w100 mt0-5"
-                    >
-                        <ComposerMeta
-                            message={modelMessage}
-                            messageSendInfo={messageSendInfo}
-                            disabled={!editorReady}
-                            onChange={handleChange}
-                            onChangeContent={handleChangeContent}
-                            addressesBlurRef={addressesBlurRef}
-                            addressesFocusRef={addressesFocusRef}
-                        />
-                        <ComposerContent
-                            message={modelMessage}
-                            disabled={lock}
-                            breakpoints={breakpoints}
-                            onEditorReady={handleEditorReady}
-                            onChange={handleChange}
-                            onChangeContent={handleChangeContent}
-                            onChangeFlag={handleChangeFlag}
-                            onFocus={handleContentFocus}
-                            onAddAttachments={handleAddAttachmentsStart}
-                            onCancelAddAttachment={handleCancelAddAttachment}
-                            onRemoveAttachment={handleRemoveAttachment}
-                            onRemoveUpload={handleRemoveUpload}
-                            pendingFiles={pendingFiles}
-                            pendingUploads={pendingUploads}
-                            onSelectEmbedded={handleAddAttachmentsUpload}
-                            contentFocusRef={contentFocusRef}
-                            editorActionsRef={editorActionsRef}
-                            squireKeydownHandler={squireKeydownHandler}
-                        />
-                    </div>
-                    <ComposerActions
-                        className={hasVerticalScroll ? 'composer-actions--has-scroll' : undefined}
+                    <ComposerMeta
                         message={modelMessage}
-                        date={getDate(syncedMessage.data, '')}
-                        lock={lock}
-                        opening={opening}
-                        sending={sending}
-                        syncInProgress={syncInProgress}
-                        onAddAttachments={handleAddAttachmentsStart}
-                        onExpiration={handleExpiration}
-                        onPassword={handlePassword}
-                        onSend={handleSend}
-                        onDelete={handleDelete}
+                        messageSendInfo={messageSendInfo}
+                        disabled={!editorReady}
+                        onChange={handleChange}
+                        onChangeContent={handleChangeContent}
                         addressesBlurRef={addressesBlurRef}
-                        attachmentTriggerRef={attachmentTriggerRef}
+                        addressesFocusRef={addressesFocusRef}
+                    />
+                    <ComposerContent
+                        message={modelMessage}
+                        disabled={lock}
+                        breakpoints={breakpoints}
+                        onEditorReady={handleEditorReady}
+                        onChange={handleChange}
+                        onChangeContent={handleChangeContent}
+                        onChangeFlag={handleChangeFlag}
+                        onFocus={handleContentFocus}
+                        onAddAttachments={handleAddAttachmentsStart}
+                        onCancelAddAttachment={handleCancelAddAttachment}
+                        onRemoveAttachment={handleRemoveAttachment}
+                        onRemoveUpload={handleRemoveUpload}
+                        pendingFiles={pendingFiles}
+                        pendingUploads={pendingUploads}
+                        onSelectEmbedded={handleAddAttachmentsUpload}
+                        contentFocusRef={contentFocusRef}
+                        editorActionsRef={editorActionsRef}
+                        squireKeydownHandler={squireKeydownHandler}
                     />
                 </div>
+                <ComposerActions
+                    className={hasVerticalScroll ? 'composer-actions--has-scroll' : undefined}
+                    message={modelMessage}
+                    date={getDate(syncedMessage.data, '')}
+                    lock={lock}
+                    opening={opening}
+                    syncInProgress={syncInProgress}
+                    onAddAttachments={handleAddAttachmentsStart}
+                    onExpiration={handleExpiration}
+                    onPassword={handlePassword}
+                    onSend={handleSend}
+                    onDelete={handleDelete}
+                    addressesBlurRef={addressesBlurRef}
+                    attachmentTriggerRef={attachmentTriggerRef}
+                />
             </div>
         </div>
     );
 };
 
-export default Composer;
+export default forwardRef(Composer);

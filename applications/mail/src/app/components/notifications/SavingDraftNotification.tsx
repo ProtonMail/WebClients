@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, forwardRef, useImperativeHandle, Ref } from 'react';
 import { c } from 'ttag';
 import { LinkButton } from 'react-components';
 
@@ -8,16 +8,17 @@ enum SavingStep {
 }
 
 interface Props {
-    promise: Promise<any>;
     onDiscard: () => void;
 }
 
-const SavingDraftNotification = ({ promise, onDiscard }: Props) => {
+export interface SavingDraftNotificationAction {
+    saved: () => void;
+}
+
+const SavingDraftNotification = ({ onDiscard }: Props, ref: Ref<SavingDraftNotificationAction | undefined>) => {
     const [step, setStep] = useState(SavingStep.saving);
 
-    useEffect(() => {
-        void promise.then(() => setStep(SavingStep.sent));
-    }, []);
+    useImperativeHandle(ref, () => ({ saved: () => setStep(SavingStep.sent) }));
 
     if (step === SavingStep.sent) {
         return (
@@ -34,4 +35,4 @@ const SavingDraftNotification = ({ promise, onDiscard }: Props) => {
     return <>{c('Info').t`Saving draft...`}</>;
 };
 
-export default SavingDraftNotification;
+export default forwardRef(SavingDraftNotification);

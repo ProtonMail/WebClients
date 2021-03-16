@@ -2,7 +2,6 @@ import React, { ReactNode } from 'react';
 import { c } from 'ttag';
 import { Icon, Tooltip, classnames, useMailSettings } from 'react-components';
 import { metaKey, shiftKey, isSafari as checkIsSafari } from 'proton-shared/lib/helpers/browser';
-import { MessageExtended } from '../../models/message';
 
 interface ButtonProps {
     onClick: () => void;
@@ -30,8 +29,7 @@ const TitleBarButton = ({ onClick, iconName, className = '', title, disabled = f
 };
 
 interface Props {
-    message: MessageExtended;
-    closing: boolean;
+    title: string;
     minimized: boolean;
     maximized: boolean;
     toggleMinimized: () => void;
@@ -39,18 +37,9 @@ interface Props {
     onClose: () => void;
 }
 
-const ComposerTitleBar = ({
-    message,
-    closing,
-    minimized,
-    maximized,
-    toggleMinimized,
-    toggleMaximized,
-    onClose,
-}: Props) => {
+const ComposerTitleBar = ({ title, minimized, maximized, toggleMinimized, toggleMaximized, onClose }: Props) => {
     const isSafari = checkIsSafari();
 
-    const title = message.data?.Subject || c('Title').t`New message`;
     const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
 
     const handleDoubleClick = () => {
@@ -118,7 +107,7 @@ const ComposerTitleBar = ({
                 className="no-mobile"
                 onClick={toggleMaximized}
             />
-            <TitleBarButton iconName="close" title={titleClose} onClick={onClose} disabled={closing} />
+            <TitleBarButton iconName="close" title={titleClose} onClick={onClose} />
         </header>
     );
 };

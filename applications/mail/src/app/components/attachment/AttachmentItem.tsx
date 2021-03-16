@@ -1,7 +1,7 @@
 import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { Icon, classnames, useLoading, FileIcon } from 'react-components';
+import { Icon, classnames, useLoading, FileIcon, useIsMounted } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { PendingUpload } from '../../hooks/composer/useAttachments';
@@ -69,11 +69,14 @@ const AttachmentItem = ({
 }: Props) => {
     const [loading, withLoading] = useLoading();
     const [progression, setProgression] = useState<number>(0);
+    const isMounted = useIsMounted();
 
     useEffect(() => {
         if (pendingUpload) {
             pendingUpload.upload.addProgressListener((event) => {
-                setProgression(event.loaded / event.total);
+                if (isMounted()) {
+                    setProgression(event.loaded / event.total);
+                }
             });
         }
     }, []);

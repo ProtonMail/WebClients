@@ -3,21 +3,8 @@ import { getAttachments, hasFlag } from 'proton-shared/lib/mail/messages';
 import React, { MutableRefObject } from 'react';
 import { c } from 'ttag';
 import { isToday, isYesterday } from 'date-fns';
-import {
-    Button,
-    useModals,
-    ConfirmModal,
-    Alert,
-    classnames,
-    Tooltip,
-    Icon,
-    EllipsisLoader,
-    ErrorButton,
-    useMailSettings,
-} from 'react-components';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { Button, classnames, Tooltip, Icon, EllipsisLoader, useMailSettings } from 'react-components';
 import { metaKey, shiftKey, altKey } from 'proton-shared/lib/helpers/browser';
-
 import { formatSimpleDate } from '../../helpers/date';
 import { MessageExtended } from '../../models/message';
 import AttachmentsButton from '../attachment/AttachmentsButton';
@@ -28,7 +15,6 @@ interface Props {
     date: Date;
     lock: boolean;
     opening: boolean;
-    sending: boolean;
     syncInProgress: boolean;
     onAddAttachments: (files: File[]) => void;
     onPassword: () => void;
@@ -45,7 +31,6 @@ const ComposerActions = ({
     date,
     lock,
     opening,
-    sending,
     syncInProgress,
     onAddAttachments,
     onPassword,
@@ -55,21 +40,6 @@ const ComposerActions = ({
     addressesBlurRef,
     attachmentTriggerRef,
 }: Props) => {
-    const { createModal } = useModals();
-
-    const handleDelete = () => {
-        return createModal(
-            <ConfirmModal
-                onConfirm={onDelete}
-                onClose={noop}
-                title={c('Title').t`Delete draft`}
-                confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
-            >
-                <Alert type="error">{c('Info').t`Are you sure you want to permanently delete this draft?`}</Alert>
-            </ConfirmModal>
-        );
-    };
-
     const isAttachments = getAttachments(message.data).length > 0;
     const isPassword = hasFlag(MESSAGE_FLAGS.FLAG_INTERNAL)(message.data) && message.data?.Password;
     const isExpiration = !!message.expiresIn;
@@ -94,11 +64,6 @@ const ComposerActions = ({
         }
     } else {
         dateMessage = c('Action').t`Not saved`;
-    }
-
-    let buttonSendLabel = c('Action').t`Send`;
-    if (sending) {
-        buttonSendLabel = c('Action').t`Sending`;
     }
 
     const titleAttachment = Shortcuts ? (
@@ -152,7 +117,7 @@ const ComposerActions = ({
             <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
             <kbd className="bg-global-altgrey no-border">Enter</kbd>
         </>
-    ) : undefined;
+    ) : null;
 
     return (
         <footer
@@ -166,12 +131,11 @@ const ComposerActions = ({
                 <Button
                     className="button--primary composer-send-button"
                     disabled={sendDisabled}
-                    loading={sending}
                     onClick={onSend}
                     data-testid="send-button"
                 >
                     <Icon name="sent" className="no-desktop no-tablet on-mobile-flex" />
-                    <span className="pl1 pr1 no-mobile">{buttonSendLabel}</span>
+                    <span className="pl1 pr1 no-mobile">{c('Action').t`Send`}</span>
                 </Button>
             </Tooltip>
             <div className="flex flex-item-fluid">
@@ -219,7 +183,7 @@ const ComposerActions = ({
                             className="inline-flex flex-align-items-center button--for-icon"
                             icon="trash"
                             disabled={lock}
-                            onClick={handleDelete}
+                            onClick={onDelete}
                         >
                             <span className="sr-only">{c('Action').t`Delete draft`}</span>
                         </Button>
