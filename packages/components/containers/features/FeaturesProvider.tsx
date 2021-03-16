@@ -15,10 +15,16 @@ const FeaturesProvider = ({ children }: Props) => {
 
     const [features, setFeatures] = useState<{ [key: string]: Feature }>({});
 
+    const [loading, setLoading] = useState<{ [key: string]: boolean }>({});
+
     const featureGetPromiseRef = useRef<{ [key: string]: Promise<Feature> }>({});
 
+    const updateLoading = (code: FeatureCode, isLoading: boolean) => {
+        setLoading((currentLoading) => ({ ...currentLoading, [code]: isLoading }));
+    };
+
     const addFeature = (code: FeatureCode, feature: Feature) => {
-        setFeatures((features) => ({ ...features, [code]: feature }));
+        setFeatures((currentFeatures) => ({ ...currentFeatures, [code]: feature }));
     };
 
     const updateFeature = addFeature;
@@ -30,9 +36,12 @@ const FeaturesProvider = ({ children }: Props) => {
 
         const createFeatureGetPromise = async () => {
             try {
+                updateLoading(code, true);
+
                 const { Feature } = await silentApi<{ Feature: Feature }>(getFeature(code));
 
                 addFeature(code, Feature);
+                updateLoading(code, false);
 
                 return Feature;
             } catch (e) {
@@ -50,14 +59,17 @@ const FeaturesProvider = ({ children }: Props) => {
     };
 
     const put = async (code: FeatureCode, value: any) => {
+        updateLoading(code, true);
+
         const { Feature } = await silentApi<{ Feature: Feature }>(updateFeatureValue(code, value));
 
         updateFeature(code, Feature);
+        updateLoading(code, false);
 
         return Feature;
     };
 
-    const context = { features, get, put };
+    const context = { features, loading, get, put };
 
     return <FeaturesContext.Provider value={context}>{children}</FeaturesContext.Provider>;
 };
