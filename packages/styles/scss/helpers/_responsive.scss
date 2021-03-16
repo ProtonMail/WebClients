@@ -302,6 +302,12 @@
 		&-wauto {
 			width: auto;
 		}
+		&-w100 {
+			width: 100%;
+		}
+		&-text-left {
+			text-align: left;
+		}
 
 		&-flex-align-self-start {
 			align-self: flex-start;
