@@ -16,7 +16,7 @@ import {
     SidebarList,
     SidebarListItemsWithSubsections,
     useModals,
-    usePromoModalState,
+    // usePromoModalState,
     ImportWelcomeModal,
     useHotkeys,
     SupportDropdown,
@@ -49,7 +49,7 @@ const SettingsContainer = () => {
 
     const documentRef = useRef(window.document);
 
-    const [modalState, loadingModalState, setModalState] = usePromoModalState('WelcomeImportModalShown');
+    const [modalState, loadingModalState, setModalState] = [false, false, async (state: boolean) => state]; // usePromoModalState('WelcomeImportModalShown');
     const [showImportWelcomeModal, setShowImportWelcomeModal] = useState(false);
 
     useEffect(() => {
