@@ -100,7 +100,9 @@ const SquireEditor = (
                 if (metadata.isPlainText) {
                     if (textareaRef.current) {
                         textareaRef.current.value = value;
-                        textareaRef.current.setSelectionRange(0, 0);
+                        // setTimeout is needed for Firefox
+                        // I guess setting the value is async and we have to release the thread before touching to the selection
+                        setTimeout(() => textareaRef.current?.setSelectionRange(0, 0));
                     }
                 } else {
                     squireRef.current?.setHTML(value);
