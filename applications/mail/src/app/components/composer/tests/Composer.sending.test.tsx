@@ -1,6 +1,7 @@
 import { DecryptResultPmcrypto } from 'pmcrypto';
 import { MIME_TYPES, PGP_SIGN } from 'proton-shared/lib/constants';
 import { MailSettings } from 'proton-shared/lib/interfaces';
+import loudRejection from 'loud-rejection';
 import { arrayToBase64 } from '../../../helpers/base64';
 import { createEmbeddedMap } from '../../../helpers/embedded/embeddeds';
 import { addApiContact } from '../../../helpers/test/contact';
@@ -24,6 +25,8 @@ import {
     clearAll,
 } from '../../../helpers/test/helper';
 import { ID, prepareMessage, send } from './Composer.test.helpers';
+
+loudRejection();
 
 jest.setTimeout(20000);
 

@@ -1,9 +1,10 @@
 import { isMac, isSafari as checkIsSafari } from 'proton-shared/lib/helpers/browser';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { useRef } from 'react';
+import { RefObject, useRef } from 'react';
 import { useHandler, useHotkeys, useMailSettings } from 'react-components';
 
 export interface ComposerHotkeysHandlers {
+    composerRef: RefObject<HTMLDivElement>;
     handleClose: () => Promise<void>;
     handleSend: () => Promise<void>;
     handleDelete: () => Promise<void>;
@@ -17,6 +18,7 @@ export interface ComposerHotkeysHandlers {
 }
 
 export const useComposerHotkeys = ({
+    composerRef,
     handleClose,
     handleSend,
     handleDelete,
@@ -32,7 +34,6 @@ export const useComposerHotkeys = ({
 
     const [mailSettings] = useMailSettings();
 
-    const composerRef = useRef<HTMLDivElement>(null);
     const attachmentTriggerRef = useRef<() => void>(noop);
 
     const { Shortcuts = 0 } = mailSettings || {};

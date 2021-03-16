@@ -8,7 +8,7 @@ import { SquireEditorRef } from 'react-components/components/editor/SquireEditor
 import { RIGHT_TO_LEFT, MIME_TYPES } from 'proton-shared/lib/constants';
 import { diff } from 'proton-shared/lib/helpers/array';
 import { noop } from 'proton-shared/lib/helpers/function';
-
+import useIsMounted from 'react-components/hooks/useIsMounted';
 import { MessageExtended, EmbeddedMap } from '../../../models/message';
 import { Breakpoints } from '../../../models/utils';
 import { MessageChange } from '../Composer';
@@ -66,6 +66,7 @@ const SquireEditorWrapper = ({
 }: Props) => {
     const [mailSettings] = useMailSettings();
     const [addresses] = useAddresses();
+    const isMounted = useIsMounted();
 
     const [editorReady, setEditorReady] = useState(false);
     const [documentReady, setDocumentReady] = useState(false);
@@ -154,9 +155,8 @@ const SquireEditorWrapper = ({
     // Angular/src/app/squire/services/removeInlineWatcher.js
     const checkImageDeletion = useHandler(
         () => {
-            // Composer is being closed, too late for that check to run
-            // Even if it's possible that we miss to remove an attachment in the last minute
-            if (disabled) {
+            // Debounce event can be triggered after composer is closed
+            if (!isMounted()) {
                 return;
             }
             const newCIDs = findCIDsInContent(squireEditorRef.current?.value || '');

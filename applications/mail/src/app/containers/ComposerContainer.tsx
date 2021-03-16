@@ -1,13 +1,11 @@
 import React, { ReactNode, useState, useEffect, memo } from 'react';
 import { useWindowSize, useHandler, useBeforeUnload } from 'react-components';
 import { c } from 'ttag';
-
-import Composer from '../components/composer/Composer';
 import { useMessageCache } from './MessageProvider';
 import { Breakpoints, WindowSize } from '../models/utils';
 import { MAX_ACTIVE_COMPOSER_MOBILE, MAX_ACTIVE_COMPOSER_DESKTOP } from '../helpers/composerPositioning';
 import { useCompose, OnCompose } from '../hooks/composer/useCompose';
-
+import ComposerFrame from '../components/composer/ComposerFrame';
 import '../components/composer/composer.scss';
 
 interface Props {
@@ -64,7 +62,7 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
             {children({ onCompose: handleCompose })}
             <div className="composer-container">
                 {messageIDs.map((messageID, i) => (
-                    <Composer
+                    <ComposerFrame
                         key={messageID}
                         messageID={messageID}
                         index={i}

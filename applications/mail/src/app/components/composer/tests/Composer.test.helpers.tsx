@@ -2,7 +2,6 @@ import React from 'react';
 import squire from 'squire-rte';
 import { act, fireEvent, RenderResult } from '@testing-library/react';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { MailSettings } from 'proton-shared/lib/interfaces';
 import { useEventManager } from 'react-components';
 import { mergeMessages } from '../../../helpers/message/messages';
 import { messageCache } from '../../../helpers/test/cache';
@@ -23,18 +22,15 @@ export const fromAddress = 'me@home.net';
 export const toAddress = 'someone@somewhere.net';
 
 export const props = {
-    index: 0,
-    count: 1,
-    focus: true,
-    message: {},
-    mailSettings: {} as MailSettings,
-    windowSize: { width: 1000, height: 1000 },
+    messageID: ID,
+    composerFrameRef: { current: document.createElement('div') },
     breakpoints: {} as Breakpoints,
-    addresses: [],
     onFocus: jest.fn(),
-    onChange: jest.fn(),
     onClose: jest.fn(),
     onCompose: jest.fn(),
+    toggleMinimized: jest.fn(),
+    toggleMaximized: jest.fn(),
+    onSubject: jest.fn(),
 };
 
 export const prepareMessage = (message: PartialMessageExtended) => {
