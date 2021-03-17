@@ -19,7 +19,7 @@ import {
 import { toMap } from 'proton-shared/lib/helpers/object';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { switchPlan } from 'proton-shared/lib/helpers/planIDs';
+import { switchPlan, clearPlanIDs } from 'proton-shared/lib/helpers/planIDs';
 
 import { Alert, Price, Loader } from '../../../components';
 import { useConfig, useAddresses } from '../../../hooks';
@@ -51,13 +51,15 @@ const Description = ({ planName, setModel, model, plans, organization }) => {
             onClick={() =>
                 setModel({
                     ...model,
-                    planIDs: switchPlan({
-                        planIDs: model.planIDs,
-                        plans,
-                        planID: plusPlan.ID,
-                        service: PLAN_SERVICES.MAIL,
-                        organization,
-                    }),
+                    planIDs: clearPlanIDs(
+                        switchPlan({
+                            planIDs: model.planIDs,
+                            plans,
+                            planID: plusPlan.ID,
+                            service: PLAN_SERVICES.MAIL,
+                            organization,
+                        })
+                    ),
                 })
             }
         >{c('Action').t`Upgrade to ProtonMail Plus`}</a>
@@ -68,13 +70,15 @@ const Description = ({ planName, setModel, model, plans, organization }) => {
             onClick={() =>
                 setModel({
                     ...model,
-                    planIDs: switchPlan({
-                        planIDs: model.planIDs,
-                        plans,
-                        planID: vpnPlusPlan.ID,
-                        service: PLAN_SERVICES.VPN,
-                        organization,
-                    }),
+                    planIDs: clearPlanIDs(
+                        switchPlan({
+                            planIDs: model.planIDs,
+                            plans,
+                            planID: vpnPlusPlan.ID,
+                            service: PLAN_SERVICES.VPN,
+                            organization,
+                        })
+                    ),
                 })
             }
         >{c('Link').t`Upgrade to ProtonVPN Plus`}</a>
@@ -520,13 +524,15 @@ const SubscriptionCustomization = ({
                     onSelect={(planID) => {
                         setModel({
                             ...model,
-                            planIDs: switchPlan({
-                                planIDs: model.planIDs,
-                                plans,
-                                planID,
-                                service: PLAN_SERVICES.MAIL,
-                                organization,
-                            }),
+                            planIDs: clearPlanIDs(
+                                switchPlan({
+                                    planIDs: model.planIDs,
+                                    plans,
+                                    planID,
+                                    service: PLAN_SERVICES.MAIL,
+                                    organization,
+                                })
+                            ),
                         });
                     }}
                 />
@@ -561,13 +567,15 @@ const SubscriptionCustomization = ({
                 onSelect={(planID) => {
                     setModel({
                         ...model,
-                        planIDs: switchPlan({
-                            planIDs: model.planIDs,
-                            plans,
-                            planID,
-                            service: PLAN_SERVICES.VPN,
-                            organization,
-                        }),
+                        planIDs: clearPlanIDs(
+                            switchPlan({
+                                planIDs: model.planIDs,
+                                plans,
+                                planID,
+                                service: PLAN_SERVICES.VPN,
+                                organization,
+                            })
+                        ),
                     });
                 }}
             />
