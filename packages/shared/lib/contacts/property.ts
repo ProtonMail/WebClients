@@ -70,6 +70,14 @@ export const getValue = (property: any, field: string): string | string[] => {
         value = cleanMultipleValue(value);
     }
 
+    // If one of the adr sections contains unescaped `,`
+    // ICAL will return a value of type (string | string[])[]
+    // Which we don't support later in the code
+    // Until we do, we flatten the value by joining these entries
+    if (field === 'adr') {
+        value = (value as (string | string[])[]).map((entry) => (Array.isArray(entry) ? entry.join(', ') : entry));
+    }
+
     return value;
 };
 
