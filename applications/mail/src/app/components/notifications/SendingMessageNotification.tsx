@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
 import { c } from 'ttag';
 import createListeners from 'proton-shared/lib/helpers/listeners';
 import { wait } from 'proton-shared/lib/helpers/promise';
-
+import { useIsMounted } from 'react-components';
 import UndoButton from './UndoButton';
 
 export const createSendingMessageNotificationManager = () => {
@@ -30,15 +30,20 @@ enum SendingStep {
 const SendingMessageNotification = ({ manager }: SendingMessageNotificationProps) => {
     const [state, setState] = useState(SendingStep.sending);
     const onUndoRef = useRef<() => Promise<void> | undefined>();
+    const isMounted = useIsMounted();
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         return manager.subscribe(async (promise: Promise<any>, onUndo: () => Promise<void>) => {
             onUndoRef.current = onUndo;
             const { undoTimeout } = await promise;
-            setState(undoTimeout ? SendingStep.sentWithUndo : SendingStep.sent);
+            if (isMounted()) {
+                setState(undoTimeout ? SendingStep.sentWithUndo : SendingStep.sent);
+            }
             if (undoTimeout) {
                 await wait(undoTimeout);
-                setState(SendingStep.sent);
+                if (isMounted()) {
+                    setState(SendingStep.sent);
+                }
             }
         });
     }, []);
