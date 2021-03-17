@@ -113,7 +113,7 @@ describe('formatStartDateTime', () => {
             parameters: { type: 'date' },
             value: { year: 2020, month: 10, day: 13 },
         };
-        expect(formatStartDateTime(dtstart, enUS, true, true)).toEqual('Oct 13, 2020 (all day)');
+        expect(formatStartDateTime(dtstart, enUS, true, true)).toEqual('Tuesday October 13th, 2020 (all day)');
     });
 
     test('should format all-day times as expected for multiple-day events', () => {
@@ -121,7 +121,7 @@ describe('formatStartDateTime', () => {
             parameters: { type: 'date' },
             value: { year: 2020, month: 10, day: 13 },
         };
-        expect(formatStartDateTime(dtstart, enUS, true, false)).toEqual('Oct 13, 2020');
+        expect(formatStartDateTime(dtstart, enUS, true, false)).toEqual('Tuesday October 13th, 2020');
     });
 });
 
@@ -131,6 +131,6 @@ describe('formatEndDateTime', () => {
             parameters: { type: 'date' },
             value: { year: 2020, month: 10, day: 13 },
         };
-        expect(formatEndDateTime(dtend, enUS, true)).toEqual('Oct 12, 2020');
+        expect(formatEndDateTime(dtend, enUS, true)).toEqual('Monday October 12th, 2020');
     });
 });

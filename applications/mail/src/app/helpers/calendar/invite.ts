@@ -286,24 +286,24 @@ export const formatStartDateTime = (
 ) => {
     if (isAllDay) {
         const utcDate = propertyToUTCDate(property);
-        const formattedDate = formatUTC(utcDate, 'PP', { locale });
+        const formattedDate = formatUTC(utcDate, 'cccc PPP', { locale });
         if (isSingleAllDay) {
             return c('Invitation details (all-day event)').t`${formattedDate} (all day)`;
         }
         return formattedDate;
     }
     const dateTimeProperty = property as VcalDateTimeProperty;
-    return format(propertyToUTCDate(dateTimeProperty), 'PPp', { locale });
+    return format(propertyToUTCDate(dateTimeProperty), 'cccc PPPp', { locale });
 };
 
 export const formatEndDateTime = (property: VcalDateOrDateTimeProperty, locale: Locale, isAllDay: boolean) => {
     if (isAllDay) {
         const utcDate = propertyToUTCDate(property);
-        const formattedDate = formatUTC(addDays(utcDate, -1), 'PP', { locale });
+        const formattedDate = formatUTC(addDays(utcDate, -1), 'cccc PPP', { locale });
         return formattedDate;
     }
     const dateTimeProperty = property as VcalDateTimeProperty;
-    return format(propertyToUTCDate(dateTimeProperty), 'PPp', { locale });
+    return format(propertyToUTCDate(dateTimeProperty), 'cccc PPPp', { locale });
 };
 
 const getIsEventInvitationValid = (event: VcalVeventComponent | undefined): event is VcalVeventComponent => {
