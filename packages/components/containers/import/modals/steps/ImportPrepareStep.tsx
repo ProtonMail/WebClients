@@ -93,9 +93,9 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
     const [isCustom, setIsCustom] = useState(false);
 
     useEffect(() => {
-        const { StartTime, EndTime, ImportLabel, Mapping } = initialModel.current.payload;
+        const { StartTime, ImportLabel, Mapping } = initialModel.current.payload;
 
-        const isCustomPeriod = StartTime !== payload.StartTime || EndTime !== payload.EndTime;
+        const isCustomPeriod = StartTime !== payload.StartTime;
         const isCustomLabel = !isDeepEqual(ImportLabel, payload.ImportLabel);
         const isCustomMapping = !isDeepEqual(Mapping, payload.Mapping);
 
@@ -120,7 +120,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
                 CustomFields,
             },
         });
-    }, [payload.StartTime, payload.EndTime, payload.ImportLabel, payload.Mapping]);
+    }, [payload.StartTime, payload.ImportLabel, payload.Mapping]);
 
     useEffect(() => {
         updateModalModel({ ...modalModel, isPayloadInvalid: showFoldersNumError || showFoldersNameError });
