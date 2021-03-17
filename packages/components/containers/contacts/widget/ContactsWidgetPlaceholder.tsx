@@ -11,6 +11,7 @@ import { LinkButton } from '../../../components';
 export enum EmptyType {
     All,
     Search,
+    AllGroups,
 }
 
 interface ActionLinkProps {
@@ -38,6 +39,18 @@ const ContactsWidgetPlaceholder = ({ type, onClearSearch, onImport, onCreate }: 
     let actions: ReactNode;
 
     switch (type) {
+        case EmptyType.AllGroups: {
+            imgUrl = getLightOrDark(noContactsImgLight, noContactsImgDark);
+            actions = (
+                <div className="flex flex-column">
+                    <p className="m0">{c('Actions message').t`You don't have any groups.`}</p>
+                    <p className="m0">
+                        <ActionLink key="add-contact" onClick={onCreate}>{c('Action').t`Add group`}</ActionLink>
+                    </p>
+                </div>
+            );
+            break;
+        }
         case EmptyType.Search: {
             imgUrl = getLightOrDark(noResultsImgLight, noResultsImgDark);
             actions = (
