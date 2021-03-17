@@ -109,6 +109,15 @@ const useItemsSelection = (activeID: string | undefined, allIDs: string[], reset
         }
     };
 
+    // Automatically uncheck an id which is not anymore in the list (Happens frequently when using search)
+    useEffect(() => {
+        const filteredCheckedIDs = checkedIDs.filter((id) => allIDs.includes(id));
+
+        if (filteredCheckedIDs.length !== checkedIDs.length) {
+            handleCheck(filteredCheckedIDs, true, true);
+        }
+    }, [allIDs]);
+
     return {
         checkedIDs,
         selectedIDs,
