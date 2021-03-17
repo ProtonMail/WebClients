@@ -64,3 +64,8 @@ export const deleteMailImport = (importID) => ({
     url: `mail/v4/importers/${importID}`,
     method: 'delete',
 });
+
+export const deleteSource = (importID) => ({
+    url: `mail/v4/importers/reports/${importID}/deletesource`,
+    method: 'put',
+});
