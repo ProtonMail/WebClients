@@ -13,7 +13,7 @@ const useFeature = (code: FeatureCode) => {
         get: <V = any>() => get<V>(code),
         update: <V = any>(value: V) => put<V>(code, value),
         feature: features[code],
-        loading: loading[code],
+        loading: loading[code] === undefined || loading[code],
     };
 };
 
