@@ -30,8 +30,13 @@ export const PLAN_BUNDLES = {
 export const VPN_PLANS = [PLAN.FREE, PLAN.BASIC, PLAN.PLUS, PLAN.VISIONARY];
 export const BEST_DEAL_PLANS = [PLAN.BASIC, PLAN.PLUS, PLAN.VISIONARY];
 
-const getPlanFeatures = (plan, maxConnections, countries) =>
-    ({
+const getPlanFeatures = (plan, maxConnections, countries) => {
+    const netflix = <b>{c('Netflix').t`Netflix`}</b>;
+    const disney = <b>{c('Disney').t`Disney+`}</b>;
+    const primeVideo = <b>{c('Prime Video').t`Prime Video`}</b>;
+    const many = <b>{c('Many Others').t`and many others`}</b>;
+
+    return {
         [PLAN.FREE]: {
             image: <img width={13} src={freePlanSvg} alt={`${PLAN_NAMES[PLAN.FREE]} plan`} />,
             description: c('Plan Description').t`Privacy and security for everyone`,
@@ -68,6 +73,14 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                     />
                 </>,
                 <>
+                    <del className="opacity-50 mr0-5">{c('Plan feature').t`Access blocked content`}</del>
+                    <Info
+                        title={c('Info')
+                            .t`Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.`}
+                        url="https://protonvpn.com/support/streaming-guide/"
+                    />
+                </>,
+                <>
                     <del className="opacity-50 mr0-5">{c('Plan feature').t`Secure Core VPN`}</del>
                     <Info
                         title={c('Info')
@@ -83,11 +96,11 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                     />
                 </>,
                 <>
-                    <del className="opacity-50 mr0-5">{c('Plan feature').t`Access blocked content`}</del>
+                    <del className="opacity-50 mr0-5">{c('Plan feature').t`Streaming service support`}</del>
                     <Info
                         title={c('Info')
-                            .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
-                        url="https://protonvpn.com/support/streaming-guide/"
+                            .jt`Access your streaming services, like ${netflix}, ${disney}, ${primeVideo}, ${many}, no matter where you are.`}
+                        url="https://protonvpn.com/support/tor-vpn/"
                     />
                 </>,
             ],
@@ -128,6 +141,14 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                     />
                 </>,
                 <>
+                    <span className="mr0-5">{c('Plan feature').t`Access blocked content`}</span>
+                    <Info
+                        title={c('Info')
+                            .t`Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.`}
+                        url="https://protonvpn.com/support/streaming-guide/"
+                    />
+                </>,
+                <>
                     <del className="opacity-50 mr0-5">{c('Plan feature').t`Secure Core VPN`}</del>
                     <Info
                         title={c('Info')
@@ -143,11 +164,11 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                     />
                 </>,
                 <>
-                    <del className="opacity-50 mr0-5">{c('Plan feature').t`Access blocked content`}</del>
+                    <del className="opacity-50 mr0-5">{c('Plan feature').t`Streaming service support`}</del>
                     <Info
                         title={c('Info')
-                            .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
-                        url="https://protonvpn.com/support/streaming-guide/"
+                            .jt`Access your streaming services, like ${netflix}, ${disney}, ${primeVideo}, ${many}, no matter where you are.`}
+                        url="https://protonvpn.com/support/tor-vpn/"
                     />
                 </>,
             ],
@@ -181,6 +202,14 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                     />
                 </>,
                 <>
+                    <span className="mr0-5">{c('Plan feature').t`Access blocked content`}</span>
+                    <Info
+                        title={c('Info')
+                            .t`Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.`}
+                        url="https://protonvpn.com/support/streaming-guide/"
+                    />
+                </>,
+                <>
                     <span className="mr0-5">{c('Plan feature').t`Secure Core VPN`}</span>
                     <Info
                         title={c('Info')
@@ -196,11 +225,11 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                     />
                 </>,
                 <>
-                    <span className="mr0-5">{c('Plan feature').t`Access blocked content`}</span>
+                    <span className="mr0-5">{c('Plan feature').t`Streaming service support`}</span>
                     <Info
                         title={c('Info')
-                            .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
-                        url="https://protonvpn.com/support/streaming-guide/"
+                            .jt`Access your streaming services, like ${netflix}, ${disney}, ${primeVideo}, ${many}, no matter where you are.`}
+                        url="https://protonvpn.com/support/tor-vpn/"
                     />
                 </>,
             ],
@@ -263,7 +292,7 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                     <span className="mr0-5">{c('Plan feature').t`Access blocked content`}</span>
                     <Info
                         title={c('Info')
-                            .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
+                            .t`Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.`}
                         url="https://protonvpn.com/support/streaming-guide/"
                     />
                 </>,
@@ -281,7 +310,8 @@ const getPlanFeatures = (plan, maxConnections, countries) =>
                 </>,
             ],
         },
-    }[plan]);
+    }[plan];
+};
 
 // To use coupon, AmountDue from coupon must be merged into plan.
 const getPlanPrice = (plan, cycle) => {
