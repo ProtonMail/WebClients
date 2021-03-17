@@ -1,29 +1,29 @@
 /*
- * Dark theme: Carbon theme
+ * Dark theme
  */
 :root,
 .ui-standard {
 	--primary: #657ee4;
 	--primary-contrast: white;
 
-	--signal-danger: #d13f44;
-	--signal-danger-hover: #db4d52;
-	--signal-danger-active: #e55c61;
+	--signal-danger: #ed4c51;
+	--signal-danger-hover: #f7595e;
+	--signal-danger-active: #ff666b;
 	--signal-danger-contrast: white;
 
-	--signal-warning: #e6bb2e;
-	--signal-warning-hover: #f0c63c;
-	--signal-warning-active: #fad14b;
+	--signal-warning: #f5930a;
+	--signal-warning-hover: #f5a716;
+	--signal-warning-active: #f5b922;
 	--signal-warning-contrast: black;
 
-	--signal-success: #0e875b;
-	--signal-success-hover: #169164;
-	--signal-success-active: #1f9c6e;
+	--signal-success: #349172;
+	--signal-success-hover: #339c79;
+	--signal-success-active: #31a67f;
 	--signal-success-contrast: white;
 
-	--signal-info: #1578cf;
-	--signal-info-hover: #2082d9;
-	--signal-info-active: #2d8ee3;
+	--signal-info: #2c89db;
+	--signal-info-hover: #3491e3;
+	--signal-info-active: #3d99eb;
 	--signal-info-contrast: white;
 
 	--text-norm: white;
@@ -53,16 +53,16 @@
 	--interaction-weak-active: #696f7d;
 
 	--interaction-default: transparent;
-	--interaction-default-hover: #575d6b40;
-	--interaction-default-active: #575d6b73;
-
-	--shadow-norm-opacity: 0.32;
-	--shadow-lifted-opacity: 0.4;
-
-	--backdrop-norm: rgb(0 0 0 / 0.32);
+	--interaction-default-hover: rgb(87 93 107 / 0.2);
+	--interaction-default-active: rgb(87 93 107 / 0.3);
 
 	// Optional colors
 
-	--scrollbar-thumb-color: rgb(255 255 255 / 0.2);
-	--scrollbar-thumb-hover-color: rgb(255 255 255 / 0.5);
+	--scrollbar-thumb-color: #464b58;
+	--scrollbar-thumb-hover-color: #575d6b;
+}
+
+// Prominent UI specifics
+
+.ui-prominent {
 }
