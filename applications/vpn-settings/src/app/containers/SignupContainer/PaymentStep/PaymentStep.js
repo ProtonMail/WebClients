@@ -63,9 +63,8 @@ const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
                         )}
                         {method === PAYMENT_METHOD_TYPES.PAYPAL && (
                             <Field>
-                                <PayPalButton paypal={paypal} className="button--primary" amount={paymentAmount}>{c(
-                                    'Action'
-                                ).t`Continue`}</PayPalButton>
+                                <PayPalButton paypal={paypal} color="norm" amount={paymentAmount}>{c('Action')
+                                    .t`Continue`}</PayPalButton>
                             </Field>
                         )}
                     </Payment>

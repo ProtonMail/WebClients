@@ -60,7 +60,8 @@ const TVContainer = () => {
                         <PrimaryButton
                             loading={loading}
                             type="submit"
-                            className="text-uppercase text-bold button--pill mt2 mb1-5 center"
+                            pill
+                            className="text-uppercase text-bold mt2 mb1-5 center"
                         >
                             <span className="p0-5 inline-flex">
                                 {error ? c('Action').t`Verify code again` : c('Action').t`Verify code`}
@@ -77,7 +78,7 @@ const TVContainer = () => {
                     <h2>{c('Title').t`Device connected!`}</h2>
                     <div className="flex flex-justify-center mt2 mb2">
                         <span className="inline-flex bg-global-success rounded50 p2">
-                            <Icon name="#shape-on" size={60} className="stroke-currentColor color-global-light" />
+                            <Icon name="on" size={60} className="stroke-currentColor color-global-light" />
                         </span>
                     </div>
                 </>

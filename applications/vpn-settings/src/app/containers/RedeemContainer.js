@@ -12,13 +12,13 @@ import KillSwitchIcon from 'design-system/assets/img/pv-images/redeem/kill_switc
 import DNSIcon from 'design-system/assets/img/pv-images/redeem/dns.svg';
 import EncryptionIcon from 'design-system/assets/img/pv-images/redeem/encryption.svg';
 import PublicPage from '../components/page/PublicPage';
-import PublicHeader from '../components/layout/PublicHeader';
+import PublicHeader2 from '../components/layout/PublicHeader2';
 import RedeemCouponForm from '../components/sections/redeem/RedeemCouponForm';
 
 const RedeemContainer = ({ history }) => (
     <PublicPage title={c('Title').t`Redeem coupon`}>
         <div className="pt2 pl2 pr2">
-            <PublicHeader />
+            <PublicHeader2 />
         </div>
         <div className="redeem-heading-bg pt1 pl2 pr2">
             <div className="max-w80 on-tablet-max-w100 center">

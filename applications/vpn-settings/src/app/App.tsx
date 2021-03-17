@@ -1,5 +1,11 @@
 import React from 'react';
-import { ProtonApp, useAuthentication, PublicAuthenticationStore, PrivateAuthenticationStore } from 'react-components';
+import {
+    ProtonApp,
+    useAuthentication,
+    PublicAuthenticationStore,
+    PrivateAuthenticationStore,
+    DefaultThemeInjector,
+} from 'react-components';
 import locales from 'proton-shared/lib/i18n/locales';
 import sentry from 'proton-shared/lib/helpers/sentry';
 
@@ -21,7 +27,12 @@ const Setup = () => {
     if (UID) {
         return <PrivateApp onLogout={logout} locales={locales} />;
     }
-    return <PublicApp onLogin={login} locales={locales} />;
+    return (
+        <>
+            <DefaultThemeInjector />
+            <PublicApp onLogin={login} locales={locales} />
+        </>
+    );
 };
 
 const App = () => {

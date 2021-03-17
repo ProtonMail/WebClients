@@ -12,7 +12,9 @@ const PlanCard = ({ plan, isActive, onSelect, cycle, currency, isDisabled }) => 
         <Button
             disabled={isDisabled}
             onClick={onSelect}
-            className={classnames(['w100 mtauto', !isActive && 'button--primaryborder', isActive && 'button--primary'])}
+            color={isActive ? 'norm' : undefined}
+            shape={!isActive ? 'outline' : undefined}
+            className={classnames(['w100 mtauto'])}
         >
             {c('Plan Action').t`Get ${plan.title}`}
         </Button>

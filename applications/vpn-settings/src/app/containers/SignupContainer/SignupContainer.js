@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Title, useLoading, TextLoader, VpnLogo, Href, FullLoader, SupportDropdown } from 'react-components';
+import { Button, Title, useLoading, TextLoader, VpnLogo, Href, FullLoader } from 'react-components';
 import { c } from 'ttag';
 import { BLACK_FRIDAY, CYCLE } from 'proton-shared/lib/constants';
 import { checkCookie } from 'proton-shared/lib/helpers/cookies';
@@ -16,6 +16,7 @@ import useVerification from './VerificationStep/useVerification';
 import MobileRedirectionStep from './MobileRedirectionStep/MobileRedirectionStep';
 import PublicPage from '../../components/page/PublicPage';
 import './SignupContainer.scss';
+import VPNSupportDropdown from '../../components/VPNSupportDropdown';
 
 const SignupState = {
     Plan: 'plan',
@@ -202,8 +203,8 @@ const SignupContainer = ({ match, history, onLogin }) => {
                                 <VpnLogo className="fill-primary" />
                             </Href>
                         </div>
-                        <div className="flex-item-fluid text-right plan-help-button">
-                            <SupportDropdown className="inline-flex" content={c('Action').t`Need help`} />
+                        <div className="flex-item-fluid text-right plan-help-button no-mobile flex flex-justify-end">
+                            <VPNSupportDropdown shape="outline" />
                         </div>
                     </div>
 
