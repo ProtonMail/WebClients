@@ -8,6 +8,7 @@ import { NotificationModel } from '../../interfaces/NotificationModel';
 import { EventModelErrors } from '../../interfaces/EventModel';
 
 export const NOTIFICATION_ID = 'notifications';
+
 interface Props {
     notifications: NotificationModel[];
     hasWhen?: boolean;
@@ -39,10 +40,7 @@ const Notifications = ({
                             onChange={(newNotification) => onChange(updateItem(notifications, index, newNotification))}
                             error={errors?.notifications?.fields.includes(index) ? '' : undefined}
                         />
-                        <Tooltip
-                            title={c('Action').t`Remove this notification`}
-                            className="w2e flex flex-item-noshrink ml0-5"
-                        >
+                        <Tooltip title={c('Action').t`Remove this notification`}>
                             <LinkButton
                                 data-test-id="delete-notification"
                                 className="w2e flex flex-item-noshrink"

@@ -59,16 +59,16 @@ const MoreButtons = ({
     const emptyContent = '';
     return (
         <>
-            <Tooltip title={c('Title').t`More options`} className="flex flex-item-noshrink">
+            <Tooltip title={c('Title').t`More options`}>
                 <DropdownButton
                     title={c('Title').t`More options`}
-                    buttonRef={anchorRef}
+                    ref={anchorRef}
                     isOpen={isOpen}
                     onClick={toggle}
                     hasCaret
                     caretClassName=""
                     loading={loadingAction && !isOpen}
-                    className="flex-item-noshrink button button--small"
+                    size="small"
                 >
                     {emptyContent}
                 </DropdownButton>

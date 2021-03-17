@@ -37,7 +37,7 @@ const ParticipantRow = ({ attendee, contactEmailsMap, onToggleOptional, onDelete
                 )}
                 {isOptional ? <span className="color-subheader w100">{c('Label').t`Optional`}</span> : null}
             </div>
-            <Tooltip title={optionalText} className="w2e flex flex-item-noshrink">
+            <Tooltip title={optionalText}>
                 <LinkButton
                     type="button"
                     className="w2e flex flex-item-noshrink"
@@ -47,8 +47,12 @@ const ParticipantRow = ({ attendee, contactEmailsMap, onToggleOptional, onDelete
                     <span className="sr-only">{optionalText}</span>
                 </LinkButton>
             </Tooltip>
-            <Tooltip title={c('Action').t`Remove this participant`} className="w2e flex flex-item-noshrink ml0-5">
-                <LinkButton type="button" className="w2e flex flex-item-noshrink" onClick={() => onDelete(attendee)}>
+            <Tooltip title={c('Action').t`Remove this participant`}>
+                <LinkButton
+                    type="button"
+                    className="w2e flex flex-item-noshrink m0-5"
+                    onClick={() => onDelete(attendee)}
+                >
                     <Icon name="trash" className="mauto" />
                     <span className="sr-only">{c('Action').t`Remove this participant`}</span>
                 </LinkButton>

@@ -1,4 +1,4 @@
-import { Alert, ConfirmModal, ResetButton } from 'react-components';
+import { Alert, ConfirmModal, Button } from 'react-components';
 import { c } from 'ttag';
 import React from 'react';
 
@@ -6,7 +6,7 @@ const CloseConfirmationModal = (props: any) => {
     return (
         <ConfirmModal
             title={c('Info').t`Discard changes?`}
-            close={<ResetButton autoFocus>{c('Action').t`Cancel`}</ResetButton>}
+            close={<Button type="reset" autoFocus>{c('Action').t`Cancel`}</Button>}
             confirm={c('Action').t`Discard`}
             {...props}
         >
