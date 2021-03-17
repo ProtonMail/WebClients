@@ -64,7 +64,6 @@ const CustomizeImportModal = ({
     const hasChanged = useMemo(() => {
         if (
             customizedPayload.StartTime !== initialPayload.StartTime ||
-            customizedPayload.EndTime !== initialPayload.EndTime ||
             !isDeepEqual(customizedPayload.Mapping, initialPayload.Mapping) ||
             !isDeepEqual(customizedPayload.ImportLabel, initialPayload.ImportLabel)
         ) {
@@ -72,12 +71,7 @@ const CustomizeImportModal = ({
         }
 
         return false;
-    }, [
-        customizedPayload.ImportLabel,
-        customizedPayload.StartTime,
-        customizedPayload.EndTime,
-        customizedPayload.Mapping,
-    ]);
+    }, [customizedPayload.ImportLabel, customizedPayload.StartTime, customizedPayload.Mapping]);
 
     const handleChangePayload = (newPayload: ImportPayloadModel) => setCustomizedPayload(newPayload);
 
@@ -120,22 +114,21 @@ const CustomizeImportModal = ({
     };
 
     const handleChangePeriod = (selectedPeriod: TIME_UNIT) => {
+        const now = new Date();
         let StartTime: Date | undefined;
-        let EndTime: Date | undefined = new Date();
 
         switch (selectedPeriod) {
             case TIME_UNIT.LAST_YEAR:
-                StartTime = subYears(EndTime, 1);
+                StartTime = subYears(now, 1);
                 break;
             case TIME_UNIT.LAST_3_MONTHS:
-                StartTime = subMonths(EndTime, 3);
+                StartTime = subMonths(now, 3);
                 break;
             case TIME_UNIT.LAST_MONTH:
-                StartTime = subMonths(EndTime, 1);
+                StartTime = subMonths(now, 1);
                 break;
             default:
                 StartTime = undefined;
-                EndTime = undefined;
                 break;
         }
 
@@ -143,7 +136,6 @@ const CustomizeImportModal = ({
         setCustomizedPayload({
             ...customizedPayload,
             StartTime,
-            EndTime,
         });
     };
 

@@ -2,15 +2,26 @@ import React from 'react';
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
-import { deleteMailImportReport } from 'proton-shared/lib/api/mailImport';
+import { deleteMailImportReport, deleteSource } from 'proton-shared/lib/api/mailImport';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import { useApi, useLoading, useEventManager, useNotifications, useModals, useImportHistory } from '../../hooks';
-import { Button, Loader, Alert, Table, TableCell, TableBody, TableRow, Badge, ErrorButton } from '../../components';
-
-import { ConfirmModal } from '../../components/modal';
+import {
+    Loader,
+    Alert,
+    Table,
+    TableCell,
+    TableBody,
+    TableRow,
+    Badge,
+    ErrorButton,
+    DropdownActions,
+    ConfirmModal,
+} from '../../components';
 
 import { ImportHistory, ImportMailReportStatus } from './interfaces';
+import DeleteAllMessagesModal from './modals/DeleteAllMessagesModal';
 
 interface ImportStatusProps {
     status: ImportMailReportStatus;
@@ -33,17 +44,20 @@ const ImportStatus = ({ status }: ImportStatusProps) => {
 
 interface DeleteButtonProps {
     ID: string;
+    email: string;
+    showDeleteSource: number;
 }
 
-const DeleteButton = ({ ID }: DeleteButtonProps) => {
+const DeleteButton = ({ ID, email, showDeleteSource }: DeleteButtonProps) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createModal } = useModals();
-
-    const [loadingActions, withLoadingActions] = useLoading();
     const { createNotification } = useNotifications();
 
-    const handleDelete = async () => {
+    const [loadingDeleteRecord, withLoadingDeleteRecord] = useLoading();
+    const [loadingDeleteOriginal, withLoadingDeleteOriginal] = useLoading();
+
+    const handleDeleteRecord = async () => {
         await new Promise<void>((resolve, reject) => {
             createModal(
                 <ConfirmModal
@@ -59,18 +73,46 @@ const DeleteButton = ({ ID }: DeleteButtonProps) => {
                 </ConfirmModal>
             );
         });
-        await api(deleteMailImportReport(ID));
+        await withLoadingDeleteRecord(api(deleteMailImportReport(ID)));
         await call();
         createNotification({ text: c('Success').t`Import record deleted` });
     };
 
-    return (
-        <Button
-            loading={loadingActions}
-            className="button--small"
-            onClick={() => withLoadingActions(handleDelete())}
-        >{c('Action').t`Delete record`}</Button>
-    );
+    const handleDeleteOriginal = async () => {
+        await new Promise<void>((resolve, reject) => {
+            createModal(
+                <DeleteAllMessagesModal
+                    onConfirm={resolve}
+                    onClose={reject}
+                    title={c('Confirm modal title').t`Delete all messages`}
+                    cancel={c('Action').t`Cancel`}
+                    email={email}
+                />
+            );
+        });
+
+        await withLoadingDeleteOriginal(api(deleteSource(ID)));
+        await call();
+
+        createNotification({ text: c('Success').t`Deleting original messages` });
+    };
+
+    const list = [
+        {
+            text: c('Action').t`Delete record`,
+            onClick: handleDeleteRecord,
+            loading: loadingDeleteRecord,
+        },
+        showDeleteSource &&
+            ({
+                text: c('Action').t`Delete original messages`,
+                onClick: handleDeleteOriginal,
+                loading: loadingDeleteOriginal,
+                actionType: 'delete',
+            } as const),
+    ].filter(isTruthy);
+
+    return <DropdownActions className="button--small" list={list} />;
 };
 
 const sortByDate = (a: ImportHistory, b: ImportHistory) => (a.EndTime > b.EndTime ? -1 : 1);
@@ -88,7 +130,10 @@ const PastImportsSection = () => {
 
     const headerCells = [
         { node: c('Title header').t`Import` },
-        { node: c('Title header').t`Status`, className: 'on-mobile-w33 on-mobile-text-center' },
+        {
+            node: c('Title header').t`Status`,
+            className: 'on-mobile-w33 on-mobile-text-center',
+        },
         { node: c('Title header').t`Date`, className: 'no-mobile' },
         { node: c('Title header').t`Size`, className: 'no-mobile' },
         { node: c('Title header').t`Actions`, className: 'no-mobile' },
@@ -108,7 +153,7 @@ const PastImportsSection = () => {
                     <tr>{headerCells}</tr>
                 </thead>
                 <TableBody>
-                    {imports.sort(sortByDate).map(({ State, Email, ID, TotalSize, EndTime }) => {
+                    {imports.sort(sortByDate).map(({ State, Email, ID, TotalSize, EndTime, CanDeleteSource }) => {
                         return (
                             <TableRow
                                 key={ID}
@@ -126,7 +171,12 @@ const PastImportsSection = () => {
                                     </div>,
                                     <time key="importDate">{format(EndTime * 1000, 'PPp')}</time>,
                                     humanSize(TotalSize),
-                                    <DeleteButton key="button" ID={ID} />,
+                                    <DeleteButton
+                                        key="button"
+                                        email={Email}
+                                        ID={ID}
+                                        showDeleteSource={CanDeleteSource}
+                                    />,
                                 ]}
                             />
                         );
