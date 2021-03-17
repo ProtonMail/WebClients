@@ -169,7 +169,8 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
                         <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/avoid-spam/">
                             {c('Info')
                                 .jt`To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:`}
-                            <div className="text-bold">{c('Info').t`URL: ${unsubscribeMethods.HttpClient}`}</div>
+                            <div className="text-bold text-break">{c('Info')
+                                .t`URL: ${unsubscribeMethods.HttpClient}`}</div>
                         </Alert>
                         <Row>
                             <Label className="cursor-default">
