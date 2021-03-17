@@ -76,7 +76,6 @@ export interface ImportPayloadModel {
         Order: number;
     };
     StartTime?: Date;
-    EndTime?: Date;
     Mapping: FolderMapping[];
     CustomFields?: number;
 }
@@ -130,6 +129,7 @@ export interface ImportHistory {
     NumMessages: number;
     State: ImportMailReportStatus;
     TotalSize: number;
+    CanDeleteSource: number;
 }
 
 export interface CheckedFoldersMap {

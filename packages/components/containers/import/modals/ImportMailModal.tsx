@@ -281,7 +281,6 @@ const ImportMailModal = ({ onClose = noop, currentImport, oauthProps, ...rest }:
             createJobImport(importID, {
                 ...payload,
                 StartTime: payload.StartTime ? dateToTimestamp(payload.StartTime) : undefined,
-                EndTime: payload.EndTime ? dateToTimestamp(payload.EndTime) : undefined,
                 Mapping: payload.Mapping.filter(({ checked }: FolderMapping) => checked).map(
                     ({ Source, Destinations }: FolderMapping) => ({
                         Source,
@@ -450,13 +449,13 @@ const ImportMailModal = ({ onClose = noop, currentImport, oauthProps, ...rest }:
 
     useEffect(() => {
         if (oauthProps) {
-            submitOAuth();
+            void submitOAuth();
         }
     }, []);
 
     useEffect(() => {
         if (debouncedEmail && validateEmailAddress(debouncedEmail)) {
-            withLoading(checkAuth());
+            void withLoading(checkAuth());
         } else {
             setShowPassword(false);
         }
