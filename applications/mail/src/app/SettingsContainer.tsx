@@ -16,8 +16,6 @@ import {
     SidebarList,
     SidebarListItemsWithSubsections,
     useModals,
-    // usePromoModalState,
-    ImportWelcomeModal,
     useHotkeys,
     SupportDropdown,
 } from 'react-components';
@@ -46,31 +44,8 @@ const SettingsContainer = () => {
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const [activeSection, setActiveSection] = useState('');
     const { createModal } = useModals();
-
     const documentRef = useRef(window.document);
-
-    const [modalState, loadingModalState, setModalState] = [false, false, async (state: boolean) => state]; // usePromoModalState('WelcomeImportModalShown');
-    const [showImportWelcomeModal, setShowImportWelcomeModal] = useState(false);
-
-    useEffect(() => {
-        if (location.pathname === '/settings/import' && !loadingModalState && !modalState) {
-            setShowImportWelcomeModal(true);
-        }
-    }, [location.pathname, modalState, loadingModalState]);
-
-    useEffect(() => {
-        if (!showImportWelcomeModal) {
-            return;
-        }
-        createModal(
-            <ImportWelcomeModal
-                onClose={async () => {
-                    setShowImportWelcomeModal(false);
-                    await setModalState(true);
-                }}
-            />
-        );
-    }, [showImportWelcomeModal]);
+    const [isBlurred, setBlurred] = useState(false);
 
     useEffect(() => {
         setExpand(false);
@@ -129,13 +104,17 @@ const SettingsContainer = () => {
     ]);
 
     return (
-        <PrivateAppContainer isBlurred={showImportWelcomeModal} header={header} sidebar={sidebar}>
+        <PrivateAppContainer isBlurred={isBlurred} header={header} sidebar={sidebar}>
             <Switch>
                 <Route path="/settings/overview" exact>
                     <OverviewContainer user={user} />
                 </Route>
                 <Route path="/settings/import">
-                    <ImportContainer location={location} setActiveSection={setActiveSection} />
+                    <ImportContainer
+                        location={location}
+                        setActiveSection={setActiveSection}
+                        onChangeBlurred={setBlurred}
+                    />
                 </Route>
                 <Route path="/settings/addresses/:memberID?">
                     <AddressesContainer location={location} setActiveSection={setActiveSection} user={user} />
