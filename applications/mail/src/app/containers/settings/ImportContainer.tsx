@@ -62,7 +62,7 @@ const ImportContainer = ({ onChangeBlurred, setActiveSection, location }: Props)
     const { createModal } = useModals();
 
     useEffect(() => {
-        if (!loading && feature?.Value === false) {
+        if (loading === false && feature?.Value === false) {
             onChangeBlurred(true);
             createModal(
                 <ImportWelcomeModal
