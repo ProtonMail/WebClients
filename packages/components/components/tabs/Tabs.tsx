@@ -11,9 +11,21 @@ interface Props {
     value: number;
     onChange: (index: number) => void;
     stickyTabs?: boolean;
+    className?: string;
+    containerClassName?: string;
+    contentClassNane?: string;
 }
 
-export const Tabs = ({ value, onChange, tabs, children, stickyTabs }: Props) => {
+export const Tabs = ({
+    value,
+    onChange,
+    tabs,
+    children,
+    stickyTabs,
+    className,
+    containerClassName,
+    contentClassNane,
+}: Props) => {
     const key = toKey(value, 'key_');
     const label = toKey(value, 'label_');
     const tabList = tabs || children || [];
@@ -26,8 +38,8 @@ export const Tabs = ({ value, onChange, tabs, children, stickyTabs }: Props) => 
     }
 
     return (
-        <div className="tabs">
-            <nav className={classnames(['tabs-container', stickyTabs && 'sticky-top'])}>
+        <div className={classnames(['tabs', className])}>
+            <nav className={classnames(['tabs-container', stickyTabs && 'sticky-top', containerClassName])}>
                 <ul
                     className="tabs-list"
                     role="tablist"
@@ -60,7 +72,12 @@ export const Tabs = ({ value, onChange, tabs, children, stickyTabs }: Props) => 
                     <li className="tabs-indicator" aria-hidden />
                 </ul>
             </nav>
-            <div id={key} className="tabs-tabcontent pt1" role="tabpanel" aria-labelledby={label}>
+            <div
+                id={key}
+                className={classnames(['tabs-tabcontent pt1', contentClassNane])}
+                role="tabpanel"
+                aria-labelledby={label}
+            >
                 {content}
             </div>
         </div>
