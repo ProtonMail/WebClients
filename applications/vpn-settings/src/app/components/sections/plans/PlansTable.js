@@ -5,7 +5,7 @@ import {
     Icon,
     CurrencySelector,
     CycleSelector,
-    SmallButton,
+    Button,
     Info,
     Loader,
     useVPNCountries,
@@ -48,7 +48,11 @@ const PlansTable = ({
 
     const addCycleTooltip = (comp) => {
         if (cycle === CYCLE.MONTHLY) {
-            return <Tooltip title={c('Tooltip').t`Save 20% when billed annually`}>{comp}</Tooltip>;
+            return (
+                <Tooltip title={c('Tooltip').t`Save 20% when billed annually`}>
+                    <span>{comp}</span>
+                </Tooltip>
+            );
         }
 
         return comp;
@@ -385,29 +389,29 @@ const PlansTable = ({
                 {onSelect && (
                     <tr>
                         <th scope="row" className="simple-table-row-th text-left bg-global-highlight">
-                            <SmallButton className="button--link" onClick={toggle}>
+                            <Button size="small" shape="link" color="norm" onClick={toggle}>
                                 {state ? c('Action').t`Hide additional features` : c('Action').t`Compare all features`}
-                            </SmallButton>
+                            </Button>
                         </th>
                         <td className="text-center">
-                            <SmallButton disabled={loading} className="button--primary" onClick={onSelect()}>
+                            <Button size="small" disabled={loading} color="norm" onClick={onSelect()}>
                                 {planName === 'free' ? c('Action').t`Update` : c('Action').t`Select`}
-                            </SmallButton>
+                            </Button>
                         </td>
                         <td className="text-center">
-                            <SmallButton disabled={loading} className="button--primary" onClick={onSelect(VPNBASIC)}>
+                            <Button size="small" disabled={loading} color="norm" onClick={onSelect(VPNBASIC)}>
                                 {planName === VPNBASIC ? c('Action').t`Update` : c('Action').t`Select`}
-                            </SmallButton>
+                            </Button>
                         </td>
                         <td className="text-center">
-                            <SmallButton disabled={loading} className="button--primary" onClick={onSelect(VPNPLUS)}>
+                            <Button size="small" disabled={loading} color="norm" onClick={onSelect(VPNPLUS)}>
                                 {planName === VPNPLUS ? c('Action').t`Update` : c('Action').t`Select`}
-                            </SmallButton>
+                            </Button>
                         </td>
                         <td className="text-center">
-                            <SmallButton disabled={loading} className="button--primary" onClick={onSelect(VISIONARY)}>
+                            <Button size="small" disabled={loading} color="norm" onClick={onSelect(VISIONARY)}>
                                 {planName === VISIONARY ? c('Action').t`Update` : c('Action').t`Select`}
-                            </SmallButton>
+                            </Button>
                         </td>
                     </tr>
                 )}

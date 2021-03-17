@@ -1,25 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Group, ButtonGroup, classnames } from 'react-components';
+import { ButtonGroup, Button, classnames } from 'react-components';
 import { CURRENCIES, CYCLE } from 'proton-shared/lib/constants';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 
 const PlansGroupButtons = ({ plans, onSelectPlan, model, ...rest }) => {
     return (
-        <Group {...rest} className="w100">
+        <ButtonGroup {...rest} className="w100">
             {plans.map(({ planName, title }) => {
                 return (
-                    <ButtonGroup
+                    <Button
+                        group
                         key={planName}
                         className={classnames(['flex-item-fluid', planName === model.planName && 'is-active'])}
                         onClick={() => onSelectPlan({ ...model, planName })}
                     >
                         {title}
-                    </ButtonGroup>
+                    </Button>
                 );
             })}
-        </Group>
+        </ButtonGroup>
     );
 };
 
