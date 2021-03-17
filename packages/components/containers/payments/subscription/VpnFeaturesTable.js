@@ -89,6 +89,14 @@ const VpnFeaturesTable = ({ cycle, currency }) => {
                     </tr>
                     <tr>
                         <td className="scroll-if-needed">
+                            <del>{c('Feature').t`Access blocked content`}</del>
+                        </td>
+                        <td className="scroll-if-needed">{c('Feature').t`Access blocked content`}</td>
+                        <td className="scroll-if-needed">{c('Feature').t`Access blocked content`}</td>
+                        <td className="scroll-if-needed">{c('Feature').t`Access blocked content`}</td>
+                    </tr>
+                    <tr>
+                        <td className="scroll-if-needed">
                             <del>{c('Feature').t`Secure Core and Tor VPN`}</del>
                         </td>
                         <td className="scroll-if-needed">
@@ -109,13 +117,13 @@ const VpnFeaturesTable = ({ cycle, currency }) => {
                     </tr>
                     <tr>
                         <td className="scroll-if-needed">
-                            <del>{c('Feature').t`Access blocked content`}</del>
+                            <del>{c('Feature').t`Streaming service support`}</del>
                         </td>
                         <td className="scroll-if-needed">
-                            <del>{c('Feature').t`Access blocked content`}</del>
+                            <del>{c('Feature').t`Streaming service support`}</del>
                         </td>
-                        <td className="scroll-if-needed">{c('Feature').t`Access blocked content`}</td>
-                        <td className="scroll-if-needed">{c('Feature').t`Access blocked content`}</td>
+                        <td className="scroll-if-needed">{c('Feature').t`Streaming service support`}</td>
+                        <td className="scroll-if-needed">{c('Feature').t`Streaming service support`}</td>
                     </tr>
                     <tr>
                         <td className="scroll-if-needed">{c('Feature').t`ProtonMail (optional)*`}</td>
