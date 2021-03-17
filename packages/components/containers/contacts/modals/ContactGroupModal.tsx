@@ -17,7 +17,7 @@ const mapIDs = (contactEmails: ContactEmail[]) => contactEmails.map(({ ID }) => 
 
 interface Props {
     contactGroupID?: string;
-    selectedContactEmails: ContactEmail[];
+    selectedContactEmails?: ContactEmail[];
     onClose?: () => void;
 }
 

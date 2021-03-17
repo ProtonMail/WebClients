@@ -2,7 +2,7 @@
 
 .contacts-widget {
 	.dropdown-content {
-		min-height: 500px;
+		min-height: 550px;
 		overflow: hidden;
 		min-width: 500px;
 		@include respond-to($breakpoint-small) {
@@ -15,8 +15,10 @@
 		padding-left: em(24);
 		padding-right: em(24);
 	}
-	&-search-container {
+	&-tabs {
 		padding-top: em(24);
+		margin-left: em(24);
+		margin-right: em(24);
 	}
 	.ReactVirtualized__Grid__innerScrollContainer {
 		border: 0;
@@ -26,5 +28,11 @@
 			padding-left: 5%;
 			padding-right: 5%;
 		}
+	}
+	.tabs {
+		height: 100%;
+	}
+	.tabs-tabcontent {
+		height: 100%;
 	}
 }

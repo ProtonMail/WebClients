@@ -1,13 +1,13 @@
 import React from 'react';
 import { c } from 'ttag';
-
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { Table, TableHeader, TableBody, TableRow, TableCell } from '../table';
 import { SmallButton } from '../button';
 
 interface Props {
     contactEmails: ContactEmail[];
-    onDelete: (ID: string) => void;
+    onDelete?: (ID: string) => void;
 }
 
 const ContactGroupTable = ({ contactEmails, onDelete }: Props) => {
@@ -19,9 +19,11 @@ const ContactGroupTable = ({ contactEmails, onDelete }: Props) => {
                         <tr>
                             <TableCell type="header">{c('Table header').t`Name`}</TableCell>
                             <TableCell type="header">{c('Table header').t`Address`}</TableCell>
-                            <TableCell type="header" className="w20">
-                                {c('Table header').t`Action`}
-                            </TableCell>
+                            {onDelete ? (
+                                <TableCell type="header" className="w20">
+                                    {c('Table header').t`Action`}
+                                </TableCell>
+                            ) : null}
                         </tr>
                     </TableHeader>
                     {contactEmails.length ? (
@@ -34,10 +36,16 @@ const ContactGroupTable = ({ contactEmails, onDelete }: Props) => {
                                     <div className="text-ellipsis max-w100" key={ID} title={Email}>
                                         {Email}
                                     </div>,
-                                    <SmallButton key={ID} onClick={() => onDelete(ID)} className="button--redborder">
-                                        {c('Action').t`Remove`}
-                                    </SmallButton>,
-                                ];
+                                    onDelete ? (
+                                        <SmallButton
+                                            key={ID}
+                                            onClick={() => onDelete(ID)}
+                                            className="button--redborder"
+                                        >
+                                            {c('Action').t`Remove`}
+                                        </SmallButton>
+                                    ) : null,
+                                ].filter(isTruthy);
                                 return <TableRow key={ID} cells={cells} />;
                             })}
                         </TableBody>
