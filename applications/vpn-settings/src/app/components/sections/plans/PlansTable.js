@@ -304,7 +304,7 @@ const PlansTable = ({
                             <span className="mr0-5">{c('Header').t`Access blocked content`}</span>
                             <Info
                                 title={c('Info')
-                                    .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) no matter where you are.`}
+                                    .t`Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.`}
                                 url="https://protonvpn.com/support/streaming-guide/"
                             />
                         </th>
@@ -312,7 +312,7 @@ const PlansTable = ({
                             <Icon name="off" />
                         </td>
                         <td className="text-center">
-                            <Icon name="off" />
+                            <Icon name="on" />
                         </td>
                         <td className="text-center">
                             <Icon name="on" />
@@ -352,6 +352,26 @@ const PlansTable = ({
                         <td className="text-center" />
                         <td className="text-center">
                             <Icon name="on" />
+                        </td>
+                        <td className="text-center">
+                            <Icon name="on" />
+                        </td>
+                        <td className="text-center">
+                            <Icon name="on" />
+                        </td>
+                    </tr>
+                ) : null}
+
+                {state ? (
+                    <tr>
+                        <th scope="row" className="simple-table-row-th text-left bg-global-highlight">
+                            <span className="mr0-5">{c('Header').t`Streaming service support`}</span>
+                        </th>
+                        <td className="text-center">
+                            <Icon name="off" />
+                        </td>
+                        <td className="text-center">
+                            <Icon name="off" />
                         </td>
                         <td className="text-center">
                             <Icon name="on" />
