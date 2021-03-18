@@ -26,7 +26,7 @@
 - added `on-mobile-center` helper
 - added `on-hover-opacity-100` and `opacity-65` helpers
 - added negative margin helpers: `mt-0-5` and `mb-0-5`
-- added `on-tinymobile-p(l/r/b/t)0` helpers
+- added `on-tinymobile-p(l/r/b/t)0`, `on-tinymobile-w100` `on-tinymobile-text-left` helpers
 
 ## Updated/fixes
 
@@ -47,6 +47,8 @@
 - udpated `hover-same-color` to work with `color-currentColor`
 - fixed tab header layout 
 - added `remote-content` icons
+- fixed `select` with centered content for Chrome
+- fix toggle for VPN
 
 ### Misc 
 

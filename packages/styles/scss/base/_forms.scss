@@ -130,6 +130,11 @@ select.field {
 	}
 }
 
+/* hotfix for Chrome */
+select.text-center {
+	text-align-last: center;
+}
+
 textarea.field {
 	height: auto;
 }
