@@ -1,19 +1,26 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, useRef, useMemo } from 'react';
 import { c, msgid } from 'ttag';
-
 import { randomIntFromInterval, noop } from 'proton-shared/lib/helpers/function';
 import { diff, orderBy } from 'proton-shared/lib/helpers/array';
 import { LABEL_COLORS } from 'proton-shared/lib/constants';
-import { createContactGroup, updateLabel } from 'proton-shared/lib/api/labels';
-import { labelContactEmails, unLabelContactEmails } from 'proton-shared/lib/api/contacts';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts/Contact';
-
-import { FormModal, Input, Row, Field, Label, ColorPicker, ContactGroupTable, Autocomplete } from '../../../components';
-import { useContactEmails, useNotifications, useContactGroups, useApi, useEventManager } from '../../../hooks';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
+import {
+    FormModal,
+    Input,
+    Row,
+    Field,
+    Label,
+    ColorPicker,
+    ContactGroupTable,
+    Autocomplete,
+    Button,
+} from '../../../components';
+import { useContactEmails, useContactGroups, useEventListener } from '../../../hooks';
+import useUpdateGroup from '../useUpdateGroup';
 
 import './ContactGroupModal.scss';
-
-const mapIDs = (contactEmails: ContactEmail[]) => contactEmails.map(({ ID }) => ID);
 
 interface Props {
     contactGroupID?: string;
@@ -23,12 +30,13 @@ interface Props {
 
 const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmails = [], ...rest }: Props) => {
     const [loading, setLoading] = useState(false);
-    const { call } = useEventManager();
-    const api = useApi();
-    const { createNotification } = useNotifications();
     const [contactGroups = []] = useContactGroups();
     const [contactEmails] = useContactEmails();
     const [value, setValue] = useState('');
+    const updateGroup = useUpdateGroup();
+    const autocompleteRef = useRef<HTMLDivElement>(null);
+
+    const isValidEmail = useMemo(() => validateEmailAddress(value), [value]);
 
     const contactGroup = contactGroupID && contactGroups.find(({ ID }) => ID === contactGroupID);
     const existingContactEmails =
@@ -36,7 +44,7 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
         contactEmails.filter(({ LabelIDs = [] }: { LabelIDs: string[] }) => LabelIDs.includes(contactGroupID));
     const title = contactGroupID ? c('Title').t`Edit contact group` : c('Title').t`Create new group`;
 
-    const [model, setModel] = useState({
+    const [model, setModel] = useState<{ name: string; color: string; contactEmails: ContactEmail[] }>({
         name: contactGroupID && contactGroup ? contactGroup.Name : '',
         color:
             contactGroupID && contactGroup
@@ -61,6 +69,17 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
         setValue('');
     };
 
+    const handleAdd = () => {
+        if (!isValidEmail) {
+            return;
+        }
+        setModel((model) => ({
+            ...model,
+            contactEmails: [...model.contactEmails, { Name: value, Email: value } as ContactEmail],
+        }));
+        setValue('');
+    };
+
     const handleDeleteEmail = (contactEmailID: string) => {
         const index = model.contactEmails.findIndex(({ ID }: ContactEmail) => ID === contactEmailID);
 
@@ -74,33 +93,41 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
     const handleSubmit = async () => {
         try {
             setLoading(true);
-            const contactGroupParams = { Name: model.name, Color: model.color };
-            const { Label } = await api(
-                contactGroupID
-                    ? updateLabel(contactGroupID, contactGroupParams)
-                    : createContactGroup(contactGroupParams)
-            );
-            const { ID } = Label;
-            const toLabel = mapIDs(model.contactEmails);
-            const toUnlabel = contactGroupID ? diff(mapIDs(existingContactEmails), toLabel) : [];
-            await Promise.all(
-                [
-                    toLabel.length && api(labelContactEmails({ LabelID: ID, ContactEmailIDs: toLabel })),
-                    toUnlabel.length && api(unLabelContactEmails({ LabelID: ID, ContactEmailIDs: toUnlabel })),
-                ].filter(Boolean)
-            );
-            await call();
-            onClose();
-            createNotification({
-                text: contactGroupID
-                    ? c('Notification').t`Contact group updated`
-                    : c('Notification').t`Contact group created`,
+
+            const toAdd = model.contactEmails.filter(({ ID }) => isTruthy(ID));
+            const toCreate = model.contactEmails.filter(({ ID }) => !isTruthy(ID));
+            const toRemove = contactGroupID ? diff(existingContactEmails, toAdd) : [];
+
+            await updateGroup({
+                groupID: contactGroupID,
+                name: model.name,
+                color: model.color,
+                toAdd,
+                toRemove,
+                toCreate,
             });
+
+            onClose();
         } catch (error) {
             setLoading(false);
             throw error;
         }
     };
+
+    useEventListener(
+        autocompleteRef,
+        'keydown',
+        (event: KeyboardEvent) => {
+            if (event.key === 'Enter') {
+                if (isValidEmail) {
+                    handleAdd();
+                }
+                event.stopPropagation();
+                event.preventDefault();
+            }
+        },
+        [autocompleteRef.current]
+    );
 
     const contactEmailsLength = model.contactEmails.length;
 
@@ -115,7 +142,7 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
         >
             <Row>
                 <Label htmlFor="contactGroupName">{c('Label for contact group name').t`Name`}</Label>
-                <Field>
+                <Field className="flex-item-fluid">
                     <Input
                         id="contactGroupName"
                         placeholder={c('Placeholder for contact group name').t`Name`}
@@ -131,9 +158,9 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
                 </Field>
             </Row>
             {options.length ? (
-                <Row>
+                <div ref={autocompleteRef} className="flex flex-nowrap mb1 on-mobile-flex-column">
                     <Label htmlFor="contactGroupEmail">{c('Label').t`Add email address`}</Label>
-                    <Field>
+                    <Field className="flex-item-fluid">
                         <Autocomplete
                             id="contactGroupEmail"
                             options={options}
@@ -144,9 +171,13 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
                             type="search"
                             placeholder={c('Placeholder').t`Start typing an email address`}
                             onSelect={handleSelect}
+                            autoComplete="off"
                         />
                     </Field>
-                </Row>
+                    <Button className="ml1" onClick={handleAdd} disabled={!isValidEmail}>
+                        {c('Action').t`Add`}
+                    </Button>
+                </div>
             ) : null}
 
             <ContactGroupTable contactEmails={model.contactEmails} onDelete={handleDeleteEmail} />

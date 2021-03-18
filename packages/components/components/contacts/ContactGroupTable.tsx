@@ -38,7 +38,7 @@ const ContactGroupTable = ({ contactEmails, onDelete }: Props) => {
                                     </div>,
                                     onDelete ? (
                                         <SmallButton
-                                            key={ID}
+                                            key={ID || Email}
                                             onClick={() => onDelete(ID)}
                                             className="button--redborder"
                                         >
@@ -46,7 +46,7 @@ const ContactGroupTable = ({ contactEmails, onDelete }: Props) => {
                                         </SmallButton>
                                     ) : null,
                                 ].filter(isTruthy);
-                                return <TableRow key={ID} cells={cells} />;
+                                return <TableRow key={ID || Email} cells={cells} />;
                             })}
                         </TableBody>
                     ) : null}
