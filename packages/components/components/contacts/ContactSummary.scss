@@ -7,6 +7,6 @@
 
 @include respond-to($breakpoint-small) {
 	.contact-modal-select {
-		max-width: calc(100% - 3em);
+		max-width: calc(100% - 3.3em);
 	}
 }

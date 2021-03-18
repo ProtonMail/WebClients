@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect, useRef } from 'react';
+import React, { useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { c } from 'ttag';
 import { addContacts } from 'proton-shared/lib/api/contacts';
 import { randomIntFromInterval, noop } from 'proton-shared/lib/helpers/function';
@@ -15,12 +15,14 @@ import {
 import { useHistory } from 'react-router';
 import ContactModalProperties from '../ContactModalProperties';
 import { useUserKeys, useApi, useNotifications, useLoading, useEventManager } from '../../../hooks';
-import { Alert, FormModal, PrimaryButton } from '../../../components';
+import { FormModal, PrimaryButton } from '../../../components';
 import { generateUID } from '../../../helpers';
+import ContactModalRow from '../../../components/contacts/ContactModalRow';
 
 const DEFAULT_MODEL = [
     { field: 'fn', value: '' },
     { field: 'email', value: '' },
+    { field: 'photo', value: '' },
 ];
 const { OVERWRITE_CONTACT, THROW_ERROR_IF_CONFLICT } = OVERWRITE;
 const { INCLUDE, IGNORE } = CATEGORIES;
@@ -33,6 +35,14 @@ const UID_PREFIX = 'contact-property';
 const formatModel = (properties: ContactProperties = []): ContactProperties => {
     if (!properties.length) {
         return DEFAULT_MODEL.map((property) => ({ ...property, uid: generateUID(UID_PREFIX) })); // Add UID to localize the property easily;
+    }
+    // Ensure name exists even if it should always be there
+    if (!properties.find((property) => property.field === 'fn')) {
+        properties.push({ field: 'fn', value: '' });
+    }
+    // Ensure photo field is prepared
+    if (!properties.find((property) => property.field === 'photo')) {
+        properties.push({ field: 'photo', value: '' });
     }
     return properties
         .filter(({ field }) => editableFields.includes(field)) // Only includes editable properties that we decided
@@ -62,31 +72,62 @@ const ContactModal = ({
     const { call } = useEventManager();
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [userKeysList, loadingUserKeys] = useUserKeys();
-    const [properties, setProperties] = useState<ContactProperties>(formatModel(initialProperties));
+    const [allProperties, setAllProperties] = useState<ContactProperties>(formatModel(initialProperties));
     const nameFieldRef = useRef<HTMLInputElement>(null);
 
+    const title = contactID ? c('Title').t`Edit contact` : c('Title').t`Create contact`;
+
+    const nameProperty = useMemo(
+        // Ignoring undefined should be ok because formatModel should prevent the field to not exist
+        () => allProperties.find((property) => property.field === 'fn') as ContactProperty,
+        [allProperties]
+    );
+    const photoProperty = useMemo(
+        // Ignoring undefined should be ok because formatModel should prevent the field to not exist
+        () => allProperties.find((property) => property.field === 'photo') as ContactProperty,
+        [allProperties]
+    );
+    const properties = useMemo(
+        () => allProperties.filter((property) => property !== nameProperty && property !== photoProperty),
+        [allProperties]
+    );
+
     const isFormValid = () => {
-        const nameProperty = properties.find((property) => property.field === 'fn');
         const nameFilled = !!nameProperty?.value;
         return nameFilled;
     };
 
-    const title = contactID ? c('Title').t`Edit contact details` : c('Title').t`Create contact`;
-
     const handleRemove = (propertyUID: string) => {
-        setProperties(properties.filter(({ uid }: ContactProperty) => uid !== propertyUID));
+        const property = allProperties.find(({ uid }) => uid === propertyUID);
+
+        // Never remove the last photo property
+        if (property?.field === 'photo') {
+            const photoCount = allProperties.filter(({ field }) => field === 'photo').length;
+            if (photoCount === 1) {
+                const newValue = allProperties.map((property) => {
+                    if (property.field === 'photo') {
+                        return { ...property, value: '' };
+                    }
+                    return property;
+                });
+                setAllProperties(newValue);
+                return;
+            }
+        }
+
+        setAllProperties(allProperties.filter(({ uid }) => uid !== propertyUID));
     };
 
     const handleAdd = (field?: string) => () => {
         if (!field) {
             // Get random field from other info
             const index = randomIntFromInterval(0, otherInformationFields.length - 1);
-            return setProperties([
-                ...properties,
+            return setAllProperties([
+                ...allProperties,
                 { field: otherInformationFields[index], value: '', uid: generateUID(UID_PREFIX) },
             ]);
         }
-        setProperties([...properties, { field, value: '', uid: generateUID(UID_PREFIX) }]);
+        setAllProperties([...allProperties, { field, value: '', uid: generateUID(UID_PREFIX) }]);
     };
 
     const handleSubmit = async () => {
@@ -98,7 +139,7 @@ const ContactModal = ({
         }
 
         const notEditableProperties = initialProperties.filter(({ field }) => !editableFields.includes(field));
-        const Contacts = await prepareContacts([properties.concat(notEditableProperties)], userKeysList[0]);
+        const Contacts = await prepareContacts([allProperties.concat(notEditableProperties)], userKeysList[0]);
         const labels = hasCategories(notEditableProperties) ? INCLUDE : IGNORE;
         const {
             Responses: [{ Response: { Code = null, Contact: { ID = null } = {} } = {} }],
@@ -127,7 +168,7 @@ const ContactModal = ({
     };
 
     const handleChange = ({ uid: propertyUID, value, key = 'value' }: ContactPropertyChange) => {
-        const newProperties = properties.map((property: ContactProperty) => {
+        const newProperties = allProperties.map((property: ContactProperty) => {
             if (property.uid === propertyUID) {
                 return {
                     ...property,
@@ -136,15 +177,15 @@ const ContactModal = ({
             }
             return property;
         });
-        setProperties(newProperties);
+        setAllProperties(newProperties);
     };
 
     const handleOrderChange = useCallback(
         (field, orderedProperties) => {
-            const newProperties = properties.filter((property: ContactProperty) => property.field !== field);
+            const newProperties = allProperties.filter((property: ContactProperty) => property.field !== field);
             newProperties.unshift(...orderedProperties);
 
-            setProperties(newProperties);
+            setAllProperties(newProperties);
         },
         [properties]
     );
@@ -168,8 +209,29 @@ const ContactModal = ({
             onClose={onClose}
             {...rest}
         >
-            <Alert>{c('Info')
-                .t`Email address, phone number and address at the top of their respective list are automatically set as the default information and will be displayed in the contact information's summary section.`}</Alert>
+            <div className="mb1">
+                <ContactModalRow
+                    ref={nameFieldRef}
+                    isSubmitted={isSubmitted}
+                    property={nameProperty}
+                    onChange={handleChange}
+                    onRemove={handleRemove}
+                    isOrderable={false}
+                    actionRow={false}
+                    mainItem
+                />
+
+                <ContactModalRow
+                    isSubmitted={isSubmitted}
+                    property={photoProperty}
+                    onChange={handleChange}
+                    onRemove={handleRemove}
+                    isOrderable={false}
+                    actionRow
+                    fixedType
+                    mainItem
+                />
+            </div>
             <ContactModalProperties
                 ref={nameFieldRef}
                 properties={properties}
