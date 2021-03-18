@@ -188,6 +188,7 @@ const Composer = (
                 } as Message,
                 document: syncedMessage.document,
                 embeddeds: syncedMessage.embeddeds,
+                plainText: syncedMessage.plainText,
             };
             setModelMessage(newModelMessage);
             void reloadSendInfo(messageSendInfo, newModelMessage);
@@ -207,7 +208,7 @@ const Composer = (
                 setModelMessage({ ...modelMessage, data: { ...modelMessage.data, Attachments } as Message });
             }
         }
-    }, [syncInProgress, syncedMessage.document, syncedMessage.data?.ID]);
+    }, [syncInProgress, syncedMessage.document, syncedMessage.plainText, syncedMessage.data?.ID]);
 
     // Manage focus at opening
     useEffect(() => {
