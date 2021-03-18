@@ -1,3 +1,7 @@
+# 0.0.13 (5 March, 2021)
+
+Added Card component, a lightweight wrapper component with a bit of styling adhering to a "card / well" concept
+
 # 0.0.12 (5 March, 2021)
 
 Added new icons
