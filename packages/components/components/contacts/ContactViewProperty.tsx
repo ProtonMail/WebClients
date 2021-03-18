@@ -13,6 +13,8 @@ import {
     ContactGroup,
 } from 'proton-shared/lib/interfaces/contacts/Contact';
 
+import EncryptedIcon from './EncryptedIcon';
+
 import ContactGroupDropdown from '../../containers/contacts/ContactGroupDropdown';
 import ContactLabelProperty from './ContactLabelProperty';
 import ContactEmailSettingsModal from '../../containers/contacts/modals/ContactEmailSettingsModal';
@@ -21,7 +23,6 @@ import RemoteImage from '../image/RemoteImage';
 import Tooltip from '../tooltip/Tooltip';
 import { Button, Copy } from '../button';
 import { classnames } from '../../helpers';
-import Row from '../container/Row';
 import Icon from '../icon/Icon';
 
 import ContactUpgradeModal from './ContactUpgradeModal';
@@ -61,45 +62,6 @@ const ContactViewProperty = ({
     const cleanType = clearType(getType(property.type));
     const type = types[cleanType] || cleanType;
     const value = property.value as string;
-
-    const getContent = () => {
-        if (field === 'email') {
-            return (
-                <>
-                    <a className="mr0-5" href={`mailto:${value}`} title={value}>
-                        {value}
-                    </a>
-                    {contactGroups && <ContactGroupLabels contactGroups={contactGroups} />}
-                </>
-            );
-        }
-        if (field === 'url') {
-            // use new root address when the url does not include the protocol (HTTP or HTTPS)
-            const href = value.startsWith('http') || value.startsWith('//') ? value : `//${value}`;
-            return (
-                <a href={href} target="_blank" rel="noopener noreferrer">
-                    {value}
-                </a>
-            );
-        }
-        if (field === 'tel') {
-            return <a href={`tel:${value}`}>{value}</a>;
-        }
-        if (['bday', 'anniversary'].includes(field)) {
-            const [date] = [parseISO(value), new Date(value)].filter(isValid);
-            if (date) {
-                return format(date, 'PP', { locale: dateLocale });
-            }
-            return value;
-        }
-        if (field === 'logo') {
-            return <RemoteImage src={value} />;
-        }
-        if (field === 'adr') {
-            return formatAdr(property.value as string[]);
-        }
-        return value;
-    };
 
     const getActions = () => {
         if (isPreview) {
@@ -163,7 +125,7 @@ const ContactViewProperty = ({
             case 'tel':
                 return (
                     <Copy
-                        className="ml0-5 button--for-icon"
+                        className="ml0-5 pt0-5 pb0-5 mt0-1 button--for-icon"
                         value={value}
                         onCopy={() => {
                             createNotification({ text: c('Success').t`Phone number copied to clipboard` });
@@ -173,7 +135,7 @@ const ContactViewProperty = ({
             case 'adr':
                 return (
                     <Copy
-                        className="ml0-5 button--for-icon"
+                        className="ml0-5 pt0-5 pb0-5 mt0-1 button--for-icon"
                         value={formatAdr(property?.value as string[])}
                         onCopy={() => {
                             createNotification({ text: c('Success').t`Address copied to clipboard` });
@@ -185,20 +147,97 @@ const ContactViewProperty = ({
         }
     };
 
+    const getContent = () => {
+        if (field === 'email') {
+            return (
+                <>
+                    <span className="w100">
+                        <span className="float-right flex-item-noshrink flex contact-view-actions">{getActions()}</span>
+                        <a className="mr0-5" href={`mailto:${value}`} title={value}>
+                            {value}
+                        </a>
+                        {!!contactGroups.length && (
+                            <div className="mt1">
+                                <ContactGroupLabels
+                                    className="max-w100"
+                                    contactGroups={contactGroups}
+                                    isStacked={false}
+                                />
+                            </div>
+                        )}
+                    </span>
+                </>
+            );
+        }
+        if (field === 'url') {
+            // use new root address when the url does not include the protocol (HTTP or HTTPS)
+            const href = value.startsWith('http') || value.startsWith('//') ? value : `//${value}`;
+            return (
+                <a href={href} target="_blank" rel="noopener noreferrer">
+                    {value}
+                </a>
+            );
+        }
+        if (field === 'tel') {
+            return (
+                <span className="w100">
+                    <span className="float-right flex-item-noshrink flex contact-view-actions">{getActions()}</span>
+                    <a href={`tel:${value}`}>{value}</a>
+                </span>
+            );
+        }
+        if (['bday', 'anniversary'].includes(field)) {
+            const [date] = [parseISO(value), new Date(value)].filter(isValid);
+            if (date) {
+                return format(date, 'PP', { locale: dateLocale });
+            }
+            return value;
+        }
+        if (field === 'logo') {
+            return <RemoteImage src={value} />;
+        }
+        if (field === 'adr') {
+            return (
+                <span className="w100">
+                    <span className="float-right flex-item-noshrink flex contact-view-actions">{getActions()}</span>
+                    {formatAdr(property.value as string[])}
+                </span>
+            );
+        }
+        return value;
+    };
+
     return (
-        <Row>
-            <div className={classnames(['flex flex-align-items-center', leftBlockWidth])}>
-                <ContactLabelProperty field={field} type={type} />
-            </div>
+        <div className="contact-view-row flex flex-nowrap flex-align-items-start mb1">
             <div
-                className={classnames(['flex flex-nowrap flex-align-items-center pl1 on-mobile-pl0', rightBlockWidth])}
+                className={classnames([
+                    'contact-view-row-left flex flex-nowrap flex-item-fluid on-mobile-flex-column',
+                    rightBlockWidth,
+                ])}
             >
-                <span className={classnames(['mr0-5 flex-item-fluid', !['note'].includes(field) && 'text-ellipsis'])}>
+                <div
+                    className={classnames([
+                        'contact-view-row-label flex-no-min-children on-mobile-max-w100 flex-item-noshrink flex-align-items-start',
+                        leftBlockWidth,
+                    ])}
+                >
+                    <div className="inline-flex flex-item-noshrink flex-item-fluid flex-align-items-center">
+                        <span role="heading" aria-level={3} className="mr0-5">
+                            <ContactLabelProperty field={field} type={type} />
+                        </span>
+                        {field && ['email', 'fn'].includes(field) ? null : <EncryptedIcon className="flex" />}
+                    </div>
+                </div>
+                <span
+                    className={classnames([
+                        'contact-view-row-content mr0-5 flex-item-fluid pl2 pt0-5 on-mobile-pl0',
+                        !['note'].includes(field) && 'text-ellipsis',
+                    ])}
+                >
                     {getContent()}
                 </span>
-                <span className="flex-item-noshrink flex">{getActions()}</span>
             </div>
-        </Row>
+        </div>
     );
 };
 

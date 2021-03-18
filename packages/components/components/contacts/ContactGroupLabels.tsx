@@ -6,9 +6,11 @@ import { useAppLink } from '../link';
 
 interface Props {
     contactGroups: ContactGroup[];
+    isStacked?: boolean;
+    className?: string;
 }
 
-const ContactGroupLabels = ({ contactGroups }: Props) => {
+const ContactGroupLabels = ({ contactGroups, isStacked = true, className }: Props) => {
     const appLink = useAppLink();
 
     const labels = contactGroups.reduce((acc: LabelDescription[], contactGroup: ContactGroup) => {
@@ -28,7 +30,7 @@ const ContactGroupLabels = ({ contactGroups }: Props) => {
             : acc;
     }, []);
 
-    return <LabelStack labels={labels} isStacked />;
+    return <LabelStack className={className} labels={labels} isStacked={isStacked} />;
 };
 
 export default ContactGroupLabels;
