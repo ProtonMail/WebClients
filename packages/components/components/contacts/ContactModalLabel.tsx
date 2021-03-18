@@ -12,9 +12,13 @@ interface Props {
     uid?: string;
     type?: string;
     onChange: (payload: ContactPropertyChange) => void;
+    /**
+     * fixedType means you don't want to change the type of data (ie: no select)
+     */
+    fixedType?: boolean;
 }
 
-const ContactModalLabel = ({ field, uid, type = '', onChange }: Props) => {
+const ContactModalLabel = ({ field, uid, type = '', onChange, fixedType = false }: Props) => {
     const types: { [key: string]: { text: string; value: string }[] } = getAllTypes();
     const fieldType = types[field];
 
@@ -25,7 +29,7 @@ const ContactModalLabel = ({ field, uid, type = '', onChange }: Props) => {
     const handleChangeField = ({ target }: ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
         onChange({ value: target.value, key: 'field', uid });
 
-    if (otherInformationFields.map(({ value: f }) => f).includes(field)) {
+    if (!fixedType && otherInformationFields.map(({ value: f }) => f).includes(field)) {
         return (
             <Label className="pt0 mr1 on-mobile-w100">
                 <Select value={field} options={otherInformationFields} onChange={handleChangeField} />
@@ -33,8 +37,8 @@ const ContactModalLabel = ({ field, uid, type = '', onChange }: Props) => {
         );
     }
 
-    if (field === 'fn' || !fieldType.map(({ value: type }) => type).includes(type)) {
-        return <ContactLabelProperty field={field} type={type} />;
+    if (field === 'fn' || fixedType || !fieldType.map(({ value: type }) => type).includes(type)) {
+        return <ContactLabelProperty className="pt0-5" field={field} type={type} />;
     }
 
     return (
