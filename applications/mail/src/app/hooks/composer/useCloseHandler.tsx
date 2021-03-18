@@ -99,8 +99,6 @@ export const useCloseHandler = ({
 
         ensureMessageContent();
 
-        console.log('handleClose', pendingSave.current, uploadInProgress);
-
         // Message requires to be saved in background
         if (pendingSave.current || uploadInProgress) {
             try {
