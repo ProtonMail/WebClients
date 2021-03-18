@@ -302,7 +302,7 @@ $toggle-bg-disabled: var(
 	--toggle-bg-disabled,
 	#d7d9e0
 ) !default; // dark mode 494e5b
-$toggle-active-bg: $pm-blue !default;
+$toggle-active-bg: var(--primary, #{$pm-blue}) !default;
 $toggle-active-bg: var(--toggle-active-bg, $pm-blue) !default;
 $toggle-active-focus-bg: var(--toggle-active-focus-bg, #5064b6) !default;
 
@@ -386,7 +386,7 @@ $toggle-active-focus-bg: var(--toggle-active-focus-bg, #5064b6) !default;
 
 		&::before {
 			transform: translateX(#{$toggle-width - $toggle-width-button});
-			background-color: $pm-primary-dark;
+			background-color: $toggle-active-bg;
 		}
 	}
 
