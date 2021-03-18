@@ -1,4 +1,4 @@
-import React, { ChangeEvent, forwardRef } from 'react';
+import React, { ChangeEvent, forwardRef, Ref } from 'react';
 import { parseISO, isValid } from 'date-fns';
 
 import { getAllFieldLabels } from 'proton-shared/lib/helpers/contacts';
@@ -23,78 +23,79 @@ interface Props {
     isSubmitted?: boolean;
 }
 
-const ContactFieldProperty = forwardRef<HTMLInputElement, Props>(
-    ({ field, value, uid, onChange, isSubmitted = false, ...rest }: Props, ref) => {
-        const { createModal } = useModals();
-        const labels: { [key: string]: string } = getAllFieldLabels();
-        const label = labels[field];
+const ContactFieldProperty = (
+    { field, value, uid, onChange, isSubmitted = false, ...rest }: Props,
+    ref: Ref<HTMLInputElement>
+) => {
+    const { createModal } = useModals();
+    const labels: { [key: string]: string } = getAllFieldLabels();
+    const label = labels[field];
 
-        const handleChange = ({ target }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-            onChange({ value: target.value, uid });
+    const handleChange = ({ target }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+        onChange({ value: target.value, uid });
 
-        if (field === 'email') {
-            return (
-                <EmailInput
-                    value={value as string}
-                    placeholder={labels.email}
-                    onChange={handleChange}
-                    autoFocus
-                    {...rest}
-                />
-            );
-        }
-
-        if (field === 'tel') {
-            return <TelInput value={value} placeholder={labels.tel} onChange={handleChange} autoFocus {...rest} />;
-        }
-
-        if (field === 'adr') {
-            const handleChangeAdr = (adr: string[]) => onChange({ value: adr, uid });
-            return <ContactAdrField value={value} onChange={handleChangeAdr} />;
-        }
-
-        if (field === 'note') {
-            return <TextArea value={value} placeholder={labels.note} onChange={handleChange} autoFocus {...rest} />;
-        }
-
-        if (field === 'bday' || field === 'anniversary') {
-            const date = value === '' ? new Date() : parseISO(`${value}`);
-            if (isValid(date)) {
-                const handleSelectDate = (value?: Date) => {
-                    if (!isValid(value)) {
-                        return;
-                    }
-                    onChange({ value: value?.toISOString() || '', uid });
-                };
-                return <DateInput placeholder={label} value={date} autoFocus onChange={handleSelectDate} {...rest} />;
-            }
-        }
-
-        if (field === 'photo' || field === 'logo') {
-            const handleChangeImage = () => {
-                const handleSubmit = (value: string) => onChange({ uid, value });
-                createModal(<ContactImageModal url={value as string} onSubmit={handleSubmit} />);
-            };
-            return <ContactImageField value={value as string} onChange={handleChangeImage} {...rest} />;
-        }
-
-        if (field === 'fn') {
-            return (
-                <Input
-                    ref={ref}
-                    value={value}
-                    placeholder={label}
-                    onChange={handleChange}
-                    isSubmitted={isSubmitted}
-                    autoFocus
-                    required
-                    {...rest}
-                />
-            );
-        }
-
-        return <Input value={value} placeholder={label} onChange={handleChange} autoFocus {...rest} />;
+    if (field === 'email') {
+        return (
+            <EmailInput
+                value={value as string}
+                placeholder={labels.email}
+                onChange={handleChange}
+                autoFocus
+                {...rest}
+            />
+        );
     }
-);
 
-export default ContactFieldProperty;
+    if (field === 'tel') {
+        return <TelInput value={value} placeholder={labels.tel} onChange={handleChange} autoFocus {...rest} />;
+    }
+
+    if (field === 'adr') {
+        const handleChangeAdr = (adr: string[]) => onChange({ value: adr, uid });
+        return <ContactAdrField value={value} onChange={handleChangeAdr} />;
+    }
+
+    if (field === 'note') {
+        return <TextArea value={value} placeholder={labels.note} onChange={handleChange} autoFocus {...rest} />;
+    }
+
+    if (field === 'bday' || field === 'anniversary') {
+        const date = value === '' ? new Date() : parseISO(`${value}`);
+        if (isValid(date)) {
+            const handleSelectDate = (value?: Date) => {
+                if (!isValid(value)) {
+                    return;
+                }
+                onChange({ value: value?.toISOString() || '', uid });
+            };
+            return <DateInput placeholder={label} value={date} autoFocus onChange={handleSelectDate} {...rest} />;
+        }
+    }
+
+    if (field === 'photo' || field === 'logo') {
+        const handleChangeImage = () => {
+            const handleSubmit = (value: string) => onChange({ uid, value });
+            createModal(<ContactImageModal url={value as string} onSubmit={handleSubmit} />);
+        };
+        return <ContactImageField value={value as string} onChange={handleChangeImage} {...rest} />;
+    }
+
+    if (field === 'fn') {
+        return (
+            <Input
+                ref={ref}
+                value={value}
+                placeholder={label}
+                onChange={handleChange}
+                isSubmitted={isSubmitted}
+                autoFocus
+                required
+                {...rest}
+            />
+        );
+    }
+
+    return <Input value={value} placeholder={label} onChange={handleChange} autoFocus {...rest} />;
+};
+
+export default forwardRef(ContactFieldProperty);
