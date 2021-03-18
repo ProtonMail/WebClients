@@ -4,13 +4,16 @@ import { ContactProperties, ContactEmail, ContactGroup } from 'proton-shared/lib
 import { DecryptedKey } from 'proton-shared/lib/interfaces';
 import { CryptoProcessingError } from 'proton-shared/lib/contacts/decrypt';
 import { singleExport } from 'proton-shared/lib/contacts/export';
-import { useModals, useActiveBreakpoint } from '../../hooks';
+import { useModals } from '../../hooks';
 import ContactSummary from '../../components/contacts/ContactSummary';
 import ContactViewProperties from '../../components/contacts/ContactViewProperties';
 import { classnames } from '../../helpers';
 import ContactModal from './modals/ContactModal';
 import ContactDeleteModal from './modals/ContactDeleteModal';
 import ContactViewErrors from './ContactViewErrors';
+import { Button } from '../../components';
+
+import './ContactView.scss';
 
 interface Props {
     contactID: string;
@@ -40,7 +43,6 @@ const ContactView = ({
     isPreview = false,
 }: Props) => {
     const { createModal } = useModals();
-    const { isNarrow } = useActiveBreakpoint();
 
     const handleDelete = () => {
         createModal(<ContactDeleteModal contactIDs={[contactID]} onDelete={onDelete} />);
@@ -61,30 +63,85 @@ const ContactView = ({
         ownAddresses,
         properties,
         contactGroupsMap,
-        leftBlockWidth: 'w100 max-w100p',
+        leftBlockWidth: 'label max-w100p',
         rightBlockWidth: 'w100',
     };
 
+    const { hasEmail, hasTel, hasAdr } = properties.reduce<{ hasEmail: boolean; hasTel: boolean; hasAdr: boolean }>(
+        (acc, { field }) => {
+            acc.hasEmail = acc.hasEmail || field === 'email';
+            acc.hasTel = acc.hasTel || field === 'tel';
+            acc.hasAdr = acc.hasAdr || field === 'adr';
+            return acc;
+        },
+        {
+            hasEmail: false,
+            hasTel: false,
+            hasAdr: false,
+        }
+    );
+
     return (
-        <div className={classnames([!isModal && 'view-column-detail flex-item-fluid scroll-if-needed'])}>
-            <div className="border-bottom ml1 mr1 pb1 mb1">
+        <div
+            className={classnames([
+                !isModal && 'contact-view view-column-detail flex-item-fluid scroll-if-needed p2 on-mobile-p1',
+            ])}
+        >
+            <div
+                className={classnames([
+                    'contact-summary-wrapper border-bottom  pb1 mb1',
+                    !isModal && ' ml1 mr1 on-mobile-ml0-5 on-mobile-mr0-5 on-tiny-mobile-ml0',
+                ])}
+            >
                 <ContactSummary
                     onExport={handleExport}
                     onEdit={handleEdit}
                     onDelete={handleDelete}
                     properties={properties}
-                    leftBlockWidth={isNarrow ? 'mauto max-w100p' : 'w100 max-w100p'}
+                    leftBlockWidth="w100 max-w100p on-mobile-wauto"
                     isPreview={isPreview}
                     hasError={hasError}
                 />
                 <ContactViewErrors errors={errors} onReload={onReload} contactID={contactID} />
             </div>
-            <div className="pl1 pr1">
+            <div
+                className={classnames([
+                    !isModal && 'contact-view-contents pl1 pr1 on-mobile-pl0-5 on-mobile-pr0-5 on-tiny-mobile-pl0',
+                ])}
+            >
                 <ContactViewProperties field="fn" {...contactViewPropertiesProps} />
                 <ContactViewProperties field="email" {...contactViewPropertiesProps} isPreview={isPreview} />
                 <ContactViewProperties field="tel" {...contactViewPropertiesProps} isPreview={isPreview} />
                 <ContactViewProperties field="adr" {...contactViewPropertiesProps} isPreview={isPreview} />
                 <ContactViewProperties {...contactViewPropertiesProps} />
+            </div>
+            <div
+                className={classnames([
+                    'mt1-5 ',
+                    !isModal && 'contact-view-cta pl1 pr1 on-mobile-pl0-5 on-mobile-pr0-5 on-tiny-mobile-pl0',
+                ])}
+            >
+                {hasEmail ? null : (
+                    <div className="mb0-5">
+                        <Button shape="outline" color="norm" onClick={() => handleEdit('email')}>
+                            Add email
+                        </Button>
+                    </div>
+                )}
+                {hasTel ? null : (
+                    <div className="mb0-5">
+                        <Button shape="outline" color="norm" onClick={() => handleEdit('tel')}>
+                            Add phone number
+                        </Button>
+                    </div>
+                )}
+                {hasAdr ? null : (
+                    <div className="mb0-5">
+                        <Button shape="outline" color="norm" onClick={() => handleEdit('adr')}>
+                            Add address
+                        </Button>
+                    </div>
+                )}
             </div>
         </div>
     );

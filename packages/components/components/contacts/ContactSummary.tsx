@@ -84,62 +84,56 @@ const ContactSummary = ({
     }
 
     return (
-        <div className={classnames(['contactsummary-container mt1 mb1', !isNarrow && 'flex flex-nowrap'])}>
-            <div className={classnames(['text-center contactsummary-photo-container pt0-5', leftBlockWidth])}>
+        <div
+            className={classnames([
+                'contactsummary-container mt1 mb1',
+                !isNarrow && 'flex flex-nowrap flex-align-items-center',
+            ])}
+        >
+            <div
+                className={classnames([
+                    'text-center contactsummary-photo-container pt0-5 on-mobile-mb0-5 on-mobile-center',
+                    leftBlockWidth,
+                ])}
+            >
                 <ContactImageSummary photo={photo} name={name} />
             </div>
-            <div className="pl1 flex-item-fluid">
-                <h2 className="on-mobile-text-center mb0 text-ellipsis" title={name}>
+            <div className="contactsummary-contact-name-container pl2 on-mobile-pl0 flex-no-min-children flex-item-fluid">
+                <h2
+                    className="contactsummary-contact-name on-mobile-text-center mb0 flex-item-fluid on-mobile-mb1 text-bold text-ellipsis-two-lines"
+                    title={name}
+                >
                     {name}
                 </h2>
-                <div className="on-mobile-text-center">
-                    <ul className="unstyled mt0-5 inline-block">
-                        {summary.map(({ icon, component }) => {
-                            if (!component) {
-                                return null;
-                            }
-                            return (
-                                <li
-                                    key={icon}
-                                    className="contactsummary-list-item flex flex-nowrap flex-align-items-center"
+                {!isPreview && (
+                    <div className="contactsummary-action-buttons flex-item-noshrink on-mobile-text-center ">
+                        {!hasError && (
+                            <Tooltip title={c('Action').t`Export`} className="ml0-5">
+                                <Button onClick={onExport} className="button--for-icon inline-flex">
+                                    <Icon className="mt0-25 mb0-1" name="export" alt={c('Action').t`Export`} />
+                                </Button>
+                            </Tooltip>
+                        )}
+
+                        <Tooltip title={c('Action').t`Delete`} className="ml0-5">
+                            <Button onClick={onDelete} className="button--for-icon inline-flex">
+                                <Icon className="mt0-25 mb0-1" name="trash" alt={c('Action').t`Delete`} />
+                            </Button>
+                        </Tooltip>
+
+                        {!hasError && (
+                            <Tooltip title={c('Action').t`Edit`} className="ml0-5">
+                                <Button
+                                    onClick={() => onEdit()}
+                                    className="button--for-icon button--primary inline-flex"
                                 >
-                                    <Icon name={icon} className="mr0-5 flex-item-noshrink" />
-                                    <span className="text-ellipsis">{component}</span>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </div>
+                                    <Icon className="mt0-25 mb0-1" name="pen" alt={c('Action').t`Edit`} />
+                                </Button>
+                            </Tooltip>
+                        )}
+                    </div>
+                )}
             </div>
-            {!isPreview && (
-                <div className="flex-item-noshrink pt0-5 on-mobile-text-center mb1">
-                    {!hasError && (
-                        <Tooltip title={c('Action').t`Edit`} className="ml0-5">
-                            <Button onClick={() => onEdit()} className="button--for-icon inline-flex">
-                                <Icon className="color-primary mt0-25 mb0-1" name="pen" alt={c('Action').t`Edit`} />
-                            </Button>
-                        </Tooltip>
-                    )}
-
-                    {!hasError && (
-                        <Tooltip title={c('Action').t`Export`} className="ml0-5">
-                            <Button onClick={onExport} className="button--for-icon inline-flex">
-                                <Icon className="mt0-25 mb0-1" name="export" alt={c('Action').t`Export`} />
-                            </Button>
-                        </Tooltip>
-                    )}
-
-                    <Tooltip title={c('Action').t`Delete`} className="ml0-5">
-                        <Button onClick={onDelete} className="button--for-icon inline-flex">
-                            <Icon
-                                className="color-global-warning mt0-25 mb0-1"
-                                name="trash"
-                                alt={c('Action').t`Delete`}
-                            />
-                        </Button>
-                    </Tooltip>
-                </div>
-            )}
         </div>
     );
 };
