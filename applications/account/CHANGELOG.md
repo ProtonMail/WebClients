@@ -1,3 +1,9 @@
+# [4.0.0-beta.12] - 2021-03-18
+## Fixes 
+- Fixed a discount miscalculation when switching VPN plans (no impact on payment amount)
+
+---
+
 # [4.0.0-beta.11] - 2021-03-10
 
 ## Improvements
