@@ -27,7 +27,7 @@ const DownloadSharedContainer = () => {
     const [notFoundError, setNotFoundError] = useState<Error | undefined>();
     const [loading, withLoading] = useLoading(false);
     const [handshakeInfo, setHandshakeInfo] = useState<InitHandshake | null>();
-    const [linkInfo, setLinkInfo] = useState<SharedLinkInfo | null>();
+    const [linkInfo, setLinkInfo] = useState<(SharedLinkInfo & { Password: string }) | null>();
     const { initSRPHandshake, getSharedLinkPayload, startSharedFileTransfer } = usePublicSharing();
     const { hash, pathname } = useLocation();
     const { preventLeave } = usePreventLeave();
@@ -59,7 +59,7 @@ const DownloadSharedContainer = () => {
                 PageSize: BATCH_REQUEST_SIZE,
             })
                 .then((linkInfo) => {
-                    setLinkInfo(linkInfo);
+                    setLinkInfo({ ...linkInfo, Password: password });
                     setHandshakeInfo(null);
                 })
                 .catch((e) => {
@@ -94,14 +94,14 @@ const DownloadSharedContainer = () => {
             return;
         }
 
-        const { Name, Size, MIMEType, SessionKey, NodeKey, Blocks } = linkInfo;
+        const { Name, Size, MIMEType, SessionKey, NodeKey, Blocks, Password } = linkInfo;
         const transferMeta = {
             filename: Name,
             size: Size,
             mimeType: MIMEType,
         };
 
-        const fileStream = await startSharedFileTransfer(SessionKey, NodeKey, transferMeta, token, password, Blocks);
+        const fileStream = await startSharedFileTransfer(SessionKey, NodeKey, transferMeta, token, Password, Blocks);
         return preventLeave(FileSaver.saveAsFile(fileStream, transferMeta)).catch(console.error);
     };
 
