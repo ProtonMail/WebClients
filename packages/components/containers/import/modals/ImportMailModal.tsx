@@ -28,7 +28,7 @@ import {
 } from '../../../components';
 import ImportMailWizard from '../../../components/import/ImportMailWizard';
 
-import { IMAP_CONNECTION_ERROR_LABEL, IMAPS } from '../constants';
+import { IMAPS } from '../constants';
 
 import {
     Step,
@@ -188,12 +188,12 @@ const ImportMailModal = ({ onClose = noop, currentImport, oauthProps, ...rest }:
     const handleSubmitStartError = (error: Error & { data: { Code: number; Error: string } }) => {
         const { data: { Code, Error } = { Code: 0, Error: '' } } = error;
 
-        if ([IMPORT_ERROR.AUTH_CREDENTIALS, IMPORT_ERROR.AUTH_IMAP].includes(Code)) {
+        if ([IMPORT_ERROR.AUTHENTICATION_ERROR, IMPORT_ERROR.IMAP_CONNECTION_ERROR].includes(Code)) {
             setModalModel({
                 ...modalModel,
                 errorCode: Code,
                 errorLabel: Error,
-                needIMAPDetails: modalModel.needIMAPDetails || Error === IMAP_CONNECTION_ERROR_LABEL,
+                needIMAPDetails: modalModel.needIMAPDetails || Code === IMPORT_ERROR.IMAP_CONNECTION_ERROR,
             });
         }
     };
