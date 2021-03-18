@@ -1,0 +1,78 @@
+@import '~design-system/scss/config/';
+
+.contact-view {
+	&-actions {
+		margin-top: -0.5em;
+	}
+
+	.contactsummary-contact-name {
+		font-size: em(24);
+		line-height: 1.333; // design wanted 32px for line-height
+		flex: 1 1 auto;
+		margin-bottom: 0.25em;
+	}
+
+	/*
+	 * Make summary elements wrap at 1500
+	 */
+	@include respond-to($breakpoint-large) {
+		.contactsummary-contact-name-container {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.contactsummary-action-buttons {
+			> :first-child {
+				margin-left: 0;
+			}
+		}
+	}
+
+	/*
+	* triger mobile adaptation around 1000px because... not enough space
+	*/
+	@include respond-to($breakpoint-medium-landscape) {
+		@include respond-to($breakpoint-medium, 'min') {
+			.contactsummary-container {
+				display: block;
+			}
+			.contactsummary-photo-container {
+				width: auto;
+				margin-bottom: 0.5em;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.contactsummary-contact-name-container {
+				padding-left: 0;
+			}
+			.contactsummary-contact-name {
+				margin-bottom: 1em;
+				text-align: center;
+			}
+			.contactsummary-action-buttons {
+				text-align: center;
+			}
+
+			.contact-view-contents,
+			.contact-view-cta {
+				padding-left: 0;
+				padding-right: 0;
+			}
+			.contact-summary-wrapper {
+				margin-left: 0;
+				margin-right: 0;
+			}
+
+			.contact-view-row-left {
+				flex-direction: column;
+			}
+			.contact-view-row-label {
+				max-width: 100%;
+			}
+			.contact-view-row-content {
+				flex-basis: auto;
+				padding-left: 0;
+			}
+		}
+	}
+}
