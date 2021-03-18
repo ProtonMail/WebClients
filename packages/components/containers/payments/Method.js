@@ -12,7 +12,7 @@ import verifiedByVisaSvgLight from 'design-system/assets/img/shared/bank-icons/v
 import verifiedByVisaSvgDark from 'design-system/assets/img/shared/bank-icons/verified-by-visa-dark.svg';
 
 import { Loader } from '../../components';
-import Card from './Card';
+import CreditCard from './CreditCard';
 import PaymentMethodDetails from '../paymentMethods/PaymentMethodDetails';
 import PayPalView from './PayPalView';
 import Cash from './Cash';
@@ -57,7 +57,7 @@ const Method = ({
     if (method === CARD) {
         return (
             <>
-                <Card card={card} errors={errors} onChange={onCard} />
+                <CreditCard card={card} errors={errors} onChange={onCard} />
                 <Alert3DS />
             </>
         );
