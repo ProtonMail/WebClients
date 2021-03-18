@@ -303,7 +303,8 @@ $toggle-bg-disabled: var(
 	#d7d9e0
 ) !default; // dark mode 494e5b
 $toggle-active-bg: $pm-blue !default;
-$toggle-active-focus-bg: #5064b6 !default;
+$toggle-active-bg: var(--toggle-active-bg, $pm-blue) !default;
+$toggle-active-focus-bg: var(--toggle-active-focus-bg, #5064b6) !default;
 
 .toggle-label.toggle-label {
 	// specificity issue with flex helpers
