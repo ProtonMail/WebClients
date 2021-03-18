@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Href, Icon } from 'react-components';
+import { ButtonLike, Href, Icon } from 'react-components';
 import { getAppName } from 'proton-shared/lib/apps/helper';
 import { APPS } from 'proton-shared/lib/constants';
 import { DOWNLOAD_SHARED_STATE } from '../../../constants';
@@ -34,9 +34,9 @@ const DiscountBanner = ({ contentState, onClose }: Props) => {
             <div className="flex flex-column flex-nowrap flex-align-items-center text-center p1 w100">
                 <h3 className="text-uppercase text-bold m0">{c('Title').t`Get your own ${appName}`}</h3>
                 <p className="mt1 mb1 text-sm">{c('Label').t`Up to 47% off on new subscriptions`}</p>
-                <Href url={url} className="button--primary button--large mt0-25 mb1">
+                <ButtonLike as={Href} url={url} color="norm" size="large" className="mt0-25 mb1">
                     {c('Action').t`Get the deal`}
-                </Href>
+                </ButtonLike>
             </div>
         </div>
     );

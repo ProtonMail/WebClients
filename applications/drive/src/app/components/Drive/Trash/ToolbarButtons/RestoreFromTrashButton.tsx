@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { ToolbarButton, useLoading } from 'react-components';
+import { Icon, ToolbarButton, useLoading } from 'react-components';
 
 import { useTrashContent } from '../TrashContentProvider';
 import useToolbarActions from '../../../../hooks/drive/useToolbarActions';
@@ -21,7 +21,7 @@ const RestoreFromTrashButton = ({ shareId, disabled }: Props) => {
         <ToolbarButton
             disabled={disabled || restoreLoading}
             title={c('Action').t`Restore from trash`}
-            icon="repeat"
+            icon={<Icon name="repeat" />}
             onClick={() => withRestoreLoading(restoreFromTrash(shareId, selectedItems))}
             data-testid="toolbar-restore"
         />

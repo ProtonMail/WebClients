@@ -2,8 +2,8 @@ import React, { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { dateLocale } from 'proton-shared/lib/i18n';
-import { Icon, LargeButton, FileNameDisplay } from 'react-components';
 import { readableTime } from 'proton-shared/lib/helpers/time';
+import { Icon, FileNameDisplay, Button } from 'react-components';
 
 import DownloadProgressBar from './DownloadProgressBar';
 import SizeCell from '../FileBrowser/ListView/Cells/SizeCell';
@@ -42,9 +42,9 @@ const DownloadSharedInfo = ({ name, size, expirationTime, downloadFile }: Props)
         ),
         content: (
             <div className="flex flex-column w200p">
-                <LargeButton className="button--primary ml2 mr2" onClick={onDownload}>
+                <Button size="large" color="norm" className="ml2 mr2" onClick={onDownload}>
                     {c('Action').t`Download`}
-                </LargeButton>
+                </Button>
             </div>
         ),
     };

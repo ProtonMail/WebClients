@@ -9,11 +9,11 @@ import {
     ContentModal,
     InnerModal,
     FooterModal,
-    ResetButton,
     LinkButton,
     useModals,
     useActiveBreakpoint,
     Button,
+    Icon,
 } from 'react-components';
 
 import FolderTree, { FolderTreeItem } from './FolderTree/FolderTree';
@@ -197,11 +197,13 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
                 <div className="flex flex-justify-space-between w100 flex-nowrap">
                     {isNarrow ? (
                         <Button
-                            icon="folder-new"
+                            icon
                             disabled={loading || !selectedFolder}
                             onClick={() => selectedFolder && handleCreateNewFolderClick(selectedFolder)}
                             title={c('Action').t`Create new folder`}
-                        />
+                        >
+                            <Icon name="folder-new" />
+                        </Button>
                     ) : (
                         <LinkButton
                             disabled={loading || !selectedFolder}
@@ -211,9 +213,9 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
                         </LinkButton>
                     )}
                     <div>
-                        <ResetButton disabled={loading} autoFocus>
+                        <Button type="reset" disabled={loading} autoFocus>
                             {c('Action').t`Close`}
-                        </ResetButton>
+                        </Button>
                         <PrimaryButton className="ml1" loading={loading} type="submit" disabled={moveIsDisabled}>
                             {c('Action').t`Move`}
                         </PrimaryButton>

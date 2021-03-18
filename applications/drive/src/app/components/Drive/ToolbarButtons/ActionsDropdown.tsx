@@ -37,8 +37,6 @@ const ActionsDropdown = ({ shareId }: Props) => {
     const isMultiSelect = selectedItems.length > 1;
     const hasSharedLink = !!selectedItems[0]?.SharedUrl;
 
-    const toolbarButtonIcon = { name: 'caret', rotate: isOpen ? 180 : 0 };
-
     const menuItems = [
         {
             hidden: isMultiSelect,
@@ -112,7 +110,7 @@ const ActionsDropdown = ({ shareId }: Props) => {
                 ref={anchorRef}
                 aria-expanded={isOpen}
                 onClick={toggle}
-                icon={toolbarButtonIcon}
+                icon={<Icon name="caret" rotate={isOpen ? 180 : 0} />}
                 data-testid="actions-dropdown"
                 title={c('Title').t`Show actions`}
             />

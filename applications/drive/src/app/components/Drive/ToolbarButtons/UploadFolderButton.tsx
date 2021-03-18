@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { ToolbarButton } from 'react-components';
+import { ToolbarButton, Icon } from 'react-components';
 
 import useFileUploadInput from '../../../hooks/drive/useFileUploadInput';
 
@@ -13,7 +13,7 @@ const UploadFolderButton = () => {
             <input multiple type="file" ref={fileInput} className="hidden" onChange={handleChange} />
             <ToolbarButton
                 data-testid="toolbar-upload-folder"
-                icon="folder-upload"
+                icon={<Icon name="folder-upload" />}
                 title={c('Action').t`Upload folder`}
                 onClick={handleUploadFolder}
             />

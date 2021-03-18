@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 
-import { Label, PasswordInput, PrimaryButton, useLoading } from 'react-components';
+import { Button, Label, PasswordInput, useLoading } from 'react-components';
 
 interface Props {
     submitPassword: (password: string) => Promise<void>;
@@ -35,14 +35,16 @@ const EnterPasswordInfo = ({ submitPassword }: Props) => {
                     value={password}
                     onChange={({ target: { value } }) => setPassword(value)}
                 />
-                <PrimaryButton
-                    className="button--large center mt2 min-w7e"
+                <Button
+                    size="large"
+                    color="norm"
+                    className="center mt2 min-w7e"
                     disabled={!password}
                     loading={loading}
                     type="submit"
                 >
                     {c('Action').t`Submit`}
-                </PrimaryButton>
+                </Button>
             </form>
         </>
     );

@@ -82,8 +82,10 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
         >
             {/* Mobile icon */}
             {statusInfo.icon && !isTransferProgress(transfer) && (
-                <Tooltip title={errorText} originalPlacement="top" className="flex-item-noshrink no-desktop no-tablet">
-                    <Icon name={errorText ? 'info' : statusInfo.icon} alt={statusInfo.text} />
+                <Tooltip title={errorText} originalPlacement="top">
+                    <span className="flex-item-noshrink no-desktop no-tablet">
+                        <Icon name={errorText ? 'info' : statusInfo.icon} alt={statusInfo.text} />
+                    </span>
                 </Tooltip>
             )}
 
@@ -91,7 +93,9 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
             <span className="no-mobile flex flex-align-items-center">
                 {errorText && (
                     <Tooltip title={errorText} originalPlacement="top" className="flex mr0-5">
-                        <Icon name="info" />
+                        <span>
+                            <Icon name="info" />
+                        </span>
                     </Tooltip>
                 )}
                 {statusInfo.text}

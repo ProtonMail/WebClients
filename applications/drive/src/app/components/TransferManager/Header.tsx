@@ -156,11 +156,11 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
             >
                 {getHeadingText()}
             </div>
-            <Tooltip title={minMaxTitle} className="transfers-manager-heading-tooltip flex-item-noshrink flex">
+            <Tooltip title={minMaxTitle}>
                 <button
                     ref={minimizeRef}
                     type="button"
-                    className="transfers-manager-heading-button p0-5 flex"
+                    className="transfers-manager-heading-tooltip flex-item-noshrink flex transfers-manager-heading-button p0-5 flex"
                     onClick={() => {
                         onToggleMinimize();
                         minimizeRef.current?.blur();
@@ -171,11 +171,12 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
                     <span className="sr-only">{minMaxTitle}</span>
                 </button>
             </Tooltip>
-            <Tooltip
-                title={closeTitle}
-                className={classnames(['transfers-manager-heading-tooltip flex-item-noshrink flex'])}
-            >
-                <button type="button" className="transfers-manager-heading-button flex p0-5" onClick={onClose}>
+            <Tooltip title={closeTitle}>
+                <button
+                    type="button"
+                    className="transfers-manager-heading-tooltip flex-item-noshrink flex transfers-manager-heading-button flex p0-5"
+                    onClick={onClose}
+                >
                     <Icon className="mauto" name="off" />
                     <span className="sr-only">{closeTitle}</span>
                 </button>

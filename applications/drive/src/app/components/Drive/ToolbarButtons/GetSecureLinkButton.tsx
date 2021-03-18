@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { ToolbarButton } from 'react-components';
+import { Icon, ToolbarButton } from 'react-components';
 
 import useToolbarActions from '../../../hooks/drive/useToolbarActions';
 import { useDriveContent } from '../DriveContentProvider';
@@ -22,7 +22,7 @@ const GetSecureLinkButton = ({ shareId, disabled }: Props) => {
         <ToolbarButton
             disabled={disabled}
             title={hasSharedLink ? c('Action').t`Sharing options` : c('Action').t`Share with link`}
-            icon="link"
+            icon={<Icon name="link" />}
             onClick={() => openLinkSharing(shareId, selectedItems[0])}
             data-testid="toolbar-share"
         />

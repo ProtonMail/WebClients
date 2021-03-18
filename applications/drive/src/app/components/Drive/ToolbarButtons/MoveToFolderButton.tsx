@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { ToolbarButton } from 'react-components';
+import { Icon, ToolbarButton } from 'react-components';
 
 import useToolbarActions from '../../../hooks/drive/useToolbarActions';
 import { useDriveContent } from '../DriveContentProvider';
@@ -19,7 +19,7 @@ const MoveToFolderButton = ({ disabled }: Props) => {
         <ToolbarButton
             disabled={disabled}
             title={c('Action').t`Move to folder`}
-            icon="arrow-cross"
+            icon={<Icon name="arrow-cross" />}
             onClick={() => openMoveToFolder(selectedItems)}
             data-testid="toolbar-move"
         />

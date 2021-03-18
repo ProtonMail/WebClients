@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { classnames, useNotifications, FloatingButton, SidebarPrimaryButton } from 'react-components';
+import { useNotifications, FloatingButton, SidebarPrimaryButton, Icon } from 'react-components';
 import useTrash from '../../../hooks/drive/useTrash';
 import useConfirm from '../../../hooks/util/useConfirm';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
@@ -47,14 +47,16 @@ const EmptyTrashButton = ({ shareId, floating, className }: Props) => {
             {floating ? (
                 <FloatingButton
                     disabled={disabled}
-                    className="button--error"
+                    color="danger"
                     onClick={handleEmptyTrashClick}
                     title={c('Action').t`Empty trash`}
-                    icon="empty-folder"
-                />
+                >
+                    <Icon size={24} name="empty-folder" className="mauto" />
+                </FloatingButton>
             ) : (
                 <SidebarPrimaryButton
-                    className={classnames(['button--error', className])}
+                    color="danger"
+                    className={className}
                     disabled={disabled}
                     onClick={handleEmptyTrashClick}
                 >{c('Action').t`Empty trash`}</SidebarPrimaryButton>

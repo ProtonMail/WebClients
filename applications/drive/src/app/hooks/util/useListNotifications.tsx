@@ -1,6 +1,6 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { useNotifications, LinkButton } from 'react-components';
+import { useNotifications, InlineLinkButton } from 'react-components';
 import { LinkType, LinkMeta } from '../../interfaces/link';
 import { selectMessageForItemList } from '../../components/Drive/helpers';
 import { FileBrowserItem } from '../../components/FileBrowser/interfaces';
@@ -21,12 +21,9 @@ const getNotificationTextForItemList = (
             <>
                 {notificationText}
                 {'. '}
-                <LinkButton
-                    className="align-baseline text-no-decoration text-bold button--currentColor"
-                    onClick={() => undoAction()}
-                >
+                <InlineLinkButton className="text-bold text-no-decoration" onClick={() => undoAction()}>
                     {c('Action').t`Undo`}
-                </LinkButton>
+                </InlineLinkButton>
             </>
         );
     }

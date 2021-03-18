@@ -14,7 +14,6 @@ import {
     Input,
     Label,
     PrimaryButton,
-    ResetButton,
     Row,
     Toggle,
     useNotifications,
@@ -280,7 +279,7 @@ function GeneratedLinkState({
                             <Button loading={deleting} disabled={saving} onClick={onDeleteLinkClick}>{c('Action')
                                 .t`Stop sharing`}</Button>
                             <div>
-                                <ResetButton disabled={saving || deleting}>{c('Action').t`Close`}</ResetButton>
+                                <Button type="reset" disabled={saving || deleting}>{c('Action').t`Close`}</Button>
                                 <PrimaryButton loading={saving} disabled={isSaveDisabled} className="ml1" type="submit">
                                     {c('Action').t`Save`}
                                 </PrimaryButton>

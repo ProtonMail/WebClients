@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { ToolbarButton } from 'react-components';
+import { Icon, ToolbarButton } from 'react-components';
 
 import { useTrashContent } from '../TrashContentProvider';
 import useToolbarActions from '../../../../hooks/drive/useToolbarActions';
@@ -20,7 +20,7 @@ const DeletePermanentlyButton = ({ shareId, disabled }: Props) => {
         <ToolbarButton
             disabled={disabled}
             title={c('Action').t`Delete permanently`}
-            icon="delete"
+            icon={<Icon name="delete" />}
             onClick={() => openDeletePermanently(shareId, selectedItems)}
             data-testid="toolbar-delete"
         />

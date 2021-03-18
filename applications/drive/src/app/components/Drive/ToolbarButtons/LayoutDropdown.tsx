@@ -17,7 +17,6 @@ const LayoutDropdown = () => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const id = `dropdown-layout`;
-    const buttonIcon = layout === LayoutSetting.Grid ? 'layout-columns' : 'layout-rows';
 
     return (
         <>
@@ -26,7 +25,7 @@ const LayoutDropdown = () => {
                 ref={anchorRef}
                 aria-expanded={isOpen}
                 onClick={toggle}
-                icon={buttonIcon}
+                icon={<Icon name={layout === LayoutSetting.Grid ? 'layout-columns' : 'layout-rows'} />}
                 data-testid="toolbar-layout"
                 title={c('Title').t`Change layout`}
             >

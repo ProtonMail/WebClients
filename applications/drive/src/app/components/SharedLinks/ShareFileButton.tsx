@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { FloatingButton, SidebarPrimaryButton, useModals } from 'react-components';
+import { FloatingButton, Icon, SidebarPrimaryButton, useModals } from 'react-components';
 import SelectedFileToShareModal from '../SelectedFileToShareModal';
 
 interface Props {
@@ -21,12 +21,9 @@ const ShareFileButton = ({ shareId, floating, className }: Props) => {
     return (
         <>
             {floating ? (
-                <FloatingButton
-                    onClick={onShareFile}
-                    title={c('Action').t`Share file`}
-                    icon="link"
-                    disabled={!shareId}
-                />
+                <FloatingButton onClick={onShareFile} title={c('Action').t`Share file`} disabled={!shareId}>
+                    <Icon size={24} name="link" className="mauto" />
+                </FloatingButton>
             ) : (
                 <SidebarPrimaryButton className={className} disabled={!shareId} onClick={onShareFile}>{c('Action')
                     .t`Share file`}</SidebarPrimaryButton>

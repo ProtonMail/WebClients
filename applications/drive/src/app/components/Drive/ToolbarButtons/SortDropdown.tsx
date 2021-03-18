@@ -77,9 +77,15 @@ const SortDropdown = () => {
         },
     ];
 
-    const toolbarButtonIcon =
-        menuItems.find((item) => item.sortField === sortParams.sortField && item.sortOrder === sortParams.sortOrder)
-            ?.icon || 'sort-old-new';
+    const toolbarButtonIcon = (
+        <Icon
+            name={
+                menuItems.find(
+                    (item) => item.sortField === sortParams.sortField && item.sortOrder === sortParams.sortOrder
+                )?.icon || 'sort-old-new'
+            }
+        />
+    );
     const dropdownMenuButtons = menuItems.map((item) => (
         <DropdownMenuButton
             key={item.name}

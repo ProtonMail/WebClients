@@ -9,7 +9,7 @@ import {
     ContentModal,
     InnerModal,
     FooterModal,
-    ResetButton,
+    Button,
     Alert,
     useModals,
     Loader,
@@ -148,9 +148,9 @@ const SelectedFileToShareModal = ({ shareId, onClose, ...rest }: Props) => {
         footer: (
             <FooterModal>
                 <div className="flex flex-justify-space-between w100 flex-nowrap">
-                    <ResetButton className="w8e" disabled={loading} autoFocus>
+                    <Button type="reset" className="w8e" disabled={loading} autoFocus>
                         {c('Action').t`Cancel`}
-                    </ResetButton>
+                    </Button>
                     <PrimaryButton className="ml1 w8e" loading={loading} type="submit" disabled={shareIsDisabled}>
                         {c('Action').t`Create link`}
                     </PrimaryButton>
