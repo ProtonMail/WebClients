@@ -14,9 +14,12 @@ export enum DestinationFolder {
 }
 
 export enum IMPORT_ERROR {
-    AUTH_IMAP = 2000,
-    AUTH_CREDENTIALS = 2902,
+    IMAP_CONNECTION_ERROR = 2900,
+    AUTHENTICATION_ERROR = 2901,
     ALREADY_EXISTS = 2500,
+    OAUTH_INSUFFICIENT_SCOPES = 2027,
+    BANDWIDTH_LIMIT = 2902,
+    TEMP_PROVIDER_ERROR = 2902,
 }
 
 export interface ImportedFolder {

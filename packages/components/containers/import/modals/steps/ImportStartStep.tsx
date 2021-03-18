@@ -3,12 +3,7 @@ import { c } from 'ttag';
 
 import { Alert, Row, Label, Field, PasswordInput, EmailInput, Input, Href } from '../../../../components';
 
-import {
-    IMAPS,
-    INVALID_CREDENTIALS_ERROR_LABEL,
-    IMAP_AUTHENTICATION_ERROR_LABEL,
-    IMAP_CONNECTION_ERROR_LABEL,
-} from '../../constants';
+import { IMAPS } from '../../constants';
 
 import { Importer, ImportMailError, ImportModalModel, IMPORT_ERROR } from '../../interfaces';
 
@@ -37,11 +32,12 @@ const ImportStartStep = ({
         }
     }, [email]);
 
-    const isAuthError = [INVALID_CREDENTIALS_ERROR_LABEL, IMAP_AUTHENTICATION_ERROR_LABEL].includes(errorLabel);
-    const isIMAPError = errorLabel === IMAP_CONNECTION_ERROR_LABEL;
+    const isAuthError = errorCode === IMPORT_ERROR.AUTHENTICATION_ERROR;
+    const isIMAPError = errorCode === IMPORT_ERROR.IMAP_CONNECTION_ERROR;
     const isReconnect = currentImport?.Active?.ErrorCode === ImportMailError.ERROR_CODE_IMAP_CONNECTION;
 
     let imapPortError = isIMAPError ? errorLabel : undefined;
+
     if (invalidPortError) {
         imapPortError = c('Import error').t`Invalid IMAP port`;
     }
@@ -243,7 +239,8 @@ const ImportStartStep = ({
 
     return (
         <>
-            {isReconnect || [IMPORT_ERROR.AUTH_IMAP, IMPORT_ERROR.AUTH_CREDENTIALS].includes(errorCode) ? (
+            {isReconnect ||
+            [IMPORT_ERROR.AUTHENTICATION_ERROR, IMPORT_ERROR.IMAP_CONNECTION_ERROR].includes(errorCode) ? (
                 renderError()
             ) : (
                 <>
