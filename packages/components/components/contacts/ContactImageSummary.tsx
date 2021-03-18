@@ -12,6 +12,7 @@ import { CONTACT_IMG_SIZE } from 'proton-shared/lib/contacts/constants';
 import { useLoading, useMailSettings } from '../../hooks';
 import Loader from '../loader/Loader';
 import { Button } from '../button';
+import { Icon } from '../icon';
 
 interface Props {
     photo: string;
@@ -61,7 +62,7 @@ const ContactImageSummary = ({ photo, name }: Props) => {
 
     if (!photo) {
         return (
-            <div className="bordered bg-white-dm ratio-container-square mb0">
+            <div className="bordered bg-white-dm rounded ratio-container-square mb0">
                 <span className="inner-ratio-container flex">
                     <span className="mauto color-global-border h1">{getInitials(name)}</span>
                 </span>
@@ -98,7 +99,7 @@ const ContactImageSummary = ({ photo, name }: Props) => {
             <div className="ratio-container-square mb0 rounded bordered">
                 <span className="inner-ratio-container flex">
                     <div
-                        className="mbauto mtauto center"
+                        className="mbauto mtauto flex center"
                         style={{ width: `${Math.min(image.width || 0, image.height || 0)}px` }}
                     >
                         <div className="ratio-container-square" style={style}>
@@ -113,8 +114,10 @@ const ContactImageSummary = ({ photo, name }: Props) => {
     return (
         <div className="bordered rounded bg-white-dm ratio-container-square mb0">
             <span className="inner-ratio-container flex">
-                <span className="mauto color-global-border">
-                    <Button className="m0-5" onClick={handleClick}>{c('Action').t`Load photo`}</Button>
+                <span className="mauto text-sm lh-rg">
+                    <Icon name="remote-content" />
+                    <Button className="m0-5 p0 block button--link text-no-decoration" onClick={handleClick}>{c('Action')
+                        .t`Load image`}</Button>
                 </span>
             </span>
         </div>
