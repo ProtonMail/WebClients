@@ -6,7 +6,7 @@ import { PAYMENT_METHOD_TYPES, ADD_CARD_MODE } from 'proton-shared/lib/constants
 import { FormModal } from '../../components';
 import { useNotifications, useApi, useLoading, useModals, useEventManager } from '../../hooks';
 
-import Card from './Card';
+import CreditCard from './CreditCard';
 import useCard from './useCard';
 import toDetails from './toDetails';
 import { handlePaymentToken } from './paymentTokenHelper';
@@ -53,7 +53,7 @@ const EditCardModal = ({ card: existingCard, onClose, ...rest }) => {
             submit={c('Action').t`Save`}
             {...rest}
         >
-            <Card card={card} errors={errors} onChange={setCard} loading={loading} />
+            <CreditCard card={card} errors={errors} onChange={setCard} loading={loading} />
         </FormModal>
     );
 };
