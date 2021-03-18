@@ -5,6 +5,7 @@ export * from './autocomplete';
 export * from './badge';
 export * from './breadcrumb';
 export * from './button';
+export * from './card';
 export * from './challenge';
 export * from './collapsingBreadcrumbs';
 export * from './color';

@@ -8,7 +8,7 @@ export { default as Bitcoin } from './Bitcoin';
 export { default as CurrencySelector } from './CurrencySelector';
 export { default as CycleSelector } from './CycleSelector';
 export { default as Cash } from './Cash';
-export { default as Card } from './Card';
+export { default as CreditCard } from './CreditCard';
 export { default as BitcoinQRCode } from './BitcoinQRCode';
 export { default as toDetails } from './toDetails';
 export { default as Payment } from './Payment';
