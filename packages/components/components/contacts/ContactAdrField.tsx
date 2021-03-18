@@ -1,9 +1,7 @@
 import React, { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
-
 import { ADDRESS_COMPONENTS } from 'proton-shared/lib/contacts/constants';
-
-import { classnames } from '../../helpers';
+import { classnames, generateUID } from '../../helpers';
 import Input from '../input/Input';
 
 const { POST_BOX, EXTENDED, STREET, LOCALITY, REGION, POSTAL_CODE, COUNTRY } = ADDRESS_COMPONENTS;
@@ -19,6 +17,7 @@ const initialAddress = (address: string | string[]) => {
 };
 
 const ContactAdrField = ({ value, onChange }: Props) => {
+    const [uid] = useState(generateUID('contact-adr'));
     const [address, setAddress] = useState(initialAddress(value));
 
     const handleChange = (index: number) => ({ target }: ChangeEvent<HTMLInputElement>) => {
@@ -32,7 +31,7 @@ const ContactAdrField = ({ value, onChange }: Props) => {
         <>
             <div className="mb1">
                 <Input
-                    id="street"
+                    id={`${uid}-street`}
                     value={address[STREET]}
                     placeholder={c('Label').t`Street address`}
                     onChange={handleChange(STREET)}
@@ -41,16 +40,16 @@ const ContactAdrField = ({ value, onChange }: Props) => {
             </div>
             <div className="mb1">
                 <Input
-                    id="locality"
+                    id={`${uid}-locality`}
                     value={address[LOCALITY]}
                     placeholder={c('Label').t`City`}
                     onChange={handleChange(LOCALITY)}
                 />
             </div>
             <div className="mb1">
-                <label className="text-sm opacity-50" htmlFor="region" />
+                <label className="text-sm opacity-50" htmlFor={`${uid}-region`} />
                 <Input
-                    id="region"
+                    id={`${uid}-region`}
                     value={address[REGION]}
                     placeholder={c('Label').t`Region`}
                     onChange={handleChange(REGION)}
@@ -58,7 +57,7 @@ const ContactAdrField = ({ value, onChange }: Props) => {
             </div>
             <div className="mb1">
                 <Input
-                    id="postalCode"
+                    id={`${uid}-postalCode`}
                     value={address[POSTAL_CODE]}
                     placeholder={c('Label').t`Postal code`}
                     onChange={handleChange(POSTAL_CODE)}
@@ -66,7 +65,7 @@ const ContactAdrField = ({ value, onChange }: Props) => {
             </div>
             <div className={classnames([(address[POST_BOX] || address[EXTENDED]) && 'mb1'])}>
                 <Input
-                    id="country"
+                    id={`${uid}-country`}
                     value={address[COUNTRY]}
                     placeholder={c('Label').t`Country`}
                     onChange={handleChange(COUNTRY)}
@@ -75,7 +74,7 @@ const ContactAdrField = ({ value, onChange }: Props) => {
             {address[POST_BOX] ? (
                 <div className={classnames([address[EXTENDED] && 'mb1'])}>
                     <Input
-                        id="postBox"
+                        id={`${uid}-postBox`}
                         value={address[POST_BOX]}
                         placeholder={c('Label').t`Post office box`}
                         onChange={handleChange(POST_BOX)}
@@ -85,7 +84,7 @@ const ContactAdrField = ({ value, onChange }: Props) => {
             {address[EXTENDED] ? (
                 <div>
                     <Input
-                        id="extended"
+                        id={`${uid}-extended`}
                         value={address[EXTENDED]}
                         placeholder={c('Label').t`Extended address`}
                         onChange={handleChange(EXTENDED)}
