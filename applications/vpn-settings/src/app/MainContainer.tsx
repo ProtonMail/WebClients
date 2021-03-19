@@ -14,6 +14,8 @@ import {
     SidebarListItemsWithSubsections,
     MainLogo,
     useEarlyAccess,
+    ErrorBoundary,
+    StandardErrorPage,
 } from 'react-components';
 import { hasPermission } from 'proton-shared/lib/helpers/permissions';
 import { c } from 'ttag';
@@ -123,4 +125,13 @@ const MainContainer = () => {
         </Switch>
     );
 };
-export default MainContainer;
+
+const WrappedMainContainer = () => {
+    return (
+        <ErrorBoundary component={<StandardErrorPage />}>
+            <MainContainer />
+        </ErrorBoundary>
+    );
+};
+
+export default WrappedMainContainer;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { VpnLogo, PrimaryButton, Icon, Href, useApi, useLoading } from 'react-components';
+import { VpnLogo, PrimaryButton, Icon, Href, useApi, useLoading, ProminentContainer } from 'react-components';
 import { pushForkSession } from 'proton-shared/lib/api/auth';
 import { CLIENT_IDS } from 'proton-shared/lib/constants';
 import TVCodeInputs from './TVCodeInputs';
@@ -89,7 +89,7 @@ const TVContainer = () => {
     };
 
     return (
-        <div className="background-container h100 flex-no-min-children flex-column flex-nowrap flex-align-items-center scroll-if-needed">
+        <ProminentContainer className="background-container h100 flex-no-min-children flex-column flex-nowrap flex-align-items-center scroll-if-needed">
             <div className="flex flex-justify-center flex-align-items-center pt2">
                 <div className="w150p">
                     <Href url="https://protonvpn.com" target="_self">
@@ -101,7 +101,7 @@ const TVContainer = () => {
             <div className="flex flex-column flex-item-fluid flex-nowrap flex-item-noshrink">
                 <div className="mauto p2 flex-item-noshrink max-w30e">{render()}</div>
             </div>
-        </div>
+        </ProminentContainer>
     );
 };
 
