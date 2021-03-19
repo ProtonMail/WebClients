@@ -1,6 +1,7 @@
-import { formatData } from 'proton-shared/lib/calendar/serialize';
+import { CalendarEventBlobData } from 'proton-shared/lib/api/calendars';
 import { Calendar, SyncMultipleApiResponses } from 'proton-shared/lib/interfaces/calendar';
 import { VcalCalendarComponent, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import { ImportEventError } from '../components/import/ImportEventError';
 import { ImportFileError } from '../components/import/ImportFileError';
 import { ImportFatalError } from '../components/import/ImportFatalError';
@@ -15,7 +16,7 @@ export enum IMPORT_STEPS {
 
 export interface EncryptedEvent {
     component: VcalVeventComponent;
-    data: ReturnType<typeof formatData>;
+    data: RequireSome<CalendarEventBlobData, 'SharedEventContent' | 'SharedKeyPacket'>;
 }
 
 export interface StoredEncryptedEvent extends EncryptedEvent {

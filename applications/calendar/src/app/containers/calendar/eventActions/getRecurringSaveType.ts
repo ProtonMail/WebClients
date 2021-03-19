@@ -1,6 +1,6 @@
+import { getMustResetPartstat } from 'proton-shared/lib/calendar/integration/invite';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { RECURRING_TYPES, SAVE_CONFIRMATION_TYPES } from '../../../constants';
-import { getHasAnsweredSingleEdits } from '../../../helpers/attendees';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import { EventOldData } from '../../../interfaces/EventData';
 import { OnSaveConfirmationCb } from '../interface';
@@ -64,14 +64,18 @@ const getRecurringSaveType = async ({
     const hasSingleModifications = singleEditRecurrencesWithoutSelf.length >= 1 || exdates.length >= 1;
     const hasSingleModificationsAfter = singleEditRecurrencesAfter.length >= 1 || exdatesAfter.length >= 1;
 
-    const hasAnsweredSingleEdits = getHasAnsweredSingleEdits(singleEditRecurrencesWithoutSelf, selfAttendeeToken);
+    const mustResetPartstat = getMustResetPartstat(
+        singleEditRecurrencesWithoutSelf,
+        selfAttendeeToken,
+        inviteActions.partstat
+    );
     const updatedInviteActions = {
         ...inviteActions,
         resetSingleEditsPartstat:
             saveTypes.length === 1 &&
             saveTypes[0] === RECURRING_TYPES.ALL &&
             inviteActions.type === INVITE_ACTION_TYPES.CHANGE_PARTSTAT &&
-            hasAnsweredSingleEdits,
+            mustResetPartstat,
     };
 
     return onSaveConfirmation({

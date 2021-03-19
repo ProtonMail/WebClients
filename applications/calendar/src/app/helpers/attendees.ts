@@ -1,8 +1,7 @@
 import { canonizeEmailByGuess, canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { c } from 'ttag';
-import { toIcsPartstat } from 'proton-shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
-import { CalendarEvent, CalendarSettings } from 'proton-shared/lib/interfaces/calendar';
+import { CalendarSettings } from 'proton-shared/lib/interfaces/calendar';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { getDeviceNotifications } from '../components/eventModal/eventForm/notificationModel';
 import { DisplayNameEmail } from '../containers/calendar/interface';
@@ -65,14 +64,4 @@ export const getOrganizerDisplayData = (
     const name = displayName || cn || email;
     const title = name === email ? email : `${name} (${email})`;
     return { name, title };
-};
-
-export const getHasAnsweredSingleEdits = (events: CalendarEvent[], token?: string) => {
-    if (!token) {
-        return false;
-    }
-    return events.some(({ Attendees }) => {
-        const selfAttendee = Attendees.find(({ Token }) => Token === token);
-        return selfAttendee && toIcsPartstat(selfAttendee.Status) !== ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
-    });
 };

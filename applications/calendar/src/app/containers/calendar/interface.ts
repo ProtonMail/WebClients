@@ -99,8 +99,7 @@ export interface OnDeleteConfirmationArgs {
     type: DELETE_CONFIRMATION_TYPES;
     data?: {
         types: RECURRING_TYPES[];
-        hasSingleModifications: boolean;
-        hasOnlyCancelledSingleModifications: boolean;
+        hasNonCancelledSingleEdits: boolean;
     };
     inviteActions: InviteActions;
     isInvitation: boolean;

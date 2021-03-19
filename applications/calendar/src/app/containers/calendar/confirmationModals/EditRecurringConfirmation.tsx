@@ -125,16 +125,16 @@ const getTexts = (types: RECURRING_TYPES[], inviteActions: InviteActions) => {
 
 const getRecurringWarningText = (isInvitation: boolean, inviteActions: InviteActions) => {
     if (!isInvitation) {
-        return c('Info').t`Previous modifications on this series will be lost`;
+        return c('Info').t`Previous modifications on this series will be lost.`;
     }
     if (inviteActions.resetSingleEditsPartstat) {
-        return c('Info').t`Your answers to occurrences previously updated by the organizer will be lost`;
+        return c('Info').t`Some of your answers to occurrences previously updated by the organizer will be lost.`;
     }
     return '';
 };
 
 const getRruleWarningText = () => {
-    return c('Info').t`Frequency modifications will be lost`;
+    return c('Info').t`Frequency modifications will be lost.`;
 };
 
 interface Props {

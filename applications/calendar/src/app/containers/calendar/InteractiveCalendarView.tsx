@@ -1,4 +1,4 @@
-import { updateAttendeePartstat, updateCalendar } from 'proton-shared/lib/api/calendars';
+import { updateAttendeePartstat, updateCalendar, updatePersonalEventPart } from 'proton-shared/lib/api/calendars';
 import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
 import { toApiPartstat } from 'proton-shared/lib/calendar/attendees';
 import { getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
@@ -22,6 +22,7 @@ import {
     CalendarEvent,
     SyncMultipleApiResponse,
     UpdatePartstatApiResponse,
+    UpdatePersonalPartApiResponse,
 } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
@@ -85,6 +86,8 @@ import {
     InviteActions,
     RecurringActionData,
     SendIcsActionData,
+    UpdatePartstatOperation,
+    UpdatePersonalPartOperation,
 } from '../../interfaces/Invite';
 import CalendarView from './CalendarView';
 import SendWithErrorsConfirmationModal from './confirmationModals/SendWithErrorsConfirmationModal';
@@ -106,7 +109,7 @@ import { getIsCalendarEvent } from './eventStore/cache/helper';
 import { upsertSyncMultiActionsResponses } from './eventStore/cache/upsertResponsesArray';
 import { CalendarsEventsCache, DecryptedEventTupleResult } from './eventStore/interface';
 import getSyncMultipleEventsPayload, { SyncEventActionOperations } from './getSyncMultipleEventsPayload';
-import { UpdatePartstatOperation } from './getUpdatePartstatOperation';
+import getUpdatePersonalEventPayload from './getUpdatePersonalEventPayload';
 import {
     CalendarViewEvent,
     CalendarViewEventData,
@@ -749,8 +752,7 @@ const InteractiveCalendarView = ({
                     <DeleteRecurringConfirmModal
                         types={data.types}
                         isInvitation={isInvitation}
-                        hasSingleModifications={data.hasSingleModifications}
-                        hasOnlyCancelledSingleModifications={data.hasOnlyCancelledSingleModifications}
+                        hasNonCancelledSingleEdits={data.hasNonCancelledSingleEdits}
                         inviteActions={inviteActions}
                         onClose={reject}
                         onConfirm={resolve}
@@ -814,13 +816,17 @@ const InteractiveCalendarView = ({
         handleEditEvent(newTemporaryEvent);
     };
 
-    const handleSyncActions = async ({
-        actions: multiActions,
-        texts,
-    }: {
-        actions: SyncEventActionOperations[];
-        texts: { success: string };
-    }) => {
+    const handleCreateNotification = (texts?: { success: string }) => {
+        if (!texts) {
+            return;
+        }
+        createNotification({ text: texts.success });
+    };
+
+    const handleSyncActions = async (multiActions: SyncEventActionOperations[]) => {
+        if (!multiActions.length) {
+            return [];
+        }
         const multiResponses: SyncMultipleApiResponse[] = [];
         for (const actions of multiActions) {
             const payload = await getSyncMultipleEventsPayload({
@@ -865,27 +871,57 @@ const InteractiveCalendarView = ({
 
         calendarsEventCache.rerender?.();
 
-        createNotification({ text: texts.success });
+        return multiResponses;
     };
 
-    const handleUpdatePartstatActions = async (operations: UpdatePartstatOperation[] = []) => {
-        if (!operations.length) {
+    const handleUpdatePartstatActions = async (updatePartstatOperations: UpdatePartstatOperation[] = []) => {
+        if (!updatePartstatOperations.length) {
             return;
         }
-        const requests = operations.map(({ data: { eventID, calendarID, attendeeID, partstat, updateTime } }) => () =>
-            api<UpdatePartstatApiResponse>({
-                ...updateAttendeePartstat(calendarID, eventID, attendeeID, {
-                    Status: toApiPartstat(partstat),
-                    UpdateTime: updateTime,
-                }),
-                silence: true,
-            })
+        const requests = updatePartstatOperations.map(
+            ({ data: { eventID, calendarID, attendeeID, updateTime, partstat } }) => () =>
+                api<UpdatePartstatApiResponse>({
+                    ...updateAttendeePartstat(calendarID, eventID, attendeeID, {
+                        Status: toApiPartstat(partstat),
+                        UpdateTime: updateTime,
+                    }),
+                    silence: true,
+                })
         );
         // the routes called in requests do not have any specific jail limit
         // the limit per user session is 25k requests / 900s
-        await processApiRequestsSafe(requests, 1000, 100 * 1000);
+        return processApiRequestsSafe(requests, 1000, 100 * 1000);
+    };
 
-        await call();
+    const handleUpdatePersonalPartActions = async (
+        updatePersonalPartOperations: UpdatePersonalPartOperation[] = []
+    ) => {
+        if (!updatePersonalPartOperations.length) {
+            return;
+        }
+        const requests = updatePersonalPartOperations.map(
+            ({ data: { addressID, memberID, eventID, calendarID, eventComponent } }) => async () => {
+                const payload = await getUpdatePersonalEventPayload({
+                    eventComponent,
+                    addressID,
+                    memberID,
+                    getAddressKeys,
+                });
+                return api<UpdatePersonalPartApiResponse>({
+                    ...updatePersonalEventPart(calendarID, eventID, payload),
+                    silence: true,
+                });
+            }
+        );
+        // Catch errors silently
+        try {
+            // the routes called in requests do not have any specific jail limit
+            // the limit per user session is 25k requests / 900s
+            const results = await processApiRequestsSafe(requests, 1000, 100 * 1000);
+            return results;
+        } catch (e) {
+            noop();
+        }
     };
 
     const handleDuplicateAttendees = async (duplicateAttendees: string[][]) => {
@@ -897,7 +933,7 @@ const InteractiveCalendarView = ({
     const handleSaveEvent = async (temporaryEvent: CalendarViewEventTemporaryEvent, inviteActions: InviteActions) => {
         try {
             isSavingEvent.current = true;
-            const { syncActions, updatePartstatActions } = await getSaveEventActions({
+            const { syncActions, updatePartstatActions, updatePersonalPartActions, texts } = await getSaveEventActions({
                 temporaryEvent,
                 weekStartsOn,
                 addresses,
@@ -909,8 +945,16 @@ const InteractiveCalendarView = ({
                 getCalendarBootstrap: readCalendarBootstrap,
                 getCanonicalEmails,
                 sendIcs: handleSendIcs,
+                handleSyncActions,
+                getCalendarKeys,
             });
-            await Promise.all([handleSyncActions(syncActions), handleUpdatePartstatActions(updatePartstatActions)]);
+            await Promise.all([
+                handleSyncActions(syncActions),
+                handleUpdatePartstatActions(updatePartstatActions),
+                handleUpdatePersonalPartActions(updatePersonalPartActions),
+            ]);
+            handleCreateNotification(texts);
+            await call();
         } catch (e) {
             createNotification({ text: e.message, type: 'error' });
         } finally {
@@ -920,7 +964,12 @@ const InteractiveCalendarView = ({
 
     const handleDeleteEvent = async (targetEvent: CalendarViewEvent, inviteActions: InviteActions) => {
         try {
-            const { syncActions, updatePartstatActions } = await getDeleteEventActions({
+            const {
+                syncActions,
+                updatePartstatActions,
+                updatePersonalPartActions,
+                texts,
+            } = await getDeleteEventActions({
                 targetEvent,
                 addresses,
                 onDeleteConfirmation: handleDeleteConfirmation,
@@ -930,7 +979,12 @@ const InteractiveCalendarView = ({
                 inviteActions,
                 sendIcs: handleSendIcs,
             });
-            await Promise.all([handleSyncActions(syncActions), handleUpdatePartstatActions(updatePartstatActions)]);
+            await Promise.all([
+                handleSyncActions(syncActions),
+                handleUpdatePartstatActions(updatePartstatActions),
+                handleUpdatePersonalPartActions(updatePersonalPartActions),
+            ]);
+            handleCreateNotification(texts);
         } catch (e) {
             createNotification({ text: e.message, type: 'error' });
         }

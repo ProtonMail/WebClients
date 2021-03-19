@@ -1,10 +1,19 @@
 import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import { getUpdatedInviteVevent } from 'proton-shared/lib/calendar/integration/invite';
+import { omit } from 'proton-shared/lib/helpers/object';
 import { Address } from 'proton-shared/lib/interfaces';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
+import { SyncMultipleApiResponse, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
+import { useGetCalendarKeys } from 'react-components';
 import { SAVE_CONFIRMATION_TYPES } from '../../../constants';
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
-import { INVITE_ACTION_TYPES, InviteActions, SendIcsActionData } from '../../../interfaces/Invite';
+import {
+    INVITE_ACTION_TYPES,
+    InviteActions,
+    SendIcsActionData,
+    UpdatePartstatOperation,
+    UpdatePersonalPartOperation,
+} from '../../../interfaces/Invite';
+import { getSharedEventIDAndSessionKey } from '../event/getEventHelper';
 import {
     getCreateSyncOperation,
     getDeleteSyncOperation,
@@ -12,6 +21,9 @@ import {
     SyncEventActionOperations,
 } from '../getSyncMultipleEventsPayload';
 import { OnSaveConfirmationCb } from '../interface';
+import { withUpdatedDtstamp } from './dtstamp';
+import getChangePartstatActions from './getChangePartstatActions';
+import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
 
 const { SEND_INVITATION, SEND_UPDATE, CHANGE_PARTSTAT } = INVITE_ACTION_TYPES;
 
@@ -19,12 +31,14 @@ interface SaveEventHelperArguments {
     oldEditEventData?: EventOldData;
     newEditEventData: EventNewData;
     selfAddress?: Address;
-    onSaveConfirmation: OnSaveConfirmationCb;
     inviteActions: InviteActions;
+    onSaveConfirmation: OnSaveConfirmationCb;
+    getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
     sendIcs: (
         data: SendIcsActionData
     ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions }>;
     onDuplicateAttendees: (veventComponent: VcalVeventComponent, inviteActions: InviteActions) => Promise<void>;
+    handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
 }
 const getSaveSingleEventActions = async ({
     oldEditEventData,
@@ -35,13 +49,17 @@ const getSaveSingleEventActions = async ({
         veventComponent: newVeventComponent,
     },
     selfAddress,
-    onSaveConfirmation,
     inviteActions,
+    getCalendarKeys,
+    onSaveConfirmation,
     sendIcs,
     onDuplicateAttendees,
+    handleSyncActions,
 }: SaveEventHelperArguments): Promise<{
     multiSyncActions: SyncEventActionOperations[];
     inviteActions: InviteActions;
+    updatePartstatActions?: UpdatePartstatOperation[];
+    updatePersonalPartActions?: UpdatePersonalPartOperation[];
 }> => {
     const oldEvent = oldEditEventData?.eventData;
     const oldCalendarID = oldEditEventData?.calendarID;
@@ -49,7 +67,7 @@ const getSaveSingleEventActions = async ({
     const oldMemberID = oldEditEventData?.memberID;
     const oldVeventComponent = oldEditEventData?.veventComponent;
 
-    const { type: inviteType, partstat } = inviteActions;
+    const { type: inviteType } = inviteActions;
     const isUpdateEvent = !!oldEvent;
     const isSwitchCalendar = isUpdateEvent && oldCalendarID !== newCalendarID;
 
@@ -60,15 +78,16 @@ const getSaveSingleEventActions = async ({
             throw new Error('Missing event');
         }
         const isSendType = [SEND_INVITATION, SEND_UPDATE].includes(inviteType);
-        const method = isSendType ? ICAL_METHOD.REQUEST : undefined;
-        const updatedVeventComponent = getUpdatedInviteVevent(newVeventComponent, oldVeventComponent, method);
-        const updatedInviteActions = inviteActions;
         if (!oldCalendarID || !oldAddressID || !oldMemberID) {
             throw new Error('Missing parameters to switch calendar');
         }
         if (isSendType) {
             throw new Error('Cannot change the calendar of an event you are organizing');
             // If we ever change this behavior, the following code would become relevant
+            //
+            // const method = isSendType ? ICAL_METHOD.REQUEST : undefined;
+            // const updatedVeventComponent = getUpdatedInviteVevent(newVeventComponent, oldVeventComponent, method);
+            // const updatedInviteActions = inviteActions;
             // await onSaveConfirmation({
             //     type: SAVE_CONFIRMATION_TYPES.SINGLE,
             //     inviteActions,
@@ -84,7 +103,7 @@ const getSaveSingleEventActions = async ({
             //     updatedInviteActions = cleanInviteActions;
             // }
         }
-        const updateOperation = getUpdateSyncOperation(updatedVeventComponent, oldEvent);
+        const updateOperation = getUpdateSyncOperation(newVeventComponent, oldEvent);
         const deleteOperation = getDeleteSyncOperation(oldEvent);
         const multiSyncActions = [
             {
@@ -100,19 +119,42 @@ const getSaveSingleEventActions = async ({
                 operations: [deleteOperation],
             },
         ];
-        return { multiSyncActions, inviteActions: updatedInviteActions };
+        return { multiSyncActions, inviteActions };
     }
 
-    if (isUpdateEvent && oldEvent && oldVeventComponent) {
+    if (isUpdateEvent) {
+        if (!oldEvent || !oldVeventComponent || !oldCalendarID || !oldAddressID || !oldMemberID) {
+            throw new Error('Missing parameters to update event');
+        }
         if (inviteType === CHANGE_PARTSTAT) {
-            if (!partstat) {
-                throw new Error('Cannot update participation status without new answer');
-            }
-            await sendIcs({ inviteActions, vevent: newVeventComponent });
+            // the attendee changes answer
+            return getChangePartstatActions({
+                inviteActions,
+                eventComponent: newVeventComponent,
+                event: oldEvent,
+                memberID: newMemberID,
+                addressID: newAddressID,
+                sendIcs,
+            });
+        }
+        if (!oldEvent.IsOrganizer) {
+            // the attendee edits notifications. We must do it through the updatePartstat route
+            return getUpdatePersonalPartActions({
+                eventComponent: newVeventComponent,
+                event: oldEvent,
+                memberID: newMemberID,
+                addressID: newAddressID,
+                inviteActions,
+            });
         }
         const isSendType = [SEND_INVITATION, SEND_UPDATE].includes(inviteType);
         const method = isSendType ? ICAL_METHOD.REQUEST : undefined;
-        let updatedVeventComponent = getUpdatedInviteVevent(newVeventComponent, oldVeventComponent, method);
+        const veventComponentWithUpdatedDtstamp = withUpdatedDtstamp(newVeventComponent, oldVeventComponent);
+        let updatedVeventComponent = getUpdatedInviteVevent(
+            veventComponentWithUpdatedDtstamp,
+            oldVeventComponent,
+            method
+        );
         let updatedInviteActions = inviteActions;
         if (isSendType) {
             await onSaveConfirmation({
@@ -145,8 +187,10 @@ const getSaveSingleEventActions = async ({
         return { multiSyncActions, inviteActions: updatedInviteActions };
     }
 
+    // it's a new event
     let updatedVeventComponent = newVeventComponent;
     let updatedInviteActions = inviteActions;
+    let intermediateEvent;
     if (inviteType === SEND_INVITATION) {
         if (!selfAddress) {
             throw new Error('Cannot create an event without user address');
@@ -156,8 +200,38 @@ const getSaveSingleEventActions = async ({
             inviteActions,
             isInvitation: false,
         });
+
+        // we need to get a SharedEventID before sending out the invitation
+        // for that we will save the event first without attendees
+        const createIntermediateOperation = getCreateSyncOperation(omit(updatedVeventComponent, ['attendee']));
+        const multiSyncIntermediateActions = [
+            {
+                calendarID: newCalendarID,
+                addressID: newAddressID,
+                memberID: newMemberID,
+                operations: [createIntermediateOperation],
+            },
+        ];
+        const [
+            {
+                Responses: [
+                    {
+                        Response: { Event },
+                    },
+                ],
+            },
+        ] = await handleSyncActions(multiSyncIntermediateActions);
+        intermediateEvent = Event;
+        const { sharedEventID, sharedSessionKey } = await getSharedEventIDAndSessionKey({
+            calendarEvent: intermediateEvent,
+            getCalendarKeys,
+        });
+        if (sharedEventID && sharedSessionKey) {
+            updatedInviteActions.sharedEventID = sharedEventID;
+            updatedInviteActions.sharedSessionKey = sharedSessionKey;
+        }
         const { veventComponent: cleanVeventComponent, inviteActions: cleanInviteActions } = await sendIcs({
-            inviteActions,
+            inviteActions: updatedInviteActions,
             vevent: newVeventComponent,
             cancelVevent: oldVeventComponent,
         });
@@ -167,13 +241,15 @@ const getSaveSingleEventActions = async ({
         }
     }
 
-    const createOperation = getCreateSyncOperation(updatedVeventComponent);
+    const createOrUpdateOperation = intermediateEvent
+        ? getUpdateSyncOperation(updatedVeventComponent, intermediateEvent)
+        : getCreateSyncOperation(updatedVeventComponent);
     const multiSyncActions = [
         {
             calendarID: newCalendarID,
             addressID: newAddressID,
             memberID: newMemberID,
-            operations: [createOperation],
+            operations: [createOrUpdateOperation],
         },
     ];
     return { multiSyncActions, inviteActions: updatedInviteActions };

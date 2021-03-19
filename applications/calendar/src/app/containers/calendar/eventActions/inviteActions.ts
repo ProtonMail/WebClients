@@ -8,6 +8,7 @@ import {
     getHasUpdatedInviteData,
 } from 'proton-shared/lib/calendar/integration/invite';
 import { getAttendeePartstat, getHasAttendees } from 'proton-shared/lib/calendar/vcalHelper';
+import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { getIsAddressDisabled } from 'proton-shared/lib/helpers/address';
 import { canonizeEmailByGuess } from 'proton-shared/lib/helpers/email';
 import { GetVTimezones, Recipient } from 'proton-shared/lib/interfaces';
@@ -195,7 +196,16 @@ export const getSendIcsAction = ({
     onReplyError: (e: Error) => void;
     onCancelError: (e: Error) => void;
 }) => async () => {
-    const { type, selfAddress, selfAttendeeIndex, partstat, addedAttendees, removedAttendees } = inviteActions;
+    const {
+        type,
+        sharedEventID,
+        sharedSessionKey,
+        selfAddress,
+        selfAttendeeIndex,
+        partstat,
+        addedAttendees,
+        removedAttendees,
+    } = inviteActions;
     if (!selfAddress) {
         throw new Error('Cannot reply without a self address');
     }
@@ -211,12 +221,22 @@ export const getSendIcsAction = ({
             if (!vevent) {
                 throw new Error('Cannot build invite ics without the event component');
             }
+            if (!sharedEventID || !sharedSessionKey) {
+                throw new Error('Missing shared event data');
+            }
             const { attendee: attendees } = vevent;
             const vtimezones = await generateVtimezonesComponents(vevent, getVTimezones);
+            const pmVevent = FEATURE_FLAGS.includes('proton-proton-invites')
+                ? {
+                      ...vevent,
+                      'x-pm-shared-event-id': { value: sharedEventID },
+                      'x-pm-session-key': { value: sharedSessionKey },
+                  }
+                : vevent;
             const inviteIcs = createInviteIcs({
                 method: ICAL_METHOD.REQUEST,
                 prodId,
-                vevent,
+                vevent: pmVevent,
                 vtimezones,
             });
             if (!hasAddedAttendees && !hasRemovedAttendees && attendees?.length) {
@@ -294,11 +314,19 @@ export const getSendIcsAction = ({
             if (!selfAddress) {
                 throw new Error('Cannot build request ics without organizer and attendees');
             }
+            if (!sharedEventID || !sharedSessionKey) {
+                throw new Error('Missing shared event data');
+            }
             const vtimezones = await generateVtimezonesComponents(vevent, getVTimezones);
+            const pmVevent = {
+                ...vevent,
+                'x-pm-shared-event-id': { value: sharedEventID },
+                'x-pm-session-key': { value: sharedSessionKey },
+            };
             const inviteIcs = createInviteIcs({
                 method: ICAL_METHOD.REQUEST,
                 prodId,
-                vevent,
+                vevent: pmVevent,
                 vtimezones,
             });
             const addedAttendeesEmails = (addedAttendees || []).map((attendee) => getAttendeeEmail(attendee));

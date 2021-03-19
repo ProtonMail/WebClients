@@ -6,7 +6,11 @@ import {
     UpdateCalendarEventSyncData,
 } from 'proton-shared/lib/api/calendars';
 import getCreationKeys from 'proton-shared/lib/calendar/integration/getCreationKeys';
-import { createCalendarEvent, getHasSharedKeyPacket } from 'proton-shared/lib/calendar/serialize';
+import {
+    createCalendarEvent,
+    getHasSharedEventContent,
+    getHasSharedKeyPacket,
+} from 'proton-shared/lib/calendar/serialize';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { useGetAddressKeys, useGetCalendarKeys } from 'react-components';
@@ -147,6 +151,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
             if (getIsCreateSyncOperation(operation)) {
                 const data = await createCalendarEvent({
                     eventComponent: veventComponent,
+                    isCreateEvent: true,
                     isSwitchCalendar: false,
                     ...(await getCreationKeys({ addressKeys, newCalendarKeys })),
                 });
@@ -155,6 +160,10 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                     ...permissionData,
                     ...data,
                 };
+
+                if (!getHasSharedKeyPacket(dataComplete) || !getHasSharedEventContent(dataComplete)) {
+                    throw new Error('Missing shared data');
+                }
 
                 return {
                     Overwrite: 0,
@@ -172,7 +181,9 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
 
                 const data = await createCalendarEvent({
                     eventComponent: veventComponent,
+                    isCreateEvent: false,
                     isSwitchCalendar,
+                    isInvitation: !Event.IsOrganizer,
                     ...(await getCreationKeys({ Event, addressKeys, newCalendarKeys, oldCalendarKeys })),
                 });
                 const isOrganizerData = { IsOrganizer: operation.data.Event.IsOrganizer };
@@ -194,6 +205,10 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                             SharedEventID: Event.SharedEventID,
                         },
                     };
+                }
+
+                if (!getHasSharedEventContent(dataComplete)) {
+                    throw new Error('Missing shared event content');
                 }
 
                 return {

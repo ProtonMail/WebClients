@@ -1,12 +1,13 @@
+import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
+import { getHasNonCancelledSingleEdits, getMustResetPartstat } from 'proton-shared/lib/calendar/integration/invite';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { DELETE_CONFIRMATION_TYPES, RECURRING_TYPES } from '../../../constants';
-import { getHasAnsweredSingleEdits } from '../../../helpers/attendees';
-import { getHasFutureOption, getRecurrenceEvents } from './recurringHelper';
-import { InviteActions } from '../../../interfaces/Invite';
-import { EventOldData } from '../../../interfaces/EventData';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
+import { EventOldData } from '../../../interfaces/EventData';
+import { InviteActions } from '../../../interfaces/Invite';
 import { OnDeleteConfirmationCb } from '../interface';
+import { getHasFutureOption, getRecurrenceEvents } from './recurringHelper';
 
 interface Arguments {
     originalEditEventData: EventOldData;
@@ -16,8 +17,6 @@ interface Arguments {
     veventComponent?: VcalVeventComponent;
     canOnlyDeleteAll: boolean;
     canOnlyDeleteThis: boolean;
-    hasSingleModifications: boolean;
-    hasOnlyCancelledSingleModifications: boolean;
     isInvitation: boolean;
     onDeleteConfirmation: OnDeleteConfirmationCb;
     selfAttendeeToken?: string;
@@ -28,8 +27,6 @@ const getRecurringDeleteType = ({
     recurrence,
     canOnlyDeleteAll,
     canOnlyDeleteThis,
-    hasSingleModifications,
-    hasOnlyCancelledSingleModifications,
     isInvitation,
     onDeleteConfirmation,
     inviteActions,
@@ -49,15 +46,20 @@ const getRecurringDeleteType = ({
     const singleEditRecurrencesWithoutSelf = singleEditRecurrences.filter((event) => {
         return event.ID !== originalEditEventData.eventData.ID;
     });
-    const hasAnsweredSingleEdits = getHasAnsweredSingleEdits(singleEditRecurrencesWithoutSelf, selfAttendeeToken);
+    const mustResetPartstat = getMustResetPartstat(
+        singleEditRecurrencesWithoutSelf,
+        selfAttendeeToken,
+        ICAL_ATTENDEE_STATUS.DECLINED
+    );
     const updatedInviteActions = {
         ...inviteActions,
         resetSingleEditsPartstat:
-            deleteTypes.length === 1 && deleteTypes[0] === RECURRING_TYPES.ALL && hasAnsweredSingleEdits,
+            deleteTypes.length === 1 && deleteTypes[0] === RECURRING_TYPES.ALL && mustResetPartstat,
     };
+    const hasNonCancelledSingleEdits = getHasNonCancelledSingleEdits(singleEditRecurrencesWithoutSelf);
     return onDeleteConfirmation({
         type: DELETE_CONFIRMATION_TYPES.RECURRING,
-        data: { types: deleteTypes, hasSingleModifications, hasOnlyCancelledSingleModifications },
+        data: { types: deleteTypes, hasNonCancelledSingleEdits },
         inviteActions: updatedInviteActions,
         isInvitation,
     });

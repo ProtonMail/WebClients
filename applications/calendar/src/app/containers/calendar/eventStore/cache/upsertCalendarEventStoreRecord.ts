@@ -130,8 +130,15 @@ export const upsertCalendarEventStoreRecord = (
     const oldModifyTime = oldEventData?.ModifyTime || 0;
     const newModifyTime = newEventData?.ModifyTime || 0;
 
-    const isNewEventLastEditTime =
-        newModifyTime > oldModifyTime || (newModifyTime === oldModifyTime && !isOldEventDataFull);
+    /**
+     * There are instances of linked events where the API may inform us of a change with
+     * a ModifyTime such that newModifyTime < oldModifyTime . We still need to update in that case.
+     * This can happen if an organizer makes a modification to shared event data (shared with the attendee)
+     * but the attendee made a change to e.g. notifications before receiving the notification of the organizer change.
+     * Both modifications happen asynchronously on the BE and they need not come in order.
+     * This will be improved later by BE with a ModifyTime per calendar part
+     */
+    const isNewEventLastEditTime = newModifyTime !== oldModifyTime ? true : !isOldEventDataFull;
 
     const isNewEvent = !oldEventRecord || !oldEventData;
     const shouldUpsert = isNewEvent || isNewEventLastEditTime;

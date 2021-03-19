@@ -91,24 +91,23 @@ const getRecurringWarningText = (isInvitation: boolean, inviteActions: InviteAct
         return '';
     }
     if (inviteActions.resetSingleEditsPartstat) {
-        return c('Info').t`Occurrences previously updated by the organizer will be kept, but your answers will be lost`;
+        return c('Info')
+            .t`Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.`;
     }
-    return c('Info').t`Occurrences previously updated by the organizer will be kept`;
+    return c('Info').t`Occurrences previously updated by the organizer will be kept.`;
 };
 
 interface Props {
     types: RECURRING_TYPES[];
     isInvitation: boolean;
-    hasSingleModifications: boolean;
-    hasOnlyCancelledSingleModifications: boolean;
+    hasNonCancelledSingleEdits: boolean;
     inviteActions: InviteActions;
     onConfirm: (data: RecurringActionData) => void;
     onClose: () => void;
 }
 const DeleteRecurringConfirmModal = ({
     types,
-    hasSingleModifications,
-    hasOnlyCancelledSingleModifications,
+    hasNonCancelledSingleEdits,
     isInvitation,
     inviteActions,
     onConfirm,
@@ -116,7 +115,7 @@ const DeleteRecurringConfirmModal = ({
 }: Props) => {
     const [type, setType] = useState(types[0]);
     const { title, confirm, alertText } = getTexts(types, inviteActions);
-    const showWarning = hasSingleModifications && !hasOnlyCancelledSingleModifications && type === RECURRING_TYPES.ALL;
+    const showWarning = hasNonCancelledSingleEdits && type === RECURRING_TYPES.ALL;
     const warningText = showWarning ? getRecurringWarningText(isInvitation, inviteActions) : '';
     const handleConfirm = async () => {
         onConfirm({ type, inviteActions });

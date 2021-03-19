@@ -1,5 +1,9 @@
 import { CreateCalendarEventSyncData, syncMultipleEvents } from 'proton-shared/lib/api/calendars';
-import { createCalendarEvent } from 'proton-shared/lib/calendar/serialize';
+import {
+    createCalendarEvent,
+    getHasSharedEventContent,
+    getHasSharedKeyPacket,
+} from 'proton-shared/lib/calendar/serialize';
 import getCreationKeys from 'proton-shared/lib/calendar/integration/getCreationKeys';
 import { chunk } from 'proton-shared/lib/helpers/array';
 import { wait } from 'proton-shared/lib/helpers/promise';
@@ -30,9 +34,13 @@ const encryptEvent = async (
     try {
         const data = await createCalendarEvent({
             eventComponent,
+            isCreateEvent: true,
             isSwitchCalendar: false,
             ...(await getCreationKeys({ addressKeys, newCalendarKeys: calendarKeys })),
         });
+        if (!getHasSharedKeyPacket(data) || !getHasSharedEventContent(data)) {
+            throw new Error('Missing shared data');
+        }
         return { data, component: eventComponent };
     } catch (error) {
         return new ImportEventError(IMPORT_EVENT_ERROR_TYPE.ENCRYPTION_ERROR, uid, 'vevent');
