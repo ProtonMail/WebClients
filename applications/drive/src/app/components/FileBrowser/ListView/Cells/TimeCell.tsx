@@ -1,5 +1,5 @@
 import React from 'react';
-import readableTime from 'proton-shared/lib/helpers/readableTime';
+import { readableTime } from 'proton-shared/lib/helpers/time';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { Time } from 'react-components';
 

@@ -2,9 +2,8 @@ import React, { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { dateLocale } from 'proton-shared/lib/i18n';
-import readableTime from 'proton-shared/lib/helpers/readableTime';
-
 import { Icon, LargeButton, FileNameDisplay } from 'react-components';
+import { readableTime } from 'proton-shared/lib/helpers/time';
 
 import DownloadProgressBar from './DownloadProgressBar';
 import SizeCell from '../FileBrowser/ListView/Cells/SizeCell';
