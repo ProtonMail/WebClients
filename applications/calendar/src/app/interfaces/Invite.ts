@@ -18,6 +18,8 @@ export enum INVITE_ACTION_TYPES {
 
 export interface InviteActions {
     type: INVITE_ACTION_TYPES;
+    sharedEventID?: string;
+    sharedSessionKey?: string;
     partstat?: ICAL_ATTENDEE_STATUS;
     sendCancellationNotice?: boolean;
     resetSingleEditsPartstat?: boolean;
@@ -41,4 +43,24 @@ export interface SendIcsActionData {
 
 export interface CleanSendIcsActionData extends SendIcsActionData {
     sendPreferencesMap: SimpleMap<SendPreferences>;
+}
+
+export interface UpdatePartstatOperation {
+    data: {
+        calendarID: string;
+        eventID: string;
+        attendeeID: string;
+        partstat: ICAL_ATTENDEE_STATUS;
+        updateTime: number;
+    };
+}
+
+export interface UpdatePersonalPartOperation {
+    data: {
+        memberID: string;
+        calendarID: string;
+        eventID: string;
+        addressID?: string;
+        eventComponent?: VcalVeventComponent;
+    };
 }

@@ -2,6 +2,7 @@ import { getIsRruleSubset } from 'proton-shared/lib/calendar/rruleSubset';
 import { getHasModifiedDateTimes } from 'proton-shared/lib/calendar/vcalConverter';
 import { getIsPropertyAllDay } from 'proton-shared/lib/calendar/vcalHelper';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { withUpdatedDtstamp } from './dtstamp';
 
 export const withIncreasedSequence = (vevent: VcalVeventComponent) => {
     const sequenceValue = vevent.sequence?.value;
@@ -34,4 +35,8 @@ export const withVeventSequence = (vevent: VcalVeventComponent, oldVevent: VcalV
         ...vevent,
         sequence: { value: oldSequenceValue + 1 },
     };
+};
+
+export const withUpdatedDtstampAndSequence = (newVevent: VcalVeventComponent, oldVevent: VcalVeventComponent) => {
+    return withVeventSequence(withUpdatedDtstamp(newVevent, oldVevent), oldVevent);
 };

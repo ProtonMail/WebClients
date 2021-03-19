@@ -1,20 +1,26 @@
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
+import { getResetPartstatActions } from 'proton-shared/lib/calendar/integration/invite';
+import { getIsEventCancelled } from 'proton-shared/lib/calendar/veventHelper';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
-import { getIsEventCancelled } from '../../../helpers/event';
-import getUpdatePartstatOperation, { UpdatePartstatOperation } from '../getUpdatePartstatOperation';
-import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
-import deleteSingleRecurrence from '../recurrence/deleteSingleRecurrence';
 import { RECURRING_TYPES } from '../../../constants';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import { EventOldData } from '../../../interfaces/EventData';
-import { INVITE_ACTION_TYPES, InviteActions, SendIcsActionData } from '../../../interfaces/Invite';
+import {
+    INVITE_ACTION_TYPES,
+    InviteActions,
+    SendIcsActionData,
+    UpdatePartstatOperation,
+    UpdatePersonalPartOperation,
+} from '../../../interfaces/Invite';
 import {
     getDeleteSyncOperation,
     getUpdateSyncOperation,
     SyncEventActionOperations,
 } from '../getSyncMultipleEventsPayload';
+import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
+import deleteSingleRecurrence from '../recurrence/deleteSingleRecurrence';
 import { getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
 
 interface DeleteRecurringArguments {
@@ -51,8 +57,9 @@ export const getDeleteRecurringEventActions = async ({
     multiSyncActions: SyncEventActionOperations[];
     inviteActions: InviteActions;
     updatePartstatActions?: UpdatePartstatOperation[];
+    updatePersonalPartActions?: UpdatePersonalPartOperation[];
 }> => {
-    const { type: inviteType, sendCancellationNotice, resetSingleEditsPartstat } = inviteActions;
+    const { type: inviteType, sendCancellationNotice } = inviteActions;
     const isDeclineInvitation = inviteType === INVITE_ACTION_TYPES.DECLINE_INVITATION && sendCancellationNotice;
     const isCancelInvitation = inviteType === INVITE_ACTION_TYPES.CANCEL_INVITATION;
     let updatedInviteActions = inviteActions;
@@ -140,16 +147,34 @@ export const getDeleteRecurringEventActions = async ({
             ? [originalEvent].concat(singleEditRecurrences.filter((event) => getIsEventCancelled(event)))
             : recurrences;
         const deleteOperations = eventsToDelete.map(getDeleteSyncOperation);
-        const resetPartstatOperations =
-            isInvitation && resetSingleEditsPartstat
-                ? singleEditRecurrences.map((event) =>
-                      getUpdatePartstatOperation({
-                          event,
-                          token: selfAttendeeToken,
-                          partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
-                      })
-                  )
-                : [];
+        const resetPartstatOperations: UpdatePartstatOperation[] = [];
+        const dropPersonalPartOperations: UpdatePersonalPartOperation[] = [];
+        if (selfAttendeeToken) {
+            const { updatePartstatActions, updatePersonalPartActions } = getResetPartstatActions(
+                singleEditRecurrences,
+                selfAttendeeToken,
+                ICAL_ATTENDEE_STATUS.DECLINED
+            );
+            resetPartstatOperations.push(
+                ...updatePartstatActions.map(({ calendarID, eventID, updateTime, attendeeID }) => {
+                    return {
+                        data: {
+                            calendarID,
+                            eventID,
+                            updateTime,
+                            attendeeID,
+                            partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
+                        },
+                    };
+                })
+            );
+            dropPersonalPartOperations.push(
+                ...updatePersonalPartActions.map(({ calendarID, eventID }) => {
+                    return { data: { memberID: originalMemberID, calendarID, eventID } };
+                })
+            );
+        }
+
         return {
             multiSyncActions: [
                 {
@@ -161,6 +186,7 @@ export const getDeleteRecurringEventActions = async ({
             ],
             inviteActions: updatedInviteActions,
             updatePartstatActions: resetPartstatOperations,
+            updatePersonalPartActions: dropPersonalPartOperations,
         };
     }
 

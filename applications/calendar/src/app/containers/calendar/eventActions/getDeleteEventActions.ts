@@ -6,16 +6,20 @@ import { Address, Api } from 'proton-shared/lib/interfaces';
 import { CalendarBootstrap, CalendarEvent, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
 import { getEventDeletedText, getRecurringEventDeletedText } from '../../../components/eventModal/eventForm/i18n';
 import { DELETE_CONFIRMATION_TYPES } from '../../../constants';
-import { getIsEventCancelled } from '../../../helpers/event';
 import { EventOldData } from '../../../interfaces/EventData';
-import { INVITE_ACTION_TYPES, InviteActions, SendIcsActionData } from '../../../interfaces/Invite';
+import {
+    INVITE_ACTION_TYPES,
+    InviteActions,
+    SendIcsActionData,
+    UpdatePartstatOperation,
+    UpdatePersonalPartOperation,
+} from '../../../interfaces/Invite';
 import getEditEventData from '../event/getEditEventData';
 import getSingleEditRecurringData from '../event/getSingleEditRecurringData';
 import { getIsCalendarEvent } from '../eventStore/cache/helper';
 import { GetDecryptedEventCb } from '../eventStore/interface';
 import getAllEventsByUID from '../getAllEventsByUID';
 import { getDeleteSyncOperation, SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
-import { UpdatePartstatOperation } from '../getUpdatePartstatOperation';
 import { CalendarViewEvent, OnDeleteConfirmationCb } from '../interface';
 import { getDeleteRecurringEventActions } from './getDeleteRecurringEventActions';
 import getRecurringDeleteType from './getRecurringDeleteType';
@@ -75,12 +79,8 @@ const getDeleteSingleEventActionsHelper = async ({
     ];
     const successText = getEventDeletedText(updatedInviteActions);
     return {
-        syncActions: {
-            actions: multiActions,
-            texts: {
-                success: successText,
-            },
-        },
+        syncActions: multiActions,
+        texts: { success: successText },
     };
 };
 
@@ -109,13 +109,10 @@ const getDeleteEventActions = async ({
     inviteActions,
     sendIcs,
 }: Arguments): Promise<{
-    syncActions: {
-        actions: SyncEventActionOperations[];
-        texts: {
-            success: string;
-        };
-    };
+    syncActions: SyncEventActionOperations[];
     updatePartstatActions?: UpdatePartstatOperation[];
+    updatePersonalPartActions?: UpdatePersonalPartOperation[];
+    texts: { success: string };
 }> => {
     const calendarBootstrap = getCalendarBootstrap(oldCalendarData.ID);
     if (!calendarBootstrap) {
@@ -182,11 +179,6 @@ const getDeleteEventActions = async ({
     });
     const isDeleteInvitation = [DECLINE_INVITATION, DECLINE_DISABLED].includes(updatedDeleteInviteActions.type);
     const isCancelInvitation = [CANCEL_INVITATION, CANCEL_DISABLED].includes(updatedDeleteInviteActions.type);
-    const recurrencesWithoutSelf = recurrences.filter((event) => {
-        return event.ID !== oldEditEventData.eventData.ID;
-    });
-    const hasSingleModifications = !!recurrencesWithoutSelf.length;
-    const hasOnlyCancelledSingleModifications = !recurrencesWithoutSelf.some((event) => !getIsEventCancelled(event));
     const selfAttendeeToken = getSelfAttendeeToken(originalEditEventData.veventComponent, addresses);
 
     const { type: deleteType, inviteActions: updatedInviteActions } = await getRecurringDeleteType({
@@ -202,8 +194,6 @@ const getDeleteEventActions = async ({
         onDeleteConfirmation,
         recurrences,
         recurrence: actualEventRecurrence,
-        hasSingleModifications,
-        hasOnlyCancelledSingleModifications,
         inviteActions: updatedDeleteInviteActions,
         isInvitation,
         selfAttendeeToken,
@@ -212,6 +202,7 @@ const getDeleteEventActions = async ({
         multiSyncActions,
         inviteActions: deleteInviteActions,
         updatePartstatActions,
+        updatePersonalPartActions,
     } = await getDeleteRecurringEventActions({
         type: deleteType,
         recurrence: actualEventRecurrence,
@@ -225,13 +216,12 @@ const getDeleteEventActions = async ({
     });
     const successText = getRecurringEventDeletedText(deleteType, deleteInviteActions);
     return {
-        syncActions: {
-            actions: multiSyncActions,
-            texts: {
-                success: successText,
-            },
-        },
+        syncActions: multiSyncActions,
         updatePartstatActions,
+        updatePersonalPartActions,
+        texts: {
+            success: successText,
+        },
     };
 };
 

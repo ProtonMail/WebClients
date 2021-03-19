@@ -1,26 +1,34 @@
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
-import { getUpdatedInviteVevent } from 'proton-shared/lib/calendar/integration/invite';
+import { getResetPartstatActions, getUpdatedInviteVevent } from 'proton-shared/lib/calendar/integration/invite';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { RECURRING_TYPES } from '../../../constants';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
-import { INVITE_ACTION_TYPES, InviteActions, SendIcsActionData } from '../../../interfaces/Invite';
+import {
+    INVITE_ACTION_TYPES,
+    InviteActions,
+    SendIcsActionData,
+    UpdatePartstatOperation,
+    UpdatePersonalPartOperation,
+} from '../../../interfaces/Invite';
 import {
     getCreateSyncOperation,
     getDeleteSyncOperation,
     getUpdateSyncOperation,
     SyncEventActionOperations,
 } from '../getSyncMultipleEventsPayload';
-import getUpdatePartstatOperation, { UpdatePartstatOperation } from '../getUpdatePartstatOperation';
 import createFutureRecurrence from '../recurrence/createFutureRecurrence';
 import createSingleRecurrence from '../recurrence/createSingleRecurrence';
 import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
 import updateAllRecurrence from '../recurrence/updateAllRecurrence';
 import updateSingleRecurrence from '../recurrence/updateSingleRecurrence';
+import { withUpdatedDtstamp } from './dtstamp';
+import getChangePartstatActions from './getChangePartstatActions';
 import { UpdateAllPossibilities } from './getRecurringUpdateAllPossibilities';
+import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
 import { getCurrentEvent, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
-import { withIncreasedSequence, withVeventSequence } from './sequence';
+import { withIncreasedSequence, withUpdatedDtstampAndSequence, withVeventSequence } from './sequence';
 
 interface SaveRecurringArguments {
     type: RECURRING_TYPES;
@@ -65,8 +73,9 @@ const getSaveRecurringEventActions = async ({
     multiSyncActions: SyncEventActionOperations[];
     inviteActions: InviteActions;
     updatePartstatActions?: UpdatePartstatOperation[];
+    updatePersonalPartActions?: UpdatePersonalPartOperation[];
 }> => {
-    const { type: inviteType, partstat: invitePartstat, resetSingleEditsPartstat } = inviteActions;
+    const { type: inviteType, partstat: invitePartstat } = inviteActions;
     const isSingleEdit = oldEvent.ID !== originalEvent.ID;
 
     if (!originalVeventComponent) {
@@ -74,13 +83,6 @@ const getSaveRecurringEventActions = async ({
     }
     if (!oldVeventComponent) {
         throw Error('Old component missing');
-    }
-
-    if (inviteType === INVITE_ACTION_TYPES.CHANGE_PARTSTAT) {
-        if (!invitePartstat) {
-            throw new Error('Cannot update participation status without new answer');
-        }
-        await sendIcs({ inviteActions, vevent: newVeventComponent });
     }
 
     if (type === RECURRING_TYPES.SINGLE) {
@@ -94,6 +96,29 @@ const getSaveRecurringEventActions = async ({
             ? [getUpdateSyncOperation(originalVeventWithSequence, originalEvent)]
             : [];
         if (isSingleEdit) {
+            if (inviteType === INVITE_ACTION_TYPES.CHANGE_PARTSTAT) {
+                // the attendee changes answer
+                // the sequence is not affected by simply updating the partstast
+                return getChangePartstatActions({
+                    inviteActions,
+                    eventComponent: newVeventComponent,
+                    event: oldEvent,
+                    memberID: newMemberID,
+                    addressID: newAddressID,
+                    sendIcs,
+                });
+            }
+            if (!oldEvent.IsOrganizer) {
+                // the attendee edits notifications. We must do it through the updatePartstat route
+                return getUpdatePersonalPartActions({
+                    eventComponent: newVeventComponent,
+                    event: oldEvent,
+                    memberID: newMemberID,
+                    addressID: newAddressID,
+                    inviteActions,
+                });
+            }
+
             // the sequence of the child must not be smaller than that of the parent
             // we could see such scenarios on production in chains where the parent was updated, but not all of its children
             const safeOldSequenceValue = Math.max(
@@ -107,7 +132,7 @@ const getSaveRecurringEventActions = async ({
             const oldVeventWithSequence = oldVeventComponent.sequence
                 ? oldVeventWithSafeSequence
                 : withVeventSequence(oldVeventComponent, getCurrentEvent(originalVeventWithSequence, recurrence));
-            const newVeventWithSequence = withVeventSequence(
+            const newVeventWithSequence = withUpdatedDtstampAndSequence(
                 updateSingleRecurrence(newVeventComponent),
                 oldVeventWithSequence
             );
@@ -133,7 +158,7 @@ const getSaveRecurringEventActions = async ({
             recurrence.localStart
         );
         const createOperation = getCreateSyncOperation(
-            withVeventSequence(newRecurrenceVeventComponent, oldRecurrenceVeventComponent)
+            withUpdatedDtstampAndSequence(newRecurrenceVeventComponent, oldRecurrenceVeventComponent)
         );
 
         return {
@@ -150,11 +175,11 @@ const getSaveRecurringEventActions = async ({
     }
 
     if (type === RECURRING_TYPES.FUTURE) {
-        const newVeventWithSequence = {
+        const newVeventWithSequence = withUpdatedDtstamp({
             ...newVeventComponent,
             sequence: { value: 0 },
-        };
-        const originalVeventWithSequence = withIncreasedSequence(originalVeventComponent);
+        });
+        const originalVeventWithSequence = withUpdatedDtstamp(withIncreasedSequence(originalVeventComponent));
         // Any single edits in the recurrence chain.
         const singleEditRecurrences = getRecurrenceEvents(recurrences, originalEvent);
 
@@ -186,21 +211,61 @@ const getSaveRecurringEventActions = async ({
     }
 
     if (type === RECURRING_TYPES.ALL) {
+        const isSwitchCalendar = originalCalendarID !== newCalendarID;
         // Any single edits in the recurrence chain.
         const singleEditRecurrences = getRecurrenceEvents(recurrences, originalEvent);
         // For an invitation, we do not want to delete single edits as we want to keep in sync with the organizer's event
         const deleteOperations = isInvitation ? [] : singleEditRecurrences.map(getDeleteSyncOperation);
-        const resetPartstatOperations =
-            isInvitation && resetSingleEditsPartstat
-                ? singleEditRecurrences.map((event) =>
-                      getUpdatePartstatOperation({
-                          event,
-                          token: selfAttendeeToken,
-                          partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
-                      })
-                  )
-                : [];
-
+        if (selfAttendeeToken && invitePartstat) {
+            // the attendee changes answer
+            const { updatePartstatActions, updatePersonalPartActions } = await getChangePartstatActions({
+                inviteActions,
+                eventComponent: newVeventComponent,
+                event: oldEvent,
+                memberID: newMemberID,
+                addressID: newAddressID,
+                sendIcs,
+            });
+            const {
+                updatePartstatActions: resetPartstatActions,
+                updatePersonalPartActions: dropAlarmsActions,
+            } = getResetPartstatActions(singleEditRecurrences, selfAttendeeToken, invitePartstat);
+            updatePartstatActions.push(
+                ...resetPartstatActions.map(({ calendarID, eventID, updateTime, attendeeID }) => {
+                    return {
+                        data: {
+                            memberID: newMemberID,
+                            calendarID,
+                            eventID,
+                            updateTime,
+                            attendeeID,
+                            partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
+                        },
+                    };
+                })
+            );
+            updatePersonalPartActions.push(
+                ...dropAlarmsActions.map(({ calendarID, eventID }) => {
+                    return { data: { memberID: newMemberID, calendarID, eventID } };
+                })
+            );
+            return {
+                inviteActions,
+                multiSyncActions: [],
+                updatePartstatActions,
+                updatePersonalPartActions,
+            };
+        }
+        if (!oldEvent.IsOrganizer && !isSwitchCalendar) {
+            // the attendee edits notifications. We must do it through the updatePartstat route
+            return getUpdatePersonalPartActions({
+                eventComponent: newVeventComponent,
+                event: oldEvent,
+                memberID: newMemberID,
+                addressID: newAddressID,
+                inviteActions,
+            });
+        }
         const newRecurrentVevent = updateAllRecurrence({
             component: newVeventComponent,
             originalComponent: originalVeventComponent,
@@ -208,7 +273,10 @@ const getSaveRecurringEventActions = async ({
             isSingleEdit,
             isInvitation,
         });
-        const newRecurrentVeventWithSequence = withVeventSequence(newRecurrentVevent, originalVeventComponent);
+        const newRecurrentVeventWithSequence = withUpdatedDtstampAndSequence(
+            newRecurrentVevent,
+            originalVeventComponent
+        );
         const isSendInviteType = [INVITE_ACTION_TYPES.SEND_INVITATION, INVITE_ACTION_TYPES.SEND_UPDATE].includes(
             inviteActions.type
         );
@@ -234,7 +302,7 @@ const getSaveRecurringEventActions = async ({
 
         const updateOperation = getUpdateSyncOperation(updatedVeventComponent, originalEvent);
 
-        if (originalCalendarID !== newCalendarID) {
+        if (isSwitchCalendar) {
             const deleteOriginalOperation = getDeleteSyncOperation(originalEvent);
             return {
                 multiSyncActions: [
@@ -264,7 +332,6 @@ const getSaveRecurringEventActions = async ({
                     operations: isInvitation ? [updateOperation] : [...deleteOperations, updateOperation],
                 },
             ],
-            updatePartstatActions: resetPartstatOperations,
             inviteActions: updatedInviteActions,
         };
     }

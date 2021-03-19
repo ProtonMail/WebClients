@@ -10,19 +10,26 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { Address, Api, GetCanonicalEmails } from 'proton-shared/lib/interfaces';
-import { CalendarBootstrap, VcalDays } from 'proton-shared/lib/interfaces/calendar';
+import { CalendarBootstrap, SyncMultipleApiResponse, VcalDays } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { useGetCalendarKeys } from 'react-components';
 import { getRecurringEventUpdatedText, getSingleEventText } from '../../../components/eventModal/eventForm/i18n';
 import { modelToVeventComponent } from '../../../components/eventModal/eventForm/modelToProperties';
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
-import { INVITE_ACTION_TYPES, InviteActions, SendIcsActionData } from '../../../interfaces/Invite';
+import {
+    INVITE_ACTION_TYPES,
+    InviteActions,
+    SendIcsActionData,
+    UpdatePartstatOperation,
+    UpdatePersonalPartOperation,
+} from '../../../interfaces/Invite';
 import getEditEventData from '../event/getEditEventData';
+import { getSharedEventIDAndSessionKey } from '../event/getEventHelper';
 import getSingleEditRecurringData from '../event/getSingleEditRecurringData';
 import { getIsCalendarEvent } from '../eventStore/cache/helper';
 import { GetDecryptedEventCb } from '../eventStore/interface';
 import getAllEventsByUID from '../getAllEventsByUID';
 import { SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
-import { UpdatePartstatOperation } from '../getUpdatePartstatOperation';
 import { CalendarViewEventTemporaryEvent, OnSaveConfirmationCb } from '../interface';
 import getRecurringSaveType from './getRecurringSaveType';
 import getRecurringUpdateAllPossibilities from './getRecurringUpdateAllPossibilities';
@@ -35,19 +42,23 @@ import { withVeventSequence } from './sequence';
 const getSaveSingleEventActionsHelper = async ({
     newEditEventData,
     oldEditEventData,
+    getCalendarKeys,
     onSaveConfirmation,
     sendIcs,
     inviteActions,
     onDuplicateAttendees,
+    handleSyncActions,
 }: {
     newEditEventData: EventNewData;
     oldEditEventData: EventOldData;
+    getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
     sendIcs: (
         data: SendIcsActionData
     ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions }>;
     onSaveConfirmation: OnSaveConfirmationCb;
     inviteActions: InviteActions;
     onDuplicateAttendees: (veventComponent: VcalVeventComponent, inviteActions: InviteActions) => Promise<void>;
+    handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
 }) => {
     if (!oldEditEventData.veventComponent) {
         throw new Error('Cannot update event without old data');
@@ -61,21 +72,28 @@ const getSaveSingleEventActionsHelper = async ({
         newVevent: newVeventWithSequence,
         oldVevent: oldEditEventData.veventComponent,
     });
-    const { multiSyncActions, inviteActions: saveInviteActions } = await getSaveSingleEventActions({
+    const {
+        multiSyncActions,
+        updatePartstatActions,
+        updatePersonalPartActions,
+        inviteActions: saveInviteActions,
+    } = await getSaveSingleEventActions({
         newEditEventData: { ...newEditEventData, veventComponent: newVeventWithSequence },
         oldEditEventData,
+        getCalendarKeys,
         onSaveConfirmation,
         inviteActions: updatedInviteActions,
         sendIcs,
         onDuplicateAttendees,
+        handleSyncActions,
     });
     const successText = getSingleEventText(oldEditEventData, newEditEventData, saveInviteActions);
     return {
-        syncActions: {
-            actions: multiSyncActions,
-            texts: {
-                success: successText,
-            },
+        syncActions: multiSyncActions,
+        updatePartstatActions,
+        updatePersonalPartActions,
+        texts: {
+            success: successText,
         },
     };
 };
@@ -90,10 +108,12 @@ interface Arguments {
     api: Api;
     getEventDecrypted: GetDecryptedEventCb;
     getCalendarBootstrap: (CalendarID: string) => CalendarBootstrap;
+    getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
     getCanonicalEmails: GetCanonicalEmails;
     sendIcs: (
         data: SendIcsActionData
     ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions }>;
+    handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
 }
 
 const getSaveEventActions = async ({
@@ -106,16 +126,15 @@ const getSaveEventActions = async ({
     api,
     getEventDecrypted,
     getCalendarBootstrap,
+    getCalendarKeys,
     getCanonicalEmails,
     sendIcs,
+    handleSyncActions,
 }: Arguments): Promise<{
-    syncActions: {
-        actions: SyncEventActionOperations[];
-        texts: {
-            success: string;
-        };
-    };
+    syncActions: SyncEventActionOperations[];
     updatePartstatActions?: UpdatePartstatOperation[];
+    updatePersonalPartActions?: UpdatePersonalPartOperation[];
+    texts?: { success: string };
 }> => {
     const {
         tmpOriginalTarget: { data: { eventData: oldEventData, eventRecurrence, eventReadResult } } = { data: {} },
@@ -147,6 +166,7 @@ const getSaveEventActions = async ({
     if (!inviteActions.selfAddress) {
         inviteActionsWithSelfAddress.selfAddress = selfAddress;
     }
+    // Do not touch RRULE for invitations
     const newVeventComponent = await withPmAttendees(modelVeventComponent, getCanonicalEmails);
     const handleDuplicateAttendees = async (vevent: VcalVeventComponent, inviteActions: InviteActions) => {
         const duplicateAttendees = getDuplicateAttendeesSend(vevent, inviteActions);
@@ -173,25 +193,24 @@ const getSaveEventActions = async ({
             inviteActions: inviteActionsWithSelfAddress,
             newVevent: newVeventWithSequence,
         });
-        const { multiSyncActions, inviteActions: saveInviteActions } = await getSaveSingleEventActions({
+
+        const { multiSyncActions = [], inviteActions: saveInviteActions } = await getSaveSingleEventActions({
             newEditEventData: {
                 ...newEditEventData,
                 veventComponent: newVeventWithSequence,
             },
             selfAddress,
-            onSaveConfirmation,
             inviteActions: updatedInviteActions,
+            getCalendarKeys,
+            onSaveConfirmation,
             sendIcs,
             onDuplicateAttendees: handleDuplicateAttendees,
+            handleSyncActions,
         });
         const successText = getSingleEventText(undefined, newEditEventData, saveInviteActions);
         return {
-            syncActions: {
-                actions: multiSyncActions,
-                texts: {
-                    success: successText,
-                },
-            },
+            syncActions: multiSyncActions,
+            texts: { success: successText },
         };
     }
 
@@ -208,6 +227,14 @@ const getSaveEventActions = async ({
         eventResult: eventReadResult.result,
         memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, oldEventData.Author),
     });
+    const { sharedEventID, sharedSessionKey } = await getSharedEventIDAndSessionKey({
+        calendarEvent: oldEventData,
+        getCalendarKeys,
+    });
+    if (sharedEventID && sharedSessionKey) {
+        inviteActionsWithSelfAddress.sharedEventID = sharedEventID;
+        inviteActionsWithSelfAddress.sharedSessionKey = sharedSessionKey;
+    }
 
     // WKST should be preserved unless the user edited the RRULE explicitly. Otherwise, add it here (if needed)
     const oldWkstDay = dayToNumericDay(oldEditEventData.veventComponent?.rrule?.value.wkst || 'MO');
@@ -223,10 +250,12 @@ const getSaveEventActions = async ({
         return getSaveSingleEventActionsHelper({
             newEditEventData,
             oldEditEventData,
+            getCalendarKeys,
             onSaveConfirmation,
             sendIcs,
             inviteActions: inviteActionsWithSelfAddress,
             onDuplicateAttendees: handleDuplicateAttendees,
+            handleSyncActions,
         });
     }
 
@@ -238,10 +267,12 @@ const getSaveEventActions = async ({
         return getSaveSingleEventActionsHelper({
             newEditEventData,
             oldEditEventData,
+            getCalendarKeys,
             onSaveConfirmation,
             sendIcs,
             inviteActions: inviteActionsWithSelfAddress,
             onDuplicateAttendees: handleDuplicateAttendees,
+            handleSyncActions,
         });
     }
 
@@ -306,6 +337,7 @@ const getSaveEventActions = async ({
     const {
         multiSyncActions,
         updatePartstatActions,
+        updatePersonalPartActions,
         inviteActions: saveInviteActions,
     } = await getSaveRecurringEventActions({
         type: saveType,
@@ -323,13 +355,10 @@ const getSaveEventActions = async ({
     const successText = getRecurringEventUpdatedText(saveType, saveInviteActions);
 
     return {
-        syncActions: {
-            actions: multiSyncActions,
-            texts: {
-                success: successText,
-            },
-        },
+        syncActions: multiSyncActions,
         updatePartstatActions,
+        updatePersonalPartActions,
+        texts: { success: successText },
     };
 };
 
