@@ -1,3 +1,12 @@
+# [4.0.0-beta.15] - 2021-03-24
+
+## Updated
+- Add event weekday to mail invitations
+
+## Fixed
+- Correctly display invitation update when the ICS does not contain attendee part-stat
+- Various small fixes
+
 # [4.0.0-beta.14] - 2021-02-25
 ## Added
 - Add plain text body for invitations 
