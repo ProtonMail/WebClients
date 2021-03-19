@@ -1,5 +1,6 @@
 import { c } from 'ttag';
-import { format as formatUTC } from '../../date-fns-utc';
+import { addDays, format as formatUTC } from '../../date-fns-utc';
+import { Options } from '../../date-fns-utc/format';
 import { formatTimezoneOffset, getTimezoneOffset, toUTCDate } from '../../date/timezone';
 import { canonizeEmail, canonizeEmailByGuess, canonizeInternalEmail } from '../../helpers/email';
 import isTruthy from '../../helpers/isTruthy';
@@ -377,19 +378,21 @@ export const generateVtimezonesComponents = async (
     return Object.values(vtimezonesObject).map(({ vtimezone }) => vtimezone);
 };
 
-const getFormattedDateInfo = (vevent: VcalVeventComponent) => {
+const getFormattedDateInfo = (vevent: VcalVeventComponent, options: Options = { locale: dateLocale }) => {
     const { dtstart, dtend } = vevent;
     const { isAllDay, isSingleAllDay } = getAllDayInfo(dtstart, dtend);
     if (isAllDay) {
         return {
-            formattedStart: formatUTC(toUTCDate(dtstart.value), 'PP', { locale: dateLocale }),
-            formattedEnd: dtend ? formatUTC(toUTCDate(dtend.value), 'PP', { locale: dateLocale }) : undefined,
+            formattedStart: formatUTC(toUTCDate(dtstart.value), 'cccc PPP', options),
+            formattedEnd: dtend ? formatUTC(addDays(toUTCDate(dtend.value), -1), 'cccc PPP', options) : undefined,
             isAllDay,
             isSingleAllDay,
         };
     }
-    const formattedStartDateTime = formatUTC(toUTCDate(dtstart.value), 'PPp', { locale: dateLocale });
-    const formattedEndDateTime = dtend ? formatUTC(toUTCDate(dtend.value), 'PPp', { locale: dateLocale }) : undefined;
+    const formattedStartDateTime = formatUTC(toUTCDate(dtstart.value), 'cccc PPPp', options);
+    const formattedEndDateTime = dtend
+        ? formatUTC(toUTCDate(dtend.value), 'cccc PPPp', { locale: dateLocale })
+        : undefined;
     const { offset: startOffset } = getTimezoneOffset(propertyToUTCDate(dtstart), getPropertyTzid(dtstart) || 'UTC');
     const { offset: endOffset } = dtend
         ? getTimezoneOffset(propertyToUTCDate(dtend), getPropertyTzid(dtstart) || 'UTC')
@@ -408,13 +411,15 @@ export const generateEmailSubject = ({
     method,
     vevent,
     isCreateEvent,
+    options,
 }: {
     method: ICAL_METHOD;
     vevent: VcalVeventComponent;
     isCreateEvent?: boolean;
+    options?: Options;
 }) => {
     if ([ICAL_METHOD.REQUEST, ICAL_METHOD.CANCEL].includes(method)) {
-        const { formattedStart, isAllDay, isSingleAllDay } = getFormattedDateInfo(vevent);
+        const { formattedStart, isAllDay, isSingleAllDay } = getFormattedDateInfo(vevent, options);
         if (isAllDay) {
             if (isSingleAllDay) {
                 if (method === ICAL_METHOD.CANCEL) {
@@ -445,8 +450,8 @@ export const generateEmailSubject = ({
     throw new Error('Unexpected method');
 };
 
-const getWhenText = (vevent: VcalVeventComponent) => {
-    const { formattedStart, formattedEnd, isAllDay, isSingleAllDay } = getFormattedDateInfo(vevent);
+const getWhenText = (vevent: VcalVeventComponent, options?: Options) => {
+    const { formattedStart, formattedEnd, isAllDay, isSingleAllDay } = getFormattedDateInfo(vevent, options);
     if (isAllDay) {
         return isSingleAllDay || !formattedEnd
             ? c('Email body for invitation (date part)').t`When: ${formattedStart} (all day)`
@@ -457,13 +462,13 @@ const getWhenText = (vevent: VcalVeventComponent) => {
         : c('Email body for invitation (date part)').t`When: ${formattedStart}`;
 };
 
-const getEmailBodyTexts = (vevent: VcalVeventComponent) => {
+const getEmailBodyTexts = (vevent: VcalVeventComponent, options?: Options) => {
     const { summary, location, description } = vevent;
     const eventTitle = getDisplayTitle(summary?.value);
     const eventLocation = location?.value;
     const eventDescription = description?.value;
 
-    const whenText = getWhenText(vevent);
+    const whenText = getWhenText(vevent, options);
     const locationText = eventLocation
         ? c('Email body for invitation (location part)').t`Where: ${eventLocation}`
         : undefined;
@@ -491,14 +496,16 @@ export const generateEmailBody = ({
     isCreateEvent,
     partstat,
     emailAddress,
+    options,
 }: {
     method: ICAL_METHOD;
     vevent: VcalVeventComponent;
     isCreateEvent?: boolean;
     emailAddress?: string;
     partstat?: ICAL_ATTENDEE_STATUS;
+    options?: Options;
 }) => {
-    const { eventTitle, eventDetailsText } = getEmailBodyTexts(vevent);
+    const { eventTitle, eventDetailsText } = getEmailBodyTexts(vevent, options);
 
     if (method === ICAL_METHOD.REQUEST) {
         if (isCreateEvent) {
