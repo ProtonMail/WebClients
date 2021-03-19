@@ -53,8 +53,8 @@
 	--interaction-weak-active: #575c75;
 
 	--interaction-default: transparent;
-	--interaction-default-hover: rgb(52 56 78 / 0.2);
-	--interaction-default-active: rgb(52 56 78 / 0.3);
+	--interaction-default-hover: rgb(52 56 78 / 0.5);
+	--interaction-default-active: rgb(52 56 78 / 0.7);
 
 	--shadow-norm-opacity: 0.5;
 	--shadow-lifted-opacity: 0.75;
@@ -70,5 +70,5 @@
 // Prominent UI specifics
 
 .ui-prominent {
-	--background-norm: #0e0f18;
+	--background-norm: #11121d;
 }
