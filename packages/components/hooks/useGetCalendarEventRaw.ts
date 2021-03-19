@@ -64,10 +64,10 @@ const useGetCalendarEventRaw = () => {
                 getCalendarKeys(Event.CalendarID),
                 getAuthorPublicKeysMap(),
             ]);
-            const [sharedSessionKey, calendarSessionKey] = await readSessionKeys(
-                Event,
-                splitKeys(calendarKeys).privateKeys
-            );
+            const [sharedSessionKey, calendarSessionKey] = await readSessionKeys({
+                calendarEvent: Event,
+                ...splitKeys(calendarKeys),
+            });
             const withNormalizedAuthor = (x: CalendarEventData) => ({
                 ...x,
                 Author: canonizeInternalEmail(x.Author),
