@@ -14,9 +14,8 @@ export * from './UserSettings';
 export * from './Subscription';
 export * from './Payment';
 export * from './config';
-export { GetCanonicalEmails } from './hooks/GetCanonicalEmails';
-export { GetVTimezones } from './hooks/GetVTimezones';
-export { VTimezoneObject } from './hooks/GetVTimezones';
+export * from './hooks/GetCanonicalEmails';
+export * from './hooks/GetVTimezones';
 export * from './Hotkeys';
 
 export interface EncryptionConfig {

@@ -11,7 +11,7 @@ import {
     VcalVeventComponent,
 } from '../interfaces/calendar/VcalModel';
 import { RequireSome, SimpleMap } from '../interfaces/utils';
-import { ATTENDEE_PERMISSIONS, ATTENDEE_STATUS_API, ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from './constants';
+import { ATTENDEE_STATUS_API, ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from './constants';
 import { getAttendeeHasToken, getAttendeesHaveToken } from './vcalHelper';
 
 export const generateAttendeeToken = async (normalizedEmail: string, uid: string) => {
@@ -47,17 +47,8 @@ export const toIcsPartstat = (partstat?: ATTENDEE_STATUS_API) => {
     return ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
 };
 
-/**
- * Internally permissions are stored as x-pm-permissions in the vevent,
- * but stripped for the api.
- */
 export const fromInternalAttendee = ({
-    parameters: {
-        'x-pm-permissions': oldPermissions = ATTENDEE_PERMISSIONS.SEE_AND_INVITE,
-        'x-pm-token': token = '',
-        partstat,
-        ...restParameters
-    } = {},
+    parameters: { 'x-pm-token': token = '', partstat, ...restParameters } = {},
     ...rest
 }: VcalAttendeeProperty) => {
     return {
@@ -69,7 +60,6 @@ export const fromInternalAttendee = ({
             ...rest,
         },
         clear: {
-            permissions: oldPermissions,
             token,
             status: toApiPartstat(partstat),
         },
@@ -95,7 +85,6 @@ export const toInternalAttendee = (
             parameters: {
                 ...attendee.parameters,
                 partstat,
-                'x-pm-permissions': extra.Permissions,
             },
         };
     });
@@ -137,9 +126,7 @@ export const modifyAttendeesPartstat = (
 };
 
 export const getSupportedAttendee = (attendee: VcalAttendeeProperty) => {
-    const {
-        parameters: { cn, role, partstat, rsvp, 'x-pm-token': token, 'x-pm-permissions': permissions } = {},
-    } = attendee;
+    const { parameters: { cn, role, partstat, rsvp, 'x-pm-token': token } = {} } = attendee;
     const emailAddress = getAttendeeEmail(attendee);
     const supportedAttendee: RequireSome<VcalAttendeeProperty, 'parameters'> = {
         value: buildMailTo(emailAddress),
@@ -159,9 +146,6 @@ export const getSupportedAttendee = (attendee: VcalAttendeeProperty) => {
     }
     if (token) {
         supportedAttendee.parameters['x-pm-token'] = token;
-    }
-    if (permissions !== undefined) {
-        supportedAttendee.parameters['x-pm-permissions'] = permissions;
     }
     return supportedAttendee;
 };

@@ -163,21 +163,26 @@ export const getEventByUID = (params: GetEventByUIDArguments) => ({
     params,
 });
 
-export interface CreateCalendarEventBlobData {
+export interface CalendarEventBlobData {
     CalendarKeyPacket?: string;
     CalendarEventContent?: Omit<CalendarEventData, 'Author'>[];
     SharedKeyPacket?: string;
-    SharedEventContent: Omit<CalendarEventData, 'Author'>[];
+    SharedEventContent?: Omit<CalendarEventData, 'Author'>[];
     PersonalEventContent?: Omit<CalendarEventData, 'Author'>;
     AttendeesEventContent?: Omit<CalendarEventData, 'Author'>[];
     Attendees?: Omit<Attendee, 'UpdateTime' | 'ID'>[];
 }
-export interface CreateCalendarEventData extends CreateCalendarEventBlobData {
+export interface CreateCalendarEventData
+    extends RequireSome<CalendarEventBlobData, 'SharedEventContent' | 'SharedKeyPacket'> {
     Permissions: number;
     IsOrganizer?: 0 | 1;
 }
 export interface CreateSingleCalendarEventData extends CreateCalendarEventData {
     MemberID: string;
+}
+export interface CreateSinglePersonalEventData {
+    MemberID: string;
+    PersonalEventContent?: Omit<CalendarEventData, 'Author'>;
 }
 export interface CreateLinkedCalendarEventData
     extends RequireSome<Partial<CreateCalendarEventData>, 'SharedKeyPacket'> {
@@ -199,6 +204,12 @@ export const updateEvent = (calendarID: string, eventID: string, data: CreateSin
 export const deleteEvent = (calendarID: string, eventID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/events/${eventID}`,
     method: 'delete',
+});
+
+export const updatePersonalEventPart = (calendarID: string, eventID: string, data: CreateSinglePersonalEventData) => ({
+    url: `${CALENDAR_V1}/${calendarID}/events/${eventID}/personal`,
+    method: 'put',
+    data,
 });
 
 export const updateAttendeePartstat = (
@@ -264,7 +275,7 @@ export const getCalendarAlarm = (calendarID: string, alarmID: string) => ({
 });
 
 export interface CreateCalendarEventSyncData {
-    Overwrite: 0 | 1;
+    Overwrite?: 0 | 1;
     Event: CreateCalendarEventData;
 }
 export interface DeleteCalendarEventSyncData {
@@ -275,6 +286,7 @@ export interface UpdateCalendarEventSyncData {
     Event?: Omit<CreateCalendarEventData, 'SharedKeyPacket' | 'CalendarKeyPacket'>;
 }
 export interface CreateLinkedCalendarEventsSyncData {
+    Overwrite?: 0 | 1;
     Event: CreateLinkedCalendarEventData;
 }
 export interface SyncMultipleEventsData {

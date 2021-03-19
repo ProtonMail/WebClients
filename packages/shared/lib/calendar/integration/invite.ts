@@ -4,10 +4,12 @@ import { formatTimezoneOffset, getTimezoneOffset, toUTCDate } from '../../date/t
 import { canonizeEmail, canonizeEmailByGuess, canonizeInternalEmail } from '../../helpers/email';
 import isTruthy from '../../helpers/isTruthy';
 import { omit, pick } from '../../helpers/object';
+import { getCurrentUnixTimestamp } from '../../helpers/time';
 import { dateLocale } from '../../i18n';
 import { Address, GetVTimezones } from '../../interfaces';
 import {
     Attendee,
+    CalendarEvent,
     CalendarSettings,
     Participant,
     SETTINGS_NOTIFICATION_TYPE,
@@ -21,7 +23,7 @@ import {
 import { ContactEmail } from '../../interfaces/contacts';
 import { RequireSome } from '../../interfaces/utils';
 import { formatSubject, RE_PREFIX } from '../../mail/messages';
-import { getAttendeeEmail } from '../attendees';
+import { getAttendeeEmail, toIcsPartstat } from '../attendees';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '../constants';
 import { getDisplayTitle } from '../helper';
 import { getIsRruleEqual } from '../rruleEqual';
@@ -35,7 +37,7 @@ import {
     getPropertyTzid,
     getSequence,
 } from '../vcalHelper';
-import { withDtstamp, withSummary } from '../veventHelper';
+import { getIsEventCancelled, withDtstamp, withSummary } from '../veventHelper';
 
 export const getParticipantHasAddressID = (
     participant: Participant
@@ -166,6 +168,7 @@ interface CreateInviteIcsParams {
     vevent: VcalVeventComponent;
     attendeesTo?: VcalAttendeeProperty[];
     vtimezones?: VcalVtimezoneComponent[];
+    sharedEventID?: string;
     keepDtstamp?: boolean;
 }
 
@@ -207,7 +210,7 @@ export const findAttendee = (email: string, attendees: VcalAttendeeProperty[] = 
     return { index, attendee };
 };
 
-export function getSelfAddressData({
+export const getSelfAddressData = ({
     isOrganizer,
     organizer,
     attendees = [],
@@ -217,7 +220,7 @@ export function getSelfAddressData({
     organizer?: VcalOrganizerProperty;
     attendees?: VcalAttendeeProperty[];
     addresses?: Address[];
-}) {
+}) => {
     if (isOrganizer) {
         if (!organizer) {
             // old events will not have organizer
@@ -304,7 +307,7 @@ export function getSelfAddressData({
         selfAddress: selfDisabledAddress,
         selfAttendeeIndex: selfDisabledAttendeeIndex,
     };
-}
+};
 
 export const getInvitedEventWithAlarms = (
     vevent: VcalVeventComponent,
@@ -572,4 +575,65 @@ export const getUpdatedInviteVevent = (
         return { ...newVevent, attendee: withResetPartstatAttendees };
     }
     return { ...newVevent };
+};
+
+export const getResetPartstatActions = (
+    singleEdits: CalendarEvent[],
+    token: string,
+    partstat: ICAL_ATTENDEE_STATUS
+) => {
+    const updateTime = getCurrentUnixTimestamp();
+    const updatePartstatActions = singleEdits
+        .map((event) => {
+            if (getIsEventCancelled(event)) {
+                // no need to reset the partsat as it should have been done already
+                return;
+            }
+            const selfAttendee = event.Attendees.find(({ Token }) => Token === token);
+            if (!selfAttendee) {
+                return;
+            }
+            const oldPartstat = toIcsPartstat(selfAttendee.Status);
+            if ([ICAL_ATTENDEE_STATUS.NEEDS_ACTION, partstat].includes(oldPartstat)) {
+                // no need to reset the partstat as it's already reset or it coincides with the new partstat
+                return;
+            }
+            return {
+                attendeeID: selfAttendee.ID,
+                eventID: event.ID,
+                calendarID: event.CalendarID,
+                updateTime,
+                partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
+            };
+        })
+        .filter(isTruthy);
+    const updatePersonalPartActions = updatePartstatActions
+        .map(({ eventID, calendarID }) => ({ eventID, calendarID }))
+        .filter(isTruthy);
+
+    return { updatePartstatActions, updatePersonalPartActions };
+};
+
+export const getHasNonCancelledSingleEdits = (singleEdits: CalendarEvent[]) => {
+    return singleEdits.some((event) => !getIsEventCancelled(event));
+};
+
+export const getMustResetPartstat = (singleEdits: CalendarEvent[], token?: string, partstat?: ICAL_ATTENDEE_STATUS) => {
+    if (!token || !partstat) {
+        return false;
+    }
+    return singleEdits.some((event) => {
+        if (getIsEventCancelled(event)) {
+            return false;
+        }
+        const selfAttendee = event.Attendees.find(({ Token }) => Token === token);
+        if (!selfAttendee) {
+            return false;
+        }
+        const oldPartstat = toIcsPartstat(selfAttendee.Status);
+        if ([ICAL_ATTENDEE_STATUS.NEEDS_ACTION, partstat].includes(oldPartstat)) {
+            return false;
+        }
+        return true;
+    });
 };

@@ -1,14 +1,15 @@
 import { fromUTCDate } from '../date/timezone';
 import { omit, pick } from '../helpers/object';
-import { CalendarEventData } from '../interfaces/calendar';
+import { CalendarEvent, CalendarEventData } from '../interfaces/calendar';
 import { VcalValarmComponent, VcalVeventComponent } from '../interfaces/calendar/VcalModel';
 import { RequireOnly } from '../interfaces/utils';
 import { fromInternalAttendee } from './attendees';
-import { CALENDAR_CARD_TYPE } from './constants';
+import { CALENDAR_CARD_TYPE, ICAL_EVENT_STATUS } from './constants';
 import { generateUID, hasMoreThan, wrap } from './helper';
 import { AttendeeClearPartResult, AttendeePart } from './interface';
-import { serialize } from './vcal';
+import { parse, serialize } from './vcal';
 import { dateTimeToProperty } from './vcalConverter';
+import { getEventStatus, getIsCalendar, getIsEventComponent } from './vcalHelper';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
 
@@ -52,6 +53,19 @@ const TAKEN_KEYS = [
 
 export const getReadableCard = (cards: CalendarEventData[]) => {
     return cards.find(({ Type }) => [CLEAR_TEXT, SIGNED].includes(Type));
+};
+
+export const getIsEventCancelled = (event: CalendarEvent) => {
+    const calendarClearTextPart = getReadableCard(event.CalendarEvents);
+    if (!calendarClearTextPart) {
+        return;
+    }
+    const vcalPart = parse(calendarClearTextPart.Data);
+    const vevent = getIsCalendar(vcalPart) ? vcalPart.components?.find(getIsEventComponent) : undefined;
+    if (!vevent) {
+        return;
+    }
+    return getEventStatus(vevent) === ICAL_EVENT_STATUS.CANCELLED;
 };
 
 export const withUid = <T>(properties: VcalVeventComponent & T): VcalVeventComponent & T => {

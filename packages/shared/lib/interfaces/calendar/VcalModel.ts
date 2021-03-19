@@ -1,5 +1,4 @@
 import {
-    ATTENDEE_PERMISSIONS,
     ICAL_ATTENDEE_ROLE,
     ICAL_ATTENDEE_RSVP,
     ICAL_ATTENDEE_STATUS,
@@ -172,7 +171,6 @@ export interface VcalAttendeePropertyParameters extends VcalOrganizerPropertyPar
     rsvp?: ICAL_ATTENDEE_RSVP | string;
     'delegated-from'?: string;
     'delegated-to'?: string;
-    'x-pm-permissions'?: ATTENDEE_PERMISSIONS;
     'x-pm-token'?: string;
 }
 
@@ -232,6 +230,8 @@ export interface VcalVeventComponent {
     'related-to'?: VcalStringWithParamsProperty[];
     resources?: VcalStringWithParamsProperty[];
     rdate?: VcalDateTimeProperty[];
+    'x-pm-session-key'?: VcalStringProperty;
+    'x-pm-shared-event-id'?: VcalStringProperty;
 }
 
 export interface VcalPmVeventComponent extends Omit<VcalVeventComponent, 'attendee'> {
