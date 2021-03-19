@@ -89,7 +89,6 @@ const VpnSubscriptionTable = ({
                             <Info
                                 title={c('Info')
                                     .t`Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.`}
-                                url="https://protonvpn.com/support/streaming-guide/"
                             />
                         </del>
                     ),
@@ -128,7 +127,7 @@ const VpnSubscriptionTable = ({
                             <Info
                                 title={c('Info')
                                     .jt`Access your streaming services, like ${netflix}, ${disney}, ${primeVideo}, ${many}, no matter where you are.`}
-                                url="https://protonvpn.com/support/tor-vpn/"
+                                url="https://protonvpn.com/support/streaming-guide/"
                             />
                         </del>
                     ),
@@ -180,7 +179,6 @@ const VpnSubscriptionTable = ({
                             <Info
                                 title={c('Info')
                                     .t`Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.`}
-                                url="https://protonvpn.com/support/streaming-guide/"
                             />
                         </span>
                     ),
@@ -219,7 +217,7 @@ const VpnSubscriptionTable = ({
                             <Info
                                 title={c('Info')
                                     .jt`Access your streaming services, like ${netflix}, ${disney}, ${primeVideo}, ${many}, no matter where you are.`}
-                                url="https://protonvpn.com/support/tor-vpn/"
+                                url="https://protonvpn.com/support/streaming-guide/"
                             />
                         </del>
                     ),
@@ -271,7 +269,6 @@ const VpnSubscriptionTable = ({
                             <Info
                                 title={c('Info')
                                     .t`Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.`}
-                                url="https://protonvpn.com/support/streaming-guide/"
                             />
                         </span>
                     ),
@@ -310,7 +307,7 @@ const VpnSubscriptionTable = ({
                             <Info
                                 title={c('Info')
                                     .jt`Access your streaming services, like ${netflix}, ${disney}, ${primeVideo}, ${many}, no matter where you are.`}
-                                url="https://protonvpn.com/support/tor-vpn/"
+                                url="https://protonvpn.com/support/streaming-guide/"
                             />
                         </span>
                     ),
