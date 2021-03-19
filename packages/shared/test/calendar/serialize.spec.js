@@ -39,7 +39,6 @@ const veventComponent = {
                 rsvp: 'TRUE',
                 partstat: 'NEEDS-ACTION',
                 'x-pm-token': 'abc',
-                'x-pm-permissions': 1,
                 cn: 'james@bond.co.uk',
             },
         },
@@ -51,7 +50,6 @@ const veventComponent = {
                 rsvp: 'TRUE',
                 partstat: 'TENTATIVE',
                 'x-pm-token': 'bcd',
-                'x-pm-permissions': 1,
                 cn: 'Dr No.',
             },
         },
@@ -64,7 +62,6 @@ const veventComponent = {
                 rsvp: 'FALSE',
                 cn: 'Miss Moneypenny',
                 'x-pm-token': 'cde',
-                'x-pm-permissions': 2,
             },
         },
     ],
@@ -103,6 +100,8 @@ describe('calendar encryption', () => {
             privateKey: primaryCalendarKey,
             publicKey: primaryCalendarKey.toPublic(),
             signingKey: primaryCalendarKey, // Should be an address key
+            isCreateEvent: true,
+            isSwitchCalendar: false,
         });
         expect(data).toEqual({
             SharedKeyPacket:
@@ -117,6 +116,8 @@ describe('calendar encryption', () => {
                 },
                 {
                     Type: 3,
+                    // the following check is just to ensure some stability in the process generating the signatures
+                    // i.e. given the same input, we produce the same encrypted data
                     Data: jasmine.stringMatching(/0rIB8pECtS5Mmdeh\+pBh0SN5j5TqWA.*/g),
                     Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
@@ -126,6 +127,8 @@ describe('calendar encryption', () => {
             CalendarEventContent: [
                 {
                     Type: 3,
+                    // the following check is just to ensure some stability in the process generating the signatures
+                    // i.e. given the same input, we produce the same encrypted data
                     Data: jasmine.stringMatching(/0rAB8pECtS5Mmdeh\+pBh0SN5.*/g),
                     Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
@@ -140,14 +143,16 @@ describe('calendar encryption', () => {
             AttendeesEventContent: [
                 {
                     Type: 3,
+                    // the following check is just to ensure some stability in the process generating the signatures
+                    // i.e. given the same input, we produce the same encrypted data
                     Data: jasmine.stringMatching(/0sErAfKRArUuTJnXofqQYdEjeY\+U6.*/g),
                     Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
             ],
             Attendees: [
-                { Token: 'abc', Permissions: 1, Status: ATTENDEE_STATUS_API.NEEDS_ACTION },
-                { Token: 'bcd', Permissions: 1, Status: ATTENDEE_STATUS_API.TENTATIVE },
-                { Token: 'cde', Permissions: 2, Status: ATTENDEE_STATUS_API.ACCEPTED },
+                { Token: 'abc', Status: ATTENDEE_STATUS_API.NEEDS_ACTION },
+                { Token: 'bcd', Status: ATTENDEE_STATUS_API.TENTATIVE },
+                { Token: 'cde', Status: ATTENDEE_STATUS_API.ACCEPTED },
             ],
         });
     });
@@ -163,9 +168,14 @@ describe('calendar encryption', () => {
             privateKey: primaryCalendarKey,
             publicKey,
             signingKey: addressKey,
+            isCreateEvent: true,
+            isSwitchCalendar: false,
         });
 
-        const [sharedSessionKey, calendarSessionKey] = await readSessionKeys(data, primaryCalendarKey);
+        const [sharedSessionKey, calendarSessionKey] = await readSessionKeys({
+            calendarEvent: data,
+            privateKeys: primaryCalendarKey,
+        });
         const {
             veventComponent: otherVeventComponent,
             verificationStatus: verificationStatusOther,

@@ -205,3 +205,15 @@ export const getAttendeeRole = ({ parameters: { role } = {} }: Partial<VcalAtten
     }
     return ICAL_ATTENDEE_ROLE.REQUIRED;
 };
+
+export const getAttendeeToken = (attendee: Partial<VcalAttendeeProperty> = {}) => {
+    return attendee?.parameters?.['x-pm-token'];
+};
+
+export const getPmSharedEventID = (veventComponent: VcalVeventComponent) => {
+    return veventComponent['x-pm-shared-event-id']?.value;
+};
+
+export const getPmSharedSessionKey = (veventComponent: VcalVeventComponent) => {
+    return veventComponent['x-pm-session-key']?.value;
+};

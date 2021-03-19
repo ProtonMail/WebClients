@@ -16,7 +16,6 @@ export interface CalendarPersonalEventData extends CalendarEventData {
 export interface Attendee {
     ID: string;
     Token: string;
-    Permissions: number;
     Status: ATTENDEE_STATUS_API;
     UpdateTime: number;
 }
@@ -72,6 +71,11 @@ export interface SyncMultipleApiResponses {
 export interface SyncMultipleApiResponse {
     Code: number;
     Responses: SyncMultipleApiResponses[];
+}
+
+export interface UpdatePersonalPartApiResponse {
+    Code: number;
+    Event: CalendarEvent;
 }
 
 export interface UpdatePartstatApiResponse {

@@ -1,4 +1,5 @@
 import { OpenPGPKey, SessionKey } from 'pmcrypto';
+import { AES256 } from '../constants';
 import { Address } from '../interfaces';
 
 import { SimpleMap } from '../interfaces/utils';
@@ -17,23 +18,30 @@ import { VcalAttendeeProperty, VcalVeventComponent } from '../interfaces/calenda
 import { getIsEventComponent } from './vcalHelper';
 import { base64StringToUint8Array } from '../helpers/encoding';
 
-export const readSessionKey = (KeyPacket: string, privateKeys: OpenPGPKey | OpenPGPKey[]) => {
+export const readSessionKey = (KeyPacket?: string, privateKeys?: OpenPGPKey | OpenPGPKey[]) => {
+    if (!KeyPacket || !privateKeys) {
+        return;
+    }
     return getDecryptedSessionKey(base64StringToUint8Array(KeyPacket), privateKeys);
 };
 
 /**
  * Read the session keys.
  */
-export const readSessionKeys = (
-    { SharedKeyPacket, CalendarKeyPacket }: CalendarEvent,
-    privateKeys: OpenPGPKey | OpenPGPKey[]
-) => {
-    return Promise.all([
-        getDecryptedSessionKey(base64StringToUint8Array(SharedKeyPacket), privateKeys),
-        CalendarKeyPacket
-            ? getDecryptedSessionKey(base64StringToUint8Array(CalendarKeyPacket), privateKeys)
-            : undefined,
-    ]);
+export const readSessionKeys = async ({
+    decryptedSharedKeyPacket,
+    calendarEvent,
+    privateKeys,
+}: {
+    decryptedSharedKeyPacket?: string;
+    calendarEvent?: CalendarEvent;
+    privateKeys?: OpenPGPKey | OpenPGPKey[];
+}) => {
+    const sharedsessionKeyPromise = decryptedSharedKeyPacket
+        ? Promise.resolve({ algorithm: AES256, data: base64StringToUint8Array(decryptedSharedKeyPacket) })
+        : readSessionKey(calendarEvent?.SharedKeyPacket, privateKeys);
+    const calendarSessionKeyPromise = readSessionKey(calendarEvent?.CalendarKeyPacket, privateKeys);
+    return Promise.all([sharedsessionKeyPromise, calendarSessionKeyPromise]);
 };
 
 /**
