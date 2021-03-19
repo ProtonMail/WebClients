@@ -8,9 +8,11 @@ import { getProdId } from 'proton-shared/lib/calendar/vcalHelper';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import {
     CalendarEvent,
+    CalendarEventWithMetadata,
     CalendarWidgetData,
     Participant,
     PartstatActions,
+    PmInviteData,
     SavedInviteData,
 } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
@@ -23,12 +25,14 @@ import { createCalendarEventFromInvitation, updatePartstatFromInvitation } from 
 
 interface Args {
     veventApi?: VcalVeventComponent;
-    veventIcs?: VcalVeventComponent;
+    veventIcs: VcalVeventComponent;
     attendee?: Participant;
     organizer?: Participant;
     subject: string;
     messageID?: string;
     calendarData?: CalendarWidgetData;
+    pmData?: PmInviteData;
+    singleEditData?: CalendarEventWithMetadata[];
     calendarEvent?: CalendarEvent;
     onEmailSuccess: () => void;
     onEmailError: (error: Error) => void;
@@ -49,6 +53,8 @@ const useInviteButtons = ({
     subject,
     messageID,
     calendarData,
+    pmData,
+    singleEditData,
     calendarEvent,
     onEmailSuccess,
     onEmailError,
@@ -130,6 +136,7 @@ const useInviteButtons = ({
                     api,
                     getCanonicalEmails,
                     calendarData,
+                    pmData,
                     overwrite,
                 });
                 onCreateEventSuccess();
@@ -153,12 +160,12 @@ const useInviteButtons = ({
                     veventApi,
                     calendarEvent,
                     vcalAttendee: attendee.vcalComponent,
+                    attendeeToken: attendee.token,
                     partstat,
                     oldPartstat: attendee.partstat,
                     api,
-                    getCanonicalEmails,
                     calendarData,
-                    overwrite,
+                    singleEditData,
                 });
                 onUpdateEventSuccess();
                 return { savedEvent, savedVevent, savedVcalAttendee };

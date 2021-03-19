@@ -41,6 +41,8 @@ import {
     getIsTimezoneComponent,
     getIsValidMethod,
     getIsXOrIanaComponent,
+    getPmSharedEventID,
+    getPmSharedSessionKey,
     getPropertyTzid,
     getSequence,
 } from 'proton-shared/lib/calendar/vcalHelper';
@@ -56,9 +58,10 @@ import { Address } from 'proton-shared/lib/interfaces';
 import {
     Calendar,
     CalendarEvent,
+    CalendarEventWithMetadata,
     CalendarWidgetData,
     Participant,
-    SingleEditWidgetData,
+    PmInviteData,
 } from 'proton-shared/lib/interfaces/calendar';
 import {
     VcalDateOrDateTimeProperty,
@@ -122,7 +125,8 @@ export interface InvitationModel {
     hideSummary?: boolean;
     hideLink?: boolean;
     calendarData?: CalendarWidgetData;
-    singleEditData?: SingleEditWidgetData;
+    singleEditData?: CalendarEventWithMetadata[];
+    pmData?: PmInviteData;
     invitationIcs?: RequireSome<EventInvitation, 'method'>;
     invitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
     parentInvitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
@@ -192,10 +196,7 @@ export const getSingleEditWidgetData = ({
     otherEvents,
     otherParentEvents,
 }: Unwrap<ReturnType<FetchAllEventsByUID>>) => {
-    const singleEdits = (otherParentEvents || otherEvents).filter(({ RecurrenceID }) => !!RecurrenceID);
-    return {
-        ids: singleEdits.map(({ ID }) => ID),
-    };
+    return (otherParentEvents || otherEvents).filter(({ RecurrenceID }) => !!RecurrenceID);
 };
 
 export const getIsInvitationOutdated = ({
@@ -464,6 +465,11 @@ export const getInitialInvitationModel = ({
             method: invitation.method,
         });
     }
+    const sharedEventID = getPmSharedEventID(invitation.vevent);
+    const sharedSessionKey = getPmSharedSessionKey(invitation.vevent);
+    if (sharedEventID && sharedSessionKey) {
+        result.pmData = { sharedEventID, sharedSessionKey };
+    }
     return result;
 };
 
@@ -581,6 +587,8 @@ export const getSupportedEventInvitation = (
             organizer,
             attendee,
             duration,
+            'x-pm-session-key': sharedSessionKey,
+            'x-pm-shared-event-id': sharedEventID,
         } = event;
         const trimmedSummaryValue = summary?.value.trim();
         const trimmedDescriptionValue = description?.value.trim();
@@ -595,6 +603,12 @@ export const getSupportedEventInvitation = (
         };
         let ignoreRrule = false;
 
+        if (sharedSessionKey) {
+            validated['x-pm-session-key'] = { ...sharedSessionKey };
+        }
+        if (sharedEventID) {
+            validated['x-pm-shared-event-id'] = { ...sharedEventID };
+        }
         if (organizer) {
             validated.organizer = { ...organizer };
         } else {

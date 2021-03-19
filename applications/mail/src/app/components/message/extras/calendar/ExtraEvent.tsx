@@ -113,7 +113,7 @@ const ExtraEvent = ({
         );
     };
 
-    const { isOrganizerMode, invitationIcs, isPartyCrasher: isPartyCrasherIcs } = model;
+    const { isOrganizerMode, invitationIcs, isPartyCrasher: isPartyCrasherIcs, pmData } = model;
     const method = model.invitationIcs?.method;
     const displayVevent =
         method && [DECLINECOUNTER, REPLY].includes(method) && model.invitationApi?.vevent
@@ -204,6 +204,7 @@ const ExtraEvent = ({
                     getCanonicalEmails,
                     calendarData,
                     singleEditData,
+                    pmData,
                     message,
                     contactEmails,
                     ownAddresses,
@@ -225,6 +226,7 @@ const ExtraEvent = ({
                         invitationApi: newInvitationApi,
                         parentInvitationApi,
                         calendarData,
+                        singleEditData,
                         timeStatus: getEventTimeStatus(newInvitationApi.vevent, Date.now()),
                         isOutdated,
                         isFromFuture,
