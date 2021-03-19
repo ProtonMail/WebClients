@@ -5,7 +5,7 @@ import { groupWith } from 'proton-shared/lib/helpers/array';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { Link } from 'react-router-dom';
-import { Alert, Href, Icon, Info, Button, Block, Tooltip, Radio, RadioGroup } from '../../../components';
+import { Alert, Href, Icon, Info, Button, Block, Tooltip, Radio, RadioGroup, ButtonLike } from '../../../components';
 import { useApiResult, useApiWithoutResult, useUser, useSortedList, useUserVPN } from '../../../hooks';
 import { getCountryByAbbr, correctAbbr } from '../../../helpers/countries';
 import ServerConfigs from './ServerConfigs';
@@ -304,8 +304,8 @@ const OpenVPNConfigurationSection = () => {
                             </li>
                         </ul>
                         <div>
-                            <Link className="button button--primary" to="/dashboard?plan=vpnplus">{c('Action')
-                                .t`Get ProtonVPN Plus`}</Link>
+                            <ButtonLike as={Link} color="norm" to="/dashboard?plan=vpnplus">{c('Action')
+                                .t`Get ProtonVPN Plus`}</ButtonLike>
                         </div>
                     </div>
                 ) : null}

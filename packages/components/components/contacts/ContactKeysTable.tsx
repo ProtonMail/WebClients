@@ -269,7 +269,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                 {isRevoked ? <Badge type="error">{c('Key badge').t`Revoked`}</Badge> : null}
                                 {isExpired ? <Badge type="error">{c('Key badge').t`Expired`}</Badge> : null}
                             </React.Fragment>,
-                            <DropdownActions key={fingerprint} className="button--small" list={list} />,
+                            <DropdownActions key={fingerprint} size="small" list={list} />,
                         ].filter(Boolean);
                         return <TableRow key={fingerprint} cells={cells} />;
                     }

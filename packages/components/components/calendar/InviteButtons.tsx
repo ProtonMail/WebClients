@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import React from 'react';
 import { useLoadingMap } from '../../hooks';
 import { DropdownMenu, DropdownMenuButton, SimpleDropdown } from '../dropdown';
-import { ButtonGroup, Group } from '../button';
+import { Button, ButtonGroup } from '../button';
 import { classnames } from '../../helpers';
 
 interface Props {
@@ -32,32 +32,35 @@ const InviteButtons = ({ actions, partstat = ICAL_ATTENDEE_STATUS.NEEDS_ACTION, 
 
     if (partstat === ICAL_ATTENDEE_STATUS.NEEDS_ACTION) {
         return (
-            <Group className={className}>
-                <ButtonGroup
+            <ButtonGroup className={className}>
+                <Button
+                    group
                     onClick={onAccept}
                     disabled={loadingAnswer || disabled}
                     loading={loadingAccept}
                     title={acceptText}
                 >
                     {c('Action').t`Yes`}
-                </ButtonGroup>
-                <ButtonGroup
+                </Button>
+                <Button
+                    group
                     onClick={onTentative}
                     disabled={loadingAnswer || disabled}
                     loading={loadingTentative}
                     title={tentativeText}
                 >
                     {c('Action').t`Maybe`}
-                </ButtonGroup>
-                <ButtonGroup
+                </Button>
+                <Button
+                    group
                     onClick={onDecline}
                     disabled={loadingAnswer || disabled}
                     loading={loadingDecline}
                     title={declineText}
                 >
                     {c('Action').t`No`}
-                </ButtonGroup>
-            </Group>
+                </Button>
+            </ButtonGroup>
         );
     }
     const accepted = partstat === ICAL_ATTENDEE_STATUS.ACCEPTED;

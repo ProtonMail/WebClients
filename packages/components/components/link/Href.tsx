@@ -7,10 +7,13 @@ export interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
     children?: React.ReactNode;
 }
 
-const Href = ({ url = '#', target = '_blank', rel = 'noopener noreferrer', children, ...rest }: Props) => (
-    <a href={url} target={target} rel={rel} {...rest}>
+const Href = (
+    { url = '#', target = '_blank', rel = 'noopener noreferrer', children, ...rest }: Props,
+    ref: React.Ref<HTMLAnchorElement>
+) => (
+    <a href={url} target={target} rel={rel} ref={ref} {...rest}>
         {children}
     </a>
 );
 
-export default Href;
+export default React.forwardRef<HTMLAnchorElement, Props>(Href);

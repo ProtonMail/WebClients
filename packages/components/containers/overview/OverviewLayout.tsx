@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { hasMailPlus } from 'proton-shared/lib/helpers/subscription';
 import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
-import { AppLink, SettingsTitle, SectionConfig } from '../../components';
+import { AppLink, SettingsTitle, SectionConfig, ButtonLike } from '../../components';
 import { useUser, useSubscription, useOrganization, useUserSettings } from '../../hooks';
 
 import SummarySection from './SummarySection';
@@ -70,13 +70,16 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                                 .t`Upgrade to a paid plan with multi-user support to add more users to your organization.`}
                         </p>
                         <div>
-                            <AppLink
-                                className="button--transparent inline-block increase-click-surface"
+                            <ButtonLike
+                                as={AppLink}
+                                className="increase-click-surface"
+                                color="weak"
+                                shape="outline"
                                 to="/subscription"
                                 toApp={getAccountSettingsApp()}
                             >
                                 {c('Action').t`Upgrade`}
-                            </AppLink>
+                            </ButtonLike>
                         </div>
                     </div>
                 ) : null}
@@ -87,13 +90,16 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                                 .t`Upgrade to a paid plan to unlock premium features and increase your storage space.`}
                         </p>
                         <div>
-                            <AppLink
-                                className="button--transparent inline-block increase-click-surface"
+                            <ButtonLike
+                                as={AppLink}
+                                className="increase-click-surface"
+                                color="weak"
+                                shape="outline"
                                 to="/subscription"
                                 toApp={getAccountSettingsApp()}
                             >
                                 {c('Action').t`Upgrade`}
-                            </AppLink>
+                            </ButtonLike>
                         </div>
                     </div>
                 )}

@@ -2,7 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 import { APPS } from 'proton-shared/lib/constants';
 
-import { Alert, Block, AppLink } from '../../components';
+import { Alert, Block, AppLink, ButtonLike } from '../../components';
 import { useOrganization } from '../../hooks';
 
 interface Props {
@@ -18,21 +18,23 @@ const AddressesSection = ({ onClose }: Props) => {
                 <Alert>{c('Info for domain modal')
                     .t`Add a new user to your organization and create an address for it.`}</Alert>
                 <Block>
-                    <AppLink
-                        className="button button--primary"
+                    <ButtonLike
+                        as={AppLink}
+                        color="norm"
                         onClick={() => onClose?.()}
                         to="/organization#members"
                         toApp={APPS.PROTONACCOUNT}
-                    >{c('Action').t`Add user`}</AppLink>
+                    >{c('Action').t`Add user`}</ButtonLike>
                 </Block>
                 <Alert>{c('Info for domain modal').t`Add a new address for any user of your organization.`}</Alert>
                 <Block>
-                    <AppLink
-                        className="button button--primary"
+                    <ButtonLike
+                        as={AppLink}
+                        color="norm"
                         onClick={() => onClose?.()}
                         to="/organization#addresses"
                         toApp={APPS.PROTONACCOUNT}
-                    >{c('Action').t`Add address`}</AppLink>
+                    >{c('Action').t`Add address`}</ButtonLike>
                 </Block>
             </>
         );
@@ -40,12 +42,12 @@ const AddressesSection = ({ onClose }: Props) => {
 
     return (
         <Block>
-            <AppLink
-                className="button button--primary"
+            <ButtonLike
+                as={AppLink}
                 onClick={() => onClose?.()}
                 to="/organization#addresses"
                 toApp={APPS.PROTONACCOUNT}
-            >{c('Action').t`Add address`}</AppLink>
+            >{c('Action').t`Add address`}</ButtonLike>
         </Block>
     );
 };

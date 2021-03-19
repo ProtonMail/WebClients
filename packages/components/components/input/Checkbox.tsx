@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Icon from '../icon/Icon';
 import { classnames } from '../../helpers';
+import { useCombinedRefs } from '../../hooks';
 
 export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
     loading?: boolean;
@@ -11,22 +12,26 @@ export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
     labelOnClick?: (event: React.MouseEvent<HTMLLabelElement, MouseEvent>) => void;
 }
 
-const Checkbox = ({
-    id,
-    className,
-    title,
-    loading,
-    disabled,
-    checked,
-    indeterminate = false,
-    color,
-    backgroundColor,
-    borderColor,
-    children,
-    labelOnClick,
-    ...rest
-}: Props) => {
+const Checkbox = (
+    {
+        id,
+        className,
+        title,
+        loading,
+        disabled,
+        checked,
+        indeterminate = false,
+        color,
+        backgroundColor,
+        borderColor,
+        children,
+        labelOnClick,
+        ...rest
+    }: Props,
+    ref: React.Ref<HTMLInputElement>
+) => {
     const inputRef = useRef<HTMLInputElement>(null);
+    const combinedRef = useCombinedRefs(inputRef, ref);
 
     useEffect(() => {
         if (inputRef.current) {
@@ -46,7 +51,7 @@ const Checkbox = ({
             onClick={labelOnClick}
         >
             <input
-                ref={inputRef}
+                ref={combinedRef}
                 disabled={disabled || loading}
                 id={id}
                 type="checkbox"
@@ -62,4 +67,4 @@ const Checkbox = ({
     );
 };
 
-export default Checkbox;
+export default React.forwardRef<HTMLInputElement, Props>(Checkbox);

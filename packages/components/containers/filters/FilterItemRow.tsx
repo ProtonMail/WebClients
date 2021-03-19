@@ -97,7 +97,7 @@ function FilterItemRow({ filter, index, ...rest }: Props) {
                         onChange={(e) => withLoading(handleChangeStatus(e))}
                     />
                 </div>,
-                <DropdownActions key="dropdown" className="button--small" list={list} />,
+                <DropdownActions key="dropdown" size="small" list={list} />,
             ]}
             {...rest}
             className="on-mobile-hide-td3"

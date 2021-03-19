@@ -1,12 +1,12 @@
 import React, { ReactNode } from 'react';
 import { c } from 'ttag';
 import { Info } from '../link';
-import { Button, Group, ButtonGroup } from '../button';
+import { ButtonGroup } from '../button';
 
+import Button, { ButtonProps } from '../button/Button';
 import DropdownMenu from './DropdownMenu';
 import DropdownMenuButton, { Props as DropdownMenuButtonProps } from './DropdownMenuButton';
 import SimpleDropdown from './SimpleDropdown';
-import { classnames } from '../../helpers';
 
 const wrapTooltip = (text: string | ReactNode, tooltip?: string) => {
     if (!tooltip) {
@@ -30,7 +30,7 @@ interface DropdownActionProps extends DropdownMenuButtonProps {
     onClick?: () => void;
 }
 
-interface Props {
+interface Props extends ButtonProps {
     loading?: boolean;
     disabled?: boolean;
     list?: DropdownActionProps[];
@@ -44,6 +44,8 @@ const DropdownActions = ({
     list = [],
     className = '',
     autoFocus = false,
+    size,
+    ...restButtonProps
 }: Props) => {
     if (!list.length) {
         return null;
@@ -53,25 +55,42 @@ const DropdownActions = ({
 
     if (list.length === 1) {
         return (
-            <Button loading={loading} disabled={disabled} className={className} {...restProps}>
+            <Button
+                size={size}
+                loading={loading}
+                disabled={disabled}
+                className={className}
+                {...restProps}
+                {...restButtonProps}
+            >
                 {wrapTooltip(text, tooltip)}
             </Button>
         );
     }
 
     return (
-        <Group>
-            <ButtonGroup disabled={disabled} loading={loading} className={className} {...restProps}>
+        <ButtonGroup>
+            <Button
+                group
+                disabled={disabled}
+                loading={loading}
+                className={className}
+                size={size}
+                {...restProps}
+                {...restButtonProps}
+            >
                 {wrapTooltip(text, tooltip)}
-            </ButtonGroup>
+            </Button>
             <SimpleDropdown
+                icon
+                group
+                size={size}
                 autoFocus={autoFocus}
                 originalPlacement="bottom-right"
                 disabled={disabled}
                 loading={loading}
-                className={classnames(['button grouped-button button--for-icon', className])}
+                className={className}
                 title={c('Title').t`Open actions dropdown`}
-                content=""
                 data-test-id="dropdown:open"
             >
                 <DropdownMenu>
@@ -84,7 +103,7 @@ const DropdownActions = ({
                     })}
                 </DropdownMenu>
             </SimpleDropdown>
-        </Group>
+        </ButtonGroup>
     );
 };
 

@@ -1,43 +1,40 @@
 import React, { ButtonHTMLAttributes, ReactNode } from 'react';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { classnames } from '../../helpers';
-import Icon, { Props as IconProps } from '../icon/Icon';
 import { Tooltip } from '../tooltip';
 
-interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
-    icon: string | IconProps;
+interface Props extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'title'> {
+    icon: React.ReactElement;
     children?: ReactNode;
+    title?: React.ReactNode;
 }
 
-const ToolbarButton = React.forwardRef<HTMLButtonElement, Props>(
-    ({ icon, children, className, disabled, tabIndex, title, onClick, ...rest }: Props, ref) => {
-        const content = (
-            <button
-                type="button"
-                className={classnames([className, 'toolbar-button'])}
-                onClick={disabled ? noop : onClick}
-                tabIndex={disabled ? -1 : tabIndex}
-                disabled={disabled}
-                ref={ref}
-                {...rest}
-            >
-                {typeof icon === 'string' ? (
-                    <Icon alt={title} name={icon} className="toolbar-icon mauto" />
-                ) : (
-                    <Icon alt={title} {...icon} className={classnames([icon.className, 'toolbar-icon mauto'])} />
-                )}
-                {children}
-            </button>
-        );
+const ToolbarButton = (
+    { icon, children, className, disabled, tabIndex, title, onClick, ...rest }: Props,
+    ref: React.Ref<HTMLButtonElement>
+) => {
+    const content = (
+        <button
+            type="button"
+            className={classnames([className, 'flex flex-item-noshrink toolbar-button'])}
+            onClick={disabled ? noop : onClick}
+            tabIndex={disabled ? -1 : tabIndex}
+            disabled={disabled}
+            ref={ref}
+            {...rest}
+        >
+            {React.cloneElement(icon, {
+                className: classnames([icon.props.className, 'toolbar-icon mauto']),
+            })}
+            {children}
+        </button>
+    );
 
-        return title ? (
-            <Tooltip title={title} className="flex flex-item-noshrink">
-                {content}
-            </Tooltip>
-        ) : (
-            content
-        );
+    if (title) {
+        return <Tooltip title={title}>{content}</Tooltip>;
     }
-);
 
-export default ToolbarButton;
+    return content;
+};
+
+export default React.forwardRef<HTMLButtonElement, Props>(ToolbarButton);

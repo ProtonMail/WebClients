@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 
 import Tooltip from '../../tooltip/Tooltip';
+import { classnames } from '../../../helpers';
 
 interface Props {
     disabled?: boolean;
@@ -20,12 +21,11 @@ const EditorToolbarButton = ({
     ...rest
 }: Props) => {
     return (
-        <Tooltip className={className} title={title}>
+        <Tooltip title={title}>
             <button
                 type="button"
-                // title={title}
                 disabled={disabled || loading}
-                className="editor-toolbar-button m0 flex"
+                className={classnames(['editor-toolbar-button m0 flex', className])}
                 {...rest}
             >
                 {children}

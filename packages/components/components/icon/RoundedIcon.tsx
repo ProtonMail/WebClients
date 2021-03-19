@@ -18,15 +18,10 @@ interface Props {
     name: string;
 }
 
-const RoundedIcon = ({
-    className = '',
-    iconClassName = 'color-white',
-    type = 'success',
-    padding = 'p0-5',
-    title,
-    name,
-    ...rest
-}: Props) => {
+const RoundedIcon = (
+    { className = '', iconClassName = 'color-white', type = 'success', padding = 'p0-5', title, name, ...rest }: Props,
+    ref: React.Ref<HTMLSpanElement>
+) => {
     return (
         <span
             className={classnames([
@@ -36,10 +31,11 @@ const RoundedIcon = ({
                 type && TYPES[type],
             ])}
             title={title}
+            ref={ref}
         >
             <Icon size={12} className={iconClassName} name={name} {...rest} />
         </span>
     );
 };
 
-export default RoundedIcon;
+export default React.forwardRef<HTMLSpanElement, Props>(RoundedIcon);

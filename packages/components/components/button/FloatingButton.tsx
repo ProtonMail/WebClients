@@ -1,21 +1,18 @@
 import React from 'react';
-import Icon from '../icon/Icon';
-import PrimaryButton, { PrimaryButtonProps } from './PrimaryButton';
+import Button, { ButtonProps } from './Button';
 import { classnames } from '../../helpers';
 
-interface Props extends PrimaryButtonProps {
-    icon: string;
+interface Props extends ButtonProps {
     title?: string;
     className?: string;
 }
 
-const FloatingButton = ({ icon, title, className, ...rest }: Props) => {
+const FloatingButton = ({ children, title, className, ...rest }: Props, ref: React.Ref<HTMLButtonElement>) => {
     return (
-        <PrimaryButton className={classnames(['fab flex', className])} {...rest}>
-            <Icon size={24} className="mauto" name={icon} />
-            {title ? <span className="sr-only">{title}</span> : null}
-        </PrimaryButton>
+        <Button color="norm" className={classnames(['fab flex', className])} ref={ref} {...rest}>
+            {children}
+        </Button>
     );
 };
 
-export default FloatingButton;
+export default React.forwardRef<HTMLButtonElement, Props>(FloatingButton);

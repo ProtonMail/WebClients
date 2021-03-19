@@ -24,12 +24,14 @@ const ToggleNotify = ({ label }) => {
     };
     return (
         <Tooltip title={c('Tooltip').t`Enable/disable desktop and mobile notifications`}>
-            <Toggle
-                id={`item-${label.ID}`}
-                checked={label.Notify === 1}
-                onChange={(e) => withLoading(handleChange(e))}
-                loading={loading}
-            />
+            <span>
+                <Toggle
+                    id={`item-${label.ID}`}
+                    checked={label.Notify === 1}
+                    onChange={(e) => withLoading(handleChange(e))}
+                    loading={loading}
+                />
+            </span>
         </Tooltip>
     );
 };

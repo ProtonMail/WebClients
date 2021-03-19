@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Button, LinkButton, Icon } from '../../../components';
-import { classnames } from '../../../helpers';
 import './SubscriptionTable.scss';
 
 const SubscriptionTable = ({
@@ -63,14 +62,14 @@ const SubscriptionTable = ({
                                     {mode === 'radio' ? (
                                         <Button
                                             disabled={disabled || index === currentPlanIndex}
-                                            className={classnames([index !== currentPlanIndex && 'button--primary'])}
+                                            color={index !== currentPlanIndex && 'norm'}
                                             onClick={() => onSelect(index)}
                                         >
                                             {index === currentPlanIndex ? selected : select}
                                         </Button>
                                     ) : null}
                                     {mode === 'button' ? (
-                                        <Button className="button--primary" onClick={() => onSelect(index)}>
+                                        <Button color="norm" onClick={() => onSelect(index)}>
                                             {select}
                                         </Button>
                                     ) : null}

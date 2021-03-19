@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { Table, TableHeader, TableBody, TableRow, TableCell } from '../table';
-import { SmallButton } from '../button';
+import { Button } from '../button';
 
 interface Props {
     contactEmails: ContactEmail[];
@@ -37,13 +37,15 @@ const ContactGroupTable = ({ contactEmails, onDelete }: Props) => {
                                         {Email}
                                     </div>,
                                     onDelete ? (
-                                        <SmallButton
+                                        <Button
                                             key={ID || Email}
                                             onClick={() => onDelete(ID)}
-                                            className="button--redborder"
+                                            color="danger"
+                                            shape="outline"
+                                            size="small"
                                         >
                                             {c('Action').t`Remove`}
-                                        </SmallButton>
+                                        </Button>
                                     ) : null,
                                 ].filter(isTruthy);
                                 return <TableRow key={ID || Email} cells={cells} />;

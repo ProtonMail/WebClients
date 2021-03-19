@@ -1,6 +1,6 @@
 import React, { ReactNode, useState } from 'react';
 
-import { generateUID } from '../../../helpers';
+import { classnames, generateUID } from '../../../helpers';
 import { usePopperAnchor } from '../../popper';
 import Tooltip from '../../tooltip/Tooltip';
 import DropdownButton from '../../dropdown/DropdownButton';
@@ -42,16 +42,22 @@ const SquireToolbarDropdown = ({
 
     return (
         <>
-            <Tooltip title={title} className={className}>
+            <Tooltip title={title}>
                 <DropdownButton
-                    buttonRef={anchorRef}
+                    as="button"
+                    type="button"
+                    ref={anchorRef}
                     isOpen={isOpen}
                     onClick={handleClick}
                     hasCaret
                     disabled={disabled}
                     caretClassName="editor-toolbar-icon"
-                    className="editor-toolbar-button composer-toolbar-fontDropDown max-w100"
+                    className={classnames([
+                        'editor-toolbar-button composer-toolbar-fontDropDown max-w100 flex flex-align-items-center flex-nowrap',
+                        className,
+                    ])}
                     tabIndex={-1}
+                    title={title}
                     {...rest}
                 >
                     {content}

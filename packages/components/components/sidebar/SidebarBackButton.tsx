@@ -1,15 +1,13 @@
 import React from 'react';
 
 import AppLink, { Props as LinkProps } from '../link/AppLink';
+import { ButtonLike } from '../button';
 
 const SidebarBackButton = ({ children, ...rest }: LinkProps) => {
     return (
-        <AppLink
-            className="button button--primaryborder-dark button--large inline-block text-center text-bold mt0-25 w100"
-            {...rest}
-        >
+        <ButtonLike as={AppLink} size="large" color="norm" shape="outline" fullWidth className="mt0-25" {...rest}>
             {children}
-        </AppLink>
+        </ButtonLike>
     );
 };
 

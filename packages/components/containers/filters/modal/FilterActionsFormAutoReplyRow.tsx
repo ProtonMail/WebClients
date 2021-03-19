@@ -73,7 +73,9 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, isNarrow, actions, handleUpdate
                         <span className="ml0-5 mr0-5">{c('Label').t`Send auto-reply`}</span>
                     </div>
                     <Tooltip title={c('Tooltip').t`This feature is only available for paid users`}>
-                        <Toggle disabled checked={false} onChange={noop} />
+                        <span>
+                            <Toggle disabled checked={false} onChange={noop} />
+                        </span>
                     </Tooltip>
                 </>
             )}

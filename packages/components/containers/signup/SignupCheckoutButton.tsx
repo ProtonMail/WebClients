@@ -3,7 +3,6 @@ import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
 import { PrimaryButton } from '../../components';
-import { classnames } from '../../helpers';
 import { SubscriptionCheckResult, SignupPayPal } from './interfaces';
 import { PayPalButton } from '../payments';
 
@@ -21,7 +20,9 @@ const SignupCheckoutButton = ({ className, paypal, canPay, loading, method, chec
         return (
             <PayPalButton
                 paypal={paypal}
-                className={classnames(['button--primary', className])}
+                color="norm"
+                type="signup"
+                className={className}
                 amount={checkResult ? checkResult.AmountDue : 0}
             >{c('Action').t`Pay`}</PayPalButton>
         );

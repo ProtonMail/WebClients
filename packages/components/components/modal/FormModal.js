@@ -7,7 +7,7 @@ import DialogModal from './Dialog';
 import HeaderModal from './Header';
 import ContentModal from './Content';
 import InnerModal from './Inner';
-import { ResetButton, PrimaryButton } from '../button';
+import { Button, PrimaryButton } from '../button';
 
 /** @type any */
 const Modal = ({
@@ -73,9 +73,9 @@ function DemoModal({ onAdd, ...rest }) {
         return (
             <FooterModal>
                 {typeof close === 'string' ? (
-                    <ResetButton disabled={loading} data-focus-fallback="-2">
+                    <Button type="reset" disabled={loading} data-focus-fallback="-2">
                         {close}
-                    </ResetButton>
+                    </Button>
                 ) : (
                     close
                 )}

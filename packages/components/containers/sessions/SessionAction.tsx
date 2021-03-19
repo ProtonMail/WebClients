@@ -2,7 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { useLoading } from '../../hooks';
-import { Badge, SmallButton } from '../../components';
+import { Badge, Button } from '../../components';
 import { Session } from './interface';
 
 interface Props {
@@ -23,8 +23,8 @@ const SessionAction = ({ session, onRevoke, currentUID }: Props) => {
     }
 
     return (
-        <SmallButton loading={loading} onClick={() => withLoading(onRevoke())}>{c('Action for user session')
-            .t`Revoke`}</SmallButton>
+        <Button size="small" loading={loading} onClick={() => withLoading(onRevoke())}>{c('Action for user session')
+            .t`Revoke`}</Button>
     );
 };
 

@@ -1,15 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import {
-    SearchInput,
-    DropdownButton,
-    Dropdown,
-    Icon,
-    usePopperAnchor,
-    PrimaryButton,
-    ResetButton,
-} from '../../components';
+import { SearchInput, DropdownButton, Dropdown, Icon, usePopperAnchor, PrimaryButton, Button } from '../../components';
 
 import { generateUID } from '../../helpers';
 
@@ -42,7 +34,7 @@ const SearchDropdown = ({
 
     return (
         <>
-            <DropdownButton {...rest} buttonRef={anchorRef} isOpen={isOpen} onClick={toggle}>
+            <DropdownButton {...rest} ref={anchorRef} isOpen={isOpen} onClick={toggle}>
                 {content}
             </DropdownButton>
             <Dropdown
@@ -64,8 +56,8 @@ const SearchDropdown = ({
                         />
                     </div>
                     <div className="flex flex-nowrap">
-                        <ResetButton disabled={!search} className="w50" onClick={handleReset}>{c('Action')
-                            .t`Clear`}</ResetButton>
+                        <Button type="reset" disabled={!search} className="w50" onClick={handleReset}>{c('Action')
+                            .t`Clear`}</Button>
                         <PrimaryButton className="w50 ml1" type="submit">{c('Action').t`Search`}</PrimaryButton>
                     </div>
                 </form>

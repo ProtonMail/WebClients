@@ -1,4 +1,4 @@
-import React, { Ref } from 'react';
+import React from 'react';
 import { UserModel } from 'proton-shared/lib/interfaces';
 import { getInitials } from 'proton-shared/lib/helpers/string';
 
@@ -6,10 +6,9 @@ interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLB
     user: UserModel;
     className?: string;
     isOpen?: boolean;
-    buttonRef?: Ref<HTMLButtonElement>;
 }
 
-const UserDropdownButton = ({ user, isOpen, buttonRef, ...rest }: Props) => {
+const UserDropdownButton = ({ user, isOpen, ...rest }: Props, ref: React.Ref<HTMLButtonElement>) => {
     const { Email, DisplayName, Name } = user;
     const nameToDisplay = DisplayName || Name; // nameToDisplay can be falsy for external account
     // DisplayName is null for VPN users without any addresses, cast to undefined in case Name would be null too.
@@ -19,7 +18,7 @@ const UserDropdownButton = ({ user, isOpen, buttonRef, ...rest }: Props) => {
         <button
             type="button"
             aria-expanded={isOpen}
-            ref={buttonRef}
+            ref={ref}
             {...rest}
             className="flex flex-align-items-center flex-nowrap p0-5 dropdown-logout-button"
         >
@@ -46,4 +45,4 @@ const UserDropdownButton = ({ user, isOpen, buttonRef, ...rest }: Props) => {
     );
 };
 
-export default UserDropdownButton;
+export default React.forwardRef<HTMLButtonElement, Props>(UserDropdownButton);

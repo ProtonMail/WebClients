@@ -18,7 +18,7 @@ import {
     useOrganization,
     useLoading,
 } from '../../hooks';
-import { usePopperAnchor, Dropdown, Icon, Toggle, AppLink, Href, Button } from '../../components';
+import { ButtonLike, usePopperAnchor, Dropdown, Icon, Toggle, AppLink, Href, Button } from '../../components';
 import { generateUID } from '../../helpers';
 import UserDropdownButton from './UserDropdownButton';
 import { DonateModal } from '../payments';
@@ -67,7 +67,7 @@ const UserDropdown = ({ ...rest }) => {
 
     return (
         <div className="flex" data-cy-header="userDropdown">
-            <UserDropdownButton {...rest} user={user} buttonRef={anchorRef} isOpen={isOpen} onClick={toggle} />
+            <UserDropdownButton {...rest} user={user} ref={anchorRef} isOpen={isOpen} onClick={toggle} />
             <Dropdown
                 id={uid}
                 className="userDropdown"
@@ -89,14 +89,17 @@ const UserDropdown = ({ ...rest }) => {
                                         <div className="mb1">{organizationName}</div>
                                     </>
                                 ) : null}
-                                <AppLink
+                                <ButtonLike
+                                    as={AppLink}
                                     to="/"
-                                    className="block w100 mt1-5 mb1-5 text-center button button--primaryborder"
+                                    color="norm"
+                                    shape="outline"
+                                    className="block w100 mt1-5 mb1-5 text-center"
                                     toApp={getAccountSettingsApp()}
                                     onClick={() => close()}
                                 >
                                     {c('Action').t`Manage account`}
-                                </AppLink>
+                                </ButtonLike>
                             </li>
                             <li className="dropdown-item-hr mt0-5 mb0-5" aria-hidden="false" />
                         </>

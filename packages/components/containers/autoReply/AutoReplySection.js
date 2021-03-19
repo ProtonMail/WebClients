@@ -47,7 +47,7 @@ const AutoReplySection = () => {
                     </span>
                     {AutoResponder.IsEnabled && (
                         <span className="on-mobile-pb0 on-mobile-no-border mlauto pl2">
-                            <Button className="button--primary mt0-25" onClick={handleOpenModal}>{c('Action')
+                            <Button color="norm" className="mt0-25" onClick={handleOpenModal}>{c('Action')
                                 .t`Edit`}</Button>
                         </span>
                     )}

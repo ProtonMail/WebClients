@@ -144,18 +144,19 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                 )}
             </div>
             <div>
-                <Button
-                    disabled={!labelAs?.labels.length}
-                    onClick={handleClear}
-                    className={classnames(['button--for-icon', isNarrow ? 'mt1' : 'ml1'])}
-                >
-                    <Tooltip
-                        title={c('Action').t`Reset`}
-                        className={classnames([isDark ? 'color-global-muted' : 'color-global-altgrey'])}
+                <Tooltip title={c('Action').t`Reset`}>
+                    <Button
+                        icon
+                        disabled={!labelAs?.labels.length}
+                        onClick={handleClear}
+                        className={classnames([isNarrow ? 'mt1' : 'ml1'])}
                     >
-                        <Icon name="remove-text-formatting" />
-                    </Tooltip>
-                </Button>
+                        <Icon
+                            name="remove-text-formatting"
+                            className={classnames([isDark ? 'color-global-muted' : 'color-global-altgrey'])}
+                        />
+                    </Button>
+                </Tooltip>
             </div>
         </div>
     );

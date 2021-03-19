@@ -35,7 +35,7 @@ import {
     ContentModal,
     InnerModal,
     FooterModal,
-    ResetButton,
+    Button,
     PrimaryButton,
     LinkButton,
 } from '../../../components';
@@ -269,7 +269,7 @@ const ContactEmailSettingsModal = ({
                     ) : null}
                 </InnerModal>
                 <FooterModal>
-                    <ResetButton>{c('Action').t`Cancel`}</ResetButton>
+                    <Button type="reset">{c('Action').t`Cancel`}</Button>
                     <PrimaryButton loading={isLoading} type="submit">
                         {c('Action').t`Save`}
                     </PrimaryButton>
