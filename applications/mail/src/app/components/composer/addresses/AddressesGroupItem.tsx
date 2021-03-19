@@ -114,7 +114,7 @@ const AddressesGroupItem = ({
                 <span className="inline-flex composer-addresses-item-icon pl0-25 ml0-1 pr0-25 no-pointer-events-children h100">
                     <Icon name="contacts-groups" size={12} color={recipientGroup?.group?.Color} className="mauto" />
                 </span>
-                <Tooltip className="flex" title={c('Info').t`Click to view group details`}>
+                <Tooltip title={c('Info').t`Click to view group details`}>
                     <span
                         className="composer-addresses-item-label mtauto mbauto pl0-25 text-ellipsis pr0-5"
                         onClick={handleOpenGroupModal}
@@ -123,7 +123,7 @@ const AddressesGroupItem = ({
                         {label}
                     </span>
                 </Tooltip>
-                <Tooltip title={c('Action').t`Remove`} className="flex">
+                <Tooltip title={c('Action').t`Remove`}>
                     <button
                         type="button"
                         className="composer-addresses-item-remove inline-flex border-left pl0-25 pr0-25 no-pointer-events-children h100"

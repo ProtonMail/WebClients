@@ -62,7 +62,7 @@ const ExtraErrors = ({ message }: Props) => {
                         <span className="pl0-5 pr0-5 flex-item-fluid">{getTranslations(errorType, alreadyTried)}</span>
                         {showReload && (
                             <span className="flex-item-noshrink flex">
-                                <Button onClick={handleReload} className=" button--small">
+                                <Button size="small" onClick={handleReload}>
                                     {c('Action').t`Try again`}
                                 </Button>
                             </span>

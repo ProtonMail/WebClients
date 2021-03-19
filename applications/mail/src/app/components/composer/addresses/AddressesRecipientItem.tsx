@@ -180,7 +180,7 @@ const AddressesRecipientItem = ({
                         <EncryptionStatusIcon loading={loading} {...icon} />
                     </span>
                 )}
-                <Tooltip className="flex" title={title}>
+                <Tooltip title={title}>
                     <span
                         className={classnames([
                             'composer-addresses-item-label mtauto mbauto text-ellipsis pr0-5',
@@ -194,7 +194,7 @@ const AddressesRecipientItem = ({
                         ref={editableRef}
                     />
                 </Tooltip>
-                <Tooltip title={c('Action').t`Remove`} className="flex">
+                <Tooltip title={c('Action').t`Remove`}>
                     <button
                         type="button"
                         className="composer-addresses-item-remove border-left flex flex-item-noshrink pl0-25 pr0-25"

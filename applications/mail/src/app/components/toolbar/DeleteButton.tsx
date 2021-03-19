@@ -1,9 +1,8 @@
 import React from 'react';
-import { Icon, useLoading, useMailSettings } from 'react-components';
+import { Icon, useLoading, useMailSettings, ToolbarButton } from 'react-components';
 import { metaKey } from 'proton-shared/lib/helpers/browser';
 import { c } from 'ttag';
 
-import ToolbarButton from './ToolbarButton';
 import { usePermanentDelete } from '../../hooks/usePermanentDelete';
 
 interface Props {
@@ -33,14 +32,12 @@ const DeleteButton = ({ labelID = '', selectedIDs = [] }: Props) => {
 
     return (
         <ToolbarButton
-            loading={loading}
             title={titleDelete}
             onClick={() => withLoading(handleDelete())}
-            disabled={!selectedIDs.length}
+            disabled={loading || !selectedIDs.length}
             data-test-id="toolbar:deletepermanently"
-        >
-            <Icon className="toolbar-icon mauto" name="delete" alt={c('Action').t`Delete permanently`} />
-        </ToolbarButton>
+            icon={<Icon name="delete" alt={c('Action').t`Delete permanently`} />}
+        />
     );
 };
 

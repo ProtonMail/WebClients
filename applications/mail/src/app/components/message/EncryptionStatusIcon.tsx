@@ -30,17 +30,19 @@ const EncryptionStatusIcon = ({
     const tooltip = useTooltip ? text : undefined;
 
     return (
-        <Tooltip title={tooltip} className={classnames(['inline-flex flex-item-noshrink align-middle', className])}>
-            <Href href={href} className="flex flex-item-noshrink mauto">
-                <Icon
-                    viewBox={iconName === 'attention' ? '0 0 16 16' : '0 0 18 18'}
-                    size={16}
-                    name={iconName}
-                    className={colorClassName}
-                    alt={text || ''}
-                    data-testid="encryption-icon"
-                />
-            </Href>
+        <Tooltip title={tooltip}>
+            <span className={classnames(['inline-flex flex-item-noshrink align-middle', className])}>
+                <Href href={href} className="flex flex-item-noshrink mauto">
+                    <Icon
+                        viewBox={iconName === 'attention' ? '0 0 16 16' : '0 0 18 18'}
+                        size={16}
+                        name={iconName}
+                        className={colorClassName}
+                        alt={text || ''}
+                        data-testid="encryption-icon"
+                    />
+                </Href>
+            </span>
         </Tooltip>
     );
 };

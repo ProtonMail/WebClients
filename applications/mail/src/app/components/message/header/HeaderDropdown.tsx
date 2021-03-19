@@ -1,5 +1,5 @@
 import React, { useState, ReactNode, useEffect } from 'react';
-import { generateUID, usePopperAnchor, DropdownButton, Dropdown, Tooltip, classnames } from 'react-components';
+import { generateUID, usePopperAnchor, DropdownButton, Dropdown, Tooltip } from 'react-components';
 
 export interface DropdownRenderProps {
     onClose: () => void;
@@ -60,19 +60,19 @@ const HeaderDropdown = ({
 
     return (
         <>
-            <DropdownButton
-                className={classnames(['relative', className])}
-                buttonRef={anchorRef}
-                isOpen={isOpen}
-                onClick={toggle}
-                hasCaret
-                disabled={loading}
-                {...rest}
-            >
-                <Tooltip className="increase-click-surface" title={title}>
+            <Tooltip title={title}>
+                <DropdownButton
+                    className={className}
+                    ref={anchorRef}
+                    isOpen={isOpen}
+                    onClick={toggle}
+                    hasCaret
+                    disabled={loading}
+                    {...rest}
+                >
                     {content}
-                </Tooltip>
-            </DropdownButton>
+                </DropdownButton>
+            </Tooltip>
             <Dropdown
                 id={uid}
                 className={dropDownClassName}

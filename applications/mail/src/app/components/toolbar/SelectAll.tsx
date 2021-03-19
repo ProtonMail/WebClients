@@ -42,26 +42,25 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, selectedIDs, onChec
 
     return (
         <>
-            <Tooltip
-                className="flex ml0-5 pl1"
-                title={checked ? c('Action').t`Deselect all messages` : c('Action').t`Select all messages`}
-            >
-                <Checkbox
-                    className="select-all"
-                    checked={checked}
-                    id="idSelectAll"
-                    disabled={disabled}
-                    loading={loading}
-                    onChange={({ target }) => handleAll(target.checked)()}
-                    data-test-id="toolbar:select-all"
-                    data-testid="select-all"
-                >
-                    <span className="sr-only">
-                        {checked ? c('Action').t`Deselect all messages` : c('Action').t`Select all messages`}
-                    </span>
-                </Checkbox>
+            <Tooltip title={checked ? c('Action').t`Deselect all messages` : c('Action').t`Select all messages`}>
+                <span className="flex ml0-5 pl1 ">
+                    <Checkbox
+                        className="select-all"
+                        checked={checked}
+                        id="idSelectAll"
+                        disabled={disabled}
+                        loading={loading}
+                        onChange={({ target }) => handleAll(target.checked)()}
+                        data-test-id="toolbar:select-all"
+                        data-testid="select-all"
+                    >
+                        <span className="sr-only">
+                            {checked ? c('Action').t`Deselect all messages` : c('Action').t`Select all messages`}
+                        </span>
+                    </Checkbox>
+                </span>
             </Tooltip>
-            <ToolbarDropdown disabled={disabled} loading={loading} title={c('Title').t`More selections`} content="">
+            <ToolbarDropdown disabled={disabled} loading={loading} title={c('Title').t`More selections`}>
                 {() => (
                     <DropdownMenu>
                         <DropdownMenuButton

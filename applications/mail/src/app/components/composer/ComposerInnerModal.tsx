@@ -5,7 +5,7 @@ import {
     FooterModal,
     ContentModal,
     InnerModal,
-    ResetButton,
+    Button,
     PrimaryButton,
     useFocusTrap,
     useHotkeys,
@@ -48,7 +48,7 @@ const ComposerInnerModal = ({ title, disabled = false, children, onCancel, onSub
                 <ContentModal onSubmit={onSubmit as () => undefined} onReset={onCancel as () => undefined}>
                     <InnerModal>{children}</InnerModal>
                     <FooterModal>
-                        <ResetButton>{c('Action').t`Cancel`}</ResetButton>
+                        <Button type="reset">{c('Action').t`Cancel`}</Button>
                         <PrimaryButton type="submit" disabled={disabled}>{c('Action').t`Set`}</PrimaryButton>
                     </FooterModal>
                 </ContentModal>

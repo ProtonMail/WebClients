@@ -1,9 +1,8 @@
 import React from 'react';
 import { MESSAGE_BUTTONS } from 'proton-shared/lib/constants';
-import { Icon, useLoading, useMailSettings } from 'react-components';
+import { Icon, useLoading, useMailSettings, ToolbarButton } from 'react-components';
 import { c } from 'ttag';
 
-import ToolbarButton from './ToolbarButton';
 import { useMarkAs, MARK_AS_STATUS } from '../../hooks/useMarkAs';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElementsCache';
 
@@ -56,26 +55,20 @@ const ReadUnreadButtons = ({ labelID, mailSettings, selectedIDs, onBack }: Props
         <ToolbarButton
             key="read"
             title={titleRead}
-            loading={loading}
-            disabled={!selectedIDs.length}
+            disabled={loading || !selectedIDs.length}
             onClick={() => withLoading(handleMarkAs(READ))}
             className="no-tablet no-mobile"
             data-test-id="toolbar:read"
-        >
-            <Icon className="toolbar-icon mauto" name="read" />
-            <span className="sr-only">{c('Action').t`Mark as read`}</span>
-        </ToolbarButton>,
+            icon={<Icon name="read" alt={c('Action').t`Mark as read`} />}
+        />,
         <ToolbarButton
             key="unread"
             title={titleUnread}
-            loading={loading}
-            disabled={!selectedIDs.length}
+            disabled={loading || !selectedIDs.length}
             onClick={() => withLoading(handleMarkAs(UNREAD))}
             data-test-id="toolbar:unread"
-        >
-            <Icon className="toolbar-icon mauto" name="unread" />
-            <span className="sr-only">{c('Action').t`Mark as unread`}</span>
-        </ToolbarButton>,
+            icon={<Icon name="unread" alt={c('Action').t`Mark as unread`} />}
+        />,
     ];
 
     if (MessageButtons === MESSAGE_BUTTONS.UNREAD_READ) {

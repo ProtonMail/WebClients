@@ -129,7 +129,8 @@ const ComposerActions = ({
         >
             <Tooltip title={titleSendButton}>
                 <Button
-                    className="button--primary composer-send-button"
+                    color="norm"
+                    className="composer-send-button"
                     disabled={sendDisabled}
                     onClick={onSend}
                     data-testid="send-button"
@@ -140,52 +141,47 @@ const ComposerActions = ({
             </Tooltip>
             <div className="flex flex-item-fluid">
                 <div className="flex">
-                    <Tooltip title={titleAttachment} className="flex">
-                        <AttachmentsButton
-                            className={classnames([isAttachments && 'button--primaryborder'])}
-                            disabled={lock}
-                            onAddAttachments={onAddAttachments}
-                            attachmentTriggerRef={attachmentTriggerRef}
-                        />
+                    <Tooltip title={titleAttachment}>
+                        <span>
+                            <AttachmentsButton
+                                isAttachments={isAttachments}
+                                disabled={lock}
+                                onAddAttachments={onAddAttachments}
+                                attachmentTriggerRef={attachmentTriggerRef}
+                            />
+                        </span>
                     </Tooltip>
-                    <Tooltip title={titleExpiration} className="flex ml0-5">
+                    <Tooltip title={titleExpiration}>
                         <Button
-                            icon="expiration"
-                            className={classnames([
-                                'inline-flex flex-align-items-center button--for-icon',
-                                isExpiration && 'button--primaryborder',
-                            ])}
+                            icon
+                            shape="outline"
+                            color={isExpiration ? 'norm' : undefined}
                             onClick={onExpiration}
                             disabled={lock}
+                            className="ml0-5"
                         >
-                            <span className="sr-only">{c('Action').t`Expiration time`}</span>
+                            <Icon name="expiration" alt={c('Action').t`Expiration time`} />
                         </Button>
                     </Tooltip>
-                    <Tooltip title={titleEncryption} className="flex ml0-5">
+                    <Tooltip title={titleEncryption}>
                         <Button
+                            icon
                             data-test-id="composer:encryption-lock"
-                            icon="lock-alone"
-                            className={classnames([
-                                'inline-flex flex-align-items-center button--for-icon',
-                                isPassword && 'button--primaryborder',
-                            ])}
+                            color={isPassword ? 'norm' : undefined}
+                            shape="outline"
                             onClick={onPassword}
                             disabled={lock}
+                            className="ml0-5"
                         >
-                            <span className="sr-only">{c('Action').t`Encryption`}</span>
+                            <Icon name="lock-alone" alt={c('Action').t`Encryption`} />
                         </Button>
                     </Tooltip>
                 </div>
                 <div className="flex mlauto">
                     <span className="mr0-5 mtauto mbauto no-mobile">{dateMessage}</span>
-                    <Tooltip title={titleDeleteDraft} className="flex mr0-5">
-                        <Button
-                            className="inline-flex flex-align-items-center button--for-icon"
-                            icon="trash"
-                            disabled={lock}
-                            onClick={onDelete}
-                        >
-                            <span className="sr-only">{c('Action').t`Delete draft`}</span>
+                    <Tooltip title={titleDeleteDraft}>
+                        <Button icon disabled={lock} onClick={onDelete} shape="outline" className="mr0-5">
+                            <Icon name="trash" alt={c('Action').t`Delete draft`} />
                         </Button>
                     </Tooltip>
                 </div>

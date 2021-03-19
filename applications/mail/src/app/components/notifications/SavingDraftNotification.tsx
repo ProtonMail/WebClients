@@ -24,10 +24,8 @@ const SavingDraftNotification = ({ onDiscard }: Props, ref: Ref<SavingDraftNotif
         return (
             <>
                 <span className="mr1">{c('Info').t`Draft saved`}</span>
-                <LinkButton
-                    className="align-baseline p0 text-no-decoration text-bold button--currentColor"
-                    onClick={onDiscard}
-                >{c('Action').t`Discard`}</LinkButton>
+                <LinkButton className="align-baseline p0 text-no-decoration text-bold" onClick={onDiscard}>{c('Action')
+                    .t`Discard`}</LinkButton>
             </>
         );
     }

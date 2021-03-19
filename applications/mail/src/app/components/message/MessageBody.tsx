@@ -81,7 +81,8 @@ const MessageBody = ({
                                     }
                                 >
                                     <Button
-                                        className="button--small m0-5"
+                                        size="small"
+                                        className="m0-5"
                                         onClick={() => toggleOriginalMessage?.()}
                                         data-test-id="message-view:expand-codeblock"
                                     >

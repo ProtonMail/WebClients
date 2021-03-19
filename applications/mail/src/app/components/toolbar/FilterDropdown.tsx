@@ -50,11 +50,13 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate, c
 
     return (
         <SimpleDropdown
+            as="button"
+            type="button"
             hasCaret={hasCaret}
             className={className}
             content={
                 <span className="flex flex-align-items-center flex-nowrap" data-test-id="toolbar:filter-dropdown">
-                    <Icon className="toolbar-icon mr0-5" name="filter" />
+                    <Icon className="toolbar-icon mr0-5 flex-item-noshrink" name="filter" />
                     <span className="text-sm m0">{getTextContent()}</span>
                 </span>
             }

@@ -55,9 +55,10 @@ const ExtraImages = ({
 
     const loadButton = Shortcuts ? (
         <>
-            <Tooltip title={titleButtonLoad} className="flex flex-item-noshrink">
-                <button type="button" onClick={onLoadImages} className="text-underline link">{c('Action')
-                    .t`Load`}</button>
+            <Tooltip title={titleButtonLoad}>
+                <button type="button" onClick={onLoadImages} className="flex flex-item-noshrink text-underline link">{c(
+                    'Action'
+                ).t`Load`}</button>
             </Tooltip>
         </>
     ) : (

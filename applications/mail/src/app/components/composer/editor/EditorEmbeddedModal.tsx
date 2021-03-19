@@ -19,24 +19,20 @@ const EditorEmbeddedModal = ({ files, onClose, onSelect }: Props) => {
                 <footer className="p2 pt0 flex flex-column flex-nowrap">
                     <span className="mb0-5 w100 flex flex-row flex-align-items-center auto-tiny-mobile">
                         <span className="flex-item-fluid auto-tiny-mobile">
-                            <Button
-                                className="button--primary w100"
-                                onClick={() => onSelect(ATTACHMENT_ACTION.ATTACHMENT)}
-                            >
+                            <Button color="norm" fullWidth onClick={() => onSelect(ATTACHMENT_ACTION.ATTACHMENT)}>
                                 {c('Action').t`Attachment`}
                             </Button>
                         </span>
                         <span className="ml1 mr1 w5e auto-tiny-mobile on-tiny-mobile-mt1 on-tiny-mobile-mb1">{c('Info')
                             .t`or`}</span>
                         <span className="flex-item-fluid auto-tiny-mobile">
-                            <Button
-                                className="button--primary w100"
-                                onClick={() => onSelect(ATTACHMENT_ACTION.INLINE)}
-                            >{c('Action').t`Inline`}</Button>
+                            <Button color="norm" fullWidth onClick={() => onSelect(ATTACHMENT_ACTION.INLINE)}>{c(
+                                'Action'
+                            ).t`Inline`}</Button>
                         </span>
                     </span>
                     <span className="w100">
-                        <Button className="button--link text-no-decoration" onClick={onClose}>
+                        <Button shape="link" color="norm" onClick={onClose}>
                             {c('Action').t`Cancel action`}
                         </Button>
                     </span>

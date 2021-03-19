@@ -12,6 +12,7 @@ import {
     useModals,
     useFeature,
     ImportWelcomeModal,
+    ButtonLike,
 } from 'react-components';
 import { APPS, PERMISSIONS } from 'proton-shared/lib/constants';
 import { getAppName } from 'proton-shared/lib/apps/helper';
@@ -91,22 +92,24 @@ const ImportContainer = ({ onChangeBlurred, setActiveSection, location }: Props)
                         icon: 'contacts',
                         text: c('Info').t`Import your address book or individual contacts into ProtonContacts.`,
                         link: (
-                            <AppLink to="/" toApp={APPS.PROTONCONTACTS} className="button--primary mtauto">
+                            <ButtonLike as={AppLink} color="norm" to="/" toApp={APPS.PROTONCONTACTS} className="mtauto">
                                 {c('Action').t`Import contacts`}
-                            </AppLink>
+                            </ButtonLike>
                         ),
                     },
                     {
                         icon: 'calendar',
                         text: c('Info').t`Import your entire calendar or individual events into ${calendarAppName}.`,
                         link: (
-                            <AppLink
+                            <ButtonLike
+                                as={AppLink}
+                                color="norm"
                                 to="/settings/calendars"
                                 toApp={APPS.PROTONCALENDAR}
-                                className="button--primary mtauto"
+                                className="mtauto"
                             >
                                 {c('Action').t`Import calendar`}
-                            </AppLink>
+                            </ButtonLike>
                         ),
                     },
                 ]}

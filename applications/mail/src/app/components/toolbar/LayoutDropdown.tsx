@@ -26,11 +26,7 @@ const LayoutDropdown = ({ mailSettings = {} }: Props) => {
     return (
         <ToolbarDropdown
             title={c('Action').t`Change layout`}
-            content={
-                <span className="flex flex-align-items-center" data-test-id="toolbar:layout-dropdown">
-                    <Icon className="toolbar-icon" name={currentLayoutIcon} />
-                </span>
-            }
+            content={<Icon className="toolbar-icon" name={currentLayoutIcon} />}
         >
             {() => (
                 <DropdownMenu>

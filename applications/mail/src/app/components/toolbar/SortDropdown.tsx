@@ -37,6 +37,8 @@ const SortDropdown = ({ loading, conversationMode, sort: { sort, desc }, onSort,
     };
     return (
         <SimpleDropdown
+            as="button"
+            type="button"
             hasCaret={hasCaret}
             className={className}
             content={
