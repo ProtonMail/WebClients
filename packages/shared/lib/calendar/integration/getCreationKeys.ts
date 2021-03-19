@@ -10,6 +10,7 @@ interface GetCreationKeysArguments {
     addressKeys: DecryptedKey[];
     newCalendarKeys: DecryptedCalendarKey[];
     oldCalendarKeys?: DecryptedCalendarKey[];
+    decryptedSharedKeyPacket?: string;
 }
 
 export const getCreationKeys = async ({
@@ -17,6 +18,7 @@ export const getCreationKeys = async ({
     addressKeys,
     newCalendarKeys,
     oldCalendarKeys,
+    decryptedSharedKeyPacket,
 }: GetCreationKeysArguments) => {
     const primaryAddressKey = getPrimaryKey(addressKeys);
     const primaryPrivateAddressKey = primaryAddressKey ? primaryAddressKey.privateKey : undefined;
@@ -32,9 +34,11 @@ export const getCreationKeys = async ({
 
     const decryptionKeys = oldCalendarKeys || newCalendarKeys;
 
-    const [sharedSessionKey, calendarSessionKey] = Event
-        ? await readSessionKeys(Event, splitKeys(decryptionKeys).privateKeys)
-        : [];
+    const [sharedSessionKey, calendarSessionKey] = await readSessionKeys({
+        calendarEvent: Event,
+        ...splitKeys(decryptionKeys),
+        decryptedSharedKeyPacket,
+    });
 
     return {
         privateKey: primaryPrivateCalendarKey,

@@ -79,6 +79,8 @@ export const UNIQUE_PROPERTIES = new Set([
     'prodid',
     'x-wr-calname',
     'x-wr-timezone',
+    'x-pm-session-key',
+    'x-pm-shared-event-id',
     'version',
     'calscale',
     'method',
