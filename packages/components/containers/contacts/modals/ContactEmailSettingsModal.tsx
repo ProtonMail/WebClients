@@ -25,7 +25,6 @@ import ContactMIMETypeSelect from '../../../components/contacts/ContactMIMETypeS
 import ContactPgpSettings from '../ContactPgpSettings';
 import { useApi, useEventManager, useNotifications, useLoading, useMailSettings } from '../../../hooks';
 import {
-    Icon,
     Alert,
     Label,
     Field,
@@ -214,10 +213,15 @@ const ContactEmailSettingsModal = ({
         // we cannot use the FormModal component because we need to introduce the class text-ellipsis inside the header
         <DialogModal modalTitleID="modalTitle" onClose={onClose} {...rest}>
             <header className="modal-header">
-                <button type="button" className="modal-close" title={c('Action').t`Close modal`} onClick={onClose}>
-                    <Icon className="modal-close-icon" name="close" />
-                    <span className="sr-only">{c('Action').t`Close modal`}</span>
-                </button>
+                <Button
+                    shape="ghost"
+                    size="small"
+                    className="modal-close"
+                    icon="close"
+                    iconProps={{ alt: c('Action').t`Close modal` }}
+                    title={c('Action').t`Close modal`}
+                    onClick={onClose}
+                />
                 <h1 id="modalTitle" className="modal-title text-ellipsis">
                     {c('Title').t`Email settings (${emailAddress})`}
                 </h1>

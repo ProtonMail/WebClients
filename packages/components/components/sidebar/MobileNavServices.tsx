@@ -14,9 +14,7 @@ const MobileNavServices = ({ children }: Props) => {
         return null;
     }
 
-    return (
-        <nav className="p1 flex flex-row flex-justify-space-around flex-item-noshrink bg-global-grey">{children}</nav>
-    );
+    return <nav className="p1 flex flex-row flex-justify-space-around flex-item-noshrink bg-norm">{children}</nav>;
 };
 
 export default MobileNavServices;

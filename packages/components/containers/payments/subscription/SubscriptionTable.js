@@ -22,7 +22,7 @@ const SubscriptionTable = ({
                     return (
                         <div key={title} className="flex-autogrid-item flex" data-plan-name={name}>
                             <div
-                                className="bordered-container subscriptionTable-plan on-mobile-mb2 pt2 pb2 pl0-75 pr0-75 flex-no-min-children flex-column relative w100"
+                                className="bordered subscriptionTable-plan on-mobile-mb2 pt2 pb2 pl0-75 pr0-75 flex-no-min-children flex-column relative w100"
                                 data-current-plan={index === currentPlanIndex}
                                 data-most-popular={index === mostPopularIndex}
                             >
@@ -33,7 +33,7 @@ const SubscriptionTable = ({
                                         </div>
                                     ) : null}
                                     {index === mostPopularIndex ? (
-                                        <div className="mb0-5 text-center color-global-success text-bold text-sm mt0 text-uppercase subscriptionTable-mostPopular">{c(
+                                        <div className="mb0-5 text-center color-success text-bold text-sm mt0 text-uppercase subscriptionTable-mostPopular">{c(
                                             'Title for subscription plan'
                                         ).t`Most popular`}</div>
                                     ) : null}

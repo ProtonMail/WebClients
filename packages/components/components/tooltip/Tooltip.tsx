@@ -16,10 +16,10 @@ interface Props {
 
 const getTooltipTypeClass = (type: TooltipType) => {
     if (type === 'error') {
-        return 'tooltip--warning';
+        return 'tooltip-danger';
     }
     if (type === 'warning') {
-        return 'tooltip--attention';
+        return 'tooltip-warning';
     }
 };
 

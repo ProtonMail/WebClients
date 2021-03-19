@@ -18,6 +18,6 @@ describe('Badge component', () => {
 
     it('should have success class', () => {
         const { container } = render(<Badge type="success">{text}</Badge>);
-        expect(container.firstChild).toHaveClass('badge-label--success');
+        expect(container.firstChild).toHaveClass('badge-label-success');
     });
 });

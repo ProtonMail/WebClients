@@ -16,7 +16,6 @@ interface Props {
     isNarrow: boolean;
     actions: Actions;
     handleUpdateActions: (onUpdateActions: Partial<Actions>) => void;
-    isDark: boolean;
 }
 
 type ChangePayload = {
@@ -47,7 +46,7 @@ const reducer = (acc: SelectOption[] = [], folder: FolderWithSubFolders, level =
     return acc;
 };
 
-const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateActions, isDark }: Props) => {
+const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateActions }: Props) => {
     const { createModal } = useModals();
     const treeview = buildTreeview(folders);
 
@@ -90,10 +89,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
 
     const renderClosed = () => {
         if (!moveTo?.folder) {
-            return (
-                <em className={classnames(['pt0-5', isDark ? 'color-global-muted' : 'color-global-altgrey'])}>{c('Info')
-                    .t`No folder selected`}</em>
-            );
+            return <em className={classnames(['pt0-5', 'color-weak'])}>{c('Info').t`No folder selected`}</em>;
         }
 
         let selectedFolder;
@@ -139,8 +135,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
         <div className="border-bottom flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1">
             <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb1'])} onClick={toggleSection}>
                 <Icon name="caret" className={classnames([isOpen && 'rotateX-180'])} />
-                <span className={classnames(['ml0-5', actions.error && 'color-global-warning'])}>{c('Label')
-                    .t`Move to`}</span>
+                <span className={classnames(['ml0-5', actions.error && 'color-danger'])}>{c('Label').t`Move to`}</span>
             </button>
             <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml1'])}>
                 {isOpen ? (
@@ -163,16 +158,8 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
             </div>
             <div>
                 <Tooltip title={c('Action').t`Reset`}>
-                    <Button
-                        icon
-                        disabled={!moveTo?.folder}
-                        onClick={handleClear}
-                        className={classnames([isNarrow ? 'mt1' : 'ml1'])}
-                    >
-                        <Icon
-                            name="remove-text-formatting"
-                            className={classnames([isDark ? 'color-global-muted' : 'color-global-altgrey'])}
-                        />
+                    <Button icon disabled={!moveTo?.folder} onClick={handleClear} className={isNarrow ? 'mt1' : 'ml1'}>
+                        <Icon name="remove-text-formatting" className="color-weak" />
                     </Button>
                 </Tooltip>
             </div>

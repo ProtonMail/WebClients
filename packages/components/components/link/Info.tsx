@@ -18,7 +18,7 @@ const Info = ({
     url,
     title = undefined,
     originalPlacement = 'top',
-    buttonClass = 'inline-flex color-currentColor',
+    buttonClass = 'inline-flex color-inherit',
     buttonTabIndex,
     className = '',
     ...rest

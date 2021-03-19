@@ -85,7 +85,7 @@ const Sidebar = ({ expanded = false, onToggleExpand, hasAppLinks = true, logo, p
                                 to="/subscription"
                                 shape="link"
                                 toApp={getAccountSettingsApp()}
-                                className="color-currentColor hover-same-color text-no-decoration text-xs text-center mb0-5"
+                                className="color-inherit hover-same-color text-no-decoration text-xs text-center mb0-5"
                                 title={c('Storage').t`Add storage space`}
                             >
                                 {storageText}

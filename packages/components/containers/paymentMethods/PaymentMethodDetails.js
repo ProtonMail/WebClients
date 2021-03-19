@@ -47,9 +47,9 @@ const PaymentMethodDetails = ({ type, details = {} }) => {
     if (type === PAYMENT_METHOD_TYPES.CARD) {
         const bankIcon = getBankSvg(BANKS[Brand]);
         return (
-            <Bordered className="bg-global-highlight inline-flex flex-column w100 pl2 pr2 pb2">
+            <Bordered className="bg-weak inline-flex flex-column w100 pl2 pr2 pb2">
                 {bankIcon ? <img width="70" src={bankIcon} alt={Brand} className="mb1" /> : null}
-                <span className="color-global-grey-dm block mb1 opacity-40">{c('Label').t`Card number`}</span>
+                <span className="block mb1 opacity-40">{c('Label').t`Card number`}</span>
                 <div className="ratio-container-5-1 text-center">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -64,11 +64,11 @@ const PaymentMethodDetails = ({ type, details = {} }) => {
                 </div>
                 <div className="flex flex-nowrap max-w100">
                     <div className="flex-item-fluid">
-                        <span className="color-global-grey-dm block mb0-5 opacity-40">{c('Label').t`Card holder`}</span>
+                        <span className="block mb0-5 opacity-40">{c('Label').t`Card holder`}</span>
                         <span className="text-xl mt0 mb0 inline-block text-ellipsis max-w100">{Name}</span>
                     </div>
                     <div className="text-right flex-item-noshrink pl1">
-                        <span className="color-global-grey-dm block mb0-5 opacity-40">{c('Label').t`Expires`}</span>
+                        <span className="block mb0-5 opacity-40">{c('Label').t`Expires`}</span>
                         <span className="text-xl mt0 mb0">
                             {ExpMonth}/{ExpYear}
                         </span>
@@ -81,13 +81,12 @@ const PaymentMethodDetails = ({ type, details = {} }) => {
     if (type === PAYMENT_METHOD_TYPES.PAYPAL) {
         const bankIcon = getBankSvg('paypal');
         return (
-            <Bordered className="bg-global-highlight p2">
+            <Bordered className="p2">
                 <div>
                     <img width="70" src={bankIcon} alt="PayPal" className="mb1" />
                 </div>
                 <div className="flex flex-wrap flex-align-items-center">
-                    <label className="color-global-grey-dm flex-item-noshrink mr1" htmlFor="paypal-payer">{c('Label')
-                        .t`Payer`}</label>
+                    <label className="flex-item-noshrink mr1" htmlFor="paypal-payer">{c('Label').t`Payer`}</label>
                     <code id="paypal-payer" className="block text-xl mb0 mb1 text-ellipsis" title={Payer}>
                         {Payer}
                     </code>

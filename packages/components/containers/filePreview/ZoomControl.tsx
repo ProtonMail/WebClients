@@ -22,16 +22,11 @@ const ZoomControl = ({ scale, onZoomIn, onZoomOut, onReset }: Props) => {
                     disabled={isZoomOutDisabled}
                     onClick={onZoomOut}
                     title={c('Action').t`Zoom out`}
-                    className={classnames(['flex p0-5 color-white', isZoomOutDisabled && 'opacity-50'])}
+                    className={classnames(['flex p0-5', isZoomOutDisabled && 'opacity-50'])}
                 >
                     <Icon name="minus" size={12} />
                 </button>
-                <button
-                    type="button"
-                    title={c('Action').t`Reset zoom`}
-                    className="color-white ml0-5 mr0-5"
-                    onClick={onReset}
-                >
+                <button type="button" title={c('Action').t`Reset zoom`} className="ml0-5 mr0-5" onClick={onReset}>
                     <span>{Math.round(scale * 100)}%</span>
                 </button>
                 <button
@@ -39,7 +34,7 @@ const ZoomControl = ({ scale, onZoomIn, onZoomOut, onReset }: Props) => {
                     disabled={isZoomInDisabled}
                     onClick={onZoomIn}
                     title={c('Action').t`Zoom in`}
-                    className={classnames(['flex p0-5 color-white', isZoomInDisabled && 'opacity-50'])}
+                    className={classnames(['flex p0-5', isZoomInDisabled && 'opacity-50'])}
                 >
                     <Icon name="plus" size={12} />
                 </button>

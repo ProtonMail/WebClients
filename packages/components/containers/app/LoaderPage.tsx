@@ -9,7 +9,7 @@ interface Props {
     loaderClassName?: string;
 }
 
-const LoaderPage = ({ text, loaderClassName = 'color-global-light' }: Props) => {
+const LoaderPage = ({ text, loaderClassName = '' }: Props) => {
     const { APP_NAME } = useConfig();
 
     const appName = APPS_CONFIGURATION[APP_NAME].name;

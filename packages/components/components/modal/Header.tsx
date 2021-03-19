@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
-import Icon from '../icon/Icon';
 import { classnames } from '../../helpers';
 import Title from './Title';
+import { Button } from '../button';
 
 interface Props extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>, 'children'> {
     modalTitleID: string;
@@ -10,7 +10,6 @@ interface Props extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLEl
     onClose?: () => void;
     displayTitle?: boolean;
     hasClose?: boolean;
-    closeTextVisible?: boolean;
     closeTextModal?: string;
 }
 
@@ -19,7 +18,6 @@ const Header = ({
     modalTitleID,
     className,
     closeTextModal,
-    closeTextVisible,
     hasClose = true,
     displayTitle = true,
     onClose,
@@ -32,16 +30,16 @@ const Header = ({
             {...rest}
         >
             {hasClose ? (
-                <button
-                    type="button"
+                <Button
+                    shape="ghost"
+                    size="small"
                     className="modal-close"
+                    icon="close"
+                    iconProps={{ alt: closeText, className: 'modal-close-icon' }}
                     title={closeText}
                     onClick={onClose}
                     data-focus-fallback="-3"
-                >
-                    <span className={classnames(['mr0-25', !closeTextVisible && 'sr-only'])}>{closeText}</span>
-                    <Icon className="modal-close-icon" name="close" />
-                </button>
+                />
             ) : null}
             {typeof children === 'string' ? (
                 <Title id={modalTitleID} className={!displayTitle ? 'sr-only' : undefined}>

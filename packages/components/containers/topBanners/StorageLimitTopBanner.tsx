@@ -34,7 +34,7 @@ const StorageLimitTopBanner = () => {
     }, [ignoreStorageLimit]);
 
     const upgradeLink = user.canPay ? (
-        <AppLink key="storage-link" className="color-currentColor" {...paymentLinkProps}>
+        <AppLink key="storage-link" className="color-inherit" {...paymentLinkProps}>
             {c('Link').t`Upgrade account`}
         </AppLink>
     ) : (
@@ -45,16 +45,15 @@ const StorageLimitTopBanner = () => {
         : c('Info').t`Free up some space or contact your administrator.`;
     if (spacePercentage >= 100) {
         return (
-            <TopBanner className="bg-global-warning">{c('Info')
+            <TopBanner className="bg-danger">{c('Info')
                 .jt`You reached 100% of your storage capacity. You cannot send or receive new emails. ${freeUpMessage} ${upgradeLink}`}</TopBanner>
         );
     }
 
     if (!ignoreStorageLimit && spacePercentage >= 80 && spacePercentage < 100) {
         return (
-            <TopBanner className="bg-global-attention color-global-grey" onClose={() => setIgnoreStorageLimit(true)}>{c(
-                'Info'
-            ).jt`You reached ${spaceDisplayed}% of your storage capacity. ${freeUpMessage} ${upgradeLink}`}</TopBanner>
+            <TopBanner className="bg-warning" onClose={() => setIgnoreStorageLimit(true)}>{c('Info')
+                .jt`You reached ${spaceDisplayed}% of your storage capacity. ${freeUpMessage} ${upgradeLink}`}</TopBanner>
         );
     }
     return null;

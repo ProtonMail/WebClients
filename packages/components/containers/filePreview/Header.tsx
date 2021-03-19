@@ -20,22 +20,12 @@ const Header = ({ mimeType, name, onClose, onSave, children }: Props) => {
             {children}
             <div className="flex flex-align-items-center">
                 {onSave && (
-                    <button
-                        type="button"
-                        title={c('Action').t`Download`}
-                        onClick={onSave}
-                        className="color-global-light ml1-5"
-                    >
+                    <button type="button" title={c('Action').t`Download`} onClick={onSave} className="ml1-5">
                         <Icon name="download" size={20} alt={c('Action').t`Download`} />
                     </button>
                 )}
                 {onClose && (
-                    <button
-                        type="button"
-                        title={c('Action').t`Close`}
-                        onClick={onClose}
-                        className="color-global-light ml1-5"
-                    >
+                    <button type="button" title={c('Action').t`Close`} onClick={onClose} className="ml1-5">
                         <Icon name="off" size={20} />
                     </button>
                 )}

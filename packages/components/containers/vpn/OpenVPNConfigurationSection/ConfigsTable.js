@@ -24,7 +24,7 @@ export const CATEGORY = {
 const PlusBadge = () => (
     <span className="ml0-5">
         <Tooltip title="Plus">
-            <div className="text-center color-white rounded bg-plus" style={{ width: 22, height: 22 }}>
+            <div className="text-center rounded" style={{ width: 22, height: 22 }}>
                 P
             </div>
         </Tooltip>
@@ -35,7 +35,7 @@ const ServerDown = () => (
     <span className="ml0-5">
         <Tooltip title={c('Info').t`Server is currently down`}>
             <div className="flex inline-flex-vcenter">
-                <Icon className="color-global-warning" size={20} name="attention" />
+                <Icon className="color-danger" size={20} name="attention" />
             </div>
         </Tooltip>
     </span>
@@ -44,7 +44,7 @@ const ServerDown = () => (
 export const P2PIcon = () => (
     <span className="ml0-5 mr0-5">
         <Tooltip title={c('Info').t`p2p`}>
-            <Icon name="p2p" size={18} className="rounded bg-global-border p0-25" />
+            <Icon name="p2p" size={18} className="rounded bg-strong p0-25" />
         </Tooltip>
     </span>
 );
@@ -52,7 +52,7 @@ export const P2PIcon = () => (
 export const TorIcon = () => (
     <span className="ml0-5 mr0-5">
         <Tooltip title={c('Info').t`Tor`}>
-            <Icon name="tor" size={18} className="rounded bg-global-border p0-25" />
+            <Icon name="tor" size={18} className="rounded bg-strong p0-25" />
         </Tooltip>
     </span>
 );

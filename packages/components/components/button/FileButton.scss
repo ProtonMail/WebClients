@@ -16,15 +16,23 @@
 		z-index: -1;
 	}
 
-	input[type='file']:hover + .button,
-	input[type='file']:focus + .button,
-	input[type='file']:focus-within + .button {
-		color: $pm-global-grey;
-		box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
+	input[type='file']:focus + .button-solid-norm {
+		--button-hover-background-color: var(--interaction-norm-hover);
+		--button-hover-text-color: var(--interaction-norm-contrast);
 	}
 
-	input[type='file']:active + .button {
-		background: radial-gradient(closest-side, $white, $pm-global-border 90%);
-		box-shadow: none;
+	input[type='file']:focus + .button-solid-weak {
+		--button-hover-background-color: var(--interaction-weak-hover);
+		--button-hover-text-color: var(--interaction-weak-contrast);
+	}
+
+	input[type='file']:active + .button-solid-norm {
+		--button-active-background-color: var(--interaction-norm-active);
+		--button-active-text-color: var(--interaction-norm-contrast);
+	}
+
+	input[type='file']:active + .button-solid-weak {
+		--button-active-background-color: var(--interaction-weak-active);
+		--button-active-text-color: var(--interaction-weak-contrast);
 	}
 }

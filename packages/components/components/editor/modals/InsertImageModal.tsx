@@ -106,7 +106,7 @@ const InsertImageModal = ({ onAddUrl, onAddImages, onClose, ...rest }: Props) =>
                     )}
 
                     {imageState === ImageState.Error && (
-                        <span className="color-global-warning">{c('Info').t`Error loading image`}</span>
+                        <span className="color-danger">{c('Info').t`Error loading image`}</span>
                     )}
                 </div>
             </div>
