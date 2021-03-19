@@ -5,7 +5,7 @@
 		--max-height: 25em;
 
 		@include respond-to($breakpoint-small, 'min') {
-			box-shadow: 0 0.5rem 1.5rem 0 rgb(0 0 0 / 0.75);
+			box-shadow: var(--shadow-lifted);
 		}
 	}
 
@@ -24,15 +24,14 @@
 	}
 
 	&-link {
+		@extend .interactive;
+
 		&,
 		&:hover,
-		&:focus {
+		&:focus,
+		&:active {
+			color: var(--text-norm);
 			text-decoration: none;
-		}
-
-		&:hover,
-		&:focus {
-			background-color: rgb(255 255 255 / 0.05);
 		}
 	}
 }

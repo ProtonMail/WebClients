@@ -5,19 +5,17 @@ $stroke-width: 3px !default;
 // and for the moment on Angular/React sidebar
 .circle-chart {
 	&-background {
-		stroke: var(--color-main-area, $pm-global-grey);
-		opacity: 0.2;
+		stroke: var(--background-strong);
 		stroke-width: $stroke-width;
 		fill: transparent;
 
 		&--bigger & {
-			stroke: var(--bgcolor-input, #{rgba($pm-global-grey, 0.2)});
-			opacity: 0.4;
+			stroke: var(--background-weak);
 		}
 	}
 
 	&-circle {
-		stroke: $pm-global-success;
+		stroke: var(--signal-success);
 		stroke-width: $stroke-width;
 		fill: transparent;
 		animation: anime-circle-chart-fill 2s reverse;
@@ -26,19 +24,19 @@ $stroke-width: 3px !default;
 	}
 
 	&-percent {
-		fill: var(--color-main-area, #{rgba($pm-global-grey, 0.5)});
+		fill: var(--text-norm);
 	}
 
 	&-info {
-		color: var(--color-standard-text, $pm-global-light);
+		color: var(--text-weak);
 	}
 
 	.circle-bar--medium &-circle {
-		stroke: $pm-global-attention;
+		stroke: var(--signal-warning);
 	}
 
 	.circle-bar--full &-circle {
-		stroke: $pm-global-warning;
+		stroke: var(--signal-danger);
 	}
 }
 

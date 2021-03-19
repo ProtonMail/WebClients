@@ -1,0 +1,19 @@
+$alert-block-border-width: 3px !default;
+
+[class*='alert-block'] {
+	padding: 0.2em 1.2em;
+	color: var(--text-norm);
+	border-left-width: $alert-block-border-width;
+	border-left-style: solid;
+}
+
+@each $color in (info, danger, warning, success) {
+	$class: '';
+	@if $color != 'info' {
+		$class: '--' + $color;
+	}
+
+	.alert-block#{$class} {
+		border-color: var(--signal-#{$color});
+	}
+}

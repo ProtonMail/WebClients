@@ -1,14 +1,10 @@
-$border-width: 2px !default;
-
 [class*='badge-label'] {
 	@extend .text-uppercase;
 	@extend .inline-flex;
 	font-size: rem(11); // to be sure this is the same height everywhere
-	padding: 0 em(2) em(1);
+	padding: em(2) em(4) em(3);
 	line-height: 1;
 	border-radius: $global-border-radius;
-	border-width: $border-width;
-	border-style: solid;
 }
 
 @each $color in (primary, danger, warning, success, info) {
@@ -18,8 +14,8 @@ $border-width: 2px !default;
 	}
 
 	.badge-label-#{$color} {
-		background-color: var(--#{$color});
-		color: var(--#{$color}-contrast);
+		background-color: var(--#{$prefix + $color});
+		color: var(--#{$prefix + $color}-contrast);
 	}
 }
 

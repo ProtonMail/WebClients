@@ -1,6 +1,7 @@
 $tooltip-width: 14em !default;
 $arrow-width: 0.5em !default;
-$tooltip-bg-color: #1a1d24;
+$tooltip-bg-color: var(--tooltip-background-color, black);
+$tooltip-text-color: var(--tooltip-text-color, white);
 
 /* basic tooltip styles */
 .tooltip {
@@ -10,10 +11,29 @@ $tooltip-bg-color: #1a1d24;
 	max-width: $tooltip-width;
 	border-radius: $global-border-radius;
 	background: $tooltip-bg-color;
-	color: white;
+	color: $tooltip-text-color;
 	padding: 0.5em 0.75em;
 	text-align: center;
 	word-break: break-word;
+
+	// colored versions
+	@each $color in (primary, danger, warning, success, info) {
+		$prefix: '';
+		@if $color != 'primary' {
+			$prefix: 'signal-';
+		}
+
+		&-#{$color} {
+			--tooltip-background-color: var(--#{$prefix + $color});
+			--tooltip-text-color: var(--#{$prefix + $color}-contrast);
+		}
+	}
+
+	kbd {
+		background-color: #464b58;
+	}
+
+	// Placement
 
 	&--top-left {
 		border-bottom-left-radius: 0;
@@ -115,25 +135,5 @@ $tooltip-bg-color: #1a1d24;
 	&--left-bottom::before,
 	&--right-bottom::before {
 		bottom: 0;
-	}
-
-	// colored versions
-	&--success {
-		--bgcolor-tooltip: #{$pm-global-success};
-	}
-
-	&--warning {
-		--bgcolor-tooltip: #{$pm-global-warning};
-	}
-
-	&--attention {
-		--bgcolor-tooltip: #{$pm-global-attention};
-
-		// contrasts
-		color: $black;
-	}
-
-	kbd {
-		background-color: #464b58;
 	}
 }

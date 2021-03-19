@@ -1,16 +1,13 @@
 .topnav-link {
-	border: 1px solid transparent;
+	@extend .interactive;
+
 	border-radius: $global-border-radius;
 	padding: 1.25rem 1.75rem;
-	color: var(--color-nav-link, $white);
-	text-decoration: none;
 
-	&:focus,
+	&,
 	&:hover,
-	&:active,
-	&[aria-current='true'] {
-		background-color: $navigation-hover-bg-color;
-		color: inherit;
+	&:focus,
+	&:active {
 		text-decoration: none;
 	}
 
@@ -18,16 +15,12 @@
 		font-weight: bold;
 	}
 
-	& > svg {
-		fill: var(--fillcolor-icons, $white);
-	}
-
 	&--blackfriday::before {
 		content: '';
 		position: absolute;
 		width: 7px;
 		height: 7px;
-		background: $pm-global-warning;
+		background: var(--signal-danger);
 		border-radius: 50%;
 		left: calc(1.75rem + 15px);
 		top: calc(50% - 14px);

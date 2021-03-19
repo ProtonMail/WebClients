@@ -50,7 +50,7 @@ td[aria-busy='true'] {
 		right: 0;
 		left: 0;
 		bottom: 0;
-		background: var(--bgcolor-main-area, white)
+		background: var(--background-norm)
 			url(#{$path-images}loading-atom-smaller.svg) 50% 50% no-repeat;
 	}
 }
@@ -79,10 +79,10 @@ svg[aria-busy='true'] {
 
 @keyframes anime-background-loading {
 	0% {
-		background-color: $white;
+		background-color: var(--background-norm);
 	}
 
 	100% {
-		background-color: #eee;
+		background-color: var(--background-weak);
 	}
 }

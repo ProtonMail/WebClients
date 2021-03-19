@@ -2,8 +2,7 @@ $treeview-border-width: 1px !default;
 $treeview-indentation-margin: 3rem !default;
 
 .treeview-item {
-	border-bottom: $treeview-border-width solid
-		var(--bordercolor-input, $pm-global-border);
+	border-bottom: $treeview-border-width solid var(--border-norm);
 	margin-bottom: -$treeview-border-width;
 
 	$arrow-width: 0.9rem !default;
@@ -20,14 +19,14 @@ $treeview-indentation-margin: 3rem !default;
 	}
 
 	&--move-inside {
-		background-color: var(--bgcolor-highlight, $pm-global-light);
+		background-color: var(--background-weak);
 
 		&::before {
 			left: -$arrow-width;
 			height: 0;
 			width: 0;
 			border: $arrow-height solid transparent;
-			border-left-color: $pm-primary;
+			border-left-color: var(--interaction-norm);
 			border-left-width: $arrow-width;
 		}
 	}
@@ -39,14 +38,14 @@ $treeview-indentation-margin: 3rem !default;
 			height: $circle-size;
 			width: $circle-size;
 			border-radius: 50%;
-			background: $pm-primary;
+			background: var(--interaction-norm);
 		}
 	}
 
 	&--move-inside#{&}--self-grabbed {
 		// no primary color on the self grabbed element
 		&::before {
-			border-left-color: $pm-global-muted;
+			border-left-color: var(--border-norm);
 		}
 	}
 
@@ -65,7 +64,7 @@ $treeview-indentation-margin: 3rem !default;
 		left: 0;
 		right: 0;
 		height: 1px;
-		background: $pm-primary;
+		background: var(--interaction-norm);
 	}
 
 	&--move-top::after {
@@ -84,7 +83,7 @@ $treeview-indentation-margin: 3rem !default;
 				to right,
 				transparent 0,
 				transparent #{$treeview-indentation-margin},
-				var(--bgcolor-highlight, $pm-global-light) #{$treeview-indentation-margin}
+				var(--background-weak) #{$treeview-indentation-margin}
 			);
 
 			&::before {

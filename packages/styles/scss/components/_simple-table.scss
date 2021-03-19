@@ -10,7 +10,7 @@
 	td,
 	th {
 		padding: em(9);
-		border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
+		border-bottom: 1px solid var(--border-norm);
 	}
 
 	th:not(#{&}-row-th) {
@@ -39,14 +39,14 @@
 
 	/* alternate bg for rows */
 	&--alternate-bg-row tbody tr:nth-child(odd) {
-		background-color: var(--bgcolor-input, $pm-global-light);
+		background-color: var(--background-weak);
 	}
 
 	&--is-hoverable tbody tr {
 		@media (hover: hover) {
 			&:hover,
 			&:focus-within {
-				background-color: var(--bgcolor-input, $pm-global-light);
+				background-color: var(--interaction-default-hover);
 			}
 		}
 	}
@@ -56,7 +56,7 @@
 		th {
 			position: sticky;
 			top: 0;
-			background: var(--bgcolor-main-area, $white);
+			background: var(--background-norm);
 			z-index: 1;
 
 			&::after {
@@ -69,7 +69,7 @@
 				height: 1rem;
 				background: linear-gradient(
 					to bottom,
-					rgb(0 0 0 / 0.1) 0%,
+					var(--background-strong) 0%,
 					transparent 100%
 				);
 				pointer-events: none;
@@ -92,7 +92,7 @@
 		&,
 		th,
 		td {
-			border: 1px solid var(--bordercolor-input, $pm-global-border);
+			border: 1px solid var(--border-norm);
 		}
 	}
 

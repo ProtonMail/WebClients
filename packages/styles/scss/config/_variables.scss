@@ -1,26 +1,18 @@
 $base-font-size: 14 !default; // if "14" then 1em = 14px
 $base-line-height: 1.5 !default;
 
-$size-h1: 36 !default;
-$size-h2: 28 !default;
-$size-h3: 20 !default;
-$size-h4: 18 !default;
-$size-h5: 17 !default;
-$size-h6: 16 !default;
+$title-sizes: (
+	h1: 36,
+	h2: 28,
+	h3: 20,
+	h4: 18,
+	h5: 17,
+	h6: 16,
+) !default;
 
 // Use typo helpers on demand
 $use-other-typo-helpers: true !default;
 $use-other-line-height-helpers: true !default;
-
-$text-sizes: (
-	2xs: 9,
-	xs: 10,
-	sm: 12,
-	rg: 14,
-	lg: 16,
-	xl: 18,
-	2xl: 20,
-);
 
 // fonts
 $font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans,
@@ -73,6 +65,9 @@ $root-default-font-size: 16 !default;
 
 // applies main colors on body tag
 $apply-body-styles: true !default;
+
+// color reset for mark tag
+$use-color-reset-mark: true !default;
 
 // others
 $use-reset-button: true !default;

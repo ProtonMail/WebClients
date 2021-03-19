@@ -57,7 +57,7 @@
 		.label-stack-item {
 			&:hover,
 			&:focus-within {
-				box-shadow: 0 0 em(5) 0 rgb(0 0 0 / 0.2); // Same hover style than buttons
+				box-shadow: var(--shadow-norm);
 			}
 		}
 	}

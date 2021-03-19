@@ -6,11 +6,11 @@
 	html,
 	.page,
 	.reset4print {
-		background-color: $white;
+		background-color: white;
 		background-image: none;
 		border: 0;
 		box-shadow: none;
-		color: $black;
+		color: black;
 		float: none;
 		height: auto;
 		margin: 0;
@@ -28,30 +28,6 @@
 	body {
 		padding: 0.5em;
 		overflow: auto;
-
-		/* put back normal mode for print :) */
-		--bgcolor-item-column-list: initial;
-		--bgcolor-unread-item-column-list: initial;
-		--bgcolor-view-column-detail: initial;
-		--bgcolor-main-area: initial;
-		--bgcolor-context-bar: initial;
-		--bgcolor-toolbar: initial;
-		--color-context-bar-link: initial;
-		--color-main-area: initial;
-		--fillcolor-icons: initial;
-		--bgcolor-disabled-checkboxes-radios: initial;
-		--bgcolor-item-column-active: initial;
-		--bordercolor-input: initial;
-		--bgcolor-input: initial;
-		--bgcolor-highlight: initial;
-		--color-input: initial;
-
-		.button:not(.button--primary):not(.button--link),
-		.button--info {
-			border-color: $pm-global-border;
-			background: $white;
-			color: $pm-global-grey;
-		}
 	}
 
 	/* hide unnecessary elements */

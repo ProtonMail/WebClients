@@ -17,14 +17,18 @@
 @each $placement in (top, right, bottom, left) {
 	.border-#{$placement} {
 		border-#{$placement}: 1px solid var(--border-norm);
-	}
 
-	.border-#{$placement}--dashed {
-		border-#{$placement}-style: dashed;
-	}
+		&--weak {
+			border-#{$placement}: 1px solid var(--border-weak);
+		}
 
-	.border-#{$placement}--currentColor {
-		border-#{$placement}-color: currentColor;
+		&--dashed {
+			border-#{$placement}-style: dashed;
+		}
+
+		&--currentColor {
+			border-#{$placement}-color: currentColor;
+		}
 	}
 }
 
@@ -39,8 +43,8 @@
 .row--orderable {
 	z-index: 666;
 	/* In case the modal is open */
-	background: var(--bgcolor-main-area, $white);
-	color: var(--color-main-area, $pm-global-grey);
+	background: var(--background-norm);
+	color: var(--text-norm);
 }
 
 /*

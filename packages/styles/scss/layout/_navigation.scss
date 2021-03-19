@@ -40,7 +40,7 @@ $padding-left-link: 2rem !default;
 
 	&:focus::after {
 		border-left: 4px solid
-			var(--navigation-current-item-marker-color, var(--primary));
+			var(--navigation-current-item-marker-color, var(--interaction-norm));
 	}
 }
 
@@ -64,6 +64,16 @@ $padding-left-link: 2rem !default;
 
 // labels/folders sections
 .navigation-link-header-group-link {
+	outline: none;
+	color: var(--text-weak);
+
+	&:hover,
+	&:focus {
+		color: var(--text-norm);
+	}
+}
+
+.navigation-link-header-group-control {
 	@extend .interactive;
 
 	padding: 0.5em;
@@ -163,7 +173,7 @@ $padding-left-link: 2rem !default;
 		);
 		color: var(--navigation-current-item-text-color, var(--text-norm));
 		border-left: 2px solid
-			var(--navigation-current-item-marker-color, var(--primary));
+			var(--navigation-current-item-marker-color, var(--interaction-norm));
 		font-weight: bold;
 	}
 }

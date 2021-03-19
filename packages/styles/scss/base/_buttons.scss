@@ -2,8 +2,8 @@
  * Button shape
  */
 .button-henlo {
-	// design want 34px height
-	padding: em(5) em(16) em(6);
+	display: inline-block;
+	padding: em(7) em(16) em(7);
 
 	// usage of box-shadow instead of border to enable increasing size of _visual_ border without shifting button size
 	box-shadow: inset 0 0 0 var(--button-default-border-width, 0)
@@ -14,6 +14,7 @@
 	outline: none; // be careful of a11y
 	background-color: var(--button-default-background-color, transparent);
 	color: var(--button-default-text-color, inherit);
+	text-align: center;
 	transition: 0.15s easing(easeOutQuint), background-position 0s;
 
 	&,
@@ -54,6 +55,44 @@
 
 	&[aria-expanded='true'] .caret-like {
 		@extend .rotateX-180;
+	}
+}
+
+/*
+ * Link shape
+ */
+.button-link {
+	display: inline-block;
+	padding: em(5) 0 em(6);
+	outline: none; // be careful of a11y
+	color: var(--button-default-text-color, inherit);
+	text-decoration: underline;
+
+	&:hover,
+	&:focus,
+	&:focus-within,
+	&:active {
+		text-decoration: none;
+	}
+
+	&:hover,
+	&:focus,
+	&:focus-within {
+		color: var(--button-hover-text-color, inherit);
+	}
+
+	&:not(div):active,
+	&.is-active {
+		color: var(--button-active-text-color, inherit);
+	}
+
+	&[disabled],
+	&.is-disabled {
+		pointer-events: none;
+
+		&:not([aria-busy='true']) {
+			opacity: 0.5;
+		}
 	}
 }
 
@@ -131,6 +170,25 @@
 			}
 		}
 	}
+
+	// Link shape
+	.button-link-#{$color} {
+		@if $color == 'weak' {
+			--button-default-text-color: var(--text-weak);
+		} @else {
+			--button-default-text-color: var(--#{$group + $color});
+		}
+
+		@each $state in (hover, active) {
+			@if $color == 'weak' {
+				--button-#{$state}-text-color: var(--text-norm);
+			} @else {
+				--button-#{$state}-text-color: var(
+					--#{$group + $color}-#{$state}
+				);
+			}
+		}
+	}
 }
 
 /*
@@ -146,14 +204,14 @@
 }
 
 .button-for-icon {
-	padding: em(8);
+	padding: em(9.5) em(10); // To have same height as fields
 
 	&.button-small {
-		padding: em(4);
+		padding: em(4) em(6);
 	}
 
 	&.button-large {
-		padding: em(12);
+		padding: em(12) em(14);
 	}
 
 	svg {
@@ -163,27 +221,6 @@
 
 .button-pill {
 	border-radius: 2em;
-}
-
-.button-link {
-	padding: em(5) 0 em(6);
-	color: var(--interaction-norm);
-	text-decoration: underline;
-
-	&:focus,
-	&:hover {
-		color: var(--interaction-norm-hover);
-	}
-	&:not(div):active,
-	&:active {
-		color: var(--interaction-norm-active);
-	}
-
-	&[disabled],
-	&.is-disabled {
-		color: var(--interaction-norm-disabled);
-		pointer-events: none;
-	}
 }
 
 /*

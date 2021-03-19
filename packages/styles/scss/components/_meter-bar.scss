@@ -27,7 +27,7 @@
 	@include meter-bar-size;
 
 	width: 100%;
-	background: var(--background-strong);
+	background: var(--background-weak);
 
 	//-webkit-appearance: none; // Can't. Well, because Chrome.
 	// -moz-appearance: none;
@@ -43,7 +43,7 @@
 		display: inherit;
 	}
 
-	&:not(#{&}--primary) {
+	&:not(#{&}--info) {
 		&::-webkit-meter-optimum-value {
 			background: var(--signal-success);
 		}
@@ -65,19 +65,19 @@
 		}
 	}
 
-	&--primary {
+	&--info {
 		&::-webkit-meter-optimum-value {
-			background: var(--primary);
+			background: var(--signal-info);
 		}
 		&::-webkit-meter-suboptimum-value {
-			background: var(--primary);
+			background: var(--signal-info);
 		}
 		&::-webkit-meter-even-less-good-value {
-			background: var(--primary);
+			background: var(--signal-info);
 		}
 
 		&::-moz-meter-bar {
-			background: var(--primary);
+			background: var(--signal-info);
 		}
 	}
 

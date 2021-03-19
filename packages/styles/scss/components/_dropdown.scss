@@ -160,12 +160,12 @@
 		background-color: var(--background-norm);
 		background-image: radial-gradient(
 				farthest-side at 50% 0,
-				#{rgba(black, 0.25)},
+				var(--backdrop-norm),
 				transparent
 			),
 			radial-gradient(
 				farthest-side at 50% 100%,
-				#{rgba(black, 0.25)},
+				var(--backdrop-norm),
 				transparent
 			);
 		background-position: 50% 0, 0 100%;
@@ -228,32 +228,19 @@
 	}
 
 	&-item {
+		&-button,
 		&-link {
+			@extend .interactive;
+
 			&,
 			&:hover,
 			&:focus,
 			&:active {
-				color: currentColor;
+				color: var(--text-norm);
 				text-decoration: none;
 			}
 		}
 
-		&-button,
-		&-link {
-			&:hover,
-			&:focus,
-			&:focus-within,
-			&.active {
-				background-color: var(--bgcolor-input, $pm-global-light);
-				color: $pm-primary;
-			}
-
-			&[disabled],
-			&.is-disabled {
-				@include button-disabled-state;
-				border: none;
-			}
-		}
 		&--delete {
 			&,
 			&:hover,
@@ -271,8 +258,8 @@
 			&:hover,
 			&:focus,
 			&:active {
-				background-color: $pm-primary;
-				color: $white;
+				background-color: var(--interaction-norm);
+				color: var(--interaction-norm-contrast);
 				pointer-events: none;
 			}
 		}

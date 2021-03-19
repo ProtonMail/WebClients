@@ -1,0 +1,150 @@
+$toggle-width: em(40) !default;
+$toggle-width-button: em(24) !default;
+
+.toggle-label {
+	&#{&} {
+		// specificity issue with flex helpers
+		position: relative;
+		display: inline-flex;
+		width: $toggle-width;
+		min-height: $toggle-width-button;
+		max-height: $toggle-width-button;
+		margin-top: 0.5em;
+		border-radius: #{$toggle-width/2};
+		background: var(--background-strong);
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		z-index: 2;
+		width: #{$toggle-width-button};
+		transform: translateX(0);
+		border-radius: $toggle-width-button;
+		background-color: var(--field-norm);
+		transition: transform 0.25s ease, background-color 0.25s ease;
+	}
+
+	& > .toggle-label-text {
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 2;
+		display: inline-flex;
+		border-radius: $toggle-width-button;
+		width: $toggle-width-button;
+
+		&:first-child {
+			z-index: 3;
+		}
+		&:last-child {
+			z-index: 1;
+		}
+
+		& .toggle-label-img {
+			transition: 0s; // transition for disappear
+			fill: transparent;
+			margin: auto;
+		}
+
+		& + .toggle-label-text {
+			right: 0;
+			left: auto;
+		}
+	}
+
+	// will be done later
+	// &--with-icons {
+
+	// }
+}
+
+// checked state
+.toggle-checkbox {
+	@extend .sr-only;
+
+	&:checked + .toggle-label {
+		& > .toggle-label-text {
+			&:first-child {
+				z-index: 1;
+			}
+			&:last-child {
+				z-index: 3;
+				.toggle-label-img {
+					fill: var(--interaction-norm-contrast);
+					transition: fill 0.1s steps(1, end) 0.1s; // transition for appear
+				}
+			}
+		}
+
+		&::before {
+			transform: translateX(#{$toggle-width - $toggle-width-button});
+			background-color: var(--interaction-norm);
+		}
+	}
+
+	&[disabled] + .toggle-label {
+		&::before {
+			background-color: var(--field-disabled);
+		}
+	}
+
+	&[aria-busy='true'][disabled] {
+		// because aria-busy and disabled
+
+		& + .toggle-label {
+			opacity: 1;
+
+			&::before {
+				background-color: var(--field-hover);
+				background-image: url(#{$path-images}infinite-loader.svg);
+				background-position: 50% 50%;
+				background-repeat: no-repeat;
+				background-size: em(14);
+			}
+
+			& > .toggle-label-text {
+				opacity: 0;
+			}
+		}
+
+		&:checked {
+			& + .toggle-label {
+				&::before {
+					background-color: var(--interaction-norm-hover);
+				}
+			}
+		}
+	}
+
+	&:focus,
+	&:hover {
+		& + .toggle-label {
+			&::before {
+				background-color: var(--field-hover);
+			}
+		}
+	}
+	&:checked:focus,
+	&:checked:hover {
+		& + .toggle-label {
+			&::before {
+				background-color: var(--interaction-norm-hover);
+			}
+		}
+	}
+}
+
+.toggle-label--small {
+	margin-top: 0.25em;
+	font-size: 0.8em;
+
+	& .toggle-label-img {
+		width: 1.3rem;
+		height: 1.3rem;
+	}
+}

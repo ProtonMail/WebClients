@@ -19,7 +19,7 @@
 	--signal-success: #2fd6b5;
 	--signal-success-hover: #32e5c2;
 	--signal-success-active: #36f5cf;
-	--signal-success-contrast: white;
+	--signal-success-contrast: black;
 
 	--signal-info: #28acf6;
 	--signal-info-hover: #40b5f6;
@@ -56,6 +56,11 @@
 	--interaction-default-hover: rgb(52 56 78 / 0.2);
 	--interaction-default-active: rgb(52 56 78 / 0.3);
 
+	--shadow-norm-opacity: 0.5;
+	--shadow-lifted-opacity: 0.75;
+
+	--backdrop-norm: rgb(0 0 0 / 0.75);
+
 	// Optional colors
 
 	--scrollbar-thumb-color: #34384e;
@@ -65,4 +70,5 @@
 // Prominent UI specifics
 
 .ui-prominent {
+	--background-norm: #0e0f18;
 }

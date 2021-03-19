@@ -192,10 +192,11 @@
 	}
 }
 
+/* TODO: If everything works fine, remove this!
 .primary-link {
 	&:focus,
 	&:hover {
-		color: $pm-primary;
+		color: var(--primary);
 	}
 }
 
@@ -205,6 +206,7 @@
 		color: currentColor;
 	}
 }
+*/
 
 .button-show-on-hover {
 	&:focus,

@@ -23,7 +23,7 @@ $modal-tiny-width: em(288) !default;
 	bottom: 0;
 	right: 0;
 	left: 0;
-	background: rgb(0 0 0 / 0.4);
+	background: var(--backdrop-norm);
 	z-index: 666;
 	animation: anime-modal-overlay-in ease 0.5s 1 normal;
 }
@@ -38,7 +38,7 @@ $modal-tiny-width: em(288) !default;
 	justify-content: center;
 	flex-direction: column;
 	z-index: 666;
-	-webkit-tap-highlight-color: rgb(255 255 255 / 0);
+	// -webkit-tap-highlight-color: rgb(255 255 255 / 0);
 
 	/* for very large inputs in modals, like rich text editor */
 	.field-container--full {
@@ -68,22 +68,22 @@ $modal-tiny-width: em(288) !default;
 }
 
 @keyframes anime-modal-overlay-in {
-	0% {
-		background: rgb(0 0 0 / 0);
+	from {
+		opacity: 0;
 	}
 
-	100% {
-		background: rgb(0 0 0 / 0.4);
+	to {
+		opacity: 1;
 	}
 }
 
 @keyframes anime-modal-overlay-out {
-	0% {
-		background: rgb(0 0 0 / 0.4);
+	from {
+		opacity: 1;
 	}
 
-	100% {
-		background: rgb(0 0 0 / 0);
+	to {
+		opacity: 0;
 	}
 }
 
@@ -92,12 +92,12 @@ $modal-tiny-width: em(288) !default;
 	width: $modal-max-width;
 	max-height: $modal-max-height;
 	max-width: $modal-max-width;
-	background: var(--bgcolor-main-area, $white);
-	color: var(--color-main-area, $pm-global-grey);
+	background: var(--background-norm);
+	color: var(--text-norm);
 	padding: 0;
 	overflow: hidden;
 	border-radius: $global-border-radius;
-	box-shadow: 0 0 50px 0 rgb(0 0 0 / 0.3);
+	box-shadow: var(--shadow-lifted);
 	animation: anime-modal-in ease 0.15s 1 normal;
 	animation-fill-mode: both;
 	animation-delay: 0.1s; // stupid fix for Safari crazy display bug
@@ -170,17 +170,11 @@ $modal-tiny-width: em(288) !default;
 
 .modal-close {
 	position: absolute;
-	right: 0.5rem;
-	top: 0.5rem;
+	right: 0;
+	top: 0;
 	@extend .flex;
 	overflow: hidden;
-	background: transparent;
-	border-radius: 1em;
-	border: 0;
-	font-size: 1em;
-	padding: 0;
-	line-height: 1;
-	cursor: pointer;
+	font-size: 1.25em;
 	z-index: 1;
 }
 
@@ -251,13 +245,13 @@ $modal-tiny-width: em(288) !default;
 	flex: 1 1 auto;
 	padding: 0 rem(30);
 
-	background: var(--bgcolor-main-area, $white) no-repeat;
+	background: var(--background-norm) no-repeat;
 
-	> p:first-child {
+	& > p:first-child {
 		margin-top: 0;
 	}
 
-	> p:last-child {
+	& > p:last-child {
 		margin-bottom: 0;
 	}
 }

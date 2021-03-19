@@ -9,7 +9,7 @@
 
 .tabs-list-item {
 	margin-right: 1rem;
-	color: var(--text-sub-header, $text-weak);
+	color: var(--text-weak);
 	min-width: auto;
 }
 
@@ -27,8 +27,8 @@
 	&:focus,
 	&:hover {
 		@extend .text-no-decoration;
-		color: var(--color-main-area, $pm-global-grey);
-		border-bottom: 2px solid var(--bordercolor-input, $pm-global-border);
+		color: var(--text-norm);
+		border-bottom: 2px solid var(--border-norm);
 	}
 
 	&[disabled] {
@@ -39,21 +39,21 @@
 }
 
 [aria-selected='true'].tabs-list-link {
-	border-bottom: 2px solid $pm-primary;
-	color: var(--color-main-area, $pm-global-grey);
+	border-bottom: 2px solid var(--interaction-norm);
+	color: var(--text-norm);
 }
 
 .tabs-container {
-	border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
+	border-bottom: 1px solid var(--border-weak);
 
 	&[class*='sticky'] {
-		background: var(--bgcolor-main-area, $white);
+		background: var(--background-norm);
 	}
 }
 
 .tabs-indicator {
 	position: absolute;
-	border-bottom: 2px solid $pm-primary;
+	border-bottom: 2px solid var(--interaction-norm);
 	content: '';
 	height: 0;
 	bottom: -1px;

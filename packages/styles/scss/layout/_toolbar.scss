@@ -22,11 +22,6 @@
 	padding-right: var(--padding-toolbar-button-dropdown);
 }
 
-.toolbar-icon,
-.expand-caret.toolbar-icon {
-	fill: var(--fillcolor-icons, $white);
-}
-
 .toolbar-separator {
 	width: 1px;
 	background: var(--toolbar-separator-color, var(--border-norm));
@@ -38,24 +33,13 @@
 	pointer-events: none;
 }
 
-// old select
-.toolbar-select {
-	padding-left: em(16, $base-font-size);
-	padding-right: em(16, $base-font-size);
-	color: var(--fillcolor-icons, $white);
-	background: url('#{$path-images}sprite-for-css-only.svg#css-caret-white')
-		calc(100% - 6px) 50% no-repeat;
-	height: auto;
-}
-
-.toolbar-select option {
-	color: $black; // for Chrome bug
-}
-
 // new select
 .toolbar .select {
-	background: unset;
+	@extend .interactive;
+
 	border: unset;
+	border-radius: unset;
+	background-color: unset;
 	color: currentColor;
 	height: auto;
 }

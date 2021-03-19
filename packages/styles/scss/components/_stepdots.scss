@@ -6,17 +6,20 @@
 	&-dot {
 		width: 0.8rem;
 		height: 0.8rem;
-		background-color: var(--bordercolor-input, $pm-global-border);
+		background-color: var(--interaction-weak);
+		color: var(--text-norm);
 		transition: background-color 0.25s easing(ease);
 
 		&:focus,
 		&:hover,
 		&:active {
-			background-color: $pm-primary;
+			background-color: var(--interaction-norm);
+			color: var(--interaction-norm-contrast);
 		}
 
 		&[aria-selected='true'] {
-			background-color: var(--secondary-bg-color, $pm-global-altgrey);
+			background-color: var(--text-norm);
+			color: var(--text-invert);
 		}
 	}
 }
