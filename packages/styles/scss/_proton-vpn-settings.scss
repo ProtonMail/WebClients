@@ -15,7 +15,8 @@
 
 // Theme color overrides
 // REMOVE THIS AS SOON AS POSSIBLE!
-:root {
+:root,
+.ui-standard {
 	--primary: #4da358 !important;
 	--primary-contrast: white !important;
 
