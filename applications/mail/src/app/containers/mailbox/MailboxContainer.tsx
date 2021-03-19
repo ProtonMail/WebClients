@@ -176,7 +176,7 @@ const MailboxContainer = ({
 
     // Move to the previous page if the current one becomes empty
     useEffect(() => {
-        if (page.total && page.page >= pageCount(page)) {
+        if (page.total && page.page >= pageCount(page.total)) {
             handlePage(page.page - 1);
         }
     }, [page]);

@@ -4,7 +4,7 @@ import { Page } from '../models/tools';
 
 export const usePaging = (inputPage: Page, onPage: (page: number) => void) => {
     const getPage = () => inputPage.page + 1;
-    const getTotal = () => pageCount(inputPage);
+    const getTotal = () => pageCount(inputPage.total);
 
     const [page, setPage] = useState(getPage);
     const [total, setTotal] = useState(getTotal);
