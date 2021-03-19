@@ -321,6 +321,7 @@ $toggle-active-focus-bg: var(--toggle-active-focus-bg, #5064b6) !default;
 	background: $toggle-bg-container;
 	border-radius: #{$toggle-width/2};
 	position: relative;
+	z-index: 0;
 
 	&::before {
 		content: '';
