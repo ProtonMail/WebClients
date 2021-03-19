@@ -1,12 +1,7 @@
 import React from 'react';
 import locales from 'proton-shared/lib/i18n/locales';
 
-import {
-    PublicAuthenticationStore,
-    PrivateAuthenticationStore,
-    useAuthentication,
-    DefaultThemeInjector,
-} from 'react-components';
+import { PublicAuthenticationStore, PrivateAuthenticationStore, useAuthentication } from 'react-components';
 
 import PrivateApp from './content/PrivateApp';
 import PublicApp from './content/PublicApp';
@@ -16,12 +11,7 @@ const Setup = () => {
     if (UID) {
         return <PrivateApp locales={locales} onLogout={logout} />;
     }
-    return (
-        <>
-            <DefaultThemeInjector />
-            <PublicApp locales={locales} onLogin={login} />
-        </>
-    );
+    return <PublicApp locales={locales} onLogin={login} />;
 };
 
 export default Setup;
