@@ -19,7 +19,6 @@ export enum EVENT_VERIFICATION_STATUS {
 }
 
 export interface AttendeeClearPartResult {
-    permissions: number;
     status: ATTENDEE_STATUS_API;
     token: string;
 }

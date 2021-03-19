@@ -1,4 +1,5 @@
-import { fromUnixTime, isSameDay, format as formatDate } from 'date-fns';
+import { format as formatDate, fromUnixTime, getUnixTime, isSameDay } from 'date-fns';
+import { serverTime } from 'pmcrypto';
 
 type Options = Parameters<typeof formatDate>[2];
 /**
@@ -6,7 +7,7 @@ type Options = Parameters<typeof formatDate>[2];
  * ** Hours and minutes if the UNIX timestamp is from the same day,
  * ** Day, month and year otherwise
  */
-const readableTime = (unixTime: number, format = 'PP', options: Options) => {
+export const readableTime = (unixTime: number, format = 'PP', options: Options) => {
     const date = fromUnixTime(unixTime);
 
     if (isSameDay(date, Date.now())) {
@@ -16,4 +17,6 @@ const readableTime = (unixTime: number, format = 'PP', options: Options) => {
     return formatDate(date, format, options);
 };
 
-export default readableTime;
+export const getCurrentUnixTimestamp = () => {
+    return getUnixTime(serverTime());
+};
