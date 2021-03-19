@@ -17,10 +17,9 @@ interface Props {
     model: SimpleFilterModalModel;
     onChange: (newModel: SimpleFilterModalModel) => void;
     isEdit: boolean;
-    isDark: boolean;
 }
 
-const FilterActionsForm = ({ isNarrow, labels, folders, model, onChange, isEdit, isDark }: Props) => {
+const FilterActionsForm = ({ isNarrow, labels, folders, model, onChange, isEdit }: Props) => {
     const onUpdateActions = (payload: Partial<Actions>) => {
         onChange({
             ...model,
@@ -38,20 +37,17 @@ const FilterActionsForm = ({ isNarrow, labels, folders, model, onChange, isEdit,
                 handleUpdateActions={onUpdateActions}
                 labels={labels}
                 isNarrow={isNarrow}
-                isDark={isDark}
             />
             <FilterActionsFormFoldersRow
                 actions={model.actions}
                 handleUpdateActions={onUpdateActions}
                 folders={folders}
                 isNarrow={isNarrow}
-                isDark={isDark}
             />
             <FilterActionsFormMarkAsRow
                 actions={model.actions}
                 handleUpdateActions={onUpdateActions}
                 isNarrow={isNarrow}
-                isDark={isDark}
             />
 
             <FilterActionsFormAutoReplyRow

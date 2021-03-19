@@ -3,7 +3,7 @@ import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 import StandardPublicApp from './StandardPublicApp';
 import MinimalLoginContainer from '../login/MinimalLoginContainer';
 import { OnLoginCallback } from './interface';
-import { DefaultThemeInjector } from '../themes';
+import { ProminentContainer } from '../../components';
 
 interface Props {
     onLogin: OnLoginCallback;
@@ -12,8 +12,9 @@ interface Props {
 const StandalonePublicApp = ({ onLogin, locales }: Props) => {
     return (
         <StandardPublicApp locales={locales}>
-            <DefaultThemeInjector />
-            <MinimalLoginContainer onLogin={onLogin} />
+            <ProminentContainer>
+                <MinimalLoginContainer onLogin={onLogin} />
+            </ProminentContainer>
         </StandardPublicApp>
     );
 };

@@ -7,6 +7,7 @@ import { removeLastRefreshDate } from 'proton-shared/lib/api/helpers/refreshStor
 
 import { useApi, useAuthentication } from '../../hooks';
 import LoaderPage from './LoaderPage';
+import { ProminentContainer } from '../../components';
 
 interface Props {
     onDone: () => void;
@@ -30,7 +31,11 @@ const Signout = ({ onDone }: Props) => {
         run().finally(onDone);
     }, []);
 
-    return <LoaderPage text={c('Action').t`Signing out`} />;
+    return (
+        <ProminentContainer>
+            <LoaderPage text={c('Action').t`Signing out`} />;
+        </ProminentContainer>
+    );
 };
 
 export default Signout;

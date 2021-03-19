@@ -38,6 +38,7 @@ import { OnLoginCallbackArguments } from './interface';
 import { useInstance, PreventLeaveProvider } from '../../hooks';
 import { GlobalLoaderProvider, GlobalLoader } from '../../components/globalLoader';
 import { WELCOME_FLAG_KEY } from '../../hooks/useWelcomeFlags';
+import ThemeStyleProvider from '../themes/ThemeStyleProvider';
 
 const getIsSSOPath = (pathname: string) => {
     const strippedPathname = `/${stripLeadingAndTrailingSlash(pathname)}`;
@@ -252,15 +253,9 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
         }
     }, [pathRef.current, history]);
 
-    const render = () => {
-        if (isLoggingOut) {
-            return <Signout onDone={handleFinalizeLogout} />;
-        }
-        if (pathRef.current) {
-            return null;
-        }
-        return children;
-    };
+    useEffect(() => {
+        document.querySelector('.app-root-loader')?.classList.add('hidden');
+    }, []);
 
     return (
         <ConfigProvider config={config}>
@@ -268,24 +263,34 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
                 <Icons />
                 <RightToLeftProvider>
                     <React.Fragment key={UID}>
-                        <Router history={history}>
-                            <PreventLeaveProvider>
-                                <NotificationsProvider>
-                                    <ModalsProvider>
-                                        <ApiProvider UID={UID} config={config} onLogout={handleLogout}>
-                                            <AuthenticationProvider store={authenticationValue}>
-                                                <CacheProvider cache={cacheRef.current}>
-                                                    <GlobalLoaderProvider>
-                                                        <GlobalLoader />
-                                                        {render()}
-                                                    </GlobalLoaderProvider>
-                                                </CacheProvider>
-                                            </AuthenticationProvider>
-                                        </ApiProvider>
-                                    </ModalsProvider>
-                                </NotificationsProvider>
-                            </PreventLeaveProvider>
-                        </Router>
+                        <ThemeStyleProvider>
+                            <Router history={history}>
+                                <PreventLeaveProvider>
+                                    <NotificationsProvider>
+                                        <ModalsProvider>
+                                            <ApiProvider UID={UID} config={config} onLogout={handleLogout}>
+                                                <AuthenticationProvider store={authenticationValue}>
+                                                    <CacheProvider cache={cacheRef.current}>
+                                                        <GlobalLoaderProvider>
+                                                            <GlobalLoader />
+                                                            {(() => {
+                                                                if (isLoggingOut) {
+                                                                    return <Signout onDone={handleFinalizeLogout} />;
+                                                                }
+                                                                if (pathRef.current) {
+                                                                    return null;
+                                                                }
+                                                                return children;
+                                                            })()}
+                                                        </GlobalLoaderProvider>
+                                                    </CacheProvider>
+                                                </AuthenticationProvider>
+                                            </ApiProvider>
+                                        </ModalsProvider>
+                                    </NotificationsProvider>
+                                </PreventLeaveProvider>
+                            </Router>
+                        </ThemeStyleProvider>
                     </React.Fragment>
                 </RightToLeftProvider>
             </CompatibilityCheck>

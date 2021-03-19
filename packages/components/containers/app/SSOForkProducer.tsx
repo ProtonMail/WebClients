@@ -16,7 +16,7 @@ import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 import { useApi, useErrorHandler } from '../../hooks';
 import LoaderPage from './LoaderPage';
 import ModalsChildren from '../modals/Children';
-import StandardLoadError from './StandardLoadError';
+import StandardLoadErrorPage from './StandardLoadErrorPage';
 
 interface Props {
     onActiveSessions: (data: ProduceForkParameters, activeSessions: GetActiveSessionsResult) => void;
@@ -87,7 +87,7 @@ const SSOForkProducer = ({ onActiveSessions, onInvalidFork }: Props) => {
     }, []);
 
     if (error) {
-        return <StandardLoadError />;
+        return <StandardLoadErrorPage />;
     }
 
     return (

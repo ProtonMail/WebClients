@@ -37,6 +37,7 @@ import {
     Button,
     PrimaryButton,
     LinkButton,
+    Icon,
 } from '../../../components';
 
 const { PGP_INLINE } = PGP_SCHEMES;
@@ -214,14 +215,15 @@ const ContactEmailSettingsModal = ({
         <DialogModal modalTitleID="modalTitle" onClose={onClose} {...rest}>
             <header className="modal-header">
                 <Button
+                    icon
                     shape="ghost"
                     size="small"
                     className="modal-close"
-                    icon="close"
-                    iconProps={{ alt: c('Action').t`Close modal` }}
                     title={c('Action').t`Close modal`}
                     onClick={onClose}
-                />
+                >
+                    <Icon name="close" alt={c('Action').t`Close modal`} />
+                </Button>
                 <h1 id="modalTitle" className="modal-title text-ellipsis">
                     {c('Title').t`Email settings (${emailAddress})`}
                 </h1>

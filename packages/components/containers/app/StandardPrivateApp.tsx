@@ -24,7 +24,7 @@ import { ContactProvider } from '../contacts';
 
 import loadEventID from './loadEventID';
 import LoaderPage from './LoaderPage';
-import StandardLoadError from './StandardLoadError';
+import StandardLoadErrorPage from './StandardLoadErrorPage';
 import KeyBackgroundManager from './KeyBackgroundManager';
 import InternalEmailAddressGeneration from './InternalEmailAddressGeneration';
 import StorageListener from './StorageListener';
@@ -140,7 +140,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
     }, []);
 
     if (error) {
-        return <StandardLoadError />;
+        return <StandardLoadErrorPage />;
     }
 
     const LoadedApp = appRef.current;

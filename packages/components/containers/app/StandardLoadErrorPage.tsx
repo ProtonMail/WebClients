@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { c } from 'ttag';
 import GenericError from '../error/GenericError';
-import { InlineLinkButton } from '../../components';
+import { InlineLinkButton, ProminentContainer } from '../../components';
 import { useDocumentTitle } from '../../hooks';
 
-const StandardLoadError = () => {
+const StandardLoadErrorPage = () => {
     useDocumentTitle(c('Error message').t`Oops, something went wrong`);
 
     useEffect(() => {
@@ -25,16 +25,18 @@ const StandardLoadError = () => {
     }, []);
 
     const refresh = (
-        <InlineLinkButton key="1" className="primary-link" onClick={() => window.location.reload()}>{c('Action')
+        <InlineLinkButton key="1" onClick={() => window.location.reload()}>{c('Action')
             .t`refresh the page`}</InlineLinkButton>
     );
 
     return (
-        <GenericError>
-            <span>{c('Error message').t`There was a problem connecting to Proton.`}</span>
-            <span>{c('Error message').jt`Please ${refresh} or check your connection.`}</span>
-        </GenericError>
+        <ProminentContainer>
+            <GenericError>
+                <span>{c('Error message').t`There was a problem connecting to Proton.`}</span>
+                <span>{c('Error message').jt`Please ${refresh} or check your connection.`}</span>
+            </GenericError>
+        </ProminentContainer>
     );
 };
 
-export default StandardLoadError;
+export default StandardLoadErrorPage;

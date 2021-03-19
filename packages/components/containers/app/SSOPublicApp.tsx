@@ -7,7 +7,7 @@ import { getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { useApi, useErrorHandler } from '../../hooks';
 import LoaderPage from './LoaderPage';
 import ModalsChildren from '../modals/Children';
-import StandardLoadError from './StandardLoadError';
+import StandardLoadErrorPage from './StandardLoadErrorPage';
 import { ProtonLoginCallback } from './interface';
 
 interface Props {
@@ -44,7 +44,7 @@ const SSOPublicApp = ({ onLogin, onInactiveSession }: Props) => {
     }, []);
 
     if (error) {
-        return <StandardLoadError />;
+        return <StandardLoadErrorPage />;
     }
 
     return (
