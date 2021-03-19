@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 
-import { Title, Href, VpnLogo, ButtonLike, useAppTitle, FooterDetails } from 'react-components';
+import { Title, Href, VpnLogo, ButtonLike, useAppTitle, FooterDetails, ProminentContainer } from 'react-components';
 import PublicHeader from './PublicHeader';
 import VPNSupportDropdown from '../VPNSupportDropdown';
 
@@ -17,14 +17,14 @@ const SignInLayout = ({ children, title = '' }: Props) => {
     useAppTitle(title);
 
     return (
-        <div className="pt1 pb1 pl2 pr2">
+        <ProminentContainer className="pt1 pb1 pl2 pr2">
             <PublicHeader
                 left={
                     <>
                         <span className="opacity-50 mr1">{c('Label').t`Back to:`}</span>
                         <Href
                             url={staticURL}
-                            className="inline-block color-white text-no-decoration hover-same-color"
+                            className="inline-block text-no-decoration hover-same-color"
                             target="_self"
                         >
                             protonvpn.com
@@ -54,7 +54,7 @@ const SignInLayout = ({ children, title = '' }: Props) => {
             <Title className="flex-item-noshrink text-center color-primary">{title}</Title>
             <div className="flex-item-fluid flex-item-noshrink flex flex-column flex-nowrap">
                 <div className="flex flex-column flex-nowrap flex-item-noshrink">
-                    <div className="center bg-white color-global-grey mt2 max-w40e w100 p2 bordered-container flex-item-noshrink">
+                    <div className="center ui-standard bg-norm color-norm mt2 max-w40e w100 p2 bordered flex-item-noshrink">
                         {children}
                         <div className="w100 flex flex-justify-center flex-align-items-center flex-column mt1">
                             <span className="flex-item-noshrink">
@@ -69,7 +69,7 @@ const SignInLayout = ({ children, title = '' }: Props) => {
                     <FooterDetails link={<a href={staticURL}>ProtonVPN.com</a>} />
                 </footer>
             </div>
-        </div>
+        </ProminentContainer>
     );
 };
 

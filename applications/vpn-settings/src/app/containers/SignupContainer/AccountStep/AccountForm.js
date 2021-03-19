@@ -15,6 +15,7 @@ import {
     useLoading,
     Info,
     Challenge,
+    DefaultThemeInjector,
 } from 'react-components';
 import { c } from 'ttag';
 import { queryCheckUsernameAvailability } from 'proton-shared/lib/api/user';
@@ -134,6 +135,7 @@ const AccountForm = ({ model, onSubmit }) => {
                     </Label>
                     <Field className="wauto flex-item-fluid">
                         <Challenge challengeRef={challengeRefUsername} type="0" onLoaded={handleChallengeLoaded}>
+                            <DefaultThemeInjector />
                             <Input
                                 error={usernameError}
                                 value={username}
@@ -193,6 +195,7 @@ const AccountForm = ({ model, onSubmit }) => {
                     <Field className="wauto flex-item-fluid">
                         <div className="mb1">
                             <Challenge challengeRef={challengeRefEmail} type="1" onLoaded={handleChallengeLoaded}>
+                                <DefaultThemeInjector />
                                 <EmailInput
                                     id="email"
                                     required
