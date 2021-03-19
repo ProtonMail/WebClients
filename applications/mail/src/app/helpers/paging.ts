@@ -1,20 +1,20 @@
-import { Page } from '../models/tools';
+import { PAGE_SIZE } from '../constants';
 
-export const pageCount = (page: Page) => Math.ceil(page.total / page.size) || 0;
+export const pageCount = (total: number) => Math.ceil(total / PAGE_SIZE) || 0;
 
-export const expectedPageLength = (page: Page) => {
-    if (page.total === 0) {
+export const expectedPageLength = (page: number, total: number, filterBypassCount: number) => {
+    if (total === 0) {
+        return filterBypassCount;
+    }
+    const count = pageCount(total);
+    if (page >= count) {
         return 0;
     }
-    const count = pageCount(page);
-    if (page.page >= count) {
-        return 0;
+    if (total % PAGE_SIZE === 0) {
+        return PAGE_SIZE;
     }
-    if (page.total % page.size === 0) {
-        return page.size;
+    if (count - 1 === page) {
+        return (total % PAGE_SIZE) + filterBypassCount;
     }
-    if (count - 1 === page.page) {
-        return page.total % page.size;
-    }
-    return page.size;
+    return PAGE_SIZE;
 };

@@ -140,7 +140,13 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         return sorted.slice(startIndex, endIndex);
     }, [cache]);
 
-    const expectedLength = useMemo(() => expectedPageLength(cache.page) + cache.bypassFilter.length, [cache.page]);
+    const expectedLength = useMemo(() => {
+        return expectedPageLength(
+            cache.page.page,
+            cache.page.total,
+            cache.params.filter ? cache.bypassFilter.length : 0
+        );
+    }, [cache.page, cache.params]);
     const expectedLengthMismatch = useMemo(() => Math.abs(elements.length - expectedLength), [
         elements.length,
         expectedLength,
