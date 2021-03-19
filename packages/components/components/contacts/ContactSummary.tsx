@@ -108,26 +108,29 @@ const ContactSummary = ({
                 {!isPreview && (
                     <div className="contactsummary-action-buttons flex-item-noshrink on-mobile-text-center ">
                         {!hasError && (
-                            <Tooltip title={c('Action').t`Export`} className="ml0-5">
-                                <Button onClick={onExport} className="button--for-icon inline-flex">
-                                    <Icon className="mt0-25 mb0-1" name="export" alt={c('Action').t`Export`} />
+                            <Tooltip title={c('Action').t`Export`}>
+                                <Button icon onClick={onExport} className="inline-flex ml0-5">
+                                    <Icon name="export" alt={c('Action').t`Export`} />
                                 </Button>
                             </Tooltip>
                         )}
 
-                        <Tooltip title={c('Action').t`Delete`} className="ml0-5">
-                            <Button onClick={onDelete} className="button--for-icon inline-flex">
-                                <Icon className="mt0-25 mb0-1" name="trash" alt={c('Action').t`Delete`} />
+                        <Tooltip title={c('Action').t`Delete`}>
+                            <Button icon onClick={onDelete} className="inline-flex ml0-5">
+                                <Icon name="trash" alt={c('Action').t`Delete`} />
                             </Button>
                         </Tooltip>
 
                         {!hasError && (
-                            <Tooltip title={c('Action').t`Edit`} className="ml0-5">
+                            <Tooltip title={c('Action').t`Edit`}>
                                 <Button
+                                    icon
+                                    shape="outline"
+                                    color="norm"
                                     onClick={() => onEdit()}
-                                    className="button--for-icon button--primary inline-flex"
+                                    className="inline-flex ml0-5"
                                 >
-                                    <Icon className="mt0-25 mb0-1" name="pen" alt={c('Action').t`Edit`} />
+                                    <Icon name="pen" alt={c('Action').t`Edit`} />
                                 </Button>
                             </Tooltip>
                         )}

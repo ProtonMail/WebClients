@@ -4,7 +4,7 @@ import { CryptoProcessingError } from 'proton-shared/lib/contacts/decrypt';
 import { CRYPTO_PROCESSING_TYPES } from 'proton-shared/lib/contacts/constants';
 import Icon from '../../components/icon/Icon';
 import Href from '../../components/link/Href';
-import { SmallButton } from '../../components';
+import { Button } from '../../components';
 import { classnames } from '../../helpers';
 import { useModals } from '../../hooks';
 import ContactDecryptionErrorModal from './modals/ContactDecryptionErrorModal';
@@ -99,7 +99,9 @@ const ContactViewErrors = ({ contactID, errors, onReload }: Props) => {
                 >{c('Link').t`Learn more`}</Href>
             </span>
             <span className="flex-item-noshrink flex">
-                <SmallButton onClick={handleAction}>{buttonText}</SmallButton>
+                <Button size="small" onClick={handleAction}>
+                    {buttonText}
+                </Button>
             </span>
         </div>
     );

@@ -11,9 +11,9 @@ import {
     Alert,
     Block,
     Button,
-    ButtonGroup,
     ConfirmModal,
-    Group,
+    ButtonGroup,
+    Icon,
     Pagination,
     usePaginationAsync,
 } from '../../components';
@@ -129,38 +129,46 @@ const LogsSection = () => {
                 .t`Logs includes authentication attempts for all Proton services that use your Proton credentials.`}</Alert>
             <Block className="flex flex-justify-space-between flex-align-items-center">
                 <div className="flex flex-align-items-center">
-                    <Group className="mr1 mb0-5">
-                        <ButtonGroup
+                    <ButtonGroup className="mr1">
+                        <Button
+                            group
                             className={logAuth === DISABLE ? 'is-active' : ''}
                             onClick={handleLogAuth(DISABLE)}
-                        >{c('Log preference').t`Disabled`}</ButtonGroup>
-                        <ButtonGroup className={logAuth === BASIC ? 'is-active' : ''} onClick={handleLogAuth(BASIC)}>{c(
-                            'Log preference'
-                        ).t`Basic`}</ButtonGroup>
-                        <ButtonGroup
+                        >{c('Log preference').t`Disabled`}</Button>
+                        <Button
+                            group
+                            className={logAuth === BASIC ? 'is-active' : ''}
+                            onClick={handleLogAuth(BASIC)}
+                        >{c('Log preference').t`Basic`}</Button>
+                        <Button
+                            group
                             className={logAuth === ADVANCED ? 'is-active' : ''}
                             onClick={handleLogAuth(ADVANCED)}
-                        >{c('Log preference').t`Advanced`}</ButtonGroup>
-                    </Group>
+                        >{c('Log preference').t`Advanced`}</Button>
+                    </ButtonGroup>
                     <span className="flex-item-noshrink">
                         <Button
-                            icon="reload"
-                            className="mr1 mb0-5"
+                            icon
+                            group
+                            className="mr1"
                             loading={loadingRefresh}
                             onClick={() => withLoadingRefresh(wait(1000).then(fetchAndSetState))}
                             title={c('Action').t`Refresh`}
-                        />
-                        {state.logs.length ? <WipeLogsButton className="mr1 mb0-5" onWipe={handleWipe} /> : null}
+                        >
+                            <Icon name="reload" />
+                        </Button>
+                        {state.logs.length ? <WipeLogsButton className="mr1" onWipe={handleWipe} /> : null}
                         {state.logs.length ? (
                             <Button
-                                className="mb0-5 mr1"
+                                group
+                                className="mr1"
                                 onClick={() => withLoadingDownload(handleDownload())}
                                 loading={loadingDownload}
                             >{c('Action').t`Download`}</Button>
                         ) : null}
                     </span>
                 </div>
-                <div className="mb0-5">
+                <div>
                     <Pagination
                         onNext={onNext}
                         onPrevious={onPrevious}

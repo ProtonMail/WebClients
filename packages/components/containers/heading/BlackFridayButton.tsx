@@ -74,7 +74,7 @@ const BlackFridayButton = ({ plans, subscription }: Props) => {
                 }}
             >
                 <Icon className="topnav-icon mr0-5 flex-item-centered-vert" name={icon} />
-                <span className="navigation-title topnav-linkText">{text}</span>
+                <span className="navigation-title">{text}</span>
             </button>
         </span>
     );

@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Button } from '../../components';
 import { useNotifications } from '../../hooks';
 
-const PayPalButton = ({ amount, type, children, className, paypal }) => {
+const PayPalButton = ({ amount, type, children, className, paypal, ...rest }) => {
     const [retry, setRetry] = useState(false);
     const { createNotification } = useNotifications();
 
@@ -47,7 +47,13 @@ const PayPalButton = ({ amount, type, children, className, paypal }) => {
     };
 
     return (
-        <Button disabled={!paypal.isReady} onClick={handleClick} loading={paypal.loadingToken} className={className}>
+        <Button
+            disabled={!paypal.isReady}
+            onClick={handleClick}
+            loading={paypal.loadingToken}
+            className={className}
+            {...rest}
+        >
             {children}
         </Button>
     );

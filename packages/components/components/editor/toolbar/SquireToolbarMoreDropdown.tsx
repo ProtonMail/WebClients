@@ -73,7 +73,6 @@ const SquireToolbarMoreDropdown = ({
         <SquireToolbarDropdown
             className="flex-item-noshrink mlauto"
             title={c('Action').t`More`}
-            content={<span className="sr-only">{c('Action').t`More`}</span>}
             data-testid="squire-more"
         >
             <DropdownMenu className="editor-toolbar-more-menu flex-item-noshrink">

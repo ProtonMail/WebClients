@@ -4,7 +4,6 @@ import { queryInvoices } from 'proton-shared/lib/api/payments';
 import { ELEMENTS_PER_PAGE, INVOICE_OWNER, INVOICE_STATE } from 'proton-shared/lib/constants';
 import {
     Alert,
-    Group,
     ButtonGroup,
     Block,
     Button,
@@ -86,15 +85,16 @@ const InvoicesSection = () => {
             <Block className="flex flex-justify-space-between">
                 <div>
                     {user.isPaid ? (
-                        <Group className="mr1">
-                            <ButtonGroup className={owner === USER ? 'is-active' : ''} onClick={handleOwner(USER)}>{c(
+                        <ButtonGroup className="mr1">
+                            <Button group className={owner === USER ? 'is-active' : ''} onClick={handleOwner(USER)}>{c(
                                 'Action'
-                            ).t`User`}</ButtonGroup>
-                            <ButtonGroup
+                            ).t`User`}</Button>
+                            <Button
+                                group
                                 className={owner === ORGANIZATION ? 'is-active' : ''}
                                 onClick={handleOwner(ORGANIZATION)}
-                            >{c('Action').t`Organization`}</ButtonGroup>
-                        </Group>
+                            >{c('Action').t`Organization`}</Button>
+                        </ButtonGroup>
                     ) : null}
                     <Button onClick={handleOpenModal}>{c('Action').t`Customize`}</Button>
                 </div>

@@ -37,7 +37,7 @@ const AccountSupportDropdown = ({ className, children, noCaret = false }: Props)
             <AccountSupportDropdownButton
                 className={className}
                 aria-describedby={uid}
-                buttonRef={anchorRef}
+                ref={anchorRef}
                 isOpen={isOpen}
                 noCaret={noCaret}
                 onClick={toggle}

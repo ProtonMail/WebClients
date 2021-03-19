@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { forwardRef, memo } from 'react';
 import { classnames } from '../../helpers';
 
 export interface Props extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
@@ -22,7 +22,10 @@ export interface Props extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
  * @param alt       Used by screen reader
  * @param rotate    How many degrees the icon should be rotated
  */
-const Icon = ({ name, alt, color, className = '', viewBox = '0 0 16 16', size = 16, rotate = 0, ...rest }: Props) => {
+const Icon = (
+    { name, alt, color, className = '', viewBox = '0 0 16 16', size = 16, rotate = 0, ...rest }: Props,
+    ref: React.Ref<SVGSVGElement>
+) => {
     const style = {
         ...(color && { color }),
         ...(rotate && { transform: `rotate(${rotate}deg)` }),
@@ -35,6 +38,7 @@ const Icon = ({ name, alt, color, className = '', viewBox = '0 0 16 16', size = 
                 className={classnames([`icon-${size}p`, className])}
                 role="img"
                 focusable="false"
+                ref={ref}
                 {...rest}
             >
                 <use xlinkHref={name.startsWith('#') ? name : `#shape-${name}`} />
@@ -44,4 +48,4 @@ const Icon = ({ name, alt, color, className = '', viewBox = '0 0 16 16', size = 
     );
 };
 
-export default memo(Icon);
+export default memo(forwardRef<SVGSVGElement, Props>(Icon));

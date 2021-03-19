@@ -6,7 +6,7 @@ import { useHandler, useModals, useNotifications } from '../../hooks';
 import { SquireType, getSquireRef, setSquireRef, initSquire, toggleEllipsisButton } from './squireConfig';
 import { getLinkAtCursor, makeLink, pasteFileHandler, scrollIntoViewIfNeeded } from './squireActions';
 import { SquireEditorMetadata } from './interface';
-import { LinkButton } from '../button';
+import { InlineLinkButton } from '../button';
 
 import InsertLinkModal from './modals/InsertLinkModal';
 
@@ -79,14 +79,14 @@ const SquireIframe = (
                     text: (
                         <>
                             {`${c('Error').t`The composer failed to load.`} `}
-                            <LinkButton
-                                className="align-baseline text-no-decoration text-bold button--currentColor"
+                            <InlineLinkButton
+                                className="text-bold"
                                 onClick={() => {
                                     window.location.reload();
                                 }}
                             >
                                 {c('Error').t`Please refresh the page.`}
-                            </LinkButton>
+                            </InlineLinkButton>
                         </>
                     ),
                     expiration: 20000,

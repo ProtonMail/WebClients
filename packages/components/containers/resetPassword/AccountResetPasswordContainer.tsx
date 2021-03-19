@@ -76,7 +76,8 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
                     />
                     <SignupSubmitRow>
                         <PrimaryButton
-                            className="button--large flex-item-noshrink on-mobile-w100"
+                            size="large"
+                            className="flex-item-noshrink on-mobile-w100"
                             disabled={!username}
                             loading={loading}
                             type="submit"
@@ -101,10 +102,9 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
                             url="https://protonmail.com/support-form"
                             target="_self"
                         >{c('Action').t`Contact support`}</Href>
-                        <Link
-                            to="/login"
-                            className="button--primary button--large flex-item-noshrink on-mobile-w100 on-mobile-text-center"
-                        >{c('Action').t`Return to login`}</Link>
+                        <Link to="/login" className="flex-item-noshrink on-mobile-w100 on-mobile-text-center">{c(
+                            'Action'
+                        ).t`Return to login`}</Link>
                     </SignupSubmitRow>
                 </form>
             </Layout>
@@ -169,7 +169,8 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
                     <Tabs tabs={tabs} value={tabIndex} onChange={handleChangeIndex} />
                     <SignupSubmitRow>
                         <PrimaryButton
-                            className="button--large on-mobile-w100"
+                            size="large"
+                            className="on-mobile-w100"
                             disabled={!email && !phone}
                             loading={loading}
                             type="submit"
@@ -253,7 +254,8 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
                     ) : null}
                     <SignupSubmitRow>
                         <PrimaryButton
-                            className="button--large on-mobile-w100"
+                            size="large"
+                            className="on-mobile-w100"
                             disabled={!token}
                             loading={loading}
                             type="submit"
@@ -308,7 +310,8 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
                     </div>
                     <SignupSubmitRow>
                         <PrimaryButton
-                            className="button--large on-mobile-w100"
+                            size="large"
+                            className="on-mobile-w100"
                             disabled={!password || password !== confirmPassword}
                             loading={loading}
                             type="submit"
@@ -331,10 +334,9 @@ const AccountResetPasswordContainer = ({ onLogin, Layout, onBack }: Props) => {
                             url="https://protonmail.com/support-form"
                             target="_self"
                         >{c('Action').t`Contact support`}</Href>
-                        <Link
-                            to="/login"
-                            className="button--primary button--large flex-item-noshrink on-mobile-w100 on-mobile-text-center"
-                        >{c('Action').t`Return to login`}</Link>
+                        <Link to="/login" className="flex-item-noshrink on-mobile-w100 on-mobile-text-center">{c(
+                            'Action'
+                        ).t`Return to login`}</Link>
                     </SignupSubmitRow>
                 </Layout>
             );

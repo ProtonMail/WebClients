@@ -73,7 +73,7 @@ const LabelStack = ({ labels, showDelete = false, isStacked = false, maxNumber, 
             {labelsOverflow.length > 0 && (
                 <li className="label-stack-overflow-count flex">
                     <Tooltip title={labelsOverflow.map((label) => label.name).join(', ')}>
-                        +{labelsOverflow.length}
+                        <span>+{labelsOverflow.length}</span>
                     </Tooltip>
                 </li>
             )}

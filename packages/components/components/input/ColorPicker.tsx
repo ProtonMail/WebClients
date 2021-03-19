@@ -21,7 +21,7 @@ const ColorPicker = ({ color = 'blue', onChange = noop }: Props) => {
 
     return (
         <>
-            <DropdownButton buttonRef={anchorRef} isOpen={isOpen} onClick={toggle} hasCaret>
+            <DropdownButton ref={anchorRef} isOpen={isOpen} onClick={toggle} hasCaret>
                 <Icon className="flex-item-noshrink" name="circle" color={iconColor} />
             </DropdownButton>
             <Dropdown id={uid} isOpen={isOpen} noMaxSize anchorRef={anchorRef} onClose={close}>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { Row, Label, Field, SmallButton } from '../../components';
+import { Row, Label, Field, Button } from '../../components';
 import { useMailSettings } from '../../hooks';
 
 import ShortcutsToggle from './ShortcutsToggle';
@@ -34,8 +34,8 @@ const ShortcutsSection = ({ onOpenShortcutsModal }: Props) => {
                     />
                 </div>
                 <div className="mt1">
-                    <SmallButton onClick={onOpenShortcutsModal}>{c('Action')
-                        .t`Display keyboard shortcuts`}</SmallButton>
+                    <Button size="small" onClick={onOpenShortcutsModal}>{c('Action')
+                        .t`Display keyboard shortcuts`}</Button>
                 </div>
             </Field>
         </Row>

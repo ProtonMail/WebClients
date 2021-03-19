@@ -108,7 +108,8 @@ const ContactModalProperties = (
                         <Icon name="text-justify visibility-hidden" />
                     </div>
                     <div className="flex flex-nowrap w95">
-                        <Button className="button--primaryborder mb1" onClick={onAdd}>{c('Action').t`Add`}</Button>
+                        <Button color="norm" shape="outline" className="mb1" onClick={onAdd}>{c('Action')
+                            .t`Add`}</Button>
                     </div>
                 </div>
             )}

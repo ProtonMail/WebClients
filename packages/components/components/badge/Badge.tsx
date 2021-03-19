@@ -12,12 +12,6 @@ const CLASSNAMES = {
     primary: 'badge-label--primary',
 } as const;
 
-const wrapTooltip = (children: React.ReactNode, title: string, className?: string) => (
-    <Tooltip title={title} className={className}>
-        {children}
-    </Tooltip>
-);
-
 export interface Props {
     children: React.ReactNode;
     className?: string;
@@ -26,10 +20,10 @@ export interface Props {
 }
 
 const Badge = ({ children, type = 'default', tooltip, className = 'mr1' }: Props) => {
-    let badge = <span className={classnames([CLASSNAMES[type], !tooltip && className])}>{children}</span>;
+    const badge = <span className={classnames([CLASSNAMES[type], className])}>{children}</span>;
 
     if (tooltip) {
-        badge = wrapTooltip(badge, tooltip, className);
+        return <Tooltip title={tooltip}>{badge}</Tooltip>;
     }
 
     return badge;

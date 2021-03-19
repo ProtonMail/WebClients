@@ -15,6 +15,8 @@ const AppsDropdown = () => {
 
     return (
         <SimpleDropdown
+            as="button"
+            type="button"
             hasCaret={false}
             content={<Icon name="more" className="apps-dropdown-button-icon flex-item-noshrink" />}
             className="apps-dropdown-button"

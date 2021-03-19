@@ -41,6 +41,6 @@ describe('Button component', () => {
         const { getByRole } = render(<Button icon="trash" />);
         const buttonNode = getByRole('button');
 
-        expect(buttonNode.classList.contains('button--for-icon')).toBe(true);
+        expect(buttonNode.classList.contains('button-for-icon')).toBe(true);
     });
 });

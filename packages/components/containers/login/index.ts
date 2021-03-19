@@ -10,4 +10,3 @@ export { default as AccountSwitchContainer } from './AccountSwitchContainer';
 export { default as useLogin } from './useLogin';
 
 export { default as UnlockModal } from './UnlockModal';
-export { default as SignInLayout } from './SignInLayout';

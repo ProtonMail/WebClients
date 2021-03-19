@@ -330,28 +330,20 @@ const ImportManageFoldersRow = ({
                                             {unescapeSlashes(destinationName)}
                                         </span>
                                         {nameTooLongError && (
-                                            <Tooltip
-                                                title={ERRORS.nameTooLongError}
-                                                className="flex-item-noshrink"
-                                                type="error"
-                                            >
+                                            <Tooltip title={ERRORS.nameTooLongError} type="error">
                                                 <Icon
                                                     tabIndex={-1}
                                                     name="info"
-                                                    className="color-global-warning inline-flex flex-align-self-center flex-item-noshrink"
+                                                    className="flex-item-noshrink color-global-warning inline-flex flex-align-self-center flex-item-noshrink"
                                                 />
                                             </Tooltip>
                                         )}
                                         {mergeWarning && (
-                                            <Tooltip
-                                                title={WARNINGS.mergeWarning}
-                                                className="flex-item-noshrink"
-                                                type="warning"
-                                            >
+                                            <Tooltip title={WARNINGS.mergeWarning} type="warning">
                                                 <Icon
                                                     tabIndex={-1}
                                                     name="info"
-                                                    className="color-global-attention inline-flex flex-align-self-center flex-item-noshrink"
+                                                    className="flex-item-noshrink color-global-attention inline-flex flex-align-self-center flex-item-noshrink"
                                                 />
                                             </Tooltip>
                                         )}
@@ -359,12 +351,11 @@ const ImportManageFoldersRow = ({
                                             <Tooltip
                                                 title={c('Tooltip')
                                                     .t`System subfolders will show up as separate folders in ProtonMail`}
-                                                className="flex-item-noshrink"
                                             >
                                                 <Icon
                                                     tabIndex={-1}
                                                     name="info"
-                                                    className="inline-flex flex-align-self-center flex-item-noshrink"
+                                                    className="flex-item-noshrink inline-flex flex-align-self-center flex-item-noshrink"
                                                 />
                                             </Tooltip>
                                         )}

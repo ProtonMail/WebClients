@@ -41,7 +41,7 @@ const IdentitySection = () => {
                 <Field className="wauto border-bottom on-mobile-pb0 on-mobile-no-border flex flex-row flex-nowrap">
                     <Select id="addressSelector" options={options} onChange={handleChange} />
                     <span className="flex-item-noshrink">
-                        <Button className="button--primary ml1" onClick={handleOpenModal}>{c('Action').t`Edit`}</Button>
+                        <Button color="norm" className="ml1" onClick={handleOpenModal}>{c('Action').t`Edit`}</Button>
                     </span>
                 </Field>
                 <Label>

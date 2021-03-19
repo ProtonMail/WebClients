@@ -68,7 +68,7 @@ const AccountGenerateInternalAddressForm = ({
             <SignupSubmitRow>
                 <PrimaryButton
                     type="submit"
-                    className="button--large"
+                    size="large"
                     disabled={!availableDomains}
                     loading={loading}
                     data-cy-login="submit"

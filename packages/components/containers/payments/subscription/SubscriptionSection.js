@@ -154,7 +154,7 @@ const SubscriptionSection = ({ permission }) => {
                 )}
                 {isPaid ? (
                     <div className="pl1 pr1 pt0-5 pb0-5">
-                        <UnsubscribeButton className="button--link button--redborder">{c('Action')
+                        <UnsubscribeButton color="danger" shape="outline">{c('Action')
                             .t`Cancel subscription`}</UnsubscribeButton>
                     </div>
                 ) : null}

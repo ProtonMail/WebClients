@@ -6,7 +6,7 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { getVPNServerConfig } from 'proton-shared/lib/api/vpn';
 import { c } from 'ttag';
-import { Table, TableBody, TableRow, DropdownActions, Tooltip, TableCell, Icon } from '../../../components';
+import { Table, TableBody, TableRow, DropdownActions, Tooltip, TableCell, Icon, ButtonLike } from '../../../components';
 import { useApiWithoutResult, useNotifications, useUser } from '../../../hooks';
 import { classnames } from '../../../helpers';
 
@@ -132,15 +132,17 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
                                             : c('Info').t`Basic, Plus or Visionary subscription required`
                                     }
                                 >
-                                    <Link
-                                        className="button--primary button--small"
+                                    <ButtonLike
+                                        as={Link}
+                                        color="norm"
+                                        size="small"
                                         to={`/dashboard${hasPaidVpn ? '?plan=vpnplus' : ''}`}
-                                    >{c('Action').t`Upgrade`}</Link>
+                                    >{c('Action').t`Upgrade`}</ButtonLike>
                                 </Tooltip>
                             ) : (
                                 <DropdownActions
                                     key="dropdown"
-                                    className="button--small"
+                                    size="small"
                                     list={[
                                         {
                                             text: c('Action').t`Download`,

@@ -112,7 +112,7 @@ const DeleteButton = ({ ID, email, showDeleteSource }: DeleteButtonProps) => {
             } as const),
     ].filter(isTruthy);
 
-    return <DropdownActions className="button--small" list={list} />;
+    return <DropdownActions size="small" list={list} />;
 };
 
 const sortByDate = (a: ImportHistory, b: ImportHistory) => (a.EndTime > b.EndTime ? -1 : 1);

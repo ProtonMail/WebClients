@@ -1,14 +1,10 @@
 import React from 'react';
-
 import Button, { ButtonProps } from './Button';
-import { classnames } from '../../helpers';
 
-const LinkButton = ({ children, className = '', ...rest }: ButtonProps) => {
-    return (
-        <Button className={classnames(['button--link', className])} {...rest}>
-            {children}
-        </Button>
-    );
+export type LinkButtonProps = Omit<ButtonProps, 'shape'>;
+
+const LinkButton = (props: LinkButtonProps, ref: React.Ref<HTMLButtonElement>) => {
+    return <Button shape="link" ref={ref} {...props} />;
 };
 
-export default LinkButton;
+export default React.forwardRef<HTMLButtonElement, LinkButtonProps>(LinkButton);

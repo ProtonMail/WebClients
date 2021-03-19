@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { CURRENCIES, DEFAULT_CURRENCY } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
-import { Select, Group, ButtonGroup } from '../../components';
+import { Select, ButtonGroup, Button } from '../../components';
 import { classnames } from '../../helpers';
 
 const addSymbol = (currency) => {
@@ -23,19 +23,20 @@ const CurrencySelector = ({ currency = DEFAULT_CURRENCY, onSelect, mode = 'selec
 
     if (mode === 'buttons') {
         return (
-            <Group {...rest}>
+            <ButtonGroup {...rest}>
                 {options.map(({ text, value }) => {
                     return (
-                        <ButtonGroup
+                        <Button
+                            group
                             className={classnames([currency === value && 'is-active'])}
                             key={value}
                             onClick={() => onSelect(value)}
                         >
                             {text}
-                        </ButtonGroup>
+                        </Button>
                     );
                 })}
-            </Group>
+            </ButtonGroup>
         );
     }
 
