@@ -12,7 +12,7 @@ const SubUserTopBanner = () => {
     }
 
     return (
-        <TopBanner className="bg-pm-blue">{c('Info')
+        <TopBanner className="bg-info">{c('Info')
             .t`You are currently signed in as ${user.Name} (${user.Email}) and have restricted access.`}</TopBanner>
     );
 };

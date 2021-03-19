@@ -53,7 +53,7 @@ const SquireToolbarDropdown = ({
                     disabled={disabled}
                     caretClassName="editor-toolbar-icon"
                     className={classnames([
-                        'editor-toolbar-button composer-toolbar-fontDropDown max-w100 flex flex-align-items-center flex-nowrap',
+                        'editor-toolbar-button interactive composer-toolbar-fontDropDown max-w100 flex flex-align-items-center flex-nowrap',
                         className,
                     ])}
                     tabIndex={-1}

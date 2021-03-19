@@ -16,7 +16,7 @@ const KeyWarningIcon = ({ publicKey, emailAddress, isInternal, className }: Prop
     if (!emailAddress) {
         return null;
     }
-    const icon = <Icon name="attention" className={classnames([className, 'color-global-attention'])} />;
+    const icon = <Icon name="attention" className={classnames([className, 'color-warning'])} />;
     const warning = getEmailMismatchWarning(publicKey, emailAddress, isInternal);
 
     if (!warning.length) {

@@ -4,9 +4,9 @@ import Icon from './Icon';
 import { classnames } from '../../helpers';
 
 const TYPES = {
-    success: 'bg-global-success',
-    warning: 'bg-global-attention',
-    error: 'bg-global-warning',
+    success: 'bg-success',
+    warning: 'bg-warning',
+    error: 'bg-danger',
 };
 
 interface Props {
@@ -19,7 +19,7 @@ interface Props {
 }
 
 const RoundedIcon = (
-    { className = '', iconClassName = 'color-white', type = 'success', padding = 'p0-5', title, name, ...rest }: Props,
+    { className = '', iconClassName, type = 'success', padding = 'p0-5', title, name, ...rest }: Props,
     ref: React.Ref<HTMLSpanElement>
 ) => {
     return (

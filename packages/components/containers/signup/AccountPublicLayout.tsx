@@ -47,7 +47,7 @@ const AccountPublicLayout = ({ children, title, subtitle, aside, larger, left, c
                     <div className="flex flex-column flex-nowrap flex-item-noshrink on-mobile-flex-item-fluid-auto">
                         <div
                             className={classnames([
-                                'center bg-white-dm color-global-grey-dm mt2 mb2 on-mobile-mt0 on-mobile-mb0 on-mobile-pb1 w100 max-w100 bordered-container flex-item-noshrink flex flex-nowrap signup-container',
+                                'center bg-norm color-weak mt2 mb2 on-mobile-mt0 on-mobile-mb0 on-mobile-pb1 w100 max-w100 bordered flex-item-noshrink flex flex-nowrap signup-container',
                                 larger ? '' : 'max-w50e',
                             ])}
                         >
@@ -79,7 +79,7 @@ const AccountPublicLayout = ({ children, title, subtitle, aside, larger, left, c
                                 </footer>
                             </main>
                             {aside ? (
-                                <aside className="no-mobile bg-global-highlight w33 p2 flex flex-align-items-center flex-justify-center text-sm m0 sign-layout-aside">
+                                <aside className="no-mobile bg-weak w33 p2 flex flex-align-items-center flex-justify-center text-sm m0 sign-layout-aside">
                                     {aside}
                                 </aside>
                             ) : null}

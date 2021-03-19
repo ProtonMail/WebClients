@@ -5,24 +5,24 @@
 }
 
 .editor {
-	border: 1px solid var(--bordercolor-input, $pm-global-border);
+	border: 1px solid var(--border-norm);
+
 	textarea {
 		color: currentColor;
 	}
+
 	.editor-toolbar-button {
 		padding: 0.3em 0.5em;
 		min-height: 2.1em;
-		&:focus,
-		&:hover,
-		&[aria-pressed='true'] {
-			background-color: var(--bordercolor-input, $pm-global-border);
-		}
 	}
+
 	.composer-toolbar-fontDropDown {
 		flex-shrink: 1;
-		> span {
+
+		& > span {
 			display: flex;
-			> * {
+
+			& > * {
 				min-width: 0;
 			}
 		}
@@ -30,10 +30,10 @@
 }
 
 .editor-toolbar {
-	border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
+	border-bottom: 1px solid var(--border-norm);
 }
 .editor-toolbar-separator {
-	border-left: 1px solid var(--bordercolor-input, $pm-global-border);
+	border-left: 1px solid var(--border-norm);
 }
 
 .editor-squire-wrapper {
@@ -44,7 +44,7 @@
 		line-height: 1.65;
 		margin-left: 0.8rem;
 		margin-top: 0.8rem;
-		color: rgba($pm-global-grey, 0.65);
+		color: grey;
 	}
 }
 
@@ -56,10 +56,6 @@
 	button {
 		padding-left: 0.5em;
 		padding-right: 0.5em;
-	}
-
-	button:disabled {
-		opacity: 0.5;
 	}
 }
 
@@ -80,11 +76,8 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background-color: var(--bgcolor-item-column-list, #eeee);
+	background-color: var(--background-weak);
 	border-radius: $global-border-radius;
-}
-.isDarkMode .editor--disabled::after {
-	opacity: 0.9;
 }
 
 .editor-toolbar-more-menu .dropdown-item.dropdown-item--no-separator {
@@ -93,19 +86,22 @@
 
 .editor-toolbar-button {
 	padding: 0.5em;
-	> span {
+
+	& > span {
 		margin-left: 0;
 		margin-right: 0;
 		width: 100%;
 		display: flex;
 		align-items: center;
-		> .mr0-5 {
+
+		& > .mr0-5 {
 			flex: 1 1 0px;
 			text-align: left;
 			display: inline-flex;
 		}
 	}
+
 	.editor-toolbar-icon {
-		color: var(--color-main-area, $pm-global-grey);
+		color: var(--text-norm);
 	}
 }

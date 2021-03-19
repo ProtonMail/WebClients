@@ -40,14 +40,14 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
             <div
                 ref={mainAreaRef}
                 onScroll={handleScroll}
-                className="relative flex-nowrap flex-item-fluid bg-global-highlight on-desktop-h100 scroll-if-needed"
+                className="relative flex-nowrap flex-item-fluid bg-weak on-desktop-h100 scroll-if-needed"
             >
                 <SettingsTitle onTop={!scrollTop}>{title}</SettingsTitle>
                 <div className="container-section-sticky pt0">
                     <div className="flex on-mobile-flex-column pb2">
                         <div className="flex-item-fluid">
                             {children ? (
-                                <section className="overview-grid-item overview-grid-item--full bordered-container bg-white-dm tiny-shadow-container p2 mb1-5">
+                                <section className="overview-grid-item overview-grid-item--full bordered bg-norm shadow-norm p2 mb1-5">
                                     {children}
                                 </section>
                             ) : null}
@@ -64,7 +64,7 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                     organization={organization}
                 />
                 {subscription && hasMailPlus(subscription) ? (
-                    <div className="bg-pm-blue-gradient color-white rounded text-center p1 mt2 relative">
+                    <div className="bg-primary rounded text-center p1 mt2 relative">
                         <p className="mt0 mb1">
                             {c('Info')
                                 .t`Upgrade to a paid plan with multi-user support to add more users to your organization.`}
@@ -84,7 +84,7 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                     </div>
                 ) : null}
                 {hasPaidMail ? null : (
-                    <div className="bg-pm-blue-gradient color-white rounded text-center p1 mt2 relative">
+                    <div className="bg-primary rounded text-center p1 mt2 relative">
                         <p className="mt0 mb1">
                             {c('Info')
                                 .t`Upgrade to a paid plan to unlock premium features and increase your storage space.`}

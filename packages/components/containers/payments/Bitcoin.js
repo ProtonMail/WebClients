@@ -55,7 +55,7 @@ const Bitcoin = ({ amount, currency, type }) => {
 
     return (
         <>
-            <figure role="group" className="bordered-container bg-global-highlight mb1">
+            <figure role="group" className="bordered bg-weak mb1">
                 <div className="p1 border-bottom">
                     <BitcoinQRCode
                         className="flex flex-align-items-center flex-column"

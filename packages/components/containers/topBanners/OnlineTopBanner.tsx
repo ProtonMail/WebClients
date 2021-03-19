@@ -49,7 +49,7 @@ const OnlineTopBanner = ({ isPublic = false }: Props) => {
     }, [onlineStatus]);
 
     if (onlineStatus && backOnline) {
-        return <TopBanner className="bg-global-success">{c('Info').t`Internet connection restored.`}</TopBanner>;
+        return <TopBanner className="bg-success">{c('Info').t`Internet connection restored.`}</TopBanner>;
     }
 
     if (onlineStatus) {
@@ -58,7 +58,7 @@ const OnlineTopBanner = ({ isPublic = false }: Props) => {
             const retryNow = (
                 <InlineLinkButton
                     key="0"
-                    className="color-currentColor"
+                    className="color-inherit"
                     disabled={loading}
                     onClick={() => withLoading(handleRetry())}
                 >
@@ -66,17 +66,14 @@ const OnlineTopBanner = ({ isPublic = false }: Props) => {
                 </InlineLinkButton>
             );
 
-            return (
-                <TopBanner className="bg-global-warning">{c('Info')
-                    .jt`Servers are unreachable. ${retryNow}.`}</TopBanner>
-            );
+            return <TopBanner className="bg-danger">{c('Info').jt`Servers are unreachable. ${retryNow}.`}</TopBanner>;
         }
         return null;
     }
 
     // If the device is known to be offline, the API unreachable is not displayed.
     return (
-        <TopBanner className="bg-global-warning">{c('Info')
+        <TopBanner className="bg-danger">{c('Info')
             .t`Internet connection lost. Please check your device's connectivity.`}</TopBanner>
     );
 };

@@ -25,7 +25,7 @@ const EditorToolbarButton = ({
             <button
                 type="button"
                 disabled={disabled || loading}
-                className={classnames(['editor-toolbar-button m0 flex', className])}
+                className={classnames(['editor-toolbar-button interactive m0 flex', className])}
                 {...rest}
             >
                 {children}

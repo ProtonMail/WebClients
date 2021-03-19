@@ -10,7 +10,6 @@ interface Props {
     isNarrow: boolean;
     actions: Actions;
     handleUpdateActions: (onUpdateActions: Partial<Actions>) => void;
-    isDark: boolean;
 }
 
 type ChangePayload = {
@@ -19,7 +18,7 @@ type ChangePayload = {
     isOpen: boolean;
 };
 
-const FilterActionsFormMarkAsRow = ({ isNarrow, actions, handleUpdateActions, isDark }: Props) => {
+const FilterActionsFormMarkAsRow = ({ isNarrow, actions, handleUpdateActions }: Props) => {
     const { markAs } = actions;
     const { isOpen } = markAs;
 
@@ -42,10 +41,7 @@ const FilterActionsFormMarkAsRow = ({ isNarrow, actions, handleUpdateActions, is
 
     const renderClosed = () => {
         if (!markAs?.read && !markAs?.starred) {
-            return (
-                <em className={classnames(['pt0-5', isDark ? 'color-global-muted' : 'color-global-altgrey'])}>{c('Info')
-                    .t`No action selected`}</em>
-            );
+            return <em className="pt0-5">{c('Info').t`No action selected`}</em>;
         }
 
         return (
@@ -70,9 +66,7 @@ const FilterActionsFormMarkAsRow = ({ isNarrow, actions, handleUpdateActions, is
         <div className="border-bottom flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1">
             <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb1'])} onClick={toggleSection}>
                 <Icon name="caret" className={classnames([isOpen && 'rotateX-180'])} />
-                <span className={classnames(['ml0-5', actions.error && 'color-global-warning'])}>
-                    {c('Label').t`Mark as`}
-                </span>
+                <span className={classnames(['ml0-5', actions.error && 'color-danger'])}>{c('Label').t`Mark as`}</span>
             </button>
             <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml1'])}>
                 {isOpen ? (
@@ -108,10 +102,7 @@ const FilterActionsFormMarkAsRow = ({ isNarrow, actions, handleUpdateActions, is
                         onClick={handleClear}
                         className={classnames([isNarrow ? 'mt1' : 'ml1'])}
                     >
-                        <Icon
-                            name="remove-text-formatting"
-                            className={classnames([isDark ? 'color-global-muted' : 'color-global-altgrey'])}
-                        />
+                        <Icon name="remove-text-formatting" />
                     </Button>
                 </Tooltip>
             </div>
