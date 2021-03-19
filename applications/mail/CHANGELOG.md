@@ -2,9 +2,9 @@
 
 ## New features
 
--   The contacts widget has been enhanced with a new Groups tab allowing you to look up and compose messages to your contact groups on the fly
+-   The contacts widget has been enhanced with a new Groups tab allowing you to look up and compose messages to your contact groups on the fly. Only available for users on Plus, Professional and Visionary plans.
 
-##Improvements
+## Improvements
 
 -   Improved the behavior of the message list when a filter is applied (e.g. show unread only). A message in the list that no longer complies with the rule will stay in the view until the filter is reset
 -   Improved the behavior for rare cases where the composer is not responding to ensure the rest of the app stays usable
@@ -13,7 +13,7 @@
 ## Fixes
 
 -   Fixed an issue where the composer would scroll to the bottom when clicking "Reply" on longer messages on Firefox
--   Fixed an issue where a request time out would appear when sending messages with particularly big attachments
+-   Fixed an issue where a request time out would appear when sending messages with large attachments
 -   Fixed an issue where the attachment would not be shown in the composer if composer is closed during the attachment upload
 -   Fixed an issue where a contact deletion in the Mail contact widget would display an error if same contact is deleted from Proton Contacts at the same time
 
