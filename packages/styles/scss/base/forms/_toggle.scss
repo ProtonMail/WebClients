@@ -10,8 +10,9 @@ $toggle-width-button: em(24) !default;
 		min-height: $toggle-width-button;
 		max-height: $toggle-width-button;
 		margin-top: 0.5em;
+		box-shadow: inset 0 0 0 1px var(--field-norm);
 		border-radius: #{$toggle-width/2};
-		background: var(--background-strong);
+		background-color: var(--background-norm);
 	}
 
 	&::before {
@@ -87,18 +88,19 @@ $toggle-width-button: em(24) !default;
 		}
 	}
 
-	&[disabled] + .toggle-label {
-		&::before {
-			background-color: var(--field-disabled);
+	&[disabled]:not([aria-busy='true']) {
+		& + .toggle-label {
+			box-shadow: none;
+			background-color: var(--background-strong);
+
+			&::before {
+				background-color: var(--field-disabled);
+			}
 		}
 	}
 
-	&[aria-busy='true'][disabled] {
-		// because aria-busy and disabled
-
+	&[disabled][aria-busy='true'] {
 		& + .toggle-label {
-			opacity: 1;
-
 			&::before {
 				background-color: var(--field-hover);
 				background-image: url(#{$path-images}infinite-loader.svg);
@@ -121,19 +123,22 @@ $toggle-width-button: em(24) !default;
 		}
 	}
 
-	&:focus,
-	&:hover {
-		& + .toggle-label {
-			&::before {
-				background-color: var(--field-hover);
+	&:not([disabled]) {
+		&:hover,
+		&:focus {
+			& + .toggle-label {
+				&::before {
+					background-color: var(--field-hover);
+				}
 			}
 		}
-	}
-	&:checked:focus,
-	&:checked:hover {
-		& + .toggle-label {
-			&::before {
-				background-color: var(--interaction-norm-hover);
+
+		&:checked:focus,
+		&:checked:hover {
+			& + .toggle-label {
+				&::before {
+					background-color: var(--interaction-norm-hover);
+				}
 			}
 		}
 	}
