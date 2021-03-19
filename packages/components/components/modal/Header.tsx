@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { classnames } from '../../helpers';
 import Title from './Title';
 import { Button } from '../button';
+import Icon from '../icon/Icon';
 
 interface Props extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>, 'children'> {
     modalTitleID: string;
@@ -31,15 +32,16 @@ const Header = ({
         >
             {hasClose ? (
                 <Button
+                    icon
                     shape="ghost"
                     size="small"
                     className="modal-close"
-                    icon="close"
-                    iconProps={{ alt: closeText, className: 'modal-close-icon' }}
                     title={closeText}
                     onClick={onClose}
                     data-focus-fallback="-3"
-                />
+                >
+                    <Icon className="modal-close-icon" name="close" alt={closeText} />
+                </Button>
             ) : null}
             {typeof children === 'string' ? (
                 <Title id={modalTitleID} className={!displayTitle ? 'sr-only' : undefined}>

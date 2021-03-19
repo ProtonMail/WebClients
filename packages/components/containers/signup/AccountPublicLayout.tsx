@@ -6,7 +6,7 @@ import { useAppTitle, useConfig } from '../../hooks';
 import { classnames, getAppVersion } from '../../helpers';
 
 import { PublicTopBanners } from '../topBanners';
-import { Href } from '../../components';
+import { Href, ProminentContainer } from '../../components';
 
 import PublicLanguageSelect from './PublicLanguageSelect';
 
@@ -40,7 +40,7 @@ const AccountPublicLayout = ({ children, title, subtitle, aside, larger, left, c
     const appVersion = getAppVersion(APP_VERSION_DISPLAY || APP_VERSION);
 
     return (
-        <div className="scroll-if-needed h100v">
+        <ProminentContainer className="scroll-if-needed">
             <PublicTopBanners />
             <div className="pt1 pb1 pl2 pr2 on-mobile-p0 sign-layout-container flex flex-nowrap flex-column flex-justify-space-between">
                 <div className="flex-item-fluid-auto sign-layout flex-item-noshrink flex flex-column flex-nowrap">
@@ -51,7 +51,7 @@ const AccountPublicLayout = ({ children, title, subtitle, aside, larger, left, c
                                 larger ? '' : 'max-w50e',
                             ])}
                         >
-                            <main className="on-mobile-p1 flex-item-fluid sign-layout-main flex-no-min-children flex-column flex-nowrap">
+                            <main className="on-mobile-p1 flex-item-fluid sign-layout-main flex-no-min-children flex-column flex-nowrap ui-standard bg-norm color-norm">
                                 <header className="flex flex-align-items-center flex-nowrap mb2">
                                     <span className="flex-item-fluid flex">{left}</span>
                                     <span className="text-center flex w90p">{center}</span>
@@ -102,7 +102,7 @@ const AccountPublicLayout = ({ children, title, subtitle, aside, larger, left, c
                     <span className="opacity-50 auto-mobile">{c('Info').jt`Version ${appVersion}`}</span>
                 </footer>
             </div>
-        </div>
+        </ProminentContainer>
     );
 };
 

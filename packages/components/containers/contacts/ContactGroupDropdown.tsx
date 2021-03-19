@@ -148,7 +148,7 @@ const ContactGroupDropdown = ({
                     <strong>{c('Label').t`Add to group`}</strong>
                     <Tooltip title={c('Info').t`Create a new contact group`}>
                         <Button icon size="small" onClick={handleAdd} className="flex flex-align-items-center">
-                            <Icon name="contacts-group" /> +
+                            <Icon name="contacts-groups" /> +
                         </Button>
                     </Tooltip>
                 </div>

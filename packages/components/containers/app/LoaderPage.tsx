@@ -2,7 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 import { APPS_CONFIGURATION } from 'proton-shared/lib/constants';
 import { useConfig, useDocumentTitle } from '../../hooks';
-import { FullLoader, TextLoader } from '../../components';
+import { FullLoader, ProminentContainer, TextLoader } from '../../components';
 
 interface Props {
     text?: string;
@@ -18,10 +18,12 @@ const LoaderPage = ({ text, loaderClassName = '' }: Props) => {
     useDocumentTitle(appName);
 
     return (
-        <div className="centered-absolute text-center">
-            <FullLoader className={loaderClassName} size={200} />
-            <TextLoader>{textToDisplay}</TextLoader>
-        </div>
+        <ProminentContainer>
+            <div className="centered-absolute text-center">
+                <FullLoader className={loaderClassName} size={200} />
+                <TextLoader>{textToDisplay}</TextLoader>
+            </div>
+        </ProminentContainer>
     );
 };
 

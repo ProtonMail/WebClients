@@ -72,7 +72,7 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                         <div>
                             <ButtonLike
                                 as={AppLink}
-                                className="increase-click-surface"
+                                className="increase-click-surface color-inherit"
                                 color="weak"
                                 shape="outline"
                                 to="/subscription"
@@ -92,7 +92,7 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                         <div>
                             <ButtonLike
                                 as={AppLink}
-                                className="increase-click-surface"
+                                className="increase-click-surface color-inherit"
                                 color="weak"
                                 shape="outline"
                                 to="/subscription"

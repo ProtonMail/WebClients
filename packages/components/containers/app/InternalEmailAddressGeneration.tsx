@@ -12,7 +12,7 @@ import { useApi, useAuthentication, useCache, useConfig, useEventManager } from 
 import { AccountSupportDropdown } from '../heading';
 import AccountPublicLayout, { Props as AccountProps } from '../signup/AccountPublicLayout';
 import AccountGenerateInternalAddressContainer from '../login/AccountGenerateInternalAddressContainer';
-import StandardLoadError from './StandardLoadError';
+import StandardLoadErrorPage from './StandardLoadErrorPage';
 import BackButton from '../signup/BackButton';
 import { getToAppName } from '../signup/helpers/helper';
 
@@ -68,7 +68,7 @@ const InternalEmailAddressGeneration = ({ children, externalEmailAddress }: Prop
     };
 
     if (fatalError) {
-        return <StandardLoadError />;
+        return <StandardLoadErrorPage />;
     }
 
     const externalEmailAddressValue = externalEmailAddress.Email || '';
