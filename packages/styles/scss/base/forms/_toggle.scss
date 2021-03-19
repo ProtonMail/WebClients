@@ -97,6 +97,14 @@ $toggle-width-button: em(24) !default;
 				background-color: var(--field-disabled);
 			}
 		}
+
+		&:checked {
+			& + .toggle-label {
+				&::before {
+					background-color: var(--field-norm);
+				}
+			}
+		}
 	}
 
 	&[disabled][aria-busy='true'] {
