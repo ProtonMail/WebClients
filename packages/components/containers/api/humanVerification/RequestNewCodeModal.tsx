@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { FormModal, PrimaryButton, Button, ResetButton } from '../../../components';
+import { FormModal, PrimaryButton, Button } from '../../../components';
 
 interface Props {
     email?: string;
@@ -20,9 +20,10 @@ const RequestNewCodeModal = ({ email, phone, onEdit, onResend, ...rest }: Props)
             footer={
                 <>
                     <div className="flex flex-justify-space-between flex-nowrap on-tiny-mobile-flex-wrap w100 on-tiny-mobile-flex-column">
-                        <ResetButton className="on-mobile-flex-align-self-end on-mobile-mt3-5 on-tiny-mobile-mb1">{c(
-                            'Action'
-                        ).t`Cancel`}</ResetButton>
+                        <Button
+                            type="reset"
+                            className="on-mobile-flex-align-self-end on-mobile-mt3-5 on-tiny-mobile-mb1"
+                        >{c('Action').t`Cancel`}</Button>
                         <div className="flex on-mobile-flex-column on-mobile-ml1 on-tiny-mobile-ml0">
                             <Button
                                 className="mr1 on-mobile-mb1"

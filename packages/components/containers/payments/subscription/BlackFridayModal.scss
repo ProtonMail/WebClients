@@ -2,11 +2,10 @@
 
 $amount-size: 48;
 $price-size: 21;
-$modal-background: #1c1736;
 
 // overrides for dark/light mode => same design
 .blackfriday-mail-modal.modal {
-	background: $modal-background;
+	background: #1c1736;
 
 	width: 80rem;
 	max-width: 80rem;
@@ -14,21 +13,21 @@ $modal-background: #1c1736;
 	.modal-content-inner,
 	.modal-title,
 	.modal-header {
-		color: $white;
+		color: white;
 	}
 	.modal-content-inner {
-		background: $modal-background url(#{$path-images}world.svg) 50% 50%;
+		background: #1c1736 url(#{$path-images}world.svg) 50% 50%;
 	}
 	.scrollshadow-static {
-		background: $modal-background;
+		background: #1c1736;
 	}
 	.scrollshadow-sticky {
 		&--top {
-			background-image: radial-gradient(farthest-side at 50% 0, #{$pm-tertiary-grey}, transparent);
+			background-image: radial-gradient(farthest-side at 50% 0, #505560, transparent);
 		}
 		&--bottom {
 			bottom: 0;
-			background-image: radial-gradient(farthest-side at 50% 100%, #{$pm-tertiary-grey}, transparent);
+			background-image: radial-gradient(farthest-side at 50% 100%, #505560, transparent);
 		}
 	}
 
@@ -40,18 +39,18 @@ $modal-background: #1c1736;
 		padding-right: 0;
 	}
 	.blackfriday-plan {
-		background: $white;
-		color: $pm-global-grey;
+		background-color: var(--background-norm);
+		color: var(--text-norm);
 	}
 
 	// currency
 	.grouped-buttons {
 		.button {
 			background: transparent !important; // I said I'm God.
-			color: $white;
-			border-color: $pm-tertiary-grey;
+			color: white;
+			border-color: #505560;
 			&.is-active {
-				border-bottom: 1px solid $white !important; // I said I'm God.
+				border-bottom: 1px solid white !important; // I said I'm God.
 			}
 		}
 	}
@@ -139,9 +138,7 @@ $modal-background: #1c1736;
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
 		border-width: 2px;
-		// no mention of $pm-primary here, otherwise it will be blue for VPN.
-		// used a helper instead
-		//border-color: $pm-primary;
+		//border-color: var(--primary);
 	}
 	.blackfriday-percentage {
 		top: -2.8em;

@@ -1,12 +1,11 @@
-@import '~design-system/scss/config/';
 .orderableHelper {
 	z-index: 666;
 	display: flex;
 	align-items: center;
-	color: var(--color-main-area, $pm-global-grey);
-	background: var(--bgcolor-main-area, $white);
-	border-top: 1px solid var(--bordercolor-input, $pm-global-border);
-	border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
+	color: var(--text-norm);
+	background: var(--background-norm);
+	border: solid var(--border-norm);
+	border-width: 1px 0;
 
 	/**
      * We replace td with custom class here because we don't have direct access to it.

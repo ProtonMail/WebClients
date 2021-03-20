@@ -76,7 +76,7 @@ const PaymentMethodActions = ({ method, methods, index }) => {
         },
     ].filter(Boolean);
 
-    return <DropdownActions className="button--small" list={list} />;
+    return <DropdownActions size="small" list={list} />;
 };
 
 PaymentMethodActions.propTypes = {

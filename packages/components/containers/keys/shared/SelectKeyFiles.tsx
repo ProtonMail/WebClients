@@ -1,8 +1,9 @@
-import React, { forwardRef, useRef, useEffect, useImperativeHandle, ChangeEvent } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { c } from 'ttag';
 import { parseKeyFiles } from 'proton-shared/lib/keys';
 import { OpenPGPKey } from 'pmcrypto';
-import FileInput, { FileInputHandle } from '../../../components/input/FileInput';
+import FileInput from '../../../components/input/FileInput';
+import useCombinedRefs from '../../../hooks/useCombinedRefs';
 
 interface Props {
     onFiles: (files: OpenPGPKey[]) => void;
@@ -11,38 +12,31 @@ interface Props {
     className?: string;
 }
 
-const SelectKeyFiles = forwardRef<FileInputHandle, Props>(
-    ({ onFiles, autoClick = false, multiple = false, className = '' }: Props, ref) => {
-        const fileRef = useRef<HTMLInputElement>(null);
+const SelectKeyFiles = (
+    { onFiles, autoClick = false, multiple = false, className = '' }: Props,
+    ref: React.Ref<HTMLInputElement>
+) => {
+    const fileRef = useRef<HTMLInputElement>(null);
 
-        const handleFileImport = ({ target }: ChangeEvent<HTMLInputElement>) => {
-            parseKeyFiles(Array.from(target.files as FileList)).then((result) => onFiles(result));
-        };
+    useEffect(() => {
+        if (autoClick) {
+            fileRef.current?.click();
+        }
+    }, [autoClick]);
 
-        useEffect(() => {
-            if (autoClick) {
-                fileRef.current?.click();
-            }
-        }, [autoClick]);
+    return (
+        <FileInput
+            accept=".txt,.asc"
+            ref={useCombinedRefs(fileRef, ref)}
+            className={className}
+            multiple={multiple}
+            onChange={({ target }) => {
+                parseKeyFiles(Array.from(target.files as FileList)).then((result) => onFiles(result));
+            }}
+        >
+            {c('Select files').t`Upload`}
+        </FileInput>
+    );
+};
 
-        useImperativeHandle(ref, () => ({
-            click: () => {
-                fileRef.current?.click();
-            },
-        }));
-
-        return (
-            <FileInput
-                accept=".txt,.asc"
-                ref={fileRef}
-                className={className}
-                multiple={multiple}
-                onChange={handleFileImport}
-            >
-                {c('Select files').t`Upload`}
-            </FileInput>
-        );
-    }
-);
-
-export default SelectKeyFiles;
+export default React.forwardRef<HTMLInputElement, Props>(SelectKeyFiles);

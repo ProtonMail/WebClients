@@ -1,48 +1,57 @@
 import React from 'react';
 import { classnames } from '../../helpers';
+import Button from '../button/Button';
 import DropdownCaret from './DropdownCaret';
+import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
 
-export interface Props
-    extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+export interface OwnProps {
     loading?: boolean;
-    buttonRef?: React.Ref<HTMLButtonElement>;
-    icon?: React.ReactNode;
     caretClassName?: string;
     hasCaret?: boolean;
     isOpen?: boolean;
-    children?: React.ReactNode;
-    className?: string;
-    disabled?: boolean;
 }
 
-const DropdownButton = ({
-    children,
-    buttonRef,
-    className = 'button',
-    hasCaret = false,
-    isOpen = false,
-    caretClassName = '',
-    disabled = false,
-    loading = false,
-    ...rest
-}: Props) => {
-    return (
-        <button
-            ref={buttonRef}
-            type="button"
-            className={classnames(['flex-item-noshrink', className])}
-            aria-expanded={isOpen}
-            aria-busy={loading}
-            disabled={loading ? true : disabled}
-            data-testid="dropdown-button"
-            {...rest}
-        >
-            <span className="mauto">
-                <span className={classnames([hasCaret && children ? 'mr0-5' : undefined])}>{children}</span>
-                {hasCaret && <DropdownCaret className={caretClassName} isOpen={isOpen} />}
-            </span>
-        </button>
-    );
-};
+export type DropdownButtonProps<E extends React.ElementType> = PolymorphicComponentProps<E, OwnProps>;
+
+const defaultElement = Button;
+
+export const DropdownButton: <E extends React.ElementType = typeof defaultElement>(
+    props: DropdownButtonProps<E>
+) => React.ReactElement | null = React.forwardRef(
+    <E extends React.ElementType = typeof defaultElement>(
+        {
+            children,
+            className,
+            hasCaret = false,
+            isOpen = false,
+            caretClassName = '',
+            loading = false,
+            disabled,
+            ...rest
+        }: DropdownButtonProps<E>,
+        ref: typeof rest.ref
+    ) => {
+        return (
+            <Box
+                as={defaultElement}
+                ref={ref}
+                aria-expanded={isOpen}
+                aria-busy={loading}
+                disabled={loading ? true : disabled}
+                data-testid="dropdown-button"
+                className={classnames([children && hasCaret ? 'flex flex-align-items-center' : '', className])}
+                {...rest}
+            >
+                {children}
+                {hasCaret && (
+                    <DropdownCaret
+                        className={classnames(['flex-item-noshrink', children ? 'ml0-5' : '', caretClassName])}
+                        isOpen={isOpen}
+                    />
+                )}
+            </Box>
+        );
+    }
+);
 
 export default DropdownButton;

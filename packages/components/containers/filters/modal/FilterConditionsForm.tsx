@@ -18,11 +18,10 @@ interface Props {
     isNarrow: boolean;
     model: SimpleFilterModalModel;
     onChange: (newModel: SimpleFilterModalModel) => void;
-    isDark: boolean;
     isEdit: boolean;
 }
 
-const FilterConditionsForm = ({ isEdit, isNarrow, model, isDark, onChange }: Props) => {
+const FilterConditionsForm = ({ isEdit, isNarrow, model, onChange }: Props) => {
     const [conditions, setConditions] = useState<Condition[]>(
         model.conditions.length ? model.conditions : [generateNewCondition()]
     );
@@ -69,9 +68,7 @@ const FilterConditionsForm = ({ isEdit, isNarrow, model, isDark, onChange }: Pro
                         }
                     >
                         {c('Label').t`ALL`}
-                        <em
-                            className={classnames(['ml0-5', isDark ? 'color-global-muted' : 'color-global-altgrey'])}
-                        >{c('Info').t`(Filter if ALL of the following conditions are met)`}</em>
+                        <em className="ml0-5">{c('Info').t`(Filter if ALL of the following conditions are met)`}</em>
                     </Radio>
                     <Radio
                         id="statement-any"
@@ -86,9 +83,7 @@ const FilterConditionsForm = ({ isEdit, isNarrow, model, isDark, onChange }: Pro
                         }
                     >
                         {c('Label').t`ANY`}
-                        <em
-                            className={classnames(['ml0-5', isDark ? 'color-global-muted' : 'color-global-altgrey'])}
-                        >{c('Info').t`(Filter if ANY of the following conditions are met)`}</em>
+                        <em className="ml0-5">{c('Info').t`(Filter if ANY of the following conditions are met)`}</em>
                     </Radio>
                 </div>
             </div>

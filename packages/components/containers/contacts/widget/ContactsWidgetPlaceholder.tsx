@@ -6,26 +6,13 @@ import noResultsImgLight from 'design-system/assets/img/shared/no-result-search.
 import noResultsImgDark from 'design-system/assets/img/shared/no-result-search-dark.svg';
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 import { IllustrationPlaceholder } from '../../illustration';
-import { LinkButton } from '../../../components';
+import { InlineLinkButton } from '../../../components';
 
 export enum EmptyType {
     All,
     Search,
     AllGroups,
 }
-
-interface ActionLinkProps {
-    onClick: (event: MouseEvent) => void;
-    children: ReactNode;
-}
-
-const ActionLink = ({ onClick, children }: ActionLinkProps) => {
-    return (
-        <LinkButton onClick={onClick} className="ml0-25 mr0-25">
-            {children}
-        </LinkButton>
-    );
-};
 
 interface Props {
     type: EmptyType | undefined;
@@ -45,7 +32,8 @@ const ContactsWidgetPlaceholder = ({ type, onClearSearch, onImport, onCreate }: 
                 <div className="flex flex-column">
                     <p className="m0">{c('Actions message').t`You don't have any groups.`}</p>
                     <p className="m0">
-                        <ActionLink key="add-contact" onClick={onCreate}>{c('Action').t`Add group`}</ActionLink>
+                        <InlineLinkButton key="add-contact" onClick={onCreate}>{c('Action')
+                            .t`Add group`}</InlineLinkButton>
                     </p>
                 </div>
             );
@@ -58,7 +46,7 @@ const ContactsWidgetPlaceholder = ({ type, onClearSearch, onImport, onCreate }: 
                     <p className="m0">{c('Actions message').t`No results found.`}</p>
                     <p className="m0">{c('Actions message').jt`Please try another search term.`}</p>
                     <p className="m0">
-                        <ActionLink onClick={onClearSearch}>{c('Action').t`Clear query`}</ActionLink>
+                        <InlineLinkButton onClick={onClearSearch}>{c('Action').t`Clear query`}</InlineLinkButton>
                     </p>
                 </div>
             );
@@ -68,12 +56,12 @@ const ContactsWidgetPlaceholder = ({ type, onClearSearch, onImport, onCreate }: 
         default: {
             imgUrl = getLightOrDark(noContactsImgLight, noContactsImgDark);
             const addContact = (
-                <ActionLink key="add-contact" onClick={onCreate}>{c('Action').t`Add contact`}</ActionLink>
+                <InlineLinkButton key="add-contact" onClick={onCreate}>{c('Action').t`Add contact`}</InlineLinkButton>
             );
             const importContact = (
-                <ActionLink key="import" onClick={onImport}>
+                <InlineLinkButton key="import" onClick={onImport}>
                     {c('Action').t`import`}
-                </ActionLink>
+                </InlineLinkButton>
             );
             actions = (
                 <div className="flex flex-column">

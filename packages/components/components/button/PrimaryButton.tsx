@@ -1,14 +1,10 @@
 import React from 'react';
-import Icon from '../icon/Icon';
 import Button, { ButtonProps } from './Button';
-import { classnames } from '../../helpers';
 
-export type PrimaryButtonProps = ButtonProps;
+export type PrimaryButtonProps = Omit<ButtonProps, 'color'>;
 
-const PrimaryButton = ({ className = '', icon, ...rest }: PrimaryButtonProps) => {
-    const buttonIcon = typeof icon === 'string' ? <Icon name={icon} /> : icon;
-
-    return <Button icon={buttonIcon} className={classnames(['button--primary', className])} {...rest} />;
+const PrimaryButton = (props: PrimaryButtonProps, ref: React.Ref<HTMLButtonElement>) => {
+    return <Button color="norm" ref={ref} {...props} />;
 };
 
-export default PrimaryButton;
+export default React.forwardRef<HTMLButtonElement, PrimaryButtonProps>(PrimaryButton);

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 
 import { resetVPNSettings } from 'proton-shared/lib/api/vpn';
-import { Button, Alert, Copy, PrimaryButton } from '../../../components';
+import { Alert, Copy, PrimaryButton, Button, Icon } from '../../../components';
 import { useUserVPN, useApi, useNotifications, useLoading } from '../../../hooks';
 
 const OpenVPNAccountSection = () => {
@@ -34,7 +34,7 @@ const OpenVPNAccountSection = () => {
                     <code title={Name}>{Name}</code>
                 </div>
                 <div className="flex flex-item-noshrink on-mobile-mt0-5">
-                    <Copy className="button--for-icon pt0-5 pb0-5" value={Name} />
+                    <Copy value={Name} />
                 </div>
             </div>
             <div className="flex flex-align-items-center mb1 on-mobile-flex-column">
@@ -43,12 +43,14 @@ const OpenVPNAccountSection = () => {
                     <code>{show ? Password : '••••••••••••••••'}</code>
                 </div>
                 <div className="flex flex-item-noshrink on-mobile-mt0-5">
-                    <Copy className="mr1 button--for-icon" value={Password} />
+                    <Copy className="mr1" value={Password} />
                     <Button
-                        icon={show ? 'unread' : 'read'}
+                        icon
                         onClick={() => setShow(!show)}
                         title={show ? c('Action').t`Hide` : c('Action').t`Show`}
-                    />
+                    >
+                        <Icon name={show ? 'unread' : 'read'} />
+                    </Button>
                 </div>
             </div>
             <PrimaryButton

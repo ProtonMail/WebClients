@@ -59,7 +59,7 @@ function SpamListItem({ list, type, onCreate, onEdit, onMove, onRemove, classNam
                                     {item.Email || item.Domain}
                                 </span>
                                 <DropdownActions
-                                    className="button--small"
+                                    size="small"
                                     list={[
                                         {
                                             text: c('Action').t`Edit`,

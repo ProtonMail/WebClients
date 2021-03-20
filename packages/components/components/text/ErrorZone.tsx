@@ -8,7 +8,7 @@ interface Props {
 }
 const ErrorZone = ({ children, id, className }: Props) => {
     return (
-        <div className={classnames(['color-global-warning error-zone', className])} id={id}>
+        <div className={classnames(['color-danger error-zone', className])} id={id}>
             {children}
         </div>
     );

@@ -12,7 +12,6 @@ import ImportKeysList from './ImportKeysList';
 import SelectKeyFiles from '../shared/SelectKeyFiles';
 import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';
 import { ImportKey, Status } from './interface';
-import { FileInputHandle } from '../../../components/input/FileInput';
 import { updateKey } from './state';
 
 const getNewKey = (privateKey: OpenPGPKey) => {
@@ -41,7 +40,7 @@ interface Props {
 const ImportKeyModal = ({ onClose, onProcess, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
-    const selectRef = useRef<FileInputHandle>(null);
+    const selectRef = useRef<HTMLInputElement>(null);
 
     const [step, setStep] = useState<STEPS>(STEPS.WARNING);
     const [state, setState] = useState<ImportKey[]>([]);

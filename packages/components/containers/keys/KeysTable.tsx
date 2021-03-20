@@ -48,8 +48,9 @@ const KeysTable = ({
                             cells={[
                                 <div key={1} className="flex flex-row flex-nowrap flex-align-items-center">
                                     <Copy
+                                        size="small"
                                         value={fingerprint}
-                                        className="button--small flex-item-noshrink no-tiny-mobile mr1 on-mobile-mr0-5 on-tiny-mobile-m0"
+                                        className="flex-item-noshrink no-tiny-mobile mr1 on-mobile-mr0-5 on-tiny-mobile-m0"
                                     />
                                     <code className="max-w100 inline-block text-ellipsis" title={fingerprint}>
                                         {fingerprint}

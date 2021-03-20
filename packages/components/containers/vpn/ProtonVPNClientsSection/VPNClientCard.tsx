@@ -1,6 +1,15 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Bordered, Icon, Block, Href, SimpleDropdown, DropdownMenu, Group } from '../../../components';
+import {
+    Bordered,
+    Icon,
+    Block,
+    Href,
+    SimpleDropdown,
+    DropdownMenu,
+    ButtonGroup,
+    ButtonLike,
+} from '../../../components';
 
 interface Props {
     title: string;
@@ -8,6 +17,7 @@ interface Props {
     icon: string;
     items?: React.ReactNode[];
 }
+
 const VPNClientCard = ({ title, link, items, icon }: Props) => {
     return (
         <Bordered className="mr1 text-center relative">
@@ -17,26 +27,26 @@ const VPNClientCard = ({ title, link, items, icon }: Props) => {
             <Block>{title}</Block>
             {!items ? (
                 <div className="pl1-25 pr1-25 flex mt1 flex-justify-center">
-                    <Href url={link} className="button">
+                    <ButtonLike as={Href} url={link}>
                         {c('Action').t`Download`}
                         <span className="sr-only">{title}</span>
-                    </Href>
+                    </ButtonLike>
                 </div>
             ) : (
-                <Group className="flex mt1 flex-justify-center">
-                    <Href url={link} className="button grouped-button">
+                <ButtonGroup className="flex mt1 flex-justify-center">
+                    <ButtonLike as={Href} url={link} group>
                         {c('Action').t`Download`}
                         <span className="sr-only">{title}</span>
-                    </Href>
+                    </ButtonLike>
                     <SimpleDropdown
+                        icon
+                        group
                         originalPlacement="bottom-right"
-                        className="button grouped-button button--for-icon"
                         title={c('Title').t`Open actions dropdown`}
-                        content=""
                     >
                         <DropdownMenu>{items}</DropdownMenu>
                     </SimpleDropdown>
-                </Group>
+                </ButtonGroup>
             )}
         </Bordered>
     );

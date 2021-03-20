@@ -239,21 +239,21 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                                     {percentage ? (
                                         <span
                                             className={classnames([
-                                                'text-uppercase text-bold absolute color-white blackfriday-percentage text-center',
-                                                popular ? 'bg-global-warning' : 'bg-primary',
+                                                'text-uppercase text-bold absolute blackfriday-percentage text-center',
+                                                popular ? 'bg-danger' : 'bg-primary',
                                             ])}
                                         >
                                             {c('blackfriday Info').jt`Save ${percentage}%`}
                                         </span>
                                     ) : null}
                                     {popular ? (
-                                        <div className="text-uppercase absolute text-bold bg-primary color-white pt0-75 pb0-5 mt0 mb0 text-center blackfriday-mostPopular">{c(
+                                        <div className="text-uppercase absolute text-bold bg-primary pt0-75 pb0-5 mt0 mb0 text-center blackfriday-mostPopular">{c(
                                             'blackfriday Title'
                                         ).t`Most popular`}</div>
                                     ) : null}
                                     <div
                                         className={classnames([
-                                            'blackfriday-plan w100 bordered-container p1 mb1 flex flex-column flex-align-items-center flex-justify-end',
+                                            'blackfriday-plan w100 bordered p1 mb1 flex flex-column flex-align-items-center flex-justify-end',
                                             popular && 'border-color-primary',
                                         ])}
                                     >
@@ -268,22 +268,17 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                                             {Object.keys(planIDs).length > 1 ? (
                                                 <>
                                                     <p className="m0">{c('blackfriday Info').t`Includes`}</p>
-                                                    <p
-                                                        className={classnames([
-                                                            'mt0',
-                                                            popular && 'color-global-success',
-                                                        ])}
-                                                    >
+                                                    <p className={classnames(['mt0', popular && 'color-success'])}>
                                                         {c('blackfriday Info').t`early access to`}
                                                         <strong className="blackfriday-protonDrive-productName ml0-25">
                                                             {driveAppName}
                                                         </strong>
                                                         <Info
-                                                            buttonClass="inline-flex color-currentColor ml0-25 mb0-1"
+                                                            buttonClass="inline-flex color-inherit ml0-25 mb0-1"
                                                             url="https://protonmail.com/support/knowledge-base/protondrive-early-access/?utm_campaign=ww-en-2c-mail-coms_inapp-protondrive_learn_more&utm_source=webmail&utm_medium=app_ad&utm_content=tooltip_v4"
                                                         />
                                                         <span className="block">
-                                                            <span className="blackfriday-protonDrive-free bg-global-success text-uppercase color-white text-bold pl0-5 pr0-5">
+                                                            <span className="blackfriday-protonDrive-free bg-success text-uppercase text-bold pl0-5 pr0-5">
                                                                 {c('blackfriday Info').t`Free`}
                                                             </span>
                                                         </span>
@@ -292,12 +287,9 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                                             ) : null}
                                         </div>
                                         <Button
-                                            className={classnames([
-                                                'mb1 text-uppercase',
-                                                popular || productPayer
-                                                    ? 'button--primary'
-                                                    : 'button--primaryborderEvenInDarkMode',
-                                            ])}
+                                            color="norm"
+                                            shape={popular || productPayer ? 'outline' : undefined}
+                                            className={classnames(['mb1 text-uppercase'])}
                                             onClick={() => {
                                                 rest.onClose?.();
                                                 onSelect({ planIDs, cycle, currency, couponCode });

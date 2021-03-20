@@ -11,26 +11,26 @@ const OneAccountIllustration = () => {
     return (
         <div className="center flex flex-column flex-align-items-center">
             <div className="inline-flex">
-                <span className="bg-global-altgrey icon-28p rounded50 flex">
-                    <Icon name="protondrive" className="color-global-light mauto" alt={driveAppName} />
+                <span className="icon-28p rounded50 flex">
+                    <Icon name="protondrive" className="mauto" alt={driveAppName} />
                 </span>
                 <span className="w40p" />
-                <span className="bg-global-altgrey icon-20p rounded50 flex mt2">
-                    <Icon name="protoncontacts" className="color-global-light mauto" size={12} />
+                <span className="icon-20p rounded50 flex mt2">
+                    <Icon name="protoncontacts" className="mauto" size={12} />
                 </span>
             </div>
 
-            <span className="bg-global-altgrey icon-42p rounded50 inline-flex mt0-25 mb0-5">
-                <Icon name="protonmail" className="color-global-light mauto" size={24} />
+            <span className="icon-42p rounded50 inline-flex mt0-25 mb0-5">
+                <Icon name="protonmail" className="mauto" size={24} />
             </span>
 
             <div className="inline-flex">
-                <span className="bg-global-altgrey icon-28p rounded50 flex mt0-5">
-                    <Icon name="protonvpn" className="color-global-light mauto" size={20} />
+                <span className="icon-28p rounded50 flex mt0-5">
+                    <Icon name="protonvpn" className="mauto" size={20} />
                 </span>
                 <span className="w40p mr0-5r" />
-                <span className="bg-global-altgrey icon-24p rounded50 flex ">
-                    <Icon name="protoncalendar" className="color-global-light mauto" />
+                <span className="icon-24p rounded50 flex ">
+                    <Icon name="protoncalendar" className="mauto" />
                 </span>
             </div>
 

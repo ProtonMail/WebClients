@@ -2,7 +2,6 @@ import React, { useState, useMemo, FormEvent, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { normalize } from 'proton-shared/lib/helpers/string';
-import { isDarkTheme } from 'proton-shared/lib/themes/helpers';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { addTreeFilter, updateFilter } from 'proton-shared/lib/api/filters';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
@@ -17,7 +16,6 @@ import {
     useEventManager,
     useApiWithoutResult,
     useModals,
-    useUserSettings,
 } from '../../../hooks';
 
 import HeaderFilterModal from './HeaderFilterModal';
@@ -111,8 +109,6 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
     const { createModal } = useModals();
-    const [userSettings] = useUserSettings();
-    const isDark = useMemo(() => isDarkTheme(), [userSettings.Theme]);
     const isEdit = !!filter?.ID;
 
     const initializeModel = (filter?: Filter) => {
@@ -262,15 +258,7 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
                     />
                 );
             case Step.CONDITIONS:
-                return (
-                    <FilterConditionsForm
-                        isEdit={isEdit}
-                        isDark={isDark}
-                        isNarrow={isNarrow}
-                        model={model}
-                        onChange={setModel}
-                    />
-                );
+                return <FilterConditionsForm isEdit={isEdit} isNarrow={isNarrow} model={model} onChange={setModel} />;
             case Step.ACTIONS:
                 return (
                     <FilterActionsForm
@@ -280,7 +268,6 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
                         model={model}
                         onChange={setModel}
                         isEdit={isEdit}
-                        isDark={isDark}
                     />
                 );
             case Step.PREVIEW:

@@ -33,7 +33,7 @@ $default-height-fields: 4.1rem;
 	.field-icon-container:focus-within,
 	.field:focus {
 		box-shadow: none;
-		border-color: $pm-primary;
+		border-color: var(--interaction-norm);
 	}
 	.right-icon,
 	.right-text,
@@ -159,9 +159,9 @@ $default-height-fields: 4.1rem;
 }
 
 .signup-footer-link {
-	&:focus,
-	&:hover {
-		color: rgba($white, 0.5);
+	&:hover,
+	&:focus {
+		color: inherit;
 	}
 }
 

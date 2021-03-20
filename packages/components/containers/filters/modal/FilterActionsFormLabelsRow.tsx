@@ -15,7 +15,6 @@ interface Props {
     isNarrow: boolean;
     actions: Actions;
     handleUpdateActions: (onUpdateActions: Partial<Actions>) => void;
-    isDark: boolean;
 }
 
 type ChangePayload = {
@@ -23,7 +22,7 @@ type ChangePayload = {
     isOpen: boolean;
 };
 
-const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, labels, isDark }: Props) => {
+const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, labels }: Props) => {
     const { createModal } = useModals();
     const { labelAs } = actions;
     const { isOpen } = labelAs;
@@ -57,10 +56,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
 
     const renderClosed = () => {
         if (!labelAs?.labels.length) {
-            return (
-                <em className={classnames([isDark ? 'color-global-muted' : 'color-global-altgrey'])}>{c('Info')
-                    .t`No label selected`}</em>
-            );
+            return <em>{c('Info').t`No label selected`}</em>;
         }
 
         return (
@@ -92,9 +88,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
         <div className="border-bottom flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1">
             <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb1'])} onClick={toggleSection}>
                 <Icon name="caret" className={classnames([isOpen && 'rotateX-180'])} />
-                <span className={classnames(['ml0-5', actions.error && 'color-global-warning'])}>
-                    {c('Label').t`Label as`}
-                </span>
+                <span className={classnames(['ml0-5', actions.error && 'color-danger'])}>{c('Label').t`Label as`}</span>
             </button>
             <div className={classnames(['flex-item-fluid', !isNarrow && 'ml1'])}>
                 {isOpen ? (
@@ -144,18 +138,16 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                 )}
             </div>
             <div>
-                <Button
-                    disabled={!labelAs?.labels.length}
-                    onClick={handleClear}
-                    className={classnames(['button--for-icon', isNarrow ? 'mt1' : 'ml1'])}
-                >
-                    <Tooltip
-                        title={c('Action').t`Reset`}
-                        className={classnames([isDark ? 'color-global-muted' : 'color-global-altgrey'])}
+                <Tooltip title={c('Action').t`Reset`}>
+                    <Button
+                        icon
+                        disabled={!labelAs?.labels.length}
+                        onClick={handleClear}
+                        className={classnames([isNarrow ? 'mt1' : 'ml1'])}
                     >
                         <Icon name="remove-text-formatting" />
-                    </Tooltip>
-                </Button>
+                    </Button>
+                </Tooltip>
             </div>
         </div>
     );

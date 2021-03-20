@@ -1,8 +1,8 @@
 @import '~design-system/scss/config/';
 
 .dropzone {
-	border: 5px dashed var(--bordercolor-input, $pm-global-border);
-	background: var(--bgcolor-main-area, $white);
+	border: 5px dashed var(--border-norm);
+	background: var(--background-norm);
 	opacity: 0;
 	visibility: hidden;
 	transition-property: opacity, visibility;

@@ -12,12 +12,12 @@ const NewVersionTopBannerView = ({ isError = false }: { isError?: boolean }) => 
     const appName = APPS_CONFIGURATION[APP_NAME].name;
     const reloadTab = () => window.location.reload();
     const reloadButton = (
-        <InlineLinkButton key="reload-button" className="color-currentColor" onClick={() => reloadTab()}>{c('Action')
+        <InlineLinkButton key="reload-button" className="color-inherit" onClick={() => reloadTab()}>{c('Action')
             .t`Refresh the page`}</InlineLinkButton>
     );
 
     return (
-        <TopBanner className={isError ? 'bg-global-warning' : 'bg-primary'}>
+        <TopBanner className={isError ? 'bg-danger' : 'bg-primary'}>
             {c('Message display when a new app version is available')
                 .jt`A new version of ${appName} is available. ${reloadButton}.`}
         </TopBanner>

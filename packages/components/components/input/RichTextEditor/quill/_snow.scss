@@ -1,12 +1,12 @@
 @import '~design-system/scss/config/';
 
 $themeName: 'snow' !default;
-$activeColor: $pm-primary !default;
-$borderColor: var(--bordercolor-input, $pm-global-border) !default;
-$backgroundColor: var(--bgcolor-main-area, $white) !default;
-$inactiveColor: var(--color-main-area, $pm-global-grey) !default;
-$shadowColor: $input-shadow-color !default;
-$textColor: var(--color-main-area, $pm-global-grey) !default;
+$activeColor: var(--interaction-norm) !default;
+$borderColor: var(--border-norm) !default;
+$backgroundColor: var(--background-norm) !default;
+$inactiveColor: var(--text-norm) !default;
+$shadowColor: var(--shadow-norm) !default;
+$textColor: var(--text-norm) !default;
 
 @import 'core';
 @import 'base';

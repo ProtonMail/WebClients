@@ -1,19 +1,23 @@
 import React, { ChangeEvent, KeyboardEvent, useRef, ReactNode } from 'react';
 import { classnames } from '../../helpers';
-import Icon from '../icon/Icon';
+import { useCombinedRefs } from '../../hooks';
 
+import ButtonLike from './ButtonLike';
 import './FileButton.scss';
 
 interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     className?: string;
-    icon?: string;
     disabled?: boolean;
     onAddFiles: (files: File[]) => void;
     children?: ReactNode;
 }
 
-const FileButton = ({ onAddFiles, icon = 'attach', disabled, className, children, ...rest }: Props) => {
+const FileButton = (
+    { onAddFiles, disabled, className, children, ...rest }: Props,
+    ref: React.Ref<HTMLInputElement>
+) => {
     const inputRef = useRef<HTMLInputElement>(null);
+    const combinedRef = useCombinedRefs(inputRef, ref);
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const input = event.target;
         if (input.files) {
@@ -29,23 +33,19 @@ const FileButton = ({ onAddFiles, icon = 'attach', disabled, className, children
 
     return (
         <div className="file-button flex">
-            <label
+            <ButtonLike
+                icon
+                as="label"
                 role="button"
                 tabIndex={0}
-                className={classnames([
-                    'button inline-flex relative flex-align-items-center',
-                    icon && !children && 'button--for-icon',
-                    disabled && 'is-disabled',
-                    className,
-                ])}
+                className={classnames([disabled && 'is-disabled', className])}
                 onKeyDown={handleKey}
             >
-                <Icon name="attach" />
                 {children}
-                <input ref={inputRef} type="file" multiple onChange={handleChange} {...rest} />
-            </label>
+                <input ref={combinedRef} type="file" multiple onChange={handleChange} {...rest} />
+            </ButtonLike>
         </div>
     );
 };
 
-export default FileButton;
+export default React.forwardRef<HTMLInputElement, Props>(FileButton);

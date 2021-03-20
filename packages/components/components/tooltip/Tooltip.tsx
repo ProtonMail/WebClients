@@ -3,27 +3,44 @@ import { generateUID, classnames } from '../../helpers';
 import { usePopper, Popper, usePopperAnchor } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import useTooltipHandlers from './useTooltipHandlers';
+import { useCombinedRefs } from '../../hooks';
 
 type TooltipType = 'info' | 'error' | 'warning';
 
 interface Props {
-    children: React.ReactNode;
+    children: React.ReactElement;
     title?: React.ReactNode;
     originalPlacement?: 'top' | 'bottom' | 'left' | 'right';
-    className?: string;
     type?: TooltipType;
 }
 
 const getTooltipTypeClass = (type: TooltipType) => {
     if (type === 'error') {
-        return 'tooltip--warning';
+        return 'tooltip-danger';
     }
     if (type === 'warning') {
-        return 'tooltip--attention';
+        return 'tooltip-warning';
     }
 };
 
-const Tooltip = ({ children, title, originalPlacement = 'top', className, type = 'info' }: Props) => {
+const mergeCallbacks = (a: any, b: any) => {
+    return Object.fromEntries(
+        Object.entries(a).map(([key, cb]: [string, any]) => {
+            const otherCb = b[key];
+            return [
+                key,
+                otherCb
+                    ? (...args: any[]) => {
+                          cb(...args);
+                          otherCb(...args);
+                      }
+                    : cb,
+            ];
+        })
+    );
+};
+
+const Tooltip = ({ children, title, originalPlacement = 'top', type = 'info' }: Props) => {
     const [uid] = useState(generateUID('tooltip'));
 
     const { isRTL } = useRightToLeft();
@@ -41,11 +58,26 @@ const Tooltip = ({ children, title, originalPlacement = 'top', className, type =
     });
     const tooltipHandlers = useTooltipHandlers(open, close, isOpen);
 
+    const child = React.Children.only(children);
+    // Types are wrong? Not sure why ref doesn't exist on a ReactElement
+    // @ts-ignore
+    const mergedRef = useCombinedRefs(anchorRef, child?.ref);
+
+    if (!title) {
+        return child;
+    }
+
+    if (!child) {
+        return null;
+    }
+
     return (
         <>
-            <span ref={anchorRef} {...tooltipHandlers} aria-describedby={uid} className={className}>
-                {children}
-            </span>
+            {React.cloneElement(child, {
+                ref: mergedRef,
+                ...mergeCallbacks(tooltipHandlers, child.props),
+                'aria-describedby': uid,
+            })}
             <Popper
                 divRef={setPopperEl}
                 id={uid}

@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import useToggle from '../../hooks/useToggle';
 import Input from '../input/Input';
 import { Button } from '../button';
+import { Icon } from '../icon';
 
 const EditableText = ({ icon = 'compose', onSubmit, initialText = '', children, readOnly = false, ...rest }) => {
     const [inputValue, setInputValue] = useState(initialText);
@@ -36,16 +37,22 @@ const EditableText = ({ icon = 'compose', onSubmit, initialText = '', children, 
                     <div className="flex">
                         <Input autoFocus value={inputValue} onChange={handleChangeInputValue} {...rest} />
                     </div>
-                    <Button icon="on" type="submit" className="ml0-5" title={c('Action').t`Confirm`} />
+                    <Button icon type="submit" className="ml0-5" title={c('Action').t`Confirm`}>
+                        <Icon name="on" />
+                    </Button>
                 </>
             )}
-            <Button icon="close" onClick={toggleEditing} className="ml0-5" title={c('Action').t`Close`} />
+            <Button icon onClick={toggleEditing} className="ml0-5" title={c('Action').t`Close`}>
+                <Icon name="close" />
+            </Button>
         </form>
     ) : (
         <>
             {initialText === null ? '--' : initialText}
             {!readOnly && (
-                <Button icon={icon} onClick={toggleEditing} className="ml0-5" title={c('Action').t`Toggle edit`} />
+                <Button icon onClick={toggleEditing} className="ml0-5" title={c('Action').t`Toggle edit`}>
+                    <Icon name={icon} />
+                </Button>
             )}
         </>
     );

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { PrimaryButton } from '../../../components';
-import { classnames } from '../../../helpers';
 
 import { SUBSCRIPTION_STEPS } from './constants';
 import PayPalButton from '../PayPalButton';
@@ -25,11 +24,8 @@ const NewSubscriptionSubmitButton = ({ className, paypal, canPay, step, loading,
 
     if (method === PAYMENT_METHOD_TYPES.PAYPAL) {
         return (
-            <PayPalButton
-                paypal={paypal}
-                className={classnames(['button--primary', className])}
-                amount={checkResult.AmountDue}
-            >{c('Action').t`Pay`}</PayPalButton>
+            <PayPalButton paypal={paypal} color="norm" className={className} amount={checkResult.AmountDue}>{c('Action')
+                .t`Pay`}</PayPalButton>
         );
     }
 

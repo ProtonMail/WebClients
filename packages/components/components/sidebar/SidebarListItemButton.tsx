@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { classnames } from '../../helpers';
 
 export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -7,11 +7,8 @@ export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const SidebarListItemButton = ({ children, className, onFocus, ...rest }: Props) => {
-    const buttonRef = useRef<HTMLButtonElement>(null);
-
     return (
         <button
-            ref={buttonRef}
             onFocus={onFocus}
             className={classnames(['navigation-link w100 text-left', className])}
             type="button"

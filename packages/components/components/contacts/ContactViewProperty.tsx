@@ -21,7 +21,7 @@ import ContactEmailSettingsModal from '../../containers/contacts/modals/ContactE
 import { useModals, useUser, useNotifications } from '../../hooks';
 import RemoteImage from '../image/RemoteImage';
 import Tooltip from '../tooltip/Tooltip';
-import { Button, Copy } from '../button';
+import { Copy, Button } from '../button';
 import { classnames } from '../../helpers';
 import Icon from '../icon/Icon';
 
@@ -87,33 +87,30 @@ const ContactViewProperty = ({
                 return (
                     <>
                         {!isOwnAddress && (
-                            <Button onClick={handleSettings} className="ml0-5 button--for-icon">
-                                <Tooltip title={c('Title').t`Email settings`}>
+                            <Tooltip title={c('Title').t`Email settings`}>
+                                <Button icon onClick={handleSettings} className="ml0-5">
                                     <Icon name="settings-singular" alt={c('Action').t`Email settings`} />
-                                </Tooltip>
-                            </Button>
+                                </Button>
+                            </Tooltip>
                         )}
                         {hasPaidMail ? (
                             <ContactGroupDropdown
-                                className="ml0-5 button button--for-icon"
+                                icon
+                                className="ml0-5"
                                 contactEmails={[contactEmail]}
+                                tooltip={c('Title').t`Contact group`}
                             >
-                                <Tooltip title={c('Title').t`Contact group`}>
-                                    <Icon name="contacts-groups" alt={c('Action').t`Contact group`} />
-                                </Tooltip>
+                                <Icon name="contacts-groups" alt={c('Action').t`Contact group`} />
                             </ContactGroupDropdown>
                         ) : (
-                            <Button
-                                onClick={() => createModal(<ContactUpgradeModal />)}
-                                className="ml0-5 button--for-icon"
-                            >
-                                <Tooltip title={c('Title').t`Contact group`}>
+                            <Tooltip title={c('Title').t`Contact group`}>
+                                <Button icon onClick={() => createModal(<ContactUpgradeModal />)} className="ml0-5">
                                     <Icon name="contacts-groups" alt={c('Action').t`Contact group`} />
-                                </Tooltip>
-                            </Button>
+                                </Button>
+                            </Tooltip>
                         )}
                         <Copy
-                            className="ml0-5 button--for-icon"
+                            className="ml0-5"
                             value={value}
                             onCopy={() => {
                                 createNotification({ text: c('Success').t`Email address copied to clipboard` });
@@ -125,7 +122,7 @@ const ContactViewProperty = ({
             case 'tel':
                 return (
                     <Copy
-                        className="ml0-5 pt0-5 pb0-5 mt0-1 button--for-icon"
+                        className="ml0-5 pt0-5 pb0-5 mt0-1"
                         value={value}
                         onCopy={() => {
                             createNotification({ text: c('Success').t`Phone number copied to clipboard` });
@@ -135,7 +132,7 @@ const ContactViewProperty = ({
             case 'adr':
                 return (
                     <Copy
-                        className="ml0-5 pt0-5 pb0-5 mt0-1 button--for-icon"
+                        className="ml0-5 pt0-5 pb0-5 mt0-1"
                         value={formatAdr(property?.value as string[])}
                         onCopy={() => {
                             createNotification({ text: c('Success').t`Address copied to clipboard` });

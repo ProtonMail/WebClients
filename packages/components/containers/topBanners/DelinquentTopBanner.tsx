@@ -20,8 +20,7 @@ const DelinquentTopBanner = () => {
                   toApp: getAccountSettingsApp(),
               };
     const payInvoiceLink = (
-        <AppLink key="pay-invoices" className="color-currentColor" {...paymentLinkProps}>{c('Link')
-            .t`Pay invoice`}</AppLink>
+        <AppLink key="pay-invoices" className="color-inherit" {...paymentLinkProps}>{c('Link').t`Pay invoice`}</AppLink>
     );
     if (!user.Delinquent) {
         return null;
@@ -29,14 +28,14 @@ const DelinquentTopBanner = () => {
     if (user.canPay) {
         if (user.Delinquent === UNPAID_STATE.NO_RECEIVE) {
             return (
-                <TopBanner className="bg-global-warning">
+                <TopBanner className="bg-danger">
                     {c('Info')
                         .jt`Your account has at least one overdue invoice. Your access has been restricted. ${payInvoiceLink}`}
                 </TopBanner>
             );
         }
         return (
-            <TopBanner className="bg-global-warning">
+            <TopBanner className="bg-danger">
                 {c('Info')
                     .jt`Your account has at least one overdue invoice. Your access will soon get restricted. ${payInvoiceLink}`}
             </TopBanner>
@@ -44,7 +43,7 @@ const DelinquentTopBanner = () => {
     }
     if (user.isMember) {
         return (
-            <TopBanner className="bg-global-warning">
+            <TopBanner className="bg-danger">
                 {c('Info').t`Account access restricted due to unpaid invoices. Please contact your administrator.`}
             </TopBanner>
         );

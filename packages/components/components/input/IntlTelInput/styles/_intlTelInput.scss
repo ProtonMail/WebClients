@@ -1,10 +1,8 @@
-@import '~design-system/scss/config/';
-
 // rgba is needed for the selected flag hover state to blend in with
 // the border-highlighting some browsers give the input on focus
-$hoverColor: var(--bgcolor-highlight, $pm-global-light) !default;
-$greyText: #999 !default;
-$greyBorder: var(--bordercolor-input, $pm-global-border) !default;
+$hoverColor: var(--interaction-default-hover);
+$greyText: var(--text-weak);
+$greyBorder: var(--border-norm);
 
 $flagHeight: 1.5rem !default;
 $flagWidth: 2rem !default;
@@ -17,7 +15,7 @@ $arrowHeight: 0.4rem !default;
 $arrowWidth: 0.6rem !default;
 $triangleBorder: 0.3rem !default;
 $arrowPadding: 0.6rem !default;
-$arrowColor: var(--color-main-area, $black) !default;
+$arrowColor: var(--text-norm);
 
 $inputPadding: 0.6rem !default;
 $selectedFlagWidth: $flagWidth + (2 * $flagPadding) !default;
@@ -130,7 +128,7 @@ $mobilePopupMargin: 3rem;
 		position: absolute;
 		// popup so render above everything else
 		z-index: 2;
-		background: var(--bgcolor-main-area, $white);
+		background: var(--background-norm);
 
 		// override default list styles
 		list-style: none;
@@ -153,7 +151,7 @@ $mobilePopupMargin: 3rem;
 		padding: 0;
 		margin: 0;
 
-		box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+		box-shadow: var(--shadow-lifted);
 		border: $borderWidth solid $greyBorder;
 
 		// don't let the contents wrap AKA the container will be as wide as the contents
@@ -302,8 +300,8 @@ $mobilePopupMargin: 3rem;
 		max-height: 100%;
 		width: 100%;
 		-webkit-overflow-scrolling: touch;
-		background-color: var(--bgcolor-main-area, $white);
-		color: var(--color-main-area, $pm-global-grey);
+		background-color: var(--background-norm);
+		color: var(--text-norm);
 		.country {
 			padding: 10px 10px;
 			// increase line height because dropdown copy is v likely to overflow on mobile and when it does it needs to be well spaced
@@ -320,11 +318,11 @@ $intl-tel-input-sprite-2x-path: './images/flags@2x.png' !default;
 .iti-flag {
 	width: $flagWidth;
 	height: $flagHeight;
-	box-shadow: 0px 0px 1px 0px #888;
+	box-shadow: var(--shadow-norm);
 	background-image: url($intl-tel-input-sprite-path);
 	background-repeat: no-repeat;
 	// empty state
-	background-color: #dbdbdb;
+	background-color: var(--background-strong);
 	background-position: $flagWidth 0;
 
 	@media only screen and (-webkit-min-device-pixel-ratio: 2),

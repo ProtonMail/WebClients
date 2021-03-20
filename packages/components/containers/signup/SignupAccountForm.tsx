@@ -228,7 +228,8 @@ const SignupAccountForm = ({ model, onChange, onSubmit, errors, loading, hasExte
                 </div>
                 <SignupSubmitRow>
                     <PrimaryButton
-                        className="button--large flex-item-noshrink on-mobile-w100"
+                        size="large"
+                        className="flex-item-noshrink on-mobile-w100"
                         loading={loading || loadingChallenge}
                         disabled={disableSubmit}
                         type="submit"

@@ -41,7 +41,7 @@ const SignupVerificationCodeForm = ({ model, onChange, onSubmit, onResend, error
                     .t`Did not receive the code?`}</InlineLinkButton>
             </div>
             <SignupSubmitRow>
-                <PrimaryButton className="button--large" type="submit" disabled={disableSubmit} loading={loading}>
+                <PrimaryButton size="large" type="submit" disabled={disableSubmit} loading={loading}>
                     {c('Action').t`Verify`}
                 </PrimaryButton>
             </SignupSubmitRow>

@@ -45,7 +45,7 @@ const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsSte
                 <>
                     <div className="mb1">{gmail2StepsInstructions}</div>
                     <img
-                        className="border-currentColor"
+                        className="border--currentColor"
                         src={gmailLessSecureAppsImg}
                         alt={c('Import instructions image alternative text')
                             .t`How to turn on access for Less Secure Apps in Gmail settings`}
@@ -59,7 +59,7 @@ const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsSte
                 <>
                     <div className="mb1">{gmailAppPasswordInstructions}</div>
                     <img
-                        className="border-currentColor"
+                        className="border--currentColor"
                         src={gmailAppPasswordImg}
                         alt={c('Import instructions image alternative text')
                             .t`How to create an app password in Gmail settings`}
@@ -100,7 +100,7 @@ const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsSte
                     <>
                         <div className="mb1">{gmailImapMessage}</div>
                         <img
-                            className="border-currentColor"
+                            className="border--currentColor"
                             src={gmailImapImg}
                             alt={c('Import instructions image alternative text')
                                 .t`How to enable IMAP Forwarding in Gmail settings`}
@@ -112,7 +112,7 @@ const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsSte
                     <>
                         <div className="mb1">{gmailLabelsMessage}</div>
                         <img
-                            className="border-currentColor"
+                            className="border--currentColor"
                             src={gmailImapFolderImg}
                             alt={c('Import instructions image alternative text')
                                 .t`How to show folders in IMAP in Gmail settings`}
@@ -200,7 +200,7 @@ const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsSte
             <>
                 <div className="mb1">{yahooAppPasswordMessage}</div>
                 <img
-                    className="border-currentColor"
+                    className="border--currentColor"
                     src={yahooAppPasswordImg}
                     alt={c('Import instructions image alternative text')
                         .t`How to create an app password in Gmail settings`}

@@ -7,12 +7,12 @@ import { LoginTypes } from 'proton-shared/lib/authentication/LoginInterface';
 import { useAuthentication, useConfig, useLoginType } from '../../hooks';
 import Tooltip from '../tooltip/Tooltip';
 
-export interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface Props extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'color'> {
     to: string;
     toApp?: APP_NAMES;
 }
 
-const AppLink = ({ to, toApp, children, ...rest }: Props) => {
+const AppLink = ({ to, toApp, children, ...rest }: Props, ref: React.Ref<HTMLAnchorElement>) => {
     const { APP_NAME } = useConfig();
     const authentication = useAuthentication();
     const loginType = useLoginType();
@@ -31,31 +31,33 @@ const AppLink = ({ to, toApp, children, ...rest }: Props) => {
             return (
                 // internal link, trusted
                 // eslint-disable-next-line react/jsx-no-target-blank
-                <a target="_blank" {...rest} {...overrides} href={href}>
+                <a ref={ref} target="_blank" {...rest} {...overrides} href={href}>
                     {children}
                 </a>
             );
         }
         if (isStandaloneMode) {
             return (
-                <Tooltip className={rest.className} title="Disabled in standalone mode">
-                    {children}
+                <Tooltip title="Disabled in standalone mode">
+                    <a ref={ref} {...rest} href="#">
+                        {children}
+                    </a>
                 </Tooltip>
             );
         }
         const href = getAppHrefBundle(to, toApp);
         return (
-            <a target="_self" {...rest} href={href}>
+            <a ref={ref} target="_self" {...rest} href={href}>
                 {children}
             </a>
         );
     }
 
     return (
-        <ReactRouterLink to={to} {...rest}>
+        <ReactRouterLink ref={ref} to={to} {...rest}>
             {children}
         </ReactRouterLink>
     );
 };
 
-export default AppLink;
+export default React.forwardRef<HTMLAnchorElement, Props>(AppLink);

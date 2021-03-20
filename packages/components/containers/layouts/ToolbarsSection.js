@@ -2,7 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 import { updateMessageButtons } from 'proton-shared/lib/api/mailSettings';
 import { MESSAGE_BUTTONS } from 'proton-shared/lib/constants';
-import { ButtonGroup, Group, Row, Label, Field, Radio } from '../../components';
+import { Button, ButtonGroup, Row, Label, Field, Radio, Icon } from '../../components';
 import { useEventManager, useMailSettings, useNotifications, useApiWithoutResult } from '../../hooks';
 
 const { READ_UNREAD, UNREAD_READ } = MESSAGE_BUTTONS;
@@ -34,10 +34,14 @@ const ToolbarsSection = () => {
                             onChange={hanldeChange}
                             value={READ_UNREAD}
                         >
-                            <Group className="ml1 no-pointer-events">
-                                <ButtonGroup icon="read" title={c('Action').t`Read`} />
-                                <ButtonGroup icon="unread" title={c('Action').t`Unread`} />
-                            </Group>
+                            <ButtonGroup className="ml1 no-pointer-events">
+                                <Button group icon title={c('Action').t`Read`}>
+                                    <Icon name="read" />
+                                </Button>
+                                <Button group icon title={c('Action').t`Unread`}>
+                                    <Icon name="unread" />
+                                </Button>
+                            </ButtonGroup>
                         </Radio>
                     </div>
                     <div>
@@ -47,10 +51,14 @@ const ToolbarsSection = () => {
                             onChange={hanldeChange}
                             value={UNREAD_READ}
                         >
-                            <Group className="ml1 no-pointer-events">
-                                <ButtonGroup icon="unread" title={c('Action').t`Unread`} />
-                                <ButtonGroup icon="read" title={c('Action').t`Read`} />
-                            </Group>
+                            <ButtonGroup className="ml1 no-pointer-events">
+                                <Button group icon title={c('Action').t`Unread`}>
+                                    <Icon name="unread" />
+                                </Button>
+                                <Button group icon title={c('Action').t`Read`}>
+                                    <Icon name="read" />
+                                </Button>
+                            </ButtonGroup>
                         </Radio>
                     </div>
                 </Field>

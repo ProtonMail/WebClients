@@ -1,6 +1,7 @@
 import React from 'react';
 import { APPS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
+import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
 import { Hamburger } from '../../components';
 import { useConfig, useUser, usePlans, useSubscription, usePaidCookie } from '../../hooks';
@@ -10,9 +11,7 @@ import UserDropdown from './UserDropdown';
 import TopNavbarLink from '../../components/link/TopNavbarLink';
 import { TopNavbarItem } from '../app/TopNavbar';
 import { AppsDropdown, TopNavbar } from '../app';
-import SupportDropdown from './SupportDropdown';
-import UpgradeButton from './UpgradeButton';
-import UpgradeVPNButton from './UpgradeVPNButton';
+import HelpDropdown from './HelpDropdown';
 import BlackFridayButton from './BlackFridayButton';
 import useBlackFriday from './useBlackFriday';
 
@@ -24,13 +23,14 @@ interface Props extends HeaderProps {
     floatingButton?: React.ReactNode;
     searchBox?: React.ReactNode;
     searchDropdown?: React.ReactNode;
-    supportDropdown?: React.ReactNode;
+    helpDropdown?: React.ReactNode;
     hasAppsDropdown?: boolean;
     title: string;
     expanded: boolean;
     onToggleExpand?: () => void;
     isNarrow?: boolean;
 }
+
 const PrivateHeader = ({
     isNarrow,
     hasAppsDropdown = true,
@@ -40,7 +40,7 @@ const PrivateHeader = ({
     backUrl,
     searchBox,
     searchDropdown,
-    supportDropdown,
+    helpDropdown,
     floatingButton,
     expanded,
     onToggleExpand,
@@ -91,17 +91,23 @@ const PrivateHeader = ({
                 ) : null}
                 {hasPaidMail || isNarrow || isVPN ? null : (
                     <TopNavbarItem>
-                        <UpgradeButton />
+                        <TopNavbarLink
+                            text={c('Link').t`Upgrade`}
+                            icon="upgrade-to-paid"
+                            to="/subscription"
+                            toApp={getAccountSettingsApp()}
+                            title={c('Link').t`Upgrade`}
+                        />
                     </TopNavbarItem>
                 )}
                 {hasPaidVpn || isNarrow || !isVPN ? null : (
                     <TopNavbarItem>
-                        <UpgradeVPNButton />
+                        <TopNavbarLink text={c('Link').t`Upgrade`} icon="upgrade-to-paid" to="/dashboard" />
                     </TopNavbarItem>
                 )}
                 {!contactsButton ? null : <TopNavbarItem>{contactsButton}</TopNavbarItem>}
                 {!settingsButton ? null : <TopNavbarItem>{settingsButton}</TopNavbarItem>}
-                <TopNavbarItem>{supportDropdown || <SupportDropdown />}</TopNavbarItem>
+                <TopNavbarItem>{helpDropdown || <HelpDropdown />}</TopNavbarItem>
                 <TopNavbarItem className="relative">
                     <UserDropdown />
                 </TopNavbarItem>

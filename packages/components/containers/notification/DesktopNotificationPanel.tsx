@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 import { create, getStatus, request, Status } from 'proton-shared/lib/helpers/desktopNotification';
 import { PushNotification } from 'push.js';
-import { Badge, Field, SmallButton } from '../../components';
+import { Badge, Field, Button } from '../../components';
 
 const testDefaultNotification = () => {
     return create(c('Info').t`You have a new email`, {
@@ -41,9 +41,10 @@ const DesktopNotificationPanel = ({ onTest = testDefaultNotification }: Props) =
                 </div>
                 <div>
                     {status === Status.GRANTED ? (
-                        <SmallButton onClick={onTest}>{c('Action').t`Send test notification`}</SmallButton>
+                        <Button size="small" onClick={onTest}>{c('Action').t`Send test notification`}</Button>
                     ) : status === Status.DEFAULT ? (
-                        <SmallButton onClick={handleEnable}>{c('Action').t`Enable desktop notification`}</SmallButton>
+                        <Button size="small" onClick={handleEnable}>{c('Action')
+                            .t`Enable desktop notification`}</Button>
                     ) : null}
                 </div>
             </Field>

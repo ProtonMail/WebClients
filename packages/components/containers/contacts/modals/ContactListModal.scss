@@ -1,5 +1,3 @@
-@import '~design-system/scss/config/';
-
 .contact-list {
 	.ReactVirtualized__Grid__innerScrollContainer {
 		border-right: 0;
@@ -8,9 +6,9 @@
 
 .contact-list-row {
 	user-select: none;
-	border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
+	border-bottom: 1px solid var(--border-norm);
 
 	&--selected {
-		background: rgba($pm-blue-light, 0.1);
+		background: var(--primary);
 	}
 }

@@ -3,7 +3,7 @@ import { classnames } from '../../helpers';
 import { NotificationType } from './interfaces';
 
 const TYPES_CLASS = {
-    error: 'notification-alert',
+    error: 'notification-danger',
     warning: 'notification-warning',
     info: 'notification-info',
     success: 'notification-success',

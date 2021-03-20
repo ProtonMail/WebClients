@@ -21,7 +21,7 @@ const NavigationControl = ({ current, total, onNext, onPrev }: Props) => {
                 disabled={isPrevDisabled}
                 onClick={onPrev}
                 title={c('Action').t`Previous`}
-                className={classnames(['flex p0-25 color-white', isPrevDisabled && 'opacity-50'])}
+                className={classnames(['flex p0-25', isPrevDisabled && 'opacity-50'])}
             >
                 <Icon name="caret" rotate={90} size={16} />
             </button>
@@ -35,7 +35,7 @@ const NavigationControl = ({ current, total, onNext, onPrev }: Props) => {
                 disabled={isNextDisabled}
                 onClick={onNext}
                 title={c('Action').t`Next`}
-                className={classnames(['flex p0-25 color-white', isNextDisabled && 'opacity-50'])}
+                className={classnames(['flex p0-25', isNextDisabled && 'opacity-50'])}
             >
                 <Icon name="caret" rotate={-90} size={16} />
             </button>

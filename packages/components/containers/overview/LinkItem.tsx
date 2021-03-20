@@ -14,7 +14,7 @@ const LinkItem = ({ to, text, permission }: Props) => {
             <span className="mr0-5">{text}</span>
             {permission ? null : (
                 <Tooltip title={c('Tag').t`Premium feature`}>
-                    <Icon name="starfull" className="color-global-attention" />
+                    <Icon name="starfull" className="color-warning" />
                 </Tooltip>
             )}
         </Link>

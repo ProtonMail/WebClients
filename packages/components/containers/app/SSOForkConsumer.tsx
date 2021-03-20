@@ -4,7 +4,7 @@ import { consumeFork, getConsumeForkParameters } from 'proton-shared/lib/authent
 
 import { useApi, useErrorHandler } from '../../hooks';
 import { ProtonLoginCallback } from './interface';
-import StandardLoadError from './StandardLoadError';
+import StandardLoadErrorPage from './StandardLoadErrorPage';
 import { ModalsChildren } from '../modals';
 import LoaderPage from './LoaderPage';
 
@@ -48,7 +48,7 @@ const SSOForkConsumer = ({ onLogin, onEmptyFork, onInvalidFork }: Props) => {
     }, []);
 
     if (error) {
-        return <StandardLoadError />;
+        return <StandardLoadErrorPage />;
     }
 
     return (

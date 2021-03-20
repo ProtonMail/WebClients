@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { APPS, isSSOMode, SSO_PATHS } from 'proton-shared/lib/constants';
+import { APPS, FEATURE_FLAGS, isSSOMode, SSO_PATHS } from 'proton-shared/lib/constants';
 import { getAccountSettingsApp, getAppHref } from 'proton-shared/lib/apps/helper';
 import { requestFork } from 'proton-shared/lib/authentication/sessionForking';
 import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
@@ -13,20 +13,30 @@ import {
     useModals,
     useUser,
     useApi,
-    useEventManager,
     useUserSettings,
     useOrganization,
-    useLoading,
 } from '../../hooks';
-import { usePopperAnchor, Dropdown, Icon, Toggle, AppLink, Href, Button } from '../../components';
+import {
+    ButtonLike,
+    usePopperAnchor,
+    Dropdown,
+    Icon,
+    AppLink,
+    SelectTwo,
+    Option,
+    Href,
+    Button,
+    Toggle,
+} from '../../components';
 import { generateUID } from '../../helpers';
 import UserDropdownButton from './UserDropdownButton';
 import { DonateModal } from '../payments';
+import { useThemeStyle } from '../themes';
+import { getThemeStyle } from '../themes/ThemeInjector';
 
 const UserDropdown = ({ ...rest }) => {
     const { APP_NAME } = useConfig();
     const api = useApi();
-    const { call } = useEventManager();
     const [organization] = useOrganization();
     const { Name: organizationName } = organization || {};
     const [user] = useUser();
@@ -36,7 +46,15 @@ const UserDropdown = ({ ...rest }) => {
     const { createModal } = useModals();
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const [loading, withLoading] = useLoading(false);
+
+    const actualThemeType = userSettings.ThemeType;
+    const [, setThemeStyle] = useThemeStyle();
+    const [themeType, setThemeType] = useState(actualThemeType);
+
+    useEffect(() => {
+        // Updates from ev
+        setThemeType(themeType);
+    }, [actualThemeType]);
 
     const handleSupportUsClick = () => {
         createModal(<DonateModal />);
@@ -56,18 +74,19 @@ const UserDropdown = ({ ...rest }) => {
         close();
     };
 
-    const handleThemeChange = async (themeType: ThemeTypes) => {
-        await api(updateThemeType(themeType));
-        await call();
+    const handleThemeChange = (themeType: ThemeTypes) => {
+        setThemeType(themeType);
+        setThemeStyle(getThemeStyle(themeType));
+        api(updateThemeType(themeType));
     };
 
-    const handleThemeToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
-        withLoading(handleThemeChange(e.target.checked ? ThemeTypes.Dark : ThemeTypes.Default));
+    const handleThemeToggle = () => {
+        handleThemeChange(themeType === ThemeTypes.Dark ? ThemeTypes.Default : ThemeTypes.Dark);
     };
 
     return (
         <div className="flex" data-cy-header="userDropdown">
-            <UserDropdownButton {...rest} user={user} buttonRef={anchorRef} isOpen={isOpen} onClick={toggle} />
+            <UserDropdownButton {...rest} user={user} ref={anchorRef} isOpen={isOpen} onClick={toggle} />
             <Dropdown
                 id={uid}
                 className="userDropdown"
@@ -89,14 +108,17 @@ const UserDropdown = ({ ...rest }) => {
                                         <div className="mb1">{organizationName}</div>
                                     </>
                                 ) : null}
-                                <AppLink
+                                <ButtonLike
+                                    as={AppLink}
                                     to="/"
-                                    className="block w100 mt1-5 mb1-5 text-center button button--primaryborder"
+                                    color="norm"
+                                    shape="outline"
+                                    className="block w100 mt1-5 mb1-5 text-center"
                                     toApp={getAccountSettingsApp()}
                                     onClick={() => close()}
                                 >
                                     {c('Action').t`Manage account`}
-                                </AppLink>
+                                </ButtonLike>
                             </li>
                             <li className="dropdown-item-hr mt0-5 mb0-5" aria-hidden="false" />
                         </>
@@ -137,16 +159,33 @@ const UserDropdown = ({ ...rest }) => {
                     ) : null}
                     <li className="dropdown-item-hr mt0-5" aria-hidden="false" />
                     <li>
-                        <div className="pl1 pr1 pt0-5 pb0-5 w100 flex-no-min-children flex-nowrap flex-justify-space-between flex-align-items-center">
-                            <label htmlFor="theme-toggle" className="mr1">{c('Action').t`Dark mode`}</label>
-                            <Toggle
-                                id="theme-toggle"
-                                title={c('Title').t`Toggle display mode`}
-                                checked={userSettings.ThemeType === ThemeTypes.Dark}
-                                loading={loading}
-                                onChange={handleThemeToggle}
-                            />
-                        </div>
+                        {FEATURE_FLAGS.includes('theme-selector') ? (
+                            <div className="pl1 pr1 pt0-5 pb0-5">
+                                <label htmlFor="theme-toggle" className="block mb0-5">{c('Action').t`Theme`}</label>
+                                <SelectTwo
+                                    id="theme-toggle"
+                                    title={c('Title').t`Toggle display mode`}
+                                    value={themeType}
+                                    onChange={({ value }) => handleThemeChange(value)}
+                                >
+                                    <Option title="Default" value={ThemeTypes.Default} />
+                                    <Option title="Dark" value={ThemeTypes.Dark} />
+                                    <Option title="Light" value={ThemeTypes.Light} />
+                                    <Option title="Monokai" value={ThemeTypes.Monokai} />
+                                    <Option title="Contrast" value={ThemeTypes.Contrast} />
+                                </SelectTwo>
+                            </div>
+                        ) : (
+                            <div className="pl1 pr1 pt0-5 pb0-5 w100 flex-no-min-children flex-nowrap flex-justify-space-between flex-align-items-center">
+                                <label htmlFor="theme-toggle" className="mr1">{c('Action').t`Dark mode`}</label>
+                                <Toggle
+                                    id="theme-toggle"
+                                    title={c('Title').t`Toggle display mode`}
+                                    checked={themeType === ThemeTypes.Dark}
+                                    onChange={handleThemeToggle}
+                                />
+                            </div>
+                        )}
                     </li>
                     <li className="dropdown-item-hr mb0-5" aria-hidden="false" />
                     <li className="pt0-5 pb0-5 pl1 pr1 flex">

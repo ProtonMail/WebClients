@@ -35,14 +35,14 @@ const DeskopNotificationTopBanner = () => {
     const enableDesktopNotifications = (
         <button
             key="enable-desktop-notifications"
-            className="link align-baseline text-left color-currentColor"
+            className="link align-baseline text-left color-inherit"
             type="button"
             onClick={handleEnable}
         >{c('Action').t`enable desktop notifications`}</button>
     );
 
     return (
-        <TopBanner onClose={() => setDontAsk(true)} className="bg-pm-blue">{c('Info')
+        <TopBanner onClose={() => setDontAsk(true)} className="bg-info">{c('Info')
             .jt`${appName} needs your permission to ${enableDesktopNotifications}.`}</TopBanner>
     );
 };

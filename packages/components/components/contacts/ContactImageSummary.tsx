@@ -62,9 +62,9 @@ const ContactImageSummary = ({ photo, name }: Props) => {
 
     if (!photo) {
         return (
-            <div className="bordered bg-white-dm rounded ratio-container-square mb0">
+            <div className="bordered bg-norm rounded ratio-container-square mb0">
                 <span className="inner-ratio-container flex">
-                    <span className="mauto color-global-border h1">{getInitials(name)}</span>
+                    <span className="mauto color-weak h1">{getInitials(name)}</span>
                 </span>
             </div>
         );
@@ -112,12 +112,11 @@ const ContactImageSummary = ({ photo, name }: Props) => {
     }
 
     return (
-        <div className="bordered rounded bg-white-dm ratio-container-square mb0">
+        <div className="bordered rounded bg-norm ratio-container-square mb0">
             <span className="inner-ratio-container flex">
                 <span className="mauto text-sm lh-rg">
                     <Icon name="remote-content" />
-                    <Button className="m0-5 p0 block button--link text-no-decoration" onClick={handleClick}>{c('Action')
-                        .t`Load image`}</Button>
+                    <Button className="m0-5" onClick={handleClick}>{c('Action').t`Load image`}</Button>
                 </span>
             </span>
         </div>

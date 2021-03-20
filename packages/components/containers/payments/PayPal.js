@@ -6,15 +6,7 @@ import { createToken } from 'proton-shared/lib/api/payments';
 
 import { doNotWindowOpen } from 'proton-shared/lib/helpers/browser';
 
-import {
-    Alert,
-    Loader,
-    SmallButton,
-    Price,
-    PrimaryButton,
-    LinkButton,
-    DoNotWindowOpenAlertError,
-} from '../../components';
+import { Alert, Loader, Button, Price, PrimaryButton, LinkButton, DoNotWindowOpenAlertError } from '../../components';
 import { useApi, useLoading } from '../../hooks';
 
 import { process } from './paymentTokenHelper';
@@ -98,13 +90,14 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
             <Alert type="error">
                 <div className="mb0-5">{textError}</div>
                 <div>
-                    <SmallButton
+                    <Button
+                        size="small"
                         loading={loadingToken}
                         onClick={() => {
                             setTextError('');
                             withLoadingToken(generateTokens());
                         }}
-                    >{c('Action').t`Try again`}</SmallButton>
+                    >{c('Action').t`Try again`}</Button>
                 </div>
             </Alert>
         );
@@ -136,7 +129,7 @@ const PayPal = ({ amount: Amount, currency: Currency, onPay, type }) => {
                     <Alert>
                         <div className="mb0-5">{c('Info').t`Please verify the payment in the new tab.`}</div>
                         <div>
-                            <SmallButton onClick={handleCancel}>{c('Action').t`Cancel`}</SmallButton>
+                            <Button size="small" onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
                         </div>
                     </Alert>
                 </>

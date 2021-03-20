@@ -30,13 +30,13 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit }) => {
     const paypalSvg = getLightOrDark(paypalSvgLight, paypalSvgDark);
 
     const clickHere = (
-        <PayPalButton type={type} key="click-here" className="button--small" paypal={paypalCredit} amount={amount}>
+        <PayPalButton type={type} key="click-here" size="small" paypal={paypalCredit} amount={amount}>
             {c('Link').t`click here`}
         </PayPalButton>
     );
 
     return (
-        <div className="p1 bordered-container bg-global-highlight mb1">
+        <div className="p1 bordered bg-weak mb1">
             {paypal.loading ? (
                 <>
                     <Loader />

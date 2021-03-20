@@ -41,14 +41,14 @@ const IdentitySection = () => {
                 <Field className="wauto border-bottom on-mobile-pb0 on-mobile-no-border flex flex-row flex-nowrap">
                     <Select id="addressSelector" options={options} onChange={handleChange} />
                     <span className="flex-item-noshrink">
-                        <Button className="button--primary ml1" onClick={handleOpenModal}>{c('Action').t`Edit`}</Button>
+                        <Button color="norm" className="ml1" onClick={handleOpenModal}>{c('Action').t`Edit`}</Button>
                     </span>
                 </Field>
                 <Label>
                     <span className="mr0-5">{c('Label').t`Display name`}</span>
                     <Info url="https://protonmail.com/support/knowledge-base/display-name-and-signature/" />
                 </Label>
-                <Field className="bordered-container bg-global-muted-dm auto">
+                <Field className="bordered bg-weak auto">
                     <div
                         className="pl1 pr1 pt0-5 pb0-5 text-ellipsis cursor-pointer"
                         title={address.DisplayName}
@@ -59,7 +59,7 @@ const IdentitySection = () => {
                 </Field>
 
                 <Label>{c('Label').t`Signature`}</Label>
-                <Field className="bordered-container bg-global-muted-dm auto">
+                <Field className="bordered bg-weak auto">
                     {address.Signature ? (
                         <div
                             className="text-break pl1 pr1 pt0-5 pb0-5 cursor-pointer"

@@ -8,7 +8,7 @@ import { getCookie } from 'proton-shared/lib/helpers/cookies';
 
 import ModalsChildren from '../modals/Children';
 import LoaderPage from './LoaderPage';
-import StandardLoadError from './StandardLoadError';
+import StandardLoadErrorPage from './StandardLoadErrorPage';
 
 interface Props {
     locales?: TtagLocaleMap;
@@ -42,7 +42,7 @@ const StandardPublicApp = ({ locales = {}, openpgpConfig, children }: Props) => 
     }, []);
 
     if (error) {
-        return <StandardLoadError />;
+        return <StandardLoadErrorPage />;
     }
 
     if (loading) {

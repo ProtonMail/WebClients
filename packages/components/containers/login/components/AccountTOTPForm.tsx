@@ -60,7 +60,7 @@ const AccountTOTPForm = ({ onSubmit, state, setters }: Props) => {
                 <PrimaryButton
                     type="submit"
                     disabled={state.totp.length < 6}
-                    className="button--large"
+                    size="large"
                     loading={loading}
                     data-cy-login="submit TOTP"
                 >
