@@ -20,7 +20,7 @@ const UserDropdownButton = ({ user, isOpen, ...rest }: Props, ref: React.Ref<HTM
             aria-expanded={isOpen}
             ref={ref}
             {...rest}
-            className="flex flex-align-items-center flex-nowrap p0-5 dropdown-logout-button"
+            className="max-w100 flex flex-align-items-center flex-nowrap p0-5 dropdown-logout-button"
         >
             {nameToDisplay ? (
                 <span className="text-right flex flex-column mr0-75 lh130 no-mobile">

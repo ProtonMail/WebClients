@@ -39,7 +39,7 @@ const AppLink = ({ to, toApp, children, ...rest }: Props, ref: React.Ref<HTMLAnc
         if (isStandaloneMode) {
             return (
                 <Tooltip title="Disabled in standalone mode">
-                    <a ref={ref} {...rest} href="#">
+                    <a ref={ref} {...rest} onClick={(e) => e.preventDefault()} href="#">
                         {children}
                     </a>
                 </Tooltip>
