@@ -9,7 +9,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { ENCRYPTION_PREFERENCES_ERROR_TYPES, } from 'proton-shared/lib/mail/encryptionPreferences';
+import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from 'proton-shared/lib/mail/encryptionPreferences';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import getSendPreferences from 'proton-shared/lib/mail/send/getSendPreferences';
 import { GetEncryptionPreferences } from 'react-components/hooks/useGetEncryptionPreferences';
@@ -75,7 +75,7 @@ export const useUpdateRecipientSendInfo = (
                     [emailAddress]: {
                         sendPreferences: undefined,
                         sendIcon: {
-                            colorClassName: 'color-global-warning',
+                            colorClassName: 'color-danger',
                             isEncrypted: false,
                             fill: STATUS_ICONS_FILLS.FAIL,
                             text: c('Composer email icon').t`The address might be misspelled`,

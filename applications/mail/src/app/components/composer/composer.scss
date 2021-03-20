@@ -9,10 +9,10 @@
     width: 600px;
     overflow: hidden;
 
-    background: var(--bgcolor-main-area, $pm-global-altgrey);
-    box-shadow: 0 0 16px 3px rgba(black, 0.16);
+    background: var(--background-norm);
+    box-shadow: var(--shadow-lifted);
     border-radius: $global-border-radius $global-border-radius 0 0;
-    color: var(--color-main-area, $pm-global-grey);
+    color: var(--text-norm);
 
     transition: 0.15s easing(easeOutQuint);
 
@@ -24,10 +24,11 @@
 .composer--is-blur {
     --blur-opacity: 0.25;
 
-    box-shadow: 0 0 5px 3px rgba(black, 0.16);
+    box-shadow: var(--shadow-norm);
 
     .composer-title-bar {
-        background: var(--bg-color-main-area, $pm-global-grey);
+        background: var(--background-weak);
+        color: var(text-norm);
 
         & > * {
             opacity: var(--blur-opacity);
@@ -69,7 +70,8 @@
 }
 
 .composer-title-bar {
-    background: var(--bgcolor-main-area, $pm-global-altgrey);
+    background: var(--background-norm);
+    color: var(--text-norm);
     transition: background 0.15s ease-out;
 
     & > * {
@@ -83,16 +85,9 @@
     align-items: stretch;
 }
 
-.composer-title-bar-button {
-    &:hover,
-    &:focus {
-        background-color: rgba(white, 0.05);
-    }
-}
-
 .composer-container {
     overflow: hidden;
-    background: var(--bgcolor-main-area, $white);
+    background: var(--background-norm);
 }
 
 .composer-blur-container {
@@ -177,8 +172,8 @@
         top: calc(100% + 5px);
         z-index: 10;
         list-style: none;
-        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.16);
-        background: var(--bgcolor-input, $pm-input-background);
+        box-shadow: var(--shadow-lifted);
+        background: var(--background-norm);
         width: calc(100% - 40px);
         margin: 0 0 0 20px;
         padding: 0;
@@ -196,11 +191,12 @@
         overflow: hidden;
 
         &[aria-selected='true'] {
-            background-color: rgba($pm-primary, 0.2);
+            background-color: var(--interaction-norm);
+            color: var(--interaction-norm-contrast);
         }
 
         &:hover {
-            background-color: var(--bordercolor-input, $autocomplete-bg-color-hover);
+            background-color: var(--background-weak);
         }
     }
 
@@ -216,7 +212,7 @@
 }
 
 .composer-addresses-item {
-    background-color: var(--bgcolor-item-column-list, $pm-global-light);
+    background-color: var(--background-weak);
     text-shadow: none;
 
     + .composer-addresses-input-container {
@@ -227,8 +223,8 @@
 }
 
 .composer-addresses-item.invalid {
-    border-color: $pm-global-warning;
-    color: $pm-global-warning;
+    border-color: var(--signal-danger);
+    color: var(--signal-danger);
 
     .composer-addresses-item-label {
         border-right-color: currentColor;
@@ -255,8 +251,7 @@
 .composer-editor-embedded {
     overflow: hidden;
     z-index: 1500; // ask Embedding should always be on top of the toolbar!
-    //background: var(--bgcolor-main-area, #f5f5f5);
-    color: var(--color-main-area, $pm-global-grey);
+    color: var(--text-norm);
     text-align: center;
 
     &::before {
@@ -267,7 +262,8 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba($white, 0.5);
+        background-color: var(--background-norm);
+        opacity: .5;
         backdrop-filter: blur(3px);
     }
 
@@ -289,8 +285,8 @@
 }
 
 .composer-editor-dropzone {
-    border: 5px dashed var(--bordercolor-input, $pm-global-border);
-    background: var(--bgcolor-main-area, $white);
+    border: 5px dashed var(--border-norm);
+    background-color: var(--background-norm);
     opacity: 0.85;
 
     &-text {
@@ -318,18 +314,15 @@
     input[type='file'] {
         position: absolute;
         opacity: 0;
+        width: 0;
+        height: 0;
     }
 
     input[type='file']:hover + .button,
     input[type='file']:focus + .button,
     input[type='file']:focus-within + .button {
-        color: $pm-global-grey;
-        box-shadow: 0 0 em(5) 0 rgba(0, 0, 0, 0.2);
-    }
-
-    input[type='file']:active + .button {
-        background: radial-gradient(closest-side, $white, $pm-global-border 90%);
-        box-shadow: none;
+        color: var(--text-norm);
+        box-shadow: var(--shadow-norm);
     }
 
     /* Fix for Safari */
@@ -339,7 +332,7 @@
 }
 
 .composer .editor-squire-wrapper {
-    background: $white;
+    background: white;
 }
 
 .editor-squire-wrapper,
@@ -365,14 +358,14 @@
 
 // overrides only in composer case
 .composer-attachments-list {
-    border-left: 1px solid var(--bordercolor-input, $pm-global-border);
-    border-right: 1px solid var(--bordercolor-input, $pm-global-border);
-    border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
+    border-left: 1px solid var(--border-norm);
+    border-right: 1px solid var(--border-norm);
+    border-bottom: 1px solid var(--border-norm);
     border-bottom-left-radius: $global-border-radius;
     border-bottom-right-radius: $global-border-radius;
 
     .message-attachmentList {
-        border-top: 1px solid var(--bordercolor-input, $pm-global-border);
+        border-top: 1px solid var(--border-norm);
         overflow: auto;
         max-height: 8.5em;
         padding-top: 1em;
@@ -395,7 +388,7 @@
 .composer-actions--has-scroll {
     margin-top: 0.5em;
     padding-top: 0.5em;
-    box-shadow: 0 -5px 5px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -5px 5px 0 var(--background-strong);
 }
 
 // Keep minimal size when activity label is empty

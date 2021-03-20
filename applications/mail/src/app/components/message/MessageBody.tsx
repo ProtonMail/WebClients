@@ -53,7 +53,7 @@ const MessageBody = ({
             className={classnames([
                 'message-content scroll-horizontal-if-needed relative bodyDecrypted',
                 plain && 'plain',
-                !loadingMode && getLightOrDark('', 'bg-white color-global-grey'),
+                !loadingMode && getLightOrDark('', 'bg-norm color-weak'),
             ])}
         >
             {encryptedMode && <pre>{message.data?.Body}</pre>}
@@ -81,7 +81,8 @@ const MessageBody = ({
                                     }
                                 >
                                     <Button
-                                        className="button--small m0-5"
+                                        size="small"
+                                        className="m0-5"
                                         onClick={() => toggleOriginalMessage?.()}
                                         data-test-id="message-view:expand-codeblock"
                                     >

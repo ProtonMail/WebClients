@@ -40,13 +40,14 @@
 
 .trashed-messages,
 .message-header {
-	background-color: var(--bgcolor-item-column-list, $pm-global-muted);
+	background-color: var(--background-weak);
 }
 
 .message-container {
-	border: 1px solid var(--bordercolor-input, $pm-global-border);
+	border: 1px solid var(--border-norm);
 	border-radius: $global-border-radius;
 	@extend %appearing-container;
+	transition: 0.15s easing(easeOutQuint);
 }
 
 .message-header {
@@ -58,8 +59,7 @@
 	}
 
 	&.is-unread {
-		background: var(--bgcolor-unread-item-column-list, $white);
-		box-shadow: 2px 2px 3px 0px $input-shadow-color;
+		background: var(--background-norm);
 		font-weight: bold;
 	}
 
@@ -158,7 +158,7 @@
 	.message-header-recipients {
 		flex-direction: column;
 
-		&>* {
+		& > * {
 			width: 100%;
 			flex-basis: auto;
 		}
@@ -203,15 +203,14 @@
 /* states classes */
 .message-container.is-opened {
 
-	>.message-header {
-		border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
+	& > .message-header {
+		border-bottom: 1px solid var(--border-norm);
 	}
 
 }
 
 .message-container.is-focused {
-	border-color: $pm-primary-light;
-	box-shadow: 0 .125em .25em 0 var(--dropdown-box-shadow, $input-shadow-color);
+	border-color: var(--interaction-norm);
 }
 
 .message-container--hasAttachment {
@@ -237,12 +236,12 @@
 
 .message-expand {
 	padding: 0 .5em .6em; // centers
-	background-color: var(--bgcolor-item-column-list, $pm-global-light);
+	background-color: var(--background-weak);
 	line-height: .75;
 }
 
 .message-infobox {
-	background: var(--bgcolor-main-area, $white);
+	background: var(--background-weak);
 }
 
 .container-to {

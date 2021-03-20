@@ -13,8 +13,8 @@ import {
     ConfirmModal,
     ErrorButton,
     Alert,
-    Group,
     ButtonGroup,
+    Button,
     Tooltip,
     useLabels,
     useMailSettings,
@@ -190,7 +190,7 @@ const HeaderMoreDropdown = ({
         <>
             {c('Title').t`Move to inbox (not spam)`}
             <br />
-            <kbd className="bg-global-altgrey no-border">I</kbd>
+            <kbd className="no-border">I</kbd>
         </>
     ) : (
         c('Title').t`Move to inbox (not spam)`
@@ -199,7 +199,7 @@ const HeaderMoreDropdown = ({
         <>
             {c('Title').t`Mark as unread`}
             <br />
-            <kbd className="bg-global-altgrey no-border">U</kbd>
+            <kbd className="no-border">U</kbd>
         </>
     ) : (
         c('Title').t`Mark as unread`
@@ -208,7 +208,7 @@ const HeaderMoreDropdown = ({
         <>
             {c('Title').t`Move to inbox`}
             <br />
-            <kbd className="bg-global-altgrey no-border">I</kbd>
+            <kbd className="no-border">I</kbd>
         </>
     ) : (
         c('Title').t`Move to inbox`
@@ -217,56 +217,45 @@ const HeaderMoreDropdown = ({
         <>
             {c('Title').t`Move to trash`}
             <br />
-            <kbd className="bg-global-altgrey no-border">T</kbd>
+            <kbd className="no-border">T</kbd>
         </>
     ) : (
         c('Title').t`Move to trash`
     );
 
     return (
-        <Group className="mr1 mb0-5">
+        <ButtonGroup className="mr1 mb0-5">
             {isSpam ? (
-                <ButtonGroup
-                    disabled={!messageLoaded}
-                    onClick={handleMove(INBOX, SPAM)}
-                    className="button--for-icon relative"
-                >
-                    <Tooltip title={titleMoveInboxNotSpam} className="flex increase-click-surface">
+                <Tooltip title={titleMoveInboxNotSpam}>
+                    <Button group icon disabled={!messageLoaded} onClick={handleMove(INBOX, SPAM)}>
                         <Icon name="nospam" alt={c('Title').t`Move to inbox (not spam)`} />
-                    </Tooltip>
-                </ButtonGroup>
+                    </Button>
+                </Tooltip>
             ) : (
-                <ButtonGroup disabled={!messageLoaded} onClick={handleUnread} className="button--for-icon relative">
-                    <Tooltip title={titleUnread} className="flex increase-click-surface">
+                <Tooltip title={titleUnread}>
+                    <Button group icon disabled={!messageLoaded} onClick={handleUnread}>
                         <Icon name="unread" alt={c('Title').t`Mark as unread`} />
-                    </Tooltip>
-                </ButtonGroup>
+                    </Button>
+                </Tooltip>
             )}
             {isInTrash ? (
-                <ButtonGroup
-                    disabled={!messageLoaded}
-                    onClick={handleMove(INBOX, TRASH)}
-                    className="button--for-icon relative"
-                >
-                    <Tooltip title={titleMoveInbox} className="flex increase-click-surface">
+                <Tooltip title={titleMoveInbox}>
+                    <Button group icon disabled={!messageLoaded} onClick={handleMove(INBOX, TRASH)}>
                         <Icon name="inbox" alt={c('Title').t`Move to inbox`} />
-                    </Tooltip>
-                </ButtonGroup>
+                    </Button>
+                </Tooltip>
             ) : (
-                <ButtonGroup
-                    disabled={!messageLoaded}
-                    onClick={handleMove(TRASH, fromFolderID)}
-                    className="button--for-icon relative"
-                >
-                    <Tooltip title={titleMoveTrash} className="flex increase-click-surface">
+                <Tooltip title={titleMoveTrash}>
+                    <Button group icon disabled={!messageLoaded} onClick={handleMove(TRASH, fromFolderID)}>
                         <Icon name="trash" alt={c('Title').t`Move to trash`} />
-                    </Tooltip>
-                </ButtonGroup>
+                    </Button>
+                </Tooltip>
             )}
 
             <HeaderDropdown
+                group
+                icon
                 disabled={!messageLoaded}
-                className="button button--for-icon grouped-button"
                 autoClose
                 title={c('Title').t`More`}
                 content={<Icon name="caret" className="caret-like" alt={c('Title').t`More options`} />}
@@ -365,7 +354,7 @@ const HeaderMoreDropdown = ({
                     );
                 }}
             </HeaderDropdown>
-        </Group>
+        </ButtonGroup>
     );
 };
 

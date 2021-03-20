@@ -37,12 +37,8 @@ const ItemLocation = ({
     return (
         <>
             {infos.map((folderInfo) => (
-                <Tooltip
-                    className={classnames([withDefaultMargin && 'mr0-25'])}
-                    title={showTooltip ? folderInfo.name : undefined}
-                    key={folderInfo.to}
-                >
-                    <span className="flex flex-item-noshrink pt0-125">
+                <Tooltip title={showTooltip ? folderInfo.name : undefined} key={folderInfo.to}>
+                    <span className={classnames(['flex flex-item-noshrink pt0-125', withDefaultMargin && 'mr0-25'])}>
                         <ItemIcon folderInfo={folderInfo} />
                     </span>
                 </Tooltip>

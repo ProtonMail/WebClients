@@ -1,4 +1,4 @@
-import React, { useState, useEffect, FormEvent, RefObject } from 'react';
+import React, { useState, useEffect, FormEvent } from 'react';
 import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 import { getUnixTime, fromUnixTime, isBefore, isAfter } from 'date-fns';
@@ -99,7 +99,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     const history = useHistory();
     const [uid] = useState(generateUID('advanced-search-dropdown'));
     const [mailSettings, loadingMailSettings] = useMailSettings();
-    const { anchorRef, isOpen, toggle, close } = usePopperAnchor();
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [labels = [], loadingLabels] = useLabels();
     const [folders, loadingFolders] = useFolders();
     const [addresses, loadingAddresses] = useAddresses();
@@ -196,8 +196,10 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     return (
         <>
             <DropdownButton
-                className={classnames([isNarrow ? 'topnav-link' : 'searchbox-advanced-search-button color-white'])}
-                buttonRef={anchorRef as RefObject<HTMLButtonElement>}
+                as="button"
+                type="button"
+                className={classnames([isNarrow ? 'topnav-link' : 'searchbox-advanced-search-button'])}
+                ref={anchorRef}
                 isOpen={isOpen}
                 onClick={toggle}
                 hasCaret={false}

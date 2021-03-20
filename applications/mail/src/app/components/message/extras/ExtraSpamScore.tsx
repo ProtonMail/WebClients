@@ -33,13 +33,13 @@ const ExtraSpamScore = ({ message }: Props) => {
 
     if (hasBit(Flags, MESSAGE_FLAGS.FLAG_DMARC_FAIL)) {
         return (
-            <div className="bg-global-warning color-white rounded p0-5 mb0-5 flex flex-nowrap">
+            <div className="bg-danger rounded p0-5 mb0-5 flex flex-nowrap">
                 <Icon name="spam" className="flex-item-noshrink mtauto mbauto" />
                 <span className="pl0-5 pr0-5 flex-item-fluid">{c('Info')
                     .t`This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!`}</span>
                 <span className="flex-item-noshrink flex">
                     <Href
-                        className="text-underline color-currentColor"
+                        className="text-underline color-inherit"
                         url="https://protonmail.com/support/knowledge-base/email-has-failed-its-domains-authentication-requirements-warning/"
                     >
                         {c('Info').t`Learn more`}
@@ -72,21 +72,18 @@ const ExtraSpamScore = ({ message }: Props) => {
             createNotification({ text: c('Success').t`Message marked as legitimate` });
         };
         return (
-            <div className="bg-global-warning color-white rounded p0-5 mb0-5 flex flex-nowrap">
+            <div className="bg-danger rounded p0-5 mb0-5 flex flex-nowrap">
                 <Icon name="spam" className="flex-item-noshrink mtauto mbauto" />
                 <span className="pl0-5 pr0-5 flex-item-fluid">
                     {c('Info')
                         .t`Our system flagged this message as a phishing attempt. Please check that it is legitimate.`}
-                    <Href
-                        className="pl0-5 pr0-5 color-white"
-                        url="https://protonmail.com/blog/prevent-phishing-attacks/"
-                    >
+                    <Href className="pl0-5 pr0-5" url="https://protonmail.com/blog/prevent-phishing-attacks/">
                         {c('Info').t`Learn more`}
                     </Href>
                 </span>
                 <span className="flex-item-noshrink flex">
                     <InlineLinkButton
-                        className="color-currentColor"
+                        className="color-inherit"
                         onClick={() => withLoading(markAsLegitimate())}
                         disabled={loading}
                     >{c('Action').t`Mark legitimate`}</InlineLinkButton>

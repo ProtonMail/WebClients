@@ -149,7 +149,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
         : undefined;
     const bePinnedPublicKey = messageVerification?.signingPublicKey || firstAttachedPublicKey;
     const loading = loadingDisablePromptPin || !senderAddress || (isPinUnseen && !contactID) || !bePinnedPublicKey;
-    const bannerColorClassName = isPinUnseen ? 'bg-global-attention color-black' : 'bg-white-dm';
+    const bannerColorClassName = isPinUnseen ? 'bg-warning' : 'bg-norm';
 
     // Prevent to propose an already pinned key even if for a strange reason,
     // the suggested key is already pinned yet the verification still fails
@@ -183,7 +183,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
     return (
         <div
             className={classnames([
-                'rounded bordered-container p0-5 mb0-5 flex flex-nowrap flex-align-items-center flex-justify-space-between',
+                'rounded bordered p0-5 mb0-5 flex flex-nowrap flex-align-items-center flex-justify-space-between',
                 bannerColorClassName,
             ])}
         >
@@ -193,7 +193,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
                     <span className="mr0-5">{getBannerMessage(promptKeyPinningType)}</span>
                     {promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.AUTOPROMPT ? (
                         <InlineLinkButton
-                            className="color-currentColor text-underline"
+                            className="color-inherit text-underline"
                             disabled={loadingDisablePromptPin}
                             onClick={() => withLoadingDisablePromptPin(handleDisablePromptPin())}
                         >
@@ -201,7 +201,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
                         </InlineLinkButton>
                     ) : (
                         <LearnMore
-                            className="color-currentColor"
+                            className="color-inherit"
                             url="https://protonmail.com/support/knowledge-base/address-verification/"
                         />
                     )}

@@ -5,24 +5,23 @@ import { metaKey, shiftKey, isSafari as checkIsSafari } from 'proton-shared/lib/
 
 interface ButtonProps {
     onClick: () => void;
-    iconName: string;
     className?: string;
     title?: ReactNode;
+    children?: ReactNode;
     disabled?: boolean;
 }
 
-const TitleBarButton = ({ onClick, iconName, className = '', title, disabled = false }: ButtonProps) => {
+const TitleBarButton = ({ onClick, children, className = '', title, disabled = false }: ButtonProps) => {
     return (
-        <Tooltip title={title} className="composer-title-bar-tooltip flex-item-noshrink flex">
+        <Tooltip title={title}>
             <button
                 type="button"
-                className={classnames(['composer-title-bar-button flex p0-5', className])}
+                className={classnames(['composer-title-bar-button interactive flex p0-5', className])}
                 onClick={onClick}
                 disabled={disabled}
                 data-test-id="composer:close-composer"
             >
-                <Icon className="mauto" name={iconName} />
-                <span className="sr-only">{title}</span>
+                {children}
             </button>
         </Tooltip>
     );
@@ -55,8 +54,7 @@ const ComposerTitleBar = ({ title, minimized, maximized, toggleMinimized, toggle
             <>
                 {minimized ? c('Action').t`Maximize composer` : c('Action').t`Minimize composer`}
                 <br />
-                <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
-                <kbd className="bg-global-altgrey no-border">M</kbd>
+                <kbd className="no-border">{metaKey}</kbd> + <kbd className="no-border">M</kbd>
             </>
         ) : minimized ? (
             c('Action').t`Maximize composer`
@@ -69,9 +67,8 @@ const ComposerTitleBar = ({ title, minimized, maximized, toggleMinimized, toggle
             <>
                 {maximized ? c('Action').t`Contract composer` : c('Action').t`Expand composer`}
                 <br />
-                <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
-                <kbd className="bg-global-altgrey no-border">{shiftKey}</kbd> +{' '}
-                <kbd className="bg-global-altgrey no-border">M</kbd>
+                <kbd className="no-border">{metaKey}</kbd> + <kbd className="no-border">{shiftKey}</kbd> +{' '}
+                <kbd className="no-border">M</kbd>
             </>
         ) : maximized ? (
             c('Action').t`Contract composer`
@@ -83,7 +80,7 @@ const ComposerTitleBar = ({ title, minimized, maximized, toggleMinimized, toggle
         <>
             {c('Action').t`Close composer`}
             <br />
-            <kbd className="bg-global-altgrey no-border">Escape</kbd>
+            <kbd className="no-border">Escape</kbd>
         </>
     ) : (
         c('Action').t`Close composer`
@@ -91,23 +88,23 @@ const ComposerTitleBar = ({ title, minimized, maximized, toggleMinimized, toggle
 
     return (
         <header
-            className="composer-title-bar flex flex-row flex-align-items-center flex-nowrap pl0-5 pr0-5 w100 color-global-light"
+            className="composer-title-bar ui-prominent flex flex-row flex-align-items-center flex-nowrap pl0-5 pr0-5 w100"
             onDoubleClick={handleDoubleClick}
         >
             <span className="flex-item-fluid p0-5 pr1 text-ellipsis">{title}</span>
             <TitleBarButton
-                iconName="minimize"
                 className={classnames(['no-mobile', minimized && 'rotateX-180'])}
                 title={titleMinimize}
                 onClick={toggleMinimized}
-            />
-            <TitleBarButton
-                iconName={maximized ? 'contract-window' : 'expand'}
-                title={titleMaximize}
-                className="no-mobile"
-                onClick={toggleMaximized}
-            />
-            <TitleBarButton iconName="close" title={titleClose} onClick={onClose} />
+            >
+                <Icon name="minimize" alt={title} className="mauto" />
+            </TitleBarButton>
+            <TitleBarButton title={titleMaximize} className="no-mobile" onClick={toggleMaximized}>
+                <Icon name={maximized ? 'contract-window' : 'expand'} alt={title} className="mauto" />
+            </TitleBarButton>
+            <TitleBarButton title={titleClose} onClick={onClose}>
+                <Icon name="close" alt={title} className="mauto" />
+            </TitleBarButton>
         </header>
     );
 };

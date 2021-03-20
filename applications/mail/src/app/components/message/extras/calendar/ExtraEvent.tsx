@@ -257,7 +257,7 @@ const ExtraEvent = ({
 
     if (loading) {
         return (
-            <div className="rounded bordered bg-white-dm mb1 pl1 pr1 pt0-5 pb0-5">
+            <div className="rounded bordered bg-norm mb1 pl1 pr1 pt0-5 pb0-5">
                 <Loader />
             </div>
         );
@@ -270,12 +270,12 @@ const ExtraEvent = ({
         );
 
         return (
-            <div className="bg-global-warning color-white rounded p0-5 mb0-5 flex flex-nowrap">
+            <div className="bg-danger rounded p0-5 mb0-5 flex flex-nowrap">
                 <Icon name="attention" className="flex-item-noshrink mtauto mbauto" />
                 <span className="pl0-5 pr0-5 flex-item-fluid">{message}</span>
                 {canTryAgain && (
                     <span className="flex-item-noshrink flex">
-                        <InlineLinkButton onClick={handleRetry} className="text-underline color-currentColor">
+                        <InlineLinkButton onClick={handleRetry} className="text-underline color-inherit">
                             {c('Action').t`Try again`}
                         </InlineLinkButton>
                     </span>
@@ -289,7 +289,7 @@ const ExtraEvent = ({
     }
 
     return (
-        <div className="rounded bordered bg-white-dm mb1 pl1 pr1 pt0-5 pb0-5 scroll-if-needed">
+        <div className="rounded bordered bg-norm mb1 pl1 pr1 pt0-5 pb0-5 scroll-if-needed">
             <header className="flex flex-nowrap flex-align-items-center">
                 <Icon name="calendar" className="mr0-5 flex-item-noshrink" />
                 <strong className="text-ellipsis flex-item-fluid" title={title}>

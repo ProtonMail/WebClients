@@ -41,23 +41,22 @@ const ExtraImages = ({
             <>
                 {c('Title').t`Load remote content`}
                 <br />
-                <kbd className="bg-global-altgrey no-border">{shiftKey}</kbd> +{' '}
-                <kbd className="bg-global-altgrey no-border">C</kbd>
+                <kbd className="no-border">{shiftKey}</kbd> + <kbd className="no-border">C</kbd>
             </>
         ) : (
             <>
                 {c('Title').t`Load embedded images`}
                 <br />
-                <kbd className="bg-global-altgrey no-border">{shiftKey}</kbd> +{' '}
-                <kbd className="bg-global-altgrey no-border">E</kbd>
+                <kbd className="no-border">{shiftKey}</kbd> + <kbd className="no-border">E</kbd>
             </>
         );
 
     const loadButton = Shortcuts ? (
         <>
-            <Tooltip title={titleButtonLoad} className="flex flex-item-noshrink">
-                <button type="button" onClick={onLoadImages} className="text-underline link">{c('Action')
-                    .t`Load`}</button>
+            <Tooltip title={titleButtonLoad}>
+                <button type="button" onClick={onLoadImages} className="flex flex-item-noshrink text-underline link">{c(
+                    'Action'
+                ).t`Load`}</button>
             </Tooltip>
         </>
     ) : (
@@ -65,7 +64,7 @@ const ExtraImages = ({
     );
 
     return (
-        <div className="bg-white-dm rounded bordered-container p0-5 mb0-5 flex flex-nowrap">
+        <div className="bg-norm rounded bordered p0-5 mb0-5 flex flex-nowrap">
             <Icon name="insert-image" className="mtauto mbauto" />
             <span className="pl0-5 pr0-5 flex-item-fluid">
                 {type === 'remote'

@@ -6,6 +6,7 @@ import {
     PrivateMainSettingsArea,
     SectionConfig,
     AppLink,
+    ButtonLike,
 } from 'react-components';
 import { hasPermission } from 'proton-shared/lib/helpers/permissions';
 import { PERMISSIONS } from 'proton-shared/lib/constants';
@@ -52,11 +53,14 @@ const PrivateMainSettingsAreaWithPermissions = ({ config, location, children, se
                         {c('Info')
                             .t`Upgrade to a paid plan to access premium features and increase your storage space.`}
                     </Paragraph>
-                    <AppLink
+                    <ButtonLike
+                        as={AppLink}
+                        color="norm"
+                        size="large"
                         to="/subscription"
                         toApp={getAccountSettingsApp()}
-                        className="button--primary button--large mtauto"
-                    >{c('Action').t`Upgrade now`}</AppLink>
+                        className="mtauto"
+                    >{c('Action').t`Upgrade now`}</ButtonLike>
                 </div>
             );
         }

@@ -3,15 +3,15 @@ import { c } from 'ttag';
 import {
     LabelModal,
     SearchInput,
-    Icon,
     useFolders,
     useModals,
-    PrimaryButton,
     Mark,
     Tooltip,
     useLoading,
     generateUID,
     FolderIcon,
+    Icon,
+    Button,
 } from 'react-components';
 import { MAILBOX_LABEL_IDS, LABEL_COLORS, ROOT_FOLDER, LABEL_TYPE } from 'proton-shared/lib/constants';
 import { normalize } from 'proton-shared/lib/helpers/string';
@@ -134,9 +134,15 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                     {c('Label').t`Move to`}
                 </span>
                 <Tooltip title={c('Title').t`Create folder`}>
-                    <PrimaryButton className="button--small button--for-smallicon" onClick={handleCreate}>
-                        <Icon name="folder" className="flex-item-noshrink mr0-25" />+
-                    </PrimaryButton>
+                    <Button
+                        icon
+                        color="norm"
+                        size="small"
+                        onClick={handleCreate}
+                        className="flex flex-align-items-center"
+                    >
+                        <Icon name="folder" /> +
+                    </Button>
                 </Tooltip>
             </div>
             <div className="m1 mb0">

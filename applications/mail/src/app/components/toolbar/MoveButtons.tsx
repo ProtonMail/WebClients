@@ -1,11 +1,10 @@
 import React, { ReactNode } from 'react';
 import { c } from 'ttag';
-import { Icon, useLoading, useMailSettings } from 'react-components';
+import { Icon, useLoading, useMailSettings, ToolbarButton } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { Folder } from 'proton-shared/lib/interfaces/Folder';
 
-import ToolbarButton from './ToolbarButton';
 import { Breakpoints } from '../../models/utils';
 import { getFolderName, isCustomFolder, isCustomLabel } from '../../helpers/labels';
 import { useMoveToFolder } from '../../hooks/useApplyLabels';
@@ -53,7 +52,7 @@ const MoveButtons = ({
         <>
             {c('Action').t`Move to inbox`}
             <br />
-            <kbd className="bg-global-altgrey no-border">I</kbd>
+            <kbd className="no-border">I</kbd>
         </>
     ) : (
         c('Action').t`Move to inbox`
@@ -62,22 +61,19 @@ const MoveButtons = ({
     const inboxButton = (
         <ToolbarButton
             key="inbox"
-            loading={loading}
             title={titleInbox}
             onClick={() => withLoading(handleMove(INBOX))}
-            disabled={!selectedIDs.length}
+            disabled={loading || !selectedIDs.length}
             data-test-id="toolbar:movetoinbox"
-        >
-            <Icon className="toolbar-icon mauto" name="inbox" />
-            <span className="sr-only">{c('Action').t`Move to inbox`}</span>
-        </ToolbarButton>
+            icon={<Icon name="inbox" alt={c('Action').t`Move to inbox`} />}
+        />
     );
 
     const titleArchive = Shortcuts ? (
         <>
             {c('Action').t`Move to archive`}
             <br />
-            <kbd className="bg-global-altgrey no-border">A</kbd>
+            <kbd className="no-border">A</kbd>
         </>
     ) : (
         c('Action').t`Move to archive`
@@ -86,22 +82,19 @@ const MoveButtons = ({
     const archiveButton = (
         <ToolbarButton
             key="archive"
-            loading={loading}
             title={titleArchive}
             onClick={() => withLoading(handleMove(ARCHIVE))}
             disabled={!selectedIDs.length}
             data-test-id="toolbar:movetoarchive"
-        >
-            <Icon className="toolbar-icon mauto" name="archive" />
-            <span className="sr-only">{c('Action').t`Move to archive`}</span>
-        </ToolbarButton>
+            icon={<Icon name="archive" alt={c('Action').t`Move to archive`} />}
+        />
     );
 
     const titleSpam = Shortcuts ? (
         <>
             {c('Action').t`Move to spam`}
             <br />
-            <kbd className="bg-global-altgrey no-border">S</kbd>
+            <kbd className="no-border">S</kbd>
         </>
     ) : (
         c('Action').t`Move to spam`
@@ -110,22 +103,19 @@ const MoveButtons = ({
     const spamButton = (
         <ToolbarButton
             key="spam"
-            loading={loading}
             title={titleSpam}
             onClick={() => withLoading(handleMove(SPAM))}
-            disabled={!selectedIDs.length}
+            disabled={loading || !selectedIDs.length}
             data-test-id="toolbar:movetospam"
-        >
-            <Icon className="toolbar-icon mauto" name="spam" />
-            <span className="sr-only">{c('Action').t`Move to spam`}</span>
-        </ToolbarButton>
+            icon={<Icon name="spam" alt={c('Action').t`Move to spam`} />}
+        />
     );
 
     const titleNoSpam = Shortcuts ? (
         <>
             {c('Action').t`Move to inbox (not spam)`}
             <br />
-            <kbd className="bg-global-altgrey no-border">I</kbd>
+            <kbd className="no-border">I</kbd>
         </>
     ) : (
         c('Action').t`Move to inbox (not spam)`
@@ -134,22 +124,19 @@ const MoveButtons = ({
     const nospamButton = (
         <ToolbarButton
             key="nospam"
-            loading={loading}
             title={titleNoSpam}
             onClick={() => withLoading(handleMove(INBOX))}
-            disabled={!selectedIDs.length}
+            disabled={loading || !selectedIDs.length}
             data-test-id="toolbar:movetonospam"
-        >
-            <Icon className="toolbar-icon mauto" name="nospam" />
-            <span className="sr-only">{c('Action').t`Move to inbox (not spam)`}</span>
-        </ToolbarButton>
+            icon={<Icon name="nospam" alt={c('Action').t`Move to inbox (not spam)`} />}
+        />
     );
 
     const titleTrash = Shortcuts ? (
         <>
             {c('Action').t`Move to trash`}
             <br />
-            <kbd className="bg-global-altgrey no-border">T</kbd>
+            <kbd className="no-border">T</kbd>
         </>
     ) : (
         c('Action').t`Move to trash`
@@ -158,15 +145,12 @@ const MoveButtons = ({
     const trashButton = (
         <ToolbarButton
             key="trash"
-            loading={loading}
             title={titleTrash}
             onClick={() => withLoading(handleMove(TRASH))}
-            disabled={!selectedIDs.length}
+            disabled={loading || !selectedIDs.length}
             data-test-id="toolbar:movetotrash"
-        >
-            <Icon className="toolbar-icon mauto" name="trash" />
-            <span className="sr-only">{c('Action').t`Move to trash`}</span>
-        </ToolbarButton>
+            icon={<Icon name="trash" alt={c('Action').t`Move to trash`} />}
+        />
     );
 
     const deleteButton = <DeleteButton key="delete" labelID={labelID} selectedIDs={selectedIDs} />;

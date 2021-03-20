@@ -309,7 +309,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                             {folders?.length ? (
                                 <button
                                     type="button"
-                                    className="flex navigation-link-header-group-link flex-item-noshrink mr1"
+                                    className="flex navigation-link-header-group-control flex-item-noshrink"
                                     onClick={() => createModal(<LabelModal type="folder" />)}
                                     title={c('Title').t`Create a new folder`}
                                 >
@@ -349,7 +349,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                             {labels?.length ? (
                                 <button
                                     type="button"
-                                    className="flex navigation-link-header-group-link flex-item-noshrink mr1"
+                                    className="flex navigation-link-header-group-control flex-item-noshrink"
                                     onClick={() => createModal(<LabelModal />)}
                                     title={c('Title').t`Create a new label`}
                                 >

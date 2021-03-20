@@ -25,18 +25,18 @@ const ItemAction = ({ element = {}, className }: Props) => {
     return (
         <div className={classnames(['flex flex-nowrap', className])}>
             {!!message.IsReplied && (
-                <Tooltip title={c('Alt').t`Replied to`} className="flex flex-item-noshrink mr0-5">
-                    <Icon name="reply" alt={c('Alt').t`Replied to`} />
+                <Tooltip title={c('Alt').t`Replied to`}>
+                    <Icon name="reply" alt={c('Alt').t`Replied to`} className="flex-item-noshrink mr0-5" />
                 </Tooltip>
             )}
             {!!message.IsRepliedAll && (
-                <Tooltip title={c('Alt').t`Replied to all`} className="flex flex-item-noshrink mr0-5">
-                    <Icon name="reply-all" alt={c('Alt').t`Replied to all`} />
+                <Tooltip title={c('Alt').t`Replied to all`}>
+                    <Icon name="reply-all" alt={c('Alt').t`Replied to all`} className="flex-item-noshrink mr0-5" />
                 </Tooltip>
             )}
             {!!message.IsForwarded && (
-                <Tooltip title={c('Alt').t`Forwarded`} className="flex flex-item-noshrink mr0-5">
-                    <Icon className="mirror" name="reply" alt={c('Alt').t`Forwarded`} />
+                <Tooltip title={c('Alt').t`Forwarded`}>
+                    <Icon name="reply" alt={c('Alt').t`Forwarded`} className="mirror flex-item-noshrink mr0-5" />
                 </Tooltip>
             )}
         </div>

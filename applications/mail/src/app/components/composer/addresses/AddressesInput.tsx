@@ -122,7 +122,7 @@ const AddressesInput = ({
         <div className="composer-addresses-autocomplete w100 flex-item-fluid relative" ref={anchorRef}>
             <div
                 className={classnames([
-                    'composer-addresses-container field flex-item-fluid bordered-container',
+                    'composer-addresses-container field flex-item-fluid',
                     !expanded && 'composer-addresses-container-closed',
                 ])}
                 onClick={handleClick}

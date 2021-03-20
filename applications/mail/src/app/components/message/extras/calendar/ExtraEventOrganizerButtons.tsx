@@ -1,7 +1,7 @@
 import { getSequence } from 'proton-shared/lib/calendar/vcalHelper';
 import React from 'react';
 import { c } from 'ttag';
-import { SmallButton } from 'react-components';
+import { Button } from 'react-components';
 import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import { InvitationModel } from '../../../../helpers/calendar/invite';
@@ -25,10 +25,10 @@ const ExtraEventOrganizerButtons = ({ model }: Props) => {
 
     if (method === ICAL_METHOD.COUNTER) {
         if (sequenceDiff === 0) {
-            return <SmallButton>{c('Action').t`Accept`}</SmallButton>;
+            return <Button size="small">{c('Action').t`Accept`}</Button>;
         }
         if (sequenceDiff < 0) {
-            return <SmallButton disabled>{c('Action').t`Accept`}</SmallButton>;
+            return <Button size="small" disabled>{c('Action').t`Accept`}</Button>;
         }
     }
     return null;

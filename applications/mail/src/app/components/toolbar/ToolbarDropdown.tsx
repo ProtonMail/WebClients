@@ -44,16 +44,18 @@ const ToolbarDropdown = ({
 
     return (
         <>
-            <Tooltip title={title} className="flex flex-item-noshrink">
+            <Tooltip title={title}>
                 <DropdownButton
-                    buttonRef={anchorRef}
+                    as="button"
+                    type="button"
+                    ref={anchorRef}
                     isOpen={isOpen}
                     onClick={toggle}
                     hasCaret
                     disabled={disabled}
                     caretClassName="toolbar-icon"
                     className={classnames([
-                        'flex-flex-children flex-flex-align-items-center toolbar-button toolbar-button--dropdown',
+                        'toolbar-button toolbar-button--dropdown flex flex-align-items-center',
                         className,
                     ])}
                     {...rest}

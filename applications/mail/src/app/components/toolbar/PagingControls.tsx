@@ -1,8 +1,7 @@
 import React from 'react';
-import { Icon, DropdownMenu, DropdownMenuButton } from 'react-components';
+import { Icon, DropdownMenu, DropdownMenuButton, ToolbarButton } from 'react-components';
 import { c } from 'ttag';
 
-import ToolbarButton from './ToolbarButton';
 import ToolbarDropdown from './ToolbarDropdown';
 
 import { Page } from '../../models/tools';
@@ -20,15 +19,12 @@ const PagingControls = ({ loading, page: inputPage, onPage: inputOnPage }: Props
     return (
         <>
             <ToolbarButton
-                loading={loading}
-                disabled={page <= 1}
+                disabled={loading || page <= 1}
                 title={c('Action').t`Previous page`}
                 onClick={onPrevious}
                 className="no-tablet no-mobile"
-            >
-                <Icon className="toolbar-icon rotateZ-90 mauto" name="caret" />
-                <span className="sr-only">{c('Action').t`Previous page`}</span>
-            </ToolbarButton>
+                icon={<Icon className="rotateZ-90" name="caret" alt={c('Action').t`Previous page`} />}
+            />
             <ToolbarDropdown
                 title={c('Action').t`Change page`}
                 content={String(page)}
@@ -55,15 +51,12 @@ const PagingControls = ({ loading, page: inputPage, onPage: inputOnPage }: Props
                 )}
             </ToolbarDropdown>
             <ToolbarButton
-                loading={loading}
-                disabled={page >= total}
+                disabled={loading || page >= total}
                 title={c('Action').t`Next page`}
                 onClick={onNext}
                 className="no-tablet no-mobile"
-            >
-                <Icon className="toolbar-icon rotateZ-270 mauto" name="caret" />
-                <span className="sr-only">{c('Action').t`Next page`}</span>
-            </ToolbarButton>
+                icon={<Icon className="rotateZ-270" name="caret" alt={c('Action').t`Next page`} />}
+            />
         </>
     );
 };

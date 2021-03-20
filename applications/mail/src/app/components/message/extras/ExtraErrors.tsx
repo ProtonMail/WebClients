@@ -56,13 +56,13 @@ const ExtraErrors = ({ message }: Props) => {
                 return (
                     <div
                         key={errorType}
-                        className="bg-global-warning color-white rounded p0-5 mb0-5 flex flex-nowrap flex-align-items-center"
+                        className="bg-danger rounded p0-5 mb0-5 flex flex-nowrap flex-align-items-center"
                     >
                         <Icon name="attention" className="flex-item-noshrink mtauto mbauto" />
                         <span className="pl0-5 pr0-5 flex-item-fluid">{getTranslations(errorType, alreadyTried)}</span>
                         {showReload && (
                             <span className="flex-item-noshrink flex">
-                                <Button onClick={handleReload} className=" button--small">
+                                <Button size="small" onClick={handleReload}>
                                     {c('Action').t`Try again`}
                                 </Button>
                             </span>
@@ -72,7 +72,7 @@ const ExtraErrors = ({ message }: Props) => {
                                 <AppLink
                                     to="/settings/security"
                                     toApp={APPS.PROTONMAIL}
-                                    className="text-underline color-currentColor mtauto"
+                                    className="text-underline color-inherit mtauto"
                                 >
                                     {c('Action').t`View keys`}
                                 </AppLink>

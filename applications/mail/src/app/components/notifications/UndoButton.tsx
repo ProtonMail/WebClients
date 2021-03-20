@@ -10,7 +10,7 @@ interface Props {
 const UndoButton = ({ onUndo, loading }: Props) => (
     <LinkButton
         loading={loading}
-        className="align-baseline p0 text-no-decoration text-bold button--currentColor"
+        className="align-baseline p0 text-no-decoration text-bold color-inherit"
         onClick={onUndo}
     >
         {c('Action').t`Undo`}

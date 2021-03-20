@@ -9,8 +9,9 @@ import {
     FloatingButton,
     MainLogo,
     SettingsButton,
-    SupportDropdown,
+    HelpDropdown,
     ContactsWidget,
+    Icon,
 } from 'react-components';
 import { MAILBOX_LABEL_IDS, APPS } from 'proton-shared/lib/constants';
 import { Recipient } from 'proton-shared/lib/interfaces';
@@ -97,9 +98,11 @@ const MailHeader = ({
             expanded={!!expanded}
             onToggleExpand={onToggleExpand}
             isNarrow={breakpoints.isNarrow}
-            supportDropdown={<SupportDropdown onOpenShortcutsModal={onOpenShortcutsModal} />}
+            helpDropdown={<HelpDropdown onOpenShortcutsModal={onOpenShortcutsModal} />}
             floatingButton={
-                <FloatingButton onClick={() => onCompose({ action: MESSAGE_ACTIONS.NEW })} icon="compose" />
+                <FloatingButton onClick={() => onCompose({ action: MESSAGE_ACTIONS.NEW })}>
+                    <Icon size={24} name="compose" className="mauto" />
+                </FloatingButton>
             }
         />
     );

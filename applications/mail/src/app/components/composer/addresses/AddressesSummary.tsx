@@ -64,10 +64,7 @@ const AddressesSummary = ({ message, mapSendInfo, toggleExpanded, onFocus }: Pro
                                     return (
                                         <span
                                             key={i} // eslint-disable-line react/no-array-index-key
-                                            className={classnames([
-                                                'mr0-5 align-top',
-                                                cannotSend && 'color-global-warning',
-                                            ])}
+                                            className={classnames(['mr0-5 align-top', cannotSend && 'color-danger'])}
                                         >
                                             <span>
                                                 <span className="composer-addresses-addressIcon relative mr0-25">

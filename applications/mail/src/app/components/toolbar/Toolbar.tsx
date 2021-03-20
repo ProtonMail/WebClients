@@ -1,9 +1,8 @@
 import React, { memo } from 'react';
 import { c } from 'ttag';
-import { Icon, useMailSettings, useLabels, useFolders } from 'react-components';
+import { Icon, useMailSettings, useLabels, useFolders, ToolbarButton, ToolbarSeparator } from 'react-components';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
-import ToolbarSeparator from './ToolbarSeparator';
 import ReadUnreadButtons from './ReadUnreadButtons';
 import ToolbarDropdown from './ToolbarDropdown';
 import LayoutDropdown from './LayoutDropdown';
@@ -12,7 +11,6 @@ import EmptyButton from './EmptyButton';
 import SelectAll from './SelectAll';
 import MoveDropdown from '../dropdown/MoveDropdown';
 import LabelDropdown from '../dropdown/LabelDropdown';
-import BackButton from './BackButton';
 import PagingControls from './PagingControls';
 import { Page } from '../../models/tools';
 import { Breakpoints } from '../../models/utils';
@@ -67,7 +65,7 @@ const Toolbar = ({
         <>
             {c('Title').t`Move to`}
             <br />
-            <kbd className="bg-global-altgrey no-border">M</kbd>
+            <kbd className="no-border">M</kbd>
         </>
     ) : (
         c('Title').t`Move to`
@@ -77,14 +75,14 @@ const Toolbar = ({
         <>
             {c('Title').t`Label as`}
             <br />
-            <kbd className="bg-global-altgrey no-border">L</kbd>
+            <kbd className="no-border">L</kbd>
         </>
     ) : (
         c('Title').t`Label as`
     );
 
     return (
-        <nav className="toolbar toolbar--heavy flex no-print flex-justify-space-between">
+        <nav className="toolbar toolbar--heavy ui-prominent flex no-print flex-justify-space-between">
             <div className="flex">
                 {listInView ? (
                     <SelectAll
@@ -95,7 +93,7 @@ const Toolbar = ({
                         loading={loading}
                     />
                 ) : (
-                    <BackButton onClick={onBack} />
+                    <ToolbarButton icon={<Icon name="arrow-left" alt={c('Action').t`Back`} />} onClick={onBack} />
                 )}
                 <ToolbarSeparator />
                 <ReadUnreadButtons
@@ -119,11 +117,7 @@ const Toolbar = ({
                     autoClose={false}
                     noMaxSize
                     disabled={!selectedIDs || !selectedIDs.length}
-                    content={
-                        <span className="flex flex-align-items-center">
-                            <Icon className="toolbar-icon" name="folder" />
-                        </span>
-                    }
+                    content={<Icon className="toolbar-icon" name="folder" />}
                     dropDownClassName="move-dropdown"
                     className="move-dropdown-button"
                     title={titleMove}
@@ -146,11 +140,7 @@ const Toolbar = ({
                     autoClose={false}
                     noMaxSize
                     disabled={!selectedIDs || !selectedIDs.length}
-                    content={
-                        <span className="flex flex-align-items-center">
-                            <Icon className="toolbar-icon" name="label" />
-                        </span>
-                    }
+                    content={<Icon className="toolbar-icon" name="label" />}
                     dropDownClassName="label-dropdown"
                     className="label-dropdown-button"
                     title={titleLabel}

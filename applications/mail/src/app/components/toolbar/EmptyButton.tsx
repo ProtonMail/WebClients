@@ -1,11 +1,9 @@
 import React from 'react';
-import { Icon, useLoading, useLabels, useMailSettings } from 'react-components';
+import { Icon, useLoading, useLabels, useMailSettings, ToolbarButton, ToolbarSeparator } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { metaKey, shiftKey } from 'proton-shared/lib/helpers/browser';
 import { c } from 'ttag';
 
-import ToolbarButton from './ToolbarButton';
-import ToolbarSeparator from './ToolbarSeparator';
 import { Breakpoints } from '../../models/utils';
 import { labelIncludes, isCustomLabel } from '../../helpers/labels';
 import { useEmptyLabel } from '../../hooks/useEmptyLabel';
@@ -50,9 +48,8 @@ const EmptyButton = ({ labelID = '', breakpoints, elementIDs }: Props) => {
         <>
             {title}
             <br />
-            <kbd className="bg-global-altgrey no-border">{metaKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey no-border">{shiftKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey no-border">Backspace</kbd>
+            <kbd className="no-border">{metaKey}</kbd> + <kbd className="no-border">{shiftKey}</kbd> +{' '}
+            <kbd className="no-border">Backspace</kbd>
         </>
     ) : (
         title
@@ -62,14 +59,12 @@ const EmptyButton = ({ labelID = '', breakpoints, elementIDs }: Props) => {
         <>
             <ToolbarSeparator />
             <ToolbarButton
-                disabled={!elementIDs.length}
-                loading={loading}
+                disabled={loading || !elementIDs.length}
                 title={titleEmpty}
                 onClick={handleClick}
                 data-test-id="toolbar:emptyfolder"
-            >
-                <Icon className="toolbar-icon mauto" name="empty-folder" alt={title} />
-            </ToolbarButton>
+                icon={<Icon name="empty-folder" alt={title} />}
+            />
         </>
     );
 };

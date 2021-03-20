@@ -1,13 +1,13 @@
 import React, { memo, useEffect } from 'react';
 import { Redirect, useRouteMatch, useHistory, useLocation } from 'react-router-dom';
 import {
-    ErrorBoundary,
     useMailSettings,
     useUserSettings,
     useLabels,
     useFolders,
     useWelcomeFlags,
     useModals,
+    LocationErrorBoundary,
 } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { MailSettings } from 'proton-shared/lib/interfaces';
@@ -68,7 +68,7 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints,
             onCompose={onCompose}
             onOpenShortcutsModal={handleOpenShortcutsModal}
         >
-            <ErrorBoundary>
+            <LocationErrorBoundary>
                 <MailboxContainer
                     labelID={labelID}
                     userSettings={userSettings}
@@ -80,7 +80,7 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints,
                     history={history}
                     onCompose={onCompose}
                 />
-            </ErrorBoundary>
+            </LocationErrorBoundary>
         </PrivateLayout>
     );
 };

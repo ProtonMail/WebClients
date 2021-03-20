@@ -26,7 +26,7 @@ const MailSidebar = ({ labelID, expanded = false, location, onToggleExpand, onCo
         <>
             {c('Title').t`New message`}
             <br />
-            <kbd className="bg-global-altgrey no-border">N</kbd>
+            <kbd className="no-border">N</kbd>
         </>
     ) : null;
     const sideBarPrimaryButton = Shortcuts ? (

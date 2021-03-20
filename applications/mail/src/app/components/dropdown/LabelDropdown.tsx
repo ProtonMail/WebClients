@@ -11,6 +11,7 @@ import {
     useLoading,
     Checkbox,
     generateUID,
+    Button,
 } from 'react-components';
 import { normalize } from 'proton-shared/lib/helpers/string';
 import { LABEL_COLORS, LABEL_TYPE, MAILBOX_IDENTIFIERS } from 'proton-shared/lib/constants';
@@ -199,9 +200,15 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
                     {c('Label').t`Label as`}
                 </span>
                 <Tooltip title={c('Title').t`Create label`}>
-                    <PrimaryButton className="button--small button--for-smallicon" onClick={handleCreate}>
-                        <Icon name="label" className="flex-item-noshrink mr0-25" />+
-                    </PrimaryButton>
+                    <Button
+                        icon
+                        color="norm"
+                        size="small"
+                        onClick={handleCreate}
+                        className="flex flex-align-items-center"
+                    >
+                        <Icon name="label" /> +
+                    </Button>
                 </Tooltip>
             </div>
             <div className="m1 mb0">

@@ -1,14 +1,14 @@
 import React, { ChangeEvent, useRef, useEffect } from 'react';
-import { classnames, Icon } from 'react-components';
+import { ButtonLike, classnames, Icon } from 'react-components';
 
 interface Props {
-    className?: string;
     disabled?: boolean;
     onAddAttachments: (files: File[]) => void;
     attachmentTriggerRef: React.MutableRefObject<() => void>;
+    isAttachments?: boolean;
 }
 
-const AttachmentsButton = ({ onAddAttachments, disabled, className, attachmentTriggerRef }: Props) => {
+const AttachmentsButton = ({ onAddAttachments, disabled, isAttachments, attachmentTriggerRef }: Props) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const input = event.target;
@@ -26,13 +26,13 @@ const AttachmentsButton = ({ onAddAttachments, disabled, className, attachmentTr
 
     return (
         <div className="composer-attachments-button-wrapper flex">
-            <label // eslint-disable-line
-                role="button" // eslint-disable-line
-                className={classnames([
-                    'button button--for-icon inline-flex flex-align-items-center',
-                    disabled && 'is-disabled',
-                    className,
-                ])}
+            <ButtonLike
+                icon
+                role="button"
+                as="label"
+                color={isAttachments ? 'norm' : 'weak'}
+                shape="outline"
+                className={classnames([disabled && 'is-disabled'])}
             >
                 <Icon name="attach" />
                 <input
@@ -43,7 +43,7 @@ const AttachmentsButton = ({ onAddAttachments, disabled, className, attachmentTr
                     className="composer-attachments-button"
                     data-testid="composer-attachments-button"
                 />
-            </label>
+            </ButtonLike>
         </div>
     );
 };

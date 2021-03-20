@@ -4,13 +4,14 @@ import { c } from 'ttag';
 import {
     classnames,
     Icon,
-    Group,
+    ButtonGroup,
     useToggle,
     useFolders,
-    ButtonGroup as OriginalButtonGroup,
     Tooltip,
     useAddresses,
     useMailSettings,
+    InlineLinkButton,
+    Button,
 } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { MailSettings } from 'proton-shared/lib/interfaces';
@@ -43,17 +44,6 @@ import { Breakpoints } from '../../../models/utils';
 import ItemAction from '../../list/ItemAction';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import { isSelfAddress } from '../../../helpers/addresses';
-
-// Hacky override of the typing
-const ButtonGroup = OriginalButtonGroup as ({
-    children,
-    className,
-    ...rest
-}: {
-    [x: string]: any;
-    children?: any;
-    className?: string | undefined;
-}) => JSX.Element;
 
 interface Props {
     labelID: string;
@@ -150,7 +140,7 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Reply`}
             <br />
-            <kbd className="bg-global-altgrey no-border">R</kbd>
+            <kbd className="no-border">R</kbd>
         </>
     ) : (
         c('Title').t`Reply`
@@ -159,8 +149,7 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Reply all`}
             <br />
-            <kbd className="bg-global-altgrey no-border">{shiftKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey no-border">R</kbd>
+            <kbd className="no-border">{shiftKey}</kbd> + <kbd className="no-border">R</kbd>
         </>
     ) : (
         c('Title').t`Reply all`
@@ -169,8 +158,7 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Forward`}
             <br />
-            <kbd className="bg-global-altgrey no-border">{shiftKey}</kbd> +{' '}
-            <kbd className="bg-global-altgrey no-border">F</kbd>
+            <kbd className="no-border">{shiftKey}</kbd> + <kbd className="no-border">F</kbd>
         </>
     ) : (
         c('Title').t`Forward`
@@ -179,7 +167,7 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Filter on`}
             <br />
-            <kbd className="bg-global-altgrey no-border">F</kbd>
+            <kbd className="no-border">F</kbd>
         </>
     ) : (
         c('Title').t`Filter on`
@@ -188,7 +176,7 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Move to`}
             <br />
-            <kbd className="bg-global-altgrey no-border">M</kbd>
+            <kbd className="no-border">M</kbd>
         </>
     ) : (
         c('Title').t`Move to`
@@ -197,7 +185,7 @@ const HeaderExpanded = ({
         <>
             {c('Title').t`Label as`}
             <br />
-            <kbd className="bg-global-altgrey no-border">L</kbd>
+            <kbd className="no-border">L</kbd>
         </>
     ) : (
         c('Title').t`Label as`
@@ -281,10 +269,9 @@ const HeaderExpanded = ({
                         ])}
                     >
                         {messageLoaded && (
-                            <button
-                                type="button"
+                            <InlineLinkButton
                                 onClick={toggleDetails}
-                                className="message-show-hide-link button--link align-baseline"
+                                className="message-show-hide-link"
                                 disabled={!messageLoaded}
                             >
                                 {showDetails
@@ -292,7 +279,7 @@ const HeaderExpanded = ({
                                     : isNarrow
                                     ? c('Action').t`Details`
                                     : c('Action').t`Show details`}
-                            </button>
+                            </InlineLinkButton>
                         )}
                     </span>
                 </div>
@@ -372,11 +359,13 @@ const HeaderExpanded = ({
                     />
 
                     {!isNarrow && (
-                        <Group className="mr1 mb0-5">
+                        <ButtonGroup className="mr1 mb0-5">
                             <HeaderDropdown
+                                icon
+                                group
                                 autoClose={false}
                                 content={<Icon name="filter" alt={c('Action').t`Custom filter`} />}
-                                className="button grouped-button button--for-icon messageFilterDropdownButton"
+                                className="messageFilterDropdownButton"
                                 dropDownClassName="customFilterDropdown"
                                 title={titleFilterOn}
                                 loading={!messageLoaded}
@@ -387,10 +376,12 @@ const HeaderExpanded = ({
                                 )}
                             </HeaderDropdown>
                             <HeaderDropdown
+                                icon
+                                group
                                 autoClose={false}
                                 noMaxSize
                                 content={<Icon name="folder" alt={c('Action').t`Move to`} />}
-                                className="button grouped-button button--for-icon messageMoveDropdownButton"
+                                className="messageMoveDropdownButton"
                                 dropDownClassName="move-dropdown"
                                 title={titleMoveTo}
                                 loading={!messageLoaded}
@@ -409,10 +400,12 @@ const HeaderExpanded = ({
                                 )}
                             </HeaderDropdown>
                             <HeaderDropdown
+                                icon
+                                group
                                 autoClose={false}
                                 noMaxSize
                                 content={<Icon name="label" alt={c('Action').t`Label as`} />}
-                                className="button grouped-button button--for-icon messageLabelDropdownButton"
+                                className="messageLabelDropdownButton"
                                 dropDownClassName="label-dropdown"
                                 title={titleLabelAs}
                                 loading={!messageLoaded}
@@ -429,42 +422,48 @@ const HeaderExpanded = ({
                                     />
                                 )}
                             </HeaderDropdown>
-                        </Group>
+                        </ButtonGroup>
                     )}
                 </div>
 
-                <Group className="mb0-5">
-                    <ButtonGroup
-                        disabled={!messageLoaded || !bodyLoaded || inOutbox}
-                        className="button--for-icon button--primary flex flex-align-items-center relative"
-                        onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
-                        data-test-id="message-view:reply"
-                    >
-                        <Tooltip title={titleReply} className="flex increase-click-surface">
+                <ButtonGroup className="mb0-5">
+                    <Tooltip title={titleReply}>
+                        <Button
+                            group
+                            icon
+                            disabled={!messageLoaded || !bodyLoaded || inOutbox}
+                            color="norm"
+                            onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
+                            data-test-id="message-view:reply"
+                        >
                             <Icon name="reply" size={20} alt={c('Title').t`Reply`} />
-                        </Tooltip>
-                    </ButtonGroup>
-                    <ButtonGroup
-                        disabled={!messageLoaded || !bodyLoaded || inOutbox}
-                        className="button--for-icon button--primary flex flex-align-items-center relative"
-                        onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
-                        data-test-id="message-view:reply-all"
-                    >
-                        <Tooltip title={titleReplyAll} className="flex increase-click-surface">
+                        </Button>
+                    </Tooltip>
+                    <Tooltip title={titleReplyAll}>
+                        <Button
+                            group
+                            icon
+                            disabled={!messageLoaded || !bodyLoaded || inOutbox}
+                            color="norm"
+                            onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
+                            data-test-id="message-view:reply-all"
+                        >
                             <Icon name="reply-all" size={20} alt={c('Title').t`Reply all`} />
-                        </Tooltip>
-                    </ButtonGroup>
-                    <ButtonGroup
-                        disabled={!messageLoaded || !bodyLoaded || inOutbox}
-                        className=" button--for-icon button--primary flex flex-align-items-center relative"
-                        onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
-                        data-test-id="message-view:forward"
-                    >
-                        <Tooltip title={titleForward} className="flex increase-click-surface">
+                        </Button>
+                    </Tooltip>
+                    <Tooltip title={titleForward}>
+                        <Button
+                            group
+                            icon
+                            disabled={!messageLoaded || !bodyLoaded || inOutbox}
+                            color="norm"
+                            onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
+                            data-test-id="message-view:forward"
+                        >
                             <Icon name="forward" size={20} alt={c('Title').t`Forward`} />
-                        </Tooltip>
-                    </ButtonGroup>
-                </Group>
+                        </Button>
+                    </Tooltip>
+                </ButtonGroup>
             </div>
             {/* {messageLoaded ? <HeaderAttachmentEvent message={message} /> : null} */}
         </div>

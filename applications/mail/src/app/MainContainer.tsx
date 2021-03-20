@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { useActiveBreakpoint, LoaderPage, ModalsChildren } from 'react-components';
+import { useActiveBreakpoint, LoaderPage, ModalsChildren, ErrorBoundary, StandardErrorPage } from 'react-components';
 
 import MessageProvider from './containers/MessageProvider';
 import ConversationProvider from './containers/ConversationProvider';
@@ -43,4 +43,12 @@ const MainContainer = () => {
     );
 };
 
-export default MainContainer;
+const WrappedMainContainer = () => {
+    return (
+        <ErrorBoundary component={<StandardErrorPage />}>
+            <MainContainer />
+        </ErrorBoundary>
+    );
+};
+
+export default WrappedMainContainer;

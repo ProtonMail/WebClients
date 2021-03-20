@@ -57,10 +57,10 @@ export const getSendStatusIcon = (sendPreferences: SendPreferences): StatusIcon 
         ? c('Key validation warning').t`Recipient's key validation failed: ${validationErrorsMessage}`
         : undefined;
     if (error) {
-        return { colorClassName: 'color-global-warning', isEncrypted: false, fill: FAIL, text: error.message };
+        return { colorClassName: 'color-danger', isEncrypted: false, fill: FAIL, text: error.message };
     }
     if (pgpScheme === SEND_PM) {
-        const result = { colorClassName: 'color-pm-blue', isEncrypted: true };
+        const result = { colorClassName: 'color-info', isEncrypted: true };
         if (isPublicKeyPinned) {
             return {
                 ...result,
@@ -72,7 +72,7 @@ export const getSendStatusIcon = (sendPreferences: SendPreferences): StatusIcon 
     }
     if (pgpScheme === SEND_EO) {
         return {
-            colorClassName: 'color-pm-blue',
+            colorClassName: 'color-info',
             isEncrypted: true,
             fill: PLAIN,
             text: c('Composer email icon').t`End-to-end encrypted`,
@@ -80,7 +80,7 @@ export const getSendStatusIcon = (sendPreferences: SendPreferences): StatusIcon 
     }
     if ([SEND_PGP_INLINE, SEND_PGP_MIME].includes(pgpScheme)) {
         // sign must be true to fall in here
-        const result = { colorClassName: 'color-global-success', isEncrypted: encrypt };
+        const result = { colorClassName: 'color-success', isEncrypted: encrypt };
         if (warningsText) {
             if (hasApiKeys) {
                 return {
@@ -158,7 +158,7 @@ export const getSentStatusIcon = ({
                           encryptions.length
                       );
             return {
-                colorClassName: allExternal ? 'color-global-success' : 'color-pm-blue',
+                colorClassName: allExternal ? 'color-success' : 'color-info',
                 isEncrypted: true,
                 fill: CHECKMARK,
                 text,
@@ -166,7 +166,7 @@ export const getSentStatusIcon = ({
         }
         if (allEncrypted) {
             return {
-                colorClassName: allExternal ? 'color-global-success' : 'color-pm-blue',
+                colorClassName: allExternal ? 'color-success' : 'color-info',
                 isEncrypted: true,
                 fill: PLAIN,
                 text:
@@ -176,7 +176,7 @@ export const getSentStatusIcon = ({
             };
         }
         return {
-            colorClassName: 'color-pm-blue',
+            colorClassName: 'color-info',
             isEncrypted: true,
             fill: PLAIN,
             text: c('Sent email icon').t`Stored with zero-access encryption`,
@@ -189,7 +189,7 @@ export const getSentStatusIcon = ({
             return;
         }
         return {
-            colorClassName: 'color-global-success',
+            colorClassName: 'color-success',
             isEncrypted: false,
             fill: SIGN,
             text: c('Sent email icon').t`PGP-signed`,
@@ -197,7 +197,7 @@ export const getSentStatusIcon = ({
     }
     if ([PGP_INLINE, PGP_MIME].includes(encryption) && [NONE, PGP_INLINE, PGP_MIME].includes(authentication)) {
         return {
-            colorClassName: 'color-global-success',
+            colorClassName: 'color-success',
             isEncrypted: true,
             fill: PLAIN,
             text:
@@ -211,7 +211,7 @@ export const getSentStatusIcon = ({
         [NONE, PGP_INLINE, PGP_MIME].includes(authentication)
     ) {
         return {
-            colorClassName: 'color-global-success',
+            colorClassName: 'color-success',
             isEncrypted: true,
             fill: CHECKMARK,
             text:
@@ -222,7 +222,7 @@ export const getSentStatusIcon = ({
     }
     if (authentication === PGP_EO && encryption === PGP_EO) {
         return {
-            colorClassName: 'color-pm-blue',
+            colorClassName: 'color-info',
             isEncrypted: true,
             fill: PLAIN,
             text:
@@ -233,7 +233,7 @@ export const getSentStatusIcon = ({
     }
     if (encryption === PGP_PM && [NONE, PGP_PM].includes(authentication)) {
         return {
-            colorClassName: 'color-pm-blue',
+            colorClassName: 'color-info',
             isEncrypted: true,
             fill: PLAIN,
             text:
@@ -244,7 +244,7 @@ export const getSentStatusIcon = ({
     }
     if (encryption === PGP_PM_PINNED && [NONE, PGP_PM].includes(authentication)) {
         return {
-            colorClassName: 'color-pm-blue',
+            colorClassName: 'color-info',
             isEncrypted: true,
             fill: CHECKMARK,
             text:
@@ -285,7 +285,7 @@ export const getReceivedStatusIcon = (
     const hasPinnedKeys = !!senderPinnedKeys?.length;
 
     if (origin === INTERNAL) {
-        const result = { colorClassName: 'color-pm-blue', isEncrypted: true };
+        const result = { colorClassName: 'color-info', isEncrypted: true };
         if (encryption === END_TO_END) {
             const verificationErrorsMessage = verification.verificationErrors
                 ?.map(({ message }) => message)
@@ -354,7 +354,7 @@ export const getReceivedStatusIcon = (
 
     if (origin === EXTERNAL) {
         if (encryption === END_TO_END) {
-            const result = { colorClassName: 'color-global-success', isEncrypted: true };
+            const result = { colorClassName: 'color-success', isEncrypted: true };
             const verificationErrorsMessage = verification.verificationErrors
                 ?.map(({ message }) => message)
                 .filter(Boolean)
@@ -407,14 +407,14 @@ export const getReceivedStatusIcon = (
         if (encryption === ON_DELIVERY) {
             if (verificationStatus === NOT_SIGNED) {
                 return {
-                    colorClassName: 'color-global-grey-dm',
+                    colorClassName: 'color-norm',
                     isEncrypted: false,
                     fill: PLAIN,
                     text: c('Received email icon').t`Stored with zero-access encryption`,
                 };
             }
 
-            const result = { colorClassName: 'color-global-success', isEncrypted: false };
+            const result = { colorClassName: 'color-success', isEncrypted: false };
             const verificationErrorsMessage = verification.verificationErrors
                 ?.map(({ message }) => message)
                 .filter(Boolean)
@@ -459,7 +459,7 @@ export const getReceivedStatusIcon = (
     }
 
     return {
-        colorClassName: 'color-global-grey-dm',
+        colorClassName: 'color-norm',
         isEncrypted: false,
         fill: PLAIN,
         text: c('Received email icon').t`Stored with zero-access encryption`,
