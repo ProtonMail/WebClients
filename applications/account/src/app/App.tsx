@@ -1,6 +1,6 @@
 import React from 'react';
 import sentry from 'proton-shared/lib/helpers/sentry';
-import { ProtonApp, ErrorBoundary } from 'react-components';
+import { ProtonApp, ErrorBoundary, StandardErrorPage } from 'react-components';
 
 import * as config from './config';
 import Setup from './Setup';
@@ -17,7 +17,7 @@ sentry(enhancedConfig);
 const App = () => {
     return (
         <ProtonApp config={enhancedConfig}>
-            <ErrorBoundary>
+            <ErrorBoundary component={<StandardErrorPage />}>
                 <Setup />
             </ErrorBoundary>
         </ProtonApp>

@@ -8,7 +8,7 @@ import {
     ModalsChildren,
     useApi,
     ProtonLoginCallback,
-    StandardLoadError,
+    StandardLoadErrorPage,
     useErrorHandler,
 } from 'react-components';
 import {
@@ -82,7 +82,7 @@ const AccountPublicApp = ({ locales = {}, children, onActiveSessions, onLogin }:
     }, []);
 
     if (error) {
-        return <StandardLoadError />;
+        return <StandardLoadErrorPage />;
     }
 
     if (loading) {

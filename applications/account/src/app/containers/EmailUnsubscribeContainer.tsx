@@ -162,7 +162,7 @@ const EmailUnsubscribeContainer = () => {
 
     if (error) {
         const signIn = (
-            <a key="1" className="primary-link" href="/login" target="_self">
+            <a key="1" href="/login" target="_self">
                 {c('Action').t`sign in`}
             </a>
         );
