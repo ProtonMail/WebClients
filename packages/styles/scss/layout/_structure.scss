@@ -18,6 +18,32 @@ html,
 	height: 100%;
 }
 
+.app-root-loader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #262a33;
+	color: white;
+	z-index: 9999;
+}
+
+.app-noscript {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 3em;
+	font-size: 1.2em;
+	background: #262a33;
+	color: white;
+}
+
 .content {
 	background-color: var(--sidebar-background-color, var(--background-norm));
 	color: var(--sidebar-text-color, var(--text-norm));
