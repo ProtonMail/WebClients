@@ -6,7 +6,7 @@ import { Option } from '../option';
 
 function renderBasicSelect() {
     return render(
-        <SelectTwo>
+        <SelectTwo data-testid="dropdown-button">
             <Option title="one" value="one" />
             <Option title="two" value="two" />
             <Option title="three" value="three" />
@@ -16,7 +16,7 @@ function renderBasicSelect() {
 
 function renderSelectWithSelectedOption() {
     return render(
-        <SelectTwo value="two">
+        <SelectTwo value="two" data-testid="dropdown-button">
             <Option title="one" value="one" />
             <Option title="two" value="two" />
             <Option title="three" value="three" />
@@ -49,7 +49,7 @@ describe('SelectTwo component', () => {
         const spy = jest.fn();
 
         const output = render(
-            <SelectTwo onChange={spy}>
+            <SelectTwo onChange={spy} data-testid="dropdown-button">
                 <Option title="one" value="one" />
                 <Option title="two" value="two" />
             </SelectTwo>
@@ -68,7 +68,7 @@ describe('SelectTwo component', () => {
 
     it('should render a placeholer if no value is selected', () => {
         const { getByText } = render(
-            <SelectTwo placeholder="Placeholder">
+            <SelectTwo placeholder="Placeholder" data-testid="dropdown-button">
                 <Option title="one" value="one" />
                 <Option title="two" value="two" />
             </SelectTwo>
@@ -188,7 +188,7 @@ describe('SelectTwo component', () => {
 
     it('should clear the current typed input after a given amount of ms and match the new input after the delay', async () => {
         const output = render(
-            <SelectTwo clearSearchAfter={800}>
+            <SelectTwo clearSearchAfter={800} data-testid="dropdown-button">
                 <Option title="one" value="one" />
                 <Option title="two" value="two" />
                 <Option title="three" value="three" />
@@ -236,7 +236,7 @@ describe('SelectTwo component', () => {
         const getSearchableValue = ({ label }: V) => label;
 
         const output = render(
-            <SelectTwo getSearchableValue={getSearchableValue}>
+            <SelectTwo getSearchableValue={getSearchableValue} data-testid="dropdown-button">
                 <Option title="one" value={{ label: 'one' }} />
                 <Option title="two" value={{ label: 'two' }} />
                 <Option title="three" value={{ label: 'three' }} />
