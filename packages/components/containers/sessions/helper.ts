@@ -38,6 +38,7 @@ export const getClientsI18N = () => ({
     macOSVPN: c('Badge').t`ProtonVPN for macOS`,
     macOSImportExport: c('Badge').t`ProtonMail Import-Export for macOS`,
     macOSBridge: c('Badge').t`ProtonMail Bridge for macOS`,
+    macOSDrive: c('Badge').t`${driveAppName} for macOS`,
     LinuxImportExport: c('Badge').t`ProtonMail Import-Export for GNU/Linux`,
     LinuxBridge: c('Badge').t`ProtonMail Bridge for GNU/Linux`,
     LinuxVPN: c('Badge').t`ProtonVPN for GNU/Linux`,
