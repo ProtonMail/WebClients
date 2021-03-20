@@ -2,24 +2,16 @@ import { c } from 'ttag';
 import valid from 'card-validator';
 import creditCardType from 'credit-card-type';
 import { isEmpty } from 'proton-shared/lib/helpers/validators';
+import { CardModel } from './interface';
 
 export const isCardNumber = (value: string) => valid.number(value).isValid;
 export const isCVV = (value: string, maxLength: number) => valid.cvv(value, maxLength).isValid;
 export const isPostalCode = (value: string) => valid.postalCode(value).isValid;
 export const isExpirationDate = (month: string, year: string) => valid.expirationDate({ month, year }).isValid;
 
-interface Card {
-    fullname: string;
-    month: string;
-    year: string;
-    number: string;
-    cvc: string;
-    zip: string;
-}
+type KeyOfCardModel = keyof CardModel;
 
-type KeyCard = 'fullname' | 'month' | 'year' | 'number' | 'cvc' | 'zip';
-
-const check = (card: Card, key: KeyCard): string | undefined => {
+const check = (card: CardModel, key: KeyOfCardModel): string | undefined => {
     const value = card[key];
     switch (key) {
         case 'fullname':
@@ -59,18 +51,9 @@ const check = (card: Card, key: KeyCard): string | undefined => {
     }
 };
 
-export const getErrors = (
-    card: Card
-): {
-    fullname?: string;
-    month?: string;
-    year?: string;
-    number?: string;
-    cvc?: string;
-    zip?: string;
-} => {
+export const getErrors = (card: CardModel): Partial<CardModel> => {
     return ['fullname', 'number', 'month', 'year', 'cvc', 'zip', 'country'].reduce((acc, key) => {
-        const error = check(card, key as KeyCard);
+        const error = check(card, key as KeyOfCardModel);
         if (error) {
             acc[key] = error;
         }

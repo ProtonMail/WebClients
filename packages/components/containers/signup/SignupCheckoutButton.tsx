@@ -1,9 +1,10 @@
 import React from 'react';
 import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
+import { SubscriptionCheckResponse } from 'proton-shared/lib/interfaces';
 import { c } from 'ttag';
 
 import { PrimaryButton } from '../../components';
-import { SubscriptionCheckResult, SignupPayPal } from './interfaces';
+import { SignupPayPal } from './interfaces';
 import { PayPalButton } from '../payments';
 
 interface Props {
@@ -12,7 +13,7 @@ interface Props {
     canPay: boolean;
     loading: boolean;
     method: string;
-    checkResult?: SubscriptionCheckResult;
+    checkResult?: SubscriptionCheckResponse;
 }
 
 const SignupCheckoutButton = ({ className, paypal, canPay, loading, method, checkResult }: Props) => {

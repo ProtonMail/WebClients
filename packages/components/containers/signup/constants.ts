@@ -101,37 +101,16 @@ export const INSECURE_DOMAINS = [
     ...MAIL_RU_DOMAINS,
 ];
 
-export const DEFAULT_SIGNUP_MODEL = {
-    step: SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME,
-    username: '',
-    password: '',
-    confirmPassword: '',
-    email: '',
-    verifyMethods: [],
-    domains: [],
-    recoveryEmail: '',
-    recoveryPhone: '',
-    verificationCode: '',
-    currency: 'EUR',
-    cycle: 12,
-    planIDs: {},
-    humanVerificationMethods: [],
-    humanVerificationToken: '',
-    verificationToken: '',
-    paymentToken: '',
-    payload: {},
-};
-
 export const DEFAULT_CHECK_RESULT = {
     Amount: 0,
     AmountDue: 0,
     Proration: 0,
     Credit: 0,
     Currency: 'EUR',
-    Cycle: 0,
+    Cycle: 1,
     Gift: 0,
     CouponDiscount: 0,
     Coupon: null,
     Additions: null,
     PeriodEnd: 0,
-};
+} as const;

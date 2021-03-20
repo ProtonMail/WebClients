@@ -21,7 +21,7 @@ import {
     useLoading,
 } from '../../hooks';
 
-import NewSubscriptionModal from './subscription/NewSubscriptionModal';
+import SubscriptionModal from './subscription/SubscriptionModal';
 import MailSubscriptionTable from './subscription/MailSubscriptionTable';
 import VpnSubscriptionTable from './subscription/VpnSubscriptionTable';
 import CurrencySelector from './CurrencySelector';
@@ -29,6 +29,7 @@ import CycleSelector from './CycleSelector';
 import DowngradeModal from './DowngradeModal';
 import LossLoyaltyModal from './LossLoyaltyModal';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
+import { SUBSCRIPTION_STEPS } from './subscription/constants';
 
 const PlansSection = () => {
     const { call } = useEventManager();
@@ -73,7 +74,7 @@ const PlansSection = () => {
         return handleUnsubscribe();
     };
 
-    const handleModal = async (planID = '', expanded = false) => {
+    const handleModal = async (planID = '') => {
         if (!planID) {
             handleOpenModal();
             return;
@@ -101,12 +102,12 @@ const PlansSection = () => {
         const coupon = Coupon ? Coupon.Code : undefined; // Coupon can equals null
 
         createModal(
-            <NewSubscriptionModal
-                expanded={expanded}
+            <SubscriptionModal
                 planIDs={plansIDs}
                 coupon={coupon}
                 currency={currency}
                 cycle={cycle}
+                step={SUBSCRIPTION_STEPS.CUSTOMIZATION}
             />
         );
     };
