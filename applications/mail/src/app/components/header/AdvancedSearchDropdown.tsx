@@ -7,6 +7,7 @@ import {
     generateUID,
     usePopperAnchor,
     DropdownButton,
+    TopNavbarListItemSearchButton,
     Dropdown,
     Icon,
     DateInput,
@@ -196,25 +197,21 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     return (
         <>
             <DropdownButton
-                as="button"
+                as={isNarrow ? TopNavbarListItemSearchButton : 'button'}
                 type="button"
-                className={classnames([isNarrow ? 'topnav-link' : 'searchbox-advanced-search-button'])}
+                className={classnames([isNarrow ? undefined : 'searchbox-advanced-search-button'])}
                 ref={anchorRef}
                 isOpen={isOpen}
                 onClick={toggle}
                 hasCaret={false}
                 disabled={loading}
             >
-                {isNarrow ? (
-                    <Icon name="search" className={classnames(['topnav-icon'])} />
-                ) : (
-                    <>
-                        <Icon
-                            name="caret"
-                            className={classnames(['searchbox-advanced-search-icon', isOpen && 'rotateX-180'])}
-                        />
-                        <span className="sr-only">{c('Action').t`Advanced search`}</span>
-                    </>
+                {isNarrow ? undefined : (
+                    <Icon
+                        name="caret"
+                        className={classnames(['searchbox-advanced-search-icon', isOpen && 'rotateX-180'])}
+                        alt={c('Action').t`Advanced search`}
+                    />
                 )}
             </DropdownButton>
             <Dropdown

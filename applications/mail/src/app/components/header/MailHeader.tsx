@@ -8,9 +8,9 @@ import {
     PrivateHeader,
     FloatingButton,
     MainLogo,
-    SettingsButton,
-    HelpDropdown,
-    ContactsWidget,
+    TopNavbarListItemSettingsButton,
+    TopNavbarListItemHelpDropdown,
+    TopNavbarListItemContactsDropdown,
     Icon,
 } from 'react-components';
 import { MAILBOX_LABEL_IDS, APPS } from 'proton-shared/lib/constants';
@@ -91,14 +91,16 @@ const MailHeader = ({
             logo={logo}
             backUrl={showBackButton && backUrl ? backUrl : undefined}
             title={labelName}
-            settingsButton={<SettingsButton to="/settings/overview" toApp={APPS.PROTONMAIL} target="_self" />}
-            contactsButton={<ContactsWidget onCompose={handleContactsCompose} />}
+            settingsButton={
+                <TopNavbarListItemSettingsButton to="/settings/overview" toApp={APPS.PROTONMAIL} target="_self" />
+            }
+            contactsButton={<TopNavbarListItemContactsDropdown onCompose={handleContactsCompose} />}
             searchBox={searchBox}
             searchDropdown={searchDropdown}
             expanded={!!expanded}
             onToggleExpand={onToggleExpand}
             isNarrow={breakpoints.isNarrow}
-            helpDropdown={<HelpDropdown onOpenShortcutsModal={onOpenShortcutsModal} />}
+            helpDropdown={<TopNavbarListItemHelpDropdown onOpenShortcutsModal={onOpenShortcutsModal} />}
             floatingButton={
                 <FloatingButton onClick={() => onCompose({ action: MESSAGE_ACTIONS.NEW })}>
                     <Icon size={24} name="compose" className="mauto" />
