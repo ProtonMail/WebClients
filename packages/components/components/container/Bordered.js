@@ -4,7 +4,7 @@ import { classnames } from '../../helpers';
 
 const Bordered = ({ children, className = '', ...rest }) => {
     return (
-        <div className={classnames(['bordered-container p1 mb1', className])} {...rest}>
+        <div className={classnames(['bordered p1 mb1', className])} {...rest}>
             {children}
         </div>
     );

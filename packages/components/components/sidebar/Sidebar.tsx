@@ -12,6 +12,7 @@ import { useUser, useSubscription, useConfig } from '../../hooks';
 import Hamburger from './Hamburger';
 import MobileAppsLinks from './MobileAppsLinks';
 import { useFocusTrap } from '../focus';
+import ButtonLike from '../button/ButtonLike';
 
 interface Props {
     logo?: React.ReactNode;
@@ -79,14 +80,16 @@ const Sidebar = ({ expanded = false, onToggleExpand, hasAppLinks = true, logo, p
                 <div className="flex flex-column flex-align-items-center">
                     {canAddStorage ? (
                         <Tooltip title={c('Storage').t`Upgrade storage`}>
-                            <AppLink
+                            <ButtonLike
+                                as={AppLink}
                                 to="/subscription"
+                                shape="link"
                                 toApp={getAccountSettingsApp()}
-                                className="button--link color-currentColor hover-same-color text-no-decoration text-underline-on-hover text-xs text-center inline-block mt0 mb0-5"
+                                className="color-inherit hover-same-color text-no-decoration text-xs text-center mb0-5"
                                 title={c('Storage').t`Add storage space`}
                             >
                                 {storageText}
-                            </AppLink>
+                            </ButtonLike>
                         </Tooltip>
                     ) : (
                         <span className="text-xs text-center mt0 mb0-5">{storageText}</span>

@@ -28,7 +28,7 @@ const PrivateAppContainer = ({
             ref={containerRef}
         >
             {hasTopBanners ? <TopBanners /> : null}
-            <div className="content flex-item-fluid flex flex-column flex-nowrap reset4print">
+            <div className="content ui-prominent flex-item-fluid flex flex-column flex-nowrap reset4print">
                 {header}
                 <div className="flex flex-item-fluid flex-nowrap">
                     {sidebar}

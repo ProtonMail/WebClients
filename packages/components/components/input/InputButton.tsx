@@ -1,5 +1,6 @@
 import React from 'react';
 import { classnames } from '../../helpers';
+import ButtonLike from '../button/ButtonLike';
 
 export interface InputButtonProps extends React.ComponentPropsWithoutRef<'input'> {
     id?: string;
@@ -26,9 +27,9 @@ const InputButton = ({
         <label htmlFor={id} title={title} className={labelClassName} {...labelPropsRest}>
             <input id={id} type={type} className="input-button-input sr-only" checked={checked} {...rest} />
 
-            <span className="button input-button flex flex-justify-center flex-item-noshrink rounded50">
+            <ButtonLike as="span" className="input-button flex flex-justify-center flex-item-noshrink rounded50">
                 {children}
-            </span>
+            </ButtonLike>
         </label>
     );
 };

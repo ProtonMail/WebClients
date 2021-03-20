@@ -7,8 +7,9 @@
 		top: calc(100% + 5px);
 		z-index: 10;
 		list-style: none;
-		box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.16);
-		background: var(--bgcolor-input, $pm-input-background);
+		box-shadow: var(--shadow-lifted);
+		background-color: var(--background-norm);
+		color: var(--text-norm);
 		width: 100%;
 		margin: 0;
 		padding: 0;
@@ -18,7 +19,7 @@
 		mark,
 		li:hover mark,
 		li[aria-selected='true'] mark {
-			background: rgba($pm-blue-light, 0.4);
+			background: var(--primary);
 		}
 	}
 
@@ -27,11 +28,11 @@
 		padding: 0.5em;
 
 		&[aria-selected='true'] {
-			background-color: rgba($pm-primary, 0.2);
+			background-color: var(--interaction-norm);
 		}
 
 		&:hover {
-			background-color: var(--bordercolor-input, $autocomplete-bg-color-hover);
+			background-color: var(--interaction-default-hover);
 		}
 	}
 

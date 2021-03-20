@@ -1,20 +1,14 @@
-@import '~design-system/scss/config/';
-
 .condition-token {
 	border-radius: 1em;
-	border: 1px solid $pm-global-border;
+	border: 1px solid var(--border-norm);
 	height: 1.6em;
 	padding: 0 0.6em;
 	align-items: center;
 	font-size: 1.4rem;
-	color: $pm-global-altgrey;
-	background: rgba($pm-global-altgrey, 0.1);
+	color: var(--text-norm);
+	background: var(--background-weak);
 
 	& > span {
 		max-width: 26em;
 	}
-}
-
-.isDarkMode .condition-token {
-	background: $pm-global-light;
 }

@@ -5,7 +5,7 @@ interface Props {
 }
 
 const DragMoveContainer = ({ children }: Props) => (
-    <div className="color-black text-bold bg-white p1 bordered-container rounded">{children}</div>
+    <div className="color-norm text-bold bg-norm p1 bordered rounded">{children}</div>
 );
 
 export default DragMoveContainer;

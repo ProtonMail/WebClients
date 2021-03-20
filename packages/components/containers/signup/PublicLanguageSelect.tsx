@@ -36,7 +36,7 @@ const PublicLanguageSelect = ({ className, locales = {} }: Props) => {
     ));
 
     return (
-        <SimpleDropdown content={LOCALES[localeCode]} className={className}>
+        <SimpleDropdown reset content={LOCALES[localeCode]} className={className}>
             <DropdownMenu>{languages}</DropdownMenu>
         </SimpleDropdown>
     );

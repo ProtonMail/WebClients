@@ -1,15 +1,15 @@
 @import '~design-system/scss/config/';
 
 .subscriptionTable-plan[data-current-plan='true'] {
-	border-left: 2px solid $pm-primary;
-	border-right: 2px solid $pm-primary;
-	border-bottom: 2px solid $pm-primary;
-	background-color: var(--bgcolor-input, $pm-global-light);
+	border-left: 2px solid var(--primary);
+	border-right: 2px solid var(--primary);
+	border-bottom: 2px solid var(--primary);
+	background-color: var(--background-strong);
 }
 
 .subscriptionTable-currentPlan-container {
-	background-color: $pm-primary;
-	color: $white;
+	background-color: var(--primary);
+	color: var(--primary-contrast);
 	position: absolute;
 	top: -21px;
 	left: -2px;

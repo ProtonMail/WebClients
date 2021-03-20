@@ -1,4 +1,4 @@
-import React, { Ref } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 
 import { Icon, DropdownCaret } from '../../components';
@@ -9,7 +9,6 @@ interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLB
     className?: string;
     isOpen?: boolean;
     noCaret?: boolean;
-    buttonRef?: Ref<HTMLButtonElement>;
 }
 
 const defaultChildren = (
@@ -19,20 +18,16 @@ const defaultChildren = (
     </>
 );
 
-const AccountSupportDropdownButton = ({
-    children = defaultChildren,
-    className,
-    isOpen,
-    noCaret = false,
-    buttonRef,
-    ...rest
-}: Props) => {
+const AccountSupportDropdownButton = (
+    { children = defaultChildren, className, isOpen, noCaret = false, ...rest }: Props,
+    ref: React.Ref<HTMLButtonElement>
+) => {
     return (
         <button
             type="button"
             className={classnames(['support-dropdown-button', className])}
             aria-expanded={isOpen}
-            ref={buttonRef}
+            ref={ref}
             {...rest}
         >
             {children}
@@ -41,4 +36,4 @@ const AccountSupportDropdownButton = ({
     );
 };
 
-export default AccountSupportDropdownButton;
+export default React.forwardRef<HTMLButtonElement, Props>(AccountSupportDropdownButton);

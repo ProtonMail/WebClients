@@ -22,14 +22,14 @@ const CheckoutRow = ({ title, amount = 0, currency, className = '' }) => {
         return (
             <div className={classnames(['flex flex-nowrap flex-justify-space-between mb0-5', className])}>
                 <div className="pr0-5">{title}</div>
-                <span className="color-global-success text-uppercase">{c('Price').t`Free`}</span>
+                <span className="color-success text-uppercase">{c('Price').t`Free`}</span>
             </div>
         );
     }
     return (
         <div className={classnames(['flex flex-nowrap flex-justify-space-between mb0-5', className])}>
             <div className="pr0-5">{title}</div>
-            <Price className={amount < 0 ? 'color-global-success' : ''} currency={currency}>
+            <Price className={amount < 0 ? 'color-success' : ''} currency={currency}>
                 {amount}
             </Price>
         </div>
@@ -157,9 +157,9 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                 />
             </div>
             <div className="rounded mb1">
-                <header className="text-sm mt0 mb0 bg-global-border text-uppercase pl1 pr1 pt0-5 pb0-5">{c('Title')
+                <header className="text-sm mt0 mb0 bg-strong text-uppercase pl1 pr1 pt0-5 pb0-5">{c('Title')
                     .t`Plan summary`}</header>
-                <div className="bg-global-highlight p1">
+                <div className="bg-weak p1">
                     <div className="">
                         {hasMailPlan ? (
                             printSummary(PLAN_SERVICES.MAIL)
@@ -199,7 +199,7 @@ const SubscriptionCheckout = ({ submit = c('Action').t`Pay`, plans = [], model, 
                 </div>
             </div>
             {checkResult.Amount ? (
-                <div className="rounded p1 mb1 bg-global-highlight">
+                <div className="rounded p1 mb1 bg-weak">
                     {model.coupon ? (
                         <div className="border-bottom border-bottom--dashed border-bottom--currentColor mb0-5">
                             <CheckoutRow

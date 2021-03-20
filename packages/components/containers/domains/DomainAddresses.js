@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
 import { APPS } from 'proton-shared/lib/constants';
 
-import { AppLink, SimpleDropdown, DropdownMenu } from '../../components';
+import { ButtonLike, AppLink, SimpleDropdown, DropdownMenu } from '../../components';
 
 const DomainAddresses = ({ domainAddresses }) => {
     const list = domainAddresses.map(({ ID, Email }) => (
@@ -27,11 +27,11 @@ const DomainAddresses = ({ domainAddresses }) => {
 
     return (
         <>
-            <SimpleDropdown className="button--link" content={contentDropDown}>
+            <SimpleDropdown shape="link" color="norm" content={contentDropDown}>
                 <DropdownMenu>{list}</DropdownMenu>
                 <div className="text-right p1">
-                    <AppLink className="button" to="/organization#addresses" toApp={APPS.PROTONACCOUNT}>{c('Link')
-                        .t`Manage`}</AppLink>
+                    <ButtonLike as={AppLink} to="/organization#addresses" toApp={APPS.PROTONACCOUNT}>{c('Link')
+                        .t`Manage`}</ButtonLike>
                 </div>
             </SimpleDropdown>
         </>

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { generateUID } from '../../../helpers';
 import FormModal from '../../modal/FormModal';
-import { ResetButton, PrimaryButton } from '../../button';
+import { Button, PrimaryButton } from '../../button';
 import Label from '../../label/Label';
 import Input from '../../input/Input';
 import Alert from '../../alert/Alert';
@@ -12,6 +12,7 @@ import LoaderIcon from '../../loader/LoaderIcon';
 
 import ReactiveImage from './ReactiveImage';
 import FileButton from '../../button/FileButton';
+import Icon from '../../icon/Icon';
 
 enum ImageState {
     Initial,
@@ -56,8 +57,10 @@ const InsertImageModal = ({ onAddUrl, onAddImages, onClose, ...rest }: Props) =>
             onClose={onClose}
             footer={
                 <>
-                    <ResetButton>{c('Action').t`Cancel`}</ResetButton>
-                    <FileButton onAddFiles={handleAddFiles}>{c('Action').t`Add file`}</FileButton>
+                    <Button type="reset">{c('Action').t`Cancel`}</Button>
+                    <FileButton className="inline-flex relative flex-align-items-center" onAddFiles={handleAddFiles}>
+                        <Icon name="attach" /> {c('Action').t`Add file`}
+                    </FileButton>
                     <PrimaryButton type="submit" disabled={imageState !== ImageState.Ok}>
                         {c('Action').t`Insert`}
                     </PrimaryButton>
@@ -103,7 +106,7 @@ const InsertImageModal = ({ onAddUrl, onAddImages, onClose, ...rest }: Props) =>
                     )}
 
                     {imageState === ImageState.Error && (
-                        <span className="color-global-warning">{c('Info').t`Error loading image`}</span>
+                        <span className="color-danger">{c('Info').t`Error loading image`}</span>
                     )}
                 </div>
             </div>

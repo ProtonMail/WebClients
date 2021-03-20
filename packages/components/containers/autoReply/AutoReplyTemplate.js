@@ -71,7 +71,7 @@ const AutoReplyTemplate = ({ autoresponder, onEdit }) => {
     return (
         <>
             <Label className="">{c('Label').t`Duration`}</Label>
-            <Field className="bordered-container bg-global-muted-dm auto">
+            <Field className="bordered bg-weak auto">
                 <div
                     className="pl1 pr1 pt0-5 pb0-5 text-ellipsis cursor-pointer"
                     onClick={onEdit}
@@ -82,7 +82,7 @@ const AutoReplyTemplate = ({ autoresponder, onEdit }) => {
             </Field>
 
             <Label className="">{c('Label').t`Start`}</Label>
-            <Field className="bordered-container bg-global-muted-dm auto">
+            <Field className="bordered bg-weak auto">
                 <div
                     className="pl1 pr1 pt0-5 pb0-5 text-ellipsis cursor-pointer"
                     onClick={onEdit}
@@ -93,7 +93,7 @@ const AutoReplyTemplate = ({ autoresponder, onEdit }) => {
             </Field>
 
             <Label className="">{c('Label').t`End`}</Label>
-            <Field className="bordered-container bg-global-muted-dm auto">
+            <Field className="bordered bg-weak auto">
                 <div
                     className="pl1 pr1 pt0-5 pb0-5 text-ellipsis cursor-pointer"
                     onClick={onEdit}
@@ -104,7 +104,7 @@ const AutoReplyTemplate = ({ autoresponder, onEdit }) => {
             </Field>
 
             <Label className="">{c('Label').t`Timezone`}</Label>
-            <Field className="bordered-container bg-global-muted-dm auto">
+            <Field className="bordered bg-weak auto">
                 <div
                     className="pl1 pr1 pt0-5 pb0-5 text-ellipsis cursor-pointer"
                     onClick={onEdit}
@@ -115,7 +115,7 @@ const AutoReplyTemplate = ({ autoresponder, onEdit }) => {
             </Field>
 
             <Label className="">{c('Label').t`Message`}</Label>
-            <Field className="bordered-container bg-global-muted-dm auto">
+            <Field className="bordered bg-weak auto">
                 <div
                     className="pl1 pr1 pt0-5 pb0-5 text-break cursor-pointer"
                     onClick={onEdit}

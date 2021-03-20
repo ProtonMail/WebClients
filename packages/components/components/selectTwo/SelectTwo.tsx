@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 
-import { Dropdown, DropdownButton } from '../dropdown';
-import { Props as DropdownButtonProps } from '../dropdown/DropdownButton';
+import { Dropdown } from '../dropdown';
 import { Props as OptionProps } from '../option/Option';
 import useControlled from '../../hooks/useControlled';
 import { classnames } from '../../helpers';
+import DropdownCaret from '../dropdown/DropdownCaret';
 
 export type FakeSelectChangeEvent<V> = {
     value: V;
@@ -13,7 +13,10 @@ export type FakeSelectChangeEvent<V> = {
 };
 
 export interface Props<V>
-    extends Omit<DropdownButtonProps, 'value' | 'onClick' | 'onChange' | 'onKeyDown' | 'aria-label'> {
+    extends Omit<
+        React.ComponentPropsWithoutRef<'button'>,
+        'value' | 'onClick' | 'onChange' | 'onKeyDown' | 'aria-label'
+    > {
     value?: V;
     /**
      * Optionally allows controlling the Select's open state
@@ -40,6 +43,7 @@ export interface Props<V>
     onChange?: (e: FakeSelectChangeEvent<V>) => void;
     onClose?: () => void;
     onOpen?: () => void;
+    loading?: boolean;
 }
 
 const SelectTwo = <V extends any>({
@@ -53,6 +57,7 @@ const SelectTwo = <V extends any>({
     onChange: onChangeProp,
     clearSearchAfter = 500,
     getSearchableValue,
+    loading,
     ...rest
 }: Props<V>) => {
     const anchorRef = useRef<HTMLButtonElement | null>(null);
@@ -218,25 +223,30 @@ const SelectTwo = <V extends any>({
 
     const ariaLabel = selectedChild?.props?.title;
 
-    const dropdownButtonClassName = classnames(['text-left text-ellipsis no-outline select field w100', className]);
-
     return (
         <>
-            <DropdownButton
-                className={dropdownButtonClassName}
-                isOpen={isOpen}
-                hasCaret
-                buttonRef={anchorRef}
-                caretClassName="mtauto mbauto"
+            <button
+                type="button"
+                className={classnames([
+                    'text-left text-ellipsis no-outline select field w100 flex flex-justify-space-between flex-align-items-center',
+                    className,
+                ])}
+                ref={anchorRef}
                 onClick={handleAnchorClick}
                 onKeyDown={handleAnchorKeydown}
+                aria-expanded={isOpen}
+                aria-busy={loading}
                 aria-live="assertive"
                 aria-atomic="true"
                 aria-label={ariaLabel}
                 {...rest}
             >
                 {displayedValue}
-            </DropdownButton>
+                <DropdownCaret
+                    className={classnames(['flex-item-noshrink', children ? 'ml0-5' : ''])}
+                    isOpen={isOpen}
+                />
+            </button>
 
             <Dropdown
                 isOpen={isOpen}

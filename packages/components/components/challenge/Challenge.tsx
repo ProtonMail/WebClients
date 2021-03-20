@@ -59,7 +59,7 @@ const Challenge = ({ children, style, onLoaded, bodyClassName, ...rest }: Omit<C
                     errorTimeout={errorTimeout}
                     className={isLoading || hasError ? 'hidden' : 'w100'}
                     innerClassName="flex-item-fluid-auto"
-                    bodyClassName={classnames(['color-black bg-white', bodyClassName])}
+                    bodyClassName={classnames(['color-norm bg-norm', bodyClassName])}
                     style={style}
                     onLoaded={() => {
                         setIsLoading(false);

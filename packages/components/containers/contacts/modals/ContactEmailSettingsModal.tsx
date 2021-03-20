@@ -25,7 +25,6 @@ import ContactMIMETypeSelect from '../../../components/contacts/ContactMIMETypeS
 import ContactPgpSettings from '../ContactPgpSettings';
 import { useApi, useEventManager, useNotifications, useLoading, useMailSettings } from '../../../hooks';
 import {
-    Icon,
     Alert,
     Label,
     Field,
@@ -35,9 +34,10 @@ import {
     ContentModal,
     InnerModal,
     FooterModal,
-    ResetButton,
+    Button,
     PrimaryButton,
     LinkButton,
+    Icon,
 } from '../../../components';
 
 const { PGP_INLINE } = PGP_SCHEMES;
@@ -214,10 +214,16 @@ const ContactEmailSettingsModal = ({
         // we cannot use the FormModal component because we need to introduce the class text-ellipsis inside the header
         <DialogModal modalTitleID="modalTitle" onClose={onClose} {...rest}>
             <header className="modal-header">
-                <button type="button" className="modal-close" title={c('Action').t`Close modal`} onClick={onClose}>
-                    <Icon className="modal-close-icon" name="close" />
-                    <span className="sr-only">{c('Action').t`Close modal`}</span>
-                </button>
+                <Button
+                    icon
+                    shape="ghost"
+                    size="small"
+                    className="modal-close"
+                    title={c('Action').t`Close modal`}
+                    onClick={onClose}
+                >
+                    <Icon name="close" alt={c('Action').t`Close modal`} />
+                </Button>
                 <h1 id="modalTitle" className="modal-title text-ellipsis">
                     {c('Title').t`Email settings (${emailAddress})`}
                 </h1>
@@ -269,7 +275,7 @@ const ContactEmailSettingsModal = ({
                     ) : null}
                 </InnerModal>
                 <FooterModal>
-                    <ResetButton>{c('Action').t`Cancel`}</ResetButton>
+                    <Button type="reset">{c('Action').t`Cancel`}</Button>
                     <PrimaryButton loading={isLoading} type="submit">
                         {c('Action').t`Save`}
                     </PrimaryButton>

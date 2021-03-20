@@ -5,7 +5,7 @@ import { groupWith } from 'proton-shared/lib/helpers/array';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { Link } from 'react-router-dom';
-import { Alert, Href, Icon, Info, Button, Block, Tooltip, Radio, RadioGroup } from '../../../components';
+import { Alert, Href, Icon, Info, Button, Block, Tooltip, Radio, RadioGroup, ButtonLike } from '../../../components';
 import { useApiResult, useApiWithoutResult, useUser, useSortedList, useUserVPN } from '../../../hooks';
 import { getCountryByAbbr, correctAbbr } from '../../../helpers/countries';
 import ServerConfigs from './ServerConfigs';
@@ -269,32 +269,32 @@ const OpenVPNConfigurationSection = () => {
                     )}
                 </div>
                 {userVPN.PlanName === 'trial' || !hasPaidVpn ? (
-                    <div className="bordered-container p2 text-center">
-                        <h3 className="color-pv-green mt0 mb1">{c('Title')
+                    <div className="bordered p2 text-center">
+                        <h3 className="color-primary mt0 mb1">{c('Title')
                             .t`Get ProtonVPN Plus to access all servers`}</h3>
                         <ul className="unstyled inline-flex mt0 mb2 on-mobile-flex-column">
                             <li className="flex flex-nowrap flex-align-items-center mr1">
-                                <Icon name="on" className="color-global-success mr0-5" />
+                                <Icon name="on" className="color-success mr0-5" />
                                 <span className="text-bold">{c('Feature').t`Access to all countries`}</span>
                             </li>
                             <li className="flex flex-nowrap flex-align-items-center mr1">
-                                <Icon name="on" className="color-global-success mr0-5" />
+                                <Icon name="on" className="color-success mr0-5" />
                                 <span className="text-bold">{c('Feature').t`Secure Core servers`}</span>
                             </li>
                             <li className="flex flex-nowrap flex-align-items-center mr1">
-                                <Icon name="on" className="color-global-success mr0-5" />
+                                <Icon name="on" className="color-success mr0-5" />
                                 <span className="text-bold">{c('Feature').t`Fastest VPN servers`}</span>
                             </li>
                             <li className="flex flex-nowrap flex-align-items-center mr1">
-                                <Icon name="on" className="color-global-success mr0-5" />
+                                <Icon name="on" className="color-success mr0-5" />
                                 <span className="text-bold">{c('Feature').t`Torrenting support (P2P)`}</span>
                             </li>
                             <li className="flex flex-nowrap flex-align-items-center mr1">
-                                <Icon name="on" className="color-global-success mr0-5" />
+                                <Icon name="on" className="color-success mr0-5" />
                                 <span className="text-bold">{c('Feature').t`Connection for up to 5 devices`}</span>
                             </li>
                             <li className="flex flex-nowrap flex-align-items-center ">
-                                <Icon name="on" className="color-global-success mr0-5" />
+                                <Icon name="on" className="color-success mr0-5" />
                                 <span className="text-bold mr0-5">{c('Feature').t`Secure streaming support`}</span>
                                 <Info
                                     url="https://protonvpn.com/support/streaming-guide/"
@@ -304,8 +304,8 @@ const OpenVPNConfigurationSection = () => {
                             </li>
                         </ul>
                         <div>
-                            <Link className="button button--primary" to="/dashboard?plan=vpnplus">{c('Action')
-                                .t`Get ProtonVPN Plus`}</Link>
+                            <ButtonLike as={Link} color="norm" to="/dashboard?plan=vpnplus">{c('Action')
+                                .t`Get ProtonVPN Plus`}</ButtonLike>
                         </div>
                     </div>
                 ) : null}

@@ -66,7 +66,7 @@ const KeysActions = ({
             } as const),
     ].filter(isTruthy);
 
-    return <DropdownActions className="button--small" loading={isLoading} list={list} />;
+    return <DropdownActions size="small" loading={isLoading} list={list} />;
 };
 
 export default KeysActions;

@@ -3,20 +3,15 @@ import Tooltip from '../tooltip/Tooltip';
 import { classnames } from '../../helpers';
 
 const CLASSNAMES = {
-    success: 'badge-label--success',
-    default: 'badge-label',
-    origin: 'badge-label--grey',
-    light: 'badge-label--greylight',
-    warning: 'badge-label--warning',
-    error: 'badge-label--error',
-    primary: 'badge-label--primary',
+    default: 'badge-label-norm',
+    origin: 'badge-label-strong',
+    light: 'badge-label-weak',
+    primary: 'badge-label-primary',
+    error: 'badge-label-danger',
+    warning: 'badge-label-warning',
+    success: 'badge-label-success',
+    info: 'badge-label-info',
 } as const;
-
-const wrapTooltip = (children: React.ReactNode, title: string, className?: string) => (
-    <Tooltip title={title} className={className}>
-        {children}
-    </Tooltip>
-);
 
 export interface Props {
     children: React.ReactNode;
@@ -26,10 +21,10 @@ export interface Props {
 }
 
 const Badge = ({ children, type = 'default', tooltip, className = 'mr1' }: Props) => {
-    let badge = <span className={classnames([CLASSNAMES[type], !tooltip && className])}>{children}</span>;
+    const badge = <span className={classnames([CLASSNAMES[type], className])}>{children}</span>;
 
     if (tooltip) {
-        badge = wrapTooltip(badge, tooltip, className);
+        return <Tooltip title={tooltip}>{badge}</Tooltip>;
     }
 
     return badge;

@@ -34,7 +34,7 @@ const ContactsWidget = ({ className, onCompose }: Props) => {
                 onClick={toggle}
             >
                 <Icon name="contacts" className="flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert" />
-                <span className="navigation-title topnav-linkText mr0-5">{title}</span>
+                <span className="navigation-title">{title}</span>
             </button>
             <Dropdown
                 id={uid}

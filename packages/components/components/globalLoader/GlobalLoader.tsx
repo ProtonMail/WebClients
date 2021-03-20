@@ -13,7 +13,7 @@ const GlobalLoader = () => {
 
     return (
         <div
-            className="fixed flex centered-absolute-horizontal bg-white-dm color-global-grey-dm p0-5 rounded"
+            className="fixed flex centered-absolute-horizontal bg-norm color-weak p0-5 rounded"
             style={{ top: '1.5em' }}
         >
             <Loader size="small" className="flex" />

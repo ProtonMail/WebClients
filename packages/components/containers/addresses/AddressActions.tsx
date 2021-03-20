@@ -118,7 +118,7 @@ const AddressActions = ({ address, member, user, organizationKey }: Props) => {
             } as const),
     ].filter(isTruthy);
 
-    return <DropdownActions className="button--small" list={list} loading={loading} />;
+    return <DropdownActions size="small" list={list} loading={loading} />;
 };
 
 export default AddressActions;

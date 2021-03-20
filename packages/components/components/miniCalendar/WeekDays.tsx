@@ -22,8 +22,10 @@ const WeekDays = ({ weekdaysShort, weekdaysLong, weekStartsOn = 1, numberOfDays 
             const tooltip = weekdaysLong[idx];
             return (
                 <Tooltip key={label + i} title={tooltip}>
-                    <span aria-hidden="true">{label}</span>
-                    <span className="sr-only">{tooltip}</span>
+                    <span aria-hidden="true">
+                        {label}
+                        <span className="sr-only">{tooltip}</span>
+                    </span>
                 </Tooltip>
             );
         });

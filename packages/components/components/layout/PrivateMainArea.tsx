@@ -12,10 +12,9 @@ const PrivateMainArea = React.forwardRef(
         return (
             <main
                 className={classnames([
-                    'flex-item-fluid',
-                    'relative',
                     hasToolbar ? 'main-area--with-toolbar' : 'main-area',
                     hasRowMode ? 'main-area--row-mode' : '',
+                    'ui-standard flex-item-fluid relative',
                     className,
                 ])}
                 ref={ref}

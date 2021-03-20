@@ -1,9 +1,10 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Group, Button } from '../button';
+import { ButtonGroup, Button } from '../button';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';
 import DropdownMenu from '../dropdown/DropdownMenu';
 import SimpleDropdown from '../dropdown/SimpleDropdown';
+import { Icon } from '../icon';
 
 interface Props {
     total: number;
@@ -54,31 +55,21 @@ const Pagination = ({
     const disableNext = page === pages;
 
     return (
-        <Group>
+        <ButtonGroup>
             {hasPrevious ? (
-                <Button
-                    icon="arrow-left"
-                    className="previous-button grouped-button"
-                    disabled={disablePrevious}
-                    onClick={onPrevious}
-                />
+                <Button icon group className="previous-button" disabled={disablePrevious} onClick={onPrevious}>
+                    <Icon name="arrow-left" />
+                </Button>
             ) : null}
-            <SimpleDropdown
-                className="button grouped-button button--for-icon"
-                title={c('Title').t`Open pagination`}
-                content={page}
-            >
+            <SimpleDropdown group title={c('Title').t`Open pagination`} content={page}>
                 <DropdownMenu>{actions}</DropdownMenu>
             </SimpleDropdown>
             {hasNext ? (
-                <Button
-                    icon="arrow-right"
-                    className="next-button grouped-button"
-                    disabled={disableNext}
-                    onClick={onNext}
-                />
+                <Button icon group className="next-button" disabled={disableNext} onClick={onNext}>
+                    <Icon name="arrow-right" />
+                </Button>
             ) : null}
-        </Group>
+        </ButtonGroup>
     );
 };
 

@@ -10,8 +10,8 @@ interface Props {
 
 const ContactGroupIcon = ({ name, color, ...rest }: Props) => {
     return (
-        <Tooltip title={name} {...rest}>
-            <Icon name="contacts-groups" color={color} />
+        <Tooltip title={name}>
+            <Icon name="contacts-groups" color={color} {...rest} />
         </Tooltip>
     );
 };

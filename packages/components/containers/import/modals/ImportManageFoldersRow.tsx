@@ -191,7 +191,7 @@ const ImportManageFoldersRow = ({
                     <Icon
                         tabIndex={-1}
                         name="info"
-                        className="color-global-warning inline-flex flex-align-self-center flex-item-noshrink"
+                        className="color-danger inline-flex flex-align-self-center flex-item-noshrink"
                     />
                 </Tooltip>
             );
@@ -305,15 +305,15 @@ const ImportManageFoldersRow = ({
                                 name={DestinationFolder ? FOLDER_ICONS[DestinationFolder] : 'folder'}
                                 className={classnames([
                                     'flex-item-noshrink',
-                                    hasError && 'color-global-warning',
-                                    mergeWarning && 'color-global-attention',
+                                    hasError && 'color-danger',
+                                    mergeWarning && 'color-warning',
                                 ])}
                             />
                             <div
                                 className={classnames([
                                     'ml0-5 w100 flex flex-nowrap',
-                                    hasError && 'color-global-warning',
-                                    mergeWarning && 'color-global-attention',
+                                    hasError && 'color-danger',
+                                    mergeWarning && 'color-warning',
                                 ])}
                             >
                                 {editMode && !disabled ? (
@@ -330,28 +330,20 @@ const ImportManageFoldersRow = ({
                                             {unescapeSlashes(destinationName)}
                                         </span>
                                         {nameTooLongError && (
-                                            <Tooltip
-                                                title={ERRORS.nameTooLongError}
-                                                className="flex-item-noshrink"
-                                                type="error"
-                                            >
+                                            <Tooltip title={ERRORS.nameTooLongError} type="error">
                                                 <Icon
                                                     tabIndex={-1}
                                                     name="info"
-                                                    className="color-global-warning inline-flex flex-align-self-center flex-item-noshrink"
+                                                    className="flex-item-noshrink color-danger inline-flex flex-align-self-center flex-item-noshrink"
                                                 />
                                             </Tooltip>
                                         )}
                                         {mergeWarning && (
-                                            <Tooltip
-                                                title={WARNINGS.mergeWarning}
-                                                className="flex-item-noshrink"
-                                                type="warning"
-                                            >
+                                            <Tooltip title={WARNINGS.mergeWarning} type="warning">
                                                 <Icon
                                                     tabIndex={-1}
                                                     name="info"
-                                                    className="color-global-attention inline-flex flex-align-self-center flex-item-noshrink"
+                                                    className="flex-item-noshrink color-warning inline-flex flex-align-self-center flex-item-noshrink"
                                                 />
                                             </Tooltip>
                                         )}
@@ -359,12 +351,11 @@ const ImportManageFoldersRow = ({
                                             <Tooltip
                                                 title={c('Tooltip')
                                                     .t`System subfolders will show up as separate folders in ProtonMail`}
-                                                className="flex-item-noshrink"
                                             >
                                                 <Icon
                                                     tabIndex={-1}
                                                     name="info"
-                                                    className="inline-flex flex-align-self-center flex-item-noshrink"
+                                                    className="flex-item-noshrink inline-flex flex-align-self-center flex-item-noshrink"
                                                 />
                                             </Tooltip>
                                         )}

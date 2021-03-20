@@ -29,10 +29,7 @@ const PMSignatureField = ({ id, mailSettings = {} }: Props) => {
     return (
         <>
             <Field>
-                <div
-                    className="bordered-container pl1 pr1 pt0-5 pb0-5 mb1"
-                    dangerouslySetInnerHTML={{ __html: PM_SIGNATURE }}
-                />
+                <div className="bordered pl1 pr1 pt0-5 pb0-5 mb1" dangerouslySetInnerHTML={{ __html: PM_SIGNATURE }} />
             </Field>
             {isMandatory ? null : (
                 <div className="ml1 on-mobile-ml0">

@@ -1,15 +1,23 @@
 import React from 'react';
 
-import { ButtonProps } from '../button/Button';
-import PrimaryButton from '../button/PrimaryButton';
+import Button, { ButtonProps } from '../button/Button';
 import { classnames } from '../../helpers';
 
-const SidebarPrimaryButton = ({ children, className = '', ...rest }: ButtonProps) => {
+const SidebarPrimaryButton = (
+    { children, className = '', ...rest }: ButtonProps,
+    ref: React.Ref<HTMLButtonElement>
+) => {
     return (
-        <PrimaryButton className={classnames(['button--large text-bold mt0-25 w100', className])} {...rest}>
+        <Button
+            color="norm"
+            size="large"
+            className={classnames(['text-bold mt0-25 w100', className])}
+            ref={ref}
+            {...rest}
+        >
             {children}
-        </PrimaryButton>
+        </Button>
     );
 };
 
-export default SidebarPrimaryButton;
+export default React.forwardRef<HTMLButtonElement, ButtonProps>(SidebarPrimaryButton);

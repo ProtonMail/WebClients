@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import Dropdown from './Dropdown';
 import { usePopperAnchor } from '../popper';
-import DropdownButton, { Props as DropdownButtonProps } from './DropdownButton';
+import DropdownButton, { DropdownButtonProps } from './DropdownButton';
 import { generateUID } from '../../helpers';
 
-interface Props extends DropdownButtonProps {
+interface OwnProps {
     hasCaret?: boolean;
-    content: React.ReactNode;
+    content?: React.ReactNode;
     children?: React.ReactNode;
     originalPlacement?: string;
     autoClose?: boolean;
     dropdownClassName?: string;
 }
 
-const SimpleDropdown = ({
+export type Props<T extends React.ElementType> = OwnProps & DropdownButtonProps<T>;
+
+const SimpleDropdown = <E extends React.ElementType>({
     content,
     children,
     originalPlacement,
@@ -21,14 +23,14 @@ const SimpleDropdown = ({
     hasCaret = true,
     dropdownClassName,
     ...rest
-}: Props) => {
+}: Props<E>) => {
     const [uid] = useState(generateUID('dropdown'));
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     return (
         <>
-            <DropdownButton {...rest} buttonRef={anchorRef} isOpen={isOpen} onClick={toggle} hasCaret={hasCaret}>
+            <DropdownButton {...rest} ref={anchorRef} isOpen={isOpen} onClick={toggle} hasCaret={hasCaret}>
                 {content}
             </DropdownButton>
             <Dropdown

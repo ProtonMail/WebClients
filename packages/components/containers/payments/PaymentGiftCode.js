@@ -57,13 +57,8 @@ const PaymentGiftCode = ({ gift = '', onApply, loading }) => {
                 <div className="flex-item-fluid mr1">
                     <GiftCodeForm code={code} onChange={setCode} onSubmit={handleSubmit} loading={loading} />
                 </div>
-                <Button
-                    onClick={handleCancel}
-                    title={c('Action').t`Cancel`}
-                    className="flex-align-self-start"
-                    icon="off"
-                >
-                    <span className="sr-only">{c('Action').t`Cancel`}</span>
+                <Button onClick={handleCancel} title={c('Action').t`Cancel`} className="flex-align-self-start">
+                    <Icon name="off" alt={c('Action').t`Cancel`} />
                 </Button>
             </div>
         );
@@ -71,7 +66,7 @@ const PaymentGiftCode = ({ gift = '', onApply, loading }) => {
 
     return (
         <div className="text-center">
-            <LinkButton onClick={toggle} icon={gift}>{c('Link').t`Add a gift code`}</LinkButton>
+            <LinkButton onClick={toggle}>{c('Link').t`Add a gift code`}</LinkButton>
         </div>
     );
 };

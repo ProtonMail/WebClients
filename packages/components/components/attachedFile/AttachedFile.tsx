@@ -18,7 +18,7 @@ const AttachedFile = ({ file, iconName, className, clear = c('Action').t`Delete`
     const [fileName, extension] = splitExtension(file.name);
 
     return (
-        <div className={`flex bordered-container w100 ${className}`} {...rest}>
+        <div className={`flex bordered w100 ${className}`} {...rest}>
             <div className="p0-5 flex flex-item-noshrink w10">
                 <Icon name={iconName} className="mauto" />
             </div>

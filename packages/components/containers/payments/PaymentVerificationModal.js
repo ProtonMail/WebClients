@@ -6,15 +6,7 @@ import { ADD_CARD_MODE, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants
 import { doNotWindowOpen } from 'proton-shared/lib/helpers/browser';
 
 import { useNotifications } from '../../hooks';
-import {
-    FormModal,
-    Alert,
-    Loader,
-    Button,
-    ResetButton,
-    PrimaryButton,
-    DoNotWindowOpenAlertError,
-} from '../../components';
+import { FormModal, Alert, Loader, Button, PrimaryButton, DoNotWindowOpenAlertError } from '../../components';
 
 import { toParams } from './paymentTokenToParams';
 import PaymentVerificationImage from './PaymentVerificationImage';
@@ -102,7 +94,7 @@ const PaymentVerificationModal = ({
             footer={
                 step === STEPS.REDIRECT ? (
                     <>
-                        <ResetButton>{c('Action').t`Cancel`}</ResetButton>
+                        <Button type="reset">{c('Action').t`Cancel`}</Button>
                         <PrimaryButton type="submit">{c('Action').t`Verify`}</PrimaryButton>
                     </>
                 ) : null

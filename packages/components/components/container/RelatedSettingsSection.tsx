@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Information from './Information';
 import Paragraph from '../paragraph/Paragraph';
+import ButtonLike from '../button/ButtonLike';
 
 interface BlockListItem {
     icon: string;
@@ -26,9 +27,9 @@ const RelatedSettingsSection = ({ list = [] }: Props) => {
                         <Paragraph>{text}</Paragraph>
                         <Paragraph className="text-center mtauto">
                             {typeof link === 'string' ? (
-                                <Link className="button button--primary" to={to}>
+                                <ButtonLike as={Link} color="norm" to={to}>
                                     {link}
-                                </Link>
+                                </ButtonLike>
                             ) : (
                                 link
                             )}

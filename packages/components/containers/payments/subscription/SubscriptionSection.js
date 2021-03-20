@@ -111,7 +111,7 @@ const SubscriptionSection = ({ permission }) => {
         <>
             <Alert>{c('Info')
                 .t`To manage your subscription, including billing frequency and currency, or to switch to another plan, click on Manage subscription.`}</Alert>
-            <div className="shadow-container mb1">
+            <div className="shadow-norm mb1">
                 <div className="border-bottom pt1 pl1 pr1 on-mobile-pb1">
                     <div className="flex-autogrid flex-align-items-center on-mobile-flex-column w100 mb1">
                         <div className="flex-autogrid-item">ProtonMail plan</div>
@@ -154,7 +154,7 @@ const SubscriptionSection = ({ permission }) => {
                 )}
                 {isPaid ? (
                     <div className="pl1 pr1 pt0-5 pb0-5">
-                        <UnsubscribeButton className="button--link button--redborder">{c('Action')
+                        <UnsubscribeButton color="danger" shape="outline">{c('Action')
                             .t`Cancel subscription`}</UnsubscribeButton>
                     </div>
                 ) : null}

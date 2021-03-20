@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { deleteSubscription } from 'proton-shared/lib/api/payments';
 import { hasBonuses } from 'proton-shared/lib/helpers/organization';
-import { Button } from '../../../components';
+import Button, { ButtonProps } from '../../../components/button/Button';
 import {
     useApi,
     useUser,
@@ -17,12 +17,11 @@ import LossLoyaltyModal from '../LossLoyaltyModal';
 import DowngradeModal from '../DowngradeModal';
 import SubscriptionCancelModal, { SubscriptionCancelModel } from './SubscriptionCancelModal';
 
-interface Props {
-    className: string;
+interface Props extends ButtonProps {
     children: React.ReactNode;
 }
 
-const UnsubscribeButton = ({ className, children }: Props) => {
+const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
     const [user] = useUser();
     const [organization] = useOrganization();
     const { createNotification, hideNotification } = useNotifications();
@@ -74,7 +73,7 @@ const UnsubscribeButton = ({ className, children }: Props) => {
     };
 
     return (
-        <Button disabled={loading} className={className} onClick={() => withLoading(handleClick())}>
+        <Button disabled={loading} className={className} onClick={() => withLoading(handleClick())} {...rest}>
             {children}
         </Button>
     );

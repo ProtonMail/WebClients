@@ -61,7 +61,6 @@ const ContactDecryptionErrorModal = ({ onClose = noop, contactID, ...rest }: Pro
                     <span className="mr1">{c('Info').t`Key fingerprint`}</span>
                     <span className="flex-item-fluid text-ellipsis mr1">{errorKey.Fingerprint}</span>
                     <Copy
-                        className="button--for-icon"
                         value={errorKey.Fingerprint}
                         onCopy={() => {
                             createNotification({ text: c('Success').t`Fingerprint copied to clipboard` });

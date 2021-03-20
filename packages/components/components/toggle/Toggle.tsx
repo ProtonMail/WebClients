@@ -7,28 +7,32 @@ export enum ToggleState {
     on = 'on',
     off = 'off',
 }
+
 export interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     loading?: boolean;
     label?: (key: ToggleState) => void;
 }
 
-const Toggle = ({
-    id = 'toggle',
-    className = '',
-    checked = false,
-    loading = false,
-    onChange,
-    disabled,
-    title,
-    label = (key: ToggleState) => {
-        return (
-            <span className="toggle-label-text" aria-hidden="true">
-                <Icon name={key} alt="" size={16} className="toggle-label-img" />
-            </span>
-        );
-    },
-    ...rest
-}: Props) => {
+const Toggle = (
+    {
+        id = 'toggle',
+        className = '',
+        checked = false,
+        loading = false,
+        onChange,
+        disabled,
+        title,
+        label = (key: ToggleState) => {
+            return (
+                <span className="toggle-label-text" aria-hidden="true">
+                    <Icon name={key} alt="" size={16} className="toggle-label-img" />
+                </span>
+            );
+        },
+        ...rest
+    }: Props,
+    ref: React.Ref<HTMLInputElement>
+) => {
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         if (!disabled && onChange) {
             onChange(event);
@@ -44,6 +48,7 @@ const Toggle = ({
                 className={classnames(['toggle-checkbox', className])}
                 checked={checked}
                 aria-busy={loading}
+                ref={ref}
                 {...rest}
             />
             <label htmlFor={id} className={classnames(['toggle-label', className])} title={title}>
@@ -54,4 +59,4 @@ const Toggle = ({
     );
 };
 
-export default Toggle;
+export default React.forwardRef<HTMLInputElement, Props>(Toggle);

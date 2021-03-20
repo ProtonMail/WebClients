@@ -3,7 +3,6 @@ export { default as NewSubscriptionModal } from './NewSubscriptionModal';
 export { default as BlackFridayModal } from './BlackFridayModal';
 export { default as MailBlackFridayModal } from './MailBlackFridayModal';
 export { default as VPNBlackFridayModal } from './VPNBlackFridayModal';
-export { default as UpgradeModal } from './UpgradeModal';
 export { default as SubscriptionTable } from './SubscriptionTable';
 export { default as MailSubscriptionTable } from './MailSubscriptionTable';
 export { default as VpnSubscriptionTable } from './VpnSubscriptionTable';

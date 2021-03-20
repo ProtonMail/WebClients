@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { msgid, c } from 'ttag';
 import { APPS } from 'proton-shared/lib/constants';
-import { AppLink, SimpleDropdown, DropdownMenu } from '../../components';
+import { ButtonLike, AppLink, SimpleDropdown, DropdownMenu } from '../../components';
 
 const MemberAddresses = ({ member, addresses }) => {
     const list = addresses.map(({ ID, Email }) => (
@@ -27,13 +27,14 @@ const MemberAddresses = ({ member, addresses }) => {
 
     return (
         <>
-            <SimpleDropdown className="button--link" content={contentDropDown}>
+            <SimpleDropdown shape="link" color="norm" content={contentDropDown}>
                 <div className="dropdown-item pt0-5 pb0-5 pl1 pr1 flex">
-                    <AppLink
-                        className="button w100 text-center"
+                    <ButtonLike
+                        as={AppLink}
+                        className="w100 text-center"
                         to={`/organization/${member.ID}#addresses`}
                         toApp={APPS.PROTONACCOUNT}
-                    >{c('Link').t`Manage`}</AppLink>
+                    >{c('Link').t`Manage`}</ButtonLike>
                 </div>
                 <DropdownMenu>{list}</DropdownMenu>
             </SimpleDropdown>

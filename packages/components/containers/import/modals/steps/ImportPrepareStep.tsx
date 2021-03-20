@@ -323,8 +323,8 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
                 <div className="mt0-5 flex flex-align-items-center">
                     <Button onClick={handleClickCustomize}>{c('Action').t`Customize import`}</Button>
                     {showFoldersNameError && (
-                        <Tooltip title={c('Tooltip').t`Edit folder names`} className="ml0-5" originalPlacement="right">
-                            <Icon name="attention-plain" size={20} />
+                        <Tooltip title={c('Tooltip').t`Edit folder names`} originalPlacement="right">
+                            <Icon name="attention-plain" size={20} className="ml0-5" />
                         </Tooltip>
                     )}
                     {isCustom && isValid && (

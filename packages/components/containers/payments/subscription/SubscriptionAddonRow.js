@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { range } from 'proton-shared/lib/helpers/array';
 import { identity } from 'proton-shared/lib/helpers/function';
 import { c } from 'ttag';
-import { Button, Select } from '../../../components';
+import { Button, Icon, Select } from '../../../components';
 import { generateUID } from '../../../helpers';
 
 const SubscriptionAddonRow = ({
@@ -35,9 +35,8 @@ const SubscriptionAddonRow = ({
                         className="flex-item-noshrink w100"
                         onClick={() => onChange(quantity - 1)}
                         disabled={loading || quantity === min}
-                        icon="minus"
                     >
-                        <span className="sr-only">{c('Action').t`Decrease`}</span>
+                        <Icon name="minus" alt={c('Action').t`Decrease`} />
                     </Button>
                 </div>
                 <div className="w10e on-tiny-mobile-wauto pl0-5 pr0-5">
@@ -55,9 +54,8 @@ const SubscriptionAddonRow = ({
                         className="flex-item-noshrink w100"
                         onClick={() => onChange(quantity + 1)}
                         disabled={loading || quantity === max - 1}
-                        icon="plus"
                     >
-                        <span className="sr-only">{c('Action').t`Increase`}</span>
+                        <Icon name="plus" alt={c('Action').t`Increase`} />
                     </Button>
                 </div>
             </div>

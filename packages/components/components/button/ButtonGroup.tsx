@@ -1,12 +1,15 @@
 import React from 'react';
-
-import Button, { ButtonProps } from './Button';
 import { classnames } from '../../helpers';
 
-const ButtonGroup = ({ children, className = '', ...rest }: ButtonProps) => (
-    <Button className={classnames(['grouped-button', className])} {...rest}>
+interface Props {
+    children: React.ReactNode;
+    className?: string;
+}
+
+const ButtonGroup = ({ children, className = '' }: Props, ref: React.Ref<HTMLDivElement>) => (
+    <div className={classnames(['grouped-buttons', className])} ref={ref}>
         {children}
-    </Button>
+    </div>
 );
 
-export default ButtonGroup;
+export default React.forwardRef<HTMLDivElement, Props>(ButtonGroup);

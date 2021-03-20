@@ -44,6 +44,8 @@ const ContactModalRow = (
     // Delete is always available (except when primary and no image). Primary name has action row disabled.
     if (canDelete) {
         list.push({
+            color: 'danger',
+            shape: 'outline',
             text: <Icon name="trash" className="mauto" alt={c('Action').t`Delete`} />,
             onClick: () => {
                 if (property.uid) {
@@ -109,7 +111,7 @@ const ContactModalRow = (
                                             'flex-align-items-start',
                                     ])}
                                 >
-                                    <DropdownActions className="button--for-icon" list={list} />
+                                    <DropdownActions icon list={list} />
                                 </div>
                             )}
                         </span>

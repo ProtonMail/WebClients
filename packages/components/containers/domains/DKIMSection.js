@@ -59,7 +59,8 @@ const DKIMSection = ({ domain }) => {
                                 <div className="flex flex-nowrap flex-align-items-center">
                                     <Copy
                                         onCopy={handleCopy}
-                                        className="flex-item-noshrink button--small mr0-5"
+                                        size="small"
+                                        className="flex-item-noshrink mr0-5"
                                         value={row.CNAME}
                                     />{' '}
                                     <div className="text-ellipsis">
