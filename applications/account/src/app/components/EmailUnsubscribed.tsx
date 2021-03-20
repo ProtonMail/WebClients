@@ -18,12 +18,12 @@ const EmailUnsubscribed = ({ categories, onResubscribeClick, onManageClick, load
         <EmailUnsubscribeLayout
             main={c('Email Unsubscribe').jt`You unsubscribed from ${categoriesJsx} emails.`}
             footer={
-                <Button className="button-blue" onClick={onResubscribeClick} loading={loading}>
+                <Button color="norm" onClick={onResubscribeClick} loading={loading}>
                     {c('Action').t`Resubscribe`}
                 </Button>
             }
             below={
-                <Button onClick={onManageClick} className="button--link">
+                <Button onClick={onManageClick} shape="link" color="norm">
                     {c('Action').t`Change other email subscriptions`}
                 </Button>
             }

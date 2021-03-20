@@ -12,7 +12,7 @@ const EmailUnsubscribeBorderedContainer = ({
     className: classNameProp,
 }: EmailUnsubscribeBorderedContainerProps) => {
     const className = classnames([
-        'flex flex-column flex-align-items-center mt4 bordered-container p2 email-unsubscribe-container',
+        'flex flex-column flex-align-items-center mt4 bordered p2 email-unsubscribe-container',
         classNameProp,
     ]);
 

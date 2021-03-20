@@ -162,7 +162,7 @@ const EmailUnsubscribeContainer = () => {
 
     if (error) {
         const signIn = (
-            <a key="1" className="primary-link" href="/login" target="_self">
+            <a key="1" href="/login" target="_self">
                 {c('Action').t`sign in`}
             </a>
         );
@@ -175,7 +175,7 @@ const EmailUnsubscribeContainer = () => {
         );
     }
 
-    return <main className="main-area email-unsubscribe-container--main">{renderView()}</main>;
+    return <main className="main-area ui-standard email-unsubscribe-container--main">{renderView()}</main>;
 };
 
 export default EmailUnsubscribeContainer;
