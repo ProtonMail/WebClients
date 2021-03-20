@@ -17,7 +17,7 @@ import {
     SidebarListItemsWithSubsections,
     useModals,
     useHotkeys,
-    HelpDropdown,
+    TopNavbarListItemHelpDropdown,
 } from 'react-components';
 import { isTargetEditable } from 'proton-shared/lib/shortcuts/helpers';
 
@@ -65,7 +65,7 @@ const SettingsContainer = () => {
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isNarrow={isNarrow}
-            helpDropdown={<HelpDropdown onOpenShortcutsModal={handleOpenShortcutsModal} />}
+            helpDropdown={<TopNavbarListItemHelpDropdown onOpenShortcutsModal={handleOpenShortcutsModal} />}
         />
     );
 
