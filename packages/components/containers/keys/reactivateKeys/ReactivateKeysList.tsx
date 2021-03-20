@@ -7,7 +7,6 @@ import SelectKeyFiles from '../shared/SelectKeyFiles';
 
 import KeysStatus from '../KeysStatus';
 import { Status, KeyReactivationRequestStateData, KeyReactivationRequestState } from './interface';
-import { FileInputHandle } from '../../../components/input/FileInput';
 
 const getStatus = (status: Status, result: any) => {
     if (status === Status.ERROR) {
@@ -33,7 +32,7 @@ interface Props {
 
 const ReactivateKeysList = ({ loading = false, states, onUpload }: Props) => {
     const inactiveKeyRef = useRef<KeyReactivationRequestStateData>();
-    const selectRef = useRef<FileInputHandle>(null);
+    const selectRef = useRef<HTMLInputElement>(null);
 
     const isUpload = !!onUpload;
 
