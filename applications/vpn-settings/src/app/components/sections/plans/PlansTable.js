@@ -5,7 +5,7 @@ import {
     Icon,
     CurrencySelector,
     CycleSelector,
-    SmallButton,
+    Button,
     Info,
     Loader,
     useVPNCountries,
@@ -48,7 +48,11 @@ const PlansTable = ({
 
     const addCycleTooltip = (comp) => {
         if (cycle === CYCLE.MONTHLY) {
-            return <Tooltip title={c('Tooltip').t`Save 20% when billed annually`}>{comp}</Tooltip>;
+            return (
+                <Tooltip title={c('Tooltip').t`Save 20% when billed annually`}>
+                    <span>{comp}</span>
+                </Tooltip>
+            );
         }
 
         return comp;
@@ -78,7 +82,7 @@ const PlansTable = ({
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row" className="simple-table-row-th text-left bg-global-highlight">
+                    <th scope="row" className="simple-table-row-th text-left bg-weak">
                         {addCycleTooltip(
                             <div className="flex flex-column">
                                 <div className="mb0-5">
@@ -90,20 +94,20 @@ const PlansTable = ({
                             </div>
                         )}
                     </th>
-                    <td className="text-center bg-global-highlight">FREE</td>
-                    <td className="text-center bg-global-highlight">
+                    <td className="text-center bg-weak">FREE</td>
+                    <td className="text-center bg-weak">
                         <PlanPrice cycle={cycle} currency={currency} plans={plans} planName={VPNBASIC} />
                     </td>
-                    <td className="text-center bg-global-highlight">
+                    <td className="text-center bg-weak">
                         <PlanPrice cycle={cycle} currency={currency} plans={plans} planName={VPNPLUS} />
                     </td>
-                    <td className="text-center bg-global-highlight">
+                    <td className="text-center bg-weak">
                         <PlanPrice cycle={cycle} currency={currency} plans={plans} planName={VISIONARY} />
                     </td>
                 </tr>
 
                 <tr>
-                    <th scope="row" className="simple-table-row-th text-left bg-global-highlight">
+                    <th scope="row" className="simple-table-row-th text-left bg-weak">
                         <span className="mr0-5">{c('Header').t`Simultaneous connections`}</span>
                     </th>
                     <td className="text-center">1</td>
@@ -113,7 +117,7 @@ const PlansTable = ({
                 </tr>
 
                 <tr>
-                    <th scope="row" className="simple-table-row-th text-left bg-global-highlight">
+                    <th scope="row" className="simple-table-row-th text-left bg-weak">
                         <span className="mr0-5">{c('Header').t`Countries`}</span>
                     </th>
                     <td className="text-center">{countriesLoading ? <Loader /> : countries.free.length}</td>
@@ -123,8 +127,7 @@ const PlansTable = ({
                 </tr>
 
                 <tr>
-                    <th scope="row" className="simple-table-row-th text-left bg-global-highlight">{c('Header')
-                        .t`Speed`}</th>
+                    <th scope="row" className="simple-table-row-th text-left bg-weak">{c('Header').t`Speed`}</th>
                     <td className="text-center">{c('Plan details').t`Medium`}</td>
                     <td className="text-center">{c('Plan details').t`High`}</td>
                     <td className="text-center">{c('Plan details').t`Highest speed (up to 10Gbps)`}</td>
@@ -132,7 +135,7 @@ const PlansTable = ({
                 </tr>
 
                 <tr>
-                    <th scope="row" className="simple-table-row-th text-left bg-global-highlight text-cut">
+                    <th scope="row" className="simple-table-row-th text-left bg-weak text-cut">
                         <span className="mr0-5">{c('Header').t`P2P filesharing/BitTorrent support`}</span>
                         <Info
                             title={c('Info').t`Support for file sharing protocols such as BitTorrent.`}
@@ -154,7 +157,7 @@ const PlansTable = ({
                 </tr>
 
                 <tr>
-                    <th scope="row" className="simple-table-row-th text-left bg-global-highlight">
+                    <th scope="row" className="simple-table-row-th text-left bg-weak">
                         <span className="mr0-5">{c('Header').t`Tor over VPN`}</span>
                         <Info
                             title={c('Info')
@@ -177,7 +180,7 @@ const PlansTable = ({
                 </tr>
 
                 <tr>
-                    <th scope="row" className="simple-table-row-th text-left bg-global-highlight">
+                    <th scope="row" className="simple-table-row-th text-left bg-weak">
                         <span className="mr0-5">{c('Header').t`Secure Core VPN`}</span>
                         <Info
                             title={c('Tooltip')
@@ -200,7 +203,7 @@ const PlansTable = ({
 
                 {state ? (
                     <tr>
-                        <th scope="row" className="simple-table-row-th text-left bg-global-highlight">
+                        <th scope="row" className="simple-table-row-th text-left bg-weak">
                             <span className="mr0-5">{c('Header').t`Apps for Android / Linux / iOS / Windows`}</span>
                         </th>
                         <td className="text-center">
@@ -220,7 +223,7 @@ const PlansTable = ({
 
                 {state ? (
                     <tr>
-                        <th scope="row" className="simple-table-row-th text-left bg-global-highlight">
+                        <th scope="row" className="simple-table-row-th text-left bg-weak">
                             <span className="mr0-5">{c('Header').t`Advanced encryption`}</span>
                         </th>
                         <td className="text-center">
@@ -240,7 +243,7 @@ const PlansTable = ({
 
                 {state ? (
                     <tr>
-                        <th scope="row" className="simple-table-row-th text-left bg-global-highlight">
+                        <th scope="row" className="simple-table-row-th text-left bg-weak">
                             <span className="mr0-5">{c('Header').t`Kill Switch / Always-on`}</span>
                         </th>
                         <td className="text-center">
@@ -260,7 +263,7 @@ const PlansTable = ({
 
                 {state ? (
                     <tr>
-                        <th scope="row" className="simple-table-row-th text-left bg-global-highlight">
+                        <th scope="row" className="simple-table-row-th text-left bg-weak">
                             <span className="mr0-5">{c('Header').t`No logs policy`}</span>
                         </th>
                         <td className="text-center">
@@ -280,7 +283,7 @@ const PlansTable = ({
 
                 {state ? (
                     <tr>
-                        <th scope="row" className="simple-table-row-th text-left bg-global-highlight">
+                        <th scope="row" className="simple-table-row-th text-left bg-weak">
                             <span className="mr0-5">{c('Header').t`No data limits`}</span>
                         </th>
                         <td className="text-center">
@@ -300,7 +303,7 @@ const PlansTable = ({
 
                 {state ? (
                     <tr>
-                        <th scope="row" className="simple-table-row-th text-left bg-global-highlight">
+                        <th scope="row" className="simple-table-row-th text-left bg-weak">
                             <span className="mr0-5">{c('Header').t`Access blocked content`}</span>
                             <Info
                                 title={c('Info')
@@ -325,7 +328,7 @@ const PlansTable = ({
 
                 {state ? (
                     <tr>
-                        <th scope="row" className="simple-table-row-th text-left bg-global-highlight">
+                        <th scope="row" className="simple-table-row-th text-left bg-weak">
                             <span className="mr0-5">ProtonMail Visionary</span>
                             <Info title={c('Tooltip').t`Includes ProtonMail encrypted email with all features`} />
                         </th>
@@ -346,7 +349,7 @@ const PlansTable = ({
 
                 {state ? (
                     <tr>
-                        <th scope="row" className="simple-table-row-th text-left bg-global-highlight">
+                        <th scope="row" className="simple-table-row-th text-left bg-weak">
                             <span className="mr0-5">{c('Header').t`30-day money-back guarantee`}</span>
                         </th>
                         <td className="text-center" />
@@ -384,30 +387,30 @@ const PlansTable = ({
 
                 {onSelect && (
                     <tr>
-                        <th scope="row" className="simple-table-row-th text-left bg-global-highlight">
-                            <SmallButton className="button--link" onClick={toggle}>
+                        <th scope="row" className="simple-table-row-th text-left bg-weak">
+                            <Button size="small" shape="link" color="norm" onClick={toggle}>
                                 {state ? c('Action').t`Hide additional features` : c('Action').t`Compare all features`}
-                            </SmallButton>
+                            </Button>
                         </th>
                         <td className="text-center">
-                            <SmallButton disabled={loading} className="button--primary" onClick={onSelect()}>
+                            <Button size="small" disabled={loading} color="norm" onClick={onSelect()}>
                                 {planName === 'free' ? c('Action').t`Update` : c('Action').t`Select`}
-                            </SmallButton>
+                            </Button>
                         </td>
                         <td className="text-center">
-                            <SmallButton disabled={loading} className="button--primary" onClick={onSelect(VPNBASIC)}>
+                            <Button size="small" disabled={loading} color="norm" onClick={onSelect(VPNBASIC)}>
                                 {planName === VPNBASIC ? c('Action').t`Update` : c('Action').t`Select`}
-                            </SmallButton>
+                            </Button>
                         </td>
                         <td className="text-center">
-                            <SmallButton disabled={loading} className="button--primary" onClick={onSelect(VPNPLUS)}>
+                            <Button size="small" disabled={loading} color="norm" onClick={onSelect(VPNPLUS)}>
                                 {planName === VPNPLUS ? c('Action').t`Update` : c('Action').t`Select`}
-                            </SmallButton>
+                            </Button>
                         </td>
                         <td className="text-center">
-                            <SmallButton disabled={loading} className="button--primary" onClick={onSelect(VISIONARY)}>
+                            <Button size="small" disabled={loading} color="norm" onClick={onSelect(VISIONARY)}>
                                 {planName === VISIONARY ? c('Action').t`Update` : c('Action').t`Select`}
-                            </SmallButton>
+                            </Button>
                         </td>
                     </tr>
                 )}

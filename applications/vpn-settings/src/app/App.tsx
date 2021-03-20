@@ -1,5 +1,12 @@
 import React from 'react';
-import { ProtonApp, useAuthentication, PublicAuthenticationStore, PrivateAuthenticationStore } from 'react-components';
+import {
+    ProtonApp,
+    useAuthentication,
+    PublicAuthenticationStore,
+    PrivateAuthenticationStore,
+    ErrorBoundary,
+    StandardErrorPage,
+} from 'react-components';
 import locales from 'proton-shared/lib/i18n/locales';
 import sentry from 'proton-shared/lib/helpers/sentry';
 
@@ -27,7 +34,9 @@ const Setup = () => {
 const App = () => {
     return (
         <ProtonApp config={enhancedConfig}>
-            <Setup />
+            <ErrorBoundary component={<StandardErrorPage />}>
+                <Setup />
+            </ErrorBoundary>
         </ProtonApp>
     );
 };

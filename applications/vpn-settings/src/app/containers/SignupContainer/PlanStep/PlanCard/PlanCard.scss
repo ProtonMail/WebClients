@@ -22,7 +22,7 @@
     &:hover,
     &--active {
         .border-top {
-            border-color: $pm-primary;
+            border-color: var(--primary);
         }
     }
 

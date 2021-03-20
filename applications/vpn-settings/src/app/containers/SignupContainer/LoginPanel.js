@@ -1,6 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Link } from 'react-router-dom';
+import { ButtonLike } from 'react-components';
 
 const LoginPanel = () => {
     return (
@@ -9,7 +10,7 @@ const LoginPanel = () => {
             <div className="mb1-5">{c('Info')
                 .t`If you are a ProtonMail user you can use your Proton account to log in to ProtonVPN.`}</div>
             <div>
-                <Link className="button--primaryborder" to="/login">{c('Link').t`Log in`}</Link>
+                <ButtonLike as={Link} shape="outline" color="norm" to="/login">{c('Link').t`Log in`}</ButtonLike>
             </div>
         </div>
     );
