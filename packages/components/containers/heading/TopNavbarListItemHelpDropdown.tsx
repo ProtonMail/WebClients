@@ -8,17 +8,34 @@ import BugModal from '../support/BugModal';
 import AuthenticatedBugModal from '../support/AuthenticatedBugModal';
 import { OnboardingModal } from '../onboarding';
 import SimpleDropdown, { Props as SimpleDropdownProps } from '../../components/dropdown/SimpleDropdown';
+import TopNavbarListItemButton, {
+    TopNavbarListItemButtonProps,
+} from '../../components/topnavbar/TopNavbarListItemButton';
 
 interface OwnProps {
     onOpenShortcutsModal?: () => void;
     content?: string;
 }
 
-const defaultElement = 'button';
+const TopNavbarListItemHelpButton = React.forwardRef(
+    (props: Omit<TopNavbarListItemButtonProps<'button'>, 'icon' | 'text' | 'as'>, ref: typeof props.ref) => {
+        return (
+            <TopNavbarListItemButton
+                {...props}
+                ref={ref}
+                as="button"
+                type="button"
+                icon={<Icon name="support1" />}
+                text={c('Header').t`Help`}
+            />
+        );
+    }
+);
+
+const defaultElement = TopNavbarListItemHelpButton;
 type Props<E extends React.ElementType> = OwnProps & Omit<SimpleDropdownProps<E>, 'content'>;
 
-const HelpDropdown = <E extends React.ElementType = typeof defaultElement>({
-    content = c('Header').t`Help`,
+const TopNavbarListItemHelpDropdown = <E extends React.ElementType = typeof defaultElement>({
     onOpenShortcutsModal,
     ...rest
 }: Props<E>) => {
@@ -36,17 +53,7 @@ const HelpDropdown = <E extends React.ElementType = typeof defaultElement>({
     };
 
     return (
-        <SimpleDropdown
-            as={defaultElement}
-            originalPlacement="bottom"
-            content={
-                <>
-                    <Icon name="support1" className="topnav-icon mr0-5" />{' '}
-                    <span className="navigation-title">{content}</span>
-                </>
-            }
-            {...rest}
-        >
+        <SimpleDropdown as={defaultElement} originalPlacement="bottom" hasCaret={false} {...rest}>
             <DropdownMenu>
                 <DropdownMenuLink
                     className="flex flex-nowrap text-left"
@@ -86,4 +93,4 @@ const HelpDropdown = <E extends React.ElementType = typeof defaultElement>({
     );
 };
 
-export default HelpDropdown;
+export default TopNavbarListItemHelpDropdown;
