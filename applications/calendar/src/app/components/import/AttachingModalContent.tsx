@@ -63,7 +63,7 @@ const AttachingModalContent = ({
     return (
         <>
             {alert}
-            <Bordered className={classnames(['flex relative', !!model.failure && 'bordered-container--error'])}>
+            <Bordered className={classnames(['flex relative', !!model.failure && 'border--danger'])}>
                 {model.fileAttached ? (
                     <AttachedFile file={model.fileAttached} iconName="calendar" onClear={onClear} />
                 ) : (
@@ -74,7 +74,7 @@ const AttachingModalContent = ({
                         onDragLeave={onDragLeave}
                         className="w100"
                     >
-                        <FileInput className="center" accept=".ics" id="import-calendar" onChange={onAttach}>
+                        <FileInput accept=".ics" id="import-calendar" onChange={onAttach}>
                             {c('Action').t`Choose a file or drag it here`}
                         </FileInput>
                     </Dropzone>

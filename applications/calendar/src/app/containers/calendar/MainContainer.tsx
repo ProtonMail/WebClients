@@ -1,6 +1,13 @@
 import { CALENDAR_FLAGS } from 'proton-shared/lib/calendar/constants';
 import React, { useMemo, useState } from 'react';
-import { ErrorBoundary, useAddresses, useCalendars, useUser, useWelcomeFlags } from 'react-components';
+import {
+    ErrorBoundary,
+    StandardErrorPage,
+    useAddresses,
+    useCalendars,
+    useUser,
+    useWelcomeFlags,
+} from 'react-components';
 
 import CalendarFreeContainer from '../setup/CalendarFreeContainer';
 import CalendarOnboardingContainer from '../setup/CalendarOnboardingContainer';
@@ -59,7 +66,7 @@ const MainContainer = () => {
 
 const WrappedMainContainer = () => {
     return (
-        <ErrorBoundary>
+        <ErrorBoundary component={<StandardErrorPage />}>
             <MainContainer />
         </ErrorBoundary>
     );

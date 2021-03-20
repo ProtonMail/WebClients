@@ -59,16 +59,16 @@ const MoreButtons = ({
     const emptyContent = '';
     return (
         <>
-            <Tooltip title={c('Title').t`More options`} className="flex flex-item-noshrink">
+            <Tooltip title={c('Title').t`More options`}>
                 <DropdownButton
                     title={c('Title').t`More options`}
-                    buttonRef={anchorRef}
+                    ref={anchorRef}
                     isOpen={isOpen}
                     onClick={toggle}
                     hasCaret
                     caretClassName=""
                     loading={loadingAction && !isOpen}
-                    className="flex-item-noshrink button button--small"
+                    size="small"
                 >
                     {emptyContent}
                 </DropdownButton>
@@ -274,7 +274,7 @@ const EventPopover = ({
     return (
         <PopoverContainer style={mergedStyle} className={mergedClassName} ref={popoverRef}>
             <PopoverHeader className="flex-item-noshrink" onClose={onClose}>
-                <div className="color-subheader">{dateHeader}</div>
+                <div className="color-weak">{dateHeader}</div>
                 {isCancelled && (
                     <Badge type="error" tooltip={c('Calendar invite info').t`This event has been cancelled`}>
                         {c('Title').t`CANCELLED`}

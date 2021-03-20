@@ -4,7 +4,7 @@ import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import React from 'react';
 import { c } from 'ttag';
-import { classnames, Icon, LinkButton, Tooltip } from 'react-components';
+import { Button, classnames, Icon, Tooltip } from 'react-components';
 import { AttendeeModel } from '../../../interfaces/EventModel';
 
 interface Props {
@@ -25,7 +25,7 @@ const ParticipantRow = ({ attendee, contactEmailsMap, onToggleOptional, onDelete
     const displayFull = contactName && contactName !== contactEmail;
 
     return (
-        <div key={email} className={classnames(['address-item flex mb0-25 pl0-5 pr0-5'])}>
+        <div key={email} className={classnames(['address-item flex mb0-25 pl0-5'])}>
             <div className="flex flex-item-fluid p0-5" title={displayFull ? `${contactName} <${contactEmail}>` : email}>
                 {displayFull ? (
                     <>
@@ -35,23 +35,23 @@ const ParticipantRow = ({ attendee, contactEmailsMap, onToggleOptional, onDelete
                 ) : (
                     <div className="max-w100 text-ellipsis">{email}</div>
                 )}
-                {isOptional ? <span className="color-subheader w100">{c('Label').t`Optional`}</span> : null}
+                {isOptional ? <span className="color-weak w100">{c('Label').t`Optional`}</span> : null}
             </div>
-            <Tooltip title={optionalText} className="w2e flex flex-item-noshrink">
-                <LinkButton
+            <Tooltip title={optionalText}>
+                <Button
+                    icon
+                    shape="ghost"
                     type="button"
-                    className="w2e flex flex-item-noshrink"
+                    className="flex flex-item-noshrink"
                     onClick={() => onToggleOptional(attendee)}
                 >
-                    <Icon name={isOptional ? 'contact' : 'contact-full'} className="mauto" />
-                    <span className="sr-only">{optionalText}</span>
-                </LinkButton>
+                    <Icon name={isOptional ? 'contact' : 'contact-full'} alt={c('Action').t`Remove this participant`} />
+                </Button>
             </Tooltip>
-            <Tooltip title={c('Action').t`Remove this participant`} className="w2e flex flex-item-noshrink ml0-5">
-                <LinkButton type="button" className="w2e flex flex-item-noshrink" onClick={() => onDelete(attendee)}>
-                    <Icon name="trash" className="mauto" />
-                    <span className="sr-only">{c('Action').t`Remove this participant`}</span>
-                </LinkButton>
+            <Tooltip title={c('Action').t`Remove this participant`}>
+                <Button icon shape="ghost" className="flex flex-item-noshrink" onClick={() => onDelete(attendee)}>
+                    <Icon name="trash" alt={c('Action').t`Remove this participant`} />
+                </Button>
             </Tooltip>
         </div>
     );

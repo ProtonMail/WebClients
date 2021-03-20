@@ -12,6 +12,7 @@ import {
     FloatingButton,
     MainLogo,
     SettingsButton,
+    Icon,
 } from 'react-components';
 import { c } from 'ttag';
 import { differenceInCalendarDays } from 'date-fns';
@@ -127,7 +128,11 @@ const CalendarContainerView = ({
         <PrivateHeader
             logo={logo}
             settingsButton={<SettingsButton to="/settings/overview" />}
-            floatingButton={<FloatingButton onClick={onCreateEvent} icon="plus" />}
+            floatingButton={
+                <FloatingButton onClick={onCreateEvent}>
+                    <Icon size={24} name="plus" className="mauto" />
+                </FloatingButton>
+            }
             title={c('Title').t`Calendar`}
             expanded={expanded}
             onToggleExpand={onToggleExpand}

@@ -6,9 +6,9 @@
     max-height: 100%;
     transform-origin: 50%;
     border-radius: $global-border-radius;
-    box-shadow: 0 0 16px 3px $input-shadow-color;
-    background: var(--bgcolor-main-area, $white);
-    color: var(--color-main-area, $pm-global-grey);
+    box-shadow: var(--shadow-lifted);
+    background: var(--background-norm);
+    color: var(--text-norm);
     animation: eventpopoverIn ease 0.15s;
     animation-fill-mode: both;
     // transition: all .25s ease; should be applied only when opened and end of animation <-- this is solved by react-transition-group
@@ -27,29 +27,29 @@
         max-height: 100%;
     }
 
-	.participant {
+    .participant {
 
-		&-status {
-			position: absolute;
-			left: 100%;
-			top: 100%;
-			transform: translate3d(-50%, -50%, 0);
-		}
+        &-status {
+            position: absolute;
+            left: 100%;
+            top: 100%;
+            transform: translate3d(-50%, -50%, 0);
+        }
 
-		+ .participant {
-			margin-top: em(20); // from design
-		}
-	}
+        + .participant {
+            margin-top: em(20); // from design
+        }
+    }
 
-	.partstatIcon {
-		border: em(1) solid transparent;
-		width: em(16); // from design
-		height: em(16); // from design
+    .partstatIcon {
+        border: em(1) solid transparent;
+        width: em(16); // from design
+        height: em(16); // from design
 
-		&.needsAction {
-			border-color: var(--color-main-area, $pm-global-grey);
-		}
-	}
+        &.needsAction {
+            border-color: var(--border-norm);
+        }
+    }
 
     .tabs {
         min-height: 12em;

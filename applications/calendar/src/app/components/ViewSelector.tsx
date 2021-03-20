@@ -31,7 +31,7 @@ const ViewSelector = ({ range, loading = false, disabled = false, view, onChange
                         key={value}
                         type="button"
                         disabled={loading || disabled}
-                        className={classnames(['toolbar-button color-currentColor', v === view && 'is-active'])}
+                        className={classnames(['toolbar-button color-inherit', v === view && 'is-active'])}
                         aria-pressed={v === view ? true : undefined}
                         onClick={() => onChange(value)}
                         {...rest}

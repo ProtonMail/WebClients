@@ -136,11 +136,9 @@ const PopoverEventContent = ({
                 <div className={wrapClassName}>
                     <Icon name="contact" className={iconClassName} />
                     <span className="mr0-5r">{organizerString}</span>
-                    <span className="flex-item-fluid">
-                        <Tooltip className="max-w100 inline-block text-ellipsis" title={organizerTitle}>
-                            {organizerName}
-                        </Tooltip>
-                    </span>
+                    <Tooltip title={organizerTitle}>
+                        <span className="max-w100 inline-block text-ellipsis flex-item-fluid">{organizerName}</span>
+                    </Tooltip>
                 </div>
             ) : null}
             {calendarString ? (

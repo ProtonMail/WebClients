@@ -57,12 +57,7 @@ const CalendarsTable = ({ calendars, defaultCalendarID, onEdit, onSetDefault, on
                                     {isActive && <Badge type="success">{c('Calendar status').t`Active`}</Badge>}
                                     {isDisabled && <Badge type="warning">{c('Calendar status').t`Disabled`}</Badge>}
                                 </div>,
-                                <DropdownActions
-                                    className="button--small"
-                                    key="actions"
-                                    list={list}
-                                    loading={!!loadingMap[ID]}
-                                />,
+                                <DropdownActions size="small" key="actions" list={list} loading={!!loadingMap[ID]} />,
                             ]}
                         />
                     );

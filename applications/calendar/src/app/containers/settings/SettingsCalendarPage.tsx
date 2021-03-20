@@ -1,5 +1,11 @@
 import React, { MutableRefObject } from 'react';
-import { PrivateMainSettingsArea, SettingsPropsShared, RelatedSettingsSection, AppLink } from 'react-components';
+import {
+    PrivateMainSettingsArea,
+    SettingsPropsShared,
+    RelatedSettingsSection,
+    AppLink,
+    ButtonLike,
+} from 'react-components';
 import { Address } from 'proton-shared/lib/interfaces';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { c } from 'ttag';
@@ -76,26 +82,30 @@ const SettingsCalendarPage = ({
                         icon: 'email',
                         text: c('Info').t`Import your old messages and folders into ProtonMail.`,
                         link: (
-                            <AppLink
+                            <ButtonLike
+                                as={AppLink}
                                 to="/settings/import#start-import"
                                 toApp={APPS.PROTONMAIL}
-                                className="button--primary mtauto"
+                                color="norm"
+                                className="mtauto"
                             >
                                 {c('Action').t`Import mailbox`}
-                            </AppLink>
+                            </ButtonLike>
                         ),
                     },
                     {
                         icon: 'contacts',
                         text: c('Info').t`Import your address book or individual contacts into ProtonContacts.`,
                         link: (
-                            <AppLink
+                            <ButtonLike
+                                as={AppLink}
                                 to="/settings/import"
                                 toApp={APPS.PROTONCONTACTS}
-                                className="button--primary mtauto"
+                                color="norm"
+                                className="mtauto"
                             >
                                 {c('Action').t`Import contacts`}
-                            </AppLink>
+                            </ButtonLike>
                         ),
                     },
                 ]}

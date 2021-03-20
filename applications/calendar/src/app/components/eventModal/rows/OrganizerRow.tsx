@@ -30,7 +30,7 @@ const OrganizerRow = ({ model, addresses }: Props) => {
                 ) : (
                     <div className="max-w100 text-ellipsis">{email}</div>
                 )}
-                <span className="color-subheader w100">{c('Label').t`Organizer`}</span>
+                <span className="color-weak w100">{c('Label').t`Organizer`}</span>
             </div>
         </div>
     );

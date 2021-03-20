@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, ErrorButton, FormModal, ResetButton } from 'react-components';
+import { Alert, ErrorButton, FormModal, Button } from 'react-components';
 import { c } from 'ttag';
 import { RECURRING_TYPES } from '../../../constants';
 import { INVITE_ACTION_TYPES, InviteActions, RecurringActionData } from '../../../interfaces/Invite';
@@ -127,7 +127,7 @@ const DeleteRecurringConfirmModal = ({
             title={title}
             small
             submit={<ErrorButton type="submit">{confirm}</ErrorButton>}
-            close={<ResetButton autoFocus>{c('Action').t`Cancel`}</ResetButton>}
+            close={<Button type="reset" autoFocus>{c('Action').t`Cancel`}</Button>}
             onSubmit={handleConfirm}
             {...rest}
         >

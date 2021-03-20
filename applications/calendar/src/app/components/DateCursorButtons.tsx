@@ -51,7 +51,7 @@ const DateCursorButtons = ({ view, range, currentDate, now, dateRange, onToday, 
             <button
                 type="button"
                 data-test-id="calendar-toolbar:today"
-                className="toolbar-button color-currentColor flex-item-noshrink"
+                className="toolbar-button color-inherit flex-item-noshrink"
                 title={todayTitle}
                 onClick={onToday}
             >

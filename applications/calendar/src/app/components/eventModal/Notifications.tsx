@@ -1,5 +1,5 @@
 import React from 'react';
-import { LinkButton, ErrorZone, Icon, classnames, Tooltip, generateUID } from 'react-components';
+import { LinkButton, ErrorZone, classnames, Tooltip, generateUID, Button, Icon } from 'react-components';
 import { c } from 'ttag';
 
 import NotificationInput from './inputs/NotificationInput';
@@ -8,6 +8,7 @@ import { NotificationModel } from '../../interfaces/NotificationModel';
 import { EventModelErrors } from '../../interfaces/EventModel';
 
 export const NOTIFICATION_ID = 'notifications';
+
 interface Props {
     notifications: NotificationModel[];
     hasWhen?: boolean;
@@ -39,18 +40,16 @@ const Notifications = ({
                             onChange={(newNotification) => onChange(updateItem(notifications, index, newNotification))}
                             error={errors?.notifications?.fields.includes(index) ? '' : undefined}
                         />
-                        <Tooltip
-                            title={c('Action').t`Remove this notification`}
-                            className="w2e flex flex-item-noshrink ml0-5"
-                        >
-                            <LinkButton
+                        <Tooltip title={c('Action').t`Remove this notification`}>
+                            <Button
+                                icon
+                                shape="ghost"
                                 data-test-id="delete-notification"
-                                className="w2e flex flex-item-noshrink"
+                                className="flex flex-item-noshrink ml0-5"
                                 onClick={() => onChange(removeItem(notifications, index))}
                             >
-                                <Icon name="trash" className="mauto" />
-                                <span className="sr-only">{c('Action').t`Remove this notification`}</span>
-                            </LinkButton>
+                                <Icon name="trash" alt={c('Action').t`Remove this notification`} />
+                            </Button>
                         </Tooltip>
                     </div>
                 );

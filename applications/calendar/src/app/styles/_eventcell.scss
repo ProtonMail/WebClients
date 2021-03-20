@@ -12,8 +12,8 @@
 	border: solid rgb(0 0 0 / .2);
 	border-width: 1px 1px 1px 5px;
 	border-radius: $global-border-radius;
-	background-color: #{rgba(lighten($pm-global-altgrey, 30%), .5)};
-	color: $black;
+	background-color: var(--background-strong);
+	color: var(--text-norm);
 	font-weight: 500;
 	cursor: pointer;
 	opacity: var(--opacity);
@@ -34,7 +34,7 @@
 	&.isDeclined,
 	&.isCancelled {
 		border-color: var(--color-alt);
-		background-color: var(--bgcolor-main-area, #{$white});
+		background-color: var(--background-norm);
 		color: inherit;
 		text-decoration: line-through;
 	}
@@ -42,7 +42,7 @@
 	&.isUnanswered {
 		border-color: var(--color-alpha);
 		border-left-color: var(--color-alt);
-		background-color: var(--bgcolor-main-area, #{$white});
+		background-color: var(--background-norm);
 		background-image: linear-gradient(105deg, transparent 38%, var(--color-alpha) 42%, var(--color-alpha) 48%, transparent 52%, transparent 88%, var(--color-alpha) 92%, var(--color-alpha) 100%);
 		background-size: 5.18px 19.32px;
 		color: currentColor;
@@ -51,7 +51,7 @@
 	&.isPast {
 		border-color: rgb(0 0 0 / .1);
 		border-left-color: var(--color-alt);
-		background: var(--bgcolor-highlight, $pm-global-muted);
+		background: var(--background-strong);
 		color: inherit;
 
 		&:not(.isSelected) > * {
@@ -62,7 +62,7 @@
 	&.isSelected {
 		z-index: 6;
 		border-color: rgb(0 0 0 / .4);
-		box-shadow: 0 0 1rem 0 rgb(0 0 0 / .25);
+		box-shadow: var(--shadow-norm);
 
 		&.isPast,
 		&.isDeclined,
@@ -109,7 +109,11 @@
 
 			&:hover,
 			&:focus {
-				background-color: var(--bgcolor-input, #f1f3f4);
+				background-color: var(--interaction-default-hover);
+			}
+
+			&:active {
+				background-color: var(--interaction-default-active);
 			}
 		}
 	}
@@ -124,7 +128,7 @@
 	}
 
 	&-circle {
-		color: #{rgba(lighten($pm-global-altgrey, 30%), .5)};
+		color: var(--background-strong);
 	}
 	&-inner.isLoaded &-circle {
 		margin-top: .125em;
