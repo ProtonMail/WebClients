@@ -85,8 +85,15 @@ const UserDropdown = ({ ...rest }) => {
     };
 
     return (
-        <div className="flex" data-cy-header="userDropdown">
-            <UserDropdownButton {...rest} user={user} ref={anchorRef} isOpen={isOpen} onClick={toggle} />
+        <>
+            <UserDropdownButton
+                data-cy-header="userDropdown"
+                {...rest}
+                user={user}
+                ref={anchorRef}
+                isOpen={isOpen}
+                onClick={toggle}
+            />
             <Dropdown
                 id={uid}
                 className="userDropdown"
@@ -200,7 +207,7 @@ const UserDropdown = ({ ...rest }) => {
                     </li>
                 </ul>
             </Dropdown>
-        </div>
+        </>
     );
 };
 

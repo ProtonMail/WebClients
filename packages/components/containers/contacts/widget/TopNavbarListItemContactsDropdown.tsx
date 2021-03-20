@@ -1,22 +1,39 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import { Recipient } from 'proton-shared/lib/interfaces';
-import { Dropdown, Icon, Tabs, usePopperAnchor } from '../../../components';
+import { Dropdown, DropdownButton, Icon, Tabs, usePopperAnchor } from '../../../components';
 import { generateUID } from '../../../helpers';
 import ContactsWidgetContainer from './ContactsWidgetContainer';
 import ContactsWidgetGroupsContainer from './ContactsWidgetGroupsContainer';
 import './ContactsWidget.scss';
+import TopNavbarListItemButton, {
+    TopNavbarListItemButtonProps,
+} from '../../../components/topnavbar/TopNavbarListItemButton';
+
+const TopNavbarListItemContactsButton = React.forwardRef(
+    (props: Omit<TopNavbarListItemButtonProps<'button'>, 'icon' | 'text' | 'as'>, ref: typeof props.ref) => {
+        return (
+            <TopNavbarListItemButton
+                {...props}
+                ref={ref}
+                as="button"
+                type="button"
+                icon={<Icon name="contacts" />}
+                text={c('Header').t`Contacts`}
+            />
+        );
+    }
+);
 
 interface Props {
     className?: string;
     onCompose?: (emails: Recipient[], attachments: File[]) => void;
 }
 
-const ContactsWidget = ({ className, onCompose }: Props) => {
+const TopNavbarListItemContactsDropdown = ({ className, onCompose }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [tabIndex, setTabIndex] = useState(0);
-    const title = c('Header').t`Contacts`;
 
     const handleClose = () => {
         setTabIndex(0);
@@ -25,17 +42,15 @@ const ContactsWidget = ({ className, onCompose }: Props) => {
 
     return (
         <>
-            <button
-                title={title}
-                type="button"
+            <DropdownButton
+                as={TopNavbarListItemContactsButton}
+                isOpen={isOpen}
                 className={className}
-                aria-expanded={isOpen}
                 ref={anchorRef}
                 onClick={toggle}
             >
-                <Icon name="contacts" className="flex-item-noshrink topnav-icon mr0-5 flex-item-centered-vert" />
-                <span className="navigation-title">{title}</span>
-            </button>
+                <></>
+            </DropdownButton>
             <Dropdown
                 id={uid}
                 isOpen={isOpen}
@@ -69,4 +84,4 @@ const ContactsWidget = ({ className, onCompose }: Props) => {
     );
 };
 
-export default ContactsWidget;
+export default TopNavbarListItemContactsDropdown;

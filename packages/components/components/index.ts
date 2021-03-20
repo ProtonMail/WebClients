@@ -56,6 +56,7 @@ export * from './title';
 export * from './toggle';
 export * from './toolbar';
 export * from './tooltip';
+export * from './topnavbar';
 export * from './treeview';
 export * from './version';
 export * from './dropzone';
