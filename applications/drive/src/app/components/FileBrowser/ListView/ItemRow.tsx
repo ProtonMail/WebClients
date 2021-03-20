@@ -100,7 +100,7 @@ const ItemRow = ({
                 className={classnames([
                     'file-browser-list-item no-outline flex',
                     (onClick || secondaryActionActive) && !item.Disabled && 'cursor-pointer',
-                    (isSelected || dragMoveControls?.isActiveDropTarget || item.Disabled) && 'bg-global-highlight',
+                    (isSelected || dragMoveControls?.isActiveDropTarget || item.Disabled) && 'bg-strong',
                     (dragging || item.Disabled) && 'opacity-50',
                 ])}
                 {...itemHandlers}

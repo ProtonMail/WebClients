@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { ToolbarButton } from 'react-components';
+import { Icon, ToolbarButton } from 'react-components';
 
 import { useDriveContent } from '../DriveContentProvider';
 import useToolbarActions from '../../../hooks/drive/useToolbarActions';
@@ -19,7 +19,7 @@ const PreviewButton = ({ disabled }: Props) => {
         <ToolbarButton
             disabled={disabled}
             title={c('Action').t`Preview`}
-            icon="read"
+            icon={<Icon name="read" />}
             onClick={() => {
                 if (selectedItems.length) {
                     preview(selectedItems[0]);

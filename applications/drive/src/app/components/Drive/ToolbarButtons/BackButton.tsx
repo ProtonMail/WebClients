@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { ToolbarButton } from 'react-components';
+import { Icon, ToolbarButton } from 'react-components';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { LinkType } from '../../../interfaces/link';
@@ -25,8 +25,8 @@ const BackButton = ({ shareId, parentLinkId, disabled }: Props) => {
             disabled={disabled}
             title={c('Action').t`Back`}
             onClick={handleBackClick}
-            icon="arrow-left"
             data-testid="toolbar-back"
+            icon={<Icon name="arrow-left" />}
         />
     );
 };

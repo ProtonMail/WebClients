@@ -31,7 +31,7 @@ const EmptyShared = ({ shareId }: Props) => {
             >
                 <p className="m0">{c('Info').t`Create links and share your files with others.`}</p>
                 <div className="mt2 flex flex-column flex-nowrap w200p flex-item-noshrink">
-                    <PrimaryButton className="button--large text-bold mt0-25 w100" onClick={onShareFile}>
+                    <PrimaryButton size="large" className="text-bold mt0-25 w100" onClick={onShareFile}>
                         {c('Action').t`Share file`}
                     </PrimaryButton>
                 </div>

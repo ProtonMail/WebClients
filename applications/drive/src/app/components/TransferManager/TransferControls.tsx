@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, useLoading, usePreventLeave } from 'react-components';
+import { Icon, Button, useLoading, usePreventLeave } from 'react-components';
 import { c } from 'ttag';
 import { useUploadProvider } from '../uploads/UploadProvider';
 import {
@@ -123,35 +123,37 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
     return (
         <div className="transfers-manager-list-item-controls flex flex-nowrap flex-justify-end">
             {isPauseResumeAvailable && (
-                <button
+                <Button
+                    icon
                     type="button"
                     onClick={togglePause}
                     disabled={pauseInProgress}
-                    className="transfers-manager-list-item-controls-button button button--for-icon flex flex-item-noshrink"
+                    className="transfers-manager-list-item-controls-button"
                     title={isTransferPaused(transfer) ? resumeText : pauseText}
                 >
                     <Icon size={12} name={isTransferPaused(transfer) ? 'resume' : 'pause'} />
-                </button>
+                </Button>
             )}
             {isRestartAvailable && (
-                <button
-                    type="button"
+                <Button
+                    icon
                     onClick={restartTransfer}
-                    className="transfers-manager-list-item-controls-button button button--for-icon flex flex-item-noshrink"
+                    className="transfers-manager-list-item-controls-button"
                     title={restartText}
                 >
                     <Icon size={12} name="repeat" />
-                </button>
+                </Button>
             )}
-            <button
+            <Button
+                icon
                 type="button"
                 disabled={isFinalizing}
                 onClick={handleCancelClick}
-                className="transfers-manager-list-item-controls-button button button--for-icon flex flex-item-noshrink"
+                className="transfers-manager-list-item-controls-button"
                 title={isFinished ? removeText : cancelText}
             >
                 <Icon size={12} name={isFinished ? 'swipe' : 'off'} />
-            </button>
+            </Button>
         </div>
     );
 }

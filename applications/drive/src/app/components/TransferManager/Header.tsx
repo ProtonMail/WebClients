@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { c, msgid } from 'ttag';
-import { Icon, Tooltip, classnames } from 'react-components';
+import { Icon, Tooltip, classnames, Button } from 'react-components';
 import { Download, Upload } from '../../interfaces/transfer';
 import {
     isTransferActive,
@@ -146,7 +146,7 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
     const closeTitle = c('Action').t`Close transfers`;
 
     return (
-        <div className="transfers-manager-heading flex flex-align-items-center flex-nowrap pl0-5 pr0-5 color-global-light">
+        <div className="transfers-manager-heading ui-prominent flex flex-align-items-center flex-nowrap pl0-5 pr0-5">
             <div
                 role="presentation"
                 className="flex-item-fluid p0-5"
@@ -156,11 +156,12 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
             >
                 {getHeadingText()}
             </div>
-            <Tooltip title={minMaxTitle} className="transfers-manager-heading-tooltip flex-item-noshrink flex">
-                <button
+            <Tooltip title={minMaxTitle}>
+                <Button
+                    icon
                     ref={minimizeRef}
                     type="button"
-                    className="transfers-manager-heading-button p0-5 flex"
+                    shape="ghost"
                     onClick={() => {
                         onToggleMinimize();
                         minimizeRef.current?.blur();
@@ -169,16 +170,12 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
                 >
                     <Icon className={classnames(['mauto', minimized && 'rotateX-180'])} name="minimize" />
                     <span className="sr-only">{minMaxTitle}</span>
-                </button>
+                </Button>
             </Tooltip>
-            <Tooltip
-                title={closeTitle}
-                className={classnames(['transfers-manager-heading-tooltip flex-item-noshrink flex'])}
-            >
-                <button type="button" className="transfers-manager-heading-button flex p0-5" onClick={onClose}>
-                    <Icon className="mauto" name="off" />
-                    <span className="sr-only">{closeTitle}</span>
-                </button>
+            <Tooltip title={closeTitle}>
+                <Button icon type="button" shape="ghost" onClick={onClose}>
+                    <Icon className="mauto" name="off" alt={closeTitle} />
+                </Button>
             </Tooltip>
         </div>
     );

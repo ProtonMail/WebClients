@@ -73,25 +73,29 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
         <div
             className={classnames([
                 'text-ellipsis flex-no-min-children flex-align-items-center flex-nowrap',
-                isTransferPaused(transfer) && 'color-global-info',
-                isTransferDone(transfer) && 'color-global-success',
-                isTransferError(transfer) && 'color-global-warning',
+                isTransferPaused(transfer) && 'color-info',
+                isTransferDone(transfer) && 'color-success',
+                isTransferError(transfer) && 'color-danger',
             ])}
             id={transfer.id}
             title={transferTitle}
         >
             {/* Mobile icon */}
             {statusInfo.icon && !isTransferProgress(transfer) && (
-                <Tooltip title={errorText} originalPlacement="top" className="flex-item-noshrink no-desktop no-tablet">
-                    <Icon name={errorText ? 'info' : statusInfo.icon} alt={statusInfo.text} />
+                <Tooltip title={errorText} originalPlacement="top">
+                    <span className="flex-item-noshrink no-desktop no-tablet">
+                        <Icon name={errorText ? 'info' : statusInfo.icon} alt={statusInfo.text} />
+                    </span>
                 </Tooltip>
             )}
 
             {/* Desktop text */}
             <span className="no-mobile flex flex-align-items-center">
                 {errorText && (
-                    <Tooltip title={errorText} originalPlacement="top" className="flex mr0-5">
-                        <Icon name="info" />
+                    <Tooltip title={errorText} originalPlacement="top">
+                        <span className="flex mr0-5">
+                            <Icon name="info" />
+                        </span>
                     </Tooltip>
                 )}
                 {statusInfo.text}

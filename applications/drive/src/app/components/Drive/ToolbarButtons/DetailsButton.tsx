@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { ToolbarButton } from 'react-components';
+import { Icon, ToolbarButton } from 'react-components';
 
 import useToolbarActions from '../../../hooks/drive/useToolbarActions';
 import { useDriveContent } from '../DriveContentProvider';
@@ -20,7 +20,7 @@ const DetailsButton = ({ disabled }: Props) => {
         <ToolbarButton
             disabled={disabled}
             title={c('Action').t`Details`}
-            icon="info"
+            icon={<Icon name="info" />}
             onClick={() => {
                 if (selectedItems.length === 1) {
                     openDetails(selectedItems[0]);

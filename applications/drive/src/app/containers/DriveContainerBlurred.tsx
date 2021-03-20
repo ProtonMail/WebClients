@@ -8,6 +8,7 @@ import {
     PrivateMainArea,
     CollapsingBreadcrumbs,
     ModalsChildren,
+    Icon,
 } from 'react-components';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -32,7 +33,11 @@ const DriveContainerBlurred = () => {
     const header = (
         <DriveHeader
             logo={logo}
-            floatingPrimary={<FloatingButton title={c('Action').t`New upload`} icon="plus" />}
+            floatingPrimary={
+                <FloatingButton title={c('Action').t`New upload`}>
+                    <Icon size={24} name="plus" className="mauto" />
+                </FloatingButton>
+            }
             isHeaderExpanded={expanded}
             toggleHeaderExpanded={toggleExpanded}
         />

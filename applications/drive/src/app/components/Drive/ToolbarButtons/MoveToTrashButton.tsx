@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { ToolbarButton, useLoading } from 'react-components';
+import { Icon, ToolbarButton, useLoading } from 'react-components';
 
 import useToolbarActions from '../../../hooks/drive/useToolbarActions';
 import { useDriveContent } from '../DriveContentProvider';
@@ -20,7 +20,7 @@ const MoveToTrashButton = ({ disabled }: Props) => {
         <ToolbarButton
             disabled={disabled || moveToTrashLoading}
             title={c('Action').t`Move to trash`}
-            icon="trash"
+            icon={<Icon name="trash" />}
             onClick={() => withMoveToTrashLoading(openMoveToTrash(selectedItems))}
             data-testid="toolbar-trash"
         />

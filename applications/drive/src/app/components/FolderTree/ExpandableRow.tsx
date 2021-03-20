@@ -76,7 +76,7 @@ const ExpandableRow = ({
     return (
         <>
             <tr
-                className={classnames(['folder-tree-list-item cursor-pointer', isSelected && 'bg-global-highlight'])}
+                className={classnames(['folder-tree-list-item cursor-pointer', isSelected && 'bg-strong'])}
                 onClick={handleSelect(linkId)}
             >
                 <td style={{ paddingLeft }} className="flex flex-align-items-center flex-nowrap m0">
@@ -94,7 +94,10 @@ const ExpandableRow = ({
                             <Icon size={12} name="caret" className={expanded ? 'rotateX-180' : undefined} />
                         </Button>
                     </div>
-                    <div key="Name" className="folder-tree-list-item-name flex flex-align-items-center flex-nowrap w100">
+                    <div
+                        key="Name"
+                        className="folder-tree-list-item-name flex flex-align-items-center flex-nowrap w100"
+                    >
                         <FileIcon mimeType={type === LinkType.FOLDER ? 'Folder' : mimeType} />
                         <span className="text-ellipsis" title={name}>
                             {name}
@@ -102,8 +105,8 @@ const ExpandableRow = ({
                     </div>
                     {isSelected && (
                         <div className="folder-tree-list-item-selected flex flex-item-noshrink">
-                            <span className="inline-flex bg-pm-blue rounded50 folder-tree-list-item-selected-check">
-                                <Icon name="on" className="stroke-global-light p0-25" size={16} />
+                            <span className="inline-flex bg-primary rounded50 folder-tree-list-item-selected-check">
+                                <Icon name="on" className="p0-25" size={16} />
                             </span>
                         </div>
                     )}

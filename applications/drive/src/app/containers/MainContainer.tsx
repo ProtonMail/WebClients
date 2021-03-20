@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { LoaderPage, ModalsChildren, useLoading, useWelcomeFlags } from 'react-components';
+import { LoaderPage, LocationErrorBoundary, ModalsChildren, useLoading, useWelcomeFlags } from 'react-components';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { noop } from 'proton-shared/lib/helpers/function';
 
@@ -11,7 +11,6 @@ import { DownloadProvider } from '../components/downloads/DownloadProvider';
 import TrashContainer from './TrashContainer/TrashContainer';
 import DriveContainer from './DriveContainer/DriveContainer';
 import TransferManager from '../components/TransferManager/TransferManager';
-import DriveErrorBoundary from '../components/DriveErrorBoundary';
 import useDrive from '../hooks/drive/useDrive';
 import NoAccessContainer from './NoAccessContainer/NoAccessContainer';
 import OnboardingContainer from './OnboardingContainer';
@@ -78,7 +77,7 @@ const InitContainer = () => {
 
 const MainContainer = () => {
     return (
-        <DriveErrorBoundary>
+        <LocationErrorBoundary>
             <DriveEventManagerProvider>
                 <DriveCacheProvider>
                     <DriveFolderProvider>
@@ -90,7 +89,7 @@ const MainContainer = () => {
                     </DriveFolderProvider>
                 </DriveCacheProvider>
             </DriveEventManagerProvider>
-        </DriveErrorBoundary>
+        </LocationErrorBoundary>
     );
 };
 

@@ -1,12 +1,5 @@
 .field.field--accented,
 .accented {
-    @extend .color-primary;
-    @extend .text-strong;
-}
-
-.isDarkMode {
-    .field.field--accented,
-    .accented {
-        @extend .color-white;
-    }
+    color: var(--primary);
+    font-weight: bold;
 }

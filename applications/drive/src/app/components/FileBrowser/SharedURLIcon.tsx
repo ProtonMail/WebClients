@@ -9,11 +9,10 @@ interface Props {
 
 const SharedURLIcon = ({ expired }: Props) => {
     return (
-        <Tooltip
-            title={expired ? c('Tooltip').t`Expired sharing link` : c('Tooltip').t`Active sharing link`}
-            className="ml1 flex flex-item-noshrink"
-        >
-            <Icon className={!expired ? 'color-primary' : ''} name="link" />
+        <Tooltip title={expired ? c('Tooltip').t`Expired sharing link` : c('Tooltip').t`Active sharing link`}>
+            <span className="ml1 flex flex-item-noshrink">
+                <Icon className={!expired ? 'color-norm' : undefined} name="link" />
+            </span>
         </Tooltip>
     );
 };

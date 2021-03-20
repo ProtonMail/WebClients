@@ -6,12 +6,7 @@ interface Props {
 }
 
 const ReloadSpinner = ({ refreshing = false }: Props) => {
-    return (
-        <Icon
-            className={classnames(['mr0-5 color-global-light', refreshing && 'location-refresh-rotate'])}
-            name="reload"
-        />
-    );
+    return <Icon className={classnames(['mr0-5', refreshing && 'location-refresh-rotate'])} name="reload" />;
 };
 
 export default ReloadSpinner;

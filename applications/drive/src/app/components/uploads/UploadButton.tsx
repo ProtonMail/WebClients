@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { classnames, FloatingButton, SidebarPrimaryButton } from 'react-components';
+import { classnames, FloatingButton, Icon, SidebarPrimaryButton } from 'react-components';
 
 import { useDriveActiveFolder } from '../Drive/DriveFolderProvider';
 import useFileUploadInput from '../../hooks/drive/useFileUploadInput';
@@ -30,8 +30,9 @@ const UploadButton = ({ floating, className }: Props) => {
                     disabled={!folder?.shareId}
                     onClick={handleClick}
                     title={c('Action').t`New upload`}
-                    icon="plus"
-                />
+                >
+                    <Icon size={24} name="plus" className="mauto" />
+                </FloatingButton>
             ) : (
                 <SidebarPrimaryButton className={className} disabled={!folder?.shareId} onClick={handleClick}>{c(
                     'Action'
@@ -40,5 +41,4 @@ const UploadButton = ({ floating, className }: Props) => {
         </>
     );
 };
-
 export default UploadButton;

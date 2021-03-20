@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { ToolbarButton } from 'react-components';
+import { Icon, ToolbarButton } from 'react-components';
 
 import useToolbarActions from '../../../hooks/drive/useToolbarActions';
 import { useSharedLinksContent } from '../SharedLinksContentProvider';
@@ -20,7 +20,7 @@ const StopSharingButton = ({ shareId, disabled }: Props) => {
         <ToolbarButton
             disabled={disabled}
             title={c('Action').t`Stop sharing`}
-            icon="broken-link"
+            icon={<Icon name="broken-link" />}
             onClick={() => openStopSharing(shareId, selectedItems)}
             data-testid="toolbar-button-stop-sharing"
         />
