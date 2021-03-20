@@ -3,17 +3,17 @@ import { APPS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
-import { Hamburger } from '../../components';
+import { AppLink, Hamburger, Icon } from '../../components';
 import { useConfig, useUser, usePlans, useSubscription, usePaidCookie } from '../../hooks';
 import Header, { Props as HeaderProps } from '../../components/header/Header';
 
 import UserDropdown from './UserDropdown';
-import TopNavbarLink from '../../components/link/TopNavbarLink';
-import { TopNavbarItem } from '../app/TopNavbar';
-import { AppsDropdown, TopNavbar } from '../app';
-import HelpDropdown from './HelpDropdown';
-import BlackFridayButton from './BlackFridayButton';
+import { AppsDropdown } from '../app';
+import TopNavbarListItemHelpDropdown from './TopNavbarListItemHelpDropdown';
+import TopNavbarListItemBlackFridayButton from './TopNavbarListItemBlackFridayButton';
 import useBlackFriday from './useBlackFriday';
+import { TopNavbar, TopNavbarList, TopNavbarListItem } from '../../components/topnavbar';
+import TopNavbarListItemButton from '../../components/topnavbar/TopNavbarListItemButton';
 
 interface Props extends HeaderProps {
     logo?: React.ReactNode;
@@ -56,16 +56,19 @@ const PrivateHeader = ({
     if (backUrl) {
         return (
             <Header>
-                <TopNavbarLink
+                <TopNavbarListItemButton
                     data-test-id="view:general-back"
+                    as={AppLink}
                     to={backUrl}
-                    icon="arrow-left"
+                    icon={<Icon name="arrow-left" />}
                     text={c('Title').t`Back`}
                 />
                 <TopNavbar>
-                    <TopNavbarItem>
-                        <UserDropdown />
-                    </TopNavbarItem>
+                    <TopNavbarList>
+                        <TopNavbarListItem>
+                            <UserDropdown />
+                        </TopNavbarListItem>
+                    </TopNavbarList>
                 </TopNavbar>
             </Header>
         );
@@ -83,34 +86,42 @@ const PrivateHeader = ({
             {title && isNarrow ? <span className="text-lg lh-rg mtauto mbauto text-ellipsis">{title}</span> : null}
             {isNarrow ? null : searchBox}
             <TopNavbar>
-                {isNarrow && searchDropdown ? <TopNavbarItem>{searchDropdown}</TopNavbarItem> : null}
-                {showBlackFridayButton ? (
-                    <TopNavbarItem>
-                        <BlackFridayButton plans={plans} subscription={subscription} />
-                    </TopNavbarItem>
-                ) : null}
-                {hasPaidMail || isNarrow || isVPN ? null : (
-                    <TopNavbarItem>
-                        <TopNavbarLink
-                            text={c('Link').t`Upgrade`}
-                            icon="upgrade-to-paid"
-                            to="/subscription"
-                            toApp={getAccountSettingsApp()}
-                            title={c('Link').t`Upgrade`}
-                        />
-                    </TopNavbarItem>
-                )}
-                {hasPaidVpn || isNarrow || !isVPN ? null : (
-                    <TopNavbarItem>
-                        <TopNavbarLink text={c('Link').t`Upgrade`} icon="upgrade-to-paid" to="/dashboard" />
-                    </TopNavbarItem>
-                )}
-                {!contactsButton ? null : <TopNavbarItem>{contactsButton}</TopNavbarItem>}
-                {!settingsButton ? null : <TopNavbarItem>{settingsButton}</TopNavbarItem>}
-                <TopNavbarItem>{helpDropdown || <HelpDropdown />}</TopNavbarItem>
-                <TopNavbarItem className="relative">
-                    <UserDropdown />
-                </TopNavbarItem>
+                <TopNavbarList>
+                    {isNarrow && searchDropdown ? <TopNavbarListItem>{searchDropdown}</TopNavbarListItem> : null}
+                    {showBlackFridayButton ? (
+                        <TopNavbarListItem noShrink>
+                            <TopNavbarListItemBlackFridayButton plans={plans} subscription={subscription} />
+                        </TopNavbarListItem>
+                    ) : null}
+                    {hasPaidMail || isNarrow || isVPN ? null : (
+                        <TopNavbarListItem noShrink>
+                            <TopNavbarListItemButton
+                                as={AppLink}
+                                text={c('Link').t`Upgrade`}
+                                icon={<Icon name="upgrade-to-paid" />}
+                                to="/subscription"
+                                toApp={getAccountSettingsApp()}
+                                title={c('Link').t`Upgrade`}
+                            />
+                        </TopNavbarListItem>
+                    )}
+                    {hasPaidVpn || isNarrow || !isVPN ? null : (
+                        <TopNavbarListItem noShrink>
+                            <TopNavbarListItemButton
+                                as={AppLink}
+                                text={c('Link').t`Upgrade`}
+                                icon={<Icon name="upgrade-to-paid" />}
+                                to="/dashboard"
+                            />
+                        </TopNavbarListItem>
+                    )}
+                    {!contactsButton ? null : <TopNavbarListItem noShrink>{contactsButton}</TopNavbarListItem>}
+                    {!settingsButton ? null : <TopNavbarListItem noShrink>{settingsButton}</TopNavbarListItem>}
+                    <TopNavbarListItem noShrink>{helpDropdown || <TopNavbarListItemHelpDropdown />}</TopNavbarListItem>
+                    <TopNavbarListItem className="relative">
+                        <UserDropdown />
+                    </TopNavbarListItem>
+                </TopNavbarList>
             </TopNavbar>
             {isNarrow && floatingButton ? floatingButton : null}
         </Header>
