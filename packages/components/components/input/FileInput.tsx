@@ -1,9 +1,6 @@
-import React, { ChangeEvent, forwardRef, useRef, useImperativeHandle } from 'react';
+import React, { ChangeEvent, forwardRef, useRef } from 'react';
 import { ButtonLike } from '../button';
-
-export interface FileInputHandle {
-    click: () => void;
-}
+import { useCombinedRefs } from '../../hooks';
 
 export interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     children: React.ReactNode;
@@ -12,29 +9,32 @@ export interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-const FileInput = ({ children, id = 'fileInput', className, onChange, ...rest }: Props, ref) => {
+const FileInput = (
+    { children, id = 'fileInput', className, onChange, ...rest }: Props,
+    ref: React.Ref<HTMLInputElement>
+) => {
     const inputRef = useRef<HTMLInputElement>(null);
-
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        onChange(e);
-        if (inputRef.current) {
-            // Reset it to allow to select the same file again.
-            inputRef.current.value = '';
-        }
-    };
-
-    useImperativeHandle(ref, () => ({
-        click: () => {
-            inputRef.current?.click();
-        },
-    }));
+    const combinedRef = useCombinedRefs(inputRef, ref);
 
     return (
         <ButtonLike as="label" htmlFor={id}>
-            <input id={id} type="file" className="hidden" onChange={handleChange} {...rest} ref={inputRef} />
+            <input
+                id={id}
+                type="file"
+                className="hidden"
+                onChange={(e) => {
+                    onChange(e);
+                    if (inputRef.current) {
+                        // Reset it to allow to select the same file again.
+                        inputRef.current.value = '';
+                    }
+                }}
+                {...rest}
+                ref={combinedRef}
+            />
             {children}
         </ButtonLike>
     );
 };
 
-export default forwardRef<FileInputHandle, Props>(FileInput);
+export default forwardRef<HTMLInputElement, Props>(FileInput);

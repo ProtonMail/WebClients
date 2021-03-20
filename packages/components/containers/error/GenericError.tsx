@@ -6,7 +6,7 @@ import errorImgLight from 'design-system/assets/img/shared/generic-error.svg';
 import errorImgDark from 'design-system/assets/img/shared/generic-error-dark.svg';
 
 import IllustrationPlaceholder from '../illustration/IllustrationPlaceholder';
-import { InlineLinkButton } from '../../components';
+import InlineLinkButton from '../../components/button/InlineLinkButton';
 
 interface Props {
     className?: string;
