@@ -11,7 +11,7 @@ import {
     PrivateAppContainer,
     FloatingButton,
     MainLogo,
-    SettingsButton,
+    TopNavbarListItemSettingsButton,
     Icon,
 } from 'react-components';
 import { c } from 'ttag';
@@ -127,7 +127,7 @@ const CalendarContainerView = ({
     const header = (
         <PrivateHeader
             logo={logo}
-            settingsButton={<SettingsButton to="/settings/overview" />}
+            settingsButton={<TopNavbarListItemSettingsButton to="/settings/overview" />}
             floatingButton={
                 <FloatingButton onClick={onCreateEvent}>
                     <Icon size={24} name="plus" className="mauto" />
