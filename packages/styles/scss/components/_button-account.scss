@@ -1,6 +1,6 @@
 .button-account {
 	&-container {
-		border: 1px solid var(--bordercolor-input, $pm-global-muted); // inconsistent with borders...
+		border: 1px solid var(--border-norm); // inconsistent with borders...
 		max-height: 50vh;
 
 		@include respond-to($breakpoint-small) {
@@ -8,7 +8,7 @@
 		}
 
 		&-inner {
-			border-right: 1px solid var(--bordercolor-input, $pm-global-muted); // inconsistent with borders...
+			border-right: 1px solid var(--border-norm); // inconsistent with borders...
 		}
 	}
 
@@ -22,7 +22,8 @@
 	&:focus,
 	&:hover,
 	&:active {
-		background-color: var(--bgcolor-input, $pm-input-background);
+		background-color: var(--background-norm);
+		color: var(--text-norm);
 
 		.button-account-login {
 			opacity: 1;

@@ -15,14 +15,14 @@
 
 // Theme color overrides
 // REMOVE THIS AS SOON AS POSSIBLE!
-:root {
+:root,
+.ui-standard,
+.ui-prominent {
 	--primary: #4da358 !important;
 	--primary-contrast: white !important;
+
 	--interaction-norm: #4da358 !important;
 	--interaction-norm-hover: #3e8447 !important;
 	--interaction-norm-active: #2e7037 !important;
 	--interaction-norm-contrast: white !important;
-
-	--toggle-active-bg: #3e8447 !important;
-	--toggle-active-focus-bg: #2e7037 !important;
 }

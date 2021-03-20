@@ -7,9 +7,10 @@
 	min-height: 80%;
 	max-height: calc(5 * 2.3em);
 	overflow: scroll;
-	background-color: var(--bgcolor-input, $pm-input-background);
-	box-shadow: 0 0 10px 0 $input-shadow-color;
-	border: 1px solid var(--bordercolor-input, $input-defaut-border);
+	background-color: var(--background-norm);
+	box-shadow: var(--shadow-lifted);
+	color: var(--text-norm);
+	border: 1px solid var(--border-norm);
 	transform: translateY(-1.5em);
 	opacity: 0;
 	transition: transform 100ms ease-in, opacity 100ms ease-out 20ms;
@@ -21,24 +22,17 @@
 	}
 
 	div {
-		transition: background-color 100ms ease-out;
+		@extend .interactive;
 
 		&.selected {
-			background-color: #{rgba($pm-primary, 0.2)};
-		}
-
-		&:hover,
-		&:active,
-		&:focus {
-			background-color: var(
-				--bordercolor-input,
-				$autocomplete-bg-color-hover
-			);
+			background-color: var(--interaction-norm);
+			color: var(--interaction-norm-contrast);
+			pointer-events: none;
 		}
 	}
 
-	.button.button--link {
-		color: var(--color-input, $pm-global-grey);
+	.button.button-link {
+		color: inherit;
 	}
 
 	&--open {

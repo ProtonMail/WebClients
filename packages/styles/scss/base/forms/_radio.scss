@@ -1,0 +1,36 @@
+.radio-fakeradio {
+	@extend .checkbox-fakecheck;
+	border-radius: 50%;
+}
+
+.radio--ontop .radio-fakeradio {
+	margin-top: 0.25em;
+}
+
+.radio-fakeradio::before {
+	content: '';
+	margin: auto;
+	width: 0.8rem;
+	height: 0.8rem;
+	border-radius: 50%;
+	background: transparent;
+	transform: scale(0);
+	transition: 0.15s transform linear;
+}
+
+.radio {
+	@extend .sr-only;
+
+	&:checked + .radio-fakeradio::before {
+		background: var(--interaction-norm);
+		transform: scale(1);
+	}
+
+	&:focus + .radio-fakeradio {
+		border-color: var(--interaction-norm);
+	}
+
+	&[disabled] + .radio-fakeradio {
+		border-color: var(--field-disabled);
+	}
+}

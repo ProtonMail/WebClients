@@ -2,11 +2,11 @@
  * Button shape
  */
 .button-henlo {
-	// design want 34px height
-	padding: em(5) em(16) em(6);
+	display: inline-block;
+	padding: em(7) em(16) em(7);
 
 	// usage of box-shadow instead of border to enable increasing size of _visual_ border without shifting button size
-	box-shadow: inset 0 0 0 var(--button-default-box-shadow-width, 0)
+	box-shadow: inset 0 0 0 var(--button-default-border-width, 0)
 		var(--button-default-border-color, transparent);
 
 	border: none;
@@ -14,6 +14,7 @@
 	outline: none; // be careful of a11y
 	background-color: var(--button-default-background-color, transparent);
 	color: var(--button-default-text-color, inherit);
+	text-align: center;
 	transition: 0.15s easing(easeOutQuint), background-position 0s;
 
 	&,
@@ -28,8 +29,7 @@
 	&:focus,
 	&:focus-within,
 	&.is-hover {
-		border-color: var(--button-hover-border-color, transparent);
-		box-shadow: inset 0 0 0 var(--button-hover-box-shadow-width, 0)
+		box-shadow: inset 0 0 0 var(--button-hover-border-width, 0)
 			var(--button-hover-border-color, transparent);
 		background-color: var(--button-hover-background-color, transparent);
 		color: var(--button-hover-text-color, inherit);
@@ -38,8 +38,7 @@
 	&:not(div):active,
 	// not(div) prevents active state in case of button groups with dropdowns
 	&.is-active {
-		border-color: var(--button-active-border-color, transparent);
-		box-shadow: inset 0 0 0 var(--button-active-box-shadow-width, 0)
+		box-shadow: inset 0 0 0 var(--button-active-border-width, 0)
 			var(--button-active-border-color, transparent);
 		background-color: var(--button-active-background-color, transparent);
 		color: var(--button-active-text-color, inherit);
@@ -56,6 +55,44 @@
 
 	&[aria-expanded='true'] .caret-like {
 		@extend .rotateX-180;
+	}
+}
+
+/*
+ * Link shape
+ */
+.button-link {
+	display: inline-block;
+	padding: em(5) 0 em(6);
+	outline: none; // be careful of a11y
+	color: var(--button-default-text-color, inherit);
+	text-decoration: underline;
+
+	&:hover,
+	&:focus,
+	&:focus-within,
+	&:active {
+		text-decoration: none;
+	}
+
+	&:hover,
+	&:focus,
+	&:focus-within {
+		color: var(--button-hover-text-color, inherit);
+	}
+
+	&:not(div):active,
+	&.is-active {
+		color: var(--button-active-text-color, inherit);
+	}
+
+	&[disabled],
+	&.is-disabled {
+		pointer-events: none;
+
+		&:not([aria-busy='true']) {
+			opacity: 0.5;
+		}
 	}
 }
 
@@ -84,7 +121,7 @@
 
 	// Outline shape
 	.button-outline-#{$color} {
-		--button-default-box-shadow-width: 1px;
+		--button-default-border-width: 1px;
 		--button-default-border-color: var(--#{$group + $color});
 
 		@if $color == 'weak' {
@@ -94,7 +131,7 @@
 		}
 
 		@each $state in (hover, active) {
-			--button-#{$state}-box-shadow-width: 2px;
+			--button-#{$state}-border-width: 2px;
 			--button-#{$state}-border-color: var(
 				--#{$group + $color}-#{$state}
 			);
@@ -111,7 +148,7 @@
 
 	// Ghost shape
 	.button-ghost-#{$color} {
-		--button-default-background-color: var(--interaction-ghost);
+		--button-default-background-color: var(--interaction-default);
 
 		@if $color == 'weak' {
 			--button-default-text-color: var(--text-norm);
@@ -121,9 +158,28 @@
 
 		@each $state in (hover, active) {
 			--button-#{$state}-background-color: var(
-				--interaction-ghost-#{$state}
+				--interaction-default-#{$state}
 			);
 
+			@if $color == 'weak' {
+				--button-#{$state}-text-color: var(--text-norm);
+			} @else {
+				--button-#{$state}-text-color: var(
+					--#{$group + $color}-#{$state}
+				);
+			}
+		}
+	}
+
+	// Link shape
+	.button-link-#{$color} {
+		@if $color == 'weak' {
+			--button-default-text-color: var(--text-weak);
+		} @else {
+			--button-default-text-color: var(--#{$group + $color});
+		}
+
+		@each $state in (hover, active) {
 			@if $color == 'weak' {
 				--button-#{$state}-text-color: var(--text-norm);
 			} @else {
@@ -148,14 +204,14 @@
 }
 
 .button-for-icon {
-	padding: em(8);
+	padding: em(9.5) em(10); // To have same height as fields
 
 	&.button-small {
-		padding: em(4);
+		padding: em(4) em(6);
 	}
 
 	&.button-large {
-		padding: em(12);
+		padding: em(12) em(14);
 	}
 
 	svg {
@@ -167,24 +223,36 @@
 	border-radius: 2em;
 }
 
-.button-link {
-	padding: em(5) 0 em(6);
-	color: var(--interaction-norm);
-	text-decoration: underline;
+/*
+ * Interactive gives only default colors on every states
+ */
+.interactive {
+	outline: none; // be careful of a11y
+	background-color: var(--interaction-default);
+	color: inherit;
+	transition: 0.15s easing(easeOutQuint), background-position 0s;
 
+	&:hover,
 	&:focus,
-	&:hover {
-		color: var(--interaction-norm-hover);
+	&:focus-within {
+		background-color: var(--interaction-default-hover);
+		color: inherit;
 	}
+
 	&:not(div):active,
-	&:active {
-		color: var(--interaction-norm-active);
+	&.is-active,
+	&[aria-expanded='true'] {
+		background-color: var(--interaction-default-active);
+		color: inherit;
 	}
 
 	&[disabled],
 	&.is-disabled {
-		color: var(--interaction-norm-disabled);
 		pointer-events: none;
+
+		&:not([aria-busy='true']) {
+			opacity: 0.5;
+		}
 	}
 }
 
@@ -204,5 +272,41 @@
 	.mr0-5 {
 		flex: 1 1 0px;
 		@extend .text-ellipsis;
+	}
+}
+
+/*
+ * Button group
+*/
+.grouped-buttons {
+	@extend .inline-flex;
+	@extend .flex-nowrap;
+}
+
+.grouped-button {
+	border-radius: 0;
+
+	&[class*='button-outline'] {
+		margin-right: -1px; // Border size
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		position: relative;
+	}
+}
+
+.grouped-buttons > .grouped-button:first-child {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.grouped-buttons > .grouped-button:last-child {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+
+	&[class*='button-outline'] {
+		margin-right: 0;
 	}
 }

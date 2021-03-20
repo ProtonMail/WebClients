@@ -28,13 +28,13 @@
 			border-radius: 50%;
 			z-index: 2;
 			background: currentColor;
-			border: 2px solid var(--bgcolor-main-area, white);
+			border: 2px solid var(--background-norm);
 			pointer-events: none;
 			transition: border 0.1s ease-out;
 		}
 
 		&.is-selected &-mask {
-			border: 3px solid rgb(0 0 0 / 0.1);
+			border: 3px solid rgb(0 0 0 / 0.2);
 		}
 
 		svg {

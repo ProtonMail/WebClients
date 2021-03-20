@@ -1,222 +1,65 @@
-/* dark-mode
- * Come to the Dark Mode, we have wookies
+/*
+ * Dark theme
  */
-
-@import '../../_sass/pm-styles/pm-buttons-mixins';
-
-// forms/buttons
-.button:not(.button-blue):not(.pv-button-green):not(.button--primary):not(.button--primaryborderEvenInDarkMode):not(.button--link):not(.button--error):not(.button--warning):not(.button--redborder):not(.button--primaryborder):not(.button--primaryborder-dark),
-.button--info {
-	@include button-dark;
-}
-
-// didn’t used extend, not possible in @media for design system website
-$primary-border-blue-selectors: '.button-blueborder';
-@if ($pm-primary == $pm-blue) {
-	$primary-border-blue-selectors: $primary-border-blue-selectors +
-		', .button--primaryborder';
-}
-#{$primary-border-blue-selectors} {
-	@include button-blueborder-dark;
-}
-
-$primary-border-green-selectors: '.pv-button-greenborder';
-@if ($pm-primary == $pv-green) {
-	$primary-border-green-selectors: $primary-border-green-selectors +
-		', .button--primaryborder';
-}
-#{$primary-border-green-selectors} {
-	@include pv-button-greenborder-dark;
-}
-
-.button--redborder,
-.button.button--redborder {
-	background-color: transparent;
-	&:focus,
-	&:hover,
-	&:not(div):active,
-	&:active {
-		color: $pm-global-warning;
-	}
-}
-
-.button--link,
-a,
-.link,
-.button.button--link {
-	&:focus,
-	&:hover,
-	&:not(div):active,
-	&:active {
-		color: currentColor;
-	}
-	&[disabled],
-	&.is-disabled {
-		color: #{rgba($white, 0.5)};
-	}
-}
-
-.grouped-button {
-	&[disabled],
-	&.is-disabled {
-		&.button {
-			border-color: var(--bordercolor-input, $pm-global-border);
-		}
-		&.button-blueborder {
-			border-color: $pm-primary-light;
-		}
-		&.pv-button-greenborder {
-			border-color: $pv-green-light;
-		}
-	}
-}
-
-.field {
-	&[type='search'] {
-		background-image: url('#{$path-images}sprite-for-css-only.svg#css-search-white');
-	}
-}
-@if $rtl-option == true {
-	[dir='rtl'] {
-		[type='search'].field {
-			background-image: url('#{$path-images}sprite-for-css-only.svg#css-search-rtl-white');
-		}
-	}
-}
-
-.field[disabled] {
-	color: #{rgba($white, 0.5)};
-	opacity: 0.6;
-}
-
-select.field {
-	background-image: url('#{$path-images}sprite-for-css-only.svg#css-caret-white');
-}
-.checkbox {
-	&:indeterminate + .checkbox-fakecheck {
-		background-image: url('#{$path-images}sprite-for-css-only.svg#css-dash-white');
-	}
-}
-
-.searchbox-field[type='search'] {
-	background-image: none;
-}
-
-.checkbox:focus + .checkbox-fakecheck,
-.radio:focus + .radio-fakeradio {
-	box-shadow: 0 0 10px 0 $input-shadow-color-darkmode;
-}
-
-// loading
-[aria-busy='true'] {
-	background-image: url(#{$path-images}loading-atom-smaller-dark.svg);
-}
-
-button[aria-busy='true'] {
-	background-image: url(#{$path-images}loading-atom-smaller-disabled-dark.svg);
-}
-
-tr[aria-busy='true'] td,
-td[aria-busy='true'] {
-	&::before {
-		background-image: url(#{$path-images}loading-atom-smaller-dark.svg);
-	}
-}
-
-.progressive[aria-busy='true'] {
-	&::before {
-		animation-name: anime-background-loading-dark;
-	}
-}
-
-@keyframes anime-background-loading-dark {
-	0% {
-		background-color: $pm-secondary-grey;
-	}
-	100% {
-		background-color: lighten($pm-secondary-grey, 10%);
-	}
-}
-
-// others
-details {
-	&[open] > summary {
-		background-image: url(#{$path-images}sprite-for-css-only.svg#css-caret-close-white);
-	}
-}
-summary {
-	background-image: url(#{$path-images}sprite-for-css-only.svg#css-caret-white);
-}
-
-.appConfigBody-darkmode, // for Angular
-  .isDarkMode {
-	.display-on-darkmode {
-		display: flex;
-	}
-	.hide-on-darkmode {
-		display: none;
-	}
-}
-
-// quick and dirty
-.fill-global-grey:not(.fill-pm-blue):not(.fill-primary),
-.fill-black:not(.fill-pm-blue):not(.fill-primary) {
-	fill: $white;
-} // dirty, I know
-
-.fill-currentColor {
-	fill: currentColor;
-} // to avoid some issues
-
-.qr-code {
-	border: 1px solid $white;
-}
-
-.pill-icon-attachment {
-	background-color: rgb(0 0 0 / 0.45);
-}
-
-// global
-:root {
-	--bgcolor-item-column-list: #{$pm-global-grey};
-	--bgcolor-unread-item-column-list: #{$pm-global-altgrey};
-	--bgcolor-view-column-detail: #{$pm-secondary-grey};
-	--bgcolor-main-area: #{$pm-secondary-grey};
-	--bgcolor-context-bar: #{$pm-secondary-grey};
-	--bgcolor-subheader: #{$bluish-grey};
-	--bgcolor-toolbar: #{$pm-global-altgrey};
-	--color-main-area: #{$white};
-	--bgcolor-disabled-checkboxes-radios: #{$pm-global-altgrey};
-	--bgcolor-item-column-active: #{$pm-blue-dark};
-	--bordercolor-input: #{$pm-tertiary-grey};
-	--bgcolor-muted: #{$pm-tertiary-grey};
-	--bgcolor-input: #{$pm-global-altgrey};
-	--bgcolor-highlight: #{$pm-global-altgrey};
-	--color-input: #{$white};
-	--dropdown-box-shadow: rgb(0 0 0 / 0.75);
-	--bgcolor-meter-bar: rgb(0 0 0 / 0.375);
-
-	/*
-	* TO BE REMOVED!
-	*/
-	--primary-lighten-40: #a2b1ee;
-	--primary-lighten-20: #8498e9;
+:root,
+.ui-standard {
 	--primary: #657ee4;
-	--primary-darken-20: #5064b6;
-	--primary-darken-40: #3c4b88;
+	--primary-contrast: white;
+
+	--signal-danger: #ed4c51;
+	--signal-danger-hover: #f7595e;
+	--signal-danger-active: #ff666b;
+	--signal-danger-contrast: white;
+
+	--signal-warning: #f5930a;
+	--signal-warning-hover: #f5a716;
+	--signal-warning-active: #f5b922;
+	--signal-warning-contrast: black;
+
+	--signal-success: #349172;
+	--signal-success-hover: #339c79;
+	--signal-success-active: #31a67f;
+	--signal-success-contrast: white;
+
+	--signal-info: #2c89db;
+	--signal-info-hover: #3491e3;
+	--signal-info-active: #3d99eb;
+	--signal-info-contrast: white;
 
 	--text-norm: white;
+	--text-weak: #a4a9b5;
+	--text-hint: #696f7d;
+	--text-disabled: #575d6b;
+	--text-invert: #262a33;
 
-	--interaction-norm: var(--primary);
-	--interaction-norm-hover: var(--primary-darken-20);
-	--interaction-norm-active: var(--primary-darken-40);
+	--field-norm: #575d6b;
+	--field-hover: #696f7d;
+	--field-disabled: #464b58;
+
+	--border-norm: #464b58;
+	--border-weak: #363a46;
+
+	--background-norm: #262a33;
+	--background-weak: #2e323c;
+	--background-strong: #363a46;
+
+	--interaction-norm: #657ee4;
+	--interaction-norm-hover: #7d92e8;
+	--interaction-norm-active: #98a9ee;
 	--interaction-norm-contrast: white;
 
-	--interaction-weak: #3c414e;
-	--interaction-weak-hover: #494e5b;
-	--interaction-weak-active: #5c6270;
-	--interaction-weak-contrast: var(--text-norm);
-	/*
-	* / TO BE REMOVED!
-	*/
+	--interaction-weak: #464b58;
+	--interaction-weak-hover: #575d6b;
+	--interaction-weak-active: #696f7d;
+
+	--interaction-default: transparent;
+	--interaction-default-hover: rgb(87 93 107 / 0.2);
+	--interaction-default-active: rgb(87 93 107 / 0.3);
+
+	--backdrop-norm: rgb(0 0 0 / 0.32);
+
+	// Optional colors
+
+	--scrollbar-thumb-color: #464b58;
+	--scrollbar-thumb-hover-color: #575d6b;
 }

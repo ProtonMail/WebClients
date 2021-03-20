@@ -10,7 +10,7 @@ $scrollshadow-height: 0.5rem !default;
 			top: 0;
 			background-image: radial-gradient(
 				farthest-side at 50% 0,
-				var(--bordercolor-input, #acb0bf),
+				var(--background-strong),
 				transparent
 			);
 		}
@@ -19,7 +19,7 @@ $scrollshadow-height: 0.5rem !default;
 			bottom: 0;
 			background-image: radial-gradient(
 				farthest-side at 50% 100%,
-				var(--bordercolor-input, #acb0bf),
+				var(--background-strong),
 				transparent
 			);
 		}
@@ -31,7 +31,7 @@ $scrollshadow-height: 0.5rem !default;
 		left: 0;
 		right: 0;
 		height: $scrollshadow-height;
-		background: var(--bgcolor-main-area, #fff);
+		background: var(--background-norm);
 
 		&--top {
 			top: 0;

@@ -4,33 +4,16 @@
 		--max-width: 15.5em; // Be carefull to not exceed the nav bar
 		--max-height: 25em;
 
-		--dropdown-border-color: #{$pm-tertiary-grey};
-		--dropdown-bg-color: #{$pm-secondary-grey};
-
-		color: $pm-global-light;
-
 		@include respond-to($breakpoint-small, 'min') {
-			box-shadow: 0 0.5rem 1.5rem 0 rgb(0 0 0 / 0.75);
-		}
-
-		a {
-			&,
-			&:hover,
-			&:focus {
-				color: $white;
-			}
+			box-shadow: var(--shadow-lifted);
 		}
 	}
 
 	&-button {
+		@extend .interactive;
+
 		border-radius: $global-border-radius;
 		padding: 0.25em;
-
-		&:hover,
-		&:focus,
-		&[aria-expanded='true'] {
-			background-color: $navigation-hover-bg-color;
-		}
 
 		& &-icon {
 			// override icon-16p
@@ -40,22 +23,15 @@
 		}
 	}
 
-	/* No border for now
-	&-item.dropdown-item {
-		--bordercolor-input: #{$pm-tertiary-grey};
-	}
-	*/
-
 	&-link {
+		@extend .interactive;
+
 		&,
 		&:hover,
-		&:focus {
+		&:focus,
+		&:active {
+			color: var(--text-norm);
 			text-decoration: none;
-		}
-
-		&:hover,
-		&:focus {
-			background-color: rgb(255 255 255 / 0.05);
 		}
 	}
 }

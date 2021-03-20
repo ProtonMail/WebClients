@@ -18,21 +18,21 @@
 .progress-bar {
 	@include progress-bar-size();
 
-	background: var(--bordercolor-input, $pm-global-border);
-	color: $pm-primary;
+	background: var(--background-weak);
+	color: var(--signal-info);
 	appearance: none;
 
 	&::-webkit-progress-bar {
-		background-color: var(--bordercolor-input, $pm-global-border);
+		background-color: var(--background-weak);
 	}
 
 	&::-webkit-progress-value {
-		background: $pm-primary;
+		background: var(--signal-info);
 		transition: 0.25s width easing(easeInOutQuint);
 	}
 
 	&::-moz-progress-bar {
-		background: $pm-primary;
+		background: var(--signal-info);
 		transition: 0.25s width easing(easeInOutQuint);
 	}
 
@@ -43,11 +43,11 @@
 	@each $variant,
 		$color
 			in (
-				disabled: darken($pm-global-muted, 25%),
-				running: $pm-global-info,
-				success: $pm-global-success,
-				warning: $pm-global-attention,
-				error: $pm-global-warning
+				disabled: var(--background-strong),
+				running: var(--signal-info),
+				success: var(--signal-success),
+				warning: var(--signal-warning),
+				error: var(--signal-danger)
 			)
 	{
 		&--#{$variant} {

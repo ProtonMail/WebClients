@@ -18,8 +18,34 @@ html,
 	height: 100%;
 }
 
+.app-root-loader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #262a33;
+	color: white;
+}
+
+.app-noscript {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 3em;
+	font-size: 1.2em;
+	background: #262a33;
+	color: white;
+}
+
 .content {
-	background-color: var(--main-bg-color, $pm-global-grey);
+	background-color: var(--sidebar-background-color, var(--background-norm));
+	color: var(--sidebar-text-color, var(--text-norm));
 	/*display: grid;
 	grid-template-areas:
 		"header header"
@@ -33,6 +59,8 @@ html,
 	padding: 1rem 1.5rem 1rem 0;
 	height: $header-height;
 	flex-shrink: 0;
+	background-color: var(--header-background-color, var(--background-norm));
+	color: var(--header-text-color, var(--text-norm));
 }
 
 @if $rtl-option==true {
@@ -50,6 +78,8 @@ html,
 		opacity 1s ease;
 	transition-delay: 0s;
 	overflow: auto;
+	background-color: var(--sidebar-background-color, var(--background-norm));
+	color: var(--sidebar-text-color, var(--text-norm));
 
 	@include respond-to($breakpoint-small) {
 		position: fixed;
@@ -63,11 +93,6 @@ html,
 		max-height: none;
 		padding-top: 1em;
 		transform-origin: 0 50%;
-		background-image: linear-gradient(
-			to bottom,
-			var(--main-bg-color, $pm-global-grey),
-			var(--secondary-bg-color, $pm-global-altgrey)
-		);
 		transition: 0s visibility ease, 0.25s transform ease;
 		transition-delay: 0s;
 
@@ -89,19 +114,11 @@ html,
 }
 
 .logo-link {
+	@extend .interactive;
+
 	position: relative;
 	padding: 0.875em 0.5em 1.125em;
 	box-sizing: initial;
-	border-radius: $global-border-radius;
-
-	&:hover,
-	&:focus {
-		color: inherit;
-	}
-
-	&:focus {
-		background-color: $navigation-hover-bg-color;
-	}
 
 	.plan {
 		position: absolute;
@@ -117,12 +134,11 @@ html,
 }
 
 .logo g {
-	fill: var(--fillcolor-logo, $pm-global-light);
+	fill: currentColor;
 }
 
 .hamburger {
 	@include respond-to($breakpoint-small) {
-		color: $white;
 		flex-shrink: 0; // this has to stay
 	}
 }
@@ -137,7 +153,9 @@ html,
 .main {
 	overflow: hidden;
 	border-top-left-radius: 4px;
-	box-shadow: var(--boxshadow-main, none);
+	border: solid var(--main-border-color, var(--border-weak));
+	border-width: 1px 0 0 1px;
+	box-shadow: var(--main-box-shadow, none);
 
 	@include respond-to($breakpoint-small) {
 		margin-right: 0;
@@ -153,10 +171,9 @@ html,
 }
 
 .main-area {
-	background: var(--bgcolor-main-area, $white);
-	color: var(--color-main-area, $pm-global-grey);
+	background: var(--background-norm);
+	color: var(--text-norm);
 	overflow: auto;
-	border-top-left-radius: 4px;
 
 	&.no-scroll {
 		overflow: hidden;
@@ -164,7 +181,6 @@ html,
 }
 
 .main-area--with-toolbar {
-	// only for Angular this one
 	@extend .main-area;
 	border-radius: 0;
 }
@@ -198,7 +214,7 @@ $height-for-mobile: 8em !default;
 .main-full {
 	height: 100%;
 	overflow: auto;
-	@extend .bg-global-altgrey-gradient;
+	background-color: var(--background-norm);
 }
 
 .main-area--no-header {
@@ -212,7 +228,7 @@ $height-for-mobile: 8em !default;
 }
 
 .main-area-content {
-	background: var(--bgcolor-main-area, #{$white});
+	background: var(--background-norm);
 }
 
 .main-area--row-mode .items-column-list {

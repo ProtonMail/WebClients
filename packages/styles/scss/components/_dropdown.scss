@@ -1,7 +1,4 @@
 .dropdown {
-	--dropdown-border-color: var(--bordercolor-input, transparent);
-	--dropdown-bg-color: var(--bgcolor-main-area, #{$white});
-
 	&:not(#{&}--no-max-size) {
 		--min-width: 10em;
 		--max-width: 20em;
@@ -10,7 +7,7 @@
 
 	position: fixed;
 	z-index: 666;
-	color: var(--color-main-area, $pm-global-grey);
+	color: var(--text-norm);
 	animation: 0.15s ease-out both;
 
 	@include respond-to($breakpoint-small, 'max') {
@@ -24,7 +21,7 @@
 		flex-flow: column nowrap;
 		justify-content: center;
 		align-items: center;
-		background-color: #{rgba(black, 0.4)};
+		background-color: var(--backdrop-norm);
 		animation-name: anime-dropdown-in-small;
 
 		@keyframes anime-dropdown-in-small {
@@ -60,9 +57,8 @@
 		left: calc(var(--left) * 1px);
 		transform: scale(1);
 		border-radius: $global-border-radius;
-		box-shadow: 0 0.5rem 1.5rem 0
-			var(--dropdown-box-shadow, $input-shadow-color);
-		background: var(--dropdown-bg-color);
+		box-shadow: var(--shadow-lifted);
+		background: var(--background-norm);
 		animation-name: anime-dropdown-in-large;
 
 		@keyframes anime-dropdown-in-large {
@@ -86,7 +82,7 @@
 			left: 0;
 			z-index: -2;
 			margin: -1px;
-			border: 1px solid var(--dropdown-border-color);
+			border: 1px solid var(--border-norm);
 			border-radius: $global-border-radius;
 			pointer-events: none;
 		}
@@ -161,15 +157,15 @@
 		min-height: 1em;
 		overflow: auto;
 		border-radius: $global-border-radius;
-		background-color: var(--dropdown-bg-color);
+		background-color: var(--background-norm);
 		background-image: radial-gradient(
 				farthest-side at 50% 0,
-				#{rgba(black, 0.25)},
+				var(--backdrop-norm),
 				transparent
 			),
 			radial-gradient(
 				farthest-side at 50% 100%,
-				#{rgba(black, 0.25)},
+				var(--backdrop-norm),
 				transparent
 			);
 		background-position: 50% 0, 0 100%;
@@ -180,7 +176,7 @@
 			position: relative;
 			z-index: 1;
 			width: 100%;
-			box-shadow: 0 0 5rem 0 #{rgba(black, 0.3)}; // Same as popins
+			box-shadow: var(--shadow-lifted);
 			transition: transform 0.1s ease-out;
 		}
 
@@ -199,7 +195,7 @@
 			display: block;
 			height: 0.3rem;
 			flex: 0 0 0.3rem;
-			background: var(--dropdown-bg-color);
+			background: var(--background-norm);
 		}
 	}
 
@@ -232,38 +228,25 @@
 	}
 
 	&-item {
+		&-button,
 		&-link {
+			@extend .interactive;
+
 			&,
 			&:hover,
 			&:focus,
 			&:active {
-				color: currentColor;
+				color: var(--text-norm);
 				text-decoration: none;
 			}
 		}
 
-		&-button,
-		&-link {
-			&:hover,
-			&:focus,
-			&:focus-within,
-			&.active {
-				background-color: var(--bgcolor-input, $pm-global-light);
-				color: $pm-primary;
-			}
-
-			&[disabled],
-			&.is-disabled {
-				@include button-disabled-state;
-				border: none;
-			}
-		}
 		&--delete {
 			&,
 			&:hover,
 			&:focus {
 				.dropdown-item-button {
-					color: $pm-global-warning;
+					color: var(--signal-danger);
 				}
 			}
 		}
@@ -275,22 +258,17 @@
 			&:hover,
 			&:focus,
 			&:active {
-				background-color: $pm-primary;
-				color: $white;
+				background-color: var(--interaction-norm);
+				color: var(--interaction-norm-contrast);
 				pointer-events: none;
 			}
 		}
 	}
 
-	/* Border between items */
-	&-item + &-item,
-	&-item-hr {
-		border-top: 1px solid var(--bordercolor-input, $pm-global-border);
-	}
-
 	&-item-hr {
 		height: 0;
 		box-sizing: content-box;
+		border-top: 1px solid var(--border-norm);
 	}
 
 	/* Arrow for wide screens */
@@ -305,8 +283,8 @@
 			width: var(--size);
 			height: var(--size);
 			transform: rotate(45deg);
-			border: 1px solid var(--dropdown-border-color);
-			background-color: var(--dropdown-bg-color);
+			border: 1px solid var(--border-norm);
+			background-color: var(--background-norm);
 			pointer-events: none;
 		}
 
@@ -375,20 +353,6 @@
 			&::before {
 				bottom: var(--offset);
 			}
-		}
-	}
-}
-
-/* TODO: REMOVE THIS!! */
-/* TODO: REMOVE THIS!! */
-/* TODO: REMOVE THIS!! */
-.isDarkMode .dropdown-item {
-	&-button,
-	&-link {
-		&[disabled],
-		&.is-disabled {
-			@include button-disabled-state-dm;
-			border: none;
 		}
 	}
 }

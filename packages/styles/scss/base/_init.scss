@@ -5,7 +5,7 @@
 }
 
 :root {
-	--px: 1em / $base-font-size; // For pixel-based calculation on css variables
+	--px: #{1em / $base-font-size}; // For pixel-based calculation on css variables
 }
 
 html {
@@ -23,8 +23,8 @@ html {
 
 body {
 	@if $apply-body-styles==true {
-		background: $pm-global-grey;
-		color: $pm-global-light;
+		background: var(--background-norm);
+		color: var(--text-norm);
 		font-family: $font-family;
 		text-rendering: geometricPrecision;
 		-webkit-font-smoothing: antialiased;
@@ -53,15 +53,19 @@ body {
 }
 
 a {
-	color: $color-links;
+	color: var(--interaction-norm);
 	text-decoration: underline;
 	cursor: pointer;
 
-	&:focus,
 	&:hover,
+	&:focus {
+		color: var(--interaction-norm-hover);
+		text-decoration: none;
+	}
+
 	&:active {
-		color: $color-hover;
-		text-decoration: underline;
+		color: var(--interaction-norm-active);
+		text-decoration: none;
 	}
 }
 
@@ -138,8 +142,7 @@ input[type='checkbox'] {
 
 // fix "autofill state"
 input:-webkit-autofill {
-	box-shadow: 200px 200px 100px var(--bgcolor-input, $pm-input-background)
-		inset;
+	box-shadow: 200px 200px 100px var(--background-norm) inset;
 }
 
 /* removes X in input when typing in IE/EDGE */
@@ -171,12 +174,13 @@ sub {
 mark {
 	@if $use-color-reset-mark==true {
 		background-color: unset;
+		color: inherit;
+		font-weight: inherit;
 	} @else {
-		background-color: var(--bgcolor-mark, $default-bgColor-mark);
+		background-color: var(--mark-background-color, yellow);
+		color: var(--mark-text-color, black);
+		font-weight: bold;
 	}
-
-	color: var(--color-mark, currentColor);
-	font-weight: bold;
 }
 
 /* avoid margin on nested elements */
@@ -190,16 +194,15 @@ li {
 
 kbd {
 	padding: 0 0.25em;
-	background-color: var(--bgcolor-main-area, $pm-global-light);
-	border: 1px solid var(--bordercolor-input, $pm-global-border);
+	background-color: var(--background-strong);
+	border: 1px solid var(--text-norm);
 	border-radius: $global-border-radius;
 }
 
 hr {
-	background-color: var(--bordercolor-input, $color-hr);
+	background-color: var(--border-norm);
 	border: 0;
-	color: var(--bordercolor-input, $color-hr);
-	height: $hr-height;
+	height: 1px;
 	margin: 0 0 1em;
 	padding: 0;
 }
@@ -210,14 +213,14 @@ table {
 }
 
 details {
-	border-bottom: 1px solid $pm-global-border;
+	border-bottom: 1px solid var(--border-norm);
 
 	& > summary::-webkit-details-marker {
 		display: none;
 	}
 
 	&:first-child {
-		border-top: 1px solid $pm-global-border;
+		border-top: 1px solid var(--border-norm);
 	}
 
 	&[open] > summary {

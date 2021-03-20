@@ -120,8 +120,8 @@ pre {
 }
 
 mark {
-	background-color: var(--bgcolor-mark, #ff0);
-	color: var(--color-mark, currentColor);
+	background-color: yellow;
+	color: black;
 	font-weight: bold;
 }
 
@@ -174,12 +174,14 @@ $use-other-line-height-helpers: false;
 $base-font-size: 16;
 $typo-unit: 'use_em';
 $vertical-rhythm: 'single_top_single_bottom';
-$size-h1: 32;
-$size-h2: 24;
-$size-h3: 19;
-$size-h4: 16;
-$size-h5: 13;
-$size-h6: 12;
+$title-sizes: (
+	h1: 32,
+	h2: 24,
+	h3: 19,
+	h4: 16,
+	h5: 13,
+	h6: 12,
+);
 
 @import '../config/';
 @import '../base/typo';
@@ -193,7 +195,7 @@ body {
 	font-family: $font-family;
 	padding: 1rem;
 	line-height: $base-line-height;
-	color: var(--color-main-area, $pm-global-grey);
+	color: var(--text-norm);
 }
 
 // Specific to Android/iOS
@@ -231,7 +233,7 @@ blockquote {
 	padding: 0.2em 1.2em !important;
 	/*margin: 1em 0 2em 0 !important;*/
 	margin: 0 !important; // actually on web
-	border: 3px solid $pm-primary !important;
+	border: 3px solid var(--primary) !important;
 	border-width: 0 0 0 3px !important;
 }
 

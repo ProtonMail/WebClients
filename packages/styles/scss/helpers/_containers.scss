@@ -1,74 +1,50 @@
-.bordered,
-.bordered-container,
-.dashed,
-.dashed-container {
-	border: 1px solid var(--bordercolor-input, $pm-global-border);
+.bordered {
+	border: 1px solid var(--border-norm);
 }
 
-.bordered-container,
-.dashed-container {
-	border-radius: $global-border-radius;
+.bordered--dashed {
+	border: 1px dashed var(--border-norm);
 }
 
-.bordered-container--error {
-	border-color: $pm-global-warning;
+.border--danger {
+	border-color: var(--signal-danger);
 }
 
-.dashed,
-.dashed-container {
-	border-style: dashed;
-}
-
-.border-bottom {
-	border-bottom: 1px solid var(--bordercolor-input, $pm-global-border);
-}
-
-.border-bottom--dashed {
-	border-bottom-style: dashed;
-}
-
-.border-bottom--currentColor {
-	border-bottom-color: currentColor;
-}
-
-.border-top {
-	border-top: 1px solid var(--bordercolor-input, $pm-global-border);
-}
-
-.border-top--dashed {
-	border-top-style: dashed;
-}
-
-.border-left {
-	border-left: 1px solid var(--bordercolor-input, $pm-global-border);
-}
-
-.border-right {
-	border-right: 1px solid var(--bordercolor-input, $pm-global-border);
-}
-
-.border-currentColor {
+.border--currentColor {
 	border: 1px solid currentColor;
 }
 
-.border-color-primary {
-	border-color: $pm-primary;
+@each $placement in (top, right, bottom, left) {
+	.border-#{$placement} {
+		border-#{$placement}: 1px solid var(--border-norm);
+
+		&--weak {
+			border-#{$placement}: 1px solid var(--border-weak);
+		}
+
+		&--dashed {
+			border-#{$placement}-style: dashed;
+		}
+
+		&--currentColor {
+			border-#{$placement}-color: currentColor;
+		}
+	}
 }
 
-.shadow-container {
-	box-shadow: 0 0 20px 0 $input-shadow-color;
+.shadow-norm {
+	box-shadow: var(--shadow-norm);
 }
 
-.tiny-shadow-container {
-	box-shadow: 0 1px 3px 0 var(--bgcolor-main-area, $pm-global-border);
-	border: 1px solid var(--bordercolor-input, transparent);
+.shadow-lifted {
+	box-shadow: var(--shadow-lifted);
 }
 
 .row--orderable {
 	z-index: 666;
 	/* In case the modal is open */
-	background: var(--bgcolor-main-area, $white);
-	color: var(--color-main-area, $pm-global-grey);
+	background: var(--background-norm);
+	color: var(--text-norm);
 }
 
 /*

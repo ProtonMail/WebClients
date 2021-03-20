@@ -507,40 +507,40 @@
 .button--error,
 .button.button--error {
 	@extend .button-blue;
-	background-color: $pm-global-warning;
-	border-color: $pm-global-warning;
+	background-color: var(--signal-danger);
+	border-color: var(--signal-danger);
 
 	&:focus,
 	&:hover,
 	&:not(div):active {
 		// not div is here for a specificity issue for another fix
-		background-color: $pm-global-warning;
-		border-color: $pm-global-warning;
+		background-color: var(--signal-danger);
+		border-color: var(--signal-danger);
 	}
 
 	&[disabled],
 	&.is-disabled {
-		@include button-disabled-state($pm-global-warning);
+		@include button-disabled-state(var(--signal-danger));
 	}
 }
 
 .button--warning,
 .button.button--warning {
 	@extend .button-blue;
-	background-color: $pm-global-attention;
-	border-color: $pm-global-attention;
+	background-color: var(--signal-warning);
+	border-color: var(--signal-warning);
 
 	&:focus,
 	&:hover,
 	&:not(div):active {
 		// not div is here for a specificity issue for another fix
-		background-color: $pm-global-attention;
-		border-color: $pm-global-attention;
+		background-color: var(--signal-warning);
+		border-color: var(--signal-warning);
 	}
 
 	&[disabled],
 	&.is-disabled {
-		@include button-disabled-state($pm-global-attention);
+		@include button-disabled-state(var(--signal-warning));
 	}
 }
 
@@ -552,14 +552,14 @@
 .button--redborder,
 .button.button--redborder {
 	@extend .button;
-	border-color: $pm-global-warning;
-	color: $pm-global-warning;
+	border-color: var(--signal-danger);
+	color: var(--signal-danger);
 
 	&:focus,
 	&:hover,
 	&:not(div):active,
 	&:active {
-		color: $pm-global-warning;
+		color: var(--signal-danger);
 	}
 }
 

@@ -192,28 +192,21 @@
 	}
 }
 
+/* TODO: If everything works fine, remove this!
 .primary-link {
 	&:focus,
 	&:hover {
-		color: $pm-primary;
+		color: var(--primary);
 	}
 }
 
 .hover-same-color {
 	&:focus,
 	&:hover {
-		&.color-white {
-			color: $white;
-		}
-
-		&.primary-link {
-			color: $pm-primary;
-		}
-		&.color-currentColor {
-			color: currentColor;
-		}
+		color: currentColor;
 	}
 }
+*/
 
 .button-show-on-hover {
 	&:focus,

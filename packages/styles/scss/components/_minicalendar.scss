@@ -1,8 +1,5 @@
-$minicalendar-day-color: $black !default;
-$minicalendar-day-color-on-dark-background: $white !default;
 $minicalendar-fontsize: 1.2rem !default;
 $minicalendar-cell-size: 2em !default;
-$minicalendar-bg-color-range-selection: #51555f !default;
 
 .minicalendar {
 	font-size: $minicalendar-fontsize;
@@ -14,12 +11,6 @@ $minicalendar-bg-color-range-selection: #51555f !default;
 	grid-template-rows: auto;
 }
 
-.minicalendar-weekdays,
-.minicalendar-weeknumbers,
-.minicalendar-day--inactive-month {
-	opacity: 0.4;
-}
-
 .minicalendar-weekdays {
 	display: grid;
 	grid-template-columns: repeat(
@@ -27,8 +18,9 @@ $minicalendar-bg-color-range-selection: #51555f !default;
 		1fr
 	);
 	grid-template-rows: 1fr;
-	border-bottom: 1px dotted $pm-global-border;
+	border-bottom: 1px solid var(--border-weak);
 }
+
 .minicalendar-days {
 	display: grid;
 	grid-template-columns: repeat(
@@ -44,21 +36,18 @@ $minicalendar-bg-color-range-selection: #51555f !default;
 }
 
 .minicalendar-day {
+	@extend .interactive;
+
 	position: relative;
 	min-width: #{$minicalendar-cell-size + 0.35em};
 	min-height: #{$minicalendar-cell-size + 0.35em};
 	border-radius: 50%;
-	color: var(--color-main-area, $minicalendar-day-color);
-
-	&:focus,
-	&:hover {
-		background: #{rgba($minicalendar-bg-color-range-selection, 0.25)};
-	}
+	color: var(--text-norm);
 }
 
 .minicalendar-weeknumbers > span {
 	&:first-of-type {
-		border-bottom: 1px dotted $pm-global-border;
+		border-bottom: 1px solid var(--border-weak);
 	}
 	&:not(:first-of-type) {
 		min-height: $minicalendar-cell-size;
@@ -88,13 +77,15 @@ $minicalendar-bg-color-range-selection: #51555f !default;
 	bottom: 0;
 	font-weight: bold;
 	line-height: 2.3; // check modifier below when no week displayed
-	color: $white;
-	background: $calendar-today-color;
+	color: var(--primary-contrast);
+	background: var(--primary);
 	border-radius: 50%;
 }
+/*
 .minicalendar-day[aria-current='date'][aria-pressed='true']::before {
-	background: $calendar-selected-day-color;
+
 }
+*/
 // fix in case of range selection in responsive view
 $mini-calendar-currentDay-size: 2.5em !default;
 .minicalendar-day--range.minicalendar-day[aria-current='date']::before {
@@ -102,20 +93,9 @@ $mini-calendar-currentDay-size: 2.5em !default;
 	max-width: $mini-calendar-currentDay-size;
 }
 
-.minicalendar--on-dark-background {
-	.minicalendar-day {
-		color: $minicalendar-day-color-on-dark-background;
-		&:focus,
-		&:hover {
-			background: #{rgba($minicalendar-bg-color-range-selection, 0.8)};
-		}
-	}
-}
-
 .minicalendar-day[aria-pressed='true'] {
-	color: $white;
-	background: $calendar-selected-day-color;
-	border-radius: 50%;
+	background: var(--background-strong);
+	color: var(--text-norm);
 }
 
 $minicalendar-day-marker-size: 3px !default;
@@ -125,7 +105,7 @@ $minicalendar-day-marker-size: 3px !default;
 	left: calc(50% - #{$minicalendar-day-marker-size/2});
 	height: $minicalendar-day-marker-size;
 	width: $minicalendar-day-marker-size;
-	background-color: $pm-primary;
+	background-color: var(--primary);
 	border-radius: 50%;
 	display: block;
 	margin-left: auto;
@@ -135,7 +115,7 @@ $minicalendar-day-marker-size: 3px !default;
 .minicalendar-day[aria-pressed='true'],
 .minicalendar-day[aria-pressed='date'] {
 	.minicalendar-day--marker {
-		background-color: $white;
+		background-color: var(--primary-contrast);
 	}
 }
 
@@ -144,11 +124,11 @@ $minicalendar-day-marker-size: 3px !default;
 }
 
 .minicalendar-day--range-bound {
-	background: $pm-primary;
+	background: var(--primary);
 }
 
 .minicalendar-day--range[aria-pressed='true'] {
-	background: $minicalendar-bg-color-range-selection;
+	background-color: var(--background-strong);
 
 	&:not(.minicalendar-day--range-bound-begin) {
 		border-top-left-radius: 0;
@@ -159,4 +139,10 @@ $minicalendar-day-marker-size: 3px !default;
 		border-top-right-radius: 0;
 		border-bottom-right-radius: 0;
 	}
+}
+
+.minicalendar-weekdays,
+.minicalendar-weeknumbers,
+.minicalendar-day--inactive-month {
+	color: var(--text-weak);
 }

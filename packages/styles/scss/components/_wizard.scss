@@ -24,14 +24,14 @@ $size-current-pin: 16px !default;
 		top: -#{$height-wizard - 1};
 		background-image: radial-gradient(
 			circle,
-			$pm-primary 0,
-			$pm-primary #{$height-wizard/2},
+			var(--primary) 0,
+			var(--primary) #{$height-wizard/2},
 			transparent #{$height-wizard/2}
 		);
 	}
 
 	&-item {
-		background: var(--bordercolor-input, $pm-global-border);
+		background: var(--background-strong);
 
 		&:not(:last-child) {
 			@extend .flex-item-fluid;
@@ -42,9 +42,8 @@ $size-current-pin: 16px !default;
 			background: none;
 			background-image: linear-gradient(
 				to left,
-				var(--bordercolor-input, $pm-global-border) 0,
-				var(--bordercolor-input, $pm-global-border)
-					calc(100% - #{$height-wizard/2}),
+				var(--background-strong) 0,
+				var(--background-strong) calc(100% - #{$height-wizard/2}),
 				transparent calc(100% - #{$height-wizard/2})
 			);
 		}
@@ -53,8 +52,8 @@ $size-current-pin: 16px !default;
 			background: none;
 			background-image: linear-gradient(
 				to right,
-				var(--bordercolor-input, $pm-global-border) 0,
-				var(--bordercolor-input, $pm-global-border) 50%,
+				var(--background-strong) 0,
+				var(--background-strong) 50%,
 				transparent 50%
 			);
 
@@ -85,14 +84,14 @@ $size-current-pin: 16px !default;
 		&[aria-current='step']::before {
 			background-image: radial-gradient(
 				circle,
-				$white 0,
-				$white #{$height-wizard/2},
-				$pm-primary #{$height-wizard/2}
+				var(--primary-contrast) 0,
+				var(--primary-contrast) #{$height-wizard/2},
+				var(--primary) #{$height-wizard/2}
 			);
 		}
 
 		&.is-complete::before {
-			background: $pm-primary
+			background: var(--primary)
 				url('#{$path-images}sprite-for-css-only.svg#css-on') 50% 50%
 				no-repeat;
 			background-size: #{$size-current-pin - $height-wizard};
@@ -105,7 +104,7 @@ $size-current-pin: 16px !default;
 			width: 100%;
 			height: $height-wizard;
 			top: -$size-current-pin;
-			background-color: $pm-primary;
+			background-color: var(--primary);
 		}
 
 		&[aria-current='step'] &-inner {

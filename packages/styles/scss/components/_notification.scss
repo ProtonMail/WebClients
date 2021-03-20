@@ -20,30 +20,18 @@
 }
 
 [class*='notification-'] {
-	border-radius: $global-border-radius;
-	overflow: hidden;
 	display: block;
+	overflow: hidden;
+	border-radius: $global-border-radius;
+	box-shadow: var(--shadow-lifted);
 }
 
 .notification {
-	&-alert {
-		background: $pm-global-warning;
-		color: $pm-global-light;
-	}
-
-	&-success {
-		background: $pm-global-success;
-		color: $pm-global-light;
-	}
-
-	&-warning {
-		background: $pm-global-attention;
-		color: $pm-global-grey;
-	}
-
-	&-info {
-		background: $pm-primary;
-		color: $white;
+	@each $color in (danger, warning, success, info) {
+		&-#{$color} {
+			background: var(--signal-#{$color});
+			color: var(--signal-#{$color}-contrast);
+		}
 	}
 
 	&--in {

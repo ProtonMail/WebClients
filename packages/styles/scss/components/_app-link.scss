@@ -3,23 +3,24 @@
 	width: 32px;
 	height: 32px;
 	padding: 7px;
-	background: var(--bgcolor-aside-link, $pm-global-altgrey);
+	background: var(--interaction-weak);
+	color: var(--text-norm);
 
-	&:focus,
 	&:hover,
+	&:focus {
+		background: var(--interaction-weak-hover);
+		color: var(--primary);
+	}
+
 	&:active,
 	&[aria-current='true'] {
-		background: $white;
-		color: $pm-primary;
-
-		.aside-link-icon {
-			fill: $pm-primary;
-		}
+		background: var(--interaction-weak-active);
+		color: var(--primary);
 	}
 
 	&-icon {
 		width: 17px;
 		height: 17px;
-		fill: var(--fillcolor-icons, $pm-global-light);
+		fill: currentColor;
 	}
 }
