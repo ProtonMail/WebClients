@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
     LoaderPage,
-    StandardLoadError,
+    StandardLoadErrorPage,
     useApi,
     useCache,
     useEventManager,
@@ -64,7 +64,7 @@ const CalendarSetupContainer = ({ onDone, calendars }: Props) => {
     }, []);
 
     if (error) {
-        return <StandardLoadError />;
+        return <StandardLoadErrorPage />;
     }
 
     return <LoaderPage />;
