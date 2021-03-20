@@ -9,7 +9,7 @@ import useTooltipHandlers from '../tooltip/useTooltipHandlers';
 interface Props {
     originalPlacement?: 'top' | 'bottom' | 'left' | 'right';
     url?: string;
-    title?: string;
+    title?: React.ReactNode;
     buttonClass?: string;
     buttonTabIndex?: number;
     className?: string;

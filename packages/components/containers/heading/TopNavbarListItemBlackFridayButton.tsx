@@ -6,7 +6,7 @@ import { isProductPayer } from 'proton-shared/lib/helpers/blackfriday';
 
 import { useModals, useConfig, useCyberMondayPeriod, useUser } from '../../hooks';
 import { Icon } from '../../components';
-import NewSubscriptionModal from '../payments/subscription/NewSubscriptionModal';
+import SubscriptionModal from '../payments/subscription/SubscriptionModal';
 import VPNBlackFridayModal from '../payments/subscription/VPNBlackFridayModal';
 import MailBlackFridayModal from '../payments/subscription/MailBlackFridayModal';
 import { SUBSCRIPTION_STEPS } from '../payments/subscription/constants';
@@ -44,12 +44,12 @@ const TopNavbarListItemBlackFridayButton = ({ plans, subscription }: Props) => {
         couponCode?: string | null;
     }) => {
         createModal(
-            <NewSubscriptionModal
+            <SubscriptionModal
                 planIDs={planIDs}
                 cycle={cycle}
                 currency={currency}
                 coupon={couponCode}
-                step={SUBSCRIPTION_STEPS.PAYMENT}
+                step={SUBSCRIPTION_STEPS.CHECKOUT}
             />
         );
     };

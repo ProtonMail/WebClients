@@ -15,7 +15,6 @@ export { default as Payment } from './Payment';
 export { default as useCard } from './useCard';
 export { default as BitcoinDetails } from './BitcoinDetails';
 export { default as PaymentVerificationModal } from './PaymentVerificationModal';
-export { default as Method } from './Method';
 export { default as PaymentSelector } from './PaymentSelector';
 export { default as AmountRow } from './AmountRow';
 export { default as PaymentInfo } from './PaymentInfo';

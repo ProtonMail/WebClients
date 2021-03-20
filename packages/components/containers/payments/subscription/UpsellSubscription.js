@@ -4,10 +4,11 @@ import { switchPlan } from 'proton-shared/lib/helpers/planIDs';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES, PLANS } from 'proton-shared/lib/constants';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { c } from 'ttag';
+
 import { PrimaryButton, Loader } from '../../../components';
 import { useUser, useSubscription, useModals, usePlans, useAddresses, useOrganization } from '../../../hooks';
-
-import NewSubscriptionModal from './NewSubscriptionModal';
+import SubscriptionModal from './SubscriptionModal';
+import { SUBSCRIPTION_STEPS } from './constants';
 
 const UpsellSubscription = () => {
     const [{ hasPaidMail, hasPaidVpn }, loadingUser] = useUser();
@@ -40,9 +41,10 @@ const UpsellSubscription = () => {
                         className="flex-item-noshrink"
                         onClick={() => {
                             createModal(
-                                <NewSubscriptionModal
+                                <SubscriptionModal
                                     currency={Currency}
                                     cycle={Cycle}
+                                    step={SUBSCRIPTION_STEPS.CUSTOMIZATION}
                                     planIDs={switchPlan({
                                         planIDs,
                                         plans,
@@ -67,9 +69,10 @@ const UpsellSubscription = () => {
                         className="flex-item-noshrink"
                         onClick={() => {
                             createModal(
-                                <NewSubscriptionModal
+                                <SubscriptionModal
                                     currency={Currency}
                                     cycle={Cycle}
+                                    step={SUBSCRIPTION_STEPS.CUSTOMIZATION}
                                     planIDs={switchPlan({
                                         planIDs,
                                         plans,
@@ -93,9 +96,10 @@ const UpsellSubscription = () => {
                     className="flex-item-noshrink"
                     onClick={() => {
                         createModal(
-                            <NewSubscriptionModal
+                            <SubscriptionModal
                                 currency={Currency}
                                 cycle={Cycle}
+                                step={SUBSCRIPTION_STEPS.CUSTOMIZATION}
                                 planIDs={switchPlan({
                                     planIDs,
                                     plans,

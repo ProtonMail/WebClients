@@ -1,4 +1,4 @@
-import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
+import { PAYMENT_METHOD_TYPE } from 'proton-shared/lib/constants';
 
 interface TokenPaymentDetails {
     Token: string;
@@ -14,8 +14,15 @@ interface CardPaymentDetails {
     Country: string;
 }
 
+export interface PaymentMethodResult {
+    ID: string;
+    Order: number;
+    Type: PAYMENT_METHOD_TYPE;
+    Details: TokenPaymentDetails | CardPaymentDetails;
+}
+
 export interface Payment {
-    Type: PAYMENT_METHOD_TYPES;
+    Type: PAYMENT_METHOD_TYPE;
     Details: TokenPaymentDetails | CardPaymentDetails;
 }
 
@@ -27,4 +34,14 @@ export interface PaymentParameters {
 export interface Params extends PaymentParameters {
     Amount: number;
     Currency: string;
+}
+
+export interface CardModel {
+    fullname: string;
+    number: string;
+    month: string;
+    year: string;
+    cvc: string;
+    zip: string;
+    country: string;
 }

@@ -12,7 +12,7 @@ const GiftCodeForm = ({ code, loading, disabled, onChange, onSubmit }) => {
     };
     return (
         <div className="flex flex-nowrap flex-align-items-center flex-align-items-start">
-            <div className="pr1 flex-item-fluid">
+            <div className="pr0-5 flex-item-fluid">
                 <Input
                     value={code}
                     placeholder={c('Placeholder').t`Gift code`}

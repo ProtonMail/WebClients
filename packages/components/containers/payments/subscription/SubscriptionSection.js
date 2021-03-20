@@ -5,14 +5,15 @@ import { PLAN_NAMES } from 'proton-shared/lib/constants';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { identity } from 'proton-shared/lib/helpers/function';
 import { getPlanIDs } from 'proton-shared/lib/helpers/subscription';
+
 import { Alert, LinkButton, Href, Loader, Meter } from '../../../components';
 import { useModals, useSubscription, useOrganization, useUser, useAddresses } from '../../../hooks';
 import MozillaInfoPanel from '../../account/MozillaInfoPanel';
-
 import { formatPlans } from './helpers';
 import UpsellSubscription from './UpsellSubscription';
-import NewSubscriptionModal from './NewSubscriptionModal';
+import SubscriptionModal from './SubscriptionModal';
 import UnsubscribeButton from './UnsubscribeButton';
+import { SUBSCRIPTION_STEPS } from './constants';
 
 const AddonRow = ({ label, used, max, format = identity }) => {
     const percentage = Math.round((used * 100) / max);
@@ -39,7 +40,7 @@ AddonRow.propTypes = {
 };
 
 const SubscriptionSection = ({ permission }) => {
-    const [{ hasPaidMail, hasPaidVpn, isPaid }] = useUser();
+    const [{ hasPaidMail, hasPaidVpn, isPaid, isFree }] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
     const [subscription, loadingSubscription] = useSubscription();
     const { createModal } = useModals();
@@ -78,11 +79,12 @@ const SubscriptionSection = ({ permission }) => {
 
     const handleModal = () => {
         createModal(
-            <NewSubscriptionModal
+            <SubscriptionModal
                 planIDs={getPlanIDs(subscription)}
                 coupon={CouponCode || undefined} // CouponCode can equal null
                 currency={Currency}
                 cycle={Cycle}
+                step={isFree ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CUSTOMIZATION}
             />
         );
     };
