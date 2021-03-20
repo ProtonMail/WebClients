@@ -1,15 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Href, VpnLogo } from 'react-components';
 import { c } from 'ttag';
 
-const PublicHeader = ({ action }) => (
+interface Props {
+    action?: React.ReactNode;
+}
+
+const PublicHeader2 = ({ action }: Props) => (
     <header className="flex-item-noshrink flex flex-align-items-center no-print mb2">
         <div className="no-mobile flex-item-fluid">
             <span className="opacity-50">{c('Label').t`Back to:`}</span>{' '}
             <Href
                 url="https://protonvpn.com"
-                className="inline-block color-white text-no-decoration hover-same-color"
+                className="inline-block text-no-decoration hover-same-color"
                 target="_self"
             >{c('Link').t`protonvpn.com`}</Href>
         </div>
@@ -22,8 +25,4 @@ const PublicHeader = ({ action }) => (
     </header>
 );
 
-PublicHeader.propTypes = {
-    action: PropTypes.node,
-};
-
-export default PublicHeader;
+export default PublicHeader2;

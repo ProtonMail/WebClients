@@ -28,7 +28,7 @@ const PlanUpsell = ({ selectedPlan, getPlanByName, cycle, currency, onExtendCycl
     );
 
     return (
-        <div className="flex mt1 flex-column bordered-container">
+        <div className="flex mt1 flex-column bordered">
             <h6 className="p0-5 mb0 w100 text-center color-primary">
                 {[PLAN.FREE, PLAN.BASIC].includes(planName)
                     ? c('Title').t`Upgrade and get more`

@@ -2,15 +2,9 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import * as H from 'history';
 import { c } from 'ttag';
-import {
-    MinimalLoginContainer,
-    Href,
-    SimpleDropdown,
-    DropdownMenu,
-    SignInLayout,
-    OnLoginCallback,
-} from 'react-components';
+import { MinimalLoginContainer, Href, SimpleDropdown, DropdownMenu, OnLoginCallback } from 'react-components';
 import { isMember } from 'proton-shared/lib/user/helpers';
+import SignInLayout from '../components/layout/SignInLayout';
 
 interface Props {
     onLogin: OnLoginCallback;
@@ -32,7 +26,7 @@ const LoginContainer = ({ onLogin }: Props) => {
                     return onLogin({ ...data, path: pathWithSearch });
                 }}
                 needHelp={
-                    <SimpleDropdown content={c('Dropdown button').t`Need help?`} className="button--link">
+                    <SimpleDropdown content={c('Dropdown button').t`Need help?`} shape="link" color="norm">
                         <DropdownMenu>
                             <ul className="unstyled mt0 mb0">
                                 <li className="dropdown-item">
