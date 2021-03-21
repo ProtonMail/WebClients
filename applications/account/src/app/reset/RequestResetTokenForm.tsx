@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import React, { useState } from 'react';
 import { BRAND_NAME } from 'proton-shared/lib/constants';
-import { FormField, InputTwo, Button, Tabs, useLoading, useFormErrors, PhoneInput } from 'react-components';
+import { Button, Tabs, useLoading, useFormErrors, PhoneInput, InputFieldTwo } from 'react-components';
 import { ResetPasswordState, ResetPasswordSetters } from 'react-components/containers/resetPassword/useResetPassword';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
@@ -50,39 +50,34 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, state, setters: state
         recoveryMethods.includes('email') && {
             title: c('Recovery method').t`Email`,
             content: (
-                <FormField
+                <InputFieldTwo
                     id="email"
                     bigger
                     label={c('Label').t`Recovery email`}
                     error={validator(currentMethod === 'email' ? [requiredValidator(state.email)] : [])}
-                >
-                    <InputTwo
-                        disableChange={loading}
-                        type="email"
-                        autoFocus
-                        value={state.email}
-                        onValue={stateSetters.email}
-                    />
-                </FormField>
+                    disableChange={loading}
+                    type="email"
+                    autoFocus
+                    value={state.email}
+                    onValue={stateSetters.email}
+                />
             ),
         },
         recoveryMethods.includes('sms') && {
             title: c('Recovery method').t`Phone number`,
             content: (
-                <FormField
+                <InputFieldTwo
+                    as={PhoneInput}
                     id="phone"
                     bigger
                     label={c('Label').t`Recovery phone`}
                     error={validator(currentMethod === 'phone' ? [requiredValidator(state.phone)] : [])}
-                >
-                    <PhoneInput
-                        defaultCountry={defaultCountry}
-                        disableChange={loading}
-                        autoFocus
-                        value={state.phone}
-                        onChange={stateSetters.phone}
-                    />
-                </FormField>
+                    defaultCountry={defaultCountry}
+                    disableChange={loading}
+                    autoFocus
+                    value={state.phone}
+                    onChange={stateSetters.phone}
+                />
             ),
         },
     ].filter(isTruthy);

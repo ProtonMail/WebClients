@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import React, { useState } from 'react';
-import { PasswordInputTwo, Button, useLoading, FormField, useFormErrors } from 'react-components';
+import { PasswordInputTwo, Button, useLoading, useFormErrors, InputFieldTwo } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { confirmPasswordValidator, requiredValidator } from 'proton-shared/lib/helpers/formValidators';
 
@@ -30,21 +30,20 @@ const SetPasswordForm = ({ onSubmit }: Props) => {
             }}
             method="post"
         >
-            <FormField
+            <InputFieldTwo
+                as={PasswordInputTwo}
                 id="password"
                 bigger
                 label={c('Label').t`New password`}
                 error={validator([requiredValidator(newPassword)])}
-            >
-                <PasswordInputTwo
-                    disableChange={loading}
-                    autoFocus
-                    autoComplete="new-password"
-                    value={newPassword}
-                    onValue={setNewPassword}
-                />
-            </FormField>
-            <FormField
+                disableChange={loading}
+                autoFocus
+                autoComplete="new-password"
+                value={newPassword}
+                onValue={setNewPassword}
+            />
+            <InputFieldTwo
+                as={PasswordInputTwo}
                 id="password-repeat"
                 bigger
                 label={c('Label').t`Confirm password`}
@@ -52,14 +51,11 @@ const SetPasswordForm = ({ onSubmit }: Props) => {
                     requiredValidator(confirmNewPassword),
                     confirmPasswordValidator(confirmNewPassword, newPassword),
                 ])}
-            >
-                <PasswordInputTwo
-                    disableChange={loading}
-                    autoComplete="new-password"
-                    value={confirmNewPassword}
-                    onValue={setConfirmNewPassword}
-                />
-            </FormField>
+                disableChange={loading}
+                autoComplete="new-password"
+                value={confirmNewPassword}
+                onValue={setConfirmNewPassword}
+            />
             <ButtonSpacer>
                 <Button size="large" color="norm" type="submit" fullWidth loading={loading}>
                     {c('Action').t`Confirm`}

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-import { Button, useLoading, FormField, PasswordInputTwo, useFormErrors } from 'react-components';
+import { Button, useLoading, PasswordInputTwo, useFormErrors, InputFieldTwo } from 'react-components';
 
 import ButtonSpacer from '../public/ButtonSpacer';
 
@@ -30,14 +30,17 @@ const UnlockForm = ({ onSubmit }: Props) => {
             }}
             method="post"
         >
-            <FormField
+            <InputFieldTwo
+                as={PasswordInputTwo}
                 id="mailboxPassword"
                 bigger
                 label={c('Label').t`Mailbox password`}
                 error={validator([requiredValidator(keyPassword)])}
-            >
-                <PasswordInputTwo disableChange={loading} autoFocus value={keyPassword} onValue={setKeyPassword} />
-            </FormField>
+                disableChange={loading}
+                autoFocus
+                value={keyPassword}
+                onValue={setKeyPassword}
+            />
             <ButtonSpacer>
                 <Button size="large" color="norm" type="submit" fullWidth loading={loading}>
                     {c('Action').t`Unlock`}

@@ -11,13 +11,13 @@ import {
     useModals,
     useLoading,
     useApi,
-    FormField,
-    InputTwo,
     Tabs,
     useFormErrors,
     Icons,
     ConfirmModal,
     PhoneInput,
+    InputFieldTwo,
+    DefaultThemeInjector,
 } from 'react-components';
 import { ChallengeRef, ChallengeResult } from 'react-components/components/challenge/ChallengeFrame';
 import { SignupModel, SIGNUP_STEPS } from './interfaces';
@@ -147,7 +147,8 @@ const RecoveryForm = ({ model, onChange, onSubmit, onSkip, defaultCountry }: Pro
                                         {c('Info')
                                             .t`We will send a code to this phone number if you forget your password or get locked out of your account.`}
                                     </TextSpacer>
-                                    <FormField
+                                    <InputFieldTwo
+                                        as={PhoneInput}
                                         id="recovery-phone"
                                         bigger
                                         label={c('Label').t`Recovery phone`}
@@ -156,18 +157,15 @@ const RecoveryForm = ({ model, onChange, onSubmit, onSkip, defaultCountry }: Pro
                                                 ? [requiredValidator(model.recoveryPhone), phoneError]
                                                 : []
                                         )}
-                                    >
-                                        <PhoneInput
-                                            disableChange={loading}
-                                            autoFocus
-                                            defaultCountry={defaultCountry}
-                                            value={model.recoveryPhone}
-                                            onChange={(value) => {
-                                                setPhoneError('');
-                                                setRecoveryPhone(value);
-                                            }}
-                                        />
-                                    </FormField>
+                                        disableChange={loading}
+                                        autoFocus
+                                        defaultCountry={defaultCountry}
+                                        value={model.recoveryPhone}
+                                        onChange={(value: string) => {
+                                            setPhoneError('');
+                                            setRecoveryPhone(value);
+                                        }}
+                                    />
                                 </>
                             ),
                         },
@@ -190,31 +188,29 @@ const RecoveryForm = ({ model, onChange, onSubmit, onSkip, defaultCountry }: Pro
                     type={1}
                     onLoaded={handleChallengeLoaded}
                 >
+                    <DefaultThemeInjector />
                     <Icons />
-                    <FormField
+                    <InputFieldTwo
                         id="recovery-email"
                         bigger
                         label={c('Label').t`Recovery email`}
                         error={validator(
                             model.step === RECOVERY_EMAIL ? [requiredValidator(model.recoveryEmail), emailError] : []
                         )}
-                    >
-                        <InputTwo
-                            autoFocus
-                            disableChange={loading}
-                            type="email"
-                            value={model.recoveryEmail}
-                            onValue={(value) => {
-                                setEmailError('');
-                                setRecoveryEmail(value);
-                            }}
-                            onKeyDown={({ key }) => {
-                                if (key === 'Enter') {
-                                    withLoading(handleSubmit()).catch(noop);
-                                }
-                            }}
-                        />
-                    </FormField>
+                        autoFocus
+                        disableChange={loading}
+                        type="email"
+                        value={model.recoveryEmail}
+                        onValue={(value: string) => {
+                            setEmailError('');
+                            setRecoveryEmail(value);
+                        }}
+                        onKeyDown={({ key }: React.KeyboardEvent<HTMLInputElement>) => {
+                            if (key === 'Enter') {
+                                withLoading(handleSubmit()).catch(noop);
+                            }
+                        }}
+                    />
                 </Challenge>
                 <ButtonSpacer>
                     <Button size="large" color="norm" type="submit" fullWidth loading={loading}>

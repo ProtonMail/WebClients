@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-import { Button, useLoading, FormField, InputTwo, useFormErrors } from 'react-components';
+import { Button, useLoading, useFormErrors, InputFieldTwo } from 'react-components';
 
 import ButtonSpacer from '../public/ButtonSpacer';
 
@@ -33,23 +33,27 @@ const TOTPForm = ({ onSubmit }: Props) => {
             method="post"
         >
             {isTotpRecovery ? (
-                <FormField
+                <InputFieldTwo
                     id="recovery-code"
                     bigger
                     label={c('Label').t`Recovery code`}
                     error={validator([requiredValidator(totp)])}
-                >
-                    <InputTwo disableChange={loading} autoFocus value={totp} onValue={setTotp} />
-                </FormField>
+                    disableChange={loading}
+                    autoFocus
+                    value={totp}
+                    onValue={setTotp}
+                />
             ) : (
-                <FormField
+                <InputFieldTwo
                     id="twoFa"
                     bigger
                     label={c('Label').t`Two-factor authentication code`}
                     error={validator([requiredValidator(totp)])}
-                >
-                    <InputTwo disableChange={loading} autoFocus value={totp} onValue={setTotp} />
-                </FormField>
+                    disableChange={loading}
+                    autoFocus
+                    value={totp}
+                    onValue={setTotp}
+                />
             )}
             <Button
                 size="large"

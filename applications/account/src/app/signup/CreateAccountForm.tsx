@@ -6,11 +6,11 @@ import {
     InlineLinkButton,
     Challenge,
     useLoading,
-    FormField,
     PasswordInputTwo,
-    InputTwo,
     Icons,
     useFormErrors,
+    InputFieldTwo,
+    DefaultThemeInjector,
 } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { ChallengeRef, ChallengeResult } from 'react-components/components/challenge/ChallengeFrame';
@@ -107,50 +107,44 @@ const CreateAccountForm = ({
 
     const innerChallenge =
         signupType === 'username' ? (
-            <FormField
+            <InputFieldTwo
                 id="username"
                 bigger
                 label={c('Signup label').t`Username`}
                 error={validator(signupType === 'username' ? [requiredValidator(username), usernameError] : [])}
-            >
-                <InputTwo
-                    disableChange={loading}
-                    autoFocus
-                    autoComplete="username"
-                    suffix={`@${availableDomain}`}
-                    value={username}
-                    onValue={(value) => {
-                        setUsernameError('');
-                        setUsername(value);
-                    }}
-                    onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
-                        if (e.key === 'Enter') {
-                            // formRef.submit does not trigger handler
-                            handleSubmit();
-                        }
-                    }}
-                />
-            </FormField>
+                disableChange={loading}
+                autoFocus
+                autoComplete="username"
+                suffix={`@${availableDomain}`}
+                value={username}
+                onValue={(value: string) => {
+                    setUsernameError('');
+                    setUsername(value);
+                }}
+                onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+                    if (e.key === 'Enter') {
+                        // formRef.submit does not trigger handler
+                        handleSubmit();
+                    }
+                }}
+            />
         ) : (
             <div className="flex-item-fluid">
-                <FormField
+                <InputFieldTwo
                     id="email"
                     bigger
                     label={c('Signup label').t`Email`}
                     error={validator(signupType === 'email' ? [requiredValidator(email), emailValidator(email)] : [])}
-                >
-                    <InputTwo
-                        disableChange={loading}
-                        type="email"
-                        value={email}
-                        onValue={setEmail}
-                        onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
-                            if (e.key === 'Enter') {
-                                handleSubmit();
-                            }
-                        }}
-                    />
-                </FormField>
+                    disableChange={loading}
+                    type="email"
+                    value={email}
+                    onValue={setEmail}
+                    onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+                        if (e.key === 'Enter') {
+                            handleSubmit();
+                        }
+                    }}
+                />
                 <InsecureEmailInfo email={email} />
             </div>
         );
@@ -189,6 +183,7 @@ const CreateAccountForm = ({
                         type={0}
                         onLoaded={handleChallengeLoaded}
                     >
+                        <DefaultThemeInjector />
                         <Icons />
                         {innerChallenge}
                     </Challenge>
@@ -216,21 +211,20 @@ const CreateAccountForm = ({
                         </InlineLinkButton>
                     </div>
                 ) : null}
-                <FormField
+                <InputFieldTwo
+                    as={PasswordInputTwo}
                     id="password"
                     label={c('Label').t`Password`}
                     error={validator([requiredValidator(password)])}
                     bigger
-                >
-                    <PasswordInputTwo
-                        disableChange={loading}
-                        autoComplete="new-password"
-                        value={password}
-                        onValue={setPassword}
-                    />
-                </FormField>
+                    disableChange={loading}
+                    autoComplete="new-password"
+                    value={password}
+                    onValue={setPassword}
+                />
 
-                <FormField
+                <InputFieldTwo
+                    as={PasswordInputTwo}
                     id="repeat-password"
                     label={c('Label').t`Repeat password`}
                     error={validator([
@@ -238,14 +232,11 @@ const CreateAccountForm = ({
                         confirmPasswordValidator(confirmPassword, password),
                     ])}
                     bigger
-                >
-                    <PasswordInputTwo
-                        disableChange={loading}
-                        autoComplete="new-password"
-                        value={confirmPassword}
-                        onValue={setConfirmPassword}
-                    />
-                </FormField>
+                    disableChange={loading}
+                    autoComplete="new-password"
+                    value={confirmPassword}
+                    onValue={setConfirmPassword}
+                />
                 <ButtonSpacer>
                     <Button size="large" color="norm" type="submit" fullWidth loading={loading}>
                         {c('Action').t`Create account`}
