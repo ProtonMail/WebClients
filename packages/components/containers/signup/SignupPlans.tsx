@@ -23,11 +23,11 @@ const SignupPlans = ({ plans = [], planNameSelected = '', model, onChange, onSel
                     <CycleSelector
                         className="mr1"
                         cycle={model.cycle}
-                        onSelect={(cycle: number) => onChange({ ...model, cycle })}
+                        onSelect={(cycle) => onChange({ ...model, cycle })}
                     />
                     <CurrencySelector
                         currency={model.currency}
-                        onSelect={(currency: string) => onChange({ ...model, currency })}
+                        onSelect={(currency) => onChange({ ...model, currency })}
                     />
                 </div>
             </div>

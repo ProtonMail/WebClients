@@ -1,27 +1,28 @@
 import React from 'react';
 import { c } from 'ttag';
-import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
-import { Plan } from 'proton-shared/lib/interfaces';
+import { PAYMENT_METHOD_TYPE, PLAN_SERVICES } from 'proton-shared/lib/constants';
+import { Plan, SubscriptionCheckResponse } from 'proton-shared/lib/interfaces';
 
 import { Alert } from '../../components';
 import { SubscriptionCheckout, Payment } from '../payments';
-import { SignupModel, SignupPayPal, SubscriptionCheckResult } from './interfaces';
+import { SignupModel, SignupPayPal } from './interfaces';
 import SignupCheckoutButton from './SignupCheckoutButton';
 
 interface Props {
     model: SignupModel;
-    checkResult: SubscriptionCheckResult;
+    checkResult: SubscriptionCheckResponse;
     onChange: (model: SignupModel) => void;
     card: any;
     onCardChange: (key: string, value: string) => void;
     paypal: SignupPayPal;
     paypalCredit: SignupPayPal;
     method: any;
-    onMethodChange: (method: PAYMENT_METHOD_TYPES) => void;
+    onMethodChange: (method: PAYMENT_METHOD_TYPE) => void;
     errors: any;
     canPay: boolean;
     loading: boolean;
     plans?: Plan[];
+    service: PLAN_SERVICES;
     onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 
@@ -40,6 +41,7 @@ const SignupPayment = ({
     errors,
     loading,
     onSubmit,
+    service,
 }: Props) => {
     return (
         <form name="payment-form" onSubmit={onSubmit} method="post">
@@ -62,7 +64,6 @@ const SignupPayment = ({
                 </div>
                 <div className="w25 min-w14e on-mobile-w100">
                     <SubscriptionCheckout
-                        method={method}
                         submit={
                             <SignupCheckoutButton
                                 loading={loading}
@@ -74,10 +75,14 @@ const SignupPayment = ({
                             />
                         }
                         plans={plans}
+                        service={service}
                         checkResult={checkResult}
                         loading={loading}
-                        model={model}
-                        setModel={onChange}
+                        currency={model.currency}
+                        cycle={model.cycle}
+                        planIDs={model.planIDs}
+                        onChangeCurrency={(currency) => onChange({ ...model, currency })}
+                        onChangeCycle={(cycle) => onChange({ ...model, cycle })}
                     />
                 </div>
             </div>
