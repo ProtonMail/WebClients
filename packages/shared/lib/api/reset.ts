@@ -1,7 +1,14 @@
-export const requestUsername = (Email: string) => ({
+type RequestUsernamePayload =
+    | {
+          Email: string;
+      }
+    | {
+          Phone: string;
+      };
+export const requestUsername = (data: RequestUsernamePayload) => ({
     url: 'reset/username',
     method: 'post',
-    data: { Email },
+    data,
 });
 
 export const validateResetToken = (username: string, token: string) => ({
