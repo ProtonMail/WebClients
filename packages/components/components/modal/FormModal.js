@@ -24,10 +24,13 @@ const Modal = ({
     hasClose = true,
     displayTitle = true,
     noValidate = false,
+    mode = '',
     // Destructure these options so they are not passed to the DOM.
     // eslint-disable-next-line no-unused-vars,@typescript-eslint/no-unused-vars
     disableCloseOnLocation,
     disableCloseOnOnEscape,
+    submitProps,
+    closeProps,
     ...rest
 }) => {
     // Because we will forget
@@ -51,13 +54,48 @@ function DemoModal({ onAdd, ...rest }) {
 `);
     }
 
+    const isAlertMode = mode === 'alert';
+
     const getFooter = () => {
         if (footer === null) {
             return null;
         }
 
         if (footer) {
-            return <FooterModal>{footer}</FooterModal>;
+            return <FooterModal isColumn={isAlertMode}>{footer}</FooterModal>;
+        }
+
+        if (isAlertMode) {
+            return (
+                <FooterModal isColumn>
+                    <Button
+                        size="large"
+                        color="norm"
+                        type="button"
+                        fullWidth
+                        loading={loading}
+                        onClick={onSubmit}
+                        data-focus-fallback="-1"
+                        {...submitProps}
+                    >
+                        {submit}
+                    </Button>
+                    {close ? (
+                        <Button
+                            size="large"
+                            color="weak"
+                            type="button"
+                            onClick={onClose}
+                            disabled={loading}
+                            fullWidth
+                            data-focus-fallback="-2"
+                            {...closeProps}
+                        >
+                            {close}
+                        </Button>
+                    ) : null}
+                </FooterModal>
+            );
         }
 
         const nodeSubmit =
@@ -90,8 +128,15 @@ function DemoModal({ onAdd, ...rest }) {
             modalTitleID={modalTitleID}
             disableCloseOnOnEscape={disableCloseOnOnEscape || loading}
             {...rest}
+            {...(isAlertMode ? { small: false, tiny: true } : {})}
         >
-            <HeaderModal hasClose={hasClose} displayTitle={displayTitle} modalTitleID={modalTitleID} onClose={onClose}>
+            <HeaderModal
+                hasClose={hasClose}
+                displayTitle={displayTitle}
+                modalTitleID={modalTitleID}
+                onClose={onClose}
+                {...(isAlertMode ? { hasClose: false } : {})}
+            >
                 {title}
             </HeaderModal>
             <ContentModal
@@ -117,6 +162,7 @@ Modal.propTypes = {
     submit: PropTypes.node,
     close: PropTypes.node,
     noValidate: PropTypes.bool,
+    mode: PropTypes.string,
     small: PropTypes.bool,
     background: PropTypes.bool,
     hasSubmit: PropTypes.bool,

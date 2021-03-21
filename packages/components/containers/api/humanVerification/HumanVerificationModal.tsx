@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import { c } from 'ttag';
 import { HumanVerificationMethodType } from 'proton-shared/lib/interfaces';
@@ -6,7 +6,7 @@ import { HumanVerificationMethodType } from 'proton-shared/lib/interfaces';
 import { FormModal } from '../../../components';
 import { useLoading, useNotifications } from '../../../hooks';
 import './HumanVerificationModal.scss';
-import HumanVerificationForm from './HumanVerificationForm';
+import HumanVerificationForm, { Steps } from './HumanVerificationForm';
 
 interface Props<T> {
     token: string;
@@ -15,10 +15,12 @@ interface Props<T> {
     onVerify: (token: string, tokenType: HumanVerificationMethodType) => Promise<T>;
     [key: string]: any;
 }
+
 const HumanVerificationModal = <T,>({ token, methods = [], onSuccess, onVerify, ...rest }: Props<T>) => {
     const title = c('Title').t`Human verification`;
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
+    const [step, setStep] = useState(Steps.ENTER_DESTINATION);
 
     const handleSubmit = async (token: string, tokenType: HumanVerificationMethodType) => {
         if (loading) {
@@ -49,6 +51,8 @@ const HumanVerificationModal = <T,>({ token, methods = [], onSuccess, onVerify, 
     return (
         <FormModal className="human-verification-modal modal--height-auto" title={title} footer={null} {...rest}>
             <HumanVerificationForm
+                step={step}
+                onChangeStep={setStep}
                 onSubmit={(...args) => withLoading(handleSubmit(...args))}
                 methods={methods}
                 token={token}

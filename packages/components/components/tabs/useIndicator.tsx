@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Tab } from './index.d';
 
 const getWidth = (el: HTMLLIElement | HTMLUListElement) => {
-    return el.getClientRects()[0].width;
+    return el.getClientRects()?.[0]?.width ?? 0;
 };
 
 const getComputedMargin = (el: HTMLLIElement) => {

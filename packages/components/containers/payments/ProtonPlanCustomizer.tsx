@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Cycle, Currency, Plan, Organization } from 'proton-shared/lib/interfaces';
+import { Cycle, Currency, Plan, Organization, PlanIDs } from 'proton-shared/lib/interfaces';
 import {
     PLANS,
     PLAN_SERVICES,
@@ -21,7 +21,6 @@ import { getAppName } from 'proton-shared/lib/apps/helper';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 
 import { InlineLinkButton, Icon, Info, Price } from '../../components';
-import { PlanIDs } from '../signup/interfaces';
 
 import { classnames } from '../../helpers';
 
