@@ -5,7 +5,6 @@ import { loadLocale, loadDateLocale } from 'proton-shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 import {
     LoaderPage,
-    ModalsChildren,
     useApi,
     ProtonLoginCallback,
     StandardLoadErrorPage,
@@ -20,15 +19,17 @@ import { getLocalIDFromPathname } from 'proton-shared/lib/authentication/pathnam
 import { InvalidPersistentSessionError } from 'proton-shared/lib/authentication/error';
 import { getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { getCookie } from 'proton-shared/lib/helpers/cookies';
+import * as H from 'history';
 
 interface Props {
+    location: H.Location;
     locales?: TtagLocaleMap;
     children: React.ReactNode;
     onActiveSessions: (data: GetActiveSessionsResult) => boolean;
     onLogin: ProtonLoginCallback;
 }
 
-const AccountPublicApp = ({ locales = {}, children, onActiveSessions, onLogin }: Props) => {
+const AccountPublicApp = ({ location, locales = {}, children, onActiveSessions, onLogin }: Props) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const normalApi = useApi();
@@ -37,7 +38,7 @@ const AccountPublicApp = ({ locales = {}, children, onActiveSessions, onLogin }:
 
     useEffect(() => {
         const runGetSessions = async () => {
-            const searchParams = new URLSearchParams(window.location.search);
+            const searchParams = new URLSearchParams(location.search);
             const languageParams = searchParams.get('language');
             const languageCookie = getCookie('Locale');
             const browserLocale = getBrowserLocale();
@@ -49,7 +50,7 @@ const AccountPublicApp = ({ locales = {}, children, onActiveSessions, onLogin }:
                 loadLocale(localeCode, locales),
                 loadDateLocale(localeCode, browserLocale),
             ]);
-            const [activeSessionsResult] = await Promise.all([getActiveSessions(silentApi)]);
+            const activeSessionsResult = await getActiveSessions(silentApi);
             if (!onActiveSessions(activeSessionsResult)) {
                 setLoading(false);
             }
@@ -68,7 +69,7 @@ const AccountPublicApp = ({ locales = {}, children, onActiveSessions, onLogin }:
         };
 
         const run = async () => {
-            const localID = getLocalIDFromPathname(window.location.pathname);
+            const localID = getLocalIDFromPathname(location.pathname);
             if (localID === undefined) {
                 return runGetSessions();
             }
@@ -86,20 +87,10 @@ const AccountPublicApp = ({ locales = {}, children, onActiveSessions, onLogin }:
     }
 
     if (loading) {
-        return (
-            <>
-                <ModalsChildren />
-                <LoaderPage />
-            </>
-        );
+        return <LoaderPage />;
     }
 
-    return (
-        <>
-            <ModalsChildren />
-            {children}
-        </>
-    );
+    return <>{children}</>;
 };
 
 export default AccountPublicApp;
