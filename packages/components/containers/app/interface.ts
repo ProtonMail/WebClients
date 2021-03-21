@@ -1,18 +1,7 @@
-import { User as tsUser, Address as tsAddress } from 'proton-shared/lib/interfaces';
 import { AuthenticationStore } from 'proton-shared/lib/authentication/createAuthenticationStore';
+import { AuthSession } from '../login/interface';
 
-export type LoginFlows = 'welcome' | 'welcome-full' | 'signup' | undefined;
-
-export interface OnLoginCallbackArguments {
-    UID: string;
-    User: tsUser;
-    Addresses?: tsAddress[];
-    EventID?: string;
-    keyPassword?: string;
-    LocalID?: number;
-    path?: string;
-    flow?: LoginFlows;
-}
+export type OnLoginCallbackArguments = AuthSession;
 export type ProtonLoginCallback = (data: OnLoginCallbackArguments) => void;
 export type OnLoginCallback = (data: OnLoginCallbackArguments) => Promise<void>;
 

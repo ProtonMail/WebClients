@@ -10,8 +10,12 @@ export interface ConfirmModalProps {
     cancel?: ReactNode;
     confirm?: ReactNode;
     loading?: boolean;
-    small?: boolean;
     className?: string;
+    small?: boolean;
+    tiny?: boolean;
+    mode?: 'alert';
+    submitProps?: any;
+    closeProps?: any;
 }
 
 const Confirm = ({

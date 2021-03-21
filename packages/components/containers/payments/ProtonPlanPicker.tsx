@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Cycle, Currency, Plan, Organization, Subscription } from 'proton-shared/lib/interfaces';
+import { Cycle, Currency, Plan, Organization, Subscription, PlanIDs } from 'proton-shared/lib/interfaces';
 import {
     CYCLE,
     PLANS,
@@ -18,7 +18,6 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import { Radio, Button, InlineLinkButton, Price } from '../../components';
 import { classnames } from '../../helpers';
-import { PlanIDs } from '../signup/interfaces';
 
 const NAMES = {
     free: 'Free',

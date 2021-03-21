@@ -20,6 +20,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
     className?: string;
     style?: CSSProperties;
     onClose?: () => void;
+    onClosed?: () => void;
     onContextMenu?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
     originalPlacement?: string;
     disableFocusTrap?: boolean;
@@ -49,6 +50,7 @@ const Dropdown = ({
     originalPosition,
     offset = 20,
     onClose = noop,
+    onClosed,
     onContextMenu = noop,
     isOpen = false,
     noMaxWidth = false,
@@ -181,6 +183,7 @@ const Dropdown = ({
         if (animationName.includes('anime-dropdown-out') && isClosing) {
             setIsClosed();
             setContentRect(undefined);
+            onClosed?.();
         }
         if (animationName.includes('anime-dropdown-in') && isOpen && contentRef.current && !contentRect) {
             const contentClientRect = contentRef.current?.getBoundingClientRect();

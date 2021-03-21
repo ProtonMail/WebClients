@@ -5,6 +5,7 @@ import { getChallengeURL, handleEvent, normalizeSelectOptions } from './challeng
 
 export const ERROR_TIMEOUT_MS = 15000;
 export const CHALLENGE_TIMEOUT_MS = 9000;
+export const LAYOUT_SHIFT_TIMEOUT_MS = 50;
 
 export type ChallengeResult = { [key: string]: string } | undefined;
 
@@ -20,6 +21,7 @@ export interface Props
     className?: string;
     innerClassName?: string;
     bodyClassName?: string;
+    loaderClassName?: string;
     title?: string;
     type: number;
     onError?: () => void;
@@ -27,6 +29,7 @@ export interface Props
     errorTimeout?: number;
     challengeTimeout?: number;
 }
+
 const ChallengeFrame = ({
     type,
     onLoaded,
@@ -52,11 +55,17 @@ const ChallengeFrame = ({
     }, [src]);
 
     useLayoutEffect(() => {
+        let isMounted = true;
+        let callbackHandle: number | undefined;
+
         renderDivRef.current = document.createElement('DIV') as HTMLDivElement;
 
         let error = false;
         const handleError = () => {
             error = true;
+            if (!isMounted) {
+                return;
+            }
             onError?.();
         };
         let errorTimeoutHandle = window.setTimeout(handleError, errorTimeout);
@@ -80,8 +89,17 @@ const ChallengeFrame = ({
 
         const handleInitDone = () => {
             clearTimeout(errorTimeoutHandle);
+            if (!isMounted) {
+                return;
+            }
             setIsLoaded(true);
-            onLoaded?.();
+            callbackHandle = window.setTimeout(() => {
+                if (!isMounted) {
+                    return;
+                }
+                onLoaded?.();
+                // Small timeout to let the iframe render and improve layout shift
+            }, LAYOUT_SHIFT_TIMEOUT_MS);
         };
 
         const handleAssetLoaded = () => {
@@ -216,7 +234,7 @@ const ChallengeFrame = ({
                         },
                         targetOrigin
                     );
-                    window.setTimeout(() => {
+                    errorTimeoutHandle = window.setTimeout(() => {
                         reject(new Error('Challenge timeout'));
                     }, challengeTimeout);
                 });
@@ -226,6 +244,9 @@ const ChallengeFrame = ({
         window.addEventListener('message', cb);
         return () => {
             window.removeEventListener('message', cb);
+            clearTimeout(errorTimeoutHandle);
+            clearTimeout(callbackHandle);
+            isMounted = false;
         };
     }, []);
 
@@ -238,6 +259,7 @@ const ChallengeFrame = ({
         renderEl.className = innerClassName;
         ReactDOM.render(children as any, renderEl, () => {
             normalizeSelectOptions(renderEl);
+
             contentWindow.postMessage(
                 {
                     type: 'html',
