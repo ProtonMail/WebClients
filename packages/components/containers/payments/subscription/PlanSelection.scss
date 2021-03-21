@@ -26,7 +26,7 @@
 	}
 	.plan-selection {
 		&-plan-current {
-			background-color: $pm-primary;
+			background-color: var(--primary);
 			color: $white;
 			position: absolute;
 			bottom: 100%;
@@ -35,7 +35,7 @@
 			border-radius: $global-bigger-border-radius $global-bigger-border-radius 0 0;
 			padding: 0.35em; // Design wants 28px height ^^
 			&-card {
-				border-color: $pm-primary;
+				border-color: var(--primary);
 				border-radius: 0 0 $global-bigger-border-radius $global-bigger-border-radius;
 			}
 		}

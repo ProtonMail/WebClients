@@ -66,7 +66,7 @@ const ButtonNumberInput = ({
     onChange?: (newValue: number) => void;
 }) => {
     return (
-        <div className="bordered-container flex-item-noshrink flex flex-nowrap">
+        <div className="bordered rounded flex-item-noshrink flex flex-nowrap">
             <button
                 type="button"
                 title={c('Action').t`Decrease`}
