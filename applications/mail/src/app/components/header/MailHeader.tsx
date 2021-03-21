@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo } from 'react';
+import React, { useRef, useState, useEffect, memo } from 'react';
 import { c } from 'ttag';
 import { Location, History } from 'history';
 import {
@@ -49,7 +49,7 @@ const MailHeader = ({
 }: Props) => {
     const { keyword = '' } = extractSearchParameters(location);
     const [value, updateValue] = useState(keyword);
-    const [oldLabelID, setOldLabelID] = useState<string>(MAILBOX_LABEL_IDS.INBOX);
+    const oldLabelIDRef = useRef<string>(MAILBOX_LABEL_IDS.INBOX);
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
 
@@ -64,9 +64,9 @@ const MailHeader = ({
             placeholder={c('Placeholder').t`Search messages`}
             onSearch={(keyword) => {
                 if (keyword) {
-                    setOldLabelID(labelID);
+                    oldLabelIDRef.current = labelID;
                 }
-                onSearch(keyword, keyword ? undefined : oldLabelID);
+                onSearch(keyword, keyword ? undefined : oldLabelIDRef.current);
             }}
             onChange={updateValue}
             value={value}
