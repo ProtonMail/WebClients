@@ -1,7 +1,7 @@
 import { CYCLE, PLAN_TYPES, PLANS, ADDON_NAMES } from '../constants';
 
 export type Currency = 'EUR' | 'CHF' | 'USD';
-export type Cycle = 1 | 12 | 24;
+export type Cycle = CYCLE.MONTHLY | CYCLE.YEARLY | CYCLE.TWO_YEARS;
 
 export interface Pricing {
     [CYCLE.MONTHLY]: number;
@@ -14,7 +14,7 @@ export type MaxKeys = 'MaxDomains' | 'MaxAddresses' | 'MaxSpace' | 'MaxMembers' 
 export interface Plan {
     ID: string;
     Type: PLAN_TYPES;
-    Cycle: CYCLE;
+    Cycle: Cycle;
     Name: PLANS | ADDON_NAMES;
     Title: string;
     Currency: Currency;
@@ -34,7 +34,7 @@ export interface Plan {
 export interface Subscription {
     ID: string;
     InvoiceID: string;
-    Cycle: CYCLE;
+    Cycle: Cycle;
     PeriodStart: number;
     PeriodEnd: number;
     CouponCode: null | string;
