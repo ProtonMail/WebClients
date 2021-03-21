@@ -11,12 +11,11 @@ import {
     useNotifications,
     useLoading,
     useFormErrors,
-    InputTwo,
-    FormField,
     useErrorHandler,
     Tabs,
     PhoneInput,
     useMyLocation,
+    InputFieldTwo,
 } from 'react-components';
 import BackButton from './BackButton';
 import ButtonSpacer from './ButtonSpacer';
@@ -68,20 +67,17 @@ const ForgotUsernameForm = ({
                                     {c('Info')
                                         .t`Enter your recovery email address and we will send you your username or email address.`}
                                 </TextSpacer>
-                                <FormField
+                                <InputFieldTwo
                                     id="email"
                                     bigger
                                     label={c('Label').t`Recovery email`}
                                     error={validator(method === 'email' ? [requiredValidator(email)] : [])}
-                                >
-                                    <InputTwo
-                                        autoFocus
-                                        disableChange={loading}
-                                        autoComplete="email"
-                                        value={email}
-                                        onValue={setEmail}
-                                    />
-                                </FormField>
+                                    autoFocus
+                                    disableChange={loading}
+                                    autoComplete="email"
+                                    value={email}
+                                    onValue={setEmail}
+                                />
                             </>
                         ),
                     },
@@ -93,21 +89,19 @@ const ForgotUsernameForm = ({
                                     {c('Info')
                                         .t`Enter your recovery phone number and we will send you your username or email address.`}
                                 </TextSpacer>
-                                <FormField
+                                <InputFieldTwo
+                                    as={PhoneInput}
                                     id="phone"
                                     bigger
                                     label={c('Label').t`Recovery phone`}
                                     error={validator(method === 'phone' ? [requiredValidator(phone)] : [])}
-                                >
-                                    <PhoneInput
-                                        autoFocus
-                                        defaultCountry={defaultCountry}
-                                        disableChange={loading}
-                                        autoComplete="phone"
-                                        value={phone}
-                                        onChange={setPhone}
-                                    />
-                                </FormField>
+                                    autoFocus
+                                    defaultCountry={defaultCountry}
+                                    disableChange={loading}
+                                    autoComplete="phone"
+                                    value={phone}
+                                    onChange={setPhone}
+                                />
                             </>
                         ),
                     },

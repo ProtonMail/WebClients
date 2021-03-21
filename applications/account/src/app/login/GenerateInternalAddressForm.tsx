@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { useLoading, Button, FormField, InputTwo, useFormErrors } from 'react-components';
+import { useLoading, Button, useFormErrors, InputFieldTwo } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { Api } from 'proton-shared/lib/interfaces';
 import { queryCheckUsernameAvailability } from 'proton-shared/lib/api/user';
@@ -49,23 +49,20 @@ const GenerateInternalAddressForm = ({ defaultUsername = '', onSubmit, available
             }}
             method="post"
         >
-            <FormField
+            <InputFieldTwo
                 bigger
                 id="username"
                 label={c('Label').t`Username`}
                 error={validator([requiredValidator(username), usernameError])}
-            >
-                <InputTwo
-                    autoFocus
-                    disableChange={loading}
-                    value={username}
-                    onValue={(value) => {
-                        setUsernameError('');
-                        setUsername(value);
-                    }}
-                    suffix={`@${domain}`}
-                />
-            </FormField>
+                autoFocus
+                disableChange={loading}
+                value={username}
+                onValue={(value: string) => {
+                    setUsernameError('');
+                    setUsername(value);
+                }}
+                suffix={`@${domain}`}
+            />
             <ButtonSpacer>
                 <Button size="large" color="norm" type="submit" fullWidth loading={loading}>
                     {c('Action').t`Next`}

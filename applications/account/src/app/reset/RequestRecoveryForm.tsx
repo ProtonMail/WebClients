@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import React from 'react';
-import { FormField, InputTwo, Button, useFormErrors, useLoading } from 'react-components';
+import { Button, useFormErrors, useLoading, InputFieldTwo } from 'react-components';
 import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
 import { ResetPasswordState, ResetPasswordSetters } from 'react-components/containers/resetPassword/useResetPassword';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -28,14 +28,16 @@ const RequestRecoveryForm = ({ onSubmit, state, setters: stateSetters }: Props) 
                 withLoading(onSubmit()).catch(noop);
             }}
         >
-            <FormField
+            <InputFieldTwo
                 id="username"
                 bigger
                 label={c('Label').t`Email or username`}
                 error={validator([requiredValidator(state.username)])}
-            >
-                <InputTwo disableChange={loading} value={state.username} onValue={stateSetters.username} autoFocus />
-            </FormField>
+                disableChange={loading}
+                value={state.username}
+                onValue={stateSetters.username}
+                autoFocus
+            />
             <ButtonSpacer>
                 <Button size="large" color="norm" loading={loading} type="submit" fullWidth>{c('Action')
                     .t`Next`}</Button>

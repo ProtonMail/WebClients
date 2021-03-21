@@ -134,7 +134,7 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                     className={`${listItemClassName} button-show-on-hover button-account`}
                     onClick={() => handleClickSession(LocalID)}
                 >
-                    <span className="dropdown-logout-initials rounded p0-25 mt0-25 inline-flex bg-global-grey color-white">
+                    <span className="dropdown-logout-initials rounded p0-25 mt0-25 inline-flex bg-weak color-norm">
                         <span className="dropdown-logout-text center text-semibold" aria-hidden="true">
                             {initials}
                         </span>
@@ -169,14 +169,11 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                 <div className="scroll-if-needed" style={{ maxHeight: '20em' }}>
                     {inner()}
                 </div>
-                <div className="relative pl1 mt1">
-                    <LinkButton className="text-no-decoration increase-surface-click" onClick={onAddAccount}>{c(
-                        'Action'
-                    ).t`Add ${BRAND_NAME} account`}</LinkButton>
-                </div>
+                <LinkButton className="mt1" onClick={onAddAccount}>{c('Action')
+                    .t`Add ${BRAND_NAME} account`}</LinkButton>
             </Content>
             <Footer>
-                <LinkButton className="mlauto mrauto text-no-decoration" onClick={handleSignOutAll}>{c('Action')
+                <LinkButton className="mlauto mrauto" onClick={handleSignOutAll}>{c('Action')
                     .t`Sign out all accounts`}</LinkButton>
             </Footer>
         </Main>

@@ -337,7 +337,8 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
 
     const forkOrQueryApp = toApp || service;
     const toAppName = getToAppName(forkOrQueryApp);
-    const disableExternalSignup = false;
+    // TODO: Only some apps are allowed for this
+    const disableExternalSignup = true;
 
     const firstPlanID = Object.keys(model.planIDs || {})[0];
     const selectedPlan = (plans || []).find(({ ID }) => firstPlanID === ID);

@@ -1,14 +1,13 @@
 import { c } from 'ttag';
 import React, { useEffect, useRef } from 'react';
 import {
-    FormField,
     Button,
-    InputTwo,
     RequestNewCodeModal,
     useFormErrors,
     useLoading,
     useModals,
     ConfirmModal,
+    InputFieldTwo,
 } from 'react-components';
 import { ResetPasswordSetters, ResetPasswordState } from 'react-components/containers/resetPassword/useResetPassword';
 import { BRAND_NAME } from 'proton-shared/lib/constants';
@@ -97,9 +96,16 @@ const ValidateResetTokenForm = ({ onSubmit, state, setters: stateSetters, onBack
             }}
         >
             <TextSpacer>{subTitle}</TextSpacer>
-            <FormField id="reset-token" bigger label={c('Label').t`Code`} error={validator([requiredValidator(token)])}>
-                <InputTwo disableChange={loading} value={token} onValue={stateSetters.token} autoFocus />
-            </FormField>
+            <InputFieldTwo
+                id="reset-token"
+                bigger
+                label={c('Label').t`Code`}
+                error={validator([requiredValidator(token)])}
+                disableChange={loading}
+                value={token}
+                onValue={stateSetters.token}
+                autoFocus
+            />
             <ButtonSpacer>
                 <Button size="large" color="norm" type="submit" fullWidth loading={loading}>{c('Action')
                     .t`Reset password`}</Button>

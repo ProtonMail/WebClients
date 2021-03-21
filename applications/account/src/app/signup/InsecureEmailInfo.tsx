@@ -50,7 +50,7 @@ const InsecureEmailInfo = ({ email }: Props) => {
 
     if (INSECURE_DOMAINS.includes(domain)) {
         return (
-            <div className="mb1 bg-global-attention color-white pt0-5 pb0-5 pl1 pr1 rounded">
+            <div className="mb1 bg-warning color-norm pt0-5 pb0-5 pl1 pr1 rounded">
                 <button
                     type="button"
                     onClick={() => setExpanded(!expanded)}

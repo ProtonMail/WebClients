@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import React, { useState } from 'react';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { useLoading, FormField, InputTwo, PasswordInputTwo, Button, useFormErrors } from 'react-components';
+import { useLoading, InputFieldTwo, PasswordInputTwo, Button, useFormErrors } from 'react-components';
 import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
 
 import ButtonSpacer from '../public/ButtonSpacer';
@@ -31,33 +31,28 @@ const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
             }}
             method="post"
         >
-            <FormField
+            <InputFieldTwo
                 id="username"
                 bigger
                 label={c('Label').t`Email or username`}
                 error={validator([requiredValidator(username)])}
-            >
-                <InputTwo
-                    autoFocus
-                    disableChange={loading}
-                    autoComplete="username"
-                    value={username}
-                    onValue={setUsername}
-                />
-            </FormField>
-            <FormField
+                autoFocus
+                disableChange={loading}
+                autoComplete="username"
+                value={username}
+                onValue={setUsername}
+            />
+            <InputFieldTwo
                 id="password"
                 bigger
                 label={c('Label').t`Password`}
                 error={validator([requiredValidator(password)])}
-            >
-                <PasswordInputTwo
-                    disableChange={loading}
-                    autoComplete="current-password"
-                    value={password}
-                    onValue={setPassword}
-                />
-            </FormField>
+                as={PasswordInputTwo}
+                disableChange={loading}
+                autoComplete="current-password"
+                value={password}
+                onValue={setPassword}
+            />
             <ButtonSpacer>
                 <Button size="large" color="norm" type="submit" fullWidth loading={loading}>
                     {c('Action').t`Sign in`}
