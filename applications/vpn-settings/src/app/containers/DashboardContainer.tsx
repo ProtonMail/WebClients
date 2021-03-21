@@ -6,7 +6,7 @@ import {
     useUser,
     SettingsPropsShared,
     useModals,
-    NewSubscriptionModal,
+    SubscriptionModal,
     usePlans,
     useSubscription,
     useOrganization,
@@ -86,12 +86,12 @@ const DashboardContainer = ({ setActiveSection, location }: SettingsPropsShared)
                 return;
             }
             createModal(
-                <NewSubscriptionModal
+                <SubscriptionModal
                     planIDs={planIDs}
-                    currency={Currency}
-                    cycle={Cycle}
+                    currency={defaultCurrency}
+                    cycle={defaultCycle}
                     coupon={coupon}
-                    step={SUBSCRIPTION_STEPS.PAYMENT}
+                    step={SUBSCRIPTION_STEPS.CHECKOUT}
                 />
             );
             return;
@@ -107,7 +107,14 @@ const DashboardContainer = ({ setActiveSection, location }: SettingsPropsShared)
             service: PLAN_SERVICES.VPN,
             organization,
         });
-        createModal(<NewSubscriptionModal planIDs={planIDs} currency={Currency} cycle={Cycle} />);
+        createModal(
+            <SubscriptionModal
+                planIDs={planIDs}
+                currency={Currency}
+                cycle={Cycle}
+                step={SUBSCRIPTION_STEPS.CUSTOMIZATION}
+            />
+        );
     };
 
     useEffect(() => {
