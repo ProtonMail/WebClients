@@ -46,12 +46,17 @@ const SubscriptionSubmitButton = ({
 
     if (method === PAYMENT_METHOD_TYPES.PAYPAL) {
         return (
-            <PayPalButton type="subscription" paypal={paypal} color="norm" className={className} amount={checkResult?.AmountDue || 0}>{c('Action')
-                .t`Pay`}</PayPalButton>
+            <PayPalButton
+                type="subscription"
+                paypal={paypal}
+                color="norm"
+                className={className}
+                amount={checkResult?.AmountDue || 0}
+            >{c('Action').t`Pay`}</PayPalButton>
         );
     }
 
-    if (method && [PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN].includes(method)) {
+    if (method && [PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN].includes(method as any)) {
         return (
             <PrimaryButton className={className} loading={loading} onClick={onClose}>{c('Action')
                 .t`Done`}</PrimaryButton>

@@ -51,7 +51,7 @@ const usePayment = ({ amount, currency, onPay }: Props) => {
             return false;
         }
 
-        if ([BITCOIN, CASH].includes(method)) {
+        if ([BITCOIN, CASH].includes(method as any)) {
             return false;
         }
 
@@ -71,7 +71,7 @@ const usePayment = ({ amount, currency, onPay }: Props) => {
             return;
         }
 
-        if (![CARD, PAYPAL, CASH, BITCOIN].includes(method)) {
+        if (![CARD, PAYPAL, CASH, BITCOIN].includes(method as any)) {
             setParameters({ PaymentMethodID: method });
         }
 
@@ -80,7 +80,7 @@ const usePayment = ({ amount, currency, onPay }: Props) => {
         }
 
         // Reset parameters when switching methods
-        if ([PAYPAL, CASH, BITCOIN].includes(method)) {
+        if ([PAYPAL, CASH, BITCOIN].includes(method as any)) {
             setParameters({});
         }
     }, [method, card]);

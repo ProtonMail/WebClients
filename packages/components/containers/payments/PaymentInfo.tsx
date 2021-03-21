@@ -8,7 +8,7 @@ interface Props {
     method?: PAYMENT_METHOD_TYPE;
 }
 const PaymentInfo = ({ method }: Props) => {
-    if (method && [PAYMENT_METHOD_TYPES.BITCOIN, PAYMENT_METHOD_TYPES.CASH].includes(method)) {
+    if (method && [PAYMENT_METHOD_TYPES.BITCOIN, PAYMENT_METHOD_TYPES.CASH].includes(method as any)) {
         return null;
     }
 

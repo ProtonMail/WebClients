@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { queryPaymentMethods } from 'proton-shared/lib/api/payments';
+import { PaymentMethod } from 'proton-shared/lib/interfaces';
 
 import { useApi, useLoading, useAuthentication } from '../../hooks';
 import { getPaymentMethodOptions } from './getPaymentMethodOptions';
-import { PaymentMethodResult } from '../payments/interface';
 import { PaymentMethodFlows } from './interface';
 
 interface Props {
@@ -16,7 +16,7 @@ const useMethods = ({ amount, coupon, type }: Props) => {
     const api = useApi();
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID;
-    const [methods, setMethods] = useState<PaymentMethodResult[]>([]);
+    const [methods, setMethods] = useState<PaymentMethod[]>([]);
     const [loading, withLoading] = useLoading();
 
     useEffect(() => {
@@ -24,7 +24,7 @@ const useMethods = ({ amount, coupon, type }: Props) => {
             return;
         }
         withLoading(
-            api<{ PaymentMethods: PaymentMethodResult[] }>(queryPaymentMethods()).then(({ PaymentMethods = [] }) => {
+            api<{ PaymentMethods: PaymentMethod[] }>(queryPaymentMethods()).then(({ PaymentMethods = [] }) => {
                 setMethods(PaymentMethods);
             })
         );

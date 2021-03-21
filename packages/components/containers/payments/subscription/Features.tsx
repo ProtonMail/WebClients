@@ -13,7 +13,7 @@ interface Props {
     onSelect: (planName: PLANS | 'free') => void;
 }
 
-type UghRest = keyof Omit<MailFeature | VPNFeature | CalendarFeature, 'name' | 'label'>;
+type UghRest = keyof Omit<MailFeature | VPNFeature | CalendarFeature, 'name' | 'label' | 'tooltip'>;
 
 const Features = ({ appName, onSelect, planLabels, features }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
