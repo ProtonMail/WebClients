@@ -1,4 +1,4 @@
-import { Card } from './useCard';
+import { CardModel } from './interface';
 
 const formatYear = (year: any) => {
     const pre = String(year).length === 2 ? '20' : '';
@@ -7,7 +7,7 @@ const formatYear = (year: any) => {
 
 const clear = (v: any) => String(v).trim();
 
-const toDetails = ({ number, month: ExpMonth, year, cvc: CVC, fullname, zip: ZIP, country: Country }: Card) => {
+const toDetails = ({ number, month: ExpMonth, year, cvc: CVC, fullname, zip: ZIP, country: Country }: CardModel) => {
     return {
         Name: clear(fullname),
         Number: String(number).replace(/\s+/g, ''),

@@ -62,78 +62,78 @@ $default-height-fields: 4.1rem;
 			}
 		}
 
-		.payment-left {
-			width: 15em;
-		}
-		.payment-right {
-			width: 46rem;
-			margin-left: auto;
-			margin-right: auto;
-			padding-left: 1em;
-			padding-right: 1em;
-		}
+		// .payment-left {
+		// 	width: 15em;
+		// }
+		// .payment-right {
+		// 	width: 46rem;
+		// 	margin-left: auto;
+		// 	margin-right: auto;
+		// 	padding-left: 1em;
+		// 	padding-right: 1em;
+		// }
 
-		@include respond-to($breakpoint-small) {
-			border-radius: 0;
-			max-width: none;
-			width: 100%;
+		// @include respond-to($breakpoint-small) {
+		// 	border-radius: 0;
+		// 	max-width: none;
+		// 	width: 100%;
 
-			.payment-left,
-			.payment-right {
-				width: 100%;
-				padding-left: 0;
-				padding-right: 0;
-			}
-		}
+		// 	.payment-left,
+		// 	.payment-right {
+		// 		width: 100%;
+		// 		padding-left: 0;
+		// 		padding-right: 0;
+		// 	}
+		// }
 	}
 	// special case for Signup in Proton-Account :-\
 	// this overrides only what's needed just below this
-	.payment-side-fields {
-		@include respond-to(768) {
-			grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
-		}
-		@include respond-to(720) {
-			grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
-		}
-		@include respond-to($breakpoint-small) {
-			grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
-		}
-		@include respond-to($breakpoint-tiny) {
-			grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-		}
-	}
+	// .payment-side-fields {
+	// 	@include respond-to(768) {
+	// 		grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+	// 	}
+	// 	@include respond-to(720) {
+	// 		grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
+	// 	}
+	// 	@include respond-to($breakpoint-small) {
+	// 		grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+	// 	}
+	// 	@include respond-to($breakpoint-tiny) {
+	// 		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+	// 	}
+	// }
 }
 
 // case for VPN signup
-.payment-side-fields {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
-	grid-gap: 1em;
-	@include respond-to(768) {
-		grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
-	}
-	@include respond-to($breakpoint-small) {
-		grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
-	}
-	@include respond-to($breakpoint-tiny) {
-		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-	}
-}
+// .payment-side-fields {
+// 	display: grid;
+// 	grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+// 	grid-gap: 1em;
+// 	@include respond-to(768) {
+// 		grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
+// 	}
+// 	@include respond-to($breakpoint-small) {
+// 		grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+// 	}
+// 	@include respond-to($breakpoint-tiny) {
+// 		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+// 	}
+// }
 
 .sign-layout-main {
 	padding: em(24) em(48);
 }
 
 /* label size */
-.payment-container,
-.payment-right {
-	--label-width: #{$pm-label-width};
-}
-@include respond-to($breakpoint-medium) {
-	.payment-container {
-		--label-width: 45%;
-	}
-}
+// .payment-container,
+// .payment-right {
+// 	--label-width: #{$pm-label-width};
+// }
+// @include respond-to($breakpoint-medium) {
+// 	.payment-container {
+// 		--label-width: 45%;
+// 	}
+// }
 
 /* display for currency/plans */
 .account-form-cycle-currency-selectors {

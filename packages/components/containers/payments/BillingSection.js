@@ -14,8 +14,9 @@ import DiscountBadge from './DiscountBadge';
 import GiftCodeModal from './GiftCodeModal';
 import CreditsModal from './CreditsModal';
 import PlanPrice from './subscription/PlanPrice';
-import NewSubscriptionModal from './subscription/NewSubscriptionModal';
+import SubscriptionModal from './subscription/SubscriptionModal';
 import CycleDiscountBadge from './CycleDiscountBadge';
+import { SUBSCRIPTION_STEPS } from './subscription/constants';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 
@@ -28,7 +29,7 @@ const getCyclesI18N = () => ({
 const BillingSection = ({ permission }) => {
     const i18n = getCyclesI18N();
     const { createModal } = useModals();
-    const [{ hasPaidMail, hasPaidVpn, Credit }] = useUser();
+    const [{ hasPaidMail, hasPaidVpn, Credit, isFree }] = useUser();
     const [plans, loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
@@ -36,11 +37,12 @@ const BillingSection = ({ permission }) => {
     const handleOpenCreditsModal = () => createModal(<CreditsModal />);
     const handleOpenSubscriptionModal = () =>
         createModal(
-            <NewSubscriptionModal
+            <SubscriptionModal
                 planIDs={getPlanIDs(subscription)}
                 coupon={subscription.CouponCode}
                 currency={subscription.Currency}
                 cycle={YEARLY}
+                step={isFree ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CUSTOMIZATION}
             />
         );
 

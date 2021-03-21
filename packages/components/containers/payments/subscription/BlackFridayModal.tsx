@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { checkSubscription } from 'proton-shared/lib/api/payments';
 import { APPS, CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
-import { Currency, Cycle, PlanIDs } from 'proton-shared/lib/interfaces';
+import { Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from 'proton-shared/lib/interfaces';
 import { isProductPayer } from 'proton-shared/lib/helpers/blackfriday';
 
 import { getAppName } from 'proton-shared/lib/apps/helper';
@@ -11,7 +11,6 @@ import { useLoading, useApi, useSubscription } from '../../../hooks';
 import { classnames } from '../../../helpers';
 import CurrencySelector from '../CurrencySelector';
 import './BlackFridayModal.scss';
-import { SubscriptionCheckResult } from '../../signup/interfaces';
 import BlackFridayModalDescription from './BlackFridayModalDescription';
 import useBlackFridayModalTitle from './useBlackFridayModalTitle';
 
@@ -141,7 +140,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
             const result = await Promise.all(
                 bundles.map(({ planIDs = [], cycle = DEFAULT_CYCLE, couponCode }) => {
                     return Promise.all([
-                        api<SubscriptionCheckResult>(
+                        api<SubscriptionCheckResponse>(
                             checkSubscription({
                                 PlanIDs: planIDs,
                                 CouponCode: couponCode,
@@ -149,14 +148,14 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                                 Cycle: cycle,
                             })
                         ),
-                        api<SubscriptionCheckResult>(
+                        api<SubscriptionCheckResponse>(
                             checkSubscription({
                                 PlanIDs: planIDs,
                                 Currency: currency,
                                 Cycle: cycle,
                             })
                         ),
-                        api<SubscriptionCheckResult>(
+                        api<SubscriptionCheckResponse>(
                             checkSubscription({
                                 PlanIDs: planIDs,
                                 Currency: currency,
@@ -170,8 +169,8 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
             updatePricing(
                 result.reduce<Pricing>((acc, [withCoupon, withoutCoupon, withoutCouponMonthly], index) => {
                     acc[index] = {
-                        withCoupon: withCoupon.Amount + withCoupon.CouponDiscount,
-                        withoutCoupon: withoutCoupon.Amount + withoutCoupon.CouponDiscount, // BUNDLE discount can be applied
+                        withCoupon: withCoupon.Amount + (withCoupon.CouponDiscount || 0),
+                        withoutCoupon: withoutCoupon.Amount + (withoutCoupon.CouponDiscount || 0), // BUNDLE discount can be applied
                         withoutCouponMonthly: withoutCouponMonthly.Amount,
                     };
                     return acc;

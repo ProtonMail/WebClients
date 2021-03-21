@@ -1,17 +1,10 @@
 import React, { useState } from 'react';
 import { createToken } from 'proton-shared/lib/api/payments';
-import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
+import { PAYMENT_METHOD_TYPE } from 'proton-shared/lib/constants';
 
 import PaymentVerificationModal from './PaymentVerificationModal';
 import { process } from './paymentTokenHelper';
 import { useApi, useLoading, useModals } from '../../hooks';
-
-interface Props {
-    amount: number;
-    currency: string;
-    type: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT;
-    onPay: (data: any) => void;
-}
 
 interface Model {
     Token: string;
@@ -24,6 +17,22 @@ const DEFAULT_MODEL = {
     ApprovalURL: '',
     ReturnHost: '',
 };
+
+export interface PayPalHook {
+    isReady: boolean;
+    loadingToken: boolean;
+    loadingVerification: boolean;
+    onToken: () => Promise<void>;
+    onVerification: () => Promise<void>;
+    clear: () => void;
+}
+
+interface Props {
+    amount: number;
+    currency: string;
+    type: PAYMENT_METHOD_TYPE;
+    onPay: (data: any) => void;
+}
 
 const usePayPal = ({ amount = 0, currency: Currency = '', type: Type, onPay }: Props) => {
     const api = useApi();
