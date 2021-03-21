@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { c } from 'ttag';
 import { Link } from 'react-router-dom';
 import { APPS } from 'proton-shared/lib/constants';
@@ -6,7 +6,7 @@ import { APPS } from 'proton-shared/lib/constants';
 import { Alert, Href, Label, PasswordInput, ConfirmModal, PrimaryButton } from '../../components';
 import { GenericError } from '../error';
 
-import { useConfig, useModals } from '../../hooks';
+import { useConfig, useLoading, useModals } from '../../hooks';
 import useResetPassword, { STEPS } from './useResetPassword';
 import ResetUsernameInput from './ResetUsernameInput';
 import ResetPasswordEmailInput from './ResetPasswordEmailInput';
@@ -20,20 +20,17 @@ interface Props {
 
 const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
     const {
-        loading,
         state,
         dangerWord,
         handleRequest,
         handleValidateResetToken,
         handleDanger,
         handleNewPassword,
-        setUsername,
-        setEmail,
-        setPassword,
-        setConfirmPassword,
-        setToken,
-        setDanger,
+        setters,
     } = useResetPassword({ onLogin });
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [loading, withLoading] = useLoading();
 
     const { APP_NAME } = useConfig();
     const { createModal } = useModals();
@@ -41,7 +38,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
 
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
 
-    const { step, username, email, password, confirmPassword, danger, token } = state;
+    const { step, username, email, danger, token } = state;
 
     if (step === STEPS.REQUEST_RESET_TOKEN) {
         const handleSubmit = async () => {
@@ -63,13 +60,15 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
                         return;
                     }
                     hasModal.current = true;
-                    handleSubmit()
-                        .then(() => {
-                            hasModal.current = false;
-                        })
-                        .catch(() => {
-                            hasModal.current = false;
-                        });
+                    withLoading(
+                        handleSubmit()
+                            .then(() => {
+                                hasModal.current = false;
+                            })
+                            .catch(() => {
+                                hasModal.current = false;
+                            })
+                    );
                 }}
             >
                 <Alert
@@ -83,13 +82,13 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
                     {c('Label').t`Username`}
                 </Label>
                 <div className="mb1">
-                    <ResetUsernameInput id="username" value={username} setValue={setUsername} />
+                    <ResetUsernameInput id="username" value={username} setValue={setters.username} />
                 </div>
                 <Label htmlFor="email" className="sr-only">
                     {c('Label').t`Email`}
                 </Label>
                 <div className="mb1">
-                    <ResetPasswordEmailInput id="email" value={email} setValue={setEmail} />
+                    <ResetPasswordEmailInput id="email" value={email} setValue={setters.email} />
                 </div>
                 <div className="flex flex-nowrap flex-justify-space-between mb1">
                     <Link to="/login">{c('Link').t`Back to login`}</Link>
@@ -104,7 +103,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
-                    handleValidateResetToken();
+                    withLoading(handleValidateResetToken());
                 }}
             >
                 <Alert>{c('Info')
@@ -113,7 +112,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
                     {c('Label').t`Token`}
                 </Label>
                 <div className="mb1">
-                    <ResetTokenInput id="reset-token" value={token} setValue={setToken} />
+                    <ResetTokenInput id="reset-token" value={token} setValue={setters.token} />
                 </div>
                 <Alert type="warning">{c('Info')
                     .t`IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it.`}</Alert>
@@ -130,7 +129,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
-                    handleDanger();
+                    withLoading(handleDanger());
                 }}
             >
                 <Alert
@@ -143,7 +142,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
                     {c('Label').t`Danger`}
                 </Label>
                 <div className="mb1">
-                    <ResetDangerInput value={danger} setValue={setDanger} dangerWord={dangerWord} id="danger" />
+                    <ResetDangerInput value={danger} setValue={setters.danger} dangerWord={dangerWord} id="danger" />
                 </div>
                 {isVPN ? null : (
                     <Alert learnMore="https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/">{c(
@@ -162,7 +161,10 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
-                    handleNewPassword();
+                    if (!password.length || password !== confirmPassword) {
+                        return;
+                    }
+                    withLoading(handleNewPassword(password));
                 }}
             >
                 <Alert type="warning">{c('Info').t`Keep this password safe, it cannot be recovered.`}</Alert>
@@ -201,7 +203,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
         );
     }
 
-    if (step === STEPS.ERROR) {
+    if (step === STEPS.ERROR || step === STEPS.NO_RECOVERY_METHODS) {
         return <GenericError />;
     }
 

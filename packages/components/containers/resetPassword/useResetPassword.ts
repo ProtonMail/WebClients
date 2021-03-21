@@ -14,7 +14,7 @@ import { AuthResponse } from 'proton-shared/lib/authentication/interface';
 import { withAuthHeaders } from 'proton-shared/lib/fetch/headers';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 
-import { useApi, useNotifications, useLoading } from '../../hooks';
+import { useApi, useNotifications } from '../../hooks';
 import { OnLoginCallback } from '../app';
 
 export enum STEPS {
@@ -29,13 +29,13 @@ export enum STEPS {
 
 interface Props {
     onLogin: OnLoginCallback;
-    initalStep?: STEPS;
+    initialStep?: STEPS;
 }
 
 export type RecoveryMethod = 'email' | 'sms' | 'login';
 export type AccountType = 'internal' | 'external';
 
-export interface State {
+export interface ResetPasswordState {
     username: string;
     email: string;
     phone: string;
@@ -47,6 +47,10 @@ export interface State {
     step: STEPS;
     error?: string;
 }
+type GetSetters<T> = {
+    [K in keyof T]: (value: T[K]) => void;
+};
+export type ResetPasswordSetters = GetSetters<Omit<ResetPasswordState, 'methods' | 'error' | 'step'>>;
 
 const INITIAL_STATE = {
     username: '',
@@ -59,16 +63,18 @@ const INITIAL_STATE = {
     step: STEPS.REQUEST_RESET_TOKEN,
 };
 
-const useResetPassword = ({ onLogin, initalStep }: Props) => {
+const useResetPassword = ({ onLogin, initialStep = INITIAL_STATE.step }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
-    const [state, setState] = useState<State>({ ...INITIAL_STATE, step: initalStep || INITIAL_STATE.step });
-    const [loading, withLoading] = useLoading();
+    const [state, setState] = useState<ResetPasswordState>({
+        ...INITIAL_STATE,
+        step: initialStep,
+    });
     const addressesRef = useRef<Address[]>([]);
     const dangerWord = 'DANGER';
 
     const gotoStep = (step: STEPS) => {
-        return setState((state: State) => ({ ...state, step }));
+        return setState((state: ResetPasswordState) => ({ ...state, step }));
     };
 
     const displayTokenNotification = (destination: string) =>
@@ -81,7 +87,7 @@ const useResetPassword = ({ onLogin, initalStep }: Props) => {
                 getRecoveryMethods(username)
             );
             if (Type === 'internal' && Methods.length) {
-                return setState((state: State) => ({
+                return setState((state: ResetPasswordState) => ({
                     ...state,
                     methods: Methods,
                     step: STEPS.REQUEST_RESET_TOKEN,
@@ -90,14 +96,14 @@ const useResetPassword = ({ onLogin, initalStep }: Props) => {
             if (Type === 'external' && Methods.includes('login')) {
                 await api(requestLoginResetToken({ Username: username, Email: username }));
                 displayTokenNotification(username);
-                return setState((state: State) => ({
+                return setState((state: ResetPasswordState) => ({
                     ...state,
                     email: username,
                     methods: Methods,
                     step: STEPS.VALIDATE_RESET_TOKEN,
                 }));
             }
-            setState((state: State) => ({
+            setState((state: ResetPasswordState) => ({
                 ...state,
                 methods: Methods,
                 step: STEPS.REQUEST_RESET_TOKEN,
@@ -105,10 +111,10 @@ const useResetPassword = ({ onLogin, initalStep }: Props) => {
         } catch (error) {
             const { data: { Code, Error } = { Code: 0, Error: '' } } = error;
             if ([API_CUSTOM_ERROR_CODES.NO_RESET_METHODS].includes(Code)) {
-                return setState((state: State) => ({
+                return setState((state: ResetPasswordState) => ({
                     ...state,
                     error: Error,
-                    step: STEPS.ERROR,
+                    step: STEPS.NO_RECOVERY_METHODS,
                 }));
             }
             throw error;
@@ -136,7 +142,7 @@ const useResetPassword = ({ onLogin, initalStep }: Props) => {
         gotoStep(step);
     };
 
-    const handleDanger = () => {
+    const handleDanger = async () => {
         const { danger } = state;
         if (danger !== dangerWord) {
             return;
@@ -144,11 +150,8 @@ const useResetPassword = ({ onLogin, initalStep }: Props) => {
         gotoStep(STEPS.NEW_PASSWORD);
     };
 
-    const handleNewPassword = async () => {
-        const { username, token, password, confirmPassword } = state;
-        if (!password.length || password !== confirmPassword) {
-            return;
-        }
+    const handleNewPassword = async (password: string) => {
+        const { username, token } = state;
         const addresses = addressesRef.current;
         if (!addresses) {
             throw new Error('Missing addresses');
@@ -187,60 +190,39 @@ const useResetPassword = ({ onLogin, initalStep }: Props) => {
         await onLogin({ ...authResponse, User, keyPassword: passphrase });
     };
 
-    const getSetter = <T>(key: keyof State) => (value: T) =>
-        loading ? undefined : setState({ ...state, [key]: value });
+    const getSetter = <K extends keyof ResetPasswordState>(key: keyof ResetPasswordState) => (
+        value: ResetPasswordState[K]
+    ) => setState({ ...state, [key]: value });
 
-    const setUsername = getSetter<string>('username');
-    const setEmail = getSetter<string>('email');
-    const setPhone = getSetter<string>('phone');
-    const setPassword = getSetter<string>('password');
-    const setConfirmPassword = getSetter<string>('confirmPassword');
-    const setToken = getSetter<string>('token');
-    const setDanger = getSetter<string>('danger');
+    const setters: ResetPasswordSetters = {
+        username: getSetter('username'),
+        email: getSetter('email'),
+        phone: getSetter('phone'),
+        password: getSetter('password'),
+        confirmPassword: getSetter('confirmPassword'),
+        token: getSetter('token'),
+        danger: getSetter('danger'),
+    };
+
+    const reset = () => {
+        setState({ ...INITIAL_STATE, step: initialStep });
+    };
 
     return {
-        loading,
         state,
+        setters,
         dangerWord,
+        reset,
         gotoStep,
-        setUsername,
-        setEmail,
-        setPhone,
-        setPassword,
-        setConfirmPassword,
-        setToken,
-        setDanger,
-        handleRequestRecoveryMethods: () => {
-            if (loading) {
-                return;
-            }
-            withLoading(handleRequestRecoveryMethods());
-        },
-        handleRequest: () => {
-            if (loading) {
-                return;
-            }
-            withLoading(handleRequest());
-        },
-        handleValidateResetToken: (step?: STEPS) => {
-            if (loading) {
-                return;
-            }
-            withLoading(handleValidateResetToken(step));
-        },
-        handleDanger: () => {
-            handleDanger();
-        },
-        handleNewPassword: () => {
-            if (loading) {
-                return;
-            }
-            withLoading(
-                handleNewPassword().catch((e) => {
-                    gotoStep(STEPS.ERROR);
-                    throw e;
-                })
-            );
+        handleRequestRecoveryMethods,
+        handleRequest,
+        handleValidateResetToken,
+        handleDanger,
+        handleNewPassword: (password: string) => {
+            return handleNewPassword(password).catch((e) => {
+                gotoStep(STEPS.ERROR);
+                throw e;
+            });
         },
     };
 };
