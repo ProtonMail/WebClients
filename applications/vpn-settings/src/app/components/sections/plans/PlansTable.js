@@ -367,7 +367,7 @@ const PlansTable = ({
 
                 {state ? (
                     <tr>
-                        <th scope="row" className="simple-table-row-th text-left bg-global-highlight">
+                        <th scope="row" className="simple-table-row-th text-left bg-weak">
                             <span className="mr0-5">{c('Header').t`Streaming service support`}</span>
                         </th>
                         <td className="text-center">
