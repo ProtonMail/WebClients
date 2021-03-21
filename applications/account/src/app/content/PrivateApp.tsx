@@ -31,7 +31,7 @@ const EVENT_MODELS = [
 
 const PRELOAD_MODELS = [UserSettingsModel, UserModel];
 
-const getAppContainer = () => import('./MainContainer');
+const getAppContainer = () => import('./SetupMainContainer');
 
 interface Props {
     onLogout: () => void;
