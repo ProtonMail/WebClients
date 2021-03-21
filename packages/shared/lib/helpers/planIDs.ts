@@ -31,11 +31,13 @@ export const clearPlanIDs = (planIDs: PlanIDs) => {
 };
 
 const getAddonQuantity = (plan: Plan | undefined, used = 0, key: MaxKeys, addon: Plan) => {
+    const planKey = plan?.[key] || 0;
+
     if (!plan) {
         return 0;
     }
 
-    if (used <= plan[key]) {
+    if (used <= planKey) {
         return 0;
     }
 
@@ -43,7 +45,8 @@ const getAddonQuantity = (plan: Plan | undefined, used = 0, key: MaxKeys, addon:
         return 0;
     }
 
-    return Math.ceil((used - plan[key]) / addon[key]);
+    const addonKey = addon[key] || 0;
+    return Math.ceil((used - planKey) / addonKey);
 };
 
 export const switchPlan = ({
@@ -107,6 +110,8 @@ export const switchPlan = ({
     }
 
     if (plansMap[PROFESSIONAL].ID === planID) {
+        const vpnAddons = getAddonQuantity(selectedPlan, UsedVPN, 'MaxVPN', plansMap[VPN]) || 0;
+
         return {
             ...omit(planIDs, [
                 plansMap[PLUS].ID,
@@ -126,6 +131,8 @@ export const switchPlan = ({
                 getAddonQuantity(selectedPlan, UsedDomains, 'MaxDomains', plansMap[DOMAIN]) ||
                 0,
             [planID]: 1,
+            [plansMap[VPNPLUS].ID]: vpnAddons || planIDs[plansMap[VPNPLUS].ID] ? 1 : 0,
+            [plansMap[VPN].ID]: vpnAddons ? vpnAddons - plansMap[VPNPLUS].MaxVPN : 0,
         };
     }
 

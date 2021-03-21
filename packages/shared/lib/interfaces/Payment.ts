@@ -1,6 +1,6 @@
 import { PAYMENT_METHOD_TYPES } from '../constants';
 
-export interface PaymentStatus {
+export interface PaymentMethodStatus {
     Card: boolean;
     Paypal: boolean;
     Apple: boolean;

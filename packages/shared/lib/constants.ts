@@ -637,6 +637,8 @@ export enum PAYMENT_METHOD_TYPES {
     TOKEN = 'token',
 }
 
+export type PAYMENT_METHOD_TYPE = PAYMENT_METHOD_TYPES | string;
+
 export enum INVITE_TYPES {
     MAIL = 1,
     VPN = 2,
