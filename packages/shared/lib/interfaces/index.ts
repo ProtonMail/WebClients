@@ -13,6 +13,7 @@ export * from './User';
 export * from './UserSettings';
 export * from './Subscription';
 export * from './Payment';
+export * from './VPN';
 export * from './config';
 export * from './hooks/GetCanonicalEmails';
 export * from './hooks/GetVTimezones';

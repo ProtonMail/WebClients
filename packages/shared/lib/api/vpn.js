@@ -1,3 +1,5 @@
+import { HTTP_ERROR_CODES } from '../errors';
+
 export const getClientVPNInfo = () => ({
     method: 'get',
     url: 'vpn',
@@ -21,6 +23,7 @@ export const queryVPNServerInfo = () => ({
 export const getLocation = () => ({
     method: 'get',
     url: 'vpn/location',
+    ignoreHandler: [HTTP_ERROR_CODES.TOO_MANY_REQUESTS],
 });
 
 export const getVPNServerConfig = ({ LogicalID, ServerID, Country, Category, Tier, Platform, Protocol }) => ({
@@ -66,5 +69,5 @@ export const queryVPNActiveSessionInfo = () => ({
 
 export const resetVPNSettings = () => ({
     method: 'put',
-    url: 'vpn/settings/reset'
+    url: 'vpn/settings/reset',
 });
