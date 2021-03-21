@@ -11,6 +11,7 @@ const MOCK_PLANS = [
         MaxAddresses: 5,
         MaxSpace: 5368709120,
         MaxMembers: 1,
+        MaxVPN: 0,
     },
     {
         Name: PLANS.PROFESSIONAL,
@@ -20,6 +21,7 @@ const MOCK_PLANS = [
         MaxAddresses: 10,
         MaxSpace: 5368709120,
         MaxMembers: 1,
+        MaxVPN: 0,
     },
     {
         Name: PLANS.VISIONARY,
@@ -115,6 +117,32 @@ describe('switchPlan', () => {
         expect(clearPlanIDs(switchPlan({ planIDs, plans: MOCK_PLANS, planID, service, organization }))).toEqual({
             [PLANS.PROFESSIONAL]: 1,
             [ADDON_NAMES.MEMBER]: 1,
+        });
+    });
+
+    it('should convert active VPN connections when switching from Visionary to Professional', () => {
+        const planIDs = { [PLANS.VISIONARY]: 1 };
+        const planID = PLANS.PROFESSIONAL;
+        const service = PLAN_SERVICES.MAIL;
+        const organization = {
+            UsedVPN: 11,
+        } as Organization;
+        const result = clearPlanIDs(switchPlan({ planIDs, plans: MOCK_PLANS, planID, service, organization }));
+        expect(result).toEqual({
+            [PLANS.PROFESSIONAL]: 1,
+            [PLANS.VPNPLUS]: 1,
+            [ADDON_NAMES.VPN]: 6,
+        });
+    });
+
+    it('should keep ProtonVPN Plus if already selected when selecting ProtonMail Professional', () => {
+        const planIDs = { [PLANS.VPNPLUS]: 1 };
+        const planID = PLANS.PROFESSIONAL;
+        const service = PLAN_SERVICES.MAIL;
+        const result = clearPlanIDs(switchPlan({ planIDs, plans: MOCK_PLANS, planID, service }));
+        expect(result).toEqual({
+            [PLANS.PROFESSIONAL]: 1,
+            [PLANS.VPNPLUS]: 1,
         });
     });
 });
