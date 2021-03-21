@@ -12,12 +12,11 @@ import {
     useOrganization,
 } from 'react-components';
 import { PERMISSIONS, DEFAULT_CYCLE, PLAN_SERVICES, CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
-import { Plan, UserModel } from 'proton-shared/lib/interfaces';
+import { Plan, PlanIDs, UserModel } from 'proton-shared/lib/interfaces';
 import { c } from 'ttag';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { getPlanIDs } from 'proton-shared/lib/helpers/subscription';
 import { switchPlan } from 'proton-shared/lib/helpers/planIDs';
-import { PlanIDs } from 'react-components/containers/signup/interfaces';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { SUBSCRIPTION_STEPS } from 'react-components/containers/payments/subscription/constants';
 
