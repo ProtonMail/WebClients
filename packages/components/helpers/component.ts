@@ -2,7 +2,7 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 let current = 0;
 
-export const generateUID = (prefix: string) => `${prefix || 'id'}-${current++}`;
+export const generateUID = (prefix?: string) => `${prefix || 'id'}-${current++}`;
 export const fakeEvent = <T>(value: T) => ({ target: { value } });
 
 export const concatStringProp = (strings: (string | boolean | null | undefined)[] = []) => {

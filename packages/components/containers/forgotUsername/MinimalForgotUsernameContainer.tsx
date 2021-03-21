@@ -13,7 +13,7 @@ const MinimalForgotUsernameContainer = () => {
     const [email, setEmail] = useState('');
 
     const handleSubmit = async () => {
-        await api(requestUsername(email));
+        await api(requestUsername({ Email: email }));
         createNotification({
             text: c('Success')
                 .t`If you entered a valid notification email we will send you an email with your usernames in the next minute.`,

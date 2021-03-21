@@ -17,14 +17,14 @@ const useNextSubscription = () => {
 
     const getNextSubscription = async () => {
         // Without any coupon
-        const next = await api(
+        const next = await api<SubscriptionCheckResponse>(
             checkSubscription({
                 PlanIDs: getPlanIDs(subscription),
                 Currency: subscription.Currency,
                 Cycle: subscription.Cycle,
             })
         );
-        setNextSubscription(next as SubscriptionCheckResponse);
+        setNextSubscription(next);
     };
 
     useEffect(() => {

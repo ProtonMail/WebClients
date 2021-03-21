@@ -11,6 +11,7 @@ const CLASSES = {
     MODAL_IN: 'modal--in',
     MODAL_OUT: 'modal--out',
     MODAL_SMALL: 'modal--smaller',
+    MODAL_TINY: 'modal--tiny',
 };
 
 const ANIMATIONS = {
@@ -24,6 +25,7 @@ const Dialog = ({
     onEnter,
     onExit,
     small: isSmall = false,
+    tiny: isTiny = false,
     isClosing = false,
     // eslint-disable-next-line no-unused-vars,@typescript-eslint/no-unused-vars
     isFirst = false,
@@ -89,7 +91,8 @@ const Dialog = ({
                     className={classnames([
                         CLASSES.MODAL,
                         isSmall && CLASSES.MODAL_SMALL,
-                        isSmall && 'modal--shorter-labels',
+                        isTiny && CLASSES.MODAL_TINY,
+                        (isSmall || isTiny) && 'modal--shorter-labels',
                         isClosing && CLASSES.MODAL_OUT,
                         extraClassNames,
                         'no-outline',

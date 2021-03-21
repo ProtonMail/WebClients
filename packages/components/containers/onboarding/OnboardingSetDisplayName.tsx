@@ -4,9 +4,8 @@ import onboardingWelcome from 'design-system/assets/img/onboarding/onboarding-we
 import onboardingWelcomeDark from 'design-system/assets/img/onboarding/onboarding-welcome-dark.svg';
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 
-import SignupLabelInputRow from '../signup/SignupLabelInputRow';
 import { Label } from '../../components/label';
-import { Input } from '../../components/input';
+import { Input, LegacyInputField } from '../../components/input';
 import OnboardingContent, { Props as OnboardingContentProps } from './OnboardingContent';
 
 interface Props extends Omit<OnboardingContentProps, 'img' | 'text' | 'description'> {
@@ -39,7 +38,7 @@ const OnboardingSetDisplayName = ({
         >
             {!hideDisplayName && (
                 <div className="sign-layout-container">
-                    <SignupLabelInputRow
+                    <LegacyInputField
                         label={<Label htmlFor="displayName">{c('Label').t`Display name`}</Label>}
                         input={
                             <Input

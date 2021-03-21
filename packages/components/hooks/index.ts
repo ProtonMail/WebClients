@@ -51,6 +51,7 @@ export { default as useVPNCountries } from './useVPNCountries';
 export { default as useMessageCounts } from './useMessageCounts';
 export { default as useConversationCounts } from './useConversationCounts';
 export { default as usePlans } from './usePlans';
+export { default as useMyLocation } from './useMyLocation';
 export { default as useCombinedRefs } from './useCombinedRefs';
 export { useUserScopes } from './useUserScopes';
 export { useHandler, useEventListener, useSubscribeEventManager, useInterval } from './useHandler';
