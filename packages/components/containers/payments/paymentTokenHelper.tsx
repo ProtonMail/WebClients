@@ -170,7 +170,7 @@ export const handlePaymentToken = async ({
         return params;
     }
 
-    if (Type && [CASH, BITCOIN, TOKEN].includes(Type)) {
+    if (Type && [CASH, BITCOIN, TOKEN].includes(Type as any)) {
         return params;
     }
 

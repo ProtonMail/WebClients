@@ -14,13 +14,6 @@ interface CardPaymentDetails {
     Country: string;
 }
 
-export interface PaymentMethodResult {
-    ID: string;
-    Order: number;
-    Type: PAYMENT_METHOD_TYPE;
-    Details: TokenPaymentDetails | CardPaymentDetails;
-}
-
 export interface Payment {
     Type: PAYMENT_METHOD_TYPE;
     Details: TokenPaymentDetails | CardPaymentDetails;

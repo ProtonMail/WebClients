@@ -330,7 +330,7 @@ const SubscriptionModal = ({
                             />
                         </div>
                     </div>
-                    <div className="subscriptionCheckout-column bg-global-highlight on-mobile-w100">
+                    <div className="subscriptionCheckout-column bg-weak on-mobile-w100">
                         <div className="subscriptionCheckout-container">
                             <SubscriptionCheckout
                                 submit={
@@ -381,7 +381,9 @@ const SubscriptionModal = ({
                                         errors={errors}
                                     />
                                     {method &&
-                                    [PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN].includes(method) ? (
+                                    [PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN].includes(
+                                        method as any
+                                    ) ? (
                                         <Alert type="warning">{c('Warning')
                                             .t`Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.`}</Alert>
                                     ) : null}
@@ -397,7 +399,7 @@ const SubscriptionModal = ({
                             )}
                         </div>
                     </div>
-                    <div className="subscriptionCheckout-column bg-global-highlight on-mobile-w100">
+                    <div className="subscriptionCheckout-column bg-weak on-mobile-w100">
                         <div className="subscriptionCheckout-container">
                             <SubscriptionCheckout
                                 submit={

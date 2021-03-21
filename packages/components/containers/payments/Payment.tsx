@@ -12,7 +12,7 @@ import { Currency } from 'proton-shared/lib/interfaces';
 import { Alert, Price, Loader } from '../../components';
 import { useMethods } from '../paymentMethods';
 import PaymentMethodSelector from '../paymentMethods/PaymentMethodSelector';
-import CreditCard from './Card';
+import CreditCard from './CreditCard';
 import Cash from './Cash';
 import Bitcoin from './Bitcoin';
 import PayPalView from './PayPalView';
@@ -60,7 +60,7 @@ const Payment = ({
                     PAYMENT_METHOD_TYPES.PAYPAL,
                     PAYMENT_METHOD_TYPES.CASH,
                     PAYMENT_METHOD_TYPES.BITCOIN,
-                ].includes(value)
+                ].includes(value as any)
         );
 
     useEffect(() => {

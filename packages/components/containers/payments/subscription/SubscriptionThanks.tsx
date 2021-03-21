@@ -19,7 +19,7 @@ const SubscriptionThanks = ({ method, onClose }: Props) => {
     return (
         <>
             <p className="text-center mb1">
-                {method && [PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN].includes(method)
+                {method && [PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN].includes(method as any)
                     ? c('Info').t`Your account will be updated once the payment is cleared.`
                     : c('Info').t`Your account has been successfully updated.`}
             </p>
