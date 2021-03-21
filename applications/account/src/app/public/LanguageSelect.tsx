@@ -42,7 +42,7 @@ const LanguageSelect = ({ className, locales = {} }: Props) => {
     );
 
     return (
-        <SimpleDropdown hasCaret={false} content={selectedLanguage} className={className}>
+        <SimpleDropdown as="button" type="button" hasCaret={false} content={selectedLanguage} className={className}>
             <DropdownMenu>{languages}</DropdownMenu>
         </SimpleDropdown>
     );

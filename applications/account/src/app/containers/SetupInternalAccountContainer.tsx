@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import {
     LoaderPage,
     useApi,
-    StandardLoadError,
+    StandardLoadErrorPage,
     useErrorHandler,
     useAppLink,
     useAuthentication,
@@ -110,7 +110,7 @@ const SetupInternalAccountContainer = () => {
     }, []);
 
     if (error) {
-        return <StandardLoadError />;
+        return <StandardLoadErrorPage />;
     }
 
     if (loading) {

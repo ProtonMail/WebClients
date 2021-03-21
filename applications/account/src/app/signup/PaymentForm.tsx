@@ -1,11 +1,11 @@
 import React from 'react';
 import { c } from 'ttag';
-import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
+import { PAYMENT_METHOD_TYPE, PLAN_SERVICES } from 'proton-shared/lib/constants';
 import { Plan } from 'proton-shared/lib/interfaces';
 import { SubscriptionCheckResponse } from 'proton-shared/lib/interfaces/Subscription';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-import { Alert, SubscriptionCheckout, Payment, useLoading } from 'react-components';
+import { Alert, Payment, SubscriptionCheckout, useLoading } from 'react-components';
 import { SignupModel, SignupPayPal } from './interfaces';
 import CheckoutButton from './CheckoutButton';
 
@@ -17,8 +17,8 @@ interface Props {
     onCardChange: (key: string, value: string) => void;
     paypal: SignupPayPal;
     paypalCredit: SignupPayPal;
-    method: any;
-    onMethodChange: (method: PAYMENT_METHOD_TYPES | string) => void;
+    method?: PAYMENT_METHOD_TYPE;
+    onMethodChange: (method: PAYMENT_METHOD_TYPE) => void;
     errors: any;
     canPay: boolean;
     loading: boolean;
@@ -72,7 +72,6 @@ const PaymentForm = ({
                 </div>
                 <div className="w25 min-w14e on-mobile-w100">
                     <SubscriptionCheckout
-                        method={method}
                         submit={
                             <CheckoutButton
                                 loading={loading || loadingSubmit}
@@ -86,8 +85,12 @@ const PaymentForm = ({
                         plans={plans}
                         checkResult={checkResult}
                         loading={loading || loadingSubmit}
-                        model={model}
-                        setModel={onChange}
+                        service={PLAN_SERVICES.MAIL}
+                        currency={model.currency}
+                        cycle={model.cycle}
+                        planIDs={model.planIDs}
+                        onChangeCurrency={(currency) => onChange({ ...model, currency })}
+                        onChangeCycle={(cycle) => onChange({ ...model, cycle })}
                     />
                 </div>
             </div>

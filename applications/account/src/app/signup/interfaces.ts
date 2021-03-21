@@ -1,4 +1,4 @@
-import { Currency, HumanVerificationMethodType, LocationResponse } from 'proton-shared/lib/interfaces';
+import { Currency, Cycle, HumanVerificationMethodType } from 'proton-shared/lib/interfaces';
 import { APPS } from 'proton-shared/lib/constants';
 
 export enum SIGNUP_STEPS {
@@ -38,11 +38,10 @@ export interface SignupModel {
     recoveryEmail: string;
     recoveryPhone: string;
     currency: Currency;
-    cycle: number;
+    cycle: Cycle;
     planIDs: PlanIDs;
     humanVerificationMethods: HumanVerificationMethodType[];
     humanVerificationToken: string;
-    location?: LocationResponse;
 }
 
 export interface SignupPayPal {
