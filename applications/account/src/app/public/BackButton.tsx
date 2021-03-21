@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Button } from 'react-components';
+import { Button, Icon } from 'react-components';
 
 interface Props {
     onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
@@ -8,15 +8,8 @@ interface Props {
 
 const BackButton = ({ onClick }: Props) => {
     return (
-        <Button
-            type="button"
-            color="weak"
-            shape="ghost"
-            onClick={onClick}
-            title={c('Action').t`Back`}
-            icon="arrow-left"
-        >
-            <span className="sr-only">{c('Action').t`Back`}</span>
+        <Button icon shape="ghost" onClick={onClick} title={c('Action').t`Back`}>
+            <Icon name="arrow-left" alt={c('Action').t`Back`} />
         </Button>
     );
 };

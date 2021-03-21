@@ -2,7 +2,15 @@ import React, { ReactNode } from 'react';
 import { c } from 'ttag';
 import locales from 'proton-shared/lib/i18n/locales';
 
-import { getAppVersion, useConfig, PublicTopBanners, Href, Icon, ProtonLogo } from 'react-components';
+import {
+    getAppVersion,
+    useConfig,
+    PublicTopBanners,
+    Href,
+    Icon,
+    ProtonLogo,
+    ProminentContainer,
+} from 'react-components';
 
 import LanguageSelect from './LanguageSelect';
 
@@ -27,7 +35,7 @@ const Layout = ({ children, hasLanguageSelect = true }: Props) => {
     const appVersion = getAppVersion(APP_VERSION_DISPLAY || APP_VERSION);
 
     return (
-        <div className="flex-no-min-children flex-nowrap flex-column h100 sign-layout-bg scroll-if-needed">
+        <ProminentContainer className="flex-no-min-children flex-nowrap flex-column h100 sign-layout-bg scroll-if-needed">
             <PublicTopBanners />
             <header className="flex flex-justify-space-between flex-item-noshrink p2">
                 <span>
@@ -66,7 +74,7 @@ const Layout = ({ children, hasLanguageSelect = true }: Props) => {
                     <Icon name="protondrive" className="ml0-5 mr0-5" alt="Proton Drive" size={20} />
                 </div>
             </footer>
-        </div>
+        </ProminentContainer>
     );
 };
 

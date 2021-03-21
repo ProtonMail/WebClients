@@ -476,7 +476,7 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
                             card={card}
                             onCardChange={setCard}
                             method={method}
-                            onMethodChange={setMethod as any /* TODO: Remove this force */}
+                            onMethodChange={setMethod}
                             errors={paymentErrors}
                             canPay={canPay}
                             plans={plans}
