@@ -81,6 +81,9 @@ const ContactView = ({
         }
     );
 
+    const firstFn = properties.find((property) => property.field === 'fn');
+    const propertiesWithoutFirstFn = properties.filter((property) => property !== firstFn);
+
     return (
         <div
             className={classnames([
@@ -109,7 +112,11 @@ const ContactView = ({
                     !isModal && 'contact-view-contents pl1 pr1 on-mobile-pl0-5 on-mobile-pr0-5 on-tiny-mobile-pl0',
                 ])}
             >
-                <ContactViewProperties field="fn" {...contactViewPropertiesProps} />
+                <ContactViewProperties
+                    field="fn"
+                    {...contactViewPropertiesProps}
+                    properties={propertiesWithoutFirstFn}
+                />
                 <ContactViewProperties field="email" {...contactViewPropertiesProps} isPreview={isPreview} />
                 <ContactViewProperties field="tel" {...contactViewPropertiesProps} isPreview={isPreview} />
                 <ContactViewProperties field="adr" {...contactViewPropertiesProps} isPreview={isPreview} />
