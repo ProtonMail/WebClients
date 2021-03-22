@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 import {
     Button,
-    InlineLinkButton,
     Challenge,
     useLoading,
     PasswordInputTwo,
@@ -11,6 +10,7 @@ import {
     useFormErrors,
     InputFieldTwo,
     DefaultThemeInjector,
+    LinkButton,
 } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { ChallengeRef, ChallengeResult } from 'react-components/components/challenge/ChallengeFrame';
@@ -192,8 +192,7 @@ const CreateAccountForm = ({
                 )}
                 {hasExternalSignup ? (
                     <div className="text-center mb1-5">
-                        <InlineLinkButton
-                            className="text-no-decoration mt0-25"
+                        <LinkButton
                             id="existing-email-button"
                             onClick={() => {
                                 // Reset verification parameters if email is changed
@@ -208,7 +207,7 @@ const CreateAccountForm = ({
                             {signupType === 'email'
                                 ? c('Action').t`Create a secure ProtonMail address instead`
                                 : c('Action').t`Use your current email address instead`}
-                        </InlineLinkButton>
+                        </LinkButton>
                     </div>
                 ) : null}
                 <InputFieldTwo

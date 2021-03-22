@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { c } from 'ttag';
 import { TOKEN_TYPES } from 'proton-shared/lib/constants';
 import { queryCheckVerificationCode, queryVerificationCode } from 'proton-shared/lib/api/user';
 import InvalidVerificationCodeModal from 'react-components/containers/api/humanVerification/InvalidVerificationCodeModal';
 import { noop } from 'proton-shared/lib/helpers/function';
+import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 
 import { useModals, RequestNewCodeModal, VerifyCodeForm, useNotifications } from 'react-components';
 import { SignupModel } from './interfaces';
@@ -20,11 +21,14 @@ interface Props {
 const VerificationCodeForm = ({ model, humanApi, onBack, onSubmit, clientType }: Props) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
+    const [key, setKey] = useState(0);
 
     const handleResend = async () => {
         await humanApi.api(queryVerificationCode('email', { Address: model.email }));
         const methodTo = model.email;
         createNotification({ text: c('Success').t`Code sent to ${methodTo}` });
+        // To reset the internal state in verifyCodeForm
+        setKey((oldKey) => oldKey + 1);
     };
 
     const tokenType = TOKEN_TYPES.EMAIL;
@@ -54,18 +58,22 @@ const VerificationCodeForm = ({ model, humanApi, onBack, onSubmit, clientType }:
             humanApi.setToken(token, tokenType);
             onSubmit();
         } catch (error) {
-            createModal(
-                <InvalidVerificationCodeModal
-                    edit={c('Action').t`Change email`}
-                    request={c('Action').t`Request new code`}
-                    onEdit={() => {
-                        return onBack();
-                    }}
-                    onResend={() => {
-                        return handleResend().catch(noop);
-                    }}
-                />
-            );
+            const { data: { Code } = { Code: 0 } } = error;
+
+            if (Code === API_CUSTOM_ERROR_CODES.TOKEN_INVALID) {
+                createModal(
+                    <InvalidVerificationCodeModal
+                        edit={c('Action').t`Change email`}
+                        request={c('Action').t`Request new code`}
+                        onEdit={() => {
+                            return onBack();
+                        }}
+                        onResend={() => {
+                            return handleResend().catch(noop);
+                        }}
+                    />
+                );
+            }
         }
     };
 
@@ -78,7 +86,12 @@ const VerificationCodeForm = ({ model, humanApi, onBack, onSubmit, clientType }:
             method="post"
         >
             <div className="mb1">{c('Info').t`For security reasons, please verify that you are not a robot.`}</div>
-            <VerifyCodeForm verification={verificationModel} onSubmit={handleSubmit} onNoReceive={handleModalResend} />
+            <VerifyCodeForm
+                key={key}
+                verification={verificationModel}
+                onSubmit={handleSubmit}
+                onNoReceive={handleModalResend}
+            />
         </form>
     );
 };
