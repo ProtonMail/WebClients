@@ -149,13 +149,13 @@ const ProtonPlanPicker = ({
                                     {isCurrentPlan ? (
                                         <>
                                             {' '}
-                                            <span className="opacity-50 inline-block">{currentPlanText}</span>
+                                            <span className="color-hint inline-block">{currentPlanText}</span>
                                         </>
                                     ) : (
                                         ''
                                     )}
                                 </span>
-                                <span className={classnames([!checked && 'opacity-50'])}>
+                                <span className={classnames([!checked && 'color-hint'])}>
                                     {isFree ? (
                                         <span>{c('Free price').t`Free`}</span>
                                     ) : (
