@@ -69,7 +69,7 @@ const ButtonNumberInput = ({
             <button
                 type="button"
                 title={c('Action').t`Decrease`}
-                className={classnames(['p0-5 flex', (disabled || value - step < min) && 'opacity-30'])}
+                className={classnames(['p0-5 flex', (disabled || value - step < min) && 'color-disabled'])}
                 disabled={disabled || value - step < min}
                 onClick={() => {
                     const newValue = value - step;
@@ -80,7 +80,7 @@ const ButtonNumberInput = ({
             </button>
             {disabled ? (
                 <div className="mt0-5 flex mb0-5">
-                    <span className="w6e border-left border-right text-center opacity-30">{value / divider}</span>
+                    <span className="w6e border-left border-right text-center color-disabled">{value / divider}</span>
                 </div>
             ) : (
                 <label htmlFor={id} className="mt0-5 flex mb0-5">
@@ -106,7 +106,7 @@ const ButtonNumberInput = ({
             <button
                 type="button"
                 title={c('Action').t`Increase`}
-                className={classnames(['p0-5 flex', (disabled || value + step > max) && 'opacity-30'])}
+                className={classnames(['p0-5 flex', (disabled || value + step > max) && 'color-disabled'])}
                 disabled={disabled || value + step > max}
                 onClick={() => {
                     const newValue = value + step;
@@ -281,10 +281,8 @@ const ProtonPlanCustomizer = ({
                                     {(quantity * addon.Pricing[cycle]) / cycle}
                                 </Price>
                             ) : null}
-                            {isSupported && !quantity ? (
-                                <span className="opacity-50">{c('Info').t`included`}</span>
-                            ) : null}
-                            {!isSupported && <span className="opacity-50">{c('Info').t`not customizable`}</span>}
+                            {isSupported && !quantity ? <span>{c('Info').t`included`}</span> : null}
+                            {!isSupported && <span className="color-hint">{c('Info').t`not customizable`}</span>}
                         </div>
                     </div>
                 );
