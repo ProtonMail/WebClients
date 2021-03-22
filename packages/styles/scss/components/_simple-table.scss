@@ -129,7 +129,7 @@
 	tbody tr:nth-child(odd) {
 		// bg on all cells
 		> * {
-			background-color: var(--bgcolor-input, $pm-global-light);
+			background-color: var(--background-weak);
 		}
 		// radiuses
 		> :first-child {
