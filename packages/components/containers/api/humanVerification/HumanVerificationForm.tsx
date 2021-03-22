@@ -151,7 +151,7 @@ const HumanVerificationForm = ({
         },
         methods.includes('invite') && {
             method: 'invite',
-            title: c('Human verification method').t`Manual verification`,
+            title: c('Human verification method').t`Manual`,
             content: (
                 <Text>
                     {c('Info')

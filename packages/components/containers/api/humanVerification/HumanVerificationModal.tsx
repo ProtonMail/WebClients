@@ -49,7 +49,7 @@ const HumanVerificationModal = <T,>({ token, methods = [], onSuccess, onVerify, 
     };
 
     return (
-        <FormModal className="human-verification-modal modal--height-auto" title={title} footer={null} {...rest}>
+        <FormModal title={title} small footer={null} {...rest}>
             <HumanVerificationForm
                 step={step}
                 onChangeStep={setStep}
@@ -57,6 +57,7 @@ const HumanVerificationModal = <T,>({ token, methods = [], onSuccess, onVerify, 
                 methods={methods}
                 token={token}
             />
+            <div className="p1 mb2" />
         </FormModal>
     );
 };
