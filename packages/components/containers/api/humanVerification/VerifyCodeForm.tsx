@@ -87,7 +87,6 @@ const VerifyCodeForm = ({ onSubmit, onNoReceive, verification }: Props) => {
                     className="w100"
                     disabled={loading}
                     onClick={() => {
-                        setCode('');
                         onNoReceive();
                     }}
                 >{c('Action').t`Did not receive the code?`}</Button>
