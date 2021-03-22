@@ -109,14 +109,20 @@ const ContactSummary = ({
                     <div className="contactsummary-action-buttons flex-item-noshrink on-mobile-text-center ">
                         {!hasError && (
                             <Tooltip title={c('Action').t`Export`}>
-                                <Button icon onClick={onExport} className="inline-flex ml0-5">
+                                <Button
+                                    color="weak"
+                                    shape="outline"
+                                    icon
+                                    onClick={onExport}
+                                    className="inline-flex ml0-5"
+                                >
                                     <Icon name="export" alt={c('Action').t`Export`} />
                                 </Button>
                             </Tooltip>
                         )}
 
                         <Tooltip title={c('Action').t`Delete`}>
-                            <Button icon onClick={onDelete} className="inline-flex ml0-5">
+                            <Button color="weak" shape="outline" icon onClick={onDelete} className="inline-flex ml0-5">
                                 <Icon name="trash" alt={c('Action').t`Delete`} />
                             </Button>
                         </Tooltip>
@@ -125,7 +131,7 @@ const ContactSummary = ({
                             <Tooltip title={c('Action').t`Edit`}>
                                 <Button
                                     icon
-                                    shape="outline"
+                                    shape="solid"
                                     color="norm"
                                     onClick={() => onEdit()}
                                     className="inline-flex ml0-5"
