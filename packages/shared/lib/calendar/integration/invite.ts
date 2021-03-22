@@ -376,8 +376,10 @@ export const generateVtimezonesComponents = async (
 ): Promise<VcalVtimezoneComponent[]> => {
     const startTimezone = getPropertyTzid(dtstart);
     const endTimezone = dtend ? getPropertyTzid(dtend) : undefined;
-    const vtimezonesObject = getVTimezones([startTimezone, endTimezone].filter(isTruthy));
-    return Object.values(vtimezonesObject).map(({ vtimezone }) => vtimezone);
+    const vtimezonesObject = await getVTimezones([startTimezone, endTimezone].filter(isTruthy));
+    return Object.values(vtimezonesObject)
+        .filter(isTruthy)
+        .map(({ vtimezone }) => vtimezone);
 };
 
 const getFormattedDateInfo = (vevent: VcalVeventComponent, options: Options = { locale: dateLocale }) => {
