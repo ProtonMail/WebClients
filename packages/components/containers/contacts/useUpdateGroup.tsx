@@ -30,19 +30,21 @@ const useUpdateGroup = () => {
         } = await api(groupID ? updateLabel(groupID, contactGroupParams) : createContactGroup(contactGroupParams));
 
         // Create new contacts
-        const properties: ContactProperties[] = toCreate.map(({ Email }) => [
-            { field: 'fn', value: Email },
-            { field: 'email', value: Email, group: 'item1' },
-            { field: 'categories', value: name, group: 'item1' },
-        ]);
-        const Contacts = await prepareContacts(properties, userKeysList[0]);
-        await api(
-            addContacts({
-                Contacts,
-                Overwrite: OVERWRITE.THROW_ERROR_IF_CONFLICT,
-                Labels: CATEGORIES.INCLUDE,
-            })
-        );
+        if (toCreate.length) {
+            const properties: ContactProperties[] = toCreate.map(({ Email }) => [
+                { field: 'fn', value: Email },
+                { field: 'email', value: Email, group: 'item1' },
+                { field: 'categories', value: name, group: 'item1' },
+            ]);
+            const Contacts = await prepareContacts(properties, userKeysList[0]);
+            await api(
+                addContacts({
+                    Contacts,
+                    Overwrite: OVERWRITE.THROW_ERROR_IF_CONFLICT,
+                    Labels: CATEGORIES.INCLUDE,
+                })
+            );
+        }
 
         // Label and unlabel existing contact emails
         await Promise.all(
