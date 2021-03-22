@@ -235,6 +235,7 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
                     humanVerificationToken: error.token,
                 });
             }
+            setModelDiff({ step: oldStep });
             throw error;
         }
 
