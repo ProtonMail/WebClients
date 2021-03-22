@@ -44,7 +44,7 @@ const ContactModalRow = (
     // Delete is always available (except when primary and no image). Primary name has action row disabled.
     if (canDelete) {
         list.push({
-            color: 'danger',
+            color: 'weak',
             shape: 'outline',
             text: <Icon name="trash" className="mauto" alt={c('Action').t`Delete`} />,
             onClick: () => {

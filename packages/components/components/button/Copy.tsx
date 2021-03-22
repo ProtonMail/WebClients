@@ -21,8 +21,8 @@ const Copy = ({ value, onCopy, ...rest }: Props, ref: React.Ref<HTMLButtonElemen
 
     return (
         <Tooltip title={c('Label').t`Copy`}>
-            <Button icon ref={ref} onClick={handleClick} {...rest}>
-                <Icon name="attach" alt={c('Label').t`Copy`} />
+            <Button icon color="weak" shape="outline" ref={ref} onClick={handleClick} {...rest}>
+                <Icon name="copy" alt={c('Label').t`Copy`} />
             </Button>
         </Tooltip>
     );

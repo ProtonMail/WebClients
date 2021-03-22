@@ -88,7 +88,7 @@ const ContactViewProperty = ({
                     <>
                         {!isOwnAddress && (
                             <Tooltip title={c('Title').t`Email settings`}>
-                                <Button icon onClick={handleSettings} className="ml0-5">
+                                <Button icon color="weak" shape="outline" onClick={handleSettings} className="ml0-5">
                                     <Icon name="settings-singular" alt={c('Action').t`Email settings`} />
                                 </Button>
                             </Tooltip>
@@ -96,6 +96,8 @@ const ContactViewProperty = ({
                         {hasPaidMail ? (
                             <ContactGroupDropdown
                                 icon
+                                color="weak"
+                                shape="outline"
                                 className="ml0-5"
                                 contactEmails={[contactEmail]}
                                 tooltip={c('Title').t`Contact group`}
