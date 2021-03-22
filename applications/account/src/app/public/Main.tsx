@@ -9,7 +9,7 @@ const Main = ({ children, className, larger, ...rest }: Props) => {
     return (
         <main
             className={classnames([
-                'ui-standard color-norm bg-norm relative no-scroll w100 max-w100 center rounded',
+                'ui-standard color-norm bg-norm relative no-scroll w100 max-w100 center sign-layout',
                 !larger ? 'mw48r' : '',
                 className,
             ])}
