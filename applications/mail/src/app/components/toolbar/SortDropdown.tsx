@@ -39,6 +39,7 @@ const SortDropdown = ({ loading, conversationMode, sort: { sort, desc }, onSort,
         <SimpleDropdown
             as={Button}
             shape="ghost"
+            size="small"
             hasCaret={hasCaret}
             className={className}
             content={

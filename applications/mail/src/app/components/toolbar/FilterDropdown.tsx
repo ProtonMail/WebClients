@@ -52,6 +52,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate, c
         <SimpleDropdown
             as={Button}
             shape="ghost"
+            size="small"
             hasCaret={hasCaret}
             className={className}
             content={
