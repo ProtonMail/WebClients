@@ -57,15 +57,15 @@ const Checkout = ({
             </div>
             <h2 className="h4 text-bold">{c('Title').t`Plan summary`}</h2>
             <div className={loading ? 'opacity-50' : ''}>{children}</div>
-            <p className="text-sm lh-standard flex flex-nowrap opacity-50">
+            <p className="text-sm lh-standard flex flex-nowrap color-weak">
                 <span className="flex-item-noshrink mr0-5">
                     <Icon name="security" />
                 </span>
                 <span className="flex-item-fluid">{c('Info')
-                    .t`Payments are protected with TLS encryptionand Swiss privacy laws.`}</span>
+                    .t`Payments are protected with TLS encryption and Swiss privacy laws.`}</span>
             </p>
             {service === PLAN_SERVICES.VPN ? (
-                <p className="text-sm flex flex-nowrap opacity-50">
+                <p className="text-sm flex flex-nowrap color-weak">
                     <span className="flex-item-noshrink mr0-5">
                         <Icon name="clock" />
                     </span>
