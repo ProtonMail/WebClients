@@ -42,12 +42,4 @@
 	&:indeterminate + .checkbox-fakecheck {
 		border-color: var(--field-disabled);
 	}
-
-	&:indeterminate + .checkbox-fakecheck {
-		content: '';
-		width: 1.6rem;
-		height: 1.6rem;
-		background-image: url('#{$path-images}sprite-for-css-only.svg#css-dash');
-		background-repeat: no-repeat;
-	}
 }
