@@ -10,7 +10,7 @@ import {
 import { checkSubscription, subscribe, deleteSubscription } from 'proton-shared/lib/api/payments';
 import { hasBonuses } from 'proton-shared/lib/helpers/organization';
 import { getPlanIDs } from 'proton-shared/lib/helpers/subscription';
-import { clearPlanIDs } from 'proton-shared/lib/helpers/planIDs';
+import { hasPlanIDs } from 'proton-shared/lib/helpers/planIDs';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { Cycle, Currency, PlanIDs, SubscriptionCheckResponse } from 'proton-shared/lib/interfaces';
@@ -43,8 +43,6 @@ import './SubscriptionModal.scss';
 import { handlePaymentToken } from '../paymentTokenHelper';
 import PlanCustomization from './PlanCustomization';
 import SubscriptionModalHeader from './SubscriptionModalHeader';
-
-const hasPlans = (planIDs = {}) => Object.keys(clearPlanIDs(planIDs)).length;
 
 interface Props {
     step?: SUBSCRIPTION_STEPS;
@@ -139,7 +137,7 @@ const SubscriptionModal = ({
     };
 
     const handleSubscribe = async (params = {}) => {
-        if (!hasPlans(model.planIDs)) {
+        if (!hasPlanIDs(model.planIDs)) {
             return handleUnsubscribe();
         }
 
@@ -147,7 +145,7 @@ const SubscriptionModal = ({
             setModel({ ...model, step: SUBSCRIPTION_STEPS.UPGRADE });
             await api(
                 subscribe({
-                    PlanIDs: clearPlanIDs(model.planIDs),
+                    PlanIDs: model.planIDs,
                     Codes: getCodes(model),
                     Cycle: model.cycle,
                     ...params, // Contains Payment, Amount and Currency
@@ -178,16 +176,16 @@ const SubscriptionModal = ({
     const check = async (newModel: Model = model, wantToApplyNewGiftCode: boolean = false): Promise<void> => {
         const copyNewModel = { ...newModel };
 
-        if (!hasPlans(newModel.planIDs)) {
+        if (!hasPlanIDs(newModel.planIDs)) {
             setCheckResult(TOTAL_ZERO);
             setModel(copyNewModel);
             return;
         }
 
         try {
-            const result: SubscriptionCheckResponse = await api(
+            const result = await api<SubscriptionCheckResponse>(
                 checkSubscription({
-                    PlanIDs: clearPlanIDs(newModel.planIDs),
+                    PlanIDs: newModel.planIDs,
                     Currency: newModel.currency,
                     Cycle: newModel.cycle,
                     Codes: getCodes(newModel),

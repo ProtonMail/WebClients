@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
+import { CYCLE } from 'proton-shared/lib/constants';
+import { Currency, Cycle, Plan } from 'proton-shared/lib/interfaces';
 import { c } from 'ttag';
 import { Price } from '../../../components';
 
@@ -10,9 +10,16 @@ const FREE_PLAN = {
         [CYCLE.YEARLY]: 0,
         [CYCLE.TWO_YEARS]: 0,
     },
-};
+} as Plan;
 
-const SubscriptionPrices = ({ cycle, currency, plan = FREE_PLAN, suffix = c('Suffix').t`/month` }) => {
+interface Props {
+    cycle: Cycle;
+    currency: Currency;
+    plan?: Plan;
+    suffix?: string;
+}
+
+const SubscriptionPrices = ({ cycle, currency, plan = FREE_PLAN, suffix = c('Suffix').t`/month` }: Props) => {
     const billiedAmount = (
         <Price key="billed-amount" currency={currency}>
             {plan.Pricing[cycle]}
@@ -35,15 +42,6 @@ const SubscriptionPrices = ({ cycle, currency, plan = FREE_PLAN, suffix = c('Suf
             )}
         </>
     );
-};
-
-SubscriptionPrices.propTypes = {
-    suffix: PropTypes.string,
-    cycle: PropTypes.oneOf([CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS]).isRequired,
-    currency: PropTypes.oneOf(CURRENCIES).isRequired,
-    plan: PropTypes.shape({
-        Pricing: PropTypes.object,
-    }),
 };
 
 export default SubscriptionPrices;
