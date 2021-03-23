@@ -7,7 +7,6 @@ import React from 'react';
 import { useLoadingMap } from '../../hooks';
 import { DropdownMenu, DropdownMenuButton, SimpleDropdown } from '../dropdown';
 import { Button, ButtonGroup } from '../button';
-import { classnames } from '../../helpers';
 
 interface Props {
     actions: PartstatActions;
@@ -90,7 +89,7 @@ const InviteButtons = ({ actions, partstat = ICAL_ATTENDEE_STATUS.NEEDS_ACTION, 
             originalPlacement="top-right"
             disabled={disabled}
             loading={loadingAnswer}
-            className={classnames(['button', className])}
+            className={className}
             title={c('Title').t`Change my answer`}
             content={text}
             data-test-id="dropdown:open"
