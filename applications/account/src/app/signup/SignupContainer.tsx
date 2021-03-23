@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import * as History from 'history';
 import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
-import { APP_NAMES, PAYMENT_METHOD_TYPES, TOKEN_TYPES } from 'proton-shared/lib/constants';
+import { APP_NAMES, PAYMENT_METHOD_TYPES, PLAN_SERVICES, TOKEN_TYPES } from 'proton-shared/lib/constants';
 import { checkSubscription, subscribe } from 'proton-shared/lib/api/payments';
 import { c } from 'ttag';
 import {
@@ -17,24 +17,26 @@ import { persistSession } from 'proton-shared/lib/authentication/persistedSessio
 import { useHistory } from 'react-router-dom';
 import { updateLocale } from 'proton-shared/lib/api/settings';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { handleSetupKeys, handleSetupAddress } from 'proton-shared/lib/keys';
+import { handleSetupAddress, handleSetupKeys } from 'proton-shared/lib/keys';
 import { localeCode } from 'proton-shared/lib/i18n';
 import { getUser } from 'proton-shared/lib/api/user';
 import {
+    HumanVerificationForm,
+    PlanSelection,
+    OnLoginCallback,
     useApi,
     useConfig,
     useLoading,
     useModals,
-    usePlans,
-    OnLoginCallback,
-    HumanVerificationForm,
-    usePayment,
     useMyLocation,
+    usePayment,
+    usePlans,
 } from 'react-components';
 import { ChallengeResult } from 'react-components/components/challenge/ChallengeFrame';
 import { Payment, PaymentParameters } from 'react-components/containers/payments/interface';
 import { handlePaymentToken } from 'react-components/containers/payments/paymentTokenHelper';
 import { Steps } from 'react-components/containers/api/humanVerification/HumanVerificationForm';
+import { hasPlanIDs } from 'proton-shared/lib/helpers/planIDs';
 
 import BackButton from '../public/BackButton';
 import CreateAccountForm from './CreateAccountForm';
@@ -44,7 +46,6 @@ import { DEFAULT_CHECK_RESULT, DEFAULT_SIGNUP_MODEL } from './constants';
 import { getToAppName } from '../public/helper';
 import createHumanApi from './helpers/humanApi';
 import CreatingAccount from './CreatingAccount';
-import { hasPaidPlan } from './helpers/helper';
 import handleCreateUser from './helpers/handleCreateUser';
 import handleCreateExternalUser from './helpers/handleCreateExternalUser';
 import createAuthApi from './helpers/authApi';
@@ -54,7 +55,6 @@ import Main from '../public/Main';
 import Footer from '../public/Footer';
 import SignupSupportDropdown from './SignupSupportDropdown';
 import VerificationCodeForm from './VerificationCodeForm';
-import Plans from './Plans';
 import PaymentForm from './PaymentForm';
 
 interface Props {
@@ -180,7 +180,7 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
         planIDs = model.planIDs,
         payment,
     }: { planIDs?: PlanIDs; payment?: Payment } = {}) => {
-        const isBuyingPaidPlan = hasPaidPlan(planIDs);
+        const isBuyingPaidPlan = hasPlanIDs(planIDs);
 
         if (isBuyingPaidPlan && method === PAYMENT_METHOD_TYPES.CARD && !canPay) {
             setModelDiff({ step: PAYMENT });
@@ -248,7 +248,7 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
                 password,
             });
 
-            if (Object.keys(planIDs).length) {
+            if (hasPlanIDs(planIDs)) {
                 await authApi.api(
                     subscribe({
                         PlanIDs: planIDs,
@@ -325,7 +325,7 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
             );
             setCheckResult(result);
         };
-        if (hasPaidPlan(model.planIDs)) {
+        if (hasPlanIDs(model.planIDs)) {
             withLoading(check());
         }
     }, [model.cycle, model.planIDs]);
@@ -341,8 +341,6 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
     // TODO: Only some apps are allowed for this
     const disableExternalSignup = true;
 
-    const firstPlanID = Object.keys(model.planIDs || {})[0];
-    const selectedPlan = (plans || []).find(({ ID }) => firstPlanID === ID);
     const defaultCountry = myLocation?.Country?.toUpperCase();
 
     const [humanVerificationStep, setHumanVerificationStep] = useState(Steps.ENTER_DESTINATION);
@@ -395,7 +393,7 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
                             defaultCountry={defaultCountry}
                             onSubmit={(payload) => {
                                 addChallengePayload(payload);
-                                const isBuyingPaidPlan = hasPaidPlan(model.planIDs);
+                                const isBuyingPaidPlan = hasPlanIDs(model.planIDs);
                                 if (isBuyingPaidPlan) {
                                     setModelDiff({ step: PAYMENT });
                                 } else {
@@ -413,7 +411,7 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
             {step === PLANS && (
                 <>
                     <Header
-                        title={c('Title').t`Plans`}
+                        title={c('Title').t`Plan selection`}
                         left={
                             <BackButton
                                 onClick={() => {
@@ -431,27 +429,26 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
                         }
                     />
                     <Content>
-                        <Plans
-                            planNameSelected={selectedPlan?.Name}
-                            plans={plans}
-                            model={model}
-                            onChange={setModelDiff}
+                        <PlanSelection
+                            mode="signup"
                             loading={false}
-                            onSelectPlan={(planID: string) => {
-                                if (!planID) {
-                                    // Select free plan
+                            plans={plans || []}
+                            currency={model.currency}
+                            cycle={model.cycle}
+                            planIDs={model.planIDs}
+                            service={PLAN_SERVICES.MAIL}
+                            onChangePlanIDs={(planIDs) => {
+                                if (Object.keys(planIDs).length === 0) {
                                     setModelDiff({ planIDs: {}, step: CREATING_ACCOUNT });
                                     return handleFinalizeSignup({ planIDs: {} });
                                 }
-                                const plan = plans?.find(({ ID }) => ID === planID);
-                                if (!plan) {
-                                    throw new Error('Unknown plan');
-                                }
                                 setModelDiff({
-                                    planIDs: { [plan.ID]: 1 },
+                                    planIDs,
                                     step: PAYMENT,
                                 });
                             }}
+                            onChangeCurrency={(currency) => setModelDiff({ currency })}
+                            onChangeCycle={(cycle) => setModelDiff({ cycle })}
                         />
                     </Content>
                 </>
@@ -459,7 +456,7 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
             {step === PAYMENT && (
                 <>
                     <Header
-                        title={c('Title').t`Choose a payment method`}
+                        title={c('Title').t`Checkout`}
                         left={
                             <BackButton
                                 onClick={() => {
@@ -507,7 +504,7 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
                             clientType={CLIENT_TYPE}
                             model={model}
                             onSubmit={() => {
-                                const isBuyingPaidPlan = hasPaidPlan(model.planIDs);
+                                const isBuyingPaidPlan = hasPlanIDs(model.planIDs);
                                 if (isBuyingPaidPlan) {
                                     return setModelDiff({ step: PAYMENT });
                                 }
