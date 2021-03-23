@@ -138,7 +138,10 @@ const FolderTreeViewList = ({ items = [] }) => {
                                                 className="mr1 flex-item-noshrink cursor-row-resize"
                                             />
                                         )}
-                                        <FolderIcon className="mr0-5 flex-item-noshrink" folder={item} />
+                                        <FolderIcon
+                                            className="mr0-5 flex-item-noshrink"
+                                            folder={{ ...item, subfolders: parents[item.ID] }}
+                                        />
                                         <span className="text-ellipsis" title={item.Name}>
                                             {item.Name}
                                         </span>
