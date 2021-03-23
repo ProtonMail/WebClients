@@ -4,13 +4,14 @@ import { Currency, Cycle } from 'proton-shared/lib/interfaces';
 import { CYCLE } from 'proton-shared/lib/constants';
 
 import { classnames } from '../../../helpers';
-import { Icon, Price, PrimaryButton, Info } from '../../../components';
+import { Icon, Price, PrimaryButton } from '../../../components';
 
 export interface PlanCardFeature {
     icon?: React.ReactNode;
     content: React.ReactNode;
     className?: string;
-    tooltip?: string;
+    info?: React.ReactNode;
+    notIncluded?: boolean;
 }
 
 interface Props {
@@ -77,13 +78,15 @@ const PlanCard = ({
                 {features.length ? (
                     <ul className="unstyled">
                         {features.map((feature, index) => (
-                            <li key={`${index}`} className={classnames(['flex flex-nowrap mb0-5', feature.className])}>
+                            <li
+                                key={`${index}`}
+                                className={classnames(['flex flex-nowrap mb0-5', feature.notIncluded && 'opacity-50'])}
+                            >
                                 <span className="flex-item-noshrink mr1">
-                                    {feature.icon || <Icon name="on" className="color-primary" />}
+                                    {feature.notIncluded ? '—' : <Icon name="on" className="color-primary" />}
                                 </span>
                                 <span className="flex-item-fluid">
-                                    <span className="mr0-5">{feature.content}</span>
-                                    {feature.tooltip ? <Info title={feature.tooltip} /> : null}
+                                    {feature.content} {feature.info}
                                 </span>
                             </li>
                         ))}

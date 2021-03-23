@@ -16,7 +16,7 @@ import {
 } from 'proton-shared/lib/constants';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { range } from 'proton-shared/lib/helpers/array';
-import { switchPlan, getSupportedAddons } from 'proton-shared/lib/helpers/planIDs';
+import { switchPlan, getSupportedAddons, setQuantity } from 'proton-shared/lib/helpers/planIDs';
 import { getAppName } from 'proton-shared/lib/apps/helper';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 
@@ -263,7 +263,9 @@ const ProtonPlanCustomizer = ({
                                 divider={divider}
                                 disabled={loading || !isSupported}
                                 onChange={(newQuantity) => {
-                                    onChangePlanIDs({ ...planIDs, [addon.ID]: (newQuantity - min) / addonMultiplier });
+                                    onChangePlanIDs(
+                                        setQuantity(planIDs, addon.ID, (newQuantity - min) / addonMultiplier)
+                                    );
                                 }}
                                 step={addonMultiplier}
                             />
