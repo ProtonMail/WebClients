@@ -1,11 +1,10 @@
 import React from 'react';
-import { c } from 'ttag';
 import { PAYMENT_METHOD_TYPE, PLAN_SERVICES } from 'proton-shared/lib/constants';
 import { Plan } from 'proton-shared/lib/interfaces';
 import { SubscriptionCheckResponse } from 'proton-shared/lib/interfaces/Subscription';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-import { Alert, Payment, SubscriptionCheckout, useLoading } from 'react-components';
+import { Payment, SubscriptionCheckout, useLoading } from 'react-components';
 import { SignupModel, SignupPayPal } from './interfaces';
 import CheckoutButton from './CheckoutButton';
 
@@ -53,8 +52,6 @@ const PaymentForm = ({
             }}
             method="post"
         >
-            <Alert>{c('Info')
-                .t`Please note that depending on the total amount due, some payment options may not be available.`}</Alert>
             <div className="flex-no-min-children flex-nowrap on-mobile-flex-column on-mobile-flex-wrap">
                 <div className="flex-item-fluid no-min-dimensions on-mobile-w100 pr1 on-mobile-pr0">
                     <Payment
@@ -70,7 +67,7 @@ const PaymentForm = ({
                         errors={errors}
                     />
                 </div>
-                <div className="w25 min-w14e on-mobile-w100">
+                <div className="bg-weak w25 min-w14e on-mobile-w100">
                     <SubscriptionCheckout
                         submit={
                             <CheckoutButton
