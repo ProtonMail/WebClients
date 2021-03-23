@@ -185,7 +185,7 @@ dd {
 b,
 strong,
 %bold {
-	font-weight: bold;
+	font-weight: $font-weight-bold;
 }
 
 /* harmonization between Chrome/Firefox */
