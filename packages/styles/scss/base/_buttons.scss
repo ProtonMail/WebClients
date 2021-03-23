@@ -284,16 +284,18 @@
 }
 
 .grouped-button {
-	border-radius: 0;
-
-	&[class*='button-outline'] {
-		margin-right: -1px; // Border size
-	}
-
 	&:hover,
 	&:focus,
 	&:active {
 		position: relative;
+	}
+
+	&:not(:first-child, :last-child) {
+		border-radius: 0;
+	}
+
+	&[class*='button-outline']:not(:last-child) {
+		margin-right: -1px; // Border size
 	}
 }
 
