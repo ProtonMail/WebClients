@@ -32,6 +32,13 @@
 
 .color-inherit {
 	color: inherit;
+
+	&.link {
+		&:hover,
+		&:focus {
+			color: inherit;
+		}
+	}
 }
 
 .fill-currentColor {
