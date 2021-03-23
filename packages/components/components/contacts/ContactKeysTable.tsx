@@ -260,7 +260,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                 (isValid(expiration) ? format(expiration, 'PP', { locale: dateLocale }) : '-'),
                             !isNarrow && algo,
                             <React.Fragment key={fingerprint}>
-                                {isPrimary ? <Badge>{c('Key badge').t`Primary`}</Badge> : null}
+                                {isPrimary ? <Badge type="primary">{c('Key badge').t`Primary`}</Badge> : null}
                                 {isVerificationOnly ? (
                                     <Badge type="warning">{c('Key badge').t`Verification only`}</Badge>
                                 ) : null}
