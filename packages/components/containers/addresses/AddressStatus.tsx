@@ -16,7 +16,7 @@ const AddressStatus = ({ isDefault, isActive, isDisabled, isOrphan, isMissingKey
         isDefault &&
             ({
                 text: c('Address status').t`Default`,
-                type: 'default',
+                type: 'primary',
             } as const),
         isActive &&
             ({
