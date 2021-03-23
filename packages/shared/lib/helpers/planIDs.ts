@@ -7,24 +7,27 @@ import { toMap, omit } from './object';
 const { PLUS, VPNPLUS, VPNBASIC, VISIONARY, PROFESSIONAL } = PLANS;
 const { VPN, SPACE, MEMBER, ADDRESS, DOMAIN } = ADDON_NAMES;
 
-export const removeService = (planIDs: PlanIDs, plans: Plan[], service: PLAN_SERVICES = PLAN_SERVICES.MAIL) => {
-    const plansMap = toMap(plans);
-    return Object.entries(planIDs).reduce<PlanIDs>((acc, [planID = '']) => {
-        const { Services } = plansMap[planID];
-
-        if (hasBit(Services, service)) {
-            acc[planID] = 0;
-        }
-
-        return acc;
-    }, planIDs);
-};
+export const hasPlanIDs = (planIDs: PlanIDs) => Object.values(planIDs).some((quantity) => quantity > 0);
 
 export const clearPlanIDs = (planIDs: PlanIDs) => {
     return Object.entries(planIDs).reduce<PlanIDs>((acc, [planID, quantity = 0]) => {
         if (quantity <= 0) {
             return acc;
         }
+        acc[planID] = quantity;
+        return acc;
+    }, {});
+};
+
+export const removeService = (planIDs: PlanIDs, plans: Plan[], service: PLAN_SERVICES = PLAN_SERVICES.MAIL) => {
+    const plansMap = toMap(plans);
+    return Object.entries(planIDs).reduce<PlanIDs>((acc, [planID = '', quantity = 0]) => {
+        const { Services } = plansMap[planID];
+
+        if (hasBit(Services, service)) {
+            return acc;
+        }
+
         acc[planID] = quantity;
         return acc;
     }, {});
@@ -91,7 +94,7 @@ export const switchPlan = ({
     };
 
     if (plansMap[PLUS].ID === planID) {
-        return {
+        return clearPlanIDs({
             ...omit(planIDs, [
                 plansMap[PLUS].ID,
                 plansMap[PROFESSIONAL].ID,
@@ -106,13 +109,13 @@ export const switchPlan = ({
                 getAddonQuantity(selectedPlan, UsedAddresses, 'MaxAddresses', plansMap[ADDRESS]) || 0,
             [plansMap[SPACE].ID]: getAddonQuantity(selectedPlan, UsedSpace, 'MaxSpace', plansMap[SPACE]) || 0,
             [planID]: 1,
-        };
+        });
     }
 
     if (plansMap[PROFESSIONAL].ID === planID) {
         const vpnAddons = getAddonQuantity(selectedPlan, UsedVPN, 'MaxVPN', plansMap[VPN]) || 0;
 
-        return {
+        return clearPlanIDs({
             ...omit(planIDs, [
                 plansMap[PLUS].ID,
                 plansMap[PROFESSIONAL].ID,
@@ -133,27 +136,38 @@ export const switchPlan = ({
             [planID]: 1,
             [plansMap[VPNPLUS].ID]: vpnAddons || planIDs[plansMap[VPNPLUS].ID] ? 1 : 0,
             [plansMap[VPN].ID]: vpnAddons ? vpnAddons - plansMap[VPNPLUS].MaxVPN : 0,
-        };
+        });
     }
 
     if (plansMap[VPNBASIC].ID === planID) {
-        return {
+        return clearPlanIDs({
             ...omit(planIDs, [plansMap[VPNBASIC].ID, plansMap[VPNPLUS].ID, plansMap[VISIONARY].ID, plansMap[VPN].ID]),
             [planID]: 1,
-        };
+        });
     }
 
     if (plansMap[VPNPLUS].ID === planID) {
-        return {
+        return clearPlanIDs({
             ...omit(planIDs, [plansMap[VPNBASIC].ID, plansMap[VPNPLUS].ID, plansMap[VISIONARY].ID]),
             [plansMap[VPN].ID]: planIDs[plansMap[PROFESSIONAL].ID]
                 ? getAddonQuantity(selectedPlan, UsedVPN, 'MaxVPN', plansMap[VPN])
                 : 0,
             [planID]: 1,
-        };
+        });
     }
 
     return {};
+};
+
+export const setQuantity = (planIDs: PlanIDs, planID: string, newQuantity: number) => {
+    const { [planID]: removedPlan, ...restPlanIDs } = planIDs;
+    if (!newQuantity || newQuantity <= 0) {
+        return restPlanIDs;
+    }
+    return {
+        ...restPlanIDs,
+        [planID]: newQuantity,
+    };
 };
 
 export const getTotal = ({
