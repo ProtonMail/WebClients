@@ -27,7 +27,7 @@
 	.plan-selection {
 		&-plan-current {
 			background-color: var(--primary);
-			color: $white;
+			color: var(--primary-contrast);
 			position: absolute;
 			bottom: 100%;
 			left: -1px;
