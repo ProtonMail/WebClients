@@ -45,10 +45,6 @@ opacity: .3;
   <path d="M7.782 9.356l-4.44-4.111-.75.694 5.19 4.805 5.19-4.805-.749-.694z"/>
   </symbol>
 
-  <symbol id="symbol-dash">
-  <rect x="2" y="7" width="10" height="1" />
-  </symbol>
-
   <symbol id="symbol-on">
   <polygon points="6.68 14.28 1.14 8.74 1.84 8.03 6.53 12.72 14.03 1.8 14.85 2.37 6.68 14.28" />
   </symbol>
@@ -72,8 +68,6 @@ opacity: .3;
   <use id="css-caret-close-white" href="#symbol-caret" class="white rotated-180" />
   <use id="css-greater" href="#symbol-caret" class="black rotated-right" />
   <use id="css-lesser" href="#symbol-caret" class="black rotated-left" />
-  <use id="css-dash" href="#symbol-dash" class="black low-opacity" />
-  <use id="css-dash-white" href="#symbol-dash" class="white low-opacity" />
   <use id="css-on" href="#symbol-on" class="white" />
   <use id="css-check" href="#symbol-on" class="success" />
   <use id="css-minus" href="#symbol-dash" class="black" />
