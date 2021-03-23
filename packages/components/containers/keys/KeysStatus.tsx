@@ -10,7 +10,7 @@ const KeysStatus = ({ isPrimary, isDecrypted, isCompromised, isObsolete, isAddre
             ({
                 tooltip: c('Tooltip').t`ProtonMail users will use this key by default for sending`,
                 title: c('Key state badge').t`Primary`,
-                type: 'default',
+                type: 'primary',
             } as const),
         isDecrypted
             ? ({
@@ -30,7 +30,8 @@ const KeysStatus = ({ isPrimary, isDecrypted, isCompromised, isObsolete, isAddre
                 title: c('Key state badge').t`Compromised`,
                 type: 'warning',
             } as const),
-        isObsolete && !isCompromised &&
+        isObsolete &&
+            !isCompromised &&
             ({
                 tooltip: c('Tooltip').t`This key cannot be used for encryption`,
                 title: c('Key state badge').t`Obsolete`,

@@ -1,11 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
+import { PaymentMethod } from 'proton-shared/lib/interfaces';
 import { isExpired } from 'proton-shared/lib/helpers/card';
+import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { Badge } from '../../components';
 
-const PaymentMethodState = ({ method, index }) => {
-    if (isExpired(method.Details)) {
+interface Props {
+    method: PaymentMethod;
+    index?: number;
+}
+
+const PaymentMethodState = ({ method, index }: Props) => {
+    if (method.Type === PAYMENT_METHOD_TYPES.CARD && isExpired(method.Details)) {
         return (
             <Badge type="error">{`${c('Label on payment method').t`Expired`} ${method.Details.ExpMonth}/${
                 method.Details.ExpYear
@@ -14,15 +20,10 @@ const PaymentMethodState = ({ method, index }) => {
     }
 
     if (!index) {
-        return <Badge>{c('Label on payment method').t`Default`}</Badge>;
+        return <Badge type="primary">{c('Label on payment method').t`Default`}</Badge>;
     }
 
     return null;
-};
-
-PaymentMethodState.propTypes = {
-    method: PropTypes.object.isRequired,
-    index: PropTypes.number.isRequired,
 };
 
 export default PaymentMethodState;
