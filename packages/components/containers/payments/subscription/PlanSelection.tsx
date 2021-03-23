@@ -1,32 +1,30 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import { Currency, Cycle, Organization, Plan, PlanIDs, Subscription } from 'proton-shared/lib/interfaces';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import {
     APPS,
-    PLANS,
-    PLAN_TYPES,
-    PLAN_SERVICES,
     CYCLE,
-    DEFAULT_CYCLE,
     DEFAULT_CURRENCY,
+    DEFAULT_CYCLE,
+    PLAN_SERVICES,
+    PLAN_TYPES,
+    PLANS,
 } from 'proton-shared/lib/constants';
 import { switchPlan } from 'proton-shared/lib/helpers/planIDs';
 import { getAppName } from 'proton-shared/lib/apps/helper';
 import { getPlan } from 'proton-shared/lib/helpers/subscription';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
-import { Icon, InlineLinkButton, Button } from '../../../components';
+import { Button, Info } from '../../../components';
 
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector from '../CycleSelector';
 
-import PlanCard from './PlanCard';
-import MailFeatures from './MailFeatures';
-import VPNFeatures from './VPNFeatures';
+import PlanCard, { PlanCardFeature } from './PlanCard';
 
 import './PlanSelection.scss';
-
-const EmDash = '—';
+import PlanSelectionComparison from './PlanSelectionComparison';
 
 const FREE_PLAN = {
     ID: 'free',
@@ -62,115 +60,180 @@ const NAMES = {
     [PLANS.VISIONARY]: 'Visionary',
 } as const;
 
-const getFeatures = (planName: PLANS, service: PLAN_SERVICES) => {
-    return {
-        free_mail: [
+const getFeatures = (planName: keyof typeof NAMES, service: PLAN_SERVICES): PlanCardFeature[] => {
+    const netflix = <b key={1}>{c('Netflix').t`Netflix`}</b>;
+    const disney = <b key={2}>{c('Disney').t`Disney+`}</b>;
+    const primeVideo = <b key={3}>{c('Prime Video').t`Prime Video`}</b>;
+    const many = <b key={4}>{c('Many Others').t`and many others`}</b>;
+
+    const mailAppName = getAppName(APPS.PROTONMAIL);
+    const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
+
+    const adBlocker = {
+        content: c('Plan feature').t`Built-in Adblocker (NetShield)`,
+        info: (
+            <Info
+                title={c('Tooltip')
+                    .t`NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.`}
+                url=" https://protonvpn.com/support/netshield/"
+            />
+        ),
+    };
+
+    const secureCore = {
+        content: c('Plan feature').t`Secure Core servers`,
+        info: (
+            <Info
+                title={c('Tooltip')
+                    .t`Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.`}
+                url="https://protonvpn.com/support/secure-core-vpn/"
+            />
+        ),
+    };
+
+    const streamingService = {
+        content: c('Plan feature').t`Streaming service support`,
+        info: (
+            <Info
+                title={c('Info')
+                    .jt`Access your streaming services, like ${netflix}, ${disney}, ${primeVideo}, ${many}, no matter where you are.`}
+                url="https://protonvpn.com/support/streaming-guide/"
+            />
+        ),
+    };
+
+    if (planName === 'free_vpn') {
+        return [
+            { content: c('Plan feature').t`17 servers in 3 countries` },
+            { content: c('Plan feature').t`1 VPN connection` },
+            { content: c('Plan feature').t`Medium speed` },
+            { ...adBlocker, notIncluded: true },
+            { ...secureCore, notIncluded: true },
+            { ...streamingService, notIncluded: true },
+        ];
+    }
+
+    if (planName === PLANS.VPNBASIC) {
+        return [
+            { content: c('Plan feature').t`350+ servers in 55 countries` },
+            { content: c('Plan feature').t`2 VPN connections` },
+            { content: c('Plan feature').t`High speed` },
+            adBlocker,
+            { ...secureCore, notIncluded: true },
+            { ...streamingService, notIncluded: true },
+        ];
+    }
+
+    if (planName === PLANS.VPNPLUS) {
+        return [
+            { content: c('Plan feature').t`1200+ servers in 55 countries` },
+            { content: c('Plan feature').t`5 VPN connections` },
+            { content: c('Plan feature').t`Highest speed (up to 10Gbps)` },
+            adBlocker,
+            secureCore,
+            streamingService,
+        ];
+    }
+
+    if (planName === PLANS.VISIONARY && service === PLAN_SERVICES.VPN) {
+        return [
+            { content: c('Plan feature').t`All plan features` },
+            { content: c('Plan feature').t`10 VPN connections` },
+            { content: c('Plan feature').t`Includes 6 user accounts` },
+            {
+                content: c('Plan feature').t`Includes Proton Visionary`,
+                info: (
+                    <Info
+                        title={c('Tooltip')
+                            .t`Get access to all the paid features for both ${vpnAppName} and ${mailAppName} (the encrypted email service that million use to protect their data) with one plan.`}
+                        url="https://protonmail.com"
+                    />
+                ),
+            },
+            { content: c('Plan feature').t`Early access to new products` },
+        ];
+    }
+
+    const customEmail = {
+        content: c('Plan feature').t`Custom email addresses`,
+        info: (
+            <Info
+                title={c('Tooltip')
+                    .t`Host emails for your own domain(s) at ${mailAppName}, e.g. john.smith@example.com`}
+            />
+        ),
+    };
+
+    if (planName === 'free_mail') {
+        return [
             { content: c('Plan feature').t`1 user` },
             { content: c('Plan feature').t`0.5 GB storage` },
             { content: c('Plan feature').t`1 address` },
             { content: c('Plan feature').t`3 folders / labels` },
-            { content: c('Plan feature').t`No custom email addresses`, icon: EmDash, className: 'opacity-50' },
-        ],
-        free_vpn: [
-            { content: c('Plan feature').t`Open-source, audited, no-logs` },
-            { content: c('Plan feature').t`17 servers in 3 countries` },
-            { content: c('Plan feature').t`1 VPN connection` },
-            { content: c('Plan feature').t`Adblocker (Netshield)`, icon: EmDash, className: 'opacity-50' },
-            { content: c('Plan feature').t`Exclusive SecureCore servers`, icon: EmDash, className: 'opacity-50' },
-        ],
-        [PLANS.VPNBASIC]: [
-            { content: c('Plan feature').t`Open-source, audited, no-logs` },
-            { content: c('Plan feature').t`350+ servers in 54 countries` },
-            { content: c('Plan feature').t`2 VPN connections` },
-            {
-                content: c('Plan feature').t`Adblocker (Netshield)`,
-                tooltip: c('Tooltip')
-                    .t`NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.`,
-            },
-            { content: c('Plan feature').t`Exclusive SecureCore servers`, icon: EmDash, className: 'opacity-50' },
-        ],
-        [PLANS.VPNPLUS]: [
-            { content: c('Plan feature').t`Open-source, audited, no-logs` },
-            { content: c('Plan feature').t`1200+ servers in 54 countries` },
-            { content: c('Plan feature').t`5 VPN connections` },
-            {
-                content: c('Plan feature').t`Adblocker (Netshield)`,
-                tooltip: c('Tooltip')
-                    .t`NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.`,
-            },
-            {
-                content: c('Plan feature').t`Exclusive SecureCore servers`,
-                tooltip: c('Tooltip')
-                    .t`Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.`,
-            },
-        ],
-        [PLANS.PLUS]: [
+            { ...customEmail, notIncluded: true },
+        ];
+    }
+
+    const multipleInfo = (
+        <Info
+            title={c('Tooltip')
+                .t`Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com`}
+        />
+    );
+
+    if (planName === PLANS.PLUS) {
+        return [
             { content: c('Plan feature').t`1 user` },
             { content: c('Plan feature').t`5 GB storage *` },
             {
                 content: c('Plan feature').t`5 addresses`,
-                tooltip: c('Tooltip')
-                    .t`Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com`,
+                info: multipleInfo,
             },
             { content: c('Plan feature').t`200 folders / labels` },
-            {
-                content: c('Plan feature').t`Custom email addresses`,
-                tooltip: c('Tooltip').t`Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com`,
-            },
-        ],
-        [PLANS.PROFESSIONAL]: [
+            customEmail,
+        ];
+    }
+
+    if (planName === PLANS.PROFESSIONAL) {
+        return [
             { content: c('Plan feature').t`1 - 5000 users *` },
             { content: c('Plan feature').t`5 GB storage / user` },
             {
                 content: c('Plan feature').t`5 addresses / user`,
-                tooltip: c('Tooltip')
-                    .t`Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com`,
+                info: multipleInfo,
             },
             { content: c('Plan feature').t`Unlimited folders / labels` },
+            customEmail,
+        ];
+    }
+
+    if (planName === PLANS.VISIONARY && service === PLAN_SERVICES.MAIL) {
+        return [
+            { content: c('Plan feature').t`6 users` },
+            { content: c('Plan feature').t`20 GB storage` },
             {
-                content: c('Plan feature').t`Custom email addresses`,
-                tooltip: c('Tooltip').t`Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com`,
+                content: c('Plan feature').t`50 addresses`,
+                info: multipleInfo,
             },
-        ],
-        [PLANS.VISIONARY]:
-            service === PLAN_SERVICES.VPN
-                ? [
-                      { content: c('Plan feature').t`All plan features` },
-                      {
-                          content: c('Plan feature').t`ProtonMail Visionary account`,
-                          tooltip: c('Tooltip')
-                              .t`Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that million use to protect their data) with one plan.`,
-                      },
-                      { content: c('Plan feature').t`10 VPN connections` },
-                      { content: c('Plan feature').t`Early access to new products` },
-                      { content: c('Plan feature').t`Support Proton Technologies!` },
-                  ]
-                : [
-                      { content: c('Plan feature').t`6 users` },
-                      { content: c('Plan feature').t`20 GB storage` },
-                      {
-                          content: c('Plan feature').t`50 addresses`,
-                          tooltip: c('Tooltip')
-                              .t`Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com`,
-                      },
-                      { content: c('Plan feature').t`Unlimited folders / labels` },
-                      {
-                          content: c('Plan feature').t`Custom email addresses`,
-                          tooltip: c('Tooltip')
-                              .t`Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com`,
-                      },
-                  ],
-    }[planName];
+            { content: c('Plan feature').t`Unlimited folders / labels` },
+            customEmail,
+        ];
+    }
+
+    return [];
 };
 
 interface Props {
     planIDs: PlanIDs;
     currency: Currency;
+    hasFreePlan?: boolean;
+    hasPlanSelectionComparison?: boolean;
     cycle: Cycle;
     plans: Plan[];
     service: PLAN_SERVICES;
     organization?: Organization;
     loading?: boolean;
+    mode?: 'signup' | 'settings';
     onChangePlanIDs: (newPlanIDs: PlanIDs) => void;
     onChangeCycle: (newCycle: Cycle) => void;
     onChangeCurrency: (newCurrency: Currency) => void;
@@ -178,6 +241,9 @@ interface Props {
 }
 
 const PlanSelection = ({
+    mode,
+    hasFreePlan = true,
+    hasPlanSelectionComparison = true,
     planIDs,
     plans,
     cycle,
@@ -191,22 +257,21 @@ const PlanSelection = ({
     onChangeCurrency,
 }: Props) => {
     const currentPlan = subscription ? getPlan(subscription, service) : null;
-    const featuresRef = useRef<HTMLDivElement>(null);
     const mailAppName = getAppName(APPS.PROTONMAIL);
     const isVpnApp = service === PLAN_SERVICES.VPN;
     const planNamesMap = toMap(plans, 'Name');
     const MailPlans = [
-        FREE_PLAN,
+        hasFreePlan && FREE_PLAN,
         planNamesMap[PLANS.PLUS],
         planNamesMap[PLANS.PROFESSIONAL],
         planNamesMap[PLANS.VISIONARY],
-    ];
+    ].filter(isTruthy);
     const VPNPlans = [
-        { ...FREE_PLAN, Name: 'free_vpn' as PLANS },
+        hasFreePlan && { ...FREE_PLAN, Name: 'free_vpn' as PLANS },
         planNamesMap[PLANS.VPNBASIC],
         planNamesMap[PLANS.VPNPLUS],
         planNamesMap[PLANS.VISIONARY],
-    ];
+    ].filter(isTruthy);
     const plansToShow = isVpnApp ? VPNPlans : MailPlans;
 
     const INFOS = {
@@ -223,17 +288,7 @@ const PlanSelection = ({
 
     const boldSave = <strong key="save">{c('Info').t`Save 20%`}</strong>;
 
-    const handleScroll = () => {
-        const container = document.querySelector('.modal-content-inner');
-        if (!featuresRef.current || !container) {
-            return;
-        }
-        const { offsetTop } = featuresRef.current;
-        container.scroll({
-            top: offsetTop,
-            behavior: 'smooth',
-        });
-    };
+    const isSignupMode = mode === 'signup';
 
     return (
         <>
@@ -270,9 +325,8 @@ const PlanSelection = ({
                     const isFree = plan.ID === FREE_PLAN.ID;
                     const isCurrentPlan = isFree ? !currentPlan : currentPlan?.ID === plan.ID;
                     return (
-                        // <div className="h100 relative">
                         <PlanCard
-                            isCurrentPlan={isCurrentPlan}
+                            isCurrentPlan={!isSignupMode && isCurrentPlan}
                             action={c('Action').t`Select plan`}
                             planName={NAMES[plan.Name as PLANS]}
                             currency={currency}
@@ -282,7 +336,7 @@ const PlanSelection = ({
                             price={plan.Pricing[cycle]}
                             info={INFOS[plan.Name as PLANS]}
                             features={getFeatures(plan.Name as PLANS, service)}
-                            onClick={() =>
+                            onClick={() => {
                                 onChangePlanIDs(
                                     switchPlan({
                                         planIDs,
@@ -291,64 +345,20 @@ const PlanSelection = ({
                                         service,
                                         organization,
                                     })
-                                )
-                            }
-                        />
-                        // </div>
-                    );
-                })}
-            </div>
-            <p className="text-sm">{c('Info').t`* Customizable features`}</p>
-            <p className="text-center">
-                <InlineLinkButton onClick={handleScroll}>
-                    <span className="mr0-5">{c('Action').t`Compare all features`}</span>
-                    <Icon name="arrow-down" className="align-sub" />
-                </InlineLinkButton>
-            </p>
-            <div ref={featuresRef}>
-                {service === PLAN_SERVICES.MAIL ? (
-                    <>
-                        <MailFeatures
-                            onSelect={(planName) => {
-                                const plan = plans.find(({ Name }) => Name === planName);
-                                onChangePlanIDs(
-                                    switchPlan({
-                                        planIDs,
-                                        plans,
-                                        planID: plan?.ID,
-                                        service,
-                                        organization,
-                                    })
                                 );
                             }}
                         />
-                        <p className="text-sm mt1 mb1">
-                            * {c('Info concerning plan features').t`Customizable features`}
-                        </p>
-                        <p className="text-sm mt0 mb1">
-                            **{' '}
-                            {c('Info concerning plan features')
-                                .t`ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.`}
-                        </p>
-                    </>
-                ) : null}
-                {service === PLAN_SERVICES.VPN ? (
-                    <VPNFeatures
-                        onSelect={(planName) => {
-                            const plan = plans.find(({ Name }) => Name === planName);
-                            onChangePlanIDs(
-                                switchPlan({
-                                    planIDs,
-                                    plans,
-                                    planID: plan?.ID,
-                                    service,
-                                    organization,
-                                })
-                            );
-                        }}
-                    />
-                ) : null}
+                    );
+                })}
             </div>
+            {hasPlanSelectionComparison && (
+                <PlanSelectionComparison
+                    service={service}
+                    onChangePlanIDs={onChangePlanIDs}
+                    plans={plans}
+                    planIDs={planIDs}
+                />
+            )}
         </>
     );
 };
