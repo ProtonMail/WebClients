@@ -5,3 +5,9 @@ export interface MyLocationResponse {
     Country: string;
     ISP: string;
 }
+
+export interface VPNCountries {
+    free: string[];
+    basic: string[];
+    all: string[];
+}
