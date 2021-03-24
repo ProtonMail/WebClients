@@ -2,6 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 import { APPS, PLANS } from 'proton-shared/lib/constants';
 import { getAppName } from 'proton-shared/lib/apps/helper';
+import { VPNCountries } from 'proton-shared/lib/interfaces';
 
 import { useVPNCountries } from '../../../hooks';
 import { Icon } from '../../../components';
@@ -10,12 +11,6 @@ import Features from './Features';
 
 const CheckIcon = () => <Icon className="color-primary" name="on" alt={c('information').t`Included`} />;
 const EmDash = '—';
-
-interface VPNCountries {
-    free: string[];
-    basic: string[];
-    all: string[];
-}
 
 const getFeatures = (vpnCountries: VPNCountries): VPNFeature[] => {
     const mailAppName = getAppName(APPS.PROTONMAIL);
