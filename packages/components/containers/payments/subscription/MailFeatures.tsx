@@ -6,7 +6,7 @@ import { Icon } from '../../../components';
 import { MailFeature } from './interface';
 import Features from './Features';
 
-const CheckIcon = () => <Icon className="color-primary" name="on" alt={c('Info').t`included`} />;
+const CheckIcon = () => <Icon className="color-primary" name="on" alt={c('Info').t`Included`} />;
 const EmDash = '—';
 
 const getFeatures = (): MailFeature[] => {
@@ -34,7 +34,7 @@ const getFeatures = (): MailFeature[] => {
                 .t`Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com`,
             free: '1',
             [PLANS.PLUS]: '5',
-            [PLANS.PROFESSIONAL]: c('Mail feature option').t`5 / user *`,
+            [PLANS.PROFESSIONAL]: c('Mail feature option: 5 email addresses / user').t`5 / user *`,
             [PLANS.VISIONARY]: '50',
         },
         {
@@ -137,7 +137,7 @@ const getFeatures = (): MailFeature[] => {
         {
             name: 'multi user support',
             label: c('Mail feature').t`Multi-user support`,
-            tooltip: c('Tooltip').t`Multi-user support only applicable to plans with 2 or more users`,
+            tooltip: c('Tooltip').t`Multi-user support is only applicable to plans with 2 or more users`,
             free: EmDash,
             [PLANS.PLUS]: EmDash,
             [PLANS.PROFESSIONAL]: <CheckIcon />,

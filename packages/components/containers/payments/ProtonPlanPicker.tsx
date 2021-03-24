@@ -112,7 +112,7 @@ const ProtonPlanPicker = ({
         <div className="pb2 mb2 border-bottom">
             <h2 className="text-2xl text-bold">{service === PLAN_SERVICES.VPN ? vpnAppName : mailAppName} plan</h2>
             {index === 0 && cycle === CYCLE.MONTHLY ? (
-                <p>{c('Info').jt`${save20} on your susbcription by switching to ${annualBilling}`}</p>
+                <p>{c('Info').jt`${save20} on your subscription by switching to ${annualBilling}`}</p>
             ) : null}
             {index === 1 && service === PLAN_SERVICES.MAIL ? (
                 <p>{c('Info').jt`${save20} on both Mail and VPN by adding a Mail subscription.`}</p>
