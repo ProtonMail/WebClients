@@ -8,9 +8,11 @@ import { Conversation, ConversationLabel } from '../../../models/conversation';
 import { Element } from '../../../models/element';
 import { ConversationEvent, MessageEvent } from '../../../models/event';
 import MailboxContainer from '../MailboxContainer';
-import { expectElements, getElements, getProps, labelID, sendEvent, setup } from './Mailbox.test.helpers';
+import { expectElements, getElements, getProps, props, sendEvent, setup } from './Mailbox.test.helpers';
 
 describe('Mailbox elements list reacting to events', () => {
+    const { labelID } = props;
+
     beforeEach(clearAll);
 
     it('should add to the cache a message which is not existing yet', async () => {

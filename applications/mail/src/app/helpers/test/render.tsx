@@ -1,5 +1,11 @@
 import React, { ReactElement } from 'react';
-import { CacheProvider, NotificationsProvider, ModalsProvider, PrivateAuthenticationStore } from 'react-components';
+import {
+    CacheProvider,
+    NotificationsProvider,
+    ModalsProvider,
+    PrivateAuthenticationStore,
+    ModalsChildren,
+} from 'react-components';
 import { MemoryRouter } from 'react-router';
 import { render as originalRender, RenderResult as OriginalRenderResult, act } from '@testing-library/react';
 import { renderHook as originalRenderHook } from '@testing-library/react-hooks';
@@ -39,6 +45,7 @@ const TestProvider = ({ children }: Props) => {
                     <ModalsProvider>
                         <AuthenticationProvider store={authentication}>
                             <CacheProvider cache={cache}>
+                                <ModalsChildren />
                                 <MessageProvider cache={messageCache}>
                                     <ConversationProvider cache={conversationCache}>
                                         <AttachmentProvider cache={attachmentsCache}>

@@ -122,6 +122,7 @@ const Toolbar = ({
                     className="move-dropdown-button"
                     title={titleMove}
                     data-test-id="toolbar:moveto"
+                    data-testid="toolbar-move"
                     externalToggleRef={moveDropdownToggleRef}
                 >
                     {({ onClose, onLock }) => (
@@ -145,6 +146,7 @@ const Toolbar = ({
                     className="label-dropdown-button"
                     title={titleLabel}
                     data-test-id="toolbar:labelas"
+                    data-testid="toolbar-label"
                     externalToggleRef={labelDropdownToggleRef}
                 >
                     {({ onClose, onLock }) => (

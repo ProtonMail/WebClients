@@ -125,6 +125,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
 
     // The dropdown is several times in the view, native html ids has to be different each time
     const searchInputID = `${uid}-search`;
+    const folderButtonID = (ID: string) => `${uid}-${ID}`;
     const autoFocusSearch = !breakpoints.isNarrow;
 
     return (
@@ -154,12 +155,16 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                     autoFocus={autoFocusSearch}
                 />
             </div>
-            <div className="scroll-if-needed customScrollBar-container scroll-smooth-touch mt1 move-dropdown-list-container">
+            <div
+                className="scroll-if-needed customScrollBar-container scroll-smooth-touch mt1 move-dropdown-list-container"
+                data-testid="move-dropdown-list"
+            >
                 <ul className="unstyled mt0 mb0">
                     {list.map((folder: FolderItem) => {
                         return (
                             <li key={folder.ID} className="dropdown-item">
                                 <button
+                                    id={folderButtonID(folder.ID)}
                                     data-level={folder.level}
                                     type="button"
                                     disabled={loading}
