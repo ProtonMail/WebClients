@@ -27,6 +27,7 @@ import {
     useSubscription,
     useModals,
     useConfig,
+    useVPNCountries,
 } from '../../../hooks';
 import { classnames } from '../../../helpers';
 import LossLoyaltyModal from '../LossLoyaltyModal';
@@ -91,6 +92,7 @@ const SubscriptionModal = ({
     const isVpnApp = APP_NAME === APPS.PROTONVPN_SETTINGS;
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
+    const [vpnCountries] = useVPNCountries();
     const { call } = useEventManager();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
@@ -299,6 +301,7 @@ const SubscriptionModal = ({
                     planIDs={model.planIDs}
                     organization={organization}
                     subscription={subscription}
+                    vpnCountries={vpnCountries}
                     service={model.service}
                     onChangePlanIDs={(planIDs) =>
                         withLoadingCheck(check({ ...model, planIDs, step: SUBSCRIPTION_STEPS.CUSTOMIZATION }))

@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Currency, Cycle, Organization, Plan, PlanIDs, Subscription } from 'proton-shared/lib/interfaces';
+import { Currency, Cycle, Organization, Plan, PlanIDs, Subscription, VPNCountries } from 'proton-shared/lib/interfaces';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import {
     APPS,
@@ -60,11 +60,18 @@ const NAMES = {
     [PLANS.VISIONARY]: 'Visionary',
 } as const;
 
-const getFeatures = (planName: keyof typeof NAMES, service: PLAN_SERVICES): PlanCardFeature[] => {
+const getFeatures = (
+    planName: keyof typeof NAMES,
+    service: PLAN_SERVICES,
+    vpnCountries: VPNCountries
+): PlanCardFeature[] => {
     const netflix = <b key={1}>{c('Netflix').t`Netflix`}</b>;
     const disney = <b key={2}>{c('Disney').t`Disney+`}</b>;
     const primeVideo = <b key={3}>{c('Prime Video').t`Prime Video`}</b>;
     const many = <b key={4}>{c('Many Others').t`and many others`}</b>;
+    const freeCountries = vpnCountries.free.length;
+    const basicCountries = vpnCountries.basic.length;
+    const allCountries = vpnCountries.all.length;
 
     const mailAppName = getAppName(APPS.PROTONMAIL);
     const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
@@ -104,7 +111,7 @@ const getFeatures = (planName: keyof typeof NAMES, service: PLAN_SERVICES): Plan
 
     if (planName === 'free_vpn') {
         return [
-            { content: c('Plan feature').t`17 servers in 3 countries` },
+            { content: c('Plan feature').t`17 servers in ${freeCountries} countries` },
             { content: c('Plan feature').t`1 VPN connection` },
             { content: c('Plan feature').t`Medium speed` },
             { ...adBlocker, notIncluded: true },
@@ -115,7 +122,7 @@ const getFeatures = (planName: keyof typeof NAMES, service: PLAN_SERVICES): Plan
 
     if (planName === PLANS.VPNBASIC) {
         return [
-            { content: c('Plan feature').t`350+ servers in 55 countries` },
+            { content: c('Plan feature').t`350+ servers in ${basicCountries} countries` },
             { content: c('Plan feature').t`2 VPN connections` },
             { content: c('Plan feature').t`High speed` },
             adBlocker,
@@ -126,7 +133,7 @@ const getFeatures = (planName: keyof typeof NAMES, service: PLAN_SERVICES): Plan
 
     if (planName === PLANS.VPNPLUS) {
         return [
-            { content: c('Plan feature').t`1200+ servers in 55 countries` },
+            { content: c('Plan feature').t`1200+ servers in ${allCountries} countries` },
             { content: c('Plan feature').t`5 VPN connections` },
             { content: c('Plan feature').t`Highest speed (up to 10Gbps)` },
             adBlocker,
@@ -238,6 +245,7 @@ interface Props {
     onChangeCycle: (newCycle: Cycle) => void;
     onChangeCurrency: (newCurrency: Currency) => void;
     subscription?: Subscription;
+    vpnCountries: VPNCountries;
 }
 
 const PlanSelection = ({
@@ -252,6 +260,7 @@ const PlanSelection = ({
     loading,
     organization,
     subscription,
+    vpnCountries,
     onChangePlanIDs,
     onChangeCycle,
     onChangeCurrency,
@@ -335,7 +344,7 @@ const PlanSelection = ({
                             key={plan.ID}
                             price={plan.Pricing[cycle]}
                             info={INFOS[plan.Name as PLANS]}
-                            features={getFeatures(plan.Name as PLANS, service)}
+                            features={getFeatures(plan.Name as PLANS, service, vpnCountries)}
                             onClick={() => {
                                 onChangePlanIDs(
                                     switchPlan({
