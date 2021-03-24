@@ -109,7 +109,7 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
         }
     };
 
-    const listItemClassName = 'flex w100 pl1 pr1 pt1 text-left';
+    const listItemClassName = 'flex-no-min-children w100 pl1 pr1 mt0-25 pt0-25 text-left';
 
     const inner = () => {
         if (error) {
@@ -131,24 +131,24 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                 <button
                     type="button"
                     key={LocalID}
-                    className={`${listItemClassName} button-show-on-hover button-account`}
+                    className={`${listItemClassName} button-show-on-hover flex-align-items-center button-account`}
                     onClick={() => handleClickSession(LocalID)}
                 >
-                    <span className="dropdown-logout-initials rounded p0-25 mt0-25 inline-flex bg-weak color-norm">
+                    <span className="dropdown-logout-initials rounded p0-25 mb0-5 inline-flex bg-primary">
                         <span className="dropdown-logout-text center text-semibold" aria-hidden="true">
                             {initials}
                         </span>
                     </span>
-                    <div className="ml1 border-bottom pb1 flex-item-fluid flex">
+                    <div className="no-scroll ml1 border-bottom pb1 mt0-25 flex-item-fluid flex flex-align-items-center">
                         <div className="flex-item-fluid">
-                            <div className="text-semibold text-ellipsis" title={nameToDisplay}>
+                            <strong className="text-ellipsis" title={nameToDisplay}>
                                 {nameToDisplay}
-                            </div>
-                            <div className="text-ellipsis" title={PrimaryEmail}>
+                            </strong>
+                            <div className="text-ellipsis color-weak" title={PrimaryEmail}>
                                 {PrimaryEmail}
                             </div>
                         </div>
-                        <div className="no-scroll button-show-on-hover-element button-account-login text-semibold text-sm m0 flex flex-align-items-center">
+                        <div className="block no-scroll button-show-on-hover-element button-account-login text-sm m0 flex flex-align-items-center color-primary">
                             {loadingMap[LocalID] ? <LoaderIcon /> : c('Action').t`Sign in`}
                         </div>
                     </div>
