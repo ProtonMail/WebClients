@@ -22,7 +22,7 @@
 
             &-button {
                 @extend .button;
-                @extend .button--for-icon;
+                @extend .button-for-icon;
 
                 display: flex;
                 padding: 0;
