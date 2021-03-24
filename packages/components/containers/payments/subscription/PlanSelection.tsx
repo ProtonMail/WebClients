@@ -315,18 +315,21 @@ const PlanSelection = ({
                     ) : null}
                 </div>
                 <div className="flex-item-fluid ml2 pl1 on-mobile-ml0 on-mobile-pl0 flex flex-nowrap cycle-currency-selectors">
-                    <CycleSelector
-                        cycle={cycle}
-                        onSelect={onChangeCycle}
-                        className="mr1"
-                        disabled={loading}
-                        options={[
-                            { text: c('Billing cycle option').t`Monthly`, value: CYCLE.MONTHLY },
-                            { text: c('Billing cycle option').t`Annually SAVE 20%`, value: CYCLE.YEARLY },
-                            { text: c('Billing cycle option').t`Two years SAVE 33%`, value: CYCLE.TWO_YEARS },
-                        ]}
-                    />
-                    <CurrencySelector currency={currency} onSelect={onChangeCurrency} disabled={loading} />
+                    <div className="flex-item-fluid flex flex-item-grow-2">
+                        <CycleSelector
+                            cycle={cycle}
+                            onSelect={onChangeCycle}
+                            disabled={loading}
+                            options={[
+                                { text: c('Billing cycle option').t`Monthly`, value: CYCLE.MONTHLY },
+                                { text: c('Billing cycle option').t`Annually SAVE 20%`, value: CYCLE.YEARLY },
+                                { text: c('Billing cycle option').t`Two years SAVE 33%`, value: CYCLE.TWO_YEARS },
+                            ]}
+                        />
+                    </div>
+                    <div className="flex-item-fluid flex ml1">
+                        <CurrencySelector currency={currency} onSelect={onChangeCurrency} disabled={loading} />
+                    </div>
                 </div>
             </div>
             <div className="plan-selection mt1" style={{ '--plan-selection-number': plansToShow.length }}>
