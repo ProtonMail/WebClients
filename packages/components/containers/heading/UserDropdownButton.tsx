@@ -38,7 +38,7 @@ const UserDropdownButton = ({ user, isOpen, ...rest }: Props, ref: React.Ref<HTM
                     <span className="inline-block max-w100 text-ellipsis dropdown-logout-displayName">{Email}</span>
                 </span>
             )}
-            <span className="mtauto mbauto text-semibold rounded p0-25 inline-block dropdown-logout-initials relative flex flex-item-noshrink">
+            <span className="mtauto mbauto text-semibold rounded p0-25 inline-block dropdown-logout-initials bg-norm relative flex flex-item-noshrink">
                 <span className="dropdown-logout-text center">{initials}</span>
             </span>
         </button>
