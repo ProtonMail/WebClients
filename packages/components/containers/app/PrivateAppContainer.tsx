@@ -7,6 +7,7 @@ interface Props {
     header: React.ReactNode;
     sidebar: React.ReactNode;
     children: React.ReactNode;
+    topBanners?: React.ReactNode;
     isBlurred?: boolean;
     hasTopBanners?: boolean;
 }
@@ -15,6 +16,7 @@ const PrivateAppContainer = ({
     header,
     sidebar,
     children,
+    topBanners,
     hasTopBanners = true,
     isBlurred = false,
     containerRef,
@@ -27,7 +29,7 @@ const PrivateAppContainer = ({
             ])}
             ref={containerRef}
         >
-            {hasTopBanners ? <TopBanners /> : null}
+            {hasTopBanners ? topBanners || <TopBanners /> : null}
             <div className="content ui-prominent flex-item-fluid flex flex-column flex-nowrap reset4print">
                 {header}
                 <div className="flex flex-item-fluid flex-nowrap">
