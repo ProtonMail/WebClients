@@ -257,25 +257,6 @@
 }
 
 /*
- * For select component
- */
-.button-henlo.select {
-	background-color: transparent;
-	color: var(--text-norm);
-	// height: $default-height-fields;
-
-	.mauto {
-		display: flex;
-		width: 100%;
-	}
-
-	.mr0-5 {
-		flex: 1 1 0px;
-		@extend .text-ellipsis;
-	}
-}
-
-/*
  * Button group
 */
 .grouped-buttons {
