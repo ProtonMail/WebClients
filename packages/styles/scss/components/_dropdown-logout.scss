@@ -3,6 +3,11 @@
 		@extend .interactive;
 		border-radius: $global-border-radius;
 
+		// for dropdown
+		.dropdown-logout-initials {
+			border: 1px solid var(--text-norm);
+		}
+
 		// yes, but only on HUGE screens for looooooooooong accounts
 		@include respond-to(1400, 'min') {
 			max-width: 18em;
@@ -18,13 +23,12 @@
 		font-size: 1rem;
 	}
 
+	// used on switch account, summary section and user dropdown
 	&-initials {
 		&#{&} {
 			// Specificity -_-v
 			min-width: 2.5em;
 			min-height: 2.5em;
-			border: 1px solid var(--text-norm);
-			background-color: var(--background-norm);
 		}
 	}
 }
