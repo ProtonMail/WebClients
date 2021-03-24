@@ -7,7 +7,11 @@ import OnlineTopBanner from './OnlineTopBanner';
 import SubUserTopBanner from './SubUserTopBanner';
 import DeskopNotificationTopBanner from './DeskopNotificationTopBanner';
 
-const TopBanners = () => {
+interface Props {
+    children?: React.ReactNode;
+}
+
+const TopBanners = ({ children }: Props) => {
     return (
         <>
             <DelinquentTopBanner />
@@ -16,6 +20,7 @@ const TopBanners = () => {
             <NewVersionTopBanner />
             <SubUserTopBanner />
             <DeskopNotificationTopBanner />
+            {children}
         </>
     );
 };
