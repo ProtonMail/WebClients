@@ -34,25 +34,28 @@ const Checkout = ({
         <div className="p2">
             <div className="flex flex-nowrap cycle-currency-selectors mb1">
                 {hideCycle ? null : (
-                    <CycleSelector
-                        cycle={cycle}
-                        onSelect={onChangeCycle}
-                        className="mr1 flex-item-fluid"
-                        disabled={loading}
-                        options={[
-                            { text: c('Billing cycle option').t`Monthly`, value: CYCLE.MONTHLY },
-                            { text: c('Billing cycle option').t`Annually SAVE 20%`, value: CYCLE.YEARLY },
-                            { text: c('Billing cycle option').t`Two years SAVE 33%`, value: CYCLE.TWO_YEARS },
-                        ]}
-                    />
+                    <div className="flex-item-fluid flex flex-item-grow-2">
+                        <CycleSelector
+                            cycle={cycle}
+                            onSelect={onChangeCycle}
+                            disabled={loading}
+                            options={[
+                                { text: c('Billing cycle option').t`Monthly`, value: CYCLE.MONTHLY },
+                                { text: c('Billing cycle option').t`Annually SAVE 20%`, value: CYCLE.YEARLY },
+                                { text: c('Billing cycle option').t`Two years SAVE 33%`, value: CYCLE.TWO_YEARS },
+                            ]}
+                        />
+                    </div>
                 )}
                 {hideCurrency ? null : (
-                    <CurrencySelector
-                        currency={currency}
-                        onSelect={onChangeCurrency}
-                        className="flex-item-fluid"
-                        disabled={loading}
-                    />
+                    <div className="flex-item-fluid flex ml1">
+                        <CurrencySelector
+                            currency={currency}
+                            onSelect={onChangeCurrency}
+                            className="flex-item-fluid"
+                            disabled={loading}
+                        />
+                    </div>
                 )}
             </div>
             <h2 className="h4 text-bold">{c('Title').t`Plan summary`}</h2>

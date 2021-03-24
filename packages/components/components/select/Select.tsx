@@ -4,6 +4,8 @@ import { generateUID, classnames } from '../../helpers';
 import useInput from '../input/useInput';
 import ErrorZone from '../text/ErrorZone';
 
+import Icon from '../icon/Icon';
+
 export interface OptionProps
     extends React.DetailedHTMLProps<React.OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement> {
     value: string | number;
@@ -56,6 +58,7 @@ export interface Props
     size?: number;
     options: OptionProps[];
     loading?: boolean;
+    classNameContainer?: string;
 }
 
 const Select = React.forwardRef<HTMLSelectElement, Props>(
@@ -68,6 +71,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>(
             multiple = false,
             loading = false,
             isSubmitted = false,
+            classNameContainer,
             ...rest
         }: Props,
         ref
@@ -79,19 +83,24 @@ const Select = React.forwardRef<HTMLSelectElement, Props>(
 
         return (
             <>
-                <select
-                    className={classnames(['field w100', className, statusClasses])}
-                    size={size}
-                    multiple={multiple}
-                    disabled={loading || rest.disabled}
-                    ref={ref}
-                    {...rest}
-                    {...handlers}
-                >
-                    {hasGroup ? buildGroupedOptions(options) : buildOptions(options)}
-                </select>
+                <span className={classnames(['w100 flex flex-column', classNameContainer])}>
+                    <span className="flex relative w100">
+                        <select
+                            className={classnames(['field w100', className, statusClasses])}
+                            size={size}
+                            multiple={multiple}
+                            disabled={loading || rest.disabled}
+                            ref={ref}
+                            {...rest}
+                            {...handlers}
+                        >
+                            {hasGroup ? buildGroupedOptions(options) : buildOptions(options)}
+                        </select>
+                        <Icon name="caret" className="absolute no-pointer-events right-icon" />
+                    </span>
 
-                {hasError && <ErrorZone id={uid}>{error}</ErrorZone>}
+                    {hasError && <ErrorZone id={uid}>{error}</ErrorZone>}
+                </span>
             </>
         );
     }
