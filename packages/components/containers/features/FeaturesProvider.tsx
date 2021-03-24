@@ -41,13 +41,14 @@ const FeaturesProvider = ({ children }: Props) => {
                 const { Feature } = await silentApi<{ Feature: Feature }>(getFeature(code));
 
                 addFeature(code, Feature);
-                updateLoading(code, false);
 
                 return Feature;
             } catch (e) {
                 delete featureGetPromiseRef.current[code];
 
                 throw e;
+            } finally {
+                updateLoading(code, false);
             }
         };
 
@@ -61,12 +62,15 @@ const FeaturesProvider = ({ children }: Props) => {
     const put = async (code: FeatureCode, value: any) => {
         updateLoading(code, true);
 
-        const { Feature } = await silentApi<{ Feature: Feature }>(updateFeatureValue(code, value));
+        try {
+            const { Feature } = await silentApi<{ Feature: Feature }>(updateFeatureValue(code, value));
 
-        updateFeature(code, Feature);
-        updateLoading(code, false);
+            updateFeature(code, Feature);
 
-        return Feature;
+            return Feature;
+        } finally {
+            updateLoading(code, false);
+        }
     };
 
     const context = { features, loading, get, put };
