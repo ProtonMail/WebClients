@@ -109,7 +109,7 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
         }
     };
 
-    const listItemClassName = 'flex-no-min-children w100 pl1 pr1 mt0-25 pt0-25 text-left';
+    const listItemClassName = 'flex-no-min-children w100 mt0-25 pt0-25 text-left';
 
     const inner = () => {
         if (error) {
@@ -139,7 +139,7 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                             {initials}
                         </span>
                     </span>
-                    <div className="no-scroll ml1 border-bottom pb1 mt0-25 flex-item-fluid flex flex-align-items-center">
+                    <div className="no-scroll ml1 border-bottom pr1 pb1 mt0-25 flex-item-fluid flex flex-align-items-center">
                         <div className="flex-item-fluid">
                             <strong className="text-ellipsis" title={nameToDisplay}>
                                 {nameToDisplay}
