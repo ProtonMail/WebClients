@@ -157,7 +157,7 @@ const DownloadSharedContainer = () => {
                         }}
                     />
                 )}
-                <div className="flex flex-column flex-nowrap flex-item-noshrink flex-align-items-center scroll-if-needed h100v">
+                <div className="ui-standard flex flex-column flex-nowrap flex-item-noshrink flex-align-items-center scroll-if-needed h100v">
                     <Bordered className="bg-norm color-norm flex flex-align-items-center flex-item-noshrink w100 max-w40e mbauto mtauto">
                         <div className="flex flex-column flex-nowrap flex-align-items-center text-center p2 w100">
                             <h3>

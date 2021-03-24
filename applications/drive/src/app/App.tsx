@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { ProtonApp, StandardPublicApp, StandardSetup, ModalsChildren } from 'react-components';
+import { ProtonApp, StandardPublicApp, StandardSetup, ModalsChildren, ProminentContainer } from 'react-components';
 import locales from 'proton-shared/lib/i18n/locales';
 import sentry from 'proton-shared/lib/helpers/sentry';
 
@@ -38,7 +38,9 @@ const App = () => {
             <Switch>
                 <Route path="/urls">
                     <StandardPublicApp locales={locales}>
-                        <PublicDriveLinkContainer />
+                        <ProminentContainer>
+                            <PublicDriveLinkContainer />
+                        </ProminentContainer>
                     </StandardPublicApp>
                 </Route>
                 <Route path="*">
