@@ -228,7 +228,7 @@ const SelectTwo = <V extends any>({
             <button
                 type="button"
                 className={classnames([
-                    'text-left text-ellipsis no-outline select field w100 flex flex-justify-space-between flex-align-items-center',
+                    'no-outline select field w100 flex flex-justify-space-between flex-align-items-center flex-nowrap',
                     className,
                 ])}
                 ref={anchorRef}
@@ -241,7 +241,7 @@ const SelectTwo = <V extends any>({
                 aria-label={ariaLabel}
                 {...rest}
             >
-                {displayedValue}
+                <span className="flex-item-fluid text-ellipsis text-left">{displayedValue}</span>
                 <DropdownCaret
                     className={classnames(['flex-item-noshrink', children ? 'ml0-5' : ''])}
                     isOpen={isOpen}
