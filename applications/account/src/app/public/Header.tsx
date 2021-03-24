@@ -15,7 +15,7 @@ const Header = ({ left, title, subTitle, ...rest }: Props) => {
                     <strong>{title}</strong>
                 </h1>
             ) : null}
-            {subTitle ? <div className="mb1 text-center text-sm mt0 sign-layout-subtitle">{subTitle}</div> : null}
+            {subTitle ? <div className="mb1 text-center text-sm mt0 color-weak">{subTitle}</div> : null}
         </div>
     );
 };

@@ -8,7 +8,7 @@ $bg-signup-img: './bg-mountains.svg' !default;
 .sign-layout {
 	// nice mountains image
 	&-bg {
-		background: $pm-global-grey url($bg-signup-img) 0 0 no-repeat;
+		background: url($bg-signup-img) 0 0 no-repeat;
 		background-size: cover;
 	}	
 
@@ -32,9 +32,6 @@ $bg-signup-img: './bg-mountains.svg' !default;
 	}
 	&-title {
 		font-size: em(16);
-	}
-	&-subtitle {
-		color: $text-weak;
 	}
 	&-main-content {
 		padding: em(24) em(48);
@@ -145,7 +142,7 @@ $bg-signup-img: './bg-mountains.svg' !default;
 .signup-footer-link {
 	&:focus,
 	&:hover {
-		color: rgba($white, 0.5);
+		color: rgba(white, 0.5);
 	}
 }
 
