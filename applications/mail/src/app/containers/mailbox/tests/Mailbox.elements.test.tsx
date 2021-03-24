@@ -4,9 +4,11 @@ import { Element } from '../../../models/element';
 import { Sort } from '../../../models/tools';
 import { clearAll, api, addApiMock } from '../../../helpers/test/helper';
 import { ELEMENTS_CACHE_REQUEST_SIZE, PAGE_SIZE } from '../../../constants';
-import { getElements, labelID, setup } from './Mailbox.test.helpers';
+import { getElements, props, setup } from './Mailbox.test.helpers';
 
 describe('Mailbox element list', () => {
+    const { labelID } = props;
+
     const element1 = {
         ID: 'id1',
         Labels: [{ ID: labelID, ContextTime: 1 }],

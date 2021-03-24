@@ -220,7 +220,10 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
                     autoFocus={autoFocusSearch}
                 />
             </div>
-            <div className="scroll-if-needed scroll-smooth-touch mt1 label-dropdown-list-container">
+            <div
+                className="scroll-if-needed scroll-smooth-touch mt1 label-dropdown-list-container"
+                data-testid="label-dropdown-list"
+            >
                 <ul className="unstyled mt0 mb0">
                     {list.map(({ ID = '', Name = '', Color = '' }) => (
                         <li
@@ -275,6 +278,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
                     loading={loading}
                     onClick={() => withLoading(handleApply())}
                     disabled={applyDisabled}
+                    data-testid="label-dropdown-apply"
                 >
                     {c('Action').t`Apply`}
                 </PrimaryButton>

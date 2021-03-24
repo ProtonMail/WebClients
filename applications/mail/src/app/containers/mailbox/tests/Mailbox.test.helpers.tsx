@@ -5,10 +5,12 @@ import loudRejection from 'loud-rejection';
 import { range } from 'proton-shared/lib/helpers/array';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
-import { VIEW_MODE } from 'proton-shared/lib/constants';
+import { LABEL_TYPE, VIEW_MODE } from 'proton-shared/lib/constants';
+import { Label } from 'proton-shared/lib/interfaces/Label';
+import { Folder } from 'proton-shared/lib/interfaces/Folder';
 import { filterToString, keywordToString, sortToString } from '../../../helpers/mailboxUrl';
 import { addApiMock } from '../../../helpers/test/api';
-import { addToCache } from '../../../helpers/test/cache';
+import { addToCache, minimalCache } from '../../../helpers/test/cache';
 import { triggerEvent } from '../../../helpers/test/helper';
 import { render } from '../../../helpers/test/render';
 import { ConversationLabel } from '../../../models/conversation';
@@ -23,6 +25,7 @@ loudRejection();
 window.HTMLElement.prototype.scrollIntoView = jest.fn();
 
 interface PropsArgs {
+    labelID?: string;
     elementID?: string;
     page?: number;
     sort?: Sort;
@@ -33,7 +36,6 @@ interface PropsArgs {
 interface SetupArgs extends PropsArgs {
     conversations?: Element[];
     messages?: Element[];
-    inputLabelID?: string;
     page?: number;
     total?: number;
 }
@@ -45,15 +47,27 @@ export const props = {
     breakpoints: {} as Breakpoints,
     elementID: undefined,
     location: {} as Location,
-    history: {} as History,
+    history: ({ push: jest.fn() } as any) as History,
     onCompose: jest.fn(),
 };
-
-export const { labelID } = props;
 
 const defaultSort = { sort: 'Time', desc: true } as Sort;
 const defaultFilter = {};
 const defaultSearch = {};
+
+export const labels: Label[] = [
+    { ID: 'label1', Type: LABEL_TYPE.MESSAGE_LABEL, Name: 'label1' },
+    { ID: 'label2', Type: LABEL_TYPE.MESSAGE_LABEL, Name: 'label2' },
+    { ID: 'label3', Type: LABEL_TYPE.MESSAGE_LABEL, Name: 'label3' },
+    { ID: 'label4', Type: LABEL_TYPE.MESSAGE_LABEL, Name: 'label4' },
+] as Label[];
+
+export const folders: Folder[] = [
+    { ID: 'folder1', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder1' },
+    { ID: 'folder2', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder2' },
+    { ID: 'folder3', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder3' },
+    { ID: 'folder4', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder4' },
+] as Folder[];
 
 export const getElements = (count: number, label = props.labelID, elementProps: any = {}): Element[] =>
     range(0, count).map((i) => ({
@@ -64,6 +78,7 @@ export const getElements = (count: number, label = props.labelID, elementProps: 
     }));
 
 export const getProps = ({
+    labelID = props.labelID,
     elementID,
     page = 0,
     sort = defaultSort,
@@ -86,23 +101,24 @@ export const getProps = ({
 
     const location = { pathname: '/', search: urlSearchParams.toString() } as Location;
 
-    return { ...props, location, elementID };
+    return { ...props, location, labelID, elementID };
 };
 
 export const setup = async ({
     conversations = [],
     messages = [],
-    inputLabelID = labelID,
     total = conversations.length || messages.length,
     ...propsArgs
 }: SetupArgs = {}) => {
-    const counts = { LabelID: inputLabelID, Total: total };
+    minimalCache();
+    addToCache('Labels', [...labels, ...folders]);
+    const counts = { LabelID: propsArgs.labelID, Total: total };
     addToCache('ConversationCounts', conversations.length ? [counts] : []);
     addToCache('MessageCounts', messages.length ? [] : [counts]);
     addApiMock('mail/v4/conversations', () => ({ Total: total, Conversations: conversations }));
     addApiMock('mail/v4/messages', () => ({ Total: total, Messages: messages }));
 
-    const result = await render(<MailboxContainer {...getProps(propsArgs)} />);
+    const result = await render(<MailboxContainer {...getProps({ ...propsArgs })} />, false);
     const rerender = (propsArgs: PropsArgs) => result.rerender(<MailboxContainer {...getProps(propsArgs)} />);
     return { ...result, rerender };
 };

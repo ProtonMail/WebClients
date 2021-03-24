@@ -33,7 +33,11 @@ export const useEmptyLabel = () => {
                 createModal(
                     <ConfirmModal
                         title={c('Title').t`Empty ${labelName}`}
-                        confirm={<ErrorButton type="submit">{c('Action').t`Empty`}</ErrorButton>}
+                        confirm={
+                            <ErrorButton type="submit" data-testid="confirm-empty-folder">
+                                {c('Action').t`Empty`}
+                            </ErrorButton>
+                        }
                         onConfirm={() => resolve(undefined)}
                         onClose={reject}
                     >
