@@ -83,9 +83,6 @@ $inputform-height-phone-prefix: 2.8rem !default;
 		}
 
 		select#{&} {
-			background-image: url('#{$path-images}sprite-for-css-only.svg#css-caret');
-			background-position: calc(100% - 6px) 50%;
-			background-repeat: no-repeat;
 			background-size: 1.5rem;
 			padding-right: 20px;
 			text-overflow: ellipsis;

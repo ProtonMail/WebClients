@@ -124,11 +124,9 @@ $field-container: 26rem !default;
 
 select.field {
 	background: var(
-			--select-background-color,
-			var(--field-background-color, var(--background-norm))
-		)
-		url('#{$path-images}sprite-for-css-only.svg#css-caret') calc(100% - 6px)
-		50% no-repeat;
+		--select-background-color,
+		var(--field-background-color, var(--background-norm))
+	);
 	background-size: 1.5rem;
 	padding-left: 1em;
 	padding-right: 20px;
