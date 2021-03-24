@@ -89,7 +89,7 @@ const UpsellSubscription = () => {
         (isFreeVpn || hasVpnBasic(subscription)) && {
             title: c('Title').t`Upgrade to ProtonVPN Plus`,
             description: c('Title')
-                .t`Upgrade to ProtonVPN Plus to get access to higher speed servers (up to 10 Gbps) and unlock advanced features such as Secure Core VPN, Tor over VPN, and access geo-blocked content (such as Netflix, Youtube, Amazon Prime, etc...).`,
+                .t`Upgrade to ProtonVPN Plus to get access to higher speed servers (up to 10 Gbps) and unlock advanced features such as Secure Core VPN, Tor over VPN, and access geo-blocked content (such as Netflix, YouTube, Amazon Prime, etc...).`,
             upgradeButton: (
                 <PrimaryButton
                     size="small"

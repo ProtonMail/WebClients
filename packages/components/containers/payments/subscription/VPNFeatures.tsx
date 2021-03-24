@@ -33,8 +33,8 @@ const getFeatures = (vpnCountries: VPNCountries): VPNFeature[] => {
             label: c('VPN feature').t`Speed`,
             free: c('VPN feature option').t`Medium`,
             [PLANS.VPNBASIC]: c('VPN feature option').t`High`,
-            [PLANS.VPNPLUS]: c('VPN feature option').t`Highest (up to 10Gbits/s)`,
-            [PLANS.VISIONARY]: c('VPN feature option').t`Highest (10Gbps)`,
+            [PLANS.VPNPLUS]: c('VPN feature option').t`Highest (up to 10 Gbits/s)`,
+            [PLANS.VISIONARY]: c('VPN feature option').t`Highest (10 Gbps)`,
         },
         {
             name: 'servers',
@@ -75,7 +75,7 @@ const getFeatures = (vpnCountries: VPNCountries): VPNFeature[] => {
             name: 'content',
             label: c('VPN feature').t`Specific content unlocking`,
             tooltip: c('Tooltip')
-                .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, Youtube, etc) no matter where you are.`,
+                .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.`,
             free: EmDash,
             [PLANS.VPNBASIC]: EmDash,
             [PLANS.VPNPLUS]: <CheckIcon />,
@@ -92,7 +92,7 @@ const getFeatures = (vpnCountries: VPNCountries): VPNFeature[] => {
         },
         {
             name: 'secure-core',
-            label: c('VPN feature').t`SecureCore servers`,
+            label: c('VPN feature').t`Secure Core servers`,
             tooltip: c('Tooltip')
                 .t`Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.`,
             free: EmDash,
@@ -104,7 +104,7 @@ const getFeatures = (vpnCountries: VPNCountries): VPNFeature[] => {
             name: 'visionary',
             label: c('VPN feature').t`${mailAppName} Visionary`,
             tooltip: c('Tooltip')
-                .t`Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that million use to protect their data) with one plan.`,
+                .t`Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.`,
             free: EmDash,
             [PLANS.VPNBASIC]: EmDash,
             [PLANS.VPNPLUS]: EmDash,
@@ -112,7 +112,7 @@ const getFeatures = (vpnCountries: VPNCountries): VPNFeature[] => {
         },
         {
             name: 'juridiction',
-            label: c('VPN feature').t`Juridiction`,
+            label: c('VPN feature').t`Jurisdiction`,
             free: c('VPN feature option').t`Switzerland`,
             [PLANS.VPNBASIC]: c('VPN feature option').t`Switzerland`,
             [PLANS.VPNPLUS]: c('VPN feature option').t`Switzerland`,
@@ -120,7 +120,7 @@ const getFeatures = (vpnCountries: VPNCountries): VPNFeature[] => {
         },
         {
             name: 'audited',
-            label: c('VPN feature').t`Open source & audited apps`,
+            label: c('VPN feature').t`Open Source & audited apps`,
             free: <CheckIcon />,
             [PLANS.VPNBASIC]: <CheckIcon />,
             [PLANS.VPNPLUS]: <CheckIcon />,
@@ -217,7 +217,7 @@ const getFeatures = (vpnCountries: VPNCountries): VPNFeature[] => {
                     <span className="flex-item-noshrink mr0-5">
                         <CheckIcon />
                     </span>
-                    <span>{c('VPN feature option').t`(Android & windows only)`}</span>
+                    <span>{c('VPN feature option').t`(Android & Windows only)`}</span>
                 </span>
             ),
             [PLANS.VPNBASIC]: (
@@ -225,7 +225,7 @@ const getFeatures = (vpnCountries: VPNCountries): VPNFeature[] => {
                     <span className="flex-item-noshrink mr0-5">
                         <CheckIcon />
                     </span>
-                    <span>{c('VPN feature option').t`(Android & windows only)`}</span>
+                    <span>{c('VPN feature option').t`(Android & Windows only)`}</span>
                 </span>
             ),
             [PLANS.VPNPLUS]: (
@@ -233,7 +233,7 @@ const getFeatures = (vpnCountries: VPNCountries): VPNFeature[] => {
                     <span className="flex-item-noshrink mr0-5">
                         <CheckIcon />
                     </span>
-                    <span>{c('VPN feature option').t`(Android & windows only)`}</span>
+                    <span>{c('VPN feature option').t`(Android & Windows only)`}</span>
                 </span>
             ),
             [PLANS.VISIONARY]: (
@@ -241,7 +241,7 @@ const getFeatures = (vpnCountries: VPNCountries): VPNFeature[] => {
                     <span className="flex-item-noshrink mr0-5">
                         <CheckIcon />
                     </span>
-                    <span>{c('VPN feature option').t`(Android & windows only)`}</span>
+                    <span>{c('VPN feature option').t`(Android & Windows only)`}</span>
                 </span>
             ),
         },
