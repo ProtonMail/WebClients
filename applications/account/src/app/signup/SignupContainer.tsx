@@ -31,6 +31,7 @@ import {
     useMyLocation,
     usePayment,
     usePlans,
+    useVPNCountries,
 } from 'react-components';
 import { ChallengeResult } from 'react-components/components/challenge/ChallengeFrame';
 import { Payment, PaymentParameters } from 'react-components/containers/payments/interface';
@@ -127,6 +128,7 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
     const [plans] = usePlans();
     const [myLocation] = useMyLocation();
     const [loading, withLoading] = useLoading();
+    const [vpnCountries] = useVPNCountries();
     const [checkResult, setCheckResult] = useState<SubscriptionCheckResponse>(DEFAULT_CHECK_RESULT);
 
     const cacheRef = useRef<CacheRef>({});
@@ -437,6 +439,7 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
                             cycle={model.cycle}
                             planIDs={model.planIDs}
                             service={PLAN_SERVICES.MAIL}
+                            vpnCountries={vpnCountries}
                             onChangePlanIDs={(planIDs) => {
                                 if (Object.keys(planIDs).length === 0) {
                                     setModelDiff({ planIDs: {}, step: CREATING_ACCOUNT });
