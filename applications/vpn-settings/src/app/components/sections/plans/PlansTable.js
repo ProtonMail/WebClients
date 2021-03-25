@@ -130,8 +130,8 @@ const PlansTable = ({
                     <th scope="row" className="simple-table-row-th text-left bg-weak">{c('Header').t`Speed`}</th>
                     <td className="text-center">{c('Plan details').t`Medium`}</td>
                     <td className="text-center">{c('Plan details').t`High`}</td>
-                    <td className="text-center">{c('Plan details').t`Highest speed (up to 10Gbps)`}</td>
-                    <td className="text-center">{c('Plan details').t`Highest speed (10Gbps)`}</td>
+                    <td className="text-center">{c('Plan details').t`Highest speed (up to 10 Gbps)`}</td>
+                    <td className="text-center">{c('Plan details').t`Highest speed (10 Gbps)`}</td>
                 </tr>
 
                 <tr>
