@@ -87,7 +87,7 @@ const VerifyCodeForm = ({ onSubmit, onNoReceive, verification }: Props) => {
                 onClick={() => {
                     onNoReceive();
                 }}
-                className="mt0-25"
+                className="mt0-5"
             >{c('Action').t`Did not receive the code?`}</Button>
         </>
     );
