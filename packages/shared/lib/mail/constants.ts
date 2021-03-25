@@ -19,6 +19,7 @@ export const MESSAGE_FLAGS = {
     FLAG_PHISHING_AUTO: 1 << 30, // Incoming mail is marked as phishing by anti-spam filters.
     FLAG_DMARC_FAIL: 1 << 26, // Incoming mail failed dmarc authentication.
     FLAG_UNSUBSCRIBED: 1 << 19, // Unsubscribed from newsletter
+    FLAG_SCHEDULED_SEND: 1 << 20, // Messages that have been delayed send
 };
 
 export enum VERIFICATION_STATUS {

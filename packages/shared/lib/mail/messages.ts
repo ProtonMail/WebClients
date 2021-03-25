@@ -21,6 +21,7 @@ const {
     FLAG_SIGN,
     FLAG_PUBLIC_KEY,
     FLAG_UNSUBSCRIBED,
+    FLAG_SCHEDULED_SEND,
 } = MESSAGE_FLAGS;
 const AUTOREPLY_HEADERS = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', 'X-Mail-Autoreply'];
 
@@ -56,6 +57,7 @@ export const isSentAndReceived = hasFlag(FLAG_SENT | FLAG_RECEIVED);
 export const isDraft = (message?: Partial<Message>) =>
     message?.Flags !== undefined && !isSent(message) && !isReceived(message);
 export const isOutbox = (message?: Partial<Message>) => message?.LabelIDs?.includes(MAILBOX_LABEL_IDS.OUTBOX);
+export const isScheduledSend = hasFlag(FLAG_SCHEDULED_SEND);
 export const isE2E = hasFlag(FLAG_E2E);
 export const isSentEncrypted = hasFlag(FLAG_E2E | FLAG_SENT);
 export const isInternalEncrypted = hasFlag(FLAG_E2E | FLAG_INTERNAL);
