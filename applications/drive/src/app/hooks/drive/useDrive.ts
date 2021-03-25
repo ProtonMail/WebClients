@@ -12,7 +12,7 @@ import {
 } from 'pmcrypto';
 import { format } from 'date-fns';
 
-import { usePreventLeave, useGlobalLoader, useApi, useEventManager } from 'react-components';
+import { usePreventLeave, useGlobalLoader, useApi, useEventManager, useNotifications } from 'react-components';
 
 import { getEncryptedSessionKey } from 'proton-shared/lib/calendar/encrypt';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
@@ -84,6 +84,7 @@ function useDrive() {
     const { preventLeave } = usePreventLeave();
     const eventManager = useEventManager();
     const { getShareEventManager, createShareEventManager } = useDriveEventManager();
+    const { createNotification } = useNotifications();
 
     const getShareMeta = async (shareId: string) => {
         const cachedMeta = cache.get.shareMeta(shareId);
@@ -803,8 +804,12 @@ function useDrive() {
                             debouncedRequest<UserShareResult>(queryUserShares()).then(({ Shares }) => {
                                 const lockedShares = Shares.filter((share) => share.Locked);
                                 cache.setLockedShares(lockedShares);
+                                fetchNextFolderContents(shareId, Link.LinkID).then(() => {
+                                    createNotification({
+                                        text: c('Success').t`Your files were successfully recovered to "My files".`,
+                                    });
+                                });
                             });
-                            fetchNextFolderContents(shareId, Link.LinkID);
                         }
                     }
 
