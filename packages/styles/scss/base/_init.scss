@@ -224,15 +224,14 @@ details {
 	}
 
 	&[open] > summary {
-		background: url(#{$path-images}sprite-for-css-only.svg#css-caret-close)
-			0 50% no-repeat;
+		.summary-caret {
+			@extend .mirror;
+		}
 	}
 }
 
 summary {
-	padding: 0.5em 0 0.5em 2rem;
-	background: url(#{$path-images}sprite-for-css-only.svg#css-caret) 0 50%
-		no-repeat;
+	padding: 0.5em 0;
 	list-style: none;
 	border: 0;
 	cursor: pointer;
