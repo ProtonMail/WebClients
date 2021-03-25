@@ -4,8 +4,6 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { useLoading, InputFieldTwo, PasswordInputTwo, Button, useFormErrors } from 'react-components';
 import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
 
-import ButtonSpacer from '../public/ButtonSpacer';
-
 interface Props {
     onSubmit: (username: string, password: string) => Promise<void>;
     defaultUsername?: string;
@@ -52,12 +50,11 @@ const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
                 autoComplete="current-password"
                 value={password}
                 onValue={setPassword}
+                rootClassName="mt0-25"
             />
-            <ButtonSpacer>
-                <Button size="large" color="norm" type="submit" fullWidth loading={loading}>
-                    {c('Action').t`Sign in`}
-                </Button>
-            </ButtonSpacer>
+            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
+                {c('Action').t`Sign in`}
+            </Button>
         </form>
     );
 };

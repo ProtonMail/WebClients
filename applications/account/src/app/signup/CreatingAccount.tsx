@@ -16,7 +16,7 @@ const CreatingAccount = ({ model }: Props) => {
             <Loader />
             <p>{c('Info').t`Creating your Proton account`}</p>
             <p className="text-bold">{email}</p>
-            <p>{c('Info').t`Please wait...`}</p>
+            <p className="mb0">{c('Info').t`Please wait...`}</p>
         </div>
     );
 };

@@ -41,8 +41,6 @@ import TOTPForm from './TOTPForm';
 import Main from '../public/Main';
 import UnlockForm from './UnlockForm';
 import SetPasswordForm from './SetPasswordForm';
-import ButtonSpacer from '../public/ButtonSpacer';
-import TextSpacer from '../public/TextSpacer';
 import GenerateInternalAddressStep, { InternalAddressGeneration } from './GenerateInternalAddressStep';
 
 interface Props {
@@ -165,7 +163,7 @@ const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
                                     });
                             }}
                         />
-                        <ButtonSpacer mode="text">{c('Info').jt`New to ${BRAND_NAME}? ${signupLink}`}</ButtonSpacer>
+                        <div className="text-center mt2">{c('Info').jt`New to ${BRAND_NAME}? ${signupLink}`}</div>
                     </Content>
                 </>
             )}
@@ -223,10 +221,10 @@ const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
                 <>
                     <Header title={c('Title').t`Set new password`} left={<BackButton onClick={handleCancel} />} />
                     <Content>
-                        <TextSpacer>
+                        <div className="mb1-75">
                             {c('Info')
                                 .t`This will replace your temporary password. You will use it to access your ${BRAND_NAME} Account in the future.`}
-                        </TextSpacer>
+                        </div>
                         <SetPasswordForm
                             onSubmit={(newPassword) => {
                                 return handleSetupPassword({

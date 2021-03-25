@@ -3,9 +3,7 @@ import { c } from 'ttag';
 import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-import { Button, useLoading, useFormErrors, InputFieldTwo } from 'react-components';
-
-import ButtonSpacer from '../public/ButtonSpacer';
+import { Button, useLoading, useFormErrors, InputFieldTwo, LinkButton } from 'react-components';
 
 interface Props {
     onSubmit: (totp: string) => Promise<void>;
@@ -55,27 +53,24 @@ const TOTPForm = ({ onSubmit }: Props) => {
                     onValue={setTotp}
                 />
             )}
-            <Button
-                size="large"
-                color="norm"
-                shape="ghost"
-                type="button"
-                fullWidth
-                onClick={() => {
-                    if (loading) {
-                        return;
-                    }
-                    setTotp('');
-                    setIsRecovery(!isTotpRecovery);
-                }}
-            >
-                {isTotpRecovery ? c('Action').t`Use two-factor authentication code` : c('Action').t`Use recovery code`}
+            <div className="text-center">
+                <LinkButton
+                    onClick={() => {
+                        if (loading) {
+                            return;
+                        }
+                        setTotp('');
+                        setIsRecovery(!isTotpRecovery);
+                    }}
+                >
+                    {isTotpRecovery
+                        ? c('Action').t`Use two-factor authentication code`
+                        : c('Action').t`Use recovery code`}
+                </LinkButton>
+            </div>
+            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
+                {c('Action').t`Authenticate`}
             </Button>
-            <ButtonSpacer mode="secondary">
-                <Button size="large" color="norm" type="submit" fullWidth loading={loading}>
-                    {c('Action').t`Authenticate`}
-                </Button>
-            </ButtonSpacer>
         </form>
     );
 };
