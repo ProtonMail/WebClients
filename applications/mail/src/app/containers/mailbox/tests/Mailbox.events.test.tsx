@@ -60,7 +60,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getAllByTestId, total, false);
-        expect(api.mock.calls.length).toBe(3);
+        expect(api.mock.calls.length).toBe(1);
     });
 
     it('should not reload the list on an update event if has list from start', async () => {
@@ -73,7 +73,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getAllByTestId, total, false);
-        expect(api.mock.calls.length).toBe(3);
+        expect(api.mock.calls.length).toBe(1);
     });
 
     it('should reload the list on an update event if has not list from start', async () => {
@@ -87,7 +87,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getAllByTestId, PAGE_SIZE, false);
-        expect(api.mock.calls.length).toBe(4);
+        expect(api.mock.calls.length).toBe(2);
     });
 
     it('should reload the list on an delete event if a search is active', async () => {
@@ -117,7 +117,7 @@ describe('Mailbox elements list reacting to events', () => {
                 .map((element) => ({ ID: element.ID, Action: EVENT_ACTIONS.DELETE } as ConversationEvent)),
         });
 
-        expect(api.mock.calls.length).toBe(4);
+        expect(api.mock.calls.length).toBe(2);
     });
 
     it('should not reload the list on count event and expected length not matched when only one page of elements', async () => {
@@ -132,7 +132,7 @@ describe('Mailbox elements list reacting to events', () => {
             ConversationCounts: [{ LabelID: labelID, Total: total + 3, Unread: 10 }],
         });
 
-        expect(api.mock.calls.length).toBe(3);
+        expect(api.mock.calls.length).toBe(1);
     });
 
     it('should not reload the list on count event when a search is active', async () => {
@@ -169,7 +169,7 @@ describe('Mailbox elements list reacting to events', () => {
             Conversations: [{ ID: element.ID || '', Action: EVENT_ACTIONS.UPDATE_FLAGS, Conversation: element }],
         });
 
-        expect(api.mock.calls.length).toBe(4);
+        expect(api.mock.calls.length).toBe(2);
     });
 
     it('should not show the loader if not live cache but params has not changed', async () => {
