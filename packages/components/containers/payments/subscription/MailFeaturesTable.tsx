@@ -161,13 +161,13 @@ const MailFeaturesTable = ({ cycle, currency }: Props) => {
                     </tr>
                     <tr>
                         <td>
-                            <del className="opacity-50">{c('Feature').t`Catch all email`}</del>
+                            <del className="opacity-50">{c('Feature').t`Catch-All email`}</del>
                         </td>
                         <td>
-                            <del className="opacity-50">{c('Feature').t`Catch all email`}</del>
+                            <del className="opacity-50">{c('Feature').t`Catch-All email`}</del>
                         </td>
-                        <td>{c('Feature').t`Catch all email`}</td>
-                        <td>{c('Feature').t`Catch all email`}</td>
+                        <td>{c('Feature').t`Catch-All email`}</td>
+                        <td>{c('Feature').t`Catch-All email`}</td>
                     </tr>
                     <tr>
                         <td>

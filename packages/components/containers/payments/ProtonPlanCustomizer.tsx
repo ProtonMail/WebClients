@@ -283,8 +283,8 @@ const ProtonPlanCustomizer = ({
                                     {(quantity * addon.Pricing[cycle]) / cycle}
                                 </Price>
                             ) : null}
-                            {isSupported && !quantity ? <span>{c('Info').t`included`}</span> : null}
-                            {!isSupported && <span className="color-hint">{c('Info').t`not customizable`}</span>}
+                            {isSupported && !quantity ? <span>{c('Info').t`Included`}</span> : null}
+                            {!isSupported && <span className="color-hint">{c('Info').t`Not customizable`}</span>}
                         </div>
                     </div>
                 );

@@ -27,7 +27,7 @@ const AddressesTable = ({ domain, domainAddresses }) => {
                     c('Title header for addresses domain table').t`Address`,
                     c('Title header for addresses domain table').t`Status`,
                     <>
-                        {c('Title header for addresses domain table').t`Catch all`}
+                        {c('Title header for addresses domain table').t`Catch-All`}
                         <Info url="https://protonmail.com/support/knowledge-base/catch-all/" />
                     </>,
                 ]}

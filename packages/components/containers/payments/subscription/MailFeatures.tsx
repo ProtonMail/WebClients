@@ -128,7 +128,7 @@ const getFeatures = (): MailFeature[] => {
         },
         {
             name: 'catch all email',
-            label: c('Mail feature').t`Catch all email`,
+            label: c('Mail feature').t`Catch-All email`,
             free: EmDash,
             [PLANS.PLUS]: EmDash,
             [PLANS.PROFESSIONAL]: <CheckIcon />,

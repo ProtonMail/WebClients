@@ -28,7 +28,7 @@ const getFeatures = (vpnCountries: VPNCountries): VPNFeature[] => {
             label: c('VPN feature').t`Speed`,
             free: c('VPN feature option').t`Medium`,
             [PLANS.VPNBASIC]: c('VPN feature option').t`High`,
-            [PLANS.VPNPLUS]: c('VPN feature option').t`Highest (up to 10 Gbits/s)`,
+            [PLANS.VPNPLUS]: c('VPN feature option').t`Highest (up to 10 Gbps)`,
             [PLANS.VISIONARY]: c('VPN feature option').t`Highest (10 Gbps)`,
         },
         {
