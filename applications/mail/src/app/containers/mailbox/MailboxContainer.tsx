@@ -250,7 +250,7 @@ const MailboxContainer = ({
                     />
                 )}
                 {showContentPanel && (
-                    <section className="view-column-detail flex flex-column flex-item-fluid no-scroll relative">
+                    <section className="view-column-detail flex flex-column flex-item-fluid flex-nowrap no-scroll relative">
                         {showPlaceholder && (
                             <PlaceholderView
                                 welcomeFlag={welcomeFlag}

@@ -14,6 +14,8 @@ import ConfigProvider from 'react-components/containers/config/Provider';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { ProtonConfig } from 'proton-shared/lib/interfaces';
 import AuthenticationProvider from 'react-components/containers/authentication/Provider';
+import FeaturesProvider from 'react-components/containers/features/FeaturesProvider';
+
 import MessageProvider from '../../containers/MessageProvider';
 import ConversationProvider from '../../containers/ConversationProvider';
 import { minimalCache, cache, messageCache, conversationCache, attachmentsCache, contactCache } from './cache';
@@ -49,9 +51,11 @@ const TestProvider = ({ children }: Props) => {
                                 <MessageProvider cache={messageCache}>
                                     <ConversationProvider cache={conversationCache}>
                                         <AttachmentProvider cache={attachmentsCache}>
-                                            <ContactProvider cache={contactCache}>
-                                                <MemoryRouter initialEntries={['/inbox']}>{children}</MemoryRouter>
-                                            </ContactProvider>
+                                            <FeaturesProvider>
+                                                <ContactProvider cache={contactCache}>
+                                                    <MemoryRouter initialEntries={['/inbox']}>{children}</MemoryRouter>
+                                                </ContactProvider>
+                                            </FeaturesProvider>
                                         </AttachmentProvider>
                                     </ConversationProvider>
                                 </MessageProvider>

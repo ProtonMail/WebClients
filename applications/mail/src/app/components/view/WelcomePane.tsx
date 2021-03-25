@@ -1,20 +1,31 @@
 import React from 'react';
-import { useUser, useModals, InlineLinkButton, AuthenticatedBugModal, AppLink, ButtonLike } from 'react-components';
+import { useUser, AppLink, Href, useImporters, useFeature, FeatureCode, Loader, ButtonLike } from 'react-components';
 import { c, msgid } from 'ttag';
 import { Location } from 'history';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { MAILBOX_LABEL_IDS, APPS } from 'proton-shared/lib/constants';
 import { capitalize } from 'proton-shared/lib/helpers/string';
 import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 import { LabelCount } from 'proton-shared/lib/interfaces/Label';
-import unreadEmailsSvgLight from 'design-system/assets/img/shared/unread-emails.svg';
-import unreadEmailsSvgDark from 'design-system/assets/img/shared/unread-emails-dark.svg';
-import storageSvg from 'design-system/assets/img/shared/welcome/storage.svg';
-import customSvg from 'design-system/assets/img/shared/welcome/custom.svg';
+import envelopeLight from 'design-system/assets/img/shared/envelope-light.svg';
+import envelopeDark from 'design-system/assets/img/shared/envelop-dark.svg';
+import mobileMailAppLight from 'design-system/assets/img/shared/mobile-mail-app-light.svg';
+import mobileMailAppDark from 'design-system/assets/img/shared/mobile-mail-app-dark.svg';
+import appStore from 'design-system/assets/img/shared/app-store.svg';
+import playStore from 'design-system/assets/img/shared/play-store.svg';
 
 import { isConversationMode } from '../../helpers/mailSettings';
 
+interface ContainerProps {
+    children: React.ReactNode;
+}
+
+const Container = ({ children }: ContainerProps) => (
+    <div className="flex h100 scroll-if-needed pt1 pb1 pr2 pl2">
+        <div className="mauto text-center max-w30e">{children}</div>
+    </div>
+);
 interface Props {
     mailSettings: MailSettings;
     location: Location;
@@ -23,12 +34,20 @@ interface Props {
 
 const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
     const conversationMode = isConversationMode(MAILBOX_LABEL_IDS.INBOX, mailSettings, location);
+    const { feature: featureUsedMailMobileApp, loading: loadingUsedMailMobileApp } = useFeature(
+        FeatureCode.UsedMailMobileApp
+    );
 
-    const [user] = useUser();
-    const { createModal } = useModals();
+    const [user, loadingUser] = useUser();
+    const [imports = [], importsLoading] = useImporters();
+    const hasAlreadyImported = imports.length;
+    const loading = importsLoading || loadingUsedMailMobileApp || loadingUser;
 
-    const Unread = labelCount.Unread || 0;
-    const unreadEmailsSvg = getLightOrDark(unreadEmailsSvgLight, unreadEmailsSvgDark);
+    const unread = labelCount.Unread || 0;
+    const total = labelCount.Total || 0;
+    const imageSvg = featureUsedMailMobileApp?.Value
+        ? getLightOrDark(envelopeLight, envelopeDark)
+        : getLightOrDark(mobileMailAppLight, mobileMailAppDark);
     const userName = (
         <span key="display-name" className="inline-block max-w100 text-ellipsis align-bottom">
             {capitalize(user.DisplayName)}
@@ -37,85 +56,93 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
 
     const unreadsLabel = conversationMode ? (
         <strong key="unreads-label">
-            {c('Info').ngettext(msgid`${Unread} unread conversation`, `${Unread} unread conversations`, Unread)}
+            {c('Info').ngettext(msgid`${unread} unread conversation`, `${unread} unread conversations`, unread)}
         </strong>
     ) : (
         <strong key="unreads-label">
-            {c('Info').ngettext(msgid`${Unread} unread message`, `${Unread} unread messages`, Unread)}
+            {c('Info').ngettext(msgid`${unread} unread message`, `${unread} unread messages`, unread)}
         </strong>
     );
 
-    const reportBugButton = (
-        <InlineLinkButton key="report-bug-btn" onClick={() => createModal(<AuthenticatedBugModal />)}>{c('Action')
-            .t`report a bug`}</InlineLinkButton>
+    const totalLabel = conversationMode ? (
+        <strong key="total-label">
+            {c('Info').ngettext(msgid`${total} conversation`, `${total} conversations`, total)}
+        </strong>
+    ) : (
+        <strong key="total-label">{c('Info').ngettext(msgid`${total} message`, `${total} messages`, total)}</strong>
     );
 
-    const startingPrice = <strong key="starting-price">$4/month</strong>;
+    if (loading) {
+        return (
+            <Container>
+                <Loader />
+            </Container>
+        );
+    }
 
     return (
-        <div className="mtauto mbauto text-center p2 max-w100 scroll-if-needed">
-            <h1>{user.DisplayName ? c('Title').jt`Welcome, ${userName}!` : c('Title').t`Welcome!`}</h1>
-            {Unread ? <p>{c('Info').jt`You have ${unreadsLabel} in your inbox.`}</p> : null}
-            {user.hasPaidMail ? (
-                <>
-                    <p className="max-w40e center mb2">
-                        {c('Info')
-                            .jt`Having trouble sending or receiving emails? Interested in helping us improve our service? Feel free to ${reportBugButton}.`}
-                    </p>
-                    <img
-                        className="hauto"
-                        src={unreadEmailsSvg}
-                        alt={c('Alternative text for welcome image').t`Welcome`}
-                    />
-                </>
-            ) : (
-                <>
-                    <p>{c('Info')
-                        .jt`Upgrade to a paid plan starting from ${startingPrice} only and get additional storage capacity and more addresses with ProtonMail Plus.`}</p>
-                    <div className="boxes-placeholder-container flex flex-nowrap max-w50e center mt2">
-                        <div className="bordered flex-item-fluid flex flex-column text-center p1 mr2">
-                            <img className="mb1 hauto" src={storageSvg} alt={c('Alt').t`Storage`} />
-                            <p className="mt0 mb1 text-bold">{c('Info').t`5GB Storage`}</p>
-                            <p className="mt0 mb1">{c('Info')
-                                .t`Get enough storage space to hold on your history of precious communications.`}</p>
-                            <ButtonLike
-                                as={AppLink}
-                                to="/subscription"
-                                toApp={getAccountSettingsApp()}
-                                color="norm"
-                                className="mtauto"
-                            >{c('Action').t`Upgrade`}</ButtonLike>
-                        </div>
-                        <div className="bordered flex-item-fluid flex flex-column text-center p1 mr2">
-                            <img className="mb1 hauto" src={customSvg} alt={c('Alt').t`Mail`} />
-                            <p className="mt0 mb1 text-bold">{c('Info').t`5 Email Addresses`}</p>
-                            <p className="mt0 mb1">{c('Info')
-                                .t`Set up to 5 email addresses and use them as you deem fit.`}</p>
-                            <ButtonLike
-                                as={AppLink}
-                                color="norm"
-                                to="/subscription"
-                                toApp={getAccountSettingsApp()}
-                                className="mtauto"
-                            >{c('Action').t`Upgrade`}</ButtonLike>
-                        </div>
-                        <div className="bordered flex-item-fluid flex flex-column text-center p1">
-                            <img className="mb1 hauto" src={customSvg} alt={c('Alt').t`Customization`} />
-                            <p className="mt0 mb1 text-bold">{c('Info').t`Customization`}</p>
-                            <p className="mt0 mb1">{c('Info')
-                                .t`Folders, Labels, Auto-reply and more ways to tweak ProtonMail to match the way you work.`}</p>
-                            <ButtonLike
-                                as={AppLink}
-                                color="norm"
-                                to="/subscription"
-                                toApp={getAccountSettingsApp()}
-                                className="mtauto"
-                            >{c('Action').t`Upgrade`}</ButtonLike>
-                        </div>
-                    </div>
-                </>
+        <>
+            {user.hasPaidMail ? null : (
+                <div className="bg-pm-blue-gradient color-white p1 text-center">
+                    <span className="mr1">{c('Info').jt`Increase storage space starting at $4/month.`}</span>
+                    <AppLink
+                        to="/subscription"
+                        toApp={getAccountSettingsApp()}
+                        className="text-bold link align-baseline color-currentColor"
+                    >
+                        {c('Action').t`Upgrade`}
+                    </AppLink>
+                </div>
             )}
-        </div>
+            <Container>
+                <h1>{user.DisplayName ? c('Title').jt`Welcome ${userName}` : c('Title').t`Welcome`}</h1>
+                <p>
+                    {unread
+                        ? c('Info').jt`You have ${unreadsLabel} in your inbox.`
+                        : c('Info').jt`You have ${totalLabel} in your inbox.`}
+                </p>
+                <hr className="mb2 mt2" />
+                <div className="text-rg">
+                    <img className="hauto" src={imageSvg} alt={c('Alternative text for welcome image').t`Welcome`} />
+                </div>
+                {featureUsedMailMobileApp?.Value ? null : (
+                    <>
+                        <p>{c('Info')
+                            .t`Download our mobile application from your favorite app store to communicate securely on-the-go.`}</p>
+                        <div className="text-rg">
+                            <Href
+                                className="inline-block mr1"
+                                url="https://itunes.apple.com/app/protonmail-encrypted-email/id979659905"
+                            >
+                                <img className="hauto" src={appStore} alt="App Store" />
+                            </Href>
+                            <Href
+                                className="inline-block"
+                                url="https://play.google.com/store/apps/details?id=ch.protonmail.android"
+                            >
+                                <img className="hauto" src={playStore} alt="Play Store" />
+                            </Href>
+                        </div>
+                    </>
+                )}
+                {hasAlreadyImported ? null : (
+                    <>
+                        <hr className="mb2 mt2" />
+                        <div className="text-rg">
+                            <ButtonLike
+                                as={AppLink}
+                                color="weak"
+                                shape="outline"
+                                to="/settings/import"
+                                toApp={APPS.PROTONMAIL}
+                                target="_self"
+                                className="inline-block mtauto mr1"
+                            >{c('Action').t`Import messages`}</ButtonLike>
+                        </div>
+                    </>
+                )}
+            </Container>
+        </>
     );
 };
 
