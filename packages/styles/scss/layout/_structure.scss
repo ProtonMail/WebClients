@@ -24,8 +24,9 @@ html,
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: white;
-	color: #657ee4;
+	// Static because css variables can't be reached on that components
+	background: #262a33;
+	color: white;
 }
 
 .app-noscript {
@@ -39,8 +40,9 @@ html,
 	align-items: center;
 	padding: 3em;
 	font-size: 1.2em;
-	background: white;
-	color: #657ee4;
+	// Static because css variables can't be reached on that components
+	background: #262a33;
+	color: white;
 }
 
 .content {
