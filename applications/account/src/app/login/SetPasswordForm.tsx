@@ -53,7 +53,7 @@ const SetPasswordForm = ({ onSubmit }: Props) => {
                 autoComplete="new-password"
                 value={confirmNewPassword}
                 onValue={setConfirmNewPassword}
-                rootClassName="mt0-25"
+                rootClassName="mt0-5"
             />
             <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
                 {c('Action').t`Confirm`}

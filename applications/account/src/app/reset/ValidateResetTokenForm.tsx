@@ -128,7 +128,7 @@ const ValidateResetTokenForm = ({ onSubmit, state, setters: stateSetters, onBack
                             />
                         )
                     }
-                    className="mt0-25"
+                    className="mt0-5"
                 >{c('Action').t`Didn't receive a code?`}</Button>
             ) : null}
         </form>
