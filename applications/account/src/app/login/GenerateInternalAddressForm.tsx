@@ -7,8 +7,6 @@ import { queryCheckUsernameAvailability } from 'proton-shared/lib/api/user';
 import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
 
-import ButtonSpacer from '../public/ButtonSpacer';
-
 interface Props {
     onSubmit: (username: string, domain: string) => void;
     availableDomains?: string[];
@@ -63,11 +61,9 @@ const GenerateInternalAddressForm = ({ defaultUsername = '', onSubmit, available
                 }}
                 suffix={`@${domain}`}
             />
-            <ButtonSpacer>
-                <Button size="large" color="norm" type="submit" fullWidth loading={loading}>
-                    {c('Action').t`Next`}
-                </Button>
-            </ButtonSpacer>
+            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
+                {c('Action').t`Next`}
+            </Button>
         </form>
     );
 };

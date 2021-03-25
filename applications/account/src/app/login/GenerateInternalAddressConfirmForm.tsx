@@ -4,9 +4,6 @@ import { useLoading, Button } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { BRAND_NAME } from 'proton-shared/lib/constants';
 
-import ButtonSpacer from '../public/ButtonSpacer';
-import TextSpacer from '../public/TextSpacer';
-
 interface Props {
     onSubmit: () => Promise<void>;
     address: string;
@@ -31,19 +28,17 @@ const GenerateInternalAddressConfirmForm = ({ onSubmit, address, recoveryAddress
             }}
             method="post"
         >
-            <TextSpacer>
+            <div className="mb1-75">
                 {c('Info')
                     .jt`${strongAddressAvailable} You will use this email address to sign into all ${BRAND_NAME} services.`}
-            </TextSpacer>
-            <div className="p1 mb2 text-center bg-weak rounded">
+            </div>
+            <div className="p1 mb1-75 text-center bg-weak rounded">
                 <div className="text-bold">{c('Info').t`Your recovery email address:`}</div>
                 {recoveryAddress}
             </div>
-            <ButtonSpacer>
-                <Button size="large" color="norm" type="submit" fullWidth loading={loading} autoFocus>
-                    {c('Action').t`Create address`}
-                </Button>
-            </ButtonSpacer>
+            <Button size="large" color="norm" type="submit" fullWidth loading={loading} autoFocus className="mt1-75">
+                {c('Action').t`Create address`}
+            </Button>
         </form>
     );
 };

@@ -2,17 +2,15 @@ import React from 'react';
 import { c } from 'ttag';
 import { useHistory } from 'react-router-dom';
 
-import { Button, GenericError, Href, OnLoginCallback, useMyLocation } from 'react-components';
+import { Button, ButtonLike, GenericError, Href, OnLoginCallback, useMyLocation } from 'react-components';
 import useResetPassword, { STEPS } from 'react-components/containers/resetPassword/useResetPassword';
 import BackButton from '../public/BackButton';
-import ButtonSpacer from '../public/ButtonSpacer';
 import Main from '../public/Main';
 import Header from '../public/Header';
 import Content from '../public/Content';
 import LoginSupportDropdown from '../login/LoginSupportDropdown';
 import Footer from '../public/Footer';
 import RequestRecoveryForm from './RequestRecoveryForm';
-import TextSpacer from '../public/TextSpacer';
 import RequestResetTokenForm from './RequestResetTokenForm';
 import ValidateResetTokenForm from './ValidateResetTokenForm';
 import SetPasswordForm from '../login/SetPasswordForm';
@@ -50,8 +48,8 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
                 <>
                     <Header title={c('Title').t`Reset password`} left={<BackButton onClick={onBack || handleBack} />} />
                     <Content>
-                        <TextSpacer>{c('Info')
-                            .t`Enter the email address associated with your Proton Account or your account username.`}</TextSpacer>
+                        <div className="mb1-75">{c('Info')
+                            .t`Enter the email address associated with your Proton Account or your account username.`}</div>
                         <RequestRecoveryForm
                             state={state}
                             setters={setters}
@@ -67,19 +65,20 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
                     <Header title={c('Title').t`No recovery method`} left={<BackButton onClick={handleBack} />} />
                     <Content>
                         <form className="signup-form">
-                            <TextSpacer>{c('Info')
-                                .t`Unfortunately there is no recovery method saved for this account.`}</TextSpacer>
-                            <ButtonSpacer>
-                                <Button color="norm" size="large" onClick={handleBack} fullWidth>{c('Action')
-                                    .t`Return to login`}</Button>
-                            </ButtonSpacer>
-                            <ButtonSpacer mode="secondary">
-                                <Href
-                                    className="text-no-decoration p1 block w100 text-center flex-item-noshrink"
-                                    url="https://protonmail.com/support-form"
-                                    target="_self"
-                                >{c('Action').t`Contact support`}</Href>
-                            </ButtonSpacer>
+                            <div className="mb1-75">{c('Info')
+                                .t`Unfortunately there is no recovery method saved for this account.`}</div>
+                            <Button color="norm" size="large" onClick={handleBack} fullWidth>{c('Action')
+                                .t`Return to login`}</Button>
+                            <ButtonLike
+                                as={Href}
+                                shape="ghost"
+                                color="norm"
+                                size="large"
+                                url="https://protonmail.com/support-form"
+                                target="_self"
+                                fullWidth
+                                className="mt0-25"
+                            >{c('Action').t`Contact support`}</ButtonLike>
                         </form>
                     </Content>
                 </>
@@ -159,18 +158,19 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
                         }
                     />
                     <Content>
-                        {(error && <TextSpacer>{error}</TextSpacer>) || <GenericError />}
-                        <ButtonSpacer>
-                            <Button color="norm" size="large" onClick={handleBack} fullWidth>{c('Action')
-                                .t`Return to login`}</Button>
-                        </ButtonSpacer>
-                        <ButtonSpacer mode="secondary">
-                            <Href
-                                className="text-no-decoration p1 block w100 text-center flex-item-noshrink"
-                                url="https://protonmail.com/support-form"
-                                target="_self"
-                            >{c('Action').t`Contact support`}</Href>
-                        </ButtonSpacer>
+                        {(error && <div className="mb1-75">{error}</div>) || <GenericError />}
+                        <Button color="norm" size="large" onClick={handleBack} fullWidth className="mt1-75">{c('Action')
+                            .t`Return to login`}</Button>
+                        <ButtonLike
+                            as={Href}
+                            color="norm"
+                            shape="ghost"
+                            size="large"
+                            url="https://protonmail.com/support-form"
+                            target="_self"
+                            fullWidth
+                            className="mt0-25"
+                        >{c('Action').t`Contact support`}</ButtonLike>
                     </Content>
                 </>
             )}

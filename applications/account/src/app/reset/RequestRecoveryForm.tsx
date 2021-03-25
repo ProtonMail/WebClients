@@ -4,7 +4,6 @@ import { Button, useFormErrors, useLoading, InputFieldTwo } from 'react-componen
 import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
 import { ResetPasswordState, ResetPasswordSetters } from 'react-components/containers/resetPassword/useResetPassword';
 import { noop } from 'proton-shared/lib/helpers/function';
-import ButtonSpacer from '../public/ButtonSpacer';
 
 interface Props {
     onSubmit: () => Promise<void>;
@@ -38,10 +37,8 @@ const RequestRecoveryForm = ({ onSubmit, state, setters: stateSetters }: Props) 
                 onValue={stateSetters.username}
                 autoFocus
             />
-            <ButtonSpacer>
-                <Button size="large" color="norm" loading={loading} type="submit" fullWidth>{c('Action')
-                    .t`Next`}</Button>
-            </ButtonSpacer>
+            <Button size="large" color="norm" loading={loading} type="submit" fullWidth className="mt1-75">{c('Action')
+                .t`Next`}</Button>
         </form>
     );
 };

@@ -18,13 +18,11 @@ import {
     InputFieldTwo,
 } from 'react-components';
 import BackButton from './BackButton';
-import ButtonSpacer from './ButtonSpacer';
 import Content from './Content';
 import Main from './Main';
 import Header from './Header';
 import Footer from './Footer';
 import LoginSupportDropdown from '../login/LoginSupportDropdown';
-import TextSpacer from './TextSpacer';
 
 type Method = 'email' | 'phone';
 const ForgotUsernameForm = ({
@@ -63,10 +61,10 @@ const ForgotUsernameForm = ({
                         title: c('Title').t`Email`,
                         content: (
                             <>
-                                <TextSpacer>
+                                <div className="mb1-75">
                                     {c('Info')
                                         .t`Enter your recovery email address and we will send you your username or email address.`}
-                                </TextSpacer>
+                                </div>
                                 <InputFieldTwo
                                     id="email"
                                     bigger
@@ -85,10 +83,10 @@ const ForgotUsernameForm = ({
                         title: c('Title').t`Phone`,
                         content: (
                             <>
-                                <TextSpacer>
+                                <div className="mb1-75">
                                     {c('Info')
                                         .t`Enter your recovery phone number and we will send you your username or email address.`}
-                                </TextSpacer>
+                                </div>
                                 <InputFieldTwo
                                     as={PhoneInput}
                                     id="phone"
@@ -109,11 +107,9 @@ const ForgotUsernameForm = ({
                 value={method === 'email' ? 0 : 1}
                 onChange={(id) => onChangeMethod(id === 0 ? 'email' : 'phone')}
             />
-            <ButtonSpacer>
-                <Button size="large" color="norm" type="submit" fullWidth loading={loading}>
-                    {c('Action').t`Send my username`}
-                </Button>
-            </ButtonSpacer>
+            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
+                {c('Action').t`Send my username`}
+            </Button>
         </form>
     );
 };

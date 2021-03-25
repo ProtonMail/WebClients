@@ -5,8 +5,6 @@ import { noop } from 'proton-shared/lib/helpers/function';
 
 import { Button, useLoading, PasswordInputTwo, useFormErrors, InputFieldTwo } from 'react-components';
 
-import ButtonSpacer from '../public/ButtonSpacer';
-
 interface Props {
     onSubmit: (keyPassword: string) => Promise<void>;
 }
@@ -41,11 +39,9 @@ const UnlockForm = ({ onSubmit }: Props) => {
                 value={keyPassword}
                 onValue={setKeyPassword}
             />
-            <ButtonSpacer>
-                <Button size="large" color="norm" type="submit" fullWidth loading={loading}>
-                    {c('Action').t`Unlock`}
-                </Button>
-            </ButtonSpacer>
+            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
+                {c('Action').t`Unlock`}
+            </Button>
         </form>
     );
 };

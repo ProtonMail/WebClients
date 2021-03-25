@@ -10,7 +10,7 @@ $bg-signup-img: './bg-mountains.svg' !default;
 	&-bg {
 		background: url($bg-signup-img) 0 0 no-repeat;
 		background-size: cover;
-	}	
+	}
 
 	// main content
 	transition: max-width 0.15s easing(easeIn);
@@ -34,19 +34,19 @@ $bg-signup-img: './bg-mountains.svg' !default;
 		font-size: em(16);
 	}
 	&-main-content {
-		padding: em(24) em(48);
+		padding: em(24) em(48) em(48);
 		@include respond-to($breakpoint-small) {
 			padding-left: em(20);
 			padding-right: em(20);
 		}
-		
+
 	}
 
 	&-container-challenge {
 		min-height: 10rem;
 	}
 
-	
+
 
 }
 
