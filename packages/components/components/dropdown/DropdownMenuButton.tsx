@@ -1,5 +1,6 @@
 import React from 'react';
 import { classnames } from '../../helpers';
+import { CircleLoader } from '../loader';
 
 export interface Props extends Omit<React.ComponentPropsWithRef<'button'>, 'color'> {
     loading?: boolean;
@@ -38,7 +39,14 @@ const DropdownMenuButton = React.forwardRef<HTMLButtonElement, Props>(
                 aria-busy={loading}
                 {...rest}
             >
-                {loading ? <span className="block text-ellipsis">{children}</span> : children}
+                {loading ? (
+                    <div className="flex flex-align-items-center flex-nowrap">
+                        <span className="flex-item-fluid text-ellipsis">{children}</span>
+                        <CircleLoader className="flex-item-noshrink" />
+                    </div>
+                ) : (
+                    children
+                )}
             </button>
         );
     }
