@@ -37,18 +37,7 @@ const InputField: <E extends React.ElementType = typeof defaultElement>(
     props: InputFieldProps<E>
 ) => React.ReactElement | null = React.forwardRef(
     <E extends React.ElementType = typeof defaultElement>(
-        {
-            label,
-            hint,
-            assistiveText,
-            disabled,
-            bigger,
-            error,
-            id: idProp,
-            hasBottomMargin,
-            rootClassName,
-            ...rest
-        }: InputFieldProps<E>,
+        { label, hint, assistiveText, disabled, bigger, error, id: idProp, rootClassName, ...rest }: InputFieldProps<E>,
         ref: typeof rest.ref
     ) => {
         const id = useInstance(() => idProp || generateUID());
