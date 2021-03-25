@@ -42,6 +42,7 @@ const Searchbox = ({ delay, className = '', advanced, placeholder = '', value = 
                     id="global_search"
                     placeholder={placeholder}
                     className="searchbox-field"
+                    iconSearchDisplayed={false}
                     data-shorcut-target="searchbox-field"
                 />
             </label>
