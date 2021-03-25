@@ -64,9 +64,10 @@ const EmailMethodForm = ({ api, onSubmit, defaultPhone = '', defaultCountry }: P
                 size="large"
                 color="norm"
                 type="button"
-                className="w100"
+                fullWidth
                 loading={loading}
                 onClick={() => withLoading(handleSubmit()).catch(noop)}
+                className="mt1-75"
             >
                 {c('Action').t`Get verification code`}
             </Button>
