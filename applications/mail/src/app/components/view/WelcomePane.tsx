@@ -83,12 +83,12 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
     return (
         <>
             {user.hasPaidMail ? null : (
-                <div className="bg-pm-blue-gradient color-white p1 text-center">
+                <div className="bg-primary p1 text-center">
                     <span className="mr1">{c('Info').jt`Increase storage space starting at $4/month.`}</span>
                     <AppLink
                         to="/subscription"
                         toApp={getAccountSettingsApp()}
-                        className="text-bold link align-baseline color-currentColor"
+                        className="text-bold link align-baseline color-inherit"
                     >
                         {c('Action').t`Upgrade`}
                     </AppLink>
