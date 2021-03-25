@@ -5,10 +5,13 @@ import { generateUID, classnames } from '../../helpers';
 import useInput from './useInput';
 import ErrorZone from '../text/ErrorZone';
 
+import Icon from '../icon/Icon';
+
 export interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     ref?: Ref<HTMLInputElement>; // override ref so that LegacyRef isn't used
     containerRef?: Ref<HTMLDivElement>;
     icon?: React.ReactElement;
+    iconSearchDisplayed?: boolean;
     error?: string;
     errorZoneClassName?: string;
     autoComplete?: string;
@@ -28,6 +31,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
             autoComplete = 'off',
             className = '',
             type = 'text',
+            iconSearchDisplayed = true,
             onPressEnter,
             isSubmitted,
             loading = false,
@@ -46,6 +50,18 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
         const hasError = !!(errorZone && (status.isDirty || isSubmitted));
 
         const addIconWrapper = (child: React.ReactNode) => {
+            if (type === 'search' && iconSearchDisplayed) {
+                return (
+                    <div
+                        ref={containerRef}
+                        className={classnames(['relative flex', hasError && 'field-icon-container--invalid'])}
+                    >
+                        <Icon name="search" className="absolute no-pointer-events left-icon" />
+                        {child}
+                    </div>
+                );
+            }
+
             if (!icon) {
                 return child;
             }
