@@ -26,6 +26,7 @@ const useOAuth = ({ getRedirectURL, getAuthorizationUrl }: OAuthHookContext) => 
 
     const triggerOAuthPopup = (provider: OAUTH_PROVIDER) => {
         let interval: number;
+        const redirectURI = getRedirectURL();
 
         const uid = generateProtonWebUID();
         stateId.current = uid;
@@ -40,7 +41,6 @@ const useOAuth = ({ getRedirectURL, getAuthorizationUrl }: OAuthHookContext) => 
 
         if (authWindow) {
             authWindow.focus();
-            authWindow.onbeforeunload = () => window.clearInterval(interval);
 
             /*
                 To be changed by a proper callback URL that will
@@ -48,7 +48,10 @@ const useOAuth = ({ getRedirectURL, getAuthorizationUrl }: OAuthHookContext) => 
                 We can then move the following logic to a `onmessage` listener
             */
             interval = window.setInterval(() => {
-                const redirectURI = getRedirectURL();
+                if (authWindow.closed) {
+                    window.clearInterval(interval);
+                    return;
+                }
 
                 try {
                     const url = new URL(authWindow.document.URL);
@@ -56,7 +59,6 @@ const useOAuth = ({ getRedirectURL, getAuthorizationUrl }: OAuthHookContext) => 
 
                     if (authWindow.document.URL.startsWith(redirectURI)) {
                         authWindow.close();
-                        window.clearInterval(interval);
 
                         const error = params.get('error');
 
