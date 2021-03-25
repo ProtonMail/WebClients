@@ -2,41 +2,32 @@ import React, { ChangeEvent } from 'react';
 
 import Icon from '../icon/Icon';
 import { classnames } from '../../helpers';
-
-export enum ToggleState {
-    on = 'on',
-    off = 'off',
-}
+import { CircleLoader } from '../loader';
 
 export interface Props extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     loading?: boolean;
-    label?: (key: ToggleState) => void;
 }
 
 const Toggle = (
-    {
-        id = 'toggle',
-        className = '',
-        checked = false,
-        loading = false,
-        onChange,
-        disabled,
-        title,
-        label = (key: ToggleState) => {
-            return (
-                <span className="toggle-label-text" aria-hidden="true">
-                    <Icon name={key} alt="" size={16} className="toggle-label-img" />
-                </span>
-            );
-        },
-        ...rest
-    }: Props,
+    { id = 'toggle', className = '', checked = false, loading = false, onChange, disabled, title, ...rest }: Props,
     ref: React.Ref<HTMLInputElement>
 ) => {
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         if (!disabled && onChange) {
             onChange(event);
         }
+    };
+    const label = (name: string, condition: boolean) => {
+        return (
+            <span className="toggle-label-text" aria-hidden="true">
+                <Icon name={name} alt="" size={16} className="toggle-label-img" />
+                {condition && (
+                    <span className="toggle-label-loader">
+                        <CircleLoader />
+                    </span>
+                )}
+            </span>
+        );
     };
     return (
         <>
@@ -52,8 +43,8 @@ const Toggle = (
                 {...rest}
             />
             <label htmlFor={id} className={classnames(['toggle-label', className])} title={title}>
-                {label(ToggleState.off)}
-                {label(ToggleState.on)}
+                {label('off', loading && !checked)}
+                {label('on', loading && checked)}
             </label>
         </>
     );

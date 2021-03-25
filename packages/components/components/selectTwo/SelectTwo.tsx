@@ -6,6 +6,7 @@ import { Props as OptionProps } from '../option/Option';
 import useControlled from '../../hooks/useControlled';
 import { classnames } from '../../helpers';
 import DropdownCaret from '../dropdown/DropdownCaret';
+import { CircleLoader } from '../loader';
 
 export type FakeSelectChangeEvent<V> = {
     value: V;
@@ -242,10 +243,14 @@ const SelectTwo = <V extends any>({
                 {...rest}
             >
                 <span className="flex-item-fluid text-ellipsis text-left">{displayedValue}</span>
-                <DropdownCaret
-                    className={classnames(['flex-item-noshrink', children ? 'ml0-5' : ''])}
-                    isOpen={isOpen}
-                />
+                {loading ? (
+                    <CircleLoader className={classnames(['flex-item-noshrink', children ? 'ml0-5' : ''])} />
+                ) : (
+                    <DropdownCaret
+                        className={classnames(['flex-item-noshrink', children ? 'ml0-5' : ''])}
+                        isOpen={isOpen}
+                    />
+                )}
             </button>
 
             <Dropdown
