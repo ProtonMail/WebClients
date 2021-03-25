@@ -72,9 +72,6 @@ $inputform-height-phone-prefix: 2.8rem !default;
 		}
 
 		&[type='search'] {
-			background: url('#{$path-images}sprite-for-css-only.svg#css-search')
-				6px 50% no-repeat;
-			background-size: 1.6rem;
 			padding-left: 2em;
 
 			&::-webkit-search-cancel-button {

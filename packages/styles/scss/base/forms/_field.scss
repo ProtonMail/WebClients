@@ -81,9 +81,6 @@ $field-container: 26rem !default;
 	}
 
 	&[type='search'] {
-		background: url('#{$path-images}sprite-for-css-only.svg#css-search') 6px
-			50% no-repeat;
-		background-size: 1.5rem;
 		padding-left: 2em;
 
 		&::-webkit-search-cancel-button {
@@ -114,10 +111,6 @@ $field-container: 26rem !default;
 		[type='search'].field {
 			padding-left: 0;
 			padding-right: 2em;
-			background: url('#{$path-images}sprite-for-css-only.svg#css-search-rtl')
-				calc(100% - 6px)
-				50%
-				no-repeat;
 		}
 	}
 }

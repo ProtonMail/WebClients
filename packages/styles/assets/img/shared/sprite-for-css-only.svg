@@ -36,10 +36,6 @@ transform: rotateZ(180deg);
 opacity: .3;
 }</style>
 
-  <symbol id="symbol-search">
-  <path d="M9.6,8.89a4.47,4.47,0,0,0,1-2.83,4.56,4.56,0,1,0-4.56,4.56,4.47,4.47,0,0,0,2.83-1l4.26,4.25.7-.7Zm-3.54.73A3.56,3.56,0,1,1,9.62,6.06,3.57,3.57,0,0,1,6.06,9.62Z"></path>
-  </symbol>
-
   <!-- careful, this one is used by breadcrumb domain -->
   <symbol id="symbol-caret">
   <path d="M7.782 9.356l-4.44-4.111-.75.694 5.19 4.805 5.19-4.805-.749-.694z"/>
@@ -53,13 +49,6 @@ opacity: .3;
   <polygon points="9.02 2.31 8.31 3.02 12.79 7.5 2 7.5 2 8.5 12.79 8.5 8.31 12.98 9.02 13.69 14.71 8 9.02 2.31" />
   </symbol>
 
-
-  <use id="css-search" href="#symbol-search" class="black" />
-  <use id="css-search-rtl" href="#symbol-search" class="black mirror" />
-  <use id="css-search-white" href="#symbol-search" class="white" />
-  <use id="css-search-white-rtl" href="#symbol-search" class="white mirror" />
-  <use id="css-search-black" href="#symbol-search" class="black" />
-  <use id="css-search-black-rtl" href="#symbol-search" class="black mirror" />
   <use id="css-caret" href="#symbol-caret" class="black" />
   <use id="css-caret-white" href="#symbol-caret" class="white" />
   <use id="css-caret-primary-blue" href="#symbol-caret" class="primary-blue" />

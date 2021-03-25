@@ -50,13 +50,16 @@
 }
 
 .right-icon,
-.right-text {
+.right-text,
+.left-icon {
 	top: 0;
-	right: 0.5em;
 	height: $default-height-fields; // height of field
 	align-content: center;
 }
 
+.right-icon {
+	right: 0.5em;
+}
 .right-text {
 	right: 1em;
 
@@ -65,18 +68,8 @@
 	}
 }
 
-@if $rtl-option==true {
-	[dir='rtl'] {
-		.right-icon,
-		.right-text {
-			left: 0.5em;
-			right: auto;
-		}
-
-		.right-text {
-			left: 1em;
-		}
-	}
+.left-icon {
+	left: 0.5em;
 }
 
 .fixed {
