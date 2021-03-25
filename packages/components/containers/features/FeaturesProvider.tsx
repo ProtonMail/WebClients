@@ -60,14 +60,22 @@ const FeaturesProvider = ({ children }: Props) => {
     };
 
     const put = async (code: FeatureCode, value: any) => {
+        const copyFeature = { ...features[code] };
         updateLoading(code, true);
 
         try {
+            // Optimistically apply change
+            updateFeature(code, { ...copyFeature, Value: value });
+
             const { Feature } = await silentApi<{ Feature: Feature }>(updateFeatureValue(code, value));
 
             updateFeature(code, Feature);
 
             return Feature;
+        } catch (e) {
+            // Rollback optimistic change if it fails
+            updateFeature(code, copyFeature);
+            throw e;
         } finally {
             updateLoading(code, false);
         }
