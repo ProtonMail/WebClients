@@ -233,7 +233,7 @@ $modal-tiny-width: em(288) !default;
 	// for vertically displayed buttons
 	&.flex-column {
 		[class*='button'] + [class*='button'] {
-			margin-top: 0.75em;
+			margin-top: 0.5em;
 		}
 	}
 }
