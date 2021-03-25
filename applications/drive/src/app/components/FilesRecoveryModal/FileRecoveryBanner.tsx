@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { AppLink, LinkButton, TopBanner, useModals } from 'react-components';
+import { AppLink, InlineLinkButton, TopBanner, useModals } from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
 
 import FilesRecoveryModal from './FilesRecoveryModal';
@@ -20,14 +20,14 @@ const FileRecoveryBanner = ({ onClose }: Props) => {
     );
 
     const startRecoveryButton = (
-        <LinkButton
+        <InlineLinkButton
             key="file-recovery-more"
             onClick={() => {
                 createModal(<FilesRecoveryModal lockedShareList={cache.sharesReadyToRestore} />);
             }}
         >
             {c('Info').t`More`}
-        </LinkButton>
+        </InlineLinkButton>
     );
 
     const reactivateMessage = c('Info')
