@@ -101,6 +101,18 @@ export const setup = async ({
     addToCache('MessageCounts', messages.length ? [] : [counts]);
     addApiMock('mail/v4/conversations', () => ({ Total: total, Conversations: conversations }));
     addApiMock('mail/v4/messages', () => ({ Total: total, Messages: messages }));
+    addApiMock('mail/v4/importers', () => ({ Importers: [] }));
+    addApiMock('core/v4/features/UsedMailMobileApp', () => ({
+        Feature: {
+            Code: 'UsedMailMobileApp',
+            Type: 'boolean',
+            Global: false,
+            DefaultValue: false,
+            Value: true,
+            UpdateTime: 1616511553,
+            Writable: true,
+        },
+    }));
 
     const result = await render(<MailboxContainer {...getProps(propsArgs)} />);
     const rerender = (propsArgs: PropsArgs) => result.rerender(<MailboxContainer {...getProps(propsArgs)} />);
