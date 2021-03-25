@@ -5,27 +5,9 @@ import { useModals, useUser } from '../../hooks';
 import useOAuthPopup from '../../hooks/useOAuthPopup';
 import { PrimaryButton, Alert, Icon } from '../../components';
 
-import { OAUTH_PROVIDER } from './interfaces';
-import { G_OAUTH_CLIENT_ID, G_OAUTH_SCOPE, G_OAUTH_REDIRECT_PATH } from './constants';
+import { OAuthProps, OAUTH_PROVIDER } from './interfaces';
+import { getOAuthRedirectURL as getRedirectURL, getOAuthAuthorizationUrl as getAuthorizationUrl } from './helpers';
 import ImportMailModal from './modals/ImportMailModal';
-
-const getRedirectURL = () => {
-    const { protocol, host } = window.location;
-    return `${protocol}//${host}${G_OAUTH_REDIRECT_PATH}`;
-};
-
-const getAuthorizationUrl = () => {
-    const params = new URLSearchParams();
-
-    params.append('redirect_uri', getRedirectURL());
-    params.append('response_type', 'code');
-    params.append('access_type', 'offline');
-    params.append('client_id', G_OAUTH_CLIENT_ID);
-    params.append('scope', G_OAUTH_SCOPE);
-    params.append('prompt', 'consent');
-
-    return `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
-};
 
 const TEST_IDS = [
     'cxinT4HnEQpRz7FHRiGu7CjH9pFULfMwqHc9mv65yycL99EohZgfRP7eMbBUMlEZG4Ks_yszjrcMzDeKD2No6w==',
@@ -37,9 +19,15 @@ const StartImportSection = () => {
     const [user] = useUser();
     const { createModal } = useModals();
 
+    const { triggerOAuthPopup } = useOAuthPopup({ getRedirectURL, getAuthorizationUrl });
+
     const handleClick = () => createModal(<ImportMailModal />);
 
-    const { triggerOAuthPopup } = useOAuthPopup({ getRedirectURL, getAuthorizationUrl });
+    const handleOAuthClick = () => {
+        triggerOAuthPopup(OAUTH_PROVIDER.GMAIL, (oauthProps: OAuthProps) => {
+            createModal(<ImportMailModal oauthProps={oauthProps} />);
+        });
+    };
 
     return (
         <>
@@ -50,10 +38,7 @@ const StartImportSection = () => {
 
             <div className="flex flex-flex-align-items-center">
                 {TEST_IDS.includes(user.ID) ? (
-                    <PrimaryButton
-                        className="inline-flex flex-justify-center mt0-5 mr1"
-                        onClick={() => triggerOAuthPopup(OAUTH_PROVIDER.GMAIL)}
-                    >
+                    <PrimaryButton className="inline-flex flex-justify-center mt0-5 mr1" onClick={handleOAuthClick}>
                         <Icon name="gmail" className="mr0-5" />
                         {c('Action').t`Continue with Google`}
                     </PrimaryButton>

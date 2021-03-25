@@ -98,6 +98,11 @@ export enum ImportMailError {
     ERROR_CODE_QUOTA_LIMIT = 2,
 }
 
+export enum AuthenticationMethod {
+    PLAIN = 'PLAIN',
+    OAUTH = 'XOAUTH2',
+}
+
 export interface Importer {
     ID: string;
     Email: string;
@@ -112,6 +117,7 @@ export interface Importer {
         Mapping: ImportedFolder[];
         ErrorCode?: ImportMailError;
     };
+    Sasl: AuthenticationMethod;
 }
 
 export enum ImportMailReportStatus {
@@ -179,4 +185,10 @@ export enum GMAIL_INSTRUCTIONS {
     IMAP = 1,
     LABELS = 2,
     TWO_STEPS = 3,
+}
+
+export interface OAuthProps {
+    code: string;
+    provider: OAUTH_PROVIDER;
+    redirectURI: string;
 }
