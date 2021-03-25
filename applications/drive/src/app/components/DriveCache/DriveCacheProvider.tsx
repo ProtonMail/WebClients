@@ -87,6 +87,13 @@ interface DriveCacheState {
 const useDriveCacheState = () => {
     const cacheRef = useRef<DriveCacheState>({});
     const [defaultShare, setDefaultShare] = useState<string>();
+    const [lockedShares, setLockedShares] = useState<ShareMetaShort[]>([]);
+    const [sharesReadyToRestore, setSharesReadyToRestore] = useState<
+        {
+            lockedShareMeta: ShareMeta;
+            decryptedPassphrase: string;
+        }[]
+    >([]);
     const [, setRerender] = useState(0);
 
     const setLinkMeta = (
@@ -691,7 +698,11 @@ const useDriveCacheState = () => {
             links: deleteLinks,
         },
         setDefaultShare,
+        setLockedShares,
+        setSharesReadyToRestore,
         defaultShare,
+        lockedShares,
+        sharesReadyToRestore,
     };
 };
 

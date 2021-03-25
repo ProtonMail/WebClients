@@ -21,3 +21,12 @@ export interface DriveVolume {
 export interface CreatedDriveVolumeResult {
     Volume: DriveVolume;
 }
+
+export interface RestoreDriveVolume {
+    Name: string;
+    SignatureAddress: string;
+    Hash: string;
+    NodePassphrase: string;
+    NodePassphraseSignature: string;
+    TargetVolumeID: string;
+}

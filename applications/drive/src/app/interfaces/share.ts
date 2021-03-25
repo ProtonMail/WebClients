@@ -15,17 +15,7 @@ export interface CreateDriveShare {
 }
 
 export interface UserShareResult {
-    Shares: {
-        ShareID: string;
-        Type: number;
-        LinkID: string;
-        LinkType: LinkType;
-        VolumeID: string;
-        Creator: string;
-        PermissionsMask: 0;
-        Flags: number;
-        BlockSize: number;
-    }[];
+    Shares: ShareMetaShort[];
 }
 
 export interface ShareMetaShort {
@@ -33,11 +23,13 @@ export interface ShareMetaShort {
     Type: number;
     LinkID: string;
     LinkType: LinkType;
+    Locked: boolean;
     VolumeID: string;
     Creator: string;
     PermissionsMask: 0;
     Flags: number;
     BlockSize: number;
+    PossibleKeyPackets?: { KeyPacket: string }[];
 }
 
 export interface ShareMeta extends ShareMetaShort {
@@ -45,6 +37,7 @@ export interface ShareMeta extends ShareMetaShort {
     Passphrase: string;
     PassphraseSignature: string;
     AddressID: string;
+    RootLinkRecoveryPassphrase?: string;
 }
 
 export enum ShareFlags {

@@ -8,10 +8,11 @@ export const queryCreateShare = (volumeID: string, data: CreateDriveShare) => ({
     data,
 });
 
-export const queryUserShares = () => ({
+export const queryUserShares = (ShowAll = 1) => ({
     method: 'get',
     url: 'drive/shares',
     silence: true,
+    params: { ShowAll },
 });
 
 export const queryShareMeta = (shareID: string) => ({
