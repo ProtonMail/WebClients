@@ -201,7 +201,7 @@ const ProtonPlanCustomizer = ({
             <h2 className="text-2xl text-bold">{c('Title').t`${appName} customization`}</h2>
             {service === PLAN_SERVICES.MAIL && planIDs[plansNameMap[PLANS.PLUS].ID] ? (
                 <p>
-                    {c('Info').t`ProtonMail Plus is limited to one user and starts with 5GB of storage.`}
+                    {c('Info').t`ProtonMail Plus is limited to one user and starts with 5 GB of storage.`}
                     <br />
                     {c('Info').jt`Switch to ${professionalPlan} to add more users.`}
                 </p>
@@ -217,7 +217,7 @@ const ProtonPlanCustomizer = ({
             ) : null}
             {service === PLAN_SERVICES.MAIL && planIDs[plansNameMap[PLANS.PROFESSIONAL].ID] ? (
                 <p>{c('Info')
-                    .t`${mailAppName} Professional starts with one user, and each user adds 5GB and 5 email addresses to the organization’s pool.`}</p>
+                    .t`${mailAppName} Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.`}</p>
             ) : null}
             {addonsToShow.map((addonName) => {
                 const addon = plansNameMap[addonName];
