@@ -10,7 +10,7 @@ const CatchAllModal = ({ domain, domainAddresses, onClose, ...rest }) => {
         <FormModal
             onClose={onClose}
             close={c('Action').t`Close`}
-            title={c('Title').t`Catch all address`}
+            title={c('Title').t`Catch-All address`}
             hasSubmit={false}
             {...rest}
         >

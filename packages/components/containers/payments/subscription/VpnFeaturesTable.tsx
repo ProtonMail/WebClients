@@ -72,8 +72,8 @@ const VpnFeaturesTable = ({ cycle, currency }: Props) => {
                 <tr>
                     <td className="scroll-if-needed">{c('Feature').t`Medium speed`}</td>
                     <td className="scroll-if-needed">{c('Feature').t`High speed`}</td>
-                    <td className="scroll-if-needed">{c('Feature').t`Highest speed (up to 10Gbps)`}</td>
-                    <td className="scroll-if-needed">{c('Feature').t`Highest speed (10Gbps)`}</td>
+                    <td className="scroll-if-needed">{c('Feature').t`Highest speed (up to 10 Gbps)`}</td>
+                    <td className="scroll-if-needed">{c('Feature').t`Highest speed (10 Gbps)`}</td>
                 </tr>
                 <tr>
                     <td className="scroll-if-needed">

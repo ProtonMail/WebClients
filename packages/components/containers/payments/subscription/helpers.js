@@ -10,7 +10,7 @@ const { MAIL, VPN } = PLAN_SERVICES;
 const OCTOBER_01 = getUnixTime(new Date('2020-10-01'));
 
 const I18N = {
-    included: c('Option').t`included`,
+    included: c('Option').t`Included`,
     address(value) {
         return c('Option').ngettext(msgid`${value} address`, `${value} addresses`, value);
     },

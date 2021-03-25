@@ -6,7 +6,7 @@ import { Icon } from '../../../components';
 import { CalendarFeature } from './interface';
 import Features from './Features';
 
-const CheckIcon = () => <Icon className="color-primary" name="on" alt={c('Info').t`included`} />;
+const CheckIcon = () => <Icon className="color-primary" name="on" alt={c('Info').t`Included`} />;
 const EmDash = '—';
 
 const getFeatures = (): CalendarFeature[] => {

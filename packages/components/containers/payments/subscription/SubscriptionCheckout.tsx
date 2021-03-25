@@ -8,6 +8,7 @@ import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { getTimeRemaining } from 'proton-shared/lib/date/date';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { Plan, Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from 'proton-shared/lib/interfaces';
+import { getAppName } from 'proton-shared/lib/apps/helper';
 
 import { Time, Info } from '../../../components';
 import { useConfig } from '../../../hooks';
@@ -55,6 +56,9 @@ const SubscriptionCheckout = ({
 }: Props) => {
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
+    const mailAppName = getAppName(APPS.PROTONMAIL);
+    const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
+    const driveAppName = getAppName(APPS.PROTONDRIVE);
     const isUpdating = !!checkResult.Additions; // Additions is present if the user is updating his current configuration by adding add-ons
     const plansMap = toMap(plans);
     const storageAddon = plans.find(({ Name }) => Name === ADDON_NAMES.SPACE);
@@ -198,14 +202,14 @@ const SubscriptionCheckout = ({
             {hasMailPlan ? (
                 printSummary(PLAN_SERVICES.MAIL)
             ) : (
-                <CheckoutRow className="text-bold" title={c('Info').t`ProtonMail Free`} amount={0} />
+                <CheckoutRow className="text-bold" title={c('Info').t`${mailAppName} Free`} amount={0} />
             )}
             {hasVisionary ? null : (
                 <div className="border-top pt0-5">
                     {hasVpnPlan ? (
                         printSummary(PLAN_SERVICES.VPN)
                     ) : (
-                        <CheckoutRow className="text-bold" title={c('Info').t`ProtonVPN Free`} amount={0} />
+                        <CheckoutRow className="text-bold" title={c('Info').t`${vpnAppName} Free`} amount={0} />
                     )}
                 </div>
             )}
@@ -216,7 +220,7 @@ const SubscriptionCheckout = ({
                 hasVpnPlus &&
                 [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle)) ? (
                 <div className="border-top pt0-5">
-                    <CheckoutRow className="text-bold" title={c('Info').t`ProtonDrive`} amount={0} />
+                    <CheckoutRow className="text-bold" title={driveAppName} amount={0} />
                 </div>
             ) : null}
             {checkResult.Amount ? (
@@ -260,7 +264,7 @@ const SubscriptionCheckout = ({
                                         <Info
                                             buttonClass="mb0-5"
                                             title={c('Info')
-                                                .jt`Billed to the end of your current billing cycle (renews ${renewalDate})`}
+                                                .jt`Billed at the end of your current billing cycle (renews on ${renewalDate})`}
                                         />
                                     ) : null}
                                 </>
