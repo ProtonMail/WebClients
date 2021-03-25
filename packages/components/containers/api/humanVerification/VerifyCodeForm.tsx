@@ -66,31 +66,29 @@ const VerifyCodeForm = ({ onSubmit, onNoReceive, verification }: Props) => {
                     }
                 }}
             />
-            <div className="mt1">
-                <Button
-                    size="large"
-                    color="norm"
-                    type="button"
-                    className="w100"
-                    loading={loading}
-                    onClick={() => {
-                        withLoading(handleSubmit()).catch(noop);
-                    }}
-                >{c('Action').t`Verify`}</Button>
-            </div>
-            <div className="mt0-25">
-                <Button
-                    size="large"
-                    color="norm"
-                    type="button"
-                    shape="ghost"
-                    className="w100"
-                    disabled={loading}
-                    onClick={() => {
-                        onNoReceive();
-                    }}
-                >{c('Action').t`Did not receive the code?`}</Button>
-            </div>
+            <Button
+                size="large"
+                color="norm"
+                type="button"
+                fullWidth
+                loading={loading}
+                onClick={() => {
+                    withLoading(handleSubmit()).catch(noop);
+                }}
+                className="mt1-75"
+            >{c('Action').t`Verify`}</Button>
+            <Button
+                size="large"
+                color="norm"
+                type="button"
+                shape="ghost"
+                fullWidth
+                disabled={loading}
+                onClick={() => {
+                    onNoReceive();
+                }}
+                className="mt0-25"
+            >{c('Action').t`Did not receive the code?`}</Button>
         </>
     );
 };

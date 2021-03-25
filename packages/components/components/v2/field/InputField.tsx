@@ -26,6 +26,7 @@ export interface OwnProps {
     bigger?: boolean;
     id?: string;
     error?: ErrorProp;
+    rootClassName?: string;
 }
 
 export type InputFieldProps<E extends React.ElementType> = PolymorphicComponentProps<E, OwnProps>;
@@ -36,14 +37,26 @@ const InputField: <E extends React.ElementType = typeof defaultElement>(
     props: InputFieldProps<E>
 ) => React.ReactElement | null = React.forwardRef(
     <E extends React.ElementType = typeof defaultElement>(
-        { label, hint, assistiveText, disabled, bigger, error, id: idProp, ...rest }: InputFieldProps<E>,
+        {
+            label,
+            hint,
+            assistiveText,
+            disabled,
+            bigger,
+            error,
+            id: idProp,
+            hasBottomMargin,
+            rootClassName,
+            ...rest
+        }: InputFieldProps<E>,
         ref: typeof rest.ref
     ) => {
         const id = useInstance(() => idProp || generateUID());
 
         const classes = {
             root: classnames([
-                'inputform-container w100 mb0-5',
+                'inputform-container w100',
+                rootClassName,
                 disabled && 'inputform-container--disabled',
                 Boolean(error) && 'inputform-container--invalid',
                 bigger && 'inputform-container--bigger',
