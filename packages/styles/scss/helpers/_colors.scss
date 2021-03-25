@@ -7,6 +7,13 @@
 	.bg-#{$color} {
 		background-color: var(--#{$prefix + $color});
 		color: var(--#{$prefix + $color}-contrast);
+
+		a,
+		.link,
+		.button-link,
+		.button-henlo {
+			@extend .color-inherit;
+		}
 	}
 
 	.color-#{$color} {
@@ -32,6 +39,25 @@
 
 .color-inherit {
 	color: inherit;
+
+	&[class*='button-outline'],
+	&[class*='button-ghost'],
+	&.button-link {
+		--button-default-text-color: inherit;
+		--button-default-border-color: currentColor;
+
+		--button-hover-text-color: inherit;
+		--button-hover-border-color: currentColor;
+
+		--button-active-text-color: inherit;
+		--button-active-border-color: currentColor;
+	}
+
+	&[class*='button-outline'] {
+		--button-default-border-color: currentColor;
+		--button-hover-border-color: currentColor;
+		--button-active-border-color: currentColor;
+	}
 
 	&.link {
 		&:hover,
