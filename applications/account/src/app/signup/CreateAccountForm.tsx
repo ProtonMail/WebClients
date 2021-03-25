@@ -21,7 +21,6 @@ import { requiredValidator, emailValidator, confirmPasswordValidator } from 'pro
 
 import { HumanApi } from './helpers/humanApi';
 import InsecureEmailInfo from './InsecureEmailInfo';
-import ButtonSpacer from '../public/ButtonSpacer';
 import { SignupModel } from './interfaces';
 import Loader from './Loader';
 
@@ -191,7 +190,7 @@ const CreateAccountForm = ({
                     innerChallenge
                 )}
                 {hasExternalSignup ? (
-                    <div className="text-center mb1-5">
+                    <div className="text-center">
                         <LinkButton
                             id="existing-email-button"
                             onClick={() => {
@@ -220,8 +219,8 @@ const CreateAccountForm = ({
                     autoComplete="new-password"
                     value={password}
                     onValue={setPassword}
+                    rootClassName="mt0-25"
                 />
-
                 <InputFieldTwo
                     as={PasswordInputTwo}
                     id="repeat-password"
@@ -235,13 +234,12 @@ const CreateAccountForm = ({
                     autoComplete="new-password"
                     value={confirmPassword}
                     onValue={setConfirmPassword}
+                    rootClassName="mt0-25"
                 />
-                <ButtonSpacer>
-                    <Button size="large" color="norm" type="submit" fullWidth loading={loading}>
-                        {c('Action').t`Create account`}
-                    </Button>
-                </ButtonSpacer>
-                <ButtonSpacer mode="text">{c('Info').jt`Already have an account? ${loginLink}`}</ButtonSpacer>
+                <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
+                    {c('Action').t`Create account`}
+                </Button>
+                <div className="text-center mt2">{c('Info').jt`Already have an account? ${loginLink}`}</div>
             </form>
         </>
     );

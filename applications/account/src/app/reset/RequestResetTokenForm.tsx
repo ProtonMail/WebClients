@@ -6,8 +6,6 @@ import { ResetPasswordState, ResetPasswordSetters } from 'react-components/conta
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
 import { noop } from 'proton-shared/lib/helpers/function';
-import ButtonSpacer from '../public/ButtonSpacer';
-import TextSpacer from '../public/TextSpacer';
 
 interface Props {
     onSubmit: () => Promise<void>;
@@ -93,18 +91,16 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, state, setters: state
                 withLoading(onSubmit()).catch(noop);
             }}
         >
-            <TextSpacer>
+            <div className="mb1-75">
                 {!recoveryMethods.length
                     ? c('Info').t`Unfortunately there is no recovery method saved for this account.`
                     : c('Info')
                           .t`Enter the recovery ${recoveryMethodText} associated with your ${BRAND_NAME} Account. We will send you a code to confirm the password reset.`}
-            </TextSpacer>
+            </div>
             <Tabs tabs={tabs} value={tabIndex} onChange={handleChangeIndex} />
-            <ButtonSpacer>
-                <Button size="large" color="norm" type="submit" fullWidth loading={loading}>
-                    {c('Action').t`Send code`}
-                </Button>
-            </ButtonSpacer>
+            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
+                {c('Action').t`Send code`}
+            </Button>
         </form>
     );
 };

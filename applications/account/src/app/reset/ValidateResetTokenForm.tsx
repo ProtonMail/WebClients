@@ -12,8 +12,6 @@ import {
 import { ResetPasswordSetters, ResetPasswordState } from 'react-components/containers/resetPassword/useResetPassword';
 import { BRAND_NAME } from 'proton-shared/lib/constants';
 import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
-import ButtonSpacer from '../public/ButtonSpacer';
-import TextSpacer from '../public/TextSpacer';
 
 interface Props {
     onSubmit: () => Promise<void>;
@@ -95,7 +93,7 @@ const ValidateResetTokenForm = ({ onSubmit, state, setters: stateSetters, onBack
                 );
             }}
         >
-            <TextSpacer>{subTitle}</TextSpacer>
+            <div className="mb1-75">{subTitle}</div>
             <InputFieldTwo
                 id="reset-token"
                 bigger
@@ -106,35 +104,32 @@ const ValidateResetTokenForm = ({ onSubmit, state, setters: stateSetters, onBack
                 onValue={stateSetters.token}
                 autoFocus
             />
-            <ButtonSpacer>
-                <Button size="large" color="norm" type="submit" fullWidth loading={loading}>{c('Action')
-                    .t`Reset password`}</Button>
-            </ButtonSpacer>
+            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">{c('Action')
+                .t`Reset password`}</Button>
             {email || phone ? (
-                <ButtonSpacer mode="secondary">
-                    <Button
-                        size="large"
-                        color="norm"
-                        shape="ghost"
-                        type="button"
-                        fullWidth
-                        disabled={loading}
-                        onClick={() =>
-                            createModal(
-                                <RequestNewCodeModal
-                                    verificationModel={{
-                                        method: email ? 'email' : 'sms',
-                                        value: email || 'phone',
-                                    }}
-                                    onEdit={onBack}
-                                    onResend={onRequest}
-                                    email={email}
-                                    phone={phone}
-                                />
-                            )
-                        }
-                    >{c('Action').t`Didn't receive a code?`}</Button>
-                </ButtonSpacer>
+                <Button
+                    size="large"
+                    color="norm"
+                    shape="ghost"
+                    type="button"
+                    fullWidth
+                    disabled={loading}
+                    onClick={() =>
+                        createModal(
+                            <RequestNewCodeModal
+                                verificationModel={{
+                                    method: email ? 'email' : 'sms',
+                                    value: email || 'phone',
+                                }}
+                                onEdit={onBack}
+                                onResend={onRequest}
+                                email={email}
+                                phone={phone}
+                            />
+                        )
+                    }
+                    className="mt0-25"
+                >{c('Action').t`Didn't receive a code?`}</Button>
             ) : null}
         </form>
     );

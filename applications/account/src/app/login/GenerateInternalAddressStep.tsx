@@ -6,7 +6,6 @@ import { Address, Api } from 'proton-shared/lib/interfaces';
 import Header from '../public/Header';
 import BackButton from '../public/BackButton';
 import Content from '../public/Content';
-import TextSpacer from '../public/TextSpacer';
 import GenerateInternalAddressForm from './GenerateInternalAddressForm';
 import GenerateInternalAddressConfirmForm from './GenerateInternalAddressConfirmForm';
 
@@ -57,10 +56,10 @@ const GenerateInternalAddressStep = ({
                         left={<BackButton onClick={onBack} />}
                     />
                     <Content>
-                        <TextSpacer>
+                        <div className="mb1-75">
                             {c('Info')
                                 .t`Your ${BRAND_NAME} Account is associated with ${externalEmailAddress}. To use ${toAppName}, please create an address.`}
-                        </TextSpacer>
+                        </div>
                         <GenerateInternalAddressForm
                             api={api}
                             defaultUsername={payload?.username}
