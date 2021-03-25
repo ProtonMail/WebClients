@@ -29,10 +29,10 @@ const useBlackFriday = () => {
     const [subscription] = useSubscription();
     const isBlackFridayPeriod = useBlackFridayPeriod();
     const isProductPayerPeriod = useProductPayerPeriod();
-    const { feature, loading: loadingModalState, update: setModalState } = useFeature(
+    const { feature, update: setModalState } = useFeature(
         isFree ? FeatureCode.BlackFridayPromoShown : FeatureCode.BundlePromoShown
     );
-    const modalState = feature?.Value;
+    const modalNotShown = feature?.Value === false;
     const [isEligible, setEligibility] = useState(false);
     const location = useLocation();
     const { createModal } = useModals();
@@ -72,14 +72,14 @@ const useBlackFriday = () => {
     }, [isBlackFridayPeriod, isFree]);
 
     useEffect(() => {
-        if (isDelinquent || loadingModalState) {
+        if (isDelinquent || !feature) {
             return;
         }
         if (
             plans.length &&
             isBlackFridayPeriod &&
             isEligible &&
-            ((!modalState && !hasBlackFridayCoupon) || openBlackFridayModal)
+            ((modalNotShown && !hasBlackFridayCoupon) || openBlackFridayModal)
         ) {
             setModalState(true);
             if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
@@ -88,13 +88,13 @@ const useBlackFriday = () => {
                 createModal(<MailBlackFridayModal plans={plans} subscription={subscription} onSelect={onSelect} />);
             }
         }
-    }, [loadingModalState, isBlackFridayPeriod, isEligible, plans]);
+    }, [feature, isBlackFridayPeriod, isEligible, plans]);
 
     useEffect(() => {
-        if (isDelinquent || loadingModalState) {
+        if (isDelinquent || !feature) {
             return;
         }
-        if (plans.length && isProductPayerPeriod && isProductPayer(subscription) && !modalState) {
+        if (plans.length && isProductPayerPeriod && isProductPayer(subscription) && modalNotShown) {
             setModalState(true);
             if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
                 createModal(<VPNBlackFridayModal plans={plans} subscription={subscription} onSelect={onSelect} />);
@@ -102,7 +102,7 @@ const useBlackFriday = () => {
                 createModal(<MailBlackFridayModal plans={plans} subscription={subscription} onSelect={onSelect} />);
             }
         }
-    }, [loadingModalState, isProductPayerPeriod, subscription, plans]);
+    }, [feature, isProductPayerPeriod, subscription, plans]);
 
     return (
         !loading &&
