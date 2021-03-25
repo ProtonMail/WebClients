@@ -77,7 +77,7 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
                                 url="https://protonmail.com/support-form"
                                 target="_self"
                                 fullWidth
-                                className="mt0-25"
+                                className="mt0-5"
                             >{c('Action').t`Contact support`}</ButtonLike>
                         </form>
                     </Content>
@@ -158,7 +158,7 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
                         }
                     />
                     <Content>
-                        {(error && <div className="mb1-75">{error}</div>) || <GenericError />}
+                        {(error && <div>{error}</div>) || <GenericError />}
                         <Button color="norm" size="large" onClick={handleBack} fullWidth className="mt1-75">{c('Action')
                             .t`Return to login`}</Button>
                         <ButtonLike
@@ -169,7 +169,7 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
                             url="https://protonmail.com/support-form"
                             target="_self"
                             fullWidth
-                            className="mt0-25"
+                            className="mt0-5"
                         >{c('Action').t`Contact support`}</ButtonLike>
                     </Content>
                 </>

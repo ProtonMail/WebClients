@@ -219,7 +219,7 @@ const CreateAccountForm = ({
                     autoComplete="new-password"
                     value={password}
                     onValue={setPassword}
-                    rootClassName="mt0-25"
+                    rootClassName="mt0-5"
                 />
                 <InputFieldTwo
                     as={PasswordInputTwo}
@@ -234,7 +234,7 @@ const CreateAccountForm = ({
                     autoComplete="new-password"
                     value={confirmPassword}
                     onValue={setConfirmPassword}
-                    rootClassName="mt0-25"
+                    rootClassName="mt0-5"
                 />
                 <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
                     {c('Action').t`Create account`}

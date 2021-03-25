@@ -221,7 +221,7 @@ const RecoveryForm = ({ model, onChange, onSubmit, onSkip, defaultCountry }: Pro
                     fullWidth
                     disabled={loading}
                     onClick={handleSkip}
-                    className="mt0-25"
+                    className="mt0-5"
                 >
                     {c('Action').t`Skip`}
                 </Button>
