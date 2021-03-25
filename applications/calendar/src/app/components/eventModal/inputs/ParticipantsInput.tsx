@@ -9,7 +9,7 @@ import {
 import { Address, Recipient } from 'proton-shared/lib/interfaces';
 import { inputToRecipient } from 'proton-shared/lib/mail/recipient';
 import React, { memo, useMemo, useRef } from 'react';
-import { AddressesAutocomplete, Alert } from 'react-components';
+import { AddressesAutocomplete, Alert, Details, Summary } from 'react-components';
 import { c, msgid } from 'ttag';
 import { useContactEmailsCache } from '../../../containers/calendar/ContactEmailsProvider';
 
@@ -151,14 +151,14 @@ const ParticipantsInput = ({
                 </Alert>
             )}
             {value.length > 0 && (
-                <details className="no-border mt0-25" open>
-                    <summary>
+                <Details className="no-border mt0-25" open>
+                    <Summary>
                         {c('Event form').ngettext(
                             msgid`${numberOfParticipants} participant`,
                             `${numberOfParticipants} participants`,
                             numberOfParticipants
                         )}
-                    </summary>
+                    </Summary>
                     <div className="pt0-25">
                         {value.map((participant) => {
                             return (
@@ -172,7 +172,7 @@ const ParticipantsInput = ({
                             );
                         })}
                     </div>
-                </details>
+                </Details>
             )}
             {value.length > 0 && (
                 <div className="pt0-25">
