@@ -237,6 +237,7 @@ function GeneratedLinkState({
                                     <div className="flex-no-min-children flex-justify-end ml0-5 on-mobile-ml0">
                                         <Button
                                             id="copy-password-button"
+                                            disabled={!password}
                                             hidden={!passwordToggledOn}
                                             onClick={handleCopyPasswordClick}
                                             className="min-w7e"
