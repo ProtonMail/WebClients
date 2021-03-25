@@ -8,9 +8,18 @@ import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 
 import { useFolders, useUser, useModals } from '../../../../hooks';
-import { Icon, LabelStack, Button, Alert, Loader, Tooltip, InlineLinkButton } from '../../../../components';
+import {
+    Icon,
+    LabelStack,
+    Button,
+    Alert,
+    Tooltip,
+    InlineLinkButton,
+    FullLoader,
+    TextLoader,
+} from '../../../../components';
 
-import { ImportModalModel, MailImportFolder, TIME_UNIT, DestinationFolder } from '../../interfaces';
+import { ImportModalModel, MailImportFolder, TIME_UNIT, DestinationFolder, IMPORT_ERROR } from '../../interfaces';
 import { timeUnitLabels } from '../../constants';
 import { escapeSlashes, splitEscaped } from '../../helpers';
 
@@ -176,6 +185,9 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
     };
 
     useEffect(() => {
+        if (!modalModel.importID) {
+            return;
+        }
         const Mapping = providerFolders.map((folder) => ({
             Source: folder.Source,
             Destinations: {
@@ -205,10 +217,28 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
         if (initialModel) {
             initialModel.current = newModel;
         }
-    }, []);
+    }, [modalModel.importID]);
 
-    if (foldersLoading || userLoading) {
-        return <Loader />;
+    if (modalModel.errorCode === IMPORT_ERROR.IMAP_CONNECTION_ERROR) {
+        return (
+            <div className="p1 text-center w100 color-danger">
+                <Icon name="attention" size={60} />
+                <div className="mt0-5 mlauto mrauto mb0-5 max-w30e">
+                    {c('Error').t`We were unable to connect to your service provider.`}
+                    <br />
+                    {c('Error').t`Please try to reauthenticate and make sure the permissions are set correctly.`}
+                </div>
+            </div>
+        );
+    }
+
+    if (!modalModel.importID || foldersLoading || userLoading) {
+        return (
+            <div className="p1 text-center w100">
+                <FullLoader size={100} />
+                <TextLoader>{c('Loading info').t`Connecting to your mailbox`}</TextLoader>
+            </div>
+        );
     }
 
     return (

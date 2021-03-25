@@ -3,11 +3,9 @@ import { c } from 'ttag';
 
 import { generateProtonWebUID } from 'proton-shared/lib/helpers/uid';
 
-import useModals from './useModals';
 import useNotifications from './useNotifications';
 
-import { OAUTH_PROVIDER } from '../containers/import/interfaces';
-import ImportMailModal from '../containers/import/modals/ImportMailModal';
+import { OAuthProps, OAUTH_PROVIDER } from '../containers/import/interfaces';
 
 export interface OAuthHookContext {
     getRedirectURL: () => string;
@@ -21,10 +19,12 @@ const INTERVAL = 100;
 
 const useOAuth = ({ getRedirectURL, getAuthorizationUrl }: OAuthHookContext) => {
     const { createNotification } = useNotifications();
-    const { createModal } = useModals();
     const stateId = useRef<string>();
 
-    const triggerOAuthPopup = (provider: OAUTH_PROVIDER) => {
+    const triggerOAuthPopup = (
+        provider: OAUTH_PROVIDER,
+        callback: (oauthProps: OAuthProps) => void | Promise<void>
+    ) => {
         let interval: number;
         const redirectURI = getRedirectURL();
 
@@ -99,7 +99,7 @@ const useOAuth = ({ getRedirectURL, getAuthorizationUrl }: OAuthHookContext) => 
                             return;
                         }
 
-                        createModal(<ImportMailModal oauthProps={{ code, provider, redirectURI }} />);
+                        void callback({ code, provider, redirectURI });
                     }
                 } catch (err) {
                     // silent error
