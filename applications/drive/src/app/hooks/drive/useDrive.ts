@@ -1,5 +1,16 @@
 import { c } from 'ttag';
-import { decryptPrivateKey, OpenPGPKey, encryptMessage } from 'pmcrypto';
+import {
+    concatArrays,
+    decryptMessage,
+    decryptPrivateKey,
+    encryptMessage,
+    getMessage,
+    getSignature,
+    OpenPGPKey,
+    getMatchingKey,
+    VERIFICATION_STATUS,
+} from 'pmcrypto';
+import { format } from 'date-fns';
 
 import { usePreventLeave, useGlobalLoader, useApi, useEventManager } from 'react-components';
 
@@ -7,6 +18,9 @@ import { getEncryptedSessionKey } from 'proton-shared/lib/calendar/encrypt';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from 'proton-shared/lib/helpers/encoding';
 import { chunk } from 'proton-shared/lib/helpers/array';
+import { Address, DecryptedKey } from 'proton-shared/lib/interfaces';
+import { dateLocale } from 'proton-shared/lib/i18n';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import {
     decryptUnsigned,
     generateNodeKeys,
@@ -37,7 +51,7 @@ import {
 } from '../../api/share';
 import { queryDeleteChildrenLinks, queryGetLink } from '../../api/link';
 import { queryCreateFolder, queryFolderChildren } from '../../api/folder';
-import { queryCreateDriveVolume } from '../../api/volume';
+import { queryCreateDriveVolume, queryRestoreDriveVolume } from '../../api/volume';
 import { isPrimaryShare } from '../../utils/share';
 import { decryptPassphrase, getDecryptedSessionKey } from '../../utils/drive/driveCrypto';
 import { validateLinkName, ValidationError } from '../../utils/validation';
@@ -62,7 +76,9 @@ function useDrive() {
     const api = useApi();
     const cache = useDriveCache();
     const queuedFunction = useQueuedFunction();
-    const withGlobalLoader = useGlobalLoader({ text: c('Info').t`Loading folder contents` });
+    const withGlobalLoader = useGlobalLoader({
+        text: c('Info').t`Loading folder contents`,
+    });
     const { getPrimaryAddressKey, getVerificationKey, decryptSharePassphrase } = useDriveCrypto();
     const debouncedRequest = useDebouncedRequest();
     const { preventLeave } = usePreventLeave();
@@ -115,7 +131,11 @@ function useDrive() {
 
         // TODO: get share meta from events when BE implements them
         cache.set.emptyShares([
-            { ShareID: Volume.Share.ID, LinkType: LinkType.FOLDER, Flags: ShareFlags.PrimaryShare },
+            {
+                ShareID: Volume.Share.ID,
+                LinkType: LinkType.FOLDER,
+                Flags: ShareFlags.PrimaryShare,
+            },
         ]);
 
         return Volume;
@@ -130,7 +150,10 @@ function useDrive() {
 
         const { Shares } = await debouncedRequest<UserShareResult>(queryUserShares());
         const shareIds = Shares.map(({ ShareID }) => ShareID);
-        const defaultShare = Shares.find(isPrimaryShare);
+        const defaultShare = Shares.filter((share) => !share.Locked).find(isPrimaryShare);
+        const lockedShares = Shares.filter((share) => share.Locked);
+
+        cache.setLockedShares(lockedShares);
         cache.set.emptyShares(Shares);
 
         if (defaultShare) {
@@ -211,7 +234,10 @@ function useDrive() {
         }
 
         const blockKeys = base64StringToUint8Array(meta.FileProperties.ContentKeyPacket);
-        const sessionKeys = await getDecryptedSessionKey({ data: blockKeys, privateKeys: privateKey });
+        const sessionKeys = await getDecryptedSessionKey({
+            data: blockKeys,
+            privateKeys: privateKey,
+        });
 
         const keys = {
             privateKey,
@@ -231,8 +257,12 @@ function useDrive() {
 
         const Link = config.fetchLinkMeta
             ? await config.fetchLinkMeta(linkId)
-            : (await debouncedRequest<LinkMetaResult>({ ...queryGetLink(shareId, linkId), signal: config.abortSignal }))
-                  .Link;
+            : (
+                  await debouncedRequest<LinkMetaResult>({
+                      ...queryGetLink(shareId, linkId),
+                      signal: config.abortSignal,
+                  })
+              ).Link;
 
         const { privateKey } = Link.ParentLinkID
             ? await getLinkKeys(shareId, Link.ParentLinkID, config)
@@ -502,6 +532,151 @@ function useDrive() {
         }
     };
 
+    const decryptLockedSharePassphrase = async (
+        oldPrivateKey: OpenPGPKey,
+        lockedShareMeta: ShareMeta
+    ): Promise<any> => {
+        if (!lockedShareMeta.PossibleKeyPackets) {
+            return;
+        }
+
+        const keyPacketsAsUnit8Array = concatArrays(
+            lockedShareMeta.PossibleKeyPackets.map(({ KeyPacket }) => base64StringToUint8Array(KeyPacket))
+        );
+        const sessionKey = await getDecryptedSessionKey({
+            data: await getMessage(keyPacketsAsUnit8Array),
+            privateKeys: oldPrivateKey,
+        });
+
+        const { data: decryptedPassphrase, verified } = await decryptMessage({
+            message: await getMessage(lockedShareMeta.Passphrase),
+            signature: await getSignature(lockedShareMeta.PassphraseSignature),
+            sessionKeys: sessionKey,
+            publicKeys: oldPrivateKey.toPublic(),
+        });
+
+        if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+            const error = new Error(c('Error').t`Signature verification failed`);
+            error.name = 'SignatureError';
+            throw error;
+        }
+
+        if (!lockedShareMeta.RootLinkRecoveryPassphrase) {
+            return;
+        }
+
+        const lockedShareKey = await decryptPrivateKey(lockedShareMeta.Key, decryptedPassphrase);
+        const shareSessionKey = await getDecryptedSessionKey({
+            data: await getMessage(lockedShareMeta.RootLinkRecoveryPassphrase),
+            privateKeys: lockedShareKey,
+        });
+        const { data: shareDecryptedPassphrase } = await decryptMessage({
+            message: await getMessage(lockedShareMeta.RootLinkRecoveryPassphrase),
+            sessionKeys: shareSessionKey,
+            publicKeys: lockedShareKey.toPublic(),
+        });
+
+        return shareDecryptedPassphrase;
+    };
+
+    const getSharesReadyToRestore = async (possibleKeys: DecryptedKey[], lockedShareIds: string[]) => {
+        if (!possibleKeys.length) {
+            return [];
+        }
+        const privateKeys = possibleKeys.map(({ privateKey }) => privateKey);
+
+        const lockedShareMetaPromises = lockedShareIds.map((shareId) =>
+            debouncedRequest<ShareMeta>(queryShareMeta(shareId))
+        );
+        const lockedShareMetaList = await Promise.all(lockedShareMetaPromises);
+
+        const decryptionPromises = lockedShareMetaList.map(async (meta) => {
+            try {
+                const signature = await getSignature(meta.PassphraseSignature);
+                const matchingPrivateKey = await getMatchingKey(signature, privateKeys);
+
+                if (matchingPrivateKey) {
+                    const decryptedPassphrase = await decryptLockedSharePassphrase(matchingPrivateKey, meta);
+                    if (decryptedPassphrase) {
+                        return { lockedShareMeta: meta, decryptedPassphrase };
+                    }
+                }
+            } catch {
+                return undefined;
+            }
+        });
+        return (await Promise.all(decryptionPromises)).filter(isTruthy);
+    };
+
+    const restoreVolume = async (
+        parentVolumeID: string,
+        parentKeys: LinkKeys,
+        addressKey: OpenPGPKey,
+        address: Address,
+        lockedSahareMeta: ShareMeta,
+        lockedSharePassphraseRaw: string
+    ) => {
+        if (!('hashKey' in parentKeys)) {
+            throw new Error('Missing hash key on folder link');
+        }
+
+        const formattedDate = format(new Date(), 'Pp', { locale: dateLocale });
+        const restoreFolderName = `Restored files ${formattedDate}`;
+
+        const [Hash, { NodePassphrase, NodePassphraseSignature }, { data: encryptedName }] = await Promise.all([
+            generateLookupHash(restoreFolderName, parentKeys.hashKey),
+            encryptPassphrase(parentKeys.privateKey, addressKey, lockedSharePassphraseRaw),
+            encryptMessage({
+                data: restoreFolderName,
+                publicKeys: parentKeys.privateKey.toPublic(),
+                privateKeys: addressKey,
+            }),
+        ]);
+
+        const data = {
+            Name: encryptedName,
+            SignatureAddress: address.Email,
+            Hash,
+            NodePassphrase,
+            NodePassphraseSignature,
+            TargetVolumeID: parentVolumeID,
+        };
+
+        await debouncedRequest(queryRestoreDriveVolume(lockedSahareMeta.VolumeID, data));
+    };
+
+    const restoreVolumes = async (
+        readyToRestoreList: {
+            lockedShareMeta: ShareMeta;
+            decryptedPassphrase: string;
+        }[]
+    ) => {
+        const parentShareId = cache.defaultShare;
+        if (!parentShareId || !readyToRestoreList.length) {
+            return;
+        }
+
+        const parentShareMeta = await getShareMeta(parentShareId);
+        const [parentKeys, { privateKey: addressKey, address }] = await Promise.all([
+            getLinkKeys(parentShareMeta.ShareID, parentShareMeta.LinkID),
+            getPrimaryAddressKey(),
+        ]);
+
+        // TODO: Right now BE can process only one request at the time.
+        // Remove first item selection, when BE will support multiple volums restore at the same time.
+        const restorePromiseList = [readyToRestoreList[0]].map(({ lockedShareMeta, decryptedPassphrase }) =>
+            restoreVolume(
+                parentShareMeta.VolumeID,
+                parentKeys,
+                addressKey,
+                address,
+                lockedShareMeta,
+                decryptedPassphrase
+            )
+        );
+        Promise.all([restorePromiseList]);
+    };
+
     const createShare = async (shareId: string, volumeId: string, linkId: string) => {
         const linkType = LinkType.FILE;
         const name = 'New Share';
@@ -605,7 +780,7 @@ function useDrive() {
             };
 
             const actions = Events.reduce(
-                (actions, { EventType, Link }) => {
+                (actions, { EventType, Data, Link }) => {
                     if (EventType === DELETE) {
                         actions.delete.push(Link.LinkID);
                         return actions;
@@ -622,6 +797,15 @@ function useDrive() {
                             ...(actions.create[Link.ParentLinkID] ?? []),
                             decryptedLinkPromise,
                         ];
+
+                        if (Data?.FLAG_RESTORE_COMPLETE) {
+                            // Updates locked shares and fetch content of restored folder
+                            debouncedRequest<UserShareResult>(queryUserShares()).then(({ Shares }) => {
+                                const lockedShares = Shares.filter((share) => share.Locked);
+                                cache.setLockedShares(lockedShares);
+                            });
+                            fetchNextFolderContents(shareId, Link.LinkID);
+                        }
                     }
 
                     if (EventType === UPDATE_METADATA) {
@@ -705,6 +889,8 @@ function useDrive() {
         moveLink,
         moveLinks,
         deleteChildrenLinks,
+        getSharesReadyToRestore,
+        restoreVolumes,
         events,
     };
 }

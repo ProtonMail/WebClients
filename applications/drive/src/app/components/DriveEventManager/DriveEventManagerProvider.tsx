@@ -8,6 +8,7 @@ import { EVENT_TYPES } from '../../constants';
 
 export interface ShareEvent {
     EventType: EVENT_TYPES;
+    Data: any;
     Link: LinkMeta;
 }
 
