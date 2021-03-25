@@ -21,8 +21,6 @@ import {
 } from 'react-components';
 import { ChallengeRef, ChallengeResult } from 'react-components/components/challenge/ChallengeFrame';
 import { SignupModel, SIGNUP_STEPS } from './interfaces';
-import ButtonSpacer from '../public/ButtonSpacer';
-import TextSpacer from '../public/TextSpacer';
 import Loader from './Loader';
 
 const { RECOVERY_EMAIL, RECOVERY_PHONE } = SIGNUP_STEPS;
@@ -132,10 +130,10 @@ const RecoveryForm = ({ model, onChange, onSubmit, onSkip, defaultCountry }: Pro
                             title: c('Label').t`Email`,
                             content: (
                                 <>
-                                    <TextSpacer>
+                                    <div className="mb1-75">
                                         {c('Info')
                                             .t`We will send you a recovery link to this email address if you forget your password or get locked out of your account.`}
-                                    </TextSpacer>
+                                    </div>
                                 </>
                             ),
                         },
@@ -143,10 +141,10 @@ const RecoveryForm = ({ model, onChange, onSubmit, onSkip, defaultCountry }: Pro
                             title: c('Label').t`Phone`,
                             content: (
                                 <>
-                                    <TextSpacer>
+                                    <div className="mb1-75">
                                         {c('Info')
                                             .t`We will send a code to this phone number if you forget your password or get locked out of your account.`}
-                                    </TextSpacer>
+                                    </div>
                                     <InputFieldTwo
                                         as={PhoneInput}
                                         id="recovery-phone"
@@ -212,24 +210,21 @@ const RecoveryForm = ({ model, onChange, onSubmit, onSkip, defaultCountry }: Pro
                         }}
                     />
                 </Challenge>
-                <ButtonSpacer>
-                    <Button size="large" color="norm" type="submit" fullWidth loading={loading}>
-                        {c('Action').t`Next`}
-                    </Button>
-                </ButtonSpacer>
-                <ButtonSpacer mode="secondary">
-                    <Button
-                        size="large"
-                        color="norm"
-                        shape="ghost"
-                        type="button"
-                        fullWidth
-                        disabled={loading}
-                        onClick={handleSkip}
-                    >
-                        {c('Action').t`Skip`}
-                    </Button>
-                </ButtonSpacer>
+                <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
+                    {c('Action').t`Next`}
+                </Button>
+                <Button
+                    size="large"
+                    color="norm"
+                    shape="ghost"
+                    type="button"
+                    fullWidth
+                    disabled={loading}
+                    onClick={handleSkip}
+                    className="mt0-25"
+                >
+                    {c('Action').t`Skip`}
+                </Button>
             </form>
         </>
     );
