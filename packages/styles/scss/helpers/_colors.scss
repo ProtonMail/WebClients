@@ -44,13 +44,8 @@
 	&[class*='button-ghost'],
 	&.button-link {
 		--button-default-text-color: inherit;
-		--button-default-border-color: currentColor;
-
 		--button-hover-text-color: inherit;
-		--button-hover-border-color: currentColor;
-
 		--button-active-text-color: inherit;
-		--button-active-border-color: currentColor;
 	}
 
 	&[class*='button-outline'] {
