@@ -2,9 +2,11 @@ import React, { useMemo } from 'react';
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
-import { resumeMailImport, cancelMailImport } from 'proton-shared/lib/api/mailImport';
+import { resumeMailImport, cancelMailImport, updateMailImport } from 'proton-shared/lib/api/mailImport';
 
 import { useApi, useLoading, useNotifications, useEventManager, useModals, useImporters } from '../../hooks';
+import useOAuthPopup from '../../hooks/useOAuthPopup';
+
 import {
     Loader,
     Alert,
@@ -21,7 +23,15 @@ import {
     Href,
 } from '../../components';
 
-import { Importer, ImportMailStatus, ImportMailError } from './interfaces';
+import { getOAuthRedirectURL as getRedirectURL, getOAuthAuthorizationUrl } from './helpers';
+import {
+    OAuthProps,
+    OAUTH_PROVIDER,
+    Importer,
+    ImportMailStatus,
+    ImportMailError,
+    AuthenticationMethod,
+} from './interfaces';
 import ImportMailModal from './modals/ImportMailModal';
 
 interface RowActionsProps {
@@ -29,7 +39,7 @@ interface RowActionsProps {
 }
 
 const RowActions = ({ currentImport }: RowActionsProps) => {
-    const { ID, Active } = currentImport;
+    const { ID, Active, Email, ImapHost, ImapPort, Sasl } = currentImport;
     const { State, ErrorCode } = Active || {};
     const api = useApi();
     const { call } = useEventManager();
@@ -42,6 +52,28 @@ const RowActions = ({ currentImport }: RowActionsProps) => {
         await api(resumeMailImport(importID));
         await call();
         createNotification({ text: c('Success').t`Import resumed` });
+    };
+
+    const { triggerOAuthPopup } = useOAuthPopup({
+        getRedirectURL,
+        getAuthorizationUrl: () => getOAuthAuthorizationUrl(Email),
+    });
+
+    const handleReconnectOAuth = async () => {
+        triggerOAuthPopup(OAUTH_PROVIDER.GMAIL, async (oauthProps: OAuthProps) => {
+            await api(
+                updateMailImport(ID, {
+                    Code: oauthProps.code,
+                    ImapHost,
+                    ImapPort,
+                    Sasl: AuthenticationMethod.OAUTH,
+                    RedirectUri: oauthProps?.redirectURI,
+                })
+            );
+            await api(resumeMailImport(ID));
+            await call();
+            /* @todo success notifications? */
+        });
     };
 
     const handleReconnect = async () => {
@@ -79,7 +111,9 @@ const RowActions = ({ currentImport }: RowActionsProps) => {
             text: isAuthError ? c('Action').t`Reconnect` : c('Action').t`Resume`,
             onClick: () => {
                 if (isAuthError) {
-                    return withLoadingSecondaryAction(handleReconnect());
+                    return withLoadingSecondaryAction(
+                        Sasl === AuthenticationMethod.OAUTH ? handleReconnectOAuth() : handleReconnect()
+                    );
                 }
 
                 return withLoadingSecondaryAction(handleResume(ID));
@@ -212,7 +246,9 @@ const CurrentImportsSection = () => {
                             const percentage = (processed * 100) / total;
                             const percentageValue = Number.isNaN(percentage) ? 0 : Math.floor(percentage);
 
-                            let badge = <Badge>{c('Import status').t`${percentageValue}% processed`}</Badge>;
+                            let badge = (
+                                <Badge type="primary">{c('Import status').t`${percentageValue}% processed`}</Badge>
+                            );
 
                             if (State === ImportMailStatus.PAUSED) {
                                 badge = (
@@ -234,7 +270,7 @@ const CurrentImportsSection = () => {
                             }
 
                             if (State === ImportMailStatus.QUEUED) {
-                                badge = <Badge>{c('Import status').t`Started`}</Badge>;
+                                badge = <Badge type="primary">{c('Import status').t`Started`}</Badge>;
                             }
 
                             if (State === ImportMailStatus.CANCELED) {
