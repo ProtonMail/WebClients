@@ -13,10 +13,11 @@ interface Props<T> {
     methods: HumanVerificationMethodType[];
     onSuccess: (data: T) => void;
     onVerify: (token: string, tokenType: HumanVerificationMethodType) => Promise<T>;
+    onError: (error: any) => void;
     [key: string]: any;
 }
 
-const HumanVerificationModal = <T,>({ token, methods = [], onSuccess, onVerify, ...rest }: Props<T>) => {
+const HumanVerificationModal = <T,>({ token, methods = [], onSuccess, onVerify, onError, ...rest }: Props<T>) => {
     const title = c('Title').t`Human verification`;
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -41,7 +42,9 @@ const HumanVerificationModal = <T,>({ token, methods = [], onSuccess, onVerify, 
             // Captcha is just given one attempt, and if the resubmitted request did not give invalid token,
             // it probably means the verification succeeded, but the original request failed. So then we error out.
             if (tokenType === 'captcha' || Code !== API_CUSTOM_ERROR_CODES.TOKEN_INVALID) {
+                onError(error);
                 rest.onClose();
+                return;
             }
 
             throw error;

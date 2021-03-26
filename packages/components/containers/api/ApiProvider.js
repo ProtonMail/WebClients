@@ -118,9 +118,10 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
                     <HumanVerificationModal
                         token={token}
                         methods={methods}
-                        onClose={() => reject(CancelVerificationError())}
                         onVerify={onVerify}
                         onSuccess={resolve}
+                        onError={reject}
+                        onClose={() => reject(CancelVerificationError())}
                     />
                 );
             });
