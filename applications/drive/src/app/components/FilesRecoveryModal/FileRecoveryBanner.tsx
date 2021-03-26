@@ -16,7 +16,12 @@ const FileRecoveryBanner = ({ onClose }: Props) => {
     const { createModal } = useModals();
 
     const mailSettingsLink = (
-        <AppLink to="/settings/security#addresses" toApp={APPS.PROTONMAIL} target="_blank">{c('Info').t`More`}</AppLink>
+        <AppLink
+            key="link-to-mail-settings"
+            to="/settings/security#addresses"
+            toApp={APPS.PROTONMAIL}
+            target="_blank"
+        >{c('Info').t`More`}</AppLink>
     );
 
     const startRecoveryButton = (
