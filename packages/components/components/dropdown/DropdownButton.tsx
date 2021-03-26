@@ -3,6 +3,7 @@ import { classnames } from '../../helpers';
 import Button from '../button/Button';
 import DropdownCaret from './DropdownCaret';
 import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
+import { CircleLoader } from '../loader';
 
 export interface OwnProps {
     loading?: boolean;
@@ -43,6 +44,11 @@ export const DropdownButton: <E extends React.ElementType = typeof defaultElemen
                 {...rest}
             >
                 {children}
+                {loading && (
+                    <span className="loader-container">
+                        <CircleLoader />
+                    </span>
+                )}
                 {hasCaret && (
                     <DropdownCaret
                         className={classnames(['flex-item-noshrink', children ? 'ml0-5' : '', caretClassName])}
