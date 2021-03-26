@@ -1,7 +1,9 @@
 import React from 'react';
+import { c } from 'ttag';
 
 import { classnames } from '../../helpers';
 import Icon from '../../components/icon/Icon';
+import { Button } from '../../components';
 
 interface Props {
     children: React.ReactNode;
@@ -11,12 +13,18 @@ interface Props {
 
 const TopBanner = ({ children, className, onClose }: Props) => {
     return (
-        <div className={classnames(['text-center p0-5 relative text-bold', className])}>
-            {children}
+        <div className={classnames(['flex flex-nowrap text-center relative text-bold', className])}>
+            <div className="flex-item-fluid p0-5">{children}</div>
             {onClose ? (
-                <button type="button" className="float-right" onClick={onClose}>
-                    <Icon name="off" />
-                </button>
+                <Button
+                    icon
+                    shape="ghost"
+                    className="flex-item-noshrink"
+                    onClick={onClose}
+                    title={c('Action').t`Close this banner`}
+                >
+                    <Icon name="off" alt={c('Action').t`Close this banner`} />
+                </Button>
             ) : null}
         </div>
     );
