@@ -2,7 +2,7 @@ import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { attachmentsSize } from 'proton-shared/lib/mail/messages';
 import React, { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
-import { Icon, classnames } from 'react-components';
+import { Icon, classnames, CircleLoader } from 'react-components';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { diff } from 'proton-shared/lib/helpers/array';
 
@@ -187,14 +187,13 @@ const AttachmentList = ({
                         <button
                             type="button"
                             onClick={handleDownloadAll}
-                            className="link text-strong mr0-5"
+                            className="link text-strong"
                             disabled={!message.initialized}
                         >
                             {c('Download attachments').t`Download all`}
                         </button>
-                        {(showInstant || showLoader) && (
-                            <Icon name={showInstant ? 'download' : ''} aria-busy={showLoader} />
-                        )}
+                        {showInstant && <Icon className="ml0-5" name="download" />}
+                        {showLoader && <CircleLoader className="icon-16p ml0-5" />}
                     </div>
                 )}
             </div>
