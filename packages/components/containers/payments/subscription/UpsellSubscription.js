@@ -5,7 +5,7 @@ import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES, PLANS } from 'proton-sh
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { c } from 'ttag';
 
-import { PrimaryButton, Loader } from '../../../components';
+import { Card, PrimaryButton, Loader } from '../../../components';
 import { useUser, useSubscription, useModals, usePlans, useAddresses, useOrganization } from '../../../hooks';
 import SubscriptionModal from './SubscriptionModal';
 import { SUBSCRIPTION_STEPS } from './constants';
@@ -117,13 +117,13 @@ const UpsellSubscription = () => {
         .filter(Boolean)
         .map(({ title = '', description = '', upgradeButton }, index) => {
             return (
-                <div className="p1 bordered bg-weak mb1" key={index}>
+                <Card className="mb1" key={index}>
                     <strong className="block mb1">{title}</strong>
                     <div className="flex flex-nowrap flex-align-items-center">
                         <p className="flex-item-fluid mt0 mb0 pr2">{description}</p>
                         {upgradeButton}
                     </div>
-                </div>
+                </Card>
             );
         });
 };
