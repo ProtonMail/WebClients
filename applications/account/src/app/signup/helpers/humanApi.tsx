@@ -62,12 +62,13 @@ const humanApiHelper = <T,>(
         const handleVerification = ({ token, methods, onVerify }: any): Promise<T> => {
             return new Promise((resolve, reject) => {
                 createModal(
-                    <HumanVerificationModal
+                    <HumanVerificationModal<T>
                         token={token}
                         methods={methods}
-                        onClose={() => reject(error)}
                         onVerify={onVerify}
                         onSuccess={resolve}
+                        onError={reject}
+                        onClose={() => reject(error)}
                     />
                 );
             });
