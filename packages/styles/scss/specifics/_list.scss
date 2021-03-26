@@ -53,14 +53,10 @@ $item-container-row-height-compact-mode: 4rem !default;
 	padding: $item-container-padding-top-bottom
 		$item-container-padding-left-right; // design wants ~64 height
 	border-bottom: 1px solid var(--border-weak);
-	background-color: var(
-		--email-item-read-background-color,
-		var(--background-weak)
-	);
-	color: var(--email-item-read-text-color, var(--text-norm));
+	color: var(--text-norm);
+	transition: 0.15s easing(easeOutQuint);
 
-	&::after,
-	&::before {
+	&::after {
 		content: '';
 		position: absolute;
 		top: 0;
@@ -70,32 +66,61 @@ $item-container-row-height-compact-mode: 4rem !default;
 		z-index: 1;
 		pointer-events: none;
 		transition: 0.15s easing(easeOutQuart);
-	}
-
-	&::before {
-		border: 1px solid transparent;
-	}
-
-	&::after {
-		border-left: 4px solid transparent;
+		border-left: 5px solid transparent;
 	}
 
 	&:focus {
 		outline: none;
 	}
 
-	&:focus::after,
-	&.item-is-focused::after {
-		border-left: 4px solid
-			var(--email-item-marker-color, var(--interaction-norm));
+	&.read {
+		background-color: var(
+			--email-item-read-background-color,
+			var(--background-weak)
+		);
+
+		.item-senddate-col,
+		.item-senddate-row,
+		.item-weight,
+		.item-subject {
+			color: var(--text-weak);
+		}
 	}
 
-	&:hover::before {
-		border-color: var(
-			--email-item-hover-border-color,
+	&.unread {
+		background-color: var(
+			--email-item-unread-background-color,
+			var(--background-norm)
+		);
+
+		.item-senders,
+		.item-senddate-col,
+		.item-senddate-row,
+		.item-weight,
+		.item-subject {
+			font-weight: $font-weight-bold;
+		}
+	}
+
+	&:hover::after {
+		box-shadow: var(--shadow-norm);
+	}
+
+	&:focus::after,
+	&.item-is-focused::after {
+		border-left-color: var(
+			--email-item-focus-marker-color,
 			var(--interaction-norm)
 		);
-		box-shadow: var(--box-shadow-norm);
+	}
+
+	&.item-is-selected,
+	// alias for Angular
+	&.item-container.active {
+		background-color: var(
+			--email-item-selected-background-color,
+			var(--background-strong)
+		);
 	}
 }
 
@@ -122,7 +147,8 @@ $item-container-row-height-compact-mode: 4rem !default;
 
 .item-firstline,
 .item-secondline {
-	margin-bottom: 0.25em;
+	height: em(20);
+	line-height: calc(20 * 1.5 / 21);
 }
 
 .item-secondline:empty {
@@ -132,6 +158,14 @@ $item-container-row-height-compact-mode: 4rem !default;
 /* Compact view */
 .is-shown-when-compact {
 	display: none;
+}
+
+.item-senddate-col {
+	font-size: em(12);
+}
+
+.item-subject {
+	font-size: em(13);
 }
 
 .is-compact {
@@ -166,25 +200,6 @@ $item-container-row-height-compact-mode: 4rem !default;
 	.is-shown-when-compact {
 		display: flex;
 	}
-}
-
-.item-is-selected,
-.item-container.active {
-	// alias for Angular
-	background-color: var(
-		--email-item-selected-background-color,
-		var(--background-norm)
-	);
-	color: var(--email-item-selected-text-color, var(--text-norm));
-}
-
-.item-container:not(.item-is-selected):not(.read):not(.active),
-.item-container-row:not(.item-is-selected):not(.read):not(.active) {
-	background-color: var(
-		--email-item-unread-background-color,
-		var(--background-norm)
-	);
-	color: var(--email-item-unread-text-color, var(--text-norm));
 }
 
 .item-is-loading {
@@ -404,15 +419,11 @@ $item-container-row-height-compact-mode: 4rem !default;
 .starbutton {
 	width: 1.6rem;
 	height: 1.6rem;
-	opacity: 0.5;
+	color: var(--text-weak);
 
 	&:focus,
 	&:hover {
-		color: var(
-			--favorite-icon-color,
-			var(--signal-warning)
-		); // Probably not the right color :/
-		opacity: 1;
+		color: var(--favorite-icon-color, orange);
 	}
 
 	[class*='starbutton-icon'] {
@@ -428,11 +439,7 @@ $item-container-row-height-compact-mode: 4rem !default;
 }
 
 .starbutton--is-starred {
-	opacity: 1;
-	color: var(
-		--favorite-icon-color,
-		var(--signal-warning)
-	); // Probably not the right color :/
+	color: var(--favorite-icon-color, orange);
 
 	.starbutton-icon-starred {
 		transform: scale(1);
