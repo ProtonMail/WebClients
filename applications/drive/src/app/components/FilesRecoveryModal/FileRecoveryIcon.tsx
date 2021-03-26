@@ -21,23 +21,30 @@ const FileRecoveryIcon = ({ className }: Props) => {
     const { createModal } = useModals();
 
     const getReadyToRestoreData = useCallback(
-        (address: Address, keys: DecryptedKey[]) => {
-            const nonPrimaryKeys = address.Keys.filter((key) => key.Primary === 0)
-                .map((nonPrimaryKey) => keys.find((key) => key.ID === nonPrimaryKey.ID))
-                .filter(isTruthy);
-            const lockedShareIds = cache.lockedShares.map(({ ShareID }) => ShareID);
+        (
+            addressesKeys: {
+                address: Address;
+                keys: DecryptedKey[];
+            }[]
+        ) => {
+            const possibleKeys = addressesKeys.reduce((result: DecryptedKey[], { address, keys }) => {
+                return [
+                    ...result,
+                    ...address.Keys.map((nonPrimaryKey) => keys.find((key) => key.ID === nonPrimaryKey.ID)).filter(
+                        isTruthy
+                    ),
+                ];
+            }, []);
 
-            getSharesReadyToRestore(nonPrimaryKeys, lockedShareIds).then(cache.setSharesReadyToRestore);
+            const lockedShareIds = cache.lockedShares.map(({ ShareID }) => ShareID);
+            getSharesReadyToRestore(possibleKeys, lockedShareIds).then(cache.setSharesReadyToRestore);
         },
         [cache.lockedShares]
     );
 
     useEffect(() => {
         if (addressesKeys) {
-            const userAddress = addressesKeys.find(({ address }) => address.Email === User.Email);
-            if (userAddress) {
-                getReadyToRestoreData(userAddress.address, userAddress.keys);
-            }
+            getReadyToRestoreData(addressesKeys);
         }
     }, [User.Email, addressesKeys, getReadyToRestoreData]);
 
