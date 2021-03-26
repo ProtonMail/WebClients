@@ -9,7 +9,7 @@ interface Props {
 const PublicHeader2 = ({ action }: Props) => (
     <header className="flex-item-noshrink flex flex-align-items-center no-print mb2">
         <div className="no-mobile flex-item-fluid">
-            <span className="opacity-50">{c('Label').t`Back to:`}</span>{' '}
+            <span className="color-weak">{c('Label').t`Back to:`}</span>{' '}
             <Href
                 url="https://protonvpn.com"
                 className="inline-block text-no-decoration hover-same-color"
