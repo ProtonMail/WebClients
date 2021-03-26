@@ -17,20 +17,10 @@ const TopNavbarListItemButton: <E extends React.ElementType = typeof defaultElem
     props: TopNavbarListItemButtonProps<E>
 ) => React.ReactElement | null = React.forwardRef(
     <E extends React.ElementType = typeof defaultElement>(
-        {
-            loading = false,
-            text,
-            icon,
-            disabled,
-            className,
-            hasRedDot,
-            tabIndex,
-            children,
-            ...rest
-        }: TopNavbarListItemButtonProps<E>,
+        { text, icon, disabled, className, hasRedDot, tabIndex, children, ...rest }: TopNavbarListItemButtonProps<E>,
         ref: typeof rest.ref
     ) => {
-        const isDisabled = loading || disabled;
+        const isDisabled = disabled;
 
         return (
             <Box
@@ -41,7 +31,6 @@ const TopNavbarListItemButton: <E extends React.ElementType = typeof defaultElem
                 ])}
                 disabled={isDisabled}
                 tabIndex={isDisabled ? -1 : tabIndex}
-                aria-busy={loading}
                 ref={ref}
                 {...rest}
             >

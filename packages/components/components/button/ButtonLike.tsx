@@ -2,6 +2,7 @@ import React from 'react';
 
 import { classnames } from '../../helpers';
 import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
+import { CircleLoader } from '../loader';
 
 type Shape = 'solid' | 'outline' | 'ghost' | 'link';
 
@@ -66,7 +67,7 @@ const ButtonLike: <E extends React.ElementType = typeof defaultElement>(
 
         const buttonClassName = classnames([
             shape === 'link' ? 'button-link' : 'button-henlo',
-            pill && 'button--pill',
+            pill && 'button-pill',
             icon && 'button-for-icon',
             group && 'grouped-button',
             size !== 'medium' && `button-${size}`,
@@ -90,6 +91,11 @@ const ButtonLike: <E extends React.ElementType = typeof defaultElement>(
                 {...restProps}
             >
                 {children}
+                {loading && (
+                    <span className="loader-container">
+                        <CircleLoader />
+                    </span>
+                )}
             </Box>
         );
     }
