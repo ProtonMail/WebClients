@@ -1,21 +1,14 @@
 import React, { useState } from 'react';
 import {
-    PrimaryButton,
     Button,
-    ButtonProps,
-    ErrorButton,
-    WarningButton,
-    LinkButton,
-    LargeButton,
-    SmallButton,
-    Group,
-    ButtonGroup,
     Table,
     TableHeader,
     TableRow,
     TableCell,
     TableBody,
     RadioGroup,
+    ButtonLike,
+    Checkbox,
 } from 'react-components';
 
 import mdx from './Button.mdx';
@@ -34,11 +27,15 @@ export const Basic = ({ ...args }) => <Button {...args}>Loremium</Button>;
 
 Basic.args = {};
 
+type ButtonProps = React.ComponentProps<typeof Button>;
+
 const shapes: Required<ButtonProps>['shape'][] = ['solid', 'outline', 'ghost'];
 
 const colors: Required<ButtonProps>['color'][] = ['norm', 'weak', 'danger', 'warning', 'success', 'info'];
 
 const sizes: Required<ButtonProps>['size'][] = ['small', 'medium', 'large'];
+
+const toggles = ['loading', 'pill', 'fullWidth'] as const;
 
 const buttonContainerClassName = 'flex flex-item-fluid flex-align-items-center flex-justify-center bordered-container';
 
@@ -46,9 +43,18 @@ export const Sandbox = () => {
     const [selectedShape, setSelectedShape] = useState<Required<ButtonProps>['shape']>('solid');
     const [selectedColor, setSelectedColor] = useState<Required<ButtonProps>['color']>('weak');
     const [selectedSize, setSelectedSize] = useState<Required<ButtonProps>['size']>('medium');
+    const [selectedToggles, setSelectedToggles] = useState(toggles.map(() => false));
 
     const button = (
-        <Button shape={selectedShape} color={selectedColor} size={selectedSize}>
+        <Button
+            shape={selectedShape}
+            color={selectedColor}
+            size={selectedSize}
+            {...selectedToggles.reduce((acc, value, i) => {
+                acc[toggles[i]] = value;
+                return acc;
+            }, {})}
+        >
             {selectedShape} {selectedColor} {selectedSize}
         </Button>
     );
@@ -82,6 +88,27 @@ export const Sandbox = () => {
                         value={selectedSize}
                         options={sizes.map((size) => ({ value: size, label: size }))}
                     />
+                </div>
+                <div>
+                    <strong className="block mb1">Toggles</strong>
+                    {toggles.map((prop, i) => {
+                        return (
+                            <div className="mb0-5">
+                                <Checkbox
+                                    checked={selectedToggles[i]}
+                                    onChange={({ target: { checked } }) => {
+                                        setSelectedToggles(
+                                            selectedToggles.map((oldValue, otherIndex) =>
+                                                otherIndex === i ? checked : oldValue
+                                            )
+                                        );
+                                    }}
+                                >
+                                    {prop}
+                                </Checkbox>
+                            </div>
+                        );
+                    })}
                 </div>
                 <div className={buttonContainerClassName}>{button}</div>
             </div>
@@ -122,52 +149,20 @@ export const Variants = () => {
     );
 };
 
-export const Legacy = () => {
-    const [pokemon, setPokemon] = useState('Bulbasaur');
+const Component = (props: any) => {
+    return <div {...props}>Component</div>;
+};
 
+export const Like = () => {
     return (
         <div>
-            <div className="mb2">
-                <Button className="mr1">Button</Button>
-                <Button className="button--primaryborder mr1">Button</Button>
-                <Button className="button--pill mr1">Button</Button>
-                <PrimaryButton className="mr1">Button</PrimaryButton>
-                <ErrorButton className="mr1">Button</ErrorButton>
-                <WarningButton className="mr1">Button</WarningButton>
-                <LinkButton>Button link</LinkButton>
-            </div>
-            <div className="mb2">
-                <SmallButton className="mr1">Small</SmallButton>
-                <Button className="mr1">Normal</Button>
-                <LargeButton>Large</LargeButton>
-            </div>
-            <div className="mb2">
-                <Group>
-                    <ButtonGroup
-                        className={pokemon === 'Bulbasaur' ? 'is-active' : ''}
-                        onClick={() => setPokemon('Bulbasaur')}
-                    >
-                        Bulbasaur
-                    </ButtonGroup>
-                    <ButtonGroup
-                        className={pokemon === 'Charmander' ? 'is-active' : ''}
-                        onClick={() => setPokemon('Charmander')}
-                    >
-                        Charmander
-                    </ButtonGroup>
-                    <ButtonGroup
-                        className={pokemon === 'Squirtle' ? 'is-active' : ''}
-                        onClick={() => setPokemon('Squirtle')}
-                    >
-                        Squirtle
-                    </ButtonGroup>
-                </Group>
-            </div>
-            <div className="mb2">
-                <Button disabled>Button</Button>
-            </div>
             <div>
-                <Button loading>Button</Button>
+                <ButtonLike as="a" shape="outline" color="norm" href="https://protonmail.com">
+                    Link
+                </ButtonLike>
+            </div>
+            <div className="mt1">
+                <ButtonLike as={Component} color="danger" className="mb1" />
             </div>
         </div>
     );

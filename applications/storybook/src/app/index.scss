@@ -45,11 +45,9 @@ body {
 	right: 0;
 	padding: 0 0.5em 0 0;
 	font-size: 2em;
-	color: $pm-global-warning;
 }
 .icon-ok::after {
 	content: '✔';
-	color: $pm-global-success;
 }
 .icon-ko button {
 	display: none; // don't copy shit!
