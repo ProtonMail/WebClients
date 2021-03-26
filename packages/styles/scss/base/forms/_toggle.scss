@@ -31,7 +31,6 @@ $toggle-width-button: em(24) !default;
 
 	& > .toggle-label-text {
 		position: absolute;
-		left: 0;
 		top: 0;
 		bottom: 0;
 		z-index: 2;
@@ -41,21 +40,45 @@ $toggle-width-button: em(24) !default;
 
 		&:first-child {
 			z-index: 3;
+			left: 0;
+			color: var(--text-norm);
 		}
 
 		&:last-child {
 			z-index: 1;
-		}
-
-		& .toggle-label-img {
-			transition: 0s; // transition for disappear
-			fill: transparent;
-			margin: auto;
-		}
-
-		& + .toggle-label-text {
 			right: 0;
-			left: auto;
+			color: var(--interaction-norm-contrast);
+		}
+
+		.toggle-label-img {
+			margin: auto;
+			opacity: 0;
+			transition: opacity 0.15s ease-out;
+		}
+
+		.toggle-label-loader {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 1;
+			display: flex;
+			animation: 0.25s ease-out forwards anime-toggle-label-loader-fade-in;
+
+			@keyframes anime-toggle-label-loader-fade-in {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+		}
+
+		.circle-loader {
+			margin: auto;
+			font-size: em(16);
 		}
 	}
 
@@ -70,16 +93,16 @@ $toggle-width-button: em(24) !default;
 	@extend .sr-only;
 
 	&:checked + .toggle-label {
-		& > .toggle-label-text {
+		.toggle-label-text {
 			&:first-child {
 				z-index: 1;
 			}
 
 			&:last-child {
 				z-index: 3;
+
 				.toggle-label-img {
-					fill: var(--interaction-norm-contrast);
-					transition: fill 0.1s steps(1, end) 0.1s; // transition for appear
+					opacity: 1;
 				}
 			}
 		}
@@ -110,25 +133,19 @@ $toggle-width-button: em(24) !default;
 	}
 
 	&[disabled][aria-busy='true'] {
-		& + .toggle-label {
+		& + .toggle-label .toggle-label-text .toggle-label-img {
+			opacity: 0;
+		}
+
+		&:not(:checked) + .toggle-label {
 			&::before {
 				background-color: var(--field-hover);
-				background-image: url(#{$path-images}infinite-loader.svg);
-				background-position: 50% 50%;
-				background-repeat: no-repeat;
-				background-size: em(14);
-			}
-
-			& > .toggle-label-text {
-				opacity: 0;
 			}
 		}
 
-		&:checked {
-			& + .toggle-label {
-				&::before {
-					background-color: var(--interaction-norm-hover);
-				}
+		&:checked + .toggle-label {
+			&::before {
+				background-color: var(--interaction-norm-hover);
 			}
 		}
 	}
@@ -158,7 +175,7 @@ $toggle-width-button: em(24) !default;
 	margin-top: 0.25em;
 	font-size: 0.8em;
 
-	& .toggle-label-img {
+	.toggle-label-img {
 		width: 1.3rem;
 		height: 1.3rem;
 	}

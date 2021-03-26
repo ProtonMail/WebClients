@@ -32,11 +32,11 @@
 		@extend .p2;
 		@extend .center;
 		@extend .flex-item-fluid-auto;
-		@extend .w100;
 		@extend .mt0;
 		@extend .mb2;
 		word-break: break-word;
 		white-space: pre-wrap;
+		width: 100%;
 		max-width: 800px;
 	}
 

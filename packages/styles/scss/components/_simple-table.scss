@@ -1,7 +1,7 @@
 .simple-table {
 	@extend .border-collapse;
 	@extend .no-border;
-	@extend .w100;
+	width: 100%;
 
 	caption {
 		transform: scale(0);
@@ -117,7 +117,7 @@
 
 .alternate-table-bg-row-rounded {
 	@extend .no-border;
-	@extend .w100;
+	width: 100%;
 	border-spacing: 0; // no border-collapse for radius ^^
 
 	td,

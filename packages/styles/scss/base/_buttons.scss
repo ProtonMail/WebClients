@@ -200,7 +200,7 @@
 }
 
 .button-large {
-	padding: em(10) em(20) em(9); // design want 42px height
+	padding: em(9) em(20) em(10); // design want 42px height
 }
 
 .button-for-icon {
@@ -214,8 +214,77 @@
 		padding: em(12) em(14);
 	}
 
-	svg {
+	& > svg {
 		display: block;
+		transition: opacity 0.25s ease-out;
+	}
+}
+
+// Loading state
+.button-henlo[aria-busy='true'] {
+	position: relative;
+
+	.loader-container {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		animation: 0.25s ease-out both anime-loader-container-fade-in;
+
+		@keyframes anime-loader-container-fade-in {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+		}
+	}
+
+	&:not(.button-for-icon) {
+		&:not(.w100) {
+			&:not(.button-small, .button-large) {
+				padding-right: em(40);
+			}
+
+			&.button-small {
+				padding-right: em(36);
+			}
+
+			&.button-large {
+				padding-right: em(44);
+			}
+		}
+
+		.loader-container {
+			top: 0;
+			bottom: 0;
+		}
+
+		&:not(.button-small, .button-large) .loader-container {
+			right: em(16);
+		}
+
+		&.button-small .loader-container {
+			right: em(12);
+		}
+
+		&.button-large .loader-container {
+			right: em(20);
+		}
+	}
+
+	&.button-for-icon {
+		& > svg {
+			opacity: 0;
+		}
+
+		.loader-container {
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
 	}
 }
 
