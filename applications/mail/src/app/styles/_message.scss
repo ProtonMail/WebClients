@@ -222,6 +222,11 @@
 .message-content {
 	transition: .5s easing(easeOutSine);
 	transition-property: background-color, color;
+    // force color until real dark mode
+    &:not(.plain) {
+        background: white;
+        color: #262a33;
+    }
 
 	&-loading-placeholder {
 		position: relative;
