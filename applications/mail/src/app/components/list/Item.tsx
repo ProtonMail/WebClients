@@ -128,6 +128,7 @@ const Item = ({
                 columnLayout ? 'item-container' : 'item-container-row',
                 isSelected && 'item-is-selected',
                 !unread && 'read',
+                unread && 'unread',
                 dragged && 'item-dragging',
                 loading && 'item-is-loading',
                 hasFocus && 'item-is-focused',

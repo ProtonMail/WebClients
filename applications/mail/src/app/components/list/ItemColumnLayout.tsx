@@ -1,6 +1,5 @@
 import React from 'react';
 import { c } from 'ttag';
-import { classnames } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import ItemStar from './ItemStar';
@@ -22,7 +21,6 @@ interface Props {
     showIcon: boolean;
     senders: string;
     addresses: string;
-    unread: boolean;
     displayRecipients: boolean;
     loading: boolean;
     breakpoints: Breakpoints;
@@ -36,7 +34,6 @@ const ItemColumnLayout = ({
     showIcon,
     senders,
     addresses,
-    unread,
     displayRecipients,
     loading,
     breakpoints,
@@ -48,10 +45,10 @@ const ItemColumnLayout = ({
             className="flex-item-fluid flex flex-nowrap flex-column flex-justify-center item-titlesender"
             data-test-id="message-list:message"
         >
-            <div className="flex flex-align-items-center item-firstline">
+            <div className="flex flex-align-items-baseline item-firstline">
                 <div className="item-senders flex-item-fluid flex flex-nowrap pr1">
                     <span
-                        className={classnames(['inline-block max-w100 text-ellipsis', unread && 'text-bold'])}
+                        className="inline-block max-w100 text-ellipsis"
                         title={addresses}
                         data-test-id="message-list:sender-address"
                     >
@@ -66,13 +63,9 @@ const ItemColumnLayout = ({
                     </span>
                 )}
 
-                <ItemDate
-                    element={element}
-                    labelID={labelID}
-                    className={classnames([unread && 'text-bold', 'item-senddate-col'])}
-                />
+                <ItemDate element={element} labelID={labelID} className="item-senddate-col" />
 
-                <span className="ml0-5 flex-flex-children">
+                <span className="ml0-5 flex-flex-children flex-item-centered-vert">
                     <ItemStar element={element} />
                 </span>
             </div>
@@ -85,17 +78,12 @@ const ItemColumnLayout = ({
                         </span>
                     )}
 
-                    {conversationMode && (
-                        <NumMessages
-                            className={classnames(['mr0-25 flex-item-noshrink', unread && 'text-bold'])}
-                            conversation={element}
-                        />
-                    )}
+                    {conversationMode && <NumMessages className="mr0-25 flex-item-noshrink" conversation={element} />}
 
                     <span
                         role="heading"
                         aria-level={2}
-                        className={classnames(['inline-block max-w100 text-ellipsis', unread && 'text-bold'])}
+                        className="inline-block max-w100 text-ellipsis"
                         title={Subject}
                         data-test-id="message-list:subject"
                     >
