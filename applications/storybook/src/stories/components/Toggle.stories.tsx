@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Toggle, Icon } from 'react-components';
-import { ToggleState } from 'react-components/components/toggle/Toggle';
+import { Toggle, useLoading } from 'react-components';
+import { wait } from 'proton-shared/lib/helpers/promise';
 
 import mdx from './Toggle.mdx';
 
@@ -19,21 +19,23 @@ export const Basic = () => {
     return <Toggle checked={state} onChange={() => setState(!state)} />;
 };
 
-export const WithIcon = () => {
-    const [state, setState] = useState(true);
-    const handleLabel = (key: ToggleState) => {
-        const iconName = key === ToggleState.on ? 'key' : 'keys';
-        return (
-            <span className="toggle-label-text">
-                <Icon name={iconName} alt={key} className="toggle-label-img" />
-            </span>
-        );
-    };
-    return <Toggle checked={state} onChange={() => setState(!state)} label={handleLabel} />;
-};
-
 export const Loading = () => {
-    return <Toggle loading />;
+    const [state, setState] = useState(false);
+    const [loading, withLoading] = useLoading(true);
+
+    return (
+        <Toggle
+            checked={state}
+            loading={loading}
+            onChange={() => {
+                const run = async () => {
+                    await wait(500);
+                    setState((old) => !old);
+                };
+                withLoading(run());
+            }}
+        />
+    );
 };
 
 export const Disabled = () => {

@@ -9,7 +9,7 @@ export {
     InternalServerError,
     AccessDeniedError,
     NotFoundError,
-    StandardLoadError,
+    StandardLoadErrorPage,
 } from 'react-components';
 
 export const CompatibilityCheck = () => {

@@ -2,9 +2,7 @@ import { Canvas, Story, ArgsTable, Primary, PRIMARY_STORY } from "@storybook/add
 
 # Button
 
-The button is an essential element of any design. It's meant to look and behave as an interactive element of your page. 
-
-### New
+The button is an essential element of any design. It's meant to look and behave as an interactive element of your page.
 
 <Canvas>
     <Story id="components-button--sandbox" />
@@ -14,14 +12,14 @@ The button is an essential element of any design. It's meant to look and behave 
     <Story id="components-button--variants" />
 </Canvas>
 
-### Old
+<Primary />
 
-This section is to verify that the changes are backward-compatible, please __DO NOT__ use this api or the classes directly anymore.
+# Polymorphic Buttons
+
+A button can also be used in another component, with the `ButtonLike` component
 
 <Canvas>
-    <Story id="components-button--legacy" />
+    <Story id="components-button--like" />
 </Canvas>
-
-<Primary />
 
 <ArgsTable story={PRIMARY_STORY} />
