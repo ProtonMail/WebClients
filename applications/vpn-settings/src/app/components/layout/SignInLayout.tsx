@@ -21,7 +21,7 @@ const SignInLayout = ({ children, title = '' }: Props) => {
             <PublicHeader
                 left={
                     <>
-                        <span className="opacity-50 mr1">{c('Label').t`Back to:`}</span>
+                        <span className="color-weak mr1">{c('Label').t`Back to:`}</span>
                         <Href
                             url={staticURL}
                             className="inline-block text-no-decoration hover-same-color"
