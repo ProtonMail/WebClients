@@ -1,0 +1,64 @@
+.circle-loader {
+	--stroke-width: 20;
+
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	transform-origin: 50%;
+	vertical-align: middle;
+	animation: anime-loader-rotation 2s linear infinite;
+
+	@keyframes anime-loader-rotation {
+		from {
+			transform: rotate(0);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	&-track,
+	&-circle {
+		fill: none;
+		stroke-width: var(--stroke-width);
+		stroke-linecap: round;
+	}
+
+	&-track {
+		stroke: currentColor;
+		opacity: 0.2;
+	}
+
+	&-circle {
+		stroke: currentColor;
+		stroke-dasharray: 440;
+		stroke-dashoffset: 440;
+		animation: anime-loader-stroke 4s linear infinite;
+
+		@keyframes anime-loader-stroke {
+			0% {
+				stroke-dashoffset: 440;
+			}
+			50% {
+				stroke-dashoffset: 0;
+			}
+			50.1% {
+				stroke-dashoffset: 880;
+			}
+		}
+	}
+
+	&.is-small {
+		font-size: em(20);
+	}
+
+	&.is-medium {
+		--stroke-width: 15;
+		font-size: em(80);
+	}
+
+	&.is-big {
+		--stroke-width: 10;
+		font-size: em(160);
+	}
+}
