@@ -56,6 +56,8 @@ const InputField: <E extends React.ElementType = typeof defaultElement>(
 
         const hintElement = hint && <div className="inputform-label-hint flex-item-noshrink">{hint}</div>;
 
+        const labelElement = label && <span className="inputform-label-text">{label}</span>;
+
         const errorElement = error && (
             <>
                 <Icon name="exclamation-circle-filled" className="aligntop mr0-25" />
@@ -65,10 +67,12 @@ const InputField: <E extends React.ElementType = typeof defaultElement>(
 
         return (
             <label className={classes.root} htmlFor={id}>
-                <div className={classes.labelContainer}>
-                    <span className="inputform-label-text">{label}</span>
-                    {hintElement}
-                </div>
+                {(label || hint) && (
+                    <div className={classes.labelContainer}>
+                        {labelElement}
+                        {hintElement}
+                    </div>
+                )}
                 <div className={classes.inputContainer}>
                     <Box as={defaultElement} ref={ref} id={id} error={error} disabled={disabled} {...rest} />
                 </div>
