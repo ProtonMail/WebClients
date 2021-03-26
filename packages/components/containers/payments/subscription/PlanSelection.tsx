@@ -287,7 +287,7 @@ const PlanSelection = ({
         free_mail: c('Info').t`The basic for private and secure communications.`,
         free_vpn: c('Info').t`A free and uncensored Internet should be available to all.`,
         [PLANS.VPNBASIC]: c('Info').t`Starter VPN service with P2P support and Adblocker.`,
-        [PLANS.VPNPLUS]: c('Info').t`Full-featured VPN with speed up to 10 Gbps/s.`,
+        [PLANS.VPNPLUS]: c('Info').t`Full-featured VPN with speed up to 10 Gbps.`,
         [PLANS.PLUS]: c('Info').t`Full-featured mailbox with advanced protection.`,
         [PLANS.PROFESSIONAL]: c('Info').t`${mailAppName} for professionals and businesses.`,
         [PLANS.VISIONARY]: isVpnApp
