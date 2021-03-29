@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { TableBody, useActiveBreakpoint, Table, classnames, useElementRect, TableRowBusy } from 'react-components';
+import { TableBody, useActiveBreakpoint, Table, classnames, useElementRect, TableCellBusy } from 'react-components';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import { buffer } from 'proton-shared/lib/helpers/function';
 import ItemRow from './ItemRow';
@@ -49,7 +49,11 @@ const ListItemRow = ({ index, style, data }: ListItemRowProps) => {
 
     if (loading && index === itemCount - 1) {
         const colSpan = (type === 'trash' ? 5 : 4) + Number(isDesktop);
-        return <TableRowBusy colSpan={colSpan} style={style} />;
+        return (
+            <tr style={style}>
+                <TableCellBusy className="flex text-lg flex-justify-center m0" colSpan={colSpan} />
+            </tr>
+        );
     }
 
     const item = contents[index];

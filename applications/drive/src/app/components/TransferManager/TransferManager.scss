@@ -19,7 +19,7 @@
     }
 
     &-heading {
-        background: var(--background-norm);
+        background: var(--background-strong);
         color: var(--text-norm);
 
         @include respond-to($breakpoint-small, 'min') {
@@ -38,7 +38,7 @@
     }
 
     &-list {
-        background-color: var(--background-weak);
+        background-color: var(--background-norm);
         color: var(--text-norm);
         transition: inherit;
     }
