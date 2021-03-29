@@ -1,8 +1,14 @@
 import React from 'react';
+import { classnames } from '../../helpers';
+
 import { CircleLoader } from '../loader';
 
-const TableCellBusy = () => (
-    <td className="text-center" aria-busy="true">
+interface Props extends React.ComponentPropsWithoutRef<'td'> {
+    colSpan?: number;
+}
+
+const TableCellBusy = ({ colSpan, className }: Props) => (
+    <td colSpan={colSpan} className={classnames([className, 'text-center'])} aria-busy="true">
         <CircleLoader />
     </td>
 );
