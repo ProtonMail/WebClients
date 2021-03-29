@@ -62,6 +62,7 @@ import { getSuccessfulSettled, logSettledErrors } from '../../utils/async';
 import useDriveCrypto from './useDriveCrypto';
 import { LinkKeys, useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 import { useDriveEventManager, ShareEvent } from '../../components/DriveEventManager/DriveEventManagerProvider';
+import { GLOBAL_FORBIDDEN_CHARACTERS } from '../../utils/link';
 
 const { CREATE, DELETE, UPDATE_METADATA } = EVENT_TYPES;
 
@@ -621,7 +622,10 @@ function useDrive() {
             throw new Error('Missing hash key on folder link');
         }
 
-        const formattedDate = format(new Date(), 'Pp', { locale: dateLocale });
+        const formattedDate = format(new Date(), 'Pp', { locale: dateLocale }).replaceAll(
+            RegExp(GLOBAL_FORBIDDEN_CHARACTERS, 'g'),
+            ' '
+        );
         const restoreFolderName = `Restored files ${formattedDate}`;
 
         const [Hash, { NodePassphrase, NodePassphraseSignature }, { data: encryptedName }] = await Promise.all([
