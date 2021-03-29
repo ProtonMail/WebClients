@@ -68,7 +68,7 @@ const Sidebar = ({ expanded = false, onToggleExpand, hasAppLinks = true, logo, p
             <div className="no-desktop no-tablet flex-item-noshrink">
                 <div className="flex flex-justify-space-between flex-align-items-center pl1 pr1">
                     {logo}
-                    <Hamburger expanded={expanded} onToggle={onToggleExpand} data-focus-fallback={1} />
+                    <Hamburger expanded={expanded} onToggle={onToggleExpand} />
                 </div>
             </div>
             {primary ? <div className="pl1 pr1 pb1 flex-item-noshrink">{primary}</div> : null}

@@ -65,7 +65,7 @@ const ContactResignExecutionModal = ({ onClose = noop, ...rest }: Props) => {
             onSubmit={onClose}
             onClose={handleClose}
             submit={
-                <PrimaryButton disabled={execution} type="submit" data-focus-fallback="-1">
+                <PrimaryButton disabled={execution} type="submit">
                     {c('Action').t`Done`}
                 </PrimaryButton>
             }
