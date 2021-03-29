@@ -10,6 +10,7 @@
 
 html {
 	box-sizing: border-box;
+	overscroll-behavior: none;
 
 	/* base font size at 10px */
 	@if $root-equiv-10-px==true {
