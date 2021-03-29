@@ -205,6 +205,8 @@
 
 	& > .message-header {
 		border-bottom: 1px solid var(--border-norm);
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
 	}
 
 }
