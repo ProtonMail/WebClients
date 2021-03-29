@@ -131,7 +131,7 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                 <button
                     type="button"
                     key={LocalID}
-                    className={`${listItemClassName} button-show-on-hover flex-align-items-center button-account`}
+                    className={`${listItemClassName} button-show-on-hover flex-align-items-center button-account no-outline`}
                     onClick={() => handleClickSession(LocalID)}
                 >
                     <span className="dropdown-logout-initials rounded p0-25 mb0-5 inline-flex bg-primary">
@@ -141,14 +141,14 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                     </span>
                     <div className="no-scroll ml1 border-bottom pr1 pb1 mt0-25 flex-item-fluid flex flex-align-items-center">
                         <div className="flex-item-fluid">
-                            <strong className="text-ellipsis" title={nameToDisplay}>
+                            <strong className="block text-ellipsis" title={nameToDisplay}>
                                 {nameToDisplay}
                             </strong>
                             <div className="text-ellipsis color-weak" title={PrimaryEmail}>
                                 {PrimaryEmail}
                             </div>
                         </div>
-                        <div className="block no-scroll button-show-on-hover-element button-account-login text-sm m0 flex flex-align-items-center color-primary">
+                        <div className="ml1 block no-tiny-mobile no-scroll button-show-on-hover-element button-account-login text-sm m0 flex flex-align-items-center color-primary">
                             {loadingMap[LocalID] ? <LoaderIcon /> : c('Action').t`Sign in`}
                         </div>
                     </div>
