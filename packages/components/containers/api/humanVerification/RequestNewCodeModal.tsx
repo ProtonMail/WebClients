@@ -33,7 +33,6 @@ const RequestNewCodeModal = ({ verificationModel, onEdit, onResend, ...rest }: P
                             await withLoading(onResend());
                             rest.onClose?.();
                         }}
-                        data-focus-fallback="-1"
                     >
                         {c('Action').t`Request new code`}
                     </Button>
@@ -47,21 +46,12 @@ const RequestNewCodeModal = ({ verificationModel, onEdit, onResend, ...rest }: P
                         }}
                         disabled={loading}
                         fullWidth
-                        data-focus-fallback="-2"
                     >
                         {verificationModel.method === 'email'
                             ? c('Action').t`Edit email address`
                             : c('Action').t`Edit phone number`}
                     </Button>
-                    <Button
-                        size="large"
-                        color="weak"
-                        type="button"
-                        onClick={rest.onClose}
-                        disabled={loading}
-                        fullWidth
-                        data-focus-fallback="-3"
-                    >
+                    <Button size="large" color="weak" type="button" onClick={rest.onClose} disabled={loading} fullWidth>
                         {c('Action').t`Cancel`}
                     </Button>
                 </>

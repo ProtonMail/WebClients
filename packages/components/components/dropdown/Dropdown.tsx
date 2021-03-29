@@ -216,13 +216,7 @@ const Dropdown = ({
                 {...focusTrapProps}
             >
                 {/* Backdrop button, meant to override 'autoClose' option on mobile */}
-                <button
-                    type="button"
-                    className="dropdown-backdrop"
-                    title={c('Action').t`Close`}
-                    onClick={onClose}
-                    data-focus-fallback={-1}
-                >
+                <button type="button" className="dropdown-backdrop" title={c('Action').t`Close`} onClick={onClose}>
                     <span className="sr-only">{c('Action').t`Close`}</span>
                 </button>
                 <div
