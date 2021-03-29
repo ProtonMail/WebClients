@@ -40,10 +40,7 @@ const ImportWelcomeModal = ({ onClose = noop, ...rest }: Props) => {
             title={
                 <h1 className="modal-title text-center">{c('Title').t`Your smooth transition to digital privacy`}</h1>
             }
-            submit={
-                <PrimaryButton type="submit" data-focus-fallback={1}>{c('Action')
-                    .t`Try Import Assistant`}</PrimaryButton>
-            }
+            submit={<PrimaryButton type="submit">{c('Action').t`Try Import Assistant`}</PrimaryButton>}
             close={null}
             onSubmit={onClose}
             onClose={onClose}

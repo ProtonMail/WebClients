@@ -31,15 +31,7 @@ const Header = ({
             {...rest}
         >
             {hasClose ? (
-                <Button
-                    icon
-                    shape="ghost"
-                    size="small"
-                    className="modal-close"
-                    title={closeText}
-                    onClick={onClose}
-                    data-focus-fallback="-3"
-                >
+                <Button icon shape="ghost" size="small" className="modal-close" title={closeText} onClick={onClose}>
                     <Icon className="modal-close-icon" name="close" alt={closeText} />
                 </Button>
             ) : null}

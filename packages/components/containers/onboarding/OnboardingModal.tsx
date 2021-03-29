@@ -193,12 +193,7 @@ const OnboardingModal = ({
                     )}
 
                     {typeof childStep.props.submit === 'string' ? (
-                        <PrimaryButton
-                            loading={childStep.props.loading}
-                            type="submit"
-                            className="mlauto"
-                            data-focus-fallback={1}
-                        >
+                        <PrimaryButton loading={childStep.props.loading} type="submit" className="mlauto">
                             {childStepProps.submit}
                         </PrimaryButton>
                     ) : (
