@@ -4,8 +4,9 @@ import {
     fromUTCDate,
     convertZonedDateTimeToUTC,
 } from 'proton-shared/lib/date/timezone';
-import { MILLISECONDS_IN_MINUTE, startOfDay } from 'proton-shared/lib/date-fns-utc';
+import { startOfDay } from 'proton-shared/lib/date-fns-utc';
 import { addDays, isValid } from 'date-fns';
+import { DAY } from 'proton-shared/lib/constants';
 import { DateTimeModel, EventModel } from '../../../interfaces/EventModel';
 import { getDateTimeState, getTimeInUtc } from '../eventForm/time';
 import getFrequencyModelChange from '../eventForm/getFrequencyModelChange';
@@ -20,24 +21,24 @@ interface UseDateTimeFormHandlersArgs {
 const useDateTimeFormHandlers = ({ model, setModel }: UseDateTimeFormHandlersArgs) => {
     const { isAllDay, start, end } = model;
 
-    const startUtcDate = getTimeInUtc(start, isAllDay);
-    const endUtcDate = getTimeInUtc(end, isAllDay);
+    const startUtcDate = getTimeInUtc(start, false);
+    const endUtcDate = getTimeInUtc(end, false);
 
-    const isDuration = +endUtcDate - +startUtcDate < 24 * 60 * MILLISECONDS_IN_MINUTE;
+    const isDuration = +endUtcDate - +startUtcDate < DAY;
     const minEndTimeInTimezone = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(startUtcDate), end.tzid));
     const { time: minEndTime } = getDateTimeState(isDuration ? minEndTimeInTimezone : DEFAULT_MIN_TIME, '');
 
     const getMinEndDate = () => {
         const { date: minDate } = getDateTimeState(minEndTimeInTimezone, '');
         // If the minDate with the currently selected end time would lead to an error, don't allow it to be selected
-        const minTimeUtcDate = getTimeInUtc({ ...end, date: minDate, time: end.time }, isAllDay);
+        const minTimeUtcDate = getTimeInUtc({ ...end, date: minDate, time: end.time }, false);
         return startUtcDate > minTimeUtcDate ? addDays(minDate, 1) : minDate;
     };
 
     const minEndDate = isAllDay ? start.date : getMinEndDate();
 
     const getStartChange = (newStart: DateTimeModel) => {
-        const newStartUtcDate = getTimeInUtc(newStart, isAllDay);
+        const newStartUtcDate = getTimeInUtc(newStart, false);
         const diffInMs = +newStartUtcDate - +startUtcDate;
 
         const newEndDate = new Date(+endUtcDate + diffInMs);
@@ -87,10 +88,6 @@ const useDateTimeFormHandlers = ({ model, setModel }: UseDateTimeFormHandlersArg
     };
 
     const handleEndUpdate = (newEnd: DateTimeModel) => {
-        const endTime = getTimeInUtc(newEnd, isAllDay);
-        if (startUtcDate > endTime) {
-            return;
-        }
         setModel({
             ...model,
             end: newEnd,
