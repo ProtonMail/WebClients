@@ -101,20 +101,12 @@ const useFocusTrap = ({
         };
 
         const initFocus = (rootElement: HTMLElement) => {
-            const tabbableElements = tabbable(rootElement, { includeContainer: false });
-            if (!tabbableElements.length) {
+            const target = rootElement.querySelector('[data-focus-trap-fallback]');
+            if (!target) {
                 focusElement(rootElement);
                 return;
             }
-            // Preference to elements with focus-fallback
-            const tabbableElementsSorted = [...tabbableElements]
-                .filter((el) => {
-                    return !el.dataset.focusIgnore;
-                })
-                .sort((a, b) => {
-                    return parseInt(b.dataset.focusFallback || '0', 10) - parseInt(a.dataset.focusFallback || '0', 10);
-                });
-            focusElement(tabbableElementsSorted[0], rootElement);
+            focusElement(target as HTMLElement, rootElement);
         };
 
         const handleFocusIn = (event: FocusEvent) => {

@@ -8,7 +8,12 @@ interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeading
 
 const Title = ({ children, className, ...rest }: Props) => {
     return (
-        <h1 className={classnames(['modal-title', className])} {...rest}>
+        <h1
+            className={classnames(['modal-title no-outline', className])}
+            data-focus-trap-fallback="0"
+            tabIndex={-1}
+            {...rest}
+        >
             {children}
         </h1>
     );

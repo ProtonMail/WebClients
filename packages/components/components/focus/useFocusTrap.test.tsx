@@ -15,7 +15,7 @@ describe('FocusTrap', () => {
         document.body.removeChild(initialFocus);
     });
 
-    it('should focus the first focusable element', () => {
+    it('should not focus the first focusable element', () => {
         const Component = () => {
             const rootRef = useRef<HTMLDivElement>(null);
             const props = useFocusTrap({ rootRef });
@@ -26,7 +26,7 @@ describe('FocusTrap', () => {
             );
         };
         const { getByTestId } = render(<Component />);
-        expect(getByTestId('auto-focus')).toHaveFocus();
+        expect(getByTestId('auto-focus')).not.toHaveFocus();
     });
 
     it('should focus the root element if initial setting is off', () => {
@@ -72,33 +72,19 @@ describe('FocusTrap', () => {
         expect(getByTestId('root')).toHaveAttribute('tabIndex', '-1');
     });
 
-    it('should focus root with ignored elements', () => {
+    it('should focus first fallback if requested', () => {
         const Component = () => {
             const rootRef = useRef<HTMLDivElement>(null);
             const props = useFocusTrap({ rootRef });
             return (
                 <div ref={rootRef} {...props} data-testid="root">
-                    <button data-focus-ignore="true" data-testid="button" />
+                    <div data-testid="div" data-focus-trap-fallback="0" tabIndex={-1} />
+                    <button data-testid="button" />
                 </div>
             );
         };
         const { getByTestId } = render(<Component />);
-        expect(getByTestId('root')).toHaveFocus();
-    });
-
-    it('should not focus ignored elements', () => {
-        const Component = () => {
-            const rootRef = useRef<HTMLDivElement>(null);
-            const props = useFocusTrap({ rootRef });
-            return (
-                <div ref={rootRef} {...props} data-testid="root">
-                    <button data-focus-ignore="true" data-testid="button" />
-                    <button data-testid="button2" />
-                </div>
-            );
-        };
-        const { getByTestId } = render(<Component />);
-        expect(getByTestId('button2')).toHaveFocus();
+        expect(getByTestId('div')).toHaveFocus();
     });
 
     it('should set tabIndex on root when active', () => {
@@ -200,11 +186,11 @@ describe('FocusTrap', () => {
             const props = useFocusTrap({ rootRef, active: open });
             return (
                 <>
-                    ( open && (
-                    <div {...props} ref={rootRef}>
-                        {children}
-                    </div>
-                    ) )
+                    {open && (
+                        <div {...props} ref={rootRef}>
+                            {children}
+                        </div>
+                    )}
                 </>
             );
         };
