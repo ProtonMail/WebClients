@@ -54,7 +54,9 @@ $item-container-row-height-compact-mode: 4rem !default;
 		$item-container-padding-left-right; // design wants ~64 height
 	border-bottom: 1px solid var(--border-weak);
 	color: var(--text-norm);
-	transition: 0.15s easing(easeOutQuint);
+
+	// no transition, otherwhise there's a flash on page loading
+	// because of theme file loading after applying default theme colors
 
 	&::after {
 		content: '';
