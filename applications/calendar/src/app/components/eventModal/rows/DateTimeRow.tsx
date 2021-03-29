@@ -37,7 +37,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
     const canToggleTzSelector = start.tzid === end.tzid && start.tzid === tzid;
     const [showTzSelector, setShowTzSelector] = useState<boolean>(!canToggleTzSelector);
     const handleChangeStart = (tzid: string) => {
-        const startUtcDate = getTimeInUtc(start, isAllDay);
+        const startUtcDate = getTimeInUtc(start, false);
         const newStartUtcDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(startUtcDate), tzid));
         const newStart = getDateTimeState(newStartUtcDate, tzid);
         const newFrequencyModel = getFrequencyModelChange(start, newStart, frequencyModel);
@@ -49,7 +49,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
         });
     };
     const handleChangeEnd = (tzid: string) => {
-        const endUtcDate = getTimeInUtc(end, isAllDay);
+        const endUtcDate = getTimeInUtc(end, false);
         const newEndUtcDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(endUtcDate), tzid));
 
         setModel({
