@@ -20,7 +20,6 @@ import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
 import LoginContainer from '../login/LoginContainer';
 import Layout from '../public/Layout';
-import DefaultTheme from './DefaultTheme';
 
 const getPathFromLocation = (location: H.Location) => {
     return [location.pathname, location.search, location.hash].join('');
@@ -124,7 +123,6 @@ const PublicApp = ({ onLogin, locales }: Props) => {
 
     return (
         <>
-            <DefaultTheme />
             <ModalsChildren />
             <Switch>
                 <Route path="/unsubscribe/:subscriptions">
