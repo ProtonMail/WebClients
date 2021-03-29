@@ -622,7 +622,7 @@ function useDrive() {
             throw new Error('Missing hash key on folder link');
         }
 
-        const formattedDate = format(new Date(), 'Pp', { locale: dateLocale }).replaceAll(
+        const formattedDate = format(new Date(), 'Ppp', { locale: dateLocale }).replaceAll(
             RegExp(GLOBAL_FORBIDDEN_CHARACTERS, 'g'),
             ' '
         );
