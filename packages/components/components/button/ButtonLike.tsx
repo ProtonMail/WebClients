@@ -52,7 +52,7 @@ const ButtonLike: <E extends React.ElementType = typeof defaultElement>(
             className,
             tabIndex,
             children,
-            shape = 'solid',
+            shape: shapeProp,
             color = 'weak',
             size = 'medium',
             fullWidth,
@@ -64,6 +64,8 @@ const ButtonLike: <E extends React.ElementType = typeof defaultElement>(
         ref: typeof restProps.ref
     ) => {
         const isDisabled = loading || disabled;
+
+        const shape = shapeProp || (color === 'weak' ? 'outline' : 'solid');
 
         const buttonClassName = classnames([
             shape === 'link' ? 'button-link' : 'button-henlo',
