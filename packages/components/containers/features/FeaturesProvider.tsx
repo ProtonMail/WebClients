@@ -61,7 +61,6 @@ const FeaturesProvider = ({ children }: Props) => {
 
     const put = async (code: FeatureCode, value: any) => {
         const copyFeature = { ...features[code] };
-        updateLoading(code, true);
 
         try {
             // Optimistically apply change
@@ -76,8 +75,6 @@ const FeaturesProvider = ({ children }: Props) => {
             // Rollback optimistic change if it fails
             updateFeature(code, copyFeature);
             throw e;
-        } finally {
-            updateLoading(code, false);
         }
     };
 
