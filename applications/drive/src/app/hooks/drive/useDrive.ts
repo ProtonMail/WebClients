@@ -153,7 +153,7 @@ function useDrive() {
         const { Shares } = await debouncedRequest<UserShareResult>(queryUserShares());
         const shareIds = Shares.map(({ ShareID }) => ShareID);
         const defaultShare = Shares.filter((share) => !share.Locked).find(isPrimaryShare);
-        const lockedShares = Shares.filter((share) => share.Locked);
+        const lockedShares = Shares.filter((share) => share.Locked && isPrimaryShare(share));
 
         cache.setLockedShares(lockedShares);
         cache.set.emptyShares(Shares);
