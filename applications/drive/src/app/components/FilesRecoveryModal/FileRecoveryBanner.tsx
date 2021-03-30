@@ -81,7 +81,7 @@ const FileRecoveryBanner = ({ onClose }: Props) => {
     const reactivateMessage = c('Info')
         .jt`Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${mailSettingsLink}`;
     const recoveryMessage = c('Info')
-        .jt`Your files are no longer accessible due to a password reset. Restore old volume to regain the access. ${startRecoveryButton}`;
+        .jt`Some of your files are no longer accessible. Restore the access to your files. ${startRecoveryButton}`;
 
     return !loading && cache.lockedShares.length ? (
         <TopBanner className="bg-danger" onClose={onClose}>
