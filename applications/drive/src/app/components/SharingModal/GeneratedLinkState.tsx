@@ -201,7 +201,7 @@ function GeneratedLinkState({
                                     <Label htmlFor="passwordModeToggle">
                                         <span className="mr0-5">{c('Label').t`Password protection`}</span>
                                     </Label>
-                                    <div className="flex flex-justify-start mr0-5 on-mobile-mr0">
+                                    <div className="flex flex-justify-start pt0-5 mr0-5 on-mobile-mr0">
                                         <Toggle
                                             id="passwordModeToggle"
                                             className="on-mobile-mb0-5"
@@ -248,7 +248,7 @@ function GeneratedLinkState({
                                     <Label htmlFor="expirationTimeModeToggle">
                                         <span className="mr0-5">{c('Label').t`Expiration Date`}</span>
                                     </Label>
-                                    <div className="flex flex-justify-start mr0-5 on-mobile-mr0">
+                                    <div className="flex flex-justify-start pt0-5 mr0-5 on-mobile-mr0">
                                         <Toggle
                                             id="expirationTimeModeToggle"
                                             className="on-mobile-mb0-5"
