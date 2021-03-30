@@ -1,6 +1,7 @@
 import React from 'react';
+import { c } from 'ttag';
 
-import { DialogModal, useLoading } from 'react-components';
+import { DialogModal, useLoading, useNotifications } from 'react-components';
 
 import FilesRecoveryState from './FilesRecoveryState';
 import useDrive from '../../hooks/drive/useDrive';
@@ -19,9 +20,13 @@ const FilesRecoveryModal = ({ lockedShareList, onClose, ...rest }: Props) => {
 
     const { restoreVolumes } = useDrive();
     const [recovering, withRecovering] = useLoading();
+    const { createNotification } = useNotifications();
 
     const handleRecoveryClick = async () => {
         await withRecovering(restoreVolumes(lockedShareList));
+        createNotification({
+            text: c('Success').t`Recovery has started.`,
+        });
         onClose?.();
     };
 
