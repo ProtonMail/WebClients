@@ -35,6 +35,7 @@ const LayoutDropdown = () => {
                 <DropdownMenu>
                     <DropdownMenuButton
                         className="flex flex-nowrap text-left"
+                        aria-current={layout === LayoutSetting.List}
                         onClick={() => changeLayout(LayoutSetting.List)}
                     >
                         <Icon className="mt0-25 mr0-5" name="layout-rows" />
@@ -42,6 +43,7 @@ const LayoutDropdown = () => {
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         className="flex flex-nowrap text-left"
+                        aria-current={layout === LayoutSetting.Grid}
                         onClick={() => changeLayout(LayoutSetting.Grid)}
                     >
                         <Icon className="mt0-25 mr0-5" name="layout-columns" />
