@@ -57,7 +57,9 @@ const PlanCard = ({
                         'Title'
                     ).t`Current plan`}</div>
                 ) : null}
-                <h3 className="plan-selection-title text-bold text-capitalize mb0-5">{planName}</h3>
+                <h3 className="plan-selection-title text-bold text-capitalize mb0-5" id={`desc_${planName}`}>
+                    {planName}
+                </h3>
                 <span className="plan-selection-main-price">
                     <Price currency={currency} suffix={c('Suffix for price').t`/ month`}>
                         {price / cycle}
@@ -72,7 +74,12 @@ const PlanCard = ({
                         .jt`Billed as ${billedPrice} every 2 years`}</p>
                 ) : null}
                 <p className="text-lg plan-selection-info">{info}</p>
-                <PrimaryButton onClick={onClick} disabled={disabled} className="w100">
+                <PrimaryButton
+                    onClick={onClick}
+                    disabled={disabled}
+                    className="w100"
+                    aria-describedby={`desc_${planName}`}
+                >
                     {action}
                 </PrimaryButton>
                 {features.length ? (
