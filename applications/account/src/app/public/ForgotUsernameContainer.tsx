@@ -45,7 +45,6 @@ const ForgotUsernameForm = ({
     return (
         <form
             name="forgot-username"
-            className="signup-form"
             onSubmit={(e) => {
                 e.preventDefault();
                 if (loading || !onFormSubmit()) {

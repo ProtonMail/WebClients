@@ -18,7 +18,6 @@ const UnlockForm = ({ onSubmit }: Props) => {
     return (
         <form
             name="unlockForm"
-            className="signup-form"
             onSubmit={(event) => {
                 event.preventDefault();
                 if (loading || !onFormSubmit()) {

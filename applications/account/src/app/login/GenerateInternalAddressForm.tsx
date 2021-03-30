@@ -37,7 +37,6 @@ const GenerateInternalAddressForm = ({ defaultUsername = '', onSubmit, available
     return (
         <form
             name="addressForm"
-            className="signup-form"
             onSubmit={(event) => {
                 event.preventDefault();
                 if (loading || !onFormSubmit()) {
