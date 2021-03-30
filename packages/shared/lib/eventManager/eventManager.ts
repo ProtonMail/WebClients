@@ -143,11 +143,19 @@ const eventManager = ({
                     throw new Error('EventID undefined');
                 }
 
-                const result = await api<EventResponse>({
-                    ...query(eventID),
-                    signal: abortController.signal,
-                    silence: true,
-                });
+                let result: EventResponse;
+                try {
+                    result = await api<EventResponse>({
+                        ...query(eventID),
+                        signal: abortController.signal,
+                        silence: true,
+                    });
+                } catch (error) {
+                    if (error.name === 'AbortError') {
+                        return;
+                    }
+                    throw error;
+                }
 
                 await Promise.all(listeners.notify(result));
 
