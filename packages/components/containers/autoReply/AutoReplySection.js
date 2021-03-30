@@ -36,7 +36,7 @@ const AutoReplySection = () => {
             <EditableSection className="editable-section-container--size-tablet">
                 <Label htmlFor="autoReplyToggle" className="border-bottom on-mobile-pb0 on-mobile-no-border">{c('Label')
                     .t`Auto-reply`}</Label>
-                <Field className="wauto border-bottom on-mobile-pb0 on-mobile-no-border flex flex-nowrap">
+                <Field className="wauto border-bottom pt0-5 on-mobile-pb0 on-mobile-no-border flex flex-nowrap">
                     <span className="flex-item-noshrink">
                         <Toggle
                             id="autoReplyToggle"

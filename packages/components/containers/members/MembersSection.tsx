@@ -227,7 +227,7 @@ const MembersSection = () => {
                     })}
                 </TableBody>
             </Table>
-            <Block className="opacity-50">
+            <Block className="color-weak">
                 {organization.UsedMembers} / {organization.MaxMembers}{' '}
                 {c('Info').ngettext(msgid`user used`, `users used`, organization.UsedMembers)}
             </Block>

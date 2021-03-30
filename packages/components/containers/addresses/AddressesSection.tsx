@@ -28,7 +28,7 @@ const AddressesSection = ({ isOnlySelf }: Props) => {
                 <AddressesWithUser user={user} />
             )}
             {MaxAddresses > 1 ? (
-                <Block className="opacity-50">
+                <Block className="color-weak">
                     {UsedAddresses} / {MaxAddresses}{' '}
                     {c('Info').ngettext(msgid`address used`, `addresses used`, UsedAddresses)}
                 </Block>

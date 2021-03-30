@@ -47,7 +47,7 @@ const ContactAdrField = ({ value, onChange }: Props) => {
                 />
             </div>
             <div className="mb1">
-                <label className="text-sm opacity-50" htmlFor={`${uid}-region`} />
+                <label className="text-sm color-weak" htmlFor={`${uid}-region`} />
                 <Input
                     id={`${uid}-region`}
                     value={address[REGION]}

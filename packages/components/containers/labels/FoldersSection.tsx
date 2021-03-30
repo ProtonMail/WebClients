@@ -28,7 +28,7 @@ function LabelsSection() {
             </Alert>
             <Row>
                 <Label htmlFor="folder-colors">{c('Label').t`Use folder colors`}</Label>
-                <Field>
+                <Field className="pt0-5">
                     <ToggleEnableFolderColor id="folder-colors" />
                 </Field>
             </Row>
@@ -42,7 +42,7 @@ function LabelsSection() {
                                 .t`When enabled, sub-folders inherit the color of the parent folder.`}
                         />
                     </Label>
-                    <Field>
+                    <Field className="pt0-5">
                         <ToggleInheritParentFolderColor id="parent-folder-color" />
                     </Field>
                 </Row>

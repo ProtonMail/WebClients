@@ -61,7 +61,7 @@ const FilePreview = ({ contents, fileName, mimeType, loading, navigationControls
     };
 
     return (
-        <div className="file-preview" ref={rootRef} {...focusTrapProps}>
+        <div className="file-preview ui-prominent" ref={rootRef} {...focusTrapProps}>
             <Header mimeType={mimeType} name={fileName} onClose={onClose} onSave={onSave}>
                 {navigationControls}
             </Header>

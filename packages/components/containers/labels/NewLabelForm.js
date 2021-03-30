@@ -78,7 +78,7 @@ function NewLabelForm({ label, onChangeColor, onChangeName, onChangeParentID, on
                                     .t`You can turn on notifications to get alerts when new email messages arrive in this folder.`}
                             />
                         </Label>
-                        <Field>
+                        <Field className="pt0-5">
                             <Toggle
                                 id="notification"
                                 checked={label.Notify === 1}
