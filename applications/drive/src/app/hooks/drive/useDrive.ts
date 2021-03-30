@@ -679,7 +679,7 @@ function useDrive() {
                 decryptedPassphrase
             )
         );
-        Promise.all([restorePromiseList]);
+        return Promise.all(restorePromiseList);
     };
 
     const createShare = async (shareId: string, volumeId: string, linkId: string) => {
