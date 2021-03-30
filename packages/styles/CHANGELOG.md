@@ -16,13 +16,11 @@
 - new `modal--tiny` modifier for Signup
 - add table new style `alternate-table-bg-row-rounded`
 - styles for new phone input
-- styles for theming/new taxonomy 
-- email items styling update - remove CSS SVG sprite
 
 ### New helpers
 
 - added `z-index`, `min-w7e`, `onmobile-min-h0`, `mr-2e`, `flex-flex-items-center`, `w3e` helpers
-- added `tv`, `broken-link`, `keyboard`, `netshield`, `nologs`, `world`, `sort`, `parent-folder-filled`, `folder-filled`, `exclamation-circle-filled`, `pause`, `stop`, `resume` icons
+- added `tv`, `broken-link`, `keyboard`, `netshield`, `nologs`, `world`, `sort`, `parent-folder-filled`, `folder-filled`, `exclamation-circle-filled` icons
 - added `pm-field-icon-container-empty` class (to avoid layout shift for Drive)
 - added `bg-global-muted-dm-on-hover` class
 - added `on-mobile-center` helper
