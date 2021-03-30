@@ -32,7 +32,7 @@ const LayoutDropdown = ({ mailSettings = {} }: Props) => {
                 <DropdownMenu>
                     <DropdownMenuButton
                         data-test-id="toolbar-layout:column-layout"
-                        disabled={ViewLayout === VIEW_LAYOUT.COLUMN}
+                        aria-current={ViewLayout === VIEW_LAYOUT.COLUMN}
                         loading={loading}
                         className="text-left"
                         onClick={() => withLoading(updateLayout(VIEW_LAYOUT.COLUMN))}
@@ -42,7 +42,7 @@ const LayoutDropdown = ({ mailSettings = {} }: Props) => {
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         data-test-id="toolbar-layout:row-layout"
-                        disabled={ViewLayout === VIEW_LAYOUT.ROW}
+                        aria-current={ViewLayout === VIEW_LAYOUT.ROW}
                         loading={loading}
                         className="text-left"
                         onClick={() => withLoading(updateLayout(VIEW_LAYOUT.ROW))}

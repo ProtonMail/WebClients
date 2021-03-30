@@ -60,7 +60,7 @@ const ConversationHeader = ({ className, loading, element, labelID, breakpoints 
                             <span className="flex flex-align-items-center">
                                 <Icon
                                     name="email-address"
-                                    className="opacity-50"
+                                    className="color-weak"
                                     alt={c('label').t`Number of messages:`}
                                 />
                                 <span className="ml0-25">{numMessages}</span>
@@ -72,7 +72,7 @@ const ConversationHeader = ({ className, loading, element, labelID, breakpoints 
                             <span className="flex flex-align-items-center">
                                 <Icon
                                     name="contact"
-                                    className="opacity-50"
+                                    className="color-weak"
                                     alt={c('label').t`Number of participants:`}
                                 />
                                 <span className="ml0-25">{numParticipants}</span>
