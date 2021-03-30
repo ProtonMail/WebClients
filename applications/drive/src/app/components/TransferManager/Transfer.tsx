@@ -56,7 +56,7 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
                         <FileIcon mimeType={transfer.meta.mimeType} />
                     )}
                 </span>
-                <span className={classnames(['flex', isNameUnresolved && 'opacity-50'])}>
+                <span className={classnames(['flex', isNameUnresolved && 'color-weak'])}>
                     <FileNameDisplay text={transfer.meta.filename} />
                 </span>
             </div>
