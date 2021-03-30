@@ -23,10 +23,16 @@ const FilesRecoveryModal = ({ lockedShareList, onClose, ...rest }: Props) => {
     const { createNotification } = useNotifications();
 
     const handleRecoveryClick = async () => {
-        await withRecovering(restoreVolumes(lockedShareList));
-        createNotification({
-            text: c('Success').t`Recovery has started.`,
-        });
+        await withRecovering(
+            restoreVolumes(lockedShareList)
+                .then(() => {
+                    createNotification({
+                        text: c('Success').t`Recovery has started.`,
+                    });
+                })
+                .catch(() => onClose?.())
+        );
+
         onClose?.();
     };
 
