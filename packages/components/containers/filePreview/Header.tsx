@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Icon, FileIcon, FileNameDisplay } from '../../components';
+import { Icon, FileIcon, FileNameDisplay, Button } from '../../components';
 
 interface Props {
     name?: string;
@@ -20,14 +20,14 @@ const Header = ({ mimeType, name, onClose, onSave, children }: Props) => {
             {children}
             <div className="flex flex-align-items-center">
                 {onSave && (
-                    <button type="button" title={c('Action').t`Download`} onClick={onSave} className="ml1-5">
+                    <Button icon shape="ghost" title={c('Action').t`Download`} onClick={onSave} className="ml0-5">
                         <Icon name="download" size={20} alt={c('Action').t`Download`} />
-                    </button>
+                    </Button>
                 )}
                 {onClose && (
-                    <button type="button" title={c('Action').t`Close`} onClick={onClose} className="ml1-5">
-                        <Icon name="off" size={20} />
-                    </button>
+                    <Button icon shape="ghost" title={c('Action').t`Close`} onClick={onClose} className="ml0-5">
+                        <Icon name="off" size={20} alt={c('Action').t`Close`} />
+                    </Button>
                 )}
             </div>
         </div>

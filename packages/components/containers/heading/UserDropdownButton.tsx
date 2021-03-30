@@ -28,7 +28,7 @@ const UserDropdownButton = ({ user, isOpen, ...rest }: Props, ref: React.Ref<HTM
                         {nameToDisplay}
                     </span>
                     {Email ? (
-                        <span className="inline-block max-w100 text-ellipsis m0 opacity-30 dropdown-logout-email">
+                        <span className="inline-block max-w100 text-ellipsis color-weak text-xs m0 lh-rg dropdown-logout-email">
                             {Email}
                         </span>
                     ) : null}

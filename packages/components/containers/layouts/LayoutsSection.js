@@ -160,7 +160,7 @@ const LayoutsSection = () => {
                                 .t`When a label is added to a message in a conversation, all future messages you send or receive will have that same label automatically applied.`}
                         />
                     </Label>
-                    <Field>
+                    <Field className="pt0-5">
                         <StickyLabelsToggle
                             id="stickyLabelsToggle"
                             stickyLabels={StickyLabels}

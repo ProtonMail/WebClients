@@ -111,7 +111,7 @@ const UserDropdown = ({ ...rest }) => {
                             <li className="pl1 pr1">
                                 {organizationName ? (
                                     <>
-                                        <div className="opacity-50 text-sm m0">{c('Label').t`Organization`}</div>
+                                        <div className="color-weak text-sm m0">{c('Label').t`Organization`}</div>
                                         <div className="mb1">{organizationName}</div>
                                     </>
                                 ) : null}

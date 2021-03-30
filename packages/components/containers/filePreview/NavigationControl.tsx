@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { classnames } from '../../helpers';
 import Icon from '../../components/icon/Icon';
+import { Button } from '../../components';
 
 interface Props {
     current: number;
@@ -16,29 +16,17 @@ const NavigationControl = ({ current, total, onNext, onPrev }: Props) => {
 
     return (
         <div className="flex flex-align-items-center centered-absolute">
-            <button
-                type="button"
-                disabled={isPrevDisabled}
-                onClick={onPrev}
-                title={c('Action').t`Previous`}
-                className={classnames(['flex p0-25', isPrevDisabled && 'opacity-50'])}
-            >
-                <Icon name="caret" rotate={90} size={16} />
-            </button>
+            <Button icon shape="ghost" disabled={isPrevDisabled} onClick={onPrev} title={c('Action').t`Previous`}>
+                <Icon name="caret" rotate={90} size={16} alt={c('Action').t`Previous`} />
+            </Button>
             <span className="ml0-5 mr0-5">
                 <span>{current}</span>
-                <span className="ml0-25 mr0-25 opacity-50 text-sm">{c('Info').t`of`}</span>
+                <span className="ml0-25 mr0-25 color-weak text-sm">{c('Info').t`of`}</span>
                 <span>{total}</span>
             </span>
-            <button
-                type="button"
-                disabled={isNextDisabled}
-                onClick={onNext}
-                title={c('Action').t`Next`}
-                className={classnames(['flex p0-25', isNextDisabled && 'opacity-50'])}
-            >
-                <Icon name="caret" rotate={-90} size={16} />
-            </button>
+            <Button icon shape="ghost" disabled={isNextDisabled} onClick={onNext} title={c('Action').t`Next`}>
+                <Icon name="caret" rotate={-90} size={16} alt={c('Action').t`Next`} />
+            </Button>
         </div>
     );
 };

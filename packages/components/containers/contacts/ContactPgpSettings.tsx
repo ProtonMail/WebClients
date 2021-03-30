@@ -122,7 +122,7 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
                                 .t`Email encryption forces email signature to help authenticate your sent messages`}
                         />
                     </Label>
-                    <Field>
+                    <Field className="pt0-5">
                         <Toggle
                             id="encrypt-toggle"
                             checked={model.encrypt}
@@ -148,7 +148,7 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
                                 .t`Digitally signing emails helps authenticating that messages are sent by you`}
                         />
                     </Label>
-                    <Field>
+                    <Field className="pt0-5">
                         <Toggle
                             id="sign-toggle"
                             checked={model.sign}

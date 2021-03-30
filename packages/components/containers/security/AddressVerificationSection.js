@@ -32,7 +32,7 @@ const AddressVerificationSection = () => {
                             .t`When receiving an internal message from a sender that has no trusted keys in your contacts, show a banner asking if you want to enable trusted keys.`}
                     />
                 </Label>
-                <Field>
+                <Field className="pt0-5">
                     <Toggle
                         id="trustToggle"
                         loading={loading}
