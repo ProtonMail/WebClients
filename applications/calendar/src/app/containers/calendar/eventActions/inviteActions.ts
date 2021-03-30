@@ -318,11 +318,13 @@ export const getSendIcsAction = ({
                 throw new Error('Missing shared event data');
             }
             const vtimezones = await generateVtimezonesComponents(vevent, getVTimezones);
-            const pmVevent = {
-                ...vevent,
-                'x-pm-shared-event-id': { value: sharedEventID },
-                'x-pm-session-key': { value: sharedSessionKey },
-            };
+            const pmVevent = FEATURE_FLAGS.includes('proton-proton-invites')
+                ? {
+                      ...vevent,
+                      'x-pm-shared-event-id': { value: sharedEventID },
+                      'x-pm-session-key': { value: sharedSessionKey },
+                  }
+                : vevent;
             const inviteIcs = createInviteIcs({
                 method: ICAL_METHOD.REQUEST,
                 prodId,
