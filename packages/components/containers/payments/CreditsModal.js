@@ -105,6 +105,7 @@ const CreditsModal = (props) => {
                 errors={errors}
                 paypal={paypal}
                 paypalCredit={paypalCredit}
+                noMaxWidth
             />
         </FormModal>
     );
