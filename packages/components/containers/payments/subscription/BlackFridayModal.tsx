@@ -104,7 +104,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
     const getFooter = () => {
         if (productPayer) {
             return (
-                <p className="text-xs opacity-50 text-center">
+                <p className="text-xs color-weak text-center">
                     (1){' '}
                     {c('blackfriday Info')
                         .t`This subscription will automatically renew after 2 years at the same rate until it is cancelled.`}
@@ -122,14 +122,14 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                         </Price>
                     );
                     return (
-                        <p key={key} className="text-xs mt0 mb0 opacity-50 text-center">
+                        <p key={key} className="text-xs mt0 mb0 color-weak text-center">
                             {AFTER_INFO({ notice: index + 1, amount })}
                         </p>
                     );
                 })}
-                <p className="text-xs mt1 mb0 opacity-50 text-center">{c('blackfriday Info')
+                <p className="text-xs mt1 mb0 color-weak text-center">{c('blackfriday Info')
                     .t`Discounts are based on monthly pricing.`}</p>
-                <p className="text-xs mt0 mb0 opacity-50 text-center">{c('blackfriday Info')
+                <p className="text-xs mt0 mb0 color-weak text-center">{c('blackfriday Info')
                     .t`Offer valid only for first-time paid subscriptions.`}</p>
             </>
         );
@@ -299,7 +299,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                                         <small className="text-bold">
                                             {BILLED_DESCRIPTION({ cycle, amount: amountDue, notice: index + 1 })}
                                         </small>
-                                        <small className="opacity-50 blackfriday-standardPrice mb1">{c(
+                                        <small className="color-weak blackfriday-standardPrice mb1">{c(
                                             'blackfriday Info'
                                         ).jt`Standard price: ${regularPrice}`}</small>
                                     </div>

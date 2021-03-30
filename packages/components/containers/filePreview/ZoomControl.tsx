@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { classnames } from '../../helpers';
 import Icon from '../../components/icon/Icon';
+import { Button } from '../../components';
 
 interface Props {
     scale: number;
@@ -17,27 +17,27 @@ const ZoomControl = ({ scale, onZoomIn, onZoomOut, onReset }: Props) => {
     return (
         <div className="w100 p2 flex">
             <div className="center flex flex-align-items-center">
-                <button
-                    type="button"
+                <Button
+                    icon
+                    shape="ghost"
                     disabled={isZoomOutDisabled}
                     onClick={onZoomOut}
                     title={c('Action').t`Zoom out`}
-                    className={classnames(['flex p0-5', isZoomOutDisabled && 'opacity-50'])}
                 >
-                    <Icon name="minus" size={12} />
-                </button>
-                <button type="button" title={c('Action').t`Reset zoom`} className="ml0-5 mr0-5" onClick={onReset}>
+                    <Icon name="minus" size={12} alt={c('Action').t`Zoom out`} />
+                </Button>
+                <Button shape="ghost" title={c('Action').t`Reset zoom`} className="ml0-5 mr0-5" onClick={onReset}>
                     <span>{Math.round(scale * 100)}%</span>
-                </button>
-                <button
-                    type="button"
+                </Button>
+                <Button
+                    icon
+                    shape="ghost"
                     disabled={isZoomInDisabled}
                     onClick={onZoomIn}
                     title={c('Action').t`Zoom in`}
-                    className={classnames(['flex p0-5', isZoomInDisabled && 'opacity-50'])}
                 >
-                    <Icon name="plus" size={12} />
-                </button>
+                    <Icon name="plus" size={12} alt={c('Action').t`Zoom in`} />
+                </Button>
             </div>
         </div>
     );

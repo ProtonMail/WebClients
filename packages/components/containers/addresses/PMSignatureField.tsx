@@ -32,7 +32,7 @@ const PMSignatureField = ({ id, mailSettings = {} }: Props) => {
                 <div className="bordered pl1 pr1 pt0-5 pb0-5 mb1" dangerouslySetInnerHTML={{ __html: PM_SIGNATURE }} />
             </Field>
             {isMandatory ? null : (
-                <div className="ml1 on-mobile-ml0">
+                <div className="ml1 pt0-5 on-mobile-ml0">
                     <Toggle loading={loading} id={id} checked={state} onChange={handleChange} />
                 </div>
             )}

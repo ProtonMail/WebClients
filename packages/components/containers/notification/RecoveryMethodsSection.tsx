@@ -109,7 +109,7 @@ const RecoveryMethodsSection = () => {
                             </Row>
                             <Row>
                                 <Label htmlFor="passwordEmailResetToggle">{c('Label').t`Allow password reset`}</Label>
-                                <Field>
+                                <Field className="pt0-5">
                                     <Toggle
                                         loading={loadingReset}
                                         checked={!!userSettings.Email.Reset && !!userSettings.Email.Value}
@@ -130,7 +130,7 @@ const RecoveryMethodsSection = () => {
                                                 .t`When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.`}
                                         />
                                     </Label>
-                                    <Field>
+                                    <Field className="pt0-5">
                                         <Toggle
                                             loading={loadingNotify}
                                             checked={!!userSettings.Email.Notify && !!userSettings.Email.Value}
@@ -157,7 +157,7 @@ const RecoveryMethodsSection = () => {
                             </Row>
                             <Row>
                                 <Label htmlFor="passwordPhoneResetToggle">{c('Label').t`Allow password reset`}</Label>
-                                <Field>
+                                <Field className="pt0-5">
                                     <Toggle
                                         loading={loadingReset}
                                         checked={!!userSettings.Phone.Reset && !!userSettings.Phone.Value}

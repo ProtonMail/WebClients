@@ -34,7 +34,7 @@ const TwoFactorSection = () => {
                 <span className="mr0-5">{c('Label').t`Two-factor authentication`}</span>
                 <Info url={twoFactorAuthLink} />
             </Label>
-            <Field>
+            <Field className="pt0-5">
                 <Toggle checked={hasTOTPEnabled} id="twoFactorToggle" onChange={handleChange} />
             </Field>
         </Row>

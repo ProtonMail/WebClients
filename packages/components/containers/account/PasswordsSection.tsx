@@ -58,7 +58,7 @@ const PasswordsSection = ({ open }: Props) => {
                             <span className="mr0-5">{c('Label').t`Two password mode`}</span>
                             <Info url="https://protonmail.com/support/knowledge-base/single-password" />
                         </Label>
-                        <Field>
+                        <Field className="pt0-5">
                             <Toggle
                                 loading={loadingUserSettings}
                                 checked={!isOnePasswordMode}

@@ -71,7 +71,7 @@ const ExternalPGPSettingsSection = () => {
                             .t`Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the Default PGP Scheme that is selected down below.`}
                     />
                 </Label>
-                <Field>
+                <Field className="pt0-5">
                     <Toggle
                         id="signToggle"
                         checked={!!Sign}
@@ -89,7 +89,7 @@ const ExternalPGPSettingsSection = () => {
                             .t`This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.`}
                     />
                 </Label>
-                <Field>
+                <Field className="pt0-5">
                     <Toggle
                         id="attachPublicKeyToggle"
                         checked={!!AttachPublicKey}
