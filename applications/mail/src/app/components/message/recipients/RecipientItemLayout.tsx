@@ -39,7 +39,7 @@ const RecipientItemLayout = ({ button, label, showAddress = true, address, title
                     {showAddress && (
                         <span
                             className={classnames([
-                                'message-recipient-item-address opacity-50',
+                                'message-recipient-item-address color-weak',
                                 isLoading && 'inline-block',
                             ])}
                         >

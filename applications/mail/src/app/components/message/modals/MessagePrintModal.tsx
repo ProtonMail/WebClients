@@ -51,7 +51,7 @@ const MessagePrintModal = ({ labelID, message, onClose, ...rest }: Props) => {
                     <h2 className="message-print-subject text-bold pb0-5 mb0-5">{message.data?.Subject}</h2>
                     <RecipientType label={c('Label').t`From:`}>
                         {getRecipientLabel(sender as Recipient, true)}{' '}
-                        <span className="opacity-50">&lt;{sender?.Address}&gt;</span>
+                        <span className="color-weak">&lt;{sender?.Address}&gt;</span>
                     </RecipientType>
                     <RecipientsDetails message={message} onCompose={noop} isLoading={false} />
                     <RecipientType label={c('Label').t`Date:`}>

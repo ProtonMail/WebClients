@@ -199,7 +199,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
             <DropdownButton
                 as={isNarrow ? TopNavbarListItemSearchButton : 'button'}
                 type="button"
-                className={classnames([isNarrow ? undefined : 'searchbox-advanced-search-button'])}
+                className={classnames([isNarrow ? undefined : 'searchbox-advanced-search-button flex'])}
                 ref={anchorRef}
                 isOpen={isOpen}
                 onClick={toggle}
@@ -209,7 +209,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                 {isNarrow ? undefined : (
                     <Icon
                         name="caret"
-                        className={classnames(['searchbox-advanced-search-icon', isOpen && 'rotateX-180'])}
+                        className={classnames(['searchbox-advanced-search-icon mauto', isOpen && 'rotateX-180'])}
                         alt={c('Action').t`Advanced search`}
                     />
                 )}
@@ -313,14 +313,14 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                     <div className="mb2 flex flex-nowrap on-mobile-flex-column">
                         <Label className="advancedSearch-label" id="advanced-search-attachments-label">{c('Label')
                             .t`Attachments`}</Label>
-                        <div className="flex-item-fluid pt0-25">
+                        <div className="flex-item-fluid pt0-5">
                             <Radio
                                 id="advanced-search-attachments-all"
                                 onChange={() => updateModel({ ...model, attachments: UNDEFINED })}
                                 checked={model.attachments === UNDEFINED}
                                 name="advanced-search-attachments"
                                 aria-describedby="advanced-search-attachments-label"
-                                className="mr1"
+                                className="inline-flex mr1"
                             >{c('Attachment radio advanced search').t`All`}</Radio>
                             <Radio
                                 id="advanced-search-attachments-yes"
@@ -328,7 +328,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                                 checked={model.attachments === WITH_ATTACHMENTS}
                                 name="advanced-search-attachments"
                                 aria-describedby="advanced-search-attachments-label"
-                                className="mr1"
+                                className="inline-flex mr1"
                             >{c('Attachment radio advanced search').t`Yes`}</Radio>
                             <Radio
                                 id="advanced-search-attachments-no"
