@@ -64,7 +64,7 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
                 <>
                     <Header title={c('Title').t`No recovery method`} left={<BackButton onClick={handleBack} />} />
                     <Content>
-                        <form className="signup-form">
+                        <form>
                             <div className="mb1-75">{c('Info')
                                 .t`Unfortunately there is no recovery method saved for this account.`}</div>
                             <Button color="norm" size="large" onClick={handleBack} fullWidth>{c('Action')

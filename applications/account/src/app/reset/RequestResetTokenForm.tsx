@@ -82,7 +82,6 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, state, setters: state
 
     return (
         <form
-            className="signup-form"
             onSubmit={(e) => {
                 e.preventDefault();
                 if (loading || !onFormSubmit()) {

@@ -18,7 +18,6 @@ const SetPasswordForm = ({ onSubmit }: Props) => {
     return (
         <form
             name="setPasswordForm"
-            className="signup-form"
             onSubmit={(event) => {
                 event.preventDefault();
                 if (loading || !onFormSubmit()) {

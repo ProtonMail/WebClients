@@ -18,7 +18,6 @@ const GenerateInternalAddressConfirmForm = ({ onSubmit, address, recoveryAddress
     return (
         <form
             name="addressConfirmForm"
-            className="signup-form"
             onSubmit={(event) => {
                 event.preventDefault();
                 if (loading) {

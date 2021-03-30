@@ -70,7 +70,6 @@ const ValidateResetTokenForm = ({ onSubmit, state, setters: stateSetters, onBack
 
     return (
         <form
-            className="signup-form"
             onSubmit={(e) => {
                 e.preventDefault();
                 if (loading || !onFormSubmit()) {

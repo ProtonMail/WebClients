@@ -18,7 +18,6 @@ const RequestRecoveryForm = ({ onSubmit, state, setters: stateSetters }: Props) 
 
     return (
         <form
-            className="signup-form"
             onSubmit={(e) => {
                 e.preventDefault();
                 if (loading || !onFormSubmit()) {

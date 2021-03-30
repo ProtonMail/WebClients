@@ -19,7 +19,6 @@ const TOTPForm = ({ onSubmit }: Props) => {
     return (
         <form
             name="totpForm"
-            className="signup-form"
             onSubmit={(event) => {
                 event.preventDefault();
                 if (loading || !onFormSubmit()) {

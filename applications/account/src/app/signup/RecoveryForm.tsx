@@ -106,7 +106,6 @@ const RecoveryForm = ({ model, onChange, onSubmit, onSkip, defaultCountry }: Pro
             ) : null}
             <form
                 name="recoveryForm"
-                className="signup-form"
                 onSubmit={(e) => {
                     e.preventDefault();
                     withLoading(handleSubmit()).catch(noop);

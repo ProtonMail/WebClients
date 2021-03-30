@@ -157,7 +157,6 @@ const CreateAccountForm = ({
             ) : null}
             <form
                 name="accountForm"
-                className="signup-form"
                 style={
                     challengeLoading
                         ? {
