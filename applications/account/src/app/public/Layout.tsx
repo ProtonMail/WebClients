@@ -52,16 +52,16 @@ const Layout = ({ children, hasLanguageSelect = true }: Props) => {
                     {children}
                     <div className="text-center text-sm m0 pt1 pb0-5 flex-item-noshrink">
                         <span className="auto-mobile">{c('Info').t`Made globally, based in Switzerland`}</span>
-                        <span className="opacity-50 pl0-75 pr0-75 no-mobile" aria-hidden="true">
+                        <span className="color-weak pl0-75 pr0-75 no-mobile" aria-hidden="true">
                             |
                         </span>
                         <span className="auto-mobile">{termsLink}</span>
-                        <span className="opacity-50 pl0-75 pr0-75 no-mobile" aria-hidden="true">
+                        <span className="color-weak pl0-75 pr0-75 no-mobile" aria-hidden="true">
                             |
                         </span>
                         <span className="auto-mobile">{privacyLink}</span>
                     </div>
-                    <div className="opacity-50 text-center text-sm m0 pt0 pb0-5 auto-mobile">{c('Info')
+                    <div className="color-weak text-center text-sm m0 pt0 pb0-5 auto-mobile">{c('Info')
                         .jt`Version ${appVersion}`}</div>
                 </div>
             </div>
