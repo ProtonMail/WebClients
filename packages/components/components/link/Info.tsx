@@ -48,6 +48,7 @@ const Info = ({
     };
 
     const tooltipHandlers = useTooltipHandlers(open, close, isOpen);
+    const safeTitle = title || '';
 
     return (
         <>
@@ -64,7 +65,7 @@ const Info = ({
                 <Icon
                     className={classnames(['icon-16p color-primary', className])}
                     name="info"
-                    alt={c('Action').t`More info: ${title || ''}`}
+                    alt={c('Action').t`More info: ${safeTitle}`}
                     {...rest}
                 />
             </button>
