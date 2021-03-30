@@ -58,14 +58,14 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
                 c('Plan Feature').t`Medium speed`,
                 c('Plan Feature').t`Strict no-logs policy`,
                 <>
-                    <del className="opacity-50 mr0-5">{c('Plan feature').t`P2P filesharing/BitTorrent support`}</del>
+                    <del className="color-weak mr0-5">{c('Plan feature').t`P2P filesharing/BitTorrent support`}</del>
                     <Info
                         title={c('Info').t`Support for file sharing protocols such as BitTorrent.`}
                         url="https://protonvpn.com/support/p2p-vpn-redirection/"
                     />
                 </>,
                 <>
-                    <del className="opacity-50 mr0-5">{c('Plan feature').t`Adblocker (NetShield)`}</del>
+                    <del className="color-weak mr0-5">{c('Plan feature').t`Adblocker (NetShield)`}</del>
                     <Info
                         title={c('Info')
                             .t`NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.`}
@@ -73,14 +73,14 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
                     />
                 </>,
                 <>
-                    <del className="opacity-50 mr0-5">{c('Plan feature').t`Access blocked content`}</del>
+                    <del className="color-weak mr0-5">{c('Plan feature').t`Access blocked content`}</del>
                     <Info
                         title={c('Info')
                             .t`Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.`}
                     />
                 </>,
                 <>
-                    <del className="opacity-50 mr0-5">{c('Plan feature').t`Secure Core VPN`}</del>
+                    <del className="color-weak mr0-5">{c('Plan feature').t`Secure Core VPN`}</del>
                     <Info
                         title={c('Info')
                             .t`Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.`}
@@ -88,14 +88,14 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
                     />
                 </>,
                 <>
-                    <del className="opacity-50 mr0-5">{c('Plan feature').t`Tor over VPN`}</del>
+                    <del className="color-weak mr0-5">{c('Plan feature').t`Tor over VPN`}</del>
                     <Info
                         title={c('Info').t`Route your Internet traffic through the Tor network with a single click.`}
                         url="https://protonvpn.com/support/tor-vpn/"
                     />
                 </>,
                 <>
-                    <del className="opacity-50 mr0-5">{c('Plan feature').t`Streaming service support`}</del>
+                    <del className="color-weak mr0-5">{c('Plan feature').t`Streaming service support`}</del>
                     <Info
                         title={c('Info')
                             .jt`Access your streaming services, like ${netflix}, ${disney}, ${primeVideo}, ${many}, no matter where you are.`}
@@ -147,7 +147,7 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
                     />
                 </>,
                 <>
-                    <del className="opacity-50 mr0-5">{c('Plan feature').t`Secure Core VPN`}</del>
+                    <del className="color-weak mr0-5">{c('Plan feature').t`Secure Core VPN`}</del>
                     <Info
                         title={c('Info')
                             .t`Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.`}
@@ -155,14 +155,14 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
                     />
                 </>,
                 <>
-                    <del className="opacity-50 mr0-5">{c('Plan feature').t`Tor over VPN`}</del>
+                    <del className="color-weak mr0-5">{c('Plan feature').t`Tor over VPN`}</del>
                     <Info
                         title={c('Info').t`Route your Internet traffic through the Tor network with a single click.`}
                         url="https://protonvpn.com/support/tor-vpn/"
                     />
                 </>,
                 <>
-                    <del className="opacity-50 mr0-5">{c('Plan feature').t`Streaming service support`}</del>
+                    <del className="color-weak mr0-5">{c('Plan feature').t`Streaming service support`}</del>
                     <Info
                         title={c('Info')
                             .jt`Access your streaming services, like ${netflix}, ${disney}, ${primeVideo}, ${many}, no matter where you are.`}

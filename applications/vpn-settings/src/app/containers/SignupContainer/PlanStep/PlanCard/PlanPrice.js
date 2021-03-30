@@ -40,7 +40,7 @@ const PlanPrice = ({ plan, cycle, currency }) => {
 
             <div>
                 {[CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle) ? (
-                    <div className="opacity-50">{c('PlanPrice').jt`Billed as ${totalBilledText}`}</div>
+                    <div className="color-weak">{c('PlanPrice').jt`Billed as ${totalBilledText}`}</div>
                 ) : null}
                 {discount > 0 && (
                     <div className="text-bold color-primary">{c('PlanPrice').jt`SAVE ${discountText}`}</div>
