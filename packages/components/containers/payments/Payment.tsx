@@ -9,6 +9,8 @@ import {
 } from 'proton-shared/lib/constants';
 import { Currency } from 'proton-shared/lib/interfaces';
 
+import { classnames } from '../../helpers';
+
 import { Alert, Price, Loader } from '../../components';
 import { useMethods } from '../paymentMethods';
 import PaymentMethodSelector from '../paymentMethods/PaymentMethodSelector';
@@ -34,6 +36,7 @@ interface Props {
     card: CardModel;
     onCard: (key: string, value: string) => void;
     errors: any;
+    noMaxWidth?: boolean;
 }
 
 const Payment = ({
@@ -49,6 +52,7 @@ const Payment = ({
     card,
     onCard,
     errors,
+    noMaxWidth = false,
 }: Props) => {
     const { methods, options, loading } = useMethods({ amount, coupon, type });
     const lastCustomMethod = [...options]
@@ -105,7 +109,12 @@ const Payment = ({
 
     return (
         <>
-            <div className="payment-container max-w37e on-mobile-max-w100 center">
+            <div
+                className={classnames([
+                    'payment-container center',
+                    noMaxWidth === false && 'max-w37e on-mobile-max-w100 ',
+                ])}
+            >
                 <div className="mr1 on-mobile-mr0 border-bottom pb2">
                     <h2 className="text-2xl text-bold">{c('Label').t`Select a method`}</h2>
                     <PaymentMethodSelector
