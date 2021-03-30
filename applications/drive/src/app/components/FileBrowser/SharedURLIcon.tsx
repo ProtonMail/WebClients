@@ -11,7 +11,7 @@ const SharedURLIcon = ({ expired }: Props) => {
     return (
         <Tooltip title={expired ? c('Tooltip').t`Expired sharing link` : c('Tooltip').t`Active sharing link`}>
             <span className="ml1 flex flex-item-noshrink">
-                <Icon className={!expired ? 'color-norm' : undefined} name="link" />
+                <Icon className={!expired ? 'color-info' : 'color-weak'} name="link" />
             </span>
         </Tooltip>
     );
