@@ -66,7 +66,7 @@ const CalendarSettingsTab = ({ isSubmitted, errors, model, setModel }: Props) =>
             </Row>
             <Row>
                 <Label htmlFor="calendar-display-toggle">{c('Label').t`Display`}</Label>
-                <Field>
+                <Field className="pt0-5">
                     <Toggle
                         id="calendar-display-toggle"
                         checked={model.display}
