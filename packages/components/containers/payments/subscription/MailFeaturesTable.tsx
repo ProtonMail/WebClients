@@ -113,7 +113,7 @@ const MailFeaturesTable = ({ cycle, currency }: Props) => {
                     </tr>
                     <tr>
                         <td>
-                            <del className="opacity-50">{c('Feature').t`Encrypted contacts`}</del>
+                            <del className="color-weak">{c('Feature').t`Encrypted contacts`}</del>
                         </td>
                         <td>{c('Feature').t`Encrypted contacts`}</td>
                         <td>{c('Feature').t`Encrypted contacts`}</td>
@@ -121,7 +121,7 @@ const MailFeaturesTable = ({ cycle, currency }: Props) => {
                     </tr>
                     <tr>
                         <td>
-                            <del className="opacity-50">{c('Feature').t`Address verification`}</del>
+                            <del className="color-weak">{c('Feature').t`Address verification`}</del>
                         </td>
                         <td>{c('Feature').t`Address verification`}</td>
                         <td>{c('Feature').t`Address verification`}</td>
@@ -129,7 +129,7 @@ const MailFeaturesTable = ({ cycle, currency }: Props) => {
                     </tr>
                     <tr>
                         <td>
-                            <del className="opacity-50">{c('Feature').t`Custom filters`}</del>
+                            <del className="color-weak">{c('Feature').t`Custom filters`}</del>
                         </td>
                         <td>{c('Feature').t`Custom filters`}</td>
                         <td>{c('Feature').t`Custom filters`}</td>
@@ -137,7 +137,7 @@ const MailFeaturesTable = ({ cycle, currency }: Props) => {
                     </tr>
                     <tr>
                         <td>
-                            <del className="opacity-50">{c('Feature').t`IMAP/SMTP support`}</del>
+                            <del className="color-weak">{c('Feature').t`IMAP/SMTP support`}</del>
                         </td>
                         <td>{c('Feature').t`IMAP/SMTP support`}</td>
                         <td>{c('Feature').t`IMAP/SMTP support`}</td>
@@ -145,7 +145,7 @@ const MailFeaturesTable = ({ cycle, currency }: Props) => {
                     </tr>
                     <tr>
                         <td>
-                            <del className="opacity-50 text-ellipsis block">{c('Feature').t`Autoresponder`}</del>
+                            <del className="color-weak text-ellipsis block">{c('Feature').t`Autoresponder`}</del>
                         </td>
                         <td className="text-ellipsis">{c('Feature').t`Autoresponder`}</td>
                         <td className="text-ellipsis">{c('Feature').t`Autoresponder`}</td>
@@ -153,7 +153,7 @@ const MailFeaturesTable = ({ cycle, currency }: Props) => {
                     </tr>
                     <tr>
                         <td>
-                            <del className="opacity-50">{c('Feature').t`@pm.me short domain`}</del>
+                            <del className="color-weak">{c('Feature').t`@pm.me short domain`}</del>
                         </td>
                         <td>{c('Feature').t`@pm.me short domain`}</td>
                         <td>{c('Feature').t`@pm.me short domain`}</td>
@@ -161,33 +161,33 @@ const MailFeaturesTable = ({ cycle, currency }: Props) => {
                     </tr>
                     <tr>
                         <td>
-                            <del className="opacity-50">{c('Feature').t`Catch-All email`}</del>
+                            <del className="color-weak">{c('Feature').t`Catch-All email`}</del>
                         </td>
                         <td>
-                            <del className="opacity-50">{c('Feature').t`Catch-All email`}</del>
+                            <del className="color-weak">{c('Feature').t`Catch-All email`}</del>
                         </td>
                         <td>{c('Feature').t`Catch-All email`}</td>
                         <td>{c('Feature').t`Catch-All email`}</td>
                     </tr>
                     <tr>
                         <td>
-                            <del className="opacity-50">{c('Feature').t`Multi user support`}</del>
+                            <del className="color-weak">{c('Feature').t`Multi user support`}</del>
                         </td>
                         <td>
-                            <del className="opacity-50">{c('Feature').t`Multi user support`}</del>
+                            <del className="color-weak">{c('Feature').t`Multi user support`}</del>
                         </td>
                         <td>{c('Feature').t`Multi user support`}</td>
                         <td>{c('Feature').t`Multi user support`}</td>
                     </tr>
                     <tr>
                         <td>
-                            <del className="opacity-50">{c('Feature').t`ProtonVPN included`}</del>
+                            <del className="color-weak">{c('Feature').t`ProtonVPN included`}</del>
                         </td>
                         <td>
-                            <del className="opacity-50">{c('Feature').t`ProtonVPN included`}</del>
+                            <del className="color-weak">{c('Feature').t`ProtonVPN included`}</del>
                         </td>
                         <td>
-                            <del className="opacity-50">{c('Feature').t`ProtonVPN included`}</del>
+                            <del className="color-weak">{c('Feature').t`ProtonVPN included`}</del>
                         </td>
                         <td>{c('Feature').t`ProtonVPN included`}</td>
                     </tr>

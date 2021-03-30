@@ -24,7 +24,7 @@ const ShortcutsSection = ({ onOpenShortcutsModal }: Props) => {
     return (
         <Row>
             <Label htmlFor="shortcutsToggle">{c('Title').t`Keyboard shortcuts`}</Label>
-            <Field>
+            <Field className="pt0-5">
                 <div>
                     <ShortcutsToggle
                         className="mr1"

@@ -76,7 +76,9 @@ const EarlyAccessSection = () => {
                             <Option value="alpha" title={c('Environment').t`Alpha`} />
                         </SelectTwo>
                     ) : (
-                        <Toggle checked={environment === 'beta'} onChange={handleToggleChange} />
+                        <div className="pt0-5">
+                            <Toggle checked={environment === 'beta'} onChange={handleToggleChange} />
+                        </div>
                     )}
                 </Field>
             </Row>

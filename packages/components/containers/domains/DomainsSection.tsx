@@ -44,7 +44,7 @@ const DomainsSection = () => {
                     .t`Refresh status`}</Button>
             </Block>
             {!domains.length ? null : <DomainsTable domains={domains} domainsAddressesMap={domainsAddressesMap} />}
-            <Block className="opacity-50">
+            <Block className="color-weak">
                 {UsedDomains} / {MaxDomains} {c('Info').ngettext(msgid`domain used`, `domains used`, UsedDomains)}
             </Block>
         </>

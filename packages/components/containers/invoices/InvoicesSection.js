@@ -83,7 +83,7 @@ const InvoicesSection = () => {
                     .t`Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.`}</Alert>
             ) : null}
             <Block className="flex flex-justify-space-between">
-                <div>
+                <div className="flex flex-align-items-center">
                     {user.isPaid ? (
                         <ButtonGroup className="mr1">
                             <Button group className={owner === USER ? 'is-active' : ''} onClick={handleOwner(USER)}>{c(

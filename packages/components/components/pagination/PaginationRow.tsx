@@ -39,37 +39,13 @@ const PaginationRow = ({
     return (
         <ButtonGroup className={className}>
             <Tooltip title={c('Action').t`Go to first page`}>
-                <Button
-                    icon
-                    group
-                    className={classnames([
-                        'no-outline relative',
-                        (disabled || disablePrevious) && 'no-pointer-events no-pointer-events-children',
-                    ])}
-                    onClick={() => onStart()}
-                >
-                    <Icon
-                        name="caret-double-left"
-                        className={classnames([(disabled || disablePrevious) && 'opacity-50'])}
-                        alt={c('Action').t`Go to first page`}
-                    />
+                <Button icon group shape="ghost" disabled={disabled || disablePrevious} onClick={() => onStart()}>
+                    <Icon name="caret-double-left" alt={c('Action').t`Go to first page`} />
                 </Button>
             </Tooltip>
             <Tooltip title={c('Action').t`Go to previous page`}>
-                <Button
-                    group
-                    icon
-                    className={classnames([
-                        'no-outline relative',
-                        (disabled || disablePrevious) && 'no-pointer-events no-pointer-events-children',
-                    ])}
-                    onClick={() => onPrevious()}
-                >
-                    <Icon
-                        name="caret"
-                        className={classnames(['rotateZ-90', (disabled || disablePrevious) && 'opacity-50'])}
-                        alt={c('Action').t`Go to previous page`}
-                    />
+                <Button group icon shape="ghost" disabled={disabled || disablePrevious} onClick={() => onPrevious()}>
+                    <Icon name="caret" className="rotateZ-90" alt={c('Action').t`Go to previous page`} />
                 </Button>
             </Tooltip>
             {pages.map((pageNumber) => {
@@ -79,12 +55,10 @@ const PaginationRow = ({
                         <Button
                             group
                             icon
+                            shape="ghost"
                             aria-current={isActive}
-                            className={classnames([
-                                'no-outline relative',
-                                isActive && 'text-bold',
-                                (disabled || isActive) && 'no-pointer-events no-pointer-events-children',
-                            ])}
+                            className={classnames([isActive && 'text-bold', isActive && 'no-pointer-events'])}
+                            disabled={disabled}
                             onClick={() => onPage(pageNumber)}
                         >
                             <span className="sr-only">{goToPageTitle(pageNumber)}</span>
@@ -94,37 +68,13 @@ const PaginationRow = ({
                 );
             })}
             <Tooltip title={c('Action').t`Go to next page`}>
-                <Button
-                    group
-                    icon
-                    className={classnames([
-                        'no-outline relative',
-                        (disabled || disableNext) && 'no-pointer-events no-pointer-events-children',
-                    ])}
-                    onClick={() => onNext()}
-                >
-                    <Icon
-                        name="caret"
-                        className={classnames(['rotateZ-270', (disabled || disableNext) && 'opacity-50'])}
-                        alt={c('Action').t`Go to next page`}
-                    />
+                <Button group icon shape="ghost" disabled={disabled || disableNext} onClick={() => onNext()}>
+                    <Icon name="caret" className="rotateZ-270" alt={c('Action').t`Go to next page`} />
                 </Button>
             </Tooltip>
             <Tooltip title={c('Action').t`Go to last page`}>
-                <Button
-                    group
-                    icon
-                    className={classnames([
-                        'no-outline relative',
-                        (disabled || disableNext) && 'no-pointer-events no-pointer-events-children',
-                    ])}
-                    onClick={() => onEnd()}
-                >
-                    <Icon
-                        name="caret-double-left"
-                        className={classnames(['mirror', (disabled || disableNext) && 'opacity-50'])}
-                        alt={c('Action').t`Go to last page`}
-                    />
+                <Button group icon shape="ghost" disabled={disabled || disableNext} onClick={() => onEnd()}>
+                    <Icon name="caret-double-left" className="mirror" alt={c('Action').t`Go to last page`} />
                 </Button>
             </Tooltip>
         </ButtonGroup>

@@ -21,7 +21,7 @@ const AppVersion = ({ appVersion: maybeAppVersion, appName: maybeAppName, change
 
     const appName = maybeAppName || APPS_CONFIGURATION[APP_NAME]?.name;
     const appVersion = getAppVersion(maybeAppVersion || APP_VERSION_DISPLAY || APP_VERSION);
-    const className = 'text-2xs text-center opacity-50 mt0 mb0-5';
+    const className = 'text-2xs text-center color-weak mt0 mb0-5';
     const title = DATE_VERSION;
     const children = (
         <>

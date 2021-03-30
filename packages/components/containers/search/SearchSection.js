@@ -16,7 +16,7 @@ const SearchSection = () => {
                     <span className="mr0-5">{c('Label').t`Require exact match`}</span>
                     <Info url="https://protonmail.com/support/knowledge-base/search/" />
                 </Label>
-                <Field>
+                <Field className="pt0-5">
                     <Toggle
                         loading={loading}
                         checked={!AutoWildcardSearch}
