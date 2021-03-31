@@ -806,12 +806,15 @@ function useDrive() {
                                 decryptedLinkPromise,
                             ];
                         }
+
                         if (Data?.FLAG_RESTORE_COMPLETE) {
-                            // Updates locked shares and fetch content of restored folder
-                            debouncedRequest<UserShareResult>(queryUserShares()).then(({ Shares }) => {
-                                const lockedShares = Shares.filter((share) => share.Locked);
-                                cache.setLockedShares(lockedShares);
-                                fetchNextFolderContents(shareId, Link.LinkID).then(() => {
+                            fetchNextFolderContents(shareId, Link.LinkID).then(() => {
+                                // Updates locked shares and fetch content of restored folder
+                                debouncedRequest<UserShareResult>(queryUserShares()).then(({ Shares }) => {
+                                    const lockedShares = Shares.filter(
+                                        (share) => share.Locked && isPrimaryShare(share)
+                                    );
+                                    cache.setLockedShares(lockedShares);
                                     createNotification({
                                         text: c('Success').t`Your files were successfully recovered to "My files".`,
                                     });
