@@ -2,7 +2,7 @@ import React, { useMemo, useRef, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 import { useActiveBreakpoint, useUserSettings, useCalendarUserSettings } from 'react-components';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
-import { Address, User } from 'proton-shared/lib/interfaces';
+import { Address, UserModel } from 'proton-shared/lib/interfaces';
 import {
     getDefaultCalendar,
     getIsCalendarDisabled,
@@ -28,7 +28,7 @@ import { EventTargetAction } from './interface';
 interface Props {
     calendars: Calendar[];
     addresses: Address[];
-    user: User;
+    user: UserModel;
 }
 const MainContainerSetup = ({ user, addresses, calendars }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
@@ -76,6 +76,7 @@ const MainContainerSetup = ({ user, addresses, calendars }: Props) => {
                         defaultCalendar={defaultCalendar}
                         calendarUserSettings={calendarUserSettings}
                         calendarsEventsCacheRef={calendarsEventsCacheRef}
+                        user={user}
                     />
                 </Route>
                 <Route path="/event">

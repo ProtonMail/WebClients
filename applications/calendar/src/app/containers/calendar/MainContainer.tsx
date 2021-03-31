@@ -9,7 +9,6 @@ import {
     useWelcomeFlags,
 } from 'react-components';
 
-import CalendarFreeContainer from '../setup/CalendarFreeContainer';
 import CalendarOnboardingContainer from '../setup/CalendarOnboardingContainer';
 import CalendarSetupContainer from '../setup/CalendarSetupContainer';
 import ResetContainer from '../setup/ResetContainer';
@@ -40,10 +39,6 @@ const MainContainer = () => {
             return (Flags & CALENDAR_FLAGS.INCOMPLETE_SETUP) > 0;
         });
     });
-
-    if (user.isFree) {
-        return <CalendarFreeContainer />;
-    }
 
     if (hasCalendarToGenerate) {
         return <CalendarSetupContainer onDone={() => setHasCalendarToGenerate(false)} />;

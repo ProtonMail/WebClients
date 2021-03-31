@@ -1,4 +1,4 @@
-import { MAX_CALENDARS_PER_USER } from 'proton-shared/lib/calendar/constants';
+import { MAX_CALENDARS_PER_USER, MAX_CALENDARS_PER_FREE_USER } from 'proton-shared/lib/calendar/constants';
 import React, { useState } from 'react';
 import {
     useApi,
@@ -9,12 +9,16 @@ import {
     useModals,
     ConfirmModal,
     Alert,
+    AppLink,
+    ButtonLike,
+    Card,
 } from 'react-components';
 import { c } from 'ttag';
 import { updateCalendarUserSettings, removeCalendar } from 'proton-shared/lib/api/calendars';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
-import { Address } from 'proton-shared/lib/interfaces';
+import { Address, UserModel } from 'proton-shared/lib/interfaces';
 
+import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 import CalendarsTable from './CalendarsTable';
 import CalendarModal from '../CalendarModal';
 
@@ -24,6 +28,7 @@ interface Props {
     disabledCalendars: Calendar[];
     activeCalendars: Calendar[];
     defaultCalendar?: Calendar;
+    user: UserModel;
 }
 const CalendarsSection = ({
     activeAddresses,
@@ -31,6 +36,7 @@ const CalendarsSection = ({
     defaultCalendar,
     disabledCalendars,
     activeCalendars,
+    user,
 }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
@@ -109,10 +115,32 @@ const CalendarsSection = ({
         }
     };
 
-    const canAddCalendar = activeAddresses.length > 0 && calendars.length < MAX_CALENDARS_PER_USER;
+    const calendarLimit = user.isFree ? MAX_CALENDARS_PER_FREE_USER : MAX_CALENDARS_PER_USER;
+    const isBelowLimit = calendars.length < calendarLimit;
+    const canAddCalendar = activeAddresses.length > 0 && isBelowLimit;
 
     return (
         <>
+            {user.isFree && !canAddCalendar && (
+                <Card className="mb1">
+                    <div className="flex flex-nowrap flex-align-items-center">
+                        <p className="flex-item-fluid mt0 mb0 pr2">
+                            {c('Upgrade notice')
+                                .t`Upgrade to a paid plan to create up to 25 calendars, allowing you to make calendars for work, to share with friends, and just for yourself.`}
+                        </p>
+                        <ButtonLike
+                            as={AppLink}
+                            to="/subscription"
+                            color="norm"
+                            shape="solid"
+                            size="small"
+                            toApp={getAccountSettingsApp()}
+                        >
+                            {c('Action').t`Upgrade`}
+                        </ButtonLike>
+                    </div>
+                </Card>
+            )}
             <div className="mb1">
                 <PrimaryButton
                     data-test-id="calendar-setting-page:add-calendar"
