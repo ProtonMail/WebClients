@@ -61,7 +61,8 @@ const ExtraEvents = ({ message }: Props) => {
         defaultCalendar?: Calendar;
         canCreateCalendar: boolean;
         maxUserCalendarsDisabled: boolean;
-    }>({ canCreateCalendar: true, maxUserCalendarsDisabled: false });
+        mustReactivateCalendars: boolean;
+    }>({ canCreateCalendar: true, maxUserCalendarsDisabled: false, mustReactivateCalendars: false });
     const loadingConfigs =
         loadingContactEmails || loadingAddresses || loadingCalendars || loadingUserSettings || loadingUser;
 
@@ -87,10 +88,14 @@ const ExtraEvents = ({ message }: Props) => {
             if (unmounted) {
                 return;
             }
+            const canCreateCalendar = getCanCreateCalendar(activeCalendars, disabledCalendars, calendars, user.isFree);
+            const maxUserCalendarsDisabled = getMaxUserCalendarsDisabled(disabledCalendars, user.isFree);
+            const mustReactivateCalendars = !defaultCalendar && !canCreateCalendar && !maxUserCalendarsDisabled;
             setCalData({
                 defaultCalendar,
-                canCreateCalendar: getCanCreateCalendar(activeCalendars, disabledCalendars, calendars),
-                maxUserCalendarsDisabled: getMaxUserCalendarsDisabled(disabledCalendars),
+                canCreateCalendar,
+                maxUserCalendarsDisabled,
+                mustReactivateCalendars,
             });
             const invitations = (
                 await Promise.all(
@@ -152,9 +157,9 @@ const ExtraEvents = ({ message }: Props) => {
                         defaultCalendar={calData.defaultCalendar}
                         canCreateCalendar={calData.canCreateCalendar}
                         maxUserCalendarsDisabled={calData.maxUserCalendarsDisabled}
+                        mustReactivateCalendars={calData.mustReactivateCalendars}
                         contactEmails={contactEmails}
                         ownAddresses={addresses}
-                        user={user}
                         userSettings={userSettings}
                     />
                 );
