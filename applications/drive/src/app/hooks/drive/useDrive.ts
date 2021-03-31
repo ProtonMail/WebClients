@@ -798,11 +798,14 @@ function useDrive() {
                     const decryptedLinkPromise = decryptLinkAsync(Link);
 
                     if (EventType === CREATE) {
-                        actions.create[Link.ParentLinkID] = [
-                            ...(actions.create[Link.ParentLinkID] ?? []),
-                            decryptedLinkPromise,
-                        ];
-
+                        if (Link.Trashed) {
+                            actions.trash.push(decryptedLinkPromise);
+                        } else {
+                            actions.create[Link.ParentLinkID] = [
+                                ...(actions.create[Link.ParentLinkID] ?? []),
+                                decryptedLinkPromise,
+                            ];
+                        }
                         if (Data?.FLAG_RESTORE_COMPLETE) {
                             // Updates locked shares and fetch content of restored folder
                             debouncedRequest<UserShareResult>(queryUserShares()).then(({ Shares }) => {
