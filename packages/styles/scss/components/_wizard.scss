@@ -6,13 +6,7 @@ $size-current-pin: 16px !default;
 	display: flex;
 
 	&-container {
-		position: relative;
-		padding-top: 1.5em;
 		padding-left: 2px; // "optical" alignment, difficult to align text and circle ^^
-
-		&--no-text-displayed {
-			padding-top: 0;
-		}
 	}
 
 	&-marker {
@@ -29,9 +23,15 @@ $size-current-pin: 16px !default;
 			transparent #{$height-wizard/2}
 		);
 	}
+	&-marker-icon {
+		&#{&} {
+			fill: var(--primary-contrast);
+		}
+	}
 
 	&-item {
 		background: var(--background-strong);
+		position: relative;
 
 		&:not(:last-child) {
 			@extend .flex-item-fluid;
@@ -62,39 +62,28 @@ $size-current-pin: 16px !default;
 			}
 		}
 
-		&[aria-current='step'],
 		&.is-complete {
-			&::before {
-				content: '';
-				position: relative;
-				display: block;
-				border-radius: 50%;
-				z-index: 1;
-				top: -#{$height-wizard - 1};
-				left: -1px;
-				width: $size-current-pin;
-				height: $size-current-pin;
-			}
-
 			.wizard-marker {
-				display: none;
+				background-color: var(--primary);
+				position: relative;
+				top: -#{$height-wizard - 1};
 			}
 		}
 
-		&[aria-current='step']::before {
-			background-image: radial-gradient(
-				circle,
-				var(--primary-contrast) 0,
-				var(--primary-contrast) #{$height-wizard/2},
-				var(--primary) #{$height-wizard/2}
-			);
+		&[aria-current='step'] {
+			.wizard-marker {
+				background-image: radial-gradient(
+					circle,
+					var(--primary-contrast) 0,
+					var(--primary-contrast) #{$height-wizard/2},
+					var(--primary) #{$height-wizard/2}
+				);
+			}
 		}
 
 		&.is-complete::before {
-			background: var(--primary)
-				url('#{$path-images}sprite-for-css-only.svg#css-on') 50% 50%
-				no-repeat;
-			background-size: #{$size-current-pin - $height-wizard};
+			content: '';
+			background: var(--primary);
 		}
 
 		&.is-complete::after {
@@ -107,20 +96,41 @@ $size-current-pin: 16px !default;
 			background-color: var(--primary);
 		}
 
-		&[aria-current='step'] &-inner {
-			position: absolute;
-			top: 0;
-			left: 0;
-			font-size: 2rem;
-			font-weight: bold;
-		}
+		// &[aria-current='step'] &-inner {
+		// 	position: absolute;
+		// 	top: 0;
+		// 	left: 0;
+		// 	font-size: 2rem;
+		// 	font-weight: bold;
+		// }
 
-		&:not([aria-current]) &-inner {
-			@extend .invisible;
-		}
+		// &:not([aria-current]) &-inner {
+		// 	@extend .invisible;
+		// }
 	}
 
 	&-container--no-text-displayed &-item[aria-current='step'] &-item-inner {
 		@extend .invisible;
+	}
+
+	&-label {
+		flex: 1;
+		text-align: center;
+
+		&:first-child {
+			text-align: left;
+		}
+		&:last-child {
+			text-align: right;
+		}
+
+		&.is-complete {
+			opacity: 0.5;
+		}
+
+		&[aria-current='step'] {
+			font-size: 1em;
+			font-weight: 600;
+		}
 	}
 }
