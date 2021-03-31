@@ -239,6 +239,10 @@
 				color: var(--text-norm);
 				text-decoration: none;
 			}
+
+			&.active {
+				background-color: var(--interaction-default-hover);
+			}
 		}
 
 		&--delete {
