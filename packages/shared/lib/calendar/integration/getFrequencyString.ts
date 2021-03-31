@@ -624,11 +624,19 @@ export const getFrequencyString = (
 
     if (!isSimple) {
         if (!isCustom) {
-            if (!freq) {
-                return c('Info').t`Custom`;
+            if (freq === FREQUENCY.DAILY) {
+                return c('Info').t`Custom daily`;
             }
-            const frequencyString = freq.toLowerCase();
-            return c('Info').t`Custom ${frequencyString}`;
+            if (freq === FREQUENCY.WEEKLY) {
+                return c('Info').t`Custom weekly`;
+            }
+            if (freq === FREQUENCY.MONTHLY) {
+                return c('Info').t`Custom monthly`;
+            }
+            if (freq === FREQUENCY.YEARLY) {
+                return c('Info').t`Custom yearly`;
+            }
+            return c('Info').t`Custom`;
         }
         if (freq === FREQUENCY.DAILY) {
             return getCustomDailyString(rruleValue, end, locale);
