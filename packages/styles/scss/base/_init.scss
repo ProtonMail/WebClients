@@ -175,7 +175,7 @@ sub {
 mark {
 	background-color: var(--mark-background-color, inset);
 	color: var(--mark-text-color, inherit);
-	font-weight: var(--mark-font-weight, $font-weight-bold);
+	font-weight: var(--mark-font-weight, bold);
 }
 
 /* avoid margin on nested elements */
