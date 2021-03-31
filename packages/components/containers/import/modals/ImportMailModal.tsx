@@ -26,7 +26,8 @@ import {
     ErrorButton,
     useDebounceInput,
 } from '../../../components';
-import ImportMailWizard from '../../../components/import/ImportMailWizard';
+
+import Wizard from '../../../components/wizard/Wizard';
 
 import { IMAPS } from '../constants';
 
@@ -561,7 +562,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, oauthProps: initialOAu
             {...rest}
         >
             {!isReconnectMode && modalModel.step !== Step.INSTRUCTIONS && (
-                <ImportMailWizard step={modalModel.step} steps={wizardSteps} />
+                <Wizard step={modalModel.step} steps={wizardSteps} />
             )}
             {modalModel.step === Step.INSTRUCTIONS && (
                 <ImportInstructionsStep
