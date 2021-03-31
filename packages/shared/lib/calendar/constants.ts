@@ -84,7 +84,8 @@ export enum ATTENDEE_STATUS_API {
     ACCEPTED = 3,
 }
 
-export const MAX_CALENDARS_PER_USER = 10;
+export const MAX_CALENDARS_PER_FREE_USER = 1;
+export const MAX_CALENDARS_PER_USER = 25;
 
 export const MAX_LENGTHS = {
     UID: 191,
