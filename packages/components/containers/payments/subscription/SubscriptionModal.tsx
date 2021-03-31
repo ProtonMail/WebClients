@@ -14,6 +14,9 @@ import { hasPlanIDs } from 'proton-shared/lib/helpers/planIDs';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { Cycle, Currency, PlanIDs, SubscriptionCheckResponse } from 'proton-shared/lib/interfaces';
+import { MAX_CALENDARS_PER_FREE_USER } from 'proton-shared/lib/calendar/constants';
+import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { queryCalendars } from 'proton-shared/lib/api/calendars';
 
 import { Alert, FormModal } from '../../../components';
 import {
@@ -44,6 +47,7 @@ import './SubscriptionModal.scss';
 import { handlePaymentToken } from '../paymentTokenHelper';
 import PlanCustomization from './PlanCustomization';
 import SubscriptionModalHeader from './SubscriptionModalHeader';
+import CalendarDowngradeModal from './CalendarDowngradeModal';
 
 interface Props {
     step?: SUBSCRIPTION_STEPS;
@@ -127,6 +131,14 @@ const SubscriptionModal = ({
     const getCodes = ({ gift, coupon }: Model) => [gift, coupon].filter(isTruthy);
 
     const handleUnsubscribe = async () => {
+        const { Calendars: calendars } =
+            (await api<{ Calendars: Calendar[] | undefined }>(queryCalendars({ Page: 1, PageSize: 2 }))) || {};
+
+        if ((calendars?.length || 0) > MAX_CALENDARS_PER_FREE_USER) {
+            await new Promise<void>((resolve, reject) => {
+                createModal(<CalendarDowngradeModal onSubmit={resolve} onClose={reject} />);
+            });
+        }
         if (hasBonuses(organization)) {
             await new Promise<void>((resolve, reject) => {
                 createModal(<LossLoyaltyModal organization={organization} onConfirm={resolve} onClose={reject} />);

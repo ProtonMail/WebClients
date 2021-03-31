@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { deleteSubscription } from 'proton-shared/lib/api/payments';
 import { hasBonuses } from 'proton-shared/lib/helpers/organization';
+import { MAX_CALENDARS_PER_FREE_USER } from 'proton-shared/lib/calendar/constants';
+import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { queryCalendars } from 'proton-shared/lib/api/calendars';
 import Button, { ButtonProps } from '../../../components/button/Button';
 import {
     useApi,
@@ -16,6 +19,7 @@ import {
 import LossLoyaltyModal from '../LossLoyaltyModal';
 import DowngradeModal from '../DowngradeModal';
 import SubscriptionCancelModal, { SubscriptionCancelModel } from './SubscriptionCancelModal';
+import CalendarDowngradeModal from './CalendarDowngradeModal';
 
 interface Props extends ButtonProps {
     children: React.ReactNode;
@@ -53,6 +57,15 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
     const handleClick = async () => {
         if (user.isFree) {
             return createNotification({ type: 'error', text: c('Info').t`You already have a free account` });
+        }
+
+        const { Calendars: calendars } =
+            (await api<{ Calendars: Calendar[] | undefined }>(queryCalendars({ Page: 1, PageSize: 2 }))) || {};
+
+        if ((calendars?.length || 0) > MAX_CALENDARS_PER_FREE_USER) {
+            await new Promise<void>((resolve, reject) => {
+                createModal(<CalendarDowngradeModal onSubmit={resolve} onClose={reject} />);
+            });
         }
 
         const subscriptionCancelData = await new Promise<SubscriptionCancelModel | void>((resolve, reject) => {
