@@ -20,7 +20,7 @@ const AppsDropdown = () => {
             hasCaret={false}
             content={<Icon name="more" className="apps-dropdown-button-icon flex-item-noshrink" />}
             className="apps-dropdown-button"
-            dropdownClassName="apps-dropdown"
+            dropdownClassName="apps-dropdown ui-prominent"
             originalPlacement="bottom-right"
             title={c('Apps dropdown').t`Proton applications`}
         >
