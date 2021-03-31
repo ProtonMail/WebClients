@@ -6,7 +6,7 @@ import {
     AppLink,
     ButtonLike,
 } from 'react-components';
-import { Address } from 'proton-shared/lib/interfaces';
+import { Address, UserModel } from 'proton-shared/lib/interfaces';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { c } from 'ttag';
 import { APPS } from 'proton-shared/lib/constants';
@@ -45,6 +45,7 @@ interface Props extends SettingsPropsShared {
     activeCalendars: Calendar[];
     defaultCalendar?: Calendar;
     calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
+    user: UserModel;
 }
 const SettingsCalendarPage = ({
     calendarsEventsCacheRef,
@@ -55,6 +56,7 @@ const SettingsCalendarPage = ({
     defaultCalendar,
     setActiveSection,
     location,
+    user,
 }: Props) => {
     const { text, subsections } = getCalendarSettingsPage();
     return (
@@ -70,6 +72,7 @@ const SettingsCalendarPage = ({
                 activeCalendars={activeCalendars}
                 disabledCalendars={disabledCalendars}
                 defaultCalendar={defaultCalendar}
+                user={user}
             />
             <ImportSection
                 activeCalendars={activeCalendars}

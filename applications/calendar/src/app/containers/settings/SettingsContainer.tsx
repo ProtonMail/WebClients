@@ -14,7 +14,7 @@ import {
 import { useLocation, Redirect, Route, Switch } from 'react-router-dom';
 import { c } from 'ttag';
 import { Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
-import { Address } from 'proton-shared/lib/interfaces';
+import { Address, UserModel } from 'proton-shared/lib/interfaces';
 
 import OverviewPage, { getOverviewSettingsPage } from './SettingsOverviewPage';
 import GeneralPage, { getGeneralSettingsPage } from './SettingsGeneralPage';
@@ -32,6 +32,7 @@ interface Props {
     defaultCalendar?: Calendar;
     calendarUserSettings: CalendarUserSettings;
     calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
+    user: UserModel;
 }
 
 const SettingsContainer = ({
@@ -43,6 +44,7 @@ const SettingsContainer = ({
     activeCalendars,
     calendarUserSettings,
     calendarsEventsCacheRef,
+    user,
 }: Props) => {
     const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
@@ -105,6 +107,7 @@ const SettingsContainer = ({
                         location={location}
                         setActiveSection={setActiveSection}
                         calendarsEventsCacheRef={calendarsEventsCacheRef}
+                        user={user}
                     />
                 </Route>
                 <Route path="/settings/general">
