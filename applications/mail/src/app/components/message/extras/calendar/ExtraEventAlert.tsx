@@ -17,7 +17,6 @@ const ExtraEventAlert = ({ model }: Props) => {
         invitationIcs: { method },
         calendarData,
         invitationApi,
-        isFreeUser,
         isAddressDisabled,
         canCreateCalendar,
         maxUserCalendarsDisabled,
@@ -25,7 +24,7 @@ const ExtraEventAlert = ({ model }: Props) => {
     } = model;
     const isCancel = method === ICAL_METHOD.CANCEL;
 
-    if (isOutdated || isFreeUser || isPartyCrasher) {
+    if (isOutdated || isPartyCrasher) {
         return null;
     }
 

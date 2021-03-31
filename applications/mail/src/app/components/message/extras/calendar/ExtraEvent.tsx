@@ -1,6 +1,6 @@
 import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
-import { Address, UserModel, UserSettings } from 'proton-shared/lib/interfaces';
+import { Address, UserSettings } from 'proton-shared/lib/interfaces';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { RequireSome } from 'proton-shared/lib/interfaces/utils';
@@ -56,10 +56,10 @@ interface Props {
     calendars: Calendar[];
     canCreateCalendar: boolean;
     maxUserCalendarsDisabled: boolean;
+    mustReactivateCalendars: boolean;
     defaultCalendar?: Calendar;
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
-    user: UserModel;
     userSettings: UserSettings;
 }
 const ExtraEvent = ({
@@ -69,12 +69,11 @@ const ExtraEvent = ({
     defaultCalendar,
     canCreateCalendar,
     maxUserCalendarsDisabled,
+    mustReactivateCalendars,
     contactEmails,
     ownAddresses,
-    user,
     userSettings,
 }: Props) => {
-    const isFreeUser = user.isFree;
     const [model, setModel] = useState<InvitationModel>(() =>
         getInitialInvitationModel({
             invitationOrError,
@@ -85,7 +84,7 @@ const ExtraEvent = ({
             hasNoCalendars: calendars.length === 0,
             canCreateCalendar,
             maxUserCalendarsDisabled,
-            isFreeUser,
+            mustReactivateCalendars,
         })
     );
     const [loading, withLoading] = useLoading(true);
@@ -105,10 +104,10 @@ const ExtraEvent = ({
                 contactEmails,
                 ownAddresses,
                 calendar: defaultCalendar,
-                isFreeUser,
                 hasNoCalendars: calendars.length === 0,
                 canCreateCalendar,
                 maxUserCalendarsDisabled,
+                mustReactivateCalendars,
             })
         );
     };
@@ -152,7 +151,6 @@ const ExtraEvent = ({
                     message,
                     contactEmails,
                     ownAddresses,
-                    isFreeUser,
                 });
                 invitationApi = invitation;
                 calendarData = calData;
@@ -176,7 +174,6 @@ const ExtraEvent = ({
                         calendarData,
                         singleEditData,
                         hasDecryptionError,
-                        isFreeUser,
                         isPartyCrasher,
                     });
                 }
@@ -232,7 +229,6 @@ const ExtraEvent = ({
                         isFromFuture,
                         updateAction,
                         hasDecryptionError,
-                        isFreeUser,
                         isPartyCrasher,
                     });
                 }
