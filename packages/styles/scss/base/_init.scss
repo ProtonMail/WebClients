@@ -173,15 +173,9 @@ sub {
 }
 
 mark {
-	@if $use-color-reset-mark==true {
-		background-color: unset;
-		color: inherit;
-		font-weight: inherit;
-	} @else {
-		background-color: var(--mark-background-color, yellow);
-		color: var(--mark-text-color, black);
-		font-weight: bold;
-	}
+	background-color: var(--mark-background-color, inset);
+	color: var(--mark-text-color, inherit);
+	font-weight: var(--mark-font-weight, $font-weight-bold);
 }
 
 /* avoid margin on nested elements */
