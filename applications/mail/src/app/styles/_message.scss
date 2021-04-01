@@ -1,270 +1,276 @@
 .message-conversation-summary {
-	.is-appearing-content {
-		@extend %appearing-container;
-	}
+    .is-appearing-content {
+        @extend %appearing-container;
+    }
 
-	&-is-loading {
-		pointer-events: none;
-	}
+    &-is-loading {
+        pointer-events: none;
+    }
 
-	&-is-loading &-header,
-	&-is-loading &-stat {
-		position: relative;
+    &-is-loading &-header,
+    &-is-loading &-stat {
+        position: relative;
 
-		&::before {
-			@extend %item-loading-pseudo;
-			@extend %placeholder-loading;
-		}
-	}
+        &::before {
+            @extend %item-loading-pseudo;
+            @extend %placeholder-loading;
+        }
+    }
 
-	&-is-loading &-header {
-		&::before {
-			width: 25%;
+    &-is-loading &-header {
+        &::before {
+            width: 25%;
 
-			@include respond-to($breakpoint-small) {
-				width: 50%;
-			}
-		}
-	}
+            @include respond-to($breakpoint-small) {
+                width: 50%;
+            }
+        }
+    }
 
-	&-is-loading &-stat {
-		&::before {
-			width: 2em;
-		}
-	}
+    &-is-loading &-stat {
+        &::before {
+            width: 2em;
+        }
+    }
 
-	&-is-loading &-star {
-		@extend %placeholder-loading;
-	}
+    &-is-loading &-star {
+        @extend %placeholder-loading;
+    }
 }
 
 .trashed-messages,
 .message-header {
-	background-color: var(--background-weak);
+    background-color: var(--background-weak);
 }
 
 .message-container {
-	border: 1px solid var(--border-norm);
-	border-radius: $global-border-radius;
-	@extend %appearing-container;
-	transition: 0.15s easing(easeOutQuint);
+    border: 1px solid var(--border-norm);
+    border-radius: $global-border-radius;
+    @extend %appearing-container;
+    transition: 0.15s easing(easeOutQuint);
 }
 
 .message-header {
-	border-radius: $global-border-radius; // Can't overflow 'cause of ::before, so repeat radius
-	padding: .6em;
+    border-radius: $global-border-radius; // Can't overflow 'cause of ::before, so repeat radius
+    padding: 0.6em;
 
-	.is-appearing-content {
-		@extend %appearing-container;
-	}
+    .is-appearing-content {
+        @extend %appearing-container;
+    }
 
-	&.is-unread {
-		background: var(--background-norm);
-		font-weight: bold;
-	}
+    &.is-unread {
+        background: var(--background-norm);
+        font-weight: bold;
+    }
 
-	&.is-loading {
-		pointer-events: none;
-	}
+    &.is-loading {
+        pointer-events: none;
+    }
 
-	&.is-loading .message-recipient-item-icon,
-	&.is-loading &-star {
-		@extend %placeholder-loading;
-	}
+    &.is-loading .message-recipient-item-icon,
+    &.is-loading &-star {
+        @extend %placeholder-loading;
+    }
 
-	&.is-loading .message-recipient-item-icon {
-		background-color: currentColor;
-		opacity: 0;
-	}
+    &.is-loading .message-recipient-item-icon {
+        background-color: currentColor;
+        opacity: 0;
+    }
 
-	&.is-loading .message-recipient-item-label,
-	&.is-loading .message-recipient-item-address,
-	&.is-loading &-metas,
-	&.is-loading &-to,
-	&.is-loading &-contact,
-	&.is-loading .message-show-hide-link-container {
-		position: relative;
+    &.is-loading .message-recipient-item-label,
+    &.is-loading .message-recipient-item-address,
+    &.is-loading &-metas,
+    &.is-loading &-to,
+    &.is-loading &-contact,
+    &.is-loading .message-show-hide-link-container {
+        position: relative;
 
-		&::before {
-			@extend %item-loading-pseudo;
-			@extend %placeholder-loading;
-		}
-	}
+        &::before {
+            @extend %item-loading-pseudo;
+            @extend %placeholder-loading;
+        }
+    }
 
-	&.is-loading .message-recipient-item-label {
-		width: 100%;
-		max-width: 7.5em;
+    &.is-loading .message-recipient-item-label {
+        width: 100%;
+        max-width: 7.5em;
 
-		&::before {
-			width: 100%;
-		}
-	}
+        &::before {
+            width: 100%;
+        }
+    }
 
-	&.is-loading .message-recipient-item-address {
-		width: 100%;
-		max-width: 12.5em;
+    &.is-loading .message-recipient-item-address {
+        width: 100%;
+        max-width: 12.5em;
 
-		&::before {
-			width: 100%;
-		}
-	}
+        &::before {
+            width: 100%;
+        }
+    }
 
-	&.is-loading &-metas {
-		&::before {
-			width: 10em;
-		}
-	}
+    &.is-loading &-metas {
+        &::before {
+            width: 10em;
+        }
+    }
 
-	&.is-loading &-to {
-		&::before {
-			width: 1.25em;
-		}
-	}
+    &.is-loading &-to {
+        &::before {
+            width: 1.25em;
+        }
+    }
 
-	&.is-loading &-contact {
-		&::before {
-			width: 7.5em;
-		}
-	}
+    &.is-loading &-contact {
+        &::before {
+            width: 7.5em;
+        }
+    }
 
-	&.is-loading .message-show-hide-link-container {
-		&::before {
-			width: 6em;
-		}
-	}
+    &.is-loading .message-show-hide-link-container {
+        &::before {
+            width: 6em;
+        }
+    }
 }
 
 // hide extra container when there is nothing inside
 .message-header-extra:empty {
-	display: none;
+    display: none;
 }
 
 // when expanded but no full details
 .message-header-expanded {
-	padding: .6em .6em 0;
+    padding: 0.6em 0.6em 0;
 
-	.message-show-hide-link {
-		padding: 0;
-	}
+    .message-show-hide-link {
+        padding: 0;
+    }
 }
 
 // alignements when expanded/details
 .message-header--showDetails {
-	.message-show-hide-link-container {
-		padding-left: calc(#{$container-to-width} + #{$conversation-icon-size} + .75em);
-	}
+    .message-show-hide-link-container {
+        padding-left: calc(#{$container-to-width} + #{$conversation-icon-size} + 0.75em);
+    }
 
-	// show/hide details should go below otherwise it will be strangely place depending of recipients
-	.message-header-recipients {
-		flex-direction: column;
+    // show/hide details should go below otherwise it will be strangely place depending of recipients
+    .message-header-recipients {
+        flex-direction: column;
 
-		& > * {
-			width: 100%;
-			flex-basis: auto;
-		}
-	}
+        & > * {
+            width: 100%;
+            flex-basis: auto;
+        }
+    }
 
-	.message-recipient-item-expanded {
-		margin-top: .25em;
+    .message-recipient-item-expanded {
+        margin-top: 0.25em;
 
-		@include respond-to($breakpoint-small) {
-			margin-top: .5em;
-		}
+        @include respond-to($breakpoint-small) {
+            margin-top: 0.5em;
+        }
 
-		.message-recipient-item:not(:first-child) {
-			margin-top: .25em;
-		}
-	}
+        .message-recipient-item:not(:first-child) {
+            margin-top: 0.25em;
+        }
+    }
 
-	// display of email default none except when details
-	.message-recipient-item-address,
-	.message-recipient-item-label {
-		@extend .text-ellipsis;
+    // display of email default none except when details
+    .message-recipient-item-address,
+    .message-recipient-item-label {
+        @extend .text-ellipsis;
 
-		@include respond-to($breakpoint-small) {
-			display: block;
-		}
-	}
+        @include respond-to($breakpoint-small) {
+            display: block;
+        }
+    }
 
-	.message-recipient-item-lockIcon::before {
-		@include respond-to($breakpoint-small) {
-			content: '\00a0';
-			width: 100%;
-		}
-	}
+    .message-recipient-item-lockIcon::before {
+        @include respond-to($breakpoint-small) {
+            content: '\00a0';
+            width: 100%;
+        }
+    }
 }
 
 .message-detailed-header-extra {
-	.item-date {
-		font-size: 1.4rem;
-	}
+    .item-date {
+        font-size: 1.4rem;
+    }
 }
 
 /* states classes */
 .message-container.is-opened {
-
-	& > .message-header {
-		border-bottom: 1px solid var(--border-norm);
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 0;
-	}
-
+    & > .message-header {
+        border-bottom: 1px solid var(--border-norm);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
 }
 
 .message-container.is-focused {
-	border-color: var(--interaction-norm);
+    border-color: var(--interaction-norm);
 }
 
 .message-container--hasAttachment {
-	.message-content {
-		border-radius: 0;
-	}
+    .message-content {
+        border-radius: 0;
+    }
 }
 
 .message-content {
-	transition: .5s easing(easeOutSine);
-	transition-property: background-color, color;
+    // transition: 0.5s easing(easeOutSine);
+    // transition-property: background-color, color;
     // force color until real dark mode
     &:not(.plain) {
         background: white;
         color: #262a33;
     }
+    // as mail content is forced on white bg, button has to be forced as well
+    .toggle-original-message-button {
+        --button-default-border-color: silver;
+        --button-hover-border-color: silver;
+        --button-active-border-color: silver;
+        --button-default-text-color: inherit;
+        --button-hover-text-color: inherit;
+        --button-active-text-color: inherit;
+    }
 
-	&-loading-placeholder {
-		position: relative;
+    &-loading-placeholder {
+        position: relative;
 
-		&::before {
-			@extend %item-loading-pseudo;
-			@extend %placeholder-loading;
-			width: 100%;
-		}
-	}
+        &::before {
+            @extend %item-loading-pseudo;
+            @extend %placeholder-loading;
+            width: 100%;
+        }
+    }
 }
 
 .message-expand {
-	padding: 0 .5em .6em; // centers
-	background-color: var(--background-weak);
-	line-height: .75;
+    padding: 0 0.5em 0.6em; // centers
+    background-color: var(--background-weak);
+    line-height: 0.75;
 }
 
 .message-infobox {
-	background: var(--background-weak);
+    background: var(--background-weak);
 }
 
 .container-to {
-	min-width: $container-to-width;
+    min-width: $container-to-width;
 
-	.item-icon {
+    .item-icon {
+        &:focus,
+        &:hover {
+            .item-abbr {
+                display: none;
+            }
 
-		&:focus,
-		&:hover {
-			.item-abbr {
-				display: none;
-			}
-
-			.item-caret {
-				display: block;
-			}
-		}
-	}
+            .item-caret {
+                display: block;
+            }
+        }
+    }
 }

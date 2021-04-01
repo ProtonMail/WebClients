@@ -2,7 +2,6 @@ import { isPlainText } from 'proton-shared/lib/mail/messages';
 import React, { useMemo } from 'react';
 import { classnames, Button, Tooltip } from 'react-components';
 import { c } from 'ttag';
-import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 import { MessageExtended } from '../../models/message';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
 
@@ -51,9 +50,8 @@ const MessageBody = ({
     return (
         <div
             className={classnames([
-                'message-content scroll-horizontal-if-needed relative bodyDecrypted',
+                'message-content scroll-horizontal-if-needed relative bodyDecrypted bg-norm color-norm',
                 plain && 'plain',
-                !loadingMode && getLightOrDark('', 'bg-norm color-weak'),
             ])}
         >
             {encryptedMode && <pre>{message.data?.Body}</pre>}
@@ -82,7 +80,8 @@ const MessageBody = ({
                                 >
                                     <Button
                                         size="small"
-                                        className="m0-5"
+                                        shape="outline"
+                                        className="m0-5 toggle-original-message-button"
                                         onClick={() => toggleOriginalMessage?.()}
                                         data-test-id="message-view:expand-codeblock"
                                     >
