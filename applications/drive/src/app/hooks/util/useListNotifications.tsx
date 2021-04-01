@@ -21,9 +21,7 @@ const getNotificationTextForItemList = (
             <>
                 {notificationText}
                 {'. '}
-                <InlineLinkButton className="text-bold text-no-decoration" onClick={() => undoAction()}>
-                    {c('Action').t`Undo`}
-                </InlineLinkButton>
+                <InlineLinkButton onClick={() => undoAction()}>{c('Action').t`Undo`}</InlineLinkButton>
             </>
         );
     }
