@@ -1,5 +1,15 @@
 import React from 'react';
-import { Alert, ShortcutsModal, ShortcutsSectionView, useMailSettings, classnames, AppLink } from 'react-components';
+import {
+    Alert,
+    ShortcutsModal,
+    ShortcutsSectionView,
+    useMailSettings,
+    classnames,
+    Label,
+    Field,
+    Row,
+    ShortcutsToggle,
+} from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
 import { getAppName } from 'proton-shared/lib/apps/helper';
 import { c } from 'ttag';
@@ -12,18 +22,10 @@ interface Props {
 const MailShortCutsModal = ({ ...rest }: Props) => {
     const appName = getAppName(APPS.PROTONMAIL);
     const title = c('Title').t`${appName} Keyboard Shortcuts`;
-
     const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
-
     const mailShortcuts = getShortcuts();
     const alwaysOnSections = mailShortcuts.filter((section) => section.alwaysActive);
     const shortcutEnabledSections = mailShortcuts.filter((section) => !section.alwaysActive);
-
-    const settingsLink = (
-        <AppLink to="/settings/general#shortcuts" key="settings-link" onClick={() => rest.onClose?.()}>
-            {c('Link').t`general settings.`}
-        </AppLink>
-    );
 
     return (
         <ShortcutsModal title={title} {...rest}>
@@ -38,12 +40,12 @@ const MailShortCutsModal = ({ ...rest }: Props) => {
             </div>
 
             <hr className="mt2 mb2 border-bottom" />
-
-            <Alert>
-                {Shortcuts
-                    ? c('Info').t`Your keyboard shortcuts are active`
-                    : c('Info').jt`To activate your keyboard shortcuts, go to ${settingsLink}`}
-            </Alert>
+            <Row className="mb2">
+                <Label htmlFor="toggle-shortcuts" className="mr1">{c('Label').t`Keyboard shortcuts`}</Label>
+                <Field className="pt0-5">
+                    <ShortcutsToggle id="toggle-shortcuts" />
+                </Field>
+            </Row>
             <div
                 className={classnames([
                     'list-2columns on-mobile-list-1column mr-2e on-mobile-mr0',
