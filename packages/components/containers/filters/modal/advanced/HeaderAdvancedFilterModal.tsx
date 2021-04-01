@@ -2,6 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { AdvancedSimpleFilterModalModel, StepSieve, ErrorsSieve } from '../../interfaces';
+import { Breadcrumb } from '../../../../components';
 
 interface Props {
     model: AdvancedSimpleFilterModalModel;
@@ -10,32 +11,36 @@ interface Props {
 }
 
 const HeaderAdvancedFilterModal = ({ model, errors, onChange }: Props) => {
+    const list = [
+        { step: StepSieve.NAME, content: c('Step in filter modal').t`Name` },
+        { step: StepSieve.SIEVE, content: c('Step in filter modal').t`Sieve editor` },
+    ];
+    const getIsDisabled = (index: number) => {
+        const target = list[index];
+        if (!target) {
+            return false;
+        }
+        const { step } = target;
+        if (step === StepSieve.SIEVE && !!errors.name) {
+            return true;
+        }
+        return false;
+    };
     return (
         <header>
-            <ul className="breadcrumb-container unstyled inline-flex pl0-5 pr0-5 mt0">
-                <li className="breadcrumb-item">
-                    <button
-                        type="button"
-                        disabled={model.step === StepSieve.NAME}
-                        aria-current={model.step === StepSieve.NAME ? 'step' : false}
-                        onClick={() => onChange({ ...model, step: StepSieve.NAME })}
-                        className="breadcrumb-button"
-                    >
-                        {c('StepSieve in filter modal').t`Name`}
-                    </button>
-                </li>
-                <li className="breadcrumb-item">
-                    <button
-                        type="button"
-                        disabled={model.step === StepSieve.SIEVE || !!errors.name}
-                        aria-current={model.step === StepSieve.SIEVE ? 'step' : false}
-                        onClick={() => onChange({ ...model, step: StepSieve.SIEVE })}
-                        className="breadcrumb-button"
-                    >
-                        {c('StepSieve in filter modal').t`Sieve editor`}
-                    </button>
-                </li>
-            </ul>
+            <Breadcrumb
+                onClick={(index) => {
+                    const target = list[index];
+                    if (!target) {
+                        return;
+                    }
+                    const { step } = target;
+                    onChange({ ...model, step });
+                }}
+                getIsDisabled={getIsDisabled}
+                current={list.findIndex(({ step }) => step === model.step)}
+                list={list.map(({ content }) => content)}
+            />
         </header>
     );
 };
