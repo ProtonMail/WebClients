@@ -53,7 +53,6 @@ $item-container-row-height-compact-mode: 4rem !default;
 	padding: $item-container-padding-top-bottom
 		$item-container-padding-left-right; // design wants ~64 height
 	border-bottom: 1px solid var(--border-weak);
-	color: var(--text-norm);
 
 	// no transition, otherwhise there's a flash on page loading
 	// because of theme file loading after applying default theme colors
@@ -80,13 +79,7 @@ $item-container-row-height-compact-mode: 4rem !default;
 			--email-item-read-background-color,
 			var(--background-weak)
 		);
-
-		.item-senddate-col,
-		.item-senddate-row,
-		.item-weight,
-		.item-subject {
-			color: var(--text-weak);
-		}
+		color: var(--email-item-read-text-color, var(--text-norm));
 	}
 
 	&.unread {
@@ -94,6 +87,7 @@ $item-container-row-height-compact-mode: 4rem !default;
 			--email-item-unread-background-color,
 			var(--background-norm)
 		);
+		color: var(--email-item-unread-text-color, var(--text-norm));
 
 		.item-senders,
 		.item-senddate-col,
@@ -123,6 +117,7 @@ $item-container-row-height-compact-mode: 4rem !default;
 			--email-item-selected-background-color,
 			var(--background-strong)
 		);
+		color: var(--email-item-selected-text-color, var(--text-norm));
 	}
 }
 
@@ -306,6 +301,11 @@ $item-container-row-height-compact-mode: 4rem !default;
 		top: -#{($item-container-height-compact-mode - $conversation-icon-size) /
 			2};
 		height: $item-container-height-compact-mode;
+	}
+
+	.checkbox-fakecheck {
+		margin: auto;
+		background: var(--background-norm);
 	}
 }
 
