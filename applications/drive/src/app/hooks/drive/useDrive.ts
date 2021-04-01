@@ -798,28 +798,27 @@ function useDrive() {
                     const decryptedLinkPromise = decryptLinkAsync(Link);
 
                     if (EventType === CREATE) {
-                        if (Link.Trashed) {
+                        if (Data?.FLAG_RESTORE_COMPLETE) {
+                            actions.recovery[Link.ParentLinkID] = [
+                                ...(actions.recovery[Link.ParentLinkID] ?? []),
+                                decryptedLinkPromise,
+                            ];
+
+                            // Updates locked shares and fetch content of restored folder
+                            debouncedRequest<UserShareResult>(queryUserShares()).then(({ Shares }) => {
+                                const lockedShares = Shares.filter((share) => share.Locked && isPrimaryShare(share));
+                                cache.setLockedShares(lockedShares);
+                                createNotification({
+                                    text: c('Success').t`Your files were successfully recovered to "My files".`,
+                                });
+                            });
+                        } else if (Link.Trashed) {
                             actions.trash.push(decryptedLinkPromise);
                         } else {
                             actions.create[Link.ParentLinkID] = [
                                 ...(actions.create[Link.ParentLinkID] ?? []),
                                 decryptedLinkPromise,
                             ];
-                        }
-
-                        if (Data?.FLAG_RESTORE_COMPLETE) {
-                            fetchNextFolderContents(shareId, Link.LinkID).then(() => {
-                                // Updates locked shares and fetch content of restored folder
-                                debouncedRequest<UserShareResult>(queryUserShares()).then(({ Shares }) => {
-                                    const lockedShares = Shares.filter(
-                                        (share) => share.Locked && isPrimaryShare(share)
-                                    );
-                                    cache.setLockedShares(lockedShares);
-                                    createNotification({
-                                        text: c('Success').t`Your files were successfully recovered to "My files".`,
-                                    });
-                                });
-                            });
                         }
                     }
 
@@ -842,6 +841,7 @@ function useDrive() {
                     trash: [] as Promise<LinkMeta>[],
                     create: {} as { [parentId: string]: Promise<LinkMeta>[] },
                     update: {} as { [parentId: string]: Promise<LinkMeta>[] },
+                    recovery: {} as { [parentId: string]: Promise<LinkMeta>[] },
                 }
             );
 
@@ -865,10 +865,17 @@ function useDrive() {
                 cache.set.foldersOnlyLinkMetas(metas, shareId, parentId, 'unlisted');
             });
 
+            const recoveryPromises = Object.entries(actions.recovery).map(async ([parentId, promises]) => {
+                const metas = await Promise.allSettled(promises).then(getSuccessfulSettled);
+                cache.set.childLinkMetas(metas, shareId, parentId, 'unlisted');
+                cache.set.foldersOnlyLinkMetas(metas, shareId, parentId, 'unlisted');
+            });
+
             await Promise.allSettled([
                 trashPromise,
                 Promise.allSettled(createPromises).then(logSettledErrors),
                 Promise.allSettled(updatePromises).then(logSettledErrors),
+                Promise.allSettled(recoveryPromises).then(logSettledErrors),
             ]);
         },
 
