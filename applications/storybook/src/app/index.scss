@@ -20,6 +20,21 @@ body {
 	margin-left: auto !important;
 	margin-right: auto !important;
 }
+.mb1 {
+	margin-bottom: 1em !important;
+}
+.mb0-5 {
+	margin-bottom: 0.5em !important;
+}
+
+.inputform-label-hint,
+.inputform-assist {
+	font-size: 1.2rem !important;
+}
+.inputform-field,
+.inputform-label-text {
+	font-size: 1.4rem !important;
+}
 
 @include respond-to($breakpoint-medium) {
 	.on-tablet-m1 {
