@@ -12,7 +12,7 @@ export const useGetCalendarBootstrap = () => {
     const api = useApi();
     const cache = useCache();
     const miss = useCallback(
-        (calendarID) => {
+        (calendarID: string) => {
             if (!calendarID) {
                 return Promise.resolve();
             }
@@ -22,11 +22,11 @@ export const useGetCalendarBootstrap = () => {
     );
 
     return useCallback(
-        (key) => {
+        (calendarID: string) => {
             if (!cache.has(KEY)) {
                 cache.set(KEY, createCache());
             }
-            return getPromiseValue(cache.get(KEY), key, miss);
+            return getPromiseValue(cache.get(KEY), calendarID, miss);
         },
         [cache, miss]
     );
@@ -35,7 +35,7 @@ export const useGetCalendarBootstrap = () => {
 export const useReadCalendarBootstrap = () => {
     const cache = useCache();
     return useCallback(
-        (calendarID) => {
+        (calendarID: string) => {
             if (!cache.has(KEY)) {
                 cache.set(KEY, createCache());
             }
@@ -49,7 +49,7 @@ export const useReadCalendarBootstrap = () => {
     );
 };
 
-export const useCalendarBootstrap = (calendarID) => {
+export const useCalendarBootstrap = (calendarID?: string) => {
     const cache = useCache();
     const getCalendarBootstrap = useGetCalendarBootstrap();
     if (!cache.has(KEY)) {

@@ -8,12 +8,9 @@ import { MembersModel } from 'proton-shared/lib/models/membersModel';
 import { EVENT_ERRORS } from 'proton-shared/lib/errors';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { AddressesModel } from 'proton-shared/lib/models/addressesModel';
-import { updateObject as updateCalendarObject } from 'proton-shared/lib/models/calendarBootstrap';
 import { KEY as USER_KEYS_CACHE_KEY } from '../../hooks/useUserKeys';
 import { CACHE_KEY as ADDRESS_KEYS_CACHE } from '../../hooks/useGetAddressKeys';
 import { KEY as ADDRESSES_KEYS_CACHE } from '../../hooks/useAddressesKeys';
-import { KEY as CALENDAR_BOOTSTRAP_CACHE } from '../../hooks/useGetCalendarBootstrap';
-import { CACHE_KEY as CALENDAR_KEYS_CACHE } from '../../hooks/useGetCalendarKeys';
 import { useEventManager, useCache } from '../../hooks';
 
 const EventModelListener = ({ models }) => {
@@ -80,10 +77,6 @@ const EventModelListener = ({ models }) => {
                         UsedSpace: data.UsedSpace,
                     },
                 });
-            }
-
-            if (data) {
-                updateCalendarObject(data, cache.get(CALENDAR_BOOTSTRAP_CACHE), cache.get(CALENDAR_KEYS_CACHE));
             }
         });
     }, []);
