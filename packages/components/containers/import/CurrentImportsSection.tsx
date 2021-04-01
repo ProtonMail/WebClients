@@ -72,7 +72,6 @@ const RowActions = ({ currentImport }: RowActionsProps) => {
             );
             await api(resumeMailImport(ID));
             await call();
-            /* @todo success notifications? */
         });
     };
 
