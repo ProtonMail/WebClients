@@ -40,6 +40,7 @@ import { setupCalendarKey } from '../setup/reset/setupCalendarKeys';
 import EventSettingsTab from './EventSettingsTab';
 import CalendarSettingsTab from './CalendarSettingsTab';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '../../helpers/alarms';
+import { useCalendarModelEventManager } from '../eventManager/ModelEventManagerProvider';
 
 interface Props {
     calendar?: Calendar;
@@ -58,6 +59,7 @@ const CalendarModal = ({
 }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
+    const { call: calendarCall } = useCalendarModelEventManager();
     const cache = useCache();
     const getAddresses = useGetAddresses();
     const getCalendarBootstrap = useGetCalendarBootstrap();
@@ -183,9 +185,10 @@ const CalendarModal = ({
         calendarPayload: Partial<Calendar>,
         calendarSettingsPayload: Partial<CalendarSettings>
     ) => {
+        const calendarID = calendar.ID;
         await Promise.all([
-            api(updateCalendar(calendar.ID, calendarPayload)),
-            api(updateCalendarSettings(calendar.ID, calendarSettingsPayload)),
+            api(updateCalendar(calendarID, calendarPayload)),
+            api(updateCalendarSettings(calendarID, calendarSettingsPayload)),
         ]);
         // Case: Calendar has been created, and keys have been setup, but one of the calendar settings call failed in the creation.
         // Here we are in create -> edit mode. So we have to fetch the calendar model again.
@@ -193,6 +196,7 @@ const CalendarModal = ({
             await loadModels([CalendarsModel], { api, cache, useCache: false });
         }
         await call();
+        await calendarCall([calendarID]);
 
         rest.onClose?.();
 

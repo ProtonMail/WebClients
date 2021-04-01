@@ -13,16 +13,7 @@ import {
 import { loadModels } from 'proton-shared/lib/models/helper';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 
-const EVENT_MODELS = [
-    UserModel,
-    UserSettingsModel,
-    MailSettingsModel,
-    CalendarsModel,
-    CalendarUserSettingsModel,
-    AddressesModel,
-    ContactEmailsModel,
-    LabelsModel,
-];
+const EVENT_MODELS = [UserModel, UserSettingsModel, MailSettingsModel, AddressesModel, ContactEmailsModel, LabelsModel];
 
 const PRELOAD_MODELS = [UserModel, UserSettingsModel, AddressesModel];
 
@@ -48,6 +39,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
                     await loadModels([CalendarUserSettingsModel], { api, cache });
                 }
             }}
+            noModals
             preloadModels={PRELOAD_MODELS}
             eventModels={EVENT_MODELS}
             fallback={<LoaderPage />}

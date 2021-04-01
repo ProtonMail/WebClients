@@ -10,6 +10,7 @@ import { getProdId } from 'proton-shared/lib/calendar/vcalHelper';
 import { API_CODES } from 'proton-shared/lib/constants';
 import { format, isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
+import { unique } from 'proton-shared/lib/helpers/array';
 import { canonizeEmailByGuess, canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { noop } from 'proton-shared/lib/helpers/function';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
@@ -89,6 +90,7 @@ import {
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
 } from '../../interfaces/Invite';
+import { useCalendarModelEventManager as useCalendarsEventManager } from '../eventManager/ModelEventManagerProvider';
 import CalendarView from './CalendarView';
 import SendWithErrorsConfirmationModal from './confirmationModals/SendWithErrorsConfirmationModal';
 import CloseConfirmationModal from './confirmationModals/CloseConfirmation';
@@ -191,6 +193,7 @@ const InteractiveCalendarView = ({
 }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
+    const { call: calendarCall } = useCalendarsEventManager();
     const { createModal, getModal, hideModal, removeModal } = useModals();
     const { createNotification } = useNotifications();
     const { contactEmailsMap } = useContactEmailsCache();
@@ -954,7 +957,12 @@ const InteractiveCalendarView = ({
                 handleUpdatePersonalPartActions(updatePersonalPartActions),
             ]);
             handleCreateNotification(texts);
-            await call();
+            const updatedCalendarIDs = unique([
+                ...syncActions.map(({ calendarID }) => calendarID),
+                ...(updatePartstatActions || []).map(({ data: { calendarID } }) => calendarID),
+                ...(updatePersonalPartActions || []).map(({ data: { calendarID } }) => calendarID),
+            ]);
+            await calendarCall(updatedCalendarIDs);
         } catch (e) {
             createNotification({ text: e.message, type: 'error' });
         } finally {

@@ -1,21 +1,48 @@
 import { MutableRefObject, useEffect } from 'react';
-import { useEventManager } from 'react-components';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
+import { useEventManager } from 'react-components';
 import { CalendarsAlarmsCache } from './CacheInterface';
 import { CalendarAlarmEventManager, CalendarEventManager } from '../../interfaces/EventManager';
+import { useCalendarModelEventManager } from '../eventManager/ModelEventManagerProvider';
 
-export const useCalendarsAlarmsEventListeners = (cacheRef: MutableRefObject<CalendarsAlarmsCache>) => {
-    const { subscribe } = useEventManager();
+export const useCalendarsAlarmsEventListeners = (
+    cacheRef: MutableRefObject<CalendarsAlarmsCache>,
+    calendarIDs: string[]
+) => {
+    const { subscribe: standardSubscribe } = useEventManager();
+    const { subscribe: calendarSubscribe } = useCalendarModelEventManager();
 
+    // subscribe to general event loop
     useEffect(() => {
-        return subscribe(
-            ({
-                CalendarAlarms = [],
-                Calendars = [],
-            }: {
-                CalendarAlarms?: CalendarAlarmEventManager[];
-                Calendars?: CalendarEventManager[];
-            }) => {
+        return standardSubscribe(({ Calendars = [] }: { Calendars?: CalendarEventManager[] }) => {
+            if (!cacheRef.current) {
+                return;
+            }
+
+            let actions = 0;
+
+            const { calendarsCache } = cacheRef.current;
+
+            Calendars.forEach(({ ID: CalendarID, Action }) => {
+                if (Action === EVENT_ACTIONS.DELETE) {
+                    if (calendarsCache[CalendarID]) {
+                        delete calendarsCache[CalendarID];
+                        actions++;
+                    }
+                }
+            });
+
+            if (actions) {
+                cacheRef.current.rerender?.();
+            }
+        });
+    }, []);
+
+    // subscribe to calendar event loop
+    useEffect(() => {
+        return calendarSubscribe(
+            calendarIDs,
+            ({ CalendarAlarms = [] }: { CalendarAlarms?: CalendarAlarmEventManager[] }) => {
                 if (!cacheRef.current) {
                     return;
                 }
@@ -24,15 +51,6 @@ export const useCalendarsAlarmsEventListeners = (cacheRef: MutableRefObject<Cale
 
                 const { calendarsCache, end } = cacheRef.current;
                 const now = new Date();
-
-                Calendars.forEach(({ ID: CalendarID, Action }) => {
-                    if (Action === EVENT_ACTIONS.DELETE) {
-                        if (calendarsCache[CalendarID]) {
-                            delete calendarsCache[CalendarID];
-                            actions++;
-                        }
-                    }
-                });
 
                 const calendarAlarmChangesToTreat = CalendarAlarms.filter((CalendarAlarmChange) => {
                     // If it's delete we'll fallback to search later
@@ -108,7 +126,7 @@ export const useCalendarsAlarmsEventListeners = (cacheRef: MutableRefObject<Cale
                 }
             }
         );
-    }, []);
+    }, [calendarIDs]);
 };
 
 export default useCalendarsAlarmsEventListeners;

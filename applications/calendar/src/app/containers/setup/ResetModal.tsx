@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 import {
     FormModal,
-    useEventManager,
     useApi,
     useGetAddresses,
     useGetAddressKeys,
@@ -38,7 +37,6 @@ interface Props {
 const ResetModal = ({ onClose, calendars, ...rest }: Props) => {
     const api = useApi();
     const cache = useCache();
-    const { call } = useEventManager();
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
 
@@ -78,7 +76,6 @@ const ResetModal = ({ onClose, calendars, ...rest }: Props) => {
             process({
                 api,
                 cache,
-                call,
                 getAddressKeys,
                 getAddresses,
                 calendarsToReset,
