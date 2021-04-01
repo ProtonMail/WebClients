@@ -47,5 +47,13 @@ describe('paging helper', () => {
         it('should deal with bypass filter in the last page', () => {
             expect(expectedPageLength(2, 125, 2)).toBe(27);
         });
+
+        it('should deal with bypass filter if it changes the page cont', () => {
+            expect(expectedPageLength(0, 40, 20)).toBe(50);
+        });
+
+        it("should deal with bypass filter if it's huge", () => {
+            expect(expectedPageLength(0, 20, 60)).toBe(50);
+        });
     });
 });

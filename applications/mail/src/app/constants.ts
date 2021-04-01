@@ -7,6 +7,7 @@ export const EXPIRATION_CHECK_FREQUENCY = 10000; // each 10 seconds
 export const MAX_EXPIRATION_TIME = 672; // hours
 export const PAGE_SIZE = 50;
 export const ELEMENTS_CACHE_REQUEST_SIZE = 100;
+export const SEARCH_PLACEHOLDERS_COUNT = 20;
 export const ATTACHMENT_MAX_SIZE = 25000000; // bytes -> 25MB
 export const LARGE_KEY_SIZE = 50 * 1024;
 
@@ -82,3 +83,5 @@ export const PROTON_DOMAINS = [
     'pm.me',
     'protonirockerxow.onion',
 ];
+
+export const MAX_ELEMENT_LIST_LOAD_RETRIES = 3;

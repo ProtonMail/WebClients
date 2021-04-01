@@ -93,10 +93,10 @@ const MailboxContainer = ({
     const sort = useMemo<Sort>(() => sortFromUrl(location), [searchParams.sort]);
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
 
-    const { labelID, elements, loading, expectedLength, total } = useElements({
+    const { labelID, elements, loading, expectedLength, total, pendingRequest } = useElements({
         conversationMode: isConversationMode(inputLabelID, mailSettings, location),
         labelID: inputLabelID,
-        pageFromUrl: pageFromUrl(location),
+        page: pageFromUrl(location),
         sort,
         filter,
         search: searchParameters,
@@ -176,7 +176,7 @@ const MailboxContainer = ({
 
     // Move to the previous page if the current one becomes empty
     useEffect(() => {
-        if (page.total && page.page >= pageCount(page.total)) {
+        if (!pendingRequest && page.total && page.page >= pageCount(page.total)) {
             handlePage(page.page - 1);
         }
     }, [page]);

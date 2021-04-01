@@ -1,6 +1,7 @@
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import { Contact } from 'proton-shared/lib/interfaces/contacts';
+import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 import { Conversation } from './conversation';
 
 interface EventType {
@@ -17,8 +18,8 @@ export interface LabelIDsChanges {
 export interface Event {
     Conversations?: ConversationEvent[];
     Messages?: MessageEvent[];
-    ConversationCounts?: ElementCountEvent[];
-    MessageCounts?: ElementCountEvent[];
+    ConversationCounts?: LabelCount[];
+    MessageCounts?: LabelCount[];
     Contacts?: ContactEvent[];
 }
 
@@ -35,9 +36,3 @@ export interface ContactEvent extends EventType {
 }
 
 export type ElementEvent = ConversationEvent | MessageEvent;
-
-export interface ElementCountEvent {
-    LabelID: string;
-    Total: number;
-    Unread: number;
-}

@@ -203,8 +203,9 @@ export const applyLabelChangesOnConversation = (conversation: Conversation, chan
 export const applyLabelChangesOnOneMessageOfAConversation = (
     conversation: Conversation,
     changes: LabelChanges
-): Conversation => {
+): { updatedConversation: Conversation; conversationChanges: LabelChanges } => {
     const Labels = [...(conversation.Labels || [])];
+    const conversationChanges: LabelChanges = {};
     Object.keys(changes).forEach((labelID) => {
         const index = Labels.findIndex((existingLabel) => existingLabel.ID === labelID);
         const hasLabel = index >= 0;
@@ -215,15 +216,17 @@ export const applyLabelChangesOnOneMessageOfAConversation = (
                 Labels[index].ContextNumMessages = numMessages + 1;
             } else {
                 Labels.push({ ID: labelID, ContextNumMessages: 1 });
+                conversationChanges[labelID] = true;
             }
         } else if (hasLabel) {
             if (numMessages <= 1) {
                 Labels.splice(index, 1);
+                conversationChanges[labelID] = false;
             } else {
                 Labels[index].ContextNumMessages = numMessages - 1;
             }
         }
     });
 
-    return { ...conversation, Labels };
+    return { updatedConversation: { ...conversation, Labels }, conversationChanges };
 };

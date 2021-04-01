@@ -3,7 +3,7 @@ import { useCache } from 'react-components';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import { Element } from '../../models/element';
-import { Page, Filter, Sort } from '../../models/tools';
+import { Filter, Sort } from '../../models/tools';
 import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
 import { useConversationCache } from '../../containers/ConversationProvider';
 
@@ -23,16 +23,24 @@ export interface ElementsCacheParams {
     wildcard?: number;
 }
 
+export interface RetryData {
+    payload: any;
+    count: number;
+    error: Error | undefined;
+}
+
 export interface ElementsCache {
     beforeFirstLoad: boolean;
     invalidated: boolean;
     pendingRequest: boolean;
     params: ElementsCacheParams;
-    page: Page;
+    page: number;
     pages: number[];
+    total: number;
     elements: { [ID: string]: Element };
     updatedElements: string[];
     bypassFilter: string[];
+    retry: RetryData;
 }
 
 /**

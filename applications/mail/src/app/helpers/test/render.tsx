@@ -5,6 +5,7 @@ import {
     ModalsProvider,
     PrivateAuthenticationStore,
     ModalsChildren,
+    EventModelListener,
 } from 'react-components';
 import { MemoryRouter } from 'react-router';
 import { render as originalRender, RenderResult as OriginalRenderResult, act } from '@testing-library/react';
@@ -15,7 +16,7 @@ import { wait } from 'proton-shared/lib/helpers/promise';
 import { ProtonConfig } from 'proton-shared/lib/interfaces';
 import AuthenticationProvider from 'react-components/containers/authentication/Provider';
 import FeaturesProvider from 'react-components/containers/features/FeaturesProvider';
-
+import { ConversationCountsModel, MessageCountsModel } from 'proton-shared/lib/models';
 import MessageProvider from '../../containers/MessageProvider';
 import ConversationProvider from '../../containers/ConversationProvider';
 import { minimalCache, cache, messageCache, conversationCache, attachmentsCache, contactCache } from './cache';
@@ -48,6 +49,7 @@ const TestProvider = ({ children }: Props) => {
                         <AuthenticationProvider store={authentication}>
                             <CacheProvider cache={cache}>
                                 <ModalsChildren />
+                                <EventModelListener models={[ConversationCountsModel, MessageCountsModel]} />
                                 <MessageProvider cache={messageCache}>
                                     <ConversationProvider cache={conversationCache}>
                                         <AttachmentProvider cache={attachmentsCache}>
