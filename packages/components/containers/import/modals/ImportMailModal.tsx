@@ -105,7 +105,6 @@ const ImportMailModal = ({ onClose = noop, currentImport, oauthProps: initialOAu
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const [addresses, loadingAddresses] = useAddresses();
-    const [address] = addresses || [];
     const { triggerOAuthPopup } = useOAuthPopup({ getRedirectURL, getAuthorizationUrl });
 
     const [providerInstructions, setProviderInstructions] = useState<PROVIDER_INSTRUCTIONS>();
@@ -134,6 +133,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, oauthProps: initialOAu
         needIMAPDetails: false,
         selectedPeriod: TIME_UNIT.BIG_BANG,
         payload: {
+            AddressID: addresses[0].ID,
             Mapping: [],
             CustomFields: 0,
         },
@@ -583,13 +583,13 @@ const ImportMailModal = ({ onClose = noop, currentImport, oauthProps: initialOAu
             )}
             {modalModel.step === Step.PREPARE && (
                 <ImportPrepareStep
-                    address={address}
+                    addresses={addresses}
                     modalModel={modalModel}
                     updateModalModel={(newModel: ImportModalModel) => setModalModel(newModel)}
                 />
             )}
-            {modalModel.step === Step.STARTED && !loadingAddresses && address && (
-                <ImportStartedStep address={address} modalModel={modalModel} />
+            {modalModel.step === Step.STARTED && !loadingAddresses && addresses.length && (
+                <ImportStartedStep addresses={addresses} modalModel={modalModel} />
             )}
         </FormModal>
     );

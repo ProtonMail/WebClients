@@ -35,7 +35,7 @@ import { mappingHasFoldersTooLong, mappingHasLabelsTooLong, mappingHasUnavailabl
 interface Props {
     modalModel: ImportModalModel;
     updateModalModel: (newModel: ImportModalModel) => void;
-    address: Address;
+    addresses: Address[];
     onClose?: () => void;
     customizeFoldersOpen: boolean;
     isLabelMapping: boolean;
@@ -46,7 +46,7 @@ interface Props {
 const CustomizeImportModal = ({
     modalModel,
     updateModalModel,
-    address,
+    addresses,
     onClose = noop,
     customizeFoldersOpen = false,
     isLabelMapping,
@@ -57,6 +57,7 @@ const CustomizeImportModal = ({
     const initialPayload = modalModel.payload;
     const [customizedPayload, setCustomizedPayload] = useState<ImportPayloadModel>({ ...initialPayload });
     const [selectedPeriod, setSelectedPeriod] = useState<TIME_UNIT>(modalModel.selectedPeriod);
+    const [selectedAddressID, setSelectedAddressID] = useState<string>(modalModel.payload.AddressID);
     const [organizeFolderVisible, setOrganizeFolderVisible] = useState(customizeFoldersOpen);
     const { createModal } = useModals();
     const [isEditing, setIsEditing] = useState(false);
@@ -71,6 +72,13 @@ const CustomizeImportModal = ({
     const hasLabelsTooLongError = useMemo(() => mappingHasLabelsTooLong(customizedPayload.Mapping), [
         customizedPayload.Mapping,
     ]);
+
+    const addressesOptions = addresses
+        .filter((addr) => addr.Keys.some((k) => k.Active))
+        .map((addr) => ({
+            value: addr.ID,
+            text: addr.Email,
+        }));
 
     const hasChanged = useMemo(() => {
         if (
@@ -122,6 +130,15 @@ const CustomizeImportModal = ({
         });
 
         setCustomizedPayload({ ...customizedPayload, ImportLabel });
+    };
+
+    const handleChangeAddress = (AddressID: string) => {
+        setSelectedAddressID(AddressID);
+
+        setCustomizedPayload({
+            ...customizedPayload,
+            AddressID,
+        });
     };
 
     const handleChangePeriod = (selectedPeriod: TIME_UNIT) => {
@@ -199,7 +216,7 @@ const CustomizeImportModal = ({
                           .t`Create a label for the imported messages, a time range for this import, and the folders you would like to import.`}
             </Alert>
 
-            <div className="mb1 pt1 border-bottom flex-align-items-center">
+            <div className="mb1 border-bottom flex-align-items-center">
                 <Row>
                     <FormLabel className="flex flex-align-items-center">
                         {c('Label').t`Label messages as`}
@@ -227,7 +244,27 @@ const CustomizeImportModal = ({
                 </Row>
             </div>
 
-            <div className="mb1 pt1 border-bottom flex-align-items-center">
+            {addresses.length > 1 && (
+                <div className="mb1 border-bottom flex-align-items-center">
+                    <Row>
+                        <FormLabel className="flex flex-align-items-center">
+                            {c('Label').t`Import to email address`}
+                        </FormLabel>
+                        <Field>
+                            <Select
+                                className="flex-item-fluid"
+                                onChange={({ target }: ChangeEvent<HTMLSelectElement>) =>
+                                    handleChangeAddress(target.value)
+                                }
+                                options={addressesOptions}
+                                value={selectedAddressID}
+                            />
+                        </Field>
+                    </Row>
+                </div>
+            )}
+
+            <div className="mb1 border-bottom flex-align-items-center">
                 <Row>
                     <FormLabel className="flex flex-align-items-center">
                         {c('Label').t`Import messages since`}
@@ -265,7 +302,7 @@ const CustomizeImportModal = ({
                 </Row>
             </div>
 
-            <div className="mb1 pt1 flex-align-items-center">
+            <div className="mb1 flex-align-items-center">
                 <Row>
                     <FormLabel>{isLabelMapping ? c('Label').t`Manage labels` : c('Label').t`Manage folders`}</FormLabel>
                     <div className="flex flex-align-items-center">
@@ -308,7 +345,7 @@ const CustomizeImportModal = ({
 
             {organizeFolderVisible && (
                 <ImportManageFolders
-                    address={address}
+                    addresses={addresses}
                     modalModel={modalModel}
                     payload={customizedPayload}
                     onChangePayload={handleChangePayload}

@@ -39,7 +39,7 @@ interface LabelColorMap {
 interface Props {
     modalModel: ImportModalModel;
     updateModalModel: (newModel: ImportModalModel) => void;
-    address: Address;
+    addresses: Address[];
 }
 
 enum CustomFieldsBitmap {
@@ -48,7 +48,9 @@ enum CustomFieldsBitmap {
     Period = 4,
 }
 
-const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => {
+const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) => {
+    const availableAddresses = addresses.filter((addr) => addr.Receive && addr.Send && addr.Keys.some((k) => k.Active));
+
     const initialModel = useRef<ImportModalModel>(modalModel);
     const [user, userLoading] = useUser();
     const { createModal } = useModals();
@@ -101,7 +103,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
     const handleClickCustomize = () => {
         createModal(
             <CustomizeImportModal
-                address={address}
+                addresses={availableAddresses}
                 modalModel={modalModel}
                 updateModalModel={updateModalModel}
                 customizeFoldersOpen={hasError}
@@ -118,6 +120,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
 
     const [isCustom, setIsCustom] = useState(false);
 
+    // Update CustomFields for tracking
     useEffect(() => {
         const { StartTime, ImportLabel, Mapping } = initialModel.current.payload;
 
@@ -265,7 +268,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
         const newModel = {
             ...modalModel,
             payload: {
-                AddressID: address.ID,
+                ...modalModel.payload,
                 Code: password,
                 Mapping,
                 ImportLabel,
@@ -299,6 +302,8 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
             </div>
         );
     }
+
+    const addressToDisplay = addresses.find((addr) => addr.ID === modalModel.payload.AddressID);
 
     return (
         <>
@@ -349,7 +354,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, address }: Props) => 
                 <div className="flex-item-fluid text-ellipsis ml0-5 text-right">
                     <span>{c('Label').t`To`}</span>
                     {`: `}
-                    <strong>{address.Email}</strong>
+                    <strong>{addressToDisplay?.Email}</strong>
                 </div>
             </div>
 
