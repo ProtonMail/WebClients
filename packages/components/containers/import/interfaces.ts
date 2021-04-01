@@ -74,7 +74,7 @@ export interface FolderMapping {
 }
 
 export interface ImportPayloadModel {
-    AddressID?: string;
+    AddressID: string;
     Code?: string;
     ImportLabel?: {
         Name: string;
