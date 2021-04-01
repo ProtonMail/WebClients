@@ -24,12 +24,19 @@
 	overflow: hidden;
 	border-radius: $global-border-radius;
 	box-shadow: var(--shadow-lifted);
+
+	a,
+	.link,
+	.button-link,
+	.button-henlo {
+		@extend .color-inherit;
+	}
 }
 
 .notification {
 	@each $color in (danger, warning, success, info) {
 		&-#{$color} {
-			background: var(--signal-#{$color});
+			background-color: var(--signal-#{$color});
 			color: var(--signal-#{$color}-contrast);
 		}
 	}
