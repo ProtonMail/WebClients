@@ -804,7 +804,7 @@ function useDrive() {
                                 decryptedLinkPromise,
                             ];
 
-                            // Updates locked shares and fetch content of restored folder
+                            // Updates locked shares
                             debouncedRequest<UserShareResult>(queryUserShares()).then(({ Shares }) => {
                                 const lockedShares = Shares.filter((share) => share.Locked && isPrimaryShare(share));
                                 cache.setLockedShares(lockedShares);
