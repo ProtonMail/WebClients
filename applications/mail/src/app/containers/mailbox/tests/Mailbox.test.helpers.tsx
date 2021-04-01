@@ -34,10 +34,12 @@ interface PropsArgs {
 }
 
 interface SetupArgs extends PropsArgs {
-    conversations?: Element[];
     messages?: Element[];
+    conversations?: Element[];
+    inputLabelID?: string;
     page?: number;
-    total?: number;
+    totalMessages?: number;
+    totalConversations?: number;
 }
 
 export const props = {
@@ -93,7 +95,7 @@ export const getProps = ({
         urlSearchParams.set('sort', sortToString(sort) || '');
     }
     if (filter !== defaultFilter) {
-        urlSearchParams.set('sort', filterToString(filter) || '');
+        urlSearchParams.set('filter', filterToString(filter) || '');
     }
     if (search !== defaultSearch) {
         urlSearchParams.set('keyword', keywordToString(search.keyword || '') || '');
@@ -105,18 +107,17 @@ export const getProps = ({
 };
 
 export const setup = async ({
-    conversations = [],
     messages = [],
-    total = conversations.length || messages.length,
+    conversations = [],
+    totalMessages = messages.length,
+    totalConversations = conversations.length,
     ...propsArgs
 }: SetupArgs = {}) => {
     minimalCache();
-    addToCache('Labels', [...labels, ...folders]);
-    const counts = { LabelID: propsArgs.labelID, Total: total };
-    addToCache('ConversationCounts', conversations.length ? [counts] : []);
-    addToCache('MessageCounts', messages.length ? [] : [counts]);
-    addApiMock('mail/v4/conversations', () => ({ Total: total, Conversations: conversations }));
-    addApiMock('mail/v4/messages', () => ({ Total: total, Messages: messages }));
+    const props = getProps(propsArgs);
+
+    addApiMock('mail/v4/messages', () => ({ Total: totalMessages, Messages: messages }));
+    addApiMock('mail/v4/conversations', () => ({ Total: totalConversations, Conversations: conversations }));
     addApiMock('mail/v4/importers', () => ({ Importers: [] }));
     addApiMock('core/v4/features/UsedMailMobileApp', () => ({
         Feature: {
@@ -130,7 +131,13 @@ export const setup = async ({
         },
     }));
 
-    const result = await render(<MailboxContainer {...getProps({ ...propsArgs })} />, false);
+    addToCache('Labels', [...labels, ...folders]);
+    addToCache('MessageCounts', [{ LabelID: props.labelID, Total: totalMessages, Unread: totalMessages }]);
+    addToCache('ConversationCounts', [
+        { LabelID: props.labelID, Total: totalConversations, Unread: totalConversations },
+    ]);
+
+    const result = await render(<MailboxContainer {...props} />, false);
     const rerender = (propsArgs: PropsArgs) => result.rerender(<MailboxContainer {...getProps(propsArgs)} />);
     return { ...result, rerender };
 };

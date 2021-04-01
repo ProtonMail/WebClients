@@ -13,12 +13,12 @@ export const usePlaceholders = (
 ): Element[] => {
     const placeholders: Element[] = useMemo(
         () => range(0, expectedLength).map(() => ({ ID: generateUID(PLACEHOLDER_ID_PREFIX) })),
-        [loading]
+        [loading, expectedLength]
     );
 
     const elements: Element[] = useMemo(() => (loading ? placeholders : (inputElements as Element[])), [
         loading,
-        inputElements
+        inputElements,
     ]);
 
     return elements;

@@ -1,15 +1,14 @@
 import { useHandler, useCache } from 'react-components';
 import { MessageCountsModel, ConversationCountsModel } from 'proton-shared/lib/models';
-
+import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 import { useMessageCache } from '../../containers/MessageProvider';
 import { useGetElementsCache, useSetElementsCache } from '../mailbox/useElementsCache';
 import { MessageExtended } from '../../models/message';
 import { useConversationCache } from '../../containers/ConversationProvider';
 import { hasLabel } from '../../helpers/elements';
 import { ConversationResult } from '../conversation/useConversation';
-import { PAGE_SIZE } from '../../constants';
-import { Counter, CacheEntry } from '../../models/counter';
 import { replaceCounter } from '../../helpers/counter';
+import { CacheEntry } from '../../models/tools';
 
 export const useOptimisticEmptyLabel = () => {
     const globalCache = useCache();
@@ -21,7 +20,7 @@ export const useOptimisticEmptyLabel = () => {
     return useHandler((labelID: string) => {
         const rollbackMessages = [] as MessageExtended[];
         const rollbackConversations = [] as ConversationResult[];
-        const rollbackCounters = {} as { [key: string]: Counter };
+        const rollbackCounters = {} as { [key: string]: LabelCount };
 
         // Message cache
         const messageIDs = [...messageCache.keys()];
@@ -57,28 +56,24 @@ export const useOptimisticEmptyLabel = () => {
         setElementsCache({
             ...rollbackElements,
             elements: {},
-            page: {
-                page: 0,
-                size: PAGE_SIZE,
-                total: 0,
-            },
+            page: 0,
         });
 
         // Message counters
-        const messageCounters = globalCache.get(MessageCountsModel.key) as CacheEntry<Counter[]>;
+        const messageCounters = globalCache.get(MessageCountsModel.key) as CacheEntry<LabelCount[]>;
         rollbackCounters[MessageCountsModel.key] = messageCounters.value.find(
             (counter: any) => counter.LabelID === labelID
-        ) as Counter;
+        ) as LabelCount;
         globalCache.set(MessageCountsModel.key, {
             ...messageCounters,
             value: replaceCounter(messageCounters.value, { LabelID: labelID, Total: 0, Unread: 0 }),
         });
 
         // Conversation counters
-        const conversationCounters = globalCache.get(ConversationCountsModel.key) as CacheEntry<Counter[]>;
+        const conversationCounters = globalCache.get(ConversationCountsModel.key) as CacheEntry<LabelCount[]>;
         rollbackCounters[ConversationCountsModel.key] = conversationCounters.value.find(
             (counter: any) => counter.LabelID === labelID
-        ) as Counter;
+        ) as LabelCount;
         globalCache.set(ConversationCountsModel.key, {
             ...conversationCounters,
             value: replaceCounter(conversationCounters.value, { LabelID: labelID, Total: 0, Unread: 0 }),
@@ -93,7 +88,7 @@ export const useOptimisticEmptyLabel = () => {
             });
             setElementsCache(rollbackElements);
             Object.entries(rollbackCounters).forEach(([key, value]) => {
-                const entry = globalCache.get(key) as CacheEntry<Counter[]>;
+                const entry = globalCache.get(key) as CacheEntry<LabelCount[]>;
                 globalCache.set(key, {
                     ...entry,
                     value: replaceCounter(entry.value, value),

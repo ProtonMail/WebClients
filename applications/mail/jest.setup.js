@@ -8,13 +8,17 @@ import '@testing-library/jest-dom/extend-expect';
 jest.mock('react-components/hooks/useEventManager.ts', () => {
     const subscribe = jest.fn();
     const call = jest.fn();
+    const stop = jest.fn();
+    const start = jest.fn();
 
     const result = () => {
-        return { subscribe, call };
+        return { subscribe, call, stop, start };
     };
 
     result.subscribe = subscribe;
     result.call = call;
+    result.stop = stop;
+    result.start = start;
 
     return result;
 });

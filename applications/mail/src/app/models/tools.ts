@@ -1,3 +1,8 @@
+export interface CacheEntry<T> {
+    status: number;
+    value: T;
+}
+
 export interface Filter {
     [key: string]: number;
 }

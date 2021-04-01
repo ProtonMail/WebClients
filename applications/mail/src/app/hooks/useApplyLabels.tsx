@@ -174,7 +174,7 @@ const getNotificationTextMoved = (
 
 export const useApplyLabels = () => {
     const api = useApi();
-    const { call } = useEventManager();
+    const { call, stop, start } = useEventManager();
     const { createNotification } = useNotifications();
     const [labels = []] = useLabels();
     const optimisticApplyLabels = useOptimisticApplyLabels();
@@ -193,22 +193,27 @@ export const useApplyLabels = () => {
             const rollbacks = {} as { [labelID: string]: () => void };
 
             const handleDo = async () => {
-                await Promise.all(
-                    changesKeys.map(async (LabelID) => {
-                        rollbacks[LabelID] = optimisticApplyLabels(elements, { [LabelID]: changes[LabelID] });
-                        try {
-                            if (changes[LabelID]) {
-                                return await api(labelAction({ LabelID, IDs: elementIDs }));
+                try {
+                    // Stop the event manager to prevent race conditions
+                    stop();
+                    await Promise.all(
+                        changesKeys.map(async (LabelID) => {
+                            rollbacks[LabelID] = optimisticApplyLabels(elements, { [LabelID]: changes[LabelID] });
+                            try {
+                                if (changes[LabelID]) {
+                                    return await api(labelAction({ LabelID, IDs: elementIDs }));
+                                }
+                                return await api(unlabelAction({ LabelID, IDs: elementIDs }));
+                            } catch (error) {
+                                rollbacks[LabelID]();
+                                throw error;
                             }
-                            return await api(unlabelAction({ LabelID, IDs: elementIDs }));
-                        } catch (error) {
-                            rollbacks[LabelID]();
-                            throw error;
-                        }
-                    })
-                );
-
-                await call();
+                        })
+                    );
+                } finally {
+                    start();
+                    await call();
+                }
             };
 
             // No await ==> optimistic
@@ -245,7 +250,7 @@ export const useApplyLabels = () => {
 
 export const useMoveToFolder = () => {
     const api = useApi();
-    const { call } = useEventManager();
+    const { call, stop, start } = useEventManager();
     const { createNotification } = useNotifications();
     const [labels = []] = useLabels();
     const labelIDs = labels.map(({ ID }) => ID);
@@ -262,10 +267,10 @@ export const useMoveToFolder = () => {
             const canUndo = isMessage
                 ? !([ALL_MAIL, ALL_DRAFTS, ALL_SENT, SPAM] as string[]).includes(fromLabelID)
                 : ![...labelIDs, ALL_DRAFTS, DRAFTS, ALL_SENT, SENT, STARRED, ALL_MAIL, SPAM].includes(fromLabelID);
-            const elementIDs = elements.map((element) => element.ID);
             const authorizedToMove = isMessage
                 ? getMessagesAuthorizedToMove(elements as Message[], folderID)
                 : elements;
+            const elementIDs = authorizedToMove.map((element) => element.ID);
 
             if (!authorizedToMove.length) {
                 createNotification({
@@ -275,21 +280,31 @@ export const useMoveToFolder = () => {
                 return;
             }
 
-            const rollback = optimisticApplyLabels(authorizedToMove, { [folderID]: true }, true);
+            const rollback = optimisticApplyLabels(authorizedToMove, { [folderID]: true }, true, fromLabelID);
 
             const handleDo = async () => {
                 try {
+                    // Stop the event manager to prevent race conditions
+                    stop();
                     await api(action({ LabelID: folderID, IDs: elementIDs }));
                 } catch (error) {
                     rollback();
+                } finally {
+                    start();
+                    await call();
                 }
-                await call();
             };
 
             const handleUndo = async () => {
-                rollback();
-                await api(action({ LabelID: fromLabelID, IDs: elementIDs }));
-                await call();
+                try {
+                    // Stop the event manager to prevent race conditions
+                    stop();
+                    rollback();
+                    await api(action({ LabelID: fromLabelID, IDs: elementIDs }));
+                } finally {
+                    start();
+                    await call();
+                }
             };
 
             // No await ==> optimistic
@@ -298,7 +313,7 @@ export const useMoveToFolder = () => {
             const notificationText = getNotificationTextMoved(
                 isMessage,
                 authorizedToMove.length,
-                elementIDs.length - authorizedToMove.length,
+                elements.length - authorizedToMove.length,
                 folderName,
                 folderID,
                 fromLabelID
@@ -324,7 +339,7 @@ export const useMoveToFolder = () => {
 
 export const useStar = () => {
     const api = useApi();
-    const { call } = useEventManager();
+    const { call, stop, start } = useEventManager();
     const optimisticApplyLabels = useOptimisticApplyLabels();
 
     const star = useCallback(async (elements: Element[], value: boolean) => {
@@ -340,12 +355,16 @@ export const useStar = () => {
         const rollback = optimisticApplyLabels(elements, { [MAILBOX_LABEL_IDS.STARRED]: value });
 
         try {
+            // Stop the event manager to prevent race conditions
+            stop();
             await api(action({ LabelID: MAILBOX_LABEL_IDS.STARRED, IDs: elements.map((element) => element.ID) }));
         } catch (error) {
             rollback();
             throw error;
+        } finally {
+            start();
+            await call();
         }
-        await call();
     }, []);
 
     return star;

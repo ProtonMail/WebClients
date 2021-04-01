@@ -8,6 +8,8 @@ import { ConversationCountsModel, MessageCountsModel } from 'proton-shared/lib/m
 import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 import { noop } from 'proton-shared/lib/helpers/function';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { STATUS } from 'proton-shared/lib/models/cache';
+import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 import {
     sort as sortElements,
     hasLabel,
@@ -19,22 +21,26 @@ import {
 import { Element } from '../../models/element';
 import { Filter, Sort, SearchParameters } from '../../models/tools';
 import { expectedPageLength } from '../../helpers/paging';
-import {
-    ElementEvent,
-    Event,
-    ElementCountEvent,
-    ConversationEvent,
-    MessageEvent,
-    LabelIDsChanges,
-} from '../../models/event';
+import { ElementEvent, Event, ConversationEvent, MessageEvent, LabelIDsChanges } from '../../models/event';
 import { useExpirationCheck } from '../useExpiration';
-import { ElementsCache, ElementsCacheParams, useElementsCache, useSetElementsCache } from './useElementsCache';
-import { ELEMENTS_CACHE_REQUEST_SIZE, PAGE_SIZE } from '../../constants';
+import {
+    ElementsCache,
+    ElementsCacheParams,
+    RetryData,
+    useElementsCache,
+    useSetElementsCache,
+} from './useElementsCache';
+import {
+    ELEMENTS_CACHE_REQUEST_SIZE,
+    PAGE_SIZE,
+    SEARCH_PLACEHOLDERS_COUNT,
+    MAX_ELEMENT_LIST_LOAD_RETRIES,
+} from '../../constants';
 
 interface Options {
     conversationMode: boolean;
     labelID: string;
-    pageFromUrl: number;
+    page: number;
     sort: Sort;
     filter: Filter;
     search: SearchParameters;
@@ -53,28 +59,45 @@ interface UseElements {
     (options: Options): ReturnValue;
 }
 
-const emptyCache = (
-    pageFromUrl: number,
-    labelID: string,
-    counts: LabelCount[],
-    params: ElementsCacheParams
-): ElementsCache => {
-    const total = counts.find((count) => count.LabelID === labelID)?.Total || 0;
+const getTotal = (counts: LabelCount[], labelID: string, filter: Filter) => {
+    const count = counts.find((count) => count.LabelID === labelID);
 
+    if (!count) {
+        return 0;
+    }
+
+    const unreadFilter = filter.Unread as number | undefined;
+
+    if (unreadFilter === undefined) {
+        return count.Total || 0;
+    }
+    if (unreadFilter > 0) {
+        return count.Unread || 0;
+    }
+    return (count.Total || 0) - (count.Unread || 0);
+};
+
+const emptyCache = (
+    page: number,
+    params: ElementsCacheParams,
+    retry: RetryData = { payload: null, count: 0, error: undefined }
+): ElementsCache => {
     return {
         beforeFirstLoad: true,
         invalidated: false,
         pendingRequest: false,
         params,
-        page: { page: pageFromUrl, total, size: PAGE_SIZE },
+        page,
+        total: 0,
         elements: {},
         pages: [],
         updatedElements: [],
         bypassFilter: [],
+        retry,
     };
 };
 
-export const useElements: UseElements = ({ conversationMode, labelID, search, pageFromUrl, sort, filter }) => {
+export const useElements: UseElements = ({ conversationMode, labelID, search, page, sort, filter }) => {
     const api = useApi();
     const abortControllerRef = useRef<AbortController>();
 
@@ -82,18 +105,11 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     const [messageCounts = []] = useMessageCounts() as [LabelCount[], boolean, Error];
     const counts = conversationMode ? conversationCounts : messageCounts;
 
-    const cache = useElementsCache(
-        emptyCache(pageFromUrl, labelID, counts, {
-            labelID,
-            sort,
-            filter,
-            ...search,
-        })
-    );
+    const cache = useElementsCache(emptyCache(page, { labelID, sort, filter, ...search }));
     const setCache = useSetElementsCache();
 
-    // Warning: this hook relies mainly on a localCache, not the globalCache
-    // This import is needed only for a specific use case (message expiration)
+    // Warning: this hook relies mainly on the elementsCache, not the globalCache
+    // This import is needed only for specifics use case (message expiration, counters manipulation)
     const globalCache = useCache();
 
     // Remove from cache expired elements
@@ -121,8 +137,8 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         } = cache;
 
         const minPage = cache.pages.reduce((acc, page) => (page < acc ? page : acc), cache.pages[0]);
-        const startIndex = (page.page - minPage) * page.size;
-        const endIndex = startIndex + page.size;
+        const startIndex = (page - minPage) * PAGE_SIZE;
+        const endIndex = startIndex + PAGE_SIZE;
         const elementsArray = Object.values(cache.elements);
         const filtered = elementsArray
             .filter((element) => hasLabel(element, labelID))
@@ -137,20 +153,28 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                 return filter.Unread ? elementUnread : !elementUnread;
             });
         const sorted = sortElements(filtered, sort, labelID);
+
         return sorted.slice(startIndex, endIndex);
     }, [cache]);
 
+    const total = useMemo(() => {
+        if (isSearch(cache.params)) {
+            return cache.total;
+        }
+        return getTotal(counts, cache.params.labelID, cache.params.filter);
+    }, [counts, cache.params, cache.total, cache.pendingRequest]);
+
     const expectedLength = useMemo(() => {
-        return expectedPageLength(
-            cache.page.page,
-            cache.page.total,
-            cache.params.filter ? cache.bypassFilter.length : 0
-        );
-    }, [cache.page, cache.params]);
-    const expectedLengthMismatch = useMemo(() => Math.abs(elements.length - expectedLength), [
-        elements.length,
-        expectedLength,
-    ]);
+        if (isSearch(cache.params) && cache.pendingRequest && cache.total === 0) {
+            // Artificially show some placeholders when waiting for search results
+            return SEARCH_PLACEHOLDERS_COUNT;
+        }
+        return expectedPageLength(cache.page, total, isFilter(cache.params.filter) ? cache.bypassFilter.length : 0);
+    }, [cache.page, cache.params, total, cache.bypassFilter]);
+
+    const expectedLengthMismatch = useMemo(() => {
+        return Math.abs(elements.length - expectedLength);
+    }, [elements.length, expectedLength]);
 
     const paramsChanged = () =>
         labelID !== cache.params.labelID ||
@@ -165,19 +189,18 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         search.attachments !== cache.params.attachments ||
         search.wildcard !== cache.params.wildcard;
 
-    const pageCached = () => cache.pages.includes(pageFromUrl);
+    const pageCached = () => cache.pages.includes(page);
 
-    const pageChanged = () => cache.page.page !== pageFromUrl;
+    const pageChanged = () => cache.page !== page;
 
     const pageIsConsecutive = () =>
-        cache.pages.length === 0 ||
-        cache.pages.some((p) => p === pageFromUrl || p === pageFromUrl - 1 || p === pageFromUrl + 1);
+        cache.pages.length === 0 || cache.pages.some((p) => p === page || p === page - 1 || p === page + 1);
 
     const hasListFromTheStart = () => cache.pages.includes(0);
 
     const lastHasBeenUpdated = () =>
         elements.length === PAGE_SIZE &&
-        pageFromUrl === Math.max.apply(null, cache.pages) &&
+        page === Math.max.apply(null, cache.pages) &&
         cache.updatedElements.includes(elements[elements.length - 1].ID || '');
 
     // Live cache means we listen to events from event manager without refreshing the list every time
@@ -185,22 +208,16 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
 
     const shouldResetCache = () => paramsChanged() || !pageIsConsecutive() || lastHasBeenUpdated();
 
-    // When there is less than a page of elements, we want to prevents calling the API
-    // And we should be able to rely on elements updated from the event manager
-    // So it's ok to ignore length mismatch in that case
-    const shouldLoadBasedOnExpectedLength = () => expectedLengthMismatch !== 0 && cache.page.total > PAGE_SIZE;
-
     const shouldSendRequest = () =>
         shouldResetCache() ||
-        (!cache.pendingRequest && (cache.invalidated || shouldLoadBasedOnExpectedLength() || !pageCached()));
+        (!cache.pendingRequest &&
+            cache.retry.count < MAX_ELEMENT_LIST_LOAD_RETRIES &&
+            (cache.invalidated || expectedLengthMismatch !== 0 || !pageCached()));
 
     const shouldUpdatePage = () => pageChanged() && pageCached();
 
     const updatePage = () => {
-        setCache({
-            ...cache,
-            page: { ...cache.page, page: pageFromUrl },
-        });
+        setCache({ ...cache, page });
     };
 
     const queryElement = async (elementID: string): Promise<Element> => {
@@ -209,34 +226,34 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         return conversationMode ? result.Conversation : result.Message;
     };
 
-    const queryElements = async (): Promise<{ Total: number; Elements: Element[] }> => {
+    const getQueryElementsPayload = (): any => ({
+        Page: page,
+        PageSize: PAGE_SIZE,
+        Limit: ELEMENTS_CACHE_REQUEST_SIZE,
+        LabelID: labelID,
+        Sort: sort.sort,
+        Desc: sort.desc ? 1 : 0,
+        Begin: search.begin,
+        End: search.end,
+        // BeginID,
+        // EndID,
+        Keyword: search.keyword,
+        To: search.to,
+        From: search.from,
+        // Subject,
+        Attachments: search.attachments,
+        Unread: filter.Unread,
+        AddressID: search.address,
+        // ID,
+        AutoWildcard: search.wildcard,
+    });
+
+    const queryElements = async (payload: any): Promise<{ Total: number; Elements: Element[] }> => {
         abortControllerRef.current?.abort();
         abortControllerRef.current = new AbortController();
         const query = conversationMode ? queryConversations : queryMessageMetadata;
-        const result: any = await api({
-            ...query({
-                Page: pageFromUrl,
-                PageSize: PAGE_SIZE,
-                Limit: ELEMENTS_CACHE_REQUEST_SIZE,
-                LabelID: labelID,
-                Sort: sort.sort,
-                Desc: sort.desc ? 1 : 0,
-                Begin: search.begin,
-                End: search.end,
-                // BeginID,
-                // EndID,
-                Keyword: search.keyword,
-                To: search.to,
-                From: search.from,
-                // Subject,
-                Attachments: search.attachments,
-                Unread: filter.Unread,
-                AddressID: search.address,
-                // ID,
-                AutoWildcard: search.wildcard,
-            } as any),
-            signal: abortControllerRef.current.signal,
-        });
+
+        const result: any = await api({ ...query(payload), signal: abortControllerRef.current.signal });
 
         return {
             Total: result.Total,
@@ -244,63 +261,61 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         };
     };
 
-    const resetCache = () =>
-        setCache(
-            emptyCache(pageFromUrl, labelID, counts, {
-                labelID,
-                sort,
-                filter,
-                ...search,
-            })
-        );
+    const newRetry = (payload: any, error: Error | undefined) => {
+        const count = isDeepEqual(payload, cache.retry.payload) ? cache.retry.count + 1 : 1;
+        return { payload, count, error };
+    };
+
+    const resetCache = (retry?: RetryData) => setCache(emptyCache(page, { labelID, sort, filter, ...search }, retry));
 
     const load = async () => {
         setCache((cache) => ({ ...cache, pendingRequest: true }));
+        const payload = getQueryElementsPayload();
         try {
-            const { Total, Elements } = await queryElements();
+            const isSearchActive = isSearch(search);
+            const { Total, Elements } = await queryElements(payload);
             const elementsMap = toMap(Elements, 'ID');
             const updatedElements = cache.updatedElements.filter((elementID) => !elementsMap[elementID]);
+            const expectedTotal = getTotal(counts, labelID, filter);
+
+            // Sanity check that the query result total match the expected one
+            // If not, we completely refresh the counters
+            if (!isSearchActive && Total !== expectedTotal) {
+                const countModel = conversationMode ? ConversationCountsModel : MessageCountsModel;
+                const value = await countModel.get(api);
+                globalCache.set(countModel.key, { status: STATUS.RESOLVED, value });
+            }
+
             setCache((cache) => {
                 return {
                     beforeFirstLoad: false,
                     invalidated: false,
                     pendingRequest: false,
                     params: cache.params,
-                    page: {
-                        ...cache.page,
-                        page: pageFromUrl,
-                        total: Total,
-                    },
-                    pages: [...cache.pages, pageFromUrl],
+                    page,
+                    pages: [...cache.pages, page],
+                    total: Total,
                     elements: {
                         ...cache.elements,
                         ...elementsMap,
                     },
                     updatedElements,
                     bypassFilter: cache.bypassFilter,
+                    retry: newRetry(payload, undefined),
                 };
             });
-        } catch {
-            setCache((cache) => ({ ...cache, beforeFirstLoad: false, invalidated: false, pendingRequest: true }));
+        } catch (error) {
+            // Wait a couple of seconds before retrying
+            setTimeout(() => {
+                setCache((cache) => ({
+                    ...cache,
+                    beforeFirstLoad: false,
+                    invalidated: false,
+                    pendingRequest: false,
+                    retry: newRetry(payload, error),
+                }));
+            }, 2000);
         }
-    };
-
-    const getTotal = (counts: ElementCountEvent[]) => {
-        const count = counts.find((count) => count.LabelID === labelID);
-
-        if (!count) {
-            return cache.page.total;
-        }
-
-        const unreadFilter = filter.Unread as number | undefined;
-
-        if (unreadFilter === undefined) {
-            return count.Total;
-        }
-        if (unreadFilter > 0) {
-            return count.Unread;
-        }
-        return count.Total - count.Unread;
     };
 
     // Main effect watching all inputs and responsible to trigger actions on the cache
@@ -316,7 +331,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         }
     }, [
         labelID,
-        pageFromUrl,
+        page,
         sort,
         filter,
         search.address,
@@ -327,15 +342,40 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         search.end,
         search.attachments,
         search.wildcard,
+        // These 2 cache values will trigger the effect for any event containing something
+        // which could lead to consider refreshing the list
         cache.invalidated,
         cache.updatedElements,
+        cache.pendingRequest,
     ]);
+
+    useEffect(() => {
+        if (
+            !cache.beforeFirstLoad &&
+            !cache.pendingRequest &&
+            cache.retry.error === undefined &&
+            elements.length !== expectedLength
+        ) {
+            console.error('Elements list inconsistency error', {
+                conversationMode,
+                labelID,
+                search,
+                page,
+                sort,
+                filter,
+                total,
+                expectedLength,
+                cache,
+            });
+            resetCache(cache.retry);
+        }
+    }, [cache.pendingRequest]);
 
     // Listen to event manager and update de cache
     useSubscribeEventManager(
         async ({ Conversations = [], Messages = [], ConversationCounts = [], MessageCounts = [] }: Event) => {
             const Elements: ElementEvent[] = conversationMode ? Conversations : Messages;
-            const Counts: ElementCountEvent[] = conversationMode ? ConversationCounts : MessageCounts;
+            const Counts: LabelCount[] = conversationMode ? ConversationCounts : MessageCounts;
 
             if (!Elements.length && !Counts.length) {
                 return;
@@ -348,7 +388,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                 return;
             }
 
-            const total = getTotal(Counts);
+            const total = isSearch(search) ? cache.total : getTotal(Counts, labelID, filter);
 
             const { toCreate, toUpdate, toDelete } = Elements.reduce<{
                 toCreate: (Element & LabelIDsChanges)[];
@@ -412,7 +452,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                 return {
                     ...cache,
                     elements: newElements,
-                    page: { ...cache.page, total },
+                    total,
                     updatedElements,
                 };
             });
@@ -430,6 +470,6 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         expectedLength,
         pendingRequest: cache.pendingRequest,
         loading,
-        total: cache.page.total,
+        total: cache.total,
     };
 };
