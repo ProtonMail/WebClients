@@ -4,6 +4,16 @@ import { Attendee, Calendar, CalendarEventData, CalendarSettings, CalendarUserSe
 
 const CALENDAR_V1 = 'calendar/v1';
 
+export const queryLatestModelEventID = (calendarID: string) => ({
+    url: `${CALENDAR_V1}/${calendarID}/modelevents/latest`,
+    method: 'get',
+});
+
+export const queryModelEvents = (calendarID: string, eventID: string) => ({
+    url: `${CALENDAR_V1}/${calendarID}/modelevents/${eventID}`,
+    method: 'get',
+});
+
 export const queryCalendars = (params?: PaginationParams) => ({
     url: `${CALENDAR_V1}`,
     method: 'get',
