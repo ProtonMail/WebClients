@@ -2,6 +2,7 @@
 
 ## Added
 - Open ProtonCalendar to free users
+- Five new languages: Croatian, Traditional Chinese, Greek, Kabyle, and Spanish (Spain)
 
 ## Updated
 - Color taxonomy for buttons
