@@ -202,13 +202,13 @@ export const mutateHTMLBlob = (embeddeds: EmbeddedMap | undefined, document: Ele
  * Parse the content to inject the cid
  */
 export const mutateHTMLCid = (embeddeds: EmbeddedMap | undefined, document: Element | undefined) => {
-    mutateHTML(embeddeds, document, (elements, cid) =>
+    mutateHTML(embeddeds, document, (elements, cid) => {
         elements.forEach((element) => {
             element.removeAttribute('data-embedded-img');
             element.removeAttribute('src');
             element.setAttribute('data-src', `cid:${cid}`);
-        })
-    );
+        });
+    });
 };
 
 export const decrypt = async (

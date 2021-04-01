@@ -25,9 +25,10 @@ import { oneClickUnsubscribe, markAsUnsubscribed } from 'proton-shared/lib/api/m
 
 import { MessageExtended, PartialMessageExtended, MessageExtendedWithData } from '../../../models/message';
 import { useMessage } from '../../../hooks/message/useMessage';
-import { useSendMessage, useSendVerifications } from '../../../hooks/composer/useSendMessage';
+import { useSendMessage } from '../../../hooks/composer/useSendMessage';
 import { findSender } from '../../../helpers/addresses';
 import { OnCompose } from '../../../hooks/composer/useCompose';
+import { useSendVerifications } from '../../../hooks/composer/useSendVerifications';
 
 interface Props {
     message: MessageExtended;

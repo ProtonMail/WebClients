@@ -44,6 +44,7 @@ export const prepareMessage = (message: PartialMessageExtended) => {
             ToList: [{ Name: '', Address: toAddress }],
             CCList: [],
             BCCList: [],
+            Attachments: [],
         } as Partial<Message>,
         initialized: true,
     } as MessageExtendedWithData;
