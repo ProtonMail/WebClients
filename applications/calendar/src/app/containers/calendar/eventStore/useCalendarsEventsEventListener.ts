@@ -1,23 +1,49 @@
 import { MutableRefObject, useEffect } from 'react';
 import { useEventManager } from 'react-components';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
+
 import { CalendarsEventsCache } from './interface';
 import removeCalendarEventStoreRecord from './cache/removeCalendarEventStoreRecord';
 import upsertCalendarApiEventWithoutBlob from './cache/upsertCalendarApiEventWithoutBlobs';
 import { CalendarEventManager, CalendarEventsEventManager } from '../../../interfaces/EventManager';
+import { useCalendarModelEventManager } from '../../eventManager/ModelEventManagerProvider';
 
-export const useCalendarCacheEventListener = (cacheRef: MutableRefObject<CalendarsEventsCache>) => {
-    const { subscribe } = useEventManager();
+export const useCalendarCacheEventListener = (
+    cacheRef: MutableRefObject<CalendarsEventsCache>,
+    calendarIDs: string[]
+) => {
+    const { subscribe: standardSubscribe } = useEventManager();
+    const { subscribe: calendarSubscribe } = useCalendarModelEventManager();
 
+    // subscribe to general event loop
     useEffect(() => {
-        return subscribe(
-            ({
-                CalendarEvents = [],
-                Calendars = [],
-            }: {
-                CalendarEvents?: CalendarEventsEventManager[];
-                Calendars?: CalendarEventManager[];
-            }) => {
+        return standardSubscribe(({ Calendars = [] }: { Calendars?: CalendarEventManager[] }) => {
+            const cache = cacheRef.current;
+            if (!cache) {
+                return;
+            }
+            const { calendars } = cache;
+
+            let actions = 0;
+
+            Calendars.forEach(({ ID: CalendarID, Action }) => {
+                if (Action === EVENT_ACTIONS.DELETE) {
+                    delete calendars[CalendarID];
+                    actions++;
+                }
+            });
+
+            if (actions) {
+                cacheRef.current.rerender?.();
+            }
+        });
+    }, []);
+
+    // subscribe to calendar event loop
+    useEffect(() => {
+        return calendarSubscribe(
+            calendarIDs,
+            ({ CalendarEvents = [] }: { CalendarEvents?: CalendarEventsEventManager[] }) => {
                 const cache = cacheRef.current;
                 if (!cache) {
                     return;
@@ -25,13 +51,6 @@ export const useCalendarCacheEventListener = (cacheRef: MutableRefObject<Calenda
                 const { calendars } = cache;
 
                 let actions = 0;
-
-                Calendars.forEach(({ ID: CalendarID, Action }) => {
-                    if (Action === EVENT_ACTIONS.DELETE) {
-                        delete calendars[CalendarID];
-                        actions++;
-                    }
-                });
 
                 CalendarEvents.forEach((CalendarEventsChange) => {
                     if (CalendarEventsChange.Action === EVENT_ACTIONS.DELETE) {
@@ -69,7 +88,7 @@ export const useCalendarCacheEventListener = (cacheRef: MutableRefObject<Calenda
                 }
             }
         );
-    }, []);
+    }, [calendarIDs]);
 };
 
 export default useCalendarCacheEventListener;

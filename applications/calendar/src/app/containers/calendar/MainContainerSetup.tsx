@@ -10,10 +10,10 @@ import {
 } from 'proton-shared/lib/calendar/calendar';
 import { getTimezone } from 'proton-shared/lib/date/timezone';
 import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
-
 import { DEFAULT_CALENDAR_USER_SETTINGS } from '../../settingsConstants';
 import { CalendarsEventsCache } from './eventStore/interface';
 import getCalendarsEventCache from './eventStore/cache/getCalendarsEventCache';
+import useCalendarsKeysSettingsListener from './eventStore/useCalendarsKeysSettingsListener';
 import useCalendarsEventsEventListener from './eventStore/useCalendarsEventsEventListener';
 import { CalendarsAlarmsCache } from '../alarms/CacheInterface';
 import { getCalendarsAlarmsCache } from '../alarms/useCalendarsAlarms';
@@ -35,23 +35,25 @@ const MainContainerSetup = ({ user, addresses, calendars }: Props) => {
     const [userSettings] = useUserSettings();
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS] = useCalendarUserSettings();
 
-    const calendarsEventsCacheRef = useRef<CalendarsEventsCache>(getCalendarsEventCache());
-    useCalendarsEventsEventListener(calendarsEventsCacheRef);
-
-    const calendarAlarmsCacheRef = useRef<CalendarsAlarmsCache>(getCalendarsAlarmsCache());
-    useCalendarsAlarmsEventListeners(calendarAlarmsCacheRef);
-
-    const eventTargetActionRef = useRef<EventTargetAction>();
-
-    const { activeCalendars, disabledCalendars, visibleCalendars } = useMemo(() => {
+    const { activeCalendars, disabledCalendars, visibleCalendars, allCalendarIDs } = useMemo(() => {
         return {
             calendars,
             activeCalendars: getProbablyActiveCalendars(calendars),
             disabledCalendars: calendars.filter((calendar) => getIsCalendarDisabled(calendar)),
             visibleCalendars: calendars.filter(({ Display }) => !!Display),
+            allCalendarIDs: calendars.map(({ ID }) => ID),
         };
     }, [calendars]);
 
+    useCalendarsKeysSettingsListener(allCalendarIDs);
+
+    const calendarsEventsCacheRef = useRef<CalendarsEventsCache>(getCalendarsEventCache());
+    useCalendarsEventsEventListener(calendarsEventsCacheRef, allCalendarIDs);
+
+    const calendarAlarmsCacheRef = useRef<CalendarsAlarmsCache>(getCalendarsAlarmsCache());
+    useCalendarsAlarmsEventListeners(calendarAlarmsCacheRef, allCalendarIDs);
+
+    const eventTargetActionRef = useRef<EventTargetAction>();
     const activeAddresses = useMemo(() => {
         return getActiveAddresses(addresses);
     }, [addresses]);
@@ -115,5 +117,4 @@ const MainContainerSetup = ({ user, addresses, calendars }: Props) => {
         </>
     );
 };
-
 export default MainContainerSetup;

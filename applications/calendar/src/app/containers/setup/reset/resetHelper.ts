@@ -10,7 +10,6 @@ import { reactivateCalendarsKeys } from './reactivateCalendarKeys';
 interface ProcessArguments {
     api: Api;
     cache: any;
-    call: () => void;
     getAddresses: ReturnType<typeof useGetAddresses>;
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
     calendarsToReset: Calendar[];
@@ -20,7 +19,6 @@ interface ProcessArguments {
 export const process = async ({
     api,
     cache,
-    call,
     getAddresses,
     getAddressKeys,
     calendarsToReset,
@@ -49,7 +47,6 @@ export const process = async ({
         });
     }
 
-    await call();
     // Refresh the calendar model to be able to get the new flags since it's not updated through the event manager
     await loadModels([CalendarsModel], { api, cache, useCache: false });
 };

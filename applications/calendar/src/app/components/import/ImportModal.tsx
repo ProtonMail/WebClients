@@ -3,7 +3,7 @@ import { splitExtension } from 'proton-shared/lib/helpers/file';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import React, { ChangeEvent, MutableRefObject, useState, DragEvent } from 'react';
-import { FormModal, PrimaryButton, useApi, useEventManager, onlyDragFiles } from 'react-components';
+import { FormModal, PrimaryButton, useApi, onlyDragFiles, useEventManager } from 'react-components';
 import { c } from 'ttag';
 
 import { MAX_IMPORT_FILE_SIZE } from '../../constants';
@@ -18,6 +18,7 @@ import ImportSummaryModalContent from './ImportSummaryModalContent';
 import WarningModalContent from './WarningModalContent';
 import { IMPORT_ERROR_TYPE, ImportFileError } from './ImportFileError';
 import { CalendarsEventsCache } from '../../containers/calendar/eventStore/interface';
+import { useCalendarModelEventManager } from '../../containers/eventManager/ModelEventManagerProvider';
 
 interface Props {
     defaultCalendar: Calendar;
@@ -38,6 +39,7 @@ const getInitialState = (calendar: Calendar): ImportCalendarModel => ({
 const ImportModal = ({ calendars, defaultCalendar, calendarsEventsCacheRef, ...rest }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
+    const { call: calendarCall } = useCalendarModelEventManager();
     const [model, setModel] = useState<ImportCalendarModel>(getInitialState(defaultCalendar));
     const [isDropzoneHovered, setIsDropzoneHovered] = useState(false);
 
@@ -194,7 +196,7 @@ const ImportModal = ({ calendars, defaultCalendar, calendarsEventsCacheRef, ...r
                     await api(updateCalendar(calendarID, { Display: 1 }));
                 }
                 upsertImportedEvents(importedEvents, calendarsEventsCacheRef.current.calendars[calendarID]);
-                await call();
+                await Promise.all([calendarCall([calendarID]), call()]);
             };
 
             return {
