@@ -48,6 +48,11 @@ body {
 }
 .icon-ok::after {
 	content: '✔';
+	color: var(--signal-danger);
+}
+.icon-ok::after {
+	content: '✔';
+	color: var(--signal-success);
 }
 .icon-ko button {
 	display: none; // don't copy shit!
