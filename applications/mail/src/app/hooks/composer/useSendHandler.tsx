@@ -7,8 +7,9 @@ import SendingMessageNotification, {
     SendingMessageNotificationManager,
 } from '../../components/notifications/SendingMessageNotification';
 import { MessageAction, MessageExtended, MessageExtendedWithData } from '../../models/message';
-import { useSendMessage, useSendVerifications } from './useSendMessage';
+import { useSendMessage } from './useSendMessage';
 import { OnCompose } from './useCompose';
+import { useSendVerifications } from './useSendVerifications';
 
 export interface UseSendHandlerParameters {
     modelMessage: MessageExtended;

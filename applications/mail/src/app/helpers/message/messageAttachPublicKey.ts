@@ -43,10 +43,10 @@ export const attachPublicKey = async (message: MessageExtendedWithData, messageK
     const attachmentExists = attachments.some((attachment) => blobEqualsAttachment(file, attachment));
 
     if (attachmentExists) {
-        return attachments;
+        return undefined;
     }
 
     const [uploadInfo] = upload([file], message, messageKeys, ATTACHMENT_ACTION.ATTACHMENT, uid);
     const uploadResult = await uploadInfo.resultPromise;
-    return [...attachments, uploadResult.attachment];
+    return uploadResult.attachment;
 };

@@ -22,7 +22,7 @@ export const findEmbedded = (cid: string, document: Element) => {
         `img[data-embedded-img="${cid}"]`,
         `img[data-embedded-img="cid:${cid}"]`,
         `img[data-src="cid:${cid}"]`,
-        `img[proton-src="cid:${cid}"]`
+        `img[proton-src="cid:${cid}"]`,
     ];
     return [...document.querySelectorAll(selector.join(', '))];
 };
