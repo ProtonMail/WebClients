@@ -45,6 +45,7 @@ const AutocompleteList = <V,>({ id, children, onClose, isOpen, highlightedIndex,
 
             <Dropdown
                 autoClose={false}
+                autoCloseOutside={false}
                 isOpen={items.length > 0 && isOpen}
                 anchorRef={anchorRef}
                 onClose={onClose}
