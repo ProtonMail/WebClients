@@ -50,7 +50,7 @@ export const Sandbox = () => {
             shape={selectedShape}
             color={selectedColor}
             size={selectedSize}
-            {...selectedToggles.reduce((acc, value, i) => {
+            {...selectedToggles.reduce<{ [key: string]: boolean }>((acc, value, i) => {
                 acc[toggles[i]] = value;
                 return acc;
             }, {})}
