@@ -3,7 +3,6 @@ import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
 import {
     isAttachPublicKey as testIsAttachPublicKey,
     isRequestReadReceipt as testIsRequestReadReceipt,
-    isSign as testIsSign,
 } from 'proton-shared/lib/mail/messages';
 import React, { memo } from 'react';
 import { DropdownMenuButton, Icon, classnames } from 'react-components';
@@ -11,7 +10,7 @@ import { c } from 'ttag';
 
 import { MessageChangeFlag } from '../Composer';
 
-const { FLAG_SIGN, FLAG_PUBLIC_KEY, FLAG_RECEIPT_REQUEST } = MESSAGE_FLAGS;
+const { FLAG_PUBLIC_KEY, FLAG_RECEIPT_REQUEST } = MESSAGE_FLAGS;
 
 const getClassname = (status: boolean) => (status ? undefined : 'visibility-hidden');
 
@@ -21,20 +20,11 @@ interface Props {
 }
 
 const EditorToolbarExtension = ({ message, onChangeFlag }: Props) => {
-    const isSign = testIsSign(message);
     const isAttachPublicKey = testIsAttachPublicKey(message);
     const isReceiptRequest = testIsRequestReadReceipt(message);
 
-    const handleToggleSign = () => {
-        const changes = new Map<number, boolean>([[MESSAGE_FLAGS.FLAG_SIGN, !isSign]]);
-        onChangeFlag(changes, true);
-    };
-
     const handleTogglePublicKey = async () => {
         const changes = new Map([[FLAG_PUBLIC_KEY, !isAttachPublicKey]]);
-        if (!isAttachPublicKey) {
-            changes.set(FLAG_SIGN, true);
-        }
         onChangeFlag(changes);
     };
 
@@ -42,10 +32,6 @@ const EditorToolbarExtension = ({ message, onChangeFlag }: Props) => {
 
     return (
         <>
-            <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleToggleSign}>
-                <Icon name="on" className={classnames(['mt0-25', getClassname(isSign)])} />
-                <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Sign message`}</span>
-            </DropdownMenuButton>
             <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleTogglePublicKey}>
                 <Icon name="on" className={classnames(['mt0-25', getClassname(isAttachPublicKey)])} />
                 <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Attach Public Key`}</span>
