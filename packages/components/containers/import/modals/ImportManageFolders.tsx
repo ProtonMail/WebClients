@@ -27,7 +27,7 @@ import ImportManageFoldersRow from './ImportManageFoldersRow';
 
 interface Props {
     modalModel: ImportModalModel;
-    address: Address;
+    addresses: Address[];
     payload: ImportPayloadModel;
     onChangePayload: (newPayload: ImportPayloadModel) => void;
     toggleEditing: (editing: boolean) => void;
@@ -38,7 +38,7 @@ interface Props {
 
 const ImportManageFolders = ({
     modalModel,
-    address,
+    addresses,
     payload,
     toggleEditing,
     onChangePayload,
@@ -224,6 +224,8 @@ const ImportManageFolders = ({
         });
     }, [checkedFoldersMap, labelsMap, folderNamesMap]);
 
+    const emailAddress = addresses.find((addr) => addr.ID === modalModel.payload.AddressID)?.Email;
+
     return (
         <>
             <Alert className="mt2 mb1">{c('Info').t`Please select the folders you would like to import:`}</Alert>
@@ -233,8 +235,8 @@ const ImportManageFolders = ({
                     <strong>{c('Label').t`From: ${modalModel.email}`}</strong>
                 </div>
 
-                <div className="w50 text-ellipsis pt1">
-                    <strong>{c('Label').t`To: ${address.Email}`}</strong>
+                <div className="w40 text-ellipsis pt1">
+                    <strong>{c('Label').t`To: ${emailAddress}`}</strong>
                 </div>
             </div>
 
