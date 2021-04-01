@@ -79,7 +79,7 @@ export const getPromiseValue = (cache, key, miss, lifetime) => {
 /**
  * Caches a model globally in the cache. Can be updated from the event manager.
  * @param {Map} cache
- * @param {String} key
+ * @param {String | undefined} key
  * @param {Function} miss - Returning a promise
  * @return {[value, loading, error]}
  */
