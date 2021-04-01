@@ -1,3 +1,17 @@
+# [4.0.0-beta.13] - 2021-04-02
+
+After a password reset you can choose to recover access to your previously encrypted files stored on your Proton Drive. Also, we are adding support of 5 new languages together with sharing experience improvements.
+
+## Fixed
+
+- Copy password button is now disabled if the field is empty
+- Made improvements when downloading large files with custom password
+
+## Added
+
+- Access recovery process to the previously encrypted files after a password reset
+- 5 new languages: Croatian, Traditional Chinese, Greek, Kabyle, and Spanish (Spain)
+
 # [4.0.0-beta.12] - 2021-03-10
 
 We have further improved sharing a link user experience. 
