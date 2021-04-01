@@ -61,9 +61,9 @@ const Checkbox = (
             />
             <span className="checkbox-fakecheck" style={{ borderColor, background: backgroundColor, color }}>
                 {indeterminate === false ? (
-                    <Icon className="checkbox-fakecheck-img" size={12} name="on" color={color} />
+                    <Icon className="checkbox-fakecheck-img" size={16} name="on" color={color} />
                 ) : (
-                    <Icon className="checkbox-fakecheck-img color-disabled" size={12} name="dash" />
+                    <Icon className="checkbox-fakecheck-img color-disabled" size={16} name="dash" />
                 )}
             </span>
             {children}
