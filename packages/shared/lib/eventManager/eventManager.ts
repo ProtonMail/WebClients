@@ -6,10 +6,16 @@ import { Api } from '../interfaces';
 
 const FIBONACCI = [1, 1, 2, 3, 5, 8];
 
-interface EventResponse {
-    EventID: string;
-    More: 0 | 1;
+export enum EVENT_ID_KEYS {
+    DEFAULT = 'EventID',
+    CALENDAR = 'CalendarModelEventID',
 }
+
+type EventResponse = {
+    [key in EVENT_ID_KEYS]: string;
+} & {
+    More: 0 | 1;
+};
 
 interface EventManagerConfig {
     /** Function to call the API */
@@ -20,6 +26,7 @@ interface EventManagerConfig {
     interval?: number;
     /** Event polling endpoint override */
     query?: (eventID: string) => object;
+    eventIDKey?: EVENT_ID_KEYS;
 }
 
 export type SubscribeFn = <A extends any[], R = void>(listener: Listener<A, R>) => () => void;
@@ -42,6 +49,7 @@ const eventManager = ({
     eventID: initialEventID,
     interval = INTERVAL_EVENT_TIMER,
     query = getEvents,
+    eventIDKey = EVENT_ID_KEYS.DEFAULT,
 }: EventManagerConfig): EventManager => {
     const listeners = createListeners<[EventResponse]>();
 
@@ -159,7 +167,7 @@ const eventManager = ({
 
                 await Promise.all(listeners.notify(result));
 
-                const { More, EventID: nextEventID } = result;
+                const { More, [eventIDKey]: nextEventID } = result;
                 setEventID(nextEventID);
                 setRetryIndex(0);
 
@@ -167,7 +175,6 @@ const eventManager = ({
                     break;
                 }
             }
-
             delete STATE.abortController;
             start();
         } catch (error) {
