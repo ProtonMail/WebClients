@@ -1,7 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { SimpleFilterModalModel, Step, Errors } from '../interfaces';
+import { Errors, SimpleFilterModalModel, Step } from '../interfaces';
+import { Breadcrumb } from '../../../components';
 
 interface Props {
     model: SimpleFilterModalModel;
@@ -10,56 +11,44 @@ interface Props {
 }
 
 const HeaderFilterModal = ({ model, errors, onChange }: Props) => {
+    const list = [
+        { step: Step.NAME, content: c('Step in filter modal').t`Name` },
+        { step: Step.CONDITIONS, content: c('Step in filter modal').t`Conditions` },
+        { step: Step.ACTIONS, content: c('Step in filter modal').t`Actions` },
+        { step: Step.PREVIEW, content: c('Step in filter modal').t`Preview` },
+    ];
+    const getIsDisabled = (index: number) => {
+        const target = list[index];
+        if (!target) {
+            return false;
+        }
+        const { step } = target;
+        if (step === Step.CONDITIONS && !!errors.name) {
+            return true;
+        }
+        if (step === Step.ACTIONS && (!!errors.name || !!errors.conditions)) {
+            return true;
+        }
+        if (step === Step.PREVIEW && (!!errors.name || !!errors.actions || !!errors.conditions)) {
+            return true;
+        }
+        return false;
+    };
     return (
         <header>
-            <ul className="breadcrumb-container unstyled inline-flex pl0-5 pr0-5 mt0">
-                <li className="breadcrumb-item">
-                    <button
-                        type="button"
-                        disabled={model.step === Step.NAME}
-                        aria-current={model.step === Step.NAME ? 'step' : false}
-                        onClick={() => onChange({ ...model, step: Step.NAME })}
-                        className="breadcrumb-button"
-                    >
-                        {c('Step in filter modal').t`Name`}
-                    </button>
-                </li>
-                <li className="breadcrumb-item">
-                    <button
-                        type="button"
-                        disabled={model.step === Step.CONDITIONS || !!errors.name}
-                        aria-current={model.step === Step.CONDITIONS ? 'step' : false}
-                        onClick={() => onChange({ ...model, step: Step.CONDITIONS })}
-                        className="breadcrumb-button"
-                    >
-                        {c('Step in filter modal').t`Conditions`}
-                    </button>
-                </li>
-                <li className="breadcrumb-item">
-                    <button
-                        type="button"
-                        disabled={model.step === Step.ACTIONS || !!errors.name || !!errors.conditions}
-                        aria-current={model.step === Step.ACTIONS ? 'step' : false}
-                        onClick={() => onChange({ ...model, step: Step.ACTIONS })}
-                        className="breadcrumb-button"
-                    >
-                        {c('Step in filter modal').t`Actions`}
-                    </button>
-                </li>
-                <li className="breadcrumb-item">
-                    <button
-                        type="button"
-                        disabled={
-                            model.step === Step.PREVIEW || !!errors.name || !!errors.actions || !!errors.conditions
-                        }
-                        aria-current={model.step === Step.PREVIEW ? 'step' : false}
-                        onClick={() => onChange({ ...model, step: Step.PREVIEW })}
-                        className="breadcrumb-button"
-                    >
-                        {c('Step in filter modal').t`Preview`}
-                    </button>
-                </li>
-            </ul>
+            <Breadcrumb
+                onClick={(index) => {
+                    const target = list[index];
+                    if (!target) {
+                        return;
+                    }
+                    const { step } = target;
+                    onChange({ ...model, step });
+                }}
+                getIsDisabled={getIsDisabled}
+                current={list.findIndex(({ step }) => step === model.step)}
+                list={list.map(({ content }) => content)}
+            />
         </header>
     );
 };
