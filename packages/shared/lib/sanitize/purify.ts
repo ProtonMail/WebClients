@@ -2,26 +2,17 @@ import DOMPurify, { Config } from 'dompurify';
 
 import { escapeURLinStyle } from './escape';
 
-const LIST_STYLE_PROPERTIES_REMOVED = ['position', 'left', 'right', 'top', 'bottom'];
-
-const { LIST_PROTON_ATTR, MAP_PROTON_ATTR } = [
-    'data-src',
-    'src',
-    'srcset',
-    'background',
-    'poster',
-    'xlink:href',
-].reduce(
-    (acc, attr) => {
-        acc.LIST_PROTON_ATTR.push(`proton-${attr}`);
-        acc.MAP_PROTON_ATTR[attr] = true;
+const toMap = (list: string[]) =>
+    list.reduce<{ [key: string]: true | undefined }>((acc, key) => {
+        acc[key] = true;
         return acc;
-    },
-    {
-        LIST_PROTON_ATTR: [] as string[],
-        MAP_PROTON_ATTR: Object.create(null),
-    }
-);
+    }, {});
+
+const LIST_PROTON_TAG = ['svg'];
+// const MAP_PROTON_TAG = toMap(LIST_PROTON_TAG);
+const LIST_PROTON_ATTR = ['data-src', 'src', 'srcset', 'background', 'poster', 'xlink:href'];
+const MAP_PROTON_ATTR = toMap(LIST_PROTON_ATTR);
+const LIST_STYLE_PROPERTIES_REMOVED = ['position', 'left', 'right', 'top', 'bottom'];
 
 const CONFIG: { [key: string]: any } = {
     default: {
@@ -36,7 +27,7 @@ const CONFIG: { [key: string]: any } = {
     html: { WHOLE_DOCUMENT: false, RETURN_DOM: true },
     protonizer: {
         FORBID_ATTR: {},
-        ADD_ATTR: ['target'].concat(LIST_PROTON_ATTR),
+        ADD_ATTR: ['target', ...LIST_PROTON_ATTR.map((attr) => `proton-${attr}`)],
         WHOLE_DOCUMENT: true,
         RETURN_DOM: true,
     },
@@ -48,6 +39,11 @@ const CONFIG: { [key: string]: any } = {
     },
 };
 
+const getConfig = (type: string): Config => ({ ...CONFIG.default, ...(CONFIG[type] || {}) });
+
+/**
+ * Remove some style properties configured in LIST_STYLE_PROPERTIES_REMOVED
+ */
 const sanitizeStyle = (node: Node) => {
     // We only work on elements
     if (node.nodeType !== 1) {
@@ -61,6 +57,34 @@ const sanitizeStyle = (node: Node) => {
     });
 };
 
+/**
+ * Rename some tags adding the proton- prefix configured in LIST_PROTON_TAG
+ * This process is done outside and after DOMPurify because renaming tags in DOMPurify don't work
+ * Currently used only for svg tags which are considered as image
+ */
+const sanitizeElements = (document: Element) => {
+    LIST_PROTON_TAG.forEach((tagName) => {
+        const svgs = document.querySelectorAll(tagName);
+        svgs.forEach((element) => {
+            const newElement = element.ownerDocument.createElement(`proton-${tagName}`);
+            // Copy the children
+            while (element.firstChild) {
+                newElement.appendChild(element.firstChild); // *Moves* the child
+            }
+
+            element.getAttributeNames().forEach((name) => {
+                newElement.setAttribute(name, element.getAttribute(name) || '');
+            });
+
+            element.parentElement?.replaceChild(newElement, element);
+        });
+    });
+};
+
+/**
+ * Rename some attributes adding the proton- prefix configured in LIST_PROTON_ATTR
+ * Also escape urls in style attributes
+ */
 const beforeSanitizeElements = (node: Node) => {
     // We only work on elements
     if (node.nodeType !== 1) {
@@ -71,6 +95,7 @@ const beforeSanitizeElements = (node: Node) => {
 
     Array.from(element.attributes).forEach((type) => {
         const item = type.name;
+
         if (MAP_PROTON_ATTR[item]) {
             element.setAttribute(`proton-${item}`, element.getAttribute(item) || '');
             element.removeAttribute(item);
@@ -82,18 +107,17 @@ const beforeSanitizeElements = (node: Node) => {
         }
     });
 
-    return node;
+    return element;
 };
 
 const purifyHTMLHooks = (active: boolean) => {
     if (active) {
-        return DOMPurify.addHook('beforeSanitizeElements', beforeSanitizeElements);
+        DOMPurify.addHook('beforeSanitizeElements', beforeSanitizeElements);
+        return;
     }
 
     DOMPurify.removeHook('beforeSanitizeElements');
 };
-
-const getConfig = (type: string): Config => ({ ...CONFIG.default, ...(CONFIG[type] || {}) });
 
 const clean = (mode: string) => {
     const config = getConfig(mode);
@@ -128,7 +152,9 @@ export const html = clean('raw') as (input: Node) => Element;
 export const protonizer = (input: string, attachHooks: boolean): Element => {
     const process = clean('protonizer');
     purifyHTMLHooks(attachHooks);
-    return process(input) as Element;
+    const resultDocument = process(input) as Element;
+    sanitizeElements(resultDocument);
+    return resultDocument;
 };
 
 /**
