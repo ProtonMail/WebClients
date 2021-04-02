@@ -68,8 +68,10 @@ const MessageView = (
     // Actual expanded state
     const [expanded, setExpanded] = useState(getInitialExpand);
 
+    // Show or not the blockquote content
     const [originalMessageMode, setOriginalMessageMode] = useState(false);
 
+    // HTML source should be shown instead of normal rendered content
     const [sourceMode, setSourceMode] = useState(false);
 
     const elementRef = useRef<HTMLElement>(null);
@@ -181,6 +183,14 @@ const MessageView = (
             setSourceMode(false);
         }
     }, [draft, message.data?.ID]);
+
+    // Automatically activate source mode when processing errors
+    const hasProcessingErrors = !!message.errors?.processing?.length;
+    useEffect(() => {
+        if (hasProcessingErrors) {
+            setSourceMode(true);
+        }
+    }, [hasProcessingErrors]);
 
     const {
         hasFocus,

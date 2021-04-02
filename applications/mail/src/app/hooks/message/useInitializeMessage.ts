@@ -97,9 +97,9 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                   );
         } catch (error) {
             if (isApiError(error)) {
-                errors.network = error;
+                errors.network = [error];
             } else {
-                errors.processing = error;
+                errors.processing = [error];
             }
         } finally {
             updateMessageCache(messageCache, localID, {

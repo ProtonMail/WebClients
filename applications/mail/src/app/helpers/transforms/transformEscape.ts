@@ -1,25 +1,7 @@
 import { protonizer as purifyHTML } from 'proton-shared/lib/sanitize';
 import { uniqID } from '../string';
 import { Base64Cache } from '../../hooks/useBase64Cache';
-
-/*
- * match attributes or elements with svg, xlink, srcset, src, background, poster.
- * the regex checks that the element/attribute is actually in an element by looking forward and seeing if it
- * ends properly with a >
- *
- * Another assumption in these regex are: all attributes use the " quotes instead of the ' quote. This is satisfied
- * by the previous standardization steps
- */
-const SVG_LIST = ['svg'];
-const FORBIDDEN_SVG = `(${SVG_LIST.join('|')})`;
-const NO_SPECIALS = '([^"><\\\\]|\\\\[^><])';
-const NO_QUOTS = '(\\\\.|[^"\\\\])';
-const HTML_STRING = `("${NO_QUOTS}*")`;
-const VERIFY_ELEMENT_END = `(?=(${NO_SPECIALS}|${HTML_STRING})*>)`;
-const VERIFY_UNIQUE = '([^-])';
-
-// Ensure that the forbidden attributes are not already escaped with proton- by checking that there is no '-' character in front of them.
-const REGEXP_SVG_BREAK = new RegExp(VERIFY_UNIQUE + FORBIDDEN_SVG + VERIFY_ELEMENT_END, 'gi');
+import { inlineCss } from '../dom';
 
 /**
  * Parsing base64 is expensive and can create a crash.
@@ -67,8 +49,6 @@ export const attachBase64 = (element: Element, cache: Base64Cache) => {
     });
 };
 
-const escapeSVG = (input = '') => input.replace(REGEXP_SVG_BREAK, '$1proton-$2');
-
 /**
  * Escape content for a message
  * Content can be a Document when we open a message, it's useful
@@ -78,7 +58,7 @@ const escapeSVG = (input = '') => input.replace(REGEXP_SVG_BREAK, '$1proton-$2')
  */
 export const transformEscape = (content = '', cache?: Base64Cache) => {
     const value = removeBase64(content, cache);
-    const activeHooks = true; // action !== 'user.inject';
-    const document = purifyHTML(escapeSVG(value), activeHooks) as Element;
+    const document = purifyHTML(value, true);
+    inlineCss(document);
     return document;
 };

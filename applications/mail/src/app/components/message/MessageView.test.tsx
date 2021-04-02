@@ -5,6 +5,7 @@ import { waitFor } from '@testing-library/dom';
 import { act } from '@testing-library/react';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { noop } from 'proton-shared/lib/helpers/function';
+import loudRejection from 'loud-rejection';
 import {
     render,
     clearAll,
@@ -17,6 +18,8 @@ import {
     attachmentsCache,
     addApiKeys,
     addKeysToUserKeysCache,
+    addApiResolver,
+    messageCache,
 } from '../../helpers/test/helper';
 import MessageView, { MessageViewRef } from './MessageView';
 import { Breakpoints } from '../../models/utils';
@@ -25,6 +28,9 @@ import { constructMime } from '../../helpers/send/sendMimeBuilder';
 import { parseInDiv } from '../../helpers/dom';
 import { X_PM_HEADERS } from '../../models/crypto';
 import { addApiContact } from '../../helpers/test/contact';
+import { MessageExtended } from '../../models/message';
+
+loudRejection();
 
 jest.setTimeout(20000);
 
@@ -51,7 +57,7 @@ const defaultProps: MessageViewProps = {
 };
 
 const setup = async (specificProps: Partial<MessageViewProps> = {}) => {
-    const props = { ...defaultProps, specificProps };
+    const props = { ...defaultProps, ...specificProps };
 
     const ref = { current: null } as MutableRefObject<MessageViewRef | null>;
     const refCallback = (refValue: MessageViewRef) => {
@@ -206,12 +212,63 @@ describe('MessageView', () => {
         });
     });
 
-    // TODO
-    // describe('Message display modes', () => {
-    //     it('loading mode', async () => {});
-    //     it('encrypted mode', async () => {});
-    //     it('source mode', async () => {});
-    // });
+    describe('Message display modes', () => {
+        it('loading mode', async () => {
+            addApiResolver(`mail/v4/messages/${messageID}`);
+
+            const { ref, getByTestId } = await setup();
+
+            const messageView = getByTestId('message-view');
+            messageView.scrollIntoView = jest.fn();
+
+            act(() => ref.current?.expand());
+
+            const placeholders = messageView.querySelectorAll('.message-content-loading-placeholder');
+
+            expect(placeholders.length).toBeGreaterThanOrEqual(3);
+        });
+
+        it('encrypted mode', async () => {
+            const encryptedBody = 'body-test';
+
+            messageCache.set(messageID, {
+                localID: messageID,
+                data: { Body: encryptedBody, Subject: 'test' },
+                errors: { decryption: [new Error('test')] },
+                initialized: true,
+                verification: {},
+            } as MessageExtended);
+
+            const { getByTestId } = await setup({ conversationMode: false });
+
+            const errorsBanner = getByTestId('errors-banner');
+            expect(errorsBanner.textContent).toContain('Decryption error');
+
+            const messageView = getByTestId('message-view');
+            expect(messageView.textContent).toContain(encryptedBody);
+        });
+
+        it('source mode on processing error', async () => {
+            const decryptedBody = 'decrypted-test';
+
+            messageCache.set(messageID, {
+                localID: messageID,
+                data: { Body: 'test', Subject: 'test' },
+                errors: { processing: [new Error('test')] },
+                initialized: true,
+                verification: {},
+                decryptedBody,
+            } as MessageExtended);
+
+            const { getByTestId } = await setup({ conversationMode: false });
+
+            const errorsBanner = getByTestId('errors-banner');
+            expect(errorsBanner.textContent).toContain('processing error');
+
+            const messageView = getByTestId('message-view');
+            expect(messageView.textContent).toContain(decryptedBody);
+        });
+    });
 
     describe('Signature verification', () => {
         it('verified sender internal', async () => {
