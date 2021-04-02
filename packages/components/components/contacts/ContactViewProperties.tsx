@@ -32,7 +32,7 @@ const ContactViewProperties = ({
     rightBlockWidth = 'w70',
     isPreview = false,
 }: Props) => {
-    const toExclude = ['photo', 'org'];
+    const toExclude = ['photo'];
     const fields = field ? [field] : OTHER_INFORMATION_FIELDS.filter((field) => !toExclude.includes(field));
 
     const properties = allProperties.filter(({ field }) => fields.includes(field));
