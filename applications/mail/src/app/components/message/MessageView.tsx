@@ -1,9 +1,12 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import React, { useImperativeHandle, useEffect, useMemo, useRef, useState, memo, forwardRef, Ref } from 'react';
+
 import { hasAttachments, isDraft, isSent, isOutbox } from 'proton-shared/lib/mail/messages';
-import React, { useEffect, useMemo, useRef, useState, memo, forwardRef, Ref, RefCallback } from 'react';
-import { classnames } from 'react-components';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { noop } from 'proton-shared/lib/helpers/function';
+
+import { classnames } from 'react-components';
+
 import { getSentStatusIconInfo, getReceivedStatusIcon, MessageViewIcons } from '../../helpers/message/icon';
 import MessageBody from './MessageBody';
 import HeaderCollapsed from './header/HeaderCollapsed';
@@ -40,7 +43,7 @@ interface Props {
 }
 
 export interface MessageViewRef {
-    open: (smoothScrolling?: boolean) => void;
+    expand: (callback?: () => void) => void;
 }
 
 const MessageView = (
@@ -66,9 +69,6 @@ const MessageView = (
     const [expanded, setExpanded] = useState(getInitialExpand);
 
     const [originalMessageMode, setOriginalMessageMode] = useState(false);
-
-    // The message is beeing opened
-    const [beingFocused, setBeingFocused] = useState(false);
 
     const [sourceMode, setSourceMode] = useState(false);
 
@@ -98,6 +98,44 @@ const MessageView = (
         return { globalIcon: getReceivedStatusIcon(message.data, message.verification), mapStatusIcon: {} };
     }, [message]);
 
+    const handleLoadRemoteImages = async () => {
+        await addAction(loadRemoteImages);
+    };
+
+    const handleResignContact = async () => {
+        await addAction(resignContact);
+    };
+
+    const handleLoadEmbeddedImages = async () => {
+        await addAction(loadEmbeddedImages);
+    };
+
+    const handleToggle = (value: boolean) => () => {
+        if (message.sending) {
+            return;
+        }
+        if (outbox) {
+            return;
+        }
+        if (draft) {
+            onCompose({ existingDraft: message });
+            return;
+        }
+
+        setExpanded(value);
+    };
+
+    const toggleOriginalMessage = () => setOriginalMessageMode(!originalMessageMode);
+
+    // Setup ref to allow opening the message from outside, typically the ConversationView
+    useImperativeHandle(ref, () => ({
+        expand: (callback) => {
+            setExpanded(true);
+            elementRef.current?.focus();
+            callback?.();
+        },
+    }));
+
     // Manage loading the message
     useEffect(() => {
         if (!loading && !messageLoaded) {
@@ -119,38 +157,15 @@ const MessageView = (
         }
     }, [loading, expanded, message.initialized, message.verification]);
 
-    // Setup ref to allow opening the message from outside, typically the ConversationView
     useEffect(() => {
-        const refCallback = ref as RefCallback<MessageViewRef> | undefined;
-        refCallback?.({
-            open: (smoothScrolling = true) => {
-                setExpanded(true);
-                // Let the browser render the content before scrolling
-                setTimeout(() => {
-                    elementRef.current?.scrollIntoView({
-                        behavior: smoothScrolling ? 'smooth' : 'auto',
-                        block: 'start',
-                    });
-                    elementRef.current?.focus();
-                });
-                if (!bodyLoaded) {
-                    setBeingFocused(true);
-                }
-            },
-        });
-    }, [bodyLoaded]);
-
-    // Focus the content after body is loaded
-    useEffect(() => {
-        if (beingFocused && bodyLoaded) {
-            // Let the browser render the content before scrolling
+        if (expanded && bodyLoaded) {
             setTimeout(() => {
-                elementRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                elementRef.current?.focus();
+                if (elementRef.current) {
+                    elementRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             });
-            setBeingFocused(false);
         }
-    }, [bodyLoaded, beingFocused]);
+    }, [expanded, bodyLoaded]);
 
     // Mark as read a message already loaded (when user marked as unread)
     useEffect(() => {
@@ -163,38 +178,9 @@ const MessageView = (
     useEffect(() => {
         if (message.data?.ID) {
             setExpanded(getInitialExpand);
-            setBeingFocused(false);
             setSourceMode(false);
         }
     }, [draft, message.data?.ID]);
-
-    const handleLoadRemoteImages = async () => {
-        await addAction(loadRemoteImages);
-    };
-
-    const handleResignContact = async () => {
-        await addAction(resignContact);
-    };
-
-    const handleLoadEmbeddedImages = async () => {
-        await addAction(loadEmbeddedImages);
-    };
-
-    const handleExpand = (value: boolean) => () => {
-        if (message.sending) {
-            return;
-        }
-        if (outbox) {
-            return;
-        }
-        if (draft) {
-            onCompose({ existingDraft: message });
-        } else {
-            setExpanded(value);
-        }
-    };
-
-    const toggleOriginalMessage = () => setOriginalMessageMode(!originalMessageMode);
 
     const {
         hasFocus,
@@ -258,7 +244,7 @@ const MessageView = (
                         onResignContact={handleResignContact}
                         labels={labels}
                         mailSettings={mailSettings}
-                        onCollapse={handleExpand(false)}
+                        onToggle={handleToggle(false)}
                         onBack={onBack}
                         onCompose={onCompose}
                         onSourceMode={setSourceMode}
@@ -285,7 +271,7 @@ const MessageView = (
                     messageLoaded={messageLoaded}
                     isSentMessage={sent}
                     isUnreadMessage={unread}
-                    onExpand={handleExpand(true)}
+                    onExpand={handleToggle(true)}
                     onCompose={onCompose}
                     breakpoints={breakpoints}
                 />

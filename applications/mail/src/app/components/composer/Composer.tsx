@@ -210,12 +210,12 @@ const Composer = (
         }
     }, [syncInProgress, syncedMessage.document, syncedMessage.plainText, syncedMessage.data?.ID]);
 
+    const timeoutRef = useRef(0);
+
     // Manage focus at opening
     useEffect(() => {
-        let timeout: number | undefined;
-
         if (!opening) {
-            timeout = window.setTimeout(() => {
+            timeoutRef.current = window.setTimeout(() => {
                 if (getRecipients(syncedMessage.data).length === 0) {
                     addressesFocusRef.current();
                 } else {
@@ -225,8 +225,8 @@ const Composer = (
         }
 
         return () => {
-            if (timeout) {
-                clearTimeout(timeout);
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
             }
         };
     }, [opening]);

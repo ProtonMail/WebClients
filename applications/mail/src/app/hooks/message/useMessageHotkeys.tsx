@@ -44,7 +44,7 @@ export const useMessageHotkeys = (
     elementRef: React.RefObject<HTMLElement | undefined>,
     {
         labelID,
-        // conversationIndex,
+        conversationIndex,
         message,
         bodyLoaded,
         expanded,
@@ -53,7 +53,7 @@ export const useMessageHotkeys = (
         conversationMode,
     }: MessageHotkeysContext,
     {
-        // onFocus,
+        onFocus,
         onCompose,
         setExpanded,
         toggleOriginalMessage,
@@ -79,7 +79,7 @@ export const useMessageHotkeys = (
 
     const handleFocus = () => {
         setHasFocus(true);
-        // onFocus(conversationIndex);
+        onFocus(conversationIndex);
     };
 
     const handleBlur = () => {
@@ -313,12 +313,6 @@ export const useMessageHotkeys = (
     useHotkeys(elementRef, shortcutHandlers, {
         dependencies: [hasFocus],
     });
-
-    // useEffect(() => {
-    //     if (hasFocus) {
-    //         elementRef?.current?.scrollIntoView({ block: 'nearest' });
-    //     }
-    // }, [hasFocus]);
 
     return {
         hasFocus,
