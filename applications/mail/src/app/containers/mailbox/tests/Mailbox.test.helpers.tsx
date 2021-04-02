@@ -22,8 +22,6 @@ import MailboxContainer from '../MailboxContainer';
 
 loudRejection();
 
-window.HTMLElement.prototype.scrollIntoView = jest.fn();
-
 interface PropsArgs {
     labelID?: string;
     elementID?: string;

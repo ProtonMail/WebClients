@@ -15,6 +15,8 @@ import { eventManagerListeners } from './event-manager';
 import { clearApiKeys } from './crypto';
 import { clearApiContacts } from './contact';
 
+window.HTMLElement.prototype.scrollIntoView = jest.fn();
+
 export * from './cache';
 export * from './crypto';
 export * from './render';

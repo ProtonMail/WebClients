@@ -69,9 +69,6 @@ const setup = async (specificProps: Partial<MessageViewProps> = {}) => {
     const open = async () => {
         jest.spyOn(messageDecrypt, 'decryptMessage');
 
-        const container = renderResult.getByTestId('message-view');
-        container.scrollIntoView = jest.fn();
-
         void (await act(async () => {
             ref.current?.expand();
             // Message decryption can take a bit of time and can be on another thread than the test
