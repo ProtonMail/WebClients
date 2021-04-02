@@ -3,7 +3,7 @@ import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { useLabels, classnames, useHotkeys } from 'react-components';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
-import MessageView from './MessageView';
+import MessageView, { MessageViewRef } from './MessageView';
 import { useMessage } from '../../hooks/message/useMessage';
 import { OnCompose } from '../../hooks/composer/useCompose';
 import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
@@ -39,9 +39,9 @@ const MessageOnlyView = ({ hidden, labelID, messageID, mailSettings, onBack, onC
     // Message content could be undefined
     const data = message.data || ({ ID: messageID } as Message);
 
-    const messageRef = useRef(null);
+    const messageContainerRef = useRef(null);
 
-    useHotkeys(messageRef, [
+    useHotkeys(messageContainerRef, [
         [
             'ArrowLeft',
             (e) => {
@@ -57,6 +57,12 @@ const MessageOnlyView = ({ hidden, labelID, messageID, mailSettings, onBack, onC
         ],
     ]);
 
+    const messageRef = useRef<MessageViewRef>(null);
+
+    useEffect(() => {
+        messageRef?.current?.expand();
+    }, [messageID]);
+
     return (
         <>
             <ConversationHeader
@@ -68,11 +74,12 @@ const MessageOnlyView = ({ hidden, labelID, messageID, mailSettings, onBack, onC
             />
             <div
                 className={classnames(['scroll-if-needed flex-item-fluid pt0-5 max-w100', hidden && 'hidden'])}
-                ref={messageRef}
+                ref={messageContainerRef}
                 tabIndex={-1}
                 style={{ outline: 'none' }}
             >
                 <MessageView
+                    ref={messageRef}
                     labelID={labelID}
                     conversationMode={false}
                     loading={!messageLoaded}

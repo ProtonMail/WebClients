@@ -67,7 +67,7 @@ const setup = async (specificProps: Partial<MessageViewProps> = {}) => {
         container.scrollIntoView = jest.fn();
 
         void (await act(async () => {
-            ref.current?.open();
+            ref.current?.expand();
             // Message decryption can take a bit of time and can be on another thread than the test
             // By waiting on the completion of the decryption, we ensure not to continue too early
             await waitFor(() => expect(messageDecrypt.decryptMessage).toHaveBeenCalled());

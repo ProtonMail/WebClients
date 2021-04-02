@@ -7,7 +7,9 @@ export const useConversationFocus = (messages: Message[]) => {
     const getFocusedMessage = () => (focusIndex !== undefined ? messages[focusIndex] : undefined);
     const getFocusedId = () => getFocusedMessage()?.ID;
 
-    const handleFocus = (index: number | undefined) => setFocusIndex(index);
+    const handleFocus = (index: number | undefined) => {
+        setFocusIndex(index);
+    };
 
     useEffect(() => {
         if (focusIndex === undefined) {
