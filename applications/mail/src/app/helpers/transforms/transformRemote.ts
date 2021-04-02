@@ -7,8 +7,6 @@ import { hasShowRemote } from '../settings';
 
 const WHITELIST = ['notify@protonmail.com'];
 
-// const { dispatcher } = dispatchers(['message.open']);
-
 const ATTRIBUTES = ['url', 'xlink:href', 'srcset', 'src', 'svg', 'background', 'poster'].map(
     (name) => `proton-${name}`
 );

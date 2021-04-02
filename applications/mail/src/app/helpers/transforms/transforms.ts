@@ -1,6 +1,4 @@
-import { message as sanitize } from 'proton-shared/lib/sanitize';
 import { Api, MailSettings } from 'proton-shared/lib/interfaces';
-
 import { transformEscape, attachBase64 } from './transformEscape';
 import { Base64Cache } from '../../hooks/useBase64Cache';
 import { transformBase } from './transformBase';
@@ -12,7 +10,6 @@ import { transformWelcome } from './transformWelcome';
 import { transformStylesheet } from './transformStylesheet';
 import { transformRemote } from './transformRemote';
 import { transformLinkify } from './transformLinkify';
-import { inlineCss } from '../dom';
 
 export const prepareHtml = async (
     message: MessageExtended,
@@ -22,9 +19,7 @@ export const prepareHtml = async (
     api: Api,
     mailSettings?: Partial<MailSettings>
 ) => {
-    const body = inlineCss(sanitize(message.decryptedBody || ''));
-
-    const document = transformEscape(body, base64Cache);
+    const document = transformEscape(message.decryptedBody, base64Cache);
 
     transformBase(document);
 
