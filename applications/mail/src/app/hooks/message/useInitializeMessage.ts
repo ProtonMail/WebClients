@@ -1,5 +1,5 @@
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { isPlainText } from 'proton-shared/lib/mail/messages';
+import { isDraft, isPlainText } from 'proton-shared/lib/mail/messages';
 import { useCallback } from 'react';
 import { useApi, useMailSettings } from 'react-components';
 
@@ -86,7 +86,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
             const MIMEType = dataChanges.MIMEType || getData().MIMEType;
 
             preparation = isPlainText({ MIMEType })
-                ? await preparePlainText(decryption.decryptedBody)
+                ? await preparePlainText(decryption.decryptedBody, isDraft(message.data))
                 : await prepareHtml(
                       { ...message, decryptedBody: decryption.decryptedBody },
                       messageKeys,

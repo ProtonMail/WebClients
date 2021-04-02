@@ -43,8 +43,8 @@ export const prepareHtml = async (
     return { document, showRemoteImages, showEmbeddedImages, embeddeds };
 };
 
-export const preparePlainText = async (body: string) => {
-    const plainText = transformLinkify(body);
+export const preparePlainText = async (body: string, isDraft: boolean) => {
+    const plainText = isDraft ? body : transformLinkify(body);
 
     return { plainText };
 };
