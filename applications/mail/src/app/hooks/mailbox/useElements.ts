@@ -226,7 +226,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         return conversationMode ? result.Conversation : result.Message;
     };
 
-    const getQueryElementsPayload = (): any => ({
+    const getQueryElementsParameters = (): any => ({
         Page: page,
         PageSize: PAGE_SIZE,
         Limit: ELEMENTS_CACHE_REQUEST_SIZE,
@@ -261,6 +261,11 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         };
     };
 
+    /**
+     * A retry is the same request as before expecting a different result
+     * @param payload: request params + expected total
+     * @param error: optional error from last request
+     */
     const newRetry = (payload: any, error: Error | undefined) => {
         const count = isDeepEqual(payload, cache.retry.payload) ? cache.retry.count + 1 : 1;
         return { payload, count, error };
@@ -270,10 +275,10 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
 
     const load = async () => {
         setCache((cache) => ({ ...cache, pendingRequest: true }));
-        const payload = getQueryElementsPayload();
+        const queryParameters = getQueryElementsParameters();
         try {
             const isSearchActive = isSearch(search);
-            const { Total, Elements } = await queryElements(payload);
+            const { Total, Elements } = await queryElements(queryParameters);
             const elementsMap = toMap(Elements, 'ID');
             const updatedElements = cache.updatedElements.filter((elementID) => !elementsMap[elementID]);
             const expectedTotal = getTotal(counts, labelID, filter);
@@ -301,7 +306,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                     },
                     updatedElements,
                     bypassFilter: cache.bypassFilter,
-                    retry: newRetry(payload, undefined),
+                    retry: newRetry({ ...queryParameters, expectedTotal }, undefined),
                 };
             });
         } catch (error) {
@@ -312,7 +317,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                     beforeFirstLoad: false,
                     invalidated: false,
                     pendingRequest: false,
-                    retry: newRetry(payload, error),
+                    retry: newRetry({ ...queryParameters, total }, error),
                 }));
             }, 2000);
         }

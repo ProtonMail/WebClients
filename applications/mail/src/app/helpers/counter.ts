@@ -1,7 +1,7 @@
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { LabelCount } from 'proton-shared/lib/interfaces/Label';
-import { isUnread as testIsUnread } from './elements';
+import { hasLabel, isUnread as testIsUnread } from './elements';
 import { Element } from '../models/element';
 import { LabelChanges } from './labels';
 
@@ -51,4 +51,27 @@ export const updateCounters = (element: Element, counters: LabelCount[], changes
         return acc;
     }, toMap(counters, 'LabelID'));
     return fromMapToArray(countersMap);
+};
+
+export const updateCountersForMarkAs = (elementBefore: Element, elementAfter: Element, counters: LabelCount[]) => {
+    return counters.map((counter) => {
+        if (!hasLabel(elementBefore, counter.LabelID || '')) {
+            return counter;
+        }
+
+        const unreadBefore = testIsUnread(elementBefore, counter.LabelID);
+        const unreadAfter = testIsUnread(elementAfter, counter.LabelID);
+
+        let Unread = counter.Unread || 0;
+
+        if (unreadBefore && !unreadAfter) {
+            Unread -= 1;
+        }
+
+        if (!unreadBefore && unreadAfter) {
+            Unread += 1;
+        }
+
+        return { ...counter, Unread };
+    });
 };

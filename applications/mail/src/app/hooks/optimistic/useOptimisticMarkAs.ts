@@ -1,7 +1,10 @@
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { RequireSome } from 'proton-shared/lib/interfaces/utils';
-import { useHandler } from 'react-components';
+import { useCache, useHandler } from 'react-components';
 
+import { ConversationCountsModel, MessageCountsModel } from 'proton-shared/lib/models';
+import { LabelCount } from 'proton-shared/lib/interfaces/Label';
+import { STATUS } from 'proton-shared/lib/models/cache';
 import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
 import { useGetElementsCache, useSetElementsCache } from '../mailbox/useElementsCache';
 import { Conversation } from '../../models/conversation';
@@ -9,8 +12,10 @@ import { Element } from '../../models/element';
 import { useConversationCache } from '../../containers/ConversationProvider';
 import { isMessage, isUnread } from '../../helpers/elements';
 import { MARK_AS_STATUS } from '../useMarkAs';
+import { CacheEntry } from '../../models/tools';
+import { updateCountersForMarkAs } from '../../helpers/counter';
 
-type MarkAsChanges = { status: MARK_AS_STATUS };
+export type MarkAsChanges = { status: MARK_AS_STATUS };
 
 const computeRollbackMarkAsChanges = (element: Element, labelID: string, changes: MarkAsChanges) => {
     const isElementUnread = isUnread(element, labelID);
@@ -87,11 +92,14 @@ export const useOptimisticMarkAs = () => {
     const setElementsCache = useSetElementsCache();
     const messageCache = useMessageCache();
     const conversationCache = useConversationCache();
+    const globalCache = useCache();
 
     const optimisticMarkAs = useHandler((elements: Element[], labelID: string, changes: MarkAsChanges) => {
         const elementsCache = getElementsCache();
         const rollbackChanges = [] as { element: Element; changes: MarkAsChanges }[];
         const updatedElements = {} as { [elementID: string]: Element };
+        let { value: messageCounters } = globalCache.get(MessageCountsModel.key) as CacheEntry<LabelCount[]>;
+        let { value: conversationCounters } = globalCache.get(ConversationCountsModel.key) as CacheEntry<LabelCount[]>;
 
         elements.forEach((element) => {
             rollbackChanges.push({ element, changes: computeRollbackMarkAsChanges(element, labelID, changes) });
@@ -114,8 +122,13 @@ export const useOptimisticMarkAs = () => {
                 const conversationResult = conversationCache.get(message.ConversationID);
                 if (conversationResult) {
                     const conversation = conversationResult.Conversation;
+                    const updatedConversation = applyMarkAsChangesOnConversationWithMessages(
+                        conversation,
+                        labelID,
+                        changes
+                    );
                     conversationCache.set(message.ConversationID, {
-                        Conversation: applyMarkAsChangesOnConversationWithMessages(conversation, labelID, changes),
+                        Conversation: updatedConversation,
                         Messages: conversationResult.Messages?.map((conversationMessage) => {
                             if (conversationMessage.ID === message.ID) {
                                 return applyMarkAsChangesOnMessage(conversationMessage, changes);
@@ -123,12 +136,23 @@ export const useOptimisticMarkAs = () => {
                             return conversationMessage;
                         }),
                     });
+
+                    // Update conversation count when the conversation is loaded
+                    conversationCounters = updateCountersForMarkAs(
+                        conversation,
+                        updatedConversation,
+                        conversationCounters
+                    );
                 }
 
                 // Updates in elements cache if message mode
                 const messageElement = elementsCache.elements[message.ID] as Message | undefined;
                 if (messageElement) {
-                    updatedElements[messageElement.ID] = applyMarkAsChangesOnMessage(messageElement, changes);
+                    const updatedMessage = applyMarkAsChangesOnMessage(messageElement, changes);
+                    updatedElements[messageElement.ID] = updatedMessage;
+
+                    // Update counters
+                    messageCounters = updateCountersForMarkAs(message, updatedMessage, messageCounters);
                 }
 
                 // Update in elements cache if conversation mode
@@ -158,10 +182,14 @@ export const useOptimisticMarkAs = () => {
                 // Update in elements cache if conversation mode
                 const conversationElement = elementsCache.elements[conversation.ID] as Conversation | undefined;
                 if (conversationElement && conversationElement.ID) {
-                    updatedElements[conversationElement.ID] = applyMarkAsChangesOnConversation(
+                    const updatedConversation = applyMarkAsChangesOnConversation(conversationElement, labelID, changes);
+                    updatedElements[conversationElement.ID] = updatedConversation;
+
+                    // Update counters
+                    conversationCounters = updateCountersForMarkAs(
                         conversationElement,
-                        labelID,
-                        changes
+                        updatedConversation,
+                        conversationCounters
                     );
                 }
 
@@ -194,6 +222,9 @@ export const useOptimisticMarkAs = () => {
                 elements: { ...elementsCache.elements, ...updatedElements },
             });
         }
+
+        globalCache.set(MessageCountsModel.key, { value: messageCounters, status: STATUS.RESOLVED });
+        globalCache.set(ConversationCountsModel.key, { value: conversationCounters, status: STATUS.RESOLVED });
 
         return () => {
             rollbackChanges.forEach(({ element, changes }) => optimisticMarkAs([element], labelID, changes));
