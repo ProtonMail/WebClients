@@ -42,7 +42,7 @@ with a link -> https://protonmail.com/`;
                 ToList: [] as Recipient[],
             },
             decryptedBody: content,
-            ...(await preparePlainText(content)),
+            ...(await preparePlainText(content, false)),
         } as MessageExtended;
 
         const { findByTestId } = await render(
