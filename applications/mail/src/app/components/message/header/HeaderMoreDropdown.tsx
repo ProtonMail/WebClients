@@ -52,7 +52,7 @@ interface Props {
     messageLoaded: boolean;
     sourceMode: boolean;
     onBack: () => void;
-    onCollapse: () => void;
+    onToggle: () => void;
     onSourceMode: (sourceMode: boolean) => void;
     breakpoints: Breakpoints;
 }
@@ -63,7 +63,7 @@ const HeaderMoreDropdown = ({
     messageLoaded,
     sourceMode,
     onBack,
-    onCollapse,
+    onToggle,
     onSourceMode,
     breakpoints,
 }: Props) => {
@@ -88,7 +88,7 @@ const HeaderMoreDropdown = ({
 
     const handleUnread = async () => {
         closeDropdown.current?.();
-        onCollapse();
+        onToggle();
         await markAs([message.data as Element], labelID, MARK_AS_STATUS.UNREAD);
         await call();
     };

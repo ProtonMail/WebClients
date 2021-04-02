@@ -59,7 +59,7 @@ interface Props {
     onResignContact: () => void;
     onLoadRemoteImages: () => void;
     onLoadEmbeddedImages: () => void;
-    onCollapse: () => void;
+    onToggle: () => void;
     onBack: () => void;
     onCompose: OnCompose;
     onSourceMode: (sourceMode: boolean) => void;
@@ -83,7 +83,7 @@ const HeaderExpanded = ({
     onLoadRemoteImages,
     onLoadEmbeddedImages,
     mailSettings,
-    onCollapse,
+    onToggle,
     onBack,
     onCompose,
     onSourceMode,
@@ -109,7 +109,7 @@ const HeaderExpanded = ({
             event.stopPropagation();
             return;
         }
-        onCollapse();
+        onToggle();
     };
 
     const handleCompose = (action: MESSAGE_ACTIONS) => () => {
@@ -353,7 +353,7 @@ const HeaderExpanded = ({
                         messageLoaded={messageLoaded}
                         sourceMode={sourceMode}
                         onBack={onBack}
-                        onCollapse={onCollapse}
+                        onToggle={onToggle}
                         onSourceMode={onSourceMode}
                         breakpoints={breakpoints}
                     />

@@ -9,13 +9,13 @@ export interface ConversationHotkeysContext {
 
 export interface ConversationHotkeysHandlers {
     handleFocus: (index: number | undefined) => void;
-    openMessage: (ID: string) => void;
+    expandMessage: (ID: string) => void;
     getFocusedId: () => string | undefined;
 }
 
 export const useConversationHotkeys = (
     { messages, focusIndex }: ConversationHotkeysContext,
-    { handleFocus, openMessage, getFocusedId }: ConversationHotkeysHandlers
+    { handleFocus, expandMessage, getFocusedId }: ConversationHotkeysHandlers
 ) => {
     const elementRef = useRef(null);
     const shortcutHandlers: HotkeyTuple[] = [
@@ -81,7 +81,7 @@ export const useConversationHotkeys = (
                 e.stopPropagation();
                 const id = getFocusedId();
                 if (id) {
-                    openMessage(id);
+                    expandMessage(id);
                 }
             },
         ],

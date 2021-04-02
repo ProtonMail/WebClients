@@ -160,7 +160,6 @@ const MailboxContainer = ({
             } else {
                 history.push(setParamsInLocation(history.location, { labelID, elementID: element.ID }));
             }
-            focusOnLastMessage();
             handleCheckAll(false);
         },
         [onCompose, isConversationContentView, labelID]
