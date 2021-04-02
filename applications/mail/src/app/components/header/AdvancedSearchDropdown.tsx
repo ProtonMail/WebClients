@@ -59,7 +59,7 @@ const AUTO_WILDCARD = undefined;
 const ALL_ADDRESSES = 'all';
 const NO_ATTACHMENTS = 0;
 const WITH_ATTACHMENTS = 1;
-const { INBOX, TRASH, SPAM, ARCHIVE, ALL_MAIL, ALL_SENT, SENT, ALL_DRAFTS, DRAFTS } = MAILBOX_LABEL_IDS;
+const { INBOX, TRASH, SPAM, STARRED, ARCHIVE, ALL_MAIL, ALL_SENT, SENT, ALL_DRAFTS, DRAFTS } = MAILBOX_LABEL_IDS;
 const DEFAULT_MODEL: SearchModel = {
     keyword: '',
     labelID: ALL_MAIL,
@@ -183,6 +183,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
             text: c('Mailbox').t`Sent`,
             group: c('Group').t`Default folders`,
         },
+        { value: STARRED, text: c('Mailbox').t`Starred`, group: c('Group').t`Default folders` },
         { value: ARCHIVE, text: c('Mailbox').t`Archive`, group: c('Group').t`Default folders` },
         { value: SPAM, text: c('Mailbox').t`Spam`, group: c('Group').t`Default folders` },
         { value: TRASH, text: c('Mailbox').t`Trash`, group: c('Group').t`Default folders` },
