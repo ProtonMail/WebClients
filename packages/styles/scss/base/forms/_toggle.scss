@@ -26,7 +26,8 @@ $toggle-width-button: em(24) !default;
 		transform: translateX(0);
 		border-radius: $toggle-width-button;
 		background-color: var(--field-norm);
-		transition: transform 0.25s ease, background-color 0.25s ease;
+		transition: transform 0.25s easing(easeOutBack),
+			background-color 0.25s easing(easeOutCubic);
 	}
 
 	& > .toggle-label-text {
@@ -53,7 +54,7 @@ $toggle-width-button: em(24) !default;
 		.toggle-label-img {
 			margin: auto;
 			opacity: 0;
-			transition: opacity 0.15s ease-out;
+			transition: opacity 0.15s easing(easeOutCubic);
 		}
 
 		.toggle-label-loader {
@@ -64,7 +65,8 @@ $toggle-width-button: em(24) !default;
 			left: 0;
 			z-index: 1;
 			display: flex;
-			animation: 0.25s ease-out forwards anime-toggle-label-loader-fade-in;
+			animation: 0.25s easing(easeOutCubic) forwards
+				anime-toggle-label-loader-fade-in;
 
 			@keyframes anime-toggle-label-loader-fade-in {
 				from {

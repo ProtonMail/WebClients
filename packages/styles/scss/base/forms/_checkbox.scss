@@ -1,45 +1,97 @@
-.checkbox-fakecheck {
-	display: inline-flex;
-	border: 1px solid var(--field-norm);
-	border-radius: 2px;
-	background-color: var(--background-norm);
-	min-width: 1.6rem;
-	width: 1.6rem;
-	height: 1.6rem;
-	margin: auto 0.5rem auto 0;
-
-	&:hover {
-		border-color: var(--field-hover);
-	}
-}
-
-.item-icon-compact .checkbox-fakecheck {
-	margin: auto;
-	background: var(--background-norm);
-}
-
-.checkbox-fakecheck-img {
-	margin: auto;
-	// width: 1rem;
-	transform: scale(0);
-	transition: 0.15s transform linear;
-}
-
 .checkbox {
 	@extend .sr-only;
 
-	&:checked + .checkbox-fakecheck {
-		.checkbox-fakecheck-img {
-			transform: scale(1);
+	&-fakecheck {
+		display: inline-flex;
+		min-width: em(20);
+		width: em(20);
+		height: em(20);
+		margin: auto 0.5em auto 0;
+		border-radius: $global-border-radius;
+
+		border: 1px solid var(--field-norm);
+		background-color: var(--field-background-color, var(--background-norm));
+		color: var(--field-text-color, var(--text-norm));
+
+		transition: 0.15s easing(easeOutCubic);
+
+		&:hover {
+			border-color: var(--field-hover);
+			background-color: var(
+				--field-hover-background-color,
+				var(--background-norm)
+			);
+			color: var(--field-hover-text-color, var(--text-norm));
+		}
+
+		&-img {
+			margin: auto;
+			transform: scale(0);
+			transition: 0.15s transform easing(easeOutBack);
 		}
 	}
 
-	&:focus + .checkbox-fakecheck {
+	&:focus + &-fakecheck {
 		border-color: var(--interaction-norm);
+		background-color: var(
+			--field-focus-background-color,
+			var(--background-norm)
+		);
+		color: var(--field-focus-text-color, var(--text-norm));
 	}
 
-	&[disabled] + .checkbox-fakecheck,
-	&:indeterminate + .checkbox-fakecheck {
+	&[aria-invalid='true'] + &-fakecheck {
+		border-color: var(--signal-danger);
+		background-color: var(--field-background-color, var(--background-norm));
+		color: var(--signal-danger);
+	}
+
+	&[disabled] + &-fakecheck,
+	&:indeterminate + &-fakecheck {
 		border-color: var(--field-disabled);
+		background-color: var(
+			--field-disabled-background-color,
+			var(--background-norm)
+		);
+		color: var(--field-disabled-text-color, var(--text-disabled));
+	}
+
+	/*
+	 * Checked state
+	 */
+	&:checked + &-fakecheck {
+		border-color: var(--interaction-norm);
+		background-color: var(--interaction-norm);
+		color: var(--interaction-norm-contrast);
+
+		&:hover {
+			border-color: var(--interaction-norm-hover);
+			background-color: var(--interaction-norm-hover);
+			color: var(--interaction-norm-contrast);
+		}
+	}
+
+	&:checked:focus + &-fakecheck {
+		border-color: var(--interaction-norm-hover);
+		background-color: var(--interaction-norm-hover);
+		color: var(--interaction-norm-contrast);
+	}
+
+	&:checked[aria-invalid='true'] + &-fakecheck {
+		border-color: var(--signal-danger);
+		background-color: var(--signal-danger);
+		color: var(--signal-danger-contrast);
+	}
+
+	&:checked[disabled] + &-fakecheck,
+	&:checked:indeterminate + &-fakecheck {
+		border-color: var(--field-disabled);
+		background-color: var(--field-disabled);
+		color: var(--interaction-norm-contrast);
+	}
+
+	&:checked + &-fakecheck &-fakecheck-img {
+		transform: scale(1);
+		transition-delay: 0.1s;
 	}
 }
