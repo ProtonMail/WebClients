@@ -106,13 +106,30 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
         <Table className="simple-table--has-actions">
             <thead>
                 <tr>
-                    <th scope="col" className="text-ellipsis">{c('Table header').t`Fingerprint`}</th>
-                    {!isNarrow && <th scope="col" className="text-ellipsis">{c('Table header').t`Created`}</th>}
-                    {!isTinyMobile && <th scope="col" className="text-ellipsis">{c('Table header').t`Expires`}</th>}
-                    {!isNarrow && <th scope="col" className="text-ellipsis">{c('Table header').t`Type`}</th>}
-                    <th scope="col" className="text-ellipsis">{c('Table header').t`Status`}</th>
-                    <th scope="col" className={classnames(['text-ellipsis', isNarrow && 'w40'])}>{c('Table header')
-                        .t`Actions`}</th>
+                    <th scope="col" className="text-ellipsis" title={c('Table header').t`Fingerprint`}>{c(
+                        'Table header'
+                    ).t`Fingerprint`}</th>
+                    {!isNarrow && (
+                        <th scope="col" className="text-ellipsis" title={c('Table header').t`Created`}>{c(
+                            'Table header'
+                        ).t`Created`}</th>
+                    )}
+                    {!isTinyMobile && (
+                        <th scope="col" className="w10 text-ellipsis" title={c('Table header').t`Expires`}>{c(
+                            'Table header'
+                        ).t`Expires`}</th>
+                    )}
+                    {!isNarrow && (
+                        <th scope="col" className="text-ellipsis" title={c('Table header').t`Type`}>{c('Table header')
+                            .t`Type`}</th>
+                    )}
+                    <th scope="col" className="text-ellipsis w15" title={c('Table header').t`Status`}>{c('Table header')
+                        .t`Status`}</th>
+                    <th
+                        scope="col"
+                        className={classnames(['text-ellipsis', isNarrow && 'w40'])}
+                        title={c('Table header').t`Actions`}
+                    >{c('Table header').t`Actions`}</th>
                 </tr>
             </thead>
             <TableBody>
