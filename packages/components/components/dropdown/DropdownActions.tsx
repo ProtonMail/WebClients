@@ -8,6 +8,8 @@ import DropdownMenu from './DropdownMenu';
 import DropdownMenuButton, { Props as DropdownMenuButtonProps } from './DropdownMenuButton';
 import SimpleDropdown from './SimpleDropdown';
 
+import { classnames } from '../../helpers';
+
 const wrapTooltip = (text: string | ReactNode, tooltip?: string) => {
     if (!tooltip) {
         return text;
@@ -89,7 +91,7 @@ const DropdownActions = ({
                 originalPlacement="bottom-right"
                 disabled={disabled}
                 loading={loading}
-                className={className}
+                className={classnames(['flex-item-noshrink', className])}
                 title={c('Title').t`Open actions dropdown`}
                 data-test-id="dropdown:open"
             >
