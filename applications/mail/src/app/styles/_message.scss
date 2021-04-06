@@ -135,16 +135,9 @@
 }
 
 // hide extra container when there is nothing inside
-.message-header-extra {
-    > * {
-        background-color: var(--message-header-extra-background, var(--background-norm));
-        color: var(--message-header-extra-color);
-    }
-    &:empty {
-        display: none;
-    }
+.message-header-extra:empty {
+    display: none;
 }
-
 
 // when expanded but no full details
 .message-header-expanded {
