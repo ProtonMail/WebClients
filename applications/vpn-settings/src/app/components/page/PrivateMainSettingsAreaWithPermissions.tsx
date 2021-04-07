@@ -9,9 +9,7 @@ import {
 import { c } from 'ttag';
 import { Link } from 'react-router-dom';
 import { hasPermission } from 'proton-shared/lib/helpers/permissions';
-import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
-import upgradeSvgLight from 'design-system/assets/img/shared/no-organization.svg';
-import upgradeSvgDark from 'design-system/assets/img/shared/no-organization-dark.svg';
+import upgradeSvg from 'design-system/assets/img/placeholders/upgrade.svg';
 
 interface Props extends SettingsPropsShared {
     config: SectionConfig;
@@ -24,7 +22,6 @@ const PrivateMainSettingsAreaWithPermissions = ({ config, location, children, se
 
     const noPermissionChild = (() => {
         if (!hasPermission(userPermissions, pagePermissions)) {
-            const upgradeSvg = getLightOrDark(upgradeSvgLight, upgradeSvgDark);
             return (
                 <div id="page-error" className="text-center">
                     <img src={upgradeSvg} alt={c('Title').t`Upgrade`} className="mb2" />
