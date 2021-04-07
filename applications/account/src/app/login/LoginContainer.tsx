@@ -62,6 +62,8 @@ const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
     const [step, setStep] = useState(AuthStep.LOGIN);
 
     useEffect(() => {
+        // Preparing login improvements
+        silentApi(queryAvailableDomains());
         return () => {
             cacheRef.current = undefined;
             generateInternalAddressRef.current = undefined;
