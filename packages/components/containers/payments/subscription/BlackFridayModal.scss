@@ -31,6 +31,14 @@ $price-size: 21;
 		}
 	}
 
+	.modal-close-icon {
+		fill: white;
+	}
+
+	.blackfriday-currency-selector button {
+		color: white;
+	}
+
 	.modal-header {
 		padding-bottom: 0.5em;
 	}
@@ -38,9 +46,10 @@ $price-size: 21;
 		text-align: center;
 		padding-right: 0;
 	}
+	// no dark theme
 	.blackfriday-plan {
-		background-color: var(--background-norm);
-		color: var(--text-norm);
+		background-color: white;
+		color: #262a33;
 	}
 
 	// currency
