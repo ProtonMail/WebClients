@@ -120,11 +120,14 @@ const ContactModal = ({
 
     const handleAdd = (field?: string) => () => {
         if (!field) {
-            // Get random field from other info
-            const index = randomIntFromInterval(0, otherInformationFields.length - 1);
+            // Get random field from other info, but not a limited one
+            const filteredOtherInformationFields = otherInformationFields.filter(
+                (field) => !allProperties.find((property) => property.field === field)
+            );
+            const index = randomIntFromInterval(0, filteredOtherInformationFields.length - 1);
             return setAllProperties([
                 ...allProperties,
-                { field: otherInformationFields[index], value: '', uid: generateUID(UID_PREFIX) },
+                { field: filteredOtherInformationFields[index], value: '', uid: generateUID(UID_PREFIX) },
             ]);
         }
         setAllProperties([...allProperties, { field, value: '', uid: generateUID(UID_PREFIX) }]);

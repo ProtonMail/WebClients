@@ -5,6 +5,7 @@ import { move } from 'proton-shared/lib/helpers/array';
 import { OTHER_INFORMATION_FIELDS } from 'proton-shared/lib/contacts/constants';
 import { ContactPropertyChange, ContactProperties } from 'proton-shared/lib/interfaces/contacts';
 
+import { EXACTLY_ONE_MAY_BE_PRESENT, PROPERTIES } from 'proton-shared/lib/contacts/vcard';
 import { Button, Icon, OrderableContainer, OrderableElement } from '../../components';
 import ContactModalRow from '../../components/contacts/ContactModalRow';
 import EncryptedIcon from '../../components/contacts/EncryptedIcon';
@@ -44,21 +45,30 @@ const ContactModalProperties = (
     const fields = field ? [field] : OTHER_INFORMATION_FIELDS;
     const properties = allProperties.filter(({ field }) => fields.includes(field));
     const canAdd = !fields.includes('fn');
-    const rows = useMemo(
-        () =>
-            properties.map((property) => (
-                <ContactModalRow
-                    key={property.uid}
-                    ref={ref}
-                    isSubmitted={isSubmitted}
-                    property={property}
-                    onChange={onChange}
-                    onRemove={onRemove}
-                    isOrderable={!!onOrderChange}
-                />
-            )),
-        [properties, onChange, onRemove, onAdd, !!onOrderChange]
-    );
+    const rows = useMemo(() => {
+        const isOtherFields = fields === OTHER_INFORMATION_FIELDS;
+        const filteredTypes = isOtherFields
+            ? properties
+                  .filter((property) => PROPERTIES[property.field].cardinality === EXACTLY_ONE_MAY_BE_PRESENT)
+                  .map((property) => property.field)
+            : [];
+
+        return properties.map((property) => (
+            <ContactModalRow
+                key={property.uid}
+                ref={ref}
+                isSubmitted={isSubmitted}
+                property={property}
+                onChange={onChange}
+                onRemove={onRemove}
+                isOrderable={!!onOrderChange}
+                filteredTypes={
+                    // Accept the currently set type
+                    filteredTypes.filter((type) => property.field !== type)
+                }
+            />
+        ));
+    }, [properties, onChange, onRemove, onAdd, !!onOrderChange]);
 
     const handleSortEnd = useCallback(
         ({ newIndex, oldIndex }) => {
