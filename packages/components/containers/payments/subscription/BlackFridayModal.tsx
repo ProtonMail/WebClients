@@ -307,7 +307,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                             );
                         })}
                     </div>
-                    <div className="mb1 text-center">
+                    <div className="mb1 text-center blackfriday-currency-selector">
                         <CurrencySelector
                             id="currency-select"
                             mode="buttons"
