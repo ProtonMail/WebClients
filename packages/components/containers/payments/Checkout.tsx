@@ -34,7 +34,7 @@ const Checkout = ({
         <div className="p2">
             <div className="flex flex-nowrap cycle-currency-selectors mb1">
                 {hideCycle ? null : (
-                    <div className="flex-item-fluid flex flex-item-grow-2">
+                    <div className="flex-item-fluid flex flex-item-grow-1-8">
                         <CycleSelector
                             cycle={cycle}
                             onSelect={onChangeCycle}
