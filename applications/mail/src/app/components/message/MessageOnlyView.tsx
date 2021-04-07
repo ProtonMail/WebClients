@@ -3,6 +3,7 @@ import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { useLabels, classnames, useHotkeys } from 'react-components';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
+import { isDraft } from 'proton-shared/lib/mail/messages';
 import MessageView, { MessageViewRef } from './MessageView';
 import { useMessage } from '../../hooks/message/useMessage';
 import { OnCompose } from '../../hooks/composer/useCompose';
@@ -60,7 +61,9 @@ const MessageOnlyView = ({ hidden, labelID, messageID, mailSettings, onBack, onC
     const messageRef = useRef<MessageViewRef>(null);
 
     useEffect(() => {
-        messageRef?.current?.expand();
+        if (!isDraft(message.data)) {
+            messageRef?.current?.expand();
+        }
     }, [messageID]);
 
     return (
