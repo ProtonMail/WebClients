@@ -1,4 +1,4 @@
-# [4.0.0 - Beta 39] - 2021-03-24
+# [4.0.0 - Beta 39] - 2021-04-08
 
 ## New features
 
@@ -9,6 +9,7 @@
 -   Improved the behavior of the message list when a filter is applied (e.g. show unread only). A message in the list that no longer complies with the rule will stay in the view until the filter is reset
 -   Improved the behavior for rare cases where the composer is not responding to ensure the rest of the app stays usable
 -   Minor UI improvements to the new message list filter/sorting bar
+-   Updated the UI of the Mail welcome screen
 
 ## Fixes
 
@@ -16,6 +17,11 @@
 -   Fixed an issue where a request time out would appear when sending messages with large attachments
 -   Fixed an issue where the attachment would not be shown in the composer if composer is closed during the attachment upload
 -   Fixed an issue where a contact deletion in the Mail contact widget would display an error if same contact is deleted from Proton Contacts at the same time
+-   Fixed an issue where embedded images added to signatures would not be displayed on recipients' side
+-   Fixed an issue where occasionally a moved message would reappear for less than a second
+-   Fixed an issue where some messages would only be visible using html mode
+-   Fixed an issue where angle brackets would be converted to html when saving a plain text draft
+-   Fixed an issue where long unsubscribe URLs would not be displayed correctly
 
 # [4.0.0 - Beta 38] - 2021-03-10
 
