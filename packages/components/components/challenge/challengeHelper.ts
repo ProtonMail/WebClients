@@ -1,4 +1,10 @@
 import ReactTestUtils from 'react-dom/test-utils';
+import { getBrowserLocale } from 'proton-shared/lib/i18n/helper';
+import { getTimezone } from 'proton-shared/lib/date/timezone';
+import { captureMessage } from 'proton-shared/lib/helpers/sentry';
+import { Severity } from '@sentry/types';
+
+import { ChallengeLog } from './interface';
 
 // Select option is broken on react. Correct the HTML here.
 export const normalizeSelectOptions = (el: HTMLElement) => {
@@ -20,6 +26,7 @@ interface EventPayload {
     value?: string;
     key?: string;
 }
+
 export const handleEvent = (renderEl: HTMLElement | undefined, eventPayload: EventPayload) => {
     if (!renderEl) {
         return;
@@ -46,6 +53,46 @@ export const handleEvent = (renderEl: HTMLElement | undefined, eventPayload: Eve
     }
 };
 
-export const getChallengeURL = (API_URL: string, type: number) => {
-    return new URL(`${API_URL}/challenge/js?Type=${type}`, window.location.origin);
+export const getStyleSrcUrls = () => {
+    return [...document.querySelectorAll<HTMLLinkElement>('link[rel=stylesheet]')]
+        .map((x) => {
+            return new URL(x.href, window.location.origin).toString();
+        })
+        .filter((url) => {
+            return url.startsWith(window.location.origin);
+        });
+};
+
+export const getStyleSrcsData = (styleSrcUrls: string[]) => {
+    return Promise.all(
+        styleSrcUrls.map(async (styleSrcUrls) => {
+            const response = await fetch(styleSrcUrls);
+            const data = (await response.text()).trimStart();
+            if (data.startsWith('<')) {
+                throw new Error('Invalid data');
+            }
+            return data;
+        })
+    ).then((results) => {
+        return results.join('');
+    });
+};
+
+export const captureChallengeMessage = (message: string, logs: ChallengeLog[]) => {
+    if (
+        !logs.some(({ type }) => {
+            return type === 'error';
+        })
+    ) {
+        return;
+    }
+    captureMessage(message, {
+        level: Severity.Error,
+        extra: {
+            logs,
+            locale: getBrowserLocale(),
+            timezone: getTimezone(),
+            time: new Date().toString(),
+        },
+    });
 };

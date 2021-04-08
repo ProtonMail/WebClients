@@ -22,6 +22,7 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
             autoCapitalize="off"
             autoCorrect="off"
             spellCheck="false"
+            aria-invalid={!!error}
             {...rest}
             ref={ref}
             onChange={(e) => {
