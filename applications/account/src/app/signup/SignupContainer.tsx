@@ -32,8 +32,8 @@ import {
     usePayment,
     usePlans,
     useVPNCountries,
+    ChallengeResult,
 } from 'react-components';
-import { ChallengeResult } from 'react-components/components/challenge/ChallengeFrame';
 import { Payment, PaymentParameters } from 'react-components/containers/payments/interface';
 import { handlePaymentToken } from 'react-components/containers/payments/paymentTokenHelper';
 import { Steps } from 'react-components/containers/api/humanVerification/HumanVerificationForm';
@@ -393,6 +393,7 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
                             model={model}
                             onChange={setModelDiff}
                             defaultCountry={defaultCountry}
+                            hasChallenge={!cacheRef.current.payload || Object.keys(cacheRef.current.payload).length < 2}
                             onSubmit={(payload) => {
                                 addChallengePayload(payload);
                                 const isBuyingPaidPlan = hasPlanIDs(model.planIDs);
