@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {
     classnames,
@@ -15,7 +15,7 @@ import {
     useLoading,
     Info,
     Challenge,
-    DefaultThemeInjector,
+    captureChallengeMessage,
 } from 'react-components';
 import { c } from 'ttag';
 import { queryCheckUsernameAvailability } from 'proton-shared/lib/api/user';
@@ -100,12 +100,38 @@ const AccountForm = ({ model, onSubmit }) => {
         <Href key="privacy" url="https://protonvpn.com/privacy-policy">{c('Link').t`Privacy Policy`}</Href>
     );
 
-    const handleChallengeLoaded = () => {
+    const errorRef = useRef(false);
+    const challengeLogRef = useRef([]);
+
+    const incrementChallengeCounters = () => {
         countChallengeRef.current++;
 
         if (countChallengeRef.current === 2) {
             setChallengeLoading(false);
+            captureChallengeMessage(
+                errorRef.current
+                    ? 'Failed to load create account form fatally'
+                    : 'Failed to load create account form partially',
+                challengeLogRef.current
+            );
         }
+    };
+
+    useEffect(() => {
+        if (!challengeLoading) {
+            challengeRefUsername.current?.focus('#username');
+        }
+    }, [challengeLoading]);
+
+    const handleChallengeLoaded = (logs) => {
+        challengeLogRef.current = challengeLogRef.current.concat(logs);
+        incrementChallengeCounters();
+    };
+
+    const handleChallengeLoadingError = (logs) => {
+        challengeLogRef.current = challengeLogRef.current.concat(logs);
+        errorRef.current = true;
+        incrementChallengeCounters();
     };
 
     return (
@@ -122,9 +148,8 @@ const AccountForm = ({ model, onSubmit }) => {
                     withLoading(handleSubmit());
                 }}
                 autoComplete="off"
+                noValidate
             >
-                <input value={username} name="login" id="login" className="hidden" />
-                <input value={password} name="password" id="password" className="hidden" />
                 <Row>
                     <Label htmlFor="username">
                         <span className="mr0-5">{c('Label').t`Username`}</span>
@@ -134,8 +159,13 @@ const AccountForm = ({ model, onSubmit }) => {
                         />
                     </Label>
                     <Field className="wauto flex-item-fluid">
-                        <Challenge challengeRef={challengeRefUsername} type="0" onLoaded={handleChallengeLoaded}>
-                            <DefaultThemeInjector />
+                        <Challenge
+                            hasSizeObserver
+                            challengeRef={challengeRefUsername}
+                            type="0"
+                            onSuccess={handleChallengeLoaded}
+                            onError={handleChallengeLoadingError}
+                        >
                             <Input
                                 error={usernameError}
                                 value={username}
@@ -194,8 +224,13 @@ const AccountForm = ({ model, onSubmit }) => {
                     </Label>
                     <Field className="wauto flex-item-fluid">
                         <div className="mb1">
-                            <Challenge challengeRef={challengeRefEmail} type="1" onLoaded={handleChallengeLoaded}>
-                                <DefaultThemeInjector />
+                            <Challenge
+                                hasSizeObserver
+                                challengeRef={challengeRefEmail}
+                                type="1"
+                                onSuccess={handleChallengeLoaded}
+                                onError={handleChallengeLoadingError}
+                            >
                                 <EmailInput
                                     id="email"
                                     required
