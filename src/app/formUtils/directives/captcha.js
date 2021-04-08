@@ -1,59 +1,51 @@
-import { IFRAME_SECURE_ORIGIN } from '../../constants';
+import CONFIG from '../../config';
+import { getRelativeApiHostname } from '../../core/directives/signupIframe';
+
+function getIframeUrl() {
+    const { apiUrl } = CONFIG;
+    const url = new URL(apiUrl, window.location.origin);
+    url.hostname = getRelativeApiHostname(url.hostname);
+    url.pathname = '/core/v4/captcha';
+    return url;
+}
 
 /* @ngInject */
-function captcha(dispatchers, url, $httpParamSerializer) {
-    const APP_HOST = url.host();
-    const { dispatcher } = dispatchers(['humanVerification']);
-
-    // Change this to our captcha key, configurable in Angular?
-    const captchaMessage = {
-        type: 'pm_captcha',
-        language: 'en',
-        key: '6LcWsBUTAAAAAOkRfBk-EXkGzOfcSz3CzvYbxfTn'
-    };
-
-    // FIX ME - Bart. Jan 18, 2016. Mon 2:29 PM.
-    const captchaReceiveMessage = ($iframe) => (event) => {
-        if (typeof event.origin === 'undefined' && typeof event.originalEvent.origin === 'undefined') {
-            return;
-        }
-
-        // For Chrome, the origin property is in the event.originalEvent object.
-        const origin = event.origin || event.originalEvent.origin;
-
-        // Change window.location.origin to wherever this is hosted ( 'https://secure.protonmail.com:443' )
-        if (origin !== IFRAME_SECURE_ORIGIN) {
-            return;
-        }
-
-        const data = event.data;
-
-        if (data.type === 'pm_captcha') {
-            dispatcher.humanVerification('captcha', data);
-        }
-
-        if (data.type === 'pm_height') {
-            $iframe.height(event.data.height + 40);
-        }
-    };
+function captcha(dispatchers) {
+    const { dispatcher } = dispatchers(['humanVerification', 'captcha.token']);
 
     return {
         replace: true,
         templateUrl: require('../../../templates/formUtils/captcha.tpl.html'),
         link(scope, el, { token = 'signup' }) {
             const iframe = el.find('iframe');
-            const listener = captchaReceiveMessage(iframe);
-            const parameters = $httpParamSerializer({ token, client: 'web', host: APP_HOST });
+            const iframeUrl = getIframeUrl();
 
-            // Change window.location.origin to wherever this is hosted ( 'https://secure.protonmail.com:443' )
-            window.captchaSendMessage = () => {
-                iframe[0].contentWindow.postMessage(captchaMessage, IFRAME_SECURE_ORIGIN);
+            const iframeOrigin = iframeUrl.origin;
+
+            const listener = (event) => {
+                if (typeof event.origin === 'undefined' && typeof event.originalEvent.origin === 'undefined') {
+                    return;
+                }
+                const origin = event.origin || event.originalEvent.origin;
+                if (origin !== iframeOrigin) {
+                    return;
+                }
+
+                const data = event.data;
+
+                if (data.type === 'pm_captcha') {
+                    dispatcher.humanVerification('captcha', data);
+                    dispatcher['captcha.token']('token', data.token);
+                }
+
+                if (data.type === 'pm_height') {
+                    iframe.height(event.data.height + 40);
+                }
             };
 
-            iframe[0].onload = window.captchaSendMessage;
-            iframe[0].src = 'https://secure.protonmail.com/captcha/captcha.html?' + parameters;
-
             window.addEventListener('message', listener, false);
+
+            iframe[0].src = `${iframeUrl.toString()}?Token=${token}`;
 
             scope.$on('$destroy', () => {
                 window.removeEventListener('message', listener, false);

@@ -1,5 +1,4 @@
 import captcha from './directives/captcha';
-import captchaView from './directives/captchaView';
 import cardCvc from './directives/cardCvc';
 import cardNumber from './directives/cardNumber';
 import cardView from './directives/cardView';
@@ -25,7 +24,6 @@ export default angular
     .directive('isValidInvoiceText', isValidInvoiceText)
     .directive('validEmail', validEmail)
     .directive('captcha', captcha)
-    .directive('captchaView', captchaView)
     .directive('cardCvc', cardCvc)
     .directive('cardNumber', cardNumber)
     .directive('cardView', cardView)

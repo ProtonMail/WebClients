@@ -16,7 +16,7 @@
                     </label>
                     <hr />
                 </div>
-                <captcha-view ng-if="ctrl.tokenType === 'captcha'" data-token="{{ ::ctrl.token }}"></captcha-view>
+                <captcha ng-if="ctrl.tokenType === 'captcha'" data-token="{{ ::ctrl.token }}"></captcha>
             </div>
         </div>
         <div class="modal-footer">

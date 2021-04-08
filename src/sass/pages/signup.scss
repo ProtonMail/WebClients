@@ -105,7 +105,7 @@
 
 
 /* IFRAME */
-[class*='signUpProcess-step-'] iframe#pm_captcha {
+[class*='signUpProcess-step-'] .captchaView iframe {
     border: none;
     width: 100%;
     position: relative;
@@ -113,19 +113,6 @@
     height: 120px;
     overflow: hidden;
     z-index: 5;
-}
-
-[class*='signUpProcess-step-'] #captchaFrame {
-    position: relative;
-    .loading {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 4rem;
-        text-align: center;
-        z-index: 1;
-        display: block;
-    }
 }
 
 [class*='signUpProcess-step-'] .spinner.large {
