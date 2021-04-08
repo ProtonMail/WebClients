@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
+import { Icon } from 'react-components';
 
 import { PLAN } from '../plans';
 import PriceInfo from './PriceInfo';
-
-import './Plan.scss';
 
 const PlanDetails = ({ selectedPlan, cycle, currency }) => {
     const { planName, title, features } = selectedPlan;
@@ -16,7 +15,10 @@ const PlanDetails = ({ selectedPlan, cycle, currency }) => {
             <div className="p1">
                 <ul className="selected-plan-list unstyled m0 selected-plan-list--negative">
                     {features.map((feature, i) => (
-                        <li key={i}>{feature}</li>
+                        <li key={i} className="flex flex-nowrap">
+                            <Icon name="minus" className="mt0-25 mr1 flex-item-noshrink" />
+                            <span className="flex-item-fluid">{feature}</span>
+                        </li>
                     ))}
                 </ul>
                 {planName !== PLAN.FREE && (
