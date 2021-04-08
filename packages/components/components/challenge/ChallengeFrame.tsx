@@ -1,54 +1,50 @@
 import React, { MutableRefObject, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import ReactDOM from 'react-dom';
-import { useConfig } from '../../hooks';
-import { getChallengeURL, handleEvent, normalizeSelectOptions } from './challengeHelper';
+import { getStyleSrcsData, getStyleSrcUrls, handleEvent } from './challengeHelper';
+import { THEME_ID } from '../../containers/themes/ThemeStyleProvider';
+import { ICONS_ID } from '../icon/Icons';
+import { ChallengeLog, ChallengeLogType, ChallengeRef, ChallengeResult } from './interface';
 
 export const ERROR_TIMEOUT_MS = 15000;
 export const CHALLENGE_TIMEOUT_MS = 9000;
-export const LAYOUT_SHIFT_TIMEOUT_MS = 50;
 
-export type ChallengeResult = { [key: string]: string } | undefined;
-
-export interface ChallengeRef {
-    getChallenge: () => Promise<ChallengeResult>;
-}
+type Stage = 'initialize' | 'initialized' | 'load' | 'loaded' | 'error';
 
 export interface Props
-    extends Omit<React.DetailedHTMLProps<React.IframeHTMLAttributes<HTMLIFrameElement>, HTMLIFrameElement>, 'onClick'> {
+    extends Omit<
+        React.DetailedHTMLProps<React.IframeHTMLAttributes<HTMLIFrameElement>, HTMLIFrameElement>,
+        'onClick' | 'onError'
+    > {
     challengeRef: MutableRefObject<ChallengeRef | undefined>;
     children: React.ReactNode;
     src: string;
     className?: string;
-    innerClassName?: string;
     bodyClassName?: string;
     loaderClassName?: string;
+    hasSizeObserver?: boolean;
     title?: string;
-    type: number;
-    onError?: () => void;
-    onLoaded?: () => void;
+    onError?: (logs: ChallengeLog[]) => void;
+    onSuccess?: () => void;
     errorTimeout?: number;
     challengeTimeout?: number;
 }
 
 const ChallengeFrame = ({
-    type,
-    onLoaded,
+    onSuccess,
     onError,
     title,
     children,
     className,
     bodyClassName = '',
-    innerClassName = '',
     challengeRef,
     src,
+    hasSizeObserver,
     errorTimeout = ERROR_TIMEOUT_MS,
     challengeTimeout = CHALLENGE_TIMEOUT_MS,
     ...rest
 }: Props) => {
-    const config = useConfig();
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const renderDivRef = useRef<HTMLDivElement>(null) as MutableRefObject<HTMLDivElement>;
+    const renderDivRef = useRef<HTMLDivElement>(null);
 
     const targetOrigin = useMemo(() => {
         return new URL(src).origin;
@@ -56,102 +52,74 @@ const ChallengeFrame = ({
 
     useLayoutEffect(() => {
         let isMounted = true;
-        let callbackHandle: number | undefined;
 
-        renderDivRef.current = document.createElement('DIV') as HTMLDivElement;
+        let stage: Stage = 'initialize';
+        const setStage = (newStage: Stage) => {
+            stage = newStage;
+        };
+
+        const logs: ChallengeLog[] = [];
+        const tmpUrl = new URL(src);
+        const addLog = (text: string, data: unknown, type: ChallengeLogType) => {
+            // To keep it somewhat limited
+            if (logs.length > 20) {
+                return;
+            }
+            const log: ChallengeLog = {
+                type,
+                text: `${new Date().toISOString()} ${text} ${tmpUrl.searchParams.toString()}`,
+            };
+            // The sentry serializer doesn't like undefined values
+            if (data) {
+                log.data = data;
+            }
+            logs.push(log);
+        };
 
         let error = false;
         const handleError = () => {
+            // If already notified
+            if (error) {
+                return;
+            }
             error = true;
+            setStage('error');
             if (!isMounted) {
                 return;
             }
-            onError?.();
+            onError?.(logs);
         };
-        let errorTimeoutHandle = window.setTimeout(handleError, errorTimeout);
 
-        const challengeUrlSrc = getChallengeURL(config.API_URL, type).toString();
-        const styleSrcs = [...document.querySelectorAll<HTMLLinkElement>('link[rel=stylesheet]')]
-            .map((x) => {
-                return new URL(x.href, window.location.origin).toString();
-            })
-            .filter((url) => {
-                return url.startsWith(window.location.origin);
-            });
-        const scriptSrcs = [challengeUrlSrc];
-        let challengeError = false;
+        let errorTimeoutHandle = window.setTimeout(() => {
+            addLog('Initial iframe timeout', undefined, 'error');
+            handleError();
+        }, errorTimeout);
 
         let challengeResolve: (data: { [key: string]: string }) => void;
 
-        // The + 1 is for the style sanity check
-        const assetsTotal = scriptSrcs.length + styleSrcs.length + 1;
-        let assetsLoaded = 0;
-
-        const handleInitDone = () => {
-            clearTimeout(errorTimeoutHandle);
+        const handleLoaded = () => {
             if (!isMounted) {
                 return;
             }
             setIsLoaded(true);
-            callbackHandle = window.setTimeout(() => {
-                if (!isMounted) {
-                    return;
-                }
-                onLoaded?.();
-                // Small timeout to let the iframe render and improve layout shift
-            }, LAYOUT_SHIFT_TIMEOUT_MS);
+            onSuccess?.();
         };
 
-        const handleAssetLoaded = () => {
-            if (++assetsLoaded === assetsTotal) {
-                handleInitDone();
-            }
-        };
-
-        const handleAssetError = (src: string) => {
-            if (src === challengeUrlSrc) {
-                challengeError = true;
-                // Treat the challenge misloading as ok
-                handleAssetLoaded();
-                return;
-            }
-            // Otherwise it's a CSS error and a hard failure
-            handleError();
-        };
-
-        /**
-         * This check is for catching when a new deployment has happened. Since missing assets fallback
-         * to serving index.html, it tries to verify that the actual content is css.
-         * So it tries to fetch the CSS again (which should be cached in the browser) and checks the content-type
-         * and else the first character.
-         */
-        const handleStylesSanityCheck = () => {
-            Promise.all(
-                styleSrcs.map(async (styleSrc) => {
-                    const response = await fetch(styleSrc);
-                    const contentType = response.headers.get('content-type');
-                    if (contentType?.startsWith('text/css')) {
-                        return;
-                    }
-                    const data = (await response.text()).trimStart();
-                    if (data.startsWith('<')) {
-                        throw new Error('Invalid data');
-                    }
-                })
-            )
-                .then(() => {
-                    handleAssetLoaded();
-                })
-                .catch(() => {
-                    handleAssetError(styleSrcs[0]);
-                });
-        };
-
-        handleStylesSanityCheck();
+        const themeNodeData = document.querySelector(`#${THEME_ID}`)?.innerHTML ?? '';
+        const iconsNodeData = document.querySelector(`#${ICONS_ID}`)?.innerHTML ?? '';
+        const stylesPromise = getStyleSrcsData(getStyleSrcUrls());
 
         const cb = (event: MessageEvent) => {
-            const contentWindow = iframeRef.current?.contentWindow;
-            if (error || !contentWindow || event.origin !== targetOrigin || event.source !== contentWindow) {
+            const iframe = iframeRef.current;
+            const contentWindow = iframe?.contentWindow;
+            if (
+                error ||
+                !iframe ||
+                !contentWindow ||
+                event.origin !== targetOrigin ||
+                event.source !== contentWindow ||
+                !isMounted
+            ) {
                 return;
             }
 
@@ -159,45 +127,70 @@ const ChallengeFrame = ({
             const eventDataType = eventData?.type;
             const eventDataPayload = eventData?.payload;
 
-            if (eventDataType === 'init') {
-                if (!contentWindow) {
-                    handleError();
-                    return;
-                }
-
+            if (eventDataType === 'init' && stage === 'initialize') {
                 clearTimeout(errorTimeoutHandle);
-                errorTimeoutHandle = window.setTimeout(handleError, errorTimeout);
+                setStage('initialized');
+                addLog('Initialized', undefined, 'step');
+                iframe.style.height = `0px`;
 
-                contentWindow.postMessage(
-                    {
-                        type: 'load',
-                        payload: {
-                            styles: styleSrcs,
-                            scripts: scriptSrcs,
-                            bodyClassName,
-                        },
-                    },
-                    targetOrigin
-                );
+                stylesPromise
+                    .then((styles) => {
+                        if (!isMounted) {
+                            return;
+                        }
+
+                        clearTimeout(errorTimeoutHandle);
+                        errorTimeoutHandle = window.setTimeout(() => {
+                            addLog('Load iframe error', undefined, 'error');
+                            handleError();
+                        }, errorTimeout);
+
+                        setStage('load');
+                        addLog(
+                            'Sending data',
+                            [themeNodeData, styles, iconsNodeData].map((x) => x.slice(0, 30)).join(' - '),
+                            'step'
+                        );
+
+                        contentWindow.postMessage(
+                            {
+                                type: 'load',
+                                payload: {
+                                    iconsRoot: `${iconsNodeData}`,
+                                    stylesRoot: `${styles}\n${themeNodeData}`,
+                                    hasSizeObserver,
+                                    bodyClassName,
+                                },
+                            },
+                            targetOrigin
+                        );
+                    })
+                    .catch((error) => {
+                        addLog('CSS load error', { error }, 'error');
+                        handleError();
+                    });
             }
 
-            if (eventDataType === 'rect' && eventDataPayload?.height !== undefined && iframeRef.current) {
-                iframeRef.current.style.height = `${eventDataPayload.height}px`;
-            }
-
-            if (eventDataType === 'onload') {
-                handleAssetLoaded();
+            if (eventDataType === 'onload' && stage === 'load') {
+                clearTimeout(errorTimeoutHandle);
+                setStage('loaded');
+                addLog('Fully loaded', undefined, 'step');
+                handleLoaded();
             }
 
             if (eventDataType === 'onerror') {
-                handleAssetError(eventDataPayload);
+                addLog('Script error', { error: eventDataPayload }, 'message');
             }
 
-            if (eventDataType === 'event') {
+            if (eventDataType === 'event' && stage === 'loaded' && renderDivRef.current) {
                 handleEvent(renderDivRef.current, eventDataPayload);
             }
 
-            if (eventDataType === 'child.message.data') {
+            if (eventDataType === 'rect' && stage === 'loaded' && eventDataPayload?.height !== undefined) {
+                iframe.style.height = `${eventDataPayload.height}px`;
+            }
+
+            if (eventDataType === 'child.message.data' && stage === 'loaded') {
                 const messageData = eventData.data;
                 if (!messageData) {
                     return;
@@ -209,13 +202,25 @@ const ChallengeFrame = ({
         };
 
         challengeRef.current = {
+            focus: (selector: string) => {
+                const contentWindow = iframeRef.current?.contentWindow;
+                if (!contentWindow || stage !== 'loaded') {
+                    return;
+                }
+                contentWindow.postMessage(
+                    {
+                        type: 'focus',
+                        payload: {
+                            selector,
+                        },
+                    },
+                    targetOrigin
+                );
+            },
             getChallenge: () => {
                 return new Promise<ChallengeResult | undefined>((resolve, reject) => {
-                    if (challengeError) {
-                        return resolve(undefined);
-                    }
                     const contentWindow = iframeRef.current?.contentWindow;
-                    if (!contentWindow) {
+                    if (!contentWindow || stage !== 'loaded') {
                         return reject(new Error('No iframe available'));
                     }
                     challengeResolve = resolve;
@@ -241,44 +246,53 @@ const ChallengeFrame = ({
             },
         };
 
+        addLog('Added listener', undefined, 'step');
+
         window.addEventListener('message', cb);
         return () => {
             window.removeEventListener('message', cb);
             clearTimeout(errorTimeoutHandle);
-            clearTimeout(callbackHandle);
             isMounted = false;
         };
     }, []);
 
     useLayoutEffect(() => {
         const contentWindow = iframeRef.current?.contentWindow;
-        const renderEl = renderDivRef.current;
-        if (!renderEl || !contentWindow || !isLoaded) {
+        const renderDivEl = renderDivRef.current;
+        if (!renderDivEl || !contentWindow || !isLoaded) {
             return;
         }
-        renderEl.className = innerClassName;
-        ReactDOM.render(children as any, renderEl, () => {
-            normalizeSelectOptions(renderEl);
-
-            contentWindow.postMessage(
-                {
-                    type: 'html',
-                    payload: renderEl.outerHTML,
-                },
-                targetOrigin
-            );
-        });
-    }, [isLoaded, children, iframeRef.current]);
+        if (iframeRef.current && !hasSizeObserver) {
+            iframeRef.current.style.height = `${renderDivEl.getBoundingClientRect().height}px`;
+        }
+        contentWindow.postMessage(
+            {
+                type: 'html',
+                payload: `<div>${renderDivEl.innerHTML}</div>`,
+            },
+            targetOrigin
+        );
+    }, [isLoaded, children, iframeRef.current, renderDivRef.current]);
 
     return (
-        <iframe
-            {...rest}
-            src={src}
-            ref={iframeRef}
-            title={title}
-            className={className}
-            sandbox="allow-scripts allow-same-origin allow-popups"
-        />
+        <>
+            <div
+                ref={renderDivRef}
+                style={{ position: 'absolute', left: '-1000px', top: '-1000px' }}
+                aria-hidden="true"
+                className="visibility-hidden"
+            >
+                {children}
+            </div>
+            <iframe
+                {...rest}
+                src={src}
+                ref={iframeRef}
+                title={title}
+                className={className}
+                sandbox="allow-scripts allow-same-origin allow-popups"
+            />
+        </>
     );
 };
 
