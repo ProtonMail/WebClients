@@ -17,7 +17,7 @@ const NewVersionTopBannerView = ({ isError = false }: { isError?: boolean }) => 
     );
 
     return (
-        <TopBanner className={isError ? 'bg-danger' : 'bg-primary'}>
+        <TopBanner className={isError ? 'bg-danger' : 'bg-info'}>
             {c('Message display when a new app version is available')
                 .jt`A new version of ${appName} is available. ${reloadButton}.`}
         </TopBanner>
