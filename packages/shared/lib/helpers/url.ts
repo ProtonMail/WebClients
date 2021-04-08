@@ -139,3 +139,10 @@ export const getSecondLevelDomain = () => {
     const { hostname } = window.location;
     return hostname.substr(hostname.indexOf('.') + 1);
 };
+
+export const getRelativeApiHostname = (hostname: string) => {
+    const idx = hostname.indexOf('.');
+    const first = hostname.substr(0, idx);
+    const second = hostname.substr(idx + 1);
+    return `${first}-api.${second}`;
+};
