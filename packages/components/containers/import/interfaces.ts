@@ -64,11 +64,7 @@ export interface ImportModalModel {
 export interface FolderMapping {
     Source: string;
     Destinations: {
-        FolderPath?: string;
-        Labels?: {
-            Name: string;
-            Color: string;
-        }[];
+        FolderPath: string;
     };
     checked: boolean;
 }
@@ -167,13 +163,6 @@ export interface EditModeMap {
 
 export interface FolderPathsMap {
     [key: string]: string;
-}
-
-export interface LabelsMap {
-    [key: string]: {
-        Name: string;
-        Color: string;
-    };
 }
 
 export enum TIME_UNIT {
