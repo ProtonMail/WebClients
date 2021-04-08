@@ -41,6 +41,7 @@ const InputField: <E extends React.ElementType = typeof defaultElement>(
         ref: typeof rest.ref
     ) => {
         const id = useInstance(() => idProp || generateUID());
+        const assistiveUid = useInstance(() => generateUID());
 
         const classes = {
             root: classnames([
@@ -74,9 +75,19 @@ const InputField: <E extends React.ElementType = typeof defaultElement>(
                     </div>
                 )}
                 <div className={classes.inputContainer}>
-                    <Box as={defaultElement} ref={ref} id={id} error={error} disabled={disabled} {...rest} />
+                    <Box
+                        as={defaultElement}
+                        ref={ref}
+                        id={id}
+                        error={error}
+                        disabled={disabled}
+                        aria-describedby={assistiveUid}
+                        {...rest}
+                    />
                 </div>
-                <div className="inputform-assist flex">{errorElement || <>{assistiveText}</>}</div>
+                <div className="inputform-assist flex" id={assistiveUid}>
+                    {errorElement || <>{assistiveText}</>}
+                </div>
             </label>
         );
     }

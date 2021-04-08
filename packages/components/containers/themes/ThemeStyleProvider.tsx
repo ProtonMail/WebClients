@@ -4,6 +4,8 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { DARK_MODE_CLASS } from 'proton-shared/lib/constants';
 import tinycolor from 'tinycolor2';
 
+export const THEME_ID = 'theme-root';
+
 export const Context = createContext([noop, PROTON_THEMES.DEFAULT.theme]);
 
 interface Props {
@@ -43,7 +45,7 @@ const ThemeStyleProvider = ({ children }: Props) => {
 
     return (
         <Context.Provider value={state}>
-            <style id="theme">{style}</style>
+            <style id={THEME_ID}>{style}</style>
             {children}
         </Context.Provider>
     );
