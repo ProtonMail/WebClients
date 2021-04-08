@@ -31,10 +31,10 @@ export const VPN_PLANS = [PLAN.FREE, PLAN.BASIC, PLAN.PLUS, PLAN.VISIONARY];
 export const BEST_DEAL_PLANS = [PLAN.BASIC, PLAN.PLUS, PLAN.VISIONARY];
 
 const getPlanFeatures = (plan, maxConnections, countries) => {
-    const netflix = <b>{c('Netflix').t`Netflix`}</b>;
-    const disney = <b>{c('Disney').t`Disney+`}</b>;
-    const primeVideo = <b>{c('Prime Video').t`Prime Video`}</b>;
-    const many = <b>{c('Many Others').t`and many others`}</b>;
+    const netflix = <b key={1}>{c('Netflix').t`Netflix`}</b>;
+    const disney = <b key={2}>{c('Disney').t`Disney+`}</b>;
+    const primeVideo = <b key={3}>{c('Prime Video').t`Prime Video`}</b>;
+    const many = <b key={4}>{c('Many Others').t`and many others`}</b>;
 
     return {
         [PLAN.FREE]: {
