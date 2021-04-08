@@ -1,8 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { validateEmail, validatePhone } from 'proton-shared/lib/api/core/validate';
 import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
-import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
+import { emailValidator, requiredValidator } from 'proton-shared/lib/helpers/formValidators';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import {
@@ -13,13 +13,14 @@ import {
     useApi,
     Tabs,
     useFormErrors,
-    Icons,
     ConfirmModal,
     PhoneInput,
     InputFieldTwo,
-    DefaultThemeInjector,
+    captureChallengeMessage,
+    ChallengeResult,
+    ChallengeRef,
 } from 'react-components';
-import { ChallengeRef, ChallengeResult } from 'react-components/components/challenge/ChallengeFrame';
+
 import { SignupModel, SIGNUP_STEPS } from './interfaces';
 import Loader from './Loader';
 
@@ -31,12 +32,13 @@ interface Props {
     onSubmit: (payload?: ChallengeResult) => void;
     onSkip: (payload?: ChallengeResult) => void;
     defaultCountry?: string;
+    hasChallenge?: boolean;
 }
 
-const RecoveryForm = ({ model, onChange, onSubmit, onSkip, defaultCountry }: Props) => {
+const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, defaultCountry }: Props) => {
     const api = useApi();
     const formRef = useRef<HTMLFormElement>(null);
-    const [challengeLoading, setChallengeLoading] = useState(true);
+    const [challengeLoading, setChallengeLoading] = useState(hasChallenge);
     const { createModal } = useModals();
     const challengeRefRecovery = useRef<ChallengeRef>();
     const [loading, withLoading] = useLoading();
@@ -93,9 +95,38 @@ const RecoveryForm = ({ model, onChange, onSubmit, onSkip, defaultCountry }: Pro
         }
     };
 
-    const handleChallengeLoaded = () => {
-        setChallengeLoading(false);
-    };
+    useEffect(() => {
+        if (model.step === RECOVERY_EMAIL && !challengeLoading) {
+            // Special focus management for challenge
+            challengeRefRecovery.current?.focus('#recovery-email');
+        }
+    }, [model.step, challengeLoading]);
+
+    const innerChallenge = model.step === RECOVERY_EMAIL && (
+        <InputFieldTwo
+            id="recovery-email"
+            bigger
+            label={c('Label').t`Recovery email`}
+            error={validator(
+                model.step === RECOVERY_EMAIL
+                    ? [requiredValidator(model.recoveryEmail), emailValidator(model.recoveryEmail), emailError]
+                    : []
+            )}
+            autoFocus
+            disableChange={loading}
+            type="email"
+            value={model.recoveryEmail}
+            onValue={(value: string) => {
+                setEmailError('');
+                setRecoveryEmail(value);
+            }}
+            onKeyDown={({ key }: React.KeyboardEvent<HTMLInputElement>) => {
+                if (key === 'Enter') {
+                    withLoading(handleSubmit()).catch(noop);
+                }
+            }}
+        />
+    );
 
     return (
         <>
@@ -121,6 +152,8 @@ const RecoveryForm = ({ model, onChange, onSubmit, onSkip, defaultCountry }: Pro
                 }
                 ref={formRef}
                 method="post"
+                autoComplete="off"
+                noValidate
             >
                 <Tabs
                     value={model.step === RECOVERY_EMAIL ? 0 : model.step === RECOVERY_PHONE ? 1 : 0}
@@ -177,38 +210,27 @@ const RecoveryForm = ({ model, onChange, onSubmit, onSkip, defaultCountry }: Pro
                         });
                     }}
                 />
-                <Challenge
-                    key="challenge"
-                    style={model.step === RECOVERY_EMAIL ? undefined : { display: 'none' }}
-                    bodyClassName="sign-layout-container"
-                    challengeRef={challengeRefRecovery}
-                    type={1}
-                    onLoaded={handleChallengeLoaded}
-                >
-                    <DefaultThemeInjector />
-                    <Icons />
-                    <InputFieldTwo
-                        id="recovery-email"
-                        bigger
-                        label={c('Label').t`Recovery email`}
-                        error={validator(
-                            model.step === RECOVERY_EMAIL ? [requiredValidator(model.recoveryEmail), emailError] : []
-                        )}
-                        autoFocus
-                        disableChange={loading}
-                        type="email"
-                        value={model.recoveryEmail}
-                        onValue={(value: string) => {
-                            setEmailError('');
-                            setRecoveryEmail(value);
+                {hasChallenge ? (
+                    <Challenge
+                        key="challenge"
+                        style={model.step === RECOVERY_EMAIL ? undefined : { display: 'none' }}
+                        bodyClassName="sign-layout-container"
+                        challengeRef={challengeRefRecovery}
+                        type={1}
+                        onSuccess={(logs) => {
+                            setChallengeLoading(false);
+                            captureChallengeMessage('Failed to load RecoveryAccountForm iframe partially', logs);
                         }}
-                        onKeyDown={({ key }: React.KeyboardEvent<HTMLInputElement>) => {
-                            if (key === 'Enter') {
-                                withLoading(handleSubmit()).catch(noop);
-                            }
+                        onError={(logs) => {
+                            setChallengeLoading(false);
+                            captureChallengeMessage('Failed to load RecoveryAccountForm iframe fatally', logs);
                         }}
-                    />
-                </Challenge>
+                    >
+                        {innerChallenge}
+                    </Challenge>
+                ) : (
+                    innerChallenge
+                )}
                 <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
                     {c('Action').t`Next`}
                 </Button>
