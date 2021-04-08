@@ -1,10 +1,16 @@
 import * as Sentry from '@sentry/browser';
 
+import { ProtonConfig } from '../interfaces';
+
 const isLocalhost = () => document.location.host.startsWith('localhost');
 
-const isProduction = (host) => host === 'mail.protonmail.com' || host === 'account.protonvpn.com';
+const isProduction = (host: string) => host === 'mail.protonmail.com' || host === 'account.protonvpn.com';
 
-function main({ SENTRY_DSN, COMMIT_RELEASE, APP_VERSION }) {
+function main({
+    SENTRY_DSN,
+    COMMIT_RELEASE,
+    APP_VERSION,
+}: Pick<ProtonConfig, 'SENTRY_DSN' | 'COMMIT_RELEASE' | 'APP_VERSION'>) {
     // No need to configure it if we don't load the DSN
     if (!SENTRY_DSN || isLocalhost()) {
         return;
@@ -20,9 +26,11 @@ function main({ SENTRY_DSN, COMMIT_RELEASE, APP_VERSION }) {
         dsn,
         release: isProduction(host) ? APP_VERSION : COMMIT_RELEASE,
         environment: host,
+        normalizeDepth: 5,
         beforeSend(event) {
+            // @ts-ignore
             if (event && 'error' in event && event.error?.stack) {
-                // Filter out broken ferdi errors
+                // @ts-ignore Filter out broken ferdi errors
                 if (event.error.stack.includes(/ferdi/i)) {
                     return null;
                 }
@@ -51,6 +59,8 @@ function main({ SENTRY_DSN, COMMIT_RELEASE, APP_VERSION }) {
     });
 }
 
-export const traceError = (e) => !isLocalhost() && Sentry.captureException(e);
+export const traceError = (e: unknown) => !isLocalhost() && Sentry.captureException(e);
+export const captureMessage = (...args: Parameters<typeof Sentry.captureMessage>) =>
+    !isLocalhost() && Sentry.captureMessage(...args);
 
 export default main;
