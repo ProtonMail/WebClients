@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { PrimaryButton, Price } from 'react-components';
+import { PrimaryButton, Price, Icon } from 'react-components';
 import { CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
 import { PLAN } from '../plans';
-
-import './Plan.scss';
 
 const PlanUpsell = ({ selectedPlan, getPlanByName, cycle, currency, onExtendCycle, onUpgrade }) => {
     const { planName, upsell } = selectedPlan;
@@ -60,7 +58,10 @@ const PlanUpsell = ({ selectedPlan, getPlanByName, cycle, currency, onExtendCycl
                     <>
                         <ul className="selected-plan-list unstyled m0">
                             {upsell.features.map((feature, i) => (
-                                <li key={i}>{feature}</li>
+                                <li key={i} className="flex flex-nowrap">
+                                    <Icon name="on" className="color-primary mt0-25 mr1 flex-item-noshrink" />
+                                    <span className="flex-item-fluid">{feature}</span>
+                                </li>
                             ))}
                         </ul>
                         <PrimaryButton className="w100 mt1" onClick={handleUpgrade}>{c('Action')
