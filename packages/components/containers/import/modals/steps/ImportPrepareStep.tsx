@@ -1,12 +1,13 @@
 import React, { useMemo, useEffect, useRef, useState } from 'react';
-import { format } from 'date-fns';
+import { format, isValid } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { Address } from 'proton-shared/lib/interfaces';
-import { LABEL_TYPE } from 'proton-shared/lib/constants';
+import { LABEL_COLORS, LABEL_TYPE } from 'proton-shared/lib/constants';
+import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 
-import { useFolders, useUser, useModals, useLabels } from '../../../../hooks';
+import { useFolders, useUser, useModals } from '../../../../hooks';
 import {
     Icon,
     LabelStack,
@@ -19,22 +20,10 @@ import {
 } from '../../../../components';
 
 import { ImportModalModel, MailImportFolder, TIME_UNIT, DestinationFolder, IMPORT_ERROR } from '../../interfaces';
-import { IMAPS, timeUnitLabels } from '../../constants';
-import {
-    escapeSlashes,
-    getFolderRelationshipsMap,
-    getRandomLabelColor,
-    mappingHasFoldersTooLong,
-    mappingHasLabelsTooLong,
-    mappingHasUnavailableNames,
-    splitEscaped,
-} from '../../helpers';
+import { timeUnitLabels } from '../../constants';
+import { escapeSlashes, splitEscaped } from '../../helpers';
 
 import CustomizeImportModal from '../CustomizeImportModal';
-
-interface LabelColorMap {
-    [key: string]: string;
-}
 
 interface Props {
     modalModel: ImportModalModel;
@@ -55,13 +44,14 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
     const [user, userLoading] = useUser();
     const { createModal } = useModals();
     const { providerFolders, password } = modalModel;
-
     const [folders = [], foldersLoading] = useFolders();
-    const [labels = [], labelsLoading] = useLabels();
-
-    const isLabelMapping = modalModel.imap === IMAPS.GMAIL;
 
     const { payload, selectedPeriod } = modalModel;
+
+    const providerFoldersNum = useMemo(() => {
+        return providerFolders.length;
+    }, [providerFolders]);
+    const providerFoldersNumLocalized = providerFoldersNum.toLocaleString();
 
     const selectedFolders = useMemo(
         () =>
@@ -72,9 +62,8 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
         [payload.Mapping, providerFolders]
     );
 
-    const providerFoldersNum = useMemo(() => providerFolders.length, [providerFolders]);
-    const providerFoldersNumLocalized = providerFoldersNum.toLocaleString();
     const selectedFoldersCountLocalized = selectedFolders.length.toLocaleString();
+
     const selectedPeriodLowerCased = timeUnitLabels[selectedPeriod].toLowerCase();
 
     const importSize = useMemo(() => selectedFolders.reduce((acc, { Size = 0 }) => acc + Size, 0), [selectedFolders]);
@@ -85,20 +74,17 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
         user.MaxSpace,
     ]);
 
-    const showMaxFoldersError = useMemo(() => selectedFolders.length + folders.length >= 500, [
+    const showFoldersNumError = useMemo(() => selectedFolders.length + folders.length >= 500, [
         selectedFolders,
         folders,
     ]);
 
-    const showUnavailableNamesError = useMemo(
-        () => mappingHasUnavailableNames(payload.Mapping, isLabelMapping ? folders : labels, isLabelMapping),
-        [payload.Mapping, folders, labels]
-    );
-    const showFoldersNameTooLongError = useMemo(() => mappingHasFoldersTooLong(payload.Mapping), [payload.Mapping]);
-    const showLabelsNameTooLongError = useMemo(() => mappingHasLabelsTooLong(payload.Mapping), [payload.Mapping]);
-
-    const hasError =
-        showMaxFoldersError || showFoldersNameTooLongError || showLabelsNameTooLongError || showUnavailableNamesError;
+    const showFoldersNameError = useMemo(() => {
+        return payload.Mapping.some((m) => {
+            const splitted = splitEscaped(m.Destinations.FolderPath);
+            return m.checked && splitted[splitted.length - 1].length >= 100;
+        });
+    }, [payload.Mapping]);
 
     const handleClickCustomize = () => {
         createModal(
@@ -106,10 +92,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
                 addresses={availableAddresses}
                 modalModel={modalModel}
                 updateModalModel={updateModalModel}
-                customizeFoldersOpen={hasError}
-                isLabelMapping={isLabelMapping}
-                folders={folders}
-                labels={labels}
+                customizeFoldersOpen={showFoldersNumError || showFoldersNameError}
             />
         );
     };
@@ -152,11 +135,8 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
     }, [payload.StartTime, payload.ImportLabel, payload.Mapping]);
 
     useEffect(() => {
-        updateModalModel({
-            ...modalModel,
-            isPayloadInvalid: hasError,
-        });
-    }, [hasError]);
+        updateModalModel({ ...modalModel, isPayloadInvalid: showFoldersNumError || showFoldersNameError });
+    }, [showFoldersNumError, showFoldersNameError]);
 
     const getParentSource = (folderPath: string, separator: string) => {
         const split = splitEscaped(folderPath, separator);
@@ -207,60 +187,21 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
         return pathParts.join('/');
     };
 
-    const folderRelationshipsMap = getFolderRelationshipsMap(providerFolders);
-
-    const labelColorMap = providerFolders.reduce((acc: LabelColorMap, folder) => {
-        const { DestinationFolder, Source } = folder;
-
-        if (DestinationFolder) {
-            return acc;
-        }
-
-        const color = getRandomLabelColor();
-        const children = folderRelationshipsMap[Source] || [];
-
-        acc[Source] = acc[Source] || color;
-        children.forEach((f) => {
-            acc[f] = acc[f] || acc[Source];
-        });
-
-        return acc;
-    }, {});
-
-    const getDestinationLabels = ({ Source, Separator }: MailImportFolder) => {
-        return [
-            {
-                Name: Source.split(Separator).join('-'),
-                Color: labelColorMap[Source],
-            },
-        ];
-    };
-
     useEffect(() => {
         if (!modalModel.importID) {
             return;
         }
-
-        const Mapping = providerFolders.map((folder) => {
-            const Destinations = isLabelMapping
-                ? {
-                      FolderPath: folder.DestinationFolder,
-                      Labels: !folder.DestinationFolder ? getDestinationLabels(folder) : [],
-                  }
-                : {
-                      FolderPath: folder.DestinationFolder || getDestinationFolderPath(folder),
-                  };
-
-            return {
-                Source: folder.Source,
-                Destinations,
-                checked: true,
-            };
-        });
+        const Mapping = providerFolders.map((folder) => ({
+            Source: folder.Source,
+            Destinations: {
+                FolderPath: folder.DestinationFolder || getDestinationFolderPath(folder),
+            },
+            checked: true,
+        }));
 
         const ImportLabel = {
             Name: `${modalModel.email.split('@')[1]} ${format(new Date(), 'dd-MM-yyyy HH:mm')}`,
-            Color: getRandomLabelColor(),
+            Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
             Type: LABEL_TYPE.MESSAGE_LABEL,
             Order: 0,
         };
@@ -294,7 +235,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
         );
     }
 
-    if (!modalModel.importID || foldersLoading || userLoading || labelsLoading) {
+    if (!modalModel.importID || foldersLoading || userLoading) {
         return (
             <div className="p1 text-center w100">
                 <FullLoader size={100} />
@@ -318,30 +259,17 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
                     .t`Proton will transfer as much data as possible, starting with your most recent messages.`}
             </Alert>
 
-            {showMaxFoldersError && (
+            {showFoldersNumError && (
                 <Alert type="error" className="mt1 mb1">
                     {c('Error')
                         .t`There are too many folders in your external account. Please customize the import to delete some folders.`}
                 </Alert>
             )}
 
-            {(showFoldersNameTooLongError || showLabelsNameTooLongError) && (
+            {showFoldersNameError && (
                 <Alert type="error" className="mt1 mb1">
-                    {isLabelMapping
-                        ? c('Error')
-                              .t`Some of your label names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.`
-                        : c('Error')
-                              .t`Some of your folder names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.`}
-                </Alert>
-            )}
-
-            {showUnavailableNamesError && (
-                <Alert type="error" className="mt1 mb1">
-                    {isLabelMapping
-                        ? c('Error')
-                              .t`Some of your label names are unavailable. Please customize the import to edit these names.`
-                        : c('Error')
-                              .t`Some of your folder names are unavailable. Please customize the import to edit these names.`}
+                    {c('Error')
+                        .t`Some of your folder names exceed ProtonMail's maximum character limit. Please customize the import to edit these names.`}
                 </Alert>
             )}
 
@@ -364,6 +292,50 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
                     {c('Info').t`Import mailbox`}
                 </div>
 
+                <div className="mb1 ml1 flex flex-align-items-center">
+                    <Icon className="mr0-5" name="parent-folder" />
+                    {c('Info').ngettext(
+                        msgid`${providerFoldersNumLocalized} folder found`,
+                        `${providerFoldersNumLocalized} folders found`,
+                        providerFoldersNum
+                    )}
+
+                    {showFoldersNumError && (
+                        <Tooltip
+                            title={c('Tooltip').t`Customize import to reduce the number of folders`}
+                            originalPlacement="right"
+                        >
+                            <Icon name="attention-plain" size={18} />
+                        </Tooltip>
+                    )}
+                </div>
+
+                {selectedFolders.length !== providerFoldersNum && (
+                    <div className="mb1 ml2 flex flex-align-items-center">
+                        <strong>
+                            <Icon className="mr0-5" name="parent-folder" />
+                            {c('Info').ngettext(
+                                msgid`${selectedFoldersCountLocalized} folder selected`,
+                                `${selectedFoldersCountLocalized} folders selected`,
+                                selectedFolders.length
+                            )}
+                        </strong>
+                    </div>
+                )}
+
+                <div className="mb1 ml1 flex flex-align-items-center">
+                    <Icon className="mr0-5" name="clock" />
+                    {selectedPeriod === TIME_UNIT.BIG_BANG ? (
+                        c('Info').t`Import all messages since ${selectedPeriodLowerCased}`
+                    ) : (
+                        <span>
+                            {c('Info').t`Import all messages since`}
+                            {` `}
+                            <strong>{timeUnitLabels[selectedPeriod]}</strong>
+                        </span>
+                    )}
+                </div>
+
                 <div className="mb1 ml1 flex flex-align-items-center flex-nowrap">
                     <Icon className="flex-item-noshrink mr0-5" name="label" />
                     <span className="flex-item-noshrink">{c('Info').t`Label all imported messages as`}</span>
@@ -383,79 +355,14 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
                     )}
                 </div>
 
-                <div className="mb1 ml1 flex flex-align-items-center">
-                    <Icon className="mr0-5" name="clock" />
-                    {selectedPeriod === TIME_UNIT.BIG_BANG ? (
-                        c('Info').t`Import all messages since ${selectedPeriodLowerCased}`
-                    ) : (
-                        <span>
-                            {c('Info').t`Import all messages since`}
-                            {` `}
-                            <strong>{timeUnitLabels[selectedPeriod]}</strong>
-                        </span>
-                    )}
-                </div>
-
-                <div className="mb1 ml1 flex flex-align-items-center">
-                    <Icon className="mr0-5" name={isLabelMapping ? 'folder-label' : 'parent-folder'} />
-                    {isLabelMapping
-                        ? c('Info').ngettext(
-                              msgid`${providerFoldersNumLocalized} label found in Gmail`,
-                              `${providerFoldersNumLocalized} labels found in Gmail`,
-                              providerFoldersNum
-                          )
-                        : c('Info').ngettext(
-                              msgid`${providerFoldersNumLocalized} folder found`,
-                              `${providerFoldersNumLocalized} folders found`,
-                              providerFoldersNum
-                          )}
-
-                    {showMaxFoldersError && (
-                        <Tooltip
-                            title={
-                                isLabelMapping
-                                    ? c('Tooltip').t`Customize import to reduce the number of labels`
-                                    : c('Tooltip').t`Customize import to reduce the number of folders`
-                            }
-                            originalPlacement="right"
-                        >
-                            <Icon className="ml0-5" name="attention-plain" size={18} />
-                        </Tooltip>
-                    )}
-                </div>
-
-                {selectedFolders.length !== providerFoldersNum && (
-                    <div className="mb1 ml2 flex flex-align-items-center">
-                        <strong>
-                            <Icon className="mr0-5" name="parent-folder" />
-                            {isLabelMapping
-                                ? c('Info').ngettext(
-                                      msgid`${selectedFoldersCountLocalized} label selected`,
-                                      `${selectedFoldersCountLocalized} labels selected`,
-                                      selectedFolders.length
-                                  )
-                                : c('Info').ngettext(
-                                      msgid`${selectedFoldersCountLocalized} folder selected`,
-                                      `${selectedFoldersCountLocalized} folders selected`,
-                                      selectedFolders.length
-                                  )}
-                        </strong>
-                    </div>
-                )}
-
                 <div className="mt0-5 flex flex-align-items-center">
                     <Button onClick={handleClickCustomize}>{c('Action').t`Customize import`}</Button>
-                    {(showFoldersNameTooLongError || showLabelsNameTooLongError || showUnavailableNamesError) && (
-                        <Tooltip
-                            title={
-                                isLabelMapping ? c('Tooltip').t`Edit label names` : c('Tooltip').t`Edit folder names`
-                            }
-                            originalPlacement="right"
-                        >
+                    {showFoldersNameError && (
+                        <Tooltip title={c('Tooltip').t`Edit folder names`} originalPlacement="right">
                             <Icon name="attention-plain" size={20} className="ml0-5" />
                         </Tooltip>
                     )}
-                    {isCustom && (
+                    {isCustom && isValid && (
                         <InlineLinkButton className="ml1" onClick={handleReset}>
                             {c('Action').t`Reset to default`}
                         </InlineLinkButton>
