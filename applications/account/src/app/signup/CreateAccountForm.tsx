@@ -6,14 +6,14 @@ import {
     Challenge,
     useLoading,
     PasswordInputTwo,
-    Icons,
     useFormErrors,
     InputFieldTwo,
-    DefaultThemeInjector,
     LinkButton,
+    ChallengeResult,
+    ChallengeRef,
+    captureChallengeMessage,
 } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { ChallengeRef, ChallengeResult } from 'react-components/components/challenge/ChallengeFrame';
 import { queryCheckUsernameAvailability, queryVerificationCode } from 'proton-shared/lib/api/user';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
@@ -85,10 +85,6 @@ const CreateAccountForm = ({
         onSubmit(payload);
     };
 
-    const handleChallengeLoaded = () => {
-        setChallengeLoading(false);
-    };
-
     const [availableDomain = ''] = domains;
     const loginLink = <Link key="loginLink" to="/login">{c('Link').t`Sign in`}</Link>;
 
@@ -104,6 +100,14 @@ const CreateAccountForm = ({
     const setPassword = getOnChange('password');
     const setConfirmPassword = getOnChange('confirmPassword');
 
+    useEffect(() => {
+        if (challengeLoading) {
+            return;
+        }
+        // Special focus management for challenge
+        challengeRefLogin.current?.focus(signupType === 'username' ? '#username' : '#email');
+    }, [signupType, challengeLoading]);
+
     const innerChallenge =
         signupType === 'username' ? (
             <InputFieldTwo
@@ -112,8 +116,8 @@ const CreateAccountForm = ({
                 label={c('Signup label').t`Username`}
                 error={validator(signupType === 'username' ? [requiredValidator(username), usernameError] : [])}
                 disableChange={loading}
-                autoFocus
                 autoComplete="username"
+                autoFocus
                 suffix={`@${availableDomain}`}
                 value={username}
                 onValue={(value: string) => {
@@ -135,6 +139,7 @@ const CreateAccountForm = ({
                     label={c('Signup label').t`Email`}
                     error={validator(signupType === 'email' ? [requiredValidator(email), emailValidator(email)] : [])}
                     disableChange={loading}
+                    autoFocus
                     type="email"
                     value={email}
                     onValue={setEmail}
@@ -150,28 +155,21 @@ const CreateAccountForm = ({
 
     return (
         <>
-            {challengeLoading ? (
+            {challengeLoading && (
                 <div className="text-center">
                     <Loader />
                 </div>
-            ) : null}
+            )}
             <form
                 name="accountForm"
-                style={
-                    challengeLoading
-                        ? {
-                              position: 'absolute',
-                              top: '-1000px',
-                              left: '-1000px',
-                          }
-                        : undefined
-                }
+                className={challengeLoading ? 'hidden' : ''}
                 onSubmit={(e) => {
                     e.preventDefault();
                     return handleSubmit();
                 }}
-                autoComplete="off"
                 method="post"
+                autoComplete="off"
+                noValidate
             >
                 {hasChallenge ? (
                     <Challenge
@@ -179,10 +177,15 @@ const CreateAccountForm = ({
                         loaderClassName="center flex"
                         challengeRef={challengeRefLogin}
                         type={0}
-                        onLoaded={handleChallengeLoaded}
+                        onSuccess={(logs) => {
+                            setChallengeLoading(false);
+                            captureChallengeMessage('Failed to load CreateAccountForm iframe partially', logs);
+                        }}
+                        onError={(logs) => {
+                            setChallengeLoading(false);
+                            captureChallengeMessage('Failed to load CreateAccountForm iframe fatally', logs);
+                        }}
                     >
-                        <DefaultThemeInjector />
-                        <Icons />
                         {innerChallenge}
                     </Challenge>
                 ) : (
