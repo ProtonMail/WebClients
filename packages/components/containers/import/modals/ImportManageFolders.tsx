@@ -2,8 +2,6 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Address } from 'proton-shared/lib/interfaces';
-import { Folder } from 'proton-shared/lib/interfaces/Folder';
-import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import {
     ImportModalModel,
@@ -12,14 +10,14 @@ import {
     MailImportFolder,
     CheckedFoldersMap,
     DisabledFoldersMap,
+    FolderRelationshipsMap,
     FolderNamesMap,
     FolderPathsMap,
     EditModeMap,
     DestinationFolder,
-    LabelsMap,
 } from '../interfaces';
 
-import { escapeSlashes, getFolderRelationshipsMap, getLevel, splitEscaped } from '../helpers';
+import { escapeSlashes, splitEscaped } from '../helpers';
 
 import { Alert } from '../../../components';
 
@@ -31,25 +29,41 @@ interface Props {
     payload: ImportPayloadModel;
     onChangePayload: (newPayload: ImportPayloadModel) => void;
     toggleEditing: (editing: boolean) => void;
-    isLabelMapping: boolean;
-    folders: Folder[];
-    labels: Label[];
 }
 
-const ImportManageFolders = ({
-    modalModel,
-    addresses,
-    payload,
-    toggleEditing,
-    onChangePayload,
-    isLabelMapping,
-    folders,
-    labels,
-}: Props) => {
+const ImportManageFolders = ({ modalModel, addresses, payload, toggleEditing, onChangePayload }: Props) => {
     const { providerFolders } = modalModel;
 
+    const getLevel = (name: string, separator: string) => {
+        const split = splitEscaped(name, separator);
+        let level = 0;
+        while (split.length) {
+            split.pop();
+            if (providerFolders.find((f) => f.Source === split.join(separator))) {
+                level += 1;
+            }
+        }
+
+        return level;
+    };
+
     // Here we map folders with their direct children
-    const folderRelationshipsMap = getFolderRelationshipsMap(providerFolders);
+    const folderRelationshipsMap = providerFolders.reduce((acc: FolderRelationshipsMap, folder) => {
+        const currentLevel = getLevel(folder.Source, folder.Separator);
+
+        acc[folder.Source] = providerFolders
+            .filter((f) => {
+                const level = getLevel(f.Source, f.Separator);
+                return (
+                    currentLevel + 1 === level &&
+                    (f.Source.split(f.Separator).slice(0, -1).join(f.Separator) === folder.Source ||
+                        f.Source.startsWith(folder.Source))
+                );
+            })
+            .map((f) => f.Source);
+
+        return acc;
+    }, {});
 
     const [checkedFoldersMap, setCheckedFoldersMap] = useState(
         providerFolders.reduce<CheckedFoldersMap>((acc, folder) => {
@@ -83,16 +97,6 @@ const ImportManageFolders = ({
             acc[folder.Source] = getNameValue(
                 found?.Destinations.FolderPath || folder.DestinationFolder || folder.Source
             );
-            return acc;
-        }, {})
-    );
-
-    const [labelsMap, setLabelsMap] = useState(
-        providerFolders.reduce<LabelsMap>((acc, folder) => {
-            const found = payload.Mapping.find((m) => m.Source === folder.Source);
-            if (found?.Destinations?.Labels?.length) {
-                [acc[folder.Source]] = found.Destinations.Labels;
-            }
             return acc;
         }, {})
     );
@@ -161,21 +165,10 @@ const ImportManageFolders = ({
         setCheckedFoldersMap(newCheckedFoldersMap);
     };
 
-    const handleRenameFolder = (source: string, newName: string) => {
-        setFoldersNameMap({
-            ...folderNamesMap,
-            [source]: escapeSlashes(newName),
-        });
-    };
-
-    const handleRenameLabel = (source: string, Name: string) => {
-        setLabelsMap({
-            ...labelsMap,
-            [source]: {
-                ...labelsMap[source],
-                Name,
-            },
-        });
+    const handleRename = (source: string, newName: string) => {
+        const newFoldersNameMap = { ...folderNamesMap };
+        newFoldersNameMap[source] = escapeSlashes(newName);
+        setFoldersNameMap(newFoldersNameMap);
     };
 
     const [editModeMap, setEditModeMap] = useState(
@@ -199,18 +192,11 @@ const ImportManageFolders = ({
     useEffect(() => {
         const Mapping = providerFolders.reduce<FolderMapping[]>((acc, folder) => {
             if (checkedFoldersMap[folder.Source]) {
-                const Destinations = isLabelMapping
-                    ? {
-                          FolderPath: folder.DestinationFolder,
-                          Labels: !folder.DestinationFolder ? [labelsMap[folder.Source]] : [],
-                      }
-                    : {
-                          FolderPath: forgeNewPath(folder),
-                      };
-
                 acc.push({
                     Source: folder.Source,
-                    Destinations,
+                    Destinations: {
+                        FolderPath: forgeNewPath(folder),
+                    },
                     checked: true,
                 });
             }
@@ -222,7 +208,7 @@ const ImportManageFolders = ({
             ...payload,
             Mapping,
         });
-    }, [checkedFoldersMap, labelsMap, folderNamesMap]);
+    }, [checkedFoldersMap, folderNamesMap]);
 
     const emailAddress = addresses.find((addr) => addr.ID === modalModel.payload.AddressID)?.Email;
 
@@ -231,12 +217,16 @@ const ImportManageFolders = ({
             <Alert className="mt2 mb1">{c('Info').t`Please select the folders you would like to import:`}</Alert>
 
             <div className="flex">
-                <div className="w50 text-ellipsis pt1">
+                <div className="w40 text-ellipsis pt1">
                     <strong>{c('Label').t`From: ${modalModel.email}`}</strong>
                 </div>
 
                 <div className="w40 text-ellipsis pt1">
                     <strong>{c('Label').t`To: ${emailAddress}`}</strong>
+                </div>
+
+                <div className="w20 pt1">
+                    <strong>{c('Label').t`Actions`}</strong>
                 </div>
             </div>
 
@@ -244,7 +234,7 @@ const ImportManageFolders = ({
                 <div className="flex-item-fluid pt0-5">
                     <ul className="unstyled m0">
                         {providerFolders
-                            .filter((folder) => getLevel(folder.Source, folder.Separator, providerFolders) === 0)
+                            .filter((folder) => getLevel(folder.Source, folder.Separator) === 0)
                             .map((item: MailImportFolder) => (
                                 <ImportManageFoldersRow
                                     onToggleCheck={handleToggleCheck}
@@ -257,15 +247,10 @@ const ImportManageFolders = ({
                                     providerFolders={providerFolders}
                                     folderNamesMap={folderNamesMap}
                                     folderPathsMap={folderPathsMap}
-                                    labelsMap={labelsMap}
-                                    onRenameFolder={handleRenameFolder}
-                                    onRenameLabel={handleRenameLabel}
+                                    onRename={handleRename}
                                     editModeMap={editModeMap}
                                     getParent={getParent}
                                     updateEditModeMapping={updateEditModeMapping}
-                                    isLabelMapping={isLabelMapping}
-                                    folders={folders}
-                                    labels={labels}
                                 />
                             ))}
                     </ul>
