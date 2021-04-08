@@ -1,20 +1,11 @@
 import React from 'react';
 import { c } from 'ttag';
-import { LinkButton } from 'react-components';
+import { InlineLinkButton } from 'react-components';
 
 interface Props {
     onUndo: () => void;
-    loading?: boolean;
 }
 
-const UndoButton = ({ onUndo, loading }: Props) => (
-    <LinkButton
-        loading={loading}
-        className="align-baseline p0 text-no-decoration text-bold color-inherit"
-        onClick={onUndo}
-    >
-        {c('Action').t`Undo`}
-    </LinkButton>
-);
+const UndoButton = ({ onUndo }: Props) => <InlineLinkButton onClick={onUndo}>{c('Action').t`Undo`}</InlineLinkButton>;
 
 export default UndoButton;

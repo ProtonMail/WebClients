@@ -1,6 +1,6 @@
 import React, { useState, forwardRef, useImperativeHandle, Ref } from 'react';
 import { c } from 'ttag';
-import { LinkButton } from 'react-components';
+import { InlineLinkButton } from 'react-components';
 
 enum SavingStep {
     saving,
@@ -23,14 +23,13 @@ const SavingDraftNotification = ({ onDiscard }: Props, ref: Ref<SavingDraftNotif
     if (step === SavingStep.sent) {
         return (
             <>
-                <span className="mr1">{c('Info').t`Draft saved`}</span>
-                <LinkButton className="align-baseline p0 text-no-decoration text-bold" onClick={onDiscard}>{c('Action')
-                    .t`Discard`}</LinkButton>
+                <span className="mr1">{c('Info').t`Draft saved.`}</span>
+                <InlineLinkButton onClick={onDiscard}>{c('Action').t`Discard`}</InlineLinkButton>
             </>
         );
     }
 
-    return <>{c('Info').t`Saving draft...`}</>;
+    return <>{c('Info').t`Saving draft…`}</>;
 };
 
 export default forwardRef(SavingDraftNotification);
