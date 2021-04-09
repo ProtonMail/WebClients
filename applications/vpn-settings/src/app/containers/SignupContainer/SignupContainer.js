@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Title, useLoading, TextLoader, VpnLogo, Href, FullLoader } from 'react-components';
+import { Button, Title, useLoading, TextLoader, VpnLogo, Href, FullLoader, useApi } from 'react-components';
 import { c } from 'ttag';
 import { BLACK_FRIDAY, CYCLE } from 'proton-shared/lib/constants';
 import { checkCookie } from 'proton-shared/lib/helpers/cookies';
+import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
 import AccountStep from './AccountStep/AccountStep';
 import PlanStep from './PlanStep/PlanStep';
 import useSignup from './useSignup';
@@ -52,6 +53,13 @@ const SignupContainer = ({ match, history, onLogin }) => {
     const hasCookieOffer = checkCookie('offer', BESTDEAL_COOKIE) || checkCookie('offer', BRAVE_COOKIE);
     const availablePlans =
         hasCookieOffer && !redirectToMobileRef.current ? BEST_DEAL_PLANS : PLAN_BUNDLES[preSelectedPlan] || VPN_PLANS;
+
+    const normalApi = useApi();
+    const silentApi = (config) => normalApi({ ...config, silence: true });
+
+    useEffect(() => {
+        silentApi(queryAvailableDomains('signup'));
+    }, []);
 
     useEffect(() => {
         // Always start at plans, or account if plan is preselected
