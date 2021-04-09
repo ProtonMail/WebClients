@@ -88,13 +88,12 @@ $toggle-width-button: em(24) !default;
 	// &--with-icons {
 
 	// }
-}
 
-// checked state
-.toggle-checkbox {
-	@extend .sr-only;
-
-	&:checked + .toggle-label {
+	/**
+	 * states
+	 */
+	// checked
+	&--checked {
 		.toggle-label-text {
 			&:first-child {
 				z-index: 1;
@@ -115,70 +114,89 @@ $toggle-width-button: em(24) !default;
 		}
 	}
 
-	&[disabled]:not([aria-busy='true']) {
-		& + .toggle-label {
+	// disabled
+	&--disabled {
+		cursor: default;
+		// disabled but not loading
+		&:not(.toggle-label--loading) {
 			box-shadow: none;
 			background-color: var(--background-strong);
 
 			&::before {
 				background-color: var(--field-disabled);
 			}
-		}
 
-		&:checked {
-			& + .toggle-label {
+			&.toggle-label--checked {
 				&::before {
 					background-color: var(--field-norm);
 				}
 			}
 		}
-	}
 
-	&[disabled][aria-busy='true'] {
-		& + .toggle-label .toggle-label-text .toggle-label-img {
-			opacity: 0;
-		}
-
-		&:not(:checked) + .toggle-label {
-			&::before {
-				background-color: var(--field-hover);
+		// disabled loading
+		&.toggle-label--loading {
+			.toggle-label-text .toggle-label-img {
+				opacity: 0;
 			}
-		}
 
-		&:checked + .toggle-label {
-			&::before {
-				background-color: var(--interaction-norm-hover);
-			}
-		}
-	}
-
-	&:not([disabled]) {
-		&:hover,
-		&:focus {
-			& + .toggle-label {
+			&:not(.toggle-label--checked) {
 				&::before {
 					background-color: var(--field-hover);
 				}
 			}
-		}
 
-		&:checked:focus,
-		&:checked:hover {
-			& + .toggle-label {
+			&.toggle-label--checked {
 				&::before {
 					background-color: var(--interaction-norm-hover);
 				}
 			}
 		}
 	}
-}
 
-.toggle-label--small {
-	margin-top: 0.25em;
-	font-size: 0.8em;
+	&:not(.toggle-label--disabled) {
+		&:hover,
+		&:focus-within {
+			&::before {
+				background-color: var(--field-hover);
+			}
+		}
 
-	.toggle-label-img {
-		width: 1.3rem;
-		height: 1.3rem;
+		&.toggle-label--checked:focus-within,
+		&.toggle-label--checked:hover {
+			&::before {
+				background-color: var(--interaction-norm-hover);
+			}
+		}
+
+		&.toggle-label--loading {
+			.toggle-label-text .toggle-label-img {
+				opacity: 0;
+			}
+
+			&:not(.toggle-label--checked) {
+				&::before {
+					background-color: var(--field-hover);
+				}
+			}
+
+			&.toggle-label--checked {
+				&::before {
+					background-color: var(--interaction-norm-hover);
+				}
+			}
+		}
+	}
+
+	/**
+	 * Sizes
+	 */
+	&--small {
+		margin-top: 0.25em;
+		font-size: 0.8em;
+
+		.toggle-label-img {
+			width: 1.3rem;
+			height: 1.3rem;
+		}
 	}
 }
