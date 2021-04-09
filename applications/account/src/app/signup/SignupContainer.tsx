@@ -289,7 +289,9 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
     useEffect(() => {
         const fetchDependencies = async () => {
             try {
-                const [{ Domains: domains }] = await Promise.all([api<{ Domains: string[] }>(queryAvailableDomains())]);
+                const [{ Domains: domains }] = await Promise.all([
+                    api<{ Domains: string[] }>(queryAvailableDomains('signup')),
+                ]);
                 setModelDiff({ domains });
             } catch (error) {
                 return setModelDiff({ step: NO_SIGNUP });
