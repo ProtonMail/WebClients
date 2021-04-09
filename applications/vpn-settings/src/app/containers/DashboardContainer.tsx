@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import {
     PlansSection,
-    SubscriptionSection,
     BillingSection,
     useUser,
     SettingsPropsShared,
@@ -10,6 +9,7 @@ import {
     usePlans,
     useSubscription,
     useOrganization,
+    YourPlanSection,
 } from 'react-components';
 import { PERMISSIONS, DEFAULT_CYCLE, PLAN_SERVICES, CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
 import { Plan, PlanIDs, UserModel } from 'proton-shared/lib/interfaces';
@@ -127,7 +127,7 @@ const DashboardContainer = ({ setActiveSection, location }: SettingsPropsShared)
             setActiveSection={setActiveSection}
         >
             {!user.hasPaidVpn ? <PlansSection /> : null}
-            <SubscriptionSection />
+            <YourPlanSection />
             <BillingSection />
         </PrivateMainSettingsAreaWithPermissions>
     );
