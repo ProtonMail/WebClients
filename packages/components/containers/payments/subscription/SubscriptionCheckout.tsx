@@ -26,7 +26,7 @@ interface Props {
     checkResult?: Partial<SubscriptionCheckResponse>;
     currency: Currency;
     cycle: Cycle;
-    coupon?: string;
+    coupon?: string | null;
     gift?: string;
     onChangeCycle: (cycle: Cycle) => void;
     onChangeCurrency: (currency: Currency) => void;
