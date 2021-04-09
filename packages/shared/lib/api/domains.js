@@ -13,9 +13,10 @@ export const queryDomainAddresses = (domainID) => ({
     method: 'get',
 });
 
-export const queryAvailableDomains = () => ({
+export const queryAvailableDomains = (Type) => ({
     url: 'domains/available',
     method: 'get',
+    params: { Type },
 });
 
 export const queryPremiumDomains = () => ({
