@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import * as H from 'history';
 import { c } from 'ttag';
-import { MinimalLoginContainer, Href, SimpleDropdown, DropdownMenu, OnLoginCallback } from 'react-components';
+import { useApi, MinimalLoginContainer, Href, SimpleDropdown, DropdownMenu, OnLoginCallback } from 'react-components';
+import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
 import { isMember } from 'proton-shared/lib/user/helpers';
 import SignInLayout from '../components/layout/SignInLayout';
 
@@ -12,6 +13,13 @@ interface Props {
 
 const LoginContainer = ({ onLogin }: Props) => {
     const location = useLocation<{ from?: H.Location }>();
+    const normalApi = useApi();
+    const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
+
+    useEffect(() => {
+        silentApi(queryAvailableDomains('login'));
+    }, []);
+
     return (
         <SignInLayout title={c('Title').t`Log in`}>
             <h2>{c('Title').t`User log in`}</h2>
