@@ -63,7 +63,7 @@ const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
 
     useEffect(() => {
         // Preparing login improvements
-        silentApi(queryAvailableDomains());
+        silentApi(queryAvailableDomains('login'));
         return () => {
             cacheRef.current = undefined;
             generateInternalAddressRef.current = undefined;
