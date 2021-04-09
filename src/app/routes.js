@@ -230,7 +230,7 @@ export default angular
                         return signupModel.getOptionsVerification();
                     },
                     domains(pmDomainModel) {
-                        return pmDomainModel.fetch();
+                        return pmDomainModel.fetch({ params: { Type: 'signup' } });
                     }
                 }
             })

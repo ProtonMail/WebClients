@@ -11,8 +11,8 @@ function pmDomainModel(authentication, dispatchers, domainApi) {
 
     const allowPremium = () => authentication.isLoggedIn() && authentication.hasPaidMail();
 
-    function fetch() {
-        const promises = [domainApi.available()];
+    function fetch(params) {
+        const promises = [domainApi.available(params)];
 
         if (allowPremium()) {
             promises.push(domainApi.premium());

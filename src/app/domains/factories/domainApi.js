@@ -15,7 +15,7 @@ function domainApi($http, url) {
     /**
      * Return the list of domains available during the signing process
      */
-    const available = () => $http.get(requestURL('available')).then(handleResult);
+    const available = (params) => $http.get(requestURL('available'), params).then(handleResult);
     /**
      * Get premium domains
      */

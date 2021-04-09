@@ -49,7 +49,8 @@ const loginContainer = (
     translator,
     gettextCatalog,
     networkActivityTracker,
-    authentication
+    authentication,
+    domainApi
 ) => {
     const userApi = User;
     const keysApi = Key;
@@ -59,6 +60,8 @@ const loginContainer = (
     }));
 
     const track = networkActivityTracker.track;
+
+    domainApi.available({ params: { Type: 'login' }, noNotify: true });
 
     const handleSuccess = ({ UID, EventID, User, mailboxPassword, plainMailboxPassword }) => {
         tempStorage.setItem('plainMailboxPass', plainMailboxPassword);
