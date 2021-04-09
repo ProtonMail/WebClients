@@ -30,23 +30,31 @@ const Toggle = (
         );
     };
     return (
-        <>
+        <label
+            htmlFor={id}
+            className={classnames([
+                'toggle-label',
+                className,
+                disabled && 'toggle-label--disabled',
+                checked && 'toggle-label--checked',
+                loading && 'toggle-label--loading',
+            ])}
+            title={title}
+        >
             <input
-                disabled={loading ? true : disabled}
+                disabled={loading || disabled}
                 id={id}
                 onChange={handleChange}
                 type="checkbox"
-                className={classnames(['toggle-checkbox', className])}
+                className={classnames(['toggle-checkbox sr-only', className])}
                 checked={checked}
                 aria-busy={loading}
                 ref={ref}
                 {...rest}
             />
-            <label htmlFor={id} className={classnames(['toggle-label', className])} title={title}>
-                {label('off', loading && !checked)}
-                {label('on', loading && checked)}
-            </label>
-        </>
+            {label('off', loading && !checked)}
+            {label('on', loading && checked)}
+        </label>
     );
 };
 
