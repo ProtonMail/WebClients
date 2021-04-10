@@ -851,8 +851,9 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
     if (!invitationApi) {
         if (hasDecryptionError) {
             // the event exists in the db but couldn't be decrypted
-            const to = `/settings/security#addresses`;
-            const toApp = APPS.PROTONMAIL;
+            const to = `/mail/encryption-keys#addresses`;
+            const toApp = APPS.PROTONACCOUNT;
+
             if (canBeManaged) {
                 return {
                     to,

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AppLink, Button, Icon } from 'react-components';
+import { Button, Icon, SettingsLink } from 'react-components';
 import { c } from 'ttag';
 import { APPS } from 'proton-shared/lib/constants';
 import { MessageExtended, MessageErrors } from '../../../models/message';
@@ -70,13 +70,13 @@ const ExtraErrors = ({ message }: Props) => {
                         )}
                         {showKeysLink && (
                             <span className="flex-item-noshrink flex">
-                                <AppLink
-                                    to="/settings/security"
-                                    toApp={APPS.PROTONMAIL}
+                                <SettingsLink
+                                    path="/encryption-keys"
+                                    app={APPS.PROTONMAIL}
                                     className="text-underline color-inherit mtauto"
                                 >
                                     {c('Action').t`View keys`}
-                                </AppLink>
+                                </SettingsLink>
                             </span>
                         )}
                     </div>

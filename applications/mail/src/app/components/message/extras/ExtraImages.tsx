@@ -18,7 +18,7 @@ const ExtraImages = ({
     onLoadImages,
 }: Props) => {
     const [mailSettings] = useMailSettings();
-    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
+    const [{ Shortcuts = 1 } = {}] = useMailSettings();
 
     if (type === 'embedded' && hasShowEmbedded(mailSettings)) {
         return null;

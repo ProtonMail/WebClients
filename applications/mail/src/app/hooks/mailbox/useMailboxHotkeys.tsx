@@ -67,14 +67,13 @@ export const useMailboxHotkeys = (
         handleFilter,
     }: MailboxHotkeysHandlers
 ) => {
-    const [mailSettings] = useMailSettings();
+    const [{ Shortcuts = 1 } = {}] = useMailSettings();
     const getElementsFromIDs = useGetElementsFromIDs();
     const history = useHistory<any>();
     const [folders] = useFolders();
     const [labels] = useLabels();
     const folderNavigationHotkeys = useFolderNavigationHotkeys();
 
-    const { Shortcuts = 0 } = mailSettings || {};
     const labelIDs = labels?.map(({ ID }) => ID);
     const elementIDForList = checkedIDs.length ? undefined : elementID;
 

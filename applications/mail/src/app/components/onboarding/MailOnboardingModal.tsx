@@ -1,7 +1,12 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
-import { OnboardingContent, OnboardingModal, OnboardingStep, OnboardingStepRenderCallback } from 'react-components';
+import {
+    OnboardingContent,
+    OnboardingModal,
+    OnboardingStep,
+    OnboardingStepRenderCallback,
+    useAppLink,
+} from 'react-components';
 import { getAppName } from 'proton-shared/lib/apps/helper';
 import { APPS } from 'proton-shared/lib/constants';
 
@@ -9,7 +14,7 @@ import onboardingWelcome from 'design-system/assets/img/onboarding/mail-welcome.
 
 const MailOnboardingModal = (props: any) => {
     const appName = getAppName(APPS.PROTONMAIL);
-    const history = useHistory();
+    const appLink = useAppLink();
 
     return (
         <OnboardingModal {...props}>
@@ -19,7 +24,7 @@ const MailOnboardingModal = (props: any) => {
                     submit={c('Onboarding').t`Start using ${appName}`}
                     onSubmit={onClose}
                     onClose={() => {
-                        history.push('/settings/import');
+                        appLink('/mail/import-export', APPS.PROTONACCOUNT);
                         onClose?.();
                     }}
                     close={c('Action').t`Import your emails`}
