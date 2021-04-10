@@ -41,6 +41,7 @@ export const APPS_CONFIGURATION = {
         name: 'Proton Account',
         clientID: 'WebAccount',
         icon: 'protonaccount',
+        settingsSlug: 'account',
     },
     [APPS.PROTONMAIL]: {
         publicPath: '',
@@ -48,6 +49,7 @@ export const APPS_CONFIGURATION = {
         name: 'ProtonMail',
         clientID: 'WebMail',
         icon: 'protonmail',
+        settingsSlug: 'mail',
     },
     [APPS.PROTONCONTACTS]: {
         publicPath: '/contacts',
@@ -55,6 +57,7 @@ export const APPS_CONFIGURATION = {
         name: 'ProtonContacts',
         clientID: 'WebContacts',
         icon: 'protoncontacts',
+        settingsSlug: 'contacts',
     },
     [APPS.PROTONDRIVE]: {
         publicPath: '/drive',
@@ -62,6 +65,7 @@ export const APPS_CONFIGURATION = {
         name: 'ProtonDrive',
         clientID: 'WebDrive',
         icon: 'protondrive',
+        settingsSlug: 'drive',
     },
     [APPS.PROTONCALENDAR]: {
         publicPath: '/calendar',
@@ -69,6 +73,7 @@ export const APPS_CONFIGURATION = {
         name: 'ProtonCalendar',
         clientID: 'WebCalendar',
         icon: 'protoncalendar',
+        settingsSlug: 'calendar',
     },
     [APPS.PROTONVPN_SETTINGS]: {
         publicPath: '',
@@ -76,6 +81,7 @@ export const APPS_CONFIGURATION = {
         name: 'ProtonVPN',
         clientID: 'WebVPNSettings',
         icon: 'protonvpn',
+        settingsSlug: 'vpn',
     },
     [APPS.PROTONADMIN]: {
         publicPath: '',
@@ -83,6 +89,7 @@ export const APPS_CONFIGURATION = {
         name: '',
         clientID: 'WebAdmin',
         icon: '',
+        settingsSlug: '',
     },
 } as const;
 export type APP_KEYS = keyof typeof APPS;
@@ -411,11 +418,6 @@ export const CONTACTS_LIMIT = 1000;
 export const EXPORT_CONTACTS_LIMIT = 50; // Maximum page size for export is 50 from API
 export const CONTACTS_REQUESTS_PER_SECOND = 10;
 export const ALL_MEMBERS_ID = -100;
-
-export const API_SAFE_INTERVAL = 100; // API request limit: 100 requests / 10 seconds, so 1 request every 100 ms is safe
-export const QUERY_EXPORT_MAX_PAGESIZE = 50; // in GET API route /contacts/export
-// Manual limit on number of imported contacts to be sent to the API, so that the response does not take too long
-export const ADD_CONTACTS_MAX_SIZE = 10;
 
 export enum LABEL_EXCLUSIVE {
     FOLDER = 1,
