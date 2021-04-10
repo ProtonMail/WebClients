@@ -2,10 +2,8 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { IllustrationPlaceholder, PrimaryButton, useModals } from 'react-components';
-import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 
-import noLinksSvgLight from 'design-system/assets/img/pd-images/no-sharing-link.svg';
-import noLinksSvgDark from 'design-system/assets/img/pd-images/no-sharing-link-dark.svg';
+import noLinksSvg from 'design-system/assets/img/placeholders/file-share.svg';
 
 import SelectedFileToShareModal from '../SelectedFileToShareModal';
 
@@ -24,11 +22,7 @@ const EmptyShared = ({ shareId }: Props) => {
 
     return (
         <div role="presentation" className="p2 mt2 flex w100 flex flex-item-fluid">
-            <IllustrationPlaceholder
-                className="w20"
-                url={getLightOrDark(noLinksSvgLight, noLinksSvgDark)}
-                title={c('Info').t`Share files with links`}
-            >
+            <IllustrationPlaceholder className="w20" url={noLinksSvg} title={c('Info').t`Share files with links`}>
                 <p className="m0">{c('Info').t`Create links and share your files with others.`}</p>
                 <div className="mt2 flex flex-column flex-nowrap w200p flex-item-noshrink">
                     <PrimaryButton size="large" className="text-bold mt0-25 w100" onClick={onShareFile}>
