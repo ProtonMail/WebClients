@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import unsupportedPreviewSvg from 'design-system/assets/img/shared/preview-unsupported.svg';
-import corruptedPreviewSvg from 'design-system/assets/img/shared/preview-corrupted.svg';
+import unsupportedPreviewSvg from 'design-system/assets/img/errors/broken-file.svg';
+import corruptedPreviewSvg from 'design-system/assets/img/errors/broken-image.svg';
 import { PrimaryButton } from '../../components';
 import { useActiveBreakpoint } from '../../hooks';
 import { classnames } from '../../helpers';

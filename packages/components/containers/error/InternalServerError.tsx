@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import internalServerErrorSvg from 'design-system/assets/img/shared/internal-server-error.svg';
+import internalServerErrorSvg from 'design-system/assets/img/errors/error-500.svg';
 import IllustrationPlaceholder from '../illustration/IllustrationPlaceholder';
 
 const InternalServerError = () => {

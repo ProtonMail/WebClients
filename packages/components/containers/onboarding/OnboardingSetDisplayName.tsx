@@ -1,8 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import onboardingWelcome from 'design-system/assets/img/onboarding/onboarding-welcome.svg';
-import onboardingWelcomeDark from 'design-system/assets/img/onboarding/onboarding-welcome-dark.svg';
-import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
+import onboardingWelcome from 'design-system/assets/img/onboarding/proton-welcome.svg';
 
 import { Label } from '../../components/label';
 import { Input, LegacyInputField } from '../../components/input';
@@ -28,7 +26,7 @@ const OnboardingSetDisplayName = ({
         <OnboardingContent
             description={c('Onboarding Proton')
                 .t`Proton is your private space on the Internet. No one is reading your emails, monitoring your calendar events, or scanning your files. Your data is encrypted, and you’re in control.`}
-            img={<img src={getLightOrDark(onboardingWelcome, onboardingWelcomeDark)} alt="Proton" />}
+            img={<img src={onboardingWelcome} alt="Proton" />}
             text={
                 !hideDisplayName &&
                 c('Onboarding Proton')

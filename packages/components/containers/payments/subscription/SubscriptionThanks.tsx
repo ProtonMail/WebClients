@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
 import { APPS, PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
-import mailLandscapeSvg from 'design-system/assets/img/pm-images/landscape.svg';
-import vpnLandscapeSvg from 'design-system/assets/img/pv-images/landscape.svg';
+import mailThanksSvg from 'design-system/assets/img/pm-images/thank-you-mail.svg';
+import vpnThanksSvg from 'design-system/assets/img/pv-images/thank-you-vpn.svg';
 import appStoreSvg from 'design-system/assets/img/shared/app-store.svg';
 import playStoreSvg from 'design-system/assets/img/shared/play-store.svg';
 import { PrimaryButton, Href } from '../../../components';
@@ -26,7 +26,7 @@ const SubscriptionThanks = ({ method, onClose }: Props) => {
             <p className="text-center mb2">{c('Info')
                 .t`Download your favorite app today and take privacy with you everywhere you go.`}</p>
             <div className="text-center mb2">
-                <img src={isVPN ? vpnLandscapeSvg : mailLandscapeSvg} alt="landscape" />
+                <img src={isVPN ? vpnThanksSvg : mailThanksSvg} alt="Thanks" />
             </div>
             <div className="mb2 text-center">
                 <Href
