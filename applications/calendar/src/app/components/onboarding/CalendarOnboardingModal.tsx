@@ -3,11 +3,9 @@ import { c } from 'ttag';
 import { getAppName } from 'proton-shared/lib/apps/helper';
 import { OnboardingContent, OnboardingModal, OnboardingStep, OnboardingStepRenderCallback } from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
-import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 import { useHistory } from 'react-router-dom';
 
-import onboardingWelcome from 'design-system/assets/img/onboarding/onboarding-protoncalendar.svg';
-import onboardingWelcomeDark from 'design-system/assets/img/onboarding/onboarding-protoncalendar-dark.svg';
+import onboardingWelcome from 'design-system/assets/img/onboarding/calendar-welcome.svg';
 import { CALENDAR_APP_NAME } from '../../constants';
 
 const CalendarOnboardingModal = (props: any) => {
@@ -32,7 +30,7 @@ const CalendarOnboardingModal = (props: any) => {
                         <OnboardingContent
                             description={c(`Onboarding ProtonCalendar`)
                                 .t`${CALENDAR_APP_NAME} keeps your plans secure with end-to-end encryption, so we can’t see what you’re doing.`}
-                            img={<img src={getLightOrDark(onboardingWelcome, onboardingWelcomeDark)} alt={appName} />}
+                            img={<img src={onboardingWelcome} alt={appName} />}
                             text={c(`Onboarding ProtonCalendar`)
                                 .t`We recommend importing your events from your existing calendar. Our import tool is quick and easy, and works with any other provider.`}
                         />
