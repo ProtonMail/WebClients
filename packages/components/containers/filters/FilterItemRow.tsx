@@ -4,7 +4,7 @@ import { FILTER_STATUS } from 'proton-shared/lib/constants';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { toggleEnable, deleteFilter } from 'proton-shared/lib/api/filters';
 
-import { Alert, Toggle, DropdownActions, ConfirmModal, OrderableTableRow, ErrorButton } from '../../components';
+import { Alert, Toggle, DropdownActions, ConfirmModal, OrderableTableRow, Button } from '../../components';
 import { useApi, useModals, useEventManager, useLoading, useNotifications } from '../../hooks';
 
 import FilterModal from './modal/FilterModal';
@@ -33,7 +33,7 @@ function FilterItemRow({ filter, index, ...rest }: Props) {
                 <ConfirmModal
                     title={c('Title').t`Delete ${filter.Name}`}
                     onConfirm={resolve}
-                    confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
+                    confirm={<Button color="danger" type="submit">{c('Action').t`Delete`}</Button>}
                     onClose={reject}
                 >
                     <Alert type="info">{c('Info')
@@ -72,7 +72,7 @@ function FilterItemRow({ filter, index, ...rest }: Props) {
             onClick: handleEdit(),
         },
         {
-            text: c('Action').t`Edit Sieve`,
+            text: c('Action').t`Edit sieve`,
             onClick: handleEdit('sieve'),
         },
         {

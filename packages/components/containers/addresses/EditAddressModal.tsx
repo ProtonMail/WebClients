@@ -50,7 +50,7 @@ const EditAddressModal = ({ onClose, address, ...rest }: Props) => {
             onClose={onClose}
             onSubmit={() => withLoading(handleSubmit())}
             title={c('Title').t`Edit address`}
-            submit={c('Action').t`Save`}
+            submit={c('Action').t`Save address`}
             loading={loading}
             {...rest}
         >

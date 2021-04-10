@@ -5,7 +5,7 @@ import { normalize } from 'proton-shared/lib/helpers/string';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { addTreeFilter, updateFilter } from 'proton-shared/lib/api/filters';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
-import { FormModal, ConfirmModal, Alert, Loader, ErrorButton } from '../../../components';
+import { FormModal, ConfirmModal, Alert, Loader, Button } from '../../../components';
 import {
     useLoading,
     useLabels,
@@ -25,8 +25,6 @@ import FilterActionsForm from './FilterActionsForm';
 import FilterConditionsForm from './FilterConditionsForm';
 import FilterPreview from './FilterPreview';
 
-import { DEFAULT_FOLDERS } from '../constants';
-
 import {
     SimpleFilterModalModel,
     Filter,
@@ -42,6 +40,7 @@ import {
 import { computeFromTree, convertModel } from '../utils';
 
 import { generateUID } from '../../../helpers';
+import { getDefaultFolders } from '../constants';
 
 interface Props {
     filter?: Filter;
@@ -132,7 +131,7 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
                 },
                 folderOrLabel: string
             ) => {
-                const defaultFolderNames = DEFAULT_FOLDERS.map((f) => f.value);
+                const defaultFolderNames = getDefaultFolders().map((f) => f.value);
                 if (defaultFolderNames.includes(folderOrLabel) || folders?.find((f) => f.Path === folderOrLabel)) {
                     acc.folder = [folderOrLabel];
                 }
@@ -237,7 +236,7 @@ const FilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
             <ConfirmModal
                 onConfirm={onClose}
                 title={c('Title').t`Are you sure you want to close?`}
-                confirm={<ErrorButton type="submit">{c('Action').t`Discard`}</ErrorButton>}
+                confirm={<Button color="danger" type="submit">{c('Action').t`Discard`}</Button>}
             >
                 <Alert>{c('Info').t`All your changes will be lost.`}</Alert>
                 <Alert type="error">{c('Info').t`Are you sure you want to discard your changes?`}</Alert>

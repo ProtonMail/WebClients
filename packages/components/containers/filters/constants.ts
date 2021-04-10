@@ -64,107 +64,78 @@ export const getOperatorLabels = (statement: FilterStatement) => {
 
 export const TYPES = [
     {
-        label: c('Filter modal type').t`Select…`,
+        label: getConditionTypeLabels(ConditionType.SELECT),
         value: ConditionType.SELECT,
     },
     {
-        label: c('Filter modal type').t`The subject`,
+        label: getConditionTypeLabels(ConditionType.SUBJECT),
         value: ConditionType.SUBJECT,
     },
     {
-        label: c('Filter modal type').t`The sender`,
+        label: getConditionTypeLabels(ConditionType.SENDER),
         value: ConditionType.SENDER,
     },
     {
-        label: c('Filter modal type').t`The recipient`,
+        label: getConditionTypeLabels(ConditionType.RECIPIENT),
         value: ConditionType.RECIPIENT,
     },
     {
-        label: c('Filter modal type').t`The attachment`,
+        label: getConditionTypeLabels(ConditionType.ATTACHMENTS),
         value: ConditionType.ATTACHMENTS,
     },
 ];
 
 export const COMPARATORS = [
     {
-        label: c('Condition for custom filter').t`contains`,
+        label: getComparatorLabels(ConditionComparator.CONTAINS),
         value: ConditionComparator.CONTAINS,
     },
     {
-        label: c('Condition for custom filter').t`is exactly`,
+        label: getComparatorLabels(ConditionComparator.IS),
         value: ConditionComparator.IS,
     },
     {
-        label: c('Condition for custom filter').t`begins with`,
+        label: getComparatorLabels(ConditionComparator.STARTS),
         value: ConditionComparator.STARTS,
     },
     {
-        label: c('Condition for custom filter').t`ends with`,
+        label: getComparatorLabels(ConditionComparator.ENDS),
         value: ConditionComparator.ENDS,
     },
     {
-        label: c('Condition for custom filter').t`matches`,
+        label: getComparatorLabels(ConditionComparator.MATCHES),
         value: ConditionComparator.MATCHES,
     },
     {
-        label: c('Condition for custom filter').t`does not contain`,
+        label: getComparatorLabels(ConditionComparator.DOES_NOT_CONTAIN),
         value: ConditionComparator.DOES_NOT_CONTAIN,
     },
     {
-        label: c('Condition for custom filter').t`is not`,
+        label: getComparatorLabels(ConditionComparator.IS_NOT),
         value: ConditionComparator.IS_NOT,
     },
     {
-        label: c('Condition for custom filter').t`does not begin with`,
+        label: getComparatorLabels(ConditionComparator.DOES_NOT_START),
         value: ConditionComparator.DOES_NOT_START,
     },
     {
-        label: c('Condition for custom filter').t`does not end with`,
+        label: getComparatorLabels(ConditionComparator.DOES_NOT_END),
         value: ConditionComparator.DOES_NOT_END,
     },
     {
-        label: c('Condition for custom filter').t`does not match`,
+        label: getComparatorLabels(ConditionComparator.DOES_NOT_MATCH),
         value: ConditionComparator.DOES_NOT_MATCH,
     },
 ];
 
 export const OPERATORS = [
     {
-        label: c('Filter modal operators').t`All conditions must be fulfilled (AND)`,
+        label: getOperatorLabels(FilterStatement.ALL),
         value: FilterStatement.ALL,
     },
     {
-        label: c('Filter modal operators').t`One condition must be fulfilled (OR)`,
+        label: getOperatorLabels(FilterStatement.ANY),
         value: FilterStatement.ANY,
-    },
-];
-
-export const DEFAULT_FOLDERS = [
-    {
-        group: c('Option group').t`Move to...`,
-        text: c('Filter Actions').t`Select a folder`,
-        value: '',
-        disabled: true,
-    },
-    {
-        group: c('Option group').t`Default folders`,
-        text: c('Filter Actions').t`Archive`,
-        value: 'archive',
-    },
-    {
-        group: c('Option group').t`Default folders`,
-        text: c('Filter Actions').t`Inbox`,
-        value: 'inbox',
-    },
-    {
-        group: c('Option group').t`Default folders`,
-        text: c('Filter Actions').t`Spam`,
-        value: 'spam',
-    },
-    {
-        group: c('Option group').t`Default folders`,
-        text: c('Filter Actions').t`Trash`,
-        value: 'trash',
     },
 ];
 

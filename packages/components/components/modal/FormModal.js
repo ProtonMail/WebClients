@@ -7,7 +7,7 @@ import DialogModal from './Dialog';
 import HeaderModal from './Header';
 import ContentModal from './Content';
 import InnerModal from './Inner';
-import { Button, PrimaryButton } from '../button';
+import { Button } from '../button';
 
 /** @type any */
 const Modal = ({
@@ -98,9 +98,9 @@ function DemoModal({ onAdd, ...rest }) {
 
         const nodeSubmit =
             typeof submit === 'string' ? (
-                <PrimaryButton loading={loading} type="submit">
+                <Button color="norm" loading={loading} type="submit">
                     {submit}
-                </PrimaryButton>
+                </Button>
             ) : (
                 submit
             );

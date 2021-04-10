@@ -21,7 +21,7 @@ const ToggleInheritParentFolderColor = ({ id, className }: Props) => {
         await api(updateInheritParentFolderColor(+target.checked));
         await call();
         createNotification({
-            text: c('label/folder notification').t`Preference updated`,
+            text: c('label/folder notification').t`Preference saved`,
         });
     };
 

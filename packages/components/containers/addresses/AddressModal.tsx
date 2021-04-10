@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { createAddress } from 'proton-shared/lib/api/addresses';
 import { ADDRESS_TYPE, MEMBER_PRIVATE } from 'proton-shared/lib/constants';
 import { Member, CachedOrganizationKey } from 'proton-shared/lib/interfaces';
-import { FormModal, Alert, Row, Field, Label, Input } from '../../components';
+import { FormModal, Row, Field, Label, Input, SelectTwo, Option } from '../../components';
 import {
     useLoading,
     useNotifications,
@@ -15,16 +15,18 @@ import {
     useUser,
 } from '../../hooks';
 
-import useAddressModal from './useAddressModal';
+import useAddressModel from './useAddressModel';
 import DomainsSelect from './DomainsSelect';
 import CreateMissingKeysAddressModal from './missingKeys/CreateMissingKeysAddressModal';
 
 interface Props {
     onClose?: () => void;
-    member: Member;
+    member?: Member;
+    members: Member[];
     organizationKey?: CachedOrganizationKey;
 }
-const AddressModal = ({ onClose, member, organizationKey, ...rest }: Props) => {
+
+const AddressModal = ({ onClose, member, members, organizationKey, ...rest }: Props) => {
     const { createModal } = useModals();
     const { call } = useEventManager();
     const [user, loadingUser] = useUser();
@@ -32,7 +34,8 @@ const AddressModal = ({ onClose, member, organizationKey, ...rest }: Props) => {
     const [premiumDomains, loadingPremiumDomains] = usePremiumDomains();
     const [premiumDomain = ''] = premiumDomains || [];
     const api = useApi();
-    const { model, update } = useAddressModal(member);
+    const initialMember = member || members[0];
+    const { model, update } = useAddressModel(initialMember);
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const hasPremium = addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
@@ -51,7 +54,7 @@ const AddressModal = ({ onClose, member, organizationKey, ...rest }: Props) => {
 
         const { Address } = await api(
             createAddress({
-                MemberID: member.ID,
+                MemberID: initialMember.ID,
                 Local,
                 Domain,
                 DisplayName,
@@ -63,11 +66,11 @@ const AddressModal = ({ onClose, member, organizationKey, ...rest }: Props) => {
         onClose?.();
         createNotification({ text: c('Success').t`Address added` });
 
-        if (member.Self || member.Private === MEMBER_PRIVATE.READABLE) {
+        if (initialMember.Self || initialMember.Private === MEMBER_PRIVATE.READABLE) {
             createModal(
                 <CreateMissingKeysAddressModal
                     organizationKey={organizationKey}
-                    member={member}
+                    member={initialMember}
                     addressesToGenerate={[Address]}
                 />
             );
@@ -76,22 +79,28 @@ const AddressModal = ({ onClose, member, organizationKey, ...rest }: Props) => {
 
     return (
         <FormModal
-            title={c('Title').t`Create address`}
-            submit={c('Action').t`Save`}
+            title={c('Title').t`Add address`}
+            submit={c('Action').t`Save address`}
             cancel={c('Action').t`Cancel`}
             loading={loading || loadingAddresses || loadingPremiumDomains || loadingUser}
             onSubmit={() => withLoading(handleSubmit())}
             onClose={onClose}
             {...rest}
         >
-            <Alert learnMore="https://protonmail.com/support/knowledge-base/addresses-and-aliases/">
-                {c('Info')
-                    .t`ProtonMail addresses can never be deleted (only disabled). ProtonMail addresses will always count towards your address limit whether enabled or not.`}
-            </Alert>
             <Row>
                 <Label>{c('Label').t`User`}</Label>
                 <Field className="flex-item-fluid-auto pt0-5">
-                    <strong>{member.Name}</strong>
+                    {member ? (
+                        <strong>{member.Name}</strong>
+                    ) : (
+                        <SelectTwo value={model.id} onChange={({ value }) => update('id', value)}>
+                            {members.map((member) => (
+                                <Option value={member.ID} title={member.Name}>
+                                    {member.Name}
+                                </Option>
+                            ))}
+                        </SelectTwo>
+                    )}
                 </Field>
             </Row>
             <Row>
@@ -107,7 +116,7 @@ const AddressModal = ({ onClose, member, organizationKey, ...rest }: Props) => {
                             />
                         </div>
                         <div className="flex-autogrid-item pb0">
-                            <DomainsSelect member={member} onChange={handleChange('domain')} />
+                            <DomainsSelect member={initialMember} onChange={handleChange('domain')} />
                         </div>
                     </div>
                 </Field>

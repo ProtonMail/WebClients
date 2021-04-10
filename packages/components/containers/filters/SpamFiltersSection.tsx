@@ -8,13 +8,14 @@ import {
 import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from 'proton-shared/lib/constants';
 import { IncomingDefault } from 'proton-shared/lib/interfaces/IncomingDefault';
 
-import { Alert, SearchInput } from '../../components';
+import { SearchInput } from '../../components';
 import { useApiResult, useApiWithoutResult, useApi, useNotifications, useModals } from '../../hooks';
 
 import useSpamList from '../../hooks/useSpamList';
 import SpamListItem from './spamlist/SpamListItem';
 import AddEmailToListModal from './AddEmailToListModal';
 import { WHITE_OR_BLACK_LOCATION } from './interfaces';
+import { SettingsSectionWide, SettingsParagraph } from '../account';
 
 const getWhiteList = () => getIncomingDefaults({ Location: WHITELIST_LOCATION });
 const getBlackList = () => getIncomingDefaults({ Location: BLACKLIST_LOCATION });
@@ -28,17 +29,7 @@ function SpamFiltersSection() {
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const reqSearch = useApiWithoutResult(getIncomingDefaults);
-    const {
-        blackList,
-        whiteList,
-        refreshWhiteList,
-        refreshBlackList,
-        move,
-        remove,
-        search,
-        create,
-        edit,
-    } = useSpamList();
+    const { blackList, whiteList, refreshWhiteList, refreshBlackList, move, remove, search, create } = useSpamList();
 
     const {
         result: white = {},
@@ -98,14 +89,6 @@ function SpamFiltersSection() {
         });
         create(type, data);
     };
-
-    const handleEdit = async (type: WHITE_OR_BLACK_LOCATION, incomingDefault: IncomingDefault) => {
-        const data: IncomingDefault = await new Promise((resolve) => {
-            createModal(<AddEmailToListModal type={type} onAdd={resolve} incomingDefault={incomingDefault} />);
-        });
-        edit(type, data);
-    };
-
     const handleMove = async (incomingDefault: IncomingDefault) => {
         const { Email, Domain, ID, Location } = incomingDefault;
         const type = Location === WHITELIST_LOCATION ? BLACKLIST_LOCATION : WHITELIST_LOCATION;
@@ -134,12 +117,12 @@ function SpamFiltersSection() {
     };
 
     return (
-        <>
-            <Alert learnMore="https://protonmail.com/support/knowledge-base/spam-filtering/">
+        <SettingsSectionWide>
+            <SettingsParagraph learnMoreUrl="https://protonmail.com/support/knowledge-base/spam-filtering/">
                 {c('FilterSettings')
-                    .t`Sender specific spam rules can be applied here. Allow List addresses always go to Inbox while Block List addresses always go to Spam. Marking a message as spam adds the address to the Block List. Marking a message as not spam adds it to the Allow List.`}
-            </Alert>
-            <div className="mb1">
+                    .t`Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.`}
+            </SettingsParagraph>
+            <div className="mb2">
                 <SearchInput
                     onChange={handleSearchChange}
                     placeholder={c('FilterSettings').t`Search in Allow List and Block List`}
@@ -152,9 +135,9 @@ function SpamFiltersSection() {
                     type={WHITELIST_LOCATION}
                     loading={loader.white}
                     onCreate={handleCreate}
-                    onEdit={handleEdit}
                     onRemove={handleRemove}
                     onMove={handleMove}
+                    className="mr1 mb2"
                 />
                 <SpamListItem
                     list={blackList}
@@ -162,12 +145,11 @@ function SpamFiltersSection() {
                     className="ml1 on-mobile-ml0"
                     loading={loader.black}
                     onCreate={handleCreate}
-                    onEdit={handleEdit}
                     onRemove={handleRemove}
                     onMove={handleMove}
                 />
             </div>
-        </>
+        </SettingsSectionWide>
     );
 }
 

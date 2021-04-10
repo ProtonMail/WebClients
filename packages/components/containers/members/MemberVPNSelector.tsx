@@ -1,6 +1,6 @@
-import React, { ChangeEvent } from 'react';
+import React from 'react';
 import { range } from 'proton-shared/lib/helpers/array';
-import { Select } from '../../components';
+import { Option, SelectTwo } from '../../components';
 
 export const getVPNRange = (
     { MaxVPN: memberMaxVPN = 0 } = {},
@@ -16,13 +16,14 @@ interface Props {
     onChange: (value: number) => void;
 }
 const MemberVPNSelector = ({ range: [min, max], step, value, onChange }: Props) => {
-    const options = range(min, max + step, step).map((value) => ({ text: value, value }));
+    const options = range(min, max + step, step).map((value) => (
+        <Option key={value} value={value} title={String(value)} />
+    ));
+
     return (
-        <Select
-            value={value}
-            options={options}
-            onChange={({ target }: ChangeEvent<HTMLSelectElement>) => onChange(+target.value)}
-        />
+        <SelectTwo value={value} onChange={({ value }) => onChange(value)}>
+            {options}
+        </SelectTwo>
     );
 };
 

@@ -1,5 +1,7 @@
 import React from 'react';
 
-const SubTitle = ({ children, ...rest }: React.HTMLAttributes<HTMLHeadingElement>) => <h2 {...rest}>{children}</h2>;
+export type SubTitleProps = React.HTMLAttributes<HTMLHeadingElement>;
+
+const SubTitle = ({ children, ...rest }: SubTitleProps) => <h2 {...rest}>{children}</h2>;
 
 export default SubTitle;

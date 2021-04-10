@@ -13,6 +13,7 @@ import InsertLinkModal from './modals/InsertLinkModal';
 const isHTMLEmpty = (html: string) => !html || html === '<div><br /></div>' || html === '<div><br></div>';
 
 interface Props {
+    id?: string;
     placeholder?: string;
     metadata: SquireEditorMetadata;
     onReady: () => void;

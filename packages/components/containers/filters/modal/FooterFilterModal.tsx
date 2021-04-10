@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { SimpleFilterModalModel, Step, Errors } from '../interfaces';
 import { classnames } from '../../../helpers/component';
-import { Button, PrimaryButton } from '../../../components';
+import { Button } from '../../../components';
 
 interface Props {
     model: SimpleFilterModalModel;
@@ -51,13 +51,14 @@ const FooterFilterModal = ({ model, errors, onClose, onChange, loading }: Props)
     return (
         <>
             {step === Step.NAME ? (
-                <Button disabled={loading} onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                <Button shape="outline" disabled={loading} onClick={onClose}>{c('Action').t`Cancel`}</Button>
             ) : (
-                <Button disabled={loading} onClick={handleBack}>{c('Action').t`Back`}</Button>
+                <Button shape="outline" disabled={loading} onClick={handleBack}>{c('Action').t`Back`}</Button>
             )}
             <div>
                 {step !== Step.PREVIEW && (
                     <Button
+                        shape="outline"
                         disabled={isNextButtonDisabled()}
                         onClick={handleNext}
                         className={classnames([step === Step.ACTIONS && 'mr1'])}
@@ -67,10 +68,11 @@ const FooterFilterModal = ({ model, errors, onClose, onChange, loading }: Props)
                 )}
 
                 {[Step.ACTIONS, Step.PREVIEW].includes(step) && (
-                    <PrimaryButton
+                    <Button
+                        color="norm"
                         disabled={loading || !!errors.name || !!errors.conditions || !!errors.actions}
                         type="submit"
-                    >{c('Action').t`Save`}</PrimaryButton>
+                    >{c('Action').t`Save`}</Button>
                 )}
             </div>
         </>

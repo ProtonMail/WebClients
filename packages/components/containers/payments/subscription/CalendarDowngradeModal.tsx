@@ -17,9 +17,8 @@ const CalendarDowngradeModal = ({ onSubmit, onClose, ...rest }: Props) => {
         onClose();
     };
 
-    // TODO: refactor with settings rework
     const linkButton = (
-        <AppLink toApp={APPS.PROTONCALENDAR} to="/settings/calendars">
+        <AppLink toApp={APPS.PROTONACCOUNT} to="/calendar/calendars" onClick={onClose}>
             {c('Action').t`Open ${CALENDAR_APP_NAME} settings`}
         </AppLink>
     );

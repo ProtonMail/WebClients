@@ -5,7 +5,7 @@ import { Tooltip, Icon } from '../../components';
 
 interface Props {
     to: string;
-    text: string;
+    text?: string;
     permission: boolean;
 }
 const LinkItem = ({ to, text, permission }: Props) => {

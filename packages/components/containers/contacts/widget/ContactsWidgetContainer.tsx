@@ -154,7 +154,7 @@ const ContactsWidgetContainer = ({ onClose, onCompose }: Props) => {
     };
 
     const handleImport = () => {
-        appLink('/settings/import#import', APPS.PROTONCONTACTS);
+        appLink('/contacts/import-export#import', APPS.PROTONACCOUNT);
     };
 
     const contactsCount = formattedContacts.length;

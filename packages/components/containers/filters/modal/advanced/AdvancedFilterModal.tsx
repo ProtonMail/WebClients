@@ -8,7 +8,7 @@ import { FILTER_VERSION } from '../../constants';
 import { Filter, StepSieve, AdvancedSimpleFilterModalModel, ErrorsSieve } from '../../interfaces';
 import { sieveTemplates, convertModel } from '../../utils';
 
-import { FormModal, ConfirmModal, Alert, useDebounceInput, ErrorButton } from '../../../../components';
+import { FormModal, ConfirmModal, Alert, useDebounceInput, Button } from '../../../../components';
 
 import {
     useModals,
@@ -151,7 +151,7 @@ const AdvancedFilterModal = ({ filter, onClose = noop, ...rest }: Props) => {
             <ConfirmModal
                 onConfirm={onClose}
                 title={c('Title').t`Are you sure you want to close?`}
-                confirm={<ErrorButton type="submit">{c('Action').t`Discard`}</ErrorButton>}
+                confirm={<Button color="danger" type="submit">{c('Action').t`Discard`}</Button>}
             >
                 <Alert>{c('Info').t`All your changes will be lost.`}</Alert>
                 <Alert type="error">{c('Info').t`Are you sure you want to discard your changes?`}</Alert>

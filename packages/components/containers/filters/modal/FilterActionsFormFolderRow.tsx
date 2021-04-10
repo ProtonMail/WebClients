@@ -2,7 +2,7 @@ import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { buildTreeview, formatFolderName } from 'proton-shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
-import { Button, Select, Tooltip, Icon } from '../../../components';
+import { Button, Select, Icon } from '../../../components';
 import { useModals } from '../../../hooks';
 import { classnames } from '../../../helpers';
 
@@ -71,10 +71,6 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
 
     const toggleSection = () => {
         handleChangeModel({ isOpen: !isOpen });
-    };
-
-    const handleClear = () => {
-        handleChangeModel({ folder: undefined });
     };
 
     const handleCreateFolder = async () => {
@@ -148,20 +144,13 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
                                 handleChangeModel({ folder: value })
                             }
                         />
-                        <Button className="mt1" onClick={handleCreateFolder}>
+                        <Button shape="outline" className="mt1" onClick={handleCreateFolder}>
                             {c('Action').t`Create folder`}
                         </Button>
                     </div>
                 ) : (
                     renderClosed()
                 )}
-            </div>
-            <div>
-                <Tooltip title={c('Action').t`Reset`}>
-                    <Button icon disabled={!moveTo?.folder} onClick={handleClear} className={isNarrow ? 'mt1' : 'ml1'}>
-                        <Icon name="remove-text-formatting" className="color-weak" />
-                    </Button>
-                </Tooltip>
             </div>
         </div>
     );

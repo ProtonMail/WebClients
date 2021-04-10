@@ -13,3 +13,8 @@ export { default as TopNavbarListItemContactsDropdown } from './widget/TopNavbar
 export { default as ContactsRow } from './ContactRow';
 export { default as ContactsList } from './ContactsList';
 export { default as useApplyGroups } from './useApplyGroups';
+export { default as ContactsSettingsExportSection } from './settings/ExportSection';
+export { default as ContactsSettingsImportSection } from './settings/ImportSection';
+export { default as ContactsSettingsContactsSection } from './settings/ContactsSection';
+export { default as ContactsSettingsGroupsSection } from './settings/ContactGroupsSection';
+export { default as ContactsExportModal } from './settings/ExportModal';

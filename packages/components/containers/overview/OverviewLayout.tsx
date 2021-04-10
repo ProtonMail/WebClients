@@ -1,13 +1,14 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { c } from 'ttag';
 import { hasMailPlus } from 'proton-shared/lib/helpers/subscription';
 import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
-import { AppLink, SettingsTitle, SectionConfig, ButtonLike } from '../../components';
+import { AppLink, SectionConfig, ButtonLike } from '../../components';
 import { useUser, useSubscription, useOrganization, useUserSettings } from '../../hooks';
 
 import SummarySection from './SummarySection';
 import IndexSection from './IndexSection';
+import { SettingsPageTitle } from '../account';
 
 interface Props {
     title: string;
@@ -18,7 +19,7 @@ interface Props {
 
 const OverviewLayout = ({ title, pages, children, limit }: Props) => {
     const mainAreaRef = useRef<HTMLDivElement>(null);
-    const [scrollTop, setScrollTop] = useState<number>(0);
+
     const [user] = useUser();
     const [userSettings] = useUserSettings();
     const [organization] = useOrganization();
@@ -31,18 +32,13 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
         }
     }, []);
 
-    const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
-        setScrollTop(e.currentTarget.scrollTop);
-    };
-
     return (
         <div className="flex flex-item-fluid on-desktop-h100 auto-tablet flex-nowrap">
             <div
                 ref={mainAreaRef}
-                onScroll={handleScroll}
                 className="relative flex-nowrap flex-item-fluid bg-weak on-desktop-h100 scroll-if-needed"
             >
-                <SettingsTitle onTop={!scrollTop}>{title}</SettingsTitle>
+                <SettingsPageTitle>{title}</SettingsPageTitle>
                 <div className="container-section-sticky pt0">
                     <div className="flex on-mobile-flex-column pb2">
                         <div className="flex-item-fluid">

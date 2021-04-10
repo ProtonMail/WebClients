@@ -1,0 +1,17 @@
+@import '~design-system/scss/config/';
+
+.settings-layout-left {
+	min-width: em(240);
+	width: em(240);
+	max-width: em(240);
+	padding-top: 0.5em;
+	padding-right: 0.5em;
+
+	@include respond-to($breakpoint-small, 'max') {
+		width: 100%;
+		max-width: none;
+		margin-bottom: 0.5em;
+		display: flex;
+		flex-direction: column;
+	}
+}

@@ -52,6 +52,7 @@ interface Props {
     onAddImages?: (files: File[]) => void;
     toolbarMoreDropdownExtension?: ReactNode;
     keydownHandler?: (e: KeyboardEvent) => void;
+    id?: string;
 }
 
 /**
@@ -77,6 +78,7 @@ const SquireEditor = (
         onAddImages = noop,
         toolbarMoreDropdownExtension = null,
         keydownHandler,
+        id,
     }: Props,
     ref: Ref<SquireEditorRef>
 ) => {
@@ -157,6 +159,7 @@ const SquireEditor = (
             {metadata.isPlainText ? (
                 <div className="w100 h100 flex-item-fluid relative">
                     <textarea
+                        id={id}
                         className="covered-absolute w100 h100 pt1 pb1 pl0-5 pr0-5"
                         ref={textareaRef}
                         onFocus={onFocus}
@@ -168,6 +171,7 @@ const SquireEditor = (
                 </div>
             ) : (
                 <SquireIframe
+                    id={id}
                     ref={squireRef}
                     placeholder={placeholder}
                     metadata={metadata}
