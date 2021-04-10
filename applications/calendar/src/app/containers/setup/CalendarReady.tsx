@@ -1,7 +1,7 @@
 import { Alert } from 'react-components';
 import { c } from 'ttag';
 import React from 'react';
-import calendarSvg from 'design-system/assets/img/pm-images/calendar.svg';
+import calendarSvg from 'design-system/assets/img/onboarding/calendar-unlock.svg';
 
 const CalendarReady = () => {
     return (
