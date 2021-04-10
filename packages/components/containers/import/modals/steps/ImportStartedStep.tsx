@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { Address } from 'proton-shared/lib/interfaces';
 
-import importStartedSvg from 'design-system/assets/img/shared/import-started.svg';
+import importStartedSvg from 'design-system/assets/img/onboarding/import-assistant.svg';
 
 import { ImportModalModel } from '../../interfaces';
 
