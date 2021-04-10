@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { getCountryByAbbr, correctAbbr } from '../../../helpers/countries';
 
-const flags = require.context('design-system/assets/img/shared/flags/4x3', true, /.svg$/);
+const flags = require.context('design-system/assets/img/flags', true, /.svg$/);
 const flagsMap = flags.keys().reduce((acc, key) => {
     acc[key] = () => flags(key);
     return acc;
 }, {});
 
 const getFlagSvg = (abbreviation) => {
-    const key = `./${abbreviation.toLowerCase()}.svg`;
+    const key = `./${abbreviation}.svg`;
     if (!flagsMap[key]) {
         return;
     }

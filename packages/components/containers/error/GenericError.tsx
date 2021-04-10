@@ -1,9 +1,7 @@
 import React, { ReactNode } from 'react';
 import { c } from 'ttag';
 
-import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
-import errorImgLight from 'design-system/assets/img/shared/generic-error.svg';
-import errorImgDark from 'design-system/assets/img/shared/generic-error-dark.svg';
+import errorImg from 'design-system/assets/img/errors/generic-error.svg';
 
 import IllustrationPlaceholder from '../illustration/IllustrationPlaceholder';
 import InlineLinkButton from '../../components/button/InlineLinkButton';
@@ -14,8 +12,6 @@ interface Props {
 }
 
 const GenericError = ({ className, children }: Props) => {
-    const errorImg = getLightOrDark(errorImgLight, errorImgDark);
-
     const refresh = (
         <InlineLinkButton key="1" onClick={() => window.location.reload()}>{c('Action')
             .t`refresh the page`}</InlineLinkButton>

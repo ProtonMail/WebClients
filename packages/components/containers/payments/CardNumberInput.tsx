@@ -1,12 +1,11 @@
 import React from 'react';
 import creditCardType from 'credit-card-type';
-import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 import { isNumber } from 'proton-shared/lib/helpers/validators';
 
 import Input, { Props as InputProps } from '../../components/input/Input';
 import { Icon } from '../../components';
 
-const banks = require.context('design-system/assets/img/shared/bank-icons', true, /.svg$/);
+const banks = require.context('design-system/assets/img/credit-card-icons', true, /.svg$/);
 
 const banksMap = banks.keys().reduce<{ [key: string]: () => { default: string } }>((acc, key) => {
     acc[key] = () => banks(key);
@@ -15,14 +14,12 @@ const banksMap = banks.keys().reduce<{ [key: string]: () => { default: string } 
 
 const getBankSvg = (type = '') => {
     const key = `./cc-${type}.svg`;
-    const keyDark = `./cc-${type}-dark.svg`;
+
     if (!banksMap[key]) {
         return;
     }
-    const ligthLogo = banksMap[key]().default;
-    const darkLogo = !banksMap[keyDark] ? ligthLogo : banksMap[keyDark]().default;
 
-    return getLightOrDark(ligthLogo, darkLogo);
+    return banksMap[key]().default;
 };
 
 const isValidNumber = (v: string) => !v || isNumber(v);
