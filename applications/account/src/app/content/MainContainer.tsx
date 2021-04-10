@@ -1,43 +1,49 @@
-import React, { useState, useEffect } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
+import { useRouteMatch, Route, Redirect, Switch, useLocation } from 'react-router-dom';
+
 import {
-    Sidebar,
-    SidebarNav,
-    SidebarList,
-    SidebarListItemsWithSubsections,
     useActiveBreakpoint,
     useToggle,
-    useUser,
     PrivateHeader,
     PrivateAppContainer,
-    MainLogo,
-    useOrganization,
     useModals,
     useWelcomeFlags,
-    useEarlyAccess,
+    Logo,
+    useUser,
+    LoaderPage,
+    useOrganization,
 } from 'react-components';
 
-import { getPages } from '../pages';
-import OrganizationContainer from '../containers/OrganizationContainer';
-import SubscriptionContainer from '../containers/SubscriptionContainer';
-import AccountContainer from '../containers/AccountContainer';
-import GeneralContainer from '../containers/GeneralContainer';
-import SecurityContainer from '../containers/SecurityContainer';
-import OverviewContainer from '../containers/OverviewContainer';
-import SidebarVersion from './SidebarVersion';
 import AccountOnboardingModal from '../components/AccountOnboardingModal';
+import AccountPasswordAndRecoverySettings from '../containers/account/AccountPasswordAndRecoverySettings';
+import AccountSecuritySettings from '../containers/account/AccountSecuritySettings';
+import AccountPaymentSettings from '../containers/account/AccountPaymentSettings';
+import AccountDashboardSettings from '../containers/account/AccountDashboardSettings';
+import OrganizationMultiUserSupportSettings from '../containers/organization/OrganizationMultiUserSupportSettings';
+import AccountSidebar from './AccountSidebar';
+import { ALLOWED_SLUGS, AppSlug, getAppFromSlug } from '../models';
+import MailDomainNamesSettings from '../containers/mail/MailDomainNamesSettings';
+import OrganizationUsersAndAddressesSettings from '../containers/organization/OrganizationUsersAndAddressesSettings';
+import OrganizationKeysSettings from '../containers/organization/OrganizationKeysSettings';
+
+const MailSettingsRouter = React.lazy(() => import('../containers/mail/MailSettingsRouter'));
+const CalendarSettingsRouter = React.lazy(() => import('../containers/calendar/CalendarSettingsRouter'));
+const ContactsSettingsRouter = React.lazy(() => import('../containers/contacts/ContactsSettingsRouter'));
+const VpnSettingsRouter = React.lazy(() => import('../containers/vpn/VpnSettingsRouter'));
+
+const DEFAULT_REDIRECT = '/account/dashboard';
 
 const MainContainer = () => {
     const [user] = useUser();
     const location = useLocation();
-    const [organization] = useOrganization();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
-    const [activeSection, setActiveSection] = useState('');
     const { isNarrow } = useActiveBreakpoint();
     const [welcomeFlags, setWelcomeFlagDone] = useWelcomeFlags();
     const { createModal } = useModals();
-    const { hasEarlyAccess } = useEarlyAccess();
+    const [organization] = useOrganization();
+
+    const [isBlurred, setBlurred] = useState(false);
 
     useEffect(() => {
         setExpand(false);
@@ -49,7 +55,19 @@ const MainContainer = () => {
         }
     }, []);
 
-    const logo = <MainLogo to="/" />;
+    const match = useRouteMatch<{ appSlug: AppSlug }>('/:appSlug');
+
+    if (!match || !ALLOWED_SLUGS.includes(match?.params?.appSlug)) {
+        return <Redirect to={DEFAULT_REDIRECT} />;
+    }
+
+    const {
+        params: { appSlug },
+    } = match;
+
+    const app = getAppFromSlug(appSlug);
+
+    const logo = <Logo appName={app} to="/" toApp={app} target="_self" />;
 
     const header = (
         <PrivateHeader
@@ -62,41 +80,67 @@ const MainContainer = () => {
     );
 
     const sidebar = (
-        <Sidebar logo={logo} expanded={expanded} onToggleExpand={onToggleExpand} version={<SidebarVersion />}>
-            <SidebarNav>
-                <SidebarList>
-                    <SidebarListItemsWithSubsections
-                        list={getPages(user, organization, hasEarlyAccess)}
-                        pathname={location.pathname}
-                        activeSection={activeSection}
-                    />
-                </SidebarList>
-            </SidebarNav>
-        </Sidebar>
+        <AccountSidebar originApp={appSlug} logo={logo} expanded={expanded} onToggleExpand={onToggleExpand} />
     );
 
+    const canHaveOrganization = user && !user.isMember;
+
+    const hasOrganization = organization?.HasKeys;
+
     return (
-        <PrivateAppContainer header={header} sidebar={sidebar} isBlurred={welcomeFlags.isWelcomeFlow}>
+        <PrivateAppContainer header={header} sidebar={sidebar} isBlurred={isBlurred || welcomeFlags.isWelcomeFlow}>
             <Switch>
-                <Route path="/overview">
-                    <OverviewContainer />
+                <Route path={`/${appSlug}/dashboard`}>
+                    <AccountDashboardSettings location={location} setActiveSection={() => {}} />
                 </Route>
-                <Route path="/account">
-                    <AccountContainer location={location} setActiveSection={setActiveSection} user={user} />
+                <Route path={`/${appSlug}/authentication`}>
+                    <AccountPasswordAndRecoverySettings location={location} setActiveSection={() => {}} user={user} />
                 </Route>
-                <Route path="/organization/:memberID?">
-                    <OrganizationContainer location={location} setActiveSection={setActiveSection} />
+                <Route path={`/${appSlug}/payment`}>
+                    <AccountPaymentSettings location={location} setActiveSection={() => {}} />
                 </Route>
-                <Route path="/subscription">
-                    <SubscriptionContainer location={location} setActiveSection={setActiveSection} />
+                <Route path={`/${appSlug}/security`}>
+                    <AccountSecuritySettings location={location} setActiveSection={() => {}} />
                 </Route>
-                <Route path="/general">
-                    <GeneralContainer location={location} setActiveSection={setActiveSection} />
+                {canHaveOrganization ? (
+                    <Route path={`/${appSlug}/multi-user-support`}>
+                        <OrganizationMultiUserSupportSettings location={location} />
+                    </Route>
+                ) : null}
+                {canHaveOrganization && hasOrganization
+                    ? [
+                          <Route key="0" path={`/${appSlug}/domain-names`}>
+                              <MailDomainNamesSettings location={location} />
+                          </Route>,
+                          <Route key="1" path={`/${appSlug}/organization-keys`}>
+                              <OrganizationKeysSettings location={location} />
+                          </Route>,
+                          <Route key="2" path={`/${appSlug}/users-addresses`}>
+                              <OrganizationUsersAndAddressesSettings location={location} />
+                          </Route>,
+                      ]
+                    : null}
+                <Route path="/mail">
+                    <Suspense fallback={<LoaderPage />}>
+                        <MailSettingsRouter onChangeBlurred={setBlurred} />
+                    </Suspense>
                 </Route>
-                <Route path="/security">
-                    <SecurityContainer location={location} setActiveSection={setActiveSection} />
+                <Route path="/calendar">
+                    <Suspense fallback={<LoaderPage />}>
+                        <CalendarSettingsRouter user={user} />
+                    </Suspense>
                 </Route>
-                <Redirect to="/overview" />
+                <Route path="/contacts">
+                    <Suspense fallback={<LoaderPage />}>
+                        <ContactsSettingsRouter />
+                    </Suspense>
+                </Route>
+                <Route path="/vpn">
+                    <Suspense fallback={<LoaderPage />}>
+                        <VpnSettingsRouter />
+                    </Suspense>
+                </Route>
+                <Redirect to={DEFAULT_REDIRECT} />
             </Switch>
         </PrivateAppContainer>
     );

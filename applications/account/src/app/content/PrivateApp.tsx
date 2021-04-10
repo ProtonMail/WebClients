@@ -13,6 +13,10 @@ import {
     MembersModel,
     SubscriptionModel,
     PaymentMethodsModel,
+    ImportersModel,
+    ImportHistoriesModel,
+    CalendarsModel,
+    CalendarUserSettingsModel,
 } from 'proton-shared/lib/models';
 
 const EVENT_MODELS = [
@@ -27,9 +31,13 @@ const EVENT_MODELS = [
     OrganizationModel,
     MembersModel,
     PaymentMethodsModel,
+    ImportersModel,
+    ImportHistoriesModel,
+    CalendarsModel,
+    CalendarUserSettingsModel,
 ];
 
-const PRELOAD_MODELS = [UserSettingsModel, UserModel];
+const PRELOAD_MODELS = [UserSettingsModel, MailSettingsModel, UserModel];
 
 const getAppContainer = () => import('./SetupMainContainer');
 
