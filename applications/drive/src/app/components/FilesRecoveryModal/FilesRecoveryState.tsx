@@ -3,10 +3,7 @@ import { c } from 'ttag';
 
 import { HeaderModal, InnerModal, FooterModal, Button, Alert, PrimaryButton } from 'react-components';
 
-import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
-
-import keyAndFileSvgLight from 'design-system/assets/img/pd-images/key-and-files.svg';
-import keyAndFileSvgDark from 'design-system/assets/img/pd-images/key-and-files-dark.svg';
+import keyAndFileSvg from 'design-system/assets/img/placeholders/file-recovery.svg';
 
 interface Props {
     onRecovery: () => void;
@@ -26,11 +23,7 @@ const FilesRecoveryState = ({ onRecovery, onClose, recovering }: Props) => {
             <div className="modal-content">
                 <InnerModal>
                     <div className="p1 flex w100">
-                        <img
-                            src={getLightOrDark(keyAndFileSvgLight, keyAndFileSvgDark)}
-                            alt={title}
-                            className="w50 mauto"
-                        />
+                        <img src={keyAndFileSvg} alt={title} className="w50 mauto" />
                     </div>
                     <Alert className="mt1 mb1">
                         <div>{c('Info').jt`Would you like to restore your files?`}</div>

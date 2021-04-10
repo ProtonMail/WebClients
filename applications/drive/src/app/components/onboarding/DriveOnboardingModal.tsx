@@ -9,10 +9,8 @@ import {
     OnboardingStepRenderCallback,
 } from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
-import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 
-import onboardingWelcome from 'design-system/assets/img/onboarding/onboarding-protondrive.svg';
-import onboardingWelcomeDark from 'design-system/assets/img/onboarding/onboarding-protondrive-dark.svg';
+import onboardingWelcome from 'design-system/assets/img/onboarding/drive-welcome.svg';
 
 const DriveOnboardingModal = (props: any) => {
     const appName = getAppName(APPS.PROTONDRIVE);
@@ -45,7 +43,7 @@ const DriveOnboardingModal = (props: any) => {
                                 </div>
                             </>
                         }
-                        img={<img src={getLightOrDark(onboardingWelcome, onboardingWelcomeDark)} alt={appName} />}
+                        img={<img src={onboardingWelcome} alt={appName} />}
                     />
                 </OnboardingStep>
             )}

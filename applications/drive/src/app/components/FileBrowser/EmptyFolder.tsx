@@ -2,10 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { IllustrationPlaceholder, usePopperAnchor } from 'react-components';
-import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 
-import noContentSvgLight from 'design-system/assets/img/pd-images/no-content.svg';
-import noContentSvgDark from 'design-system/assets/img/pd-images/no-content-dark.svg';
+import noContentSvg from 'design-system/assets/img/placeholders/empty-folder.svg';
 import UploadButton from '../uploads/UploadButton';
 import FolderContextMenu from './FolderContextMenu';
 
@@ -39,10 +37,7 @@ const EmptyFolder = () => {
     return (
         <>
             <div role="presentation" ref={anchorRef} onClick={close} className="p2 mt2 flex w100 flex flex-item-fluid">
-                <IllustrationPlaceholder
-                    url={getLightOrDark(noContentSvgLight, noContentSvgDark)}
-                    title={c('Info').t`There are no files yet`}
-                >
+                <IllustrationPlaceholder url={noContentSvg} title={c('Info').t`There are no files yet`}>
                     <p className="m0">{c('Info').t`Drag and drop a file here or choose to upload.`}</p>
                     <div className="mt2 flex flex-column flex-nowrap w200p flex-item-noshrink">
                         <UploadButton />
