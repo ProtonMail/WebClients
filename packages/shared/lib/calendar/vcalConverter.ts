@@ -2,8 +2,6 @@ import { addDays, isNextDay } from '../date-fns-utc';
 import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, fromUTCDate, toUTCDate } from '../date/timezone';
 import { buildMailTo, canonizeEmail, getEmailTo } from '../helpers/email';
 import { mod } from '../helpers/math';
-import { Participant } from '../interfaces/calendar';
-import { DateTime } from '../interfaces/calendar/Date';
 import {
     VcalAttendeeProperty,
     VcalDateOrDateTimeProperty,
@@ -14,7 +12,10 @@ import {
     VcalDaysKeys,
     VcalOrganizerProperty,
     VcalVeventComponent,
-} from '../interfaces/calendar/VcalModel';
+    Participant,
+    DateTime,
+} from '../interfaces/calendar';
+
 import { getAttendeeEmail } from './attendees';
 import { getIsPropertyAllDay, getPropertyTzid } from './vcalHelper';
 

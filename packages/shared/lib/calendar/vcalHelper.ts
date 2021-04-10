@@ -19,7 +19,7 @@ import {
     VcalVtimezoneComponent,
     VcalVtodoComponent,
     VcalXOrIanaComponent,
-} from '../interfaces/calendar/VcalModel';
+} from '../interfaces/calendar';
 import {
     ICAL_ATTENDEE_ROLE,
     ICAL_ATTENDEE_STATUS,

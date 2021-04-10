@@ -2,7 +2,7 @@ import { toICAL } from './vcard';
 import downloadFile from '../helpers/downloadFile';
 import { Contact, ContactCard, ContactProperties } from '../interfaces/contacts/Contact';
 import { Api, DecryptedKey } from '../interfaces';
-import { API_SAFE_INTERVAL, QUERY_EXPORT_MAX_PAGESIZE } from '../constants';
+import { API_SAFE_INTERVAL, QUERY_EXPORT_MAX_PAGESIZE } from './constants';
 import { wait } from '../helpers/promise';
 import { getContact, queryContactExport } from '../api/contacts';
 import { splitKeys } from '../keys';

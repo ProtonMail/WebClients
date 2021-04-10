@@ -14,10 +14,9 @@ export const queryModelEvents = (calendarID: string, eventID: string) => ({
     method: 'get',
 });
 
-export const queryCalendars = (params?: PaginationParams) => ({
+export const queryCalendars = () => ({
     url: `${CALENDAR_V1}`,
     method: 'get',
-    params,
 });
 
 export type CalendarCreateData = Omit<Calendar, 'Flags' | 'ID'>;

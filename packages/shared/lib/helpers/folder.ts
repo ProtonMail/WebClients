@@ -13,7 +13,7 @@ export const getParents = (folders: Folder[] = []) => {
     }, {});
 };
 
-export const buildTreeview = (folders: Folder[] = []) => {
+export const buildTreeview = (folders: FolderWithSubFolders[] = []) => {
     const parents = getParents(folders);
     const build = (parentID: string | number = ROOT_FOLDER): FolderWithSubFolders[] => {
         if (!Array.isArray(parents[parentID])) {

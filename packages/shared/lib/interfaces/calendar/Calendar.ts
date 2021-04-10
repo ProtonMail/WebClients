@@ -1,6 +1,8 @@
 import { Member } from './Member';
 import { Passphrase } from './Passphrase';
 import { CalendarKey } from './CalendarKey';
+import { NotificationModel } from './Notification';
+import { SETTINGS_NOTIFICATION_TYPE } from '../../calendar/constants';
 
 export interface Calendar {
     ID: string;
@@ -30,11 +32,6 @@ export interface CalendarUserSettings {
     ViewPreference: SETTINGS_VIEW;
 }
 
-export enum SETTINGS_NOTIFICATION_TYPE {
-    EMAIL = 0,
-    DEVICE = 1,
-}
-
 export interface CalendarNotificationSettings {
     Type: SETTINGS_NOTIFICATION_TYPE;
     Trigger: string;
@@ -53,4 +50,29 @@ export interface CalendarBootstrap {
     Passphrase: Passphrase;
     Members: Member[];
     CalendarSettings: CalendarSettings;
+}
+
+export interface CalendarAddressOptions {
+    value: string;
+    text: string;
+}
+
+export interface CalendarViewModelFull {
+    calendarID: string;
+    name: string;
+    display: boolean;
+    description: string;
+    color: string;
+    addressID: string;
+    addressOptions: CalendarAddressOptions[];
+    duration: number;
+    defaultPartDayNotification: NotificationModel;
+    defaultFullDayNotification: NotificationModel;
+    partDayNotifications: NotificationModel[];
+    fullDayNotifications: NotificationModel[];
+}
+
+export interface CalendarErrors {
+    name?: string;
+    description?: string;
 }
