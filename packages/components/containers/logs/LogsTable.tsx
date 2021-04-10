@@ -16,9 +16,10 @@ const getIcon = (event: AUTH_LOG_EVENTS) => {
             AUTH_LOG_EVENTS.REAUTH_FAILURE_PASSWORD,
         ].includes(event)
     ) {
-        return <Icon name="off" />;
+        return <Icon className="align-text-bottom color-danger" name="times-circle-filled" />;
     }
-    return <Icon name="on" />;
+
+    return <Icon className="align-text-bottom color-success" name="check-circle-filled" />;
 };
 
 interface Props {

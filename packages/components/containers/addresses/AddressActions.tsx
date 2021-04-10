@@ -8,7 +8,6 @@ import { Address, UserModel, Member, CachedOrganizationKey } from 'proton-shared
 import { DropdownActions, Alert, ErrorButton, ConfirmModal } from '../../components';
 import { useModals, useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 
-import EditAddressModal from './EditAddressModal';
 import CreateMissingKeysAddressModal from './missingKeys/CreateMissingKeysAddressModal';
 import { getPermissions } from './helper';
 
@@ -18,6 +17,7 @@ interface Props {
     user: UserModel;
     organizationKey?: CachedOrganizationKey;
 }
+
 const AddressActions = ({ address, member, user, organizationKey }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
@@ -86,7 +86,7 @@ const AddressActions = ({ address, member, user, organizationKey }: Props) => {
         );
     };
 
-    const { canEdit, canEnable, canDisable, canGenerate, canDelete } = getPermissions({
+    const { canEnable, canDisable, canGenerate, canDelete } = getPermissions({
         member,
         address,
         user,
@@ -94,10 +94,6 @@ const AddressActions = ({ address, member, user, organizationKey }: Props) => {
     });
 
     const list = [
-        canEdit && {
-            text: c('Address action').t`Edit`,
-            onClick: () => createModal(<EditAddressModal address={address} />),
-        },
         canEnable && {
             text: c('Address action').t`Enable`,
             onClick: () => withLoading(handleEnable()),

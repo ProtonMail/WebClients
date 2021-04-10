@@ -1,8 +1,9 @@
 import React from 'react';
+import { useRouteMatch } from 'react-router';
 import { c } from 'ttag';
 import { APPS } from 'proton-shared/lib/constants';
 
-import { Alert, Block, AppLink, ButtonLike } from '../../components';
+import { Alert, AppLink, ButtonLike } from '../../components';
 import { useOrganization } from '../../hooks';
 
 interface Props {
@@ -12,43 +13,47 @@ interface Props {
 const AddressesSection = ({ onClose }: Props) => {
     const [organization] = useOrganization();
 
+    const match = useRouteMatch<{ slug: string }>('/:slug');
+
+    const slug = match?.params.slug;
+
     if (organization?.MaxMembers > 1) {
         return (
             <>
                 <Alert>{c('Info for domain modal')
                     .t`Add a new user to your organization and create an address for it.`}</Alert>
-                <Block>
+                <div className="mb1">
                     <ButtonLike
                         as={AppLink}
                         color="norm"
                         onClick={() => onClose?.()}
-                        to="/organization#members"
+                        to={`/${slug}/users-addresses`}
                         toApp={APPS.PROTONACCOUNT}
                     >{c('Action').t`Add user`}</ButtonLike>
-                </Block>
+                </div>
                 <Alert>{c('Info for domain modal').t`Add a new address for any user of your organization.`}</Alert>
-                <Block>
+                <div className="mb1">
                     <ButtonLike
                         as={AppLink}
                         color="norm"
                         onClick={() => onClose?.()}
-                        to="/organization#addresses"
+                        to={`/${slug}/users-addresses`}
                         toApp={APPS.PROTONACCOUNT}
                     >{c('Action').t`Add address`}</ButtonLike>
-                </Block>
+                </div>
             </>
         );
     }
 
     return (
-        <Block>
+        <div className="mb1">
             <ButtonLike
                 as={AppLink}
                 onClick={() => onClose?.()}
-                to="/organization#addresses"
+                to={`/${slug}/users-addresses`}
                 toApp={APPS.PROTONACCOUNT}
             >{c('Action').t`Add address`}</ButtonLike>
-        </Block>
+        </div>
     );
 };
 

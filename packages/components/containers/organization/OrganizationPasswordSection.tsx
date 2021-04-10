@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import { USER_ROLES } from 'proton-shared/lib/constants';
-import { Alert, Block, Loader, PrimaryButton, Table, TableBody, TableHeader, TableRow } from '../../components';
+import { Alert, Block, Button, Loader, Table, TableBody, TableHeader, TableRow } from '../../components';
 import { useMembers, useModals, useNotifications, useOrganization, useOrganizationKey } from '../../hooks';
 
 import ChangeOrganizationPasswordModal from './ChangeOrganizationPasswordModal';
@@ -9,6 +9,7 @@ import ChangeOrganizationKeysModal from './ChangeOrganizationKeysModal';
 import ReactivateOrganizationKeysModal, { MODES } from './ReactivateOrganizationKeysModal';
 import { getOrganizationKeyInfo } from './helpers/organizationKeysHelper';
 import useDisplayOrganizationKey from './useDisplayOrganizationKey';
+import { SettingsParagraph, SettingsSection } from '../account';
 
 const OrganizationSection = () => {
     const [organization, loadingOrganization] = useOrganization();
@@ -70,18 +71,20 @@ const OrganizationSection = () => {
     };
 
     return (
-        <>
-            <Alert learnMore="https://protonmail.com/support/knowledge-base/organization-key">{c('Info')
-                .t`Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.`}</Alert>
+        <SettingsSection>
+            <SettingsParagraph learnMoreUrl="https://protonmail.com/support/knowledge-base/organization-key">
+                {c('Info')
+                    .t`Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.`}
+            </SettingsParagraph>
             <Block>
                 {isOrganizationKeyActive && (
                     <>
-                        <PrimaryButton onClick={handleChangeOrganizationPassword} className="mr1 mb0-5">
+                        <Button color="norm" onClick={handleChangeOrganizationPassword} className="mr1 mb0-5">
                             {c('Action').t`Change password`}
-                        </PrimaryButton>
-                        <PrimaryButton onClick={handleOpenOrganizationKeys} className="mr1 mb0-5">
+                        </Button>
+                        <Button color="norm" onClick={handleOpenOrganizationKeys} className="mr1 mb0-5">
                             {c('Action').t`Change organization keys`}
-                        </PrimaryButton>
+                        </Button>
                     </>
                 )}
                 {isOrganizationKeyInactive && (
@@ -90,12 +93,13 @@ const OrganizationSection = () => {
                             {c('Error')
                                 .t`You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.`}
                         </Alert>
-                        <PrimaryButton
+                        <Button
+                            color="norm"
                             onClick={() => createModal(<ReactivateOrganizationKeysModal mode={MODES.REACTIVATE} />)}
                             className="mr1"
                         >
                             {c('Action').t`Restore administrator privileges`}
-                        </PrimaryButton>
+                        </Button>
                     </>
                 )}
                 {!hasOrganizationKey && (
@@ -104,12 +108,13 @@ const OrganizationSection = () => {
                             {c('Error')
                                 .t`You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.`}
                         </Alert>
-                        <PrimaryButton
+                        <Button
+                            color="norm"
                             onClick={() => createModal(<ReactivateOrganizationKeysModal mode={MODES.ACTIVATE} />)}
                             className="mr1"
                         >
                             {c('Action').t`Activate organization key`}
-                        </PrimaryButton>
+                        </Button>
                     </>
                 )}
             </Block>
@@ -128,7 +133,7 @@ const OrganizationSection = () => {
                     </TableBody>
                 </Table>
             )}
-        </>
+        </SettingsSection>
     );
 };
 

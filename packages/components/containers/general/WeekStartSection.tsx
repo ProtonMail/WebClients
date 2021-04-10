@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import { SETTINGS_WEEK_START } from 'proton-shared/lib/interfaces';
 import { updateWeekStart } from 'proton-shared/lib/api/settings';
@@ -7,8 +7,11 @@ import { dateLocaleCode } from 'proton-shared/lib/i18n';
 import { getDefaultWeekStartsOn } from 'proton-shared/lib/settings/helper';
 import { getBrowserLocale } from 'proton-shared/lib/i18n/helper';
 
-import { Row, Label, Field, Select } from '../../components';
+import { Option, SelectTwo } from '../../components';
 import { useApi, useEventManager, useNotifications, useLoading, useUserSettings } from '../../hooks';
+import SettingsLayout from '../account/SettingsLayout';
+import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../account/SettingsLayoutRight';
 
 const WeekStartSection = () => {
     const api = useApi();
@@ -36,29 +39,32 @@ const WeekStartSection = () => {
 
     const defaultDay = days[getDefaultWeekStartsOn()].text;
 
+    const [sunday, monday, , , , , saturday] = days;
+
     return (
-        <Row>
-            <Label htmlFor="week-start-select">{c('Label').t`Week start`}</Label>
-            <Field>
-                <Select
+        <SettingsLayout>
+            <SettingsLayoutLeft>
+                <label className="text-semibold" htmlFor="week-start-select">
+                    {c('Label').t`Week start`}
+                </label>
+            </SettingsLayoutLeft>
+            <SettingsLayoutRight>
+                <SelectTwo
                     id="week-start-select"
-                    loading={loading}
-                    onChange={({ target }: ChangeEvent<HTMLSelectElement>) =>
-                        withLoading(handleWeekStart(+target.value))
-                    }
                     value={userSettings.WeekStart}
-                    options={[
-                        {
-                            text: c('Option').t`Automatic (${defaultDay})`,
-                            value: SETTINGS_WEEK_START.LOCALE_DEFAULT,
-                        },
-                        days[0],
-                        days[1],
-                        days[6],
-                    ]}
-                />
-            </Field>
-        </Row>
+                    loading={loading}
+                    onChange={({ value }) => withLoading(handleWeekStart(value))}
+                >
+                    <Option
+                        title={c('Option').t`Automatic (${defaultDay})`}
+                        value={SETTINGS_WEEK_START.LOCALE_DEFAULT}
+                    />
+                    <Option title={sunday.text} value={sunday.value} />
+                    <Option title={monday.text} value={monday.value} />
+                    <Option title={saturday.text} value={saturday.value} />
+                </SelectTwo>
+            </SettingsLayoutRight>
+        </SettingsLayout>
     );
 };
 

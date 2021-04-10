@@ -10,7 +10,6 @@ import {
     Time,
     Pagination,
     Alert,
-    Block,
     ConfirmModal,
     usePagination,
 } from '../../components';
@@ -19,6 +18,7 @@ import { useApi, useAuthentication, useModals, useLoading, useNotifications } fr
 import SessionAction from './SessionAction';
 import { Session } from './interface';
 import { getClientsI18N } from './helper';
+import { SettingsParagraph, SettingsSection } from '../account';
 
 const PAGE_SIZE = 10;
 
@@ -77,12 +77,14 @@ const SessionsSection = () => {
     const currentUID = authentication.getUID();
 
     return (
-        <>
-            <Alert learnMore="https://protonmail.com/support/knowledge-base/log-out-all-other-sessions/">{c('Info')
-                .t`Unless you explicitly sign out or change your password, sessions remain active and only expire after 30 days of inactivity.`}</Alert>
-            <Block className="flex flex-justify-space-between">
-                <div>
-                    <Button onClick={handleOpenModal} loading={loadingRevokeAll}>{c('Action')
+        <SettingsSection>
+            <SettingsParagraph learnMoreUrl="https://protonmail.com/support/knowledge-base/log-out-all-other-sessions/">
+                {c('Info')
+                    .t`Unless you explicitly sign out or change your password, sessions remain active and only expire after 30 days of inactivity.`}
+            </SettingsParagraph>
+            <div className="flex flex-justify-space-between mb1">
+                <div className="on-mobile-mb1">
+                    <Button shape="outline" onClick={handleOpenModal} loading={loadingRevokeAll}>{c('Action')
                         .t`Revoke all other sessions`}</Button>
                 </div>
                 <Pagination
@@ -93,7 +95,7 @@ const SessionsSection = () => {
                     onPrevious={onPrevious}
                     onSelect={onSelect}
                 />
-            </Block>
+            </div>
             <Table>
                 <TableHeader cells={[c('Title').t`App`, c('Title').t`Date`, c('Title').t`Action`]} />
                 <TableBody loading={loading} colSpan={3}>
@@ -119,7 +121,7 @@ const SessionsSection = () => {
                     })}
                 </TableBody>
             </Table>
-        </>
+        </SettingsSection>
     );
 };
 

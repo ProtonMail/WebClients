@@ -1,8 +1,8 @@
-import React, { ChangeEvent } from 'react';
+import React from 'react';
 import { range } from 'proton-shared/lib/helpers/array';
 import { GIGA } from 'proton-shared/lib/constants';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
-import { Select } from '../../components';
+import { Option, SelectTwo } from '../../components';
 
 export const getStorageRange = (
     { UsedSpace: memberUsedSpace = 0, MaxSpace: memberMaxSpace = 0 } = {},
@@ -21,13 +21,14 @@ interface Props {
     onChange: (value: number) => void;
 }
 const MemberStorageSelector = ({ range: [min, max], step, value, onChange }: Props) => {
-    const options = range(min, max + step, step).map((value) => ({ text: `${humanSize(value, 'GB')}`, value }));
+    const options = range(min, max + step, step).map((value) => (
+        <Option key={value} value={value} title={humanSize(value, 'GB')} />
+    ));
+
     return (
-        <Select
-            value={value}
-            options={options}
-            onChange={({ target }: ChangeEvent<HTMLSelectElement>) => onChange(+target.value)}
-        />
+        <SelectTwo value={value} onChange={({ value }) => onChange(value)}>
+            {options}
+        </SelectTwo>
     );
 };
 

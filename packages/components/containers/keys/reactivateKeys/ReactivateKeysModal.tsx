@@ -157,7 +157,7 @@ const ReactivateKeysModal = ({ keyReactivationRequests, onProcess, onClose, ...r
             setStates(initialStates);
             setStep(STEPS.INFO);
         };
-        run();
+        void run();
     }, []);
 
     const { children, ...stepProps } = (() => {

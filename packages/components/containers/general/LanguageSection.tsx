@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import { updateLocale } from 'proton-shared/lib/api/settings';
 import { loadLocale, loadDateLocale } from 'proton-shared/lib/i18n/loadLocale';
@@ -13,7 +13,10 @@ import {
     useEventManager,
     useUserSettings,
 } from '../../hooks';
-import { Row, Field, Label, Select } from '../../components';
+import { Option, SelectTwo } from '../../components';
+import SettingsLayout from '../account/SettingsLayout';
+import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../account/SettingsLayoutRight';
 
 interface Props {
     locales: TtagLocaleMap;
@@ -29,14 +32,13 @@ const LanguageSection = ({ locales = {} }: Props) => {
     const forceRefresh = useForceRefresh();
 
     const options = Object.keys(LOCALES).map((value) => ({
-        text: LOCALES[value],
+        title: LOCALES[value],
         value,
     }));
 
-    const handleChange = async ({ target }: ChangeEvent<HTMLSelectElement>) => {
-        const newLocale = target.value;
-        await api(updateLocale(newLocale));
-        const localeCode = getClosestLocaleCode(newLocale, locales);
+    const handleChange = async (locale: string) => {
+        await api(updateLocale(locale));
+        const localeCode = getClosestLocaleCode(locale, locales);
         await Promise.all([
             loadLocale(localeCode, locales),
             loadDateLocale(localeCode, getBrowserLocale(), userSettings),
@@ -49,20 +51,27 @@ const LanguageSection = ({ locales = {} }: Props) => {
     const displayedValue = getClosestLocaleCode(userSettings?.Locale, locales);
 
     return (
-        <Row>
-            <Label htmlFor="languageSelect">{c('Label').t`Default language`}</Label>
-            <Field>
-                <Select
-                    disabled={loading}
-                    value={displayedValue}
+        <SettingsLayout>
+            <SettingsLayoutLeft>
+                <label className="text-semibold" htmlFor="languageSelect">
+                    {c('Label').t`Default language`}
+                </label>
+            </SettingsLayoutLeft>
+            <SettingsLayoutRight>
+                <SelectTwo
                     id="languageSelect"
-                    options={options}
-                    onChange={(e) => {
-                        withLoading(handleChange(e));
+                    value={displayedValue}
+                    disabled={loading}
+                    onChange={({ value }) => {
+                        withLoading(handleChange(value));
                     }}
-                />
-            </Field>
-        </Row>
+                >
+                    {options.map((option) => (
+                        <Option {...option} />
+                    ))}
+                </SelectTwo>
+            </SettingsLayoutRight>
+        </SettingsLayout>
     );
 };
 

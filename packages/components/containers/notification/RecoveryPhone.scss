@@ -1,0 +1,19 @@
+@import '~design-system/scss/config/';
+
+.recovery-phone_container {
+	display: flex;
+	flex-wrap: wrap;
+
+	@include respond-to($breakpoint-small, 'max') {
+		flex-direction: column;
+	}
+}
+
+.recovery-phone_phone-input {
+	margin-right: 1em;
+
+	@include respond-to($breakpoint-small, 'max') {
+		margin-bottom: 0.5em;
+		margin-right: 0;
+	}
+}

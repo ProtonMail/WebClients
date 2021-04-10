@@ -36,7 +36,8 @@ export const getMatchingTimezone = (timezone: string, timezoneOptions: { text: s
         }) ||
         timezoneOptions.find(({ value }) => {
             return value.includes(timezone);
-        })
+        }) ||
+        timezoneOptions[0]
     );
 };
 
