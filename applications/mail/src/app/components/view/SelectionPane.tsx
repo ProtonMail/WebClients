@@ -5,11 +5,7 @@ import { MailSettings } from 'proton-shared/lib/interfaces';
 import { Location } from 'history';
 
 import { LabelCount } from 'proton-shared/lib/interfaces/Label';
-import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
-import conversationSingleSvgLight from 'design-system/assets/img/shared/selected-conversation-single.svg';
-import conversationSingleSvgDark from 'design-system/assets/img/shared/selected-conversation-single-dark.svg';
-import conversationManySvgLight from 'design-system/assets/img/shared/selected-conversation-many.svg';
-import conversationManySvgDark from 'design-system/assets/img/shared/selected-conversation-many-dark.svg';
+import conversationSvg from 'design-system/assets/img/placeholders/selected-emails.svg';
 
 import { getLabelName, isCustomLabel as testIsCustomLabel } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
@@ -32,8 +28,6 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     const isCustomLabel = testIsCustomLabel(labelID, labels);
     const total = labelCount.Total || 0;
     const checkeds = checkedIDs.length;
-    const conversationSingleSvg = getLightOrDark(conversationSingleSvgLight, conversationSingleSvgDark);
-    const conversationManySvg = getLightOrDark(conversationManySvgLight, conversationManySvgDark);
 
     const labelName = useMemo(() => getLabelName(labelCount.LabelID || '', labels, folders), [
         labels,
@@ -71,7 +65,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
             <p className="mb2">{text}</p>
             <div className="mb2">
                 <img
-                    src={checkeds > 1 ? conversationManySvg : conversationSingleSvg}
+                    src={conversationSvg}
                     alt={c('Alternative text for conversation image').t`Conversation`}
                     className="hauto"
                 />

@@ -10,13 +10,10 @@ import {
 } from 'react-components';
 import { hasPermission } from 'proton-shared/lib/helpers/permissions';
 import { PERMISSIONS } from 'proton-shared/lib/constants';
-import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 import { c } from 'ttag';
-import upgradeSvgLight from 'design-system/assets/img/shared/no-organization.svg';
-import upgradeSvgDark from 'design-system/assets/img/shared/no-organization-dark.svg';
-import passwordSvgLight from 'design-system/assets/img/shared/no-access-page.svg';
-import passwordSvgDark from 'design-system/assets/img/shared/no-access-page-dark.svg';
+import upgradeSvg from 'design-system/assets/img/placeholders/upgrade.svg';
+import noAccess from 'design-system/assets/img/errors/no-access-page.svg';
 
 const { ADMIN, MEMBER } = PERMISSIONS;
 
@@ -31,10 +28,9 @@ const PrivateMainSettingsAreaWithPermissions = ({ config, location, children, se
 
     const noPermissionChild = (() => {
         if (userPermissions.includes(MEMBER) && pagePermissions.includes(ADMIN)) {
-            const passwordSvg = getLightOrDark(passwordSvgLight, passwordSvgDark);
             return (
                 <div id="page-error" className="text-center">
-                    <img src={passwordSvg} alt={c('Title').t`Password`} className="mb2" />
+                    <img src={noAccess} alt={c('Title').t`Password`} className="mb2" />
                     <h3 className="text-bold">{c('Title').t`Sorry, you can't access this page`}</h3>
                     <Paragraph>
                         {c('Info')
@@ -45,7 +41,6 @@ const PrivateMainSettingsAreaWithPermissions = ({ config, location, children, se
         }
 
         if (!hasPermission(userPermissions, pagePermissions)) {
-            const upgradeSvg = getLightOrDark(upgradeSvgLight, upgradeSvgDark);
             return (
                 <div id="page-error" className="text-center">
                     <img src={upgradeSvg} alt={c('Title').t`Upgrade`} className="mb2" />
