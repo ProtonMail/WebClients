@@ -98,7 +98,7 @@ const EmailUnsubscribeContainer = () => {
         } = await authApi<{ UserSettings: { News: number } }>(updateNewsExternal(news));
 
         setNews(News);
-        createNotification({ text: c('Info').t`Emailing preference updated` });
+        createNotification({ text: c('Info').t`Emailing preference saved` });
     };
 
     const handleResubscribeClick = async () => {

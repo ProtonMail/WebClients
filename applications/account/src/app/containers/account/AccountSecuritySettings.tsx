@@ -2,7 +2,7 @@ import React from 'react';
 import { SessionsSection, LogsSection, SettingsPropsShared } from 'react-components';
 import { c } from 'ttag';
 
-import PrivateMainSettingsAreaWithPermissions from '../components/PrivateMainSettingsAreaWithPermissions';
+import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 
 export const getSecurityPage = () => {
     return {
@@ -22,7 +22,7 @@ export const getSecurityPage = () => {
     };
 };
 
-const SecurityContainer = ({ location, setActiveSection }: SettingsPropsShared) => {
+const AccountSecuritySettings = ({ location, setActiveSection }: SettingsPropsShared) => {
     return (
         <PrivateMainSettingsAreaWithPermissions
             location={location}
@@ -35,4 +35,4 @@ const SecurityContainer = ({ location, setActiveSection }: SettingsPropsShared) 
     );
 };
 
-export default SecurityContainer;
+export default AccountSecuritySettings;

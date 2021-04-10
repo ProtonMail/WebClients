@@ -2,37 +2,26 @@ import React from 'react';
 import {
     PaymentMethodsSection,
     InvoicesSection,
-    PlansSection,
     BillingSection,
-    SubscriptionSection,
-    useUser,
     SettingsPropsShared,
+    GiftCodeSection,
+    CreditsSection,
 } from 'react-components';
 import { c } from 'ttag';
 import { PERMISSIONS } from 'proton-shared/lib/constants';
-import { UserModel } from 'proton-shared/lib/interfaces';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
-import PrivateMainSettingsAreaWithPermissions from '../components/PrivateMainSettingsAreaWithPermissions';
+import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 
 const { UPGRADER, NOT_SUB_USER, PAID } = PERMISSIONS;
 
-export const getSubscriptionPage = (user: UserModel) => {
+export const getPaymentPage = () => {
     return {
-        text: c('Title').t`Subscription`,
-        to: '/subscription',
-        icon: 'dashboard',
+        text: c('Title').t`Payment`,
+        to: '/payment',
+        icon: 'payments-type-card',
         permissions: [UPGRADER, NOT_SUB_USER],
         subsections: [
-            !user.hasPaidMail && {
-                text: c('Title').t`Plans`,
-                id: 'plans',
-            },
-            {
-                text: c('Title').t`Subscription`,
-                id: 'subscription',
-                permissions: [UPGRADER],
-            },
             {
                 text: c('Title').t`Billing details`,
                 id: 'billing',
@@ -43,6 +32,16 @@ export const getSubscriptionPage = (user: UserModel) => {
                 id: 'payment-methods',
             },
             {
+                text: c('Title').t`Credits`,
+                id: 'credits',
+                permissions: [PAID],
+            },
+            {
+                text: c('Title').t`Gift code`,
+                id: 'gift-code',
+                permissions: [PAID],
+            },
+            {
                 text: c('Title').t`Invoices`,
                 id: 'invoices',
             },
@@ -50,21 +49,20 @@ export const getSubscriptionPage = (user: UserModel) => {
     };
 };
 
-const SubscriptionContainer = ({ location, setActiveSection }: SettingsPropsShared) => {
-    const [user] = useUser();
+const AccountPaymentSettings = ({ location, setActiveSection }: SettingsPropsShared) => {
     return (
         <PrivateMainSettingsAreaWithPermissions
             location={location}
-            config={getSubscriptionPage(user)}
+            config={getPaymentPage()}
             setActiveSection={setActiveSection}
         >
-            {!user.hasPaidMail ? <PlansSection /> : null}
-            <SubscriptionSection />
             <BillingSection />
             <PaymentMethodsSection />
+            <CreditsSection />
+            <GiftCodeSection />
             <InvoicesSection />
         </PrivateMainSettingsAreaWithPermissions>
     );
 };
 
-export default SubscriptionContainer;
+export default AccountPaymentSettings;
