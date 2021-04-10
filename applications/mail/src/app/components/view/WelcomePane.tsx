@@ -6,12 +6,9 @@ import { MailSettings } from 'proton-shared/lib/interfaces';
 import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 import { MAILBOX_LABEL_IDS, APPS } from 'proton-shared/lib/constants';
 import { capitalize } from 'proton-shared/lib/helpers/string';
-import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 import { LabelCount } from 'proton-shared/lib/interfaces/Label';
-import envelopeLight from 'design-system/assets/img/shared/envelope-light.svg';
-import envelopeDark from 'design-system/assets/img/shared/envelop-dark.svg';
-import mobileMailAppLight from 'design-system/assets/img/shared/mobile-mail-app-light.svg';
-import mobileMailAppDark from 'design-system/assets/img/shared/mobile-mail-app-dark.svg';
+import envelope from 'design-system/assets/img/placeholders/welcome-pane.svg';
+import mobileMailApp from 'design-system/assets/img/placeholders/app-teaser.svg';
 import appStore from 'design-system/assets/img/shared/app-store.svg';
 import playStore from 'design-system/assets/img/shared/play-store.svg';
 
@@ -45,9 +42,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
 
     const unread = labelCount.Unread || 0;
     const total = labelCount.Total || 0;
-    const imageSvg = featureUsedMailMobileApp?.Value
-        ? getLightOrDark(envelopeLight, envelopeDark)
-        : getLightOrDark(mobileMailAppLight, mobileMailAppDark);
+    const imageSvg = featureUsedMailMobileApp?.Value ? envelope : mobileMailApp;
     const userName = (
         <span key="display-name" className="inline-block max-w100 text-ellipsis align-bottom">
             {capitalize(user.DisplayName)}

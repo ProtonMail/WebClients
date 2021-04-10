@@ -4,10 +4,8 @@ import { c } from 'ttag';
 import { OnboardingContent, OnboardingModal, OnboardingStep, OnboardingStepRenderCallback } from 'react-components';
 import { getAppName } from 'proton-shared/lib/apps/helper';
 import { APPS } from 'proton-shared/lib/constants';
-import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 
-import onboardingWelcome from 'design-system/assets/img/onboarding/onboarding-protonmail.svg';
-import onboardingWelcomeDark from 'design-system/assets/img/onboarding/onboarding-protonmail-dark.svg';
+import onboardingWelcome from 'design-system/assets/img/onboarding/mail-welcome.svg';
 
 const MailOnboardingModal = (props: any) => {
     const appName = getAppName(APPS.PROTONMAIL);
@@ -35,7 +33,7 @@ const MailOnboardingModal = (props: any) => {
                                 </div>
                             </>
                         }
-                        img={<img src={getLightOrDark(onboardingWelcome, onboardingWelcomeDark)} alt={appName} />}
+                        img={<img src={onboardingWelcome} alt={appName} />}
                         text={c('Onboarding ProtonMail')
                             .t`If you like, we can help you import emails from your existing account. You can either use our Import Assistant or download our Import-Export app, which is available with paid plans.`}
                     />
