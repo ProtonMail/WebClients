@@ -1,12 +1,11 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { Bordered } from '../../components';
 import useSvgGraphicsBbox from '../../hooks/useSvgGraphicsBbox';
 
-const banks = require.context('design-system/assets/img/shared/bank-icons', true, /.svg$/);
+const banks = require.context('design-system/assets/img/credit-card-icons', true, /.svg$/);
 
 const banksMap = banks.keys().reduce((acc, key) => {
     acc[key] = () => banks(key);
@@ -15,14 +14,12 @@ const banksMap = banks.keys().reduce((acc, key) => {
 
 const getBankSvg = (type = '') => {
     const key = `./cc-${type}.svg`;
-    const keyDark = `./cc-${type}-dark.svg`;
+
     if (!banksMap[key]) {
         return;
     }
-    const ligthLogo = banksMap[key]().default;
-    const darkLogo = !banksMap[keyDark] ? ligthLogo : banksMap[keyDark]().default;
 
-    return getLightOrDark(ligthLogo, darkLogo);
+    return banksMap[key]().default;
 };
 
 const BANKS = {

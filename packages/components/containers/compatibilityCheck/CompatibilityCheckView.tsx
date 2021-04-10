@@ -1,5 +1,5 @@
 import React from 'react';
-import unsupportedBrowserSettings from 'design-system/assets/img/shared/unsupported-browser-settings.svg';
+import unsupportedBrowserSettings from 'design-system/assets/img/errors/unsupported-browser.svg';
 import { APP_NAMES, APPS } from 'proton-shared/lib/constants';
 import { getAppName } from 'proton-shared/lib/apps/helper';
 import { useAppTitle } from '../../hooks';
