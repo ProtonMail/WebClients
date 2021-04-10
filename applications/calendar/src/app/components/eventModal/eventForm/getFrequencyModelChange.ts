@@ -4,7 +4,7 @@ import { replace } from 'proton-shared/lib/helpers/array';
 import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import { isBefore } from 'date-fns';
 
-import { DateTimeModel, FrequencyModel } from '../../../interfaces/EventModel';
+import { DateTimeModel, FrequencyModel } from 'proton-shared/lib/interfaces/calendar';
 
 const getFrequencyModelChange = (
     oldStart: DateTimeModel,

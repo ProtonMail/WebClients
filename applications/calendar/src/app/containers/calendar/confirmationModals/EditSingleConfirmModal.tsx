@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Alert, FormModal } from 'react-components';
-import { RECURRING_TYPES } from '../../../constants';
+import { RECURRING_TYPES } from 'proton-shared/lib/calendar/constants';
 import { INVITE_ACTION_TYPES, InviteActions, RecurringActionData } from '../../../interfaces/Invite';
 
 const { SEND_INVITATION, SEND_UPDATE } = INVITE_ACTION_TYPES;

@@ -13,7 +13,7 @@ import {
     VcalRruleProperty,
     VcalVeventComponent,
 } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { DateTimeValue } from '../../../interfaces/DateTime';
+import { DateTimeValue } from 'proton-shared/lib/interfaces/calendar';
 
 export const toExdate = (dateObject: DateTimeValue, isAllDay: boolean, tzid = 'UTC'): VcalDateOrDateTimeProperty => {
     if (isAllDay) {

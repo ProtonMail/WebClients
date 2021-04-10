@@ -1,11 +1,10 @@
-import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
+import { ICAL_METHOD, SAVE_CONFIRMATION_TYPES } from 'proton-shared/lib/calendar/constants';
 import { getUpdatedInviteVevent } from 'proton-shared/lib/calendar/integration/invite';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { Address } from 'proton-shared/lib/interfaces';
 import { SyncMultipleApiResponse, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
+
 import { useGetCalendarKeys } from 'react-components';
-import { SAVE_CONFIRMATION_TYPES } from '../../../constants';
-import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import {
     INVITE_ACTION_TYPES,
     InviteActions,
@@ -13,7 +12,6 @@ import {
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
 } from '../../../interfaces/Invite';
-import { getSharedEventIDAndSessionKey } from '../event/getEventHelper';
 import {
     getCreateSyncOperation,
     getDeleteSyncOperation,
@@ -21,9 +19,11 @@ import {
     SyncEventActionOperations,
 } from '../getSyncMultipleEventsPayload';
 import { OnSaveConfirmationCb } from '../interface';
-import { withUpdatedDtstamp } from './dtstamp';
+import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import getChangePartstatActions from './getChangePartstatActions';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
+import { withUpdatedDtstamp } from './dtstamp';
+import { getSharedEventIDAndSessionKey } from '../event/getEventHelper';
 
 const { SEND_INVITATION, SEND_UPDATE, CHANGE_PARTSTAT } = INVITE_ACTION_TYPES;
 

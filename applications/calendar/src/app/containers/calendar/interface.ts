@@ -1,7 +1,12 @@
-import { Calendar, CalendarEvent, CalendarEventSharedData } from 'proton-shared/lib/interfaces/calendar';
+import { Calendar, CalendarEvent, CalendarEventSharedData, EventModel } from 'proton-shared/lib/interfaces/calendar';
+import {
+    DELETE_CONFIRMATION_TYPES,
+    RECURRING_TYPES,
+    SAVE_CONFIRMATION_TYPES,
+    VIEWS,
+} from 'proton-shared/lib/calendar/constants';
+
 import { TYPE } from '../../components/calendar/interactions/constants';
-import { DELETE_CONFIRMATION_TYPES, RECURRING_TYPES, SAVE_CONFIRMATION_TYPES, VIEWS } from '../../constants';
-import { EventModel } from '../../interfaces/EventModel';
 import { InviteActions, RecurringActionData } from '../../interfaces/Invite';
 import { EventReadResult } from './eventStore/interface';
 

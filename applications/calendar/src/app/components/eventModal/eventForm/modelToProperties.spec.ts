@@ -1,7 +1,11 @@
-import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar';
+import { EventModel } from 'proton-shared/lib/interfaces/calendar';
+import {
+    SETTINGS_NOTIFICATION_TYPE,
+    NOTIFICATION_UNITS,
+    NOTIFICATION_WHEN,
+} from 'proton-shared/lib/calendar/constants';
+
 import { modelToValarmComponents } from './modelToProperties';
-import { EventModel } from '../../../interfaces/EventModel';
-import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
 
 describe('model to valarm', () => {
     describe('part day', () => {

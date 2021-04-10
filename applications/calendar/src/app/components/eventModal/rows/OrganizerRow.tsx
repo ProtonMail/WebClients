@@ -2,7 +2,7 @@ import { Address } from 'proton-shared/lib/interfaces';
 import React from 'react';
 import { c } from 'ttag';
 import { classnames } from 'react-components';
-import { EventModel } from '../../../interfaces/EventModel';
+import { EventModel } from 'proton-shared/lib/interfaces/calendar';
 
 interface Props {
     model: EventModel;

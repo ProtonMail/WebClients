@@ -7,8 +7,8 @@ import { getTimezone } from 'proton-shared/lib/date/timezone';
 import { getPrimaryKey } from 'proton-shared/lib/keys';
 
 import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
-import { DEFAULT_CALENDAR } from '../../../constants';
-import { setupCalendarKey } from './setupCalendarKeys';
+import { DEFAULT_CALENDAR } from 'proton-shared/lib/calendar/constants';
+import { setupCalendarKey } from 'react-components/containers/keys/calendar';
 
 interface Args {
     addresses: Address[];

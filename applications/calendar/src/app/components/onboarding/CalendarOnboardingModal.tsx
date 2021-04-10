@@ -6,7 +6,7 @@ import { APPS } from 'proton-shared/lib/constants';
 import { useHistory } from 'react-router-dom';
 
 import onboardingWelcome from 'design-system/assets/img/onboarding/calendar-welcome.svg';
-import { CALENDAR_APP_NAME } from '../../constants';
+import { CALENDAR_APP_NAME } from 'proton-shared/lib/calendar/constants';
 
 const CalendarOnboardingModal = (props: any) => {
     const history = useHistory();

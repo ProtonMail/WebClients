@@ -4,8 +4,8 @@ import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import React from 'react';
 import { c } from 'ttag';
-import { Button, classnames, Icon, Tooltip } from 'react-components';
-import { AttendeeModel } from '../../../interfaces/EventModel';
+import { classnames, Icon, Tooltip, Button } from 'react-components';
+import { AttendeeModel } from 'proton-shared/lib/interfaces/calendar';
 
 interface Props {
     attendee: AttendeeModel;

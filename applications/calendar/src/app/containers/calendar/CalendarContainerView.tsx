@@ -1,5 +1,5 @@
-import { MAXIMUM_DATE, MINIMUM_DATE } from 'proton-shared/lib/calendar/constants';
-import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
+import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from 'proton-shared/lib/calendar/constants';
+import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
 import React, { ReactNode, Ref, useCallback, useEffect, useMemo } from 'react';
 import {
     FullLoader,
@@ -11,6 +11,7 @@ import {
     PrivateAppContainer,
     FloatingButton,
     MainLogo,
+    TimezoneSelector,
     TopNavbarListItemSettingsButton,
     Icon,
 } from 'react-components';
@@ -19,13 +20,12 @@ import { differenceInCalendarDays } from 'date-fns';
 
 import { fromUTCDate, toLocalDate } from 'proton-shared/lib/date/timezone';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { APPS } from 'proton-shared/lib/constants';
 import CalendarSidebar from './CalendarSidebar';
 import CalendarToolbar from './CalendarToolbar';
 import DateCursorButtons from '../../components/DateCursorButtons';
 import ViewSelector from '../../components/ViewSelector';
-import TimezoneSelector from '../../components/TimezoneSelector';
 
-import { VIEWS } from '../../constants';
 import getDateDiff from './getDateDiff';
 
 /**
@@ -127,7 +127,7 @@ const CalendarContainerView = ({
     const header = (
         <PrivateHeader
             logo={logo}
-            settingsButton={<TopNavbarListItemSettingsButton to="/settings/overview" />}
+            settingsButton={<TopNavbarListItemSettingsButton to="/calendar" toApp={APPS.PROTONACCOUNT} />}
             floatingButton={
                 <FloatingButton onClick={onCreateEvent}>
                     <Icon size={24} name="plus" className="mauto" />

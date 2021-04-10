@@ -3,7 +3,7 @@ import { parse } from 'proton-shared/lib/calendar/vcal';
 import { truncate } from 'proton-shared/lib/helpers/string';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { omit } from 'proton-shared/lib/helpers/object';
-import { getSupportedEvent } from './import';
+import { getSupportedEvent } from 'proton-shared/lib/calendar/import';
 
 describe('getSupportedEvent', () => {
     test('should catch events with start time before 1970', () => {

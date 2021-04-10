@@ -7,9 +7,9 @@ import { VcalDateOrDateTimeProperty, VcalVeventComponent } from 'proton-shared/l
 import { getIsAllDay, getPropertyTzid, getRecurrenceId } from 'proton-shared/lib/calendar/vcalHelper';
 
 import parseMainEventData from '../event/parseMainEventData';
-import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
 import { toExdate } from '../recurrence/helper';
+import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 
 export const getOriginalEvent = (recurrences: CalendarEvent[]) => {
     return recurrences.find((Event) => {

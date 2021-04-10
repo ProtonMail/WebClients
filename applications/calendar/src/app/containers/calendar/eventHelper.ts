@@ -6,10 +6,10 @@ import {
 } from 'proton-shared/lib/date/timezone';
 import { differenceInHours } from 'date-fns';
 import { max } from 'proton-shared/lib/date-fns-utc';
-import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
+import { Calendar as tsCalendar, EventModel } from 'proton-shared/lib/interfaces/calendar';
+
 import { getTimeInUtc, getDateTimeState } from '../../components/eventModal/eventForm/time';
 import getFrequencyModelChange from '../../components/eventModal/eventForm/getFrequencyModelChange';
-import { EventModel } from '../../interfaces/EventModel';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from './interface';
 
 export const getCalendarViewEventProperties = ({ start, end, isAllDay }: EventModel, tzid: string) => {

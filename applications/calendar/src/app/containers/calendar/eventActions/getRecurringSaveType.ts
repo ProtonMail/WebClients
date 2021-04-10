@@ -1,11 +1,12 @@
 import { getMustResetPartstat } from 'proton-shared/lib/calendar/integration/invite';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
-import { RECURRING_TYPES, SAVE_CONFIRMATION_TYPES } from '../../../constants';
-import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
-import { EventOldData } from '../../../interfaces/EventData';
+import { RECURRING_TYPES, SAVE_CONFIRMATION_TYPES } from 'proton-shared/lib/calendar/constants';
+
 import { OnSaveConfirmationCb } from '../interface';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../../interfaces/Invite';
 import { getExdatesAfter, getHasFutureOption, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
+import { EventOldData } from '../../../interfaces/EventData';
+import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 
 interface Arguments {
     originalEditEventData: EventOldData;

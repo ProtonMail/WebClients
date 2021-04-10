@@ -9,7 +9,7 @@ import { unique } from 'proton-shared/lib/helpers/array';
 import { VcalRruleFreqValue, VcalRruleProperty } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { getIsRruleCustom, getIsRruleSimple } from 'proton-shared/lib/calendar/rrule';
 import { DAILY_TYPE, FREQUENCY, WEEKLY_TYPE, YEARLY_TYPE } from 'proton-shared/lib/calendar/constants';
-import { DateTimeModel, FrequencyModel } from '../../../interfaces/EventModel';
+import { DateTimeModel, FrequencyModel } from 'proton-shared/lib/interfaces/calendar';
 
 const getSafeWeeklyDays = (startDate: Date, byday?: string | string[]) => {
     const DEFAULT = [startDate.getDay()];

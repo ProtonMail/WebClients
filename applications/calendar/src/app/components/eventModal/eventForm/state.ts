@@ -6,8 +6,17 @@ import {
     MONTHLY_TYPE,
     WEEKLY_TYPE,
     YEARLY_TYPE,
+    EVENT_VERIFICATION_STATUS,
+    DEFAULT_EVENT_DURATION,
+    SETTINGS_NOTIFICATION_TYPE,
 } from 'proton-shared/lib/calendar/constants';
-import { EVENT_VERIFICATION_STATUS } from 'proton-shared/lib/calendar/interface';
+import {
+    DEFAULT_FULL_DAY_NOTIFICATION,
+    DEFAULT_PART_DAY_NOTIFICATION,
+    DEFAULT_PART_DAY_NOTIFICATIONS,
+    DEFAULT_FULL_DAY_NOTIFICATIONS,
+} from 'proton-shared/lib/calendar/notificationDefaults';
+
 import { getIsAllDay, getRecurrenceId } from 'proton-shared/lib/calendar/vcalHelper';
 import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import { Address as tsAddress } from 'proton-shared/lib/interfaces';
@@ -16,19 +25,19 @@ import {
     CalendarSettings as tsCalendarSettings,
     Member as tsMember,
     SelfAddressData,
-    SETTINGS_NOTIFICATION_TYPE,
+    DateTimeModel,
+    EventModel,
+    FrequencyModel,
 } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { DEFAULT_EVENT_DURATION } from '../../../constants';
+
+import { getDeviceNotifications } from 'proton-shared/lib/calendar/notificationModel';
+import { notificationsToModel } from 'proton-shared/lib/calendar/notificationsToModel';
 import { SharedVcalVeventComponent } from '../../../containers/calendar/eventStore/interface';
-import { notificationsToModel } from '../../../helpers/notificationsToModel';
 import { stripAllTags } from '../../../helpers/sanitize';
-import { DateTimeModel, EventModel, FrequencyModel } from '../../../interfaces/EventModel';
-import { DEFAULT_FULL_DAY_NOTIFICATION, DEFAULT_PART_DAY_NOTIFICATION } from '../../../modelConstants';
-import { DEFAULT_FULL_DAY_NOTIFICATIONS, DEFAULT_PART_DAY_NOTIFICATIONS } from '../../../settingsConstants';
+
 import { getSnappedDate } from '../../calendar/mouseHelpers/dateHelpers';
 import getFrequencyModelChange from './getFrequencyModelChange';
-import { getDeviceNotifications } from './notificationModel';
 import { propertiesToModel } from './propertiesToModel';
 import { propertiesToNotificationModel } from './propertiesToNotificationModel';
 

@@ -11,9 +11,9 @@ import { inputToRecipient } from 'proton-shared/lib/mail/recipient';
 import React, { memo, useMemo, useRef } from 'react';
 import { AddressesAutocomplete, Alert, Details, Summary } from 'react-components';
 import { c, msgid } from 'ttag';
+import { AttendeeModel, EventModel } from 'proton-shared/lib/interfaces/calendar';
 import { useContactEmailsCache } from '../../../containers/calendar/ContactEmailsProvider';
 
-import { AttendeeModel, EventModel } from '../../../interfaces/EventModel';
 import OrganizerRow from '../rows/OrganizerRow';
 import ParticipantRow from '../rows/ParticipantRow';
 

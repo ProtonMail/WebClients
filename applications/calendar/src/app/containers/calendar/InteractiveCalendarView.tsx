@@ -2,10 +2,16 @@ import { updateAttendeePartstat, updateCalendar, updatePersonalEventPart } from 
 import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
 import { toApiPartstat } from 'proton-shared/lib/calendar/attendees';
 import { getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
-import { ICAL_ATTENDEE_STATUS, MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC } from 'proton-shared/lib/calendar/constants';
+import {
+    ICAL_ATTENDEE_STATUS,
+    MAXIMUM_DATE_UTC,
+    MINIMUM_DATE_UTC,
+    DELETE_CONFIRMATION_TYPES,
+    SAVE_CONFIRMATION_TYPES,
+} from 'proton-shared/lib/calendar/constants';
 import { reformatApiErrorMessage } from 'proton-shared/lib/calendar/helper';
 import getMemberAndAddress from 'proton-shared/lib/calendar/integration/getMemberAndAddress';
-import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
+import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
 import { getProdId } from 'proton-shared/lib/calendar/vcalHelper';
 import { API_CODES } from 'proton-shared/lib/constants';
 import { format, isSameDay } from 'proton-shared/lib/date-fns-utc';
@@ -23,6 +29,8 @@ import {
     CalendarEvent,
     SyncMultipleApiResponse,
     UpdatePartstatApiResponse,
+    DateTimeModel,
+    EventModel,
     UpdatePersonalPartApiResponse,
 } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
@@ -49,6 +57,7 @@ import {
     useGetCalendarKeys,
     useModals,
     useNotifications,
+    useCalendarModelEventManager,
 } from 'react-components';
 import { useReadCalendarBootstrap } from 'react-components/hooks/useGetCalendarBootstrap';
 import useGetCalendarEventPersonal from 'react-components/hooks/useGetCalendarEventPersonal';
@@ -57,6 +66,7 @@ import { useGetVTimezones } from 'react-components/hooks/useGetVtimezones';
 import useSendIcs from 'react-components/hooks/useSendIcs';
 import { Prompt } from 'react-router';
 import { c } from 'ttag';
+
 import { ACTIONS, TYPE } from '../../components/calendar/interactions/constants';
 import {
     isCreateDownAction,
@@ -77,10 +87,9 @@ import { getExistingEvent, getInitialModel } from '../../components/eventModal/e
 import { getTimeInUtc } from '../../components/eventModal/eventForm/time';
 import EventPopover from '../../components/events/EventPopover';
 import MorePopoverEvent from '../../components/events/MorePopoverEvent';
-import { DELETE_CONFIRMATION_TYPES, SAVE_CONFIRMATION_TYPES } from '../../constants';
+
 import { modifyEventModelPartstat } from '../../helpers/attendees';
 import useGetMapSendIcsPreferences from '../../hooks/useGetSendIcsPreferencesMap';
-import { DateTimeModel, EventModel } from '../../interfaces/EventModel';
 import {
     CleanSendIcsActionData,
     INVITE_ACTION_TYPES,
@@ -90,7 +99,6 @@ import {
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
 } from '../../interfaces/Invite';
-import { useCalendarModelEventManager as useCalendarsEventManager } from '../eventManager/ModelEventManagerProvider';
 import CalendarView from './CalendarView';
 import SendWithErrorsConfirmationModal from './confirmationModals/SendWithErrorsConfirmationModal';
 import CloseConfirmationModal from './confirmationModals/CloseConfirmation';
@@ -193,7 +201,7 @@ const InteractiveCalendarView = ({
 }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
-    const { call: calendarCall } = useCalendarsEventManager();
+    const { call: calendarCall } = useCalendarModelEventManager();
     const { createModal, getModal, hideModal, removeModal } = useModals();
     const { createNotification } = useNotifications();
     const { contactEmailsMap } = useContactEmailsCache();

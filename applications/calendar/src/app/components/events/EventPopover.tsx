@@ -1,6 +1,6 @@
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
-import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
+import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
 
 import { format as formatUTC } from 'proton-shared/lib/date-fns-utc';
 import { noop } from 'proton-shared/lib/helpers/function';
@@ -22,8 +22,8 @@ import {
     Tooltip,
     useLoading,
     usePopperAnchor,
+    CalendarInviteButtons,
 } from 'react-components';
-import InviteButtons from 'react-components/components/calendar/InviteButtons';
 import { c } from 'ttag';
 import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
 import {
@@ -305,7 +305,7 @@ const EventPopover = ({
                     </>
                 ) : (
                     <>
-                        <InviteButtons
+                        <CalendarInviteButtons
                             className="mr1"
                             actions={actions}
                             partstat={userPartstat}

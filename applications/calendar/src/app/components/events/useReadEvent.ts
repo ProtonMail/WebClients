@@ -1,11 +1,16 @@
-import { EVENT_VERIFICATION_STATUS } from 'proton-shared/lib/calendar/interface';
+import { EVENT_VERIFICATION_STATUS } from 'proton-shared/lib/calendar/constants';
 import { getIsAllDay } from 'proton-shared/lib/calendar/vcalHelper';
-import { DecryptedPersonalVeventMapResult, DecryptedVeventResult } from 'proton-shared/lib/interfaces/calendar';
+import {
+    DecryptedPersonalVeventMapResult,
+    DecryptedVeventResult,
+    EventModelReadView,
+} from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 import { useMemo } from 'react';
-import { DecryptedEventTupleResult } from '../../containers/calendar/eventStore/interface';
+
 import { EventInternalProperties } from '../../interfaces/EventInternalProperties';
-import { EventModelReadView } from '../../interfaces/EventModel';
+import { DecryptedEventTupleResult } from '../../containers/calendar/eventStore/interface';
+
 import { propertiesToModel } from '../eventModal/eventForm/propertiesToModel';
 import { propertiesToNotificationModel } from '../eventModal/eventForm/propertiesToNotificationModel';
 

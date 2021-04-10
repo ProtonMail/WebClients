@@ -1,14 +1,15 @@
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { getTimezonedFrequencyString } from 'proton-shared/lib/calendar/integration/getFrequencyString';
-import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
+import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
 import { canonizeEmailByGuess, canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { getInitials } from 'proton-shared/lib/helpers/string';
 import { dateLocale } from 'proton-shared/lib/i18n';
-import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
+import { Calendar as tsCalendar, EventModelReadView } from 'proton-shared/lib/interfaces/calendar';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import React, { useMemo, useState } from 'react';
 import { Icon, Info, Tabs, Tooltip } from 'react-components';
 import { c, msgid } from 'ttag';
+
 import { getOrganizerDisplayData } from '../../helpers/attendees';
 import { sanitizeDescription } from '../../helpers/sanitize';
 import {
@@ -16,7 +17,6 @@ import {
     CalendarViewEventTemporaryEvent,
     DisplayNameEmail,
 } from '../../containers/calendar/interface';
-import { EventModelReadView } from '../../interfaces/EventModel';
 import AttendeeStatusIcon from './AttendeeStatusIcon';
 import PopoverNotification from './PopoverNotification';
 import Participant from './Participant';

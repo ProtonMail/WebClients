@@ -1,6 +1,6 @@
 import createIntervalTree from 'interval-tree';
 import { OccurrenceIterationCache } from 'proton-shared/lib/calendar/recurring';
-import { SHARED_SIGNED_FIELDS } from 'proton-shared/lib/calendar/veventHelper';
+import { SHARED_SIGNED_FIELDS } from 'proton-shared/lib/calendar/constants';
 import { pick } from 'proton-shared/lib/helpers/object';
 import { CalendarEvent, CalendarEventSharedData, DecryptedVeventResult } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';

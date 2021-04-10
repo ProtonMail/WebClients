@@ -1,11 +1,11 @@
 import React from 'react';
 import { useLoading, useGetCalendarBootstrap, SelectTwo, Option, useGetAddresses } from 'react-components';
 import { Props as SelectProps } from 'react-components/components/selectTwo/SelectTwo';
+import { EventModel } from 'proton-shared/lib/interfaces/calendar';
+import { getDeviceNotifications } from 'proton-shared/lib/calendar/notificationModel';
+import { notificationsToModel } from 'proton-shared/lib/calendar/notificationsToModel';
 import CalendarIcon from '../../CalendarIcon';
-import { notificationsToModel } from '../../../helpers/notificationsToModel';
 import { getInitialMemberModel } from '../eventForm/state';
-import { getDeviceNotifications } from '../eventForm/notificationModel';
-import { EventModel } from '../../../interfaces/EventModel';
 
 export interface Props extends Omit<SelectProps<string>, 'children'> {
     withIcon?: boolean;
@@ -28,7 +28,9 @@ const CalendarSelect = ({ withIcon = false, model, setModel, isCreateEvent, froz
         return (
             <div className="pt0-5 pb0-5 flex">
                 {withIcon !== false && <CalendarIcon className="mr1" color={color} />}
-                {name}
+                <span className="text-ellipsis" title={name}>
+                    {name}
+                </span>
             </div>
         );
     }

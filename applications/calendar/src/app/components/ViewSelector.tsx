@@ -2,7 +2,7 @@ import React from 'react';
 import { classnames } from 'react-components';
 import { c } from 'ttag';
 
-import { VIEWS } from '../constants';
+import { VIEWS } from 'proton-shared/lib/calendar/constants';
 
 const { DAY, WEEK, MONTH, CUSTOM } = VIEWS;
 

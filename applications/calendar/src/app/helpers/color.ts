@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react';
 import tinycolor from 'tinycolor2';
 
-import { COLORS } from '../constants';
+import { COLORS } from 'proton-shared/lib/calendar/constants';
 
 export const getConstrastingColor = (backgroundColor = '') => {
     const colorModel = tinycolor(backgroundColor) as any;

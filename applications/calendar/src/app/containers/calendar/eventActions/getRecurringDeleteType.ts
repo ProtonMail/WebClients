@@ -1,13 +1,14 @@
-import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_STATUS, DELETE_CONFIRMATION_TYPES, RECURRING_TYPES } from 'proton-shared/lib/calendar/constants';
 import { getHasNonCancelledSingleEdits, getMustResetPartstat } from 'proton-shared/lib/calendar/integration/invite';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { DELETE_CONFIRMATION_TYPES, RECURRING_TYPES } from '../../../constants';
-import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
-import { EventOldData } from '../../../interfaces/EventData';
-import { InviteActions } from '../../../interfaces/Invite';
-import { OnDeleteConfirmationCb } from '../interface';
+
 import { getHasFutureOption, getRecurrenceEvents } from './recurringHelper';
+import { InviteActions } from '../../../interfaces/Invite';
+
+import { OnDeleteConfirmationCb } from '../interface';
+import { EventOldData } from '../../../interfaces/EventData';
+import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 
 interface Arguments {
     originalEditEventData: EventOldData;

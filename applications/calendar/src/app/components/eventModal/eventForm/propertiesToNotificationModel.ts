@@ -1,10 +1,10 @@
-import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar';
+import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/calendar/constants';
 import { VcalValarmComponent, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { NotificationModel } from 'proton-shared/lib/interfaces/calendar/Notification';
+import { triggerToModel } from 'proton-shared/lib/calendar/notificationModel';
 import { generateUID } from 'react-components';
 
-import { filterFutureNotifications, sortNotificationsByAscendingTrigger } from '../../../helpers/alarms';
-import { triggerToModel } from './notificationModel';
-import { NotificationModel } from '../../../interfaces/NotificationModel';
+import { filterFutureNotifications, sortNotificationsByAscendingTrigger } from 'proton-shared/lib/calendar/alarms';
 
 export const propertiesToNotificationModel = (
     { components = [] }: Partial<VcalVeventComponent> = {},

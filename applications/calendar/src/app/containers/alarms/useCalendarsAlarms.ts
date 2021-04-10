@@ -5,7 +5,7 @@ import { addMilliseconds } from 'proton-shared/lib/date-fns-utc';
 import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-import { DAY } from '../../constants';
+import { DAY } from 'proton-shared/lib/calendar/constants';
 import getCalendarsAlarmsCached from './getCalendarsAlarmsCached';
 import { CalendarsAlarmsCache } from './CacheInterface';
 

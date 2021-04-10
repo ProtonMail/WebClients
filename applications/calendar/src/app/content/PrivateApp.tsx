@@ -39,7 +39,6 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
                     await loadModels([CalendarUserSettingsModel], { api, cache });
                 }
             }}
-            noModals
             preloadModels={PRELOAD_MODELS}
             eventModels={EVENT_MODELS}
             fallback={<LoaderPage />}
