@@ -2,7 +2,7 @@
 	@extend .interactive;
 
 	border-radius: $global-border-radius;
-	padding: 1.25rem 1.75rem;
+	padding: rem(12.5) rem(17.5);
 
 	&,
 	&:hover,
@@ -22,7 +22,7 @@
 		height: 7px;
 		background: var(--signal-danger);
 		border-radius: 50%;
-		left: calc(1.75rem + 15px);
+		left: calc(#{rem(17.5)} + 15px);
 		top: calc(50% - 14px);
 	}
 }
@@ -77,12 +77,12 @@
 @include respond-to(870) {
 	.topnav-list--four-elements {
 		.topnav-link {
-			padding-left: 0.5rem;
-			padding-right: 0.5rem;
+			padding-left: rem(5);
+			padding-right: rem(5);
 		}
 
 		.topnav-link--blackfriday::before {
-			left: calc(0.5rem + 15px);
+			left: calc(#{rem(5)} + 15px);
 		}
 	}
 }
@@ -112,19 +112,19 @@
 	.topnav-icon {
 		// Specificity -_-v
 		&#{&} {
-			width: 24px;
-			height: 24px;
+			width: rem(24);
+			height: rem(24);
 		}
 	}
 
 	.topnav-list--four-elements .topnav-link {
-		padding-left: 1.75rem;
-		padding-right: 1.75rem;
+		padding-left: rem(17.5);
+		padding-right: rem(17.5);
 	}
 
 	.topnav-list--four-elements .topnav-link--blackfriday::before,
 	.topnav-link--blackfriday::before {
-		left: calc(1.75rem + 22px);
+		left: calc(#{rem(17.5)} + 22px);
 		top: calc(50% - 18px);
 	}
 }
@@ -132,12 +132,12 @@
 @include respond-to($breakpoint-tiny) {
 	.topnav-list--four-elements .topnav-link,
 	.topnav-link {
-		padding-left: 0.5rem;
-		padding-right: 0.5rem;
+		padding-left: rem(5);
+		padding-right: rem(5);
 	}
 
 	.topnav-list--four-elements .topnav-link--blackfriday::before,
 	.topnav-link--blackfriday::before {
-		left: calc(0.5rem + 22px);
+		left: calc(#{rem(5)} + 22px);
 	}
 }

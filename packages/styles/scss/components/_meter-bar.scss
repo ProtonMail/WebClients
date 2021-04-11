@@ -1,6 +1,6 @@
-@mixin meter-bar-size($size: 1.5rem) {
+@mixin meter-bar-size($size: 15) {
 	height: $size;
-	border-radius: #{$size/2};
+	border-radius: #{($size/2)};
 
 	&::-moz-meter-bar {
 		border-radius: #{$size/2};
@@ -24,7 +24,7 @@
 }
 
 .meter-bar {
-	@include meter-bar-size;
+	@include meter-bar-size(rem(15));
 
 	width: 100%;
 	background: var(--background-weak);

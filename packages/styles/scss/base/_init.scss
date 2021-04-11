@@ -120,7 +120,7 @@ svg {
 }
 
 textarea {
-	min-height: $default-height-fields; // Equals field inputs height
+	min-height: #{rem($default-height-fields)}; // Equals field inputs height
 }
 
 /*

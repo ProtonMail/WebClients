@@ -1,7 +1,7 @@
 .item-icon {
-	width: $conversation-icon-size;
-	height: $conversation-icon-size;
-	font-size: 1.2rem;
+	width: rem($conversation-icon-size);
+	height: rem($conversation-icon-size);
+	font-size: rem(12);
 	border: 1px solid var(--field-norm);
 	background-color: var(--background-norm);
 }

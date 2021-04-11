@@ -1,13 +1,13 @@
 $treeview-border-width: 1px !default;
-$treeview-indentation-margin: 3rem !default;
+$treeview-indentation-margin: rem(30) !default;
 
 .treeview-item {
 	border-bottom: $treeview-border-width solid var(--border-norm);
 	margin-bottom: -$treeview-border-width;
 
-	$arrow-width: 0.9rem !default;
-	$arrow-height: 0.7rem !default;
-	$circle-size: 0.8rem !default;
+	$arrow-width: rem(9) !default;
+	$arrow-height: rem(7) !default;
+	$circle-size: rem(8) !default;
 
 	&--move-inside,
 	&--move-top,

@@ -9,7 +9,7 @@ $container-to-width: 3em !default;
 	width: var(
 		--width-conversation-column,
 		calc(
-			(100% + var(--width-sidebar, #{$width-sidebar})) * #{$conversations-column-width/1%/100}
+			(100% + var(--width-sidebar, #{rem($width-sidebar)})) * #{$conversations-column-width/1%/100}
 		)
 	);
 }
@@ -39,12 +39,12 @@ $container-to-width: 3em !default;
 	background: var(--bg-norm);
 }
 
-$item-container-height: 6.4rem !default;
+$item-container-height: rem(64) !default;
 $item-container-padding-top-bottom: em(8.5) !default;
 $item-container-padding-left-right: em(12) !default;
 
-$item-container-height-compact-mode: 4.8rem !default;
-$item-container-row-height-compact-mode: 4rem !default;
+$item-container-height-compact-mode: rem(48) !default;
+$item-container-row-height-compact-mode: rem(40) !default;
 
 .item-container,
 .item-container-row {
@@ -177,11 +177,10 @@ $item-container-row-height-compact-mode: 4rem !default;
 
 	.item-container-row {
 		height: $item-container-row-height-compact-mode;
-	}
-
-	.item-icon-compact {
-		&::after {
-			height: $item-container-row-height-compact-mode;
+		.item-icon-compact {
+			&::after {
+				height: $item-container-row-height-compact-mode;
+			}
 		}
 	}
 
@@ -283,10 +282,10 @@ $item-container-row-height-compact-mode: 4rem !default;
 }
 
 .item-icon-compact {
-	width: $conversation-icon-size;
-	height: $conversation-icon-size;
+	width: rem($conversation-icon-size);
+	height: rem($conversation-icon-size);
 	border-radius: 50%;
-	font-size: 1.2rem;
+	font-size: rem(12);
 	transition: background 0.25s ease;
 
 	&:hover {
@@ -298,8 +297,13 @@ $item-container-row-height-compact-mode: 4rem !default;
 		position: absolute;
 		left: -#{em(12)};
 		right: -#{em(12)};
-		top: -#{($item-container-height-compact-mode - $conversation-icon-size) /
-			2};
+		top: calc(
+			-1 * (
+					#{$item-container-height-compact-mode} - #{rem(
+							$conversation-icon-size
+						)}
+				) / 2
+		);
 		height: $item-container-height-compact-mode;
 	}
 
@@ -314,12 +318,18 @@ $item-container-row-height-compact-mode: 4rem !default;
 	&::after {
 		content: '';
 		position: absolute;
-		top: -#{($item-container-height - $conversation-icon-size) / 2};
-		bottom: -#{($item-container-height - $conversation-icon-size) / 2};
+		top: calc(
+			-1 * ((#{$item-container-height} - #{rem($conversation-icon-size)}) /
+						2)
+		);
+		bottom: calc(
+			-1 * ((#{$item-container-height} - #{rem($conversation-icon-size)}) /
+						2)
+		);
 		left: em(-12);
 		width: calc(
-			#{$conversation-icon-size} + #{$item-container-padding-left-right} +
-				0.5rem
+			#{rem($conversation-icon-size)} + #{$item-container-padding-left-right} +
+				#{rem(5)}
 		);
 		// icon size + padding container + tiny margin for comfort
 	}
@@ -419,8 +429,8 @@ $item-container-row-height-compact-mode: 4rem !default;
 }
 
 .starbutton {
-	width: 1.6rem;
-	height: 1.6rem;
+	width: rem(16);
+	height: rem(16);
 	color: var(--text-weak);
 
 	&:focus,

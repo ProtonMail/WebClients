@@ -54,10 +54,10 @@ $vertical-rhythm: 'single_bottom' !default;
 
 // units for typo
 // possible values     : 'use_em',  'use_rem', 'use_rem_with_em_fallback'
-$typo-unit: 'use_rem' !default;
+$typo-unit: 'use_em' !default;
 
 // applies 62.5% on html (to make 10px default font size), simplifies rem calculation
-$root-equiv-10-px: true !default;
+$root-equiv-10-px: false !default;
 
 // basic premise: default user setting for font size is at 16 pixels in the browser
 // you should NEVER update this value, however… who can predict the future…
@@ -78,18 +78,18 @@ $use-height-auto-table: true !default;
 $path-images: '../../assets/img/shared/' !default;
 
 // variables for global layouts, allowing you to use calc for components and adapt quickly if needed
-$header-height: 8rem !default;
-$width-sidebar: 24rem !default; // main navigation
-$toolbar-height: 5rem !default;
+$header-height: 80 !default;
+$width-sidebar: 240 !default; // main navigation
+$toolbar-height: 50 !default;
 $context-bar-width: 25vw !default; // context bar on the right
-$context-bar-min-width: 30rem !default;
-$context-bar-max-width: 40rem !default;
+$context-bar-min-width: 300 !default;
+$context-bar-max-width: 400 !default;
 
-$default-height-fields: 3.5rem !default;
-$default-height-fields-inputforms: 3.6rem !default;
-$bigger-height-fields-inputforms: 4.4rem !default;
+$default-height-fields: 35 !default;
+$default-height-fields-inputforms: 36 !default;
+$bigger-height-fields-inputforms: 44 !default;
 
 $conversations-column-width: 35% !default; // used also to align search bar on top
 
 $pm-label-width: 18em !default;
-$conversation-icon-size: 3.2rem !default;
+$conversation-icon-size: 32 !default;

@@ -1,8 +1,8 @@
 $scrollbar-thumb-default-color: #{rgba(grey, 0.25)};
 $scrollbar-thumb-default-hover-color: #{rgba(grey, 0.5)};
 
-$scrollbar-size: 0.6rem !default;
-$scrollbar-margin: 0.2rem !default;
+$scrollbar-size: rem(6) !default;
+$scrollbar-margin: rem(2) !default;
 
 @if $custom-scroll {
 	* {

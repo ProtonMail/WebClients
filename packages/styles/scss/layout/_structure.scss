@@ -6,8 +6,8 @@ body {
 
 @include respond-to($breakpoint-large, 'min') {
 	:root {
-		--width-sidebar: 25rem;
-		--width-context-bar: 45rem;
+		--width-sidebar: #{rem(250)};
+		--width-context-bar: #{rem(450)};
 	}
 }
 
@@ -58,8 +58,8 @@ html,
 }
 
 .header {
-	padding: 1rem 1.5rem 1rem 0;
-	height: $header-height;
+	padding: rem(10) rem(15) rem(10) 0;
+	height: rem($header-height);
 	flex-shrink: 0;
 	background-color: var(--header-background-color, var(--background-norm));
 	color: var(--header-text-color, var(--text-norm));
@@ -68,13 +68,13 @@ html,
 @if $rtl-option==true {
 	[dir='rtl'] {
 		.header {
-			padding: 1rem 0 1rem 2rem;
+			padding: rem(10) 0 rem(10) rem(15);
 		}
 	}
 }
 
 .sidebar {
-	width: var(--width-sidebar, $width-sidebar);
+	width: var(--width-sidebar, #{rem($width-sidebar)});
 	visibility: visible;
 	transition: visibility 0s ease, transform 1s ease, width 0.6s ease,
 		opacity 1s ease;
@@ -112,7 +112,7 @@ html,
 
 .logo-container {
 	padding: 0 1em;
-	width: var(--width-sidebar, #{$width-sidebar});
+	width: var(--width-sidebar, #{rem($width-sidebar)});
 }
 
 .logo-link {
@@ -125,14 +125,14 @@ html,
 	.plan {
 		position: absolute;
 		bottom: 0.5em;
-		left: 3.2rem;
-		font-size: 1rem;
+		left: rem(32);
+		font-size: rem(10);
 		line-height: 1;
 	}
 }
 
 .logo {
-	height: 2.2rem;
+	height: rem(22);
 }
 
 .logo g {

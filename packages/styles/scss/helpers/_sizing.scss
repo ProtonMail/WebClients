@@ -31,11 +31,12 @@
 }
 
 // .w500r { width: 500rem; }
-@each $width in (33) {
-	.w#{$width}r {
-		width: #{$width}rem;
-	}
-}
+// seems
+// @each $width in (33) {
+// 	.w#{$width}r {
+// 		width: #{$width}rem;
+// 	}
+// }
 
 // .w16e { width: 16em; }
 @each $width in (2, 3, 6, 8, 10, 11, 13, 14, 16, 20, 24) {
@@ -73,7 +74,7 @@
 }
 
 // .mw48r { max-width: 48rem; }
-@each $max-width in (48) {
+@each $max-width in (30) {
 	.mw#{$max-width}r {
 		max-width: #{$max-width}rem;
 	}

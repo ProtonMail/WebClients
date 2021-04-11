@@ -1,4 +1,4 @@
-$sticky-title-height: 10rem !default;
+$sticky-title-height: rem(100) !default;
 
 .sticky-title {
 	position: sticky;
@@ -32,7 +32,7 @@ $sticky-title-height: 10rem !default;
 	}
 
 	&-section {
-		margin-bottom: 8rem;
+		margin-bottom: rem(80);
 	}
 }
 
@@ -50,7 +50,7 @@ $sticky-title-height: 10rem !default;
 	}
 
 	.container-section-sticky-section {
-		margin-bottom: 8rem;
+		margin-bottom: rem(80);
 	}
 
 	.header-height-anchor {
