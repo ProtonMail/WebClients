@@ -1,4 +1,5 @@
 import React from 'react';
+
 import TableCell from './TableCell';
 
 interface Props extends React.HTMLAttributes<HTMLTableRowElement> {
@@ -15,3 +16,5 @@ const TableRow = React.forwardRef<HTMLTableRowElement, Props>(({ cells = [], chi
 });
 
 export default TableRow;
+
+TableRow.displayName = 'TableRow';

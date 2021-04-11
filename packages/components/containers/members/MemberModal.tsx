@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, GIGA } from 'proton-shared/lib/constants';
-import { createMember, createMemberAddress } from 'proton-shared/lib/api/members';
+import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, GIGA, MEMBER_ROLE } from 'proton-shared/lib/constants';
+import { createMember, createMemberAddress, updateRole } from 'proton-shared/lib/api/members';
 import { srpVerify } from 'proton-shared/lib/srp';
 import { Domain, Organization, Address, CachedOrganizationKey } from 'proton-shared/lib/interfaces';
 import { setupMemberKey } from 'proton-shared/lib/keys';
 import { useApi, useNotifications, useEventManager, useGetAddresses } from '../../hooks';
-import { FormModal, Row, Field, Label, PasswordInput, Input, Checkbox, Select } from '../../components';
+import { FormModal, Row, Field, Label, PasswordInput, Input, Toggle, SelectTwo, Option } from '../../components';
 
 import MemberStorageSelector, { getStorageRange } from './MemberStorageSelector';
 import MemberVPNSelector, { getVPNRange } from './MemberVPNSelector';
@@ -32,6 +32,7 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
     const [model, updateModel] = useState({
         name: '',
         private: false,
+        admin: false,
         password: '',
         confirm: '',
         address: '',
@@ -51,6 +52,7 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
     // TODO: better typings
     const handleChange = (key: string) => ({ target }: any) => update(key, target.value);
     const handleChangePrivate = ({ target }: any) => update('private', target.checked);
+    const handleChangeAdmin = ({ target }: any) => update('admin', target.checked);
     const handleChangeStorage = (value: any) => update('storage', value);
     const handleChangeVPN = (value: any) => update('vpn', value);
 
@@ -87,6 +89,10 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
                 encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
                 password: model.password,
             });
+        }
+
+        if (model.admin) {
+            await api(updateRole(Member.ID, MEMBER_ROLE.ORGANIZATION_OWNER));
         }
     };
 
@@ -154,19 +160,36 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
                         required
                     />
                 </Field>
-                <div className="ml1 on-mobile-ml0">
-                    <Checkbox checked={model.private} onChange={handleChangePrivate}>{c('Label for new member')
-                        .t`Private`}</Checkbox>
+            </Row>
+            <Row>
+                <Label htmlFor="address-input">{c('Label').t`Address`}</Label>
+                <Field>
+                    <Input
+                        id="address-input"
+                        value={model.address}
+                        onChange={handleChange('address')}
+                        placeholder={c('Placeholder').t`Address`}
+                        required
+                    />
+                </Field>
+                <div className="ml1 on-mobile-ml0 flex flex-nowrap flex-align-items-center">
+                    {domainOptions.length === 1 ? (
+                        <span className="text-ellipsis" title={`@${domainOptions[0].value}`}>
+                            @{domainOptions[0].value}
+                        </span>
+                    ) : (
+                        <>
+                            <SelectTwo value={model.domain} onChange={({ value }) => update('domain', value)}>
+                                {domainOptions.map((option) => (
+                                    <Option value={option.value} title={option.text}>
+                                        @{option.text}
+                                    </Option>
+                                ))}
+                            </SelectTwo>
+                        </>
+                    )}
                 </div>
             </Row>
-            {model.private ? null : (
-                <Row>
-                    <Label>{c('Label').t`Key strength`}</Label>
-                    <div>
-                        <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
-                    </div>
-                </Row>
-            )}
             <Row>
                 <Label>{c('Label').t`Password`}</Label>
                 <Field>
@@ -188,26 +211,14 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
                     </div>
                 </Field>
             </Row>
-            <Row>
-                <Label>{c('Label').t`Address`}</Label>
-                <Field>
-                    <Input
-                        value={model.address}
-                        onChange={handleChange('address')}
-                        placeholder={c('Placeholder').t`Address`}
-                        required
-                    />
-                </Field>
-                <div className="ml1 on-mobile-ml0 flex flex-nowrap flex-align-items-center">
-                    {domainOptions.length === 1 ? (
-                        <span className="text-ellipsis" title={`@${domainOptions[0].value}`}>
-                            @{domainOptions[0].value}
-                        </span>
-                    ) : (
-                        <Select options={domainOptions} value={model.domain} onChange={handleChange('domain')} />
-                    )}
-                </div>
-            </Row>
+            {model.private ? null : (
+                <Row>
+                    <Label>{c('Label').t`Key strength`}</Label>
+                    <div>
+                        <SelectEncryption encryptionType={encryptionType} setEncryptionType={setEncryptionType} />
+                    </div>
+                </Row>
+            )}
             <Row>
                 <Label>{c('Label').t`Account storage`}</Label>
                 <Field>
@@ -227,6 +238,20 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
                     </Field>
                 </Row>
             ) : null}
+
+            <Row>
+                <Label htmlFor="private-toggle">{c('Label for new member').t`Private`}</Label>
+                <Field>
+                    <Toggle id="private-toggle" checked={model.private} onChange={handleChangePrivate} />
+                </Field>
+            </Row>
+
+            <Row>
+                <Label htmlFor="admin-toggle">{c('Label for new member').t`Admin`}</Label>
+                <Field>
+                    <Toggle id="admin-toggle" checked={model.admin} onChange={handleChangeAdmin} />
+                </Field>
+            </Row>
         </FormModal>
     );
 };

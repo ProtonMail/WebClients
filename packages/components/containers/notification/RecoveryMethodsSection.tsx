@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import { updateNotifyEmail, updateResetEmail, updateResetPhone } from 'proton-shared/lib/api/settings';
 import { CLIENT_TYPES } from 'proton-shared/lib/constants';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
-import { Toggle, Alert, Label, Row, Field, Info, Tabs, Loader } from '../../components';
+import { Toggle, Info, Loader } from '../../components';
 
 import {
     useApi,
@@ -19,14 +18,16 @@ import {
 import AuthModal from '../password/AuthModal';
 import RecoveryEmail from './RecoveryEmail';
 import RecoveryPhone from './RecoveryPhone';
-import EmailModal from './EmailModal';
-import PhoneModal from './PhoneModal';
+import SettingsParagraph from '../account/SettingsParagraph';
+import { SettingsSection } from '../account';
+import SettingsLayout from '../account/SettingsLayout';
+import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../account/SettingsLayoutRight';
 
 const { VPN } = CLIENT_TYPES;
 
 const RecoveryMethodsSection = () => {
     const { createModal } = useModals();
-    const [tab, setTab] = useState(0);
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [loadingReset, withLoadingReset] = useLoading();
     const [loadingNotify, withLoadingNotify] = useLoading();
@@ -38,25 +39,6 @@ const RecoveryMethodsSection = () => {
     if (loadingUserSettings || !userSettings) {
         return <Loader />;
     }
-
-    const handleRecoveryEmail = () => {
-        createModal(
-            <EmailModal
-                email={userSettings.Email.Value || '' /* can be null */}
-                hasReset={!!userSettings.Email.Reset}
-                hasNotify={!!userSettings.Email.Notify}
-            />
-        );
-    };
-
-    const handleRecoveryPhone = () => {
-        createModal(
-            <PhoneModal
-                phone={userSettings.Phone.Value || '' /* can be null */}
-                hasReset={!!userSettings.Phone.Reset}
-            />
-        );
-    };
 
     const handleChangePasswordEmailToggle = async (value: number) => {
         if (value && !userSettings.Email.Value) {
@@ -93,86 +75,91 @@ const RecoveryMethodsSection = () => {
     };
 
     return (
-        <Tabs
-            value={tab}
-            onChange={setTab}
-            tabs={[
-                {
-                    title: c('Recovery method').t`Email`,
-                    content: (
-                        <>
-                            <Alert>{c('Info')
-                                .t`The selected method can be used to recover an account in the event you forget your password and to be notified about missed emails.`}</Alert>
-                            <Row className="flex-align-items-center">
-                                <Label className="pt0">{c('Label').t`Email address`}</Label>
-                                <RecoveryEmail email={userSettings.Email.Value} onClick={handleRecoveryEmail} />
-                            </Row>
-                            <Row>
-                                <Label htmlFor="passwordEmailResetToggle">{c('Label').t`Allow password reset`}</Label>
-                                <Field className="pt0-5">
-                                    <Toggle
-                                        loading={loadingReset}
-                                        checked={!!userSettings.Email.Reset && !!userSettings.Email.Value}
-                                        id="passwordEmailResetToggle"
-                                        onChange={({ target: { checked } }) =>
-                                            withLoadingReset(handleChangePasswordEmailToggle(+checked))
-                                        }
-                                    />
-                                </Field>
-                            </Row>
-                            {CLIENT_TYPE === VPN ? null : (
-                                <Row>
-                                    <Label htmlFor="dailyNotificationsToggle">
-                                        <span className="mr0-5">{c('Label').t`Daily email notifications`}</span>
-                                        <Info
-                                            url="https://protonmail.com/blog/notification-emails/"
-                                            title={c('Info')
-                                                .t`When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.`}
-                                        />
-                                    </Label>
-                                    <Field className="pt0-5">
-                                        <Toggle
-                                            loading={loadingNotify}
-                                            checked={!!userSettings.Email.Notify && !!userSettings.Email.Value}
-                                            id="dailyNotificationsToggle"
-                                            onChange={({ target: { checked } }) =>
-                                                withLoadingNotify(handleChangeEmailNotify(+checked))
-                                            }
-                                        />
-                                    </Field>
-                                </Row>
-                            )}
-                        </>
-                    ),
-                },
-                CLIENT_TYPE !== VPN && {
-                    title: c('Recovery method').t`SMS`,
-                    content: (
-                        <>
-                            <Alert>{c('Info')
-                                .t`The selected method can be used to recover an account in the event you forget your password.`}</Alert>
-                            <Row className="flex-align-items-center">
-                                <Label className="pt0">{c('Label').t`Phone number`}</Label>
-                                <RecoveryPhone phone={userSettings.Phone.Value} onClick={handleRecoveryPhone} />
-                            </Row>
-                            <Row>
-                                <Label htmlFor="passwordPhoneResetToggle">{c('Label').t`Allow password reset`}</Label>
-                                <Field className="pt0-5">
-                                    <Toggle
-                                        loading={loadingReset}
-                                        checked={!!userSettings.Phone.Reset && !!userSettings.Phone.Value}
-                                        id="passwordPhoneResetToggle"
-                                        onChange={({ target: { checked } }) =>
-                                            withLoadingReset(handleChangePasswordPhoneToggle(+checked))
-                                        }
-                                    />
-                                </Field>
-                            </Row>
-                        </>
-                    ),
-                },
-            ].filter(isTruthy)}
-        />
+        <SettingsSection>
+            <SettingsParagraph>
+                {c('Info')
+                    .t`We recommend adding a linked email or phone number so you can recover your account if you lose your password.`}
+            </SettingsParagraph>
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <label className="text-semibold" htmlFor="recovery-email-input">
+                        {c('Label').t`Email address`}
+                    </label>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight>
+                    <div className="mb1">
+                        <RecoveryEmail
+                            email={userSettings.Email.Value}
+                            hasReset={!!userSettings.Email.Reset}
+                            hasNotify={!!userSettings.Email.Notify}
+                        />
+                    </div>
+                    <div className="mb1 flex flex-align-items-center">
+                        <Toggle
+                            className="mr0-5"
+                            loading={loadingReset}
+                            checked={!!userSettings.Email.Reset && !!userSettings.Email.Value}
+                            id="passwordEmailResetToggle"
+                            onChange={({ target: { checked } }) =>
+                                withLoadingReset(handleChangePasswordEmailToggle(+checked))
+                            }
+                        />
+                        <span className="mr0-5">{c('Label').t`Email recovery`}</span>
+                        <Info
+                            url="https://protonmail.com/blog/notification-emails/"
+                            title={c('Info')
+                                .t`Disabling this will prevent this email from being used for account recovery`}
+                        />
+                    </div>
+                    {CLIENT_TYPE !== VPN ? (
+                        <div className="flex flex-align-items-center">
+                            <Toggle
+                                className="mr0-5"
+                                loading={loadingNotify}
+                                checked={!!userSettings.Email.Notify && !!userSettings.Email.Value}
+                                id="dailyNotificationsToggle"
+                                onChange={({ target: { checked } }) =>
+                                    withLoadingNotify(handleChangeEmailNotify(+checked))
+                                }
+                            />
+                            <span className="mr0-5">{c('Label').t`Daily email notifications`}</span>
+                            <Info
+                                url="https://protonmail.com/blog/notification-emails/"
+                                title={c('Info')
+                                    .t`When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.`}
+                            />
+                        </div>
+                    ) : null}
+                </SettingsLayoutRight>
+            </SettingsLayout>
+
+            <hr className="mb2 mt2" />
+
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <label className="pt0 on-mobile-mb0-5 text-semibold" htmlFor="phoneInput">
+                        {c('label').t`Phone number`}
+                    </label>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight>
+                    <div className="mb1">
+                        <RecoveryPhone phone={userSettings.Phone.Value} hasReset={!!userSettings.Phone.Reset} />
+                    </div>
+                    <div className="flex flex-align-items-center">
+                        <Toggle
+                            className="mr0-5"
+                            loading={loadingReset}
+                            checked={!!userSettings.Phone.Reset && !!userSettings.Phone.Value}
+                            id="passwordPhoneResetToggle"
+                            onChange={({ target: { checked } }) =>
+                                withLoadingReset(handleChangePasswordPhoneToggle(+checked))
+                            }
+                        />
+                        <label htmlFor="passwordPhoneResetToggle">{c('Label').t`Password reset allowed`}</label>
+                    </div>
+                </SettingsLayoutRight>
+            </SettingsLayout>
+        </SettingsSection>
     );
 };
 

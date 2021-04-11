@@ -1,7 +1,8 @@
 export { default as DowngradeModal } from './DowngradeModal';
 export { default as LossLoyaltyModal } from './LossLoyaltyModal';
 export { default as BillingSection } from './BillingSection';
-export { default as GiftCodeInput } from './GiftCodeInput';
+export { default as CreditsSection } from './CreditsSection';
+export { default as GiftCodeSection } from './GiftCodeSection';
 export { default as PlansSection } from './PlansSection';
 export { default as AmountButton } from './AmountButton';
 export { default as Bitcoin } from './Bitcoin';

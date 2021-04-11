@@ -61,23 +61,25 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
         >
             {loadingCheck ? null : (
                 <>
-                    <Row>
-                        <Label>{c('Label').t`Amount`}</Label>
-                        <Field className="text-right">
-                            <Price className="label" currency={Currency}>
-                                {Amount}
-                            </Price>
-                        </Field>
-                    </Row>
                     {Credit ? (
-                        <Row>
-                            <Label>{c('Label').t`Credits used`}</Label>
-                            <Field className="text-right">
-                                <Price className="label" currency={Currency}>
-                                    {Credit}
-                                </Price>
-                            </Field>
-                        </Row>
+                        <>
+                            <Row>
+                                <Label>{c('Label').t`Amount`}</Label>
+                                <Field className="text-right">
+                                    <Price className="label" currency={Currency}>
+                                        {Amount}
+                                    </Price>
+                                </Field>
+                            </Row>
+                            <Row>
+                                <Label>{c('Label').t`Credits used`}</Label>
+                                <Field className="text-right">
+                                    <Price className="label" currency={Currency}>
+                                        {Credit}
+                                    </Price>
+                                </Field>
+                            </Row>
+                        </>
                     ) : null}
                     <Row>
                         <Label>{c('Label').t`Amount due`}</Label>

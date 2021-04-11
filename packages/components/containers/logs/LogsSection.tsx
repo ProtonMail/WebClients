@@ -7,21 +7,16 @@ import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { SETTINGS_LOG_AUTH_STATE } from 'proton-shared/lib/interfaces';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { AuthLog, getAuthLogEventsI18N } from 'proton-shared/lib/authlog';
-import {
-    Alert,
-    Block,
-    Button,
-    ConfirmModal,
-    ButtonGroup,
-    Icon,
-    Pagination,
-    usePaginationAsync,
-} from '../../components';
+import { Alert, Button, ConfirmModal, Icon, Info, Pagination, Toggle, usePaginationAsync } from '../../components';
 import { useApi, useLoading, useModals, useUserSettings } from '../../hooks';
 
 import LogsTable from './LogsTable';
 import WipeLogsButton from './WipeLogsButton';
 import { getAllAuthenticationLogs } from './helper';
+import { SettingsParagraph, SettingsSection } from '../account';
+import SettingsLayout from '../account/SettingsLayout';
+import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../account/SettingsLayoutRight';
 
 const { BASIC, DISABLE, ADVANCED } = SETTINGS_LOG_AUTH_STATE;
 
@@ -77,7 +72,7 @@ const LogsSection = () => {
         });
     };
 
-    const handleLogAuth = (newLogAuthState: SETTINGS_LOG_AUTH_STATE) => async () => {
+    const handleLogAuth = async (newLogAuthState: SETTINGS_LOG_AUTH_STATE) => {
         if (state.total > 0 && newLogAuthState === DISABLE) {
             await confirmDisable();
         }
@@ -86,6 +81,14 @@ const LogsSection = () => {
         if (newLogAuthState === DISABLE) {
             setState(INITIAL_STATE);
         }
+    };
+
+    const handleLogsChange = ({ target: { checked } }: React.ChangeEvent<HTMLInputElement>) => {
+        handleLogAuth(checked ? BASIC : DISABLE);
+    };
+
+    const handleAdvancedLogsChange = ({ target: { checked } }: React.ChangeEvent<HTMLInputElement>) => {
+        handleLogAuth(checked ? ADVANCED : BASIC);
     };
 
     // Handle updates from the event manager
@@ -124,63 +127,82 @@ const LogsSection = () => {
     }, [page]);
 
     return (
-        <>
-            <Alert>{c('Info')
-                .t`Logs includes authentication attempts for all Proton services that use your Proton credentials.`}</Alert>
-            <Block className="flex flex-justify-space-between flex-align-items-center">
-                <div className="flex flex-align-items-center">
-                    <ButtonGroup className="mr1">
-                        <Button
-                            group
-                            className={logAuth === DISABLE ? 'is-active' : ''}
-                            onClick={handleLogAuth(DISABLE)}
-                        >{c('Log preference').t`Disabled`}</Button>
-                        <Button
-                            group
-                            className={logAuth === BASIC ? 'is-active' : ''}
-                            onClick={handleLogAuth(BASIC)}
-                        >{c('Log preference').t`Basic`}</Button>
-                        <Button
-                            group
-                            className={logAuth === ADVANCED ? 'is-active' : ''}
-                            onClick={handleLogAuth(ADVANCED)}
-                        >{c('Log preference').t`Advanced`}</Button>
-                    </ButtonGroup>
-                    <span className="flex-item-noshrink">
-                        <Button
-                            icon
-                            group
-                            className="mr1"
-                            loading={loadingRefresh}
-                            onClick={() => withLoadingRefresh(wait(1000).then(fetchAndSetState))}
-                            title={c('Action').t`Refresh`}
-                        >
-                            <Icon name="reload" />
-                        </Button>
-                        {state.logs.length ? <WipeLogsButton className="mr1" onWipe={handleWipe} /> : null}
-                        {state.logs.length ? (
-                            <Button
-                                group
-                                className="mr1"
-                                onClick={() => withLoadingDownload(handleDownload())}
-                                loading={loadingDownload}
-                            >{c('Action').t`Download`}</Button>
-                        ) : null}
-                    </span>
-                </div>
-                <div>
-                    <Pagination
-                        onNext={onNext}
-                        onPrevious={onPrevious}
-                        onSelect={onSelect}
-                        total={state.total}
-                        page={page}
-                        limit={PAGE_SIZE}
+        <SettingsSection>
+            <SettingsParagraph>
+                {c('Info')
+                    .t`Logs include authentication attempts for all Proton services that use your Proton credentials.`}
+            </SettingsParagraph>
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <label className="text-semibold" htmlFor="logs-toggle">
+                        {c('Log preference').t`Enable authentication logs`}
+                    </label>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight className="pt0-5">
+                    <Toggle
+                        id="logs-toggle"
+                        checked={logAuth === BASIC || logAuth === ADVANCED}
+                        onChange={handleLogsChange}
                     />
+                </SettingsLayoutRight>
+            </SettingsLayout>
+
+            {logAuth !== DISABLE && (
+                <SettingsLayout>
+                    <SettingsLayoutLeft>
+                        <label className="text-semibold" htmlFor="advanced-logs-toggle">
+                            <span className="mr0-5">{c('Log preference').t`Enable advanced logs`}</span>
+                            <Info title={c('Tooltip').t`Records the IP address of each event in the security log.`} />
+                        </label>
+                    </SettingsLayoutLeft>
+                    <SettingsLayoutRight className="pt0-5">
+                        <Toggle
+                            id="advanced-logs-toggle"
+                            checked={logAuth === ADVANCED}
+                            onChange={handleAdvancedLogsChange}
+                        />
+                    </SettingsLayoutRight>
+                </SettingsLayout>
+            )}
+
+            {logAuth !== DISABLE && (
+                <div className="mt2 mb1">
+                    <Button
+                        shape="outline"
+                        className="mr1 inline-flex flex-align-items-center"
+                        loading={loadingRefresh}
+                        onClick={() => withLoadingRefresh(wait(1000).then(fetchAndSetState))}
+                        title={c('Action').t`Reload`}
+                    >
+                        <Icon name="reload" className="mr0-5" />
+                        <span>{c('Action').t`Reload`}</span>
+                    </Button>
+
+                    {state.logs.length ? <WipeLogsButton className="mr1" onWipe={handleWipe} /> : null}
+                    {state.logs.length ? (
+                        <Button
+                            shape="outline"
+                            className="mr1"
+                            onClick={() => withLoadingDownload(handleDownload())}
+                            loading={loadingDownload}
+                        >{c('Action').t`Download`}</Button>
+                    ) : null}
                 </div>
-            </Block>
+            )}
+
+            <div className="mb0-5">
+                <Pagination
+                    onNext={onNext}
+                    onPrevious={onPrevious}
+                    onSelect={onSelect}
+                    total={state.total}
+                    page={page}
+                    limit={PAGE_SIZE}
+                />
+            </div>
+
             <LogsTable logs={state.logs} logAuth={logAuth} loading={loading} error={error} />
-        </>
+        </SettingsSection>
     );
 };
 

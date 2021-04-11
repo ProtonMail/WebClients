@@ -52,7 +52,7 @@ const UserDropdown = ({ ...rest }) => {
     const [themeType, setThemeType] = useState(actualThemeType);
 
     useEffect(() => {
-        // Updates from ev
+        // Updates from event-manager
         setThemeType(themeType);
     }, [actualThemeType]);
 
@@ -74,10 +74,10 @@ const UserDropdown = ({ ...rest }) => {
         close();
     };
 
-    const handleThemeChange = (themeType: ThemeTypes) => {
-        setThemeType(themeType);
-        setThemeStyle(getThemeStyle(themeType));
-        api(updateThemeType(themeType));
+    const handleThemeChange = (newThemeType: ThemeTypes) => {
+        setThemeType(newThemeType);
+        setThemeStyle(getThemeStyle(newThemeType));
+        api(updateThemeType(newThemeType));
     };
 
     const handleThemeToggle = () => {

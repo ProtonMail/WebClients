@@ -7,7 +7,7 @@ import { PLAN_SERVICES, APPS, PLANS } from 'proton-shared/lib/constants';
 import { getAccountSettingsApp, getAppName } from 'proton-shared/lib/apps/helper';
 import { getClosestLocaleCode } from 'proton-shared/lib/i18n/helper';
 
-import { AppLink, Icon, Loader } from '../../components';
+import { AppLink, Icon, Loader, SettingsLink } from '../../components';
 import { useConfig } from '../../hooks';
 
 interface Props {
@@ -122,18 +122,21 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                     <ul className="unstyled mt0 mb0">
                         <li className="flex flex-nowrap flex-align-items-center">
                             <Icon name="protonmail" className="mr0-5 flex-item-noshrink" />
-                            <AppLink to="/settings/overview" toApp={APPS.PROTONMAIL}>{c('Link')
-                                .t`ProtonMail settings`}</AppLink>
+                            <SettingsLink path="/general" app={APPS.PROTONMAIL}>
+                                {c('Link').t`ProtonMail settings`}
+                            </SettingsLink>
                         </li>
                         <li className="flex flex-nowrap flex-align-items-center">
                             <Icon name="protoncalendar" className="mr0-5 flex-item-noshrink" />
-                            <AppLink to="/settings/overview" toApp={APPS.PROTONCALENDAR}>{c('Link')
-                                .t`${calendarAppName} settings`}</AppLink>
+                            <SettingsLink path="/general" app={APPS.PROTONCALENDAR}>
+                                {c('Link').t`${calendarAppName} settings`}
+                            </SettingsLink>
                         </li>
                         <li className="flex flex-nowrap flex-align-items-center">
                             <Icon name="protoncontacts" className="mr0-5 flex-item-noshrink" />
-                            <AppLink to="/settings/overview" toApp={APPS.PROTONCONTACTS}>{c('Link')
-                                .t`ProtonContacts settings`}</AppLink>
+                            <SettingsLink path="/general" app={APPS.PROTONCONTACTS}>
+                                {c('Link').t`ProtonContacts settings`}
+                            </SettingsLink>
                         </li>
                     </ul>
                 </div>

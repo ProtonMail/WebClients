@@ -35,7 +35,7 @@ const ContactDecryptionErrorModal = ({ onClose = noop, contactID, ...rest }: Pro
     }, [user, contact]);
 
     const handleSubmit = () => {
-        appLink('/settings/security', APPS.PROTONMAIL);
+        appLink('/mail/encryption-keys', APPS.PROTONACCOUNT);
     };
 
     const handleClear = () => {

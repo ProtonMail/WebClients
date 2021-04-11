@@ -1,15 +1,29 @@
 import React from 'react';
 import { c } from 'ttag';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { Block, DropdownActions } from '../../components';
+import { Address } from 'proton-shared/lib/interfaces';
+
+import { DropdownActions, Select } from '../../components';
 
 interface Props {
+    addresses: Address[];
+    addressIndex: number;
     onAddKey?: () => void;
     onImportKey?: () => void;
     onExportPublic?: () => void;
     onExportPrivate?: () => void;
+    onChangeAddress: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
-const AddressKeysHeaderActions = ({ onAddKey, onImportKey, onExportPublic, onExportPrivate }: Props) => {
+
+const AddressKeysHeaderActions = ({
+    addresses,
+    addressIndex,
+    onAddKey,
+    onImportKey,
+    onExportPublic,
+    onExportPrivate,
+    onChangeAddress,
+}: Props) => {
     const createActions = [
         onAddKey && {
             text: c('Action').t`Create key`,
@@ -37,14 +51,23 @@ const AddressKeysHeaderActions = ({ onAddKey, onImportKey, onExportPublic, onExp
     }
 
     return (
-        <Block>
+        <div className="mb1 flex flex-align-items-start">
+            {addresses.length > 1 && (
+                <div className="mr1">
+                    <Select
+                        value={addressIndex}
+                        options={addresses.map(({ Email }, i) => ({ text: Email, value: i }))}
+                        onChange={onChangeAddress}
+                    />
+                </div>
+            )}
             {createActions.length ? (
-                <span className="mr1">
+                <span className="inline-block mr1">
                     <DropdownActions list={createActions} />
                 </span>
             ) : null}
             <DropdownActions list={exportActions} />
-        </Block>
+        </div>
     );
 };
 

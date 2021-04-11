@@ -16,6 +16,8 @@ interface ModalModel extends Pick<Folder | Label, 'Name' | 'Color' | 'Type'> {
     ID?: string;
     ParentID?: string | number;
     Notify?: number;
+    Expanded?: number;
+    Order?: number;
 }
 
 interface Props {
@@ -88,16 +90,16 @@ const EditLabelModal = ({
         onClose();
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         switch (mode) {
             case 'create':
-                withLoading(create(model));
+                await withLoading(create(model));
                 return;
             case 'edition':
-                withLoading(update(model));
+                await withLoading(update(model));
                 return;
             case 'checkAvailable':
-                withLoading(checkIsAvailable(model));
+                await withLoading(checkIsAvailable(model));
                 return;
             default:
                 return undefined;
@@ -118,7 +120,7 @@ const EditLabelModal = ({
         });
     };
 
-    const handleChangeParentID = (ParentID: string) => {
+    const handleChangeParentID = (ParentID: string | number) => {
         setModel({
             ...model,
             ParentID,

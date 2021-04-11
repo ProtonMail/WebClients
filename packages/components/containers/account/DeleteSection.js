@@ -1,11 +1,12 @@
 import React from 'react';
 import { APPS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
-import { Href, Alert, Loader, ErrorButton } from '../../components';
+import { Href, Alert, Button, Loader } from '../../components';
 import { useModals, useUser, useSubscription, useAddresses, useConfig } from '../../hooks';
 
 import MozillaInfoPanel from './MozillaInfoPanel';
 import DeleteAccountModal from './DeleteAccountModal';
+import SettingsParagraph from './SettingsParagraph';
 
 const DeleteSection = () => {
     const [{ isMember }] = useUser();
@@ -41,13 +42,18 @@ const DeleteSection = () => {
 
     return (
         <>
-            <Alert type="error">
+            <SettingsParagraph>
                 {c('Info')
                     .t`This will permanently delete all data associated with your account. You will not be able to reactivate this account.`}
-            </Alert>
-            <ErrorButton id="deleteButton" onClick={() => createModal(<DeleteAccountModal />)}>
+            </SettingsParagraph>
+            <Button
+                color="danger"
+                shape="outline"
+                id="deleteButton"
+                onClick={() => createModal(<DeleteAccountModal />)}
+            >
                 {c('Action').t`Delete your account`}
-            </ErrorButton>
+            </Button>
         </>
     );
 };

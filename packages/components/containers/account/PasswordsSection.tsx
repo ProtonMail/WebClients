@@ -2,10 +2,15 @@ import React, { useEffect } from 'react';
 import { c } from 'ttag';
 import { SETTINGS_PASSWORD_MODE } from 'proton-shared/lib/interfaces';
 
-import { Field, Info, Label, Loader, PrimaryButton, Row, Toggle } from '../../components';
+import { Button, Info, Loader, Toggle } from '../../components';
 import { useAddresses, useModals, useUserSettings } from '../../hooks';
 
 import ChangePasswordModal, { MODES } from './ChangePasswordModal';
+import TwoFactorSection from './TwoFactorSection';
+import SettingsSection from './SettingsSection';
+import SettingsLayout from './SettingsLayout';
+import SettingsLayoutLeft from './SettingsLayoutLeft';
+import SettingsLayoutRight from './SettingsLayoutRight';
 
 interface Props {
     open?: boolean;
@@ -42,23 +47,30 @@ const PasswordsSection = ({ open }: Props) => {
     const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
 
     return (
-        <>
-            <Row>
-                <Label htmlFor="passwordChange">{passwordLabel}</Label>
-                <Field>
-                    <PrimaryButton onClick={() => handleChangePassword(changePasswordMode)}>
+        <SettingsSection>
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <label htmlFor="passwordChange" className="text-semibold">
+                        {passwordLabel}
+                    </label>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight>
+                    <Button color="norm" onClick={() => handleChangePassword(changePasswordMode)}>
                         {passwordButtonLabel}
-                    </PrimaryButton>
-                </Field>
-            </Row>
+                    </Button>
+                </SettingsLayoutRight>
+            </SettingsLayout>
+            <TwoFactorSection />
             {hasAddresses && (
                 <>
-                    <Row>
-                        <Label htmlFor="passwordModeToggle">
-                            <span className="mr0-5">{c('Label').t`Two password mode`}</span>
-                            <Info url="https://protonmail.com/support/knowledge-base/single-password" />
-                        </Label>
-                        <Field className="pt0-5">
+                    <SettingsLayout>
+                        <SettingsLayoutLeft>
+                            <label htmlFor="passwordModeToggle" className="text-semibold">
+                                <span className="mr0-5">{c('Label').t`Two password mode`}</span>
+                                <Info url="https://protonmail.com/support/knowledge-base/single-password" />
+                            </label>
+                        </SettingsLayoutLeft>
+                        <SettingsLayoutRight className="pt0-5">
                             <Toggle
                                 loading={loadingUserSettings}
                                 checked={!isOnePasswordMode}
@@ -69,26 +81,29 @@ const PasswordsSection = ({ open }: Props) => {
                                     )
                                 }
                             />
-                        </Field>
-                    </Row>
+                        </SettingsLayoutRight>
+                    </SettingsLayout>
                     {!isOnePasswordMode && (
-                        <Row>
-                            <Label htmlFor="passwordModeToggle">
-                                <span className="mr0-5">{c('Label').t`Mailbox password`}</span>
-                                <Info url="https://protonmail.com/support/knowledge-base/single-password" />
-                            </Label>
-                            <Field>
-                                <PrimaryButton
+                        <SettingsLayout>
+                            <SettingsLayoutLeft>
+                                <label htmlFor="passwordModeToggle" className="text-semibold">
+                                    <span className="mr0-5">{c('Label').t`Mailbox password`}</span>
+                                    <Info url="https://protonmail.com/support/knowledge-base/single-password" />
+                                </label>
+                            </SettingsLayoutLeft>
+                            <SettingsLayoutRight>
+                                <Button
+                                    color="norm"
                                     onClick={() => handleChangePassword(MODES.CHANGE_TWO_PASSWORD_MAILBOX_MODE)}
                                 >
                                     {c('Action').t`Change mailbox password`}
-                                </PrimaryButton>
-                            </Field>
-                        </Row>
+                                </Button>
+                            </SettingsLayoutRight>
+                        </SettingsLayout>
                     )}
                 </>
             )}
-        </>
+        </SettingsSection>
     );
 };
 

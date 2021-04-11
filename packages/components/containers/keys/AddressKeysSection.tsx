@@ -10,7 +10,7 @@ import {
     setAddressKeyFlags,
 } from 'proton-shared/lib/keys';
 
-import { Alert, Block, Loader, PrimaryButton, Select } from '../../components';
+import { Loader, Button } from '../../components';
 import {
     useAddresses,
     useAddressesKeys,
@@ -21,6 +21,8 @@ import {
     useUser,
     useUserKeys,
 } from '../../hooks';
+
+import { SettingsSectionWide, SettingsParagraph } from '../account';
 
 import { getAllKeysReactivationRequests, getKeysToReactivateCount } from './reactivateKeys/getAllKeysToReactive';
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';
@@ -67,15 +69,23 @@ const AddressKeysSection = () => {
     }, [addressIndex, Addresses]);
 
     if (addressIndex === -1 || loadingAddresses) {
-        return <Loader />;
+        return (
+            <SettingsSectionWide>
+                <Loader />
+            </SettingsSectionWide>
+        );
     }
 
     if (!Array.isArray(Addresses) || !Addresses.length) {
-        return <Alert>{c('Info').t`No addresses exist`}</Alert>;
+        return <SettingsParagraph>{c('Info').t`No addresses exist`}</SettingsParagraph>;
     }
 
     if (loadingAddressesKeys && !Array.isArray(addressKeys)) {
-        return <Loader />;
+        return (
+            <SettingsSectionWide>
+                <Loader />
+            </SettingsSectionWide>
+        );
     }
 
     const isLoadingKey = loadingKeyID !== '';
@@ -305,14 +315,16 @@ const AddressKeysSection = () => {
     const canExportPrimaryPublicKey = !!primaryPrivateKey;
 
     return (
-        <>
-            <Alert learnMore="https://protonmail.com/support/knowledge-base/pgp-key-management/">
-                {c('Info')
-                    .t`Download your PGP Keys for use with other PGP compatible services. Only incoming messages in inline OpenPGP format are currently supported.`}
-            </Alert>
+        <SettingsSectionWide>
+            <SettingsParagraph>
+                {c('Info').t`Download your PGP keys for use with other PGP-compatible services.`}
+                <br />
+                {c('Info').t`Only incoming messages in inline OpenPGP format are currently supported.`}
+            </SettingsParagraph>
             {canReactivate && (
-                <Block>
-                    <PrimaryButton
+                <div className="mb1">
+                    <Button
+                        color="norm"
                         onClick={() => {
                             if (!isLoadingKey) {
                                 handleReactivateKeys(allKeysToReactivate);
@@ -320,21 +332,12 @@ const AddressKeysSection = () => {
                         }}
                     >
                         {c('Action').t`Reactivate keys`}
-                    </PrimaryButton>
-                </Block>
-            )}
-            {Addresses.length > 1 && (
-                <Block>
-                    <Select
-                        value={addressIndex}
-                        options={Addresses.map(({ Email }, i) => ({ text: Email, value: i }))}
-                        onChange={({ target: { value } }: ChangeEvent<HTMLSelectElement>) =>
-                            !isLoadingKey && setAddressIndex(+value)
-                        }
-                    />
-                </Block>
+                    </Button>
+                </div>
             )}
             <AddressKeysHeaderActions
+                addresses={Addresses}
+                addressIndex={addressIndex}
                 onAddKey={canAdd ? handleAddKey : undefined}
                 onImportKey={canImport ? handleImportKey : undefined}
                 onExportPrivate={
@@ -347,6 +350,13 @@ const AddressKeysSection = () => {
                         ? () => handleExportPublic(primaryPrivateKey.ID)
                         : undefined
                 }
+                onChangeAddress={({ target: { value } }: ChangeEvent<HTMLSelectElement>) => {
+                    if (isLoadingKey) {
+                        return;
+                    }
+
+                    setAddressIndex(+value);
+                }}
             />
             <KeysTable
                 keys={addressKeysDisplay}
@@ -360,7 +370,7 @@ const AddressKeysSection = () => {
                 onSetObsolete={handleSetObsolete}
                 onSetNotObsolete={handleSetNotObsolete}
             />
-        </>
+        </SettingsSectionWide>
     );
 };
 

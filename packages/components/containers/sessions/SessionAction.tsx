@@ -23,8 +23,9 @@ const SessionAction = ({ session, onRevoke, currentUID }: Props) => {
     }
 
     return (
-        <Button size="small" loading={loading} onClick={() => withLoading(onRevoke())}>{c('Action for user session')
-            .t`Revoke`}</Button>
+        <Button size="small" shape="outline" loading={loading} onClick={() => withLoading(onRevoke())}>
+            {c('Action for user session').t`Revoke`}
+        </Button>
     );
 };
 

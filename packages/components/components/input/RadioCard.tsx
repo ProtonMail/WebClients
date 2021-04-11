@@ -1,7 +1,7 @@
 import React from 'react';
 import Radio from './Radio';
 
-interface Props {
+export interface RadioCardProps extends React.InputHTMLAttributes<HTMLInputElement> {
     id: string;
     name: string;
     label: string;
@@ -11,7 +11,7 @@ interface Props {
     disabled?: boolean;
 }
 
-const RadioCard = ({ label, name, id, checked, children, onChange, ...rest }: Props) => {
+const RadioCard = ({ label, name, id, checked, children, onChange, ...rest }: RadioCardProps) => {
     return (
         <Radio
             className="mr1 mb1 bordered p1 inline-block"
@@ -22,9 +22,7 @@ const RadioCard = ({ label, name, id, checked, children, onChange, ...rest }: Pr
             {...rest}
         >
             <span className="ml0-5">{label}</span>
-            <br />
-            <br />
-            {children}
+            <div className="mt1">{children}</div>
         </Radio>
     );
 };

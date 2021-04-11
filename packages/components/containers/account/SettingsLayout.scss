@@ -1,0 +1,11 @@
+@import '~design-system/scss/config/';
+
+.settings-layout {
+	display: flex;
+	flex-wrap: nowrap;
+	margin-bottom: 1em;
+
+	@include respond-to($breakpoint-small, 'max') {
+		flex-direction: column;
+	}
+}

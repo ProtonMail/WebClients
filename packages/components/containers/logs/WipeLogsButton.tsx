@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Button, ConfirmModal, Alert, ErrorButton } from '../../components';
+import { Alert, Button, ConfirmModal } from '../../components';
 import { useModals, useLoading } from '../../hooks';
 
 interface Props {
@@ -21,14 +21,17 @@ const WipeLogsButton = ({ onWipe, className }: Props) => {
             <ConfirmModal
                 title={c('Title').t`Delete logs`}
                 onConfirm={handleConfirm}
-                confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
+                confirm={<Button color="danger" type="submit">{c('Action').t`Delete`}</Button>}
             >
                 <Alert type="error">{c('Info').t`Are you sure you want to permanently delete all your logs?`}</Alert>
             </ConfirmModal>
         );
     };
 
-    return <Button className={className} loading={loading} onClick={handleOpenModal}>{c('Action').t`Wipe`}</Button>;
+    return (
+        <Button shape="outline" className={className} loading={loading} onClick={handleOpenModal}>{c('Action')
+            .t`Wipe`}</Button>
+    );
 };
 
 export default WipeLogsButton;

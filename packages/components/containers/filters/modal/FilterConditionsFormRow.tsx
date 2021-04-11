@@ -289,6 +289,7 @@ const FilterConditionsRow = ({
                             <Button
                                 onClick={() => handleDelete(conditionIndex)}
                                 className={classnames([isNarrow ? 'mt1' : 'ml1'])}
+                                icon
                             >
                                 <Icon name="trash" className="color-danger" />
                             </Button>

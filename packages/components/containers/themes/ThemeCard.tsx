@@ -8,7 +8,7 @@ interface Props {
     src: string;
     checked: boolean;
     onChange: () => void;
-    disabled: boolean;
+    disabled?: boolean;
 }
 
 const ThemeCard = ({ label, id, src, checked, onChange, disabled }: Props) => {

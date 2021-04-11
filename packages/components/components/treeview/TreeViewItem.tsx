@@ -11,7 +11,7 @@ export interface Props {
     onToggle?: () => void;
     onFocus?: () => void;
     onDragStart?: () => void;
-    onDragOver?: () => void;
+    onDragOver?: (event: React.DragEvent) => void;
     onDrop?: () => void;
     onDrag?: () => void;
     draggable?: boolean;

@@ -1,5 +1,5 @@
+export { default as UsersAndAddressesSection } from './UsersAndAddressesSection';
 export { default as MembersSection } from './MembersSection';
-export { default as MemberPrivate } from './MemberPrivate';
 export { default as EditMemberModal } from './EditMemberModal';
 export { default as MemberRole } from './MemberRole';
 export { default as MemberStorageSelector } from './MemberStorageSelector';
