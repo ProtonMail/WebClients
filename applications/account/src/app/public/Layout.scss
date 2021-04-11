@@ -1,7 +1,6 @@
 /*
  * signup specific styles
  */
-$default-height-fields: 4.4rem;
 @import '~design-system/scss/config/';
 $bg-signup-img: './bg-mountains.svg' !default;
 
@@ -18,8 +17,8 @@ $bg-signup-img: './bg-mountains.svg' !default;
 	border-radius: $global-bigger-border-radius;
 
 	// fix for plans, same as in subscription flow
-	&:not(.mw48r) {
-		max-width: 150rem;
+	&:not(.mw30r) {
+		max-width: rem(1500);
 	}
 
 	&-backbutton {
@@ -43,7 +42,7 @@ $bg-signup-img: './bg-mountains.svg' !default;
 	}
 
 	&-container-challenge {
-		min-height: 10rem;
+		min-height: rem(100);
 	}
 
 
@@ -56,7 +55,7 @@ $bg-signup-img: './bg-mountains.svg' !default;
 		width: 15em;
 	}
 	.payment-right {
-		width: 46rem;
+		width: rem(460);
 		margin-left: auto;
 		margin-right: auto;
 		padding-left: 1em;
