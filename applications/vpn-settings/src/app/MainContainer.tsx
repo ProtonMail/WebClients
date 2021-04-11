@@ -13,7 +13,6 @@ import {
     SidebarNav,
     SidebarListItemsWithSubsections,
     MainLogo,
-    useEarlyAccess,
     ErrorBoundary,
     StandardErrorPage,
 } from 'react-components';
@@ -35,8 +34,7 @@ const MainContainer = () => {
     const { isNarrow } = useActiveBreakpoint();
     const location = useLocation();
     const [activeSection, setActiveSection] = useState('');
-    const { hasEarlyAccess } = useEarlyAccess();
-    const filteredPages = getPages(user, hasEarlyAccess).filter(({ permissions: pagePermissions = [] }) =>
+    const filteredPages = getPages(user).filter(({ permissions: pagePermissions = [] }) =>
         hasPermission(userPermissions, pagePermissions)
     );
     useEffect(() => {
