@@ -13,18 +13,18 @@
         display: inline-block;
 
         .amount {
-            font-size: 5rem;
+            font-size: rem(50);
             line-height: 1;
         }
 
         .currency {
             order: -1;
-            font-size: 2rem;
+            font-size: rem(20);
             line-height: 1;
             position: relative;
-            top: .5rem; // magic value
+            top: rem(5); // magic value
             color: rgb(70 74 78 / .7);
-            margin-right: .5rem;
+            margin-right: rem(5);
         }
     }
 }
