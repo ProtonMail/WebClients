@@ -2,7 +2,7 @@
 
 // ?????
 .contactsummary-list-item {
-	height: 2.5rem;
+	height: rem(25);
 }
 
 @include respond-to($breakpoint-small) {
