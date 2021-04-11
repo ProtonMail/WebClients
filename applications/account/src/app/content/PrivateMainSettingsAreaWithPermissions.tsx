@@ -6,14 +6,13 @@ import {
     PrivateMainSettingsArea,
     SectionConfig,
     AppLink,
-    ButtonLike,
 } from 'react-components';
 import { hasPermission } from 'proton-shared/lib/helpers/permissions';
 import { PERMISSIONS } from 'proton-shared/lib/constants';
 import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 import { c } from 'ttag';
 import upgradeSvg from 'design-system/assets/img/placeholders/upgrade.svg';
-import noAccess from 'design-system/assets/img/errors/no-access-page.svg';
+import noAccessSvg from 'design-system/assets/img/errors/no-access-page.svg';
 
 const { ADMIN, MEMBER } = PERMISSIONS;
 
@@ -22,23 +21,19 @@ interface Props extends SettingsPropsShared {
     children?: React.ReactNode;
 }
 
-interface PermissionProps {
-    permission?: boolean;
-}
-
 const PrivateMainSettingsAreaWithPermissions = ({ config, location, children, setActiveSection }: Props) => {
     const userPermissions = usePermissions();
-    const { subsections = [], permissions: pagePermissions = [], text, description } = config;
+    const { subsections = [], permissions: pagePermissions = [], text } = config;
 
     const noPermissionChild = (() => {
         if (userPermissions.includes(MEMBER) && pagePermissions.includes(ADMIN)) {
             return (
                 <div id="page-error" className="text-center">
-                    <img src={noAccess} alt={c('Title').t`Password`} className="mb2" />
+                    <img src={noAccessSvg} alt={c('Title').t`Password`} className="mb2" />
                     <h3 className="text-bold">{c('Title').t`Sorry, you can't access this page`}</h3>
                     <Paragraph>
                         {c('Info')
-                            .t`Users can't make changes to organization settings. If you need admin priviledges, reach out to your system administrator.`}
+                            .t`Users can't make changes to organization settings. If you need admin privileges, reach out to your system administrator.`}
                     </Paragraph>
                 </div>
             );
@@ -52,30 +47,26 @@ const PrivateMainSettingsAreaWithPermissions = ({ config, location, children, se
                         {c('Info')
                             .t`Upgrade to a paid plan to access premium features and increase your storage space.`}
                     </Paragraph>
-                    <ButtonLike
-                        as={AppLink}
+                    <AppLink
                         to="/subscription"
-                        color="norm"
-                        size="large"
                         toApp={getAccountSettingsApp()}
-                        className="mtauto"
-                    >{c('Action').t`Upgrade now`}</ButtonLike>
+                        className="button--primary button--large mtauto"
+                    >{c('Action').t`Upgrade now`}</AppLink>
                 </div>
             );
         }
     })();
 
     const childrenWithPermissions = React.Children.toArray(children)
+        .filter(React.isValidElement)
         .map((child, index) => {
-            if (!React.isValidElement<PermissionProps>(child)) {
-                return null;
-            }
-            const { permissions: sectionPermissions } = subsections[index] || { id: 'no-id', text: '' };
+            const { permissions: sectionPermissions } = subsections[index] || {};
             return React.cloneElement(child, {
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
                 permission: hasPermission(userPermissions, sectionPermissions),
             });
-        })
-        .filter((x) => x !== null);
+        });
 
     return (
         <PrivateMainSettingsArea
@@ -83,7 +74,6 @@ const PrivateMainSettingsAreaWithPermissions = ({ config, location, children, se
             location={location}
             setActiveSection={setActiveSection}
             subsections={noPermissionChild ? [] : subsections}
-            description={description}
         >
             {noPermissionChild || childrenWithPermissions}
         </PrivateMainSettingsArea>

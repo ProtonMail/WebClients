@@ -1,5 +1,5 @@
 import React from 'react';
-import { NewsCheckboxes } from 'react-components';
+import { EmailSubscriptionCheckboxes } from 'react-components';
 import { c } from 'ttag';
 import protonLogoSvg from 'design-system/assets/img/shared/proton-logo.svg';
 
@@ -24,7 +24,7 @@ const EmailSubscriptionManagement = ({ News, disabled, onChange }: EmailSubscrip
             {c('Email Unsubscribe').jt`Which emails do you want to receive from Proton?`}
 
             <div className="mt2">
-                <NewsCheckboxes News={News} disabled={disabled} onChange={onChange} />
+                <EmailSubscriptionCheckboxes News={News} disabled={disabled} onChange={onChange} />
             </div>
         </EmailUnsubscribeBorderedContainer>
     );
