@@ -1,5 +1,7 @@
-$calendar-aside-width                : 6rem !default;
-$calendar-hour-height                : 4.8rem !default;
+@import '~design-system/scss/config/';
+
+$calendar-aside-width                : rem(60) !default;
+$calendar-hour-height                : rem(48) !default;
 $calendar-grid-border                : 1px solid var(--border-norm);
-$calendar-gridcell-margin            : 1rem !default;
-$calendar-gridcell-gutter            : .3rem !default;
+$calendar-gridcell-margin            : rem(10) !default;
+$calendar-gridcell-gutter            : rem(3) !default;

@@ -1,9 +1,9 @@
-$width-calendar-loader-container: 25rem !default;
+$width-calendar-loader-container: rem(250) !default;
 
 .calendar-loader-container {
 	position: fixed;
-	top: 1rem;
-	left: calc(50% - #{$width-calendar-loader-container/2});
+	top: rem(10);
+	left: calc(50% - (#{$width-calendar-loader-container} / 2));
 	max-width: 100%;
 	z-index: 100;
 	width: $width-calendar-loader-container;
