@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import { SETTINGS_DATE_FORMAT } from 'proton-shared/lib/interfaces';
 import { updateDateFormat } from 'proton-shared/lib/api/settings';
@@ -7,8 +7,11 @@ import { dateLocaleCode } from 'proton-shared/lib/i18n';
 import { getBrowserLocale } from 'proton-shared/lib/i18n/helper';
 import { getDefaultDateFormat } from 'proton-shared/lib/settings/helper';
 
-import { Row, Label, Field, Select } from '../../components';
+import { SelectTwo, Option } from '../../components';
 import { useApi, useEventManager, useNotifications, useLoading, useUserSettings } from '../../hooks';
+import SettingsLayout from '../account/SettingsLayout';
+import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../account/SettingsLayoutRight';
 
 const DateFormatSection = () => {
     const api = useApi();
@@ -27,28 +30,29 @@ const DateFormatSection = () => {
     const defaultFormat = getDefaultDateFormat()?.toUpperCase();
 
     return (
-        <Row>
-            <Label htmlFor="date-format-select">{c('Label').t`Date format`}</Label>
-            <Field>
-                <Select
+        <SettingsLayout>
+            <SettingsLayoutLeft>
+                <label className="text-semibold" htmlFor="date-format-select">
+                    {c('Label').t`Date format`}
+                </label>
+            </SettingsLayoutLeft>
+            <SettingsLayoutRight>
+                <SelectTwo
                     id="date-format-select"
-                    loading={loading}
-                    onChange={({ target }: ChangeEvent<HTMLSelectElement>) =>
-                        withLoading(handleDateFormat(+target.value))
-                    }
                     value={userSettings.DateFormat}
-                    options={[
-                        {
-                            text: c('Option').t`Automatic (${defaultFormat})`,
-                            value: SETTINGS_DATE_FORMAT.LOCALE_DEFAULT,
-                        },
-                        { text: 'DD/MM/YYYY', value: SETTINGS_DATE_FORMAT.DDMMYYYY },
-                        { text: 'MM/DD/YYYY', value: SETTINGS_DATE_FORMAT.MMDDYYYY },
-                        { text: 'YYYY/MM/DD', value: SETTINGS_DATE_FORMAT.YYYYMMDD },
-                    ]}
-                />
-            </Field>
-        </Row>
+                    loading={loading}
+                    onChange={({ value }) => withLoading(handleDateFormat(value))}
+                >
+                    <Option
+                        title={c('Option').t`Automatic (${defaultFormat})`}
+                        value={SETTINGS_DATE_FORMAT.LOCALE_DEFAULT}
+                    />
+                    <Option title="DD/MM/YYYY" value={SETTINGS_DATE_FORMAT.DDMMYYYY} />
+                    <Option title="MM/DD/YYYY" value={SETTINGS_DATE_FORMAT.MMDDYYYY} />
+                    <Option title="YYYY/MM/DD" value={SETTINGS_DATE_FORMAT.YYYYMMDD} />
+                </SelectTwo>
+            </SettingsLayoutRight>
+        </SettingsLayout>
     );
 };
 

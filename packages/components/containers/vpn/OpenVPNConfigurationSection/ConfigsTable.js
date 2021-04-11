@@ -175,7 +175,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
 
 ConfigsTable.propTypes = {
     isUpgradeRequired: PropTypes.func.isRequired,
-    category: PropTypes.oneOf([CATEGORY.SECURE_CORE, CATEGORY.COUNTRY, CATEGORY.SERVER]),
+    category: PropTypes.oneOf([CATEGORY.SECURE_CORE, CATEGORY.COUNTRY, CATEGORY.SERVER, CATEGORY.FREE]),
     platform: PropTypes.string,
     protocol: PropTypes.string,
     loading: PropTypes.bool,

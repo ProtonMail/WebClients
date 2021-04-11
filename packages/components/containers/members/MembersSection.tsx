@@ -14,6 +14,7 @@ import {
     TableBody,
     TableRow,
     PrimaryButton,
+    Icon,
 } from '../../components';
 import {
     useMembers,
@@ -29,7 +30,6 @@ import MemberActions from './MemberActions';
 import MemberAddresses from './MemberAddresses';
 import MemberFeatures from './MemberFeatures';
 import MemberRole from './MemberRole';
-import MemberPrivate from './MemberPrivate';
 import RestoreAdministratorPrivileges from '../organization/RestoreAdministratorPrivileges';
 import MemberModal from './MemberModal';
 import { getOrganizationKeyInfo } from '../organization/helpers/organizationKeysHelper';
@@ -205,23 +205,22 @@ const MembersSection = () => {
                         return (
                             <TableRow
                                 key={key}
+                                className="on-tablet-hide-td3 on-mobile-hide-td5"
                                 cells={[
-                                    <span className="text-ellipsis max-w100 inline-block" key={key} title={member.Name}>
+                                    <span className="text-ellipsis max-w100 inline-block" title={member.Name}>
                                         {member.Name}
                                     </span>,
-                                    <MemberRole key={key} member={member} />,
-                                    <MemberPrivate key={key} member={member} />,
-                                    <MemberAddresses key={key} member={member} addresses={memberAddresses} />,
-                                    <MemberFeatures key={key} member={member} />,
+                                    <MemberRole member={member} />,
+                                    <Icon name={member.Private ? 'on' : 'off'} />,
+                                    <MemberAddresses addresses={memberAddresses} />,
+                                    <MemberFeatures member={member} />,
                                     <MemberActions
-                                        key={key}
                                         member={member}
                                         addresses={memberAddresses}
                                         organization={organization}
                                         organizationKey={organizationKey}
                                     />,
                                 ]}
-                                className="on-tablet-hide-td3 on-mobile-hide-td5"
                             />
                         );
                     })}

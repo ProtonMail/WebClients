@@ -23,7 +23,9 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
     return (
         <>
             <Block>
-                <Label className="mb0-5 block text-cut" htmlFor="ccname">{c('Label').t`Name on card`}</Label>
+                <Label className="mb0-5 block text-cut" htmlFor="ccname">
+                    {c('Label').t`Name on card`}
+                </Label>
                 <Input
                     autoComplete="cc-name"
                     id="ccname"
@@ -37,7 +39,9 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                 />
             </Block>
             <Block>
-                <Label className="mb0-5 block text-cut" htmlFor="ccnumber">{c('Label').t`Card number`}</Label>
+                <Label className="mb0-5 block text-cut" htmlFor="ccnumber">
+                    {c('Label').t`Card number`}
+                </Label>
                 <CardNumberInput
                     id="ccnumber"
                     value={card.number}
@@ -65,7 +69,7 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                 </div>
                 <div className="flex-item-fluid ml0-5 on-tiny-mobile-ml0">
                     <Label className="mb0-5 block flex flex-align-items-center text-cut" htmlFor="cvc">
-                        <span className="mr0-25">{c('Label').t`Security code`}</span>
+                        <span className="mr0-25">{c('Label').t`CVV code`}</span>
                         <Info
                             title={c('Info')
                                 .t`For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.`}

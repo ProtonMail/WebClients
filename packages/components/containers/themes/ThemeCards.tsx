@@ -13,7 +13,7 @@ interface Theme {
 interface Props {
     themeIdentifier: ThemeTypes;
     onChange: (themeType: ThemeTypes) => void;
-    disabled: boolean;
+    disabled?: boolean;
     list: Theme[];
 }
 

@@ -1,3 +1,4 @@
+import { getCalendars } from 'proton-shared/lib/models/calendarsModel';
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import {
@@ -15,8 +16,6 @@ import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { Cycle, Currency, PlanIDs, SubscriptionCheckResponse } from 'proton-shared/lib/interfaces';
 import { MAX_CALENDARS_PER_FREE_USER } from 'proton-shared/lib/calendar/constants';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
-import { queryCalendars } from 'proton-shared/lib/api/calendars';
 
 import { Alert, FormModal } from '../../../components';
 import {
@@ -131,12 +130,15 @@ const SubscriptionModal = ({
     const getCodes = ({ gift, coupon }: Model) => [gift, coupon].filter(isTruthy);
 
     const handleUnsubscribe = async () => {
-        const { Calendars: calendars } =
-            (await api<{ Calendars: Calendar[] | undefined }>(queryCalendars({ Page: 1, PageSize: 2 }))) || {};
+        const calendars = await getCalendars(api);
 
-        if ((calendars?.length || 0) > MAX_CALENDARS_PER_FREE_USER) {
+        if (calendars.length > MAX_CALENDARS_PER_FREE_USER) {
             await new Promise<void>((resolve, reject) => {
-                createModal(<CalendarDowngradeModal onSubmit={resolve} onClose={reject} />);
+                const handleClose = () => {
+                    onClose?.();
+                    reject();
+                };
+                createModal(<CalendarDowngradeModal onSubmit={resolve} onClose={handleClose} />);
             });
         }
         if (hasBonuses(organization)) {

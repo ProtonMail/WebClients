@@ -5,7 +5,7 @@ import { generateProtonWebUID } from 'proton-shared/lib/helpers/uid';
 
 import useNotifications from './useNotifications';
 
-import { OAuthProps, OAUTH_PROVIDER } from '../containers/import/interfaces';
+import { OAuthProps, OAUTH_PROVIDER } from '../containers/mail/import/interfaces';
 
 export interface OAuthHookContext {
     getRedirectURL: () => string;

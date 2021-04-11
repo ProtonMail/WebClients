@@ -1,24 +1,26 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { noop } from 'proton-shared/lib/helpers/function';
 import ErrorBoundary from '../../containers/app/ErrorBoundary';
+import SettingsPageTitle from '../../containers/account/SettingsPageTitle';
 import useAppTitle from '../../hooks/useAppTitle';
-import SettingsTitle from '../container/SettingsTitle';
 import SubSettingsSection from './SubSettingsSection';
 import PrivateMainArea from './PrivateMainArea';
 import { SubSectionConfig, SettingsPropsShared } from './interface';
 import useActiveSection from './useActiveSection';
 
 import createScrollIntoView from '../../helpers/createScrollIntoView';
+import { classnames } from '../../helpers';
+import { SettingsParagraph } from '../../containers';
 
 interface Props extends SettingsPropsShared {
     title: string;
     children: React.ReactNode;
     subsections: SubSectionConfig[];
+    description?: string;
 }
 
-const PrivateMainSettingsArea = ({ setActiveSection, location, title, children, subsections }: Props) => {
+const PrivateMainSettingsArea = ({ setActiveSection, location, title, children, description, subsections }: Props) => {
     const mainAreaRef = useRef<HTMLDivElement>(null);
-    const [scrollTop, setScrollTop] = useState<number>(0);
     const useIntersectionSection = useRef(false);
 
     useAppTitle(title);
@@ -28,10 +30,6 @@ const PrivateMainSettingsArea = ({ setActiveSection, location, title, children, 
             mainAreaRef.current.scrollTop = 0;
         }
     }, [location.pathname]);
-
-    const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
-        setScrollTop(e.currentTarget.scrollTop);
-    };
 
     useEffect(() => {
         const { hash } = location;
@@ -51,7 +49,7 @@ const PrivateMainSettingsArea = ({ setActiveSection, location, title, children, 
         }
 
         useIntersectionSection.current = false;
-        setActiveSection(hash.slice(1));
+        setActiveSection?.(hash.slice(1));
 
         const abortScroll = createScrollIntoView(el, mainArea, true);
         let removeListeners: () => void;
@@ -91,7 +89,7 @@ const PrivateMainSettingsArea = ({ setActiveSection, location, title, children, 
 
     // Don't always use the observer section observed value since it can not go to sections that are at the bottom or too small.
     // In those cases it can be overridden by clicking on a specific section
-    const observer = useActiveSection(useIntersectionSection.current ? setActiveSection : noop);
+    const observer = useActiveSection(useIntersectionSection.current && setActiveSection ? setActiveSection : noop);
 
     const wrappedSections = React.Children.toArray(children)
         .filter(React.isValidElement)
@@ -115,9 +113,12 @@ const PrivateMainSettingsArea = ({ setActiveSection, location, title, children, 
         });
 
     return (
-        <PrivateMainArea ref={mainAreaRef} onScroll={handleScroll}>
-            <SettingsTitle onTop={!scrollTop}>{title}</SettingsTitle>
+        <PrivateMainArea ref={mainAreaRef}>
             <div className="container-section-sticky">
+                <SettingsPageTitle className={classnames(['mt1-5', !description && 'mb1-5'])}>
+                    {title}
+                </SettingsPageTitle>
+                {description && <SettingsParagraph className="mb1-5">{description}</SettingsParagraph>}
                 <ErrorBoundary>{wrappedSections}</ErrorBoundary>
             </div>
         </PrivateMainArea>

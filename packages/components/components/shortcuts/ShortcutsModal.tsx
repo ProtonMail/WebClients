@@ -7,7 +7,7 @@ import { FormModal } from '../modal';
 import './ShortcutsModal.scss';
 
 interface Props {
-    title?: string;
+    title?: React.ReactNode;
     children: React.ReactNode;
     onClose?: () => void;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 import { getPrimaryKey, reactivateKeysProcess } from 'proton-shared/lib/keys';
 
-import { Alert, Button, Block, Loader } from '../../components';
+import { Button, Loader } from '../../components';
 import {
     useUser,
     useModals,
@@ -12,6 +12,8 @@ import {
     useApi,
     useGetAddresses,
 } from '../../hooks';
+
+import { SettingsParagraph, SettingsSectionWide } from '../account';
 
 import ReactivateKeysModal from './reactivateKeys/ReactivateKeysModal';
 import ExportPublicKeyModal from './exportKey/ExportPublicKeyModal';
@@ -32,12 +34,16 @@ const UserKeysSections = () => {
     const userKeysDisplay = useDisplayKeys({ keys: userKeys, User });
 
     if (loadingUserKeys || !Array.isArray(userKeys)) {
-        return <Loader />;
+        return (
+            <SettingsSectionWide>
+                <Loader />
+            </SettingsSectionWide>
+        );
     }
 
     // E.g. vpn user
     if (!userKeys.length) {
-        return <Alert>{c('Info').t`No contact encryption keys exist`}</Alert>;
+        return <SettingsParagraph>{c('Info').t`No contact encryption keys exist`}</SettingsParagraph>;
     }
 
     const { Name: userName } = User;
@@ -99,10 +105,11 @@ const UserKeysSections = () => {
     const canExportPrimaryPrivateKey = !!primaryPrivateKey?.privateKey;
 
     return (
-        <>
+        <SettingsSectionWide>
             {canExportPrimaryPrivateKey && (
-                <Block>
+                <div className="mb1">
                     <Button
+                        shape="outline"
                         onClick={() => {
                             if (!primaryPrivateKey?.privateKey) {
                                 return;
@@ -114,7 +121,7 @@ const UserKeysSections = () => {
                     >
                         {c('Action').t`Export private key`}
                     </Button>
-                </Block>
+                </div>
             )}
             <KeysTable
                 keys={userKeysDisplay}
@@ -122,7 +129,7 @@ const UserKeysSections = () => {
                 onExportPublicKey={handleExportPublic}
                 onReactivateKey={handleReactivateKey}
             />
-        </>
+        </SettingsSectionWide>
     );
 };
 

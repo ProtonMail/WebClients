@@ -1,5 +1,4 @@
 import { Ref, RefObject, MutableRefObject } from 'react';
-import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 import { content } from 'proton-shared/lib/sanitize';
 import { c } from 'ttag';
 
@@ -64,8 +63,8 @@ export const IFRAME_CLASS = 'editor-squire-iframe';
 
 export const DEFAULT_FONT_FACE = FONT_FACE.Arial;
 export const DEFAULT_FONT_SIZE = 14;
-export const DEFAULT_FONT_COLOR = () => getLightOrDark('#222222', '#FFFFFF');
-export const DEFAULT_BACKGROUND = () => getLightOrDark('#FFFFFF', '#3c414e;');
+export const DEFAULT_FONT_COLOR = () => '#222222';
+export const DEFAULT_BACKGROUND = () => '#FFFFFF';
 export const DEFAULT_LINK = '';
 export const DEFAULT_IMAGE = '';
 

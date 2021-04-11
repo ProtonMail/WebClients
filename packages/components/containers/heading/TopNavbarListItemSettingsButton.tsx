@@ -12,6 +12,7 @@ const TopNavbarListItemSettingsButton = (
     return (
         <TopNavbarListItemButton
             data-test-id="view:general-settings"
+            target="_self"
             {...props}
             as={AppLink}
             icon={<Icon name="settings-master" />}

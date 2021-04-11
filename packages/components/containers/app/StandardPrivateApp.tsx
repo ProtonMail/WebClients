@@ -20,7 +20,12 @@ import { getHasOnlyExternalAddresses } from 'proton-shared/lib/helpers/address';
 
 import { useApi, useCache, useConfig, useErrorHandler } from '../../hooks';
 
-import { EventManagerProvider, EventModelListener, EventNotices } from '../eventManager';
+import {
+    CalendarModelEventManagerProvider,
+    EventManagerProvider,
+    EventModelListener,
+    EventNotices,
+} from '../eventManager';
 import ForceRefreshProvider from '../forceRefresh/Provider';
 import { ModalsChildren } from '../modals';
 import { ThemeInjector } from '../themes';
@@ -168,23 +173,25 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
 
     return (
         <EventManagerProvider eventManager={eventManagerRef.current}>
-            <ContactProvider>
-                <FeaturesProvider>
-                    <EventModelListener models={eventModels} />
-                    <EventNotices />
-                    <ThemeInjector />
-                    <DensityInjector />
-                    {!noModals && <ModalsChildren />}
-                    <KeyBackgroundManager
-                        hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
-                        hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
-                    />
-                    <StorageListener />
-                    <ForceRefreshProvider>
-                        <LoadedApp />
-                    </ForceRefreshProvider>
-                </FeaturesProvider>
-            </ContactProvider>
+            <CalendarModelEventManagerProvider>
+                <ContactProvider>
+                    <FeaturesProvider>
+                        <EventModelListener models={eventModels} />
+                        <EventNotices />
+                        <ThemeInjector />
+                        <DensityInjector />
+                        {!noModals && <ModalsChildren />}
+                        <KeyBackgroundManager
+                            hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
+                            hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
+                        />
+                        <StorageListener />
+                        <ForceRefreshProvider>
+                            <LoadedApp />
+                        </ForceRefreshProvider>
+                    </FeaturesProvider>
+                </ContactProvider>
+            </CalendarModelEventManagerProvider>
         </EventManagerProvider>
     );
 };

@@ -21,7 +21,7 @@ const ToggleEnableFolderColor = ({ id, className }: Props) => {
         await api(updateEnableFolderColor(+target.checked));
         await call();
         createNotification({
-            text: c('label/folder notification').t`Preference updated`,
+            text: c('label/folder notification').t`Preference saved`,
         });
     };
 

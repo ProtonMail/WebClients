@@ -1,5 +1,6 @@
-export { default as SubscriptionSection } from './SubscriptionSection';
 export { default as SubscriptionModal } from './SubscriptionModal';
+export { default as CancelSubscriptionSection } from './CancelSubscriptionSection';
+export { default as YourPlanSection } from './YourPlanSection';
 export { default as BlackFridayModal } from './BlackFridayModal';
 export { default as MailBlackFridayModal } from './MailBlackFridayModal';
 export { default as VPNBlackFridayModal } from './VPNBlackFridayModal';
