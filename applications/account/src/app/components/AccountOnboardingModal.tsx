@@ -5,8 +5,6 @@ import { OnboardingContent, OnboardingModal, OnboardingStep, OnboardingStepRende
 import { APPS } from 'proton-shared/lib/constants';
 
 import onboardingWelcome from 'design-system/assets/img/onboarding/onboarding-protonmail-subdomain.svg';
-import onboardingWelcomeDark from 'design-system/assets/img/onboarding/onboarding-protonmail-subdomain-dark.svg';
-import { getLightOrDark } from 'proton-shared/lib/themes/helpers';
 
 const AccountOnboardingModal = (props: any) => {
     const appName = getAppName(APPS.PROTONACCOUNT);
@@ -33,7 +31,7 @@ const AccountOnboardingModal = (props: any) => {
                                 </div>
                             </>
                         }
-                        img={<img src={getLightOrDark(onboardingWelcome, onboardingWelcomeDark)} alt={appName} />}
+                        img={<img src={onboardingWelcome} alt={appName} />}
                     />
                 </OnboardingStep>
             )}
