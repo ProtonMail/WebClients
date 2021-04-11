@@ -105,14 +105,14 @@
 }
 
 .composer-meta .composer-addresses-fakefield {
-    min-height: 3.5rem;
+    min-height: rem(35);
     max-height: 2.5em;
     padding-right: 5em;
     cursor: text;
 }
 
 .composer-addresses-container-line:not(:first-child) {
-    padding-right: 3rem;
+    padding-right: rem(30);
 }
 
 .composer-addresses-container {
@@ -137,13 +137,13 @@
         // trick to keep space in case of loooooooong email with scroll and last one
         content: '';
         width: 100%;
-        height: 0.1rem;
+        height: rem(1);
     }
 
     .field {
         border: none;
         padding: 0;
-        min-width: 10rem;
+        min-width: rem(100);
         background: inherit;
         height: auto;
 
@@ -159,7 +159,7 @@
   image this way
 */
 .composer-addresses-addressIcon {
-    top: -0.2rem;
+    top: rem(-2);
     &:empty {
         margin-right: 0;
     }
@@ -178,7 +178,7 @@
         margin: 0 0 0 20px;
         padding: 0;
 
-        max-height: 20rem;
+        max-height: rem(200);
         overflow-y: auto;
         overflow-x: hidden;
     }
@@ -244,7 +244,7 @@
 
 .addresses-contacts-table {
     th:first-child {
-        width: 3.5rem;
+        width: rem(35);
     }
 }
 
@@ -393,8 +393,8 @@
 
 // Keep minimal size when activity label is empty
 .composer-send-button {
-    min-height: 3.4rem;
-    min-width: 4rem;
+    min-height: rem(34);
+    min-width: rem(40);
     @include respond-to($breakpoint-small) {
         min-width: 0;
     }

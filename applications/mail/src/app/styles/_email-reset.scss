@@ -1,3 +1,5 @@
+@import '~design-system/scss/config/';
+
 // reset/display fixes for emails contents
 .message-content {
 	@extend .p1;
@@ -21,7 +23,7 @@
     }
 
     blockquote {
-        padding: 0 0 0 1.6rem;
+        padding: 0 0 0 rem(16);
         margin: 0;
         border-left: 4px solid #e5e5e5;
 
