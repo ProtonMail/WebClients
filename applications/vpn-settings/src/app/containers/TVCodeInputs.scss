@@ -10,12 +10,12 @@
     .field,
     .field:focus,
     .field:active {
-        letter-spacing: 1.5rem;
-        text-indent: 1.9rem;
+        letter-spacing: rem(15);
+        text-indent: rem(19);
         border: none;
         color: white;
-        height: 4.5rem !important;
-        font-size: 1.5rem;
+        height: rem(45) !important;
+        font-size: rem(15);
         background-color: rgba(0, 0, 0, 0.301);
         &::placeholder {
             color: rgba(255, 255, 255, 0.76);
@@ -27,8 +27,8 @@
         .field,
         .field:focus,
         .field:active {
-            letter-spacing: 2.6rem;
-            text-indent: 3.5rem;
+            letter-spacing: rem(26);
+            text-indent: rem(35);
         }
     }
 }
