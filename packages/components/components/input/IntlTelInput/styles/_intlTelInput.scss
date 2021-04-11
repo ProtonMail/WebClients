@@ -1,29 +1,31 @@
+@import '~design-system/scss/config/';
+
 // rgba is needed for the selected flag hover state to blend in with
 // the border-highlighting some browsers give the input on focus
 $hoverColor: var(--interaction-default-hover);
 $greyText: var(--text-weak);
 $greyBorder: var(--border-norm);
 
-$flagHeight: 1.5rem !default;
-$flagWidth: 2rem !default;
-$flagPadding: 0.8rem !default;
+$flagHeight: 0.9375rem !default; // 15
+$flagWidth: 1.25rem !default; // 20
+$flagPadding: 0.5rem !default; // 8
 // this border width is used for the popup and divider, but it is also
 // assumed to be the border width of the input, which we do not control
 $borderWidth: 1px !default;
 
-$arrowHeight: 0.4rem !default;
-$arrowWidth: 0.6rem !default;
-$triangleBorder: 0.3rem !default;
-$arrowPadding: 0.6rem !default;
+$arrowHeight: 0.25rem !default; // 4
+$arrowWidth: 0.375rem !default; // 6
+$triangleBorder: 0.1875rem !default; // 3
+$arrowPadding: 0.375rem !default; // 6
 $arrowColor: var(--text-norm);
 
-$inputPadding: 0.6rem !default;
+$inputPadding: 0.5rem !default; // 8
 $selectedFlagWidth: $flagWidth + (2 * $flagPadding) !default;
 $selectedFlagArrowWidth: $flagWidth + $flagPadding + $arrowWidth + (2 * $arrowPadding) !default;
 $selectedFlagArrowDialCodeWidth: $selectedFlagArrowWidth + $flagPadding !default;
 
 // enough space for them to click off to close
-$mobilePopupMargin: 3rem;
+$mobilePopupMargin: 1.875rem; // 30
 
 .intl-tel-input {
 	// need position on the container so the selected flag can be
@@ -161,7 +163,7 @@ $mobilePopupMargin: 3rem;
 			white-space: normal;
 		}
 
-		max-height: 10rem;
+		max-height: rem(100);
 		left: 0;
 		right: 0;
 		overflow-y: scroll;
@@ -198,7 +200,7 @@ $mobilePopupMargin: 3rem;
 		}
 		.flag-box,
 		.country-name {
-			margin-right: 0.6rem;
+			margin-right: rem(6);
 		}
 		.country-name {
 			text-overflow: ellipsis;
@@ -256,7 +258,7 @@ $mobilePopupMargin: 3rem;
 			}
 
 			// .iti-sdc is for Separate Dial Code, with lengths from 2-5 because shortest is "+1", longest is "+1684"
-			$charLength: 0.8rem;
+			$charLength: 0.5rem;
 			@for $i from 2 through 5 {
 				&.iti-sdc-#{$i} {
 					input,
