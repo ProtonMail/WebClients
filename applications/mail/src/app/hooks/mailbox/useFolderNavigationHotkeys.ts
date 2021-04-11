@@ -9,7 +9,7 @@ const { DRAFTS, SENT, TRASH, SPAM, ARCHIVE, INBOX, STARRED, ALL_MAIL } = MAILBOX
 
 export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
     const history = useHistory<any>();
-    const [mailSettings] = useMailSettings();
+    const [{ Shortcuts = 1 } = {}] = useMailSettings();
 
     const setFocusOnSidebar = () => {
         const sidebarLink = document.querySelector(
@@ -21,8 +21,6 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
     const navigateTo = (labelID: MAILBOX_LABEL_IDS) => {
         history.push(`/${LABEL_IDS_TO_HUMAN[labelID]}`);
     };
-
-    const { Shortcuts = 0 } = mailSettings || {};
 
     return Shortcuts
         ? [

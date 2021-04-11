@@ -97,7 +97,7 @@ const HeaderExpanded = ({
     const { state: showDetails, toggle: toggleDetails } = useToggle();
     const selectedIDs = [message.data?.ID || ''];
     const currentFolderID = getCurrentFolderID(message.data?.LabelIDs, folders);
-    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
+    const [{ Shortcuts = 1 } = {}] = useMailSettings();
     const inOutbox = isOutbox(message.data);
 
     const handleClick = (event: MouseEvent) => {

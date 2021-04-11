@@ -59,7 +59,7 @@ const Toolbar = ({
     const [folders] = useFolders();
     const listInView = columnMode || !elementID;
 
-    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
+    const [{ Shortcuts = 1 } = {}] = useMailSettings();
 
     const titleMove = Shortcuts ? (
         <>

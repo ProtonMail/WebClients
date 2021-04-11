@@ -8,8 +8,7 @@ import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import { EncryptionPreferencesError } from 'proton-shared/lib/mail/encryptionPreferences';
 import { formatSubject, RE_PREFIX } from 'proton-shared/lib/mail/messages';
 import React, { useCallback, Dispatch, SetStateAction } from 'react';
-import { Icon, InlineLinkButton, Loader, useLoading, useNotifications } from 'react-components';
-import InviteButtons from 'react-components/components/calendar/InviteButtons';
+import { Icon, InlineLinkButton, Loader, useLoading, useNotifications, CalendarInviteButtons } from 'react-components';
 import { c } from 'ttag';
 import {
     EVENT_INVITATION_ERROR_TYPE,
@@ -201,7 +200,9 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
     }
 
     if (method === ICAL_METHOD.REQUEST && partstat) {
-        return <InviteButtons actions={actions} partstat={partstat} disabled={buttonsDisabled} className="mb0-5" />;
+        return (
+            <CalendarInviteButtons actions={actions} partstat={partstat} disabled={buttonsDisabled} className="mb0-5" />
+        );
     }
     return null;
 };

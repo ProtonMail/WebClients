@@ -317,8 +317,8 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                                 </button>
                             ) : null}
                             <SidebarListItemHeaderLink
-                                to="/settings/labels"
-                                toApp={APPS.PROTONMAIL}
+                                to="/mail/folders-labels"
+                                toApp={APPS.PROTONACCOUNT}
                                 icon="settings-singular"
                                 title={c('Info').t`Manage your folders`}
                                 info={c('Link').t`Manage your folders`}
@@ -357,8 +357,8 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                                 </button>
                             ) : null}
                             <SidebarListItemHeaderLink
-                                to="/settings/labels"
-                                toApp={APPS.PROTONMAIL}
+                                to="/mail/folders-labels"
+                                toApp={APPS.PROTONACCOUNT}
                                 icon="settings-singular"
                                 title={c('Info').t`Manage your labels`}
                                 info={c('Link').t`Manage your labels`}

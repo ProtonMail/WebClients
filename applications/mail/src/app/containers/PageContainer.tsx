@@ -8,6 +8,7 @@ import {
     useWelcomeFlags,
     useModals,
     LocationErrorBoundary,
+    MailShortcutsModal,
 } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { MailSettings } from 'proton-shared/lib/interfaces';
@@ -22,7 +23,6 @@ import MailOnboardingModal from '../components/onboarding/MailOnboardingModal';
 import { MailUrlParams } from '../helpers/mailboxUrl';
 import { useContactsListener } from '../hooks/contact/useContactsListener';
 import { usePageHotkeys } from '../hooks/mailbox/usePageHotkeys';
-import MailshortCutsModal from '../components/shortcuts/MailShortcutsModal';
 
 interface Props {
     params: MailUrlParams;
@@ -48,7 +48,7 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints,
     useContactsListener();
 
     const handleOpenShortcutsModal = () => {
-        createModal(<MailshortCutsModal />, 'shortcuts-modal');
+        createModal(<MailShortcutsModal />, 'shortcuts-modal');
     };
 
     usePageHotkeys({ onCompose, onOpenShortcutsModal: handleOpenShortcutsModal });
