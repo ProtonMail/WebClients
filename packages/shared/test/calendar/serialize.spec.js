@@ -4,8 +4,7 @@ import { readCalendarEvent, readPersonalPart, readSessionKeys } from '../../lib/
 import { DecryptableKey, DecryptableKey2 } from '../keys/keys.data';
 import { unwrap, wrap } from '../../lib/calendar/helper';
 import { toCRLF } from './veventHelper.spec';
-import { ATTENDEE_STATUS_API } from '../../lib/calendar/constants';
-import { EVENT_VERIFICATION_STATUS } from '../../lib/calendar/interface';
+import { ATTENDEE_STATUS_API, EVENT_VERIFICATION_STATUS } from '../../lib/calendar/constants';
 import { initRandomMock, disableRandomMock } from '../mockRandomValues';
 
 const veventComponent = {

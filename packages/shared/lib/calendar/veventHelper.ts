@@ -1,55 +1,33 @@
 import { fromUTCDate } from '../date/timezone';
 import { omit, pick } from '../helpers/object';
-import { CalendarEvent, CalendarEventData } from '../interfaces/calendar';
-import { VcalValarmComponent, VcalVeventComponent } from '../interfaces/calendar/VcalModel';
+import {
+    CalendarEvent,
+    CalendarEventData,
+    VcalValarmComponent,
+    VcalVeventComponent,
+    AttendeeClearPartResult,
+    AttendeePart,
+} from '../interfaces/calendar';
 import { RequireOnly } from '../interfaces/utils';
 import { fromInternalAttendee } from './attendees';
-import { CALENDAR_CARD_TYPE, ICAL_EVENT_STATUS } from './constants';
-import { generateUID, hasMoreThan, wrap } from './helper';
-import { AttendeeClearPartResult, AttendeePart } from './interface';
+import {
+    CALENDAR_CARD_TYPE,
+    ICAL_EVENT_STATUS,
+    CALENDAR_ENCRYPTED_FIELDS,
+    CALENDAR_SIGNED_FIELDS,
+    REQUIRED_SET,
+    SHARED_ENCRYPTED_FIELDS,
+    SHARED_SIGNED_FIELDS,
+    TAKEN_KEYS,
+    USER_ENCRYPTED_FIELDS,
+    USER_SIGNED_FIELDS,
+} from './constants';
 import { parse, serialize } from './vcal';
 import { dateTimeToProperty } from './vcalConverter';
+import { generateUID, hasMoreThan, wrap } from './helper';
 import { getEventStatus, getIsCalendar, getIsEventComponent } from './vcalHelper';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
-
-export const SHARED_SIGNED_FIELDS = [
-    'uid',
-    'dtstamp',
-    'dtstart',
-    'dtend',
-    'recurrence-id',
-    'rrule',
-    'exdate',
-    'organizer',
-    'sequence',
-] as const;
-export const SHARED_ENCRYPTED_FIELDS = ['uid', 'dtstamp', 'created', 'description', 'summary', 'location'] as const;
-
-export const CALENDAR_SIGNED_FIELDS = ['uid', 'dtstamp', 'status', 'transp'] as const;
-export const CALENDAR_ENCRYPTED_FIELDS = ['uid', 'dtstamp', 'comment'] as const;
-
-export const USER_SIGNED_FIELDS = ['uid', 'dtstamp'] as const;
-export const USER_ENCRYPTED_FIELDS = [] as const;
-
-export const ATTENDEES_SIGNED_FIELDS = [] as const;
-export const ATTENDEES_ENCRYPTED_FIELDS = ['uid', 'attendee'] as const;
-
-const REQUIRED_SET = new Set(['uid', 'dtstamp'] as const);
-
-// Set of taken keys to put the rest
-const TAKEN_KEYS = [
-    ...new Set([
-        ...SHARED_SIGNED_FIELDS,
-        ...SHARED_ENCRYPTED_FIELDS,
-        ...CALENDAR_SIGNED_FIELDS,
-        ...CALENDAR_ENCRYPTED_FIELDS,
-        ...USER_SIGNED_FIELDS,
-        ...USER_ENCRYPTED_FIELDS,
-        ...ATTENDEES_ENCRYPTED_FIELDS,
-        ...ATTENDEES_SIGNED_FIELDS,
-    ]),
-] as const;
 
 export const getReadableCard = (cards: CalendarEventData[]) => {
     return cards.find(({ Type }) => [CLEAR_TEXT, SIGNED].includes(Type));

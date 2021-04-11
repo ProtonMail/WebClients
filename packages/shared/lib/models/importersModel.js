@@ -24,5 +24,10 @@ export const ImportersModel = {
 export const ImportHistoriesModel = {
     key: 'ImportHistories',
     get: getImportHistoriesModel,
-    update: (model, events) => updateCollection({ model, events, item: ({ ImportHistory }) => ImportHistory }),
+    update: (model, events) =>
+        updateCollection({
+            model,
+            events,
+            item: ({ ImportHistory }) => ImportHistory,
+        }),
 };

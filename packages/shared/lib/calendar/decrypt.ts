@@ -13,8 +13,7 @@ import {
 import { base64StringToUint8Array } from '../helpers/encoding';
 import { CalendarEventData } from '../interfaces/calendar';
 import { SimpleMap } from '../interfaces/utils';
-import { CALENDAR_CARD_TYPE } from './constants';
-import { EVENT_VERIFICATION_STATUS } from './interface';
+import { CALENDAR_CARD_TYPE, EVENT_VERIFICATION_STATUS } from './constants';
 
 export const getEventVerificationStatus = (status: VERIFICATION_STATUS | undefined, hasPublicKeys: boolean) => {
     if (!hasPublicKeys || status === undefined) {

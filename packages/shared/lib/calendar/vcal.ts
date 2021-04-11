@@ -12,7 +12,7 @@ import {
     VcalDateValue,
     VcalDurationValue,
     VcalRrulePropertyValue,
-} from '../interfaces/calendar/VcalModel';
+} from '../interfaces/calendar';
 
 const getIcalDateValue = (value: any, tzid: string | undefined, isDate: boolean) => {
     const icalTimezone = value.isUTC ? ICAL.Timezone.utcTimezone : ICAL.Timezone.localTimezone;
