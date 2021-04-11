@@ -1,10 +1,12 @@
+@import '~design-system/scss/config/';
+
 .modal.import-modal {
 	width: 100%;
-	max-width: 120rem;
+	max-width: rem(1200);
 	max-height: 90%;
 }
 
 .modal.customize-import-modal {
-	max-width: 84rem;
+	max-width: rem(840);
 	width: 100%;
 }
