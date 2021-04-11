@@ -1,5 +1,7 @@
+@import '~design-system/scss/config/';
+
 .message-attachments {
-    font-size: 1.4rem;
+    font-size: rem(14);
 }
 
 .message-attachmentList-item {
@@ -82,6 +84,6 @@ $message-attachment-icon-width: 2.6em !default;
 }
 
 .message-attachmentSize {
-    font-size: 1.2rem;
+    font-size: rem(12);
     color: var(--text-weak);
 }

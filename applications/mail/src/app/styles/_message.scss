@@ -1,3 +1,5 @@
+@import '~design-system/scss/config/';
+
 .message-conversation-summary {
     .is-appearing-content {
         @extend %appearing-container;
@@ -150,9 +152,9 @@
 
 // alignements when expanded/details
 .message-header--showDetails {
-    .message-show-hide-link-container {
-        padding-left: calc(#{$container-to-width} + #{$conversation-icon-size} + 0.75em);
-    }
+	.message-show-hide-link-container {
+		padding-left: calc(#{$container-to-width} + #{($conversation-icon-size)} + .75em);
+	}
 
     // show/hide details should go below otherwise it will be strangely place depending of recipients
     .message-header-recipients {
@@ -195,9 +197,9 @@
 }
 
 .message-detailed-header-extra {
-    .item-date {
-        font-size: 1.4rem;
-    }
+	.item-date {
+		font-size: rem(14);
+	}
 }
 
 /* states classes */
