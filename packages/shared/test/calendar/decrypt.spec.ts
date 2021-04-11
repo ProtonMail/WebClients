@@ -1,5 +1,5 @@
 import { getAggregatedEventVerificationStatus } from '../../lib/calendar/decrypt';
-import { EVENT_VERIFICATION_STATUS } from '../../lib/calendar/interface';
+import { EVENT_VERIFICATION_STATUS } from '../../lib/calendar/constants';
 
 const { SUCCESSFUL, NOT_VERIFIED, FAILED } = EVENT_VERIFICATION_STATUS;
 

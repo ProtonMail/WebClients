@@ -1,6 +1,6 @@
-import { EVENT_VERIFICATION_STATUS } from '../../calendar/interface';
 import { Address } from '../Address';
 import { VcalAttendeeProperty, VcalVeventComponent } from './VcalModel';
+import { EVENT_VERIFICATION_STATUS } from '../../calendar/constants';
 
 export interface SelfAddressData {
     selfAttendee?: VcalAttendeeProperty;

@@ -8,8 +8,7 @@ import {
     signMessage,
     splitMessage,
 } from 'pmcrypto';
-
-import { EncryptPartResult, SignPartResult } from './interface';
+import { EncryptPartResult, SignPartResult } from '../interfaces/calendar';
 
 export function signPart(dataToSign: string, signingKey: OpenPGPKey): Promise<SignPartResult>;
 export function signPart(dataToSign: string | undefined, signingKey: OpenPGPKey): Promise<SignPartResult | undefined>;

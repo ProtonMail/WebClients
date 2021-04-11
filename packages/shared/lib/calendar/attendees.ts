@@ -1,15 +1,16 @@
 import { arrayToHexString, binaryStringToArray, unsafeSHA1 } from 'pmcrypto';
+
 import { groupWith } from '../helpers/array';
 import { buildMailTo, canonizeEmailByGuess, getEmailTo, validateEmailAddress } from '../helpers/email';
 import { omit } from '../helpers/object';
 import { GetCanonicalEmails } from '../interfaces';
-import { Attendee } from '../interfaces/calendar';
 import {
+    Attendee,
     VcalAttendeeProperty,
     VcalOrganizerProperty,
     VcalPmVeventComponent,
     VcalVeventComponent,
-} from '../interfaces/calendar/VcalModel';
+} from '../interfaces/calendar';
 import { RequireSome, SimpleMap } from '../interfaces/utils';
 import { ATTENDEE_STATUS_API, ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from './constants';
 import { getAttendeeHasToken, getAttendeesHaveToken } from './vcalHelper';
