@@ -1,7 +1,7 @@
 import React from 'react';
 
+import { NotificationModel } from 'proton-shared/lib/interfaces/calendar';
 import getNotificationString from '../../helpers/getNotificationString';
-import { NotificationModel } from '../../interfaces/NotificationModel';
 
 interface Props {
     notification: NotificationModel;

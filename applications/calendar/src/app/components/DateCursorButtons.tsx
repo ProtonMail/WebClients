@@ -4,7 +4,7 @@ import { Icon } from 'react-components';
 import { format } from 'date-fns';
 import { dateLocale } from 'proton-shared/lib/i18n';
 
-import { VIEWS } from '../constants';
+import { VIEWS } from 'proton-shared/lib/calendar/constants';
 import getDateRangeText from './getDateRangeText';
 
 const { DAY, WEEK, MONTH, YEAR, AGENDA, CUSTOM } = VIEWS;

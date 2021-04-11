@@ -1,9 +1,9 @@
-import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
+import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
 import { Address } from 'proton-shared/lib/interfaces';
 import React, { CSSProperties, Ref, useRef } from 'react';
 import { Button, classnames, PrimaryButton } from 'react-components';
 import { c } from 'ttag';
-import { EventModel } from '../../interfaces/EventModel';
+import { EventModel } from 'proton-shared/lib/interfaces/calendar';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
 import PopoverContainer from '../events/PopoverContainer';
 import PopoverFooter from '../events/PopoverFooter';

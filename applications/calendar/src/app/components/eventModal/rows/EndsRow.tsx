@@ -1,11 +1,11 @@
 import { END_TYPE, FREQUENCY_COUNT_MAX, MAXIMUM_DATE } from 'proton-shared/lib/calendar/constants';
-import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
+import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
 import React from 'react';
 import { c, msgid } from 'ttag';
 import { DateInput, IntegerInput, SelectTwo, Option } from 'react-components';
 import { isValid } from 'date-fns';
 
-import { DateTimeModel, FrequencyModel, EventModelErrors } from '../../../interfaces/EventModel';
+import { DateTimeModel, FrequencyModel, EventModelErrors } from 'proton-shared/lib/interfaces/calendar';
 
 const { NEVER, UNTIL, AFTER_N_TIMES } = END_TYPE;
 

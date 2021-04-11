@@ -1,10 +1,8 @@
-import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, RECURRING_TYPES } from 'proton-shared/lib/calendar/constants';
 import { getResetPartstatActions, getUpdatedInviteVevent } from 'proton-shared/lib/calendar/integration/invite';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
-import { RECURRING_TYPES } from '../../../constants';
-import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
-import { EventNewData, EventOldData } from '../../../interfaces/EventData';
+
 import {
     INVITE_ACTION_TYPES,
     InviteActions,
@@ -29,6 +27,8 @@ import { UpdateAllPossibilities } from './getRecurringUpdateAllPossibilities';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
 import { getCurrentEvent, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
 import { withIncreasedSequence, withUpdatedDtstampAndSequence, withVeventSequence } from './sequence';
+import { EventNewData, EventOldData } from '../../../interfaces/EventData';
+import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 
 interface SaveRecurringArguments {
     type: RECURRING_TYPES;

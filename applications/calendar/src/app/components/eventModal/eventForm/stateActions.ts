@@ -1,6 +1,6 @@
 import { addDays, isSameDay } from 'proton-shared/lib/date-fns-utc';
+import { EventModel } from 'proton-shared/lib/interfaces/calendar';
 import { getInitialDateTimeModel } from './state';
-import { EventModel } from '../../../interfaces/EventModel';
 import { getTimeInUtc } from './time';
 
 const isZeroHoursMinutes = (date: Date) => date.getHours() === 0 && date.getMinutes() === 0;

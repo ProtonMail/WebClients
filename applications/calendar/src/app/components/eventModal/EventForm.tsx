@@ -2,13 +2,13 @@ import { getIsProtonUID } from 'proton-shared/lib/calendar/helper';
 import { Address } from 'proton-shared/lib/interfaces';
 import React, { HTMLAttributes } from 'react';
 import { APPS } from 'proton-shared/lib/constants';
-import { FREQUENCY, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
-import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
-import { Alert, AppLink, classnames, Input, TextArea } from 'react-components';
+import { FREQUENCY, MAX_LENGTHS, MAX_NOTIFICATIONS } from 'proton-shared/lib/calendar/constants';
+import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
+import { Alert, AppLink, classnames, Input, TextArea, Notifications } from 'react-components';
 import { c } from 'ttag';
-import { MAX_NOTIFICATIONS } from '../../constants';
-import { EventModel, EventModelErrors } from '../../interfaces/EventModel';
-import { NotificationModel } from '../../interfaces/NotificationModel';
+
+import { EventModel, EventModelErrors, NotificationModel } from 'proton-shared/lib/interfaces/calendar';
+
 import {
     CALENDAR_INPUT_ID,
     DESCRIPTION_INPUT_ID,
@@ -24,7 +24,7 @@ import CalendarSelect from './inputs/CalendarSelect';
 import CustomFrequencySelector from './inputs/CustomFrequencySelector';
 import FrequencyInput from './inputs/FrequencyInput';
 import ParticipantsInput from './inputs/ParticipantsInput';
-import Notifications from './Notifications';
+
 import DateTimeRow from './rows/DateTimeRow';
 import MiniDateTimeRows from './rows/MiniDateTimeRows';
 

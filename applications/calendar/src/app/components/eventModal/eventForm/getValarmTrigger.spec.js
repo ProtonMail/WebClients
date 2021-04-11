@@ -1,7 +1,10 @@
 import { toTriggerString } from 'proton-shared/lib/calendar/vcal';
-import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/interfaces/calendar/Calendar';
-import { getValarmTrigger } from './getValarmTrigger';
-import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../../constants';
+import {
+    SETTINGS_NOTIFICATION_TYPE,
+    NOTIFICATION_UNITS,
+    NOTIFICATION_WHEN,
+} from 'proton-shared/lib/calendar/constants';
+import { getValarmTrigger } from 'proton-shared/lib/calendar/getValarmTrigger';
 
 const { DEVICE } = SETTINGS_NOTIFICATION_TYPE;
 const { DAY, HOURS, WEEK, MINUTES } = NOTIFICATION_UNITS;

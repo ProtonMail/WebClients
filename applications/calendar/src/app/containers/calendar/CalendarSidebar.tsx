@@ -1,3 +1,4 @@
+import { APPS } from 'proton-shared/lib/constants';
 import React, { ReactNode, useState } from 'react';
 import {
     useEventManager,
@@ -58,7 +59,9 @@ const CalendarSidebar = ({
 
     const headerButton = (
         <SidebarListItemHeaderLink
-            to="/settings/calendars"
+            toApp={APPS.PROTONACCOUNT}
+            to="/calendar/calendars"
+            target="_self"
             title={c('Info').t`Manage your calendars`}
             icon="settings-singular"
             info={c('Link').t`Calendars`}

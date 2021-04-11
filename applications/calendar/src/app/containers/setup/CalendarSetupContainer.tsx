@@ -13,8 +13,8 @@ import { CalendarsModel, CalendarUserSettingsModel } from 'proton-shared/lib/mod
 import { loadModels } from 'proton-shared/lib/models/helper';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 
+import { setupCalendarKeys } from 'react-components/containers/keys/calendar';
 import setupCalendarHelper from './reset/setupCalendarHelper';
-import { setupCalendarKeys } from './reset/setupCalendarKeys';
 
 interface Props {
     onDone: () => void;

@@ -1,9 +1,8 @@
 import { MutableRefObject, useEffect } from 'react';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
-import { useEventManager } from 'react-components';
+import { CalendarAlarmEventManager, CalendarEventManager } from 'proton-shared/lib/interfaces/calendar/EventManager';
+import { useEventManager, useCalendarModelEventManager } from 'react-components';
 import { CalendarsAlarmsCache } from './CacheInterface';
-import { CalendarAlarmEventManager, CalendarEventManager } from '../../interfaces/EventManager';
-import { useCalendarModelEventManager } from '../eventManager/ModelEventManagerProvider';
 
 export const useCalendarsAlarmsEventListeners = (
     cacheRef: MutableRefObject<CalendarsAlarmsCache>,

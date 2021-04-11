@@ -2,7 +2,6 @@ import { CALENDAR_FLAGS } from 'proton-shared/lib/calendar/constants';
 import React, { useMemo, useState } from 'react';
 import {
     ErrorBoundary,
-    ModalsChildren,
     StandardErrorPage,
     useAddresses,
     useCalendars,
@@ -14,7 +13,6 @@ import CalendarOnboardingContainer from '../setup/CalendarOnboardingContainer';
 import CalendarSetupContainer from '../setup/CalendarSetupContainer';
 import ResetContainer from '../setup/ResetContainer';
 import MainContainerSetup from './MainContainerSetup';
-import CalendarModelEventManagerProvider from '../eventManager/ModelEventManagerProvider';
 
 const MainContainer = () => {
     const [addresses] = useAddresses();
@@ -64,10 +62,7 @@ const MainContainer = () => {
 const WrappedMainContainer = () => {
     return (
         <ErrorBoundary component={<StandardErrorPage />}>
-            <CalendarModelEventManagerProvider>
-                <ModalsChildren />
-                <MainContainer />
-            </CalendarModelEventManagerProvider>
+            <MainContainer />
         </ErrorBoundary>
     );
 };

@@ -7,7 +7,7 @@ import {
 import { startOfDay } from 'proton-shared/lib/date-fns-utc';
 import { addDays, isValid } from 'date-fns';
 import { DAY } from 'proton-shared/lib/constants';
-import { DateTimeModel, EventModel } from '../../../interfaces/EventModel';
+import { EventModel, DateTimeModel } from 'proton-shared/lib/interfaces/calendar';
 import { getDateTimeState, getTimeInUtc } from '../eventForm/time';
 import getFrequencyModelChange from '../eventForm/getFrequencyModelChange';
 

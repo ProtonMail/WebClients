@@ -1,9 +1,8 @@
-import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from 'proton-shared/lib/calendar/constants';
 import { Address } from 'proton-shared/lib/interfaces';
 import { VcalAttendeeProperty, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
 import { SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
-import { RECURRING_TYPES } from '../constants';
 
 export enum INVITE_ACTION_TYPES {
     NONE,

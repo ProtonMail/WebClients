@@ -4,8 +4,9 @@ import { getSelfAttendeeToken } from 'proton-shared/lib/calendar/integration/inv
 import { noop } from 'proton-shared/lib/helpers/function';
 import { Address, Api } from 'proton-shared/lib/interfaces';
 import { CalendarBootstrap, CalendarEvent, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
+import { DELETE_CONFIRMATION_TYPES } from 'proton-shared/lib/calendar/constants';
+
 import { getEventDeletedText, getRecurringEventDeletedText } from '../../../components/eventModal/eventForm/i18n';
-import { DELETE_CONFIRMATION_TYPES } from '../../../constants';
 import { EventOldData } from '../../../interfaces/EventData';
 import {
     INVITE_ACTION_TYPES,

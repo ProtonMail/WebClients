@@ -10,11 +10,11 @@ import { addDays } from 'date-fns';
 import { isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { dedupeNotifications } from 'proton-shared/lib/calendar/alarms';
 
+import { DateTimeModel, EventModel } from 'proton-shared/lib/interfaces/calendar';
 import modelToFrequencyProperties from './modelToFrequencyProperties';
 import { modelToValarmComponent } from './modelToValarm';
-import { DateTimeModel, EventModel } from '../../../interfaces/EventModel';
-import { dedupeNotifications } from '../../../helpers/alarms';
 
 const modelToDateProperty = ({ date, time, tzid }: DateTimeModel, isAllDay: boolean) => {
     const dateObject = {

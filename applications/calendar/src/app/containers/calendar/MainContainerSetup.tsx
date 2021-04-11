@@ -1,25 +1,29 @@
 import React, { useMemo, useRef, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
-import { useActiveBreakpoint, useUserSettings, useCalendarUserSettings } from 'react-components';
+import {
+    useActiveBreakpoint,
+    useUserSettings,
+    useCalendarUserSettings,
+    useCalendarsKeysSettingsListener,
+} from 'react-components';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { Address, UserModel } from 'proton-shared/lib/interfaces';
 import {
     getDefaultCalendar,
     getIsCalendarDisabled,
     getProbablyActiveCalendars,
+    DEFAULT_CALENDAR_USER_SETTINGS,
 } from 'proton-shared/lib/calendar/calendar';
 import { getTimezone } from 'proton-shared/lib/date/timezone';
 import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
-import { DEFAULT_CALENDAR_USER_SETTINGS } from '../../settingsConstants';
+
 import { CalendarsEventsCache } from './eventStore/interface';
 import getCalendarsEventCache from './eventStore/cache/getCalendarsEventCache';
-import useCalendarsKeysSettingsListener from './eventStore/useCalendarsKeysSettingsListener';
 import useCalendarsEventsEventListener from './eventStore/useCalendarsEventsEventListener';
 import { CalendarsAlarmsCache } from '../alarms/CacheInterface';
 import { getCalendarsAlarmsCache } from '../alarms/useCalendarsAlarms';
 import useCalendarsAlarmsEventListeners from '../alarms/useCalendarAlarmsEventListener';
 import { getDefaultTzid } from './getSettings';
-import SettingsContainer from '../settings/SettingsContainer';
 import CalendarContainer from './CalendarContainer';
 import AlarmContainer from '../alarms/AlarmContainer';
 import EventActionContainer from './EventActionContainer';
@@ -68,19 +72,6 @@ const MainContainerSetup = ({ user, addresses, calendars }: Props) => {
     return (
         <>
             <Switch>
-                <Route path="/settings">
-                    <SettingsContainer
-                        isNarrow={isNarrow}
-                        activeAddresses={activeAddresses}
-                        calendars={calendars}
-                        activeCalendars={activeCalendars}
-                        disabledCalendars={disabledCalendars}
-                        defaultCalendar={defaultCalendar}
-                        calendarUserSettings={calendarUserSettings}
-                        calendarsEventsCacheRef={calendarsEventsCacheRef}
-                        user={user}
-                    />
-                </Route>
                 <Route path="/event">
                     <EventActionContainer
                         tzid={tzid}
@@ -117,4 +108,5 @@ const MainContainerSetup = ({ user, addresses, calendars }: Props) => {
         </>
     );
 };
+
 export default MainContainerSetup;

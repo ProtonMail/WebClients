@@ -1,9 +1,9 @@
 import { getOccurrences } from 'proton-shared/lib/calendar/recurring';
 import { c } from 'ttag';
 
-import { RECURRING_TYPES } from '../../../constants';
-import { EventNewData, EventOldData } from '../../../interfaces/EventData';
+import { RECURRING_TYPES } from 'proton-shared/lib/calendar/constants';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../../interfaces/Invite';
+import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 
 export const getEventCreatedText = (inviteActions: InviteActions) => {
     const { type } = inviteActions;

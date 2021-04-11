@@ -1,7 +1,7 @@
 import { withPmAttendees } from 'proton-shared/lib/calendar/attendees';
 import getMemberAndAddress from 'proton-shared/lib/calendar/integration/getMemberAndAddress';
 import { getSelfAttendeeToken } from 'proton-shared/lib/calendar/integration/invite';
-import { WeekStartsOn } from 'proton-shared/lib/calendar/interface';
+import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
 import { getIsRruleEqual } from 'proton-shared/lib/calendar/rruleEqual';
 import withVeventRruleWkst from 'proton-shared/lib/calendar/rruleWkst';
 import { buildVcalOrganizer, dayToNumericDay } from 'proton-shared/lib/calendar/vcalConverter';
@@ -12,10 +12,10 @@ import { omit } from 'proton-shared/lib/helpers/object';
 import { Address, Api, GetCanonicalEmails } from 'proton-shared/lib/interfaces';
 import { CalendarBootstrap, SyncMultipleApiResponse, VcalDays } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+
 import { useGetCalendarKeys } from 'react-components';
 import { getRecurringEventUpdatedText, getSingleEventText } from '../../../components/eventModal/eventForm/i18n';
 import { modelToVeventComponent } from '../../../components/eventModal/eventForm/modelToProperties';
-import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import {
     INVITE_ACTION_TYPES,
     InviteActions,
@@ -38,6 +38,7 @@ import getSaveSingleEventActions from './getSaveSingleEventActions';
 import { getDuplicateAttendeesSend, getUpdatedSaveInviteActions } from './inviteActions';
 import { getOriginalEvent } from './recurringHelper';
 import { withVeventSequence } from './sequence';
+import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 
 const getSaveSingleEventActionsHelper = async ({
     newEditEventData,

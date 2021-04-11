@@ -4,7 +4,7 @@ import { getUntilProperty, numericDayToDay } from 'proton-shared/lib/calendar/vc
 import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { VcalRruleProperty } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { EventModel } from '../../../interfaces/EventModel';
+import { EventModel } from 'proton-shared/lib/interfaces/calendar';
 
 const modelToFrequencyProperties = ({ frequencyModel, start, isAllDay, isOrganizer }: EventModel) => {
     const { type, frequency, interval, weekly, monthly, ends, rruleValue } = frequencyModel;
