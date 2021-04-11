@@ -1,0 +1,7 @@
+.avatar {
+	width: $conversation-icon-size;
+	height: $conversation-icon-size;
+	font-size: 0.75rem; // 12
+	background-color: var(--primary);
+	color: var(--primary-contrast);
+}

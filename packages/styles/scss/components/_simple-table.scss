@@ -14,7 +14,7 @@
 	}
 
 	th:not(#{&}-row-th) {
-		@extend .text-uppercase;
+		@extend .text-capitalize;
 		@extend .text-left;
 
 		&.text-center {

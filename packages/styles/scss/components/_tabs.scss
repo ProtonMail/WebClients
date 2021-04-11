@@ -21,7 +21,6 @@
 	@extend .text-no-decoration;
 	@extend .relative;
 	top: 1px;
-	font-weight: 600;
 	transition: color 0.15s ease-out, border-bottom 0.15s ease-out;
 
 	&:focus,
