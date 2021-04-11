@@ -53,7 +53,7 @@
 .right-text,
 .left-icon {
 	top: 0;
-	height: $default-height-fields; // height of field
+	height: #{rem($default-height-fields)}; // height of field
 	align-content: center;
 }
 
@@ -64,7 +64,7 @@
 	right: 1em;
 
 	&-inner {
-		padding-bottom: 0.2rem;
+		padding-bottom: rem(2);
 	}
 }
 

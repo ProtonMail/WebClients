@@ -4,7 +4,7 @@
 
 	position: relative;
 	z-index: 1;
-	height: $toolbar-height;
+	height: rem($toolbar-height);
 	background-color: var(--toolbar-background-color, var(--background-strong));
 	color: var(--toolbar-text-color, var(--text-norm));
 }

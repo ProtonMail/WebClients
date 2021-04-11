@@ -4,8 +4,8 @@
 	}
 
 	&-dot {
-		width: 0.8rem;
-		height: 0.8rem;
+		width: rem(8);
+		height: rem(8);
 		background-color: var(--interaction-weak);
 		color: var(--text-norm);
 		transition: background-color 0.25s easing(ease);

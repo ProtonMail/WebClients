@@ -4,7 +4,7 @@
 	font-style: normal;
 }
 
-$field-container: 26rem !default;
+$field-container: rem(260) !default;
 
 .field-container {
 	width: $field-container;
@@ -94,7 +94,7 @@ $field-container: 26rem !default;
 
 	&.select {
 		@extend .field;
-		padding-right: 0.6rem;
+		padding-right: rem(6);
 		.mauto {
 			display: flex;
 			width: 100%;
@@ -120,7 +120,7 @@ select.field {
 		--select-background-color,
 		var(--field-background-color, var(--background-norm))
 	);
-	background-size: 1.5rem;
+	background-size: rem(15);
 	padding-left: 1em;
 	padding-right: 20px;
 	text-overflow: ellipsis;
@@ -203,7 +203,7 @@ textarea.field {
 	&,
 	&-empty {
 		// for drive, to keep the same height
-		min-height: calc(#{$default-height-fields} + 2px);
+		min-height: calc(#{rem($default-height-fields)} + 2px);
 	}
 
 	&:focus-within {

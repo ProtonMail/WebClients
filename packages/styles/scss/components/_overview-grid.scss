@@ -1,8 +1,8 @@
 .overview-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(#{rem(250)}, 1fr));
 	grid-auto-flow: row dense;
-	grid-gap: 2rem;
+	grid-gap: rem(20);
 
 	&-item {
 		&--tall {

@@ -1,5 +1,5 @@
-$inputform-default-spacing-text: 0.4rem !default;
-$inputform-height-phone-prefix: 2.8rem !default;
+$inputform-default-spacing-text: rem(4) !default;
+$inputform-height-phone-prefix: rem(28) !default;
 
 .inputform {
 	&-container {
@@ -11,11 +11,13 @@ $inputform-height-phone-prefix: 2.8rem !default;
 	}
 	&-label-hint,
 	&-assist {
-		font-size: 1.2rem;
+		font-size: rem(12);
 		color: var(--text-weak);
 	}
 	&-label-hint {
-		padding-bottom: 0.1rem; // just to compensate the difference of text size
+		padding-bottom: rem(
+			1
+		); // just to compensate the difference of text size
 	}
 	&-assist {
 		min-height: 1.9em;
@@ -31,7 +33,7 @@ $inputform-height-phone-prefix: 2.8rem !default;
 	}
 
 	&-field {
-		height: $default-height-fields-inputforms;
+		height: rem($default-height-fields-inputforms);
 		padding: em(6) em(16); // design want 34px height (actually 35 to avoid .5px)
 		border-radius: $global-border-radius;
 		border: 1px solid var(--field-norm);
@@ -80,7 +82,7 @@ $inputform-height-phone-prefix: 2.8rem !default;
 		}
 
 		select#{&} {
-			background-size: 1.5rem;
+			background-size: rem(15);
 			padding-right: 20px;
 			text-overflow: ellipsis;
 			overflow: hidden;
@@ -138,7 +140,7 @@ $inputform-height-phone-prefix: 2.8rem !default;
 
 		&-empty {
 			// for drive, to keep the same height
-			min-height: calc(#{$default-height-fields-inputforms} + 2px);
+			min-height: calc(#{rem($default-height-fields-inputforms)} + 2px);
 		}
 
 		&:focus-within {
@@ -156,18 +158,20 @@ $inputform-height-phone-prefix: 2.8rem !default;
 		.right-icon,
 		.inputform-field,
 		.inputform-icon-container {
-			height: $bigger-height-fields-inputforms;
+			height: rem($bigger-height-fields-inputforms);
 		}
 		.inputform-field {
 			&[type='search'] {
-				background-size: 2rem;
+				background-size: rem(20);
 				padding-left: 2.2em;
 			}
 		}
 		.inputform-icon-container {
 			&-empty {
 				// for drive, to keep the same height
-				min-height: calc(#{$bigger-height-fields-inputforms} + 2px);
+				min-height: calc(
+					#{rem($bigger-height-fields-inputforms)} + 2px
+				);
 			}
 			.inputform-field {
 				height: 100%;

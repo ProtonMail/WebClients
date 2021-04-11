@@ -195,8 +195,8 @@ $toggle-width-button: em(24) !default;
 		font-size: 0.8em;
 
 		.toggle-label-img {
-			width: 1.3rem;
-			height: 1.3rem;
+			width: rem(13);
+			height: rem(13);
 		}
 	}
 }

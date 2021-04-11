@@ -1,8 +1,8 @@
-$padding-left-link: 2rem !default;
+$padding-left-link: rem(20) !default;
 
 .navigation-link,
 .navigation-link-header-group {
-	padding: 0.95rem 1em 0.95rem $padding-left-link;
+	padding: rem(9.5) 1em rem(9.5) $padding-left-link;
 	text-decoration: none;
 	display: block;
 }
@@ -107,11 +107,11 @@ $padding-left-link: 2rem !default;
 .navigation-counter-item {
 	background: var(--navigation-item-count-background-color, var(--primary));
 	color: var(--navigation-item-count-text-color, var(--primary-contrast));
-	font-size: 1.1rem;
-	padding: 0.2rem 0.4em 0; // em value for top gives non rounded value, so rem
-	border-radius: 1.1rem;
+	font-size: rem(11);
+	padding: rem(2) 0.4em 0; // em value for top gives non rounded value, so rem
+	border-radius: rem(11);
 	line-height: 1;
-	height: 1.6rem;
+	height: rem(16);
 	font-variant: tabular-nums;
 
 	&:empty {
@@ -155,7 +155,7 @@ $padding-left-link: 2rem !default;
 }
 
 .navigation-subitem {
-	margin-left: 0.7rem;
+	margin-left: rem(7);
 }
 
 .navigation-sublink {
@@ -163,7 +163,7 @@ $padding-left-link: 2rem !default;
 
 	border-left: 2px solid var(--border-norm);
 	display: block;
-	padding: 0.75rem 1rem 0.75rem 1.5rem;
+	padding: rem(7.5) rem(10) rem(7.5) rem(15);
 	text-decoration: none;
 
 	&[aria-current='true'] {

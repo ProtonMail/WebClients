@@ -169,7 +169,7 @@
 				transparent
 			);
 		background-position: 50% 0, 0 100%;
-		background-size: calc(100% - 2rem) 0.3rem;
+		background-size: calc(100% - #{rem(20)}) rem(3);
 		background-repeat: no-repeat;
 
 		@include respond-to($breakpoint-small, 'max') {
@@ -193,8 +193,8 @@
 			position: relative;
 			z-index: 1;
 			display: block;
-			height: 0.3rem;
-			flex: 0 0 0.3rem;
+			height: rem(3);
+			flex: 0 0 rem(3);
 			background: var(--background-norm);
 		}
 	}
@@ -278,8 +278,8 @@
 	/* Arrow for wide screens */
 	@include respond-to($breakpoint-small, 'min') {
 		&:not(#{&}--no-caret)::before {
-			--size: 1.5rem;
-			--offset: #{2.12rem - 1.5rem}; // Pythagore powa for middle line alignement!
+			--size: #{rem(15)};
+			--offset: #{rem(21.2 - 15)}; // Pythagore powa for middle line alignement!
 
 			content: '';
 			position: absolute;
@@ -330,13 +330,13 @@
 		&--top-left,
 		&--bottom-left {
 			&::before {
-				left: 1rem;
+				left: rem(10);
 			}
 		}
 		&--top-right,
 		&--bottom-right {
 			&::before {
-				right: 1rem;
+				right: rem(10);
 			}
 		}
 
