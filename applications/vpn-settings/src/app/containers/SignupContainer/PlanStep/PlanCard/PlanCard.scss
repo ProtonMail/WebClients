@@ -27,13 +27,13 @@
     }
 
     &-image {
-        height: 7rem;
+        height: rem(70);
     }
 
     &-mostPopular {
         @include respond-to($breakpoint-medium) {
             position: absolute;
-            top: calc(-7rem - 2.5em); // height of image container + some text
+            top: calc( #{rem(-70)} - 2.5em); // height of image container + some text
             left: 0;
             right: 0;
         }

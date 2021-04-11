@@ -2,7 +2,7 @@
 
 
 .container-plans-signup {
-    max-width: 100rem;
+    max-width: rem(1000);
     width: 100%;
 
     @include respond-to($breakpoint-medium) {
@@ -19,7 +19,7 @@
     display: flex;
     width: 100%;
     font-weight: bold;
-    font-size: 2.2rem;
+    font-size: rem(22);
 
     &::before,
     &::after {
