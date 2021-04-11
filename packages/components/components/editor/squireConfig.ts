@@ -159,13 +159,13 @@ export const insertCustomStyle = (document: Document) => {
             scrollbar-color: var(--scrollbar-thumb-color) transparent;
         }
         *::-webkit-scrollbar {
-            width: 1rem;
-            height: 1rem;
+            width: 0.625rem; /* 10px */
+            height: 0.625rem;
         }
         *::-webkit-scrollbar-thumb {
-            border: .2rem solid transparent;
+            border: .125rem solid transparent; /* 2px */
             background-clip: padding-box;
-            border-radius: .5rem;
+            border-radius: .3125rem; /* 5px */
             background-color: var(--scrollbar-thumb-color, rgba(0, 0, 0, 0.35) );
         }
         *::-webkit-scrollbar-track {
@@ -181,14 +181,14 @@ export const insertCustomStyle = (document: Document) => {
 
         html {
             height: 100%;
-            font-size: 62.5%;
+            font-size: 100%;
             cursor: text;
         }
 
         body {
             box-sizing: border-box;
             font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-            font-size: 1.4rem;
+            font-size: .875rem; /* 14 */
             line-height: 1.65;
             color: #222;
             background: #fff;
@@ -203,7 +203,7 @@ export const insertCustomStyle = (document: Document) => {
 
         [id="squire"] {
             outline: none;
-            padding: 0.8rem;
+            padding: 0.5rem;
         }
 
         [id="ellipsis"] {
@@ -215,7 +215,7 @@ export const insertCustomStyle = (document: Document) => {
             cursor: pointer;
             font-size: 1.2em;
             padding: 0 .5em;
-            margin: 0 0.8rem 0.8rem 0.8rem;
+            margin: 0 0.5rem 0.5rem 0.5rem;
         }
 
         [id="ellipsis"]:hover,
@@ -225,7 +225,7 @@ export const insertCustomStyle = (document: Document) => {
         }
 
         blockquote {
-            padding: 0 0 0 1.6rem;
+            padding: 0 0 0 1rem;
             margin: 0;
             border-left: 4px solid #e5e5e5;
         }

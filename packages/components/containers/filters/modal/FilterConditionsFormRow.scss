@@ -1,10 +1,12 @@
+@import '~design-system/scss/config/';
+
 .condition-token {
 	border-radius: 1em;
 	border: 1px solid var(--border-norm);
 	height: 1.6em;
 	padding: 0 0.6em;
 	align-items: center;
-	font-size: 1.4rem;
+	font-size: rem(14);
 	color: var(--text-norm);
 	background: var(--background-weak);
 

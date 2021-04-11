@@ -18,25 +18,25 @@
 }
 
 .subscriptionTable-header {
-	min-height: 22rem;
+	min-height: rem(220);
 }
 
 .subscriptionTable-description,
 .subscriptionTable-footer {
-	min-height: 7rem;
+	min-height: rem(70);
 }
 
 .subscriptionTable-image-container {
-	height: 10rem;
+	height: rem(100);
 }
 
 .subscriptionPrices-monthly,
 .subscriptionPlan-customize {
 	.amount,
 	.currency {
-		font-size: 3rem;
+		font-size: rem(30);
 		@include respond-to($breakpoint-tiny) {
-			font-size: 2rem;
+			font-size: rem(20);
 		}
 		line-height: 1;
 	}
@@ -46,14 +46,14 @@
 		margin-left: auto;
 	}
 	.price {
-		font-size: 1.4rem;
+		font-size: rem(14);
 		line-height: 1;
 	}
 	.amount,
 	.currency,
 	.prefix,
 	.subscriptionPlan-customize-included {
-		font-size: 2.2rem;
+		font-size: rem(22);
 	}
 }
 
@@ -69,7 +69,7 @@
 
 .subscriptionTable-mostPopular {
 	position: absolute;
-	top: 0.5rem;
+	top: rem(5);
 	left: 0;
 	right: 0;
 }

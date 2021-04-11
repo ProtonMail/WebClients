@@ -1,3 +1,5 @@
+@import '~design-system/scss/config/';
+
 .orderableHelper {
 	z-index: 666;
 	display: flex;
@@ -17,7 +19,7 @@
 		height: 100%;
 		&:first-child {
 			flex-grow: 0;
-			flex-basis: 3.5rem;
+			flex-basis: rem(35);
 		}
 	}
 }

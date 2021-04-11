@@ -40,10 +40,10 @@
 	.placeholder {
 		// The point is to match exactly Squire text content and position
 		font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-		font-size: 1.4rem;
+		font-size: rem(14);
 		line-height: 1.65;
-		margin-left: 0.8rem;
-		margin-top: 0.8rem;
+		margin-left: rem(8);
+		margin-top: rem(8);
 		color: grey;
 	}
 }
@@ -60,13 +60,13 @@
 }
 
 .editor-toolbar-dropdown .color-selector-container {
-	max-width: 21rem;
+	max-width: rem(210);
 }
 
 .editor-toolbar-dropdown .color-selector-item {
-	height: 2.8rem;
-	width: 2.8rem;
-	margin: 0 0.2rem 0.2rem 0;
+	height: rem(28);
+	width: rem(28);
+	margin: 0 rem(2) rem(2) 0;
 }
 
 .editor--disabled::after {
