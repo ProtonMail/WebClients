@@ -88,10 +88,10 @@
 		&::before {
 			content: '';
 			position: absolute;
-			top: -0.3rem;
-			left: -0.4rem;
-			width: .7rem;
-			height: .7rem;
+			top: rem(-3);
+			left: rem(-4);
+			width: rem(7);
+			height: rem(7);
 			border-radius: 50%;
 			background-color: var(--primary);
 		}
@@ -102,7 +102,7 @@
 	}
 
 	&-timeText {
-		top: -1rem;
-		font-size: 1rem;
+		top: rem(-10);
+		font-size: rem(10);
 	}
 }

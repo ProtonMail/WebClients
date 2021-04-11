@@ -1,6 +1,8 @@
+@import '~design-system/scss/config/';
+
 .calendar-aside {
 	width: $calendar-aside-width;
-	font-size: 1rem;
+	font-size: rem(10);
 }
 
 .calendar-primary-timezone-cell,

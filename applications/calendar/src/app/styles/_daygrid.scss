@@ -1,5 +1,5 @@
 .calendar-daygrid {
-	min-height: 41rem;
+	min-height: rem(410);
 
 	&-weeknumber {
 		border-bottom: $calendar-grid-border;
@@ -7,7 +7,7 @@
 		background-color: var(--background-weak);
 
 		&-width {
-			width: 2.5rem;
+			width: rem(25);
 		}
 	}
 

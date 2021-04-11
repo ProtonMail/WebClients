@@ -148,7 +148,7 @@
 	@include respond-to($breakpoint-small) {
 		&-title,
 		&-timestring {
-			font-size: 1.2rem;
+			font-size: rem(12);
 		}
 	}
 }
