@@ -1,3 +1,5 @@
+@import '~design-system/scss/config/';
+
 .file-browser-list-item td,
 .file-browser-table th {
     &:first-of-type {
@@ -5,7 +7,7 @@
         position: relative; // Because of .increase-click-surface
         padding-left: 1em;
         padding-right: 1em;
-        width: calc(1.6rem + 2em);
+        width: calc( #{rem(16)} + 2em);
     }
 }
 

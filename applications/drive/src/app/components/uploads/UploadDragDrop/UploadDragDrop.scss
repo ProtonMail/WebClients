@@ -1,3 +1,5 @@
+@import '~design-system/scss/config/';
+
 .upload-drag-drop {
     position: fixed;
     top: 0;
@@ -11,7 +13,7 @@
     justify-content: center;
 
     &-infobox {
-        max-width: 38rem;
+        max-width: rem(380);
         background: var(--background-norm);
         color: var(--text-norm);
         border-radius: $global-border-radius;
@@ -22,6 +24,6 @@
 
     &-image {
         margin-top: -42.5%;
-        max-width: 25rem;
+        max-width: rem(250);
     }
 }
