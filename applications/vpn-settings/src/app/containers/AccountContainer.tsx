@@ -3,7 +3,7 @@ import {
     UsernameSection,
     PasswordsSection,
     TwoFactorSection,
-    NewsSection,
+    EmailSubscriptionSection,
     DeleteSection,
     RecoveryMethodsSection,
     OpenVPNAccountSection,
@@ -67,7 +67,7 @@ const AccountContainer = ({ setActiveSection, location }: SettingsPropsShared) =
             <TwoFactorSection />
             <OpenVPNAccountSection />
             <RecoveryMethodsSection />
-            <NewsSection />
+            <EmailSubscriptionSection />
             <DeleteSection />
         </PrivateMainSettingsAreaWithPermissions>
     );

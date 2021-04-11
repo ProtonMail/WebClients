@@ -7,9 +7,9 @@ import { getAccountPage } from './containers/AccountContainer';
 import { getDownloadsPage } from './containers/DownloadsContainer';
 import { getPaymentsPage } from './containers/PaymentsContainer';
 
-export const getPages = (user: UserModel, hasEarlyAccess: boolean): SectionConfig[] => [
+export const getPages = (user: UserModel): SectionConfig[] => [
     getDashboardPage(user),
-    getGeneralPage({ hasEarlyAccess }),
+    getGeneralPage(),
     getAccountPage(),
     getDownloadsPage(),
     getPaymentsPage(),
