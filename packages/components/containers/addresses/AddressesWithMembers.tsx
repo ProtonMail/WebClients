@@ -104,7 +104,7 @@ const AddressesWithMembers = ({ user, organization, isOnlySelf }: Props) => {
 
     return (
         <>
-            <SettingsParagraph>
+            <SettingsParagraph className="mt0-5">
                 {c('Info')
                     .t`The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.`}
             </SettingsParagraph>

@@ -11,12 +11,22 @@ const MemberFeatures = ({ member }) => {
 
     return (
         <>
-            <div className="mb0-5">
-                <Icon name="user-storage" /> {humanSize(UsedSpace, 'GB')} / {humanSize(MaxSpace, 'GB')}
-            </div>
-            <div>
-                <Icon name="protonvpn" /> {MaxVPN} {c('Feature').t`VPN ${connectionsPluralized}`}
-            </div>
+            <span className="mb0-5 flex flex-nowrap">
+                <span className="flex-item-noshrink flex mt0-1">
+                    <Icon name="user-storage" />
+                </span>
+                <span className="flex-item-fluid pl0-25">
+                    {humanSize(UsedSpace, 'GB')} / {humanSize(MaxSpace, 'GB')}
+                </span>
+            </span>
+            <span className="flex flex-nowrap">
+                <span className="flex-item-noshrink flex mt0-1">
+                    <Icon name="protonvpn" />
+                </span>
+                <span className="flex-item-fluid pl0-25">
+                    {MaxVPN} {c('Feature').t`VPN ${connectionsPluralized}`}
+                </span>
+            </span>
         </>
     );
 };

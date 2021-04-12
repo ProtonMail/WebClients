@@ -243,7 +243,7 @@ const UsersAndAddressesSection = () => {
                                     <span className="pt1 pb1 inline-block">
                                         <MemberRole member={member} />
                                     </span>,
-                                    <span className="pt1 pb1 inline-block">
+                                    <span className="pt1 pb1 inline-block max-w15e">
                                         <MemberAddresses addresses={memberAddresses} />
                                     </span>,
                                     <span className="pt1 pb1 inline-block">

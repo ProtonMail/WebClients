@@ -7,17 +7,17 @@ import { ButtonLike, AppLink, SimpleDropdown, DropdownMenu } from '../../compone
 
 const DomainAddresses = ({ domainAddresses }) => {
     const list = domainAddresses.map(({ ID, Email }) => (
-        <div key={ID} className="inline-block w100 pt0-5 pb0-5 pl1 pr1 text-ellipsis">
+        <div key={ID} className="inline-block w100 pt0-5 pb0-5 pl1 pr1 text-ellipsis" title={Email}>
             {Email}
         </div>
     ));
 
     const n = list.length;
-    const addressesTxt = ` ${c('Info').ngettext(msgid`address`, `addresses`, n)}`;
+    const addressesTxt = `${c('Info').ngettext(msgid`address`, `addresses`, n)}`;
     const contentDropDown = (
         <>
             {n}
-            <span className="no-mobile">{addressesTxt}</span>
+            <span className="no-mobile pl0-25">{addressesTxt}</span>
         </>
     ); // trick for responsive and mobile display
 
