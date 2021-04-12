@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { SETTINGS_LOG_AUTH_STATE } from 'proton-shared/lib/interfaces';
 import { getAuthLogEventsI18N, AuthLog, AUTH_LOG_EVENTS } from 'proton-shared/lib/authlog';
 
-import { Alert, Icon, Table, TableBody, TableHeader, TableRow, Time } from '../../components';
+import { Alert, Icon, Table, TableBody, TableCell, TableHeader, TableRow, Time } from '../../components';
 
 const { ADVANCED, DISABLE } = SETTINGS_LOG_AUTH_STATE;
 
@@ -47,24 +47,31 @@ const LogsTable = ({ logs, logAuth, loading, error }: Props) => {
 
     return (
         <Table>
-            <TableHeader cells={[c('Header').t`Event`, logAuth === ADVANCED ? 'IP' : '', c('Header').t`Time`]} />
+            <TableHeader>
+                <TableCell>{c('Header').t`Event`}</TableCell>
+                {logAuth === ADVANCED && <TableCell>{logAuth === ADVANCED ? 'IP' : ''}</TableCell>}
+                <TableCell className="text-right">{c('Header').t`Time`}</TableCell>
+            </TableHeader>
             <TableBody loading={loading} colSpan={3}>
                 {logs.map(({ Time: time, Event, IP }, index) => {
                     const key = index.toString();
 
                     return (
-                        <TableRow
-                            key={key}
-                            cells={[
-                                <>
-                                    {getIcon(Event)} {getAuthLogEventsI18N(Event)}
-                                </>,
-                                logAuth === ADVANCED ? <code>{IP || '-'}</code> : '',
+                        <TableRow key={key}>
+                            <TableCell>
+                                {getIcon(Event)} {getAuthLogEventsI18N(Event)}
+                            </TableCell>
+                            {logAuth === ADVANCED && (
+                                <TableCell>
+                                    <code>{IP || '-'}</code>
+                                </TableCell>
+                            )}
+                            <TableCell className="text-right">
                                 <Time key={key} format="PPp">
                                     {time}
-                                </Time>,
-                            ]}
-                        />
+                                </Time>
+                            </TableCell>
+                        </TableRow>
                     );
                 })}
             </TableBody>
