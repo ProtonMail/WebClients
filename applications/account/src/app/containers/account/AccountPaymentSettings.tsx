@@ -34,12 +34,10 @@ export const getPaymentPage = () => {
             {
                 text: c('Title').t`Credits`,
                 id: 'credits',
-                permissions: [PAID],
             },
             {
                 text: c('Title').t`Gift code`,
                 id: 'gift-code',
-                permissions: [PAID],
             },
             {
                 text: c('Title').t`Invoices`,
@@ -55,7 +53,7 @@ const AccountPaymentSettings = ({ location, setActiveSection }: SettingsPropsSha
             location={location}
             config={getPaymentPage()}
             setActiveSection={setActiveSection}
-        >
+    >
             <BillingSection />
             <PaymentMethodsSection />
             <CreditsSection />
