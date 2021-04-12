@@ -128,8 +128,8 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                                 as={AppLink}
                                 color="weak"
                                 shape="outline"
-                                to="/settings/import"
-                                toApp={APPS.PROTONMAIL}
+                                to="/mail/import-export"
+                                toApp={APPS.PROTONACCOUNT}
                                 target="_self"
                                 className="inline-block mtauto mr1"
                             >{c('Action').t`Import messages`}</ButtonLike>
