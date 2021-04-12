@@ -6,7 +6,6 @@ import { Table, TableHeader, TableBody, TableRow } from '../../components';
 import DomainStatus from './DomainStatus';
 import DomainActions from './DomainActions';
 import DomainName from './DomainName';
-import DomainAddresses from './DomainAddresses';
 
 const DomainsTable = ({ domains = [], domainsAddressesMap = {}, loading = false }) => {
     return (
@@ -15,11 +14,6 @@ const DomainsTable = ({ domains = [], domainsAddressesMap = {}, loading = false 
                 cells={[
                     c('Header for addresses table').t`Domain`,
                     c('Header for addresses table').t`Status`,
-                    <span
-                        key="addresses"
-                        className="text-ellipsis inline-block align-bottom max-w100"
-                        title={c('Header for addresses table').t`Addresses`}
-                    >{c('Header for addresses table').t`Addresses`}</span>,
                     c('Header for addresses table').t`Actions`,
                 ]}
             />
@@ -30,10 +24,9 @@ const DomainsTable = ({ domains = [], domainsAddressesMap = {}, loading = false 
                         <TableRow
                             key={domain.ID}
                             cells={[
-                                <DomainName key={0} domain={domain} />,
-                                <DomainStatus key={1} domain={domain} domainAddresses={domainAddresses} />,
-                                <DomainAddresses key={2} domainAddresses={domainAddresses} />,
-                                <DomainActions key={3} domain={domain} domainAddresses={domainAddresses} />,
+                                <DomainName domain={domain} />,
+                                <DomainStatus domain={domain} domainAddresses={domainAddresses} />,
+                                <DomainActions domain={domain} domainAddresses={domainAddresses} />,
                             ]}
                         />
                     );
