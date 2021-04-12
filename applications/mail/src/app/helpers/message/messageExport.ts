@@ -16,6 +16,11 @@ import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import { insertActualRemoteImages } from '../transforms/transformRemote';
 
+const removePasswordFromRequests: Pick<Message, 'Password' | 'PasswordHint'> = {
+    Password: undefined,
+    PasswordHint: undefined,
+};
+
 export const prepareExport = (message: MessageExtended) => {
     if (!message.document) {
         return '';
@@ -105,7 +110,7 @@ export const createMessage = async (
     const { Message: updatedMessage } = await api(
         createDraft({
             Action: message.action !== MESSAGE_ACTIONS.NEW ? message.action : undefined,
-            Message: { ...message.data, Body },
+            Message: { ...message.data, Body, ...removePasswordFromRequests },
             ParentID: message.ParentID,
             AttachmentKeyPackets,
         })
@@ -139,7 +144,7 @@ export const updateMessage = async (
         );
     }
     const { Message: updatedMessage } = await api(
-        updateDraft(message.data?.ID, { ...message.data, Body }, AttachmentKeyPackets)
+        updateDraft(message.data?.ID, { ...message.data, Body, ...removePasswordFromRequests }, AttachmentKeyPackets)
     );
     return updatedMessage;
 };

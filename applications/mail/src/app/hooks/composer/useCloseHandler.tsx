@@ -108,7 +108,7 @@ export const useCloseHandler = ({
                     text: c('Error').t`Draft could not be saved. Try again.`,
                     type: 'error',
                 });
-                onCompose({ existingDraft: modelMessage });
+                onCompose({ existingDraft: modelMessage, fromUndo: true });
             }
         }
     });

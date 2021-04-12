@@ -174,14 +174,19 @@ const Composer = (
             (modelMessage.document === undefined && modelMessage.plainText === undefined) ||
             modelMessage.data?.ID !== syncedMessage.data?.ID
         ) {
+            const isOpenFromUndo = syncedMessage.openDraftFromUndo === true;
+            const password = isOpenFromUndo
+                ? // Keep password on undo
+                  {}
+                : // Forget previously setted password if kept in the cache
+                  { Password: undefined, PasswordHint: undefined };
+
             const newModelMessage = {
                 ...syncedMessage,
                 ...modelMessage,
                 data: {
                     ...syncedMessage.data,
-                    // Forget previously setted password if kept in the cache
-                    Password: undefined,
-                    PasswordHint: undefined,
+                    ...password,
                     ...modelMessage.data,
                     // Attachments are updated by the draft creation request
                     Attachments: syncedMessage.data?.Attachments,

@@ -200,6 +200,11 @@ export interface MessageExtended {
      * when the draft will be created
      */
     initialAttachments?: File[];
+
+    /**
+     * Flag meaning we are reopening the draft from an undo action
+     */
+    openDraftFromUndo?: boolean;
 }
 
 /**

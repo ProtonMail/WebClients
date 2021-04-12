@@ -65,6 +65,7 @@ export const useSendMessage = () => {
                         localID,
                         data,
                     },
+                    fromUndo: true,
                 });
             };
 
@@ -150,6 +151,7 @@ export const useSendMessage = () => {
                         localID,
                         data,
                     },
+                    fromUndo: true,
                 });
                 throw error;
             } finally {
