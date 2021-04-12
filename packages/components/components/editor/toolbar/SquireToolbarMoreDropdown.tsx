@@ -88,7 +88,6 @@ const SquireToolbarMoreDropdown = ({
                     </DropdownMenuButton>,
                     <DropdownMenuButton
                         key={13}
-                        liClassName="dropdown-item--no-separator"
                         className="text-left flex flex-nowrap"
                         onClick={squireActions.handleOrderedList}
                     >
@@ -96,6 +95,7 @@ const SquireToolbarMoreDropdown = ({
                         <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action').t`Ordered list`}</span>
                         <Icon name="ordered-list" className="mt0-25 mr0-5" />
                     </DropdownMenuButton>,
+                    <div className="dropdown-item-hr" />,
                     <DropdownMenuButton
                         key={8}
                         className="text-left flex flex-nowrap"
@@ -107,7 +107,6 @@ const SquireToolbarMoreDropdown = ({
                     </DropdownMenuButton>,
                     <DropdownMenuButton
                         key={9}
-                        liClassName="dropdown-item--no-separator"
                         className="text-left flex flex-nowrap"
                         onClick={squireActions.handleAlignment(ALIGNMENT.Center)}
                     >
@@ -117,7 +116,6 @@ const SquireToolbarMoreDropdown = ({
                     </DropdownMenuButton>,
                     <DropdownMenuButton
                         key={10}
-                        liClassName="dropdown-item--no-separator"
                         className="text-left flex flex-nowrap"
                         onClick={squireActions.handleAlignment(ALIGNMENT.Right)}
                     >
@@ -127,7 +125,6 @@ const SquireToolbarMoreDropdown = ({
                     </DropdownMenuButton>,
                     <DropdownMenuButton
                         key={11}
-                        liClassName="dropdown-item--no-separator"
                         className="text-left flex flex-nowrap"
                         onClick={squireActions.handleAlignment(ALIGNMENT.Justify)}
                     >
@@ -135,6 +132,7 @@ const SquireToolbarMoreDropdown = ({
                         <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action').t`Justify`}</span>
                         <Icon name="text-justify" className="mt0-25 mr0-5" />
                     </DropdownMenuButton>,
+                    <div className="dropdown-item-hr" />,
                     <DropdownMenuButton
                         key={14}
                         className="text-left flex flex-nowrap"
@@ -146,7 +144,6 @@ const SquireToolbarMoreDropdown = ({
                     </DropdownMenuButton>,
                     <DropdownMenuButton
                         key={15}
-                        liClassName="dropdown-item--no-separator"
                         className="text-left flex flex-nowrap"
                         onClick={squireActions.handleLink}
                     >
@@ -156,7 +153,6 @@ const SquireToolbarMoreDropdown = ({
                     </DropdownMenuButton>,
                     <DropdownMenuButton
                         key={16}
-                        liClassName="dropdown-item--no-separator"
                         className="text-left flex flex-nowrap"
                         onClick={squireActions.handleClearFormatting}
                     >
@@ -165,7 +161,8 @@ const SquireToolbarMoreDropdown = ({
                             .t`Clear all formatting`}</span>
                         <Icon name="remove-text-formatting" className="mt0-25 mr0-5" />
                     </DropdownMenuButton>,
-                    metadata.supportImages && (
+                    <div className="dropdown-item-hr" />,
+                    metadata.supportImages && [
                         <DropdownMenuButton
                             key={17}
                             className="text-left flex flex-nowrap"
@@ -174,8 +171,9 @@ const SquireToolbarMoreDropdown = ({
                             <Icon name="on" className={classnames(['mt0-25', 'visibility-hidden'])} />
                             <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action').t`Insert image`}</span>
                             <Icon name="file-image" className="mt0-25 mr0-5" />
-                        </DropdownMenuButton>
-                    ),
+                        </DropdownMenuButton>,
+                        <div className="dropdown-item-hr" />,
+                    ],
                 ]}
                 {metadata.supportRightToLeft &&
                     !metadata.isPlainText && [
@@ -189,13 +187,13 @@ const SquireToolbarMoreDropdown = ({
                         </DropdownMenuButton>,
                         <DropdownMenuButton
                             key={2}
-                            liClassName="dropdown-item--no-separator"
                             className="text-left flex flex-nowrap"
                             onClick={handleChangeDirection(RIGHT_TO_LEFT.ON)}
                         >
                             <Icon name="on" className={classnames(['mt0-25', getClassname(isRTL)])} />
                             <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Right to Left`}</span>
                         </DropdownMenuButton>,
+                        <div className="dropdown-item-hr" />,
                     ]}
                 {metadata.supportPlainText && [
                     <DropdownMenuButton
@@ -209,7 +207,6 @@ const SquireToolbarMoreDropdown = ({
                     </DropdownMenuButton>,
                     <DropdownMenuButton
                         key={4}
-                        liClassName="dropdown-item--no-separator"
                         className="text-left flex flex-nowrap"
                         onClick={handleChangePlainText(true)}
                         data-testid="squire-to-plaintext"
@@ -217,6 +214,7 @@ const SquireToolbarMoreDropdown = ({
                         <Icon name="on" className={classnames(['mt0-25', getClassname(isPlainText)])} />
                         <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Plain text`}</span>
                     </DropdownMenuButton>,
+                    <div className="dropdown-item-hr" />,
                 ]}
                 {children}
             </DropdownMenu>
