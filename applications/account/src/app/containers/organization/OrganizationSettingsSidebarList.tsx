@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { c } from 'ttag';
 import {
     SidebarList,
     SidebarListItem,
@@ -21,21 +21,21 @@ const OrganizationSettingsSidebarList = ({ prefix }: { prefix: string }) => {
                     <SidebarListItem>
                         <SidebarListItemLink to={`/${prefix}/users-addresses`}>
                             <SidebarListItemContent left={<SidebarListItemContentIcon name="organization-users" />}>
-                                Users & Addresses
+                                {c('Settings section title').t`Users & Addresses`}
                             </SidebarListItemContent>
                         </SidebarListItemLink>
                     </SidebarListItem>
                     <SidebarListItem>
                         <SidebarListItemLink to={`/${prefix}/domain-names`}>
                             <SidebarListItemContent left={<SidebarListItemContentIcon name="globe" />}>
-                                Domain names
+                                {c('Settings section title').t`Domain names`}
                             </SidebarListItemContent>
                         </SidebarListItemLink>
                     </SidebarListItem>
                     <SidebarListItem>
                         <SidebarListItemLink to={`/${prefix}/organization-keys`}>
                             <SidebarListItemContent left={<SidebarListItemContentIcon name="security" />}>
-                                Organization & Keys
+                                {c('Settings section title').t`Organization & Keys`}
                             </SidebarListItemContent>
                         </SidebarListItemLink>
                     </SidebarListItem>
@@ -44,7 +44,7 @@ const OrganizationSettingsSidebarList = ({ prefix }: { prefix: string }) => {
                 <SidebarListItem>
                     <SidebarListItemLink to={`/${prefix}/multi-user-support`}>
                         <SidebarListItemContent left={<SidebarListItemContentIcon name="organization-users" />}>
-                            Multi-user support
+                            {c('Settings section title').t`Multi-user support`}
                         </SidebarListItemContent>
                     </SidebarListItemLink>
                 </SidebarListItem>
