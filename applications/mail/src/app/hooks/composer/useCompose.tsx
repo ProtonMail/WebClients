@@ -19,6 +19,7 @@ import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
 
 export interface ComposeExisting {
     existingDraft: MessageExtended;
+    fromUndo: boolean;
 }
 
 export interface ComposeNew {
@@ -110,8 +111,13 @@ export const useCompose = (
         const { composeExisting, composeNew } = getComposeArgs(composeArgs);
 
         if (composeExisting) {
-            const { existingDraft } = composeExisting;
+            const { existingDraft, fromUndo } = composeExisting;
             const localID = getLocalID(messageCache, existingDraft.localID);
+
+            const existingMessage = messageCache.get(localID);
+            if (existingMessage) {
+                existingMessage.openDraftFromUndo = fromUndo;
+            }
 
             const existingMessageID = openComposers.find((id) => id === localID);
             if (existingMessageID) {

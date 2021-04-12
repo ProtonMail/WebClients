@@ -43,7 +43,7 @@ export const useSendHandler = ({
             verificationResults = await sendVerifications(modelMessage as MessageExtendedWithData);
         } catch {
             hideNotification(notifManager.ID);
-            onCompose({ existingDraft: modelMessage });
+            onCompose({ existingDraft: modelMessage, fromUndo: true });
             return;
         }
 
@@ -90,7 +90,7 @@ export const useSendHandler = ({
                 type: 'error',
             });
             console.error('Error while uploading attachments.', error);
-            onCompose({ existingDraft: modelMessage });
+            onCompose({ existingDraft: modelMessage, fromUndo: true });
             return;
         }
 

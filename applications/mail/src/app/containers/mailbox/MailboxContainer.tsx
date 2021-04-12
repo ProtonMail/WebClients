@@ -147,7 +147,10 @@ const MailboxContainer = ({
             const [element] = getElementsFromIDs([elementID || '']);
 
             if (isMessage(element) && isDraft(element)) {
-                onCompose({ existingDraft: { localID: element.ID as string, data: element as Message } });
+                onCompose({
+                    existingDraft: { localID: element.ID as string, data: element as Message },
+                    fromUndo: false,
+                });
             }
             if (isConversationContentView && isMessage(element)) {
                 history.push(

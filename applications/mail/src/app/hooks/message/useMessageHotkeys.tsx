@@ -132,7 +132,7 @@ export const useMessageHotkeys = (
                 if (draft) {
                     e.stopPropagation();
                     e.preventDefault();
-                    onCompose({ existingDraft: message });
+                    onCompose({ existingDraft: message, fromUndo: false });
                 }
             },
         ],

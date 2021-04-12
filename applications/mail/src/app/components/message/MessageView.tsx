@@ -120,7 +120,7 @@ const MessageView = (
             return;
         }
         if (draft) {
-            onCompose({ existingDraft: message });
+            onCompose({ existingDraft: message, fromUndo: false });
             return;
         }
 
