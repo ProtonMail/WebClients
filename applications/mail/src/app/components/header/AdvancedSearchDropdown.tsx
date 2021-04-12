@@ -27,7 +27,7 @@ import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { buildTreeview, formatFolderName } from 'proton-shared/lib/helpers/folder';
 import { FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
-import { changeSearchParams } from 'proton-shared/lib/helpers/url';
+import { changeSearchParams, getSearchParams } from 'proton-shared/lib/helpers/url';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 
 import { getHumanLabelID } from '../../helpers/labels';
@@ -46,6 +46,7 @@ interface SearchModel {
     address?: string;
     attachments?: number;
     wildcard?: number;
+    filter?: string;
 }
 
 interface LabelInfo {
@@ -59,6 +60,8 @@ const AUTO_WILDCARD = undefined;
 const ALL_ADDRESSES = 'all';
 const NO_ATTACHMENTS = 0;
 const WITH_ATTACHMENTS = 1;
+const SHOW_READ_ONLY = 'read';
+const SHOW_UNREAD_ONLY = 'unread';
 const { INBOX, TRASH, SPAM, STARRED, ARCHIVE, ALL_MAIL, ALL_SENT, SENT, ALL_DRAFTS, DRAFTS } = MAILBOX_LABEL_IDS;
 const DEFAULT_MODEL: SearchModel = {
     keyword: '',
@@ -68,6 +71,7 @@ const DEFAULT_MODEL: SearchModel = {
     address: ALL_ADDRESSES,
     attachments: UNDEFINED,
     wildcard: AUTO_WILDCARD,
+    filter: UNDEFINED,
 };
 
 const getRecipients = (value = '') =>
@@ -122,7 +126,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
         event.preventDefault(); // necessary to not run a basic submission
         event.stopPropagation(); // necessary to not submit normal search from header
 
-        const { keyword, address, begin, end, wildcard, from, to, attachments } = reset ? DEFAULT_MODEL : model;
+        const { keyword, address, begin, end, wildcard, from, to, attachments, filter } = reset ? DEFAULT_MODEL : model;
 
         history.push(
             changeSearchParams(`/${getHumanLabelID(model.labelID)}`, history.location.search, {
@@ -134,7 +138,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                 end: end ? String(getUnixTime(end)) : UNDEFINED,
                 attachments: typeof attachments === 'number' ? String(attachments) : UNDEFINED,
                 wildcard: wildcard ? String(wildcard) : UNDEFINED,
-                filter: UNDEFINED, // Make sure to reset filter parameter when performing an advanced search
+                filter,
                 sort: UNDEFINED, // Make sure to reset sort parameter when performing an advanced search
             })
         );
@@ -151,6 +155,8 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                     history.location
                 );
 
+                const { filter } = getSearchParams(history.location.search);
+
                 return {
                     ...DEFAULT_MODEL, // labelID re-initialized to ALL_MAIL
                     keyword: keyword || fullInput || '',
@@ -161,6 +167,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                     to: getRecipients(to),
                     begin: begin ? fromUnixTime(begin) : UNDEFINED,
                     end: end ? fromUnixTime(end) : UNDEFINED,
+                    filter,
                 };
             });
         }
@@ -311,7 +318,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                             />
                         </div>
                     </div>
-                    <div className="mb2 flex flex-nowrap on-mobile-flex-column">
+                    <div className="mb1 flex flex-nowrap on-mobile-flex-column">
                         <Label className="advancedSearch-label" id="advanced-search-attachments-label">{c('Label')
                             .t`Attachments`}</Label>
                         <div className="flex-item-fluid pt0-5">
@@ -338,6 +345,35 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                                 name="advanced-search-attachments"
                                 aria-describedby="advanced-search-attachments-label"
                             >{c('Attachment radio advanced search').t`No`}</Radio>
+                        </div>
+                    </div>
+                    <div className="mb2 flex flex-nowrap on-mobile-flex-column">
+                        <Label className="advancedSearch-label" id="advanced-search-filter-label">{c('Label')
+                            .t`Filter`}</Label>
+                        <div className="flex-item-fluid pt0-5">
+                            <Radio
+                                id="advanced-search-filter-all"
+                                onChange={() => updateModel({ ...model, filter: UNDEFINED })}
+                                checked={model.filter === UNDEFINED}
+                                name="advanced-search-filter"
+                                aria-describedby="advanced-search-filter-label"
+                                className="inline-flex mr1"
+                            >{c('Attachment radio advanced search').t`All`}</Radio>
+                            <Radio
+                                id="advanced-search-filter-yes"
+                                onChange={() => updateModel({ ...model, filter: SHOW_READ_ONLY })}
+                                checked={model.filter === SHOW_READ_ONLY}
+                                name="advanced-search-filter"
+                                aria-describedby="advanced-search-filter-label"
+                                className="inline-flex mr1"
+                            >{c('Attachment radio advanced search').t`Read`}</Radio>
+                            <Radio
+                                id="advanced-search-filter-no"
+                                onChange={() => updateModel({ ...model, filter: SHOW_UNREAD_ONLY })}
+                                checked={model.filter === SHOW_UNREAD_ONLY}
+                                name="advanced-search-filter"
+                                aria-describedby="advanced-search-filter-label"
+                            >{c('Attachment radio advanced search').t`Unread`}</Radio>
                         </div>
                     </div>
                     <div className="flex flex-justify-space-between">
