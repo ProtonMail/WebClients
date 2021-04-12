@@ -10,6 +10,8 @@ import {
     useSubscription,
     useOrganization,
     YourPlanSection,
+    GiftCodeSection,
+    CreditsSection,
 } from 'react-components';
 import { PERMISSIONS, DEFAULT_CYCLE, PLAN_SERVICES, CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
 import { Plan, PlanIDs, UserModel } from 'proton-shared/lib/interfaces';
@@ -44,6 +46,14 @@ export const getDashboardPage = (user: UserModel) => {
                 text: c('Title').t`Billing`,
                 id: 'billing',
                 permissions: [PAID],
+            },
+            {
+                text: c('Title').t`Credits`,
+                id: 'credits',
+            },
+            {
+                text: c('Title').t`Gift Code`,
+                id: 'gift-code',
             },
         ].filter(isTruthy),
     };
@@ -129,6 +139,8 @@ const DashboardContainer = ({ setActiveSection, location }: SettingsPropsShared)
             {!user.hasPaidVpn ? <PlansSection /> : null}
             <YourPlanSection />
             <BillingSection />
+            <CreditsSection />
+            <GiftCodeSection />
         </PrivateMainSettingsAreaWithPermissions>
     );
 };
