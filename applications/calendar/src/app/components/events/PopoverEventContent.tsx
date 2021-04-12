@@ -1,3 +1,4 @@
+import { filterEmailNotifications } from 'proton-shared/lib/calendar/alarms';
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { getTimezonedFrequencyString } from 'proton-shared/lib/calendar/integration/getFrequencyString';
 import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
@@ -17,11 +18,11 @@ import {
     CalendarViewEventTemporaryEvent,
     DisplayNameEmail,
 } from '../../containers/calendar/interface';
-import AttendeeStatusIcon from './AttendeeStatusIcon';
-import PopoverNotification from './PopoverNotification';
-import Participant from './Participant';
-import getAttendanceTooltip from './getAttendanceTooltip';
 import urlify from '../../helpers/urlify';
+import AttendeeStatusIcon from './AttendeeStatusIcon';
+import getAttendanceTooltip from './getAttendanceTooltip';
+import Participant from './Participant';
+import PopoverNotification from './PopoverNotification';
 
 type AttendeeViewModel = {
     title: string;
@@ -76,6 +77,7 @@ const PopoverEventContent = ({
         const description = urlify(model.description.trim());
         return sanitizeDescription(description);
     }, [model.description]);
+    const displayNotifications = filterEmailNotifications(model.notifications);
 
     const frequencyString = useMemo(() => {
         const [{ veventComponent: eventComponent }] = eventReadResult?.result || [{}];
@@ -147,11 +149,11 @@ const PopoverEventContent = ({
                     {calendarString}
                 </div>
             ) : null}
-            {model.notifications?.length ? (
+            {displayNotifications?.length ? (
                 <div className={wrapClassName}>
                     <Icon name="notifications-enabled" className={iconClassName} />
                     <div className="flex flex-column">
-                        {model.notifications.map((notification) => (
+                        {displayNotifications.map((notification) => (
                             <PopoverNotification
                                 key={notification.id}
                                 notification={notification}

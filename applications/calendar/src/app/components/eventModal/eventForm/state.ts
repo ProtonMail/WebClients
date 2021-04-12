@@ -8,7 +8,6 @@ import {
     YEARLY_TYPE,
     EVENT_VERIFICATION_STATUS,
     DEFAULT_EVENT_DURATION,
-    SETTINGS_NOTIFICATION_TYPE,
 } from 'proton-shared/lib/calendar/constants';
 import {
     DEFAULT_FULL_DAY_NOTIFICATION,
@@ -228,10 +227,7 @@ export const getExistingEvent = ({
     const newModel = propertiesToModel({ veventComponent, selfAddressData }, isAllDay, isOrganizer, tzid);
     const strippedDescription = stripAllTags(newModel.description);
 
-    // Email notifications are not supported atm.
-    const newNotifications = propertiesToNotificationModel(veventValarmComponent, isAllDay).filter(
-        ({ type }) => type === SETTINGS_NOTIFICATION_TYPE.DEVICE
-    );
+    const newNotifications = propertiesToNotificationModel(veventValarmComponent, isAllDay);
 
     const parentMerge =
         veventComponentParentPartial && recurrenceId
