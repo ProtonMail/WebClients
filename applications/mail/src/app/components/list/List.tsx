@@ -39,7 +39,6 @@ interface Props {
     onSort: (sort: Sort) => void;
     filter: Filter;
     onFilter: (filter: Filter) => void;
-    onNavigate: (labelID: string) => void;
 }
 
 const List = (
@@ -64,7 +63,6 @@ const List = (
         onCheckOne,
         sort,
         onSort,
-        onNavigate,
         filter,
         onFilter,
     }: Props,
@@ -120,9 +118,7 @@ const List = (
                     sort={sort}
                     onSort={onSort}
                     onFilter={onFilter}
-                    onNavigate={onNavigate}
                     filter={filter}
-                    labelID={labelID}
                     conversationMode={conversationMode}
                 />
                 {expectedLength === 0 ? (
