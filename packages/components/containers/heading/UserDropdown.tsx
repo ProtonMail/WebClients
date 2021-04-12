@@ -112,7 +112,7 @@ const UserDropdown = ({ ...rest }) => {
                                 {organizationName ? (
                                     <>
                                         <div className="color-weak text-sm m0">{c('Label').t`Organization`}</div>
-                                        <div className="mb1">{organizationName}</div>
+                                        <div>{organizationName}</div>
                                     </>
                                 ) : null}
                                 <ButtonLike
