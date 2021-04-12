@@ -99,7 +99,7 @@ const ItemColumnLayout = ({
                         labelID={labelID}
                         maxNumber={breakpoints.isNarrow ? 1 : 5}
                     />
-                    <ItemAttachmentIcon element={element} className="ml0-25 flex-align-self-center" />
+                    <ItemAttachmentIcon element={element} className="ml0-5 flex-align-self-center" />
                 </div>
             </div>
         </div>
