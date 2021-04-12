@@ -1,13 +1,18 @@
+import {
+    FREQUENCY,
+    MAX_LENGTHS,
+    MAX_NOTIFICATIONS,
+    SETTINGS_NOTIFICATION_TYPE,
+} from 'proton-shared/lib/calendar/constants';
 import { getIsProtonUID } from 'proton-shared/lib/calendar/helper';
-import { Address } from 'proton-shared/lib/interfaces';
-import React, { HTMLAttributes } from 'react';
 import { APPS } from 'proton-shared/lib/constants';
-import { FREQUENCY, MAX_LENGTHS, MAX_NOTIFICATIONS } from 'proton-shared/lib/calendar/constants';
 import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
-import { Alert, AppLink, classnames, Input, TextArea, Notifications } from 'react-components';
-import { c } from 'ttag';
+import { Address } from 'proton-shared/lib/interfaces';
 
 import { EventModel, EventModelErrors, NotificationModel } from 'proton-shared/lib/interfaces/calendar';
+import React, { HTMLAttributes } from 'react';
+import { Alert, AppLink, classnames, Input, Notifications, TextArea } from 'react-components';
+import { c } from 'ttag';
 
 import {
     CALENDAR_INPUT_ID,
@@ -78,6 +83,10 @@ const EventForm = ({
     const showParticipants = !isImportedEvent;
     const canEditSharedEventData = isOrganizer && selfAddress?.Status !== 0;
     const canChangeCalendar = isOrganizer ? !model.organizer : !isSingleEdit;
+    const notifications = isAllDay ? fullDayNotifications : partDayNotifications;
+    const canAddNotifications = notifications.length < MAX_NOTIFICATIONS;
+    const showNotifications =
+        canAddNotifications || notifications.some(({ type }) => type === SETTINGS_NOTIFICATION_TYPE.DEVICE);
     const isOrganizerDisabled = isOrganizer && selfAddress?.Status === 0;
 
     const dateRow = isMinimal ? (
@@ -179,7 +188,7 @@ const EventForm = ({
                     />
                 </IconRow>
             )}
-            {!isMinimal && (
+            {!isMinimal && showNotifications && (
                 <IconRow
                     id={NOTIFICATION_INPUT_ID}
                     icon="notifications-enabled"
@@ -189,7 +198,7 @@ const EventForm = ({
                         <Notifications
                             {...{
                                 errors,
-                                canAdd: fullDayNotifications.length < MAX_NOTIFICATIONS,
+                                canAdd: canAddNotifications,
                                 notifications: fullDayNotifications,
                                 defaultNotification: defaultFullDayNotification,
                                 onChange: (notifications: NotificationModel[]) => {
@@ -208,7 +217,7 @@ const EventForm = ({
                         <Notifications
                             {...{
                                 errors,
-                                canAdd: partDayNotifications.length < MAX_NOTIFICATIONS,
+                                canAdd: canAddNotifications,
                                 notifications: partDayNotifications,
                                 defaultNotification: defaultPartDayNotification,
                                 onChange: (notifications: NotificationModel[]) => {
