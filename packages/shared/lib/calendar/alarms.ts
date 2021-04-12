@@ -16,7 +16,7 @@ import { getDisplayTitle } from './helper';
 import { convertUTCDateTimeToZone, fromUTCDate, getTimezoneOffset, toUTCDate } from '../date/timezone';
 import { getIsAllDay, getIsDateTimeValue, getIsPropertyAllDay } from './vcalHelper';
 import { getMillisecondsFromTriggerString } from './vcal';
-import { NOTIFICATION_UNITS, NOTIFICATION_UNITS_MAX, NOTIFICATION_WHEN } from './constants';
+import { NOTIFICATION_UNITS, NOTIFICATION_UNITS_MAX, NOTIFICATION_WHEN, SETTINGS_NOTIFICATION_TYPE } from './constants';
 import { getValarmTrigger } from './getValarmTrigger';
 import { omit } from '../helpers/object';
 import { uniqueBy } from '../helpers/array';
@@ -200,12 +200,24 @@ export const getSupportedAlarm = (
     };
 };
 
+/**
+ * Filter out future notifications
+ */
 export const filterFutureNotifications = (notifications: NotificationModel[]) => {
     return notifications.filter(({ when, value }) => {
         if (when === NOTIFICATION_WHEN.BEFORE) {
             return true;
         }
         return value === 0;
+    });
+};
+
+/**
+ * Filter out email notifications
+ */
+export const filterEmailNotifications = (notifications: NotificationModel[]) => {
+    return notifications.filter(({ type }) => {
+        return type !== SETTINGS_NOTIFICATION_TYPE.EMAIL;
     });
 };
 
