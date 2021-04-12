@@ -10,12 +10,7 @@ export const getAutoReply = () => {
         text: c('Title').t`Auto reply`,
         to: '/mail/auto-reply',
         icon: 'mailbox',
-        subsections: [
-            {
-                text: c('Title').t`Auto reply`,
-                id: 'auto-reply',
-            },
-        ],
+        subsections: [{ id: 'auto-reply' }],
     };
 };
 
