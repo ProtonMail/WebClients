@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { LanguageSection, ThemesSection, SettingsPropsShared } from 'react-components';
+import { LanguageSection, SettingsPropsShared } from 'react-components';
 import locales from 'proton-shared/lib/i18n/locales';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
@@ -16,10 +16,6 @@ export const getGeneralPage = () => {
                 text: c('Title').t`Language`,
                 id: 'language',
             },
-            {
-                text: c('Title').t`Themes`,
-                id: 'themes',
-            },
         ].filter(isTruthy),
     };
 };
@@ -32,7 +28,6 @@ const GeneralContainer = ({ setActiveSection, location }: SettingsPropsShared) =
             setActiveSection={setActiveSection}
         >
             <LanguageSection locales={locales} />
-            <ThemesSection />
         </PrivateMainSettingsAreaWithPermissions>
     );
 };
