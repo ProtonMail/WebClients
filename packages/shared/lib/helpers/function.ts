@@ -1,6 +1,11 @@
 export const noop = () => undefined;
 export const identity = <T>(value: T) => value;
 
+/**
+ * Wrap a function to ensure only one argument will pass through
+ */
+export const unary = <A>(fn: Function) => (arg: A) => fn(arg);
+
 export const debounce = <A extends any[]>(func: (...args: A) => void, wait: number, isImmediate?: boolean) => {
     let timeoutId: ReturnType<typeof setTimeout> | undefined;
 
