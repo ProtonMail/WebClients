@@ -39,7 +39,7 @@ const MemberAddresses = ({ addresses }: MemberAddressesProps) => {
 
         return (
             <li key={ID} className={listItemClassName}>
-                <span className="text-ellipsis" title={Email}>
+                <span className="text-ellipsis block" title={Email}>
                     {Email}
                 </span>
             </li>
@@ -74,9 +74,10 @@ const MemberAddresses = ({ addresses }: MemberAddressesProps) => {
                         size="small"
                         className="flex flex-align-items-center"
                     >
-                        {remainingAddresses.length} {c('Info').t`more`}{' '}
-                        <span className="no-mobile mr0-5">{addressesPluralized}</span>
-                        <Icon size={12} name="caret" />
+                        {remainingAddresses.length} {c('Info').t`more`}
+                        {' '}
+                        <span className="no-mobile">{addressesPluralized}</span>
+                        <Icon size={12} className="ml0-25" name="caret" />
                     </Button>
                 </li>
             );
