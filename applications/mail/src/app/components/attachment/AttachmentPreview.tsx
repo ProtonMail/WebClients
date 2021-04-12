@@ -40,10 +40,16 @@ const AttachmentPreview = (
                 return previewing;
             }
 
-            return {
-                ...previewing,
-                contents: [download.data],
-            };
+            // Don't preview unverified attachment
+            if (download.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {
+                return {
+                    // Overriding mime type to prevent opening any visualizer with empty data, especially needed for pdfs
+                    attachment: { ...attachment, MIMEType: '' },
+                    contents: [],
+                };
+            }
+
+            return { ...previewing, contents: [download.data] };
         });
         onDownload(attachment, download.verified);
     };
@@ -58,7 +64,7 @@ const AttachmentPreview = (
         return null;
     }
 
-    const current = attachments.findIndex((attachment) => attachment === previewing.attachment) + 1;
+    const current = attachments.findIndex((attachment) => attachment.ID === previewing.attachment.ID) + 1;
     const total = attachments.length;
 
     const handleNext = () => handlePreview(attachments[current]);
