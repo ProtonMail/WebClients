@@ -58,13 +58,13 @@ const EmailSubscriptionCheckboxes = ({ disabled, News, onChange }: EmailSubscrip
                     <li key={id} className="mb1 flex flex-align-items-center">
                         <Toggle
                             id={id}
-                            className="mr2"
+                            className="mr1"
                             checked={hasBit(News, flag)}
                             disabled={disabled}
                             onChange={handleChange(flag)}
                         />
                         <label htmlFor={id} className="flex on-mobile-flex-column">
-                            <span>{text} </span>
+                            <span className="mr0-25">{text}</span>
                             {frequency}
                         </label>
                     </li>
