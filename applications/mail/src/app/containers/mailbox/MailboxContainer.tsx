@@ -205,6 +205,7 @@ const MailboxContainer = ({
                     labelID={labelID}
                     elementID={elementID}
                     selectedIDs={selectedIDs}
+                    checkedIDs={checkedIDs}
                     elementIDs={elementIDs}
                     mailSettings={mailSettings}
                     columnMode={columnMode}

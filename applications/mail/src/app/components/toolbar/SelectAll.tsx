@@ -11,14 +11,14 @@ interface Props {
     loading?: boolean;
     disabled?: boolean;
     elementIDs: string[];
-    selectedIDs: string[];
+    checkedIDs: string[];
     onCheck: (IDs: string[], checked: boolean, replace: boolean) => void;
 }
 
-const SelectAll = ({ labelID, loading, disabled, elementIDs, selectedIDs, onCheck }: Props) => {
+const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck }: Props) => {
     const getElementsFromIDs = useGetElementsFromIDs();
 
-    const checked = elementIDs.length ? elementIDs.length === selectedIDs.length : false;
+    const checked = elementIDs.length ? elementIDs.length === checkedIDs.length : false;
 
     const handleAll = (checked: boolean) => () => onCheck(elementIDs, checked, true);
 

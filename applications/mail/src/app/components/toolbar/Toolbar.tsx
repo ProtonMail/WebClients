@@ -24,6 +24,7 @@ interface Props {
     labelID: string;
     elementID?: string;
     selectedIDs: string[];
+    checkedIDs: string[];
     elementIDs: string[];
     mailSettings: MailSettings;
     columnMode: boolean;
@@ -46,6 +47,7 @@ const Toolbar = ({
     conversationMode,
     breakpoints,
     selectedIDs = defaultSelectedIDs,
+    checkedIDs,
     elementIDs,
     loading = false,
     onBack,
@@ -88,7 +90,7 @@ const Toolbar = ({
                     <SelectAll
                         labelID={labelID}
                         elementIDs={elementIDs}
-                        selectedIDs={selectedIDs}
+                        checkedIDs={checkedIDs}
                         onCheck={onCheck}
                         loading={loading}
                     />
