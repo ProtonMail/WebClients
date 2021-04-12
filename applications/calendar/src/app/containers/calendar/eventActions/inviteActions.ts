@@ -225,7 +225,9 @@ export const getSendIcsAction = ({
                 throw new Error('Missing shared event data');
             }
             const { attendee: attendees } = vevent;
-            const vtimezones = await generateVtimezonesComponents(vevent, getVTimezones);
+            const vtimezones = FEATURE_FLAGS.includes('use-vtimezones')
+                ? await generateVtimezonesComponents(vevent, getVTimezones)
+                : [];
             const pmVevent = FEATURE_FLAGS.includes('proton-proton-invites')
                 ? {
                       ...vevent,
@@ -317,7 +319,9 @@ export const getSendIcsAction = ({
             if (!sharedEventID || !sharedSessionKey) {
                 throw new Error('Missing shared event data');
             }
-            const vtimezones = await generateVtimezonesComponents(vevent, getVTimezones);
+            const vtimezones = FEATURE_FLAGS.includes('use-vtimezones')
+                ? await generateVtimezonesComponents(vevent, getVTimezones)
+                : [];
             const pmVevent = FEATURE_FLAGS.includes('proton-proton-invites')
                 ? {
                       ...vevent,
@@ -409,7 +413,9 @@ export const getSendIcsAction = ({
             if (!attendees?.length) {
                 throw new Error('Cannot build cancel ics without attendees');
             }
-            const vtimezones = await generateVtimezonesComponents(cancelVevent, getVTimezones);
+            const vtimezones = FEATURE_FLAGS.includes('use-vtimezones')
+                ? await generateVtimezonesComponents(cancelVevent, getVTimezones)
+                : [];
             const cancelIcs = createInviteIcs({
                 method: ICAL_METHOD.CANCEL,
                 prodId,
