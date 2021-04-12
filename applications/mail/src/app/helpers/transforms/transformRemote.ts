@@ -1,6 +1,4 @@
 import { MailSettings } from 'proton-shared/lib/interfaces';
-import { isDraft } from 'proton-shared/lib/mail/messages';
-
 import { MessageExtended } from '../../models/message';
 import { getContent, getDocumentContent, setDocumentContent } from '../message/messageContent';
 import { hasShowRemote } from '../settings';
@@ -73,19 +71,18 @@ function prepareInjection(html: Element) {
     return attributes;
 }
 
-export const insertActualRemoteImages = (document: Element | undefined) => {
+export const insertActualRemoteImages = (content: string) => {
     const regex = new RegExp(REGEXP_FIXER, 'g');
-    const content = getDocumentContent(document);
-    const newContent = content.replace(regex, (_, $1) => $1.substring(7));
-    setDocumentContent(document, newContent);
+    // const content = getDocumentContent(document);
+    return content.replace(regex, (_, $1) => $1.substring(7));
+    // setDocumentContent(document, newContent);
 };
 
 export const transformRemote = (message: MessageExtended, mailSettings?: Partial<MailSettings>) => {
     const regex = new RegExp(REGEXP_FIXER, 'g');
     const showImages =
         message.showRemoteImages ||
-        !!(hasShowRemote(mailSettings) || WHITELIST.includes(message.data?.Sender?.Address || '')) ||
-        isDraft(message.data);
+        !!(hasShowRemote(mailSettings) || WHITELIST.includes(message.data?.Sender?.Address || ''));
     const content = getContent(message);
     const hasImages = regex.test(content);
 
@@ -100,7 +97,9 @@ export const transformRemote = (message: MessageExtended, mailSettings?: Partial
             //     dispatcher['message.open']('remote.injected', { action, list, message, hasSVG });
             // }
         } else {
-            insertActualRemoteImages(message.document);
+            const content = getDocumentContent(message.document);
+            const newContent = insertActualRemoteImages(content);
+            setDocumentContent(message.document, newContent);
         }
     }
     return { document, showRemoteImages: hasImages ? showImages : undefined };

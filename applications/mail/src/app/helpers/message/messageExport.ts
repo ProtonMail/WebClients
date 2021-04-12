@@ -18,7 +18,7 @@ import { insertActualRemoteImages } from '../transforms/transformRemote';
 
 export const prepareExport = (message: MessageExtended) => {
     if (!message.document) {
-        return;
+        return '';
     }
 
     const document = message.document.cloneNode(true) as Element;
@@ -27,10 +27,12 @@ export const prepareExport = (message: MessageExtended) => {
     const embeddeds = find(message, document);
     mutateHTMLCid(embeddeds, document);
 
-    // Remote images
-    insertActualRemoteImages(document);
+    let content = getDocumentContent(document);
 
-    return document;
+    // Remote images
+    content = insertActualRemoteImages(content);
+
+    return content;
 };
 
 const encryptBody = async (content: string, messageKeys: MessageKeys) => {
@@ -49,10 +51,9 @@ const encryptBody = async (content: string, messageKeys: MessageKeys) => {
 
 export const prepareAndEncryptBody = async (message: MessageExtended, messageKeys: MessageKeys) => {
     const plainText = isPlainText(message.data);
-    const document = plainText ? undefined : prepareExport(message);
-    const content = plainText ? getPlainTextContent(message) : getDocumentContent(document);
-    const encrypted = await encryptBody(content, messageKeys);
-    return { document, content, encrypted };
+    // const document = plainText ? undefined : prepareExport(message);
+    const content = plainText ? getPlainTextContent(message) : prepareExport(message);
+    return encryptBody(content, messageKeys);
 };
 
 export const encryptAttachmentKeyPackets = async (
@@ -86,7 +87,7 @@ export const createMessage = async (
     getMessageKeys: GetMessageKeys
 ): Promise<Message> => {
     const messageKeys = await getMessageKeys(message.data);
-    const { encrypted: Body } = await prepareAndEncryptBody(message, messageKeys);
+    const Body = await prepareAndEncryptBody(message, messageKeys);
     const attachments = getAttachments(message.data);
 
     let AttachmentKeyPackets;
@@ -126,7 +127,7 @@ export const updateMessage = async (
     getMessageKeys: GetMessageKeys
 ): Promise<Message> => {
     const messageKeys = await getMessageKeys(message.data);
-    const { encrypted: Body } = await prepareAndEncryptBody(message, messageKeys);
+    const Body = await prepareAndEncryptBody(message, messageKeys);
     const attachments = getAttachments(message.data);
     let AttachmentKeyPackets;
     if (attachments?.length && previousAddressID !== message.data.AddressID) {

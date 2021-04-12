@@ -7,7 +7,7 @@ import { addReceived } from 'proton-shared/lib/mail/messages';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
 import { MessageExtended, MessageKeys } from '../../models/message';
-import { getDocumentContent, getPlainText } from '../message/messageContent';
+import { getPlainText } from '../message/messageContent';
 import { prepareExport } from '../message/messageExport';
 import { constructMime } from './sendMimeBuilder';
 
@@ -44,7 +44,7 @@ const generateHTMLPackage = async (message: MessageExtended): Promise<Package> =
     Addresses: {},
     MIMEType: DEFAULT,
     // We NEVER upconvert, if the user wants html: plaintext is actually fine as well
-    Body: getDocumentContent(prepareExport(message)),
+    Body: prepareExport(message),
 });
 
 /**
