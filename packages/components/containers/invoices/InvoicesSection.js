@@ -31,7 +31,7 @@ import InvoiceActions from './InvoiceActions';
 import InvoiceTextModal from './InvoiceTextModal';
 import InvoicesPreview from './InvoicesPreview';
 
-import { SettingsParagraph, SettingsSectionWide } from '../account';
+import { SettingsParagraph, SettingsSection, SettingsSectionWide } from '../account';
 
 const InvoicesSection = () => {
     const previewRef = useRef();
@@ -68,7 +68,11 @@ const InvoicesSection = () => {
     };
 
     if (page === 1 && !loading && invoices.length === 0) {
-        return <Alert>{c('Error').t`You have no invoices.`}</Alert>;
+        return (
+            <SettingsSection>
+                <SettingsParagraph>{c('Error').t`You have no invoices.`}</SettingsParagraph>
+            </SettingsSection>
+        );
     }
 
     const getFilename = (invoice) => `${c('Title for PDF file').t`ProtonMail invoice`} ${invoice.ID}.pdf`;
