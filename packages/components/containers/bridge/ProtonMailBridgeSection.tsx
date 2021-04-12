@@ -82,11 +82,11 @@ const ProtonMailBridgeSection = () => {
         };
 
         return (
-            <div key={id}>
-                <div className="p2 bordered-container rounded flex flex-column flex-align-items-center">
+            <div key={id} className="flex">
+                <div className="p2 bordered flex-item-fluid rounded flex flex-column flex-align-items-center">
                     <Icon size={48} name={icon} className="mb1" />
 
-                    <h5 className="text-bold mb0">{c('Title').t`Bridge for ${platform}`}</h5>
+                    <h3 className="text-bold text-xl m0">{c('Title').t`Bridge for ${platform}`}</h3>
 
                     <span className="bridge-client-version mb1">{version}</span>
 
@@ -94,7 +94,7 @@ const ProtonMailBridgeSection = () => {
                         <Select value={linuxLink} options={options} onChange={handleSelect} className="mb1" />
                     )}
 
-                    <Button color="norm" className="w100" onClick={handleClick}>{c('Title').t`Download`}</Button>
+                    <Button color="norm" className="w100 mtauto" onClick={handleClick}>{c('Title').t`Download`}</Button>
                 </div>
             </div>
         );
