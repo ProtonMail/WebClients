@@ -1,4 +1,5 @@
 import React from 'react';
+import { c } from 'ttag';
 import { useRouteMatch } from 'react-router-dom';
 
 import {
@@ -8,6 +9,7 @@ import {
     SidebarListItemContentIcon,
     SidebarListItemLink,
 } from 'react-components';
+import { APPS, APPS_CONFIGURATION } from 'proton-shared/lib/constants';
 
 const LocalListItem = ({ to, icon, children }: { to: string; icon: string; children: React.ReactNode }) => (
     <SidebarListItem>
@@ -25,10 +27,10 @@ const VpnSettingsSidebarList = () => {
     return (
         <SidebarList>
             <SidebarListItem className="text-uppercase text-left navigation-link-header-group">
-                <SidebarListItemContent>PROTONVPN</SidebarListItemContent>
+                <SidebarListItemContent>{APPS_CONFIGURATION[APPS.PROTONVPN_SETTINGS].name}</SidebarListItemContent>
             </SidebarListItem>
             <LocalListItem to={`${path}/downloads`} icon="download">
-                Downloads
+                {c('Settings section title').t`Downloads`}
             </LocalListItem>
             <LocalListItem to={`${path}/OpenVPNIKEv2`} icon="keys">
                 OpenVPN/IKEv2
