@@ -36,7 +36,10 @@ $container-to-width: 3em !default;
 }
 
 .view-column-detail {
-	background: var(--bg-norm);
+	background-color: var(
+		--email-message-view-background-color,
+		var(--background-norm)
+	);
 }
 
 $item-container-height: rem(64) !default;
@@ -79,7 +82,15 @@ $item-container-row-height-compact-mode: rem(40) !default;
 			--email-item-read-background-color,
 			var(--background-weak)
 		);
-		color: var(--email-item-read-text-color, var(--text-norm));
+		color: var(--email-item-read-text-color, var(--text-weak));
+
+		.item-icon {
+			background-color: var(
+				--email-item-read-icon-background-color,
+				var(--background-strong)
+			);
+			color: var(--email-item-read-icon-text-color, inherit);
+		}
 	}
 
 	&.unread {
@@ -95,6 +106,14 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		.item-weight,
 		.item-subject {
 			font-weight: bold;
+		}
+
+		.item-icon {
+			background-color: var(
+				--email-item-unread-icon-background-color,
+				var(--background-strong)
+			);
+			color: var(--email-item-unread-icon-text-color, inherit);
 		}
 	}
 
@@ -115,9 +134,28 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	&.item-container.active {
 		background-color: var(
 			--email-item-selected-background-color,
-			var(--background-strong)
+			var(--interaction-norm)
 		);
-		color: var(--email-item-selected-text-color, var(--text-norm));
+		color: var(
+			--email-item-selected-text-color,
+			var(--interaction-norm-contrast)
+		);
+
+		&:focus::after,
+		&.item-is-focused::after {
+			border-left-color: var(
+				--email-item-focus-marker-color,
+				var(--interaction-norm-hover)
+			);
+		}
+
+		.item-icon {
+			background-color: var(
+				--email-item-selected-icon-background-color,
+				var(--interaction-norm-hover)
+			);
+			color: var(--email-item-selected-icon-text-color, inherit);
+		}
 	}
 }
 
@@ -139,6 +177,10 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		width: 100%;
 		height: 100%;
 		z-index: 1;
+	}
+
+	.item-icon {
+		border-color: transparent;
 	}
 }
 
@@ -339,28 +381,13 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		display: none;
 	}
 
-	// focus state (used global hover state) => NEEDS IMPROVEMENTS
-	// &:focus + .item-icon {
-	//   & > .item-abbr {
-	//     display: none;
-	//   }
-
-	//   & > .item-icon-fakecheck {
-	//     display: flex;
-	//     transform: scale(1);
-	//   }
-
-	//   .item-icon-fakecheck-icon {
-	//     fill: var(--text-weak);
-	//   }
-	// }
+	&:focus + .item-icon {
+		border-color: var(--interaction-norm);
+	}
 
 	// hover state of checkbox
 	&:hover + .item-icon,
 	& + .item-icon:hover {
-		background-color: var(--background-norm);
-		border-color: var(--border-norm);
-
 		& > .item-abbr {
 			display: none;
 		}
@@ -369,16 +396,11 @@ $item-container-row-height-compact-mode: rem(40) !default;
 			display: flex;
 			transform: scale(1);
 		}
-
-		.item-icon-fakecheck-icon {
-			fill: var(--interaction-norm);
-		}
 	}
 
 	// checked state
 	&:checked + .item-icon {
 		background-color: var(--interaction-norm);
-		border-color: var(--interaction-norm);
 
 		& > .item-abbr {
 			display: none;
@@ -386,7 +408,17 @@ $item-container-row-height-compact-mode: rem(40) !default;
 
 		& > .item-icon-fakecheck {
 			display: flex;
-			animation: anime-conversation-icon-in ease 0.15s;
+			animation: anime-conversation-icon-in easing(easeOutQuint) 0.15s;
+		}
+
+		@keyframes anime-conversation-icon-in {
+			0% {
+				transform: scale(0);
+			}
+
+			100% {
+				transform: scale(1);
+			}
 		}
 
 		.item-icon-fakecheck-icon {
@@ -409,16 +441,6 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	}
 }
 
-@keyframes anime-conversation-icon-in {
-	0% {
-		transform: scale(0);
-	}
-
-	100% {
-		transform: scale(1);
-	}
-}
-
 .item-sender--smaller,
 .item-date {
 	font-size: em(12);
@@ -431,7 +453,6 @@ $item-container-row-height-compact-mode: rem(40) !default;
 .starbutton {
 	width: rem(16);
 	height: rem(16);
-	color: var(--text-weak);
 
 	&:focus,
 	&:hover {
