@@ -172,7 +172,6 @@ const MailboxContainer = ({
     );
     const handleSort = useCallback((sort: Sort) => history.push(setSortInUrl(history.location, sort)), []);
     const handleFilter = useCallback((filter: Filter) => history.push(setFilterInUrl(history.location, filter)), []);
-    const handleNavigate = useCallback((labelID: string) => history.push(`/${labelID}`), []);
 
     // Move to the previous page if the current one becomes empty
     useEffect(() => {
@@ -246,7 +245,6 @@ const MailboxContainer = ({
                         onSort={handleSort}
                         filter={filter}
                         onFilter={handleFilter}
-                        onNavigate={handleNavigate}
                     />
                 )}
                 {showContentPanel && (
