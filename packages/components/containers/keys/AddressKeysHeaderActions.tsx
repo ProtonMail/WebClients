@@ -53,7 +53,7 @@ const AddressKeysHeaderActions = ({
     return (
         <div className="mb1 flex flex-align-items-start">
             {addresses.length > 1 && (
-                <div className="mr1">
+                <div className="mr1 mb0-5">
                     <Select
                         value={addressIndex}
                         options={addresses.map(({ Email }, i) => ({ text: Email, value: i }))}
@@ -62,11 +62,13 @@ const AddressKeysHeaderActions = ({
                 </div>
             )}
             {createActions.length ? (
-                <span className="inline-block mr1">
+                <span className="inline-flex mr1 mb0-5">
                     <DropdownActions list={createActions} />
                 </span>
             ) : null}
-            <DropdownActions list={exportActions} />
+            <span className="inline-flex mb0-5">
+                <DropdownActions list={exportActions} />
+            </span>
         </div>
     );
 };
