@@ -1,7 +1,8 @@
 import { c } from 'ttag';
-import { isExpired } from 'proton-shared/lib/helpers/card';
+import { isExpired as getIsExpired } from 'proton-shared/lib/helpers/card';
 import { BLACK_FRIDAY, MIN_BITCOIN_AMOUNT, MIN_PAYPAL_AMOUNT, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
 import { PaymentMethod, PaymentMethodStatus } from 'proton-shared/lib/interfaces';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { PaymentMethodData, PaymentMethodFlows } from './interface';
 
 const getMethod = (paymentMethod: PaymentMethod) => {
@@ -39,100 +40,82 @@ const getIcon = (paymentMethod: PaymentMethod) => {
     return '';
 };
 
-// TODO: Merge PR with api request
-const defaultStatus: PaymentMethodStatus = {
-    Card: true,
-    Paypal: true,
-    Apple: true,
-    Cash: true,
-    Bitcoin: true,
-};
-
 interface Props {
     amount: number;
     coupon: string;
-    type: PaymentMethodFlows;
-    methods?: PaymentMethod[];
-    status?: PaymentMethodStatus;
+    flow: PaymentMethodFlows;
+    paymentMethods?: PaymentMethod[];
+    paymentMethodsStatus?: Partial<PaymentMethodStatus>;
 }
 
-export const getPaymentMethodOptions = ({ amount, coupon, type, methods = [], status = defaultStatus }: Props) => {
+export const getPaymentMethodOptions = ({
+    amount,
+    coupon,
+    flow,
+    paymentMethods = [],
+    paymentMethodsStatus = {},
+}: Props): PaymentMethodData[] => {
     const isPaypalAmountValid = amount >= MIN_PAYPAL_AMOUNT;
-    const isInvoice = type === 'invoice';
-    const isSignup = type === 'signup';
-    const isHumanVerification = type === 'human-verification';
-    const alreadyHavePayPal = methods.some(({ Type }) => Type === PAYMENT_METHOD_TYPES.PAYPAL);
+    const isInvoice = flow === 'invoice';
+    const isSignup = flow === 'signup';
+    const isHumanVerification = flow === 'human-verification';
+    const alreadyHavePayPal = paymentMethods.some(({ Type }) => Type === PAYMENT_METHOD_TYPES.PAYPAL);
 
-    const options: PaymentMethodData[] = [];
-
-    if (status?.Card) {
-        options.push({
+    return [
+        ...paymentMethods
+            .filter((paymentMethod) => {
+                if (paymentMethod.Type === PAYMENT_METHOD_TYPES.CARD && paymentMethodsStatus?.Card) {
+                    return true;
+                }
+                if (
+                    (paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL ||
+                        paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) &&
+                    paymentMethodsStatus?.Paypal
+                ) {
+                    return true;
+                }
+                return false;
+            })
+            .map((paymentMethod) => {
+                const isExpired =
+                    paymentMethod.Type === PAYMENT_METHOD_TYPES.CARD ? getIsExpired(paymentMethod.Details) : false;
+                return {
+                    icon: getIcon(paymentMethod),
+                    text: [getMethod(paymentMethod), isExpired && `(${c('Info').t`Expired`})`]
+                        .filter(Boolean)
+                        .join(' '),
+                    value: paymentMethod.ID,
+                    disabled: isExpired,
+                    custom: true,
+                };
+            }),
+        paymentMethodsStatus?.Card && {
             icon: 'payments-type-card',
             value: PAYMENT_METHOD_TYPES.CARD,
             text: c('Payment method option').t`New credit/debit card`,
-        });
-    }
-
-    if (methods.length) {
-        options.unshift(
-            ...methods
-                .filter((paymentMethod) => {
-                    if (paymentMethod.Type === PAYMENT_METHOD_TYPES.CARD && status?.Card) {
-                        return true;
-                    }
-                    if (
-                        (paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL ||
-                            paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) &&
-                        status?.Paypal
-                    ) {
-                        return true;
-                    }
-                    return false;
-                })
-                .map((paymentMethod) => {
-                    const expired =
-                        paymentMethod.Type === PAYMENT_METHOD_TYPES.CARD ? isExpired(paymentMethod.Details) : false;
-                    return {
-                        icon: getIcon(paymentMethod),
-                        text: [getMethod(paymentMethod), expired && `(${c('Info').t`Expired`})`]
-                            .filter(Boolean)
-                            .join(' '),
-                        value: paymentMethod.ID,
-                        disabled: expired,
-                    };
-                })
-        );
-    }
-
-    if (status?.Paypal && !alreadyHavePayPal && (isPaypalAmountValid || isInvoice)) {
-        options.push({
-            icon: 'payments-type-pp',
-            text: c('Payment method option').t`PayPal`,
-            value: PAYMENT_METHOD_TYPES.PAYPAL,
-        });
-    }
-
-    if (
-        status?.Bitcoin &&
+        },
+        paymentMethodsStatus?.Paypal &&
+            !alreadyHavePayPal &&
+            (isPaypalAmountValid || isInvoice) && {
+                icon: 'payments-type-pp',
+                text: c('Payment method option').t`PayPal`,
+                value: PAYMENT_METHOD_TYPES.PAYPAL,
+            },
+        paymentMethodsStatus?.Bitcoin &&
+            !isSignup &&
+            !isHumanVerification &&
+            coupon !== BLACK_FRIDAY.COUPON_CODE &&
+            amount >= MIN_BITCOIN_AMOUNT && {
+                icon: 'payments-type-bt',
+                text: c('Payment method option').t`Bitcoin`,
+                value: PAYMENT_METHOD_TYPES.BITCOIN,
+            },
         !isSignup &&
-        !isHumanVerification &&
-        coupon !== BLACK_FRIDAY.COUPON_CODE &&
-        amount >= MIN_BITCOIN_AMOUNT
-    ) {
-        options.push({
-            icon: 'payments-type-bt',
-            text: c('Payment method option').t`Bitcoin`,
-            value: PAYMENT_METHOD_TYPES.BITCOIN,
-        });
-    }
-
-    if (status?.Cash && !isSignup && !isHumanVerification && coupon !== BLACK_FRIDAY.COUPON_CODE) {
-        options.push({
-            icon: 'payments-type-cash',
-            text: c('Label').t`Cash`,
-            value: PAYMENT_METHOD_TYPES.CASH,
-        });
-    }
-
-    return options;
+            !isHumanVerification &&
+            coupon !== BLACK_FRIDAY.COUPON_CODE && {
+                icon: 'payments-type-cash',
+                text: c('Label').t`Cash`,
+                value: PAYMENT_METHOD_TYPES.CASH,
+            },
+    ].filter(isTruthy);
 };
