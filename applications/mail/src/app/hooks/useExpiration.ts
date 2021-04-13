@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { useInterval, useHandler } from 'react-components';
 import { fromUnixTime, isAfter, differenceInSeconds } from 'date-fns';
 
@@ -8,41 +8,42 @@ import { EXPIRATION_CHECK_FREQUENCY } from '../constants';
 
 export const formatDelay = (nowDate: Date, expirationDate: Date): string => {
     let delta = differenceInSeconds(expirationDate, nowDate);
-    const days = Math.floor(delta / 86400);
-    delta -= days * 86400;
-    const hours = Math.floor(delta / 3600) % 24;
-    delta -= hours * 3600;
-    const minutes = Math.floor(delta / 60) % 60;
-    delta -= minutes * 60;
-    const seconds = delta % 60;
+    const daysCountLeft = Math.floor(delta / 86400);
+    delta -= daysCountLeft * 86400;
+    const hoursCountLeft = Math.floor(delta / 3600) % 24;
+    delta -= hoursCountLeft * 3600;
+    const minutesCountLeft = Math.floor(delta / 60) % 60;
+    delta -= minutesCountLeft * 60;
+    const secondsCountLeft = delta % 60;
+
     return [
         {
-            diff: days,
-            unit: c('Time unit').t`day`,
-            units: c('Time unit').t`days`,
+            diff: daysCountLeft,
+            text: c('Time unit').ngettext(msgid`${daysCountLeft} day`, `${daysCountLeft} days`, daysCountLeft),
         },
         {
-            diff: hours,
-            unit: c('Time unit').t`hour`,
-            units: c('Time unit').t`hours`,
+            diff: hoursCountLeft,
+            text: c('Time unit').ngettext(msgid`${hoursCountLeft} hour`, `${hoursCountLeft} hours`, hoursCountLeft),
         },
         {
-            diff: minutes,
-            unit: c('Time unit').t`minute`,
-            units: c('Time unit').t`minutes`,
+            diff: minutesCountLeft,
+            text: c('Time unit').ngettext(
+                msgid`${minutesCountLeft} minute`,
+                `${minutesCountLeft} minutes`,
+                minutesCountLeft
+            ),
         },
         {
-            diff: seconds,
-            unit: c('Time unit').t`second`,
-            units: c('Time unit').t`seconds`,
+            diff: secondsCountLeft,
+            text: c('Time unit').ngettext(
+                msgid`${secondsCountLeft} second`,
+                `${secondsCountLeft} seconds`,
+                secondsCountLeft
+            ),
         },
     ]
-        .reduce((acc: string[], { diff, unit, units }: { diff: number; unit: string; units: string }) => {
-            if (diff) {
-                acc.push(diff === 1 ? `${diff} ${unit}` : `${diff} ${units}`);
-            }
-            return acc;
-        }, [])
+        .filter(({ diff }) => diff !== 0)
+        .map(({ text }) => text)
         .join(', ');
 };
 
