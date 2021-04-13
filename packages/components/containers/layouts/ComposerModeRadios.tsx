@@ -15,9 +15,10 @@ interface Props {
     onChange: (composerMode: COMPOSER_MODE) => void;
     loading: boolean;
     id: string;
+    describedByID: string;
 }
 
-const ComposerModeRadios = ({ composerMode, onChange, loading, id, ...rest }: Props) => {
+const ComposerModeRadios = ({ composerMode, onChange, loading, id, describedByID, ...rest }: Props) => {
     const radioCardPopup = {
         value: POPUP,
         checked: composerMode === POPUP,
@@ -28,7 +29,7 @@ const ComposerModeRadios = ({ composerMode, onChange, loading, id, ...rest }: Pr
         onChange() {
             onChange(POPUP);
         },
-        children: <img alt={c('Composer mode popup').t`Normal`} src={composerPopUpSvg} />,
+        children: <img alt="" src={composerPopUpSvg} />,
     };
     const radioCardMaximized = {
         value: MAXIMIZED,
@@ -40,10 +41,10 @@ const ComposerModeRadios = ({ composerMode, onChange, loading, id, ...rest }: Pr
         onChange() {
             onChange(MAXIMIZED);
         },
-        children: <img alt={c('Composer mode maximized').t`Maximized`} src={composerMaximizedSvg} />,
+        children: <img alt="" src={composerMaximizedSvg} />,
     };
 
-    return <RadioCards list={[radioCardPopup, radioCardMaximized]} id={id} {...rest} />;
+    return <RadioCards list={[radioCardPopup, radioCardMaximized]} id={id} describedByID={describedByID} {...rest} />;
 };
 
 export default ComposerModeRadios;
