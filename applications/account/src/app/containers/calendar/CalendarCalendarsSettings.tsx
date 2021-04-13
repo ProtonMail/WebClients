@@ -51,7 +51,7 @@ const CalendarCalendarsSettings = ({
                 defaultCalendar={defaultCalendar}
                 user={user}
             />
-            <CalendarImportSection activeCalendars={activeCalendars} defaultCalendar={defaultCalendar} />
+            <CalendarImportSection activeCalendars={activeCalendars} defaultCalendar={defaultCalendar} user={user} />
         </PrivateMainSettingsAreaWithPermissions>
     );
 };
