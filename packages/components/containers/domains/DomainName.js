@@ -8,9 +8,13 @@ const { DOMAIN_STATE_DEFAULT, DOMAIN_STATE_ACTIVE, DOMAIN_STATE_WARN } = DOMAIN_
 
 const DomainName = ({ domain }) => {
     const ICONS = {
-        [DOMAIN_STATE_DEFAULT]: <Icon className="color-danger" type="error" name="times-circle-filled" />,
-        [DOMAIN_STATE_ACTIVE]: <Icon className="color-success" name="check-circle-filled" />,
-        [DOMAIN_STATE_WARN]: <Icon className="color-warning" type="warning" name="times-circle-filled" />,
+        [DOMAIN_STATE_DEFAULT]: (
+            <Icon className="color-danger flex-item-noshrink" type="error" name="times-circle-filled" />
+        ),
+        [DOMAIN_STATE_ACTIVE]: <Icon className="color-success flex-item-noshrink" name="check-circle-filled" />,
+        [DOMAIN_STATE_WARN]: (
+            <Icon className="color-warning flex-item-noshrink" type="warning" name="times-circle-filled" />
+        ),
     };
 
     return (
