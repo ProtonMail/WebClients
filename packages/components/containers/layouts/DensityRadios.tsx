@@ -15,9 +15,10 @@ interface Props {
     onChange: (density: DENSITY) => void;
     loading: boolean;
     id: string;
+    describedByID: string;
 }
 
-const DensityRadios = ({ density, onChange, loading, id, ...rest }: Props) => {
+const DensityRadios = ({ density, onChange, loading, id, describedByID, ...rest }: Props) => {
     const radioCardComfortable = {
         value: COMFORTABLE,
         checked: density === COMFORTABLE,
@@ -43,7 +44,9 @@ const DensityRadios = ({ density, onChange, loading, id, ...rest }: Props) => {
         children: <img alt="Compact" src={compactDensitySvg} />,
     };
 
-    return <RadioCards list={[radioCardComfortable, radioCardCompact]} id={id} {...rest} />;
+    return (
+        <RadioCards list={[radioCardComfortable, radioCardCompact]} describedByID={describedByID} id={id} {...rest} />
+    );
 };
 
 export default DensityRadios;

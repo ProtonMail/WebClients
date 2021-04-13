@@ -51,7 +51,7 @@ const LayoutsSection = () => {
                 <>
                     <div className="flex flex-nowrap mb1 on-mobile-flex-column flex-column">
                         <label htmlFor="layoutMode" className="mb1 text-semibold">
-                            <span className="mr0-5">{c('Label').t`Inbox`}</span>
+                            <span className="mr0-5" id="layoutMode_desc">{c('Label').t`Inbox`}</span>
                             <Info
                                 url="https://protonmail.com/support/knowledge-base/change-inbox-layout/"
                                 title={c('Tooltip').t`Set the default layout for your Inbox.`}
@@ -59,6 +59,7 @@ const LayoutsSection = () => {
                         </label>
                         <ViewLayoutRadios
                             id="layoutMode"
+                            describedByID="layoutMode_desc"
                             viewLayout={ViewLayout}
                             onChange={(value) => withLoadingViewLayout(handleChangeViewLayout(value))}
                             loading={loadingViewLayout}
@@ -67,7 +68,7 @@ const LayoutsSection = () => {
 
                     <div className="flex flex-nowrap mb1 on-mobile-flex-column flex-column">
                         <label htmlFor="composerMode" className="mb1 text-semibold">
-                            <span className="mr0-5">{c('Label').t`Composer`}</span>
+                            <span className="mr0-5" id="composerMode_desc">{c('Label').t`Composer`}</span>
                             <Info
                                 url="https://protonmail.com/support/knowledge-base/composer/"
                                 title={c('Tooltip').t`Set the default Composer popup size as small or full screen.`}
@@ -75,6 +76,7 @@ const LayoutsSection = () => {
                         </label>
                         <ComposerModeRadios
                             id="composerMode"
+                            describedByID="composerMode_desc"
                             composerMode={ComposerMode}
                             onChange={(value) => withLoadingComposerMode(handleChangeComposerMode(value))}
                             loading={loadingComposerMode}
@@ -82,11 +84,12 @@ const LayoutsSection = () => {
                     </div>
 
                     <div className="flex flex-nowrap mb1 on-mobile-flex-column flex-column">
-                        <label htmlFor="density" className="mb1 text-semibold">
+                        <label htmlFor="density" className="mb1 text-semibold" id="densityMode_desc">
                             {c('Label').t`Density`}
                         </label>
                         <DensityRadios
                             density={Density}
+                            describedByID="densityMode_desc"
                             onChange={(value) => withLoadingDensity(handleChangeDensity(value))}
                             loading={loadingDensity}
                             id="density"

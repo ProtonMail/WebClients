@@ -15,9 +15,10 @@ interface Props {
     onChange: (viewLayout: VIEW_LAYOUT) => void;
     loading: boolean;
     id: string;
+    describedByID: string;
 }
 
-const ViewLayoutRadios = ({ viewLayout, onChange, loading, id, ...rest }: Props) => {
+const ViewLayoutRadios = ({ viewLayout, onChange, loading, id, describedByID, ...rest }: Props) => {
     const radioCardColumn = {
         value: COLUMN,
         checked: viewLayout === COLUMN,
@@ -28,7 +29,7 @@ const ViewLayoutRadios = ({ viewLayout, onChange, loading, id, ...rest }: Props)
         onChange() {
             onChange(COLUMN);
         },
-        children: <img alt="Column" src={inboxColumnSvg} />,
+        children: <img alt="" src={inboxColumnSvg} />,
     };
     const radioCardRow = {
         value: ROW,
@@ -40,10 +41,10 @@ const ViewLayoutRadios = ({ viewLayout, onChange, loading, id, ...rest }: Props)
         onChange() {
             onChange(ROW);
         },
-        children: <img alt="Row" src={inboxRowSvg} />,
+        children: <img alt="" src={inboxRowSvg} />,
     };
 
-    return <RadioCards list={[radioCardColumn, radioCardRow]} id={id} {...rest} />;
+    return <RadioCards list={[radioCardColumn, radioCardRow]} id={id} describedByID={describedByID} {...rest} />;
 };
 
 export default ViewLayoutRadios;

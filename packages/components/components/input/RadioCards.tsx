@@ -5,9 +5,10 @@ import RadioCard, { RadioCardProps } from './RadioCard';
 interface Props {
     list: RadioCardProps[];
     id: string;
+    describedByID: string;
 }
 
-const RadioCards = ({ list = [], id, ...rest }: Props) => {
+const RadioCards = ({ list = [], id, describedByID, ...rest }: Props) => {
     return (
         <div id={id} className="mb1 flex" {...rest}>
             {list.map(({ value, checked, label, name, id, children, onChange, disabled }, index) => {
@@ -21,6 +22,7 @@ const RadioCards = ({ list = [], id, ...rest }: Props) => {
                         id={id}
                         onChange={onChange}
                         disabled={disabled}
+                        aria-describedby={describedByID}
                     >
                         {children}
                     </RadioCard>
