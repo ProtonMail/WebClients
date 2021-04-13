@@ -82,7 +82,7 @@ const SessionsSection = () => {
                 {c('Info')
                     .t`Unless you explicitly sign out or change your password, sessions remain active and only expire after 30 days of inactivity.`}
             </SettingsParagraph>
-            <div className="flex flex-justify-space-between mb1">
+            <div className="flex flex-justify-space-between flex-align-items-start mb1">
                 <div className="on-mobile-mb1">
                     <Button shape="outline" onClick={handleOpenModal} loading={loadingRevokeAll}>{c('Action')
                         .t`Revoke all other sessions`}</Button>
