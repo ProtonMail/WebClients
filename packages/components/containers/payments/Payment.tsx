@@ -54,7 +54,7 @@ const Payment = ({
     errors,
     noMaxWidth = false,
 }: Props) => {
-    const { methods, options, loading } = useMethods({ amount, coupon, type });
+    const { paymentMethods, options, loading } = useMethods({ amount, coupon, flow: type });
     const lastCustomMethod = [...options]
         .reverse()
         .find(
@@ -105,7 +105,7 @@ const Payment = ({
         return <Loader />;
     }
 
-    const customPaymentMethod = methods.find(({ ID }) => method === ID);
+    const customPaymentMethod = paymentMethods.find(({ ID }) => method === ID);
 
     return (
         <>
