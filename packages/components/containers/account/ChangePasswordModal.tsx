@@ -12,12 +12,9 @@ import { updatePrivateKeyRoute } from 'proton-shared/lib/api/keys';
 import { srpVerify } from 'proton-shared/lib/srp';
 import { Address } from 'proton-shared/lib/interfaces';
 import { getUpdateKeysPayload } from 'proton-shared/lib/keys/changePassword';
+import { confirmPasswordValidator, passwordLengthValidator } from 'proton-shared/lib/helpers/formValidators';
 
-
-import {
-    handleUnlock,
-    handleChangeLoginPassword,
-} from './changePasswordHelper';
+import { handleUnlock, handleChangeLoginPassword } from './changePasswordHelper';
 import { Alert, PasswordInput, TwoFactorInput, Row, Label, Field, FormModal, Loader } from '../../components';
 
 import { GenericError } from '../error';
@@ -57,14 +54,12 @@ interface Inputs {
 
 interface Errors {
     loginError: string;
-    confirmPasswordError: string;
     fatalError: boolean;
     persistError?: boolean;
 }
 
 const DEFAULT_ERRORS = {
     loginError: '',
-    confirmPasswordError: '',
     fatalError: false,
 };
 
@@ -93,6 +88,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
     const [loading, setLoading] = useState<boolean>(false);
     const [errors, setErrors] = useState<Errors>(DEFAULT_ERRORS);
     const [isSecondPhase, setSecondPhase] = useState<boolean>(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     useBeforeUnload(loading ? c('Info').t`By leaving now, changes may not be saved` : '');
 
@@ -120,13 +116,14 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
         run();
     }, []);
 
-    const validateConfirmPassword = () => {
-        if (inputs.confirmPassword !== inputs.newPassword) {
-            setPartialError({
-                ...DEFAULT_ERRORS,
-                confirmPasswordError: c('Error').t`Passwords do not match`,
-            });
-            throw new Error('PasswordMatch');
+    const newPasswordError = passwordLengthValidator(inputs.newPassword);
+    const confirmPasswordError =
+        passwordLengthValidator(inputs.confirmPassword) ||
+        confirmPasswordValidator(inputs.newPassword, inputs.confirmPassword);
+
+    const validateNewPasswords = () => {
+        if (newPasswordError || confirmPasswordError) {
+            throw new Error('Password error');
         }
     };
 
@@ -227,7 +224,8 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                 ...getModalProperties(mode),
                 async onSubmit() {
                     try {
-                        validateConfirmPassword();
+                        setIsSubmitted(true);
+                        validateNewPasswords();
                         resetErrors();
                         setLoading(true);
 
@@ -261,7 +259,8 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                 },
                 async onSubmit() {
                     try {
-                        validateConfirmPassword();
+                        setIsSubmitted(true);
+                        validateNewPasswords();
                         resetErrors();
                         setLoading(true);
 
@@ -269,6 +268,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                         await handleChangeLoginPassword({ api, newPassword: inputs.newPassword });
 
                         setSecondPhase(true);
+                        setIsSubmitted(false);
                         setInputs({
                             newPassword: '',
                             confirmPassword: '',
@@ -313,7 +313,8 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                             isAdmin ? getOrganizationKeyRaw() : undefined,
                         ]);
 
-                        validateConfirmPassword();
+                        setIsSubmitted(true);
+                        validateNewPasswords();
                         resetErrors();
                         setLoading(true);
 
@@ -369,7 +370,8 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                         text: c('Error').t`Please generate keys before you try to change your password.`,
                     });
                 }
-                validateConfirmPassword();
+                setIsSubmitted(true);
+                validateNewPasswords();
                 resetErrors();
                 setLoading(true);
 
@@ -490,9 +492,10 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                         <PasswordInput
                             id="oldPassword"
                             value={inputs.oldPassword}
-                            onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) =>
-                                setPartialInput({ oldPassword: value })
-                            }
+                            onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) => {
+                                setPartialInput({ oldPassword: value });
+                                setPartialError({ loginError: '' });
+                            }}
                             error={errors.loginError}
                             placeholder={c('Placeholder').t`Password`}
                             autoComplete="current-password"
@@ -508,9 +511,10 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                         <TwoFactorInput
                             id="totp"
                             value={inputs.totp}
-                            onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) =>
-                                setPartialInput({ totp: value })
-                            }
+                            onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) => {
+                                setPartialInput({ totp: value });
+                                setPartialError({ loginError: '' });
+                            }}
                             error={errors.loginError}
                             placeholder={c('Placeholder').t`Two-factor authentication code`}
                             required
@@ -528,7 +532,8 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                         onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) =>
                             setPartialInput({ newPassword: value })
                         }
-                        error={errors.confirmPasswordError}
+                        isSubmitted={isSubmitted}
+                        error={newPasswordError}
                         placeholder={c('Placeholder').t`Password`}
                         autoComplete="new-password"
                         required
@@ -545,7 +550,8 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
                         onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) =>
                             setPartialInput({ confirmPassword: value })
                         }
-                        error={errors.confirmPasswordError}
+                        isSubmitted={isSubmitted}
+                        error={confirmPasswordError}
                         placeholder={c('Placeholder').t`Confirm`}
                         autoComplete="new-password"
                         required
