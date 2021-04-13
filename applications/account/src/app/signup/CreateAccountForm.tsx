@@ -17,7 +17,12 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { queryCheckUsernameAvailability, queryVerificationCode } from 'proton-shared/lib/api/user';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
-import { requiredValidator, emailValidator, confirmPasswordValidator } from 'proton-shared/lib/helpers/formValidators';
+import {
+    requiredValidator,
+    emailValidator,
+    passwordLengthValidator,
+    confirmPasswordValidator,
+} from 'proton-shared/lib/helpers/formValidators';
 
 import { HumanApi } from './helpers/humanApi';
 import InsecureEmailInfo from './InsecureEmailInfo';
@@ -215,7 +220,7 @@ const CreateAccountForm = ({
                     as={PasswordInputTwo}
                     id="password"
                     label={c('Label').t`Password`}
-                    error={validator([requiredValidator(password)])}
+                    error={validator([passwordLengthValidator(password)])}
                     bigger
                     disableChange={loading}
                     autoComplete="new-password"
@@ -228,7 +233,7 @@ const CreateAccountForm = ({
                     id="repeat-password"
                     label={c('Label').t`Repeat password`}
                     error={validator([
-                        requiredValidator(confirmPassword),
+                        passwordLengthValidator(confirmPassword),
                         confirmPasswordValidator(confirmPassword, password),
                     ])}
                     bigger
