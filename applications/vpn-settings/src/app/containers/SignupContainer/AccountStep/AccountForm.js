@@ -20,6 +20,7 @@ import {
 import { c } from 'ttag';
 import { queryCheckUsernameAvailability } from 'proton-shared/lib/api/user';
 import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
+import { passwordLengthValidator, confirmPasswordValidator } from 'proton-shared/lib/helpers/formValidators';
 
 const AccountForm = ({ model, onSubmit }) => {
     const [challengeLoading, setChallengeLoading] = useState(true);
@@ -54,12 +55,9 @@ const AccountForm = ({ model, onSubmit }) => {
 
     const usernameError = asyncUsernameError || (!username ? c('Signup error').t`This field is required` : '');
 
-    const passwordError = !password ? c('Signup error').t`This field is required` : '';
-    const confirmPasswordError = !confirmPassword
-        ? c('Signup error').t`This field is required`
-        : password !== confirmPassword
-        ? c('Error').t`Passwords do not match`
-        : '';
+    const passwordError = passwordLengthValidator(password);
+    const confirmPasswordError =
+        passwordLengthValidator(confirmPassword) || confirmPasswordValidator(password, confirmPassword);
 
     const handleSubmit = async () => {
         setIsSubmitted(true);
