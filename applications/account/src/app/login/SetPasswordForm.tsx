@@ -2,7 +2,7 @@ import { c } from 'ttag';
 import React, { useState } from 'react';
 import { PasswordInputTwo, Button, useLoading, useFormErrors, InputFieldTwo } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { confirmPasswordValidator, requiredValidator } from 'proton-shared/lib/helpers/formValidators';
+import { confirmPasswordValidator, passwordLengthValidator } from 'proton-shared/lib/helpers/formValidators';
 
 interface Props {
     onSubmit: (newPassword: string) => Promise<void>;
@@ -32,7 +32,7 @@ const SetPasswordForm = ({ onSubmit }: Props) => {
                 id="password"
                 bigger
                 label={c('Label').t`New password`}
-                error={validator([requiredValidator(newPassword)])}
+                error={validator([passwordLengthValidator(newPassword)])}
                 disableChange={loading}
                 autoFocus
                 autoComplete="new-password"
@@ -45,7 +45,7 @@ const SetPasswordForm = ({ onSubmit }: Props) => {
                 bigger
                 label={c('Label').t`Confirm password`}
                 error={validator([
-                    requiredValidator(confirmNewPassword),
+                    passwordLengthValidator(confirmNewPassword),
                     confirmPasswordValidator(confirmNewPassword, newPassword),
                 ])}
                 disableChange={loading}
