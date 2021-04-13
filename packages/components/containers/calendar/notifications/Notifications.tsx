@@ -1,3 +1,4 @@
+import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/calendar/constants';
 import React from 'react';
 import { c } from 'ttag';
 import { NotificationModel } from 'proton-shared/lib/interfaces/calendar/Notification';
@@ -31,6 +32,10 @@ const Notifications = ({
     return (
         <>
             {notifications.map((notification, index) => {
+                if (notification.type === SETTINGS_NOTIFICATION_TYPE.EMAIL) {
+                    // Hide email notifications until supported
+                    return null;
+                }
                 return (
                     <div className="mb0-5 flex flex-nowrap flex-align-items-center" key={notification.id}>
                         <NotificationInput
