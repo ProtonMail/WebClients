@@ -26,10 +26,10 @@ const AddressesTable = ({ domain, domainAddresses }) => {
                 cells={[
                     c('Title header for addresses domain table').t`Address`,
                     c('Title header for addresses domain table').t`Status`,
-                    <>
+                    <span className="inline-flex flex-align-items-center">
                         {c('Title header for addresses domain table').t`Catch-All`}
-                        <Info url="https://protonmail.com/support/knowledge-base/catch-all/" />
-                    </>,
+                        <Info className="ml0-5" url="https://protonmail.com/support/knowledge-base/catch-all/" />
+                    </span>,
                 ]}
             />
             <TableBody colSpan={4}>
