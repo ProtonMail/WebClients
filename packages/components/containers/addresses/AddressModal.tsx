@@ -42,7 +42,7 @@ const AddressModal = ({ onClose, member, members, organizationKey, ...rest }: Pr
     const handleChange = (key: string) => ({ target }: any) => update(key, target.value);
 
     const handleSubmit = async () => {
-        const { name: DisplayName, address: Local, domain: Domain } = model;
+        const { name: DisplayName, address: Local, domain: Domain, id: MemberID } = model;
 
         if (!hasPremium && `${user.Name}@${premiumDomain}`.toLowerCase() === `${Local}@${Domain}`.toLowerCase()) {
             return createNotification({
@@ -54,7 +54,7 @@ const AddressModal = ({ onClose, member, members, organizationKey, ...rest }: Pr
 
         const { Address } = await api(
             createAddress({
-                MemberID: initialMember.ID,
+                MemberID,
                 Local,
                 Domain,
                 DisplayName,
