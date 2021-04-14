@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { queryVPNLogicalServerInfo, getVPNServerConfig } from 'proton-shared/lib/api/vpn';
 import { groupWith } from 'proton-shared/lib/helpers/array';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { SORT_DIRECTION } from 'proton-shared/lib/constants';
+import { SORT_DIRECTION, VPN_HOSTNAME } from 'proton-shared/lib/constants';
 import { Link } from 'react-router-dom';
 import { Alert, Href, Icon, Info, Button, Block, Tooltip, Radio, RadioGroup, ButtonLike } from '../../../components';
 import { useApiResult, useApiWithoutResult, useUser, useSortedList, useUserVPN } from '../../../hooks';
@@ -219,7 +219,7 @@ const OpenVPNConfigurationSection = () => {
                                 .t`Install a Country configuration file to connect to a random server in the country of your choice.`}
                         </Alert>
                         {isUpgradeRequiredForCountries() && (
-                            <Alert learnMore="https://account.protonvpn.com/dashboard">{c('Info')
+                            <Alert learnMore={`https://${VPN_HOSTNAME}/dashboard`}>{c('Info')
                                 .t`ProtonVPN Basic, Plus or Visionary required for Country level connection.`}</Alert>
                         )}
                         <ConfigsTable
