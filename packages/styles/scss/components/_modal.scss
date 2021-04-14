@@ -13,6 +13,7 @@ $modal-wider-max-width: rem(1000) !default;
 $modal-full-dimension: 98% !default;
 $modal-full-max-width: rem(1500) !default;
 
+$modal-intermediate-width: rem(480);
 $modal-smaller-width: 28em !default;
 $modal-tiny-width: em(288) !default;
 
@@ -138,6 +139,10 @@ $modal-tiny-width: em(288) !default;
 
 .modal--auto {
 	width: auto;
+}
+
+.modal--intermediate {
+	width: $modal-intermediate-width;
 }
 
 .modal--smaller {
