@@ -1,31 +1,42 @@
 import React from 'react';
 import { c } from 'ttag';
 import { getAppName } from 'proton-shared/lib/apps/helper';
-import { OnboardingContent, OnboardingModal, OnboardingStep, OnboardingStepRenderCallback } from 'react-components';
+import {
+    AppLink,
+    ButtonLike,
+    OnboardingContent,
+    OnboardingModal,
+    OnboardingStep,
+    OnboardingStepRenderCallback,
+} from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
-import { useHistory } from 'react-router-dom';
 
 import onboardingWelcome from 'design-system/assets/img/onboarding/calendar-welcome.svg';
 import { CALENDAR_APP_NAME } from 'proton-shared/lib/calendar/constants';
 
 const CalendarOnboardingModal = (props: any) => {
-    const history = useHistory();
     const appName = getAppName(APPS.PROTONCALENDAR);
 
     return (
         <OnboardingModal {...props}>
             {({ onClose }: OnboardingStepRenderCallback) => {
-                const handleClose = () => {
-                    history.push('/settings/calendars#import');
-                    onClose?.();
-                };
+                const importEventsButton = (
+                    <ButtonLike
+                        as={AppLink}
+                        to="/calendar/calendars#import"
+                        toApp={APPS.PROTONACCOUNT}
+                        target="_self"
+                        onClick={onClose}
+                    >
+                        {c(`Onboarding ProtonCalendar`).t`Import your events`}
+                    </ButtonLike>
+                );
                 return (
                     <OnboardingStep
                         title={c(`Onboarding ProtonCalendar`).t`Your secure calendar is ready`}
                         submit={c(`Onboarding ProtonCalendar`).t`Start using ${appName}`}
                         onSubmit={onClose}
-                        close={c(`Onboarding ProtonCalendar`).t`Import your events`}
-                        onClose={handleClose}
+                        close={importEventsButton}
                     >
                         <OnboardingContent
                             description={c(`Onboarding ProtonCalendar`)

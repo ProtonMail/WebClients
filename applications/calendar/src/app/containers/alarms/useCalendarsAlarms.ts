@@ -5,7 +5,7 @@ import { addMilliseconds } from 'proton-shared/lib/date-fns-utc';
 import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
 import { noop } from 'proton-shared/lib/helpers/function';
 
-import { DAY } from 'proton-shared/lib/calendar/constants';
+import { DAY } from 'proton-shared/lib/constants';
 import getCalendarsAlarmsCached from './getCalendarsAlarmsCached';
 import { CalendarsAlarmsCache } from './CacheInterface';
 
@@ -23,7 +23,7 @@ export const getCalendarsAlarmsCache = ({
 const useCalendarsAlarms = (
     calendars: tsCalendar[],
     cacheRef: MutableRefObject<CalendarsAlarmsCache>,
-    lookAhead = 2 * DAY * 1000
+    lookAhead = 2 * DAY
 ) => {
     const api = useApi();
     const [forceRefresh, setForceRefresh] = useState<any>();
