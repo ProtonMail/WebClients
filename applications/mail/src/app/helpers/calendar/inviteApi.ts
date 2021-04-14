@@ -71,6 +71,7 @@ import {
     UpdatePartstatApiResponse,
     UpdatePersonalPartApiResponse,
     VcalAttendeeProperty,
+    VcalDateOrDateTimeProperty,
     VcalVeventComponent,
 } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
@@ -84,6 +85,7 @@ import {
     getInvitationHasAttendee,
     getIsInvitationFromFuture,
     getIsInvitationOutdated,
+    getLinkedDateTimeProperty,
     getSingleEditWidgetData,
     processEventInvitation,
     UPDATE_ACTION,
@@ -129,31 +131,59 @@ const getIsNonSoughtEvent = (event: CalendarEventWithMetadata, vevent: VcalVeven
 export type FetchAllEventsByUID = ({
     uid,
     api,
-    recurrenceID,
+    recurrenceId,
 }: {
     uid: string;
-    recurrenceID?: number;
+    recurrenceId?: VcalDateOrDateTimeProperty;
     api: Api;
 }) => Promise<{
     event?: CalendarEventWithMetadata;
     otherEvents: CalendarEventWithMetadata[];
     parentEvent?: CalendarEventWithMetadata;
     otherParentEvents?: CalendarEventWithMetadata[];
+    supportedRecurrenceId?: VcalDateOrDateTimeProperty;
 }>;
 
-const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, api, recurrenceID }) => {
+const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, api, recurrenceId }) => {
+    const timestamp = recurrenceId ? getUnixTime(propertyToUTCDate(recurrenceId)) : undefined;
     const promises: Promise<CalendarEventWithMetadata[]>[] = [getPaginatedEventsByUID({ api, uid })];
-    if (recurrenceID) {
-        promises.unshift(getPaginatedEventsByUID({ api, uid, recurrenceID }));
+    if (recurrenceId) {
+        promises.unshift(getPaginatedEventsByUID({ api, uid, recurrenceID: timestamp }));
     }
     const [[event, ...otherEvents] = [], [parentEvent, ...otherParentEvents] = []] = await Promise.all(promises);
-    if (parentEvent) {
-        // If recurrenceID is passed, but the single edit is not found, return the parent
-        return event
-            ? { event, otherEvents, parentEvent, otherParentEvents }
-            : { event: parentEvent, otherEvents: otherParentEvents };
+    if (!parentEvent) {
+        return { event, otherEvents };
     }
-    return { event, otherEvents };
+    // If recurrenceID is passed, but the single edit is not found, it is possible that the ICS
+    // contained the wrong RECURRENCE-ID (Outlook sends a wrong one for single edits of all-day events).
+    // Try to recover. If we cannot find the single edit, return the parent
+    if (!event && recurrenceId) {
+        try {
+            const supportedRecurrenceId = getLinkedDateTimeProperty({
+                property: recurrenceId,
+                isAllDay: !!parentEvent.FullDay,
+                tzid: parentEvent.StartTimezone,
+            });
+            const supportedTimestamp = getUnixTime(propertyToUTCDate(supportedRecurrenceId));
+            const [recoveredEvent, ...otherRecoveredEvents] = await getPaginatedEventsByUID({
+                api,
+                uid,
+                recurrenceID: supportedTimestamp,
+            });
+            return recoveredEvent
+                ? {
+                      event: recoveredEvent,
+                      otherEvents: otherRecoveredEvents,
+                      parentEvent,
+                      otherParentEvents,
+                      recurrenceId: supportedRecurrenceId,
+                  }
+                : { event: parentEvent, otherEvents: otherParentEvents, supportedRecurrenceId };
+        } catch (e) {
+            noop();
+        }
+    }
+    return { event, otherEvents, parentEvent, otherParentEvents };
 };
 
 type FetchEventInvitation = (args: {
@@ -175,6 +205,7 @@ type FetchEventInvitation = (args: {
     calendarData?: CalendarWidgetData;
     singleEditData?: CalendarEventWithMetadata[];
     hasDecryptionError?: boolean;
+    supportedRecurrenceId?: VcalDateOrDateTimeProperty;
 }>;
 export const fetchEventInvitation: FetchEventInvitation = async ({
     veventComponent,
@@ -188,14 +219,12 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
     contactEmails,
     ownAddresses,
 }) => {
-    const recurrenceID = veventComponent['recurrence-id'];
-    const timestamp = recurrenceID ? getUnixTime(propertyToUTCDate(recurrenceID)) : undefined;
     const allEventsWithUID = await fetchAllEventsByUID({
         uid: veventComponent.uid.value,
         api,
-        recurrenceID: timestamp,
+        recurrenceId: veventComponent['recurrence-id'],
     });
-    const { event: calendarEvent, parentEvent: calendarParentEvent } = allEventsWithUID;
+    const { event: calendarEvent, parentEvent: calendarParentEvent, supportedRecurrenceId } = allEventsWithUID;
     const calendar =
         calendars.find(({ ID }) => ID === (calendarEvent || calendarParentEvent)?.CalendarID) || defaultCalendar;
     if (!calendar) {
@@ -226,7 +255,11 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
             )
         );
         const [vevent, parentVevent] = vevents;
-        const result: Unwrap<ReturnType<FetchEventInvitation>> = { calendarData, singleEditData };
+        const result: Unwrap<ReturnType<FetchEventInvitation>> = {
+            calendarData,
+            singleEditData,
+            supportedRecurrenceId,
+        };
         const { invitation } = processEventInvitation({ vevent, calendarEvent }, message, contactEmails, ownAddresses);
         result.invitation = invitation;
         if (parentVevent && calendarParentEvent) {

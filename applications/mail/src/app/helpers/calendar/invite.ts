@@ -525,7 +525,7 @@ interface GetLinkedDateTimePropertyArgs {
     tzid?: string;
     method?: ICAL_METHOD;
 }
-const getLinkedDateTimeProperty = ({
+export const getLinkedDateTimeProperty = ({
     property,
     isAllDay,
     tzid,
