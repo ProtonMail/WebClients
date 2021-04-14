@@ -17,6 +17,7 @@ import {
     ImportHistoriesModel,
     CalendarsModel,
     CalendarUserSettingsModel,
+    ContactsModel,
 } from 'proton-shared/lib/models';
 
 const EVENT_MODELS = [
@@ -35,6 +36,7 @@ const EVENT_MODELS = [
     ImportHistoriesModel,
     CalendarsModel,
     CalendarUserSettingsModel,
+    ContactsModel,
 ];
 
 const PRELOAD_MODELS = [UserSettingsModel, MailSettingsModel, UserModel];
