@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
-import { APP_NAMES, isSSOMode, isStandaloneMode } from 'proton-shared/lib/constants';
+import { APP_NAMES, APPS, isSSOMode, isStandaloneMode } from 'proton-shared/lib/constants';
 import { getAppHref, getAppHrefBundle } from 'proton-shared/lib/apps/helper';
 import { LoginTypes } from 'proton-shared/lib/authentication/LoginInterface';
 
@@ -32,6 +32,16 @@ const AppLink = ({ to, toApp, children, ...rest }: Props, ref: React.Ref<HTMLAnc
                 // internal link, trusted
                 // eslint-disable-next-line react/jsx-no-target-blank
                 <a ref={ref} target="_blank" {...rest} {...overrides} href={href}>
+                    {children}
+                </a>
+            );
+        }
+        if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
+            const href = getAppHref(to, toApp);
+            return (
+                // internal link, trusted
+                // eslint-disable-next-line react/jsx-no-target-blank
+                <a ref={ref} target="_blank" {...rest} href={href}>
                     {children}
                 </a>
             );

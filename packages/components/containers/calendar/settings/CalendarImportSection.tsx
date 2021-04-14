@@ -1,3 +1,4 @@
+import { UserModel } from 'proton-shared/lib/interfaces';
 import React from 'react';
 import { c } from 'ttag';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
@@ -15,10 +16,11 @@ const CALENDAR_APP_NAME = getAppName(APPS.PROTONCALENDAR);
 interface Props {
     defaultCalendar?: Calendar;
     activeCalendars: Calendar[];
+    user: UserModel;
 }
 
-const CalendarImportSection = ({ activeCalendars, defaultCalendar }: Props) => {
-    const canImport = !!activeCalendars.length;
+const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props) => {
+    const canImport = !!activeCalendars.length && !user.isDelinquent;
     const { createModal } = useModals();
     const handleImport = () =>
         canImport && defaultCalendar

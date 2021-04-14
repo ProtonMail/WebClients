@@ -1,3 +1,9 @@
+import {
+    getSupportedEventsWithRecurrenceId,
+    splitByRecurrenceId,
+    splitErrors,
+} from 'proton-shared/lib/calendar/import/import';
+import { ImportFatalError } from 'proton-shared/lib/calendar/import/ImportFatalError';
 import React, { Dispatch, SetStateAction, useEffect } from 'react';
 import { c } from 'ttag';
 
@@ -7,14 +13,8 @@ import {
     ImportCalendarModel,
     StoredEncryptedEvent,
 } from 'proton-shared/lib/interfaces/calendar';
-import { ImportEventError } from 'proton-shared/lib/calendar/ImportEventError';
-import {
-    getSupportedEventsWithRecurrenceId,
-    splitByRecurrenceId,
-    splitErrors,
-} from 'proton-shared/lib/calendar/import';
-import { ImportFatalError } from 'proton-shared/lib/calendar/ImportFatalError';
-import { extractTotals, processInBatches } from 'proton-shared/lib/calendar/encryptAndSubmit';
+import { ImportEventError } from 'proton-shared/lib/calendar/import/ImportEventError';
+import { extractTotals, processInBatches } from 'proton-shared/lib/calendar/import/encryptAndSubmit';
 
 import { Alert, DynamicProgress } from '../../../components';
 import { useApi, useBeforeUnload, useGetCalendarInfo } from '../../../hooks';

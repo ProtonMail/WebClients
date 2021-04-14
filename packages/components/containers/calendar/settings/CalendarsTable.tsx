@@ -3,18 +3,20 @@ import { c } from 'ttag';
 import { getIsCalendarDisabled, getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { UserModel } from 'proton-shared/lib/interfaces';
 
 import { Icon, Table, TableHeader, TableBody, TableRow, DropdownActions, Badge } from '../../../components';
 
 interface Props {
     calendars: Calendar[];
     defaultCalendarID?: string;
+    user: UserModel;
     onEdit: (calendar: Calendar) => void;
     onSetDefault: (id: string) => void;
     onDelete: (calendar: Calendar) => void;
     loadingMap: { [key: string]: boolean };
 }
-const CalendarsTable = ({ calendars, defaultCalendarID, onEdit, onSetDefault, onDelete, loadingMap }: Props) => {
+const CalendarsTable = ({ calendars, defaultCalendarID, user, onEdit, onSetDefault, onDelete, loadingMap }: Props) => {
     return (
         <Table className="simple-table--has-actions">
             <TableHeader cells={[c('Header').t`Name`, c('Header').t`Status`, c('Header').t`Actions`]} />
@@ -27,12 +29,13 @@ const CalendarsTable = ({ calendars, defaultCalendarID, onEdit, onSetDefault, on
                     const isDefault = ID === defaultCalendarID;
 
                     const list = [
-                        {
+                        !user.isDelinquent && {
                             text: c('Action').t`Edit`,
                             onClick: () => onEdit(calendar),
                         },
                         !isDisabled &&
-                            !isDefault && {
+                            !isDefault &&
+                            !user.isDelinquent && {
                                 text: c('Action').t`Set as default`,
                                 onClick: () => onSetDefault(ID),
                             },
