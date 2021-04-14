@@ -6,8 +6,8 @@ import {
     MAX_IMPORT_EVENTS_STRING,
     MAX_IMPORT_FILE_SIZE_STRING,
     CALENDAR_APP_NAME,
-} from './constants';
-import { truncate } from '../helpers/string';
+} from '../constants';
+import { truncate } from '../../helpers/string';
 
 const getErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') => {
     const formattedFilename = `"${truncate(filename, MAX_FILENAME_CHARS_DISPLAY)}"`;
