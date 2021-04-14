@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { c } from 'ttag';
 import { Link } from 'react-router-dom';
 import { APPS } from 'proton-shared/lib/constants';
+import { confirmPasswordValidator, passwordLengthValidator } from 'proton-shared/lib/helpers/formValidators';
 
 import { Alert, Href, Label, PasswordInput, ConfirmModal, PrimaryButton } from '../../components';
 import { GenericError } from '../error';
@@ -39,6 +40,10 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
 
     const { step, username, email, danger, token } = state;
+
+    const passwordError = passwordLengthValidator(password);
+    const confirmPasswordError =
+        passwordLengthValidator(confirmPassword) || confirmPasswordValidator(password, confirmPassword);
 
     if (step === STEPS.REQUEST_RESET_TOKEN) {
         const handleSubmit = async () => {
@@ -161,7 +166,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
-                    if (!password.length || password !== confirmPassword) {
+                    if (passwordError || confirmPasswordError) {
                         return;
                     }
                     withLoading(handleNewPassword(password));
@@ -176,6 +181,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
                         id="new-password"
                         autoFocus
                         value={password}
+                        error={passwordError}
                         placeholder={c('Placeholder').t`Choose a new password`}
                         onChange={({ target }) => setPassword(target.value)}
                         required
@@ -190,7 +196,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
                         value={confirmPassword}
                         placeholder={c('Password').t`Confirm new password`}
                         onChange={({ target }) => setConfirmPassword(target.value)}
-                        error={password !== confirmPassword ? c('Error').t`Passwords do not match` : undefined}
+                        error={confirmPasswordError}
                         required
                     />
                 </div>
