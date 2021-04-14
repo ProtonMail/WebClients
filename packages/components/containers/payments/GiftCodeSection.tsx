@@ -13,7 +13,7 @@ import './GiftCodeSection.scss';
 
 const GiftCodeSection = () => {
     const [value, setValue] = useState('');
-    const { validator, onFormSubmit } = useFormErrors();
+    const { validator, reset, onFormSubmit } = useFormErrors();
     const [loading, withLoading] = useLoading();
     const { request: requestBuyCredit } = useApiWithoutResult(buyCredit);
     const { request: requestValidateCredit } = useApiWithoutResult(validateCredit);
@@ -29,6 +29,7 @@ const GiftCodeSection = () => {
         await requestBuyCredit({ GiftCode: value, Amount: 0 });
         await call();
         setValue('');
+        reset();
         createNotification({ text: c('Success').t`Gift code applied` });
     };
 

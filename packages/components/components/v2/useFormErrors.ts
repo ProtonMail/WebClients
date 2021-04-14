@@ -18,6 +18,11 @@ const useFormErrors = () => {
     }, []);
 
     return {
+        reset: () => {
+            isSubmittedRef.current = false;
+            errorsMapRef.current = [];
+            rerender({});
+        },
         onFormSubmit: () => {
             isSubmittedRef.current = true;
             rerender({});
