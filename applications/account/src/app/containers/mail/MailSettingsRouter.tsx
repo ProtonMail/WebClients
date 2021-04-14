@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect, Switch, useRouteMatch, useLocation } from 'react-router-dom';
 
-import { useOrganization, useUser } from 'react-components';
+import { useUser } from 'react-components';
 
 import MailAppearanceSettings from './MailAppearanceSettings';
 import MailAutoReplySettings from './MailAutoReplySettings';
@@ -22,8 +22,6 @@ const MailSettingsRouter = ({ onChangeBlurred }: Props) => {
     const { path } = useRouteMatch();
     const [user] = useUser();
     const location = useLocation();
-    const [organization] = useOrganization();
-    const hasOrganization = organization?.HasKeys;
 
     return (
         <Switch>
@@ -45,11 +43,9 @@ const MailSettingsRouter = ({ onChangeBlurred }: Props) => {
             <Route path={`${path}/auto-reply`}>
                 <MailAutoReplySettings location={location} />
             </Route>
-            {!hasOrganization ? (
-                <Route path={`${path}/domain-names`}>
-                    <MailDomainNamesSettings location={location} />
-                </Route>
-            ) : null}
+            <Route path={`${path}/domain-names`}>
+                <MailDomainNamesSettings location={location} />
+            </Route>
             <Route path={`${path}/encryption-keys`}>
                 <MailEncryptionKeysSettings location={location} />
             </Route>
