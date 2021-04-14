@@ -15,7 +15,7 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 
 export const getDashboardPage = ({ user }: { user: UserModel }) => {
-    const { isFree, isAdmin, canPay } = user;
+    const { isFree, isMember, canPay } = user;
 
     return {
         text: c('Title').t`Dashboard`,
@@ -34,7 +34,7 @@ export const getDashboardPage = ({ user }: { user: UserModel }) => {
                 text: c('Title').t`Language & Time`,
                 id: 'language-and-time',
             },
-            (isFree || isAdmin) && {
+            !isMember && {
                 text: c('Title').t`Email subscription`,
                 id: 'email-subscription',
             },
@@ -49,7 +49,7 @@ export const getDashboardPage = ({ user }: { user: UserModel }) => {
 const AccountDashboardSettings = ({ location, setActiveSection }: SettingsPropsShared) => {
     const [user] = useUser();
 
-    const { isFree, isAdmin, canPay } = user;
+    const { isFree, isMember, canPay } = user;
 
     return (
         <PrivateMainSettingsAreaWithPermissions
@@ -60,7 +60,7 @@ const AccountDashboardSettings = ({ location, setActiveSection }: SettingsPropsS
             {Boolean(isFree) && <PlansSection />}
             {Boolean(canPay) && <YourPlanSection />}
             <LanguageAndTimeSection />
-            {Boolean(isFree || isAdmin) && <EmailSubscriptionSection />}
+            {!isMember && <EmailSubscriptionSection />}
             {!isFree && <CancelSubscriptionSection />}
         </PrivateMainSettingsAreaWithPermissions>
     );
