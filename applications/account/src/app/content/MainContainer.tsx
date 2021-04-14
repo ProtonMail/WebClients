@@ -12,7 +12,6 @@ import {
     Logo,
     useUser,
     LoaderPage,
-    useOrganization,
 } from 'react-components';
 
 import AccountOnboardingModal from '../components/AccountOnboardingModal';
@@ -41,7 +40,6 @@ const MainContainer = () => {
     const { isNarrow } = useActiveBreakpoint();
     const [welcomeFlags, setWelcomeFlagDone] = useWelcomeFlags();
     const { createModal } = useModals();
-    const [organization] = useOrganization();
 
     const [isBlurred, setBlurred] = useState(false);
 
@@ -83,10 +81,6 @@ const MainContainer = () => {
         <AccountSidebar originApp={appSlug} logo={logo} expanded={expanded} onToggleExpand={onToggleExpand} />
     );
 
-    const canHaveOrganization = user && !user.isMember;
-
-    const hasOrganization = organization?.HasKeys;
-
     return (
         <PrivateAppContainer header={header} sidebar={sidebar} isBlurred={isBlurred || welcomeFlags.isWelcomeFlow}>
             <Switch>
@@ -102,24 +96,20 @@ const MainContainer = () => {
                 <Route path={`/${appSlug}/security`}>
                     <AccountSecuritySettings location={location} setActiveSection={() => {}} />
                 </Route>
-                {canHaveOrganization ? (
-                    <Route path={`/${appSlug}/multi-user-support`}>
-                        <OrganizationMultiUserSupportSettings location={location} />
-                    </Route>
-                ) : null}
-                {canHaveOrganization && hasOrganization
-                    ? [
-                          <Route key="0" path={`/${appSlug}/domain-names`}>
-                              <MailDomainNamesSettings location={location} />
-                          </Route>,
-                          <Route key="1" path={`/${appSlug}/organization-keys`}>
-                              <OrganizationKeysSettings location={location} />
-                          </Route>,
-                          <Route key="2" path={`/${appSlug}/users-addresses`}>
-                              <OrganizationUsersAndAddressesSettings location={location} />
-                          </Route>,
-                      ]
-                    : null}
+                <Route path={`/${appSlug}/multi-user-support`}>
+                    <OrganizationMultiUserSupportSettings location={location} />
+                </Route>
+                <Route path={`/${appSlug}/domain-names`}>
+                    <MailDomainNamesSettings location={location} />
+                </Route>
+                ,
+                <Route path={`/${appSlug}/organization-keys`}>
+                    <OrganizationKeysSettings location={location} />
+                </Route>
+                ,
+                <Route path={`/${appSlug}/users-addresses`}>
+                    <OrganizationUsersAndAddressesSettings location={location} />
+                </Route>
                 <Route path="/mail">
                     <Suspense fallback={<LoaderPage />}>
                         <MailSettingsRouter onChangeBlurred={setBlurred} />
