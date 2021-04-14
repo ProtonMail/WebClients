@@ -104,6 +104,8 @@ export const SSO_PATHS = {
     SIGNUP: '/signup',
 } as const;
 
+export const VPN_HOSTNAME = 'account.protonvpn.com';
+
 export const REQUIRES_INTERNAL_EMAIL_ADDRESS: APP_NAMES[] = [APPS.PROTONMAIL, APPS.PROTONCONTACTS, APPS.PROTONCALENDAR];
 
 export const REQUIRES_NONDELINQUENT: APP_NAMES[] = [

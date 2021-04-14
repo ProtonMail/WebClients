@@ -6,16 +6,16 @@ import {
     StoredEncryptedEvent,
     VcalVeventComponent,
     EncryptedEvent,
-} from '../interfaces/calendar';
-import { API_CODES, HOUR } from '../constants';
-import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from './ImportEventError';
+} from '../../interfaces/calendar';
+import { API_CODES, HOUR } from '../../constants';
 import { splitErrors } from './import';
-import { CreateCalendarEventSyncData, syncMultipleEvents } from '../api/calendars';
-import { createCalendarEvent, getHasSharedEventContent, getHasSharedKeyPacket } from './serialize';
-import getCreationKeys from './integration/getCreationKeys';
-import { chunk } from '../helpers/array';
-import { wait } from '../helpers/promise';
-import { Api, DecryptedKey } from '../interfaces';
+import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from './ImportEventError';
+import { CreateCalendarEventSyncData, syncMultipleEvents } from '../../api/calendars';
+import { createCalendarEvent, getHasSharedEventContent, getHasSharedKeyPacket } from '../serialize';
+import getCreationKeys from '../integration/getCreationKeys';
+import { chunk } from '../../helpers/array';
+import { wait } from '../../helpers/promise';
+import { Api, DecryptedKey } from '../../interfaces';
 
 const { SINGLE_SUCCESS } = API_CODES;
 const BATCH_SIZE = 10;

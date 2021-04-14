@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 import { addDays } from 'date-fns';
 
-import { readFileAsString } from '../helpers/file';
-import { truncate } from '../helpers/string';
-import isTruthy from '../helpers/isTruthy';
-import { unique } from '../helpers/array';
+import { readFileAsString } from '../../helpers/file';
+import { truncate } from '../../helpers/string';
+import isTruthy from '../../helpers/isTruthy';
+import { unique } from '../../helpers/array';
 
-import { dedupeAlarmsWithNormalizedTriggers, getSupportedAlarm } from './alarms';
+import { dedupeAlarmsWithNormalizedTriggers, getSupportedAlarm } from '../alarms';
 import {
     getHasDtStart,
     getHasRecurrenceId,
@@ -19,18 +19,17 @@ import {
     getIsTimezoneComponent,
     getIsTodoComponent,
     getPropertyTzid,
-} from './vcalHelper';
-import { parseWithErrors } from './vcal';
+} from '../vcalHelper';
+import { parseWithErrors } from '../vcal';
 import {
     IMPORT_ERROR_TYPE,
     MAX_CALENDARS_PER_USER,
     MAX_IMPORT_EVENTS,
     MAX_LENGTHS,
     MAX_NOTIFICATIONS,
-} from './constants';
-import { ImportFileError } from './ImportFileError';
-import formatUTC from '../date-fns-utc/format';
-import { convertUTCDateTimeToZone, getSupportedTimezone, toUTCDate } from '../date/timezone';
+} from '../constants';
+import formatUTC from '../../date-fns-utc/format';
+import { convertUTCDateTimeToZone, getSupportedTimezone, toUTCDate } from '../../date/timezone';
 import {
     CalendarEvent,
     EncryptedEvent,
@@ -40,21 +39,22 @@ import {
     VcalValarmComponent,
     VcalVeventComponent,
     VcalVtimezoneComponent,
-} from '../interfaces/calendar';
+} from '../../interfaces/calendar';
 import {
     getDateProperty,
     getDateTimeProperty,
     getDateTimePropertyInDifferentTimezone,
     propertyToUTCDate,
-} from './vcalConverter';
+} from '../vcalConverter';
+import { dateLocale } from '../../i18n';
+import { withDtstamp } from '../veventHelper';
+import { getIsDateOutOfBounds, getIsWellFormedDateOrDateTime, getSupportedUID } from '../support';
+import { getHasConsistentRrule, getSupportedRrule } from '../rrule';
+import { getEventByUID } from '../../api/calendars';
+import getComponentFromCalendarEvent from '../getComponentFromCalendarEvent';
+import { Api } from '../../interfaces';
 import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from './ImportEventError';
-import { dateLocale } from '../i18n';
-import { withDtstamp } from './veventHelper';
-import { getIsDateOutOfBounds, getIsWellFormedDateOrDateTime, getSupportedUID } from './support';
-import { getHasConsistentRrule, getSupportedRrule } from './rrule';
-import { getEventByUID } from '../api/calendars';
-import getComponentFromCalendarEvent from './getComponentFromCalendarEvent';
-import { Api } from '../interfaces';
+import { ImportFileError } from './ImportFileError';
 
 const getParsedComponentHasError = (component: VcalCalendarComponentOrError): component is { error: Error } => {
     return !!(component as { error: Error }).error;
