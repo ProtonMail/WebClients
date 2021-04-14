@@ -22,7 +22,7 @@ interface AccountSidebarProps {
 const AccountSidebar = ({ originApp, logo, expanded, onToggleExpand }: AccountSidebarProps) => {
     const [user] = useUser();
 
-    const canHaveOrganization = !user.isMember;
+    const canHaveOrganization = !user.isMember && !user.isSubUser;
 
     const backButtonCopy = {
         mail: c('Navigation').t`Back to Mailbox`,
@@ -65,7 +65,7 @@ const AccountSidebar = ({ originApp, logo, expanded, onToggleExpand }: AccountSi
                     {canHaveOrganization ? (
                         <>
                             <SidebarListItem className="text-uppercase text-left navigation-link-header-group">
-                                Organization
+                                {c('Settings section title').t`Organization`}
                             </SidebarListItem>
                             <OrganizationSettingsSidebarList prefix={originApp} />
                         </>

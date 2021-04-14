@@ -10,45 +10,46 @@ import {
 } from 'react-components';
 
 const OrganizationSettingsSidebarList = ({ prefix }: { prefix: string }) => {
-    const [organization] = useOrganization();
+    const [organization, loading] = useOrganization();
 
     const hasOrganization = organization?.HasKeys;
 
     return (
         <SidebarList>
-            {hasOrganization ? (
-                <>
+            {!loading &&
+                (hasOrganization ? (
+                    <>
+                        <SidebarListItem>
+                            <SidebarListItemLink to={`/${prefix}/users-addresses`}>
+                                <SidebarListItemContent left={<SidebarListItemContentIcon name="organization-users" />}>
+                                    {c('Settings section title').t`Users & Addresses`}
+                                </SidebarListItemContent>
+                            </SidebarListItemLink>
+                        </SidebarListItem>
+                        <SidebarListItem>
+                            <SidebarListItemLink to={`/${prefix}/domain-names`}>
+                                <SidebarListItemContent left={<SidebarListItemContentIcon name="globe" />}>
+                                    {c('Settings section title').t`Domain names`}
+                                </SidebarListItemContent>
+                            </SidebarListItemLink>
+                        </SidebarListItem>
+                        <SidebarListItem>
+                            <SidebarListItemLink to={`/${prefix}/organization-keys`}>
+                                <SidebarListItemContent left={<SidebarListItemContentIcon name="security" />}>
+                                    {c('Settings section title').t`Organization & Keys`}
+                                </SidebarListItemContent>
+                            </SidebarListItemLink>
+                        </SidebarListItem>
+                    </>
+                ) : (
                     <SidebarListItem>
-                        <SidebarListItemLink to={`/${prefix}/users-addresses`}>
+                        <SidebarListItemLink to={`/${prefix}/multi-user-support`}>
                             <SidebarListItemContent left={<SidebarListItemContentIcon name="organization-users" />}>
-                                {c('Settings section title').t`Users & Addresses`}
+                                {c('Settings section title').t`Multi-user support`}
                             </SidebarListItemContent>
                         </SidebarListItemLink>
                     </SidebarListItem>
-                    <SidebarListItem>
-                        <SidebarListItemLink to={`/${prefix}/domain-names`}>
-                            <SidebarListItemContent left={<SidebarListItemContentIcon name="globe" />}>
-                                {c('Settings section title').t`Domain names`}
-                            </SidebarListItemContent>
-                        </SidebarListItemLink>
-                    </SidebarListItem>
-                    <SidebarListItem>
-                        <SidebarListItemLink to={`/${prefix}/organization-keys`}>
-                            <SidebarListItemContent left={<SidebarListItemContentIcon name="security" />}>
-                                {c('Settings section title').t`Organization & Keys`}
-                            </SidebarListItemContent>
-                        </SidebarListItemLink>
-                    </SidebarListItem>
-                </>
-            ) : (
-                <SidebarListItem>
-                    <SidebarListItemLink to={`/${prefix}/multi-user-support`}>
-                        <SidebarListItemContent left={<SidebarListItemContentIcon name="organization-users" />}>
-                            {c('Settings section title').t`Multi-user support`}
-                        </SidebarListItemContent>
-                    </SidebarListItemLink>
-                </SidebarListItem>
-            )}
+                ))}
         </SidebarList>
     );
 };
