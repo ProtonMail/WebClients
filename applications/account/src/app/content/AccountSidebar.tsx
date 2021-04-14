@@ -65,7 +65,7 @@ const AccountSidebar = ({ originApp, logo, expanded, onToggleExpand }: AccountSi
                     {canHaveOrganization ? (
                         <>
                             <SidebarListItem className="text-uppercase text-left navigation-link-header-group">
-                                Organization
+                                {c('Settings section title').t`Organization`}
                             </SidebarListItem>
                             <OrganizationSettingsSidebarList prefix={originApp} />
                         </>
