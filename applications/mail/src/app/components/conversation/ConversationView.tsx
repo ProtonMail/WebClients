@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo, useRef } from 'react';
+import React, { useEffect, memo, useRef } from 'react';
 import { useLabels, useToggle, classnames } from 'react-components';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
@@ -65,23 +65,20 @@ const ConversationView = ({
     const showTrashWarning = !loadingMessages && filteredMessages.length !== messages.length;
     const messageInUrl = conversationResult?.Messages?.find((message) => message.ID === messageID);
 
-    const [isExpanding, setIsExpanding] = useState(false);
-
     const expandMessage = (messageID: string | undefined) => {
-        setIsExpanding(true);
-        messageViewsRefs.current[messageID || '']?.expand(() => setIsExpanding(false));
+        messageViewsRefs.current[messageID || '']?.expand();
     };
 
     // Open the first message of a conversation if none selected in URL
     useEffect(() => {
-        if (!loadingMessages && !messageID && !isExpanding) {
+        if (!loadingMessages && !messageID) {
             expandMessage(findMessageToExpand(labelID, messagesToShow)?.ID);
         }
     }, [conversationID, messageID, loadingMessages]);
 
     // Open the message in URL
     useEffect(() => {
-        if (!loadingMessages && messageID && !isDraft(messageInUrl) && !isExpanding) {
+        if (!loadingMessages && messageID && !isDraft(messageInUrl)) {
             expandMessage(messageID);
         }
     }, [conversationID, messageID, loadingMessages, isDraft(messageInUrl)]);
@@ -91,9 +88,6 @@ const ConversationView = ({
     }, [inputConversationID]);
 
     const handleClickUnread = (messageID: string) => {
-        if (isExpanding) {
-            return;
-        }
         expandMessage(messageID);
     };
 
