@@ -73,6 +73,10 @@ const ImportModal = ({ ...rest }: Props) => {
                 const filename = fileAttached.name;
                 const [, ext] = splitExtension(filename);
                 const extension = ext.toLowerCase();
+
+                if (!fileAttached.size) {
+                    throw new ImportFileError(IMPORT_ERROR_TYPE.FILE_EMPTY, filename);
+                }
                 if (!getIsAcceptedExtension(extension) || !fileAttached) {
                     throw new ImportFileError(IMPORT_ERROR_TYPE.NO_CSV_OR_VCF_FILE, filename);
                 }
