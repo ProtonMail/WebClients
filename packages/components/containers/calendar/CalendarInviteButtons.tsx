@@ -85,7 +85,6 @@ const CalendarInviteButtons = ({
     ];
     const answerIndex = [accepted, tentative, declined].findIndex((bool) => bool === true);
     const orderedList = move(list, answerIndex, 0);
-    // list.unshift();
     const [{ text }, ...restList] = orderedList;
 
     return (
