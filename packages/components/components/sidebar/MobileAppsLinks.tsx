@@ -1,5 +1,5 @@
 import React from 'react';
-import { APPS_CONFIGURATION } from 'proton-shared/lib/constants';
+import { APPS_CONFIGURATION, VPN_HOSTNAME } from 'proton-shared/lib/constants';
 
 import { useConfig, useApps } from '../../hooks';
 import MobileNavServices from './MobileNavServices';
@@ -22,7 +22,7 @@ const MobileAppsLinks = () => {
                 const isCurrent = toApp === APP_NAME;
                 return <MobileNavLink key={index} to="/" toApp={toApp} icon={icon} current={isCurrent} />;
             })}
-            <Href url="https://account.protonvpn.com/login" className="flex aside-link">
+            <Href url={`https://${VPN_HOSTNAME}/login`} className="flex aside-link">
                 <Icon name="protonvpn" className="aside-link-icon mauto" />
             </Href>
         </MobileNavServices>
