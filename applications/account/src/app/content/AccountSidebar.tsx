@@ -22,7 +22,7 @@ interface AccountSidebarProps {
 const AccountSidebar = ({ originApp, logo, expanded, onToggleExpand }: AccountSidebarProps) => {
     const [user] = useUser();
 
-    const canHaveOrganization = user.isAdmin && !user.isSubUser;
+    const canHaveOrganization = !user.isMember && !user.isSubUser;
 
     const backButtonCopy = {
         mail: c('Navigation').t`Back to Mailbox`,
