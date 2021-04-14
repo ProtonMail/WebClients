@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { APPS_CONFIGURATION } from 'proton-shared/lib/constants';
+import { APPS_CONFIGURATION, VPN_HOSTNAME } from 'proton-shared/lib/constants';
 
 import { AppLink, Icon, SimpleDropdown, Href } from '../../components';
 import { useApps } from '../../hooks';
@@ -43,7 +43,7 @@ const AppsDropdown = () => {
                 })}
                 <li>
                     <Href
-                        url="https://account.protonvpn.com/login"
+                        url={`https://${VPN_HOSTNAME}/login`}
                         className="apps-dropdown-link text-lg m0 p1 pt0-75 pb0-75 flex flex-nowrap flex-align-items-center"
                         title={c('Apps dropdown').t`Go to ProtonVPN`}
                     >
