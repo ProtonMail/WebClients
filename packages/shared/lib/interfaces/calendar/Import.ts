@@ -1,7 +1,7 @@
+import { ImportFatalError } from '../../calendar/import/ImportFatalError';
+import { ImportFileError } from '../../calendar/import/ImportFileError';
 import { VcalCalendarComponent, VcalVeventComponent } from './VcalModel';
-import { ImportEventError } from '../../calendar/ImportEventError';
-import { ImportFatalError } from '../../calendar/ImportFatalError';
-import { ImportFileError } from '../../calendar/ImportFileError';
+import { ImportEventError } from '../../calendar/import/ImportEventError';
 import { Calendar } from './Calendar';
 
 export enum IMPORT_STEPS {

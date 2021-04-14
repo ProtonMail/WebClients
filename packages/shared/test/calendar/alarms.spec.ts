@@ -2,15 +2,8 @@ import { differenceInMinutes, differenceInHours, differenceInDays, differenceInW
 import { enUS } from 'date-fns/locale';
 import { convertZonedDateTimeToUTC, convertUTCDateTimeToZone, toUTCDate } from '../../lib/date/timezone';
 import { pick } from '../../lib/helpers/object';
-import {
-    SETTINGS_NOTIFICATION_TYPE,
-    WEEK,
-    DAY,
-    HOUR,
-    MINUTE,
-    NOTIFICATION_UNITS,
-    NOTIFICATION_WHEN,
-} from '../../lib/calendar/constants';
+import { SETTINGS_NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../lib/calendar/constants';
+import { MINUTE, HOUR, DAY, WEEK } from '../../lib/constants';
 import { propertyToUTCDate } from '../../lib/calendar/vcalConverter';
 import {
     VcalDateProperty,
