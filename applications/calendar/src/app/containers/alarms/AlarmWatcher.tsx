@@ -9,12 +9,12 @@ import { CalendarAlarm, CalendarEvent } from 'proton-shared/lib/interfaces/calen
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import { getAlarmMessage, getNextEventTime } from 'proton-shared/lib/calendar/alarms';
-import { MINUTE } from 'proton-shared/lib/calendar/constants';
+import { MINUTE } from 'proton-shared/lib/constants';
 import notificationIcon from '../../../assets/notification.gif';
 
 import { CalendarsEventsCache } from '../calendar/eventStore/interface';
 
-const MIN_CUTOFF = -MINUTE * 1000;
+const MIN_CUTOFF = -MINUTE;
 
 export const displayNotification = ({ title = c('Title').t`Calendar alarm`, text = '', ...rest }) => {
     return create(title, {
