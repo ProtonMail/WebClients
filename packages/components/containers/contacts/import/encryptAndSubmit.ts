@@ -1,12 +1,21 @@
-import { addContacts } from 'proton-shared/lib/api/contacts';
-import { API_CODES, HOUR } from 'proton-shared/lib/constants';
+import { addContacts, labelContactEmails, labelContacts } from 'proton-shared/lib/api/contacts';
+import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
+import { createContactGroup } from 'proton-shared/lib/api/labels';
+import { API_CODES, HOUR, LABEL_COLORS } from 'proton-shared/lib/constants';
 import { CATEGORIES, OVERWRITE } from 'proton-shared/lib/contacts/constants';
 import { prepareContact } from 'proton-shared/lib/contacts/encrypt';
-import { chunk } from 'proton-shared/lib/helpers/array';
+import { getContactCategories, getContactEmails } from 'proton-shared/lib/contacts/properties';
+import { chunk, uniqueBy } from 'proton-shared/lib/helpers/array';
+import { noop, randomIntFromInterval } from 'proton-shared/lib/helpers/function';
 import { wait } from 'proton-shared/lib/helpers/promise';
-import { Api, KeyPair } from 'proton-shared/lib/interfaces';
-import { ContactProperties } from 'proton-shared/lib/interfaces/contacts';
-import { getContactId, splitErrors } from 'proton-shared/lib/contacts/helpers/import';
+import { Api, KeyPair, Label, SimpleMap } from 'proton-shared/lib/interfaces';
+import {
+    ContactProperties,
+    IMPORT_GROUPS_ACTION,
+    ImportCategories,
+    ImportedContact,
+} from 'proton-shared/lib/interfaces/contacts';
+import { getContactId, splitErrors, extractContactImportCategories } from 'proton-shared/lib/contacts/helpers/import';
 import {
     AddContactsApiResponse,
     AddContactsApiResponses,
@@ -21,7 +30,12 @@ const BATCH_SIZE = 10;
 const encryptContact = async (contact: ContactProperties, { privateKey, publicKey }: KeyPair) => {
     try {
         const contactEncrypted = await prepareContact(contact, { privateKey, publicKey });
-        return { contact: contactEncrypted, contactId: getContactId(contact) };
+        return {
+            contact: contactEncrypted,
+            contactId: getContactId(contact),
+            contactEmails: getContactEmails(contact),
+            categories: getContactCategories(contact),
+        };
     } catch (error) {
         const contactId = getContactId(contact);
         return new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.ENCRYPTION_ERROR, contactId);
@@ -50,17 +64,21 @@ const submitContacts = async (contacts: EncryptedContact[], labels: CATEGORIES, 
         }));
     }
 
-    return responses.map((response): EncryptedContact | ImportContactError => {
+    return responses.map((response) => {
         const {
             Index,
-            Response: { Error: errorMessage, Code },
+            Response: { Error: errorMessage, Code, Contact },
         } = response;
-        if (Code === SINGLE_SUCCESS) {
-            return contacts[Index];
+        if (Code !== SINGLE_SUCCESS || !Contact) {
+            const error = new Error(errorMessage);
+            const { contactId } = contacts[Index];
+            return new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.EXTERNAL_ERROR, contactId, error);
         }
-        const error = new Error(errorMessage);
-        const { contactId } = contacts[Index];
-        return new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.EXTERNAL_ERROR, contactId, error);
+        const contact = contacts[Index];
+        return {
+            contactID: Contact.ID,
+            categories: extractContactImportCategories(Contact, contact),
+        };
     });
 };
 
@@ -71,7 +89,7 @@ interface ProcessData {
     keyPair: KeyPair;
     api: Api;
     signal: AbortSignal;
-    onProgress: (encrypted: EncryptedContact[], imported: EncryptedContact[], errors: ImportContactError[]) => void;
+    onProgress: (encrypted: EncryptedContact[], imported: ImportedContact[], errors: ImportContactError[]) => void;
 }
 export const processInBatches = async ({
     contacts,
@@ -84,7 +102,7 @@ export const processInBatches = async ({
 }: ProcessData) => {
     const batches = chunk(contacts, BATCH_SIZE);
     const promises = [];
-    const imported: EncryptedContact[][] = [];
+    const imported: ImportedContact[][] = [];
 
     for (let i = 0; i < batches.length; i++) {
         // The API requests limit for the submit route are 100 calls per 10 seconds
@@ -104,7 +122,7 @@ export const processInBatches = async ({
         onProgress(encrypted, [], errors);
         if (encrypted.length) {
             const promise = submitContacts(encrypted, labels, overwrite, api).then(
-                (result: (EncryptedContact | ImportContactError)[]) => {
+                (result: (ImportedContact | ImportContactError)[]) => {
                     const { errors, rest: importedSuccess } = splitErrors(result);
                     imported.push(importedSuccess);
                     onProgress([], importedSuccess, errors);
@@ -116,6 +134,69 @@ export const processInBatches = async ({
     await Promise.all(promises);
 
     return imported.flat();
+};
+
+export const submitCategories = async (categories: ImportCategories[], api: Api) => {
+    // First create new contact groups if needed. Store label IDs in a map
+    const newCategories = uniqueBy(
+        categories.filter(({ action }) => action === IMPORT_GROUPS_ACTION.CREATE),
+        ({ targetName }) => targetName
+    );
+    const newLabelIDsMap: SimpleMap<string> = {};
+    const createRequests = newCategories.map(({ targetName }) => {
+        return async () => {
+            try {
+                const {
+                    Label: { ID },
+                } = await api<{ Label: Label }>(
+                    createContactGroup({
+                        Name: targetName,
+                        Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
+                    })
+                );
+                newLabelIDsMap[targetName] = ID;
+            } catch (e) {
+                // let the process continue, but an error growler will be displayed
+                noop();
+            }
+        };
+    });
+    // the routes called in requests do not have any specific jail limit
+    // the limit per user session is 25k requests / 900s
+    await processApiRequestsSafe(createRequests, 1000, 100 * 1000);
+    // label contacts
+    const labelRequests: (() => Promise<any>)[] = [];
+    categories.forEach(({ action, targetGroup, targetName, contactEmailIDs, contactIDs }) => {
+        if (action === IMPORT_GROUPS_ACTION.IGNORE) {
+            return;
+        }
+        if (action === IMPORT_GROUPS_ACTION.MERGE) {
+            const labelID = targetGroup.ID;
+            if (contactEmailIDs.length) {
+                labelRequests.push(() =>
+                    api(labelContactEmails({ LabelID: labelID, ContactEmailIDs: contactEmailIDs })).catch(noop)
+                );
+            }
+            if (contactIDs.length) {
+                labelRequests.push(() => api(labelContacts({ LabelID: labelID, ContactIDs: contactIDs })).catch(noop));
+            }
+            return;
+        }
+        if (action === IMPORT_GROUPS_ACTION.CREATE) {
+            const labelID = newLabelIDsMap[targetName];
+            if (labelID && contactEmailIDs.length) {
+                labelRequests.push(() =>
+                    api(labelContactEmails({ LabelID: labelID, ContactEmailIDs: contactEmailIDs })).catch(noop)
+                );
+            }
+            if (labelID && contactIDs.length) {
+                labelRequests.push(() => api(labelContacts({ LabelID: labelID, ContactIDs: contactIDs })).catch(noop));
+            }
+        }
+    });
+    // the routes called in requests do not have any specific jail limit
+    // the limit per user session is 25k requests / 900s
+    return processApiRequestsSafe(labelRequests, 1000, 100 * 1000);
 };
 
 export const extractTotals = (model: ImportContactsModel) => {

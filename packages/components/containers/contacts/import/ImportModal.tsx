@@ -8,16 +8,26 @@ import { MAX_IMPORT_CONTACTS, MAX_IMPORT_FILE_SIZE } from 'proton-shared/lib/con
 import { prepare, readCsv, toVcardContacts } from 'proton-shared/lib/contacts/helpers/csv';
 import {
     getHasPreVcardsContacts,
+    getImportCategoriesModel,
     getIsAcceptedExtension,
     getSupportedContacts,
+    haveCategories,
     splitErrors,
 } from 'proton-shared/lib/contacts/helpers/import';
-import { EXTENSION, IMPORT_STEPS, ImportContactsModel } from 'proton-shared/lib/interfaces/contacts/Import';
+import {
+    EXTENSION,
+    IMPORT_GROUPS_ACTION,
+    IMPORT_STEPS,
+    ImportContactsModel,
+    ImportedContact,
+} from 'proton-shared/lib/interfaces/contacts/Import';
 import { ImportFatalError } from 'proton-shared/lib/contacts/errors/ImportFatalError';
 import { IMPORT_ERROR_TYPE, ImportFileError } from 'proton-shared/lib/contacts/errors/ImportFileError';
+import { submitCategories } from './encryptAndSubmit';
 
-import { useEventManager, useFeature } from '../../../hooks';
+import { useApi, useEventManager, useFeature } from '../../../hooks';
 import { FormModal, onlyDragFiles, PrimaryButton } from '../../../components';
+import { useGetContactGroups } from '../../../hooks/useCategories';
 
 import { FeatureCode } from '../../features';
 
@@ -33,9 +43,11 @@ const { CSV, VCF } = EXTENSION;
 const getInitialState = (): ImportContactsModel => ({
     step: IMPORT_STEPS.ATTACHING,
     parsedVcardContacts: [],
+    importedContacts: [],
     totalEncrypted: 0,
     totalImported: 0,
     errors: [],
+    categories: [],
     loading: false,
 });
 
@@ -43,12 +55,14 @@ interface Props {
     onClose?: () => void;
 }
 const ImportModal = ({ ...rest }: Props) => {
+    const api = useApi();
     const { call } = useEventManager();
     const [model, setModel] = useState<ImportContactsModel>(getInitialState());
     const [isDropzoneHovered, setIsDropzoneHovered] = useState(false);
     const { feature: featureUsedContactsImport, update: updateUsedContactsImport } = useFeature(
         FeatureCode.UsedContactsImport
     );
+    const getContactGroups = useGetContactGroups();
 
     const { content, ...modalProps } = (() => {
         if (model.step <= IMPORT_STEPS.ATTACHED) {
@@ -241,12 +255,8 @@ const ImportModal = ({ ...rest }: Props) => {
                 </PrimaryButton>
             );
 
-            const handleFinish = async () => {
-                // temporarily disabled
-                // const step = haveCategories(vcardContacts) ? IMPORT_STEPS.IMPORT_GROUPS : IMPORT_STEPS.FINISHED
-                //     return setStep(IMPORT_GROUPS);
-                // }
-                setModel((model) => ({ ...model, step: IMPORT_STEPS.FINISHED }));
+            const handleFinish = async (importedContacts: ImportedContact[]) => {
+                setModel((model) => ({ ...model, importedContacts, step: IMPORT_STEPS.SUMMARY }));
                 await call();
             };
 
@@ -257,27 +267,59 @@ const ImportModal = ({ ...rest }: Props) => {
             };
         }
 
-        if (model.step === IMPORT_STEPS.IMPORT_GROUPS) {
+        if (model.step === IMPORT_STEPS.SUMMARY) {
+            const canImportGroups = haveCategories(model.importedContacts);
+            const submit = (
+                <PrimaryButton type="submit" loading={model.loading}>
+                    {canImportGroups ? c('Action').t`Next` : c('Action').t`Close`}
+                </PrimaryButton>
+            );
             const handleSubmit = async () => {
-                await call();
-                rest.onClose?.();
+                if (canImportGroups) {
+                    setModel((model) => ({ ...model, loading: true }));
+                    const contactGroups = await getContactGroups();
+                    setModel((model) => ({
+                        ...model,
+                        step: IMPORT_STEPS.IMPORT_GROUPS,
+                        loading: false,
+                        contactGroups,
+                        categories: getImportCategoriesModel(model.importedContacts, contactGroups),
+                    }));
+                } else {
+                    rest.onClose?.();
+                }
             };
-            const submit = <PrimaryButton type="submit">{c('Action').t`Create`}</PrimaryButton>;
 
             return {
-                content: <ImportGroupsModalContent />,
+                content: <ImportSummaryModalContent model={model} />,
                 submit,
+                close: canImportGroups ? c('Action').t`Close` : null,
                 onSubmit: handleSubmit,
             };
         }
-        // model.step === IMPORT_STEPS.FINISHED at this stage
-        const submit = <PrimaryButton type="submit">{c('Action').t`Close`}</PrimaryButton>;
+
+        // model.step === IMPORT_STEPS.IMPORT_GROUPS at this stage
+        const cannotSave = model.categories.some(
+            ({ error, action, targetName }) => !!error || (action === IMPORT_GROUPS_ACTION.CREATE && !targetName)
+        );
+        const handleSubmit = async () => {
+            setModel((model) => ({ ...model, loading: true }));
+            await submitCategories(model.categories, api);
+            await call();
+            setModel((model) => ({ ...model, loading: false }));
+            rest.onClose?.();
+        };
+        const submit = (
+            <PrimaryButton type="submit" disabled={cannotSave} loading={model.loading}>
+                {c('Action').t`Save`}
+            </PrimaryButton>
+        );
 
         return {
-            content: <ImportSummaryModalContent model={model} />,
+            title: c('Title').t`Import groups`,
+            content: <ImportGroupsModalContent model={model} setModel={setModel} />,
             submit,
-            close: null,
-            onSubmit: rest.onClose,
+            onSubmit: handleSubmit,
         };
     })();
 
