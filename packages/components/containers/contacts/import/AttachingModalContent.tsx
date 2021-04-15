@@ -37,7 +37,6 @@ const AttachingModalContent = ({
         <>
             {alert}
             <Bordered className={classnames(['flex relative', !!model.failure && 'border--danger'])}>
-                {/* TODO: drag&drop component here. There seems to be no React component for this kind of behavior yet */}
                 {model.fileAttached ? (
                     <AttachedFile file={model.fileAttached} iconName="contacts-groups" onClear={onClear} />
                 ) : (
