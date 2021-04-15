@@ -1,6 +1,8 @@
 import React, { Suspense, useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { useRouteMatch, Route, Redirect, Switch, useLocation } from 'react-router-dom';
+import { Route, Redirect, Switch, useLocation } from 'react-router-dom';
+import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from 'proton-shared/lib/apps/slugHelper';
+import { APPS } from 'proton-shared/lib/constants';
 
 import {
     useActiveBreakpoint,
@@ -21,7 +23,6 @@ import AccountPaymentSettings from '../containers/account/AccountPaymentSettings
 import AccountDashboardSettings from '../containers/account/AccountDashboardSettings';
 import OrganizationMultiUserSupportSettings from '../containers/organization/OrganizationMultiUserSupportSettings';
 import AccountSidebar from './AccountSidebar';
-import { ALLOWED_SLUGS, AppSlug, getAppFromSlug } from '../models';
 import MailDomainNamesSettings from '../containers/mail/MailDomainNamesSettings';
 import OrganizationUsersAndAddressesSettings from '../containers/organization/OrganizationUsersAndAddressesSettings';
 import OrganizationKeysSettings from '../containers/organization/OrganizationKeysSettings';
@@ -30,8 +31,15 @@ const MailSettingsRouter = React.lazy(() => import('../containers/mail/MailSetti
 const CalendarSettingsRouter = React.lazy(() => import('../containers/calendar/CalendarSettingsRouter'));
 const ContactsSettingsRouter = React.lazy(() => import('../containers/contacts/ContactsSettingsRouter'));
 const VpnSettingsRouter = React.lazy(() => import('../containers/vpn/VpnSettingsRouter'));
+const DriveSettingsRouter = React.lazy(() => import('../containers/drive/DriveSettingsRouter'));
 
-const DEFAULT_REDIRECT = '/account/dashboard';
+const DEFAULT_REDIRECT = `/${getSlugFromApp(DEFAULT_APP)}/dashboard`;
+
+const mailSlug = getSlugFromApp(APPS.PROTONMAIL);
+const calendarSlug = getSlugFromApp(APPS.PROTONCALENDAR);
+const vpnSlug = getSlugFromApp(APPS.PROTONVPN_SETTINGS);
+const driveSlug = getSlugFromApp(APPS.PROTONDRIVE);
+const contactsSlug = getSlugFromApp(APPS.PROTONCONTACTS);
 
 const MainContainer = () => {
     const [user] = useUser();
@@ -53,17 +61,13 @@ const MainContainer = () => {
         }
     }, []);
 
-    const match = useRouteMatch<{ appSlug: AppSlug }>('/:appSlug');
+    const app = getAppFromPathnameSafe(location.pathname);
 
-    if (!match || !ALLOWED_SLUGS.includes(match?.params?.appSlug)) {
+    if (!app) {
         return <Redirect to={DEFAULT_REDIRECT} />;
     }
 
-    const {
-        params: { appSlug },
-    } = match;
-
-    const app = getAppFromSlug(appSlug);
+    const appSlug = getSlugFromApp(app);
 
     const logo = <Logo appName={app} to="/" toApp={app} target="_self" />;
 
@@ -78,7 +82,7 @@ const MainContainer = () => {
     );
 
     const sidebar = (
-        <AccountSidebar originApp={appSlug} logo={logo} expanded={expanded} onToggleExpand={onToggleExpand} />
+        <AccountSidebar app={app} appSlug={appSlug} logo={logo} expanded={expanded} onToggleExpand={onToggleExpand} />
     );
 
     return (
@@ -110,24 +114,29 @@ const MainContainer = () => {
                 <Route path={`/${appSlug}/users-addresses`}>
                     <OrganizationUsersAndAddressesSettings location={location} />
                 </Route>
-                <Route path="/mail">
+                <Route path={`/${mailSlug}`}>
                     <Suspense fallback={<LoaderPage />}>
                         <MailSettingsRouter onChangeBlurred={setBlurred} />
                     </Suspense>
                 </Route>
-                <Route path="/calendar">
+                <Route path={`/${calendarSlug}`}>
                     <Suspense fallback={<LoaderPage />}>
                         <CalendarSettingsRouter user={user} />
                     </Suspense>
                 </Route>
-                <Route path="/contacts">
+                <Route path={`/${contactsSlug}`}>
                     <Suspense fallback={<LoaderPage />}>
                         <ContactsSettingsRouter />
                     </Suspense>
                 </Route>
-                <Route path="/vpn">
+                <Route path={`/${vpnSlug}`}>
                     <Suspense fallback={<LoaderPage />}>
                         <VpnSettingsRouter />
+                    </Suspense>
+                </Route>
+                <Route path={`/${driveSlug}`}>
+                    <Suspense fallback={<LoaderPage />}>
+                        <DriveSettingsRouter />
                     </Suspense>
                 </Route>
                 <Redirect to={DEFAULT_REDIRECT} />
