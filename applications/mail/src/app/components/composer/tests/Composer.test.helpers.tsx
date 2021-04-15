@@ -31,6 +31,7 @@ export const props = {
     toggleMinimized: jest.fn(),
     toggleMaximized: jest.fn(),
     onSubject: jest.fn(),
+    isFocused: true,
 };
 
 export const prepareMessage = (message: PartialMessageExtended) => {

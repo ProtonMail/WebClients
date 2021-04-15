@@ -114,6 +114,7 @@ const ComposerFrame = ({
                     onClose={onClose}
                     onSubject={(subject) => setSubject(subject)}
                     onCompose={onCompose}
+                    isFocused={focus}
                 />
             </ErrorBoundary>
         </div>
