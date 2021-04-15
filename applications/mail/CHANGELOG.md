@@ -1,3 +1,22 @@
+# [4.0.0 - Beta 40] - 2021-04-21
+
+## Improvements
+
+-   Redesigned and merged Mail settings with Account settings to streamline the overall Proton Settings experience
+-   Updated the styling of the Read/Unread filter on the mail list view
+-   Improved the prevention mechanism when attempting to preview attachments with failed verification
+-   Added the ability to filter search results by Read/Unread
+-   Improved the loading and sending message times, especially for very large mailboxes
+
+## Fixes
+
+-   Fixed a rare issue where the encryption for non-pm users would be lost in the draft if there is a message sending error
+-   Fixed an issue where unwanted shortcuts would be triggered if changing composers too quickly
+-   Fixed an issue where some newsletters would display with a smaller font size than the original
+-   Fixed an issue where on rare occasions some messages sent from beta.protonmail.com would be displayed with minor font size changes on protonmail.com
+-   Fixed an issue where certain messages would not automatically expand in search results
+-   Minor UI fixes
+
 # [4.0.0 - Beta 39] - 2021-04-08
 
 ## New features
