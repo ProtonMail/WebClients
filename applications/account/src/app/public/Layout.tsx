@@ -1,16 +1,9 @@
 import React, { ReactNode } from 'react';
 import { c } from 'ttag';
 import locales from 'proton-shared/lib/i18n/locales';
+import { APP_NAMES } from 'proton-shared/lib/constants';
 
-import {
-    getAppVersion,
-    useConfig,
-    PublicTopBanners,
-    Href,
-    Icon,
-    ProtonLogo,
-    ProminentContainer,
-} from 'react-components';
+import { getAppVersion, useConfig, PublicTopBanners, Href, Icon, ProminentContainer, Logo } from 'react-components';
 
 import LanguageSelect from './LanguageSelect';
 
@@ -19,9 +12,10 @@ import './Layout.scss';
 export interface Props {
     children: ReactNode;
     hasLanguageSelect?: boolean;
+    toApp: APP_NAMES;
 }
 
-const Layout = ({ children, hasLanguageSelect = true }: Props) => {
+const Layout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
     const { APP_VERSION, APP_VERSION_DISPLAY } = useConfig();
     const termsLink = (
         <Href key="terms" className="signup-footer-link" href="https://protonmail.com/terms-and-conditions">{c('Link')
@@ -39,7 +33,7 @@ const Layout = ({ children, hasLanguageSelect = true }: Props) => {
             <PublicTopBanners />
             <header className="flex flex-justify-space-between flex-item-noshrink p2">
                 <span>
-                    <ProtonLogo />
+                    <Logo appName={toApp} to="/" toApp={toApp} target="_self" />
                 </span>
                 {hasLanguageSelect && (
                     <span className="text-right">

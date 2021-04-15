@@ -17,14 +17,13 @@ import { Organization } from 'proton-shared/lib/interfaces';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 
-const { ADMIN, MULTI_USERS, NOT_SUB_USER } = PERMISSIONS;
+const { MULTI_USERS } = PERMISSIONS;
 
 export const getMultiUserSupportPage = (organization: Organization) => {
     return {
         text: c('Title').t`Organization`,
         to: '/organization',
         icon: 'organization',
-        permissions: [ADMIN, NOT_SUB_USER],
         subsections: [
             {
                 text:

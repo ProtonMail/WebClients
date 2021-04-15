@@ -24,14 +24,14 @@ const getPages = (user: UserModel): SectionConfig[] =>
         getSecurityPage(),
     ].filter(isTruthy);
 
-const AccountSettingsSidebarList = ({ prefix }: { prefix: string }) => {
+const AccountSettingsSidebarList = ({ appSlug }: { appSlug: string }) => {
     const [user] = useUser();
 
     return (
         <SidebarList>
             {getPages(user).map(({ text, to, icon }) => (
                 <SidebarListItem key={to}>
-                    <SidebarListItemLink to={`/${prefix}${to}`}>
+                    <SidebarListItemLink to={`/${appSlug}${to}`}>
                         <SidebarListItemContent left={<SidebarListItemContentIcon name={icon} />}>
                             {text}
                         </SidebarListItemContent>
