@@ -9,7 +9,7 @@ import {
 } from 'proton-shared/lib/calendar/integration/invite';
 import { getAttendeePartstat, getHasAttendees } from 'proton-shared/lib/calendar/vcalHelper';
 import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
-import { getIsAddressDisabled } from 'proton-shared/lib/helpers/address';
+import { getIsAddressActive } from 'proton-shared/lib/helpers/address';
 import { canonizeEmailByGuess } from 'proton-shared/lib/helpers/email';
 import { GetVTimezones, Recipient } from 'proton-shared/lib/interfaces';
 import { VcalAttendeeProperty, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
@@ -133,7 +133,7 @@ export const getUpdatedDeleteInviteActions = ({
 }) => {
     const { type, selfAddress } = inviteActions;
     const hasAttendees = oldVevent ? getHasAttendees(oldVevent) : false;
-    const disabled = getIsAddressDisabled(selfAddress);
+    const active = selfAddress ? getIsAddressActive(selfAddress) : undefined;
     if (type === CANCEL_INVITATION) {
         if (!hasAttendees) {
             return {
@@ -141,14 +141,14 @@ export const getUpdatedDeleteInviteActions = ({
                 type: NONE,
             };
         }
-        if (disabled) {
+        if (!active) {
             return {
                 ...inviteActions,
                 type: CANCEL_DISABLED,
             };
         }
     }
-    if (type === DECLINE_INVITATION && disabled) {
+    if (type === DECLINE_INVITATION && !active) {
         return {
             ...inviteActions,
             type: DECLINE_DISABLED,
@@ -209,8 +209,8 @@ export const getSendIcsAction = ({
     if (!selfAddress) {
         throw new Error('Cannot reply without a self address');
     }
-    if (getIsAddressDisabled(selfAddress)) {
-        throw new Error('Cannot send from a disabled address');
+    if (!getIsAddressActive(selfAddress)) {
+        throw new Error('Cannot send from an inactive address');
     }
     const addressID = selfAddress.ID;
     const from = { Address: selfAddress.Email, Name: selfAddress.DisplayName || selfAddress.Email };

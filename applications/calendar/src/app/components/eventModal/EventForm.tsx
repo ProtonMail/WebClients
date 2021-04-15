@@ -5,13 +5,13 @@ import {
     SETTINGS_NOTIFICATION_TYPE,
 } from 'proton-shared/lib/calendar/constants';
 import { getIsProtonUID } from 'proton-shared/lib/calendar/helper';
-import { APPS } from 'proton-shared/lib/constants';
 import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
+import { getIsAddressActive } from 'proton-shared/lib/helpers/address';
 import { Address } from 'proton-shared/lib/interfaces';
 
 import { EventModel, EventModelErrors, NotificationModel } from 'proton-shared/lib/interfaces/calendar';
 import React, { HTMLAttributes } from 'react';
-import { Alert, AppLink, classnames, Input, Notifications, TextArea } from 'react-components';
+import { Alert, classnames, Input, Notifications, TextArea } from 'react-components';
 import { c } from 'ttag';
 
 import {
@@ -81,13 +81,15 @@ const EventForm = ({
     const isImportedEvent = uid && !getIsProtonUID(uid);
     const isCustomFrequencySet = frequencyModel.type === FREQUENCY.CUSTOM;
     const showParticipants = !isImportedEvent;
-    const canEditSharedEventData = isOrganizer && selfAddress?.Status !== 0;
+    // selfAddress may not need be defined
+    const isSelfAddressActive = selfAddress ? getIsAddressActive(selfAddress) : true;
+    const canEditSharedEventData = isOrganizer && isSelfAddressActive;
     const canChangeCalendar = isOrganizer ? !model.organizer : !isSingleEdit;
     const notifications = isAllDay ? fullDayNotifications : partDayNotifications;
     const canAddNotifications = notifications.length < MAX_NOTIFICATIONS;
     const showNotifications =
         canAddNotifications || notifications.some(({ type }) => type === SETTINGS_NOTIFICATION_TYPE.DEVICE);
-    const isOrganizerDisabled = isOrganizer && selfAddress?.Status === 0;
+    const isOrganizerDisabled = isOrganizer && !isSelfAddressActive;
 
     const dateRow = isMinimal ? (
         <MiniDateTimeRows
@@ -121,12 +123,9 @@ const EventForm = ({
     ) : null;
     const organizerDisabledAlert = isOrganizerDisabled ? (
         <Alert type="warning">
-            <span className="mr0-25">{c('Info')
-                .t`You can only modify personal event properties as your organizer email address is disabled. To modify other event properties,`}</span>
-            <span>
-                <AppLink to="/settings/addresses" toApp={APPS.PROTONMAIL}>
-                    {c('Link').t`enable your email address.`}
-                </AppLink>
+            <span className="mr0-25">
+                {c('Info')
+                    .t`You can only modify personal event properties as you can't send emails from the organizer address.`}
             </span>
         </Alert>
     ) : null;
