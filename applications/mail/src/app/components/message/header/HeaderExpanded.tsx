@@ -18,7 +18,6 @@ import { MailSettings } from 'proton-shared/lib/interfaces';
 import { isInternal, isOutbox } from 'proton-shared/lib/mail/messages';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { shiftKey } from 'proton-shared/lib/helpers/browser';
-
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
 import { MESSAGE_ACTIONS } from '../../../constants';
@@ -98,7 +97,7 @@ const HeaderExpanded = ({
     const selectedIDs = [message.data?.ID || ''];
     const currentFolderID = getCurrentFolderID(message.data?.LabelIDs, folders);
     const [{ Shortcuts = 1 } = {}] = useMailSettings();
-    const inOutbox = isOutbox(message.data);
+    const isOutboxMessage = isOutbox(message.data) || message.sending;
 
     const handleClick = (event: MouseEvent) => {
         if (
@@ -224,6 +223,9 @@ const HeaderExpanded = ({
                         isNarrow && 'flex-align-self-start',
                     ])}
                 >
+                    {messageLoaded && isOutboxMessage && (
+                        <span className="badge-label-primary mr0-5 flex-item-noshrink">{c('Info').t`Sending`}</span>
+                    )}
                     {messageLoaded && !showDetails && (
                         <>
                             <span className="inline-flex">
@@ -431,7 +433,7 @@ const HeaderExpanded = ({
                         <Button
                             group
                             icon
-                            disabled={!messageLoaded || !bodyLoaded || inOutbox}
+                            disabled={!messageLoaded || !bodyLoaded || isOutboxMessage}
                             color="norm"
                             onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
                             data-test-id="message-view:reply"
@@ -443,7 +445,7 @@ const HeaderExpanded = ({
                         <Button
                             group
                             icon
-                            disabled={!messageLoaded || !bodyLoaded || inOutbox}
+                            disabled={!messageLoaded || !bodyLoaded || isOutboxMessage}
                             color="norm"
                             onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
                             data-test-id="message-view:reply-all"
@@ -455,7 +457,7 @@ const HeaderExpanded = ({
                         <Button
                             group
                             icon
-                            disabled={!messageLoaded || !bodyLoaded || inOutbox}
+                            disabled={!messageLoaded || !bodyLoaded || isOutboxMessage}
                             color="norm"
                             onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
                             data-test-id="message-view:forward"

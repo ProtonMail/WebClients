@@ -263,4 +263,4 @@ export const cloneDraft = (draft: MessageExtendedWithData): MessageExtendedWithD
     };
 };
 
-export const isNewDraft = (localID: string) => localID.startsWith(DRAFT_ID_PREFIX);
+export const isNewDraft = (localID: string | undefined) => !!localID?.startsWith(DRAFT_ID_PREFIX);

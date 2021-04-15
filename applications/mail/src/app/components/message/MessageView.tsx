@@ -1,12 +1,9 @@
-import React, { useImperativeHandle, useEffect, useMemo, useRef, useState, memo, forwardRef, Ref } from 'react';
-
+import React, { useEffect, useMemo, useRef, useState, memo, forwardRef, Ref, useImperativeHandle } from 'react';
 import { hasAttachments, isDraft, isSent, isOutbox } from 'proton-shared/lib/mail/messages';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { classnames } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { noop } from 'proton-shared/lib/helpers/function';
-
-import { classnames } from 'react-components';
-
 import { getSentStatusIconInfo, getReceivedStatusIcon, MessageViewIcons } from '../../helpers/message/icon';
 import MessageBody from './MessageBody';
 import HeaderCollapsed from './header/HeaderCollapsed';
@@ -86,7 +83,7 @@ const MessageView = (
     const markAs = useMarkAs();
 
     const draft = !loading && isDraft(message.data);
-    const outbox = !loading && isOutbox(message.data);
+    const outbox = !loading && (isOutbox(message.data) || message.sending);
     const sent = isSent(message.data);
     const unread = isUnread(message.data, labelID);
     // It can be attachments but not yet loaded
@@ -113,13 +110,7 @@ const MessageView = (
     };
 
     const handleToggle = (value: boolean) => () => {
-        if (message.sending) {
-            return;
-        }
-        if (outbox) {
-            return;
-        }
-        if (draft) {
+        if (draft && !outbox) {
             onCompose({ existingDraft: message, fromUndo: false });
             return;
         }

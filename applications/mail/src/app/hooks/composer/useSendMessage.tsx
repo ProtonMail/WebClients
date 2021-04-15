@@ -1,14 +1,16 @@
+import { useCallback } from 'react';
 import { SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
-import { getRecipientsAddresses } from 'proton-shared/lib/mail/messages';
-import { useCallback } from 'react';
+import { getRecipientsAddresses, setFlag } from 'proton-shared/lib/mail/messages';
 import { useHistory } from 'react-router';
 import { c } from 'ttag';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { sendMessage, cancelSend } from 'proton-shared/lib/api/messages';
 import { useApi, useEventManager, useNotifications } from 'react-components';
 import { wait } from 'proton-shared/lib/helpers/promise';
+import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
 import { MessageExtendedWithData } from '../../models/message';
 import { generateTopPackages } from '../../helpers/send/sendTopPackages';
 import { attachSubPackages } from '../../helpers/send/sendSubPackages';
@@ -23,7 +25,6 @@ import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { getParamsFromPathname, setParamsInLocation } from '../../helpers/mailboxUrl';
 import { useSendMoficiations } from './useSendModifications';
 
-const DELAY_SEND_PROCESSING = 5000;
 const MIN_DELAY_SENT_NOTIFICATION = 2500;
 
 // Reference: Angular/src/app/composer/services/sendMessage.js
@@ -72,6 +73,7 @@ export const useSendMessage = () => {
             const prepareMessageToSend = async () => {
                 if (!alreadySaved) {
                     await saveDraft(inputMessage);
+                    await call();
                 }
 
                 const messageKeys = await getMessageKeys(inputMessage.data);
@@ -119,8 +121,17 @@ export const useSendMessage = () => {
                         hideNotification(sendingMessageNotificationManager.ID);
                     }
                     if (hasUndo) {
-                        await wait(DELAY_SEND_PROCESSING);
-                        await call();
+                        // When we close the notification, we consider the message as sent
+                        // It's a bit more complicated in reallity, the server will take a few more seconds to actully send the message
+                        // It creates a small window of time during which the UI allow to reply to message in the outbox
+                        // This should be handled by the backend
+                        const message = messageCache.get(localID) as MessageExtendedWithData;
+                        updateMessageCache(messageCache, localID, {
+                            data: {
+                                LabelIDs: message.data.LabelIDs.filter((value) => value !== MAILBOX_LABEL_IDS.OUTBOX),
+                                Flags: setFlag(MESSAGE_FLAGS.FLAG_SENT)(message.data),
+                            },
+                        });
                     }
                 };
 
