@@ -50,10 +50,10 @@ export const getMaxUserCalendarsDisabled = (disabledCalendars: Calendar[], isFre
 
 export const DEFAULT_CALENDAR_USER_SETTINGS: CalendarUserSettings = {
     WeekLength: 7,
-    DisplayWeekNumber: 0,
+    DisplayWeekNumber: 1,
     DefaultCalendarID: null,
-    AutoDetectPrimaryTimezone: 0,
-    PrimaryTimezone: 'Europe/Zurich',
+    AutoDetectPrimaryTimezone: 1,
+    PrimaryTimezone: 'UTC',
     DisplaySecondaryTimezone: 0,
     SecondaryTimezone: undefined,
     ViewPreference: SETTINGS_VIEW.WEEK,
