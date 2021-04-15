@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import { APPS, isSSOMode, SSO_PATHS } from 'proton-shared/lib/constants';
-import { getAccountSettingsApp, getAppHref } from 'proton-shared/lib/apps/helper';
+import { getAppHref } from 'proton-shared/lib/apps/helper';
 import { requestFork } from 'proton-shared/lib/authentication/sessionForking';
 import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 
 import { useAuthentication, useConfig, useModals, useUser, useOrganization } from '../../hooks';
-import { ButtonLike, usePopperAnchor, Dropdown, Icon, AppLink, Href, Button } from '../../components';
+import { usePopperAnchor, Dropdown, Icon, Href, Button } from '../../components';
 import { generateUID } from '../../helpers';
 import UserDropdownButton from './UserDropdownButton';
 import { DonateModal } from '../payments';
@@ -62,26 +62,11 @@ const UserDropdown = ({ ...rest }) => {
                 originalPlacement="bottom-right"
             >
                 <ul className="unstyled mt1 mb1">
-                    {APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
+                    {APP_NAME !== APPS.PROTONVPN_SETTINGS && organizationName ? (
                         <>
                             <li className="pl1 pr1">
-                                {organizationName ? (
-                                    <>
-                                        <div className="color-weak text-sm m0">{c('Label').t`Organization`}</div>
-                                        <div>{organizationName}</div>
-                                    </>
-                                ) : null}
-                                <ButtonLike
-                                    as={AppLink}
-                                    to="/"
-                                    color="norm"
-                                    shape="outline"
-                                    className="block w100 mt1-5 mb1-5 text-center"
-                                    toApp={getAccountSettingsApp()}
-                                    onClick={() => close()}
-                                >
-                                    {c('Action').t`Manage account`}
-                                </ButtonLike>
+                                <div className="color-weak text-sm m0">{c('Label').t`Organization`}</div>
+                                <div>{organizationName}</div>
                             </li>
                             <li className="dropdown-item-hr mt0-5 mb0-5" aria-hidden="false" />
                         </>

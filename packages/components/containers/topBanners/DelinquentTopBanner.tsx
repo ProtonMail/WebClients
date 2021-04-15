@@ -1,30 +1,28 @@
 import React from 'react';
 import { c } from 'ttag';
-import { APPS, UNPAID_STATE } from 'proton-shared/lib/constants';
-import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
+import { UNPAID_STATE } from 'proton-shared/lib/constants';
+import { getInvoicesPathname } from 'proton-shared/lib/apps/helper';
 
 import { useUser, useConfig } from '../../hooks';
+import { SettingsLink } from '../../components';
 import TopBanner from './TopBanner';
-import AppLink from '../../components/link/AppLink';
 
 const DelinquentTopBanner = () => {
     const [user] = useUser();
     const { APP_NAME } = useConfig();
-    const paymentLinkProps =
-        APP_NAME === APPS.PROTONVPN_SETTINGS
-            ? {
-                  to: '/payments#invoices',
-              }
-            : {
-                  to: '/subscription#invoices',
-                  toApp: getAccountSettingsApp(),
-              };
-    const payInvoiceLink = (
-        <AppLink key="pay-invoices" className="color-inherit" {...paymentLinkProps}>{c('Link').t`Pay invoice`}</AppLink>
-    );
+
     if (!user.Delinquent) {
         return null;
     }
+    const payInvoiceLink = (
+        <SettingsLink
+            app={APP_NAME}
+            key="pay-invoices"
+            className="color-inherit"
+            path={getInvoicesPathname(APP_NAME)}
+            target="_self"
+        >{c('Link').t`Pay invoice`}</SettingsLink>
+    );
     if (user.canPay) {
         if (user.Delinquent === UNPAID_STATE.NO_RECEIVE) {
             return (
