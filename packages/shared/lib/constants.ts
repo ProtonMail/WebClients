@@ -128,6 +128,8 @@ export enum ACCOUNT_DELETION_REASONS {
     OTHER = 'OTHER',
 }
 
+export const FORBIDDEN_LABEL_NAMES = ['inbox', 'drafts', 'sent', 'starred', 'archive', 'spam', 'trash', 'outbox'];
+
 export enum SUBSCRIPTION_CANCELLATION_REASONS {
     TEMPORARY = 'TEMPORARY',
     SUBSCRIPTION_MISUNDERSTANDING = 'SUBSCRIPTION_MISUNDERSTANDING',
