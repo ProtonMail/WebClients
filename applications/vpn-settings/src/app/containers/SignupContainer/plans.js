@@ -69,18 +69,18 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
                     />
                 </>,
                 <>
+                    <del className="color-weak mr0-5">{c('Plan feature').t`Access blocked content`}</del>
+                    <Info
+                        title={c('Info')
+                            .t`Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.`}
+                    />
+                </>,
+                <>
                     <del className="color-weak mr0-5">{c('Plan feature').t`Adblocker (NetShield)`}</del>
                     <Info
                         title={c('Info')
                             .t`NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.`}
                         url=" https://protonvpn.com/support/netshield/"
-                    />
-                </>,
-                <>
-                    <del className="color-weak mr0-5">{c('Plan feature').t`Access blocked content`}</del>
-                    <Info
-                        title={c('Info')
-                            .t`Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.`}
                     />
                 </>,
                 <>
@@ -136,18 +136,18 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
                     />
                 </>,
                 <>
-                    <span className="mr0-5">{c('Plan feature').t`Adblocker (NetShield)`}</span>
-                    <Info
-                        title={c('Info')
-                            .t`NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.`}
-                        url=" https://protonvpn.com/support/netshield/"
-                    />
-                </>,
-                <>
                     <span className="mr0-5">{c('Plan feature').t`Access blocked content`}</span>
                     <Info
                         title={c('Info')
                             .t`Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.`}
+                    />
+                </>,
+                <>
+                    <del className="color-weak mr0-5">{c('Plan feature').t`Adblocker (NetShield)`}</del>
+                    <Info
+                        title={c('Info')
+                            .t`NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.`}
+                        url=" https://protonvpn.com/support/netshield/"
                     />
                 </>,
                 <>
@@ -196,18 +196,18 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
                     />
                 </>,
                 <>
+                    <span className="mr0-5">{c('Plan feature').t`Access blocked content`}</span>
+                    <Info
+                        title={c('Info')
+                            .t`Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.`}
+                    />
+                </>,
+                <>
                     <span className="mr0-5">{c('Plan feature').t`Adblocker (NetShield)`}</span>
                     <Info
                         title={c('Info')
                             .t`NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.`}
                         url=" https://protonvpn.com/support/netshield/"
-                    />
-                </>,
-                <>
-                    <span className="mr0-5">{c('Plan feature').t`Access blocked content`}</span>
-                    <Info
-                        title={c('Info')
-                            .t`Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.`}
                     />
                 </>,
                 <>
