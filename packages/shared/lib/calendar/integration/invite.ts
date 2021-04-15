@@ -2,7 +2,9 @@ import { c } from 'ttag';
 import { addDays, format as formatUTC } from '../../date-fns-utc';
 import { Options } from '../../date-fns-utc/format';
 import { formatTimezoneOffset, getTimezoneOffset, toUTCDate } from '../../date/timezone';
+import { getIsAddressDisabled } from '../../helpers/address';
 import { canonizeEmail, canonizeEmailByGuess, canonizeInternalEmail } from '../../helpers/email';
+import { unary } from '../../helpers/function';
 import isTruthy from '../../helpers/isTruthy';
 import { omit, pick } from '../../helpers/object';
 import { getCurrentUnixTimestamp } from '../../helpers/time';
@@ -271,7 +273,7 @@ export const getSelfAddressData = ({
             selfAttendeeIndex: selfActiveAttendeeIndex,
         };
     }
-    const disabledAddresses = addresses.filter(({ Status }) => Status === 0);
+    const disabledAddresses = addresses.filter(unary(getIsAddressDisabled));
     const { selfDisabledAttendee, selfDisabledAddress, selfDisabledAttendeeIndex } = disabledAddresses.reduce<{
         selfDisabledAttendee?: VcalAttendeeProperty;
         selfDisabledAttendeeIndex?: number;
