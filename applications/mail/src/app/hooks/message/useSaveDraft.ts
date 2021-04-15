@@ -30,7 +30,11 @@ export const useCreateDraft = () => {
         const messageKeys = await getMessageKeys(message.data);
         const newMessage = await createMessage(message, api, getMessageKeys);
         updateMessageCache(messageCache, message.localID, {
-            data: { ...mergeSavedMessage(message.data, newMessage), Attachments: newMessage.Attachments },
+            data: {
+                ...mergeSavedMessage(message.data, newMessage),
+                Attachments: newMessage.Attachments,
+                Subject: newMessage.Subject,
+            },
             ...messageKeys,
             embeddeds: createEquivalentEmbeddeds(message.embeddeds, newMessage.Attachments),
             document: message.document,
