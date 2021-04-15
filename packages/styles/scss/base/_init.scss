@@ -26,7 +26,7 @@ body {
 	@if $apply-body-styles==true {
 		background: var(--background-norm);
 		color: var(--text-norm);
-		font-family: $font-family;
+		font-family: var(--font-family, $font-family);
 		text-rendering: geometricPrecision;
 		-webkit-font-smoothing: antialiased;
 
