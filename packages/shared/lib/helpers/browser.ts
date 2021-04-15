@@ -117,7 +117,7 @@ export const requireDirectAction = () => isSafari() || isFirefox() || isEdge();
  * @links { https://mathiasbynens.github.io/rel-noopener/}
  */
 export const openNewTab = (url: string) => {
-    if (isIE11() || isFirefox()) {
+    if (isIE11()) {
         const otherWindow = window.open();
         if (!otherWindow) {
             return;
