@@ -82,6 +82,7 @@ interface Props {
     onClose: () => void;
     onSubject: (subject: string) => void;
     onCompose: OnCompose;
+    isFocused: boolean;
 }
 
 const Composer = (
@@ -95,6 +96,7 @@ const Composer = (
         onClose: inputOnClose,
         onCompose,
         onSubject,
+        isFocused,
     }: Props,
     ref: Ref<ComposerAction>
 ) => {
@@ -219,7 +221,7 @@ const Composer = (
 
     // Manage focus at opening
     useEffect(() => {
-        if (!opening) {
+        if (!opening && isFocused) {
             timeoutRef.current = window.setTimeout(() => {
                 if (getRecipients(syncedMessage.data).length === 0) {
                     addressesFocusRef.current();
@@ -234,7 +236,7 @@ const Composer = (
                 clearTimeout(timeoutRef.current);
             }
         };
-    }, [opening]);
+    }, [opening, isFocused]);
 
     // Update subject on ComposerFrame
     useEffect(() => {
