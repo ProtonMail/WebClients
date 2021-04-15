@@ -1,8 +1,12 @@
 import React, { useEffect, Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 
-import { EncryptedContact, IMPORT_STEPS, ImportContactsModel } from 'proton-shared/lib/interfaces/contacts/Import';
-import { splitContacts, splitErrors } from 'proton-shared/lib/contacts/helpers/import';
+import {
+    EncryptedContact,
+    ImportedContact,
+    IMPORT_STEPS,
+    ImportContactsModel,
+} from 'proton-shared/lib/interfaces/contacts/Import';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
 import { OVERWRITE, CATEGORIES } from 'proton-shared/lib/contacts/constants';
 import { ImportContactError } from 'proton-shared/lib/contacts/errors/ImportContactError';
@@ -16,7 +20,7 @@ import { extractTotals, processInBatches } from './encryptAndSubmit';
 interface Props {
     model: ImportContactsModel;
     setModel: Dispatch<SetStateAction<ImportContactsModel>>;
-    onFinish: () => Promise<void>;
+    onFinish: (contacts: ImportedContact[]) => Promise<void>;
 }
 const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
     const api = useApi();
@@ -40,13 +44,14 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
 
         const handleImportProgress = (
             encrypted: EncryptedContact[],
-            imported: EncryptedContact[],
+            imported: ImportedContact[],
             errors: ImportContactError[]
         ) => {
             setModelWithAbort((model) => ({
                 ...model,
                 totalEncrypted: model.totalEncrypted + encrypted.length,
                 totalImported: model.totalImported + imported.length,
+                importedContacts: [...model.importedContacts, ...imported],
                 errors: [...model.errors, ...errors],
             }));
         };
@@ -55,20 +60,11 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
             try {
                 const {
                     privateKeys: [privateKey],
+                    publicKeys: [publicKey],
                 } = splitKeys(await getUserKeys());
-                const keyPair = { privateKey, publicKey: privateKey.toPublic() };
-                const { withCategories, withoutCategories } = splitContacts(model.parsedVcardContacts);
-                const importedContactsWithCategories = await processInBatches({
-                    contacts: withCategories,
-                    labels: CATEGORIES.INCLUDE,
-                    overwrite: OVERWRITE.OVERWRITE_CONTACT,
-                    keyPair,
-                    api: apiWithAbort,
-                    signal,
-                    onProgress: handleImportProgress,
-                });
-                const importedContactsWithoutCategories = await processInBatches({
-                    contacts: withoutCategories,
+                const keyPair = { privateKey, publicKey };
+                const importedContacts = await processInBatches({
+                    contacts: model.parsedVcardContacts,
                     labels: CATEGORIES.IGNORE,
                     overwrite: OVERWRITE.OVERWRITE_CONTACT,
                     keyPair,
@@ -76,27 +72,26 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     signal,
                     onProgress: handleImportProgress,
                 });
-                const importedContacts = [...importedContactsWithCategories, ...importedContactsWithoutCategories];
-                const { errors } = splitErrors(importedContacts);
-                handleImportProgress([], [], errors);
                 if (signal.aborted) {
                     return;
                 }
-                onFinish();
+                onFinish(importedContacts);
             } catch (error) {
                 setModelWithAbort(() => ({
                     step: IMPORT_STEPS.ATTACHING,
                     parsedVcardContacts: [],
+                    importedContacts: [],
                     totalEncrypted: 0,
                     totalImported: 0,
                     errors: [],
+                    categories: [],
                     loading: false,
                     failure: new ImportFatalError(error),
                 }));
                 if (signal.aborted) {
                     return;
                 }
-                onFinish();
+                onFinish([]);
             }
         };
 

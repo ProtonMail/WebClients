@@ -17,8 +17,8 @@ interface Props {
 const ImportCsvTableRows = ({ preVcards, onToggle, onChangeField, onChangeType }: Props) => {
     const { field, type, display } = toVcard(preVcards) || {};
 
-    if (field === 'n') {
-        // Do not display N vcard field since it cannot be edited from the contact modal
+    if (field === 'n' || field === 'categories') {
+        // Do not display N or CATEGORIES vcard fields since they cannot be edited from the contact modal
         return null;
     }
 
