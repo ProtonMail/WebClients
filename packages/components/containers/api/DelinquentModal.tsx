@@ -1,10 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
-import { useHistory } from 'react-router-dom';
-import { APPS } from 'proton-shared/lib/constants';
-import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
+import { getInvoicesPathname } from 'proton-shared/lib/apps/helper';
 
-import { FormModal, Alert, useAppLink } from '../../components';
+import { Alert, ButtonLike, FormModal, SettingsLink } from '../../components';
 import { useConfig } from '../../hooks';
 
 interface Props {
@@ -12,25 +10,27 @@ interface Props {
 }
 
 const DelinquentModal = ({ ...rest }: Props) => {
-    const history = useHistory();
     const { APP_NAME } = useConfig();
     const title = c('Delinquent modal title').t`Overdue invoice`;
-    const goToApp = useAppLink();
 
-    const handleSubmit = () => {
-        if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
-            return history.push('/payments#invoices');
-        }
-        return goToApp('/subscription#invoices', getAccountSettingsApp());
-    };
+    const submitButton = (
+        <ButtonLike
+            onClick={rest.onClose}
+            color="norm"
+            as={SettingsLink}
+            path={getInvoicesPathname(APP_NAME)}
+            app={APP_NAME}
+            target="_self"
+        >{c('Action').t`View invoice`}</ButtonLike>
+    );
 
     return (
         <FormModal
             title={title}
             hasClose={false}
             close={null}
-            submit={c('Action').t`View invoice`}
-            onSubmit={handleSubmit}
+            submit={submitButton}
+            onSubmit={rest.onClose}
             small
             {...rest}
         >

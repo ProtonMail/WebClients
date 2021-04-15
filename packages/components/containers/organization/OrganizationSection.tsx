@@ -1,9 +1,11 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Organization } from 'proton-shared/lib/interfaces';
+import { APPS } from 'proton-shared/lib/constants';
+import { hasMailProfessional, hasVisionary } from 'proton-shared/lib/helpers/subscription';
 
-import { Alert, Row, Field, Label, Loader, Button } from '../../components';
-import { useModals } from '../../hooks';
+import { Row, Field, Label, Loader, Button, ButtonLike, SettingsLink } from '../../components';
+import { useConfig, useModals, useSubscription } from '../../hooks';
 import RestoreAdministratorPrivileges from './RestoreAdministratorPrivileges';
 import OrganizationNameModal from './OrganizationNameModal';
 import ActivateOrganizationButton from './ActivateOrganizationButton';
@@ -15,16 +17,47 @@ interface Props {
 
 const OrganizationSection = ({ organization }: Props) => {
     const { createModal } = useModals();
+    const { APP_NAME } = useConfig();
+    const [subscription, loadingSubscription] = useSubscription();
 
-    if (!organization) {
+    if (!organization || loadingSubscription) {
         return <Loader />;
+    }
+
+    if (!hasMailProfessional(subscription) && !hasVisionary(subscription)) {
+        return (
+            <>
+                <SettingsParagraph>
+                    {c('Info')
+                        .t`To create email addresses for other people, manage ProtonMail for a business, school, or group. Upgrade to a plan that supports Multi-User (Visionary or Professional).`}
+                </SettingsParagraph>
+                <ButtonLike color="norm" as={SettingsLink} path="/dashboard" app={APP_NAME} target="_self">
+                    {c('Action').t`Upgrade`}
+                </ButtonLike>
+            </>
+        );
+    }
+
+    if (organization.UsedDomains === 0) {
+        return (
+            <>
+                <SettingsParagraph>
+                    {c('Info')
+                        .t`Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). `}
+                </SettingsParagraph>
+                <ButtonLike color="norm" as={SettingsLink} path="/domain-names" app={APPS.PROTONMAIL} target="_self">
+                    {c('Action').t`Add domain`}
+                </ButtonLike>
+            </>
+        );
     }
 
     if (!organization.HasKeys) {
         return (
             <>
-                <Alert learnMore="https://protonmail.com/support/knowledge-base/business/">{c('Info')
-                    .t`Create and manage sub-accounts and assign them email addresses on your custom domain.`}</Alert>
+                <SettingsParagraph learnMoreUrl="https://protonmail.com/support/knowledge-base/business/">
+                    {c('Info').t`Create and manage sub-accounts and assign them email addresses on your custom domain.`}
+                </SettingsParagraph>
                 <ActivateOrganizationButton organization={organization} />
             </>
         );
