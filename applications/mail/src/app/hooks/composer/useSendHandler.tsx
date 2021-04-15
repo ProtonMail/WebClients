@@ -34,13 +34,13 @@ export const useSendHandler = ({
 }: UseSendHandlerParameters) => {
     const { createNotification, hideNotification } = useNotifications();
 
-    const sendVerifications = useSendVerifications();
+    const { preliminaryVerifications, extendedVerifications } = useSendVerifications();
     const sendMessage = useSendMessage();
 
     const handleSendAfterUploads = useHandler(async (notifManager: SendingMessageNotificationManager) => {
         let verificationResults;
         try {
-            verificationResults = await sendVerifications(modelMessage as MessageExtendedWithData);
+            verificationResults = await extendedVerifications(modelMessage as MessageExtendedWithData);
         } catch {
             hideNotification(notifManager.ID);
             onCompose({ existingDraft: modelMessage, fromUndo: true });
@@ -68,6 +68,8 @@ export const useSendHandler = ({
 
     const handleSend = useHandler(async () => {
         const notifManager = createSendingMessageNotificationManager();
+
+        await preliminaryVerifications(modelMessage as MessageExtendedWithData);
 
         // Display growler to receive direct feedback (UX) since sendMessage function is added to queue (and other async process could need to complete first)
         notifManager.ID = createNotification({

@@ -21,11 +21,7 @@ export const useSendVerifications = () => {
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const { contactsMap } = useContactCache();
 
-    return useCallback(async (message: MessageExtendedWithData): Promise<{
-        cleanMessage: MessageExtendedWithData;
-        mapSendPrefs: SimpleMap<SendPreferences>;
-        hasChanged: boolean;
-    }> => {
+    const preliminaryVerifications = useCallback(async (message: MessageExtendedWithData): Promise<void> => {
         // No recipients
         if (!getRecipients(message.data).length) {
             await new Promise((resolve, reject) => {
@@ -59,7 +55,13 @@ export const useSendVerifications = () => {
                 );
             });
         }
+    }, []);
 
+    const extendedVerifications = useCallback(async (message: MessageExtendedWithData): Promise<{
+        cleanMessage: MessageExtendedWithData;
+        mapSendPrefs: SimpleMap<SendPreferences>;
+        hasChanged: boolean;
+    }> => {
         const uniqueMessage = {
             ...message,
             data: uniqueMessageRecipients(message.data),
@@ -166,4 +168,6 @@ export const useSendVerifications = () => {
 
         return { cleanMessage, mapSendPrefs, hasChanged: emailsWithErrors.length > 0 };
     }, []);
+
+    return { preliminaryVerifications, extendedVerifications };
 };
