@@ -84,8 +84,7 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
                 onSubmit: async () => {
                     setStep(STEPS.DELETE_KEY);
                 },
-                close: c('Action').t`No`,
-                onClose: () => setStep(STEPS.EXPORT_KEY),
+                close: <Button onClick={() => setStep(STEPS.EXPORT_KEY)}>{c('Action').t`No`}</Button>,
                 children: (
                     <>
                         <Alert type="error">
