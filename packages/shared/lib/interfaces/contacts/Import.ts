@@ -1,4 +1,11 @@
-import { ContactCard, ContactProperties, ContactProperty, ContactValue } from './Contact';
+import {
+    ContactCard,
+    ContactGroup,
+    ContactMetadata,
+    ContactProperties,
+    ContactProperty,
+    ContactValue,
+} from './Contact';
 
 import { ImportContactError } from '../../contacts/errors/ImportContactError';
 import { ImportFatalError } from '../../contacts/errors/ImportFatalError';
@@ -10,8 +17,14 @@ export enum IMPORT_STEPS {
     IMPORT_CSV,
     WARNING,
     IMPORTING,
+    SUMMARY,
     IMPORT_GROUPS,
-    FINISHED,
+}
+
+export enum IMPORT_GROUPS_ACTION {
+    MERGE,
+    CREATE,
+    IGNORE,
 }
 
 export enum EXTENSION {
@@ -30,29 +43,50 @@ export interface ContactPropertyWithDisplay extends ContactProperty {
     display: string;
 }
 
+export interface ImportCategories {
+    name: string;
+    totalContacts: number;
+    contactIDs: string[];
+    contactEmailIDs: string[];
+    action: IMPORT_GROUPS_ACTION;
+    targetGroup: ContactGroup;
+    targetName: string;
+    error?: string;
+}
+
 export interface ImportContactsModel {
     step: IMPORT_STEPS;
     fileAttached?: File;
     extension?: ACCEPTED_EXTENSIONS;
     preVcardsContacts?: PreVcardsContact[];
     parsedVcardContacts: ContactProperties[];
+    importedContacts: ImportedContact[];
     totalEncrypted: number;
     totalImported: number;
     errors: ImportContactError[];
     failure?: ImportFatalError | ImportFileError | Error;
     loading: boolean;
+    contactGroups?: ContactGroup[];
+    categories: ImportCategories[];
 }
 
 export interface EncryptedContact {
     contact: { Cards: ContactCard[]; error?: Error };
+    contactEmails: { email: string; group?: string }[];
+    categories: { name: string; group?: string }[];
     contactId: string;
+}
+
+export interface ImportedContact {
+    contactID: string;
+    categories: { name: string; contactEmailIDs?: string[] }[];
 }
 
 export interface AddContactsApiResponse {
     Index: number;
     Response: {
         Code: number;
-        Contact?: { Cards: ContactCard[] };
+        Contact?: ContactMetadata;
         Error?: string;
     };
 }
