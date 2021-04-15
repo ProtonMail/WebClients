@@ -1,3 +1,12 @@
+# [4.0.0-beta.17] - 2021-04-21
+
+## Updated
+- Calendar settings have been redesigned and merged with Account settings to harmonize and streamline the overall Proton Settings experience
+
+## Fixed
+- Fix previous issues importing events with the Asia/Singapore timezone
+- Handle cases of answering and deleting invitations when short domain addresses are used with a free plan
+
 # [4.0.0-beta.16] - 2021-04-08
 
 ## Added
