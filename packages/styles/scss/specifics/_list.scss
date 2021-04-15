@@ -157,6 +157,23 @@ $item-container-row-height-compact-mode: rem(40) !default;
 			color: var(--email-item-selected-icon-text-color, inherit);
 		}
 	}
+
+	// Styling for contact items inside contact dropdown
+	&.item-contact {
+		background-color: var(
+			--email-item-unread-background-color,
+			var(--background-norm)
+		);
+		color: var(--email-item-unread-text-color, var(--text-norm));
+
+		.item-icon {
+			background-color: var(
+				--email-item-unread-icon-background-color,
+				var(--background-strong)
+			);
+			color: var(--email-item-unread-icon-text-color, inherit);
+		}
+	}
 }
 
 .item-container {
