@@ -6,12 +6,16 @@ import ForceRefreshContext from 'react-components/containers/forceRefresh/contex
 import { OnLoginCallbackArguments, ProtonLoginCallback } from 'react-components/containers/app/interface';
 import { LocalSessionResponse } from 'proton-shared/lib/authentication/interface';
 import { produceFork, ProduceForkParameters } from 'proton-shared/lib/authentication/sessionForking';
-import { SSO_PATHS, UNPAID_STATE } from 'proton-shared/lib/constants';
+import { SSO_PATHS, UNPAID_STATE, isSSOMode } from 'proton-shared/lib/constants';
 import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 import { GetActiveSessionsResult } from 'proton-shared/lib/authentication/persistedSessionHelper';
+import { stripLeadingAndTrailingSlash } from 'proton-shared/lib/helpers/string';
 import { ModalsChildren, SSOForkProducer, useApi } from 'react-components';
+import { stripLocalBasenameFromPathname } from 'proton-shared/lib/authentication/pathnameHelper';
+import { getAppHref } from 'proton-shared/lib/apps/helper';
+import { replaceUrl } from 'proton-shared/lib/helpers/browser';
+import { DEFAULT_APP, getAppFromPathname, getSlugFromApp } from 'proton-shared/lib/apps/slugHelper';
 
-import { APP_NAME } from '../config';
 import AccountPublicApp from './AccountPublicApp';
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
 import SwitchAccountContainer from '../public/SwitchAccountContainer';
@@ -23,6 +27,27 @@ import Layout from '../public/Layout';
 
 const getPathFromLocation = (location: H.Location) => {
     return [location.pathname, location.search, location.hash].join('');
+};
+
+const getLocalRedirect = (pathname?: string) => {
+    if (!pathname) {
+        return undefined;
+    }
+    const trimmedPathname = stripLeadingAndTrailingSlash(stripLocalBasenameFromPathname(pathname));
+    if (!trimmedPathname) {
+        return undefined;
+    }
+    const toApp = getAppFromPathname(trimmedPathname);
+    if (!toApp) {
+        return {
+            pathname: `${getSlugFromApp(DEFAULT_APP)}/${trimmedPathname}`,
+            toApp: DEFAULT_APP,
+        };
+    }
+    return {
+        pathname,
+        toApp,
+    };
 };
 
 interface Props {
@@ -41,13 +66,37 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const ignoreAutoRef = useRef(false);
     const [hasBackToSwitch, setHasBackToSwitch] = useState(false);
 
+    const [localRedirect] = useState(() => {
+        const localLocation = [
+            SSO_PATHS.SWITCH,
+            SSO_PATHS.LOGIN,
+            SSO_PATHS.SIGNUP,
+            SSO_PATHS.AUTHORIZE,
+            SSO_PATHS.SIGNUP,
+            SSO_PATHS.FORGOT_USERNAME,
+            SSO_PATHS.FORK,
+            SSO_PATHS.RESET_PASSWORD,
+            '/unsubscribe',
+        ].includes(location.pathname)
+            ? undefined
+            : location;
+        if (!localLocation) {
+            return;
+        }
+        // If trying to access a non-public location from this app, set up a local redirect
+        return getLocalRedirect(getPathFromLocation(localLocation));
+    });
+
+    // Either another app wants to fork, or a specific route is requested on this app, or we just go to default
+    const toApp = forkState?.app || localRedirect?.toApp || DEFAULT_APP;
+
     const handleLogin = async (args: OnLoginCallbackArguments) => {
-        const { keyPassword, UID, User } = args;
+        const { keyPassword, UID, User, LocalID } = args;
         // Upon login, if user is delinquent, the fork is aborted and the user is redirected to invoices
         if (User.Delinquent >= UNPAID_STATE.DELINQUENT) {
             return onLogin({
                 ...args,
-                path: '/subscription#invoices',
+                path: `${getSlugFromApp(localRedirect?.toApp || DEFAULT_APP)}/payment#invoices`,
             });
         }
         if (forkState) {
@@ -55,15 +104,13 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             await produceFork({ api, UID, keyPassword, ...forkState, type });
             return;
         }
-        const previousLocation = location.state?.from ? getPathFromLocation(location.state.from) : undefined;
-        return onLogin(
-            previousLocation
-                ? {
-                      ...args,
-                      path: previousLocation,
-                  }
-                : args
-        );
+        if (localRedirect || !isSSOMode) {
+            return onLogin({
+                ...args,
+                path: localRedirect?.pathname || '',
+            });
+        }
+        return replaceUrl(getAppHref('/', DEFAULT_APP, LocalID));
     };
 
     const handleActiveSessionsFork = (newForkState: ProduceForkParameters, { sessions }: GetActiveSessionsResult) => {
@@ -100,7 +147,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             return false;
         }
         if (session && sessions.length === 1) {
-            onLogin(session);
+            handleLogin(session);
             return true;
         }
         setActiveSessions(sessions);
@@ -119,8 +166,6 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         history.push('/login');
     };
 
-    const toApp = forkState?.app || APP_NAME;
-
     return (
         <>
             <ModalsChildren />
@@ -135,11 +180,11 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                     <AccountPublicApp
                         location={location}
                         locales={locales}
-                        onLogin={onLogin}
+                        onLogin={handleLogin}
                         onActiveSessions={handleActiveSessions}
                     >
                         <ForceRefreshContext.Provider value={refresh}>
-                            <Layout>
+                            <Layout toApp={toApp}>
                                 <Switch location={location}>
                                     <Route path={SSO_PATHS.SWITCH}>
                                         <SwitchAccountContainer
@@ -170,12 +215,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                             onBack={hasBackToSwitch ? () => history.push('/switch') : undefined}
                                         />
                                     </Route>
-                                    <Redirect
-                                        to={{
-                                            pathname: SSO_PATHS.LOGIN,
-                                            state: { from: location },
-                                        }}
-                                    />
+                                    <Redirect to={SSO_PATHS.LOGIN} />
                                 </Switch>
                             </Layout>
                         </ForceRefreshContext.Provider>

@@ -9,7 +9,7 @@ import {
     useOrganization,
 } from 'react-components';
 
-const OrganizationSettingsSidebarList = ({ prefix }: { prefix: string }) => {
+const OrganizationSettingsSidebarList = ({ appSlug }: { appSlug: string }) => {
     const [organization, loading] = useOrganization();
 
     const hasOrganization = organization?.HasKeys;
@@ -20,21 +20,21 @@ const OrganizationSettingsSidebarList = ({ prefix }: { prefix: string }) => {
                 (hasOrganization ? (
                     <>
                         <SidebarListItem>
-                            <SidebarListItemLink to={`/${prefix}/users-addresses`}>
+                            <SidebarListItemLink to={`/${appSlug}/users-addresses`}>
                                 <SidebarListItemContent left={<SidebarListItemContentIcon name="organization-users" />}>
                                     {c('Settings section title').t`Users & Addresses`}
                                 </SidebarListItemContent>
                             </SidebarListItemLink>
                         </SidebarListItem>
                         <SidebarListItem>
-                            <SidebarListItemLink to={`/${prefix}/domain-names`}>
+                            <SidebarListItemLink to={`/${appSlug}/domain-names`}>
                                 <SidebarListItemContent left={<SidebarListItemContentIcon name="globe" />}>
                                     {c('Settings section title').t`Domain names`}
                                 </SidebarListItemContent>
                             </SidebarListItemLink>
                         </SidebarListItem>
                         <SidebarListItem>
-                            <SidebarListItemLink to={`/${prefix}/organization-keys`}>
+                            <SidebarListItemLink to={`/${appSlug}/organization-keys`}>
                                 <SidebarListItemContent left={<SidebarListItemContentIcon name="security" />}>
                                     {c('Settings section title').t`Organization & Keys`}
                                 </SidebarListItemContent>
@@ -43,7 +43,7 @@ const OrganizationSettingsSidebarList = ({ prefix }: { prefix: string }) => {
                     </>
                 ) : (
                     <SidebarListItem>
-                        <SidebarListItemLink to={`/${prefix}/multi-user-support`}>
+                        <SidebarListItemLink to={`/${appSlug}/multi-user-support`}>
                             <SidebarListItemContent left={<SidebarListItemContentIcon name="organization-users" />}>
                                 {c('Settings section title').t`Multi-user support`}
                             </SidebarListItemContent>

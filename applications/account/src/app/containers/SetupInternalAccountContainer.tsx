@@ -117,7 +117,8 @@ const SetupInternalAccountContainer = () => {
         return <LoaderPage />;
     }
 
-    const toAppName = getToAppName(toAppRef.current!);
+    const toApp = toAppRef.current!;
+    const toAppName = getToAppName(toApp);
     const mailAppName = getAppName(APPS.PROTONMAIL);
 
     const generateInternalAddress = generateInternalAddressRef.current;
@@ -128,7 +129,7 @@ const SetupInternalAccountContainer = () => {
     }
 
     return (
-        <Layout hasLanguageSelect={false}>
+        <Layout toApp={toApp} hasLanguageSelect={false}>
             <Main>
                 <GenerateInternalAddressStep
                     api={silentApi}
