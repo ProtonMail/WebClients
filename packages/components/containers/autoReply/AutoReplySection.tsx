@@ -4,7 +4,6 @@ import { c } from 'ttag';
 import { isMac } from 'proton-shared/lib/helpers/browser';
 import { updateAutoresponder } from 'proton-shared/lib/api/mailSettings';
 import { AutoReplyDuration } from 'proton-shared/lib/constants';
-import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
 import {
     useMailSettings,
@@ -16,8 +15,9 @@ import {
     useHandler,
     useUser,
     useErrorHandler,
+    useConfig,
 } from '../../hooks';
-import { Toggle, SimpleSquireEditor, Button, AppLink, Card, ButtonLike } from '../../components';
+import { Toggle, SimpleSquireEditor, Button, Card, ButtonLike, SettingsLink } from '../../components';
 
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 
@@ -45,7 +45,7 @@ const AutoReplySection = () => {
     const [enablingLoading, withEnablingLoading] = useLoading();
     const [updatingLoading, withUpdatingLoading] = useLoading();
     const [isEnabled, setIsEnabled] = useState(AutoResponder.IsEnabled);
-
+    const { APP_NAME } = useConfig();
     const { createNotification } = useNotifications();
     const { model, updateModel, toAutoResponder } = useAutoReplyForm(AutoResponder);
 
@@ -136,7 +136,7 @@ const AutoReplySection = () => {
                         {c('Info')
                             .t`Upgrade to ProtonMail Professional to enable automatic replies for when you are out of the office.`}
                     </p>
-                    <ButtonLike color="norm" as={AppLink} to="/subscription" toApp={getAccountSettingsApp()}>
+                    <ButtonLike color="norm" as={SettingsLink} path="/dashboard" app={APP_NAME} target="_self">
                         {c('Action').t`Upgrade`}
                     </ButtonLike>
                 </Card>
