@@ -40,7 +40,7 @@ interface Props {
 }
 
 export interface MessageViewRef {
-    expand: (callback?: () => void) => void;
+    expand: () => void;
 }
 
 const MessageView = (
@@ -122,12 +122,11 @@ const MessageView = (
 
     // Setup ref to allow opening the message from outside, typically the ConversationView
     useImperativeHandle(ref, () => ({
-        expand: (callback) => {
+        expand: () => {
             // Should be prevented before, but as an extra security...
             if (!isDraft(message.data)) {
                 setExpanded(true);
                 elementRef.current?.focus();
-                callback?.();
             }
         },
     }));
