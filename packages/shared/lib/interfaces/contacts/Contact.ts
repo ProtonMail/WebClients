@@ -19,7 +19,7 @@ export interface ContactCard {
     Signature: string | null;
 }
 
-export interface Contact {
+export interface ContactMetadata {
     ID: string;
     Name: string;
     UID: string;
@@ -28,6 +28,9 @@ export interface Contact {
     ModifyTime: number;
     ContactEmails: ContactEmail[];
     LabelIDs: string[];
+}
+
+export interface Contact extends ContactMetadata {
     Cards: ContactCard[];
 }
 

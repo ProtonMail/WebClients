@@ -23,7 +23,6 @@ const beIgnoredCsvProperties = [
     'sensitivity',
     'priority',
     'subject',
-    'categories',
 ];
 
 /**
@@ -543,6 +542,14 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
             field: 'note',
         });
     }
+    if (property === 'categories') {
+        return (value: ContactValue) => ({
+            header,
+            value,
+            checked: true,
+            field: 'categories',
+        });
+    }
 
     // convert any other property into custom note
     return (value: ContactValue) => ({
@@ -595,6 +602,10 @@ export const combine: Combine = {
         });
         return propertyORG.filter(Boolean).join(';');
     },
+    categories(preVcards: PreVcardsProperty) {
+        // we can get several categories separated by ';'
+        return getFirstValue(preVcards).split(';');
+    },
     email: getFirstValue,
     tel: getFirstValue,
     nickname: getFirstValue,
@@ -613,7 +624,6 @@ export const combine: Combine = {
     member: getFirstValue,
     impp: getFirstValue,
     related: getFirstValue,
-    categories: getFirstValue,
     sound: getFirstValue,
     custom(preVcards: PreVcardsProperty) {
         const { checked, header, value } = preVcards[0];
