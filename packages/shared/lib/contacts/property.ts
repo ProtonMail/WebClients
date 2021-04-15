@@ -46,10 +46,10 @@ const getRawValues = (property: any): string[] => {
 /**
  * Get the value of an ICAL property
  *
- * @return currently an array for the field adr, a string otherwise
+ * @return currently an array for the fields adr and categories, a string otherwise
  */
 export const getValue = (property: any, field: string): string | string[] => {
-    let [value] = getRawValues(property).map((val: string | string[] | Date) => {
+    const values = getRawValues(property).map((val: string | string[] | Date) => {
         // adr
         if (Array.isArray(val)) {
             return val;
@@ -66,8 +66,8 @@ export const getValue = (property: any, field: string): string | string[] => {
     // In some rare situations, ICAL can miss the multiple value nature of an adr field
     // It has been reproduced after a contact import from iOS including the address in a group
     // For that specific case, we have to split values manually
-    if (field === 'adr' && typeof value === 'string') {
-        value = cleanMultipleValue(value);
+    if (field === 'adr' && typeof values[0] === 'string') {
+        return cleanMultipleValue(values[0]);
     }
 
     // If one of the adr sections contains unescaped `,`
@@ -75,10 +75,16 @@ export const getValue = (property: any, field: string): string | string[] => {
     // Which we don't support later in the code
     // Until we do, we flatten the value by joining these entries
     if (field === 'adr') {
-        value = (value as (string | string[])[]).map((entry) => (Array.isArray(entry) ? entry.join(', ') : entry));
+        values[0] = (values[0] as (string | string[])[]).map((entry) => (Array.isArray(entry) ? entry.join(', ') : entry));
     }
 
-    return value;
+    if (field === 'categories') {
+        // the ICAL library will parse item1.CATEGORIES:cat1,cat2 with value ['cat1,cat2'], but we expect ['cat1', 'cat2']
+        const flatValues = values.flat();
+        const splitValues = flatValues.map((value) => value.split(','));
+        return splitValues.flat();
+    }
+    return values[0];
 };
 
 /**
