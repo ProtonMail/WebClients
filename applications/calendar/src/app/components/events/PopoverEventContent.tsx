@@ -95,7 +95,7 @@ const PopoverEventContent = ({
         if (isCalendarDisabled) {
             const disabledText = <span className="text-italic">({c('Disabled calendar').t`Disabled`})</span>;
             const tooltipText = c('Disabled calendar')
-                .t`The event belongs to a disabled calendar and you cannot modify it. Please enable your email address again to enable the calendar.`;
+                .t`The event belongs to a disabled calendar and you cannot modify it.`;
             return (
                 <>
                     <span className="text-ellipsis flex-item-fluid-auto flex-item-nogrow mr0-5" title={calendarName}>

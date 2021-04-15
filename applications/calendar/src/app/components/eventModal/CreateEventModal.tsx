@@ -1,7 +1,7 @@
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from 'proton-shared/lib/calendar/constants';
 import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
 import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
-import { getIsAddressDisabled } from 'proton-shared/lib/helpers/address';
+import { getIsAddressActive } from 'proton-shared/lib/helpers/address';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { Address } from 'proton-shared/lib/interfaces';
 import React, { useState } from 'react';
@@ -55,7 +55,7 @@ const CreateEventModal = ({
     const { selfAddress, selfAttendeeIndex, attendees } = model;
     const cannotSave = model.isOrganizer && attendees.length > 100;
     const selfAttendee = selfAttendeeIndex !== undefined ? model.attendees[selfAttendeeIndex] : undefined;
-    const isSelfAddressDisabled = getIsAddressDisabled(selfAddress);
+    const isSelfAddressActive = selfAddress ? getIsAddressActive(selfAddress) : true;
     const userPartstat = selfAttendee?.partstat || ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
     const sendCancellationNotice =
         !isCancelled && [ICAL_ATTENDEE_STATUS.ACCEPTED, ICAL_ATTENDEE_STATUS.TENTATIVE].includes(userPartstat);
@@ -89,14 +89,12 @@ const CreateEventModal = ({
     );
     const deleteInviteActions = model.isOrganizer
         ? {
-              type: isSelfAddressDisabled ? INVITE_ACTION_TYPES.CANCEL_DISABLED : INVITE_ACTION_TYPES.CANCEL_INVITATION,
+              type: isSelfAddressActive ? INVITE_ACTION_TYPES.CANCEL_INVITATION : INVITE_ACTION_TYPES.CANCEL_DISABLED,
               selfAddress: model.selfAddress,
               selfAttendeeIndex: model.selfAttendeeIndex,
           }
         : {
-              type: isSelfAddressDisabled
-                  ? INVITE_ACTION_TYPES.DECLINE_DISABLED
-                  : INVITE_ACTION_TYPES.DECLINE_INVITATION,
+              type: isSelfAddressActive ? INVITE_ACTION_TYPES.DECLINE_INVITATION : INVITE_ACTION_TYPES.DECLINE_DISABLED,
               partstat: ICAL_ATTENDEE_STATUS.DECLINED,
               sendCancellationNotice,
               selfAddress: model.selfAddress,

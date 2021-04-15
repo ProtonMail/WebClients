@@ -1,7 +1,7 @@
 import { FREQUENCY, ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from 'proton-shared/lib/calendar/constants';
 import { getAggregatedEventVerificationStatus } from 'proton-shared/lib/calendar/decrypt';
 import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
-import { getIsAddressDisabled } from 'proton-shared/lib/helpers/address';
+import { getIsAddressActive } from 'proton-shared/lib/helpers/address';
 import { EventModelReadView } from 'proton-shared/lib/interfaces/calendar';
 import getIsTemporaryViewEvent from '../../containers/calendar/getIsTemporaryViewEvent';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
@@ -44,7 +44,7 @@ const getEventInformation = (calendarViewEvent: CalendarViewEvent, model: EventM
         isRecurring,
         isSingleEdit,
         userPartstat: selfAttendee?.partstat || ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
-        isSelfAddressDisabled: getIsAddressDisabled(selfAddress),
+        isSelfAddressActive: selfAddress ? getIsAddressActive(selfAddress) : true,
     };
 };
 
