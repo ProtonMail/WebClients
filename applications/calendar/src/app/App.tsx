@@ -11,7 +11,7 @@ import './app.scss';
 sentry(config);
 
 const enhancedConfig = {
-    APP_VERSION_DISPLAY: '4.0.0-beta.16',
+    APP_VERSION_DISPLAY: '4.0.0-beta.17',
     ...config,
 };
 
