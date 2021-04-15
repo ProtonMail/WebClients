@@ -61,3 +61,7 @@ export const getClientID = (appName: APP_NAMES) => {
 export const getAppName = (appName: APP_NAMES) => {
     return APPS_CONFIGURATION[appName].name;
 };
+
+export const getInvoicesPathname = (app: APP_NAMES) => {
+    return app === APPS.PROTONVPN_SETTINGS ? '/payments#invoices' : '/payment#invoices';
+};
