@@ -17,7 +17,7 @@ const ExtraEventAlert = ({ model }: Props) => {
         invitationIcs: { method },
         calendarData,
         invitationApi,
-        isAddressDisabled,
+        isAddressActive,
         canCreateCalendar,
         maxUserCalendarsDisabled,
         hasNoCalendars,
@@ -62,10 +62,10 @@ const ExtraEventAlert = ({ model }: Props) => {
         if (isCancel) {
             return null;
         }
-        if (isAddressDisabled) {
+        if (!isAddressActive) {
             return (
                 <Alert type="warning">
-                    <span className="mr0-5">{c('Info').t`The invited email address is disabled.`}</span>
+                    <span className="mr0-5">{c('Info').t`You cannot reply from the invited address.`}</span>
                     <span>
                         <SettingsLink path="/identity-addresses" app={APPS.PROTONMAIL}>
                             {c('Link').t`Enable your address to answer this invitation.`}
@@ -117,13 +117,13 @@ const ExtraEventAlert = ({ model }: Props) => {
         return null;
     }
 
-    if (isAddressDisabled) {
+    if (!isAddressActive) {
         if (isCancel) {
             return null;
         }
         return (
             <Alert type="warning">
-                <span className="mr0-5">{c('Info').t`The invited email address is disabled.`}</span>
+                <span className="mr0-5">{c('Info').t`You cannot reply from the invited address.`}</span>
                 <span>
                     <SettingsLink path="/identity-addresses" app={APPS.PROTONMAIL}>
                         {c('Link').t`Enable your address again to modify your answer.`}

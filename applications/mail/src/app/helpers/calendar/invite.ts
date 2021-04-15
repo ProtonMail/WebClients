@@ -49,6 +49,7 @@ import {
 import { SECOND, APPS } from 'proton-shared/lib/constants';
 import { addDays, format as formatUTC } from 'proton-shared/lib/date-fns-utc';
 import { convertUTCDateTimeToZone, fromUTCDate, getSupportedTimezone } from 'proton-shared/lib/date/timezone';
+import { getIsAddressActive, getIsAddressDisabled } from 'proton-shared/lib/helpers/address';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
@@ -114,6 +115,7 @@ export interface InvitationModel {
     isOrganizerMode: boolean;
     timeStatus: EVENT_TIME_STATUS;
     isPartyCrasher?: boolean;
+    isAddressActive: boolean;
     isAddressDisabled: boolean;
     canCreateCalendar: boolean;
     maxUserCalendarsDisabled: boolean;
@@ -332,6 +334,7 @@ export const parseEventInvitation = (data: string): VcalVcalendar | undefined =>
 interface ProcessedInvitation<T> {
     isOrganizerMode: boolean;
     timeStatus: EVENT_TIME_STATUS;
+    isAddressActive: boolean;
     isAddressDisabled: boolean;
     invitation: EventInvitation & T;
 }
@@ -354,7 +357,8 @@ export const processEventInvitation = <T>(
         attendees,
         addresses: ownAddresses,
     });
-    const isAddressDisabled = selfAddress ? selfAddress.Status === 0 : false;
+    const isAddressActive = selfAddress ? getIsAddressActive(selfAddress) : true;
+    const isAddressDisabled = selfAddress ? getIsAddressDisabled(selfAddress) : false;
 
     const processed: EventInvitation & T = { ...invitation };
 
@@ -397,7 +401,7 @@ export const processEventInvitation = <T>(
         });
     }
 
-    return { isOrganizerMode, timeStatus, isAddressDisabled, invitation: processed };
+    return { isOrganizerMode, timeStatus, isAddressActive, isAddressDisabled, invitation: processed };
 };
 
 interface GetInitialInvitationModelArgs {
@@ -426,6 +430,7 @@ export const getInitialInvitationModel = ({
         return {
             isOrganizerMode: false,
             isAddressDisabled: false,
+            isAddressActive: true,
             canCreateCalendar,
             maxUserCalendarsDisabled,
             mustReactivateCalendars,
@@ -434,7 +439,7 @@ export const getInitialInvitationModel = ({
             error: invitationOrError,
         };
     }
-    const { isOrganizerMode, timeStatus, isAddressDisabled, invitation } = processEventInvitation(
+    const { isOrganizerMode, timeStatus, isAddressActive, isAddressDisabled, invitation } = processEventInvitation(
         invitationOrError,
         message,
         contactEmails,
@@ -443,6 +448,7 @@ export const getInitialInvitationModel = ({
     const result: InvitationModel = {
         isOrganizerMode,
         timeStatus,
+        isAddressActive,
         isAddressDisabled,
         canCreateCalendar,
         maxUserCalendarsDisabled,
@@ -797,7 +803,7 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
         hideLink,
         isPartyCrasher,
         isOutdated,
-        isAddressDisabled,
+        isAddressActive,
         calendarData,
         invitationIcs: { method, attendee: attendeeIcs },
         invitationApi,
@@ -816,7 +822,7 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
         [ICAL_ATTENDEE_STATUS.ACCEPTED, ICAL_ATTENDEE_STATUS.TENTATIVE, ICAL_ATTENDEE_STATUS.DECLINED].includes(
             attendeeIcs?.partstat
         );
-    const canBeAnswered = !isOrganizerMode && method === ICAL_METHOD.REQUEST && !isOutdated && !isAddressDisabled;
+    const canBeAnswered = !isOrganizerMode && method === ICAL_METHOD.REQUEST && !isOutdated && isAddressActive;
     const canBeManaged =
         isOrganizerMode && (method === ICAL_METHOD.REPLY || (method === ICAL_METHOD.COUNTER && hasAlsoReplied));
     const canBeSeenUpdated =
@@ -916,7 +922,7 @@ export const getDoNotDisplayButtons = (model: RequireSome<InvitationModel, 'invi
         invitationIcs: { method },
         calendarData,
         isOutdated,
-        isAddressDisabled,
+        isAddressActive,
     } = model;
 
     if (isOrganizerMode) {
@@ -925,7 +931,7 @@ export const getDoNotDisplayButtons = (model: RequireSome<InvitationModel, 'invi
     return (
         method === ICAL_METHOD.CANCEL ||
         !!isOutdated ||
-        isAddressDisabled ||
+        !isAddressActive ||
         !!calendarData?.isCalendarDisabled ||
         isPartyCrasher
     );

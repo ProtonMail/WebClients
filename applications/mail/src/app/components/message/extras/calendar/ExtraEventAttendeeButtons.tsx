@@ -34,7 +34,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         calendarData,
         pmData,
         singleEditData,
-        isAddressDisabled,
+        isAddressActive,
         error,
         hasDecryptionError,
     } = model;
@@ -145,7 +145,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
     const buttonsDisabled =
         !calendarData?.calendar ||
         calendarData.isCalendarDisabled ||
-        isAddressDisabled ||
+        !isAddressActive ||
         calendarData.calendarNeedsUserAction;
 
     const actions = useInviteButtons({
