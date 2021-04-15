@@ -1,9 +1,8 @@
 import React from 'react';
 import { APPS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
-import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
-import { AppLink, Hamburger, Icon } from '../../components';
+import { AppLink, Hamburger, Icon, SettingsLink } from '../../components';
 import { useConfig, useUser, usePlans, useSubscription, usePaidCookie } from '../../hooks';
 import Header, { Props as HeaderProps } from '../../components/header/Header';
 
@@ -96,11 +95,11 @@ const PrivateHeader = ({
                     {hasPaidMail || isNarrow || isVPN ? null : (
                         <TopNavbarListItem noShrink>
                             <TopNavbarListItemButton
-                                as={AppLink}
+                                as={SettingsLink}
                                 text={c('Link').t`Upgrade`}
                                 icon={<Icon name="upgrade-to-paid" />}
-                                to="/subscription"
-                                toApp={getAccountSettingsApp()}
+                                path="/dashboard"
+                                app={APP_NAME}
                                 title={c('Link').t`Upgrade`}
                             />
                         </TopNavbarListItem>
