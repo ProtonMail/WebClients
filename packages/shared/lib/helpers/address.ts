@@ -2,22 +2,22 @@ import { ADDRESS_STATUS, ADDRESS_TYPE, RECEIVE_ADDRESS, SEND_ADDRESS } from '../
 import { Address, Recipient } from '../interfaces';
 import { ContactEmail } from '../interfaces/contacts';
 import { canonizeInternalEmail } from './email';
+import { unary } from './function';
 
-export const getIsAddressDisabled = (address?: Address) => {
-    if (!address) {
-        return undefined;
-    }
+export const getIsAddressDisabled = (address: Address) => {
     return address.Status === ADDRESS_STATUS.STATUS_DISABLED;
 };
 
+export const getIsAddressActive = (address: Address) => {
+    return (
+        address.Status === ADDRESS_STATUS.STATUS_ENABLED &&
+        address.Receive === RECEIVE_ADDRESS.RECEIVE_YES &&
+        address.Send === SEND_ADDRESS.SEND_YES
+    );
+};
+
 export const getActiveAddresses = (addresses: Address[]): Address[] => {
-    return addresses.filter(({ Status, Receive, Send }) => {
-        return (
-            Status === ADDRESS_STATUS.STATUS_ENABLED &&
-            Receive === RECEIVE_ADDRESS.RECEIVE_YES &&
-            Send === SEND_ADDRESS.SEND_YES
-        );
-    });
+    return addresses.filter(unary(getIsAddressActive));
 };
 
 export const hasAddresses = (addresses: Address[] | undefined): boolean => {
