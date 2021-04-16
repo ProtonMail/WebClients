@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
+import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+
 import { useApi, useErrorHandler, useLoading, useModals, useNotifications } from '../../hooks';
 import { Label, LinkButton, PrimaryButton } from '../../components';
 import { OnLoginCallback } from '../app/interface';
@@ -159,7 +161,8 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
 
     const handleError = (e: any) => {
         if (e.data?.Code === API_CUSTOM_ERROR_CODES.AUTH_ACCOUNT_DISABLED) {
-            return createModal(<AbuseModal />);
+            const apiErrorMessage = getApiErrorMessage(e);
+            return createModal(<AbuseModal message={apiErrorMessage} />);
         }
         if (e.name === 'TOTPError' || e.name === 'PasswordError') {
             return createNotification({ type: 'error', text: e.message });
@@ -189,7 +192,7 @@ const MinimalLoginContainer = ({ onLogin, ignoreUnlock = false, needHelp }: Prop
                         ignoreUnlock,
                     })
                         .then(handleResult)
-                        .catch(errorHandler)
+                        .catch(handleError)
                 }
             />
         );
