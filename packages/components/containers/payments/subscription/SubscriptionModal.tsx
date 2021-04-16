@@ -319,7 +319,6 @@ const SubscriptionModal = ({
 
     return (
         <FormModal
-            hasClose={[SUBSCRIPTION_STEPS.PLAN_SELECTION].includes(model.step)}
             footer={null}
             className={classnames([
                 'subscription-modal',
