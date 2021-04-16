@@ -1,9 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
-
-import { AppLink, ButtonLike } from '../../components';
+import { ButtonLike, SettingsLink } from '../../components';
 
 import { SettingsSection, SettingsParagraph } from '../account';
 import PmMeButton from './PmMeButton';
@@ -33,7 +31,7 @@ const PmMeSection = ({ isPMAddressActive }: Props) => {
                             .t`You can now receive messages from your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.`}
                     </SettingsParagraph>
 
-                    <ButtonLike color="norm" as={AppLink} to="/subscription" toApp={getAccountSettingsApp()}>
+                    <ButtonLike color="norm" as={SettingsLink} path="/dashboard">
                         {c('Action').t`Upgrade`}
                     </ButtonLike>
                 </>
