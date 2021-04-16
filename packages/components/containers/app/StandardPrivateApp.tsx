@@ -1,3 +1,4 @@
+import { getHasNonDelinquentScope } from 'proton-shared/lib/user/helpers';
 import React, { useState, useRef, useEffect, FunctionComponent } from 'react';
 import { AddressesModel, UserModel, UserSettingsModel } from 'proton-shared/lib/models';
 import { unique } from 'proton-shared/lib/helpers/array';
@@ -10,12 +11,7 @@ import { Address, User as tsUser, UserSettings as tsUserSettings } from 'proton-
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 import { getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { getBrowserLocale, getClosestLocaleCode } from 'proton-shared/lib/i18n/helper';
-import {
-    APPS,
-    REQUIRES_INTERNAL_EMAIL_ADDRESS,
-    REQUIRES_NONDELINQUENT,
-    UNPAID_STATE,
-} from 'proton-shared/lib/constants';
+import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS, REQUIRES_NONDELINQUENT } from 'proton-shared/lib/constants';
 import { getHasOnlyExternalAddresses } from 'proton-shared/lib/helpers/address';
 
 import { useApi, useCache, useConfig, useErrorHandler } from '../../hooks';
@@ -108,7 +104,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             const [userSettings, user] = result as [tsUserSettings, tsUser];
 
             const hasNonDelinquentRequirement = REQUIRES_NONDELINQUENT.includes(APP_NAME);
-            const hasNonDelinquentScope = user.Delinquent < UNPAID_STATE.DELINQUENT;
+            const hasNonDelinquentScope = getHasNonDelinquentScope(user);
             hasDelinquentBlockRef.current = hasNonDelinquentRequirement && !hasNonDelinquentScope;
 
             const browserLocale = getBrowserLocale();

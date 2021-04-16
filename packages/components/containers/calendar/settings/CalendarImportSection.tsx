@@ -20,7 +20,8 @@ interface Props {
 }
 
 const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props) => {
-    const canImport = !!activeCalendars.length && !user.isDelinquent;
+    const canImport = !!activeCalendars.length && user.hasNonDelinquentScope;
+    const showAlert = !activeCalendars.length && user.hasNonDelinquentScope;
     const { createModal } = useModals();
     const handleImport = () =>
         canImport && defaultCalendar
@@ -29,9 +30,9 @@ const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props
 
     return (
         <SettingsSection>
-            {canImport ? null : (
+            {showAlert ? (
                 <Alert type="warning">{c('Info').t`You need to have an active calendar to import your events.`}</Alert>
-            )}
+            ) : null}
             <SettingsParagraph learnMoreUrl="https://protonmail.com/support/knowledge-base/import-calendar-to-protoncalendar/">
                 {c('Info')
                     .t`You can import ICS files from another calendar to ${CALENDAR_APP_NAME}. This lets you quickly import one event or your entire agenda.`}
