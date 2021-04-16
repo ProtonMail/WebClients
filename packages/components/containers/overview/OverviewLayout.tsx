@@ -1,9 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import { c } from 'ttag';
 import { hasMailPlus } from 'proton-shared/lib/helpers/subscription';
-import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
-import { AppLink, SectionConfig, ButtonLike } from '../../components';
+import { SectionConfig, ButtonLike, SettingsLink } from '../../components';
 import { useUser, useSubscription, useOrganization, useUserSettings } from '../../hooks';
 
 import SummarySection from './SummarySection';
@@ -67,12 +66,11 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                         </p>
                         <div>
                             <ButtonLike
-                                as={AppLink}
+                                as={SettingsLink}
                                 className="increase-click-surface color-inherit"
                                 color="weak"
                                 shape="outline"
-                                to="/subscription"
-                                toApp={getAccountSettingsApp()}
+                                path="/dashboard"
                             >
                                 {c('Action').t`Upgrade`}
                             </ButtonLike>
@@ -87,12 +85,11 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                         </p>
                         <div>
                             <ButtonLike
-                                as={AppLink}
+                                as={SettingsLink}
                                 className="increase-click-surface color-inherit"
                                 color="weak"
                                 shape="outline"
-                                to="/subscription"
-                                toApp={getAccountSettingsApp()}
+                                path="/dashboard"
                             >
                                 {c('Action').t`Upgrade`}
                             </ButtonLike>

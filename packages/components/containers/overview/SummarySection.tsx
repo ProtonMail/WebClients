@@ -4,10 +4,10 @@ import { UserModel, UserSettings, Organization, Subscription, Plan } from 'proto
 import { getInitials } from 'proton-shared/lib/helpers/string';
 import { getPlan } from 'proton-shared/lib/helpers/subscription';
 import { PLAN_SERVICES, APPS, PLANS } from 'proton-shared/lib/constants';
-import { getAccountSettingsApp, getAppName } from 'proton-shared/lib/apps/helper';
+import { getAppName } from 'proton-shared/lib/apps/helper';
 import { getClosestLocaleCode } from 'proton-shared/lib/i18n/helper';
 
-import { AppLink, Icon, Loader, SettingsLink } from '../../components';
+import { Icon, Loader, SettingsLink } from '../../components';
 import { useConfig } from '../../hooks';
 
 interface Props {
@@ -143,7 +143,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
             ) : null}
             {APP_NAME === APPS.PROTONACCOUNT ? null : (
                 <div className="mb1">
-                    <AppLink to="/" toApp={getAccountSettingsApp()}>{c('Link').t`Manage account`}</AppLink>
+                    <SettingsLink path="/dashboard">{c('Link').t`Manage account`}</SettingsLink>
                 </div>
             )}
         </div>
