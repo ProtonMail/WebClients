@@ -41,8 +41,13 @@ const AddressModal = ({ onClose, member, members, organizationKey, ...rest }: Pr
     const hasPremium = addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
     const handleChange = (key: string) => ({ target }: any) => update(key, target.value);
 
+    const selectedMember = members.find((otherMember) => otherMember.ID === model.id);
+
     const handleSubmit = async () => {
-        const { name: DisplayName, address: Local, domain: Domain, id: MemberID } = model;
+        if (!selectedMember) {
+            throw new Error('Missing member');
+        }
+        const { name: DisplayName, address: Local, domain: Domain } = model;
 
         if (!hasPremium && `${user.Name}@${premiumDomain}`.toLowerCase() === `${Local}@${Domain}`.toLowerCase()) {
             return createNotification({
@@ -54,7 +59,7 @@ const AddressModal = ({ onClose, member, members, organizationKey, ...rest }: Pr
 
         const { Address } = await api(
             createAddress({
-                MemberID,
+                MemberID: selectedMember.ID,
                 Local,
                 Domain,
                 DisplayName,
@@ -66,11 +71,11 @@ const AddressModal = ({ onClose, member, members, organizationKey, ...rest }: Pr
         onClose?.();
         createNotification({ text: c('Success').t`Address added` });
 
-        if (initialMember.Self || initialMember.Private === MEMBER_PRIVATE.READABLE) {
+        if (selectedMember.Self || selectedMember.Private === MEMBER_PRIVATE.READABLE) {
             createModal(
                 <CreateMissingKeysAddressModal
                     organizationKey={organizationKey}
-                    member={initialMember}
+                    member={selectedMember}
                     addressesToGenerate={[Address]}
                 />
             );
@@ -116,7 +121,7 @@ const AddressModal = ({ onClose, member, members, organizationKey, ...rest }: Pr
                             />
                         </div>
                         <div className="flex-autogrid-item pb0">
-                            <DomainsSelect member={initialMember} onChange={handleChange('domain')} />
+                            <DomainsSelect member={selectedMember || initialMember} onChange={handleChange('domain')} />
                         </div>
                     </div>
                 </Field>
