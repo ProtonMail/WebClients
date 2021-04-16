@@ -279,6 +279,7 @@ const SubscriptionModal = ({
     }, [model.cycle, model.currency]);
 
     const backStep = BACK[model.step];
+    const isFreeUserWithFreePlanSelected = user.isFree && !Object.keys(model.planIDs).length;
 
     return (
         <FormModal
@@ -357,6 +358,7 @@ const SubscriptionModal = ({
                                         method={method}
                                         checkResult={checkResult}
                                         className="w100"
+                                        disabled={isFreeUserWithFreePlanSelected}
                                     />
                                 }
                                 plans={plans}
@@ -427,6 +429,7 @@ const SubscriptionModal = ({
                                         method={method}
                                         checkResult={checkResult}
                                         className="w100"
+                                        disabled={isFreeUserWithFreePlanSelected}
                                     />
                                 }
                                 plans={plans}
