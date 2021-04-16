@@ -18,6 +18,7 @@ interface Props {
     loading?: boolean;
     method?: PAYMENT_METHOD_TYPE;
     paypal: PayPalHook;
+    disabled?: boolean;
 }
 
 const SubscriptionSubmitButton = ({
@@ -28,19 +29,21 @@ const SubscriptionSubmitButton = ({
     loading,
     method,
     checkResult,
+    disabled,
     onClose,
 }: Props) => {
     if (step === SUBSCRIPTION_STEPS.CUSTOMIZATION) {
         return (
-            <PrimaryButton className={className} loading={loading} type="submit">{c('Action')
+            <PrimaryButton className={className} disabled={disabled} loading={loading} type="submit">{c('Action')
                 .t`Continue`}</PrimaryButton>
         );
     }
 
     if (checkResult?.AmountDue === 0) {
         return (
-            <PrimaryButton className={className} loading={loading} disabled={!canPay} type="submit">{c('Action')
-                .t`Confirm`}</PrimaryButton>
+            <PrimaryButton className={className} loading={loading} disabled={disabled || !canPay} type="submit">{c(
+                'Action'
+            ).t`Confirm`}</PrimaryButton>
         );
     }
 
@@ -58,13 +61,13 @@ const SubscriptionSubmitButton = ({
 
     if (method && [PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN].includes(method as any)) {
         return (
-            <PrimaryButton className={className} loading={loading} onClick={onClose}>{c('Action')
+            <PrimaryButton className={className} disabled={disabled} loading={loading} onClick={onClose}>{c('Action')
                 .t`Done`}</PrimaryButton>
         );
     }
 
     return (
-        <PrimaryButton className={className} loading={loading} disabled={!canPay} type="submit">{c('Action')
+        <PrimaryButton className={className} loading={loading} disabled={disabled || !canPay} type="submit">{c('Action')
             .t`Pay`}</PrimaryButton>
     );
 };
