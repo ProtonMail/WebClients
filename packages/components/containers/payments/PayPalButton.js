@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Button } from '../../components';
 import { useNotifications } from '../../hooks';
 
-const PayPalButton = ({ amount, type, children, className, paypal, ...rest }) => {
+const PayPalButton = ({ amount, type, children, paypal, ...rest }) => {
     const [retry, setRetry] = useState(false);
     const { createNotification } = useNotifications();
 
@@ -27,11 +27,11 @@ const PayPalButton = ({ amount, type, children, className, paypal, ...rest }) =>
             paypal.onToken();
             setRetry(false);
         };
-        return <Button onClick={handleRetry} className={className}>{c('Action').t`Retry`}</Button>;
+        return <Button onClick={handleRetry} {...rest}>{c('Action').t`Retry`}</Button>;
     }
 
     if (paypal.loadingVerification) {
-        return <Button loading className={className}>{c('Action').t`Loading verification`}</Button>;
+        return <Button loading {...rest}>{c('Action').t`Loading verification`}</Button>;
     }
 
     const handleClick = async () => {
@@ -47,13 +47,7 @@ const PayPalButton = ({ amount, type, children, className, paypal, ...rest }) =>
     };
 
     return (
-        <Button
-            disabled={!paypal.isReady}
-            onClick={handleClick}
-            loading={paypal.loadingToken}
-            className={className}
-            {...rest}
-        >
+        <Button disabled={!paypal.isReady} onClick={handleClick} loading={paypal.loadingToken} {...rest}>
             {children}
         </Button>
     );
@@ -61,7 +55,6 @@ const PayPalButton = ({ amount, type, children, className, paypal, ...rest }) =>
 
 PayPalButton.propTypes = {
     type: PropTypes.string,
-    className: PropTypes.string,
     amount: PropTypes.number.isRequired,
     children: PropTypes.node.isRequired,
     paypal: PropTypes.object.isRequired,
