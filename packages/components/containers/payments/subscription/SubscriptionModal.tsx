@@ -281,6 +281,42 @@ const SubscriptionModal = ({
     const backStep = BACK[model.step];
     const isFreeUserWithFreePlanSelected = user.isFree && !Object.keys(model.planIDs).length;
 
+    const submitButton = (
+        <SubscriptionSubmitButton
+            onClose={onClose}
+            canPay={canPay}
+            paypal={paypal}
+            step={model.step}
+            loading={loadingCheck || loading}
+            method={method}
+            checkResult={checkResult}
+            className="w100"
+            disabled={isFreeUserWithFreePlanSelected}
+        />
+    );
+
+    const subscriptionCheckout = (
+        <div className="subscriptionCheckout-column bg-weak on-mobile-w100">
+            <div className="subscriptionCheckout-container">
+                <SubscriptionCheckout
+                    submit={submitButton}
+                    plans={plans}
+                    service={currentService}
+                    checkResult={checkResult}
+                    loading={loadingCheck}
+                    currency={model.currency}
+                    cycle={model.cycle}
+                    planIDs={model.planIDs}
+                    gift={model.gift}
+                    coupon={model.coupon}
+                    onChangeCurrency={(currency) => setModel({ ...model, currency })}
+                    onChangeCycle={(cycle) => setModel({ ...model, cycle })}
+                    onChangeGift={handleGift}
+                />
+            </div>
+        </div>
+    );
+
     return (
         <FormModal
             hasClose={[SUBSCRIPTION_STEPS.PLAN_SELECTION].includes(model.step)}
@@ -345,37 +381,7 @@ const SubscriptionModal = ({
                             />
                         </div>
                     </div>
-                    <div className="subscriptionCheckout-column bg-weak on-mobile-w100">
-                        <div className="subscriptionCheckout-container">
-                            <SubscriptionCheckout
-                                submit={
-                                    <SubscriptionSubmitButton
-                                        onClose={onClose}
-                                        canPay={canPay}
-                                        paypal={paypal}
-                                        step={model.step}
-                                        loading={loadingCheck || loading}
-                                        method={method}
-                                        checkResult={checkResult}
-                                        className="w100"
-                                        disabled={isFreeUserWithFreePlanSelected}
-                                    />
-                                }
-                                plans={plans}
-                                service={currentService}
-                                checkResult={checkResult}
-                                loading={loadingCheck}
-                                currency={model.currency}
-                                cycle={model.cycle}
-                                planIDs={model.planIDs}
-                                gift={model.gift}
-                                coupon={model.coupon}
-                                onChangeCurrency={(currency) => setModel({ ...model, currency })}
-                                onChangeCycle={(cycle) => setModel({ ...model, cycle })}
-                                onChangeGift={handleGift}
-                            />
-                        </div>
-                    </div>
+                    {subscriptionCheckout}
                 </div>
             )}
             {model.step === SUBSCRIPTION_STEPS.CHECKOUT && (
@@ -416,37 +422,7 @@ const SubscriptionModal = ({
                             )}
                         </div>
                     </div>
-                    <div className="subscriptionCheckout-column bg-weak on-mobile-w100">
-                        <div className="subscriptionCheckout-container">
-                            <SubscriptionCheckout
-                                submit={
-                                    <SubscriptionSubmitButton
-                                        onClose={onClose}
-                                        canPay={canPay}
-                                        paypal={paypal}
-                                        step={step}
-                                        loading={loadingCheck || loading}
-                                        method={method}
-                                        checkResult={checkResult}
-                                        className="w100"
-                                        disabled={isFreeUserWithFreePlanSelected}
-                                    />
-                                }
-                                plans={plans}
-                                service={currentService}
-                                checkResult={checkResult}
-                                loading={loadingCheck}
-                                currency={model.currency}
-                                cycle={model.cycle}
-                                planIDs={model.planIDs}
-                                gift={model.gift}
-                                coupon={model.coupon}
-                                onChangeCurrency={(currency) => setModel({ ...model, currency })}
-                                onChangeCycle={(cycle) => setModel({ ...model, cycle })}
-                                onChangeGift={handleGift}
-                            />
-                        </div>
-                    </div>
+                    {subscriptionCheckout}
                 </div>
             )}
             {model.step === SUBSCRIPTION_STEPS.UPGRADE && (
