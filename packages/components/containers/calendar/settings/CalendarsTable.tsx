@@ -29,13 +29,13 @@ const CalendarsTable = ({ calendars, defaultCalendarID, user, onEdit, onSetDefau
                     const isDefault = ID === defaultCalendarID;
 
                     const list = [
-                        !user.isDelinquent && {
+                        user.hasNonDelinquentScope && {
                             text: c('Action').t`Edit`,
                             onClick: () => onEdit(calendar),
                         },
                         !isDisabled &&
                             !isDefault &&
-                            !user.isDelinquent && {
+                            user.hasNonDelinquentScope && {
                                 text: c('Action').t`Set as default`,
                                 onClick: () => onSetDefault(ID),
                             },
