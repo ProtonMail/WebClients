@@ -15,18 +15,16 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 
-export const getGeneralPage = (user: UserModel, isPMAddressActive: boolean) => {
+export const getGeneralPage = (user: UserModel, showPmMeSection: boolean) => {
     return {
         text: c('Title').t`General`,
         to: '/mail/general',
         icon: 'general',
         subsections: [
-            user.canPay &&
-                !user.isSubUser &&
-                !isPMAddressActive && {
-                    text: c('Title').t`Short domain (@pm.me)`,
-                    id: 'pmme',
-                },
+            showPmMeSection && {
+                text: c('Title').t`Short domain (@pm.me)`,
+                id: 'pmme',
+            },
             {
                 text: c('Title').t`Messages`,
                 id: 'messages',
@@ -50,11 +48,13 @@ const MailGeneralSettings = ({ location, user }: Props) => {
         return null;
     }
 
+    const { hasPaidMail, canPay, isSubUser } = user;
     const isPMAddressActive = addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
+    const showPmMeSection = canPay && !isSubUser && !(isPMAddressActive && hasPaidMail);
 
     return (
-        <PrivateMainSettingsAreaWithPermissions location={location} config={getGeneralPage(user, isPMAddressActive)}>
-            {user.canPay && !user.isSubUser && !isPMAddressActive && <PmMeSection addresses={addresses} />}
+        <PrivateMainSettingsAreaWithPermissions location={location} config={getGeneralPage(user, showPmMeSection)}>
+            {showPmMeSection && <PmMeSection isPMAddressActive={isPMAddressActive} />}
             <MessagesSection />
             <MailGeneralAdvancedSection />
         </PrivateMainSettingsAreaWithPermissions>
