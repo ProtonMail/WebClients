@@ -6,7 +6,7 @@ import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { Address, UserModel } from 'proton-shared/lib/interfaces';
 
 import { useApi, useEventManager, useModals, useNotifications } from '../../../hooks';
-import { AppLink, Card, Alert, ConfirmModal, ButtonLike, ErrorButton, PrimaryButton } from '../../../components';
+import { Card, Alert, ConfirmModal, ButtonLike, ErrorButton, PrimaryButton, SettingsLink } from '../../../components';
 
 import { SettingsParagraph, SettingsSection } from '../../account';
 
@@ -119,7 +119,7 @@ const CalendarsSection = ({
                             {c('Upgrade notice')
                                 .t`Upgrade to a paid plan to create up to 25 calendars, allowing you to make calendars for work, to share with friends, and just for yourself.`}
                         </p>
-                        <ButtonLike as={AppLink} to="/subscription" color="norm" shape="solid" size="small">
+                        <ButtonLike as={SettingsLink} path="/dashboard" color="norm" shape="solid" size="small">
                             {c('Action').t`Upgrade`}
                         </ButtonLike>
                     </div>
