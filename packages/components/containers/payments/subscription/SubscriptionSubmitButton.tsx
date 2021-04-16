@@ -59,7 +59,7 @@ const SubscriptionSubmitButton = ({
         );
     }
 
-    if (method && [PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN].includes(method as any)) {
+    if (!loading && method && [PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN].includes(method as any)) {
         return (
             <PrimaryButton className={className} disabled={disabled} loading={loading} onClick={onClose}>{c('Action')
                 .t`Done`}</PrimaryButton>
