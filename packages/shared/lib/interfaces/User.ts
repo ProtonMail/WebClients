@@ -29,6 +29,7 @@ export interface UserModel extends User {
     isPrivate: boolean;
     isSubUser: boolean;
     isDelinquent: boolean;
+    hasNonDelinquentScope: boolean;
     hasPaidMail: boolean;
     hasPaidVpn: boolean;
     canPay: boolean;
