@@ -1,4 +1,4 @@
-import { USER_ROLES } from '../constants';
+import { UNPAID_STATE, USER_ROLES } from '../constants';
 
 const { ADMIN_ROLE, MEMBER_ROLE, FREE_ROLE } = USER_ROLES;
 
@@ -10,7 +10,8 @@ export const isFree = (user) => !isPaid(user);
 export const isAdmin = ({ Role }) => Role === ADMIN_ROLE;
 export const isMember = ({ Role }) => Role === MEMBER_ROLE;
 export const isSubUser = ({ OrganizationPrivateKey }) => typeof OrganizationPrivateKey !== 'undefined';
-export const isDelinquent = ({ Delinquent }) => Delinquent;
+export const isDelinquent = ({ Delinquent }) => !!Delinquent;
+export const getHasNonDelinquentScope = ({ Delinquent }) => Delinquent < UNPAID_STATE.DELINQUENT;
 export const canPay = (user) => [ADMIN_ROLE, FREE_ROLE].includes(user.Role) && !isSubUser(user);
 
 export const getInfo = (User) => {
@@ -22,6 +23,7 @@ export const getInfo = (User) => {
         isPrivate: isPrivate(User),
         isSubUser: isSubUser(User),
         isDelinquent: isDelinquent(User),
+        hasNonDelinquentScope: getHasNonDelinquentScope(User),
         hasPaidMail: hasPaidMail(User),
         hasPaidVpn: hasPaidVpn(User),
         canPay: canPay(User),
