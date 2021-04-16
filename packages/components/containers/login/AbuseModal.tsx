@@ -1,16 +1,12 @@
 import React from 'react';
 import { c } from 'ttag';
-import { FormModal, Alert, Href } from '../../components';
+import { FormModal, Href } from '../../components';
 
-const AbuseModal = (props: any) => {
-    const title = c('Title').t`Account disabled`;
+interface Props {
+    message?: string;
+}
 
-    const abuseOrFraudLink = (
-        <Href url="https://protonmail.com/support/knowledge-base/account-disabled/" key={0}>
-            {c('Info').t`abuse or fraud`}
-        </Href>
-    );
-
+const AbuseModal = ({ message, ...rest }: Props) => {
     const contactLink = (
         <Href url="https://protonmail.com/abuse" key={1}>
             {c('Info').t`here`}
@@ -18,11 +14,21 @@ const AbuseModal = (props: any) => {
     );
 
     return (
-        <FormModal hasClose={false} hasSubmit={false} title={title} close={c('Action').t`Close`} {...props}>
-            <Alert type="warning">
-                <div className="mb1">{c('Info').jt`Account disabled due to ${abuseOrFraudLink}.`}</div>
-                <div>{c('Info').jt`You can find more information and contact us ${contactLink}.`}</div>
-            </Alert>
+        <FormModal
+            hasClose={false}
+            hasSubmit={false}
+            title={c('Title').t`Account suspended`}
+            small
+            close={c('Action').t`Close`}
+            {...rest}
+        >
+            {message || (
+                <>
+                    <div className="mb1">{c('Info')
+                        .t`This account has been suspended due to a potential policy violation.`}</div>
+                    <div>{c('Info').jt`If you believe this is in error, please contact us ${contactLink}.`}</div>
+                </>
+            )}
         </FormModal>
     );
 };
