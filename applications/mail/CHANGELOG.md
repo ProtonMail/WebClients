@@ -15,7 +15,8 @@
 -   Fixed an issue where some newsletters would display with a smaller font size than the original
 -   Fixed an issue where on rare occasions some messages sent from beta.protonmail.com would be displayed with minor font size changes on protonmail.com
 -   Fixed an issue where certain messages would not automatically expand in search results
--   Minor UI fixes
+-   Updated the readability of read and unread emails in dark mode
+-   Minor UI fixes and improvements
 
 # [4.0.0 - Beta 39] - 2021-04-08
 
