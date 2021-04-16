@@ -39,7 +39,7 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit }) => {
                     <Alert>{c('Info').t`Please verify the payment in the new tab.`}</Alert>
                 </>
             ) : null}
-            {!paypal.loading && ['signup', 'subscription', 'invoice', 'credit'].includes(type) ? (
+            {!paypal.loadingVerification && ['signup', 'subscription', 'invoice', 'credit'].includes(type) ? (
                 <>
                     <Alert>
                         {c('Info')
@@ -52,7 +52,7 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit }) => {
                         .jt`You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please ${clickHere}.`}</Alert>
                 </>
             ) : null}
-            {!paypal.loading && type === 'update' ? (
+            {!paypal.loadingVerification && type === 'update' ? (
                 <>
                     <Alert>
                         {c('Info')
@@ -65,7 +65,7 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit }) => {
                         .t`You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.`}</Alert>
                 </>
             ) : null}
-            {!paypal.loading && ['donation', 'human-verification'].includes(type) ? (
+            {!paypal.loadingVerification && ['donation', 'human-verification'].includes(type) ? (
                 <>
                     <Alert>
                         {c('Info')
