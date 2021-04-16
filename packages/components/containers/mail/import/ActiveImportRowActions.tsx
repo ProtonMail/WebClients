@@ -48,7 +48,6 @@ const ActiveImportRowActions = ({ currentImport }: Props) => {
             );
             await api(resumeMailImport(ID));
             await call();
-            /* @todo success notifications? */
         });
     };
 

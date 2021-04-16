@@ -4,6 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { noop } from 'proton-shared/lib/helpers/function';
 import { Address } from 'proton-shared/lib/interfaces';
+import { Folder } from 'proton-shared/lib/interfaces/Folder';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 
@@ -27,7 +28,7 @@ import {
 import { ImportModalModel, ImportPayloadModel, TIME_UNIT } from '../interfaces';
 import { timeUnitLabels } from '../constants';
 import ImportManageFolders from './ImportManageFolders';
-import { splitEscaped } from '../helpers';
+import { mappingHasFoldersTooLong, mappingHasLabelsTooLong, mappingHasUnavailableNames } from '../helpers';
 
 interface Props {
     modalModel: ImportModalModel;
@@ -35,6 +36,9 @@ interface Props {
     addresses: Address[];
     onClose?: () => void;
     customizeFoldersOpen: boolean;
+    isLabelMapping: boolean;
+    folders: Folder[];
+    labels: Label[];
 }
 
 const CustomizeImportModal = ({
@@ -43,6 +47,9 @@ const CustomizeImportModal = ({
     addresses,
     onClose = noop,
     customizeFoldersOpen = false,
+    isLabelMapping,
+    folders,
+    labels,
     ...rest
 }: Props) => {
     const initialPayload = modalModel.payload;
@@ -53,12 +60,16 @@ const CustomizeImportModal = ({
     const { createModal } = useModals();
     const [isEditing, setIsEditing] = useState(false);
 
-    const hasFoldersTooLongError = useMemo(() => {
-        return customizedPayload.Mapping.some((m) => {
-            const splitted = splitEscaped(m.Destinations.FolderPath);
-            return m.checked && splitted[splitted.length - 1].length >= 100;
-        });
-    }, [customizedPayload.Mapping]);
+    const hasUnavailableNamesError = useMemo(
+        () => mappingHasUnavailableNames(customizedPayload.Mapping, isLabelMapping ? folders : labels, isLabelMapping),
+        [customizedPayload.Mapping, folders, labels]
+    );
+    const hasFoldersTooLongError = useMemo(() => mappingHasFoldersTooLong(customizedPayload.Mapping), [
+        customizedPayload.Mapping,
+    ]);
+    const hasLabelsTooLongError = useMemo(() => mappingHasLabelsTooLong(customizedPayload.Mapping), [
+        customizedPayload.Mapping,
+    ]);
 
     const addressesOptions = addresses
         .filter((addr) => addr.Keys.some((k) => k.Active))
@@ -155,7 +166,7 @@ const CustomizeImportModal = ({
     };
 
     const totalFoldersCount = modalModel.providerFolders.length;
-    const selectedFoldersCount = customizedPayload.Mapping.length;
+    const selectedFoldersCount = customizedPayload.Mapping.filter((m) => m.checked).length;
 
     const handleSubmit = () => {
         updateModalModel({
@@ -170,15 +181,22 @@ const CustomizeImportModal = ({
         setIsEditing(editing);
     };
 
+    const hideCopy = isLabelMapping ? c('Action').t`Hide labels` : c('Action').t`Hide folders`;
+    const showCopy = isLabelMapping ? c('Action').t`Show labels` : c('Action').t`Show folders`;
+    const toggleActionCopy = organizeFolderVisible ? hideCopy : showCopy;
+
+    const submitDisabled =
+        isEditing ||
+        !selectedFoldersCount ||
+        hasFoldersTooLongError ||
+        hasLabelsTooLongError ||
+        hasUnavailableNamesError;
+
     return (
         <FormModal
             title={c('Title').t`Customize import`}
             submit={
-                <Button
-                    color="norm"
-                    disabled={isEditing || !selectedFoldersCount || hasFoldersTooLongError}
-                    type="submit"
-                >
+                <Button color="norm" disabled={submitDisabled} type="submit">
                     {c('Action').t`Save`}
                 </Button>
             }
@@ -189,8 +207,11 @@ const CustomizeImportModal = ({
             {...rest}
         >
             <Alert>
-                {c('Info')
-                    .t`Create a label for the imported messages, a time range for this import, and the folders you would like to import.`}
+                {isLabelMapping
+                    ? c('Info')
+                          .t`Create a label for the imported messages, a time range for this import, and the labels you would like to import.`
+                    : c('Info')
+                          .t`Create a label for the imported messages, a time range for this import, and the folders you would like to import.`}
             </Alert>
 
             <div className="mb1 border-bottom flex-align-items-center">
@@ -281,28 +302,40 @@ const CustomizeImportModal = ({
 
             <div className="mb1 flex-align-items-center">
                 <Row>
-                    <FormLabel>{c('Label').t`Manage folders`}</FormLabel>
+                    <FormLabel>{isLabelMapping ? c('Label').t`Manage labels` : c('Label').t`Manage folders`}</FormLabel>
                     <div className="flex flex-align-items-center">
-                        <Icon name="parent-folder" className="mr0-5" />
+                        <Icon name={isLabelMapping ? 'folder-label' : 'parent-folder'} className="mr0-5" />
                         {selectedFoldersCount === totalFoldersCount ? (
                             <span>
-                                {c('Info').ngettext(
-                                    msgid`All (${totalFoldersCount} folder)`,
-                                    `All (${totalFoldersCount} folders)`,
-                                    totalFoldersCount
-                                )}
+                                {isLabelMapping
+                                    ? c('Info').ngettext(
+                                          msgid`All (${totalFoldersCount} label)`,
+                                          `All (${totalFoldersCount} labels)`,
+                                          totalFoldersCount
+                                      )
+                                    : c('Info').ngettext(
+                                          msgid`All (${totalFoldersCount} folder)`,
+                                          `All (${totalFoldersCount} folders)`,
+                                          totalFoldersCount
+                                      )}
                             </span>
                         ) : (
                             <span>
-                                {c('Info').ngettext(
-                                    msgid`${selectedFoldersCount} folder selected`,
-                                    `${selectedFoldersCount} folders selected`,
-                                    selectedFoldersCount
-                                )}
+                                {isLabelMapping
+                                    ? c('Info').ngettext(
+                                          msgid`${selectedFoldersCount} label selected`,
+                                          `${selectedFoldersCount} labels selected`,
+                                          selectedFoldersCount
+                                      )
+                                    : c('Info').ngettext(
+                                          msgid`${selectedFoldersCount} folder selected`,
+                                          `${selectedFoldersCount} folders selected`,
+                                          selectedFoldersCount
+                                      )}
                             </span>
                         )}
                         <Button shape="outline" className="ml2" onClick={toggleFolders}>
-                            {organizeFolderVisible ? c('Action').t`Hide folders` : c('Action').t`Show folders`}
+                            {toggleActionCopy}
                         </Button>
                     </div>
                 </Row>
@@ -315,6 +348,9 @@ const CustomizeImportModal = ({
                     payload={customizedPayload}
                     onChangePayload={handleChangePayload}
                     toggleEditing={toggleEditing}
+                    isLabelMapping={isLabelMapping}
+                    folders={folders}
+                    labels={labels}
                 />
             )}
         </FormModal>
