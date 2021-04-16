@@ -1,32 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { APPS } from 'proton-shared/lib/constants';
 import { getItem, setItem } from 'proton-shared/lib/helpers/storage';
-import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 
-import { useUser, useConfig } from '../../hooks';
+import { useUser } from '../../hooks';
+import { SettingsLink } from '../../components';
+
 import TopBanner from './TopBanner';
-import AppLink from '../../components/link/AppLink';
 
 const IGNORE_STORAGE_LIMIT_KEY = 'ignore-storage-limit';
 
 const StorageLimitTopBanner = () => {
     const [user] = useUser();
-    const { APP_NAME } = useConfig();
     const spacePercentage = (user.UsedSpace * 100) / user.MaxSpace;
     const spaceDisplayed = Number.isNaN(spacePercentage) ? 0 : Math.floor(spacePercentage);
     const [ignoreStorageLimit, setIgnoreStorageLimit] = useState(
         getItem(`${IGNORE_STORAGE_LIMIT_KEY}${user.ID}`) === 'true'
     );
-    const paymentLinkProps =
-        APP_NAME === APPS.PROTONVPN_SETTINGS
-            ? {
-                  to: '/payments#invoices',
-              }
-            : {
-                  to: '/subscription#invoices',
-                  toApp: getAccountSettingsApp(),
-              };
     useEffect(() => {
         if (ignoreStorageLimit) {
             setItem(`${IGNORE_STORAGE_LIMIT_KEY}${user.ID}`, 'true');
@@ -34,9 +23,9 @@ const StorageLimitTopBanner = () => {
     }, [ignoreStorageLimit]);
 
     const upgradeLink = user.canPay ? (
-        <AppLink key="storage-link" className="color-inherit" {...paymentLinkProps}>
+        <SettingsLink key="storage-link" className="color-inherit" path="/dashboard">
             {c('Link').t`Upgrade account`}
-        </AppLink>
+        </SettingsLink>
     ) : (
         ''
     );

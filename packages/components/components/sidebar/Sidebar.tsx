@@ -4,8 +4,7 @@ import { c } from 'ttag';
 import { APPS } from 'proton-shared/lib/constants';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import { hasMailProfessional, hasVisionary } from 'proton-shared/lib/helpers/subscription';
-import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
-import { AppLink } from '../link';
+import { SettingsLink } from '../link';
 import { Meter } from '../progress';
 import { Tooltip } from '../tooltip';
 import { useUser, useSubscription, useConfig } from '../../hooks';
@@ -81,10 +80,9 @@ const Sidebar = ({ expanded = false, onToggleExpand, hasAppLinks = true, logo, p
                     {canAddStorage ? (
                         <Tooltip title={c('Storage').t`Upgrade storage`}>
                             <ButtonLike
-                                as={AppLink}
-                                to="/subscription"
+                                as={SettingsLink}
+                                path="/dashboard"
                                 shape="link"
-                                toApp={getAccountSettingsApp()}
                                 className="color-inherit hover-same-color text-no-decoration text-xs text-center mb0-5"
                                 title={c('Storage').t`Add storage space`}
                             >
