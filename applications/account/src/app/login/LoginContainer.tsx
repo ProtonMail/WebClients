@@ -13,6 +13,7 @@ import { removePersistedSession } from 'proton-shared/lib/authentication/persist
 import { getAppName } from 'proton-shared/lib/apps/helper';
 import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
 import { handleCreateInternalAddressAndKey } from 'proton-shared/lib/keys';
+import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 
 import {
     AbuseModal,
@@ -123,7 +124,8 @@ const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
 
     const handleError = (e: any) => {
         if (e.data?.Code === API_CUSTOM_ERROR_CODES.AUTH_ACCOUNT_DISABLED) {
-            createModal(<AbuseModal />);
+            const apiErrorMessage = getApiErrorMessage(e);
+            createModal(<AbuseModal message={apiErrorMessage} />);
         } else {
             errorHandler(e);
         }
