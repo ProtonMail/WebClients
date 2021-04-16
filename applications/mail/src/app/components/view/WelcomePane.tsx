@@ -1,9 +1,18 @@
 import React from 'react';
-import { useUser, AppLink, Href, useImporters, useFeature, FeatureCode, Loader, ButtonLike } from 'react-components';
+import {
+    useUser,
+    AppLink,
+    Href,
+    useImporters,
+    useFeature,
+    FeatureCode,
+    Loader,
+    ButtonLike,
+    SettingsLink,
+} from 'react-components';
 import { c, msgid } from 'ttag';
 import { Location } from 'history';
 import { MailSettings } from 'proton-shared/lib/interfaces';
-import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 import { MAILBOX_LABEL_IDS, APPS } from 'proton-shared/lib/constants';
 import { capitalize } from 'proton-shared/lib/helpers/string';
 import { LabelCount } from 'proton-shared/lib/interfaces/Label';
@@ -80,13 +89,9 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
             {user.hasPaidMail ? null : (
                 <div className="bg-primary p1 text-center">
                     <span className="mr1">{c('Info').jt`Increase storage space starting at $4/month.`}</span>
-                    <AppLink
-                        to="/subscription"
-                        toApp={getAccountSettingsApp()}
-                        className="text-bold link align-baseline color-inherit"
-                    >
+                    <SettingsLink path="/dashboard" className="text-bold link align-baseline color-inherit">
                         {c('Action').t`Upgrade`}
-                    </AppLink>
+                    </SettingsLink>
                 </div>
             )}
             <Container>
