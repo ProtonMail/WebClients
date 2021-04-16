@@ -5,12 +5,11 @@ import {
     SettingsPropsShared,
     PrivateMainSettingsArea,
     SectionConfig,
-    AppLink,
     ButtonLike,
+    SettingsLink,
 } from 'react-components';
 import { hasPermission } from 'proton-shared/lib/helpers/permissions';
 import { PERMISSIONS } from 'proton-shared/lib/constants';
-import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 import { c } from 'ttag';
 import upgradeSvg from 'design-system/assets/img/placeholders/upgrade.svg';
 import noAccess from 'design-system/assets/img/errors/no-access-page.svg';
@@ -52,14 +51,9 @@ const PrivateMainSettingsAreaWithPermissions = ({ config, location, children, se
                         {c('Info')
                             .t`Upgrade to a paid plan to access premium features and increase your storage space.`}
                     </Paragraph>
-                    <ButtonLike
-                        as={AppLink}
-                        to="/subscription"
-                        color="norm"
-                        size="large"
-                        toApp={getAccountSettingsApp()}
-                        className="mtauto"
-                    >{c('Action').t`Upgrade now`}</ButtonLike>
+                    <ButtonLike as={SettingsLink} path="/dashboard" color="norm" size="large" className="mtauto">{c(
+                        'Action'
+                    ).t`Upgrade now`}</ButtonLike>
                 </div>
             );
         }
