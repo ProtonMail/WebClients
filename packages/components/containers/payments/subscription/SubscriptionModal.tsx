@@ -85,8 +85,8 @@ const SubscriptionModal = ({
         [SUBSCRIPTION_STEPS.PLAN_SELECTION]: c('Title').t`Select a plan`,
         [SUBSCRIPTION_STEPS.CUSTOMIZATION]: c('Title').t`Customize your plan`,
         [SUBSCRIPTION_STEPS.CHECKOUT]: c('Title').t`Checkout`,
-        [SUBSCRIPTION_STEPS.UPGRADE]: c('Title').t`Processing`,
-        [SUBSCRIPTION_STEPS.THANKS]: c('Title').t`Thank you`,
+        [SUBSCRIPTION_STEPS.UPGRADE]: '',
+        [SUBSCRIPTION_STEPS.THANKS]: '',
     };
 
     const api = useApi();
