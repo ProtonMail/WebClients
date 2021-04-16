@@ -5,7 +5,7 @@ import {
     OnboardingModal,
     OnboardingStep,
     OnboardingStepRenderCallback,
-    useAppLink,
+    useSettingsLink,
 } from 'react-components';
 import { getAppName } from 'proton-shared/lib/apps/helper';
 import { APPS } from 'proton-shared/lib/constants';
@@ -14,7 +14,7 @@ import onboardingWelcome from 'design-system/assets/img/onboarding/mail-welcome.
 
 const MailOnboardingModal = (props: any) => {
     const appName = getAppName(APPS.PROTONMAIL);
-    const appLink = useAppLink();
+    const goToSettings = useSettingsLink();
 
     return (
         <OnboardingModal {...props}>
@@ -24,7 +24,7 @@ const MailOnboardingModal = (props: any) => {
                     submit={c('Onboarding').t`Start using ${appName}`}
                     onSubmit={onClose}
                     onClose={() => {
-                        appLink('/mail/import-export', APPS.PROTONACCOUNT);
+                        goToSettings('/import-export');
                         onClose?.();
                     }}
                     close={c('Action').t`Import your emails`}

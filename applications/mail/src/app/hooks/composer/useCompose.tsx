@@ -7,10 +7,9 @@ import {
     ConfirmModal,
     Alert,
     useAddresses,
-    useAppLink,
     useGetUser,
+    useSettingsLink,
 } from 'react-components';
-import { getAccountSettingsApp } from 'proton-shared/lib/apps/helper';
 import { MessageExtended, PartialMessageExtended } from '../../models/message';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useDraft } from '../useDraft';
@@ -57,7 +56,7 @@ export const useCompose = (
     const { createModal } = useModals();
     const createDraft = useDraft();
     const messageCache = useMessageCache();
-    const goToApp = useAppLink();
+    const goToSettings = useSettingsLink();
 
     return useHandler(async (composeArgs: ComposeArgs) => {
         const user = await getUser();
@@ -87,7 +86,7 @@ export const useCompose = (
                     confirm={c('Action').t`Upgrade`}
                     cancel={c('Action').t`Close`}
                     onConfirm={() => {
-                        goToApp('/subscription', getAccountSettingsApp());
+                        goToSettings('/dashboard');
                     }}
                 >
                     <Alert
