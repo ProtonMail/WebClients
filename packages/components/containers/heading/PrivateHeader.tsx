@@ -18,6 +18,7 @@ interface Props extends HeaderProps {
     logo?: React.ReactNode;
     settingsButton?: React.ReactNode;
     contactsButton?: React.ReactNode;
+    feedbackButton?: React.ReactNode;
     backUrl?: string;
     floatingButton?: React.ReactNode;
     searchBox?: React.ReactNode;
@@ -36,6 +37,7 @@ const PrivateHeader = ({
     logo,
     settingsButton,
     contactsButton,
+    feedbackButton,
     backUrl,
     searchBox,
     searchDropdown,
@@ -114,8 +116,9 @@ const PrivateHeader = ({
                             />
                         </TopNavbarListItem>
                     )}
-                    {!contactsButton ? null : <TopNavbarListItem noShrink>{contactsButton}</TopNavbarListItem>}
-                    {!settingsButton ? null : <TopNavbarListItem noShrink>{settingsButton}</TopNavbarListItem>}
+                    {feedbackButton ? <TopNavbarListItem noShrink>{feedbackButton}</TopNavbarListItem> : null}
+                    {contactsButton ? <TopNavbarListItem noShrink>{contactsButton}</TopNavbarListItem> : null}
+                    {settingsButton ? <TopNavbarListItem noShrink>{settingsButton}</TopNavbarListItem> : null}
                     <TopNavbarListItem noShrink>{helpDropdown || <TopNavbarListItemHelpDropdown />}</TopNavbarListItem>
                     <TopNavbarListItem className="relative">
                         <UserDropdown />
