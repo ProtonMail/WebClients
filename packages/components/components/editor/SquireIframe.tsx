@@ -143,7 +143,7 @@ const SquireIframe = (
 
     const handleLink = (squire: SquireType) => {
         const link = getLinkAtCursor(squire);
-        createModal(<InsertLinkModal inputLink={link} onSubmit={() => makeLink(squire, link)} />);
+        createModal(<InsertLinkModal inputLink={link} onSubmit={(linkData) => makeLink(squire, linkData)} />);
     };
 
     const handleKeyDown = (e: KeyboardEvent, squire: SquireType) => {
