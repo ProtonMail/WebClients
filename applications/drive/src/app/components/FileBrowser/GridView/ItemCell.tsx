@@ -105,7 +105,7 @@ function ItemCell({
                     </div>
                 </div>
                 <div className="w100 pt0-25 pb0-25 pl0-5 pr0-5 border-top flex" title={item.Name}>
-                    <FileNameDisplay text={item.Name} />
+                    <FileNameDisplay text={item.Name} className="center" />
                 </div>
             </div>
         </div>

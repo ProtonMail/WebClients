@@ -73,7 +73,7 @@ const DownloadSharedInfo = ({ name, size, expirationTime, downloadFile }: Props)
                 {contents.content}
             </div>
             <div className="text-bold mb0-5 mw100 flex w100 text-center">
-                <FileNameDisplay text={name} />
+                <FileNameDisplay text={name} className="center" />
             </div>
             <SizeCell size={size} />
         </>
