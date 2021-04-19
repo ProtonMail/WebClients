@@ -91,7 +91,7 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
             setLoadingMap((old) => ({ ...old, [localID]: true }));
             await wait(1000);
             const validatedSession = await resumeSession(silentApi, localID);
-            await onLogin(validatedSession);
+            await onLogin({ ...validatedSession, flow: 'switch' });
         } catch (e) {
             if (e instanceof InvalidPersistentSessionError) {
                 setLocalActiveSessions((list) => {

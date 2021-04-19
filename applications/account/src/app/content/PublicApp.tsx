@@ -6,7 +6,7 @@ import ForceRefreshContext from 'react-components/containers/forceRefresh/contex
 import { OnLoginCallbackArguments, ProtonLoginCallback } from 'react-components/containers/app/interface';
 import { LocalSessionResponse } from 'proton-shared/lib/authentication/interface';
 import { produceFork, ProduceForkParameters } from 'proton-shared/lib/authentication/sessionForking';
-import { SSO_PATHS, UNPAID_STATE, isSSOMode } from 'proton-shared/lib/constants';
+import { APPS, SSO_PATHS, UNPAID_STATE, isSSOMode } from 'proton-shared/lib/constants';
 import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 import { GetActiveSessionsResult } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { stripLeadingAndTrailingSlash } from 'proton-shared/lib/helpers/string';
@@ -96,7 +96,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         if (User.Delinquent >= UNPAID_STATE.DELINQUENT) {
             return onLogin({
                 ...args,
-                path: `${getSlugFromApp(localRedirect?.toApp || DEFAULT_APP)}/payment#invoices`,
+                path: `${getSlugFromApp(toApp)}/payment#invoices`,
             });
         }
         if (forkState) {
@@ -110,7 +110,9 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                 path: localRedirect?.pathname || '',
             });
         }
-        return replaceUrl(getAppHref('/', DEFAULT_APP, LocalID));
+        const pathname = toApp === APPS.PROTONMAIL ? '/inbox' : '/';
+        const search = args.flow === 'signup' ? '?welcome=true' : '';
+        return replaceUrl(getAppHref(`${pathname}${search}`, toApp, LocalID));
     };
 
     const handleActiveSessionsFork = (newForkState: ProduceForkParameters, { sessions }: GetActiveSessionsResult) => {
