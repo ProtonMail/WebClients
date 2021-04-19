@@ -187,7 +187,7 @@ const useResetPassword = ({ onLogin, initialStep = INITIAL_STATE.step }: Props) 
             withAuthHeaders(authResponse.UID, authResponse.AccessToken, getUser())
         ).then(({ User }) => User);
         await persistSession({ ...authResponse, User, keyPassword: passphrase, api });
-        await onLogin({ ...authResponse, User, keyPassword: passphrase });
+        await onLogin({ ...authResponse, User, keyPassword: passphrase, flow: 'reset' });
     };
 
     const getSetter = <K extends keyof ResetPasswordState>(key: keyof ResetPasswordState) => (

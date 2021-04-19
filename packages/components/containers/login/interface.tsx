@@ -26,7 +26,7 @@ export interface AuthCacheResult {
     ignoreUnlock: boolean;
 }
 
-export type AuthFlows = 'welcome' | 'welcome-full' | 'signup' | undefined;
+export type AuthFlows = 'signup' | 'reset' | 'switch' | undefined;
 
 export interface AuthSession {
     UID: string;
