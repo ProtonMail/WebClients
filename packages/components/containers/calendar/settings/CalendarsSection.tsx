@@ -108,7 +108,7 @@ const CalendarsSection = ({
 
     const calendarLimit = user.isFree ? MAX_CALENDARS_PER_FREE_USER : MAX_CALENDARS_PER_USER;
     const isBelowLimit = calendars.length < calendarLimit;
-    const canAddCalendar = activeAddresses.length > 0 && isBelowLimit && !user.isDelinquent;
+    const canAddCalendar = activeAddresses.length > 0 && isBelowLimit && user.hasNonDelinquentScope;
 
     return (
         <SettingsSection>
