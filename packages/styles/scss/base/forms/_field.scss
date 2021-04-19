@@ -18,7 +18,7 @@ $field-container: rem(260) !default;
 }
 
 .field {
-	height: $default-height-fields;
+	height: rem($default-height-fields);
 	padding: em(6) em(16); // design want 34px height (actually 35 to avoid .5px)
 	border-radius: $global-border-radius;
 	border: 1px solid var(--field-norm);

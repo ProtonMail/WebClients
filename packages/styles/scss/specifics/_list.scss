@@ -464,7 +464,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 }
 
 .message-header-metas-container {
-	height: $conversation-icon-size;
+	height: rem($conversation-icon-size);
 }
 
 .starbutton {
