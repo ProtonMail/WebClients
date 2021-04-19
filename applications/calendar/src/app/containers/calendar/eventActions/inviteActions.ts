@@ -11,7 +11,7 @@ import { getAttendeePartstat, getHasAttendees } from 'proton-shared/lib/calendar
 import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { getIsAddressActive } from 'proton-shared/lib/helpers/address';
 import { canonizeEmailByGuess } from 'proton-shared/lib/helpers/email';
-import { GetVTimezones, Recipient } from 'proton-shared/lib/interfaces';
+import { GetVTimezonesMap, Recipient } from 'proton-shared/lib/interfaces';
 import { VcalAttendeeProperty, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
@@ -179,7 +179,7 @@ export const getSendIcsAction = ({
     sendPreferencesMap,
     contactEmailsMap,
     prodId,
-    getVTimezones,
+    getVTimezonesMap,
     onRequestError,
     onReplyError,
     onCancelError,
@@ -190,7 +190,7 @@ export const getSendIcsAction = ({
     sendIcs: (params: SendIcsParams) => Promise<void>;
     sendPreferencesMap: SimpleMap<SendPreferences>;
     contactEmailsMap: SimpleMap<ContactEmail>;
-    getVTimezones: GetVTimezones;
+    getVTimezonesMap: GetVTimezonesMap;
     prodId: string;
     onRequestError: (e: Error) => void;
     onReplyError: (e: Error) => void;
@@ -226,7 +226,7 @@ export const getSendIcsAction = ({
             }
             const { attendee: attendees } = vevent;
             const vtimezones = FEATURE_FLAGS.includes('use-vtimezones')
-                ? await generateVtimezonesComponents(vevent, getVTimezones)
+                ? await generateVtimezonesComponents(vevent, getVTimezonesMap)
                 : [];
             const pmVevent = FEATURE_FLAGS.includes('proton-proton-invites')
                 ? {
@@ -320,7 +320,7 @@ export const getSendIcsAction = ({
                 throw new Error('Missing shared event data');
             }
             const vtimezones = FEATURE_FLAGS.includes('use-vtimezones')
-                ? await generateVtimezonesComponents(vevent, getVTimezones)
+                ? await generateVtimezonesComponents(vevent, getVTimezonesMap)
                 : [];
             const pmVevent = FEATURE_FLAGS.includes('proton-proton-invites')
                 ? {
@@ -414,7 +414,7 @@ export const getSendIcsAction = ({
                 throw new Error('Cannot build cancel ics without attendees');
             }
             const vtimezones = FEATURE_FLAGS.includes('use-vtimezones')
-                ? await generateVtimezonesComponents(cancelVevent, getVTimezones)
+                ? await generateVtimezonesComponents(cancelVevent, getVTimezonesMap)
                 : [];
             const cancelIcs = createInviteIcs({
                 method: ICAL_METHOD.CANCEL,
