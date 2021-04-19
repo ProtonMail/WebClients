@@ -84,7 +84,6 @@ const BugModal = ({ onClose = noop, username: Username = '', addresses = [], ...
     const isDrive = APP_NAME === APPS.PROTONDRIVE;
 
     const titles = isVpn ? vpnTitles : mailTitles;
-    const criticalEmail = isVpn ? 'contact@protonvpn.com' : 'security@protonmail.com';
     const clearCacheLink = isVpn
         ? 'https://protonvpn.com/support/clear-browser-cache-cookies/'
         : 'https://protonmail.com/support/knowledge-base/how-to-clean-cache-and-cookies/';
@@ -289,7 +288,6 @@ const BugModal = ({ onClose = noop, username: Username = '', addresses = [], ...
                     </Row>
                 </>
             ) : null}
-            <Alert>{c('Info').t`Contact us at ${criticalEmail} for critical security issues.`}</Alert>
         </FormModal>
     );
 };
