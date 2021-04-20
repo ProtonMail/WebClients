@@ -50,7 +50,9 @@ const useDragOver = (
     };
     const handleDragOver = (event: DragEvent) => {
         if (dragFilter(event)) {
-            event.dataTransfer.dropEffect = dropEffect;
+            if (event.dataTransfer.effectAllowed === 'all') {
+                event.dataTransfer.dropEffect = dropEffect;
+            }
             event.preventDefault();
             onDragOver?.(event);
         }
