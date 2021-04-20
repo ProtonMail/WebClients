@@ -7,6 +7,7 @@ import {
     SettingsPropsShared,
     PmMeSection,
     useAddresses,
+    PrivateMainArea,
 } from 'react-components';
 
 import { ADDRESS_TYPE } from 'proton-shared/lib/constants';
@@ -45,7 +46,7 @@ const MailGeneralSettings = ({ location, user }: Props) => {
     const [addresses, loading] = useAddresses();
 
     if (loading && !Array.isArray(addresses)) {
-        return null;
+        return <PrivateMainArea />;
     }
 
     const { hasPaidMail, canPay, isSubUser } = user;
