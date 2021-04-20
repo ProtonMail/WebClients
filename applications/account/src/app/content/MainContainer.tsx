@@ -13,8 +13,9 @@ import {
     useWelcomeFlags,
     Logo,
     useUser,
-    PrivateMainArea,
 } from 'react-components';
+
+import PrivateMainAreaLoading from '../components/PrivateMainAreaLoading';
 
 import AccountOnboardingModal from '../components/AccountOnboardingModal';
 import AccountPasswordAndRecoverySettings from '../containers/account/AccountPasswordAndRecoverySettings';
@@ -115,27 +116,27 @@ const MainContainer = () => {
                     <OrganizationUsersAndAddressesSettings location={location} />
                 </Route>
                 <Route path={`/${mailSlug}`}>
-                    <Suspense fallback={<PrivateMainArea />}>
+                    <Suspense fallback={<PrivateMainAreaLoading />}>
                         <MailSettingsRouter onChangeBlurred={setBlurred} />
                     </Suspense>
                 </Route>
                 <Route path={`/${calendarSlug}`}>
-                    <Suspense fallback={<PrivateMainArea />}>
+                    <Suspense fallback={<PrivateMainAreaLoading />}>
                         <CalendarSettingsRouter user={user} />
                     </Suspense>
                 </Route>
                 <Route path={`/${contactsSlug}`}>
-                    <Suspense fallback={<PrivateMainArea />}>
+                    <Suspense fallback={<PrivateMainAreaLoading />}>
                         <ContactsSettingsRouter />
                     </Suspense>
                 </Route>
                 <Route path={`/${vpnSlug}`}>
-                    <Suspense fallback={<PrivateMainArea />}>
+                    <Suspense fallback={<PrivateMainAreaLoading />}>
                         <VpnSettingsRouter />
                     </Suspense>
                 </Route>
                 <Route path={`/${driveSlug}`}>
-                    <Suspense fallback={<PrivateMainArea />}>
+                    <Suspense fallback={<PrivateMainAreaLoading />}>
                         <DriveSettingsRouter />
                     </Suspense>
                 </Route>

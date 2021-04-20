@@ -2,7 +2,6 @@ import { UserModel } from 'proton-shared/lib/interfaces';
 import React, { useMemo } from 'react';
 import { Switch, Route, Redirect, useRouteMatch, useLocation } from 'react-router-dom';
 import {
-    PrivateMainArea,
     useAddresses,
     useCalendars,
     useCalendarsKeysSettingsListener,
@@ -16,6 +15,9 @@ import {
 } from 'proton-shared/lib/calendar/calendar';
 
 import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
+
+import PrivateMainAreaLoading from '../../components/PrivateMainAreaLoading';
+
 import CalendarCalendarsSettings from './CalendarCalendarsSettings';
 import CalendarGeneralSettings from './CalendarGeneralSettings';
 
@@ -55,7 +57,7 @@ const CalendarSettingsRouter = ({ user }: Props) => {
     useCalendarsKeysSettingsListener(allCalendarIDs);
 
     if (loadingAddresses || loadingCalendars || loadingCalendarUserSettings) {
-        return <PrivateMainArea />;
+        return <PrivateMainAreaLoading />;
     }
 
     return (
