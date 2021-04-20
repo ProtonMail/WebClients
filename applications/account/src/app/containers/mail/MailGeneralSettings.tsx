@@ -7,7 +7,6 @@ import {
     SettingsPropsShared,
     PmMeSection,
     useAddresses,
-    PrivateMainArea,
 } from 'react-components';
 
 import { ADDRESS_TYPE } from 'proton-shared/lib/constants';
@@ -15,6 +14,7 @@ import { UserModel } from 'proton-shared/lib/interfaces';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
+import PrivateMainAreaLoading from '../../components/PrivateMainAreaLoading';
 
 export const getGeneralPage = (user: UserModel, showPmMeSection: boolean) => {
     return {
@@ -46,7 +46,7 @@ const MailGeneralSettings = ({ location, user }: Props) => {
     const [addresses, loading] = useAddresses();
 
     if (loading && !Array.isArray(addresses)) {
-        return <PrivateMainArea />;
+        return <PrivateMainAreaLoading />;
     }
 
     const { hasPaidMail, canPay, isSubUser } = user;
