@@ -67,7 +67,7 @@ const LanguageSection = ({ locales = {} }: Props) => {
                     }}
                 >
                     {options.map((option) => (
-                        <Option {...option} />
+                        <Option key={option.value} {...option} />
                     ))}
                 </SelectTwo>
             </SettingsLayoutRight>
