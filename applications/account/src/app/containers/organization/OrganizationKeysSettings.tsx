@@ -1,11 +1,18 @@
-import React from 'react';
-import {
-    OrganizationPasswordSection,
-    OrganizationSection,
-    SettingsPropsShared,
-    useOrganization,
-} from 'react-components';
+import React, { useEffect, useRef } from 'react';
 import { c } from 'ttag';
+import {
+    SettingsPropsShared,
+    useUser,
+    useOrganization,
+    useOrganizationKey,
+    useModals,
+    OrganizationSection,
+    OrganizationPasswordSection,
+} from 'react-components';
+import { getOrganizationKeyInfo } from 'react-components/containers/organization/helpers/organizationKeysHelper';
+import ReactivateOrganizationKeysModal, {
+    MODES,
+} from 'react-components/containers/organization/ReactivateOrganizationKeysModal';
 import { PERMISSIONS } from 'proton-shared/lib/constants';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
@@ -34,7 +41,36 @@ export const getOrganizationPage = () => {
 };
 
 const OrganizationKeysSettings = ({ location }: SettingsPropsShared) => {
-    const [organization] = useOrganization();
+    const [user] = useUser();
+    const [organization, loadingOrganization] = useOrganization();
+    const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
+    const onceRef = useRef(false);
+    const { createModal } = useModals();
+
+    useEffect(() => {
+        if (
+            onceRef.current ||
+            !organization ||
+            loadingOrganization ||
+            !organizationKey ||
+            loadingOrganizationKey ||
+            !user.isAdmin ||
+            !organization.HasKeys
+        ) {
+            return;
+        }
+
+        const { hasOrganizationKey, isOrganizationKeyInactive } = getOrganizationKeyInfo(organizationKey);
+
+        if (!hasOrganizationKey) {
+            createModal(<ReactivateOrganizationKeysModal mode={MODES.ACTIVATE} />);
+            onceRef.current = true;
+        }
+        if (isOrganizationKeyInactive) {
+            createModal(<ReactivateOrganizationKeysModal mode={MODES.REACTIVATE} />);
+            onceRef.current = true;
+        }
+    }, [organization, organizationKey, user]);
 
     return (
         <PrivateMainSettingsAreaWithPermissions
@@ -42,7 +78,13 @@ const OrganizationKeysSettings = ({ location }: SettingsPropsShared) => {
             config={getOrganizationPage()}
             setActiveSection={() => {}}
         >
-            <OrganizationSection organization={organization} />
+            <OrganizationSection
+                organization={organization}
+                onSetupOrganization={() => {
+                    // Disable automatic activation modal when setting up an organization
+                    onceRef.current = true;
+                }}
+            />
             <OrganizationPasswordSection />
         </PrivateMainSettingsAreaWithPermissions>
     );
