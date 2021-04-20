@@ -13,7 +13,7 @@ import {
     useWelcomeFlags,
     Logo,
     useUser,
-    LoaderPage,
+    PrivateMainArea,
 } from 'react-components';
 
 import AccountOnboardingModal from '../components/AccountOnboardingModal';
@@ -115,27 +115,27 @@ const MainContainer = () => {
                     <OrganizationUsersAndAddressesSettings location={location} />
                 </Route>
                 <Route path={`/${mailSlug}`}>
-                    <Suspense fallback={<LoaderPage />}>
+                    <Suspense fallback={<PrivateMainArea />}>
                         <MailSettingsRouter onChangeBlurred={setBlurred} />
                     </Suspense>
                 </Route>
                 <Route path={`/${calendarSlug}`}>
-                    <Suspense fallback={<LoaderPage />}>
+                    <Suspense fallback={<PrivateMainArea />}>
                         <CalendarSettingsRouter user={user} />
                     </Suspense>
                 </Route>
                 <Route path={`/${contactsSlug}`}>
-                    <Suspense fallback={<LoaderPage />}>
+                    <Suspense fallback={<PrivateMainArea />}>
                         <ContactsSettingsRouter />
                     </Suspense>
                 </Route>
                 <Route path={`/${vpnSlug}`}>
-                    <Suspense fallback={<LoaderPage />}>
+                    <Suspense fallback={<PrivateMainArea />}>
                         <VpnSettingsRouter />
                     </Suspense>
                 </Route>
                 <Route path={`/${driveSlug}`}>
-                    <Suspense fallback={<LoaderPage />}>
+                    <Suspense fallback={<PrivateMainArea />}>
                         <DriveSettingsRouter />
                     </Suspense>
                 </Route>
