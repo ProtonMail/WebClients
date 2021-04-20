@@ -15,6 +15,9 @@ import {
 } from 'proton-shared/lib/calendar/calendar';
 
 import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
+
+import PrivateMainAreaLoading from '../../components/PrivateMainAreaLoading';
+
 import CalendarCalendarsSettings from './CalendarCalendarsSettings';
 import CalendarGeneralSettings from './CalendarGeneralSettings';
 
@@ -54,7 +57,7 @@ const CalendarSettingsRouter = ({ user }: Props) => {
     useCalendarsKeysSettingsListener(allCalendarIDs);
 
     if (loadingAddresses || loadingCalendars || loadingCalendarUserSettings) {
-        return null;
+        return <PrivateMainAreaLoading />;
     }
 
     return (
