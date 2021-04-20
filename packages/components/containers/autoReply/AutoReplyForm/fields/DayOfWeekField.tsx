@@ -1,7 +1,10 @@
 import React, { useMemo } from 'react';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import { dateLocale } from 'proton-shared/lib/i18n';
-import { Row, Label, Field, Select } from '../../../../components';
+import { Select } from '../../../../components';
+import SettingsLayout from '../../../account/SettingsLayout';
+import SettingsLayoutLeft from '../../../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../../../account/SettingsLayoutRight';
 
 interface Props {
     id: string;
@@ -18,14 +21,16 @@ const DayOfWeekField = ({ id, label, value, onChange }: Props) => {
     }, [dateLocale]);
 
     return (
-        <Row>
-            <Label htmlFor={id} className="text-semibold">
-                {label}
-            </Label>
-            <Field>
+        <SettingsLayout>
+            <SettingsLayoutLeft>
+                <label htmlFor={id} className="text-semibold">
+                    {label}
+                </label>
+            </SettingsLayoutLeft>
+            <SettingsLayoutRight>
                 <Select id={id} options={options} onChange={handleChange} value={value} />
-            </Field>
-        </Row>
+            </SettingsLayoutRight>
+        </SettingsLayout>
     );
 };
 
