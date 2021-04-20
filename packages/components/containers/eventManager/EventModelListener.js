@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { ContactEmailsModel, ContactsModel, UserModel } from 'proton-shared/lib/models';
+import { ContactEmailsModel, ContactsModel, DomainsModel, UserModel } from 'proton-shared/lib/models';
 import { STATUS } from 'proton-shared/lib/models/cache';
 import { SubscriptionModel } from 'proton-shared/lib/models/subscriptionModel';
 import { OrganizationModel } from 'proton-shared/lib/models/organizationModel';
@@ -54,6 +54,7 @@ const EventModelListener = ({ models }) => {
                 if (user.isFree) {
                     cache.delete(SubscriptionModel.key);
                     cache.delete(OrganizationModel.key);
+                    cache.delete(DomainsModel.key);
                     cache.delete(MembersModel.key);
                 }
                 // Since the keys could have changed, clear the cached keys.

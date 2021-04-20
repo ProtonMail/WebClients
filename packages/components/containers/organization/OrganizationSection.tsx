@@ -3,22 +3,27 @@ import { c } from 'ttag';
 import { Organization } from 'proton-shared/lib/interfaces';
 import { APPS } from 'proton-shared/lib/constants';
 import { hasMailProfessional, hasVisionary } from 'proton-shared/lib/helpers/subscription';
+import { unlockPasswordChanges } from 'proton-shared/lib/api/user';
 
-import { Row, Field, Label, Loader, Button, ButtonLike, SettingsLink } from '../../components';
-import { useConfig, useModals, useSubscription } from '../../hooks';
+import { Row, Field, Label, Loader, Button, ButtonLike, SettingsLink, PrimaryButton } from '../../components';
+import { useConfig, useModals, useNotifications, useSubscription } from '../../hooks';
 import RestoreAdministratorPrivileges from './RestoreAdministratorPrivileges';
 import OrganizationNameModal from './OrganizationNameModal';
-import ActivateOrganizationButton from './ActivateOrganizationButton';
 import { SettingsParagraph } from '../account';
+import AuthModal from '../password/AuthModal';
+import SetupOrganizationModal from './SetupOrganizationModal';
 
 interface Props {
     organization?: Organization;
+    onSetupOrganization?: () => void;
 }
 
-const OrganizationSection = ({ organization }: Props) => {
+const OrganizationSection = ({ organization, onSetupOrganization }: Props) => {
     const { createModal } = useModals();
     const { APP_NAME } = useConfig();
     const [subscription, loadingSubscription] = useSubscription();
+
+    const { createNotification } = useNotifications();
 
     if (!organization || loadingSubscription) {
         return <Loader />;
@@ -58,7 +63,25 @@ const OrganizationSection = ({ organization }: Props) => {
                 <SettingsParagraph learnMoreUrl="https://protonmail.com/support/knowledge-base/business/">
                     {c('Info').t`Create and manage sub-accounts and assign them email addresses on your custom domain.`}
                 </SettingsParagraph>
-                <ActivateOrganizationButton organization={organization} />
+                <PrimaryButton
+                    onClick={async () => {
+                        if (organization?.MaxMembers === 1) {
+                            return createNotification({
+                                type: 'error',
+                                text: c('Error')
+                                    .t`Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support.`,
+                            });
+                        }
+
+                        await new Promise((resolve, reject) => {
+                            createModal(
+                                <AuthModal onClose={reject} onSuccess={resolve} config={unlockPasswordChanges()} />
+                            );
+                        });
+                        onSetupOrganization?.();
+                        createModal(<SetupOrganizationModal />);
+                    }}
+                >{c('Action').t`Enable multi-user support`}</PrimaryButton>
             </>
         );
     }
