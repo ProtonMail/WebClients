@@ -1,12 +1,29 @@
 import React from 'react';
-import { Loader, PrivateMainArea } from 'react-components';
+import {
+    PrivateMainArea,
+    SettingsPageTitle,
+    SettingsParagraph,
+    SettingsSection,
+    SettingsSectionTitle,
+} from 'react-components';
 
 const PrivateMainAreaLoading = () => {
     return (
         <PrivateMainArea>
-            <Loader size="small" className="p2" />
+            <div className="container-section-sticky">
+                <SettingsPageTitle className="mt1-5 mb1-5 settings-loading-page-title" />
+                <section className="container-section-sticky-section">
+                    <SettingsSectionTitle className="settings-loading-section-title" />
+                    <SettingsSection>
+                        <SettingsParagraph className="mb1">
+                            <span className="block settings-loading-paragraph-line" />
+                            <span className="block settings-loading-paragraph-line" />
+                            <span className="block settings-loading-paragraph-line" />
+                        </SettingsParagraph>
+                    </SettingsSection>
+                </section>
+            </div>
         </PrivateMainArea>
     );
 };
-
 export default PrivateMainAreaLoading;
