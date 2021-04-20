@@ -17,7 +17,7 @@ const exampleVevent = {
     },
     dtend: {
         value: { year: 2020, month: 3, day: 12, hours: 9, minutes: 30, seconds: 0, isUTC: false },
-        parameters: { tzid: 'Europe/Zurich' },
+        parameters: { tzid: 'America/New_York' },
     },
     rrule: { value: { freq: 'WEEKLY', until: { year: 2020, month: 5, day: 15 } } },
     location: { value: 'asd' },
@@ -60,7 +60,7 @@ CALSCALE:GREGORIAN
 BEGIN:VEVENT
 UID:test-event
 DTSTART;TZID=Europe/Zurich:20200312T083000
-DTEND;TZID=Europe/Zurich:20200312T093000
+DTEND;TZID=America/New_York:20200312T093000
 SEQUENCE:0
 RRULE:FREQ=WEEKLY;UNTIL=20200515
 LOCATION:asd
@@ -91,7 +91,7 @@ CALSCALE:GREGORIAN
 BEGIN:VEVENT
 UID:test-event
 DTSTART;TZID=Europe/Zurich:20200312T083000
-DTEND;TZID=Europe/Zurich:20200312T093000
+DTEND;TZID=America/New_York:20200312T093000
 SEQUENCE:0
 RRULE:FREQ=WEEKLY;UNTIL=20200515
 LOCATION:asd
@@ -126,7 +126,7 @@ CALSCALE:GREGORIAN
 BEGIN:VEVENT
 UID:test-event
 DTSTART;TZID=Europe/Zurich:20200312T083000
-DTEND;TZID=Europe/Zurich:20200312T093000
+DTEND;TZID=America/New_York:20200312T093000
 SEQUENCE:0
 RECURRENCE-ID:20210618T150000Z
 RRULE:FREQ=WEEKLY;UNTIL=20200515
@@ -163,7 +163,7 @@ CALSCALE:GREGORIAN
 BEGIN:VEVENT
 UID:test-event
 DTSTART;TZID=Europe/Zurich:20200312T083000
-DTEND;TZID=Europe/Zurich:20200312T093000
+DTEND;TZID=America/New_York:20200312T093000
 SEQUENCE:0
 RRULE:FREQ=WEEKLY;UNTIL=20200515
 LOCATION:asd
@@ -339,6 +339,26 @@ When: Sunday March 22nd, 2020 - Monday March 23rd, 2020`;
         };
         const expected = `Watch movie has been updated.
 When: Sunday March 22nd, 2020 - Monday March 23rd, 2020
+Where: asd
+Description: I am a good description`;
+        expect(
+            generateEmailBody({
+                vevent,
+                method: ICAL_METHOD.REQUEST,
+                isCreateEvent: false,
+                options: { locale: enUS },
+            })
+        ).toEqual(expected);
+    });
+
+    it('should return the expected body for an update to an to a part-day event with both location and description', () => {
+        const vevent = {
+            ...exampleVevent,
+            summary: { value: 'Watch movie' },
+            description: { value: 'I am a good description' },
+        };
+        const expected = `Watch movie has been updated.
+When: Thursday March 12th, 2020 at 8:30 AM (GMT+1) - Thursday March 12th, 2020 at 9:30 AM (GMT-4)
 Where: asd
 Description: I am a good description`;
         expect(
