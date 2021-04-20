@@ -7,7 +7,7 @@ import verifiedByVisaSvg from 'design-system/assets/img/bank-icons/visa-secure.s
 
 const Alert3ds = () => {
     return (
-        <p>
+        <div className="mt1-5 mb1-5">
             <div className="mb0-5">{c('Info').t`We use 3-D Secure to protect your payments.`}</div>
             <div className="flex flex-nowrap flex-align-items-center">
                 <img height="44" alt="" className="mr1" src={verifiedByVisaSvg} />
@@ -15,7 +15,7 @@ const Alert3ds = () => {
                 <img height="44" alt="" className="mr1" src={discoverProtectBuySvg} />
                 <img height="44" alt="" className="mr1" src={americanExpressSafekeySvg} />
             </div>
-        </p>
+        </div>
     );
 };
 
