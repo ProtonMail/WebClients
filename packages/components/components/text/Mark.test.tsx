@@ -15,28 +15,27 @@ describe('Mark component', () => {
     });
 
     it('should highlight several matches', () => {
-        expect(nodes?.length).toBe(3);
+        expect(nodes.length).toBe(3);
     });
 
     it('should highlight accent and capitalized matches', () => {
-        const [first, second, third] = nodes;
-        expect(first?.textContent).toBe('E');
-        expect(second?.textContent).toBe('é');
-        expect(third?.textContent).toBe('é');
+        expect(nodes[0].textContent).toBe('E');
+        expect(nodes[1].textContent).toBe('é');
+        expect(nodes[2].textContent).toBe('é');
     });
 
     it('should highlight print result properly', () => {
-        expect(container?.innerHTML).toBe(`<mark>E</mark>h, toi, l'ours mal l<mark>é</mark>ch<mark>é</mark>`);
+        expect(container.innerHTML).toBe(`<mark>E</mark>h, toi, l'ours mal l<mark>é</mark>ch<mark>é</mark>`);
     });
 
     it('should return original children if no match', () => {
         const { container } = render(<Mark value="orage">{input}</Mark>);
-        expect(container?.innerHTML).toBe(input);
+        expect(container.innerHTML).toBe(input);
     });
 
     it('should return original children if value empty', () => {
         const { container } = render(<Mark value="">{input}</Mark>);
-        expect(container?.innerHTML).toBe(input);
+        expect(container.innerHTML).toBe(input);
     });
 
     it('should return original children if children not a string', () => {
@@ -45,6 +44,6 @@ describe('Mark component', () => {
                 <input />
             </Mark>
         );
-        expect(container?.innerHTML).toBe('<input>');
+        expect(container.innerHTML).toBe('<input>');
     });
 });
