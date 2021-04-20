@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-
 import { getInitials } from 'proton-shared/lib/helpers/string';
-
 import { resizeImage, toImage } from 'proton-shared/lib/helpers/image';
 import { isBase64Image } from 'proton-shared/lib/helpers/validators';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { SHOW_IMAGES } from 'proton-shared/lib/constants';
 import { CONTACT_IMG_SIZE } from 'proton-shared/lib/contacts/constants';
-
 import { useLoading, useMailSettings } from '../../hooks';
 import Loader from '../loader/Loader';
-import { Button } from '../button';
 import { Icon } from '../icon';
 
 interface Props {
@@ -57,7 +53,7 @@ const ContactImageSummary = ({ photo, name }: Props) => {
         };
         // if resize fails (e.g. toImage will throw if the requested resource hasn't specified a CORS policy),
         // fallback to the original src
-        withLoadingResize(resize().catch(noop));
+        void withLoadingResize(resize().catch(noop));
     }, [photo, shouldShow, showAnyway]);
 
     if (!photo) {
@@ -74,7 +70,13 @@ const ContactImageSummary = ({ photo, name }: Props) => {
 
     if (shouldShow) {
         if (loading) {
-            return <Loader />;
+            return (
+                <div className="ratio-container-square rounded bordered">
+                    <span className="inner-ratio-container flex">
+                        <Loader />
+                    </span>
+                </div>
+            );
         }
 
         const style = {
@@ -112,14 +114,14 @@ const ContactImageSummary = ({ photo, name }: Props) => {
     }
 
     return (
-        <div className="bordered rounded bg-norm ratio-container-square mb0">
+        <button type="button" className="bordered rounded bg-norm ratio-container-square mb0" onClick={handleClick}>
             <span className="inner-ratio-container flex">
-                <span className="mauto text-sm lh-rg">
+                <span className="mauto lh-rg flex flex-column flex-align-items-center">
                     <Icon name="remote-content" />
-                    <Button className="m0-5" onClick={handleClick}>{c('Action').t`Load image`}</Button>
+                    <div className="m0-5 color-primary">{c('Action').t`Load image`}</div>
                 </span>
             </span>
-        </div>
+        </button>
     );
 };
 
