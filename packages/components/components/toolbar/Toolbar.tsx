@@ -7,7 +7,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const Toolbar = ({ children, className, ...rest }: Props) => (
-    <div className={classnames(['toolbar ui-prominent flex flex-nowrap no-scroll no-print', className])} {...rest}>
+    <div className={classnames(['toolbar flex flex-nowrap no-scroll no-print', className])} {...rest}>
         {children}
     </div>
 );
