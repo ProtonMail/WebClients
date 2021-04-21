@@ -23,19 +23,19 @@ export enum ThemeTypes {
 
 export const PROTON_THEMES = {
     DEFAULT: {
-        getI18NLabel: () => c('Theme').t`Default`,
+        getI18NLabel: () => c('Theme').t`Proton (default)`,
         identifier: ThemeTypes.Default,
         src: themeDefaultSvg,
         theme: defaultTheme.toString(),
     },
     DARK: {
-        getI18NLabel: () => c('Theme').t`Dark`,
+        getI18NLabel: () => c('Theme').t`Carbon`,
         identifier: ThemeTypes.Dark,
         src: themeDarkSvg,
         theme: darkTheme.toString(),
     },
     LIGHT: {
-        getI18NLabel: () => c('Theme').t`Light`,
+        getI18NLabel: () => c('Theme').t`Snow`,
         identifier: ThemeTypes.Light,
         src: themeLightSvg,
         theme: lightTheme.toString(),
