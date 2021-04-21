@@ -322,6 +322,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                                 icon="settings-singular"
                                 title={c('Info').t`Manage your folders`}
                                 info={c('Link').t`Manage your folders`}
+                                target="_self"
                             />
                         </div>
                     }
@@ -362,6 +363,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                                 icon="settings-singular"
                                 title={c('Info').t`Manage your labels`}
                                 info={c('Link').t`Manage your labels`}
+                                target="_self"
                             />
                         </div>
                     }
