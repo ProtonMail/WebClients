@@ -7,7 +7,7 @@ const CatchAllSection = () => {
         <SettingsSectionWide>
             <SettingsParagraph learnMoreUrl="https://protonmail.com/support/knowledge-base/catch-all/">
                 {c('Info')
-                    .t`Catch-All provides ProtonMail Custom Domain users the option to receive all mail sent to their domain, even if it was sent to an email address that has not been set up within their account. To set a catch-all email address, open the dropdown action menu of your custom domain and click on Set catch-all.`}
+                    .t`If you have a custom domain with ProtonMail, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).`}
             </SettingsParagraph>
         </SettingsSectionWide>
     );

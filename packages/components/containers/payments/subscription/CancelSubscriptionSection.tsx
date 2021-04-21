@@ -10,7 +10,7 @@ const CancelSubscriptionSection = () => {
         <SettingsSection>
             <SettingsParagraph>
                 {c('Info')
-                    .t`This will cancel your paid subscription and make you lose any loyalty benefits acquired over time. The unused portion of your subscription will be handed back to you in the form of credits`}
+                    .t`This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.`}
             </SettingsParagraph>
             <UnsubscribeButton color="danger" shape="outline">
                 {c('Action').t`Cancel subscription`}

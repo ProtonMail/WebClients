@@ -35,7 +35,7 @@ const DomainsSection = () => {
             <RestoreAdministratorPrivileges />
             <SettingsParagraph learnMoreUrl="https://protonmail.com/support/categories/custom-domains/">
                 {c('Message')
-                    .t`Add a domain to receive emails to your custom email addresses and to add more users to your organization (Visionary and Professional accounts only).`}
+                    .t`Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.`}
             </SettingsParagraph>
             <div className="mb1">
                 <Button color="norm" onClick={() => createModal(<DomainModal />)} className="mr1">

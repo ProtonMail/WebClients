@@ -36,7 +36,11 @@ const TwoFactorSection = () => {
             <SettingsLayoutLeft>
                 <label htmlFor="twoFactorToggle" className="text-semibold">
                     <span className="mr0-5">{c('Label').t`Two-factor authentication`}</span>
-                    <Info url={twoFactorAuthLink} />
+                    <Info
+                        url={twoFactorAuthLink}
+                        title={c('Info')
+                            .t`Two-factor authentication adds an extra layer of security to your account in case your password is compromised.`}
+                    />
                 </label>
             </SettingsLayoutLeft>
             <SettingsLayoutRight className="pt0-5">

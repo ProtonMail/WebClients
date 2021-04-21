@@ -80,7 +80,7 @@ const SessionsSection = () => {
         <SettingsSection>
             <SettingsParagraph learnMoreUrl="https://protonmail.com/support/knowledge-base/log-out-all-other-sessions/">
                 {c('Info')
-                    .t`Unless you explicitly sign out or change your password, sessions remain active and only expire after 30 days of inactivity.`}
+                    .t`Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 30 days of inactivity.`}
             </SettingsParagraph>
             <div className="flex flex-justify-space-between flex-align-items-start mb1">
                 <div className="on-mobile-mb1">

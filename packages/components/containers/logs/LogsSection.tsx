@@ -152,7 +152,10 @@ const LogsSection = () => {
                     <SettingsLayoutLeft>
                         <label className="text-semibold" htmlFor="advanced-logs-toggle">
                             <span className="mr0-5">{c('Log preference').t`Enable advanced logs`}</span>
-                            <Info title={c('Tooltip').t`Records the IP address of each event in the security log.`} />
+                            <Info
+                                title={c('Tooltip')
+                                    .t`Enabling advanced logs records the IP address for each event in the security log.`}
+                            />
                         </label>
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight className="pt0-5">
