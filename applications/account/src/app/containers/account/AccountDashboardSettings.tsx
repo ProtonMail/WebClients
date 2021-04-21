@@ -31,11 +31,11 @@ export const getDashboardPage = ({ user }: { user: UserModel }) => {
                 id: 'your-plan',
             },
             {
-                text: c('Title').t`Language & Time`,
+                text: c('Title').t`Language & time`,
                 id: 'language-and-time',
             },
             !isMember && {
-                text: c('Title').t`Email subscription`,
+                text: c('Title').t`Email subscriptions`,
                 id: 'email-subscription',
             },
             !isFree && {
