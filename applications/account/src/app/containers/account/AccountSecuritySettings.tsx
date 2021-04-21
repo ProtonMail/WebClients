@@ -15,7 +15,7 @@ export const getSecurityPage = () => {
                 id: 'sessions',
             },
             {
-                text: c('Title').t`Authentication logs`,
+                text: c('Title').t`Security logs`,
                 id: 'logs',
             },
         ],
