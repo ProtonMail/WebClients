@@ -66,8 +66,12 @@ const PasswordsSection = ({ open }: Props) => {
                     <SettingsLayout>
                         <SettingsLayoutLeft>
                             <label htmlFor="passwordModeToggle" className="text-semibold">
-                                <span className="mr0-5">{c('Label').t`Two password mode`}</span>
-                                <Info url="https://protonmail.com/support/knowledge-base/single-password" />
+                                <span className="mr0-5">{c('Label').t`Two-password mode`}</span>
+                                <Info
+                                    url="https://protonmail.com/support/knowledge-base/single-password"
+                                    title={c('Info')
+                                        .t`Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)`}
+                                />
                             </label>
                         </SettingsLayoutLeft>
                         <SettingsLayoutRight className="pt0-5">

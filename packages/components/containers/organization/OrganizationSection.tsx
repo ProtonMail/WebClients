@@ -34,7 +34,7 @@ const OrganizationSection = ({ organization, onSetupOrganization }: Props) => {
             <>
                 <SettingsParagraph>
                     {c('Info')
-                        .t`To create email addresses for other people, manage ProtonMail for a business, school, or group. Upgrade to a plan that supports Multi-User (Visionary or Professional).`}
+                        .t`ProtonMail lets you create email addresses for other people. This is perfect for businesses, families, or groups. Upgrade to a Visionary or Professional plan to get started.`}
                 </SettingsParagraph>
                 <ButtonLike color="norm" as={SettingsLink} path="/dashboard" app={APP_NAME} target="_self">
                     {c('Action').t`Upgrade`}
