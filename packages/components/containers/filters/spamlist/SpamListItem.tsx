@@ -38,7 +38,7 @@ function SpamListItem({ list, type, onCreate, onMove, onRemove, className, loadi
             <header className="flex flex-justify-space-between flex-align-items-center pb1 border-bottom">
                 <h3 className="mb0 text-bold">{I18N[type]}</h3>
                 <div>
-                    <Button size="small" color="norm" onClick={() => onCreate(type)}>
+                    <Button color="norm" onClick={() => onCreate(type)}>
                         {c('Action').t`Add`}
                     </Button>
                 </div>
