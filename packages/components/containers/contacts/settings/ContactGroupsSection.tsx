@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Button } from '../../../components';
-import { useModals } from '../../../hooks';
+import { Button, ContactUpgradeModal } from '../../../components';
+import { useModals, useUser } from '../../../hooks';
 
 import ContactGroupModal from '../modals/ContactGroupModal';
 import ContactGroupsTable from '../ContactGroupsTable';
@@ -11,7 +11,17 @@ import { SettingsSection, SettingsParagraph } from '../../account';
 
 const ContactGroupsSection = () => {
     const { createModal } = useModals();
-    const handleCreate = () => createModal(<ContactGroupModal selectedContactEmails={[]} />);
+    const [user] = useUser();
+
+    const showUpgradeModal = () => createModal(<ContactUpgradeModal />);
+
+    const handleCreate = () => {
+        if (!user.hasPaidMail) {
+            showUpgradeModal();
+            return;
+        }
+        createModal(<ContactGroupModal selectedContactEmails={[]} />);
+    };
 
     return (
         <SettingsSection>
@@ -22,7 +32,7 @@ const ContactGroupsSection = () => {
             <div className="mb1">
                 <Button color="norm" onClick={handleCreate}>{c('Action').t`Add group`}</Button>
             </div>
-            <ContactGroupsTable />
+            <ContactGroupsTable hasPaidMail={user.hasPaidMail} showUpgradeModal={showUpgradeModal} />
         </SettingsSection>
     );
 };
