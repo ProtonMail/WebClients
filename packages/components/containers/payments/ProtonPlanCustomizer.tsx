@@ -208,7 +208,7 @@ const ProtonPlanCustomizer = ({
             ) : null}
             {service === PLAN_SERVICES.VPN && planIDs[plansNameMap[PLANS.VPNPLUS].ID] ? (
                 <p>
-                    {c('Info').t`ProtonVPN Plus includes 5 VPN connections.`}
+                    {c('Info').t`ProtonVPN Plus includes ${plansNameMap[PLANS.VPNPLUS].MaxVPN} VPN connections.`}
                     <br />
                     {planIDs[plansNameMap[PLANS.PROFESSIONAL].ID]
                         ? c('Info').t`Each additional connection can be assigned to users in your organization.`

@@ -29,7 +29,7 @@ import {
     useSubscription,
     useModals,
     useConfig,
-    useVPNCountries,
+    useVPNCountriesCount,
 } from '../../../hooks';
 import { classnames } from '../../../helpers';
 import LossLoyaltyModal from '../LossLoyaltyModal';
@@ -94,7 +94,7 @@ const SubscriptionModal = ({
     const isVpnApp = APP_NAME === APPS.PROTONVPN_SETTINGS;
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
-    const [vpnCountries] = useVPNCountries();
+    const [vpnCountries] = useVPNCountriesCount();
     const { call } = useEventManager();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
