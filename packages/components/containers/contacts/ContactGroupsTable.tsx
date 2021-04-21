@@ -20,7 +20,12 @@ import { useContactGroups, useContactEmails, useNotifications, useModals, useApi
 
 import ContactGroupModal from './modals/ContactGroupModal';
 
-const ContactGroupsTable = () => {
+interface Props {
+    hasPaidMail: boolean;
+    showUpgradeModal: () => void;
+}
+
+const ContactGroupsTable = ({ hasPaidMail, showUpgradeModal }: Props) => {
     const [contactGroups] = useContactGroups();
     const [contactEmails] = useContactEmails() as [ContactEmail[], boolean, any];
     const { createNotification } = useNotifications();
@@ -47,6 +52,11 @@ const ContactGroupsTable = () => {
 
     const handleSortEnd = useCallback(
         async ({ oldIndex, newIndex }) => {
+            if (!hasPaidMail) {
+                showUpgradeModal();
+                return;
+            }
+
             try {
                 const newList = move(list, oldIndex, newIndex);
                 setContactGroups(newList);
@@ -73,6 +83,10 @@ const ContactGroupsTable = () => {
                         {
                             text: c('Action').t`Edit`,
                             onClick() {
+                                if (!hasPaidMail) {
+                                    showUpgradeModal();
+                                    return;
+                                }
                                 createModal(<ContactGroupModal contactGroupID={ID} selectedContactEmails={[]} />);
                             },
                         },
@@ -80,6 +94,10 @@ const ContactGroupsTable = () => {
                             text: c('Action').t`Delete`,
                             actionType: 'delete' as 'delete',
                             onClick() {
+                                if (!hasPaidMail) {
+                                    showUpgradeModal();
+                                    return;
+                                }
                                 createModal(
                                     <ConfirmModal
                                         title={c('Title').t`Delete ${Name}`}
