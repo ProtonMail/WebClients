@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { c } from 'ttag';
-import { PLAN_SERVICES } from 'proton-shared/lib/constants';
+import { PLANS, PLAN_SERVICES } from 'proton-shared/lib/constants';
 import { switchPlan } from 'proton-shared/lib/helpers/planIDs';
 import { Organization, Plan, PlanIDs } from 'proton-shared/lib/interfaces';
 import { Button, Icon } from '../../../components';
@@ -12,10 +12,11 @@ interface Props {
     onChangePlanIDs: (newPlanIDs: PlanIDs) => void;
     plans: Plan[];
     planIDs: PlanIDs;
+    planNamesMap: { [key in PLANS]: Plan };
     organization?: Organization;
 }
 
-const PlanSelectionComparison = ({ service, onChangePlanIDs, plans, organization, planIDs }: Props) => {
+const PlanSelectionComparison = ({ service, onChangePlanIDs, plans, planNamesMap, organization, planIDs }: Props) => {
     const featuresRef = useRef<HTMLDivElement>(null);
     return (
         <>
@@ -60,6 +61,7 @@ const PlanSelectionComparison = ({ service, onChangePlanIDs, plans, organization
                 ) : null}
                 {service === PLAN_SERVICES.VPN ? (
                     <VPNFeatures
+                        planNamesMap={planNamesMap}
                         onSelect={(planName) => {
                             const plan = plans.find(({ Name }) => Name === planName);
                             onChangePlanIDs(
