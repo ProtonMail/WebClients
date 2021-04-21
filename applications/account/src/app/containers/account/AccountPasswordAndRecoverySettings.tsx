@@ -8,7 +8,7 @@ import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMain
 
 export const getPasswordAndRecoveryPage = ({ user }: { user: UserModel }) => {
     return {
-        text: c('Title').t`Password & Recovery`,
+        text: c('Title').t`Password & recovery`,
         to: '/authentication',
         icon: 'keys',
         subsections: [
