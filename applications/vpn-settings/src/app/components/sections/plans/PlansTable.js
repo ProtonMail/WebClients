@@ -8,7 +8,7 @@ import {
     Button,
     Info,
     Loader,
-    useVPNCountries,
+    useVPNCountriesCount,
     useToggle,
 } from 'react-components';
 import { c } from 'ttag';
@@ -42,7 +42,7 @@ const PlansTable = ({
     const { state, toggle } = useToggle(expand);
     const mySubscriptionText = c('Title').t`My subscription`;
     const planName = getPlanName(subscription, PLAN_SERVICES.VPN) || FREE;
-    const [countries, countriesLoading] = useVPNCountries();
+    const [countries, countriesLoading] = useVPNCountriesCount();
 
     const getPlan = (planName) => plans.find(({ Name }) => Name === planName);
 
@@ -120,10 +120,10 @@ const PlansTable = ({
                     <th scope="row" className="simple-table-row-th text-left bg-weak">
                         <span className="mr0-5">{c('Header').t`Countries`}</span>
                     </th>
-                    <td className="text-center">{countriesLoading ? <Loader /> : countries.free.length}</td>
-                    <td className="text-center">{countriesLoading ? <Loader /> : countries.basic.length}</td>
-                    <td className="text-center">{countriesLoading ? <Loader /> : countries.all.length}</td>
-                    <td className="text-center">{countriesLoading ? <Loader /> : countries.all.length}</td>
+                    <td className="text-center">{countriesLoading ? <Loader /> : countries.free_vpn.count}</td>
+                    <td className="text-center">{countriesLoading ? <Loader /> : countries[VPNBASIC].count}</td>
+                    <td className="text-center">{countriesLoading ? <Loader /> : countries[VPNPLUS].count}</td>
+                    <td className="text-center">{countriesLoading ? <Loader /> : countries[VPNPLUS].count}</td>
                 </tr>
 
                 <tr>

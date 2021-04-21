@@ -7,7 +7,7 @@ import {
     useConfig,
     useApiResult,
     useModals,
-    useVPNCountries,
+    useVPNCountriesCount,
     useNotifications,
 } from 'react-components';
 import { c } from 'ttag';
@@ -62,7 +62,7 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
     const { result } = useApiResult(() => queryDirectSignupStatus(CLIENT_TYPE), []);
     const [plans] = usePlans();
     const [plansWithCoupons, setPlansWithCoupons] = useState();
-    const [countries, countriesLoading] = useVPNCountries();
+    const [countries, countriesLoading] = useVPNCountriesCount();
     const [appliedCoupon, setAppliedCoupon] = useState();
     const [appliedInvite, setAppliedInvite] = useState();
 

@@ -30,6 +30,10 @@ export const PLAN_BUNDLES = {
 export const VPN_PLANS = [PLAN.FREE, PLAN.BASIC, PLAN.PLUS, PLAN.VISIONARY];
 export const BEST_DEAL_PLANS = [PLAN.BASIC, PLAN.PLUS, PLAN.VISIONARY];
 
+const getServersText = (n) => {
+    return c('Plan Feature').ngettext(msgid`Server in ${n} country`, `Servers in ${n} countries`, n);
+};
+
 const getPlanFeatures = (plan, maxConnections, countries) => {
     const netflix = <b key={1}>{c('Netflix').t`Netflix`}</b>;
     const disney = <b key={2}>{c('Disney').t`Disney+`}</b>;
@@ -44,7 +48,7 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
                 planName: PLAN.BASIC,
                 features: [
                     c('Plan Feature').t`High speed 1 Gbps VPN servers`,
-                    c('Plan Feature').t`Access to ${countries.basic.length} countries`,
+                    getServersText(countries[PLANS.VPNBASIC].count),
                     c('Plan Feature').t`Filesharing/P2P support`,
                 ],
             },
@@ -54,7 +58,7 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
                     `${maxConnections} VPN connections`,
                     maxConnections
                 ),
-                c('Plan Feature').t`Servers in ${countries.free.length} countries`,
+                getServersText(countries.free_vpn.count),
                 c('Plan Feature').t`Medium speed`,
                 c('Plan Feature').t`Strict no-logs policy`,
                 <>
@@ -121,7 +125,7 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
                     `${maxConnections} VPN connections`,
                     maxConnections
                 ),
-                c('Plan Feature').t`Servers in ${countries.basic.length} countries`,
+                getServersText(countries[PLANS.VPNBASIC].count),
                 c('Plan Feature').t`High speed`,
                 c('Plan Feature').t`Strict no-logs policy`,
                 <>
@@ -181,7 +185,7 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
                     `${maxConnections} VPN connections`,
                     maxConnections
                 ),
-                c('Plan Feature').t`Servers in ${countries.all.length} countries`,
+                getServersText(countries[PLANS.VPNPLUS].count),
                 c('Plan Feature').t`Highest speed (up to 10 Gbps)`,
                 c('Plan Feature').t`Strict no-logs policy`,
                 <>
@@ -260,7 +264,7 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
                     `${maxConnections} VPN connections`,
                     maxConnections
                 ),
-                c('Plan Feature').t`Servers in ${countries.all.length} countries`,
+                getServersText(countries[PLANS.VPNPLUS].count),
                 c('Plan Feature').t`Highest speed (10 Gbps)`,
                 c('Plan Feature').t`Strict no-logs policy`,
                 <>
