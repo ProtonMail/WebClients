@@ -1,3 +1,14 @@
+# [4.0.0-beta.13] - 2021-04-21
+## Improvements
+- Added multiple theme support
+- New themes available: Light, Monokai, & Contrast
+- Redesigned illustrations and refined the look and feel of various parts of the app
+- Reorganized settings to make them easier to find
+- Account registration and sign in flow improvements
+- New subscription customisation options and interface
+
+---
+
 # [4.0.0-beta.12] - 2021-03-18
 ## Fixes 
 - Fixed a discount miscalculation when switching VPN plans (no impact on payment amount)
