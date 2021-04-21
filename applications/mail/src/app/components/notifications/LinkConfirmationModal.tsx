@@ -61,7 +61,7 @@ const LinkConfirmationModal = ({ onClose, link = '', ...rest }: Props) => {
                 </Alert>
             )}
 
-            <Label>
+            <Label className="flex">
                 <Checkbox checked={dontAskAgain} onChange={() => setDontAskAgain(!dontAskAgain)} />
                 {c('Label').t`Do not ask again`}
             </Label>
