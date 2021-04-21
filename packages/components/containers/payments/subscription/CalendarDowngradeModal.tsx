@@ -25,7 +25,7 @@ const CalendarDowngradeModal = ({ onSubmit, onClose, ...rest }: Props) => {
 
     return (
         <FormModal
-            title={c('Title').t`Cancel Subscription`}
+            title={c('Title').t`Cancel subscription`}
             submit={c('Action').t`OK`}
             onSubmit={handleSubmit}
             onClose={onClose}

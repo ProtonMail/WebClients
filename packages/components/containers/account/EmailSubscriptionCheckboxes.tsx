@@ -22,32 +22,32 @@ const EmailSubscriptionCheckboxes = ({ disabled, News, onChange }: EmailSubscrip
         {
             id: 'announcements',
             flag: ANNOUNCEMENTS,
-            text: c('Label for news').t`Proton announcements`,
-            frequency: c('Frequency of news').t`(2-3 emails per year)`,
+            text: c('Label for news').t`Proton company announcements`,
+            frequency: c('Frequency of news').t`(1 email per quarter)`,
         },
         {
             id: 'features',
             flag: FEATURES,
-            text: c('Label for news').t`Proton major features`,
-            frequency: c('Frequency of news').t`(3-4 emails per year)`,
+            text: c('Label for news').t`Proton product announcements`,
+            frequency: c('Frequency of news').t`(1-2 emails per month)`,
         },
         {
             id: 'business',
             flag: BUSINESS,
-            text: c('Label for news').t`Proton for business`,
-            frequency: c('Frequency of news').t`(4-5 emails per year)`,
+            text: c('Label for news').t`Proton for Business newsletter`,
+            frequency: c('Frequency of news').t`(1 email per month)`,
         },
         {
             id: 'newsletter',
             flag: NEWSLETTER,
             text: c('Label for news').t`Proton newsletter`,
-            frequency: c('Frequency of news').t`(8-10 emails per year)`,
+            frequency: c('Frequency of news').t`(1 email per month)`,
         },
         {
             id: 'beta',
             flag: BETA,
-            text: c('Label for news').t`Proton Beta`,
-            frequency: c('Frequency of news').t`(10-12 emails per year)`,
+            text: c('Label for news').t`Proton beta announcements`,
+            frequency: c('Frequency of news').t`(1-2 emails per month)`,
         },
     ];
 

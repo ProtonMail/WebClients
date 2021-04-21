@@ -193,7 +193,7 @@ const UsersAndAddressesSection = () => {
                     onClick={handleAddUser}
                     className="on-mobile-mb0-5 mr1"
                 >
-                    {c('Action').t`Add User`}
+                    {c('Action').t`Add user`}
                 </Button>
                 <div className="flex-item-fluid mb1">
                     <Button
@@ -204,7 +204,7 @@ const UsersAndAddressesSection = () => {
                         onClick={handleAddAddress}
                         className="on-mobile-mb0-5"
                     >
-                        {c('Action').t`Add Address`}
+                        {c('Action').t`Add address`}
                     </Button>
                 </div>
                 <div className="on-mobile-w100">

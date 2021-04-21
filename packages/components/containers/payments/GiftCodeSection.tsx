@@ -36,8 +36,7 @@ const GiftCodeSection = () => {
     return (
         <SettingsSection>
             <SettingsParagraph>
-                {c('Info')
-                    .t`If you purchased a gift code or received one from our support team, you can enter it below.`}
+                {c('Info').t`If you have a gift code, enter it below to apply your discount.`}
             </SettingsParagraph>
 
             <label htmlFor="gift-code-input" className="sr-only">
