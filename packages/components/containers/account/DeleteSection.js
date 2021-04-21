@@ -44,7 +44,7 @@ const DeleteSection = () => {
         <>
             <SettingsParagraph>
                 {c('Info')
-                    .t`This will permanently delete all data associated with your account. You will not be able to reactivate this account.`}
+                    .t`This will permanently delete your account and all of its data. You will not be able to reactivate this account.`}
             </SettingsParagraph>
             <Button
                 color="danger"

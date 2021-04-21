@@ -20,7 +20,7 @@ const CreditsSection = () => {
         <SettingsSection>
             <SettingsParagraph>
                 {c('Info')
-                    .t`When your subscription renews, any available credits will be used first before we charge your payment methods above.`}
+                    .t`When your subscription renews, we will apply any available credits before we charge the payment method above.`}
             </SettingsParagraph>
             <div className="mb2">
                 <Button shape="outline" onClick={handleAddCreditsClick}>{c('Action').t`Add credits`}</Button>

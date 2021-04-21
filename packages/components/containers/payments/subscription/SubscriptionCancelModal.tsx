@@ -45,7 +45,7 @@ const SubscriptionCancellationModal = ({ onSubmit, onClose, onSkip, ...rest }: P
 
     return (
         <FormModal
-            title={c('Title').t`Cancel Subscription`}
+            title={c('Title').t`Cancel subscription`}
             submit={c('Action').t`Submit`}
             close={<Button onClick={handleSkip}>{c('Action').t`Skip`}</Button>}
             onSubmit={handleSubmit}
