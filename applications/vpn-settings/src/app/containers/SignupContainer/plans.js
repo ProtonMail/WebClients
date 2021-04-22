@@ -240,11 +240,6 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
             description: c('Plan Description').t`The complete privacy suite`,
             features: [
                 c('Plan feature').t`All Plus plan features`,
-                c('Plan Feature').ngettext(
-                    msgid`${maxConnections} VPN connection`,
-                    `${maxConnections} VPN connections`,
-                    maxConnections
-                ),
                 <>
                     <span className="mr0-5">{c('Plan Feature').t`ProtonMail Visionary account`}</span>
                     <Info
