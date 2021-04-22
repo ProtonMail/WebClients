@@ -10,7 +10,7 @@ import { decryptMessage } from '../../helpers/message/messageDecrypt';
 import { useAttachmentCache } from '../../containers/AttachmentProvider';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { prepareHtml, preparePlainText } from '../../helpers/transforms/transforms';
-import { isApiError } from '../../helpers/errors';
+import { isNetworkError } from '../../helpers/errors';
 import { useBase64Cache } from '../useBase64Cache';
 import { useMarkAs, MARK_AS_STATUS } from '../useMarkAs';
 import { isUnreadMessage } from '../../helpers/elements';
@@ -96,7 +96,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                       mailSettings
                   );
         } catch (error) {
-            if (isApiError(error)) {
+            if (isNetworkError(error)) {
                 errors.network = [error];
             } else {
                 errors.processing = [error];

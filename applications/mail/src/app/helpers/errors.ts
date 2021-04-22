@@ -1,6 +1,8 @@
 /**
- * Waiting for the API code to be converted in TypeScript
- * Check if the common error is corresponding to an error raised by the API
+ * Define wether or not the error comes from a network error
+ * We have the ApiError type but we can miss some native connection errors
+ * So (unless proven otherwise) the most reliable is to refer on error names
+ * Knowing that ApiError also use error names
  */
-export const isApiError = (error: Error) =>
-    !Number.isNaN((error as any).status) && (error as any).response && (error as any).config;
+export const isNetworkError = (error: any) =>
+    error.name === 'NetworkError' || error.name === 'OfflineError' || error.name === 'TimeoutError';

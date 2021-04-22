@@ -23,6 +23,7 @@ export interface MessageErrors {
     decryption?: Error[];
     processing?: Error[];
     signature?: Error[];
+    unknown?: Error[];
 }
 
 /**
