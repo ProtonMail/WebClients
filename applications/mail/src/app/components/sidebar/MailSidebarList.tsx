@@ -65,7 +65,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
             setFoldersUI(
                 folders.map((folder) => ({
                     ...folder,
-                    Expanded: getItem(formatFolderID(folder.ID)) === '0' ? 0 : 1,
+                    Expanded: getItem(formatFolderID(folder.ID)) === 'false' ? 0 : 1,
                 }))
             );
         }
