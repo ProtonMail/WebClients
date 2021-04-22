@@ -87,7 +87,7 @@ const PlanCard = ({
                         {features.map((feature, index) => (
                             <li
                                 key={`${index}`}
-                                className={classnames(['flex flex-nowrap mb0-5', feature.notIncluded && 'opacity-50'])}
+                                className={classnames(['flex flex-nowrap mb0-5', feature.notIncluded && 'color-weak'])}
                             >
                                 <span className="flex-item-noshrink mr1">
                                     {feature.notIncluded ? '—' : <Icon name="on" className="color-primary" />}
