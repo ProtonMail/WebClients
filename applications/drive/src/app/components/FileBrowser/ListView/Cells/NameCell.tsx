@@ -6,7 +6,7 @@ interface Props {
 }
 
 const NameCell = ({ name }: Props) => (
-    <div key="name" className="flex">
+    <div key="name" className="flex mr1">
         <FileNameDisplay text={name} />
     </div>
 );
