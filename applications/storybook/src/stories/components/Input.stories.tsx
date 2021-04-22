@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { InputTwo } from 'react-components';
-import ccIcon from 'design-system/assets/img/shared/bank-icons/cc-mastercard.svg';
+import ccIcon from 'design-system/assets/img/credit-card-icons/cc-master.svg';
 import mdx from './Input.mdx';
 
 export default {
