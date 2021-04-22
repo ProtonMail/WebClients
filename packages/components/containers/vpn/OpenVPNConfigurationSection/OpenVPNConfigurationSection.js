@@ -3,10 +3,10 @@ import { c } from 'ttag';
 import { queryVPNLogicalServerInfo, getVPNServerConfig } from 'proton-shared/lib/api/vpn';
 import { groupWith } from 'proton-shared/lib/helpers/array';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { SORT_DIRECTION, VPN_HOSTNAME } from 'proton-shared/lib/constants';
+import { PLANS, SORT_DIRECTION, VPN_HOSTNAME } from 'proton-shared/lib/constants';
 import { Link } from 'react-router-dom';
 import { Alert, Href, Icon, Info, Button, Block, Tooltip, Radio, RadioGroup, ButtonLike } from '../../../components';
-import { useApiResult, useApiWithoutResult, useUser, useSortedList, useUserVPN } from '../../../hooks';
+import { useApiResult, useApiWithoutResult, useUser, useSortedList, useUserVPN, usePlans } from '../../../hooks';
 import { getCountryByAbbr, correctAbbr } from '../../../helpers/countries';
 import ServerConfigs from './ServerConfigs';
 import { isSecureCoreEnabled } from './utils';
@@ -31,6 +31,7 @@ const OpenVPNConfigurationSection = () => {
     const [protocol, setProtocol] = useState(PROTOCOL.UDP);
     const [category, setCategory] = useState(CATEGORY.SECURE_CORE);
     const { request } = useApiWithoutResult(getVPNServerConfig);
+    const [plans, loadingPlans] = usePlans();
     const { loading, result = {} } = useApiResult(queryVPNLogicalServerInfo, []);
     const { result: vpnResult = {}, loading: vpnLoading, fetch: fetchUserVPN } = useUserVPN();
     const [{ hasPaidVpn }] = useUser();
@@ -97,6 +98,8 @@ const OpenVPNConfigurationSection = () => {
     useEffect(() => {
         fetchUserVPN();
     }, [hasPaidVpn]);
+
+    const plusVpnConnections = plans?.find(({ Name }) => Name === PLANS.VPNPLUS)?.MaxVPN;
 
     return (
         <>
@@ -268,7 +271,7 @@ const OpenVPNConfigurationSection = () => {
                             .t`Download all configurations`}</Button>
                     )}
                 </div>
-                {userVPN.PlanName === 'trial' || !hasPaidVpn ? (
+                {!loadingPlans && (userVPN.PlanName === 'trial' || !hasPaidVpn) ? (
                     <div className="bordered p2 text-center">
                         <h3 className="color-primary mt0 mb1">{c('Title')
                             .t`Get ProtonVPN Plus to access all servers`}</h3>
@@ -291,7 +294,8 @@ const OpenVPNConfigurationSection = () => {
                             </li>
                             <li className="flex flex-nowrap flex-align-items-center mr1">
                                 <Icon name="on" className="color-success mr0-5" />
-                                <span className="text-bold">{c('Feature').t`Connection for up to 5 devices`}</span>
+                                <span className="text-bold">{c('Feature')
+                                    .t`Connection for up to ${plusVpnConnections} devices`}</span>
                             </li>
                             <li className="flex flex-nowrap flex-align-items-center ">
                                 <Icon name="on" className="color-success mr0-5" />
