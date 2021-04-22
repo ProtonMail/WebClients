@@ -10,14 +10,16 @@ import { transformWelcome } from './transformWelcome';
 import { transformStylesheet } from './transformStylesheet';
 import { transformRemote } from './transformRemote';
 import { transformLinkify } from './transformLinkify';
+import { MessageCache } from '../../containers/MessageProvider';
 
 export const prepareHtml = async (
     message: MessageExtended,
     messageKeys: MessageKeys,
+    messageCache: MessageCache,
     base64Cache: Base64Cache,
     attachmentsCache: AttachmentsCache,
     api: Api,
-    mailSettings?: Partial<MailSettings>
+    mailSettings: MailSettings | undefined
 ) => {
     const document = transformEscape(message.decryptedBody, base64Cache);
 
@@ -28,8 +30,10 @@ export const prepareHtml = async (
     const { showEmbeddedImages, embeddeds } = await transformEmbedded(
         { ...message, document },
         messageKeys,
+        messageCache,
         attachmentsCache,
-        api
+        api,
+        mailSettings
     );
 
     transformWelcome(document);

@@ -36,9 +36,7 @@
     * {
         line-height: normal;
     }
-
 }
-
 
 .bodyDecrypted.plain {
     white-space: pre-wrap;
@@ -92,6 +90,11 @@
     padding: 10px 0 0 20px;
     color: rgba(0, 0, 0, 0.5);
     background: url('../../assets/broken-img.png') no-repeat 0 50% #fff; /* override the background in far left */
+}
+
+.proton-embedded-loading > .proton-embedded:not([src])::after {
+    content: '';
+    background: #fff;
 }
 
 /* Responsiveness of our embedded images */

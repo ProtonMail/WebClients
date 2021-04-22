@@ -2,7 +2,6 @@ import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { isDraft, isPlainText } from 'proton-shared/lib/mail/messages';
 import { useCallback } from 'react';
 import { useApi, useMailSettings } from 'react-components';
-
 import { MessageExtended, MessageErrors, MessageExtendedWithData, EmbeddedMap } from '../../models/message';
 import { loadMessage } from '../../helpers/message/messageRead';
 import { useGetMessageKeys } from './useGetMessageKeys';
@@ -14,8 +13,6 @@ import { isNetworkError } from '../../helpers/errors';
 import { useBase64Cache } from '../useBase64Cache';
 import { useMarkAs, MARK_AS_STATUS } from '../useMarkAs';
 import { isUnreadMessage } from '../../helpers/elements';
-import { hasShowEmbedded } from '../../helpers/settings';
-import { useLoadEmbeddedImages } from './useLoadImages';
 
 interface Preparation {
     plainText?: string;
@@ -33,7 +30,6 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
     const attachmentsCache = useAttachmentCache();
     const base64Cache = useBase64Cache();
     const [mailSettings] = useMailSettings();
-    const loadEmbeddedImages = useLoadEmbeddedImages(localID);
 
     return useCallback(async () => {
         // Message can change during the whole initilization sequence
@@ -90,6 +86,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                 : await prepareHtml(
                       { ...message, decryptedBody: decryption.decryptedBody },
                       messageKeys,
+                      messageCache,
                       base64Cache,
                       attachmentsCache,
                       api,
@@ -110,19 +107,12 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                 decryptedRawContent: decryption?.decryptedRawContent,
                 signature: decryption?.signature,
                 decryptedSubject: decryption?.decryptedSubject,
-                // Anticipate showEmbedded flag while triggering the load just after
                 showEmbeddedImages: preparation?.showEmbeddedImages,
                 showRemoteImages: preparation?.showRemoteImages,
                 embeddeds: preparation?.embeddeds,
                 errors,
                 initialized: true,
             });
-        }
-
-        if (hasShowEmbedded(mailSettings)) {
-            // Load embedded images as a second step not synchronized with the initialization
-            // To prevent slowing the message body when there is heavy embedded attachments
-            void loadEmbeddedImages();
         }
     }, [localID]);
 };

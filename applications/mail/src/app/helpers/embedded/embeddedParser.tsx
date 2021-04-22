@@ -1,8 +1,10 @@
+import React from 'react';
+import { render } from 'react-dom';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { Api } from 'proton-shared/lib/interfaces';
 import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
 import { isDraft } from 'proton-shared/lib/mail/messages';
-
+import { Loader } from 'react-components';
 import { MessageExtended, EmbeddedMap, MessageKeys, MessageVerification } from '../../models/message';
 import { escapeSrc, unescapeSrc, wrap } from '../dom';
 import { ENCRYPTED_STATUS } from '../../constants';
@@ -12,19 +14,22 @@ import { createBlob, readCID } from './embeddeds';
 import { isInlineEmbedded, isEmbedded } from '../image';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
-const EMBEDDED_CLASSNAME = 'proton-embedded';
+export const EMBEDDED_CLASSNAME = 'proton-embedded';
+export const EMBEDDED_CLASSNAME_LOADING = 'proton-embedded-loading';
 
-const wrapImage = (img: Element) => wrap(img, '<div class="image loading"></div>');
+const wrapImage = (img: Element) => {
+    const element = wrap(img, `<div class="${EMBEDDED_CLASSNAME_LOADING} relative inline-block"></div>`);
+    const loaderContainer = document.createElement('div');
+    loaderContainer.classList.add('covered-absolute', 'flex');
+    element.appendChild(loaderContainer);
+    // Using a mini react to have the official loader
+    render(<Loader className="center flex" />, loaderContainer);
+};
 
 /**
  * Prepare embedded images in the document
  */
-export const prepareImages = (
-    message: Partial<MessageExtended>,
-    show: boolean,
-    isReplyForward: boolean,
-    isOutside = false
-) => {
+export const prepareImages = (message: Partial<MessageExtended>, show: boolean) => {
     if (!message.document) {
         return;
     }
@@ -73,25 +78,12 @@ export const prepareImages = (
              * Then it will be parsed by the embeddedParser in the blob or cid direction.
              */
             image.removeAttribute('proton-src');
+            image.removeAttribute('src');
 
-            // Auto load image inside a reply draft
-            if (isReplyForward) {
-                // `getUrl` may return undefined here because the embedded attachments have not yet been decrypted and put in the blob store.
-                // const url = getUrl(cache, image);
-                // only set it if it is defined, otherwise the unescapeSrc will add two src=""
-                if (info?.url) {
-                    image.setAttribute('src', info.url);
-                }
-                return;
+            if (!draft && !image.parentElement.classList.contains(EMBEDDED_CLASSNAME_LOADING)) {
+                wrapImage(image);
             }
 
-            // We don't need to add it outside
-            if (!isOutside) {
-                if (!draft && !image.parentElement.classList.contains('loading')) {
-                    wrapImage(image);
-                }
-                image.removeAttribute('src');
-            }
             return;
         }
 
@@ -194,6 +186,13 @@ export const mutateHTMLBlob = (embeddeds: EmbeddedMap | undefined, document: Ele
             element.setAttribute('data-src', url);
             element.setAttribute('data-embedded-img', cid);
             element.classList.add(EMBEDDED_CLASSNAME);
+
+            console.log('mutateHTML', element.parentElement?.parentElement);
+
+            if (element.parentElement?.classList.contains(EMBEDDED_CLASSNAME_LOADING)) {
+                console.log('replaceChild', element.parentElement.parentElement);
+                element.parentElement.parentElement?.replaceChild(element, element.parentElement);
+            }
         });
     });
 };

@@ -1,7 +1,7 @@
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import { MessageExtended } from '../../models/message';
 import { getContent, getDocumentContent, setDocumentContent } from '../message/messageContent';
-import { hasShowRemote } from '../settings';
+import { hasShowRemote } from '../mailSettings';
 
 const WHITELIST = ['notify@protonmail.com'];
 
