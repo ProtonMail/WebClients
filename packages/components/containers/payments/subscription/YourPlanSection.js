@@ -85,7 +85,7 @@ const YourPlanSection = ({ permission }) => {
 
     const mailAddons = (
         <>
-            <div className="w100">
+            <div className="w100 pt0-5">
                 {UsedMembers} {c('x of y').t`of`} {MaxMembers} {c('Label').t`Users`}
             </div>
             <div className="mt1">
@@ -132,7 +132,7 @@ const YourPlanSection = ({ permission }) => {
                     <SettingsLayoutLeft className="text-semibold">
                         {c('Label').t`ProtonVPN ${planType}`}
                     </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="flex-item-fluid">
+                    <SettingsLayoutRight className="flex-item-fluid pt0-5">
                         {getVpnConnectionsText(hasPaidVpn ? MaxVPN : 1)}
                         <UpsellVPNSubscription />
                     </SettingsLayoutRight>
