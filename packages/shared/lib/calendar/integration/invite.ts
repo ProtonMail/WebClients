@@ -401,7 +401,7 @@ const getFormattedDateInfo = (vevent: VcalVeventComponent, options: Options = { 
         : undefined;
     const { offset: startOffset } = getTimezoneOffset(propertyToUTCDate(dtstart), getPropertyTzid(dtstart) || 'UTC');
     const { offset: endOffset } = dtend
-        ? getTimezoneOffset(propertyToUTCDate(dtend), getPropertyTzid(dtstart) || 'UTC')
+        ? getTimezoneOffset(propertyToUTCDate(dtend), getPropertyTzid(dtend) || 'UTC')
         : { offset: 0 };
     const formattedStartOffset = `GMT${formatTimezoneOffset(startOffset)}`;
     const formattedEndOffset = `GMT${formatTimezoneOffset(endOffset)}`;
