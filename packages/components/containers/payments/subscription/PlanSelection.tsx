@@ -98,7 +98,7 @@ const getFeatures = (plan: Plan, service: PLAN_SERVICES, vpnCountries: VPNCountr
             { content: c('Plan feature').t`350+ servers in ${basicCountries} countries` },
             vpnConnections,
             { content: c('Plan feature').t`High speed` },
-            adBlocker,
+            { ...adBlocker, notIncluded: true },
             { ...secureCore, notIncluded: true },
             { ...streamingService, notIncluded: true },
         ];
