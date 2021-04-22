@@ -2,9 +2,10 @@ import React from 'react';
 import { c } from 'ttag';
 import { APPS, PLANS } from 'proton-shared/lib/constants';
 import { getAppName } from 'proton-shared/lib/apps/helper';
-import { VPNCountries } from 'proton-shared/lib/interfaces';
+import { Plan, VPNCountries } from 'proton-shared/lib/interfaces';
+import { FREE_VPN_PLAN } from 'proton-shared/lib/subscription/freePlans';
 
-import { useVPNCountries } from '../../../hooks';
+import { useVPNCountriesCount } from '../../../hooks';
 import { Icon } from '../../../components';
 import { VPNFeature } from './interface';
 import Features from './Features';
@@ -12,16 +13,16 @@ import Features from './Features';
 const CheckIcon = () => <Icon className="color-primary" name="on" alt={c('information').t`Included`} />;
 const EmDash = '—';
 
-const getFeatures = (vpnCountries: VPNCountries): VPNFeature[] => {
+const getFeatures = (vpnCountries: VPNCountries, planNamesMap: { [key: string]: Plan }): VPNFeature[] => {
     const mailAppName = getAppName(APPS.PROTONMAIL);
     return [
         {
             name: 'connections',
             label: c('VPN feature').t`VPN Connections`,
-            free: '1',
-            [PLANS.VPNBASIC]: '2',
-            [PLANS.VPNPLUS]: '5',
-            [PLANS.VISIONARY]: '10',
+            free: `${FREE_VPN_PLAN.MaxVPN}`,
+            [PLANS.VPNBASIC]: `${planNamesMap[PLANS.VPNBASIC].MaxVPN}`,
+            [PLANS.VPNPLUS]: `${planNamesMap[PLANS.VPNPLUS].MaxVPN}`,
+            [PLANS.VISIONARY]: `${planNamesMap[PLANS.VISIONARY].MaxVPN}`,
         },
         {
             name: 'speed',
@@ -42,10 +43,10 @@ const getFeatures = (vpnCountries: VPNCountries): VPNFeature[] => {
         {
             name: 'countries',
             label: c('VPN feature').t`Locations/Countries`,
-            free: `${vpnCountries.free.length} (US, NL, JP)`,
-            [PLANS.VPNBASIC]: vpnCountries.basic.length,
-            [PLANS.VPNPLUS]: vpnCountries.all.length,
-            [PLANS.VISIONARY]: vpnCountries.all.length,
+            free: `${vpnCountries.free_vpn.count} (US, NL, JP)`,
+            [PLANS.VPNBASIC]: vpnCountries[PLANS.VPNBASIC].count,
+            [PLANS.VPNPLUS]: vpnCountries[PLANS.VPNPLUS].count,
+            [PLANS.VISIONARY]: vpnCountries[PLANS.VPNPLUS].count,
         },
         {
             name: 'netshield',
@@ -269,12 +270,13 @@ const getFeatures = (vpnCountries: VPNCountries): VPNFeature[] => {
 
 interface Props {
     onSelect: (planName: PLANS | 'free') => void;
+    planNamesMap: { [key: string]: Plan };
 }
 
-const VPNFeatures = ({ onSelect }: Props) => {
-    const [vpnCountries] = useVPNCountries();
+const VPNFeatures = ({ onSelect, planNamesMap }: Props) => {
+    const [vpnCountries] = useVPNCountriesCount();
 
-    const features = getFeatures(vpnCountries);
+    const features = getFeatures(vpnCountries, planNamesMap);
     const planLabels = [
         { label: 'Free', key: 'free' } as const,
         { label: 'Basic', key: PLANS.VPNBASIC },

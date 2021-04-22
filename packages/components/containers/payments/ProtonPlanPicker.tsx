@@ -1,56 +1,26 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Cycle, Currency, Plan, Organization, Subscription, PlanIDs } from 'proton-shared/lib/interfaces';
-import {
-    CYCLE,
-    PLANS,
-    PLAN_SERVICES,
-    APPS,
-    PLAN_TYPES,
-    DEFAULT_CURRENCY,
-    DEFAULT_CYCLE,
-} from 'proton-shared/lib/constants';
+import { CYCLE, PLANS, PLAN_SERVICES, APPS } from 'proton-shared/lib/constants';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { getPlan } from 'proton-shared/lib/helpers/subscription';
 import { switchPlan } from 'proton-shared/lib/helpers/planIDs';
 import { getAppName } from 'proton-shared/lib/apps/helper';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { FREE_MAIL_PLAN, FREE_VPN_PLAN } from 'proton-shared/lib/subscription/freePlans';
 
 import { Radio, Button, InlineLinkButton, Price } from '../../components';
 import { classnames } from '../../helpers';
 
 const NAMES = {
-    free: 'Free',
+    free_mail: 'Free',
+    free_vpn: 'Free',
     [PLANS.VPNBASIC]: 'Basic',
     [PLANS.VPNPLUS]: 'Plus',
     [PLANS.PLUS]: 'Plus',
     [PLANS.PROFESSIONAL]: 'Professional',
     [PLANS.VISIONARY]: 'Visionary',
 } as const;
-
-const FREE_PLAN = {
-    ID: 'free',
-    Name: 'free' as PLANS,
-    Title: 'Free',
-    Type: PLAN_TYPES.PLAN,
-    Currency: DEFAULT_CURRENCY,
-    Cycle: DEFAULT_CYCLE,
-    Amount: 0,
-    MaxDomains: 0,
-    MaxAddresses: 0,
-    MaxSpace: 0,
-    MaxMembers: 0,
-    MaxVPN: 0,
-    MaxTier: 0,
-    Services: PLAN_SERVICES.MAIL + PLAN_SERVICES.VPN,
-    Quantity: 1,
-    Features: 0,
-    Pricing: {
-        [CYCLE.MONTHLY]: 0,
-        [CYCLE.YEARLY]: 0,
-        [CYCLE.TWO_YEARS]: 0,
-    },
-} as Plan;
 
 export interface Props {
     index?: number;
@@ -83,18 +53,19 @@ const ProtonPlanPicker = ({
     const mailAppName = getAppName(APPS.PROTONMAIL);
     const planNamesMap = toMap(plans, 'Name');
     const MailPlans: Plan[] = [
-        FREE_PLAN,
+        FREE_MAIL_PLAN,
         planNamesMap[PLANS.PLUS],
         planNamesMap[PLANS.PROFESSIONAL],
         index === 0 && service === PLAN_SERVICES.MAIL && planNamesMap[PLANS.VISIONARY],
     ].filter(isTruthy);
     const VPNPlans: Plan[] = [
-        FREE_PLAN,
+        FREE_VPN_PLAN,
         planNamesMap[PLANS.VPNBASIC],
         planNamesMap[PLANS.VPNPLUS],
         index === 0 && service === PLAN_SERVICES.VPN && planNamesMap[PLANS.VISIONARY],
     ].filter(isTruthy);
-    const currentPlan = subscription ? getPlan(subscription, service) : FREE_PLAN;
+    const serviceFreePlan = service === PLAN_SERVICES.VPN ? FREE_VPN_PLAN : FREE_MAIL_PLAN;
+    const currentPlan = subscription ? getPlan(subscription, service) : serviceFreePlan;
     const plansToShow = service === PLAN_SERVICES.VPN ? VPNPlans : MailPlans;
     const currentPlanText = c('Plan info').t`(current plan)`;
 
@@ -122,7 +93,7 @@ const ProtonPlanPicker = ({
             ) : null}
             <ul className="unstyled">
                 {plansToShow.map((plan) => {
-                    const isFree = plan.ID === FREE_PLAN.ID;
+                    const isFree = plan.ID === FREE_MAIL_PLAN.ID || plan.ID === FREE_VPN_PLAN.ID;
                     const isCurrentPlan = currentPlan?.ID === plan.ID;
                     const checked = isFree ? plansToShow.every((plan) => !planIDs[plan.ID]) : !!planIDs[plan.ID];
                     return (
