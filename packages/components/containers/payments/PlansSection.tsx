@@ -20,7 +20,7 @@ import {
     useNotifications,
     useConfig,
     useLoading,
-    useVPNCountries,
+    useVPNCountriesCount,
 } from '../../hooks';
 
 import SubscriptionModal from './subscription/SubscriptionModal';
@@ -40,7 +40,7 @@ const PlansSection = () => {
     const { createModal } = useModals();
     const [user] = useUser();
     const [loading, withLoading] = useLoading();
-    const [vpnCountries] = useVPNCountries();
+    const [vpnCountries] = useVPNCountriesCount();
     const [subscription = FREE_SUBSCRIPTION, loadingSubscription] = useSubscription();
     const [organization = FREE_ORGANIZATION, loadingOrganization] = useOrganization();
     const [plans = [], loadingPlans] = usePlans();

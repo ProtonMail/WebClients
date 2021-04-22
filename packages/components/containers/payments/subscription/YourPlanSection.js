@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { PLANS, PLAN_NAMES } from 'proton-shared/lib/constants';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import percentage from 'proton-shared/lib/helpers/percentage';
@@ -18,6 +18,10 @@ import SettingsLayout from '../../account/SettingsLayout';
 import SettingsLayoutRight from '../../account/SettingsLayoutRight';
 import SubscriptionModal from './SubscriptionModal';
 import { SUBSCRIPTION_STEPS } from './constants';
+
+const getVpnConnectionsText = (n) => {
+    return c('Label').ngettext(msgid`${n} VPN Connection available`, `${n} VPN Connections available`, n);
+};
 
 const YourPlanSection = ({ permission }) => {
     const [user] = useUser();
@@ -129,7 +133,7 @@ const YourPlanSection = ({ permission }) => {
                         {c('Label').t`ProtonVPN ${planType}`}
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight className="flex-item-fluid">
-                        {hasPaidVpn ? MaxVPN : 1} {c('Label').t`VPN Connections available`}
+                        {getVpnConnectionsText(hasPaidVpn ? MaxVPN : 1)}
                         <UpsellVPNSubscription />
                     </SettingsLayoutRight>
                 </SettingsLayout>

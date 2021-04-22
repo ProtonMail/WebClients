@@ -1,20 +1,13 @@
 import React from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { Currency, Cycle, Organization, Plan, PlanIDs, Subscription, VPNCountries } from 'proton-shared/lib/interfaces';
 import { toMap } from 'proton-shared/lib/helpers/object';
-import {
-    APPS,
-    CYCLE,
-    DEFAULT_CURRENCY,
-    DEFAULT_CYCLE,
-    PLAN_SERVICES,
-    PLAN_TYPES,
-    PLANS,
-} from 'proton-shared/lib/constants';
+import { APPS, CYCLE, PLAN_SERVICES, PLANS } from 'proton-shared/lib/constants';
 import { switchPlan } from 'proton-shared/lib/helpers/planIDs';
 import { getAppName } from 'proton-shared/lib/apps/helper';
 import { getPlan } from 'proton-shared/lib/helpers/subscription';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { FREE_MAIL_PLAN, FREE_VPN_PLAN } from 'proton-shared/lib/subscription/freePlans';
 
 import { Button, Info } from '../../../components';
 
@@ -26,29 +19,8 @@ import PlanCard, { PlanCardFeature } from './PlanCard';
 import './PlanSelection.scss';
 import PlanSelectionComparison from './PlanSelectionComparison';
 
-const FREE_PLAN = {
-    ID: 'free',
-    Name: 'free_mail' as PLANS,
-    Title: 'Free',
-    Type: PLAN_TYPES.PLAN,
-    Currency: DEFAULT_CURRENCY,
-    Cycle: DEFAULT_CYCLE,
-    Amount: 0,
-    MaxDomains: 0,
-    MaxAddresses: 0,
-    MaxSpace: 0,
-    MaxMembers: 0,
-    MaxVPN: 0,
-    MaxTier: 0,
-    Services: PLAN_SERVICES.MAIL + PLAN_SERVICES.VPN,
-    Quantity: 1,
-    Features: 0,
-    Pricing: {
-        [CYCLE.MONTHLY]: 0,
-        [CYCLE.YEARLY]: 0,
-        [CYCLE.TWO_YEARS]: 0,
-    },
-} as Plan;
+const getVpnConnectionsText = (n: number) =>
+    c('Plan Feature').ngettext(msgid`${n} VPN connection`, `${n} VPN connections`, n);
 
 const NAMES = {
     free_mail: 'Free',
@@ -60,21 +32,20 @@ const NAMES = {
     [PLANS.VISIONARY]: 'Visionary',
 } as const;
 
-const getFeatures = (
-    planName: keyof typeof NAMES,
-    service: PLAN_SERVICES,
-    vpnCountries: VPNCountries
-): PlanCardFeature[] => {
+const getFeatures = (plan: Plan, service: PLAN_SERVICES, vpnCountries: VPNCountries): PlanCardFeature[] => {
     const netflix = <b key={1}>{c('Netflix').t`Netflix`}</b>;
     const disney = <b key={2}>{c('Disney').t`Disney+`}</b>;
     const primeVideo = <b key={3}>{c('Prime Video').t`Prime Video`}</b>;
     const many = <b key={4}>{c('Many Others').t`and many others`}</b>;
-    const freeCountries = vpnCountries.free.length;
-    const basicCountries = vpnCountries.basic.length;
-    const allCountries = vpnCountries.all.length;
+    const freeCountries = vpnCountries.free_vpn.count;
+    const basicCountries = vpnCountries[PLANS.VPNBASIC].count;
+    const plusCountries = vpnCountries[PLANS.VPNPLUS].count;
 
     const mailAppName = getAppName(APPS.PROTONMAIL);
     const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
+    const { Name } = plan;
+    // TODO: Improve the free plan logic.
+    const planName = Name as keyof typeof NAMES;
 
     const adBlocker = {
         content: c('Plan feature').t`Built-in Adblocker (NetShield)`,
@@ -109,10 +80,12 @@ const getFeatures = (
         ),
     };
 
+    const vpnConnections = { content: getVpnConnectionsText(plan.MaxVPN) };
+
     if (planName === 'free_vpn') {
         return [
             { content: c('Plan feature').t`17 servers in ${freeCountries} countries` },
-            { content: c('Plan feature').t`1 VPN connection` },
+            vpnConnections,
             { content: c('Plan feature').t`Medium speed` },
             { ...adBlocker, notIncluded: true },
             { ...secureCore, notIncluded: true },
@@ -123,7 +96,7 @@ const getFeatures = (
     if (planName === PLANS.VPNBASIC) {
         return [
             { content: c('Plan feature').t`350+ servers in ${basicCountries} countries` },
-            { content: c('Plan feature').t`2 VPN connections` },
+            vpnConnections,
             { content: c('Plan feature').t`High speed` },
             adBlocker,
             { ...secureCore, notIncluded: true },
@@ -133,8 +106,8 @@ const getFeatures = (
 
     if (planName === PLANS.VPNPLUS) {
         return [
-            { content: c('Plan feature').t`1200+ servers in ${allCountries} countries` },
-            { content: c('Plan feature').t`5 VPN connections` },
+            { content: c('Plan feature').t`1200+ servers in ${plusCountries} countries` },
+            vpnConnections,
             { content: c('Plan feature').t`Highest speed (up to 10 Gbps)` },
             adBlocker,
             secureCore,
@@ -144,8 +117,7 @@ const getFeatures = (
 
     if (planName === PLANS.VISIONARY && service === PLAN_SERVICES.VPN) {
         return [
-            { content: c('Plan feature').t`All plan features` },
-            { content: c('Plan feature').t`10 VPN connections` },
+            { content: c('Plan feature').t`All Plus plan features` },
             { content: c('Plan feature').t`Includes 6 user accounts` },
             {
                 content: c('Plan feature').t`Includes Proton Visionary`,
@@ -270,13 +242,13 @@ const PlanSelection = ({
     const isVpnApp = service === PLAN_SERVICES.VPN;
     const planNamesMap = toMap(plans, 'Name');
     const MailPlans = [
-        hasFreePlan && FREE_PLAN,
+        hasFreePlan && FREE_MAIL_PLAN,
         planNamesMap[PLANS.PLUS],
         planNamesMap[PLANS.PROFESSIONAL],
         planNamesMap[PLANS.VISIONARY],
     ].filter(isTruthy);
     const VPNPlans = [
-        hasFreePlan && { ...FREE_PLAN, Name: 'free_vpn' as PLANS },
+        hasFreePlan && FREE_VPN_PLAN,
         planNamesMap[PLANS.VPNBASIC],
         planNamesMap[PLANS.VPNPLUS],
         planNamesMap[PLANS.VISIONARY],
@@ -334,7 +306,7 @@ const PlanSelection = ({
             </div>
             <div className="plan-selection mt1" style={{ '--plan-selection-number': plansToShow.length }}>
                 {plansToShow.map((plan: Plan) => {
-                    const isFree = plan.ID === FREE_PLAN.ID;
+                    const isFree = plan.ID === FREE_MAIL_PLAN.ID || plan.ID === FREE_VPN_PLAN.ID;
                     const isCurrentPlan = isFree ? !currentPlan : currentPlan?.ID === plan.ID;
                     return (
                         <PlanCard
@@ -347,7 +319,7 @@ const PlanSelection = ({
                             key={plan.ID}
                             price={plan.Pricing[cycle]}
                             info={INFOS[plan.Name as PLANS]}
-                            features={getFeatures(plan.Name as PLANS, service, vpnCountries)}
+                            features={getFeatures(plan, service, vpnCountries)}
                             onClick={() => {
                                 onChangePlanIDs(
                                     switchPlan({
@@ -368,6 +340,7 @@ const PlanSelection = ({
                     service={service}
                     onChangePlanIDs={onChangePlanIDs}
                     plans={plans}
+                    planNamesMap={planNamesMap}
                     planIDs={planIDs}
                 />
             )}
