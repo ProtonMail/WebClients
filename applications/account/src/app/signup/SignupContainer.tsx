@@ -31,7 +31,7 @@ import {
     useMyLocation,
     usePayment,
     usePlans,
-    useVPNCountries,
+    useVPNCountriesCount,
     ChallengeResult,
 } from 'react-components';
 import { Payment, PaymentParameters } from 'react-components/containers/payments/interface';
@@ -128,7 +128,7 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
     const [plans] = usePlans();
     const [myLocation] = useMyLocation();
     const [loading, withLoading] = useLoading();
-    const [vpnCountries] = useVPNCountries();
+    const [vpnCountries] = useVPNCountriesCount();
     const [checkResult, setCheckResult] = useState<SubscriptionCheckResponse>(DEFAULT_CHECK_RESULT);
 
     const cacheRef = useRef<CacheRef>({});
