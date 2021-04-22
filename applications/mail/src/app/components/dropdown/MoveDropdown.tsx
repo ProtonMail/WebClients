@@ -156,7 +156,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                 />
             </div>
             <div
-                className="scroll-if-needed customScrollBar-container scroll-smooth-touch mt1 move-dropdown-list-container"
+                className="scroll-if-needed scroll-smooth-touch mt1 move-dropdown-list-container"
                 data-testid="move-dropdown-list"
             >
                 <ul className="unstyled mt0 mb0">
