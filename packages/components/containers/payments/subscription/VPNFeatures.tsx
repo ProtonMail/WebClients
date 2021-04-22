@@ -54,7 +54,7 @@ const getFeatures = (vpnCountries: VPNCountries, planNamesMap: { [key: string]: 
             tooltip: c('Tooltip')
                 .t`NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.`,
             free: EmDash,
-            [PLANS.VPNBASIC]: <CheckIcon />,
+            [PLANS.VPNBASIC]: EmDash,
             [PLANS.VPNPLUS]: <CheckIcon />,
             [PLANS.VISIONARY]: <CheckIcon />,
         },
