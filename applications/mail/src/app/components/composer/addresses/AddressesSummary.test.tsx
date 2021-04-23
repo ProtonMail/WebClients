@@ -11,10 +11,13 @@ const recipient = { Name: 'RecipientName', Address: 'Address' };
 const recipientLabel = getRecipientLabel(recipient, {}) || '';
 const recipientGroup = { Name: 'RecipientName', Address: 'Address', Group: 'GroupPath' };
 const group = { Name: 'GroupName', Path: 'GroupPath' };
-contactCache.contactGroupsMap[group.Path] = group;
 
 describe('AddressesSummary', () => {
-    afterEach(() => clearAll());
+    beforeEach(() => {
+        contactCache.contactGroupsMap[group.Path] = group;
+    });
+
+    afterEach(clearAll);
 
     it('should render a recipient', async () => {
         const message = { ToList: [recipient] } as Message;

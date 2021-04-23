@@ -197,7 +197,7 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
     };
 
     return (
-        <div className="bg-norm rounded bordered p0-5 mb0-5 flex flex-nowrap">
+        <div className="bg-norm rounded bordered p0-5 mb0-5 flex flex-nowrap" data-testid="unsubscribe-banner">
             <Icon name="email" className="flex-item-noshrink mtauto mbauto" />
             <span className="pl0-5 pr0-5 flex-item-fluid">
                 <span className="mr0-25">{c('Info').t`This message is from a mailing list.`}</span>
