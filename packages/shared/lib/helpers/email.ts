@@ -147,8 +147,8 @@ export const canonizeInternalEmail = (email: string) => canonizeEmail(email, CAN
 
 /**
  * Canonize an email by guessing the scheme that should be applied
- * ATTENTION: This helper will never be able to guess that Proton scheme must be applied on custom domains;
- * Only the back-end knows about custom domains. Use GET /addresses/canonical in those cases
+ * Notice that this helper will not apply the Proton scheme on custom domains;
+ * Only the back-end knows about custom domains, but they also apply the default scheme in those cases.
  */
 export const canonizeEmailByGuess = (email: string) => {
     const [, domain] = getEmailParts(email);
