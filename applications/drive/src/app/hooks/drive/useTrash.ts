@@ -1,12 +1,12 @@
 import { usePreventLeave } from 'react-components';
 import { chunk } from 'proton-shared/lib/helpers/array';
+import runInQueue from 'proton-shared/lib/helpers/runInQueue';
 import { queryTrashLinks, queryRestoreLinks, queryEmptyTrashOfShare, queryDeleteTrashedLinks } from '../../api/link';
 import { LinkMeta, FolderLinkMeta } from '../../interfaces/link';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 import { FOLDER_PAGE_SIZE, BATCH_REQUEST_SIZE, RESPONSE_CODE, MAX_THREADS_PER_REQUEST } from '../../constants';
 import { RestoreFromTrashResult, RestoreResponse } from '../../interfaces/restore';
 import { queryTrashList } from '../../api/share';
-import runInQueue from '../../utils/runInQueue';
 import useDrive from './useDrive';
 import useDebouncedRequest from '../util/useDebouncedRequest';
 

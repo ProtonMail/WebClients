@@ -21,6 +21,7 @@ import { chunk } from 'proton-shared/lib/helpers/array';
 import { Address, DecryptedKey } from 'proton-shared/lib/interfaces';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import runInQueue from 'proton-shared/lib/helpers/runInQueue';
 import {
     decryptUnsigned,
     generateNodeKeys,
@@ -55,7 +56,6 @@ import { queryCreateDriveVolume, queryRestoreDriveVolume } from '../../api/volum
 import { isPrimaryShare } from '../../utils/share';
 import { decryptPassphrase, getDecryptedSessionKey } from '../../utils/drive/driveCrypto';
 import { validateLinkName, ValidationError } from '../../utils/validation';
-import runInQueue from '../../utils/runInQueue';
 import useDebouncedRequest from '../util/useDebouncedRequest';
 import useQueuedFunction from '../util/useQueuedFunction';
 import { getSuccessfulSettled, logSettledErrors } from '../../utils/async';
