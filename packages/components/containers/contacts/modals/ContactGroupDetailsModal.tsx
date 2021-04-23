@@ -1,19 +1,21 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
+
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts/Contact';
 import { noop } from 'proton-shared/lib/helpers/function';
+
 import { FormModal, ContactGroupTable, Icon, TitleModal } from '../../../components';
-import { useContactEmails, useContactGroups, useModals } from '../../../hooks';
-import ContactGroupModal from './ContactGroupModal';
+import { useContactEmails, useContactGroups } from '../../../hooks';
+
 import './ContactGroupDetailsModal.scss';
 
 interface Props {
     contactGroupID: string;
     onClose?: () => void;
+    onEdit: () => void;
 }
 
-const ContactGroupDetailsModal = ({ contactGroupID, onClose = noop, ...rest }: Props) => {
-    const { createModal } = useModals();
+const ContactGroupDetailsModal = ({ contactGroupID, onClose = noop, onEdit, ...rest }: Props) => {
     const [contactGroups = [], loadingGroups] = useContactGroups();
     const [contactEmails = [], loadingEmails] = useContactEmails() as [ContactEmail[] | undefined, boolean, any];
 
@@ -24,7 +26,7 @@ const ContactGroupDetailsModal = ({ contactGroupID, onClose = noop, ...rest }: P
     const emailsCount = emails.length;
 
     const handleEdit = () => {
-        createModal(<ContactGroupModal contactGroupID={contactGroupID} />);
+        onEdit();
         onClose();
     };
 
