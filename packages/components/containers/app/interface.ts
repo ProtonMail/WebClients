@@ -9,6 +9,7 @@ export interface PrivateAuthenticationStore extends AuthenticationStore {
     UID: string;
     localID?: number;
     logout: (type?: 'soft') => void;
+    onLogout: (cb: () => Promise<void>) => () => void;
 }
 
 export interface PublicAuthenticationStore {

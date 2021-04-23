@@ -14,6 +14,7 @@ interface Props {
     buttonClass?: string;
     buttonTabIndex?: number;
     className?: string;
+    questionMark?: boolean;
 }
 const Info = ({
     url,
@@ -22,6 +23,7 @@ const Info = ({
     buttonClass = 'inline-flex color-inherit',
     buttonTabIndex,
     className = '',
+    questionMark = false,
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('tooltip'));
@@ -64,7 +66,7 @@ const Info = ({
             >
                 <Icon
                     className={classnames(['icon-16p color-primary', className])}
-                    name="info"
+                    name={questionMark ? 'question' : 'info'}
                     alt={c('Action').t`More info: ${safeTitle}`}
                     {...rest}
                 />

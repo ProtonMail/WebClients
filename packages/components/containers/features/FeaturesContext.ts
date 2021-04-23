@@ -24,6 +24,7 @@ export enum FeatureCode {
     UsedContactsImport = 'UsedContactsImport',
     CanUserSendFeedback = 'CanUserSendFeedback',
     CalendarExport = 'CalendarExport',
+    EnabledEncryptedSearch = 'EnabledEncryptedSearch',
 }
 
 export interface FeaturesContextValue {
