@@ -8,10 +8,10 @@ import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 import { useAuthentication, useConfig, useModals, useUser, useOrganization } from '../../hooks';
 import { usePopperAnchor, Dropdown, Icon, Href, Button } from '../../components';
 import { generateUID } from '../../helpers';
-import UserDropdownButton from './UserDropdownButton';
+import UserDropdownButton, { Props } from './UserDropdownButton';
 import { DonateModal } from '../payments';
 
-const UserDropdown = ({ ...rest }) => {
+const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
     const { APP_NAME } = useConfig();
     const [organization] = useOrganization();
     const { Name: organizationName } = organization || {};
