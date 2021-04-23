@@ -396,9 +396,7 @@ const getFormattedDateInfo = (vevent: VcalVeventComponent, options: Options = { 
         };
     }
     const formattedStartDateTime = formatUTC(toUTCDate(dtstart.value), 'cccc PPPp', options);
-    const formattedEndDateTime = dtend
-        ? formatUTC(toUTCDate(dtend.value), 'cccc PPPp', { locale: dateLocale })
-        : undefined;
+    const formattedEndDateTime = dtend ? formatUTC(toUTCDate(dtend.value), 'cccc PPPp', options) : undefined;
     const { offset: startOffset } = getTimezoneOffset(propertyToUTCDate(dtstart), getPropertyTzid(dtstart) || 'UTC');
     const { offset: endOffset } = dtend
         ? getTimezoneOffset(propertyToUTCDate(dtend), getPropertyTzid(dtend) || 'UTC')
