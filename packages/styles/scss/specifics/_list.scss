@@ -82,7 +82,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 			--email-item-read-background-color,
 			var(--background-weak)
 		);
-		color: var(--email-item-read-text-color, var(--text-weak));
+		color: var(--email-item-read-text-color, var(--text-norm));
 
 		.item-icon {
 			background-color: var(
