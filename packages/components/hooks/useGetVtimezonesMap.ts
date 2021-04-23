@@ -1,7 +1,7 @@
 import { getVtimezones } from 'proton-shared/lib/api/calendars';
 import { parse } from 'proton-shared/lib/calendar/vcal';
 import { unique } from 'proton-shared/lib/helpers/array';
-import { GetVTimezones, VTimezoneObject } from 'proton-shared/lib/interfaces';
+import { GetVTimezonesMap, VTimezoneObject } from 'proton-shared/lib/interfaces';
 import { VcalVtimezoneComponent } from 'proton-shared/lib/interfaces/calendar';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { useCallback } from 'react';
@@ -11,7 +11,7 @@ import { getIsRecordInvalid, getPromiseValue } from './useCachedModelResult';
 
 const CACHE_KEY = 'VTIMEZONES';
 
-export const useGetVTimezones = () => {
+export const useGetVtimezonesMap = () => {
     const api = useApi();
     const cache = useCache();
 
@@ -37,7 +37,7 @@ export const useGetVTimezones = () => {
         [api, cache]
     );
 
-    return useCallback<GetVTimezones>(
+    return useCallback<GetVTimezonesMap>(
         (tzids: string[]) => {
             if (!cache.has(CACHE_KEY)) {
                 cache.set(CACHE_KEY, new Map());
