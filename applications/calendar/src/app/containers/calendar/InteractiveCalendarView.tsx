@@ -62,7 +62,7 @@ import {
 import { useReadCalendarBootstrap } from 'react-components/hooks/useGetCalendarBootstrap';
 import useGetCalendarEventPersonal from 'react-components/hooks/useGetCalendarEventPersonal';
 import { useGetCanonicalEmails } from 'react-components/hooks/useGetCanonicalEmails';
-import { useGetVTimezones } from 'react-components/hooks/useGetVtimezones';
+import { useGetVtimezonesMap } from 'react-components/hooks/useGetVtimezonesMap';
 import useSendIcs from 'react-components/hooks/useSendIcs';
 import { Prompt } from 'react-router';
 import { c } from 'ttag';
@@ -206,9 +206,8 @@ const InteractiveCalendarView = ({
     const { createNotification } = useNotifications();
     const { contactEmailsMap } = useContactEmailsCache();
     const sendIcs = useSendIcs();
-    const getVTimezones = useGetVTimezones();
+    const getVTimezonesMap = useGetVtimezonesMap();
     const config = useConfig();
-    const prodId = useMemo(() => getProdId(config), [config]);
     const isSavingEvent = useRef(false);
 
     const [eventModalID, setEventModalID] = useState();
@@ -272,6 +271,7 @@ const InteractiveCalendarView = ({
     const isInTemporaryBlocking =
         tmpData && tmpDataOriginal && getHasDoneChanges(tmpData, tmpDataOriginal, isEditingEvent);
     const isScrollDisabled = !!interactiveData && !temporaryEvent;
+    const prodId = getProdId(config);
 
     useEffect(() => {
         onInteraction?.(!!temporaryEvent);
@@ -699,7 +699,7 @@ const InteractiveCalendarView = ({
             sendIcs,
             sendPreferencesMap,
             contactEmailsMap,
-            getVTimezones,
+            getVTimezonesMap,
             prodId,
             onRequestError,
             onReplyError,
