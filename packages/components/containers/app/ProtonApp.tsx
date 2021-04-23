@@ -10,6 +10,8 @@ import createSecureSessionStorage from 'proton-shared/lib/authentication/createS
 import createSecureSessionStorage2 from 'proton-shared/lib/authentication/createSecureSessionStorage2';
 import { isSSOMode, MAILBOX_PASSWORD_KEY, UID_KEY, SSO_PATHS, APPS } from 'proton-shared/lib/constants';
 import { getPersistedSession } from 'proton-shared/lib/authentication/persistedSessionStorage';
+import { noop } from 'proton-shared/lib/helpers/function';
+import createListeners from 'proton-shared/lib/helpers/listeners';
 import {
     getBasename,
     getLocalIDFromPathname,
@@ -92,6 +94,7 @@ interface AuthState {
     localID?: number;
     history: History;
     isLoggingOut?: boolean;
+    consumerLogoutPromise?: Promise<void>;
 }
 
 interface Props {
@@ -208,6 +211,8 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
         });
     }, []);
 
+    const logoutListener = useInstance(() => createListeners());
+
     const handleLogout = useCallback((type?: 'soft') => {
         setAuthData((authData) => {
             // Nothing to logout
@@ -220,12 +225,13 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
             }
             return {
                 ...authData,
+                consumerLogoutPromise: Promise.all(logoutListener.notify()).then(noop).catch(noop),
                 isLoggingOut: true,
             };
         });
     }, []);
 
-    const { UID, localID, history, isLoggingOut } = authData;
+    const { UID, localID, history, isLoggingOut, consumerLogoutPromise } = authData;
 
     const authenticationValue = useMemo(() => {
         if (!UID) {
@@ -238,6 +244,7 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
             localID,
             ...authentication,
             logout: handleLogout,
+            onLogout: logoutListener.subscribe,
         };
     }, [UID]);
 
@@ -275,7 +282,12 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
                                                             <GlobalLoader />
                                                             {(() => {
                                                                 if (isLoggingOut) {
-                                                                    return <Signout onDone={handleFinalizeLogout} />;
+                                                                    return (
+                                                                        <Signout
+                                                                            onDone={handleFinalizeLogout}
+                                                                            onLogout={() => consumerLogoutPromise}
+                                                                        />
+                                                                    );
                                                                 }
                                                                 if (pathRef.current) {
                                                                     return null;

@@ -11,9 +11,10 @@ import { ProminentContainer } from '../../components';
 
 interface Props {
     onDone: () => void;
+    onLogout: () => Promise<void> | undefined;
 }
 
-const Signout = ({ onDone }: Props) => {
+const Signout = ({ onDone, onLogout }: Props) => {
     const api = useApi();
     const authentication = useAuthentication();
 
@@ -26,6 +27,7 @@ const Signout = ({ onDone }: Props) => {
                 UID ? api({ ...revoke(), silence: true }) : undefined,
                 UID ? removeLastRefreshDate(UID) : undefined,
                 localID !== undefined ? removePersistedSession(localID) : undefined,
+                onLogout(),
             ]);
         };
         run().finally(onDone);
