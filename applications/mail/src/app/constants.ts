@@ -1,5 +1,6 @@
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
+import { CachedMessage } from './models/encryptedSearch';
 
 export const MAIN_ROUTE_PATH = '/:labelID?/:elementID?/:messageID?';
 
@@ -85,3 +86,45 @@ export const PROTON_DOMAINS = [
 ];
 
 export const MAX_ELEMENT_LIST_LOAD_RETRIES = 3;
+
+export const ES_LIMIT = 150;
+export const ES_MAX_CONCURRENT = 10;
+export const ES_MAX_CACHE = 500000000; // 500 MB
+export const ES_MAX_PAGEBATCH = 100;
+export const AesKeyGenParams: AesKeyGenParams = { name: 'AES-GCM', length: 128 };
+export const KeyUsages: KeyUsage[] = ['encrypt', `decrypt`];
+export const localisedForwardFlags = [
+    'fw:',
+    'fwd:',
+    '转发:',
+    '轉寄:',
+    'vs:',
+    'doorst:',
+    'tr:',
+    'wg:',
+    'πρθ:',
+    'továbbítás:',
+    'i:',
+    'fs:',
+    'trs:',
+    'vb:',
+    'rv:',
+    'enc:',
+    'pd:',
+    'i̇lt:',
+];
+export const defaultESDBStatus = {
+    dbExists: false,
+    isBuilding: false,
+    isDBLimited: false,
+    esEnabled: false,
+    isCacheReady: false,
+    isCacheLimited: false,
+    isRefreshing: false,
+};
+export const defaultESSearchStatus = {
+    permanentResults: [],
+    setElementsCache: () => {},
+    labelID: '',
+    cachePromise: (async () => [] as CachedMessage[])(),
+};

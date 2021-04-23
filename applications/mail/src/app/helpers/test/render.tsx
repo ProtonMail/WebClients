@@ -23,6 +23,7 @@ import { minimalCache, cache, messageCache, conversationCache, attachmentsCache,
 import { api } from './api';
 import AttachmentProvider from '../../containers/AttachmentProvider';
 import ContactProvider from '../../containers/ContactProvider';
+import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
 
 interface RenderResult extends OriginalRenderResult {
     rerender: (ui: React.ReactElement) => Promise<void>;
@@ -32,6 +33,7 @@ export const authentication = ({
     getUID: jest.fn(),
     getLocalID: jest.fn(),
     getPassword: jest.fn(),
+    onLogout: jest.fn(),
 } as unknown) as PrivateAuthenticationStore;
 
 interface Props {
@@ -55,7 +57,9 @@ const TestProvider = ({ children }: Props) => {
                                         <AttachmentProvider cache={attachmentsCache}>
                                             <FeaturesProvider>
                                                 <ContactProvider cache={contactCache}>
-                                                    <MemoryRouter initialEntries={['/inbox']}>{children}</MemoryRouter>
+                                                    <MemoryRouter initialEntries={['/inbox']}>
+                                                        <EncryptedSearchProvider>{children}</EncryptedSearchProvider>
+                                                    </MemoryRouter>
                                                 </ContactProvider>
                                             </FeaturesProvider>
                                         </AttachmentProvider>

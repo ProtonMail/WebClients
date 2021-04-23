@@ -13,6 +13,7 @@ export interface ElementsCacheParams {
     labelID: string;
     sort: Sort;
     filter: Filter;
+    esEnabled: boolean;
     address?: string;
     from?: string;
     to?: string;

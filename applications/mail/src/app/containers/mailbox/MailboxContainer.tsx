@@ -77,7 +77,7 @@ const MailboxContainer = ({
         size: PAGE_SIZE,
     });
 
-    const searchParams = getSearchParams(location.search);
+    const searchParams = getSearchParams(location.hash);
     const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
     const searchParameters = useMemo<SearchParameters>(() => extractSearchParameters(location), [
         searchParams.address,

@@ -21,6 +21,7 @@ import { Breakpoints } from '../../models/utils';
 import { getLabelName } from '../../helpers/labels';
 import { OnCompose } from '../../hooks/composer/useCompose';
 import { MESSAGE_ACTIONS } from '../../constants';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 interface Props {
     labelID: string;
@@ -56,7 +57,14 @@ const MailHeader = ({
     // Update the search input field when the keyword in the url is changed
     useEffect(() => updateValue(keyword), [keyword]);
 
-    const searchDropdown = <AdvancedSearchDropdown keyword={value} isNarrow={breakpoints.isNarrow} />;
+    const { cacheIndexedDB } = useEncryptedSearchContext();
+    const handleCaching = async () => {
+        void cacheIndexedDB();
+    };
+
+    const searchDropdown = (
+        <AdvancedSearchDropdown keyword={value} isNarrow={breakpoints.isNarrow} handleCaching={handleCaching} />
+    );
 
     const searchBox = (
         <Searchbox
@@ -71,6 +79,7 @@ const MailHeader = ({
             onChange={updateValue}
             value={value}
             advanced={searchDropdown}
+            onFocus={handleCaching}
         />
     );
 

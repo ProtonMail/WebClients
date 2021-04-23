@@ -4,7 +4,7 @@ import { isConversationMode } from './mailSettings';
 describe('mailSettings', () => {
     describe('isConversationMode', () => {
         const emptyLocation = { pathname: '', search: '', state: {}, hash: '' };
-        const locationWithParameters = { pathname: '', search: '?keyword=panda', state: {}, hash: '' };
+        const locationWithParameters = { pathname: '', search: '', state: {}, hash: '#keyword=panda' };
 
         it('should be false if labelID is single only', () => {
             expect(isConversationMode(MAILBOX_LABEL_IDS.ALL_DRAFTS, { ViewMode: VIEW_MODE.GROUP }, emptyLocation)).toBe(

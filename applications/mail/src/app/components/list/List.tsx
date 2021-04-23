@@ -120,6 +120,8 @@ const List = (
                     onFilter={onFilter}
                     filter={filter}
                     conversationMode={conversationMode}
+                    isSearch={isSearch}
+                    loading={loading}
                 />
                 {expectedLength === 0 ? (
                     <EmptyView labelID={labelID} isSearch={isSearch} />

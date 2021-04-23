@@ -33,7 +33,7 @@ export const elementsCache: ElementsCache = {
     invalidated: false,
     pendingRequest: false,
     elements: {},
-    params: { labelID: '', sort: { sort: 'Time', desc: true }, filter: {} },
+    params: { labelID: '', sort: { sort: 'Time', desc: true }, filter: {}, esEnabled: false },
     pages: [],
     page: 0,
     total: 0,
