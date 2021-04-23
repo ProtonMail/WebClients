@@ -6,4 +6,4 @@ export interface VTimezoneObject {
     vtimezoneString: string;
 }
 
-export type GetVTimezones = (tzids: string[]) => Promise<SimpleMap<VTimezoneObject>>;
+export type GetVTimezonesMap = (tzids: string[]) => Promise<SimpleMap<VTimezoneObject>>;
