@@ -9,6 +9,7 @@ import ComposerContainer from './containers/ComposerContainer';
 import PageContainer from './containers/PageContainer';
 import { MAIN_ROUTE_PATH } from './constants';
 import ContactProvider from './containers/ContactProvider';
+import EncryptedSearchProvider from './containers/EncryptedSearchProvider';
 
 const MainContainer = () => {
     const breakpoints = useActiveBreakpoint();
@@ -18,17 +19,19 @@ const MainContainer = () => {
             <ConversationProvider>
                 <AttachmentProvider>
                     <ContactProvider>
-                        <ModalsChildren />
-                        <ComposerContainer breakpoints={breakpoints}>
-                            {({ onCompose }) => (
-                                <Switch>
-                                    <Route
-                                        path={MAIN_ROUTE_PATH}
-                                        render={() => <PageContainer breakpoints={breakpoints} onCompose={onCompose} />}
-                                    />
-                                </Switch>
-                            )}
-                        </ComposerContainer>
+                        <EncryptedSearchProvider>
+                            <ModalsChildren />
+                            <ComposerContainer breakpoints={breakpoints}>
+                                {({ onCompose }) => (
+                                    <Switch>
+                                        <Route
+                                            path={MAIN_ROUTE_PATH}
+                                            render={() => <PageContainer breakpoints={breakpoints} onCompose={onCompose} />}
+                                        />
+                                    </Switch>
+                                )}
+                            </ComposerContainer>
+                        </EncryptedSearchProvider>
                     </ContactProvider>
                 </AttachmentProvider>
             </ConversationProvider>

@@ -1,5 +1,13 @@
 import { useEffect, useMemo, useRef } from 'react';
-import { useApi, useCache, useConversationCounts, useMessageCounts, useSubscribeEventManager } from 'react-components';
+import { c } from 'ttag';
+import {
+    useApi,
+    useCache,
+    useConversationCounts,
+    useMessageCounts,
+    useNotifications,
+    useSubscribeEventManager,
+} from 'react-components';
 import { queryConversations, getConversation } from 'proton-shared/lib/api/conversations';
 import { queryMessageMetadata, getMessage } from 'proton-shared/lib/api/messages';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
@@ -36,6 +44,7 @@ import {
     SEARCH_PLACEHOLDERS_COUNT,
     MAX_ELEMENT_LIST_LOAD_RETRIES,
 } from '../../constants';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 interface Options {
     conversationMode: boolean;
@@ -80,10 +89,11 @@ const getTotal = (counts: LabelCount[], labelID: string, filter: Filter) => {
 const emptyCache = (
     page: number,
     params: ElementsCacheParams,
-    retry: RetryData = { payload: null, count: 0, error: undefined }
+    retry: RetryData = { payload: null, count: 0, error: undefined },
+    beforeFirstLoad: boolean = true
 ): ElementsCache => {
     return {
-        beforeFirstLoad: true,
+        beforeFirstLoad,
         invalidated: false,
         pendingRequest: false,
         params,
@@ -105,7 +115,11 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     const [messageCounts = []] = useMessageCounts() as [LabelCount[], boolean, Error];
     const counts = conversationMode ? conversationCounts : messageCounts;
 
-    const cache = useElementsCache(emptyCache(page, { labelID, sort, filter, ...search }));
+    const { getESDBStatus, encryptedSearch } = useEncryptedSearchContext();
+    const { dbExists, esEnabled } = getESDBStatus();
+    const { createNotification } = useNotifications();
+
+    const cache = useElementsCache(emptyCache(page, { labelID, sort, filter, esEnabled, ...search }));
     const setCache = useSetElementsCache();
 
     // Warning: this hook relies mainly on the elementsCache, not the globalCache
@@ -187,7 +201,8 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         search.begin !== cache.params.begin ||
         search.end !== cache.params.end ||
         search.attachments !== cache.params.attachments ||
-        search.wildcard !== cache.params.wildcard;
+        search.wildcard !== cache.params.wildcard ||
+        esEnabled !== cache.params.esEnabled;
 
     const pageCached = () => cache.pages.includes(page);
 
@@ -271,7 +286,8 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         return { payload, count, error };
     };
 
-    const resetCache = (retry?: RetryData) => setCache(emptyCache(page, { labelID, sort, filter, ...search }, retry));
+    const resetCache = (retry?: RetryData, beforeFirstLoad?: boolean) =>
+        setCache(emptyCache(page, { labelID, sort, filter, esEnabled, ...search }, retry, beforeFirstLoad));
 
     const load = async () => {
         setCache((cache) => ({ ...cache, pendingRequest: true }));
@@ -323,13 +339,59 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         }
     };
 
+    const setEncryptedSearchResults = (Elements: Element[]) => {
+        const Total = Elements.length;
+        const pages = [0];
+        for (let page = 1; page < Math.ceil(Total / PAGE_SIZE); page++) {
+            pages.push(page);
+        }
+        // Retry is disabled for encrypted search results, to avoid re-triggering the search several times
+        // when there are no results
+        setCache((cache) => {
+            return {
+                ...cache,
+                beforeFirstLoad: false,
+                invalidated: false,
+                pendingRequest: false,
+                page,
+                total: Total,
+                pages,
+                elements: toMap(Elements, 'ID'),
+                updatedElements: [],
+                retry: { payload: undefined, count: MAX_ELEMENT_LIST_LOAD_RETRIES, error: undefined },
+            };
+        });
+    };
+
+    const sendRequest = () => {
+        if (isSearch(search)) {
+            setCache((cache) => ({ ...cache, pendingRequest: true }));
+            void encryptedSearch(search, labelID, setEncryptedSearchResults)
+                .then((success) => {
+                    if (!success) {
+                        void load();
+                    }
+                })
+                .catch(() => {
+                    createNotification({
+                        text: c('Error')
+                            .t`There has been an issue with content search. Default search has been used instead`,
+                        type: 'error',
+                    });
+                    void load();
+                });
+        } else {
+            void load();
+        }
+    };
+
     // Main effect watching all inputs and responsible to trigger actions on the cache
     useEffect(() => {
         if (shouldResetCache()) {
             resetCache();
         }
         if (shouldSendRequest()) {
-            void load();
+            sendRequest();
         }
         if (shouldUpdatePage()) {
             updatePage();
@@ -352,6 +414,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         cache.invalidated,
         cache.updatedElements,
         cache.pendingRequest,
+        esEnabled && isSearch(search),
     ]);
 
     useEffect(() => {
@@ -361,18 +424,20 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             cache.retry.error === undefined &&
             elements.length !== expectedLength
         ) {
-            console.error('Elements list inconsistency error', {
-                conversationMode,
-                labelID,
-                search,
-                page,
-                sort,
-                filter,
-                total,
-                expectedLength,
-                cache,
-            });
-            resetCache(cache.retry);
+            if (!esEnabled) {
+                console.error('Elements list inconsistency error', {
+                    conversationMode,
+                    labelID,
+                    search,
+                    page,
+                    sort,
+                    filter,
+                    total,
+                    expectedLength,
+                    cache,
+                });
+            }
+            resetCache(cache.retry, !esEnabled && isSearch(search));
         }
     }, [cache.pendingRequest]);
 
@@ -381,6 +446,11 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         async ({ Conversations = [], Messages = [], ConversationCounts = [], MessageCounts = [] }: Event) => {
             const Elements: ElementEvent[] = conversationMode ? Conversations : Messages;
             const Counts: LabelCount[] = conversationMode ? ConversationCounts : MessageCounts;
+
+            // If it's an encrypted search, its event manager will deal with the change
+            if (dbExists && esEnabled && isSearch(search)) {
+                return;
+            }
 
             if (!Elements.length && !Counts.length) {
                 return;

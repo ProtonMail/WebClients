@@ -99,7 +99,7 @@ export const getProps = ({
         urlSearchParams.set('keyword', keywordToString(search.keyword || '') || '');
     }
 
-    const location = { pathname: '/', search: urlSearchParams.toString() } as Location;
+    const location = { pathname: '/', hash: `#${urlSearchParams.toString()}` } as Location;
 
     return { ...props, location, labelID, elementID };
 };

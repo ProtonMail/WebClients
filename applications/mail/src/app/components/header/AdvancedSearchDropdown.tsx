@@ -1,7 +1,7 @@
-import React, { useState, useEffect, FormEvent } from 'react';
+import React, { useState, useEffect, FormEvent, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
-import { getUnixTime, fromUnixTime, isBefore, isAfter } from 'date-fns';
+import { getUnixTime, fromUnixTime, isBefore, isAfter, add } from 'date-fns';
 import {
     classnames,
     generateUID,
@@ -21,18 +21,38 @@ import {
     useAddresses,
     useMailSettings,
     Input,
+    useToggle,
+    useUser,
+    useModals,
+    ConfirmModal,
+    Toggle,
+    Info,
+    Progress,
+    useFeature,
+    FeatureCode,
 } from 'react-components';
-import { MAILBOX_LABEL_IDS, SHOW_MOVED } from 'proton-shared/lib/constants';
+import { MAILBOX_LABEL_IDS, SECOND, SHOW_MOVED } from 'proton-shared/lib/constants';
 import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { buildTreeview, formatFolderName } from 'proton-shared/lib/helpers/folder';
 import { FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
 import { changeSearchParams, getSearchParams } from 'proton-shared/lib/helpers/url';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
+import { wait } from 'proton-shared/lib/helpers/promise';
+import { isMobile } from 'proton-shared/lib/helpers/browser';
+import { isPaid } from 'proton-shared/lib/user/helpers';
 
 import { getHumanLabelID } from '../../helpers/labels';
 import AddressesInput from '../composer/addresses/AddressesInput';
 import { extractSearchParameters, keywordToString } from '../../helpers/mailboxUrl';
+import { formatSimpleDate } from '../../helpers/date';
+import {
+    indexKeyExists,
+    getOldestTime,
+    wasIndexingDone,
+    isDBReadyAfterBuilding,
+} from '../../helpers/encryptedSearch/esUtils';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 import './AdvancedSearchDropdown.scss';
 
@@ -55,6 +75,21 @@ interface LabelInfo {
     group: string;
 }
 
+interface ESState {
+    value: number;
+    startTime: number;
+    endTime: number;
+    oldestTime: number;
+    previousValue: number;
+}
+
+const defaultESState = {
+    value: 0,
+    startTime: 0,
+    endTime: 0,
+    oldestTime: 0,
+    previousValue: 0,
+};
 const UNDEFINED = undefined;
 const AUTO_WILDCARD = undefined;
 const ALL_ADDRESSES = 'all';
@@ -98,9 +133,10 @@ const folderReducer = (acc: LabelInfo[], folder: FolderWithSubFolders, level = 0
 interface Props {
     keyword?: string;
     isNarrow: boolean;
+    handleCaching: () => void;
 }
 
-const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) => {
+const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCaching }: Props) => {
     const history = useHistory();
     const [uid] = useState(generateUID('advanced-search-dropdown'));
     const [mailSettings, loadingMailSettings] = useMailSettings();
@@ -109,6 +145,25 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     const [folders, loadingFolders] = useFolders();
     const [addresses, loadingAddresses] = useAddresses();
     const [model, updateModel] = useState<SearchModel>(DEFAULT_MODEL);
+    const { state: showMore, toggle: toggleShowMore } = useToggle(false);
+    const [user] = useUser();
+    const { createModal } = useModals();
+    const {
+        resumeIndexing,
+        getESDBStatus,
+        pauseIndexing,
+        toggleEncryptedSearch,
+        getProgressRecorderRef,
+    } = useEncryptedSearchContext();
+    const { isBuilding, esEnabled, isDBLimited, isRefreshing } = getESDBStatus();
+    const [esState, setESState] = useState<ESState>(defaultESState);
+    const { value, previousValue, startTime, endTime, oldestTime } = esState;
+    let estimatedMinutes = 0;
+    if (value !== 0 && endTime > startTime && startTime !== 0 && value !== previousValue) {
+        estimatedMinutes = Math.ceil((((endTime - startTime) / (value - previousValue)) * (1 - value)) / 60000);
+    }
+    const abortControllerRef = useRef<AbortController>(new AbortController());
+    const { loading: loadingESFeature, feature: esFeature } = useFeature(FeatureCode.EnabledEncryptedSearch);
 
     // Get right keyword value depending on the current situation
     const getKeyword = (keyword: string, reset?: boolean) => {
@@ -129,7 +184,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
         const { keyword, address, begin, end, wildcard, from, to, attachments, filter } = reset ? DEFAULT_MODEL : model;
 
         history.push(
-            changeSearchParams(`/${getHumanLabelID(model.labelID)}`, history.location.search, {
+            changeSearchParams(`/${getHumanLabelID(model.labelID)}`, history.location.hash, {
                 keyword: getKeyword(keyword, reset),
                 address: address === ALL_ADDRESSES ? UNDEFINED : address,
                 from: from.length ? formatRecipients(from) : UNDEFINED,
@@ -147,6 +202,68 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     };
 
     const handleReset = (event: FormEvent) => handleSubmit(event, true);
+
+    const confirmationToIndex = () => {
+        createModal(
+            <ConfirmModal
+                onConfirm={resumeIndexing}
+                title={c('Title').t`Enable encrypted search`}
+                confirm={c('Action').t`Enable`}
+                mode="alert"
+            >
+                {c('Info')
+                    .t`This action will download all messages so they can be searched locally. Clearing your browser data or logging out will disable this option.`}
+            </ConfirmModal>
+        );
+    };
+
+    const setProgress = async () => {
+        while (!abortControllerRef.current.signal.aborted) {
+            setESState((esState) => {
+                const newValue = getProgressRecorderRef().current;
+                if (esState.value === newValue) {
+                    return esState;
+                }
+                return {
+                    ...esState,
+                    endTime: performance.now(),
+                    value: newValue,
+                };
+            });
+            await wait(5 * SECOND);
+        }
+    };
+
+    const setOldestTime = async () => {
+        if (wasIndexingDone(user.ID) && isDBLimited) {
+            const oldestTime = await getOldestTime(user.ID, 1000);
+            setESState((esState) => {
+                return {
+                    ...esState,
+                    oldestTime,
+                };
+            });
+        }
+    };
+
+    const startProgress = async () => {
+        abortControllerRef.current = new AbortController();
+        const previousValue = getProgressRecorderRef().current;
+        setESState((esState) => {
+            return {
+                ...esState,
+                startTime: performance.now(),
+                previousValue,
+            };
+        });
+        await wait(10 * SECOND);
+        void setProgress();
+    };
+
+    const stopProgress = () => {
+        abortControllerRef.current.abort();
+        setESState(() => defaultESState);
+    };
 
     useEffect(() => {
         if (isOpen) {
@@ -170,10 +287,20 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                     filter,
                 };
             });
+            void setOldestTime();
         }
     }, [isOpen]);
 
-    const loading = loadingLabels || loadingFolders || loadingAddresses || loadingMailSettings;
+    useEffect(() => {
+        if (isBuilding || isRefreshing) {
+            void startProgress();
+        } else {
+            stopProgress();
+        }
+        void setOldestTime();
+    }, [isBuilding, isRefreshing]);
+
+    const loading = loadingLabels || loadingFolders || loadingAddresses || loadingMailSettings || loadingESFeature;
 
     const treeview: FolderWithSubFolders[] = buildTreeview(folders);
 
@@ -202,6 +329,78 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
         addresses.map(({ ID: value, Email: text }) => ({ value, text }))
     );
 
+    // Switches
+    const showEncryptedSearch = !isMobile() && !!esFeature && !!esFeature.Value && !!isPaid(user);
+    const showAdvancedSearch = !showEncryptedSearch || showMore;
+    const showProgress = indexKeyExists(user.ID) && esEnabled && (isBuilding || isRefreshing);
+    const showSubTitleSection = wasIndexingDone(user.ID) && esEnabled && !isRefreshing && isDBLimited;
+
+    // Header
+    const title = c('Action').t`Search message content`;
+    // Remove one day from limit because the last day in IndexedDB might not be complete
+    const subTitleSection = (
+        <span className="color-weak mt0-5 mr0-5">
+            {c('Info').t`For messages newer than `}
+            {formatSimpleDate(add(new Date(oldestTime), { days: 1 }))}
+        </span>
+    );
+    const esToggle = (
+        <Toggle
+            id="es-toggle"
+            checked={(isBuilding || wasIndexingDone(user.ID)) && esEnabled}
+            onChange={({ target: { checked } }) => {
+                if (checked) {
+                    if (!indexKeyExists(user.ID)) {
+                        confirmationToIndex();
+                    } else if (!isDBReadyAfterBuilding(user.ID)) {
+                        void resumeIndexing();
+                    } else {
+                        toggleEncryptedSearch();
+                    }
+                } else if (isBuilding) {
+                    void pauseIndexing();
+                } else {
+                    toggleEncryptedSearch();
+                }
+            }}
+            loading={esEnabled && !indexKeyExists(user.ID)}
+        />
+    );
+    const info = (
+        <Info
+            questionMark
+            className="ml0-5"
+            title={c('Tooltip')
+                .t`This action will download all messages so they can be searched locally. Clearing your browser data or logging out will disable this option.`}
+        />
+    );
+
+    // Progress indicator
+    const progressStatus = isRefreshing
+        ? c('Info').t`Updating message content search...`
+        : c('Info').t`Activating message content search...`;
+    const etaMessage =
+        estimatedMinutes === 0 && value !== 1
+            ? c('Info').t`Estimating time remaining...`
+            : estimatedMinutes <= 1
+            ? c('Info').t`Less than a minute remaining`
+            : `${estimatedMinutes}${c('Info').t` minutes remaining`}`;
+    const progressBar = (
+        <Progress value={Math.floor(value * 100)} aria-describedby="timeRemaining" className="mt1 mb1" />
+    );
+
+    // Button to show advanced search options
+    const showMoreTitle = showMore ? c('Action').t`Show less search options` : c('Action').t`Show more search options`;
+    const showMoreText = c('Action').t`Advanced search options`;
+    const showMoreButton = (
+        <div aria-expanded={showMore} className="flex flex-justify-center mb1">
+            <Button shape="ghost" color="norm" onClick={toggleShowMore}>
+                {showMoreText}
+                <Icon name="caret" className={classnames(['ml0-5', showMore && 'rotateX-180'])} alt={showMoreTitle} />
+            </Button>
+        </div>
+    );
+
     return (
         <>
             <DropdownButton
@@ -210,7 +409,10 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                 className={classnames([isNarrow ? undefined : 'searchbox-advanced-search-button flex'])}
                 ref={anchorRef}
                 isOpen={isOpen}
-                onClick={toggle}
+                onClick={() => {
+                    handleCaching();
+                    toggle();
+                }}
                 hasCaret={false}
                 disabled={loading}
             >
@@ -232,155 +434,198 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                 anchorRef={anchorRef}
                 onClose={close}
                 className="dropdown-content--wide"
+                UNSTABLE_AUTO_HEIGHT
             >
-                <form
-                    name="advanced-search"
-                    className="advancedSearch p1"
-                    onSubmit={handleSubmit}
-                    onReset={handleReset}
-                >
-                    <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                        <Label className="advancedSearch-label" htmlFor="search-keyword">{c('Label').t`Keyword`}</Label>
-                        <Input
-                            id="search-keyword"
-                            value={model.keyword}
-                            autoFocus
-                            onChange={({ target }) => updateModel({ ...model, keyword: target.value })}
-                        />
+                {showEncryptedSearch && (
+                    <div className="advancedSearchTop pl1 pr1 pt1">
+                        <div className="flex flex-column">
+                            <div className="flex flex-justify-space-between mb0-5 flex-align-items-center">
+                                <Label htmlFor="es-toggle" className="text-bold p0 flex flex-align-items-center">
+                                    {title}
+                                    {info}
+                                </Label>
+                                {esToggle}
+                            </div>
+                            {showSubTitleSection && subTitleSection}
+                        </div>
+                        {showProgress && (
+                            <div className="bg-strong rounded mt1 p1 flex flex-column">
+                                <span className="color-weak" aria-live="polite" aria-atomic="true">
+                                    {progressStatus}
+                                </span>
+                                {progressBar}
+                                <span id="timeRemaining" aria-live="polite" aria-atomic="true" className="color-weak">
+                                    {etaMessage}
+                                </span>
+                            </div>
+                        )}
+                        <hr className="mt1" />
+                        {showMoreButton}
                     </div>
-                    <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                        <Label className="advancedSearch-label" htmlFor="labelID">{c('Label').t`Location`}</Label>
-                        <Select
-                            id="labelID"
-                            value={model.labelID}
-                            options={labelIDOptions}
-                            onChange={({ target }) => updateModel({ ...model, labelID: target.value })}
-                        />
-                    </div>
-                    <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                        <Label className="advancedSearch-label" htmlFor="address">{c('Label').t`Address`}</Label>
-                        <Select
-                            id="address"
-                            value={model.address}
-                            options={addressOptions}
-                            onChange={({ target }) => updateModel({ ...model, address: target.value })}
-                        />
-                    </div>
-                    <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                        <Label title={c('Label').t`Sender`} className="advancedSearch-label" htmlFor="from">{c('Label')
-                            .t`From`}</Label>
-                        <div className="flex-item-fluid">
-                            <AddressesInput
-                                id="from"
-                                recipients={model.from}
-                                onChange={(from) => updateModel({ ...model, from })}
-                                placeholder={c('Placeholder').t`Name or email address`}
+                )}
+                {showAdvancedSearch && (
+                    <form
+                        name="advanced-search"
+                        className="advancedSearch p1"
+                        onSubmit={handleSubmit}
+                        onReset={handleReset}
+                    >
+                        <div className="mb1 flex flex-nowrap on-mobile-flex-column">
+                            <Label className="advancedSearch-label" htmlFor="search-keyword">{c('Label')
+                                .t`Keyword`}</Label>
+                            <Input
+                                id="search-keyword"
+                                value={model.keyword}
+                                autoFocus
+                                onChange={({ target }) => updateModel({ ...model, keyword: target.value })}
                             />
                         </div>
-                    </div>
-                    <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                        <Label title={c('Label').t`Recipient`} className="advancedSearch-label" htmlFor="to">{c('Label')
-                            .t`To`}</Label>
-                        <div className="flex-item-fluid">
-                            <AddressesInput
-                                id="to"
-                                recipients={model.to}
-                                onChange={(to) => updateModel({ ...model, to })}
-                                placeholder={c('Placeholder').t`Name or email address`}
+                        <div className="mb1 flex flex-nowrap on-mobile-flex-column">
+                            <Label className="advancedSearch-label" htmlFor="labelID">{c('Label').t`Location`}</Label>
+                            <Select
+                                id="labelID"
+                                value={model.labelID}
+                                options={labelIDOptions}
+                                onChange={({ target }) => updateModel({ ...model, labelID: target.value })}
                             />
                         </div>
-                    </div>
-                    <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                        <Label className="advancedSearch-label" htmlFor="begin-date">{c('Label').t`Between`}</Label>
-                        <div className="flex-item-fluid">
-                            <DateInput
-                                placeholder={c('Placeholder').t`Start date`}
-                                id="begin-date"
-                                value={model.begin}
-                                onChange={(begin) =>
-                                    (!model.end || isBefore(begin || -Infinity, model.end)) &&
-                                    updateModel({ ...model, begin })
-                                }
+                        <div className="mb1 flex flex-nowrap on-mobile-flex-column">
+                            <Label className="advancedSearch-label" htmlFor="address">{c('Label').t`Address`}</Label>
+                            <Select
+                                id="address"
+                                value={model.address}
+                                options={addressOptions}
+                                onChange={({ target }) => updateModel({ ...model, address: target.value })}
                             />
                         </div>
-                    </div>
-                    <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                        <Label className="advancedSearch-label" htmlFor="end-date">{c('Label').t`And`}</Label>
-                        <div className="flex-item-fluid">
-                            <DateInput
-                                placeholder={c('Placeholder').t`End date`}
-                                id="end-date"
-                                value={model.end}
-                                onChange={(end) =>
-                                    (!model.begin || isAfter(end || Infinity, model.begin)) &&
-                                    updateModel({ ...model, end })
-                                }
-                            />
+                        <div className="mb1 flex flex-nowrap on-mobile-flex-column">
+                            <Label title={c('Label').t`Sender`} className="advancedSearch-label" htmlFor="from">{c(
+                                'Label'
+                            ).t`From`}</Label>
+                            <div className="flex-item-fluid">
+                                <AddressesInput
+                                    id="from"
+                                    recipients={model.from}
+                                    onChange={(from) => updateModel({ ...model, from })}
+                                    placeholder={c('Placeholder').t`Name or email address`}
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                        <Label className="advancedSearch-label" id="advanced-search-attachments-label">{c('Label')
-                            .t`Attachments`}</Label>
-                        <div className="flex-item-fluid pt0-5">
-                            <Radio
-                                id="advanced-search-attachments-all"
-                                onChange={() => updateModel({ ...model, attachments: UNDEFINED })}
-                                checked={model.attachments === UNDEFINED}
-                                name="advanced-search-attachments"
-                                aria-describedby="advanced-search-attachments-label"
-                                className="inline-flex mr1"
-                            >{c('Attachment radio advanced search').t`All`}</Radio>
-                            <Radio
-                                id="advanced-search-attachments-yes"
-                                onChange={() => updateModel({ ...model, attachments: WITH_ATTACHMENTS })}
-                                checked={model.attachments === WITH_ATTACHMENTS}
-                                name="advanced-search-attachments"
-                                aria-describedby="advanced-search-attachments-label"
-                                className="inline-flex mr1"
-                            >{c('Attachment radio advanced search').t`Yes`}</Radio>
-                            <Radio
-                                id="advanced-search-attachments-no"
-                                onChange={() => updateModel({ ...model, attachments: NO_ATTACHMENTS })}
-                                checked={model.attachments === NO_ATTACHMENTS}
-                                name="advanced-search-attachments"
-                                aria-describedby="advanced-search-attachments-label"
-                            >{c('Attachment radio advanced search').t`No`}</Radio>
+                        <div className="mb1 flex flex-nowrap on-mobile-flex-column">
+                            <Label title={c('Label').t`Recipient`} className="advancedSearch-label" htmlFor="to">{c(
+                                'Label'
+                            ).t`To`}</Label>
+                            <div className="flex-item-fluid">
+                                <AddressesInput
+                                    id="to"
+                                    recipients={model.to}
+                                    onChange={(to) => updateModel({ ...model, to })}
+                                    placeholder={c('Placeholder').t`Name or email address`}
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div className="mb2 flex flex-nowrap on-mobile-flex-column">
-                        <Label className="advancedSearch-label" id="advanced-search-filter-label">{c('Label')
-                            .t`Filter`}</Label>
-                        <div className="flex-item-fluid pt0-5">
-                            <Radio
-                                id="advanced-search-filter-all"
-                                onChange={() => updateModel({ ...model, filter: UNDEFINED })}
-                                checked={model.filter === UNDEFINED}
-                                name="advanced-search-filter"
-                                aria-describedby="advanced-search-filter-label"
-                                className="inline-flex mr1"
-                            >{c('Attachment radio advanced search').t`All`}</Radio>
-                            <Radio
-                                id="advanced-search-filter-yes"
-                                onChange={() => updateModel({ ...model, filter: SHOW_READ_ONLY })}
-                                checked={model.filter === SHOW_READ_ONLY}
-                                name="advanced-search-filter"
-                                aria-describedby="advanced-search-filter-label"
-                                className="inline-flex mr1"
-                            >{c('Attachment radio advanced search').t`Read`}</Radio>
-                            <Radio
-                                id="advanced-search-filter-no"
-                                onChange={() => updateModel({ ...model, filter: SHOW_UNREAD_ONLY })}
-                                checked={model.filter === SHOW_UNREAD_ONLY}
-                                name="advanced-search-filter"
-                                aria-describedby="advanced-search-filter-label"
-                            >{c('Attachment radio advanced search').t`Unread`}</Radio>
+                        <div className="mb1 flex flex-nowrap on-mobile-flex-column">
+                            <Label className="advancedSearch-label" htmlFor="begin-date">{c('Label').t`Between`}</Label>
+                            <div className="flex-item-fluid">
+                                <DateInput
+                                    placeholder={c('Placeholder').t`Start date`}
+                                    id="begin-date"
+                                    value={model.begin}
+                                    onChange={async (begin) => {
+                                        if (begin) {
+                                            let oldestTime = -1;
+                                            if (wasIndexingDone(user.ID) && isDBLimited) {
+                                                oldestTime = await getOldestTime(user.ID, 1000);
+                                            }
+                                            if (oldestTime !== -1 && isBefore(begin, oldestTime)) {
+                                                return;
+                                            }
+                                        }
+                                        if (!model.end || isBefore(begin || -Infinity, model.end)) {
+                                            updateModel({ ...model, begin });
+                                        }
+                                    }}
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div className="flex flex-justify-space-between">
-                        <Button disabled={!Object.keys(model).length} type="reset">{c('Action').t`Clear`}</Button>
-                        <PrimaryButton type="submit">{c('Action').t`Search`}</PrimaryButton>
-                    </div>
-                </form>
+                        <div className="mb1 flex flex-nowrap on-mobile-flex-column">
+                            <Label className="advancedSearch-label" htmlFor="end-date">{c('Label').t`And`}</Label>
+                            <div className="flex-item-fluid">
+                                <DateInput
+                                    placeholder={c('Placeholder').t`End date`}
+                                    id="end-date"
+                                    value={model.end}
+                                    onChange={(end) =>
+                                        (!model.begin || isAfter(end || Infinity, model.begin)) &&
+                                        updateModel({ ...model, end })
+                                    }
+                                />
+                            </div>
+                        </div>
+                        <div className="mb1 flex flex-nowrap on-mobile-flex-column">
+                            <Label className="advancedSearch-label" id="advanced-search-attachments-label">{c('Label')
+                                .t`Attachments`}</Label>
+                            <div className="flex-item-fluid pt0-5">
+                                <Radio
+                                    id="advanced-search-attachments-all"
+                                    onChange={() => updateModel({ ...model, attachments: UNDEFINED })}
+                                    checked={model.attachments === UNDEFINED}
+                                    name="advanced-search-attachments"
+                                    aria-describedby="advanced-search-attachments-label"
+                                    className="inline-flex mr1"
+                                >{c('Attachment radio advanced search').t`All`}</Radio>
+                                <Radio
+                                    id="advanced-search-attachments-yes"
+                                    onChange={() => updateModel({ ...model, attachments: WITH_ATTACHMENTS })}
+                                    checked={model.attachments === WITH_ATTACHMENTS}
+                                    name="advanced-search-attachments"
+                                    aria-describedby="advanced-search-attachments-label"
+                                    className="inline-flex mr1"
+                                >{c('Attachment radio advanced search').t`Yes`}</Radio>
+                                <Radio
+                                    id="advanced-search-attachments-no"
+                                    onChange={() => updateModel({ ...model, attachments: NO_ATTACHMENTS })}
+                                    checked={model.attachments === NO_ATTACHMENTS}
+                                    name="advanced-search-attachments"
+                                    aria-describedby="advanced-search-attachments-label"
+                                >{c('Attachment radio advanced search').t`No`}</Radio>
+                            </div>
+                        </div>
+                        <div className="mb2 flex flex-nowrap on-mobile-flex-column">
+                            <Label className="advancedSearch-label" id="advanced-search-filter-label">{c('Label')
+                                .t`Filter`}</Label>
+                            <div className="flex-item-fluid pt0-5">
+                                <Radio
+                                    id="advanced-search-filter-all"
+                                    onChange={() => updateModel({ ...model, filter: UNDEFINED })}
+                                    checked={model.filter === UNDEFINED}
+                                    name="advanced-search-filter"
+                                    aria-describedby="advanced-search-filter-label"
+                                    className="inline-flex mr1"
+                                >{c('Attachment radio advanced search').t`All`}</Radio>
+                                <Radio
+                                    id="advanced-search-filter-yes"
+                                    onChange={() => updateModel({ ...model, filter: SHOW_READ_ONLY })}
+                                    checked={model.filter === SHOW_READ_ONLY}
+                                    name="advanced-search-filter"
+                                    aria-describedby="advanced-search-filter-label"
+                                    className="inline-flex mr1"
+                                >{c('Attachment radio advanced search').t`Read`}</Radio>
+                                <Radio
+                                    id="advanced-search-filter-no"
+                                    onChange={() => updateModel({ ...model, filter: SHOW_UNREAD_ONLY })}
+                                    checked={model.filter === SHOW_UNREAD_ONLY}
+                                    name="advanced-search-filter"
+                                    aria-describedby="advanced-search-filter-label"
+                                >{c('Attachment radio advanced search').t`Unread`}</Radio>
+                            </div>
+                        </div>
+                        <div className="flex flex-justify-space-between">
+                            <Button disabled={!Object.keys(model).length} type="reset">{c('Action').t`Clear`}</Button>
+                            <PrimaryButton type="submit">{c('Action').t`Search`}</PrimaryButton>
+                        </div>
+                    </form>
+                )}
             </Dropdown>
         </>
     );
