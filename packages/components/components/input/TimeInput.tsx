@@ -206,6 +206,7 @@ const TimeInput = ({ onChange, value, interval = 30, min, displayDuration = fals
                             <DropdownMenuButton
                                 key={i}
                                 isSelected={isSelected}
+                                style={{ pointerEvents: 'auto' }} // Lets the user select the time during typing
                                 onClick={() => {
                                     handleSelectDate(otherValue);
                                     close();
