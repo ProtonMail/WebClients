@@ -2,7 +2,8 @@ import React from 'react';
 import { UserModel } from 'proton-shared/lib/interfaces';
 import { getInitials } from 'proton-shared/lib/helpers/string';
 
-interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+export interface Props
+    extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     user: UserModel;
     className?: string;
     isOpen?: boolean;
