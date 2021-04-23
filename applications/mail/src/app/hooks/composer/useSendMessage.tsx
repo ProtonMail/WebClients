@@ -115,6 +115,7 @@ export const useSendMessage = () => {
                     sending: true,
                 });
                 const { Sent, undoTimeout } = await promise;
+
                 const endSending = async () => {
                     await wait(Math.max(undoTimeout, MIN_DELAY_SENT_NOTIFICATION));
                     if (sendingMessageNotificationManager) {

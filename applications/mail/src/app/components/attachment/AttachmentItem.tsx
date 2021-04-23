@@ -114,7 +114,7 @@ const AttachmentItem = ({
     };
 
     return (
-        <div className="message-attachmentList-item-container">
+        <div className="message-attachmentList-item-container" data-testid="attachment-item">
             <div
                 style={{ backgroundImage }}
                 className={classnames([

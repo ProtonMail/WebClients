@@ -42,6 +42,11 @@ interface Props {
 
 export const config = {} as ProtonConfig;
 
+const mockDomApi = () => {
+    window.HTMLElement.prototype.scrollIntoView = jest.fn();
+    window.URL.createObjectURL = jest.fn();
+};
+
 const TestProvider = ({ children }: Props) => {
     return (
         <ConfigProvider config={config}>
@@ -81,9 +86,12 @@ const TestProvider = ({ children }: Props) => {
 export const tick = () => act(() => wait(0));
 
 export const render = async (ui: ReactElement, useMinimalCache = true): Promise<RenderResult> => {
+    mockDomApi();
+
     if (useMinimalCache) {
         minimalCache();
     }
+
     const result = originalRender(<TestProvider>{ui}</TestProvider>);
     await tick(); // Should not be necessary, would be better not to use it, but fails without
 

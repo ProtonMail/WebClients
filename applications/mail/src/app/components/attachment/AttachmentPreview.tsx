@@ -51,6 +51,7 @@ const AttachmentPreview = (
 
             return { ...previewing, contents: [download.data] };
         });
+
         onDownload(attachment, download.verified);
     };
 

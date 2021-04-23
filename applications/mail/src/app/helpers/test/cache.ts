@@ -51,6 +51,15 @@ export const contactCache = {
     groupsLabelCache: new Map<string, string>(),
 };
 
+export const clearContactCache = () => {
+    contactCache.contactsMap = {};
+    contactCache.contactsMapWithDuplicates = {};
+    contactCache.contactGroupsMap = {};
+    contactCache.groupsWithContactsMap = {};
+    contactCache.recipientsLabelCache = new Map<string, string>();
+    contactCache.groupsLabelCache = new Map<string, string>();
+};
+
 export const resolvedRequest = <T>(value: T): ResolvedRequest<T> => ({ status: STATUS.RESOLVED, value });
 
 export const addToCache = (key: string, value: any) => {

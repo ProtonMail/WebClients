@@ -72,7 +72,7 @@ const ExtraSpamScore = ({ message }: Props) => {
             createNotification({ text: c('Success').t`Message marked as legitimate` });
         };
         return (
-            <div className="bg-danger rounded p0-5 mb0-5 flex flex-nowrap">
+            <div className="bg-danger rounded p0-5 mb0-5 flex flex-nowrap" data-testid="phishing-banner">
                 <Icon name="spam" className="flex-item-noshrink mtauto mbauto" />
                 <span className="pl0-5 pr0-5 flex-item-fluid">
                     {c('Info')

@@ -275,6 +275,7 @@ const HeaderExpanded = ({
                                 onClick={toggleDetails}
                                 className="message-show-hide-link"
                                 disabled={!messageLoaded}
+                                data-testid="message-show-details"
                             >
                                 {showDetails
                                     ? c('Action').t`Hide details`

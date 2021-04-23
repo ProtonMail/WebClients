@@ -2,7 +2,6 @@ import React from 'react';
 import squire from 'squire-rte';
 import { act, fireEvent, RenderResult } from '@testing-library/react';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { useEventManager } from 'react-components';
 import { mergeMessages } from '../../../helpers/message/messages';
 import { messageCache } from '../../../helpers/test/cache';
 import { addApiKeys, apiKeys } from '../../../helpers/test/crypto';
@@ -11,7 +10,7 @@ import Composer from '../Composer';
 import { render, tick } from '../../../helpers/test/render';
 import { Breakpoints } from '../../../models/utils';
 import { addApiMock } from '../../../helpers/test/api';
-import { waitForSpyCall } from '../../../helpers/test/helper';
+import { waitForEventManagerCall } from '../../../helpers/test/helper';
 
 export const getHTML = squire().getHTML as jest.Mock;
 export const setHTML = squire().setHTML as jest.Mock;
@@ -72,10 +71,7 @@ export const clickSend = async (renderResult: RenderResult) => {
     fireEvent.click(sendButton);
 
     // Wait for the event manager to be called as it's the last step of the sendMessage hook
-    // Hard override of the typing as event manager is mocked
-    const { call } = ((useEventManager as any) as () => { call: jest.Mock })();
-
-    await waitForSpyCall(call);
+    await waitForEventManagerCall();
 
     await act(async () => {
         jest.runAllTimers();
