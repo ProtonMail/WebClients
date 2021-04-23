@@ -23,6 +23,7 @@ export enum FeatureCode {
     UsedMailMobileApp = 'UsedMailMobileApp',
     UsedContactsImport = 'UsedContactsImport',
     CanUserSendFeedback = 'CanUserSendFeedback',
+    CalendarExport = 'CalendarExport',
 }
 
 export interface FeaturesContextValue {
