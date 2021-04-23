@@ -3,11 +3,11 @@ import { orderBy, areUint8Arrays } from 'proton-shared/lib/helpers/array';
 import { ReadableStream } from 'web-streams-polyfill';
 import { createReadableStreamWrapper } from '@mattiasbuelens/web-streams-adapter';
 import { Api } from 'proton-shared/lib/interfaces';
+import runInQueue from 'proton-shared/lib/helpers/runInQueue';
 import { DriveFileBlock } from '../../interfaces/file';
 import { queryFileBlock } from '../../api/files';
 import { ObserverStream, untilStreamEnd } from '../../utils/stream';
 import { TransferCancel } from '../../interfaces/transfer';
-import runInQueue from '../../utils/runInQueue';
 import { waitUntil } from '../../utils/async';
 import {
     MAX_THREADS_PER_DOWNLOAD,

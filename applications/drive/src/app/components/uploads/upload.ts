@@ -2,11 +2,11 @@ import { generateUID } from 'react-components';
 import { generateContentHash } from 'proton-shared/lib/keys/driveKeys';
 import { serializeFormData } from 'proton-shared/lib/fetch/helpers';
 import { createApiError } from 'proton-shared/lib/fetch/ApiError';
+import runInQueue from 'proton-shared/lib/helpers/runInQueue';
 import ChunkFileReader from './ChunkFileReader';
 import { UploadLink } from '../../interfaces/file';
 import { TransferCancel } from '../../interfaces/transfer';
 import { isTransferCancelError } from '../../utils/transfer';
-import runInQueue from '../../utils/runInQueue';
 import { FILE_CHUNK_SIZE, RESPONSE_CODE, STATUS_CODE } from '../../constants';
 import { waitUntil } from '../../utils/async';
 
