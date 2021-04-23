@@ -59,7 +59,7 @@ export const getStyleSrcUrls = () => {
             return new URL(x.href, window.location.origin).toString();
         })
         .filter((url) => {
-            return url.startsWith(window.location.origin);
+            return url.startsWith(window.location.origin) && url.endsWith('.css');
         });
 };
 
@@ -67,11 +67,12 @@ export const getStyleSrcsData = (styleSrcUrls: string[]) => {
     return Promise.all(
         styleSrcUrls.map(async (styleSrcUrls) => {
             const response = await fetch(styleSrcUrls);
-            const data = (await response.text()).trimStart();
-            if (data.startsWith('<')) {
-                throw new Error('Invalid data');
+            const text = await response.text();
+            const trimmedText = text.trimStart();
+            if (trimmedText.startsWith('<')) {
+                throw new Error(`Invalid data ${styleSrcUrls} ${trimmedText.slice(0, 10)}`);
             }
-            return data;
+            return trimmedText;
         })
     ).then((results) => {
         return results.join('');
