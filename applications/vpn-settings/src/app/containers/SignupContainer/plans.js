@@ -239,7 +239,7 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
             image: <img width={100} src={visionaryPlanSvg} alt={`${PLAN_NAMES[PLAN.VISIONARY]} plan`} />,
             description: c('Plan Description').t`The complete privacy suite`,
             features: [
-                c('Plan feature').t`All Plus plan features`,
+                c('Plan feature').t`All ${PLAN_NAMES[PLAN.PLUS]} plan features`,
                 <>
                     <span className="mr0-5">{c('Plan Feature').t`ProtonMail Visionary account`}</span>
                     <Info
