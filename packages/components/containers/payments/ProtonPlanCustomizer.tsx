@@ -1,5 +1,5 @@
 import React from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { Cycle, Currency, Plan, Organization, PlanIDs } from 'proton-shared/lib/interfaces';
 import {
     PLANS,
@@ -13,6 +13,7 @@ import {
     MAX_ADDRESS_ADDON,
     MAX_VPN_ADDON,
     GIGA,
+    PLAN_NAMES,
 } from 'proton-shared/lib/constants';
 import { toMap } from 'proton-shared/lib/helpers/object';
 import { range } from 'proton-shared/lib/helpers/array';
@@ -208,7 +209,15 @@ const ProtonPlanCustomizer = ({
             ) : null}
             {service === PLAN_SERVICES.VPN && planIDs[plansNameMap[PLANS.VPNPLUS].ID] ? (
                 <p>
-                    {c('Info').t`ProtonVPN Plus includes ${plansNameMap[PLANS.VPNPLUS].MaxVPN} VPN connections.`}
+                    {c('Info').ngettext(
+                        msgid`ProtonVPN ${PLAN_NAMES[PLANS.VPNPLUS]} includes ${
+                            plansNameMap[PLANS.VPNPLUS].MaxVPN
+                        } VPN connection.`,
+                        `ProtonVPN ${PLAN_NAMES[PLANS.VPNPLUS]} includes ${
+                            plansNameMap[PLANS.VPNPLUS].MaxVPN
+                        } VPN connections.`,
+                        plansNameMap[PLANS.VPNPLUS].MaxVPN
+                    )}
                     <br />
                     {planIDs[plansNameMap[PLANS.PROFESSIONAL].ID]
                         ? c('Info').t`Each additional connection can be assigned to users in your organization.`
