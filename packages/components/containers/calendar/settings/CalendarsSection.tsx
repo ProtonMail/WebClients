@@ -12,6 +12,7 @@ import { SettingsParagraph, SettingsSection } from '../../account';
 
 import CalendarsTable from './CalendarsTable';
 import { CalendarModal } from '../calendarModal';
+import { ExportModal } from '../exportModal';
 
 interface Props {
     activeAddresses: Address[];
@@ -106,6 +107,8 @@ const CalendarsSection = ({
         }
     };
 
+    const handleExport = (calendar: Calendar) => createModal(<ExportModal calendar={calendar} />);
+
     const calendarLimit = user.isFree ? MAX_CALENDARS_PER_FREE_USER : MAX_CALENDARS_PER_USER;
     const isBelowLimit = calendars.length < calendarLimit;
     const canAddCalendar = activeAddresses.length > 0 && isBelowLimit && user.hasNonDelinquentScope;
@@ -147,6 +150,7 @@ const CalendarsSection = ({
                 onEdit={handleEdit}
                 onSetDefault={handleSetDefault}
                 onDelete={handleDelete}
+                onExport={handleExport}
                 loadingMap={loadingMap}
             />
         </SettingsSection>

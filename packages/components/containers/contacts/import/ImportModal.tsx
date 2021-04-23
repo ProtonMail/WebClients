@@ -36,7 +36,7 @@ import ImportCsvModalContent from './ImportCsvModalContent';
 import ImportGroupsModalContent from './ImportGroupsModalContent';
 import ImportingModalContent from './ImportingModalContent';
 import WarningModalContent from './WarningModalContent';
-import ImportSummaryModalContent from './ImportSummaryModelContent';
+import ImportSummaryModalContent from './ImportSummaryModalContent';
 
 const { CSV, VCF } = EXTENSION;
 
