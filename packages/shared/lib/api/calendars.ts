@@ -145,13 +145,23 @@ export enum CalendarEventsQueryType {
     FullDayBeforeWindow = 3,
 }
 
-interface CalendarEventsQuery extends PaginationParams {
+export interface CalendarEventsQuery extends PaginationParams {
     Start: number;
     End: number;
     Timezone: string;
     Type: CalendarEventsQueryType;
 }
-export const queryEvents = (calendarID: string, params: CalendarEventsQuery) => ({
+
+export interface CalendarExportEventsQuery extends PaginationParams {
+    BeginID?: string;
+}
+
+export const getEventsCount = (calendarID: string) => ({
+    url: `${CALENDAR_V1}/${calendarID}/events/count`,
+    method: 'get',
+});
+
+export const queryEvents = (calendarID: string, params: CalendarEventsQuery | CalendarExportEventsQuery) => ({
     url: `${CALENDAR_V1}/${calendarID}/events`,
     method: 'get',
     params,
