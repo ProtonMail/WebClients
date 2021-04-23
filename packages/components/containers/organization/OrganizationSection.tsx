@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Organization } from 'proton-shared/lib/interfaces';
-import { APPS } from 'proton-shared/lib/constants';
+import { APPS, PLANS, PLAN_NAMES } from 'proton-shared/lib/constants';
 import { hasMailProfessional, hasVisionary } from 'proton-shared/lib/helpers/subscription';
 import { unlockPasswordChanges } from 'proton-shared/lib/api/user';
 
@@ -34,7 +34,9 @@ const OrganizationSection = ({ organization, onSetupOrganization }: Props) => {
             <>
                 <SettingsParagraph>
                     {c('Info')
-                        .t`ProtonMail lets you create email addresses for other people. This is perfect for businesses, families, or groups. Upgrade to a Visionary or Professional plan to get started.`}
+                        .t`ProtonMail lets you create email addresses for other people. This is perfect for businesses, families, or groups. Upgrade to a ${
+                        PLAN_NAMES[PLANS.VISIONARY]
+                    } or ${PLAN_NAMES[PLANS.PROFESSIONAL]} plan to get started.`}
                 </SettingsParagraph>
                 <ButtonLike color="norm" as={SettingsLink} path="/dashboard" app={APP_NAME} target="_self">
                     {c('Action').t`Upgrade`}

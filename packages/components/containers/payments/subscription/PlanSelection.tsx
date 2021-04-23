@@ -2,7 +2,7 @@ import React from 'react';
 import { c, msgid } from 'ttag';
 import { Currency, Cycle, Organization, Plan, PlanIDs, Subscription, VPNCountries } from 'proton-shared/lib/interfaces';
 import { toMap } from 'proton-shared/lib/helpers/object';
-import { APPS, CYCLE, PLAN_SERVICES, PLANS } from 'proton-shared/lib/constants';
+import { APPS, CYCLE, PLAN_SERVICES, PLANS, PLAN_NAMES } from 'proton-shared/lib/constants';
 import { switchPlan } from 'proton-shared/lib/helpers/planIDs';
 import { getAppName } from 'proton-shared/lib/apps/helper';
 import { getPlan } from 'proton-shared/lib/helpers/subscription';
@@ -117,7 +117,7 @@ const getFeatures = (plan: Plan, service: PLAN_SERVICES, vpnCountries: VPNCountr
 
     if (planName === PLANS.VISIONARY && service === PLAN_SERVICES.VPN) {
         return [
-            { content: c('Plan feature').t`All Plus plan features` },
+            { content: c('Plan feature').t`All ${PLAN_NAMES[PLANS.VPNPLUS]} plan features` },
             { content: c('Plan feature').t`Includes 6 user accounts` },
             {
                 content: c('Plan feature').t`Includes Proton Visionary`,
