@@ -9,7 +9,7 @@ import isTruthy from '../../helpers/isTruthy';
 import { omit, pick } from '../../helpers/object';
 import { getCurrentUnixTimestamp } from '../../helpers/time';
 import { dateLocale } from '../../i18n';
-import { Address, GetVTimezones } from '../../interfaces';
+import { Address, GetVTimezonesMap } from '../../interfaces';
 import {
     Attendee,
     CalendarEvent,
@@ -374,7 +374,7 @@ export const getSelfAttendeeToken = (vevent?: VcalVeventComponent, addresses: Ad
 
 export const generateVtimezonesComponents = async (
     { dtstart, dtend }: VcalVeventComponent,
-    getVTimezones: GetVTimezones
+    getVTimezones: GetVTimezonesMap
 ): Promise<VcalVtimezoneComponent[]> => {
     const startTimezone = getPropertyTzid(dtstart);
     const endTimezone = dtend ? getPropertyTzid(dtend) : undefined;

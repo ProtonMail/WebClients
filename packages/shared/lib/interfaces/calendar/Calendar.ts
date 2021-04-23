@@ -26,7 +26,7 @@ export interface CalendarUserSettings {
     WeekLength: number;
     DisplayWeekNumber: number;
     AutoDetectPrimaryTimezone: number;
-    PrimaryTimezone?: string;
+    PrimaryTimezone: string;
     DisplaySecondaryTimezone: number;
     SecondaryTimezone?: string;
     ViewPreference: SETTINGS_VIEW;
