@@ -74,12 +74,16 @@ const RecoveryMethodsSection = () => {
         await call();
     };
 
+    const text =
+        CLIENT_TYPE !== VPN
+            ? c('Info')
+                  .t`We recommend adding a linked email or phone number so you can recover your account if you lose your password.`
+            : c('Info')
+                  .t`We recommend adding a linked email so you can recover your account if you lose your password.`;
+
     return (
         <SettingsSection>
-            <SettingsParagraph>
-                {c('Info')
-                    .t`We recommend adding a linked email or phone number so you can recover your account if you lose your password.`}
-            </SettingsParagraph>
+            <SettingsParagraph>{text}</SettingsParagraph>
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label className="text-semibold" htmlFor="recovery-email-input">
@@ -133,32 +137,36 @@ const RecoveryMethodsSection = () => {
                 </SettingsLayoutRight>
             </SettingsLayout>
 
-            <hr className="mb2 mt2" />
+            {CLIENT_TYPE !== VPN && (
+                <>
+                    <hr className="mb2 mt2" />
 
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label className="pt0 on-mobile-mb0-5 text-semibold" htmlFor="phoneInput">
-                        {c('label').t`Phone number`}
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight>
-                    <div className="mb1">
-                        <RecoveryPhone phone={userSettings.Phone.Value} hasReset={!!userSettings.Phone.Reset} />
-                    </div>
-                    <div className="flex flex-align-items-center">
-                        <Toggle
-                            className="mr0-5"
-                            loading={loadingReset}
-                            checked={!!userSettings.Phone.Reset && !!userSettings.Phone.Value}
-                            id="passwordPhoneResetToggle"
-                            onChange={({ target: { checked } }) =>
-                                withLoadingReset(handleChangePasswordPhoneToggle(+checked))
-                            }
-                        />
-                        <label htmlFor="passwordPhoneResetToggle">{c('Label').t`Password reset allowed`}</label>
-                    </div>
-                </SettingsLayoutRight>
-            </SettingsLayout>
+                    <SettingsLayout>
+                        <SettingsLayoutLeft>
+                            <label className="pt0 on-mobile-mb0-5 text-semibold" htmlFor="phoneInput">
+                                {c('label').t`Phone number`}
+                            </label>
+                        </SettingsLayoutLeft>
+                        <SettingsLayoutRight>
+                            <div className="mb1">
+                                <RecoveryPhone phone={userSettings.Phone.Value} hasReset={!!userSettings.Phone.Reset} />
+                            </div>
+                            <div className="flex flex-align-items-center">
+                                <Toggle
+                                    className="mr0-5"
+                                    loading={loadingReset}
+                                    checked={!!userSettings.Phone.Reset && !!userSettings.Phone.Value}
+                                    id="passwordPhoneResetToggle"
+                                    onChange={({ target: { checked } }) =>
+                                        withLoadingReset(handleChangePasswordPhoneToggle(+checked))
+                                    }
+                                />
+                                <label htmlFor="passwordPhoneResetToggle">{c('Label').t`Password reset allowed`}</label>
+                            </div>
+                        </SettingsLayoutRight>
+                    </SettingsLayout>
+                </>
+            )}
         </SettingsSection>
     );
 };
