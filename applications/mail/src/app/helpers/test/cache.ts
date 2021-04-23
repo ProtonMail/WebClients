@@ -69,7 +69,7 @@ export const addToCache = (key: string, value: any) => {
 export const clearCache = () => cache.clear();
 
 export const minimalCache = () => {
-    addToCache('User', {});
+    addToCache('User', { UsedSpace: 10, MaxSpace: 100 });
     addToCache('Addresses', []);
     addToCache('MailSettings', {});
     addToCache('UserSettings', {});

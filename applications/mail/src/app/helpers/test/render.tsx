@@ -7,12 +7,14 @@ import {
     ModalsChildren,
     EventModelListener,
 } from 'react-components';
-import { MemoryRouter } from 'react-router';
+import { Router } from 'react-router';
+import { createMemoryHistory, MemoryHistory } from 'history';
 import { render as originalRender, RenderResult as OriginalRenderResult, act } from '@testing-library/react';
 import { renderHook as originalRenderHook } from '@testing-library/react-hooks';
 import ApiContext from 'react-components/containers/api/apiContext';
 import ConfigProvider from 'react-components/containers/config/Provider';
 import { wait } from 'proton-shared/lib/helpers/promise';
+import { APPS } from 'proton-shared/lib/constants';
 import { ProtonConfig } from 'proton-shared/lib/interfaces';
 import AuthenticationProvider from 'react-components/containers/authentication/Provider';
 import FeaturesProvider from 'react-components/containers/features/FeaturesProvider';
@@ -36,11 +38,18 @@ export const authentication = ({
     onLogout: jest.fn(),
 } as unknown) as PrivateAuthenticationStore;
 
+export const history: MemoryHistory = createMemoryHistory({ initialEntries: ['/inbox'] });
+
 interface Props {
     children: JSX.Element;
 }
 
-export const config = {} as ProtonConfig;
+export const config = {
+    APP_NAME: APPS.PROTONMAIL,
+    APP_VERSION: 'test-version',
+    APP_VERSION_DISPLAY: 'test-version-display',
+    DATE_VERSION: 'test-date-version',
+} as ProtonConfig;
 
 const mockDomApi = () => {
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
@@ -62,9 +71,9 @@ const TestProvider = ({ children }: Props) => {
                                         <AttachmentProvider cache={attachmentsCache}>
                                             <FeaturesProvider>
                                                 <ContactProvider cache={contactCache}>
-                                                    <MemoryRouter initialEntries={['/inbox']}>
+                                                    <Router history={history}>
                                                         <EncryptedSearchProvider>{children}</EncryptedSearchProvider>
-                                                    </MemoryRouter>
+                                                    </Router>
                                                 </ContactProvider>
                                             </FeaturesProvider>
                                         </AttachmentProvider>
