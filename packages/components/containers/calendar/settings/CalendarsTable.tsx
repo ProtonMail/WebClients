@@ -1,3 +1,4 @@
+import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import React from 'react';
 import { c } from 'ttag';
 import { getIsCalendarDisabled, getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
@@ -6,8 +7,6 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { UserModel } from 'proton-shared/lib/interfaces';
 
 import { Badge, DropdownActions, Icon, Table, TableBody, TableHeader, TableRow } from '../../../components';
-import { useFeature } from '../../../hooks';
-import { FeatureCode } from '../../features';
 
 interface Props {
     calendars: Calendar[];
@@ -29,8 +28,7 @@ const CalendarsTable = ({
     onExport,
     loadingMap,
 }: Props) => {
-    const { feature: exportFeature, loading: loadingExportFeature } = useFeature(FeatureCode.CalendarExport);
-    const showExport = !loadingExportFeature && !!exportFeature?.Value;
+    const showExport = FEATURE_FLAGS.includes('calendar-export');
 
     return (
         <Table className="simple-table--has-actions">
