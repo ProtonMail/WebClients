@@ -35,7 +35,7 @@ const ContactsWidgetGroupsToolbar = ({ allChecked, oneSelected, onCheckAll, onCo
             </Tooltip>
             <Tooltip title={c('Action').t`Add new group`}>
                 <Button icon color="norm" className="mlauto inline-flex pt0-5 pb0-5" onClick={onCreate}>
-                    <Icon name="contacts-group-add" alt={c('Action').t`Add new contact`} />
+                    <Icon name="contacts-group-add" alt={c('Action').t`Add new group`} />
                 </Button>
             </Tooltip>
         </div>
