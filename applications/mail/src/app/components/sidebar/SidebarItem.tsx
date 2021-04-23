@@ -113,6 +113,7 @@ const SidebarItem = ({
                 title={shortcutText !== undefined && Shortcuts ? `${text} ${shortcutText}` : text}
                 ref={elementRef}
                 data-test-id={id}
+                data-testid={`sidebar-item-${id}`}
                 data-shortcut-target={['navigation-link', id].filter(isTruthy).join(' ')}
                 onFocus={onFocus}
             >

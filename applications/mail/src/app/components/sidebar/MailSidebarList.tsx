@@ -186,8 +186,8 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
     useHotkeys(sidebarRef, shortcutHandlers);
 
     // We want to show the loader only at inital loading, not on updates
-    const loadingConversationCounts = actualLoadingConversationCounts && conversationCounts.length === 0;
-    const loadingMessageCounts = actualLoadingMessageCounts && messageCounts.length === 0;
+    const loadingConversationCounts = actualLoadingConversationCounts && conversationCounts?.length === 0;
+    const loadingMessageCounts = actualLoadingMessageCounts && messageCounts?.length === 0;
 
     const { ShowMoved } = mailSettings || { ShowMoved: 0 };
 
