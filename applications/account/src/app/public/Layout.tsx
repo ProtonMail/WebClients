@@ -31,7 +31,7 @@ const Layout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
     return (
         <ProminentContainer className="flex-no-min-children flex-nowrap flex-column h100 sign-layout-bg scroll-if-needed">
             <PublicTopBanners />
-            <header className="flex flex-justify-space-between flex-item-noshrink p2">
+            <header className="flex flex-justify-space-between flex-align-items-center flex-item-noshrink p2">
                 <span>
                     <Logo appName={toApp} to="/" toApp={toApp} target="_self" />
                 </span>
