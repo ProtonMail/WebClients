@@ -8,7 +8,7 @@ import { isIE11 } from '../helpers/browser';
  */
 const isNotSupported = () => {
     // If these function get polyfilled they'll exist, this is a safety mechanism for when we stop supporting it
-    return isIE11() || !Object.fromEntries || !''.startsWith;
+    return isIE11() || !Object.fromEntries || !''.trimStart;
 };
 
 window.protonSupportedBrowser = !isNotSupported();
