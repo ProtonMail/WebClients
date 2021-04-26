@@ -25,7 +25,7 @@ html,
 	right: 0;
 	bottom: 0;
 	// Static because css variables can't be reached on that components
-	background: #262a33;
+	background: #1c223d;
 	color: white;
 }
 
@@ -41,7 +41,7 @@ html,
 	padding: 3em;
 	font-size: 1.2em;
 	// Static because css variables can't be reached on that components
-	background: #262a33;
+	background: #1c223d;
 	color: white;
 }
 
@@ -155,7 +155,7 @@ html,
 .main {
 	overflow: hidden;
 	border-top-left-radius: 4px;
-	border: solid var(--main-border-color, var(--border-weak));
+	border: solid var(--main-border-color, var(--border-norm));
 	border-width: 1px 0 0 1px;
 	box-shadow: var(--main-box-shadow, none);
 

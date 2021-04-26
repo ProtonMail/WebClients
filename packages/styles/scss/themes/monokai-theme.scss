@@ -1,5 +1,5 @@
 /*
- * Monokai Proton theme
+ * Theme: Monokai
  */
 :root,
 .ui-standard {
@@ -65,6 +65,9 @@
 
 	--scrollbar-thumb-color: #34384e;
 	--scrollbar-thumb-hover-color: #454a61;
+
+	--navigation-current-item-text-color: #2fd6b5;
+	--navigation-item-count-background-color: #8838ff;
 
 	--email-item-read-background-color: #11121d;
 	--email-item-read-text-color: var(--text-weak);
