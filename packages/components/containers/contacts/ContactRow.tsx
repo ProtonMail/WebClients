@@ -4,7 +4,7 @@ import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { ContactFormatted, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import { addPlus } from 'proton-shared/lib/helpers/string';
 import { classnames } from '../../helpers';
-import { ContactGroupLabels } from '../../components';
+import ContactGroupLabels from './ContactGroupLabels';
 import { ItemCheckbox } from '../items';
 
 interface Props {

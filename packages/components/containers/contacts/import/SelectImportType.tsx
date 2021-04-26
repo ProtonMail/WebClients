@@ -1,5 +1,4 @@
 import React, { ChangeEvent } from 'react';
-
 import { getAllTypes } from 'proton-shared/lib/contacts/helpers/types';
 
 import { Label, Select } from '../../../components';
@@ -16,7 +15,7 @@ const SelectImportType = ({ field = '', value, onChangeType }: Props) => {
 
     return (
         <Label className="pt0">
-            <Select value={value} options={types[field]} onChange={handleChangeType} />
+            <Select value={value} options={types[field as keyof typeof types]} onChange={handleChangeType} />
         </Label>
     );
 };

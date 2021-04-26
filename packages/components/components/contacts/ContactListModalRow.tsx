@@ -2,7 +2,7 @@ import React, { CSSProperties, ChangeEvent } from 'react';
 
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts/Contact';
 
-import ContactGroupLabels from './ContactGroupLabels';
+import ContactGroupLabels from '../../containers/contacts/ContactGroupLabels';
 import { classnames } from '../../helpers';
 import Checkbox from '../input/Checkbox';
 
