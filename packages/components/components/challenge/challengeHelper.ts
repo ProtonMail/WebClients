@@ -68,8 +68,8 @@ export const getStyleSrcsData = (styleSrcUrls: string[]) => {
         styleSrcUrls.map(async (styleSrcUrls) => {
             const response = await fetch(styleSrcUrls);
             const text = await response.text();
-            const trimmedText = text.trimStart();
-            if (trimmedText.startsWith('<')) {
+            const trimmedText = text.replace(/^\s+/, '');
+            if (trimmedText[0] === '<') {
                 throw new Error(`Invalid data ${styleSrcUrls} ${trimmedText.slice(0, 10)}`);
             }
             return trimmedText;
