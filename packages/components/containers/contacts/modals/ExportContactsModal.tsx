@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import { format } from 'date-fns';
-
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { DecryptedKey } from 'proton-shared/lib/interfaces';
@@ -35,7 +34,7 @@ interface Props {
     onClose?: () => void;
 }
 
-const ExportModal = ({ contactGroupID: LabelID, userKeysList, onSave = noop, ...rest }: Props) => {
+const ExportContactsModal = ({ contactGroupID: LabelID, userKeysList, onSave = noop, ...rest }: Props) => {
     const api = useApi();
     const [contacts = [], loadingContacts] = useContacts() as [Contact[], boolean, Error];
 
@@ -113,4 +112,4 @@ const ExportModal = ({ contactGroupID: LabelID, userKeysList, onSave = noop, ...
     );
 };
 
-export default ExportModal;
+export default ExportContactsModal;

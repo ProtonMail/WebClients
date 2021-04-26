@@ -26,7 +26,7 @@ import { classnames } from '../../helpers';
 import Icon from '../icon/Icon';
 
 import ContactUpgradeModal from './ContactUpgradeModal';
-import ContactGroupLabels from './ContactGroupLabels';
+import ContactGroupLabels from '../../containers/contacts/ContactGroupLabels';
 
 interface Props {
     property: ContactProperty;

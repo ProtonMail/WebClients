@@ -4,6 +4,8 @@ import { Recipient } from 'proton-shared/lib/interfaces';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { normalize } from 'proton-shared/lib/helpers/string';
 import { noop } from 'proton-shared/lib/helpers/function';
+import { orderContactGroups } from 'proton-shared/lib/helpers/contactGroups';
+
 import { ContactUpgradeModal, FullLoader, SearchInput } from '../../../components';
 import {
     useContactEmails,
@@ -19,6 +21,7 @@ import { useItemsSelection } from '../../items';
 import ContactGroupModal from '../modals/ContactGroupModal';
 import ContactGroupDetailsModal from '../modals/ContactGroupDetailsModal';
 import ContactsWidgetPlaceholder, { EmptyType } from './ContactsWidgetPlaceholder';
+import ContactGroupDeleteModal from '../modals/ContactGroupDeleteModal';
 
 interface Props {
     onClose: () => void;
@@ -34,14 +37,15 @@ const ContactsWidgetGroupsContainer = ({ onClose, onCompose }: Props) => {
     const [search, setSearch] = useState('');
 
     const [groups = [], loadingGroups] = useContactGroups();
+    const orderedGroups = orderContactGroups(groups);
     const [contactEmails = [], loadingContactEmails] = useContactEmails() as [ContactEmail[], boolean, any];
 
     const normalizedSearch = normalize(search);
 
-    const filteredGroups = useMemo(() => groups.filter(({ Name }) => normalize(Name).includes(normalizedSearch)), [
-        groups,
-        normalizedSearch,
-    ]);
+    const filteredGroups = useMemo(
+        () => orderedGroups.filter(({ Name }) => normalize(Name).includes(normalizedSearch)),
+        [orderedGroups, normalizedSearch]
+    );
 
     const groupIDs = filteredGroups.map((group) => group.ID);
 
@@ -94,16 +98,23 @@ const ContactsWidgetGroupsContainer = ({ onClose, onCompose }: Props) => {
 
     const showUpgradeModal = () => createModal(<ContactUpgradeModal />);
 
-    const handleEditGroup = (groupID: string) => {
-        if (!user.hasPaidMail) {
-            showUpgradeModal();
-            return;
-        }
-        createModal(<ContactGroupModal contactGroupID={groupID} />);
+    const handleDetails = (groupID: string) => {
+        createModal(<ContactGroupDetailsModal contactGroupID={groupID} />);
+        onClose();
     };
 
-    const handleDetails = (groupID: string) => {
-        createModal(<ContactGroupDetailsModal contactGroupID={groupID} onEdit={() => handleEditGroup(groupID)} />);
+    const handleDelete = () => {
+        createModal(
+            <ContactGroupDeleteModal
+                groupIDs={selectedIDs}
+                onDelete={() => {
+                    if (selectedIDs.length === filteredGroups.length) {
+                        setSearch('');
+                    }
+                    handleCheckAll(false);
+                }}
+            />
+        );
         onClose();
     };
 
@@ -143,10 +154,11 @@ const ContactsWidgetGroupsContainer = ({ onClose, onCompose }: Props) => {
             <div className="contacts-widget-toolbar pt1 pb1 border-bottom flex-item-noshrink">
                 <ContactsWidgetGroupsToolbar
                     allChecked={allChecked}
-                    oneSelected={!!selectedIDs.length}
+                    selectedCount={selectedIDs.length}
                     onCheckAll={handleCheckAll}
-                    onCompose={handleCompose}
+                    onCompose={onCompose ? handleCompose : undefined}
                     onCreate={handleCreate}
+                    onDelete={handleDelete}
                 />
             </div>
             <div className="flex-item-fluid w100">
