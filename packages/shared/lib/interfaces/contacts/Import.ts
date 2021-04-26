@@ -6,7 +6,7 @@ import {
     ContactProperty,
     ContactValue,
 } from './Contact';
-
+import { VCardKey } from './VCard';
 import { ImportContactError } from '../../contacts/errors/ImportContactError';
 import { ImportFatalError } from '../../contacts/errors/ImportFatalError';
 import { ImportFileError } from '../../contacts/errors/ImportFileError';
@@ -19,6 +19,7 @@ export enum IMPORT_STEPS {
     IMPORTING,
     SUMMARY,
     IMPORT_GROUPS,
+    FINISHED
 }
 
 export enum IMPORT_GROUPS_ACTION {
@@ -109,7 +110,7 @@ export interface PreVcardProperty {
     checked: boolean;
     pref?: number;
     field: string;
-    type?: string;
+    type?: VCardKey;
     value: ContactValue;
     combineInto?: string;
     combineIndex?: number;
