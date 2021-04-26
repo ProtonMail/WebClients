@@ -1,6 +1,13 @@
 import React from 'react';
 import { StandardPrivateApp, LoaderPage, useAppTitle } from 'react-components';
-import { UserModel, UserSettingsModel, AddressesModel } from 'proton-shared/lib/models';
+import {
+    UserModel,
+    UserSettingsModel,
+    AddressesModel,
+    ContactsModel,
+    ContactEmailsModel,
+    LabelsModel,
+} from 'proton-shared/lib/models';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 import { openpgpConfig } from './openpgpConfig';
 import useUserSettings from './hooks/drive/useUserSettings';
@@ -23,7 +30,7 @@ const PrivateAppInner = ({ onLogout, locales }: Props) => {
             openpgpConfig={openpgpConfig}
             onLogout={onLogout}
             preloadModels={[UserModel, AddressesModel]}
-            eventModels={[UserModel, UserSettingsModel, AddressesModel]}
+            eventModels={[UserModel, UserSettingsModel, AddressesModel, ContactsModel, ContactEmailsModel, LabelsModel]}
             fallback={<LoaderPage />}
             onInit={loadUserSettings}
             noModals
