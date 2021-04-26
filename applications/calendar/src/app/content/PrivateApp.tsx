@@ -8,12 +8,21 @@ import {
     AddressesModel,
     MailSettingsModel,
     ContactEmailsModel,
+    ContactsModel,
     LabelsModel,
 } from 'proton-shared/lib/models';
 import { loadModels } from 'proton-shared/lib/models/helper';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
 
-const EVENT_MODELS = [UserModel, UserSettingsModel, MailSettingsModel, AddressesModel, ContactEmailsModel, LabelsModel];
+const EVENT_MODELS = [
+    UserModel,
+    UserSettingsModel,
+    MailSettingsModel,
+    AddressesModel,
+    ContactEmailsModel,
+    ContactsModel,
+    LabelsModel,
+];
 
 const PRELOAD_MODELS = [UserModel, UserSettingsModel, AddressesModel];
 
