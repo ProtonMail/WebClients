@@ -37,8 +37,7 @@ const CurrencySelector = ({ currency = DEFAULT_CURRENCY, onSelect, mode = 'selec
                 {options.map(({ text, value }) => {
                     return (
                         <Button
-                            group
-                            className={classnames([currency === value && 'is-active'])}
+                            className={classnames([currency === value && 'is-selected'])}
                             key={value}
                             onClick={() => onSelect(value as Currency)}
                             disabled={loading}
