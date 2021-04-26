@@ -365,7 +365,6 @@ const HeaderExpanded = ({
                         <ButtonGroup className="mr1 mb0-5">
                             <HeaderDropdown
                                 icon
-                                group
                                 autoClose={false}
                                 content={<Icon name="filter" alt={c('Action').t`Custom filter`} />}
                                 className="messageFilterDropdownButton"
@@ -380,7 +379,6 @@ const HeaderExpanded = ({
                             </HeaderDropdown>
                             <HeaderDropdown
                                 icon
-                                group
                                 autoClose={false}
                                 noMaxSize
                                 content={<Icon name="folder" alt={c('Action').t`Move to`} />}
@@ -404,7 +402,6 @@ const HeaderExpanded = ({
                             </HeaderDropdown>
                             <HeaderDropdown
                                 icon
-                                group
                                 autoClose={false}
                                 noMaxSize
                                 content={<Icon name="label" alt={c('Action').t`Label as`} />}
@@ -432,38 +429,32 @@ const HeaderExpanded = ({
                 <ButtonGroup className="mb0-5">
                     <Tooltip title={titleReply}>
                         <Button
-                            group
                             icon
                             disabled={!messageLoaded || !bodyLoaded || isOutboxMessage}
-                            color="norm"
                             onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
                             data-test-id="message-view:reply"
                         >
-                            <Icon name="reply" size={20} alt={c('Title').t`Reply`} />
+                            <Icon name="reply" alt={c('Title').t`Reply`} />
                         </Button>
                     </Tooltip>
                     <Tooltip title={titleReplyAll}>
                         <Button
-                            group
                             icon
                             disabled={!messageLoaded || !bodyLoaded || isOutboxMessage}
-                            color="norm"
                             onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
                             data-test-id="message-view:reply-all"
                         >
-                            <Icon name="reply-all" size={20} alt={c('Title').t`Reply all`} />
+                            <Icon name="reply-all" alt={c('Title').t`Reply all`} />
                         </Button>
                     </Tooltip>
                     <Tooltip title={titleForward}>
                         <Button
-                            group
                             icon
                             disabled={!messageLoaded || !bodyLoaded || isOutboxMessage}
-                            color="norm"
                             onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
                             data-test-id="message-view:forward"
                         >
-                            <Icon name="forward" size={20} alt={c('Title').t`Forward`} />
+                            <Icon name="forward" alt={c('Title').t`Forward`} />
                         </Button>
                     </Tooltip>
                 </ButtonGroup>

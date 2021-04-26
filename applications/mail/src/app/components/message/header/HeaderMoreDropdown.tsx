@@ -227,33 +227,31 @@ const HeaderMoreDropdown = ({
         <ButtonGroup className="mr1 mb0-5">
             {isSpam ? (
                 <Tooltip title={titleMoveInboxNotSpam}>
-                    <Button group icon disabled={!messageLoaded} onClick={handleMove(INBOX, SPAM)}>
+                    <Button icon disabled={!messageLoaded} onClick={handleMove(INBOX, SPAM)}>
                         <Icon name="nospam" alt={c('Title').t`Move to inbox (not spam)`} />
                     </Button>
                 </Tooltip>
             ) : (
                 <Tooltip title={titleUnread}>
-                    <Button group icon disabled={!messageLoaded} onClick={handleUnread}>
+                    <Button icon disabled={!messageLoaded} onClick={handleUnread}>
                         <Icon name="unread" alt={c('Title').t`Mark as unread`} />
                     </Button>
                 </Tooltip>
             )}
             {isInTrash ? (
                 <Tooltip title={titleMoveInbox}>
-                    <Button group icon disabled={!messageLoaded} onClick={handleMove(INBOX, TRASH)}>
+                    <Button icon disabled={!messageLoaded} onClick={handleMove(INBOX, TRASH)}>
                         <Icon name="inbox" alt={c('Title').t`Move to inbox`} />
                     </Button>
                 </Tooltip>
             ) : (
                 <Tooltip title={titleMoveTrash}>
-                    <Button group icon disabled={!messageLoaded} onClick={handleMove(TRASH, fromFolderID)}>
+                    <Button icon disabled={!messageLoaded} onClick={handleMove(TRASH, fromFolderID)}>
                         <Icon name="trash" alt={c('Title').t`Move to trash`} />
                     </Button>
                 </Tooltip>
             )}
-
             <HeaderDropdown
-                group
                 icon
                 disabled={!messageLoaded}
                 autoClose

@@ -3,7 +3,7 @@ import { getAttachments, hasFlag } from 'proton-shared/lib/mail/messages';
 import React, { MutableRefObject } from 'react';
 import { c } from 'ttag';
 import { isToday, isYesterday } from 'date-fns';
-import { Button, classnames, Tooltip, Icon, EllipsisLoader, useMailSettings } from 'react-components';
+import { Button, classnames, Tooltip, Icon, EllipsisLoader, useMailSettings, ButtonGroup } from 'react-components';
 import { metaKey, shiftKey, altKey } from 'proton-shared/lib/helpers/browser';
 import { formatSimpleDate } from '../../helpers/date';
 import { MessageExtended } from '../../models/message';
@@ -135,25 +135,21 @@ const ComposerActions = ({
                 </Button>
             </Tooltip>
             <div className="flex flex-item-fluid">
-                <div className="flex">
+                <ButtonGroup>
                     <Tooltip title={titleAttachment}>
-                        <span>
-                            <AttachmentsButton
-                                isAttachments={isAttachments}
-                                disabled={lock}
-                                onAddAttachments={onAddAttachments}
-                                attachmentTriggerRef={attachmentTriggerRef}
-                            />
-                        </span>
+                        <AttachmentsButton
+                            isAttachments={isAttachments}
+                            disabled={lock}
+                            onAddAttachments={onAddAttachments}
+                            attachmentTriggerRef={attachmentTriggerRef}
+                        />
                     </Tooltip>
                     <Tooltip title={titleExpiration}>
                         <Button
                             icon
-                            shape="outline"
-                            color={isExpiration ? 'norm' : undefined}
                             onClick={onExpiration}
                             disabled={lock}
-                            className="ml0-5"
+                            className={classnames([isExpiration && 'is-selected'])}
                         >
                             <Icon name="expiration" alt={c('Action').t`Expiration time`} />
                         </Button>
@@ -162,16 +158,14 @@ const ComposerActions = ({
                         <Button
                             icon
                             data-test-id="composer:encryption-lock"
-                            color={isPassword ? 'norm' : undefined}
-                            shape="outline"
                             onClick={onPassword}
                             disabled={lock}
-                            className="ml0-5"
+                            className={classnames([isPassword && 'is-selected'])}
                         >
                             <Icon name="lock-alone" alt={c('Action').t`Encryption`} />
                         </Button>
                     </Tooltip>
-                </div>
+                </ButtonGroup>
                 <div className="flex mlauto">
                     <span className="mr0-5 mtauto mbauto no-mobile">{dateMessage}</span>
                     <Tooltip title={titleDeleteDraft}>
