@@ -168,40 +168,42 @@ const LogsSection = () => {
                 </SettingsLayout>
             )}
 
-            {logAuth !== DISABLE && (
-                <div className="mt2 mb1">
-                    <Button
-                        shape="outline"
-                        className="mr1 inline-flex flex-align-items-center"
-                        loading={loadingRefresh}
-                        onClick={() => withLoadingRefresh(wait(1000).then(fetchAndSetState))}
-                        title={c('Action').t`Reload`}
-                    >
-                        <Icon name="reload" className="mr0-5" />
-                        <span>{c('Action').t`Reload`}</span>
-                    </Button>
-
-                    {state.logs.length ? <WipeLogsButton className="mr1" onWipe={handleWipe} /> : null}
-                    {state.logs.length ? (
+            <div className="flex flex-justify-space-between flex-align-items-start mt2 mb1">
+                {logAuth !== DISABLE && (
+                    <div className="on-mobile-mb1">
                         <Button
                             shape="outline"
-                            className="mr1"
-                            onClick={() => withLoadingDownload(handleDownload())}
-                            loading={loadingDownload}
-                        >{c('Action').t`Download`}</Button>
-                    ) : null}
-                </div>
-            )}
+                            className="mr1 inline-flex flex-align-items-center"
+                            loading={loadingRefresh}
+                            onClick={() => withLoadingRefresh(wait(1000).then(fetchAndSetState))}
+                            title={c('Action').t`Reload`}
+                        >
+                            <Icon name="reload" className="mr0-5" />
+                            <span>{c('Action').t`Reload`}</span>
+                        </Button>
 
-            <div className="mb0-5">
-                <Pagination
-                    onNext={onNext}
-                    onPrevious={onPrevious}
-                    onSelect={onSelect}
-                    total={state.total}
-                    page={page}
-                    limit={PAGE_SIZE}
-                />
+                        {state.logs.length ? <WipeLogsButton className="mr1" onWipe={handleWipe} /> : null}
+                        {state.logs.length ? (
+                            <Button
+                                shape="outline"
+                                className="mr1"
+                                onClick={() => withLoadingDownload(handleDownload())}
+                                loading={loadingDownload}
+                            >{c('Action').t`Download`}</Button>
+                        ) : null}
+                    </div>
+                )}
+
+                <div>
+                    <Pagination
+                        onNext={onNext}
+                        onPrevious={onPrevious}
+                        onSelect={onSelect}
+                        total={state.total}
+                        page={page}
+                        limit={PAGE_SIZE}
+                    />
+                </div>
             </div>
 
             <LogsTable logs={state.logs} logAuth={logAuth} loading={loading} error={error} />
