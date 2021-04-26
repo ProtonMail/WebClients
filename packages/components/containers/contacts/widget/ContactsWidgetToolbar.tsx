@@ -1,15 +1,17 @@
 import React, { ChangeEvent } from 'react';
 import { c, msgid } from 'ttag';
+
 import { Checkbox, Icon, Button, Tooltip } from '../../../components';
 
 interface Props {
     allChecked: boolean;
     selectedCount: number;
     onCheckAll: (checked: boolean) => void;
-    onCompose: () => void;
+    onCompose?: () => void;
     onForward: () => void;
     onDelete: () => void;
     onCreate: () => void;
+    onMerge: () => void;
 }
 
 const ContactsWidgetToolbar = ({
@@ -20,9 +22,11 @@ const ContactsWidgetToolbar = ({
     onForward,
     onDelete,
     onCreate,
+    onMerge,
 }: Props) => {
     const handleCheck = ({ target }: ChangeEvent<HTMLInputElement>) => onCheckAll(target.checked);
     const noSelection = !selectedCount;
+    const canMerge = selectedCount > 1;
     const deleteText = noSelection
         ? c('Action').t`Delete contact`
         : c('Action').ngettext(
@@ -46,26 +50,41 @@ const ContactsWidgetToolbar = ({
                     </label>
                 </span>
             </Tooltip>
-            <Tooltip title={c('Action').t`Compose`}>
+            {onCompose ? (
+                <>
+                    <Tooltip title={c('Action').t`Compose`}>
+                        <Button
+                            icon
+                            className="mr0-5 inline-flex pt0-5 pb0-5"
+                            onClick={onCompose}
+                            disabled={noSelection}
+                            title={c('Action').t`Compose`}
+                        >
+                            <Icon name="email" />
+                        </Button>
+                    </Tooltip>
+                    <Tooltip title={c('Action').t`Forward as attachment`}>
+                        <Button
+                            icon
+                            className="mr0-5 inline-flex pt0-5 pb0-5"
+                            onClick={onForward}
+                            disabled={noSelection}
+                            title={c('Action').t`Forward as attachment`}
+                        >
+                            <Icon name="forward" />
+                        </Button>
+                    </Tooltip>
+                </>
+            ) : null}
+            <Tooltip title={c('Action').t`Merge contacts`}>
                 <Button
                     icon
                     className="mr0-5 inline-flex pt0-5 pb0-5"
-                    onClick={onCompose}
-                    disabled={noSelection}
-                    title={c('Action').t`Compose`}
+                    onClick={onMerge}
+                    disabled={!canMerge}
+                    title={c('Action').t`Merge contacts`}
                 >
-                    <Icon name="email" />
-                </Button>
-            </Tooltip>
-            <Tooltip title={c('Action').t`Forward as attachment`}>
-                <Button
-                    icon
-                    className="mr0-5 inline-flex pt0-5 pb0-5"
-                    onClick={onForward}
-                    disabled={noSelection}
-                    title={c('Action').t`Forward as attachment`}
-                >
-                    <Icon name="forward" />
+                    <Icon name="merge" />
                 </Button>
             </Tooltip>
             <Tooltip title={deleteText}>

@@ -132,12 +132,6 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                                 {c('Link').t`${calendarAppName} settings`}
                             </SettingsLink>
                         </li>
-                        <li className="flex flex-nowrap flex-align-items-center">
-                            <Icon name="protoncontacts" className="mr0-5 flex-item-noshrink" />
-                            <SettingsLink path="/general" app={APPS.PROTONCONTACTS}>
-                                {c('Link').t`ProtonContacts settings`}
-                            </SettingsLink>
-                        </li>
                     </ul>
                 </div>
             ) : null}
