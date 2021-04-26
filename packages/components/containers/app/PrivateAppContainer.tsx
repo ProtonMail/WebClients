@@ -34,7 +34,7 @@ const PrivateAppContainer = ({
                 {header}
                 <div className="flex flex-item-fluid flex-nowrap">
                     {sidebar}
-                    <div className="main flex flex-column flex-nowrap flex-item-fluid">{children}</div>
+                    <div className="main ui-standard flex flex-column flex-nowrap flex-item-fluid">{children}</div>
                 </div>
             </div>
         </div>
