@@ -14,6 +14,7 @@ import {
     TimezoneSelector,
     TopNavbarListItemSettingsButton,
     Icon,
+    TopNavbarListItemContactsDropdown,
 } from 'react-components';
 import { c } from 'ttag';
 import { differenceInCalendarDays } from 'date-fns';
@@ -133,6 +134,7 @@ const CalendarContainerView = ({
                     <Icon size={24} name="plus" className="mauto" />
                 </FloatingButton>
             }
+            contactsButton={<TopNavbarListItemContactsDropdown />}
             title={c('Title').t`Calendar`}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
