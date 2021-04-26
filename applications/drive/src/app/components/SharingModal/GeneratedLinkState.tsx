@@ -90,15 +90,6 @@ function GeneratedLinkState({
         }
     };
 
-    const handleCopyPasswordClick = () => {
-        if (contentRef.current && password) {
-            textToClipboard(password, contentRef.current);
-            createNotification({
-                text: c('Success').t`The password to access your file was copied.`,
-            });
-        }
-    };
-
     const handleSubmit = async () => {
         const newPassword = password !== initialPassword ? password : undefined;
         let newDuration: number | null | undefined = null;
@@ -131,7 +122,7 @@ function GeneratedLinkState({
 
     const boldNameText = (
         <b key="name" className="text-break">
-            {`"${itemName}"`}
+            {`${itemName}`}
         </b>
     );
 
@@ -140,7 +131,7 @@ function GeneratedLinkState({
     return (
         <>
             <HeaderModal modalTitleID={modalTitleID} hasClose={!saving && !deleting} onClose={handleClose}>
-                {c('Title').t`Share with link`}
+                {c('Title').t`Share via link`}
             </HeaderModal>
             <ContentModal
                 onSubmit={(e) => {
@@ -154,11 +145,7 @@ function GeneratedLinkState({
             >
                 <InnerModal>
                     <div ref={contentRef}>
-                        <Alert>
-                            {c('Info').jt`Anyone with this link can download the file ${boldNameText}.`}
-                            <br />
-                            {c('Info').t`Protect the link with a password.`}
-                        </Alert>
+                        <p>{c('Info').jt`Your secure, sharable link for ${boldNameText}:`}</p>
                         <Row className="on-mobile-mb0-5">
                             <div className="flex flex-item-fluid on-mobile-mb0-5">
                                 <Input
@@ -171,9 +158,10 @@ function GeneratedLinkState({
                             <div className="flex-no-min-children flex-justify-end ml0-5 on-mobile-ml0">
                                 <PrimaryButton id="copy-url-button" onClick={handleCopyURLClick} className="min-w7e">{c(
                                     'Action'
-                                ).t`Copy`}</PrimaryButton>
+                                ).t`Copy link`}</PrimaryButton>
                             </div>
                         </Row>
+                        <Alert>{c('Info').jt`Anyone with this link can access your file.`}</Alert>
                         <div className="flex flex-justify-space-between w100 flex-nowrap mt2 mb1 pr1">
                             <h3>{c('Title').t`Additional settings`}</h3>
                             <Icon
@@ -199,7 +187,7 @@ function GeneratedLinkState({
                             <>
                                 <div className="flex-no-min-children flex-nowrap mb1 on-mobile-flex-column on-mobile-mb0-5">
                                     <Label htmlFor="passwordModeToggle">
-                                        <span className="mr0-5">{c('Label').t`Password protection`}</span>
+                                        <span className="mr0-5">{c('Label').t`Protect with password`}</span>
                                     </Label>
                                     <div className="flex flex-justify-start pt0-5 mr0-5 on-mobile-mr0">
                                         <Toggle
@@ -234,19 +222,10 @@ function GeneratedLinkState({
                                             </>
                                         )}
                                     </div>
-                                    <div className="flex-no-min-children flex-justify-end ml0-5 on-mobile-ml0">
-                                        <Button
-                                            id="copy-password-button"
-                                            disabled={!password}
-                                            hidden={!passwordToggledOn}
-                                            onClick={handleCopyPasswordClick}
-                                            className="min-w7e"
-                                        >{c('Action').t`Copy`}</Button>
-                                    </div>
                                 </div>
                                 <div className="flex-no-min-children flex-nowrap mb1 on-mobile-flex-column on-mobile-mb0-5">
                                     <Label htmlFor="expirationTimeModeToggle">
-                                        <span className="mr0-5">{c('Label').t`Expiration Date`}</span>
+                                        <span className="mr0-5">{c('Label').t`Set expiration date`}</span>
                                     </Label>
                                     <div className="flex flex-justify-start pt0-5 mr0-5 on-mobile-mr0">
                                         <Toggle
@@ -259,14 +238,13 @@ function GeneratedLinkState({
                                         />
                                     </div>
                                     <div className="flex-no-min-children flex-item-fluid flex-align-items-center on-mobile-mb0-5 field-icon-container-empty on-mobile-min-h0">
-                                        {expirationToggledOn ? (
+                                        {expirationToggledOn && (
                                             <ExpirationTimeDatePicker
                                                 disabled={saving}
+                                                allowTime={false}
                                                 expiration={expiration}
                                                 handleExpirationChange={(exp: number) => setExpiration(exp)}
                                             />
-                                        ) : (
-                                            <span className="pl1 on-mobile-pl0">{c('Label').t`Never`}</span>
                                         )}
                                     </div>
                                 </div>

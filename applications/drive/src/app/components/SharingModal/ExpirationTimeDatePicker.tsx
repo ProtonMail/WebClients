@@ -7,6 +7,7 @@ interface Props {
     expiration: number | null;
     handleExpirationChange: (exp: number) => void;
     disabled?: boolean;
+    allowTime?: boolean;
 }
 
 const getMaxDate = () => {
@@ -15,7 +16,7 @@ const getMaxDate = () => {
     return date;
 };
 
-const ExpirationTimeDatePicker = ({ expiration, handleExpirationChange, disabled }: Props) => {
+const ExpirationTimeDatePicker = ({ expiration, handleExpirationChange, disabled, allowTime }: Props) => {
     const initialValue = expiration ? fromUnixTime(expiration) : undefined;
     const [expDate, setExpDate] = useState<Date | undefined>(initialValue);
     const [expTime, setExpTime] = useState<Date | undefined>(initialValue);
@@ -86,7 +87,7 @@ const ExpirationTimeDatePicker = ({ expiration, handleExpirationChange, disabled
                 title={c('Title').t`Select link expiration date`}
                 data-testid="epirationDateInputId"
             />
-            {expTime && (
+            {allowTime && expTime && (
                 <TimeInput
                     id="epirationTimeInputId"
                     className="ml0-5 flex-item-fluid"

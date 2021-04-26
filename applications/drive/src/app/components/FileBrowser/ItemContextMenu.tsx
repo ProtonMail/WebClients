@@ -105,7 +105,7 @@ const ItemContextMenu = ({
         },
         {
             hidden: isMultiSelect || hasFoldersSelected,
-            name: hasSharedLink ? c('Action').t`Sharing options` : c('Action').t`Share with link`,
+            name: hasSharedLink ? c('Action').t`Sharing options` : c('Action').t`Share via link`,
             icon: 'link',
             testId: 'context-menu-share',
             action: () => openLinkSharing(shareId, item),
