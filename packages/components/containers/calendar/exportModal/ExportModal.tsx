@@ -72,7 +72,7 @@ export const ExportModal = ({ calendar, ...rest }: Props) => {
                     defaultTzid,
                     vtimezones: uniqueTimezones,
                 });
-                updateModel({ step: EXPORT_STEPS.FINISHED, erroredEvents });
+                updateModel({ step: EXPORT_STEPS.FINISHED, erroredEvents, error: undefined });
                 setCalendarBlob(new Blob([ics], { type: 'data:text/plain;charset=utf-8;' }));
             };
 
