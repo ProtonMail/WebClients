@@ -1,0 +1,9 @@
+// Vr for vertical rule
+
+.vr {
+	display: inline-flex;
+	width: 1px;
+	height: auto;
+	flex: 0 0 1px;
+	background-color: var(--border-norm);
+}

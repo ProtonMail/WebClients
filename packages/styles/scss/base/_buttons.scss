@@ -35,9 +35,9 @@
 		color: var(--button-hover-text-color, inherit);
 	}
 
-	&:not(div):active,
-	// not(div) prevents active state in case of button groups with dropdowns
-	&.is-active {
+	&:active,
+	&.is-active,
+	&[aria-expanded='true'] {
 		box-shadow: inset 0 0 0 var(--button-active-border-width, 0)
 			var(--button-active-border-color, transparent);
 		background-color: var(--button-active-background-color, transparent);
@@ -81,7 +81,7 @@
 		color: var(--button-hover-text-color, inherit);
 	}
 
-	&:not(div):active,
+	&:active,
 	&.is-active {
 		color: var(--button-active-text-color, inherit);
 	}
@@ -308,7 +308,7 @@
 		color: inherit;
 	}
 
-	&:not(div):active,
+	&:active,
 	&.is-active,
 	&[aria-expanded='true'] {
 		background-color: var(--interaction-default-active);
@@ -322,43 +322,5 @@
 		&:not([aria-busy='true']) {
 			opacity: 0.5;
 		}
-	}
-}
-
-/*
- * Button group
-*/
-.grouped-buttons {
-	@extend .inline-flex;
-	@extend .flex-nowrap;
-}
-
-.grouped-button {
-	&:hover,
-	&:focus,
-	&:active {
-		position: relative;
-	}
-
-	&:not(:first-child, :last-child) {
-		border-radius: 0;
-	}
-
-	&[class*='button-outline']:not(:last-child) {
-		margin-right: -1px; // Border size
-	}
-}
-
-.grouped-buttons > .grouped-button:first-child {
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-}
-
-.grouped-buttons > .grouped-button:last-child {
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
-
-	&[class*='button-outline'] {
-		margin-right: 0;
 	}
 }
