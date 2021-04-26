@@ -1,10 +1,12 @@
 import { act } from '@testing-library/react';
-import { addApiResolver } from '../../../helpers/test/helper';
+import { addApiResolver, clearAll } from '../../../helpers/test/helper';
 import { initMessage, messageID, setup } from './Message.test.helpers';
 
 jest.setTimeout(20000);
 
 describe('Message display modes', () => {
+    afterEach(clearAll);
+
     it('loading mode', async () => {
         addApiResolver(`mail/v4/messages/${messageID}`);
 

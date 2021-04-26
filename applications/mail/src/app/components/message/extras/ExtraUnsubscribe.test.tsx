@@ -3,7 +3,7 @@ import { fireEvent } from '@testing-library/dom';
 import loudRejection from 'loud-rejection';
 import { openNewTab } from 'proton-shared/lib/helpers/browser';
 import { mergeMessages } from '../../../helpers/message/messages';
-import { addAddressToCache, minimalCache } from '../../../helpers/test/cache';
+import { addAddressToCache, minimalCache, minimalElementsCache } from '../../../helpers/test/cache';
 import {
     addApiKeys,
     addApiMock,
@@ -13,6 +13,7 @@ import {
     getModal,
     render,
     waitForEventManagerCall,
+    waitForNotification,
 } from '../../../helpers/test/helper';
 import { MessageExtended } from '../../../models/message';
 import ExtraUnsubscribe from './ExtraUnsubscribe';
@@ -40,8 +41,15 @@ describe('Unsubscribe banner', () => {
     afterEach(clearAll);
 
     it('should show the unsubscribe banner with one click method', async () => {
+        const unsubscribeCall = jest.fn();
+        const markUnsubscribedCall = jest.fn();
+
         minimalCache();
+        minimalElementsCache();
         addAddressToCache({ Email: toAddress });
+        addApiMock(`mail/v4/messages/${messageID}/unsubscribe`, unsubscribeCall);
+        addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
+
         const message = mergeMessages(defaultMessage, {
             data: {
                 UnsubscribeMethods: { OneClick: 'OneClick' },
@@ -53,12 +61,6 @@ describe('Unsubscribe banner', () => {
         const banner = getByTestId('unsubscribe-banner');
 
         expect(banner.textContent).toMatch(/Unsubscribe/);
-
-        const unsubscribeCall = jest.fn();
-        const markUnsubscribedCall = jest.fn();
-
-        addApiMock(`mail/v4/messages/${messageID}/unsubscribe`, unsubscribeCall);
-        addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
 
         const button = banner.querySelector('button');
         if (button) {
@@ -78,12 +80,20 @@ describe('Unsubscribe banner', () => {
 
     it('should show the unsubscribe banner with mailto method', async () => {
         const mailto = 'to@address.com';
+        const keys = await generateKeys('me', toAddress);
+
+        const createCall = jest.fn(() => ({ Message: { ID: messageID, Attachments: [] } }));
+        const sendCall = jest.fn(() => ({ Sent: {} }));
+        const markUnsubscribedCall = jest.fn();
 
         minimalCache();
+        minimalElementsCache();
         addAddressToCache({ ID: toAddressID, Email: toAddress });
         addApiKeys(false, mailto, []);
-        const keys = await generateKeys('me', toAddress);
         addKeysToAddressKeysCache(toAddressID, keys);
+        addApiMock(`mail/v4/messages`, createCall);
+        addApiMock(`mail/v4/messages/messageID`, sendCall);
+        addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
 
         const message = mergeMessages(defaultMessage, {
             data: {
@@ -97,14 +107,6 @@ describe('Unsubscribe banner', () => {
 
         expect(banner.textContent).toMatch(/Unsubscribe/);
 
-        const createCall = jest.fn(() => ({ Message: { ID: messageID, Attachments: [] } }));
-        const sendCall = jest.fn(() => ({ Sent: {} }));
-        const markUnsubscribedCall = jest.fn();
-
-        addApiMock(`mail/v4/messages`, createCall);
-        addApiMock(`mail/v4/messages/messageID`, sendCall);
-        addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
-
         const button = banner.querySelector('button');
         if (button) {
             fireEvent.click(button);
@@ -115,6 +117,7 @@ describe('Unsubscribe banner', () => {
             fireEvent.click(submit);
         }
 
+        await waitForNotification('Mail list unsubscribed');
         await waitForEventManagerCall();
 
         expect(sendCall).toHaveBeenCalled();
@@ -122,8 +125,13 @@ describe('Unsubscribe banner', () => {
     });
 
     it('should show the unsubscribe banner with http client method', async () => {
+        const markUnsubscribedCall = jest.fn();
+        const openNewTabMock = openNewTab as jest.Mock;
+
         minimalCache();
+        minimalElementsCache();
         addAddressToCache({ ID: toAddressID, Email: toAddress });
+        addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
 
         const message = mergeMessages(defaultMessage, {
             data: {
@@ -136,11 +144,6 @@ describe('Unsubscribe banner', () => {
         const banner = getByTestId('unsubscribe-banner');
 
         expect(banner.textContent).toMatch(/Unsubscribe/);
-
-        const markUnsubscribedCall = jest.fn();
-        const openNewTabMock = openNewTab as jest.Mock;
-
-        addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
 
         const button = banner.querySelector('button');
         if (button) {

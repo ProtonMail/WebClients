@@ -28,7 +28,7 @@ import {
 } from '../../helpers/elements';
 import { Element } from '../../models/element';
 import { Filter, Sort, SearchParameters } from '../../models/tools';
-import { expectedPageLength } from '../../helpers/paging';
+import { expectedPageLength, pageCount } from '../../helpers/paging';
 import { ElementEvent, Event, ConversationEvent, MessageEvent, LabelIDsChanges } from '../../models/event';
 import { useExpirationCheck } from '../useExpiration';
 import {
@@ -53,6 +53,7 @@ interface Options {
     sort: Sort;
     filter: Filter;
     search: SearchParameters;
+    onPage: (page: number) => void;
 }
 
 interface ReturnValue {
@@ -107,7 +108,7 @@ const emptyCache = (
     };
 };
 
-export const useElements: UseElements = ({ conversationMode, labelID, search, page, sort, filter }) => {
+export const useElements: UseElements = ({ conversationMode, labelID, search, page, sort, filter, onPage }) => {
     const api = useApi();
     const abortControllerRef = useRef<AbortController>();
 
@@ -184,7 +185,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             return SEARCH_PLACEHOLDERS_COUNT;
         }
         return expectedPageLength(cache.page, total, isFilter(cache.params.filter) ? cache.bypassFilter.length : 0);
-    }, [cache.page, cache.params, total, cache.bypassFilter]);
+    }, [cache.page, cache.params, total, cache.bypassFilter, cache.pendingRequest]);
 
     const expectedLengthMismatch = useMemo(() => {
         return Math.abs(elements.length - expectedLength);
@@ -290,7 +291,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         setCache(emptyCache(page, { labelID, sort, filter, esEnabled, ...search }, retry, beforeFirstLoad));
 
     const load = async () => {
-        setCache((cache) => ({ ...cache, pendingRequest: true }));
+        setCache((cache) => ({ ...cache, pendingRequest: true, page }));
         const queryParameters = getQueryElementsParameters();
         try {
             const isSearchActive = isSearch(search);
@@ -416,6 +417,16 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         cache.pendingRequest,
         esEnabled && isSearch(search),
     ]);
+
+    // Move to the last page if the current one becomes empty
+    useEffect(() => {
+        if (expectedLength === 0 && page > 0) {
+            const count = pageCount(total);
+            if (page !== count - 1) {
+                onPage(count - 1);
+            }
+        }
+    }, [expectedLength, page]);
 
     useEffect(() => {
         if (

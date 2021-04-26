@@ -1,16 +1,19 @@
 import { noop } from 'proton-shared/lib/helpers/function';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-
 import { useMessage } from './useMessage';
-import { renderHook, clearAll, messageCache, tick } from '../../helpers/test/helper';
+import { renderHook, clearAll, messageCache, tick, cache, elementsCache } from '../../helpers/test/helper';
 import { MessageExtended } from '../../models/message';
+import { ELEMENTS_CACHE_KEY } from '../mailbox/useElementsCache';
 
 describe('useMessage', () => {
     let consoleError: any;
 
     const ID = 'ID';
 
-    const setup = (localID: string) => renderHook((id = localID) => useMessage(id));
+    const setup = (localID: string) => {
+        cache.set(ELEMENTS_CACHE_KEY, elementsCache);
+        return renderHook((id = localID) => useMessage(id));
+    };
 
     beforeAll(() => {
         consoleError = console.error;

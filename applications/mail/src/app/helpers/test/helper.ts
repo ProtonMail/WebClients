@@ -64,3 +64,21 @@ export const getModal = () => {
 
     return { modal, submit, cancel, close };
 };
+
+export const waitForNotification = (content: string) =>
+    waitFor(
+        () => {
+            const notifications = document.querySelectorAll('div[role="alert"].notification');
+            const matchingNotification = [...notifications].find((notification) =>
+                notification.textContent?.includes(content)
+            );
+            if (matchingNotification) {
+                return matchingNotification;
+            }
+            throw new Error(`Notification not found with "${content}"`);
+        },
+        {
+            interval: 100,
+            timeout: 5000,
+        }
+    );

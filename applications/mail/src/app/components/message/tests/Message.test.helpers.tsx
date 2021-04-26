@@ -10,7 +10,7 @@ import { Breakpoints } from '../../../models/utils';
 import MessageView, { MessageViewRef } from '../MessageView';
 import * as messageDecrypt from '../../../helpers/message/messageDecrypt';
 import { MessageExtended, PartialMessageExtended } from '../../../models/message';
-import { messageCache } from '../../../helpers/test/cache';
+import { messageCache, minimalElementsCache } from '../../../helpers/test/cache';
 import { mergeMessages } from '../../../helpers/message/messages';
 
 loudRejection();
@@ -39,6 +39,8 @@ export const defaultProps: MessageViewProps = {
 
 export const setup = async (specificProps: Partial<MessageViewProps> = {}, useMinimalCache = true) => {
     const props = { ...defaultProps, ...specificProps };
+
+    minimalElementsCache();
 
     const ref = { current: null } as MutableRefObject<MessageViewRef | null>;
     const refCallback = (refValue: MessageViewRef) => {

@@ -38,6 +38,8 @@ interface SetupArgs extends PropsArgs {
     page?: number;
     totalMessages?: number;
     totalConversations?: number;
+    mockMessages?: boolean;
+    mockConversations?: boolean;
 }
 
 export const props = {
@@ -47,7 +49,7 @@ export const props = {
     breakpoints: {} as Breakpoints,
     elementID: undefined,
     location: {} as Location,
-    history: ({ push: jest.fn() } as any) as History,
+    history: ({ push: jest.fn(), location: { pathname: 'pathname', search: 'search' } } as any) as History,
     onCompose: jest.fn(),
 };
 
@@ -56,6 +58,7 @@ const defaultFilter = {};
 const defaultSearch = {};
 
 export const labels: Label[] = [
+    { ID: 'labelID', Type: LABEL_TYPE.MESSAGE_LABEL, Name: 'label' },
     { ID: 'label1', Type: LABEL_TYPE.MESSAGE_LABEL, Name: 'label1' },
     { ID: 'label2', Type: LABEL_TYPE.MESSAGE_LABEL, Name: 'label2' },
     { ID: 'label3', Type: LABEL_TYPE.MESSAGE_LABEL, Name: 'label3' },
@@ -109,13 +112,20 @@ export const setup = async ({
     conversations = [],
     totalMessages = messages.length,
     totalConversations = conversations.length,
+    mockMessages = true,
+    mockConversations = true,
     ...propsArgs
 }: SetupArgs = {}) => {
     minimalCache();
     const props = getProps(propsArgs);
 
-    addApiMock('mail/v4/messages', () => ({ Total: totalMessages, Messages: messages }));
-    addApiMock('mail/v4/conversations', () => ({ Total: totalConversations, Conversations: conversations }));
+    addToCache('Labels', [{ ID: props.labelID }]);
+    if (mockMessages) {
+        addApiMock('mail/v4/messages', () => ({ Total: totalMessages, Messages: messages }));
+    }
+    if (mockConversations) {
+        addApiMock('mail/v4/conversations', () => ({ Total: totalConversations, Conversations: conversations }));
+    }
     addApiMock('mail/v4/importers', () => ({ Importers: [] }));
     addApiMock('core/v4/features/UsedMailMobileApp', () => ({
         Feature: {

@@ -1,7 +1,10 @@
 import { contactCache } from '../../../helpers/test/cache';
+import { clearAll } from '../../../helpers/test/helper';
 import { initMessage, setup } from './Message.test.helpers';
 
 describe('Message recipients rendering', () => {
+    afterEach(clearAll);
+
     it('show a recipient not associated with a contact', async () => {
         const Name = 'test-name';
         const Address = 'address@test.com';
