@@ -12,7 +12,9 @@ import {
 
 import { getEventsCount } from 'proton-shared/lib/api/calendars';
 import { Alert, DynamicProgress } from '../../../components';
+import useGetCalendarEventPersonal from '../../../hooks/useGetCalendarEventPersonal';
 import {
+    useGetCalendarInfo,
     useApi,
     useGetAddresses,
     useGetAddressKeys,
@@ -30,6 +32,8 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
     const getEncryptionPreferences = useGetEncryptionPreferences();
+    const getCalendarInfo = useGetCalendarInfo();
+    const getCalendarEventPersonal = useGetCalendarEventPersonal();
     const getDecryptedPassphraseAndCalendarKeys = useGetDecryptedPassphraseAndCalendarKeys();
 
     const { totalToProcess } = model;
@@ -62,6 +66,7 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
         const process = async () => {
             try {
                 const addresses = await getAddresses();
+                const { memberID } = await getCalendarInfo(model.calendar.ID);
 
                 if (!addresses) {
                     throw new Error('No addresses');
@@ -83,6 +88,8 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     getAddressKeys,
                     getEncryptionPreferences,
                     getDecryptedPassphraseAndCalendarKeys,
+                    getCalendarEventPersonal,
+                    memberID,
                     totalToProcess,
                 });
 
