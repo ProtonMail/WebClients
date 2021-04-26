@@ -1,12 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import {
-    SettingsPropsShared,
-    ContactsSettingsContactsSection,
-    ContactsSettingsGroupsSection,
-    ThemesSection,
-} from 'react-components';
+import { SettingsPropsShared, ContactsSettingsContactsSection, ThemesSection } from 'react-components';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 
@@ -24,10 +19,6 @@ export const getContactsGeneralPage = () => {
                 text: c('Title').t`Contacts`,
                 id: 'contacts',
             },
-            {
-                text: c('Title').t`Contact groups`,
-                id: 'contact-groups',
-            },
         ],
     };
 };
@@ -37,7 +28,6 @@ const ContactsGeneralSettings = ({ location }: SettingsPropsShared) => {
         <PrivateMainSettingsAreaWithPermissions config={getContactsGeneralPage()} location={location}>
             <ThemesSection />
             <ContactsSettingsContactsSection />
-            <ContactsSettingsGroupsSection />
         </PrivateMainSettingsAreaWithPermissions>
     );
 };
