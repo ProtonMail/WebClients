@@ -48,9 +48,9 @@ import { OnCompose } from '../../hooks/composer/useCompose';
 import { useComposerHotkeys } from '../../hooks/composer/useComposerHotkeys';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
-
 import { useSendHandler } from '../../hooks/composer/useSendHandler';
 import { useCloseHandler } from '../../hooks/composer/useCloseHandler';
+import { updateKeyPackets } from '../../helpers/attachment/attachment';
 
 enum ComposerInnerModal {
     None,
@@ -172,10 +172,33 @@ const Composer = (
 
     // Manage populating the model from the server
     useEffect(() => {
-        if (
-            (modelMessage.document === undefined && modelMessage.plainText === undefined) ||
-            modelMessage.data?.ID !== syncedMessage.data?.ID
-        ) {
+        if (modelMessage.data?.ID !== syncedMessage.data?.ID) {
+            const newModelMessage = {
+                ...syncedMessage,
+                ...modelMessage,
+                data: {
+                    ...syncedMessage.data,
+                    ...modelMessage.data,
+                    // Attachments are updated by the draft creation request
+                    Attachments: syncedMessage.data?.Attachments,
+                } as Message,
+            };
+            setModelMessage(newModelMessage);
+            void reloadSendInfo(messageSendInfo, newModelMessage);
+        } else {
+            const { changed, Attachments } = updateKeyPackets(modelMessage, syncedMessage);
+
+            if (changed) {
+                setModelMessage({ ...modelMessage, data: { ...modelMessage.data, Attachments } as Message });
+            }
+        }
+    }, [syncInProgress, syncedMessage.data?.ID]);
+
+    // Manage initializing the message content from the cache
+    useEffect(() => {
+        const firstInitialization = modelMessage.plainText === undefined && modelMessage.document === undefined;
+
+        if (firstInitialization) {
             const isOpenFromUndo = syncedMessage.openDraftFromUndo === true;
             const password = isOpenFromUndo
                 ? // Keep password on undo
@@ -186,36 +209,18 @@ const Composer = (
             const newModelMessage = {
                 ...syncedMessage,
                 ...modelMessage,
+                document: syncedMessage.document,
+                embeddeds: syncedMessage.embeddeds,
+                plainText: syncedMessage.plainText,
                 data: {
                     ...syncedMessage.data,
                     ...password,
                     ...modelMessage.data,
-                    // Attachments are updated by the draft creation request
-                    Attachments: syncedMessage.data?.Attachments,
                 } as Message,
-                document: syncedMessage.document,
-                embeddeds: syncedMessage.embeddeds,
-                plainText: syncedMessage.plainText,
             };
             setModelMessage(newModelMessage);
-            void reloadSendInfo(messageSendInfo, newModelMessage);
-        } else {
-            let change = false;
-            const Attachments = modelMessage.data?.Attachments?.map((attachment) => {
-                const match = syncedMessage?.data?.Attachments.find(
-                    (syncedAttachment) => attachment.ID === syncedAttachment.ID
-                );
-                if (match && attachment.KeyPackets !== match.KeyPackets) {
-                    change = true;
-                    return { ...attachment, KeyPackets: match.KeyPackets };
-                }
-                return attachment;
-            });
-            if (change) {
-                setModelMessage({ ...modelMessage, data: { ...modelMessage.data, Attachments } as Message });
-            }
         }
-    }, [syncInProgress, syncedMessage.document, syncedMessage.plainText, syncedMessage.data?.ID]);
+    }, [syncInProgress, syncedMessage.document, syncedMessage.plainText]);
 
     const timeoutRef = useRef(0);
 
