@@ -10,6 +10,7 @@ import {
     useGetUser,
     useSettingsLink,
 } from 'react-components';
+import { isDraft } from 'proton-shared/lib/mail/messages';
 import { MessageExtended, PartialMessageExtended } from '../../models/message';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useDraft } from '../useDraft';
@@ -115,6 +116,13 @@ export const useCompose = (
 
             const existingMessage = messageCache.get(localID);
             if (existingMessage) {
+                // Plaintext drafts have a different sanitization as plaintext mail content
+                // So we have to restart the sanitization process on a cached draft
+                // Should be needed only for undo but safer to do it for all plaintext drafts
+                if (isDraft(existingDraft.data)) {
+                    existingMessage.initialized = undefined;
+                    existingMessage.plainText = undefined;
+                }
                 existingMessage.openDraftFromUndo = fromUndo;
             }
 
