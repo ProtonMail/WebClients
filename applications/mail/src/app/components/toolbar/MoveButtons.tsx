@@ -86,6 +86,7 @@ const MoveButtons = ({
             onClick={() => withLoading(handleMove(ARCHIVE))}
             disabled={!selectedIDs.length}
             data-test-id="toolbar:movetoarchive"
+            data-testid="toolbar-archive"
             icon={<Icon name="archive" alt={c('Action').t`Move to archive`} />}
         />
     );
@@ -149,6 +150,7 @@ const MoveButtons = ({
             onClick={() => withLoading(handleMove(TRASH))}
             disabled={loading || !selectedIDs.length}
             data-test-id="toolbar:movetotrash"
+            data-testid="toolbar-trash"
             icon={<Icon name="trash" alt={c('Action').t`Move to trash`} />}
         />
     );

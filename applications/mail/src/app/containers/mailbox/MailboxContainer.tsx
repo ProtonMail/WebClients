@@ -31,7 +31,6 @@ import { Breakpoints } from '../../models/utils';
 import { OnCompose } from '../../hooks/composer/useCompose';
 import { useWelcomeFlag } from '../../hooks/mailbox/useWelcomeFlag';
 import useNewEmailNotification from '../../hooks/mailbox/useNewEmailNotification';
-import { pageCount } from '../../helpers/paging';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElementsCache';
 import { useMailboxHotkeys } from '../../hooks/mailbox/useMailboxHotkeys';
@@ -93,14 +92,23 @@ const MailboxContainer = ({
     const sort = useMemo<Sort>(() => sortFromUrl(location), [searchParams.sort]);
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
 
-    const { labelID, elements, loading, expectedLength, total, pendingRequest } = useElements({
+    const handlePage = useCallback((pageNumber: number) => {
+        history.push(setPageInUrl(history.location, pageNumber));
+    }, []);
+    const handleSort = useCallback((sort: Sort) => history.push(setSortInUrl(history.location, sort)), []);
+    const handleFilter = useCallback((filter: Filter) => history.push(setFilterInUrl(history.location, filter)), []);
+
+    const { labelID, elements, loading, expectedLength, total } = useElements({
         conversationMode: isConversationMode(inputLabelID, mailSettings, location),
         labelID: inputLabelID,
         page: pageFromUrl(location),
         sort,
         filter,
         search: searchParameters,
+        onPage: handlePage,
     });
+
+    const handleBack = useCallback(() => history.push(setParamsInLocation(history.location, { labelID })), [labelID]);
 
     useEffect(() => setPage({ ...page, page: pageFromUrl(location) }), [searchParams.page]);
     useEffect(() => setPage({ ...page, total }), [total]);
@@ -167,20 +175,6 @@ const MailboxContainer = ({
         },
         [onCompose, isConversationContentView, labelID]
     );
-    const handleBack = useCallback(() => history.push(setParamsInLocation(history.location, { labelID })), [labelID]);
-    const handlePage = useCallback(
-        (pageNumber: number) => history.push(setPageInUrl(history.location, pageNumber)),
-        []
-    );
-    const handleSort = useCallback((sort: Sort) => history.push(setSortInUrl(history.location, sort)), []);
-    const handleFilter = useCallback((filter: Filter) => history.push(setFilterInUrl(history.location, filter)), []);
-
-    // Move to the previous page if the current one becomes empty
-    useEffect(() => {
-        if (!pendingRequest && page.total && page.page >= pageCount(page.total)) {
-            handlePage(page.page - 1);
-        }
-    }, [page]);
 
     const conversationMode = isConversationMode(labelID, mailSettings, location);
 

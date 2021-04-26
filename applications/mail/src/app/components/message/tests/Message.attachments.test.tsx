@@ -2,7 +2,7 @@ import { fireEvent, within } from '@testing-library/dom';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { createEmbeddedMap } from '../../../helpers/embedded/embeddeds';
 import { assertIcon } from '../../../helpers/test/assertion';
-import { tick } from '../../../helpers/test/helper';
+import { clearAll, tick } from '../../../helpers/test/helper';
 import { initMessage, setup } from './Message.test.helpers';
 
 describe('Message attachments', () => {
@@ -25,6 +25,8 @@ describe('Message attachments', () => {
     const NumAttachments = Attachments.length;
     const icons = ['file-unknown', 'file-pdf', 'file-image'];
     const totalSize = Attachments.map((attachment) => attachment.Size).reduce((acc, size) => acc + size, 0);
+
+    afterEach(clearAll);
 
     it('should show attachments with their correct icon', async () => {
         initMessage({ data: { NumAttachments, Attachments } });

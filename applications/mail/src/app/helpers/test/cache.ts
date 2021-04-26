@@ -76,7 +76,6 @@ export const minimalCache = () => {
     addToCache('ContactEmails', []);
     addToCache('Labels', []);
     cache.set('ADDRESS_KEYS', addressKeysCache);
-    cache.set(ELEMENTS_CACHE_KEY, elementsCache);
 };
 
 export const addAddressToCache = (inputAddress: Partial<Address>) => {
@@ -90,4 +89,8 @@ export const addAddressToCache = (inputAddress: Partial<Address>) => {
     } as Address;
     const Addresses = cache.get('Addresses') as ResolvedRequest<Address[]>;
     Addresses.value.push(address);
+};
+
+export const minimalElementsCache = () => {
+    cache.set(ELEMENTS_CACHE_KEY, elementsCache);
 };
