@@ -21,9 +21,7 @@ import { switchPlan, getSupportedAddons, setQuantity } from 'proton-shared/lib/h
 import { getAppName } from 'proton-shared/lib/apps/helper';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 
-import { InlineLinkButton, Icon, Info, Price } from '../../components';
-
-import { classnames } from '../../helpers';
+import { InlineLinkButton, Icon, Info, Price, ButtonGroup, Button } from '../../components';
 
 const MailAddons: ADDON_NAMES[] = [ADDON_NAMES.MEMBER, ADDON_NAMES.SPACE, ADDON_NAMES.ADDRESS, ADDON_NAMES.DOMAIN];
 const VPNAddons: ADDON_NAMES[] = [ADDON_NAMES.VPN];
@@ -66,30 +64,29 @@ const ButtonNumberInput = ({
     onChange?: (newValue: number) => void;
 }) => {
     return (
-        <div className="bordered rounded flex-item-noshrink flex flex-nowrap">
-            <button
-                type="button"
+        <ButtonGroup>
+            <Button
+                icon
                 title={c('Action').t`Decrease`}
-                className={classnames(['p0-5 flex', (disabled || value - step < min) && 'color-disabled'])}
                 disabled={disabled || value - step < min}
                 onClick={() => {
                     const newValue = value - step;
                     onChange?.(newValue);
                 }}
             >
-                <Icon name="minus" alt={c('Action').t`Decrease`} className="mauto" />
-            </button>
+                <Icon name="minus" alt={c('Action').t`Decrease`} />
+            </Button>
             {disabled ? (
-                <div className="mt0-5 flex mb0-5">
-                    <span className="w6e border-left border-right text-center color-disabled">{value / divider}</span>
+                <div className="flex">
+                    <span className="w6e mauto text-center color-disabled">{value / divider}</span>
                 </div>
             ) : (
-                <label htmlFor={id} className="mt0-5 flex mb0-5">
+                <label htmlFor={id} className="flex">
                     <select
                         value={value}
                         disabled={disabled}
                         id={id}
-                        className="w6e border-left border-right text-center"
+                        className="w6e text-center"
                         onChange={({ target: { value: newValue } }) => {
                             onChange?.(+newValue);
                         }}
@@ -104,19 +101,18 @@ const ButtonNumberInput = ({
                     </select>
                 </label>
             )}
-            <button
-                type="button"
+            <Button
+                icon
                 title={c('Action').t`Increase`}
-                className={classnames(['p0-5 flex', (disabled || value + step > max) && 'color-disabled'])}
                 disabled={disabled || value + step > max}
                 onClick={() => {
                     const newValue = value + step;
                     onChange?.(newValue);
                 }}
             >
-                <Icon name="plus" alt={c('Action').t`Increase`} className="mauto" />
-            </button>
-        </div>
+                <Icon name="plus" alt={c('Action').t`Increase`} />
+            </Button>
+        </ButtonGroup>
     );
 };
 

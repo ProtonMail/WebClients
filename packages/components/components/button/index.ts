@@ -1,6 +1,7 @@
 export { default as Button } from './Button';
 export * from './Button';
 export { default as ButtonLike } from './ButtonLike';
+export * from './ButtonLike';
 export { default as Copy } from './Copy';
 export { default as ErrorButton } from './ErrorButton';
 export { default as FloatingButton } from './FloatingButton';

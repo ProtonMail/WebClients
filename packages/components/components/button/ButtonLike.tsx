@@ -34,7 +34,7 @@ interface ButtonLikeOwnProps {
     pill?: boolean;
     /** If true, display as icon */
     icon?: boolean;
-    /** If true, display as part of button group */
+    /** If true, this button is part of a button group */
     group?: boolean;
 }
 
@@ -67,19 +67,23 @@ const ButtonLike: <E extends React.ElementType = typeof defaultElement>(
 
         const shape = shapeProp || (color === 'weak' ? 'outline' : 'solid');
 
+        const actualShape = group ? 'ghost' : shape;
+        const actualColor = group ? 'weak' : color;
+        const actualSize = group ? 'medium' : size;
+
         const buttonClassName = classnames([
-            shape === 'link' ? 'button-link' : 'button-henlo',
+            actualShape === 'link' ? 'button-link' : 'button-henlo',
             pill && 'button-pill',
             icon && 'button-for-icon',
-            group && 'grouped-button',
-            size !== 'medium' && `button-${size}`,
-            `button-${shape}-${color}`,
+            group && 'button-group-item',
+            actualSize !== 'medium' && `button-${actualSize}`,
+            `button-${actualShape}-${actualColor}`,
             restProps.as !== 'button' ? 'inline-block text-center' : '',
             fullWidth && 'w100',
             className,
         ]);
 
-        const roleProps = restProps.onClick ? { role: 'button' } : undefined;
+        const roleProps = restProps.onClick && !restProps.type ? { role: 'button' } : undefined;
 
         return (
             <Box

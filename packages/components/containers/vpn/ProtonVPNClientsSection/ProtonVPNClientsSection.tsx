@@ -23,7 +23,7 @@ const ProtonVPNClientsSection = () => {
                 <DropdownMenuLink className="flex-item-fluid" href={href}>
                     {children}
                 </DropdownMenuLink>
-                <Copy value={href} className="flex-item-noshrink mr0-5" />
+                <Copy shape="ghost" value={href} className="flex-item-noshrink mr0-5" />
             </div>
         );
     });

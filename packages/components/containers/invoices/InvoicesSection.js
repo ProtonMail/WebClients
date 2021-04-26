@@ -98,12 +98,11 @@ const InvoicesSection = () => {
                     <div className="flex flex-align-items-center">
                         {user.isPaid ? (
                             <ButtonGroup className="mr1">
-                                <Button group className={owner === USER ? 'is-active' : ''} onClick={handleOwner(USER)}>
+                                <Button className={owner === USER ? 'is-selected' : ''} onClick={handleOwner(USER)}>
                                     {c('Action').t`User`}
                                 </Button>
                                 <Button
-                                    group
-                                    className={owner === ORGANIZATION ? 'is-active' : ''}
+                                    className={owner === ORGANIZATION ? 'is-selected' : ''}
                                     onClick={handleOwner(ORGANIZATION)}
                                 >
                                     {c('Action').t`Organization`}

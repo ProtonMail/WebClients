@@ -3,6 +3,7 @@ import Dropdown from './Dropdown';
 import { usePopperAnchor } from '../popper';
 import DropdownButton, { DropdownButtonProps } from './DropdownButton';
 import { generateUID } from '../../helpers';
+import { useCombinedRefs } from '../../hooks';
 
 interface OwnProps {
     hasCaret?: boolean;
@@ -15,37 +16,40 @@ interface OwnProps {
 
 export type Props<T extends React.ElementType> = OwnProps & DropdownButtonProps<T>;
 
-const SimpleDropdown = <E extends React.ElementType>({
-    content,
-    children,
-    originalPlacement,
-    autoClose,
-    hasCaret = true,
-    dropdownClassName,
-    ...rest
-}: Props<E>) => {
-    const [uid] = useState(generateUID('dropdown'));
+const SimpleDropdown = React.forwardRef(
+    <E extends React.ElementType>(
+        { content, children, originalPlacement, autoClose, hasCaret = true, dropdownClassName, ...rest }: Props<E>,
+        ref: typeof rest.ref
+    ) => {
+        const [uid] = useState(generateUID('dropdown'));
 
-    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+        const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-    return (
-        <>
-            <DropdownButton {...rest} ref={anchorRef} isOpen={isOpen} onClick={toggle} hasCaret={hasCaret}>
-                {content}
-            </DropdownButton>
-            <Dropdown
-                id={uid}
-                originalPlacement={originalPlacement}
-                autoClose={autoClose}
-                isOpen={isOpen}
-                anchorRef={anchorRef}
-                onClose={close}
-                className={dropdownClassName}
-            >
-                {children}
-            </Dropdown>
-        </>
-    );
-};
+        return (
+            <>
+                <DropdownButton
+                    {...rest}
+                    ref={useCombinedRefs(ref, anchorRef)}
+                    isOpen={isOpen}
+                    onClick={toggle}
+                    hasCaret={hasCaret}
+                >
+                    {content}
+                </DropdownButton>
+                <Dropdown
+                    id={uid}
+                    originalPlacement={originalPlacement}
+                    autoClose={autoClose}
+                    isOpen={isOpen}
+                    anchorRef={anchorRef}
+                    onClose={close}
+                    className={dropdownClassName}
+                >
+                    {children}
+                </Dropdown>
+            </>
+        );
+    }
+);
 
 export default SimpleDropdown;
