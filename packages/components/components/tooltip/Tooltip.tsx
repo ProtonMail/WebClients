@@ -40,7 +40,7 @@ const mergeCallbacks = (a: any, b: any) => {
     );
 };
 
-const Tooltip = ({ children, title, originalPlacement = 'top', type = 'info' }: Props) => {
+const Tooltip = ({ children, title, originalPlacement = 'top', type = 'info', ...rest }: Props) => {
     const [uid] = useState(generateUID('tooltip'));
 
     const { isRTL } = useRightToLeft();
@@ -75,6 +75,7 @@ const Tooltip = ({ children, title, originalPlacement = 'top', type = 'info' }: 
         <>
             {React.cloneElement(child, {
                 ref: mergedRef,
+                ...rest,
                 ...mergeCallbacks(tooltipHandlers, child.props),
                 'aria-describedby': uid,
             })}

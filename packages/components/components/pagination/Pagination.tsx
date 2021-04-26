@@ -43,7 +43,7 @@ const Pagination = ({
             <DropdownMenuButton
                 key={index}
                 onClick={() => onSelect(index)}
-                disabled={index === page}
+                aria-current={index === page}
                 className={index === page ? 'is-active text-center' : 'text-center'}
             >
                 {index.toString()}
@@ -57,15 +57,21 @@ const Pagination = ({
     return (
         <ButtonGroup>
             {hasPrevious ? (
-                <Button icon group className="previous-button" disabled={disablePrevious} onClick={onPrevious}>
+                <Button
+                    icon
+                    className="previous-button"
+                    disabled={disablePrevious}
+                    onClick={onPrevious}
+                    title={c('Title').t`Previous`}
+                >
                     <Icon name="arrow-left" />
                 </Button>
             ) : null}
-            <SimpleDropdown group title={c('Title').t`Open pagination`} content={page}>
+            <SimpleDropdown as={Button} title={c('Title').t`Open pagination`} content={page}>
                 <DropdownMenu>{actions}</DropdownMenu>
             </SimpleDropdown>
             {hasNext ? (
-                <Button icon group className="next-button" disabled={disableNext} onClick={onNext}>
+                <Button icon className="next-button" disabled={disableNext} onClick={onNext} title={c('Title').t`Next`}>
                     <Icon name="arrow-right" />
                 </Button>
             ) : null}
