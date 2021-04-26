@@ -86,3 +86,13 @@ export type ContactPropertyChange = {
 export type ContactCache = Map<string, Contact>;
 
 export type ContactEmailCache = Map<string, ContactEmail>;
+
+export interface ContactMergeModel {
+    orderedContacts: ContactFormatted[][];
+    isChecked: {
+        [ID: string]: boolean;
+    };
+    beDeleted: {
+        [ID: string]: boolean;
+    };
+}
