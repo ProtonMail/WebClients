@@ -7,8 +7,8 @@ import { isIE11 } from '../helpers/browser';
  * The unsupported.js script is included as another script tag and relies on this variable.
  */
 const isNotSupported = () => {
-    // Whatever other feature detection we want to do.
-    return isIE11();
+    // If these function get polyfilled they'll exist, this is a safety mechanism for when we stop supporting it
+    return isIE11() || !Object.fromEntries || !''.startsWith;
 };
 
 window.protonSupportedBrowser = !isNotSupported();
