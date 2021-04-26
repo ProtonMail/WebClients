@@ -1,5 +1,5 @@
 /*
- * Default Proton theme
+ * Theme: Proton (default)
  */
 :root,
 .ui-standard {
@@ -59,69 +59,56 @@
 	--shadow-norm-opacity: 0.1;
 	--shadow-lifted-opacity: 0.16;
 
-	--backdrop-norm: rgb(0 0 0 / 0.48);
+	--backdrop-norm: rgb(38 42 51 / 0.48);
 
 	// Optional colors
 
 	--scrollbar-thumb-color: #d0d3da;
 	--scrollbar-thumb-hover-color: #babec7;
+
+	--main-border-color: transparent;
 }
 
 // Prominent UI specifics
 
 .ui-prominent {
-	--signal-danger: #ed4c51;
-	--signal-danger-hover: #f7595e;
-	--signal-danger-active: #ff666b;
-	--signal-danger-contrast: white;
-
-	--signal-warning: #f5930a;
-	--signal-warning-hover: #f5a716;
-	--signal-warning-active: #f5b922;
-	--signal-warning-contrast: black;
-
-	--signal-success: #349172;
-	--signal-success-hover: #339c79;
-	--signal-success-active: #31a67f;
-	--signal-success-contrast: white;
-
-	--signal-info: #2c89db;
-	--signal-info-hover: #3491e3;
-	--signal-info-active: #3d99eb;
-	--signal-info-contrast: white;
-
 	--text-norm: white;
-	--text-weak: #a4a9b5;
-	--text-hint: #696f7d;
-	--text-disabled: #575d6b;
-	--text-invert: #262a33;
+	--text-weak: #949bb9;
+	--text-hint: #565f84;
+	--text-disabled: #444e72;
+	--text-invert: #1c223d;
 
-	--field-norm: #575d6b;
-	--field-hover: #696f7d;
-	--field-disabled: #464b58;
+	--field-norm: #565f84;
+	--field-hover: #949bb9;
+	--field-disabled: #353e60;
 
-	--border-norm: #464b58;
-	--border-weak: #363a46;
+	--border-norm: #353e60;
+	--border-weak: #272f4f;
 
-	--background-norm: #262a33;
-	--background-weak: #2e323c;
-	--background-strong: #363a46;
+	--background-norm: #1c223d;
+	--background-weak: #212946;
+	--background-strong: #272f4f;
 
 	--interaction-norm: #657ee4;
 	--interaction-norm-hover: #7d92e8;
 	--interaction-norm-active: #98a9ee;
 	--interaction-norm-contrast: white;
 
-	--interaction-weak: #464b58;
-	--interaction-weak-hover: #575d6b;
-	--interaction-weak-active: #696f7d;
+	--interaction-weak: #353e60;
+	--interaction-weak-hover: #444e72;
+	--interaction-weak-active: #565f84;
 
 	--interaction-default: transparent;
-	--interaction-default-hover: rgb(87 93 107 / 0.2);
-	--interaction-default-active: rgb(87 93 107 / 0.3);
+	--interaction-default-hover: rgb(68 78 114 / 0.2);
+	--interaction-default-active: rgb(68 78 114 / 0.3);
+
+	--shadow-norm-opacity: 0.32;
+	--shadow-lifted-opacity: 0.4;
+
+	--backdrop-norm: rgb(0 0 0 / 0.32);
 
 	// Optional colors
 
-	--scrollbar-thumb-color: #464b58;
-	--scrollbar-thumb-hover-color: #575d6b;
+	--scrollbar-thumb-color: #353e60;
+	--scrollbar-thumb-hover-color: #444e72;
 }
