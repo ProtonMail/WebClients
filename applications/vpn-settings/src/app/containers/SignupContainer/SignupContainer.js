@@ -193,7 +193,7 @@ const SignupContainer = ({ match, history, onLogin }) => {
 
     return (
         <PublicPage title={c('Title').t`Sign up`}>
-            <main className="flex flex-item-fluid main-area--no-header main-area-content--padding-fix ui-standard">
+            <main className="flex flex-item-fluid main-area--no-header main-area-content--padding-fix">
                 <div className="center p2 container-plans-signup on-mobile-pl1 on-mobile-pr1 on-mobile-pt1">
                     <div className="flex flex-nowrap flex-align-items-center on-mobile-flex-wrap mb1">
                         <div className="flex-item-fluid plan-back-button">
