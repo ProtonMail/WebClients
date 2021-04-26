@@ -175,7 +175,7 @@ const EmailUnsubscribeContainer = () => {
         );
     }
 
-    return <main className="main-area ui-standard email-unsubscribe-container--main">{renderView()}</main>;
+    return <main className="main-area email-unsubscribe-container--main">{renderView()}</main>;
 };
 
 export default EmailUnsubscribeContainer;
