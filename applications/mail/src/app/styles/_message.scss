@@ -42,7 +42,8 @@
 
 .trashed-messages,
 .message-header {
-    background-color: var(--background-weak);
+    background-color: var(--email-item-read-background-color, var(--background-weak));
+    color: var(--email-item-read-text-color, var(--text-norm));
 }
 
 .message-container {
@@ -61,7 +62,8 @@
     }
 
     &.is-unread {
-        background: var(--background-norm);
+        background-color: var(--email-item-unread-background-color, var(--background-norm));
+        color: var(--email-item-unread-text-color, var(--text-norm));
         font-weight: bold;
     }
 
