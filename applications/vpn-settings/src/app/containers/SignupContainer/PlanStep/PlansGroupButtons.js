@@ -11,9 +11,8 @@ const PlansGroupButtons = ({ plans, onSelectPlan, model, ...rest }) => {
             {plans.map(({ planName, title }) => {
                 return (
                     <Button
-                        group
                         key={planName}
-                        className={classnames(['flex-item-fluid', planName === model.planName && 'is-active'])}
+                        className={classnames(['flex-item-fluid', planName === model.planName && 'is-selected'])}
                         onClick={() => onSelectPlan({ ...model, planName })}
                     >
                         {title}
