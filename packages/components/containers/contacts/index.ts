@@ -3,6 +3,8 @@ export { default as ContactModal } from './modals/ContactModal';
 export { default as ContactGroupModal } from './modals/ContactGroupModal';
 export { default as ContactListModal } from './modals/ContactListModal';
 export { default as ContactDetailsModal } from './modals/ContactDetailsModal';
+export { default as ExportContactsModal } from './modals/ExportContactsModal';
+export { default as MergeModal } from './merge/MergeModal';
 export { default as ContactView } from './ContactView';
 export { default as ContactViewErrors } from './ContactViewErrors';
 export { default as ContactPgpSettings } from './ContactPgpSettings';

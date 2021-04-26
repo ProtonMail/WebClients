@@ -1,6 +1,5 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-
 import { ImportContactsModel } from 'proton-shared/lib/interfaces/contacts/Import';
 
 import { Alert, DynamicProgress } from '../../../components';

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { PreVcardsProperty } from 'proton-shared/lib/interfaces/contacts/Import';
 import { toVcard } from 'proton-shared/lib/contacts/helpers/csv';
 
@@ -40,7 +39,9 @@ const ImportCsvTableRows = ({ preVcards, onToggle, onChangeField, onChangeType }
                                     ) : null}
                                 </div>
                             </td>
-                            <td rowSpan={preVcards.length}>{display}</td>
+                            <td rowSpan={preVcards.length} className="text-ellipsis" title={display}>
+                                {display}
+                            </td>
                         </>
                     ) : null}
                 </tr>

@@ -62,7 +62,6 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
     const hasTOTPEnabled = getHasTOTPSettingEnabled(userSettings);
     const driveAppName = getAppName(APPS.PROTONDRIVE);
     const calendarAppName = getAppName(APPS.PROTONCALENDAR);
-    const contactsAppName = getAppName(APPS.PROTONCONTACTS);
     const mailAppName = getAppName(APPS.PROTONMAIL);
     const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
 
@@ -166,9 +165,8 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
             </Alert>
             <Alert type="warning">
                 <div className="text-bold text-uppercase">{c('Info')
-                    .t`Warning: This also deletes all connected services`}</div>
-                <div>{c('Info')
-                    .t`Example: ${mailAppName}, ${contactsAppName}, ${vpnAppName}, ${driveAppName}, ${calendarAppName}`}</div>
+                    .t`Warning: This also removes access to all connected services and deletes all your contacts`}</div>
+                <div>{c('Info').t`Example: ${mailAppName}, ${vpnAppName}, ${driveAppName}, ${calendarAppName}`}</div>
             </Alert>
             <Row>
                 <Label htmlFor="reason">{c('Label').t`What is the main reason you are deleting your account?`}</Label>
