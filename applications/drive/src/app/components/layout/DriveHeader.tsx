@@ -1,6 +1,11 @@
 import { APPS } from 'proton-shared/lib/constants';
 import React from 'react';
-import { PrivateHeader, TopNavbarListItemSettingsButton, useActiveBreakpoint } from 'react-components';
+import {
+    PrivateHeader,
+    useActiveBreakpoint,
+    TopNavbarListItemContactsDropdown,
+    TopNavbarListItemSettingsButton,
+} from 'react-components';
 import { c } from 'ttag';
 
 interface Props {
@@ -23,6 +28,7 @@ const DriveHeader = ({
         <PrivateHeader
             logo={logo}
             title={title}
+            contactsButton={<TopNavbarListItemContactsDropdown />}
             settingsButton={<TopNavbarListItemSettingsButton to="/drive" toApp={APPS.PROTONACCOUNT} />}
             expanded={isHeaderExpanded}
             onToggleExpand={toggleHeaderExpanded}
