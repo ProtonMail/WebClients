@@ -16,9 +16,14 @@ interface Props {
      * fixedType means you don't want to change the type of data (ie: no select)
      */
     fixedType?: boolean;
+    /**
+     * list of types not to propose in the other information fields
+     * mostly useful not to propose second instance of fields limited to one entry in vcards
+     */
+    filteredTypes?: string[];
 }
 
-const ContactModalLabel = ({ field, uid, type = '', onChange, fixedType = false }: Props) => {
+const ContactModalLabel = ({ field, uid, type = '', onChange, fixedType = false, filteredTypes = [] }: Props) => {
     const types: { [key: string]: { text: string; value: string }[] } = getAllTypes();
     const fieldType = types[field];
 
@@ -30,9 +35,13 @@ const ContactModalLabel = ({ field, uid, type = '', onChange, fixedType = false 
         onChange({ value: target.value, key: 'field', uid });
 
     if (!fixedType && otherInformationFields.map(({ value: f }) => f).includes(field)) {
+        const filteredOtherInformationFields = otherInformationFields.filter(
+            (field) => !filteredTypes.includes(field.value)
+        );
+
         return (
             <Label className="pt0 mr1 on-mobile-w100">
-                <Select value={field} options={otherInformationFields} onChange={handleChangeField} />
+                <Select value={field} options={filteredOtherInformationFields} onChange={handleChangeField} />
             </Label>
         );
     }

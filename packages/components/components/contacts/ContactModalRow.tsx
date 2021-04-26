@@ -19,6 +19,7 @@ interface Props {
     mainItem?: boolean;
     fixedType?: boolean;
     labelWidthClassName?: string;
+    filteredTypes?: string[];
 }
 
 const ContactModalRow = (
@@ -32,6 +33,7 @@ const ContactModalRow = (
         mainItem = false,
         labelWidthClassName,
         fixedType,
+        filteredTypes,
     }: Props,
     ref: Ref<HTMLInputElement>
 ) => {
@@ -82,6 +84,7 @@ const ContactModalRow = (
                         uid={property.uid}
                         onChange={onChange}
                         fixedType={fixedType}
+                        filteredTypes={filteredTypes}
                     />
                 </span>
 
