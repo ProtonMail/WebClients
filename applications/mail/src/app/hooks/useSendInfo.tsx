@@ -1,3 +1,4 @@
+import { GetEncryptionPreferences } from 'proton-shared/lib/interfaces/hooks/GetEncryptionPreferences';
 import React, { Dispatch, SetStateAction, useCallback, useEffect, useMemo, useState } from 'react';
 import { Alert, useGetEncryptionPreferences, useModals } from 'react-components';
 import { c, msgid } from 'ttag';
@@ -12,7 +13,6 @@ import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from 'proton-shared/lib/mail/encryptionPreferences';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
 import getSendPreferences from 'proton-shared/lib/mail/send/getSendPreferences';
-import { GetEncryptionPreferences } from 'react-components/hooks/useGetEncryptionPreferences';
 import AskForKeyPinningModal from '../components/composer/addresses/AskForKeyPinningModal';
 import ContactResignModal from '../components/message/modals/ContactResignModal';
 import { getSendStatusIcon } from '../helpers/message/icon';
