@@ -48,7 +48,7 @@ const Dropdown = ({
     originalPlacement = 'bottom',
     availablePlacements = ALL_PLACEMENTS,
     originalPosition,
-    offset = 20,
+    offset = 8,
     onClose = noop,
     onClosed,
     onContextMenu = noop,
