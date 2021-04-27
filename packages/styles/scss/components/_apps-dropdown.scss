@@ -1,12 +1,7 @@
 .apps-dropdown {
-	&.dropdown {
-		--min-width: 13em;
-		--max-width: 15.5em; // Be carefull to not exceed the nav bar
-		--max-height: 25em;
-
-		@include respond-to($breakpoint-small, 'min') {
-			box-shadow: var(--shadow-lifted);
-		}
+	&#{&}.dropdown {
+		--min-width: #{em(200)};
+		--max-height: #{em(400)};
 	}
 
 	&-button {
@@ -23,15 +18,31 @@
 		}
 	}
 
+	&-list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	&-item-hr {
+		margin: 0.5em 0;
+		grid-column: 1 / -1;
+	}
+
 	&-link {
 		@extend .interactive;
 
-		&,
-		&:hover,
-		&:focus,
-		&:active {
-			color: var(--text-norm);
-			text-decoration: none;
+		display: block;
+		padding: 0.75em;
+		border-radius: $global-border-radius;
+		text-align: center;
+		text-decoration: none;
+	}
+
+	&-icon {
+		color: #657ee4; // Hard coded because it should not come from theme
+
+		&-vpn {
+			color: #4da358; // Hard coded because it should not come from theme
 		}
 	}
 }

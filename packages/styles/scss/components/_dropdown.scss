@@ -58,6 +58,7 @@
 		transform: scale(1);
 		border-radius: $global-border-radius;
 		box-shadow: var(--shadow-lifted);
+		border: 1px solid var(--border-norm);
 		background: var(--background-norm);
 		animation-name: anime-dropdown-in-large;
 
@@ -70,21 +71,6 @@
 				transform: scale(1);
 				opacity: 1;
 			}
-		}
-
-		// Add border in a layer under the dropdown in order to deal with arrow easily
-		&::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			z-index: -2;
-			margin: -1px;
-			border: 1px solid var(--border-norm);
-			border-radius: $global-border-radius;
-			pointer-events: none;
 		}
 
 		// Out animation
@@ -273,90 +259,5 @@
 		height: 0;
 		box-sizing: content-box;
 		border-top: 1px solid var(--border-norm);
-	}
-
-	/* Arrow for wide screens */
-	@include respond-to($breakpoint-small, 'min') {
-		&:not(#{&}--no-caret)::before {
-			--size: #{rem(15)};
-			--offset: #{rem(21.2 - 15)}; // Pythagore powa for middle line alignement!
-
-			content: '';
-			position: absolute;
-			z-index: -1;
-			width: var(--size);
-			height: var(--size);
-			transform: rotate(45deg);
-			border: 1px solid var(--border-norm);
-			background-color: var(--background-norm);
-			pointer-events: none;
-		}
-
-		&--top,
-		&--top-left,
-		&--top-right {
-			&::before {
-				bottom: calc(var(--size) / -2);
-			}
-		}
-		&--bottom,
-		&--bottom-left,
-		&--bottom-right {
-			&::before {
-				top: calc(var(--size) / -2);
-			}
-		}
-		&--left,
-		&--left-top,
-		&--left-bottom {
-			&::before {
-				right: calc(var(--size) / -2);
-			}
-		}
-		&--right,
-		&--right-top,
-		&--right-bottom {
-			&::before {
-				left: calc(var(--size) / -2);
-			}
-		}
-
-		&--top,
-		&--bottom {
-			&::before {
-				left: calc(50% - (var(--size) / 2));
-			}
-		}
-		&--top-left,
-		&--bottom-left {
-			&::before {
-				left: rem(10);
-			}
-		}
-		&--top-right,
-		&--bottom-right {
-			&::before {
-				right: rem(10);
-			}
-		}
-
-		&--left,
-		&--right {
-			&::before {
-				top: calc(50% - (var(--size) / 2));
-			}
-		}
-		&--left-top,
-		&--right-top {
-			&::before {
-				top: var(--offset);
-			}
-		}
-		&--left-bottom,
-		&--right-bottom {
-			&::before {
-				bottom: var(--offset);
-			}
-		}
 	}
 }
