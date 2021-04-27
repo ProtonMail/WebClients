@@ -128,7 +128,7 @@ const ComposerActions = ({
                     className="composer-send-button"
                     disabled={sendDisabled}
                     onClick={onSend}
-                    data-testid="send-button"
+                    data-testid="composer:send-button"
                 >
                     <Icon name="sent" className="no-desktop no-tablet on-mobile-flex" />
                     <span className="pl1 pr1 no-mobile">{c('Action').t`Send`}</span>
@@ -142,6 +142,7 @@ const ComposerActions = ({
                             disabled={lock}
                             onAddAttachments={onAddAttachments}
                             attachmentTriggerRef={attachmentTriggerRef}
+                            data-testid="composer:attachment-button"
                         />
                     </Tooltip>
                     <Tooltip title={titleExpiration}>
@@ -150,6 +151,7 @@ const ComposerActions = ({
                             onClick={onExpiration}
                             disabled={lock}
                             className={classnames([isExpiration && 'is-selected'])}
+                            data-testid="composer:expiration-button"
                         >
                             <Icon name="expiration" alt={c('Action').t`Expiration time`} />
                         </Button>
@@ -157,7 +159,7 @@ const ComposerActions = ({
                     <Tooltip title={titleEncryption}>
                         <Button
                             icon
-                            data-test-id="composer:encryption-lock"
+                            data-testid="composer:password-button"
                             onClick={onPassword}
                             disabled={lock}
                             className={classnames([isPassword && 'is-selected'])}
@@ -169,7 +171,14 @@ const ComposerActions = ({
                 <div className="flex mlauto">
                     <span className="mr0-5 mtauto mbauto no-mobile">{dateMessage}</span>
                     <Tooltip title={titleDeleteDraft}>
-                        <Button icon disabled={lock} onClick={onDelete} shape="outline" className="mr0-5">
+                        <Button
+                            icon
+                            disabled={lock}
+                            onClick={onDelete}
+                            shape="outline"
+                            className="mr0-5"
+                            data-testid="composer:delete-draft-button"
+                        >
                             <Icon name="trash" alt={c('Action').t`Delete draft`} />
                         </Button>
                     </Tooltip>

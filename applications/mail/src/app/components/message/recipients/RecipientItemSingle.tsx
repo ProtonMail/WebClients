@@ -117,6 +117,7 @@ const RecipientItemSingle = ({
                         onClick={toggle}
                         aria-expanded={isOpen}
                         className="item-icon flex-item-noshrink rounded inline-flex stop-propagation mr0-5"
+                        data-testid="message:recipient-button"
                     >
                         <span className="mauto item-abbr" aria-hidden="true">
                             {initial}

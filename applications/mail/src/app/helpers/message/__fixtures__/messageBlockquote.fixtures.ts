@@ -57,30 +57,30 @@ const aol1 = `
  <span>-----Original Message-----</span>
  <br>
  <br>
- 
+
  <div style="font-family:arial,helvetica;font-size:10pt;color:black">-----Original Message-----<br>
  From: bob &lt;bob@example.com&gt;<br>
  To: xxx &lt;xxx@gmail.com&gt;; xxx &lt;xxx@hotmail.com&gt;; xxx &lt;xxx@yahoo.com&gt;; xxx &lt;xxx@aol.com&gt;; xxx &lt;xxx@comcast.net&gt;; xxx &lt;xxx@nyc.rr.com&gt;<br>
  Sent: Mon, Apr 2, 2012 5:49 pm<br>
  Subject: Test<br>
- 
+
  <br>
- 
- 
+
+
  <span>-----Original Message-----</span>
- 
- 
- 
- 
+
+
+
+
  <div id="AOLMsgPart_0_4d68a632-fe65-4f6d-ace2-292ac1b91f1f" style="margin: 0px;font-family: Tahoma, Verdana, Arial, Sans-Serif;font-size: 12px;color: #000;background-color: #fff;">
- 
+
  <pre style="font-size: 9pt;"><tt>Hi
  </tt></pre>
  </div>
   <!-- end of AOLMsgPart_0_4d68a632-fe65-4f6d-ace2-292ac1b91f1f -->
- 
- 
- 
+
+
+
  </div>
  </font>
  `;
@@ -515,7 +515,7 @@ export const mail_ru = `
 	<style type="text/css"></style>
  	<div>
 		<base target="_self" href="https://e.mail.ru/">
-		
+
 			<div id="style_14037768550000001020_BODY"><div dir="ltr"><div style="font-size:small"><div style="font-family:arial,sans-serif">Hello! How are you?</div><div style="font-family:arial,sans-serif"><br>
 </div><div style="font-family:arial,sans-serif">Thanks,</div><div style="font-family:arial,sans-serif">Sasha.</div></div></div>
 </div>
@@ -578,8 +578,8 @@ p.MsoNormal, li.MsoNormal, div.MsoNormal {
 margin:0in;
 margin-bottom:.0001pt;
 }
-p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst, 
-p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle, 
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst,
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle,
 p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast {
 margin-top:0in;
 margin-right:0in;
@@ -866,7 +866,7 @@ const tencent = `
 
 <style type="text/css">.qmbox style, .qmbox script, .qmbox head, .qmbox link, .qmbox meta {
     display: none !important;
-}</style> 
+}</style>
 `;
 
 const yahoo = `
@@ -880,9 +880,9 @@ const yahoo = `
     <div dir="ltr" data-setdir="false">回复内容</div>
     <div dir="ltr" data-setdir="false">
         <div>
-            <div data-test-id="message-view-body" class="ydp7263f265I_52qC ydp7263f265D_FY">
+            <div data-testid="message-view-body" class="ydp7263f265I_52qC ydp7263f265D_FY">
                 <div class="ydp7263f265msg-body ydp7263f265P_wpofO ydp7263f265iy_A"
-                    data-test-id="message-view-body-content">
+                    data-testid="message-view-body-content">
                     <div class="ydp7263f265jb_0 ydp7263f265X_6MGW ydp7263f265N_6Fd5">
                         <div id="ydp7263f265yiv3306508764">
                             <div dir="ltr"><b>content1</b>
@@ -894,9 +894,9 @@ const yahoo = `
                 <div class="ydp7263f265jb_0 ydp7263f265X_6MGW ydp7263f265N_6Fd5"></div>
             </div>
             <div class="ydp7263f265H_7jIs ydp7263f265D_F ydp7263f265ab_C ydp7263f265Q_69H5 ydp7263f265E_36RhU"
-                data-test-id="toolbar-hover-area">
+                data-testid="toolbar-hover-area">
                 <div class="ydp7263f265D_F ydp7263f265W_6D6F ydp7263f265r_BN ydp7263f265gl_C"
-                    data-test-id="card-toolbar"
+                    data-testid="card-toolbar"
                     style="width: 903.406px;"></div>
             </div>
         </div>
@@ -998,7 +998,7 @@ export default {
     sina,
     thunderbird,
     yahoo,
-    zoho
+    zoho,
 };
 
 export const unsuported /* yet? */ = {
@@ -1015,5 +1015,5 @@ export const unsuported /* yet? */ = {
     tencent, // text separator + not including
     windows_mail, // almost nothing
     yandex1, // only blockquote
-    yandex2 // only blockquote
+    yandex2, // only blockquote
 };

@@ -66,7 +66,7 @@ const ComposerMeta = ({
                     disabled={disabled}
                     onChange={handleSubjectChange}
                     onFocus={addressesBlurRef.current}
-                    data-test-id="composer:subject"
+                    data-testid="composer:subject"
                 />
             </div>
         </div>

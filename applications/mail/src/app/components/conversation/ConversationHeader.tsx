@@ -34,11 +34,13 @@ const ConversationHeader = ({ className, loading, element, labelID, breakpoints 
                 className,
             ])}
             data-shortcut-target="message-conversation-summary"
+            data-testid="conversation-header"
         >
             <div className="flex flex-nowrap mb1">
                 <h1
                     className="message-conversation-summary-header mb0 h3 text-ellipsis-two-lines lh-rg flex-item-fluid pr1"
                     title={element.Subject}
+                    data-testid="conversation-header:subject"
                 >
                     {!loading ? (
                         <>
@@ -63,7 +65,9 @@ const ConversationHeader = ({ className, loading, element, labelID, breakpoints 
                                     className="color-weak"
                                     alt={c('label').t`Number of messages:`}
                                 />
-                                <span className="ml0-25">{numMessages}</span>
+                                <span className="ml0-25" data-testid="conversation-header:messages-count">
+                                    {numMessages}{' '}
+                                </span>
                             </span>
                         )}
                     </span>
@@ -75,7 +79,9 @@ const ConversationHeader = ({ className, loading, element, labelID, breakpoints 
                                     className="color-weak"
                                     alt={c('label').t`Number of participants:`}
                                 />
-                                <span className="ml0-25">{numParticipants}</span>
+                                <span className="ml0-25" data-testid="conversation-header:participants-count">
+                                    {numParticipants}
+                                </span>
                             </span>
                         ) : (
                             <>&nbsp;</>

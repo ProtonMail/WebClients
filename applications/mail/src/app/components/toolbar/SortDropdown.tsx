@@ -43,7 +43,7 @@ const SortDropdown = ({ loading, conversationMode, sort: { sort, desc }, onSort,
             hasCaret={hasCaret}
             className={className}
             content={
-                <span className="flex flex-align-items-center flex-nowrap" data-test-id="toolbar:sort-dropdown">
+                <span className="flex flex-align-items-center flex-nowrap" data-testid="toolbar:sort-dropdown">
                     <span className="text-sm m0 mr0-5">{getTextContent()}</span>
                     <Icon className="toolbar-icon" name="sort" />
                 </span>
@@ -52,7 +52,7 @@ const SortDropdown = ({ loading, conversationMode, sort: { sort, desc }, onSort,
         >
             <DropdownMenu>
                 <DropdownMenuButton
-                    data-test-id="toolbar:sort-new-to-old"
+                    data-testid="toolbar:sort-new-to-old"
                     isSelected={sort === TIME && desc}
                     className="text-left"
                     loading={loading}
@@ -61,7 +61,7 @@ const SortDropdown = ({ loading, conversationMode, sort: { sort, desc }, onSort,
                     {SORT_OPTIONS.NEW_TO_OLD}
                 </DropdownMenuButton>
                 <DropdownMenuButton
-                    data-test-id="toolbar:sort-old-to-new"
+                    data-testid="toolbar:sort-old-to-new"
                     isSelected={sort === TIME && !desc}
                     className="text-left"
                     loading={loading}
@@ -70,7 +70,7 @@ const SortDropdown = ({ loading, conversationMode, sort: { sort, desc }, onSort,
                     {SORT_OPTIONS.OLD_TO_NEW}
                 </DropdownMenuButton>
                 <DropdownMenuButton
-                    data-test-id="toolbar:sort-desc"
+                    data-testid="toolbar:sort-desc"
                     isSelected={sort === SIZE && desc}
                     className="text-left"
                     loading={loading}
@@ -79,7 +79,7 @@ const SortDropdown = ({ loading, conversationMode, sort: { sort, desc }, onSort,
                     {SORT_OPTIONS.LARGE_TO_SMALL}
                 </DropdownMenuButton>
                 <DropdownMenuButton
-                    data-test-id="toolbar:sort-asc"
+                    data-testid="toolbar:sort-asc"
                     isSelected={sort === SIZE && !desc}
                     className="text-left"
                     loading={loading}

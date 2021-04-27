@@ -31,12 +31,12 @@ const MailSidebar = ({ labelID, expanded = false, location, onToggleExpand, onCo
     ) : null;
     const sideBarPrimaryButton = Shortcuts ? (
         <Tooltip title={titlePrimaryButton} originalPlacement="top">
-            <SidebarPrimaryButton className="no-mobile" onClick={handleCompose} data-test-id="sidebar:compose">
+            <SidebarPrimaryButton className="no-mobile" onClick={handleCompose} data-testid="sidebar:compose">
                 {c('Action').t`New message`}
             </SidebarPrimaryButton>
         </Tooltip>
     ) : (
-        <SidebarPrimaryButton className="no-mobile" onClick={handleCompose} data-test-id="sidebar:compose">
+        <SidebarPrimaryButton className="no-mobile" onClick={handleCompose} data-testid="sidebar:compose">
             {c('Action').t`New message`}
         </SidebarPrimaryButton>
     );

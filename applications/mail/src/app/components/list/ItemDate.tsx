@@ -11,7 +11,7 @@ type FormaterType = 'simple' | 'full' | 'distance';
 const FORMATERS = {
     simple: formatSimpleDate,
     full: formatFullDate,
-    distance: formatDistanceToNow
+    distance: formatDistanceToNow,
 };
 
 interface Props {
@@ -52,7 +52,7 @@ const ItemDate = ({ element, labelID, className, mode = 'simple' }: Props) => {
     }, [element, mode, labelID]);
 
     return (
-        <span className={className} title={fullDate}>
+        <span className={className} title={fullDate} data-testid="item-date">
             {formattedDate}
         </span>
     );

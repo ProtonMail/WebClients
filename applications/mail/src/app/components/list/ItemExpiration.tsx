@@ -25,8 +25,9 @@ const ItemExpiration = ({ element = {}, className }: Props) => {
     }
 
     return (
-        <Tooltip title={tooltipMessage}>
-            <div className={classnames(['flex pill-icon bg-danger', className])}>
+        // @ts-ignore
+        <Tooltip title={tooltipMessage} className={classnames(['flex', className])}>
+            <div className="pill-icon bg-global-warning" data-testid="item-expiration">
                 <Icon name="expiration" size={14} alt={tooltipMessage} />
             </div>
         </Tooltip>

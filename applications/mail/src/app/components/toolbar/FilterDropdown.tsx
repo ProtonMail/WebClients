@@ -56,7 +56,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate, c
             hasCaret={hasCaret}
             className={className}
             content={
-                <span className="flex flex-align-items-center flex-nowrap" data-test-id="toolbar:filter-dropdown">
+                <span className="flex flex-align-items-center flex-nowrap" data-testid="toolbar:filter-dropdown">
                     <Icon className="toolbar-icon mr0-5 flex-item-noshrink" name="filter" />
                     <span className="text-sm m0">{getTextContent()}</span>
                 </span>
@@ -65,7 +65,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate, c
         >
             <DropdownMenu>
                 <DropdownMenuButton
-                    data-test-id="filter-dropdown:show-all"
+                    data-testid="filter-dropdown:show-all"
                     isSelected={noFilterApply}
                     className="text-left"
                     loading={loading}
@@ -74,7 +74,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate, c
                     {FILTER_OPTIONS.SHOW_ALL}
                 </DropdownMenuButton>
                 <DropdownMenuButton
-                    data-test-id="filter-dropdown:show-read"
+                    data-testid="filter-dropdown:show-read"
                     isSelected={filter.Unread === 0}
                     className="text-left"
                     loading={loading}
@@ -83,7 +83,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate, c
                     {FILTER_OPTIONS.SHOW_READ}
                 </DropdownMenuButton>
                 <DropdownMenuButton
-                    data-test-id="filter-dropdown:show-unread"
+                    data-testid="filter-dropdown:show-unread"
                     isSelected={filter.Unread === 1}
                     className="text-left"
                     loading={loading}
@@ -93,7 +93,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate, c
                 </DropdownMenuButton>
                 {showMovedMessage && [
                     <DropdownMenuButton
-                        data-test-id="filter-dropdown:show-moved"
+                        data-testid="filter-dropdown:show-moved"
                         key={0}
                         className="text-left"
                         loading={loading}
@@ -103,7 +103,7 @@ const FilterDropdown = ({ labelID, loading, filter = {}, onFilter, onNavigate, c
                         {FILTER_OPTIONS.SHOW_MOVED_MESSAGE}
                     </DropdownMenuButton>,
                     <DropdownMenuButton
-                        data-test-id="filter-dropdown:show-unmoved"
+                        data-testid="filter-dropdown:show-unmoved"
                         key={1}
                         className="text-left"
                         loading={loading}

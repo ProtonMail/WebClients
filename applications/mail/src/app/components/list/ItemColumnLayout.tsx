@@ -43,14 +43,14 @@ const ItemColumnLayout = ({
     return (
         <div
             className="flex-item-fluid flex flex-nowrap flex-column flex-justify-center item-titlesender"
-            data-test-id="message-list:message"
+            data-testid="message-list:message"
         >
-            <div className="flex flex-align-items-baseline item-firstline">
+            <div className="flex flex-align-items-center item-firstline">
                 <div className="item-senders flex-item-fluid flex flex-nowrap pr1">
                     <span
                         className="inline-block max-w100 text-ellipsis"
                         title={addresses}
-                        data-test-id="message-list:sender-address"
+                        data-testid="message-column:sender-address"
                     >
                         {!loading && displayRecipients && !senders ? c('Info').t`(No Recipient)` : senders}
                     </span>
@@ -85,7 +85,7 @@ const ItemColumnLayout = ({
                         aria-level={2}
                         className="inline-block max-w100 text-ellipsis"
                         title={Subject}
-                        data-test-id="message-list:subject"
+                        data-testid="message-column:subject"
                     >
                         {Subject}
                     </span>

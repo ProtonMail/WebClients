@@ -34,6 +34,7 @@ const AttachmentsButton = React.forwardRef(
                     className={classnames([disabled && 'is-disabled', isAttachments && 'is-selected'])}
                     ref={ref}
                     {...rest}
+                    data-testid="composer:attachment-button"
                 >
                     <Icon name="attach" />
                     <input

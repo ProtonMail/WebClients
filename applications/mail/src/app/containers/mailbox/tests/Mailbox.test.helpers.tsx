@@ -147,7 +147,9 @@ export const setup = async ({
 
     const result = await render(<MailboxContainer {...props} />, false);
     const rerender = (propsArgs: PropsArgs) => result.rerender(<MailboxContainer {...getProps(propsArgs)} />);
-    return { ...result, rerender };
+    const getItems = () => result.getAllByTestId('message-item', { exact: false });
+
+    return { ...result, rerender, getItems };
 };
 
 export const sendEvent = async (event: Event) => {
@@ -157,12 +159,8 @@ export const sendEvent = async (event: Event) => {
     });
 };
 
-export const expectElements = (
-    getAllByTestId: (testId: string) => HTMLElement[],
-    total: number,
-    isPlaceholder: boolean
-) => {
-    const items = getAllByTestId('item');
+export const expectElements = (getItems: () => HTMLElement[], total: number, isPlaceholder: boolean) => {
+    const items = getItems();
     expect(items.length).toBe(total);
     items.forEach((item) => {
         if (isPlaceholder) {

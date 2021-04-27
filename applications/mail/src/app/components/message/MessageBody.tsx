@@ -83,7 +83,7 @@ const MessageBody = ({
                                         shape="outline"
                                         className="m0-5 toggle-original-message-button"
                                         onClick={() => toggleOriginalMessage?.()}
-                                        data-test-id="message-view:expand-codeblock"
+                                        data-testid="message-view:expand-codeblock"
                                     >
                                         ...
                                     </Button>

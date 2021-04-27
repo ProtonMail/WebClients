@@ -103,6 +103,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                         value={days}
                         onChange={handleChange(setDays)}
                         placeholder={c('Info').t`Days`}
+                        data-testid="composer:expiration-days"
                     >
                         {optionRange(7 * 4 + 1)}
                     </select>
@@ -113,6 +114,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                         value={hours}
                         onChange={handleChange(setHours)}
                         disabled={days === 28}
+                        data-testid="composer:expiration-hours"
                     >
                         {optionRange(24)}
                     </select>
