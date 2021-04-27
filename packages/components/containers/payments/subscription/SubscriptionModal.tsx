@@ -9,12 +9,14 @@ import {
     PLAN_SERVICES,
 } from 'proton-shared/lib/constants';
 import { checkSubscription, subscribe, deleteSubscription } from 'proton-shared/lib/api/payments';
+import { getPublicLinks } from 'proton-shared/lib/api/calendars';
 import { hasBonuses } from 'proton-shared/lib/helpers/organization';
 import { getPlanIDs } from 'proton-shared/lib/helpers/subscription';
 import { hasPlanIDs } from 'proton-shared/lib/helpers/planIDs';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { Cycle, Currency, PlanIDs, SubscriptionCheckResponse } from 'proton-shared/lib/interfaces';
+import { Calendar, CalendarUrlsResponse } from 'proton-shared/lib/interfaces/calendar';
 import { MAX_CALENDARS_PER_FREE_USER } from 'proton-shared/lib/calendar/constants';
 
 import { Alert, FormModal } from '../../../components';
@@ -129,9 +131,14 @@ const SubscriptionModal = ({
     const getCodes = ({ gift, coupon }: Model) => [gift, coupon].filter(isTruthy);
 
     const handleUnsubscribe = async () => {
-        const calendars = await getCalendars(api);
+        const calendars: Calendar[] = await getCalendars(api);
+        const hasLinks = !!(
+            await Promise.all(
+                (calendars || []).map((calendar) => api<CalendarUrlsResponse>(getPublicLinks(calendar.ID)))
+            )
+        ).flat().length;
 
-        if (calendars.length > MAX_CALENDARS_PER_FREE_USER) {
+        if (calendars.length > MAX_CALENDARS_PER_FREE_USER || hasLinks) {
             await new Promise<void>((resolve, reject) => {
                 const handleClose = () => {
                     onClose?.();

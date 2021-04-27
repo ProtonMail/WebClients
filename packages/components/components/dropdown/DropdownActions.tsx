@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { MouseEvent, ReactNode } from 'react';
 import { c } from 'ttag';
 import { Info } from '../link';
 
@@ -29,7 +29,7 @@ interface DropdownActionProps extends DropdownMenuButtonProps {
     key?: string;
     text: string | ReactNode;
     tooltip?: string;
-    onClick?: () => void;
+    onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 interface Props extends ButtonProps {

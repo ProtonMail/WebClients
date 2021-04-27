@@ -40,7 +40,7 @@ export { useGetAddressKeys } from './useGetAddressKeys';
 export { useGetPublicKeys } from './useGetPublicKeys';
 export { default as useGetEncryptionPreferences } from './useGetEncryptionPreferences';
 export { useCalendarBootstrap, useReadCalendarBootstrap, useGetCalendarBootstrap } from './useGetCalendarBootstrap';
-export { useGetCalendarKeys } from './useGetCalendarKeys';
+export { useGetDecryptedPassphraseAndCalendarKeys } from './useGetDecryptedPassphraseAndCalendarKeys';
 export { useGetCalendarInfo } from './useGetCalendarInfo';
 export { default as useGetCalendarEventRaw } from './useGetCalendarEventRaw';
 export { default as useOrganizationKey } from './useOrganizationKey';
