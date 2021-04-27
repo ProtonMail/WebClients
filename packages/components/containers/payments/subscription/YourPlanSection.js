@@ -97,8 +97,14 @@ const YourPlanSection = ({ permission }) => {
                 </div>
             )}
             <div className="mt1">
-                {c('Label').t`Using`} {humanSize(UsedSpace)} {c('x of y').t`of`} {humanSize(MaxSpace)}
-                <Meter className="mt1" value={Math.round(percentage(MaxSpace, UsedSpace))} />
+                <span id="usedSpaceLabel">
+                    {c('Label').t`Using`} {humanSize(UsedSpace)} {c('x of y').t`of`} {humanSize(MaxSpace)}
+                </span>
+                <Meter
+                    className="mt1"
+                    aria-labelledby="usedSpaceLabel"
+                    value={Math.round(percentage(MaxSpace, UsedSpace))}
+                />
             </div>
         </>
     );
