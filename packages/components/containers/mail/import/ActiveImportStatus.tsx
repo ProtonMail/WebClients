@@ -54,16 +54,12 @@ const ActiveImportStatus = ({ processed, total, state, errorCode }: Props) => {
             return (
                 <span className="inline-flex flex-align-items-center w100">
                     <Meter
-                        high={100}
-                        low={0}
-                        max={100}
-                        min={0}
+                        aria-labelledby="meterLabel"
                         optimum={100}
                         value={percentageValue}
-                        variant="default"
                         className="flex-item-fluid"
                     />
-                    <span className="ml0-5">{`${percentageValue}%`}</span>
+                    <span id="meterLabel" className="ml0-5">{`${percentageValue}%`}</span>
                 </span>
             );
     }
