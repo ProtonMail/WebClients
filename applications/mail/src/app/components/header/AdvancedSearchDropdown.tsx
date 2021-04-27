@@ -1,6 +1,6 @@
 import React, { useState, useEffect, FormEvent, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { getUnixTime, fromUnixTime, isBefore, isAfter, add } from 'date-fns';
 import {
     classnames,
@@ -338,11 +338,10 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
     // Header
     const title = c('Action').t`Search message content`;
     // Remove one day from limit because the last day in IndexedDB might not be complete
+    const oldestDate = formatSimpleDate(add(new Date(oldestTime), { days: 1 }));
     const subTitleSection = (
-        <span className="color-weak mt0-5 mr0-5">
-            {c('Info').t`For messages newer than `}
-            {formatSimpleDate(add(new Date(oldestTime), { days: 1 }))}
-        </span>
+        // translator: the variable is a date, which is already localised
+        <span className="color-weak mt0-5 mr0-5">{c('Info').jt`For messages newer than ${oldestDate}`}</span>
     );
     const esToggle = (
         <Toggle
@@ -384,7 +383,12 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
             ? c('Info').t`Estimating time remaining...`
             : estimatedMinutes <= 1
             ? c('Info').t`Less than a minute remaining`
-            : `${estimatedMinutes}${c('Info').t` minutes remaining`}`;
+            : // translator: the variable is a positive integer (written in digits) always strictly bigger than 1
+              c('Info').ngettext(
+                  msgid`${estimatedMinutes} minute remaining`,
+                  `${estimatedMinutes} minutes remaining`,
+                  estimatedMinutes
+              );
     const progressBar = (
         <Progress value={Math.floor(value * 100)} aria-describedby="timeRemaining" className="mt1 mb1" />
     );

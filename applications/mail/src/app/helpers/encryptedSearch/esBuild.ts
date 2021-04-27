@@ -153,12 +153,9 @@ export const encryptToDB = async (messageToCache: CachedMessage, indexKey: Crypt
  * if the message is a forwarded one
  */
 const isMessageForwarded = (subject: string) => {
-    localisedForwardFlags.forEach((flag) => {
-        if (subject.slice(0, flag.length).toLocaleLowerCase() === flag) {
-            return true;
-        }
-    });
-    return false;
+    return localisedForwardFlags.some(
+        fwFlag => subject.slice(0, fwFlag.length).toLocaleLowerCase() === fwFlag
+    );
 };
 
 /**
