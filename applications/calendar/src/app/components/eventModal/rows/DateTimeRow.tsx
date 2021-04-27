@@ -1,11 +1,10 @@
-import { MAXIMUM_DATE, MINIMUM_DATE } from 'proton-shared/lib/calendar/constants';
+import { MAXIMUM_DATE, MINIMUM_DATE, DATE_INPUT_ID } from 'proton-shared/lib/calendar/constants';
 import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
 import { convertUTCDateTimeToZone, fromUTCDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import React, { useMemo, useState } from 'react';
 import { DateInput, LinkButton, TimeInput, classnames, TimezoneSelector } from 'react-components';
 import { c } from 'ttag';
 import { EventModel } from 'proton-shared/lib/interfaces/calendar';
-import { DATE_INPUT_ID } from '../const';
 
 import getFrequencyModelChange from '../eventForm/getFrequencyModelChange';
 import { getAllDayCheck } from '../eventForm/stateActions';

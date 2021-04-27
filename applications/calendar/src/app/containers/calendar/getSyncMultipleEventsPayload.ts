@@ -13,7 +13,7 @@ import {
 } from 'proton-shared/lib/calendar/serialize';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { useGetAddressKeys, useGetCalendarKeys } from 'react-components';
+import { useGetAddressKeys, useGetDecryptedPassphraseAndCalendarKeys } from 'react-components';
 
 export enum SyncOperationTypes {
     DELETE,
@@ -55,7 +55,7 @@ export interface SyncEventActionOperations {
 
 interface SyncMultipleEventsArguments {
     sync: SyncEventActionOperations;
-    getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
+    getCalendarKeys: ReturnType<typeof useGetDecryptedPassphraseAndCalendarKeys>;
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
 }
 
@@ -118,7 +118,12 @@ const getRequiredKeys = ({
         }, {});
     };
 
-    return Promise.all([getKeysMap(allCalendarIDs, getCalendarKeys), getKeysMap(new Set([addressID]), getAddressKeys)]);
+    const getCalendarKeysOnly = async (id: string) => (await getCalendarKeys(id)).decryptedCalendarKeys || [];
+
+    return Promise.all([
+        getKeysMap(allCalendarIDs, getCalendarKeysOnly),
+        getKeysMap(new Set([addressID]), getAddressKeys),
+    ]);
 };
 
 const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, sync }: SyncMultipleEventsArguments) => {

@@ -3,8 +3,7 @@ import { getUpdatedInviteVevent } from 'proton-shared/lib/calendar/integration/i
 import { omit } from 'proton-shared/lib/helpers/object';
 import { Address } from 'proton-shared/lib/interfaces';
 import { SyncMultipleApiResponse, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
-
-import { useGetCalendarKeys } from 'react-components';
+import { useGetDecryptedPassphraseAndCalendarKeys } from 'react-components';
 import {
     INVITE_ACTION_TYPES,
     InviteActions,
@@ -33,7 +32,7 @@ interface SaveEventHelperArguments {
     selfAddress?: Address;
     inviteActions: InviteActions;
     onSaveConfirmation: OnSaveConfirmationCb;
-    getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
+    getCalendarKeys: ReturnType<typeof useGetDecryptedPassphraseAndCalendarKeys>;
     sendIcs: (
         data: SendIcsActionData
     ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions }>;

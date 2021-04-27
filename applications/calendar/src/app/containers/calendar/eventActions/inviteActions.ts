@@ -11,9 +11,10 @@ import { getAttendeePartstat, getHasAttendees } from 'proton-shared/lib/calendar
 import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { getIsAddressActive } from 'proton-shared/lib/helpers/address';
 import { canonizeEmailByGuess } from 'proton-shared/lib/helpers/email';
-import { GetVTimezonesMap, Recipient } from 'proton-shared/lib/interfaces';
+import { Recipient } from 'proton-shared/lib/interfaces';
 import { VcalAttendeeProperty, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { GetVTimezonesMap } from 'proton-shared/lib/interfaces/hooks/GetVTimezonesMap';
 import { SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
 import { RequireSome, SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { SendIcsParams } from 'react-components/hooks/useSendIcs';

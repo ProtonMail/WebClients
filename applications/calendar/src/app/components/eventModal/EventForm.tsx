@@ -3,6 +3,13 @@ import {
     MAX_LENGTHS,
     MAX_NOTIFICATIONS,
     SETTINGS_NOTIFICATION_TYPE,
+    CALENDAR_INPUT_ID,
+    DESCRIPTION_INPUT_ID,
+    FREQUENCY_INPUT_ID,
+    LOCATION_INPUT_ID,
+    NOTIFICATION_INPUT_ID,
+    PARTICIPANTS_INPUT_ID,
+    TITLE_INPUT_ID,
 } from 'proton-shared/lib/calendar/constants';
 import { getIsProtonUID } from 'proton-shared/lib/calendar/helper';
 import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
@@ -14,15 +21,6 @@ import React, { HTMLAttributes } from 'react';
 import { Alert, classnames, Input, Notifications, TextArea } from 'react-components';
 import { c } from 'ttag';
 
-import {
-    CALENDAR_INPUT_ID,
-    DESCRIPTION_INPUT_ID,
-    FREQUENCY_INPUT_ID,
-    LOCATION_INPUT_ID,
-    NOTIFICATION_INPUT_ID,
-    PARTICIPANTS_INPUT_ID,
-    TITLE_INPUT_ID,
-} from './const';
 import createHandlers from './eventForm/createPropFactory';
 import IconRow from './IconRow';
 import CalendarSelect from './inputs/CalendarSelect';

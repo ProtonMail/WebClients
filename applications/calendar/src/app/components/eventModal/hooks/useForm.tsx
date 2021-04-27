@@ -2,11 +2,11 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { useLoading } from 'react-components';
 import { useState } from 'react';
 import { EventModelErrors } from 'proton-shared/lib/interfaces/calendar';
+import { TITLE_INPUT_ID } from 'proton-shared/lib/calendar/constants';
 import { NOTIFICATION_ID } from 'react-components/containers/calendar/notifications/Notifications';
 
 import { InviteActions } from '../../../interfaces/Invite';
 import { COUNT_ID, UNTIL_ID } from '../rows/EndsRow';
-import { TITLE_INPUT_ID } from '../const';
 
 const focusInput = (el: HTMLElement | null, id: string) => {
     el?.querySelector<HTMLInputElement>(`#${id}`)?.focus();
