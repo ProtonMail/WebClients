@@ -1,6 +1,13 @@
-import { RequireSome } from '../interfaces/utils';
+import { Nullable, RequireSome } from '../interfaces/utils';
 import { PaginationParams } from './interface';
-import { Attendee, Calendar, CalendarEventData, CalendarSettings, CalendarUserSettings } from '../interfaces/calendar';
+import {
+    Attendee,
+    Calendar,
+    CalendarEventData,
+    CalendarSettings,
+    CalendarUserSettings,
+    ACCESS_LEVEL,
+} from '../interfaces/calendar';
 
 const CALENDAR_V1 = 'calendar/v1';
 
@@ -322,4 +329,44 @@ export const syncMultipleEvents = (calendarID: string, data: SyncMultipleEventsD
     url: `${CALENDAR_V1}/${calendarID}/events/sync`,
     method: 'put',
     data,
+});
+
+export interface CreatePublicLinks {
+    AccessLevel: ACCESS_LEVEL;
+    CacheKeySalt: string;
+    CacheKeyHash: string;
+    EncryptedPassphrase: Nullable<string>;
+    EncryptedPurpose: Nullable<string>;
+    EncryptedCacheKey: string;
+    PassphraseID: Nullable<string>;
+}
+
+export const createPublicLink = (calendarID: string, data: CreatePublicLinks) => ({
+    url: `${CALENDAR_V1}/${calendarID}/urls`,
+    method: 'post',
+    data,
+});
+
+export const getPublicLinks = (calendarID: string) => ({
+    url: `${CALENDAR_V1}/${calendarID}/urls`,
+    method: 'get',
+});
+
+export const deletePublicLink = ({ calendarID, urlID }: { calendarID: string; urlID: string }) => ({
+    url: `${CALENDAR_V1}/${calendarID}/urls/${urlID}`,
+    method: 'delete',
+});
+
+export const editPublicLink = ({
+    calendarID,
+    urlID,
+    encryptedPurpose,
+}: {
+    calendarID: string;
+    urlID: string;
+    encryptedPurpose: Nullable<string>;
+}) => ({
+    url: `${CALENDAR_V1}/${calendarID}/urls/${urlID}`,
+    method: 'put',
+    data: { EncryptedPurpose: encryptedPurpose },
 });
