@@ -1,6 +1,6 @@
 import React, { MutableRefObject, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { getStyleSrcsData, getStyleSrcUrls, handleEvent } from './challengeHelper';
-import { THEME_ID } from '../../containers/themes/ThemeStyleProvider';
+import { THEME_ID } from '../../containers/themes/ThemeProvider';
 import { ICONS_ID } from '../icon/Icons';
 import { ChallengeLog, ChallengeLogType, ChallengeRef, ChallengeResult } from './interface';
 
