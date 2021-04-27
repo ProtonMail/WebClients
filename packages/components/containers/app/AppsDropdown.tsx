@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { APPS_CONFIGURATION, VPN_HOSTNAME } from 'proton-shared/lib/constants';
+import { APPS_CONFIGURATION, VPN_HOSTNAME, BRAND_NAME, APPS } from 'proton-shared/lib/constants';
 
 import { AppLink, Icon, SimpleDropdown, Href } from '../../components';
 import { useApps } from '../../hooks';
@@ -8,9 +8,9 @@ import { useApps } from '../../hooks';
 const AppsDropdown = () => {
     const applications = useApps();
     const apps = applications.map((app) => ({
-        toApp: app,
+        id: app,
         icon: APPS_CONFIGURATION[app].icon,
-        title: APPS_CONFIGURATION[app].name,
+        title: APPS_CONFIGURATION[app].bareName,
     }));
 
     return (
@@ -20,35 +20,42 @@ const AppsDropdown = () => {
             hasCaret={false}
             content={<Icon name="more" className="apps-dropdown-button-icon flex-item-noshrink" />}
             className="apps-dropdown-button"
-            dropdownClassName="apps-dropdown ui-prominent"
-            originalPlacement="bottom-right"
+            dropdownClassName="apps-dropdown"
+            originalPlacement="bottom-left"
             title={c('Apps dropdown').t`Proton applications`}
         >
-            <ul className="apps-dropdown-list unstyled m0 scroll-if-needed">
-                {apps.map(({ toApp, icon, title }, index) => {
-                    const key = `${index}`;
-                    return (
-                        <li key={key}>
+            <ul className="apps-dropdown-list unstyled m1 scroll-if-needed">
+                {apps.map(({ id, icon, title }, index) => (
+                    <>
+                        <li key={id}>
                             <AppLink
                                 to="/"
-                                toApp={toApp}
-                                className="apps-dropdown-link text-lg m0 p1 pt0-75 pb0-75 flex flex-nowrap flex-align-items-center"
+                                toApp={id}
+                                className="apps-dropdown-link"
                                 title={c('Apps dropdown').t`Go to ${title}`}
                             >
-                                <Icon name={icon} size={20} className="mr0-5" />
-                                <span>{title}</span>
+                                <Icon name={icon} size={28} className="apps-dropdown-icon" />
+                                <div>{BRAND_NAME}</div>
+                                <div className="text-bold">{title}</div>
+                                {id === APPS.PROTONDRIVE && (
+                                    <div className="bg-info rounded1e text-sm m0 mt0-5">BETA</div>
+                                )}
                             </AppLink>
                         </li>
-                    );
-                })}
+                        {index % 2 !== 0 && (
+                            <li className="apps-dropdown-item-hr dropdown-item-hr" aria-hidden="true" />
+                        )}
+                    </>
+                ))}
                 <li>
                     <Href
                         url={`https://${VPN_HOSTNAME}/login`}
-                        className="apps-dropdown-link text-lg m0 p1 pt0-75 pb0-75 flex flex-nowrap flex-align-items-center"
+                        className="apps-dropdown-link"
                         title={c('Apps dropdown').t`Go to ProtonVPN`}
                     >
-                        <Icon name="protonvpn" size={20} className="mr0-5" />
-                        <span>ProtonVPN</span>
+                        <Icon name="protonvpn" size={28} className="apps-dropdown-icon apps-dropdown-icon-vpn" />
+                        <div>Proton</div>
+                        <div className="text-bold">VPN</div>
                     </Href>
                 </li>
             </ul>
