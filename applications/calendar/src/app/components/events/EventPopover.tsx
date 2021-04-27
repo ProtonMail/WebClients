@@ -250,7 +250,6 @@ const EventPopover = ({
         isNarrow && 'eventpopover--full-width',
     ]);
     const mergedStyle = isNarrow ? undefined : style;
-
     if (eventReadError) {
         return (
             <PopoverContainer style={mergedStyle} className={mergedClassName} ref={popoverRef}>

@@ -9,11 +9,11 @@ import { getHasAttendees } from 'proton-shared/lib/calendar/vcalHelper';
 import { noop } from 'proton-shared/lib/helpers/function';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
 import { omit } from 'proton-shared/lib/helpers/object';
-import { Address, Api, GetCanonicalEmails } from 'proton-shared/lib/interfaces';
+import { Address, Api } from 'proton-shared/lib/interfaces';
 import { CalendarBootstrap, SyncMultipleApiResponse, VcalDays } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-
-import { useGetCalendarKeys } from 'react-components';
+import { GetCanonicalEmails } from 'proton-shared/lib/interfaces/hooks/GetCanonicalEmails';
+import { useGetDecryptedPassphraseAndCalendarKeys } from 'react-components';
 import { getRecurringEventUpdatedText, getSingleEventText } from '../../../components/eventModal/eventForm/i18n';
 import { modelToVeventComponent } from '../../../components/eventModal/eventForm/modelToProperties';
 import {
@@ -52,7 +52,7 @@ const getSaveSingleEventActionsHelper = async ({
 }: {
     newEditEventData: EventNewData;
     oldEditEventData: EventOldData;
-    getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
+    getCalendarKeys: ReturnType<typeof useGetDecryptedPassphraseAndCalendarKeys>;
     sendIcs: (
         data: SendIcsActionData
     ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions }>;
@@ -109,7 +109,7 @@ interface Arguments {
     api: Api;
     getEventDecrypted: GetDecryptedEventCb;
     getCalendarBootstrap: (CalendarID: string) => CalendarBootstrap;
-    getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
+    getCalendarKeys: ReturnType<typeof useGetDecryptedPassphraseAndCalendarKeys>;
     getCanonicalEmails: GetCanonicalEmails;
     sendIcs: (
         data: SendIcsActionData

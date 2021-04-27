@@ -54,7 +54,7 @@ import {
     useEventManager,
     useGetAddressKeys,
     useGetCalendarEventRaw,
-    useGetCalendarKeys,
+    useGetDecryptedPassphraseAndCalendarKeys,
     useModals,
     useNotifications,
     useCalendarModelEventManager,
@@ -231,7 +231,7 @@ const InteractiveCalendarView = ({
     }, [contacts]);
 
     const readCalendarBootstrap = useReadCalendarBootstrap();
-    const getCalendarKeys = useGetCalendarKeys();
+    const getCalendarKeys = useGetDecryptedPassphraseAndCalendarKeys();
     const getAddressKeys = useGetAddressKeys();
     const getCalendarEventPersonal = useGetCalendarEventPersonal();
     const getCalendarEventRaw = useGetCalendarEventRaw();
