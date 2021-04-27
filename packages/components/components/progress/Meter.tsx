@@ -1,53 +1,110 @@
 import React from 'react';
+import isBetween from 'proton-shared/lib/helpers/isBetween';
 
 import { classnames } from '../../helpers';
 
-interface Props {
-    /** minimum possible value of a data */
+interface Props extends React.ComponentPropsWithoutRef<'div'> {
+    /** whether or not the meter should be thin */
+    thin?: boolean;
+    /** whether or not the meter should be squared */
+    squared?: boolean;
+    /** add a textual label */
+    label?: string;
     min?: number;
-    /** maximum possible value of a data */
-    max?: number;
-    /** when the value of the data can be understood as low */
     low?: number;
-    /** when the value of the data can be understood as high */
     high?: number;
-    /** the optimum value of the data. Will influence the color of low and high values */
+    max?: number;
     optimum?: number;
-    /** current value of a data */
     value?: number;
-    /** which variant of the meter to use */
-    variant?: 'thin' | 'default';
-    /** an id to a description of the data */
-    id?: string;
-    /** className applied to the root 'meter' html element */
-    className?: string;
 }
 
-const Meter = ({
-    min = 0,
-    low = 50,
-    high = 80,
-    max = 100,
-    optimum = 0,
-    value = 50,
-    variant = 'default',
-    id,
-    className: classNameProp,
-}: Props) => {
-    const className = classnames(['meter-bar', variant === 'thin' && 'is-thin', classNameProp]);
+export enum MeterValue {
+    Optimum = 0,
+    Min = 0,
+    Low = 50,
+    High = 80,
+    Max = 100,
+}
 
-    return (
-        <meter
-            min={min}
-            low={low}
-            high={high}
-            max={max}
-            optimum={optimum}
-            value={value}
-            aria-describedby={id}
-            className={className}
-        />
-    );
+const { Optimum, Min, Low, High, Max } = MeterValue;
+
+export const getMeterColor = (
+    value: number,
+    optimum: number = Optimum,
+    min: number = Min,
+    low: number = Low,
+    high: number = High,
+    max: number = Max
+) => {
+    const isLow = isBetween(value, min, low);
+    const isMid = isBetween(value, low, high);
+    const isHigh = isBetween(value, high, max) || value === max;
+
+    if (isBetween(optimum, min, low)) {
+        if (isHigh) {
+            return 'danger';
+        }
+        if (isMid) {
+            return 'warning';
+        }
+        if (isLow) {
+            return 'success';
+        }
+    }
+
+    if (isBetween(optimum, low, high)) {
+        if (isHigh) {
+            return 'warning';
+        }
+        if (isMid) {
+            return 'success';
+        }
+        if (isLow) {
+            return 'warning';
+        }
+    }
+
+    if (isBetween(optimum, high, max) || optimum === max) {
+        if (isHigh) {
+            return 'success';
+        }
+        if (isMid) {
+            return 'warning';
+        }
+        if (isLow) {
+            return 'danger';
+        }
+    }
+
+    throw new Error(`Misuse of getMeterColor, verify values provided for value, optimum, min, max, low, high`);
 };
 
+const Meter = ({
+    thin = false,
+    squared = false,
+    label,
+    min = Min,
+    max = Max,
+    value = 0,
+    id,
+    className,
+    ...rest
+}: Props) => (
+    <div
+        id={id}
+        className={classnames(['meter-bar', thin && 'is-thin', squared && 'is-squared', className])}
+        role="meter"
+        aria-valuemin={min}
+        aria-valuemax={max}
+        aria-valuenow={value}
+        {...rest}
+    >
+        <div
+            className={classnames(['meter-bar-thumb', `bg-${getMeterColor(value)}`, 'mrauto'])}
+            style={{ width: `${Math.ceil(value)}%` }}
+        >
+            {!rest['aria-labelledby'] && <span className="sr-only">{label || `${value} / ${max}`}</span>}
+        </div>
+    </div>
+);
 export default Meter;
