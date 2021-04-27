@@ -40,7 +40,7 @@ import { OnLoginCallbackArguments } from './interface';
 import { useInstance, PreventLeaveProvider } from '../../hooks';
 import { GlobalLoaderProvider, GlobalLoader } from '../../components/globalLoader';
 import { WELCOME_FLAG_KEY } from '../../hooks/useWelcomeFlags';
-import ThemeStyleProvider from '../themes/ThemeStyleProvider';
+import ThemeProvider from '../themes/ThemeProvider';
 
 const getIsSSOPath = (pathname: string) => {
     const strippedPathname = `/${stripLeadingAndTrailingSlash(pathname)}`;
@@ -270,7 +270,7 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
                 <Icons />
                 <RightToLeftProvider>
                     <React.Fragment key={UID}>
-                        <ThemeStyleProvider>
+                        <ThemeProvider>
                             <Router history={history}>
                                 <PreventLeaveProvider>
                                     <NotificationsProvider>
@@ -302,7 +302,7 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
                                     </NotificationsProvider>
                                 </PreventLeaveProvider>
                             </Router>
-                        </ThemeStyleProvider>
+                        </ThemeProvider>
                     </React.Fragment>
                 </RightToLeftProvider>
             </CompatibilityCheck>
