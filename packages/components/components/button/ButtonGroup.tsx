@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { Fragment, ReactElement } from 'react';
 import { classnames } from '../../helpers';
 import { Vr } from '../vr';
 
@@ -25,10 +25,11 @@ const ButtonGroup = (
                 return clonedChild;
             }
             return (
-                <>
+                // eslint-disable-next-line react/no-array-index-key
+                <Fragment key={clonedChild.key || index}>
                     {clonedChild}
                     <Vr aria-hidden="true" />
-                </>
+                </Fragment>
             );
         });
     return (
