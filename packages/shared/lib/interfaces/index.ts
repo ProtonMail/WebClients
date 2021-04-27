@@ -16,8 +16,6 @@ export * from './Payment';
 export * from './VPN';
 export * from './config';
 export * from './Label';
-export * from './hooks/GetCanonicalEmails';
-export * from './hooks/GetVTimezonesMap';
 export * from './Hotkeys';
 export * from './utils';
 

@@ -3,7 +3,7 @@ import { arrayToHexString, binaryStringToArray, unsafeSHA1 } from 'pmcrypto';
 import { groupWith } from '../helpers/array';
 import { buildMailTo, canonizeEmailByGuess, getEmailTo, validateEmailAddress } from '../helpers/email';
 import { omit } from '../helpers/object';
-import { GetCanonicalEmails } from '../interfaces';
+import { GetCanonicalEmails } from '../interfaces/hooks/GetCanonicalEmails';
 import {
     Attendee,
     VcalAttendeeProperty,
