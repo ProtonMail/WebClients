@@ -35,6 +35,12 @@ $price-size: 21;
 		fill: white;
 	}
 
+	.blackfriday-currency-selector {
+		// Overrides for specific case -_-v
+		--border-norm: #505560;
+		--background-norm: transparent;
+	}
+
 	.blackfriday-currency-selector button {
 		color: white;
 	}
@@ -50,18 +56,6 @@ $price-size: 21;
 	.blackfriday-plan {
 		background-color: white;
 		color: #262a33;
-	}
-
-	// currency
-	.grouped-buttons {
-		.button {
-			background: transparent !important; // I said I'm God.
-			color: white;
-			border-color: #505560;
-			&.is-active {
-				border-bottom: 1px solid white !important; // I said I'm God.
-			}
-		}
 	}
 
 	@include respond-to($breakpoint-medium) {
