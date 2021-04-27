@@ -1,29 +1,23 @@
+import getPublicKeysVcardHelper from 'proton-shared/lib/api/helpers/getPublicKeysVcardHelper';
 import { MINUTE, RECIPIENT_TYPES } from 'proton-shared/lib/constants';
 import { canonizeEmail, canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
-import { useCallback } from 'react';
-import getPublicKeysVcardHelper from 'proton-shared/lib/api/helpers/getPublicKeysVcardHelper';
-import { getContactPublicKeyModel } from 'proton-shared/lib/keys/publicKeys';
-import extractEncryptionPreferences, { EncryptionPreferences } from 'proton-shared/lib/mail/encryptionPreferences';
+import { GetEncryptionPreferences } from 'proton-shared/lib/interfaces/hooks/GetEncryptionPreferences';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import useApi from './useApi';
+import { getContactPublicKeyModel } from 'proton-shared/lib/keys/publicKeys';
+import extractEncryptionPreferences from 'proton-shared/lib/mail/encryptionPreferences';
+import { useCallback } from 'react';
 import { useGetAddresses } from './useAddresses';
+import useApi from './useApi';
+import useCache from './useCache';
+import { getPromiseValue } from './useCachedModelResult';
 import { useGetAddressKeys } from './useGetAddressKeys';
+import useGetPublicKeys from './useGetPublicKeys';
 import { useGetMailSettings } from './useMailSettings';
 import { useGetUserKeys } from './useUserKeys';
-import useGetPublicKeys from './useGetPublicKeys';
-import { getPromiseValue } from './useCachedModelResult';
-import useCache from './useCache';
 
 export const CACHE_KEY = 'ENCRYPTION_PREFERENCES';
 
 const DEFAULT_LIFETIME = 5 * MINUTE;
-
-export type GetEncryptionPreferences = (
-    emailAddress: string,
-    lifetime?: number,
-    contactEmailsMap?: { [email: string]: ContactEmail | undefined }
-) => Promise<EncryptionPreferences>;
 
 /**
  * Given an email address and the user mail settings, return the encryption preferences for sending to that email.

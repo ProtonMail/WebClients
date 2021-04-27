@@ -1,7 +1,7 @@
 import { getVtimezones } from 'proton-shared/lib/api/calendars';
 import { parse } from 'proton-shared/lib/calendar/vcal';
 import { unique } from 'proton-shared/lib/helpers/array';
-import { GetVTimezonesMap, VTimezoneObject } from 'proton-shared/lib/interfaces';
+import { GetVTimezonesMap, VTimezoneObject } from 'proton-shared/lib/interfaces/hooks/GetVTimezonesMap';
 import { VcalVtimezoneComponent } from 'proton-shared/lib/interfaces/calendar';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { useCallback } from 'react';

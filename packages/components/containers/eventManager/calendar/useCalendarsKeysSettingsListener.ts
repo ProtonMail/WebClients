@@ -6,7 +6,7 @@ import { CalendarEventManager } from 'proton-shared/lib/interfaces/calendar/Even
 import { updateObject as updateCalendarObject } from 'proton-shared/lib/models/calendarBootstrap';
 import { useCache, useEventManager } from '../../../hooks';
 import { KEY as CALENDAR_BOOTSTRAP_CACHE } from '../../../hooks/useGetCalendarBootstrap';
-import { CACHE_KEY as CALENDAR_KEYS_CACHE } from '../../../hooks/useGetCalendarKeys';
+import { CACHE_KEY as CALENDAR_KEYS_CACHE } from '../../../hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { useCalendarModelEventManager } from './ModelEventManagerProvider';
 
 const useCalendarsKeysSettingsListener = (calendarIDs: string[]) => {

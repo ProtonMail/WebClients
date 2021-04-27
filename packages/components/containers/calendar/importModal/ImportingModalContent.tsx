@@ -59,14 +59,14 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
 
         const process = async () => {
             try {
-                const { memberID, addressKeys, calendarKeys } = await getIdsAndKeys(model.calendar.ID);
+                const { memberID, addressKeys, decryptedCalendarKeys } = await getIdsAndKeys(model.calendar.ID);
                 const { withoutRecurrenceId, withRecurrenceId } = splitByRecurrenceId(model.eventsParsed);
                 const processData = {
                     events: withoutRecurrenceId,
                     calendarID: model.calendar.ID,
                     memberID,
                     addressKeys,
-                    calendarKeys,
+                    calendarKeys: decryptedCalendarKeys,
                     api: apiWithAbort,
                     signal,
                     onProgress: handleImportProgress,
