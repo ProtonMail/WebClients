@@ -22,6 +22,7 @@ import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { openNewTab } from 'proton-shared/lib/helpers/browser';
 import { oneClickUnsubscribe, markAsUnsubscribed } from 'proton-shared/lib/api/messages';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import { MessageExtended, PartialMessageExtended, MessageExtendedWithData } from '../../../models/message';
 import { useMessage } from '../../../hooks/message/useMessage';
@@ -46,7 +47,6 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
     const sendMessage = useSendMessage();
     const [loading, withLoading] = useLoading();
     const toAddress = getOriginalTo(message.data);
-    const { Address: senderAddress, Name: senderName } = message.data?.Sender || {};
     const address = addresses.find(({ Email }) => canonizeInternalEmail(Email) === canonizeInternalEmail(toAddress));
     const unsubscribeMethods = message?.data?.UnsubscribeMethods || {};
 
@@ -85,7 +85,9 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
                 throw new Error('Unable to find from address');
             }
 
-            const boldFromEmail = <strong key="email">{senderName || senderAddress}</strong>;
+            const { DisplayName: senderName, Email: senderAddress } = from;
+            const sender = [senderName, senderName ? `<${senderAddress}>` : senderAddress].filter(isTruthy).join(' '); // senderName can be undefined
+            const boldFrom = <strong key="email">{sender}</strong>;
             const toEmails = ToList.join(', ');
 
             await new Promise<void>((resolve, reject) => {
@@ -100,9 +102,8 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
                     >
                         <Alert type="warning" learnMore="https://protonmail.com/support/knowledge-base/avoid-spam/">
                             {c('Info')
-                                .jt`To unsubscribe from this mailing list, an email will be sent from ${boldFromEmail} with following details as defined by the sender of the newsletter:`}
+                                .jt`To unsubscribe from this mailing list, an email will be sent from ${boldFrom} with following details as defined by the sender of the newsletter:`}
                         </Alert>
-
                         <Row>
                             <Label className="cursor-default">
                                 <span className="mr0-5">{c('Info').t`Recipient: `}</span>
@@ -143,7 +144,7 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
                 data: {
                     AddressID: from.ID,
                     Subject,
-                    Sender: { Address: from.Email, Name: from.DisplayName },
+                    Sender: { Address: senderAddress, Name: senderName },
                     ToList: ToList.map((email) => ({
                         Address: email,
                         Name: email,
