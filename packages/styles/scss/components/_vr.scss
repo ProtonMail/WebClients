@@ -2,8 +2,8 @@
 
 .vr {
 	display: inline-flex;
-	width: 1px;
+	width: 0;
 	height: auto;
-	flex: 0 0 1px;
-	background-color: var(--border-norm);
+	flex: 0 0 0;
+	border-right: 1px solid var(--border-norm);
 }
