@@ -1,5 +1,5 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import React, { MouseEvent } from 'react';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { c } from 'ttag';
 import {
     classnames,
@@ -18,6 +18,7 @@ import { MailSettings } from 'proton-shared/lib/interfaces';
 import { isInternal, isOutbox } from 'proton-shared/lib/mail/messages';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { shiftKey } from 'proton-shared/lib/helpers/browser';
+
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
 import { MESSAGE_ACTIONS } from '../../../constants';
@@ -96,8 +97,9 @@ const HeaderExpanded = ({
     const { state: showDetails, toggle: toggleDetails } = useToggle();
     const selectedIDs = [message.data?.ID || ''];
     const currentFolderID = getCurrentFolderID(message.data?.LabelIDs, folders);
-    const [{ Shortcuts = 1 } = {}] = useMailSettings();
-    const isOutboxMessage = isOutbox(message.data) || message.sending;
+    const isSendingMessage = message.sending;
+    const isOutboxMessage = isOutbox(message.data);
+    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
 
     const handleClick = (event: MouseEvent) => {
         if (
@@ -111,7 +113,7 @@ const HeaderExpanded = ({
         onToggle();
     };
 
-    const handleCompose = (action: MESSAGE_ACTIONS) => () => {
+    const handleCompose = (action: MESSAGE_ACTIONS) => async () => {
         onCompose({
             action,
             referenceMessage: message,
@@ -223,7 +225,7 @@ const HeaderExpanded = ({
                         isNarrow && 'flex-align-self-start',
                     ])}
                 >
-                    {messageLoaded && isOutboxMessage && (
+                    {messageLoaded && (isOutboxMessage || isSendingMessage) && (
                         <span className="badge-label-primary mr0-5 flex-item-noshrink">{c('Info').t`Sending`}</span>
                     )}
                     {messageLoaded && !showDetails && (
@@ -430,7 +432,7 @@ const HeaderExpanded = ({
                     <Tooltip title={titleReply}>
                         <Button
                             icon
-                            disabled={!messageLoaded || !bodyLoaded || isOutboxMessage}
+                            disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
                             onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
                             data-test-id="message-view:reply"
                         >
@@ -440,7 +442,7 @@ const HeaderExpanded = ({
                     <Tooltip title={titleReplyAll}>
                         <Button
                             icon
-                            disabled={!messageLoaded || !bodyLoaded || isOutboxMessage}
+                            disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
                             onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
                             data-test-id="message-view:reply-all"
                         >
@@ -450,7 +452,7 @@ const HeaderExpanded = ({
                     <Tooltip title={titleForward}>
                         <Button
                             icon
-                            disabled={!messageLoaded || !bodyLoaded || isOutboxMessage}
+                            disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
                             onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
                             data-test-id="message-view:forward"
                         >

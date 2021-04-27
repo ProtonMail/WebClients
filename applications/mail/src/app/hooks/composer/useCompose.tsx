@@ -8,9 +8,13 @@ import {
     Alert,
     useAddresses,
     useGetUser,
+    useApi,
     useSettingsLink,
+    useEventManager,
 } from 'react-components';
-import { isDraft } from 'proton-shared/lib/mail/messages';
+import { isOutbox, isScheduledSend, isDraft } from 'proton-shared/lib/mail/messages';
+import { forceSend } from 'proton-shared/lib/api/messages';
+
 import { MessageExtended, PartialMessageExtended } from '../../models/message';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useDraft } from '../useDraft';
@@ -58,6 +62,8 @@ export const useCompose = (
     const createDraft = useDraft();
     const messageCache = useMessageCache();
     const goToSettings = useSettingsLink();
+    const api = useApi();
+    const { call } = useEventManager();
 
     return useHandler(async (composeArgs: ComposeArgs) => {
         const user = await getUser();
@@ -139,7 +145,33 @@ export const useCompose = (
 
         if (composeNew) {
             const { action, referenceMessage } = composeNew;
+            const message = referenceMessage?.data;
+
+            if (isOutbox(message)) {
+                if (isScheduledSend(message)) {
+                    createNotification({ text: c('Error').t`Message needs to be sent first`, type: 'error' });
+                    return;
+                }
+
+                await new Promise<void>((resolve, reject) => {
+                    createModal(
+                        <ConfirmModal
+                            onConfirm={resolve}
+                            onClose={reject}
+                            title={c('Title').t`Sending original message`}
+                            confirm={c('Action').t`OK`}
+                        >
+                            <Alert>{c('Info')
+                                .t`The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.`}</Alert>
+                        </ConfirmModal>
+                    );
+                });
+                await api(forceSend(message?.ID));
+                await call();
+            }
+
             const newMessageID = await createDraft(action, referenceMessage);
+
             openComposer(newMessageID);
             focusComposer(newMessageID);
         }
