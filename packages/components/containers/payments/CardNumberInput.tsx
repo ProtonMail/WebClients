@@ -40,7 +40,7 @@ interface Props extends Omit<InputProps, 'value' | 'onChange'> {
 
 const CardNumberInput = ({ value, onChange, ...rest }: Props) => {
     const [firstCreditCardType] = creditCardType(value);
-    const { type = '', niceType = '', gaps = [] } = firstCreditCardType;
+    const { type = '', niceType = '', gaps = [] } = firstCreditCardType || {};
     const bankIcon = getBankSvg(type);
     const valueWithGaps = gaps.length ? withGaps(value, gaps) : value;
 
