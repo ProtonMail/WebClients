@@ -3,6 +3,7 @@ $inputform-height-phone-prefix: rem(28) !default;
 
 // fix for standard select component
 select {
+	padding: 0; // for Firefox difference
 	option {
 		background-color: var(--field-background-color, var(--background-norm));
 	}
