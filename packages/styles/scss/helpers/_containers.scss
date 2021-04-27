@@ -32,6 +32,17 @@
 	}
 }
 
+.border-bottom-children {
+	> * {
+		border-bottom: 1px solid var(--border-norm);
+	}
+	&--not-last {
+		& > :last-child {
+			border-bottom: 0;
+		}
+	}
+}
+
 .shadow-norm {
 	box-shadow: var(--shadow-norm);
 }
