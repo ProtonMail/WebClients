@@ -58,7 +58,7 @@ const Checkout = ({
                     </div>
                 )}
             </div>
-            <h2 className="h4 text-bold">{c('Title').t`Plan summary`}</h2>
+            <h2 className="h4 text-bold text-cut">{c('Title').t`Plan summary`}</h2>
             <div className={loading ? 'opacity-50' : ''}>{children}</div>
             <p className="text-sm lh-standard flex flex-nowrap color-weak">
                 <span className="flex-item-noshrink mr0-5">
