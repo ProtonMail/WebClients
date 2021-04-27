@@ -12,8 +12,13 @@ import {
 
 import { getEventsCount } from 'proton-shared/lib/api/calendars';
 import { Alert, DynamicProgress } from '../../../components';
-import { useApi, useGetAddresses, useGetAddressKeys, useGetCalendarKeys } from '../../../hooks';
-import useGetEncryptionPreferences from '../../../hooks/useGetEncryptionPreferences';
+import {
+    useApi,
+    useGetAddresses,
+    useGetAddressKeys,
+    useGetDecryptedPassphraseAndCalendarKeys,
+    useGetEncryptionPreferences,
+} from '../../../hooks';
 
 interface Props {
     model: ExportCalendarModel;
@@ -25,7 +30,7 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
     const getEncryptionPreferences = useGetEncryptionPreferences();
-    const getCalendarKeys = useGetCalendarKeys();
+    const getDecryptedPassphraseAndCalendarKeys = useGetDecryptedPassphraseAndCalendarKeys();
 
     const { totalToProcess } = model;
 
@@ -77,7 +82,7 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     onProgress: handleExportProgress,
                     getAddressKeys,
                     getEncryptionPreferences,
-                    getCalendarKeys,
+                    getDecryptedPassphraseAndCalendarKeys,
                     totalToProcess,
                 });
 
