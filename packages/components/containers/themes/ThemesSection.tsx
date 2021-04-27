@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { updateThemeType } from 'proton-shared/lib/api/settings';
 import { PROTON_THEMES, ThemeTypes } from 'proton-shared/lib/themes/themes';
 
-import { useUserSettings, useApi } from '../../hooks';
+import { useApi } from '../../hooks';
 import { SettingsSectionWide, SettingsParagraph } from '../account';
 
 import ThemeCards from './ThemeCards';
@@ -14,7 +14,6 @@ const availableThemes = Object.values(PROTON_THEMES);
 
 const ThemesSection = () => {
     const api = useApi();
-    const [{ ThemeType: userThemeType }] = useUserSettings();
     const [theme, setTheme] = useTheme();
 
     const themes = availableThemes.map(({ identifier, getI18NLabel, src }) => {
@@ -26,12 +25,10 @@ const ThemesSection = () => {
         api(updateThemeType(newThemeType));
     };
 
-    const computedTheme = theme || userThemeType;
-
     return (
         <SettingsSectionWide>
             <SettingsParagraph>{c('Info').t`Choose the look and feel of the application.`}</SettingsParagraph>
-            <ThemeCards list={themes} themeIdentifier={computedTheme} onChange={handleThemeChange} />
+            <ThemeCards list={themes} themeIdentifier={theme} onChange={handleThemeChange} />
         </SettingsSectionWide>
     );
 };
