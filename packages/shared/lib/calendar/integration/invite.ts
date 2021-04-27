@@ -9,7 +9,7 @@ import isTruthy from '../../helpers/isTruthy';
 import { omit, pick } from '../../helpers/object';
 import { getCurrentUnixTimestamp } from '../../helpers/time';
 import { dateLocale } from '../../i18n';
-import { Address, GetVTimezonesMap } from '../../interfaces';
+import { Address } from '../../interfaces';
 import {
     Attendee,
     CalendarEvent,
@@ -23,6 +23,7 @@ import {
     VcalVtimezoneComponent,
 } from '../../interfaces/calendar';
 import { ContactEmail } from '../../interfaces/contacts';
+import { GetVTimezonesMap } from '../../interfaces/hooks/GetVTimezonesMap';
 import { RequireSome } from '../../interfaces/utils';
 import { formatSubject, RE_PREFIX } from '../../mail/messages';
 import { getAttendeeEmail, toIcsPartstat } from '../attendees';
