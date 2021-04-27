@@ -31,12 +31,7 @@ export const useTheme = () => {
 const ThemeProvider = ({ children }: Props) => {
     const { APP_NAME } = useConfig();
 
-    /*
-     * Instead of defaulting to a theme here we default on the next line
-     * so that we can still tell the difference between an unset theme
-     * vs a defaulted theme.
-     */
-    const [theme, setTheme] = useState<ThemeTypes>();
+    const [theme, setTheme] = useState<ThemeTypes>(PROTON_THEMES.DEFAULT.theme);
 
     const style = getThemeStyle(APP_NAME === APPS.PROTONVPN_SETTINGS ? PROTON_THEMES.DEFAULT.theme : theme);
 
