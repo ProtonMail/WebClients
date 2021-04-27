@@ -30,7 +30,7 @@ const EditLinkModal = ({ decryptedPurpose, onClose, onSubmit, ...rest }: Props) 
             {...rest}
         >
             <Alert>{c('Info').t`Only you can see the labels.`}</Alert>
-            <Input maxLength={50} value={purpose} onChange={({ target: { value } }) => setPurpose(value)} />
+            <Input maxLength={50} autoFocus value={purpose} onChange={({ target: { value } }) => setPurpose(value)} />
         </FormModal>
     );
 };
