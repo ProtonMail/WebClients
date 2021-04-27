@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 
 import { updateThemeType } from 'proton-shared/lib/api/settings';
@@ -8,39 +8,30 @@ import { useUserSettings, useApi } from '../../hooks';
 import { SettingsSectionWide, SettingsParagraph } from '../account';
 
 import ThemeCards from './ThemeCards';
-import { getThemeStyle } from './ThemeInjector';
-import { useThemeStyle } from './ThemeStyleProvider';
+import { useTheme } from './ThemeProvider';
 
 const availableThemes = Object.values(PROTON_THEMES);
 
 const ThemesSection = () => {
     const api = useApi();
-    const [{ ThemeType: actualThemeType }] = useUserSettings();
-    const [themeType, setThemeType] = useState(actualThemeType);
-    const [, setThemeStyle] = useThemeStyle();
-
-    useEffect(
-        // Updates from event-manager
-        () => {
-            setThemeType(actualThemeType);
-        },
-        [actualThemeType]
-    );
+    const [{ ThemeType: userThemeType }] = useUserSettings();
+    const [theme, setTheme] = useTheme();
 
     const themes = availableThemes.map(({ identifier, getI18NLabel, src }) => {
         return { identifier, label: getI18NLabel(), src };
     });
 
     const handleThemeChange = (newThemeType: ThemeTypes) => {
-        setThemeType(newThemeType);
-        setThemeStyle(getThemeStyle(newThemeType));
+        setTheme(newThemeType);
         api(updateThemeType(newThemeType));
     };
+
+    const computedTheme = theme || userThemeType;
 
     return (
         <SettingsSectionWide>
             <SettingsParagraph>{c('Info').t`Choose the look and feel of the application.`}</SettingsParagraph>
-            <ThemeCards list={themes} themeIdentifier={themeType} onChange={handleThemeChange} />
+            <ThemeCards list={themes} themeIdentifier={computedTheme} onChange={handleThemeChange} />
         </SettingsSectionWide>
     );
 };
