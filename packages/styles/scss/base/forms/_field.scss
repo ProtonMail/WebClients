@@ -106,6 +106,19 @@ $field-container: rem(260) !default;
 	}
 }
 
+// Fix autofill state
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+	// Trick to replace the background color
+	box-shadow: 0 0 0 1000px
+		var(--field-background-color, var(--background-norm)) inset !important;
+	-webkit-text-fill-color: var(
+		--field-text-color,
+		var(--text-norm)
+	) !important;
+}
+
 @if $rtl-option==true {
 	[dir='rtl'] {
 		[type='search'].field {

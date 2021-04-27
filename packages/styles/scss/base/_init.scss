@@ -141,11 +141,6 @@ input[type='checkbox'] {
 	opacity: 0;
 }
 
-// fix "autofill state"
-input:-webkit-autofill {
-	box-shadow: 200px 200px 100px var(--background-norm) inset;
-}
-
 /* removes X in input when typing in IE/EDGE */
 input::-ms-clear {
 	width: 0;
