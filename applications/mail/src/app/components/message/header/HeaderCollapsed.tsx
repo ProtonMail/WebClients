@@ -59,6 +59,7 @@ const HeaderCollapsed = ({
                 !messageLoaded && 'is-loading',
             ])}
             onClick={handleClick}
+            data-testid={`message-header-collapsed:${message.data?.Subject}`}
         >
             <div className="flex flex-item-fluid flex-nowrap flex-align-items-center mr0-5">
                 <RecipientItem
@@ -89,6 +90,7 @@ const HeaderCollapsed = ({
                             labelID={labelID}
                             showUnlabel
                             maxNumber={breakpoints.isTablet ? 1 : 5}
+                            data-testid="message-header-collapsed:labels"
                         />
 
                         {!!hasAttachments(message.data) && (

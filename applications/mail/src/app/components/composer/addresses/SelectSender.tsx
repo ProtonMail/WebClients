@@ -47,7 +47,7 @@ const SelectSender = ({ message, disabled, onChange, onChangeContent, addressesB
             disabled={disabled}
             onChange={handleFromChange}
             onFocus={addressesBlurRef.current}
-            data-test-id="composer:from"
+            data-testid="composer:from"
         />
     );
 };

@@ -95,7 +95,11 @@ const Toolbar = ({
                         loading={loading}
                     />
                 ) : (
-                    <ToolbarButton icon={<Icon name="arrow-left" alt={c('Action').t`Back`} />} onClick={onBack} />
+                    <ToolbarButton
+                        icon={<Icon name="arrow-left" alt={c('Action').t`Back`} />}
+                        onClick={onBack}
+                        data-testid="toolbar:back-button"
+                    />
                 )}
                 <ToolbarSeparator />
                 <ReadUnreadButtons
@@ -123,8 +127,7 @@ const Toolbar = ({
                     dropDownClassName="move-dropdown"
                     className="move-dropdown-button"
                     title={titleMove}
-                    data-test-id="toolbar:moveto"
-                    data-testid="toolbar-move"
+                    data-testid="toolbar:moveto"
                     externalToggleRef={moveDropdownToggleRef}
                 >
                     {({ onClose, onLock }) => (
@@ -147,8 +150,7 @@ const Toolbar = ({
                     dropDownClassName="label-dropdown"
                     className="label-dropdown-button"
                     title={titleLabel}
-                    data-test-id="toolbar:labelas"
-                    data-testid="toolbar-label"
+                    data-testid="toolbar:labelas"
                     externalToggleRef={labelDropdownToggleRef}
                 >
                     {({ onClose, onLock }) => (

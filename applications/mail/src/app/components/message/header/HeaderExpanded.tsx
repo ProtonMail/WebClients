@@ -200,6 +200,7 @@ const HeaderExpanded = ({
                 isSentMessage ? 'is-outbound' : 'is-inbound',
                 !messageLoaded && 'is-loading',
             ])}
+            data-testid={`message-header-expanded:${message.data?.Subject}`}
         >
             <div className="flex flex-nowrap flex-align-items-center cursor-pointer" onClick={handleClick}>
                 <span className="flex flex-item-fluid flex-nowrap mr0-5">
@@ -361,6 +362,7 @@ const HeaderExpanded = ({
                         onToggle={onToggle}
                         onSourceMode={onSourceMode}
                         breakpoints={breakpoints}
+                        data-testid="message-header-expanded:more-dropdown"
                     />
 
                     {!isNarrow && (
@@ -374,6 +376,7 @@ const HeaderExpanded = ({
                                 title={titleFilterOn}
                                 loading={!messageLoaded}
                                 externalToggleRef={filterDropdownToggleRef}
+                                data-testid="message-header-expanded:filter-dropdown"
                             >
                                 {({ onClose }) => (
                                     <CustomFilterDropdown message={message.data as Message} onClose={onClose} />
@@ -389,6 +392,7 @@ const HeaderExpanded = ({
                                 title={titleMoveTo}
                                 loading={!messageLoaded}
                                 externalToggleRef={moveDropdownToggleRef}
+                                data-testid="message-header-expanded:folder-dropdown"
                             >
                                 {({ onClose, onLock }) => (
                                     <MoveDropdown
@@ -412,6 +416,7 @@ const HeaderExpanded = ({
                                 title={titleLabelAs}
                                 loading={!messageLoaded}
                                 externalToggleRef={labelDropdownToggleRef}
+                                data-testid="message-header-expanded:label-dropdown"
                             >
                                 {({ onClose, onLock }) => (
                                     <LabelDropdown
@@ -434,7 +439,7 @@ const HeaderExpanded = ({
                             icon
                             disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
                             onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
-                            data-test-id="message-view:reply"
+                            data-testid="message-view:reply"
                         >
                             <Icon name="reply" alt={c('Title').t`Reply`} />
                         </Button>
@@ -444,7 +449,7 @@ const HeaderExpanded = ({
                             icon
                             disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
                             onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
-                            data-test-id="message-view:reply-all"
+                            data-testid="message-view:reply-all"
                         >
                             <Icon name="reply-all" alt={c('Title').t`Reply all`} />
                         </Button>
@@ -454,7 +459,7 @@ const HeaderExpanded = ({
                             icon
                             disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
                             onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
-                            data-test-id="message-view:forward"
+                            data-testid="message-view:forward"
                         >
                             <Icon name="forward" alt={c('Title').t`Forward`} />
                         </Button>

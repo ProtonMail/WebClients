@@ -165,9 +165,9 @@ const AddressesInput = ({
                         onAddRecipients={handleAddRecipient}
                         onKeyDown={handleInputKey}
                         placeholder={recipients.length > 0 ? '' : placeholder}
-                        data-testid="composer-addresses-input"
                         hasEmailPasting
                         hasAddOnBlur
+                        data-testid="composer:to"
                     />
                 </div>
             </div>

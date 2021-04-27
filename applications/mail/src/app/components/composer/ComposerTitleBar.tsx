@@ -19,7 +19,7 @@ const TitleBarButton = ({ onClick, children, className = '', title, disabled = f
                 className={classnames(['composer-title-bar-button interactive flex p0-5', className])}
                 onClick={onClick}
                 disabled={disabled}
-                data-test-id="composer:close-composer"
+                data-testid="composer:close-composer"
             >
                 {children}
             </button>

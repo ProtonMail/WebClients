@@ -312,6 +312,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                                     className="flex navigation-link-header-group-control flex-item-noshrink"
                                     onClick={() => createModal(<LabelModal type="folder" />)}
                                     title={c('Title').t`Create a new folder`}
+                                    data-testid="navigation-link:add-folder"
                                 >
                                     <Icon name="plus" />
                                 </button>
@@ -323,6 +324,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                                 title={c('Info').t`Manage your folders`}
                                 info={c('Link').t`Manage your folders`}
                                 target="_self"
+                                data-testid="navigation-link:folders-settings"
                             />
                         </div>
                     }
@@ -353,6 +355,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                                     className="flex navigation-link-header-group-control flex-item-noshrink"
                                     onClick={() => createModal(<LabelModal />)}
                                     title={c('Title').t`Create a new label`}
+                                    data-testid="navigation-link:add-label"
                                 >
                                     <Icon name="plus" />
                                 </button>
@@ -364,6 +367,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                                 title={c('Info').t`Manage your labels`}
                                 info={c('Link').t`Manage your labels`}
                                 target="_self"
+                                data-testid="navigation-link:labels-settings"
                             />
                         </div>
                     }

@@ -112,8 +112,7 @@ const SidebarItem = ({
                 onDrop={handleDrop}
                 title={shortcutText !== undefined && Shortcuts ? `${text} ${shortcutText}` : text}
                 ref={elementRef}
-                data-test-id={id}
-                data-testid={`sidebar-item-${id}`}
+                data-testid={`navigation-link:${text}`}
                 data-shortcut-target={['navigation-link', id].filter(isTruthy).join(' ')}
                 onFocus={onFocus}
             >

@@ -44,12 +44,12 @@ const ItemRowLayout = ({
 
     return (
         <div className="flex-item-fluid flex flex-align-items-center flex-nowrap flex-row item-titlesender">
-            <div className="mtauto mbauto flex mr0-5">
+            <div className="mtauto mbauto flex mr0-5" data-testid={unread}>
                 <ItemStar element={element} />
             </div>
 
             <div className={classnames(['item-senders w20 flex flex-nowrap mauto pr1', unread && 'text-bold'])}>
-                <span className="max-w100 text-ellipsis" title={addresses}>
+                <span className="max-w100 text-ellipsis" title={addresses} data-testid="message-row:sender-address">
                     {!loading && displayRecipients && !senders ? c('Info').t`(No Recipient)` : senders}
                 </span>
                 <ItemAction element={element} className="ml0-5 flex-item-noshrink mtauto mbauto" />
@@ -72,6 +72,7 @@ const ItemRowLayout = ({
                     aria-level={2}
                     className={classnames(['inline-block max-w100 text-ellipsis mr1', unread && 'text-bold'])}
                     title={Subject}
+                    data-testid="message-row:subject"
                 >
                     {Subject}
                 </span>
@@ -85,7 +86,9 @@ const ItemRowLayout = ({
                 className="flex-item-noshrink mlauto"
             />
 
-            <span className="item-weight mtauto mbauto ml1 text-right">{!loading && size}</span>
+            <span className="item-weight mtauto mbauto ml1 text-right" data-testid="message-row:item-size">
+                {!loading && size}
+            </span>
 
             <span className="flex w2e ml0-5 text-center">
                 <ItemAttachmentIcon element={element} className="flex-item-noshrink" />

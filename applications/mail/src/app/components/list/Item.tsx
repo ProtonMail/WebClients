@@ -141,7 +141,7 @@ const Item = ({
             data-element-id={element.ID}
             data-shortcut-target="item-container"
             data-shortcut-target-selected={isSelected}
-            data-testid="item"
+            data-testid={`message-item:${element.Subject}`}
         >
             <ItemCheckbox
                 ID={element.ID}

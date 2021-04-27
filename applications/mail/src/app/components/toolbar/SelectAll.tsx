@@ -51,8 +51,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                         disabled={disabled}
                         loading={loading}
                         onChange={({ target }) => handleAll(target.checked)()}
-                        data-test-id="toolbar:select-all"
-                        data-testid="select-all"
+                        data-testid="toolbar:select-all-checkbox"
                     >
                         <span className="sr-only">
                             {checked ? c('Action').t`Deselect all messages` : c('Action').t`Select all messages`}
@@ -60,13 +59,18 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                     </Checkbox>
                 </span>
             </Tooltip>
-            <ToolbarDropdown disabled={disabled} loading={loading} title={c('Title').t`More selections`}>
+            <ToolbarDropdown
+                disabled={disabled}
+                loading={loading}
+                title={c('Title').t`More selections`}
+                data-testid="toolbar:select-all-dropdown"
+            >
                 {() => (
                     <DropdownMenu>
                         <DropdownMenuButton
                             className="text-left"
                             onClick={handleAll(true)}
-                            data-test-id="toolbar:selectall"
+                            data-testid="toolbar:select-all"
                         >
                             <Icon name="selectall" className="mr0-5" />
                             {c('Action').t`Select All`}
@@ -74,7 +78,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                         <DropdownMenuButton
                             className="text-left"
                             onClick={handleRead(true)}
-                            data-test-id="toolbar:allread"
+                            data-testid="toolbar:all-read"
                         >
                             <Icon name="read" className="mr0-5" />
                             {c('Action').t`All Read`}
@@ -82,7 +86,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                         <DropdownMenuButton
                             className="text-left"
                             onClick={handleRead(false)}
-                            data-test-id="toolbar:allunread"
+                            data-testid="toolbar:all-unread"
                         >
                             <Icon name="unread" className="mr0-5" />
                             {c('Action').t`All Unread`}
@@ -90,7 +94,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                         <DropdownMenuButton
                             className="text-left"
                             onClick={handleStarred(true)}
-                            data-test-id="toolbar:allstarred"
+                            data-testid="toolbar:all-starred"
                         >
                             <Icon name="starfull" className="mr0-5" />
                             {c('Action').t`All Starred`}
@@ -98,7 +102,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                         <DropdownMenuButton
                             className="text-left"
                             onClick={handleStarred(false)}
-                            data-test-id="toolbar:allunstarred"
+                            data-testid="toolbar:all-unstarred"
                         >
                             <Icon name="star" className="mr0-5" />
                             {c('Action').t`All Unstarred`}

@@ -141,6 +141,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                         size="small"
                         onClick={handleCreate}
                         className="flex flex-align-items-center"
+                        data-testid="folder-dropdown:add-folder"
                     >
                         <Icon name="folder" /> +
                     </Button>
@@ -153,6 +154,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                     id={searchInputID}
                     placeholder={c('Placeholder').t`Filter folders`}
                     autoFocus={autoFocusSearch}
+                    data-testid="folder-dropdown:search-folder"
                 />
             </div>
             <div
@@ -170,6 +172,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                                     disabled={loading}
                                     className="dropdown-item-button w100 flex flex-nowrap flex-align-items-center pl1 pr1 pt0-5 pb0-5"
                                     onClick={() => withLoading(handleMove(folder))}
+                                    data-testid={`folder-dropdown:folder-${folder.Name}`}
                                 >
                                     <FolderIcon folder={folder} className="flex-item-noshrink mr0-5" />
                                     <span className="text-ellipsis" title={folder.Name}>

@@ -62,8 +62,7 @@ const EmptyButton = ({ labelID = '', breakpoints, elementIDs }: Props) => {
                 disabled={loading || !elementIDs.length}
                 title={titleEmpty}
                 onClick={handleClick}
-                data-test-id="toolbar:emptyfolder"
-                data-testid="empty-folder"
+                data-testid="toolbar:empty-folder"
                 icon={<Icon name="empty-folder" alt={title} />}
             />
         </>

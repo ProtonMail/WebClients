@@ -48,8 +48,12 @@ const ComposerInnerModal = ({ title, disabled = false, children, onCancel, onSub
                 <ContentModal onSubmit={onSubmit as () => undefined} onReset={onCancel as () => undefined}>
                     <InnerModal>{children}</InnerModal>
                     <FooterModal>
-                        <Button type="reset">{c('Action').t`Cancel`}</Button>
-                        <PrimaryButton type="submit" disabled={disabled}>{c('Action').t`Set`}</PrimaryButton>
+                        <Button type="reset" data-testid="modal-footer:cancel-button">
+                            {c('Action').t`Cancel`}
+                        </Button>
+                        <PrimaryButton type="submit" disabled={disabled} data-testid="modal-footer:set-button">
+                            {c('Action').t`Set`}
+                        </PrimaryButton>
                     </FooterModal>
                 </ContentModal>
             </div>

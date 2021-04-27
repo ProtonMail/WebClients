@@ -43,7 +43,7 @@ describe('Mailbox labels actions', () => {
 
     describe('labels action', () => {
         const useLabelDropdown = (getByTestId: (text: Matcher) => HTMLElement, labelsToClick: string[]) => {
-            const labelDropdownButton = getByTestId('toolbar-label');
+            const labelDropdownButton = getByTestId('toolbar:labelas');
             fireEvent.click(labelDropdownButton);
 
             const labelDropdownList = getByTestId('label-dropdown-list');
@@ -55,15 +55,15 @@ describe('Mailbox labels actions', () => {
                 }
             });
 
-            const labelDropdownApply = getByTestId('label-dropdown-apply');
+            const labelDropdownApply = getByTestId('label-dropdown:apply');
             fireEvent.click(labelDropdownApply);
         };
 
         const expectLabels = (
-            getAllByTestId: (text: Matcher) => HTMLElement[],
+            getItems: () => HTMLElement[],
             itemLabels: { [itemID: string]: { [labelName: string]: boolean } }
         ) => {
-            const items = getAllByTestId('item');
+            const items = getItems();
             const itemByID = Object.fromEntries(
                 items.map((item) => [item.getAttribute('data-element-id') || '', item])
             );
@@ -83,7 +83,7 @@ describe('Mailbox labels actions', () => {
             const labelRequestSpy = jest.fn();
             addApiMock(`mail/v4/conversations/label`, labelRequestSpy, 'put');
 
-            const { getByTestId, getAllByTestId } = await setup({ conversations, labelID: label1.ID });
+            const { getByTestId, getAllByTestId, getItems } = await setup({ conversations, labelID: label1.ID });
 
             const checkboxes = getAllByTestId('item-checkbox');
             fireEvent.click(checkboxes[0]);
@@ -93,7 +93,7 @@ describe('Mailbox labels actions', () => {
 
             await waitForSpyCall(labelRequestSpy);
 
-            expectLabels(getAllByTestId, {
+            expectLabels(getItems, {
                 [conversation1.ID as string]: { [label1.Name]: true, [label3.Name]: true },
                 [conversation2.ID as string]: { [label1.Name]: true, [label3.Name]: true },
                 [conversation3.ID as string]: { [label1.Name]: true, [label3.Name]: false },
@@ -110,7 +110,7 @@ describe('Mailbox labels actions', () => {
             const labelRequestSpy = jest.fn();
             addApiMock(`mail/v4/conversations/unlabel`, labelRequestSpy, 'put');
 
-            const { getByTestId, getAllByTestId } = await setup({ conversations, labelID: label1.ID });
+            const { getByTestId, getAllByTestId, getItems } = await setup({ conversations, labelID: label1.ID });
 
             const checkboxes = getAllByTestId('item-checkbox');
             fireEvent.click(checkboxes[1]);
@@ -120,7 +120,7 @@ describe('Mailbox labels actions', () => {
 
             await waitForSpyCall(labelRequestSpy);
 
-            expectLabels(getAllByTestId, {
+            expectLabels(getItems, {
                 [conversation1.ID as string]: { [label2.Name]: true },
                 [conversation2.ID as string]: { [label2.Name]: false },
                 [conversation3.ID as string]: { [label2.Name]: false },
@@ -139,7 +139,7 @@ describe('Mailbox labels actions', () => {
             addApiMock(`mail/v4/conversations/label`, labelRequestSpy, 'put');
             addApiMock(`mail/v4/conversations/unlabel`, unlabelRequestSpy, 'put');
 
-            const { getByTestId, getAllByTestId } = await setup({ conversations, labelID: label1.ID });
+            const { getByTestId, getAllByTestId, getItems } = await setup({ conversations, labelID: label1.ID });
 
             const checkboxes = getAllByTestId('item-checkbox');
             fireEvent.click(checkboxes[0]);
@@ -149,7 +149,7 @@ describe('Mailbox labels actions', () => {
             await waitForSpyCall(labelRequestSpy);
             await waitForSpyCall(unlabelRequestSpy);
 
-            expectLabels(getAllByTestId, {
+            expectLabels(getItems, {
                 [conversation1.ID as string]: {
                     [label1.Name]: true,
                     [label2.Name]: false,
@@ -168,7 +168,7 @@ describe('Mailbox labels actions', () => {
 
     describe('folders action', () => {
         const useMoveDropdown = (getByTestId: (text: Matcher) => HTMLElement, folderID: string) => {
-            const moveDropdownButton = getByTestId('toolbar-move');
+            const moveDropdownButton = getByTestId('toolbar:moveto');
             fireEvent.click(moveDropdownButton);
 
             const moveDropdownList = getByTestId('move-dropdown-list');
@@ -183,7 +183,7 @@ describe('Mailbox labels actions', () => {
             const labelRequestSpy = jest.fn();
             addApiMock(`mail/v4/conversations/label`, labelRequestSpy, 'put');
 
-            const { getByTestId, getAllByTestId } = await setup({ conversations, labelID: folder1.ID });
+            const { getByTestId, getAllByTestId, getItems } = await setup({ conversations, labelID: folder1.ID });
 
             const checkboxes = getAllByTestId('item-checkbox');
             fireEvent.click(checkboxes[0]);
@@ -197,7 +197,7 @@ describe('Mailbox labels actions', () => {
 
             await waitForSpyCall(labelRequestSpy);
 
-            const items = getAllByTestId('item');
+            const items = getItems();
             expect(items.length).toBe(1);
         });
     });
@@ -207,15 +207,15 @@ describe('Mailbox labels actions', () => {
             const emptyRequestSpy = jest.fn();
             addApiMock(`mail/v4/messages/empty`, emptyRequestSpy, 'delete');
 
-            const { getByTestId, getAllByTestId, findByTestId, queryAllByTestId } = await setup({
+            const { getByTestId, getItems, findByTestId, queryAllByTestId } = await setup({
                 conversations,
                 labelID: folder1.ID,
             });
 
-            let items = getAllByTestId('item');
+            let items = getItems();
             expect(items.length).toBe(3);
 
-            const emptyButton = getByTestId('empty-folder');
+            const emptyButton = getByTestId('toolbar:empty-folder');
             fireEvent.click(emptyButton);
 
             const confirmButton = await findByTestId('confirm-empty-folder');
@@ -223,7 +223,7 @@ describe('Mailbox labels actions', () => {
 
             await waitForSpyCall(emptyRequestSpy);
 
-            items = queryAllByTestId('item');
+            items = queryAllByTestId('message-item', { exact: false });
             expect(items.length).toBe(0);
         });
     });

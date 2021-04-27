@@ -24,7 +24,7 @@ const FilterButtons = ({ loading, filter = {}, onFilter }: Props) => {
     return (
         <div>
             <Button
-                data-test-id="filter-dropdown:show-all"
+                data-testid="filter-dropdown:show-all"
                 size="small"
                 shape="ghost"
                 loading={loading}
@@ -35,7 +35,7 @@ const FilterButtons = ({ loading, filter = {}, onFilter }: Props) => {
                 {FILTER_OPTIONS.SHOW_ALL}
             </Button>
             <Button
-                data-test-id="filter-dropdown:show-read"
+                data-testid="filter-dropdown:show-read"
                 size="small"
                 shape="ghost"
                 loading={loading}
@@ -49,7 +49,7 @@ const FilterButtons = ({ loading, filter = {}, onFilter }: Props) => {
                 {FILTER_OPTIONS.SHOW_READ}
             </Button>
             <Button
-                data-test-id="filter-dropdown:show-unread"
+                data-testid="filter-dropdown:show-unread"
                 size="small"
                 shape="ghost"
                 loading={loading}

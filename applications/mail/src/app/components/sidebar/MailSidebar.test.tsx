@@ -45,13 +45,13 @@ describe('MailSidebar', () => {
 
         const { getByTestId, queryByTestId } = await render(<MailSidebar {...props} />, false);
 
-        const folderElement = getByTestId(`sidebar-item-${folder.ID}`);
+        const folderElement = getByTestId(`navigation-link:${folder.Name}`);
         const folderIcon = folderElement.querySelector('svg');
 
         expect(folderElement.textContent).toContain(folder.Name);
         expect((folderIcon?.firstChild as Element).getAttribute('xlink:href')).toBe('#shape-parent-folder');
 
-        const subfolderElement = getByTestId(`sidebar-item-${subfolder.ID}`);
+        const subfolderElement = getByTestId(`navigation-link:${subfolder.Name}`);
         const subfolderIcon = subfolderElement.querySelector('svg');
 
         expect(subfolderElement.textContent).toContain(subfolder.Name);
@@ -71,7 +71,7 @@ describe('MailSidebar', () => {
 
         const { getByTestId } = await render(<MailSidebar {...props} />, false);
 
-        const labelElement = getByTestId(`sidebar-item-${label.ID}`);
+        const labelElement = getByTestId(`navigation-link:${label.Name}`);
         const labelIcon = labelElement.querySelector('svg');
 
         expect(labelElement.textContent).toContain(label.Name);
@@ -83,10 +83,10 @@ describe('MailSidebar', () => {
 
         const { getByTestId } = await render(<MailSidebar {...props} />, false);
 
-        const inboxElement = getByTestId(`sidebar-item-inbox`);
-        const allMailElement = getByTestId(`sidebar-item-allmail`);
-        const folderElement = getByTestId(`sidebar-item-${folder.ID}`);
-        const labelElement = getByTestId(`sidebar-item-${label.ID}`);
+        const inboxElement = getByTestId(`navigation-link:Inbox`);
+        const allMailElement = getByTestId(`navigation-link:All mail`);
+        const folderElement = getByTestId(`navigation-link:${folder.Name}`);
+        const labelElement = getByTestId(`navigation-link:${label.Name}`);
 
         const inBoxLocationAside = inboxElement.querySelector('.navigation-counter-item');
         const allMailLocationAside = allMailElement.querySelector('.navigation-counter-item');
@@ -104,7 +104,7 @@ describe('MailSidebar', () => {
 
         const { getByTestId } = await render(<MailSidebar {...props} />, false);
 
-        const folderElement = getByTestId(`sidebar-item-${folder.ID}`);
+        const folderElement = getByTestId(`navigation-link:${folder.Name}`);
 
         expect(history.location.pathname).toBe('/inbox');
 
@@ -120,7 +120,7 @@ describe('MailSidebar', () => {
 
         const { getByTestId } = await render(<MailSidebar {...props} />, false);
 
-        const folderElement = getByTestId(`sidebar-item-${folder.ID}`);
+        const folderElement = getByTestId(`navigation-link:${folder.Name}`);
 
         // Click on the label to be redirected in it
         act(() => {
@@ -160,7 +160,7 @@ describe('MailSidebar', () => {
 
         const { getByTestId } = await render(<MailSidebar {...props} />, false);
 
-        const inboxElement = getByTestId(`sidebar-item-inbox`);
+        const inboxElement = getByTestId('navigation-link:Inbox');
 
         const inBoxLocationAside = inboxElement.querySelector('.navigation-counter-item');
         expect(inBoxLocationAside?.innerHTML).toBe(`${inboxMessages.Unread}`);

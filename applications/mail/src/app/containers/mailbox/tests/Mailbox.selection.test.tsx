@@ -11,9 +11,9 @@ describe('Mailbox elements selection', () => {
     beforeEach(clearAll);
 
     it('should show list when elements finish loading', async () => {
-        const { getAllByTestId } = await setup({ conversations });
+        const { getItems } = await setup({ conversations });
 
-        const items = getAllByTestId('item');
+        const items = getItems();
 
         expect(items.length === conversations.length).toBe(true);
     });
@@ -21,7 +21,7 @@ describe('Mailbox elements selection', () => {
     it('should select all', async () => {
         const { getByTestId, getAllByTestId } = await setup({ conversations });
 
-        const checkAll = getByTestId('select-all');
+        const checkAll = getByTestId('toolbar:select-all-checkbox');
         fireEvent.click(checkAll);
 
         const allChecks = getAllByTestId('item-checkbox') as HTMLInputElement[];

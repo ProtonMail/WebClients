@@ -34,7 +34,7 @@ const DeleteButton = ({ labelID = '', selectedIDs = [] }: Props) => {
             title={titleDelete}
             onClick={() => withLoading(handleDelete())}
             disabled={loading || !selectedIDs.length}
-            data-test-id="toolbar:deletepermanently"
+            data-testid="toolbar:deletepermanently"
             icon={<Icon name="delete" alt={c('Action').t`Delete permanently`} />}
         />
     );

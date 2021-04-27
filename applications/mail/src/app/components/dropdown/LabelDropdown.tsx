@@ -206,6 +206,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
                         size="small"
                         onClick={handleCreate}
                         className="flex flex-align-items-center"
+                        data-testid="label-dropdown:add-label"
                     >
                         <Icon name="label" /> +
                     </Button>
@@ -218,6 +219,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
                     id={searchInputID}
                     placeholder={c('Placeholder').t`Filter labels`}
                     autoFocus={autoFocusSearch}
+                    data-test-selector="label-dropdown:search-label"
                 />
             </div>
             <div
@@ -234,6 +236,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
                                 htmlFor={labelCheckID(ID)}
                                 title={Name}
                                 className="flex flex-nowrap flex-align-items-center increase-click-surface flex-item-fluid"
+                                data-testid={`label-dropdown:label-${Name}`}
                             >
                                 <Icon
                                     name="circle"
@@ -252,6 +255,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
                                 checked={selectedLabelIDs[ID] === LabelState.On}
                                 indeterminate={selectedLabelIDs[ID] === LabelState.Indeterminate}
                                 onChange={handleCheck(ID)}
+                                data-testid={`label-dropdown:label-checkbox-${Name}`}
                             />
                         </li>
                     ))}
@@ -267,6 +271,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
                     id={archiveCheckID}
                     checked={alsoArchive}
                     onChange={({ target }) => updateAlsoArchive(target.checked)}
+                    data-testid="label-dropdown:also-archive"
                 />
                 <label htmlFor={archiveCheckID} className="flex-item-fluid">
                     {c('Label').t`Also archive`}
@@ -278,7 +283,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
                     loading={loading}
                     onClick={() => withLoading(handleApply())}
                     disabled={applyDisabled}
-                    data-testid="label-dropdown-apply"
+                    data-testid="label-dropdown:apply"
                 >
                     {c('Action').t`Apply`}
                 </PrimaryButton>

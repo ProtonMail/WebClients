@@ -67,7 +67,7 @@ export const clickSend = async (renderResult: RenderResult) => {
     addApiMock(`mail/v4/messages/${ID}`, sendSpy, 'post');
     addApiMock(`mail/v4/messages/${ID}`, () => {}, 'get');
 
-    const sendButton = await renderResult.findByTestId('send-button');
+    const sendButton = await renderResult.findByTestId('composer:send-button');
     fireEvent.click(sendButton);
 
     // Wait for the event manager to be called as it's the last step of the sendMessage hook

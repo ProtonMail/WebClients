@@ -31,10 +31,18 @@ const LocationAside = ({ unreadCount = 0, active = false, refreshing = false }: 
     return (
         <>
             {active && (
-                <Icon className={classnames(['mr0-5', refreshing && 'location-refresh-rotate'])} name="reload" />
+                <Icon
+                    className={classnames(['mr0-5', refreshing && 'location-refresh-rotate'])}
+                    name="reload"
+                    data-testid="navigation-link:refresh-folder"
+                />
             )}
             {unreadCount ? (
-                <span className="navigation-counter-item flex-item-noshrink" title={getUnreadTitle()}>
+                <span
+                    className="navigation-counter-item flex-item-noshrink"
+                    title={getUnreadTitle()}
+                    data-testid="navigation-link:unread-count"
+                >
                     {unreadCount > UNREAD_LIMIT ? '9999+' : unreadCount}
                 </span>
             ) : null}

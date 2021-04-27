@@ -54,7 +54,9 @@ const AddressesEditor = ({ message, messageSendInfo, onChange, expanded, toggleE
             <div className={classnames(['flex flex-row w100 relative', expanded && 'mb0-5'])}>
                 <Label htmlFor={`to-${uid}`} className="composer-meta-label text-bold">
                     <Tooltip title={c('Title').t`Add contacts`}>
-                        <InlineLinkButton onClick={handleContactModal('ToList')}>{c('Title').t`To`}</InlineLinkButton>
+                        <InlineLinkButton onClick={handleContactModal('ToList')} data-testid="composer:to-button">
+                            {c('Title').t`To`}
+                        </InlineLinkButton>
                     </Tooltip>
                 </Label>
                 <AddressesInput
@@ -64,7 +66,6 @@ const AddressesEditor = ({ message, messageSendInfo, onChange, expanded, toggleE
                     onChange={handleChange('ToList')}
                     inputFocusRef={inputFocusRefs.to}
                     placeholder={c('Placeholder').t`Email address`}
-                    data-test-id="composer:to"
                     expanded={expanded}
                 />
                 {!expanded && (
@@ -72,6 +73,7 @@ const AddressesEditor = ({ message, messageSendInfo, onChange, expanded, toggleE
                         className="composer-addresses-ccbcc text-no-decoration text-strong"
                         title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
                         onClick={toggleExpanded}
+                        data-testid="composer:cc-bcc-button"
                     >
                         {c('Action').t`CC, BCC`}
                     </LinkButton>
@@ -97,7 +99,7 @@ const AddressesEditor = ({ message, messageSendInfo, onChange, expanded, toggleE
                             messageSendInfo={messageSendInfo}
                             onChange={handleChange('CCList')}
                             placeholder={c('Placeholder').t`Email address`}
-                            data-test-id="composer:cc"
+                            data-testid="composer:cc"
                             inputFocusRef={inputFocusRefs.cc}
                         />
                     </div>
@@ -119,7 +121,7 @@ const AddressesEditor = ({ message, messageSendInfo, onChange, expanded, toggleE
                             messageSendInfo={messageSendInfo}
                             onChange={handleChange('BCCList')}
                             placeholder={c('Placeholder').t`Email address`}
-                            data-test-id="composer:bcc"
+                            data-testid="composer:bcc"
                         />
                     </div>
                 </>

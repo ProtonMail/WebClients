@@ -24,12 +24,14 @@ const PagingControls = ({ loading, page: inputPage, onPage: inputOnPage }: Props
                 onClick={onPrevious}
                 className="no-tablet no-mobile"
                 icon={<Icon className="rotateZ-90" name="caret" alt={c('Action').t`Previous page`} />}
+                data-testid="toolbar:previous-page"
             />
             <ToolbarDropdown
                 title={c('Action').t`Change page`}
                 content={String(page)}
                 disabled={total <= 1}
                 size="narrow"
+                data-testid="toolbar:page-number-dropdown"
             >
                 {() => (
                     <DropdownMenu>
@@ -42,6 +44,7 @@ const PagingControls = ({ loading, page: inputPage, onPage: inputOnPage }: Props
                                     disabled={page - 1 === i}
                                     onClick={() => onPage(i + 1)}
                                     aria-label={c('Action').t`Page ${pageNumber}`}
+                                    data-testid={`toolbar:page-number-${pageNumber}`}
                                 >
                                     {pageNumber}
                                 </DropdownMenuButton>
@@ -56,6 +59,7 @@ const PagingControls = ({ loading, page: inputPage, onPage: inputOnPage }: Props
                 onClick={onNext}
                 className="no-tablet no-mobile"
                 icon={<Icon className="rotateZ-270" name="caret" alt={c('Action').t`Next page`} />}
+                data-testid="toolbar:next-page"
             />
         </>
     );

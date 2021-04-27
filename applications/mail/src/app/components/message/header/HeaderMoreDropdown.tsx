@@ -233,7 +233,12 @@ const HeaderMoreDropdown = ({
                 </Tooltip>
             ) : (
                 <Tooltip title={titleUnread}>
-                    <Button icon disabled={!messageLoaded} onClick={handleUnread}>
+                    <Button
+                        icon
+                        disabled={!messageLoaded}
+                        onClick={handleUnread}
+                        data-testid="message-header-expanded:mark-as-unread"
+                    >
                         <Icon name="unread" alt={c('Title').t`Mark as unread`} />
                     </Button>
                 </Tooltip>
@@ -246,7 +251,12 @@ const HeaderMoreDropdown = ({
                 </Tooltip>
             ) : (
                 <Tooltip title={titleMoveTrash}>
-                    <Button icon disabled={!messageLoaded} onClick={handleMove(TRASH, fromFolderID)}>
+                    <Button
+                        icon
+                        disabled={!messageLoaded}
+                        onClick={handleMove(TRASH, fromFolderID)}
+                        data-testid="message-header-expanded:move-to-trash"
+                    >
                         <Icon name="trash" alt={c('Title').t`Move to trash`} />
                     </Button>
                 </Tooltip>
@@ -259,6 +269,7 @@ const HeaderMoreDropdown = ({
                 content={<Icon name="caret" className="caret-like" alt={c('Title').t`More options`} />}
                 hasCaret={false}
                 additionalDropdowns={additionalDropdowns}
+                data-testid="message-header-expanded:more-dropdown"
             >
                 {({ onClose, onOpenAdditionnal }) => {
                     closeDropdown.current = onClose;

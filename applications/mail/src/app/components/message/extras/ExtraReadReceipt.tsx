@@ -36,7 +36,7 @@ const ExtraReadReceipt = ({ message }: Props) => {
                     onClick={() => withLoading(handleClick())}
                     disabled={loading}
                     className="color-inherit text-underline"
-                    data-test-id="message-view:send-receipt"
+                    data-testid="message-view:send-receipt"
                 >{c('Action').t`Send receipt`}</InlineLinkButton>
             </span>
         </div>

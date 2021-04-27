@@ -36,8 +36,8 @@ describe('Mailbox element list', () => {
     describe('elements memo', () => {
         it('should order by label context time', async () => {
             const conversations = [element1, element2];
-            const { getAllByTestId } = await setup({ conversations });
-            const items = getAllByTestId('item');
+            const { getItems } = await setup({ conversations });
+            const items = getItems();
 
             expect(items.length).toBe(2);
             expect(items[0].getAttribute('data-element-id')).toBe(conversations[1].ID);
@@ -45,24 +45,24 @@ describe('Mailbox element list', () => {
         });
 
         it('should filter message with the right label', async () => {
-            const { getAllByTestId } = await setup({
+            const { getItems } = await setup({
                 page: 0,
                 totalConversations: 2,
                 conversations: [element1, element2, element3],
             });
-            const items = getAllByTestId('item');
+            const items = getItems();
 
             expect(items.length).toBe(2);
         });
 
         it('should limit to the page size', async () => {
             const total = PAGE_SIZE + 5;
-            const { getAllByTestId } = await setup({
+            const { getItems } = await setup({
                 conversations: getElements(total),
                 page: 0,
                 totalConversations: total,
             });
-            const items = getAllByTestId('item');
+            const items = getItems();
 
             expect(items.length).toBe(PAGE_SIZE);
         });
@@ -73,12 +73,12 @@ describe('Mailbox element list', () => {
             const total = PAGE_SIZE + 2;
             const conversations = getElements(total);
 
-            const { rerender, getAllByTestId } = await setup({ conversations, totalConversations: total, page: page1 });
-            let items = getAllByTestId('item');
+            const { rerender, getItems } = await setup({ conversations, totalConversations: total, page: page1 });
+            let items = getItems();
             expect(items.length).toBe(PAGE_SIZE);
 
             await rerender({ page: page2 });
-            items = getAllByTestId('item');
+            items = getItems();
             expect(items.length).toBe(2);
         });
 
@@ -87,15 +87,15 @@ describe('Mailbox element list', () => {
             const sort1: Sort = { sort: 'Size', desc: false };
             const sort2: Sort = { sort: 'Size', desc: true };
 
-            const { rerender, getAllByTestId } = await setup({ conversations, sort: sort1 });
-            let items = getAllByTestId('item');
+            const { rerender, getItems } = await setup({ conversations, sort: sort1 });
+            let items = getItems();
 
             expect(items.length).toBe(2);
             expect(items[0].getAttribute('data-element-id')).toBe(conversations[1].ID);
             expect(items[1].getAttribute('data-element-id')).toBe(conversations[0].ID);
 
             await rerender({ sort: sort2 });
-            items = getAllByTestId('item');
+            items = getItems();
 
             expect(items.length).toBe(2);
             expect(items[0].getAttribute('data-element-id')).toBe(conversations[0].ID);
@@ -117,7 +117,7 @@ describe('Mailbox element list', () => {
                 signal: new AbortController().signal,
             };
 
-            const { getAllByTestId } = await setup({
+            const { getItems } = await setup({
                 conversations: getElements(PAGE_SIZE),
                 page,
                 totalConversations: total,
@@ -125,7 +125,7 @@ describe('Mailbox element list', () => {
 
             expect(api).toHaveBeenCalledWith(expectedRequest);
 
-            const items = getAllByTestId('item');
+            const items = getItems();
             expect(items.length).toBe(PAGE_SIZE);
         });
     });
@@ -134,8 +134,8 @@ describe('Mailbox element list', () => {
         it('should only show unread conversations if filter is on', async () => {
             const conversations = [element1, element2, element3];
 
-            const { getAllByTestId } = await setup({ conversations, filter: { Unread: 1 }, totalConversations: 2 });
-            const items = getAllByTestId('item');
+            const { getItems } = await setup({ conversations, filter: { Unread: 1 }, totalConversations: 2 });
+            const items = getItems();
 
             expect(items.length).toBe(2);
         });
@@ -149,7 +149,7 @@ describe('Mailbox element list', () => {
                 LabelIDs: [labelID],
             };
 
-            const { rerender, getAllByTestId } = await setup({
+            const { rerender, getItems } = await setup({
                 conversations,
                 filter: { Unread: 1 },
                 totalConversations: 2,
@@ -164,7 +164,7 @@ describe('Mailbox element list', () => {
             addApiMock(`mail/v4/messages/read`, () => {});
             await rerender({ elementID: element1.ID });
 
-            const items = getAllByTestId('item');
+            const items = getItems();
             expect(items.length).toBe(2);
             expect(items[1].classList.contains('read')).toBe(true);
             expect(items[0].classList.contains('read')).toBe(false);
@@ -189,13 +189,13 @@ describe('Mailbox element list', () => {
                 },
             ];
 
-            const { rerender, getAllByTestId } = await setup({ conversations, page: 10, mockConversations: false });
+            const { rerender, getItems } = await setup({ conversations, page: 10, mockConversations: false });
 
             expect(props.history.push).toHaveBeenCalledWith(`${props.history.location.pathname}#page=2`);
 
             await rerender({ page: 1 });
 
-            const items = getAllByTestId('item');
+            const items = getItems();
             expect(items.length).toBe(conversations.length % PAGE_SIZE);
         });
 
@@ -220,10 +220,10 @@ describe('Mailbox element list', () => {
 
             const { getByTestId } = await setup({ conversations, page: 1, mockConversations: false });
 
-            const selectAll = getByTestId('select-all');
+            const selectAll = getByTestId('toolbar:select-all-checkbox');
             fireEvent.click(selectAll);
 
-            const archive = getByTestId('toolbar-trash');
+            const archive = getByTestId('toolbar:movetoarchive');
             fireEvent.click(archive);
 
             await sendEvent({ ConversationCounts: [{ LabelID: labelID, Total: PAGE_SIZE, Unread: 0 }] });
@@ -250,11 +250,11 @@ describe('Mailbox element list', () => {
                 },
             ];
 
-            const { rerender, getAllByTestId } = await setup({ conversations, mockConversations: false });
+            const { rerender, getItems } = await setup({ conversations, mockConversations: false });
 
             await rerender({ page: 1 });
 
-            const items = getAllByTestId('item');
+            const items = getItems();
             expect(items.length).toBe(conversations.length % PAGE_SIZE);
         });
     });
