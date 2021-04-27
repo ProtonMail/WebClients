@@ -1,5 +1,5 @@
 import { EVENT_ACTIONS } from '../../constants';
-import { Calendar, CalendarAlarm, CalendarEventWithoutBlob } from './index';
+import { Calendar, CalendarAlarm, CalendarEventWithoutBlob, CalendarUrl } from './index';
 
 export interface CalendarAlarmEventManagerDelete {
     ID: string;
@@ -19,6 +19,25 @@ export type CalendarAlarmEventManager =
     | CalendarAlarmEventManagerDelete
     | CalendarAlarmEventManagerUpdate
     | CalendarAlarmEventManagerCreate;
+
+export interface CalendarUrlEventManagerDelete {
+    ID: string;
+    Action: EVENT_ACTIONS.DELETE;
+}
+export interface CalendarUrlEventManagerUpdate {
+    ID: string;
+    Action: EVENT_ACTIONS.UPDATE;
+    CalendarUrl: CalendarUrl;
+}
+export interface CalendarUrlEventManagerCreate {
+    ID: string;
+    Action: EVENT_ACTIONS.CREATE;
+    CalendarUrl: CalendarUrl;
+}
+export type CalendarUrlEventManager =
+    | CalendarUrlEventManagerDelete
+    | CalendarUrlEventManagerUpdate
+    | CalendarUrlEventManagerCreate;
 
 export interface CalendarEventManagerDelete {
     ID: string;

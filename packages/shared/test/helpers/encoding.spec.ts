@@ -11,13 +11,20 @@ describe('encoding', () => {
                     .split('')
                     .filter((char) => validChars.includes(char))
                     .join('');
-            expect(strings.map(encodeBase64URL)).toEqual(strings.map(filterEncode));
+            expect(strings.map((string) => encodeBase64URL(string))).toEqual(strings.map(filterEncode));
         });
 
         it('should roundtrip strings', () => {
             strings.forEach((string) => {
                 expect(decodeBase64URL(encodeBase64URL(string))).toEqual(string);
             });
+        });
+
+        it('should keep padding when told to', () => {
+            const string = 'dogs';
+
+            expect(encodeBase64URL(string)).toEqual('ZG9ncw');
+            expect(encodeBase64URL(string, false)).toEqual('ZG9ncw==');
         });
     });
 });

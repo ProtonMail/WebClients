@@ -1,7 +1,9 @@
 import { CalendarExportEventsQuery, queryEvents } from '../../api/calendars';
 import { wait } from '../../helpers/promise';
-import { Address, Api } from '../../interfaces';
+import { Address, Api, DecryptedKey } from '../../interfaces';
 import { CalendarEvent, VcalVeventComponent } from '../../interfaces/calendar';
+import { GetDecryptedPassphraseAndCalendarKeys } from '../../interfaces/hooks/GetDecryptedPassphraseAndCalendarKeys';
+import { GetEncryptionPreferences } from '../../interfaces/hooks/GetEncryptionPreferences';
 import { splitKeys } from '../../keys';
 import { getAuthorPublicKeysMap, withNormalizedAuthors } from '../author';
 import { readCalendarEvent, readSessionKeys } from '../deserialize';
@@ -9,9 +11,9 @@ import { readCalendarEvent, readSessionKeys } from '../deserialize';
 interface ProcessData {
     calendarID: string;
     addresses: Address[];
-    getAddressKeys: Function;
-    getEncryptionPreferences: Function;
-    getCalendarKeys: Function;
+    getAddressKeys: (id: string) => Promise<DecryptedKey[]>;
+    getEncryptionPreferences: GetEncryptionPreferences;
+    getDecryptedPassphraseAndCalendarKeys: GetDecryptedPassphraseAndCalendarKeys;
     api: Api;
     signal: AbortSignal;
     onProgress: (veventComponents: VcalVeventComponent[]) => void;
@@ -26,7 +28,7 @@ export const processInBatches = async ({
     addresses,
     getAddressKeys,
     getEncryptionPreferences,
-    getCalendarKeys,
+    getDecryptedPassphraseAndCalendarKeys,
     totalToProcess,
 }: ProcessData): Promise<[VcalVeventComponent[], CalendarEvent[]]> => {
     const PAGE_SIZE = 10;
@@ -40,8 +42,8 @@ export const processInBatches = async ({
 
     const decryptEvent = async (event: CalendarEvent) => {
         try {
-            const [calendarKeys, publicKeysMap] = await Promise.all([
-                getCalendarKeys(event.CalendarID),
+            const [{ decryptedCalendarKeys }, publicKeysMap] = await Promise.all([
+                getDecryptedPassphraseAndCalendarKeys(event.CalendarID),
                 getAuthorPublicKeysMap({
                     event,
                     addresses,
@@ -52,7 +54,7 @@ export const processInBatches = async ({
 
             const [sharedSessionKey, calendarSessionKey] = await readSessionKeys({
                 calendarEvent: event,
-                ...splitKeys(calendarKeys),
+                ...splitKeys(decryptedCalendarKeys),
             });
 
             const { veventComponent } = await readCalendarEvent({

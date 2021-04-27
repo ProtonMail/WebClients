@@ -1,6 +1,7 @@
 import isTruthy from '../helpers/isTruthy';
-import { GetVTimezonesMap, SimpleMap } from '../interfaces';
+import { SimpleMap } from '../interfaces';
 import { VcalVeventComponent } from '../interfaces/calendar';
+import { GetVTimezonesMap } from '../interfaces/hooks/GetVTimezonesMap';
 import { getPropertyTzid } from './vcalHelper';
 
 interface Params {
