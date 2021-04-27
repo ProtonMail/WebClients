@@ -22,15 +22,14 @@ Primary.args = {
     max: 100,
     optimum: 0,
     value: 50,
-    variant: 'default',
 };
 
 export const Basic = () => {
     return (
         <>
-            <Meter value={20} />
-            <Meter value={80} />
-            <Meter value={100} />
+            <Meter className="mt1 mb1" value={20} />
+            <Meter className="mt1 mb1" value={75} />
+            <Meter className="mt1 mb1" value={100} />
         </>
     );
 };
@@ -38,8 +37,8 @@ export const Basic = () => {
 export const Variants = () => {
     return (
         <>
-            <Meter value={40} />
-            <Meter variant="thin" value={40} />
+            <Meter className="mt1 mb1" value={40} />
+            <Meter className="mt1 mb1" thin value={40} />
         </>
     );
 };
