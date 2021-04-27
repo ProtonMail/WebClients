@@ -57,7 +57,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { omit, pick } from 'proton-shared/lib/helpers/object';
 import { getCurrentUnixTimestamp } from 'proton-shared/lib/helpers/time';
-import { Address, Api, GetCanonicalEmails } from 'proton-shared/lib/interfaces';
+import { Address, Api } from 'proton-shared/lib/interfaces';
 import {
     Calendar,
     CalendarEvent,
@@ -75,6 +75,7 @@ import {
     VcalVeventComponent,
 } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { GetCanonicalEmails } from 'proton-shared/lib/interfaces/hooks/GetCanonicalEmails';
 import { RequireSome, Unwrap } from 'proton-shared/lib/interfaces/utils';
 import { getPrimaryKey } from 'proton-shared/lib/keys';
 import { MessageExtendedWithData } from '../../models/message';
