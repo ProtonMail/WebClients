@@ -38,7 +38,6 @@ import {
     PlanSelection,
     SubscriptionCheckout,
     useApi,
-    useBeforeUnload,
     useConfig,
     useLoading,
     useModals,
@@ -363,8 +362,6 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
     }, [model.step]);
 
     const { step } = model;
-
-    useBeforeUnload(step === CREATING_ACCOUNT ? c('Alert').t`By leaving now, you will lose your account.` : '');
 
     if (step === NO_SIGNUP) {
         throw new Error('Missing dependencies');
