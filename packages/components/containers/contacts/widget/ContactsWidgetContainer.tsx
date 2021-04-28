@@ -66,6 +66,8 @@ const ContactsWidgetContainer = ({ onClose, onImport, onCompose }: Props) => {
         0
     );
 
+    const noEmailsContactIDs = selectedIDs.filter((contactID) => !contactEmailsMap[contactID]?.length);
+
     const handleClearSearch = () => {
         // If done synchronously, button is removed from the dom and the dropdown considers a click outside
         setTimeout(() => setSearch(''));
@@ -80,7 +82,7 @@ const ContactsWidgetContainer = ({ onClose, onImport, onCompose }: Props) => {
             return;
         }
 
-        const noEmailsContactIDs = selectedIDs.filter((contactID) => !contactEmailsMap[contactID]?.length);
+        const contactWithEmailIDs = selectedIDs.filter((contactID) => contactEmailsMap[contactID]?.length);
 
         if (noEmailsContactIDs.length) {
             const noEmailsContactNames = noEmailsContactIDs.map(
@@ -97,11 +99,12 @@ const ContactsWidgetContainer = ({ onClose, onImport, onCompose }: Props) => {
                 noEmailsContactNamesCount
             );
 
-            createNotification({ type: 'error', text });
-            return;
+            createNotification({ type: 'warning', text });
         }
 
-        const contactEmailsOfContacts = selectedIDs.map((contactID) => contactEmailsMap[contactID]) as ContactEmail[][];
+        const contactEmailsOfContacts = contactWithEmailIDs.map(
+            (contactID) => contactEmailsMap[contactID]
+        ) as ContactEmail[][];
         const recipients = contactEmailsOfContacts.map((contactEmails) => {
             const contactEmail = contactEmails[0];
             return { Name: contactEmail.Name, Address: contactEmail.Email };
@@ -209,6 +212,7 @@ const ContactsWidgetContainer = ({ onClose, onImport, onCompose }: Props) => {
                 <ContactsWidgetToolbar
                     allChecked={hasCheckedAllFiltered}
                     selectedCount={selectedIDs.length}
+                    noEmailsContactCount={noEmailsContactIDs.length}
                     onCheckAll={handleCheckAll}
                     onCompose={onCompose ? handleCompose : undefined}
                     onForward={handleForward}
