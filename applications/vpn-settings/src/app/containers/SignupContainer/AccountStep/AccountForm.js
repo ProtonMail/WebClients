@@ -15,6 +15,7 @@ import {
     useLoading,
     Info,
     Challenge,
+    ChallengeError,
     captureChallengeMessage,
 } from 'react-components';
 import { c } from 'ttag';
@@ -131,6 +132,10 @@ const AccountForm = ({ model, onSubmit }) => {
         errorRef.current = true;
         incrementChallengeCounters();
     };
+
+    if (errorRef.current) {
+        return <ChallengeError />;
+    }
 
     return (
         <>
