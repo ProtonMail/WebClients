@@ -136,7 +136,7 @@ const SubscriptionModal = ({
             await Promise.all(
                 (calendars || []).map((calendar) => api<CalendarUrlsResponse>(getPublicLinks(calendar.ID)))
             )
-        ).flat().length;
+        ).flatMap(({ CalendarUrls }) => CalendarUrls).length;
 
         if (calendars.length > MAX_CALENDARS_PER_FREE_USER || hasLinks) {
             await new Promise<void>((resolve, reject) => {
