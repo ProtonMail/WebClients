@@ -32,6 +32,7 @@ interface Props {
     onCompose: OnCompose;
     breakpoints: Breakpoints;
     onMessageReady: () => void;
+    columnLayout: boolean;
 }
 
 const DEFAULT_FILTER_VALUE = true;
@@ -46,6 +47,7 @@ const ConversationView = ({
     onCompose,
     breakpoints,
     onMessageReady,
+    columnLayout,
 }: Props) => {
     const [labels = []] = useLabels();
     const {
@@ -151,6 +153,7 @@ const ConversationView = ({
                         breakpoints={breakpoints}
                         onFocus={handleFocus}
                         onMessageReady={onMessageReady}
+                        columnLayout={columnLayout}
                     />
                 ))}
             </div>

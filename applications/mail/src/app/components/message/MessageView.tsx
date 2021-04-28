@@ -39,6 +39,7 @@ interface Props {
     breakpoints: Breakpoints;
     onFocus?: (index: number) => void;
     onMessageReady?: () => void;
+    columnLayout?: boolean;
 }
 
 export interface MessageViewRef {
@@ -60,6 +61,7 @@ const MessageView = (
         breakpoints,
         onFocus = noop,
         onMessageReady,
+        columnLayout = false,
     }: Props,
     ref: Ref<MessageViewRef>
 ) => {
@@ -129,7 +131,9 @@ const MessageView = (
             // Should be prevented before, but as an extra security...
             if (!isDraft(message.data)) {
                 setExpanded(true);
-                elementRef.current?.focus();
+                if (!columnLayout) {
+                    elementRef.current?.focus();
+                }
             }
         },
     }));
