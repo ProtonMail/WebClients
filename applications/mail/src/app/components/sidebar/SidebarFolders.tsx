@@ -1,7 +1,7 @@
 import React, { ReactNode, memo } from 'react';
-
 import { Folder, FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
 
+import { getUnreadCount } from '../../helpers/sidebar';
 import SidebarFolder from './SidebarFolder';
 import EmptyFolders from './EmptyFolders';
 import { UnreadCounts } from './MailSidebarList';
@@ -34,7 +34,7 @@ const SidebarFolders = ({
                 level={level}
                 onToggle={handleToggleFolder}
                 expanded={Boolean(folder.Expanded)}
-                unreadCount={counterMap[folder.ID]}
+                unreadCount={getUnreadCount(counterMap, folder)}
                 id={folder.ID}
                 onFocus={() => updateFocusItem(folder.ID)}
             />
