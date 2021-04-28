@@ -1,12 +1,12 @@
 import {
-    removeService,
-    switchPlan,
     clearPlanIDs,
-    hasPlanIDs,
-    setQuantity,
     getHasPlanType,
+    hasPlanIDs,
+    removeService,
+    setQuantity,
+    switchPlan,
 } from '../../lib/helpers/planIDs';
-import { PLAN_SERVICES, PLANS, ADDON_NAMES } from '../../lib/constants';
+import { ADDON_NAMES, PLAN_SERVICES, PLANS } from '../../lib/constants';
 import { Organization, Plan } from '../../lib/interfaces';
 
 const MOCK_PLANS = [
@@ -41,7 +41,7 @@ const MOCK_PLANS = [
         MaxVPN: 10,
     },
     { Name: PLANS.VPNBASIC, ID: PLANS.VPNBASIC, Services: PLAN_SERVICES.VPN, MaxVPN: 2 },
-    { Name: PLANS.VPNPLUS, ID: PLANS.VPNPLUS, Services: PLAN_SERVICES.VPN, MaxVPN: 5 },
+    { Name: PLANS.VPNPLUS, ID: PLANS.VPNPLUS, Services: PLAN_SERVICES.VPN, MaxVPN: 10 },
     { Name: ADDON_NAMES.ADDRESS, ID: ADDON_NAMES.ADDRESS, Services: PLAN_SERVICES.MAIL, MaxAddresses: 5 },
     { Name: ADDON_NAMES.DOMAIN, ID: ADDON_NAMES.DOMAIN, Services: PLAN_SERVICES.MAIL, MaxDomains: 1 },
     {
@@ -238,16 +238,68 @@ describe('switchPlan', () => {
         expect(result).toEqual({
             [PLANS.PROFESSIONAL]: 1,
             [PLANS.VPNPLUS]: 1,
-            [ADDON_NAMES.VPN]: 6,
+            [ADDON_NAMES.VPN]: 1,
         });
     });
 
     it('should keep ProtonVPN Plus if already selected when selecting ProtonMail Professional', () => {
-        const planIDs = { [PLANS.VPNPLUS]: 1 };
-        const planID = PLANS.PROFESSIONAL;
-        const service = PLAN_SERVICES.MAIL;
-        const result = switchPlan({ planIDs, plans: MOCK_PLANS, planID, service });
+        const result = switchPlan({
+            planIDs: { [PLANS.VPNPLUS]: 1 },
+            plans: MOCK_PLANS,
+            planID: PLANS.PROFESSIONAL,
+            service: PLAN_SERVICES.MAIL,
+        });
         expect(result).toEqual({
+            [PLANS.PROFESSIONAL]: 1,
+            [PLANS.VPNPLUS]: 1,
+        });
+    });
+
+    it('should keep the ProtonVPN Basic plan when selecting ProtonMail Professional', () => {
+        const organization = {
+            UsedVPN: 2,
+            MaxVPN: 2,
+        } as Organization;
+        const result = switchPlan({
+            planIDs: { [PLANS.VPNBASIC]: 1 },
+            plans: MOCK_PLANS,
+            planID: PLANS.PROFESSIONAL,
+            service: PLAN_SERVICES.MAIL,
+            organization,
+        });
+        expect(result).toEqual({
+            [PLANS.PROFESSIONAL]: 1,
+            [PLANS.VPNBASIC]: 1,
+        });
+    });
+
+    it('should keep the ProtonVPN Basic plan and Mail plan when selecting ProtonMail Professional', () => {
+        const organization = {
+            UsedVPN: 2,
+            MaxVPN: 2,
+        } as Organization;
+        const result = switchPlan({
+            planIDs: { [PLANS.PLUS]: 1, [PLANS.VPNBASIC]: 1 },
+            plans: MOCK_PLANS,
+            planID: PLANS.PROFESSIONAL,
+            service: PLAN_SERVICES.MAIL,
+            organization,
+        });
+        expect(result).toEqual({
+            [PLANS.PROFESSIONAL]: 1,
+            [PLANS.VPNBASIC]: 1,
+        });
+    });
+
+    it('should keep the ProtonVPN Plus plan when selecting ProtonMail Professional', () => {
+        expect(
+            switchPlan({
+                planIDs: { [PLANS.PLUS]: 1, [PLANS.VPNPLUS]: 1 },
+                plans: MOCK_PLANS,
+                planID: PLANS.PROFESSIONAL,
+                service: PLAN_SERVICES.MAIL,
+            })
+        ).toEqual({
             [PLANS.PROFESSIONAL]: 1,
             [PLANS.VPNPLUS]: 1,
         });
