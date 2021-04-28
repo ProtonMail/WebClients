@@ -110,9 +110,11 @@ const ConversationView = ({
         if (onlyTrashInConversation) {
             // unblock J/K shortcuts
             setTimeout(onMessageReady);
-            trashWarningRef?.current?.focus();
+            if (!columnLayout) {
+                trashWarningRef.current?.focus();
+            }
         }
-    }, [onlyTrashInConversation, conversationID]);
+    }, [onlyTrashInConversation, conversationID, columnLayout]);
 
     return (
         <>
