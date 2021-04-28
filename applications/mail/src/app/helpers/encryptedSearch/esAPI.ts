@@ -3,8 +3,7 @@ import { Api } from 'proton-shared/lib/interfaces';
 import { getEvents, getLatestID } from 'proton-shared/lib/api/events';
 import { getMessage, queryMessageMetadata } from 'proton-shared/lib/api/messages';
 import { wait } from 'proton-shared/lib/helpers/promise';
-import { randomHexString4 } from 'proton-shared/lib/helpers/uid';
-import { GetUserKeys, MetricsReport } from '../../models/encryptedSearch';
+import { GetUserKeys, ESMetricsReport } from '../../models/encryptedSearch';
 import { Event } from '../../models/event';
 import { ES_LIMIT } from '../../constants';
 import { getNumMessagesDB } from './esUtils';
@@ -94,7 +93,6 @@ export const sendESMetrics = async (
     isCacheLimited: boolean
 ) => {
     const Log = 'encrypted_search';
-    const ID = [randomHexString4(), randomHexString4(), randomHexString4(), randomHexString4()].join('');
     // Random number of seconds between 1 second and 3 minutes, expressed in milliseconds
     const randomDelay = 1000 * Math.floor(180 * Math.random() + 1);
     const storeManager = navigator.storage;
@@ -114,7 +112,7 @@ export const sendESMetrics = async (
         wait(randomDelay),
     ]);
 
-    const ESMetricsReport: MetricsReport = {
+    const Data: ESMetricsReport = {
         numMessagesIDB,
         sizeIDB,
         sizeIDBOnDisk,
@@ -129,6 +127,6 @@ export const sendESMetrics = async (
     return apiHelper<{ Code: number }>(api, undefined, {
         method: 'post',
         url: 'metrics',
-        data: { Log, ID, ESMetricsReport },
+        data: { Log, Data },
     });
 };
