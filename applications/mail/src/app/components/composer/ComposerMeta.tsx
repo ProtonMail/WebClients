@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent, MutableRefObject } from 'react';
 import { c } from 'ttag';
-import { Label, Input, generateUID } from 'react-components';
+import { Label, Input, generateUID, classnames } from 'react-components';
 import ComposerAddresses from './addresses/Addresses';
 import { MessageExtended } from '../../models/message';
 import { MessageChange } from './Composer';
@@ -36,7 +36,10 @@ const ComposerMeta = ({
     return (
         <div className="composer-meta w100 flex-item-noshrink">
             <div className="flex flex-row flex-nowrap flex-align-items-center m0-5 pl0-5 pr0-5">
-                <Label htmlFor={`from-${uid}`} className="composer-meta-label pt0 text-bold">
+                <Label
+                    htmlFor={`from-${uid}`}
+                    className={classnames(['composer-meta-label pt0 text-bold', disabled && 'placeholder'])}
+                >
                     {c('Info').t`From`}
                 </Label>
                 <SelectSender
@@ -56,7 +59,10 @@ const ComposerMeta = ({
                 addressesFocusRef={addressesFocusRef}
             />
             <div className="flex flex-row flex-nowrap flex-align-items-center m0-5 pl0-5 pr0-5">
-                <Label htmlFor={`subject-${uid}`} className="composer-meta-label pt0 text-bold">
+                <Label
+                    htmlFor={`subject-${uid}`}
+                    className={classnames(['composer-meta-label pt0 text-bold', disabled && 'placeholder'])}
+                >
                     {c('Info').t`Subject`}
                 </Label>
                 <Input

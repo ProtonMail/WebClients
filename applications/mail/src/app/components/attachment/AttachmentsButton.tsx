@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useRef, useEffect } from 'react';
+import React, { ChangeEvent, useRef, useEffect, forwardRef, Ref } from 'react';
 import { ButtonLike, ButtonLikeProps, classnames, Icon } from 'react-components';
 
 interface Props extends ButtonLikeProps<'label'> {
@@ -8,47 +8,49 @@ interface Props extends ButtonLikeProps<'label'> {
     isAttachments?: boolean;
 }
 
-const AttachmentsButton = React.forwardRef(
-    ({ onAddAttachments, disabled, isAttachments, attachmentTriggerRef, ...rest }: Props, ref: typeof rest.ref) => {
-        const inputRef = useRef<HTMLInputElement>(null);
-        const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-            const input = event.target;
-            if (input.files) {
-                onAddAttachments([...input.files]);
-                input.value = '';
-            }
-        };
+const AttachmentsButton = (
+    { onAddAttachments, disabled, isAttachments, attachmentTriggerRef, ...rest }: Props,
+    ref: Ref<HTMLLabelElement>
+) => {
+    const inputRef = useRef<HTMLInputElement>(null);
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const input = event.target;
+        if (input.files) {
+            onAddAttachments([...input.files]);
+            input.value = '';
+        }
+    };
 
-        const triggerAttachment = () => inputRef?.current?.click();
+    const triggerAttachment = () => inputRef?.current?.click();
 
-        useEffect(() => {
-            attachmentTriggerRef.current = triggerAttachment;
-        }, []);
+    useEffect(() => {
+        attachmentTriggerRef.current = triggerAttachment;
+    }, []);
 
-        return (
-            <div className="composer-attachments-button-wrapper flex">
-                <ButtonLike
-                    icon
-                    role="button"
-                    as="label"
-                    className={classnames([disabled && 'is-disabled', isAttachments && 'is-selected'])}
-                    ref={ref}
-                    {...rest}
-                    data-testid="composer:attachment-button"
-                >
-                    <Icon name="attach" />
-                    <input
-                        ref={inputRef}
-                        type="file"
-                        multiple
-                        onChange={handleChange}
-                        className="composer-attachments-button"
-                        data-testid="composer-attachments-button"
-                    />
-                </ButtonLike>
-            </div>
-        );
-    }
-);
+    return (
+        <div className="composer-attachments-button-wrapper flex">
+            <ButtonLike
+                icon
+                role="button"
+                as="label"
+                className={classnames([disabled && 'is-disabled', isAttachments && 'is-selected'])}
+                ref={ref}
+                {...rest}
+                data-testid="composer:attachment-button"
+            >
+                <Icon name="attach" />
+                <input
+                    ref={inputRef}
+                    type="file"
+                    multiple
+                    disabled={disabled}
+                    onChange={handleChange}
+                    className="composer-attachments-button"
+                    data-testid="composer-attachments-button"
+                />
+            </ButtonLike>
+        </div>
+    );
+};
 
-export default AttachmentsButton;
+export default forwardRef(AttachmentsButton);

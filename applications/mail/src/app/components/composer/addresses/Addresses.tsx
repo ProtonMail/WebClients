@@ -53,12 +53,20 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
         setTimeout(() => addressesFocusRef.current(), 100);
     }, [disabled]);
 
-    const handleToggleExpanded = useCallback((e: MouseEvent<HTMLButtonElement>) => {
-        e.stopPropagation();
-        setEditor(true);
-        setExpanded(true);
-        setTimeout(() => inputFocusRefs.cc.current(), 100);
-    }, []);
+    const handleToggleExpanded = useCallback(
+        (e: MouseEvent<HTMLButtonElement>) => {
+            e.stopPropagation();
+
+            if (disabled) {
+                return false;
+            }
+
+            setEditor(true);
+            setExpanded(true);
+            setTimeout(() => inputFocusRefs.cc.current(), 100);
+        },
+        [disabled]
+    );
 
     return editor ? (
         <AddressesEditor
@@ -72,6 +80,7 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
     ) : (
         <AddressesSummary
             message={message.data}
+            disabled={disabled}
             mapSendInfo={messageSendInfo.mapSendInfo}
             onFocus={handleFocus}
             toggleExpanded={handleToggleExpanded}

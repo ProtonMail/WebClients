@@ -1,10 +1,9 @@
+import React, { memo, Fragment, MouseEvent } from 'react';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { getRecipients } from 'proton-shared/lib/mail/messages';
-import React, { memo, Fragment, MouseEvent } from 'react';
 import { c } from 'ttag';
 import { Label, LinkButton, classnames } from 'react-components';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
-
 import { MapSendInfo, STATUS_ICONS_FILLS } from '../../../models/crypto';
 import { recipientTypes } from '../../../models/address';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
@@ -12,19 +11,25 @@ import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 
 interface Props {
     message: Message | undefined;
+    disabled: boolean;
     mapSendInfo?: MapSendInfo;
     onFocus: () => void;
     toggleExpanded: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
-const AddressesSummary = ({ message, mapSendInfo, toggleExpanded, onFocus }: Props) => {
+const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFocus }: Props) => {
     const { getRecipientsOrGroups, getRecipientsOrGroupsLabels, getRecipientOrGroupLabel } = useRecipientLabel();
     const title = getRecipientsOrGroupsLabels(getRecipientsOrGroups(getRecipients(message))).join(', ');
     return (
         <div className="flex flex-row flex-nowrap flex-align-items-center m0-5 pl0-5 pr0-5 relative">
-            <Label className="composer-meta-label pr0-5 pt0 text-bold">{c('Title').t`To`}</Label>
+            <Label className={classnames(['composer-meta-label pr0-5 pt0 text-bold', disabled && 'placeholder'])}>
+                {c('Title').t`To`}
+            </Label>
             <div
-                className="field flex composer-addresses-fakefield flex-row flex-item-fluid w100"
+                className={classnames([
+                    'field flex composer-addresses-fakefield flex-row flex-item-fluid w100 ',
+                    disabled && 'disabled',
+                ])}
                 onClick={onFocus}
                 onFocus={onFocus}
                 tabIndex={0}
@@ -68,7 +73,7 @@ const AddressesSummary = ({ message, mapSendInfo, toggleExpanded, onFocus }: Pro
                                         >
                                             <span>
                                                 <span className="composer-addresses-addressIcon relative mr0-25">
-                                                    {icon && <EncryptionStatusIcon {...icon} />}
+                                                    {icon && <EncryptionStatusIcon {...icon} disabled={disabled} />}
                                                 </span>
                                                 <span className="max-w100 text-ellipsis">
                                                     {getRecipientOrGroupLabel(recipientOrGroup)}
@@ -87,6 +92,7 @@ const AddressesSummary = ({ message, mapSendInfo, toggleExpanded, onFocus }: Pro
                 className="composer-addresses-ccbcc composer-addresses-ccbcc-fakefield text-no-decoration text-strong"
                 title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
                 onClick={toggleExpanded}
+                disabled={disabled}
             >
                 {c('Action').t`CC, BCC`}
             </LinkButton>
