@@ -100,7 +100,7 @@ export const ExportModal = ({ calendar, ...rest }: Props) => {
     })();
 
     return (
-        <FormModal title={c('Title').t`Exporting calendar`} {...modalProps} {...rest}>
+        <FormModal title={c('Title').t`Export calendar`} {...modalProps} {...rest}>
             {content}
         </FormModal>
     );
