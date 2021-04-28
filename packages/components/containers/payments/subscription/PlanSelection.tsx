@@ -84,7 +84,13 @@ const getFeatures = (plan: Plan, service: PLAN_SERVICES, vpnCountries: VPNCountr
 
     if (planName === 'free_vpn') {
         return [
-            { content: c('Plan feature').t`17 servers in ${freeCountries} countries` },
+            {
+                content: c('Plan feature').ngettext(
+                    msgid`17 servers in ${freeCountries} country`,
+                    `17 servers in ${freeCountries} countries`,
+                    freeCountries
+                ),
+            },
             vpnConnections,
             { content: c('Plan feature').t`Medium speed` },
             { ...adBlocker, notIncluded: true },
@@ -95,7 +101,13 @@ const getFeatures = (plan: Plan, service: PLAN_SERVICES, vpnCountries: VPNCountr
 
     if (planName === PLANS.VPNBASIC) {
         return [
-            { content: c('Plan feature').t`350+ servers in ${basicCountries} countries` },
+            {
+                content: c('Plan feature').ngettext(
+                    msgid`350+ servers in ${basicCountries} country`,
+                    `350+ servers in ${basicCountries} countries`,
+                    basicCountries
+                ),
+            },
             vpnConnections,
             { content: c('Plan feature').t`High speed` },
             { ...adBlocker, notIncluded: true },
@@ -106,7 +118,13 @@ const getFeatures = (plan: Plan, service: PLAN_SERVICES, vpnCountries: VPNCountr
 
     if (planName === PLANS.VPNPLUS) {
         return [
-            { content: c('Plan feature').t`1200+ servers in ${plusCountries} countries` },
+            {
+                content: c('Plan feature').ngettext(
+                    msgid`1200+ servers in ${plusCountries} country`,
+                    `1200+ servers in ${plusCountries} countries`,
+                    plusCountries
+                ),
+            },
             vpnConnections,
             { content: c('Plan feature').t`Highest speed (up to 10 Gbps)` },
             adBlocker,
