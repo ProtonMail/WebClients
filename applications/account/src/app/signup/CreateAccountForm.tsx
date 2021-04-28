@@ -12,6 +12,7 @@ import {
     ChallengeResult,
     ChallengeRef,
     captureChallengeMessage,
+    ChallengeError,
 } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { queryCheckUsernameAvailability, queryVerificationCode } from 'proton-shared/lib/api/user';
@@ -51,6 +52,7 @@ const CreateAccountForm = ({
     const challengeRefLogin = useRef<ChallengeRef>();
     const [loading, withLoading] = useLoading();
     const [challengeLoading, setChallengeLoading] = useState(hasChallenge);
+    const [challengeError, setChallengeError] = useState(false);
     const [usernameError, setUsernameError] = useState('');
 
     const getOnChange = (field: keyof SignupModel) => (value: string) => onChange({ [field]: value });
@@ -158,6 +160,10 @@ const CreateAccountForm = ({
             </div>
         );
 
+    if (challengeError) {
+        return <ChallengeError />;
+    }
+
     return (
         <>
             {challengeLoading && (
@@ -188,6 +194,7 @@ const CreateAccountForm = ({
                         }}
                         onError={(logs) => {
                             setChallengeLoading(false);
+                            setChallengeError(true);
                             captureChallengeMessage('Failed to load CreateAccountForm iframe fatally', logs);
                         }}
                     >
