@@ -11,9 +11,9 @@ const MergeTableHeader = () => {
         <thead className="orderableTableHeader">
             <tr>
                 <TableCell type="header"> </TableCell>
-                <TableCell type="header">{c('TableHeader').t`NAME`}</TableCell>
-                <TableCell type="header">{c('TableHeader').t`ADDRESS`}</TableCell>
-                <TableCell type="header">{c('TableHeader').t`ACTIONS`}</TableCell>
+                <TableCell type="header">{c('TableHeader').t`Name`}</TableCell>
+                <TableCell type="header">{c('TableHeader').t`Address`}</TableCell>
+                <TableCell type="header">{c('TableHeader').t`Actions`}</TableCell>
             </tr>
         </thead>
     );
