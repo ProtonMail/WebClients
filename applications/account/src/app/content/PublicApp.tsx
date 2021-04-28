@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 import * as H from 'history';
 import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
@@ -19,7 +19,7 @@ import { DEFAULT_APP, getAppFromPathname, getSlugFromApp } from 'proton-shared/l
 import AccountPublicApp from './AccountPublicApp';
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
 import SwitchAccountContainer from '../public/SwitchAccountContainer';
-import SignupContainer from '../signup/SignupContainer';
+import SignupContainer, { getSearchParams as getSignupSearchParams } from '../signup/SignupContainer';
 import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
 import LoginContainer from '../login/LoginContainer';
@@ -66,6 +66,12 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const ignoreAutoRef = useRef(false);
     const [hasBackToSwitch, setHasBackToSwitch] = useState(false);
 
+    const signupSearchParams = useMemo(() => {
+        return location.pathname.includes(SSO_PATHS.SIGNUP)
+            ? getSignupSearchParams(history.location.search)
+            : undefined;
+    }, []);
+
     const [localRedirect] = useState(() => {
         const localLocation = [
             SSO_PATHS.SWITCH,
@@ -88,7 +94,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     });
 
     // Either another app wants to fork, or a specific route is requested on this app, or we just go to default
-    const toApp = forkState?.app || localRedirect?.toApp || DEFAULT_APP;
+    const toApp = forkState?.app || localRedirect?.toApp || signupSearchParams?.service || DEFAULT_APP;
 
     const handleLogin = async (args: OnLoginCallbackArguments) => {
         const { keyPassword, UID, User, LocalID } = args;
@@ -133,6 +139,9 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         // Ignore the automatic login behavior when the initial load was from a fork request
         if (ignoreAutoRef.current) {
             setActiveSessions(sessions);
+            if (sessions.length >= 1) {
+                setHasBackToSwitch(true);
+            }
             return false;
         }
         if (location.pathname === SSO_PATHS.SWITCH) {
@@ -202,6 +211,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                             toApp={toApp}
                                             onLogin={handleLogin}
                                             onBack={hasBackToSwitch ? () => history.push('/login') : undefined}
+                                            signupParameters={signupSearchParams}
                                         />
                                     </Route>
                                     <Route path={SSO_PATHS.RESET_PASSWORD}>

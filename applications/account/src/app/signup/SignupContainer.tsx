@@ -1,30 +1,44 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as History from 'history';
 import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
-import { APP_NAMES, PAYMENT_METHOD_TYPES, PLAN_SERVICES, TOKEN_TYPES } from 'proton-shared/lib/constants';
+import {
+    APP_NAMES,
+    CYCLE,
+    PAYMENT_METHOD_TYPES,
+    PLAN_SERVICES,
+    PLAN_TYPES,
+    PLANS,
+    TOKEN_TYPES,
+} from 'proton-shared/lib/constants';
 import { checkSubscription, subscribe } from 'proton-shared/lib/api/payments';
 import { c } from 'ttag';
 import {
     Address,
     Api,
     Currency,
+    Cycle,
     HumanVerificationMethodType,
     SubscriptionCheckResponse,
     User as tsUser,
 } from 'proton-shared/lib/interfaces';
 import { queryAddresses } from 'proton-shared/lib/api/addresses';
 import { persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
-import { useHistory } from 'react-router-dom';
 import { updateLocale } from 'proton-shared/lib/api/settings';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { handleSetupAddress, handleSetupKeys } from 'proton-shared/lib/keys';
 import { localeCode } from 'proton-shared/lib/i18n';
 import { getUser } from 'proton-shared/lib/api/user';
 import {
+    Alert,
+    Button,
+    ChallengeResult,
     HumanVerificationForm,
-    PlanSelection,
     OnLoginCallback,
+    Payment as PaymentComponent,
+    PlanSelection,
+    SubscriptionCheckout,
     useApi,
+    useBeforeUnload,
     useConfig,
     useLoading,
     useModals,
@@ -32,18 +46,19 @@ import {
     usePayment,
     usePlans,
     useVPNCountriesCount,
-    ChallengeResult,
 } from 'react-components';
 import { Payment, PaymentParameters } from 'react-components/containers/payments/interface';
 import { handlePaymentToken } from 'react-components/containers/payments/paymentTokenHelper';
 import { Steps } from 'react-components/containers/api/humanVerification/HumanVerificationForm';
-import { hasPlanIDs } from 'proton-shared/lib/helpers/planIDs';
+import PlanCustomization from 'react-components/containers/payments/subscription/PlanCustomization';
+import { getHasPlanType, hasPlanIDs } from 'proton-shared/lib/helpers/planIDs';
+import { getFreeCheckResult } from 'proton-shared/lib/subscription/freePlans';
 
 import BackButton from '../public/BackButton';
 import CreateAccountForm from './CreateAccountForm';
 import RecoveryForm from './RecoveryForm';
 import { HumanVerificationError, PlanIDs, SERVICES, SERVICES_KEYS, SIGNUP_STEPS, SignupModel } from './interfaces';
-import { DEFAULT_CHECK_RESULT, DEFAULT_SIGNUP_MODEL } from './constants';
+import { DEFAULT_SIGNUP_MODEL } from './constants';
 import { getToAppName } from '../public/helper';
 import createHumanApi from './helpers/humanApi';
 import CreatingAccount from './CreatingAccount';
@@ -56,13 +71,7 @@ import Main from '../public/Main';
 import Footer from '../public/Footer';
 import SignupSupportDropdown from './SignupSupportDropdown';
 import VerificationCodeForm from './VerificationCodeForm';
-import PaymentForm from './PaymentForm';
-
-interface Props {
-    onLogin: OnLoginCallback;
-    toApp?: APP_NAMES;
-    onBack?: () => void;
-}
+import CheckoutButton from './CheckoutButton';
 
 const {
     ACCOUNT_CREATION_USERNAME,
@@ -70,7 +79,8 @@ const {
     RECOVERY_EMAIL,
     RECOVERY_PHONE,
     VERIFICATION_CODE,
-    PLANS,
+    PLANS: PLANS_STEP,
+    CUSTOMISATION,
     PAYMENT,
     HUMAN_VERIFICATION,
     CREATING_ACCOUNT,
@@ -80,15 +90,22 @@ interface CacheRef {
     payload?: { [key: string]: string };
 }
 
-const getSearchParams = (search: History.Search) => {
+export const getSearchParams = (search: History.Search) => {
     const searchParams = new URLSearchParams(search);
-    const maybeCurrency = searchParams.get('currency');
-    const currency = ['EUR', 'CHF', 'USD'].includes(maybeCurrency as any) ? (maybeCurrency as Currency) : undefined;
 
-    const cycle = Number(searchParams.get('billing'));
+    const maybeCurrency = searchParams.get('currency') as Currency | undefined;
+    const currency = maybeCurrency && ['EUR', 'CHF', 'USD'].includes(maybeCurrency) ? maybeCurrency : undefined;
+
+    const maybeCycle = Number(searchParams.get('billing')) || Number(searchParams.get('cycle'));
+    const cycle = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(maybeCycle) ? maybeCycle : undefined;
+
+    const maybeService = searchParams.get('service') as SERVICES_KEYS | undefined;
+    const service = maybeService ? SERVICES[maybeService] : undefined;
+
     const preSelectedPlan = searchParams.get('plan');
-    const service = searchParams.get('service') as SERVICES_KEYS | undefined;
-    return { currency, cycle, preSelectedPlan, service: service ? SERVICES[service] : undefined };
+    // plan validated later
+
+    return { currency, cycle, preSelectedPlan, service };
 };
 
 const getCardPayment = async ({
@@ -116,20 +133,21 @@ const getCardPayment = async ({
     });
 };
 
-const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
-    const history = useHistory();
-    const { currency, cycle, preSelectedPlan, service } = useMemo(() => {
-        return getSearchParams(history.location.search);
-    }, [history.location.search]);
+interface Props {
+    onLogin: OnLoginCallback;
+    toApp?: APP_NAMES;
+    onBack?: () => void;
+    signupParameters?: ReturnType<typeof getSearchParams>;
+}
 
+const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) => {
     const api = useApi();
     const { createModal } = useModals();
     const { CLIENT_TYPE } = useConfig();
-    const [plans] = usePlans();
+    const [plans = []] = usePlans();
     const [myLocation] = useMyLocation();
     const [loading, withLoading] = useLoading();
     const [vpnCountries] = useVPNCountriesCount();
-    const [checkResult, setCheckResult] = useState<SubscriptionCheckResponse>(DEFAULT_CHECK_RESULT);
 
     const cacheRef = useRef<CacheRef>({});
     const [humanApi] = useState(() => createHumanApi({ api, createModal }));
@@ -144,9 +162,9 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
 
     const [model, setModel] = useState<SignupModel>({
         ...DEFAULT_SIGNUP_MODEL,
-        ...(currency ? { currency } : {}),
-        ...(cycle ? { cycle } : {}),
-        // NOTE preSelectedPlan is used in a useEffect
+        ...(signupParameters?.currency ? { currency: signupParameters?.currency } : {}),
+        ...(signupParameters?.cycle ? { cycle: signupParameters?.cycle } : {}),
+        checkResult: getFreeCheckResult(signupParameters?.currency, signupParameters?.cycle),
     });
 
     const setModelDiff = (diff: Partial<SignupModel>) => setModel((model) => ({ ...model, ...diff }));
@@ -164,7 +182,7 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
         paypal,
         paypalCredit,
     } = usePayment({
-        amount: checkResult.AmountDue,
+        amount: model.checkResult.AmountDue,
         currency: model.currency,
         onPay({ Payment }: PaymentParameters) {
             if (!Payment) {
@@ -191,6 +209,7 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
 
         let actualPayment = payment;
         const {
+            checkResult,
             step: oldStep,
             username,
             password,
@@ -204,7 +223,7 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
 
         if (isBuyingPaidPlan && method === PAYMENT_METHOD_TYPES.CARD) {
             const { Payment } = await getCardPayment({
-                currency: model.currency,
+                currency,
                 createModal,
                 api,
                 paymentParameters,
@@ -300,48 +319,58 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
         withLoading(fetchDependencies());
     }, []);
 
-    useEffect(() => {
-        // Pre-select plan
-        if (Array.isArray(plans) && preSelectedPlan) {
-            const plan = plans.find(({ Name }) => Name === preSelectedPlan);
-            if (plan) {
-                const planIDs = { [plan.ID]: 1 };
-                setModelDiff({ planIDs });
-            }
+    const getSubscriptionPrices = async (planIDs: PlanIDs, currency: Currency, cycle: Cycle, couponCode?: string) => {
+        if (!hasPlanIDs(planIDs)) {
+            return getFreeCheckResult(currency, cycle);
         }
+        return humanApi.api<SubscriptionCheckResponse>(
+            checkSubscription({
+                PlanIDs: planIDs,
+                Currency: currency,
+                Cycle: cycle,
+                CouponCode: couponCode,
+            })
+        );
+    };
+
+    const preSelectedPlanRunRef = useRef(false);
+    useEffect(() => {
+        if (preSelectedPlanRunRef.current) {
+            return;
+        }
+        if (!Array.isArray(plans) || !plans.length || !signupParameters?.preSelectedPlan) {
+            return;
+        }
+        const plan = plans.find(({ Name, Type }) => {
+            return Name === signupParameters.preSelectedPlan && Type === PLAN_TYPES.PLAN;
+        });
+        if (!plan) {
+            return;
+        }
+        preSelectedPlanRunRef.current = true;
+        const planIDs = { [plan.ID]: 1 };
+        const run = async () => {
+            const checkResult = await getSubscriptionPrices(planIDs, model.currency, model.cycle);
+            setModelDiff({ checkResult, planIDs, skipPlanStep: true });
+        };
+        run();
     }, [plans]);
 
     useEffect(() => {
-        if (model.step === PLANS) {
+        if (model.step === PLANS_STEP) {
             setCard('cvc', '');
         }
     }, [model.step]);
 
-    useEffect(() => {
-        const check = async () => {
-            const result = await humanApi.api<SubscriptionCheckResponse>(
-                checkSubscription({
-                    PlanIDs: model.planIDs,
-                    Currency: model.currency,
-                    Cycle: model.cycle,
-                    // CouponCode: model.couponCode
-                })
-            );
-            setCheckResult(result);
-        };
-        if (hasPlanIDs(model.planIDs)) {
-            withLoading(check());
-        }
-    }, [model.cycle, model.planIDs]);
-
     const { step } = model;
+
+    useBeforeUnload(step === CREATING_ACCOUNT ? c('Alert').t`By leaving now, you will lose your account.` : '');
 
     if (step === NO_SIGNUP) {
         throw new Error('Missing dependencies');
     }
 
-    const forkOrQueryApp = toApp || service;
-    const toAppName = getToAppName(forkOrQueryApp);
+    const toAppName = getToAppName(toApp);
     // TODO: Only some apps are allowed for this
     const disableExternalSignup = true;
 
@@ -349,8 +378,113 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
 
     const [humanVerificationStep, setHumanVerificationStep] = useState(Steps.ENTER_DESTINATION);
 
+    const getHasCustomisationStep = (planIDs: PlanIDs) => {
+        return hasPlanIDs(planIDs) && getHasPlanType(planIDs, plans, PLANS.PROFESSIONAL);
+    };
+
+    const getNextStepPrePayment = () => {
+        if (model.skipPlanStep && hasPlanIDs(model.planIDs)) {
+            if (getHasCustomisationStep(model.planIDs)) {
+                return CUSTOMISATION;
+            }
+            return PAYMENT;
+        }
+        return PLANS_STEP;
+    };
+
+    const getPaymentOrCustomisationStep = (planIDs: PlanIDs) => {
+        if (getHasCustomisationStep(planIDs)) {
+            return CUSTOMISATION;
+        }
+        return PAYMENT;
+    };
+
+    const updateCheckResultTogether = async (
+        planIDs: PlanIDs,
+        currency: Currency,
+        cycle: Cycle,
+        couponCode?: string
+    ) => {
+        setModelDiff({
+            currency,
+            cycle,
+            planIDs,
+            checkResult: await getSubscriptionPrices(planIDs, currency, cycle, couponCode),
+        });
+    };
+
+    const handleChangeCurrency = (currency: Currency) => {
+        setModelDiff({
+            currency,
+        });
+        withLoading(updateCheckResultTogether(model.planIDs, currency, model.cycle));
+    };
+
+    const handleChangeCycle = (cycle: Cycle) => {
+        setModelDiff({
+            cycle,
+        });
+        withLoading(updateCheckResultTogether(model.planIDs, model.currency, cycle));
+    };
+
+    const handleChangePlanIDs = (planIDs: PlanIDs) => {
+        setModelDiff({
+            planIDs,
+        });
+        withLoading(updateCheckResultTogether(planIDs, model.currency, model.cycle));
+    };
+
+    const handleFinalizePlanIDs = async (planIDs: PlanIDs, step: SIGNUP_STEPS) => {
+        setModelDiff({
+            planIDs,
+            checkResult: await getSubscriptionPrices(planIDs, model.currency, model.cycle),
+            step,
+        });
+    };
+
+    const subscriptionCheckout = (
+        <div className="subscriptionCheckout-column bg-weak on-mobile-w100">
+            <div className="subscriptionCheckout-container">
+                <SubscriptionCheckout
+                    submit={
+                        model.step === CUSTOMISATION ? (
+                            <Button
+                                type="submit"
+                                loading={loading}
+                                color="norm"
+                                onClick={() => {
+                                    // Ensure that the check result is up to date.
+                                    withLoading(handleFinalizePlanIDs(model.planIDs, PAYMENT));
+                                }}
+                                fullWidth
+                            >{c('Action').t`Proceed to checkout`}</Button>
+                        ) : (
+                            <CheckoutButton
+                                loading={loading}
+                                canPay={canPay}
+                                paypal={paypal}
+                                method={method}
+                                checkResult={model.checkResult}
+                                className="w100"
+                            />
+                        )
+                    }
+                    plans={plans}
+                    checkResult={model.checkResult}
+                    loading={loading}
+                    service={PLAN_SERVICES.MAIL}
+                    currency={model.currency}
+                    cycle={model.cycle}
+                    planIDs={model.planIDs}
+                    onChangeCurrency={handleChangeCurrency}
+                    onChangeCycle={handleChangeCycle}
+                />
+            </div>
+        </div>
+    );
+
     return (
-        <Main larger={[PAYMENT, PLANS].includes(step)}>
+        <Main larger={[PLANS_STEP, CUSTOMISATION, PAYMENT].includes(step)}>
             {step === ACCOUNT_CREATION_USERNAME && (
                 <>
                     <Header
@@ -398,22 +532,19 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
                             hasChallenge={!cacheRef.current.payload || Object.keys(cacheRef.current.payload).length < 2}
                             onSubmit={(payload) => {
                                 addChallengePayload(payload);
-                                const isBuyingPaidPlan = hasPlanIDs(model.planIDs);
-                                if (isBuyingPaidPlan) {
-                                    setModelDiff({ step: PAYMENT });
-                                } else {
-                                    setModelDiff({ step: PLANS });
-                                }
+                                setModelDiff({
+                                    step: getNextStepPrePayment(),
+                                });
                             }}
                             onSkip={(payload) => {
                                 addChallengePayload(payload);
-                                setModelDiff({ step: PLANS, recoveryEmail: '', recoveryPhone: '' });
+                                setModelDiff({ recoveryEmail: '', recoveryPhone: '', step: getNextStepPrePayment() });
                             }}
                         />
                     </Content>
                 </>
             )}
-            {step === PLANS && (
+            {step === PLANS_STEP && (
                 <>
                     <Header
                         title={c('Title').t`Plan selection`}
@@ -436,26 +567,63 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
                     <Content>
                         <PlanSelection
                             mode="signup"
-                            loading={false}
+                            loading={loading}
                             plans={plans || []}
                             currency={model.currency}
                             cycle={model.cycle}
                             planIDs={model.planIDs}
                             service={PLAN_SERVICES.MAIL}
                             vpnCountries={vpnCountries}
-                            onChangePlanIDs={(planIDs) => {
+                            onChangePlanIDs={async (planIDs) => {
                                 if (Object.keys(planIDs).length === 0) {
-                                    setModelDiff({ planIDs: {}, step: CREATING_ACCOUNT });
-                                    return handleFinalizeSignup({ planIDs: {} });
+                                    setModelDiff({
+                                        planIDs,
+                                        checkResult: getFreeCheckResult(model.currency, model.cycle),
+                                        step: CREATING_ACCOUNT,
+                                    });
+                                    return handleFinalizeSignup({ planIDs });
                                 }
-                                setModelDiff({
-                                    planIDs,
-                                    step: PAYMENT,
-                                });
+                                return withLoading(
+                                    handleFinalizePlanIDs(planIDs, getPaymentOrCustomisationStep(planIDs))
+                                );
                             }}
-                            onChangeCurrency={(currency) => setModelDiff({ currency })}
-                            onChangeCycle={(cycle) => setModelDiff({ cycle })}
+                            onChangeCurrency={handleChangeCurrency}
+                            onChangeCycle={handleChangeCycle}
                         />
+                    </Content>
+                </>
+            )}
+            {step === CUSTOMISATION && (
+                <>
+                    <Header
+                        title={c('Title').t`Customize your plan`}
+                        left={
+                            <BackButton
+                                onClick={() => {
+                                    setModelDiff({ step: PLANS_STEP, planIDs: {} });
+                                }}
+                            />
+                        }
+                    />
+                    <Content>
+                        <div className="flex-no-min-children on-mobile-flex-column">
+                            <div className="flex-item-fluid on-mobile-w100 on-tablet-landscape-pr1 on-mobile-pr0">
+                                <div className="mlauto mrauto max-w50e border-bottom-children border-bottom-children--not-last">
+                                    <PlanCustomization
+                                        plans={plans}
+                                        loading={loading}
+                                        currency={model.currency}
+                                        cycle={model.cycle}
+                                        planIDs={model.planIDs}
+                                        service={PLAN_SERVICES.MAIL}
+                                        hasMailPlanPicker={false}
+                                        onChangePlanIDs={handleChangePlanIDs}
+                                        onChangeCycle={handleChangeCycle}
+                                    />
+                                </div>
+                            </div>
+                            {subscriptionCheckout}
+                        </div>
                     </Content>
                 </>
             )}
@@ -466,30 +634,47 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
                         left={
                             <BackButton
                                 onClick={() => {
-                                    setModelDiff({ step: PLANS });
+                                    setModelDiff({
+                                        step: getHasCustomisationStep(model.planIDs) ? CUSTOMISATION : PLANS_STEP,
+                                        skipPlanStep: false,
+                                    });
                                 }}
                             />
                         }
                     />
                     <Content>
-                        <PaymentForm
-                            paypal={paypal}
-                            paypalCredit={paypalCredit}
-                            checkResult={checkResult}
-                            model={model}
-                            onChange={setModelDiff}
-                            card={card}
-                            onCardChange={setCard}
-                            method={method}
-                            onMethodChange={setMethod}
-                            errors={paymentErrors}
-                            canPay={canPay}
-                            plans={plans}
-                            loading={loading}
-                            onSubmit={() => {
-                                return handleFinalizeSignup();
+                        <form
+                            name="payment-form"
+                            onSubmit={(event) => {
+                                event.preventDefault();
+                                withLoading(handleFinalizeSignup()).catch(noop);
                             }}
-                        />
+                            method="post"
+                        >
+                            <div className="flex-no-min-children on-mobile-flex-column">
+                                <div className="flex-item-fluid on-mobile-w100 on-tablet-landscape-pr1 on-mobile-pr0">
+                                    <div className="mlauto mrauto max-w37e on-mobile-max-w100  ">
+                                        {model.checkResult?.AmountDue ? (
+                                            <PaymentComponent
+                                                type="signup"
+                                                paypal={paypal}
+                                                paypalCredit={paypalCredit}
+                                                method={method}
+                                                amount={model.checkResult.AmountDue}
+                                                currency={model.currency}
+                                                card={card}
+                                                onMethod={setMethod}
+                                                onCard={setCard}
+                                                errors={paymentErrors}
+                                            />
+                                        ) : (
+                                            <Alert>{c('Info').t`No payment is required at this time.`}</Alert>
+                                        )}
+                                    </div>
+                                </div>
+                                {subscriptionCheckout}
+                            </div>
+                        </form>
                     </Content>
                 </>
             )}
@@ -510,11 +695,9 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
                             clientType={CLIENT_TYPE}
                             model={model}
                             onSubmit={() => {
-                                const isBuyingPaidPlan = hasPlanIDs(model.planIDs);
-                                if (isBuyingPaidPlan) {
-                                    return setModelDiff({ step: PAYMENT });
-                                }
-                                setModelDiff({ step: PLANS });
+                                setModelDiff({
+                                    step: getNextStepPrePayment(),
+                                });
                             }}
                             onBack={() => {
                                 setModelDiff({
@@ -535,7 +718,7 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
                                 onClick={() => {
                                     humanApi.clearToken();
                                     if (humanVerificationStep === Steps.ENTER_DESTINATION) {
-                                        setModelDiff({ step: PLANS });
+                                        setModelDiff({ step: getNextStepPrePayment() });
                                     } else {
                                         setHumanVerificationStep(Steps.ENTER_DESTINATION);
                                     }
@@ -568,7 +751,7 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
                     </Content>
                 </>
             )}
-            {[PLANS, PAYMENT, CREATING_ACCOUNT].includes(step) ? null : (
+            {[PLANS_STEP, CUSTOMISATION, PAYMENT, CREATING_ACCOUNT].includes(step) ? null : (
                 <Footer>
                     <SignupSupportDropdown />
                 </Footer>
@@ -576,5 +759,4 @@ const SignupContainer = ({ toApp, onLogin, onBack }: Props) => {
         </Main>
     );
 };
-
 export default SignupContainer;
