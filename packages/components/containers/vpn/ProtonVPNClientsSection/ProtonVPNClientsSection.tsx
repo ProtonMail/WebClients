@@ -49,7 +49,7 @@ const ProtonVPNClientsSection = () => {
                 link=" https://protonvpn.com/support/official-linux-client/"
             />
             <VPNClientCard
-                title={c('VPNClient').t`ChromeBook`}
+                title={c('VPNClient').t`Chromebook`}
                 icon="chrome"
                 link="https://play.google.com/store/apps/details?id=ch.protonvpn.android&utm_source=protonvpn.com&utm_content=dashboard"
                 items={androidLinks}
