@@ -240,6 +240,8 @@ function useSharing() {
             decryptedLinks.length < PageSize ? 'complete' : 'incremental'
         );
 
+        cache.set.shareURLs(new Map(ShareURLs.map((shareURL) => [shareURL.ShareURLID, shareURL])), sharedURLShareId);
+
         return {
             ShareURLs,
             metas: decryptedLinks,

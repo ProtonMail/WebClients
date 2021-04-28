@@ -42,6 +42,7 @@ export interface ShareURL {
     SRPModulusID: string;
     SRPVerifier: string;
     ShareID: string;
+    ShareURLID: string;
     SharePassphraseKeyPacket: string;
     SharePasswordSalt: string;
     Token: string;

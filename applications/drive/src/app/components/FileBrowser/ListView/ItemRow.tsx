@@ -22,6 +22,7 @@ import TimeCell from './Cells/TimeCell';
 import SizeCell from './Cells/SizeCell';
 import NameCell from './Cells/NameCell';
 import SharedURLIcon from '../SharedURLIcon';
+import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 
 const ItemRow = ({
     item,
@@ -62,6 +63,11 @@ const ItemRow = ({
     });
 
     const { isDesktop } = useActiveBreakpoint();
+    const cache = useDriveCache();
+    const shareURL =
+        columns.includes('share_num_access') && item.SharedUrl
+            ? cache.get.shareURL(shareId, item.SharedUrl?.ShareUrlID)
+            : undefined;
 
     const generateExpiresCell = () => {
         const expiredPart = isDesktop ? (
@@ -141,12 +147,16 @@ const ItemRow = ({
                 )}
 
                 {isDesktop && columns.includes('share_created') && (
-                    <TableCell className="m0 w20">
+                    <TableCell className="m0 w15">
                         {item.SharedUrl?.CreateTime && <TimeCell time={item.SharedUrl.CreateTime} />}
                     </TableCell>
                 )}
 
-                {columns.includes('share_expires') && <TableCell className="m0 w30">{generateExpiresCell()}</TableCell>}
+                {isDesktop && columns.includes('share_num_access') && (
+                    <TableCell className="m0 w15">{shareURL?.NumAccesses || 0}</TableCell>
+                )}
+
+                {columns.includes('share_expires') && <TableCell className="m0 w20">{generateExpiresCell()}</TableCell>}
 
                 {columns.includes('size') && (
                     <TableCell className={classnames(['m0', isDesktop ? 'w10' : 'w15'])}>
