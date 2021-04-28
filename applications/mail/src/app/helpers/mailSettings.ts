@@ -1,7 +1,8 @@
 import { Location } from 'history';
 import { MailSettings } from 'proton-shared/lib/interfaces';
-import { VIEW_LAYOUT, VIEW_MODE } from 'proton-shared/lib/constants';
+import { SHOW_IMAGES, VIEW_LAYOUT, VIEW_MODE } from 'proton-shared/lib/constants';
 
+import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { extractSearchParameters } from './mailboxUrl';
 import { isAlwaysMessageLabels } from './labels';
 
@@ -21,3 +22,8 @@ export const isConversationMode = (
         !Object.entries(searchParams).some(([, value]) => typeof value !== 'undefined')
     );
 };
+
+export const hasShowEmbedded = ({ ShowImages = 0 }: Partial<MailSettings> = {}) =>
+    hasBit(ShowImages, SHOW_IMAGES.EMBEDDED);
+
+export const hasShowRemote = ({ ShowImages = 0 }: Partial<MailSettings> = {}) => hasBit(ShowImages, SHOW_IMAGES.REMOTE);

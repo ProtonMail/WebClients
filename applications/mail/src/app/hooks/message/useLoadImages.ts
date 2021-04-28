@@ -29,6 +29,7 @@ export const useLoadEmbeddedImages = (localID: string) => {
     const messageCache = useMessageCache();
     const attachmentsCache = useAttachmentCache();
     const getMessageKeys = useGetMessageKeys();
+    const [mailSettings] = useMailSettings();
 
     return useCallback(async () => {
         const message = messageCache.get(localID) as MessageExtendedWithData;
@@ -37,8 +38,10 @@ export const useLoadEmbeddedImages = (localID: string) => {
         const { embeddeds } = await transformEmbedded(
             { ...message, showEmbeddedImages: true },
             messageKeys,
+            messageCache,
             attachmentsCache,
-            api
+            api,
+            mailSettings
         );
 
         updateMessageCache(messageCache, localID, {

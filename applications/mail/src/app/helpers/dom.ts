@@ -57,6 +57,8 @@ export const wrap = (element: Element, html: string) => {
 
     element.parentNode?.insertBefore(wrapper, element);
     element.remove();
+
+    return wrapper;
 };
 
 export const parseInDiv = (content: string) => {

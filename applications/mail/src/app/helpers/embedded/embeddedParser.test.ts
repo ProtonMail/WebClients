@@ -11,16 +11,8 @@ jest.mock('./embeddedFinder', () => ({
     }),
     findEmbedded: jest.fn((cid: string, document: Element) => {
         return [...document.querySelectorAll(`img[proton-src="cid:${cid}"]`)];
-    })
+    }),
 }));
-
-// jest.mock('./embeddedStoreCids', () => ({
-//     getMessageCIDs: jest.fn(() => ({ '-9e96b583@protonmail.com': {} }))
-// }));
-
-// jest.mock('./embeddedStoreBlobs', () => ({
-//     getBlob: jest.fn(() => ({ url: '123-234' }))
-// }));
 
 const cid = '-9e96b583@protonmail.com';
 const url = '123-234';
@@ -44,7 +36,7 @@ describe('embeddedParser', () => {
 
         const setup = (show = true) => {
             const message = { document: parseInDiv(DOM) };
-            prepareImages(message, show, false, false);
+            prepareImages(message, show);
             return message.document.querySelectorAll('img');
         };
 

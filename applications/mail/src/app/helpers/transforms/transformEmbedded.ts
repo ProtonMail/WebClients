@@ -1,41 +1,36 @@
-import { Api } from 'proton-shared/lib/interfaces';
+import { Api, MailSettings } from 'proton-shared/lib/interfaces';
 import { isDraft } from 'proton-shared/lib/mail/messages';
-
 import { find } from '../embedded/embeddedFinder';
 import { mutateHTMLBlob, decrypt, prepareImages } from '../embedded/embeddedParser';
-import { MESSAGE_ACTIONS } from '../../constants';
 import { MessageExtended, MessageKeys } from '../../models/message';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
+import { MessageCache, updateMessageCache } from '../../containers/MessageProvider';
+import { hasShowEmbedded } from '../mailSettings';
 
 export const transformEmbedded = async (
     message: MessageExtended,
     messageKeys: MessageKeys,
+    messageCache: MessageCache,
     attachmentsCache: AttachmentsCache,
-    api: Api
+    api: Api,
+    mailSettings: MailSettings | undefined
 ) => {
-    const show = message.showEmbeddedImages === true || isDraft(message.data);
-    const isReplyForward =
-        message.action === MESSAGE_ACTIONS.REPLY ||
-        message.action === MESSAGE_ACTIONS.REPLY_ALL ||
-        message.action === MESSAGE_ACTIONS.FORWARD;
-    const isOutside = false; // TODO: const isEoReply = $state.is('eo.reply');
+    const show = message.showEmbeddedImages === true || hasShowEmbedded(mailSettings) || isDraft(message.data);
 
     message.embeddeds = find(message, message.document as Element);
-    const showEmbeddedImages = prepareImages(message, show, isReplyForward, isOutside);
+    const showEmbeddedImages = prepareImages(message, show);
 
-    if (message.embeddeds.size === 0 || !show) {
-        /**
-         * cf #5088 we need to escape the body again if we forgot to set the password First.
-         * Prevent unescaped HTML.
-         *
-         * Don't do it everytime because it's "slow" and we don't want to slow down the process.
-         */
-        if (isOutside) {
-            mutateHTMLBlob(message.embeddeds, message.document);
-        }
-    } else {
-        await decrypt(message, messageKeys, api, attachmentsCache);
-        mutateHTMLBlob(message.embeddeds, message.document);
+    if (show && message.embeddeds.size) {
+        const run = async () => {
+            await decrypt(message, messageKeys, api, attachmentsCache);
+
+            const messageAfterDowload = messageCache.get(message.localID) as MessageExtended;
+            mutateHTMLBlob(message.embeddeds, messageAfterDowload.document);
+            updateMessageCache(messageCache, message.localID, { document: messageAfterDowload.document });
+        };
+
+        // Run asynchronously to render loader first and update document later
+        void run();
     }
 
     return { showEmbeddedImages, embeddeds: message.embeddeds };

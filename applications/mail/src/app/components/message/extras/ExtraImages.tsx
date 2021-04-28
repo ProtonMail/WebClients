@@ -3,7 +3,7 @@ import React from 'react';
 import { Icon, useMailSettings, Tooltip } from 'react-components';
 import { c } from 'ttag';
 
-import { hasShowEmbedded, hasShowRemote } from '../../../helpers/settings';
+import { hasShowEmbedded, hasShowRemote } from '../../../helpers/mailSettings';
 import { MessageExtended } from '../../../models/message';
 
 interface Props {
