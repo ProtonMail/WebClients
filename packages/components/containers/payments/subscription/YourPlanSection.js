@@ -19,7 +19,7 @@ import SettingsLayoutRight from '../../account/SettingsLayoutRight';
 import SubscriptionModal from './SubscriptionModal';
 import { SUBSCRIPTION_STEPS } from './constants';
 
-const getVpnConnectionsText = (n) => {
+const getVpnConnectionsText = (n = 0) => {
     return c('Label').ngettext(msgid`${n} VPN Connection available`, `${n} VPN Connections available`, n);
 };
 

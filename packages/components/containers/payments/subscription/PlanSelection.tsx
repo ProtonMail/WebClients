@@ -19,7 +19,7 @@ import PlanCard, { PlanCardFeature } from './PlanCard';
 import './PlanSelection.scss';
 import PlanSelectionComparison from './PlanSelectionComparison';
 
-const getVpnConnectionsText = (n: number) =>
+const getVpnConnectionsText = (n = 0) =>
     c('Plan Feature').ngettext(msgid`${n} VPN connection`, `${n} VPN connections`, n);
 
 const NAMES = {
