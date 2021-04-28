@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { APPS_CONFIGURATION, VPN_HOSTNAME, BRAND_NAME, APPS } from 'proton-shared/lib/constants';
+import { APPS_CONFIGURATION, VPN_HOSTNAME, BRAND_NAME } from 'proton-shared/lib/constants';
 
 import { AppLink, Icon, SimpleDropdown, Href } from '../../components';
 import { useApps } from '../../hooks';
@@ -12,6 +12,8 @@ const AppsDropdown = () => {
         icon: APPS_CONFIGURATION[app].icon,
         title: APPS_CONFIGURATION[app].bareName,
     }));
+
+    const vpnName = APPS_CONFIGURATION['proton-vpn-settings'].bareName;
 
     return (
         <SimpleDropdown
@@ -37,9 +39,6 @@ const AppsDropdown = () => {
                                 <Icon name={icon} size={28} className="apps-dropdown-icon" />
                                 <div>{BRAND_NAME}</div>
                                 <div className="text-bold">{title}</div>
-                                {id === APPS.PROTONDRIVE && (
-                                    <div className="bg-info rounded1e text-sm m0 mt0-5">BETA</div>
-                                )}
                             </AppLink>
                         </li>
                         {index % 2 !== 0 && (
@@ -54,8 +53,8 @@ const AppsDropdown = () => {
                         title={c('Apps dropdown').t`Go to ProtonVPN`}
                     >
                         <Icon name="protonvpn" size={28} className="apps-dropdown-icon apps-dropdown-icon-vpn" />
-                        <div>Proton</div>
-                        <div className="text-bold">VPN</div>
+                        <div>{BRAND_NAME}</div>
+                        <div className="text-bold">{vpnName}</div>
                     </Href>
                 </li>
             </ul>
