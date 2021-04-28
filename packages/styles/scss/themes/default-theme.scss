@@ -72,6 +72,26 @@
 // Prominent UI specifics
 
 .ui-prominent {
+	--signal-danger: #ed4c51;
+	--signal-danger-hover: #f7595e;
+	--signal-danger-active: #273136;
+	--signal-danger-contrast: white;
+
+	--signal-warning: #f5930a;
+	--signal-warning-hover: #f5a716;
+	--signal-warning-active: #f5b922;
+	--signal-warning-contrast: black;
+
+	--signal-success: #349172;
+	--signal-success-hover: #339c79;
+	--signal-success-active: #31a67f;
+	--signal-success-contrast: white;
+
+	--signal-info: #2c89db;
+	--signal-info-hover: #3491e3;
+	--signal-info-active: #273136;
+	--signal-info-contrast: white;
+
 	--text-norm: white;
 	--text-weak: #949bb9;
 	--text-hint: #565f84;
