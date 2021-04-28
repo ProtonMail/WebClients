@@ -22,7 +22,7 @@ const EditLinkModal = ({ decryptedPurpose, onClose, onSubmit, ...rest }: Props) 
 
     return (
         <FormModal
-            title={decryptedPurpose ? c('Info').t`Edit Label` : c('Info').t`Add Label`}
+            title={decryptedPurpose ? c('Info').t`Edit label` : c('Info').t`Add label`}
             onSubmit={() => withLoading(handleSubmit())}
             submit={c('Action').t`Save`}
             onClose={onClose}
