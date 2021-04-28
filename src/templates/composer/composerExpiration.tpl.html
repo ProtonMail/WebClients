@@ -17,7 +17,7 @@
                     ng-options="option.label for option in options.week track by option.label"></select>
                 <i class="fa fa-angle-down"></i>
             </div>
-            <label translate translate-context="Delay" for="weeks">Weeks</label>
+            <label translate translate-n="model.weeks.value" translate-plural="Weeks" translate-context="Delay" for="weeks">Week</label>
         </div>
 
         <div class="composerExpiration-field-days">
@@ -30,7 +30,7 @@
                     ng-options="option.label for option in options.day track by option.label"></select>
                 <i class="fa fa-angle-down"></i>
             </div>
-            <label translate translate-context="Delay" for="days">Days</label>
+            <label translate translate-n="model.days.value" translate-plural="Days" translate-context="Delay" for="days">Day</label>
         </div>
 
         <div class="composerExpiration-field-hours">
@@ -43,7 +43,7 @@
                     ng-options="option.label for option in options.hour track by option.label"></select>
                 <i class="fa fa-angle-down"></i>
             </div>
-            <label translate translate-context="Delay" for="hours">Hours</label>
+            <label translate translate-n="model.hours.value" translate-plural="Hours" translate-context="Delay" for="hours">Hour</label>
         </div>
     </div>
     <p class="alert alert-warning" translate-context="Warning" translate>If you are sending this message to a non ProtonMail user, please be sure to set a password for your message.</p>

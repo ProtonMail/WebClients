@@ -29,10 +29,17 @@ function delay(gettextCatalog) {
             const seconds = Math.floor(moment.duration(ms).asSeconds());
 
             const list = [];
-            days && list.push(`${days} ${gettextCatalog.getString('Days', null, 'Delay')}`);
-            hours && list.push(`${hours} ${gettextCatalog.getString('Hours', null, 'Delay')}`);
-            minutes && list.push(`${minutes} ${gettextCatalog.getString('Minutes', null, 'Delay')}`);
-            seconds && list.push(`${seconds} ${gettextCatalog.getString('Seconds', null, 'Delay')}`);
+            days && list.push(`${gettextCatalog.getPlural(days, '{{$count}} Day', '{{$count}} Days', {}, 'Delay')}`);
+            hours &&
+                list.push(`${gettextCatalog.getPlural(hours, '{{$count}} Hour', '{{$count}} Hours', {}, 'Delay')}`);
+            minutes &&
+                list.push(
+                    `${gettextCatalog.getPlural(minutes, '{{$count}} Minute', '{{$count}} Minutes', {}, 'Delay')}`
+                );
+            seconds &&
+                list.push(
+                    `${gettextCatalog.getPlural(seconds, '{{$count}} Second', '{{$count}} Seconds', {}, 'Delay')}`
+                );
 
             return list.join(' ');
         }

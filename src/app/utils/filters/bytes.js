@@ -4,7 +4,7 @@ import { BASE_SIZE } from '../../constants';
 function bytes(gettextCatalog) {
     const KB = BASE_SIZE;
     return (bytes, precision = 1) => {
-        const i18n = gettextCatalog.getString('bytes', null, 'Size of a file');
+        const i18n = gettextCatalog.getPlural(bytes, 'byte', 'bytes', {}, 'Size of a file');
         const UNITS = [i18n, 'KB', 'MB', 'GB', 'TB', 'PB'];
 
         if (isNaN(parseFloat(bytes)) || !isFinite(bytes) || bytes === 0) {

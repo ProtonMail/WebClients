@@ -26,6 +26,6 @@
         </span>
     {{maxMessageLength - 1}}
         <span translate-context="The message contains too many bytes, only xxx allowed (you are using xxx characters). Part 2/3" translate> allowed (you are using </span>
-        <span class="autoresponderCharacterCount"> {{message.length}} </span><span  translate-context="The message contains too many bytes, only xxx allowed (you are using xxx characters). Part 3/3" translate> bytes).</span>
+        <span class="autoresponderCharacterCount"> {{message.length}} </span><span  translate-context="The message contains too many bytes, only xxx allowed (you are using xxx characters). Part 3/3" translate translate-n="message.length" translate-plural="bytes)"> byte).</span>
     </div>
 </div>
