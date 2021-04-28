@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { ConfirmModal, Alert, Checkbox, Label, Href, useApi, useEventManager } from 'react-components';
+import { ConfirmModal, Alert, Checkbox, Label, Href, useApi, useEventManager, Button } from 'react-components';
 import { isEdge, isIE11, openNewTab } from 'proton-shared/lib/helpers/browser';
 import { updateConfirmLink } from 'proton-shared/lib/api/mailSettings';
 
@@ -41,6 +41,17 @@ const LinkConfirmationModal = ({ onClose, link = '', ...rest }: Props) => {
             onConfirm={handleConfirm}
             onClose={onClose}
             title={c('Title').t`Link confirmation`}
+            confirm={
+                // translator: this string is only for blind people, it will be vocalized: confirm opening of link https://link.com
+                <Button
+                    color="norm"
+                    type="submit"
+                    autoFocus
+                    aria-label={c('Action').t`Confirm opening of link ${link}`}
+                >
+                    {c('Action').t`Confirm`}
+                </Button>
+            }
             {...rest}
             {...additionalModalProps}
         >
