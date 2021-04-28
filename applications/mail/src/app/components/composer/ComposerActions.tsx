@@ -3,7 +3,7 @@ import { getAttachments, hasFlag } from 'proton-shared/lib/mail/messages';
 import React, { MutableRefObject } from 'react';
 import { c } from 'ttag';
 import { isToday, isYesterday } from 'date-fns';
-import { Button, classnames, Tooltip, Icon, EllipsisLoader, useMailSettings, ButtonGroup } from 'react-components';
+import { Button, classnames, Tooltip, Icon, EllipsisLoader, useMailSettings } from 'react-components';
 import { metaKey, shiftKey, altKey } from 'proton-shared/lib/helpers/browser';
 import { formatSimpleDate } from '../../helpers/date';
 import { MessageExtended } from '../../models/message';
@@ -135,7 +135,7 @@ const ComposerActions = ({
                 </Button>
             </Tooltip>
             <div className="flex flex-item-fluid">
-                <ButtonGroup>
+                <div className="flex">
                     <Tooltip title={titleAttachment}>
                         <AttachmentsButton
                             isAttachments={isAttachments}
@@ -148,9 +148,11 @@ const ComposerActions = ({
                     <Tooltip title={titleExpiration}>
                         <Button
                             icon
+                            color={isExpiration ? 'norm' : undefined}
+                            shape="outline"
                             onClick={onExpiration}
                             disabled={lock}
-                            className={classnames([isExpiration && 'is-selected'])}
+                            className="ml0-5"
                             data-testid="composer:expiration-button"
                         >
                             <Icon name="expiration" alt={c('Action').t`Expiration time`} />
@@ -159,15 +161,17 @@ const ComposerActions = ({
                     <Tooltip title={titleEncryption}>
                         <Button
                             icon
+                            color={isPassword ? 'norm' : undefined}
+                            shape="outline"
                             data-testid="composer:password-button"
                             onClick={onPassword}
                             disabled={lock}
-                            className={classnames([isPassword && 'is-selected'])}
+                            className="ml0-5"
                         >
                             <Icon name="lock-alone" alt={c('Action').t`Encryption`} />
                         </Button>
                     </Tooltip>
-                </ButtonGroup>
+                </div>
                 <div className="flex mlauto">
                     <span className="mr0-5 mtauto mbauto no-mobile">{dateMessage}</span>
                     <Tooltip title={titleDeleteDraft}>

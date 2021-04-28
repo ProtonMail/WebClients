@@ -33,7 +33,9 @@ const AttachmentsButton = (
                 icon
                 role="button"
                 as="label"
-                className={classnames([disabled && 'is-disabled', isAttachments && 'is-selected'])}
+                color={isAttachments ? 'norm' : 'weak'}
+                shape="outline"
+                className={classnames([disabled && 'is-disabled'])}
                 ref={ref}
                 {...rest}
                 data-testid="composer:attachment-button"
