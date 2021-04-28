@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { Subscription as tsSubscriptionModel } from 'proton-shared/lib/interfaces';
+import { SubscriptionModel as tsSubscriptionModel } from 'proton-shared/lib/interfaces';
 import { FREE_SUBSCRIPTION } from 'proton-shared/lib/constants';
 import { SubscriptionModel } from 'proton-shared/lib/models/subscriptionModel';
 import { UserModel } from 'proton-shared/lib/models/userModel';
