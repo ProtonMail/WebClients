@@ -1,13 +1,13 @@
 import { CalendarSettings, DecryptedCalendarKey } from '../calendar';
 import { DecryptedKey } from '../Key';
 
-export type GetDecryptedPassphraseAndCalendarKeys = (
-    calendarID: string
+export type GetCalendarInfo = (
+    ID: string
 ) => Promise<{
     memberID: string;
     addressKeys: DecryptedKey[];
-    calendarSettings: CalendarSettings;
     decryptedCalendarKeys: DecryptedCalendarKey[];
+    calendarSettings: CalendarSettings;
     decryptedPassphrase: string;
     passphraseID: string;
 }>;
