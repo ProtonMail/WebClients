@@ -149,15 +149,9 @@ const SquireEditor = (
     };
 
     return (
-        <div
-            className={classnames([
-                className,
-                'editor w100 h100 rounded flex flex-column-reverse',
-                disabled && 'editor--disabled',
-            ])}
-        >
-            {metadata.isPlainText ? (
-                <div className="w100 h100 flex-item-fluid relative">
+        <div className={classnames([className, 'editor w100 h100 rounded flex flex-column-reverse'])}>
+            <div className={classnames(['w100 h100 flex-item-fluid relative', disabled && 'editor--disabled'])}>
+                {metadata.isPlainText ? (
                     <textarea
                         id={id}
                         className="covered-absolute w100 h100 pt1 pb1 pl0-5 pr0-5"
@@ -168,23 +162,23 @@ const SquireEditor = (
                         data-test-id="composer:body"
                         data-testid="squire-textarea"
                     />
-                </div>
-            ) : (
-                <SquireIframe
-                    id={id}
-                    ref={squireRef}
-                    placeholder={placeholder}
-                    metadata={metadata}
-                    onFocus={onFocus}
-                    onReady={handleReady}
-                    onInput={onChange}
-                    onAddImages={onAddImages}
-                    showEllipseButton={showEllipseButton}
-                    onEllipseClick={onEllipseClick}
-                    data-test-id="composer:body"
-                    keydownHandler={keydownHandler}
-                />
-            )}
+                ) : (
+                    <SquireIframe
+                        id={id}
+                        ref={squireRef}
+                        placeholder={placeholder}
+                        metadata={metadata}
+                        onFocus={onFocus}
+                        onReady={handleReady}
+                        onInput={onChange}
+                        onAddImages={onAddImages}
+                        showEllipseButton={showEllipseButton}
+                        onEllipseClick={onEllipseClick}
+                        data-test-id="composer:body"
+                        keydownHandler={keydownHandler}
+                    />
+                )}
+            </div>
             <EditorToolbar
                 metadata={metadata}
                 onChangeMetadata={onChangeMetadata}
