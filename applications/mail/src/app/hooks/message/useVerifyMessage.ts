@@ -9,6 +9,7 @@ import { updateMessageCache, useMessageCache } from '../../containers/MessagePro
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useContactCache } from '../../containers/ContactProvider';
 import { extractKeysFromAttachments, extractKeysFromAutocrypt } from '../../helpers/message/messageKeys';
+import { isNetworkError } from '../../helpers/errors';
 
 export const useVerifyMessage = (localID: string) => {
     const api = useApi();
@@ -66,7 +67,11 @@ export const useVerifyMessage = (localID: string) => {
                         ? await getMatchingKey(verification.signature, allSenderPublicKeys)
                         : undefined;
             } catch (error) {
-                errors.signature = [error];
+                if (isNetworkError(error)) {
+                    errors.network = [error];
+                } else {
+                    errors.signature = [error];
+                }
             } finally {
                 updateMessageCache(messageCache, localID, {
                     verification: {

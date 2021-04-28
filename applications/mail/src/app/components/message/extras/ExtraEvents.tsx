@@ -4,13 +4,14 @@ import { getAttachments } from 'proton-shared/lib/mail/messages';
 import React, { useEffect, useState } from 'react';
 import {
     useApi,
-    useCalendars,
+    useGetCalendars,
     useContactEmails,
     useAddresses,
     useLoading,
     useUserSettings,
     useGetCalendarUserSettings,
     useUser,
+    useIsMounted,
 } from 'react-components';
 import { arrayToBinaryString, decodeUtf8 } from 'pmcrypto';
 import {
@@ -32,18 +33,22 @@ import {
     getSupportedEventInvitation,
     parseEventInvitation,
 } from '../../../helpers/calendar/invite';
-import { MessageExtendedWithData } from '../../../models/message';
+import { MessageErrors, MessageExtendedWithData } from '../../../models/message';
 import ExtraEvent from './calendar/ExtraEvent';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
+import { isNetworkError } from '../../../helpers/errors';
+import { updateMessageCache, useMessageCache } from '../../../containers/MessageProvider';
 
 interface Props {
     message: MessageExtendedWithData;
 }
 const ExtraEvents = ({ message }: Props) => {
     const api = useApi();
+    const isMounted = useIsMounted();
     const getMessageKeys = useGetMessageKeys();
-    const cache = useAttachmentCache();
-    const [calendars = [], loadingCalendars] = useCalendars();
+    const attachmentCache = useAttachmentCache();
+    const messageCache = useMessageCache();
+    const getCalendars = useGetCalendars();
     const [contactEmails = [], loadingContactEmails] = useContactEmails() as [
         ContactEmail[] | undefined,
         boolean,
@@ -63,82 +68,92 @@ const ExtraEvents = ({ message }: Props) => {
         maxUserCalendarsDisabled: boolean;
         mustReactivateCalendars: boolean;
     }>({ canCreateCalendar: true, maxUserCalendarsDisabled: false, mustReactivateCalendars: false });
-    const loadingConfigs =
-        loadingContactEmails || loadingAddresses || loadingCalendars || loadingUserSettings || loadingUser;
+    const loadingConfigs = loadingContactEmails || loadingAddresses || loadingUserSettings || loadingUser;
 
     useEffect(() => {
-        const attachments = getAttachments(message.data);
-        const eventAttachments = filterAttachmentsForEvents(attachments);
-        if (!eventAttachments.length) {
-            setInvitations([]);
-            return;
-        }
-        if (message.errors?.decryption?.length || loadingConfigs) {
-            return;
-        }
-        let unmounted = false;
-        const run = async () => {
-            const activeCalendars = getProbablyActiveCalendars(calendars);
-            let defaultCalendar;
-            if (calendars.length) {
-                const { DefaultCalendarID } = await getCalendarUserSettings();
-                defaultCalendar = getDefaultCalendar(activeCalendars, DefaultCalendarID);
-            }
-            const disabledCalendars = calendars.filter((calendar) => getIsCalendarDisabled(calendar));
-            if (unmounted) {
+        try {
+            const attachments = getAttachments(message.data);
+            const eventAttachments = filterAttachmentsForEvents(attachments);
+            if (!eventAttachments.length) {
+                setInvitations([]);
                 return;
             }
-            const canCreateCalendar = getCanCreateCalendar(activeCalendars, disabledCalendars, calendars, user.isFree);
-            const maxUserCalendarsDisabled = getMaxUserCalendarsDisabled(disabledCalendars, user.isFree);
-            const mustReactivateCalendars = !defaultCalendar && !canCreateCalendar && !maxUserCalendarsDisabled;
-            setCalData({
-                defaultCalendar,
-                canCreateCalendar,
-                maxUserCalendarsDisabled,
-                mustReactivateCalendars,
-            });
-            const invitations = (
-                await Promise.all(
-                    eventAttachments.map(async (attachment: Attachment) => {
-                        try {
-                            const messageKeys = await getMessageKeys(message.data);
-                            const download = await formatDownload(
-                                attachment,
-                                message.verification,
-                                messageKeys,
-                                cache,
-                                api
-                            );
-                            if (download.isError) {
-                                return new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.DECRYPTION_ERROR);
-                            }
-                            const parsedInvitation = parseEventInvitation(
-                                decodeUtf8(arrayToBinaryString(download.data))
-                            );
-                            if (!parsedInvitation) {
-                                return;
-                            }
-                            return getSupportedEventInvitation(parsedInvitation, message.data);
-                        } catch (error) {
-                            if (error instanceof EventInvitationError) {
-                                return error;
-                            }
-                            return new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, error);
-                        }
-                    })
-                )
-            ).filter(isTruthy);
-            if (unmounted) {
+            if (message.errors?.decryption?.length || loadingConfigs) {
                 return;
             }
-            setInvitations(invitations);
-        };
+            const run = async () => {
+                const calendars = (await getCalendars()) || [];
+                const activeCalendars = getProbablyActiveCalendars(calendars);
+                let defaultCalendar;
+                if (calendars.length) {
+                    const { DefaultCalendarID } = await getCalendarUserSettings();
+                    defaultCalendar = getDefaultCalendar(activeCalendars, DefaultCalendarID);
+                }
+                const disabledCalendars = calendars.filter((calendar) => getIsCalendarDisabled(calendar));
+                if (!isMounted()) {
+                    return;
+                }
+                const canCreateCalendar = getCanCreateCalendar(
+                    activeCalendars,
+                    disabledCalendars,
+                    calendars,
+                    user.isFree
+                );
+                const maxUserCalendarsDisabled = getMaxUserCalendarsDisabled(disabledCalendars, user.isFree);
+                const mustReactivateCalendars = !defaultCalendar && !canCreateCalendar && !maxUserCalendarsDisabled;
+                setCalData({
+                    defaultCalendar,
+                    canCreateCalendar,
+                    maxUserCalendarsDisabled,
+                    mustReactivateCalendars,
+                });
+                const invitations = (
+                    await Promise.all(
+                        eventAttachments.map(async (attachment: Attachment) => {
+                            try {
+                                const messageKeys = await getMessageKeys(message.data);
+                                const download = await formatDownload(
+                                    attachment,
+                                    message.verification,
+                                    messageKeys,
+                                    attachmentCache,
+                                    api
+                                );
+                                if (download.isError) {
+                                    return new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.DECRYPTION_ERROR);
+                                }
+                                const parsedInvitation = parseEventInvitation(
+                                    decodeUtf8(arrayToBinaryString(download.data))
+                                );
+                                if (!parsedInvitation) {
+                                    return;
+                                }
+                                return getSupportedEventInvitation(parsedInvitation, message.data);
+                            } catch (error) {
+                                if (error instanceof EventInvitationError) {
+                                    return error;
+                                }
+                                return new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, error);
+                            }
+                        })
+                    )
+                ).filter(isTruthy);
+                if (!isMounted()) {
+                    return;
+                }
+                setInvitations(invitations);
+            };
 
-        void withLoadingWidget(run());
-
-        return () => {
-            unmounted = true;
-        };
+            void withLoadingWidget(run());
+        } catch (error) {
+            const errors: MessageErrors = {};
+            if (isNetworkError(error)) {
+                errors.network = [error];
+            } else {
+                errors.unknown = [error];
+            }
+            updateMessageCache(messageCache, message.localID, { errors });
+        }
     }, [message.data, message.data.AddressID, message.errors, loadingConfigs]);
 
     if (loadingConfigs || loadingWidget) {
@@ -153,7 +168,6 @@ const ExtraEvents = ({ message }: Props) => {
                         key={index} // eslint-disable-line react/no-array-index-key
                         invitationOrError={invitation}
                         message={message}
-                        calendars={calendars}
                         defaultCalendar={calData.defaultCalendar}
                         canCreateCalendar={calData.canCreateCalendar}
                         maxUserCalendarsDisabled={calData.maxUserCalendarsDisabled}

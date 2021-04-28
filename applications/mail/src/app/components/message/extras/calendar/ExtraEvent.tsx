@@ -11,6 +11,7 @@ import {
     InlineLinkButton,
     Loader,
     useApi,
+    useCalendars,
     useGetCalendarEventRaw,
     useGetCalendarInfo,
     useLoading,
@@ -53,7 +54,6 @@ const { DECLINECOUNTER, REPLY } = ICAL_METHOD;
 interface Props {
     message: MessageExtendedWithData;
     invitationOrError: RequireSome<EventInvitation, 'method'> | EventInvitationError;
-    calendars: Calendar[];
     canCreateCalendar: boolean;
     maxUserCalendarsDisabled: boolean;
     mustReactivateCalendars: boolean;
@@ -65,7 +65,6 @@ interface Props {
 const ExtraEvent = ({
     invitationOrError,
     message,
-    calendars,
     defaultCalendar,
     canCreateCalendar,
     maxUserCalendarsDisabled,
@@ -74,6 +73,7 @@ const ExtraEvent = ({
     ownAddresses,
     userSettings,
 }: Props) => {
+    const [calendars = []] = useCalendars();
     const [model, setModel] = useState<InvitationModel>(() =>
         getInitialInvitationModel({
             invitationOrError,
