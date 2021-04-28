@@ -6,6 +6,7 @@ import { Checkbox, Icon, Button, Tooltip } from '../../../components';
 interface Props {
     allChecked: boolean;
     selectedCount: number;
+    noEmailsContactCount: number;
     onCheckAll: (checked: boolean) => void;
     onCompose?: () => void;
     onForward: () => void;
@@ -17,6 +18,7 @@ interface Props {
 const ContactsWidgetToolbar = ({
     allChecked,
     selectedCount,
+    noEmailsContactCount,
     onCheckAll,
     onCompose,
     onForward,
@@ -25,7 +27,7 @@ const ContactsWidgetToolbar = ({
     onMerge,
 }: Props) => {
     const handleCheck = ({ target }: ChangeEvent<HTMLInputElement>) => onCheckAll(target.checked);
-    const noSelection = !selectedCount;
+    const noSelection = noEmailsContactCount === selectedCount;
     const canMerge = selectedCount > 1;
     const deleteText = noSelection
         ? c('Action').t`Delete contact`
