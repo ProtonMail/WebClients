@@ -78,6 +78,7 @@ import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { GetCanonicalEmails } from 'proton-shared/lib/interfaces/hooks/GetCanonicalEmails';
 import { RequireSome, Unwrap } from 'proton-shared/lib/interfaces/utils';
 import { getPrimaryKey } from 'proton-shared/lib/keys';
+import { GetCalendarInfo } from '../../../../../react-components/hooks/useGetCalendarInfo';
 import { MessageExtendedWithData } from '../../models/message';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
 import {
@@ -190,9 +191,7 @@ const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, api, recurrenceId
 type FetchEventInvitation = (args: {
     veventComponent: VcalVeventComponent;
     api: Api;
-    getCalendarInfo: (
-        ID: string
-    ) => Promise<Omit<CalendarWidgetData, 'calendar' | 'isCalendarDisabled' | 'calendarNeedsUserAction'>>;
+    getCalendarInfo: GetCalendarInfo;
     getCalendarEventRaw: (event: CalendarEvent) => Promise<DecryptedVeventResult>;
     getCalendarEventPersonal: (event: CalendarEvent) => Promise<DecryptedPersonalVeventMapResult>;
     calendars: Calendar[];
@@ -231,13 +230,17 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
     if (!calendar) {
         return {};
     }
+    const { memberID, addressKeys, decryptedCalendarKeys, calendarSettings } = await getCalendarInfo(calendar.ID);
     const calendarData = {
         calendar,
+        calendarSettings,
         isCalendarDisabled: getIsCalendarDisabled(calendar),
         calendarNeedsUserAction:
             hasBit(calendar.Flags, CALENDAR_FLAGS.RESET_NEEDED) ||
             hasBit(calendar.Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE),
-        ...(await getCalendarInfo(calendar.ID)),
+        memberID,
+        addressKeys,
+        calendarKeys: decryptedCalendarKeys,
     };
     // if we retrieved a single edit when not looking for one, or looking for another one, do not return it
     if (!calendarEvent || getIsNonSoughtEvent(calendarEvent, veventComponent)) {
