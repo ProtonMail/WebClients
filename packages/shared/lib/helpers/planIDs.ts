@@ -33,6 +33,11 @@ export const removeService = (planIDs: PlanIDs, plans: Plan[], service: PLAN_SER
     }, {});
 };
 
+export const getHasPlanType = (planIDs: PlanIDs, plans: Plan[], planType: PLANS) => {
+    const plan = plans.find(({ Name }) => Name === planType);
+    return plan?.ID ? planIDs[plan.ID] >= 1 : false;
+};
+
 const getAddonQuantity = (plan: Plan | undefined, used = 0, key: MaxKeys, addon: Plan) => {
     const planKey = plan?.[key] || 0;
 
