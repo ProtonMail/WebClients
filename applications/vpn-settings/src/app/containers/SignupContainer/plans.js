@@ -31,7 +31,7 @@ export const VPN_PLANS = [PLAN.FREE, PLAN.BASIC, PLAN.PLUS, PLAN.VISIONARY];
 export const BEST_DEAL_PLANS = [PLAN.BASIC, PLAN.PLUS, PLAN.VISIONARY];
 
 const getServersText = (n) => {
-    return c('Plan Feature').ngettext(msgid`Server in ${n} country`, `Servers in ${n} countries`, n);
+    return c('Plan Feature').ngettext(msgid`Servers in ${n} country`, `Servers in ${n} countries`, n);
 };
 
 const getPlanFeatures = (plan, maxConnections, countries) => {
