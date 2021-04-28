@@ -1,4 +1,4 @@
-import { Currency, Cycle, HumanVerificationMethodType } from 'proton-shared/lib/interfaces';
+import { Currency, Cycle, HumanVerificationMethodType, SubscriptionCheckResponse } from 'proton-shared/lib/interfaces';
 import { APPS } from 'proton-shared/lib/constants';
 
 export enum SIGNUP_STEPS {
@@ -7,6 +7,7 @@ export enum SIGNUP_STEPS {
     RECOVERY_EMAIL = 'recovery-email',
     RECOVERY_PHONE = 'recovery-phone',
     VERIFICATION_CODE = 'verification-code',
+    CUSTOMISATION = 'customisation',
     PLANS = 'plans',
     PAYMENT = 'payment',
     HUMAN_VERIFICATION = 'human-verification',
@@ -17,7 +18,6 @@ export enum SIGNUP_STEPS {
 export const SERVICES = {
     mail: APPS.PROTONMAIL,
     calendar: APPS.PROTONCALENDAR,
-    contacts: APPS.PROTONCONTACTS,
     drive: APPS.PROTONDRIVE,
     vpn: APPS.PROTONVPN_SETTINGS,
 };
@@ -40,8 +40,10 @@ export interface SignupModel {
     currency: Currency;
     cycle: Cycle;
     planIDs: PlanIDs;
+    skipPlanStep?: boolean;
     humanVerificationMethods: HumanVerificationMethodType[];
     humanVerificationToken: string;
+    checkResult: SubscriptionCheckResponse;
 }
 
 export interface SignupPayPal {
