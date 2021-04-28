@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { c } from 'ttag';
+import { Location } from 'history';
 import { Icon, useMailSettings, useLabels, useFolders, ToolbarButton, ToolbarSeparator } from 'react-components';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
@@ -23,6 +24,7 @@ interface Props {
     onCheck: (IDs: string[], checked: boolean, replace: boolean) => void;
     labelID: string;
     elementID?: string;
+    messageID?: string;
     selectedIDs: string[];
     checkedIDs: string[];
     elementIDs: string[];
@@ -36,10 +38,12 @@ interface Props {
     onElement: (elementID: string | undefined) => void;
     labelDropdownToggleRef: React.MutableRefObject<() => void>;
     moveDropdownToggleRef: React.MutableRefObject<() => void>;
+    location: Location;
 }
 
 const Toolbar = ({
     labelID = '',
+    messageID,
     elementID,
     onCheck,
     mailSettings,
@@ -56,6 +60,7 @@ const Toolbar = ({
     onElement,
     labelDropdownToggleRef,
     moveDropdownToggleRef,
+    location,
 }: Props) => {
     const [labels] = useLabels();
     const [folders] = useFolders();
@@ -178,8 +183,12 @@ const Toolbar = ({
                         loading={loading}
                         conversationMode={conversationMode}
                         elementID={elementID}
+                        messageID={messageID}
                         elementIDs={elementIDs}
                         onElement={onElement}
+                        labelID={labelID}
+                        mailSettings={mailSettings}
+                        location={location}
                     />
                 )}
             </div>

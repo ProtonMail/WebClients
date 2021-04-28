@@ -49,7 +49,10 @@ export const useMailboxFocus = ({
             const lastMessage = messages[messages.length - 1] as HTMLElement;
             lastMessage.focus();
             setFocusIndex(undefined);
+            return;
         }
+        const trashWarning = document.querySelector('[data-shortcut-target="trash-warning"]') as HTMLElement;
+        trashWarning?.focus();
     };
 
     useEffect(() => {

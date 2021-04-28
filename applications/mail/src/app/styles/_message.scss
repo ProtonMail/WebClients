@@ -211,6 +211,7 @@
     }
 }
 
+.trashed-messages:focus,
 .message-container.is-focused {
     border-color: var(--interaction-norm);
 }

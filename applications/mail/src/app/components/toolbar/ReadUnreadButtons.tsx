@@ -1,5 +1,6 @@
 import React from 'react';
 import { MESSAGE_BUTTONS } from 'proton-shared/lib/constants';
+import { MailSettings } from 'proton-shared/lib/interfaces';
 import { Icon, useLoading, useMailSettings, ToolbarButton } from 'react-components';
 import { c } from 'ttag';
 
@@ -10,7 +11,7 @@ const { READ, UNREAD } = MARK_AS_STATUS;
 
 interface Props {
     labelID: string;
-    mailSettings: any;
+    mailSettings: MailSettings;
     selectedIDs: string[];
     onBack: () => void;
 }

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { c } from 'ttag';
-import { InlineLinkButton, Icon } from 'react-components';
+import { InlineLinkButton, Icon, useHotkeys } from 'react-components';
 
 interface Props {
     inTrash: boolean;
@@ -8,9 +8,35 @@ interface Props {
     onToggle: () => void;
 }
 
-const TrashWarning = ({ inTrash, filter, onToggle }: Props) => {
+const TrashWarning = ({ inTrash, filter, onToggle }: Props, ref: React.Ref<HTMLDivElement>) => {
+    useHotkeys(ref as React.RefObject<HTMLDivElement>, [
+        [
+            'Enter',
+            (e) => {
+                e.stopPropagation();
+                onToggle();
+            },
+        ],
+        [
+            'ArrowDown',
+            (e) => {
+                e.stopPropagation();
+                const messages = document.querySelectorAll('[data-shortcut-target="message-container"]');
+                if (messages.length) {
+                    const firstMessage = messages[0] as HTMLElement;
+                    firstMessage.focus();
+                }
+            },
+        ],
+    ]);
+
     return (
-        <div className="bordered m0-5 mb1 p1 flex flex-nowrap flex-align-items-center flex-justify-space-between trashed-messages">
+        <div
+            ref={ref}
+            tabIndex={-1}
+            className="bordered m0-5 mb1 p1 flex flex-nowrap flex-align-items-center flex-justify-space-between trashed-messages no-outline"
+            data-shortcut-target="trash-warning"
+        >
             <div className="flex flex-nowrap flex-align-items-center">
                 <Icon name="trash" className="mr1" />
                 <span>
@@ -32,4 +58,4 @@ const TrashWarning = ({ inTrash, filter, onToggle }: Props) => {
     );
 };
 
-export default TrashWarning;
+export default forwardRef(TrashWarning);
