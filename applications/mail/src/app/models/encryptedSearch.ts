@@ -4,7 +4,7 @@ import { DBSchema } from 'idb';
 import { SearchParameters } from './tools';
 import { Element } from './element';
 
-export interface MetricsReport {
+export interface ESMetricsReport {
     numMessagesIDB: number;
     sizeIDBOnDisk?: number;
     sizeIDB: number;
