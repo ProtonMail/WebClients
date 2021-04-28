@@ -53,7 +53,7 @@ const CalendarsTable = ({
                                 onClick: () => onSetDefault(ID),
                             },
                         showExport && {
-                            text: c('Action').t`Export (.ics)`,
+                            text: c('Action').t`Export ICS`,
                             onClick: () => onExport(calendar),
                         },
                         {
