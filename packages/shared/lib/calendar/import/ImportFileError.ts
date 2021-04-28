@@ -16,7 +16,7 @@ const getErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') => {
     }
     if (errorType === IMPORT_ERROR_TYPE.NO_ICS_FILE) {
         return c('Error importing calendar')
-            .t`An error occurred uploading your file ${formattedFilename}. Only .ics file formats are allowed.`;
+            .t`An error occurred uploading your file ${formattedFilename}. Only ICS file formats are allowed.`;
     }
     if (errorType === IMPORT_ERROR_TYPE.FILE_EMPTY) {
         return c('Error importing calendar').t`Your file ${formattedFilename} is empty.`;
