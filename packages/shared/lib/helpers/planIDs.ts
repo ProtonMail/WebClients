@@ -138,9 +138,13 @@ export const switchPlan = ({
                 transferDomains(PLUS, PROFESSIONAL) ||
                 getAddonQuantity(selectedPlan, UsedDomains, 'MaxDomains', plansMap[DOMAIN]) ||
                 0,
+            ...(!planIDs[plansMap[VPNBASIC].ID]
+                ? {
+                      [plansMap[VPNPLUS].ID]: vpnAddons || planIDs[plansMap[VPNPLUS].ID] ? 1 : 0,
+                      [plansMap[VPN].ID]: vpnAddons ? vpnAddons - plansMap[VPNPLUS].MaxVPN : 0,
+                  }
+                : undefined),
             [planID]: 1,
-            [plansMap[VPNPLUS].ID]: vpnAddons || planIDs[plansMap[VPNPLUS].ID] ? 1 : 0,
-            [plansMap[VPN].ID]: vpnAddons ? vpnAddons - plansMap[VPNPLUS].MaxVPN : 0,
         });
     }
 
