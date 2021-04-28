@@ -43,7 +43,8 @@ export const getSharedEventIDAndSessionKey = async ({
     const { CalendarID, SharedEventID } = calendarEvent;
     // we need to decrypt the sharedKeyPacket in Event to obtain the decrypted session key
     const { decryptedCalendarKeys } = await getCalendarKeys(CalendarID);
-    const [sessionKey] = await readSessionKeys({ calendarEvent, ...splitKeys(decryptedCalendarKeys).privateKeys });
+    const { privateKeys } = splitKeys(decryptedCalendarKeys);
+    const [sessionKey] = await readSessionKeys({ calendarEvent, privateKeys });
 
     return {
         sharedEventID: SharedEventID,
