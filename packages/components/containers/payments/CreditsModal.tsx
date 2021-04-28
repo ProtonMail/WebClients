@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import PropTypes from 'prop-types';
 import { buyCredit } from 'proton-shared/lib/api/payments';
 import {
     APPS,
@@ -9,6 +8,8 @@ import {
     MIN_CREDIT_AMOUNT,
     PAYMENT_METHOD_TYPES,
 } from 'proton-shared/lib/constants';
+import { Currency } from 'proton-shared/lib/interfaces';
+
 import { FormModal, PrimaryButton, Alert, useDebounceInput } from '../../components';
 import { useNotifications, useEventManager, useConfig, useModals, useApi, useLoading } from '../../hooks';
 
@@ -18,6 +19,7 @@ import Payment from './Payment';
 import usePayment from './usePayment';
 import { handlePaymentToken } from './paymentTokenHelper';
 import PayPalButton from './PayPalButton';
+import { PaymentParameters } from './interface';
 
 const getCurrenciesI18N = () => ({
     EUR: c('Monetary unit').t`Euro`,
@@ -25,20 +27,24 @@ const getCurrenciesI18N = () => ({
     USD: c('Monetary unit').t`Dollar`,
 });
 
-const CreditsModal = (props) => {
+interface Props {
+    onClose?: () => void;
+}
+
+const CreditsModal = (props: Props) => {
     const api = useApi();
     const { APP_NAME } = useConfig();
     const { call } = useEventManager();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
-    const [currency, setCurrency] = useState(DEFAULT_CURRENCY);
+    const [currency, setCurrency] = useState<Currency>(DEFAULT_CURRENCY);
     const [amount, setAmount] = useState(DEFAULT_CREDITS_AMOUNT);
     const debouncedAmount = useDebounceInput(amount);
     const i18n = getCurrenciesI18N();
     const i18nCurrency = i18n[currency];
 
-    const handleSubmit = async (params) => {
+    const handleSubmit = async (params: PaymentParameters) => {
         const requestBody = await handlePaymentToken({
             params: { ...params, Amount: debouncedAmount, Currency: currency },
             api,
@@ -46,7 +52,7 @@ const CreditsModal = (props) => {
         });
         await api(buyCredit(requestBody));
         await call();
-        props.onClose();
+        props.onClose?.();
         createNotification({ text: c('Success').t`Credits added` });
     };
 
@@ -109,10 +115,6 @@ const CreditsModal = (props) => {
             />
         </FormModal>
     );
-};
-
-CreditsModal.propTypes = {
-    onClose: PropTypes.func,
 };
 
 export default CreditsModal;

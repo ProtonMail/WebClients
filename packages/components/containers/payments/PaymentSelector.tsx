@@ -1,34 +1,27 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { isNumber } from 'proton-shared/lib/helpers/validators';
+import { Currency } from 'proton-shared/lib/interfaces';
 
 import { Input, Label } from '../../components';
 import CurrencySelector from './CurrencySelector';
 import AmountButton from './AmountButton';
 
-const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, minAmount, maxAmount }) => {
+interface Props {
+    currency?: Currency;
+    amount: number;
+    onChangeCurrency: (currency: Currency) => void;
+    onChangeAmount: (amount: number) => void;
+    maxAmount?: number;
+    minAmount?: number;
+}
+
+const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, minAmount, maxAmount }: Props) => {
     const [inputValue, setInputValue] = useState('');
 
-    const handleButton = (value) => {
+    const handleButton = (value: number) => {
         setInputValue('');
         onChangeAmount(value);
-    };
-    const handleChange = ({ target }) => {
-        if (target.value && !isNumber(target.value)) {
-            return;
-        }
-        if (minAmount && target.value < minAmount / 100) {
-            return;
-        }
-        if (maxAmount && target.value > maxAmount / 100) {
-            return;
-        }
-        setInputValue(target.value);
-        onChangeAmount(Math.floor(target.value * 100));
-    };
-    const handleBlur = () => {
-        setInputValue(amount / 100);
     };
 
     return (
@@ -52,8 +45,23 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
                     <Label htmlFor="otherAmount" className="sr-only">{c('Label').t`Other amount`}</Label>
                     <Input
                         className="w100"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
+                        onChange={({ target }) => {
+                            if (!isNumber(target.value)) {
+                                return;
+                            }
+                            const value = Number(target.value);
+                            if (minAmount && value < minAmount / 100) {
+                                return;
+                            }
+                            if (maxAmount && value > maxAmount / 100) {
+                                return;
+                            }
+                            setInputValue(`${value}`);
+                            onChangeAmount(Math.floor(value * 100));
+                        }}
+                        onBlur={() => {
+                            setInputValue(`${amount / 100}`);
+                        }}
                         value={inputValue}
                         id="otherAmount"
                         placeholder={c('Placeholder').t`Other`}
@@ -65,15 +73,6 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
             </div>
         </>
     );
-};
-
-PaymentSelector.propTypes = {
-    currency: PropTypes.string.isRequired,
-    minAmount: PropTypes.number,
-    maxAmount: PropTypes.number,
-    amount: PropTypes.number.isRequired,
-    onChangeCurrency: PropTypes.func.isRequired,
-    onChangeAmount: PropTypes.func.isRequired,
 };
 
 export default PaymentSelector;

@@ -6,6 +6,9 @@ import { c } from 'ttag';
 import { Button } from '../../components';
 import { useNotifications } from '../../hooks';
 
+/**
+ * @type any
+ */
 const PayPalButton = ({ amount, type, children, paypal, ...rest }) => {
     const [retry, setRetry] = useState(false);
     const { createNotification } = useNotifications();
