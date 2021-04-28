@@ -33,7 +33,10 @@ const ShareLinkSuccessModal = ({ link, onSubmit, accessLevel, ...rest }: Props) 
                         .t`Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.`}
                 </Alert>
             )}
-            <Input className="mt1-5" value={link} />
+            <label htmlFor="your-calendar-url" className="sr-only">
+                {c('Label').t`Your calendar URL`}
+            </label>
+            <Input id="your-calendar-url" className="mt1-5" value={link} />
         </FormModal>
     );
 };

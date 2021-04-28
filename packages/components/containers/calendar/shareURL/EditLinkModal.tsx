@@ -30,7 +30,16 @@ const EditLinkModal = ({ decryptedPurpose, onClose, onSubmit, ...rest }: Props) 
             {...rest}
         >
             <Alert>{c('Info').t`Only you can see the labels.`}</Alert>
-            <Input maxLength={50} autoFocus value={purpose} onChange={({ target: { value } }) => setPurpose(value)} />
+            <label htmlFor="your-calendar-url-label" className="sr-only">
+                {c('Label').t`Your calendar URL label`}
+            </label>
+            <Input
+                id="your-calendar-url-label"
+                maxLength={50}
+                autoFocus
+                value={purpose}
+                onChange={({ target: { value } }) => setPurpose(value)}
+            />
         </FormModal>
     );
 };
