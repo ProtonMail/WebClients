@@ -5,6 +5,8 @@ import { getCalendars } from 'proton-shared/lib/models/calendarsModel';
 import { deleteSubscription } from 'proton-shared/lib/api/payments';
 import { hasBonuses } from 'proton-shared/lib/helpers/organization';
 import { MAX_CALENDARS_PER_FREE_USER } from 'proton-shared/lib/calendar/constants';
+import { Calendar, CalendarUrlsResponse } from 'proton-shared/lib/interfaces/calendar';
+import { getPublicLinks } from 'proton-shared/lib/api/calendars';
 import Button, { ButtonProps } from '../../../components/button/Button';
 import {
     useApi,
@@ -58,9 +60,15 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
             return createNotification({ type: 'error', text: c('Info').t`You already have a free account` });
         }
 
-        const calendars = await getCalendars(api);
+        const calendars: Calendar[] = await getCalendars(api);
 
-        if (calendars.length > MAX_CALENDARS_PER_FREE_USER) {
+        const hasLinks = !!(
+            await Promise.all(
+                (calendars || []).map((calendar) => api<CalendarUrlsResponse>(getPublicLinks(calendar.ID)))
+            )
+        ).flatMap(({ CalendarUrls }) => CalendarUrls).length;
+
+        if (calendars.length > MAX_CALENDARS_PER_FREE_USER || hasLinks) {
             await new Promise<void>((resolve, reject) => {
                 createModal(<CalendarDowngradeModal onSubmit={resolve} onClose={reject} />);
             });
