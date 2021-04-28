@@ -43,7 +43,7 @@ const ServerDown = () => (
 
 export const P2PIcon = () => (
     <span className="ml0-5 mr0-5">
-        <Tooltip title={c('Info').t`p2p`}>
+        <Tooltip title={c('Info').t`P2P`}>
             <Icon name="p2p" size={18} className="rounded bg-strong p0-25" />
         </Tooltip>
     </span>
