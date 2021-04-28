@@ -58,7 +58,7 @@ const AttachingModalContent = ({
         <Alert type="error">{model.failure?.message}</Alert>
     ) : (
         <Alert type="info" learnMore={IMPORT_CALENDAR_FAQ_URL}>
-            {c('Description').t`You can import events in iCal format (.ics file).
+            {c('Description').t`You can import events in iCal format (ICS file).
                 The file should have a maximum size of ${MAX_IMPORT_FILE_SIZE_STRING} and have up to ${MAX_IMPORT_EVENTS_STRING} events.
                 If your file is bigger, please split it into smaller files.`}
         </Alert>
