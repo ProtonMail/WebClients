@@ -26,8 +26,8 @@ const AppsDropdown = () => {
         >
             <ul className="apps-dropdown-list unstyled m1 scroll-if-needed">
                 {apps.map(({ id, icon, title }, index) => (
-                    <>
-                        <li key={id}>
+                    <React.Fragment key={id}>
+                        <li>
                             <AppLink
                                 to="/"
                                 toApp={id}
@@ -45,7 +45,7 @@ const AppsDropdown = () => {
                         {index % 2 !== 0 && (
                             <li className="apps-dropdown-item-hr dropdown-item-hr" aria-hidden="true" />
                         )}
-                    </>
+                    </React.Fragment>
                 ))}
                 <li>
                     <Href
