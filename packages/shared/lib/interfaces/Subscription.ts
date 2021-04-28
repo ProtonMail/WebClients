@@ -43,6 +43,10 @@ export interface Subscription {
     Plans: Plan[];
 }
 
+export interface SubscriptionModel extends Subscription {
+    isManagedByMozilla: boolean;
+}
+
 export type PlanIDs = {
     [planID: string]: number;
 };
