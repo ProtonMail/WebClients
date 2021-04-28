@@ -165,7 +165,7 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
             </Alert>
             <Alert type="warning">
                 <div className="text-bold text-uppercase">{c('Info')
-                    .t`Warning: This also removes access to all connected services and deletes all your contacts`}</div>
+                    .t`Warning: This also removes access to all connected services and deletes all of your contacts`}</div>
                 <div>{c('Info').t`Example: ${mailAppName}, ${vpnAppName}, ${driveAppName}, ${calendarAppName}`}</div>
             </Alert>
             <Row>
