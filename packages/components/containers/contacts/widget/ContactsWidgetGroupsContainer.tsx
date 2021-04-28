@@ -67,29 +67,52 @@ const ContactsWidgetGroupsContainer = ({ onClose, onCompose }: Props) => {
         [groups, contactEmails]
     );
 
+    const recipients = selectedIDs
+        .map((selectedID) => {
+            const group = groups.find((group) => group.ID === selectedID);
+            if (groupsEmailsMap[selectedID]) {
+                return groupsEmailsMap[selectedID].map((email) => ({
+                    Name: email.Name,
+                    Address: email.Email,
+                    Group: group?.Path,
+                }));
+            }
+            return [];
+        })
+        .flat();
+
     const handleClearSearch = () => {
         // If done synchronously, button is removed from the dom and the dropdown considers a click outside
         setTimeout(() => setSearch(''));
     };
 
     const handleCompose = () => {
-        const recipients = selectedIDs
-            .map((selectedID) => {
-                const group = groups.find((group) => group.ID === selectedID);
-                return groupsEmailsMap[selectedID].map((email) => ({
-                    Name: email.Name,
-                    Address: email.Email,
-                    Group: group?.Path,
-                }));
-            })
-            .flat();
-
         if (recipients.length > 100) {
             createNotification({
                 type: 'error',
                 text: c('Error').t`You can't send a mail to more than 100 recipients`,
             });
             return;
+        }
+
+        const noContactGroupIDs = selectedIDs.filter((groupID) => !groupsEmailsMap[groupID]?.length);
+
+        if (noContactGroupIDs.length) {
+            const noContactsGroupNames = noContactGroupIDs.map(
+                // Looping in all groups is no really performant but should happen rarely
+                (groupID) => groups.find((group) => group.ID === groupID)?.Name
+            );
+
+            const noContactGroupCount = noContactsGroupNames.length;
+            const noContactGroupList = noContactsGroupNames.join(', ');
+
+            const text = c('Error').ngettext(
+                msgid`One of the groups has no contacts: ${noContactGroupList}`,
+                `Some groups have no contacts: ${noContactGroupList} `,
+                noContactGroupCount
+            );
+
+            createNotification({ type: 'warning', text });
         }
 
         onCompose?.(recipients, []);
@@ -155,6 +178,7 @@ const ContactsWidgetGroupsContainer = ({ onClose, onCompose }: Props) => {
                 <ContactsWidgetGroupsToolbar
                     allChecked={allChecked}
                     selectedCount={selectedIDs.length}
+                    numberOfRecipients={recipients.length}
                     onCheckAll={handleCheckAll}
                     onCompose={onCompose ? handleCompose : undefined}
                     onCreate={handleCreate}

@@ -6,6 +6,7 @@ import { Checkbox, Icon, Button, Tooltip } from '../../../components';
 interface Props {
     allChecked: boolean;
     selectedCount: number;
+    numberOfRecipients: number;
     onCheckAll: (checked: boolean) => void;
     onCompose?: () => void;
     onCreate: () => void;
@@ -15,13 +16,14 @@ interface Props {
 const ContactsWidgetGroupsToolbar = ({
     allChecked,
     selectedCount,
+    numberOfRecipients,
     onCheckAll,
     onCompose,
     onCreate,
     onDelete,
 }: Props) => {
     const handleCheck = ({ target }: ChangeEvent<HTMLInputElement>) => onCheckAll(target.checked);
-    const noSelection = !selectedCount;
+    const noSelection = !selectedCount || !numberOfRecipients;
     const deleteText = noSelection
         ? c('Action').t`Delete contact group`
         : c('Action').ngettext(
