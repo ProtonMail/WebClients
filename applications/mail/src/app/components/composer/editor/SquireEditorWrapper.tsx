@@ -141,15 +141,19 @@ const SquireEditorWrapper = ({
     useEffect(() => {
         if (isPlainText) {
             setEditorReady(false);
-            onReady();
         }
         if (documentReady && (isPlainText || editorReady)) {
             handleSetContent(message);
             onReady();
-            // This setTimeout is needed to have changes from handleSetContent reflected inside handleGetContent
-            setTimeout(() => onChangeContent(handleGetContent(), false, true));
         }
     }, [editorReady, documentReady, isPlainText]);
+
+    // Once the editor initialized, we do an initial change to align the model with the editor
+    useEffect(() => {
+        if (documentReady && (isPlainText || (editorReady && blockquoteSaved !== undefined))) {
+            onChangeContent(handleGetContent(), false, true);
+        }
+    }, [documentReady, isPlainText, editorReady, blockquoteSaved !== undefined]);
 
     // Watch for image deletion
     // Angular/src/app/squire/services/removeInlineWatcher.js

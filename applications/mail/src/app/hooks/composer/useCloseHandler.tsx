@@ -11,6 +11,7 @@ import { OnCompose } from './useCompose';
 
 export interface UseCloseHandlerParameters {
     modelMessage: MessageExtended;
+    lock: boolean;
     ensureMessageContent: () => void;
     uploadInProgress: boolean;
     promiseUpload: Promise<void>;
@@ -24,6 +25,7 @@ export interface UseCloseHandlerParameters {
 
 export const useCloseHandler = ({
     modelMessage,
+    lock,
     ensureMessageContent,
     autoSave,
     actualSave,
@@ -94,6 +96,10 @@ export const useCloseHandler = ({
     });
 
     const handleClose = useHandler(async () => {
+        if (lock) {
+            return;
+        }
+
         // Closing the composer instantly, all the save process will be in background
         onClose();
 

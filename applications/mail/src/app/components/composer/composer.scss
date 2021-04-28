@@ -109,6 +109,13 @@
     max-height: 2.5em;
     padding-right: 5em;
     cursor: text;
+    &.disabled {
+        color: var(--field-disabled-text-color, var(--text-disabled));
+        border-color: var(--field-disabled);
+        .composer-addresses-addressIcon {
+            opacity: .5;
+        }
+    }
 }
 
 .composer-addresses-container-line:not(:first-child) {

@@ -5,6 +5,7 @@ import { StatusIcon } from '../../models/crypto';
 
 interface Props extends Partial<StatusIcon> {
     loading?: boolean;
+    disabled?: boolean;
     useTooltip?: boolean;
     className?: string;
 }
@@ -15,6 +16,10 @@ const EncryptionStatusIcon = ({
     fill,
     text,
     loading,
+    /**
+     * Disabled is for the case when composer is fully disabled
+     */
+    disabled,
     useTooltip = true,
     className,
 }: Props) => {
@@ -32,7 +37,7 @@ const EncryptionStatusIcon = ({
     return (
         <Tooltip title={tooltip}>
             <span className={classnames(['inline-flex flex-item-noshrink align-middle', className])}>
-                <Href href={href} className="flex flex-item-noshrink mauto">
+                <Href href={href} className="flex flex-item-noshrink mauto" tabIndex={disabled ? -1 : undefined}>
                     <Icon
                         viewBox={iconName === 'attention' ? '0 0 16 16' : '0 0 18 18'}
                         size={16}

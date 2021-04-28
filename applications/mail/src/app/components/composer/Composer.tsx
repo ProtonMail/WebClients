@@ -427,6 +427,7 @@ const Composer = (
 
     const { saving, handleManualSave, handleClose } = useCloseHandler({
         modelMessage,
+        lock,
         ensureMessageContent,
         actualSave,
         autoSave,
@@ -507,7 +508,7 @@ const Composer = (
                     <ComposerMeta
                         message={modelMessage}
                         messageSendInfo={messageSendInfo}
-                        disabled={!editorReady}
+                        disabled={lock}
                         onChange={handleChange}
                         onChangeContent={handleChangeContent}
                         addressesBlurRef={addressesBlurRef}

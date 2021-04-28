@@ -2,7 +2,7 @@ import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
 import { getAttachments } from 'proton-shared/lib/mail/messages';
 import React, { MutableRefObject, DragEvent, useState, DragEventHandler } from 'react';
 import { c } from 'ttag';
-import { classnames } from 'react-components';
+import { classnames, EllipsisLoader } from 'react-components';
 
 import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';
@@ -92,6 +92,15 @@ const ComposerContent = ({
             onDragEnter={handleHover(true)}
             onDragOver={(event) => event.preventDefault()}
         >
+            {disabled && (
+                <>
+                    <div className="absolute covered-absolute placeholder opacity-50 bg-norm" />
+                    <div className="absolute covered-absolute color-weak flex flex-justify-center flex-align-items-center">
+                        {c('Info').t`Loading message`}
+                        <EllipsisLoader />
+                    </div>
+                </>
+            )}
             <div className="flex-item-fluid w100 flex flex-column flex-nowrap relative" data-testid="composer-content">
                 <SquireEditorWrapper
                     message={message}
