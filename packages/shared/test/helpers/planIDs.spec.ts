@@ -1,4 +1,11 @@
-import { removeService, switchPlan, clearPlanIDs, hasPlanIDs, setQuantity } from '../../lib/helpers/planIDs';
+import {
+    removeService,
+    switchPlan,
+    clearPlanIDs,
+    hasPlanIDs,
+    setQuantity,
+    getHasPlanType,
+} from '../../lib/helpers/planIDs';
 import { PLAN_SERVICES, PLANS, ADDON_NAMES } from '../../lib/constants';
 import { Organization, Plan } from '../../lib/interfaces';
 
@@ -60,6 +67,25 @@ describe('removeService', () => {
 
     it('should remove mail', () => {
         expect(removeService({ plus: 1 }, MOCK_PLANS, PLAN_SERVICES.MAIL)).toEqual({});
+    });
+});
+
+describe('hasPlanType', () => {
+    it('should return true if plan type is set', () => {
+        expect(getHasPlanType({ [PLANS.PROFESSIONAL]: 1 }, MOCK_PLANS, PLANS.PROFESSIONAL)).toBeTrue();
+        expect(getHasPlanType({ [PLANS.PLUS]: 1, [PLANS.PROFESSIONAL]: 1 }, MOCK_PLANS, PLANS.PROFESSIONAL)).toBeTrue();
+        expect(
+            getHasPlanType(
+                { [PLANS.VISIONARY]: 1, [PLANS.PLUS]: 1, [PLANS.PROFESSIONAL]: 1 },
+                MOCK_PLANS,
+                PLANS.VISIONARY
+            )
+        ).toBeTrue();
+    });
+    it('should not return true if plan type is not set', () => {
+        expect(getHasPlanType({ [PLANS.PROFESSIONAL]: 0 }, MOCK_PLANS, PLANS.PROFESSIONAL)).toBeFalse();
+        expect(getHasPlanType({ [PLANS.PLUS]: 1 }, MOCK_PLANS, PLANS.PROFESSIONAL)).toBeFalse();
+        expect(getHasPlanType({ [PLANS.PLUS]: 1, [PLANS.PROFESSIONAL]: 1 }, MOCK_PLANS, PLANS.VISIONARY)).toBeFalse();
     });
 });
 
