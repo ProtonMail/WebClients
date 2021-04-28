@@ -1,5 +1,5 @@
 import { CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES, PLAN_TYPES, PLANS } from '../constants';
-import { Plan } from '../interfaces';
+import { Currency, Cycle, Plan, SubscriptionCheckResponse } from '../interfaces';
 
 export const FREE_MAIL_PLAN = {
     ID: 'free',
@@ -29,3 +29,22 @@ export const FREE_VPN_PLAN = {
     ...FREE_MAIL_PLAN,
     Name: 'free_vpn' as PLANS,
 } as Plan;
+
+export const getFreeCheckResult = (
+    currency: Currency = DEFAULT_CURRENCY,
+    cycle: Cycle = DEFAULT_CYCLE
+): SubscriptionCheckResponse => {
+    return {
+        Amount: 0,
+        AmountDue: 0,
+        Proration: 0,
+        Credit: 0,
+        Currency: currency,
+        Cycle: cycle,
+        Gift: 0,
+        CouponDiscount: 0,
+        Coupon: null,
+        Additions: null,
+        PeriodEnd: 0,
+    };
+};
