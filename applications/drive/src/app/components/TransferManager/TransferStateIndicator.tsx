@@ -90,10 +90,10 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
             )}
 
             {/* Desktop text */}
-            <span className="no-mobile flex flex-align-items-center">
+            <span className="no-mobile text-ellipsis">
                 {errorText && (
                     <Tooltip title={errorText} originalPlacement="top">
-                        <span className="flex mr0-5">
+                        <span className="mr0-5">
                             <Icon name="info" />
                         </span>
                     </Tooltip>
