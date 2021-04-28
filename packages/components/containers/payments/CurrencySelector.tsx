@@ -20,7 +20,7 @@ const addSymbol = (currency: Currency) => {
 
 interface Props {
     mode?: 'select' | 'buttons';
-    currency: Currency;
+    currency?: Currency;
     onSelect: (newCurrency: Currency) => void;
     loading?: boolean;
     className?: string;
