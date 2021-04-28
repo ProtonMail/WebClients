@@ -6,7 +6,6 @@ import {
     PLAN_SERVICES,
     APPS,
     ADDON_NAMES,
-    PLAN_TYPES,
     MAX_SPACE_ADDON,
     MAX_MEMBER_ADDON,
     MAX_DOMAIN_PRO_ADDON,
@@ -15,13 +14,13 @@ import {
     GIGA,
     PLAN_NAMES,
 } from 'proton-shared/lib/constants';
-import { toMap } from 'proton-shared/lib/helpers/object';
 import { range } from 'proton-shared/lib/helpers/array';
 import { switchPlan, getSupportedAddons, setQuantity } from 'proton-shared/lib/helpers/planIDs';
 import { getAppName } from 'proton-shared/lib/apps/helper';
-import { hasBit } from 'proton-shared/lib/helpers/bitset';
 
-import { InlineLinkButton, Icon, Info, Price, ButtonGroup, Button } from '../../components';
+import { InlineLinkButton, Icon, Info, Price } from '../../components';
+
+import { classnames } from '../../helpers';
 
 const MailAddons: ADDON_NAMES[] = [ADDON_NAMES.MEMBER, ADDON_NAMES.SPACE, ADDON_NAMES.ADDRESS, ADDON_NAMES.DOMAIN];
 const VPNAddons: ADDON_NAMES[] = [ADDON_NAMES.VPN];
@@ -33,12 +32,15 @@ const AddonKey = {
     [ADDON_NAMES.SPACE]: 'MaxSpace',
 } as const;
 
-interface Props {
+interface Props extends React.ComponentPropsWithoutRef<'div'> {
     cycle: Cycle;
     currency: Currency;
+    currentPlan: Plan;
     planIDs: PlanIDs;
     onChangePlanIDs: (planIDs: PlanIDs) => void;
     plans: Plan[];
+    plansMap: { [key: string]: Plan };
+    plansNameMap: { [key: string]: Plan };
     organization?: Organization;
     service: PLAN_SERVICES;
     loading?: boolean;
@@ -64,29 +66,30 @@ const ButtonNumberInput = ({
     onChange?: (newValue: number) => void;
 }) => {
     return (
-        <ButtonGroup>
-            <Button
-                icon
+        <div className="bordered rounded flex-item-noshrink flex flex-nowrap">
+            <button
+                type="button"
                 title={c('Action').t`Decrease`}
+                className={classnames(['p0-5 flex', (disabled || value - step < min) && 'color-disabled'])}
                 disabled={disabled || value - step < min}
                 onClick={() => {
                     const newValue = value - step;
                     onChange?.(newValue);
                 }}
             >
-                <Icon name="minus" alt={c('Action').t`Decrease`} />
-            </Button>
+                <Icon name="minus" alt={c('Action').t`Decrease`} className="mauto" />
+            </button>
             {disabled ? (
-                <div className="flex">
-                    <span className="w6e mauto text-center color-disabled">{value / divider}</span>
+                <div className="mt0-5 flex mb0-5">
+                    <span className="w6e border-left border-right text-center color-disabled">{value / divider}</span>
                 </div>
             ) : (
-                <label htmlFor={id} className="flex">
+                <label htmlFor={id} className="mt0-5 flex mb0-5">
                     <select
                         value={value}
                         disabled={disabled}
                         id={id}
-                        className="w6e text-center"
+                        className="w6e border-left border-right text-center"
                         onChange={({ target: { value: newValue } }) => {
                             onChange?.(+newValue);
                         }}
@@ -101,18 +104,19 @@ const ButtonNumberInput = ({
                     </select>
                 </label>
             )}
-            <Button
-                icon
+            <button
+                type="button"
                 title={c('Action').t`Increase`}
+                className={classnames(['p0-5 flex', (disabled || value + step > max) && 'color-disabled'])}
                 disabled={disabled || value + step > max}
                 onClick={() => {
                     const newValue = value + step;
                     onChange?.(newValue);
                 }}
             >
-                <Icon name="plus" alt={c('Action').t`Increase`} />
-            </Button>
-        </ButtonGroup>
+                <Icon name="plus" alt={c('Action').t`Increase`} className="mauto" />
+            </button>
+        </div>
     );
 };
 
@@ -129,23 +133,16 @@ const ProtonPlanCustomizer = ({
     currency,
     onChangePlanIDs,
     planIDs,
+    plansMap,
+    plansNameMap,
     plans,
+    currentPlan,
     organization,
     service,
     loading,
+    className,
+    ...rest
 }: Props) => {
-    const plansMap = toMap(plans);
-    const plansNameMap = toMap(plans, 'Name');
-    const [currentPlanID] =
-        Object.entries(planIDs).find(([planID, planQuantity]) => {
-            if (planQuantity) {
-                const { Services, Type } = plansMap[planID];
-                return hasBit(Services, service) && Type === PLAN_TYPES.PLAN;
-            }
-            return false;
-        }) || [];
-    const currentPlan = currentPlanID && plansMap[currentPlanID];
-
     const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
     const mailAppName = getAppName(APPS.PROTONMAIL);
 
@@ -185,16 +182,8 @@ const ProtonPlanCustomizer = ({
             .t`Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.`,
     } as const;
 
-    if (!currentPlan) {
-        return null;
-    }
-
-    if ([PLANS.VPNBASIC, PLANS.VISIONARY].includes(currentPlan.Name as PLANS)) {
-        return null;
-    }
-
     return (
-        <div className="pb2 mb2 border-bottom plan-customiser">
+        <div className={classnames(['plan-customiser', className])} {...rest}>
             <h2 className="text-2xl text-bold">{c('Title').t`${appName} customization`}</h2>
             {service === PLAN_SERVICES.MAIL && planIDs[plansNameMap[PLANS.PLUS].ID] ? (
                 <p>
