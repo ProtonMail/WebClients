@@ -145,11 +145,9 @@ const MailboxContainer = ({
 
     const { focusIndex, getFocusedId, setFocusIndex, handleFocus, focusOnLastMessage } = useMailboxFocus({
         elementIDs,
-        showContentView,
         showList,
         listRef,
         labelID,
-        loading,
     });
 
     const welcomeFlag = useWelcomeFlag([labelID, selectedIDs.length]);
@@ -287,6 +285,7 @@ const MailboxContainer = ({
                                     onCompose={onCompose}
                                     breakpoints={breakpoints}
                                     onMessageReady={onMessageReady}
+                                    columnLayout={columnLayout}
                                 />
                             ) : (
                                 <MessageOnlyView
@@ -298,6 +297,7 @@ const MailboxContainer = ({
                                     onCompose={onCompose}
                                     breakpoints={breakpoints}
                                     onMessageReady={onMessageReady}
+                                    columnLayout={columnLayout}
                                 />
                             ))}
                     </section>

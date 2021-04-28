@@ -21,6 +21,7 @@ interface Props {
     onCompose: OnCompose;
     breakpoints: Breakpoints;
     onMessageReady: () => void;
+    columnLayout: boolean;
 }
 
 const MessageOnlyView = ({
@@ -32,6 +33,7 @@ const MessageOnlyView = ({
     onCompose,
     breakpoints,
     onMessageReady,
+    columnLayout,
 }: Props) => {
     const [labels = []] = useLabels();
 
@@ -105,6 +107,7 @@ const MessageOnlyView = ({
                     onCompose={onCompose}
                     breakpoints={breakpoints}
                     onMessageReady={onMessageReady}
+                    columnLayout={columnLayout}
                 />
             </div>
         </>

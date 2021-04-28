@@ -4,28 +4,21 @@ import { useHandler } from 'react-components';
 export interface MailboxFocusContext {
     elementIDs: string[];
     showList: boolean;
-    showContentView: boolean;
     listRef: MutableRefObject<HTMLElement | null>;
     labelID: string;
-    loading: boolean;
 }
 
-export const useMailboxFocus = ({
-    elementIDs,
-    showList,
-    showContentView,
-    listRef,
-    labelID,
-    loading,
-}: MailboxFocusContext) => {
+export const useMailboxFocus = ({ elementIDs, showList, listRef, labelID }: MailboxFocusContext) => {
     const [focusIndex, setFocusIndex] = useState<number>();
-    const labelIDRef = useRef(labelID);
 
     const getFocusedId = () => (focusIndex !== undefined ? elementIDs[focusIndex] : undefined);
 
+    const labelIDRef = useRef(labelID);
+    const focusedIDRef = useRef(getFocusedId());
+
     const handleFocus = useHandler((index) => setFocusIndex(index));
 
-    const focusOnElement = (index: number) => {
+    const focusOnElementByIndex = (index: number) => {
         const element = listRef.current?.querySelector(
             `[data-shortcut-target="item-container"][data-element-id="${elementIDs[index]}"]`
         ) as HTMLElement;
@@ -36,11 +29,6 @@ export const useMailboxFocus = ({
         if (elementIDs.length) {
             setFocusIndex(0);
         }
-    };
-
-    const focusOnLastListItem = () => {
-        const lastIndex = elementIDs.length - 1;
-        setFocusIndex(lastIndex);
     };
 
     const focusOnLastMessage = () => {
@@ -55,25 +43,28 @@ export const useMailboxFocus = ({
         trashWarning?.focus();
     };
 
+    const focusOnElementByID = (elementID: string) => {
+        const index = elementIDs.findIndex((id) => id === elementID);
+        const element = listRef.current?.querySelector(
+            `[data-shortcut-target="item-container"][data-element-id="${elementID}"]`
+        ) as HTMLElement;
+        element?.focus();
+        setFocusIndex(index);
+    };
+
     useEffect(() => {
-        if (loading) {
+        if (labelIDRef.current !== labelID) {
             setFocusIndex(undefined);
-            return;
+            focusedIDRef.current = undefined;
         }
 
-        if (labelIDRef.current === labelID) {
-            if (typeof focusIndex !== 'undefined') {
-                if (elementIDs[focusIndex]) {
-                    focusOnElement(focusIndex);
-                } else {
-                    focusOnLastListItem();
-                }
-            }
-        } else {
-            focusOnFirstListItem();
-            labelIDRef.current = labelID;
+        // keep focus on the same element if new messages are coming in
+        if (labelIDRef.current === labelID && focusedIDRef.current && elementIDs.includes(focusedIDRef.current)) {
+            focusOnElementByID(focusedIDRef.current);
         }
-    }, [labelID, elementIDs, loading]);
+
+        labelIDRef.current = labelID;
+    }, [labelID, elementIDs]);
 
     useEffect(() => {
         if (showList) {
@@ -82,15 +73,11 @@ export const useMailboxFocus = ({
     }, [showList]);
 
     useEffect(() => {
-        if (showContentView) {
-            focusOnLastMessage();
-        }
-    }, [showContentView]);
-
-    useEffect(() => {
         if (typeof focusIndex !== 'undefined') {
-            focusOnElement(focusIndex);
+            focusOnElementByIndex(focusIndex);
         }
+
+        focusedIDRef.current = getFocusedId();
     }, [focusIndex]);
 
     return {
