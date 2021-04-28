@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
-import { PLANS, PLAN_NAMES } from 'proton-shared/lib/constants';
+import { PLANS, PLAN_NAMES, APPS } from 'proton-shared/lib/constants';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 import percentage from 'proton-shared/lib/helpers/percentage';
 import { getPlanIDs } from 'proton-shared/lib/helpers/subscription';
+import { getAppName } from 'proton-shared/lib/apps/helper';
 
 import { Href, Loader, Meter, Button } from '../../../components';
 import { useModals, useSubscription, useOrganization, useUser, useAddresses } from '../../../hooks';
@@ -23,7 +23,14 @@ const getVpnConnectionsText = (n = 0) => {
     return c('Label').ngettext(msgid`${n} VPN Connection available`, `${n} VPN Connections available`, n);
 };
 
-const YourPlanSection = ({ permission }) => {
+interface Props {
+    permission?: boolean;
+}
+
+const mailAppName = getAppName(APPS.PROTONMAIL);
+const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
+
+const YourPlanSection = ({ permission }: Props) => {
     const [user] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
     const [subscription, loadingSubscription] = useSubscription();
@@ -109,10 +116,11 @@ const YourPlanSection = ({ permission }) => {
         </>
     );
 
-    const MailPlanName = PLAN_NAMES[mailPlanName];
+    const formattedMailPlanName = PLAN_NAMES[mailPlanName as keyof typeof PLAN_NAMES];
+    const formattedVPNPlanName = PLAN_NAMES[vpnPlanName as keyof typeof PLAN_NAMES];
 
     // visionary, while considered a mail plan, is a special case because it contains mail and vpn services
-    const VPNPlanName = mailPlanName === PLANS.VISIONARY ? MailPlanName : PLAN_NAMES[vpnPlanName];
+    const VPNPlanName = mailPlanName === PLANS.VISIONARY ? formattedMailPlanName : formattedVPNPlanName;
     const planType = hasPaidVpn ? VPNPlanName : c('Plan').t`Free`;
 
     return (
@@ -121,9 +129,9 @@ const YourPlanSection = ({ permission }) => {
                 <SettingsLayout className="pb1 pt1 pl2 pr2">
                     <SettingsLayoutLeft className="text-semibold">
                         {hasPaidMail ? (
-                            c('Plan').t`ProtonMail ${MailPlanName}`
+                            `${mailAppName} ${formattedMailPlanName}`
                         ) : hasAddresses ? (
-                            c('Plan').t`ProtonMail Free`
+                            c('Plan').t`${mailAppName} Free`
                         ) : (
                             <Href url="https://mail.protonmail.com/login">{c('Info').t`Not activated`}</Href>
                         )}
@@ -135,9 +143,7 @@ const YourPlanSection = ({ permission }) => {
                 </SettingsLayout>
 
                 <SettingsLayout className="pb1 pt1 pl2 pr2 border-top">
-                    <SettingsLayoutLeft className="text-semibold">
-                        {c('Label').t`ProtonVPN ${planType}`}
-                    </SettingsLayoutLeft>
+                    <SettingsLayoutLeft className="text-semibold">{`${vpnAppName} ${planType}`}</SettingsLayoutLeft>
                     <SettingsLayoutRight className="flex-item-fluid pt0-5">
                         {getVpnConnectionsText(hasPaidVpn ? MaxVPN : 1)}
                         <UpsellVPNSubscription />
@@ -150,10 +156,6 @@ const YourPlanSection = ({ permission }) => {
             </Button>
         </SettingsSection>
     );
-};
-
-YourPlanSection.propTypes = {
-    permission: PropTypes.bool,
 };
 
 export default YourPlanSection;

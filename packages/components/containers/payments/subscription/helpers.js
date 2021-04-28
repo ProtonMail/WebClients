@@ -9,6 +9,7 @@ const OCTOBER_01 = getUnixTime(new Date('2020-10-01'));
 
 /**
  * Calculate total for a specific subscription configuration
+ * @type any
  */
 export const getSubTotal = ({ plansMap, cycle, plans, services }) => {
     return Object.entries(plansMap).reduce((acc, [planName, quantity]) => {
