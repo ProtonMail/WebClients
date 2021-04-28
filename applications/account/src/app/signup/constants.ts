@@ -1,4 +1,4 @@
-import { SubscriptionCheckResponse } from 'proton-shared/lib/interfaces';
+import { getFreeCheckResult } from 'proton-shared/lib/subscription/freePlans';
 import { SIGNUP_STEPS, SignupModel } from './interfaces';
 
 export const YANDEX_DOMAINS = ['yandex.ru', 'yandex.ua'];
@@ -105,18 +105,5 @@ export const DEFAULT_SIGNUP_MODEL: SignupModel = {
     planIDs: {},
     humanVerificationMethods: [],
     humanVerificationToken: '',
+    checkResult: getFreeCheckResult(),
 };
-
-export const DEFAULT_CHECK_RESULT: SubscriptionCheckResponse = {
-    Amount: 0,
-    AmountDue: 0,
-    Proration: 0,
-    Credit: 0,
-    Currency: 'EUR',
-    Cycle: 1,
-    Gift: 0,
-    CouponDiscount: 0,
-    Coupon: null,
-    Additions: null,
-    PeriodEnd: 0,
-} as const;
