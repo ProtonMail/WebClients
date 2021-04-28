@@ -2,7 +2,6 @@ import React from 'react';
 import { c } from 'ttag';
 import { Cycle, Currency, Plan, Organization, Subscription, PlanIDs } from 'proton-shared/lib/interfaces';
 import { CYCLE, PLANS, PLAN_SERVICES, APPS } from 'proton-shared/lib/constants';
-import { toMap } from 'proton-shared/lib/helpers/object';
 import { getPlan } from 'proton-shared/lib/helpers/subscription';
 import { switchPlan } from 'proton-shared/lib/helpers/planIDs';
 import { getAppName } from 'proton-shared/lib/apps/helper';
@@ -22,15 +21,17 @@ const NAMES = {
     [PLANS.VISIONARY]: 'Visionary',
 } as const;
 
-export interface Props {
+export interface Props extends React.ComponentPropsWithoutRef<'div'> {
     index?: number;
     cycle: Cycle;
     currency: Currency;
     onChangePlanIDs: (planIDs: PlanIDs) => void;
     onChangeCycle: (cycle: Cycle) => void;
-    onBack: () => void;
+    onBack?: () => void;
     planIDs: PlanIDs;
     plans: Plan[];
+    plansMap: { [key: string]: Plan };
+    plansNameMap: { [key: string]: Plan };
     organization?: Organization;
     service: PLAN_SERVICES;
     subscription?: Subscription;
@@ -44,25 +45,27 @@ const ProtonPlanPicker = ({
     onChangeCycle,
     onBack,
     planIDs,
+    plansMap,
+    plansNameMap,
     plans,
     organization,
     service,
     subscription,
+    ...rest
 }: Props) => {
     const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
     const mailAppName = getAppName(APPS.PROTONMAIL);
-    const planNamesMap = toMap(plans, 'Name');
     const MailPlans: Plan[] = [
         FREE_MAIL_PLAN,
-        planNamesMap[PLANS.PLUS],
-        planNamesMap[PLANS.PROFESSIONAL],
-        index === 0 && service === PLAN_SERVICES.MAIL && planNamesMap[PLANS.VISIONARY],
+        plansNameMap[PLANS.PLUS],
+        plansNameMap[PLANS.PROFESSIONAL],
+        index === 0 && service === PLAN_SERVICES.MAIL && plansNameMap[PLANS.VISIONARY],
     ].filter(isTruthy);
     const VPNPlans: Plan[] = [
         FREE_VPN_PLAN,
-        planNamesMap[PLANS.VPNBASIC],
-        planNamesMap[PLANS.VPNPLUS],
-        index === 0 && service === PLAN_SERVICES.VPN && planNamesMap[PLANS.VISIONARY],
+        plansNameMap[PLANS.VPNBASIC],
+        plansNameMap[PLANS.VPNPLUS],
+        index === 0 && service === PLAN_SERVICES.VPN && plansNameMap[PLANS.VISIONARY],
     ].filter(isTruthy);
     const serviceFreePlan = service === PLAN_SERVICES.VPN ? FREE_VPN_PLAN : FREE_MAIL_PLAN;
     const currentPlan = subscription ? getPlan(subscription, service) : serviceFreePlan;
@@ -75,12 +78,12 @@ const ProtonPlanPicker = ({
     );
     const save20 = <span className="TODO" key="save-20">{c('Info').t`Save 20%`}</span>;
 
-    if (index === 1 && planIDs[planNamesMap[PLANS.VISIONARY].ID]) {
+    if (index === 1 && planIDs[plansNameMap[PLANS.VISIONARY].ID]) {
         return null;
     }
 
     return (
-        <div className="pb2 mb2 border-bottom">
+        <div {...rest}>
             <h2 className="text-2xl text-bold">{service === PLAN_SERVICES.VPN ? vpnAppName : mailAppName} plan</h2>
             {index === 0 && cycle === CYCLE.MONTHLY ? (
                 <p>{c('Info').jt`${save20} on your subscription by switching to ${annualBilling}`}</p>
@@ -140,7 +143,7 @@ const ProtonPlanPicker = ({
                     );
                 })}
             </ul>
-            <Button color="weak" onClick={() => onBack()}>{c('Action').t`Compare plans`}</Button>
+            {onBack && <Button color="weak" onClick={onBack}>{c('Action').t`Compare plans`}</Button>}
         </div>
     );
 };
