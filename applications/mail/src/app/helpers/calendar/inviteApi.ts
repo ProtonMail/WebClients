@@ -23,6 +23,7 @@ import {
     ICAL_EVENT_STATUS,
     ICAL_METHOD,
 } from 'proton-shared/lib/calendar/constants';
+import { GetCalendarInfo } from 'proton-shared/lib/interfaces/hooks/GetCalendarInfo';
 import getCreationKeys from 'proton-shared/lib/calendar/integration/getCreationKeys';
 import getPaginatedEventsByUID from 'proton-shared/lib/calendar/integration/getPaginatedEventsByUID';
 import {
@@ -78,7 +79,6 @@ import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { GetCanonicalEmails } from 'proton-shared/lib/interfaces/hooks/GetCanonicalEmails';
 import { RequireSome, Unwrap } from 'proton-shared/lib/interfaces/utils';
 import { getPrimaryKey } from 'proton-shared/lib/keys';
-import { GetCalendarInfo } from '../../../../../react-components/hooks/useGetCalendarInfo';
 import { MessageExtendedWithData } from '../../models/message';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
 import {
