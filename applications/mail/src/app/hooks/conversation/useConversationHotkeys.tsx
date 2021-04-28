@@ -42,9 +42,14 @@ export const useConversationHotkeys = (
         ],
         [
             'ArrowUp',
-
             (e) => {
                 e.stopPropagation();
+                const trashWarning = document.querySelector('[data-shortcut-target="trash-warning"]') as HTMLElement;
+                if (trashWarning && focusIndex === 0) {
+                    trashWarning.focus();
+                    return;
+                }
+
                 const previousIndex = focusIndex !== undefined ? Math.max(0, focusIndex - 1) : messages.length - 1;
                 // leave the browser arrow scroll for last email
                 if (previousIndex !== 0) {

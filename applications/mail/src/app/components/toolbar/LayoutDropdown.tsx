@@ -1,17 +1,18 @@
 import React from 'react';
 import { Icon, DropdownMenu, DropdownMenuButton, useApi, useEventManager, useLoading } from 'react-components';
 import { VIEW_LAYOUT } from 'proton-shared/lib/constants';
+import { MailSettings } from 'proton-shared/lib/interfaces';
 import { updateViewLayout } from 'proton-shared/lib/api/mailSettings';
 import { c } from 'ttag';
 
 import ToolbarDropdown from './ToolbarDropdown';
 
 interface Props {
-    mailSettings: any;
+    mailSettings: MailSettings;
 }
 
-const LayoutDropdown = ({ mailSettings = {} }: Props) => {
-    const { ViewLayout = VIEW_LAYOUT.COLUMN } = mailSettings;
+const LayoutDropdown = ({ mailSettings }: Props) => {
+    const { ViewLayout = VIEW_LAYOUT.COLUMN } = mailSettings || {};
 
     const api = useApi();
     const { call } = useEventManager();

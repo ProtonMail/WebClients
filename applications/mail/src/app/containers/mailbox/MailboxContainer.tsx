@@ -98,6 +98,11 @@ const MailboxContainer = ({
     const handleSort = useCallback((sort: Sort) => history.push(setSortInUrl(history.location, sort)), []);
     const handleFilter = useCallback((filter: Filter) => history.push(setFilterInUrl(history.location, filter)), []);
 
+    const [isMessageOpening, setIsMessageOpening] = useState(false);
+
+    const onMessageLoad = () => setIsMessageOpening(true);
+    const onMessageReady = () => setIsMessageOpening(false);
+
     const { labelID, elements, loading, expectedLength, total } = useElements({
         conversationMode: isConversationMode(inputLabelID, mailSettings, location),
         labelID: inputLabelID,
@@ -150,17 +155,18 @@ const MailboxContainer = ({
     const welcomeFlag = useWelcomeFlag([labelID, selectedIDs.length]);
 
     const handleElement = useCallback(
-        (elementID: string | undefined) => {
+        (elementID: string | undefined, preventComposer = false) => {
             // Using the getter to prevent having elements in dependency of the callback
             const [element] = getElementsFromIDs([elementID || '']);
 
-            if (isMessage(element) && isDraft(element)) {
+            if (isMessage(element) && isDraft(element) && !preventComposer) {
                 onCompose({
                     existingDraft: { localID: element.ID as string, data: element as Message },
                     fromUndo: false,
                 });
             }
             if (isConversationContentView && isMessage(element)) {
+                onMessageLoad();
                 history.push(
                     setParamsInLocation(history.location, {
                         labelID,
@@ -169,6 +175,7 @@ const MailboxContainer = ({
                     })
                 );
             } else {
+                onMessageLoad();
                 history.push(setParamsInLocation(history.location, { labelID, elementID: element.ID }));
             }
             handleCheckAll(false);
@@ -179,7 +186,19 @@ const MailboxContainer = ({
     const conversationMode = isConversationMode(labelID, mailSettings, location);
 
     const { elementRef, labelDropdownToggleRef, moveDropdownToggleRef } = useMailboxHotkeys(
-        { labelID, elementID, elementIDs, checkedIDs, selectedIDs, focusIndex, columnLayout, showContentView },
+        {
+            labelID,
+            elementID,
+            messageID,
+            elementIDs,
+            checkedIDs,
+            selectedIDs,
+            focusIndex,
+            columnLayout,
+            showContentView,
+            isMessageOpening,
+            location,
+        },
         {
             focusOnLastMessage,
             getFocusedId,
@@ -200,6 +219,7 @@ const MailboxContainer = ({
                 <Toolbar
                     labelID={labelID}
                     elementID={elementID}
+                    messageID={messageID}
                     selectedIDs={selectedIDs}
                     checkedIDs={checkedIDs}
                     elementIDs={elementIDs}
@@ -214,6 +234,7 @@ const MailboxContainer = ({
                     onElement={handleElement}
                     labelDropdownToggleRef={labelDropdownToggleRef}
                     moveDropdownToggleRef={moveDropdownToggleRef}
+                    location={location}
                 />
             )}
             <PrivateMainArea className="flex" hasToolbar={showToolbar} hasRowMode={!showContentPanel}>
@@ -265,6 +286,7 @@ const MailboxContainer = ({
                                     onBack={handleBack}
                                     onCompose={onCompose}
                                     breakpoints={breakpoints}
+                                    onMessageReady={onMessageReady}
                                 />
                             ) : (
                                 <MessageOnlyView
@@ -275,6 +297,7 @@ const MailboxContainer = ({
                                     onBack={handleBack}
                                     onCompose={onCompose}
                                     breakpoints={breakpoints}
+                                    onMessageReady={onMessageReady}
                                 />
                             ))}
                     </section>

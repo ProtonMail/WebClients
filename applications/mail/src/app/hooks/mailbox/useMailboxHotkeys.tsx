@@ -3,6 +3,7 @@ import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { KeyboardKey } from 'proton-shared/lib/interfaces';
 import { HotkeyTuple, useFolders, useHotkeys, useLabels, useMailSettings } from 'react-components';
 import { useHistory } from 'react-router-dom';
+import { Location } from 'history';
 import { noop } from 'proton-shared/lib/helpers/function';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { getFolderName, labelIncludes } from '../../helpers/labels';
@@ -16,26 +17,30 @@ import { useGetElementsFromIDs } from './useElementsCache';
 import { Element } from '../../models/element';
 import { Filter } from '../../models/tools';
 import { useFolderNavigationHotkeys } from './useFolderNavigationHotkeys';
+import { isConversationMode } from '../../helpers/mailSettings';
 
 const { TRASH, SPAM, ARCHIVE, INBOX, DRAFTS, ALL_DRAFTS, STARRED, SENT, ALL_SENT, ALL_MAIL } = MAILBOX_LABEL_IDS;
 
 export interface MailboxHotkeysContext {
     labelID: string;
-    elementID: string | undefined;
+    elementID?: string;
+    messageID?: string;
     elementIDs: string[];
     checkedIDs: string[];
     selectedIDs: string[];
-    focusIndex: number | undefined;
+    focusIndex?: number;
     columnLayout: boolean;
     showContentView: boolean;
+    isMessageOpening: boolean;
+    location: Location;
 }
 
 export interface MailboxHotkeysHandlers {
     handleBack: () => void;
     getFocusedId: () => string | undefined;
-    setFocusIndex: (index: number | undefined) => void;
+    setFocusIndex: (index?: number) => void;
     focusOnLastMessage: () => void;
-    handleElement: (ID: string) => void;
+    handleElement: (ID: string, preventComposer?: boolean) => void;
     handleCheck: (IDs: string[], checked: boolean, replace: boolean) => void;
     handleCheckAll: (checked: boolean) => void;
     handleCheckOnlyOne: (ID: string) => void;
@@ -47,12 +52,15 @@ export const useMailboxHotkeys = (
     {
         labelID,
         elementID,
+        messageID,
         elementIDs,
         checkedIDs,
         selectedIDs,
         focusIndex,
         columnLayout,
         showContentView,
+        isMessageOpening,
+        location,
     }: MailboxHotkeysContext,
     {
         handleBack,
@@ -67,7 +75,8 @@ export const useMailboxHotkeys = (
         handleFilter,
     }: MailboxHotkeysHandlers
 ) => {
-    const [{ Shortcuts = 1 } = {}] = useMailSettings();
+    const [mailSettings] = useMailSettings();
+    const { Shortcuts = 1 } = mailSettings || {};
     const getElementsFromIDs = useGetElementsFromIDs();
     const history = useHistory<any>();
     const [folders] = useFolders();
@@ -406,24 +415,42 @@ export const useMailboxHotkeys = (
         [
             'K',
             (e) => {
-                if (Shortcuts && elementID) {
+                if (Shortcuts && elementID && !isMessageOpening) {
                     e.preventDefault();
-                    const index = elementIDs.findIndex((id: string) => id === elementID);
+
+                    const ID =
+                        !isConversationMode(labelID, mailSettings, location) && messageID ? messageID : elementID;
+
+                    const index = elementIDs.findIndex((id: string) => id === ID);
                     const previousIndex = index !== null ? Math.max(0, index - 1) : elementIDs.length - 1;
 
-                    handleElement(elementIDs[previousIndex]);
+                    if (index === previousIndex) {
+                        return;
+                    }
+
+                    setFocusIndex(previousIndex);
+                    handleElement(elementIDs[previousIndex], true);
                 }
             },
         ],
         [
             'J',
             (e) => {
-                if (Shortcuts && elementID) {
+                if (Shortcuts && elementID && !isMessageOpening) {
                     e.preventDefault();
-                    const index = elementIDs.findIndex((id: string) => id === elementID);
+
+                    const ID =
+                        !isConversationMode(labelID, mailSettings, location) && messageID ? messageID : elementID;
+
+                    const index = elementIDs.findIndex((id: string) => id === ID);
                     const nextIndex = index !== null ? Math.min(elementIDs.length - 1, index + 1) : 0;
 
-                    handleElement(elementIDs[nextIndex]);
+                    if (index === nextIndex) {
+                        return;
+                    }
+
+                    setFocusIndex(nextIndex);
+                    handleElement(elementIDs[nextIndex], true);
                 }
             },
         ],

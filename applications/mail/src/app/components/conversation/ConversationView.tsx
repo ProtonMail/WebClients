@@ -1,6 +1,7 @@
 import React, { useEffect, memo, useRef } from 'react';
 import { useLabels, useToggle, classnames } from 'react-components';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { MailSettings } from 'proton-shared/lib/interfaces';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { isDraft } from 'proton-shared/lib/mail/messages';
 
@@ -26,10 +27,11 @@ interface Props {
     labelID: string;
     conversationID: string;
     messageID?: string;
-    mailSettings: any;
+    mailSettings: MailSettings;
     onBack: () => void;
     onCompose: OnCompose;
     breakpoints: Breakpoints;
+    onMessageReady: () => void;
 }
 
 const DEFAULT_FILTER_VALUE = true;
@@ -43,6 +45,7 @@ const ConversationView = ({
     onBack,
     onCompose,
     breakpoints,
+    onMessageReady,
 }: Props) => {
     const [labels = []] = useLabels();
     const {
@@ -81,7 +84,7 @@ const ConversationView = ({
         if (!loadingMessages && messageID && !isDraft(messageInUrl)) {
             expandMessage(messageID);
         }
-    }, [conversationID, messageID, loadingMessages, isDraft(messageInUrl)]);
+    }, [conversationID, messageID, loadingMessages, messageInUrl]);
 
     useEffect(() => {
         setFilter(DEFAULT_FILTER_VALUE);
@@ -98,6 +101,17 @@ const ConversationView = ({
         { handleFocus, getFocusedId, expandMessage }
     );
 
+    const trashWarningRef = useRef<HTMLDivElement>(null);
+    const onlyTrashInConversation = !loadingMessages && !filteredMessages.length;
+
+    useEffect(() => {
+        if (onlyTrashInConversation) {
+            // unblock J/K shortcuts
+            setTimeout(onMessageReady);
+            trashWarningRef?.current?.focus();
+        }
+    }, [onlyTrashInConversation, conversationID]);
+
     return (
         <>
             <ConversationHeader
@@ -108,12 +122,16 @@ const ConversationView = ({
                 breakpoints={breakpoints}
             />
             <div
-                className={classnames(['scroll-if-needed flex-item-fluid pt0-5 max-w100', hidden && 'hidden'])}
+                className={classnames([
+                    'scroll-if-needed flex-item-fluid pt0-5 max-w100 no-outline',
+                    hidden && 'hidden',
+                ])}
                 ref={elementRef}
                 tabIndex={-1}
-                style={{ outline: 'none' }}
             >
-                {showTrashWarning && <TrashWarning inTrash={inTrash} filter={filter} onToggle={toggleFilter} />}
+                {showTrashWarning && (
+                    <TrashWarning ref={trashWarningRef} inTrash={inTrash} filter={filter} onToggle={toggleFilter} />
+                )}
                 {messagesToShow.map((message, index) => (
                     <MessageView
                         key={message.ID}
@@ -132,6 +150,7 @@ const ConversationView = ({
                         onCompose={onCompose}
                         breakpoints={breakpoints}
                         onFocus={handleFocus}
+                        onMessageReady={onMessageReady}
                     />
                 ))}
             </div>

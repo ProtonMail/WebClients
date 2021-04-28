@@ -1,5 +1,5 @@
+import React, { useEffect, useMemo } from 'react';
 import { isPlainText } from 'proton-shared/lib/mail/messages';
-import React, { useMemo } from 'react';
 import { classnames, Button, Tooltip } from 'react-components';
 import { c } from 'ttag';
 import { MessageExtended } from '../../models/message';
@@ -20,6 +20,7 @@ interface Props {
      * false: (default) show button and collapse blockquote (if one founded)
      */
     forceBlockquote?: boolean;
+    onMessageReady?: () => void;
 }
 
 const MessageBody = ({
@@ -30,6 +31,7 @@ const MessageBody = ({
     forceBlockquote = false,
     originalMessageMode,
     toggleOriginalMessage,
+    onMessageReady,
 }: Props) => {
     const plain = isPlainText(message.data);
 
@@ -46,6 +48,12 @@ const MessageBody = ({
     const isBlockquote = blockquote !== '';
     const showButton = !forceBlockquote && isBlockquote;
     const showBlockquote = forceBlockquote || originalMessageMode;
+
+    useEffect(() => {
+        if (!loadingMode && !decryptingMode && onMessageReady) {
+            setTimeout(onMessageReady);
+        }
+    }, [loadingMode, decryptingMode, message.data?.ID]);
 
     return (
         <div

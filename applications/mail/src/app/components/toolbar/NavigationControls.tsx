@@ -1,20 +1,39 @@
 import React from 'react';
-import { Icon, ToolbarButton } from 'react-components';
 import { c } from 'ttag';
+import { Location } from 'history';
+import { Icon, ToolbarButton } from 'react-components';
+import { MailSettings } from 'proton-shared/lib/interfaces';
+
+import { isConversationMode } from '../../helpers/mailSettings';
 
 interface Props {
     loading: boolean;
     conversationMode: boolean;
     elementID?: string;
+    messageID?: string;
     elementIDs: string[];
-    onElement: (elementID: string | undefined) => void;
+    onElement: (elementID?: string, preventComposer?: boolean) => void;
+    labelID: string;
+    mailSettings: MailSettings;
+    location: Location;
 }
 
-const NavigationControls = ({ loading, conversationMode, elementID, elementIDs, onElement }: Props) => {
-    const index = elementIDs.findIndex((id) => id === elementID);
+const NavigationControls = ({
+    loading,
+    conversationMode,
+    elementID,
+    messageID,
+    elementIDs,
+    onElement,
+    labelID,
+    mailSettings,
+    location,
+}: Props) => {
+    const ID = !isConversationMode(labelID, mailSettings, location) && messageID ? messageID : elementID;
+    const index = elementIDs.findIndex((id) => id === ID);
 
-    const handleNext = () => onElement(elementIDs[index + 1]);
-    const handlePrevious = () => onElement(elementIDs[index - 1]);
+    const handleNext = () => onElement(elementIDs[index + 1], true);
+    const handlePrevious = () => onElement(elementIDs[index - 1], true);
 
     return (
         <>

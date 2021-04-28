@@ -3,6 +3,7 @@ import { hasAttachments, isDraft, isSent, isOutbox } from 'proton-shared/lib/mai
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { classnames } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
+import { MailSettings } from 'proton-shared/lib/interfaces';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { getSentStatusIconInfo, getReceivedStatusIcon, MessageViewIcons } from '../../helpers/message/icon';
 import MessageBody from './MessageBody';
@@ -30,13 +31,14 @@ interface Props {
     loading: boolean;
     labels: Label[];
     message: Message;
-    mailSettings: any;
+    mailSettings: MailSettings;
     conversationIndex?: number;
     conversationID?: string;
     onBack: () => void;
     onCompose: OnCompose;
     breakpoints: Breakpoints;
     onFocus?: (index: number) => void;
+    onMessageReady?: () => void;
 }
 
 export interface MessageViewRef {
@@ -57,6 +59,7 @@ const MessageView = (
         onCompose,
         breakpoints,
         onFocus = noop,
+        onMessageReady,
     }: Props,
     ref: Ref<MessageViewRef>
 ) => {
@@ -136,7 +139,15 @@ const MessageView = (
         if (!loading && !messageLoaded) {
             void addAction(load);
         }
-    }, [loading, messageLoaded]);
+
+        if (isDraft(message.data) && messageLoaded) {
+            // unblock J/K shortcuts
+            if (onMessageReady) {
+                setTimeout(onMessageReady);
+            }
+            elementRef.current?.focus();
+        }
+    }, [loading, messageLoaded, message.data?.ID]);
 
     // Manage preparing the content of the message
     useEffect(() => {
@@ -263,6 +274,7 @@ const MessageView = (
                         message={message}
                         originalMessageMode={originalMessageMode}
                         toggleOriginalMessage={toggleOriginalMessage}
+                        onMessageReady={onMessageReady}
                     />
                     {showFooter ? <MessageFooter message={message} /> : null}
                 </>
