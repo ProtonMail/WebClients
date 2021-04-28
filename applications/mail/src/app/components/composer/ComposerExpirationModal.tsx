@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent } from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { Alert, Href, generateUID, useNotifications, Label } from 'react-components';
 import { range } from 'proton-shared/lib/helpers/array';
 
@@ -102,12 +102,17 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                         className="field mr0-25"
                         value={days}
                         onChange={handleChange(setDays)}
-                        placeholder={c('Info').t`Days`}
+                        placeholder={c('Info').ngettext(msgid`Day`, `Days`, days)}
                         data-testid="composer:expiration-days"
                     >
                         {optionRange(7 * 4 + 1)}
                     </select>
-                    <label htmlFor={`composer-expiration-days-${uid}`} className="mr0-5">{c('Info').t`Days`}</label>
+                    <label htmlFor={`composer-expiration-days-${uid}`} className="mr0-5">
+                        {
+                            // translator: the word is preceded by the number of days, between 0 and 28
+                            c('Info').ngettext(msgid`Day`, `Days`, days)
+                        }
+                    </label>
                     <select
                         id={`composer-expiration-hours-${uid}`}
                         className="field mr0-25"
@@ -118,7 +123,12 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                     >
                         {optionRange(24)}
                     </select>
-                    <label htmlFor={`composer-expiration-hours-${uid}`}>{c('Info').t`Hours`}</label>
+                    <label htmlFor={`composer-expiration-hours-${uid}`}>
+                        {
+                            // translator: the word is preceded by the number of hours, between 0 and 23
+                            c('Info').ngettext(msgid`Hour`, `Hours`, hours)
+                        }
+                    </label>
                 </span>{' '}
             </div>
         </ComposerInnerModal>
