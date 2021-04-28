@@ -4,7 +4,7 @@ import { fireEvent } from '@testing-library/dom';
 import { act } from 'react-dom/test-utils';
 import { getAppVersion } from 'react-components';
 import useEventManager from 'react-components/hooks/useEventManager';
-import { APPS_CONFIGURATION, LABEL_TYPE } from 'proton-shared/lib/constants';
+import { LABEL_TYPE } from 'proton-shared/lib/constants';
 import loudRejection from 'loud-rejection';
 import { render, clearAll, addToCache, minimalCache, config, history } from '../../helpers/test/helper';
 import MailSidebar from './MailSidebar';
@@ -142,11 +142,9 @@ describe('MailSidebar', () => {
         setupTest();
 
         const { getByText } = await render(<MailSidebar {...props} />, false);
-        const appName = APPS_CONFIGURATION[config.APP_NAME]?.name;
         const appVersion = getAppVersion(config.APP_VERSION_DISPLAY || config.APP_VERSION);
 
-        const expectedVersion = `${appName} ${appVersion}`;
-        const appVersionButton = getByText(expectedVersion);
+        const appVersionButton = getByText(appVersion);
 
         // Check if the changelog modal opens on click
         fireEvent.click(appVersionButton);
