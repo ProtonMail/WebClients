@@ -10,7 +10,7 @@ const CURRENCIES = {
     CHF: 'CHF',
 };
 
-interface Props {
+export interface Props {
     children: number;
     currency?: Currency | string;
     className?: string;
