@@ -17,12 +17,7 @@ const Breadcrumb = ({ children, onClick, active, noShrink, className, ...rest }:
         <li
             {...rest}
             ref={ref}
-            className={classnames([
-                'collapsing-breadcrumb',
-                active && 'flex-item-fluid-auto',
-                noShrink && 'collapsing-breadcrumb--no-shrink',
-                className,
-            ])}
+            className={classnames(['collapsing-breadcrumb', noShrink && 'collapsing-breadcrumb--no-shrink', className])}
         >
             {onClick ? (
                 <button type="button" title={children} onClick={onClick} className={textClass}>
