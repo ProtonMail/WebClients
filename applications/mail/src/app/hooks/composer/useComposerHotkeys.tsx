@@ -57,7 +57,7 @@ export const useComposerHotkeys = ({
         save: async (e: KeyboardEvent) => {
             e.preventDefault();
             e.stopPropagation();
-            if (!saving) {
+            if (!saving && !lock) {
                 await handleManualSave();
             }
         },
