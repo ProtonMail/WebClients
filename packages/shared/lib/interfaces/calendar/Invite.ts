@@ -10,7 +10,7 @@ export interface PartstatActions {
     acceptTentatively: () => Promise<void>;
     decline: () => Promise<void>;
     retryCreateEvent: (partstat: ICAL_ATTENDEE_STATUS) => Promise<void>;
-    retryUpdateEvent: (partstat: ICAL_ATTENDEE_STATUS) => Promise<void>;
+    retryUpdateEvent: (partstat: ICAL_ATTENDEE_STATUS, timestamp: number) => Promise<void>;
 }
 
 export interface CalendarWidgetData {

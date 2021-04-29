@@ -202,6 +202,7 @@ export interface CreateCalendarEventData
     extends RequireSome<CalendarEventBlobData, 'SharedEventContent' | 'SharedKeyPacket'> {
     Permissions: number;
     IsOrganizer?: 0 | 1;
+    RemovedAttendeeAddresses?: string[];
 }
 export interface CreateSingleCalendarEventData extends CreateCalendarEventData {
     MemberID: string;
