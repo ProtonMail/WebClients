@@ -3,6 +3,7 @@ import React, { MouseEvent, useMemo } from 'react';
 import { c } from 'ttag';
 import { Nullable, SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { ACCESS_LEVEL, CalendarLink } from 'proton-shared/lib/interfaces/calendar';
+import { UserModel } from 'proton-shared/lib/interfaces';
 
 import { Table, TableHeader, TableBody, TableRow, Info, DropdownActions, Icon } from '../../../components';
 
@@ -12,11 +13,12 @@ interface Props {
     onCopyLink: (link: string, e: MouseEvent<HTMLButtonElement>) => void;
     onDelete: ({ calendarID, urlID }: { calendarID: string; urlID: string }) => void;
     isLoadingMap: SimpleMap<boolean>;
+    user: UserModel;
 }
 
 const sortLinks = (links: CalendarLink[]) => [...links].sort((a, b) => a.CreateTime - b.CreateTime);
 
-const LinkTable = ({ linksMap, onCopyLink, onDelete, onEdit, isLoadingMap }: Props) => {
+const LinkTable = ({ linksMap, onCopyLink, onDelete, onEdit, isLoadingMap, user }: Props) => {
     const sortedLinks = useMemo(() => sortLinks(Object.values(linksMap).filter(isTruthy).flat()), [linksMap]);
 
     if (!sortedLinks.length) {
@@ -47,11 +49,11 @@ const LinkTable = ({ linksMap, onCopyLink, onDelete, onEdit, isLoadingMap }: Pro
                             purpose,
                         }) => {
                             const list = [
-                                {
+                                user.hasNonDelinquentScope && {
                                     text: c('Action').t`Copy link`,
                                     onClick: (e: MouseEvent<HTMLButtonElement>) => onCopyLink(link, e),
                                 },
-                                {
+                                user.hasNonDelinquentScope && {
                                     text: c('Action').t`Edit label`,
                                     onClick: () => onEdit({ calendarID: CalendarID, urlID: CalendarUrlID, purpose }),
                                 },
@@ -60,7 +62,7 @@ const LinkTable = ({ linksMap, onCopyLink, onDelete, onEdit, isLoadingMap }: Pro
                                     actionType: 'delete',
                                     onClick: () => onDelete({ calendarID: CalendarID, urlID: CalendarUrlID }),
                                 } as const,
-                            ];
+                            ].filter(isTruthy);
 
                             return (
                                 <TableRow
