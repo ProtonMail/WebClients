@@ -21,7 +21,7 @@ import DeleteLinkConfirmationModal from './DeleteLinkConfirmationModal';
 import EditLinkModal from './EditLinkModal';
 import { Alert, Loader } from '../../../components';
 import useCalendarShareUrls from './useCalendarShareUrls';
-import { SettingsSection } from '../../account';
+import { SettingsParagraph, SettingsSection } from '../../account';
 
 interface Props {
     defaultCalendar?: Calendar;
@@ -147,16 +147,16 @@ const ShareSection = ({ calendars, defaultCalendar }: Props) => {
         });
     };
 
-    const infoAlert = (
-        <Alert type="info">{c('Info')
-            .t`Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.`}</Alert>
+    const infoParagraph = (
+        <SettingsParagraph>{c('Info')
+            .t`Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.`}</SettingsParagraph>
     );
 
     return (
         <SettingsSection>
             {calendars.length ? (
                 <>
-                    {infoAlert}
+                    {infoParagraph}
                     <ShareTable
                         linksMap={linksMap}
                         isLoadingCreate={isLoadingCreate}
@@ -169,7 +169,7 @@ const ShareSection = ({ calendars, defaultCalendar }: Props) => {
             ) : (
                 <>
                     <Alert type="warning">{c('Info').t`You need to have a calendar to create a link.`}</Alert>
-                    {infoAlert}
+                    {infoParagraph}
                 </>
             )}
             {isLoadingLinks ? (
