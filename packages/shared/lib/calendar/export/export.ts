@@ -30,13 +30,14 @@ export const processInBatches = async ({
     getEncryptionPreferences,
     getDecryptedPassphraseAndCalendarKeys,
     totalToProcess,
-}: ProcessData): Promise<[VcalVeventComponent[], CalendarEvent[]]> => {
+}: ProcessData): Promise<[VcalVeventComponent[], CalendarEvent[], number]> => {
     const PAGE_SIZE = 10;
     const DELAY = 100;
     const batchesLength = Math.ceil(totalToProcess / PAGE_SIZE);
     const processed: VcalVeventComponent[] = [];
     const errored: CalendarEvent[] = [];
     const promises: Promise<void>[] = [];
+    let totalEventsFetched = 0;
 
     let lastId;
 
@@ -83,7 +84,7 @@ export const processInBatches = async ({
 
     for (let i = 0; i < batchesLength; i++) {
         if (signal.aborted) {
-            return [[], []];
+            return [[], [], totalToProcess];
         }
 
         const params: CalendarExportEventsQuery = {
@@ -91,18 +92,22 @@ export const processInBatches = async ({
             BeginID: lastId,
         };
 
-        const [result] = await Promise.all([
+        const [{ Events }] = await Promise.all([
             api<{ Events: CalendarEvent[] }>(queryEvents(calendarID, params)),
             wait(DELAY),
         ]);
 
         if (signal.aborted) {
-            return [[], []];
+            return [[], [], totalToProcess];
         }
 
-        lastId = result.Events[result.Events.length - 1].ID;
+        const { length: eventsLength } = Events;
 
-        const promise = Promise.all(result.Events.map(decryptEvent)).then((veventComponents) => {
+        lastId = Events[eventsLength - 1].ID;
+
+        totalEventsFetched += eventsLength;
+
+        const promise = Promise.all(Events.map(decryptEvent)).then((veventComponents) => {
             onProgress(
                 veventComponents.filter((veventComponent): veventComponent is VcalVeventComponent => !!veventComponent)
             );
@@ -113,5 +118,5 @@ export const processInBatches = async ({
 
     await Promise.all(promises);
 
-    return [processed, errored];
+    return [processed, errored, totalEventsFetched];
 };
