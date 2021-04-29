@@ -1,9 +1,11 @@
+import { getCanonicalEmails } from 'proton-shared/lib/calendar/attendees';
 import { ICAL_METHOD, SAVE_CONFIRMATION_TYPES } from 'proton-shared/lib/calendar/constants';
 import { getUpdatedInviteVevent } from 'proton-shared/lib/calendar/integration/invite';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { Address } from 'proton-shared/lib/interfaces';
 import { SyncMultipleApiResponse, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
-import { useGetDecryptedPassphraseAndCalendarKeys } from 'react-components';
+import { GetCanonicalEmailsMap } from 'proton-shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
+import { useGetCalendarKeys } from 'react-components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import {
     INVITE_ACTION_TYPES,
     InviteActions,
@@ -32,10 +34,11 @@ interface SaveEventHelperArguments {
     selfAddress?: Address;
     inviteActions: InviteActions;
     onSaveConfirmation: OnSaveConfirmationCb;
-    getCalendarKeys: ReturnType<typeof useGetDecryptedPassphraseAndCalendarKeys>;
+    getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
+    getCanonicalEmailsMap: GetCanonicalEmailsMap;
     sendIcs: (
         data: SendIcsActionData
-    ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions }>;
+    ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions; timestamp: number }>;
     onDuplicateAttendees: (veventComponent: VcalVeventComponent, inviteActions: InviteActions) => Promise<void>;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
 }
@@ -50,6 +53,7 @@ const getSaveSingleEventActions = async ({
     selfAddress,
     inviteActions,
     getCalendarKeys,
+    getCanonicalEmailsMap,
     onSaveConfirmation,
     sendIcs,
     onDuplicateAttendees,
@@ -102,7 +106,8 @@ const getSaveSingleEventActions = async ({
             //     updatedInviteActions = cleanInviteActions;
             // }
         }
-        const updateOperation = getUpdateSyncOperation(newVeventComponent, oldEvent);
+        const removedAttendeeEmails = await getCanonicalEmails(inviteActions.removedAttendees, getCanonicalEmailsMap);
+        const updateOperation = getUpdateSyncOperation(newVeventComponent, oldEvent, removedAttendeeEmails);
         const deleteOperation = getDeleteSyncOperation(oldEvent);
         const multiSyncActions = [
             {
@@ -171,7 +176,11 @@ const getSaveSingleEventActions = async ({
                 updatedInviteActions = cleanInviteActions;
             }
         }
-        const updateOperation = getUpdateSyncOperation(updatedVeventComponent, oldEvent);
+        const removedAttendeeEmails = await getCanonicalEmails(
+            updatedInviteActions.removedAttendees,
+            getCanonicalEmailsMap
+        );
+        const updateOperation = getUpdateSyncOperation(updatedVeventComponent, oldEvent, removedAttendeeEmails);
         if (!oldCalendarID || !oldAddressID || !oldMemberID) {
             throw new Error('Missing parameters to update event');
         }

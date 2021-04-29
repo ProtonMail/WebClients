@@ -1,8 +1,8 @@
+import { getUnixTime } from 'date-fns';
 import { toIcsPartstat } from 'proton-shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { getAttendeeToken, getHasAttendees } from 'proton-shared/lib/calendar/vcalHelper';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { getCurrentUnixTimestamp } from 'proton-shared/lib/helpers/time';
 import { CalendarEvent, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
 import {
     InviteActions,
@@ -15,17 +15,24 @@ import { getUpdatePersonalPartOperation } from './getUpdatePersonalPartActions';
 
 const { ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
 
-const getUpdatePartstatOperation = (
-    vevent: VcalVeventComponent,
-    event: CalendarEvent,
-    inviteActions: InviteActions,
-    memberID: string
-) => {
+export const getUpdatePartstatOperation = ({
+    eventComponent,
+    event,
+    inviteActions,
+    memberID,
+    timestamp,
+}: {
+    eventComponent: VcalVeventComponent;
+    event: CalendarEvent;
+    inviteActions: InviteActions;
+    memberID: string;
+    timestamp: number;
+}) => {
     const { partstat, selfAttendeeIndex } = inviteActions;
-    if (selfAttendeeIndex === undefined || !partstat || !getHasAttendees(vevent)) {
+    if (selfAttendeeIndex === undefined || !partstat || !getHasAttendees(eventComponent)) {
         return;
     }
-    const token = vevent.attendee[selfAttendeeIndex]?.parameters?.['x-pm-token'];
+    const token = eventComponent.attendee[selfAttendeeIndex]?.parameters?.['x-pm-token'];
     const attendeeID = event.Attendees.find(({ Token }) => Token === token)?.ID;
     if (!attendeeID) {
         return;
@@ -37,7 +44,7 @@ const getUpdatePartstatOperation = (
             eventID: event.ID,
             attendeeID,
             partstat,
-            updateTime: getCurrentUnixTimestamp(),
+            updateTime: getUnixTime(timestamp),
         },
     };
 };
@@ -91,7 +98,7 @@ interface ChangePartstaActionsArguments {
     addressID: string;
     sendIcs: (
         data: SendIcsActionData
-    ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions }>;
+    ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions; timestamp: number }>;
 }
 const getChangePartstatActions = async ({
     inviteActions,
@@ -110,8 +117,14 @@ const getChangePartstatActions = async ({
     if (!partstat) {
         throw new Error('Cannot update participation status without new answer');
     }
-    await sendIcs({ inviteActions, vevent: eventComponent });
-    const partstatOperation = getUpdatePartstatOperation(eventComponent, event, inviteActions, memberID);
+    const { timestamp } = await sendIcs({ inviteActions, vevent: eventComponent });
+    const partstatOperation = getUpdatePartstatOperation({
+        eventComponent,
+        event,
+        inviteActions,
+        memberID,
+        timestamp,
+    });
     if (!partstatOperation) {
         throw new Error('Failed to generate change partstat operation');
     }
