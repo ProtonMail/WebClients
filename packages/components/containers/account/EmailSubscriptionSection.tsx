@@ -9,14 +9,14 @@ import SettingsSection from './SettingsSection';
 import SettingsParagraph from './SettingsParagraph';
 
 const EmailSubscriptionSection = () => {
-    const [{ isManagedByMozilla } = {}] = useSubscription();
-    const [{ isMember }] = useUser();
+    const [subscription] = useSubscription();
+    const [user] = useUser();
 
-    if (isMember) {
+    if (user?.isMember) {
         return null;
     }
 
-    if (isManagedByMozilla) {
+    if (subscription?.isManagedByMozilla) {
         return <MozillaInfoPanel />;
     }
 
