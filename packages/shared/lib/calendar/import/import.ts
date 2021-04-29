@@ -11,6 +11,7 @@ import {
     getHasDtStart,
     getHasRecurrenceId,
     getHasUid,
+    getIcalMethod,
     getIsCalendar,
     getIsEventComponent,
     getIsFreebusyComponent,
@@ -22,6 +23,7 @@ import {
 } from '../vcalHelper';
 import { parseWithErrors } from '../vcal';
 import {
+    ICAL_METHOD,
     IMPORT_ERROR_TYPE,
     MAX_CALENDARS_PER_USER,
     MAX_IMPORT_EVENTS,
@@ -72,10 +74,11 @@ export const parseIcs = async (ics: File) => {
             throw new ImportFileError(IMPORT_ERROR_TYPE.INVALID_CALENDAR, filename);
         }
         const { method, version, components, calscale, 'x-wr-timezone': xWrTimezone } = parsedVcalendar;
+        const supportedMethod = method ? getIcalMethod(method) : undefined;
         if (version?.value !== '2.0') {
             throw new ImportFileError(IMPORT_ERROR_TYPE.INVALID_VERSION, filename);
         }
-        if (method && method.value.toLowerCase() !== 'publish') {
+        if (supportedMethod !== ICAL_METHOD.PUBLISH) {
             throw new ImportFileError(IMPORT_ERROR_TYPE.INVALID_METHOD, filename);
         }
         if (!components?.length) {
