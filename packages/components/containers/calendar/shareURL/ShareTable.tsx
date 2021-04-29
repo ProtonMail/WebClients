@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import { Calendar, ACCESS_LEVEL, CalendarLink } from 'proton-shared/lib/interfaces/calendar';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 
+import { UserModel } from 'proton-shared/lib/interfaces';
 import {
     Icon,
     Table,
@@ -24,14 +25,23 @@ interface Props {
     onCreateLink: ({ accessLevel, calendarID }: { accessLevel: ACCESS_LEVEL; calendarID: string }) => Promise<void>;
     isLoadingCreate: boolean;
     disabled: boolean;
+    user: UserModel;
 }
 
-const ShareTable = ({ calendars = [], defaultCalendar, linksMap, onCreateLink, isLoadingCreate, disabled }: Props) => {
+const ShareTable = ({
+    calendars = [],
+    defaultCalendar,
+    linksMap,
+    onCreateLink,
+    isLoadingCreate,
+    disabled,
+    user,
+}: Props) => {
     const fallbackCalendar = defaultCalendar || calendars[0];
     const [selectedCalendarID, setSelectedCalendarID] = useState(fallbackCalendar?.ID);
     const [accessLevel, setAccessLevel] = useState<ACCESS_LEVEL>(ACCESS_LEVEL.LIMITED);
     const maxLinksPerCalendarReached = linksMap[selectedCalendarID]?.length === MAX_LINKS_PER_CALENDAR;
-    const shouldDisableCreateButton = disabled || maxLinksPerCalendarReached;
+    const shouldDisableCreateButton = disabled || maxLinksPerCalendarReached || !user.hasNonDelinquentScope;
 
     useEffect(() => {
         // if the selected calendar gets deleted, use next preferred one

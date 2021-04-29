@@ -11,6 +11,7 @@ import {
 import { createPublicLink, deletePublicLink, editPublicLink } from 'proton-shared/lib/api/calendars';
 import { splitKeys } from 'proton-shared/lib/keys';
 import { Nullable, SimpleMap } from 'proton-shared/lib/interfaces/utils';
+import { UserModel } from 'proton-shared/lib/interfaces';
 import { useApi, useGetCalendarInfo, useModals, useNotifications } from '../../../hooks';
 import { useCalendarModelEventManager } from '../../eventManager';
 
@@ -26,9 +27,10 @@ import { SettingsParagraph, SettingsSection } from '../../account';
 interface Props {
     defaultCalendar?: Calendar;
     calendars: Calendar[];
+    user: UserModel;
 }
 
-const ShareSection = ({ calendars, defaultCalendar }: Props) => {
+const ShareSection = ({ calendars, defaultCalendar, user }: Props) => {
     const { linksMap, isLoadingLinks } = useCalendarShareUrls(calendars);
     const [isLoadingCreate, setIsLoadingCreate] = useState(false);
     const [isLoadingMap, setIsLoadingMap] = useState<SimpleMap<boolean>>({});
@@ -164,6 +166,7 @@ const ShareSection = ({ calendars, defaultCalendar }: Props) => {
                         calendars={calendars}
                         onCreateLink={handleCreateLink}
                         defaultCalendar={defaultCalendar}
+                        user={user}
                     />
                 </>
             ) : (
@@ -183,6 +186,7 @@ const ShareSection = ({ calendars, defaultCalendar }: Props) => {
                     onCopyLink={handleCopyLink}
                     onEdit={handleEdit}
                     onDelete={handleDelete}
+                    user={user}
                 />
             )}
         </SettingsSection>
