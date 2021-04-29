@@ -1,9 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { Row, Label, Field, PasswordInput, TwoFactorInput } from '../../components';
 
-const PasswordTotpInputs = ({ password, setPassword, passwordError, totp, setTotp, totpError, showTotp }) => {
+interface Props {
+    password: string;
+    setPassword: (value: string) => void;
+    totp: string;
+    setTotp: (value: string) => void;
+    showTotp: boolean;
+    totpError?: string;
+    passwordError?: string;
+}
+const PasswordTotpInputs = ({ password, setPassword, passwordError, totp, setTotp, totpError, showTotp }: Props) => {
     return (
         <>
             <Row>
@@ -38,16 +46,6 @@ const PasswordTotpInputs = ({ password, setPassword, passwordError, totp, setTot
             )}
         </>
     );
-};
-
-PasswordTotpInputs.propTypes = {
-    password: PropTypes.string.isRequired,
-    passwordError: PropTypes.string,
-    setPassword: PropTypes.func.isRequired,
-    totp: PropTypes.string.isRequired,
-    totpError: PropTypes.string,
-    setTotp: PropTypes.func.isRequired,
-    showTotp: PropTypes.bool,
 };
 
 export default PasswordTotpInputs;
