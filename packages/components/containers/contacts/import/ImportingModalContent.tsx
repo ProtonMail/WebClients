@@ -107,8 +107,8 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
     return (
         <>
             <Alert>
-                {c('Description').t`Encrypting and importing contacts... This may take a few minutes.
-                    When the process is completed, you can close this modal.`}
+                {c('Description')
+                    .t`Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.`}
             </Alert>
             <DynamicProgress
                 id="progress-import-contacts"
