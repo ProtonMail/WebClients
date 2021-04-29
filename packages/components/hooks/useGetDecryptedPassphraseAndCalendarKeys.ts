@@ -86,3 +86,15 @@ export const useGetDecryptedPassphraseAndCalendarKeys = (): GetDecryptedPassphra
         [cache, miss]
     );
 };
+
+export const useGetCalendarKeys = () => {
+    const getDecryptedPassphraseAndCalendarKeys = useGetDecryptedPassphraseAndCalendarKeys();
+
+    return useCallback(
+        async (calendarID: string) => {
+            const { decryptedCalendarKeys } = await getDecryptedPassphraseAndCalendarKeys(calendarID);
+            return decryptedCalendarKeys;
+        },
+        [getDecryptedPassphraseAndCalendarKeys]
+    );
+};
