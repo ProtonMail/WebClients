@@ -1,6 +1,6 @@
 import { getCanonicalAddresses } from 'proton-shared/lib/api/addresses';
 import { API_CODES } from 'proton-shared/lib/constants';
-import { GetCanonicalEmails } from 'proton-shared/lib/interfaces/hooks/GetCanonicalEmails';
+import { GetCanonicalEmailsMap } from 'proton-shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
 import { GetCanonicalAddressesApiResponse } from 'proton-shared/lib/interfaces/calendar';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { useCallback } from 'react';
@@ -10,11 +10,11 @@ import { getIsRecordInvalid, getPromiseValue } from './useCachedModelResult';
 
 const CACHE_KEY = 'CANONICAL_EMAILS';
 
-export const useGetCanonicalEmails = () => {
+export const useGetCanonicalEmailsMap = () => {
     const api = useApi();
     const cache = useCache();
 
-    const getCanonicalEmails = useCallback(
+    const getCanonicalEmailsMap = useCallback(
         async (emails: string[]) => {
             if (!emails.length) {
                 return Promise.resolve({});
@@ -37,7 +37,7 @@ export const useGetCanonicalEmails = () => {
         [api, cache]
     );
 
-    return useCallback<GetCanonicalEmails>(
+    return useCallback<GetCanonicalEmailsMap>(
         (emails: string[]) => {
             if (!cache.has(CACHE_KEY)) {
                 cache.set(CACHE_KEY, new Map());
@@ -46,7 +46,7 @@ export const useGetCanonicalEmails = () => {
             const missing = emails.filter((email) => {
                 return getIsRecordInvalid(subCache.get(email));
             });
-            const promise = getCanonicalEmails(missing);
+            const promise = getCanonicalEmailsMap(missing);
             const miss = async (tzid: string) => {
                 const map = await promise;
                 return map[tzid];
@@ -66,6 +66,6 @@ export const useGetCanonicalEmails = () => {
                 }, {});
             });
         },
-        [cache, getCanonicalEmails]
+        [cache, getCanonicalEmailsMap]
     );
 };

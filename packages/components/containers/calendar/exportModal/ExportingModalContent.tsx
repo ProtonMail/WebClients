@@ -18,8 +18,8 @@ import {
     useApi,
     useGetAddresses,
     useGetAddressKeys,
-    useGetDecryptedPassphraseAndCalendarKeys,
     useGetEncryptionPreferences,
+    useGetCalendarKeys,
 } from '../../../hooks';
 
 interface Props {
@@ -34,7 +34,7 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const getCalendarInfo = useGetCalendarInfo();
     const getCalendarEventPersonal = useGetCalendarEventPersonal();
-    const getDecryptedPassphraseAndCalendarKeys = useGetDecryptedPassphraseAndCalendarKeys();
+    const getCalendarKeys = useGetCalendarKeys();
 
     const { totalToProcess } = model;
 
@@ -87,7 +87,7 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     onProgress: handleExportProgress,
                     getAddressKeys,
                     getEncryptionPreferences,
-                    getDecryptedPassphraseAndCalendarKeys,
+                    getCalendarKeys,
                     getCalendarEventPersonal,
                     memberID,
                     totalToProcess,
