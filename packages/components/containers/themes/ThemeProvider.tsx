@@ -20,6 +20,7 @@ export const getThemeStyle = (themeType: ThemeTypes = ThemeTypes.Default) => {
         [ThemeTypes.Light]: PROTON_THEMES.LIGHT.theme,
         [ThemeTypes.Monokai]: PROTON_THEMES.MONOKAI.theme,
         [ThemeTypes.Contrast]: PROTON_THEMES.CONTRAST.theme,
+        [ThemeTypes.Legacy]: PROTON_THEMES.LEGACY.theme,
     }[themeType];
     return themeStyle || PROTON_THEMES.DEFAULT.theme;
 };
