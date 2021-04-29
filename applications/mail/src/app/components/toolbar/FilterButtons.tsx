@@ -1,17 +1,22 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Button, classnames } from 'react-components';
+import { UserSettings } from 'proton-shared/lib/interfaces';
+import { DENSITY } from 'proton-shared/lib/constants';
 
 import { Filter } from '../../models/tools';
 
 interface Props {
     loading?: boolean;
     filter: Filter;
+    userSettings: UserSettings;
     onFilter: (filter: Filter) => void;
 }
 
-const FilterButtons = ({ loading, filter = {}, onFilter }: Props) => {
+const FilterButtons = ({ loading, filter = {}, userSettings, onFilter }: Props) => {
     const noFilterApply = !Object.values(filter).length;
+
+    const isCompactView = userSettings.Density === DENSITY.COMPACT;
 
     const FILTER_OPTIONS = {
         SHOW_ALL: c('Filter option').t`All`,
@@ -29,7 +34,11 @@ const FilterButtons = ({ loading, filter = {}, onFilter }: Props) => {
                 shape="ghost"
                 loading={loading}
                 aria-pressed={noFilterApply}
-                className={classnames(['text-sm mt0 mb0 mr0-25', noFilterApply && 'no-pointer-events bg-strong'])}
+                className={classnames([
+                    'text-sm mt0 mb0 mr0-25',
+                    noFilterApply && 'no-pointer-events bg-strong',
+                    isCompactView ? 'ml1' : 'ml0-5',
+                ])}
                 onClick={() => !noFilterApply && onFilter({})}
             >
                 {FILTER_OPTIONS.SHOW_ALL}
