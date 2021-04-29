@@ -5,6 +5,7 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { Address, Api } from 'proton-shared/lib/interfaces';
 import { CalendarBootstrap, CalendarEvent, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
 import { DELETE_CONFIRMATION_TYPES } from 'proton-shared/lib/calendar/constants';
+import { useGetCalendarKeys } from 'react-components';
 
 import { getEventDeletedText, getRecurringEventDeletedText } from '../../../components/eventModal/eventForm/i18n';
 import { EventOldData } from '../../../interfaces/EventData';
@@ -16,12 +17,14 @@ import {
     UpdatePersonalPartOperation,
 } from '../../../interfaces/Invite';
 import getEditEventData from '../event/getEditEventData';
+import { getSharedEventIDAndSessionKey } from '../event/getEventHelper';
 import getSingleEditRecurringData from '../event/getSingleEditRecurringData';
 import { getIsCalendarEvent } from '../eventStore/cache/helper';
 import { GetDecryptedEventCb } from '../eventStore/interface';
 import getAllEventsByUID from '../getAllEventsByUID';
 import { getDeleteSyncOperation, SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
 import { CalendarViewEvent, OnDeleteConfirmationCb } from '../interface';
+import { getUpdatePartstatOperation } from './getChangePartstatActions';
 import { getDeleteRecurringEventActions } from './getDeleteRecurringEventActions';
 import getRecurringDeleteType from './getRecurringDeleteType';
 import { getUpdatedDeleteInviteActions } from './inviteActions';
@@ -44,12 +47,17 @@ const getDeleteSingleEventActionsHelper = async ({
     isInvitation: boolean;
     sendIcs: (
         data: SendIcsActionData
-    ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions }>;
+    ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions; timestamp: number }>;
 }) => {
+    const { veventComponent: oldVevent, memberID, calendarID, addressID } = oldEditEventData;
+    if (!oldVevent) {
+        throw new Error('Cannot delete event without old data');
+    }
     let updatedInviteActions = getUpdatedDeleteInviteActions({
         inviteActions,
-        oldVevent: oldEditEventData.veventComponent,
+        oldVevent,
     });
+    const updatePartstatOperations: UpdatePartstatOperation[] = [];
     const { type: inviteType, sendCancellationNotice } = updatedInviteActions;
     await onDeleteConfirmation({
         type: DELETE_CONFIRMATION_TYPES.SINGLE,
@@ -59,28 +67,41 @@ const getDeleteSingleEventActionsHelper = async ({
     if (inviteType === CANCEL_INVITATION) {
         const { inviteActions: cleanInviteActions } = await sendIcs({
             inviteActions: updatedInviteActions,
-            cancelVevent: oldEditEventData.veventComponent,
+            cancelVevent: oldVevent,
         });
         updatedInviteActions = cleanInviteActions;
     } else if (inviteType === DECLINE_INVITATION && sendCancellationNotice) {
-        const { inviteActions: cleanInviteActions } = await sendIcs({
+        const { inviteActions: cleanInviteActions, timestamp } = await sendIcs({
             inviteActions: updatedInviteActions,
-            vevent: oldEditEventData.veventComponent,
+            vevent: oldVevent,
         });
         updatedInviteActions = cleanInviteActions;
+        // even though we are going to delete the event, we need to update the partstat firs to notify the organizer for
+        // Proton-Proton invites. Hopefully a better API will allow us to do it differently in the future
+        const updatePartstatOperation = getUpdatePartstatOperation({
+            eventComponent: oldVevent,
+            event: oldEventData,
+            memberID,
+            timestamp,
+            inviteActions: updatedInviteActions,
+        });
+        if (updatePartstatOperation) {
+            updatePartstatOperations.push(updatePartstatOperation);
+        }
     }
     const deleteOperation = getDeleteSyncOperation(oldEventData);
     const multiActions: SyncEventActionOperations[] = [
         {
-            calendarID: oldEditEventData.calendarID,
-            memberID: oldEditEventData.memberID,
-            addressID: oldEditEventData.addressID,
+            calendarID,
+            memberID,
+            addressID,
             operations: [deleteOperation],
         },
     ];
     const successText = getEventDeletedText(updatedInviteActions);
     return {
         syncActions: multiActions,
+        updatePartstatActions: updatePartstatOperations,
         texts: { success: successText },
     };
 };
@@ -91,11 +112,12 @@ interface Arguments {
     onDeleteConfirmation: OnDeleteConfirmationCb;
     api: Api;
     getCalendarBootstrap: (CalendarID: string) => CalendarBootstrap;
+    getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
     getEventDecrypted: GetDecryptedEventCb;
     inviteActions: InviteActions;
     sendIcs: (
         data: SendIcsActionData
-    ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions }>;
+    ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions; timestamp: number }>;
 }
 
 const getDeleteEventActions = async ({
@@ -107,6 +129,7 @@ const getDeleteEventActions = async ({
     api,
     getEventDecrypted,
     getCalendarBootstrap,
+    getCalendarKeys,
     inviteActions,
     sendIcs,
 }: Arguments): Promise<{
@@ -128,6 +151,18 @@ const getDeleteEventActions = async ({
         eventResult: eventReadResult?.result,
         memberResult: getMemberAndAddress(addresses, calendarBootstrap.Members, oldEventData.Author),
     });
+    const { sharedEventID, sharedSessionKey } = await getSharedEventIDAndSessionKey({
+        calendarEvent: oldEventData,
+        getCalendarKeys,
+    });
+    if (!sharedEventID || !sharedSessionKey) {
+        throw new Error('Missing shared event data');
+    }
+    const inviteActionsWithSharedData = {
+        ...inviteActions,
+        sharedEventID,
+        sharedSessionKey,
+    };
 
     const isInvitation = !oldEditEventData.eventData.IsOrganizer;
     const isSingleEdit = !!oldEditEventData.recurrenceID;
@@ -137,7 +172,7 @@ const getDeleteEventActions = async ({
             oldEventData,
             oldEditEventData,
             onDeleteConfirmation,
-            inviteActions,
+            inviteActions: inviteActionsWithSharedData,
             isInvitation,
             sendIcs,
         });
@@ -152,7 +187,7 @@ const getDeleteEventActions = async ({
             oldEventData,
             oldEditEventData,
             onDeleteConfirmation,
-            inviteActions,
+            inviteActions: inviteActionsWithSharedData,
             isInvitation,
             sendIcs,
         });
@@ -175,7 +210,7 @@ const getDeleteEventActions = async ({
         eventRecurrence ||
         getSingleEditRecurringData(originalEditEventData.mainVeventComponent, oldEditEventData.mainVeventComponent);
     const updatedDeleteInviteActions = getUpdatedDeleteInviteActions({
-        inviteActions,
+        inviteActions: inviteActionsWithSharedData,
         oldVevent: originalEditEventData.veventComponent,
     });
     const isDeleteInvitation = [DECLINE_INVITATION, DECLINE_DISABLED].includes(updatedDeleteInviteActions.type);

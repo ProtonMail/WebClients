@@ -1,5 +1,7 @@
+import { getCanonicalEmails } from 'proton-shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, RECURRING_TYPES } from 'proton-shared/lib/calendar/constants';
 import { getResetPartstatActions, getUpdatedInviteVevent } from 'proton-shared/lib/calendar/integration/invite';
+import { GetCanonicalEmailsMap } from 'proton-shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
 import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 
@@ -33,6 +35,7 @@ import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 interface SaveRecurringArguments {
     type: RECURRING_TYPES;
     recurrences: CalendarEvent[];
+    getCanonicalEmailsMap: GetCanonicalEmailsMap;
     originalEditEventData: EventOldData;
     oldEditEventData: EventOldData;
     newEditEventData: EventNewData;
@@ -42,13 +45,14 @@ interface SaveRecurringArguments {
     inviteActions: InviteActions;
     sendIcs: (
         data: SendIcsActionData
-    ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions }>;
+    ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions; timestamp: number }>;
     selfAttendeeToken?: string;
 }
 
 const getSaveRecurringEventActions = async ({
     type,
     recurrences,
+    getCanonicalEmailsMap,
     oldEditEventData: { eventData: oldEvent, veventComponent: oldVeventComponent },
     originalEditEventData: {
         eventData: originalEvent,
@@ -136,7 +140,11 @@ const getSaveRecurringEventActions = async ({
                 updateSingleRecurrence(newVeventComponent),
                 oldVeventWithSequence
             );
-            const updateOperation = getUpdateSyncOperation(newVeventWithSequence, oldEvent);
+            const removedAttendeeEmails = await getCanonicalEmails(
+                inviteActions.removedAttendees,
+                getCanonicalEmailsMap
+            );
+            const updateOperation = getUpdateSyncOperation(newVeventWithSequence, oldEvent, removedAttendeeEmails);
 
             return {
                 multiSyncActions: [
@@ -299,8 +307,11 @@ const getSaveRecurringEventActions = async ({
                 updatedInviteActions = cleanInviteActions;
             }
         }
-
-        const updateOperation = getUpdateSyncOperation(updatedVeventComponent, originalEvent);
+        const removedAttendeeEmails = await getCanonicalEmails(
+            updatedInviteActions.removedAttendees,
+            getCanonicalEmailsMap
+        );
+        const updateOperation = getUpdateSyncOperation(updatedVeventComponent, originalEvent, removedAttendeeEmails);
 
         if (isSwitchCalendar) {
             const deleteOriginalOperation = getDeleteSyncOperation(originalEvent);

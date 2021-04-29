@@ -12,8 +12,8 @@ import { omit } from 'proton-shared/lib/helpers/object';
 import { Address, Api } from 'proton-shared/lib/interfaces';
 import { CalendarBootstrap, SyncMultipleApiResponse, VcalDays } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { GetCanonicalEmails } from 'proton-shared/lib/interfaces/hooks/GetCanonicalEmails';
-import { useGetDecryptedPassphraseAndCalendarKeys } from 'react-components';
+import { GetCanonicalEmailsMap } from 'proton-shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
+import { useGetCalendarKeys } from 'react-components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { getRecurringEventUpdatedText, getSingleEventText } from '../../../components/eventModal/eventForm/i18n';
 import { modelToVeventComponent } from '../../../components/eventModal/eventForm/modelToProperties';
 import {
@@ -44,6 +44,7 @@ const getSaveSingleEventActionsHelper = async ({
     newEditEventData,
     oldEditEventData,
     getCalendarKeys,
+    getCanonicalEmailsMap,
     onSaveConfirmation,
     sendIcs,
     inviteActions,
@@ -52,10 +53,11 @@ const getSaveSingleEventActionsHelper = async ({
 }: {
     newEditEventData: EventNewData;
     oldEditEventData: EventOldData;
-    getCalendarKeys: ReturnType<typeof useGetDecryptedPassphraseAndCalendarKeys>;
+    getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
+    getCanonicalEmailsMap: GetCanonicalEmailsMap;
     sendIcs: (
         data: SendIcsActionData
-    ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions }>;
+    ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions; timestamp: number }>;
     onSaveConfirmation: OnSaveConfirmationCb;
     inviteActions: InviteActions;
     onDuplicateAttendees: (veventComponent: VcalVeventComponent, inviteActions: InviteActions) => Promise<void>;
@@ -82,6 +84,7 @@ const getSaveSingleEventActionsHelper = async ({
         newEditEventData: { ...newEditEventData, veventComponent: newVeventWithSequence },
         oldEditEventData,
         getCalendarKeys,
+        getCanonicalEmailsMap,
         onSaveConfirmation,
         inviteActions: updatedInviteActions,
         sendIcs,
@@ -109,11 +112,11 @@ interface Arguments {
     api: Api;
     getEventDecrypted: GetDecryptedEventCb;
     getCalendarBootstrap: (CalendarID: string) => CalendarBootstrap;
-    getCalendarKeys: ReturnType<typeof useGetDecryptedPassphraseAndCalendarKeys>;
-    getCanonicalEmails: GetCanonicalEmails;
+    getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
+    getCanonicalEmailsMap: GetCanonicalEmailsMap;
     sendIcs: (
         data: SendIcsActionData
-    ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions }>;
+    ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions; timestamp: number }>;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
 }
 
@@ -128,7 +131,7 @@ const getSaveEventActions = async ({
     getEventDecrypted,
     getCalendarBootstrap,
     getCalendarKeys,
-    getCanonicalEmails,
+    getCanonicalEmailsMap,
     sendIcs,
     handleSyncActions,
 }: Arguments): Promise<{
@@ -168,7 +171,7 @@ const getSaveEventActions = async ({
         inviteActionsWithSelfAddress.selfAddress = selfAddress;
     }
     // Do not touch RRULE for invitations
-    const newVeventComponent = await withPmAttendees(modelVeventComponent, getCanonicalEmails);
+    const newVeventComponent = await withPmAttendees(modelVeventComponent, getCanonicalEmailsMap);
     const handleDuplicateAttendees = async (vevent: VcalVeventComponent, inviteActions: InviteActions) => {
         const duplicateAttendees = getDuplicateAttendeesSend(vevent, inviteActions);
         if (duplicateAttendees) {
@@ -203,6 +206,7 @@ const getSaveEventActions = async ({
             selfAddress,
             inviteActions: updatedInviteActions,
             getCalendarKeys,
+            getCanonicalEmailsMap,
             onSaveConfirmation,
             sendIcs,
             onDuplicateAttendees: handleDuplicateAttendees,
@@ -252,6 +256,7 @@ const getSaveEventActions = async ({
             newEditEventData,
             oldEditEventData,
             getCalendarKeys,
+            getCanonicalEmailsMap,
             onSaveConfirmation,
             sendIcs,
             inviteActions: inviteActionsWithSelfAddress,
@@ -269,6 +274,7 @@ const getSaveEventActions = async ({
             newEditEventData,
             oldEditEventData,
             getCalendarKeys,
+            getCanonicalEmailsMap,
             onSaveConfirmation,
             sendIcs,
             inviteActions: inviteActionsWithSelfAddress,
@@ -345,6 +351,7 @@ const getSaveEventActions = async ({
         recurrences,
         recurrence: actualEventRecurrence,
         updateAllPossibilities,
+        getCanonicalEmailsMap,
         newEditEventData,
         oldEditEventData,
         originalEditEventData,

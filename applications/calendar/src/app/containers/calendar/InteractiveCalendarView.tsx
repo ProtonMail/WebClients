@@ -11,6 +11,7 @@ import {
 } from 'proton-shared/lib/calendar/constants';
 import { reformatApiErrorMessage } from 'proton-shared/lib/calendar/helper';
 import getMemberAndAddress from 'proton-shared/lib/calendar/integration/getMemberAndAddress';
+import { withDtstamp } from 'proton-shared/lib/calendar/veventHelper';
 import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
 import { getProdId } from 'proton-shared/lib/calendar/vcalHelper';
 import { API_CODES } from 'proton-shared/lib/constants';
@@ -54,18 +55,19 @@ import {
     useEventManager,
     useGetAddressKeys,
     useGetCalendarEventRaw,
-    useGetDecryptedPassphraseAndCalendarKeys,
     useModals,
     useNotifications,
     useCalendarModelEventManager,
 } from 'react-components';
 import { useReadCalendarBootstrap } from 'react-components/hooks/useGetCalendarBootstrap';
 import useGetCalendarEventPersonal from 'react-components/hooks/useGetCalendarEventPersonal';
-import { useGetCanonicalEmails } from 'react-components/hooks/useGetCanonicalEmails';
+import { useGetCanonicalEmailsMap } from 'react-components/hooks/useGetCanonicalEmailsMap';
+import { useGetCalendarKeys } from 'react-components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { useGetVtimezonesMap } from 'react-components/hooks/useGetVtimezonesMap';
 import useSendIcs from 'react-components/hooks/useSendIcs';
 import { Prompt } from 'react-router';
 import { c } from 'ttag';
+import { serverTime } from 'pmcrypto';
 
 import { ACTIONS, TYPE } from '../../components/calendar/interactions/constants';
 import {
@@ -231,11 +233,11 @@ const InteractiveCalendarView = ({
     }, [contacts]);
 
     const readCalendarBootstrap = useReadCalendarBootstrap();
-    const getCalendarKeys = useGetDecryptedPassphraseAndCalendarKeys();
+    const getCalendarKeys = useGetCalendarKeys();
     const getAddressKeys = useGetAddressKeys();
     const getCalendarEventPersonal = useGetCalendarEventPersonal();
     const getCalendarEventRaw = useGetCalendarEventRaw();
-    const getCanonicalEmails = useGetCanonicalEmails();
+    const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
     const getSendIcsPreferencesMap = useGetMapSendIcsPreferences();
 
     const getEventDecrypted = (eventData: CalendarEvent): Promise<DecryptedEventTupleResult> => {
@@ -692,9 +694,17 @@ const InteractiveCalendarView = ({
             vevent: cleanVevent,
             cancelVevent: cleanCancelVevent,
         } = await handleSendPrefsErrors({ inviteActions, vevent, cancelVevent });
+        // generate DTSTAMPs for the ICS
+        const currentTimestamp = +serverTime();
+        const cleanVeventWithDtstamp = cleanVevent
+            ? withDtstamp(omit(cleanVevent, ['dtstamp']), currentTimestamp)
+            : undefined;
+        const cleanCancelVeventWithDtstamp = cleanCancelVevent
+            ? withDtstamp(omit(cleanCancelVevent, ['dtstamp']), currentTimestamp)
+            : undefined;
         const sendIcsAction = getSendIcsAction({
-            vevent: cleanVevent,
-            cancelVevent: cleanCancelVevent,
+            vevent: cleanVeventWithDtstamp,
+            cancelVevent: cleanCancelVeventWithDtstamp,
             inviteActions: cleanInviteActions,
             sendIcs,
             sendPreferencesMap,
@@ -706,7 +716,11 @@ const InteractiveCalendarView = ({
             onCancelError,
         });
         await sendIcsAction();
-        return { veventComponent: cleanVevent, inviteActions: cleanInviteActions };
+        return {
+            veventComponent: cleanVeventWithDtstamp,
+            inviteActions: cleanInviteActions,
+            timestamp: currentTimestamp,
+        };
     };
 
     const handleCloseConfirmation = () => {
@@ -954,7 +968,7 @@ const InteractiveCalendarView = ({
                 onDuplicateAttendees: handleDuplicateAttendees,
                 getEventDecrypted,
                 getCalendarBootstrap: readCalendarBootstrap,
-                getCanonicalEmails,
+                getCanonicalEmailsMap,
                 sendIcs: handleSendIcs,
                 handleSyncActions,
                 getCalendarKeys,
@@ -992,14 +1006,16 @@ const InteractiveCalendarView = ({
                 api,
                 getEventDecrypted,
                 getCalendarBootstrap: readCalendarBootstrap,
+                getCalendarKeys,
                 inviteActions,
                 sendIcs: handleSendIcs,
             });
+            // some operations may refer to the events to be deleted, so we execute those first
             await Promise.all([
-                handleSyncActions(syncActions),
                 handleUpdatePartstatActions(updatePartstatActions),
                 handleUpdatePersonalPartActions(updatePersonalPartActions),
             ]);
+            await handleSyncActions(syncActions);
             handleCreateNotification(texts);
         } catch (e) {
             createNotification({ text: e.message, type: 'error' });

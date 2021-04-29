@@ -213,6 +213,9 @@ export const getSendIcsAction = ({
     if (!getIsAddressActive(selfAddress)) {
         throw new Error('Cannot send from an inactive address');
     }
+    if (!sharedEventID || !sharedSessionKey) {
+        throw new Error('Missing shared event data');
+    }
     const addressID = selfAddress.ID;
     const from = { Address: selfAddress.Email, Name: selfAddress.DisplayName || selfAddress.Email };
     const hasAddedAttendees = !!addedAttendees?.length;
@@ -221,9 +224,6 @@ export const getSendIcsAction = ({
         try {
             if (!vevent) {
                 throw new Error('Cannot build invite ics without the event component');
-            }
-            if (!sharedEventID || !sharedSessionKey) {
-                throw new Error('Missing shared event data');
             }
             const { attendee: attendees } = vevent;
             const vtimezones = FEATURE_FLAGS.includes('use-vtimezones')
@@ -235,16 +235,17 @@ export const getSendIcsAction = ({
                       'x-pm-shared-event-id': { value: sharedEventID },
                       'x-pm-session-key': { value: sharedSessionKey },
                   }
-                : vevent;
+                : { ...vevent };
             const inviteIcs = createInviteIcs({
                 method: ICAL_METHOD.REQUEST,
                 prodId,
                 vevent: pmVevent,
                 vtimezones,
+                keepDtstamp: true,
             });
             if (!hasAddedAttendees && !hasRemovedAttendees && attendees?.length) {
                 // it's a new invitation
-                const params = { method: ICAL_METHOD.REQUEST, vevent, isCreateEvent: true };
+                const params = { method: ICAL_METHOD.REQUEST, vevent: pmVevent, isCreateEvent: true };
                 await sendIcs({
                     method: ICAL_METHOD.REQUEST,
                     ics: inviteIcs,
@@ -260,7 +261,7 @@ export const getSendIcsAction = ({
                 // it's an existing event, but we're just adding or removing participants
                 const promises = [];
                 if (addedAttendees?.length) {
-                    const params = { method: ICAL_METHOD.REQUEST, vevent, isCreateEvent: true };
+                    const params = { method: ICAL_METHOD.REQUEST, vevent: pmVevent, isCreateEvent: true };
                     promises.push(
                         sendIcs({
                             method: ICAL_METHOD.REQUEST,
@@ -279,14 +280,22 @@ export const getSendIcsAction = ({
                     if (!cancelVevent) {
                         throw new Error('Cannot cancel invite ics without the old event component');
                     }
+                    const pmCancelVevent = FEATURE_FLAGS.includes('proton-proton-invites')
+                        ? {
+                              ...cancelVevent,
+                              'x-pm-shared-event-id': { value: sharedEventID },
+                              'x-pm-session-key': { value: sharedSessionKey },
+                          }
+                        : { ...cancelVevent };
                     const cancelIcs = createInviteIcs({
                         method: ICAL_METHOD.CANCEL,
                         prodId,
-                        vevent: cancelVevent,
+                        vevent: pmCancelVevent,
                         attendeesTo: removedAttendees,
                         vtimezones,
+                        keepDtstamp: true,
                     });
-                    const params = { method: ICAL_METHOD.CANCEL, vevent };
+                    const params = { method: ICAL_METHOD.CANCEL, vevent: pmCancelVevent };
                     promises.push(
                         sendIcs({
                             method: ICAL_METHOD.CANCEL,
@@ -329,12 +338,13 @@ export const getSendIcsAction = ({
                       'x-pm-shared-event-id': { value: sharedEventID },
                       'x-pm-session-key': { value: sharedSessionKey },
                   }
-                : vevent;
+                : { ...vevent };
             const inviteIcs = createInviteIcs({
                 method: ICAL_METHOD.REQUEST,
                 prodId,
                 vevent: pmVevent,
                 vtimezones,
+                keepDtstamp: true,
             });
             const addedAttendeesEmails = (addedAttendees || []).map((attendee) => getAttendeeEmail(attendee));
             const remainingAttendees = (attendees || []).filter(
@@ -342,7 +352,7 @@ export const getSendIcsAction = ({
             );
             const promises = [];
             if (remainingAttendees.length) {
-                const params = { method: ICAL_METHOD.REQUEST, vevent, isCreateEvent: false };
+                const params = { method: ICAL_METHOD.REQUEST, vevent: pmVevent, isCreateEvent: false };
                 promises.push(
                     sendIcs({
                         method: ICAL_METHOD.REQUEST,
@@ -358,7 +368,7 @@ export const getSendIcsAction = ({
                 );
             }
             if (addedAttendees?.length) {
-                const params = { method: ICAL_METHOD.REQUEST, vevent, isCreateEvent: true };
+                const params = { method: ICAL_METHOD.REQUEST, vevent: pmVevent, isCreateEvent: true };
                 promises.push(
                     sendIcs({
                         method: ICAL_METHOD.REQUEST,
@@ -377,14 +387,22 @@ export const getSendIcsAction = ({
                 if (!cancelVevent) {
                     throw new Error('Cannot cancel invite ics without the old event component');
                 }
+                const pmCancelVevent = FEATURE_FLAGS.includes('proton-proton-invites')
+                    ? {
+                          ...cancelVevent,
+                          'x-pm-shared-event-id': { value: sharedEventID },
+                          'x-pm-session-key': { value: sharedSessionKey },
+                      }
+                    : { ...cancelVevent };
                 const cancelIcs = createInviteIcs({
                     method: ICAL_METHOD.CANCEL,
                     prodId,
-                    vevent: cancelVevent,
+                    vevent: pmCancelVevent,
                     attendeesTo: removedAttendees,
                     vtimezones,
+                    keepDtstamp: true,
                 });
-                const params = { method: ICAL_METHOD.CANCEL, vevent: cancelVevent };
+                const params = { method: ICAL_METHOD.CANCEL, vevent: pmCancelVevent };
                 promises.push(
                     sendIcs({
                         method: ICAL_METHOD.CANCEL,
@@ -417,14 +435,22 @@ export const getSendIcsAction = ({
             const vtimezones = FEATURE_FLAGS.includes('use-vtimezones')
                 ? await generateVtimezonesComponents(cancelVevent, getVTimezonesMap)
                 : [];
+            const pmCancelVevent = FEATURE_FLAGS.includes('proton-proton-invites')
+                ? {
+                      ...cancelVevent,
+                      'x-pm-shared-event-id': { value: sharedEventID },
+                      'x-pm-session-key': { value: sharedSessionKey },
+                  }
+                : { ...cancelVevent };
             const cancelIcs = createInviteIcs({
                 method: ICAL_METHOD.CANCEL,
                 prodId,
-                vevent: cancelVevent,
+                vevent: pmCancelVevent,
                 attendeesTo: attendees,
                 vtimezones,
+                keepDtstamp: true,
             });
-            const params = { method: ICAL_METHOD.CANCEL, vevent: cancelVevent };
+            const params = { method: ICAL_METHOD.CANCEL, vevent: pmCancelVevent };
             await sendIcs({
                 method: ICAL_METHOD.CANCEL,
                 ics: cancelIcs,
@@ -464,6 +490,7 @@ export const getSendIcsAction = ({
                 prodId,
                 vevent,
                 attendeesTo: [selfAttendeeWithPartstat],
+                keepDtstamp: true,
             });
             const displayName = selfAddress.DisplayName || selfAddress.Email;
             const params = {
