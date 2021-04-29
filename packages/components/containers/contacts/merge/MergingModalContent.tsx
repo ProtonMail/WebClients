@@ -1,3 +1,4 @@
+import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
 import React, { useState, useEffect, useMemo } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
@@ -70,7 +71,7 @@ const MergingModalContent = ({
         /**
          * Get a contact from its ID and decrypt it. Return contact as a list of properties
          */
-        const getDecryptedContact = async (ID: string, { signal }: Signal) => {
+        const getDecryptedContact = async (ID: string, { signal }: Signal): Promise<ContactProperties> => {
             if (signal.aborted) {
                 return [];
             }
@@ -88,17 +89,8 @@ const MergingModalContent = ({
         /**
          * Get and decrypt a group of contacts to be merged. Return array of decrypted contacts
          */
-        const getDecryptedGroup = async (groupIDs: string[] = [], { signal }: Signal) => {
-            const decryptedGroup = [];
-            for (const ID of groupIDs) {
-                // avoid overloading API in case getDecryptedContact is too fast
-                const [decryptedContact] = await Promise.all([
-                    getDecryptedContact(ID, { signal }),
-                    wait(API_SAFE_INTERVAL),
-                ]);
-                decryptedGroup.push(decryptedContact);
-            }
-            return decryptedGroup;
+        const getDecryptedGroup = (groupIDs: string[] = [], { signal }: Signal) => {
+            return processApiRequestsSafe(groupIDs.map((ID) => () => getDecryptedContact(ID, { signal })));
         };
 
         /**

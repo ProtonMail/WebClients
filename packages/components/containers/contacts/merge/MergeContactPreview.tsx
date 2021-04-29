@@ -1,3 +1,4 @@
+import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
 import React, { useState, useEffect, useMemo, ComponentProps } from 'react';
 import { c } from 'ttag';
 import { splitKeys } from 'proton-shared/lib/keys/keys';
@@ -68,18 +69,18 @@ const MergeContactPreview = ({
     useEffect(() => {
         const mergeContacts = async () => {
             try {
-                const beMergedContacts = [];
-                for (const ID of beMergedIDs) {
+                const requests = beMergedIDs.map((ID: string) => async () => {
                     const { Contact } = await api(getContact(ID));
                     const { properties, errors } = await prepareContact(Contact, { privateKeys, publicKeys });
                     if (errors.length) {
                         setModel({ ...model, errorOnLoad: true });
                         throw new Error('Error decrypting contact');
                     }
-                    beMergedContacts.push(properties);
-                }
+                    return properties;
+                });
+                const beMergedContacts = await processApiRequestsSafe(requests);
                 setModel({ ...model, mergedContact: merge(beMergedContacts) });
-            } catch {
+            } catch (e) {
                 setModel({ ...model, errorOnMerge: true });
             }
         };
