@@ -6,7 +6,7 @@
 - Add VTIMEZONE definition to invitations
 
 ## Fixed
-- Manually input time of events can be selected with the mouse in the dropdown
+- Manually entered time of events can be selected with the mouse in the dropdown
 - Handle cases of answering and deleting invitations when short domain addresses are used with a free plan
 - Remove wrong spacing in method field in ICS files
 
