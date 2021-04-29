@@ -96,12 +96,17 @@ export const useCloseHandler = ({
     });
 
     const handleClose = useHandler(async () => {
-        if (lock) {
-            return;
-        }
-
         // Closing the composer instantly, all the save process will be in background
         onClose();
+
+        if (lock) {
+            // If the composer was locked, either it could have
+            // - failed at loading
+            // - still being created
+            // - still being loaded
+            // In all of those situation we don't need to save something, we can safely skip all the rest
+            return;
+        }
 
         ensureMessageContent();
 
