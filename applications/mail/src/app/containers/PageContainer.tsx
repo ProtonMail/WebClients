@@ -28,9 +28,15 @@ interface Props {
     params: MailUrlParams;
     breakpoints: Breakpoints;
     onCompose: OnCompose;
+    isComposerOpened: boolean;
 }
 
-const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints, onCompose }: Props) => {
+const PageContainer = ({
+    params: { elementID, labelID, messageID },
+    breakpoints,
+    onCompose,
+    isComposerOpened,
+}: Props) => {
     const location = useLocation();
     const history = useHistory();
     const [mailSettings] = useMailSettings();
@@ -79,6 +85,7 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints,
                     location={location}
                     history={history}
                     onCompose={onCompose}
+                    isComposerOpened={isComposerOpened}
                 />
             </LocationErrorBoundary>
         </PrivateLayout>
@@ -90,6 +97,7 @@ const MemoPageContainer = memo(PageContainer);
 interface PageParamsParserProps {
     breakpoints: Breakpoints;
     onCompose: OnCompose;
+    isComposerOpened: boolean;
 }
 
 const PageParamsParser = (props: PageParamsParserProps) => {

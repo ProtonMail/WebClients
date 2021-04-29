@@ -48,6 +48,7 @@ interface Props {
     location: Location;
     history: History;
     onCompose: OnCompose;
+    isComposerOpened: boolean;
 }
 
 const MailboxContainer = ({
@@ -60,6 +61,7 @@ const MailboxContainer = ({
     location,
     history,
     onCompose,
+    isComposerOpened,
 }: Props) => {
     const getElementsFromIDs = useGetElementsFromIDs();
     const listRef = useRef<HTMLDivElement>(null);
@@ -148,6 +150,7 @@ const MailboxContainer = ({
         showList,
         listRef,
         labelID,
+        isComposerOpened,
     });
 
     const welcomeFlag = useWelcomeFlag([labelID, selectedIDs.length]);
@@ -286,6 +289,7 @@ const MailboxContainer = ({
                                     breakpoints={breakpoints}
                                     onMessageReady={onMessageReady}
                                     columnLayout={columnLayout}
+                                    isComposerOpened={isComposerOpened}
                                 />
                             ) : (
                                 <MessageOnlyView
@@ -298,6 +302,7 @@ const MailboxContainer = ({
                                     breakpoints={breakpoints}
                                     onMessageReady={onMessageReady}
                                     columnLayout={columnLayout}
+                                    isComposerOpened={isComposerOpened}
                                 />
                             ))}
                     </section>

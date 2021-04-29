@@ -6,9 +6,10 @@ export interface MailboxFocusContext {
     showList: boolean;
     listRef: MutableRefObject<HTMLElement | null>;
     labelID: string;
+    isComposerOpened: boolean;
 }
 
-export const useMailboxFocus = ({ elementIDs, showList, listRef, labelID }: MailboxFocusContext) => {
+export const useMailboxFocus = ({ elementIDs, showList, listRef, labelID, isComposerOpened }: MailboxFocusContext) => {
     const [focusIndex, setFocusIndex] = useState<number>();
 
     const getFocusedId = () => (focusIndex !== undefined ? elementIDs[focusIndex] : undefined);
@@ -59,7 +60,12 @@ export const useMailboxFocus = ({ elementIDs, showList, listRef, labelID }: Mail
         }
 
         // keep focus on the same element if new messages are coming in
-        if (labelIDRef.current === labelID && focusedIDRef.current && elementIDs.includes(focusedIDRef.current)) {
+        if (
+            !isComposerOpened &&
+            labelIDRef.current === labelID &&
+            focusedIDRef.current &&
+            elementIDs.includes(focusedIDRef.current)
+        ) {
             focusOnElementByID(focusedIDRef.current);
         }
 
