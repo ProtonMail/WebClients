@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { APPS, FEATURE_FLAGS } from 'proton-shared/lib/constants';
+import { APPS } from 'proton-shared/lib/constants';
 import { getAppName } from 'proton-shared/lib/apps/helper';
 import { FormModal, AppLink, Alert } from '../../../components';
 
@@ -12,8 +12,6 @@ interface Props {
 const CALENDAR_APP_NAME = getAppName(APPS.PROTONCALENDAR);
 
 const CalendarDowngradeModal = ({ onSubmit, onClose, ...rest }: Props) => {
-    const isSharingEnabled = FEATURE_FLAGS.includes('calendar-share-url');
-
     const handleSubmit = () => {
         onSubmit();
         onClose();
@@ -35,11 +33,8 @@ const CalendarDowngradeModal = ({ onSubmit, onClose, ...rest }: Props) => {
             {...rest}
         >
             <Alert type="warning">
-                {isSharingEnabled
-                    ? c('Info')
-                          .jt`You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${linkButton}`
-                    : c('Info')
-                          .jt`You must remove any additional calendar before you can cancel your subscription. ${linkButton}`}
+                {c('Info')
+                    .jt`You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${linkButton}`}
             </Alert>
         </FormModal>
     );
