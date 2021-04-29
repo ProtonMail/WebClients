@@ -1,3 +1,4 @@
+import { serverTime } from 'pmcrypto';
 import { fromUTCDate } from '../date/timezone';
 import { omit, pick } from '../helpers/object';
 import {
@@ -67,14 +68,16 @@ export const withSummary = <T>(properties: VcalVeventComponent & T): VcalVeventC
 };
 
 export const withDtstamp = <T>(
-    properties: RequireOnly<VcalVeventComponent, 'uid' | 'component' | 'dtstart'> & T
+    properties: RequireOnly<VcalVeventComponent, 'uid' | 'component' | 'dtstart'> & T,
+    timestamp?: number
 ): VcalVeventComponent & T => {
     if (properties.dtstamp) {
         return properties as VcalVeventComponent & T;
     }
+    const timestampToUse = timestamp !== undefined ? timestamp : +serverTime();
     return {
         ...properties,
-        dtstamp: dateTimeToProperty(fromUTCDate(new Date()), true),
+        dtstamp: dateTimeToProperty(fromUTCDate(new Date(timestampToUse)), true),
     };
 };
 

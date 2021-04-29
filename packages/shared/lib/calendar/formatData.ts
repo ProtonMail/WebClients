@@ -23,6 +23,7 @@ interface FormatDataArguments {
     personalSignedPart?: SignPartResult;
     attendeesEncryptedPart?: EncryptPartResult;
     attendeesClearPart?: AttendeeClearPartResult[];
+    removedAttendees?: string[];
 }
 export const formatData = ({
     sharedSignedPart,
@@ -34,6 +35,7 @@ export const formatData = ({
     personalSignedPart,
     attendeesEncryptedPart,
     attendeesClearPart,
+    removedAttendees,
 }: FormatDataArguments) => {
     return {
         SharedKeyPacket: sharedSessionKey ? uint8ArrayToBase64String(sharedSessionKey) : undefined,
@@ -93,5 +95,6 @@ export const formatData = ({
                   Status: status,
               }))
             : undefined,
+        RemovedAttendeeAddresses: removedAttendees?.length ? removedAttendees : undefined,
     };
 };
