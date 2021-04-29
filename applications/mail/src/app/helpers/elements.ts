@@ -161,7 +161,7 @@ export const parseLabelIDsInEvent = <T extends Element>(element: T, changes: T &
 
 export const isSearch = (searchParams: SearchParameters) =>
     !!searchParams.address ||
-    !!searchParams.attachments ||
+    searchParams.attachments !== undefined ||
     !!searchParams.begin ||
     !!searchParams.end ||
     !!searchParams.from ||
