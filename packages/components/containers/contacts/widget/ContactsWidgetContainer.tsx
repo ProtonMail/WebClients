@@ -118,7 +118,7 @@ const ContactsWidgetContainer = ({ onClose, onImport, onCompose }: Props) => {
         if (selectedIDs.length > 100) {
             createNotification({
                 type: 'error',
-                text: c('Error').t`You can't send vcards of more than 10 contacts`,
+                text: c('Error').t`You can't send vCards of more than 10 contacts`,
             });
             return;
         }
@@ -134,7 +134,7 @@ const ContactsWidgetContainer = ({ onClose, onImport, onCompose }: Props) => {
         } catch {
             createNotification({
                 type: 'error',
-                text: c('Error').t`There was an error when exporting the contacts vcards`,
+                text: c('Error').t`There was an error when exporting the contacts vCards`,
             });
         }
         onClose();

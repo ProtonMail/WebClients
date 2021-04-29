@@ -89,8 +89,7 @@ const MergeModalContent = ({ contactID, userKeysList, model, updateModel, beMerg
             </Alert>
             <Alert type="warning">
                 {c('Description')
-                    .t`You can mark for deletion the contacts that you do not want neither to merge nor to keep.
-                    Deletion will only take place after the merge button is clicked`}
+                    .t`You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked`}
             </Alert>
             <MergeTable
                 onSortEnd={handleSortEnd}
