@@ -1,6 +1,8 @@
 import React from 'react';
+import { c } from 'ttag';
 
-import { RadioCard } from '../../components';
+import { Button } from '../../components';
+import { classnames } from '../../helpers';
 
 interface Props {
     label: string;
@@ -13,9 +15,23 @@ interface Props {
 
 const ThemeCard = ({ label, id, src, checked, onChange, disabled }: Props) => {
     return (
-        <RadioCard label={label} name="themeCard" id={id} checked={checked} onChange={onChange} disabled={disabled}>
-            <img alt="" src={src} />
-        </RadioCard>
+        <Button
+            name="themeCard"
+            shape="outline"
+            color="weak"
+            id={id}
+            className={classnames(['mr1 mb1', checked && 'is-active no-pointer-events text-bold'])}
+            aria-pressed={checked}
+            onClick={onChange}
+            disabled={disabled}
+            type="button"
+            aria-label={c('Action').t`Use “${label}” theme`}
+        >
+            <span className="flex flex-nowrap flex-column">
+                <img alt="" src={src} className="mb0-5" />
+                <span>{label}</span>
+            </span>
+        </Button>
     );
 };
 
