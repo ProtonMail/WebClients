@@ -80,7 +80,7 @@ const CalendarCalendarsSettings = ({
                     </Card>
                 </SettingsSection>
             ) : (
-                <CalendarShareSection calendars={calendars} defaultCalendar={defaultCalendar} />
+                <CalendarShareSection calendars={calendars} defaultCalendar={defaultCalendar} user={user}/>
             )}
         </PrivateMainSettingsAreaWithPermissions>
     );
