@@ -8,7 +8,7 @@ import { useGetDecryptedPassphraseAndCalendarKeys } from './useGetDecryptedPassp
 export const useGetCalendarInfo = () => {
     const getCalendarBootstrap = useGetCalendarBootstrap();
     const getAddresses = useGetAddresses();
-    const getCalendarKeys = useGetDecryptedPassphraseAndCalendarKeys();
+    const getDecryptedPassphraseAndCalendarKeys = useGetDecryptedPassphraseAndCalendarKeys();
     const getAddressKeys = useGetAddressKeys();
 
     return useCallback(
@@ -20,7 +20,11 @@ export const useGetCalendarInfo = () => {
 
             const [memberID, addressID] = getMemberAndAddressID(getMemberAndAddress(Addresses, Members));
 
-            const { decryptedCalendarKeys, decryptedPassphrase, passphraseID } = await getCalendarKeys(calendarID);
+            const {
+                decryptedCalendarKeys,
+                decryptedPassphrase,
+                passphraseID,
+            } = await getDecryptedPassphraseAndCalendarKeys(calendarID);
 
             const addressKeys = await getAddressKeys(addressID);
 
@@ -33,6 +37,6 @@ export const useGetCalendarInfo = () => {
                 passphraseID,
             };
         },
-        [getCalendarBootstrap, getAddresses, getCalendarKeys, getAddressKeys]
+        [getCalendarBootstrap, getAddresses, getDecryptedPassphraseAndCalendarKeys, getAddressKeys]
     );
 };

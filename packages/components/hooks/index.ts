@@ -41,6 +41,7 @@ export { useGetPublicKeys } from './useGetPublicKeys';
 export { default as useGetEncryptionPreferences } from './useGetEncryptionPreferences';
 export { useCalendarBootstrap, useReadCalendarBootstrap, useGetCalendarBootstrap } from './useGetCalendarBootstrap';
 export { useGetDecryptedPassphraseAndCalendarKeys } from './useGetDecryptedPassphraseAndCalendarKeys';
+export { useGetCalendarKeys } from './useGetDecryptedPassphraseAndCalendarKeys';
 export { useGetCalendarInfo } from './useGetCalendarInfo';
 export { default as useGetCalendarEventRaw } from './useGetCalendarEventRaw';
 export { default as useOrganizationKey } from './useOrganizationKey';
