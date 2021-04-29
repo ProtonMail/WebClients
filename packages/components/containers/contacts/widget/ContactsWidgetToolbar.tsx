@@ -31,7 +31,8 @@ const ContactsWidgetToolbar = ({
     const canMerge = selectedCount > 1;
     const deleteText = noSelection
         ? c('Action').t`Delete contact`
-        : c('Action').ngettext(
+        : // translator: the variable is a positive integer (written in digits) always greater or equal to 1
+          c('Action').ngettext(
               msgid`Delete ${selectedCount} contact`,
               `Delete ${selectedCount} contacts`,
               selectedCount

@@ -26,9 +26,10 @@ const ContactsWidgetGroupsToolbar = ({
     const noSelection = !selectedCount || !numberOfRecipients;
     const deleteText = noSelection
         ? c('Action').t`Delete contact group`
-        : c('Action').ngettext(
+        : // translator: the variable is a positive integer (written in digits) always greater or equal to 1
+          c('Action').ngettext(
               msgid`Delete ${selectedCount} contact group`,
-              `Delete ${selectedCount} contacts groups`,
+              `Delete ${selectedCount} contact groups`,
               selectedCount
           );
 
