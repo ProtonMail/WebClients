@@ -53,6 +53,11 @@ body {
 	}
 }
 
+::selection {
+	background-color: var(--selection-background-color, var(--primary));
+	color: var(--selection-text-color, var(--primary-contrast));
+}
+
 a {
 	color: var(--interaction-norm);
 	text-decoration: underline;
