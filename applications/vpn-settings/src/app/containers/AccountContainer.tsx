@@ -6,7 +6,7 @@ import {
     EmailSubscriptionSection,
     DeleteSection,
     RecoveryMethodsSection,
-    OpenVPNAccountSection,
+    OpenVPNCredentialsSection,
     SettingsPropsShared,
 } from 'react-components';
 import { c } from 'ttag';
@@ -65,7 +65,7 @@ const AccountContainer = ({ setActiveSection, location }: SettingsPropsShared) =
             <UsernameSection />
             <PasswordsSection open={action === 'change-password'} />
             <TwoFactorSection />
-            <OpenVPNAccountSection />
+            <OpenVPNCredentialsSection />
             <RecoveryMethodsSection />
             <EmailSubscriptionSection />
             <DeleteSection />
