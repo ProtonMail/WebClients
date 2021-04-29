@@ -1,9 +1,9 @@
+import { CalendarKey, CalendarSettings as tsCalendarSettings } from '../interfaces/calendar';
+
 /**
  * Find the calendar id for an event, since it's not always returned.
- * @param {Map} calendarBootstrapCache
- * @param {Function} cb
  */
-const findCalendarID = (calendarBootstrapCache, cb) => {
+const findCalendarID = (calendarBootstrapCache: Map<string, any>, cb: (value: any) => boolean) => {
     // eslint-disable-next-line no-restricted-syntax
     for (const [calendarID, record] of calendarBootstrapCache) {
         // The old bootstrapped result
@@ -15,15 +15,17 @@ const findCalendarID = (calendarBootstrapCache, cb) => {
 
 /**
  * Assumes that the calendar bootstrap cache is never rendered with a hook.
- * @param {Array} CalendarKeys
- * @param {Array} CalendarSettings
- * @param {Map} calendarBootstrapCache
- * @param {Map} calendarKeysCache
  */
 export const updateObject = (
-    { CalendarKeys = [], CalendarSettings = [] },
-    calendarBootstrapCache,
-    calendarKeysCache
+    {
+        CalendarKeys = [],
+        CalendarSettings = [],
+    }: {
+        CalendarKeys: { ID: string; Key: CalendarKey }[];
+        CalendarSettings: { ID: string; CalendarSettings: tsCalendarSettings }[];
+    },
+    calendarBootstrapCache: Map<string, any>,
+    calendarKeysCache: Map<string, any>
 ) => {
     if (!calendarBootstrapCache) {
         return;
@@ -41,7 +43,7 @@ export const updateObject = (
     }
 
     if (CalendarKeys.length) {
-        const deleteCalendarFromCache = (calendarID) => {
+        const deleteCalendarFromCache = (calendarID: string) => {
             if (calendarBootstrapCache) {
                 calendarBootstrapCache.delete(calendarID);
             }
