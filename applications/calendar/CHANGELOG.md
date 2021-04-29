@@ -1,3 +1,15 @@
+# [4.0.0-beta.18] - 2021-05-05
+
+## Added
+- Share calendar with external calendar services via URL link
+- Export calendar as ICS file
+- Add VTIMEZONE definition to invitations
+
+## Fixed
+- Manually input time of events can be selected with the mouse in the dropdown
+- Handle cases of answering and deleting invitations when short domain addresses are used with a free plan
+- Remove wrong spacing in method field in ICS files
+
 # [4.0.0-beta.17] - 2021-04-21
 
 ## Updated
