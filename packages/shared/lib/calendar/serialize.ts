@@ -42,6 +42,7 @@ interface CreateCalendarEventArguments {
     isCreateEvent: boolean;
     isSwitchCalendar: boolean;
     isInvitation?: boolean;
+    removedAttendees?: string[];
 }
 export const createCalendarEvent = async ({
     eventComponent,
@@ -53,6 +54,7 @@ export const createCalendarEvent = async ({
     isCreateEvent,
     isSwitchCalendar,
     isInvitation,
+    removedAttendees = [],
 }: CreateCalendarEventArguments) => {
     const { sharedPart, calendarPart, personalPart, attendeesPart } = getParts(eventComponent);
 
@@ -105,6 +107,7 @@ export const createCalendarEvent = async ({
         personalSignedPart,
         attendeesEncryptedPart,
         attendeesClearPart: isSwitchCalendarOfInvitation ? undefined : attendeesPart[CLEAR_TEXT],
+        removedAttendees,
     });
 };
 

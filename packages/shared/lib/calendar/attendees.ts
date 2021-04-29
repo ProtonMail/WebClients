@@ -2,8 +2,10 @@ import { arrayToHexString, binaryStringToArray, unsafeSHA1 } from 'pmcrypto';
 
 import { groupWith } from '../helpers/array';
 import { buildMailTo, canonizeEmailByGuess, getEmailTo, validateEmailAddress } from '../helpers/email';
+import { unary } from '../helpers/function';
+import isTruthy from '../helpers/isTruthy';
 import { omit } from '../helpers/object';
-import { GetCanonicalEmails } from '../interfaces/hooks/GetCanonicalEmails';
+import { GetCanonicalEmailsMap } from '../interfaces/hooks/GetCanonicalEmailsMap';
 import {
     Attendee,
     VcalAttendeeProperty,
@@ -151,9 +153,16 @@ export const getSupportedAttendee = (attendee: VcalAttendeeProperty) => {
     return supportedAttendee;
 };
 
+export const getCanonicalEmails = async (
+    attendees: VcalAttendeeProperty[] = [],
+    getCanonicalEmailsMap: GetCanonicalEmailsMap
+) => {
+    return Object.values(await getCanonicalEmailsMap(attendees.map(unary(getAttendeeEmail)))).filter(isTruthy);
+};
+
 export const withPmAttendees = async (
     vevent: VcalVeventComponent,
-    getCanonicalEmails: GetCanonicalEmails
+    getCanonicalEmailsMap: GetCanonicalEmailsMap
 ): Promise<VcalPmVeventComponent> => {
     const { uid, attendee: vcalAttendee } = vevent;
     if (!vcalAttendee?.length) {
@@ -169,7 +178,7 @@ export const withPmAttendees = async (
     const emailsWithoutToken = attendeesWithEmail
         .filter(({ attendee }) => !attendee.parameters?.['x-pm-token'])
         .map(({ emailAddress }) => emailAddress);
-    const canonicalEmailMap = await getCanonicalEmails(emailsWithoutToken);
+    const canonicalEmailMap = await getCanonicalEmailsMap(emailsWithoutToken);
 
     const pmAttendees = await Promise.all(
         attendeesWithEmail.map(async ({ attendee, emailAddress }) => {

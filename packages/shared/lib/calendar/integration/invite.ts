@@ -128,6 +128,8 @@ export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }:
             'rrule',
             'location',
             'summary',
+            'x-pm-shared-event-id',
+            'x-pm-session-key',
         ];
         // use current time as dtstamp unless indicated otherwise
         if (keepDtstamp) {

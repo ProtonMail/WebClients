@@ -153,6 +153,7 @@ describe('calendar encryption', () => {
                 { Token: 'bcd', Status: ATTENDEE_STATUS_API.TENTATIVE },
                 { Token: 'cde', Status: ATTENDEE_STATUS_API.ACCEPTED },
             ],
+            RemovedAttendeeAddresses: undefined,
         });
     });
 

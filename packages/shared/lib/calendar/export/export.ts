@@ -2,7 +2,7 @@ import { CalendarExportEventsQuery, queryEvents } from '../../api/calendars';
 import { wait } from '../../helpers/promise';
 import { Address, Api, DecryptedKey } from '../../interfaces';
 import { CalendarEvent, VcalVeventComponent } from '../../interfaces/calendar';
-import { GetDecryptedPassphraseAndCalendarKeys } from '../../interfaces/hooks/GetDecryptedPassphraseAndCalendarKeys';
+import { GetCalendarKeys } from '../../interfaces/hooks/GetCalendarKeys';
 import { GetEncryptionPreferences } from '../../interfaces/hooks/GetEncryptionPreferences';
 import { splitKeys } from '../../keys';
 import { getAuthorPublicKeysMap, withNormalizedAuthors } from '../author';
@@ -13,7 +13,7 @@ interface ProcessData {
     addresses: Address[];
     getAddressKeys: (id: string) => Promise<DecryptedKey[]>;
     getEncryptionPreferences: GetEncryptionPreferences;
-    getDecryptedPassphraseAndCalendarKeys: GetDecryptedPassphraseAndCalendarKeys;
+    getCalendarKeys: GetCalendarKeys;
     getCalendarEventPersonal: Function;
     api: Api;
     signal: AbortSignal;
@@ -33,7 +33,7 @@ export const processInBatches = async ({
     getCalendarEventPersonal,
     totalToProcess,
     memberID,
-    getDecryptedPassphraseAndCalendarKeys,
+    getCalendarKeys,
 }: ProcessData): Promise<[VcalVeventComponent[], CalendarEvent[], number]> => {
     const PAGE_SIZE = 10;
     const DELAY = 100;
@@ -47,8 +47,8 @@ export const processInBatches = async ({
 
     const decryptEvent = async (event: CalendarEvent) => {
         try {
-            const [{ decryptedCalendarKeys }, publicKeysMap, eventPersonalMap] = await Promise.all([
-                getDecryptedPassphraseAndCalendarKeys(event.CalendarID),
+            const [calendarKeys, publicKeysMap, eventPersonalMap] = await Promise.all([
+                getCalendarKeys(event.CalendarID),
                 getAuthorPublicKeysMap({
                     event,
                     addresses,
@@ -63,7 +63,7 @@ export const processInBatches = async ({
 
             const [sharedSessionKey, calendarSessionKey] = await readSessionKeys({
                 calendarEvent: event,
-                ...splitKeys(decryptedCalendarKeys),
+                ...splitKeys(calendarKeys),
             });
 
             const { veventComponent } = await readCalendarEvent({
