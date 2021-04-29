@@ -27,7 +27,8 @@ const ContactsWidgetToolbar = ({
     onMerge,
 }: Props) => {
     const handleCheck = ({ target }: ChangeEvent<HTMLInputElement>) => onCheckAll(target.checked);
-    const noSelection = noEmailsContactCount === selectedCount;
+    const noEmailInSelected = noEmailsContactCount === selectedCount;
+    const noSelection = !selectedCount;
     const canMerge = selectedCount > 1;
     const deleteText = noSelection
         ? c('Action').t`Delete contact`
@@ -60,7 +61,7 @@ const ContactsWidgetToolbar = ({
                             icon
                             className="mr0-5 inline-flex pt0-5 pb0-5"
                             onClick={onCompose}
-                            disabled={noSelection}
+                            disabled={noEmailInSelected}
                             title={c('Action').t`Compose`}
                         >
                             <Icon name="email" />
@@ -71,7 +72,7 @@ const ContactsWidgetToolbar = ({
                             icon
                             className="mr0-5 inline-flex pt0-5 pb0-5"
                             onClick={onForward}
-                            disabled={noSelection}
+                            disabled={noEmailInSelected}
                             title={c('Action').t`Forward as attachment`}
                         >
                             <Icon name="forward" />
