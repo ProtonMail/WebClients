@@ -10,12 +10,12 @@ import SettingsParagraph from './SettingsParagraph';
 
 const DeleteSection = () => {
     const [{ isMember }] = useUser();
-    const [addresses, loading] = useAddresses();
-    const [{ isManagedByMozilla } = {}] = useSubscription();
+    const [addresses, loadingAddresses] = useAddresses();
+    const [subscription, loadingSubscription] = useSubscription();
     const { createModal } = useModals();
     const { APP_NAME } = useConfig();
 
-    if (loading) {
+    if (loadingAddresses || loadingSubscription) {
         return <Loader />;
     }
 
@@ -38,7 +38,7 @@ const DeleteSection = () => {
         return null;
     }
 
-    if (isManagedByMozilla) {
+    if (subscription?.isManagedByMozilla) {
         return <MozillaInfoPanel />;
     }
 
