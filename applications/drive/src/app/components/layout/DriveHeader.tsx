@@ -4,7 +4,7 @@ import {
     PrivateHeader,
     useActiveBreakpoint,
     TopNavbarListItemContactsDropdown,
-    TopNavbarListItemSettingsButton,
+    TopNavbarListItemSettingsDropdown,
 } from 'react-components';
 import { c } from 'ttag';
 
@@ -29,7 +29,7 @@ const DriveHeader = ({
             logo={logo}
             title={title}
             contactsButton={<TopNavbarListItemContactsDropdown />}
-            settingsButton={<TopNavbarListItemSettingsButton to="/drive" toApp={APPS.PROTONACCOUNT} />}
+            settingsButton={<TopNavbarListItemSettingsDropdown to="/drive" toApp={APPS.PROTONACCOUNT} />}
             expanded={isHeaderExpanded}
             onToggleExpand={toggleHeaderExpanded}
             isNarrow={isNarrow}
