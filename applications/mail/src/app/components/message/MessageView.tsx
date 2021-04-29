@@ -40,6 +40,7 @@ interface Props {
     onFocus?: (index: number) => void;
     onMessageReady?: () => void;
     columnLayout?: boolean;
+    isComposerOpened: boolean;
 }
 
 export interface MessageViewRef {
@@ -62,6 +63,7 @@ const MessageView = (
         onFocus = noop,
         onMessageReady,
         columnLayout = false,
+        isComposerOpened,
     }: Props,
     ref: Ref<MessageViewRef>
 ) => {
@@ -144,7 +146,7 @@ const MessageView = (
             void addAction(load);
         }
 
-        if (isDraft(message.data) && messageLoaded) {
+        if (!isComposerOpened && isDraft(message.data) && messageLoaded) {
             // unblock J/K shortcuts
             if (onMessageReady) {
                 setTimeout(onMessageReady);

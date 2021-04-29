@@ -22,11 +22,17 @@ const MainContainer = () => {
                         <EncryptedSearchProvider>
                             <ModalsChildren />
                             <ComposerContainer breakpoints={breakpoints}>
-                                {({ onCompose }) => (
+                                {({ onCompose, isComposerOpened }) => (
                                     <Switch>
                                         <Route
                                             path={MAIN_ROUTE_PATH}
-                                            render={() => <PageContainer breakpoints={breakpoints} onCompose={onCompose} />}
+                                            render={() => (
+                                                <PageContainer
+                                                    breakpoints={breakpoints}
+                                                    isComposerOpened={isComposerOpened}
+                                                    onCompose={onCompose}
+                                                />
+                                            )}
                                         />
                                     </Switch>
                                 )}

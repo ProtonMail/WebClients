@@ -22,6 +22,7 @@ interface Props {
     breakpoints: Breakpoints;
     onMessageReady: () => void;
     columnLayout: boolean;
+    isComposerOpened: boolean;
 }
 
 const MessageOnlyView = ({
@@ -34,6 +35,7 @@ const MessageOnlyView = ({
     breakpoints,
     onMessageReady,
     columnLayout,
+    isComposerOpened,
 }: Props) => {
     const [labels = []] = useLabels();
 
@@ -108,6 +110,7 @@ const MessageOnlyView = ({
                     breakpoints={breakpoints}
                     onMessageReady={onMessageReady}
                     columnLayout={columnLayout}
+                    isComposerOpened={isComposerOpened}
                 />
             </div>
         </>

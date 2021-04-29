@@ -51,6 +51,7 @@ export const props = {
     location: {} as Location,
     history: ({ push: jest.fn(), location: { pathname: 'pathname', search: 'search' } } as any) as History,
     onCompose: jest.fn(),
+    isComposerOpened: false,
 };
 
 const defaultSort = { sort: 'Time', desc: true } as Sort;

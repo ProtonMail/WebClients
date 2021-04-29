@@ -35,6 +35,7 @@ export const defaultProps: MessageViewProps = {
     onCompose: jest.fn(),
     breakpoints: {} as Breakpoints,
     onFocus: noop,
+    isComposerOpened: false,
 };
 
 export const setup = async (specificProps: Partial<MessageViewProps> = {}, useMinimalCache = true) => {

@@ -10,7 +10,7 @@ import '../components/composer/composer.scss';
 
 interface Props {
     breakpoints: Breakpoints;
-    children: (props: { onCompose: OnCompose }) => ReactNode;
+    children: (props: { onCompose: OnCompose; isComposerOpened: boolean }) => ReactNode;
 }
 
 const ComposerContainer = ({ breakpoints, children }: Props) => {
@@ -25,6 +25,8 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
             ? c('Info').t`The data you have entered in the draft may not be saved if you leave the page.`
             : ''
     );
+
+    const isComposerOpened = !!messageIDs.length;
 
     const maxActiveComposer = breakpoints.isNarrow ? MAX_ACTIVE_COMPOSER_MOBILE : MAX_ACTIVE_COMPOSER_DESKTOP;
 
@@ -59,7 +61,7 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
 
     return (
         <>
-            {children({ onCompose: handleCompose })}
+            {children({ onCompose: handleCompose, isComposerOpened })}
             <div className="composer-container">
                 {messageIDs.map((messageID, i) => (
                     <ComposerFrame
