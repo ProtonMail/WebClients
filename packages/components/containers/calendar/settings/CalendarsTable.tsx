@@ -1,4 +1,3 @@
-import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import React from 'react';
 import { c } from 'ttag';
 import { getIsCalendarDisabled, getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
@@ -28,8 +27,6 @@ const CalendarsTable = ({
     onExport,
     loadingMap,
 }: Props) => {
-    const showExport = FEATURE_FLAGS.includes('calendar-export');
-
     return (
         <Table className="simple-table--has-actions">
             <TableHeader cells={[c('Header').t`Name`, c('Header').t`Status`, c('Header').t`Actions`]} />
@@ -52,7 +49,7 @@ const CalendarsTable = ({
                                 text: c('Action').t`Set as default`,
                                 onClick: () => onSetDefault(ID),
                             },
-                        showExport && {
+                        {
                             text: c('Action').t`Export ICS`,
                             onClick: () => onExport(calendar),
                         },
