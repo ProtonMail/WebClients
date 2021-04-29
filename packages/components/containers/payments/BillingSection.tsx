@@ -1,10 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
-import { PLAN_NAMES, CYCLE } from 'proton-shared/lib/constants';
+import { PLAN_NAMES, CYCLE, APPS, PLANS } from 'proton-shared/lib/constants';
 import { unique } from 'proton-shared/lib/helpers/array';
 import { getMonthlyBaseAmount, hasVisionary } from 'proton-shared/lib/helpers/subscription';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
+import { getAppName } from 'proton-shared/lib/apps/helper';
+import { Cycle } from 'proton-shared/lib/interfaces';
 
 import { Loader, Time } from '../../components';
 import { useUser, useSubscription, useOrganization, usePlans } from '../../hooks';
@@ -18,16 +19,31 @@ import CycleDiscountBadge from './CycleDiscountBadge';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 
-const getCyclesI18N = () => ({
-    [MONTHLY]: c('Billing cycle').t`Monthly`,
-    [YEARLY]: c('Billing cycle').t`Yearly`,
-    [TWO_YEARS]: c('Billing cycle').t`2-year`,
-});
+const getBillingText = (cycle: Cycle, periodEnd: number) => {
+    const formattedEndTime = <Time key="time-text">{periodEnd}</Time>;
 
-const BillingSection = ({ permission }) => {
-    const i18n = getCyclesI18N();
+    if (cycle === MONTHLY) {
+        return c('Billing cycle').jt`Monthly billing (Renewal on ${formattedEndTime})`;
+    }
+    if (cycle === YEARLY) {
+        return c('Billing cycle').jt`Yearly billing (Renewal on ${formattedEndTime})`;
+    }
+    if (cycle === TWO_YEARS) {
+        return c('Billing cycle').jt`2-year billing (Renewal on ${formattedEndTime})`;
+    }
+
+    return c('Billing cycle').jt`Billing (Renewal on ${formattedEndTime})`;
+};
+
+const mailAppName = getAppName(APPS.PROTONMAIL);
+const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
+
+interface Props {
+    permission?: boolean;
+}
+const BillingSection = ({ permission }: Props) => {
     const [{ hasPaidMail, hasPaidVpn }] = useUser();
-    const [plans, loadingPlans] = usePlans();
+    const [plans = [], loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
 
@@ -45,14 +61,14 @@ const BillingSection = ({ permission }) => {
         return <Loader />;
     }
 
-    if (subscription.ManagedByMozilla) {
+    if (subscription.isManagedByMozilla) {
         return <MozillaInfoPanel />;
     }
 
     const { Plans = [], Cycle, Currency, CouponCode, Amount, PeriodEnd } = subscription;
     const { mailPlan, vpnPlan, addressAddon, domainAddon, memberAddon, vpnAddon, spaceAddon } = formatPlans(Plans);
     const subTotal = unique(Plans.map(({ Name }) => Name)).reduce((acc, planName) => {
-        return acc + getMonthlyBaseAmount(planName, plans, subscription);
+        return acc + getMonthlyBaseAmount(planName as PLANS, plans, subscription);
     }, 0);
     const discount = Amount / Cycle - subTotal;
     const spaceBonus = organization?.BonusSpace;
@@ -69,7 +85,7 @@ const BillingSection = ({ permission }) => {
                     {mailPlan ? (
                         <div className={classnames([priceRowClassName, 'text-bold'])}>
                             <div className={priceLabelClassName}>
-                                {c('Label').t`ProtonMail`} {PLAN_NAMES[mailPlan.Name]}
+                                {mailAppName} {PLAN_NAMES[mailPlan.Name as keyof typeof PLAN_NAMES]}
                             </div>
                             <div className="text-right">
                                 <PlanPrice
@@ -168,7 +184,7 @@ const BillingSection = ({ permission }) => {
                     {vpnPlan ? (
                         <div className={classnames([priceRowClassName, 'text-bold'])}>
                             <div className={priceLabelClassName}>
-                                {c('Label').t`ProtonVPN`} {PLAN_NAMES[vpnPlan.Name]}
+                                {vpnAppName} {PLAN_NAMES[vpnPlan.Name as keyof typeof PLAN_NAMES]}
                             </div>
                             <div className="text-right">
                                 <PlanPrice
@@ -252,16 +268,10 @@ const BillingSection = ({ permission }) => {
                 </div>
             </div>
             <div className={classnames([weakRowClassName, 'text-right mt1'])}>
-                <div className="text-right w100">
-                    {i18n[Cycle]} billing (Renewal on <Time>{PeriodEnd}</Time>)
-                </div>
+                <div className="text-right w100">{getBillingText(Cycle, PeriodEnd)}</div>
             </div>
         </SettingsSection>
     );
-};
-
-BillingSection.propTypes = {
-    permission: PropTypes.bool,
 };
 
 export default BillingSection;
