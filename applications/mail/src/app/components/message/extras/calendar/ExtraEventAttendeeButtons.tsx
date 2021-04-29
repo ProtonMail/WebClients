@@ -15,7 +15,7 @@ import {
     EventInvitationError,
     getErrorMessage,
 } from '../../../../helpers/calendar/EventInvitationError';
-import { InvitationModel, UPDATE_ACTION } from '../../../../helpers/calendar/invite';
+import { getIsPmInvite, InvitationModel, UPDATE_ACTION } from '../../../../helpers/calendar/invite';
 import useInviteButtons from '../../../../hooks/useInviteButtons';
 import { MessageExtended } from '../../../../models/message';
 
@@ -37,6 +37,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         isAddressActive,
         error,
         hasDecryptionError,
+        reinviteEventID,
     } = model;
     const partstat = invitationApi?.attendee?.partstat || ICAL_ATTENDEE_STATUS.NEEDS_ACTION;
     const { attendee } = invitationApi || invitationIcs;
@@ -112,7 +113,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
             error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.EVENT_CREATION_ERROR, { partstat }),
         });
     };
-    const handleUpdateEventError = (partstat: ICAL_ATTENDEE_STATUS) => {
+    const handleUpdateEventError = (partstat: ICAL_ATTENDEE_STATUS, timestamp: number) => {
         createNotification({
             type: 'error',
             text: c('Reply to calendar invitation').t`Updating calendar event failed`,
@@ -124,7 +125,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         setModel({
             ...model,
             hideLink: true,
-            error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.EVENT_UPDATE_ERROR, { partstat }),
+            error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.EVENT_UPDATE_ERROR, { partstat, timestamp }),
         });
     };
     const handleEmailError = (error: Error) => {
@@ -147,6 +148,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         calendarData.isCalendarDisabled ||
         !isAddressActive ||
         calendarData.calendarNeedsUserAction;
+    const isPmInvite = getIsPmInvite({ invitationIcs, invitationApi, pmData });
 
     const actions = useInviteButtons({
         veventIcs: invitationIcs.vevent,
@@ -157,7 +159,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         subject: formatSubject(message.data?.Subject, RE_PREFIX),
         messageID: message.data?.ID,
         calendarData,
-        pmData,
+        pmData: isPmInvite ? pmData : undefined,
         singleEditData,
         onEmailSuccess: handleEmailSuccess,
         onCreateEventSuccess: handleCreateEventSuccess,
@@ -169,18 +171,22 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         onUnexpectedError: handleUnexpectedError,
         disabled: buttonsDisabled,
         overwrite: !!hasDecryptionError,
+        reinviteEventID,
     });
 
     if (error && [EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR].includes(error.type)) {
-        const { partstat } = error;
+        const { partstat, timestamp } = error;
         const { retryCreateEvent, retryUpdateEvent } = actions;
         const message = getErrorMessage(error.type);
-        const handleRetry = partstat
-            ? () =>
-                  withLoadingRetry(
-                      error.type === EVENT_UPDATE_ERROR ? retryUpdateEvent(partstat) : retryCreateEvent(partstat)
-                  )
-            : () => withLoadingRetry(wait(0));
+        const handleRetry =
+            partstat && timestamp
+                ? () =>
+                      withLoadingRetry(
+                          error.type === EVENT_UPDATE_ERROR
+                              ? retryUpdateEvent(partstat, timestamp)
+                              : retryCreateEvent(partstat)
+                      )
+                : () => withLoadingRetry(wait(0));
 
         if (loadingRetry) {
             return <Loader className="center flex mt1 mb1 " />;

@@ -70,6 +70,7 @@ export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, config?:
 interface EventInvitationErrorConfig {
     externalError?: Error;
     partstat?: ICAL_ATTENDEE_STATUS;
+    timestamp?: number;
     method?: ICAL_METHOD;
 }
 
@@ -77,6 +78,8 @@ export class EventInvitationError extends Error {
     type: EVENT_INVITATION_ERROR_TYPE;
 
     partstat?: ICAL_ATTENDEE_STATUS;
+
+    timestamp?: number;
 
     externalError?: Error;
 
@@ -86,6 +89,7 @@ export class EventInvitationError extends Error {
         super(getErrorMessage(errorType, config));
         this.type = errorType;
         this.partstat = config?.partstat;
+        this.timestamp = config?.timestamp;
         this.externalError = config?.externalError;
         Object.setPrototypeOf(this, EventInvitationError.prototype);
     }

@@ -16,7 +16,7 @@ import {
     useGetCalendarInfo,
     useLoading,
 } from 'react-components';
-import { useGetCanonicalEmails } from 'react-components/hooks/useGetCanonicalEmails';
+import { useGetCanonicalEmailsMap } from 'react-components/hooks/useGetCanonicalEmailsMap';
 import { c } from 'ttag';
 import useGetCalendarEventPersonal from 'react-components/hooks/useGetCalendarEventPersonal';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from '../../../../helpers/calendar/EventInvitationError';
@@ -28,6 +28,7 @@ import {
     getInitialInvitationModel,
     getInvitationHasEventID,
     getIsInvitationFromFuture,
+    getIsPmReinvite,
     getIsInvitationOutdated,
     InvitationModel,
     UPDATE_ACTION,
@@ -93,7 +94,7 @@ const ExtraEvent = ({
     const getCalendarInfo = useGetCalendarInfo();
     const getCalendarEventRaw = useGetCalendarEventRaw();
     const getCalendarEventPersonal = useGetCalendarEventPersonal();
-    const getCanonicalEmails = useGetCanonicalEmails();
+    const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
 
     const handleRetry = () => {
         setRetryCount((count) => count + 1);
@@ -131,6 +132,7 @@ const ExtraEvent = ({
             let calendarData;
             let hasDecryptionError;
             let singleEditData;
+            let reinviteEventID;
             let isPartyCrasher = isPartyCrasherIcs;
             const supportedInvitationIcs = invitationIcs;
             try {
@@ -158,6 +160,11 @@ const ExtraEvent = ({
                 calendarData = calData;
                 singleEditData = singleData;
                 hasDecryptionError = hasDecryptError;
+                if (getIsPmReinvite({ invitationIcs, invitationApi, isOrganizerMode })) {
+                    reinviteEventID = invitationApi?.calendarEvent.ID;
+                    // ignore existing partstat
+                    delete invitationApi?.attendee?.partstat;
+                }
                 const isOutdated = getIsInvitationOutdated({ invitationIcs, invitationApi, isOrganizerMode });
                 const isFromFuture = getIsInvitationFromFuture({ invitationIcs, invitationApi, isOrganizerMode });
                 if (parentInvitation) {
@@ -177,6 +184,7 @@ const ExtraEvent = ({
                         parentInvitationApi,
                         isOutdated,
                         isFromFuture,
+                        reinviteEventID,
                         calendarData,
                         singleEditData,
                         hasDecryptionError,
@@ -204,7 +212,7 @@ const ExtraEvent = ({
                     invitationIcs: supportedInvitationIcs,
                     invitationApi,
                     api,
-                    getCanonicalEmails,
+                    getCanonicalEmailsMap,
                     calendarData,
                     singleEditData,
                     pmData,
@@ -238,6 +246,7 @@ const ExtraEvent = ({
                         timeStatus: getEventTimeStatus(newInvitationApi.vevent, Date.now()),
                         isOutdated,
                         isFromFuture,
+                        reinviteEventID,
                         updateAction,
                         hasDecryptionError,
                         isPartyCrasher,
