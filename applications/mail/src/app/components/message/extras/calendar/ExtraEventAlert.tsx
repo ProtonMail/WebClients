@@ -1,4 +1,5 @@
-import { ICAL_EVENT_STATUS, ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
+import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
+import { getIsEventCancelled } from 'proton-shared/lib/calendar/veventHelper';
 import { APPS } from 'proton-shared/lib/constants';
 import { RequireSome } from 'proton-shared/lib/interfaces/utils';
 import React from 'react';
@@ -15,8 +16,8 @@ const ExtraEventAlert = ({ model }: Props) => {
         isOutdated,
         isPartyCrasher,
         invitationIcs: { method },
-        calendarData,
         invitationApi,
+        calendarData,
         isAddressActive,
         canCreateCalendar,
         maxUserCalendarsDisabled,
@@ -113,7 +114,7 @@ const ExtraEventAlert = ({ model }: Props) => {
     }
 
     // the invitation has been answered
-    if (invitationApi.vevent.status?.value === ICAL_EVENT_STATUS.CANCELLED) {
+    if (getIsEventCancelled(invitationApi.calendarEvent)) {
         return null;
     }
 

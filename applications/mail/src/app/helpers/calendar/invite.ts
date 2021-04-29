@@ -1,4 +1,5 @@
 import { format, getUnixTime } from 'date-fns';
+import { getAppName } from 'proton-shared/lib/apps/helper';
 import { getAttendeeEmail, getSupportedAttendee } from 'proton-shared/lib/calendar/attendees';
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import {
@@ -46,6 +47,7 @@ import {
     getPropertyTzid,
     getSequence,
 } from 'proton-shared/lib/calendar/vcalHelper';
+import { getIsEventCancelled } from 'proton-shared/lib/calendar/veventHelper';
 import { APPS, SECOND } from 'proton-shared/lib/constants';
 import { addDays, format as formatUTC } from 'proton-shared/lib/date-fns-utc';
 import { convertUTCDateTimeToZone, fromUTCDate, getSupportedTimezone } from 'proton-shared/lib/date/timezone';
@@ -78,7 +80,6 @@ import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { RequireSome, Unwrap } from 'proton-shared/lib/interfaces/utils';
 import { getOriginalTo } from 'proton-shared/lib/mail/messages';
 import { c } from 'ttag';
-import { getAppName } from 'proton-shared/lib/apps/helper';
 import { MessageExtendedWithData } from '../../models/message';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
 import { FetchAllEventsByUID } from './inviteApi';
@@ -123,6 +124,7 @@ export interface InvitationModel {
     hasNoCalendars: boolean;
     isOutdated?: boolean;
     isFromFuture?: boolean;
+    reinviteEventID?: string;
     updateAction?: UPDATE_ACTION;
     hideSummary?: boolean;
     hideLink?: boolean;
@@ -246,6 +248,49 @@ export const getIsInvitationFromFuture = ({
     const sequenceDiff = getSequence(veventIcs) - getSequence(veventApi);
     // return true when the attendee replies to an instance of the event with higher sequence
     return isOrganizerMode && sequenceDiff > 0;
+};
+
+/**
+ * A PM invite is either a new invitation or one for which the calendar event
+ * is linked to the one sent in the ics
+ */
+export const getIsPmInvite = ({
+    invitationIcs,
+    invitationApi,
+    pmData,
+}: {
+    invitationIcs: EventInvitation;
+    invitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
+    pmData?: PmInviteData;
+}) => {
+    if (!invitationApi) {
+        return !!pmData;
+    }
+    const sharedEventIDIcs = getPmSharedEventID(invitationIcs.vevent);
+    return sharedEventIDIcs === invitationApi.calendarEvent.SharedEventID;
+};
+
+/**
+ * A PM reinvite is quite particular: the event on the attendee calendar will appear cancelled,
+ * but it is not linked to the organizer event any more. Detect this case
+ */
+export const getIsPmReinvite = ({
+    invitationIcs,
+    invitationApi,
+    isOrganizerMode,
+}: {
+    invitationIcs: EventInvitation;
+    invitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
+    isOrganizerMode: boolean;
+}) => {
+    const { method } = invitationIcs;
+    const sharedEventIDIcs = getPmSharedEventID(invitationIcs.vevent);
+    const isOutdated = getIsInvitationOutdated({ invitationIcs, invitationApi, isOrganizerMode });
+    if (isOrganizerMode || method !== ICAL_METHOD.REQUEST || !invitationApi || !sharedEventIDIcs || isOutdated) {
+        return false;
+    }
+    const { calendarEvent } = invitationApi;
+    return getIsEventCancelled(calendarEvent) && sharedEventIDIcs !== calendarEvent.SharedEventID;
 };
 
 /**
