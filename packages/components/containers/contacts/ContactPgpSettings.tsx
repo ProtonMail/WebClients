@@ -89,7 +89,7 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
             {!hasApiKeys && (
                 <Alert learnMore="https://protonmail.com/support/knowledge-base/how-to-use-pgp/">
                     {c('Info')
-                        .t`Setting up PGP allows you to send end-to-end encrypted emails with a non-Protonmail user that uses a PGP compatible service.`}
+                        .t`Setting up PGP allows you to send end-to-end encrypted emails with a non-ProtonMail user that uses a PGP compatible service.`}
                 </Alert>
             )}
             {!!model.publicKeys.pinnedKeys.length && askForPinning && (

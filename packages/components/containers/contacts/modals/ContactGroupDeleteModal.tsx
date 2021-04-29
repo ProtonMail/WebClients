@@ -29,7 +29,7 @@ const ContactGroupDeleteModal = ({ groupIDs = [], onDelete, onClose = noop, ...r
         onDelete?.();
         onClose();
         createNotification({
-            text: c('Success').ngettext(msgid`Contact group deleted`, `Contacts groups deleted`, groupIDs.length),
+            text: c('Success').ngettext(msgid`Contact group deleted`, `Contact groups deleted`, groupIDs.length),
         });
     };
 
@@ -38,7 +38,8 @@ const ContactGroupDeleteModal = ({ groupIDs = [], onDelete, onClose = noop, ...r
     const title =
         count === 1
             ? c('Title').t`Delete ${Name}`
-            : c('Title').ngettext(msgid`Delete ${count} contact group`, `Delete ${count} contacts groups`, count);
+            : // translator: the variable is a positive integer (written in digits) always strictly bigger than 1
+              c('Title').ngettext(msgid`Delete ${count} contact group`, `Delete ${count} contact groups`, count);
 
     return (
         <FormModal
