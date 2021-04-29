@@ -14,10 +14,12 @@ interface ProcessData {
     getAddressKeys: (id: string) => Promise<DecryptedKey[]>;
     getEncryptionPreferences: GetEncryptionPreferences;
     getDecryptedPassphraseAndCalendarKeys: GetDecryptedPassphraseAndCalendarKeys;
+    getCalendarEventPersonal: Function;
     api: Api;
     signal: AbortSignal;
     onProgress: (veventComponents: VcalVeventComponent[]) => void;
     totalToProcess: number;
+    memberID: string;
 }
 
 export const processInBatches = async ({
@@ -28,8 +30,10 @@ export const processInBatches = async ({
     addresses,
     getAddressKeys,
     getEncryptionPreferences,
-    getDecryptedPassphraseAndCalendarKeys,
+    getCalendarEventPersonal,
     totalToProcess,
+    memberID,
+    getDecryptedPassphraseAndCalendarKeys,
 }: ProcessData): Promise<[VcalVeventComponent[], CalendarEvent[], number]> => {
     const PAGE_SIZE = 10;
     const DELAY = 100;
@@ -43,7 +47,7 @@ export const processInBatches = async ({
 
     const decryptEvent = async (event: CalendarEvent) => {
         try {
-            const [{ decryptedCalendarKeys }, publicKeysMap] = await Promise.all([
+            const [{ decryptedCalendarKeys }, publicKeysMap, eventPersonalMap] = await Promise.all([
                 getDecryptedPassphraseAndCalendarKeys(event.CalendarID),
                 getAuthorPublicKeysMap({
                     event,
@@ -51,7 +55,11 @@ export const processInBatches = async ({
                     getAddressKeys,
                     getEncryptionPreferences,
                 }),
+                getCalendarEventPersonal(event),
             ]);
+
+            const personalVevent = memberID ? eventPersonalMap[memberID] : undefined;
+            const valarms = personalVevent ? personalVevent.veventComponent : {};
 
             const [sharedSessionKey, calendarSessionKey] = await readSessionKeys({
                 calendarEvent: event,
@@ -71,10 +79,14 @@ export const processInBatches = async ({
                 publicKeysMap,
                 addresses,
             });
+            const veventWithAlarms = {
+                ...valarms,
+                ...veventComponent,
+            };
 
-            processed.push(veventComponent);
+            processed.push(veventWithAlarms);
 
-            return veventComponent;
+            return veventWithAlarms;
         } catch (error) {
             errored.push(event);
 
