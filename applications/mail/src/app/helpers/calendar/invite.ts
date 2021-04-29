@@ -46,7 +46,7 @@ import {
     getPropertyTzid,
     getSequence,
 } from 'proton-shared/lib/calendar/vcalHelper';
-import { SECOND, APPS } from 'proton-shared/lib/constants';
+import { APPS, SECOND } from 'proton-shared/lib/constants';
 import { addDays, format as formatUTC } from 'proton-shared/lib/date-fns-utc';
 import { convertUTCDateTimeToZone, fromUTCDate, getSupportedTimezone } from 'proton-shared/lib/date/timezone';
 import { getIsAddressActive, getIsAddressDisabled } from 'proton-shared/lib/helpers/address';
@@ -559,11 +559,11 @@ export const getSupportedEventInvitation = (
     message: Message
 ): RequireSome<EventInvitation, 'method'> | undefined => {
     const { version, calscale, 'x-wr-timezone': xWrTimezone, method } = vcalInvitation;
-    if (!method?.value || method.value.toLowerCase() === 'publish') {
+    const supportedMethod = method ? getIcalMethod(method) : undefined;
+    if (!method || supportedMethod === ICAL_METHOD.PUBLISH) {
         // Ignore the ics. We don't know if it is an invitation
         return;
     }
-    const supportedMethod = getIcalMethod(method);
     if (!supportedMethod) {
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVALID_METHOD, { method: supportedMethod });
     }
@@ -747,7 +747,7 @@ export const getSupportedEventInvitation = (
         }
         if (recurrenceId) {
             if (rrule) {
-                if (method.value === ICAL_METHOD.REPLY) {
+                if (supportedMethod === ICAL_METHOD.REPLY) {
                     // the external provider forgot to remove the RRULE
                     ignoreRrule = true;
                 } else {
