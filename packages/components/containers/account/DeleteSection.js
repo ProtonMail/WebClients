@@ -1,7 +1,7 @@
 import React from 'react';
 import { APPS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
-import { Href, Alert, Button, Loader } from '../../components';
+import { Href, Button, Loader } from '../../components';
 import { useModals, useUser, useSubscription, useAddresses, useConfig } from '../../hooks';
 
 import MozillaInfoPanel from './MozillaInfoPanel';
@@ -27,8 +27,10 @@ const DeleteSection = () => {
         );
 
         return (
-            <Alert>{c('Info')
-                .jt`Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${loginLink} and delete your account there.`}</Alert>
+            <SettingsParagraph>
+                {c('Info')
+                    .jt`Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${loginLink} and delete your account there.`}
+            </SettingsParagraph>
         );
     }
 
