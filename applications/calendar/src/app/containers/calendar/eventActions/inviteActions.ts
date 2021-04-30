@@ -226,9 +226,7 @@ export const getSendIcsAction = ({
                 throw new Error('Cannot build invite ics without the event component');
             }
             const { attendee: attendees } = vevent;
-            const vtimezones = FEATURE_FLAGS.includes('use-vtimezones')
-                ? await generateVtimezonesComponents(vevent, getVTimezonesMap)
-                : [];
+            const vtimezones = await generateVtimezonesComponents(vevent, getVTimezonesMap);
             const pmVevent = FEATURE_FLAGS.includes('proton-proton-invites')
                 ? {
                       ...vevent,
@@ -329,9 +327,7 @@ export const getSendIcsAction = ({
             if (!sharedEventID || !sharedSessionKey) {
                 throw new Error('Missing shared event data');
             }
-            const vtimezones = FEATURE_FLAGS.includes('use-vtimezones')
-                ? await generateVtimezonesComponents(vevent, getVTimezonesMap)
-                : [];
+            const vtimezones = await generateVtimezonesComponents(vevent, getVTimezonesMap);
             const pmVevent = FEATURE_FLAGS.includes('proton-proton-invites')
                 ? {
                       ...vevent,
@@ -432,9 +428,7 @@ export const getSendIcsAction = ({
             if (!attendees?.length) {
                 throw new Error('Cannot build cancel ics without attendees');
             }
-            const vtimezones = FEATURE_FLAGS.includes('use-vtimezones')
-                ? await generateVtimezonesComponents(cancelVevent, getVTimezonesMap)
-                : [];
+            const vtimezones = await generateVtimezonesComponents(cancelVevent, getVTimezonesMap);
             const pmCancelVevent = FEATURE_FLAGS.includes('proton-proton-invites')
                 ? {
                       ...cancelVevent,
