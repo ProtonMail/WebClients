@@ -87,6 +87,7 @@ const DonateModal = ({ ...rest }) => {
                 errors={errors}
                 paypal={paypal}
                 paypalCredit={paypalCredit}
+                noMaxWidth
             />
         </FormModal>
     );
