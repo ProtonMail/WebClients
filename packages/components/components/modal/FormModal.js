@@ -20,6 +20,7 @@ const Modal = ({
     children,
     modalTitleID = 'modalTitle',
     footer,
+    innerRef,
     hasSubmit = true,
     hasClose = true,
     displayTitle = true,
@@ -142,7 +143,7 @@ function DemoModal({ onAdd, ...rest }) {
                 onReset={onClose}
                 noValidate={noValidate}
             >
-                <InnerModal>{children}</InnerModal>
+                <InnerModal ref={innerRef}>{children}</InnerModal>
                 {getFooter()}
             </ContentModal>
         </DialogModal>
@@ -156,6 +157,7 @@ Modal.propTypes = {
     onSubmit: PropTypes.func,
     title: PropTypes.node,
     children: PropTypes.node.isRequired,
+    innerRef: PropTypes.object,
     loading: PropTypes.bool,
     submit: PropTypes.node,
     close: PropTypes.node,
