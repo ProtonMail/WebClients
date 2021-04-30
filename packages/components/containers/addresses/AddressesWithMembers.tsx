@@ -1,10 +1,10 @@
 import React, { ChangeEvent, useEffect, useMemo, useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
-import { APPS, ALL_MEMBERS_ID, MEMBER_PRIVATE } from 'proton-shared/lib/constants';
+import { ALL_MEMBERS_ID, MEMBER_PRIVATE } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { UserModel, Organization, Member } from 'proton-shared/lib/interfaces';
 
-import { Alert, Loader, Select, Button, AppLink } from '../../components';
+import { Alert, Loader, Select, Button, SettingsLink } from '../../components';
 import { useMembers, useMemberAddresses, useModals, useOrganizationKey, useNotifications } from '../../hooks';
 
 import { SettingsParagraph } from '../account';
@@ -98,8 +98,7 @@ const AddressesWithMembers = ({ user, organization, isOnlySelf }: Props) => {
         currentMember?.Private === MEMBER_PRIVATE.READABLE && !organizationKey?.privateKey;
 
     const activateLink = (
-        <AppLink to="/organization#password" toApp={APPS.PROTONACCOUNT} target="_self">{c('Action')
-            .t`activate`}</AppLink>
+        <SettingsLink path="/organization-keys" target="_self">{c('Action').t`activate`}</SettingsLink>
     );
 
     return (
