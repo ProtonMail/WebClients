@@ -1,20 +1,23 @@
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../constants';
+import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, hasAddressKeyMigration } from '../constants';
 import { Address, AddressKeyPayload, AddressKeyPayloadV2, EncryptionConfig } from '../interfaces';
 import { generateAddressKey, generateAddressKeyTokens } from './addressKeys';
 import { getSignedKeyList } from './signedKeyList';
 import { getDefaultKeyFlags } from './keyFlags';
 import { generateUserKey } from './userKeys';
 import { getActiveKeyObject } from './getActiveKeys';
+import { getHasMigratedAddressKeys } from './keyMigration';
 
-export const getResetAddressesKeys = async ({
-    addresses = [],
-    passphrase = '',
-    encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
-}: {
+interface Arguments {
     addresses: Address[];
     passphrase: string;
     encryptionConfig?: EncryptionConfig;
-}): Promise<
+}
+
+export const getResetAddressesKeysLegacy = async ({
+    addresses = [],
+    passphrase = '',
+    encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
+}: Arguments): Promise<
     | { userKeyPayload: string; addressKeysPayload: AddressKeyPayload[] }
     | { userKeyPayload: undefined; addressKeysPayload: undefined }
 > => {
@@ -99,4 +102,15 @@ export const getResetAddressesKeysV2 = async ({
     );
 
     return { userKeyPayload, addressKeysPayload };
+};
+
+export const getResetAddressesKeys = ({
+    addresses = [],
+    passphrase = '',
+    encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
+}: Arguments) => {
+    if (hasAddressKeyMigration || getHasMigratedAddressKeys(addresses)) {
+        return getResetAddressesKeysV2({ addresses, passphrase, encryptionConfig });
+    }
+    return getResetAddressesKeysLegacy({ addresses, passphrase, encryptionConfig });
 };
