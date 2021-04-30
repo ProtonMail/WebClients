@@ -1,5 +1,5 @@
 import { getCalendars } from 'proton-shared/lib/models/calendarsModel';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { c } from 'ttag';
 import {
     APPS,
@@ -92,6 +92,7 @@ const SubscriptionModal = ({
         [SUBSCRIPTION_STEPS.THANKS]: '',
     };
 
+    const innerRef = useRef<HTMLDivElement>();
     const api = useApi();
     const { APP_NAME } = useConfig();
     const isVpnApp = APP_NAME === APPS.PROTONVPN_SETTINGS;
@@ -314,9 +315,17 @@ const SubscriptionModal = ({
         </div>
     );
 
+    // Each time the user switch between steps, it takes the user to the top of the modal
+    useEffect(() => {
+        if (innerRef?.current) {
+            innerRef.current.scrollTop = 0;
+        }
+    }, [model.step]);
+
     return (
         <FormModal
             footer={null}
+            innerRef={innerRef}
             className={classnames([
                 'subscription-modal',
                 [
