@@ -187,10 +187,7 @@ export const mutateHTMLBlob = (embeddeds: EmbeddedMap | undefined, document: Ele
             element.setAttribute('data-embedded-img', cid);
             element.classList.add(EMBEDDED_CLASSNAME);
 
-            console.log('mutateHTML', element.parentElement?.parentElement);
-
             if (element.parentElement?.classList.contains(EMBEDDED_CLASSNAME_LOADING)) {
-                console.log('replaceChild', element.parentElement.parentElement);
                 element.parentElement.parentElement?.replaceChild(element, element.parentElement);
             }
         });
