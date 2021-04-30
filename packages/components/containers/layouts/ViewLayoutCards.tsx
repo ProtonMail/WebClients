@@ -6,7 +6,7 @@ import { VIEW_LAYOUT } from 'proton-shared/lib/constants';
 import inboxColumnSvg from 'design-system/assets/img/pm-images/inbox-column.svg';
 import inboxRowSvg from 'design-system/assets/img/pm-images/inbox-row.svg';
 
-import { RadioCards } from '../../components';
+import { LayoutCards } from '../../components';
 
 const { COLUMN, ROW } = VIEW_LAYOUT;
 
@@ -14,37 +14,36 @@ interface Props {
     viewLayout: VIEW_LAYOUT;
     onChange: (viewLayout: VIEW_LAYOUT) => void;
     loading: boolean;
-    id: string;
     describedByID: string;
 }
 
-const ViewLayoutRadios = ({ viewLayout, onChange, loading, id, describedByID, ...rest }: Props) => {
-    const radioCardColumn = {
+const ViewLayoutCards = ({ viewLayout, onChange, loading, describedByID, ...rest }: Props) => {
+    const layoutCardColumn = {
         value: COLUMN,
-        checked: viewLayout === COLUMN,
-        id: 'columnRadio',
+        selected: viewLayout === COLUMN,
         disabled: loading,
         name: 'viewLayout',
         label: c('Label to change view layout').t`Column`,
         onChange() {
             onChange(COLUMN);
         },
-        children: <img alt="" src={inboxColumnSvg} />,
+        src: inboxColumnSvg,
+        describedByID,
     };
-    const radioCardRow = {
+    const layoutCardRow = {
         value: ROW,
-        checked: viewLayout === ROW,
-        id: 'rowRadio',
+        selected: viewLayout === ROW,
         disabled: loading,
         name: 'viewLayout',
         label: c('Label to change view layout').t`Row`,
         onChange() {
             onChange(ROW);
         },
-        children: <img alt="" src={inboxRowSvg} />,
+        src: inboxRowSvg,
+        describedByID,
     };
 
-    return <RadioCards list={[radioCardColumn, radioCardRow]} id={id} describedByID={describedByID} {...rest} />;
+    return <LayoutCards list={[layoutCardColumn, layoutCardRow]} describedByID={describedByID} {...rest} />;
 };
 
-export default ViewLayoutRadios;
+export default ViewLayoutCards;

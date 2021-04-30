@@ -9,9 +9,9 @@ import { Info, Loader } from '../../components';
 import { useNotifications, useUserSettings, useMailSettings, useEventManager, useLoading, useApi } from '../../hooks';
 import { SettingsSectionWide } from '../account';
 
-import ComposerModeRadios from './ComposerModeRadios';
-import ViewLayoutRadios from './ViewLayoutRadios';
-import DensityRadios from './DensityRadios';
+import ComposerModeCards from './ComposerModeCards';
+import ViewLayoutCards from './ViewLayoutCards';
+import DensityRadiosCards from './DensityRadiosCards';
 
 const LayoutsSection = () => {
     const [{ ComposerMode = 0, ViewLayout = 0 } = {}, loadingMailSettings] = useMailSettings();
@@ -50,15 +50,14 @@ const LayoutsSection = () => {
             ) : (
                 <>
                     <div className="flex flex-nowrap mb1 on-mobile-flex-column flex-column">
-                        <label htmlFor="layoutMode" className="mb1 text-semibold">
+                        <span className="mb1 text-semibold">
                             <span className="mr0-5" id="layoutMode_desc">{c('Label').t`Inbox`}</span>
                             <Info
                                 url="https://protonmail.com/support/knowledge-base/change-inbox-layout/"
                                 title={c('Tooltip').t`Set the default layout for your Inbox.`}
                             />
-                        </label>
-                        <ViewLayoutRadios
-                            id="layoutMode"
+                        </span>
+                        <ViewLayoutCards
                             describedByID="layoutMode_desc"
                             viewLayout={ViewLayout}
                             onChange={(value) => withLoadingViewLayout(handleChangeViewLayout(value))}
@@ -67,15 +66,15 @@ const LayoutsSection = () => {
                     </div>
 
                     <div className="flex flex-nowrap mb1 on-mobile-flex-column flex-column">
-                        <label htmlFor="composerMode" className="mb1 text-semibold">
+                        <span className="mb1 text-semibold">
                             <span className="mr0-5" id="composerMode_desc">{c('Label').t`Composer`}</span>
                             <Info
                                 url="https://protonmail.com/support/knowledge-base/composer/"
                                 title={c('Tooltip').t`Set the default Composer popup size as small or full screen.`}
                             />
-                        </label>
-                        <ComposerModeRadios
-                            id="composerMode"
+                        </span>
+
+                        <ComposerModeCards
                             describedByID="composerMode_desc"
                             composerMode={ComposerMode}
                             onChange={(value) => withLoadingComposerMode(handleChangeComposerMode(value))}
@@ -84,15 +83,14 @@ const LayoutsSection = () => {
                     </div>
 
                     <div className="flex flex-nowrap mb1 on-mobile-flex-column flex-column">
-                        <label htmlFor="density" className="mb1 text-semibold" id="densityMode_desc">
+                        <span className="mb1 text-semibold" id="densityMode_desc">
                             {c('Label').t`Density`}
-                        </label>
-                        <DensityRadios
+                        </span>
+                        <DensityRadiosCards
                             density={Density}
                             describedByID="densityMode_desc"
                             onChange={(value) => withLoadingDensity(handleChangeDensity(value))}
                             loading={loadingDensity}
-                            id="density"
                         />
                     </div>
                 </>
