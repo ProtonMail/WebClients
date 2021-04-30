@@ -15,7 +15,7 @@ import {
     VERIFICATION_STATUS,
 } from 'pmcrypto';
 import { decryptMemberToken } from './memberToken';
-import { EncryptionConfig } from '../interfaces';
+import { EncryptionConfig, KeyPair } from '../interfaces';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../constants';
 
 interface EncryptAddressKeyTokenArguments {
@@ -104,7 +104,7 @@ export async function generateAddressKeyTokens(userKey: OpenPGPKey, organization
 interface GetAddressKeyTokenArguments {
     Token: string;
     Signature: string;
-    organizationKey?: OpenPGPKey;
+    organizationKey?: KeyPair;
     privateKeys: OpenPGPKey | OpenPGPKey[];
     publicKeys: OpenPGPKey | OpenPGPKey[];
 }
@@ -123,14 +123,14 @@ export const getAddressKeyToken = ({
             Signature,
             privateKeys,
             // Verify against the organization key in case an admin is signed in to a non-private member.
-            publicKeys: organizationKey ? [organizationKey.toPublic()] : publicKeys,
+            publicKeys: organizationKey ? [organizationKey.publicKey] : publicKeys,
         });
     }
     if (!organizationKey) {
         throw new Error('Missing organization key');
     }
     // Old address key format for an admin signed into a non-private user
-    return decryptMemberToken(Token, organizationKey);
+    return decryptMemberToken(Token, [organizationKey.privateKey], [organizationKey.publicKey]);
 };
 
 interface ReformatAddressKeyArguments {

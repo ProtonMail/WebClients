@@ -6,11 +6,11 @@ import { uint8ArrayToBase64String } from '../helpers/encoding';
 /**
  * Decrypts a member token with the organization private key
  */
-export const decryptMemberToken = async (token: string, privateKey: OpenPGPKey) => {
+export const decryptMemberToken = async (token: string, privateKeys: OpenPGPKey[], publicKeys: OpenPGPKey[]) => {
     const { data: decryptedToken, verified } = await decryptMessage({
         message: await getMessage(token),
-        privateKeys: [privateKey],
-        publicKeys: privateKey.toPublic(),
+        privateKeys,
+        publicKeys,
     });
 
     if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {

@@ -72,6 +72,7 @@ export const reEncryptOrganizationTokens = ({
     newOrganizationKey,
 }: ReEncryptOrganizationTokens) => {
     const newOrganizationPublicKey = newOrganizationKey.toPublic();
+    const oldOrganizationPublicKey = oldOrganizationKey.toPublic();
 
     const getMemberTokens = ({ Keys = [] }: Member, i: number) => {
         const memberKeys = nonPrivateMembersAddresses[i].reduce((acc, { Keys: AddressKeys }) => {
@@ -82,7 +83,7 @@ export const reEncryptOrganizationTokens = ({
             if (!Token) {
                 throw new Error('Missing Token');
             }
-            const decryptedToken = await decryptMemberToken(Token, oldOrganizationKey);
+            const decryptedToken = await decryptMemberToken(Token, [oldOrganizationKey], [oldOrganizationPublicKey]);
             const { data } = await encryptMessage({
                 data: decryptedToken,
                 privateKeys: newOrganizationKey,
