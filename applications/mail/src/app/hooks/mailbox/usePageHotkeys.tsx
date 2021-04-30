@@ -12,7 +12,7 @@ export interface PageHotkeysHandlers {
 }
 
 export const usePageHotkeys = ({ onCompose, onOpenShortcutsModal }: PageHotkeysHandlers) => {
-    const [{ Shortcuts = 1 } = {}] = useMailSettings();
+    const [{ Shortcuts = 0 } = {}] = useMailSettings();
     const folderNavigationHotkeys = useFolderNavigationHotkeys();
 
     const documentRef = useRef(window.document);

@@ -39,7 +39,7 @@ interface Props {
 const ComposerTitleBar = ({ title, minimized, maximized, toggleMinimized, toggleMaximized, onClose }: Props) => {
     const isSafari = checkIsSafari();
 
-    const [{ Shortcuts = 1 } = {}] = useMailSettings();
+    const [{ Shortcuts = 0 } = {}] = useMailSettings();
 
     const handleDoubleClick = () => {
         if (minimized) {

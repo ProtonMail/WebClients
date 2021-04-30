@@ -32,7 +32,7 @@ export const useComposerHotkeys = ({
 }: ComposerHotkeysHandlers) => {
     const isSafari = checkIsSafari();
 
-    const [{ Shortcuts = 1 } = {}] = useMailSettings();
+    const [{ Shortcuts = 0 } = {}] = useMailSettings();
 
     const attachmentTriggerRef = useRef<() => void>(noop);
 

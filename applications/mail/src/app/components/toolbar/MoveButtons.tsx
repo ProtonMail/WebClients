@@ -36,7 +36,7 @@ const MoveButtons = ({
     const moveToFolder = useMoveToFolder();
     const labelIDs = labels.map(({ ID }) => ID);
     const getElementsFromIDs = useGetElementsFromIDs();
-    const [{ Shortcuts = 1 } = {}] = useMailSettings();
+    const [{ Shortcuts = 0 } = {}] = useMailSettings();
 
     const handleMove = async (LabelID: string) => {
         const folderName = getFolderName(LabelID, folders);
