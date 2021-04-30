@@ -78,7 +78,7 @@ export const parseIcs = async (ics: File) => {
         if (version?.value !== '2.0') {
             throw new ImportFileError(IMPORT_ERROR_TYPE.INVALID_VERSION, filename);
         }
-        if (supportedMethod !== ICAL_METHOD.PUBLISH) {
+        if (supportedMethod && supportedMethod !== ICAL_METHOD.PUBLISH) {
             throw new ImportFileError(IMPORT_ERROR_TYPE.INVALID_METHOD, filename);
         }
         if (!components?.length) {
