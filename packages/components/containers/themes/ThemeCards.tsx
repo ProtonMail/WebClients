@@ -27,7 +27,7 @@ const ThemeCards = ({ themeIdentifier, onChange, disabled, liClassName, list }: 
                             label={label}
                             id={id}
                             src={src}
-                            checked={themeIdentifier === identifier}
+                            selected={themeIdentifier === identifier}
                             onChange={() => onChange(identifier)}
                             disabled={disabled}
                         />
