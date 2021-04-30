@@ -8,9 +8,10 @@ import { useStar } from '../../hooks/useApplyLabels';
 
 interface Props {
     element?: Element;
+    size?: number;
 }
 
-const ItemStar = ({ element = {} }: Props) => {
+const ItemStar = ({ element = {}, size }: Props) => {
     const [loading, withLoading] = useLoading();
     const star = useStar();
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
@@ -57,8 +58,7 @@ const ItemStar = ({ element = {} }: Props) => {
                 ])}
                 onClick={handleClick}
             >
-                <Icon name="star" className="starbutton-icon-star" />
-                <Icon name="starfull" className="starbutton-icon-starred" />
+                <Icon size={size} name={isStarred ? 'starfull' : 'star'} className="starbutton-icon-star" />
                 <span className="sr-only">{title}</span>
             </button>
         </Tooltip>

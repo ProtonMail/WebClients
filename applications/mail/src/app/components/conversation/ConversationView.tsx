@@ -125,13 +125,9 @@ const ConversationView = ({
                 loading={loadingConversation}
                 element={conversation}
                 labelID={labelID}
-                breakpoints={breakpoints}
             />
             <div
-                className={classnames([
-                    'scroll-if-needed flex-item-fluid pt0-5 max-w100 no-outline',
-                    hidden && 'hidden',
-                ])}
+                className={classnames(['flex-item-fluid pt0-5 pr1-5 pl1-5 max-w100 no-outline', hidden && 'hidden'])}
                 ref={elementRef}
                 tabIndex={-1}
             >
