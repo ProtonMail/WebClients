@@ -15,7 +15,7 @@ import { getOrganizationKeys } from '../api/organization';
 import { hasAddressKeyMigration as originalHasAdressKeyMigration, USER_ROLES } from '../constants';
 import { srpVerify } from '../srp';
 import { generateAddressKeyTokens, reformatAddressKey } from './addressKeys';
-import { getDecryptedOrganizationKey } from './getDecryptedOrganizationKey';
+import { getCachedOrganizationKey } from './getDecryptedOrganizationKey';
 import { reformatOrganizationKey } from './organizationKeys';
 import { UpgradeAddressKeyPayload, upgradeKeysRoute } from '../api/keys';
 import { getDecryptedUserKeys } from './getDecryptedUserKeys';
@@ -255,7 +255,7 @@ export const upgradeV2KeysHelper = async ({
     const organizationKey =
         user.Role === USER_ROLES.ADMIN_ROLE
             ? await api<tsOrganizationKey>(getOrganizationKeys()).then((Key) => {
-                  return getDecryptedOrganizationKey({ keyPassword, Key });
+                  return getCachedOrganizationKey({ keyPassword, Key });
               })
             : undefined;
 

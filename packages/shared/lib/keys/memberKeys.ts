@@ -23,7 +23,7 @@ export const getDecryptedMemberKey = async ({ Token, PrivateKey }: tsKey, organi
     if (!Token) {
         throw new Error('Member token invalid');
     }
-    const decryptedToken = await decryptMemberToken(Token, organizationKey);
+    const decryptedToken = await decryptMemberToken(Token, [organizationKey], [organizationKey.toPublic()]);
     return decryptPrivateKey(PrivateKey, decryptedToken);
 };
 
