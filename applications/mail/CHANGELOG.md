@@ -1,3 +1,34 @@
+# [4.0.0 - Beta 41] - 2021-05-05
+
+## Improvements
+
+-   All contact settings including import and export can now be accessed directly through the contact widget
+-   Contact groups can now be deleted through the contacts widget
+-   Improved the loading state of the composer when replying to/forwarding big emails
+-   When selecting a conversation, the focus will now stay on the conversation, thus allowing to use keyboard shortcuts to action the entire conversation as opposed to single messages
+-   The message counter on a parent folder now includes the amount of messages inside any children folders as well
+-   Collapsed/uncollapsed state of folders will now persist upon a page refresh
+-   Added an informational message about the fact that the original email will be force sent when replying to/forwarding a message where the "Undo send" time period has not expired yet
+-   Added an image loading animation for large emails with several embedded images
+-   Disabled composing to an empty contact or empty group from the contacts widget
+-   Placed auto-focus on "Confirm" on the link confirmation modal
+
+## Fixes
+
+-   Fixed a rare issue where specific content could be lost when replying to an HTML message and then switching between normal and plain text mode several times
+-   Fixed an issue where any subsequently added date values in contacts would not be displayed in the UI
+-   Fixed an issue where angle brackets would be added to plaintext messages if their sending has been undone previously
+-   Fixed an issue with keyboard navigation using J/K keys
+-   Fixed an issue where the composer focus could get lost when a new email arrives at the same time
+-   Fixed an issue where a wrong sender name would be displayed in the unsubscribe modal
+-   Fixed an issue where a "Signature verification error" would be displayed on messages if there is no network connectivity
+-   Fixed an issue where the "Sending message" banner would be shown at the same time as the "No recipient added" modal when trying to send a message without recipients
+-   Fixed an issue where a "No results found" screen would be shown when marking an email as read while viewing search results
+-   Fixed an issue where composer content would fail to reload while there are connectivity issues
+-   Fixed an issue where a drag&drop label would be stuck on the screen if moving a message while another message is in the progress of being loaded
+-   Fixed an issue where unwanted shortcuts would be triggered when a new message in a conversation arrives while the focus is on the composer
+-   Various localization and translation fixes
+
 # [4.0.0 - Beta 40] - 2021-04-21
 
 ## Improvements
