@@ -1,9 +1,8 @@
 import { useRef, useState } from 'react';
 import { c } from 'ttag';
-import { hasAddressKeyMigration } from 'proton-shared/lib/constants';
 import { requestLoginResetToken, validateResetToken } from 'proton-shared/lib/api/reset';
 import { getRecoveryMethods, getUser } from 'proton-shared/lib/api/user';
-import { generateKeySaltAndPassphrase, getResetAddressesKeys, getResetAddressesKeysV2 } from 'proton-shared/lib/keys';
+import { generateKeySaltAndPassphrase, getResetAddressesKeys } from 'proton-shared/lib/keys';
 import { srpAuth, srpVerify } from 'proton-shared/lib/srp';
 import { resetKeysRoute } from 'proton-shared/lib/api/keys';
 import { Address, User as tsUser } from 'proton-shared/lib/interfaces';
@@ -47,6 +46,7 @@ export interface ResetPasswordState {
     step: STEPS;
     error?: string;
 }
+
 type GetSetters<T> = {
     [K in keyof T]: (value: T[K]) => void;
 };
@@ -162,9 +162,7 @@ const useResetPassword = ({ onLogin, initialStep = INITIAL_STATE.step }: Props) 
         });
         const { passphrase, salt } = await generateKeySaltAndPassphrase(password);
 
-        const { addressKeysPayload, userKeyPayload } = hasAddressKeyMigration
-            ? await getResetAddressesKeysV2({ addresses, passphrase })
-            : await getResetAddressesKeys({ addresses, passphrase });
+        const { addressKeysPayload, userKeyPayload } = await getResetAddressesKeys({ addresses, passphrase });
 
         await srpVerify({
             api,
