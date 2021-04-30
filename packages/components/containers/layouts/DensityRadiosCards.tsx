@@ -6,7 +6,7 @@ import { DENSITY } from 'proton-shared/lib/constants';
 import comfortableDensitySvg from 'design-system/assets/img/pm-images/comfortable-density.svg';
 import compactDensitySvg from 'design-system/assets/img/pm-images/compact-density.svg';
 
-import { RadioCards } from '../../components';
+import { LayoutCards } from '../../components';
 
 const { COMFORTABLE, COMPACT } = DENSITY;
 
@@ -14,39 +14,36 @@ interface Props {
     density: DENSITY;
     onChange: (density: DENSITY) => void;
     loading: boolean;
-    id: string;
     describedByID: string;
 }
 
-const DensityRadios = ({ density, onChange, loading, id, describedByID, ...rest }: Props) => {
-    const radioCardComfortable = {
+const DensityRadiosCards = ({ density, onChange, loading, describedByID, ...rest }: Props) => {
+    const layoutCardComfortable = {
         value: COMFORTABLE,
-        checked: density === COMFORTABLE,
-        id: 'comfortableRadio',
+        selected: density === COMFORTABLE,
         disabled: loading,
         name: 'density',
         label: c('Label to change density').t`Comfortable`,
         onChange() {
             onChange(COMFORTABLE);
         },
-        children: <img alt="Comfortable" src={comfortableDensitySvg} />,
+        src: comfortableDensitySvg,
+        describedByID,
     };
-    const radioCardCompact = {
+    const layoutCardCompact = {
         value: COMPACT,
-        checked: density === COMPACT,
-        id: 'compactRadio',
+        selected: density === COMPACT,
         disabled: loading,
         name: 'density',
         label: c('Label to change density').t`Compact`,
         onChange() {
             onChange(COMPACT);
         },
-        children: <img alt="Compact" src={compactDensitySvg} />,
+        src: compactDensitySvg,
+        describedByID,
     };
 
-    return (
-        <RadioCards list={[radioCardComfortable, radioCardCompact]} describedByID={describedByID} id={id} {...rest} />
-    );
+    return <LayoutCards list={[layoutCardComfortable, layoutCardCompact]} describedByID={describedByID} {...rest} />;
 };
 
-export default DensityRadios;
+export default DensityRadiosCards;

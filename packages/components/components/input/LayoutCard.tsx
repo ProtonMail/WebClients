@@ -1,32 +1,32 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Button } from '../../components';
+import { Button } from '../button';
 import { classnames } from '../../helpers';
 
-interface Props {
+export interface LayoutCardProps {
     label: string;
-    id: string;
     src: string;
     selected: boolean;
     onChange: () => void;
     disabled?: boolean;
+    describedByID: string;
 }
 
-const ThemeCard = ({ label, id, src, selected, onChange, disabled }: Props) => {
+const LayoutCard = ({ label, src, selected, onChange, disabled, describedByID }: LayoutCardProps) => {
     return (
         <Button
-            name="themeCard"
+            name="layoutCard"
             shape="outline"
             color={selected ? 'norm' : 'weak'}
-            id={id}
             className={classnames(['mr1 mb1', selected && 'is-active no-pointer-events text-bold'])}
             aria-pressed={selected}
             onClick={onChange}
             disabled={disabled}
             type="button"
-            aria-label={c('Action').t`Use “${label}” theme`}
-            title={c('Action').t`Use “${label}” theme`}
+            aria-label={c('Action').t`Use “${label}” setting`}
+            title={c('Action').t`Use “${label}” setting`}
+            aria-describedby={describedByID}
         >
             <span className="flex flex-nowrap flex-column">
                 <img alt="" src={src} className="mb0-5" />
@@ -36,4 +36,4 @@ const ThemeCard = ({ label, id, src, selected, onChange, disabled }: Props) => {
     );
 };
 
-export default ThemeCard;
+export default LayoutCard;
