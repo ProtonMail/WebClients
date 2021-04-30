@@ -51,8 +51,8 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
         name: '',
         password: '',
         confirm: '',
-        storage: 5 * GIGA,
-        vpn: 3,
+        storage: Math.min(storageOptions[storageOptions.length - 1].value ?? 0, 5 * GIGA),
+        vpn: Math.min(vpnOptions[vpnOptions.length - 1]?.value ?? 0, 3),
     });
 
     const handleChange = (key: string) => {
