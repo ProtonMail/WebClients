@@ -61,7 +61,7 @@ const SidebarItem = ({
     const { call } = useEventManager();
     const cache = useCache();
     const history = useHistory();
-    const [{ Shortcuts = 1 } = {}] = useMailSettings();
+    const [{ Shortcuts = 0 } = {}] = useMailSettings();
 
     const [refreshing, withRefreshing] = useLoading(false);
 

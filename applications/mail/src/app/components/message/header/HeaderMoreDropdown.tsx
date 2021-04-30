@@ -78,7 +78,7 @@ const HeaderMoreDropdown = ({
     const [labels = []] = useLabels();
     const markAs = useMarkAs();
     const getMessageKeys = useGetMessageKeys();
-    const [{ Shortcuts = 1 } = {}] = useMailSettings();
+    const [{ Shortcuts = 0 } = {}] = useMailSettings();
 
     const handleMove = (folderID: string, fromFolderID: string) => async () => {
         closeDropdown.current?.();

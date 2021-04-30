@@ -12,7 +12,7 @@ interface Props {
 
 const DeleteButton = ({ labelID = '', selectedIDs = [] }: Props) => {
     const [loading, withLoading] = useLoading();
-    const [{ Shortcuts = 1 } = {}] = useMailSettings();
+    const [{ Shortcuts = 0 } = {}] = useMailSettings();
     const permanentDelete = usePermanentDelete(labelID);
 
     const handleDelete = async () => {

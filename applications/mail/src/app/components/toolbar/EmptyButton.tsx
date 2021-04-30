@@ -20,7 +20,7 @@ const EmptyButton = ({ labelID = '', breakpoints, elementIDs }: Props) => {
     const [loading, withLoading] = useLoading();
     const [labels = []] = useLabels();
     const emptyLabel = useEmptyLabel();
-    const [{ Shortcuts = 1 } = {}] = useMailSettings();
+    const [{ Shortcuts = 0 } = {}] = useMailSettings();
 
     const displayEmpty =
         !breakpoints.isNarrow &&

@@ -76,7 +76,7 @@ export const useMailboxHotkeys = (
     }: MailboxHotkeysHandlers
 ) => {
     const [mailSettings] = useMailSettings();
-    const { Shortcuts = 1 } = mailSettings || {};
+    const { Shortcuts = 0 } = mailSettings || {};
     const getElementsFromIDs = useGetElementsFromIDs();
     const history = useHistory<any>();
     const [folders] = useFolders();

@@ -44,7 +44,7 @@ const ComposerActions = ({
     const isPassword = hasFlag(MESSAGE_FLAGS.FLAG_INTERNAL)(message.data) && message.data?.Password;
     const isExpiration = !!message.expiresIn;
     const sendDisabled = lock;
-    const [{ Shortcuts = 1 } = {}] = useMailSettings();
+    const [{ Shortcuts = 0 } = {}] = useMailSettings();
 
     let dateMessage: string | string[];
     if (opening) {

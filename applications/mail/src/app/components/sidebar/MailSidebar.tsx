@@ -20,7 +20,7 @@ const MailSidebar = ({ labelID, expanded = false, location, onToggleExpand, onCo
     const handleCompose = useCallback(() => {
         onCompose({ action: MESSAGE_ACTIONS.NEW });
     }, [onCompose]);
-    const [{ Shortcuts = 1 } = {}] = useMailSettings();
+    const [{ Shortcuts = 0 } = {}] = useMailSettings();
 
     const titlePrimaryButton = Shortcuts ? (
         <>

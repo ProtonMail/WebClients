@@ -21,7 +21,7 @@ const ReadUnreadButtons = ({ labelID, mailSettings, selectedIDs, onBack }: Props
     const [loading, withLoading] = useLoading();
     const markAs = useMarkAs();
     const getElementsFromIDs = useGetElementsFromIDs();
-    const [{ Shortcuts = 1 } = {}] = useMailSettings();
+    const [{ Shortcuts = 0 } = {}] = useMailSettings();
 
     const handleMarkAs = async (status: MARK_AS_STATUS) => {
         const isUnread = status === UNREAD;

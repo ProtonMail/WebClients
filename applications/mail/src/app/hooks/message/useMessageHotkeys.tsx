@@ -61,7 +61,7 @@ export const useMessageHotkeys = (
         handleLoadEmbeddedImages,
     }: MessageHotkeysHandlers
 ) => {
-    const [{ Shortcuts = 1 } = {}] = useMailSettings();
+    const [{ Shortcuts = 0 } = {}] = useMailSettings();
     const [folders] = useFolders();
     const folderNavigationHotkeys = useFolderNavigationHotkeys();
 
