@@ -29,7 +29,7 @@ interface Props {
     address: Address;
 }
 const EditAddressesSection = ({ address }: Props) => {
-    const [{ Shortcuts = 1 } = {}] = useMailSettings();
+    const [{ Shortcuts = 0 } = {}] = useMailSettings();
     const api = useApi();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
