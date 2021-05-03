@@ -6,17 +6,15 @@ import NumMessages from './NumMessages';
 import ItemLabels from '../list/ItemLabels';
 import { isConversation as testIsConversation } from '../../helpers/elements';
 import { Element } from '../../models/element';
-import { Breakpoints } from '../../models/utils';
 
 interface Props {
     className: string;
     loading: boolean;
     element: Element;
     labelID: string;
-    breakpoints: Breakpoints;
 }
 
-const ConversationHeader = ({ className, loading, element, labelID, breakpoints }: Props) => {
+const ConversationHeader = ({ className, loading, element, labelID }: Props) => {
     const [labels = []] = useLabels();
 
     const isConversation = testIsConversation(element);
@@ -24,7 +22,7 @@ const ConversationHeader = ({ className, loading, element, labelID, breakpoints 
     return (
         <header
             className={classnames([
-                'border-bottom max-w100 message-conversation-summary p0-5 flex-item-noshrink',
+                'border-bottom max-w100 message-conversation-summary sticky-top pt1-5 pr0-5 pb1 pl0-5 ml1-5 mr1-5 flex-item-noshrink',
                 loading && 'message-conversation-summary-is-loading',
                 className,
             ])}
@@ -33,7 +31,7 @@ const ConversationHeader = ({ className, loading, element, labelID, breakpoints 
         >
             <div className="flex flex-nowrap">
                 <h1
-                    className="message-conversation-summary-header mb0 h3 text-ellipsis-two-lines lh-rg flex-item-fluid pr1"
+                    className="message-conversation-summary-header mb0 h3 text-bold text-ellipsis-two-lines lh-rg flex-item-fluid pr1"
                     title={element.Subject}
                     data-testid="conversation-header:subject"
                 >
@@ -47,18 +45,12 @@ const ConversationHeader = ({ className, loading, element, labelID, breakpoints 
                     )}
                 </h1>
                 <div className="message-conversation-summary-star flex-item-noshrink pt0-25">
-                    <ItemStar element={element} />
+                    <ItemStar element={element} size={22} />
                 </div>
             </div>
             {!loading && (
-                <div className="flex-item-fluid text-right no-scroll">
-                    <ItemLabels
-                        labels={labels}
-                        element={element}
-                        labelID={labelID}
-                        showUnlabel
-                        maxNumber={breakpoints.isNarrow ? 1 : 5}
-                    />
+                <div className="flex-item-fluid text-left no-scroll mt0-5">
+                    <ItemLabels labels={labels} element={element} labelID={labelID} showUnlabel isCollapsed={false} />
                 </div>
             )}
         </header>
