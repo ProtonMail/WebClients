@@ -57,7 +57,7 @@ const MessagesSection = () => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="showMovedToggle" className="text-semibold">
-                        <span className="mr0-5">{c('Label').t`Keep messsages in Sent/Drafts`}</span>
+                        <span className="mr0-5">{c('Label').t`Keep messages in Sent/Drafts`}</span>
                         <Info
                             title={c('Tooltip')
                                 .t`Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.`}
