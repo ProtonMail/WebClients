@@ -14,7 +14,7 @@ import getMemberAndAddress from 'proton-shared/lib/calendar/integration/getMembe
 import { withDtstamp } from 'proton-shared/lib/calendar/veventHelper';
 import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
 import { getProdId } from 'proton-shared/lib/calendar/vcalHelper';
-import { API_CODES } from 'proton-shared/lib/constants';
+import { API_CODES, SECOND } from 'proton-shared/lib/constants';
 import { format, isSameDay } from 'proton-shared/lib/date-fns-utc';
 import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
 import { unique } from 'proton-shared/lib/helpers/array';
@@ -29,10 +29,9 @@ import {
     CalendarBootstrap,
     CalendarEvent,
     SyncMultipleApiResponse,
-    UpdatePartstatApiResponse,
     DateTimeModel,
     EventModel,
-    UpdatePersonalPartApiResponse,
+    UpdateEventPartApiResponse,
 } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
@@ -57,7 +56,6 @@ import {
     useGetCalendarEventRaw,
     useModals,
     useNotifications,
-    useCalendarModelEventManager,
     useFeature,
     FeatureCode,
 } from 'react-components';
@@ -120,7 +118,10 @@ import withOccurrenceEvent from './eventActions/occurrenceEvent';
 import { getCreateTemporaryEvent, getEditTemporaryEvent, getTemporaryEvent, getUpdatedDateTime } from './eventHelper';
 import getComponentFromCalendarEvent from './eventStore/cache/getComponentFromCalendarEvent';
 import { getIsCalendarEvent } from './eventStore/cache/helper';
-import { upsertSyncMultiActionsResponses } from './eventStore/cache/upsertResponsesArray';
+import {
+    upsertSyncMultiActionsResponses,
+    upsertUpdateEventPartResponses,
+} from './eventStore/cache/upsertResponsesArray';
 import { CalendarsEventsCache, DecryptedEventTupleResult } from './eventStore/interface';
 import getSyncMultipleEventsPayload, { SyncEventActionOperations } from './getSyncMultipleEventsPayload';
 import getUpdatePersonalEventPayload from './getUpdatePersonalEventPayload';
@@ -205,7 +206,6 @@ const InteractiveCalendarView = ({
 }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
-    const { call: calendarCall } = useCalendarModelEventManager();
     const { createModal, getModal, hideModal, removeModal } = useModals();
     const { createNotification } = useNotifications();
     const { contactEmailsMap } = useContactEmailsCache();
@@ -852,6 +852,26 @@ const InteractiveCalendarView = ({
         createNotification({ text: texts.success });
     };
 
+    const handleUpdateVisibility = async (calendarIds: string[]) => {
+        const hiddenCalendars = calendarIds.filter((calendarID) => {
+            const calendar = activeCalendars.find(({ ID }) => ID === calendarID);
+            return !calendar?.Display;
+        });
+
+        // TODO: Remove when optimistic
+        if (hiddenCalendars.length > 0) {
+            await Promise.all(
+                hiddenCalendars.map((calendarID) => {
+                    return api({
+                        ...updateCalendar(calendarID, { Display: 1 }),
+                        silence: true,
+                    });
+                })
+            );
+            await call();
+        }
+    };
+
     const handleSyncActions = async (multiActions: SyncEventActionOperations[]) => {
         if (!multiActions.length) {
             return [];
@@ -879,25 +899,7 @@ const InteractiveCalendarView = ({
         if (calendarsEventCache) {
             upsertSyncMultiActionsResponses(multiActions, multiResponses, calendarsEventCache);
         }
-
-        const hiddenCalendars = multiActions.filter(({ calendarID }) => {
-            const calendar = activeCalendars.find(({ ID }) => ID === calendarID);
-            return !calendar?.Display;
-        });
-
-        // TODO: Remove when optimistic
-        if (hiddenCalendars.length > 0) {
-            await Promise.all(
-                hiddenCalendars.map(({ calendarID }) => {
-                    return api({
-                        ...updateCalendar(calendarID, { Display: 1 }),
-                        silence: true,
-                    });
-                })
-            );
-            await call();
-        }
-
+        await handleUpdateVisibility(multiActions.map(({ calendarID }) => calendarID));
         calendarsEventCache.rerender?.();
 
         return multiResponses;
@@ -905,11 +907,11 @@ const InteractiveCalendarView = ({
 
     const handleUpdatePartstatActions = async (updatePartstatOperations: UpdatePartstatOperation[] = []) => {
         if (!updatePartstatOperations.length) {
-            return;
+            return [];
         }
         const requests = updatePartstatOperations.map(
             ({ data: { eventID, calendarID, attendeeID, updateTime, partstat } }) => () =>
-                api<UpdatePartstatApiResponse>({
+                api<UpdateEventPartApiResponse>({
                     ...updateAttendeePartstat(calendarID, eventID, attendeeID, {
                         Status: toApiPartstat(partstat),
                         UpdateTime: updateTime,
@@ -919,14 +921,24 @@ const InteractiveCalendarView = ({
         );
         // the routes called in requests do not have any specific jail limit
         // the limit per user session is 25k requests / 900s
-        return processApiRequestsSafe(requests, 1000, 100 * 1000);
+        const responses = await processApiRequestsSafe(requests, 25000, 900 * SECOND);
+
+        const calendarsEventCache = calendarsEventsCacheRef.current;
+
+        if (calendarsEventCache) {
+            upsertUpdateEventPartResponses(updatePartstatOperations, responses, calendarsEventCache);
+        }
+        await handleUpdateVisibility(updatePartstatOperations.map(({ data: { calendarID } }) => calendarID));
+        calendarsEventCache.rerender?.();
+
+        return responses;
     };
 
     const handleUpdatePersonalPartActions = async (
         updatePersonalPartOperations: UpdatePersonalPartOperation[] = []
     ) => {
         if (!updatePersonalPartOperations.length) {
-            return;
+            return [];
         }
         const requests = updatePersonalPartOperations.map(
             ({ data: { addressID, memberID, eventID, calendarID, eventComponent } }) => async () => {
@@ -936,7 +948,7 @@ const InteractiveCalendarView = ({
                     memberID,
                     getAddressKeys,
                 });
-                return api<UpdatePersonalPartApiResponse>({
+                return api<UpdateEventPartApiResponse>({
                     ...updatePersonalEventPart(calendarID, eventID, payload),
                     silence: true,
                 });
@@ -946,10 +958,19 @@ const InteractiveCalendarView = ({
         try {
             // the routes called in requests do not have any specific jail limit
             // the limit per user session is 25k requests / 900s
-            const results = await processApiRequestsSafe(requests, 1000, 100 * 1000);
-            return results;
+            const responses = await processApiRequestsSafe(requests, 25000, 900 * SECOND);
+
+            const calendarsEventCache = calendarsEventsCacheRef.current;
+            if (calendarsEventCache) {
+                upsertUpdateEventPartResponses(updatePersonalPartOperations, responses, calendarsEventCache);
+            }
+            await handleUpdateVisibility(updatePersonalPartOperations.map(({ data: { calendarID } }) => calendarID));
+            calendarsEventCache.rerender?.();
+
+            return responses;
         } catch (e) {
             noop();
+            return [];
         }
     };
 
@@ -962,7 +983,12 @@ const InteractiveCalendarView = ({
     const handleSaveEvent = async (temporaryEvent: CalendarViewEventTemporaryEvent, inviteActions: InviteActions) => {
         try {
             isSavingEvent.current = true;
-            const { syncActions, updatePartstatActions, updatePersonalPartActions, texts } = await getSaveEventActions({
+            const {
+                syncActions,
+                updatePartstatActions = [],
+                updatePersonalPartActions = [],
+                texts,
+            } = await getSaveEventActions({
                 temporaryEvent,
                 weekStartsOn,
                 addresses,
@@ -977,18 +1003,29 @@ const InteractiveCalendarView = ({
                 handleSyncActions,
                 getCalendarKeys,
             });
-            await Promise.all([
+            const [syncResponses, updatePartstatResponses, updatePersonalPartResponses] = await Promise.all([
                 handleSyncActions(syncActions),
                 handleUpdatePartstatActions(updatePartstatActions),
                 handleUpdatePersonalPartActions(updatePersonalPartActions),
             ]);
-            handleCreateNotification(texts);
-            const updatedCalendarIDs = unique([
+            const calendarsEventCache = calendarsEventsCacheRef.current;
+            if (calendarsEventCache) {
+                upsertSyncMultiActionsResponses(syncActions, syncResponses, calendarsEventCache);
+                upsertUpdateEventPartResponses(updatePartstatActions, updatePartstatResponses, calendarsEventCache);
+                upsertUpdateEventPartResponses(
+                    updatePersonalPartActions,
+                    updatePersonalPartResponses,
+                    calendarsEventCache
+                );
+            }
+            const uniqueCalendarIDs = unique([
                 ...syncActions.map(({ calendarID }) => calendarID),
-                ...(updatePartstatActions || []).map(({ data: { calendarID } }) => calendarID),
-                ...(updatePersonalPartActions || []).map(({ data: { calendarID } }) => calendarID),
+                ...updatePartstatActions.map(({ data: { calendarID } }) => calendarID),
+                ...updatePersonalPartActions.map(({ data: { calendarID } }) => calendarID),
             ]);
-            await calendarCall(updatedCalendarIDs);
+            await handleUpdateVisibility(uniqueCalendarIDs);
+            calendarsEventCache.rerender?.();
+            handleCreateNotification(texts);
         } catch (e) {
             createNotification({ text: e.message, type: 'error' });
         } finally {
