@@ -26,7 +26,15 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit }) => {
     }
 
     const clickHere = (
-        <PayPalButton type={type} key="click-here" size="small" paypal={paypalCredit} amount={amount}>
+        <PayPalButton
+            shape="outline"
+            color="norm"
+            type={type}
+            key="click-here"
+            size="small"
+            paypal={paypalCredit}
+            amount={amount}
+        >
             {c('Link').t`click here`}
         </PayPalButton>
     );
@@ -48,8 +56,12 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit }) => {
                     <div className="text-center mb1">
                         <img src={paypalSvg} alt="PayPal" width="250" />
                     </div>
-                    <Alert>{c('Info')
-                        .jt`You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please ${clickHere}.`}</Alert>
+                    <Alert>
+                        {c('Info')
+                            .t`You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.`}
+                        <br />
+                        {clickHere}
+                    </Alert>
                 </>
             ) : null}
             {!paypal.loadingVerification && type === 'update' ? (
