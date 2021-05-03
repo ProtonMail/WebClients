@@ -8,7 +8,6 @@ import {
     getHasUpdatedInviteData,
 } from 'proton-shared/lib/calendar/integration/invite';
 import { getAttendeePartstat, getHasAttendees } from 'proton-shared/lib/calendar/vcalHelper';
-import { FEATURE_FLAGS } from 'proton-shared/lib/constants';
 import { getIsAddressActive } from 'proton-shared/lib/helpers/address';
 import { canonizeEmailByGuess } from 'proton-shared/lib/helpers/email';
 import { Recipient } from 'proton-shared/lib/interfaces';
@@ -180,6 +179,7 @@ export const getSendIcsAction = ({
     sendPreferencesMap,
     contactEmailsMap,
     prodId,
+    enabledProtonProtonInvites,
     getVTimezonesMap,
     onRequestError,
     onReplyError,
@@ -193,6 +193,7 @@ export const getSendIcsAction = ({
     contactEmailsMap: SimpleMap<ContactEmail>;
     getVTimezonesMap: GetVTimezonesMap;
     prodId: string;
+    enabledProtonProtonInvites: boolean;
     onRequestError: (e: Error) => void;
     onReplyError: (e: Error) => void;
     onCancelError: (e: Error) => void;
@@ -227,7 +228,7 @@ export const getSendIcsAction = ({
             }
             const { attendee: attendees } = vevent;
             const vtimezones = await generateVtimezonesComponents(vevent, getVTimezonesMap);
-            const pmVevent = FEATURE_FLAGS.includes('proton-proton-invites')
+            const pmVevent = enabledProtonProtonInvites
                 ? {
                       ...vevent,
                       'x-pm-shared-event-id': { value: sharedEventID },
@@ -278,7 +279,7 @@ export const getSendIcsAction = ({
                     if (!cancelVevent) {
                         throw new Error('Cannot cancel invite ics without the old event component');
                     }
-                    const pmCancelVevent = FEATURE_FLAGS.includes('proton-proton-invites')
+                    const pmCancelVevent = enabledProtonProtonInvites
                         ? {
                               ...cancelVevent,
                               'x-pm-shared-event-id': { value: sharedEventID },
@@ -328,7 +329,7 @@ export const getSendIcsAction = ({
                 throw new Error('Missing shared event data');
             }
             const vtimezones = await generateVtimezonesComponents(vevent, getVTimezonesMap);
-            const pmVevent = FEATURE_FLAGS.includes('proton-proton-invites')
+            const pmVevent = enabledProtonProtonInvites
                 ? {
                       ...vevent,
                       'x-pm-shared-event-id': { value: sharedEventID },
@@ -383,7 +384,7 @@ export const getSendIcsAction = ({
                 if (!cancelVevent) {
                     throw new Error('Cannot cancel invite ics without the old event component');
                 }
-                const pmCancelVevent = FEATURE_FLAGS.includes('proton-proton-invites')
+                const pmCancelVevent = enabledProtonProtonInvites
                     ? {
                           ...cancelVevent,
                           'x-pm-shared-event-id': { value: sharedEventID },
@@ -429,7 +430,7 @@ export const getSendIcsAction = ({
                 throw new Error('Cannot build cancel ics without attendees');
             }
             const vtimezones = await generateVtimezonesComponents(cancelVevent, getVTimezonesMap);
-            const pmCancelVevent = FEATURE_FLAGS.includes('proton-proton-invites')
+            const pmCancelVevent = enabledProtonProtonInvites
                 ? {
                       ...cancelVevent,
                       'x-pm-shared-event-id': { value: sharedEventID },
@@ -479,10 +480,17 @@ export const getSendIcsAction = ({
                     partstat,
                 },
             };
+            const pmVevent = enabledProtonProtonInvites
+                ? {
+                      ...vevent,
+                      'x-pm-shared-event-id': { value: sharedEventID },
+                      'x-pm-session-key': { value: sharedSessionKey },
+                  }
+                : { ...vevent };
             const replyIcs = createInviteIcs({
                 method: ICAL_METHOD.REPLY,
                 prodId,
-                vevent,
+                vevent: pmVevent,
                 attendeesTo: [selfAttendeeWithPartstat],
                 keepDtstamp: true,
             });
