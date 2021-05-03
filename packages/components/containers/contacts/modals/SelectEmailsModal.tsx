@@ -89,20 +89,20 @@ const SelectEmailsModal = ({ contacts, groupIDs, onSubmit, onClose, ...rest }: P
     if (isSingleContact) {
         if (isSingleGroup) {
             text = c('Info')
-                .t`${contactName} contains mutliple email addresses. Please select which email address or addresses to add to this group.`;
+                .t`${contactName} contains multiple email addresses. Please select which email address or addresses to add to this group.`;
         } else {
             // translator: ${groupsEnumeration} is the enumeration of a list of groups. Ex: group1, group2 and group3
             text = c('Info')
-                .t`${contactName} contains mutliple email addresses. Please select which email address or addresses to add to ${groupsEnumeration}.`;
+                .t`${contactName} contains multiple email addresses. Please select which email address or addresses to add to ${groupsEnumeration}.`;
         }
     } else if (isSingleGroup) {
         // translator: ${contactsEnumeration} is the enumeration of a list of contacts. Ex: contact1, contact2 and contact3
         text = c('Info')
-            .t`${contactsEnumeration} contain mutliple email addresses. Please select which email address or addresses to add to this group.`;
+            .t`${contactsEnumeration} contain multiple email addresses. Please select which email address or addresses to add to this group.`;
     } else {
         // translator: ${contactsEnumeration} and ${groupsEnumeration} are the enumeration of lists of contacts and groups. Ex: contact1, contact2 and contact3
         text = c('Info')
-            .t`${contactsEnumeration} contain mutliple email addresses. Please select which email address or addresses to add to ${groupsEnumeration}.`;
+            .t`${contactsEnumeration} contain multiple email addresses. Please select which email address or addresses to add to ${groupsEnumeration}.`;
     }
 
     return (
