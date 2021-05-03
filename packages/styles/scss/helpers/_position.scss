@@ -4,8 +4,11 @@
 }
 
 /* to absolute */
-.absolute {
+.absolute,
+.absolute-only {
 	position: absolute;
+}
+.absolute {
 	z-index: 1;
 }
 

@@ -1,23 +1,32 @@
-# [2.0.0] - 2020-xx-xx
+# [2.0.0] - 2021-xx-xx
 
 ## New
 
-### Brand new 🎉
+### Brand new 🎉 and super duper 🔥
 
-- calendar invitation styles
-- shortcuts helpers
-- storyBook styles
 - refactor all design system arbo ^^
 - refactor numerous namespaces ^^
 - new input fields!
 - new buttons API!
 - new toggle!
-- new themes coming soon
-- new `modal--tiny` modifier for Signup
-- add table new style `alternate-table-bg-row-rounded`
+- new themes!
+- tons of new custom properties!
 - styles for new phone input
 - styles for theming/new taxonomy 
-- email items styling update - remove CSS SVG sprite
+- new illustrations!
+- new checkboxes
+- root em replacement
+- settings rework!
+- new button groups!
+
+### Still 🔥
+
+- calendar invitation styles
+- shortcuts helpers
+- storyBook styles
+- new `modal--tiny` and `modal--intermediate` modifier for Signup
+- add table new style `alternate-table-bg-row-rounded`
+- remove CSS SVG sprite
 
 ### New helpers
 
@@ -29,6 +38,9 @@
 - added `on-hover-opacity-100` and `opacity-65` helpers
 - added negative margin helpers: `mt-0-5` and `mb-0-5`
 - added `on-tinymobile-p(l/r/b/t)0`, `on-tinymobile-w100` `on-tinymobile-text-left` helpers
+- added `flex-item-grow-1-8` helper
+- added `border-bottom-children` helper
+- added `absolute-only` helper
 
 ## Updated/fixes
 
@@ -51,16 +63,19 @@
 - added `remote-content` icons
 - fixed `select` with centered content for Chrome
 - fix toggle for VPN
+- fix `mark styling`
+- reworked toggle structure
 
 ### Misc 
 
 - fix SVGO temporary issue
+- fix CI - design-system is included in branch pipelines 🎉
 
 # [1.8.6] - 2020-12-18
 
 ## New
 
-### Brand new 🎉
+### Brand new 🎉🎉
 
 - added Android CSS reset
 - added `pm-editableSection` fragment (Mail autoreply & filters)
