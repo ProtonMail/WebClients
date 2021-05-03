@@ -155,7 +155,7 @@ export const applySearch = (
  * Derive the correct time boundaries to get batches of messages from IndexedDB.
  * Time intervals are around 6 months long
  */
-const getTimeLimits = (prevStart: number, begin: number | undefined, end: number | undefined) => {
+export const getTimeLimits = (prevStart: number, begin: number | undefined, end: number | undefined) => {
     const endTime = prevStart ? prevStart - 1 : end || roundMilliseconds(endOfToday().getTime());
     const startTime = Math.max(
         begin || 0,
@@ -294,7 +294,7 @@ export const uncachedSearch = async (
 /**
  * Estimate the size of a CachedMessage object
  */
-const sizeOfCachedMessage = (cachedMessage: CachedMessage) => {
+export const sizeOfCachedMessage = (cachedMessage: CachedMessage) => {
     const sizeOfRecipient = (recipient: Recipient) => {
         let innerBytes = 0;
         let innerKey: keyof typeof recipient;
