@@ -40,12 +40,12 @@ const PaginationRow = ({
         <ButtonGroup className={className}>
             <Tooltip title={c('Action').t`Go to first page`}>
                 <Button icon disabled={disabled || disablePrevious} onClick={() => onStart()}>
-                    <Icon name="caret-double-left" alt={c('Action').t`Go to first page`} />
+                    <Icon name="caret-double-left" className="block" alt={c('Action').t`Go to first page`} />
                 </Button>
             </Tooltip>
             <Tooltip title={c('Action').t`Go to previous page`}>
                 <Button disabled={disabled || disablePrevious} onClick={() => onPrevious()}>
-                    <Icon name="caret" className="rotateZ-90" alt={c('Action').t`Go to previous page`} />
+                    <Icon name="caret" className="block rotateZ-90" alt={c('Action').t`Go to previous page`} />
                 </Button>
             </Tooltip>
             {pages.map((pageNumber) => {
@@ -53,7 +53,6 @@ const PaginationRow = ({
                 return (
                     <Tooltip key={pageNumber} title={goToPageTitle(pageNumber)}>
                         <Button
-                            icon
                             aria-current={isActive}
                             className={classnames([isActive && 'text-bold', isActive && 'no-pointer-events'])}
                             disabled={disabled}
@@ -67,12 +66,12 @@ const PaginationRow = ({
             })}
             <Tooltip title={c('Action').t`Go to next page`}>
                 <Button icon disabled={disabled || disableNext} onClick={() => onNext()}>
-                    <Icon name="caret" className="rotateZ-270" alt={c('Action').t`Go to next page`} />
+                    <Icon name="caret" className="block rotateZ-270" alt={c('Action').t`Go to next page`} />
                 </Button>
             </Tooltip>
             <Tooltip title={c('Action').t`Go to last page`}>
                 <Button icon disabled={disabled || disableNext} onClick={() => onEnd()}>
-                    <Icon name="caret-double-left" className="mirror" alt={c('Action').t`Go to last page`} />
+                    <Icon name="caret-double-left" className="block mirror" alt={c('Action').t`Go to last page`} />
                 </Button>
             </Tooltip>
         </ButtonGroup>
