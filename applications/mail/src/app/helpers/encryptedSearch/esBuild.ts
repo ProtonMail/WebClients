@@ -152,10 +152,8 @@ export const encryptToDB = async (messageToCache: CachedMessage, indexKey: Crypt
  * Compare the subject to a set of known translations of the Fw: flag and decide
  * if the message is a forwarded one
  */
-const isMessageForwarded = (subject: string) => {
-    return localisedForwardFlags.some(
-        fwFlag => subject.slice(0, fwFlag.length).toLocaleLowerCase() === fwFlag
-    );
+export const isMessageForwarded = (subject: string) => {
+    return localisedForwardFlags.some((fwFlag) => subject.slice(0, fwFlag.length).toLocaleLowerCase() === fwFlag);
 };
 
 /**

@@ -100,7 +100,7 @@ export const storeToDB = async (newCiphertextToStore: StoredCiphertext, esDB: ID
 /**
  * Check whether two MessageForSearch objects are equal
  */
-const compareMessagesForSearch = (message1: MessageForSearch, message2: MessageForSearch) => {
+export const compareMessagesForSearch = (message1: MessageForSearch, message2: MessageForSearch) => {
     let key1: keyof typeof message1;
     for (key1 in message1) {
         if (JSON.stringify(message1[key1]) !== JSON.stringify(message2[key1])) {
