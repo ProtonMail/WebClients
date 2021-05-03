@@ -94,14 +94,9 @@ export interface SyncMultipleApiResponse {
     Responses: SyncMultipleApiResponses[];
 }
 
-export interface UpdatePersonalPartApiResponse {
+export interface UpdateEventPartApiResponse {
     Code: number;
     Event: CalendarEvent;
-}
-
-export interface UpdatePartstatApiResponse {
-    Code: number;
-    Attendee: Attendee;
 }
 
 export interface GetCanonicalAddressesApiResponses {
