@@ -341,7 +341,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
     const oldestDate = formatSimpleDate(add(new Date(oldestTime), { days: 1 }));
     const subTitleSection = (
         // translator: the variable is a date, which is already localised
-        <span className="color-weak mt0-5 mr0-5">{c('Info').jt`For messages newer than ${oldestDate}`}</span>
+        <span className="color-weak mt1 mr0-5">{c('Info').jt`For messages newer than ${oldestDate}`}</span>
     );
     const esToggle = (
         <Toggle
@@ -443,7 +443,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
                 {showEncryptedSearch && (
                     <div className="advancedSearchTop pl1 pr1 pt1">
                         <div className="flex flex-column">
-                            <div className="flex flex-justify-space-between mb0-5 flex-align-items-center">
+                            <div className="flex flex-justify-space-between flex-align-items-center">
                                 <Label htmlFor="es-toggle" className="text-bold p0 flex flex-align-items-center">
                                     {title}
                                     {info}
