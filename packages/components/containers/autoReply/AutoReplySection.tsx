@@ -38,7 +38,7 @@ const AutoReplySection = () => {
     const errorHandler = useErrorHandler();
     const [{ hasPaidMail }] = useUser();
     const [mailSettings] = useMailSettings();
-    const { Shortcuts = 1 } = mailSettings || {};
+    const { Shortcuts = 0 } = mailSettings || {};
     const AutoResponder = mailSettings?.AutoResponder || getDefaultAutoResponder();
     const api = useApi();
     const { call } = useEventManager();

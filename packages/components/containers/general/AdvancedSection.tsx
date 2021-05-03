@@ -14,7 +14,7 @@ import { MailShortcutsModal } from '../mail';
 const AdvancedSection = () => {
     const { createModal } = useModals();
 
-    const [{ Shortcuts = 1 } = {}] = useMailSettings();
+    const [{ Shortcuts = 0 } = {}] = useMailSettings();
     const [, setShortcuts] = useState(Shortcuts);
 
     const openShortcutsModal = () => {
