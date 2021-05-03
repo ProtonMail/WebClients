@@ -76,7 +76,10 @@ const ProtonPlanPicker = ({
         <InlineLinkButton key="annual-billing" onClick={() => onChangeCycle(CYCLE.YEARLY)}>{c('Action')
             .t`annual billing`}</InlineLinkButton>
     );
-    const save20 = <span className="TODO" key="save-20">{c('Info').t`Save 20%`}</span>;
+    const save20 = <span className="text-semibold color-success" key="save-20">{c('Info').t`Save 20%`}</span>;
+    const saveExtra20 = (
+        <span className="text-semibold color-success" key="saveExtra-20">{c('Info').t`Save extra 20%`}</span>
+    );
 
     if (index === 1 && planIDs[plansNameMap[PLANS.VISIONARY].ID]) {
         return null;
@@ -86,13 +89,16 @@ const ProtonPlanPicker = ({
         <div {...rest}>
             <h2 className="text-2xl text-bold">{service === PLAN_SERVICES.VPN ? vpnAppName : mailAppName} plan</h2>
             {index === 0 && cycle === CYCLE.MONTHLY ? (
+                // translator: <Save 20%> on your subscription by switching to <annual billing>
                 <p>{c('Info').jt`${save20} on your subscription by switching to ${annualBilling}`}</p>
             ) : null}
             {index === 1 && service === PLAN_SERVICES.MAIL ? (
-                <p>{c('Info').jt`${save20} on both Mail and VPN by adding a Mail subscription.`}</p>
+                // translator: <Save extra 20%> on both Mail and VPN by adding a Mail subscription
+                <p>{c('Info').jt`${saveExtra20} on both Mail and VPN by adding a Mail subscription.`}</p>
             ) : null}
             {index === 1 && service === PLAN_SERVICES.VPN ? (
-                <p>{c('Info').jt`${save20} on both VPN and Mail by adding a VPN subscription.`}</p>
+                // translator: <Save extra 20%> on both Mail and VPN by adding a Mail subscription
+                <p>{c('Info').jt`${saveExtra20} on both VPN and Mail by adding a VPN subscription.`}</p>
             ) : null}
             <ul className="unstyled">
                 {plansToShow.map((plan) => {
