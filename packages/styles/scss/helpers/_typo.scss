@@ -142,7 +142,7 @@
 
 .text-strong,
 .text-bold {
-	@extend %bold;
+	font-weight: bold;
 }
 
 .text-no-bold {

@@ -35,7 +35,9 @@ $container-to-width: 3em !default;
 	height: 100%;
 }
 
-.view-column-detail {
+.view-column-detail,
+// because it's sticky on top
+.message-conversation-summary {
 	background-color: var(
 		--email-message-view-background-color,
 		var(--background-norm)
@@ -464,31 +466,10 @@ $item-container-row-height-compact-mode: rem(40) !default;
 }
 
 .starbutton {
-	width: rem(16);
-	height: rem(16);
-
 	&:focus,
-	&:hover {
+	&:hover,
+	&--is-starred {
 		color: var(--favorite-icon-color, orange);
-	}
-
-	[class*='starbutton-icon'] {
-		position: absolute;
-		top: 0;
-		left: 0;
-	}
-
-	.starbutton-icon-starred {
-		transform: scale(0);
-		transition: transform 0.15s ease;
-	}
-}
-
-.starbutton--is-starred {
-	color: var(--favorite-icon-color, orange);
-
-	.starbutton-icon-starred {
-		transform: scale(1);
 	}
 }
 
