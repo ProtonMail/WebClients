@@ -23,8 +23,8 @@ export enum FeatureCode {
     UsedMailMobileApp = 'UsedMailMobileApp',
     UsedContactsImport = 'UsedContactsImport',
     CanUserSendFeedback = 'CanUserSendFeedback',
-    CalendarExport = 'CalendarExport',
     EnabledEncryptedSearch = 'EnabledEncryptedSearch',
+    EnabledProtonProtonInvites = 'EnabledProtonProtonInvites',
 }
 
 export interface FeaturesContextValue {
