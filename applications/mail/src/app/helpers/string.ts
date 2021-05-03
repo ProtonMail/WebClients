@@ -1,52 +1,22 @@
-// import getRandomValues from 'get-random-values';
-
-// import { EMAIL_FORMATING } from '../app/constants';
-
 export const EMAIL_FORMATING = {
     OPEN_TAG_AUTOCOMPLETE: '‹',
     CLOSE_TAG_AUTOCOMPLETE: '›',
     OPEN_TAG_AUTOCOMPLETE_RAW: '<',
-    CLOSE_TAG_AUTOCOMPLETE_RAW: '>'
+    CLOSE_TAG_AUTOCOMPLETE_RAW: '>',
 };
 
 const {
     OPEN_TAG_AUTOCOMPLETE,
     CLOSE_TAG_AUTOCOMPLETE,
     OPEN_TAG_AUTOCOMPLETE_RAW,
-    CLOSE_TAG_AUTOCOMPLETE_RAW
+    CLOSE_TAG_AUTOCOMPLETE_RAW,
 } = EMAIL_FORMATING;
 
 export const MAP_TAGS = {
     [OPEN_TAG_AUTOCOMPLETE_RAW]: OPEN_TAG_AUTOCOMPLETE,
     [CLOSE_TAG_AUTOCOMPLETE_RAW]: CLOSE_TAG_AUTOCOMPLETE,
     [OPEN_TAG_AUTOCOMPLETE]: OPEN_TAG_AUTOCOMPLETE_RAW,
-    [CLOSE_TAG_AUTOCOMPLETE]: CLOSE_TAG_AUTOCOMPLETE_RAW
-};
-
-export const escape = (string: string) => {
-    const UNESCAPE_HTML_REGEX = /[&<>"']/g;
-    const HTML_ESCAPES = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#39;'
-    };
-
-    return string.replace(UNESCAPE_HTML_REGEX, HTML_ESCAPES as any);
-};
-
-export const unescape = (string: string) => {
-    const ESCAPED_HTML_REGEX = /&(?:amp|lt|gt|quot|#39);/g;
-    const HTML_UNESCAPES = {
-        '&amp;': '&',
-        '&lt;': '<',
-        '&gt;': '>',
-        '&quot;': '"',
-        '&#39;': "'"
-    };
-
-    return string.replace(ESCAPED_HTML_REGEX, HTML_UNESCAPES as any);
+    [CLOSE_TAG_AUTOCOMPLETE]: CLOSE_TAG_AUTOCOMPLETE_RAW,
 };
 
 /**
@@ -87,34 +57,6 @@ export const toUnsignedString = (val: number, bits: number) => {
     return topString + middleString + bottomString;
 };
 
-/**
- * Unescape a string in hex or octal encoding.
- * See https://www.w3.org/International/questions/qa-escapes#css_other for all possible cases.
- */
-export const unescapeCSSEncoding = (str: string) => {
-    // Regexp declared inside the function to reset its state (because of the global flag).
-    // cf https://stackoverflow.com/questions/1520800/why-does-a-regexp-with-global-flag-give-wrong-results
-    const UNESCAPE_CSS_ESCAPES_REGEX = /\\([0-9A-Fa-f]{1,6}) ?/g;
-    const UNESCAPE_HTML_DEC_REGEX = /&#(\d+)(;|(?=[^\d;]))/g;
-    const UNESCAPE_HTML_HEX_REGEX = /&#x([0-9A-Fa-f]+)(;|(?=[^\d;]))/g;
-    const OTHER_ESC = /\\(.)/g;
-
-    const handleEscape = (radix: number) => (ignored: any, val: string) =>
-        String.fromCodePoint(Number.parseInt(val, radix));
-    /*
-     * basic unescaped named sequences: &amp; etcetera, lodash does not support a lot, but that is not a problem for our case.
-     * Actually handling all escaped sequences would mean keeping track of a very large and ever growing amount of named sequences
-     */
-    const namedUnescaped = unescape(str);
-    // lodash doesn't unescape &#160; or &#xA0; sequences, we have to do this manually:
-    const decUnescaped = namedUnescaped.replace(UNESCAPE_HTML_DEC_REGEX, handleEscape(10));
-    const hexUnescaped = decUnescaped.replace(UNESCAPE_HTML_HEX_REGEX, handleEscape(16));
-    // unescape css backslash sequences
-    const strUnescapedHex = hexUnescaped.replace(UNESCAPE_CSS_ESCAPES_REGEX, handleEscape(16));
-
-    return strUnescapedHex.replace(OTHER_ESC, (_, char) => char);
-};
-
 export const ucFirst = (input = '') => {
     return input.charAt(0).toUpperCase() + input.slice(1);
 };
@@ -134,17 +76,11 @@ export const extractChevrons = (str = '') => {
  * @{link https://css-tricks.com/snippets/javascript/htmlentities-for-javascript/}
  */
 export const htmlEntities = (str = '') => {
-    return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 };
 
 export const uniqID = () => {
-    return `pt${Math.random()
-        .toString(32)
-        .slice(2, 12)}-${Date.now()}`;
+    return `pt${Math.random().toString(32).slice(2, 12)}-${Date.now()}`;
 };
 
 export const replaceLineBreaks = (content: string) => {
