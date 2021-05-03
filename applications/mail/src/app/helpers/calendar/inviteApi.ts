@@ -68,8 +68,7 @@ import {
     Participant,
     PmInviteData,
     SyncMultipleApiResponse,
-    UpdatePartstatApiResponse,
-    UpdatePersonalPartApiResponse,
+    UpdateEventPartApiResponse,
     VcalAttendeeProperty,
     VcalDateOrDateTimeProperty,
     VcalVeventComponent,
@@ -327,18 +326,10 @@ const updateEventApi = async ({
             Status: toApiPartstat(updatePartstat),
             UpdateTime: updateTime,
         };
-        const { Attendee: updatedAttendee } = await api<UpdatePartstatApiResponse>(
+        const { Event } = await api<UpdateEventPartApiResponse>(
             updateAttendeePartstat(calendarID, eventID, attendeeID, data)
         );
-        return {
-            ...calendarEvent,
-            Attendees: Attendees.map((Attendee) => {
-                if (Attendee.Token === token) {
-                    return updatedAttendee;
-                }
-                return Attendee;
-            }),
-        };
+        return Event;
     }
     // attendee mode
     const veventWithPmAttendees = await withPmAttendees(vevent, getCanonicalEmailsMap);
@@ -819,18 +810,9 @@ export const updatePartstatFromInvitation = async ({
         Status: toApiPartstat(partstat),
         UpdateTime: getUnixTime(timestamp),
     };
-    const { Attendee: updatedAttendee } = await api<UpdatePartstatApiResponse>(
+    const { Event: updatedEvent } = await api<UpdateEventPartApiResponse>(
         updateAttendeePartstat(calendar.ID, eventID, attendeeID, data)
     );
-    const updatedEvent = {
-        ...calendarEvent,
-        Attendees: Attendees.map((Attendee) => {
-            if (Attendee.Token === attendeeToken) {
-                return updatedAttendee;
-            }
-            return Attendee;
-        }),
-    };
     // reset single-edits partstats if necessary (if this step fails, we silently ignore it)
     // we also need to drop alarms for the ones that had them
     if (!isSingleEdit && singleEditData?.length && attendeeToken) {
@@ -842,7 +824,7 @@ export const updatePartstatFromInvitation = async ({
             );
             const resetPartstatRequests = updatePartstatActions.map(
                 ({ eventID, calendarID, attendeeID, updateTime, partstat }) => () =>
-                    api<UpdatePartstatApiResponse>({
+                    api<UpdateEventPartApiResponse>({
                         ...updateAttendeePartstat(calendarID, eventID, attendeeID, {
                             Status: toApiPartstat(partstat),
                             UpdateTime: updateTime,
@@ -851,7 +833,7 @@ export const updatePartstatFromInvitation = async ({
                     })
             );
             const dropAlarmsRequests = updatePersonalPartActions.map(({ eventID, calendarID }) => () =>
-                api<UpdatePersonalPartApiResponse>({
+                api<UpdateEventPartApiResponse>({
                     ...updatePersonalEventPart(calendarID, eventID, { MemberID: memberID }),
                     silence: true,
                 })
@@ -883,9 +865,7 @@ export const updatePartstatFromInvitation = async ({
             MemberID: memberID,
             PersonalEventContent: personalData,
         };
-        const { Event } = await api<UpdatePersonalPartApiResponse>(
-            updatePersonalEventPart(calendar.ID, eventID, payload)
-        );
+        const { Event } = await api<UpdateEventPartApiResponse>(updatePersonalEventPart(calendar.ID, eventID, payload));
         savedEvent = Event;
     } catch (e) {
         noop();
