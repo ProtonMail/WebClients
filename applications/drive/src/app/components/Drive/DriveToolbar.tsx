@@ -24,6 +24,7 @@ import LayoutDropdown from './ToolbarButtons/LayoutDropdown';
 import ActionsDropdown from './ToolbarButtons/ActionsDropdown';
 import GetSecureLinkButton from './ToolbarButtons/GetSecureLinkButton';
 import UploadFileButton from './ToolbarButtons/UploadFileButton';
+import ShareFileButton from './ToolbarButtons/ShareFileButton';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -59,6 +60,8 @@ const DriveToolbar = ({ activeFolder }: Props) => {
                             <UploadFileButton />
                         </>
                     )}
+                    <ToolbarSeparator />
+                    <ShareFileButton shareId={shareId} />
                 </>
             );
         }
