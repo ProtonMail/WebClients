@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent } from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Contact, ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 
@@ -83,7 +83,9 @@ const SelectEmailsModal = ({ contacts, groupIDs, onSubmit, onClose, ...rest }: P
     const groupsEnumeration = enumerate(groups.map((group) => group.Name));
     const groupCount = groups.length;
 
-    const title = isSingleGroup ? c('Title').t`Add to ${groupName}` : c('Title').t`Add to ${groupCount} groups`;
+    const title = isSingleGroup
+        ? c('Title').t`Add to ${groupName}`
+        : c('Title').ngettext(msgid`Add to ${groupCount} group`, `Add to ${groupCount} groups`, groupCount);
 
     let text: string;
     if (isSingleContact) {
