@@ -15,7 +15,7 @@ import {
     EventInvitationError,
     getErrorMessage,
 } from '../../../../helpers/calendar/EventInvitationError';
-import { getIsPmInvite, InvitationModel, UPDATE_ACTION } from '../../../../helpers/calendar/invite';
+import { getIsPmInvite, getIsReinvite, InvitationModel, UPDATE_ACTION } from '../../../../helpers/calendar/invite';
 import useInviteButtons from '../../../../hooks/useInviteButtons';
 import { MessageExtended } from '../../../../models/message';
 
@@ -28,6 +28,7 @@ interface Props {
 }
 const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
     const {
+        isOrganizerMode,
         invitationIcs,
         invitationIcs: { method },
         invitationApi,
@@ -148,7 +149,9 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         calendarData.isCalendarDisabled ||
         !isAddressActive ||
         calendarData.calendarNeedsUserAction;
-    const isPmInvite = getIsPmInvite({ invitationIcs, invitationApi, pmData });
+    const isPmInvite =
+        getIsPmInvite({ invitationIcs, invitationApi, pmData }) ||
+        (pmData && getIsReinvite({ invitationIcs, invitationApi, isOrganizerMode }));
 
     const actions = useInviteButtons({
         veventIcs: invitationIcs.vevent,
