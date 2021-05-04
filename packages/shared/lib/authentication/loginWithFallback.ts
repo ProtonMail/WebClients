@@ -12,14 +12,15 @@ interface Arguments {
     api: Api;
     credentials: { username: string; password: string };
     initialAuthInfo?: InfoResponse;
+    payload?: any;
 }
-const loginWithFallback = async ({ api, credentials, initialAuthInfo }: Arguments) => {
+const loginWithFallback = async ({ api, credentials, initialAuthInfo, payload }: Arguments) => {
     let state: { authInfo?: InfoResponse; lastAuthVersion?: AuthVersion } = {
         authInfo: initialAuthInfo,
         lastAuthVersion: undefined,
     };
     const { username } = credentials;
-    const data = { Username: username };
+    const data = { Username: username, Payload: payload };
 
     do {
         const { authInfo = await api<InfoResponse>(getInfo(username)), lastAuthVersion } = state;
