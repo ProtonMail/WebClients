@@ -17,7 +17,6 @@ import {
     PasswordInputTwo,
     InputFieldTwo,
     useFormErrors,
-    InputTwo,
 } from 'react-components';
 import { c } from 'ttag';
 import { queryCheckUsernameAvailability } from 'proton-shared/lib/api/user';
@@ -227,7 +226,7 @@ const AccountForm = ({ model, onSubmit }) => {
                                 onSuccess={handleChallengeLoaded}
                                 onError={handleChallengeLoadingError}
                             >
-                                <InputTwo
+                                <InputFieldTwo
                                     id="email"
                                     type="email"
                                     value={email}
