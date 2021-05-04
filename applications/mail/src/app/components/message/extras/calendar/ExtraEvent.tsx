@@ -28,7 +28,7 @@ import {
     getInitialInvitationModel,
     getInvitationHasEventID,
     getIsInvitationFromFuture,
-    getIsPmReinvite,
+    getIsReinvite,
     getIsInvitationOutdated,
     InvitationModel,
     UPDATE_ACTION,
@@ -160,7 +160,7 @@ const ExtraEvent = ({
                 calendarData = calData;
                 singleEditData = singleData;
                 hasDecryptionError = hasDecryptError;
-                if (getIsPmReinvite({ invitationIcs, invitationApi, isOrganizerMode })) {
+                if (getIsReinvite({ invitationIcs, invitationApi, isOrganizerMode })) {
                     reinviteEventID = invitationApi?.calendarEvent.ID;
                     // ignore existing partstat
                     delete invitationApi?.attendee?.partstat;

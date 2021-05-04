@@ -271,10 +271,9 @@ export const getIsPmInvite = ({
 };
 
 /**
- * A PM reinvite is quite particular: the event on the attendee calendar will appear cancelled,
- * but it is not linked to the organizer event any more. Detect this case
+ * Detect case of being re-invited
  */
-export const getIsPmReinvite = ({
+export const getIsReinvite = ({
     invitationIcs,
     invitationApi,
     isOrganizerMode,
@@ -284,13 +283,12 @@ export const getIsPmReinvite = ({
     isOrganizerMode: boolean;
 }) => {
     const { method } = invitationIcs;
-    const sharedEventIDIcs = getPmSharedEventID(invitationIcs.vevent);
     const isOutdated = getIsInvitationOutdated({ invitationIcs, invitationApi, isOrganizerMode });
-    if (isOrganizerMode || method !== ICAL_METHOD.REQUEST || !invitationApi || !sharedEventIDIcs || isOutdated) {
+    if (isOrganizerMode || method !== ICAL_METHOD.REQUEST || !invitationApi || isOutdated) {
         return false;
     }
     const { calendarEvent } = invitationApi;
-    return getIsEventCancelled(calendarEvent) && sharedEventIDIcs !== calendarEvent.SharedEventID;
+    return getIsEventCancelled(calendarEvent);
 };
 
 /**
