@@ -38,3 +38,10 @@ export interface CardModel {
     zip: string;
     country: string;
 }
+
+export interface PaymentTokenResult {
+    Token: string;
+    ApprovalURL: string;
+    ReturnHost: string;
+    Status: number;
+}
