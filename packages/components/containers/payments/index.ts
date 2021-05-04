@@ -23,7 +23,6 @@ export { default as EditCardModal } from './EditCardModal';
 export { default as usePayment } from './usePayment';
 export { default as getDefaultCard } from './getDefaultCard';
 export { default as DonateModal } from './DonateModal';
-export { default as PayPal } from './PayPal';
 export { default as PayPalButton } from './PayPalButton';
 
 export * from './subscription';

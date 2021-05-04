@@ -5,7 +5,7 @@ import { Api } from 'proton-shared/lib/interfaces';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { c } from 'ttag';
 import { getHostname } from 'proton-shared/lib/helpers/url';
-import { Params } from './interface';
+import { Params, PaymentTokenResult } from './interface';
 import PaymentVerificationModal from './PaymentVerificationModal';
 import { toParams } from './paymentTokenToParams';
 
@@ -79,11 +79,8 @@ export const process = ({
     ApprovalURL,
     ReturnHost,
     signal,
-}: {
-    Token: string;
+}: Pick<PaymentTokenResult, 'ApprovalURL' | 'ReturnHost' | 'Token'> & {
     api: Api;
-    ApprovalURL: string;
-    ReturnHost: string;
     signal: AbortSignal;
 }) => {
     const tab = window.open(ApprovalURL);
@@ -174,7 +171,7 @@ export const handlePaymentToken = async ({
         return params;
     }
 
-    const { Token, Status, ApprovalURL, ReturnHost } = await api(
+    const { Token, Status, ApprovalURL, ReturnHost } = await api<PaymentTokenResult>(
         createToken({
             Payment,
             Amount,
