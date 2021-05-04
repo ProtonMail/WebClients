@@ -95,10 +95,13 @@ const ListHeader = ({
                     </TableHeaderCell>
                 )}
                 {isDesktop && columns.includes('share_created') && (
-                    <TableHeaderCell className="w20">{c('TableHeader').t`Created`}</TableHeaderCell>
+                    <TableHeaderCell className="w15">{c('TableHeader').t`Created`}</TableHeaderCell>
+                )}
+                {isDesktop && columns.includes('share_num_access') && (
+                    <TableHeaderCell className="w15">{c('TableHeader').t`# of accesses`}</TableHeaderCell>
                 )}
                 {columns.includes('share_expires') && (
-                    <TableHeaderCell className="w30">{c('TableHeader').t`Expires`}</TableHeaderCell>
+                    <TableHeaderCell className="w20">{c('TableHeader').t`Expires`}</TableHeaderCell>
                 )}
             </TableRowSticky>
         </thead>

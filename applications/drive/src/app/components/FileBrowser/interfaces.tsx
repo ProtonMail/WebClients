@@ -28,7 +28,14 @@ export interface FileBrowserItem {
     SharedUrl?: SharedUrlInfo;
 }
 
-export type ItemRowColumns = 'type' | 'location' | 'share_created' | 'share_expires' | 'modified' | 'size';
+export type ItemRowColumns =
+    | 'type'
+    | 'location'
+    | 'share_created'
+    | 'share_num_access'
+    | 'share_expires'
+    | 'modified'
+    | 'size';
 export type FileBrowserLayouts = 'trash' | 'sharing' | 'drive';
 
 export interface ItemProps {

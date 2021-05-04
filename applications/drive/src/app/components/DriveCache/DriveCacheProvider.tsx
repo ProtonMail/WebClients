@@ -4,6 +4,7 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { FolderLinkMeta, FileLinkMeta, LinkMeta, isFolderLinkMeta, SortKeys, LinkType } from '../../interfaces/link';
 import { ShareMeta, ShareMetaShort } from '../../interfaces/share';
+import { ShareURL } from '../../interfaces/sharing';
 import { DEFAULT_SORT_PARAMS } from '../../constants';
 import { isPrimaryShare } from '../../utils/share';
 
@@ -81,6 +82,7 @@ interface DriveCacheState {
         links: {
             [linkId: string]: CachedFolderLink | CachedFileLink;
         };
+        shareURLs?: Map<string, ShareURL>;
     };
 }
 
@@ -326,6 +328,17 @@ const useDriveCacheState = () => {
         setRerender((old) => ++old);
     };
 
+    const setShareURLs = (newShareURLs: Map<string, ShareURL>, shareId: string) => {
+        const { shareURLs } = cacheRef.current[shareId];
+
+        cacheRef.current[shareId] = {
+            ...cacheRef.current[shareId],
+            shareURLs: new Map([...(shareURLs || new Map()), ...newShareURLs]),
+        };
+
+        setRerender((old) => ++old);
+    };
+
     const setFoldersOnlyLinkMetas = (
         metas: LinkMeta[],
         shareId: string,
@@ -391,7 +404,7 @@ const useDriveCacheState = () => {
         }
         return trash.complete;
     };
-    const getSharedLinksComplete = (shareId: string) => {
+    const getSharedLinksComplete = (shareId: string): boolean => {
         const { shared } = cacheRef.current[shareId];
         if (!shared) {
             throw new Error('Trying to access shared links on non-primary share');
@@ -443,6 +456,11 @@ const useDriveCacheState = () => {
     const getSharedLinkMetas = (shareId: string) => {
         const links = getSharedLinks(shareId);
         return links.map((childLinkId) => getLinkMeta(shareId, childLinkId)).filter(isTruthy);
+    };
+
+    const getShareURL = (shareId: string, shareURLID: string): ShareURL | undefined => {
+        const { shareURLs } = cacheRef.current[shareId];
+        return shareURLs?.get(shareURLID);
     };
 
     const getChildrenInitialized = (
@@ -668,9 +686,11 @@ const useDriveCacheState = () => {
             linksLocked: setLinksLocked,
             allTrashedLocked: setAllTrashedLocked,
             sharedLinkMetas: setSharedLinkMetas,
+            shareURLs: setShareURLs,
         },
         get: {
             sharedLinkMetas: getSharedLinkMetas,
+            shareURL: getShareURL,
             trashMetas: getTrashMetas,
             trashComplete: getTrashComplete,
             trashChildLinks: getTrashChildLinks,
