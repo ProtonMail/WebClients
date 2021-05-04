@@ -145,7 +145,7 @@ function GeneratedLinkState({
             >
                 <InnerModal>
                     <div ref={contentRef}>
-                        <p>{c('Info').jt`Your secure, sharable link for ${boldNameText}:`}</p>
+                        <p>{c('Info').jt`Your secure, shareable link for ${boldNameText}:`}</p>
                         <Row className="on-mobile-mb0-5">
                             <div className="flex flex-item-fluid on-mobile-mb0-5">
                                 <Input
