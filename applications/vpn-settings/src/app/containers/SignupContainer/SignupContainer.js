@@ -196,7 +196,7 @@ const SignupContainer = ({ match, history, onLogin }) => {
             <main className="flex flex-item-fluid main-area--no-header main-area-content--padding-fix">
                 <div className="center p2 container-plans-signup on-mobile-pl1 on-mobile-pr1 on-mobile-pt1">
                     <div className="flex flex-nowrap flex-align-items-center on-mobile-flex-wrap mb1">
-                        <div className="flex-item-fluid plan-back-button">
+                        <div className="flex-item-fluid plan-back-button relative z10">
                             {!creatingAccount &&
                                 (signupState && signupState !== SignupState.Plan && !isBlackFridayCoupon ? (
                                     <Button onClick={() => history.goBack()}>{c('Action').t`Back`}</Button>
