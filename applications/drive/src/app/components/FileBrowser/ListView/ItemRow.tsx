@@ -21,6 +21,7 @@ import DescriptiveTypeCell from './Cells/DescriptiveTypeCell';
 import TimeCell from './Cells/TimeCell';
 import SizeCell from './Cells/SizeCell';
 import NameCell from './Cells/NameCell';
+import ShareCell from './Cells/ShareCell';
 import SharedURLIcon from '../SharedURLIcon';
 
 const ItemRow = ({
@@ -83,6 +84,12 @@ const ItemRow = ({
         );
     };
 
+    const showShareOnHover = (
+        item.Type === LinkType.FILE
+        && item.Trashed === null
+        && !item.SharedUrl
+    );
+
     return (
         <>
             {draggable && dragMoveControls && (
@@ -120,6 +127,7 @@ const ItemRow = ({
                     <FileIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType} alt={iconText} />
                     <NameCell name={item.Name} />
                     {item.SharedUrl && <SharedURLIcon expired={item.UrlsExpired} />}
+                    {showShareOnHover && <ShareCell shareId={shareId} item={item} />}
                 </TableCell>
 
                 {columns.includes('location') && (

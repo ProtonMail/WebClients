@@ -23,3 +23,14 @@
 .file-browser-grid-item.file-browser-grid-item--highlight {
     background-color: var(--background-strong);
 }
+
+.file-browser-list-item--share {
+    display: none;
+    margin: -1em 0 -1em auto;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .file-browser-list-item:hover .file-browser-list-item--share {
+        display: flex;
+    }
+}
