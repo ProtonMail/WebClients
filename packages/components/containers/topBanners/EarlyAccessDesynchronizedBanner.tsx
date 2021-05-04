@@ -13,6 +13,7 @@ const EarlyAccessDesynchronizedBanner = () => {
     const { APP_NAME } = useConfig();
     const earlyAccess = useEarlyAccess();
 
+    // translator: complete sentence example: "You have enabled/disabled Early Access. <Refresh> the page to use the latest/stable version of <ProtonMail>."
     const refreshButton = (
         <InlineLinkButton
             key="refresh-button"
@@ -33,9 +34,11 @@ const EarlyAccessDesynchronizedBanner = () => {
     return (
         <TopBanner className="bg-info">
             {earlyAccess.value
-                ? c('Info')
+                ? // translator: complete sentence example: "You have enabled Early Access. <Refresh> the page to use the latest version of <ProtonMail>."
+                  c('Info')
                       .jt`You have enabled Early Access. ${refreshButton} the page to use the latest version of ${appName}.`
-                : c('Info')
+                : // translator: complete sentence example: "You have disabled Early Access. <Refresh> the page to use the stable version of <ProtonMail>."
+                  c('Info')
                       .jt`You have disabled Early Access. ${refreshButton} the page to use the stable version of ${appName}.`}
         </TopBanner>
     );
