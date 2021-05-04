@@ -50,9 +50,6 @@ const getDeleteSingleEventActionsHelper = async ({
     ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions; timestamp: number }>;
 }) => {
     const { veventComponent: oldVevent, memberID, calendarID, addressID } = oldEditEventData;
-    if (!oldVevent) {
-        throw new Error('Cannot delete event without old data');
-    }
     let updatedInviteActions = getUpdatedDeleteInviteActions({
         inviteActions,
         oldVevent,
@@ -70,7 +67,7 @@ const getDeleteSingleEventActionsHelper = async ({
             cancelVevent: oldVevent,
         });
         updatedInviteActions = cleanInviteActions;
-    } else if (inviteType === DECLINE_INVITATION && sendCancellationNotice) {
+    } else if (inviteType === DECLINE_INVITATION && sendCancellationNotice && oldVevent) {
         const { inviteActions: cleanInviteActions, timestamp } = await sendIcs({
             inviteActions: updatedInviteActions,
             vevent: oldVevent,
@@ -155,9 +152,6 @@ const getDeleteEventActions = async ({
         calendarEvent: oldEventData,
         getCalendarKeys,
     });
-    if (!sharedEventID || !sharedSessionKey) {
-        throw new Error('Missing shared event data');
-    }
     const inviteActionsWithSharedData = {
         ...inviteActions,
         sharedEventID,

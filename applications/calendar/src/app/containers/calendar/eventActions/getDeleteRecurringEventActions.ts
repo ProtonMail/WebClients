@@ -134,9 +134,6 @@ export const getDeleteRecurringEventActions = async ({
         if (!recurrences.length) {
             throw new Error('Can not delete all events without any recurrences');
         }
-        if (!originalVeventComponent) {
-            throw new Error('Can not delete without original event');
-        }
         const updatePartstatOperations: UpdatePartstatOperation[] = [];
         if (isDeclineInvitation || isCancelInvitation) {
             const { inviteActions: cleanInviteActions, timestamp } = await sendIcs({
@@ -145,8 +142,8 @@ export const getDeleteRecurringEventActions = async ({
                 cancelVevent: originalVeventComponent,
             });
             updatedInviteActions = cleanInviteActions;
-            if (isDeclineInvitation) {
-                // even though we are going to delete the event, we need to update the partstat firs to notify the organizer for
+            if (isDeclineInvitation && originalVeventComponent) {
+                // even though we are going to delete the event, we need to update the partstat first to notify the organizer for
                 // Proton-Proton invites. Hopefully a better API will allow us to do it differently in the future
                 const updatePartstatOperation = getUpdatePartstatOperation({
                     eventComponent: originalVeventComponent,
