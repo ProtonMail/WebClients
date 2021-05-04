@@ -1,3 +1,20 @@
+# [4.0.0-beta.14] - 2021-05-05
+
+Our team has been hard at work smashing bugs and improving experience using Proton Drive.
+
+## Fixed
+
+- Alignment of file name in Details modal
+- Drag & drop when moving item over breadcrumbs will not break the structure
+- Layout issue in Transfer manager when transfer speed happens to be high
+
+## Added
+
+- A new column "# of accesses" in the Shared section, to display number of accesses of the shared link
+- Sharing modal has seen copy and layout updates
+- User can now start sharing a file by pressing a button in the toolbar, or on mouse-over event of a file
+
+
 # [4.0.0-beta.13] - 2021-04-02
 
 After a password reset you can choose to recover access to your previously encrypted files stored on your Proton Drive. Also, we are adding support of 5 new languages together with sharing experience improvements.
@@ -11,6 +28,7 @@ After a password reset you can choose to recover access to your previously encry
 
 - Access recovery process to the previously encrypted files after a password reset
 - 5 new languages: Croatian, Traditional Chinese, Greek, Kabyle, and Spanish (Spain)
+
 
 # [4.0.0-beta.12] - 2021-03-10
 
@@ -26,6 +44,7 @@ We have further improved sharing a link user experience.
 
 - User can now set expiration date of a shared link by choosing date & time from calendar component
 
+
 # [4.0.0-beta.11] - 2021-03-03
 
 Among other improvements, this update provides a more convenient way to manage your shared links.
@@ -39,11 +58,13 @@ Among other improvements, this update provides a more convenient way to manage y
 - A new section to overview your shared links. Edit, delete or create a new shared link easily without leaving the section
 - Storage space quota is now visible at the left bottom of the side menu bar
 
+
 # [4.0.0-beta.10] - 2021-02-24
 
 ## Fixed
 
 - Downloading of large files (1GB or more) should be more stable, due to the implemented pagination
+
 
 # [4.0.0-beta.9] - 2021-02-10
 
@@ -61,6 +82,7 @@ Improvements and fixes to make your everyday experience with Proton Drive better
 - Delete permanently from trash icon is now aligned with the one in ProtonMail
 - Improved downloading process by implementing a retry
 
+
 # [4.0.0-beta.8] - 2021-01-13
 
 With this update we bring you more convenience by remembering which layout you chose to browse your files. Also, numerous bug fixes and improvements.
@@ -76,6 +98,7 @@ With this update we bring you more convenience by remembering which layout you c
 
 - Layout (Grid or List), and column used for sorting are remembered
 
+
 # [4.0.0-beta.7] - 2020-12-17
 
 In order to provide full control and comfort for our initial waves of Beta users, we have opted in to set the shared links to never expire by default. However, user can change this option and set number of days for a shared link to expire.
@@ -83,6 +106,7 @@ In order to provide full control and comfort for our initial waves of Beta users
 ## Added
 
 - By default, shared links will never expire
+
 
 # [4.0.0-beta.6] - 2020-12-15
 
@@ -99,6 +123,7 @@ More improvements and fixes coming your way before the holiday season kicks in.
 
 - Black Friday promo replaced with a regular promo text
 - og:image and og:description texts added when sharing a link to Proton Drive
+
 
 # [4.0.0-beta.5] - 2020-12-08 
 
@@ -126,6 +151,7 @@ Read on for the full list of improvements below, and get in touch with us if you
 - Improved file preview process when previewing a lot of files
 - Added tooltips for My files and Trash sections
 
+
 # [4.0.0-beta.4] - 2020-11-25 
 
 The Proton Drive beta now lets you share files with end-to-end encrypted URL links.
@@ -143,6 +169,7 @@ In addition, we have been improving the upload experience.
 - Share a secure link publicly
 - Use a pre-generated password for the secure link, or change it
 - Change the default expiration date (90 days) of a secure link
+
 
 # [4.0.0-beta.3] - 2020-11-11 
 
@@ -168,6 +195,7 @@ Thank you for your feedback and time with us.
 - Refresh button to reload the current view in My files and Trash
 - Cancel all the transfers when closing Transfer manager
 
+
 # [4.0.0-beta.2] - 2020-10-14 
 
 ## Fixed
@@ -186,9 +214,10 @@ Thank you for your feedback and time with us.
 
 - A new favicon
 
+
 # [4.0.0-beta.1] - 2020-09-29
 
-Here at Proton we value your support and staying with us over the years. As a token of gratitude, and unveiling our future plans, we give you early access to ProtonDrive Beta. 
+Here at Proton we value your support and staying with us over the years. As a token of gratitude, and unveiling our future plans, we give you early access to ProtonDrive Beta.
 
 With ProtonDrive, you can upload and manage your files, keep your files secure and access them from anywhere.
 
