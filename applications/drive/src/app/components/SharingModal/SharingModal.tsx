@@ -157,10 +157,10 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
         };
 
         openConfirmModal({
-            title: c('Title').t`Stop sharing`,
+            title: c('Title').t`Stop sharing with everyone?`,
             confirm: c('Action').t`Stop sharing`,
             message: c('Info')
-                .t`This will delete the link(s) and remove access to your file(s) for anyone with the link(s).`,
+                .t`This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.`,
             canUndo: true,
             onConfirm: () => withDeleting(deleteLink()),
         });
