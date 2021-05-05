@@ -12,8 +12,8 @@ import {
     FloatingButton,
     MainLogo,
     TimezoneSelector,
-    TopNavbarListItemSettingsButton,
     Icon,
+    TopNavbarListItemSettingsDropdown,
     TopNavbarListItemContactsDropdown,
 } from 'react-components';
 import { c } from 'ttag';
@@ -128,7 +128,7 @@ const CalendarContainerView = ({
     const header = (
         <PrivateHeader
             logo={logo}
-            settingsButton={<TopNavbarListItemSettingsButton to="/calendar" toApp={APPS.PROTONACCOUNT} />}
+            settingsButton={<TopNavbarListItemSettingsDropdown to="/calendar" toApp={APPS.PROTONACCOUNT} />}
             floatingButton={
                 <FloatingButton onClick={onCreateEvent}>
                     <Icon size={24} name="plus" className="mauto" />
