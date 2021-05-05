@@ -72,7 +72,6 @@ const PageContainer = ({
             history={history}
             breakpoints={breakpoints}
             onCompose={onCompose}
-            onOpenShortcutsModal={handleOpenShortcutsModal}
         >
             <LocationErrorBoundary>
                 <MailboxContainer

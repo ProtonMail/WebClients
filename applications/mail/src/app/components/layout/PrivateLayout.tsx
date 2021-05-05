@@ -19,7 +19,6 @@ interface Props {
     elementID: string | undefined;
     onCompose: OnCompose;
     isBlurred?: boolean;
-    onOpenShortcutsModal: () => void;
 }
 
 const PrivateLayout = ({
@@ -31,7 +30,6 @@ const PrivateLayout = ({
     elementID,
     onCompose,
     isBlurred,
-    onOpenShortcutsModal,
 }: Props) => {
     const [expanded, setExpand] = useState(false);
 
@@ -56,7 +54,6 @@ const PrivateLayout = ({
             onToggleExpand={handleToggleExpand}
             onSearch={handleSearch}
             onCompose={onCompose}
-            onOpenShortcutsModal={onOpenShortcutsModal}
         />
     );
 
