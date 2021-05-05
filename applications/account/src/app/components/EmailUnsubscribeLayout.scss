@@ -1,8 +1,10 @@
+@import '~design-system/scss/config/';
+
 .email-unsubscribe-layout--logo {
-    width: 90px;
+    width: rem(90);
 }
 
 .email-unsubscribe-layout--main {
-    width: 320px;
+    width: rem(320);
     max-width: 80%;
 }
