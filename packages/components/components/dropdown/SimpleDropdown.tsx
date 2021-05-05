@@ -12,13 +12,23 @@ interface OwnProps {
     originalPlacement?: string;
     autoClose?: boolean;
     dropdownClassName?: string;
+    dropdownStyle?: React.CSSProperties;
 }
 
 export type Props<T extends React.ElementType> = OwnProps & DropdownButtonProps<T>;
 
 const SimpleDropdown = React.forwardRef(
     <E extends React.ElementType>(
-        { content, children, originalPlacement, autoClose, hasCaret = true, dropdownClassName, ...rest }: Props<E>,
+        {
+            content,
+            children,
+            originalPlacement,
+            autoClose,
+            hasCaret = true,
+            dropdownClassName,
+            dropdownStyle,
+            ...rest
+        }: Props<E>,
         ref: typeof rest.ref
     ) => {
         const [uid] = useState(generateUID('dropdown'));
@@ -44,6 +54,7 @@ const SimpleDropdown = React.forwardRef(
                     anchorRef={anchorRef}
                     onClose={close}
                     className={dropdownClassName}
+                    style={dropdownStyle}
                 >
                     {children}
                 </Dropdown>

@@ -28,7 +28,13 @@ const ThemesSection = () => {
     return (
         <SettingsSectionWide>
             <SettingsParagraph>{c('Info').t`Choose the look and feel of the application.`}</SettingsParagraph>
-            <ThemeCards list={themes} themeIdentifier={theme} onChange={handleThemeChange} />
+            <ThemeCards
+                className="flex"
+                liClassName="mr1 mb1"
+                list={themes}
+                themeIdentifier={theme}
+                onChange={handleThemeChange}
+            />
         </SettingsSectionWide>
     );
 };

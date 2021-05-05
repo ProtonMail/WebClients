@@ -1,6 +1,7 @@
 export * from './app';
 export * from './bridge';
 export * from './api';
+export * from './earlyAccess';
 export * from './features';
 export * from './autoReply';
 export * from './overview';
