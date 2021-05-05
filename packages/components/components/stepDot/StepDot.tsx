@@ -26,8 +26,8 @@ const StepDot = ({ index, className, onChange, active, role = 'presentation', ..
                 type="button"
                 role="tab"
                 aria-selected={active}
-                className={classnames([className, 'step-dots-dot', 'rounded50'])}
-                title={c('Action').t`Go to panel ${index}`}
+                className={classnames([className, 'step-dots-dot', 'rounded50', !onChange && 'no-pointer-events'])}
+                title={onChange ? c('Action').t`Go to panel ${index}` : undefined}
                 onClick={handleClick}
                 {...rest}
             >
