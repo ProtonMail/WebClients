@@ -113,10 +113,8 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
         preventLeave(FileSaver.saveAsFile(fileStream, transferMeta)).catch(console.error);
     }, [meta, contents, shareId, linkId]);
 
-    const handleNext = () =>
-        currentOpenIndex < linksAvailableForPreview.length - 1 &&
-        onOpen?.(linksAvailableForPreview[currentOpenIndex + 1]);
-    const handlePrev = () => currentOpenIndex > 0 && onOpen?.(linksAvailableForPreview[currentOpenIndex - 1]);
+    const handleNext = () => onOpen?.(linksAvailableForPreview[currentOpenIndex + 1]);
+    const handlePrev = () => onOpen?.(linksAvailableForPreview[currentOpenIndex - 1]);
 
     return (
         <div ref={rootRef}>
