@@ -4,20 +4,10 @@ import { Route, Redirect, Switch, useLocation } from 'react-router-dom';
 import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from 'proton-shared/lib/apps/slugHelper';
 import { APPS } from 'proton-shared/lib/constants';
 
-import {
-    useActiveBreakpoint,
-    useToggle,
-    PrivateHeader,
-    PrivateAppContainer,
-    useModals,
-    useWelcomeFlags,
-    Logo,
-    useUser,
-} from 'react-components';
+import { useActiveBreakpoint, useToggle, PrivateHeader, PrivateAppContainer, Logo, useUser } from 'react-components';
 
 import PrivateMainAreaLoading from '../components/PrivateMainAreaLoading';
 
-import AccountOnboardingModal from '../components/AccountOnboardingModal';
 import AccountPasswordAndRecoverySettings from '../containers/account/AccountPasswordAndRecoverySettings';
 import AccountSecuritySettings from '../containers/account/AccountSecuritySettings';
 import AccountPaymentSettings from '../containers/account/AccountPaymentSettings';
@@ -47,20 +37,11 @@ const MainContainer = () => {
     const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { isNarrow } = useActiveBreakpoint();
-    const [welcomeFlags, setWelcomeFlagDone] = useWelcomeFlags();
-    const { createModal } = useModals();
-
-    const [isBlurred, setBlurred] = useState(false);
+    const [isBlurred] = useState(false);
 
     useEffect(() => {
         setExpand(false);
     }, [location.pathname, location.hash]);
-
-    useEffect(() => {
-        if (welcomeFlags.isWelcomeFlow) {
-            createModal(<AccountOnboardingModal onClose={setWelcomeFlagDone} />);
-        }
-    }, []);
 
     const app = getAppFromPathnameSafe(location.pathname);
 
@@ -87,7 +68,7 @@ const MainContainer = () => {
     );
 
     return (
-        <PrivateAppContainer header={header} sidebar={sidebar} isBlurred={isBlurred || welcomeFlags.isWelcomeFlow}>
+        <PrivateAppContainer header={header} sidebar={sidebar} isBlurred={isBlurred}>
             <Switch>
                 <Route path={`/${appSlug}/dashboard`}>
                     <AccountDashboardSettings location={location} setActiveSection={() => {}} />
@@ -117,7 +98,7 @@ const MainContainer = () => {
                 </Route>
                 <Route path={`/${mailSlug}`}>
                     <Suspense fallback={<PrivateMainAreaLoading />}>
-                        <MailSettingsRouter onChangeBlurred={setBlurred} />
+                        <MailSettingsRouter />
                     </Suspense>
                 </Route>
                 <Route path={`/${calendarSlug}`}>

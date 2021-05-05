@@ -1,16 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 
-import {
-    StartImportSection,
-    ImportListSection,
-    ImportExportSection,
-    SettingsPropsShared,
-    useFeature,
-    useModals,
-    ImportWelcomeModal,
-    FeatureCode,
-} from 'react-components';
+import { StartImportSection, ImportListSection, ImportExportSection, SettingsPropsShared } from 'react-components';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 
@@ -36,28 +27,7 @@ export const getImportPage = () => {
     };
 };
 
-interface Props extends SettingsPropsShared {
-    onChangeBlurred: (isBlurred: boolean) => void;
-}
-
-const MailImportAndExportSettings = ({ setActiveSection, location, onChangeBlurred }: Props) => {
-    const { feature, loading, update } = useFeature(FeatureCode.WelcomeImportModalShown);
-    const { createModal } = useModals();
-
-    useEffect(() => {
-        if (!loading && feature?.Value === false) {
-            onChangeBlurred(true);
-            createModal(
-                <ImportWelcomeModal
-                    onClose={async () => {
-                        onChangeBlurred(false);
-                        await update(true);
-                    }}
-                />
-            );
-        }
-    }, [feature?.Value, loading]);
-
+const MailImportAndExportSettings = ({ setActiveSection, location }: SettingsPropsShared) => {
     return (
         <PrivateMainSettingsAreaWithPermissions
             config={getImportPage()}
