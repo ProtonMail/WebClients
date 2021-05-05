@@ -1,21 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="235" height="160" fill="none" viewBox="0 0 235 160">
+<svg xmlns="http://www.w3.org/2000/svg" width="308" height="160" fill="none" viewBox="0 0 308 160">
   <defs/>
-  <path fill="url(#paint0_linear)" d="M106 160h98L217 4H93l13 156z"/>
-  <path fill="url(#paint1_linear)" fill-opacity=".5" d="M95 35l118.2 27 3.53-54H93.3L95 35z"/>
-  <path fill="#38385F" d="M222.04 144.82a.96.96 0 011.74.06L230.2 160h-16l7.83-15.18z"/>
-  <path fill="#5AD098" d="M233.22 145.6a.96.96 0 011.76.55V160H223.5l9.72-14.4z"/>
-  <g filter="url(#filter0_d)">
-    <path fill="url(#paint2_linear)" d="M152 36a3 3 0 116 0v92a3 3 0 11-6 0V36z"/>
+  <g clip-path="url(#clip0)">
+    <path fill="url(#paint0_linear)" d="M106 160h98L217 4H93l13 156z"/>
+    <path fill="url(#paint1_linear)" fill-opacity=".5" d="M95 35l118.2 27 3.53-54H93.3L95 35z"/>
+    <path fill="#38385F" d="M222.04 144.82a.96.96 0 011.74.06L230.2 160h-16l7.83-15.18z"/>
+    <path fill="#5AD098" d="M233.22 145.6a.96.96 0 011.76.55V160H223.5l9.72-14.4z"/>
+    <g filter="url(#filter0_d)">
+      <path fill="url(#paint2_linear)" d="M152 36a3 3 0 116 0v92a3 3 0 11-6 0V36z"/>
+    </g>
+    <g filter="url(#filter1_d)">
+      <path fill="#4D8AE0" d="M185.85 35.84a3 3 0 115.99.3l-4.7 92.02a3 3 0 11-5.98-.3l4.7-92.02z"/>
+    </g>
+    <g filter="url(#filter2_d)">
+      <path fill="url(#paint3_linear)" d="M118.16 36.15a3 3 0 115.99-.3l4.69 92a3 3 0 11-5.99.3l-4.69-92z"/>
+    </g>
+    <path fill="url(#paint4_linear)" d="M4.35 147h123.3c2.41 0 4.35 1.68 4.35 3.78V160H0v-9.22c0-2.1 1.94-3.78 4.35-3.78z"/>
+    <path fill="url(#paint5_linear)" d="M52.28 147.05c2.7-4.64 7.8-7.78 13.66-7.78 5.87 0 10.97 3.14 13.67 7.78h9.28C85.69 137.75 76.6 131 65.94 131A24.2 24.2 0 0043 147.05h9.28z"/>
+    <rect width="134" height="10" x="88" fill="url(#paint6_linear)" rx="5"/>
   </g>
-  <g filter="url(#filter1_d)">
-    <path fill="#4D8AE0" d="M185.85 35.84a3 3 0 115.99.3l-4.7 92.02a3 3 0 11-5.98-.3l4.7-92.02z"/>
-  </g>
-  <g filter="url(#filter2_d)">
-    <path fill="url(#paint3_linear)" d="M118.16 36.15a3 3 0 115.98-.3l4.7 92a3 3 0 11-5.98.3l-4.7-92z"/>
-  </g>
-  <path fill="url(#paint4_linear)" d="M4.35 147h123.3c2.41 0 4.35 1.68 4.35 3.78V160H0v-9.22c0-2.1 1.94-3.78 4.35-3.78z"/>
-  <path fill="url(#paint5_linear)" d="M52.28 147.05c2.7-4.64 7.8-7.78 13.66-7.78 5.87 0 10.97 3.14 13.67 7.78h9.27c-3.2-9.3-12.27-16.05-22.94-16.05A24.2 24.2 0 0043 147.05h9.28z"/>
-  <rect width="134" height="10" x="88" fill="url(#paint6_linear)" rx="5"/>
   <defs>
     <linearGradient id="paint0_linear" x1="195.18" x2="99.59" y1="82.75" y2="76.47" gradientUnits="userSpaceOnUse">
       <stop stop-color="#6193DE"/>
@@ -70,5 +72,8 @@
       <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
       <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
     </filter>
+    <clipPath id="clip0">
+      <path fill="#fff" d="M0 0h308v160H0z"/>
+    </clipPath>
   </defs>
 </svg>
