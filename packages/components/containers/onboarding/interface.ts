@@ -1,7 +1,6 @@
 import React from 'react';
 
 export interface OnboardingStepProps {
-    title: React.ReactNode;
     submit: React.ReactNode;
     close: React.ReactNode;
     children: React.ReactNode;
@@ -13,5 +12,5 @@ export interface OnboardingStepProps {
 export interface OnboardingStepRenderCallback {
     onNext: () => void;
     onBack?: () => void;
-    onClose?: () => void;
+    displayGenericSteps?: boolean;
 }

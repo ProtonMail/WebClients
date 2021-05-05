@@ -1,18 +1,36 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
+import { useHistory, useLocation } from 'react-router';
 import { updateAddress } from 'proton-shared/lib/api/addresses';
-import { updateWelcomeFlags } from 'proton-shared/lib/api/settings';
+import { updateWelcomeFlags, updateThemeType } from 'proton-shared/lib/api/settings';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { range } from 'proton-shared/lib/helpers/array';
+import { PROTON_THEMES, ThemeTypes } from 'proton-shared/lib/themes/themes';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { hasVisionary } from 'proton-shared/lib/helpers/subscription';
 
-import { StepDots, StepDot, FormModal, Button, PrimaryButton } from '../../components';
-import { useApi, useEventManager, useGetAddresses, useLoading, useUser, useWelcomeFlags } from '../../hooks';
-
+import { Icon, StepDots, StepDot, FormModal, Button, useSettingsLink } from '../../components';
+import {
+    useApi,
+    useEventManager,
+    useGetAddresses,
+    useOrganization,
+    useOrganizationKey,
+    useSubscription,
+    useUser,
+    useWelcomeFlags,
+} from '../../hooks';
 import { OnboardingStepProps, OnboardingStepRenderCallback } from './interface';
 import OnboardingSetDisplayName from './OnboardingSetDisplayName';
-import OnboardingAccessingProtonApps from './OnboardingAccessingProtonApps';
-import OnboardingManageAccount from './OnboardingManageAccount';
+import OnboardingThemes from './OnboardingThemes';
 import OnboardingStep from './OnboardingStep';
+import OnboardingDiscoverApps from './OnboardingDiscoverApps';
+import OnboardingWelcome from './OnboardingWelcome';
+import OnboardingSetupOrganization from './OnboardingSetupOrganization';
+import { getOrganizationKeyInfo } from '../organization/helpers/organizationKeysHelper';
+import { useTheme } from '../themes/ThemeProvider';
+
+const availableThemes = Object.values(PROTON_THEMES);
 
 interface Props {
     title?: string;
@@ -22,6 +40,7 @@ interface Props {
     submit?: string;
     onSubmit?: () => void;
     onClose?: () => void;
+    onDone?: () => void;
     children?: ((props: OnboardingStepRenderCallback) => JSX.Element)[];
     setWelcomeFlags?: boolean;
     showGenericSteps?: boolean;
@@ -33,17 +52,37 @@ const OnboardingModal = ({
     children,
     showGenericSteps,
     allowClose = false,
-    hideDisplayName,
     setWelcomeFlags = true,
+    hideDisplayName = false,
+    onDone,
     ...rest
 }: Props) => {
     const [user] = useUser();
+    const history = useHistory();
+    const location = useLocation();
+    const goToSettings = useSettingsLink();
+    const [organization, loadingOrganization] = useOrganization();
+    const [subscription, loadingSubscription] = useSubscription();
     const [displayName, setDisplayName] = useState(user.DisplayName || user.Name || '');
-    const [loadingDisplayName, withLoading] = useLoading();
+    const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
+    const { hasOrganizationKey } = getOrganizationKeyInfo(organizationKey);
+    const [theme, setTheme] = useTheme();
     const getAddresses = useGetAddresses();
     const api = useApi();
     const { call } = useEventManager();
     const [welcomeFlags] = useWelcomeFlags();
+    const canManageOrganization =
+        !loadingOrganization &&
+        !loadingSubscription &&
+        !loadingOrganizationKey &&
+        user.isAdmin &&
+        organization.MaxMembers > 1 &&
+        organization.UsedMembers === 1 &&
+        !hasOrganizationKey &&
+        !hasVisionary(subscription);
+    const themes = availableThemes.map(({ identifier, getI18NLabel, src }) => {
+        return { identifier, label: getI18NLabel(), src };
+    });
 
     const handleUpdateWelcomeFlags = async () => {
         if (setWelcomeFlags) {
@@ -51,15 +90,15 @@ const OnboardingModal = ({
         }
     };
 
-    useEffect(() => {
-        if (!welcomeFlags?.hasDisplayNameStep) {
-            handleUpdateWelcomeFlags();
-        }
-    }, []);
-
     const [step, setStep] = useState(0);
 
     const handleNext = () => {
+        // eslint-disable-next-line @typescript-eslint/no-use-before-define
+        if (isLastStep) {
+            onDone?.();
+            rest?.onClose?.();
+            return;
+        }
         setStep((step) => step + 1);
     };
 
@@ -67,69 +106,85 @@ const OnboardingModal = ({
         setStep((step) => step - 1);
     };
 
-    const handleChange = (step: number) => {
-        setStep(step);
+    const handleThemeChange = async (newThemeType: ThemeTypes) => {
+        setTheme(newThemeType);
+        await api(updateThemeType(newThemeType));
     };
 
-    const handleSetDisplayNameNext = async () => {
-        const addresses = await getAddresses();
-        const firstAddress = addresses[0];
-        // Should never happen.
-        if (!firstAddress) {
-            handleUpdateWelcomeFlags();
-            handleNext();
-            return;
-        }
-        await api(updateAddress(firstAddress.ID, { DisplayName: displayName, Signature: firstAddress.Signature }));
-        await call();
-        handleUpdateWelcomeFlags();
+    const handleSetDisplayNameNext = () => {
+        const process = async () => {
+            const addresses = await getAddresses();
+            const firstAddress = addresses[0];
+            // Should never happen.
+            if (!firstAddress) {
+                return;
+            }
+            await api(updateAddress(firstAddress.ID, { DisplayName: displayName, Signature: firstAddress.Signature }));
+            await call();
+        };
+        void process();
         handleNext();
     };
 
+    const welcomeStep = (
+        <OnboardingStep submit={c('Action').t`Get started`} close={null} onSubmit={handleNext}>
+            <OnboardingWelcome />
+        </OnboardingStep>
+    );
+
     const setDisplayNameStep = (
+        <OnboardingStep submit={c('Action').t`Next`} close={null} onSubmit={handleSetDisplayNameNext}>
+            <OnboardingSetDisplayName id="onboarding-0" displayName={displayName} setDisplayName={setDisplayName} />
+        </OnboardingStep>
+    );
+
+    const setupOrganizationStep = (
         <OnboardingStep
-            title={c('Onboarding Proton').t`Welcome to privacy`}
-            submit={c('Action').t`Next`}
-            loading={loadingDisplayName}
+            submit={c('Action').t`Start setup`}
+            close={
+                <Button size="large" color="norm" shape="ghost" className="mb1" fullWidth onClick={handleNext}>{c(
+                    'Action'
+                ).t`Skip`}</Button>
+            }
+            onSubmit={() => {
+                goToSettings('/multi-user-support', undefined, true);
+                handleNext();
+            }}
+        >
+            <OnboardingSetupOrganization />
+        </OnboardingStep>
+    );
+
+    const themesStep = (
+        <OnboardingStep submit={c('Action').t`Next`} close={null} onSubmit={handleNext}>
+            <OnboardingThemes themeIdentifier={theme} themes={themes} onChange={handleThemeChange} />
+        </OnboardingStep>
+    );
+
+    const discoverAppsStep = (
+        <OnboardingStep
+            submit={children ? c('Action').t`Next` : c('Action').t`Done`}
             close={null}
-            onSubmit={hideDisplayName ? handleNext : () => withLoading(handleSetDisplayNameNext())}
+            onSubmit={() => {
+                void handleUpdateWelcomeFlags();
+                handleNext();
+            }}
         >
-            <OnboardingSetDisplayName
-                id="onboarding-0"
-                displayName={displayName}
-                setDisplayName={setDisplayName}
-                hideDisplayName={hideDisplayName}
-            />
+            <OnboardingDiscoverApps />
         </OnboardingStep>
     );
 
-    const accessingProtonAppsStep = (
-        <OnboardingStep
-            title={c('Onboarding Proton').t`Accessing your Proton Apps`}
-            submit={c('Action').t`Next`}
-            close={c('Action').t`Back`}
-            onSubmit={handleNext}
-        >
-            <OnboardingAccessingProtonApps id="onboarding-1" />
-        </OnboardingStep>
-    );
-
-    const manageAccountStep = (
-        <OnboardingStep
-            title={c('Onboarding Proton').t`Manage Your Proton Account`}
-            submit={c('Action').t`Next`}
-            close={c('Action').t`Back`}
-            onSubmit={handleNext}
-        >
-            <OnboardingManageAccount id="onboarding-2" />
-        </OnboardingStep>
-    );
-
-    const hasDisplayNameStep = welcomeFlags?.hasDisplayNameStep;
-
+    const hasDisplayNameStep = welcomeFlags?.hasDisplayNameStep && !hideDisplayName;
     const displayGenericSteps = showGenericSteps || hasDisplayNameStep;
-
-    const genericSteps = displayGenericSteps ? [setDisplayNameStep, accessingProtonAppsStep, manageAccountStep] : [];
+    const genericSteps = displayGenericSteps
+        ? [
+              welcomeStep,
+              hasDisplayNameStep && setDisplayNameStep,
+              canManageOrganization && setupOrganizationStep,
+              themesStep,
+              discoverAppsStep,
+          ].filter(isTruthy)
+        : [];
 
     const productSteps = children
         ? (Array.isArray(children) ? children : [children])
@@ -138,71 +193,103 @@ const OnboardingModal = ({
                       renderCallback?.({
                           onNext: handleNext,
                           onBack: handleBack,
-                          onClose: rest?.onClose,
+                          displayGenericSteps,
                       }) ?? null
               )
               .filter((x) => x !== null)
         : [];
 
     const steps = [...genericSteps, ...productSteps];
-
+    const isLastStep = steps.length - 1 === step;
     const childStep = steps[step];
+    const hasDots = steps.length > 1 && step < steps.length;
+    const hasBack = step > 0;
+
+    if (!steps.length) {
+        rest?.onClose?.();
+    }
 
     if (!React.isValidElement<OnboardingStepProps>(childStep)) {
         throw new Error('Missing step');
     }
 
-    const hasDots = genericSteps.length > 0 && step < genericSteps.length;
+    const childStepProps = childStep.props;
 
-    const isLastStep = steps.length - 1 === step;
+    useEffect(() => {
+        // Once the modal is open, we clear the welcome URL parameter to avoid having this modal appearing after refresh or back history
+        const queryParams = new URLSearchParams(location.search);
 
-    const childStepProps =
-        isLastStep && productSteps.length === 0
-            ? {
-                  ...childStep.props,
-                  submit: c('Action').t`Done`,
-                  onSubmit: rest?.onClose,
-              }
-            : childStep.props;
+        if (queryParams.has('welcome')) {
+            queryParams.delete('welcome');
+            history.replace({
+                search: queryParams.toString(),
+            });
+        }
+    }, []);
 
     return (
         <FormModal
             {...rest}
             hasClose={allowClose}
+            disableCloseOnOnEscape={allowClose}
             {...childStepProps}
-            footer={
-                <>
-                    {typeof childStep.props.close === 'string' ? (
-                        <Button disabled={childStep.props.loading} onClick={childStep.props.onClose || handleBack}>
-                            {childStepProps.close}
+            title={
+                hasBack ? (
+                    <span className="absolute top-left mt1 ml1">
+                        <Button icon shape="ghost" title={c('Action').t`Back`} onClick={handleBack}>
+                            <Icon name="arrow-left" alt={c('Action').t`Back`} />
                         </Button>
-                    ) : (
-                        childStep.props.close
-                    )}
-
-                    {hasDots && (
-                        <StepDots
-                            className="absolute centered-absolute-horizontal"
-                            onChange={handleChange}
-                            value={step}
-                        >
-                            {range(0, genericSteps.length).map((index) => (
-                                <StepDot key={index} aria-controls={`onboarding-${index}`} />
-                            ))}
-                        </StepDots>
-                    )}
-
-                    {typeof childStep.props.submit === 'string' ? (
-                        <PrimaryButton loading={childStep.props.loading} type="submit" className="mlauto">
-                            {childStepProps.submit}
-                        </PrimaryButton>
-                    ) : (
-                        childStep.props.submit
-                    )}
-                </>
+                    </span>
+                ) : null
             }
+            intermediate
+            footer={null}
         >
             {childStep}
+            <footer className="flex flex-nowrap flex-column">
+                {typeof childStepProps.submit === 'string' ? (
+                    <Button
+                        shape="solid"
+                        size="large"
+                        color="norm"
+                        fullWidth
+                        loading={childStepProps.loading}
+                        type="submit"
+                        className="mb0-25"
+                        data-focus-fallback={1}
+                    >
+                        {childStepProps.submit}
+                    </Button>
+                ) : (
+                    childStepProps.submit
+                )}
+
+                {typeof childStepProps.close === 'string' ? (
+                    <Button
+                        shape="ghost"
+                        size="large"
+                        color="norm"
+                        fullWidth
+                        disabled={childStepProps.loading}
+                        onClick={childStepProps.onClose || handleBack}
+                    >
+                        {childStepProps.close}
+                    </Button>
+                ) : (
+                    childStepProps.close
+                )}
+            </footer>
+            {hasDots ? (
+                <div className="text-center">
+                    <StepDots value={step}>
+                        {range(0, steps.length).map((index) => (
+                            <StepDot key={index} index={index} aria-controls={`onboarding-${index}`} />
+                        ))}
+                    </StepDots>
+                </div>
+            ) : (
+                <div className="pt1 pb1" />
+            )}
         </FormModal>
     );
 };

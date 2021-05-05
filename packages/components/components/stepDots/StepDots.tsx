@@ -5,7 +5,7 @@ import { Props as StepDotProps } from '../stepDot/StepDot';
 
 export interface Props extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
     value: number;
-    onChange: (index: number) => void;
+    onChange?: (index: number) => void;
     children: React.ReactElement<StepDotProps>[];
 }
 
