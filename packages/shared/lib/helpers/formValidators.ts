@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { validateEmailAddress } from './email';
 import { isNumber } from './validators';
 
@@ -11,6 +11,10 @@ export const numberValidator = (value: string) => (!isNumber(value) ? c('Error')
 export const confirmPasswordValidator = (a: string, b: string) => (a !== b ? c('Error').t`Passwords do not match` : '');
 export const defaultMinPasswordLength = 8;
 export const getMinPasswordLengthMessage = (length = defaultMinPasswordLength) =>
-    c('Validation').t`Password must contain at least ${length} characters`;
+    c('Validation').ngettext(
+        msgid`Password must contain at least ${length} character`,
+        `Password must contain at least ${length} characters`,
+        length
+    );
 export const passwordLengthValidator = (a: string, length = defaultMinPasswordLength) =>
     a.length < length ? getMinPasswordLengthMessage() : '';
