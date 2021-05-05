@@ -46,7 +46,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
     return (
         <div className="bordered bg-norm shadow-norm p2">
             <div className="mb2 text-center">
-                <span className="dropdown-logout-initials rounded text-semibold p0-25 mb0-5 inline-flex bg-primary">
+                <span className="user-initials rounded text-semibold p0-25 mb0-5 inline-flex bg-primary">
                     <span className="dropdown-logout-text center">{initials}</span>
                 </span>
                 <h3 className="mb0-5 lh-rg text-ellipsis" title={DisplayName || Name}>

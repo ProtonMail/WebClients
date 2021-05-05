@@ -20,13 +20,13 @@ const ThemeCard = ({ label, id, src, selected, onChange, disabled }: Props) => {
             shape="outline"
             color={selected ? 'norm' : 'weak'}
             id={id}
-            className={classnames(['mr1 mb1', selected && 'is-active no-pointer-events text-bold'])}
+            className={classnames([selected && 'is-active no-pointer-events text-bold'])}
             aria-pressed={selected}
             onClick={onChange}
             disabled={disabled}
             type="button"
-            aria-label={c('Action').t`Use “${label}” theme`}
-            title={c('Action').t`Use “${label}” theme`}
+            aria-label={c('Action').t`Use ${label} theme`}
+            title={c('Action').t`Use ${label} theme`}
         >
             <span className="flex flex-nowrap flex-column">
                 <img alt="" src={src} className="mb0-5" />
