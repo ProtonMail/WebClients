@@ -92,6 +92,7 @@ export const INSECURE_DOMAINS = [
 
 export const DEFAULT_SIGNUP_MODEL: SignupModel = {
     step: SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME,
+    stepHistory: [],
     username: '',
     password: '',
     confirmPassword: '',
