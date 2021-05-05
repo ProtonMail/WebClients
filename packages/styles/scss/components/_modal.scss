@@ -204,13 +204,14 @@ $modal-tiny-width: em(288) !default;
 	display: flex;
 	flex-direction: column;
 	flex: 1 1 auto;
-	overflow: auto;
+	overflow: hidden;
 	position: relative;
 }
 
 .modal-header {
 	padding: rem(30) rem(30) rem(15) rem(30);
 	flex: 0;
+	flex-shrink: 0;
 }
 
 .modal-title {
@@ -222,8 +223,7 @@ $modal-tiny-width: em(288) !default;
 .modal-footer {
 	padding: rem(15) rem(30) rem(30);
 	flex: 0;
-
-	min-height: rem(79); // only for Safari the ugly
+	flex-shrink: 0;
 
 	[class*='button'] {
 		// only for Safari the ugly
