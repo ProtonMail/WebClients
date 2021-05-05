@@ -1,15 +1,13 @@
 import React, { Ref } from 'react';
 import { classnames } from '../../helpers';
 
-interface Props {
-    children: React.ReactNode;
-    className?: string;
+interface DropdownMenuProps extends React.ComponentPropsWithoutRef<'ul'> {
     listRef?: Ref<HTMLUListElement>;
 }
 
-const DropdownMenu = ({ children, className = '', listRef }: Props) => {
+const DropdownMenu = ({ children, className = '', listRef, ...rest }: DropdownMenuProps) => {
     return (
-        <ul className={classnames(['unstyled mt0 mb0', className])} ref={listRef}>
+        <ul className={classnames(['unstyled mt0 mb0', className])} ref={listRef} {...rest}>
             {React.Children.toArray(children).map((child, i) => {
                 return React.isValidElement(child) ? (
                     <li

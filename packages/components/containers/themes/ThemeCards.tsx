@@ -2,6 +2,7 @@ import React from 'react';
 import { ThemeTypes } from 'proton-shared/lib/themes/themes';
 
 import ThemeCard from './ThemeCard';
+import { classnames } from '../../helpers';
 
 export interface Theme {
     label: string;
@@ -10,15 +11,16 @@ export interface Theme {
 }
 interface Props {
     themeIdentifier: ThemeTypes;
+    className?: string;
     liClassName?: string;
     onChange: (themeType: ThemeTypes) => void;
     disabled?: boolean;
     list: Theme[];
 }
 
-const ThemeCards = ({ themeIdentifier, onChange, disabled, liClassName, list }: Props) => {
+const ThemeCards = ({ themeIdentifier, onChange, disabled, className, liClassName, list }: Props) => {
     return (
-        <ul className="unstyled m0 flex">
+        <ul className={classnames(['unstyled m0', className])}>
             {list.map(({ identifier, label, src }) => {
                 const id = `id_${identifier}`;
                 return (

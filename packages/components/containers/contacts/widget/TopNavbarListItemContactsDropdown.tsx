@@ -21,7 +21,7 @@ const TopNavbarListItemContactsButton = React.forwardRef(
                 ref={ref}
                 as="button"
                 type="button"
-                icon={<Icon name="contacts" />}
+                icon={<Icon name="contacts-groups" />}
                 text={c('Header').t`Contacts`}
             />
         );
@@ -65,6 +65,7 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose }: Props) => {
                 className={className}
                 ref={anchorRef}
                 onClick={handleClickDropdownButton}
+                title={c('Title').t`View contacts`}
             >
                 <></>
             </DropdownButton>
@@ -74,7 +75,7 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose }: Props) => {
                 anchorRef={anchorRef}
                 onClose={handleClose}
                 autoClose={false}
-                originalPlacement="bottom"
+                originalPlacement="bottom-left"
                 className="contacts-widget"
                 noMaxWidth
                 noMaxHeight

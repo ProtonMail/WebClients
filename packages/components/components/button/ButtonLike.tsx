@@ -4,11 +4,11 @@ import { classnames } from '../../helpers';
 import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
 import { CircleLoader } from '../loader';
 
-type Shape = 'solid' | 'outline' | 'ghost' | 'link';
+export type Shape = 'solid' | 'outline' | 'ghost' | 'link';
 
-type Color = 'norm' | 'weak' | 'danger' | 'warning' | 'success' | 'info';
+export type Color = 'norm' | 'weak' | 'danger' | 'warning' | 'success' | 'info';
 
-type Size = 'small' | 'medium' | 'large';
+export type Size = 'small' | 'medium' | 'large';
 
 interface ButtonLikeOwnProps {
     /**

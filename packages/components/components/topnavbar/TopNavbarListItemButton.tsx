@@ -1,9 +1,12 @@
 import React from 'react';
 
 import { classnames } from '../../helpers';
-import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
+import { PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
+import { ButtonLike, Color, Shape } from '../button';
 
 interface OwnProps {
+    color?: Color;
+    shape?: Shape;
     icon: React.ReactElement;
     text: string;
     hasRedDot?: boolean;
@@ -17,13 +20,27 @@ const TopNavbarListItemButton: <E extends React.ElementType = typeof defaultElem
     props: TopNavbarListItemButtonProps<E>
 ) => React.ReactElement | null = React.forwardRef(
     <E extends React.ElementType = typeof defaultElement>(
-        { text, icon, disabled, className, hasRedDot, tabIndex, children, ...rest }: TopNavbarListItemButtonProps<E>,
+        {
+            color = 'weak',
+            shape = 'ghost',
+            text,
+            icon,
+            disabled,
+            className,
+            hasRedDot,
+            tabIndex,
+            children,
+            ...rest
+        }: TopNavbarListItemButtonProps<E>,
         ref: typeof rest.ref
     ) => {
         const isDisabled = disabled;
 
         return (
-            <Box
+            <ButtonLike
+                as={defaultElement}
+                color={color}
+                shape={shape}
                 className={classnames([
                     'topnav-link inline-flex flex-nowrap flex-align-items-center',
                     hasRedDot && 'relative topnav-link--blackfriday',
@@ -39,7 +56,7 @@ const TopNavbarListItemButton: <E extends React.ElementType = typeof defaultElem
                 })}
                 <span className="navigation-title">{text}</span>
                 {children}
-            </Box>
+            </ButtonLike>
         );
     }
 );
