@@ -8,7 +8,7 @@ import {
     PrivateHeader,
     FloatingButton,
     MainLogo,
-    TopNavbarListItemSettingsButton,
+    TopNavbarListItemSettingsDropdown,
     TopNavbarListItemHelpDropdown,
     TopNavbarListItemContactsDropdown,
     Icon,
@@ -33,7 +33,6 @@ interface Props {
     onCompose: OnCompose;
     expanded?: boolean;
     onToggleExpand: () => void;
-    onOpenShortcutsModal: () => void;
 }
 
 const MailHeader = ({
@@ -46,7 +45,6 @@ const MailHeader = ({
     onToggleExpand,
     onSearch,
     onCompose,
-    onOpenShortcutsModal,
 }: Props) => {
     const { keyword = '' } = extractSearchParameters(location);
     const [value, updateValue] = useState(keyword);
@@ -100,14 +98,14 @@ const MailHeader = ({
             logo={logo}
             backUrl={showBackButton && backUrl ? backUrl : undefined}
             title={labelName}
-            settingsButton={<TopNavbarListItemSettingsButton to="/mail/general" toApp={APPS.PROTONACCOUNT} />}
+            settingsButton={<TopNavbarListItemSettingsDropdown to="/mail/general" toApp={APPS.PROTONACCOUNT} />}
             contactsButton={<TopNavbarListItemContactsDropdown onCompose={handleContactsCompose} />}
             searchBox={searchBox}
             searchDropdown={searchDropdown}
             expanded={!!expanded}
             onToggleExpand={onToggleExpand}
             isNarrow={breakpoints.isNarrow}
-            helpDropdown={<TopNavbarListItemHelpDropdown onOpenShortcutsModal={onOpenShortcutsModal} />}
+            helpDropdown={<TopNavbarListItemHelpDropdown />}
             floatingButton={
                 <FloatingButton onClick={() => onCompose({ action: MESSAGE_ACTIONS.NEW })}>
                     <Icon size={24} name="compose" className="mauto" />

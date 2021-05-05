@@ -346,6 +346,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
     const esToggle = (
         <Toggle
             id="es-toggle"
+            className="mlauto"
             checked={(isBuilding || wasIndexingDone(user.ID)) && esEnabled}
             onChange={({ target: { checked } }) => {
                 if (checked) {
@@ -405,29 +406,38 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
         </div>
     );
 
+    const dropdownSearchButtonProps = {
+        ref: anchorRef,
+        isOpen,
+        hasCaret: false,
+        disabled: loading,
+        onClick: () => {
+            handleCaching();
+            toggle();
+        },
+        children: (
+            <Icon
+                name="caret"
+                className={classnames(['searchbox-advanced-search-icon mauto', isOpen && 'rotateX-180'])}
+                alt={c('Action').t`Advanced search`}
+            />
+        ),
+    };
+
     return (
         <>
-            <DropdownButton
-                as={isNarrow ? TopNavbarListItemSearchButton : 'button'}
-                type="button"
-                className={classnames([isNarrow ? undefined : 'searchbox-advanced-search-button flex'])}
-                ref={anchorRef}
-                isOpen={isOpen}
-                onClick={() => {
-                    handleCaching();
-                    toggle();
-                }}
-                hasCaret={false}
-                disabled={loading}
-            >
-                {isNarrow ? undefined : (
-                    <Icon
-                        name="caret"
-                        className={classnames(['searchbox-advanced-search-icon mauto', isOpen && 'rotateX-180'])}
-                        alt={c('Action').t`Advanced search`}
-                    />
-                )}
-            </DropdownButton>
+            {isNarrow ? (
+                <DropdownButton as={TopNavbarListItemSearchButton} {...dropdownSearchButtonProps} />
+            ) : (
+                <DropdownButton
+                    as={Button}
+                    icon
+                    shape="ghost"
+                    color="weak"
+                    className="searchbox-advanced-search-button flex"
+                    {...dropdownSearchButtonProps}
+                />
+            )}
             <Dropdown
                 id={uid}
                 originalPlacement="bottom-right"
@@ -437,17 +447,17 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
                 noMaxSize
                 anchorRef={anchorRef}
                 onClose={close}
-                className="dropdown-content--wide"
+                className="dropdown-content--wide advanced-search-dropdown"
                 UNSTABLE_AUTO_HEIGHT
             >
                 {showEncryptedSearch && (
-                    <div className="advancedSearchTop pl1 pr1 pt1">
+                    <div className="pl1 pr1 pt1">
                         <div className="flex flex-column">
-                            <div className="flex flex-justify-space-between flex-align-items-center">
-                                <Label htmlFor="es-toggle" className="text-bold p0 flex flex-align-items-center">
+                            <div className="flex flex-justify-space-between mb0-5 flex-align-items-center">
+                                <label htmlFor="es-toggle" className="text-bold p0 flex flex-align-items-center">
                                     {title}
                                     {info}
-                                </Label>
+                                </label>
                                 {esToggle}
                             </div>
                             {showSubTitleSection && subTitleSection}
@@ -468,14 +478,9 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
                     </div>
                 )}
                 {showAdvancedSearch && (
-                    <form
-                        name="advanced-search"
-                        className="advancedSearch p1"
-                        onSubmit={handleSubmit}
-                        onReset={handleReset}
-                    >
+                    <form name="advanced-search" className="p1" onSubmit={handleSubmit} onReset={handleReset}>
                         <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                            <Label className="advancedSearch-label" htmlFor="search-keyword">{c('Label')
+                            <Label className="advanced-search-label" htmlFor="search-keyword">{c('Label')
                                 .t`Keyword`}</Label>
                             <Input
                                 id="search-keyword"
@@ -485,7 +490,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
                             />
                         </div>
                         <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                            <Label className="advancedSearch-label" htmlFor="labelID">{c('Label').t`Location`}</Label>
+                            <Label className="advanced-search-label" htmlFor="labelID">{c('Label').t`Location`}</Label>
                             <Select
                                 id="labelID"
                                 value={model.labelID}
@@ -494,7 +499,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
                             />
                         </div>
                         <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                            <Label className="advancedSearch-label" htmlFor="address">{c('Label').t`Address`}</Label>
+                            <Label className="advanced-search-label" htmlFor="address">{c('Label').t`Address`}</Label>
                             <Select
                                 id="address"
                                 value={model.address}
@@ -503,7 +508,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
                             />
                         </div>
                         <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                            <Label title={c('Label').t`Sender`} className="advancedSearch-label" htmlFor="from">{c(
+                            <Label title={c('Label').t`Sender`} className="advanced-search-label" htmlFor="from">{c(
                                 'Label'
                             ).t`From`}</Label>
                             <div className="flex-item-fluid">
@@ -516,7 +521,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
                             </div>
                         </div>
                         <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                            <Label title={c('Label').t`Recipient`} className="advancedSearch-label" htmlFor="to">{c(
+                            <Label title={c('Label').t`Recipient`} className="advanced-search-label" htmlFor="to">{c(
                                 'Label'
                             ).t`To`}</Label>
                             <div className="flex-item-fluid">
@@ -529,7 +534,8 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
                             </div>
                         </div>
                         <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                            <Label className="advancedSearch-label" htmlFor="begin-date">{c('Label').t`Between`}</Label>
+                            <Label className="advanced-search-label" htmlFor="begin-date">{c('Label')
+                                .t`Between`}</Label>
                             <div className="flex-item-fluid">
                                 <DateInput
                                     placeholder={c('Placeholder').t`Start date`}
@@ -553,7 +559,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
                             </div>
                         </div>
                         <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                            <Label className="advancedSearch-label" htmlFor="end-date">{c('Label').t`And`}</Label>
+                            <Label className="advanced-search-label" htmlFor="end-date">{c('Label').t`And`}</Label>
                             <div className="flex-item-fluid">
                                 <DateInput
                                     placeholder={c('Placeholder').t`End date`}
@@ -567,7 +573,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
                             </div>
                         </div>
                         <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                            <Label className="advancedSearch-label" id="advanced-search-attachments-label">{c('Label')
+                            <Label className="advanced-search-label" id="advanced-search-attachments-label">{c('Label')
                                 .t`Attachments`}</Label>
                             <div className="flex-item-fluid pt0-5">
                                 <Radio
@@ -596,7 +602,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
                             </div>
                         </div>
                         <div className="mb2 flex flex-nowrap on-mobile-flex-column">
-                            <Label className="advancedSearch-label" id="advanced-search-filter-label">{c('Label')
+                            <Label className="advanced-search-label" id="advanced-search-filter-label">{c('Label')
                                 .t`Filter`}</Label>
                             <div className="flex-item-fluid pt0-5">
                                 <Radio
