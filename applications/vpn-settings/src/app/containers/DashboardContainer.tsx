@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
     PlansSection,
     BillingSection,
@@ -13,6 +13,7 @@ import {
     GiftCodeSection,
     CreditsSection,
 } from 'react-components';
+import { useHistory } from 'react-router-dom';
 import { PERMISSIONS, DEFAULT_CYCLE, PLAN_SERVICES, CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
 import { Plan, PlanIDs, UserModel } from 'proton-shared/lib/interfaces';
 import { c } from 'ttag';
@@ -66,16 +67,25 @@ interface PlansMap {
 const DashboardContainer = ({ setActiveSection, location }: SettingsPropsShared) => {
     const [user] = useUser();
     const { createModal } = useModals();
-    const searchParams = new URLSearchParams(location.search);
     const [plans, loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
+    const onceRef = useRef(false);
+    const history = useHistory();
 
-    const openSubscriptionModal = () => {
+    useEffect(() => {
+        const searchParams = new URLSearchParams(location.search);
         const planName = searchParams.get('plan');
-        if (!plans || !planName || loadingPlans || loadingSubscription || loadingOrganization) {
+        if (!plans || !planName || loadingPlans || loadingSubscription || loadingOrganization || onceRef.current) {
             return;
         }
+
+        searchParams.delete('plan');
+        history.replace({
+            search: searchParams.toString(),
+        });
+        onceRef.current = true;
+
         const coupon = searchParams.get('coupon');
         const cycleParam = parseInt(searchParams.get('cycle') as any, 10);
         const currencyParam = searchParams.get('currency') as any;
@@ -124,10 +134,6 @@ const DashboardContainer = ({ setActiveSection, location }: SettingsPropsShared)
                 step={SUBSCRIPTION_STEPS.CUSTOMIZATION}
             />
         );
-    };
-
-    useEffect(() => {
-        openSubscriptionModal();
     }, [loadingPlans, loadingSubscription, loadingOrganization]);
 
     return (
