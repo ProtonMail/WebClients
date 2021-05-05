@@ -29,6 +29,7 @@ export interface PlanIDs {
 
 export interface SignupModel {
     step: SIGNUP_STEPS;
+    stepHistory: SIGNUP_STEPS[];
     username: string;
     email: string;
     password: string;

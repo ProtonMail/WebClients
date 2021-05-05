@@ -11,7 +11,9 @@ import {
     DropdownMenuButton,
     Icon,
     AuthenticatedBugModal,
+    useTheme,
 } from 'react-components';
+import { PROTON_THEMES } from 'proton-shared/lib/themes/themes';
 import { queryAddresses } from 'proton-shared/lib/api/addresses';
 import { Address } from 'proton-shared/lib/interfaces';
 import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
@@ -54,6 +56,7 @@ const SetupInternalAccountContainer = () => {
     const goToApp = useAppLink();
     const toAppRef = useRef<APP_NAMES | null>(null);
     const authentication = useAuthentication();
+    const [, setTheme] = useTheme();
 
     const generateInternalAddressRef = useRef<InternalAddressGeneration | undefined>(undefined);
 
@@ -84,6 +87,9 @@ const SetupInternalAccountContainer = () => {
             if (!getHasOnlyExternalAddresses(addresses)) {
                 return handleBack();
             }
+
+            // Special case to reset the user's theme since it's logged in at this point. Does not care about resetting it back since it always redirects back to the application.
+            setTheme(PROTON_THEMES.DEFAULT.theme);
 
             toAppRef.current = app;
             generateInternalAddressRef.current = {
