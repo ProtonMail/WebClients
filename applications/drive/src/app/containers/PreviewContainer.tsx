@@ -130,7 +130,7 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
                 navigationControls={
                     meta && (
                         <NavigationControl
-                            current={+1}
+                            current={currentOpenIndex + 1}
                             total={linksAvailableForPreview.length}
                             rootRef={rootRef}
                             onPrev={handlePrev}
