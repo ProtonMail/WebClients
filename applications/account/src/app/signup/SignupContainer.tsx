@@ -9,6 +9,7 @@ import {
     PLAN_TYPES,
     PLANS,
     TOKEN_TYPES,
+    ADDON_NAMES,
 } from 'proton-shared/lib/constants';
 import { checkSubscription, subscribe } from 'proton-shared/lib/api/payments';
 import { c } from 'ttag';
@@ -18,6 +19,7 @@ import {
     Currency,
     Cycle,
     HumanVerificationMethodType,
+    Plan,
     SubscriptionCheckResponse,
     User as tsUser,
 } from 'proton-shared/lib/interfaces';
@@ -98,13 +100,60 @@ export const getSearchParams = (search: History.Search) => {
     const maybeCycle = Number(searchParams.get('billing')) || Number(searchParams.get('cycle'));
     const cycle = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(maybeCycle) ? maybeCycle : undefined;
 
+    const maybeUsers = Number(searchParams.get('users'));
+    const users = maybeUsers >= 1 && maybeUsers <= 5000 ? maybeUsers : undefined;
+    const maybeDomains = Number(searchParams.get('domains'));
+    const domains = maybeDomains >= 1 && maybeDomains <= 100 ? maybeDomains : undefined;
+
     const maybeService = searchParams.get('service') as SERVICES_KEYS | undefined;
     const service = maybeService ? SERVICES[maybeService] : undefined;
 
-    const preSelectedPlan = searchParams.get('plan');
-    // plan validated later
+    // plan is validated by comparing plans after it's loaded
+    const maybePreSelectedPlan = searchParams.get('plan');
+    // static sites use 'business' for pro plan
+    const preSelectedPlan = maybePreSelectedPlan === 'business' ? 'professional' : maybePreSelectedPlan;
 
-    return { currency, cycle, preSelectedPlan, service };
+    return { currency, cycle, preSelectedPlan, service, users, domains };
+};
+
+const getPlanIDsFromParams = (plans: Plan[], signupParameters: ReturnType<typeof getSearchParams>) => {
+    if (!signupParameters.preSelectedPlan) {
+        return;
+    }
+
+    if (signupParameters.preSelectedPlan === 'free') {
+        return {};
+    }
+
+    const plan = plans.find(({ Name, Type }) => {
+        return Name === signupParameters.preSelectedPlan && Type === PLAN_TYPES.PLAN;
+    });
+
+    if (!plan) {
+        return;
+    }
+
+    const planIDs = { [plan.ID]: 1 };
+
+    if (plan.Name === PLANS.PROFESSIONAL) {
+        if (signupParameters.users !== undefined) {
+            const usersAddon = plans.find(({ Name }) => Name === ADDON_NAMES.MEMBER);
+            const amount = signupParameters.users - plan.MaxMembers;
+            if (usersAddon && amount > 0) {
+                planIDs[usersAddon.ID] = amount;
+            }
+        }
+
+        if (signupParameters.domains !== undefined) {
+            const domainsAddon = plans.find(({ Name }) => Name === ADDON_NAMES.DOMAIN);
+            const amount = signupParameters.domains - plan.MaxDomains;
+            if (domainsAddon && amount > 0) {
+                planIDs[domainsAddon.ID] = amount;
+            }
+        }
+    }
+
+    return planIDs;
 };
 
 const getCardPayment = async ({
@@ -166,7 +215,17 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
         checkResult: getFreeCheckResult(signupParameters?.currency, signupParameters?.cycle),
     });
 
-    const setModelDiff = (diff: Partial<SignupModel>) => setModel((model) => ({ ...model, ...diff }));
+    const setModelDiff = (diff: Partial<SignupModel>) => {
+        return setModel((model) => ({
+            ...model,
+            ...diff,
+            // Never add last step into the history
+            ...(diff.step && !diff.stepHistory && model.step !== CREATING_ACCOUNT && diff.step !== model.step
+                ? // Filter out self from history, can happen for human verification
+                  { stepHistory: [...model.stepHistory.filter((x) => x !== model.step), model.step] }
+                : undefined),
+        }));
+    };
 
     const isInternalSignup = !!model.username;
 
@@ -191,7 +250,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                 humanApi.setToken(Payment.Details.Token, TOKEN_TYPES.PAYMENT);
             }
             // eslint-disable-next-line @typescript-eslint/no-use-before-define
-            handleFinalizeSignup({ payment: Payment });
+            handleFinalizeSignup({ payment: Payment }).catch(noop);
         },
     });
 
@@ -200,11 +259,6 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
         payment,
     }: { planIDs?: PlanIDs; payment?: Payment } = {}) => {
         const isBuyingPaidPlan = hasPlanIDs(planIDs);
-
-        if (isBuyingPaidPlan && method === PAYMENT_METHOD_TYPES.CARD && !canPay) {
-            setModelDiff({ step: PAYMENT });
-            return;
-        }
 
         let actualPayment = payment;
         const {
@@ -255,7 +309,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                     humanVerificationToken: error.token,
                 });
             }
-            setModelDiff({ step: oldStep });
+            setModelDiff({ step: oldStep, stepHistory: model.stepHistory });
             throw error;
         }
 
@@ -300,7 +354,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
             await onLogin({ ...authResponse, User, keyPassword, flow: 'signup' });
         } catch (error) {
             // TODO: If any of these requests fail we should probably handle it differently
-            return setModelDiff({ step: oldStep });
+            return setModelDiff({ step: oldStep, stepHistory: model.stepHistory });
         }
     };
 
@@ -334,20 +388,24 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
 
     const preSelectedPlanRunRef = useRef(false);
     useEffect(() => {
-        if (preSelectedPlanRunRef.current) {
-            return;
-        }
-        if (!Array.isArray(plans) || !plans.length || !signupParameters?.preSelectedPlan) {
-            return;
-        }
-        const plan = plans.find(({ Name, Type }) => {
-            return Name === signupParameters.preSelectedPlan && Type === PLAN_TYPES.PLAN;
-        });
-        if (!plan) {
+        if (
+            preSelectedPlanRunRef.current ||
+            !Array.isArray(plans) ||
+            !plans.length ||
+            !signupParameters?.preSelectedPlan
+        ) {
             return;
         }
         preSelectedPlanRunRef.current = true;
-        const planIDs = { [plan.ID]: 1 };
+        const planIDs = getPlanIDsFromParams(plans, signupParameters);
+        if (!planIDs) {
+            return;
+        }
+        // Specifically selecting free plan
+        if (planIDs && !hasPlanIDs(planIDs)) {
+            setModelDiff({ planIDs, skipPlanStep: true });
+            return;
+        }
         const run = async () => {
             const checkResult = await getSubscriptionPrices(planIDs, model.currency, model.cycle);
             setModelDiff({ checkResult, planIDs, skipPlanStep: true });
@@ -379,21 +437,37 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
         return hasPlanIDs(planIDs) && getHasPlanType(planIDs, plans, PLANS.PROFESSIONAL);
     };
 
-    const getNextStepPrePayment = () => {
-        if (model.skipPlanStep && hasPlanIDs(model.planIDs)) {
-            if (getHasCustomisationStep(model.planIDs)) {
-                return CUSTOMISATION;
-            }
-            return PAYMENT;
+    const handlePrePlanStep = (diff?: Partial<SignupModel>) => {
+        if (!model.skipPlanStep) {
+            setModelDiff({
+                ...diff,
+                step: PLANS_STEP,
+            });
+            return;
         }
-        return PLANS_STEP;
-    };
 
-    const getPaymentOrCustomisationStep = (planIDs: PlanIDs) => {
-        if (getHasCustomisationStep(planIDs)) {
-            return CUSTOMISATION;
+        if (hasPlanIDs(model.planIDs)) {
+            if (getHasCustomisationStep(model.planIDs)) {
+                setModelDiff({
+                    ...diff,
+                    step: CUSTOMISATION,
+                });
+                return;
+            }
+
+            setModelDiff({
+                ...diff,
+                step: PAYMENT,
+            });
+            return;
         }
-        return PAYMENT;
+
+        setModelDiff({
+            ...diff,
+            checkResult: getFreeCheckResult(model.currency, model.cycle),
+            step: CREATING_ACCOUNT,
+        });
+        return handleFinalizeSignup().catch(noop);
     };
 
     const updateCheckResultTogether = async (
@@ -480,6 +554,22 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
         </div>
     );
 
+    const getBackDiff = () => {
+        if (!model.stepHistory.length) {
+            return {};
+        }
+        const newStepHistory = [...model.stepHistory];
+        const newStep = newStepHistory.pop();
+        return {
+            step: newStep,
+            stepHistory: newStepHistory,
+        };
+    };
+
+    const handleBack = () => {
+        setModelDiff(getBackDiff());
+    };
+
     return (
         <Main larger={[PLANS_STEP, CUSTOMISATION, PAYMENT].includes(step)}>
             {step === ACCOUNT_CREATION_USERNAME && (
@@ -496,11 +586,11 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                             humanApi={humanApi}
                             domains={model.domains}
                             onSubmit={(payload) => {
-                                const nextStep = model.signupType === 'email' ? VERIFICATION_CODE : RECOVERY_EMAIL;
-                                setModelDiff({ step: nextStep });
                                 if (payload) {
                                     addChallengePayload(payload);
                                 }
+                                const nextStep = model.signupType === 'email' ? VERIFICATION_CODE : RECOVERY_EMAIL;
+                                setModelDiff({ step: nextStep });
                             }}
                             hasChallenge={!cacheRef.current.payload || !Object.keys(cacheRef.current.payload).length}
                             hasExternalSignup={!disableExternalSignup}
@@ -513,13 +603,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                     <Header
                         title={c('Title').t`Add a recovery method`}
                         subTitle={c('Title').t`(highly recommended)`}
-                        left={
-                            <BackButton
-                                onClick={() => {
-                                    setModelDiff({ step: ACCOUNT_CREATION_USERNAME });
-                                }}
-                            />
-                        }
+                        left={<BackButton onClick={handleBack} />}
                     />
                     <Content>
                         <RecoveryForm
@@ -529,38 +613,35 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                             hasChallenge={!cacheRef.current.payload || Object.keys(cacheRef.current.payload).length < 2}
                             onSubmit={(payload) => {
                                 addChallengePayload(payload);
-                                setModelDiff({
-                                    step: getNextStepPrePayment(),
-                                });
+                                handlePrePlanStep();
                             }}
                             onSkip={(payload) => {
                                 addChallengePayload(payload);
-                                setModelDiff({ recoveryEmail: '', recoveryPhone: '', step: getNextStepPrePayment() });
+                                handlePrePlanStep({ recoveryEmail: '', recoveryPhone: '' });
                             }}
+                        />
+                    </Content>
+                </>
+            )}
+            {step === VERIFICATION_CODE && (
+                <>
+                    <Header title={c('Title').t`Account verification`} left={<BackButton onClick={handleBack} />} />
+                    <Content>
+                        <VerificationCodeForm
+                            clientType={CLIENT_TYPE}
+                            model={model}
+                            onSubmit={() => {
+                                handlePrePlanStep();
+                            }}
+                            onBack={handleBack}
+                            humanApi={humanApi}
                         />
                     </Content>
                 </>
             )}
             {step === PLANS_STEP && (
                 <>
-                    <Header
-                        title={c('Title').t`Plan selection`}
-                        left={
-                            <BackButton
-                                onClick={() => {
-                                    let toStep = RECOVERY_EMAIL;
-                                    if (model.username && model.recoveryPhone) {
-                                        toStep = RECOVERY_PHONE;
-                                    } else if (model.username) {
-                                        toStep = RECOVERY_EMAIL;
-                                    } else if (model.email) {
-                                        toStep = VERIFICATION_CODE;
-                                    }
-                                    setModelDiff({ step: toStep });
-                                }}
-                            />
-                        }
-                    />
+                    <Header title={c('Title').t`Plan selection`} left={<BackButton onClick={handleBack} />} />
                     <Content>
                         <PlanSelection
                             mode="signup"
@@ -572,16 +653,19 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                             service={PLAN_SERVICES.MAIL}
                             vpnCountries={vpnCountries}
                             onChangePlanIDs={async (planIDs) => {
-                                if (Object.keys(planIDs).length === 0) {
+                                if (!hasPlanIDs(planIDs)) {
                                     setModelDiff({
                                         planIDs,
                                         checkResult: getFreeCheckResult(model.currency, model.cycle),
                                         step: CREATING_ACCOUNT,
                                     });
-                                    return handleFinalizeSignup({ planIDs });
+                                    return handleFinalizeSignup({ planIDs }).catch(noop);
                                 }
                                 return withLoading(
-                                    handleFinalizePlanIDs(planIDs, getPaymentOrCustomisationStep(planIDs))
+                                    handleFinalizePlanIDs(
+                                        planIDs,
+                                        getHasCustomisationStep(planIDs) ? CUSTOMISATION : PAYMENT
+                                    )
                                 );
                             }}
                             onChangeCurrency={handleChangeCurrency}
@@ -592,16 +676,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
             )}
             {step === CUSTOMISATION && (
                 <>
-                    <Header
-                        title={c('Title').t`Customize your plan`}
-                        left={
-                            <BackButton
-                                onClick={() => {
-                                    setModelDiff({ step: PLANS_STEP, planIDs: {} });
-                                }}
-                            />
-                        }
-                    />
+                    <Header title={c('Title').t`Customize your plan`} left={<BackButton onClick={handleBack} />} />
                     <Content>
                         <div className="flex-no-min-children on-mobile-flex-column">
                             <div className="flex-item-fluid on-mobile-w100 on-tablet-landscape-pr1 on-mobile-pr0">
@@ -626,24 +701,15 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
             )}
             {step === PAYMENT && (
                 <>
-                    <Header
-                        title={c('Title').t`Checkout`}
-                        left={
-                            <BackButton
-                                onClick={() => {
-                                    setModelDiff({
-                                        step: getHasCustomisationStep(model.planIDs) ? CUSTOMISATION : PLANS_STEP,
-                                        skipPlanStep: false,
-                                    });
-                                }}
-                            />
-                        }
-                    />
+                    <Header title={c('Title').t`Checkout`} left={<BackButton onClick={handleBack} />} />
                     <Content>
                         <form
                             name="payment-form"
                             onSubmit={(event) => {
                                 event.preventDefault();
+                                if (method === PAYMENT_METHOD_TYPES.CARD && !canPay) {
+                                    return;
+                                }
                                 withLoading(handleFinalizeSignup()).catch(noop);
                             }}
                             method="post"
@@ -675,37 +741,6 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                     </Content>
                 </>
             )}
-            {step === VERIFICATION_CODE && (
-                <>
-                    <Header
-                        title={c('Title').t`Account verification`}
-                        left={
-                            <BackButton
-                                onClick={() => {
-                                    setModelDiff({ step: ACCOUNT_CREATION_USERNAME });
-                                }}
-                            />
-                        }
-                    />
-                    <Content>
-                        <VerificationCodeForm
-                            clientType={CLIENT_TYPE}
-                            model={model}
-                            onSubmit={() => {
-                                setModelDiff({
-                                    step: getNextStepPrePayment(),
-                                });
-                            }}
-                            onBack={() => {
-                                setModelDiff({
-                                    step: ACCOUNT_CREATION_USERNAME,
-                                });
-                            }}
-                            humanApi={humanApi}
-                        />
-                    </Content>
-                </>
-            )}
             {step === HUMAN_VERIFICATION && (
                 <>
                     <Header
@@ -715,7 +750,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                                 onClick={() => {
                                     humanApi.clearToken();
                                     if (humanVerificationStep === Steps.ENTER_DESTINATION) {
-                                        setModelDiff({ step: getNextStepPrePayment() });
+                                        handleBack();
                                     } else {
                                         setHumanVerificationStep(Steps.ENTER_DESTINATION);
                                     }

@@ -37,6 +37,13 @@ const getLocalRedirect = (pathname?: string) => {
     if (!trimmedPathname) {
         return undefined;
     }
+    // Special case to not add the slug...
+    if (pathname.includes('/setup-internal-address')) {
+        return {
+            pathname,
+            toApp: DEFAULT_APP,
+        };
+    }
     const toApp = getAppFromPathname(trimmedPathname);
     if (!toApp) {
         return {
@@ -136,20 +143,14 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     };
 
     const handleActiveSessions = ({ session, sessions }: GetActiveSessionsResult) => {
-        // Ignore the automatic login behavior when the initial load was from a fork request
-        if (ignoreAutoRef.current) {
+        // Ignore the automatic login
+        if (ignoreAutoRef.current || [SSO_PATHS.SWITCH, SSO_PATHS.SIGNUP].includes(location.pathname as any)) {
             setActiveSessions(sessions);
             if (sessions.length >= 1) {
                 setHasBackToSwitch(true);
             }
-            return false;
-        }
-        if (location.pathname === SSO_PATHS.SWITCH) {
-            setActiveSessions(sessions);
-            if (!sessions.length) {
+            if (!sessions.length && location.pathname === SSO_PATHS.SWITCH) {
                 history.replace('/login');
-            } else {
-                setHasBackToSwitch(true);
             }
             return false;
         }
@@ -162,7 +163,9 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             return true;
         }
         setActiveSessions(sessions);
-        setHasBackToSwitch(true);
+        if (sessions.length >= 1) {
+            setHasBackToSwitch(true);
+        }
         history.replace(SSO_PATHS.SWITCH);
         return false;
     };
