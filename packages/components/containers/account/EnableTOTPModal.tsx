@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import QRCode from 'qrcode.react';
 import { setupTotp, TOTP_WRONG_ERROR } from 'proton-shared/lib/api/settings';
 import { srpAuth } from 'proton-shared/lib/srp';
 import { PASSWORD_WRONG_ERROR } from 'proton-shared/lib/api/auth';
@@ -9,7 +8,7 @@ import { APPS } from 'proton-shared/lib/constants';
 import { getApiError } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { getTOTPData } from 'proton-shared/lib/settings/twoFactor';
 
-import { Alert, Href, InlineLinkButton, Loader, Block, FormModal, Button } from '../../components';
+import { QRCode, Alert, Href, InlineLinkButton, Loader, Block, FormModal, Button } from '../../components';
 import {
     useConfig,
     useNotifications,
@@ -119,7 +118,7 @@ const EnableTOTPModal = (props: any) => {
                                 .jt`Scan this code with your two-factor authentication device to set up your account. ${switchButton}.`}
                         </Alert>
                         <div className="text-center">
-                            <QRCode className="qr-code" value={uri} size={200} includeMargin={false} renderAs="svg" />
+                            <QRCode value={uri} size={200} />
                         </div>
                     </>
                 ),
