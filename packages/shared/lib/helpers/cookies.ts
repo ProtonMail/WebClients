@@ -16,12 +16,20 @@ export const checkCookie = (name: string, value: string) => {
     return getCookies().some((cookie) => cookie.includes(`${name}=${value}`));
 };
 
+export enum CookieSameSiteAttribute {
+    Lax = 'lax',
+    Strict = 'strict',
+    None = 'none',
+}
+
 export interface SetCookieArguments {
     cookieName: string;
     cookieValue: string | undefined;
+    cookieDomain?: string;
     expirationDate?: string;
     path?: string;
-    cookieDomain?: string;
+    secure?: boolean;
+    samesite?: CookieSameSiteAttribute;
 }
 
 export const setCookie = ({
@@ -30,6 +38,8 @@ export const setCookie = ({
     expirationDate: maybeExpirationDate,
     path,
     cookieDomain,
+    samesite,
+    secure = true,
 }: SetCookieArguments) => {
     const cookieValue = maybeCookieValue === undefined ? '' : maybeCookieValue;
 
@@ -47,7 +57,17 @@ export const setCookie = ({
         expirationDate && `expires=${expirationDate}`,
         cookieDomain && `domain=${cookieDomain}`,
         path && `path=${path}`,
+        secure && 'secure',
+        samesite && `samesite=${samesite}`,
     ]
         .filter(isTruthy)
         .join(';');
+};
+
+export const deleteCookie = (cookieName: string) => {
+    setCookie({
+        cookieName,
+        cookieValue: undefined,
+        path: '/',
+    });
 };
