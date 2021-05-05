@@ -14,11 +14,7 @@ import MailIdentityAndAddressesSettings from './MailIdentityAndAddressesSettings
 import MailImapSmtpSettings from './MailImapSmtpSettings';
 import MailImportAndExportSettings from './MailImportAndExportSettings';
 
-interface Props {
-    onChangeBlurred: (isBlurred: boolean) => void;
-}
-
-const MailSettingsRouter = ({ onChangeBlurred }: Props) => {
+const MailSettingsRouter = () => {
     const { path } = useRouteMatch();
     const [user] = useUser();
     const location = useLocation();
@@ -50,7 +46,7 @@ const MailSettingsRouter = ({ onChangeBlurred }: Props) => {
                 <MailEncryptionKeysSettings location={location} />
             </Route>
             <Route path={`${path}/import-export`}>
-                <MailImportAndExportSettings onChangeBlurred={onChangeBlurred} location={location} />
+                <MailImportAndExportSettings location={location} />
             </Route>
             <Route path={`${path}/imap-smtp`}>
                 <MailImapSmtpSettings location={location} />
