@@ -36,12 +36,16 @@ export const mergeMessages = (
 export const getMessagesAuthorizedToMove = (messages: Message[], destinationFolderID: string) => {
     return messages.filter((messsage) => {
         const { LabelIDs } = messsage;
-        if (LabelIDs.includes(DRAFTS) || LabelIDs.includes(ALL_DRAFTS)) {
+
+        if (
+            LabelIDs.includes(DRAFTS) ||
+            LabelIDs.includes(ALL_DRAFTS) ||
+            LabelIDs.includes(SENT) ||
+            LabelIDs.includes(ALL_SENT)
+        ) {
             return !([SPAM, INBOX] as string[]).includes(destinationFolderID);
         }
-        if (LabelIDs.includes(SENT) || LabelIDs.includes(ALL_SENT)) {
-            return !([SPAM, INBOX] as string[]).includes(destinationFolderID);
-        }
+
         return true;
     });
 };
