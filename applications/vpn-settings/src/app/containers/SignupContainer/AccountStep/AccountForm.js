@@ -2,26 +2,32 @@ import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {
     classnames,
-    Input,
     FullLoader,
-    PasswordInput,
-    PrimaryButton,
     Field,
     useApi,
     Row,
     Label,
-    EmailInput,
     Href,
     useLoading,
     Info,
     Challenge,
     ChallengeError,
     captureChallengeMessage,
+    Button,
+    PasswordInputTwo,
+    InputFieldTwo,
+    useFormErrors,
 } from 'react-components';
 import { c } from 'ttag';
 import { queryCheckUsernameAvailability } from 'proton-shared/lib/api/user';
-import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
-import { passwordLengthValidator, confirmPasswordValidator } from 'proton-shared/lib/helpers/formValidators';
+import {
+    passwordLengthValidator,
+    confirmPasswordValidator,
+    getMinPasswordLengthMessage,
+    requiredValidator,
+    emailValidator,
+} from 'proton-shared/lib/helpers/formValidators';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 const AccountForm = ({ model, onSubmit }) => {
     const [challengeLoading, setChallengeLoading] = useState(true);
@@ -33,9 +39,9 @@ const AccountForm = ({ model, onSubmit }) => {
     const [password, setPassword] = useState(model.password);
     const [confirmPassword, setConfirmPassword] = useState(model.password);
     const [email, setEmail] = useState(model.email);
-    const [isSubmitted, setIsSubmitted] = useState(false);
     const [asyncUsernameError, setAsyncUsernameError] = useState();
     const [loading, withLoading] = useLoading();
+    const { validator, onFormSubmit } = useFormErrors();
 
     const handleChangeUsername = ({ target }) => {
         if (asyncUsernameError) {
@@ -44,29 +50,7 @@ const AccountForm = ({ model, onSubmit }) => {
         setUsername(target.value);
     };
 
-    const handleChangePassword = ({ target }) => setPassword(target.value);
-    const handleChangeConfirmPassword = ({ target }) => setConfirmPassword(target.value);
-    const handleChangeEmail = ({ target }) => setEmail(target.value);
-
-    const emailError = !email
-        ? c('Signup error').t`This field is required`
-        : !validateEmailAddress(email)
-        ? c('Signup error').t`Email address invalid`
-        : '';
-
-    const usernameError = asyncUsernameError || (!username ? c('Signup error').t`This field is required` : '');
-
-    const passwordError = passwordLengthValidator(password);
-    const confirmPasswordError =
-        passwordLengthValidator(confirmPassword) || confirmPasswordValidator(password, confirmPassword);
-
     const handleSubmit = async () => {
-        setIsSubmitted(true);
-
-        if (passwordError || confirmPasswordError || emailError || usernameError) {
-            return;
-        }
-
         try {
             await api(queryCheckUsernameAvailability(username));
             const [usernamePayload, emailPayload] = await Promise.all([
@@ -148,6 +132,9 @@ const AccountForm = ({ model, onSubmit }) => {
                 className={classnames(['flex-item-fluid-auto', challengeLoading && 'hidden'])}
                 onSubmit={(e) => {
                     e.preventDefault();
+                    if (!onFormSubmit()) {
+                        return;
+                    }
                     withLoading(handleSubmit());
                 }}
                 autoComplete="off"
@@ -169,15 +156,14 @@ const AccountForm = ({ model, onSubmit }) => {
                             onSuccess={handleChallengeLoaded}
                             onError={handleChallengeLoadingError}
                         >
-                            <Input
-                                error={usernameError}
+                            <InputFieldTwo
+                                autoFocus
+                                id="username"
+                                name="username"
+                                placeholder={c('Placeholder').t`Username`}
+                                error={validator([asyncUsernameError, requiredValidator(username)].filter(isTruthy))}
                                 value={username}
                                 onChange={handleChangeUsername}
-                                name="username"
-                                id="username"
-                                isSubmitted={isSubmitted}
-                                autoFocus
-                                placeholder={c('Placeholder').t`Username`}
                             />
                         </Challenge>
                     </Field>
@@ -192,27 +178,33 @@ const AccountForm = ({ model, onSubmit }) => {
                         />
                     </Label>
                     <Field className="wauto flex-item-fluid">
-                        <div className="mb1">
-                            <PasswordInput
-                                id="password"
-                                autoComplete="nope"
-                                value={password}
-                                onChange={handleChangePassword}
-                                name="password"
-                                error={passwordError}
-                                isSubmitted={isSubmitted}
-                                placeholder={c('Placeholder').t`Password`}
-                            />
-                        </div>
-                        <PasswordInput
+                        <InputFieldTwo
+                            rootClassName="mb1"
+                            as={PasswordInputTwo}
+                            id="password"
+                            name="password"
+                            autoComplete="off"
+                            placeholder={c('Placeholder').t`Password`}
+                            assistiveText={getMinPasswordLengthMessage()}
+                            error={validator([passwordLengthValidator(password)])}
+                            value={password}
+                            onValue={setPassword}
+                            disableChange={loading}
+                        />
+
+                        <InputFieldTwo
+                            as={PasswordInputTwo}
                             id="passwordConfirmation"
-                            autoComplete="nope"
-                            value={confirmPassword}
-                            onChange={handleChangeConfirmPassword}
-                            error={confirmPasswordError}
                             name="passwordConfirmation"
-                            isSubmitted={isSubmitted}
+                            autoComplete="off"
                             placeholder={c('Placeholder').t`Confirm password`}
+                            value={confirmPassword}
+                            onValue={setConfirmPassword}
+                            error={validator([
+                                passwordLengthValidator(confirmPassword),
+                                confirmPasswordValidator(password, confirmPassword),
+                            ])}
+                            disableChange={loading}
                         />
                     </Field>
                 </Row>
@@ -234,14 +226,16 @@ const AccountForm = ({ model, onSubmit }) => {
                                 onSuccess={handleChallengeLoaded}
                                 onError={handleChallengeLoadingError}
                             >
-                                <EmailInput
+                                <InputFieldTwo
                                     id="email"
-                                    required
+                                    type="email"
                                     value={email}
-                                    onChange={handleChangeEmail}
-                                    isSubmitted={isSubmitted}
-                                    error={emailError}
+                                    onValue={setEmail}
+                                    error={validator([requiredValidator(email), emailValidator(email)])}
                                     onKeyDown={(e) => {
+                                        if (!onFormSubmit()) {
+                                            return;
+                                        }
                                         if (e.key === 'Enter') {
                                             withLoading(handleSubmit());
                                         }
@@ -254,7 +248,9 @@ const AccountForm = ({ model, onSubmit }) => {
                                 .jt`By clicking Create account you agree to abide by our ${termsOfServiceLink} and ${privacyPolicyLink}.`}
                         </p>
 
-                        <PrimaryButton loading={loading} type="submit">{c('Action').t`Create account`}</PrimaryButton>
+                        <Button type="submit" color="norm" loading={loading}>
+                            {c('Action').t`Create account`}
+                        </Button>
                     </Field>
                 </Row>
             </form>
