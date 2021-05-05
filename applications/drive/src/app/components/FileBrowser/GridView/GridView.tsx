@@ -7,8 +7,9 @@ import ItemCell, { Props as ItemCellProps } from './ItemCell';
 import FolderContextMenu from '../FolderContextMenu';
 import useFileBrowserView from '../useFileBrowserView';
 
-const itemWidth = 216;
-const itemHeight = 196;
+const rootFontSize = (parseInt(window.getComputedStyle(document.body).fontSize, 10) * 16) / 14;
+const itemWidth = 13.5 * rootFontSize; // 13.5 * 16 = 216
+const itemHeight = 12.25 * rootFontSize; // 12.25 * 16 = 196;
 
 const calculateCellDimensions = (areaWidth: number) => {
     const rowItemCount = Math.floor(areaWidth / itemWidth);

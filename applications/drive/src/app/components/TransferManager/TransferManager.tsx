@@ -18,7 +18,8 @@ interface TransferListEntry<T extends TransferType> {
     type: T;
 }
 
-const ROW_HEIGHT_PX = 70;
+const rootFontSize = (parseInt(window.getComputedStyle(document.body).fontSize, 10) * 16) / 14;
+const ROW_HEIGHT_PX = 4.375 * rootFontSize; // 4.375 * 16 = 70;
 
 enum TRANSFER_GROUP {
     ACTIVE,

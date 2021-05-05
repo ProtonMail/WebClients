@@ -132,6 +132,10 @@ const ListView = ({
     const { isDesktop } = useActiveBreakpoint();
     const itemCount = loading ? contents.length + 1 : contents.length;
 
+    // body font size adapted to get root's one
+    const rootFontSize = (parseInt(window.getComputedStyle(document.body).fontSize, 10) * 16) / 14;
+    const itemHeight = rootFontSize * 2.5; // 2.5 x 16 = 40
+
     // TODO heading padding on scrollbar
     return (
         <div
@@ -164,7 +168,7 @@ const ListView = ({
                 {rect && (
                     <FixedSizeList
                         itemCount={itemCount}
-                        itemSize={40}
+                        itemSize={itemHeight}
                         itemData={{
                             isDesktop,
                             itemCount,
