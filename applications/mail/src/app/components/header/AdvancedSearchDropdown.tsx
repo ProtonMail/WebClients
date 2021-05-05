@@ -415,13 +415,6 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
             handleCaching();
             toggle();
         },
-        children: (
-            <Icon
-                name="caret"
-                className={classnames(['searchbox-advanced-search-icon mauto', isOpen && 'rotateX-180'])}
-                alt={c('Action').t`Advanced search`}
-            />
-        ),
     };
 
     return (
@@ -436,7 +429,13 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
                     color="weak"
                     className="searchbox-advanced-search-button flex"
                     {...dropdownSearchButtonProps}
-                />
+                >
+                    <Icon
+                        name="caret"
+                        className={classnames(['searchbox-advanced-search-icon mauto', isOpen && 'rotateX-180'])}
+                        alt={c('Action').t`Advanced search`}
+                    />
+                </DropdownButton>
             )}
             <Dropdown
                 id={uid}
