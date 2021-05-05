@@ -174,7 +174,7 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
                             autoComplete="off"
                         />
                     </Field>
-                    <Button className="ml1" onClick={handleAdd} disabled={!isValidEmail}>
+                    <Button className="ml1 on-mobile-ml0 on-mobile-mt0-5" onClick={handleAdd} disabled={!isValidEmail}>
                         {c('Action').t`Add`}
                     </Button>
                 </div>
