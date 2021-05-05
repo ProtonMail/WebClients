@@ -9,9 +9,10 @@ interface ButtonProps {
     title?: ReactNode;
     children?: ReactNode;
     disabled?: boolean;
+    dataTestId?: string;
 }
 
-const TitleBarButton = ({ onClick, children, className = '', title, disabled = false }: ButtonProps) => {
+const TitleBarButton = ({ onClick, children, className = '', title, disabled = false, dataTestId }: ButtonProps) => {
     return (
         <Tooltip title={title}>
             <button
@@ -19,7 +20,7 @@ const TitleBarButton = ({ onClick, children, className = '', title, disabled = f
                 className={classnames(['composer-title-bar-button interactive flex p0-5', className])}
                 onClick={onClick}
                 disabled={disabled}
-                data-testid="composer:close-composer"
+                data-testid={dataTestId}
             >
                 {children}
             </button>
@@ -96,13 +97,19 @@ const ComposerTitleBar = ({ title, minimized, maximized, toggleMinimized, toggle
                 className={classnames(['no-mobile', minimized && 'rotateX-180'])}
                 title={titleMinimize}
                 onClick={toggleMinimized}
+                dataTestId="composer:minimize-button"
             >
                 <Icon name="minimize" alt={title} className="mauto" />
             </TitleBarButton>
-            <TitleBarButton title={titleMaximize} className="no-mobile" onClick={toggleMaximized}>
+            <TitleBarButton
+                title={titleMaximize}
+                className="no-mobile"
+                onClick={toggleMaximized}
+                dataTestId="composer:maximize-button"
+            >
                 <Icon name={maximized ? 'contract-window' : 'expand'} alt={title} className="mauto" />
             </TitleBarButton>
-            <TitleBarButton title={titleClose} onClick={onClose}>
+            <TitleBarButton title={titleClose} onClick={onClose} dataTestId="composer:close-button">
                 <Icon name="close" alt={title} className="mauto" />
             </TitleBarButton>
         </header>
