@@ -29,38 +29,38 @@ export enum ThemeTypes {
 }
 
 export const PROTON_THEMES = {
-    DEFAULT: {
-        getI18NLabel: () => c('Theme').t`Proton (default)`,
+    [ThemeTypes.Default]: {
+        getI18NLabel: () => c('Theme').t`Proton`,
         identifier: ThemeTypes.Default,
         src: themeDefaultSvg,
         theme: defaultTheme.toString(),
     },
-    DARK: {
+    [ThemeTypes.Dark]: {
         getI18NLabel: () => c('Theme').t`Carbon`,
         identifier: ThemeTypes.Dark,
         src: themeDarkSvg,
         theme: darkTheme.toString(),
     },
-    LIGHT: {
+    [ThemeTypes.Light]: {
         getI18NLabel: () => c('Theme').t`Snow`,
         identifier: ThemeTypes.Light,
         src: themeLightSvg,
         theme: lightTheme.toString(),
     },
-    MONOKAI: {
+    [ThemeTypes.Monokai]: {
         getI18NLabel: () => c('Theme').t`Monokai`,
         identifier: ThemeTypes.Monokai,
         src: themeMonokaiSvg,
         theme: monokaiTheme.toString(),
     },
-    CONTRAST: {
+    [ThemeTypes.Contrast]: {
         getI18NLabel: () => c('Theme').t`Contrast`,
         identifier: ThemeTypes.Contrast,
         src: themeContrastSvg,
         theme: contrastTheme.toString(),
     },
-    LEGACY: {
-        getI18NLabel: () => c('Theme').t`Proton (legacy)`,
+    [ThemeTypes.Legacy]: {
+        getI18NLabel: () => c('Theme').t`Legacy`,
         identifier: ThemeTypes.Legacy,
         src: themeLegacySvg,
         theme: legacyTheme.toString(),
