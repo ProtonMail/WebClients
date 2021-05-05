@@ -19,10 +19,6 @@
 			*/
 		}
 
-		input::placeholder {
-			color: var(--text-hint);
-		}
-
 		&--reset-advanced {
 			.searchbox-field[type='search'] {
 				padding-right: rem(62.5);

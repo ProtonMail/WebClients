@@ -2,6 +2,7 @@
 ::placeholder {
 	color: var(--field-placeholder-color, var(--text-hint));
 	font-style: normal;
+	opacity: 1; // For Firefox -_-v
 }
 
 $field-container: rem(260) !default;
