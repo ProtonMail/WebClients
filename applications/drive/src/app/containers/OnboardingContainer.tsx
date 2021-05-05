@@ -11,7 +11,7 @@ const OnboardingContainer = ({ onDone }: Props) => {
     const { createModal } = useModals();
 
     useEffect(() => {
-        createModal(<DriveOnboardingModal onClose={onDone} />);
+        createModal(<DriveOnboardingModal onDone={onDone} />);
     }, []);
 
     return <DriveContainerBlurred />;
