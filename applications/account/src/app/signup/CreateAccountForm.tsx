@@ -23,6 +23,7 @@ import {
     emailValidator,
     passwordLengthValidator,
     confirmPasswordValidator,
+    getMinPasswordLengthMessage,
 } from 'proton-shared/lib/helpers/formValidators';
 
 import { HumanApi } from './helpers/humanApi';
@@ -227,6 +228,7 @@ const CreateAccountForm = ({
                     as={PasswordInputTwo}
                     id="password"
                     label={c('Label').t`Password`}
+                    assistiveText={getMinPasswordLengthMessage()}
                     error={validator([passwordLengthValidator(password)])}
                     bigger
                     disableChange={loading}
