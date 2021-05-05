@@ -11,7 +11,7 @@ const CalendarOnboardingContainer = ({ onDone }: Props) => {
     const { createModal } = useModals();
 
     useEffect(() => {
-        createModal(<CalendarOnboardingModal onClose={onDone} />);
+        createModal(<CalendarOnboardingModal onDone={onDone} />);
     }, []);
 
     return <CalendarContainerViewBlurred />;
