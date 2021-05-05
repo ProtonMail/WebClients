@@ -1,20 +1,4 @@
 .topnav-link {
-	@extend .interactive;
-
-	border-radius: $global-border-radius;
-	padding: rem(12.5) rem(17.5);
-
-	&,
-	&:hover,
-	&:focus,
-	&:active {
-		text-decoration: none;
-	}
-
-	&[aria-current='true'] {
-		font-weight: bold;
-	}
-
 	&--blackfriday::before {
 		content: '';
 		position: absolute;
@@ -27,27 +11,17 @@
 	}
 }
 
-@if $rtl-option==true {
-	[dir='rtl'] {
-		.topnav-list {
-			margin-left: 0;
-			margin-right: 1em;
-		}
+.topnav-list > li:not(:last-child) {
+	margin-right: 0.25em;
 
-		.topnav-icon {
-			margin-right: 0;
-			margin-left: 0.5em;
-		}
+	/* Decrease margins (was 1em) */
+	@include respond-to(1500) {
+		margin-right: 1px;
 	}
 }
 
-/* Decrease margins (was 1em) */
-@include respond-to(1500) {
-	.topnav-list {
-		> li {
-			margin-right: 1px;
-		}
-	}
+.topnav-icon {
+	margin-right: 0.5em;
 }
 
 @include respond-to(1300) {
