@@ -140,6 +140,7 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
 
             const inputMessage: PartialMessageExtended = {
                 localID: generateUID('unsubscribe'),
+                autoSaveContacts: 0, // Unsubscribe request should not save "to" address in contact list
                 plainText: Body,
                 data: {
                     AddressID: from.ID,

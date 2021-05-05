@@ -177,6 +177,11 @@ export interface MessageExtended {
     ParentID?: string;
 
     /**
+     * Override auto save contacts preference
+     */
+    autoSaveContacts?: number;
+
+    /**
      * Embedded images mapped by CID list
      */
     embeddeds?: EmbeddedMap;
