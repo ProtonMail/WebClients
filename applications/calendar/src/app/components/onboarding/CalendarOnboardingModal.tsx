@@ -1,49 +1,38 @@
 import React from 'react';
 import { c } from 'ttag';
-import { getAppName } from 'proton-shared/lib/apps/helper';
 import {
-    AppLink,
-    ButtonLike,
     OnboardingContent,
     OnboardingModal,
     OnboardingStep,
     OnboardingStepRenderCallback,
+    useSettingsLink,
 } from 'react-components';
 import { APPS } from 'proton-shared/lib/constants';
-
-import onboardingWelcome from 'design-system/assets/img/onboarding/calendar-welcome.svg';
 import { CALENDAR_APP_NAME } from 'proton-shared/lib/calendar/constants';
+import onboardingWelcome from 'design-system/assets/img/onboarding/calendar-welcome.svg';
 
 const CalendarOnboardingModal = (props: any) => {
-    const appName = getAppName(APPS.PROTONCALENDAR);
+    const goToSettings = useSettingsLink();
+    const appName = CALENDAR_APP_NAME;
 
     return (
         <OnboardingModal {...props}>
-            {({ onClose }: OnboardingStepRenderCallback) => {
-                const importEventsButton = (
-                    <ButtonLike
-                        as={AppLink}
-                        to="/calendar/calendars#import"
-                        toApp={APPS.PROTONACCOUNT}
-                        target="_self"
-                        onClick={onClose}
-                    >
-                        {c(`Onboarding ProtonCalendar`).t`Import your events`}
-                    </ButtonLike>
-                );
+            {({ onNext }: OnboardingStepRenderCallback) => {
                 return (
                     <OnboardingStep
-                        title={c(`Onboarding ProtonCalendar`).t`Your secure calendar is ready`}
-                        submit={c(`Onboarding ProtonCalendar`).t`Start using ${appName}`}
-                        onSubmit={onClose}
-                        close={importEventsButton}
+                        submit={c(`Onboarding ProtonCalendar`).t`Import events`}
+                        onSubmit={() => {
+                            goToSettings('/calendars#import', APPS.PROTONCALENDAR, true);
+                            onNext?.();
+                        }}
+                        close={c(`Onboarding ProtonCalendar`).t`Start using ${appName}`}
+                        onClose={onNext}
                     >
                         <OnboardingContent
+                            title={c(`Onboarding ProtonCalendar`).t`Meet your new encrypted calendar`}
                             description={c(`Onboarding ProtonCalendar`)
-                                .t`${CALENDAR_APP_NAME} keeps your plans secure with end-to-end encryption, so we can’t see what you’re doing.`}
+                                .t`A calendar is a record of your life. Keep your life secure and private with ${appName}.`}
                             img={<img src={onboardingWelcome} alt={appName} />}
-                            text={c(`Onboarding ProtonCalendar`)
-                                .t`We recommend importing your events from your existing calendar. Our import tool is quick and easy, and works with any other provider.`}
                         />
                     </OnboardingStep>
                 );
