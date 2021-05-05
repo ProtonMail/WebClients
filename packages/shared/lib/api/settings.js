@@ -162,3 +162,9 @@ export const updateWelcomeFlags = () => ({
     url: 'settings/welcome',
     method: 'put',
 });
+
+export const updateEarlyAccess = (data) => ({
+    url: 'settings/earlyaccess',
+    method: 'put',
+    data,
+});
