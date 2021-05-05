@@ -117,27 +117,26 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
     const handlePrev = () => onOpen?.(linksAvailableForPreview[currentOpenIndex - 1]);
 
     return (
-        <div ref={rootRef}>
-            <FilePreview
-                loading={loading}
-                contents={contents}
-                fileName={meta?.Name}
-                mimeType={meta?.MIMEType}
-                onClose={navigateToParent}
-                onSave={saveFile}
-                navigationControls={
-                    meta && (
-                        <NavigationControl
-                            current={currentOpenIndex + 1}
-                            total={linksAvailableForPreview.length}
-                            rootRef={rootRef}
-                            onPrev={handlePrev}
-                            onNext={handleNext}
-                        />
-                    )
-                }
-            />
-        </div>
+        <FilePreview
+            loading={loading}
+            contents={contents}
+            fileName={meta?.Name}
+            mimeType={meta?.MIMEType}
+            onClose={navigateToParent}
+            onSave={saveFile}
+            ref={rootRef}
+            navigationControls={
+                meta && (
+                    <NavigationControl
+                        current={currentOpenIndex + 1}
+                        total={linksAvailableForPreview.length}
+                        rootRef={rootRef}
+                        onPrev={handlePrev}
+                        onNext={handleNext}
+                    />
+                )
+            }
+        />
     );
 };
 
