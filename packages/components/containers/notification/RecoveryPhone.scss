@@ -13,7 +13,6 @@
 	margin-right: 1em;
 
 	@include respond-to($breakpoint-small, 'max') {
-		margin-bottom: 0.5em;
 		margin-right: 0;
 	}
 }
