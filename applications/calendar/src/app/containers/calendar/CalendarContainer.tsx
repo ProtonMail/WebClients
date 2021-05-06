@@ -1,43 +1,43 @@
 import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC, VIEWS } from 'proton-shared/lib/calendar/constants';
-import React, { useMemo, useState, useEffect, useReducer, useCallback, useRef, MutableRefObject } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
-import { useAppTitle, useCalendarBootstrap, useModals } from 'react-components';
+import { isSameDay, MILLISECONDS_IN_MINUTE } from 'proton-shared/lib/date-fns-utc';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
+    formatGMTOffsetAbbreviation,
     fromUTCDate,
-    toUTCDate,
     getTimezone,
-    formatTimezoneOffset,
     getTimezoneOffset,
+    toUTCDate,
 } from 'proton-shared/lib/date/timezone';
-import { isSameDay, MILLISECONDS_IN_MINUTE } from 'proton-shared/lib/date-fns-utc';
+import { Address, User, UserSettings } from 'proton-shared/lib/interfaces';
 import { Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
-import { Address, UserSettings, User } from 'proton-shared/lib/interfaces';
 import { getWeekStartsOn } from 'proton-shared/lib/settings/helper';
-import ContactEmailsProvider from './ContactEmailsProvider';
-import useCalendarsEvents from './eventStore/useCalendarsEvents';
-import CalendarContainerView from './CalendarContainerView';
-import InteractiveCalendarView from './InteractiveCalendarView';
-import AskUpdateTimezoneModal from '../settings/AskUpdateTimezoneModal';
+import React, { MutableRefObject, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
+import { useAppTitle, useCalendarBootstrap, useModals } from 'react-components';
+import { useHistory, useLocation } from 'react-router-dom';
 import {
     canAskTimezoneSuggestion,
     getTimezoneSuggestionKey,
     saveLastTimezoneSuggestion,
 } from '../../helpers/timezoneSuggestion';
+import AskUpdateTimezoneModal from '../settings/AskUpdateTimezoneModal';
+import CalendarContainerView from './CalendarContainerView';
+import ContactEmailsProvider from './ContactEmailsProvider';
+import { CalendarsEventsCache } from './eventStore/interface';
+import useCalendarsEvents from './eventStore/useCalendarsEvents';
 import getDateRange from './getDateRange';
-import getTitleDateString from './getTitleDateString';
 import {
     getAutoDetectPrimaryTimezone,
+    getDefaultTzid,
     getDefaultView,
     getDisplaySecondaryTimezone,
     getDisplayWeekNumbers,
     getSecondaryTimezone,
-    getDefaultTzid,
 } from './getSettings';
+import getTitleDateString from './getTitleDateString';
 import { fromUrlParams, toUrlParams } from './getUrlHelper';
+import InteractiveCalendarView from './InteractiveCalendarView';
 import { EventTargetAction, InteractiveRef, TimeGridRef } from './interface';
-import { CalendarsEventsCache } from './eventStore/interface';
 
 const { DAY, WEEK, MONTH } = VIEWS;
 
@@ -52,10 +52,6 @@ const getRange = (view: VIEWS, range: number) => {
         return max;
     }
     return Math.min(max, 5);
-};
-
-const formatAbbreviation = (offset: number) => {
-    return `GMT${formatTimezoneOffset(offset)}`;
 };
 
 const customReducer = (oldState: { [key: string]: any }, newState: { [key: string]: any }) => {
@@ -219,8 +215,8 @@ const CalendarContainer = ({
         const { offset } = getTimezoneOffset(startDate, tzid);
         const { offset: secondaryOffset } = getTimezoneOffset(startDate, secondaryTzid || tzid);
         return {
-            primaryTimezone: `${formatAbbreviation(offset)}`,
-            secondaryTimezone: `${formatAbbreviation(secondaryOffset)}`,
+            primaryTimezone: `${formatGMTOffsetAbbreviation(offset)}`,
+            secondaryTimezone: `${formatGMTOffsetAbbreviation(secondaryOffset)}`,
             secondaryTimezoneOffset: (secondaryOffset - offset) * MILLISECONDS_IN_MINUTE,
         };
     }, [utcDateRangeInTimezone, secondaryTzid, tzid]);
