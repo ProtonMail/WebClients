@@ -1,26 +1,29 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import { updatePhone } from 'proton-shared/lib/api/settings';
+import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
 
 import AuthModal from '../password/AuthModal';
-import { ConfirmModal, Alert, IntlTelInput, Button } from '../../components';
+import { ConfirmModal, Alert, Button, InputFieldTwo, PhoneInput, useFormErrors } from '../../components';
 import { useLoading, useModals, useNotifications, useEventManager } from '../../hooks';
+import { classnames } from '../../helpers';
 
 import './RecoveryPhone.scss';
 
 interface Props {
     phone: string | null;
     hasReset: boolean;
+    defaultCountry?: string;
+    className?: string;
 }
 
-const RecoveryPhone = ({ phone, hasReset }: Props) => {
+const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) => {
     const [input, setInput] = useState(phone || '');
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const { call } = useEventManager();
-
-    const handleChange = (status: any, value: any, countryData: any, number: string) => setInput(number);
+    const { validator, onFormSubmit } = useFormErrors();
 
     const handleSubmit = async () => {
         if (!input && hasReset) {
@@ -48,30 +51,33 @@ const RecoveryPhone = ({ phone, hasReset }: Props) => {
     };
 
     return (
-        <div className="recovery-phone_container">
-            <div className="recovery-phone_phone-input">
-                <IntlTelInput
+        <form
+            className={classnames(['recovery-phone_container', className])}
+            onSubmit={(e) => {
+                e.preventDefault();
+                if (onFormSubmit()) {
+                    withLoading(handleSubmit());
+                }
+            }}
+        >
+            <div className="mr1 flex-item-fluid min-w14e">
+                <InputFieldTwo
+                    as={PhoneInput}
                     id="phoneInput"
-                    placeholder={c('Info').t`Not set`}
-                    containerClassName="w100"
-                    inputClassName="w100"
-                    onPhoneNumberChange={handleChange}
-                    defaultValue={input}
-                    dropdownContainer="body"
-                    required
+                    className="recovery-phone_phone-input"
+                    error={validator([requiredValidator(input)])}
+                    disableChange={loading}
+                    defaultCountry={defaultCountry}
+                    value={input}
+                    onChange={setInput}
                 />
             </div>
             <div>
-                <Button
-                    color="norm"
-                    disabled={(phone || '') === input}
-                    loading={loading}
-                    onClick={() => withLoading(handleSubmit())}
-                >
+                <Button color="norm" type="submit" disabled={(phone || '') === input} loading={loading}>
                     {c('Action').t`Update`}
                 </Button>
             </div>
-        </div>
+        </form>
     );
 };
 
