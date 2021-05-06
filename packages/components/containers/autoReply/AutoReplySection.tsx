@@ -15,7 +15,6 @@ import {
     useHandler,
     useUser,
     useErrorHandler,
-    useConfig,
 } from '../../hooks';
 import { Toggle, SimpleSquireEditor, Button, Card, ButtonLike, SettingsLink } from '../../components';
 
@@ -45,7 +44,6 @@ const AutoReplySection = () => {
     const [enablingLoading, withEnablingLoading] = useLoading();
     const [updatingLoading, withUpdatingLoading] = useLoading();
     const [isEnabled, setIsEnabled] = useState(AutoResponder.IsEnabled);
-    const { APP_NAME } = useConfig();
     const { createNotification } = useNotifications();
     const { model, updateModel, toAutoResponder } = useAutoReplyForm(AutoResponder);
 
@@ -136,7 +134,7 @@ const AutoReplySection = () => {
                         {c('Info')
                             .t`Upgrade to ProtonMail Professional to enable automatic replies for when you are out of the office.`}
                     </p>
-                    <ButtonLike color="norm" as={SettingsLink} path="/dashboard" app={APP_NAME} target="_self">
+                    <ButtonLike color="norm" as={SettingsLink} path="/dashboard">
                         {c('Action').t`Upgrade`}
                     </ButtonLike>
                 </Card>

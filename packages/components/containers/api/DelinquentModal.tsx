@@ -14,14 +14,9 @@ const DelinquentModal = ({ ...rest }: Props) => {
     const title = c('Delinquent modal title').t`Overdue invoice`;
 
     const submitButton = (
-        <ButtonLike
-            onClick={rest.onClose}
-            color="norm"
-            as={SettingsLink}
-            path={getInvoicesPathname(APP_NAME)}
-            app={APP_NAME}
-            target="_self"
-        >{c('Action').t`View invoice`}</ButtonLike>
+        <ButtonLike onClick={rest.onClose} color="norm" as={SettingsLink} path={getInvoicesPathname(APP_NAME)}>{c(
+            'Action'
+        ).t`View invoice`}</ButtonLike>
     );
 
     return (
