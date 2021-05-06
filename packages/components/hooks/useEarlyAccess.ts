@@ -6,20 +6,29 @@ import useFeature from './useFeature';
 import useApi from './useApi';
 import useLoading from './useLoading';
 import useUserSettings from './useUserSettings';
-import { FeatureCode } from '../containers/features';
+import { Feature, FeatureCode } from '../containers/features';
 
 export type Environment = 'alpha' | 'beta';
 
+const getVersionCookieIsValid = (
+    versionCookie: Environment | undefined,
+    earlyAccessScope: Feature<Environment> | undefined
+) => versionCookie === undefined || earlyAccessScope?.Options?.includes(versionCookie);
+
 const getTargetEnvironment = (
     versionCookie: Environment | undefined,
-    earlyAccessScope: Environment,
+    earlyAccessScope: Feature<Environment> | undefined,
     earlyAccessUserSetting: boolean
 ): Environment | undefined => {
-    if (!earlyAccessUserSetting) {
+    if (!earlyAccessScope || !earlyAccessUserSetting) {
         return;
     }
 
-    return versionCookie || earlyAccessScope;
+    if (versionCookie === undefined || !getVersionCookieIsValid(versionCookie, earlyAccessScope)) {
+        return earlyAccessScope.Value;
+    }
+
+    return versionCookie;
 };
 
 const versionCookieAtLoad = getCookie('Version') as Environment | undefined;
@@ -37,16 +46,13 @@ const useEarlyAccess = () => {
 
     const targetEnvironment = getTargetEnvironment(
         versionCookie,
-        earlyAccessScope.feature?.Value,
+        earlyAccessScope.feature,
         Boolean(userSettings.EarlyAccess)
     );
 
     const updateVersionCookie = (environment?: Environment) => {
-        setVersionCookie(targetEnvironment);
-
-        if (!environment) {
-            deleteCookie('Version');
-        } else {
+        if (environment) {
+            setVersionCookie(environment);
             setCookie({
                 cookieName: 'Version',
                 cookieValue: environment,
@@ -54,14 +60,23 @@ const useEarlyAccess = () => {
                 path: '/',
             });
         }
-    };
 
-    useEffect(() => {
-        if (!hasLoaded) {
+        /*
+         * if there is a not-allowed cookie already set in the browser,
+         * leave it be, version will not be treated as set by it
+         */
+        if (!getVersionCookieIsValid(getCookie('Version') as Environment | undefined, earlyAccessScope.feature)) {
             return;
         }
 
-        if (versionCookie === targetEnvironment) {
+        if (!environment) {
+            setVersionCookie(environment);
+            deleteCookie('Version');
+        }
+    };
+
+    useEffect(() => {
+        if (!hasLoaded || versionCookie === targetEnvironment || versionCookie !== versionCookieAtLoad) {
             return;
         }
 
@@ -85,7 +100,11 @@ const useEarlyAccess = () => {
         updateVersionCookie(earlyAccessEnabled ? earlyAccessScopeValue : undefined);
     };
 
-    const currentEnvironmentMatchesTargetEnvironment = versionCookieAtLoad === targetEnvironment;
+    const normalizedVersionCookieAtLoad = getVersionCookieIsValid(versionCookieAtLoad, earlyAccessScope.feature)
+        ? versionCookieAtLoad
+        : undefined;
+
+    const currentEnvironmentMatchesTargetEnvironment = normalizedVersionCookieAtLoad === targetEnvironment;
     const environmentIsDesynchronized = hasLoaded && !currentEnvironmentMatchesTargetEnvironment;
     const loading = earlyAccessScope.loading || loadingUpdate;
 
