@@ -127,7 +127,7 @@ const ConversationView = ({
                 labelID={labelID}
             />
             <div
-                className={classnames(['flex-item-fluid pt0-5 pr1-5 pl1-5 max-w100 no-outline', hidden && 'hidden'])}
+                className={classnames(['flex-item-fluid pt0-5 pr1 pl1 max-w100 no-outline', hidden && 'hidden'])}
                 ref={elementRef}
                 tabIndex={-1}
             >
@@ -157,6 +157,9 @@ const ConversationView = ({
                         isComposerOpened={isComposerOpened}
                     />
                 ))}
+
+                {/* This is to see the bottom spacing */}
+                <div style={{ padding: '0.01em' }} aria-hidden="true" />
             </div>
             <UnreadMessages
                 conversationID={conversationID}
