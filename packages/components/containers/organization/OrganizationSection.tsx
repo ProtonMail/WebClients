@@ -6,7 +6,7 @@ import { hasMailProfessional, hasVisionary } from 'proton-shared/lib/helpers/sub
 import { unlockPasswordChanges } from 'proton-shared/lib/api/user';
 
 import { Row, Field, Label, Loader, Button, ButtonLike, SettingsLink, PrimaryButton } from '../../components';
-import { useConfig, useModals, useNotifications, useSubscription } from '../../hooks';
+import { useModals, useNotifications, useSubscription } from '../../hooks';
 import RestoreAdministratorPrivileges from './RestoreAdministratorPrivileges';
 import OrganizationNameModal from './OrganizationNameModal';
 import { SettingsParagraph } from '../account';
@@ -20,7 +20,6 @@ interface Props {
 
 const OrganizationSection = ({ organization, onSetupOrganization }: Props) => {
     const { createModal } = useModals();
-    const { APP_NAME } = useConfig();
     const [subscription, loadingSubscription] = useSubscription();
 
     const { createNotification } = useNotifications();
@@ -38,7 +37,7 @@ const OrganizationSection = ({ organization, onSetupOrganization }: Props) => {
                         PLAN_NAMES[PLANS.VISIONARY]
                     } or ${PLAN_NAMES[PLANS.PROFESSIONAL]} plan to get started.`}
                 </SettingsParagraph>
-                <ButtonLike color="norm" as={SettingsLink} path="/dashboard" app={APP_NAME} target="_self">
+                <ButtonLike color="norm" as={SettingsLink} path="/dashboard">
                     {c('Action').t`Upgrade`}
                 </ButtonLike>
             </>
@@ -52,7 +51,7 @@ const OrganizationSection = ({ organization, onSetupOrganization }: Props) => {
                     {c('Info')
                         .t`Create email addresses for other people, manage ProtonMail for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). `}
                 </SettingsParagraph>
-                <ButtonLike color="norm" as={SettingsLink} path="/domain-names" app={APPS.PROTONMAIL} target="_self">
+                <ButtonLike color="norm" as={SettingsLink} path="/domain-names" app={APPS.PROTONMAIL}>
                     {c('Action').t`Add domain`}
                 </ButtonLike>
             </>
