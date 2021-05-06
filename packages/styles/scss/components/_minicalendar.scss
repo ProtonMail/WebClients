@@ -94,7 +94,7 @@ $mini-calendar-currentDay-size: 2.5em !default;
 }
 
 .minicalendar-day[aria-pressed='true'] {
-	background: var(--background-strong);
+	background: var(--interaction-weak);
 	color: var(--text-norm);
 }
 
@@ -128,7 +128,7 @@ $minicalendar-day-marker-size: 3px !default;
 }
 
 .minicalendar-day--range[aria-pressed='true'] {
-	background-color: var(--background-strong);
+	background-color: var(--interaction-weak);
 
 	&:not(.minicalendar-day--range-bound-begin) {
 		border-top-left-radius: 0;
