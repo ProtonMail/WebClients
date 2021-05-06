@@ -13,6 +13,6 @@ describe('Href component', () => {
 
         expect(linkNode.getAttribute('href')).toBe(url);
         expect(linkNode.getAttribute('target')).toBe('_blank');
-        expect(linkNode.getAttribute('rel')).toBe('noopener noreferrer');
+        expect(linkNode.getAttribute('rel')).toBe('noopener noreferrer nofollow');
     });
 });

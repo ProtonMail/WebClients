@@ -8,7 +8,7 @@ export interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 const Href = (
-    { url = '#', target = '_blank', rel = 'noopener noreferrer', children, ...rest }: Props,
+    { url = '#', target = '_blank', rel = 'noopener noreferrer nofollow', children, ...rest }: Props,
     ref: React.Ref<HTMLAnchorElement>
 ) => (
     <a href={url} target={target} rel={rel} ref={ref} {...rest}>
