@@ -1,4 +1,23 @@
-import { adjustName, splitLinkName } from './link';
+import { SharedURLFlags } from '../interfaces/sharing';
+import { splitGeneratedAndCustomPassword, adjustName, splitLinkName } from './link';
+
+describe('splitGeneratedAndCustomPassword', () => {
+    it('no custom password returns only generated password', () => {
+        expect(splitGeneratedAndCustomPassword('1234567890ab', { Flags: 0 })).toEqual(['1234567890ab', '']);
+    });
+
+    it('legacy custom password returns only custom password', () => {
+        expect(splitGeneratedAndCustomPassword('abc', { Flags: SharedURLFlags.CustomPassword })).toEqual(['', 'abc']);
+    });
+
+    it('new custom password returns both generated and custom password', () => {
+        expect(
+            splitGeneratedAndCustomPassword('1234567890ababc', {
+                Flags: SharedURLFlags.CustomPassword | SharedURLFlags.GeneratedPasswordIncluded,
+            })
+        ).toEqual(['1234567890ab', 'abc']);
+    });
+});
 
 describe('adjustName', () => {
     it('should add index to a file with extension', () => {

@@ -24,12 +24,12 @@ import useConfirm from '../../hooks/util/useConfirm';
 
 interface Props {
     itemName: string;
-    initialPassword: string;
     initialExpiration: number | null;
     token: string;
     passwordToggledOn: boolean;
     expirationToggledOn: boolean;
-    customPassword: boolean;
+    generatedPassword: string;
+    customPassword: string;
     modalTitleID: string;
     deleting?: boolean;
     saving?: boolean;
@@ -44,9 +44,9 @@ function GeneratedLinkState({
     modalTitleID,
     onClose,
     itemName,
-    initialPassword,
     initialExpiration,
     token,
+    generatedPassword,
     customPassword,
     deleting,
     saving,
@@ -62,17 +62,19 @@ function GeneratedLinkState({
     const { openConfirmModal } = useConfirm();
     const baseUrl = `${window.location.origin}/urls`;
 
-    const [password, setPassword] = useState(initialPassword);
+    const [password, setPassword] = useState(customPassword);
     const [expiration, setExpiration] = useState(initialExpiration);
     const [additionalSettingsExpanded, setAdditionalSettingsExpanded] = useState(customPassword || !!initialExpiration);
 
     const isFormDirty =
         (expiration !== initialExpiration && expirationToggledOn) ||
         (initialExpiration && !expirationToggledOn) ||
-        (password !== initialPassword && passwordToggledOn);
+        (password !== customPassword && passwordToggledOn);
 
     const isSaveDisabled =
         !isFormDirty || deleting || (passwordToggledOn && !password) || (expirationToggledOn && !expiration);
+
+    const url = `${baseUrl}/${token}${generatedPassword !== '' ? `#${generatedPassword}` : ''}`;
 
     const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPassword(e.target.value);
@@ -80,10 +82,7 @@ function GeneratedLinkState({
 
     const handleCopyURLClick = () => {
         if (contentRef.current) {
-            textToClipboard(
-                !passwordToggledOn ? `${baseUrl}/${token}#${initialPassword}` : `${baseUrl}/${token}`,
-                contentRef.current
-            );
+            textToClipboard(url, contentRef.current);
             createNotification({
                 text: c('Success').t`The link to your file was successfully copied.`,
             });
@@ -91,14 +90,14 @@ function GeneratedLinkState({
     };
 
     const handleSubmit = async () => {
-        const newPassword = password !== initialPassword ? password : undefined;
+        const newCustomPassword = password !== customPassword ? password : undefined;
         let newDuration: number | null | undefined = null;
         if (expirationToggledOn) {
             newDuration =
                 expiration && expiration !== initialExpiration ? expiration - getUnixTime(Date.now()) : undefined;
         }
 
-        const result = await onSaveLinkClick(newPassword, newDuration);
+        const result = await onSaveLinkClick(newCustomPassword, newDuration);
 
         // Because we are dealing with duration, ExpirationTime on server is expiration + request time.
         if (result && result?.ExpirationTime) {
@@ -125,8 +124,6 @@ function GeneratedLinkState({
             {`${itemName}`}
         </b>
     );
-
-    const url = `${baseUrl}/${token}${!passwordToggledOn ? `#${initialPassword}` : ''}`;
 
     return (
         <>
@@ -193,12 +190,12 @@ function GeneratedLinkState({
                                         <Toggle
                                             id="passwordModeToggle"
                                             className="on-mobile-mb0-5"
-                                            disabled={customPassword || saving}
+                                            disabled={!!customPassword || saving}
                                             checked={passwordToggledOn}
                                             onChange={() => {
                                                 onIncludePasswordToggle();
                                                 if (!passwordToggledOn) {
-                                                    setPassword(initialPassword);
+                                                    setPassword(customPassword);
                                                 }
                                             }}
                                             data-testid="sharing-modal-passwordModeToggle"

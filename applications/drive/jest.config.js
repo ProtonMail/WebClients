@@ -5,7 +5,7 @@ module.exports = {
     transform: {
         '^.+\\.(js|tsx?)$': '<rootDir>/jest.transform.js',
     },
-    collectCoverage: true,
+    collectCoverage: false,
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
     transformIgnorePatterns: ['node_modules/(?!(proton-shared|react-components|mutex-browser)/)'],
     moduleNameMapper: {

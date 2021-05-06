@@ -70,6 +70,7 @@ export interface InitHandshake {
     UrlPasswordSalt: string;
     SRPSession: string;
     Version: AuthVersion;
+    Flags: number;
 }
 
 export interface SharedLinkInfo {
@@ -102,5 +103,12 @@ export interface SharedURLSessionKeyPayload {
 }
 
 export enum SharedURLFlags {
+    // CustomPassword flag is set by both types, legacy and new, of custom
+    // password. Legacy has set only CustomPassword, whereas the new type
+    // has both CustomPassword and GeneratedPasswordIncluded. That is for
+    // easier detection whether user should be asked for the password.
+    // All new shares should use new logic, and the legacy mode should be
+    // removed when all old shares are cancelled.
     CustomPassword = 1,
+    GeneratedPasswordIncluded,
 }
