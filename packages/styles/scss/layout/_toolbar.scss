@@ -7,7 +7,7 @@
 	height: rem($toolbar-height);
 	border-bottom: 1px solid
 		var(--toolbar-border-bottom-color, var(--border-norm));
-	background-color: var(--toolbar-background-color, var(--background-norm));
+	background-color: var(--toolbar-background-color, var(--background-weak));
 	color: var(--toolbar-text-color, var(--text-norm));
 }
 
