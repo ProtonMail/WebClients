@@ -721,7 +721,7 @@ const InteractiveCalendarView = ({
         });
         await sendIcsAction();
         return {
-            veventComponent: cleanVeventWithDtstamp,
+            veventComponent: cleanVevent,
             inviteActions: cleanInviteActions,
             timestamp: currentTimestamp,
         };
