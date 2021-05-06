@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Row, useLoading, Radio, Label, Field } from 'react-components';
+import { Row, useLoading, Radio, Label, Field, useMyLocation } from 'react-components';
 import { c } from 'ttag';
 import { TOKEN_TYPES } from 'proton-shared/lib/constants';
 import VerificationEmailInput from './VerificationEmailInput';
@@ -12,6 +12,9 @@ const VERIFICATION_METHOD = {
 };
 
 const VerificationMethodForm = ({ defaultEmail, allowedMethods, onSubmit }) => {
+    const [myLocation, loadingMyLocation] = useMyLocation();
+    const defaultCountry = myLocation?.Country?.toUpperCase();
+
     const isMethodAllowed = (method) => allowedMethods.includes(method);
     const defaultMethod = Object.values(VERIFICATION_METHOD).find(isMethodAllowed);
 
@@ -58,8 +61,12 @@ const VerificationMethodForm = ({ defaultEmail, allowedMethods, onSubmit }) => {
                                     onSendClick={handleSendEmailCode}
                                 />
                             )}
-                            {method === VERIFICATION_METHOD.SMS && (
-                                <VerificationPhoneInput loading={loading} onSendClick={handleSendSMSCode} />
+                            {method === VERIFICATION_METHOD.SMS && !loadingMyLocation && (
+                                <VerificationPhoneInput
+                                    loading={loading}
+                                    onSendClick={handleSendSMSCode}
+                                    defaultCountry={defaultCountry}
+                                />
                             )}
                         </div>
                     </Field>
