@@ -3,6 +3,7 @@ export const BLOCKQUOTE_SELECTORS = [
     '.gmail_quote',
     '.yahoo_quoted',
     '.gmail_extra',
+    '.zmail_extra', // zoho
     '.moz-cite-prefix',
     // '.WordSection1',
     '#isForwardContent',
@@ -13,7 +14,6 @@ export const BLOCKQUOTE_SELECTORS = [
     '#oriMsgHtmlSeperator',
     'blockquote[type="cite"]',
     '[name="quote"]', // gmx
-    '.zmail_extra', // zoho
 ];
 
 const BLOCKQUOTE_TEXT_SELECTORS = ['-----Original Message-----'];
