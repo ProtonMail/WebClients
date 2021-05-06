@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { useHistory, useLocation } from 'react-router';
 import { updateAddress } from 'proton-shared/lib/api/addresses';
@@ -165,10 +165,7 @@ const OnboardingModal = ({
         <OnboardingStep
             submit={children ? c('Action').t`Next` : c('Action').t`Done`}
             close={null}
-            onSubmit={() => {
-                void handleUpdateWelcomeFlags();
-                handleNext();
-            }}
+            onSubmit={handleNext}
         >
             <OnboardingDiscoverApps />
         </OnboardingStep>
@@ -214,6 +211,14 @@ const OnboardingModal = ({
     }
 
     const childStepProps = childStep.props;
+
+    const onceRef = useRef(false);
+    useEffect(() => {
+        if (isLastStep && !onceRef.current) {
+            onceRef.current = true;
+            handleUpdateWelcomeFlags();
+        }
+    }, [isLastStep]);
 
     useEffect(() => {
         // Once the modal is open, we clear the welcome URL parameter to avoid having this modal appearing after refresh or back history
