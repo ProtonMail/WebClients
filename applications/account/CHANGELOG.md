@@ -5,7 +5,7 @@
 - Redesigned illustrations and refined the look and feel of various parts of the app
 - Reorganized settings to make them easier to find
 - Account registration and sign in flow improvements
-- New subscription customisation options and interface
+- New subscription customization options and interface
 
 ---
 
