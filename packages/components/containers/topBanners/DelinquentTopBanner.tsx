@@ -15,13 +15,8 @@ const DelinquentTopBanner = () => {
         return null;
     }
     const payInvoiceLink = (
-        <SettingsLink
-            app={APP_NAME}
-            key="pay-invoices"
-            className="color-inherit"
-            path={getInvoicesPathname(APP_NAME)}
-            target="_self"
-        >{c('Link').t`Pay invoice`}</SettingsLink>
+        <SettingsLink key="pay-invoices" className="color-inherit" path={getInvoicesPathname(APP_NAME)}>{c('Link')
+            .t`Pay invoice`}</SettingsLink>
     );
     if (user.canPay) {
         if (user.Delinquent === UNPAID_STATE.NO_RECEIVE) {
