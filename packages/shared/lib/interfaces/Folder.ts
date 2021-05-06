@@ -2,7 +2,7 @@ export interface Folder {
     ID: string;
     Name: string;
     Color: string;
-    Path?: string;
+    Path: string;
     Expanded: number;
     Type: number;
     Order: number;
