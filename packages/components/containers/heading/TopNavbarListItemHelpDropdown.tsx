@@ -66,7 +66,7 @@ const TopNavbarListItemHelpDropdown = <E extends React.ElementType = typeof defa
         >
             <DropdownMenu>
                 <DropdownMenuLink
-                    className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                    className="text-left"
                     href={
                         APP_NAME === APPS.PROTONVPN_SETTINGS
                             ? 'https://protonvpn.com/support/'
@@ -76,7 +76,6 @@ const TopNavbarListItemHelpDropdown = <E extends React.ElementType = typeof defa
                     target="_blank"
                 >
                     {c('Action').t`Frequently asked questions`}
-                    <Icon className="ml1" name="external-link" />
                 </DropdownMenuLink>
 
                 {APP_NAME !== APPS.PROTONVPN_SETTINGS && (
@@ -87,13 +86,8 @@ const TopNavbarListItemHelpDropdown = <E extends React.ElementType = typeof defa
 
                 <hr className="mt0-5 mb0-5" />
 
-                <DropdownMenuLink
-                    className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
-                    href="https://protonmail.uservoice.com/"
-                    target="_blank"
-                >
+                <DropdownMenuLink className="text-left" href="https://protonmail.uservoice.com/" target="_blank">
                     {c('Action').t`Request a feature`}
-                    <Icon className="ml1" name="external-link" />
                 </DropdownMenuLink>
 
                 <DropdownMenuButton className="text-left" onClick={handleBugReportClick}>
@@ -102,13 +96,8 @@ const TopNavbarListItemHelpDropdown = <E extends React.ElementType = typeof defa
 
                 <hr className="mt0-5 mb0-5" />
 
-                <DropdownMenuLink
-                    className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
-                    href="https://shop.protonmail.com"
-                    target="_blank"
-                >
+                <DropdownMenuLink className="text-left" href="https://shop.protonmail.com" target="_blank">
                     {c('Action').t`${BRAND_NAME} shop`}
-                    <Icon className="ml1" name="external-link" />
                 </DropdownMenuLink>
 
                 {canPay && !isSubUser && (

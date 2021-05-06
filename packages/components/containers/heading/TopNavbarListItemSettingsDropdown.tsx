@@ -62,15 +62,8 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
             dropdownStyle={{ '--min-width': '16em' }}
         >
             <DropdownMenu className="mt0-5 mb0-5">
-                <DropdownMenuLink
-                    as={AppLink}
-                    to={to}
-                    toApp={toApp}
-                    target="_self"
-                    className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
-                >
+                <DropdownMenuLink as={AppLink} to={to} toApp={toApp} target="_self">
                     {c('Action').t`Go to settings`}
-                    <Icon className="ml1" name="external-link" />
                 </DropdownMenuLink>
 
                 <hr className="mt0-5 mb0-5" />
