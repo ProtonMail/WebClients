@@ -70,12 +70,6 @@ export enum RESPONSE_CODE {
     ALREADY_EXISTS = 2500,
 }
 
-export enum DOWNLOAD_SHARED_STATE {
-    ENTER_PASS = 0,
-    DOWNLOAD = 1,
-    DOES_NOT_EXIST = 2,
-}
-
 export const fileDescriptions: { [type: string]: string } = {
     [SupportedMimeTypes.aac]: 'AAC audio',
     [SupportedMimeTypes.avi]: 'AVI: Audio Video Interleave',
