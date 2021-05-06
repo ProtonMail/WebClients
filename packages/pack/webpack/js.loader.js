@@ -64,6 +64,7 @@ const getBabelLoader = ({ isProduction = false, hasReactRefresh = true, isTtag =
                 '@babel/plugin-proposal-nullish-coalescing-operator',
                 '@babel/plugin-proposal-optional-chaining',
                 ['@babel/plugin-proposal-class-properties', { loose: true }],
+                ['@babel/plugin-proposal-private-methods', { loose: true }],
                 require.resolve('babel-plugin-lodash'),
                 '@babel/plugin-transform-runtime',
                 ...(isTtag ? [['ttag', { extract: { output: 'i18n/template.pot' } }]] : []),
