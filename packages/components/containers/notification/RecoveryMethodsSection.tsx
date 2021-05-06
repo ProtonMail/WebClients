@@ -13,6 +13,7 @@ import {
     useEventManager,
     useNotifications,
     useConfig,
+    useMyLocation,
 } from '../../hooks';
 
 import AuthModal from '../password/AuthModal';
@@ -35,8 +36,10 @@ const RecoveryMethodsSection = () => {
     const { call } = useEventManager();
     const api = useApi();
     const { CLIENT_TYPE } = useConfig();
+    const [myLocation, loadingMyLocation] = useMyLocation();
+    const defaultCountry = myLocation?.Country?.toUpperCase();
 
-    if (loadingUserSettings || !userSettings) {
+    if (loadingUserSettings || !userSettings || loadingMyLocation) {
         return <Loader />;
     }
 
@@ -90,14 +93,13 @@ const RecoveryMethodsSection = () => {
                         {c('Label').t`Email address`}
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight>
-                    <div className="mb1">
-                        <RecoveryEmail
-                            email={userSettings.Email.Value}
-                            hasReset={!!userSettings.Email.Reset}
-                            hasNotify={!!userSettings.Email.Notify}
-                        />
-                    </div>
+                <SettingsLayoutRight className="flex-item-fluid">
+                    <RecoveryEmail
+                        className="mb1"
+                        email={userSettings.Email.Value}
+                        hasReset={!!userSettings.Email.Reset}
+                        hasNotify={!!userSettings.Email.Notify}
+                    />
                     <div className="mb1 flex flex-align-items-center">
                         <Toggle
                             className="mr0-5"
@@ -147,10 +149,13 @@ const RecoveryMethodsSection = () => {
                                 {c('label').t`Phone number`}
                             </label>
                         </SettingsLayoutLeft>
-                        <SettingsLayoutRight>
-                            <div className="mb1">
-                                <RecoveryPhone phone={userSettings.Phone.Value} hasReset={!!userSettings.Phone.Reset} />
-                            </div>
+                        <SettingsLayoutRight className="flex-item-fluid">
+                            <RecoveryPhone
+                                className="mb1"
+                                defaultCountry={defaultCountry}
+                                phone={userSettings.Phone.Value}
+                                hasReset={!!userSettings.Phone.Reset}
+                            />
                             <div className="flex flex-align-items-center">
                                 <Toggle
                                     className="mr0-5"

@@ -8,14 +8,16 @@ import { useLoading, useModals, useNotifications, useEventManager } from '../../
 import AuthModal from '../password/AuthModal';
 
 import './RecoveryEmail.scss';
+import { classnames } from '../../helpers';
 
 interface Props {
     email: string | null;
     hasReset: boolean;
     hasNotify: boolean;
+    className?: string;
 }
 
-const RecoveryEmail = ({ email, hasReset, hasNotify }: Props) => {
+const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
     const [input, setInput] = useState(email);
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
@@ -61,7 +63,7 @@ const RecoveryEmail = ({ email, hasReset, hasNotify }: Props) => {
 
     return (
         <form
-            className="recovery-email_container"
+            className={classnames(['recovery-email_container', className])}
             onSubmit={(e) => {
                 e.preventDefault();
                 if (onFormSubmit()) {
@@ -69,11 +71,12 @@ const RecoveryEmail = ({ email, hasReset, hasNotify }: Props) => {
                 }
             }}
         >
-            <div className="text-ellipsis mr1" title={email || ''}>
+            <div className="mr1 flex-item-fluid min-w14e" title={email || ''}>
                 <InputFieldTwo
                     type="email"
                     autoComplete="email"
                     id="recovery-email-input"
+                    disableChange={loading}
                     className="recovery-email_email-input"
                     value={input || ''}
                     placeholder={c('Info').t`Not set`}
