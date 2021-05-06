@@ -8,7 +8,6 @@ export { default as InputButton } from './InputButton';
 export * from './InputButton';
 export { default as LegacyInputField } from './LegacyInputField';
 export { default as IntegerInput } from './IntegerInput';
-export { default as IntlTelInput } from './IntlTelInput/IntlTelInput';
 export { default as PasswordInput } from './PasswordInput';
 export { default as Radio } from './Radio';
 export { default as LayoutCard } from './LayoutCard';
