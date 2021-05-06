@@ -7,6 +7,7 @@ export interface Feature<V = any> {
     Type: FeatureType;
     DefaultValue: V;
     Value: V;
+    Options?: string[];
     Minimum: number;
     Maximum: number;
     Global: boolean;
