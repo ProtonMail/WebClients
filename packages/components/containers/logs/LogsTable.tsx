@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import { SETTINGS_LOG_AUTH_STATE } from 'proton-shared/lib/interfaces';
-import { getAuthLogEventsI18N, AuthLog, AUTH_LOG_EVENTS } from 'proton-shared/lib/authlog';
+import { AuthLog, AUTH_LOG_EVENTS } from 'proton-shared/lib/authlog';
 
 import { Alert, Icon, Table, TableBody, TableCell, TableHeader, TableRow, Time } from '../../components';
 
@@ -53,13 +53,13 @@ const LogsTable = ({ logs, logAuth, loading, error }: Props) => {
                 <TableCell className="text-right">{c('Header').t`Time`}</TableCell>
             </TableHeader>
             <TableBody loading={loading} colSpan={3}>
-                {logs.map(({ Time: time, Event, IP }, index) => {
+                {logs.map(({ Time: time, Event, Description, IP }, index) => {
                     const key = index.toString();
 
                     return (
                         <TableRow key={key}>
                             <TableCell>
-                                {getIcon(Event)} {getAuthLogEventsI18N(Event)}
+                                {getIcon(Event)} {Description}
                             </TableCell>
                             {logAuth === ADVANCED && (
                                 <TableCell>
