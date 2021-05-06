@@ -45,7 +45,7 @@ const EarlyAccessModal = (props: { onClose?: () => void }) => {
                     .t`Early access gives you access to the beta version of Proton which has new features and improvements. Our beta versions undergo the same reliability testing as our public versions, but if you encounter any issues, you can switch off early access.`}
             </p>
             <div className="mb0-5 flex flex-align-items-center">
-                <label htmlFor="enable-early-access-checkbox">
+                <label className="flex flex-nowrap" htmlFor="enable-early-access-checkbox">
                     <Checkbox
                         id="enable-early-access-checkbox"
                         checked={earlyAccessEnabled}
