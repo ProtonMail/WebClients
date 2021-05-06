@@ -1,6 +1,6 @@
 import React from 'react';
 import { APPS, APP_NAMES } from 'proton-shared/lib/constants';
-import { getAppFromPathnameSafe, getSlugFromApp } from 'proton-shared/lib/apps/slugHelper';
+import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from 'proton-shared/lib/apps/slugHelper';
 import { useLocation } from 'react-router-dom';
 import AppLink, { Props as AppLinkProps } from './AppLink';
 import { useConfig } from '../../hooks';
@@ -22,11 +22,24 @@ const SettingsLink = ({ path, app, children, ...rest }: Props, ref: React.Ref<HT
         );
     }
 
-    const settingsApp = APP_NAME === APPS.PROTONACCOUNT ? getAppFromPathnameSafe(location.pathname) : undefined;
-    const slug = getSlugFromApp(settingsApp || app || APP_NAME);
+    const settingsApp =
+        APP_NAME === APPS.PROTONACCOUNT ? getAppFromPathnameSafe(location.pathname) || DEFAULT_APP : undefined;
+    // Don't allow to go for settings to proton account
+    const toSettingsForApp = (app !== APPS.PROTONACCOUNT ? app : undefined) || settingsApp || APP_NAME;
+    const slug = getSlugFromApp(toSettingsForApp);
+
+    // If in the "settings app", otherwise if any other app
+    const isGoingToSameSettings = settingsApp ? settingsApp === toSettingsForApp : APP_NAME === toSettingsForApp;
 
     return (
-        <AppLink to={`/${slug}${path}`} ref={ref} toApp={APPS.PROTONACCOUNT} {...rest}>
+        <AppLink
+            to={`/${slug}${path}`}
+            ref={ref}
+            toApp={APPS.PROTONACCOUNT}
+            // If going to settings for the same app
+            target={isGoingToSameSettings ? '_self' : '_blank'}
+            {...rest}
+        >
             {children}
         </AppLink>
     );

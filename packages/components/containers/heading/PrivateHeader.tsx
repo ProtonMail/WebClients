@@ -104,7 +104,6 @@ const PrivateHeader = ({
                                 text={c('Link').t`Upgrade`}
                                 icon={<Icon name="upgrade" />}
                                 path="/dashboard"
-                                app={APP_NAME}
                                 title={c('Link').t`Go to subscription plans`}
                             />
                         </TopNavbarListItem>
