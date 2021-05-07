@@ -7,7 +7,6 @@ import { Alert, Button, ConfirmModal, InputFieldTwo, useFormErrors } from '../..
 import { useLoading, useModals, useNotifications, useEventManager } from '../../hooks';
 import AuthModal from '../password/AuthModal';
 
-import './RecoveryEmail.scss';
 import { classnames } from '../../helpers';
 
 interface Props {
@@ -63,7 +62,7 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
 
     return (
         <form
-            className={classnames(['recovery-email_container', className])}
+            className={classnames(['flex flex-wrap on-mobile-flex-column', className])}
             onSubmit={(e) => {
                 e.preventDefault();
                 if (onFormSubmit()) {
@@ -71,20 +70,19 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                 }
             }}
         >
-            <div className="mr1 flex-item-fluid min-w14e" title={email || ''}>
+            <div className="mr1 on-mobile-mr0 flex-item-fluid min-w14e" title={email || ''}>
                 <InputFieldTwo
                     type="email"
                     autoComplete="email"
                     id="recovery-email-input"
                     disableChange={loading}
-                    className="recovery-email_email-input"
                     value={input || ''}
                     placeholder={c('Info').t`Not set`}
                     error={validator([requiredValidator(input), emailValidator(input || '')])}
                     onValue={setInput}
                 />
             </div>
-            <div>
+            <div className="mb0-5">
                 <Button type="submit" color="norm" disabled={email === input} loading={loading}>
                     {c('Action').t`Update`}
                 </Button>
