@@ -1,5 +1,10 @@
 import { API_CODES } from 'proton-shared/lib/constants';
-import { SyncMultipleApiResponse, SyncMultipleApiResponses } from 'proton-shared/lib/interfaces/calendar';
+import {
+    SyncMultipleApiResponse,
+    SyncMultipleApiResponses,
+    UpdateEventPartApiResponse,
+} from 'proton-shared/lib/interfaces/calendar';
+import { UpdatePartstatOperation, UpdatePersonalPartOperation } from '../../../../interfaces/Invite';
 import upsertCalendarApiEvent from './upsertCalendarApiEvent';
 import { getIsDeleteSyncOperation, SyncEventActionOperations } from '../../getSyncMultipleEventsPayload';
 import { CalendarsEventsCache } from '../interface';
@@ -42,6 +47,26 @@ export const upsertSyncMultiActionsResponses = (
                     upsertCalendarApiEvent(matchingEvent, calendarEventsCache);
                 }
             }
+        }
+    }
+};
+
+export const upsertUpdateEventPartResponses = (
+    operations: (UpdatePartstatOperation | UpdatePersonalPartOperation)[],
+    responses: UpdateEventPartApiResponse[],
+    calendarsEventsCache: CalendarsEventsCache
+) => {
+    for (let i = 0; i < operations.length; ++i) {
+        const operation = operations[i];
+        const { Code, Event } = responses[i];
+        const calendarEventsCache = calendarsEventsCache.calendars[operation.data.calendarID];
+
+        if (!calendarEventsCache) {
+            continue;
+        }
+
+        if (Code === API_CODES.SINGLE_SUCCESS) {
+            upsertCalendarApiEvent(Event, calendarEventsCache);
         }
     }
 };
