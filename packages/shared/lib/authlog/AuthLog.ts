@@ -24,6 +24,7 @@ export enum AUTH_LOG_EVENTS {
 
 export interface AuthLog {
     AppVersion: string;
+    Description: string;
     Event: AUTH_LOG_EVENTS;
     IP: string;
     Time: number;
