@@ -6,7 +6,7 @@ import { updateLogAuth } from 'proton-shared/lib/api/settings';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { SETTINGS_LOG_AUTH_STATE } from 'proton-shared/lib/interfaces';
 import { wait } from 'proton-shared/lib/helpers/promise';
-import { AuthLog, getAuthLogEventsI18N } from 'proton-shared/lib/authlog';
+import { AuthLog } from 'proton-shared/lib/authlog';
 import { Alert, Button, ConfirmModal, Icon, Info, Pagination, Toggle, usePaginationAsync } from '../../components';
 import { useApi, useLoading, useModals, useUserSettings } from '../../hooks';
 
@@ -47,8 +47,8 @@ const LogsSection = () => {
         const Logs = await getAllAuthenticationLogs(api);
 
         const data = Logs.reduce(
-            (acc, { Event, Time, IP }) => {
-                acc.push(`${getAuthLogEventsI18N(Event)},${fromUnixTime(Time).toISOString()},${IP}`);
+            (acc, { Description, Time, IP }) => {
+                acc.push(`${Description},${fromUnixTime(Time).toISOString()},${IP}`);
                 return acc;
             },
             [['Event', 'Time', 'IP'].join(',')]
