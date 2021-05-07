@@ -168,3 +168,9 @@ export const updateEarlyAccess = (data) => ({
     method: 'put',
     data,
 });
+
+export const updateFlags = (Flags) => ({
+    url: 'settings/flags',
+    method: 'put',
+    data: { Flags },
+});

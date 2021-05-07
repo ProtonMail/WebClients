@@ -81,4 +81,5 @@ export interface UserSettings {
     TimeFormat: SETTINGS_TIME_FORMAT;
     Welcome: number;
     EarlyAccess: number;
+    Flags: number;
 }
