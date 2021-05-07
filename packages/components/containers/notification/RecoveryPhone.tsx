@@ -8,8 +8,6 @@ import { ConfirmModal, Alert, Button, InputFieldTwo, PhoneInput, useFormErrors }
 import { useLoading, useModals, useNotifications, useEventManager } from '../../hooks';
 import { classnames } from '../../helpers';
 
-import './RecoveryPhone.scss';
-
 interface Props {
     phone: string | null;
     hasReset: boolean;
@@ -52,7 +50,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
 
     return (
         <form
-            className={classnames(['recovery-phone_container', className])}
+            className={classnames(['flex flex-wrap on-mobile-flex-column', className])}
             onSubmit={(e) => {
                 e.preventDefault();
                 if (onFormSubmit()) {
@@ -60,11 +58,10 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                 }
             }}
         >
-            <div className="mr1 flex-item-fluid min-w14e">
+            <div className="mr1 on-mobile-mr0 flex-item-fluid min-w14e">
                 <InputFieldTwo
                     as={PhoneInput}
                     id="phoneInput"
-                    className="recovery-phone_phone-input"
                     error={validator([requiredValidator(input)])}
                     disableChange={loading}
                     defaultCountry={defaultCountry}
@@ -72,7 +69,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                     onChange={setInput}
                 />
             </div>
-            <div>
+            <div className="mb0-5">
                 <Button color="norm" type="submit" disabled={(phone || '') === input} loading={loading}>
                     {c('Action').t`Update`}
                 </Button>
