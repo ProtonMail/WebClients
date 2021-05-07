@@ -123,6 +123,7 @@ const List = (
                     isSearch={isSearch}
                     loading={loading}
                     userSettings={userSettings}
+                    mailSettings={mailSettings}
                 />
                 {expectedLength === 0 ? (
                     <EmptyView labelID={labelID} isSearch={isSearch} />
