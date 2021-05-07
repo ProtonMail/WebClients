@@ -166,9 +166,3 @@ export const updateInheritParentFolderColor = (InheritParentFolderColor: number)
     method: 'put',
     data: { InheritParentFolderColor },
 });
-
-export const updateFlags = (Flags: number) => ({
-    url: 'mail/v4/settings/flags',
-    method: 'put',
-    data: { Flags },
-});
