@@ -9,6 +9,7 @@ import {
     useModals,
     LocationErrorBoundary,
     MailShortcutsModal,
+    BetaOnboardingModal,
 } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { MailSettings } from 'proton-shared/lib/interfaces';
@@ -45,8 +46,36 @@ const PageContainer = ({
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
 
     useEffect(() => {
+        const queryParams = new URLSearchParams(location.search);
+
+        const shouldOpenBetaOnboardingModal = queryParams.has('beta');
+        if (shouldOpenBetaOnboardingModal) {
+            queryParams.delete('beta');
+            history.replace({
+                search: queryParams.toString(),
+            });
+        }
+
         if (welcomeFlags.isWelcomeFlow) {
-            createModal(<MailOnboardingModal onDone={setWelcomeFlagsDone} />);
+            createModal(
+                <MailOnboardingModal
+                    onDone={() => {
+                        if (shouldOpenBetaOnboardingModal) {
+                            createModal(
+                                <BetaOnboardingModal
+                                    onClose={() => {
+                                        setWelcomeFlagsDone();
+                                    }}
+                                />
+                            );
+                        } else {
+                            setWelcomeFlagsDone();
+                        }
+                    }}
+                />
+            );
+        } else if (shouldOpenBetaOnboardingModal) {
+            createModal(<BetaOnboardingModal />);
         }
     }, []);
 
@@ -112,5 +141,4 @@ const PageParamsParser = (props: PageParamsParserProps) => {
 
     return <MemoPageContainer {...props} params={params} />;
 };
-
 export default PageParamsParser;
