@@ -37,7 +37,6 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand }: Accoun
         [APPS.PROTONMAIL]: c('Navigation').t`Back to Mailbox`,
         [APPS.PROTONCALENDAR]: c('Navigation').t`Back to Calendar`,
         [APPS.PROTONCONTACTS]: c('Navigation').t`Back to Contacts`,
-        [APPS.PROTONVPN_SETTINGS]: c('Navigation').t`Back to ProtonVPN`,
         [APPS.PROTONDRIVE]: c('Navigation').t`Back to Drive`,
     };
 

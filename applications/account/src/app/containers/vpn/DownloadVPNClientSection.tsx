@@ -8,7 +8,7 @@ const DownloadVPNClientSection = () => {
         <SettingsSectionWide>
             <SettingsParagraph>
                 {c('Info')
-                    .t`To start securing your internet connection, you need to install ProtonVPN application for your device and connect to ProtonVPN server.`}
+                    .t`To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.`}
             </SettingsParagraph>
             <div className="flex on-mobile-flex-column">
                 <DownloadVPNClientCard
@@ -24,17 +24,17 @@ const DownloadVPNClientSection = () => {
                 <DownloadVPNClientCard
                     title={c('VPNClient').t`Windows`}
                     icon="windows"
-                    link="https://protonvpn.com/download/"
+                    link="https://protonvpn.com/download-windows/"
                 />
                 <DownloadVPNClientCard
                     title={c('VPNClient').t`macOS`}
-                    icon="apple"
-                    link="https://protonvpn.com/download/"
+                    icon="macos"
+                    link="https://protonvpn.com/download-macos/"
                 />
                 <DownloadVPNClientCard
                     title={c('VPNClient').t`GNU/Linux`}
                     icon="linux"
-                    link=" https://protonvpn.com/support/official-linux-client/"
+                    link="https://protonvpn.com/download-linux/"
                 />
                 <DownloadVPNClientCard
                     title={c('VPNClient').t`ChromeBook`}
@@ -46,7 +46,6 @@ const DownloadVPNClientSection = () => {
                     icon="tv"
                     link="https://play.google.com/store/apps/details?id=ch.protonvpn.android&utm_source=protonvpn.com&utm_content=dashboard"
                 />
-                <DownloadVPNClientCard textExample icon="contacts-group-people" />
             </div>
         </SettingsSectionWide>
     );
