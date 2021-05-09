@@ -895,13 +895,6 @@ const InteractiveCalendarView = ({
             multiResponses.push(result);
         }
 
-        const calendarsEventCache = calendarsEventsCacheRef.current;
-        if (calendarsEventCache) {
-            upsertSyncMultiActionsResponses(multiActions, multiResponses, calendarsEventCache);
-        }
-        await handleUpdateVisibility(multiActions.map(({ calendarID }) => calendarID));
-        calendarsEventCache.rerender?.();
-
         return multiResponses;
     };
 
@@ -910,26 +903,19 @@ const InteractiveCalendarView = ({
             return [];
         }
         const requests = updatePartstatOperations.map(
-            ({ data: { eventID, calendarID, attendeeID, updateTime, partstat } }) => () =>
-                api<UpdateEventPartApiResponse>({
-                    ...updateAttendeePartstat(calendarID, eventID, attendeeID, {
-                        Status: toApiPartstat(partstat),
-                        UpdateTime: updateTime,
-                    }),
-                    silence: true,
-                })
+            ({ data: { eventID, calendarID, attendeeID, updateTime, partstat } }) =>
+                () =>
+                    api<UpdateEventPartApiResponse>({
+                        ...updateAttendeePartstat(calendarID, eventID, attendeeID, {
+                            Status: toApiPartstat(partstat),
+                            UpdateTime: updateTime,
+                        }),
+                        silence: true,
+                    })
         );
         // the routes called in requests do not have any specific jail limit
         // the limit per user session is 25k requests / 900s
         const responses = await processApiRequestsSafe(requests, 25000, 900 * SECOND);
-
-        const calendarsEventCache = calendarsEventsCacheRef.current;
-
-        if (calendarsEventCache) {
-            upsertUpdateEventPartResponses(updatePartstatOperations, responses, calendarsEventCache);
-        }
-        await handleUpdateVisibility(updatePartstatOperations.map(({ data: { calendarID } }) => calendarID));
-        calendarsEventCache.rerender?.();
 
         return responses;
     };
@@ -941,31 +927,25 @@ const InteractiveCalendarView = ({
             return [];
         }
         const requests = updatePersonalPartOperations.map(
-            ({ data: { addressID, memberID, eventID, calendarID, eventComponent } }) => async () => {
-                const payload = await getUpdatePersonalEventPayload({
-                    eventComponent,
-                    addressID,
-                    memberID,
-                    getAddressKeys,
-                });
-                return api<UpdateEventPartApiResponse>({
-                    ...updatePersonalEventPart(calendarID, eventID, payload),
-                    silence: true,
-                });
-            }
+            ({ data: { addressID, memberID, eventID, calendarID, eventComponent } }) =>
+                async () => {
+                    const payload = await getUpdatePersonalEventPayload({
+                        eventComponent,
+                        addressID,
+                        memberID,
+                        getAddressKeys,
+                    });
+                    return api<UpdateEventPartApiResponse>({
+                        ...updatePersonalEventPart(calendarID, eventID, payload),
+                        silence: true,
+                    });
+                }
         );
         // Catch errors silently
         try {
             // the routes called in requests do not have any specific jail limit
             // the limit per user session is 25k requests / 900s
             const responses = await processApiRequestsSafe(requests, 25000, 900 * SECOND);
-
-            const calendarsEventCache = calendarsEventsCacheRef.current;
-            if (calendarsEventCache) {
-                upsertUpdateEventPartResponses(updatePersonalPartOperations, responses, calendarsEventCache);
-            }
-            await handleUpdateVisibility(updatePersonalPartOperations.map(({ data: { calendarID } }) => calendarID));
-            calendarsEventCache.rerender?.();
 
             return responses;
         } catch (e) {
@@ -1035,22 +1015,18 @@ const InteractiveCalendarView = ({
 
     const handleDeleteEvent = async (targetEvent: CalendarViewEvent, inviteActions: InviteActions) => {
         try {
-            const {
-                syncActions,
-                updatePartstatActions,
-                updatePersonalPartActions,
-                texts,
-            } = await getDeleteEventActions({
-                targetEvent,
-                addresses,
-                onDeleteConfirmation: handleDeleteConfirmation,
-                api,
-                getEventDecrypted,
-                getCalendarBootstrap: readCalendarBootstrap,
-                getCalendarKeys,
-                inviteActions,
-                sendIcs: handleSendIcs,
-            });
+            const { syncActions, updatePartstatActions, updatePersonalPartActions, texts } =
+                await getDeleteEventActions({
+                    targetEvent,
+                    addresses,
+                    onDeleteConfirmation: handleDeleteConfirmation,
+                    api,
+                    getEventDecrypted,
+                    getCalendarBootstrap: readCalendarBootstrap,
+                    getCalendarKeys,
+                    inviteActions,
+                    sendIcs: handleSendIcs,
+                });
             // some operations may refer to the events to be deleted, so we execute those first
             await Promise.all([
                 handleUpdatePartstatActions(updatePartstatActions),
