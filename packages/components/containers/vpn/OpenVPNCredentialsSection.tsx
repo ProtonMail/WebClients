@@ -10,7 +10,11 @@ import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 
-const OpenVPNCredentialsSection = () => {
+interface Props {
+    app?: string;
+}
+
+const OpenVPNCredentialsSection = (props: Props) => {
     const [updating, withUpdating] = useLoading();
     const { result = {}, fetch: fetchUserVPN } = useUserVPN();
     const { VPN = {} } = result;
@@ -18,6 +22,7 @@ const OpenVPNCredentialsSection = () => {
     const [show, setShow] = useState(false);
     const api = useApi();
     const { createNotification } = useNotifications();
+    const { app } = props;
 
     const handleResetCredentials = async () => {
         await api(resetVPNSettings());
@@ -30,14 +35,36 @@ const OpenVPNCredentialsSection = () => {
 
     return (
         <SettingsSectionWide>
-            <SettingsParagraph>
-                {c('Info')
-                    .t`Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.`}
-            </SettingsParagraph>
-            <SettingsParagraph>
-                {c('Info').jt`
+            {app ? (
+                <>
+                    <SettingsParagraph>
+                        {c('Info')
+                            .t`You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.`}
+                    </SettingsParagraph>
+                    <SettingsParagraph>
+                        {c('Info').t`Learn how to log in to ProtonVPN with third-party VPN applications`}
+                    </SettingsParagraph>
+                    <SettingsParagraph>
+                        {c('Info').t`We advise you to use official ProtonVPN applications when possible.`}
+                    </SettingsParagraph>
+                    <SettingsParagraph>
+                        {c('Info').jt`
+                     You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${learnMore}`}
+                    </SettingsParagraph>
+                </>
+            ) : (
+                <>
+                    <SettingsParagraph>
+                        {c('Info')
+                            .t`Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.`}
+                    </SettingsParagraph>
+                    <SettingsParagraph>
+                        {c('Info').jt`
                     Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${learnMore}`}
-            </SettingsParagraph>
+                    </SettingsParagraph>
+                </>
+            )}
+
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <span className="label pt0">{c('Label').t`OpenVPN / IKEv2 username`}</span>

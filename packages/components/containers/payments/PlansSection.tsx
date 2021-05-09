@@ -7,6 +7,7 @@ import { getPlanIDs } from 'proton-shared/lib/helpers/subscription';
 import { hasBonuses } from 'proton-shared/lib/helpers/organization';
 import { Currency, Organization, PlanIDs, Subscription, SubscriptionCheckResponse } from 'proton-shared/lib/interfaces';
 import { hasPlanIDs } from 'proton-shared/lib/helpers/planIDs';
+import { getAppFromPathnameSafe } from 'proton-shared/lib/apps/slugHelper';
 
 import { Button, Loader } from '../../components';
 import {
@@ -45,7 +46,8 @@ const PlansSection = () => {
     const [organization = FREE_ORGANIZATION, loadingOrganization] = useOrganization();
     const [plans = [], loadingPlans] = usePlans();
     const api = useApi();
-    const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
+    const app = getAppFromPathnameSafe(window.location.pathname);
+    const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS || app === APPS.PROTONVPN_SETTINGS;
 
     const service = isVPN ? PLAN_SERVICES.VPN : PLAN_SERVICES.MAIL;
     const currentPlanIDs = getPlanIDs(subscription);
