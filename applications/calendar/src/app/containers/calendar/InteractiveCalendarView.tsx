@@ -1015,24 +1015,39 @@ const InteractiveCalendarView = ({
 
     const handleDeleteEvent = async (targetEvent: CalendarViewEvent, inviteActions: InviteActions) => {
         try {
-            const { syncActions, updatePartstatActions, updatePersonalPartActions, texts } =
-                await getDeleteEventActions({
-                    targetEvent,
-                    addresses,
-                    onDeleteConfirmation: handleDeleteConfirmation,
-                    api,
-                    getEventDecrypted,
-                    getCalendarBootstrap: readCalendarBootstrap,
-                    getCalendarKeys,
-                    inviteActions,
-                    sendIcs: handleSendIcs,
-                });
+            const {
+                syncActions,
+                updatePartstatActions = [],
+                updatePersonalPartActions = [],
+                texts,
+            } = await getDeleteEventActions({
+                targetEvent,
+                addresses,
+                onDeleteConfirmation: handleDeleteConfirmation,
+                api,
+                getEventDecrypted,
+                getCalendarBootstrap: readCalendarBootstrap,
+                getCalendarKeys,
+                inviteActions,
+                sendIcs: handleSendIcs,
+            });
             // some operations may refer to the events to be deleted, so we execute those first
-            await Promise.all([
+            const [updatePartstatResponses, updatePersonalPartResponses] = await Promise.all([
                 handleUpdatePartstatActions(updatePartstatActions),
                 handleUpdatePersonalPartActions(updatePersonalPartActions),
             ]);
-            await handleSyncActions(syncActions);
+            const syncResponses = await handleSyncActions(syncActions);
+            const calendarsEventCache = calendarsEventsCacheRef.current;
+            if (calendarsEventCache) {
+                upsertSyncMultiActionsResponses(syncActions, syncResponses, calendarsEventCache);
+                upsertUpdateEventPartResponses(updatePartstatActions, updatePartstatResponses, calendarsEventCache);
+                upsertUpdateEventPartResponses(
+                    updatePersonalPartActions,
+                    updatePersonalPartResponses,
+                    calendarsEventCache
+                );
+            }
+            calendarsEventCache.rerender?.();
             handleCreateNotification(texts);
         } catch (e) {
             createNotification({ text: e.message, type: 'error' });
