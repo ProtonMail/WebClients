@@ -650,7 +650,7 @@ const InteractiveCalendarView = ({
         });
     };
 
-    const handleSendPrefsErrors = async ({ inviteActions, vevent, cancelVevent }: SendIcsActionData) => {
+    const handleSendPrefsErrors = async ({ inviteActions, vevent, cancelVevent, noCheck }: SendIcsActionData) => {
         const sendPreferencesMap = await getSendIcsPreferencesMap({
             inviteActions,
             vevent,
@@ -658,7 +658,7 @@ const InteractiveCalendarView = ({
             contactEmailsMap,
         });
         const hasErrors = Object.values(sendPreferencesMap).some((sendPref) => !!sendPref?.error);
-        if (!hasErrors) {
+        if (!hasErrors || noCheck) {
             return { sendPreferencesMap, inviteActions, vevent, cancelVevent };
         }
         return new Promise<CleanSendIcsActionData>((resolve, reject) => {
@@ -675,7 +675,7 @@ const InteractiveCalendarView = ({
         });
     };
 
-    const handleSendIcs = async ({ inviteActions, vevent, cancelVevent }: SendIcsActionData) => {
+    const handleSendIcs = async ({ inviteActions, vevent, cancelVevent, noCheck }: SendIcsActionData) => {
         const onRequestError = () => {
             throw new Error(c('Error').t`Invitation failed to be sent`);
         };
@@ -696,7 +696,7 @@ const InteractiveCalendarView = ({
             inviteActions: cleanInviteActions,
             vevent: cleanVevent,
             cancelVevent: cleanCancelVevent,
-        } = await handleSendPrefsErrors({ inviteActions, vevent, cancelVevent });
+        } = await handleSendPrefsErrors({ inviteActions, vevent, cancelVevent, noCheck });
         // generate DTSTAMPs for the ICS
         const currentTimestamp = +serverTime();
         const cleanVeventWithDtstamp = cleanVevent
@@ -980,6 +980,7 @@ const InteractiveCalendarView = ({
                 getCalendarBootstrap: readCalendarBootstrap,
                 getCanonicalEmailsMap,
                 sendIcs: handleSendIcs,
+                onSendPrefsErrors: handleSendPrefsErrors,
                 handleSyncActions,
                 getCalendarKeys,
             });

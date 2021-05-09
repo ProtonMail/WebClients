@@ -38,6 +38,7 @@ export interface SendIcsActionData {
     inviteActions: InviteActions;
     vevent?: VcalVeventComponent;
     cancelVevent?: VcalVeventComponent;
+    noCheck?: boolean;
 }
 
 export interface CleanSendIcsActionData extends SendIcsActionData {
