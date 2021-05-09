@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Redirect, Switch, useRouteMatch, useLocation } from 'react-router-dom';
 
 import VpnDownloadSettings from './VpnDownloadSettings';
-import VpnOpenVpnIKEv2 from './VpnOpenVpnIKEv2';
+import VpnOpenVpnIKEv2Settings from './VpnOpenVpnIKEv2Settings';
 
 const VpnSettingsRouter = () => {
     const { path } = useRouteMatch();
@@ -10,13 +10,13 @@ const VpnSettingsRouter = () => {
 
     return (
         <Switch>
-            <Route path={`${path}/downloads`}>
+            <Route path={`${path}/vpn-apps`}>
                 <VpnDownloadSettings location={location} />
             </Route>
-            <Route path={`${path}/OpenVpnIKEv2`}>
-                <VpnOpenVpnIKEv2 location={location} />
+            <Route path={`${path}/open-vpn-ike-v2`}>
+                <VpnOpenVpnIKEv2Settings location={location} />
             </Route>
-            <Redirect to={`${path}/dashboard`} />
+            <Redirect to={`${path}/vpn-apps`} />
         </Switch>
     );
 };
