@@ -1,12 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
-import { Link } from 'react-router-dom';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { getVPNServerConfig } from 'proton-shared/lib/api/vpn';
 import { c } from 'ttag';
-import { Table, TableBody, TableRow, DropdownActions, Tooltip, TableCell, Icon, ButtonLike } from '../../../components';
+import {
+    Table,
+    TableBody,
+    TableRow,
+    DropdownActions,
+    Tooltip,
+    TableCell,
+    Icon,
+    ButtonLike,
+    SettingsLink,
+} from '../../../components';
 import { useApiWithoutResult, useNotifications, useUser } from '../../../hooks';
 import { classnames } from '../../../helpers';
 
@@ -133,10 +142,10 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
                                     }
                                 >
                                     <ButtonLike
-                                        as={Link}
+                                        as={SettingsLink}
                                         color="norm"
                                         size="small"
-                                        to={`/dashboard${hasPaidVpn ? '?plan=vpnplus' : ''}`}
+                                        path={`/dashboard${hasPaidVpn ? '?plan=vpnplus' : ''}`}
                                     >{c('Action').t`Upgrade`}</ButtonLike>
                                 </Tooltip>
                             ) : (

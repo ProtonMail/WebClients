@@ -4,13 +4,25 @@ import { queryVPNLogicalServerInfo, getVPNServerConfig } from 'proton-shared/lib
 import { groupWith } from 'proton-shared/lib/helpers/array';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
 import { PLANS, SORT_DIRECTION, VPN_HOSTNAME } from 'proton-shared/lib/constants';
-import { Link } from 'react-router-dom';
-import { Alert, Href, Icon, Info, Button, Block, Tooltip, Radio, RadioGroup, ButtonLike } from '../../../components';
+
+import {
+    Href,
+    Button,
+    ButtonLike,
+    Icon,
+    Info,
+    Block,
+    Tooltip,
+    Radio,
+    RadioGroup,
+    SettingsLink,
+} from '../../../components';
 import { useApiResult, useApiWithoutResult, useUser, useSortedList, useUserVPN, usePlans } from '../../../hooks';
 import { getCountryByAbbr, correctAbbr } from '../../../helpers/countries';
 import ServerConfigs from './ServerConfigs';
 import { isSecureCoreEnabled } from './utils';
 import ConfigsTable, { CATEGORY } from './ConfigsTable';
+import { SettingsParagraph } from '../../account';
 
 const PLATFORM = {
     MACOS: 'macOS',
@@ -80,6 +92,7 @@ const OpenVPNConfigurationSection = () => {
             }, []),
         };
     });
+
     const freeServers = allServers.filter(({ Tier }) => Tier === 0).map((server) => ({ ...server, open: true }));
 
     const isUpgradeRequiredForSecureCore = () => !Object.keys(userVPN).length || !hasPaidVpn || isBasicVPN;
@@ -103,13 +116,11 @@ const OpenVPNConfigurationSection = () => {
 
     return (
         <>
-            <Alert>
-                {c('Info').t`Use this section to generate config files for third party VPN clients
-                    or when setting up a connection on a router. If you use a native ProtonVPN
-                    client to connect, you do not need to manually handle these configuration files.
+            <SettingsParagraph>
+                {c('Info')
+                    .t`These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.
                 `}
-            </Alert>
-
+            </SettingsParagraph>
             <h3 className="mt2">{c('Title').t`1. Select platform`}</h3>
             <div className="flex on-mobile-flex-column mb1">
                 {[
@@ -195,15 +206,16 @@ const OpenVPNConfigurationSection = () => {
             <Block>
                 {category === CATEGORY.SECURE_CORE && (
                     <>
-                        <Alert learnMore="https://protonvpn.com/support/secure-core-vpn">
+                        <SettingsParagraph learnMoreUrl="https://protonvpn.com/support/secure-core-vpn">
                             {c('Info')
                                 .t`Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.`}
-                        </Alert>
+                        </SettingsParagraph>
                         {isUpgradeRequiredForSecureCore() && (
-                            <Alert>
-                                <div>{c('Info').t`ProtonVPN Plus or Visionary required for Secure Core feature.`}</div>
-                                <Link to="/dashboard">{c('Link').t`Learn more`}</Link>
-                            </Alert>
+                            <SettingsParagraph>
+                                <span className="block">{c('Info')
+                                    .t`ProtonVPN Plus or Visionary required for Secure Core feature.`}</span>
+                                <SettingsLink path="/dashboard">{c('Link').t`Learn more`}</SettingsLink>
+                            </SettingsParagraph>
                         )}
                         <ConfigsTable
                             category={CATEGORY.SECURE_CORE}
@@ -217,13 +229,13 @@ const OpenVPNConfigurationSection = () => {
                 )}
                 {category === CATEGORY.COUNTRY && (
                     <>
-                        <Alert>
+                        <SettingsParagraph>
                             {c('Info')
                                 .t`Install a Country configuration file to connect to a random server in the country of your choice.`}
-                        </Alert>
+                        </SettingsParagraph>
                         {isUpgradeRequiredForCountries() && (
-                            <Alert learnMore={`https://${VPN_HOSTNAME}/dashboard`}>{c('Info')
-                                .t`ProtonVPN Basic, Plus or Visionary required for Country level connection.`}</Alert>
+                            <SettingsParagraph learnMoreUrl={`https://${VPN_HOSTNAME}/dashboard`}>{c('Info')
+                                .t`ProtonVPN Basic, Plus or Visionary required for Country level connection.`}</SettingsParagraph>
                         )}
                         <ConfigsTable
                             category={CATEGORY.COUNTRY}
@@ -237,8 +249,8 @@ const OpenVPNConfigurationSection = () => {
                 )}
                 {category === CATEGORY.SERVER && (
                     <>
-                        <Alert>{c('Info')
-                            .t`Install a Server configuration file to connect to a specific server in the country of your choice.`}</Alert>
+                        <SettingsParagraph>{c('Info')
+                            .t`Install a Server configuration file to connect to a specific server in the country of your choice.`}</SettingsParagraph>
                         <ServerConfigs
                             category={category}
                             platform={platform}
@@ -250,8 +262,10 @@ const OpenVPNConfigurationSection = () => {
                 )}
                 {category === CATEGORY.FREE && (
                     <>
-                        <Alert>{c('Info')
-                            .t`Install a Free server configuration file to connect to a specific server in one of the three free locations.`}</Alert>
+                        <SettingsParagraph>
+                            {c('Info')
+                                .t`Install a Free server configuration file to connect to a specific server in one of the three free locations.`}
+                        </SettingsParagraph>
                         <ServerConfigs
                             category={category}
                             platform={platform}
@@ -308,7 +322,7 @@ const OpenVPNConfigurationSection = () => {
                             </li>
                         </ul>
                         <div>
-                            <ButtonLike as={Link} color="norm" to="/dashboard?plan=vpnplus">{c('Action')
+                            <ButtonLike as={SettingsLink} color="norm" path="/dashboard?plan=vpnplus">{c('Action')
                                 .t`Get ProtonVPN Plus`}</ButtonLike>
                         </div>
                     </div>

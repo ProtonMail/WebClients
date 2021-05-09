@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
-import { APP_NAMES, APPS, isSSOMode, isStandaloneMode } from 'proton-shared/lib/constants';
+import { APP_NAMES, APPS, isSSOMode, isStandaloneMode, VPN_HOSTNAME } from 'proton-shared/lib/constants';
 import { getAppHref, getAppHrefBundle } from 'proton-shared/lib/apps/helper';
 import { LoginTypes } from 'proton-shared/lib/authentication/LoginInterface';
+import { stripLeadingAndTrailingSlash } from 'proton-shared/lib/helpers/string';
 
 import { useAuthentication, useConfig, useLoginType } from '../../hooks';
 import Tooltip from '../tooltip/Tooltip';
@@ -19,6 +20,17 @@ const AppLink = ({ to, toApp, children, ...rest }: Props, ref: React.Ref<HTMLAnc
 
     if (toApp && toApp !== APP_NAME) {
         if (isSSOMode) {
+            // If in vpn-level account settings and want to visit the proton vpn app
+            if (toApp === APPS.PROTONVPN_SETTINGS) {
+                const href = `https://${VPN_HOSTNAME}/${stripLeadingAndTrailingSlash(to)}`;
+                return (
+                    // internal link, trusted
+                    // eslint-disable-next-line react/jsx-no-target-blank
+                    <a ref={ref} {...rest} target="_blank" href={href}>
+                        {children}
+                    </a>
+                );
+            }
             const localID = authentication.getLocalID?.();
             const href = getAppHref(to, toApp, localID);
             const isForceOpenSameTab =

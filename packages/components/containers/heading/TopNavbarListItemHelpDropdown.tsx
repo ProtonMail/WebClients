@@ -1,9 +1,10 @@
 import React from 'react';
 import { c } from 'ttag';
 import { APPS, BRAND_NAME } from 'proton-shared/lib/constants';
+import { getAppFromPathnameSafe } from 'proton-shared/lib/apps/slugHelper';
+
 import { Icon, DropdownMenu, DropdownMenuButton, DropdownMenuLink } from '../../components';
 import { useModals, useAuthentication, useConfig, useUser } from '../../hooks';
-
 import BugModal from '../support/BugModal';
 import AuthenticatedBugModal from '../support/AuthenticatedBugModal';
 import { OnboardingModal } from '../onboarding';
@@ -42,6 +43,8 @@ const TopNavbarListItemHelpDropdown = <E extends React.ElementType = typeof defa
     const isAuthenticated = !!UID;
     const [user] = useUser();
     const { canPay, isSubUser } = user;
+    const app = getAppFromPathnameSafe(window.location.pathname);
+    const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS || app === APPS.PROTONVPN_SETTINGS;
 
     const handleBugReportClick = () => {
         createModal(isAuthenticated ? <AuthenticatedBugModal /> : <BugModal />);
@@ -67,11 +70,7 @@ const TopNavbarListItemHelpDropdown = <E extends React.ElementType = typeof defa
             <DropdownMenu>
                 <DropdownMenuLink
                     className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
-                    href={
-                        APP_NAME === APPS.PROTONVPN_SETTINGS
-                            ? 'https://protonvpn.com/support/'
-                            : 'https://protonmail.com/support/'
-                    }
+                    href={isVPN ? 'https://protonvpn.com/support/' : 'https://protonmail.com/support/'}
                     // eslint-disable-next-line react/jsx-no-target-blank
                     target="_blank"
                 >
