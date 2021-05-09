@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
-import { APPS_CONFIGURATION, VPN_HOSTNAME, BRAND_NAME } from 'proton-shared/lib/constants';
+import { APPS_CONFIGURATION, BRAND_NAME, APPS } from 'proton-shared/lib/constants';
 
-import { AppLink, Icon, SimpleDropdown, Href } from '../../components';
+import { AppLink, Icon, SimpleDropdown, SettingsLink } from '../../components';
 import { useApps } from '../../hooks';
 
 const AppsDropdown = () => {
@@ -47,15 +47,16 @@ const AppsDropdown = () => {
                     </React.Fragment>
                 ))}
                 <li>
-                    <Href
-                        url={`https://${VPN_HOSTNAME}/login`}
+                    <SettingsLink
+                        path="/"
+                        app={APPS.PROTONVPN_SETTINGS}
+                        title={c('Apps dropdown').t`Go to ${APPS_CONFIGURATION[APPS.PROTONVPN_SETTINGS].bareName}`}
                         className="apps-dropdown-link"
-                        title={c('Apps dropdown').t`Go to ProtonVPN`}
                     >
                         <Icon name="protonvpn" size={28} className="apps-dropdown-icon apps-dropdown-icon-vpn" />
                         <div>{BRAND_NAME}</div>
                         <div className="text-bold">{vpnName}</div>
-                    </Href>
+                    </SettingsLink>
                 </li>
             </ul>
         </SimpleDropdown>
