@@ -29,10 +29,10 @@ const VpnSettingsSidebarList = () => {
             <SidebarListItem className="text-uppercase text-left navigation-link-header-group">
                 <SidebarListItemContent>{APPS_CONFIGURATION[APPS.PROTONVPN_SETTINGS].name}</SidebarListItemContent>
             </SidebarListItem>
-            <LocalListItem to={`${path}/downloads`} icon="download">
-                {c('Settings section title').t`Downloads`}
+            <LocalListItem to={`${path}/vpn-apps`} icon="download">
+                {c('Settings section title').t`VPN apps`}
             </LocalListItem>
-            <LocalListItem to={`${path}/OpenVPNIKEv2`} icon="keys">
+            <LocalListItem to={`${path}/open-vpn-ike-v2`} icon="keys">
                 OpenVPN/IKEv2
             </LocalListItem>
         </SidebarList>

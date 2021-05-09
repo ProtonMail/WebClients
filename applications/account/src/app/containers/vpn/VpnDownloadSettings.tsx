@@ -4,12 +4,12 @@ import { SettingsPropsShared } from 'react-components';
 import DownloadVPNClientSection from './DownloadVPNClientSection';
 
 import PrivateMainSettingsAreaWithPermissions from '../../content/PrivateMainSettingsAreaWithPermissions';
-import VpnDownloadCardForContentTeam from './DownloadCardForContentTeam';
+import VpnUpgradeSection from './VpnUpgradeSection';
 
 export const getDownloadsPage = () => {
     return {
-        text: c('Title').t`Downloads`,
-        to: '/vpn/download',
+        text: c('Title').t`VPN apps`,
+        to: '/vpn/vpn-apps',
         icon: 'download',
         subsections: [
             {
@@ -31,7 +31,7 @@ const VpnDownloadSettings = ({ setActiveSection, location }: SettingsPropsShared
             config={getDownloadsPage()}
             setActiveSection={setActiveSection}
         >
-            <VpnDownloadCardForContentTeam />
+            <VpnUpgradeSection />
             <DownloadVPNClientSection />
         </PrivateMainSettingsAreaWithPermissions>
     );

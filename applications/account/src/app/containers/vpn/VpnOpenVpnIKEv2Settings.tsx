@@ -1,10 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import {
-    SettingsPropsShared,
-    ProtonAccountOpenVpnConfigurationFiles,
-    OpenVPNCredentialsSection,
-} from 'react-components';
+import { SettingsPropsShared, OpenVPNCredentialsSection, OpenVPNConfigurationSection } from 'react-components';
 
 import PrivateMainSettingsAreaWithPermissions from '../../content/PrivateMainSettingsAreaWithPermissions';
 
@@ -26,17 +22,17 @@ export const getOpenVpnIKEv2Page = () => {
     };
 };
 
-const VpnOpenVpnIKEv2 = ({ setActiveSection, location }: SettingsPropsShared) => {
+const VpnOpenVpnIKEv2Settings = ({ setActiveSection, location }: SettingsPropsShared) => {
     return (
         <PrivateMainSettingsAreaWithPermissions
             location={location}
             config={getOpenVpnIKEv2Page()}
             setActiveSection={setActiveSection}
         >
-            <OpenVPNCredentialsSection />
-            <ProtonAccountOpenVpnConfigurationFiles />
+            <OpenVPNCredentialsSection app="account" />
+            <OpenVPNConfigurationSection />
         </PrivateMainSettingsAreaWithPermissions>
     );
 };
 
-export default VpnOpenVpnIKEv2;
+export default VpnOpenVpnIKEv2Settings;
