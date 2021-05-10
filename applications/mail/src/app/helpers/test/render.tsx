@@ -38,7 +38,12 @@ export const authentication = ({
     onLogout: jest.fn(),
 } as unknown) as PrivateAuthenticationStore;
 
-export const history: MemoryHistory = createMemoryHistory({ initialEntries: ['/inbox'] });
+let history: MemoryHistory;
+export const getHistory = () => history;
+export const resetHistory = () => {
+    history = createMemoryHistory({ initialEntries: ['/inbox'] });
+};
+resetHistory();
 
 interface Props {
     children: JSX.Element;

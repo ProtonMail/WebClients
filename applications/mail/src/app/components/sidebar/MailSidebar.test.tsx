@@ -6,7 +6,7 @@ import { getAppVersion } from 'react-components';
 import useEventManager from 'react-components/hooks/useEventManager';
 import { LABEL_TYPE } from 'proton-shared/lib/constants';
 import loudRejection from 'loud-rejection';
-import { render, clearAll, addToCache, minimalCache, config, history } from '../../helpers/test/helper';
+import { render, clearAll, addToCache, minimalCache, config, getHistory } from '../../helpers/test/helper';
 import MailSidebar from './MailSidebar';
 
 jest.mock('../../../../CHANGELOG.md', () => 'ProtonMail Changelog');
@@ -106,6 +106,8 @@ describe('MailSidebar', () => {
 
         const folderElement = getByTestId(`navigation-link:${folder.Name}`);
 
+        const history = getHistory();
+
         expect(history.location.pathname).toBe('/inbox');
 
         act(() => {
@@ -128,7 +130,7 @@ describe('MailSidebar', () => {
         });
 
         // Check if we are in the label
-        expect(history.location.pathname).toBe(`/${folder.ID}`);
+        expect(getHistory().location.pathname).toBe(`/${folder.ID}`);
 
         // Click again on the label to trigger the event manager
         act(() => {
