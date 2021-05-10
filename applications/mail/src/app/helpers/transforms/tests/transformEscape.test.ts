@@ -32,6 +32,9 @@ describe('transformEscape', () => {
             <a href="jeanne-image.jpg">Alll</a>
             <div background="jeanne-image.jpg">Alll</div>
             <div background="jeanne-image2.jpg">Alll</div>
+            <p style="font-size:10.0pt;font-family:\\2018Calibri\\2019;color:black">
+                Example style that caused regexps to crash
+            </p>
 
             <img id="babase64" ${babase64}/>
         </section>
