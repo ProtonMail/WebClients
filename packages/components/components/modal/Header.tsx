@@ -36,7 +36,7 @@ const Header = ({
                 </Button>
             ) : null}
             {typeof children === 'string' ? (
-                <Title id={modalTitleID} className={!displayTitle ? 'sr-only' : undefined}>
+                <Title id={modalTitleID} className={!displayTitle ? 'sr-only' : 'text-ellipsis'}>
                     {children}
                 </Title>
             ) : (
