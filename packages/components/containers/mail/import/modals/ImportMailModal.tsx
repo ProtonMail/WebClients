@@ -353,6 +353,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, oauthProps: initialOAu
     const resumeImport = async () => {
         await api(
             updateMailImport(modalModel.importID, {
+                Email: modalModel.email,
                 Code: modalModel.password,
                 ImapHost: modalModel.imap,
                 ImapPort: parseInt(modalModel.port, 10),
