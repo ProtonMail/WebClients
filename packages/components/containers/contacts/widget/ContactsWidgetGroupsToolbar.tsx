@@ -23,7 +23,8 @@ const ContactsWidgetGroupsToolbar = ({
     onDelete,
 }: Props) => {
     const handleCheck = ({ target }: ChangeEvent<HTMLInputElement>) => onCheckAll(target.checked);
-    const noSelection = !selectedCount || !numberOfRecipients;
+    const noContactInSelected = !selectedCount || !numberOfRecipients;
+    const noSelection = !selectedCount;
     const deleteText = noSelection
         ? c('Action').t`Delete contact group`
         : // translator: the variable is a positive integer (written in digits) always greater or equal to 1
@@ -50,7 +51,12 @@ const ContactsWidgetGroupsToolbar = ({
             </Tooltip>
             {onCompose ? (
                 <Tooltip title={c('Action').t`Compose`}>
-                    <Button icon className="inline-flex mr0-5 pt0-5 pb0-5" onClick={onCompose} disabled={noSelection}>
+                    <Button
+                        icon
+                        className="inline-flex mr0-5 pt0-5 pb0-5"
+                        onClick={onCompose}
+                        disabled={noContactInSelected}
+                    >
                         <Icon name="email" alt={c('Action').t`Compose`} />
                     </Button>
                 </Tooltip>
