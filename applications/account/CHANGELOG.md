@@ -1,3 +1,16 @@
+# [4.0.0-beta.14] - 2021-05-11
+## New Features
+- Added possibility to opt-in into Proton's Early Access program under the Settings dropdown
+- Added a ProtonVPN section that can be accessed via the app-switcher
+- New theme available: Legacy
+
+## Improvements
+- General design & UI/UX enhancements
+- User onboarding flow improvements
+- Updated themes' naming
+
+---
+
 # [4.0.0-beta.13] - 2021-04-21
 ## Improvements
 - Added multiple theme support
