@@ -67,7 +67,7 @@ const ContactRow = ({
                         {hasPaidMail && contactGroups && <ContactGroupLabels contactGroups={contactGroups} />}
                     </div>
                     <div
-                        className="flex flex-align-items-center item-secondline max-w100 text-ellipsis item-sender--smaller"
+                        className="item-secondline max-w100 text-ellipsis item-sender--smaller"
                         title={emails.join(', ')}
                     >
                         {emails.length ? (
