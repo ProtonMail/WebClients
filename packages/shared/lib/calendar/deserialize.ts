@@ -69,11 +69,9 @@ export const readCalendarEvent = async ({
         Promise.all(CalendarEvents.map((e) => decryptAndVerifyCalendarEvent(e, publicKeysMap, calendarSessionKey))),
         Promise.all(AttendeesEvents.map((e) => decryptAndVerifyCalendarEvent(e, publicKeysMap, sharedSessionKey))),
     ]);
-    const [
-        decryptedSharedEvents,
-        decryptedCalendarEvents,
-        decryptedAttendeesEvents,
-    ] = decryptedEventsResults.map((decryptedEvents) => decryptedEvents.map(({ data }) => data));
+    const [decryptedSharedEvents, decryptedCalendarEvents, decryptedAttendeesEvents] = decryptedEventsResults.map(
+        (decryptedEvents) => decryptedEvents.map(({ data }) => data)
+    );
     const verificationStatusArray = decryptedEventsResults
         .map((decryptedEvents) => decryptedEvents.map(({ verificationStatus }) => verificationStatus))
         .flat();
@@ -115,9 +113,6 @@ export const readPersonalPart = async (
     { Data, Signature }: CalendarEventData,
     publicKeys: OpenPGPKey | OpenPGPKey[]
 ) => {
-    if (!Signature) {
-        throw new Error('Personal part should always be signed');
-    }
     const { data, verificationStatus } = await verifySignedCard(Data, Signature, publicKeys);
     return { veventComponent: parse(unwrap(data)) as VcalVeventComponent, verificationStatus };
 };
