@@ -1,7 +1,7 @@
 import React from 'react';
+import { Icon, ToolbarButton, useMailSettings } from 'react-components';
 import { c } from 'ttag';
 import { Location } from 'history';
-import { Icon, ToolbarButton } from 'react-components';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import { isConversationMode } from '../../helpers/mailSettings';
@@ -35,11 +35,53 @@ const NavigationControls = ({
     const handleNext = () => onElement(elementIDs[index + 1], true);
     const handlePrevious = () => onElement(elementIDs[index - 1], true);
 
+    const [{ Shortcuts = 1 } = {}] = useMailSettings();
+
+    const titlePreviousConversation = Shortcuts ? (
+        <>
+            {c('Title').t`Previous conversation`}
+            <br />
+            <kbd className="no-border">K</kbd>
+        </>
+    ) : (
+        c('Title').t`Previous conversation`
+    );
+
+    const titlePreviousMessage = Shortcuts ? (
+        <>
+            {c('Title').t`Previous message`}
+            <br />
+            <kbd className="no-border">K</kbd>
+        </>
+    ) : (
+        c('Title').t`Previous message`
+    );
+
+    const titleNextConversation = Shortcuts ? (
+        <>
+            {c('Title').t`Next conversation`}
+            <br />
+            <kbd className="no-border">J</kbd>
+        </>
+    ) : (
+        c('Title').t`Next conversation`
+    );
+
+    const titleNextMessage = Shortcuts ? (
+        <>
+            {c('Title').t`Next message`}
+            <br />
+            <kbd className="no-border">J</kbd>
+        </>
+    ) : (
+        c('Title').t`Next message`
+    );
+
     return (
         <>
             <ToolbarButton
                 disabled={loading || index <= 0}
-                title={conversationMode ? c('Title').t`Previous conversation` : c('Title').t`Previous message`}
+                title={conversationMode ? titlePreviousConversation : titlePreviousMessage}
                 onClick={handlePrevious}
                 className="no-tablet no-mobile"
                 icon={
@@ -52,7 +94,7 @@ const NavigationControls = ({
             />
             <ToolbarButton
                 disabled={loading || index >= elementIDs.length - 1}
-                title={conversationMode ? c('Title').t`Next conversation` : c('Title').t`Next message`}
+                title={conversationMode ? titleNextConversation : titleNextMessage}
                 onClick={handleNext}
                 className="no-tablet no-mobile"
                 icon={
