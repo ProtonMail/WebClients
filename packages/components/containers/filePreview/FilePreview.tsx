@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { forwardRef, Ref, useRef } from 'react';
 import { c } from 'ttag';
 import Header from './Header';
 import ImagePreview from './ImagePreview';
@@ -7,7 +7,7 @@ import TextPreview from './TextPreview';
 import UnsupportedPreview from './UnsupportedPreview';
 import PDFPreview from './PDFPreview';
 import { isPreviewAvailable, isSupportedImage, isSupportedText, isPDF } from './helpers';
-import { useHotkeys } from '../../hooks';
+import { useCombinedRefs, useHotkeys } from '../../hooks';
 import { useFocusTrap } from '../../components';
 
 interface Props {
@@ -20,8 +20,12 @@ interface Props {
     onSave?: () => void;
 }
 
-const FilePreview = ({ contents, fileName, mimeType, loading, navigationControls, onClose, onSave }: Props) => {
+const FilePreview = (
+    { contents, fileName, mimeType, loading, navigationControls, onClose, onSave }: Props,
+    ref: Ref<HTMLDivElement>
+) => {
     const rootRef = useRef<HTMLDivElement>(null);
+    const combinedRefs = useCombinedRefs<HTMLDivElement>(ref, rootRef);
     const focusTrapProps = useFocusTrap({
         rootRef,
     });
@@ -61,7 +65,7 @@ const FilePreview = ({ contents, fileName, mimeType, loading, navigationControls
     };
 
     return (
-        <div className="file-preview ui-prominent" ref={rootRef} {...focusTrapProps}>
+        <div className="file-preview ui-prominent" ref={combinedRefs} {...focusTrapProps}>
             <Header mimeType={mimeType} name={fileName} onClose={onClose} onSave={onSave}>
                 {navigationControls}
             </Header>
@@ -70,4 +74,4 @@ const FilePreview = ({ contents, fileName, mimeType, loading, navigationControls
     );
 };
 
-export default FilePreview;
+export default forwardRef(FilePreview);
