@@ -1,5 +1,5 @@
 import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
-import React, { forwardRef, MutableRefObject, Ref, useEffect, useState } from 'react';
+import React, { forwardRef, MutableRefObject, Ref, useEffect, useState, useRef } from 'react';
 import { FilePreview, NavigationControl } from 'react-components';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { MessageExtendedWithData } from '../../models/message';
@@ -28,6 +28,8 @@ const AttachmentPreview = (
     const download = useDownload();
 
     const [previewing, setPreviewing] = useState<Preview>();
+
+    const rootRef = useRef<HTMLDivElement>(null);
 
     const handlePreview = async (attachment: Attachment) => {
         setPreviewing({
@@ -85,8 +87,15 @@ const AttachmentPreview = (
             mimeType={previewing.attachment?.MIMEType}
             onClose={handleClose}
             onSave={handleDownload}
+            ref={rootRef}
             navigationControls={
-                <NavigationControl current={current} total={total} onNext={handleNext} onPrev={handlePrevious} />
+                <NavigationControl
+                    current={current}
+                    total={total}
+                    rootRef={rootRef}
+                    onNext={handleNext}
+                    onPrev={handlePrevious}
+                />
             }
         />
     );
