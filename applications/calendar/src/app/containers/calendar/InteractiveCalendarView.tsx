@@ -990,13 +990,13 @@ const InteractiveCalendarView = ({
             ]);
             const calendarsEventCache = calendarsEventsCacheRef.current;
             if (calendarsEventCache) {
-                upsertSyncMultiActionsResponses(syncActions, syncResponses, calendarsEventCache);
                 upsertUpdateEventPartResponses(updatePartstatActions, updatePartstatResponses, calendarsEventCache);
                 upsertUpdateEventPartResponses(
                     updatePersonalPartActions,
                     updatePersonalPartResponses,
                     calendarsEventCache
                 );
+                upsertSyncMultiActionsResponses(syncActions, syncResponses, calendarsEventCache);
             }
             const uniqueCalendarIDs = unique([
                 ...syncActions.map(({ calendarID }) => calendarID),
@@ -1039,13 +1039,13 @@ const InteractiveCalendarView = ({
             const syncResponses = await handleSyncActions(syncActions);
             const calendarsEventCache = calendarsEventsCacheRef.current;
             if (calendarsEventCache) {
-                upsertSyncMultiActionsResponses(syncActions, syncResponses, calendarsEventCache);
                 upsertUpdateEventPartResponses(updatePartstatActions, updatePartstatResponses, calendarsEventCache);
                 upsertUpdateEventPartResponses(
                     updatePersonalPartActions,
                     updatePersonalPartResponses,
                     calendarsEventCache
                 );
+                upsertSyncMultiActionsResponses(syncActions, syncResponses, calendarsEventCache);
             }
             calendarsEventCache.rerender?.();
             handleCreateNotification(texts);
