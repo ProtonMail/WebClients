@@ -290,7 +290,8 @@ export const getAttendeeSummaryText = (model: RequireSome<InvitationModel, 'invi
         }
 
         const attendee = attendeeApi || attendeeIcs;
-        const partstat = attendee?.partstat || NEEDS_ACTION;
+        // force unanswered partstat if the event is not in the db
+        const partstat = !veventApi ? NEEDS_ACTION : attendee?.partstat || NEEDS_ACTION;
         const role = attendee?.role || REQUIRED;
 
         if (partstat === NEEDS_ACTION) {
