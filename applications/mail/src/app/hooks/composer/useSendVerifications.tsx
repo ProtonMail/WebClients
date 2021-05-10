@@ -57,117 +57,123 @@ export const useSendVerifications = () => {
         }
     }, []);
 
-    const extendedVerifications = useCallback(async (message: MessageExtendedWithData): Promise<{
-        cleanMessage: MessageExtendedWithData;
-        mapSendPrefs: SimpleMap<SendPreferences>;
-        hasChanged: boolean;
-    }> => {
-        const uniqueMessage = {
-            ...message,
-            data: uniqueMessageRecipients(message.data),
-        };
-        const emails = unique(getRecipientsAddresses(uniqueMessage.data));
+    const extendedVerifications = useCallback(
+        async (
+            message: MessageExtendedWithData
+        ): Promise<{
+            cleanMessage: MessageExtendedWithData;
+            mapSendPrefs: SimpleMap<SendPreferences>;
+            hasChanged: boolean;
+        }> => {
+            const uniqueMessage = {
+                ...message,
+                data: uniqueMessageRecipients(message.data),
+            };
+            const emails = unique(getRecipientsAddresses(uniqueMessage.data));
 
-        // Invalid addresses
-        const invalids = emails.filter((email) => !validateEmailAddress(email));
-        if (invalids.length > 0) {
-            const invalidAddresses = invalids.join(', ');
-            createNotification({
-                text: c('Send email with warnings').ngettext(
-                    msgid`The following address is not valid: ${invalidAddresses}`,
-                    `The following addresses are not valid: ${invalidAddresses}`,
-                    invalids.length
-                ),
-                type: 'error',
-            });
-            throw new Error();
-        }
+            // Invalid addresses
+            const invalids = emails.filter((email) => !validateEmailAddress(email));
+            if (invalids.length > 0) {
+                const invalidAddresses = invalids.join(', ');
+                createNotification({
+                    text: c('Send email with warnings').ngettext(
+                        msgid`The following address is not valid: ${invalidAddresses}`,
+                        `The following addresses are not valid: ${invalidAddresses}`,
+                        invalids.length
+                    ),
+                    type: 'error',
+                });
+                throw new Error();
+            }
 
-        const emailWarnings: { [email: string]: string[] } = {};
-        const mapSendPrefs: SimpleMap<SendPreferences> = {};
-        const sendErrors: { [email: string]: EncryptionPreferencesError } = {};
-        const expiresNotEncrypted: string[] = [];
+            const emailWarnings: { [email: string]: string[] } = {};
+            const mapSendPrefs: SimpleMap<SendPreferences> = {};
+            const sendErrors: { [email: string]: EncryptionPreferencesError } = {};
+            const expiresNotEncrypted: string[] = [];
 
-        await Promise.all(
-            emails.map(async (email) => {
-                const encryptionPreferences = await getEncryptionPreferences(email, 0, contactsMap);
-                if (encryptionPreferences.emailAddressWarnings?.length) {
-                    emailWarnings[email] = encryptionPreferences.emailAddressWarnings as string[];
-                }
-                const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
-                mapSendPrefs[email] = sendPreferences;
-                if (sendPreferences.error) {
-                    sendErrors[email] = sendPreferences.error;
-                }
-                if (message.expiresIn && !sendPreferences.encrypt) {
-                    expiresNotEncrypted.push(email);
-                }
-            })
-        );
-
-        // Addresses with warnings
-        const emailsWithWarnings = Object.keys(emailWarnings);
-        if (emailsWithWarnings.length > 0) {
-            await new Promise((resolve, reject) => {
-                createModal(
-                    <SendWithWarningsModal
-                        mapWarnings={emailWarnings}
-                        onSubmit={() => resolve(undefined)}
-                        onClose={reject}
-                    />
-                );
-            });
-        }
-
-        // Addresses with errors
-        const emailsWithErrors = Object.keys(sendErrors);
-        if (emailsWithErrors.length > 0) {
-            await new Promise((resolve, reject) => {
-                const handleSendAnyway = () => {
-                    for (const email of emailsWithErrors) {
-                        const indexOfEmail = emails.findIndex((emailAddress) => emailAddress === email);
-                        emails.splice(indexOfEmail, 1);
-                        delete mapSendPrefs[email];
+            await Promise.all(
+                emails.map(async (email) => {
+                    const encryptionPreferences = await getEncryptionPreferences(email, 0, contactsMap);
+                    console.log('useSendVerification', email, encryptionPreferences);
+                    if (encryptionPreferences.emailAddressWarnings?.length) {
+                        emailWarnings[email] = encryptionPreferences.emailAddressWarnings as string[];
                     }
-                    resolve(undefined);
-                };
-                createModal(
-                    <SendWithErrorsModal
-                        mapErrors={sendErrors}
-                        cannotSend={emailsWithErrors.length === emails.length}
-                        onSubmit={handleSendAnyway}
-                        onClose={reject}
-                    />
-                );
-            });
-        }
+                    const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
+                    mapSendPrefs[email] = sendPreferences;
+                    if (sendPreferences.error) {
+                        sendErrors[email] = sendPreferences.error;
+                    }
+                    if (message.expiresIn && !sendPreferences.encrypt) {
+                        expiresNotEncrypted.push(email);
+                    }
+                })
+            );
 
-        // Expiration and addresses with no encryptions
-        if (expiresNotEncrypted.length > 0) {
-            await new Promise((resolve, reject) => {
-                createModal(
-                    <SendWithExpirationModal
-                        emails={expiresNotEncrypted}
-                        onSubmit={() => resolve(undefined)}
-                        onClose={reject}
-                    />
-                );
-            });
-        }
+            // Addresses with warnings
+            const emailsWithWarnings = Object.keys(emailWarnings);
+            if (emailsWithWarnings.length > 0) {
+                await new Promise((resolve, reject) => {
+                    createModal(
+                        <SendWithWarningsModal
+                            mapWarnings={emailWarnings}
+                            onSubmit={() => resolve(undefined)}
+                            onClose={reject}
+                        />
+                    );
+                });
+            }
 
-        // TODO
-        // if (sendPreferences !== oldSendPreferences) {
-        //     // check what is going on. Show modal if encryption downgrade
-        // }
+            // Addresses with errors
+            const emailsWithErrors = Object.keys(sendErrors);
+            if (emailsWithErrors.length > 0) {
+                await new Promise((resolve, reject) => {
+                    const handleSendAnyway = () => {
+                        for (const email of emailsWithErrors) {
+                            const indexOfEmail = emails.findIndex((emailAddress) => emailAddress === email);
+                            emails.splice(indexOfEmail, 1);
+                            delete mapSendPrefs[email];
+                        }
+                        resolve(undefined);
+                    };
+                    createModal(
+                        <SendWithErrorsModal
+                            mapErrors={sendErrors}
+                            cannotSend={emailsWithErrors.length === emails.length}
+                            onSubmit={handleSendAnyway}
+                            onClose={reject}
+                        />
+                    );
+                });
+            }
 
-        // Prepare and save draft
-        const cleanMessage = {
-            ...message,
-            data: removeMessageRecipients(uniqueMessage.data, emailsWithErrors),
-        } as MessageExtendedWithData;
+            // Expiration and addresses with no encryptions
+            if (expiresNotEncrypted.length > 0) {
+                await new Promise((resolve, reject) => {
+                    createModal(
+                        <SendWithExpirationModal
+                            emails={expiresNotEncrypted}
+                            onSubmit={() => resolve(undefined)}
+                            onClose={reject}
+                        />
+                    );
+                });
+            }
 
-        return { cleanMessage, mapSendPrefs, hasChanged: emailsWithErrors.length > 0 };
-    }, []);
+            // TODO
+            // if (sendPreferences !== oldSendPreferences) {
+            //     // check what is going on. Show modal if encryption downgrade
+            // }
+
+            // Prepare and save draft
+            const cleanMessage = {
+                ...message,
+                data: removeMessageRecipients(uniqueMessage.data, emailsWithErrors),
+            } as MessageExtendedWithData;
+
+            return { cleanMessage, mapSendPrefs, hasChanged: emailsWithErrors.length > 0 };
+        },
+        [contactsMap]
+    );
 
     return { preliminaryVerifications, extendedVerifications };
 };
