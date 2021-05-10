@@ -13,7 +13,7 @@ const AppsDropdown = () => {
         title: APPS_CONFIGURATION[app].bareName,
     }));
 
-    const vpnName = APPS_CONFIGURATION['proton-vpn-settings'].bareName;
+    const vpnName = APPS_CONFIGURATION[APPS.PROTONVPN_SETTINGS].bareName;
 
     return (
         <SimpleDropdown
@@ -50,7 +50,7 @@ const AppsDropdown = () => {
                     <SettingsLink
                         path="/"
                         app={APPS.PROTONVPN_SETTINGS}
-                        title={c('Apps dropdown').t`Go to ${APPS_CONFIGURATION[APPS.PROTONVPN_SETTINGS].bareName}`}
+                        title={c('Apps dropdown').t`Go to ${vpnName}`}
                         className="apps-dropdown-link"
                     >
                         <Icon name="protonvpn" size={28} className="apps-dropdown-icon apps-dropdown-icon-vpn" />
