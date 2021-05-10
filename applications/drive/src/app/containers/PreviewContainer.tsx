@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
-import { useLoading, usePreventLeave, isPreviewAvailable, FilePreview } from 'react-components';
+import { useLoading, usePreventLeave, isPreviewAvailable, FilePreview, NavigationControl } from 'react-components';
 
 import useFiles from '../hooks/drive/useFiles';
 import useDrive from '../hooks/drive/useDrive';
@@ -9,7 +9,6 @@ import useDriveSorting from '../hooks/drive/useDriveSorting';
 import useNavigate from '../hooks/drive/useNavigate';
 import FileSaver from '../utils/FileSaver/FileSaver';
 import { isTransferCancelError, getMetaForTransfer } from '../utils/transfer';
-import FilePreviewNavigation from '../components/FilePreviewNavigation';
 import { DownloadControls } from '../components/downloads/download';
 import { useDriveCache } from '../components/DriveCache/DriveCacheProvider';
 import { useDriveActiveFolder } from '../components/Drive/DriveFolderProvider';
@@ -28,12 +27,16 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
     const [contents, setContents] = useState<Uint8Array[]>();
     const [, setError] = useState();
 
+    const rootRef = useRef<HTMLDivElement>(null);
+
     const meta = cache.get.linkMeta(shareId, linkId);
     const { sortedList } = useDriveSorting(
         (sortParams) => (meta && cache.get.childLinkMetas(shareId, meta.ParentLinkID, sortParams)) || []
     );
 
     const linksAvailableForPreview = sortedList.filter(({ MIMEType }) => isPreviewAvailable(MIMEType));
+
+    const currentOpenIndex = linksAvailableForPreview.findIndex(({ LinkID }) => LinkID === meta?.LinkID);
 
     useEffect(() => {
         let canceled = false;
@@ -110,6 +113,9 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
         preventLeave(FileSaver.saveAsFile(fileStream, transferMeta)).catch(console.error);
     }, [meta, contents, shareId, linkId]);
 
+    const handleNext = () => onOpen?.(linksAvailableForPreview[currentOpenIndex + 1]);
+    const handlePrev = () => onOpen?.(linksAvailableForPreview[currentOpenIndex - 1]);
+
     return (
         <FilePreview
             loading={loading}
@@ -118,12 +124,15 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
             mimeType={meta?.MIMEType}
             onClose={navigateToParent}
             onSave={saveFile}
+            ref={rootRef}
             navigationControls={
                 meta && (
-                    <FilePreviewNavigation
-                        availableLinks={linksAvailableForPreview}
-                        openLinkId={meta.LinkID}
-                        onOpen={onOpen}
+                    <NavigationControl
+                        current={currentOpenIndex + 1}
+                        total={linksAvailableForPreview.length}
+                        rootRef={rootRef}
+                        onPrev={handlePrev}
+                        onNext={handleNext}
                     />
                 )
             }
