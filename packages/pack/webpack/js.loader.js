@@ -14,7 +14,7 @@ const UNSUPPORTED_JS_LOADER = [
                     {
                         targets: { browsers: ['ie 11'] },
                         useBuiltIns: 'entry',
-                        corejs: 3
+                        corejs: { version: '3.12' }
                     }
                 ]
             ],
@@ -45,7 +45,7 @@ const getBabelLoader = ({ isProduction = false, hasReactRefresh = true, isTtag =
                                 : ['last 1 chrome version', 'last 1 firefox version', 'last 1 safari version']
                         },
                         useBuiltIns: 'entry',
-                        corejs: 3,
+                        corejs: { version: '3.12' },
                         exclude: ['transform-typeof-symbol'] // Exclude transforms that make all code slower
                     }
                 ],
