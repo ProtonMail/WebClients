@@ -254,15 +254,6 @@ const SubscriptionModal = ({
         return handleSubscribe(params);
     };
 
-    const handleClose = (e: any) => {
-        if (model.step === SUBSCRIPTION_STEPS.CHECKOUT) {
-            setModel({ ...model, step: SUBSCRIPTION_STEPS.CUSTOMIZATION });
-            return;
-        }
-
-        onClose?.(e);
-    };
-
     const handleGift = (gift = '') => {
         if (!gift) {
             const withoutGift = { ...model };
@@ -343,7 +334,7 @@ const SubscriptionModal = ({
             }
             loading={loading || loadingPlans || loadingOrganization || loadingSubscription}
             onSubmit={() => withLoading(handleCheckout())}
-            onClose={handleClose}
+            onClose={onClose}
             {...rest}
         >
             {model.step === SUBSCRIPTION_STEPS.NETWORK_ERROR && <GenericError />}
