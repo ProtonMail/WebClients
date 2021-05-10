@@ -490,7 +490,7 @@ export const getSendIconHref = ({ isEncrypted, fill }: Pick<Partial<StatusIcon>,
         return 'https://protonmail.com/support/knowledge-base/digital-signature/';
     }
     if (isEncrypted) {
-        return 'https://protonmail.com/support/knowledge-base/how-to-use-pgp';
+        return undefined;
     }
     return 'https://protonmail.com/support/knowledge-base/what-is-encrypted/';
 };
