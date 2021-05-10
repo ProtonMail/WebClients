@@ -557,9 +557,10 @@ export const updateEventInvitation = async ({
                         partstatApi
                     )
                 );
+                const updatedPmVevent = await withPmAttendees(updatedVevent, getCanonicalEmailsMap);
                 const updatedCalendarEvent = await updateEventApi({
                     calendarEvent,
-                    vevent: updatedVevent,
+                    vevent: updatedPmVevent,
                     calendarData,
                     createSingleEdit,
                     deleteIds: singleEditData?.map(({ ID }) => ID),
@@ -568,7 +569,7 @@ export const updateEventInvitation = async ({
                     overwrite,
                 });
                 const { invitation: updatedInvitation } = processEventInvitation(
-                    { vevent: updatedVevent, calendarEvent: updatedCalendarEvent },
+                    { vevent: updatedPmVevent, calendarEvent: updatedCalendarEvent },
                     message,
                     contactEmails,
                     ownAddresses
@@ -823,20 +824,23 @@ export const updatePartstatFromInvitation = async ({
                 partstat
             );
             const resetPartstatRequests = updatePartstatActions.map(
-                ({ eventID, calendarID, attendeeID, updateTime, partstat }) => () =>
-                    api<UpdateEventPartApiResponse>({
-                        ...updateAttendeePartstat(calendarID, eventID, attendeeID, {
-                            Status: toApiPartstat(partstat),
-                            UpdateTime: updateTime,
-                        }),
-                        silence: true,
-                    })
+                ({ eventID, calendarID, attendeeID, updateTime, partstat }) =>
+                    () =>
+                        api<UpdateEventPartApiResponse>({
+                            ...updateAttendeePartstat(calendarID, eventID, attendeeID, {
+                                Status: toApiPartstat(partstat),
+                                UpdateTime: updateTime,
+                            }),
+                            silence: true,
+                        })
             );
-            const dropAlarmsRequests = updatePersonalPartActions.map(({ eventID, calendarID }) => () =>
-                api<UpdateEventPartApiResponse>({
-                    ...updatePersonalEventPart(calendarID, eventID, { MemberID: memberID }),
-                    silence: true,
-                })
+            const dropAlarmsRequests = updatePersonalPartActions.map(
+                ({ eventID, calendarID }) =>
+                    () =>
+                        api<UpdateEventPartApiResponse>({
+                            ...updatePersonalEventPart(calendarID, eventID, { MemberID: memberID }),
+                            silence: true,
+                        })
             );
             // the routes called in requests do not have any specific jail limit
             // the limit per user session is 25k requests / 900s

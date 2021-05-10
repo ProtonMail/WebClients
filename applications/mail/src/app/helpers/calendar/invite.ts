@@ -441,6 +441,7 @@ export const processEventInvitation = <T>(
             contactEmails,
             addresses: ownAddresses,
             emailTo: originalTo,
+            calendarAttendees: calendarEvent?.Attendees,
         });
     }
 
