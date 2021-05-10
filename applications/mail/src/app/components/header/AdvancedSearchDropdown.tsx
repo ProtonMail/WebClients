@@ -346,7 +346,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
     const esToggle = (
         <Toggle
             id="es-toggle"
-            className="mlauto"
+            className="mlauto flex-item-noshrink"
             checked={(isBuilding || wasIndexingDone(user.ID)) && esEnabled}
             onChange={({ target: { checked } }) => {
                 if (checked) {
@@ -441,7 +441,6 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
                 id={uid}
                 originalPlacement="bottom-right"
                 autoClose={false}
-                autoCloseOutside={false}
                 isOpen={isOpen}
                 noMaxSize
                 anchorRef={anchorRef}
@@ -452,11 +451,14 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
                 {showEncryptedSearch && (
                     <div className="pl1 pr1 pt1">
                         <div className="flex flex-column">
-                            <div className="flex flex-justify-space-between mb0-5 flex-align-items-center">
-                                <label htmlFor="es-toggle" className="text-bold p0 flex flex-align-items-center">
+                            <div className="flex flew-nowrap mb0-5 flex-align-items-center">
+                                <Label
+                                    htmlFor="es-toggle"
+                                    className="text-bold p0 pr1 flex flex-item-fluid flex-align-items-center"
+                                >
                                     {title}
                                     {info}
-                                </label>
+                                </Label>
                                 {esToggle}
                             </div>
                             {showSubTitleSection && subTitleSection}
