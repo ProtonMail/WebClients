@@ -126,7 +126,9 @@ export const useAttachments = (
     });
 
     const checkSize = (files: File[]) => {
-        const sizeExcedeed = isSizeExceeded(message, files);
+        const pendingUploadFiles = pendingUploads.map((upload) => upload.file);
+
+        const sizeExcedeed = isSizeExceeded(message, [...files, ...pendingUploadFiles]);
         if (sizeExcedeed) {
             createNotification({
                 type: 'error',
