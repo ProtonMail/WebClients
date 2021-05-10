@@ -42,7 +42,7 @@ const OpenVPNCredentialsSection = (props: Props) => {
                             .t`You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.`}
                     </SettingsParagraph>
                     <SettingsParagraph>
-                        {c('Info').t`Learn how to log in to ProtonVPN with third-party VPN applications`}
+                        {c('Info').t`Learn how to log in to ProtonVPN with third-party VPN applications.`}
                     </SettingsParagraph>
                     <SettingsParagraph>
                         {c('Info').t`We advise you to use official ProtonVPN applications when possible.`}
