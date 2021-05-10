@@ -49,12 +49,12 @@ const ContactGroupDetailsModal = ({ contactGroupID, onClose = noop, ...rest }: P
             submit={c('Action').t`Edit`}
             modalTitleID="contact-group-details-modal"
             title={
-                <TitleModal id="contact-group-details-modal" className="flex flex-row flex-align-items-center">
+                <TitleModal id="contact-group-details-modal" className="flex flex-nowrap flex-align-items-center">
                     <div
-                        className="contact-group-details-chip rounded50 mr0-5"
+                        className="contact-group-details-chip rounded50 mr0-5 flex-item-noshrink"
                         style={{ backgroundColor: group?.Color }}
                     />
-                    {group?.Name}
+                    <span className="text-ellipsis" title={group?.Name}>{group?.Name}</span>
                 </TitleModal>
             }
             onClose={onClose}
