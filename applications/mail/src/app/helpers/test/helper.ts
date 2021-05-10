@@ -16,6 +16,7 @@ import { api, clearApiMocks } from './api';
 import { eventManagerListeners } from './event-manager';
 import { clearApiKeys } from './crypto';
 import { clearApiContacts } from './contact';
+import { resetHistory } from './render';
 
 export * from './cache';
 export * from './crypto';
@@ -40,6 +41,7 @@ export const clearAll = () => {
     cache.delete(ELEMENTS_CACHE_KEY);
     eventManagerListeners.splice(0, eventManagerListeners.length);
     clearContactCache();
+    resetHistory();
 };
 
 export const waitForSpyCall = async (mock: jest.Mock) =>
@@ -64,6 +66,21 @@ export const getModal = () => {
 
     return { modal, submit, cancel, close };
 };
+
+export const getDropdown = () =>
+    waitFor(
+        () => {
+            const dropdown = document.querySelector('div[role="dialog"].dropdown') as HTMLDialogElement | null;
+            if (!dropdown) {
+                throw new Error('No dropdown was on screen');
+            }
+            return dropdown;
+        },
+        {
+            interval: 100,
+            timeout: 5000,
+        }
+    );
 
 export const waitForNotification = (content: string) =>
     waitFor(
