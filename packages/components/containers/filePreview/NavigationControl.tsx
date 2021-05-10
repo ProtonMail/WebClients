@@ -1,18 +1,41 @@
-import React from 'react';
+import React, { RefObject } from 'react';
 import { c } from 'ttag';
 import Icon from '../../components/icon/Icon';
 import { Button } from '../../components';
+import { useHotkeys } from '../../hooks';
 
 interface Props {
     current: number;
     total: number;
+    rootRef: RefObject<HTMLDivElement>;
     onNext: () => void;
     onPrev: () => void;
 }
 
-const NavigationControl = ({ current, total, onNext, onPrev }: Props) => {
+const NavigationControl = ({ current, total, rootRef, onNext, onPrev }: Props) => {
     const isPrevDisabled = current === 1;
     const isNextDisabled = current === total;
+
+    useHotkeys(rootRef, [
+        [
+            'ArrowLeft',
+            (e) => {
+                e.stopPropagation();
+                if (!isPrevDisabled) {
+                    onPrev();
+                }
+            },
+        ],
+        [
+            'ArrowRight',
+            (e) => {
+                e.stopPropagation();
+                if (!isNextDisabled) {
+                    onNext();
+                }
+            },
+        ],
+    ]);
 
     return (
         <div className="flex flex-align-items-center centered-absolute">
