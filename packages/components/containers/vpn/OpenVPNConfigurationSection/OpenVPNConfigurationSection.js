@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { queryVPNLogicalServerInfo, getVPNServerConfig } from 'proton-shared/lib/api/vpn';
 import { groupWith } from 'proton-shared/lib/helpers/array';
 import downloadFile from 'proton-shared/lib/helpers/downloadFile';
@@ -308,8 +308,13 @@ const OpenVPNConfigurationSection = () => {
                             </li>
                             <li className="flex flex-nowrap flex-align-items-center mr1">
                                 <Icon name="on" className="color-success mr0-5" />
-                                <span className="text-bold">{c('Feature')
-                                    .t`Connection for up to ${plusVpnConnections} devices`}</span>
+                                <span className="text-bold">
+                                    {c('Feature').ngettext(
+                                        msgid`Connection for up to ${plusVpnConnections} device`,
+                                        `Connection for up to ${plusVpnConnections} devices`,
+                                        plusVpnConnections
+                                    )}
+                                </span>
                             </li>
                             <li className="flex flex-nowrap flex-align-items-center ">
                                 <Icon name="on" className="color-success mr0-5" />
