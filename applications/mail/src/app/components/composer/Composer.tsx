@@ -184,7 +184,6 @@ const Composer = (
                 } as Message,
             };
             setModelMessage(newModelMessage);
-            void reloadSendInfo(messageSendInfo, newModelMessage);
         } else {
             const { changed, Attachments } = updateKeyPackets(modelMessage, syncedMessage);
 
@@ -196,7 +195,8 @@ const Composer = (
 
     // Manage initializing the message content from the cache
     useEffect(() => {
-        const firstInitialization = modelMessage.plainText === undefined && modelMessage.document === undefined;
+        const firstInitialization =
+            !syncInProgress && modelMessage.plainText === undefined && modelMessage.document === undefined;
 
         if (firstInitialization) {
             const isOpenFromUndo = syncedMessage.openDraftFromUndo === true;
@@ -219,6 +219,7 @@ const Composer = (
                 } as Message,
             };
             setModelMessage(newModelMessage);
+            void reloadSendInfo(messageSendInfo, newModelMessage);
         }
     }, [syncInProgress, syncedMessage.document, syncedMessage.plainText]);
 
