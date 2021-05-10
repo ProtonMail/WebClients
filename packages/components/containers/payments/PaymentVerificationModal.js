@@ -70,9 +70,9 @@ const PaymentVerificationModal = ({
         } catch (error) {
             window.clearTimeout(timeoutRef.current);
             setStep(STEPS.FAIL);
+            setError(error);
             // if not coming from API error
             if (error.message && !error.config) {
-                setError(error);
                 createNotification({ text: error.message, type: 'error' });
             }
         }
@@ -164,7 +164,7 @@ const PaymentVerificationModal = ({
                                           .t`Please try again, use a different payment method, or call your bank for assistance.`}
                             </p>
                             <img src={errorSvg} alt={c('Title').t`Error`} />
-                            {error.tryAgain ? (
+                            {error?.tryAgain ? (
                                 <p>
                                     <Button type="submit">{c('Action').t`Try again`}</Button>
                                 </p>
