@@ -46,8 +46,16 @@ export const unescapeCSSEncoding = (str: string) => {
     const UNESCAPE_HTML_HEX_REGEX = /&#x([0-9A-Fa-f]+)(;|(?=[^\d;]))/g;
     const OTHER_ESC = /\\(.)/g;
 
-    const handleEscape = (radix: number) => (ignored: any, val: string) =>
-        String.fromCodePoint(Number.parseInt(val, radix));
+    const handleEscape = (radix: number) => (ignored: any, val: string) => {
+        try {
+            return String.fromCodePoint(Number.parseInt(val, radix));
+        } catch {
+            // Unescape regexps have some limitations, for those rare situations, fromCodePoint can throw
+            // One real found is: `font-family:\2018Calibri`
+            return '';
+        }
+    };
+
     /*
      * basic unescaped named sequences: &amp; etcetera, lodash does not support a lot, but that is not a problem for our case.
      * Actually handling all escaped sequences would mean keeping track of a very large and ever growing amount of named sequences
