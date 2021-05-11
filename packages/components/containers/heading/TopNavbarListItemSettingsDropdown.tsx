@@ -68,15 +68,18 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
 
                 <hr className="mt0-5 mb0-5" />
 
-                <DropdownMenuButton
-                    onClick={handleEarlyAccessClick}
-                    className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
-                >
-                    {c('Action').t`Early access`}
-                    <span className="color-primary ml2">
-                        {earlyAccess.value ? c('Enabled').t`On` : c('Disabled').t`Off`}
-                    </span>
-                </DropdownMenuButton>
+                {earlyAccess.isEnabled && (
+                    <DropdownMenuButton
+                        onClick={handleEarlyAccessClick}
+                        className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                    >
+                        {c('Action').t`Early access`}
+                        <span className="color-primary ml2">
+                            {earlyAccess.value ? c('Enabled').t`On` : c('Disabled').t`Off`}
+                        </span>
+                    </DropdownMenuButton>
+                )}
+
                 <DropdownMenuButton
                     onClick={handleThemeClick}
                     className="flex flex-nowrap flex-justify-space-between flex-align-items-center"

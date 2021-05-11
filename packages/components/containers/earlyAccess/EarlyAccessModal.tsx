@@ -19,8 +19,6 @@ const EarlyAccessModal = (props: { onClose?: () => void }) => {
         window.location.reload();
     };
 
-    const loading = earlyAccess.loading || !earlyAccess.canUpdate;
-
     return (
         <FormModal
             {...props}
@@ -30,13 +28,13 @@ const EarlyAccessModal = (props: { onClose?: () => void }) => {
                 <Button
                     type="submit"
                     color="norm"
-                    loading={loading}
-                    disabled={earlyAccessEnabled === earlyAccess.value}
+                    loading={earlyAccess.loading}
+                    disabled={earlyAccessEnabled === earlyAccess.value || !earlyAccess.canUpdate}
                 >
                     {c('Action').t`Apply`}
                 </Button>
             }
-            loading={loading}
+            loading={earlyAccess.loading}
             onSubmit={update}
         >
             <div className="h2">{c('Title').t`Early access`}</div>
