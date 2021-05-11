@@ -114,7 +114,7 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
                             {c('Info')
                                 .t`Save your password somewhere safe. Click on icon to confirm you that have typed your password correctly.`}
                         </Alert>
-                        <Row>
+                        <div className="flex-no-min-children flex-nowrap mb1 on-mobile-flex-column">
                             <Label htmlFor="orgPassword">{c('Label').t`Organization password`}</Label>
                             <PasswordInput
                                 id="orgPassword"
@@ -125,8 +125,8 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
                                 autoComplete="new-password"
                                 required
                             />
-                        </Row>
-                        <Row>
+                        </div>
+                        <div className="flex-no-min-children flex-nowrap mb1 on-mobile-flex-column">
                             <Label htmlFor="confirmPassword">{c('Label').t`Confirm password`}</Label>
                             <PasswordInput
                                 id="confirmPassword"
@@ -137,7 +137,7 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
                                 autoComplete="new-password"
                                 required
                             />
-                        </Row>
+                        </div>
                     </>
                 ),
                 async onSubmit() {
