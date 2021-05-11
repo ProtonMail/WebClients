@@ -210,13 +210,14 @@ const getDeleteEventActions = async ({
     const isDeleteInvitation = [DECLINE_INVITATION, DECLINE_DISABLED].includes(updatedDeleteInviteActions.type);
     const isCancelInvitation = [CANCEL_INVITATION, CANCEL_DISABLED].includes(updatedDeleteInviteActions.type);
     const selfAttendeeToken = getSelfAttendeeToken(originalEditEventData.veventComponent, addresses);
+    const isCalendarDisabled = getIsCalendarDisabled(oldCalendarData);
 
     const { type: deleteType, inviteActions: updatedInviteActions } = await getRecurringDeleteType({
         originalEditEventData,
         canOnlyDeleteAll:
             !originalEditEventData.veventComponent ||
             !oldEditEventData.veventComponent ||
-            getIsCalendarDisabled(oldCalendarData) ||
+            isCalendarDisabled ||
             actualEventRecurrence.isSingleOccurrence ||
             isCancelInvitation ||
             (isDeleteInvitation && !isSingleEdit),
@@ -225,6 +226,7 @@ const getDeleteEventActions = async ({
         recurrences,
         recurrence: actualEventRecurrence,
         inviteActions: updatedDeleteInviteActions,
+        isCalendarDisabled,
         isInvitation,
         selfAttendeeToken,
     });

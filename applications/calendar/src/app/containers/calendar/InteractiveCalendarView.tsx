@@ -913,11 +913,14 @@ const InteractiveCalendarView = ({
                         silence: true,
                     })
         );
-        // the routes called in requests do not have any specific jail limit
-        // the limit per user session is 25k requests / 900s
-        const responses = await processApiRequestsSafe(requests, 25000, 900 * SECOND);
-
-        return responses;
+        // Catch errors silently
+        try {
+            // the routes called in requests do not have any specific jail limit
+            // the limit per user session is 25k requests / 900s
+            return processApiRequestsSafe(requests, 25000, 900 * SECOND);
+        } catch (e) {
+            return [];
+        }
     };
 
     const handleUpdatePersonalPartActions = async (
@@ -945,11 +948,8 @@ const InteractiveCalendarView = ({
         try {
             // the routes called in requests do not have any specific jail limit
             // the limit per user session is 25k requests / 900s
-            const responses = await processApiRequestsSafe(requests, 25000, 900 * SECOND);
-
-            return responses;
+            return processApiRequestsSafe(requests, 25000, 900 * SECOND);
         } catch (e) {
-            noop();
             return [];
         }
     };

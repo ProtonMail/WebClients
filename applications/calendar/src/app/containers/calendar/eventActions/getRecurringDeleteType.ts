@@ -18,6 +18,7 @@ interface Arguments {
     veventComponent?: VcalVeventComponent;
     canOnlyDeleteAll: boolean;
     canOnlyDeleteThis: boolean;
+    isCalendarDisabled: boolean;
     isInvitation: boolean;
     onDeleteConfirmation: OnDeleteConfirmationCb;
     selfAttendeeToken?: string;
@@ -28,6 +29,7 @@ const getRecurringDeleteType = ({
     recurrence,
     canOnlyDeleteAll,
     canOnlyDeleteThis,
+    isCalendarDisabled,
     isInvitation,
     onDeleteConfirmation,
     inviteActions,
@@ -55,7 +57,11 @@ const getRecurringDeleteType = ({
     const updatedInviteActions = {
         ...inviteActions,
         resetSingleEditsPartstat:
-            deleteTypes.length === 1 && deleteTypes[0] === RECURRING_TYPES.ALL && mustResetPartstat,
+            deleteTypes.length === 1 &&
+            deleteTypes[0] === RECURRING_TYPES.ALL &&
+            mustResetPartstat &&
+            !isCalendarDisabled,
+        deleteSingleEdits: isCalendarDisabled,
     };
     const hasNonCancelledSingleEdits = getHasNonCancelledSingleEdits(singleEditRecurrencesWithoutSelf);
     return onDeleteConfirmation({

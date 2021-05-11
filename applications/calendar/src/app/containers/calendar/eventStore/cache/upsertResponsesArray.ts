@@ -19,7 +19,7 @@ export const upsertSyncMultiActionsResponses = (
     multiResponses: SyncMultipleApiResponse[],
     calendarsEventsCache: CalendarsEventsCache
 ) => {
-    for (let i = 0; i < multiActions.length; ++i) {
+    for (let i = 0; i < multiResponses.length; ++i) {
         const actions = multiActions[i];
         const responses = multiResponses[i];
 
@@ -56,7 +56,7 @@ export const upsertUpdateEventPartResponses = (
     responses: UpdateEventPartApiResponse[],
     calendarsEventsCache: CalendarsEventsCache
 ) => {
-    for (let i = 0; i < operations.length; ++i) {
+    for (let i = 0; i < responses.length; ++i) {
         const operation = operations[i];
         const { Code, Event } = responses[i];
         const calendarEventsCache = calendarsEventsCache.calendars[operation.data.calendarID];
