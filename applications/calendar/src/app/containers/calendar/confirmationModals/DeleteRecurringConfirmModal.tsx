@@ -114,8 +114,9 @@ const DeleteRecurringConfirmModal = ({
     ...rest
 }: Props) => {
     const [type, setType] = useState(types[0]);
+    const { deleteSingleEdits } = inviteActions;
     const { title, confirm, alertText } = getTexts(types, inviteActions);
-    const showWarning = hasNonCancelledSingleEdits && type === RECURRING_TYPES.ALL;
+    const showWarning = hasNonCancelledSingleEdits && type === RECURRING_TYPES.ALL && !deleteSingleEdits;
     const warningText = showWarning ? getRecurringWarningText(isInvitation, inviteActions) : '';
     const handleConfirm = async () => {
         onConfirm({ type, inviteActions });
