@@ -90,12 +90,13 @@ export const useSendMessage = () => {
                 packages = await encryptPackages(message, messageKeys, packages);
 
                 // expiresIn is not saved on the API and then empty in `message`, we need to refer to `inputMessage`
-                const { expiresIn } = inputMessage;
+                const { expiresIn, autoSaveContacts } = inputMessage;
                 return api<{ Sent: Message; DeliveryTime: number }>(
                     sendMessage(message.data?.ID, {
                         Packages: packages,
                         ExpiresIn: expiresIn === 0 ? undefined : expiresIn,
                         DelaySeconds: delaySendSeconds, // Once the API receive this request, it calculates how much time the notification needs to be display
+                        AutoSaveContacts: autoSaveContacts,
                     } as any)
                 );
             };
