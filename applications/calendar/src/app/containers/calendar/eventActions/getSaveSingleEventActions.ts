@@ -7,6 +7,7 @@ import { SyncMultipleApiResponse, VcalVeventComponent } from 'proton-shared/lib/
 import { GetCanonicalEmailsMap } from 'proton-shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
 import { useGetCalendarKeys } from 'react-components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import {
+    CleanSendIcsActionData,
     INVITE_ACTION_TYPES,
     InviteActions,
     SendIcsActionData,
@@ -39,6 +40,7 @@ interface SaveEventHelperArguments {
     sendIcs: (
         data: SendIcsActionData
     ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions; timestamp: number }>;
+    onSendPrefsErrors: (data: SendIcsActionData) => Promise<CleanSendIcsActionData>;
     onDuplicateAttendees: (veventComponent: VcalVeventComponent, inviteActions: InviteActions) => Promise<void>;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
 }
@@ -56,6 +58,7 @@ const getSaveSingleEventActions = async ({
     getCanonicalEmailsMap,
     onSaveConfirmation,
     sendIcs,
+    onSendPrefsErrors,
     onDuplicateAttendees,
     handleSyncActions,
 }: SaveEventHelperArguments): Promise<{
@@ -208,6 +211,16 @@ const getSaveSingleEventActions = async ({
             inviteActions,
             isInvitation: false,
         });
+        const { inviteActions: cleanInviteActions, vevent: cleanVevent } = await onSendPrefsErrors({
+            inviteActions,
+            vevent: updatedVeventComponent,
+        });
+
+        if (!cleanVevent) {
+            throw new Error('Failed to clean event component');
+        }
+
+        [updatedInviteActions, updatedVeventComponent] = [cleanInviteActions, cleanVevent];
 
         // we need to get a SharedEventID before sending out the invitation
         // for that we will save the event first without attendees
@@ -238,14 +251,15 @@ const getSaveSingleEventActions = async ({
             updatedInviteActions.sharedEventID = sharedEventID;
             updatedInviteActions.sharedSessionKey = sharedSessionKey;
         }
-        const { veventComponent: cleanVeventComponent, inviteActions: cleanInviteActions } = await sendIcs({
+        const { veventComponent: finalVeventComponent, inviteActions: finalInviteActions } = await sendIcs({
             inviteActions: updatedInviteActions,
-            vevent: newVeventComponent,
+            vevent: updatedVeventComponent,
             cancelVevent: oldVeventComponent,
+            noCheck: true,
         });
-        if (cleanVeventComponent) {
-            updatedVeventComponent = cleanVeventComponent;
-            updatedInviteActions = cleanInviteActions;
+        if (finalVeventComponent) {
+            updatedVeventComponent = finalVeventComponent;
+            updatedInviteActions = finalInviteActions;
         }
     }
 
