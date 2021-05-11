@@ -91,13 +91,16 @@ const useEarlyAccess = () => {
     const canUpdate = earlyAccessScope.feature && 'Value' in earlyAccessScope.feature;
 
     const update = async (earlyAccessEnabled: boolean) => {
-        if (!canUpdate) {
-            return;
-        }
-
         await withLoadingUpdate(api(updateEarlyAccess({ EarlyAccess: Number(earlyAccessEnabled) })));
 
-        updateVersionCookie(earlyAccessEnabled ? earlyAccessScopeValue : undefined);
+        /*
+         * Can't update the cookie without the request for the EarlyAccessScope
+         * feature to have completed since the environment is set based on it should
+         * earlyAccessEnabled be true
+         */
+        if (!canUpdate) {
+            updateVersionCookie(earlyAccessEnabled ? earlyAccessScopeValue : undefined);
+        }
     };
 
     const normalizedVersionCookieAtLoad = getVersionCookieIsValid(versionCookieAtLoad, earlyAccessScope.feature)
@@ -107,8 +110,13 @@ const useEarlyAccess = () => {
     const currentEnvironmentMatchesTargetEnvironment = normalizedVersionCookieAtLoad === targetEnvironment;
     const environmentIsDesynchronized = hasLoaded && !currentEnvironmentMatchesTargetEnvironment;
     const loading = earlyAccessScope.loading || loadingUpdate;
+    const isEnabled =
+        !earlyAccessScope.loading &&
+        Boolean(earlyAccessScope.feature) &&
+        Boolean(earlyAccessScope.feature?.Options?.length);
 
     return {
+        isEnabled,
         value: Boolean(userSettings.EarlyAccess),
         scope: earlyAccessScopeValue,
         canUpdate,
