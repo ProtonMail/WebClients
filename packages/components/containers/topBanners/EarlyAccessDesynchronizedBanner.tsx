@@ -13,6 +13,10 @@ const EarlyAccessDesynchronizedBanner = () => {
     const { APP_NAME } = useConfig();
     const earlyAccess = useEarlyAccess();
 
+    if (!earlyAccess.isEnabled) {
+        return null;
+    }
+
     // translator: complete sentence example: "You have enabled/disabled Early Access. <Refresh> the page to use the latest/stable version of <ProtonMail>."
     const refreshButton = (
         <InlineLinkButton
