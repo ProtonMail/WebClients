@@ -75,7 +75,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 if (signal.aborted) {
                     return;
                 }
-                onFinish(importedContacts);
+                void onFinish(importedContacts);
             } catch (error) {
                 setModelWithAbort(() => ({
                     step: IMPORT_STEPS.ATTACHING,
@@ -91,11 +91,11 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 if (signal.aborted) {
                     return;
                 }
-                onFinish([]);
+                void onFinish([]);
             }
         };
 
-        process();
+        void process();
 
         return () => {
             abortController.abort();
