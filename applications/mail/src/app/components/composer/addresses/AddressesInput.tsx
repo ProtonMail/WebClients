@@ -32,7 +32,7 @@ const AddressesInput = ({
     placeholder,
     expanded = false,
 }: Props) => {
-    const { contactsMap: contactEmailsMap } = useContactCache();
+    const { contactsMap: contactEmailsMap, groupsWithContactsMap } = useContactCache();
     const { getRecipientsOrGroups } = useRecipientLabel();
     const [contactEmails] = useContactEmails() as [ContactEmail[] | undefined, boolean, any];
     const [contactGroups] = useContactGroups();
@@ -161,6 +161,7 @@ const AddressesInput = ({
                         contactEmails={contactEmails}
                         contactGroups={contactGroups}
                         contactEmailsMap={contactEmailsMap}
+                        groupsWithContactsMap={groupsWithContactsMap}
                         recipients={recipients}
                         onAddRecipients={handleAddRecipient}
                         onKeyDown={handleInputKey}
