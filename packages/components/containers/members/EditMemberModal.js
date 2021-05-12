@@ -154,12 +154,12 @@ const EditMemberModal = ({ onClose, member, ...rest }) => {
                     </Field>
                 </Row>
             )}
-            <Row>
-                <Label>{c('Label').t`Addresses`}</Label>
+            <div>
+                <div>{c('Label').t`Addresses`}</div>
                 <div>
                     <Addresses organization={organization} />
                 </div>
-            </Row>
+            </div>
         </FormModal>
     );
 };
