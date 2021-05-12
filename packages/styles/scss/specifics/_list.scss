@@ -58,6 +58,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	padding: $item-container-padding-top-bottom
 		$item-container-padding-left-right; // design wants ~64 height
 	border-bottom: 1px solid var(--border-weak);
+	scroll-margin-top: $item-container-height;
 
 	// no transition, otherwhise there's a flash on page loading
 	// because of theme file loading after applying default theme colors
@@ -226,6 +227,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	.item-container,
 	.item-container-row {
 		height: $item-container-height-compact-mode;
+		scroll-margin-top: $item-container-height-compact-mode;
 
 		.item-container-inner {
 			padding: em(0) em(12);
@@ -234,6 +236,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 
 	.item-container-row {
 		height: $item-container-row-height-compact-mode;
+		scroll-margin-top: $item-container-row-height-compact-mode;
 		.item-icon-compact {
 			&::after {
 				height: $item-container-row-height-compact-mode;
