@@ -11,7 +11,7 @@ import './ContactsWidget.scss';
 import TopNavbarListItemButton, {
     TopNavbarListItemButtonProps,
 } from '../../../components/topnavbar/TopNavbarListItemButton';
-import ImportContactsModal from '../import/ImportContactsModal';
+import ImportModal from '../import/ImportModal';
 
 const TopNavbarListItemContactsButton = React.forwardRef(
     (props: Omit<TopNavbarListItemButtonProps<'button'>, 'icon' | 'text' | 'as'>, ref: typeof props.ref) => {
@@ -53,7 +53,7 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose }: Props) => {
     };
 
     const handleImport = () => {
-        createModal(<ImportContactsModal />);
+        createModal(<ImportModal />);
         handleClose();
     };
 

@@ -77,6 +77,7 @@ const submitContacts = async (contacts: EncryptedContact[], labels: CATEGORIES, 
         const contact = contacts[Index];
         return {
             contactID: Contact.ID,
+            contactEmailIDs: Contact.ContactEmails.map((contactEmail) => contactEmail.ID),
             categories: extractContactImportCategories(Contact, contact),
         };
     });

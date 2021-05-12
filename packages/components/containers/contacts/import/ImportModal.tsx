@@ -174,7 +174,7 @@ const ImportModal = ({ ...rest }: Props) => {
                         throw new ImportFileError(IMPORT_ERROR_TYPE.NO_CSV_OR_VCF_FILE);
                     }
                     if (featureUsedContactsImport?.Value === false) {
-                        updateUsedContactsImport(true);
+                        void updateUsedContactsImport(true);
                     }
                 } catch (e) {
                     const failure = e instanceof ImportFileError ? e : new ImportFatalError(e);
