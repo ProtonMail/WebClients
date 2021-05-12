@@ -141,11 +141,12 @@ const ImportManageFoldersRow = ({
      * Here we check folders names agains existing labels
      * and labels against existing folders
      * */
-    const nameAlreadyExistsError = useMemo(() => nameAlreadyExists(inputValue, isLabelMapping ? folders : labels), [
-        inputValue,
-        folders,
-        labels,
-    ]);
+    const nameAlreadyExistsError = useMemo(() => {
+        if (DestinationFolder) {
+            return false;
+        }
+        return nameAlreadyExists(inputValue, isLabelMapping ? folders : labels);
+    }, [inputValue, folders, labels]);
 
     const nameTooLongError = useMemo(() => {
         if (!checked) {
