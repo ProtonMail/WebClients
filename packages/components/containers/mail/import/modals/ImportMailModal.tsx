@@ -125,7 +125,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, oauthProps: initialOAu
         needIMAPDetails: false,
         selectedPeriod: TIME_UNIT.BIG_BANG,
         payload: {
-            AddressID: addresses[0].ID,
+            AddressID: addresses?.length ? addresses[0].ID : '',
             Mapping: [],
             CustomFields: 0,
         },
@@ -546,6 +546,20 @@ const ImportMailModal = ({ onClose = noop, currentImport, oauthProps: initialOAu
             setShowPassword(false);
         }
     }, [modalModel.email]);
+
+    // Initialize AddressID
+    useEffect(() => {
+        if (!addresses?.length && !modalModel.payload.AddressID) {
+            return;
+        }
+        setModalModel({
+            ...modalModel,
+            payload: {
+                ...modalModel.payload,
+                AddressID: addresses[0].ID,
+            },
+        });
+    }, [addresses]);
 
     return (
         <FormModal
