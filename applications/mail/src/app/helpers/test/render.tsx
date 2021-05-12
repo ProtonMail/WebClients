@@ -22,7 +22,7 @@ import { ConversationCountsModel, MessageCountsModel } from 'proton-shared/lib/m
 import MessageProvider from '../../containers/MessageProvider';
 import ConversationProvider from '../../containers/ConversationProvider';
 import { minimalCache, cache, messageCache, conversationCache, attachmentsCache, contactCache } from './cache';
-import { api } from './api';
+import { api, registerFeatureFlagsApiMock } from './api';
 import AttachmentProvider from '../../containers/AttachmentProvider';
 import ContactProvider from '../../containers/ContactProvider';
 import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
@@ -108,6 +108,7 @@ export const tick = () => act(() => wait(0));
 
 export const render = async (ui: ReactElement, useMinimalCache = true): Promise<RenderResult> => {
     mockDomApi();
+    registerFeatureFlagsApiMock();
 
     if (useMinimalCache) {
         minimalCache();

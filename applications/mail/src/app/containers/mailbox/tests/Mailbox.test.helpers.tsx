@@ -128,17 +128,6 @@ export const setup = async ({
         addApiMock('mail/v4/conversations', () => ({ Total: totalConversations, Conversations: conversations }));
     }
     addApiMock('mail/v4/importers', () => ({ Importers: [] }));
-    addApiMock('core/v4/features/UsedMailMobileApp', () => ({
-        Feature: {
-            Code: 'UsedMailMobileApp',
-            Type: 'boolean',
-            Global: false,
-            DefaultValue: false,
-            Value: true,
-            UpdateTime: 1616511553,
-            Writable: true,
-        },
-    }));
 
     addToCache('Labels', [...labels, ...folders]);
     addToCache('MessageCounts', [{ LabelID: props.labelID, Total: totalMessages, Unread: totalMessages }]);
