@@ -16,7 +16,10 @@ import {
     getContactsAutocompleteItems,
     getContactGroupsAutocompleteItems,
     getMajorListAutocompleteItems,
+    getNumberOfMembersText,
+    GroupsWithContactsMap,
 } from './helper';
+import Icon from '../icon/Icon';
 
 interface Props extends Omit<InputProps, 'value'> {
     id: string;
@@ -27,6 +30,7 @@ interface Props extends Omit<InputProps, 'value'> {
     contactEmails?: ContactEmail[];
     contactGroups?: ContactGroup[];
     contactEmailsMap?: SimpleMap<ContactEmail>;
+    groupsWithContactsMap?: GroupsWithContactsMap;
     hasEmailPasting?: boolean;
     hasAddOnBlur?: boolean;
     limit?: number;
@@ -40,6 +44,7 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
             contactEmails,
             contactEmailsMap,
             contactGroups,
+            groupsWithContactsMap,
             id,
             onKeyDown,
             recipients,
@@ -139,6 +144,16 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
 
         const filteredOptions = useAutocompleteFilter(input, options, getData, limit, 1);
 
+        // If a group name is equal to the search input, we want to display it as the first option
+        const exactNameGroup = filteredOptions.find(
+            ({ option: { label, type } }) => label === input && type === 'group'
+        );
+
+        // Put the group at the first place if found
+        const filteredAndSortedOptions = exactNameGroup
+            ? [exactNameGroup, ...filteredOptions.filter(({ option: { label } }) => label !== input)]
+            : filteredOptions;
+
         const { getOptionID, inputProps, suggestionProps } = useAutocomplete<AddressesAutocompleteItem>({
             id,
             options: filteredOptions,
@@ -197,7 +212,7 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
                     error={emailError}
                 />
                 <AutocompleteList anchorRef={anchorRef} {...suggestionProps}>
-                    {filteredOptions.map(({ chunks, text, option }, index) => {
+                    {filteredAndSortedOptions.map(({ chunks, text, option }, index) => {
                         return (
                             <Option
                                 key={option.key}
@@ -207,7 +222,22 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
                                 focusOnActive={false}
                                 onChange={handleSelect}
                             >
-                                <Marks chunks={chunks}>{text}</Marks>
+                                {option.type === 'group' ? (
+                                    <div className="flex flex-nowrap flex-flex-align-items-center">
+                                        <Icon
+                                            name="circle"
+                                            color={option.value.Color}
+                                            size={12}
+                                            className="mr0-5 flex-item-noshrink flex-item-centered-vert"
+                                        />
+                                        <span className="mr0-5 text-ellipsis">
+                                            <Marks chunks={chunks}>{text}</Marks>
+                                        </span>
+                                        {getNumberOfMembersText(option.value.ID, groupsWithContactsMap)}
+                                    </div>
+                                ) : (
+                                    <Marks chunks={chunks}>{text}</Marks>
+                                )}
                             </Option>
                         );
                     })}
