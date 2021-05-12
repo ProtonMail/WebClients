@@ -3,5 +3,5 @@
 .bridge-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	grid-gap: rem(10);
+	grid-gap: 1em;
 }
