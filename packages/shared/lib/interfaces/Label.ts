@@ -5,6 +5,7 @@ export interface Label {
     ContextTime?: number;
     Type: number;
     Order: number;
+    Path: string;
 }
 
 export interface LabelCount {
