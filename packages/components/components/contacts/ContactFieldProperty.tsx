@@ -1,5 +1,5 @@
 import React, { ChangeEvent, forwardRef, Ref } from 'react';
-import { parseISO, isValid } from 'date-fns';
+import { parseISO, formatISO, isValid } from 'date-fns';
 
 import { getAllFieldLabels } from 'proton-shared/lib/helpers/contacts';
 import { ContactPropertyChange } from 'proton-shared/lib/interfaces/contacts/Contact';
@@ -63,10 +63,10 @@ const ContactFieldProperty = (
         const date = value === '' ? new Date() : parseISO(`${value}`);
         if (isValid(date)) {
             const handleSelectDate = (value?: Date) => {
-                if (!isValid(value)) {
+                if (!value || !isValid(value)) {
                     return;
                 }
-                onChange({ value: value?.toISOString() || '', uid });
+                onChange({ value: formatISO(value, { representation: 'date' }), uid });
             };
             return <DateInput placeholder={label} value={date} autoFocus onChange={handleSelectDate} {...rest} />;
         }
