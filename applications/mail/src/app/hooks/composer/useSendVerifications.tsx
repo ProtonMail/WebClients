@@ -94,7 +94,6 @@ export const useSendVerifications = () => {
             await Promise.all(
                 emails.map(async (email) => {
                     const encryptionPreferences = await getEncryptionPreferences(email, 0, contactsMap);
-                    console.log('useSendVerification', email, encryptionPreferences);
                     if (encryptionPreferences.emailAddressWarnings?.length) {
                         emailWarnings[email] = encryptionPreferences.emailAddressWarnings as string[];
                     }
