@@ -27,7 +27,7 @@ const initialBridgeClients: BridgeClient[] = [
     },
     {
         id: 'apple',
-        icon: 'apple',
+        icon: 'macos',
         platform: 'macOS',
         versionFile: 'version_darwin.json',
         version: 'Latest',
@@ -110,7 +110,7 @@ const ProtonMailBridgeSection = () => {
 
         return (
             <div key={id} className="flex">
-                <div className="p2 bordered flex-item-fluid rounded flex flex-column flex-align-items-center">
+                <div className="bordered rounded1e p2 flex-item-fluid rounded flex flex-column flex-align-items-center">
                     <Icon size={48} name={icon} className="mb1" />
 
                     <h3 className="text-bold text-xl m0">{c('Title').t`Bridge for ${platform}`}</h3>
@@ -122,7 +122,7 @@ const ProtonMailBridgeSection = () => {
                     )}
 
                     {downloads.length > 0 && (
-                        <Button color="norm" className="w100 mtauto" onClick={handleClick}>{c('Action')
+                        <Button color="weak" shape="outline" className="w100 mtauto" onClick={handleClick}>{c('Action')
                             .t`Download`}</Button>
                     )}
                 </div>
