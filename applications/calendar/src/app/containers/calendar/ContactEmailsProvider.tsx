@@ -4,14 +4,33 @@ import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import React, { createContext, ReactNode, useContext, useMemo } from 'react';
 import { useContactEmails, useContactGroups } from 'react-components';
 
+export type GroupWithContacts = { group: ContactGroup; contacts: ContactEmail[] };
+export type GroupsWithContactsMap = SimpleMap<GroupWithContacts>;
+
 export type ContactEmailsCache = {
     contactEmails: ContactEmail[];
     contactGroups: ContactGroup[];
     contactEmailsMap: SimpleMap<ContactEmail>;
     contactEmailsMapWithDuplicates: SimpleMap<ContactEmail[]>;
+    groupsWithContactsMap: GroupsWithContactsMap;
 };
 
 const ContactEmailsContext = createContext<ContactEmailsCache | null>(null);
+
+const computeGroupsMap = (contacts: ContactEmail[], contactGroups: ContactGroup[]) =>
+    contacts.reduce<GroupsWithContactsMap>((acc, contact) => {
+        contact.LabelIDs?.forEach((labelID) => {
+            if (acc[labelID]) {
+                acc[labelID]?.contacts.push(contact);
+            } else {
+                const group = contactGroups.find((group) => group.ID === labelID);
+                if (group) {
+                    acc[labelID] = { group, contacts: [contact] };
+                }
+            }
+        });
+        return acc;
+    }, {});
 
 export const useContactEmailsCache = () => {
     const state = useContext(ContactEmailsContext);
@@ -53,6 +72,7 @@ const ContactEmailsProvider = ({ children }: Props) => {
             contactEmails,
             contactGroups,
             ...toMapWithDuplicates(contactEmails),
+            groupsWithContactsMap: computeGroupsMap(contactEmails, contactGroups),
         };
     }, [contactEmails, contactGroups]);
 

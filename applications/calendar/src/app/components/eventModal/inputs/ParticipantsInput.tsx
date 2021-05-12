@@ -53,7 +53,7 @@ const ParticipantsInput = ({
     const numberOfParticipants = value.length;
     const anchorRef = useRef<HTMLInputElement>(null);
 
-    const { contactEmails, contactGroups, contactEmailsMap } = useContactEmailsCache();
+    const { contactEmails, contactGroups, contactEmailsMap, groupsWithContactsMap } = useContactEmailsCache();
 
     const ownNormalizedEmails = useMemo(() => {
         return addresses.map(({ Email }) => canonizeInternalEmail(Email));
@@ -125,6 +125,7 @@ const ParticipantsInput = ({
                 contactEmails={contactEmails}
                 contactGroups={contactGroups}
                 contactEmailsMap={contactEmailsMap}
+                groupsWithContactsMap={groupsWithContactsMap}
                 recipients={recipients}
                 onAddRecipients={handleAddRecipients}
                 onAddInvalidEmail={() => {
