@@ -87,9 +87,9 @@ const useDayGridEventLayout = (
                     idx: i,
                     type: 'event',
                     style: {
-                        top: `${top * dayEventHeight}px`,
+                        top: `${(top * dayEventHeight) / 16}rem`,
                         left: toPercent(left),
-                        '--height': `${dayEventHeight}px`,
+                        '--height': `${dayEventHeight / 16}rem`,
                         width: toPercent(width),
                     },
                 });
@@ -105,9 +105,9 @@ const useDayGridEventLayout = (
                     idx: +dayIndex,
                     type: 'more',
                     style: {
-                        top: `${numberOfRows * dayEventHeight}px`,
+                        top: `${(numberOfRows * dayEventHeight) / 16}rem`,
                         left: toPercent(+dayIndex / columns),
-                        height: `${dayEventHeight}px`,
+                        height: `${dayEventHeight / 16}rem`,
                         width: toPercent(1 / columns),
                     },
                 });

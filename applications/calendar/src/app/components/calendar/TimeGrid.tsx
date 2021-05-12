@@ -295,7 +295,7 @@ const TimeGrid = ({
                             <DayLines days={daysRows[0]} />
                             <div
                                 className="calendar-time-fullday"
-                                style={{ height: `${actualRows * dayEventHeight}px` }}
+                                style={{ height: `${(actualRows * dayEventHeight) / 16}rem` }}
                                 data-row="0"
                                 ref={dayGridRef}
                             >
