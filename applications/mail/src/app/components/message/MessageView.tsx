@@ -5,6 +5,7 @@ import { classnames } from 'react-components';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import { noop } from 'proton-shared/lib/helpers/function';
+import createScrollIntoView from 'react-components/helpers/createScrollIntoView';
 import { getSentStatusIconInfo, getReceivedStatusIcon, MessageViewIcons } from '../../helpers/message/icon';
 import MessageBody from './MessageBody';
 import HeaderCollapsed from './header/HeaderCollapsed';
@@ -41,11 +42,15 @@ interface Props {
     onMessageReady?: () => void;
     columnLayout?: boolean;
     isComposerOpened: boolean;
+    containerRef?: React.RefObject<HTMLElement>;
+    wrapperRef?: React.RefObject<HTMLDivElement>;
 }
 
 export interface MessageViewRef {
     expand: () => void;
 }
+
+const OFFSET_PERCENTAGE = 0.25; // 25%
 
 const MessageView = (
     {
@@ -64,6 +69,8 @@ const MessageView = (
         onMessageReady,
         columnLayout = false,
         isComposerOpened,
+        containerRef,
+        wrapperRef,
     }: Props,
     ref: Ref<MessageViewRef>
 ) => {
@@ -127,6 +134,56 @@ const MessageView = (
 
     const toggleOriginalMessage = () => setOriginalMessageMode(!originalMessageMode);
 
+    const setParentBottomPadding = (value: number) => {
+        if (!elementRef.current) {
+            return;
+        }
+
+        const parent = elementRef.current.parentNode as HTMLElement;
+        parent.style.paddingBottom = `${value}px`;
+    };
+
+    const resetParentBottomPadding = () => {
+        setParentBottomPadding(0);
+    };
+
+    const scrollToMessage = () => {
+        if (!elementRef.current || !containerRef?.current || !wrapperRef?.current) {
+            return;
+        }
+
+        resetParentBottomPadding();
+
+        const { offsetHeight: containerHeight } = containerRef.current;
+
+        const header = containerRef.current.firstChild as HTMLElement;
+        const { offsetHeight: headerHeight } = header;
+
+        const offset = (containerHeight - headerHeight) * OFFSET_PERCENTAGE;
+        const totalOffset = headerHeight + offset;
+
+        // if the message is already in the offset area of the container, abort the scroll
+        if (elementRef.current.offsetTop - totalOffset < containerRef.current.scrollTop) {
+            return;
+        }
+
+        /* @todo refine padding bottom calculation */
+        const wrapperPaddingBottom = parseInt(getComputedStyle(wrapperRef.current).paddingBottom, 10);
+        const wrapperPaddingTop = parseInt(getComputedStyle(wrapperRef.current).paddingTop, 10);
+
+        setParentBottomPadding(
+            Math.max(
+                containerHeight -
+                    totalOffset -
+                    elementRef.current.offsetHeight +
+                    wrapperPaddingBottom +
+                    wrapperPaddingTop,
+                0
+            )
+        );
+        createScrollIntoView(elementRef.current, containerRef.current, false, totalOffset);
+    };
+
     // Setup ref to allow opening the message from outside, typically the ConversationView
     useImperativeHandle(ref, () => ({
         expand: () => {
@@ -170,14 +227,10 @@ const MessageView = (
     }, [loading, expanded, message.initialized, message.verification]);
 
     useEffect(() => {
-        if (expanded && bodyLoaded) {
-            setTimeout(() => {
-                if (elementRef.current) {
-                    elementRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
+        if (expanded) {
+            scrollToMessage();
         }
-    }, [expanded, bodyLoaded]);
+    }, [expanded]);
 
     // Mark as read a message already loaded (when user marked as unread)
     useEffect(() => {

@@ -70,6 +70,8 @@ const MailboxContainer = ({
     const columnMode = columnModeSetting && !forceRowMode;
     const columnLayout = columnModeSetting || forceRowMode;
 
+    const messageContainerRef = useRef<HTMLElement>(null);
+
     // Page state is hybrid: page number is handled by the url, total computed in useElements, size and limit are constants
     // Yet, it is simpler to co-localize all these data in one object
     const [page, setPage] = useState<Page>({
@@ -267,7 +269,10 @@ const MailboxContainer = ({
                     />
                 )}
                 {showContentPanel && (
-                    <section className="view-column-detail flex flex-column flex-item-fluid flex-nowrap scroll-if-needed relative">
+                    <section
+                        ref={messageContainerRef}
+                        className="view-column-detail flex flex-column flex-item-fluid flex-nowrap scroll-if-needed relative"
+                    >
                         {showPlaceholder && (
                             <PlaceholderView
                                 welcomeFlag={welcomeFlag}
@@ -290,6 +295,7 @@ const MailboxContainer = ({
                                     onMessageReady={onMessageReady}
                                     columnLayout={columnLayout}
                                     isComposerOpened={isComposerOpened}
+                                    containerRef={messageContainerRef}
                                 />
                             ) : (
                                 <MessageOnlyView
