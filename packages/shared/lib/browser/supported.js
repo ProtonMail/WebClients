@@ -1,5 +1,3 @@
-import { isIE11 } from '../helpers/browser';
-
 /**
  * This file is included in the main bundle. Its main purpose is to find out if the main bundle could execute,
  * or if it errored out due to a Syntax Error since the main bundle is only compiled against a specific list
@@ -7,8 +5,10 @@ import { isIE11 } from '../helpers/browser';
  * The unsupported.js script is included as another script tag and relies on this variable.
  */
 const isNotSupported = () => {
+    // IE11 or old edge (not chromium based) are not supported.
+    const isOldEdgeOrIE = !('reversed' in document.createElement('ol'));
     // If these function get polyfilled they'll exist, this is a safety mechanism for when we stop supporting it
-    return isIE11() || !Object.fromEntries || !''.trimStart;
+    return isOldEdgeOrIE || !Object.fromEntries || !''.trimStart;
 };
 
 window.protonSupportedBrowser = !isNotSupported();
