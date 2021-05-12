@@ -66,7 +66,7 @@ const FeedbackModal = ({ onClose, ...rest }: Props) => {
                 .t`Proton has received a facelift. We would love to hear what you think about it!`}</p>
             <div className="mb2">
                 <label className="mb1 block" id="score-label">{c('Label')
-                    .t`How would you rate our new look and feel?`}</label>
+                    .t`How would you rate your experience with the new ProtonMail?`}</label>
                 <div className="w75 on-mobile-w100">
                     <Scale
                         from={0}
