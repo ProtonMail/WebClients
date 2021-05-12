@@ -174,7 +174,11 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                                     onClick={() => withLoading(handleMove(folder))}
                                     data-testid={`folder-dropdown:folder-${folder.Name}`}
                                 >
-                                    <FolderIcon folder={folder} className="flex-item-noshrink mr0-5" />
+                                    <FolderIcon
+                                        folder={folder}
+                                        name={folder.icon}
+                                        className="flex-item-noshrink mr0-5"
+                                    />
                                     <span className="text-ellipsis" title={folder.Name}>
                                         <Mark value={search}>{folder.Name}</Mark>
                                     </span>
