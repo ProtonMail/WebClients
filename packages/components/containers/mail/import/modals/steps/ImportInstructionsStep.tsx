@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 
+import gmailCaptchaImg from 'design-system/assets/img/import-instructions/gmail-captcha.jpg';
 import gmailImapFolderImg from 'design-system/assets/img/import-instructions/gmail-folder-imap.jpg';
 import gmailImapImg from 'design-system/assets/img/import-instructions/gmail-imap.jpg';
 import gmailLessSecureAppsImg from 'design-system/assets/img/import-instructions/gmail-less-secure-apps.jpg';
@@ -15,11 +16,17 @@ interface Props {
     changeProvider: (provider: PROVIDER_INSTRUCTIONS) => void;
     provider?: PROVIDER_INSTRUCTIONS;
     gmailInstructionsStep: GMAIL_INSTRUCTIONS;
+    tabIndex: number;
+    handleChangeIndex: (index: number) => void;
 }
 
-const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsStep }: Props) => {
-    const [tabIndex, setTabIndex] = useState(0);
-
+const ImportInstructionsStep = ({
+    tabIndex,
+    changeProvider,
+    provider,
+    gmailInstructionsStep,
+    handleChangeIndex,
+}: Props) => {
     /* The following consts are to be used in translations */
     const googleAccountLink = (
         <Href url="https://myaccount.google.com" key="googleAccountLink">
@@ -68,7 +75,6 @@ const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsSte
             ),
         },
     ];
-    const handleChangeIndex = (index: number) => setTabIndex(index);
 
     const renderGmail = () => {
         /* The following consts are to be used in translations */
@@ -82,6 +88,19 @@ const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsSte
         const boldLabels = <strong key="boldLabels">{c('Import instructions emphasis').t`Labels`}</strong>;
         const bold2Steps = <strong key="bold2Steps">{c('Import instructions emphasis').t`2-step verification`}</strong>;
 
+        // translator: the text here is a fragment of another sentence, here is the complete version: "Finally, login to Gmail with the account you would like to import, then open this page to unlock captcha."
+        const googleMailLink = (
+            <Href url="https://mail.google.com" key="googleMailLink">
+                {c('Import instructions external link').t`login to Gmail`}
+            </Href>
+        );
+        // translator: the text here is a fragment of another sentence, here is the complete version: "Finally, login to Gmail with the account you would like to import, then open this page to unlock captcha."
+        const googleCaptchaLink = (
+            <Href url="https://accounts.google.com/DisplayUnlockCaptcha" key="googleCaptchaLink">
+                {c('Import instructions external link').t`then open this page to unlock captcha`}
+            </Href>
+        );
+
         // translator: the variables here are HTML tags, here is the complete sentence: "In your Gmail Settings, go to Forwarding and POP/IMAP and make sure that IMAP access is enabled."
         const gmailImapMessage = c('Import instructions')
             .jt`In your ${boldGmailSettings}, go to ${boldForwarding} and make sure that ${boldIMAPAccess} is enabled.`;
@@ -93,6 +112,10 @@ const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsSte
         // translator: the variable here is a HTML tag, here is the complete sentence: "Allow ProtonMail access into your Gmail account: choose whether 2-step verification is enabled and follow the steps below."
         const gmail2StepsMessage = c('Import instructions')
             .jt`Allow ProtonMail access into your Gmail account: choose whether ${bold2Steps} is enabled and follow the steps below.`;
+
+        // translator: the variable here are HTML tags, here is the complete sentence: "Finally, login to Gmail with the account you would like to import, then open this page to unlock captcha."
+        const gmailCaptchaMessage = c('Import instructions')
+            .jt`Finally, ${googleMailLink} with the account you would like to import, ${googleCaptchaLink}.`;
 
         switch (gmailInstructionsStep) {
             case GMAIL_INSTRUCTIONS.IMAP:
@@ -124,6 +147,21 @@ const ImportInstructionsStep = ({ changeProvider, provider, gmailInstructionsSte
                     <>
                         <div className="mb1">{gmail2StepsMessage}</div>
                         <Tabs tabs={gmailTabs} value={tabIndex} onChange={handleChangeIndex} />
+                    </>
+                );
+            case GMAIL_INSTRUCTIONS.CAPTCHA:
+                return (
+                    <>
+                        <div className="mb1">{gmailCaptchaMessage}</div>
+                        <Href
+                            url="https://accounts.google.com/DisplayUnlockCaptcha"
+                            className="inline-block border--currentColor"
+                        >
+                            <img
+                                src={gmailCaptchaImg}
+                                alt={c('Import instructions image alternative text').t`How to disable CAPTCHA in Gmail`}
+                            />
+                        </Href>
                     </>
                 );
             default:
