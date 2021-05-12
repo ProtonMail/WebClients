@@ -77,7 +77,7 @@ END:VCARD`)
                 { name: 'dogs', contactEmailIDs: ['one'] },
                 { name: 'cats', contactEmailIDs: ['two', 'three'] },
                 { name: 'pets', contactEmailIDs: ['two'] },
-                { name: 'all', contactEmailIDs: [] },
+                { name: 'all', contactEmailIDs: ['one', 'two', 'three'] },
             ];
             expect(extractContactImportCategories(contact, encryptedContact)).toEqual(result);
         });
@@ -117,40 +117,42 @@ END:VCARD`)
             const contacts: ImportedContact[] = [
                 {
                     contactID: 'contact1',
+                    contactEmailIDs: ['contactemail1-1', 'contactemail1-2'],
                     categories: [
-                        { name: 'cats', contactEmailIDs: ['contact1@test.com', 'contact1@example.com'] },
-                        { name: 'dogs', contactEmailIDs: ['contact1@example.com'] },
+                        { name: 'cats', contactEmailIDs: ['contactemail1-1', 'contactemail1-2'] },
+                        { name: 'dogs', contactEmailIDs: ['contactemail1-1'] },
                         { name: 'pets' },
                     ],
                 },
                 {
                     contactID: 'contact2',
-                    categories: [{ name: 'dogs' }],
+                    contactEmailIDs: [],
+                    categories: [{ name: 'dogs' }, { name: 'birds' }],
                 },
                 {
                     contactID: 'contact3',
+                    contactEmailIDs: ['contactemail3-1', 'contactemail3-2'],
                     categories: [
                         { name: 'all' },
-                        { name: 'dogs', contactEmailIDs: ['contact3@example.com'] },
-                        { name: 'pets', contactEmailIDs: ['contact3@test.com'] },
+                        { name: 'dogs', contactEmailIDs: ['contactemail3-1'] },
+                        { name: 'pets', contactEmailIDs: ['contactemail3-2'] },
                     ],
                 },
             ];
             const result = [
                 {
                     name: 'cats',
-                    contactEmailIDs: ['contact1@test.com', 'contact1@example.com'],
-                    contactIDs: [],
+                    contactEmailIDs: [],
+                    contactIDs: ['contact1'],
                     totalContacts: 1,
                 },
                 {
                     name: 'dogs',
-                    contactEmailIDs: ['contact1@example.com', 'contact3@example.com'],
-                    contactIDs: ['contact2'],
-                    totalContacts: 3,
+                    contactEmailIDs: ['contactemail1-1', 'contactemail3-1'],
+                    contactIDs: [],
+                    totalContacts: 2,
                 },
-                { name: 'pets', contactEmailIDs: ['contact3@test.com'], contactIDs: ['contact1'], totalContacts: 2 },
-                { name: 'all', contactEmailIDs: [], contactIDs: ['contact3'], totalContacts: 1 },
+                { name: 'pets', contactEmailIDs: ['contactemail3-2'], contactIDs: [], totalContacts: 1 },
             ];
             expect(getImportCategories(contacts)).toEqual(result);
         });
