@@ -196,6 +196,7 @@ export enum GMAIL_INSTRUCTIONS {
     IMAP = 1,
     LABELS = 2,
     TWO_STEPS = 3,
+    CAPTCHA = 4,
 }
 
 export interface OAuthProps {
