@@ -2,6 +2,8 @@ import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contact
 import { getEmailParts, validateEmailAddress } from 'proton-shared/lib/helpers/email';
 import { MAJOR_DOMAINS } from 'proton-shared/lib/constants';
 import { contactToInput, contactToRecipient, majorToRecipient } from 'proton-shared/lib/mail/recipient';
+import { c, msgid } from 'ttag';
+import { SimpleMap } from 'proton-shared/lib/interfaces';
 
 export type AddressesAutocompleteItem =
     | {
@@ -23,6 +25,9 @@ export type AddressesAutocompleteItem =
           label: string;
           key: string;
       };
+
+export type GroupWithContacts = { group: ContactGroup; contacts: ContactEmail[] };
+export type GroupsWithContactsMap = SimpleMap<GroupWithContacts>;
 
 const compare = (item1: AddressesAutocompleteItem, item2: AddressesAutocompleteItem) => {
     if (item1.type === 'contact' && item2.type === 'contact' && item1.score !== item2.score) {
@@ -117,4 +122,11 @@ export const getMajorListAutocompleteItems = (input: string, filter: (email: str
                 type: 'major',
             } as const;
         });
+};
+
+export const getNumberOfMembersText = (groupID: string, groupsWithContactsMap?: GroupsWithContactsMap) => {
+    const memberCount = groupsWithContactsMap ? groupsWithContactsMap[groupID]?.contacts.length || 0 : 0;
+
+    // translator: number of members of a contact group, the variable is a positive integer (written in digits) always greater or equal to 0
+    return c('Info').ngettext(msgid`(${memberCount} member)`, `(${memberCount} members)`, memberCount);
 };
