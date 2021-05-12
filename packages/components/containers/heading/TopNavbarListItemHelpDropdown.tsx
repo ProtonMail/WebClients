@@ -4,7 +4,7 @@ import { APPS, BRAND_NAME } from 'proton-shared/lib/constants';
 import { getAppFromPathnameSafe } from 'proton-shared/lib/apps/slugHelper';
 
 import { Icon, DropdownMenu, DropdownMenuButton, DropdownMenuLink } from '../../components';
-import { useModals, useAuthentication, useConfig, useUser } from '../../hooks';
+import { useModals, useAuthentication, useConfig } from '../../hooks';
 import BugModal from '../support/BugModal';
 import AuthenticatedBugModal from '../support/AuthenticatedBugModal';
 import { OnboardingModal } from '../onboarding';
@@ -12,7 +12,6 @@ import SimpleDropdown, { Props as SimpleDropdownProps } from '../../components/d
 import TopNavbarListItemButton, {
     TopNavbarListItemButtonProps,
 } from '../../components/topnavbar/TopNavbarListItemButton';
-import { DonateModal } from '../payments';
 
 interface OwnProps {
     content?: string;
@@ -41,8 +40,6 @@ const TopNavbarListItemHelpDropdown = <E extends React.ElementType = typeof defa
     const { APP_NAME } = useConfig();
     const { createModal } = useModals();
     const isAuthenticated = !!UID;
-    const [user] = useUser();
-    const { canPay, isSubUser } = user;
     const app = getAppFromPathnameSafe(window.location.pathname);
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS || app === APPS.PROTONVPN_SETTINGS;
 
@@ -52,10 +49,6 @@ const TopNavbarListItemHelpDropdown = <E extends React.ElementType = typeof defa
 
     const handleTourClick = () => {
         createModal(<OnboardingModal showGenericSteps allowClose hideDisplayName />);
-    };
-
-    const handleSupportUsClick = () => {
-        createModal(<DonateModal />);
     };
 
     return (
@@ -109,12 +102,6 @@ const TopNavbarListItemHelpDropdown = <E extends React.ElementType = typeof defa
                     {c('Action').t`${BRAND_NAME} shop`}
                     <Icon className="ml1" name="external-link" />
                 </DropdownMenuLink>
-
-                {canPay && !isSubUser && (
-                    <DropdownMenuButton className="text-left" onClick={handleSupportUsClick}>
-                        {c('Action').t`Support us`}
-                    </DropdownMenuButton>
-                )}
             </DropdownMenu>
         </SimpleDropdown>
     );
