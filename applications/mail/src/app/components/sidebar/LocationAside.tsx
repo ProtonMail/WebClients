@@ -37,7 +37,7 @@ const LocationAside = ({ unreadCount = 0, active = false, refreshing = false }: 
                     data-testid="navigation-link:refresh-folder"
                 />
             )}
-            {unreadCount ? (
+            {unreadCount > 0 ? (
                 <span
                     className="navigation-counter-item flex-item-noshrink"
                     title={getUnreadTitle()}
