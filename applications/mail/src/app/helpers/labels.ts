@@ -6,7 +6,7 @@ import { Label } from 'proton-shared/lib/interfaces/Label';
 import { Folder } from 'proton-shared/lib/interfaces/Folder';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { MailSettings } from 'proton-shared/lib/interfaces';
-import { LABEL_IDS_TO_HUMAN, LABEL_IDS_TO_I18N } from '../constants';
+import { LABELS_AUTO_READ, LABELS_UNMODIFIABLE_BY_USER, LABEL_IDS_TO_HUMAN, LABEL_IDS_TO_I18N } from '../constants';
 import { Conversation } from '../models/conversation';
 import { getLabelIDs } from './elements';
 import { Element } from '../models/element';
@@ -163,20 +163,31 @@ export const getFolderName = (labelID: string, customFoldersList: Folder[] = [])
 export const labelIncludes = (labelID: string, ...labels: (MAILBOX_LABEL_IDS | string)[]) =>
     labels.includes(labelID as MAILBOX_LABEL_IDS);
 
+export const isAutoRead = (labelID: MAILBOX_LABEL_IDS | string) =>
+    LABELS_AUTO_READ.includes(labelID as MAILBOX_LABEL_IDS);
+
+export const isUnmodifiableByUser = (labelID: MAILBOX_LABEL_IDS | string) =>
+    LABELS_UNMODIFIABLE_BY_USER.includes(labelID as MAILBOX_LABEL_IDS);
+
 export const applyLabelChangesOnMessage = (message: Message, changes: LabelChanges): Message => {
-    const LabelIDs = [...message.LabelIDs];
+    const { LabelIDs } = message;
+    let { Unread } = message;
+
     Object.keys(changes).forEach((labelID) => {
         const index = LabelIDs.findIndex((existingLabelID) => existingLabelID === labelID);
         if (changes[labelID]) {
             if (index === -1) {
                 LabelIDs.push(labelID);
+                if (isAutoRead(labelID)) {
+                    Unread = 0;
+                }
             }
         } else if (index >= 0) {
             LabelIDs.splice(index, 1);
         }
     });
 
-    return { ...message, LabelIDs };
+    return { ...message, LabelIDs, Unread };
 };
 
 export const applyLabelChangesOnConversation = (conversation: Conversation, changes: LabelChanges): Conversation => {
@@ -196,8 +207,9 @@ export const applyLabelChangesOnConversation = (conversation: Conversation, chan
             Labels.splice(index, 1);
         }
     });
+    const NumUnread = Object.keys(changes).some((labelID) => isAutoRead(labelID)) ? 0 : conversation.NumUnread;
 
-    return { ...conversation, Labels };
+    return { ...conversation, Labels, NumUnread };
 };
 
 export const applyLabelChangesOnOneMessageOfAConversation = (

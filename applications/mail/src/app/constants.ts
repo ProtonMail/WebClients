@@ -54,6 +54,17 @@ export const LABEL_IDS_TO_I18N = {
     [MAILBOX_LABEL_IDS.OUTBOX]: c('Link').t`Outbox`,
 };
 
+// List of location where messages are marked automatically as read after moving by the API
+export const LABELS_AUTO_READ = [MAILBOX_LABEL_IDS.TRASH];
+
+// List of location that cannot be change by user interaction
+export const LABELS_UNMODIFIABLE_BY_USER = [
+    MAILBOX_LABEL_IDS.ALL_MAIL,
+    MAILBOX_LABEL_IDS.ALL_SENT,
+    MAILBOX_LABEL_IDS.ALL_DRAFTS,
+    MAILBOX_LABEL_IDS.OUTBOX,
+];
+
 export enum ENCRYPTED_STATUS {
     PGP_MIME = 8, // Used for attachment
 }
