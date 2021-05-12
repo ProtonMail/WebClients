@@ -101,9 +101,12 @@ const ImportMailModal = ({ onClose = noop, currentImport, oauthProps: initialOAu
 
     const [providerInstructions, setProviderInstructions] = useState<PROVIDER_INSTRUCTIONS>();
     const [gmailInstructionsStep, setGmailInstructionsStep] = useState(GMAIL_INSTRUCTIONS.IMAP);
-    const GMAIL_INSTRUCTION_STEPS_COUNT = Object.keys(GMAIL_INSTRUCTIONS).length / 2;
 
     const [showPassword, setShowPassword] = useState(false);
+
+    const [gmail2StepsTabIndex, setGmail2StepsTabIndex] = useState(0);
+
+    const changeGmail2StepsTabIndex = (index: number) => setGmail2StepsTabIndex(index);
 
     const initialStep = () => {
         if (isReconnectMode) {
@@ -148,6 +151,8 @@ const ImportMailModal = ({ onClose = noop, currentImport, oauthProps: initialOAu
     const invalidPortError = useMemo(() => !isNumber(modalModel.port), [modalModel.port]);
 
     const title = useMemo(() => {
+        const totalSteps = gmail2StepsTabIndex === 0 ? 4 : 3;
+
         switch (modalModel.step) {
             case Step.INSTRUCTIONS:
                 if (!providerInstructions) {
@@ -157,8 +162,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, oauthProps: initialOAu
                 if (providerInstructions === PROVIDER_INSTRUCTIONS.YAHOO) {
                     return c('Title').t`Prepare Yahoo Mail for import`;
                 }
-
-                return c('Title').t`Prepare Gmail for import ${gmailInstructionsStep}/${GMAIL_INSTRUCTION_STEPS_COUNT}`;
+                return c('Title').t`Prepare Gmail for import ${gmailInstructionsStep}/${totalSteps}`;
             case Step.START:
                 return isReconnectMode ? c('Title').t`Reconnect your account` : c('Title').t`Start a new import`;
             case Step.PREPARE:
@@ -168,7 +172,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, oauthProps: initialOAu
             default:
                 return '';
         }
-    }, [modalModel.step, providerInstructions, gmailInstructionsStep]);
+    }, [modalModel.step, providerInstructions, gmailInstructionsStep, gmail2StepsTabIndex]);
 
     const checkAuth = async () => {
         const { Authentication } = await api(getAuthenticationMethod({ Email: modalModel.email }));
@@ -405,6 +409,10 @@ const ImportMailModal = ({ onClose = noop, currentImport, oauthProps: initialOAu
                         setGmailInstructionsStep(GMAIL_INSTRUCTIONS.TWO_STEPS);
                         return;
                     }
+                    if (gmailInstructionsStep === GMAIL_INSTRUCTIONS.TWO_STEPS && gmail2StepsTabIndex === 0) {
+                        setGmailInstructionsStep(GMAIL_INSTRUCTIONS.CAPTCHA);
+                        return;
+                    }
                 }
 
                 setModalModel({
@@ -435,12 +443,15 @@ const ImportMailModal = ({ onClose = noop, currentImport, oauthProps: initialOAu
             if (gmailInstructionsStep === GMAIL_INSTRUCTIONS.TWO_STEPS) {
                 setGmailInstructionsStep(GMAIL_INSTRUCTIONS.LABELS);
             }
+            if (gmailInstructionsStep === GMAIL_INSTRUCTIONS.CAPTCHA) {
+                setGmailInstructionsStep(GMAIL_INSTRUCTIONS.TWO_STEPS);
+            }
         };
 
         const backButton =
             modalModel.step === Step.INSTRUCTIONS &&
             providerInstructions === PROVIDER_INSTRUCTIONS.GMAIL &&
-            [GMAIL_INSTRUCTIONS.LABELS, GMAIL_INSTRUCTIONS.TWO_STEPS].includes(gmailInstructionsStep);
+            gmailInstructionsStep !== GMAIL_INSTRUCTIONS.LABELS;
 
         return (
             <Button shape="outline" onClick={backButton ? handleBack : handleCancel}>
@@ -456,15 +467,17 @@ const ImportMailModal = ({ onClose = noop, currentImport, oauthProps: initialOAu
             ? !email || !password || !imap || !port || invalidPortError
             : !email || !password;
 
+        const showNext =
+            providerInstructions === PROVIDER_INSTRUCTIONS.GMAIL &&
+            ([GMAIL_INSTRUCTIONS.IMAP, GMAIL_INSTRUCTIONS.LABELS].includes(gmailInstructionsStep) ||
+                (gmailInstructionsStep === GMAIL_INSTRUCTIONS.TWO_STEPS && gmail2StepsTabIndex === 0));
+
         switch (step) {
             case Step.INSTRUCTIONS:
                 return providerInstructions ? (
                     <div>
                         <Button color="norm" type="submit">
-                            {providerInstructions === PROVIDER_INSTRUCTIONS.GMAIL &&
-                            gmailInstructionsStep !== GMAIL_INSTRUCTIONS.TWO_STEPS
-                                ? c('Action').t`Next`
-                                : c('Action').t`Start Import Assistant`}
+                            {showNext ? c('Action').t`Next` : c('Action').t`Start Import Assistant`}
                         </Button>
                     </div>
                 ) : (
@@ -512,6 +525,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, oauthProps: initialOAu
         loading,
         oauthError,
         oauthProps,
+        gmail2StepsTabIndex,
     ]);
 
     useEffect(() => {
@@ -566,6 +580,8 @@ const ImportMailModal = ({ onClose = noop, currentImport, oauthProps: initialOAu
                     provider={providerInstructions}
                     changeProvider={changeProvider}
                     gmailInstructionsStep={gmailInstructionsStep}
+                    tabIndex={gmail2StepsTabIndex}
+                    handleChangeIndex={changeGmail2StepsTabIndex}
                 />
             )}
             {modalModel.step === Step.START && (
