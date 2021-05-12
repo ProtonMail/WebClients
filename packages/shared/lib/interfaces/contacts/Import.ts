@@ -19,7 +19,7 @@ export enum IMPORT_STEPS {
     IMPORTING,
     SUMMARY,
     IMPORT_GROUPS,
-    FINISHED
+    FINISHED,
 }
 
 export enum IMPORT_GROUPS_ACTION {
@@ -80,6 +80,7 @@ export interface EncryptedContact {
 
 export interface ImportedContact {
     contactID: string;
+    contactEmailIDs: string[];
     categories: { name: string; contactEmailIDs?: string[] }[];
 }
 

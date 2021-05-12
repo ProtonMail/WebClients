@@ -87,7 +87,7 @@ export const getSupportedContacts = (vcards: string[]) => {
 };
 
 export const haveCategories = (contacts: ImportedContact[]) => {
-    return contacts.some(({ categories }) => categories.length);
+    return contacts.some(({ categories }) => categories.some((category) => category.contactEmailIDs?.length));
 };
 
 /**
@@ -99,20 +99,24 @@ export const extractContactImportCategories = (
     { categories, contactEmails }: EncryptedContact
 ) => {
     const withGroup = categories.map(({ name, group }) => {
-        if (group) {
-            const matchingContactEmailIDs = contactEmails
-                .filter(({ group: emailGroup }) => emailGroup === group)
-                .map(({ email }) => {
-                    const { ID } = contact.ContactEmails.find(({ Email }) => Email === email) || {};
-                    return ID;
-                })
-                .filter(isTruthy);
-            if (!matchingContactEmailIDs.length) {
-                return { name };
-            }
-            return { name, contactEmailIDs: matchingContactEmailIDs };
+        const matchingContactEmailIDs = contactEmails
+            .filter(
+                ({ group: emailGroup }) =>
+                    // If category group is not defined, we consider it applies to all email
+                    group === undefined ||
+                    // If category group is defined, we consider it has to match with the email group
+                    emailGroup === group
+            )
+            .map(({ email }) => {
+                const { ID } = contact.ContactEmails.find(({ Email }) => Email === email) || {};
+                return ID;
+            })
+            .filter(isTruthy);
+
+        if (!matchingContactEmailIDs.length) {
+            return { name };
         }
-        return { name };
+        return { name, contactEmailIDs: matchingContactEmailIDs };
     });
     const categoriesMap = withGroup.reduce<SimpleMap<string[]>>((acc, { name, contactEmailIDs = [] }) => {
         const category = acc[name];
@@ -134,39 +138,44 @@ export const extractContactImportCategories = (
 export const getImportCategories = (contacts: ImportedContact[]) => {
     const allCategoriesMap = contacts.reduce<
         SimpleMap<Pick<ImportCategories, 'contactEmailIDs' | 'contactIDs' | 'totalContacts'>>
-    >((acc, { contactID, categories }) => {
-        if (!categories.length) {
+    >((acc, { contactID, categories, contactEmailIDs: contactEmailIDsOfContact }) => {
+        if (
+            // No categories to consider
+            !categories.length ||
+            // We ignore groups on contact with no emails
+            !contactEmailIDsOfContact.length
+        ) {
             return acc;
         }
         categories.forEach(({ name, contactEmailIDs = [] }) => {
             const category = acc[name];
+            if (contactEmailIDs.length === 0) {
+                // We ignore groups on contact if no emails are assigned
+                return;
+            }
             if (!category) {
-                acc[name] = contactEmailIDs.length
-                    ? { contactEmailIDs: [...contactEmailIDs], contactIDs: [], totalContacts: 1 }
-                    : { contactEmailIDs: [], contactIDs: [contactID], totalContacts: 1 };
-            } else {
-                const {
-                    contactEmailIDs: existingContactEmailIDs,
-                    contactIDs: existingContactIDs,
-                    totalContacts: existingTotalContacts,
-                } = category;
-                if (contactEmailIDs.length) {
-                    acc[name] = {
-                        contactEmailIDs: existingContactEmailIDs.concat(contactEmailIDs),
-                        contactIDs: existingContactIDs,
-                        totalContacts: existingTotalContacts + 1,
-                    };
+                if (contactEmailIDs.length === contactEmailIDsOfContact.length) {
+                    acc[name] = { contactEmailIDs: [], contactIDs: [contactID], totalContacts: 1 };
                 } else {
-                    acc[name] = {
-                        contactEmailIDs: existingContactEmailIDs,
-                        contactIDs: existingContactIDs.concat([contactID]),
-                        totalContacts: existingTotalContacts + 1,
-                    };
+                    acc[name] = { contactEmailIDs: [...contactEmailIDs], contactIDs: [], totalContacts: 1 };
                 }
+            } else if (contactEmailIDs.length === contactEmailIDsOfContact.length) {
+                acc[name] = {
+                    contactEmailIDs: category.contactEmailIDs,
+                    contactIDs: [...category.contactIDs, contactID],
+                    totalContacts: category.totalContacts + 1,
+                };
+            } else {
+                acc[name] = {
+                    contactEmailIDs: [...category.contactEmailIDs, ...contactEmailIDs],
+                    contactIDs: category.contactIDs,
+                    totalContacts: category.totalContacts + 1,
+                };
             }
         });
         return acc;
     }, {});
+
     return Object.entries(allCategoriesMap)
         .map(([name, value]) => {
             if (!value) {
