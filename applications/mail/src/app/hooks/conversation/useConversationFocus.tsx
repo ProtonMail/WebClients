@@ -8,6 +8,9 @@ export const useConversationFocus = (messages: Message[]) => {
     const getFocusedId = () => getFocusedMessage()?.ID;
 
     const handleFocus = (index: number | undefined) => {
+        if (index === focusIndex) {
+            return;
+        }
         setFocusIndex(index);
     };
 

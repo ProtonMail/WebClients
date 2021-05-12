@@ -66,9 +66,11 @@ const MessageBody = ({
             {sourceMode && <pre>{message.decryptedBody}</pre>}
             {(loadingMode || decryptingMode) && (
                 <>
-                    <div className="message-content-loading-placeholder mb0-25 max-w15e" />
+                    <div className="message-content-loading-placeholder mb0-25 max-w8e" />
+                    <div className="message-content-loading-placeholder mb0-25 max-w50e" />
                     <div className="message-content-loading-placeholder mb0-25 max-w40e" />
                     <div className="message-content-loading-placeholder mb0-25 max-w50e" />
+                    <div className="message-content-loading-placeholder mb0-25 max-w15e" />
                     <div className="message-content-loading-placeholder max-w8e" />
                 </>
             )}

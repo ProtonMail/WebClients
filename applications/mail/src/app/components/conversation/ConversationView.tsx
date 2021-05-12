@@ -34,6 +34,7 @@ interface Props {
     onMessageReady: () => void;
     columnLayout: boolean;
     isComposerOpened: boolean;
+    containerRef: React.RefObject<HTMLElement>;
 }
 
 const DEFAULT_FILTER_VALUE = true;
@@ -50,6 +51,7 @@ const ConversationView = ({
     onMessageReady,
     columnLayout,
     isComposerOpened,
+    containerRef,
 }: Props) => {
     const [labels = []] = useLabels();
     const {
@@ -62,6 +64,8 @@ const ConversationView = ({
     const { state: filter, toggle: toggleFilter, set: setFilter } = useToggle(DEFAULT_FILTER_VALUE);
     useShouldMoveOut(true, conversationID, pendingRequest, onBack);
     const messageViewsRefs = useRef({} as { [messageID: string]: MessageViewRef | undefined });
+
+    const wrapperRef = useRef<HTMLDivElement>(null);
 
     const { Conversation: conversation = {}, Messages: inputMessages = [] } = conversationResult || {};
     const messages = usePlaceholders(inputMessages, loadingMessages, conversation?.NumMessages || 1) as Message[];
@@ -126,40 +130,41 @@ const ConversationView = ({
                 element={conversation}
                 labelID={labelID}
             />
-            <div
-                className={classnames(['flex-item-fluid pt0-5 pr1 pl1 max-w100 no-outline', hidden && 'hidden'])}
-                ref={elementRef}
-                tabIndex={-1}
-            >
-                {showTrashWarning && (
-                    <TrashWarning ref={trashWarningRef} inTrash={inTrash} filter={filter} onToggle={toggleFilter} />
-                )}
-                {messagesToShow.map((message, index) => (
-                    <MessageView
-                        key={message.ID}
-                        ref={(ref) => {
-                            messageViewsRefs.current[message.ID] = ref || undefined;
-                        }}
-                        labelID={labelID}
-                        conversationMode
-                        loading={loadingMessages}
-                        message={message}
-                        labels={labels}
-                        mailSettings={mailSettings}
-                        conversationIndex={index}
-                        conversationID={conversationID}
-                        onBack={onBack}
-                        onCompose={onCompose}
-                        breakpoints={breakpoints}
-                        onFocus={handleFocus}
-                        onMessageReady={onMessageReady}
-                        columnLayout={columnLayout}
-                        isComposerOpened={isComposerOpened}
-                    />
-                ))}
-
-                {/* This is to see the bottom spacing */}
-                <div style={{ padding: '0.01em' }} aria-hidden="true" />
+            <div ref={wrapperRef} className="flex-item-fluid pt0-5 pr1 pl1">
+                <div
+                    className={classnames(['scroll-if-needed no-outline', hidden && 'hidden'])}
+                    ref={elementRef}
+                    tabIndex={-1}
+                >
+                    {showTrashWarning && (
+                        <TrashWarning ref={trashWarningRef} inTrash={inTrash} filter={filter} onToggle={toggleFilter} />
+                    )}
+                    {messagesToShow.map((message, index) => (
+                        <MessageView
+                            key={message.ID}
+                            ref={(ref) => {
+                                messageViewsRefs.current[message.ID] = ref || undefined;
+                            }}
+                            labelID={labelID}
+                            conversationMode
+                            loading={loadingMessages}
+                            message={message}
+                            labels={labels}
+                            mailSettings={mailSettings}
+                            conversationIndex={index}
+                            conversationID={conversationID}
+                            onBack={onBack}
+                            onCompose={onCompose}
+                            breakpoints={breakpoints}
+                            onFocus={handleFocus}
+                            onMessageReady={onMessageReady}
+                            columnLayout={columnLayout}
+                            isComposerOpened={isComposerOpened}
+                            containerRef={containerRef}
+                            wrapperRef={wrapperRef}
+                        />
+                    ))}
+                </div>
             </div>
             <UnreadMessages
                 conversationID={conversationID}
