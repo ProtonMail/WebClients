@@ -11,7 +11,10 @@ import {
     TopNavbarListItemSettingsDropdown,
     TopNavbarListItemHelpDropdown,
     TopNavbarListItemContactsDropdown,
+    TopNavbarListItemFeedbackButton,
     Icon,
+    useFeature,
+    FeatureCode,
 } from 'react-components';
 import { MAILBOX_LABEL_IDS, APPS } from 'proton-shared/lib/constants';
 import { Recipient } from 'proton-shared/lib/interfaces';
@@ -51,6 +54,7 @@ const MailHeader = ({
     const oldLabelIDRef = useRef<string>(MAILBOX_LABEL_IDS.INBOX);
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
+    const { feature: featureCanUserSendFeedback } = useFeature(FeatureCode.CanUserSendFeedback);
 
     // Update the search input field when the keyword in the url is changed
     useEffect(() => updateValue(keyword), [keyword]);
@@ -100,6 +104,7 @@ const MailHeader = ({
             title={labelName}
             settingsButton={<TopNavbarListItemSettingsDropdown to="/mail/general" toApp={APPS.PROTONACCOUNT} />}
             contactsButton={<TopNavbarListItemContactsDropdown onCompose={handleContactsCompose} />}
+            feedbackButton={featureCanUserSendFeedback?.Value ? <TopNavbarListItemFeedbackButton /> : null}
             searchBox={searchBox}
             searchDropdown={searchDropdown}
             expanded={!!expanded}
