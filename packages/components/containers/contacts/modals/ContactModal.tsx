@@ -12,7 +12,6 @@ import {
     ContactProperty,
     ContactPropertyChange,
 } from 'proton-shared/lib/interfaces/contacts/Contact';
-import { useHistory } from 'react-router';
 import ContactModalProperties from '../ContactModalProperties';
 import { useUserKeys, useApi, useNotifications, useLoading, useEventManager } from '../../../hooks';
 import { FormModal, PrimaryButton } from '../../../components';
@@ -65,7 +64,6 @@ const ContactModal = ({
     newField,
     ...rest
 }: Props) => {
-    const history = useHistory();
     const api = useApi();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -145,7 +143,7 @@ const ContactModal = ({
         const Contacts = await prepareContacts([allProperties.concat(notEditableProperties)], userKeysList[0]);
         const labels = hasCategories(notEditableProperties) ? INCLUDE : IGNORE;
         const {
-            Responses: [{ Response: { Code = null, Contact: { ID = null } = {} } = {} }],
+            Responses: [{ Response: { Code = null } = {} }],
         } = await api(
             addContacts({
                 Contacts,
@@ -160,11 +158,6 @@ const ContactModal = ({
         await call();
         if (!contactID) {
             onAdd();
-
-            /* in the context of proton-contacts */
-            if (history) {
-                history.push(`/${ID}`);
-            }
         }
         onClose();
         createNotification({ text: c('Success').t`Contact saved` });
