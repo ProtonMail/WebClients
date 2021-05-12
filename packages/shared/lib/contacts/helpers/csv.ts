@@ -11,6 +11,7 @@ import {
     PreVcardsProperty,
 } from '../../interfaces/contacts/Import';
 import { standarize, combine, display, toPreVcard } from './csvFormat';
+import { range } from '../../helpers/array';
 
 interface PapaParseOnCompleteArgs {
     data?: string[][];
@@ -23,36 +24,48 @@ interface PapaParseOnCompleteArgs {
  * @dev  contacts[i][j] : value for property headers[j] of contact i
  */
 export const readCsv = async (file: File) => {
-    const { headers, contacts, errors }: { headers: string[]; contacts: string[][]; errors: any[] } = await new Promise(
-        (resolve, reject) => {
-            const onComplete = ({ data = [], errors = [] }: PapaParseOnCompleteArgs = {}) =>
-                resolve({ headers: data[0], contacts: data.slice(1), errors });
-            Papa.parse(file, {
-                header: false,
-                /*
-                If true, the first row of parsed data will be interpreted as field names. An array of field names will be returned in meta,
-                and each row of data will be an object of values keyed by field name instead of a simple array.
-                Rows with a different number of fields from the header row will produce an error.
-            */
-                dynamicTyping: false, // If true, numeric and Boolean data will be converted to their type instead of remaining strings.
-                complete: onComplete,
-                error: reject,
-                skipEmptyLines: true, // If true, lines that are completely empty will be skipped. An empty line is defined to be one which evaluates to empty string.
-            });
-        }
-    );
+    const {
+        headers,
+        contacts: parsedContacts,
+        errors,
+    }: { headers: string[]; contacts: string[][]; errors: any[] } = await new Promise((resolve, reject) => {
+        const onComplete = ({ data = [], errors = [] }: PapaParseOnCompleteArgs = {}) =>
+            resolve({ headers: data[0], contacts: data.slice(1), errors });
+
+        Papa.parse(file, {
+            // If true, the first row of parsed data will be interpreted as field names. An array of field names will be returned in meta,
+            // and each row of data will be an object of values keyed by field name instead of a simple array.
+            // Rows with a different number of fields from the header row will produce an error.
+            header: false,
+            // If true, numeric and Boolean data will be converted to their type instead of remaining strings.
+            dynamicTyping: false,
+            complete: onComplete,
+            error: reject,
+            // If true, lines that are completely empty will be skipped. An empty line is defined to be one which evaluates to empty string.
+            skipEmptyLines: true,
+        });
+    });
 
     if (errors.length) {
         throw new Error('Error when reading csv file');
     }
 
-    // we have to manually correct Papa.parse which can return headers and contacts of different length
-    const headersLength = headers.length;
-    const filteredContacts = contacts
-        .map((contact) => contact.slice(0, headersLength))
-        .filter((contact) => contact.length === headersLength);
+    // Papaparse will produce data according to the CSV content
+    // There is no security about having same numbers of fields on all lines
+    // So we do a pass of sanitization to clean up data
 
-    return { headers, contacts: filteredContacts };
+    const headersLength = headers.length;
+    const contacts = parsedContacts.map((contact) => {
+        if (contact.length === headersLength) {
+            return contact;
+        }
+        if (contact.length > headersLength) {
+            return contact.slice(0, headersLength);
+        }
+        return [...contact, ...range(0, headersLength - contact.length).map(() => '')];
+    });
+
+    return { headers, contacts };
 };
 
 /**
