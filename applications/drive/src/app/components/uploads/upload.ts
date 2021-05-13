@@ -3,17 +3,25 @@ import { generateContentHash } from 'proton-shared/lib/keys/driveKeys';
 import { serializeFormData } from 'proton-shared/lib/fetch/helpers';
 import { createApiError } from 'proton-shared/lib/fetch/ApiError';
 import runInQueue from 'proton-shared/lib/helpers/runInQueue';
+import { traceError } from 'proton-shared/lib/helpers/sentry';
+
 import ChunkFileReader from './ChunkFileReader';
 import { UploadLink } from '../../interfaces/file';
 import { TransferCancel } from '../../interfaces/transfer';
 import { isTransferCancelError } from '../../utils/transfer';
 import { FILE_CHUNK_SIZE, RESPONSE_CODE, STATUS_CODE } from '../../constants';
 import { waitUntil } from '../../utils/async';
+import { makeThumbnail } from '../thumbnail/thumbnail';
 
 // Max decrypted block size
 const MAX_CHUNKS_READ = 10;
 const MAX_THREADS_PER_UPLOAD = 3;
 const MAX_RETRIES_BEFORE_FAIL = 3;
+
+type ThumbnailBlock = {
+    Hash: Uint8Array;
+    Size: number;
+}
 
 export type BlockList = {
     EncSignature: string;
@@ -29,7 +37,7 @@ export interface BlockTokenInfo {
 
 type ChunkPromise = Promise<{
     encryptedData: Uint8Array;
-    signature: string;
+    signature?: string;
 }>;
 
 interface EncryptedBlock {
@@ -44,8 +52,8 @@ interface EncryptedBlock {
 }
 
 export interface UploadCallbacks {
-    transform: (buffer: Uint8Array) => Promise<{ encryptedData: Uint8Array; signature: string }>;
-    requestUpload: (blockList: BlockList) => Promise<UploadLink[]>;
+    transform: (buffer: Uint8Array, attached?: boolean) => ChunkPromise;
+    requestUpload: (blockList: BlockList, thumbnailBlock?: ThumbnailBlock) => Promise<{ UploadLinks: UploadLink[], ThumbnailLink?: UploadLink }>;
     finalize: (blocklist: Map<number, BlockTokenInfo>, config?: { id: string }) => Promise<void>;
     initialize: (
         abortSignal: AbortSignal
@@ -180,7 +188,7 @@ export function initUpload(
     };
 
     const requestBlockMetas = async (ids: number[], uploadingBlocks: Map<number, EncryptedBlock>) => {
-        const BlockList = await Promise.all(
+        const blockList = await Promise.all(
             ids.map(async (index) => {
                 const block = await uploadingBlocks.get(index);
                 if (!block) {
@@ -196,17 +204,29 @@ export function initUpload(
             })
         );
 
-        const UploadLinks = await requestUpload(BlockList);
+        const fileBlockList = blockList.filter(({ Index }) => Index !== 0);
+        const thumbnailBlock = blockList.find(({ Index }) => Index === 0);
+        const { UploadLinks, ThumbnailLink } = await requestUpload(fileBlockList as BlockList, thumbnailBlock);
 
         UploadLinks.forEach((uploadLink, i) => {
-            const block = uploadingBlocks.get(BlockList[i].Index);
+            const block = uploadingBlocks.get(fileBlockList[i].Index);
             if (block) {
                 block.meta = {
-                    hash: BlockList[i].Hash,
+                    hash: fileBlockList[i].Hash,
                     uploadLink,
                 };
             }
         });
+
+        if (ThumbnailLink) {
+            const block = uploadingBlocks.get(0);
+            if (block) {
+                block.meta = {
+                    hash: blockList[0].Hash,
+                    uploadLink: ThumbnailLink,
+                };
+            }
+        }
     };
 
     const uploadBlocks = async (
@@ -337,8 +357,18 @@ export function initUpload(
                 }
 
                 if (!initialized) {
-                    await initialize?.(abortController.signal);
+                    const { MIMEType: mimeType } = await initialize?.(abortController.signal);
                     initialized = true;
+
+                    await makeThumbnail(mimeType, file).then(thumbnailData => {
+                        if (thumbnailData) {
+                            uploadingBlocks.set(0, {
+                                index: 0,
+                                originalSize: thumbnailData.length,
+                                chunk: transform(thumbnailData, true),
+                            });
+                        }
+                    }).catch(traceError); // Do not fail upload just because of thumbnail, but report it so we know.
                 }
 
                 // Keep filling queue with up to 20 blocks and uploading them

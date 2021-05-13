@@ -42,6 +42,7 @@ import {
 import { ShareFlags, ShareMeta, UserShareResult } from '../../interfaces/share';
 import { CreatedDriveVolumeResult } from '../../interfaces/volume';
 import { isFolderLinkMeta, LinkChildrenResult, LinkMeta, LinkMetaResult, LinkType } from '../../interfaces/link';
+import { DriveFileRevisionThumbnailResult } from '../../interfaces/file';
 import {
     queryCreateShare,
     queryDeleteShare,
@@ -51,6 +52,7 @@ import {
     queryUserShares,
 } from '../../api/share';
 import { queryDeleteChildrenLinks, queryGetLink } from '../../api/link';
+import { queryFileRevisionThumbnail } from '../../api/files';
 import { queryCreateFolder, queryFolderChildren } from '../../api/folder';
 import { queryCreateDriveVolume, queryRestoreDriveVolume } from '../../api/volume';
 import { isPrimaryShare } from '../../utils/share';
@@ -274,6 +276,44 @@ function useDrive() {
         cache.set.linkMeta(meta, shareId, { rerender: !config.preventRerenders });
 
         return meta;
+    };
+
+    // loadLinkCachedThumbnailURL populates CachedThumbnailURL to the link meta
+    // object if not cached yet, otherwise keeps the cached version.
+    const loadLinkCachedThumbnailURL = async (
+        shareId: string,
+        linkId: string,
+        downloadCallback: (downloadUrl: string) => Promise<Uint8Array[]>
+    ) => {
+        const linkMeta = await getLinkMeta(shareId, linkId);
+        if (
+            linkMeta.CachedThumbnailURL ||
+            linkMeta.ThumbnailIsLoading ||
+            linkMeta.FileProperties?.ActiveRevision?.Thumbnail !== 1
+        ) {
+            return;
+        }
+
+        cache.set.linkMeta({ ...linkMeta, ThumbnailIsLoading: true }, shareId, { rerender: false });
+
+        try {
+            // Download URL is not part of all requests, because that would be
+            // too heavy for API. For example, events do not include it.
+            let downloadUrl = linkMeta.FileProperties?.ActiveRevision?.ThumbnailDownloadUrl;
+            if (!downloadUrl) {
+                const res = (await api(
+                    queryFileRevisionThumbnail(shareId, linkId, linkMeta.FileProperties.ActiveRevision.ID)
+                )) as DriveFileRevisionThumbnailResult;
+                downloadUrl = res.ThumbnailLink;
+            }
+
+            const data = await downloadCallback(downloadUrl);
+            const url = URL.createObjectURL(new Blob(data, { type: 'image/jpeg' }));
+            cache.set.linkMeta({ ...linkMeta, ThumbnailIsLoading: false, CachedThumbnailURL: url }, shareId);
+        } catch (e) {
+            cache.set.linkMeta({ ...linkMeta, ThumbnailIsLoading: false }, shareId, { rerender: false });
+            throw e;
+        }
     };
 
     const decryptLinkPassphrase = async (shareId: string, linkMeta: LinkMeta, config?: FetchLinkConfig) => {
@@ -895,6 +935,7 @@ function useDrive() {
         initDrive,
         decryptLink,
         getLinkMeta,
+        loadLinkCachedThumbnailURL,
         getLinkKeys,
         getFoldersOnlyMetas,
         fetchNextFolderContents,

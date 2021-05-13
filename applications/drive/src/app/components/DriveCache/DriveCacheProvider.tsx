@@ -114,23 +114,27 @@ const useDriveCacheState = () => {
                 if (!isFolderLinkMeta(meta) && !meta.FileProperties.ActiveRevision && revision) {
                     meta.FileProperties.ActiveRevision = revision;
                 }
+                // CachedThumbnailURL is computed, so keep cached version if already set.
+                if (links[meta.LinkID].meta.CachedThumbnailURL) {
+                    meta.CachedThumbnailURL = links[meta.LinkID].meta.CachedThumbnailURL
+                }
                 links[meta.LinkID].meta = meta;
             } else {
                 links[meta.LinkID] = isFolderLinkMeta(meta)
                     ? {
-                          meta,
-                          children: {
-                              sorted: ['MIMEType', 'ModifyTime', 'Size', 'Name'].reduce((sorted, sortKey) => {
-                                  sorted[sortKey as SortKeys] = {
-                                      ASC: { list: [], complete: isNew, initialized: isNew },
-                                      DESC: { list: [], complete: isNew, initialized: isNew },
-                                  };
-                                  return sorted;
-                              }, {} as SortedChildren),
-                              unlisted: [],
-                          },
-                          foldersOnly: { complete: isNew, list: [], unlisted: [] },
-                      }
+                        meta,
+                        children: {
+                            sorted: ['MIMEType', 'ModifyTime', 'Size', 'Name'].reduce((sorted, sortKey) => {
+                                sorted[sortKey as SortKeys] = {
+                                    ASC: { list: [], complete: isNew, initialized: isNew },
+                                    DESC: { list: [], complete: isNew, initialized: isNew },
+                                };
+                                return sorted;
+                            }, {} as SortedChildren),
+                            unlisted: [],
+                        },
+                        foldersOnly: { complete: isNew, list: [], unlisted: [] },
+                    }
                     : { meta };
             }
 

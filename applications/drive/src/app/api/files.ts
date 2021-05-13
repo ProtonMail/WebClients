@@ -33,12 +33,27 @@ export const queryFileRevision = (
     return query;
 };
 
+export const queryFileRevisionThumbnail = (
+    shareId: string,
+    linkId: string,
+    revisionId: number,
+) => {
+    return {
+        method: 'get',
+        url: `drive/shares/${shareId}/files/${linkId}/revisions/${revisionId}/thumbnail`,
+        silence: true,
+    };
+};
+
 export const queryRequestUpload = (data: {
     BlockList: { Hash: string; EncSignature: string; Size: number; Index: number }[];
     AddressID: string;
     ShareID: string;
     LinkID: string;
     RevisionID: string;
+    Thumbnail?: number;
+    ThumbnailHash?: string;
+    ThumbnailSize?: number;
 }) => {
     return {
         method: 'post',

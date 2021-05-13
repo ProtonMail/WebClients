@@ -22,6 +22,8 @@ interface FileProperties {
         ManifestSignature: string;
         SignatureAddress: string;
         State: FileRevisionState;
+        Thumbnail: number;
+        ThumbnailDownloadUrl: string;
     } | null;
 }
 
@@ -54,6 +56,11 @@ interface DriveLink {
     UrlsExpired: boolean;
     ShareIDs: string[];
     ShareUrls: SharedUrlInfo[];
+    // CachedThumbnailURL is computed URL to cached image. This is not part
+    // of any request and not filled automatically. To get this value, use
+    // `loadLinkThumbnail` from `useDrive`.
+    CachedThumbnailURL: string;
+    ThumbnailIsLoading: boolean;
 }
 
 export interface FileLinkMeta extends DriveLink {

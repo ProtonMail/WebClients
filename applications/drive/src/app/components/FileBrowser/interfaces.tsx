@@ -26,6 +26,11 @@ export interface FileBrowserItem {
     UrlsExpired: boolean;
     ShareUrlShareID?: string;
     SharedUrl?: SharedUrlInfo;
+    HasThumbnail: boolean;
+    // CachedThumbnailURL is computed URL to cached image. This is not part
+    // of any request and not filled automatically. To get this value, use
+    // `loadLinkThumbnail` from `useDrive`.
+    CachedThumbnailURL?: string;
 }
 
 export type ItemRowColumns =

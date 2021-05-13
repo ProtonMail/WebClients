@@ -34,6 +34,10 @@ export const MAX_SAFE_UPLOADING_FILE_COUNT = 500;
 
 export const CUSTOM_DATA_FORMAT = 'pd-custom';
 
+export const THUMBNAIL_MAX_SIDE = 320; // in pixels
+export const THUMBNAIL_MAX_SIZE = 16 * 1024; // in bytes, 16kB
+export const THUMBNAIL_QUALITIES = [0.7, 0.5, 0.3, 0.1, 0]; // Used qualities to stick under THUMBNAIL_MAX_SIZE.
+
 export enum LinkURLType {
     FOLDER = 'folder',
     FILE = 'file',
