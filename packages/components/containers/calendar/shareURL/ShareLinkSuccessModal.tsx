@@ -23,7 +23,7 @@ const ShareLinkSuccessModal = ({ link, onSubmit, accessLevel, ...rest }: Props) 
             {accessLevel === ACCESS_LEVEL.FULL ? (
                 <>
                     <Alert type="error">{c('Info')
-                        .t`By sharing the full event details of this calendar, you accept to grant Proton access to this calendar encrypted information.`}</Alert>
+                        .t`By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.`}</Alert>
                     <Alert>{c('Info')
                         .t`Anyone with this link can see all the event details of this calendar such as title, location or participants.`}</Alert>
                 </>
