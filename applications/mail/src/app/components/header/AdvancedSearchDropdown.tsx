@@ -341,7 +341,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
     const oldestDate = formatSimpleDate(add(new Date(oldestTime), { days: 1 }));
     const subTitleSection = (
         // translator: the variable is a date, which is already localised
-        <span className="color-weak mt1 mr0-5">{c('Info').jt`For messages newer than ${oldestDate}`}</span>
+        <span className="color-weak mr0-5">{c('Info').jt`For messages newer than ${oldestDate}`}</span>
     );
     const esToggle = (
         <Toggle
