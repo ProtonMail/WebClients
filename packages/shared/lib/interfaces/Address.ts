@@ -2,7 +2,7 @@ import { ADDRESS_TYPE } from '../constants';
 import { Key } from './Key';
 import { SignedKeyList } from './SignedKeyList';
 
-interface AddressKey extends Key {
+export interface AddressKey extends Key {
     Active: 0 | 1;
 }
 export interface Address {

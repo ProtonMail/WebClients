@@ -1,4 +1,4 @@
-import { listTimeZones, findTimeZone, getZonedTime, getUTCOffset } from 'timezone-support';
+import { findTimeZone, getUTCOffset, getZonedTime, listTimeZones } from 'timezone-support';
 import { DateTime } from '../interfaces/calendar/Date';
 import { MANUAL_TIMEZONE_LINKS, unsupportedTimezoneLinks } from './timezoneDatabase';
 
@@ -116,6 +116,10 @@ export const formatTimezoneOffset = (offset: number) => {
     }
 
     return `${sign}${hours}`;
+};
+
+export const formatGMTOffsetAbbreviation = (offset: number) => {
+    return `GMT${formatTimezoneOffset(offset)}`;
 };
 
 interface FormatterProps {
