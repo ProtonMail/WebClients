@@ -50,7 +50,7 @@ export const readSessionKeys = async ({
 interface ReadCalendarEventArguments {
     isOrganizer: boolean;
     event: Pick<CalendarEvent, 'SharedEvents' | 'CalendarEvents' | 'AttendeesEvents' | 'Attendees'>;
-    publicKeysMap: SimpleMap<OpenPGPKey | OpenPGPKey[]>;
+    publicKeysMap?: SimpleMap<OpenPGPKey | OpenPGPKey[]>;
     sharedSessionKey?: SessionKey;
     calendarSessionKey?: SessionKey;
     addresses: Address[];
@@ -59,7 +59,7 @@ interface ReadCalendarEventArguments {
 export const readCalendarEvent = async ({
     isOrganizer,
     event: { SharedEvents = [], CalendarEvents = [], AttendeesEvents = [], Attendees = [] },
-    publicKeysMap,
+    publicKeysMap = {},
     sharedSessionKey,
     calendarSessionKey,
     addresses,

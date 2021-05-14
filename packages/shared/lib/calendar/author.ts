@@ -4,6 +4,8 @@ import { canonizeInternalEmail } from '../helpers/email';
 import isTruthy from '../helpers/isTruthy';
 import { Address } from '../interfaces';
 import { CalendarEvent, CalendarEventData } from '../interfaces/calendar';
+import { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
+import { GetEncryptionPreferences } from '../interfaces/hooks/GetEncryptionPreferences';
 import { SimpleMap } from '../interfaces/utils';
 import { splitKeys } from '../keys';
 import { CALENDAR_CARD_TYPE } from './constants';
@@ -24,8 +26,8 @@ export const withNormalizedAuthors = (x: CalendarEventData[]) => {
 interface GetAuthorPublicKeysMap {
     event: CalendarEvent;
     addresses: Address[];
-    getAddressKeys: Function;
-    getEncryptionPreferences: Function;
+    getAddressKeys: GetAddressKeys;
+    getEncryptionPreferences: GetEncryptionPreferences;
 }
 
 export const getAuthorPublicKeysMap = async ({
