@@ -85,7 +85,7 @@ const ShareSection = ({ calendars, defaultCalendar, user }: Props) => {
         setIsLoadingMap((prevIsLoadingMap) => ({ ...prevIsLoadingMap, [urlID]: value }));
     };
 
-    const tryLoadingAction = async (urlID: string, fn: Function) => {
+    const tryLoadingAction = async (urlID: string, fn: () => Promise<void>) => {
         try {
             toggleLinkLoading(urlID, true);
             await fn();
