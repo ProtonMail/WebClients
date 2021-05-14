@@ -1,6 +1,5 @@
-import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
 import { Address } from 'proton-shared/lib/interfaces';
-import { Member } from 'proton-shared/lib/interfaces/calendar';
+import { CalendarEvent, Member } from 'proton-shared/lib/interfaces/calendar';
 import parseMainEventData from './parseMainEventData';
 import { getRecurrenceIdDate } from './getEventHelper';
 import { getComponentWithPersonalPart } from '../../../helpers/event';

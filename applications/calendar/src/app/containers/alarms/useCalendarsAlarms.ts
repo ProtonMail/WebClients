@@ -23,7 +23,7 @@ export const getCalendarsAlarmsCache = ({
 const useCalendarsAlarms = (
     calendars: tsCalendar[],
     cacheRef: MutableRefObject<CalendarsAlarmsCache>,
-    lookAhead = 2 * DAY
+    lookAhead = DAY / 2
 ) => {
     const api = useApi();
     const [forceRefresh, setForceRefresh] = useState<any>();

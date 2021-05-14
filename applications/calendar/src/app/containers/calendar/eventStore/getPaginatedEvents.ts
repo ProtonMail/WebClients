@@ -1,7 +1,8 @@
 import { getUnixTime } from 'date-fns';
-import { queryEvents, CalendarEventsQueryType } from 'proton-shared/lib/api/calendars';
+import { CalendarEventsQueryType } from 'proton-shared/lib/interfaces/calendar/Api';
+import { queryEvents } from 'proton-shared/lib/api/calendars';
 import { Api } from 'proton-shared/lib/interfaces';
-import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
+import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 
 interface ApiResponse {
     More: 0 | 1;

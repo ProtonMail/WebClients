@@ -1,6 +1,6 @@
 import { addDays } from 'date-fns';
 import { getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
-import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
+import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { getOccurrences } from 'proton-shared/lib/calendar/recurring';
 import { fromUTCDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import { VcalDateOrDateTimeProperty, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';

@@ -1,5 +1,5 @@
 import { getMustResetPartstat } from 'proton-shared/lib/calendar/integration/invite';
-import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
+import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { RECURRING_TYPES, SAVE_CONFIRMATION_TYPES } from 'proton-shared/lib/calendar/constants';
 
 import { OnSaveConfirmationCb } from '../interface';
