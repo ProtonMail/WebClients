@@ -10,18 +10,21 @@ interface Props extends Omit<IconProps, 'name'> {
     name?: string;
 }
 
-const getIconName = (isParent: boolean, color?: string) => {
+const getIconName = (isParent: boolean, color?: string, name?: string) => {
+    let iconName;
     if (isParent) {
-        return color ? 'parent-folder-filled' : 'parent-folder';
+        iconName = color ? 'parent-folder-filled' : 'parent-folder';
+    } else {
+        iconName = color ? 'folder-filled' : name || 'folder';
     }
-    return color ? 'folder-filled' : 'folder';
+    return iconName;
 };
 
 const FolderIcon = ({ folder, name, ...rest }: Props) => {
     const isParent = !!folder.subfolders?.length;
     const color = useFolderColor(folder);
 
-    return <Icon name={name || getIconName(isParent, color)} color={color} alt={folder.Name} {...rest} />;
+    return <Icon name={getIconName(isParent, color, name)} color={color} alt={folder.Name} {...rest} />;
 };
 
 export default FolderIcon;
