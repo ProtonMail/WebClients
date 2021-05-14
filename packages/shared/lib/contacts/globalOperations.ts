@@ -92,7 +92,6 @@ export const resignAllContacts = async (
                 privateKeys: [privateKeys[0]],
             });
             await api<{ Contact: Contact }>(updateContact(contactID, { Cards }));
-            // console.log('resignAllContacts', updateContact(contactID, { Cards }));
         }
         progressionCallback(i + 1, updated);
     }
