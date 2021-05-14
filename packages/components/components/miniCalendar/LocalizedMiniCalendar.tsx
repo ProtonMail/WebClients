@@ -18,7 +18,7 @@ const LocalizedMiniCalendar = ({ weekStartsOn, ...rest }: Props) => {
     }, [dateLocale]);
 
     const months = useMemo(() => {
-        return getFormattedMonths('MMMM', { locale: dateLocale });
+        return getFormattedMonths('LLLL', { locale: dateLocale });
     }, [dateLocale]);
 
     const formatDay = useCallback(
