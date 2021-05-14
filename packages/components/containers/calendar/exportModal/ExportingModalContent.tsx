@@ -3,10 +3,11 @@ import React, { Dispatch, SetStateAction, useEffect } from 'react';
 import { c } from 'ttag';
 
 import {
-    CalendarEvent,
+    CalendarEventWithMetadata,
     EXPORT_ERRORS,
     EXPORT_STEPS,
     ExportCalendarModel,
+    ExportError,
     VcalVeventComponent,
 } from 'proton-shared/lib/interfaces/calendar';
 
@@ -17,26 +18,25 @@ import {
     useGetCalendarInfo,
     useApi,
     useGetAddresses,
-    useGetAddressKeys,
-    useGetEncryptionPreferences,
     useGetCalendarKeys,
+    useGetCalendarUserSettings,
 } from '../../../hooks';
 
 interface Props {
     model: ExportCalendarModel;
     setModel: Dispatch<SetStateAction<ExportCalendarModel>>;
-    onFinish: (vevents: VcalVeventComponent[], erroredEvents: CalendarEvent[]) => void;
+    onFinish: (vevents: VcalVeventComponent[], exportErrors: ExportError[]) => void;
 }
 const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
     const api = useApi();
     const getAddresses = useGetAddresses();
-    const getAddressKeys = useGetAddressKeys();
-    const getEncryptionPreferences = useGetEncryptionPreferences();
     const getCalendarInfo = useGetCalendarInfo();
     const getCalendarEventPersonal = useGetCalendarEventPersonal();
     const getCalendarKeys = useGetCalendarKeys();
+    const getCalendarUserSettings = useGetCalendarUserSettings();
 
-    const { totalToProcess } = model;
+    const { totalFetched, totalToProcess, totalProcessed, exportErrors } = model;
+    const totalErrors = exportErrors.length;
 
     useEffect(() => {
         // Prepare api for allowing cancellation in the middle of the export
@@ -52,21 +52,26 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
             setModel(set);
         };
 
-        const handleExportProgress = (veventComponents: VcalVeventComponent[]) => {
-            if (!veventComponents.length) {
-                return;
-            }
-
+        const handleExportProgress = (
+            events: CalendarEventWithMetadata[],
+            veventComponents: VcalVeventComponent[],
+            exportErrors: ExportError[]
+        ) => {
             setModelWithAbort((currentModel) => ({
                 ...currentModel,
-                totalProcessed: [...currentModel.totalProcessed, ...veventComponents],
+                totalFetched: currentModel.totalFetched + events.length,
+                totalProcessed: currentModel.totalProcessed + veventComponents.length,
+                exportErrors: [...currentModel.exportErrors, ...exportErrors],
             }));
         };
 
         const process = async () => {
             try {
-                const addresses = await getAddresses();
-                const { memberID } = await getCalendarInfo(model.calendar.ID);
+                const [addresses, { memberID }, calendarUserSettings] = await Promise.all([
+                    getAddresses(),
+                    getCalendarInfo(model.calendar.ID),
+                    getCalendarUserSettings(),
+                ]);
 
                 if (!addresses) {
                     throw new Error('No addresses');
@@ -79,18 +84,18 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     totalToProcess,
                 }));
 
-                const [exportedEvents, erroredEvents, totalEventsFetched] = await processInBatches({
+                const [exportedEvents, exportErrors, totalEventsFetched] = await processInBatches({
                     calendarID: model.calendar.ID,
                     addresses,
                     api: apiWithAbort,
                     signal,
                     onProgress: handleExportProgress,
-                    getAddressKeys,
-                    getEncryptionPreferences,
                     getCalendarKeys,
                     getCalendarEventPersonal,
                     memberID,
                     totalToProcess,
+                    weekStartsOn: model.weekStartsOn,
+                    defaultTzid: calendarUserSettings.PrimaryTimezone,
                 });
 
                 if (totalToProcess !== totalEventsFetched) {
@@ -104,14 +109,14 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     return;
                 }
 
-                onFinish(exportedEvents, erroredEvents);
+                onFinish(exportedEvents, exportErrors);
             } catch (error) {
                 setModelWithAbort((currentModel) => ({
+                    ...currentModel,
                     step: EXPORT_STEPS.FINISHED,
-                    calendar: currentModel.calendar,
-                    totalProcessed: [],
+                    totalProcessed: 0,
                     totalToProcess: 0,
-                    erroredEvents: [],
+                    exportErrors: [],
                     error: EXPORT_ERRORS.NETWORK_ERROR,
                 }));
 
@@ -130,10 +135,9 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
         };
     }, []);
 
-    const display = !model.totalProcessed.length
+    const display = !totalProcessed
         ? c('Export calendar').t`Loading events`
-        : c('Export calendar')
-              .t`Decrypting events from your calendar: ${model.totalProcessed.length}/${totalToProcess}`;
+        : c('Export calendar').t`Decrypting events from your calendar: ${totalProcessed}/${totalToProcess}`;
 
     return (
         <>
@@ -142,9 +146,9 @@ const ExportingModalContent = ({ model, setModel, onFinish }: Props) => {
             </Alert>
             <DynamicProgress
                 id="progress-export-calendar"
-                value={model.totalProcessed.length}
+                value={totalFetched + totalProcessed + totalErrors}
                 display={display}
-                max={totalToProcess}
+                max={2 * totalToProcess}
                 loading
             />
         </>

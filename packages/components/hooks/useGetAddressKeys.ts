@@ -1,3 +1,4 @@
+import { GetAddressKeys } from 'proton-shared/lib/interfaces/hooks/GetAddressKeys';
 import { useCallback } from 'react';
 import { DecryptedKey } from 'proton-shared/lib/interfaces';
 import { getDecryptedAddressKeys } from 'proton-shared/lib/keys';
@@ -36,7 +37,7 @@ export const useGetAddressKeysRaw = (): ((id: string) => Promise<DecryptedKey[]>
     );
 };
 
-export const useGetAddressKeys = (): ((id: string) => Promise<DecryptedKey[]>) => {
+export const useGetAddressKeys = (): GetAddressKeys => {
     const cache = useCache();
     const miss = useGetAddressKeysRaw();
 

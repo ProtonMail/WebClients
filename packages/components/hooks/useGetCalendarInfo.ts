@@ -1,3 +1,4 @@
+import { GetCalendarInfo } from 'proton-shared/lib/interfaces/hooks/GetCalendarInfo';
 import { useCallback } from 'react';
 import getMemberAndAddress, { getMemberAndAddressID } from 'proton-shared/lib/calendar/integration/getMemberAndAddress';
 import { useGetAddresses } from './useAddresses';
@@ -5,7 +6,7 @@ import { useGetAddressKeys } from './useGetAddressKeys';
 import { useGetCalendarBootstrap } from './useGetCalendarBootstrap';
 import { useGetDecryptedPassphraseAndCalendarKeys } from './useGetDecryptedPassphraseAndCalendarKeys';
 
-export const useGetCalendarInfo = () => {
+export const useGetCalendarInfo = (): GetCalendarInfo => {
     const getCalendarBootstrap = useGetCalendarBootstrap();
     const getAddresses = useGetAddresses();
     const getDecryptedPassphraseAndCalendarKeys = useGetDecryptedPassphraseAndCalendarKeys();
