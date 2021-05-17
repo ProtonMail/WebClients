@@ -40,6 +40,10 @@ export enum SETTINGS_2FA_ENABLED {
     U2F = 2,
 }
 
+export interface Flags {
+    Welcomed: number;
+}
+
 export interface UserSettings {
     Email: {
         Value: string;
@@ -81,5 +85,5 @@ export interface UserSettings {
     TimeFormat: SETTINGS_TIME_FORMAT;
     Welcome: number;
     EarlyAccess: number;
-    Flags: number;
+    Flags: Flags;
 }
