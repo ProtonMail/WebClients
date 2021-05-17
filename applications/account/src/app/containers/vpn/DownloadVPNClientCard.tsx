@@ -10,7 +10,7 @@ interface Props {
 
 const DownloadVPNClientCard = ({ title, link, icon }: Props) => {
     return (
-        <Bordered className="rounded1e bg-white flex flex-column flex-align-items-center p2 mt1 mr1">
+        <Bordered className="rounded1e flex flex-column flex-align-items-center p2 mt1 mr1">
             <div>
                 <Icon size={60} name={icon} />
             </div>
