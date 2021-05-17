@@ -292,7 +292,7 @@ const PlanSelection = ({
     return (
         <>
             <div className="mb2 pb2 flex flex-nowrap on-mobile-flex-column">
-                <div className="flex-item-fluid no-tablet no-mobile" />
+                <div className="flex-item-fluid no-tablet no-mobile mr2" />
                 <div className="flex-item-fluid flex-item-grow-2 text-center on-tablet-text-left on-mobile-mb2 on-mobile-text-center">
                     {cycle === CYCLE.MONTHLY ? (
                         <Button
@@ -304,7 +304,7 @@ const PlanSelection = ({
                         >{c('Action').jt`${boldSave} by switching to annual billing`}</Button>
                     ) : null}
                 </div>
-                <div className="flex-item-fluid ml2 pl1 on-mobile-ml0 on-mobile-pl0 flex flex-nowrap cycle-currency-selectors">
+                <div className="flex-item-fluid ml2 on-mobile-ml0 flex flex-nowrap cycle-currency-selectors">
                     <div className="flex-item-fluid flex flex-item-grow-2">
                         <CycleSelector
                             cycle={cycle}
