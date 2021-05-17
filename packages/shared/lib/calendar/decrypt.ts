@@ -47,16 +47,19 @@ export const getDecryptedSessionKey = async (data: Uint8Array, privateKeys: Open
 
 export const verifySignedCard = async (
     dataToVerify: string,
-    signature: string,
+    signature: string | null,
     publicKeys: OpenPGPKey | OpenPGPKey[]
 ) => {
-    // we always expect a signed card
-    const { verified } = await verifyMessage({
-        message: await createCleartextMessage(dataToVerify),
-        publicKeys,
-        signature: await getSignature(signature),
-        detached: true,
-    });
+    const verified = signature
+        ? (
+              await verifyMessage({
+                  message: await createCleartextMessage(dataToVerify),
+                  publicKeys,
+                  signature: await getSignature(signature),
+                  detached: true,
+              })
+          ).verified
+        : undefined;
     const hasPublicKeys = Array.isArray(publicKeys) ? !!publicKeys.length : !!publicKeys;
     const verificationStatus = getEventVerificationStatus(verified, hasPublicKeys);
 
@@ -69,7 +72,6 @@ export const decryptCard = async (
     publicKeys: OpenPGPKey | OpenPGPKey[],
     sessionKey?: SessionKey
 ) => {
-    // we always expect a signed card
     const { data: decryptedData, verified } = await decryptMessage({
         message: await getMessage(dataToDecrypt),
         publicKeys,
