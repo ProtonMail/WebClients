@@ -15,7 +15,7 @@ const SessionAction = ({ session, onRevoke, currentUID }: Props) => {
     const [loading, withLoading] = useLoading();
 
     if (currentUID === session.UID) {
-        return <Badge>{c('Badge for user sessions table').t`Current session`}</Badge>;
+        return <Badge type="origin" className="mr0">{c('Badge for user sessions table').t`Current session`}</Badge>;
     }
 
     if (!onRevoke) {

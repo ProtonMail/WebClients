@@ -96,7 +96,7 @@ const SessionsSection = () => {
                     onSelect={onSelect}
                 />
             </div>
-            <Table>
+            <Table className="simple-table--has-actions">
                 <TableHeader cells={[c('Title').t`App`, c('Title').t`Date`, c('Title').t`Action`]} />
                 <TableBody loading={loading} colSpan={3}>
                     {list.map((session) => {
