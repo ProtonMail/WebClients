@@ -13,7 +13,7 @@ import { useApi, useLoading, useModals, useUserSettings } from '../../hooks';
 import LogsTable from './LogsTable';
 import WipeLogsButton from './WipeLogsButton';
 import { getAllAuthenticationLogs } from './helper';
-import { SettingsParagraph, SettingsSection } from '../account';
+import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
@@ -127,7 +127,7 @@ const LogsSection = () => {
     }, [page]);
 
     return (
-        <SettingsSection>
+        <SettingsSectionWide>
             <SettingsParagraph>
                 {c('Info')
                     .t`Logs include authentication attempts for all Proton services that use your Proton credentials.`}
@@ -207,7 +207,7 @@ const LogsSection = () => {
             </div>
 
             <LogsTable logs={state.logs} logAuth={logAuth} loading={loading} error={error} />
-        </SettingsSection>
+        </SettingsSectionWide>
     );
 };
 
