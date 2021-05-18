@@ -28,7 +28,7 @@ const CycleDiscountBadge = ({ cycle = MONTHLY }: Props) => {
     const i18n = getTooltipI18N();
 
     return (
-        <Badge type="light" tooltip={i18n[cycle]}>
+        <Badge type="success" tooltip={i18n[cycle]}>
             {DISCOUNT[cycle]}
         </Badge>
     );
