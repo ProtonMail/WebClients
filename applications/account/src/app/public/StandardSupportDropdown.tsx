@@ -22,7 +22,7 @@ const StandardSupportDropdown = () => {
             </DropdownMenuLink>
             <DropdownMenuButton className="flex flex-nowrap text-left" onClick={handleBugReportClick}>
                 <Icon className="mt0-25 mr0-5" name="report-bug" />
-                {c('Action').t`Report bug`}
+                {c('Action').t`Report a problem`}
             </DropdownMenuButton>
         </SupportDropdown>
     );
