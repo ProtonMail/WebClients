@@ -48,13 +48,6 @@ html,
 .content {
 	background-color: var(--sidebar-background-color, var(--background-norm));
 	color: var(--sidebar-text-color, var(--text-norm));
-	/*display: grid;
-	grid-template-areas:
-		"header header"
-		"sidebar content";
-		grid-template-columns: 180px auto;
-		grid-template-rows: 60px auto;
-	*/
 }
 
 .header {

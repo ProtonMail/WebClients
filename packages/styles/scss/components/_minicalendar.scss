@@ -7,7 +7,7 @@ $minicalendar-cell-size: 2em !default;
 
 .minicalendar-grid--display-week-number {
 	display: grid;
-	grid-template-columns: 30px auto;
+	grid-template-columns: rem(30) auto;
 	grid-template-rows: auto;
 }
 

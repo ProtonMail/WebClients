@@ -9,6 +9,8 @@
 	z-index: 666;
 	color: var(--text-norm);
 	animation: 0.15s ease-out both;
+	// max-height: calc(100% - (var(--top) * 1px) - 2px);
+	// max-width: calc(100% - (var(--left) * 1px) - 2px);
 
 	@include respond-to($breakpoint-small, 'max') {
 		top: 0;

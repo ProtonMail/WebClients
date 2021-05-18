@@ -91,7 +91,7 @@ select {
 
 		select#{&} {
 			background-size: rem(15);
-			padding-right: 20px;
+			padding-right: rem(20);
 			text-overflow: ellipsis;
 			overflow: hidden;
 			cursor: pointer;

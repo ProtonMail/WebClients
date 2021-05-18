@@ -9,8 +9,8 @@
 {
 	.icon-#{$width}p {
 		@extend %icon; // 🤔
-		width: #{$width}px;
-		height: #{$width}px;
+		width: rem($width);
+		height: rem($width);
 	}
 }
 
