@@ -19,6 +19,7 @@ import { Cycle, Currency, PlanIDs, SubscriptionCheckResponse } from 'proton-shar
 import { Calendar, CalendarUrlsResponse } from 'proton-shared/lib/interfaces/calendar';
 import { MAX_CALENDARS_PER_FREE_USER } from 'proton-shared/lib/calendar/constants';
 import { getFreeCheckResult } from 'proton-shared/lib/subscription/freePlans';
+import { getAppFromPathnameSafe } from 'proton-shared/lib/apps/slugHelper';
 
 import { Alert, FormModal } from '../../../components';
 import {
@@ -95,7 +96,8 @@ const SubscriptionModal = ({
     const innerRef = useRef<HTMLDivElement>();
     const api = useApi();
     const { APP_NAME } = useConfig();
-    const isVpnApp = APP_NAME === APPS.PROTONVPN_SETTINGS;
+    const app = getAppFromPathnameSafe(window.location.pathname);
+    const isVpnApp = APP_NAME === APPS.PROTONVPN_SETTINGS || app === APPS.PROTONVPN_SETTINGS;
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const [vpnCountries] = useVPNCountriesCount();
