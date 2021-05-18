@@ -1,3 +1,35 @@
+# [4.0.0 - Beta 42] - 2021-05-19
+
+## Improvements
+
+-   Added the ability to switch between attachments using arrow keys when previewing them
+-   Improved the loading mechanism of a conversation with several messages
+-   Group colour and number of group members are now displayed when adding a group using the To/CC/BCC fields in the composer
+-   Adapted the sequence of the read/unread filters based on the individual toolbar order set in Mail Settings
+-   Improved the performance of the contacts merging process by parallelizing some operations
+
+## Mail Fixes
+
+-   Fixed an issue where the shortcut mention was missing when hovering over "Previous/Next message" actions
+-   Fixed an issue where specific messages would display "Message processing error"
+-   Fixed an issue where the last attachment would be ignored if adding several attachments that exceed the attachments limit
+-   Fixed an issue where the advanced search widget would not close if previewing a file at the same time
+-   Fixed an issue where the first message would sometimes be partially hidden below the read/unread filter when navigating to it using keyboard shortcuts
+
+## Contact fixes
+
+-   Fixed an issue where contact .csv files with a particular structure could not be imported
+-   Fixed an issue where birthday/anniversary date information associated with a contact would be incorrect when exported
+-   Fixed an issue where a contact without an email address could be added to a group during contact import
+-   Fixed an issue where the contact encryption details would not be updated if the contact was updated after it has already been added to the composer
+-   Fixed an issue where the "Delete" action would be disabled if selecting a contact without an email address from the contact widget list view
+-   Fixed an issue where loading an image on a contact would only be successful if clicking twice
+-   Fixed an issue where a part of the contact name would be hidden when deleting a contact with a very long name
+-   Fixed an issue where adding a new contact from the widget would reload the page and navigate to Inbox regardless of the previous location
+-   Fixed an issue where contact export was enabled even if the account had no contacts
+-   Fixed an issue where a contact would be automatically created for email addresses used to unsubscribe from newsletters
+-   Fixed an issue where long email addresses would be displayed cut off inside the contacts widget
+
 # [4.0.0 - Beta 41] - 2021-05-05
 
 ## Improvements
