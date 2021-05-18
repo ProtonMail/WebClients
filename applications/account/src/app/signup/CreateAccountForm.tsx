@@ -174,7 +174,7 @@ const CreateAccountForm = ({
             )}
             <form
                 name="accountForm"
-                className={challengeLoading ? 'hidden' : ''}
+                className={challengeLoading ? 'hidden' : undefined}
                 onSubmit={(e) => {
                     e.preventDefault();
                     return handleSubmit();

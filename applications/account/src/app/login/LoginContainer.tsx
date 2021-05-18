@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
@@ -134,8 +133,6 @@ const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
     const toAppName = getToAppName(toApp);
     const mailAppName = getAppName(APPS.PROTONMAIL);
 
-    const signupLink = <Link key="signupLink" to="/signup">{c('Link').t`Create an account`}</Link>;
-
     const cache = cacheRef.current;
     const generateInternalAddress = generateInternalAddressRef.current;
     const externalEmailAddress = generateInternalAddress?.externalEmailAddress?.Email || '';
@@ -152,13 +149,14 @@ const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
                     <Content>
                         <LoginForm
                             defaultUsername={previousUsernameRef.current}
-                            onSubmit={(username, password) => {
+                            onSubmit={(username, password, payload) => {
                                 return handleLogin({
                                     username,
                                     password,
                                     api: silentApi,
                                     hasGenerateKeys: true,
                                     ignoreUnlock: false,
+                                    payload,
                                 })
                                     .then(handleResult)
                                     .catch((e) => {
@@ -167,7 +165,6 @@ const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
                                     });
                             }}
                         />
-                        <div className="text-center mt2">{c('Info').jt`New to ${BRAND_NAME}? ${signupLink}`}</div>
                     </Content>
                 </>
             )}

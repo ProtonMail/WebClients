@@ -1,11 +1,25 @@
 import { c } from 'ttag';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { useLoading, InputFieldTwo, PasswordInputTwo, Button, useFormErrors } from 'react-components';
+import {
+    useLoading,
+    InputFieldTwo,
+    PasswordInputTwo,
+    Button,
+    useFormErrors,
+    ChallengeRef,
+    captureChallengeMessage,
+    Challenge,
+    ChallengeError,
+    ChallengeResult,
+} from 'react-components';
+import { Link } from 'react-router-dom';
 import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
+import { BRAND_NAME } from 'proton-shared/lib/constants';
+import Loader from '../signup/Loader';
 
 interface Props {
-    onSubmit: (username: string, password: string) => Promise<void>;
+    onSubmit: (username: string, password: string, payload: ChallengeResult) => Promise<void>;
     defaultUsername?: string;
 }
 
@@ -14,48 +28,92 @@ const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
     const [username, setUsername] = useState(defaultUsername);
     const [password, setPassword] = useState('');
 
+    const challengeRefLogin = useRef<ChallengeRef>();
+    const [challengeLoading, setChallengeLoading] = useState(true);
+    const [challengeError, setChallengeError] = useState(false);
+
+    useEffect(() => {
+        if (challengeLoading) {
+            return;
+        }
+        // Special focus management for challenge
+        challengeRefLogin.current?.focus('#username');
+    }, [challengeLoading]);
+
     const { validator, onFormSubmit } = useFormErrors();
 
+    if (challengeError) {
+        return <ChallengeError />;
+    }
+
+    const signupLink = <Link key="signupLink" to="/signup">{c('Link').t`Create an account`}</Link>;
+
     return (
-        <form
-            name="loginForm"
-            className="signup-form"
-            onSubmit={(event) => {
-                event.preventDefault();
-                if (loading || !onFormSubmit()) {
-                    return;
-                }
-                withLoading(onSubmit(username, password)).catch(noop);
-            }}
-            method="post"
-        >
-            <InputFieldTwo
-                id="username"
-                bigger
-                label={c('Label').t`Email or username`}
-                error={validator([requiredValidator(username)])}
-                autoFocus
-                disableChange={loading}
-                autoComplete="username"
-                value={username}
-                onValue={setUsername}
-            />
-            <InputFieldTwo
-                id="password"
-                bigger
-                label={c('Label').t`Password`}
-                error={validator([requiredValidator(password)])}
-                as={PasswordInputTwo}
-                disableChange={loading}
-                autoComplete="current-password"
-                value={password}
-                onValue={setPassword}
-                rootClassName="mt0-5"
-            />
-            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
-                {c('Action').t`Sign in`}
-            </Button>
-        </form>
+        <>
+            {challengeLoading && (
+                <div className="text-center">
+                    <Loader />
+                </div>
+            )}
+            <form
+                name="loginForm"
+                className={challengeLoading ? 'hidden' : undefined}
+                onSubmit={(event) => {
+                    event.preventDefault();
+                    if (loading || !onFormSubmit()) {
+                        return;
+                    }
+                    const run = async () => {
+                        const payload = await challengeRefLogin.current?.getChallenge();
+                        return onSubmit(username, password, payload);
+                    };
+                    withLoading(run()).catch(noop);
+                }}
+                method="post"
+            >
+                <InputFieldTwo
+                    id="username"
+                    bigger
+                    label={c('Label').t`Email or username`}
+                    error={validator([requiredValidator(username)])}
+                    autoFocus
+                    disableChange={loading}
+                    autoComplete="username"
+                    value={username}
+                    onValue={setUsername}
+                />
+                <Challenge
+                    style={{ height: 0 }}
+                    challengeRef={challengeRefLogin}
+                    type={0}
+                    onSuccess={(logs) => {
+                        setChallengeLoading(false);
+                        captureChallengeMessage('Failed to load LoginForm iframe partially', logs);
+                    }}
+                    onError={(logs) => {
+                        setChallengeLoading(false);
+                        setChallengeError(true);
+                        captureChallengeMessage('Failed to load LoginForm iframe fatally', logs);
+                    }}
+                />
+                <InputFieldTwo
+                    id="password"
+                    bigger
+                    label={c('Label').t`Password`}
+                    error={validator([requiredValidator(password)])}
+                    as={PasswordInputTwo}
+                    disableChange={loading}
+                    autoComplete="current-password"
+                    value={password}
+                    onValue={setPassword}
+                    rootClassName="mt0-5"
+                />
+                <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
+                    {c('Action').t`Sign in`}
+                </Button>
+                <div className="text-center mt2">{c('Info').jt`New to ${BRAND_NAME}? ${signupLink}`}</div>
+            </form>
+        </>
     );
 };
 
