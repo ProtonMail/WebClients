@@ -175,19 +175,6 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
                             <div className="text-bold text-break">{c('Info')
                                 .t`URL: ${unsubscribeMethods.HttpClient}`}</div>
                         </Alert>
-                        <Row>
-                            <Label className="cursor-default">
-                                <span className="mr0-5">{c('Info').t`URL: `}</span>
-                            </Label>
-                            <Field className="bordered bg-weak">
-                                <div
-                                    className="pl1 pr1 pt0-5 pb0-5 text-ellipsis"
-                                    title={unsubscribeMethods.HttpClient}
-                                >
-                                    {unsubscribeMethods.HttpClient}
-                                </div>
-                            </Field>
-                        </Row>
                     </ConfirmModal>
                 );
             });
