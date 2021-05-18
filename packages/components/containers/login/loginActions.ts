@@ -29,6 +29,7 @@ import { wait } from 'proton-shared/lib/helpers/promise';
 
 import { getAuthTypes, handleUnlockKey } from './loginHelper';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
+import { ChallengeResult } from '../../components';
 
 /**
  * Finalize login can be called without a key password in these cases:
@@ -295,18 +296,21 @@ export const handleLogin = async ({
     api,
     ignoreUnlock,
     hasGenerateKeys,
+    payload,
 }: {
     username: string;
     password: string;
     api: Api;
     ignoreUnlock: boolean;
     hasGenerateKeys: boolean;
+    payload?: ChallengeResult;
 }): Promise<AuthActionResponse> => {
     const infoResult = await api<InfoResponse>(getInfo(username));
     const { authVersion, result: authResult } = await loginWithFallback({
         api,
         credentials: { username, password },
         initialAuthInfo: infoResult,
+        payload,
     });
     const { UID, AccessToken } = authResult;
     const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
