@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { updateEarlyAccess } from 'proton-shared/lib/api/settings';
 import { deleteCookie, getCookie, setCookie } from 'proton-shared/lib/helpers/cookies';
 
@@ -76,14 +76,6 @@ const useEarlyAccess = () => {
         }
     };
 
-    useEffect(() => {
-        if (!hasLoaded || versionCookie === targetEnvironment || versionCookie !== versionCookieAtLoad) {
-            return;
-        }
-
-        updateVersionCookie(targetEnvironment);
-    }, [hasLoaded, versionCookie, targetEnvironment]);
-
     /*
      * Shouldn't be able to call update without the request for the EarlyAccessScope
      * feature to have completed since the environment is set based on it should
@@ -122,6 +114,8 @@ const useEarlyAccess = () => {
         loading,
         loadingUpdate,
         environmentIsDesynchronized,
+        updateVersionCookie,
+        targetEnvironment,
         currentEnvironment: versionCookieAtLoad,
     };
 };
