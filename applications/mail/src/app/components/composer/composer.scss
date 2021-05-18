@@ -5,8 +5,10 @@
     bottom: 0;
     z-index: 300;
 
-    height: 520px;
-    width: 600px;
+    height: rem(520);
+    width: rem(600);
+    max-height: 100%;
+    max-width: 100%;
     overflow: hidden;
 
     background: var(--background-norm);

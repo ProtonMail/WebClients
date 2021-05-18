@@ -271,7 +271,7 @@ const MailboxContainer = ({
                 {showContentPanel && (
                     <section
                         ref={messageContainerRef}
-                        className="view-column-detail flex flex-column flex-item-fluid flex-nowrap scroll-if-needed relative"
+                        className="view-column-detail flex-no-min-children flex-column flex-item-fluid flex-nowrap scroll-if-needed relative"
                     >
                         {showPlaceholder && (
                             <PlaceholderView
