@@ -67,6 +67,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                     defaultCountry={defaultCountry}
                     value={input}
                     onChange={setInput}
+                    aria-label={c('label').t`Phone number`}
                 />
             </div>
             <div className="mb0-5">
