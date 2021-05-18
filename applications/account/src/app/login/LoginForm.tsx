@@ -71,19 +71,9 @@ const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
                 }}
                 method="post"
             >
-                <InputFieldTwo
-                    id="username"
-                    bigger
-                    label={c('Label').t`Email or username`}
-                    error={validator([requiredValidator(username)])}
-                    autoFocus
-                    disableChange={loading}
-                    autoComplete="username"
-                    value={username}
-                    onValue={setUsername}
-                />
                 <Challenge
                     style={{ height: 0 }}
+                    tabIndex={-1}
                     challengeRef={challengeRefLogin}
                     type={0}
                     onSuccess={(logs) => {
@@ -95,6 +85,17 @@ const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
                         setChallengeError(true);
                         captureChallengeMessage('Failed to load LoginForm iframe fatally', logs);
                     }}
+                />
+                <InputFieldTwo
+                    id="username"
+                    bigger
+                    label={c('Label').t`Email or username`}
+                    error={validator([requiredValidator(username)])}
+                    autoFocus
+                    disableChange={loading}
+                    autoComplete="username"
+                    value={username}
+                    onValue={setUsername}
                 />
                 <InputFieldTwo
                     id="password"
