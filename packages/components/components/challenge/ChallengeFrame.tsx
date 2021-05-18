@@ -15,7 +15,7 @@ export interface Props
         'onClick' | 'onError'
     > {
     challengeRef: MutableRefObject<ChallengeRef | undefined>;
-    children: React.ReactNode;
+    children?: React.ReactNode;
     src: string;
     className?: string;
     bodyClassName?: string;
