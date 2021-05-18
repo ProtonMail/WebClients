@@ -17,7 +17,7 @@ const SignInLayout = ({ children, title = '' }: Props) => {
     useAppTitle(title);
 
     return (
-        <ProminentContainer className="pt1 pb1 pl2 pr2">
+        <ProminentContainer className="pt1 pb1 pl2 pr2 scroll-if-needed">
             <PublicHeader
                 left={
                     <>
