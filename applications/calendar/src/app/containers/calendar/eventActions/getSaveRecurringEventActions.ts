@@ -2,8 +2,7 @@ import { getCanonicalEmails } from 'proton-shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, RECURRING_TYPES } from 'proton-shared/lib/calendar/constants';
 import { getResetPartstatActions, getUpdatedInviteVevent } from 'proton-shared/lib/calendar/integration/invite';
 import { GetCanonicalEmailsMap } from 'proton-shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
-import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar/Event';
+import { CalendarEvent, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
 
 import {
     INVITE_ACTION_TYPES,
@@ -234,10 +233,8 @@ const getSaveRecurringEventActions = async ({
                 addressID: newAddressID,
                 sendIcs,
             });
-            const {
-                updatePartstatActions: resetPartstatActions,
-                updatePersonalPartActions: dropAlarmsActions,
-            } = getResetPartstatActions(singleEditRecurrences, selfAttendeeToken, invitePartstat);
+            const { updatePartstatActions: resetPartstatActions, updatePersonalPartActions: dropAlarmsActions } =
+                getResetPartstatActions(singleEditRecurrences, selfAttendeeToken, invitePartstat);
             updatePartstatActions.push(
                 ...resetPartstatActions.map(({ calendarID, eventID, updateTime, attendeeID }) => {
                     return {
