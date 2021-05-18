@@ -26,7 +26,7 @@ const Signout = ({ onDone, onLogout }: Props) => {
                 wait(200),
                 UID ? api({ ...revoke(), silence: true }) : undefined,
                 UID ? removeLastRefreshDate(UID) : undefined,
-                localID !== undefined ? removePersistedSession(localID) : undefined,
+                localID !== undefined ? removePersistedSession(localID, UID) : undefined,
                 onLogout(),
             ]);
         };
