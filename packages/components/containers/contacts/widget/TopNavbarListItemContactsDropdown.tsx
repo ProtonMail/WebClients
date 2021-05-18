@@ -75,7 +75,7 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose }: Props) => {
                 anchorRef={anchorRef}
                 onClose={handleClose}
                 autoClose={false}
-                originalPlacement="bottom-left"
+                originalPlacement="bottom"
                 className="contacts-widget"
                 noMaxWidth
                 noMaxHeight

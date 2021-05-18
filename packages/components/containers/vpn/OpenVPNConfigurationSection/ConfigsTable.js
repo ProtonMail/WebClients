@@ -33,9 +33,7 @@ export const CATEGORY = {
 const PlusBadge = () => (
     <span className="ml0-5">
         <Tooltip title="Plus">
-            <div className="text-center rounded" style={{ width: 22, height: 22 }}>
-                P
-            </div>
+            <div className="text-center rounded">P</div>
         </Tooltip>
     </span>
 );

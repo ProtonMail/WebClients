@@ -122,7 +122,7 @@ const OpenVPNConfigurationSection = () => {
                 `}
             </SettingsParagraph>
             <h3 className="mt2">{c('Title').t`1. Select platform`}</h3>
-            <div className="flex on-mobile-flex-column mb1">
+            <div className="flex on-mobile-flex-column">
                 {[
                     {
                         value: PLATFORM.ANDROID,
@@ -156,7 +156,7 @@ const OpenVPNConfigurationSection = () => {
                     },
                 ].map(({ value, label, link }) => {
                     return (
-                        <div key={value} className="mr2">
+                        <div key={value} className="mr2 mb1">
                             <Radio
                                 onChange={() => setPlatform(value)}
                                 checked={platform === value}

@@ -4,6 +4,7 @@ import { List, AutoSizer } from 'react-virtualized';
 import { ContactFormatted, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import { UserModel, UserSettings } from 'proton-shared/lib/interfaces';
+import { rootFontSize } from 'proton-shared/lib/helpers/dom';
 import ContactRow from './ContactRow';
 import { useItemsDraggable } from '../items';
 import { classnames } from '../../helpers';
@@ -74,8 +75,8 @@ const ContactsList = ({
         }
     );
 
-    const contactRowHeightComfort = 64;
-    const contactRowHeightCompact = 48;
+    const contactRowHeightComfort = 4 * rootFontSize; // 4 * 16 = we want 64px by default
+    const contactRowHeightCompact = 3 * rootFontSize; // 3 * 16 = we want 48px by default
 
     return (
         <div
