@@ -1,5 +1,5 @@
 import { OpenPGPKey, SessionKey } from 'pmcrypto';
-import { CalendarEventBlobData } from '../api/calendars';
+import { CalendarCreateEventBlobData } from '../interfaces/calendar/Api';
 import { RequireSome } from '../interfaces/utils';
 
 import { CALENDAR_CARD_TYPE } from './constants';
@@ -12,12 +12,12 @@ import { formatData, getArmoredSignatureString } from './formatData';
 const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
 
 export const getHasSharedEventContent = (
-    data: Partial<CalendarEventBlobData>
-): data is RequireSome<CalendarEventBlobData, 'SharedEventContent'> => !!data.SharedEventContent;
+    data: Partial<CalendarCreateEventBlobData>
+): data is RequireSome<CalendarCreateEventBlobData, 'SharedEventContent'> => !!data.SharedEventContent;
 
 export const getHasSharedKeyPacket = (
-    data: CalendarEventBlobData
-): data is RequireSome<CalendarEventBlobData, 'SharedKeyPacket'> => !!data.SharedKeyPacket;
+    data: CalendarCreateEventBlobData
+): data is RequireSome<CalendarCreateEventBlobData, 'SharedKeyPacket'> => !!data.SharedKeyPacket;
 
 /**
  * Split the properties of the component into parts.

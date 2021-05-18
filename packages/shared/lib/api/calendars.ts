@@ -1,13 +1,21 @@
-import { Nullable, RequireSome } from '../interfaces/utils';
-import { PaginationParams } from './interface';
+import { Attendee, CalendarSettings, CalendarUserSettings } from '../interfaces/calendar';
 import {
-    Attendee,
-    Calendar,
-    CalendarEventData,
-    CalendarSettings,
-    CalendarUserSettings,
-    ACCESS_LEVEL,
-} from '../interfaces/calendar';
+    CalendarCreateArguments,
+    CalendarCreateData,
+    CalendarEventsQuery,
+    CalendarExportEventsQuery,
+    CalendarKeysResetData,
+    CalendarMemberData,
+    CalendarSetupData,
+    CreatePublicLinks,
+    CreateSingleCalendarEventData,
+    CreateSinglePersonalEventData,
+    GetEventByUIDArguments,
+    QueryCalendarAlarms,
+    SyncMultipleEventsData,
+} from '../interfaces/calendar/Api';
+import { Nullable } from '../interfaces/utils';
+import { PaginationParams } from './interface';
 
 const CALENDAR_V1 = 'calendar/v1';
 
@@ -26,25 +34,12 @@ export const queryCalendars = () => ({
     method: 'get',
 });
 
-export type CalendarCreateData = Omit<Calendar, 'Flags' | 'ID'>;
-export interface CalendarCreateArguments extends CalendarCreateData {
-    AddressID: string;
-}
 export const createCalendar = (data: CalendarCreateArguments) => ({
     url: `${CALENDAR_V1}`,
     method: 'post',
     data,
 });
 
-interface CalendarSetupData {
-    AddressID: string;
-    Signature: string;
-    PrivateKey: string;
-    Passphrase: {
-        DataPacket: string;
-        KeyPackets: string;
-    };
-}
 export const setupCalendar = (calendarID: string, data: CalendarSetupData) => ({
     url: `${CALENDAR_V1}/${calendarID}/keys`,
     method: 'post',
@@ -92,9 +87,6 @@ export const getCalendarGroupReset = () => ({
     method: 'get',
 });
 
-interface CalendarKeysResetData {
-    [calendarID: string]: CalendarSetupData;
-}
 export const resetCalendarGroup = (data: { CalendarKeys: CalendarKeysResetData }) => ({
     url: `${CALENDAR_V1}/keys/reset`,
     method: 'post',
@@ -123,11 +115,6 @@ export const getAllMembers = (calendarID: string) => ({
     method: 'get',
 });
 
-interface CalendarMemberData {
-    Email: string;
-    PassphraseKeyPacket: string;
-    Permissions: number;
-}
 export const addMember = (calendarID: string, data: { Members: CalendarMemberData[] }) => ({
     url: `${CALENDAR_V1}/${calendarID}`,
     method: 'post',
@@ -145,24 +132,6 @@ export const removeMember = (calendarID: string, memberID: string) => ({
     method: 'delete',
 });
 
-export enum CalendarEventsQueryType {
-    PartDayInsideWindow = 0,
-    PartDayBeforeWindow = 1,
-    FullDayInsideWindow = 2,
-    FullDayBeforeWindow = 3,
-}
-
-export interface CalendarEventsQuery extends PaginationParams {
-    Start: number;
-    End: number;
-    Timezone: string;
-    Type: CalendarEventsQueryType;
-}
-
-export interface CalendarExportEventsQuery extends PaginationParams {
-    BeginID?: string;
-}
-
 export const getEventsCount = (calendarID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/events/count`,
     method: 'get',
@@ -179,43 +148,12 @@ export const getEvent = (calendarID: string, eventID: string) => ({
     method: 'get',
 });
 
-export interface GetEventByUIDArguments extends Partial<PaginationParams> {
-    UID: string;
-    RecurrenceID?: number;
-}
 export const getEventByUID = (params: GetEventByUIDArguments) => ({
     url: `${CALENDAR_V1}/events`,
     method: 'get',
     params,
 });
 
-export interface CalendarEventBlobData {
-    CalendarKeyPacket?: string;
-    CalendarEventContent?: Omit<CalendarEventData, 'Author'>[];
-    SharedKeyPacket?: string;
-    SharedEventContent?: Omit<CalendarEventData, 'Author'>[];
-    PersonalEventContent?: Omit<CalendarEventData, 'Author'>;
-    AttendeesEventContent?: Omit<CalendarEventData, 'Author'>[];
-    Attendees?: Omit<Attendee, 'UpdateTime' | 'ID'>[];
-}
-export interface CreateCalendarEventData
-    extends RequireSome<CalendarEventBlobData, 'SharedEventContent' | 'SharedKeyPacket'> {
-    Permissions: number;
-    IsOrganizer?: 0 | 1;
-    RemovedAttendeeAddresses?: string[];
-}
-export interface CreateSingleCalendarEventData extends CreateCalendarEventData {
-    MemberID: string;
-}
-export interface CreateSinglePersonalEventData {
-    MemberID: string;
-    PersonalEventContent?: Omit<CalendarEventData, 'Author'>;
-}
-export interface CreateLinkedCalendarEventData
-    extends RequireSome<Partial<CreateCalendarEventData>, 'SharedKeyPacket'> {
-    UID: string;
-    SharedEventID: string;
-}
 export const createEvent = (calendarID: string, data: CreateSingleCalendarEventData) => ({
     url: `${CALENDAR_V1}/${calendarID}/events`,
     method: 'post',
@@ -285,11 +223,6 @@ export const getVtimezones = (Timezones: string[]) => ({
     // params: { Timezones }
 });
 
-interface QueryCalendarAlarms {
-    Start: number;
-    End: number;
-    PageSize: number;
-}
 export const queryCalendarAlarms = (calendarID: string, params: QueryCalendarAlarms) => ({
     url: `${CALENDAR_V1}/${calendarID}/alarms`,
     method: 'get',
@@ -301,46 +234,11 @@ export const getCalendarAlarm = (calendarID: string, alarmID: string) => ({
     method: 'get',
 });
 
-export interface CreateCalendarEventSyncData {
-    Overwrite?: 0 | 1;
-    Event: CreateCalendarEventData;
-}
-export interface DeleteCalendarEventSyncData {
-    ID: string;
-}
-export interface UpdateCalendarEventSyncData {
-    ID: string;
-    Event?: Omit<CreateCalendarEventData, 'SharedKeyPacket' | 'CalendarKeyPacket'>;
-}
-export interface CreateLinkedCalendarEventsSyncData {
-    Overwrite?: 0 | 1;
-    Event: CreateLinkedCalendarEventData;
-}
-export interface SyncMultipleEventsData {
-    MemberID: string;
-    IsImport?: 0 | 1;
-    Events: (
-        | CreateCalendarEventSyncData
-        | CreateLinkedCalendarEventsSyncData
-        | DeleteCalendarEventSyncData
-        | UpdateCalendarEventSyncData
-    )[];
-}
 export const syncMultipleEvents = (calendarID: string, data: SyncMultipleEventsData) => ({
     url: `${CALENDAR_V1}/${calendarID}/events/sync`,
     method: 'put',
     data,
 });
-
-export interface CreatePublicLinks {
-    AccessLevel: ACCESS_LEVEL;
-    CacheKeySalt: string;
-    CacheKeyHash: string;
-    EncryptedPassphrase: Nullable<string>;
-    EncryptedPurpose: Nullable<string>;
-    EncryptedCacheKey: string;
-    PassphraseID: Nullable<string>;
-}
 
 export const createPublicLink = (calendarID: string, data: CreatePublicLinks) => ({
     url: `${CALENDAR_V1}/${calendarID}/urls`,
