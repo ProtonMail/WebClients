@@ -1,5 +1,6 @@
 import { CALENDAR_FLAGS } from 'proton-shared/lib/calendar/constants';
 import React, { useMemo, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import {
     ErrorBoundary,
     StandardErrorPage,
@@ -13,6 +14,8 @@ import CalendarOnboardingContainer from '../setup/CalendarOnboardingContainer';
 import CalendarSetupContainer from '../setup/CalendarSetupContainer';
 import ResetContainer from '../setup/ResetContainer';
 import MainContainerSetup from './MainContainerSetup';
+
+import favicons from '../../../assets/favicons';
 
 const MainContainer = () => {
     const [addresses] = useAddresses();
@@ -60,8 +63,14 @@ const MainContainer = () => {
 };
 
 const WrappedMainContainer = () => {
+    const date = new Date().getDate();
+
     return (
         <ErrorBoundary component={<StandardErrorPage />}>
+            <Helmet>
+                <link rel="icon" type="image/svg+xml" href={favicons[date][0]} />
+                <link rel="alternate icon" href={favicons[date][1]} />
+            </Helmet>
             <MainContainer />
         </ErrorBoundary>
     );
