@@ -172,7 +172,12 @@ const getCustomDailyString = (
         if (interval === 1) {
             return c('Daily recurring event, frequency').t`Daily`;
         }
-        return c('Daily recurring event, frequency').t`Every ${interval} days`;
+        // translator: When interval = 1 we do not use this string; we use 'daily' instead. Treat the case of interval = 1 as dummy
+        return c('Daily recurring event, frequency').ngettext(
+            msgid`Every ${interval} day`,
+            `Every ${interval} days`,
+            interval
+        );
     }
 
     if (endType === END_TYPE.AFTER_N_TIMES) {
@@ -180,7 +185,12 @@ const getCustomDailyString = (
         if (interval === 1) {
             return c('Daily recurring event, frequency').t`Daily, ${timesString}`;
         }
-        return c('Daily recurring event, frequency').t`Every ${interval} days, ${timesString}`;
+        // translator: When interval = 1 we do not use this string; we use 'daily' instead. Treat the case of interval = 1 as dummy
+        return c('Daily recurring event, frequency').ngettext(
+            msgid`Every ${interval} day, ${timesString}`,
+            `Every ${interval} days, ${timesString}`,
+            interval
+        );
     }
 
     if (endType === END_TYPE.UNTIL && until) {
@@ -189,7 +199,12 @@ const getCustomDailyString = (
         if (interval === 1) {
             return c('Daily recurring event, frequency').t`Daily, ${untilString}`;
         }
-        return c('Daily recurring event, frequency').t`Every ${interval} days, ${untilString}`;
+        // translator: When interval = 1 we do not use this string; we use 'daily' instead. Treat the case of interval = 1 as dummy
+        return c('Daily recurring event, frequency').ngettext(
+            msgid`Every ${interval} day, ${untilString}`,
+            `Every ${interval} days, ${untilString}`,
+            interval
+        );
     }
 };
 const getWeekdayString = (weekday: number) => {
@@ -240,6 +255,7 @@ const getCustomWeeklyString = (
             if (interval === 1) {
                 return c('Weekly recurring event, frequency').t`Weekly on all days`;
             }
+            // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
             return c('Weekly recurring event, frequency').ngettext(
                 msgid`Every ${interval} week on all days`,
                 `Every ${interval} weeks on all days`,
@@ -252,6 +268,7 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Sunday`;
                 }
+                // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
                 return c('Weekly recurring event, frequency').ngettext(
                     msgid`Every ${interval} week on Sunday`,
                     `Every ${interval} weeks on Sunday`,
@@ -262,6 +279,7 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Monday`;
                 }
+                // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
                 return c('Weekly recurring event, frequency').ngettext(
                     msgid`Every ${interval} week on Monday`,
                     `Every ${interval} weeks on Monday`,
@@ -272,6 +290,7 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Tuesday`;
                 }
+                // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
                 return c('Weekly recurring event, frequency').ngettext(
                     msgid`Every ${interval} week on Tuesday`,
                     `Every ${interval} weeks on Tuesday`,
@@ -282,6 +301,7 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Wednesday`;
                 }
+                // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
                 return c('Weekly recurring event, frequency').ngettext(
                     msgid`Every ${interval} week on Wednesday`,
                     `Every ${interval} weeks on Wednesday`,
@@ -292,6 +312,7 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Thursday`;
                 }
+                // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
                 return c('Weekly recurring event, frequency').ngettext(
                     msgid`Every ${interval} week on Thursday`,
                     `Every ${interval} weeks on Thursday`,
@@ -302,6 +323,7 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Friday`;
                 }
+                // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
                 return c('Weekly recurring event, frequency').ngettext(
                     msgid`Every ${interval} week on Friday`,
                     `Every ${interval} weeks on Friday`,
@@ -312,6 +334,7 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Saturday`;
                 }
+                // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
                 return c('Weekly recurring event, frequency').ngettext(
                     msgid`Every ${interval} week on Saturday`,
                     `Every ${interval} weeks on Saturday`,
@@ -322,6 +345,7 @@ const getCustomWeeklyString = (
         if (interval === 1) {
             return c('Weekly recurring event, frequency').t`Weekly on ${multipleDaysString}`;
         }
+        // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
         return c('Weekly recurring event, frequency').ngettext(
             msgid`Every ${interval} week on ${multipleDaysString}`,
             `Every ${interval} weeks on ${multipleDaysString}`,
@@ -334,6 +358,7 @@ const getCustomWeeklyString = (
             if (interval === 1) {
                 return c('Weekly recurring event, frequency').t`Weekly on all days, ${timesString}`;
             }
+            // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
             return c('Weekly recurring event, frequency').ngettext(
                 msgid`Every ${interval} week on all days, ${timesString}`,
                 `Every ${interval} weeks on all days, ${timesString}`,
@@ -346,6 +371,7 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Sunday, ${timesString}`;
                 }
+                // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
                 return c('Weekly recurring event, frequency').ngettext(
                     msgid`Every ${interval} week on Sunday, ${timesString}`,
                     `Every ${interval} weeks on Sunday, ${timesString}`,
@@ -356,6 +382,7 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Monday, ${timesString}`;
                 }
+                // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
                 return c('Weekly recurring event, frequency').ngettext(
                     msgid`Every ${interval} week on Monday, ${timesString}`,
                     `Every ${interval} weeks on Monday, ${timesString}`,
@@ -366,6 +393,7 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Tuesday, ${timesString}`;
                 }
+                // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
                 return c('Weekly recurring event, frequency').ngettext(
                     msgid`Every ${interval} week on Tuesday, ${timesString}`,
                     `Every ${interval} weeks on Tuesday, ${timesString}`,
@@ -376,6 +404,7 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Wednesday, ${timesString}`;
                 }
+                // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
                 return c('Weekly recurring event, frequency').ngettext(
                     msgid`Every ${interval} week on Wednesday, ${timesString}`,
                     `Every ${interval} weeks on Wednesday, ${timesString}`,
@@ -386,6 +415,7 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Thursday, ${timesString}`;
                 }
+                // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
                 return c('Weekly recurring event, frequency').ngettext(
                     msgid`Every ${interval} week on Thursday, ${timesString}`,
                     `Every ${interval} weeks on Thursday, ${timesString}`,
@@ -396,6 +426,7 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Friday, ${timesString}`;
                 }
+                // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
                 return c('Weekly recurring event, frequency').ngettext(
                     msgid`Every ${interval} week on Friday, ${timesString}`,
                     `Every ${interval} weeks on Friday, ${timesString}`,
@@ -406,6 +437,7 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Saturday, ${timesString}`;
                 }
+                // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
                 return c('Weekly recurring event, frequency').ngettext(
                     msgid`Every ${interval} week on Saturday, ${timesString}`,
                     `Every ${interval} weeks on Saturday, ${timesString}`,
@@ -416,6 +448,7 @@ const getCustomWeeklyString = (
         if (interval === 1) {
             return c('Weekly recurring event, frequency').t`Weekly on ${multipleDaysString}, ${timesString}`;
         }
+        // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
         return c('Weekly recurring event, frequency').ngettext(
             msgid`Every ${interval} week on ${multipleDaysString}, ${timesString}`,
             `Every ${interval} weeks on ${multipleDaysString}, ${timesString}`,
@@ -429,6 +462,7 @@ const getCustomWeeklyString = (
             if (interval === 1) {
                 return c('Weekly recurring event, frequency').t`Weekly on all days, ${untilString}`;
             }
+            // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
             return c('Weekly recurring event, frequency').ngettext(
                 msgid`Every ${interval} week on all days, ${untilString}`,
                 `Every ${interval} weeks on all days, ${untilString}`,
@@ -441,6 +475,7 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Sunday, ${untilString}`;
                 }
+                // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
                 return c('Weekly recurring event, frequency').ngettext(
                     msgid`Every ${interval} week on Sunday, ${untilString}`,
                     `Every ${interval} weeks on Sunday, ${untilString}`,
@@ -451,6 +486,7 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Monday, ${untilString}`;
                 }
+                // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
                 return c('Weekly recurring event, frequency').ngettext(
                     msgid`Every ${interval} week on Monday, ${untilString}`,
                     `Every ${interval} weeks on Monday, ${untilString}`,
@@ -461,6 +497,7 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Tuesday, ${untilString}`;
                 }
+                // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
                 return c('Weekly recurring event, frequency').ngettext(
                     msgid`Every ${interval} week on Tuesday, ${untilString}`,
                     `Every ${interval} weeks on Tuesday, ${untilString}`,
@@ -471,6 +508,7 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Wednesday, ${untilString}`;
                 }
+                // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
                 return c('Weekly recurring event, frequency').ngettext(
                     msgid`Every ${interval} week on Wednesday, ${untilString}`,
                     `Every ${interval} weeks on Wednesday, ${untilString}`,
@@ -481,6 +519,7 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Thursday, ${untilString}`;
                 }
+                // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
                 return c('Weekly recurring event, frequency').ngettext(
                     msgid`Every ${interval} week on Thursday, ${untilString}`,
                     `Every ${interval} weeks on Thursday, ${untilString}`,
@@ -491,6 +530,7 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Friday, ${untilString}`;
                 }
+                // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
                 return c('Weekly recurring event, frequency').ngettext(
                     msgid`Every ${interval} week on Friday, ${untilString}`,
                     `Every ${interval} weeks on Friday, ${untilString}`,
@@ -501,6 +541,7 @@ const getCustomWeeklyString = (
                 if (interval === 1) {
                     return c('Weekly recurring event, frequency').t`Weekly on Saturday, ${untilString}`;
                 }
+                // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
                 return c('Weekly recurring event, frequency').ngettext(
                     msgid`Every ${interval} week on Saturday, ${untilString}`,
                     `Every ${interval} weeks on Saturday, ${untilString}`,
@@ -511,6 +552,7 @@ const getCustomWeeklyString = (
         if (interval === 1) {
             return c('Weekly recurring event, frequency').t`Weekly on ${multipleDaysString}, ${untilString}`;
         }
+        // translator: When interval = 1 we do not use this string; we use 'weekly' instead. Treat the case of interval = 1 as dummy
         return c('Weekly recurring event, frequency').ngettext(
             msgid`Every ${interval} week on ${multipleDaysString}, ${untilString}`,
             `Every ${interval} weeks on ${multipleDaysString}, ${untilString}`,
@@ -532,6 +574,7 @@ const getCustomMonthlyString = (
         if (interval === 1) {
             return c('Monthly recurring event, frequency').t`Monthly ${onDayString}`;
         }
+        // translator: When interval = 1 we do not use this string; we use 'monthly' instead. Treat the case of interval = 1 as dummy
         return c('Monthly recurring event, frequency').ngettext(
             msgid`Every ${interval} month ${onDayString}`,
             `Every ${interval} months ${onDayString}`,
@@ -543,6 +586,7 @@ const getCustomMonthlyString = (
         if (interval === 1) {
             return c('Monthly recurring event, frequency').t`Monthly ${onDayString}, ${timesString}`;
         }
+        // translator: When interval = 1 we do not use this string; we use 'monthly' instead. Treat the case of interval = 1 as dummy
         return c('Monthly recurring event, frequency').ngettext(
             msgid`Every ${interval} month ${onDayString}, ${timesString}`,
             `Every ${interval} months ${onDayString}, ${timesString}`,
@@ -555,6 +599,7 @@ const getCustomMonthlyString = (
         if (interval === 1) {
             return c('Monthly recurring event, frequency').t`Monthly ${onDayString}, ${untilString}`;
         }
+        // translator: When interval = 1 we do not use this string; we use 'monthly' instead. Treat the case of interval = 1 as dummy
         return c('Monthly recurring event, frequency').ngettext(
             msgid`Every ${interval} month ${onDayString}, ${untilString}`,
             `Every ${interval} months ${onDayString}, ${untilString}`,
@@ -572,6 +617,7 @@ const getCustomYearlyString = (
         if (interval === 1) {
             return c('Yearly recurring event, frequency').t`Yearly`;
         }
+        // translator: When interval = 1 we do not use this string; we use 'yearly' instead. Treat the case of interval = 1 as dummy
         return c('Yearly recurring event, frequency').ngettext(
             msgid`Every ${interval} year`,
             `Every ${interval} years`,
@@ -584,6 +630,7 @@ const getCustomYearlyString = (
         if (interval === 1) {
             return c('Yearly recurring event, frequency').t`Yearly, ${timesString}`;
         }
+        // translator: When interval = 1 we do not use this string; we use 'yearly' instead. Treat the case of interval = 1 as dummy
         return c('Yearly recurring event, frequency').ngettext(
             msgid`Every ${interval} year, ${timesString}`,
             `Every ${interval} years, ${timesString}`,
@@ -597,6 +644,7 @@ const getCustomYearlyString = (
         if (interval === 1) {
             return c('Yearly recurring event, frequency').t`Yearly, ${untilString}`;
         }
+        // translator: When interval = 1 we do not use this string; we use 'yearly' instead. Treat the case of interval = 1 as dummy
         return c('Yearly recurring event, frequency').ngettext(
             msgid`Every ${interval} year, ${untilString}`,
             `Every ${interval} years, ${untilString}`,
@@ -725,9 +773,6 @@ export const getTimezonedFrequencyString = (
             const hasDays = days.length !== 7;
             return hasCustomUntil || hasDays;
         }
-        // if (frequency === FREQUENCY.YEARLY) {
-        //     return true;
-        // }
         if (freq === FREQUENCY.MONTHLY) {
             return true;
         }
