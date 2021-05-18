@@ -192,6 +192,10 @@
 	}
 }
 
+.user-select {
+	user-select: all;
+}
+
 /* TODO: If everything works fine, remove this!
 .primary-link {
 	&:focus,
@@ -209,10 +213,12 @@
 */
 
 .button-show-on-hover {
-	&:focus,
-	&:hover {
-		& &-element {
-			visibility: visible;
-		}
+	&-element {
+		visibility: hidden;
+	}
+
+	&:focus &-element,
+	&:hover &-element {
+		visibility: visible;
 	}
 }
