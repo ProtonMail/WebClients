@@ -89,7 +89,7 @@ const TopNavbarListItemHelpDropdown = <E extends React.ElementType = typeof defa
                 </DropdownMenuLink>
 
                 <DropdownMenuButton className="text-left" onClick={handleBugReportClick}>
-                    {c('Action').t`Report bug`}
+                    {c('Action').t`Report a problem`}
                 </DropdownMenuButton>
 
                 <hr className="mt0-5 mb0-5" />
