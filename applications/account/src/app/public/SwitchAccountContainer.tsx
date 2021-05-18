@@ -135,7 +135,7 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                     onClick={() => handleClickSession(LocalID)}
                 >
                     <span className="user-initials rounded p0-25 mb0-5 inline-flex bg-primary">
-                        <span className="dropdown-logout-text center text-semibold" aria-hidden="true">
+                        <span className="dropdown-logout-text mauto text-semibold" aria-hidden="true">
                             {initials}
                         </span>
                     </span>
