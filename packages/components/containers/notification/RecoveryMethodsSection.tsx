@@ -110,12 +110,14 @@ const RecoveryMethodsSection = () => {
                                 withLoadingReset(handleChangePasswordEmailToggle(+checked))
                             }
                         />
-                        <span className="mr0-5">{c('Label').t`Email recovery`}</span>
-                        <Info
-                            url="https://protonmail.com/blog/notification-emails/"
-                            title={c('Info')
-                                .t`Disabling this will prevent this email from being used for account recovery`}
-                        />
+                        <label htmlFor="passwordEmailResetToggle" className="mr0-5 flex-item-fluid">
+                            <span className="mr0-5">{c('Label').t`Allow recovery by email`}</span>
+                            <Info
+                                url="https://protonmail.com/blog/notification-emails/"
+                                title={c('Info')
+                                    .t`Disabling this will prevent this email from being used for account recovery`}
+                            />
+                        </label>
                     </div>
                     {CLIENT_TYPE !== VPN ? (
                         <div className="flex flex-align-items-center">
@@ -128,14 +130,14 @@ const RecoveryMethodsSection = () => {
                                     withLoadingNotify(handleChangeEmailNotify(+checked))
                                 }
                             />
-                            <span className="mr0-5 flex-item-fluid">
+                            <label htmlFor="dailyNotificationsToggle" className="mr0-5 flex-item-fluid">
                                 <span className="pr0-5">{c('Label').t`Daily email notifications`}</span>
                                 <Info
                                     url="https://protonmail.com/blog/notification-emails/"
                                     title={c('Info')
                                         .t`When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.`}
                                 />
-                            </span>
+                            </label>
                         </div>
                     ) : null}
                 </SettingsLayoutRight>
@@ -168,7 +170,13 @@ const RecoveryMethodsSection = () => {
                                         withLoadingReset(handleChangePasswordPhoneToggle(+checked))
                                     }
                                 />
-                                <label htmlFor="passwordPhoneResetToggle">{c('Label').t`Password reset allowed`}</label>
+                                <label htmlFor="passwordPhoneResetToggle" className="mr0-5 flex-item-fluid">
+                                    <span className="pr0-5">{c('Label').t`Allow recovery by phone`}</span>
+                                    <Info
+                                        title={c('Info')
+                                            .t`Disabling this will prevent this phone from being used for account recovery`}
+                                    />
+                                </label>
                             </div>
                         </SettingsLayoutRight>
                     </SettingsLayout>
