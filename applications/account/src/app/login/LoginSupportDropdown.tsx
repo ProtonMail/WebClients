@@ -37,7 +37,7 @@ const LoginSupportDropdown = () => {
             </DropdownMenuLink>
             <DropdownMenuButton className="text-left" onClick={handleBugReportClick}>
                 <Icon name="report-bug" className="mr0-5" />
-                {c('Action').t`Report bug`}
+                {c('Action').t`Report a problem`}
             </DropdownMenuButton>
         </SupportDropdown>
     );
