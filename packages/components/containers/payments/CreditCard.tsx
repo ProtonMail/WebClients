@@ -53,7 +53,7 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
             </Block>
             <div className="flex flex-justify-space-between mb1 on-tiny-mobile-flex-column">
                 <div className="flex-item-fluid mr0-5 on-tiny-mobile-mr0">
-                    <Label className="mb0-5 block" htmlFor="exp">{c('Label').t`Expiry date`}</Label>
+                    <Label className="mb0-5 block w100" htmlFor="exp">{c('Label').t`Expiry date`}</Label>
                     <ExpInput
                         id="exp"
                         month={card.month}
@@ -68,7 +68,7 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                     />
                 </div>
                 <div className="flex-item-fluid ml0-5 on-tiny-mobile-ml0">
-                    <Label className="mb0-5 block flex flex-align-items-center text-cut" htmlFor="cvc">
+                    <Label className="mb0-5 block w100 flex flex-align-items-center text-cut" htmlFor="cvc">
                         <span className="mr0-25">{c('Label').t`CVV code`}</span>
                         <Info
                             title={c('Info')
@@ -90,7 +90,7 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
             </div>
             <div className="flex flex-justify-space-between mb1 on-tiny-mobile-flex-column">
                 <div className="flex-item-fluid mr0-5 on-tiny-mobile-mr0">
-                    <Label className="mb0-5 block" htmlFor="country">{c('Label').t`Country`}</Label>
+                    <Label className="mb0-5 block w100" htmlFor="country">{c('Label').t`Country`}</Label>
                     <Select
                         id="country"
                         value={card.country}
@@ -102,7 +102,7 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                     />
                 </div>
                 <div className="flex-item-fluid ml0-5 on-tiny-mobile-ml0">
-                    <Label className="mb0-5 block" htmlFor="postalcode">
+                    <Label className="mb0-5 block w100" htmlFor="postalcode">
                         {card.country === 'US' ? c('Label').t`ZIP` : c('Label').t`Postal code`}
                     </Label>
                     <Input

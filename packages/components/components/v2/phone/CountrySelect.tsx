@@ -60,7 +60,7 @@ const CountrySelect = ({ value, options, onChange, onClosed }: Props) => {
             >
                 <span className="mr0-5">
                     {!value ? (
-                        <Icon name="globe" className="align-top inline-flex" />
+                        <Icon name="globe" className="align-middle inline-flex" />
                     ) : (
                         <img
                             role="presentation"
@@ -68,7 +68,7 @@ const CountrySelect = ({ value, options, onChange, onClosed }: Props) => {
                             src={value.countryFlag}
                             width="30"
                             height="30"
-                            className="align-top inline-flex"
+                            className="align-middle inline-flex"
                         />
                     )}
                 </span>
