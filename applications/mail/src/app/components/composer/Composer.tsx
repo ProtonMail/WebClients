@@ -16,6 +16,7 @@ import {
     classnames,
     useNotifications,
     useHandler,
+    useSubscribeEventManager,
     useModals,
     ConfirmModal,
     ErrorButton,
@@ -24,6 +25,8 @@ import {
 import { noop } from 'proton-shared/lib/helpers/function';
 import { setBit, clearBit } from 'proton-shared/lib/helpers/bitset';
 import useIsMounted from 'react-components/hooks/useIsMounted';
+import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
+import { canonizeEmail } from 'proton-shared/lib/helpers/email';
 import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
 import ComposerMeta from './ComposerMeta';
 import ComposerContent from './ComposerContent';
@@ -51,6 +54,7 @@ import { ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
 import { useSendHandler } from '../../hooks/composer/useSendHandler';
 import { useCloseHandler } from '../../hooks/composer/useCloseHandler';
 import { updateKeyPackets } from '../../helpers/attachment/attachment';
+import { Event } from '../../models/event';
 
 enum ComposerInnerModal {
     None,
@@ -248,6 +252,35 @@ const Composer = (
     useEffect(() => {
         onSubject(modelMessage.data?.Subject || c('Title').t`New message`);
     }, [modelMessage.data?.Subject]);
+
+    // Listen to event manager to trigger reload send info
+    useSubscribeEventManager(({ Contacts = [] }: Event) => {
+        if (!Contacts.length) {
+            return;
+        }
+
+        let shouldReloadSendInfo = false;
+
+        const updatedAddresses = Contacts.map(({ Action, Contact }) => {
+            if (Action === EVENT_ACTIONS.DELETE) {
+                // If a contact has been deleted, we lost the associated emails
+                // No way to match addresses, we reload info by security
+                shouldReloadSendInfo = true;
+            }
+
+            return Contact?.ContactEmails.map(({ Email }) => canonizeEmail(Email)) || [];
+        }).flat();
+
+        const recipientsAddresses = getRecipients(modelMessage.data).map(({ Address }) => canonizeEmail(Address));
+
+        const matches = updatedAddresses.find((address) => recipientsAddresses.includes(address));
+
+        shouldReloadSendInfo = shouldReloadSendInfo || !!matches;
+
+        if (shouldReloadSendInfo) {
+            void reloadSendInfo(messageSendInfo, modelMessage);
+        }
+    });
 
     const actualSave = (message: MessageExtended) => {
         return addAction(() => saveDraft(message as MessageExtendedWithData));
