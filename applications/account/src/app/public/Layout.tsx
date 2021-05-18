@@ -25,6 +25,10 @@ const Layout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
         <Href key="privacy" className="signup-footer-link" href="https://protonmail.com/privacy-policy">{c('Link')
             .t`Privacy policy`}</Href>
     );
+    const OldVersionLink = (
+        <Href key="oldVersion" className="signup-footer-link" href="https://old.protonmail.com/">{c('Link')
+            .t`Previous version`}</Href>
+    );
 
     const appVersion = getAppVersion(APP_VERSION_DISPLAY || APP_VERSION);
 
@@ -54,6 +58,10 @@ const Layout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                             |
                         </span>
                         <span className="auto-mobile">{privacyLink}</span>
+                        <span className="color-weak pl0-75 pr0-75 no-mobile" aria-hidden="true">
+                            |
+                        </span>
+                        <span className="auto-mobile">{OldVersionLink}</span>
                     </div>
                     <div className="color-weak text-center text-sm m0 pt0 pb0-5 auto-mobile">{c('Info')
                         .jt`Version ${appVersion}`}</div>
