@@ -17,14 +17,19 @@ const EarlyAccessDesynchronizedBanner = () => {
         return null;
     }
 
-    // translator: complete sentence example: "You have enabled/disabled Early Access. <Refresh> the page to use the latest/stable version of <ProtonMail>."
     const refreshButton = (
         <InlineLinkButton
             key="refresh-button"
             onClick={() => {
+                earlyAccess.updateVersionCookie(earlyAccess.targetEnvironment);
                 window.location.reload();
             }}
-        >{c('Action').t`Refresh`}</InlineLinkButton>
+        >
+            {
+                // translator: complete sentence example: "You have enabled/disabled Early Access. Click <here> to use the latest version of <ProtonMail>."
+                c('Action').t`here`
+            }
+        </InlineLinkButton>
     );
 
     if (!earlyAccess.environmentIsDesynchronized) {
@@ -38,12 +43,12 @@ const EarlyAccessDesynchronizedBanner = () => {
     return (
         <TopBanner className="bg-info">
             {earlyAccess.value
-                ? // translator: complete sentence example: "You have enabled Early Access. <Refresh> the page to use the latest version of <ProtonMail>."
+                ? // translator: complete sentence example: "You have enabled Early Access. Click <here> to use the latest version of <ProtonMail>. The application will be reloaded."
                   c('Info')
-                      .jt`You have enabled Early Access. ${refreshButton} the page to use the latest version of ${appName}.`
-                : // translator: complete sentence example: "You have disabled Early Access. <Refresh> the page to use the stable version of <ProtonMail>."
+                      .jt`You have enabled Early Access. Click ${refreshButton} to use the latest version of ${appName}. The application will be reloaded.`
+                : // translator: complete sentence example: "You have disabled Early Access. Click <here> to use the latest version of <ProtonMail>. The application will be reloaded."
                   c('Info')
-                      .jt`You have disabled Early Access. ${refreshButton} the page to use the stable version of ${appName}.`}
+                      .jt`You have disabled Early Access. Click ${refreshButton} to use the stable version of ${appName}. The application will be reloaded.`}
         </TopBanner>
     );
 };
