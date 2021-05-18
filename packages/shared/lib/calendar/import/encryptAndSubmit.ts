@@ -8,9 +8,10 @@ import {
     EncryptedEvent,
 } from '../../interfaces/calendar';
 import { API_CODES, HOUR } from '../../constants';
+import { CreateCalendarEventSyncData } from '../../interfaces/calendar/Api';
 import { splitErrors } from './import';
 import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from './ImportEventError';
-import { CreateCalendarEventSyncData, syncMultipleEvents } from '../../api/calendars';
+import { syncMultipleEvents } from '../../api/calendars';
 import { createCalendarEvent, getHasSharedEventContent, getHasSharedKeyPacket } from '../serialize';
 import getCreationKeys from '../integration/getCreationKeys';
 import { chunk } from '../../helpers/array';
