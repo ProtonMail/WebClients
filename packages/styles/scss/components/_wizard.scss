@@ -1,21 +1,24 @@
-$height-wizard: 6px !default;
-$size-current-pin: 16px !default;
+$height-wizard: rem(6) !default;
+$size-current-pin: rem(16) !default;
 
 .wizard {
 	height: $height-wizard;
 	display: flex;
 
 	&-container {
-		padding-left: 2px; // "optical" alignment, difficult to align text and circle ^^
+		padding-left: rem(
+			2
+		); // "optical" alignment, difficult to align text and circle ^^
 	}
 
 	&-marker {
 		display: flex;
 		width: $size-current-pin;
 		height: $size-current-pin;
+		margin-left: -1px; // trick for high zoom level ^^
 		border-radius: 50%;
 		position: relative;
-		top: -#{$height-wizard - 1};
+		top: -#{$height-wizard - rem(1)};
 		background-image: radial-gradient(
 			circle,
 			var(--primary) 0,
@@ -66,7 +69,7 @@ $size-current-pin: 16px !default;
 			.wizard-marker {
 				background-color: var(--primary);
 				position: relative;
-				top: -#{$height-wizard - 1};
+				top: -#{$height-wizard - rem(1)};
 			}
 		}
 

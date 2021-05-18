@@ -1,8 +1,8 @@
 .aside-link {
 	border-radius: 50%;
-	width: 32px;
-	height: 32px;
-	padding: 7px;
+	width: rem(32);
+	height: rem(32);
+	padding: rem(7);
 	background: var(--interaction-weak);
 	color: var(--text-norm);
 
@@ -19,8 +19,8 @@
 	}
 
 	&-icon {
-		width: 17px;
-		height: 17px;
+		width: rem(17);
+		height: rem(17);
 		fill: currentColor;
 	}
 }

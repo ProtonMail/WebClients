@@ -2,12 +2,12 @@
 	&--blackfriday::before {
 		content: '';
 		position: absolute;
-		width: 7px;
-		height: 7px;
+		width: rem(7);
+		height: rem(7);
 		background: var(--signal-danger);
 		border-radius: 50%;
-		left: calc(#{rem(17.5)} + 15px);
-		top: calc(50% - 14px);
+		left: calc(#{rem(17.5)} + #{rem(15)});
+		top: calc(50% - #{rem(14)});
 	}
 }
 
@@ -56,7 +56,7 @@
 		}
 
 		.topnav-link--blackfriday::before {
-			left: calc(#{rem(5)} + 15px);
+			left: calc(#{rem(5)} + #{rem(15)});
 		}
 	}
 }
@@ -98,8 +98,8 @@
 
 	.topnav-list--four-elements .topnav-link--blackfriday::before,
 	.topnav-link--blackfriday::before {
-		left: calc(#{rem(17.5)} + 22px);
-		top: calc(50% - 18px);
+		left: calc(#{rem(17.5)} + #{rem(22)});
+		top: calc(50% - #{rem(18)});
 	}
 }
 
@@ -112,6 +112,6 @@
 
 	.topnav-list--four-elements .topnav-link--blackfriday::before,
 	.topnav-link--blackfriday::before {
-		left: calc(#{rem(5)} + 22px);
+		left: calc(#{rem(5)} + #{rem(22)});
 	}
 }
