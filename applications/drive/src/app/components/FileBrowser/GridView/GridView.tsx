@@ -2,13 +2,14 @@ import React, { useRef } from 'react';
 import { FixedSizeGrid, GridChildComponentProps } from 'react-window';
 import { classnames, Loader, useElementRect } from 'react-components';
 import { buffer } from 'proton-shared/lib/helpers/function';
+import { rootFontSize } from 'proton-shared/lib/helpers/dom';
 import { FileBrowserItem, FileBrowserProps } from '../interfaces';
 import ItemCell, { Props as ItemCellProps } from './ItemCell';
 import FolderContextMenu from '../FolderContextMenu';
 import useFileBrowserView from '../useFileBrowserView';
 
-const itemWidth = 216;
-const itemHeight = 196;
+const itemWidth = 13.5 * rootFontSize; // 13.5 * 16 = we want 216px by default
+const itemHeight = 12.25 * rootFontSize; // 12.25 * 16 = we want 196px by default
 
 const calculateCellDimensions = (areaWidth: number) => {
     const rowItemCount = Math.floor(areaWidth / itemWidth);

@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useMemo } from 'react';
 import { useToggle, classnames, useElementRect, useActiveBreakpoint } from 'react-components';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import { buffer } from 'proton-shared/lib/helpers/function';
+import { rootFontSize } from 'proton-shared/lib/helpers/dom';
 import { c } from 'ttag';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { useUploadProvider } from '../uploads/UploadProvider';
@@ -18,7 +19,7 @@ interface TransferListEntry<T extends TransferType> {
     type: T;
 }
 
-const ROW_HEIGHT_PX = 70;
+const ROW_HEIGHT_PX = 4.375 * rootFontSize; // 4.375 * 16 =  we want 70px by default
 
 enum TRANSFER_GROUP {
     ACTIVE,

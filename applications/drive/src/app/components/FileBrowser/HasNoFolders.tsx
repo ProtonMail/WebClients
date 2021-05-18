@@ -16,7 +16,7 @@ const HasNoFolders = ({ onCreate }: Props) => {
             <img src={noContentSvg} alt={title} className="p1 mb1 w50" />
             <h2 className="text-bold">{title}</h2>
             <p className="m0">{c('Info').t`Create your first folder and start moving your files.`}</p>
-            <div className="mt2 mb2 flex flex-column w200p">
+            <div className="mt2 mb2 flex flex-column w13e">
                 <Button size="large" color="norm" className="ml1 mr1 mt0-25 text-strong" onClick={onCreate}>
                     {c('Action').t`Create`}
                 </Button>

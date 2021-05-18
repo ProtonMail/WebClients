@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { TableBody, useActiveBreakpoint, Table, classnames, useElementRect, TableCellBusy } from 'react-components';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import { buffer } from 'proton-shared/lib/helpers/function';
+import { rootFontSize } from 'proton-shared/lib/helpers/dom';
 import ItemRow from './ItemRow';
 import { FileBrowserProps, FileBrowserItem, DragMoveControls, FileBrowserLayouts } from '../interfaces';
 import FolderContextMenu from '../FolderContextMenu';
@@ -132,6 +133,8 @@ const ListView = ({
     const { isDesktop } = useActiveBreakpoint();
     const itemCount = loading ? contents.length + 1 : contents.length;
 
+    const itemHeight = rootFontSize * 2.5; // 2.5 x 16 = we want 40px by default
+
     // TODO heading padding on scrollbar
     return (
         <div
@@ -164,7 +167,7 @@ const ListView = ({
                 {rect && (
                     <FixedSizeList
                         itemCount={itemCount}
-                        itemSize={40}
+                        itemSize={itemHeight}
                         itemData={{
                             isDesktop,
                             itemCount,

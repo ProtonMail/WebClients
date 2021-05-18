@@ -41,7 +41,7 @@ const DownloadSharedInfo = ({ name, size, expirationTime, downloadFile }: Props)
             </>
         ),
         content: (
-            <div className="flex flex-column w200p">
+            <div className="flex flex-column w13e">
                 <Button size="large" color="norm" className="ml2 mr2" onClick={onDownload}>
                     {c('Action').t`Download`}
                 </Button>
