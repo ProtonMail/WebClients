@@ -113,9 +113,9 @@ const ProtonMailBridgeSection = () => {
                 <div className="bordered rounded1e p2 flex-item-fluid rounded flex flex-column flex-align-items-center">
                     <Icon size={48} name={icon} className="mb1" />
 
-                    <h3 className="text-bold text-xl m0">{c('Title').t`Bridge for ${platform}`}</h3>
+                    <h3 className="text-bold text-xl m0 text-center">{c('Title').t`Bridge for ${platform}`}</h3>
 
-                    <span className="bridge-client-version mb1">{version}</span>
+                    <span className="bridge-client-version mb1 text-center">{version}</span>
 
                     {downloads.length > 1 && (
                         <Select value={linuxLink} options={options} onChange={handleSelect} className="mb1" />

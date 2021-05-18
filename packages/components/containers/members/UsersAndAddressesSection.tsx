@@ -195,7 +195,7 @@ const UsersAndAddressesSection = () => {
                 >
                     {c('Action').t`Add user`}
                 </Button>
-                <div className="flex-item-fluid mb1">
+                <div className="flex-item-fluid mb1 mr1">
                     <Button
                         shape="outline"
                         disabled={

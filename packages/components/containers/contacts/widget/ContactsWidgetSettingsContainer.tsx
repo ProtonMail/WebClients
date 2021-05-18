@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Row, Label, Field, Info, PrimaryButton, FullLoader, Tooltip } from '../../../components';
+import { Label, Field, Info, PrimaryButton, FullLoader, Tooltip } from '../../../components';
 import { useContacts, useMailSettings, useModals, useUserKeys } from '../../../hooks';
 import AutoSaveContactsToggle from '../../general/AutoSaveContactsToggle';
 import ExportContactsModal from '../modals/ExportContactsModal';
@@ -41,7 +41,7 @@ const ContactsWidgetSettingsContainer = ({ onClose, onImport }: Props) => {
                 </div>
             ) : (
                 <div className="pl2 pr2 pt1 pb1 scroll-if-needed h100">
-                    <Row>
+                    <div className="flex mb1 on-mobile-flex-column">
                         <Label htmlFor="saveContactToggle">
                             <span className="mr0-5 text-semibold">{c('Label').t`Automatically save contacts`}</span>
                             <Info url="https://protonmail.com/support/knowledge-base/autosave-contact-list/" />
@@ -49,7 +49,7 @@ const ContactsWidgetSettingsContainer = ({ onClose, onImport }: Props) => {
                         <Field className="pt0-5">
                             <AutoSaveContactsToggle autoSaveContacts={!!AutoSaveContacts} id="saveContactToggle" />
                         </Field>
-                    </Row>
+                    </div>
                     <div className="mb2">
                         <Label htmlFor="import-contacts-button" className="text-semibold">
                             {c('Label').t`Import contacts`}
@@ -62,7 +62,7 @@ const ContactsWidgetSettingsContainer = ({ onClose, onImport }: Props) => {
                             {c('Action').t`Import contacts`}
                         </PrimaryButton>
                     </div>
-                    <div>
+                    <div className="mb2">
                         <Label htmlFor="export-contacts-button" className="text-semibold">
                             {c('Label').t`Export contacts`}
                         </Label>

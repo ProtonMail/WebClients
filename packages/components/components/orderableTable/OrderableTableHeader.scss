@@ -1,5 +1,7 @@
+@import '~design-system/scss/config/';
+
 .orderableTableHeader {
 	th:first-child {
-		width: 35px;
+		width: rem(35);
 	}
 }
