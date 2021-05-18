@@ -87,7 +87,6 @@ const FeedbackModal = ({ onClose, ...rest }: Props) => {
                     value={model.Feedback}
                     placeholder={c('Placeholder').t`Feedback`}
                     onChange={handleChange('Feedback')}
-                    required
                 />
             </div>
         </FormModal>
