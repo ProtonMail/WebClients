@@ -6,8 +6,8 @@ import {
     updateCalendarSettings,
     updateCalendar,
     updateCalendarUserSettings,
-    CalendarCreateData,
 } from 'proton-shared/lib/api/calendars';
+import { CalendarCreateData } from 'proton-shared/lib/interfaces/calendar/Api';
 import { getPrimaryKey } from 'proton-shared/lib/keys';
 
 import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
