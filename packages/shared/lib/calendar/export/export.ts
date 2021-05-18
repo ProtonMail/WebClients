@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { arrayToHexString, binaryStringToArray, getKeys, getSignature } from 'pmcrypto';
 import { fromUnixTime } from 'date-fns';
-import { CalendarExportEventsQuery, queryEvents } from '../../api/calendars';
+import { queryEvents } from '../../api/calendars';
 import { wait } from '../../helpers/promise';
 import { partition, unique } from '../../helpers/array';
 import { Address, Api, Key } from '../../interfaces';
@@ -12,6 +12,7 @@ import {
     ExportError,
     VcalVeventComponent,
 } from '../../interfaces/calendar';
+import { CalendarExportEventsQuery } from '../../interfaces/calendar/Api';
 import { GetCalendarEventPersonal } from '../../interfaces/hooks/GetCalendarEventPersonal';
 import { GetCalendarKeys } from '../../interfaces/hooks/GetCalendarKeys';
 import { splitKeys } from '../../keys';
@@ -34,11 +35,9 @@ import formatUTC from '../../date-fns-utc/format';
 
 export const getHasCalendarEventMatchingSigningKeys = async (event: CalendarEvent, keys: Key[]) => {
     // OpenPGP types are broken
-    const allEventSignatures = [
-        ...event.SharedEvents,
-        ...event.CalendarEvents,
-        ...event.AttendeesEvents,
-    ].flatMap((event) => (event.Signature ? [event.Signature] : []));
+    const allEventSignatures = [...event.SharedEvents, ...event.CalendarEvents, ...event.AttendeesEvents].flatMap(
+        (event) => (event.Signature ? [event.Signature] : [])
+    );
 
     const allSignaturesPromises = Promise.all(allEventSignatures.map((signature) => getSignature(signature)));
     const allKeyIdsPromises = Promise.all(

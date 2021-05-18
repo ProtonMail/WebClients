@@ -1,25 +1,23 @@
 import {
     ATTENDEE_STATUS_API,
     CALENDAR_CARD_TYPE,
-    ICAL_ATTENDEE_ROLE,
     DAILY_TYPE,
     END_TYPE,
+    EVENT_VERIFICATION_STATUS,
     FREQUENCY,
+    ICAL_ATTENDEE_ROLE,
+    ICAL_ATTENDEE_RSVP,
+    ICAL_ATTENDEE_STATUS,
+    ICAL_EVENT_STATUS,
     MONTHLY_TYPE,
+    SHARED_SIGNED_FIELDS,
     WEEKLY_TYPE,
     YEARLY_TYPE,
-    ICAL_ATTENDEE_STATUS,
-    ICAL_ATTENDEE_RSVP,
-    ICAL_EVENT_STATUS,
-    SHARED_SIGNED_FIELDS,
-    EVENT_VERIFICATION_STATUS,
 } from '../../calendar/constants';
-import { Address } from '../Address';
-import { VcalRrulePropertyValue, VcalVeventComponent } from './VcalModel';
-import { NotificationModel } from './Notification';
 import { pick } from '../../helpers/object';
-import type { CalendarEventBlobData as ApiCalendarEventBlobData } from '../../api/calendars';
-import { RequireSome } from '../utils';
+import { Address } from '../Address';
+import { NotificationModel } from './Notification';
+import { VcalRrulePropertyValue, VcalVeventComponent } from './VcalModel';
 
 export interface CalendarEventData {
     Type: CALENDAR_CARD_TYPE;
@@ -42,7 +40,7 @@ export interface Attendee {
 }
 
 export interface CalendarEventBlobData {
-    CalendarKeyPacket: string;
+    CalendarKeyPacket?: string;
     CalendarEvents: CalendarEventData[];
     SharedKeyPacket: string;
     SharedEvents: CalendarEventData[];
@@ -232,12 +230,3 @@ export interface EventModelReadView extends EventModelView {
 
 const sharedPick = (x: VcalVeventComponent) => pick(x, [...SHARED_SIGNED_FIELDS, 'component']);
 export type SharedVcalVeventComponent = ReturnType<typeof sharedPick>;
-
-export interface EncryptedEvent {
-    component: VcalVeventComponent;
-    data: RequireSome<ApiCalendarEventBlobData, 'SharedEventContent' | 'SharedKeyPacket'>;
-}
-
-export interface StoredEncryptedEvent extends EncryptedEvent {
-    response: SyncMultipleApiResponses;
-}
