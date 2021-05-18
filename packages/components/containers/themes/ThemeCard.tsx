@@ -3,6 +3,7 @@ import { c } from 'ttag';
 
 import { Button } from '../../components';
 import { classnames } from '../../helpers';
+import './ThemeCard.scss'; // just for proper sizing when zooming
 
 interface Props {
     label: string;
@@ -29,7 +30,7 @@ const ThemeCard = ({ label, id, src, selected, onChange, disabled }: Props) => {
             title={c('Action').t`Use ${label} theme`}
         >
             <span className="flex flex-nowrap flex-column">
-                <img alt="" src={src} className="mb0-5" />
+                <img alt="" src={src} className="mb0-5 theme-card-image" />
                 <span>{label}</span>
             </span>
         </Button>
