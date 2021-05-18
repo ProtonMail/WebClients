@@ -183,7 +183,7 @@ const BugModal = ({ onClose = noop, username: Username = '', addresses = [], ...
             onSubmit={() => withLoading(handleSubmit())}
             loading={loading}
             submit={c('Action').t`Submit`}
-            title={c('Title').t`Report bug`}
+            title={c('Title').t`Report a problem`}
             {...rest}
         >
             <Alert>{c('Info').jt`Refreshing the page or ${link} will automatically resolve most issues.`}</Alert>
