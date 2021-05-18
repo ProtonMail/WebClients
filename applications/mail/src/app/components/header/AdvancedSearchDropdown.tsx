@@ -457,6 +457,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                 anchorRef={anchorRef}
                 onClose={close}
                 className="dropdown-content--wide advanced-search-dropdown"
+                disableDefaultArrowNavigation
                 UNSTABLE_AUTO_HEIGHT
             >
                 {showEncryptedSearch && (
