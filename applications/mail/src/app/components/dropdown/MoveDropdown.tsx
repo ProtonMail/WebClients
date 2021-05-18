@@ -135,6 +135,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                         onClick={handleCreate}
                         className="flex flex-align-items-center"
                         data-testid="folder-dropdown:add-folder"
+                        data-prevent-arrow-navigation
                     >
                         <Icon name="folder" /> +
                     </Button>
@@ -148,6 +149,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                     placeholder={c('Placeholder').t`Filter folders`}
                     autoFocus={autoFocusSearch}
                     data-testid="folder-dropdown:search-folder"
+                    data-prevent-arrow-navigation
                 />
             </div>
             <div

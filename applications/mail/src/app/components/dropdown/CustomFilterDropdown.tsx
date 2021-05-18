@@ -188,7 +188,12 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
                 ))}
             </ul>
             <div className="m1">
-                <PrimaryButton className="w100" onClick={handleNext} disabled={buttonDisabled}>
+                <PrimaryButton
+                    className="w100"
+                    onClick={handleNext}
+                    disabled={buttonDisabled}
+                    data-prevent-arrow-navigation
+                >
                     {c('CustomFilter').t`Next`}
                 </PrimaryButton>
             </div>
