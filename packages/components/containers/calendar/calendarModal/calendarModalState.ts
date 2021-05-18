@@ -1,5 +1,4 @@
 import { c } from 'ttag';
-import { CalendarCreateData } from 'proton-shared/lib/api/calendars';
 import { LABEL_COLORS } from 'proton-shared/lib/constants';
 import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
 import { Address } from 'proton-shared/lib/interfaces';
@@ -9,6 +8,7 @@ import {
     CalendarSettings,
     CalendarErrors,
 } from 'proton-shared/lib/interfaces/calendar';
+import { CalendarCreateData } from 'proton-shared/lib/interfaces/calendar/Api';
 import { modelToNotifications } from 'proton-shared/lib/calendar/modelToNotifications';
 import { notificationsToModel } from 'proton-shared/lib/calendar/notificationsToModel';
 import {
