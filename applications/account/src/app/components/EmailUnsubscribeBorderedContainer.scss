@@ -1,4 +1,6 @@
+@import '~design-system/scss/config/';
+
 .email-unsubscribe-container {
-    width: 480px;
+    width: rem(480);
     max-width: 80%;
 }
