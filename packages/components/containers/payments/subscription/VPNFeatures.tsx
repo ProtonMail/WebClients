@@ -271,9 +271,11 @@ const getFeatures = (vpnCountries: VPNCountries, planNamesMap: { [key: string]: 
 interface Props {
     onSelect: (planName: PLANS | 'free') => void;
     planNamesMap: { [key: string]: Plan };
+    activeTab: number;
+    onSetActiveTab: (activeTab: number) => void;
 }
 
-const VPNFeatures = ({ onSelect, planNamesMap }: Props) => {
+const VPNFeatures = ({ onSelect, planNamesMap, activeTab, onSetActiveTab }: Props) => {
     const [vpnCountries] = useVPNCountriesCount();
 
     const features = getFeatures(vpnCountries, planNamesMap);
@@ -285,7 +287,14 @@ const VPNFeatures = ({ onSelect, planNamesMap }: Props) => {
     ];
 
     return (
-        <Features appName={APPS.PROTONVPN_SETTINGS} onSelect={onSelect} planLabels={planLabels} features={features} />
+        <Features
+            appName={APPS.PROTONVPN_SETTINGS}
+            onSelect={onSelect}
+            planLabels={planLabels}
+            features={features}
+            activeTab={activeTab}
+            onSetActiveTab={onSetActiveTab}
+        />
     );
 };
 
