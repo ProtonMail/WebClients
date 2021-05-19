@@ -49,7 +49,7 @@ const Layout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                 <div>
                     {children}
                     <div className="text-center text-sm m0 pt1 pb0-5 flex-item-noshrink">
-                        <span className="auto-mobile">{c('Info').t`Made globally, based in Switzerland`}</span>
+                        <span className="auto-mobile">{c('Info').t`Based in Switzerland, available globally`}</span>
                         <span className="color-weak pl0-75 pr0-75 no-mobile" aria-hidden="true">
                             |
                         </span>
