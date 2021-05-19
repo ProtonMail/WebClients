@@ -12,6 +12,7 @@ import {
     Challenge,
     ChallengeError,
     ChallengeResult,
+    LearnMore,
 } from 'react-components';
 import { Link } from 'react-router-dom';
 import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
@@ -47,6 +48,12 @@ const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
     }
 
     const signupLink = <Link key="signupLink" to="/signup">{c('Link').t`Create an account`}</Link>;
+    const learnMore = (
+        <LearnMore
+            key="learn-more"
+            url="https://protonmail.com/support/knowledge-base/how-to-access-protonmail-in-private-incognito-mode/"
+        />
+    );
 
     return (
         <>
@@ -109,6 +116,9 @@ const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
                     onValue={setPassword}
                     rootClassName="mt0-5"
                 />
+                <div className="mt1 color-weak">
+                    {c('Info').jt`Not your computer? Use a Private Browsing window to sign in. ${learnMore}`}
+                </div>
                 <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
                     {c('Action').t`Sign in`}
                 </Button>
