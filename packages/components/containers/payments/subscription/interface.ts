@@ -11,6 +11,12 @@ export interface Feature {
     tooltip?: string;
     free: React.ReactNode;
 }
+
+export interface DriveFeature extends Feature {
+    [PLANS.PLUS]: React.ReactNode;
+    [PLANS.PROFESSIONAL]: React.ReactNode;
+    [PLANS.VISIONARY]: React.ReactNode;
+}
 export interface CalendarFeature extends Feature {
     [PLANS.PLUS]: React.ReactNode;
     [PLANS.PROFESSIONAL]: React.ReactNode;

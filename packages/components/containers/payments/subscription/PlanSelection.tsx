@@ -174,7 +174,7 @@ const getFeatures = (plan: Plan, service: PLAN_SERVICES, vpnCountries: VPNCountr
     const multipleInfo = (
         <Info
             title={c('Tooltip')
-                .t`Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com`}
+                .t`Create multiple email addresses linked to your account, e.g. username2@protonmail.com`}
         />
     );
 
