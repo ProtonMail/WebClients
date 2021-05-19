@@ -43,16 +43,21 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand }: Accoun
     const backButtonText = backButtonCopy[app as keyof typeof backButtonCopy];
 
     return (
-        <Sidebar logo={logo} expanded={expanded} onToggleExpand={onToggleExpand} version={<AccountSidebarVersion />}>
+        <Sidebar
+            primary={
+                backButtonText ? (
+                    <SidebarBackButton to="/" toApp={app} target="_self">
+                        {backButtonText}
+                    </SidebarBackButton>
+                ) : null
+            }
+            logo={logo}
+            expanded={expanded}
+            onToggleExpand={onToggleExpand}
+            version={<AccountSidebarVersion />}
+        >
             <SidebarNav>
                 <SidebarList>
-                    {backButtonText && (
-                        <SidebarListItem className="pl1 pb1 pr1">
-                            <SidebarBackButton to="/" toApp={app} target="_self">
-                                {backButtonText}
-                            </SidebarBackButton>
-                        </SidebarListItem>
-                    )}
                     <SidebarListItem className="text-uppercase text-left navigation-link-header-group">
                         {c('Settings section title').t`Account`}
                     </SidebarListItem>
