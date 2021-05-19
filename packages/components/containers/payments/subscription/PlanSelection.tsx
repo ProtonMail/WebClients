@@ -274,15 +274,15 @@ const PlanSelection = ({
     const plansToShow = isVpnApp ? VPNPlans : MailPlans;
 
     const INFOS = {
-        free_mail: c('Info').t`The basic for private and secure communications.`,
+        free_mail: c('Info').t`For getting started with private and secure emailing`,
         free_vpn: c('Info').t`A free and uncensored Internet should be available to all.`,
         [PLANS.VPNBASIC]: c('Info').t`Starter VPN service with P2P support.`,
         [PLANS.VPNPLUS]: c('Info').t`Full-featured VPN with speed up to 10 Gbps.`,
-        [PLANS.PLUS]: c('Info').t`Full-featured mailbox with advanced protection.`,
-        [PLANS.PROFESSIONAL]: c('Info').t`${mailAppName} for professionals and businesses.`,
+        [PLANS.PLUS]: c('Info').t`For individuals that need a fully-featured mailbox with advanced protection`,
+        [PLANS.PROFESSIONAL]: c('Info').t`For professionals that need secure business communications`,
         [PLANS.VISIONARY]: isVpnApp
             ? c('Info').t`VPN + ${mailAppName} bundle for families and small businesses.`
-            : c('Info').t`Mail + VPN bundle for families and small businesses.`,
+            : c('Info').t`For families and small teams; includes both Mail and VPN`,
     } as const;
 
     const boldSave = <strong key="save">{c('Info').t`Save 20%`}</strong>;
