@@ -1,7 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { SettingsPropsShared } from 'react-components';
-import DownloadVPNClientSection from './DownloadVPNClientSection';
+import { ProtonVPNClientsSection, SettingsPropsShared } from 'react-components';
 
 import PrivateMainSettingsAreaWithPermissions from '../../content/PrivateMainSettingsAreaWithPermissions';
 import VpnUpgradeSection from './VpnUpgradeSection';
@@ -32,7 +31,7 @@ const VpnDownloadSettings = ({ setActiveSection, location }: SettingsPropsShared
             setActiveSection={setActiveSection}
         >
             <VpnUpgradeSection />
-            <DownloadVPNClientSection />
+            <ProtonVPNClientsSection />
         </PrivateMainSettingsAreaWithPermissions>
     );
 };
