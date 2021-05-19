@@ -110,6 +110,7 @@ const SquireToolbar = ({
 
     const handleAddImageUrl = useCallback((url: string) => {
         insertImage(squireRef.current, url);
+        squireRef.current?.fireEvent('input'); // For Squire to be aware of the change
     }, []);
 
     const handleLink = useCallback(() => {
