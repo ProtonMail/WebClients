@@ -22,10 +22,10 @@ const getFeatures = (): MailFeature[] => {
         {
             name: 'storage',
             label: c('Mail feature').t`Storage`,
-            free: '0.5 GB',
-            [PLANS.PLUS]: '5 GB *',
+            free: c('Mail feature').t`0.5 GB`,
+            [PLANS.PLUS]: c('Mail feature option').t`5 GB *`,
             [PLANS.PROFESSIONAL]: c('Mail feature option').t`5 GB / user *`,
-            [PLANS.VISIONARY]: '20 GB',
+            [PLANS.VISIONARY]: c('Mail feature').t`20 GB`,
         },
         {
             name: 'addresses',
@@ -120,7 +120,8 @@ const getFeatures = (): MailFeature[] => {
         },
         {
             name: 'short domain',
-            label: c('Mail feature').t`Short domain`,
+            label: c('Mail feature').t`Use @pm.me address`,
+            tooltip: c('Tooltip').t`Use the personal address username@pm.me to send emails`,
             free: EmDash,
             [PLANS.PLUS]: <CheckIcon />,
             [PLANS.PROFESSIONAL]: <CheckIcon />,
@@ -143,22 +144,16 @@ const getFeatures = (): MailFeature[] => {
             [PLANS.PROFESSIONAL]: <CheckIcon />,
             [PLANS.VISIONARY]: <CheckIcon />,
         },
-        {
-            name: 'vpn',
-            label: 'ProtonVPN',
-            free: c('VPN feature option').t`Optional *`,
-            [PLANS.PLUS]: c('VPN feature option').t`Optional *`,
-            [PLANS.PROFESSIONAL]: c('VPN feature option').t`Optional *`,
-            [PLANS.VISIONARY]: c('VPN feature option').t`Included`,
-        },
     ];
 };
 
 interface Props {
     onSelect: (planName: PLANS | 'free') => void;
+    activeTab: number;
+    onSetActiveTab: (activeTab: number) => void;
 }
 
-const MailFeatures = ({ onSelect }: Props) => {
+const MailFeatures = ({ onSelect, activeTab, onSetActiveTab }: Props) => {
     const features = getFeatures();
     const planLabels = [
         { label: 'Free', key: 'free' } as const,
@@ -166,7 +161,16 @@ const MailFeatures = ({ onSelect }: Props) => {
         { label: 'Professional', key: PLANS.PROFESSIONAL },
         { label: 'Visionary', key: PLANS.VISIONARY },
     ];
-    return <Features appName={APPS.PROTONMAIL} onSelect={onSelect} planLabels={planLabels} features={features} />;
+    return (
+        <Features
+            appName={APPS.PROTONMAIL}
+            onSelect={onSelect}
+            planLabels={planLabels}
+            features={features}
+            activeTab={activeTab}
+            onSetActiveTab={onSetActiveTab}
+        />
+    );
 };
 
 export default MailFeatures;
