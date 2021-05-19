@@ -55,6 +55,7 @@ import {
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 import './AdvancedSearchDropdown.scss';
+import { useClickMailContent } from '../../hooks/useClickMailContent';
 
 interface SearchModel {
     keyword: string;
@@ -141,6 +142,13 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
     const [uid] = useState(generateUID('advanced-search-dropdown'));
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+    useClickMailContent((event) => {
+        if (anchorRef.current?.contains(event.target as Node)) {
+            // Click on the anchor will already close the dropdown, doing it twice will reopen it
+            return;
+        }
+        close();
+    });
     const [labels = [], loadingLabels] = useLabels();
     const [folders, loadingFolders] = useFolders();
     const [addresses, loadingAddresses] = useAddresses();
@@ -148,13 +156,8 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
     const { state: showMore, toggle: toggleShowMore } = useToggle(false);
     const [user] = useUser();
     const { createModal } = useModals();
-    const {
-        resumeIndexing,
-        getESDBStatus,
-        pauseIndexing,
-        toggleEncryptedSearch,
-        getProgressRecorderRef,
-    } = useEncryptedSearchContext();
+    const { resumeIndexing, getESDBStatus, pauseIndexing, toggleEncryptedSearch, getProgressRecorderRef } =
+        useEncryptedSearchContext();
     const { isBuilding, esEnabled, isDBLimited, isRefreshing } = getESDBStatus();
     const [esState, setESState] = useState<ESState>(defaultESState);
     const { value, previousValue, startTime, endTime, oldestTime } = esState;
@@ -304,24 +307,26 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
 
     const treeview: FolderWithSubFolders[] = buildTreeview(folders);
 
-    const labelIDOptions: LabelInfo[] = ([
-        { value: ALL_MAIL, text: c('Mailbox').t`All`, group: c('Group').t`Default folders` },
-        { value: INBOX, text: c('Mailbox').t`Inbox`, group: c('Group').t`Default folders` },
-        {
-            value: hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS,
-            text: c('Mailbox').t`Drafts`,
-            group: c('Group').t`Default folders`,
-        },
-        {
-            value: hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.SENT) ? ALL_SENT : SENT,
-            text: c('Mailbox').t`Sent`,
-            group: c('Group').t`Default folders`,
-        },
-        { value: STARRED, text: c('Mailbox').t`Starred`, group: c('Group').t`Default folders` },
-        { value: ARCHIVE, text: c('Mailbox').t`Archive`, group: c('Group').t`Default folders` },
-        { value: SPAM, text: c('Mailbox').t`Spam`, group: c('Group').t`Default folders` },
-        { value: TRASH, text: c('Mailbox').t`Trash`, group: c('Group').t`Default folders` },
-    ] as LabelInfo[])
+    const labelIDOptions: LabelInfo[] = (
+        [
+            { value: ALL_MAIL, text: c('Mailbox').t`All`, group: c('Group').t`Default folders` },
+            { value: INBOX, text: c('Mailbox').t`Inbox`, group: c('Group').t`Default folders` },
+            {
+                value: hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS,
+                text: c('Mailbox').t`Drafts`,
+                group: c('Group').t`Default folders`,
+            },
+            {
+                value: hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.SENT) ? ALL_SENT : SENT,
+                text: c('Mailbox').t`Sent`,
+                group: c('Group').t`Default folders`,
+            },
+            { value: STARRED, text: c('Mailbox').t`Starred`, group: c('Group').t`Default folders` },
+            { value: ARCHIVE, text: c('Mailbox').t`Archive`, group: c('Group').t`Default folders` },
+            { value: SPAM, text: c('Mailbox').t`Spam`, group: c('Group').t`Default folders` },
+            { value: TRASH, text: c('Mailbox').t`Trash`, group: c('Group').t`Default folders` },
+        ] as LabelInfo[]
+    )
         .concat(treeview.reduce<LabelInfo[]>((acc, folder) => folderReducer(acc, folder), []))
         .concat(labels.map(({ ID: value, Name: text }) => ({ value, text, group: c('Group').t`Labels` })));
 
@@ -441,6 +446,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
                 id={uid}
                 originalPlacement="bottom-right"
                 autoClose={false}
+                autoCloseOutside={false}
                 isOpen={isOpen}
                 noMaxSize
                 anchorRef={anchorRef}

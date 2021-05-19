@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { useActiveBreakpoint, ModalsChildren, ErrorBoundary, StandardErrorPage } from 'react-components';
 
@@ -10,9 +10,11 @@ import PageContainer from './containers/PageContainer';
 import { MAIN_ROUTE_PATH } from './constants';
 import ContactProvider from './containers/ContactProvider';
 import EncryptedSearchProvider from './containers/EncryptedSearchProvider';
+import { MailContentRefProvider } from './hooks/useClickMailContent';
 
 const MainContainer = () => {
     const breakpoints = useActiveBreakpoint();
+    const mailContentRef = useRef<HTMLDivElement>(null);
 
     return (
         <MessageProvider>
@@ -21,22 +23,25 @@ const MainContainer = () => {
                     <ContactProvider>
                         <EncryptedSearchProvider>
                             <ModalsChildren />
-                            <ComposerContainer breakpoints={breakpoints}>
-                                {({ onCompose, isComposerOpened }) => (
-                                    <Switch>
-                                        <Route
-                                            path={MAIN_ROUTE_PATH}
-                                            render={() => (
-                                                <PageContainer
-                                                    breakpoints={breakpoints}
-                                                    isComposerOpened={isComposerOpened}
-                                                    onCompose={onCompose}
-                                                />
-                                            )}
-                                        />
-                                    </Switch>
-                                )}
-                            </ComposerContainer>
+                            <MailContentRefProvider mailContentRef={mailContentRef}>
+                                <ComposerContainer breakpoints={breakpoints}>
+                                    {({ onCompose, isComposerOpened }) => (
+                                        <Switch>
+                                            <Route
+                                                path={MAIN_ROUTE_PATH}
+                                                render={() => (
+                                                    <PageContainer
+                                                        ref={mailContentRef}
+                                                        breakpoints={breakpoints}
+                                                        isComposerOpened={isComposerOpened}
+                                                        onCompose={onCompose}
+                                                    />
+                                                )}
+                                            />
+                                        </Switch>
+                                    )}
+                                </ComposerContainer>
+                            </MailContentRefProvider>
                         </EncryptedSearchProvider>
                     </ContactProvider>
                 </AttachmentProvider>

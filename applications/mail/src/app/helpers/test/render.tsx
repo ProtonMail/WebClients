@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useRef } from 'react';
 import {
     CacheProvider,
     NotificationsProvider,
@@ -26,17 +26,18 @@ import { api } from './api';
 import AttachmentProvider from '../../containers/AttachmentProvider';
 import ContactProvider from '../../containers/ContactProvider';
 import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
+import { MailContentRefProvider } from '../../hooks/useClickMailContent';
 
 interface RenderResult extends OriginalRenderResult {
     rerender: (ui: React.ReactElement) => Promise<void>;
 }
 
-export const authentication = ({
+export const authentication = {
     getUID: jest.fn(),
     getLocalID: jest.fn(),
     getPassword: jest.fn(),
     onLogout: jest.fn(),
-} as unknown) as PrivateAuthenticationStore;
+} as unknown as PrivateAuthenticationStore;
 
 let history: MemoryHistory;
 export const getHistory = () => history;
@@ -62,6 +63,8 @@ const mockDomApi = () => {
 };
 
 const TestProvider = ({ children }: Props) => {
+    const contentRef = useRef<HTMLDivElement>(null);
+
     return (
         <ConfigProvider config={config}>
             <ApiContext.Provider value={api}>
@@ -76,9 +79,13 @@ const TestProvider = ({ children }: Props) => {
                                         <AttachmentProvider cache={attachmentsCache}>
                                             <FeaturesProvider>
                                                 <ContactProvider cache={contactCache}>
-                                                    <Router history={history}>
-                                                        <EncryptedSearchProvider>{children}</EncryptedSearchProvider>
-                                                    </Router>
+                                                    <MailContentRefProvider mailContentRef={contentRef}>
+                                                        <Router history={history}>
+                                                            <EncryptedSearchProvider>
+                                                                {children}
+                                                            </EncryptedSearchProvider>
+                                                        </Router>
+                                                    </MailContentRefProvider>
                                                 </ContactProvider>
                                             </FeaturesProvider>
                                         </AttachmentProvider>

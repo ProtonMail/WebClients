@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactNode, useCallback } from 'react';
+import React, { useState, useEffect, ReactNode, useCallback, forwardRef, Ref } from 'react';
 import { PrivateAppContainer } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { Location, History } from 'history';
@@ -21,16 +21,10 @@ interface Props {
     isBlurred?: boolean;
 }
 
-const PrivateLayout = ({
-    children,
-    location,
-    history,
-    breakpoints,
-    labelID,
-    elementID,
-    onCompose,
-    isBlurred,
-}: Props) => {
+const PrivateLayout = (
+    { children, location, history, breakpoints, labelID, elementID, onCompose, isBlurred }: Props,
+    ref: Ref<HTMLDivElement>
+) => {
     const [expanded, setExpand] = useState(false);
 
     const handleSearch = useCallback((keyword = '', labelID = MAILBOX_LABEL_IDS.ALL_MAIL as string) => {
@@ -68,10 +62,10 @@ const PrivateLayout = ({
     );
 
     return (
-        <PrivateAppContainer header={header} sidebar={sidebar} isBlurred={isBlurred}>
+        <PrivateAppContainer header={header} sidebar={sidebar} isBlurred={isBlurred} containerRef={ref}>
             {children}
         </PrivateAppContainer>
     );
 };
 
-export default PrivateLayout;
+export default forwardRef(PrivateLayout);
