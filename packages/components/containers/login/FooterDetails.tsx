@@ -8,7 +8,7 @@ const FooterDetails = ({ link }: Props) => {
     const currentYear = new Date().getFullYear();
     return (
         <>
-            {currentYear} {link} - {c('Footer').t`Made globally, hosted in Switzerland.`}
+            {currentYear} {link} - {c('Footer').t`Based in Switzerland, available globally.`}
         </>
     );
 };
