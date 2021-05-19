@@ -45,7 +45,7 @@ const PrivateMainSettingsAreaWithPermissions = ({ config, location, children, se
 
         if (!hasPermission(userPermissions, pagePermissions)) {
             return (
-                <div id="page-error" className="text-center">
+                <div id="page-error" className="text-center pb2">
                     <img src={upgradeSvg} alt={c('Title').t`Upgrade`} className="mb2" />
                     <Paragraph>
                         {c('Info')
