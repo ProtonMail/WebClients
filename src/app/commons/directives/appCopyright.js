@@ -3,7 +3,7 @@ import CONFIG from '../../config';
 /* @ngInject */
 function appCopyright(gettextCatalog, translator) {
     const I18N = translator(() => ({
-        label: gettextCatalog.getString('ProtonMail.com - Made globally, hosted in Switzerland.', null, 'copyright')
+        label: gettextCatalog.getString('ProtonMail.com - Based in Switzerland, available globally.', null, 'copyright')
     }));
 
     return {
