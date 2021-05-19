@@ -67,7 +67,7 @@ const TopNavbarListItemHelpDropdown = <E extends React.ElementType = typeof defa
                     // eslint-disable-next-line react/jsx-no-target-blank
                     target="_blank"
                 >
-                    {c('Action').t`Frequently asked questions`}
+                    {c('Action').t`I have a question`}
                     <Icon className="ml1" name="external-link" />
                 </DropdownMenuLink>
 
