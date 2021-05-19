@@ -13,16 +13,14 @@ import DownloadSharedInfo from './DownloadSharedInfo';
 import EnterPasswordInfo from './EnterPasswordInfo';
 import LinkDoesNotExistInfo from './LinkDoesNotExistInfo';
 import { InitHandshake, SharedLinkInfo } from '../../interfaces/sharing';
-import DiscountBanner from './DiscountBanner/DiscountBanner';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
-import { STATUS_CODE, DOWNLOAD_SHARED_STATE, BATCH_REQUEST_SIZE } from '../../constants';
+import { STATUS_CODE, BATCH_REQUEST_SIZE } from '../../constants';
 
 const REPORT_ABUSE_EMAIL = 'abuse@protonmail.com';
 const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
 const ERROR_CODE_COULD_NOT_IDENTIFY_TARGET = 2000;
 
 const DownloadSharedContainer = () => {
-    const [showDiscountBanner, setShowDiscountBanner] = useState(true);
     const { clearDownloads } = useDownloadProvider();
     const [notFoundError, setNotFoundError] = useState<Error | undefined>();
     const [loading, withLoading] = useLoading(false);
@@ -128,7 +126,6 @@ const DownloadSharedContainer = () => {
     }
 
     let content: ReactNode = null;
-    let contentState = DOWNLOAD_SHARED_STATE.DOES_NOT_EXIST;
     if (notFoundError || (!token && !password)) {
         content = <LinkDoesNotExistInfo />;
     } else if (linkInfo) {
@@ -140,23 +137,13 @@ const DownloadSharedContainer = () => {
                 downloadFile={downloadFile}
             />
         );
-        contentState = DOWNLOAD_SHARED_STATE.DOWNLOAD;
     } else if (handshakeInfo && !password) {
         content = <EnterPasswordInfo submitPassword={submitPassword} />;
-        contentState = DOWNLOAD_SHARED_STATE.ENTER_PASS;
     }
 
     return (
         content && (
             <>
-                {showDiscountBanner && (
-                    <DiscountBanner
-                        contentState={contentState}
-                        onClose={() => {
-                            setShowDiscountBanner(false);
-                        }}
-                    />
-                )}
                 <div className="ui-standard flex flex-column flex-nowrap flex-item-noshrink flex-align-items-center scroll-if-needed h100v">
                     <Bordered className="bg-norm color-norm flex flex-align-items-center flex-item-noshrink w100 max-w40e mbauto mtauto">
                         <div className="flex flex-column flex-nowrap flex-align-items-center text-center p2 w100">
