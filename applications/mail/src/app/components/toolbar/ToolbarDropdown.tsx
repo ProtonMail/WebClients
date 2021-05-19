@@ -18,6 +18,7 @@ interface Props {
     noMaxSize?: boolean;
     [rest: string]: any;
     externalToggleRef?: React.MutableRefObject<() => void>;
+    preventArrowKeyNavigationAutofocus?: boolean;
 }
 
 const ToolbarDropdown = ({
@@ -31,6 +32,7 @@ const ToolbarDropdown = ({
     disabled = false,
     noMaxSize = false,
     externalToggleRef,
+    preventArrowKeyNavigationAutofocus,
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
@@ -76,6 +78,7 @@ const ToolbarDropdown = ({
                 anchorRef={anchorRef}
                 onClose={close}
                 className={classnames(['toolbar-dropdown', dropDownClassName])}
+                preventArrowKeyNavigationAutofocus={preventArrowKeyNavigationAutofocus}
             >
                 {children({ onClose: close, onLock: setLock })}
             </Dropdown>

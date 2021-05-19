@@ -133,6 +133,7 @@ const Toolbar = ({
                     title={titleMove}
                     data-testid="toolbar:moveto"
                     externalToggleRef={moveDropdownToggleRef}
+                    preventArrowKeyNavigationAutofocus
                 >
                     {({ onClose, onLock }) => (
                         <MoveDropdown
@@ -156,6 +157,7 @@ const Toolbar = ({
                     title={titleLabel}
                     data-testid="toolbar:labelas"
                     externalToggleRef={labelDropdownToggleRef}
+                    preventArrowKeyNavigationAutofocus
                 >
                     {({ onClose, onLock }) => (
                         <LabelDropdown

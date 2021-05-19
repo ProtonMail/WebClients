@@ -193,8 +193,13 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
         );
     };
 
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        await withLoading(handleApply());
+    };
+
     return (
-        <>
+        <form onSubmit={handleSubmit}>
             <div className="flex flex-justify-space-between flex-align-items-center m1 mb0">
                 <span className="text-bold" tabIndex={-2}>
                     {c('Label').t`Label as`}
@@ -284,15 +289,15 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
                 <PrimaryButton
                     className="w100"
                     loading={loading}
-                    onClick={() => withLoading(handleApply())}
                     disabled={applyDisabled}
                     data-testid="label-dropdown:apply"
                     data-prevent-arrow-navigation
+                    type="submit"
                 >
                     {c('Action').t`Apply`}
                 </PrimaryButton>
             </div>
-        </>
+        </form>
     );
 };
 

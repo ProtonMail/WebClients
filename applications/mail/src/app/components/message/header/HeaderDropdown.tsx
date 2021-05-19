@@ -26,6 +26,7 @@ interface Props {
      */
     additionalDropdowns?: DropdownRender[];
     externalToggleRef?: React.MutableRefObject<() => void>;
+    preventArrowKeyNavigationAutofocus?: boolean;
     [rest: string]: any;
 }
 
@@ -40,6 +41,7 @@ const HeaderDropdown = ({
     dropDownClassName,
     externalToggleRef,
     additionalDropdowns,
+    preventArrowKeyNavigationAutofocus,
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
@@ -84,6 +86,7 @@ const HeaderDropdown = ({
                 noMaxSize={noMaxSize}
                 anchorRef={anchorRef}
                 onClose={close}
+                preventArrowKeyNavigationAutofocus={preventArrowKeyNavigationAutofocus}
             >
                 {children({ onClose: close, onLock: setLock, onOpenAdditionnal: setAdditionalOpen })}
             </Dropdown>
@@ -99,6 +102,7 @@ const HeaderDropdown = ({
                         noMaxSize
                         anchorRef={anchorRef}
                         onClose={handleAdditionalClose}
+                        preventArrowKeyNavigationAutofocus={preventArrowKeyNavigationAutofocus}
                     >
                         {additionalDropdown({
                             onClose: handleAdditionalClose,

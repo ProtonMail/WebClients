@@ -158,8 +158,13 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
 
     const buttonDisabled = !Object.values(filtersState).some(identity);
 
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        handleNext();
+    };
+
     return (
-        <>
+        <form onSubmit={handleSubmit}>
             <div className="m1">
                 <span className="text-bold" tabIndex={-2}>
                     {c('CustomFilter').t`Filter on`}
@@ -188,16 +193,11 @@ const CustomFilterDropdown = ({ message, onClose }: Props) => {
                 ))}
             </ul>
             <div className="m1">
-                <PrimaryButton
-                    className="w100"
-                    onClick={handleNext}
-                    disabled={buttonDisabled}
-                    data-prevent-arrow-navigation
-                >
+                <PrimaryButton className="w100" disabled={buttonDisabled} data-prevent-arrow-navigation type="submit">
                     {c('CustomFilter').t`Next`}
                 </PrimaryButton>
             </div>
-        </>
+        </form>
     );
 };
 
