@@ -389,7 +389,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Pause a running indexig
      */
     const pauseIndexing = async () => {
-        setItem(`ES:${userID}:Pause`, 'true');
         abortControllerRef.current.abort();
         setESDBStatus((esDBStatus) => {
             return {
@@ -397,6 +396,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 isBuilding: false,
             };
         });
+        setItem(`ES:${userID}:Pause`, 'true');
     };
 
     /**
@@ -405,13 +405,13 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const resumeIndexing = async () => {
         const isResumed = isPaused(userID);
 
-        setItem(`ES:${userID}:ESEnabled`, 'true');
         setESDBStatus((esDBStatus) => {
             return {
                 ...esDBStatus,
                 esEnabled: true,
             };
         });
+        setItem(`ES:${userID}:ESEnabled`, 'true');
 
         const showError = (notSupported?: boolean) => {
             createNotification({
@@ -636,11 +636,11 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         }
 
         // In case no recovery is needed, sync the DB with the current event only
+        await syncIndexedDB(event, indexKey);
         const { EventID } = event;
         if (EventID) {
             setItem(`ES:${userID}:Event`, EventID);
         }
-        await syncIndexedDB(event, indexKey);
     });
 
     useEffect(() => {
