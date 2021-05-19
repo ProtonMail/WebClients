@@ -42,8 +42,11 @@
 
 		&-info {
 			min-height: 4em;
-			@include respond-to(990) {
+			@include respond-to(1100) {
 				min-height: 5.5em;
+			}
+			@include respond-to(1000) {
+				min-height: 6.5em;
 			}
 			@include respond-to($breakpoint-medium) {
 				min-height: 0;
