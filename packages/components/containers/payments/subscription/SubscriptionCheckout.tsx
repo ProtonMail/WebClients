@@ -146,6 +146,9 @@ const SubscriptionCheckout = ({
             .map(({ ID, Title, Pricing, Type, Name, quantity }) => {
                 const update = (isUpdating && checkResult?.Additions?.[Name as ADDON_NAMES]) || 0;
                 const diff = quantity - update;
+                // translator: Visionary (Mail + VPN)
+                const displayTitle = Title === 'Visionary' ? `${Title} ${c('Info').t`(Mail + VPN)`}` : Title;
+
                 return (
                     <React.Fragment key={ID}>
                         {diff ? (
@@ -154,7 +157,7 @@ const SubscriptionCheckout = ({
                                 title={
                                     <>
                                         <span className="mr0-5 pr0-5">
-                                            {Type === PLAN_TYPES.PLAN ? Title : getTitle(Name, diff)}
+                                            {Type === PLAN_TYPES.PLAN ? displayTitle : getTitle(Name, diff)}
                                         </span>
                                         {!isUpdating && [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(cycle) && (
                                             <span className="text-no-bold">
