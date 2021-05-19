@@ -3,49 +3,33 @@ import { c } from 'ttag';
 import { APPS, PLANS } from 'proton-shared/lib/constants';
 
 import { Icon } from '../../../components';
-import { CalendarFeature } from './interface';
+import { DriveFeature } from './interface';
 import Features from './Features';
 
 const CheckIcon = () => <Icon className="color-primary" name="on" alt={c('Info').t`Included`} />;
 const EmDash = '—';
 
-const getFeatures = (): CalendarFeature[] => {
+const getFeatures = (): DriveFeature[] => {
     return [
         {
-            name: 'multi',
-            label: c('Calendar feature').t`Multiple calendars`,
-            free: '1',
-            [PLANS.PLUS]: '20',
-            [PLANS.PROFESSIONAL]: c('Calendar feature option').t`20 / user *`,
-            [PLANS.VISIONARY]: c('Calendar feature option').t`20 / user`,
-        },
-        {
-            name: 'import',
-            label: c('Calendar feature').t`Calendar import`,
-            free: <CheckIcon />,
+            name: 'webaccess',
+            label: c('Drive feature').t`Access via Web`,
+            free: EmDash,
             [PLANS.PLUS]: <CheckIcon />,
             [PLANS.PROFESSIONAL]: <CheckIcon />,
             [PLANS.VISIONARY]: <CheckIcon />,
         },
         {
-            name: 'recurringEvents',
-            label: c('Calendar feature').t`Recurring events`,
-            free: <CheckIcon />,
+            name: 'uploadDownloadFiles',
+            label: c('Drive feature').t`Upload / download files`,
+            free: EmDash,
             [PLANS.PLUS]: <CheckIcon />,
             [PLANS.PROFESSIONAL]: <CheckIcon />,
             [PLANS.VISIONARY]: <CheckIcon />,
         },
         {
-            name: 'invitation',
-            label: c('Calendar feature').t`Invitations`,
-            free: <CheckIcon />,
-            [PLANS.PLUS]: <CheckIcon />,
-            [PLANS.PROFESSIONAL]: <CheckIcon />,
-            [PLANS.VISIONARY]: <CheckIcon />,
-        },
-        {
-            name: 'share',
-            label: c('Calendar feature').t`Share Calendar via link`,
+            name: 'shareFiles',
+            label: c('Drive feature').t`Share files via link`,
             free: EmDash,
             [PLANS.PLUS]: <CheckIcon />,
             [PLANS.PROFESSIONAL]: <CheckIcon />,
@@ -60,7 +44,7 @@ interface Props {
     onSetActiveTab: (activeTab: number) => void;
 }
 
-const CalendarFeatures = ({ onSelect, activeTab, onSetActiveTab }: Props) => {
+const DriveFeatures = ({ onSelect, activeTab, onSetActiveTab }: Props) => {
     const features = getFeatures();
     const planLabels = [
         { label: 'Free', key: 'free' } as const,
@@ -70,7 +54,7 @@ const CalendarFeatures = ({ onSelect, activeTab, onSetActiveTab }: Props) => {
     ];
     return (
         <Features
-            appName={APPS.PROTONCALENDAR}
+            appName={APPS.PROTONDRIVE}
             onSelect={onSelect}
             planLabels={planLabels}
             features={features}
@@ -80,4 +64,4 @@ const CalendarFeatures = ({ onSelect, activeTab, onSetActiveTab }: Props) => {
     );
 };
 
-export default CalendarFeatures;
+export default DriveFeatures;
