@@ -2,7 +2,7 @@ import React, { useEffect, useCallback } from 'react';
 import { c } from 'ttag';
 
 import {
-    AppLink,
+    SettingsLink,
     InlineLinkButton,
     TopBanner,
     useModals,
@@ -59,12 +59,8 @@ const FileRecoveryBanner = ({ onClose }: Props) => {
     }, [User.Email, addressesKeys, getReadyToRestoreData]);
 
     const mailSettingsLink = (
-        <AppLink
-            key="link-to-mail-settings"
-            to="/settings/security#addresses"
-            toApp={APPS.PROTONMAIL}
-            target="_blank"
-        >{c('Info').t`More`}</AppLink>
+        <SettingsLink key="link-to-mail-settings" path="/encryption-keys" app={APPS.PROTONMAIL}>{c('Info')
+            .t`More`}</SettingsLink>
     );
 
     const startRecoveryButton = (
