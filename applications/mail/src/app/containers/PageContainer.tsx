@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from 'react';
+import React, { forwardRef, memo, Ref, useEffect } from 'react';
 import { Redirect, useRouteMatch, useHistory, useLocation } from 'react-router-dom';
 import {
     useMailSettings,
@@ -32,12 +32,10 @@ interface Props {
     isComposerOpened: boolean;
 }
 
-const PageContainer = ({
-    params: { elementID, labelID, messageID },
-    breakpoints,
-    onCompose,
-    isComposerOpened,
-}: Props) => {
+const PageContainer = (
+    { params: { elementID, labelID, messageID }, breakpoints, onCompose, isComposerOpened }: Props,
+    ref: Ref<HTMLDivElement>
+) => {
     const location = useLocation();
     const history = useHistory();
     const [mailSettings] = useMailSettings();
@@ -94,6 +92,7 @@ const PageContainer = ({
 
     return (
         <PrivateLayout
+            ref={ref}
             isBlurred={welcomeFlags.isWelcomeFlow}
             labelID={labelID}
             elementID={elementID}
@@ -120,7 +119,7 @@ const PageContainer = ({
     );
 };
 
-const MemoPageContainer = memo(PageContainer);
+const MemoPageContainer = memo(forwardRef(PageContainer));
 
 interface PageParamsParserProps {
     breakpoints: Breakpoints;
@@ -128,7 +127,7 @@ interface PageParamsParserProps {
     isComposerOpened: boolean;
 }
 
-const PageParamsParser = (props: PageParamsParserProps) => {
+const PageParamsParser = (props: PageParamsParserProps, ref: Ref<HTMLDivElement>) => {
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
     const match = useRouteMatch<MailUrlParams>();
@@ -139,6 +138,6 @@ const PageParamsParser = (props: PageParamsParserProps) => {
         return { elementID, labelID, messageID };
     }, [match]);
 
-    return <MemoPageContainer {...props} params={params} />;
+    return <MemoPageContainer ref={ref} {...props} params={params} />;
 };
-export default PageParamsParser;
+export default forwardRef(PageParamsParser);
