@@ -84,6 +84,10 @@ $breakpoint-2-columns: 1180 !default;
 	border-radius: $global-border-radius;
 }
 
+.rounded-bigger {
+	border-radius: $global-bigger-border-radius;
+}
+
 .rounded50 {
 	border-radius: 50%;
 }
