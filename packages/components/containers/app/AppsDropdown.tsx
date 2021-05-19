@@ -39,6 +39,9 @@ const AppsDropdown = () => {
                                 <Icon name={icon} size={28} className="apps-dropdown-icon" />
                                 <div>{BRAND_NAME}</div>
                                 <div className="text-bold">{title}</div>
+                                {id === APPS.PROTONDRIVE && (
+                                    <div className="bg-info rounded1e text-sm m0 mt0-5">BETA</div>
+                                )}
                             </AppLink>
                         </li>
                         {index % 2 !== 0 && (
