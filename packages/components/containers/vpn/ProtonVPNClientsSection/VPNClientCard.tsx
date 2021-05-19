@@ -21,20 +21,20 @@ interface Props {
 
 const VPNClientCard = ({ title, link, items, icon }: Props) => {
     return (
-        <Bordered className="mr1 text-center relative">
+        <Bordered className="rounded-bigger flex flex-column flex-align-items-center pt2 pb2 pl3 pr3 mt1 mr1">
             <div>
-                <Icon size={24} name={icon} />
+                <Icon size={60} name={icon} />
             </div>
             <Block>{title}</Block>
             {!items ? (
-                <div className="pl1-25 pr1-25 flex mt1 flex-justify-center">
+                <div className="pl1 pr1 flex mt1 flex-justify-center">
                     <ButtonLike as={Href} url={link}>
                         {c('Action').t`Download`}
                         <span className="sr-only">{title}</span>
                     </ButtonLike>
                 </div>
             ) : (
-                <ButtonGroup className="flex mt1 flex-justify-center">
+                <ButtonGroup className="flex pl0-25 pr0-25 mt1 flex-justify-center">
                     <ButtonLike as={Href} url={link}>
                         {c('Action').t`Download`}
                         <span className="sr-only">{title}</span>
