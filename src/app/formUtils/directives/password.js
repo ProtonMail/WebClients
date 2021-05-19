@@ -46,37 +46,17 @@ function password() {
             formatInput(element[0], { id, name, placeholder, tabindex }, { compare, autofocus });
 
             return (scope, el, { autofocus }) => {
-                const $input = el[0].querySelector('.password-input');
+                let $input = el[0].querySelector('.password-input');
                 scope.message = scope.form[name].$error;
 
                 if (autofocus && document.activeElement !== $input) {
                     _rAF(() => $input.focus());
                 }
 
-                // We need to re-force the type password on submit to allow the user to save the password
-                // if (!isMacOS) {
-                //     return;
-                // }
-
-                // const onFocus = ({ target }) => {
-                //     target.type = 'text';
-                // };
-                // const onBlur = ({ target }) => {
-                //     target.type = 'password';
-                // };
-                // const onEnter = ({ key }) => {
-                //     key === 'Enter' && onBlur({ target: $input });
-                // };
-
-                // $input.addEventListener('blur', onBlur);
-                // $input.addEventListener('focus', onFocus);
-                // document.addEventListener('keydown', onEnter);
-
-                // scope.$on('$destroy', () => {
-                //     $input.removeEventListener('blur', onBlur);
-                //     $input.removeEventListener('focus', onFocus);
-                //     document.removeEventListener('keydown', onEnter);
-                // });
+                scope.$on('$destroy', () => {
+                    $input.value = '';
+                    $input = null;
+                });
             };
         }
     };
