@@ -1,6 +1,6 @@
 import { MAX_CALENDARS_PER_FREE_USER, MAX_CALENDARS_PER_USER } from 'proton-shared/lib/calendar/constants';
 import React, { useState } from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { updateCalendarUserSettings, removeCalendar } from 'proton-shared/lib/api/calendars';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { Address, UserModel } from 'proton-shared/lib/interfaces';
@@ -109,8 +109,8 @@ const CalendarsSection = ({
 
     const handleExport = (calendar: Calendar) => createModal(<ExportModal calendar={calendar} />);
 
-    const calendarLimit = user.isFree ? MAX_CALENDARS_PER_FREE_USER : MAX_CALENDARS_PER_USER;
-    const isBelowLimit = calendars.length < calendarLimit;
+    const calendarsLimit = user.isFree ? MAX_CALENDARS_PER_FREE_USER : MAX_CALENDARS_PER_USER;
+    const isBelowLimit = calendars.length < calendarsLimit;
     const canAddCalendar = activeAddresses.length > 0 && isBelowLimit && user.hasNonDelinquentScope;
 
     return (
@@ -119,8 +119,11 @@ const CalendarsSection = ({
                 <Card className="mb1">
                     <div className="flex flex-nowrap flex-align-items-center">
                         <p className="flex-item-fluid mt0 mb0 pr2">
-                            {c('Upgrade notice')
-                                .t`Upgrade to a paid plan to create up to ${MAX_CALENDARS_PER_USER} calendars, allowing you to make calendars for work, to share with friends, and just for yourself.`}
+                            {c('Upgrade notice').ngettext(
+                                msgid`Upgrade to a paid plan to create up to ${calendarsLimit} calendar, allowing you to make calendars for work, to share with friends, and just for yourself.`,
+                                `Upgrade to a paid plan to create up to ${calendarsLimit} calendars, allowing you to make calendars for work, to share with friends, and just for yourself.`,
+                                calendarsLimit
+                            )}
                         </p>
                         <ButtonLike as={SettingsLink} path="/dashboard" color="norm" shape="solid" size="small">
                             {c('Action').t`Upgrade`}
