@@ -120,7 +120,7 @@ const CalendarsSection = ({
                     <div className="flex flex-nowrap flex-align-items-center">
                         <p className="flex-item-fluid mt0 mb0 pr2">
                             {c('Upgrade notice')
-                                .t`Upgrade to a paid plan to create up to 25 calendars, allowing you to make calendars for work, to share with friends, and just for yourself.`}
+                                .t`Upgrade to a paid plan to create up to ${MAX_CALENDARS_PER_USER} calendars, allowing you to make calendars for work, to share with friends, and just for yourself.`}
                         </p>
                         <ButtonLike as={SettingsLink} path="/dashboard" color="norm" shape="solid" size="small">
                             {c('Action').t`Upgrade`}
