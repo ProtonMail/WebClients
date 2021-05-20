@@ -31,6 +31,7 @@ import {
     SyncMultipleApiResponse,
     DateTimeModel,
     EventModel,
+    AttendeeModel,
     UpdateEventPartApiResponse,
 } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
@@ -325,7 +326,7 @@ const InteractiveCalendarView = ({
         );
     };
 
-    const getCreateModel = (isAllDay: boolean) => {
+    const getCreateModel = (isAllDay: boolean, attendees?: AttendeeModel[]) => {
         if (!defaultCalendar || !defaultCalendarBootstrap) {
             return;
         }
@@ -349,6 +350,7 @@ const InteractiveCalendarView = ({
             Address,
             isAllDay,
             tzid,
+            attendees,
         });
     };
 
@@ -829,11 +831,11 @@ const InteractiveCalendarView = ({
         setEventModalID(createModal());
     };
 
-    const handleCreateEvent = () => {
+    const handleCreateEvent = (attendees: AttendeeModel[]) => {
         if (!defaultCalendar) {
             return;
         }
-        const startModel = getCreateModel(false);
+        const startModel = getCreateModel(false, attendees);
         if (!startModel) {
             throw new Error('Unable to get create model');
         }
@@ -1056,8 +1058,8 @@ const InteractiveCalendarView = ({
     };
 
     useImperativeHandle(interactiveRef, () => ({
-        createEvent: () => {
-            handleCreateEvent();
+        createEvent: (attendees) => {
+            handleCreateEvent(attendees);
         },
     }));
 

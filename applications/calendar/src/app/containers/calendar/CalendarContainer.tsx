@@ -10,7 +10,7 @@ import {
     toUTCDate,
 } from 'proton-shared/lib/date/timezone';
 import { Address, User, UserSettings } from 'proton-shared/lib/interfaces';
-import { Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
+import { AttendeeModel, Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
 import { getWeekStartsOn } from 'proton-shared/lib/settings/helper';
 import React, { MutableRefObject, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { useAppTitle, useCalendarBootstrap, useModals } from 'react-components';
@@ -318,13 +318,16 @@ const CalendarContainer = ({
             utcDate={utcDate}
             utcDateRange={utcDateRange}
             onCreateEvent={
-                disableCreate || !defaultCalendarBootstrap ? undefined : () => interactiveRef.current?.createEvent()
+                disableCreate || !defaultCalendarBootstrap
+                    ? undefined
+                    : (attendees: AttendeeModel[] = []) => interactiveRef.current?.createEvent(attendees)
             }
             onClickToday={handleClickToday}
             onChangeDate={handleChangeDate}
             onChangeDateRange={handleChangeDateRange}
             onChangeView={handleChangeView}
             containerRef={setContainerRef}
+            addresses={addresses}
         >
             <ContactEmailsProvider>
                 <InteractiveCalendarView

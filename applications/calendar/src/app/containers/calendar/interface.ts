@@ -1,4 +1,10 @@
-import { Calendar, CalendarEvent, CalendarEventSharedData, EventModel } from 'proton-shared/lib/interfaces/calendar';
+import {
+    AttendeeModel,
+    Calendar,
+    CalendarEvent,
+    CalendarEventSharedData,
+    EventModel,
+} from 'proton-shared/lib/interfaces/calendar';
 import {
     DELETE_CONFIRMATION_TYPES,
     RECURRING_TYPES,
@@ -54,7 +60,7 @@ export interface TimeGridRef {
     scrollToTime: (date: Date) => void;
 }
 export interface InteractiveRef {
-    createEvent: () => void;
+    createEvent: (attendees: AttendeeModel[]) => void;
 }
 
 export interface CalendarViewEventTemporaryEvent extends CalendarViewEvent {
