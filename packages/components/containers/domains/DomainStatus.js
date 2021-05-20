@@ -41,6 +41,8 @@ const DMARC_TYPES = {
 const DomainStatus = ({ domain, domainAddresses }) => {
     const n = domainAddresses.length;
 
+    const catchAllEnabled = domainAddresses.some((address) => address.CatchAll);
+
     const badges = [
         { text: c('Domain label').t`Verified`, type: VERIFY_TYPES[domain.VerifyState] },
         {
@@ -51,6 +53,7 @@ const DomainStatus = ({ domain, domainAddresses }) => {
         { text: 'SPF', type: SPF_TYPES[domain.SpfState] },
         { text: 'DKIM', type: DKIM_TYPES[domain.DKIM.State] },
         { text: 'DMARC', type: DMARC_TYPES[domain.DmarcState] },
+        { text: 'CATCH-ALL', type: catchAllEnabled ? 'success' : 'origin' },
     ];
 
     return (
