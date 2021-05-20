@@ -21,7 +21,7 @@ export const useConversationFocus = (messages: Message[]) => {
         const element = document.querySelector(
             `[data-shortcut-target="message-container"][data-message-id="${messages[focusIndex]?.ID}"]`
         ) as HTMLElement;
-        element?.focus();
+        element?.focus({ preventScroll: true });
     }, [focusIndex]);
 
     return { focusIndex, handleFocus, getFocusedId };
