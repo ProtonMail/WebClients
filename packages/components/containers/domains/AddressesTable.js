@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { Table, TableHeader, TableBody, TableRow, Info } from '../../components';
+import { useEventManager } from '../../hooks';
 
 import AddressStatus from './AddressStatus';
 import AddressCatchAll from './AddressCatchAll';
 
 const AddressesTable = ({ domain, domainAddresses }) => {
+    const { call } = useEventManager();
     const [addresses, setAddresses] = useState(() => domainAddresses);
 
-    const handleChange = ({ ID }) => (newValue) => {
+    const handleChange = ({ ID }) => async (newValue) => {
         setAddresses(
             addresses.map((address) => {
                 return {
@@ -18,6 +20,7 @@ const AddressesTable = ({ domain, domainAddresses }) => {
                 };
             })
         );
+        await call();
     };
 
     return (
