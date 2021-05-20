@@ -57,7 +57,7 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
             createModal(
                 <ConfirmModal title={c('Title').t`Warning`} onConfirm={resolve} onClose={reject} mode="alert">
                     {c('Info')
-                        .t`You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery email?`}
+                        .t`You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?`}
                 </ConfirmModal>
             );
         });
