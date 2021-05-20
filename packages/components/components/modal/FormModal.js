@@ -24,6 +24,7 @@ const Modal = ({
     hasSubmit = true,
     hasClose = true,
     displayTitle = true,
+    noTitleEllipsis = false,
     noValidate = false,
     mode = '',
     // Destructure these options so they are not passed to the DOM.
@@ -132,6 +133,7 @@ function DemoModal({ onAdd, ...rest }) {
             <HeaderModal
                 hasClose={hasClose}
                 displayTitle={displayTitle}
+                noEllipsis={noTitleEllipsis}
                 modalTitleID={modalTitleID}
                 onClose={onClose}
                 {...(isAlertMode ? { hasClose: false } : {})}
