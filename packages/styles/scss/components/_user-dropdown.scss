@@ -1,8 +1,7 @@
 .user-dropdown {
 	&-button {
-		// yes, but only on HUGE screens for looooooooooong accounts
-		@include respond-to(1400, 'min') {
-			max-width: 18em;
+		@include respond-to(1500) {
+			margin-left: 0.5em;
 		}
 
 		.user-initials {
@@ -27,8 +26,14 @@
 	}
 
 	&-text {
-		margin-top: auto;
-		margin-bottom: auto;
+		&#{&} {
+			// Specificity -_-v
+			max-width: em(200);
+		}
+
+		@include respond-to(1500) {
+			display: none;
+		}
 	}
 }
 

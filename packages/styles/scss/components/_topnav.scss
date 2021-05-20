@@ -24,6 +24,12 @@
 	margin-right: 0.5em;
 }
 
+.topnav-vr {
+	@include respond-to(1500) {
+		display: none;
+	}
+}
+
 @include respond-to(1300) {
 	.topnav-list--four-elements {
 		.navigation-title {
