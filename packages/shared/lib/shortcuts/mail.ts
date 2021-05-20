@@ -216,10 +216,6 @@ export const getShortcuts = () => {
                     name: c('Keyboard shortcut name').t`Delete permanently`,
                     keys: `${metaKey} + Backspace`,
                 },
-                {
-                    name: c('Keyboard shortcut name').t`Empty folder`,
-                    keys: `${metaKey} + ${shiftKey} + Backspace`,
-                },
             ],
         },
         {
