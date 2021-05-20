@@ -22,13 +22,15 @@ import ContactGroupModal from '../modals/ContactGroupModal';
 import ContactGroupDetailsModal from '../modals/ContactGroupDetailsModal';
 import ContactsWidgetPlaceholder, { EmptyType } from './ContactsWidgetPlaceholder';
 import ContactGroupDeleteModal from '../modals/ContactGroupDeleteModal';
+import { CustomAction } from './types';
 
 interface Props {
     onClose: () => void;
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;
+    customActions: CustomAction[];
 }
 
-const ContactsWidgetGroupsContainer = ({ onClose, onCompose }: Props) => {
+const ContactsWidgetGroupsContainer = ({ onClose, onCompose, customActions }: Props) => {
     const [userSettings, loadingUserSettings] = useUserSettings();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
@@ -177,10 +179,14 @@ const ContactsWidgetGroupsContainer = ({ onClose, onCompose }: Props) => {
             <div className="contacts-widget-toolbar pt1 pb1 border-bottom flex-item-noshrink">
                 <ContactsWidgetGroupsToolbar
                     allChecked={allChecked}
-                    selectedCount={selectedIDs.length}
+                    selected={selectedIDs}
                     numberOfRecipients={recipients.length}
                     onCheckAll={handleCheckAll}
                     onCompose={onCompose ? handleCompose : undefined}
+                    groupsEmailsMap={groupsEmailsMap}
+                    recipients={recipients}
+                    onClose={onClose}
+                    customActions={customActions}
                     onCreate={handleCreate}
                     onDelete={handleDelete}
                 />
