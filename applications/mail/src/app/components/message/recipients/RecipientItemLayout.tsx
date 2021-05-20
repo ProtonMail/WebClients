@@ -18,6 +18,7 @@ const RecipientItemLayout = ({ button, label, showAddress = true, address, title
                 'flex flex-align-items-center flex-nowrap message-recipient-item',
                 isLoading && 'flex-item-fluid',
             ])}
+            data-testid="message-header:from"
         >
             <span className="container-to container-to--item no-print">{button}</span>
             <span
