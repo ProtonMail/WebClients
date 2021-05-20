@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import {
@@ -17,7 +17,20 @@ import { CalendarsModel } from 'proton-shared/lib/models';
 import { Calendar, CalendarSettings } from 'proton-shared/lib/interfaces/calendar';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from 'proton-shared/lib/calendar/alarms';
 
-import { FormModal, Loader, Tabs } from '../../../components';
+import { MAX_DEFAULT_NOTIFICATIONS, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
+import {
+    ColorPicker,
+    Field,
+    FormModal,
+    Input,
+    Label,
+    Loader,
+    Option,
+    Row,
+    SelectTwo,
+    TextArea,
+    Toggle,
+} from '../../../components';
 import {
     getCalendarModel,
     getCalendarPayload,
@@ -25,8 +38,6 @@ import {
     getDefaultModel,
     validate,
 } from './calendarModalState';
-import EventSettingsTab from './EventSettingsTab';
-import CalendarSettingsTab from './CalendarSettingsTab';
 import { setupCalendarKey } from '../../keys/calendar';
 import {
     useApi,
@@ -40,6 +51,7 @@ import {
 } from '../../../hooks';
 import { useCalendarModelEventManager } from '../../eventManager';
 import { GenericError } from '../../error';
+import Notifications from '../notifications/Notifications';
 
 interface Props {
     calendar?: Calendar;
@@ -67,11 +79,15 @@ export const CalendarModal = ({
     const [loadingAction, withLoadingAction] = useLoading();
     const { createNotification } = useNotifications();
 
-    const [tab, setTab] = useState(0);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [error, setError] = useState(false);
     const [calendar, setCalendar] = useState(initialCalendar);
     const [model, setModel] = useState(() => getDefaultModel(defaultColor));
+
+    const addressText = useMemo(() => {
+        const option = model.addressOptions.find(({ value: ID }) => ID === model.addressID);
+        return (option && option.text) || '';
+    }, [model.addressID, model.addressOptions]);
 
     useEffect(() => {
         const initializeEmptyCalendar = async () => {
@@ -241,26 +257,12 @@ export const CalendarModal = ({
             };
         }
 
-        const tabs = [
-            {
-                title: c('Header').t`Calendar settings`,
-                content: (
-                    <CalendarSettingsTab isSubmitted={isSubmitted} errors={errors} model={model} setModel={setModel} />
-                ),
-            },
-            {
-                title: c('Header').t`Event settings`,
-                content: <EventSettingsTab model={model} setModel={setModel} />,
-            },
-        ];
-
         const isEdit = !!initialCalendar;
         return {
             title: isEdit ? c('Title').t`Update calendar` : c('Title').t`Create calendar`,
             submit: isEdit ? c('Action').t`Update` : c('Action').t`Create`,
             close: c('Action').t`Cancel`,
             loading: loadingSetup || loadingAction,
-            section: loadingSetup ? <Loader /> : <Tabs value={tab} onChange={setTab} tabs={tabs} />,
             hasClose: true,
             onSubmit: () => {
                 setIsSubmitted(true);
@@ -274,7 +276,144 @@ export const CalendarModal = ({
 
     return (
         <FormModal className="modal--shorter-labels w100" close={null} onClose={noop} {...modalProps} {...rest}>
-            {section}
+            {loadingSetup ? (
+                <Loader />
+            ) : (
+                <>
+                    <Row>
+                        <Label htmlFor="calendar-name-input">{c('Label').t`Name`}</Label>
+                        <Field>
+                            <Input
+                                id="calendar-name-input"
+                                value={model.name}
+                                error={errors.name}
+                                maxLength={MAX_LENGTHS.CALENDAR_NAME}
+                                isSubmitted={isSubmitted}
+                                placeholder={c('Placeholder').t`Add a calendar name`}
+                                onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
+                                    setModel({ ...model, name: target.value })
+                                }
+                                autoFocus
+                            />
+                        </Field>
+                    </Row>
+                    <Row>
+                        <Label htmlFor="calendar-color">{c('Label').t`Choose a color`}</Label>
+                        <Field>
+                            <ColorPicker
+                                id="calendar-color"
+                                color={model.color}
+                                onChange={(color) => setModel({ ...model, color })}
+                            />
+                        </Field>
+                    </Row>
+                    <Row>
+                        <Label htmlFor="calendar-address-select">{c('Label').t`Default email`}</Label>
+                        <Field className="flex flex-align-items-center">
+                            {model.calendarID ? (
+                                addressText
+                            ) : (
+                                <SelectTwo
+                                    id="calendar-address-select"
+                                    value={model.addressID}
+                                    onChange={({ value }) => setModel({ ...model, addressID: value })}
+                                >
+                                    {model.addressOptions.map(({ value, text }) => (
+                                        <Option key={value} value={value} title={text} />
+                                    ))}
+                                </SelectTwo>
+                            )}
+                        </Field>
+                    </Row>
+                    <Row>
+                        <Label htmlFor="calendar-display-toggle">{c('Label').t`Display`}</Label>
+                        <Field>
+                            <Toggle
+                                id="calendar-display-toggle"
+                                checked={model.display}
+                                onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
+                                    setModel({ ...model, display: target.checked })
+                                }
+                            />
+                        </Field>
+                    </Row>
+                    <Row>
+                        <Label htmlFor="calendar-description-textarea">{c('Label').t`Description`}</Label>
+                        <Field>
+                            <TextArea
+                                autoGrow
+                                id="calendar-description-textarea"
+                                value={model.description}
+                                placeholder={c('Placeholder').t`Add a calendar description`}
+                                onChange={({ target }: ChangeEvent<HTMLTextAreaElement>) =>
+                                    setModel({ ...model, description: target.value })
+                                }
+                                maxLength={MAX_LENGTHS.CALENDAR_DESCRIPTION}
+                                error={errors.description}
+                                isSubmitted={isSubmitted}
+                            />
+                        </Field>
+                    </Row>
+                    <Row>
+                        <Label htmlFor="duration-select">{c('Label').t`Default event duration`}</Label>
+                        <Field>
+                            <SelectTwo
+                                id="duration-select"
+                                data-test-id="create-calendar/event-settings:event-duration"
+                                value={model.duration}
+                                onChange={({ value }) => setModel({ ...model, duration: +value })}
+                            >
+                                {[
+                                    { text: c('Duration').t`30 minutes`, value: 30 },
+                                    { text: c('Duration').t`60 minutes`, value: 60 },
+                                    { text: c('Duration').t`90 minutes`, value: 90 },
+                                    { text: c('Duration').t`120 minutes`, value: 120 },
+                                ].map(({ value, text }) => (
+                                    <Option key={value} value={value} title={text} />
+                                ))}
+                            </SelectTwo>
+                        </Field>
+                    </Row>
+                    <Row>
+                        <Label>{c('Label').t`Default notifications`}</Label>
+                        <div
+                            data-test-id="create-calendar/event-settings:default-notification"
+                            className="flex-item-fluid"
+                        >
+                            <Notifications
+                                notifications={model.partDayNotifications}
+                                canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
+                                defaultNotification={model.defaultPartDayNotification}
+                                onChange={(notifications) => {
+                                    setModel({
+                                        ...model,
+                                        partDayNotifications: notifications,
+                                    });
+                                }}
+                            />
+                        </div>
+                    </Row>
+                    <Row>
+                        <Label>{c('Label').t`Default full day notifications`}</Label>
+                        <div
+                            data-test-id="create-calendar/event-settings:default-full-day-notification"
+                            className="flex-item-fluid"
+                        >
+                            <Notifications
+                                notifications={model.fullDayNotifications}
+                                canAdd={model.fullDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
+                                defaultNotification={model.defaultFullDayNotification}
+                                onChange={(notifications) => {
+                                    setModel({
+                                        ...model,
+                                        fullDayNotifications: notifications,
+                                    });
+                                }}
+                            />
+                        </div>
+                    </Row>
+                </>
+            )}
         </FormModal>
     );
 };
