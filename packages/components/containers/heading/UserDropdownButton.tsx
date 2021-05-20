@@ -25,23 +25,21 @@ const UserDropdownButton = ({ user, isOpen, ...rest }: Props, ref: React.Ref<HTM
             title={`${nameToDisplay} <${Email}>`}
         >
             {nameToDisplay ? (
-                <span className="text-right flex flex-column mr0-75 lh130 no-mobile">
-                    <span className="inline-block max-w100 text-ellipsis user-dropdown-displayName">
-                        {nameToDisplay}
-                    </span>
+                <span className="text-right flex-item-fluid mr0-75 lh130 user-dropdown-text">
+                    <span className="block text-ellipsis user-dropdown-displayName">{nameToDisplay}</span>
                     {Email ? (
-                        <span className="inline-block max-w100 text-ellipsis color-weak text-xs m0 lh-rg user-dropdown-email">
+                        <span className="block text-ellipsis color-weak text-xs m0 lh-rg user-dropdown-email">
                             {Email}
                         </span>
                     ) : null}
                 </span>
             ) : (
-                <span className="text-right flex flex-column mr0-75 lh130 no-mobile">
-                    <span className="inline-block max-w100 text-ellipsis user-dropdown-displayName">{Email}</span>
+                <span className="text-right mr0-75 lh130 user-dropdown-text">
+                    <span className="block text-ellipsis user-dropdown-displayName">{Email}</span>
                 </span>
             )}
             <span className="mtauto mbauto text-semibold rounded bordered p0-25 inline-block user-initials relative flex flex-item-noshrink">
-                <span className="user-dropdown-text center">{initials}</span>
+                <span className="mtauto mbauto center">{initials}</span>
             </span>
         </button>
     );

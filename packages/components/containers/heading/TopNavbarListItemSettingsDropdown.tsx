@@ -61,7 +61,7 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
             hasCaret={false}
             dropdownStyle={{ '--min-width': '16em' }}
         >
-            <DropdownMenu className="mt0-5 mb0-5">
+            <DropdownMenu>
                 <DropdownMenuLink as={AppLink} to={to} toApp={toApp} target="_self">
                     {c('Action').t`Go to settings`}
                 </DropdownMenuLink>
