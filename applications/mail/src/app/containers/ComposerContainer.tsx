@@ -7,6 +7,7 @@ import { MAX_ACTIVE_COMPOSER_MOBILE, MAX_ACTIVE_COMPOSER_DESKTOP } from '../help
 import { useCompose, OnCompose } from '../hooks/composer/useCompose';
 import ComposerFrame from '../components/composer/ComposerFrame';
 import '../components/composer/composer.scss';
+import { useClickMailContent } from '../hooks/useClickMailContent';
 
 interface Props {
     breakpoints: Breakpoints;
@@ -19,6 +20,7 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
     const [width, height] = useWindowSize();
     const windowSize: WindowSize = { width, height };
     const messageCache = useMessageCache();
+    useClickMailContent(() => setFocusedMessageID(undefined));
 
     const returnFocusToElement = useRef<HTMLElement | null>(null);
 
