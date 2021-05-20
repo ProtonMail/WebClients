@@ -7,9 +7,9 @@ const { DAY, WEEK, MONTH, YEAR, AGENDA, CUSTOM } = VIEWS;
 const FORMATS = {
     [DAY]: 'PP',
     [WEEK]: 'PP',
-    [MONTH]: 'MMM yyyy',
+    [MONTH]: 'LLL yyyy',
     [YEAR]: 'yyyy',
-    [AGENDA]: 'MMM yyyy',
+    [AGENDA]: 'LLL yyyy',
     [CUSTOM]: 'PP',
 };
 

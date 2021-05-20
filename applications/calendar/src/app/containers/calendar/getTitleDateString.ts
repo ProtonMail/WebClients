@@ -31,7 +31,7 @@ const getTitleDateString = (view: VIEWS, range: number | undefined, utcDateRange
         return `${fromString} - ${toString}`;
     }
 
-    return format(utcDate, 'MMMM yyyy', formatOptions);
+    return format(utcDate, 'LLLL yyyy', formatOptions);
 };
 
 export default getTitleDateString;
