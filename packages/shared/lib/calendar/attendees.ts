@@ -8,13 +8,14 @@ import { omit } from '../helpers/object';
 import { GetCanonicalEmailsMap } from '../interfaces/hooks/GetCanonicalEmailsMap';
 import {
     Attendee,
+    AttendeeModel,
     VcalAttendeeProperty,
     VcalOrganizerProperty,
     VcalPmVeventComponent,
     VcalVeventComponent,
 } from '../interfaces/calendar';
 import { RequireSome, SimpleMap } from '../interfaces/utils';
-import { ATTENDEE_STATUS_API, ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from './constants';
+import { ATTENDEE_STATUS_API, ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from './constants';
 import { getAttendeeHasToken, getAttendeesHaveToken } from './vcalHelper';
 
 export const generateAttendeeToken = async (normalizedEmail: string, uid: string) => {
@@ -236,3 +237,15 @@ export const getDuplicateAttendees = (attendees?: VcalAttendeeProperty[]) => {
         ? duplicateAttendees.filter((group) => group.length > 1)
         : undefined;
 };
+
+const { REQUIRED } = ICAL_ATTENDEE_ROLE;
+const { TRUE } = ICAL_ATTENDEE_RSVP;
+const { NEEDS_ACTION } = ICAL_ATTENDEE_STATUS;
+
+export const emailToAttendee = (email: string): AttendeeModel => ({
+    email,
+    cn: email,
+    role: REQUIRED,
+    partstat: NEEDS_ACTION,
+    rsvp: TRUE,
+});
