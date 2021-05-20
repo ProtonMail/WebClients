@@ -1,4 +1,4 @@
-import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_ROLE } from 'proton-shared/lib/calendar/constants';
 import { uniqueBy } from 'proton-shared/lib/helpers/array';
 import {
     CANONIZE_SCHEME,
@@ -12,22 +12,13 @@ import React, { memo, useMemo, useRef } from 'react';
 import { AddressesAutocomplete, Alert, Details, Summary } from 'react-components';
 import { c, msgid } from 'ttag';
 import { AttendeeModel, EventModel } from 'proton-shared/lib/interfaces/calendar';
+import { emailToAttendee } from 'proton-shared/lib/calendar/attendees';
 import { useContactEmailsCache } from '../../../containers/calendar/ContactEmailsProvider';
 
 import OrganizerRow from '../rows/OrganizerRow';
 import ParticipantRow from '../rows/ParticipantRow';
 
 const { REQUIRED, OPTIONAL } = ICAL_ATTENDEE_ROLE;
-const { TRUE } = ICAL_ATTENDEE_RSVP;
-const { NEEDS_ACTION } = ICAL_ATTENDEE_STATUS;
-
-const emailToAttendee = (email: string): AttendeeModel => ({
-    email,
-    cn: email,
-    role: REQUIRED,
-    partstat: NEEDS_ACTION,
-    rsvp: TRUE,
-});
 
 interface Props {
     value: AttendeeModel[];

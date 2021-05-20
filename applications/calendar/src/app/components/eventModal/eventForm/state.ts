@@ -27,6 +27,7 @@ import {
     DateTimeModel,
     EventModel,
     FrequencyModel,
+    AttendeeModel,
 } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 
@@ -140,6 +141,7 @@ interface GetInitialModelArguments {
     isAllDay: boolean;
     verificationStatus?: EVENT_VERIFICATION_STATUS;
     tzid: string;
+    attendees?: AttendeeModel[];
 }
 
 export const getInitialModel = ({
@@ -154,6 +156,7 @@ export const getInitialModel = ({
     isAllDay,
     verificationStatus = EVENT_VERIFICATION_STATUS.NOT_VERIFIED,
     tzid,
+    attendees = [],
 }: GetInitialModelArguments): EventModel => {
     const { DefaultEventDuration: defaultEventDuration = DEFAULT_EVENT_DURATION } = CalendarSettings;
     const dateTimeModel = getInitialDateTimeModel(initialDate, defaultEventDuration, tzid);
@@ -167,7 +170,7 @@ export const getInitialModel = ({
         title: '',
         location: '',
         description: '',
-        attendees: [],
+        attendees,
         initialDate,
         initialTzid: tzid,
         isAllDay,
