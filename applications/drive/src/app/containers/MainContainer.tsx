@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { LoaderPage, LocationErrorBoundary, ModalsChildren, useLoading, useWelcomeFlags } from 'react-components';
+import {
+    LoaderPage,
+    LocationErrorBoundary,
+    ModalsChildren,
+    useLoading,
+    useWelcomeFlags,
+    useEarlyAccess,
+} from 'react-components';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { noop } from 'proton-shared/lib/helpers/function';
 
@@ -28,6 +35,7 @@ const InitContainer = () => {
     const [loading, withLoading] = useLoading(true);
     const [errorType, setErrorType] = useState<ERROR_TYPES>(ERROR_TYPES.STANDARD);
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
+    const earlyAccess = useEarlyAccess();
 
     useEffect(() => {
         const initPromise = initDrive().catch((error) => {
@@ -54,7 +62,12 @@ const InitContainer = () => {
     }
 
     if (errorType === ERROR_TYPES.NO_ACCESS) {
-        return <NoAccessContainer />;
+        return <NoAccessContainer reason="notpaid" />;
+    }
+
+    // isEnabled means global features is enabled, and value whether user has early access.
+    if (earlyAccess.isEnabled && earlyAccess.value === false) {
+        return <NoAccessContainer reason="notbeta" />;
     }
 
     if (welcomeFlags.isWelcomeFlow) {
