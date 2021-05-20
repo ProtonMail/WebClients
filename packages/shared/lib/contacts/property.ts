@@ -63,18 +63,18 @@ export const getValue = (property: any, field: string): string | string[] => {
         return val.toString();
     });
 
-    // In some rare situations, ICAL can miss the multiple value nature of an adr field
+    // In some rare situations, ICAL can miss the multiple value nature of an 'adr' or 'org' field
     // It has been reproduced after a contact import from iOS including the address in a group
     // For that specific case, we have to split values manually
-    if (field === 'adr' && typeof values[0] === 'string') {
+    if ((field === 'adr' || field === 'org') && typeof values[0] === 'string') {
         return cleanMultipleValue(values[0]);
     }
 
-    // If one of the adr sections contains unescaped `,`
+    // If one of the adr or org sections contains unescaped `,`
     // ICAL will return a value of type (string | string[])[]
     // Which we don't support later in the code
     // Until we do, we flatten the value by joining these entries
-    if (field === 'adr') {
+    if (field === 'adr' || field === 'org') {
         values[0] = (values[0] as (string | string[])[]).map((entry) =>
             Array.isArray(entry) ? entry.join(', ') : entry
         );
