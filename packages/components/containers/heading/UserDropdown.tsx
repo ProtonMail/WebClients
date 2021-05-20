@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, MouseEvent } from 'react';
 import { c } from 'ttag';
-import { APPS, isSSOMode, SSO_PATHS } from 'proton-shared/lib/constants';
+import { APPS, isSSOMode, PLAN_SERVICES, SSO_PATHS } from 'proton-shared/lib/constants';
 import { getAppHref } from 'proton-shared/lib/apps/helper';
 import { requestFork } from 'proton-shared/lib/authentication/sessionForking';
 import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
+import { getPlanName, hasLifetime } from 'proton-shared/lib/helpers/subscription';
+import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 
-import { useAuthentication, useConfig, useUser, useOrganization } from '../../hooks';
-import { usePopperAnchor, Dropdown, Icon, DropdownMenu, DropdownMenuButton } from '../../components';
-import { generateUID } from '../../helpers';
+import { useAuthentication, useConfig, useUser, useOrganization, useSubscription, useNotifications } from '../../hooks';
+import { usePopperAnchor, Dropdown, Icon, DropdownMenu, DropdownMenuButton, Tooltip, Button } from '../../components';
+import { classnames, generateUID } from '../../helpers';
 import UserDropdownButton, { Props } from './UserDropdownButton';
 
 const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
@@ -15,9 +17,21 @@ const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
     const [organization] = useOrganization();
     const { Name: organizationName } = organization || {};
     const [user] = useUser();
+    const { Email, DisplayName, Name } = user;
+    const nameToDisplay = DisplayName || Name; // nameToDisplay can be falsy for external account
     const { logout } = useAuthentication();
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+
+    const { createNotification } = useNotifications();
+    const handleCopyEmail = (e: MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
+        textToClipboard(Email, e.currentTarget);
+        createNotification({
+            type: 'success',
+            text: c('Success').t`Email address copied to clipboard`,
+        });
+    };
 
     const handleSwitchAccount = () => {
         if (APP_NAME === APPS.PROTONACCOUNT) {
@@ -32,6 +46,15 @@ const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
         close();
     };
 
+    const { MAIL, VPN } = PLAN_SERVICES;
+    const { PROTONVPN_SETTINGS } = APPS;
+    const [subscription] = useSubscription();
+    const planName = subscription
+        ? hasLifetime(subscription)
+            ? 'Lifetime'
+            : getPlanName(subscription, APP_NAME === PROTONVPN_SETTINGS ? VPN : MAIL)
+        : null;
+
     return (
         <>
             <UserDropdownButton
@@ -45,7 +68,7 @@ const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
             <Dropdown
                 id={uid}
                 className="userDropdown"
-                style={{ '--min-width': '18em' }}
+                style={{ '--min-width': '18em', '--max-width': '30em' }}
                 isOpen={isOpen}
                 noMaxSize
                 anchorRef={anchorRef}
@@ -54,15 +77,64 @@ const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
                 originalPlacement="bottom-right"
             >
                 <DropdownMenu>
-                    {APP_NAME !== APPS.PROTONVPN_SETTINGS && organizationName ? (
-                        <>
-                            <li className="pt0-5 pr1 pb0-5 pl1">
-                                <div className="text-bold">{c('Label').t`Organization`}</div>
-                                <div>{organizationName}</div>
-                            </li>
-                            <hr className="mt0-5 mb0-5" />
-                        </>
-                    ) : null}
+                    <div className="pr1 pl1 pt0-25 pb0-25">
+                        {organizationName && APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
+                            <div className="text-ellipsis-two-lines text-bold" title={organizationName}>
+                                {organizationName}
+                            </div>
+                        ) : null}
+
+                        {nameToDisplay ? (
+                            <div
+                                className={classnames([
+                                    'text-ellipsis-two-lines',
+                                    (!organizationName || APP_NAME === APPS.PROTONVPN_SETTINGS) && 'text-bold',
+                                ])}
+                                title={nameToDisplay}
+                            >
+                                {nameToDisplay}
+                            </div>
+                        ) : null}
+
+                        {Email ? (
+                            <div className="flex flex-nowrap flex-justify-space-between flex-align-items-center button-show-on-hover">
+                                <span
+                                    className={classnames([
+                                        'text-ellipsis user-select',
+                                        !nameToDisplay &&
+                                            (!organizationName || APP_NAME === APPS.PROTONVPN_SETTINGS) &&
+                                            'text-bold',
+                                        (nameToDisplay || (organizationName && APP_NAME !== APPS.PROTONVPN_SETTINGS)) &&
+                                            'color-weak',
+                                    ])}
+                                    title={Email}
+                                >
+                                    {Email}
+                                </span>
+                                <Tooltip title={c('Action').t`Copy email to clipboard`}>
+                                    <Button
+                                        className="flex-item-noshrink ml1 mr-6p button-show-on-hover-element"
+                                        icon
+                                        shape="ghost"
+                                        color="weak"
+                                        size="small"
+                                        onClick={handleCopyEmail}
+                                    >
+                                        <Icon name="copy" alt={c('Action').t`Copy email to clipboard`} />
+                                    </Button>
+                                </Tooltip>
+                            </div>
+                        ) : null}
+
+                        {planName ? (
+                            <div className="pt0-25">
+                                <span className="badge-label-primary">{planName}</span>
+                            </div>
+                        ) : null}
+                    </div>
+
+                    <hr className="mt0-5 mb0-5" />
+
                     {isSSOMode ? (
                         <>
                             <DropdownMenuButton
@@ -72,6 +144,7 @@ const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
                                 {c('Action').t`Switch account`}
                                 <Icon className="ml1" name="account-switch" />
                             </DropdownMenuButton>
+
                             <hr className="mt0-5 mb0-5" />
                         </>
                     ) : null}
