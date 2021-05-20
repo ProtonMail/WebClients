@@ -12,6 +12,7 @@ interface Props extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLEl
     displayTitle?: boolean;
     hasClose?: boolean;
     closeTextModal?: string;
+    noEllipsis?: boolean;
 }
 
 const Header = ({
@@ -22,6 +23,7 @@ const Header = ({
     hasClose = true,
     displayTitle = true,
     onClose,
+    noEllipsis = false,
     ...rest
 }: Props) => {
     const closeText = !closeTextModal ? c('Action').t`Close modal` : closeTextModal;
@@ -36,7 +38,10 @@ const Header = ({
                 </Button>
             ) : null}
             {typeof children === 'string' ? (
-                <Title id={modalTitleID} className={!displayTitle ? 'sr-only' : 'text-ellipsis'}>
+                <Title
+                    id={modalTitleID}
+                    className={!displayTitle ? 'sr-only' : noEllipsis ? undefined : 'text-ellipsis'}
+                >
                     {children}
                 </Title>
             ) : (
