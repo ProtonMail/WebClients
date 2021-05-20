@@ -61,6 +61,7 @@ const MessageBody = ({
                 'message-content scroll-horizontal-if-needed relative bodyDecrypted bg-norm color-norm',
                 plain && 'plain',
             ])}
+            data-testid="message-content:body"
         >
             {encryptedMode && <pre>{message.data?.Body}</pre>}
             {sourceMode && <pre>{message.decryptedBody}</pre>}

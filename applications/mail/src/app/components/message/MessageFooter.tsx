@@ -20,7 +20,10 @@ const MessageFooter = ({ message, showActions = true }: Props) => {
     const attachments = getAttachments(message.data);
 
     return (
-        <div className={classnames(['message-attachments border-top m0-5', !showActions && 'no-pointer-events'])}>
+        <div
+            className={classnames(['message-attachments border-top m0-5', !showActions && 'no-pointer-events'])}
+            data-testid="message-attachments"
+        >
             <AttachmentList
                 attachments={attachments}
                 embeddeds={message.embeddeds}
