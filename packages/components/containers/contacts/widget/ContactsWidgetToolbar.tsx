@@ -2,10 +2,12 @@ import React, { ChangeEvent } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Checkbox, Icon, Button, Tooltip } from '../../../components';
+import { CustomAction } from './types';
+import useContactList from '../useContactList';
 
 interface Props {
     allChecked: boolean;
-    selectedCount: number;
+    selected: string[];
     noEmailsContactCount: number;
     onCheckAll: (checked: boolean) => void;
     onCompose?: () => void;
@@ -13,11 +15,14 @@ interface Props {
     onDelete: () => void;
     onCreate: () => void;
     onMerge: () => void;
+    onClose: () => void;
+    customActions: CustomAction[];
+    contactList: ReturnType<typeof useContactList>;
 }
 
 const ContactsWidgetToolbar = ({
     allChecked,
-    selectedCount,
+    selected,
     noEmailsContactCount,
     onCheckAll,
     onCompose,
@@ -25,7 +30,11 @@ const ContactsWidgetToolbar = ({
     onDelete,
     onCreate,
     onMerge,
+    onClose,
+    customActions,
+    contactList,
 }: Props) => {
+    const selectedCount = selected.length;
     const handleCheck = ({ target }: ChangeEvent<HTMLInputElement>) => onCheckAll(target.checked);
     const noEmailInSelected = noEmailsContactCount === selectedCount;
     const noSelection = !selectedCount;
@@ -80,6 +89,7 @@ const ContactsWidgetToolbar = ({
                     </Tooltip>
                 </>
             ) : null}
+            {customActions.map((action) => action.render({ contactList, noSelection, onClose, selected }))}
             <Tooltip title={c('Action').t`Merge contacts`}>
                 <Button
                     icon

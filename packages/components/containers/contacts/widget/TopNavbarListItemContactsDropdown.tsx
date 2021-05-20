@@ -12,6 +12,7 @@ import TopNavbarListItemButton, {
     TopNavbarListItemButtonProps,
 } from '../../../components/topnavbar/TopNavbarListItemButton';
 import ImportModal from '../import/ImportModal';
+import { CONTACT_WIDGET_TABS, CustomAction } from './types';
 
 const TopNavbarListItemContactsButton = React.forwardRef(
     (props: Omit<TopNavbarListItemButtonProps<'button'>, 'icon' | 'text' | 'as'>, ref: typeof props.ref) => {
@@ -31,13 +32,17 @@ const TopNavbarListItemContactsButton = React.forwardRef(
 interface Props {
     className?: string;
     onCompose?: (emails: Recipient[], attachments: File[]) => void;
+    customActions?: CustomAction[];
 }
 
-const TopNavbarListItemContactsDropdown = ({ className, onCompose }: Props) => {
+const TopNavbarListItemContactsDropdown = ({ className, onCompose, customActions = [] }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [tabIndex, setTabIndex] = useState(0);
     const { createModal } = useModals();
+
+    const actionIncludes = (tab: CONTACT_WIDGET_TABS) => (customAction: CustomAction) =>
+        customAction.tabs.includes(tab);
 
     const handleClose = () => {
         setTabIndex(0);
@@ -92,12 +97,19 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose }: Props) => {
                                     onClose={handleClose}
                                     onCompose={onCompose}
                                     onImport={handleImport}
+                                    customActions={customActions.filter(actionIncludes(CONTACT_WIDGET_TABS.CONTACTS))}
                                 />
                             ),
                         },
                         {
                             title: c('Title').t`Groups`,
-                            content: <ContactsWidgetGroupsContainer onClose={handleClose} onCompose={onCompose} />,
+                            content: (
+                                <ContactsWidgetGroupsContainer
+                                    onClose={handleClose}
+                                    onCompose={onCompose}
+                                    customActions={customActions.filter(actionIncludes(CONTACT_WIDGET_TABS.GROUPS))}
+                                />
+                            ),
                         },
                         {
                             title: c('Title').t`Settings`,

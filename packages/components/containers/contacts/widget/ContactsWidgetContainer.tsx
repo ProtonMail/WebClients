@@ -16,14 +16,16 @@ import ContactDeleteModal from '../modals/ContactDeleteModal';
 import ContactModal from '../modals/ContactModal';
 import ContactsWidgetPlaceholder, { EmptyType } from './ContactsWidgetPlaceholder';
 import MergeContactBanner from './MergeContactBanner';
+import { CustomAction } from './types';
 
 interface Props {
     onClose: () => void;
     onImport: () => void;
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;
+    customActions: CustomAction[];
 }
 
-const ContactsWidgetContainer = ({ onClose, onImport, onCompose }: Props) => {
+const ContactsWidgetContainer = ({ onClose, onImport, onCompose, customActions }: Props) => {
     const [user, loadingUser] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [userKeysList, loadingUserKeys] = useUserKeys();
@@ -41,6 +43,12 @@ const ContactsWidgetContainer = ({ onClose, onImport, onCompose }: Props) => {
     // To use when the widget will deal with groups
     const contactGroupID = '';
 
+    const contactList = useContactList({
+        search,
+        contactID,
+        contactGroupID,
+    });
+
     const {
         formattedContacts,
         checkedIDs,
@@ -54,11 +62,7 @@ const ContactsWidgetContainer = ({ onClose, onImport, onCompose }: Props) => {
         filteredContacts,
         hasCheckedAllFiltered,
         loading: loadingContacts,
-    } = useContactList({
-        search,
-        contactID,
-        contactGroupID,
-    });
+    } = contactList;
 
     const mergeableContacts = useMemo(() => extractMergeable(formattedContacts), [formattedContacts]);
     const countMergeableContacts = mergeableContacts.reduce(
@@ -211,14 +215,17 @@ const ContactsWidgetContainer = ({ onClose, onImport, onCompose }: Props) => {
             <div className="contacts-widget-toolbar pt1 pb1 border-bottom flex-item-noshrink">
                 <ContactsWidgetToolbar
                     allChecked={hasCheckedAllFiltered}
-                    selectedCount={selectedIDs.length}
+                    selected={selectedIDs}
                     noEmailsContactCount={noEmailsContactIDs.length}
                     onCheckAll={handleCheckAll}
                     onCompose={onCompose ? handleCompose : undefined}
+                    customActions={customActions}
+                    contactList={contactList}
                     onForward={handleForward}
                     onCreate={handleCreate}
                     onDelete={handleDelete}
                     onMerge={() => handleMerge(false)}
+                    onClose={onClose}
                 />
             </div>
             <div className="flex-item-fluid w100">

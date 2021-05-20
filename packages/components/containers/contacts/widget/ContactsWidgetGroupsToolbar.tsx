@@ -1,27 +1,39 @@
 import React, { ChangeEvent } from 'react';
 import { c, msgid } from 'ttag';
 
+import { Recipient, SimpleMap } from 'proton-shared/lib/interfaces';
+import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { Checkbox, Icon, Button, Tooltip } from '../../../components';
+import { CustomAction } from './types';
 
 interface Props {
     allChecked: boolean;
-    selectedCount: number;
+    selected: string[];
     numberOfRecipients: number;
     onCheckAll: (checked: boolean) => void;
     onCompose?: () => void;
     onCreate: () => void;
     onDelete: () => void;
+    customActions: CustomAction[];
+    groupsEmailsMap: SimpleMap<ContactEmail[]>;
+    recipients: Recipient[];
+    onClose: () => void;
 }
 
 const ContactsWidgetGroupsToolbar = ({
     allChecked,
-    selectedCount,
+    selected,
     numberOfRecipients,
     onCheckAll,
     onCompose,
     onCreate,
     onDelete,
+    customActions,
+    groupsEmailsMap,
+    recipients,
+    onClose,
 }: Props) => {
+    const selectedCount = selected.length;
     const handleCheck = ({ target }: ChangeEvent<HTMLInputElement>) => onCheckAll(target.checked);
     const noContactInSelected = !selectedCount || !numberOfRecipients;
     const noSelection = !selectedCount;
@@ -61,6 +73,9 @@ const ContactsWidgetGroupsToolbar = ({
                     </Button>
                 </Tooltip>
             ) : null}
+            {customActions.map((action) =>
+                action.render({ groupsEmailsMap, recipients, noSelection, onClose, selected })
+            )}
             <Tooltip>
                 <Button
                     icon
