@@ -18,7 +18,7 @@ const LossLoyaltyModal = ({ organization, ...rest }: Props) => {
             {...rest}
         >
             <Paragraph>{c('Info')
-                .t`Since you're an early access user, your account has additional features enabled.`}</Paragraph>
+                .t`Since you're a loyal user, your account has additional features enabled.`}</Paragraph>
             <Alert type="warning">
                 {c('Info')
                     .t`By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.`}
