@@ -1,6 +1,6 @@
 import React, { forwardRef, Ref, useRef } from 'react';
 import { c } from 'ttag';
-import Header from './Header';
+import Header, { SharedStatus } from './Header';
 import ImagePreview from './ImagePreview';
 import PreviewLoader from './PreviewLoader';
 import TextPreview from './TextPreview';
@@ -16,12 +16,26 @@ interface Props {
     mimeType?: string;
     navigationControls?: React.ReactNode;
     contents?: Uint8Array[];
+    sharedStatus?: SharedStatus;
     onClose?: () => void;
     onSave?: () => void;
+    onDetail?: () => void;
+    onShare?: () => void;
 }
 
 const FilePreview = (
-    { contents, fileName, mimeType, loading, navigationControls, onClose, onSave }: Props,
+    {
+        contents,
+        fileName,
+        mimeType,
+        loading,
+        navigationControls,
+        sharedStatus,
+        onClose,
+        onSave,
+        onDetail,
+        onShare,
+    }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
     const rootRef = useRef<HTMLDivElement>(null);
@@ -66,7 +80,15 @@ const FilePreview = (
 
     return (
         <div className="file-preview ui-prominent" ref={combinedRefs} {...focusTrapProps}>
-            <Header mimeType={mimeType} name={fileName} onClose={onClose} onSave={onSave}>
+            <Header
+                mimeType={mimeType}
+                name={fileName}
+                sharedStatus={sharedStatus}
+                onClose={onClose}
+                onSave={onSave}
+                onDetail={onDetail}
+                onShare={onShare}
+            >
                 {navigationControls}
             </Header>
             {loading ? <PreviewLoader /> : renderPreview()}
