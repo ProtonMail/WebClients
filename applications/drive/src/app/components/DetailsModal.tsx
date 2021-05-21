@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Row, Label, Field, DialogModal, HeaderModal, InnerModal, FooterModal, PrimaryButton } from 'react-components';
@@ -11,6 +11,8 @@ import TimeCell from './FileBrowser/ListView/Cells/TimeCell';
 import SizeCell from './FileBrowser/ListView/Cells/SizeCell';
 import NameCell from './FileBrowser/ListView/Cells/NameCell';
 import MIMETypeCell from './FileBrowser/ListView/Cells/MIMETypeCell';
+
+import useSharing from '../hooks/drive/useSharing';
 
 interface Props {
     shareId: string;
@@ -39,6 +41,25 @@ const DetailsModal = ({ shareId, item, onClose, ...rest }: Props) => {
     const isFile = item.Type === LinkType.FILE;
     const title = isFile ? c('Title').t`File details` : c('Title').t`Folder details`;
     const isShared = item.SharedUrl && !item.UrlsExpired ? c('Info').t`Yes` : c('Info').t`No`;
+
+    const { getSharedURLs } = useSharing();
+    const [numberOfAccesses, setNumberOfAccesses] = useState<number | null>(null);
+    const [loadingNumberOfAccesses, setLoadingNumberOfAccesses] = useState(false);
+
+    useEffect(() => {
+        if (!item.ShareUrlShareID) {
+            return;
+        }
+        setLoadingNumberOfAccesses(true);
+        getSharedURLs(item.ShareUrlShareID)
+            .then(({ ShareURLs: [sharedUrl] }) => {
+                setNumberOfAccesses(sharedUrl.NumAccesses);
+            })
+            .catch(console.error)
+            .finally(() => {
+                setLoadingNumberOfAccesses(false);
+            });
+    }, [item.ShareUrlShareID]);
 
     return (
         <DialogModal modalTitleID={modalTitleID} onClose={onClose} {...rest}>
@@ -71,6 +92,11 @@ const DetailsModal = ({ shareId, item, onClose, ...rest }: Props) => {
                                 <SizeCell size={item.Size} />
                             </DetailsRow>
                             <DetailsRow label={c('Title').t`Shared`}>{isShared}</DetailsRow>
+                            {(numberOfAccesses !== null || loadingNumberOfAccesses) && (
+                                <DetailsRow label={c('Title').t`# of accesses`}>
+                                    {loadingNumberOfAccesses ? c('Info').t`Loading` : numberOfAccesses}
+                                </DetailsRow>
+                            )}
                         </>
                     )}
                 </InnerModal>

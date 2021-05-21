@@ -128,7 +128,7 @@ const ItemRow = ({
                 <TableCell className="m0 flex flex-align-items-center flex-nowrap flex-item-fluid">
                     <FileIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType} alt={iconText} />
                     <NameCell name={item.Name} />
-                    {item.SharedUrl && <SharedURLIcon expired={item.UrlsExpired} />}
+                    {item.SharedUrl && <SharedURLIcon shareId={shareId} item={item} />}
                     {showShareOnHover && <ShareCell shareId={shareId} item={item} />}
                 </TableCell>
 
