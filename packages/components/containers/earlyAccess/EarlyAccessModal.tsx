@@ -54,7 +54,7 @@ const EarlyAccessModal = (props: { onClose?: () => void }) => {
                         onChange={handleChange}
                         className="mr0-5"
                     />
-                    {c('Label').t`Enable Beta access`}
+                    {c('Label').t`Enable Beta Access`}
                 </label>
             </div>
             <p className="mb0-5 color-weak">
