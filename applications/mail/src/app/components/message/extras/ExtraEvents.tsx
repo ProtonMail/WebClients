@@ -1,18 +1,3 @@
-import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
-import { RequireSome } from 'proton-shared/lib/interfaces/utils';
-import { getAttachments } from 'proton-shared/lib/mail/messages';
-import React, { useEffect, useState } from 'react';
-import {
-    useApi,
-    useGetCalendars,
-    useContactEmails,
-    useAddresses,
-    useLoading,
-    useUserSettings,
-    useGetCalendarUserSettings,
-    useUser,
-    useIsMounted,
-} from 'react-components';
 import { arrayToBinaryString, decodeUtf8 } from 'pmcrypto';
 import {
     getCanCreateCalendar,
@@ -23,8 +8,23 @@ import {
 } from 'proton-shared/lib/calendar/calendar';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
+import { RequireSome } from 'proton-shared/lib/interfaces/utils';
+import { getAttachments } from 'proton-shared/lib/mail/messages';
+import React, { useEffect, useState } from 'react';
+import {
+    useAddresses,
+    useApi,
+    useContactEmails,
+    useGetCalendars,
+    useGetCalendarUserSettings,
+    useIsMounted,
+    useLoading,
+    useUser,
+    useUserSettings,
+} from 'react-components';
 import { useAttachmentCache } from '../../../containers/AttachmentProvider';
+import { updateMessageCache, useMessageCache } from '../../../containers/MessageProvider';
 import { formatDownload } from '../../../helpers/attachment/attachmentDownloader';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from '../../../helpers/calendar/EventInvitationError';
 import {
@@ -33,14 +33,14 @@ import {
     getSupportedEventInvitation,
     parseEventInvitation,
 } from '../../../helpers/calendar/invite';
-import { MessageErrors, MessageExtendedWithData } from '../../../models/message';
-import ExtraEvent from './calendar/ExtraEvent';
-import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import { isNetworkError } from '../../../helpers/errors';
-import { updateMessageCache, useMessageCache } from '../../../containers/MessageProvider';
+import { getMessageHasData } from '../../../helpers/message/messages';
+import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
+import { MessageErrors, MessageExtended } from '../../../models/message';
+import ExtraEvent from './calendar/ExtraEvent';
 
 interface Props {
-    message: MessageExtendedWithData;
+    message: MessageExtended;
 }
 const ExtraEvents = ({ message }: Props) => {
     const api = useApi();
@@ -49,16 +49,13 @@ const ExtraEvents = ({ message }: Props) => {
     const attachmentCache = useAttachmentCache();
     const messageCache = useMessageCache();
     const getCalendars = useGetCalendars();
-    const [contactEmails = [], loadingContactEmails] = useContactEmails() as [
-        ContactEmail[] | undefined,
-        boolean,
-        Error
-    ];
+    const [contactEmails = [], loadingContactEmails] = useContactEmails();
     const [addresses = [], loadingAddresses] = useAddresses();
     const [user, loadingUser] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const getCalendarUserSettings = useGetCalendarUserSettings();
     const [loadingWidget, withLoadingWidget] = useLoading();
+    const [widgetHasLoaded, setWidgetHasLoaded] = useState(false);
     const [invitations, setInvitations] = useState<(RequireSome<EventInvitation, 'method'> | EventInvitationError)[]>(
         []
     );
@@ -69,6 +66,7 @@ const ExtraEvents = ({ message }: Props) => {
         mustReactivateCalendars: boolean;
     }>({ canCreateCalendar: true, maxUserCalendarsDisabled: false, mustReactivateCalendars: false });
     const loadingConfigs = loadingContactEmails || loadingAddresses || loadingUserSettings || loadingUser;
+    const messageHasDecryptionError = !!message.errors?.decryption?.length;
 
     useEffect(() => {
         try {
@@ -78,7 +76,7 @@ const ExtraEvents = ({ message }: Props) => {
                 setInvitations([]);
                 return;
             }
-            if (message.errors?.decryption?.length || loadingConfigs) {
+            if (messageHasDecryptionError || loadingConfigs || !getMessageHasData(message) || widgetHasLoaded) {
                 return;
             }
             const run = async () => {
@@ -145,6 +143,7 @@ const ExtraEvents = ({ message }: Props) => {
             };
 
             void withLoadingWidget(run());
+            void setWidgetHasLoaded(true);
         } catch (error) {
             const errors: MessageErrors = {};
             if (isNetworkError(error)) {
@@ -154,9 +153,9 @@ const ExtraEvents = ({ message }: Props) => {
             }
             updateMessageCache(messageCache, message.localID, { errors });
         }
-    }, [message.data, message.data.AddressID, message.errors, loadingConfigs]);
+    }, [message.data, message.errors, loadingConfigs]);
 
-    if (loadingConfigs || loadingWidget) {
+    if (loadingConfigs || messageHasDecryptionError || !getMessageHasData(message) || loadingWidget) {
         return null;
     }
 

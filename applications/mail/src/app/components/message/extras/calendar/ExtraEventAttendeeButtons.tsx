@@ -1,6 +1,6 @@
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
 import { reformatApiErrorMessage } from 'proton-shared/lib/calendar/helper';
-import { getAttendeePartstat } from 'proton-shared/lib/calendar/vcalHelper';
+import { getAttendeePartstat, getAttendeeToken } from 'proton-shared/lib/calendar/vcalHelper';
 import { omit } from 'proton-shared/lib/helpers/object';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { Participant, SavedInviteData } from 'proton-shared/lib/interfaces/calendar';
@@ -74,6 +74,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
                 ...attendee,
                 vcalComponent: savedVcalAttendee,
                 partstat: getAttendeePartstat(savedVcalAttendee),
+                token: getAttendeeToken(savedVcalAttendee),
             };
             const invitationApiToSave = {
                 ...invitationApi,
@@ -180,16 +181,21 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
     if (error && [EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR].includes(error.type)) {
         const { partstat, timestamp } = error;
         const { retryCreateEvent, retryUpdateEvent } = actions;
+        const isUpdate = error.type === EVENT_UPDATE_ERROR;
         const message = getErrorMessage(error.type);
-        const handleRetry =
-            partstat && timestamp
-                ? () =>
-                      withLoadingRetry(
-                          error.type === EVENT_UPDATE_ERROR
-                              ? retryUpdateEvent(partstat, timestamp)
-                              : retryCreateEvent(partstat)
-                      )
-                : () => withLoadingRetry(wait(0));
+
+        const handleRetry = () => {
+            if (!partstat) {
+                return withLoadingRetry(wait(0));
+            }
+            if (!isUpdate) {
+                return retryCreateEvent(partstat);
+            }
+            if (timestamp !== undefined) {
+                return retryUpdateEvent(partstat, timestamp);
+            }
+            return withLoadingRetry(wait(0));
+        };
 
         if (loadingRetry) {
             return <Loader className="center flex mt1 mb1 " />;
