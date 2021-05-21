@@ -126,7 +126,8 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
             onSave={saveFile}
             ref={rootRef}
             navigationControls={
-                meta && (
+                meta &&
+                currentOpenIndex !== -1 && (
                     <NavigationControl
                         current={currentOpenIndex + 1}
                         total={linksAvailableForPreview.length}
