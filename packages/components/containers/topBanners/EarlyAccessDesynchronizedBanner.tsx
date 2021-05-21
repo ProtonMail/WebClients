@@ -26,7 +26,7 @@ const EarlyAccessDesynchronizedBanner = () => {
             }}
         >
             {
-                // translator: complete sentence example: "You have enabled/disabled Early Access. Click <here> to use the latest version of <ProtonMail>."
+                // translator: complete sentence example: "You have enabled Beta Access. Click <here> to use the latest/stable version of <ProtonMail>. The application will be reloaded."
                 c('Action').t`here`
             }
         </InlineLinkButton>
@@ -43,12 +43,12 @@ const EarlyAccessDesynchronizedBanner = () => {
     return (
         <TopBanner className="bg-info">
             {earlyAccess.value
-                ? // translator: complete sentence example: "You have enabled Early Access. Click <here> to use the latest version of <ProtonMail>. The application will be reloaded."
+                ? // translator: complete sentence example: "You have enabled Beta Access. Click <here> to use the latest version of <ProtonMail>. The application will be reloaded."
                   c('Info')
-                      .jt`You have enabled Early Access. Click ${refreshButton} to use the latest version of ${appName}. The application will be reloaded.`
-                : // translator: complete sentence example: "You have disabled Early Access. Click <here> to use the latest version of <ProtonMail>. The application will be reloaded."
+                      .jt`You have enabled Beta Access. Click ${refreshButton} to use the latest version of ${appName}. The application will be reloaded.`
+                : // translator: complete sentence example: "You have disabled Beta Access. Click <here> to use the latest version of <ProtonMail>. The application will be reloaded."
                   c('Info')
-                      .jt`You have disabled Early Access. Click ${refreshButton} to use the stable version of ${appName}. The application will be reloaded.`}
+                      .jt`You have disabled Beta Access. Click ${refreshButton} to use the stable version of ${appName}. The application will be reloaded.`}
         </TopBanner>
     );
 };

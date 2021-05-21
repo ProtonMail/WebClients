@@ -37,7 +37,7 @@ const BetaOnboardingModal = (props: any) => {
                     <OnboardingContent
                         title={c('Onboarding Beta').t`Beta enabled`}
                         description={c('Onboarding Beta')
-                            .t`To disable beta, open the settings dropdown menu and click on the "early access" option.`}
+                            .t`To disable beta, open the settings dropdown menu and click on the “Beta access” option.`}
                         img={<img src={earlyAccessSvg} alt={c('Onboarding Beta').t`Beta enabled`} />}
                     />
                 </OnboardingStep>

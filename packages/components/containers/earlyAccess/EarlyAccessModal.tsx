@@ -37,10 +37,14 @@ const EarlyAccessModal = (props: { onClose?: () => void }) => {
             loading={earlyAccess.loading}
             onSubmit={update}
         >
-            <div className="h2">{c('Title').t`Early access`}</div>
+            <div className="h2">{c('Title').t`Beta Access`}</div>
             <p>
-                {c('Early access description')
-                    .t`Early access gives you access to the beta version of Proton which has new features and improvements. Our beta versions undergo the same reliability testing as our public versions, but if you encounter any issues, you can switch off early access.`}
+                {c('Beta access description')
+                    .t`Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.`}
+            </p>
+            <p>
+                {c('Beta access description')
+                    .t`If you encounter issues, you can always disable Beta Access.`}
             </p>
             <div className="mb0-5 flex flex-align-items-center">
                 <label className="flex flex-nowrap" htmlFor="enable-early-access-checkbox">
@@ -50,12 +54,12 @@ const EarlyAccessModal = (props: { onClose?: () => void }) => {
                         onChange={handleChange}
                         className="mr0-5"
                     />
-                    {c('Label').t`Enable early access`}
+                    {c('Label').t`Enable Beta access`}
                 </label>
             </div>
             <p className="mb0-5 color-weak">
                 {c('Refresh on apply warning')
-                    .t`Note: upon clicking the "Apply" button, the application will be reloaded`}
+                    .t`Note: the service will reload after you click the Apply button.`}
             </p>
         </FormModal>
     );
