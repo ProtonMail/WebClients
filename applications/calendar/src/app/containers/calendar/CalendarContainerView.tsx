@@ -361,7 +361,7 @@ const CalendarContainerView = ({
             logo={logo}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
-            onCreateEvent={() => onCreateEvent?.()}
+            onCreateEvent={onCreateEvent ? () => onCreateEvent?.() : undefined}
             miniCalendar={
                 <LocalizedMiniCalendar
                     min={MINIMUM_DATE}
