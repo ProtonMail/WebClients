@@ -232,7 +232,13 @@ export default ({ call, UID, onUnlock, onVerification }) => {
                     const onVerify = (token, tokenType) => {
                         return call({
                             ...options,
-                            silence: [...(Array.isArray(silence) ? silence : []), API_CUSTOM_ERROR_CODES.TOKEN_INVALID],
+                            silence:
+                                silence === true
+                                    ? true
+                                    : [
+                                          ...(Array.isArray(silence) ? silence : []),
+                                          API_CUSTOM_ERROR_CODES.TOKEN_INVALID,
+                                      ],
                             headers: {
                                 ...options.headers,
                                 'x-pm-human-verification-token': token,
