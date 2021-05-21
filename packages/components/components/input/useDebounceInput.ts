@@ -9,6 +9,9 @@ export default function useDebounceInput<T>(value: T, delay = 500) {
     }, []);
 
     useEffect(() => {
+        if (!delay) {
+            return setCurrentValue(value);
+        }
         interval.current = window.setTimeout(() => {
             setCurrentValue(value);
         }, delay);
@@ -17,5 +20,5 @@ export default function useDebounceInput<T>(value: T, delay = 500) {
 
     useEffect(() => clean, []);
 
-    return currentValue;
+    return !delay ? value : currentValue;
 }

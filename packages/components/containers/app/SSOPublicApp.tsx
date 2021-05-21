@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { InvalidPersistentSessionError } from 'proton-shared/lib/authentication/error';
 import { getLocalIDFromPathname } from 'proton-shared/lib/authentication/pathnameHelper';
 import { resumeSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
-import { getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+import { getApiErrorMessage, getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 
 import { useApi, useErrorHandler } from '../../hooks';
 import LoaderPage from './LoaderPage';
@@ -14,8 +14,9 @@ interface Props {
     onLogin: ProtonLoginCallback;
     onInactiveSession: (localID?: number) => void;
 }
+
 const SSOPublicApp = ({ onLogin, onInactiveSession }: Props) => {
-    const [error, setError] = useState<Error | undefined>();
+    const [error, setError] = useState<{ message?: string } | null>(null);
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
@@ -39,12 +40,14 @@ const SSOPublicApp = ({ onLogin, onInactiveSession }: Props) => {
         };
         run().catch((e) => {
             errorHandler(e);
-            setError(e);
+            setError({
+                message: getApiErrorMessage(e),
+            });
         });
     }, []);
 
     if (error) {
-        return <StandardLoadErrorPage />;
+        return <StandardLoadErrorPage errorMessage={error.message} />;
     }
 
     return (

@@ -1,7 +1,8 @@
 import { createContext } from 'react';
 
 export const defaultApiStatus = {
-    apiUnreachable: false,
+    offline: false,
+    apiUnreachable: '',
     appVersionBad: false,
 };
 
