@@ -67,7 +67,7 @@ describe('string', () => {
         });
 
         it('should remove undesired characters', () => {
-            expect(getInitials('Thomas Anderson (@neo) ')).toEqual('TN');
+            expect(getInitials('Thomas Anderson (@neo)')).toEqual('TA');
         });
     });
 
