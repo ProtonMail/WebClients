@@ -23,24 +23,6 @@ export const AppVersionBadError = () => {
     return error;
 };
 
-export const RetryError = () => {
-    const error = new Error('Retry-After');
-    error.name = 'RetryAfterError';
-    return error;
-};
-
-export const CancelUnlockError = () => {
-    const error = new Error('Cancel unlock');
-    error.name = 'CancelUnlock';
-    return error;
-};
-
-export const CancelVerificationError = () => {
-    const error = new Error('Cancel verification');
-    error.name = 'CancelVerification';
-    return error;
-};
-
 /**
  * Handle retry-after
  * @param {Error} e
@@ -54,7 +36,7 @@ const retryHandler = (e) => {
     const retryAfterSeconds = parseInt(headers.get('retry-after') || 0, 10);
 
     if (retryAfterSeconds < 0 || retryAfterSeconds >= RETRY_DELAY_MAX) {
-        return Promise.reject(RetryError());
+        return Promise.reject(e);
     }
 
     return wait(retryAfterSeconds * 1000);
@@ -100,11 +82,10 @@ const refresh = (call, UID, attempts, maxAttempts) => {
  * @param {function} call
  * @param {string} UID
  * @param {function} onUnlock
- * @param {function} onError
  * @param {function} onVerification
  * @return {function}
  */
-export default ({ call, UID, onUnlock, onError, onVerification }) => {
+export default ({ call, UID, onUnlock, onVerification }) => {
     let loggedOut = false;
     let appVersionBad = false;
 
@@ -156,23 +137,19 @@ export default ({ call, UID, onUnlock, onError, onVerification }) => {
     return (options) => {
         const perform = (attempts, maxAttempts) => {
             if (loggedOut) {
-                return Promise.resolve().then(() => {
-                    return onError(InactiveSessionError());
-                });
+                return Promise.reject(InactiveSessionError());
             }
             if (appVersionBad) {
-                return Promise.resolve().then(() => {
-                    return onError(AppVersionBadError());
-                });
+                return Promise.reject(AppVersionBadError());
             }
 
             return call(options).catch((e) => {
                 if (loggedOut) {
-                    return onError(InactiveSessionError());
+                    throw InactiveSessionError();
                 }
 
                 if (maxAttempts && attempts >= maxAttempts) {
-                    return onError(e);
+                    throw e;
                 }
 
                 const { status, name, response } = e;
@@ -187,14 +164,14 @@ export default ({ call, UID, onUnlock, onError, onVerification }) => {
 
                 if (name === 'OfflineError') {
                     if (attempts > retriesOnOffline) {
-                        return onError(e);
+                        throw e;
                     }
                     return wait(OFFLINE_RETRY_DELAY).then(() => perform(attempts + 1, retriesOnOffline));
                 }
 
                 if (name === 'TimeoutError') {
                     if (attempts > retriesOnTimeout) {
-                        return onError(e);
+                        throw e;
                     }
                     return perform(attempts + 1, retriesOnTimeout);
                 }
@@ -213,14 +190,14 @@ export default ({ call, UID, onUnlock, onError, onVerification }) => {
                         () => perform(attempts + 1, RETRY_ATTEMPTS_MAX),
                         (error) => {
                             // Any 4xx and the session is no longer valid, 429 is already handled in the refreshHandler
-                            if ((error.status >= 400 && error.status <= 499) || error.name === 'RetryAfterError') {
+                            if (error.status >= 400 && error.status <= 499) {
                                 // Disable any further requests on this session if it was created with a UID
                                 if (UID) {
                                     loggedOut = true;
                                 }
-                                return onError(InactiveSessionError());
+                                throw InactiveSessionError();
                             }
-                            return onError(error);
+                            throw error;
                         }
                     );
                 }
@@ -228,26 +205,20 @@ export default ({ call, UID, onUnlock, onError, onVerification }) => {
                 const ignoreUnlock = Array.isArray(ignoreHandler) && ignoreHandler.includes(HTTP_ERROR_CODES.UNLOCK);
                 if (status === HTTP_ERROR_CODES.UNLOCK && !ignoreUnlock) {
                     const { Details: { MissingScopes: missingScopes = [] } = {} } = e.data || {};
-                    return unlockHandler(missingScopes, e).then(
-                        () => perform(attempts + 1, RETRY_ATTEMPTS_MAX),
-                        (unlockError) => onError(unlockError)
-                    );
+                    return unlockHandler(missingScopes, e).then(() => perform(attempts + 1, RETRY_ATTEMPTS_MAX));
                 }
 
                 const ignoreTooManyRequests =
                     Array.isArray(ignoreHandler) && ignoreHandler.includes(HTTP_ERROR_CODES.TOO_MANY_REQUESTS);
                 if (status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS && !ignoreTooManyRequests) {
-                    return retryHandler(e).then(
-                        () => perform(attempts + 1, RETRY_ATTEMPTS_MAX),
-                        () => onError(e)
-                    );
+                    return retryHandler(e).then(() => perform(attempts + 1, RETRY_ATTEMPTS_MAX));
                 }
 
                 const { code } = getApiError(e);
 
                 if (code === API_CUSTOM_ERROR_CODES.APP_VERSION_BAD) {
                     appVersionBad = true;
-                    return onError(AppVersionBadError());
+                    throw AppVersionBadError();
                 }
 
                 const ignoreHumanVerification =
@@ -267,13 +238,13 @@ export default ({ call, UID, onUnlock, onError, onVerification }) => {
                                 'x-pm-human-verification-token': token,
                                 'x-pm-human-verification-token-type': tokenType,
                             },
-                        }).catch(onError);
+                        });
                     };
 
-                    return onVerification({ token: captchaToken, methods, onVerify });
+                    return onVerification({ token: captchaToken, methods, onVerify }, e);
                 }
 
-                return onError(e);
+                throw e;
             });
         };
 
