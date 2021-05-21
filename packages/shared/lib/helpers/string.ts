@@ -101,7 +101,7 @@ export const truncateMore = ({ string = '', charsToDisplayStart = 0, charsToDisp
 
 export const getInitials = (fullName = '') => {
     const [first = '', ...rest] = fullName
-        .replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, '') // Remove specific punctuation
+        .replace(/[.,/#!$@%^&*;:{}=\-_`~()]/g, '') // Remove specific punctuation
         .replace(/\s{2,}/g, ' ')
         .split(' ');
     const last = rest[rest.length - 1];
