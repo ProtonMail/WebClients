@@ -26,10 +26,7 @@ import { differenceInCalendarDays } from 'date-fns';
 import { fromUTCDate, toLocalDate } from 'proton-shared/lib/date/timezone';
 import { AttendeeModel, Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { APPS } from 'proton-shared/lib/constants';
-import {
-    CONTACT_WIDGET_TABS,
-    CustomActionRenderProps,
-} from 'react-components/containers/contacts/widget/TopNavbarListItemContactsDropdown';
+import { CONTACT_WIDGET_TABS, CustomActionRenderProps } from 'react-components/containers/contacts/widget/types';
 import { emailToAttendee } from 'proton-shared/lib/calendar/attendees';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { Address } from 'proton-shared/lib/interfaces';
