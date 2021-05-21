@@ -17,6 +17,7 @@ const DuplicateAttendeesModal = ({ onClose, duplicateAttendees, ...rest }: Props
             onSubmit={onClose}
             onClose={noop}
             hasClose={false}
+            noTitleEllipsis
             small
             {...rest}
         >
