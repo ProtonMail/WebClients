@@ -117,14 +117,18 @@ const getVeventWithAlarms = async ({
     };
 };
 
-const getIsNonSoughtEvent = (event: CalendarEventWithMetadata, vevent: VcalVeventComponent) => {
+const getIsNonSoughtEvent = (
+    event: CalendarEventWithMetadata,
+    vevent: VcalVeventComponent,
+    supportedRecurrenceId?: VcalDateOrDateTimeProperty
+) => {
     if (!event.RecurrenceID) {
         return false;
     }
     if (!getHasRecurrenceId(vevent)) {
         return true;
     }
-    return getUnixTime(propertyToUTCDate(vevent['recurrence-id'])) !== event.RecurrenceID;
+    return getUnixTime(propertyToUTCDate(supportedRecurrenceId || vevent['recurrence-id'])) !== event.RecurrenceID;
 };
 
 export type FetchAllEventsByUID = ({
@@ -175,7 +179,7 @@ const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, api, recurrenceId
                       otherEvents: otherRecoveredEvents,
                       parentEvent,
                       otherParentEvents,
-                      recurrenceId: supportedRecurrenceId,
+                      supportedRecurrenceId,
                   }
                 : { event: parentEvent, otherEvents: otherParentEvents, supportedRecurrenceId };
         } catch (e) {
@@ -240,7 +244,7 @@ export const fetchEventInvitation: FetchEventInvitation = async ({
         calendarKeys: decryptedCalendarKeys,
     };
     // if we retrieved a single edit when not looking for one, or looking for another one, do not return it
-    if (!calendarEvent || getIsNonSoughtEvent(calendarEvent, veventComponent)) {
+    if (!calendarEvent || getIsNonSoughtEvent(calendarEvent, veventComponent, supportedRecurrenceId)) {
         return { calendarData };
     }
     const singleEditData = getSingleEditWidgetData(allEventsWithUID);
