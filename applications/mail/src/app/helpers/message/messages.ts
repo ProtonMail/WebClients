@@ -1,8 +1,8 @@
+import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { getAttachments } from 'proton-shared/lib/mail/messages';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
-import { MessageExtended, PartialMessageExtended } from '../../models/message';
+import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
 import { getContent, setContent } from './messageContent';
 
 const { ALL_DRAFTS, ALL_SENT, DRAFTS, SENT, SPAM, INBOX } = MAILBOX_LABEL_IDS;
@@ -49,3 +49,5 @@ export const getMessagesAuthorizedToMove = (messages: Message[], destinationFold
         return true;
     });
 };
+
+export const getMessageHasData = (message: MessageExtended): message is MessageExtendedWithData => !!message.data;

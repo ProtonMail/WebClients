@@ -9,7 +9,7 @@ import ExtraExpirationTime from '../extras/ExtraExpirationTime';
 import ExtraEvents from '../extras/ExtraEvents';
 import ExtraPinKey from '../extras/ExtraPinKey';
 import ExtraAskResign from '../extras/ExtraAskResign';
-import { MessageExtended, MessageExtendedWithData } from '../../../models/message';
+import { MessageExtended } from '../../../models/message';
 import ExtraErrors from '../extras/ExtraErrors';
 import ExtraDecryptedSubject from '../extras/ExtraDecryptedSubject';
 import { OnCompose } from '../../../hooks/composer/useCompose';
@@ -51,7 +51,7 @@ const HeaderExtra = ({
             />
             {!sourceMode && <ExtraImages message={message} type="remote" onLoadImages={onLoadRemoteImages} />}
             {!sourceMode && <ExtraImages message={message} type="embedded" onLoadImages={onLoadEmbeddedImages} />}
-            {messageLoaded && received ? <ExtraEvents message={message as MessageExtendedWithData} /> : null}
+            {messageLoaded && received ? <ExtraEvents message={message} /> : null}
         </section>
     );
 };

@@ -707,6 +707,12 @@ export const createCalendarEventFromInvitation = async ({
         veventToSave.attendee[attendeeIndex] = vcalAttendeeToSave;
     }
     const veventToSaveWithPmAttendees = await withPmAttendees(veventToSave, getCanonicalEmailsMap);
+    const vcalPmAttendeeToSave = pmData
+        ? veventToSaveWithPmAttendees?.attendee?.[0]
+        : veventToSaveWithPmAttendees?.attendee?.[attendeeIndex];
+    if (!vcalPmAttendeeToSave) {
+        throw new Error('Failed to generate PM attendee');
+    }
     // create calendar event
     const payload = {
         eventComponent: veventToSaveWithPmAttendees,
@@ -757,7 +763,7 @@ export const createCalendarEventFromInvitation = async ({
     return {
         savedEvent: Event,
         savedVevent: veventToSaveWithPmAttendees,
-        savedVcalAttendee: vcalAttendeeToSave,
+        savedVcalAttendee: vcalPmAttendeeToSave,
     };
 };
 
