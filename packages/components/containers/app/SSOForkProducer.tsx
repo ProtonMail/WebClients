@@ -10,7 +10,7 @@ import {
     ProduceForkParameters,
 } from 'proton-shared/lib/authentication/sessionForking';
 import { InvalidPersistentSessionError } from 'proton-shared/lib/authentication/error';
-import { getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+import { getApiErrorMessage, getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 
 import { useApi, useErrorHandler } from '../../hooks';
@@ -23,7 +23,7 @@ interface Props {
 }
 
 const SSOForkProducer = ({ onActiveSessions, onInvalidFork }: Props) => {
-    const [error, setError] = useState<Error | undefined>();
+    const [error, setError] = useState<{ message?: string } | null>(null);
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
@@ -81,12 +81,14 @@ const SSOForkProducer = ({ onActiveSessions, onInvalidFork }: Props) => {
         };
         run().catch((e) => {
             errorHandler(e);
-            setError(e);
+            setError({
+                message: getApiErrorMessage(e),
+            });
         });
     }, []);
 
     if (error) {
-        return <StandardLoadErrorPage />;
+        return <StandardLoadErrorPage errorMessage={error.message} />;
     }
 
     return <LoaderPage />;

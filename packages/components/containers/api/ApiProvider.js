@@ -2,16 +2,13 @@ import React, { useReducer, useRef } from 'react';
 import PropTypes from 'prop-types';
 import xhr from 'proton-shared/lib/fetch/fetch';
 import configureApi from 'proton-shared/lib/api';
-import withApiHandlers, {
-    CancelUnlockError,
-    CancelVerificationError,
-} from 'proton-shared/lib/api/helpers/withApiHandlers';
+import withApiHandlers from 'proton-shared/lib/api/helpers/withApiHandlers';
 import { getDateHeader } from 'proton-shared/lib/fetch/helpers';
 import { updateServerTime } from 'pmcrypto';
 import {
     getApiError,
     getApiErrorMessage,
-    getIsTimeoutError,
+    getIsOfflineError,
     getIsUnreachableError,
 } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { getClientID } from 'proton-shared/lib/apps/helper';
@@ -52,67 +49,21 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
     const apiRef = useRef();
 
     if (!apiRef.current) {
-        const handleError = (e) => {
-            const { code } = getApiError(e);
-            const errorMessage = getApiErrorMessage(e);
-
-            if (e.name === 'CancelUnlock' || e.name === 'AbortError') {
-                throw e;
-            }
-
-            if (getIsUnreachableError(e)) {
-                setApiStatus({ apiUnreachable: true });
-                throw e;
-            }
-
-            setApiStatus({ apiUnreachable: false });
-
-            if (e.name === 'AppVersionBadError') {
-                setApiStatus({ appVersionBad: true });
-                throw e;
-            }
-
-            if (e.name === 'InactiveSession') {
-                // Logout if the provider was created with a UID
-                if (UID) {
-                    onLogout();
-                }
-                throw e;
-            }
-
-            if (getIsTimeoutError(e)) {
-                const isSilenced = getSilenced(e.config, code);
-                if (!isSilenced) {
-                    createNotification({ type: 'error', text: errorMessage });
-                }
-                throw e;
-            }
-
-            if (errorMessage) {
-                const isSilenced = getSilenced(e.config, code);
-                if (!isSilenced) {
-                    createNotification({ type: 'error', text: errorMessage });
-                }
-            }
-
-            throw e;
-        };
-
         const handleUnlock = (missingScopes = [], e) => {
             if (missingScopes.includes('nondelinquent')) {
                 return new Promise((resolve, reject) => {
-                    createModal(<DelinquentModal onClose={() => reject(CancelUnlockError())} />);
+                    createModal(<DelinquentModal onClose={() => reject(e)} />);
                 });
             }
             if (missingScopes.includes('locked')) {
                 return new Promise((resolve, reject) => {
-                    createModal(<UnlockModal onClose={() => reject(CancelUnlockError())} onSuccess={resolve} />);
+                    createModal(<UnlockModal onClose={() => reject(e)} onSuccess={resolve} />);
                 });
             }
             return Promise.reject(e);
         };
 
-        const handleVerification = ({ token, methods, onVerify }) => {
+        const handleVerification = ({ token, methods, onVerify }, e) => {
             return new Promise((resolve, reject) => {
                 createModal(
                     <HumanVerificationModal
@@ -121,7 +72,7 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
                         onVerify={onVerify}
                         onSuccess={resolve}
                         onError={reject}
-                        onClose={() => reject(CancelVerificationError())}
+                        onClose={() => reject(e)}
                     />
                 );
             });
@@ -137,7 +88,6 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
         const callWithApiHandlers = withApiHandlers({
             call,
             UID,
-            onError: handleError,
             onUnlock: handleUnlock,
             onVerification: handleVerification,
         });
@@ -151,13 +101,55 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
                     if (serverTime) {
                         updateServerTime(serverTime);
                     }
-                    setApiStatus({ apiUnreachable: false });
+                    setApiStatus(defaultApiStatus);
                     return output === 'stream' ? response.body : response[output]();
                 })
                 .catch((e) => {
                     const serverTime = e.response?.headers ? getDateHeader(e.response.headers) : undefined;
                     if (serverTime) {
                         updateServerTime(serverTime);
+                    }
+
+                    const { code } = getApiError(e);
+                    const errorMessage = getApiErrorMessage(e);
+
+                    if (e.name === 'AbortError') {
+                        throw e;
+                    }
+
+                    const isOffline = getIsOfflineError(e);
+                    const isUnreachable = getIsUnreachableError(e);
+
+                    if (isOffline || isUnreachable) {
+                        setApiStatus({
+                            apiUnreachable: isUnreachable ? errorMessage : '',
+                            offline: isOffline,
+                        });
+                        throw e;
+                    }
+                    setApiStatus({
+                        apiUnreachable: defaultApiStatus.apiUnreachable,
+                        offline: defaultApiStatus.offline,
+                    });
+
+                    if (e.name === 'AppVersionBadError') {
+                        setApiStatus({ appVersionBad: true });
+                        throw e;
+                    }
+
+                    if (e.name === 'InactiveSession') {
+                        // Logout if the provider was created with a UID
+                        if (UID) {
+                            onLogout();
+                        }
+                        throw e;
+                    }
+
+                    if (errorMessage) {
+                        const isSilenced = getSilenced(e.config, code);
+                        if (!isSilenced) {
+                            createNotification({ type: 'error', text: errorMessage });
+                        }
                     }
                     throw e;
                 });

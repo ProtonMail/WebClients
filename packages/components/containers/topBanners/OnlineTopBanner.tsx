@@ -1,72 +1,63 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { c } from 'ttag';
-import { getUser } from 'proton-shared/lib/api/user';
 import { ping } from 'proton-shared/lib/api/tests';
+import { noop } from 'proton-shared/lib/helpers/function';
 
-import { useLoading, useOnline } from '../../hooks';
+import { useOnline } from '../../hooks';
 import TopBanner from './TopBanner';
 import useApiStatus from '../../hooks/useApiStatus';
-import { InlineLinkButton } from '../../components/button';
 import useApi from '../../hooks/useApi';
+import { useDebounceInput } from '../../components';
 
-interface Props {
-    isPublic?: boolean;
-}
+const OFFLINE_TIMEOUT = 2500;
 
-const OnlineTopBanner = ({ isPublic = false }: Props) => {
+const OnlineTopBanner = () => {
+    const { apiUnreachable, offline } = useApiStatus();
     const onlineStatus = useOnline();
-    const { apiUnreachable } = useApiStatus();
+    const safeOnlineStatusValue = onlineStatus && !offline;
+    const safeOnlineStatus = useDebounceInput(safeOnlineStatusValue, safeOnlineStatusValue ? 0 : OFFLINE_TIMEOUT);
     const api = useApi();
-    const [loading, withLoading] = useLoading();
 
-    const oldRef = useRef(onlineStatus);
+    const oldRef = useRef(safeOnlineStatus);
     const [backOnline, setBackOnline] = useState(false);
 
-    const handleRetry = () => {
-        return api(isPublic ? ping() : getUser());
+    const handlePing = () => {
+        // Ping can only be used to resolve if the client can establish a connection to the API.
+        api(ping()).catch(noop);
     };
 
     useEffect(() => {
-        if (oldRef.current === onlineStatus) {
+        if (oldRef.current === safeOnlineStatus) {
             return;
         }
-        oldRef.current = onlineStatus;
+        oldRef.current = safeOnlineStatus;
 
-        if (!onlineStatus) {
-            setBackOnline(false);
-            return;
+        if (!safeOnlineStatus) {
+            const handle = window.setInterval(() => {
+                handlePing();
+            }, 5000);
+            return () => window.clearInterval(handle);
         }
 
-        // When coming back online, Fire of a ping request in case the api status is offline
-        api(ping());
         setBackOnline(true);
 
-        const timeout = window.setTimeout(() => {
+        const handle = window.setTimeout(() => {
             setBackOnline(false);
+            // Ensure it's true
+            handlePing();
         }, 2000);
 
-        return () => window.clearTimeout(timeout);
-    }, [onlineStatus]);
+        return () => window.clearTimeout(handle);
+    }, [safeOnlineStatus]);
 
-    if (onlineStatus && backOnline) {
+    if (safeOnlineStatus && backOnline) {
         return <TopBanner className="bg-success">{c('Info').t`Internet connection restored.`}</TopBanner>;
     }
 
-    if (onlineStatus) {
+    if (safeOnlineStatus) {
         // If the device is known to be online, and the API is unreachable
         if (apiUnreachable) {
-            const retryNow = (
-                <InlineLinkButton
-                    key="0"
-                    className="color-inherit"
-                    disabled={loading}
-                    onClick={() => withLoading(handleRetry())}
-                >
-                    {c('Action').t`Retry now`}
-                </InlineLinkButton>
-            );
-
-            return <TopBanner className="bg-danger">{c('Info').jt`Servers are unreachable. ${retryNow}.`}</TopBanner>;
+            return <TopBanner className="bg-danger">{apiUnreachable}</TopBanner>;
         }
         return null;
     }
