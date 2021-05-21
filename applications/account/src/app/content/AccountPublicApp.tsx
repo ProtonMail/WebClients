@@ -3,13 +3,7 @@ import { loadOpenPGP } from 'proton-shared/lib/openpgp';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from 'proton-shared/lib/i18n/helper';
 import { loadLocale, loadDateLocale } from 'proton-shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
-import {
-    LoaderPage,
-    useApi,
-    ProtonLoginCallback,
-    StandardLoadErrorPage,
-    useErrorHandler,
-} from 'react-components';
+import { LoaderPage, useApi, ProtonLoginCallback, StandardLoadErrorPage, useErrorHandler } from 'react-components';
 import {
     getActiveSessions,
     GetActiveSessionsResult,
@@ -17,7 +11,7 @@ import {
 } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { getLocalIDFromPathname } from 'proton-shared/lib/authentication/pathnameHelper';
 import { InvalidPersistentSessionError } from 'proton-shared/lib/authentication/error';
-import { getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+import { getApiErrorMessage, getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { getCookie } from 'proton-shared/lib/helpers/cookies';
 import * as H from 'history';
 
@@ -31,7 +25,7 @@ interface Props {
 
 const AccountPublicApp = ({ location, locales = {}, children, onActiveSessions, onLogin }: Props) => {
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
+    const [error, setError] = useState<{ message?: string } | null>(null);
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
@@ -78,12 +72,14 @@ const AccountPublicApp = ({ location, locales = {}, children, onActiveSessions, 
 
         run().catch((e) => {
             errorHandler(e);
-            setError(true);
+            setError({
+                message: getApiErrorMessage(e),
+            });
         });
     }, []);
 
     if (error) {
-        return <StandardLoadErrorPage />;
+        return <StandardLoadErrorPage errorMessage={error.message} />;
     }
 
     if (loading) {

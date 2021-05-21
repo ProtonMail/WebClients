@@ -22,6 +22,7 @@ import { getHasOnlyExternalAddresses } from 'proton-shared/lib/helpers/address';
 import { getAppName } from 'proton-shared/lib/apps/helper';
 import { APP_NAMES, APPS } from 'proton-shared/lib/constants';
 import { getValidatedApp } from 'proton-shared/lib/authentication/sessionForkValidation';
+import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 
 import { getToAppName } from '../public/helper';
 import GenerateInternalAddressStep, { InternalAddressGeneration } from '../login/GenerateInternalAddressStep';
@@ -49,7 +50,7 @@ const SetupSupportDropdown = () => {
 
 const SetupInternalAccountContainer = () => {
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
+    const [error, setError] = useState<{ message?: string } | null>(null);
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
@@ -111,12 +112,14 @@ const SetupInternalAccountContainer = () => {
             })
             .catch((e) => {
                 errorHandler(e);
-                setError(true);
+                setError({
+                    message: getApiErrorMessage(e),
+                });
             });
     }, []);
 
     if (error) {
-        return <StandardLoadErrorPage />;
+        return <StandardLoadErrorPage errorMessage={error.message} />;
     }
 
     if (loading) {
