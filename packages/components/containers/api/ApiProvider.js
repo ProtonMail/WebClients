@@ -52,12 +52,27 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
         const handleUnlock = (missingScopes = [], e) => {
             if (missingScopes.includes('nondelinquent')) {
                 return new Promise((resolve, reject) => {
-                    createModal(<DelinquentModal onClose={() => reject(e)} />);
+                    createModal(
+                        <DelinquentModal
+                            onClose={() => {
+                                e.cancel = true;
+                                reject(e);
+                            }}
+                        />
+                    );
                 });
             }
             if (missingScopes.includes('locked')) {
                 return new Promise((resolve, reject) => {
-                    createModal(<UnlockModal onClose={() => reject(e)} onSuccess={resolve} />);
+                    createModal(
+                        <UnlockModal
+                            onClose={() => {
+                                e.cancel = true;
+                                reject(e);
+                            }}
+                            onSuccess={resolve}
+                        />
+                    );
                 });
             }
             return Promise.reject(e);
@@ -72,7 +87,10 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
                         onVerify={onVerify}
                         onSuccess={resolve}
                         onError={reject}
-                        onClose={() => reject(e)}
+                        onClose={() => {
+                            e.cancel = true;
+                            reject(e);
+                        }}
                     />
                 );
             });
@@ -113,10 +131,6 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
                     const { code } = getApiError(e);
                     const errorMessage = getApiErrorMessage(e);
 
-                    if (e.name === 'AbortError') {
-                        throw e;
-                    }
-
                     const isOffline = getIsOfflineError(e);
                     const isUnreachable = getIsUnreachableError(e);
 
@@ -131,6 +145,10 @@ const ApiProvider = ({ config, onLogout, children, UID }) => {
                         apiUnreachable: defaultApiStatus.apiUnreachable,
                         offline: defaultApiStatus.offline,
                     });
+
+                    if (e.name === 'AbortError' || e.cancel) {
+                        throw e;
+                    }
 
                     if (e.name === 'AppVersionBadError') {
                         setApiStatus({ appVersionBad: true });
