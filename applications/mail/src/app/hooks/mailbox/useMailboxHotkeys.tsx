@@ -1,4 +1,4 @@
-import { useMemo, useRef } from 'react';
+import { useRef } from 'react';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { KeyboardKey } from 'proton-shared/lib/interfaces';
 import { HotkeyTuple, useFolders, useHotkeys, useLabels, useMailSettings } from 'react-components';
@@ -29,7 +29,6 @@ export interface MailboxHotkeysContext {
     selectedIDs: string[];
     focusIndex?: number;
     columnLayout: boolean;
-    showContentView: boolean;
     isMessageOpening: boolean;
     location: Location;
 }
@@ -57,7 +56,6 @@ export const useMailboxHotkeys = (
         selectedIDs,
         focusIndex,
         columnLayout,
-        showContentView,
         isMessageOpening,
         location,
     }: MailboxHotkeysContext,
@@ -93,11 +91,6 @@ export const useMailboxHotkeys = (
     const star = useStar();
     const markAs = useMarkAs();
     const permanentDelete = usePermanentDelete(labelID);
-
-    const hotkeysEnabledAndListView = useMemo(
-        () => Shortcuts && (columnLayout || (!columnLayout && !showContentView)),
-        [columnLayout, showContentView, Shortcuts]
-    );
 
     const getElementsForShortcuts = () => {
         let elements: Element[] = [];
@@ -287,7 +280,7 @@ export const useMailboxHotkeys = (
         [
             'U',
             async (e) => {
-                if (hotkeysEnabledAndListView) {
+                if (Shortcuts) {
                     const elements = getElementsForShortcuts();
                     if (!elements.length) {
                         return;
@@ -301,7 +294,7 @@ export const useMailboxHotkeys = (
         [
             'R',
             async (e) => {
-                if (hotkeysEnabledAndListView) {
+                if (Shortcuts) {
                     const elements = getElementsForShortcuts();
                     if (!elements.length) {
                         return;
@@ -314,7 +307,7 @@ export const useMailboxHotkeys = (
         [
             'A',
             async (e) => {
-                if (hotkeysEnabledAndListView) {
+                if (Shortcuts) {
                     await moveElementsTo(e, ARCHIVE);
                 }
             },
@@ -322,7 +315,7 @@ export const useMailboxHotkeys = (
         [
             'I',
             async (e) => {
-                if (hotkeysEnabledAndListView) {
+                if (Shortcuts) {
                     await moveElementsTo(e, INBOX);
                 }
             },
@@ -330,7 +323,7 @@ export const useMailboxHotkeys = (
         [
             'S',
             async (e) => {
-                if (hotkeysEnabledAndListView) {
+                if (Shortcuts) {
                     await moveElementsTo(e, SPAM);
                 }
             },
@@ -338,7 +331,7 @@ export const useMailboxHotkeys = (
         [
             KeyboardKey.Star,
             async (e) => {
-                if (hotkeysEnabledAndListView) {
+                if (Shortcuts) {
                     const elements = getElementsForShortcuts();
                     if (!elements.length) {
                         return;
@@ -352,7 +345,7 @@ export const useMailboxHotkeys = (
         [
             'T',
             async (e) => {
-                if (hotkeysEnabledAndListView) {
+                if (Shortcuts) {
                     await moveElementsTo(e, TRASH);
                 }
             },
@@ -360,10 +353,7 @@ export const useMailboxHotkeys = (
         [
             ['Meta', 'Backspace'],
             async () => {
-                if (
-                    hotkeysEnabledAndListView &&
-                    labelIncludes(labelID, DRAFTS, ALL_DRAFTS, SPAM, TRASH, SENT, ALL_SENT)
-                ) {
+                if (Shortcuts && labelIncludes(labelID, DRAFTS, ALL_DRAFTS, SPAM, TRASH, SENT, ALL_SENT)) {
                     const elements = getElementsForShortcuts();
                     if (!elements.length) {
                         return;
@@ -375,7 +365,7 @@ export const useMailboxHotkeys = (
         [
             'L',
             (e) => {
-                if (hotkeysEnabledAndListView && selectedIDs.length) {
+                if (Shortcuts && selectedIDs.length) {
                     e.preventDefault();
                     labelDropdownToggleRef.current?.();
                 }
@@ -384,7 +374,7 @@ export const useMailboxHotkeys = (
         [
             'M',
             (e) => {
-                if (hotkeysEnabledAndListView && selectedIDs.length) {
+                if (Shortcuts && selectedIDs.length) {
                     e.preventDefault();
                     moveDropdownToggleRef.current?.();
                 }

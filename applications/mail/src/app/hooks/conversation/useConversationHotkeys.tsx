@@ -17,7 +17,7 @@ export const useConversationHotkeys = (
     { messages, focusIndex }: ConversationHotkeysContext,
     { handleFocus, expandMessage, getFocusedId }: ConversationHotkeysHandlers
 ) => {
-    const elementRef = useRef(null);
+    const elementRef = useRef<HTMLDivElement>(null);
     const shortcutHandlers: HotkeyTuple[] = [
         [
             'ArrowLeft',

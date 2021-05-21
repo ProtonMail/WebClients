@@ -117,7 +117,7 @@ const ConversationView = ({
             // unblock J/K shortcuts
             setTimeout(onMessageReady);
             if (!columnLayout) {
-                trashWarningRef.current?.focus();
+                trashWarningRef.current?.parentElement?.focus();
             }
         }
     }, [onlyTrashInConversation, conversationID, columnLayout]);

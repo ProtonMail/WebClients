@@ -191,7 +191,7 @@ const MessageView = (
             if (!isDraft(message.data)) {
                 setExpanded(true);
                 if (!columnLayout) {
-                    elementRef.current?.focus();
+                    elementRef.current?.parentElement?.focus();
                 }
             }
         },
@@ -208,7 +208,9 @@ const MessageView = (
             if (onMessageReady) {
                 setTimeout(onMessageReady);
             }
-            elementRef.current?.focus();
+            if (!columnLayout) {
+                elementRef.current?.parentElement?.focus();
+            }
         }
     }, [loading, messageLoaded, message.data?.ID]);
 

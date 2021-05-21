@@ -205,7 +205,6 @@ const MailboxContainer = ({
             selectedIDs,
             focusIndex,
             columnLayout,
-            showContentView,
             isMessageOpening,
             location,
         },
