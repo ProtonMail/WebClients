@@ -65,6 +65,10 @@ describe('string', () => {
         it('should keep only character and number', () => {
             expect(getInitials('22 - Name Mame')).toEqual('2M');
         });
+
+        it('should remove undesired characters', () => {
+            expect(getInitials('Thomas Anderson (@neo) ')).toEqual('TN');
+        });
     });
 
     describe('truncate', () => {
