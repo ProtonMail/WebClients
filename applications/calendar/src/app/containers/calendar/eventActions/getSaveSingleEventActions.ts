@@ -84,33 +84,38 @@ const getSaveSingleEventActions = async ({
             throw new Error('Missing event');
         }
         const isSendType = [SEND_INVITATION, SEND_UPDATE].includes(inviteType);
+        const method = isSendType ? ICAL_METHOD.REQUEST : undefined;
+        const veventComponentWithUpdatedDtstamp = withUpdatedDtstamp(newVeventComponent, oldVeventComponent);
+        let updatedVeventComponent = getUpdatedInviteVevent(
+            veventComponentWithUpdatedDtstamp,
+            oldVeventComponent,
+            method
+        );
+        let updatedInviteActions = inviteActions;
         if (!oldCalendarID || !oldAddressID || !oldMemberID) {
             throw new Error('Missing parameters to switch calendar');
         }
         if (isSendType) {
-            throw new Error('Cannot change the calendar of an event you are organizing');
-            // If we ever change this behavior, the following code would become relevant
-            //
-            // const method = isSendType ? ICAL_METHOD.REQUEST : undefined;
-            // const updatedVeventComponent = getUpdatedInviteVevent(newVeventComponent, oldVeventComponent, method);
-            // const updatedInviteActions = inviteActions;
-            // await onSaveConfirmation({
-            //     type: SAVE_CONFIRMATION_TYPES.SINGLE,
-            //     inviteActions,
-            //     isInvitation: false,
-            // });
-            // const { veventComponent: cleanVeventComponent, inviteActions: cleanInviteActions } = await sendIcs({
-            //     inviteActions,
-            //     vevent: updatedVeventComponent,
-            //     cancelVevent: oldVeventComponent,
-            // });
-            // if (cleanVeventComponent) {
-            //     updatedVeventComponent = cleanVeventComponent;
-            //     updatedInviteActions = cleanInviteActions;
-            // }
+            await onSaveConfirmation({
+                type: SAVE_CONFIRMATION_TYPES.SINGLE,
+                inviteActions,
+                isInvitation: false,
+            });
+            const { veventComponent: cleanVeventComponent, inviteActions: cleanInviteActions } = await sendIcs({
+                inviteActions,
+                vevent: updatedVeventComponent,
+                cancelVevent: oldVeventComponent,
+            });
+            if (cleanVeventComponent) {
+                updatedVeventComponent = cleanVeventComponent;
+                updatedInviteActions = cleanInviteActions;
+            }
         }
-        const removedAttendeeEmails = await getCanonicalEmails(inviteActions.removedAttendees, getCanonicalEmailsMap);
-        const updateOperation = getUpdateSyncOperation(newVeventComponent, oldEvent, removedAttendeeEmails);
+        const removedAttendeeEmails = await getCanonicalEmails(
+            updatedInviteActions.removedAttendees,
+            getCanonicalEmailsMap
+        );
+        const updateOperation = getUpdateSyncOperation(updatedVeventComponent, oldEvent, removedAttendeeEmails);
         const deleteOperation = getDeleteSyncOperation(oldEvent);
         const multiSyncActions = [
             {
@@ -126,7 +131,7 @@ const getSaveSingleEventActions = async ({
                 operations: [deleteOperation],
             },
         ];
-        return { multiSyncActions, inviteActions };
+        return { multiSyncActions, inviteActions: updatedInviteActions };
     }
 
     if (isUpdateEvent) {
