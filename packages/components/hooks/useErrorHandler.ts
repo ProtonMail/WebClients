@@ -15,7 +15,8 @@ const useErrorHandler = () => {
         const errorMessage = error.message || c('Error').t`Unknown error`;
 
         // Bad app version and unreachable errors are handled in a top banner
-        const shouldNotify = notify && !ignoreErrors.includes(error.name) && !getIsUnreachableError(error);
+        const shouldNotify =
+            notify && !error.cancel && !ignoreErrors.includes(error.name) && !getIsUnreachableError(error);
         if (shouldNotify) {
             createNotification({ type: 'error', text: apiErrorMessage || errorMessage });
         }
