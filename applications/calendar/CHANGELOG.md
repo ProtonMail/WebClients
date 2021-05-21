@@ -1,3 +1,19 @@
+# [4.0.0-beta.19] - 2021-05-27
+
+## Added
+- Open create event modal from contact widget
+- Add dynamic favicon showing current day in the browser tab
+
+## Updated
+- Add automatically answers of participants with Proton accounts
+- Update automatically invitations for participants with Proton accounts
+- Add limit of 20 calendars for paid subscription plans
+- Update design of calendar edition and deletion in settings
+- Add list of events with export error
+
+## Fixed
+- Fixed month standalone format for Polish, Russian and Czech
+
 # [4.0.0-beta.18] - 2021-05-05
 
 ## Added
