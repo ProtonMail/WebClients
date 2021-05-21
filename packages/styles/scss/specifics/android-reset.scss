@@ -187,6 +187,14 @@ $title-sizes: (
 @import '../base/typo';
 
 /*
+ * Vars
+ */
+:root {
+	--background-norm: white;
+	--text-norm: #262a33;
+}
+
+/*
  * Base styles
  */
 body {
@@ -195,6 +203,7 @@ body {
 	font-family: $font-family;
 	padding: 1rem;
 	line-height: $base-line-height;
+	background-color: var(--background-norm);
 	color: var(--text-norm);
 }
 
