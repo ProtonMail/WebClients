@@ -128,7 +128,7 @@ describe('MailHeader', () => {
 
             expect(textContent).toContain('question');
             expect(textContent).toContain('feature');
-            expect(textContent).toContain('bug');
+            expect(textContent).toContain('problem');
         });
 
         it('should open user dropdown', async () => {
