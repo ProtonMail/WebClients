@@ -25,7 +25,7 @@ import { switchPlan } from 'proton-shared/lib/helpers/planIDs';
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 
 export const getDashboardPage = ({ user }: { user: UserModel }) => {
-    const { isFree, isMember, canPay } = user;
+    const { isFree, isPaid, isMember, canPay } = user;
 
     return {
         text: c('Title').t`Dashboard`,
@@ -48,10 +48,11 @@ export const getDashboardPage = ({ user }: { user: UserModel }) => {
                 text: c('Title').t`Email subscriptions`,
                 id: 'email-subscription',
             },
-            !isFree && {
-                text: c('Title').t`Cancel subscription`,
-                id: 'cancel-subscription',
-            },
+            isPaid &&
+                canPay && {
+                    text: c('Title').t`Cancel subscription`,
+                    id: 'cancel-subscription',
+                },
         ].filter(isTruthy),
     };
 };
@@ -63,7 +64,7 @@ interface PlansMap {
 const AccountDashboardSettings = ({ location, setActiveSection }: SettingsPropsShared) => {
     const [user] = useUser();
 
-    const { isFree, isMember, canPay } = user;
+    const { isFree, isPaid, isMember, canPay } = user;
 
     const { createModal } = useModals();
     const [plans, loadingPlans] = usePlans();
@@ -145,7 +146,7 @@ const AccountDashboardSettings = ({ location, setActiveSection }: SettingsPropsS
             {Boolean(canPay) && <YourPlanSection />}
             <LanguageAndTimeSection />
             {!isMember && <EmailSubscriptionSection />}
-            {!isFree && <CancelSubscriptionSection />}
+            {isPaid && canPay && <CancelSubscriptionSection />}
         </PrivateMainSettingsAreaWithPermissions>
     );
 };
