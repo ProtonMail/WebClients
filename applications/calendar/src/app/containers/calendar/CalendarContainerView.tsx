@@ -2,7 +2,6 @@ import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from 'proton-shared/lib/calendar/co
 import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
 import React, { ReactNode, Ref, useCallback, useEffect, useMemo } from 'react';
 import {
-    FullLoader,
     LocalizedMiniCalendar,
     useToggle,
     TextLoader,
@@ -382,8 +381,7 @@ const CalendarContainerView = ({
     );
 
     const loader = isLoading ? (
-        <div className="calendar-loader-container text-center p1">
-            <FullLoader size={60} />
+        <div className="calendar-loader-container">
             <TextLoader className="m0">{c('Info').t`Loading events`}</TextLoader>
         </div>
     ) : null;
