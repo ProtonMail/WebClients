@@ -15,6 +15,7 @@ import LinkDoesNotExistInfo from './LinkDoesNotExistInfo';
 import { InitHandshake, SharedLinkInfo } from '../../interfaces/sharing';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { STATUS_CODE, BATCH_REQUEST_SIZE } from '../../constants';
+import { isCustomSharedURLPassword, isGeneratedWithCustomSharedURLPassword } from '../../utils/link';
 
 const REPORT_ABUSE_EMAIL = 'abuse@protonmail.com';
 const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
@@ -33,12 +34,17 @@ const DownloadSharedContainer = () => {
     const appName = getAppName(APPS.PROTONDRIVE);
 
     const token = useMemo(() => pathname.replace(/\/urls\/?/, ''), [pathname]);
-    const pass = useMemo(() => hash.replace('#', ''), [hash]);
-    const [password, setPassword] = useState(pass);
+    const urlPassword = useMemo(() => hash.replace('#', ''), [hash]);
+    const [password, setPassword] = useState(urlPassword);
 
     const initHandshake = useCallback(async () => {
         return initSRPHandshake(token)
-            .then(setHandshakeInfo)
+            .then((handshakeInfo) => {
+                if (isCustomSharedURLPassword(handshakeInfo)) {
+                    setPassword('');
+                }
+                setHandshakeInfo(handshakeInfo);
+            })
             .catch((e) => {
                 console.error(e);
                 setNotFoundError(e);
@@ -103,8 +109,12 @@ const DownloadSharedContainer = () => {
         return preventLeave(FileSaver.saveAsFile(fileStream, transferMeta)).catch(console.error);
     };
 
-    const submitPassword = (pass: string) => {
-        return getSharedLinkInfo(pass).catch(console.error);
+    const submitPassword = (customPassword: string) => {
+        let password = customPassword;
+        if (handshakeInfo && isGeneratedWithCustomSharedURLPassword(handshakeInfo)) {
+            password = urlPassword + customPassword;
+        }
+        return getSharedLinkInfo(password).catch(console.error);
     };
 
     useEffect(() => {

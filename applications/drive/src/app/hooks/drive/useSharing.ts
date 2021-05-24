@@ -138,6 +138,7 @@ function useSharing() {
 
     const getFieldsToUpdateForPassword = async (
         newPassword: string,
+        flags: number,
         keyInfo: SharedURLSessionKeyPayload
     ): Promise<Partial<UpdateSharedURL>> => {
         const { sharePasswordSalt, shareSessionKey } = keyInfo;
@@ -159,8 +160,15 @@ function useSharing() {
             }),
         ]);
 
+        // Old shares with legacy custom password has to stay that way, so the
+        // old links still works. But all new shares should use new logic.
+        let newFlags = SharedURLFlags.CustomPassword;
+        if ((flags & SharedURLFlags.CustomPassword) === 0 || flags & SharedURLFlags.GeneratedPasswordIncluded) {
+            newFlags |= SharedURLFlags.GeneratedPasswordIncluded;
+        }
+
         const fieldsToUpdate: Partial<UpdateSharedURL> = {
-            Flags: SharedURLFlags.CustomPassword,
+            Flags: newFlags,
             Password,
             SharePassphraseKeyPacket,
             SRPVerifier,
@@ -174,6 +182,7 @@ function useSharing() {
     const updateSharedLink = async (
         shareId: string,
         token: string,
+        flags: number,
         keyInfo: SharedURLSessionKeyPayload,
         newDuration?: number | null,
         newPassword?: string
@@ -183,7 +192,7 @@ function useSharing() {
             fieldsToUpdate = { ExpirationDuration: newDuration };
         }
         if (newPassword) {
-            const fieldsToUpdateForPassword = await getFieldsToUpdateForPassword(newPassword, keyInfo);
+            const fieldsToUpdateForPassword = await getFieldsToUpdateForPassword(newPassword, flags, keyInfo);
             fieldsToUpdate = {
                 ...fieldsToUpdate,
                 ...fieldsToUpdateForPassword,
