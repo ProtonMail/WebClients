@@ -1,5 +1,7 @@
 {
-    "extends": ["proton-lint"],
+    "extends": [
+        "proton-lint"
+    ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "project": "./tsconfig.json"
@@ -9,8 +11,26 @@
         "no-console": [
             "error",
             {
-                "allow": ["warn", "error"]
+                "allow": [
+                    "warn",
+                    "error"
+                ]
             }
+        ],
+        "@typescript-eslint/no-use-before-define": [
+            "error",
+            "nofunc"
         ]
-    }
+    },
+    "overrides": [
+        {
+            "files": [
+                "*.test.ts"
+            ],
+            "rules": {
+                "max-classes-per-file": "off",
+                "class-methods-use-this": "off"
+            }
+        }
+    ]
 }

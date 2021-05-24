@@ -36,6 +36,8 @@ export const mapLinksToChildren = (
             UrlsExpired,
             ShareIDs,
             ShareUrls,
+            FileProperties,
+            CachedThumbnailURL,
         }) => ({
             Name,
             LinkID,
@@ -49,6 +51,8 @@ export const mapLinksToChildren = (
             SharedUrl: ShareUrls[0], // Currently only one share URL is possible
             ShareUrlShareID: ShareIDs[0],
             UrlsExpired,
+            HasThumbnail: FileProperties?.ActiveRevision?.Thumbnail === 1,
+            CachedThumbnailURL,
         })
     );
 };

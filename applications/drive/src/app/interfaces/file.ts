@@ -47,6 +47,7 @@ export interface UploadLink {
 
 export interface RequestUploadResult {
     UploadLinks: UploadLink[];
+    ThumbnailLink?: UploadLink;
 }
 
 export interface DriveFileBlock {
@@ -69,6 +70,10 @@ export interface DriveFileRevision {
 
 export interface DriveFileRevisionResult {
     Revision: DriveFileRevision;
+}
+
+export interface DriveFileRevisionThumbnailResult {
+    ThumbnailLink: string;
 }
 
 export interface NestedFileStream {

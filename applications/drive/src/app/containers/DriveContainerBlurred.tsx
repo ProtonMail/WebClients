@@ -87,6 +87,7 @@ const DriveContainerBlurred = () => {
                                 Size: 1024 * 1024,
                                 Type: LinkType.FOLDER,
                                 UrlsExpired: false,
+                                HasThumbnail: false,
                             },
                             {
                                 LinkID: 'dummy-link-2',
@@ -98,6 +99,7 @@ const DriveContainerBlurred = () => {
                                 Size: 1024 * 1024,
                                 Type: LinkType.FILE,
                                 UrlsExpired: false,
+                                HasThumbnail: false,
                             },
                         ]}
                         selectedItems={[]}

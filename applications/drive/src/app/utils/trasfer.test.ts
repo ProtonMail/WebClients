@@ -226,6 +226,7 @@ describe('trasfer utils', () => {
             Trashed: null,
             UrlsExpired: false,
             Type: 2,
+            HasThumbnail: false,
         };
         expect(getMetaForTransfer(fileBrowserItem)).toEqual(trasferMeta);
     });

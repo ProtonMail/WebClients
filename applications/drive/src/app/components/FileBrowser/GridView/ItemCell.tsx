@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
 import { FileIcon, Checkbox, classnames, DragMoveContainer, FileNameDisplay } from 'react-components';
+
 import { LinkType } from '../../../interfaces/link';
 import { ItemProps } from '../interfaces';
 import ItemContextMenu from '../ItemContextMenu';
 import SharedURLIcon from '../SharedURLIcon';
 import useFileBrowserItem from '../useFileBrowserItem';
+import useFiles from '../../../hooks/drive/useFiles';
+import useDrive from '../../../hooks/drive/useDrive';
 
 export interface Props extends Omit<ItemProps, 'isPreview' | 'showLocation' | 'columns'> {
     style: React.CSSProperties;
@@ -47,6 +51,26 @@ function ItemCell({
         onShiftClick,
     });
 
+    const { downloadDriveFile } = useFiles();
+    const { loadLinkCachedThumbnailURL } = useDrive();
+    useEffect(() => {
+        if (item.HasThumbnail) {
+            loadLinkCachedThumbnailURL(
+                shareId,
+                item.LinkID,
+                async (downloadUrl: string): Promise<Uint8Array[]> => {
+                    const { contents } = await downloadDriveFile(shareId, item.LinkID, [
+                        {
+                            Index: 1,
+                            URL: downloadUrl,
+                        },
+                    ]);
+                    return contents;
+                }
+            ).catch(console.error);
+        }
+    }, []);
+
     return (
         <div className={classnames(['flex flex-col', className])} style={style}>
             {draggable && (
@@ -79,32 +103,39 @@ function ItemCell({
                 ])}
                 {...itemHandlers}
             >
-                <div className="flex flex-align-items-center">
-                    <div
-                        role="presentation"
-                        className="pl0-5 pt0-5 pb0-5 pr0-25 flex relative"
-                        {...checkboxWrapperHandlers}
-                    >
-                        <Checkbox
-                            disabled={item.Disabled}
-                            className="increase-click-surface"
-                            checked={isSelected}
-                            {...checkboxHandlers}
-                        />
-                    </div>
-
-                    {item.SharedUrl && <SharedURLIcon expired={item.UrlsExpired} />}
+                <div
+                    className={classnames([
+                        'flex file-browser-grid-item--select',
+                        selectedItems.length ? null : 'file-browser-grid-item--select-hover-only',
+                    ])}
+                    {...checkboxWrapperHandlers}
+                >
+                    <Checkbox
+                        disabled={item.Disabled}
+                        className="increase-click-surface"
+                        checked={isSelected}
+                        {...checkboxHandlers}
+                    />
                 </div>
-                <div className="p0-5 flex flex-item-fluid flex-column">
-                    <div className="flex flex-item-fluid flex-justify-center flex-align-items-center">
+                {item.SharedUrl && (
+                    <SharedURLIcon expired={item.UrlsExpired} className="flex file-browser-grid-item--share" />
+                )}
+                <div className="flex flex-item-fluid flex-justify-center flex-align-items-center">
+                    {item.CachedThumbnailURL ? (
+                        <img
+                            src={item.CachedThumbnailURL}
+                            style={{ maxWidth: '100%', maxHeight: '100%' }}
+                            alt={iconText}
+                        />
+                    ) : (
                         <FileIcon
                             size={28}
                             mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType}
                             alt={iconText}
                         />
-                    </div>
+                    )}
                 </div>
-                <div className="w100 pt0-25 pb0-25 pl0-5 pr0-5 border-top flex" title={item.Name}>
+                <div className="w100 pt0-25 pb0-25 pl0-5 pr0-5 flex" title={item.Name}>
                     <FileNameDisplay text={item.Name} className="center" />
                 </div>
             </div>

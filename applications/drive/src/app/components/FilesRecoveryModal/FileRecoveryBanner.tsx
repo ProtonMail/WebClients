@@ -54,7 +54,7 @@ const FileRecoveryBanner = ({ onClose }: Props) => {
 
     useEffect(() => {
         if (addressesKeys) {
-            withLoading(getReadyToRestoreData(addressesKeys));
+            withLoading(getReadyToRestoreData(addressesKeys)).catch(console.error);
         }
     }, [User.Email, addressesKeys, getReadyToRestoreData]);
 

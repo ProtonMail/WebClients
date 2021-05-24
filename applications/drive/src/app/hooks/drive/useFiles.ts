@@ -19,6 +19,7 @@ import {
     FileRevisionState,
     RequestUploadResult,
     NestedFileStream,
+    DriveFileBlock,
 } from '../../interfaces/file';
 import { queryFileRevision, queryCreateFile, queryUpdateFileRevision, queryRequestUpload } from '../../api/files';
 import { useUploadProvider } from '../../components/uploads/UploadProvider';
@@ -245,9 +246,9 @@ function useFiles() {
 
         let createdFile:
             | {
-                  ID: string;
-                  RevisionID: string;
-              }
+                ID: string;
+                RevisionID: string;
+            }
             | undefined;
 
         return addToUploadQueue(preUploadData, setupPromise, {
@@ -256,11 +257,25 @@ function useFiles() {
                 createdFile = result.File;
                 return result;
             },
-            transform: async (data) => {
+            transform: async (data, attachedSignature = false) => {
                 const [
                     { sessionKey, privateKey: nodePrivateKey },
                     { privateKey: addressPrivateKey },
                 ] = await Promise.all([setupPromise, getPrimaryAddressKey()]);
+
+                // Thumbnail has signature attached, regular file detached.
+                if (attachedSignature) {
+                    const { message } = await encryptMessage({
+                        data,
+                        sessionKey,
+                        privateKeys: addressPrivateKey,
+                        armor: false,
+                        detached: false,
+                    });
+                    return {
+                        encryptedData: message.packets.write(),
+                    };
+                }
 
                 const { message, signature } = await encryptMessage({
                     data,
@@ -282,27 +297,33 @@ function useFiles() {
                     signature: encryptedSignature,
                 };
             },
-            requestUpload: async (Blocks) => {
+            requestUpload: async (blocks, thumbnailBlock) => {
                 const { addressKeyInfo } = await setupPromise;
 
                 const BlockList = await Promise.all(
-                    Blocks.map(({ Hash, ...block }) => ({ ...block, Hash: uint8ArrayToBase64String(Hash) }))
+                    blocks.map(({ Hash, ...block }) => ({ ...block, Hash: uint8ArrayToBase64String(Hash) }))
                 );
+                const thumbnailParams = thumbnailBlock ? {
+                    Thumbnail: 1,
+                    ThumbnailHash: uint8ArrayToBase64String(thumbnailBlock.Hash),
+                    ThumbnailSize: thumbnailBlock.Size,
+                } : {};
 
                 if (!createdFile) {
                     throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
                 }
 
-                const { UploadLinks } = await debouncedRequest<RequestUploadResult>(
+                const { UploadLinks, ThumbnailLink } = await debouncedRequest<RequestUploadResult>(
                     queryRequestUpload({
                         BlockList,
                         AddressID: addressKeyInfo.address.ID,
                         LinkID: createdFile.ID,
                         RevisionID: createdFile.RevisionID,
                         ShareID: shareId,
+                        ...thumbnailParams
                     })
                 );
-                return UploadLinks;
+                return { UploadLinks, ThumbnailLink };
             },
             finalize: queuedFunction(
                 'upload_finalize',
@@ -310,7 +331,10 @@ function useFiles() {
                     const hashes: Uint8Array[] = [];
                     const BlockList: { Index: number; Token: string }[] = [];
 
-                    for (let Index = 1; Index <= blockTokens.size; Index++) {
+                    // Thumbnail has index 0, which is optional. If file has
+                    // no thumbnail, index starts from 1.
+                    const indexStart = blockTokens.get(0) ? 0 : 1;
+                    for (let Index = indexStart; Index < (indexStart + blockTokens.size); Index++) {
                         const info = blockTokens.get(Index);
                         if (!info) {
                             throw new Error(`Block Token not found for ${Index} in upload ${config?.id}`);
@@ -530,6 +554,26 @@ function useFiles() {
             throw new Error('Session key missing on file link');
         }
 
+        // NOTE: the message is signed under the uploader's address key, so that's what it should be used here
+        // to verify it. Note that getPrimaryAddressKey will give the current user's address key, meaning that
+        // if the file was uploaded by a different user, this verification will fail.
+
+        // TODO: Fetch addressPublicKey of signer when we start supporting drive volumes with multiple users.
+        const { privateKey: addressPrivateKey } = await getPrimaryAddressKey();
+
+        // Thumbnails have attached signature, regular file detached one.
+        if (!encSignature) {
+            const message = await getStreamMessage(stream)
+            const { data } = await decryptMessage({
+                message,
+                sessionKeys: keys.sessionKeys,
+                publicKeys: addressPrivateKey.toPublic(),
+                streaming: 'web',
+                format: 'binary',
+            });
+            return data as ReadableStream<Uint8Array>;
+        }
+
         const signatureMessage = await getMessage(encSignature);
         const decryptedSignature = await decryptMessage({
             privateKeys: keys.privateKey,
@@ -541,12 +585,6 @@ function useFiles() {
             getSignature(decryptedSignature.data),
         ]);
 
-        // NOTE: the message is signed under the uploader's address key, so that's what it should be used here
-        // to verify it. Note that getPrimaryAddressKey will give the current user's address key, meaning that
-        // if the file was uploaded by a different user, this verification will fail.
-
-        // TODO: Fetch addressPublicKey of signer when we start supporting drive volumes with multiple users.
-        const { privateKey: addressPrivateKey } = await getPrimaryAddressKey();
         const { data } = await decryptMessage({
             message,
             signature,
@@ -599,7 +637,9 @@ function useFiles() {
         return Revision.Blocks;
     };
 
-    const downloadDriveFile = async (shareId: string, linkId: string) => {
+    // downloadDriveFile downloads the file. If driveBlocks are not passed,
+    // it automatically fetches all file blocks to be downloaded.
+    const downloadDriveFile = async (shareId: string, linkId: string, driveBlocks?: DriveFileBlock[]) => {
         let resolve: (value: Promise<Uint8Array[]>) => void = noop;
         let reject: (reason?: any) => any = noop;
 
@@ -608,9 +648,16 @@ function useFiles() {
             reject = rej;
         });
 
+        const getBlocks = async (abortSignal: AbortSignal, pagination?: { FromBlockIndex: number, PageSize: number }): Promise<DriveFileBlock[]> => {
+            if (driveBlocks) {
+                return driveBlocks;
+            }
+            return getFileBlocks(shareId, linkId, abortSignal, pagination);
+        }
+
         const { downloadControls } = initDownload({
             transformBlockStream: decryptBlockStream(shareId, linkId),
-            getBlocks: (abortSignal, pagination) => getFileBlocks(shareId, linkId, abortSignal, pagination),
+            getBlocks,
             onStart: (stream) => resolve(streamToBuffer(stream)),
         });
 
