@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, useEffect, memo } from 'react';
+import React, { ReactNode, useState, useEffect, memo, useRef } from 'react';
 import { useWindowSize, useHandler, useBeforeUnload } from 'react-components';
 import { c } from 'ttag';
 import { useMessageCache } from './MessageProvider';
@@ -20,6 +20,8 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
     const windowSize: WindowSize = { width, height };
     const messageCache = useMessageCache();
 
+    const returnFocusToElement = useRef<HTMLElement | null>(null);
+
     useBeforeUnload(
         messageIDs.length
             ? c('Info').t`The data you have entered in the draft may not be saved if you leave the page.`
@@ -33,9 +35,14 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
     const handleClose = (messageID: string) => () =>
         setMessageIDs((messageIDs) => {
             const newMessageIDs = messageIDs.filter((id) => id !== messageID);
+
             if (newMessageIDs.length) {
                 setFocusedMessageID(newMessageIDs[0]);
+            } else if (returnFocusToElement.current) {
+                returnFocusToElement.current.focus();
+                returnFocusToElement.current = null;
             }
+
             return newMessageIDs;
         });
 
@@ -48,12 +55,14 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
 
     useEffect(() => messageCache.subscribe(messageDeletionListener), [messageCache]);
 
-    const handleCompose = useCompose(
-        messageIDs,
-        (messageID) => setMessageIDs((messageIDs) => [...messageIDs, messageID]),
-        setFocusedMessageID,
-        maxActiveComposer
-    );
+    const openComposer = (messageID: string, returnFocusTo?: HTMLElement | null) => {
+        setMessageIDs((messageIDs) => [...messageIDs, messageID]);
+        if (returnFocusTo) {
+            returnFocusToElement.current = returnFocusTo;
+        }
+    };
+
+    const handleCompose = useCompose(messageIDs, openComposer, setFocusedMessageID, maxActiveComposer);
 
     const handleFocus = (messageID: string) => () => {
         setFocusedMessageID(messageID);

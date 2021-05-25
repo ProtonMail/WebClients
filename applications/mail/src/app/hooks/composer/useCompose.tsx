@@ -31,7 +31,9 @@ export interface ComposeNew {
     referenceMessage?: PartialMessageExtended;
 }
 
-export type ComposeArgs = ComposeExisting | ComposeNew;
+export type ComposeArgs = (ComposeExisting | ComposeNew) & {
+    returnFocusTo?: HTMLElement;
+};
 
 export const getComposeExisting = (composeArgs: ComposeArgs) =>
     (composeArgs as ComposeExisting).existingDraft ? (composeArgs as ComposeExisting) : undefined;
@@ -42,6 +44,7 @@ export const getComposeNew = (composeArgs: ComposeArgs) =>
 export const getComposeArgs = (composeArgs: ComposeArgs) => ({
     composeExisting: getComposeExisting(composeArgs),
     composeNew: getComposeNew(composeArgs),
+    returnFocusTo: composeArgs.returnFocusTo || (document.activeElement as HTMLElement),
 });
 
 export interface OnCompose {
@@ -50,7 +53,7 @@ export interface OnCompose {
 
 export const useCompose = (
     openComposers: string[],
-    openComposer: (messageID: string) => void,
+    openComposer: (messageID: string, returnFocusTo?: HTMLElement) => void,
     focusComposer: (messageID: string) => void,
     maxActiveComposer: number
 ) => {
@@ -114,7 +117,7 @@ export const useCompose = (
             return;
         }
 
-        const { composeExisting, composeNew } = getComposeArgs(composeArgs);
+        const { composeExisting, composeNew, returnFocusTo } = getComposeArgs(composeArgs);
 
         if (composeExisting) {
             const { existingDraft, fromUndo } = composeExisting;
@@ -138,7 +141,7 @@ export const useCompose = (
                 return;
             }
 
-            openComposer(localID);
+            openComposer(localID, returnFocusTo);
             focusComposer(localID);
             return;
         }
@@ -172,7 +175,7 @@ export const useCompose = (
 
             const newMessageID = await createDraft(action, referenceMessage);
 
-            openComposer(newMessageID);
+            openComposer(newMessageID, returnFocusTo);
             focusComposer(newMessageID);
         }
     });
