@@ -302,3 +302,526 @@ body.appConfigBody-is-mobile {
 		}
 	}
 }
+
+$font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans,
+	Ubuntu, Cantarell, 'Helvetica Neue', sans-serif !default;
+
+$global-border-radius: 3px !default;
+$global-bigger-border-radius: 6px !default;
+$default-height-fields: 2.1875rem !default; // 35
+$default-height-fields-inputforms: 2.25rem !default; // 36
+$bigger-height-fields-inputforms: 2.75rem !default; // 44
+
+// Global V4 styles for EO
+body {
+    color: #262a33;
+
+
+    &#eo-unlock,
+    &#eo-message,
+    &#eo-reply {
+        background: #262a33 url(assets('img/bg-mountains.svg')) 0 0 no-repeat;
+        background-size: cover;
+        font-family: $font-family;
+        font-size: .875rem;
+
+        .pm_opensans {
+            font-family: $font-family;
+        }
+
+        .headerNoAuth-container {
+            background: transparent;
+        }
+        .headerNoAuth-item-back, .headerNoAuth-item-report-button {
+            font-size: 1em;
+        }
+        .headerNoAuth-item-back::before {
+            content: none;
+        }
+        .headerNoAuth-item-report,
+        .headerNoAuth-item-noAuth:first-child {
+            display: none;
+        }
+        .headerNoAuth-item-noAuth-eo {
+            display: block;
+            line-height: 1.5;
+            height: 35px !important;
+            padding: .45em 1.1428571429em .45em;
+        }
+        .navigationReport {
+            position: relative;
+            margin-right: 2em;
+            display: block;
+
+            .navigation-link {
+                flex-direction: row;
+
+                .navigation-title {
+                    text-transform: none;
+                    margin-left: .4em;
+                }
+
+                .navigation-icons, .navigation-icon {
+                    height: 15px;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                }
+
+                .fa-angle-down {
+                    display: none;
+                }
+            }
+
+            .pm_dropdown.navigationReport-dropdown {
+                border: 1px solid #d0d3da;
+                border-radius: $global-border-radius !important;
+                padding: 0;
+                margin-top: 10px;
+                overflow: visible;
+                color: #262a33;
+                width: 13em;
+
+                &::before {
+                    content: '';
+                    z-index: -1;
+                    width: 0.9375rem;
+                    height: 0.9375rem;
+                    position: absolute;
+                    transform: rotate(45deg);
+                    pointer-events: none;
+                    left: 80%;
+                    top: 0;
+                    margin-top: -5px;
+                    background-color: white;
+                }
+
+                > a,
+                > button,
+                > ul > li {
+                    padding-left: 1em !important;
+                    padding-right: 1em !important;
+                    border-bottom: 0;
+
+                    .newBugReport-icon {
+                        margin-right: 1px;
+                    }
+
+                    &:hover {
+                        background-color: #babec733 !important;
+                    }
+                }
+            }
+        }
+
+
+        // LOGIN -----------------------
+        .pm_panel.alt {
+            background: white;
+            border-radius: $global-bigger-border-radius;
+            color: #262a33;
+            a {
+                color: #657ee4;
+                &:hover {
+                    color: #5064b6;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        #pm_login,
+        #pm_footer {
+            text-transform: none;
+        }
+
+        .tooltip {
+            background-color: #000;
+            color: #fff;
+
+            &[x-placement^="top"] .tooltip-arrow {
+                border-top-color: #000;
+            }
+            &[x-placement^="bottom"] .tooltip-arrow {
+                border-bottom-color: #000;
+            }
+            &[x-placement^="right"] .tooltip-arrow {
+                border-right-color: #000;
+            }
+            &[x-placement^="left"] .tooltip-arrow {
+                border-left-color: #000;
+            }
+        }
+        footer {
+            background-color: white;
+            border-radius: 0 0 $global-bigger-border-radius $global-bigger-border-radius;
+            border-top: 1px solid #d0d3da;
+            padding: 1rem 1.5em;
+        }
+        .cg-notify-message {
+            box-shadow: none;
+            text-shadow: none;
+            &.notification-success {
+                background: #1b8561;
+            }
+            &.notification-danger {
+                background-color: #d42f34;
+            }
+            &.notification-info {
+                background-color: #1578cf;
+            }
+
+        }
+
+
+        // FIELDS -----------------------
+        input,
+        .pm_form textarea {
+            height: $default-height-fields-inputforms !important;
+            border-radius: $global-border-radius;
+            padding: .4285714286em 1.1428571429em;
+            border: 1px solid #babec7;
+            background-color: white !important;
+            color: #262a33 !important;
+            outline: none;
+            box-shadow: none;
+            filter: none; // fixes Firefox autofill color
+            transition: 0.15s easing(easeOutQuint), background-position 0s;
+
+            &.error {
+                border-color: var(--signal-danger);
+            }
+
+            &:hover,
+            &.hover {
+                border-color: #a4a9b5;
+                background-color: white !important;
+                color: #262a33 !important;
+            }
+
+            &:focus,
+            &.focus,
+            &:focus-within {
+                border-color: #657ee4;
+                background-color: white !important;
+                color: #262a33 !important;
+            }
+
+            &:-moz-ui-invalid {
+                // fixes some Firefox issues with HTML5 validation
+                box-shadow: none;
+            }
+        }
+        .pm_form textarea {
+            height: auto !important;
+        }
+
+        .unlock-input-password input {
+            height: $bigger-height-fields-inputforms !important;
+        }
+
+        .customPasswordToggler.password-container .togglePassword-btn-toggle {
+            line-height: normal;
+            bottom: 0;
+            color: #222 !important;
+        }
+
+        // BUTTONS -----------------------
+        .pm_button.primary {
+            text-transform: none;
+            font-size: .875rem;
+            &,
+            &:hover {
+                background: #657ee4;
+                border: 0;
+                color: white;
+                box-shadow: none !important;
+            }
+            &:hover,
+            &:focus {
+                background: #5064b6;
+            }
+            &:active {
+                background: #3c4b88;
+            }
+        }
+        .pm_button,
+        .pm_form .bugModalView-input-label {
+            display: inline-block;
+            height: auto !important;
+            font-size: 1em !important;
+
+            // usage of box-shadow instead of border to enable increasing size of _visual_ border without shifting button size
+            box-shadow: inset 0 0 0 0 #babec7;
+            border: 1px solid #d0d3da;
+            text-transform: none !important;
+            border-radius: $global-border-radius;
+            outline: none; // be careful of a11y
+            background-color: transparent;
+            color: inherit;
+            text-align: center;
+            transition: 0.15s easing(easeOutQuint), background-position 0s;
+            font-weight: normal !important;
+
+            &:hover,
+            &:focus {
+                box-shadow: inset 0 0 0 1px #babec7;
+            }
+            &:active {
+                box-shadow: inset 0 0 0 2px #a4a9b5;
+            }
+
+            &.listAttachments-att {
+                display: flex;
+            }
+
+        }
+        .bugModalForm [ng-messages],
+        .text-red {
+            color: #d42f34;
+        }
+
+        // MESSAGE -----------------------
+        .messageExtra-container > .messageExtra-container-warning {
+            background-color: #d42f34;
+            color: white;
+            margin-top: .5em;
+            border-radius: $global-border-radius;
+        }
+        .messageExtra-container {
+            margin-top: 13px;
+        }
+        .container-to {
+            min-width: 3em;
+            display: inline-block;
+        }
+
+        .outside,
+        .outside .message-head,
+        #outsideMessageWrap {
+            border-radius: $global-bigger-border-radius;
+        }
+        #outsideMessageWrap {
+            background: #f3f4f6;
+            max-width: 60em;
+            margin: 0 auto;
+        }
+        #outsideMessage {
+            background-color: white;
+            padding: 1.5em;
+            border-radius: 0 0 $global-bigger-border-radius $global-bigger-border-radius;
+        }
+
+        .outside {
+            .message-head {
+                background: #f3f4f6;
+                margin-bottom: 0;
+                border-bottom: 1px solid #d0d3da;
+                padding-left: 1.25em;
+                padding-right: 1.25em;
+                margin-left: .5em;
+                margin-right: .5em;
+                border-radius: 0;
+            }
+            .message-metadata {
+                padding-top: 1em;
+                background: #f3f4f6;
+                border-bottom: 1px solid #d0d3da;
+                padding-left: 1.5em;
+                padding-right: 1.5em;
+                text-align: left;
+            }
+            #attachmentArea {
+                border-top: 1px solid #d0d3da;
+                padding-left: 1.5em;
+                padding-right: 1.5em;
+                border-radius: 0 0 $global-bigger-border-radius $global-bigger-border-radius;
+            }
+            .message-metadata ul.infos b,
+            .message-metadata ul.infos li b,
+            .message-metadata ul.infos li em {
+                color: #262a33;
+            }
+        }
+
+        ul.infos,
+        ul.infos b,
+        ul.infos em {
+            color: #262a33;
+            font-style: normal;
+        }
+        ul.infos em {
+            color: #696f7d;
+        }
+
+        // EDITOR -----------------------
+        [class*="squireToolbar-row"] {
+            background: white;
+            border-top: 1px solid #d0d3da;
+            border-bottom: 1px solid #d0d3da;
+        }
+        .squireToolbar-row-1 {
+            border-width: 1px 0 1px 0;
+        }
+        .squireToolbar-show-subrow .squireToolbar-row-1{
+            border-bottom: 0;
+        }
+        .squireToolbar-separator {
+            background: #d0d3da;
+        }
+        .composerAskEmbdded-details {
+            border: 1px solid #d0d3da;
+        }
+        [class*="squireToolbar-action-"] {
+            height: 32px;
+            margin: 0;
+            box-shadow: none !important; // FUCK
+            border: 0;
+            &:hover {
+                background-color: #babec733;
+                border: 0;
+                box-shadow: none;
+            }
+        }
+        .squireToolbar-container.b .squireToolbar-action-bold,
+        .squireToolbar-container.i .squireToolbar-action-italic,
+        .squireToolbar-container.u .squireToolbar-action-underline,
+        .squireToolbar-container.ul.li .squireToolbar-action-ulist,
+        .squireToolbar-container.ol.li .squireToolbar-action-olist,
+        .squireToolbar-container.align-left .squireToolbar-action-aleft,
+        .squireToolbar-container.align-center .squireToolbar-action-acenter,
+        .squireToolbar-container.align-right .squireToolbar-action-aright,
+        .squireToolbar-container.blockquote .squireToolbar-action-blockquote,
+        .squireToolbar-container.open-image .squireToolbar-action-image,
+        .squireToolbar-container.open-link .squireToolbar-action-link {
+            background-color: #babec733;
+            border: 0;
+            box-shadow: none;
+        }
+        .squireToolbar-select-view {
+            height: 32px;
+            margin: 0;
+            border: 0;
+            border-right: 1px solid #d0d3da;
+        }
+        .squireToolbar-show-subrow .squireToolbar-action-color {
+            border: 0;
+        }
+        .squireToolbar-triangle-with-shadow::after {
+            content: none;
+        }
+        .listAttachments-list {
+            .listAttachments-att::after {
+                border-right: 1px solid #d0d3da;
+                height: auto;
+            }
+
+            .listAttachments-att .size {
+                font-size: .875em;
+                margin-bottom: 5px;
+            }
+        }
+        .customRadio-input:checked + .customRadio-mask {
+            box-shadow: inset 0 0 0px 3px white, inset 0 0 0px 10px #657ee4;
+            border-color: #657ee4;
+        }
+        .addLink-container label[for="urlLink"].col-3-8 {
+            padding-top: 2.5em;
+        }
+        .composer-outside-editor iframe {
+            padding: 1rem 1em;
+        }
+
+        // MODAL BUG REPORT -----------------------
+        .pm_modal .modal-dialog {
+            border: 0;
+            border-radius: $global-border-radius;
+
+            .modal-content {
+                border-radius: $global-border-radius;
+                .modal-body {
+                    box-shadow: none;
+                }
+            }
+            .modal-footer {
+                border-radius: 0 0 $global-border-radius $global-border-radius;
+
+            }
+            .close {
+                background: white;
+                color: #262a33;
+                top: 0;
+                right: 0;
+                border-radius: $global-border-radius;
+            }
+
+            .alert{
+                &.alert-info {
+                    background: transparent;
+                    padding: .2em 1.2em;
+                    border-left: 3px solid #1578cf;
+                    border-radius: 0;
+                    color: #262a33;
+                }
+                &.alert-warning {
+                    background: #f5830a;
+                }
+                a {
+                    color: #657ee4;
+                }
+            }
+
+            .bugModalView-upload-success {
+                margin-top: .25em;
+            }
+        }
+
+    }
+}
+
+// alignment of attachment icons
+body#eo-reply {
+    .outside .message-head {
+        border-bottom: 0;
+    }
+    // for icon alignement
+    h1 {
+        display: flex;
+        align-items: baseline;
+    }
+}
+body#eo-message {
+    .outside .message-head h1 {
+        display: flex;
+        align-items: baseline;
+        padding-right: .5em;
+    }
+}
+
+// to have footer at the bottom ^^
+body#eo-message,
+body#eo-reply {
+    #body {
+        display: flex;
+        flex-direction: column;
+    }
+    .outside {
+        flex: 1 1 0px;
+    }
+}
+
+
+body#eo-unlock,
+body#eo-message,
+body#eo-reply {
+    &.appConfigBody-is-mobile {
+        .navigationReport {
+            display: none;
+        }
+
+        .container-to {
+            display: block;
+        }
+        .container-to-content {
+            padding-left: 1em;
+        }
+    }
+}

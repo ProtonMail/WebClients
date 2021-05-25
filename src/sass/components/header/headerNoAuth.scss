@@ -73,7 +73,8 @@ body#login-setup {
 body#signup .headerNoAuth-signup { display: none }
 
 body.unlock .headerNoAuth-item-noAuth { display: none }
-body:not(.unlock) .headerNoAuth-item-auth { display: none }
+body:not(.unlock) .headerNoAuth-item-auth,
+.headerNoAuth-item-noAuth-eo { display: none }
 
 /* mobile */
 .appConfigBody-is-mobile .headerNoAuth-item-report { display: none }

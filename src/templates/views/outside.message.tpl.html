@@ -1,6 +1,6 @@
 <div id="outsideMessageWrap">
     <div class="message-head">
-        <a ng-click="reply()" class="pm_button pull-right">
+        <a ng-click="reply()" class="pm_button primary pull-right">
             <i class="fa fa-reply"></i>
             <span class="visible-md-inline-block visible-lg-inline-block" translate-context="Action" translate>Reply securely</span>
         </a>
@@ -14,24 +14,38 @@
     <div class="message-metadata">
         <ul class="infos">
             <li>
-                <strong translate-comment="message metadata" translate translate-context="Title">From</strong>
-                <b>{{ message.Sender.Name }}</b> &lt;{{ message.Sender.Address }}&gt;
-                <span
+                <strong class="container-to" translate-comment="message metadata" translate translate-context="Title">From:</strong>
+                <span class="container-to-content">
+                    <b>{{ message.Sender.Name }}</b> &lt;{{ message.Sender.Address }}&gt;
+                    <span
                     class="fa fa-check-circle verified"
                     pt-tooltip-translate-context="Tooltip"
                     pt-tooltip-translate="ProtonMail Verified"></span>
+                </span>
+
             </li>
             <li ng-if="message.ToList.length > 0">
-                <strong translate-comment="message metadata" translate translate-context="Title">To</strong>
-                <span ng-repeat="email in message.ToList">
-                    <b>{{ email.Name }}</b> &lt;{{ email.Address }}&gt;
+                <strong class="container-to" translate-comment="message metadata" translate translate-context="Title">To:</strong>
+                <span class="container-to-content">
+                    <span ng-repeat="email in message.ToList">
+                        <b>{{ email.Name }}</b> &lt;{{ email.Address }}&gt;
+                    </span>
                 </span>
             </li>
             <li ng-if="message.CCList.length > 0">
-                <strong translate-comment="message metadata" translate translate-context="Title">CC</strong>
-                <span ng-repeat="email in message.CCList">
-                    <b>{{ email.Name }}</b> &lt;{{ email.Address }}&gt;
+                <strong class="container-to" translate-comment="message metadata" translate translate-context="Title">CC:</strong>
+                <span class="container-to-content">
+                    <span ng-repeat="email in message.CCList">
+                        <b>{{ email.Name }}</b> &lt;{{ email.Address }}&gt;
+                    </span>
                 </span>
+            </li>
+            <li>
+                <strong class="container-to" translate-comment="message metadata" translate translate-context="Title">Date:</strong>
+                <span class="container-to-content">
+                    <b>{{ message.Time | localReadableTime }}</b>
+                </span>
+
             </li>
         </ul>
         <message-extra></message-extra>

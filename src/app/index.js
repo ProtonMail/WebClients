@@ -1,4 +1,5 @@
 import '@babel/polyfill';
+/* eslint import/no-extraneous-dependencies: 0 */
 import 'unfetch/polyfill/index'; // https://github.com/developit/unfetch/issues/101
 
 import { check, redirect } from '../helpers/compat';

@@ -11,12 +11,16 @@
         </div>
         <ul class="infos">
             <li>
-                <strong translate-context="Title" translate>From</strong>:
-                <b>{{ message.Recipient }}</b>
+                <strong class="container-to" translate-context="Title" translate>From:</strong>
+                <span class="container-to-content">
+                    <b>{{ message.Recipient }}</b>
+                </span>
             </li>
             <li>
-                <strong translate-context="Title" translate>To</strong>:
-                <b>{{message.Sender.Name}}</b> <em>&lt;{{ message.Sender.Address }}&gt;</em>
+                <strong class="container-to" translate-context="Title" translate>To:</strong>
+                <span class="container-to-content">
+                    <b>{{message.Sender.Name}}</b> <em>&lt;{{ message.Sender.Address }}&gt;</em>
+                </span>
             </li>
         </ul>
     </div>

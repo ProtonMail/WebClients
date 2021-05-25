@@ -10,6 +10,14 @@
                     translate-context="Action">Back to protonmail.com</span>
             </a>
             <a
+                class="headerNoAuth-item-noAuth-eo pm_button"
+                href="https://protonmail.com"
+                target="_self" hidden>
+                <span
+                    translate
+                    translate-context="Action">About ProtonMail</span>
+            </a>
+            <a
                 class="headerNoAuth-item-auth"
                 ui-sref="login"
                 ui-sref-opts="{reload: true, notify: true}"
@@ -24,6 +32,23 @@
             <new-bug-report
                 class="headerNoAuth-item-report-button"></new-bug-report>
         </li>
+        <li class="navigationReport" hidden>
+            <a class="navigation-link pm_trigger" dropdown href="#" id="tour-support">
+                <span class="navigation-icons">
+                    <i class="fa fa-life-ring"></i>
+                    <i class="fa fa-angle-down"></i>
+                </span>
+                <span class="navigation-title" translate translate-context="Action">Help</span>
+            </a>
+            <span class="pm_dropdown navigationReport-dropdown wide right">
+                <a href="https://protonmail.com/support" target="_blank" class="navigationReport-help">
+                    <i class="fa fa-question-circle"></i>
+                    <span translate translate-context="Action">I have a question</span>
+                </a>
+                <new-bug-report class="navigationReport-help" id="reportBugBtn"></new-bug-report>
+            </span>
+        </li>
+
         <li class="headerNoAuth-item-noAuth headerNoAuth-signup">
             <link-website
                 data-key="forFree"
