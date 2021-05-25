@@ -19,7 +19,7 @@ const WelcomeV4TopBanner = () => {
         <Href
             key="learn-more-link"
             className="underline inline-block color-inherit"
-            url="https://protonmail.com/blog/new-protonmail"
+            url="https://protonmail.com/blog/new-protonmail-announcement"
         >{c('Link').t`learn more`}</Href>
     );
 
