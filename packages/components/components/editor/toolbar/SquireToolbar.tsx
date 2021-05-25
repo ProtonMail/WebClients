@@ -1,11 +1,8 @@
 import React, { MutableRefObject, useEffect, useState, ReactNode, useMemo, useCallback, memo } from 'react';
 import { c } from 'ttag';
-
-import { useHandler, useModals } from '../../../hooks';
 import { classnames } from '../../../helpers';
-
+import { useHandler, useIsMounted, useModals } from '../../../hooks';
 import Icon from '../../icon/Icon';
-
 import InsertImageModal from '../modals/InsertImageModal';
 import InsertLinkModal from '../modals/InsertLinkModal';
 import { SquireType, LinkData } from '../squireConfig';
@@ -50,11 +47,16 @@ const SquireToolbar = ({
     onAddImages,
     moreDropdownExtension,
 }: Props) => {
+    const isMounted = useIsMounted();
     const [squireInfos, setSquireInfos] = useState<{ [test: string]: boolean }>({});
 
     const { createModal } = useModals();
 
-    const handleCursor = useHandler(() => setSquireInfos(getPathInfo(squireRef.current)));
+    const handleCursor = useHandler(() => {
+        if (isMounted()) {
+            setSquireInfos(getPathInfo(squireRef.current));
+        }
+    });
     const handleCursorDebounced = useHandler(handleCursor, { debounce: 500 });
 
     const forceRefresh = (action: () => void) => () => {
