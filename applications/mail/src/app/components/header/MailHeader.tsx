@@ -55,18 +55,12 @@ const MailHeader = ({
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
     const { feature: featureCanUserSendFeedback } = useFeature(FeatureCode.CanUserSendFeedback);
+    const { cacheIndexedDB } = useEncryptedSearchContext();
 
     // Update the search input field when the keyword in the url is changed
     useEffect(() => updateValue(keyword), [keyword]);
 
-    const { cacheIndexedDB } = useEncryptedSearchContext();
-    const handleCaching = async () => {
-        void cacheIndexedDB();
-    };
-
-    const searchDropdown = (
-        <AdvancedSearchDropdown keyword={value} isNarrow={breakpoints.isNarrow} handleCaching={handleCaching} />
-    );
+    const searchDropdown = <AdvancedSearchDropdown keyword={value} isNarrow={breakpoints.isNarrow} />;
 
     const searchBox = (
         <Searchbox
@@ -81,7 +75,7 @@ const MailHeader = ({
             onChange={updateValue}
             value={value}
             advanced={searchDropdown}
-            onFocus={handleCaching}
+            onFocus={cacheIndexedDB}
         />
     );
 

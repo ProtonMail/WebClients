@@ -3,7 +3,6 @@ import { Api } from 'proton-shared/lib/interfaces';
 import { setItem } from 'proton-shared/lib/helpers/storage';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import { openDB, IDBPDatabase } from 'idb';
-import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { MessageEvent } from '../../models/event';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import {
@@ -126,7 +125,6 @@ export const refreshIndex = async (
     api: Api,
     indexKey: CryptoKey,
     getMessageKeys: GetMessageKeys,
-    attachmentsCache: AttachmentsCache,
     recordProgress: (progress: number, total: number) => void
 ) => {
     // Avoid new events being synced while this operation is ongoing by setting a RefreshEvent object
@@ -271,7 +269,7 @@ export const refreshIndex = async (
                         return;
                     }
                     promiseArray.push(
-                        fetchMessage(ID, api, getMessageKeys, attachmentsCache).then(async (fetchedMessageToCache) => {
+                        fetchMessage(ID, api, getMessageKeys).then(async (fetchedMessageToCache) => {
                             // Kill switch in case user logs out
                             if (!indexKeyExists(userID)) {
                                 throw new Error('Key was removed');
@@ -330,7 +328,6 @@ export const syncMessageEvents = async (
     isSearch: boolean,
     api: Api,
     getMessageKeys: GetMessageKeys,
-    attachmentsCache: AttachmentsCache,
     indexKey: CryptoKey,
     normalisedSearchParams: NormalisedSearchParams
 ) => {
@@ -397,7 +394,7 @@ export const syncMessageEvents = async (
                 }
 
                 // Fetch the whole message since the event only contains metadata
-                const messageToCache = await fetchMessage(ID, api, getMessageKeys, attachmentsCache);
+                const messageToCache = await fetchMessage(ID, api, getMessageKeys);
                 if (!messageToCache) {
                     failedMessageEvents.push(ID);
                     return;
@@ -450,7 +447,7 @@ export const syncMessageEvents = async (
                 let newMessageToCache: CachedMessage | undefined;
                 // If the modification is a draft update, fetch the draft from server so to have the new body...
                 if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
-                    const fetchedMessageToCache = await fetchMessage(ID, api, getMessageKeys, attachmentsCache);
+                    const fetchedMessageToCache = await fetchMessage(ID, api, getMessageKeys);
                     if (!fetchedMessageToCache) {
                         failedMessageEvents.push(ID);
                         return;
@@ -538,7 +535,6 @@ export const correctDecryptionErrors = async (
     indexKey: CryptoKey,
     api: Api,
     getMessageKeys: GetMessageKeys,
-    attachmentsCache: AttachmentsCache,
     recordProgress: (progress: number, total: number) => void
 ) => {
     let searchResults: MessageForSearch[] = [];
@@ -562,7 +558,7 @@ export const correctDecryptionErrors = async (
 
     const booleanArray = await Promise.all(
         searchResults.map(async (message) => {
-            return fetchMessage(message.ID, api, getMessageKeys, attachmentsCache).then(async (newMessage) => {
+            return fetchMessage(message.ID, api, getMessageKeys).then(async (newMessage) => {
                 if (!newMessage || newMessage.decryptionError) {
                     return false;
                 }

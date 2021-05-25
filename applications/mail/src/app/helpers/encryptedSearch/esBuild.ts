@@ -1,11 +1,12 @@
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { Api } from 'proton-shared/lib/interfaces';
 import { getItem, removeItem, setItem } from 'proton-shared/lib/helpers/storage';
+import { destroyOpenPGP, loadOpenPGP } from 'proton-shared/lib/openpgp';
+import { wait } from 'proton-shared/lib/helpers/promise';
 import { openDB, IDBPDatabase, deleteDB } from 'idb';
 import { decryptMessage as pmcryptoDecryptMessage, getMessage as pmcryptoGetMessage, encryptMessage } from 'pmcrypto';
 import runInQueue from 'proton-shared/lib/helpers/runInQueue';
 import { decryptMessage } from '../message/messageDecrypt';
-import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import { locateBlockquote } from '../message/messageBlockquote';
 import { CLASSNAME_SIGNATURE_CONTAINER } from '../message/messageSignature';
@@ -17,7 +18,13 @@ import {
     RecoveryPoint,
     StoredCiphertext,
 } from '../../models/encryptedSearch';
-import { AesKeyGenParams, ES_MAX_CONCURRENT, KeyUsages, localisedForwardFlags } from '../../constants';
+import {
+    AesKeyGenParams,
+    ES_MAX_CONCURRENT,
+    KeyUsages,
+    localisedForwardFlags,
+    OPENPGP_REFRESH_CUTOFF,
+} from '../../constants';
 import { indexKeyExists, isPaused } from './esUtils';
 import { queryEvents, queryMessage, queryMessagesCount, queryMessagesMetadata } from './esAPI';
 
@@ -163,7 +170,6 @@ export const fetchMessage = async (
     messageID: string,
     api: Api,
     getMessageKeys: GetMessageKeys,
-    attachmentsCache: AttachmentsCache,
     signal?: AbortSignal
 ) => {
     const message = await queryMessage(api, messageID, signal);
@@ -176,7 +182,7 @@ export const fetchMessage = async (
     let decryptionError = true;
     try {
         const keys = await getMessageKeys(message);
-        const decryptionResult = await decryptMessage(message, keys.privateKeys, attachmentsCache);
+        const decryptionResult = await decryptMessage(message, keys.privateKeys, undefined);
         if (!decryptionResult.errors) {
             decryptedSubject = decryptionResult.decryptedSubject;
             decryptedBody = decryptionResult.decryptedBody;
@@ -208,7 +214,6 @@ const storeMessages = async (
     indexKey: CryptoKey,
     api: Api,
     getMessageKeys: GetMessageKeys,
-    attachmentsCache: AttachmentsCache,
     userID: string,
     abortControllerRef: React.MutableRefObject<AbortController>
 ) => {
@@ -223,13 +228,7 @@ const storeMessages = async (
             throw new Error('Key was removed');
         }
 
-        const messageToCache = await fetchMessage(
-            message.ID,
-            api,
-            getMessageKeys,
-            attachmentsCache,
-            abortControllerRef.current.signal
-        );
+        const messageToCache = await fetchMessage(message.ID, api, getMessageKeys, abortControllerRef.current.signal);
 
         if (!messageToCache) {
             throw new Error('Plaintext to store is undefined');
@@ -278,7 +277,6 @@ const storeMessagesBatches = async (
     esDB: IDBPDatabase<EncryptedSearchDB>,
     indexKey: CryptoKey,
     getMessageKeys: GetMessageKeys,
-    attachmentsCache: AttachmentsCache,
     api: Api,
     abortControllerRef: React.MutableRefObject<AbortController>,
     inputLastMessage: RecoveryPoint | undefined,
@@ -303,6 +301,7 @@ const storeMessagesBatches = async (
         return false;
     }
 
+    let batchCount = 0;
     while (Messages.length) {
         const recoveryPoint = await storeMessages(
             Messages,
@@ -310,7 +309,6 @@ const storeMessagesBatches = async (
             indexKey,
             api,
             getMessageKeys,
-            attachmentsCache,
             userID,
             abortControllerRef
         ).catch((error) => {
@@ -353,6 +351,21 @@ const storeMessagesBatches = async (
         }
 
         Messages = resultMetadata.Messages;
+
+        if (batchCount++ >= OPENPGP_REFRESH_CUTOFF) {
+            const { openpgp } = window as any;
+            // In case the workers are performing some operations, wait until they are done
+            const openpgpWorkers = openpgp.getWorker();
+            if (!openpgpWorkers) {
+                continue;
+            }
+            while (openpgpWorkers.workers.some((worker: any) => worker.requests)) {
+                await wait(1000);
+            }
+            await destroyOpenPGP();
+            await loadOpenPGP();
+            batchCount = 0;
+        }
     }
 
     return true;
@@ -365,7 +378,6 @@ export const buildDB = async (
     userID: string,
     indexKey: CryptoKey,
     getMessageKeys: GetMessageKeys,
-    attachmentsCache: AttachmentsCache,
     api: Api,
     abortControllerRef: React.MutableRefObject<AbortController>,
     recordProgress: (progress: number) => void
@@ -386,7 +398,6 @@ export const buildDB = async (
         esDB,
         indexKey,
         getMessageKeys,
-        attachmentsCache,
         api,
         abortControllerRef,
         recoveryPoint,

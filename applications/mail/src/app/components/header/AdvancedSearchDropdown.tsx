@@ -134,10 +134,9 @@ const folderReducer = (acc: LabelInfo[], folder: FolderWithSubFolders, level = 0
 interface Props {
     keyword?: string;
     isNarrow: boolean;
-    handleCaching: () => void;
 }
 
-const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCaching }: Props) => {
+const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) => {
     const history = useHistory();
     const [uid] = useState(generateUID('advanced-search-dropdown'));
     const [mailSettings, loadingMailSettings] = useMailSettings();
@@ -156,7 +155,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
     const { state: showMore, toggle: toggleShowMore } = useToggle(false);
     const [user] = useUser();
     const { createModal } = useModals();
-    const { resumeIndexing, getESDBStatus, pauseIndexing, toggleEncryptedSearch, getProgressRecorderRef } =
+    const { resumeIndexing, getESDBStatus, pauseIndexing, toggleEncryptedSearch, getProgressRecorderRef, cacheIndexedDB } =
         useEncryptedSearchContext();
     const { isBuilding, esEnabled, isDBLimited, isRefreshing } = getESDBStatus();
     const [esState, setESState] = useState<ESState>(defaultESState);
@@ -417,7 +416,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow, handleCachi
         hasCaret: false,
         disabled: loading,
         onClick: () => {
-            handleCaching();
+            void cacheIndexedDB();
             toggle();
         },
     };

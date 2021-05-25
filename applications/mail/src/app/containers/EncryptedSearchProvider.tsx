@@ -5,7 +5,6 @@ import { useApi, useGetUserKeys, useNotifications, useSubscribeEventManager, use
 import { getItem, removeItem, setItem } from 'proton-shared/lib/helpers/storage';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { openDB, deleteDB } from 'idb';
-import { useAttachmentCache } from './AttachmentProvider';
 import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
 import { Event } from '../models/event';
 import {
@@ -53,7 +52,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const location = useLocation();
     const getUserKeys = useGetUserKeys();
     const getMessageKeys = useGetMessageKeys();
-    const attachmentsCache = useAttachmentCache();
     const api = useApi();
     const [{ ID: userID }] = useUser();
     const { createNotification } = useNotifications();
@@ -205,14 +203,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             };
         });
 
-        const newMessagesFound = await correctDecryptionErrors(
-            userID,
-            indexKey,
-            api,
-            getMessageKeys,
-            attachmentsCache,
-            recordProgress
-        );
+        const newMessagesFound = await correctDecryptionErrors(userID, indexKey, api, getMessageKeys, recordProgress);
 
         setESDBStatus((esDBStatus) => {
             return {
@@ -257,19 +248,23 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         const isSearch = testIsSearch(searchParameters);
         const normalisedSearchParams = normaliseSearchParams(searchParameters, labelID);
 
-        const { failedMessageEvents, newESCache, newPermanentResults, cacheChanged, searchChanged } =
-            await syncMessageEvents(
-                Messages,
-                userID,
-                esCache,
-                permanentResults,
-                isSearch,
-                api,
-                getMessageKeys,
-                attachmentsCache,
-                indexKey,
-                normalisedSearchParams
-            );
+        const {
+            failedMessageEvents,
+            newESCache,
+            newPermanentResults,
+            cacheChanged,
+            searchChanged,
+        } = await syncMessageEvents(
+            Messages,
+            userID,
+            esCache,
+            permanentResults,
+            isSearch,
+            api,
+            getMessageKeys,
+            indexKey,
+            normalisedSearchParams
+        );
 
         // Trigger re-renders only if strictly necessary
         if (cacheChanged && !(cacheChanged && searchChanged)) {
@@ -335,7 +330,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                     };
                 });
 
-                await refreshIndex(userID, api, indexKey, getMessageKeys, attachmentsCache, recordProgress);
+                await refreshIndex(userID, api, indexKey, getMessageKeys, recordProgress);
 
                 // Check if DB became limited after this update
                 const isDBLimited = await checkIsDBLimited(userID, api);
@@ -458,15 +453,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         let success = false;
         while (!success) {
-            success = await buildDB(
-                userID,
-                indexKey,
-                getMessageKeys,
-                attachmentsCache,
-                api,
-                abortControllerRef,
-                recordProgressLocal
-            );
+            success = await buildDB(userID, indexKey, getMessageKeys, api, abortControllerRef, recordProgressLocal);
 
             // Kill switch in case user logs out or pauses
             if (!indexKeyExists(userID) || (!success && isPaused(userID))) {
@@ -609,7 +596,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
             await Promise.all(
                 syncFailures.map(async (messageID) => {
-                    const messageToStore = await fetchMessage(messageID, api, getMessageKeys, attachmentsCache);
+                    const messageToStore = await fetchMessage(messageID, api, getMessageKeys);
                     if (!messageToStore) {
                         newSyncFailures.push(messageID);
                         return;

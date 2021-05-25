@@ -47,7 +47,7 @@ export interface DecryptMessageResult {
 const decryptMimeMessage = async (
     message: Message,
     privateKeys: OpenPGPKey[],
-    attachmentsCache: AttachmentsCache
+    attachmentsCache: AttachmentsCache | undefined
 ): Promise<DecryptMessageResult> => {
     const headerFilename = c('Encrypted Headers').t`Encrypted Headers filename`;
     const sender = getSender(message)?.Address;
@@ -84,7 +84,7 @@ const decryptMimeMessage = async (
     return {
         decryptedBody: processing.body,
         decryptedRawContent: decryption.data,
-        attachments: convert(message, processing.attachments, 0, attachmentsCache),
+        attachments: !attachmentsCache ? undefined : convert(message, processing.attachments, 0, attachmentsCache),
         decryptedSubject: processing.encryptedSubject,
         signature: decryption.signatures[0],
         mimetype: processing.mimetype,
@@ -128,7 +128,7 @@ const decryptLegacyMessage = async (message: Message, privateKeys: OpenPGPKey[])
 export const decryptMessage = async (
     message: Message,
     privateKeys: OpenPGPKey[],
-    attachmentsCache: AttachmentsCache
+    attachmentsCache: AttachmentsCache | undefined
 ): Promise<DecryptMessageResult> => {
     if (isMIME(message)) {
         return decryptMimeMessage(message, privateKeys, attachmentsCache);

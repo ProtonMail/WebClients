@@ -87,6 +87,7 @@ export const PROTON_DOMAINS = [
 
 export const MAX_ELEMENT_LIST_LOAD_RETRIES = 3;
 
+export const OPENPGP_REFRESH_CUTOFF = 10;
 export const ES_LIMIT = 150;
 export const ES_MAX_CONCURRENT = 10;
 export const ES_MAX_CACHE = 500000000; // 500 MB
