@@ -22,7 +22,7 @@ const PublicDriveLinkContainer = () => {
 };
 
 const enhancedConfig = {
-    APP_VERSION_DISPLAY: '4.0.0-beta.14',
+    APP_VERSION_DISPLAY: '4.0.0-beta.15',
     ...config,
 };
 
