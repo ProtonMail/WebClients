@@ -15,13 +15,18 @@ const WelcomeV4TopBanner = () => {
         return null;
     }
 
+    const learnMoreLink = (
+        <Href
+            key="learn-more-link"
+            className="underline inline-block color-inherit"
+            url="https://protonmail.com/blog/new-protonmail"
+        >{c('Link').t`learn more`}</Href>
+    );
+
     return (
         <TopBanner className="bg-info">
-            <span className="mr0-5">{c('Message display when user visit v4 login first time')
-                .t`Welcome to the new ProtonMail design, modern and easy to use. Sign in to discover more.`}</span>
-            <Href className="underline inline-block color-inherit" url="https://protonmail.com/blog/new-protonmail">{c(
-                'Link'
-            ).t`Learn more`}</Href>
+            {c('Message display when user visit v4 login first time')
+                .jt`Welcome to the new ProtonMail design, modern and easy to use. Sign in to continue or ${learnMoreLink}.`}
         </TopBanner>
     );
 };
