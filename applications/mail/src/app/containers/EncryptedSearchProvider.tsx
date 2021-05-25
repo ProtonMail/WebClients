@@ -1,14 +1,7 @@
-import React, { createContext, ReactNode, useContext, useState, useEffect, useRef, useCallback } from 'react';
+import React, { createContext, ReactNode, useContext, useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
-import {
-    useApi,
-    useGetUserKeys,
-    useNotifications,
-    useOnLogout,
-    useSubscribeEventManager,
-    useUser,
-} from 'react-components';
+import { useApi, useGetUserKeys, useNotifications, useSubscribeEventManager, useUser } from 'react-components';
 import { getItem, removeItem, setItem } from 'proton-shared/lib/helpers/storage';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { openDB, deleteDB } from 'idb';
@@ -89,11 +82,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         removeItem(`ES:${userID}:ESEnabled`);
         return deleteDB(`ES:${userID}:DB`).catch(() => undefined);
     };
-
-    /**
-     * Trigger deletion upon signout
-     */
-    useOnLogout(useCallback(esDelete, [userID]));
 
     /**
      * Notify the user the DB is deleted. Typically this is needed if the key is no
@@ -269,24 +257,19 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         const isSearch = testIsSearch(searchParameters);
         const normalisedSearchParams = normaliseSearchParams(searchParameters, labelID);
 
-        const {
-            failedMessageEvents,
-            newESCache,
-            newPermanentResults,
-            cacheChanged,
-            searchChanged,
-        } = await syncMessageEvents(
-            Messages,
-            userID,
-            esCache,
-            permanentResults,
-            isSearch,
-            api,
-            getMessageKeys,
-            attachmentsCache,
-            indexKey,
-            normalisedSearchParams
-        );
+        const { failedMessageEvents, newESCache, newPermanentResults, cacheChanged, searchChanged } =
+            await syncMessageEvents(
+                Messages,
+                userID,
+                esCache,
+                permanentResults,
+                isSearch,
+                api,
+                getMessageKeys,
+                attachmentsCache,
+                indexKey,
+                normalisedSearchParams
+            );
 
         // Trigger re-renders only if strictly necessary
         if (cacheChanged && !(cacheChanged && searchChanged)) {
@@ -661,12 +644,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     });
 
     useEffect(() => {
-        // Remove encrypted search DB in case there is a corrupt leftover
         if (!indexKeyExists(userID)) {
-            // TODO: Just for jest since it doesn't exist there
-            if (window.indexedDB) {
-                deleteDB(`ES:${userID}:DB`).catch(() => undefined);
-            }
             return;
         }
 
