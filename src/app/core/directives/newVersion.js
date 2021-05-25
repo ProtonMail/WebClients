@@ -1,8 +1,7 @@
 /* @ngInject */
 function newVersion(dispatchers, AppModel, gettextCatalog) {
     const I18N = {
-        version: (version) =>
-            gettextCatalog.getString('New version {{ version }} available', { version }, 'New version'),
+        version: gettextCatalog.getString('New version available', null, 'New version'),
         reload: gettextCatalog.getString('Reload Tab', null, 'New version')
     };
 
@@ -24,7 +23,7 @@ function newVersion(dispatchers, AppModel, gettextCatalog) {
                 a.dataset.action = 'reload';
 
                 const p = document.createElement('p');
-                p.textContent = I18N.version(version);
+                p.textContent = I18N.version;
                 p.className = 'newVersion-text';
 
                 el[0].appendChild(p);
