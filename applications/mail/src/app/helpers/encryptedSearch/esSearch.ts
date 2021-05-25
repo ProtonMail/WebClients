@@ -34,7 +34,7 @@ const roundMilliseconds = (time: number) => Math.floor(time / 1000);
  * Remove wildcard, normalise keyword and include end day
  */
 export const normaliseSearchParams = (searchParams: SearchParameters, labelID: string) => {
-    const { wildcard, keyword, end, ...otherParams } = searchParams;
+    const { wildcard, keyword, end, to, from, ...otherParams } = searchParams;
     let normalisedKeywords: string[] | undefined;
     if (keyword) {
         normalisedKeywords = normaliseKeyword(keyword);
@@ -49,6 +49,8 @@ export const normaliseSearchParams = (searchParams: SearchParameters, labelID: s
         labelID,
         end: roundedEnd,
         normalisedKeywords,
+        from: from ? from.toLocaleLowerCase() : undefined,
+        to: to ? to.toLocaleLowerCase() : undefined,
     };
 
     return normalisedSearchParams;
@@ -109,35 +111,36 @@ export const applySearch = (
     messageToSearch: CachedMessage,
     incrementMessagesSearched?: () => void
 ) => {
-    const {
-        address,
-        from,
-        to,
-        normalisedKeywords,
-        begin,
-        end,
-        attachments,
-        labelID,
-        decryptionError,
-    } = normalisedSearchParams;
-
-    const reducer = (accumulator: boolean, currentValue: Recipient) => {
-        return accumulator || currentValue.Address === to;
-    };
+    const { address, from, to, normalisedKeywords, begin, end, attachments, labelID, decryptionError } =
+        normalisedSearchParams;
 
     if (
         !messageToSearch.LabelIDs.includes(labelID) ||
         (address && messageToSearch.AddressID !== address) ||
         (begin && messageToSearch.Time < begin) ||
         (end && messageToSearch.Time > end) ||
-        (from && (messageToSearch.Sender.Address !== from || messageToSearch.Sender.Name !== from)) ||
-        (to && !messageToSearch.ToList.reduce(reducer, false)) ||
+        (from &&
+            !messageToSearch.Sender.Address.toLocaleLowerCase().includes(from) &&
+            !messageToSearch.Sender.Name.toLocaleLowerCase().includes(from)) ||
         (typeof attachments !== 'undefined' &&
             ((attachments === 0 && messageToSearch.NumAttachments > 0) ||
                 (attachments === 1 && messageToSearch.NumAttachments === 0))) ||
         (typeof decryptionError !== 'undefined' && decryptionError !== messageToSearch.decryptionError)
     ) {
         return false;
+    }
+
+    if (to) {
+        let keywordFound = false;
+        for (const recipient of messageToSearch.ToList) {
+            keywordFound =
+                keywordFound ||
+                recipient.Address.toLocaleLowerCase().includes(to) ||
+                recipient.Name.toLocaleLowerCase().includes(to);
+        }
+        if (!keywordFound) {
+            return false;
+        }
     }
 
     if (incrementMessagesSearched) {
