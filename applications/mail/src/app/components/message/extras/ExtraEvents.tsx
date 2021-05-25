@@ -55,7 +55,7 @@ const ExtraEvents = ({ message }: Props) => {
     const [userSettings, loadingUserSettings] = useUserSettings();
     const getCalendarUserSettings = useGetCalendarUserSettings();
     const [loadingWidget, withLoadingWidget] = useLoading();
-    const [widgetHasLoaded, setWidgetHasLoaded] = useState(false);
+    const [loadedWidget, setLoadedWidget] = useState('');
     const [invitations, setInvitations] = useState<(RequireSome<EventInvitation, 'method'> | EventInvitationError)[]>(
         []
     );
@@ -76,7 +76,12 @@ const ExtraEvents = ({ message }: Props) => {
                 setInvitations([]);
                 return;
             }
-            if (messageHasDecryptionError || loadingConfigs || !getMessageHasData(message) || widgetHasLoaded) {
+            if (
+                messageHasDecryptionError ||
+                loadingConfigs ||
+                !getMessageHasData(message) ||
+                loadedWidget === message.data.ID
+            ) {
                 return;
             }
             const run = async () => {
@@ -143,7 +148,7 @@ const ExtraEvents = ({ message }: Props) => {
             };
 
             void withLoadingWidget(run());
-            void setWidgetHasLoaded(true);
+            void setLoadedWidget(message.data.ID);
         } catch (error) {
             const errors: MessageErrors = {};
             if (isNetworkError(error)) {
@@ -153,7 +158,7 @@ const ExtraEvents = ({ message }: Props) => {
             }
             updateMessageCache(messageCache, message.localID, { errors });
         }
-    }, [message.data, message.errors, loadingConfigs]);
+    }, [message.data, message.errors, loadingConfigs, message.data?.ID]);
 
     if (loadingConfigs || messageHasDecryptionError || !getMessageHasData(message) || loadingWidget) {
         return null;
