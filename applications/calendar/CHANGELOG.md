@@ -8,7 +8,7 @@
 - Add automatically answers of participants with Proton accounts
 - Update automatically invitations for participants with Proton accounts
 - Add limit of 20 calendars for paid subscription plans
-- Update design of calendar edition and deletion in settings
+- Update design of calendar edition modal
 - Add list of events with export error
 
 ## Fixed
