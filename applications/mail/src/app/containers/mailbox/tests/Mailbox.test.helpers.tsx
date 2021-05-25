@@ -46,10 +46,10 @@ export const props = {
     labelID: 'labelID',
     mailSettings: { ViewMode: VIEW_MODE.GROUP } as MailSettings,
     userSettings: {} as UserSettings,
-    breakpoints: {} as Breakpoints,
+    breakpoints: { isDesktop: true } as Breakpoints,
     elementID: undefined,
     location: {} as Location,
-    history: ({ push: jest.fn(), location: { pathname: 'pathname', search: 'search' } } as any) as History,
+    history: { push: jest.fn(), location: { pathname: 'pathname', search: 'search' } } as any as History,
     onCompose: jest.fn(),
     isComposerOpened: false,
 };

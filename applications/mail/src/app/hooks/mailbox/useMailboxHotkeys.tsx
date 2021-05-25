@@ -8,7 +8,6 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { getFolderName, labelIncludes } from '../../helpers/labels';
 import { useMoveToFolder, useStar } from '../useApplyLabels';
-import { useEmptyLabel } from '../useEmptyLabel';
 import { MARK_AS_STATUS, useMarkAs } from '../useMarkAs';
 import { usePermanentDelete } from '../usePermanentDelete';
 import { setParamsInLocation } from '../../helpers/mailboxUrl';
@@ -19,7 +18,7 @@ import { Filter } from '../../models/tools';
 import { useFolderNavigationHotkeys } from './useFolderNavigationHotkeys';
 import { isConversationMode } from '../../helpers/mailSettings';
 
-const { TRASH, SPAM, ARCHIVE, INBOX, DRAFTS, ALL_DRAFTS, STARRED, SENT, ALL_SENT, ALL_MAIL } = MAILBOX_LABEL_IDS;
+const { TRASH, SPAM, ARCHIVE, INBOX, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT } = MAILBOX_LABEL_IDS;
 
 export interface MailboxHotkeysContext {
     labelID: string;
@@ -93,20 +92,12 @@ export const useMailboxHotkeys = (
     const moveToFolder = useMoveToFolder();
     const star = useStar();
     const markAs = useMarkAs();
-    const emptyLabel = useEmptyLabel();
     const permanentDelete = usePermanentDelete(labelID);
 
     const hotkeysEnabledAndListView = useMemo(
         () => Shortcuts && (columnLayout || (!columnLayout && !showContentView)),
         [columnLayout, showContentView, Shortcuts]
     );
-
-    const emptyFolder = async () => {
-        if (labelIncludes(labelID, INBOX, DRAFTS, ALL_DRAFTS, STARRED, SENT, ALL_SENT, ARCHIVE, ALL_MAIL)) {
-            return;
-        }
-        await emptyLabel(labelID);
-    };
 
     const getElementsForShortcuts = () => {
         let elements: Element[] = [];
@@ -378,19 +369,6 @@ export const useMailboxHotkeys = (
                         return;
                     }
                     await permanentDelete(elements.map((e) => e.ID).filter(isTruthy));
-                }
-            },
-        ],
-        [
-            ['Meta', 'Shift', 'Backspace'],
-            async (e) => {
-                if (
-                    hotkeysEnabledAndListView &&
-                    !labelIncludes(labelID, INBOX, DRAFTS, ALL_DRAFTS, STARRED, SENT, ALL_SENT, ARCHIVE, ALL_MAIL)
-                ) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    await emptyFolder();
                 }
             },
         ],

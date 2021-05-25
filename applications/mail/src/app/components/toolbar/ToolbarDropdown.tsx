@@ -7,6 +7,7 @@ interface LockableDropdownProps {
 }
 
 interface Props {
+    hasCaret?: boolean;
     autoClose?: boolean;
     title?: ReactNode;
     className?: string;
@@ -25,6 +26,7 @@ const ToolbarDropdown = ({
     className,
     dropDownClassName,
     children,
+    hasCaret = true,
     autoClose = true,
     disabled = false,
     noMaxSize = false,
@@ -51,7 +53,7 @@ const ToolbarDropdown = ({
                     ref={anchorRef}
                     isOpen={isOpen}
                     onClick={toggle}
-                    hasCaret
+                    hasCaret={hasCaret}
                     disabled={disabled}
                     caretClassName="toolbar-icon"
                     className={classnames([

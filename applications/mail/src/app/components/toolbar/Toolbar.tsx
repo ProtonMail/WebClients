@@ -6,9 +6,8 @@ import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import ReadUnreadButtons from './ReadUnreadButtons';
 import ToolbarDropdown from './ToolbarDropdown';
-import LayoutDropdown from './LayoutDropdown';
 import MoveButtons from './MoveButtons';
-import EmptyButton from './EmptyButton';
+import MoreDropdown from './MoreDropdown';
 import SelectAll from './SelectAll';
 import MoveDropdown from '../dropdown/MoveDropdown';
 import LabelDropdown from '../dropdown/LabelDropdown';
@@ -169,14 +168,10 @@ const Toolbar = ({
                         />
                     )}
                 </ToolbarDropdown>
-                <EmptyButton labelID={labelID} breakpoints={breakpoints} elementIDs={elementIDs} />
             </div>
             <div className="flex">
                 {breakpoints.isDesktop && (
-                    <>
-                        <LayoutDropdown mailSettings={mailSettings} />
-                        <ToolbarSeparator />
-                    </>
+                    <MoreDropdown labelID={labelID} elementIDs={elementIDs} selectedIDs={selectedIDs} />
                 )}
                 {listInView ? (
                     <PagingControls loading={loading} page={page} onPage={onPage} />
