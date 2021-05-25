@@ -5,7 +5,7 @@ import { Download, Upload } from '../../interfaces/transfer';
 import {
     isTransferActive,
     isTransferDone,
-    isTransferPaused,
+    isTransferManuallyPaused,
     isTransferError,
     isTransferCanceled,
     calculateProgress,
@@ -34,7 +34,7 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
     const doneUploads = useMemo(() => uploads.filter(isTransferDone), [uploads]);
     const doneDownloads = useMemo(() => downloads.filter(isTransferDone), [downloads]);
 
-    const pausedTransfers = useMemo(() => transfers.filter(isTransferPaused), [transfers]);
+    const pausedTransfers = useMemo(() => transfers.filter(isTransferManuallyPaused), [transfers]);
     const failedTransfers = useMemo(() => transfers.filter(isTransferError), [transfers]);
     const canceledTransfers = useMemo(() => transfers.filter(isTransferCanceled), [transfers]);
 

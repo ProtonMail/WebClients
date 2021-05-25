@@ -3,7 +3,7 @@ import { Icon, classnames, Tooltip } from 'react-components';
 import { c } from 'ttag';
 import { TransferState, Upload, Download } from '../../interfaces/transfer';
 import {
-    isTransferPaused,
+    isTransferManuallyPaused,
     isTransferProgress,
     isTransferDone,
     isTransferError,
@@ -27,7 +27,7 @@ const getErrorText = (error: any) => {
 const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
     const shouldShowDirection =
         isTransferProgress(transfer) ||
-        isTransferPaused(transfer) ||
+        isTransferManuallyPaused(transfer) ||
         isTransferCanceled(transfer) ||
         isTransferDone(transfer);
 
@@ -55,6 +55,10 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
             text: c('Info').t`Failed`,
             icon: 'attention',
         },
+        [TransferState.NetworkError]: {
+            text: c('Info').t`Network issue`,
+            icon: 'attention',
+        },
         [TransferState.Canceled]: {
             text: c('Info').t`Canceled`,
             icon: 'off',
@@ -73,7 +77,7 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
         <div
             className={classnames([
                 'text-ellipsis flex-no-min-children flex-align-items-center flex-nowrap',
-                isTransferPaused(transfer) && 'color-info',
+                isTransferManuallyPaused(transfer) && 'color-info',
                 isTransferDone(transfer) && 'color-success',
                 isTransferError(transfer) && 'color-danger',
             ])}

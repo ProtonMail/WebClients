@@ -4,6 +4,7 @@ import { ReadableStream } from 'web-streams-polyfill';
 import { createReadableStreamWrapper } from '@mattiasbuelens/web-streams-adapter';
 import { Api } from 'proton-shared/lib/interfaces';
 import runInQueue from 'proton-shared/lib/helpers/runInQueue';
+import { getIsUnreachableError, getIsOfflineError } from 'proton-shared/lib/api/helpers/apiErrorHelper';
 import { DriveFileBlock } from '../../interfaces/file';
 import { queryFileBlock } from '../../api/files';
 import { ObserverStream, untilStreamEnd } from '../../utils/stream';
@@ -44,9 +45,10 @@ export interface DownloadCallbacks {
         }
     ) => Promise<DriveFileBlock[] | Uint8Array[]>;
     onStart?: (stream: ReadableStream<Uint8Array>) => void;
+    onProgress?: (bytes: number) => void;
     onFinish?: () => void;
     onError?: (err: any) => void;
-    onProgress?: (bytes: number) => void;
+    onNetworkError?: (id: string, err: any) => void;
     transformBlockStream?: StreamTransformer;
 }
 
@@ -56,6 +58,7 @@ export const initDownload = ({
     onProgress,
     onFinish,
     onError,
+    onNetworkError,
     transformBlockStream,
 }: DownloadCallbacks) => {
     const id = generateUID('drive-transfers');
@@ -181,68 +184,74 @@ export const initDownload = ({
                 await startDownload(getBlockQueue(activeIndex), numRetries + 1);
             };
 
+            let ongoingNumberOfDownloads = 0;
             const downloadQueue = blockQueue.map(({ URL, Index, EncSignature }) => async () => {
-                if (!buffers.get(Index)?.done) {
-                    await waitUntil(() => buffers.size < MAX_TOTAL_BUFFER_SIZE || abortController.signal.aborted);
+                ongoingNumberOfDownloads++;
+                try {
+                    if (!buffers.get(Index)?.done) {
+                        await waitUntil(() => buffers.size < MAX_TOTAL_BUFFER_SIZE || abortController.signal.aborted);
 
-                    if (abortController.signal.aborted) {
-                        throw new TransferCancel({ id });
-                    }
-
-                    const blockStream = toPolyfillReadable(
-                        await api({
-                            ...queryFileBlock(URL),
-                            timeout: DOWNLOAD_TIMEOUT,
-                            retriesOnTimeout: DOWNLOAD_RETRIES_ON_TIMEOUT,
-                            signal: abortController.signal,
-                            silence: true,
-                        })
-                    ) as ReadableStream<Uint8Array>;
-
-                    const progressStream = new ObserverStream((value) => {
                         if (abortController.signal.aborted) {
                             throw new TransferCancel({ id });
                         }
-                        incompleteProgress.set(Index, (incompleteProgress.get(Index) ?? 0) + value.length);
-                        onProgress?.(value.length);
-                    });
-                    const rawContentStream = blockStream.pipeThrough(progressStream);
 
-                    // Decrypt the file block content using streaming decryption
-                    // TODO: make EncSignature type of string, when downloadShared payload will contain encSignature
-                    const transformedContentStream = transformBlockStream
-                        ? await transformBlockStream(rawContentStream, EncSignature || '')
-                        : rawContentStream;
+                        const blockStream = toPolyfillReadable(
+                            await api({
+                                ...queryFileBlock(URL),
+                                timeout: DOWNLOAD_TIMEOUT,
+                                retriesOnTimeout: DOWNLOAD_RETRIES_ON_TIMEOUT,
+                                signal: abortController.signal,
+                                silence: true,
+                            })
+                        ) as ReadableStream<Uint8Array>;
 
-                    await untilStreamEnd(transformedContentStream, async (data) => {
-                        if (abortController.signal.aborted) {
-                            throw new TransferCancel({ id });
+                        const progressStream = new ObserverStream((value) => {
+                            if (abortController.signal.aborted) {
+                                throw new TransferCancel({ id });
+                            }
+                            incompleteProgress.set(Index, (incompleteProgress.get(Index) ?? 0) + value.length);
+                            onProgress?.(value.length);
+                        });
+                        const rawContentStream = blockStream.pipeThrough(progressStream);
+
+                        // Decrypt the file block content using streaming decryption
+                        // TODO: make EncSignature type of string, when downloadShared payload will contain encSignature
+                        const transformedContentStream = transformBlockStream
+                            ? await transformBlockStream(rawContentStream, EncSignature || '')
+                            : rawContentStream;
+
+                        await untilStreamEnd(transformedContentStream, async (data) => {
+                            if (abortController.signal.aborted) {
+                                throw new TransferCancel({ id });
+                            }
+                            const buffer = buffers.get(Index);
+                            if (buffer) {
+                                buffer.chunks.push(data);
+                            } else {
+                                buffers.set(Index, { done: false, chunks: [data] });
+                            }
+                        });
+
+                        const currentBuffer = buffers.get(Index);
+
+                        if (currentBuffer) {
+                            currentBuffer.done = true;
                         }
-                        const buffer = buffers.get(Index);
-                        if (buffer) {
-                            buffer.chunks.push(data);
-                        } else {
-                            buffers.set(Index, { done: false, chunks: [data] });
+                    }
+
+                    if (Index === activeIndex) {
+                        let nextIndex = activeIndex;
+                        // Flush buffers for subsequent complete blocks too
+                        while (buffers.get(nextIndex)?.done) {
+                            incompleteProgress.delete(nextIndex);
+                            await flushBuffer(nextIndex);
+                            nextIndex++;
                         }
-                    });
-
-                    const currentBuffer = buffers.get(Index);
-
-                    if (currentBuffer) {
-                        currentBuffer.done = true;
+                        // Assign next incomplete block as new active block
+                        activeIndex = nextIndex;
                     }
-                }
-
-                if (Index === activeIndex) {
-                    let nextIndex = activeIndex;
-                    // Flush buffers for subsequent complete blocks too
-                    while (buffers.get(nextIndex)?.done) {
-                        incompleteProgress.delete(nextIndex);
-                        await flushBuffer(nextIndex);
-                        nextIndex++;
-                    }
-                    // Assign next incomplete block as new active block
-                    activeIndex = nextIndex;
+                } finally {
+                    ongoingNumberOfDownloads--;
                 }
             });
 
@@ -258,12 +267,31 @@ export const initDownload = ({
                         return retryDownload(activeIndex);
                     }
 
+                    if (onNetworkError && (getIsUnreachableError(e) || getIsOfflineError(e))) {
+                        revertProgress();
+
+                        // onNetworkError sets the state of the transfer and
+                        // the transfer can be resumed right away--therefore,
+                        // pausing has to be done first to avoid race (resuming
+                        // sooner than pausing).
+                        paused = true;
+                        onNetworkError(id, e);
+
+                        // Transfer can be resumed faster than ongoing block
+                        // downloads are aborted. Therefore, first we need to
+                        // wait for all downloads to be done to avoid flushing
+                        // the same buffer more than once.
+                        await waitUntil(() => paused === false && ongoingNumberOfDownloads === 0);
+                        await startDownload(getBlockQueue(activeIndex));
+                        return;
+                    }
+
                     fsWriter.abort(e).catch(console.error);
                     throw e;
                 }
 
                 revertProgress();
-                await waitUntil(() => paused === false);
+                await waitUntil(() => paused === false && ongoingNumberOfDownloads === 0);
                 await startDownload(getBlockQueue(activeIndex));
             }
         };

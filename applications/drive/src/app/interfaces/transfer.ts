@@ -8,6 +8,7 @@ export enum TransferState {
     Done = 'done',
     Canceled = 'canceled',
     Error = 'error',
+    NetworkError = 'networkError',
     Paused = 'paused',
 }
 
