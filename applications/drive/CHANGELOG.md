@@ -1,3 +1,18 @@
+# [4.0.0-beta.15] - 2021-05-26
+
+With this product iteration we give you ability to view thumbnails in Grid layout mode.
+
+## Fixed
+
+- Adding a custom password does not change the generated secure sharing link
+- Removed Proton promo banner from download a file shared page
+- Updated top bar link when re-activating keys after a password reset
+
+## Added
+
+- View thumbnails of supported image type files in Grid layout
+
+
 # [4.0.0-beta.14] - 2021-05-05
 
 Our team has been hard at work smashing bugs and improving experience using Proton Drive.
