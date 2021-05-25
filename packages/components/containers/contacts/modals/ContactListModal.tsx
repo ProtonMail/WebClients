@@ -114,16 +114,16 @@ const ContactListModal = ({ onSubmit, onClose, inputValue, ...rest }: Props) => 
     };
 
     const searchFilter = (c: ContactEmail) => {
-        const tokenizedQuery = normalize(searchValue).split(' ');
+        const tokenizedQuery = normalize(searchValue, true).split(' ');
 
         const groupNameTokens = c.LabelIDs.reduce((acc: string[], labelId) => {
-            const tokenized = normalize(contactGroupsMap[labelId].Name).split(' ');
+            const tokenized = normalize(contactGroupsMap[labelId].Name, true).split(' ');
             return [...acc, ...tokenized];
         }, []);
 
         return (
-            tokenizedQuery.some((token) => normalize(c.Name).includes(token)) ||
-            tokenizedQuery.some((token) => normalize(c.Email).includes(token)) ||
+            tokenizedQuery.some((token) => normalize(c.Name, true).includes(token)) ||
+            tokenizedQuery.some((token) => normalize(c.Email, true).includes(token)) ||
             tokenizedQuery.some((token) => groupNameTokens.some((g) => g.includes(token)))
         );
     };
