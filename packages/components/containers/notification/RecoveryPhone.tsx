@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import { updatePhone } from 'proton-shared/lib/api/settings';
-import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
 
 import AuthModal from '../password/AuthModal';
 import { ConfirmModal, Alert, Button, InputFieldTwo, PhoneInput, useFormErrors } from '../../components';
@@ -21,7 +20,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
     const { call } = useEventManager();
-    const { validator, onFormSubmit } = useFormErrors();
+    const { onFormSubmit } = useFormErrors();
 
     const handleSubmit = async () => {
         if (!input && hasReset) {
@@ -62,7 +61,6 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                 <InputFieldTwo
                     as={PhoneInput}
                     id="phoneInput"
-                    error={validator([requiredValidator(input)])}
                     disableChange={loading}
                     defaultCountry={defaultCountry}
                     value={input}
