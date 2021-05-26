@@ -144,7 +144,12 @@ const PublicApp = ({ onLogin, locales }: Props) => {
 
     const handleActiveSessions = ({ session, sessions }: GetActiveSessionsResult) => {
         // Ignore the automatic login
-        if (ignoreAutoRef.current || [SSO_PATHS.SWITCH, SSO_PATHS.SIGNUP].includes(location.pathname as any)) {
+        if (
+            ignoreAutoRef.current ||
+            [SSO_PATHS.SWITCH, SSO_PATHS.SIGNUP, SSO_PATHS.RESET_PASSWORD, SSO_PATHS.FORGOT_USERNAME].includes(
+                location.pathname as any
+            )
+        ) {
             setActiveSessions(sessions);
             if (sessions.length >= 1) {
                 setHasBackToSwitch(true);
