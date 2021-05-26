@@ -3,6 +3,7 @@ import { c } from 'ttag';
 
 import { APPS } from 'proton-shared/lib/constants';
 import humanSize from 'proton-shared/lib/helpers/humanSize';
+import percentage from 'proton-shared/lib/helpers/percentage';
 import { hasMailProfessional, hasVisionary } from 'proton-shared/lib/helpers/subscription';
 import { SettingsLink } from '../link';
 import { Meter, getMeterColor } from '../progress';
@@ -33,7 +34,7 @@ const Sidebar = ({ expanded = false, onToggleExpand, hasAppLinks = true, logo, p
     const [user] = useUser();
     const [subscription] = useSubscription();
     const { UsedSpace, MaxSpace, isMember, isSubUser } = user;
-    const spacePercentage = (UsedSpace * 100) / MaxSpace;
+    const spacePercentage = percentage(MaxSpace, UsedSpace);
 
     const canAddStorage = useMemo(() => {
         if (!subscription) {
