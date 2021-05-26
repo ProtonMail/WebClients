@@ -6,7 +6,6 @@ import StorageLimitTopBanner from './StorageLimitTopBanner';
 import OnlineTopBanner from './OnlineTopBanner';
 import SubUserTopBanner from './SubUserTopBanner';
 import DeskopNotificationTopBanner from './DeskopNotificationTopBanner';
-import EarlyAccessDesynchronizedBanner from './EarlyAccessDesynchronizedBanner';
 
 interface Props {
     children?: React.ReactNode;
@@ -21,7 +20,6 @@ const TopBanners = ({ children }: Props) => {
             <NewVersionTopBanner />
             <SubUserTopBanner />
             <DeskopNotificationTopBanner />
-            <EarlyAccessDesynchronizedBanner />
             {children}
         </>
     );

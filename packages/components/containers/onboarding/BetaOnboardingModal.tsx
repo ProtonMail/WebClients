@@ -32,7 +32,7 @@ const BetaOnboardingModal = (props: any) => {
                     close={null}
                     submit={c('Onboarding Beta').t`Got it`}
                     onSubmit={handleSubmit}
-                    loading={loading}
+                    loading={loading || !earlyAccess.canUpdate}
                 >
                     <OnboardingContent
                         title={c('Onboarding Beta').t`Beta enabled`}
