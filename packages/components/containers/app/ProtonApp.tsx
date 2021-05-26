@@ -42,12 +42,6 @@ import { GlobalLoaderProvider, GlobalLoader } from '../../components/globalLoade
 import { WELCOME_FLAG_KEY } from '../../hooks/useWelcomeFlags';
 import ThemeProvider from '../themes/ThemeProvider';
 
-// Temporarily handle static site signups
-// TODO: Remove when not needed
-if (window.location.pathname === '/create/new') {
-    replaceUrl(getAppHref(`/signup${window.location.search}`, APPS.PROTONACCOUNT));
-}
-
 const getIsSSOPath = (pathname: string) => {
     const strippedPathname = `/${stripLeadingAndTrailingSlash(pathname)}`;
     return Object.values(SSO_PATHS).some((path) => strippedPathname.startsWith(path));
