@@ -12,6 +12,12 @@ RewriteRule ^$ /index.html [NC,L]
 # Hide .git stuff
 RewriteRule ^.*?\.git.* /index.html [NC,L]
 
+RewriteCond %{HTTP_HOST} ^[^\.]+\.(.*)$
+RewriteRule ^help/reset-login-password https://account.%1/reset-password [R=302,L]
+
+RewriteCond %{HTTP_HOST} ^[^\.]+\.(.*)$
+RewriteRule ^create/new https://account.%1/signup [R=302,L]
+
 RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d
