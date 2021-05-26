@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import { updateEmail } from 'proton-shared/lib/api/settings';
-import { emailValidator, requiredValidator } from 'proton-shared/lib/helpers/formValidators';
+import { emailValidator } from 'proton-shared/lib/helpers/formValidators';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 
 import { Alert, Button, ConfirmModal, InputFieldTwo, useFormErrors } from '../../components';
 import { useLoading, useModals, useNotifications, useEventManager } from '../../hooks';
@@ -17,7 +18,7 @@ interface Props {
 }
 
 const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
-    const [input, setInput] = useState(email);
+    const [input, setInput] = useState(email || '');
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
@@ -78,12 +79,12 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                     disableChange={loading}
                     value={input || ''}
                     placeholder={c('Info').t`Not set`}
-                    error={validator([requiredValidator(input), emailValidator(input || '')])}
+                    error={validator([input && emailValidator(input)].filter(isTruthy))}
                     onValue={setInput}
                 />
             </div>
             <div className="mb0-5">
-                <Button type="submit" color="norm" disabled={email === input} loading={loading}>
+                <Button type="submit" color="norm" disabled={(email || '') === input} loading={loading}>
                     {c('Action').t`Update`}
                 </Button>
             </div>
