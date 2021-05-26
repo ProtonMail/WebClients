@@ -109,22 +109,20 @@ const generateSessionKeyHelper = async (): Promise<SessionKey> => ({
  * (i.e. deduplication)
  */
 const encryptDraftBodyPackage = async ({
-    pack,
+    body,
     publicKeys,
     privateKeys,
-    publicKeysList,
-    message,
+    publicKeysList = [],
 }: {
-    pack: PackageDirect;
+    body?: string;
     privateKeys: OpenPGPKey[];
     publicKeys: OpenPGPKey[];
-    publicKeysList: OpenPGPKey[];
-    message: RequireOnly<Message, 'Body' | 'MIMEType'>;
+    publicKeysList?: OpenPGPKey[];
 }) => {
     const cleanPublicKeys = [...publicKeys, ...publicKeysList].filter(identity);
 
     const { data, sessionKey } = await encryptMessage({
-        data: pack.Body || '',
+        data: body || '',
         publicKeys: cleanPublicKeys,
         privateKeys,
         returnSessionKey: true,
@@ -141,9 +139,9 @@ const encryptDraftBodyPackage = async ({
     const value = concatArrays(Object.values(packets).flat() as Uint8Array[]);
     // _.flowRight(concatArrays, _.flatten, _.values)(packets);
 
-    message.Body = await armorBytes(value);
+    const armoredBody = await armorBytes(value);
 
-    return { keys: asymmetric.slice(publicKeys.length), encrypted, sessionKey };
+    return { keys: asymmetric.slice(publicKeys.length), encrypted, sessionKey, armoredBody };
 };
 
 /**
@@ -151,24 +149,18 @@ const encryptDraftBodyPackage = async ({
  * (i.e. the draft body)
  */
 const encryptBodyPackage = async ({
-    pack,
-    publicKeys,
+    body,
     privateKeys,
     publicKeysList,
-    message,
 }: {
-    pack: PackageDirect;
+    body?: string;
     privateKeys: OpenPGPKey[];
-    publicKeys: OpenPGPKey[];
     publicKeysList: OpenPGPKey[];
-    message: RequireOnly<Message, 'Body' | 'MIMEType'>;
 }) => {
-    // we need to encrypt the draft body as well
-    await encryptDraftBodyPackage({ pack, publicKeys, privateKeys, publicKeysList, message });
     const cleanPublicKeys = publicKeysList.filter(identity);
 
     const { data, sessionKey } = await encryptMessage({
-        data: pack.Body || '',
+        data: body || '',
         publicKeys: cleanPublicKeys,
         sessionKey: cleanPublicKeys.length ? undefined : await generateSessionKeyHelper(),
         privateKeys,
@@ -178,6 +170,22 @@ const encryptBodyPackage = async ({
 
     const { asymmetric: keys, encrypted } = await splitMessage(data);
     return { keys, encrypted, sessionKey };
+};
+
+/**
+ * Temporary helper to encrypt the draft body. Get rid of this mutating function with refactor
+ */
+const encryptDraftBody = async ({
+    publicKeys,
+    privateKeys,
+    message,
+}: {
+    privateKeys: OpenPGPKey[];
+    publicKeys: OpenPGPKey[];
+    message: RequireOnly<Message, 'Body' | 'MIMEType'>;
+}) => {
+    const { armoredBody } = await encryptDraftBodyPackage({ body: message.Body, publicKeys, privateKeys });
+    message.Body = armoredBody;
 };
 
 /**
@@ -199,15 +207,19 @@ const encryptBody = async ({
     const addresses = Object.values(pack.Addresses || {}).filter(isTruthy);
     const publicKeysList = addresses.map(({ PublicKey }) => PublicKey as OpenPGPKey);
 
-    const encryptPack = message.MIMEType === pack.MIMEType ? encryptDraftBodyPackage : encryptBodyPackage;
-
-    const { keys, encrypted, sessionKey } = await encryptPack({
-        pack,
-        publicKeys,
-        privateKeys,
-        publicKeysList,
-        message,
-    });
+    const { keys, encrypted, sessionKey } =
+        message.MIMEType === pack.MIMEType
+            ? await encryptDraftBodyPackage({
+                  body: pack.Body,
+                  publicKeys,
+                  privateKeys,
+                  publicKeysList,
+              })
+            : await encryptBodyPackage({
+                  body: pack.Body,
+                  privateKeys,
+                  publicKeysList,
+              });
 
     let counter = 0;
     publicKeysList.forEach((publicKey, index) => {
@@ -243,15 +255,13 @@ const encryptPackage = async ({
     privateKeys: OpenPGPKey[];
     attachmentKeys: AttachmentKeys[];
     message: RequireOnly<Message, 'Body' | 'MIMEType'>;
-}): Promise<PackageDirect> => {
+}): Promise<void> => {
     await Promise.all([
         encryptBody({ pack, publicKeys, privateKeys, message }),
         encryptAttachmentKeys({ pack, attachmentKeys }),
     ]);
 
     Object.values(pack.Addresses || {}).forEach((address: any) => delete address.PublicKey);
-
-    return pack;
 };
 
 const getAttachmentKeys = async (attachments: Attachment[], privateKeys: OpenPGPKey[]): Promise<AttachmentKeys[]> =>
@@ -280,9 +290,10 @@ export const encryptPackages = async ({
 }): Promise<SimpleMap<PackageDirect>> => {
     const attachmentKeys = await getAttachmentKeys(attachments, privateKeys);
     const packageList = Object.values(packages) as PackageDirect[];
-    await Promise.all(
-        packageList.map((pack) => encryptPackage({ pack, privateKeys, publicKeys, attachmentKeys, message }))
-    );
+    await Promise.all([
+        ...packageList.map((pack) => encryptPackage({ pack, privateKeys, publicKeys, attachmentKeys, message })),
+        encryptDraftBody({ publicKeys, privateKeys, message }),
+    ]);
 
     return packages;
 };
