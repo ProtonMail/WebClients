@@ -46,6 +46,11 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
                     <Input
                         className="w100"
                         onChange={({ target }) => {
+                            if (target.value === '') {
+                                setInputValue('');
+                                onChangeAmount(0);
+                                return;
+                            }
                             if (!isNumber(target.value)) {
                                 return;
                             }
