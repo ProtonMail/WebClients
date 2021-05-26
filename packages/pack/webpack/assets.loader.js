@@ -1,5 +1,5 @@
 const LIMIT = 10000;
-const DESIGN_SYSTEM_ICONS_SVG = 'sprite-icons.svg|mime-icons.svg';
+const DESIGN_SYSTEM_ICONS_SVG = 'sprite-icons.svg|mime-icons.svg|file-icons.svg';
 const DESIGN_SYSTEM_CSS_SVG = 'sprite-for-css-only.svg';
 
 module.exports = () => [
