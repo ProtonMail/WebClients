@@ -1,6 +1,6 @@
 # [4.0.0-beta.15] - 2021-05-26
 
-With this product iteration we give you ability to view thumbnails in Grid layout mode.
+With this product iteration we give you ability to view thumbnails (for new uploads only) in Grid layout mode.
 
 ## Fixed
 
