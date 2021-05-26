@@ -49,11 +49,20 @@ const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
     const { MAIL, VPN } = PLAN_SERVICES;
     const { PROTONVPN_SETTINGS } = APPS;
     const [subscription] = useSubscription();
-    const planName = subscription
-        ? hasLifetime(subscription)
-            ? 'Lifetime'
-            : getPlanName(subscription, APP_NAME === PROTONVPN_SETTINGS ? VPN : MAIL)
-        : null;
+
+    let planName;
+
+    if (subscription) {
+        if (hasLifetime(subscription)) {
+            planName = 'Lifetime';
+        } else {
+            planName = getPlanName(subscription, MAIL) || getPlanName(subscription, VPN);
+        }
+
+        if (APP_NAME === PROTONVPN_SETTINGS) {
+            planName = getPlanName(subscription, VPN);
+        }
+    }
 
     return (
         <>
