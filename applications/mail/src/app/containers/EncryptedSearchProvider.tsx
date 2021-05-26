@@ -1,7 +1,14 @@
 import React, { createContext, ReactNode, useContext, useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
-import { useApi, useGetUserKeys, useNotifications, useSubscribeEventManager, useUser } from 'react-components';
+import {
+    useApi,
+    useGetUserKeys,
+    useNotifications,
+    useOnLogout,
+    useSubscribeEventManager,
+    useUser,
+} from 'react-components';
 import { getItem, removeItem, setItem } from 'proton-shared/lib/helpers/storage';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { openDB, deleteDB } from 'idb';
@@ -80,6 +87,13 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         removeItem(`ES:${userID}:ESEnabled`);
         return deleteDB(`ES:${userID}:DB`).catch(() => undefined);
     };
+
+    /**
+     * Abort ongoing operations if the user logs out
+     */
+    useOnLogout(async () => {
+        abortControllerRef.current.abort();
+    });
 
     /**
      * Notify the user the DB is deleted. Typically this is needed if the key is no
@@ -248,23 +262,18 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         const isSearch = testIsSearch(searchParameters);
         const normalisedSearchParams = normaliseSearchParams(searchParameters, labelID);
 
-        const {
-            failedMessageEvents,
-            newESCache,
-            newPermanentResults,
-            cacheChanged,
-            searchChanged,
-        } = await syncMessageEvents(
-            Messages,
-            userID,
-            esCache,
-            permanentResults,
-            isSearch,
-            api,
-            getMessageKeys,
-            indexKey,
-            normalisedSearchParams
-        );
+        const { failedMessageEvents, newESCache, newPermanentResults, cacheChanged, searchChanged } =
+            await syncMessageEvents(
+                Messages,
+                userID,
+                esCache,
+                permanentResults,
+                isSearch,
+                api,
+                getMessageKeys,
+                indexKey,
+                normalisedSearchParams
+            );
 
         // Trigger re-renders only if strictly necessary
         if (cacheChanged && !(cacheChanged && searchChanged)) {
@@ -330,7 +339,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                     };
                 });
 
-                await refreshIndex(userID, api, indexKey, getMessageKeys, recordProgress);
+                abortControllerRef.current = new AbortController();
+                await refreshIndex(userID, api, indexKey, getMessageKeys, recordProgress, abortControllerRef);
 
                 // Check if DB became limited after this update
                 const isDBLimited = await checkIsDBLimited(userID, api);
@@ -456,7 +466,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             success = await buildDB(userID, indexKey, getMessageKeys, api, abortControllerRef, recordProgressLocal);
 
             // Kill switch in case user logs out or pauses
-            if (!indexKeyExists(userID) || (!success && isPaused(userID))) {
+            if (abortControllerRef.current.signal.aborted || isPaused(userID)) {
                 return;
             }
 

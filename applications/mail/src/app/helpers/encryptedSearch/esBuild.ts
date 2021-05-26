@@ -25,7 +25,6 @@ import {
     localisedForwardFlags,
     OPENPGP_REFRESH_CUTOFF,
 } from '../../constants';
-import { indexKeyExists, isPaused } from './esUtils';
 import { queryEvents, queryMessage, queryMessagesCount, queryMessagesMetadata } from './esAPI';
 
 /**
@@ -214,7 +213,6 @@ const storeMessages = async (
     indexKey: CryptoKey,
     api: Api,
     getMessageKeys: GetMessageKeys,
-    userID: string,
     abortControllerRef: React.MutableRefObject<AbortController>
 ) => {
     const messagesToStore: StoredCiphertext[] = [];
@@ -222,10 +220,6 @@ const storeMessages = async (
     const esIteratee = async (message: Message) => {
         if (message.ExpirationTime) {
             return;
-        }
-        // Kill switch in case user logs out
-        if (!indexKeyExists(userID)) {
-            throw new Error('Key was removed');
         }
 
         const messageToCache = await fetchMessage(message.ID, api, getMessageKeys, abortControllerRef.current.signal);
@@ -309,7 +303,6 @@ const storeMessagesBatches = async (
             indexKey,
             api,
             getMessageKeys,
-            userID,
             abortControllerRef
         ).catch((error) => {
             if (error.name === 'QuotaExceededError') {
@@ -331,11 +324,6 @@ const storeMessagesBatches = async (
         setItem(`ES:${userID}:Recover`, JSON.stringify(recoveryPoint));
 
         recordProgress(Messages.length);
-
-        // Kill switch in case user logs out or pauses
-        if (!indexKeyExists(userID) || isPaused(userID)) {
-            return false;
-        }
 
         resultMetadata = await queryMessagesMetadata(
             api,

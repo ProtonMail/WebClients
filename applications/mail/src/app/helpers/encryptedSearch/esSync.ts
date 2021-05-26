@@ -13,7 +13,7 @@ import {
     StoredCiphertext,
 } from '../../models/encryptedSearch';
 import { AesKeyGenParams, ES_LIMIT, ES_MAX_PAGEBATCH } from '../../constants';
-import { indexKeyExists, getNumMessagesDB, getOldestMessage, getOldestTimePoint } from './esUtils';
+import { getNumMessagesDB, getOldestMessage, getOldestTimePoint } from './esUtils';
 import { applySearch, splitCachedMessage, uncachedSearch } from './esSearch';
 import { queryEvents, queryMessagesCount, queryMessagesMetadata } from './esAPI';
 import { encryptToDB, fetchMessage, prepareMessageMetadata } from './esBuild';
@@ -125,7 +125,8 @@ export const refreshIndex = async (
     api: Api,
     indexKey: CryptoKey,
     getMessageKeys: GetMessageKeys,
-    recordProgress: (progress: number, total: number) => void
+    recordProgress: (progress: number, total: number) => void,
+    abortControllerRef: React.MutableRefObject<AbortController>
 ) => {
     // Avoid new events being synced while this operation is ongoing by setting a RefreshEvent object
     const event = await queryEvents(api);
@@ -219,8 +220,8 @@ export const refreshIndex = async (
 
             fetchedMetadata.forEach(async (message, ID, fetchedMap) => {
                 // Kill switch in case user logs out
-                if (!indexKeyExists(userID)) {
-                    throw new Error('Key was removed');
+                if (abortControllerRef.current.signal.aborted) {
+                    throw new Error('Operation aborted');
                 }
                 if (message.ExpirationTime) {
                     fetchedMap.delete(ID);
@@ -234,12 +235,8 @@ export const refreshIndex = async (
                                 if (!oldMessage) {
                                     throw new Error('Old message is undefined');
                                 }
-                                const {
-                                    decryptionError,
-                                    decryptedBody,
-                                    decryptedSubject,
-                                    messageForSearch,
-                                } = splitCachedMessage(oldMessage);
+                                const { decryptionError, decryptedBody, decryptedSubject, messageForSearch } =
+                                    splitCachedMessage(oldMessage);
                                 const newMessageForSearch = prepareMessageMetadata(message);
                                 if (!compareMessagesForSearch(messageForSearch, newMessageForSearch)) {
                                     const newMessageToCache: CachedMessage = {
@@ -270,9 +267,8 @@ export const refreshIndex = async (
                     }
                     promiseArray.push(
                         fetchMessage(ID, api, getMessageKeys).then(async (fetchedMessageToCache) => {
-                            // Kill switch in case user logs out
-                            if (!indexKeyExists(userID)) {
-                                throw new Error('Key was removed');
+                            if (abortControllerRef.current.signal.aborted) {
+                                throw new Error('Operation aborted');
                             }
                             if (!fetchedMessageToCache) {
                                 throw new Error('Cannot fetch new message');
@@ -296,8 +292,7 @@ export const refreshIndex = async (
         let success = false;
         while (!success) {
             success = await compareMaps();
-            // Kill switch in case user logs out
-            if (!indexKeyExists(userID)) {
+            if (abortControllerRef.current.signal.aborted) {
                 return;
             }
         }
