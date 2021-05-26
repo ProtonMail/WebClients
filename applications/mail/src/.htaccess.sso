@@ -5,7 +5,13 @@ RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^.*$ - [NC,L]
-RewriteRule ^settings.* /settings/index.html [NC,L]
+
+RewriteCond %{HTTP_HOST} ^[^\.]+\.(.*)$
+RewriteRule ^help/reset-login-password https://account.%1/reset-password [R=302,L]
+
+RewriteCond %{HTTP_HOST} ^[^\.]+\.(.*)$
+RewriteRule ^create/new https://account.%1/signup [R=302,L]
+
 RewriteRule . /index.html [NC,L]
 
 ErrorDocument 403 /assets/errors/403.html
