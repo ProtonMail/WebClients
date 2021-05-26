@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { APPS, BRAND_NAME } from 'proton-shared/lib/constants';
+import { APPS, BRAND_NAME, APP_NAMES } from 'proton-shared/lib/constants';
 import { getAppFromPathnameSafe } from 'proton-shared/lib/apps/slugHelper';
 
 import { Icon, DropdownMenu, DropdownMenuButton, DropdownMenuLink } from '../../components';
@@ -31,6 +31,13 @@ const TopNavbarListItemHelpButton = React.forwardRef(
         );
     }
 );
+
+const userVoiceLinks: Partial<{ [key in APP_NAMES]: string }> = {
+    [APPS.PROTONMAIL]: 'https://protonmail.uservoice.com/',
+    [APPS.PROTONCALENDAR]: 'https://protonmail.uservoice.com/forums/932842-proton-calendar',
+    [APPS.PROTONDRIVE]: 'https://protonmail.uservoice.com/forums/932839-proton-drive',
+    [APPS.PROTONVPN_SETTINGS]: 'https://protonmail.uservoice.com/forums/932836-protonvpn',
+};
 
 const defaultElement = TopNavbarListItemHelpButton;
 type Props<E extends React.ElementType> = OwnProps & Omit<SimpleDropdownProps<E>, 'content'>;
@@ -81,7 +88,7 @@ const TopNavbarListItemHelpDropdown = <E extends React.ElementType = typeof defa
 
                 <DropdownMenuLink
                     className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
-                    href="https://protonmail.uservoice.com/"
+                    href={userVoiceLinks[APP_NAME] || userVoiceLinks[APPS.PROTONMAIL]}
                     target="_blank"
                 >
                     {c('Action').t`Request a feature`}
