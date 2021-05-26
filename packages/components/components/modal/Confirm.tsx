@@ -13,6 +13,7 @@ export interface ConfirmModalProps {
     className?: string;
     small?: boolean;
     tiny?: boolean;
+    noTitleEllipsis?: boolean;
     mode?: 'alert';
     submitProps?: any;
     closeProps?: any;
@@ -26,6 +27,7 @@ const Confirm = ({
     cancel = c('Action').t`Cancel`,
     confirm = c('Action').t`Confirm`,
     small = true,
+    noTitleEllipsis = true,
     ...rest
 }: ConfirmModalProps) => {
     return (
@@ -39,6 +41,7 @@ const Confirm = ({
             close={cancel}
             submit={confirm}
             small={small}
+            noTitleEllipsis={noTitleEllipsis}
             {...rest}
         >
             {children}
