@@ -1,11 +1,11 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Icon, DropdownMenu, DropdownMenuButton, ToolbarSeparator, useLoading, useLabels } from 'react-components';
+import { Icon, DropdownMenu, DropdownMenuButton, ToolbarSeparator, useLoading } from 'react-components';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 
 import ToolbarDropdown from './ToolbarDropdown';
 import { useEmptyLabel } from '../../hooks/useEmptyLabel';
-import { labelIncludes, isCustomLabel } from '../../helpers/labels';
+import { labelIncludes } from '../../helpers/labels';
 
 const { DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED } = MAILBOX_LABEL_IDS;
 
@@ -17,11 +17,8 @@ interface Props {
 
 const MoreDropdown = ({ labelID = '', elementIDs = [], selectedIDs = [] }: Props) => {
     const [loading, withLoading] = useLoading();
-    const [labels = []] = useLabels();
     const emptyLabel = useEmptyLabel();
-    const cannotEmpty =
-        isCustomLabel(labelID, labels) ||
-        labelIncludes(labelID, INBOX, DRAFTS, ALL_DRAFTS, STARRED, SENT, ALL_SENT, ARCHIVE, ALL_MAIL);
+    const cannotEmpty = labelIncludes(labelID, INBOX, DRAFTS, ALL_DRAFTS, STARRED, SENT, ALL_SENT, ARCHIVE, ALL_MAIL);
 
     if (cannotEmpty) {
         return null;
