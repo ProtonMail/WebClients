@@ -46,7 +46,7 @@ const useOptimisticDelete = () => {
                 conversationCache.delete(conversationID);
                 rollbackConversations.push(conversation);
             } else {
-                const messages = conversation.Messages?.filter((Message) => elementIDs.includes(Message.ID));
+                const messages = conversation.Messages?.filter((Message) => !elementIDs.includes(Message.ID));
                 if (messages?.length !== conversation.Messages?.length) {
                     conversationCache.set(conversationID, {
                         Conversation: conversation.Conversation,

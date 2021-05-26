@@ -61,7 +61,7 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
             cache.set(inputConversationID, conversation);
         }
 
-        if (!conversation || !conversation.Messages) {
+        if (!conversation || !conversation.Messages || !conversation.Messages.length) {
             void withPendingRequest(load());
         }
 
@@ -73,7 +73,7 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
     }, [inputConversationID, messageID, api, cache]);
 
     const loadingConversation = !conversation?.Conversation;
-    const loadingMessages = !conversation?.Messages;
+    const loadingMessages = !conversation?.Messages?.length;
     const numMessages = conversation?.Messages?.length || conversation?.Conversation?.NumMessages;
 
     return { conversationID, conversation, pendingRequest, loadingConversation, loadingMessages, numMessages };
