@@ -5,17 +5,23 @@ function createNotificationManager(setNotifications: Dispatch<SetStateAction<Not
     let idx = 1;
     const intervalIds = new Map<number, any>();
 
+    const removeInterval = (id: number) => {
+        const intervalId = intervalIds.get(id);
+        if (!intervalId) {
+            return;
+        }
+        if (intervalId !== -1) {
+            clearTimeout(intervalId);
+        }
+        intervalIds.delete(id);
+    };
+
     const removeNotification = (id: number) => {
         const intervalId = intervalIds.get(id);
         if (!intervalId) {
             return;
         }
-
-        if (intervalId !== -1) {
-            clearTimeout(intervalId);
-        }
-        intervalIds.delete(id);
-
+        removeInterval(id);
         return setNotifications((oldNotifications) => {
             return oldNotifications.filter(({ id: otherId }) => id !== otherId);
         });
@@ -54,16 +60,34 @@ function createNotificationManager(setNotifications: Dispatch<SetStateAction<Not
             idx = 0;
         }
 
-        setNotifications((oldNotifications) => [
-            ...oldNotifications,
-            {
+        setNotifications((oldNotifications) => {
+            const newNotification = {
                 id,
+                key: id,
                 expiration,
                 type,
                 ...rest,
                 isClosing: false,
-            },
-        ]);
+            };
+            if (typeof rest.text === 'string' && type !== 'success') {
+                const duplicateOldNotification = oldNotifications.find(
+                    (oldNotification) => oldNotification.text === rest.text
+                );
+                if (duplicateOldNotification) {
+                    removeInterval(duplicateOldNotification.id);
+                    return oldNotifications.map((oldNotification) => {
+                        if (oldNotification === duplicateOldNotification) {
+                            return {
+                                ...newNotification,
+                                key: duplicateOldNotification.key,
+                            };
+                        }
+                        return oldNotification;
+                    });
+                }
+            }
+            return [...oldNotifications, newNotification];
+        });
 
         intervalIds.set(id, expiration === -1 ? -1 : setTimeout(() => hideNotification(id), expiration));
 
