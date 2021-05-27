@@ -207,7 +207,7 @@
   "engines": {
     "node": ">=12.0.0"
   },
-  "version": "3.16.62",
+  "version": "3.16.63",
   "husky": {
     "hooks": {
       "pre-commit": "git update-index --assume-unchanged package-lock.json && ./tasks/metrics.sh"
