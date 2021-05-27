@@ -451,7 +451,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, oauthProps: initialOAu
         const backButton =
             modalModel.step === Step.INSTRUCTIONS &&
             providerInstructions === PROVIDER_INSTRUCTIONS.GMAIL &&
-            gmailInstructionsStep !== GMAIL_INSTRUCTIONS.LABELS;
+            gmailInstructionsStep !== GMAIL_INSTRUCTIONS.IMAP;
 
         return (
             <Button shape="outline" onClick={backButton ? handleBack : handleCancel}>
