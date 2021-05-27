@@ -32,6 +32,7 @@ const ImportStartStep = ({
         }
     }, [email]);
 
+    const isRateLimitError = errorCode === IMPORT_ERROR.RATE_LIMIT_EXCEEDED;
     const isAuthError = errorCode === IMPORT_ERROR.AUTHENTICATION_ERROR;
     const isIMAPError = errorCode === IMPORT_ERROR.IMAP_CONNECTION_ERROR;
     const isReconnect = currentImport?.Active?.ErrorCode === ImportMailError.ERROR_CODE_IMAP_CONNECTION;
@@ -223,15 +224,16 @@ const ImportStartStep = ({
                 break;
         }
 
+        if (isRateLimitError) {
+            message = c('Import error').t`Too many recent requests. Please try again in a few moments.`;
+        }
+
+        const learnMoreLink = isReconnect
+            ? 'https://protonmail.com/support/knowledge-base/import-assistant/#reconnection-errors'
+            : 'https://protonmail.com/support/knowledge-base/import-assistant/#common-questions-and-import-errors';
+
         return (
-            <Alert
-                type="error"
-                learnMore={
-                    isReconnect
-                        ? 'https://protonmail.com/support/knowledge-base/import-assistant/#reconnection-errors'
-                        : 'https://protonmail.com/support/knowledge-base/import-assistant/#common-questions-and-import-errors'
-                }
-            >
+            <Alert type="error" learnMore={isRateLimitError ? undefined : learnMoreLink}>
                 {message}
             </Alert>
         );
@@ -240,7 +242,11 @@ const ImportStartStep = ({
     return (
         <>
             {isReconnect ||
-            [IMPORT_ERROR.AUTHENTICATION_ERROR, IMPORT_ERROR.IMAP_CONNECTION_ERROR].includes(errorCode) ? (
+            [
+                IMPORT_ERROR.AUTHENTICATION_ERROR,
+                IMPORT_ERROR.IMAP_CONNECTION_ERROR,
+                IMPORT_ERROR.RATE_LIMIT_EXCEEDED,
+            ].includes(errorCode) ? (
                 renderError()
             ) : (
                 <Alert>
