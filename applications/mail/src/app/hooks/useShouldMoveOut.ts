@@ -5,17 +5,17 @@ import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { MessageExtended } from '../models/message';
 import { hasLabel, getCurrentFolderID } from '../helpers/elements';
 import { getLocalID, useMessageCache } from '../containers/MessageProvider';
-import { ConversationResult } from './conversation/useConversation';
 import { useConversationCache } from '../containers/ConversationProvider';
+import { ConversationCacheEntry } from '../models/conversation';
 
 const { ALL_MAIL } = MAILBOX_LABEL_IDS;
 
-const cacheEntryToElement = (cacheEntry: MessageExtended | ConversationResult | undefined) =>
-    (cacheEntry as ConversationResult)?.Conversation || (cacheEntry as MessageExtended)?.data || {};
+const cacheEntryToElement = (cacheEntry: MessageExtended | ConversationCacheEntry | undefined) =>
+    (cacheEntry as ConversationCacheEntry)?.Conversation || (cacheEntry as MessageExtended)?.data || {};
 
 const cacheEntryIsFailedLoading = (
     conversationMode: boolean,
-    cacheEntry: MessageExtended | ConversationResult | undefined
+    cacheEntry: MessageExtended | ConversationCacheEntry | undefined
 ) => {
     if (conversationMode) {
         return cacheEntry === undefined;
@@ -35,7 +35,7 @@ export const useShouldMoveOut = (
     const cache = conversationMode ? conversationCache : messageCache;
     const [folders = []] = useFolders();
 
-    const previousVersionRef = useRef<MessageExtended | ConversationResult | undefined>();
+    const previousVersionRef = useRef<MessageExtended | ConversationCacheEntry | undefined>();
 
     const ID = useMemo(() => (conversationMode ? inputID : getLocalID(messageCache, inputID || '')), [inputID]);
 

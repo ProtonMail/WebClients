@@ -1,24 +1,62 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { useEffect, useState } from 'react';
-import { getConversation } from 'proton-shared/lib/api/conversations';
-import { useApi, useLoading } from 'react-components';
-
-import { Conversation } from '../../models/conversation';
-import { useConversationCache } from '../../containers/ConversationProvider';
+import { useCallback, useEffect, useState } from 'react';
+import { wait } from 'proton-shared/lib/helpers/promise';
+import { Conversation, ConversationCacheEntry } from '../../models/conversation';
+import {
+    ConversationCache,
+    useConversationCache,
+    useUpdateConversationCache,
+} from '../../containers/ConversationProvider';
 import { useGetElementsFromIDs } from '../mailbox/useElementsCache';
+import { LoadConversation, useLoadConversation } from './useLoadConversation';
+import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
+import { hasError } from '../../helpers/errors';
 
-export interface ConversationResult {
-    Conversation: Conversation;
-    Messages?: Message[];
-}
+const init = (
+    conversationID: string,
+    cache: ConversationCache,
+    getElementsFromIDs: (IDs: string[]) => Conversation[]
+): ConversationCacheEntry | undefined => {
+    if (cache.has(conversationID)) {
+        return cache.get(conversationID) as ConversationCacheEntry;
+    }
+
+    const [conversationFromElementsCache] = getElementsFromIDs([conversationID]);
+
+    if (conversationFromElementsCache) {
+        return { Conversation: conversationFromElementsCache, Messages: undefined, loadRetry: 0, errors: {} };
+    }
+
+    return { Conversation: undefined, Messages: undefined, loadRetry: 0, errors: {} };
+};
+
+const load = async (
+    conversationID: string,
+    messageID: string | undefined,
+    cache: ConversationCache,
+    setPendingRequest: (value: boolean) => void,
+    loadConversation: LoadConversation
+) => {
+    if ((cache.get(conversationID)?.loadRetry || 0) > LOAD_RETRY_COUNT) {
+        // Max retries reach, aborting
+        return;
+    }
+
+    setPendingRequest(true);
+    const entry = await loadConversation(conversationID, messageID);
+    if (hasError(entry.errors)) {
+        await wait(LOAD_RETRY_DELAY);
+    }
+    setPendingRequest(false);
+};
 
 interface ReturnValue {
     conversationID: string;
-    conversation: ConversationResult | undefined;
+    conversation: ConversationCacheEntry | undefined;
     pendingRequest: boolean;
     loadingConversation: boolean;
     loadingMessages: boolean;
     numMessages: number | undefined;
+    handleRetry: () => void;
 }
 
 interface UseConversation {
@@ -28,41 +66,30 @@ interface UseConversation {
 export const useConversation: UseConversation = (inputConversationID, messageID) => {
     const cache = useConversationCache();
     const getElementsFromIDs = useGetElementsFromIDs();
-    const api = useApi();
+    const loadConversation = useLoadConversation();
+    const updateConversation = useUpdateConversationCache();
 
     const [conversationID, setConversationID] = useState(inputConversationID);
-    const [pendingRequest, withPendingRequest] = useLoading(!cache.has(conversationID));
-
-    const initConversation = (): ConversationResult | undefined => {
-        if (cache.has(inputConversationID)) {
-            return cache.get(inputConversationID) as ConversationResult;
-        }
-
-        const [conversationFromElementsCache] = getElementsFromIDs([inputConversationID]) as Conversation[];
-
-        if (conversationFromElementsCache) {
-            return { Conversation: conversationFromElementsCache, Messages: undefined };
-        }
-    };
-
-    const [conversation, setConversation] = useState<ConversationResult | undefined>(initConversation);
+    const [pendingRequest, setPendingRequest] = useState(false);
+    const [conversation, setConversation] = useState<ConversationCacheEntry | undefined>(() =>
+        init(conversationID, cache, getElementsFromIDs)
+    );
 
     useEffect(() => {
-        const load = async () => {
-            const result = (await api(getConversation(inputConversationID, messageID))) as ConversationResult;
-            cache.set(inputConversationID, result);
-        };
-
-        const conversation = initConversation();
-        setConversationID(inputConversationID);
-        setConversation(conversation);
-
-        if (conversation) {
-            cache.set(inputConversationID, conversation);
+        if (pendingRequest) {
+            return;
         }
 
-        if (!conversation || !conversation.Messages || !conversation.Messages.length) {
-            void withPendingRequest(load());
+        const conversationCacheEntry = init(inputConversationID, cache, getElementsFromIDs);
+        setConversationID(inputConversationID);
+        setConversation(conversationCacheEntry);
+
+        if (conversationCacheEntry) {
+            cache.set(inputConversationID, conversationCacheEntry);
+        }
+
+        if (!conversationCacheEntry || !conversationCacheEntry.Messages || !conversationCacheEntry.Messages.length) {
+            void load(inputConversationID, messageID, cache, setPendingRequest, loadConversation);
         }
 
         return cache.subscribe((changedId: string) => {
@@ -70,11 +97,24 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
                 setConversation(cache.get(inputConversationID));
             }
         });
-    }, [inputConversationID, messageID, api, cache]);
+    }, [inputConversationID, messageID, cache, pendingRequest, conversation?.loadRetry]);
 
-    const loadingConversation = !conversation?.Conversation;
-    const loadingMessages = !conversation?.Messages?.length;
+    const handleRetry = useCallback(() => {
+        updateConversation(conversationID, () => ({ loadRetry: 0, errors: {} }));
+    }, [conversationID]);
+
+    const loadingError = hasError(conversation?.errors) && (conversation?.loadRetry || 0) > LOAD_RETRY_COUNT;
+    const loadingConversation = !loadingError && !conversation?.Conversation;
+    const loadingMessages = !loadingError && !conversation?.Messages?.length;
     const numMessages = conversation?.Messages?.length || conversation?.Conversation?.NumMessages;
 
-    return { conversationID, conversation, pendingRequest, loadingConversation, loadingMessages, numMessages };
+    return {
+        conversationID,
+        conversation,
+        pendingRequest,
+        loadingConversation,
+        loadingMessages,
+        numMessages,
+        handleRetry,
+    };
 };

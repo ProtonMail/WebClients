@@ -9,7 +9,7 @@ import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
 import { useGetElementsCache, useSetElementsCache } from '../mailbox/useElementsCache';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
-import { useConversationCache } from '../../containers/ConversationProvider';
+import { useConversationCache, useUpdateConversationCache } from '../../containers/ConversationProvider';
 import { isMessage, isUnread } from '../../helpers/elements';
 import { MARK_AS_STATUS } from '../useMarkAs';
 import { CacheEntry } from '../../models/tools';
@@ -92,6 +92,7 @@ export const useOptimisticMarkAs = () => {
     const setElementsCache = useSetElementsCache();
     const messageCache = useMessageCache();
     const conversationCache = useConversationCache();
+    const updateConversationCache = useUpdateConversationCache();
     const globalCache = useCache();
 
     const optimisticMarkAs = useHandler((elements: Element[], labelID: string, changes: MarkAsChanges) => {
@@ -119,23 +120,23 @@ export const useOptimisticMarkAs = () => {
                 }
 
                 // Update in conversation cache
-                const conversationResult = conversationCache.get(message.ConversationID);
-                if (conversationResult) {
-                    const conversation = conversationResult.Conversation;
+                const conversationCacheEntry = conversationCache.get(message.ConversationID);
+                if (conversationCacheEntry && conversationCacheEntry.Conversation) {
+                    const conversation = conversationCacheEntry.Conversation;
                     const updatedConversation = applyMarkAsChangesOnConversationWithMessages(
                         conversation,
                         labelID,
                         changes
                     );
-                    conversationCache.set(message.ConversationID, {
+                    updateConversationCache(message.ConversationID, () => ({
                         Conversation: updatedConversation,
-                        Messages: conversationResult.Messages?.map((conversationMessage) => {
+                        Messages: conversationCacheEntry.Messages?.map((conversationMessage) => {
                             if (conversationMessage.ID === message.ID) {
                                 return applyMarkAsChangesOnMessage(conversationMessage, changes);
                             }
                             return conversationMessage;
                         }),
-                    });
+                    }));
 
                     // Update conversation count when the conversation is loaded
                     conversationCounters = updateCountersForMarkAs(
@@ -169,14 +170,13 @@ export const useOptimisticMarkAs = () => {
                 const conversation = element as RequireSome<Conversation, 'ID'>;
 
                 // Update in conversation cache
-                const conversationResult = conversationCache.get(conversation.ID);
+                const conversationCacheEntry = conversationCache.get(conversation.ID);
 
-                if (conversationResult) {
-                    const conversationFromCache = conversationResult.Conversation;
-                    conversationCache.set(conversation.ID, {
+                if (conversationCacheEntry && conversationCacheEntry.Conversation) {
+                    const conversationFromCache = conversationCacheEntry.Conversation;
+                    updateConversationCache(conversation.ID, () => ({
                         Conversation: applyMarkAsChangesOnConversation(conversationFromCache, labelID, changes),
-                        Messages: conversationResult.Messages,
-                    });
+                    }));
                 }
 
                 // Update in elements cache if conversation mode
@@ -195,7 +195,7 @@ export const useOptimisticMarkAs = () => {
 
                 // Update messages from the conversation (if loaded)
                 if (changes.status === MARK_AS_STATUS.READ) {
-                    const messages = conversationResult?.Messages;
+                    const messages = conversationCacheEntry?.Messages;
                     messages?.forEach((message) => {
                         if (!message.LabelIDs.find((id) => id === labelID)) {
                             return;

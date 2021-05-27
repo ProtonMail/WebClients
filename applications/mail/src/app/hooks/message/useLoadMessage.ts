@@ -2,9 +2,10 @@ import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { useCallback } from 'react';
 import { useApi } from 'react-components';
 import { getMessage } from 'proton-shared/lib/api/messages';
-
+import { wait } from 'proton-shared/lib/helpers/promise';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { useInitializeMessage } from './useInitializeMessage';
+import { LOAD_RETRY_DELAY } from '../../constants';
 
 export const useLoadMessage = (inputMessage: Message) => {
     const api = useApi();
@@ -17,8 +18,16 @@ export const useLoadMessage = (inputMessage: Message) => {
 
         // If the Body is already there, no need to send a request
         if (!messageFromCache.data?.Body) {
-            const { Message: message } = await api(getMessage(messageFromCache.data?.ID));
-            updateMessageCache(messageCache, localID, { data: message as Message });
+            try {
+                const { Message: message } = await api(getMessage(messageFromCache.data?.ID));
+                const loadRetry = (messageCache.get(localID)?.loadRetry || 0) + 1;
+                updateMessageCache(messageCache, localID, { data: message as Message, loadRetry });
+            } catch (error) {
+                const loadRetry = (messageCache.get(localID)?.loadRetry || 0) + 1;
+                updateMessageCache(messageCache, localID, { loadRetry });
+                await wait(LOAD_RETRY_DELAY);
+                throw error;
+            }
         }
     }, [inputMessage]);
 };

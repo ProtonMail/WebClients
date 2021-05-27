@@ -19,6 +19,7 @@ interface Props {
     sourceMode: boolean;
     onResignContact: () => void;
     messageLoaded: boolean;
+    bodyLoaded: boolean;
     onLoadRemoteImages: () => void;
     onLoadEmbeddedImages: () => void;
     onCompose: OnCompose;
@@ -28,6 +29,7 @@ const HeaderExtra = ({
     message,
     sourceMode,
     messageLoaded,
+    bodyLoaded,
     onResignContact,
     onLoadRemoteImages,
     onLoadEmbeddedImages,
@@ -39,7 +41,7 @@ const HeaderExtra = ({
             <ExtraExpirationTime message={message} />
             <ExtraDecryptedSubject message={message} />
             <ExtraSpamScore message={message} />
-            <ExtraErrors message={message} />
+            {bodyLoaded && <ExtraErrors message={message} />}
             <ExtraUnsubscribe message={message} onCompose={onCompose} />
             <ExtraReadReceipt message={message} />
             <ExtraAutoReply message={message} />

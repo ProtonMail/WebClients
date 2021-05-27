@@ -301,7 +301,6 @@ const MailboxContainer = ({
                                     onMessageReady={onMessageReady}
                                     columnLayout={columnLayout}
                                     isComposerOpened={isComposerOpened}
-                                    containerRef={messageContainerRef}
                                 />
                             ) : (
                                 <MessageOnlyView

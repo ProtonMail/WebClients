@@ -1,4 +1,4 @@
-import { Conversation } from '../models/conversation';
+import { Conversation, ConversationCacheEntry } from '../models/conversation';
 
 type LabelValue = 'NumMessages' | 'NumUnread' | 'Time' | 'Size' | 'NumAttachments';
 type LabelContextValue =
@@ -61,4 +61,19 @@ export const getLabelIDs = (conversation: Conversation | undefined, contextLabel
             return acc;
         }, {}) || {}
     );
+};
+
+export const mergeConversations = (
+    reference: ConversationCacheEntry | undefined,
+    data: Partial<ConversationCacheEntry>
+): ConversationCacheEntry => {
+    return {
+        ...reference,
+        ...data,
+        Conversation:
+            !!reference?.Conversation || !!data.Conversation
+                ? ({ ...reference?.Conversation, ...data.Conversation } as Conversation)
+                : undefined,
+        errors: { ...reference?.errors, ...data.errors },
+    } as ConversationCacheEntry;
 };

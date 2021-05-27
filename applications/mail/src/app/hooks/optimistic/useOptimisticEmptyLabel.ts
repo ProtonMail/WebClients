@@ -4,11 +4,11 @@ import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 import { useMessageCache } from '../../containers/MessageProvider';
 import { useGetElementsCache, useSetElementsCache } from '../mailbox/useElementsCache';
 import { MessageExtended } from '../../models/message';
-import { useConversationCache } from '../../containers/ConversationProvider';
+import { useConversationCache, useUpdateConversationCache } from '../../containers/ConversationProvider';
 import { hasLabel } from '../../helpers/elements';
-import { ConversationResult } from '../conversation/useConversation';
 import { replaceCounter } from '../../helpers/counter';
 import { CacheEntry } from '../../models/tools';
+import { ConversationCacheEntry } from '../../models/conversation';
 
 export const useOptimisticEmptyLabel = () => {
     const globalCache = useCache();
@@ -16,10 +16,11 @@ export const useOptimisticEmptyLabel = () => {
     const setElementsCache = useSetElementsCache();
     const messageCache = useMessageCache();
     const conversationCache = useConversationCache();
+    const updateConversationCache = useUpdateConversationCache();
 
     return useHandler((labelID: string) => {
         const rollbackMessages = [] as MessageExtended[];
-        const rollbackConversations = [] as ConversationResult[];
+        const rollbackConversations = [] as ConversationCacheEntry[];
         const rollbackCounters = {} as { [key: string]: LabelCount };
 
         // Message cache
@@ -35,17 +36,14 @@ export const useOptimisticEmptyLabel = () => {
         // Conversation cache
         const conversationIDs = [...conversationCache.keys()];
         conversationIDs.forEach((conversationID) => {
-            const conversation = conversationCache.get(conversationID) as ConversationResult;
+            const conversation = conversationCache.get(conversationID) as ConversationCacheEntry;
             if (hasLabel(conversation.Conversation, labelID)) {
                 conversationCache.delete(conversationID);
                 rollbackConversations.push(conversation);
             } else {
                 const messages = conversation.Messages?.filter((Message) => !hasLabel(Message, labelID));
                 if (messages?.length !== conversation.Messages?.length) {
-                    conversationCache.set(conversationID, {
-                        Conversation: conversation.Conversation,
-                        Messages: messages,
-                    });
+                    updateConversationCache(conversationID, () => ({ Messages: messages }));
                     rollbackConversations.push(conversation);
                 }
             }
@@ -84,7 +82,7 @@ export const useOptimisticEmptyLabel = () => {
                 messageCache.set(message.localID, message);
             });
             rollbackConversations.forEach((conversation) => {
-                conversationCache.set(conversation.Conversation.ID || '', conversation);
+                conversationCache.set(conversation.Conversation?.ID || '', conversation);
             });
             setElementsCache(rollbackElements);
             Object.entries(rollbackCounters).forEach(([key, value]) => {

@@ -11,6 +11,8 @@ export const ELEMENTS_CACHE_REQUEST_SIZE = 100;
 export const SEARCH_PLACEHOLDERS_COUNT = 20;
 export const ATTACHMENT_MAX_SIZE = 25000000; // bytes -> 25MB
 export const LARGE_KEY_SIZE = 50 * 1024;
+export const LOAD_RETRY_COUNT = 3;
+export const LOAD_RETRY_DELAY = 3000; // in ms => 3s
 
 export const UNDO_SEND_DELAY = 5000;
 

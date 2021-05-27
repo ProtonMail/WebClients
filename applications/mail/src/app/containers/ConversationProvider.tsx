@@ -1,20 +1,18 @@
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import React, { useEffect, createContext, ReactNode, useContext } from 'react';
-import { useInstance, useEventManager, useApi } from 'react-components';
+import React, { useEffect, createContext, ReactNode, useContext, useCallback } from 'react';
+import { useInstance, useEventManager } from 'react-components';
 import createCache, { Cache } from 'proton-shared/lib/helpers/cache';
 import createLRU from 'proton-shared/lib/helpers/lru';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
-import { Api } from 'proton-shared/lib/interfaces';
-import { getConversation } from 'proton-shared/lib/api/conversations';
 import { identity } from 'proton-shared/lib/helpers/function';
-
 import { Event, LabelIDsChanges } from '../models/event';
-import { ConversationResult } from '../hooks/conversation/useConversation';
 import { parseLabelIDsInEvent } from '../helpers/elements';
 import { useExpirationCheck } from '../hooks/useExpiration';
-import { Conversation } from '../models/conversation';
+import { Conversation, ConversationCacheEntry } from '../models/conversation';
+import { mergeConversations } from '../helpers/conversation';
+import { LoadConversation, useLoadConversation } from '../hooks/conversation/useLoadConversation';
 
-export type ConversationCache = Cache<string, ConversationResult>;
+export type ConversationCache = Cache<string, ConversationCacheEntry>;
 
 /**
  * Conversation context containing the Conversation cache
@@ -26,15 +24,38 @@ const ConversationContext = createContext<ConversationCache>(null as any);
  */
 export const useConversationCache = () => useContext(ConversationContext);
 
+export type UpdateConversationCache = (
+    conversationID: string,
+    getData: (cacheEntry: ConversationCacheEntry) => Partial<ConversationCacheEntry>
+) => ConversationCacheEntry;
+
+/**
+ * Hook to update a conversation cache entry
+ */
+export const useUpdateConversationCache = (): UpdateConversationCache => {
+    const cache = useConversationCache();
+
+    return useCallback(
+        (
+            conversationID: string,
+            getData: (cacheEntry: ConversationCacheEntry) => Partial<ConversationCacheEntry>
+        ): ConversationCacheEntry => {
+            const existingConversation = cache.get(conversationID);
+            const newConversation = mergeConversations(
+                existingConversation,
+                getData(existingConversation || { loadRetry: 0, errors: {} })
+            );
+            cache.set(conversationID, newConversation);
+            return newConversation;
+        },
+        []
+    );
+};
+
 /**
  * Event management logic for conversations
  */
-const conversationListener = (cache: ConversationCache, api: Api) => {
-    const reloadConversation = async (ID: string) => {
-        const result = (await api(getConversation(ID))) as ConversationResult;
-        cache.set(ID, result);
-    };
-
+const conversationListener = (cache: ConversationCache, load: LoadConversation, update: UpdateConversationCache) => {
     return ({ Conversations = [], Messages = [] }: Event) => {
         const { toCreate, toUpdate, toDelete } = Messages.reduce<{
             toCreate: Message[];
@@ -58,37 +79,35 @@ const conversationListener = (cache: ConversationCache, api: Api) => {
         );
 
         [...toCreate, ...toUpdate].forEach((messageEvent) => {
-            const conversationResult = cache.get(messageEvent.ConversationID) as ConversationResult;
-            const messages = conversationResult.Messages || [];
-            const isUpdate = messages.some((message) => message.ID === messageEvent.ID);
-            let updatedMessages: Message[];
+            update(messageEvent.ConversationID, ({ Messages = [] }) => {
+                const isUpdate = Messages.some((message) => message.ID === messageEvent.ID);
+                let updatedMessages: Message[];
 
-            if (isUpdate) {
-                updatedMessages = messages.map((message) => {
-                    if (message.ID === messageEvent.ID) {
-                        return parseLabelIDsInEvent(message, messageEvent);
-                    }
-                    return message;
-                });
-            } else {
-                updatedMessages = [...messages, messageEvent];
-            }
+                if (isUpdate) {
+                    updatedMessages = Messages.map((message) => {
+                        if (message.ID === messageEvent.ID) {
+                            return parseLabelIDsInEvent(message, messageEvent);
+                        }
+                        return message;
+                    });
+                } else {
+                    updatedMessages = [...Messages, messageEvent];
+                }
 
-            cache.set(messageEvent.ConversationID, {
-                Conversation: conversationResult.Conversation,
-                Messages: updatedMessages,
+                return { Messages: updatedMessages };
             });
         });
 
         if (Object.keys(toDelete).length > 0) {
-            cache.forEach((conversationResult) => {
-                const updatedMessages = conversationResult.Messages?.filter(({ ID }) => !toDelete[ID]);
+            cache.forEach((conversationEntry) => {
+                if (conversationEntry.Conversation?.ID && conversationEntry.Messages) {
+                    const updatedMessages = conversationEntry.Messages.filter(({ ID }) => !toDelete[ID]);
 
-                if (conversationResult.Messages?.length !== updatedMessages?.length) {
-                    cache.set(conversationResult.Conversation.ID as string, {
-                        Conversation: conversationResult.Conversation,
-                        Messages: updatedMessages,
-                    });
+                    if (conversationEntry.Messages.length !== updatedMessages.length) {
+                        update(conversationEntry.Conversation.ID, () => ({
+                            Messages: updatedMessages,
+                        }));
+                    }
                 }
             });
         }
@@ -102,26 +121,23 @@ const conversationListener = (cache: ConversationCache, api: Api) => {
                 cache.delete(ID);
             }
             if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
-                const currentValue = cache.get(ID) as ConversationResult;
+                const currentValue = cache.get(ID) as ConversationCacheEntry;
 
                 // Try to update the conversation from event data without reloading it
                 try {
                     const updatedConversation: Conversation = parseLabelIDsInEvent(
-                        currentValue.Conversation,
+                        currentValue.Conversation || {},
                         Conversation as Conversation & LabelIDsChanges
                     );
 
                     if (updatedConversation.NumMessages !== currentValue.Messages?.length) {
-                        void reloadConversation(ID);
+                        void load(ID, undefined);
                     } else {
-                        cache.set(ID, {
-                            Conversation: updatedConversation,
-                            Messages: currentValue.Messages,
-                        });
+                        update(ID, () => ({ Conversation: updatedConversation }));
                     }
                 } catch (error) {
                     console.warn('Something went wrong on updating a conversation from an event.', error);
-                    void reloadConversation(ID);
+                    void load(ID, undefined);
                 }
             }
         }
@@ -133,10 +149,23 @@ const conversationListener = (cache: ConversationCache, api: Api) => {
  */
 const useConversationExpirationCheck = (cache: ConversationCache) => {
     const conversations = [...cache.values()]
-        .map((conversationResult) => conversationResult?.Conversation)
+        .map((conversationEntry) => conversationEntry?.Conversation)
         .filter(identity) as Conversation[];
 
     useExpirationCheck(conversations, (element) => cache.delete(element.ID || ''));
+};
+
+const ConversationListener = ({ children }: { children?: ReactNode }) => {
+    const cache = useConversationCache();
+    const { subscribe } = useEventManager();
+    const load = useLoadConversation();
+    const updateCache = useUpdateConversationCache();
+
+    useEffect(() => subscribe(conversationListener(cache, load, updateCache)), []);
+
+    useConversationExpirationCheck(cache);
+
+    return <>{children}</>;
 };
 
 interface Props {
@@ -148,22 +177,19 @@ interface Props {
  * Provider for the message cache and listen to event manager for updates
  */
 const ConversationProvider = ({ children, cache: testCache }: Props) => {
-    const { subscribe } = useEventManager();
-    const api = useApi();
-
     const realCache: ConversationCache = useInstance(() => {
         return createCache(
-            createLRU<string, ConversationResult>({ max: 50 })
+            createLRU<string, ConversationCacheEntry>({ max: 50 })
         );
     });
 
     const cache = testCache || realCache;
 
-    useEffect(() => subscribe(conversationListener(cache, api)), []);
-
-    useConversationExpirationCheck(cache);
-
-    return <ConversationContext.Provider value={cache}>{children}</ConversationContext.Provider>;
+    return (
+        <ConversationContext.Provider value={cache}>
+            <ConversationListener>{children}</ConversationListener>
+        </ConversationContext.Provider>
+    );
 };
 
 export default ConversationProvider;

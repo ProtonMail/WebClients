@@ -9,7 +9,7 @@ import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
 import { useGetElementsCache, useSetElementsCache } from '../mailbox/useElementsCache';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
-import { useConversationCache } from '../../containers/ConversationProvider';
+import { useConversationCache, useUpdateConversationCache } from '../../containers/ConversationProvider';
 import { isMessage as testIsMessage, getCurrentFolderID, hasLabel } from '../../helpers/elements';
 import { updateCounters } from '../../helpers/counter';
 import {
@@ -44,6 +44,7 @@ export const useOptimisticApplyLabels = () => {
     const conversationCache = useConversationCache();
     const [folders = []] = useFolders();
     const globalCache = useCache();
+    const updateConversationCache = useUpdateConversationCache();
 
     /**
      * Apply optimistically changes in the cache
@@ -98,13 +99,11 @@ export const useOptimisticApplyLabels = () => {
 
                     // Update in conversation cache
                     const conversationResult = conversationCache.get(message.ConversationID);
-                    if (conversationResult) {
+                    if (conversationResult && conversationResult.Conversation) {
                         const conversation = conversationResult.Conversation;
-                        const {
-                            updatedConversation,
-                            conversationChanges,
-                        } = applyLabelChangesOnOneMessageOfAConversation(conversation, changes);
-                        conversationCache.set(message.ConversationID, {
+                        const { updatedConversation, conversationChanges } =
+                            applyLabelChangesOnOneMessageOfAConversation(conversation, changes);
+                        updateConversationCache(message.ConversationID, () => ({
                             Conversation: updatedConversation,
                             Messages: conversationResult.Messages?.map((messageFromConversation) => {
                                 if (messageFromConversation.ID === message.ID) {
@@ -112,8 +111,7 @@ export const useOptimisticApplyLabels = () => {
                                 }
                                 return messageFromConversation;
                             }),
-                        });
-
+                        }));
                         // Update conversation count when the conversation is loaded
                         conversationCounters = updateCounters(conversation, conversationCounters, conversationChanges);
                     }
@@ -143,13 +141,12 @@ export const useOptimisticApplyLabels = () => {
                     const conversation = element as RequireSome<Conversation, 'ID'>;
 
                     // Update in conversation cache
-                    const conversationResult = conversationCache.get(conversation.ID);
-                    if (conversationResult) {
-                        const conversationFromCache = conversationResult.Conversation;
-                        conversationCache.set(conversation.ID, {
+                    const conversationCacheEntry = conversationCache.get(conversation.ID);
+                    if (conversationCacheEntry && conversationCacheEntry.Conversation) {
+                        const conversationFromCache = conversationCacheEntry.Conversation;
+                        updateConversationCache(conversation.ID, () => ({
                             Conversation: applyLabelChangesOnConversation(conversationFromCache, changes),
-                            Messages: conversationResult.Messages,
-                        });
+                        }));
                     }
 
                     // Update in elements cache if conversation mode
@@ -162,7 +159,7 @@ export const useOptimisticApplyLabels = () => {
                     }
 
                     // Update messages from the conversation (if loaded)
-                    const messages = conversationResult?.Messages;
+                    const messages = conversationCacheEntry?.Messages;
                     messages?.forEach((message) => {
                         const localID = getLocalID(messageCache, message.ID);
 

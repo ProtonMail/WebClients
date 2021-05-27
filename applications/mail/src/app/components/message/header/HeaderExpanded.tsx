@@ -346,6 +346,7 @@ const HeaderExpanded = ({
                 sourceMode={sourceMode}
                 onResignContact={onResignContact}
                 messageLoaded={messageLoaded}
+                bodyLoaded={bodyLoaded}
                 onLoadRemoteImages={onLoadRemoteImages}
                 onLoadEmbeddedImages={onLoadEmbeddedImages}
                 onCompose={onCompose}

@@ -13,7 +13,7 @@ import { get } from '../attachment/attachmentLoader';
  * Look through a message attachments if there are keys
  */
 export const extractKeysFromAttachments = async (
-    attachments: Attachment[],
+    attachments: Attachment[] | undefined = [],
     messageKeys: MessageKeys,
     attachmentsCache: AttachmentsCache,
     api: Api

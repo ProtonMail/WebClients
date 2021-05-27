@@ -2,6 +2,7 @@ import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { isDraft, isPlainText } from 'proton-shared/lib/mail/messages';
 import { useCallback } from 'react';
 import { useApi, useMailSettings } from 'react-components';
+import { wait } from 'proton-shared/lib/helpers/promise';
 import { MessageExtended, MessageErrors, MessageExtendedWithData, EmbeddedMap } from '../../models/message';
 import { loadMessage } from '../../helpers/message/messageRead';
 import { useGetMessageKeys } from './useGetMessageKeys';
@@ -13,6 +14,7 @@ import { isNetworkError } from '../../helpers/errors';
 import { useBase64Cache } from '../useBase64Cache';
 import { useMarkAs, MARK_AS_STATUS } from '../useMarkAs';
 import { isUnreadMessage } from '../../helpers/elements';
+import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 
 interface Preparation {
     plainText?: string;
@@ -47,7 +49,8 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
         updateMessageCache(messageCache, localID, { initialized: false });
 
         const errors: MessageErrors = {};
-
+        const { loadRetry = 0 } = messageFromCache;
+        let initialized: boolean | undefined = true;
         let decryption;
         let preparation: Preparation | undefined;
         let dataChanges;
@@ -95,6 +98,10 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
         } catch (error) {
             if (isNetworkError(error)) {
                 errors.network = [error];
+                if (loadRetry < LOAD_RETRY_COUNT) {
+                    initialized = undefined;
+                    await wait(LOAD_RETRY_DELAY);
+                }
             } else {
                 errors.processing = [error];
             }
@@ -111,7 +118,8 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                 showRemoteImages: preparation?.showRemoteImages,
                 embeddeds: preparation?.embeddeds,
                 errors,
-                initialized: true,
+                loadRetry: loadRetry + 1,
+                initialized,
             });
         }
     }, [localID]);

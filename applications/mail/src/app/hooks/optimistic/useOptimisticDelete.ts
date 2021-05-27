@@ -1,16 +1,15 @@
 import { useHandler, useCache } from 'react-components';
 import { MessageCountsModel, ConversationCountsModel } from 'proton-shared/lib/models';
-
 import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 import { Element } from '../../models/element';
 import { useMessageCache } from '../../containers/MessageProvider';
 import { useGetElementsCache, useSetElementsCache } from '../mailbox/useElementsCache';
-import { useConversationCache } from '../../containers/ConversationProvider';
+import { useConversationCache, useUpdateConversationCache } from '../../containers/ConversationProvider';
 import { MessageExtended } from '../../models/message';
-import { ConversationResult } from '../conversation/useConversation';
 import { replaceCounter } from '../../helpers/counter';
 import { isConversation, isUnread } from '../../helpers/elements';
 import { CacheEntry } from '../../models/tools';
+import { ConversationCacheEntry } from '../../models/conversation';
 
 const useOptimisticDelete = () => {
     const globalCache = useCache();
@@ -18,6 +17,7 @@ const useOptimisticDelete = () => {
     const setElementsCache = useSetElementsCache();
     const messageCache = useMessageCache();
     const conversationCache = useConversationCache();
+    const updateConversationCache = useUpdateConversationCache();
 
     return useHandler((elements: Element[], labelID: string) => {
         const elementIDs = elements.map(({ ID }) => ID);
@@ -25,7 +25,7 @@ const useOptimisticDelete = () => {
         const total = elementIDs.length;
         const totalUnread = elements.filter((element) => isUnread(element, labelID)).length;
         const rollbackMessages = [] as MessageExtended[];
-        const rollbackConversations = [] as ConversationResult[];
+        const rollbackConversations = [] as ConversationCacheEntry[];
         const rollbackCounters = {} as { [key: string]: LabelCount };
 
         // Message cache
@@ -41,17 +41,14 @@ const useOptimisticDelete = () => {
         // Conversation cache
         const conversationIDs = [...conversationCache.keys()];
         conversationIDs.forEach((conversationID) => {
-            const conversation = conversationCache.get(conversationID) as ConversationResult;
+            const conversation = conversationCache.get(conversationID) as ConversationCacheEntry;
             if (elementIDs.includes(conversationID)) {
                 conversationCache.delete(conversationID);
                 rollbackConversations.push(conversation);
             } else {
                 const messages = conversation.Messages?.filter((Message) => !elementIDs.includes(Message.ID));
                 if (messages?.length !== conversation.Messages?.length) {
-                    conversationCache.set(conversationID, {
-                        Conversation: conversation.Conversation,
-                        Messages: messages,
-                    });
+                    updateConversationCache(conversationID, () => ({ Messages: messages }));
                     rollbackConversations.push(conversation);
                 }
             }
@@ -109,7 +106,7 @@ const useOptimisticDelete = () => {
                 messageCache.set(message.localID, message);
             });
             rollbackConversations.forEach((conversation) => {
-                conversationCache.set(conversation.Conversation.ID || '', conversation);
+                conversationCache.set(conversation?.Conversation?.ID || '', conversation);
             });
             setElementsCache(rollbackElements);
             Object.entries(rollbackCounters).forEach(([key, value]) => {

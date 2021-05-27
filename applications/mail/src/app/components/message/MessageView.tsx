@@ -25,6 +25,7 @@ import { useVerifyMessage } from '../../hooks/message/useVerifyMessage';
 import { useMessageHotkeys } from '../../hooks/message/useMessageHotkeys';
 
 import './MessageView.scss';
+import { LOAD_RETRY_COUNT } from '../../constants';
 
 interface Props {
     labelID: string;
@@ -87,7 +88,10 @@ const MessageView = (
 
     const elementRef = useRef<HTMLElement>(null);
 
-    const { message, addAction, messageLoaded, bodyLoaded } = useMessage(inputMessage.ID, conversationID);
+    const { message, addAction, messageLoaded, bodyLoaded, loading: messageLoading } = useMessage(
+        inputMessage.ID,
+        conversationID
+    );
     const load = useLoadMessage(inputMessage);
     const initialize = useInitializeMessage(message.localID, labelID);
     const verify = useVerifyMessage(message.localID);
@@ -212,18 +216,22 @@ const MessageView = (
                 elementRef.current?.parentElement?.focus();
             }
         }
-    }, [loading, messageLoaded, message.data?.ID]);
+    }, [loading, messageLoaded, bodyLoaded, message.data?.ID, messageLoading]);
 
     // Manage preparing the content of the message
     useEffect(() => {
         if (!loading && expanded && message.initialized === undefined) {
+            if ((message.loadRetry || 0) > LOAD_RETRY_COUNT) {
+                // Max retries reach, aborting
+                return;
+            }
             void addAction(initialize);
         }
     }, [loading, expanded, message.initialized]);
 
     // Manage recomputing signature verification (happens when invalidated after initial load)
     useEffect(() => {
-        if (!loading && expanded && message.initialized && message.verification === undefined) {
+        if (!loading && expanded && message.initialized && message.data && message.verification === undefined) {
             void addAction(() => verify(message.decryptedRawContent as string, message.signature));
         }
     }, [loading, expanded, message.initialized, message.verification]);
