@@ -109,8 +109,9 @@ const CalendarsSection = ({
 
     const handleExport = (calendar: Calendar) => createModal(<ExportModal calendar={calendar} />);
 
-    const calendarsLimit = user.isFree ? MAX_CALENDARS_PER_FREE_USER : MAX_CALENDARS_PER_USER;
-    const isBelowLimit = calendars.length < calendarsLimit;
+    const calendarsLimitPerUser = user.isFree ? MAX_CALENDARS_PER_FREE_USER : MAX_CALENDARS_PER_USER;
+    const calendarsLimit = MAX_CALENDARS_PER_USER;
+    const isBelowLimit = calendars.length < calendarsLimitPerUser;
     const canAddCalendar = activeAddresses.length > 0 && isBelowLimit && user.hasNonDelinquentScope;
 
     return (
