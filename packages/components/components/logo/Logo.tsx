@@ -18,9 +18,6 @@ const { MAIL, VPN } = PLAN_SERVICES;
 const { PROTONACCOUNT, PROTONCALENDAR, PROTONCONTACTS, PROTONDRIVE, PROTONMAIL, PROTONVPN_SETTINGS } = APPS;
 
 const getLogoText = (subscription: Subscription, APP_NAME: APP_NAMES) => {
-    if (APP_NAME === PROTONCALENDAR) {
-        return 'beta';
-    }
     if (subscription) {
         if (hasLifetime(subscription)) {
             return 'Lifetime';
