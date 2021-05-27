@@ -1,4 +1,5 @@
-import '@babel/polyfill';
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 /* eslint import/no-extraneous-dependencies: 0 */
 import 'unfetch/polyfill/index'; // https://github.com/developit/unfetch/issues/101
 

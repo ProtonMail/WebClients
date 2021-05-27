@@ -21,12 +21,13 @@ const jsLoader = () => {
             cacheDirectory: true,
             presets: [
                 [
-                    '@babel/env',
+                    '@babel/preset-env',
                     {
                         targets: {
-                            browsers: ['ie 11']
+                            browsers: ['ie 11', 'safari 11']
                         },
-                        useBuiltIns: 'entry'
+                        useBuiltIns: 'entry',
+                        corejs: { version: '3.13' }
                     }
                 ]
             ],
