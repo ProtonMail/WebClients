@@ -29,6 +29,7 @@ const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
     const [username, setUsername] = useState(defaultUsername);
     const [password, setPassword] = useState('');
 
+    const usernameRef = useRef<HTMLInputElement>(null);
     const challengeRefLogin = useRef<ChallengeRef>();
     const [challengeLoading, setChallengeLoading] = useState(true);
     const [challengeError, setChallengeError] = useState(false);
@@ -38,7 +39,8 @@ const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
             return;
         }
         // Special focus management for challenge
-        challengeRefLogin.current?.focus('#username');
+        // challengeRefLogin.current?.focus('#username');
+        usernameRef.current?.focus();
     }, [challengeLoading]);
 
     const { validator, onFormSubmit } = useFormErrors();
@@ -103,6 +105,7 @@ const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
                     autoComplete="username"
                     value={username}
                     onValue={setUsername}
+                    ref={usernameRef}
                 />
                 <InputFieldTwo
                     id="password"
