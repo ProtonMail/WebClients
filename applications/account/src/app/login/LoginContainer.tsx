@@ -78,7 +78,7 @@ const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
             const Addresses =
                 args.Addresses ||
                 (await uidApi<{ Addresses: tsAddress[] }>(queryAddresses()).then(({ Addresses }) => Addresses));
-            const { keyPassword, LocalID } = args;
+            const { keyPassword, LocalID, UID } = args;
             if (Addresses?.length && keyPassword && getHasOnlyExternalAddresses(Addresses)) {
                 const { Domains = [] } = await uidApi<{ Domains: string[] }>(queryAvailableDomains());
                 generateInternalAddressRef.current = {
@@ -94,7 +94,7 @@ const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
                         // Since the session gets persisted, it has to be logged out if cancelling.
                         uidApi(revoke()).catch(noop);
                         if (LocalID !== undefined) {
-                            removePersistedSession(LocalID);
+                            removePersistedSession(LocalID, UID);
                         }
                     },
                     api: uidApi,
