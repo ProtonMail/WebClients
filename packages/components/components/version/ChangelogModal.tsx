@@ -11,6 +11,17 @@ const md = markdownit('default', {
     linkify: true,
 });
 
+const defaultRender =
+    md.renderer.rules.link_open ||
+    function render(tokens, idx, options, env, self) {
+        return self.renderToken(tokens, idx, options);
+    };
+
+md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
+    tokens[idx].attrPush(['target', '_blank']);
+    return defaultRender(tokens, idx, options, env, self);
+};
+
 interface Props {
     changelog?: string;
 }
