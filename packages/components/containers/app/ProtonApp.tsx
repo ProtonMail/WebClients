@@ -39,7 +39,6 @@ import clearKeyCache from './clearKeyCache';
 import { OnLoginCallbackArguments } from './interface';
 import { useInstance, PreventLeaveProvider } from '../../hooks';
 import { GlobalLoaderProvider, GlobalLoader } from '../../components/globalLoader';
-import { WELCOME_FLAG_KEY } from '../../hooks/useWelcomeFlags';
 import ThemeProvider from '../themes/ThemeProvider';
 
 const getIsSSOPath = (pathname: string) => {
@@ -136,7 +135,6 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
             Addresses,
             LocalID: newLocalID,
             path,
-            flow,
         }: OnLoginCallbackArguments) => {
             authentication.setUID(newUID);
             authentication.setPassword(keyPassword);
@@ -166,8 +164,6 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
                     status: STATUS.RESOLVED,
                 });
             }
-
-            cache.set(WELCOME_FLAG_KEY, flow);
 
             if (EventID !== undefined) {
                 setTmpEventID(cache, EventID);
