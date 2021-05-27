@@ -423,7 +423,9 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     useEffect(() => {
         if (expectedLength === 0 && page > 0) {
             const count = pageCount(total);
-            if (page !== count - 1) {
+            if (count === 0 && page !== 0) {
+                onPage(0);
+            } else if (page !== count - 1) {
                 onPage(count - 1);
             }
         }
