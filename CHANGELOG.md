@@ -1,3 +1,21 @@
+# [3.16.62] - 2021-05-27
+
+## Updates
+
+- Remove beta link on login page
+- Update footer copy on login page
+- Update encrypted outside pages to match with v4 design
+- Remove version number present in user dropdown when a new version is available
+- Update abuse modal copy
+
+## Fixes
+
+- Fix missing plural forms 
+
+# [3.16.61] - 2021-04-09
+
+- Add available domains params on login page
+
 # [3.16.60] - 2021-03-12
 
 ## Fixes
