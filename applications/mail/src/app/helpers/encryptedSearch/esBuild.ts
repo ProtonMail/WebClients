@@ -215,13 +215,10 @@ const storeMessages = async (
     getMessageKeys: GetMessageKeys,
     abortControllerRef: React.MutableRefObject<AbortController>
 ) => {
+    const numMessagesBefore = await esDB.count('messages');
     const messagesToStore: StoredCiphertext[] = [];
 
     const esIteratee = async (message: Message) => {
-        if (message.ExpirationTime) {
-            return;
-        }
-
         const messageToCache = await fetchMessage(message.ID, api, getMessageKeys, abortControllerRef.current.signal);
 
         if (!messageToCache) {
@@ -259,6 +256,11 @@ const storeMessages = async (
         })
     );
     await tx.done;
+
+    const numMessagesAfter = await esDB.count('messages');
+    if (numMessagesBefore + messagesMetadata.length !== numMessagesAfter) {
+        throw new Error('Messages not stored correctly');
+    }
 
     return recoveryPoint;
 };

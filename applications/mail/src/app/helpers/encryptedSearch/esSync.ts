@@ -223,10 +223,6 @@ export const refreshIndex = async (
                 if (abortControllerRef.current.signal.aborted) {
                     throw new Error('Operation aborted');
                 }
-                if (message.ExpirationTime) {
-                    fetchedMap.delete(ID);
-                    return;
-                }
                 if (indexedIDs.has(ID)) {
                     // If indexedIDs has ID, update metadata if something changed
                     promiseArray.push(
