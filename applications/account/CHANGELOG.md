@@ -1,3 +1,15 @@
+# [4.0.0-beta.15] - 2021-05-27
+## Improvements
+- General UI & responsiveness enhancements
+- Updated clarity on plan selection and checkout process with added information and interface improvements
+- Additional security features during sign in
+
+## Fixes
+- Multiple text and translations corrections
+- Fixes for various minor visual bugs and layout inconsistencies
+
+---
+
 # [4.0.0-beta.14] - 2021-05-11
 ## New Features
 - Added possibility to opt-in into Proton's Early Access program under the Settings dropdown
