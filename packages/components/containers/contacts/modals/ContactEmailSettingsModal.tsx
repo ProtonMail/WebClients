@@ -16,6 +16,7 @@ import { uniqueBy } from 'proton-shared/lib/helpers/array';
 import { getKeyInfoFromProperties, toKeyProperty } from 'proton-shared/lib/contacts/keyProperties';
 import { DecryptedKey, Api, ContactPublicKeyModel } from 'proton-shared/lib/interfaces';
 import { ContactProperties, ContactProperty } from 'proton-shared/lib/interfaces/contacts/Contact';
+import { AddContactsApiResponses } from 'proton-shared/lib/interfaces/contacts/Import';
 
 import { VCARD_KEY_FIELDS, CATEGORIES } from 'proton-shared/lib/contacts/constants';
 import { API_CODES, CONTACT_MIME_TYPES, MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES } from 'proton-shared/lib/constants';
@@ -131,8 +132,14 @@ const ContactEmailSettingsModal = ({
         const Contacts = await prepareContacts([allProperties], userKeysList[0]);
         const labels = hasCategories(allProperties) ? INCLUDE : IGNORE;
         const {
-            Responses: [{ Response: { Code = 0 } = {} }],
-        } = await api(addContacts({ Contacts, Overwrite: +!!contactID as 0 | 1, Labels: labels }));
+            Responses: [
+                {
+                    Response: { Code },
+                },
+            ],
+        } = await api<AddContactsApiResponses>(
+            addContacts({ Contacts, Overwrite: +!!contactID as 0 | 1, Labels: labels })
+        );
         if (Code !== API_CODES.SINGLE_SUCCESS) {
             onClose();
             createNotification({ text: c('Error').t`Preferences could not be saved`, type: 'error' });
