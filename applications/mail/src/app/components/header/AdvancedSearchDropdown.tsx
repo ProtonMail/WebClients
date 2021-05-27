@@ -155,8 +155,14 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     const { state: showMore, toggle: toggleShowMore } = useToggle(false);
     const [user] = useUser();
     const { createModal } = useModals();
-    const { resumeIndexing, getESDBStatus, pauseIndexing, toggleEncryptedSearch, getProgressRecorderRef, cacheIndexedDB } =
-        useEncryptedSearchContext();
+    const {
+        resumeIndexing,
+        getESDBStatus,
+        pauseIndexing,
+        toggleEncryptedSearch,
+        getProgressRecorderRef,
+        cacheIndexedDB,
+    } = useEncryptedSearchContext();
     const { isBuilding, esEnabled, isDBLimited, isRefreshing } = getESDBStatus();
     const [esState, setESState] = useState<ESState>(defaultESState);
     const { value, previousValue, startTime, endTime, oldestTime } = esState;
@@ -214,7 +220,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                 mode="alert"
             >
                 {c('Info')
-                    .t`This action will download all messages so they can be searched locally. Clearing your browser data or logging out will disable this option.`}
+                    .t`This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.`}
             </ConfirmModal>
         );
     };
