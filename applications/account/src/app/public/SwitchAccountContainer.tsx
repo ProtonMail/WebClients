@@ -77,8 +77,8 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
     const handleSignOutAll = async () => {
         localActiveSessions?.map(({ LocalID }) => {
             const persistedSession = getPersistedSession(LocalID);
-            removePersistedSession(LocalID);
-            if (persistedSession && persistedSession.UID) {
+            if (persistedSession) {
+                removePersistedSession(LocalID, persistedSession.UID);
                 return silentApi(withUIDHeaders(persistedSession.UID, revoke())).catch(noop);
             }
             return undefined;
