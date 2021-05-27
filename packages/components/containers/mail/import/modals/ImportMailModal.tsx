@@ -205,7 +205,13 @@ const ImportMailModal = ({ onClose = noop, currentImport, oauthProps: initialOAu
     const handleSubmitStartError = (error: Error & { data: { Code: number; Error: string } }) => {
         const { data: { Code, Error } = { Code: 0, Error: '' } } = error;
 
-        if ([IMPORT_ERROR.AUTHENTICATION_ERROR, IMPORT_ERROR.IMAP_CONNECTION_ERROR].includes(Code)) {
+        if (
+            [
+                IMPORT_ERROR.AUTHENTICATION_ERROR,
+                IMPORT_ERROR.IMAP_CONNECTION_ERROR,
+                IMPORT_ERROR.RATE_LIMIT_EXCEEDED,
+            ].includes(Code)
+        ) {
             setModalModel({
                 ...modalModel,
                 errorCode: Code,

@@ -20,6 +20,7 @@ export enum IMPORT_ERROR {
     OAUTH_INSUFFICIENT_SCOPES = 2027,
     BANDWIDTH_LIMIT = 2902,
     TEMP_PROVIDER_ERROR = 2902,
+    RATE_LIMIT_EXCEEDED = 429,
 }
 
 export interface ImportedFolder {
