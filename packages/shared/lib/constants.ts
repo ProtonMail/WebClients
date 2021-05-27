@@ -46,7 +46,7 @@ export const APPS_CONFIGURATION = {
     },
     [APPS.PROTONMAIL]: {
         publicPath: '',
-        subdomain: 'beta',
+        subdomain: 'mail',
         name: 'ProtonMail',
         bareName: 'Mail',
         clientID: 'WebMail',
@@ -594,7 +594,8 @@ export const BLACKLIST_LOCATION = +MAILBOX_IDENTIFIERS.spam;
 export const WHITELIST_LOCATION = +MAILBOX_IDENTIFIERS.inbox;
 
 /* eslint  no-useless-escape: "off" */
-export const REGEX_EMAIL = /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i;
+export const REGEX_EMAIL =
+    /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i;
 
 export enum FILTER_STATUS {
     ENABLED = 1,
