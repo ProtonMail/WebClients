@@ -25,6 +25,12 @@
     background-color: var(--background-strong);
 }
 
+.file-browser-grid-item--thumbnail {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; // To keep original proportion in Safari.
+}
+
 .file-browser-list-item--share {
     display: none;
     margin: -1em 0 -1em auto;
