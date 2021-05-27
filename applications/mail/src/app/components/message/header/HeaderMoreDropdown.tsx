@@ -89,6 +89,7 @@ const HeaderMoreDropdown = ({
     const handleUnread = async () => {
         closeDropdown.current?.();
         onToggle();
+        onBack();
         await markAs([message.data as Element], labelID, MARK_AS_STATUS.UNREAD);
         await call();
     };
