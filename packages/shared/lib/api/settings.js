@@ -172,5 +172,5 @@ export const updateEarlyAccess = (data) => ({
 export const updateFlags = (Flags) => ({
     url: 'settings/flags',
     method: 'put',
-    data: { Flags },
+    data: Flags,
 });
