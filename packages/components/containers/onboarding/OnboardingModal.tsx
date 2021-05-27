@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { useHistory, useLocation } from 'react-router';
 import { updateAddress } from 'proton-shared/lib/api/addresses';
-import { updateWelcomeFlags, updateThemeType } from 'proton-shared/lib/api/settings';
+import { updateWelcomeFlags, updateThemeType, updateFlags } from 'proton-shared/lib/api/settings';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { range } from 'proton-shared/lib/helpers/array';
 import { PROTON_THEMES, ThemeTypes } from 'proton-shared/lib/themes/themes';
@@ -119,7 +119,14 @@ const OnboardingModal = ({
             if (!firstAddress) {
                 return;
             }
-            await api(updateAddress(firstAddress.ID, { DisplayName: displayName, Signature: firstAddress.Signature }));
+            await Promise.all(
+                [
+                    welcomeFlags.isWelcomeFlow && api(updateFlags({ Welcomed: 1 })).catch(noop),
+                    api(
+                        updateAddress(firstAddress.ID, { DisplayName: displayName, Signature: firstAddress.Signature })
+                    ),
+                ].filter(isTruthy)
+            );
             await call();
         };
         void process();
