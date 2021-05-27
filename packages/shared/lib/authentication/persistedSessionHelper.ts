@@ -28,17 +28,10 @@ export type ResumedSessionResult = {
 };
 export const resumeSession = async (api: Api, localID: number, User?: tsUser): Promise<ResumedSessionResult> => {
     const persistedSession = getPersistedSession(localID);
-    const persistedUID = persistedSession?.UID;
-    const persistedUserID = persistedSession?.UserID;
-
-    // Persistent session is invalid, redirect to re-fork this session
-    if (!persistedSession || !persistedUID || !persistedUserID) {
-        removePersistedSession(localID);
+    if (!persistedSession) {
         throw new InvalidPersistentSessionError('Missing persisted session or UID');
     }
-
-    // Persistent session to be validated
-    const persistedSessionBlobString = persistedSession.blob;
+    const { UID: persistedUID, UserID: persistedUserID, blob: persistedSessionBlobString } = persistedSession;
 
     // User with password
     if (persistedSessionBlobString) {
@@ -56,11 +49,11 @@ export const resumeSession = async (api: Api, localID: number, User?: tsUser): P
             return { UID: persistedUID, LocalID: localID, keyPassword, User: persistedUser };
         } catch (e) {
             if (getIs401Error(e)) {
-                removePersistedSession(localID);
+                removePersistedSession(localID, persistedUID);
                 throw new InvalidPersistentSessionError('Session invalid');
             }
             if (e instanceof InvalidPersistentSessionError) {
-                removePersistedSession(localID);
+                removePersistedSession(localID, persistedUID);
                 throw e;
             }
             throw e;
@@ -76,7 +69,7 @@ export const resumeSession = async (api: Api, localID: number, User?: tsUser): P
         return { UID: persistedUID, LocalID: localID, User };
     } catch (e) {
         if (getIs401Error(e)) {
-            removePersistedSession(localID);
+            removePersistedSession(localID, persistedUID);
             throw new InvalidPersistentSessionError('Session invalid');
         }
         throw e;

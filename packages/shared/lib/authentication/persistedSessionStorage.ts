@@ -27,10 +27,13 @@ export const getPersistedSession = (localID: number): PersistedSession | undefin
     }
 };
 
-export const removePersistedSession = (localID: number) => {
+export const removePersistedSession = (localID: number, UID: string) => {
     const oldSession = getPersistedSession(localID);
     if (oldSession?.UID) {
         removeLastRefreshDate(oldSession.UID);
+    }
+    if (oldSession?.UID && UID !== oldSession.UID) {
+        return;
     }
     removeItem(getKey(localID));
 };
