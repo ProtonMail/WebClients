@@ -38,9 +38,6 @@ describe('MailHeader', () => {
         minimalCache();
         addToCache('User', user);
         addApiMock('payments/plans', () => ({}));
-        addApiMock('core/v4/features/EarlyAccess', () => ({}));
-        addApiMock('core/v4/features/EnabledEncryptedSearch', () => ({}));
-        addApiMock('core/v4/features/BundlePromoShown', () => ({}));
         addApiMock('contacts', () => ({ Contacts: [] }));
 
         props = getProps();

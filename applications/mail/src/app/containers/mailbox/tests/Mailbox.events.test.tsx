@@ -38,7 +38,7 @@ describe('Mailbox elements list reacting to events', () => {
         const search = { keyword: 'test' };
         const { getItems } = await setup({ messages: getElements(total), search });
 
-        const message = ({ ID: 'id3', Labels: [{ ID: labelID }], LabelIDs: [labelID] } as any) as Message;
+        const message = { ID: 'id3', Labels: [{ ID: labelID }], LabelIDs: [labelID] } as any as Message;
         await sendEvent({
             Messages: [{ ID: message.ID, Action: EVENT_ACTIONS.CREATE, Message: message }],
         });
@@ -167,7 +167,6 @@ describe('Mailbox elements list reacting to events', () => {
         const messages = getElements(total);
 
         addApiMock('mail/v4/importers', () => ({ Importers: [] }));
-        addApiMock('core/v4/features/UsedMailMobileApp', () => ({ Feature: {} }));
 
         addToCache('ConversationCounts', []);
         addToCache('MessageCounts', [{ LabelID: labelID, Total: total }]);
@@ -208,7 +207,6 @@ describe('Mailbox elements list reacting to events', () => {
         const messages = getElements(total);
 
         addApiMock('mail/v4/importers', () => ({ Importers: [] }));
-        addApiMock('core/v4/features/UsedMailMobileApp', () => ({ Feature: {} }));
 
         addToCache('ConversationCounts', []);
         addToCache('MessageCounts', [{ LabelID: labelID, Total: total }]);

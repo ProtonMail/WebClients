@@ -99,10 +99,12 @@ describe('Mailbox labels actions', () => {
                 [conversation3.ID as string]: { [label1.Name]: true, [label3.Name]: false },
             });
 
-            expect(labelRequestSpy).toHaveBeenCalledWith({
-                data: { IDs: [conversation1.ID, conversation2.ID], LabelID: label3.ID },
-                method: 'put',
+            expect(labelRequestSpy).toHaveBeenCalled();
+            const { url, method, data } = labelRequestSpy.mock.calls[0][0];
+            expect({ url, method, data }).toEqual({
                 url: 'mail/v4/conversations/label',
+                method: 'put',
+                data: { IDs: [conversation1.ID, conversation2.ID], LabelID: label3.ID },
             });
         });
 
@@ -126,10 +128,12 @@ describe('Mailbox labels actions', () => {
                 [conversation3.ID as string]: { [label2.Name]: false },
             });
 
-            expect(labelRequestSpy).toHaveBeenCalledWith({
-                data: { IDs: [conversation2.ID, conversation3.ID], LabelID: label2.ID },
-                method: 'put',
+            expect(labelRequestSpy).toHaveBeenCalled();
+            const { url, method, data } = labelRequestSpy.mock.calls[0][0];
+            expect({ url, method, data }).toEqual({
                 url: 'mail/v4/conversations/unlabel',
+                method: 'put',
+                data: { IDs: [conversation2.ID, conversation3.ID], LabelID: label2.ID },
             });
         });
 
