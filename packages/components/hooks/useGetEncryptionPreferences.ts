@@ -37,7 +37,9 @@ const useGetEncryptionPreferences = () => {
         async (emailAddress, lifetime, contactEmailsMap) => {
             const [addresses, mailSettings] = await Promise.all([getAddresses(), getMailSettings()]);
             const canonicalEmail = canonizeInternalEmail(emailAddress);
-            const selfAddress = addresses.find(({ Email }) => canonizeInternalEmail(Email) === canonicalEmail);
+            const selfAddress = addresses
+                .filter(({ Receive }) => !!Receive)
+                .find(({ Email }) => canonizeInternalEmail(Email) === canonicalEmail);
             let selfSend;
             let apiKeysConfig;
             let pinnedKeysConfig;
