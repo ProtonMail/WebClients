@@ -86,30 +86,34 @@ const getSaveSingleEventActions = async ({
         const isSendType = [SEND_INVITATION, SEND_UPDATE].includes(inviteType);
         const method = isSendType ? ICAL_METHOD.REQUEST : undefined;
         const veventComponentWithUpdatedDtstamp = withUpdatedDtstamp(newVeventComponent, oldVeventComponent);
-        let updatedVeventComponent = getUpdatedInviteVevent(
+        const updatedVeventComponent = getUpdatedInviteVevent(
             veventComponentWithUpdatedDtstamp,
             oldVeventComponent,
             method
         );
-        let updatedInviteActions = inviteActions;
+        const updatedInviteActions = inviteActions;
         if (!oldCalendarID || !oldAddressID || !oldMemberID) {
             throw new Error('Missing parameters to switch calendar');
         }
         if (isSendType) {
-            await onSaveConfirmation({
-                type: SAVE_CONFIRMATION_TYPES.SINGLE,
-                inviteActions,
-                isInvitation: false,
-            });
-            const { veventComponent: cleanVeventComponent, inviteActions: cleanInviteActions } = await sendIcs({
-                inviteActions,
-                vevent: updatedVeventComponent,
-                cancelVevent: oldVeventComponent,
-            });
-            if (cleanVeventComponent) {
-                updatedVeventComponent = cleanVeventComponent;
-                updatedInviteActions = cleanInviteActions;
-            }
+            // Temporary hotfix to an API issue
+            throw new Error(
+                'Cannot add participants and change calendar simultaneously. Please do the operations separately'
+            );
+            // await onSaveConfirmation({
+            //     type: SAVE_CONFIRMATION_TYPES.SINGLE,
+            //     inviteActions,
+            //     isInvitation: false,
+            // });
+            // const { veventComponent: cleanVeventComponent, inviteActions: cleanInviteActions } = await sendIcs({
+            //     inviteActions,
+            //     vevent: updatedVeventComponent,
+            //     cancelVevent: oldVeventComponent,
+            // });
+            // if (cleanVeventComponent) {
+            //     updatedVeventComponent = cleanVeventComponent;
+            //     updatedInviteActions = cleanInviteActions;
+            // }
         }
         const removedAttendeeEmails = await getCanonicalEmails(
             updatedInviteActions.removedAttendees,
