@@ -98,7 +98,7 @@ const getSaveSingleEventActions = async ({
         if (isSendType) {
             // Temporary hotfix to an API issue
             throw new Error(
-                'Cannot add participants and change calendar simultaneously. Please do the operations separately'
+                'Cannot add participants and change calendar simultaneously. Please change the calendar first'
             );
             // await onSaveConfirmation({
             //     type: SAVE_CONFIRMATION_TYPES.SINGLE,
