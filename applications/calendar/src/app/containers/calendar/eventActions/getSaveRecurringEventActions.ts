@@ -294,6 +294,12 @@ const getSaveRecurringEventActions = async ({
         );
         let updatedInviteActions = inviteActions;
         if (isSendInviteType) {
+            if (isSwitchCalendar) {
+                // Temporary hotfix to an API issue
+                throw new Error(
+                    'Cannot add participants and change calendar simultaneously. Please change the calendar first'
+                );
+            }
             const { veventComponent: cleanVeventComponent, inviteActions: cleanInviteActions } = await sendIcs({
                 inviteActions,
                 vevent: updatedVeventComponent,
