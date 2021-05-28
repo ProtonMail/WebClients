@@ -43,7 +43,7 @@ describe('string', () => {
 
     describe('getInitials', () => {
         it('should handle empty parameter', () => {
-            expect(getInitials()).toEqual('');
+            expect(getInitials()).toEqual('?');
         });
 
         it('should handle single character', () => {
