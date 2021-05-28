@@ -14,6 +14,9 @@ RewriteRule ^create/new https://account.%1/signup [R=302,L]
 
 RewriteRule . /index.html [NC,L]
 
+# Redirect to old.protonmail/eo from mail.protonmail/eo
+RewriteRule ^eo/([^?]*) https://old.protonmail.com/eo/$1 [R=302,L]
+
 ErrorDocument 403 /assets/errors/403.html
 
 <Files ~ "(index.html|version.json)">
