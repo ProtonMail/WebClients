@@ -106,10 +106,16 @@ export const getInitials = (fullName = '') => {
         .filter((word = '') => !/^[.,/#!$@%^&*;:{}=\-_`~()]/g.test(word));
     const last = rest[rest.length - 1];
 
-    return [first, last]
+    const initials = [first, last]
         .filter(Boolean)
         .map((letter = '') => [...letter.toUpperCase()][0]) // We use the spread operator to support Unicode characters
         .join('');
+
+    if (!initials) {
+        return '?';
+    }
+
+    return initials;
 };
 
 export const hasProtonDomain = (email = '') => {
