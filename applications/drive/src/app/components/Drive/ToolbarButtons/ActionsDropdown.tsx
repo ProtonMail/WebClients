@@ -12,6 +12,7 @@ import {
 } from 'react-components';
 
 import { useDriveContent } from '../DriveContentProvider';
+import { useDriveActiveFolder } from '../DriveFolderProvider';
 import useToolbarActions from '../../../hooks/drive/useToolbarActions';
 import { LinkType } from '../../../interfaces/link';
 
@@ -30,6 +31,7 @@ const ActionsDropdown = ({ shareId }: Props) => {
         openRename,
         openLinkSharing,
     } = useToolbarActions();
+    const { folder } = useDriveActiveFolder();
     const { fileBrowserControls } = useDriveContent();
     const { selectedItems } = fileBrowserControls;
 
@@ -43,14 +45,14 @@ const ActionsDropdown = ({ shareId }: Props) => {
             name: c('Action').t`Rename`,
             icon: 'file-edit',
             testId: 'actions-dropdown-rename',
-            action: () => openRename(selectedItems[0]),
+            action: () => openRename(shareId, selectedItems[0]),
         },
         {
             hidden: isMultiSelect,
             name: c('Action').t`Details`,
             icon: 'info',
             testId: 'actions-dropdown-details',
-            action: () => openDetails(selectedItems[0]),
+            action: () => openDetails(shareId, selectedItems[0]),
         },
         {
             hidden: !isMultiSelect || hasFoldersSelected,
@@ -64,7 +66,7 @@ const ActionsDropdown = ({ shareId }: Props) => {
             name: c('Action').t`Move to folder`,
             icon: 'arrow-cross',
             testId: 'actions-dropdown-move',
-            action: () => openMoveToFolder(selectedItems),
+            action: () => folder && openMoveToFolder(folder, selectedItems),
         },
         {
             hidden: isMultiSelect || hasFoldersSelected,
@@ -78,7 +80,7 @@ const ActionsDropdown = ({ shareId }: Props) => {
             name: c('Action').t`Move to trash`,
             icon: 'trash',
             testId: 'actions-dropdown-trash',
-            action: () => openMoveToTrash(selectedItems),
+            action: () => folder && openMoveToTrash(folder, selectedItems),
         },
     ];
 

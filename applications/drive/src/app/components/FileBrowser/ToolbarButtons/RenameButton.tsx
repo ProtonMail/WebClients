@@ -4,27 +4,23 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from 'react-components';
 
 import useToolbarActions from '../../../hooks/drive/useToolbarActions';
-import { useDriveContent } from '../DriveContentProvider';
+import { FileBrowserItem } from '../interfaces';
+import { noSelection, isMultiSelect } from './utils';
 
 interface Props {
-    disabled?: boolean;
+    shareId: string;
+    selectedItems: FileBrowserItem[];
 }
 
-const RenameButton = ({ disabled }: Props) => {
+const RenameButton = ({ shareId, selectedItems }: Props) => {
     const { openRename } = useToolbarActions();
-    const { fileBrowserControls } = useDriveContent();
-    const { selectedItems } = fileBrowserControls;
 
     return (
         <ToolbarButton
-            disabled={disabled}
+            disabled={noSelection(selectedItems) || isMultiSelect(selectedItems)}
             title={c('Action').t`Rename`}
             icon={<Icon name="file-edit" />}
-            onClick={() => {
-                if (selectedItems.length) {
-                    openRename(selectedItems[0]);
-                }
-            }}
+            onClick={() => openRename(shareId, selectedItems[0])}
             data-testid="toolbar-rename"
         />
     );

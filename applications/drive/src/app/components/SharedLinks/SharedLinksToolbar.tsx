@@ -2,7 +2,13 @@ import React from 'react';
 import { Toolbar, ToolbarSeparator } from 'react-components';
 
 import { useSharedLinksContent } from './SharedLinksContentProvider';
-import ManageSecureLinkButton from './ToolbarButtons/ManageSecureLinkButton';
+import {
+    DetailsButton,
+    DownloadButton,
+    PreviewButton,
+    RenameButton,
+    ShareLinkButton,
+} from '../FileBrowser/ToolbarButtons';
 import StopSharingButton from './ToolbarButtons/StopSharingButton';
 
 interface Props {
@@ -15,10 +21,14 @@ const SharedLinksToolbar = ({ shareId }: Props) => {
 
     return (
         <Toolbar>
-            <ManageSecureLinkButton shareId={shareId} disabled={selectedItems.length !== 1} />
+            <PreviewButton shareId={shareId} selectedItems={selectedItems} />
+            <DownloadButton shareId={shareId} selectedItems={selectedItems} />
             <ToolbarSeparator />
+            <RenameButton shareId={shareId} selectedItems={selectedItems} />
+            <DetailsButton shareId={shareId} selectedItems={selectedItems} />
+            <ToolbarSeparator />
+            <ShareLinkButton shareId={shareId} selectedItems={selectedItems} />
             <StopSharingButton shareId={shareId} disabled={!selectedItems.length} />
-            <ToolbarSeparator />
         </Toolbar>
     );
 };

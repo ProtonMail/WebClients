@@ -15,8 +15,8 @@ import FileSaver from '../../utils/FileSaver/FileSaver';
 import { getMetaForTransfer } from '../../utils/transfer';
 import { logSettledErrors } from '../../utils/async';
 import { LinkType } from '../../interfaces/link';
-import { useDriveActiveFolder } from '../../components/Drive/DriveFolderProvider';
 import { FileBrowserItem } from '../../components/FileBrowser/interfaces';
+import { DriveFolder } from '../../components/Drive/DriveFolderProvider';
 import RenameModal from '../../components/RenameModal';
 import DetailsModal from '../../components/DetailsModal';
 import MoveToFolderModal from '../../components/MoveToFolderModal';
@@ -28,7 +28,6 @@ import FilesDetailsModal from '../../components/FilesDetailsModal';
 function useToolbarActions() {
     const queuedFunction = useQueuedFunction();
     const { navigateToLink } = useNavigate();
-    const { folder } = useDriveActiveFolder();
     const { startFileTransfer, startFolderTransfer } = useFiles();
     const { preventLeave } = usePreventLeave();
     const { createModal } = useModals();
@@ -44,15 +43,11 @@ function useToolbarActions() {
     } = useListNotifications();
     const { openConfirmModal } = useConfirm();
 
-    const download = async (itemsToDownload: FileBrowserItem[]) => {
-        if (!folder) {
-            return;
-        }
-
+    const download = async (shareId: string, itemsToDownload: FileBrowserItem[]) => {
         const promises = itemsToDownload.map(async (item) => {
             if (item.Type === LinkType.FILE) {
                 const meta = getMetaForTransfer(item);
-                const fileStream = await startFileTransfer(folder.shareId, item.LinkID, meta);
+                const fileStream = await startFileTransfer(shareId, item.LinkID, meta);
                 preventLeave(FileSaver.saveAsFile(fileStream, meta)).catch(console.error);
             } else {
                 const zipSaver = await FileSaver.saveAsZip(item.Name);
@@ -60,7 +55,7 @@ function useToolbarActions() {
                 if (zipSaver) {
                     try {
                         await preventLeave(
-                            startFolderTransfer(item.Name, folder.shareId, item.LinkID, {
+                            startFolderTransfer(item.Name, shareId, item.LinkID, {
                                 onStartFileTransfer: zipSaver.addFile,
                                 onStartFolderTransfer: zipSaver.addFolder,
                             })
@@ -103,28 +98,20 @@ function useToolbarActions() {
         });
     };
 
-    const openDetails = (item: FileBrowserItem) => {
-        if (!folder) {
-            return;
-        }
-
-        createModal(<DetailsModal item={item} activeFolder={folder} />);
+    const openDetails = (shareId: string, item: FileBrowserItem) => {
+        createModal(<DetailsModal item={item} shareId={shareId} />);
     };
 
     const openFilesDetails = (selectedItems: FileBrowserItem[]) => {
-        if (!folder || !selectedItems.length) {
-            return;
-        }
-
         createModal(<FilesDetailsModal selectedItems={selectedItems} />);
     };
 
-    const openMoveToTrash = async (itemsToTrash: FileBrowserItem[]) => {
-        if (!folder || !itemsToTrash.length) {
+    const openMoveToTrash = async (sourceFolder: DriveFolder, itemsToTrash: FileBrowserItem[]) => {
+        if (!sourceFolder || !itemsToTrash.length) {
             return;
         }
 
-        const { linkId, shareId } = folder;
+        const { linkId, shareId } = sourceFolder;
         const trashed = await trashLinks(
             shareId,
             linkId,
@@ -142,28 +129,20 @@ function useToolbarActions() {
         createTrashLinksNotifications(itemsToTrash, trashed, undoAction);
     };
 
-    const openMoveToFolder = (itemsToMove: FileBrowserItem[]) => {
-        if (!folder || !itemsToMove.length) {
+    const openMoveToFolder = (sourceFolder: DriveFolder, itemsToMove: FileBrowserItem[]) => {
+        if (!sourceFolder || !itemsToMove.length) {
             return;
         }
 
-        createModal(<MoveToFolderModal activeFolder={folder} selectedItems={itemsToMove} />);
+        createModal(<MoveToFolderModal activeFolder={sourceFolder} selectedItems={itemsToMove} />);
     };
 
-    const openRename = (item: FileBrowserItem) => {
-        if (!folder) {
-            return;
-        }
-
-        createModal(<RenameModal activeFolder={folder} item={item} />);
+    const openRename = (shareId: string, item: FileBrowserItem) => {
+        createModal(<RenameModal shareId={shareId} item={item} />);
     };
 
-    const preview = (item: FileBrowserItem) => {
-        if (!folder) {
-            return;
-        }
-
-        navigateToLink(folder.shareId, item.LinkID, item.Type);
+    const preview = (shareId: string, item: FileBrowserItem) => {
+        navigateToLink(shareId, item.LinkID, item.Type);
     };
 
     const restoreFromTrash = async (shareId: string, itemsToRestore: FileBrowserItem[]) => {

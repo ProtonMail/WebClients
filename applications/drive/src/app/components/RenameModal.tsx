@@ -6,17 +6,16 @@ import { LinkType } from '../interfaces/link';
 import { validateLinkNameField } from '../utils/validation';
 import { formatLinkName, splitLinkName } from '../utils/link';
 import useDrive from '../hooks/drive/useDrive';
-import { DriveFolder } from './Drive/DriveFolderProvider';
 import { MAX_NAME_LENGTH } from '../constants';
 import { FileBrowserItem } from './FileBrowser/interfaces';
 
 interface Props {
-    activeFolder: DriveFolder;
+    shareId: string;
     onClose?: () => void;
     item: FileBrowserItem;
 }
 
-const RenameModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
+const RenameModal = ({ shareId, item, onClose, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const { renameLink, events } = useDrive();
     const [name, setName] = useState(item.Name);
@@ -48,8 +47,8 @@ const RenameModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
         setName(formattedName);
 
         try {
-            await renameLink(activeFolder.shareId, item.LinkID, item.ParentLinkID, formattedName);
-            await events.call(activeFolder.shareId);
+            await renameLink(shareId, item.LinkID, item.ParentLinkID, formattedName);
+            await events.call(shareId);
             const nameElement = (
                 <span key="name" style={{ whiteSpace: 'pre-wrap' }}>
                     &quot;{formattedName}&quot;

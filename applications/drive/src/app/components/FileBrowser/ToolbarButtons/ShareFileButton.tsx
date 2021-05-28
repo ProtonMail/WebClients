@@ -7,15 +7,14 @@ import useToolbarActions from '../../../hooks/drive/useToolbarActions';
 
 interface Props {
     shareId: string;
-    disabled?: boolean;
 }
 
-const ShareFileButton = ({ disabled, shareId }: Props) => {
+const ShareFileButton = ({ shareId }: Props) => {
     const { openFileSharing } = useToolbarActions();
 
     return (
         <ToolbarButton
-            disabled={disabled}
+            disabled={false}
             title={c('Action').t`Share via link`}
             icon={<Icon name="link" />}
             onClick={() => {

@@ -4,23 +4,23 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from 'react-components';
 
 import useToolbarActions from '../../../hooks/drive/useToolbarActions';
-import { useDriveContent } from '../DriveContentProvider';
+import { DriveFolder } from '../DriveFolderProvider';
+import { FileBrowserItem } from '../../FileBrowser/interfaces';
 
 interface Props {
-    disabled?: boolean;
+    sourceFolder: DriveFolder;
+    selectedItems: FileBrowserItem[];
 }
 
-const MoveToFolderButton = ({ disabled }: Props) => {
+const MoveToFolderButton = ({ sourceFolder, selectedItems }: Props) => {
     const { openMoveToFolder } = useToolbarActions();
-    const { fileBrowserControls } = useDriveContent();
-    const { selectedItems } = fileBrowserControls;
 
     return (
         <ToolbarButton
-            disabled={disabled}
+            disabled={false}
             title={c('Action').t`Move to folder`}
             icon={<Icon name="arrow-cross" />}
-            onClick={() => openMoveToFolder(selectedItems)}
+            onClick={() => openMoveToFolder(sourceFolder, selectedItems)}
             data-testid="toolbar-move"
         />
     );
