@@ -46,13 +46,16 @@ const PageContainer = (
     useEffect(() => {
         const queryParams = new URLSearchParams(location.search);
 
-        const shouldOpenBetaOnboardingModal = queryParams.has('beta');
-        if (shouldOpenBetaOnboardingModal) {
+        const hasBetaParam = queryParams.has('beta');
+        if (hasBetaParam) {
             queryParams.delete('beta');
             history.replace({
                 search: queryParams.toString(),
             });
         }
+
+        // userSettings is used to avoid waiting to load features from useEarlyAccess
+        const shouldOpenBetaOnboardingModal = hasBetaParam && !userSettings.EarlyAccess;
 
         if (welcomeFlags.isWelcomeFlow) {
             createModal(
