@@ -6,7 +6,7 @@ import Progress from './Progress';
 
 interface Props {
     id: string;
-    display: string;
+    display?: string;
     value: number;
     max?: number;
     loading: boolean;
@@ -55,7 +55,7 @@ const DynamicProgress = ({
           };
 
     return (
-        <div className="text-center">
+        <div className={classnames(['text-center', !display && 'mb1'])}>
             {icon}
             <Progress
                 className={classnames(['mt1', progressClassname])}
@@ -64,9 +64,11 @@ const DynamicProgress = ({
                 max={max}
                 {...rest}
             />
-            <p aria-atomic="true" aria-live="polite" id={id}>
-                {display}
-            </p>
+            {display ? (
+                <p aria-atomic="true" aria-live="polite" id={id}>
+                    {display}
+                </p>
+            ) : null}
         </div>
     );
 };
