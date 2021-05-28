@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { Select, Icon, Button } from '../../components';
+import { Select, Icon, ButtonLike } from '../../components';
 
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 
@@ -104,10 +104,6 @@ const ProtonMailBridgeSection = () => {
                 value: d,
             })) || [];
 
-        const handleClick = () => {
-            window.open(id === 'linux' ? linuxLink : downloads[0], '_self');
-        };
-
         return (
             <div key={id} className="flex">
                 <div className="bordered rounded1e p2 flex-item-fluid rounded flex flex-column flex-align-items-center">
@@ -122,8 +118,16 @@ const ProtonMailBridgeSection = () => {
                     )}
 
                     {downloads.length > 0 && (
-                        <Button color="weak" shape="outline" className="w100 mtauto" onClick={handleClick}>{c('Action')
-                            .t`Download`}</Button>
+                        <ButtonLike
+                            as="a"
+                            color="norm"
+                            shape="solid"
+                            className="w100 mtauto"
+                            href={id === 'linux' ? linuxLink : downloads[0]}
+                            target="_self"
+                        >
+                            {c('Action').t`Download`}
+                        </ButtonLike>
                     )}
                 </div>
             </div>
