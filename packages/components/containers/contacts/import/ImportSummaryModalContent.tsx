@@ -40,7 +40,7 @@ const ImportSummaryModalContent = ({ model }: Props) => {
             <DynamicProgress
                 id="progress-import-contacts"
                 value={totalProcessed}
-                display={displayMessage}
+                display={isPartialSuccess || isSuccess ? displayMessage : undefined}
                 max={totalToProcess}
                 loading={false}
                 success={isSuccess}
