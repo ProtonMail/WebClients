@@ -1,14 +1,12 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { c } from 'ttag';
 import { formatImage } from 'proton-shared/lib/helpers/image';
 import { getPreferredValue } from 'proton-shared/lib/contacts/properties';
-import { formatAdr } from 'proton-shared/lib/contacts/property';
 import { ContactProperties } from 'proton-shared/lib/interfaces/contacts';
-
 import ContactImageSummary from './ContactImageSummary';
 import './ContactSummary.scss';
 import Tooltip from '../tooltip/Tooltip';
-import { Button, LinkButton } from '../button';
+import { Button } from '../button';
 import Icon from '../icon/Icon';
 import { classnames } from '../../helpers';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
@@ -35,53 +33,6 @@ const ContactSummary = ({
     const { isNarrow } = useActiveBreakpoint();
     const photo = formatImage(getPreferredValue(properties, 'photo') as string);
     const name = getPreferredValue(properties, 'fn') as string;
-    const email = getPreferredValue(properties, 'email');
-    const tel = getPreferredValue(properties, 'tel');
-    const adr = getPreferredValue(properties, 'adr') as string[];
-
-    const summary: { icon: string; component: ReactNode }[] = [
-        {
-            icon: 'email',
-            component: email ? (
-                <a href={`mailto:${email}`} title={`${email}`}>
-                    {email}
-                </a>
-            ) : (
-                !isPreview && (
-                    <LinkButton className="p0" onClick={() => onEdit('email')}>
-                        {c('Action').t`Add email`}
-                    </LinkButton>
-                )
-            ),
-        },
-    ];
-
-    if (!hasError) {
-        summary.push(
-            {
-                icon: 'phone',
-                component: tel ? (
-                    <a href={`tel:${tel}`}>{tel}</a>
-                ) : (
-                    !isPreview && (
-                        <LinkButton className="p0" onClick={() => onEdit('tel')}>
-                            {c('Action').t`Add phone number`}
-                        </LinkButton>
-                    )
-                ),
-            },
-            {
-                icon: 'address',
-                component: adr
-                    ? formatAdr(adr)
-                    : !isPreview && (
-                          <LinkButton className="p0" onClick={() => onEdit('adr')}>
-                              {c('Action').t`Add address`}
-                          </LinkButton>
-                      ),
-            }
-        );
-    }
 
     return (
         <div

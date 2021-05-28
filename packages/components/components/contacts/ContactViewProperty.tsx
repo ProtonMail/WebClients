@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { parseISO, isValid, format } from 'date-fns';
 import { c } from 'ttag';
 
@@ -135,7 +135,7 @@ const ContactViewProperty = ({
                 return (
                     <Copy
                         className="ml0-5 pt0-5 pb0-5 mt0-1"
-                        value={formatAdr(property?.value as string[])}
+                        value={formatAdr(property.value).join(', ')}
                         onCopy={() => {
                             createNotification({ text: c('Success').t`Address copied to clipboard` });
                         }}
@@ -196,10 +196,18 @@ const ContactViewProperty = ({
             return <RemoteImage src={value} />;
         }
         if (field === 'adr') {
+            const lines = formatAdr(property.value);
             return (
                 <span className="w100">
                     <span className="float-right flex-item-noshrink flex contact-view-actions">{getActions()}</span>
-                    {formatAdr(property.value as string[])}
+                    {lines.map((line, index) => (
+                        // No better key here and should not change in time anyway
+                        // eslint-disable-next-line react/no-array-index-key
+                        <Fragment key={index}>
+                            {line}
+                            {index !== lines.length - 1 && <br />}
+                        </Fragment>
+                    ))}
                 </span>
             );
         }
