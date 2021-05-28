@@ -30,7 +30,7 @@ interface Props {
     currency?: Currency;
     coupon?: string;
     method?: PAYMENT_METHOD_TYPE;
-    onMethod: (value: PAYMENT_METHOD_TYPE) => void;
+    onMethod: (value: PAYMENT_METHOD_TYPE | undefined) => void;
     paypal: any;
     paypalCredit: any;
     card: CardModel;
@@ -68,11 +68,14 @@ const Payment = ({
         );
 
     useEffect(() => {
+        if (loading) {
+            return onMethod(undefined);
+        }
         const result = options.find(({ disabled }) => !disabled);
         if (result) {
             onMethod(result.value);
         }
-    }, [options.length]);
+    }, [loading, options.length]);
 
     if (['donation', 'human-verification'].includes(type) && amount < MIN_DONATION_AMOUNT) {
         const price = (
