@@ -33,6 +33,7 @@ interface Props {
     onMessageReady: () => void;
     columnLayout: boolean;
     isComposerOpened: boolean;
+    containerRef: React.RefObject<HTMLElement>;
 }
 
 const DEFAULT_FILTER_VALUE = true;
@@ -49,6 +50,7 @@ const ConversationView = ({
     onMessageReady,
     columnLayout,
     isComposerOpened,
+    containerRef,
 }: Props) => {
     const [labels = []] = useLabels();
     const {
@@ -166,6 +168,8 @@ const ConversationView = ({
                             onMessageReady={onMessageReady}
                             columnLayout={columnLayout}
                             isComposerOpened={isComposerOpened}
+                            containerRef={containerRef}
+                            wrapperRef={wrapperRef}
                         />
                     ))}
                 </div>

@@ -82,19 +82,16 @@ const MailboxContainer = ({
 
     const searchParams = getSearchParams(location.hash);
     const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
-    const searchParameters = useMemo<SearchParameters>(
-        () => extractSearchParameters(location),
-        [
-            searchParams.address,
-            searchParams.from,
-            searchParams.to,
-            searchParams.keyword,
-            searchParams.begin,
-            searchParams.end,
-            searchParams.attachments,
-            searchParams.wildcard,
-        ]
-    );
+    const searchParameters = useMemo<SearchParameters>(() => extractSearchParameters(location), [
+        searchParams.address,
+        searchParams.from,
+        searchParams.to,
+        searchParams.keyword,
+        searchParams.begin,
+        searchParams.end,
+        searchParams.attachments,
+        searchParams.wildcard,
+    ]);
     const isSearch = testIsSearch(searchParameters);
     const sort = useMemo<Sort>(() => sortFromUrl(location), [searchParams.sort]);
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
@@ -301,6 +298,7 @@ const MailboxContainer = ({
                                     onMessageReady={onMessageReady}
                                     columnLayout={columnLayout}
                                     isComposerOpened={isComposerOpened}
+                                    containerRef={messageContainerRef}
                                 />
                             ) : (
                                 <MessageOnlyView
