@@ -151,7 +151,7 @@ describe('MailSidebar', () => {
         // Check if the changelog modal opens on click
         fireEvent.click(appVersionButton);
 
-        getByText('Release notes');
+        getByText("What's new");
         getByText('ProtonMail Changelog');
     });
 
