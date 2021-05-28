@@ -9,6 +9,9 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # Redirect nothing to app
 RewriteRule ^$ /index.html [NC,L]
 
+# Redirect to old.protonmail/eo from mail.protonmail/eo
+RewriteRule ^eo/([^?]*) https://old.protonmail.com/eo/$1 [R=302,L]
+
 # Hide .git stuff
 RewriteRule ^.*?\.git.* /index.html [NC,L]
 
