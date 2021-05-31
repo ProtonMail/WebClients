@@ -6,30 +6,27 @@
 			display: inline-flex;
 			width: 1.75em;
 			height: 1.75em;
-			border-radius: 50%;
+			border-radius: $global-border-radius;
 		}
 
-		&[aria-current='date'] {
-			color: var(--text-norm);
+		&-day-fullname {
 			font-weight: bold;
 		}
 
-		&[aria-current='date'] &-number {
-			background-color: var(--interaction-norm);
-			color: var(--interaction-norm-contrast);
+		&:hover &-number {
+			background-color: var(--interaction-default-hover);
+			color: var(--text-norm);
+		}
+
+		&[aria-current='date'] {
+			color: var(--primary);
 			font-weight: bold;
 		}
 
 		&[aria-pressed='true'] &-number {
-			background-color: var(--interaction-norm);
-			color: var(--interaction-norm-contrast);
-
-			&:not([aria-current='date'] .calendar-grid-heading-number) {
-				@include respond-to($breakpoint-small, 'min') {
-					background-color: var(--background-strong);
-					color: var(--text-norm);
-				}
-			}
+			background-color: var(--primary);
+			color: var(--primary-contrast);
+			font-weight: bold;
 		}
 
 		&-day-shortname {
