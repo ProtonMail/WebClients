@@ -6,7 +6,7 @@
 			display: inline-flex;
 			width: 1.75em;
 			height: 1.75em;
-			border-radius: 50%;
+			border-radius: $global-border-radius;
 		}
 
 		&:hover &-number {
@@ -15,21 +15,14 @@
 		}
 
 		&[aria-current='date'] &-number {
-			background-color: var(--interaction-norm);
-			color: var(--interaction-norm-contrast);
+			color: var(--primary);
 			font-weight: bold;
 		}
 
 		&[aria-pressed='true'] &-number {
-			background-color: var(--interaction-norm);
-			color: var(--interaction-norm-contrast);
-
-			&:not([aria-current='date'] .calendar-monthgrid-day-number) {
-				@include respond-to($breakpoint-small, 'min') {
-					background-color: var(--background-strong);
-					color: var(--text-norm);
-				}
-			}
+			background-color: var(--primary);
+			color: var(--primary-contrast);
+			font-weight: bold;
 		}
 	}
 }

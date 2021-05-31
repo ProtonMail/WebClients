@@ -19,6 +19,7 @@
 	&-day {
 		&[aria-current='true'] {
 			font-weight: bold;
+			color: var(--primary);
 		}
 	}
 
