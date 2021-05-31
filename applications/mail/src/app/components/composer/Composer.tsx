@@ -387,15 +387,8 @@ const Composer = (
 
     // Manage opening
     useEffect(() => {
-        // Attachments from reference message to re-encrypt
-        const attachmentToCreate = !syncedMessage.data?.ID && !!syncedMessage.data?.Attachments?.length;
-
         // New attachments to upload from scratch
         const attachmentToUpload = !!syncedMessage.initialAttachments?.length;
-
-        if (!syncInProgress && attachmentToCreate) {
-            void addAction(() => saveDraft(syncedMessage as MessageExtendedWithData));
-        }
 
         if (attachmentToUpload) {
             const uploadInitialAttachments = async () => {
@@ -407,7 +400,7 @@ const Composer = (
             void uploadInitialAttachments();
         }
 
-        if (editorReady && !syncInProgress && !attachmentToCreate && !attachmentToUpload) {
+        if (editorReady && !syncInProgress && !attachmentToUpload) {
             setOpening(false);
         }
     }, [editorReady, syncInProgress, syncedMessage.data]);
