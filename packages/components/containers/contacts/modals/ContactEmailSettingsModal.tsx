@@ -124,7 +124,7 @@ const ContactEmailSettingsModal = ({
         if (model?.isPGPExternalWithoutWKDKeys && model?.sign !== undefined) {
             emailProperties.push({ field: 'x-pm-sign', value: `${model?.sign}`, group: emailGroup });
         }
-        if (model?.isPGPExternalWithoutWKDKeys && model?.scheme) {
+        if (model?.isPGPExternal && model?.scheme) {
             emailProperties.push({ field: 'x-pm-scheme', value: model?.scheme, group: emailGroup });
         }
 
