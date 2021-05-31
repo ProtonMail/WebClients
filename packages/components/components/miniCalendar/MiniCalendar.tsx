@@ -1,5 +1,6 @@
 import React, { useMemo, useState, useEffect, FormEvent } from 'react';
 import { addMonths, endOfMonth, startOfMonth } from 'date-fns';
+import { isSameMonth } from 'proton-shared/lib/date-fns-utc';
 import { noop } from 'proton-shared/lib/helpers/function';
 
 import { getDaysInMonth } from './helper';
@@ -9,6 +10,7 @@ import WeekDays from './WeekDays';
 import WeekNumbers from './WeekNumbers';
 import Icon from '../icon/Icon';
 import { DateTuple, WeekStartsOn } from './index.d';
+import { Button } from '../button';
 
 export interface Props {
     hasCursors?: boolean;
@@ -71,6 +73,7 @@ const MiniCalendar = ({
     const [temporaryDate, setTemporaryDate] = useState<Date | undefined>();
 
     const activeDate = temporaryDate || selectedDate;
+    const activeDateDay = isSameMonth(now, activeDate) ? now.getDay() : undefined;
 
     const days = useMemo(() => {
         return getDaysInMonth(activeDate, { weekStartsOn, weeks: numberOfWeeks - 1 });
@@ -108,32 +111,18 @@ const MiniCalendar = ({
             onMouseDown={preventLeaveFocus}
             aria-label={monthLabel}
         >
-            <div className="flex flex-align-items-center p1">
+            <div className="flex flex-align-items-center flex-nowrap p1">
+                <span className="text-bold flex-item-fluid text-ellipsis">{monthLabel}</span>
                 {hasCursors ? (
                     <>
-                        <button
-                            type="button"
-                            title={prevMonth}
-                            className="flex ml0-5 mr0-5"
-                            onClick={() => handleSwitchMonth(-1)}
-                        >
-                            <Icon name="caret" size={12} className="rotateZ-90 minicalendar-icon" />
+                        <Button icon shape="ghost" color="weak" title={prevMonth} onClick={() => handleSwitchMonth(-1)}>
+                            <Icon name="caret" className="rotateZ-90 minicalendar-icon" />
                             <span className="sr-only">{prevMonth}</span>
-                        </button>
-                    </>
-                ) : null}
-                <span className="text-bold flex-item-fluid text-center text-ellipsis">{monthLabel}</span>
-                {hasCursors ? (
-                    <>
-                        <button
-                            type="button"
-                            title={nextMonth}
-                            className="flex ml0-5 mr0-5"
-                            onClick={() => handleSwitchMonth(1)}
-                        >
-                            <Icon name="caret" size={12} className="rotateZ-270 minicalendar-icon" />
+                        </Button>
+                        <Button icon shape="ghost" color="weak" title={nextMonth} onClick={() => handleSwitchMonth(1)}>
+                            <Icon name="caret" className="rotateZ-270 minicalendar-icon" />
                             <span className="sr-only">{nextMonth}</span>
-                        </button>
+                        </Button>
                     </>
                 ) : null}
             </div>
@@ -145,6 +134,7 @@ const MiniCalendar = ({
                         weekdaysShort={weekdaysShort}
                         weekdaysLong={weekdaysLong}
                         weekStartsOn={weekStartsOn}
+                        activeDateDay={activeDateDay}
                     />
                     <MonthDays
                         min={min}
