@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect, useCallback, useRef, memo } from 'react';
 import { History, Location } from 'history';
-import { PrivateMainArea, useItemsSelection } from 'react-components';
+import { PrivateMainArea, useCalendars, useCalendarUserSettings, useItemsSelection } from 'react-components';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { isDraft } from 'proton-shared/lib/mail/messages';
 import { VIEW_MODE } from 'proton-shared/lib/constants';
@@ -82,16 +82,19 @@ const MailboxContainer = ({
 
     const searchParams = getSearchParams(location.hash);
     const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
-    const searchParameters = useMemo<SearchParameters>(() => extractSearchParameters(location), [
-        searchParams.address,
-        searchParams.from,
-        searchParams.to,
-        searchParams.keyword,
-        searchParams.begin,
-        searchParams.end,
-        searchParams.attachments,
-        searchParams.wildcard,
-    ]);
+    const searchParameters = useMemo<SearchParameters>(
+        () => extractSearchParameters(location),
+        [
+            searchParams.address,
+            searchParams.from,
+            searchParams.to,
+            searchParams.keyword,
+            searchParams.begin,
+            searchParams.end,
+            searchParams.attachments,
+            searchParams.wildcard,
+        ]
+    );
     const isSearch = testIsSearch(searchParameters);
     const sort = useMemo<Sort>(() => sortFromUrl(location), [searchParams.sort]);
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
@@ -139,6 +142,10 @@ const MailboxContainer = ({
     } = useItemsSelection(elementID, elementIDs, [elementID, labelID]);
 
     useNewEmailNotification(() => handleCheckAll(false));
+
+    // Launch two calendar-specific API calls here to boost calendar widget performance
+    useCalendars();
+    useCalendarUserSettings();
 
     const showToolbar = !breakpoints.isNarrow || !elementID;
     const showList = columnMode || !elementID;
