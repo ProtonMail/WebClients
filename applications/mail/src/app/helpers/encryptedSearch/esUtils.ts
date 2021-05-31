@@ -1,6 +1,8 @@
-import { getItem } from 'proton-shared/lib/helpers/storage';
+import { getItem, setItem } from 'proton-shared/lib/helpers/storage';
 import { IDBPDatabase, openDB } from 'idb';
 import { EncryptedSearchDB, StoredCiphertext } from '../../models/encryptedSearch';
+import { getMessageFromDB } from './esSync';
+import { sizeOfCachedMessage } from './esSearch';
 
 export const indexKeyExists = (userID: string) => !!getItem(`ES:${userID}:Key`);
 
@@ -55,4 +57,35 @@ export const getBuildEvent = (userID: string) => {
     }
     const { event }: { event: string } = JSON.parse(buildBlob);
     return event;
+};
+
+export const getSizeIDB = (userID: string) => {
+    const sizeBlob = getItem(`ES:${userID}:SizeIDB`);
+    if (!sizeBlob) {
+        return 0;
+    }
+    const sizeIDB = parseInt(sizeBlob, 10);
+    if (Number.isNaN(sizeIDB)) {
+        return 0;
+    }
+    return sizeIDB;
+};
+
+export const updateSizeIDB = (userID: string, addend: number) => {
+    const sizeIDB = getSizeIDB(userID);
+    const newSize = sizeIDB + addend;
+    setItem(`ES:${userID}:SizeIDB`, `${newSize}`);
+};
+
+export const removeMessageSize = async (
+    userID: string,
+    esDB: IDBPDatabase<EncryptedSearchDB>,
+    ID: string,
+    indexKey: CryptoKey
+) => {
+    const message = await getMessageFromDB(ID, indexKey, esDB);
+    if (!message) {
+        return;
+    }
+    updateSizeIDB(userID, -sizeOfCachedMessage(message));
 };

@@ -6,8 +6,7 @@ import { wait } from 'proton-shared/lib/helpers/promise';
 import { GetUserKeys, ESMetricsReport } from '../../models/encryptedSearch';
 import { Event } from '../../models/event';
 import { ES_LIMIT } from '../../constants';
-import { getNumMessagesDB } from './esUtils';
-import { sizeOfIDB } from './esSearch';
+import { getNumMessagesDB, getSizeIDB } from './esUtils';
 import { getIndexKey } from './esBuild';
 
 /**
@@ -102,19 +101,18 @@ export const sendESMetrics = async (
         return;
     }
 
-    const [numMessagesIDB, sizeIDBOnDisk, sizeIDB] = await Promise.all([
+    const [numMessagesIDB, sizeIDBOnDisk] = await Promise.all([
         getNumMessagesDB(userID),
         storeManager
             ?.estimate()
             .then((storageDetails) => storageDetails.usage)
             .catch(() => undefined),
-        isCacheLimited ? sizeOfIDB(indexKey, userID) : sizeCache,
         wait(randomDelay),
     ]);
 
     const Data: ESMetricsReport = {
         numMessagesIDB,
-        sizeIDB,
+        sizeIDB: getSizeIDB(userID),
         sizeIDBOnDisk,
         sizeCache,
         numMessagesSearched,

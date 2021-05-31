@@ -25,7 +25,9 @@ import {
     localisedForwardFlags,
     OPENPGP_REFRESH_CUTOFF,
 } from '../../constants';
+import { updateSizeIDB } from './esUtils';
 import { queryEvents, queryMessage, queryMessagesCount, queryMessagesMetadata } from './esAPI';
+import { sizeOfCachedMessage } from './esSearch';
 
 /**
  * Retrieve and decrypt the index key from localStorage. Return undefined if something goes wrong.
@@ -217,6 +219,7 @@ const storeMessages = async (
 ) => {
     const numMessagesBefore = await esDB.count('messages');
     const messagesToStore: StoredCiphertext[] = [];
+    let batchSize = 0;
 
     const esIteratee = async (message: Message) => {
         const messageToCache = await fetchMessage(message.ID, api, getMessageKeys, abortControllerRef.current.signal);
@@ -225,6 +228,7 @@ const storeMessages = async (
             throw new Error('Plaintext to store is undefined');
         }
 
+        batchSize += sizeOfCachedMessage(messageToCache);
         const newCiphertextToStore = await encryptToDB(messageToCache, indexKey);
 
         if (!newCiphertextToStore) {
@@ -262,7 +266,7 @@ const storeMessages = async (
         throw new Error('Messages not stored correctly');
     }
 
-    return recoveryPoint;
+    return { recoveryPoint, batchSize };
 };
 
 /**
@@ -299,7 +303,7 @@ const storeMessagesBatches = async (
 
     let batchCount = 0;
     while (Messages.length) {
-        const recoveryPoint = await storeMessages(
+        const storeOutput = await storeMessages(
             Messages,
             esDB,
             indexKey,
@@ -309,13 +313,18 @@ const storeMessagesBatches = async (
         ).catch((error) => {
             if (error.name === 'QuotaExceededError') {
                 const quotaRecoveryPoint: RecoveryPoint = { ID: '', Time: -1 };
-                return quotaRecoveryPoint;
+                return {
+                    recoveryPoint: quotaRecoveryPoint,
+                    batchSize: 0,
+                };
             }
         });
 
-        if (!recoveryPoint) {
+        if (!storeOutput) {
             return false;
         }
+        const { recoveryPoint, batchSize } = storeOutput;
+
         if (recoveryPoint.ID === '' && recoveryPoint.Time === -1) {
             // If the quota has been reached, indexing is condisered to be successful. Since
             // messages are fetched in chronological order, IndexedDB is guaranteed to contain
@@ -324,7 +333,7 @@ const storeMessagesBatches = async (
         }
 
         setItem(`ES:${userID}:Recover`, JSON.stringify(recoveryPoint));
-
+        updateSizeIDB(userID, batchSize);
         recordProgress(Messages.length);
 
         resultMetadata = await queryMessagesMetadata(
@@ -483,6 +492,8 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
         removeItem(`ES:${userID}:BuildEvent`);
         return result;
     }
+
+    setItem(`ES:${userID}:SizeIDB`, '0');
 
     return {
         ...result,

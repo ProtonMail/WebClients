@@ -494,20 +494,3 @@ export const hybridSearch = async (
     }
     return searchResults;
 };
-
-/**
- * Estimate the size of IndexedDB in memory. Note that this will be different than the size
- * the browser estimates when the index is on disk
- */
-export const sizeOfIDB = async (indexKey: CryptoKey, userID: string) => {
-    let idbSize = 0;
-
-    const computeSize = (cachedMessage: CachedMessage) => {
-        idbSize += sizeOfCachedMessage(cachedMessage);
-        return undefined;
-    };
-
-    await queryDB<CachedMessage>(indexKey, userID, computeSize);
-
-    return idbSize;
-};

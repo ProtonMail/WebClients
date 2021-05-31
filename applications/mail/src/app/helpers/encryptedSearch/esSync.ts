@@ -13,8 +13,14 @@ import {
     StoredCiphertext,
 } from '../../models/encryptedSearch';
 import { AesKeyGenParams, ES_LIMIT, ES_MAX_PAGEBATCH } from '../../constants';
-import { getNumMessagesDB, getOldestMessage, getOldestTimePoint } from './esUtils';
-import { applySearch, splitCachedMessage, uncachedSearch } from './esSearch';
+import {
+    getNumMessagesDB,
+    getOldestMessage,
+    getOldestTimePoint,
+    updateSizeIDB,
+    removeMessageSize,
+} from './esUtils';
+import { applySearch, sizeOfCachedMessage, splitCachedMessage, uncachedSearch } from './esSearch';
 import { queryEvents, queryMessagesCount, queryMessagesMetadata } from './esAPI';
 import { encryptToDB, fetchMessage, prepareMessageMetadata } from './esBuild';
 
@@ -151,11 +157,10 @@ export const refreshIndex = async (
 
     if (searchResults.length) {
         try {
-            const tx = esDB.transaction('messages', 'readwrite');
             searchResults.forEach(async ({ ID }) => {
-                await tx.store.delete(ID);
+                await removeMessageSize(userID, esDB, ID, indexKey);
+                await esDB.delete('messages', ID);
             });
-            await tx.done;
         } catch (error) {
             return;
         }
@@ -269,6 +274,7 @@ export const refreshIndex = async (
                             if (!fetchedMessageToCache) {
                                 throw new Error('Cannot fetch new message');
                             }
+                            updateSizeIDB(userID, sizeOfCachedMessage(fetchedMessageToCache));
                             const newCiphertextToStore = await encryptToDB(fetchedMessageToCache, indexKey);
                             if (!newCiphertextToStore) {
                                 throw new Error('Ciphertext to store is undefined');
@@ -361,7 +367,8 @@ export const syncMessageEvents = async (
             //   - if a cache exists, delete it from there
             //   - if results are being shown, delete it from there too
             if (Action === EVENT_ACTIONS.DELETE || Message?.ExpirationTime) {
-                void esDB.delete('messages', ID);
+                await removeMessageSize(userID, esDB, ID, indexKey);
+                await esDB.delete('messages', ID);
 
                 if (esCache.length) {
                     const index = esCache.findIndex((cachedMessage) => cachedMessage.ID === ID);
@@ -403,6 +410,8 @@ export const syncMessageEvents = async (
                     failedMessageEvents.push(ID);
                     return;
                 }
+
+                updateSizeIDB(userID, sizeOfCachedMessage(messageToCache));
 
                 if (esCache.length) {
                     esCache = esCache.concat(messageToCache);
@@ -476,6 +485,8 @@ export const syncMessageEvents = async (
 
                 // Store the new message to DB
                 const storeSuccess = await storeToDB(newCiphertextToStore, esDB);
+
+                updateSizeIDB(userID, sizeOfCachedMessage(newMessageToCache) - sizeOfCachedMessage(oldMessage));
 
                 if (!storeSuccess) {
                     failedMessageEvents.push(ID);

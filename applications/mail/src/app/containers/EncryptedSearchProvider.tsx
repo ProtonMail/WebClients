@@ -85,6 +85,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         removeItem(`ES:${userID}:SyncFail`);
         removeItem(`ES:${userID}:Pause`);
         removeItem(`ES:${userID}:ESEnabled`);
+        removeItem(`ES:${userID}:SizeIDB`);
         return deleteDB(`ES:${userID}:DB`).catch(() => undefined);
     };
 
