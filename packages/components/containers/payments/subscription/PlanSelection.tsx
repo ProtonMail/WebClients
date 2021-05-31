@@ -42,6 +42,7 @@ const getFeatures = (plan: Plan, service: PLAN_SERVICES, vpnCountries: VPNCountr
     const plusCountries = vpnCountries[PLANS.VPNPLUS].count;
 
     const mailAppName = getAppName(APPS.PROTONMAIL);
+    const driveAppName = getAppName(APPS.PROTONDRIVE);
     const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
     const { Name } = plan;
     // TODO: Improve the free plan logic.
@@ -161,6 +162,11 @@ const getFeatures = (plan: Plan, service: PLAN_SERVICES, vpnCountries: VPNCountr
         ),
     };
 
+    const accessProtonDrive = {
+        // translator: Access to <ProtonDrive> (beta)
+        content: c('Plan feature').t`Access to ${driveAppName} (beta)`,
+    };
+
     if (planName === 'free_mail') {
         return [
             { content: c('Plan feature').t`1 user` },
@@ -168,6 +174,7 @@ const getFeatures = (plan: Plan, service: PLAN_SERVICES, vpnCountries: VPNCountr
             { content: c('Plan feature').t`1 address` },
             { content: c('Plan feature').t`3 folders / labels` },
             { ...customEmail, notIncluded: true },
+            { ...accessProtonDrive, notIncluded: true },
         ];
     }
 
@@ -188,6 +195,7 @@ const getFeatures = (plan: Plan, service: PLAN_SERVICES, vpnCountries: VPNCountr
             },
             { content: c('Plan feature').t`200 folders / labels` },
             customEmail,
+            accessProtonDrive,
         ];
     }
 
@@ -201,6 +209,7 @@ const getFeatures = (plan: Plan, service: PLAN_SERVICES, vpnCountries: VPNCountr
             },
             { content: c('Plan feature').t`Unlimited folders / labels` },
             customEmail,
+            accessProtonDrive,
         ];
     }
 
@@ -214,6 +223,7 @@ const getFeatures = (plan: Plan, service: PLAN_SERVICES, vpnCountries: VPNCountr
             },
             { content: c('Plan feature').t`Unlimited folders / labels` },
             customEmail,
+            accessProtonDrive,
         ];
     }
 
