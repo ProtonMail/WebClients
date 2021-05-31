@@ -144,6 +144,7 @@ const MonthDays = ({
                     isIntervalBoundBegin && 'minicalendar-day--range-bound-begin',
                     isIntervalBoundEnd && 'minicalendar-day--range-bound-end',
                     isInterval && 'minicalendar-day--range',
+                    selectedDate && isSameDay(selectedDate, dayDate) && 'minicalendar-day--selected',
                 ]);
 
                 return (
