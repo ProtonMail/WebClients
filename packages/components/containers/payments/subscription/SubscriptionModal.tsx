@@ -204,7 +204,7 @@ const SubscriptionModal = ({
             const { Gift = 0 } = result;
             const { Code = '' } = result.Coupon || {}; // Coupon can equal null
 
-            if (wantToApplyNewGiftCode && newModel.gift !== Code && !Gift) {
+            if (wantToApplyNewGiftCode && newModel.gift?.toLowerCase() !== Code.toLowerCase() && !Gift) {
                 createNotification({ text: c('Error').t`Invalid code`, type: 'error' });
             }
 

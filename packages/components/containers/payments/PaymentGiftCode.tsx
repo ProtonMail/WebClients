@@ -32,7 +32,7 @@ const PaymentGiftCode = ({ gift = '', onApply, loading }: Props) => {
             <div className="inline-flex flex-nowrap flex-align-items-center">
                 <span className="mr1 flex flex-nowrap flex-align-items-center">
                     <Icon name="gift" className="mr0-5 mb0-25" />
-                    <code>{(gift.match(/.{1,4}/g) || ['']).join('-')}</code>
+                    <code>{(gift.replace(/-/g, '').match(/.{1,4}/g) || ['']).join('-').toUpperCase()}</code>
                 </span>
                 <Button
                     icon
@@ -41,7 +41,7 @@ const PaymentGiftCode = ({ gift = '', onApply, loading }: Props) => {
                     onClick={() => onApply('')}
                     title={c('Action').t`Remove gift code`}
                 >
-                    <Icon name="trash" alt={c('Action').t`Remove gift code`}/>
+                    <Icon name="trash" alt={c('Action').t`Remove gift code`} />
                 </Button>
             </div>
         );
