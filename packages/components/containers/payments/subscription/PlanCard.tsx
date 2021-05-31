@@ -83,7 +83,7 @@ const PlanCard = ({
                     {action}
                 </PrimaryButton>
                 {features.length ? (
-                    <ul className="unstyled">
+                    <ul className="unstyled mb0">
                         {features.map((feature, index) => (
                             <li
                                 key={`${index}`}
