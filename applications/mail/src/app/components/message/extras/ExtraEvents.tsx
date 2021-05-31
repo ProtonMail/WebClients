@@ -85,13 +85,12 @@ const ExtraEvents = ({ message }: Props) => {
                 return;
             }
             const run = async () => {
-                const calendars = (await getCalendars()) || [];
+                const [calendars = [], { DefaultCalendarID }] = await Promise.all([
+                    getCalendars(),
+                    getCalendarUserSettings(),
+                ]);
                 const activeCalendars = getProbablyActiveCalendars(calendars);
-                let defaultCalendar;
-                if (calendars.length) {
-                    const { DefaultCalendarID } = await getCalendarUserSettings();
-                    defaultCalendar = getDefaultCalendar(activeCalendars, DefaultCalendarID);
-                }
+                const defaultCalendar = getDefaultCalendar(activeCalendars, DefaultCalendarID);
                 const disabledCalendars = calendars.filter((calendar) => getIsCalendarDisabled(calendar));
                 if (!isMounted()) {
                     return;

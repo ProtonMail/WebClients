@@ -44,7 +44,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, total, false);
-        expect(api.mock.calls.length).toBe(4);
+        expect(api.mock.calls.length).toBe(6);
     });
 
     it('should not reload the list on an update event if a filter is active', async () => {
@@ -60,7 +60,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, total, false);
-        expect(api.mock.calls.length).toBe(3);
+        expect(api.mock.calls.length).toBe(5);
     });
 
     it('should not reload the list on an update event if has list from start', async () => {
@@ -73,7 +73,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, total, false);
-        expect(api.mock.calls.length).toBe(3);
+        expect(api.mock.calls.length).toBe(5);
     });
 
     it('should reload the list on an update event if has not list from start', async () => {
@@ -91,7 +91,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, PAGE_SIZE, false);
-        expect(api.mock.calls.length).toBe(4);
+        expect(api.mock.calls.length).toBe(6);
     });
 
     it('should reload the list on an delete event if a search is active', async () => {
@@ -105,7 +105,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, total, false);
-        expect(api.mock.calls.length).toBe(4);
+        expect(api.mock.calls.length).toBe(6);
     });
 
     it('should reload the list on count event and expected length not matched when several pages of elements', async () => {
@@ -121,7 +121,7 @@ describe('Mailbox elements list reacting to events', () => {
                 .map((element) => ({ ID: element.ID, Action: EVENT_ACTIONS.DELETE } as ConversationEvent)),
         });
 
-        expect(api.mock.calls.length).toBe(4);
+        expect(api.mock.calls.length).toBe(6);
     });
 
     it('should not reload the list on count event when a search is active', async () => {
@@ -136,7 +136,7 @@ describe('Mailbox elements list reacting to events', () => {
             MessageCounts: [{ LabelID: labelID, Total: 10, Unread: 10 }],
         });
 
-        expect(api.mock.calls.length).toBe(3);
+        expect(api.mock.calls.length).toBe(5);
     });
 
     it('should reload the list if the last element has been updated', async () => {
@@ -158,7 +158,7 @@ describe('Mailbox elements list reacting to events', () => {
             Conversations: [{ ID: element.ID || '', Action: EVENT_ACTIONS.UPDATE_FLAGS, Conversation: element }],
         });
 
-        expect(api.mock.calls.length).toBe(4);
+        expect(api.mock.calls.length).toBe(6);
     });
 
     it('should not show the loader if not live cache but params has not changed', async () => {
