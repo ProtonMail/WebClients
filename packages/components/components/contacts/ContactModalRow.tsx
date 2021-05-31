@@ -1,4 +1,4 @@
-import React, { forwardRef, Ref } from 'react';
+import React, { forwardRef, Ref, useEffect, useRef } from 'react';
 import { c } from 'ttag';
 import { clearType, getType } from 'proton-shared/lib/contacts/property';
 import { ContactProperty, ContactPropertyChange } from 'proton-shared/lib/interfaces/contacts';
@@ -40,6 +40,8 @@ const ContactModalRow = (
     const { field, value } = property;
     const type = clearType(getType(property.type));
     const canDelete = !(field === 'photo' && !value);
+    const prevField = useRef<string>();
+    const fieldsToReset = ['bday', 'anniversary', 'photo', 'logo'];
 
     const list = [];
 
@@ -56,6 +58,21 @@ const ContactModalRow = (
             },
         });
     }
+
+    useEffect(() => {
+        // Reset the value if coming from Birthday/Anniversary/Photo/Logo input
+        if (field !== prevField.current) {
+            if (prevField.current && fieldsToReset.includes(prevField.current)) {
+                onChange({ ...property, value: '' });
+            }
+            prevField.current = field;
+        }
+
+        // Reset the value if going to Birthday/Anniversary/Photo/Logo input
+        if (fieldsToReset.includes(field)) {
+            onChange({ ...property, value: '' });
+        }
+    }, [field]);
 
     return (
         <div className="flex flex-nowrap flex-item-noshrink">
