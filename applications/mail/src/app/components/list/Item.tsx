@@ -16,7 +16,7 @@ import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
 
 const { SENT, ALL_SENT, ALL_MAIL, STARRED, DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
-const labelsWithIcons = [ALL_MAIL, STARRED, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS] as string[];
+const labelsWithIcons = [ALL_MAIL, STARRED, ALL_SENT, ALL_DRAFTS] as string[];
 
 interface Props {
     conversationMode: boolean;
