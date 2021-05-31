@@ -41,7 +41,7 @@ $minicalendar-cell-size: 2em !default;
 	position: relative;
 	min-width: #{$minicalendar-cell-size + 0.35em};
 	min-height: #{$minicalendar-cell-size + 0.35em};
-	border-radius: 50%;
+	border-radius: $global-border-radius;
 	color: var(--text-norm);
 }
 
@@ -67,7 +67,7 @@ $minicalendar-cell-size: 2em !default;
 	}
 }
 
-.minicalendar-day[aria-current='date']::before {
+.minicalendar-day--selected::before {
 	content: attr(data-current-day);
 	speak: none;
 	position: absolute;
@@ -75,17 +75,21 @@ $minicalendar-cell-size: 2em !default;
 	left: 0;
 	right: 0;
 	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	font-weight: bold;
-	line-height: 2.3; // check modifier below when no week displayed
 	color: var(--primary-contrast);
 	background: var(--primary);
-	border-radius: 50%;
+	border-radius: $global-border-radius;
 }
+
 /*
 .minicalendar-day[aria-current='date'][aria-pressed='true']::before {
 
 }
 */
+
 // fix in case of range selection in responsive view
 $mini-calendar-currentDay-size: 2.5em !default;
 .minicalendar-day--range.minicalendar-day[aria-current='date']::before {
@@ -98,6 +102,11 @@ $mini-calendar-currentDay-size: 2.5em !default;
 	color: var(--text-norm);
 }
 
+.minicalendar-day[aria-current='date'] {
+	font-weight: bold;
+	color: var(--primary);
+}
+
 $minicalendar-day-marker-size: 3px !default;
 .minicalendar-day--marker {
 	position: absolute;
@@ -106,7 +115,7 @@ $minicalendar-day-marker-size: 3px !default;
 	height: $minicalendar-day-marker-size;
 	width: $minicalendar-day-marker-size;
 	background-color: var(--primary);
-	border-radius: 50%;
+	border-radius: $global-border-radius;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
