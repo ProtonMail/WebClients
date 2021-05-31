@@ -21,6 +21,7 @@ const RequestNewCodeModal = ({ verificationModel, onEdit, onResend, ...rest }: P
             title={c('Title').t`Request new verification code`}
             mode="alert"
             loading={loading}
+            noTitleEllipsis
             footer={
                 <>
                     <Button
