@@ -55,19 +55,15 @@ function ItemCell({
     const { loadLinkCachedThumbnailURL } = useDrive();
     useEffect(() => {
         if (item.HasThumbnail) {
-            loadLinkCachedThumbnailURL(
-                shareId,
-                item.LinkID,
-                async (downloadUrl: string): Promise<Uint8Array[]> => {
-                    const { contents } = await downloadDriveFile(shareId, item.LinkID, [
-                        {
-                            Index: 1,
-                            URL: downloadUrl,
-                        },
-                    ]);
-                    return contents;
-                }
-            ).catch(console.error);
+            loadLinkCachedThumbnailURL(shareId, item.LinkID, async (downloadUrl: string): Promise<Uint8Array[]> => {
+                const { contents } = await downloadDriveFile(shareId, item.LinkID, [
+                    {
+                        Index: 1,
+                        URL: downloadUrl,
+                    },
+                ]);
+                return contents;
+            }).catch(console.error);
         }
     }, []);
 
@@ -124,7 +120,7 @@ function ItemCell({
                     {item.CachedThumbnailURL ? (
                         <img
                             src={item.CachedThumbnailURL}
-                            style={{ maxWidth: '100%', maxHeight: '100%' }}
+                            className="file-browser-grid-item--thumbnail"
                             alt={iconText}
                         />
                     ) : (
