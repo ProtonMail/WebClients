@@ -2,15 +2,17 @@ import React, { useMemo } from 'react';
 import { WeekStartsOn } from './index.d';
 
 import Tooltip from '../tooltip/Tooltip';
+import { classnames } from '../../helpers';
 
 export interface Props {
     weekStartsOn: WeekStartsOn;
     numberOfDays?: number;
     weekdaysLong: string[];
     weekdaysShort: string[];
+    activeDateDay?: number;
 }
 
-const WeekDays = ({ weekdaysShort, weekdaysLong, weekStartsOn = 1, numberOfDays }: Props) => {
+const WeekDays = ({ weekdaysShort, weekdaysLong, weekStartsOn = 1, numberOfDays, activeDateDay }: Props) => {
     const style = {
         '--minicalendar-weekdays-numberOfDaysInWeek': numberOfDays,
     };
@@ -20,16 +22,17 @@ const WeekDays = ({ weekdaysShort, weekdaysLong, weekStartsOn = 1, numberOfDays 
             const idx = (i + weekStartsOn) % 7;
             const label = weekdaysShort[idx];
             const tooltip = weekdaysLong[idx];
+            const isCurrentDay = idx === activeDateDay;
             return (
                 <Tooltip key={label + i} title={tooltip}>
-                    <span aria-hidden="true">
+                    <span aria-hidden="true" className={classnames(['text-strong', isCurrentDay && 'color-primary'])}>
                         {label}
                         <span className="sr-only">{tooltip}</span>
                     </span>
                 </Tooltip>
             );
         });
-    }, [weekdaysShort, weekStartsOn]);
+    }, [weekdaysShort, weekStartsOn, activeDateDay]);
 
     return (
         <div className="text-center minicalendar-weekdays" style={style}>
