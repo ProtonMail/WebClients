@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 import { srpAuth } from 'proton-shared/lib/srp';
 import { queryUnlock } from 'proton-shared/lib/api/user';
+import { noop } from 'proton-shared/lib/helpers/function';
 import { FormModal, Row, Label, Field, PasswordInput } from '../../components';
 import { useApi } from '../../hooks';
 
@@ -32,8 +33,9 @@ const UnlockModal = ({ onClose, onSuccess, ...rest }: Props) => {
 
     return (
         <FormModal
-            onClose={onClose}
+            onClose={loading ? noop : onClose}
             onSubmit={handleSubmit}
+            hasClose={!loading}
             title={c('Title').t`Sign in again to continue`}
             close={c('Label').t`Cancel`}
             submit={c('Label').t`Submit`}
