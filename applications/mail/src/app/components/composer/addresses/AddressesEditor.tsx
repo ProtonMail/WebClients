@@ -59,25 +59,32 @@ const AddressesEditor = ({ message, messageSendInfo, onChange, expanded, toggleE
                         </InlineLinkButton>
                     </Tooltip>
                 </Label>
-                <AddressesInput
-                    id={`to-${uid}`}
-                    recipients={message.data?.ToList}
-                    messageSendInfo={messageSendInfo}
-                    onChange={handleChange('ToList')}
-                    inputFocusRef={inputFocusRefs.to}
-                    placeholder={c('Placeholder').t`Email address`}
-                    expanded={expanded}
-                />
-                {!expanded && (
-                    <LinkButton
-                        className="composer-addresses-ccbcc text-no-decoration text-strong"
-                        title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
-                        onClick={toggleExpanded}
-                        data-testid="composer:cc-bcc-button"
-                    >
-                        {c('Action').t`CC, BCC`}
-                    </LinkButton>
-                )}
+                <div
+                    className={classnames([
+                        'flex flex-nowrap field flex-align-items-center flex-nowrap flex-item-fluid composer-to-editor',
+                        expanded ? 'composer-editor-expanded' : 'composer-editor-collapsed',
+                    ])}
+                >
+                    <AddressesInput
+                        id={`to-${uid}`}
+                        recipients={message.data?.ToList}
+                        messageSendInfo={messageSendInfo}
+                        onChange={handleChange('ToList')}
+                        inputFocusRef={inputFocusRefs.to}
+                        placeholder={c('Placeholder').t`Email address`}
+                        expanded={expanded}
+                    />
+                    {!expanded && (
+                        <LinkButton
+                            className="ml1 composer-addresses-ccbcc on-mobile-max-w33 text-cut text-no-decoration text-strong relative z10"
+                            title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
+                            onClick={toggleExpanded}
+                            data-testid="composer:cc-bcc-button"
+                        >
+                            {c('Action').t`CC, BCC`}
+                        </LinkButton>
+                    )}
+                </div>
             </div>
             {expanded && (
                 <>
