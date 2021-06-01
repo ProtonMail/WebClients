@@ -3,7 +3,6 @@ import { c } from 'ttag';
 
 import { Select, Icon, ButtonLike, SettingsLink, Card } from '../../components';
 import { useUser } from '../../hooks';
-
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 
 import './ProtonMailBridgeSection.scss';
@@ -95,7 +94,7 @@ const ProtonMailBridgeSection = () => {
             setBridgeClients(newBridgeClients);
             setLinuxLink(newBridgeClients[2].downloads[0]);
         }
-        run();
+        void run();
     }, []);
 
     const handleSelect = ({ target }: React.ChangeEvent<HTMLSelectElement>) => setLinuxLink(target.value);
