@@ -12,11 +12,12 @@ interface Props {
     onClose?: () => void;
     onSubmit: (data: { password: string; totp: string }) => void;
     error: string;
+    loading?: boolean;
 
     [key: string]: any;
 }
 
-const AskAuthModal = ({ onClose, onSubmit, error, ...rest }: Props) => {
+const AskAuthModal = ({ onClose, onSubmit, error, loading, ...rest }: Props) => {
     const [password, setPassword] = useState('');
     const [totp, setTotp] = useState('');
     const [userSettings, loadingUserSettings] = useUserSettings();
@@ -52,7 +53,7 @@ const AskAuthModal = ({ onClose, onSubmit, error, ...rest }: Props) => {
             submit={c('Label').t`Submit`}
             error={error}
             small
-            loading={isLoading}
+            loading={loading || isLoading}
             {...rest}
         >
             {isLoading ? (
