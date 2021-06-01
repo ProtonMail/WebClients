@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { PASSWORD_WRONG_ERROR } from 'proton-shared/lib/api/auth';
 import { srpAuth } from 'proton-shared/lib/srp';
 import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+import { noop } from 'proton-shared/lib/helpers/function';
+
 import { useApi } from '../../hooks';
 import AskAuthModal from './AskAuthModal';
 
@@ -39,7 +41,17 @@ const AuthModal = <T,>({ onClose, onError, onSuccess, config, ...rest }: Props<T
         }
     };
 
-    return <AskAuthModal onSubmit={handleSubmit} onClose={onClose} loading={loading} error={error} {...rest} />;
+    // Don't allow to close this modal if it's loading as it could leave other consumers in an undefined state
+    return (
+        <AskAuthModal
+            onSubmit={handleSubmit}
+            hasClose={!loading}
+            onClose={loading ? noop : onClose}
+            loading={loading}
+            error={error}
+            {...rest}
+        />
+    );
 };
 
 export default AuthModal;
