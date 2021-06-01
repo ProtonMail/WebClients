@@ -28,7 +28,7 @@ export const getOrganizationPage = () => {
         subsections: [
             {
                 text: c('Title').t`Organization`,
-                id: 'password-keys',
+                id: 'organization',
                 permissions: [MULTI_USERS],
             },
             {
