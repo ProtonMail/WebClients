@@ -27,7 +27,7 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
             </Label>
             <div
                 className={classnames([
-                    'field flex composer-addresses-fakefield flex-row flex-item-fluid w100 ',
+                    'field flex composer-addresses-fakefield flex-row flex-align-items-center flex-nowrap flex-item-fluid w100',
                     disabled && 'disabled',
                 ])}
                 onClick={onFocus}
@@ -35,7 +35,7 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
                 tabIndex={0}
                 role="button"
             >
-                <span className="text-ellipsis composer-addresses-fakefield-inner" title={title}>
+                <span className="text-ellipsis flex-item-fluid composer-addresses-fakefield-inner pr1" title={title}>
                     {getRecipients(message).length === 0 ? (
                         <span className="placeholder">{c('Placeholder').t`Email address`}</span>
                     ) : null}
@@ -87,15 +87,15 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
                         );
                     })}
                 </span>
+                <LinkButton
+                    className="composer-addresses-ccbcc on-mobile-max-w33 text-ellipsis composer-addresses-ccbcc-fakefield text-no-decoration flex-item-noshrink text-strong relative z10"
+                    title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
+                    onClick={toggleExpanded}
+                    disabled={disabled}
+                >
+                    {c('Action').t`CC, BCC`}
+                </LinkButton>
             </div>
-            <LinkButton
-                className="composer-addresses-ccbcc composer-addresses-ccbcc-fakefield text-no-decoration text-strong"
-                title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
-                onClick={toggleExpanded}
-                disabled={disabled}
-            >
-                {c('Action').t`CC, BCC`}
-            </LinkButton>
         </div>
     );
 };

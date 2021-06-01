@@ -109,7 +109,7 @@
 .composer-meta .composer-addresses-fakefield {
     min-height: rem(35);
     max-height: 2.5em;
-    padding-right: 5em;
+    padding-right: em(16);
     cursor: text;
     &.disabled {
         color: var(--field-disabled-text-color, var(--text-disabled));
@@ -139,7 +139,7 @@
     }
 
     &.composer-addresses-container-closed {
-        padding-right: 5em;
+        padding-right: 1em;
     }
 
     &::after {
@@ -161,10 +161,39 @@
         }
     }
 }
+.composer-to-editor {
+    height: auto;
+    min-height: rem($default-height-fields); // to avoid tiny layout shifts
+    padding-top: em(1);
+    padding-bottom: em(0);
+    &.composer-editor-expanded {
+        padding-top: .25em;
+        padding-bottom: .25em;
+        padding-left: 0.5em;
+        .field:empty { // only for placeholder position when empty
+            margin-left: .65em;
+        }
+    }
+    .composer-addresses-input-container {
+        margin-left: 0;
+    }
+}
+
+.composer-editor-collapsed .field {
+    border: none;
+    padding: 0;
+    min-width: rem(100);
+    background: inherit;
+    height: auto;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
 
 /*
   everything inside addresses should be inline in order to
-  make "ellipsis" properly work, so fixed the alignment of
+  make "ellipsis" properly working, so fixed the alignment of
   image this way
 */
 .composer-addresses-addressIcon {
@@ -215,6 +244,7 @@
     }
 }
 
+// .composer-to-editor.composer-editor-expanded .composer-addresses-input-container
 .composer-addresses-input-container {
     // Here I tried to keep field height only with margin calculations
     margin: calc(#{em(6)} - 0.25em) 0.5em calc(#{em(6)} - 0.25em) calc(#{em(16)} - 0.5em);
@@ -237,17 +267,6 @@
 
     .composer-addresses-item-label {
         border-right-color: currentColor;
-    }
-}
-
-.composer-addresses-ccbcc {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0.5em;
-
-    &-fakefield {
-        right: 1em;
     }
 }
 
