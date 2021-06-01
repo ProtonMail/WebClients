@@ -174,7 +174,7 @@ const RecoveryMethodsSection = () => {
                                     <span className="pr0-5">{c('Label').t`Allow recovery by phone`}</span>
                                     <Info
                                         title={c('Info')
-                                            .t`Disabling this will prevent this phone from being used for account recovery`}
+                                            .t`Disabling this will prevent this phone number from being used for account recovery`}
                                     />
                                 </label>
                             </div>
