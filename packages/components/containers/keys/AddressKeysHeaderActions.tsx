@@ -10,20 +10,10 @@ interface Props {
     addressIndex: number;
     onAddKey?: () => void;
     onImportKey?: () => void;
-    onExportPublic?: () => void;
-    onExportPrivate?: () => void;
     onChangeAddress: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const AddressKeysHeaderActions = ({
-    addresses,
-    addressIndex,
-    onAddKey,
-    onImportKey,
-    onExportPublic,
-    onExportPrivate,
-    onChangeAddress,
-}: Props) => {
+const AddressKeysHeaderActions = ({ addresses, addressIndex, onAddKey, onImportKey, onChangeAddress }: Props) => {
     const createActions = [
         onAddKey && {
             text: c('Action').t`Create key`,
@@ -35,18 +25,7 @@ const AddressKeysHeaderActions = ({
         },
     ].filter(isTruthy);
 
-    const exportActions = [
-        onExportPublic && {
-            text: c('Action').t`Export`,
-            onClick: onExportPublic,
-        },
-        onExportPrivate && {
-            text: c('Address action').t`Export private key`,
-            onClick: onExportPrivate,
-        },
-    ].filter(isTruthy);
-
-    if (!exportActions.length && !createActions.length) {
+    if (!createActions.length) {
         return null;
     }
 
@@ -66,9 +45,6 @@ const AddressKeysHeaderActions = ({
                     <DropdownActions list={createActions} />
                 </span>
             ) : null}
-            <span className="inline-flex mb0-5">
-                <DropdownActions list={exportActions} />
-            </span>
         </div>
     );
 };

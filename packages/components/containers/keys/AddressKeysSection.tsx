@@ -310,10 +310,6 @@ const AddressKeysSection = () => {
     const canAdd = !isSubUser && isPrivate;
     const canImport = canAdd;
 
-    const primaryPrivateKey = addressKeys?.[0];
-    const canExportPrimaryPrivateKey = !!primaryPrivateKey?.privateKey;
-    const canExportPrimaryPublicKey = !!primaryPrivateKey;
-
     return (
         <SettingsSectionWide>
             <SettingsParagraph>
@@ -340,16 +336,6 @@ const AddressKeysSection = () => {
                 addressIndex={addressIndex}
                 onAddKey={canAdd ? handleAddKey : undefined}
                 onImportKey={canImport ? handleImportKey : undefined}
-                onExportPrivate={
-                    canExportPrimaryPrivateKey && primaryPrivateKey
-                        ? () => handleExportPrivate(primaryPrivateKey.ID)
-                        : undefined
-                }
-                onExportPublic={
-                    canExportPrimaryPublicKey && primaryPrivateKey
-                        ? () => handleExportPublic(primaryPrivateKey.ID)
-                        : undefined
-                }
                 onChangeAddress={({ target: { value } }: ChangeEvent<HTMLSelectElement>) => {
                     if (isLoadingKey) {
                         return;
