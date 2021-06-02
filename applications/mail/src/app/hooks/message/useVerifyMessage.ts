@@ -86,6 +86,6 @@ export const useVerifyMessage = (localID: string) => {
                 });
             }
         },
-        [localID]
+        [localID, contactsMap]
     );
 };
