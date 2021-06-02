@@ -40,6 +40,7 @@ export interface EncryptionPreferences {
     hasPinnedKeys: boolean;
     isContact: boolean;
     isContactSignatureVerified?: boolean;
+    contactSignatureTimestamp?: Date;
     warnings?: string[];
     error?: EncryptionPreferencesError;
     emailAddressWarnings?: string[];
@@ -56,6 +57,7 @@ const extractEncryptionPreferencesOwnAddress = (
         mimeType,
         isContact,
         isContactSignatureVerified,
+        contactSignatureTimestamp,
         emailAddressWarnings,
         emailAddressErrors,
     } = publicKeyModel;
@@ -74,6 +76,7 @@ const extractEncryptionPreferencesOwnAddress = (
         hasPinnedKeys: false,
         isContact,
         isContactSignatureVerified,
+        contactSignatureTimestamp,
         emailAddressWarnings,
     };
     if (emailAddressErrors?.length) {
@@ -123,6 +126,7 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
         trustedFingerprints,
         isContact,
         isContactSignatureVerified,
+        contactSignatureTimestamp,
         emailAddressWarnings,
         emailAddressErrors,
     } = publicKeyModel;
@@ -140,6 +144,7 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
         hasPinnedKeys,
         isContact,
         isContactSignatureVerified,
+        contactSignatureTimestamp,
         emailAddressWarnings,
     };
     if (emailAddressErrors?.length) {
@@ -212,6 +217,7 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
         trustedFingerprints,
         isContact,
         isContactSignatureVerified,
+        contactSignatureTimestamp,
         emailAddressWarnings,
         emailAddressErrors,
     } = publicKeyModel;
@@ -229,6 +235,7 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
         hasPinnedKeys,
         isContact,
         isContactSignatureVerified,
+        contactSignatureTimestamp,
         emailAddressWarnings,
     };
     if (emailAddressErrors?.length) {
@@ -293,6 +300,7 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
         mimeType,
         isContact,
         isContactSignatureVerified,
+        contactSignatureTimestamp,
         emailAddressWarnings,
         emailAddressErrors,
     } = publicKeyModel;
@@ -309,6 +317,7 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
         hasPinnedKeys,
         isContact,
         isContactSignatureVerified,
+        contactSignatureTimestamp,
         emailAddressWarnings,
     };
     if (emailAddressErrors?.length) {

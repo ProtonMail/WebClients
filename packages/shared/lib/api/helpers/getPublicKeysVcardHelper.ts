@@ -39,6 +39,7 @@ const getPublicKeysVcardHelper = async (
 ): Promise<PinnedKeysConfig> => {
     let isContact = false;
     let isContactSignatureVerified;
+    let contactSignatureTimestamp;
     try {
         const ContactEmail = await getContactEmail(emailAddress, contactEmailsMap, api);
         if (ContactEmail === undefined) {
@@ -57,8 +58,9 @@ const getPublicKeysVcardHelper = async (
             // contacts created by the server are not signed
             return { pinnedKeys: [], isContact: !!Contact.Cards.length };
         }
-        const { type, data: signedVcard } = await readSigned(signedCard, { publicKeys });
+        const { type, data: signedVcard, signatureTimestamp } = await readSigned(signedCard, { publicKeys });
         isContactSignatureVerified = type === CRYPTO_PROCESSING_TYPES.SUCCESS;
+        contactSignatureTimestamp = signatureTimestamp;
         const properties = parse(signedVcard);
         const emailProperty = properties.find(({ field, value }) => {
             const scheme = isInternal ? CANONIZE_SCHEME.PROTON : CANONIZE_SCHEME.DEFAULT;
@@ -71,9 +73,10 @@ const getPublicKeysVcardHelper = async (
             ...(await getKeyInfoFromProperties(properties, emailProperty.group)),
             isContact,
             isContactSignatureVerified,
+            contactSignatureTimestamp,
         };
     } catch (error) {
-        return { pinnedKeys: [], isContact, isContactSignatureVerified, error };
+        return { pinnedKeys: [], isContact, isContactSignatureVerified, contactSignatureTimestamp, error };
     }
 };
 
