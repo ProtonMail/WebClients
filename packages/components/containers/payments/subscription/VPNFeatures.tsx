@@ -15,6 +15,7 @@ const EmDash = '—';
 
 const getFeatures = (vpnCountries: VPNCountries, planNamesMap: { [key: string]: Plan }): VPNFeature[] => {
     const mailAppName = getAppName(APPS.PROTONMAIL);
+
     return [
         {
             name: 'connections',
@@ -30,7 +31,7 @@ const getFeatures = (vpnCountries: VPNCountries, planNamesMap: { [key: string]: 
             free: c('VPN feature option').t`Medium`,
             [PLANS.VPNBASIC]: c('VPN feature option').t`High`,
             [PLANS.VPNPLUS]: c('VPN feature option').t`Highest (up to 10 Gbps)`,
-            [PLANS.VISIONARY]: c('VPN feature option').t`Highest (10 Gbps)`,
+            [PLANS.VISIONARY]: c('VPN feature option').t`Highest (up to 10 Gbps)`,
         },
         {
             name: 'servers',
@@ -44,7 +45,7 @@ const getFeatures = (vpnCountries: VPNCountries, planNamesMap: { [key: string]: 
             name: 'countries',
             label: c('VPN feature').t`Locations/Countries`,
             free: `${vpnCountries.free_vpn.count} (US, NL, JP)`,
-            [PLANS.VPNBASIC]: vpnCountries[PLANS.VPNBASIC].count,
+            [PLANS.VPNBASIC]: `${vpnCountries[PLANS.VPNBASIC].count}+`,
             [PLANS.VPNPLUS]: vpnCountries[PLANS.VPNPLUS].count,
             [PLANS.VISIONARY]: vpnCountries[PLANS.VPNPLUS].count,
         },
@@ -54,7 +55,7 @@ const getFeatures = (vpnCountries: VPNCountries, planNamesMap: { [key: string]: 
             tooltip: c('Tooltip')
                 .t`NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.`,
             free: EmDash,
-            [PLANS.VPNBASIC]: EmDash,
+            [PLANS.VPNBASIC]: <CheckIcon />,
             [PLANS.VPNPLUS]: <CheckIcon />,
             [PLANS.VISIONARY]: <CheckIcon />,
         },
@@ -68,8 +69,8 @@ const getFeatures = (vpnCountries: VPNCountries, planNamesMap: { [key: string]: 
             [PLANS.VISIONARY]: <CheckIcon />,
         },
         {
-            name: 'content',
-            label: c('VPN feature').t`Specific content unlocking`,
+            name: 'streaming',
+            label: c('VPN feature').t`Streaming service support`,
             tooltip: c('Tooltip')
                 .t`Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.`,
             free: EmDash,
@@ -125,8 +126,8 @@ const getFeatures = (vpnCountries: VPNCountries, planNamesMap: { [key: string]: 
         {
             name: 'access blocked content',
             label: c('VPN feature').t`Access blocked content`,
-            free: EmDash,
-            [PLANS.VPNBASIC]: EmDash,
+            free: <CheckIcon />,
+            [PLANS.VPNBASIC]: <CheckIcon />,
             [PLANS.VPNPLUS]: <CheckIcon />,
             [PLANS.VISIONARY]: <CheckIcon />,
         },

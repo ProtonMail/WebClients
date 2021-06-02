@@ -20,11 +20,13 @@ const useVPNCountriesCount = (): [VPNCountries, boolean] => {
     useEffect(() => {
         const query = async () => {
             const { Counts = [] } = await api<{ Counts: { Count: number }[] }>(queryVPNCountriesCount());
-            const result = ([
-                [0, 'free_vpn'],
-                [1, PLANS.VPNBASIC],
-                [2, PLANS.VPNPLUS],
-            ] as const).reduce(
+            const result = (
+                [
+                    [0, 'free_vpn'],
+                    [1, PLANS.VPNBASIC],
+                    [2, PLANS.VPNPLUS],
+                ] as const
+            ).reduce(
                 (acc, [idx, planName]) => {
                     const count = Counts[idx]?.Count || 0;
                     return {
@@ -34,6 +36,8 @@ const useVPNCountriesCount = (): [VPNCountries, boolean] => {
                 },
                 { ...DEFAULT_RESULT }
             );
+            // This is specific for VPN Basic plan
+            result[PLANS.VPNBASIC] = { count: Math.floor(result[PLANS.VPNBASIC].count / 10) * 10 };
             setResult(result);
         };
 
