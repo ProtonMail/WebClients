@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { Select, Icon, ButtonLike } from '../../components';
+import { Select, Icon, ButtonLike, SettingsLink, Card } from '../../components';
+import { useUser } from '../../hooks';
 
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 
@@ -67,6 +68,8 @@ const fetchBridgeVersion = async (bridgeClient: BridgeClient): Promise<BridgeCli
 };
 
 const ProtonMailBridgeSection = () => {
+    const [{ hasPaidMail }] = useUser();
+
     const fileTypes = new Map([
         ['.exe', c('OS compatibility').t`.exe (64-bit)`],
         ['.dmg', c('OS compatibility').t`.dmg (10.12 or later)`],
@@ -134,7 +137,7 @@ const ProtonMailBridgeSection = () => {
         );
     };
 
-    return (
+    return hasPaidMail ? (
         <SettingsSectionWide>
             <SettingsParagraph learnMoreUrl="https://protonmail.com/bridge/">
                 {c('Info')
@@ -143,6 +146,22 @@ const ProtonMailBridgeSection = () => {
 
             <div className="bridge-grid">{bridgeClients.map(renderBox)}</div>
         </SettingsSectionWide>
+    ) : (
+        <>
+            <SettingsParagraph className="mt0 mb1">
+                <strong>{c('Info').t`Access ProtonMail from other email clients.`}</strong>{' '}
+                {c('Info').t`Restricted to desktop email clients e.g. Outlook, Apple Mail, Thunderbird.`}
+            </SettingsParagraph>
+
+            <Card className="flex flex-align-items-center mt1">
+                <p className="m0 mr2 flex-item-fluid">
+                    {c('Info').t`Upgrade to a paid plan to unlock IMAP/STMP support through ProtonMail Bridge.`}
+                </p>
+                <ButtonLike color="norm" as={SettingsLink} path="/dashboard">
+                    {c('Action').t`Upgrade`}
+                </ButtonLike>
+            </Card>
+        </>
     );
 };
 
