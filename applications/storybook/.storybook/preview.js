@@ -39,6 +39,7 @@ const order = ['introduction-', 'changelog-', 'components-', 'css-', 'design-sys
 const priority = ['introduction-', 'changelog-'];
 
 export const parameters = {
+    viewMode: 'docs',
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: { expanded: true },
     docs: { theme: theme },
