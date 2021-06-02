@@ -14,6 +14,7 @@ import {
     usePlans,
     useSubscription,
     useOrganization,
+    useLoad,
 } from 'react-components';
 import { UserModel, Plan, PlanIDs } from 'proton-shared/lib/interfaces';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
@@ -72,6 +73,7 @@ const AccountDashboardSettings = ({ location, setActiveSection }: SettingsPropsS
     const [organization, loadingOrganization] = useOrganization();
     const onceRef = useRef(false);
     const history = useHistory();
+    useLoad();
 
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
