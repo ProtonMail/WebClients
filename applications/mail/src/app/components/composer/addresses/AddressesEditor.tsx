@@ -76,7 +76,7 @@ const AddressesEditor = ({ message, messageSendInfo, onChange, expanded, toggleE
                     />
                     {!expanded && (
                         <LinkButton
-                            className="ml1 composer-addresses-ccbcc on-mobile-max-w33 text-cut text-no-decoration text-strong relative z10"
+                            className="ml1 composer-addresses-ccbcc on-mobile-max-w33 text-cut text-no-decoration text-strong relative"
                             title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
                             onClick={toggleExpanded}
                             data-testid="composer:cc-bcc-button"

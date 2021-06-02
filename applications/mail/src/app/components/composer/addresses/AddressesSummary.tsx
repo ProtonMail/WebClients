@@ -88,7 +88,7 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
                     })}
                 </span>
                 <LinkButton
-                    className="composer-addresses-ccbcc on-mobile-max-w33 text-ellipsis composer-addresses-ccbcc-fakefield text-no-decoration flex-item-noshrink text-strong relative z10"
+                    className="composer-addresses-ccbcc on-mobile-max-w33 text-ellipsis composer-addresses-ccbcc-fakefield text-no-decoration flex-item-noshrink text-strong relative"
                     title={c('Action').t`Carbon Copy, Blind Carbon Copy`}
                     onClick={toggleExpanded}
                     disabled={disabled}
