@@ -48,32 +48,36 @@ const Layout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
             <div className="pl2 pr2 sign-layout-container flex-item-fluid flex flex-nowrap flex-column flex-justify-space-between">
                 <div>
                     {children}
-                    <div className="text-center text-sm m0 pt1 pb0-5 flex-item-noshrink">
-                        <span className="auto-mobile">{c('Info').t`Based in Switzerland, available globally`}</span>
-                        <span className="color-weak pl0-75 pr0-75 no-mobile" aria-hidden="true">
-                            |
-                        </span>
-                        <span className="auto-mobile">{termsLink}</span>
-                        <span className="color-weak pl0-75 pr0-75 no-mobile" aria-hidden="true">
-                            |
-                        </span>
-                        <span className="auto-mobile">{privacyLink}</span>
-                        <span className="color-weak pl0-75 pr0-75 no-mobile" aria-hidden="true">
-                            |
-                        </span>
-                        <span className="auto-mobile">{OldVersionLink}</span>
+                    <div className="flex-item-noshrink text-center p1">
+                        <span className="text-sm">{c('Info').t`One account for all Proton services`}</span>
+                        <div className="p0-5">
+                            <Icon name="protonmail" className="ml0-5 mr0-5" alt="Proton Mail" size={20} />
+                            <Icon name="protoncalendar" className="ml0-5 mr0-5" alt="Proton Calendar" size={20} />
+                            <Icon name="protonvpn" className="ml0-5 mr0-5" alt="Proton VPN" size={20} />
+                            <Icon name="protondrive" className="ml0-5 mr0-5" alt="Proton Drive" size={20} />
+                        </div>
                     </div>
-                    <div className="color-weak text-center text-sm m0 pt0 pb0-5 auto-mobile">{c('Info')
-                        .jt`Version ${appVersion}`}</div>
                 </div>
             </div>
-            <footer className="flex-item-noshrink text-center no-mobile p1">
-                <span className="text-sm">{c('Info').t`One account for all Proton services`}</span>
-                <div className="p0-5">
-                    <Icon name="protonmail" className="ml0-5 mr0-5" alt="Proton Mail" size={20} />
-                    <Icon name="protoncalendar" className="ml0-5 mr0-5" alt="Proton Calendar" size={20} />
-                    <Icon name="protonvpn" className="ml0-5 mr0-5" alt="Proton VPN" size={20} />
-                    <Icon name="protondrive" className="ml0-5 mr0-5" alt="Proton Drive" size={20} />
+            <footer className="flex-item-noshrink text-center p1">
+                <div className="text-center text-sm m0 pt1 pb0-5 flex-item-noshrink">
+                    <span className="auto-mobile">{c('Info').t`Based in Switzerland, available globally`}</span>
+                    <span className="color-weak pl0-75 pr0-75 no-mobile" aria-hidden="true">
+                        |
+                    </span>
+                    <span className="auto-mobile">{termsLink}</span>
+                    <span className="color-weak pl0-75 pr0-75 no-mobile" aria-hidden="true">
+                        |
+                    </span>
+                    <span className="auto-mobile">{privacyLink}</span>
+                    <span className="color-weak pl0-75 pr0-75 no-mobile" aria-hidden="true">
+                        |
+                    </span>
+                    <span className="auto-mobile">{OldVersionLink}</span>
+                    <span className="color-weak pl0-75 pr0-75 no-mobile" aria-hidden="true">
+                        |
+                    </span>
+                    <span className="auto-mobile">{c('Info').jt`Version ${appVersion}`}</span>
                 </div>
             </footer>
         </ProminentContainer>
