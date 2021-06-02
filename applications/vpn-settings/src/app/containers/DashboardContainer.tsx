@@ -12,6 +12,7 @@ import {
     YourPlanSection,
     GiftCodeSection,
     CreditsSection,
+    CancelSubscriptionSection,
 } from 'react-components';
 import { useHistory } from 'react-router-dom';
 import { PERMISSIONS, DEFAULT_CYCLE, PLAN_SERVICES, CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
@@ -55,6 +56,10 @@ export const getDashboardPage = (user: UserModel) => {
             {
                 text: c('Title').t`Gift Code`,
                 id: 'gift-code',
+            },
+            user.hasPaidVpn && {
+                text: c('Title').t`Cancel subscription`,
+                id: 'cancel-subscription',
             },
         ].filter(isTruthy),
     };
@@ -147,6 +152,7 @@ const DashboardContainer = ({ setActiveSection, location }: SettingsPropsShared)
             <BillingSection />
             <CreditsSection />
             <GiftCodeSection />
+            {user.hasPaidVpn && <CancelSubscriptionSection />}
         </PrivateMainSettingsAreaWithPermissions>
     );
 };
