@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import { Alert, FormModal, ErrorButton, Button } from '../../../components';
-import GenericError from '../../error/GenericError';
 
 enum STEPS {
     WARNING = 1,
     EXPORT_KEY = 2,
     DELETE_KEY = 3,
     SUCCESS = 4,
-    FAILURE = 5,
-    CONFIRM_DELETE = 6,
+    CONFIRM_DELETE = 5,
 }
 
 interface Props {
@@ -31,7 +29,7 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
                 setStep(STEPS.SUCCESS);
             })
             .catch(() => {
-                setStep(STEPS.FAILURE);
+                onClose?.();
             });
     }, [step]);
 
@@ -111,13 +109,6 @@ const DeleteKeyModal = ({ onClose, fingerprint, onDelete, onExport, ...rest }: P
             return {
                 submit: null,
                 children: <Alert>{c('Info').jt`Key with fingerprint ${fp} has been deleted.`}</Alert>,
-            };
-        }
-
-        if (step === STEPS.FAILURE) {
-            return {
-                submit: null,
-                children: <GenericError />,
             };
         }
 
