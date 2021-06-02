@@ -101,7 +101,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                         ? c('Info').jt`You have ${unreadsLabel} in your inbox.`
                         : c('Info').jt`You have ${totalLabel} in your inbox.`}
                 </p>
-                <hr className="mb2 mt2" />
+                <div className="mb2 mt2" />
                 <div className="text-rg">
                     <img className="hauto" src={imageSvg} alt={c('Alternative text for welcome image').t`Welcome`} />
                 </div>
@@ -127,7 +127,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                 )}
                 {hasAlreadyImported ? null : (
                     <>
-                        <hr className="mb2 mt2" />
+                        <div className="mb2 mt2" />
                         <div className="text-rg">
                             <ButtonLike
                                 as={AppLink}
@@ -136,7 +136,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                                 to="/mail/import-export"
                                 toApp={APPS.PROTONACCOUNT}
                                 target="_self"
-                                className="inline-block mtauto mr1"
+                                className="inline-block mtauto"
                             >{c('Action').t`Import messages`}</ButtonLike>
                         </div>
                     </>
