@@ -137,31 +137,28 @@ const ProtonMailBridgeSection = () => {
         );
     };
 
-    return hasPaidMail ? (
+    return (
         <SettingsSectionWide>
-            <SettingsParagraph learnMoreUrl="https://protonmail.com/bridge/">
+            <SettingsParagraph
+                className="mt0 mb1"
+                learnMoreUrl={hasPaidMail ? 'https://protonmail.com/bridge/' : undefined}
+            >
                 {c('Info')
                     .t`You can use ProtonMail with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.`}
             </SettingsParagraph>
-
-            <div className="bridge-grid">{bridgeClients.map(renderBox)}</div>
+            {hasPaidMail ? (
+                <div className="mt2 bridge-grid">{bridgeClients.map(renderBox)}</div>
+            ) : (
+                <Card className="flex flex-align-items-center mt2">
+                    <p className="m0 mr2 flex-item-fluid">
+                        {c('Info').t`Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.`}
+                    </p>
+                    <ButtonLike color="norm" as={SettingsLink} path="/dashboard">
+                        {c('Action').t`Upgrade`}
+                    </ButtonLike>
+                </Card>
+            )}
         </SettingsSectionWide>
-    ) : (
-        <>
-            <SettingsParagraph className="mt0 mb1">
-                <strong>{c('Info').t`Access ProtonMail from other email clients.`}</strong>{' '}
-                {c('Info').t`Restricted to desktop email clients e.g. Outlook, Apple Mail, Thunderbird.`}
-            </SettingsParagraph>
-
-            <Card className="flex flex-align-items-center mt1">
-                <p className="m0 mr2 flex-item-fluid">
-                    {c('Info').t`Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.`}
-                </p>
-                <ButtonLike color="norm" as={SettingsLink} path="/dashboard">
-                    {c('Action').t`Upgrade`}
-                </ButtonLike>
-            </Card>
-        </>
     );
 };
 
