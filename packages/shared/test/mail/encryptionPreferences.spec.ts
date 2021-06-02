@@ -87,6 +87,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
         pgpAddressDisabled: false,
         isContact: true,
         isContactSignatureVerified: true,
+        contactSignatureTimestamp: new Date(0),
     };
     const mailSettings = {
         Sign: PGP_SIGN,
@@ -101,6 +102,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             ...model,
             isContact: false,
             isContactSignatureVerified: undefined,
+            contactSignatureTimestamp: undefined,
             publicKeys: { apiKeys, pinnedKeys },
             expiredFingerprints: new Set(['fakeKey2']),
             verifyOnlyFingerprints: new Set(['fakeKey3']),
@@ -122,6 +124,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             warnings: [],
             isContact: false,
             isContactSignatureVerified: undefined,
+            contactSignatureTimestamp: undefined,
             emailAddressWarnings: undefined,
         });
     });
@@ -152,6 +155,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             warnings: [],
             isContact: true,
             isContactSignatureVerified: true,
+            contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
         });
     });
@@ -183,6 +187,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             warnings: [],
             isContact: true,
             isContactSignatureVerified: true,
+            contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
         });
     });
@@ -300,6 +305,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         pgpAddressDisabled: false,
         isContact: true,
         isContactSignatureVerified: true,
+        contactSignatureTimestamp: new Date(0),
     };
     const mailSettings = {
         Sign: 0,
@@ -314,6 +320,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
             ...model,
             isContact: false,
             isContactSignatureVerified: undefined,
+            contactSignatureTimestamp: undefined,
             publicKeys: { apiKeys, pinnedKeys },
             expiredFingerprints: new Set(['fakeKey2']),
             verifyOnlyFingerprints: new Set(['fakeKey3']),
@@ -336,6 +343,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
             isContact: false,
             isContactSignatureVerified: undefined,
             emailAddressWarnings: undefined,
+            contactSignatureTimestamp: undefined,
         });
     });
 
@@ -365,6 +373,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
             warnings: [],
             isContact: true,
             isContactSignatureVerified: true,
+            contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
         });
     });
@@ -396,6 +405,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
             warnings: [],
             isContact: true,
             isContactSignatureVerified: true,
+            contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
         });
     });
@@ -494,6 +504,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         pgpAddressDisabled: false,
         isContact: true,
         isContactSignatureVerified: true,
+        contactSignatureTimestamp: new Date(0),
     };
     const mailSettings = {
         Sign: PGP_SIGN,
@@ -517,6 +528,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             hasPinnedKeys: false,
             isContact: true,
             isContactSignatureVerified: true,
+            contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
         });
     });
@@ -527,6 +539,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
                 ...model,
                 isContact: false,
                 isContactSignatureVerified: undefined,
+                contactSignatureTimestamp: undefined,
             },
             mailSettings
         );
@@ -543,6 +556,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             hasPinnedKeys: false,
             isContact: false,
             isContactSignatureVerified: undefined,
+            contactSignatureTimestamp: undefined,
             emailAddressWarnings: undefined,
         });
     });
@@ -562,6 +576,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             hasPinnedKeys: false,
             isContact: true,
             isContactSignatureVerified: true,
+            contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
         });
     });
@@ -591,6 +606,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             warnings: [],
             isContact: true,
             isContactSignatureVerified: true,
+            contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
         });
     });
@@ -681,6 +697,7 @@ describe('extractEncryptionPreferences for an own address', () => {
             warnings: [],
             isContact: false,
             isContactSignatureVerified: undefined,
+            contactSignatureTimestamp: undefined,
             emailAddressWarnings: undefined,
         });
     });

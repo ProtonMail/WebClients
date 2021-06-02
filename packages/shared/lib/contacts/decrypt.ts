@@ -33,6 +33,7 @@ interface ContactClearTextData {
 interface ContactSignedData {
     type: CRYPTO_PROCESSING_TYPES.SUCCESS | CRYPTO_PROCESSING_TYPES.SIGNATURE_NOT_VERIFIED;
     data: string;
+    signatureTimestamp?: Date;
     error?: Error;
 }
 
@@ -68,7 +69,7 @@ export const readSigned = async (
             throw new Error(c('Error').t`Missing signature`);
         }
         const signature = await getSignature(Signature);
-        const { verified } = await verifyMessage({
+        const { verified, signatureTimestamp } = await verifyMessage({
             message: createCleartextMessage(Data),
             publicKeys,
             signature,
@@ -78,12 +79,18 @@ export const readSigned = async (
             return {
                 data: Data,
                 type: SIGNATURE_NOT_VERIFIED,
+                signatureTimestamp: undefined,
                 error: new Error(c('Error').t`Contact signature not verified`),
             };
         }
-        return { type: SUCCESS, data: Data };
+        return { type: SUCCESS, data: Data, signatureTimestamp: signatureTimestamp! };
     } catch (error) {
-        return { type: SIGNATURE_NOT_VERIFIED, data: Data, error };
+        return {
+            type: SIGNATURE_NOT_VERIFIED,
+            data: Data,
+            signatureTimestamp: undefined,
+            error,
+        };
     }
 };
 
