@@ -30,10 +30,6 @@ export const PLAN_BUNDLES = {
 export const VPN_PLANS = [PLAN.FREE, PLAN.BASIC, PLAN.PLUS, PLAN.VISIONARY];
 export const BEST_DEAL_PLANS = [PLAN.BASIC, PLAN.PLUS, PLAN.VISIONARY];
 
-const getServersText = (n) => {
-    return c('Plan Feature').ngettext(msgid`Servers in ${n} country`, `Servers in ${n} countries`, n);
-};
-
 const getPlanFeatures = (plan, maxConnections, countries) => {
     const netflix = <b key={1}>{c('Netflix').t`Netflix`}</b>;
     const disney = <b key={2}>{c('Disney').t`Disney+`}</b>;
@@ -48,62 +44,33 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
                 planName: PLAN.BASIC,
                 features: [
                     c('Plan Feature').t`High speed 1 Gbps VPN servers`,
-                    getServersText(countries[PLANS.VPNBASIC].count),
+                    c('Plan Feature').ngettext(
+                        msgid`17 servers in ${countries.free_vpn.count} country`,
+                        `17 servers in ${countries.free_vpn.count} countries`,
+                        countries.free_vpn.count
+                    ),
                     c('Plan Feature').t`Filesharing/P2P support`,
                 ],
             },
             features: [
                 c('Plan Feature').ngettext(
+                    msgid`17 servers in ${countries.free_vpn.count} country`,
+                    `17 servers in ${countries.free_vpn.count} countries`,
+                    countries.free_vpn.count
+                ),
+                c('Plan Feature').ngettext(
                     msgid`${maxConnections} VPN connection`,
                     `${maxConnections} VPN connections`,
                     maxConnections
                 ),
-                getServersText(countries.free_vpn.count),
                 c('Plan Feature').t`Medium speed`,
                 c('Plan Feature').t`Strict no-logs policy`,
+
                 <>
-                    <del className="color-weak mr0-5">{c('Plan feature').t`P2P filesharing/BitTorrent support`}</del>
-                    <Info
-                        title={c('Info').t`Support for file sharing protocols such as BitTorrent.`}
-                        url="https://protonvpn.com/support/p2p-vpn-redirection/"
-                    />
-                </>,
-                <>
-                    <del className="color-weak mr0-5">{c('Plan feature').t`Access blocked content`}</del>
+                    <span className="mr0-5">{c('Plan feature').t`Access blocked content`}</span>
                     <Info
                         title={c('Info')
                             .t`Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.`}
-                    />
-                </>,
-                <>
-                    <del className="color-weak mr0-5">{c('Plan feature').t`Adblocker (NetShield)`}</del>
-                    <Info
-                        title={c('Info')
-                            .t`NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.`}
-                        url=" https://protonvpn.com/support/netshield/"
-                    />
-                </>,
-                <>
-                    <del className="color-weak mr0-5">{c('Plan feature').t`Secure Core VPN`}</del>
-                    <Info
-                        title={c('Info')
-                            .t`Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.`}
-                        url="https://protonvpn.com/support/secure-core-vpn/"
-                    />
-                </>,
-                <>
-                    <del className="color-weak mr0-5">{c('Plan feature').t`Tor over VPN`}</del>
-                    <Info
-                        title={c('Info').t`Route your Internet traffic through the Tor network with a single click.`}
-                        url="https://protonvpn.com/support/tor-vpn/"
-                    />
-                </>,
-                <>
-                    <del className="color-weak mr0-5">{c('Plan feature').t`Streaming service support`}</del>
-                    <Info
-                        title={c('Info')
-                            .jt`Access your streaming services, like ${netflix}, ${disney}, ${primeVideo}, ${many}, no matter where you are.`}
-                        url="https://protonvpn.com/support/streaming-guide/"
                     />
                 </>,
             ],
@@ -121,20 +88,18 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
             },
             features: [
                 c('Plan Feature').ngettext(
+                    msgid`350+ servers in ${countries[PLANS.VPNBASIC].count} country`,
+                    `350+ servers in ${countries[PLANS.VPNBASIC].count}+ countries`,
+                    countries[PLANS.VPNBASIC].count
+                ),
+                c('Plan Feature').ngettext(
                     msgid`${maxConnections} VPN connection`,
                     `${maxConnections} VPN connections`,
                     maxConnections
                 ),
-                getServersText(countries[PLANS.VPNBASIC].count),
+
                 c('Plan Feature').t`High speed`,
                 c('Plan Feature').t`Strict no-logs policy`,
-                <>
-                    <span className="mr0-5">{c('Plan feature').t`P2P filesharing/BitTorrent support`}</span>
-                    <Info
-                        title={c('Info').t`Support for file sharing protocols such as BitTorrent.`}
-                        url="https://protonvpn.com/support/p2p-vpn-redirection/"
-                    />
-                </>,
                 <>
                     <span className="mr0-5">{c('Plan feature').t`Access blocked content`}</span>
                     <Info
@@ -143,34 +108,18 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
                     />
                 </>,
                 <>
-                    <del className="color-weak mr0-5">{c('Plan feature').t`Adblocker (NetShield)`}</del>
+                    <span className="mr0-5">{c('Plan feature').t`P2P/BitTorrent support`}</span>
+                    <Info
+                        title={c('Info').t`Support for file sharing protocols such as BitTorrent.`}
+                        url="https://protonvpn.com/support/p2p-vpn-redirection/"
+                    />
+                </>,
+                <>
+                    <span className="mr0-5">{c('Plan feature').t`Adblocker (NetShield)`}</span>
                     <Info
                         title={c('Info')
                             .t`NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.`}
                         url=" https://protonvpn.com/support/netshield/"
-                    />
-                </>,
-                <>
-                    <del className="color-weak mr0-5">{c('Plan feature').t`Secure Core VPN`}</del>
-                    <Info
-                        title={c('Info')
-                            .t`Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.`}
-                        url="https://protonvpn.com/support/secure-core-vpn/"
-                    />
-                </>,
-                <>
-                    <del className="color-weak mr0-5">{c('Plan feature').t`Tor over VPN`}</del>
-                    <Info
-                        title={c('Info').t`Route your Internet traffic through the Tor network with a single click.`}
-                        url="https://protonvpn.com/support/tor-vpn/"
-                    />
-                </>,
-                <>
-                    <del className="color-weak mr0-5">{c('Plan feature').t`Streaming service support`}</del>
-                    <Info
-                        title={c('Info')
-                            .jt`Access your streaming services, like ${netflix}, ${disney}, ${primeVideo}, ${many}, no matter where you are.`}
-                        url="https://protonvpn.com/support/streaming-guide/"
                     />
                 </>,
             ],
@@ -181,20 +130,17 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
             description: c('Plan Description').t`Advanced security features`,
             features: [
                 c('Plan Feature').ngettext(
+                    msgid`1200+ servers in ${countries[PLANS.VPNPLUS].count} country`,
+                    `1200+ servers in ${countries[PLANS.VPNPLUS].count} countries`,
+                    countries[PLANS.VPNPLUS].count
+                ),
+                c('Plan Feature').ngettext(
                     msgid`${maxConnections} VPN connection`,
                     `${maxConnections} VPN connections`,
                     maxConnections
                 ),
-                getServersText(countries[PLANS.VPNPLUS].count),
                 c('Plan Feature').t`Highest speed (up to 10 Gbps)`,
                 c('Plan Feature').t`Strict no-logs policy`,
-                <>
-                    <span className="mr0-5">{c('Plan feature').t`P2P filesharing/BitTorrent support`}</span>
-                    <Info
-                        title={c('Info').t`Support for file sharing protocols such as BitTorrent.`}
-                        url="https://protonvpn.com/support/p2p-vpn-redirection/"
-                    />
-                </>,
                 <>
                     <span className="mr0-5">{c('Plan feature').t`Access blocked content`}</span>
                     <Info
@@ -203,11 +149,26 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
                     />
                 </>,
                 <>
+                    <span className="mr0-5">{c('Plan feature').t`P2P/BitTorrent support`}</span>
+                    <Info
+                        title={c('Info').t`Support for file sharing protocols such as BitTorrent.`}
+                        url="https://protonvpn.com/support/p2p-vpn-redirection/"
+                    />
+                </>,
+                <>
                     <span className="mr0-5">{c('Plan feature').t`Adblocker (NetShield)`}</span>
                     <Info
                         title={c('Info')
                             .t`NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.`}
                         url=" https://protonvpn.com/support/netshield/"
+                    />
+                </>,
+                <>
+                    <span className="mr0-5">{c('Plan feature').t`Streaming service support`}</span>
+                    <Info
+                        title={c('Info')
+                            .jt`Access your streaming services, like ${netflix}, ${disney}, ${primeVideo}, ${many}, no matter where you are.`}
+                        url="https://protonvpn.com/support/streaming-guide/"
                     />
                 </>,
                 <>
@@ -223,14 +184,6 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
                     <Info
                         title={c('Info').t`Route your Internet traffic through the Tor network with a single click.`}
                         url="https://protonvpn.com/support/tor-vpn/"
-                    />
-                </>,
-                <>
-                    <span className="mr0-5">{c('Plan feature').t`Streaming service support`}</span>
-                    <Info
-                        title={c('Info')
-                            .jt`Access your streaming services, like ${netflix}, ${disney}, ${primeVideo}, ${many}, no matter where you are.`}
-                        url="https://protonvpn.com/support/streaming-guide/"
                     />
                 </>,
             ],
@@ -255,11 +208,15 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
             description: c('Plan Description').t`Bundle plan`,
             features: [
                 c('Plan Feature').ngettext(
+                    msgid`1200+ servers in ${countries[PLANS.VPNPLUS].count} country`,
+                    `1200+ servers in ${countries[PLANS.VPNPLUS].count} countries`,
+                    countries[PLANS.VPNPLUS].count
+                ),
+                c('Plan Feature').ngettext(
                     msgid`${maxConnections} VPN connection`,
                     `${maxConnections} VPN connections`,
                     maxConnections
                 ),
-                getServersText(countries[PLANS.VPNPLUS].count),
                 c('Plan Feature').t`Highest speed (10 Gbps)`,
                 c('Plan Feature').t`Strict no-logs policy`,
                 <>
