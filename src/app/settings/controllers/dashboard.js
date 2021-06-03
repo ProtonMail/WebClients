@@ -7,6 +7,7 @@ function DashboardController(
     $stateParams,
     methods,
     authentication,
+    loadApi,
     dashboardConfiguration,
     subscriptionModel
 ) {
@@ -15,6 +16,7 @@ function DashboardController(
     const scrollToPlans = () => $('.settings').animate({ scrollTop: $('#plans').offset().top }, 1000);
     const updateUser = () => ($scope.isPaidUser = authentication.user.Subscribed);
     const updateMethods = (methods) => ($scope.methods = methods);
+
     on('updateUser', () => {
         $scope.$applyAsync(() => updateUser());
     });
@@ -25,6 +27,7 @@ function DashboardController(
 
     updateUser();
     updateMethods(methods);
+    loadApi.post(encodeURIComponent('/dashboard'));
 
     dashboardConfiguration.set('cycle', $stateParams.cycle || subscriptionModel.cycle());
     dashboardConfiguration.set('currency', $stateParams.currency || subscriptionModel.currency());

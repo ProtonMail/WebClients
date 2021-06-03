@@ -30,6 +30,7 @@ import welcomeModal from './factories/welcomeModal';
 import windowModel from './factories/windowModel';
 import SidebarController from './controllers/sidebar';
 import confirm from './services/confirm';
+import loadApi from './services/loadApi';
 import signupIframe from './directives/signupIframe';
 
 export default angular
@@ -70,4 +71,5 @@ export default angular
     .factory('versionInfoModel', versionInfoModel)
     .factory('welcomeModal', welcomeModal)
     .factory('windowModel', windowModel)
+    .factory('loadApi', loadApi)
     .factory('confirm', confirm).name;
