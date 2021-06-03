@@ -1,3 +1,4 @@
+@use "sass:math";
 $minicalendar-fontsize: rem(12) !default;
 $minicalendar-cell-size: 2em !default;
 
@@ -93,7 +94,7 @@ $minicalendar-cell-size: 2em !default;
 // fix in case of range selection in responsive view
 $mini-calendar-currentDay-size: 2.5em !default;
 .minicalendar-day--range.minicalendar-day[aria-current='date']::before {
-	left: calc(50% - #{$mini-calendar-currentDay-size/2});
+	left: calc(50% - #{math.div($mini-calendar-currentDay-size, 2)});
 	max-width: $mini-calendar-currentDay-size;
 }
 
@@ -111,7 +112,7 @@ $minicalendar-day-marker-size: 3px !default;
 .minicalendar-day--marker {
 	position: absolute;
 	bottom: 1px;
-	left: calc(50% - #{$minicalendar-day-marker-size/2});
+	left: calc(50% - #{math.div($minicalendar-day-marker-size, 2)});
 	height: $minicalendar-day-marker-size;
 	width: $minicalendar-day-marker-size;
 	background-color: var(--primary);

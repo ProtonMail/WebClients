@@ -1,3 +1,4 @@
+@use "sass:math";
 .wauto {
 	width: auto;
 	min-width: 0;
@@ -17,7 +18,7 @@
 
 // .w50 { width: 50%; }
 /* prettier-ignore */
-@each $width in (0, 1, 2, 3, 5, 10, 15, 20, 25, 30, 100/3, 40, 45, 49, 50, 60, 100/3 * 2, 70, 75, 80, 90, 95, 100) {
+@each $width in (0, 1, 2, 3, 5, 10, 15, 20, 25, 30, math.div(100,3), 40, 45, 49, 50, 60, math.div(100,3) * 2, 70, 75, 80, 90, 95, 100) {
 	.w#{floor($width)} {
 		width: #{$width * 1%};
 	}

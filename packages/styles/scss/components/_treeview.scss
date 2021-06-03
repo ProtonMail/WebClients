@@ -1,3 +1,4 @@
+@use "sass:math";
 $treeview-border-width: 1px !default;
 $treeview-indentation-margin: rem(30) !default;
 
@@ -34,7 +35,7 @@ $treeview-indentation-margin: rem(30) !default;
 	&--move-top,
 	&--move-bottom {
 		&::before {
-			left: -#{$circle-size/2};
+			left: -#{math.div($circle-size, 2)};
 			height: $circle-size;
 			width: $circle-size;
 			border-radius: 50%;
@@ -50,11 +51,11 @@ $treeview-indentation-margin: rem(30) !default;
 	}
 
 	&--move-top::before {
-		top: -#{$circle-size/2};
+		top: -#{math.div($circle-size, 2)};
 	}
 
 	&--move-bottom::before {
-		bottom: -#{$circle-size/2};
+		bottom: -#{math.div($circle-size, 2)};
 	}
 
 	&--move-top::after,
@@ -95,7 +96,7 @@ $treeview-indentation-margin: rem(30) !default;
 		&.treeview-item--move-bottom {
 			&::before {
 				left: calc(
-					-#{$circle-size/2} + #{$treeview-indentation-margin}
+					-#{math.div($circle-size, 2)} + #{$treeview-indentation-margin}
 				);
 			}
 		}

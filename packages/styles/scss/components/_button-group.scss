@@ -1,3 +1,4 @@
+@use "sass:math";
 .button-group {
 	@extend .inline-flex;
 	@extend .flex-nowrap;
@@ -15,7 +16,7 @@
 
 	&-item {
 		padding: em(3) em(8) em(3);
-		border-radius: $global-border-radius / 2;
+		border-radius: math.div($global-border-radius, 2);
 
 		&.button-for-icon {
 			padding: em(5.5) em(6) em(5.5);

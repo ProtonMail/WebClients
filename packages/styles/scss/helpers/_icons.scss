@@ -1,3 +1,4 @@
+@use "sass:math";
 %icon {
 	display: inline-block;
 	vertical-align: middle;
@@ -17,8 +18,8 @@
 @each $width in (50) {
 	.icon-#{$width} {
 		@extend %icon; // 🤔
-		width: percentage($width / 100);
-		height: percentage($width / 100);
+		width: percentage(math.div($width, 100));
+		height: percentage(math.div($width, 100));
 	}
 }
 

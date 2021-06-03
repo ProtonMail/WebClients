@@ -1,3 +1,4 @@
+@use "sass:math";
 $scrollbar-thumb-default-color: #{rgba(grey, 0.25)};
 $scrollbar-thumb-default-hover-color: #{rgba(grey, 0.5)};
 
@@ -25,7 +26,7 @@ $scrollbar-margin: rem(2) !default;
 		&::-webkit-scrollbar-thumb {
 			border: $scrollbar-margin solid transparent; // Margin
 			background-clip: padding-box; // Booyah!
-			border-radius: $real-size/2;
+			border-radius: math.div($real-size, 2);
 			background-color: var(
 				--scrollbar-thumb-color,
 				$scrollbar-thumb-default-color
