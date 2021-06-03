@@ -1,6 +1,6 @@
 # Introducing the new ProtonMail!
 
-## Release: 4.0.0 — June 1, 2021
+## Release: 4.0.0 — June 8, 2021
 
 Fully revamped, the latest version of ProtonMail has a modern design, more customization options, and improved usability. This means keeping your data private is even easier and more enjoyable. [Learn more about this release](https://protonmail.com/blog/new-protonmail-announcement).
 
