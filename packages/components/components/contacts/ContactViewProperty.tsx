@@ -89,7 +89,7 @@ const ContactViewProperty = ({
                         {!isOwnAddress && (
                             <Tooltip title={c('Title').t`Email settings`}>
                                 <Button icon color="weak" shape="outline" onClick={handleSettings} className="ml0-5">
-                                    <Icon name="settings-singular" alt={c('Action').t`Email settings`} />
+                                    <Icon name="settings" alt={c('Action').t`Email settings`} />
                                 </Button>
                             </Tooltip>
                         )}
