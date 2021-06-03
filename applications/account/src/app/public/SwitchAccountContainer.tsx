@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { APP_NAMES, BRAND_NAME } from 'proton-shared/lib/constants';
+import * as History from 'history';
 
+import { APP_NAMES, BRAND_NAME } from 'proton-shared/lib/constants';
 import { resumeSession, getActiveSessions } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { getPersistedSession, removePersistedSession } from 'proton-shared/lib/authentication/persistedSessionStorage';
 import { InvalidPersistentSessionError } from 'proton-shared/lib/authentication/error';
@@ -27,6 +28,16 @@ import Main from './Main';
 import Header from './Header';
 import Footer from './Footer';
 import Content from './Content';
+import { SERVICES, SERVICES_KEYS } from '../signup/interfaces';
+
+export const getSearchParams = (search: History.Search) => {
+    const searchParams = new URLSearchParams(search);
+
+    const maybeService = searchParams.get('service') as SERVICES_KEYS | undefined;
+    const service = maybeService ? SERVICES[maybeService] : undefined;
+
+    return { service };
+};
 
 interface Props {
     onLogin: (data: OnLoginCallbackArguments) => Promise<void>;
