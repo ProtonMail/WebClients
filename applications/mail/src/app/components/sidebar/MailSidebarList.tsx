@@ -321,7 +321,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                             <SidebarListItemHeaderLink
                                 to="/mail/folders-labels"
                                 toApp={APPS.PROTONACCOUNT}
-                                icon="settings-singular"
+                                icon="settings"
                                 title={c('Info').t`Manage your folders`}
                                 info={c('Link').t`Manage your folders`}
                                 target="_self"
@@ -364,7 +364,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                             <SidebarListItemHeaderLink
                                 to="/mail/folders-labels"
                                 toApp={APPS.PROTONACCOUNT}
-                                icon="settings-singular"
+                                icon="settings"
                                 title={c('Info').t`Manage your labels`}
                                 info={c('Link').t`Manage your labels`}
                                 target="_self"
