@@ -50,20 +50,29 @@ const AutoReplySection = () => {
     const editorRef = useRef<SquireEditorRef>(null);
     const composerRef = useRef<HTMLDivElement>(null);
 
-    const handleToggle = async (IsEnabled: boolean) => {
+    const handleToggle = async (enable: boolean) => {
         if (!hasPaidMail) {
             throw new Error(
                 c('Error').t`Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.`
             );
         }
+
+        setIsEnabled(enable);
+
+        const isDisablingExistingAutoResponder =
+            !enable && mailSettings?.AutoResponder && mailSettings?.AutoResponder.IsEnabled;
+
+        if (enable || !isDisablingExistingAutoResponder) {
+            return;
+        }
+
         await api({
-            ...updateAutoresponder({ ...AutoResponder, IsEnabled }),
+            ...updateAutoresponder({ ...AutoResponder, IsEnabled: enable }),
             silence: true,
         });
         await call();
-        setIsEnabled(IsEnabled);
         createNotification({
-            text: IsEnabled ? c('Success').t`Auto-reply enabled` : c('Success').t`Auto-reply disabled`,
+            text: c('Success').t`Auto-reply disabled`,
         });
     };
 
@@ -193,7 +202,7 @@ const AutoReplySection = () => {
                                 loading={updatingLoading}
                                 className="mt1"
                             >
-                                {c('Action').t`Update`}
+                                {c('Action').t`Save`}
                             </Button>
                         </SettingsLayoutRight>
                     </SettingsLayout>
