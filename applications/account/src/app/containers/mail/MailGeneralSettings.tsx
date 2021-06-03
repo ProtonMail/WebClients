@@ -12,6 +12,7 @@ import {
 import { ADDRESS_TYPE } from 'proton-shared/lib/constants';
 import { UserModel } from 'proton-shared/lib/interfaces';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { getHasOnlyExternalAddresses } from 'proton-shared/lib/helpers/address';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 import PrivateMainAreaLoading from '../../components/PrivateMainAreaLoading';
@@ -50,8 +51,9 @@ const MailGeneralSettings = ({ location, user }: Props) => {
     }
 
     const { hasPaidMail, canPay, isSubUser } = user;
+    const isExternalUser = getHasOnlyExternalAddresses(addresses);
     const isPMAddressActive = addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
-    const showPmMeSection = canPay && !isSubUser && !(isPMAddressActive && hasPaidMail);
+    const showPmMeSection = !isExternalUser && canPay && !isSubUser && !(isPMAddressActive && hasPaidMail);
 
     return (
         <PrivateMainSettingsAreaWithPermissions location={location} config={getGeneralPage(user, showPmMeSection)}>
