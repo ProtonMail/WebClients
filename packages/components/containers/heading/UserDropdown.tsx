@@ -6,6 +6,7 @@ import { requestFork } from 'proton-shared/lib/authentication/sessionForking';
 import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 import { getPlanName, hasLifetime } from 'proton-shared/lib/helpers/subscription';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
+import { getAppFromPathnameSafe, getSlugFromApp } from 'proton-shared/lib/apps/slugHelper';
 
 import { useAuthentication, useConfig, useUser, useOrganization, useSubscription, useNotifications } from '../../hooks';
 import { usePopperAnchor, Dropdown, Icon, DropdownMenu, DropdownMenuButton, Tooltip, Button } from '../../components';
@@ -36,7 +37,10 @@ const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
     const handleSwitchAccount = () => {
         if (APP_NAME === APPS.PROTONACCOUNT) {
             const href = getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT);
-            return document.location.assign(href);
+            const settingsApp = getAppFromPathnameSafe(window.location.pathname);
+            const settingsSlug = settingsApp ? getSlugFromApp(settingsApp) : undefined;
+            const searchParams = settingsSlug ? `?service=${settingsSlug}` : '';
+            return document.location.assign(`${href}${searchParams}`);
         }
         return requestFork(APP_NAME, undefined, FORK_TYPE.SWITCH);
     };
