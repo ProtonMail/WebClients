@@ -5,7 +5,6 @@ import { getAlgorithmExists } from 'proton-shared/lib/keys';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from 'proton-shared/lib/constants';
 import { EncryptionConfig } from 'proton-shared/lib/interfaces';
 import { Alert, FormModal } from '../../../components';
-import GenericError from '../../error/GenericError';
 
 import SelectEncryption from './SelectEncryption';
 
@@ -14,7 +13,6 @@ enum STEPS {
     WARNING = 2,
     GENERATE_KEY = 3,
     SUCCESS = 4,
-    FAILURE = 5,
 }
 
 interface Props {
@@ -35,7 +33,7 @@ const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => 
                 setStep(STEPS.SUCCESS);
             })
             .catch(() => {
-                setStep(STEPS.FAILURE);
+                onClose?.();
             });
     };
 
@@ -99,13 +97,6 @@ const AddKeyModal = ({ onClose, existingAlgorithms, onAdd, ...rest }: Props) => 
             return {
                 submit: null,
                 children: <Alert>{c('Info').jt`Key with fingerprint ${fp} successfully created.`}</Alert>,
-            };
-        }
-
-        if (step === STEPS.FAILURE) {
-            return {
-                submit: null,
-                children: <GenericError />,
             };
         }
 
