@@ -1,7 +1,7 @@
 
 # Proton services: same privacy, better experience
 
-## Release: 4.0.0 — June 1, 2021
+## Release: 4.0.0 — June 8, 2021
 
 We’ve given ProtonMail a facelift and added new features and integrated services to make it the most powerful secure email service! The clean design, customization options, and usability improvements mean keeping your data private is even easier and more enjoyable. [Learn more about this release.](https://protonmail.com/blog/new-protonmail-announcement)
 
