@@ -1,3 +1,4 @@
+export { default as useLoad } from './useLoad';
 export { default as useEarlyAccess } from './useEarlyAccess';
 export { default as useFeature } from './useFeature';
 export { default as useBeforeUnload } from './useBeforeUnload';
