@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import { useRouteMatch } from 'react-router-dom';
-import { SidebarList, SidebarListItem, SidebarListItemContent, useOrganization } from 'react-components';
+import { SidebarList, SidebarListItem, SidebarListItemContent, useOrganization, useUser } from 'react-components';
 import { APPS, APPS_CONFIGURATION } from 'proton-shared/lib/constants';
 
 import SettingsListItem from '../../components/SettingsListItem';
@@ -10,6 +10,7 @@ const { PROTONMAIL } = APPS;
 
 const MailSettingsSidebarList = () => {
     const { path } = useRouteMatch();
+    const [user] = useUser();
     const [organization] = useOrganization();
     const hasOrganization = organization?.HasKeys;
 
@@ -45,7 +46,7 @@ const MailSettingsSidebarList = () => {
                 {c('Settings section title').t`Encryption & keys`}
             </SettingsListItem>
             <SettingsListItem to={`${path}/import-export`} icon="export">
-                {c('Settings section title').t`Import & export`}
+                {user.isFree ? c('Title').t`Import Assistant` : c('Settings section title').t`Import & export`}
             </SettingsListItem>
             <SettingsListItem to={`${path}/imap-smtp`} icon="imap-smtp">
                 {c('Settings section title').t`IMAP/SMTP`}
