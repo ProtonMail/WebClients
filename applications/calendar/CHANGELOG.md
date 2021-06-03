@@ -1,6 +1,6 @@
 # Proton Calendar for web is live!
 
-## Release: 4.0.0 — June 1, 2021
+## Release: 4.0.0 — June 8, 2021
 
 Proton Calendar for web is now out of beta and available to everyone. Integrated with your ProtonMail account, our fully encrypted calendar lets you easily stay on top of your schedule while keeping your data secure.
 
