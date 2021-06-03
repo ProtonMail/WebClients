@@ -6,7 +6,7 @@ import ForceRefreshContext from 'react-components/containers/forceRefresh/contex
 import { OnLoginCallbackArguments, ProtonLoginCallback } from 'react-components/containers/app/interface';
 import { LocalSessionResponse } from 'proton-shared/lib/authentication/interface';
 import { produceFork, ProduceForkParameters } from 'proton-shared/lib/authentication/sessionForking';
-import { APPS, SSO_PATHS, UNPAID_STATE, isSSOMode } from 'proton-shared/lib/constants';
+import { APPS, SSO_PATHS, UNPAID_STATE, isSSOMode, APPS_CONFIGURATION } from 'proton-shared/lib/constants';
 import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 import { GetActiveSessionsResult } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { stripLeadingAndTrailingSlash } from 'proton-shared/lib/helpers/string';
@@ -18,7 +18,7 @@ import { DEFAULT_APP, getAppFromPathname, getSlugFromApp } from 'proton-shared/l
 
 import AccountPublicApp from './AccountPublicApp';
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
-import SwitchAccountContainer from '../public/SwitchAccountContainer';
+import SwitchAccountContainer, { getSearchParams as getSwitchSearchParams } from '../public/SwitchAccountContainer';
 import SignupContainer, { getSearchParams as getSignupSearchParams } from '../signup/SignupContainer';
 import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
@@ -79,7 +79,19 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             : undefined;
     }, []);
 
+    const switchSearchParams = useMemo(() => {
+        return location.pathname.includes(SSO_PATHS.SWITCH)
+            ? getSwitchSearchParams(history.location.search)
+            : undefined;
+    }, []);
+
+    const toTargetService = signupSearchParams?.service || switchSearchParams?.service;
+
     const [localRedirect] = useState(() => {
+        // Handle special case going for internal vpn on account settings.
+        if (toTargetService === APPS.PROTONVPN_SETTINGS) {
+            return getLocalRedirect(APPS_CONFIGURATION[toTargetService].settingsSlug);
+        }
         const localLocation = [
             SSO_PATHS.SWITCH,
             SSO_PATHS.LOGIN,
@@ -101,7 +113,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     });
 
     // Either another app wants to fork, or a specific route is requested on this app, or we just go to default
-    const toApp = forkState?.app || localRedirect?.toApp || signupSearchParams?.service || DEFAULT_APP;
+    const toApp = forkState?.app || localRedirect?.toApp || toTargetService || DEFAULT_APP;
 
     const handleLogin = async (args: OnLoginCallbackArguments) => {
         const { keyPassword, UID, User, LocalID } = args;
