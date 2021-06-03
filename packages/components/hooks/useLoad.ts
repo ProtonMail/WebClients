@@ -22,7 +22,7 @@ const useLoad = () => {
     const { path } = useRouteMatch();
 
     useEffect(() => {
-        api({ ...load(path), silent: true });
+        api({ ...load(path), silence: true });
     }, []);
 };
 
