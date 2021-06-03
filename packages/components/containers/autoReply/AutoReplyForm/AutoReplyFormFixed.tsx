@@ -24,7 +24,6 @@ const AutoReplyFormFixed = ({ model: { start, end, timezone }, updateModel }: Pr
                 id="startDate"
                 label={c('Label').t`Start date`}
                 value={start.date}
-                max={end.date}
                 onChange={updateModel('start.date')}
             />
             <TimeField
