@@ -67,6 +67,11 @@ export interface RecoveryPoint {
     Time: number;
 }
 
+export interface LastEmail {
+    Time: number;
+    Order: number;
+}
+
 export interface NormalisedSearchParams extends Omit<SearchParameters, 'wildcard' | 'keyword'> {
     labelID: string;
     normalisedKeywords: string[] | undefined;

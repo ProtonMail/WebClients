@@ -12,25 +12,26 @@ import {
     NormalisedSearchParams,
     StoredCiphertext,
 } from '../../models/encryptedSearch';
-import { AesKeyGenParams, ES_LIMIT, ES_MAX_PAGEBATCH } from '../../constants';
+import { AesKeyGenParams, ES_LIMIT, ES_MAX_CACHE, ES_MAX_PAGEBATCH } from '../../constants';
 import {
     getNumMessagesDB,
     getOldestMessage,
     getOldestTimePoint,
     updateSizeIDB,
     removeMessageSize,
+    getTotalMessages,
 } from './esUtils';
-import { applySearch, sizeOfCachedMessage, splitCachedMessage, uncachedSearch } from './esSearch';
-import { queryEvents, queryMessagesCount, queryMessagesMetadata } from './esAPI';
+import { applySearch, sizeOfCache, sizeOfCachedMessage, splitCachedMessage, uncachedSearch } from './esSearch';
+import { queryEvents, queryMessagesMetadata } from './esAPI';
 import { encryptToDB, fetchMessage, prepareMessageMetadata } from './esBuild';
 
 /**
  * Check whether the DB is limited, either after indexing or if it became so
  * after an update
  */
-export const checkIsDBLimited = async (userID: string, api: Api) => {
+export const checkIsDBLimited = async (userID: string, messageCounts: any) => {
     const count = await getNumMessagesDB(userID);
-    const totalMessages = (await queryMessagesCount(api))?.Total || 0;
+    const totalMessages = getTotalMessages(messageCounts);
     return count < totalMessages;
 };
 
@@ -132,7 +133,8 @@ export const refreshIndex = async (
     indexKey: CryptoKey,
     getMessageKeys: GetMessageKeys,
     recordProgress: (progress: number, total: number) => void,
-    abortControllerRef: React.MutableRefObject<AbortController>
+    abortControllerRef: React.MutableRefObject<AbortController>,
+    messageCounts: any
 ) => {
     // Avoid new events being synced while this operation is ongoing by setting a RefreshEvent object
     const event = await queryEvents(api);
@@ -171,10 +173,7 @@ export const refreshIndex = async (
     );
 
     // Fetching and preparing all metadata
-    const Total = (await queryMessagesCount(api))?.Total;
-    if (!Total) {
-        return;
-    }
+    const Total = getTotalMessages(messageCounts);
     const numPages = Math.ceil(Total / ES_LIMIT);
 
     // IF DB is partial, we want a reference to the oldest message to discriminate whether to update the DB or not
@@ -317,11 +316,45 @@ export const refreshIndex = async (
     esDB.close();
 };
 
+/**
+ * Add a message to the cache while keeping it ordered by Time and Order
+ */
+export const insertInCache = (esCache: CachedMessage[], newMessage: CachedMessage) => {
+    let indexToInsert = 0;
+    for (let index = esCache.length - 1; index >= 0; index--) {
+        if (
+            esCache[index].Time < newMessage.Time ||
+            (esCache[index].Time === newMessage.Time && esCache[index].Order < newMessage.Order)
+        ) {
+            indexToInsert = index + 1;
+            break;
+        }
+    }
+    esCache.splice(indexToInsert, 0, newMessage);
+};
+
+/**
+ * Make room in the cache for new messages by deleting the oldest ones
+ */
+export const cleanCache = (esCache: CachedMessage[], initialCacheSize: number, targetSpace: number) => {
+    let cacheSize = initialCacheSize;
+    let indexCutoff = 0;
+    while (cacheSize + targetSpace >= ES_MAX_CACHE) {
+        const size = sizeOfCachedMessage(esCache[indexCutoff++]);
+        cacheSize -= size;
+    }
+    esCache.splice(0, indexCutoff);
+    return cacheSize;
+};
+
+/**
+ * Synchronise IDB (and optionally cache and search results) with new message events
+ */
 export const syncMessageEvents = async (
     Messages: MessageEvent[],
     userID: string,
-    oldESCache: CachedMessage[],
-    oldPermanentResults: MessageForSearch[],
+    esCache: CachedMessage[],
+    permanentResults: MessageForSearch[],
     isSearch: boolean,
     api: Api,
     getMessageKeys: GetMessageKeys,
@@ -329,11 +362,12 @@ export const syncMessageEvents = async (
     normalisedSearchParams: NormalisedSearchParams
 ) => {
     const failedMessageEvents: string[] = [];
-    let esCache = [...oldESCache];
-    let permanentResults = [...oldPermanentResults];
     const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
     let cacheChanged = false;
     let searchChanged = false;
+    let cacheOldestTime = esCache[0].Time;
+    let cacheOldestOrder = esCache[0].Order;
+    let cacheSize = sizeOfCache(esCache);
 
     // In case something happens while displaying search results, this function keeps
     // the results in sync live (e.g. by creating or removing messages from the results)
@@ -350,7 +384,7 @@ export const syncMessageEvents = async (
             if (resultIndex) {
                 permanentResults.splice(resultIndex, 1, messageForSearch);
             } else {
-                permanentResults = permanentResults.concat(messageForSearch);
+                permanentResults.push(messageForSearch);
             }
         } else {
             permanentResults.splice(resultIndex as number, 1);
@@ -358,180 +392,209 @@ export const syncMessageEvents = async (
         searchChanged = true;
     };
 
-    await Promise.all(
-        Messages.map(async (messageEvent) => {
-            const { ID, Action, Message } = messageEvent;
+    for (const messageEvent of Messages) {
+        const { ID, Action, Message } = messageEvent;
 
-            // If a message is deleted:
-            //   - delete it from DB
-            //   - if a cache exists, delete it from there
-            //   - if results are being shown, delete it from there too
-            if (Action === EVENT_ACTIONS.DELETE || Message?.ExpirationTime) {
-                await removeMessageSize(userID, esDB, ID, indexKey);
-                await esDB.delete('messages', ID);
+        // If a message is deleted:
+        //   - delete it from DB
+        //   - if a cache exists, delete it from there
+        //   - if results are being shown, delete it from there too
+        if (Action === EVENT_ACTIONS.DELETE) {
+            const size = await removeMessageSize(userID, esDB, ID, indexKey);
+            await esDB.delete('messages', ID);
 
-                if (esCache.length) {
-                    const index = esCache.findIndex((cachedMessage) => cachedMessage.ID === ID);
+            if (esCache.length) {
+                const index = esCache.findIndex((cachedMessage) => cachedMessage.ID === ID);
+                if (index !== -1) {
                     esCache.splice(index, 1);
+                    cacheSize -= size;
                     cacheChanged = true;
-                }
-
-                const resultIndex = permanentResults.findIndex((message) => message.ID === ID);
-                if (isSearch && resultIndex !== -1) {
-                    updatePermanentResults({ resultIndex });
+                    cacheOldestTime = esCache[0].Time;
+                    cacheOldestOrder = esCache[0].Order;
                 }
             }
 
-            // If a message is created:
-            //   - add it to DB
-            //   - if a cache exists, add it to there
-            //   - if results are being shown and the new message fulfills, add it there too
-            if (Action === EVENT_ACTIONS.CREATE) {
-                if (!Message) {
-                    return;
+            const resultIndex = permanentResults.findIndex((message) => message.ID === ID);
+            if (isSearch && resultIndex !== -1) {
+                updatePermanentResults({ resultIndex });
+            }
+        }
+
+        // If a message is created:
+        //   - add it to DB
+        //   - if a cache exists, add it to there
+        //   - if results are being shown and the new message fulfills, add it there too
+        if (Action === EVENT_ACTIONS.CREATE) {
+            if (!Message) {
+                continue;
+            }
+
+            // Fetch the whole message since the event only contains metadata
+            const messageToCache = await fetchMessage(ID, api, getMessageKeys);
+            if (!messageToCache) {
+                failedMessageEvents.push(ID);
+                continue;
+            }
+
+            const newCiphertextToStore = await encryptToDB(messageToCache, indexKey);
+            if (!newCiphertextToStore) {
+                failedMessageEvents.push(ID);
+                continue;
+            }
+
+            const storeSuccess = await storeToDB(newCiphertextToStore, esDB);
+            if (!storeSuccess) {
+                failedMessageEvents.push(ID);
+                continue;
+            }
+
+            const size = sizeOfCachedMessage(messageToCache);
+            updateSizeIDB(userID, size);
+
+            if (esCache.length) {
+                let addToCache = true;
+                if (cacheSize + size >= ES_MAX_CACHE) {
+                    if (
+                        messageToCache.Time < cacheOldestTime ||
+                        (messageToCache.Time === cacheOldestTime && messageToCache.Order < cacheOldestOrder)
+                    ) {
+                        addToCache = false;
+                    } else {
+                        cacheSize = cleanCache(esCache, cacheSize, size);
+                    }
                 }
-
-                // Fetch the whole message since the event only contains metadata
-                const messageToCache = await fetchMessage(ID, api, getMessageKeys);
-                if (!messageToCache) {
-                    failedMessageEvents.push(ID);
-                    return;
-                }
-
-                const newCiphertextToStore = await encryptToDB(messageToCache, indexKey);
-                if (!newCiphertextToStore) {
-                    failedMessageEvents.push(ID);
-                    return;
-                }
-
-                const storeSuccess = await storeToDB(newCiphertextToStore, esDB);
-
-                if (!storeSuccess) {
-                    failedMessageEvents.push(ID);
-                    return;
-                }
-
-                updateSizeIDB(userID, sizeOfCachedMessage(messageToCache));
-
-                if (esCache.length) {
-                    esCache = esCache.concat(messageToCache);
+                if (addToCache) {
+                    insertInCache(esCache, messageToCache);
+                    cacheSize += size;
                     cacheChanged = true;
-                }
-
-                if (isSearch && applySearch(normalisedSearchParams, messageToCache)) {
-                    updatePermanentResults({ messageToCache });
+                    cacheOldestTime = esCache[0].Time;
+                    cacheOldestOrder = esCache[0].Order;
                 }
             }
 
-            // If a message is modified, what to do depends whether it's a draft or not
-            if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
-                if (!Message) {
-                    return;
-                }
+            if (isSearch && applySearch(normalisedSearchParams, messageToCache)) {
+                updatePermanentResults({ messageToCache });
+            }
+        }
 
-                // If the message is not in IndexedDB, it means the latter is only partial for
-                // space constraints and the message was too old to fit. In this case, the update
-                // is ignored
-                const storedMessage = await esDB.get('messages', ID);
-                if (!storedMessage) {
-                    return;
-                }
+        // If a message is modified, what to do depends whether it's a draft or not
+        if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
+            if (!Message) {
+                continue;
+            }
 
-                // Get the old version of the message from DB
-                const oldMessage = await getMessageFromDB(ID, indexKey, esDB);
-                if (!oldMessage) {
+            // If the message is not in IndexedDB, it means the latter is only partial for
+            // space constraints and the message was too old to fit. In this case, the update
+            // is ignored
+            const storedMessage = await esDB.get('messages', ID);
+            if (!storedMessage) {
+                continue;
+            }
+
+            // Get the old version of the message from DB
+            const oldMessage = await getMessageFromDB(ID, indexKey, esDB);
+            if (!oldMessage) {
+                failedMessageEvents.push(ID);
+                continue;
+            }
+
+            let newMessageToCache: CachedMessage | undefined;
+            // If the modification is a draft update, fetch the draft from server so to have the new body...
+            if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
+                const fetchedMessageToCache = await fetchMessage(ID, api, getMessageKeys);
+                if (!fetchedMessageToCache) {
                     failedMessageEvents.push(ID);
-                    return;
+                    continue;
+                }
+                newMessageToCache = fetchedMessageToCache;
+            }
+
+            // ...otherwise modify the old message only.
+            if (Action === EVENT_ACTIONS.UPDATE_FLAGS) {
+                const { LabelIDsRemoved, LabelIDsAdded, ...otherChanges } = Message;
+                let { LabelIDs } = oldMessage;
+                if (LabelIDsRemoved) {
+                    LabelIDs = LabelIDs.filter((labelID) => !LabelIDsRemoved.includes(labelID));
+                }
+                if (LabelIDsAdded) {
+                    LabelIDs = LabelIDs.concat(LabelIDsAdded);
                 }
 
-                let newMessageToCache: CachedMessage | undefined;
-                // If the modification is a draft update, fetch the draft from server so to have the new body...
-                if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
-                    const fetchedMessageToCache = await fetchMessage(ID, api, getMessageKeys);
-                    if (!fetchedMessageToCache) {
-                        failedMessageEvents.push(ID);
-                        return;
+                newMessageToCache = {
+                    ...oldMessage,
+                    ...otherChanges,
+                    LabelIDs,
+                };
+            }
+            if (!newMessageToCache) {
+                failedMessageEvents.push(ID);
+                continue;
+            }
+
+            const newCiphertextToStore = await encryptToDB(newMessageToCache, indexKey);
+            if (!newCiphertextToStore) {
+                failedMessageEvents.push(ID);
+                continue;
+            }
+
+            // Store the new message to DB
+            const storeSuccess = await storeToDB(newCiphertextToStore, esDB);
+            if (!storeSuccess) {
+                failedMessageEvents.push(ID);
+                continue;
+            }
+
+            const sizeDelta = sizeOfCachedMessage(newMessageToCache) - sizeOfCachedMessage(oldMessage);
+            updateSizeIDB(userID, sizeDelta);
+
+            // If a cache exists, update the message there too
+            if (esCache.length) {
+                const index = esCache.findIndex((cachedMessage) => cachedMessage.ID === ID);
+                if (index !== -1) {
+                    if (cacheSize + sizeDelta >= ES_MAX_CACHE) {
+                        cacheSize = cleanCache(esCache, cacheSize, sizeDelta);
                     }
-                    newMessageToCache = fetchedMessageToCache;
-                }
-
-                // ...otherwise modify the old message only.
-                if (Action === EVENT_ACTIONS.UPDATE_FLAGS) {
-                    const { LabelIDsRemoved, LabelIDsAdded, ...otherChanges } = Message;
-                    let { LabelIDs } = oldMessage;
-                    if (LabelIDsRemoved) {
-                        LabelIDs = LabelIDs.filter((labelID) => !LabelIDsRemoved.includes(labelID));
-                    }
-                    if (LabelIDsAdded) {
-                        LabelIDs = LabelIDs.concat(LabelIDsAdded);
-                    }
-
-                    newMessageToCache = {
-                        ...oldMessage,
-                        ...otherChanges,
-                        LabelIDs,
-                    };
-                }
-                if (!newMessageToCache) {
-                    failedMessageEvents.push(ID);
-                    return;
-                }
-
-                const newCiphertextToStore = await encryptToDB(newMessageToCache, indexKey);
-                if (!newCiphertextToStore) {
-                    failedMessageEvents.push(ID);
-                    return;
-                }
-
-                // Store the new message to DB
-                const storeSuccess = await storeToDB(newCiphertextToStore, esDB);
-
-                updateSizeIDB(userID, sizeOfCachedMessage(newMessageToCache) - sizeOfCachedMessage(oldMessage));
-
-                if (!storeSuccess) {
-                    failedMessageEvents.push(ID);
-                    return;
-                }
-
-                // If a cache exists, update the message there too
-                if (esCache.length) {
-                    const index = esCache.findIndex((cachedMessage) => cachedMessage.ID === ID);
-                    esCache.splice(index, 1, newMessageToCache);
+                    esCache.splice(index, 1);
+                    insertInCache(esCache, newMessageToCache);
+                    cacheSize += sizeDelta;
                     cacheChanged = true;
-                }
-
-                // If results are being shown:
-                //   - if the old message was part of the search and the new one still is, update it;
-                //   - if the old message was part of the search and the new one shouldn't be, delete it;
-                //   - if the old message wasn't part of the search and the new one should be, add it;
-                if (isSearch) {
-                    if (applySearch(normalisedSearchParams, oldMessage)) {
-                        const resultIndex = permanentResults.findIndex((message) => message.ID === ID);
-
-                        if (applySearch(normalisedSearchParams, newMessageToCache)) {
-                            updatePermanentResults({ resultIndex, messageToCache: newMessageToCache });
-                        } else {
-                            updatePermanentResults({ resultIndex });
-                        }
-                    } else if (applySearch(normalisedSearchParams, newMessageToCache)) {
-                        updatePermanentResults({ messageToCache: newMessageToCache });
-                    }
+                    cacheOldestTime = esCache[0].Time;
+                    cacheOldestOrder = esCache[0].Order;
                 }
             }
-        })
-    );
+
+            // If results are being shown:
+            //   - if the old message was part of the search and the new one still is, update it;
+            //   - if the old message was part of the search and the new one shouldn't be, delete it;
+            //   - if the old message wasn't part of the search and the new one should be, add it;
+            if (isSearch) {
+                if (applySearch(normalisedSearchParams, oldMessage)) {
+                    const resultIndex = permanentResults.findIndex((message) => message.ID === ID);
+
+                    if (applySearch(normalisedSearchParams, newMessageToCache)) {
+                        updatePermanentResults({ resultIndex, messageToCache: newMessageToCache });
+                    } else {
+                        updatePermanentResults({ resultIndex });
+                    }
+                } else if (applySearch(normalisedSearchParams, newMessageToCache)) {
+                    updatePermanentResults({ messageToCache: newMessageToCache });
+                }
+            }
+        }
+    }
 
     esDB.close();
 
     return {
         failedMessageEvents,
-        newESCache: esCache,
-        newPermanentResults: permanentResults,
         cacheChanged,
         searchChanged,
     };
 };
 
+/**
+ * When an old key is activated, try to correct any previous decryption errors
+ */
 export const correctDecryptionErrors = async (
     userID: string,
     indexKey: CryptoKey,

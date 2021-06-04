@@ -371,7 +371,7 @@ const storeMessagesBatches = async (
 };
 
 /**
- * Try to recover indexing if something went wrong
+ * Opens the DB and starts indexing
  */
 export const buildDB = async (
     userID: string,

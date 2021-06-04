@@ -1,6 +1,6 @@
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
-import { CachedMessage } from './models/encryptedSearch';
+import { CachedMessage, ESDBStatus, ESSearchStatus } from './models/encryptedSearch';
 
 export const MAIN_ROUTE_PATH = '/:labelID?/:elementID?/:messageID?';
 
@@ -134,7 +134,7 @@ export const localisedForwardFlags = [
     'pd:',
     'i̇lt:',
 ];
-export const defaultESDBStatus = {
+export const defaultESDBStatus: ESDBStatus = {
     dbExists: false,
     isBuilding: false,
     isDBLimited: false,
@@ -143,7 +143,7 @@ export const defaultESDBStatus = {
     isCacheLimited: false,
     isRefreshing: false,
 };
-export const defaultESSearchStatus = {
+export const defaultESSearchStatus: ESSearchStatus = {
     permanentResults: [],
     setElementsCache: () => {},
     labelID: '',

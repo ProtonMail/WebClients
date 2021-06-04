@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import {
     useApi,
     useGetUserKeys,
+    useMessageCounts,
     useNotifications,
     useOnLogout,
     useSubscribeEventManager,
@@ -22,9 +23,10 @@ import {
     EncryptedSearchFunctions,
     ESDBStatus,
     ESSearchStatus,
+    LastEmail,
     MessageForSearch,
 } from '../models/encryptedSearch';
-import { defaultESDBStatus, defaultESSearchStatus } from '../constants';
+import { defaultESDBStatus, defaultESSearchStatus, ES_MAX_CACHE } from '../constants';
 import { extractSearchParameters } from '../helpers/mailboxUrl';
 import { isSearch as testIsSearch } from '../helpers/elements';
 import {
@@ -38,7 +40,14 @@ import {
     getBuildEvent,
 } from '../helpers/encryptedSearch/esUtils';
 import { buildDB, encryptToDB, fetchMessage, getIndexKey, initialiseDB } from '../helpers/encryptedSearch/esBuild';
-import { cacheDB, hybridSearch, normaliseSearchParams, sizeOfCache } from '../helpers/encryptedSearch/esSearch';
+import {
+    cacheDB,
+    checkIsCacheLimited,
+    hybridSearch,
+    normaliseSearchParams,
+    sizeOfCache,
+    updateCache,
+} from '../helpers/encryptedSearch/esSearch';
 import {
     checkIsDBLimited,
     correctDecryptionErrors,
@@ -62,6 +71,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const api = useApi();
     const [{ ID: userID }] = useUser();
     const { createNotification } = useNotifications();
+    const [messageCounts] = useMessageCounts();
 
     // Keep a state of cached messages and search results to update in case of new events
     const [esSearchStatus, setESSearchStatus] = useState<ESSearchStatus>(defaultESSearchStatus);
@@ -160,7 +170,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             isCacheLimited: false,
         };
 
-        if (dbExists && esEnabled && (!esCache.length || force)) {
+        if (dbExists && esEnabled && (!esCache.length || !!force)) {
             const indexKey = await getIndexKey(getUserKeys, userID);
             if (!indexKey) {
                 await dbCorruptError();
@@ -229,7 +239,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         if (newMessagesFound) {
             // Check if DB became limited after this update
-            const isDBLimited = await checkIsDBLimited(userID, api);
+            const isDBLimited = await checkIsDBLimited(userID, messageCounts);
             setESDBStatus((esDBStatus) => {
                 return {
                     ...esDBStatus,
@@ -263,56 +273,59 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         const isSearch = testIsSearch(searchParameters);
         const normalisedSearchParams = normaliseSearchParams(searchParameters, labelID);
 
-        const { failedMessageEvents, newESCache, newPermanentResults, cacheChanged, searchChanged } =
-            await syncMessageEvents(
-                Messages,
-                userID,
-                esCache,
-                permanentResults,
-                isSearch,
-                api,
-                getMessageKeys,
-                indexKey,
-                normalisedSearchParams
-            );
-
-        // Trigger re-renders only if strictly necessary
-        if (cacheChanged && !(cacheChanged && searchChanged)) {
-            setESSearchStatus((esSearchStatus) => {
-                return {
-                    ...esSearchStatus,
-                    cachePromise: new Promise((resolve) => resolve(newESCache)),
-                };
-            });
-        } else if (searchChanged && !(cacheChanged && searchChanged)) {
-            setESSearchStatus((esSearchStatus) => {
-                return {
-                    ...esSearchStatus,
-                    permanentResults: newPermanentResults,
-                };
-            });
-        } else if (cacheChanged && searchChanged) {
-            setESSearchStatus((esSearchStatus) => {
-                return {
-                    ...esSearchStatus,
-                    permanentResults: searchChanged ? newPermanentResults : esSearchStatus.permanentResults,
-                    cachePromise: cacheChanged
-                        ? new Promise((resolve) => resolve(newESCache))
-                        : esSearchStatus.cachePromise,
-                };
-            });
-        }
+        const { failedMessageEvents, cacheChanged, searchChanged } = await syncMessageEvents(
+            Messages,
+            userID,
+            esCache,
+            permanentResults,
+            isSearch,
+            api,
+            getMessageKeys,
+            indexKey,
+            normalisedSearchParams
+        );
 
         if (searchChanged) {
-            setElementsCache(newPermanentResults);
+            setElementsCache(permanentResults);
+            setESSearchStatus((esSearchStatus) => {
+                return {
+                    ...esSearchStatus,
+                    permanentResults,
+                };
+            });
         }
 
-        // Check if DB became limited after this update
-        const isDBLimited = await checkIsDBLimited(userID, api);
+        if (cacheChanged) {
+            // In case messages were deleted and the resulting cache is smaller, it is updated to
+            // make room to more messages
+            if (await checkIsCacheLimited(userID, esCache.length)) {
+                const lastEmail: LastEmail = { Time: esCache[0].Time, Order: esCache[0].Order };
+                const cacheLimit = ES_MAX_CACHE - sizeOfCache(esCache);
+                await updateCache(
+                    indexKey,
+                    userID,
+                    (progress: number) => recordProgress(progress, messageCounts),
+                    lastEmail,
+                    esCache,
+                    cacheLimit
+                );
+            }
+            setESSearchStatus((esSearchStatus) => {
+                return {
+                    ...esSearchStatus,
+                    cachePromise: Promise.resolve(esCache),
+                };
+            });
+        }
+
+        // Check if DB or cache became limited after this update
+        const isCacheLimited = await checkIsCacheLimited(userID, esCache.length);
+        const isDBLimited = await checkIsDBLimited(userID, messageCounts);
         setESDBStatus((esDBStatus) => {
             return {
                 ...esDBStatus,
                 isDBLimited,
+                isCacheLimited,
             };
         });
 
@@ -341,10 +354,18 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 });
 
                 abortControllerRef.current = new AbortController();
-                await refreshIndex(userID, api, indexKey, getMessageKeys, recordProgress, abortControllerRef);
+                await refreshIndex(
+                    userID,
+                    api,
+                    indexKey,
+                    getMessageKeys,
+                    recordProgress,
+                    abortControllerRef,
+                    messageCounts
+                );
 
                 // Check if DB became limited after this update
-                const isDBLimited = await checkIsDBLimited(userID, api);
+                const isDBLimited = await checkIsDBLimited(userID, messageCounts);
                 setESDBStatus((esDBStatus) => {
                     return {
                         ...esDBStatus,
@@ -479,7 +500,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         await catchUpWithEvents(indexKey);
 
         // The check whether the DB is limited is performed after sync to account for new messages
-        const isDBLimited = await checkIsDBLimited(userID, api);
+        const isDBLimited = await checkIsDBLimited(userID, messageCounts);
         setESDBStatus((esDBStatus) => {
             return {
                 ...esDBStatus,

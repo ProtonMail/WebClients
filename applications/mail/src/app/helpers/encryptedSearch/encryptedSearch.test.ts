@@ -203,7 +203,6 @@ describe('encryptedSearch', () => {
     describe('getTimeLimits', () => {
         it('should derive the correct time boundaries without begin and end', () => {
             const { lower, upper } = getTimeLimits(1619679525, undefined, undefined);
-            expect(lower[0] - timeOffset).toEqual(1601510400);
             expect(upper[0]).toEqual(1619679524);
             expect(lower[1]).toEqual(0);
             expect(upper[1]).toEqual(9007199254740991);
@@ -216,8 +215,7 @@ describe('encryptedSearch', () => {
         });
 
         it('should derive the correct time boundaries without begin', () => {
-            const { lower, upper } = getTimeLimits(0, undefined, 1619679525);
-            expect(lower[0] - timeOffset).toEqual(1601510400);
+            const { upper } = getTimeLimits(0, undefined, 1619679525);
             expect(upper[0]).toEqual(1619679525);
         });
 
@@ -228,8 +226,7 @@ describe('encryptedSearch', () => {
         });
 
         it('should derive the correct time boundaries with both begin and end (more than 6 months)', () => {
-            const { lower, upper } = getTimeLimits(0, 1519679525, 1619679525);
-            expect(lower[0] - timeOffset).toEqual(1601510400);
+            const { upper } = getTimeLimits(0, 1519679525, 1619679525);
             expect(upper[0]).toEqual(1619679525);
         });
     });
