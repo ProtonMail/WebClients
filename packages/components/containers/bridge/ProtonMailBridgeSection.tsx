@@ -155,7 +155,7 @@ const ProtonMailBridgeSection = () => {
 
             <Card className="flex flex-align-items-center mt1">
                 <p className="m0 mr2 flex-item-fluid">
-                    {c('Info').t`Upgrade to a paid plan to unlock IMAP/STMP support through ProtonMail Bridge.`}
+                    {c('Info').t`Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.`}
                 </p>
                 <ButtonLike color="norm" as={SettingsLink} path="/dashboard">
                     {c('Action').t`Upgrade`}
