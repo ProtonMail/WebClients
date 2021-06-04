@@ -43,14 +43,14 @@ $modal-tiny-width: em(288) !default;
 
 	/* for very large inputs in modals, like rich text editor */
 	.field-container--full {
-		width: calc(100% - var(--label-width, #{$pm-label-width}));
+		width: calc(100% - var(--label-width, #{$label-width}));
 
 		@include respond-to(1360) {
 			width: $field-container;
 		}
 
 		@include respond-to(830) {
-			width: calc(100% - var(--label-width, #{$pm-label-width}));
+			width: calc(100% - var(--label-width, #{$label-width}));
 		}
 
 		@include respond-to($breakpoint-small) {
@@ -262,10 +262,10 @@ $modal-tiny-width: em(288) !default;
 }
 
 // adaptation for labels
-$pm-label-shorter-width: 10em !default;
+$label-shorter-width: 10em !default;
 
 .modal--shorter-labels .label {
-	width: var(--label-shorter-width, $pm-label-shorter-width);
+	width: var(--label-shorter-width, $label-shorter-width);
 }
 
 @include respond-to($breakpoint-small) {

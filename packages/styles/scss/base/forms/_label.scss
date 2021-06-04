@@ -1,8 +1,8 @@
 /* label */
-// $pm-label-width defined in global vars
+// $label-width defined in global vars
 .label {
 	padding-top: 0.5em;
-	width: var(--label-width, $pm-label-width);
+	width: var(--label-width, $label-width);
 	padding-right: 0.5em;
 	max-width: 100%;
 	flex-shrink: 0;
@@ -22,8 +22,8 @@
 }
 
 // case for forms labelled only with icons (calendar popover, etc.)
-$pm-label-icon-width: 2.4em !default;
+$label-icon-width: 2.4em !default;
 
 .form--icon-labels .label {
-	width: $pm-label-icon-width;
+	width: $label-icon-width;
 }
