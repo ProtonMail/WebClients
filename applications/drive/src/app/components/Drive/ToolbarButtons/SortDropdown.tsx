@@ -91,6 +91,7 @@ const SortDropdown = () => {
             key={item.name}
             className="flex flex-nowrap text-left"
             onClick={() => setSorting(item.sortField, item.sortOrder)}
+            aria-current={item.sortField === sortParams.sortField && item.sortOrder === sortParams.sortOrder}
         >
             <Icon className="mt0-25 mr0-5" name={item.icon} />
             {item.name}
