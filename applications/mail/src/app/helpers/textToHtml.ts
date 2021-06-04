@@ -115,10 +115,9 @@ export const textToHtml = (input = '', signature: string, mailSettings: Partial<
     // It's more logical though for users that don't know about markdown.
     const placeholder = generatePlaceHolder(text);
     // We don't want to treat backslash as a markdown escape since it removes backslashes. So escape all backslashes with a backslash.
-    const html = removeNewLinePlaceholder(
-        md.render(addNewLinePlaceholders(escapeBackslash(text), placeholder)),
-        placeholder
-    );
+    const withPlaceholder = addNewLinePlaceholders(escapeBackslash(text), placeholder);
+    const rendered = md.render(withPlaceholder);
+    const html = removeNewLinePlaceholder(rendered, placeholder);
 
     const result = attachSignature(html, signature, text, mailSettings);
 

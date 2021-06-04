@@ -11,7 +11,7 @@ export const toText = (html: string, convertImages = false) => {
         bulletListMarker: '-',
         strongDelimiter: '' as any,
         emDelimiter: '' as any,
-        hr: ''
+        hr: '',
     });
 
     const replaceBreakLine = {
@@ -28,7 +28,7 @@ export const toText = (html: string, convertImages = false) => {
             }
 
             return '\n\n';
-        }
+        },
     } as TurndownService.Rule;
 
     const replaceImg = {
@@ -43,28 +43,28 @@ export const toText = (html: string, convertImages = false) => {
             // needed for the automatic conversion done by pgp/inline, otherwise the conversion happens and people forget that they have selected this for some contacts
             const attribute = image.alt || image.src;
             return attribute ? `[${attribute}]` : '';
-        }
+        },
     } as TurndownService.Rule;
 
     const replaceAnchor = {
         filter: 'a',
         replacement(content: string, node: HTMLElement) {
             return node.textContent;
-        }
+        },
     } as TurndownService.Rule;
 
     const replaceDiv = {
         filter: ['div'],
         replacement(content: string) {
             return content;
-        }
+        },
     } as TurndownService.Rule;
 
     turndownService.use([
         () => turndownService.addRule('replaceAnchor', replaceAnchor),
         () => turndownService.addRule('replaceDiv', replaceDiv),
         () => turndownService.addRule('replaceImg', replaceImg),
-        () => turndownService.addRule('replaceBreakLine', replaceBreakLine)
+        () => turndownService.addRule('replaceBreakLine', replaceBreakLine),
     ]);
 
     /**

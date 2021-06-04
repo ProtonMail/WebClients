@@ -201,8 +201,7 @@ const SquireEditorWrapper = ({
 
     const switchToPlainText = () => {
         const MIMEType = MIME_TYPES.PLAINTEXT;
-        const plainText = exportPlainText(getContent(message));
-        // const embeddeds = createEmbeddedMap();
+        const plainText = exportPlainText(handleGetContent());
         const messageImages = message.messageImages ? { ...message.messageImages, images: [] } : undefined;
         onChange({ plainText, data: { MIMEType }, messageImages });
     };
