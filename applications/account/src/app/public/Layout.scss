@@ -120,7 +120,7 @@ $bg-signup-img: './bg-mountains.svg' !default;
 /* label size */
 .payment-container,
 .payment-right {
-	--label-width: #{$pm-label-width};
+	--label-width: #{$label-width};
 }
 @include respond-to($breakpoint-medium) {
 	.payment-container {
