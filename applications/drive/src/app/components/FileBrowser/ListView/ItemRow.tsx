@@ -90,11 +90,7 @@ const ItemRow = ({
         );
     };
 
-    const showShareOnHover = (
-        item.Type === LinkType.FILE
-        && item.Trashed === null
-        && !item.SharedUrl
-    );
+    const showShareOnHover = item.Type === LinkType.FILE && item.Trashed === null && !item.SharedUrl;
 
     return (
         <>
@@ -151,6 +147,12 @@ const ItemRow = ({
                 {isDesktop && columns.includes('modified') && (
                     <TableCell className="m0 w25">
                         <TimeCell time={item.ModifyTime} />
+                    </TableCell>
+                )}
+
+                {isDesktop && columns.includes('trashed') && (
+                    <TableCell className="m0 w25">
+                        <TimeCell time={item.Trashed!} />
                     </TableCell>
                 )}
 

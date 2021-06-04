@@ -82,7 +82,16 @@ const ListHeader = ({
                         direction={getSortDirectionForKey('ModifyTime')}
                         onSort={canSort(() => handleSort('ModifyTime'))}
                     >
-                        {type === 'drive' ? c('TableHeader').t`Modified` : c('TableHeader').t`Deleted`}
+                        {c('TableHeader').t`Modified`}
+                    </TableHeaderCell>
+                )}
+                {isDesktop && columns.includes('trashed') && (
+                    <TableHeaderCell
+                        className="w25"
+                        direction={getSortDirectionForKey('ModifyTime')}
+                        onSort={canSort(() => handleSort('ModifyTime'))}
+                    >
+                        {c('TableHeader').t`Trashed`}
                     </TableHeaderCell>
                 )}
                 {columns.includes('size') && (

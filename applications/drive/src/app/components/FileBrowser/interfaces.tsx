@@ -34,13 +34,14 @@ export interface FileBrowserItem {
 }
 
 export type ItemRowColumns =
-    | 'type'
     | 'location'
-    | 'share_created'
-    | 'share_num_access'
-    | 'share_expires'
     | 'modified'
-    | 'size';
+    | 'share_created'
+    | 'share_expires'
+    | 'share_num_access'
+    | 'size'
+    | 'trashed'
+    | 'type';
 export type FileBrowserLayouts = 'trash' | 'sharing' | 'drive';
 
 export interface ItemProps {
