@@ -124,6 +124,7 @@ export const useCompose = (
             const localID = getLocalID(messageCache, existingDraft.localID);
 
             const existingMessage = messageCache.get(localID);
+
             if (existingMessage) {
                 // Plaintext drafts have a different sanitization as plaintext mail content
                 // So we have to restart the sanitization process on a cached draft
@@ -133,9 +134,11 @@ export const useCompose = (
                     existingMessage.plainText = undefined;
                 }
                 existingMessage.openDraftFromUndo = fromUndo;
+                existingMessage.inComposer = true;
             }
 
             const existingMessageID = openComposers.find((id) => id === localID);
+
             if (existingMessageID) {
                 focusComposer(existingMessageID);
                 return;

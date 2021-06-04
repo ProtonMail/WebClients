@@ -252,6 +252,7 @@ export const createNewDraft = (
         initialized: true,
         embeddeds,
         initialAttachments,
+        inComposer: true,
     };
 };
 

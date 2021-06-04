@@ -79,7 +79,7 @@ const messageEventListener = (cache: MessageCache) => ({ Messages }: Event) => {
 
                     // Update draft and sent means it just passed from draft to sent status
                     // It can have been done from outside of the app and will have to be reinitialized to use it
-                    if (isSent(Message)) {
+                    if (!currentValue.inComposer || isSent(Message)) {
                         removeInit = { initialized: undefined, document: undefined, plainText: undefined };
                     }
                 }

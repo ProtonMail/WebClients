@@ -216,6 +216,11 @@ export interface MessageExtended {
      * Counter of load retry
      */
     loadRetry?: number;
+
+    /**
+     * Flag to know whether the message is currently being composed or not
+     */
+    inComposer?: boolean;
 }
 
 /**
