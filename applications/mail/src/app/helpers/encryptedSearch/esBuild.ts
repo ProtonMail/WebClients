@@ -432,15 +432,18 @@ export const initialiseDB = async (userID: string, getUserKeys: GetUserKeys, api
     // new messages will be synced only after indexing has completed. The first message is set
     // as first recovery point
     const initialiser = await queryMessagesCount(api);
-    if (!initialiser || initialiser.Total === 0) {
+    if (!initialiser) {
         return result;
     }
-    // +1 is added so that firstMessage will be included in the very first batch of messages
-    const firstRecoveryPoint: RecoveryPoint = {
-        ID: initialiser.firstMessage.ID,
-        Time: initialiser.firstMessage.Time + 1,
-    };
-    setItem(`ES:${userID}:Recover`, JSON.stringify(firstRecoveryPoint));
+
+    if (initialiser.Total !== 0) {
+        // +1 is added so that firstMessage will be included in the very first batch of messages
+        const firstRecoveryPoint: RecoveryPoint = {
+            ID: initialiser.firstMessage.ID,
+            Time: initialiser.firstMessage.Time + 1,
+        };
+        setItem(`ES:${userID}:Recover`, JSON.stringify(firstRecoveryPoint));
+    }
 
     // Save the event before starting building IndexedDB
     const previousEvent = await queryEvents(api);

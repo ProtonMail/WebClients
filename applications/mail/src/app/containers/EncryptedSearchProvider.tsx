@@ -450,6 +450,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         }
 
         const totalMessages = getTotalFromBuildEvent(userID) || 0;
+        const mailboxEmpty = totalMessages === 0;
         progressRecorderRef.current = (await getNumMessagesDB(userID)) / totalMessages;
         const recordProgressLocal = (progress: number) => {
             recordProgress(progress, totalMessages);
@@ -462,7 +463,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             };
         });
 
-        let success = false;
+        let success = !mailboxEmpty;
         while (!success) {
             success = await buildDB(userID, indexKey, getMessageKeys, api, abortControllerRef, recordProgressLocal);
 
@@ -472,14 +473,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             }
 
             await wait(500);
-        }
-
-        // If the process exits but there are no messages in IDB, it means some error has
-        // occured and user should ty again
-        const totalFromIDB = await getNumMessagesDB(userID);
-        if (totalFromIDB === 0) {
-            await dbCorruptError();
-            return;
         }
 
         // Finalise IndexedDB building by catching up with new messages
