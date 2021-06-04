@@ -13,7 +13,8 @@
     justify-content: center;
 
     &-infobox {
-        max-width: rem(380);
+        width: rem(490);
+        min-width: rem(380);
         background: var(--background-norm);
         color: var(--text-norm);
         border-radius: $global-border-radius;
@@ -23,7 +24,6 @@
     }
 
     &-image {
-        margin-top: -42.5%;
-        max-width: rem(250);
+        max-width: rem(380);
     }
 }
