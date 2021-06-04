@@ -90,17 +90,20 @@ const UsersAndAddressesSection = () => {
     const handleSearch = (value: string) => setKeywords(value);
 
     const membersSelected = useMemo(() => {
+        if (!members) {
+            return [];
+        }
         if (!keywords) {
-            return members || [];
+            return members;
         }
 
-        const normalizedWords = normalize(keywords);
+        const normalizedWords = normalize(keywords, true);
 
         return members.filter(({ Name, ID }) => {
-            const addressMatch =
-                memberAddressesMap &&
-                memberAddressesMap[ID].some((address) => normalize(address.Email).includes(normalizedWords));
-            const nameMatch = normalize(Name).includes(normalizedWords);
+            const addressMatch = memberAddressesMap?.[ID]?.some((address) =>
+                normalize(address.Email, true).includes(normalizedWords)
+            );
+            const nameMatch = normalize(Name, true).includes(normalizedWords);
 
             return addressMatch || nameMatch;
         });
@@ -222,7 +225,7 @@ const UsersAndAddressesSection = () => {
                 </thead>
                 <TableBody loading={membersLoading || loadingMemberAddresses} colSpan={6}>
                     {membersSelected.map((member) => {
-                        const memberAddresses = (memberAddressesMap && memberAddressesMap[member.ID]) || [];
+                        const memberAddresses = memberAddressesMap?.[member.ID] || [];
                         return (
                             <TableRow
                                 key={member.ID}
