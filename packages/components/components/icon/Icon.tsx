@@ -4,6 +4,7 @@ import { classnames } from '../../helpers';
 export interface Props extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
     name: string;
     alt?: string;
+    title?: string;
     viewBox?: string;
     className?: string;
     size?: number;
@@ -20,10 +21,11 @@ export interface Props extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
  * @param viewBox
  * @param color
  * @param alt       Used by screen reader
+ * @param title     equivalent of title attribute
  * @param rotate    How many degrees the icon should be rotated
  */
 const Icon = (
-    { name, alt, color, className = '', viewBox = '0 0 16 16', size = 16, rotate = 0, ...rest }: Props,
+    { name, alt, title, color, className = '', viewBox = '0 0 16 16', size = 16, rotate = 0, ...rest }: Props,
     ref: React.Ref<SVGSVGElement>
 ) => {
     const style = {
@@ -41,6 +43,7 @@ const Icon = (
                 ref={ref}
                 {...rest}
             >
+                {title ? <title>{title}</title> : null}
                 <use xlinkHref={name.startsWith('#') ? name : `#shape-${name}`} />
             </svg>
             {alt ? <span className="sr-only">{alt}</span> : null}
