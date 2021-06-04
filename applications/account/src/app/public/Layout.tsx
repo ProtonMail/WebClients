@@ -1,7 +1,8 @@
 import React, { ReactNode } from 'react';
 import { c } from 'ttag';
 import locales from 'proton-shared/lib/i18n/locales';
-import { APP_NAMES } from 'proton-shared/lib/constants';
+import { APPS, APP_NAMES } from 'proton-shared/lib/constants';
+import { getAppName } from 'proton-shared/lib/apps/helper';
 
 import { getAppVersion, useConfig, PublicTopBanners, Href, Icon, ProminentContainer, Logo } from 'react-components';
 
@@ -32,6 +33,11 @@ const Layout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
 
     const appVersion = getAppVersion(APP_VERSION_DISPLAY || APP_VERSION);
 
+    const mailAppName = getAppName(APPS.PROTONMAIL);
+    const calendarAppName = getAppName(APPS.PROTONCALENDAR);
+    const driveAppName = getAppName(APPS.PROTONDRIVE);
+    const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
+
     return (
         <ProminentContainer className="flex-no-min-children flex-nowrap flex-column h100 sign-layout-bg scroll-if-needed">
             <PublicTopBanners />
@@ -51,10 +57,34 @@ const Layout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                     <div className="flex-item-noshrink text-center p1">
                         <span className="text-sm">{c('Info').t`One account for all Proton services`}</span>
                         <div className="p0-5">
-                            <Icon name="protonmail" className="ml0-5 mr0-5" alt="Proton Mail" size={20} />
-                            <Icon name="protoncalendar" className="ml0-5 mr0-5" alt="Proton Calendar" size={20} />
-                            <Icon name="protonvpn" className="ml0-5 mr0-5" alt="Proton VPN" size={20} />
-                            <Icon name="protondrive" className="ml0-5 mr0-5" alt="Proton Drive" size={20} />
+                            <Icon
+                                name="protonmail"
+                                className="ml0-5 mr0-5"
+                                alt={mailAppName}
+                                title={mailAppName}
+                                size={20}
+                            />
+                            <Icon
+                                name="protoncalendar"
+                                className="ml0-5 mr0-5"
+                                alt={calendarAppName}
+                                title={calendarAppName}
+                                size={20}
+                            />
+                            <Icon
+                                name="protonvpn"
+                                className="ml0-5 mr0-5"
+                                alt={vpnAppName}
+                                title={vpnAppName}
+                                size={20}
+                            />
+                            <Icon
+                                name="protondrive"
+                                className="ml0-5 mr0-5"
+                                alt={driveAppName}
+                                title={driveAppName}
+                                size={20}
+                            />
                         </div>
                     </div>
                 </div>
