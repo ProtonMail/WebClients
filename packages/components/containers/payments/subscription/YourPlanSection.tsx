@@ -110,7 +110,7 @@ const YourPlanSection = ({ permission }: Props) => {
                 <Meter
                     className="mt1"
                     aria-labelledby="usedSpaceLabel"
-                    value={Math.round(percentage(MaxSpace, UsedSpace))}
+                    value={Math.ceil(percentage(MaxSpace, UsedSpace))}
                 />
             </div>
         </>
