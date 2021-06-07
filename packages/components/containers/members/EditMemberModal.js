@@ -155,7 +155,7 @@ const EditMemberModal = ({ onClose, member, ...rest }) => {
                 </Row>
             )}
             <div>
-                <div>{c('Label').t`Addresses`}</div>
+                <div className="pt0-5">{c('Label').t`Addresses`}</div>
                 <div>
                     <Addresses organization={organization} />
                 </div>
