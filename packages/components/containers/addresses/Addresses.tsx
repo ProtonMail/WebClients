@@ -9,13 +9,14 @@ import AddressesWithUser from './AddressesWithUser';
 interface AddressesProps {
     isOnlySelf?: boolean;
     organization: Organization;
+    memberID?: string;
 }
 
-const Addresses = ({ isOnlySelf, organization }: AddressesProps) => {
+const Addresses = ({ isOnlySelf, organization, memberID }: AddressesProps) => {
     const [user] = useUser();
 
     return user.isAdmin && user.hasPaidMail ? (
-        <AddressesWithMembers isOnlySelf={isOnlySelf} user={user} organization={organization} />
+        <AddressesWithMembers isOnlySelf={isOnlySelf} user={user} memberID={memberID} organization={organization} />
     ) : (
         <AddressesWithUser user={user} />
     );

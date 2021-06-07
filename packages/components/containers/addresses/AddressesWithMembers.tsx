@@ -1,10 +1,9 @@
-import React, { ChangeEvent, useEffect, useMemo, useState } from 'react';
-import { useRouteMatch } from 'react-router-dom';
+import React, { useMemo } from 'react';
 import { ALL_MEMBERS_ID, MEMBER_PRIVATE } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { UserModel, Organization, Member } from 'proton-shared/lib/interfaces';
 
-import { Alert, Loader, Select, Button, SettingsLink } from '../../components';
+import { Alert, Loader, Button, SettingsLink } from '../../components';
 import { useMembers, useMemberAddresses, useModals, useOrganizationKey, useNotifications } from '../../hooks';
 
 import { SettingsParagraph } from '../account';
@@ -23,33 +22,27 @@ const getMemberIndex = (members: Member[] = [], memberID?: string, isOnlySelf?: 
     }
     return newMemberIndex;
 };
-
 interface Props {
     user: UserModel;
     organization: Organization;
     isOnlySelf?: boolean;
+    memberID?: string;
 }
 
-const AddressesWithMembers = ({ user, organization, isOnlySelf }: Props) => {
-    const match = useRouteMatch<{ memberID?: string }>();
+const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Props) => {
     const { createModal } = useModals();
     const [members, loadingMembers] = useMembers();
     const [memberAddressesMap, loadingMemberAddresses] = useMemberAddresses(members);
-    const [memberIndex, setMemberIndex] = useState(-1);
     const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
     const { createNotification } = useNotifications();
 
-    useEffect(() => {
-        if (memberIndex === -1 && Array.isArray(members)) {
-            setMemberIndex(getMemberIndex(members, match.params.memberID, isOnlySelf));
+    const memberIndex = useMemo(() => {
+        if (Array.isArray(members)) {
+            return getMemberIndex(members, memberID, isOnlySelf);
         }
-    }, [members]);
 
-    useEffect(() => {
-        if (memberIndex !== -1 && Array.isArray(members)) {
-            setMemberIndex(getMemberIndex(members, match.params.memberID, isOnlySelf));
-        }
-    }, [match.params.memberID]);
+        return -1;
+    }, [members, memberID]);
 
     const selectedMembers = useMemo(() => {
         if (memberIndex === ALL_MEMBERS_ID) {
@@ -81,18 +74,7 @@ const AddressesWithMembers = ({ user, organization, isOnlySelf }: Props) => {
         createModal(<AddressModal member={member} members={members} organizationKey={organizationKey} />);
     };
 
-    const memberOptions = [
-        {
-            text: c('Option').t`All users`,
-            value: ALL_MEMBERS_ID,
-        },
-        ...(members || []).map(({ Name }, i) => ({
-            text: Name,
-            value: i,
-        })),
-    ];
-
-    const currentMember = Array.isArray(members) && memberIndex !== -1 ? members[memberIndex] : undefined;
+    const currentMember = members?.[memberIndex];
 
     const mustActivateOrganizationKey =
         currentMember?.Private === MEMBER_PRIVATE.READABLE && !organizationKey?.privateKey;
@@ -106,18 +88,7 @@ const AddressesWithMembers = ({ user, organization, isOnlySelf }: Props) => {
                     .t`The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.`}
             </SettingsParagraph>
 
-            {!isOnlySelf && memberOptions.length > 2 ? (
-                <div className="mb1">
-                    <Select
-                        id="memberSelect"
-                        value={memberIndex}
-                        options={memberOptions}
-                        onChange={({ target: { value } }: ChangeEvent<HTMLSelectElement>) => setMemberIndex(+value)}
-                    />
-                </div>
-            ) : null}
-
-            {!currentMember || memberIndex === ALL_MEMBERS_ID ? null : (
+            {currentMember && (
                 <div className="mb1">
                     {mustActivateOrganizationKey ? (
                         <Alert type="warning">

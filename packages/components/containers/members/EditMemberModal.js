@@ -157,7 +157,7 @@ const EditMemberModal = ({ onClose, member, ...rest }) => {
             <div>
                 <div className="pt0-5">{c('Label').t`Addresses`}</div>
                 <div>
-                    <Addresses organization={organization} />
+                    <Addresses organization={organization} memberID={member.ID} />
                 </div>
             </div>
         </FormModal>
