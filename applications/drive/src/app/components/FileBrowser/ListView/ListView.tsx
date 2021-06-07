@@ -8,7 +8,7 @@ import { FileBrowserProps, FileBrowserItem, DragMoveControls, FileBrowserLayouts
 import FolderContextMenu from '../FolderContextMenu';
 import useFileBrowserView from '../useFileBrowserView';
 import ListHeader from './ListHeader';
-import { fileBrowserColumns } from '../constants';
+import { useFileBrowserColumns } from '../useFileBrowserColumns';
 
 type ListItemData = {
     itemCount: number;
@@ -48,6 +48,8 @@ const ListItemRow = ({ index, style, data }: ListItemRowProps) => {
         isDesktop,
     } = data;
 
+    const columns = useFileBrowserColumns(type);
+
     if (loading && index === itemCount - 1) {
         const colSpan = (type === 'trash' ? 5 : 4) + Number(isDesktop);
         return (
@@ -69,7 +71,7 @@ const ListItemRow = ({ index, style, data }: ListItemRowProps) => {
             onToggleSelect={onToggleItemSelected}
             onShiftClick={onShiftClick}
             onClick={onItemClick}
-            columns={fileBrowserColumns[type]}
+            columns={columns}
             selectItem={selectItem}
             secondaryActionActive={secondaryActionActive}
             dragMoveControls={getDragMoveControls?.(item)}

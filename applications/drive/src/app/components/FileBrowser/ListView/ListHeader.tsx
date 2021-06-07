@@ -4,7 +4,7 @@ import { SORT_DIRECTION } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 import { SortKeys, SortParams } from '../../../interfaces/link';
 import { FileBrowserItem, FileBrowserLayouts } from '../interfaces';
-import { fileBrowserColumns } from '../constants';
+import { useFileBrowserColumns } from '../useFileBrowserColumns';
 
 interface Props {
     type: FileBrowserLayouts;
@@ -26,6 +26,8 @@ const ListHeader = ({
     scrollAreaRef,
 }: Props) => {
     const { isDesktop } = useActiveBreakpoint();
+    const columns = useFileBrowserColumns(type);
+
     const canSort = (fn?: () => void) => (type === 'drive' ? fn : undefined);
 
     const handleSort = (key: SortKeys) => {
@@ -45,7 +47,6 @@ const ListHeader = ({
         sortParams?.sortField === key ? sortParams.sortOrder : undefined;
 
     const allSelected = !!contents.length && contents.length === selectedItems.length;
-    const columns = fileBrowserColumns[type];
 
     return (
         <thead onContextMenu={(e) => e.stopPropagation()}>
@@ -76,7 +77,7 @@ const ListHeader = ({
                         {c('TableHeader').t`Type`}
                     </TableHeaderCell>
                 )}
-                {isDesktop && columns.includes('modified') && (
+                {columns.includes('modified') && (
                     <TableHeaderCell
                         className="w25"
                         direction={getSortDirectionForKey('ModifyTime')}
@@ -85,7 +86,7 @@ const ListHeader = ({
                         {c('TableHeader').t`Modified`}
                     </TableHeaderCell>
                 )}
-                {isDesktop && columns.includes('trashed') && (
+                {columns.includes('trashed') && (
                     <TableHeaderCell
                         className="w25"
                         direction={getSortDirectionForKey('ModifyTime')}
@@ -103,10 +104,10 @@ const ListHeader = ({
                         {c('TableHeader').t`Size`}
                     </TableHeaderCell>
                 )}
-                {isDesktop && columns.includes('share_created') && (
+                {columns.includes('share_created') && (
                     <TableHeaderCell className="w15">{c('TableHeader').t`Created`}</TableHeaderCell>
                 )}
-                {isDesktop && columns.includes('share_num_access') && (
+                {columns.includes('share_num_access') && (
                     <TableHeaderCell className="w15">{c('TableHeader').t`# of accesses`}</TableHeaderCell>
                 )}
                 {columns.includes('share_expires') && (
