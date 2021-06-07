@@ -320,7 +320,7 @@ body {
     &#eo-unlock,
     &#eo-message,
     &#eo-reply {
-        background: #262a33 url(assets('img/bg-mountains.svg')) 0 0 no-repeat;
+        background: #171f3b url(assets('img/bg-mountains.svg')) bottom center no-repeat;
         background-size: cover;
         font-family: $font-family;
         font-size: .875rem;
@@ -804,7 +804,7 @@ body#eo-reply {
         flex-direction: column;
     }
     .outside {
-        flex: 1 1 0px;
+        flex: 1 1 auto; // auto for IE11
     }
 }
 
