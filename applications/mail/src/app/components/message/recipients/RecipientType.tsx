@@ -12,7 +12,7 @@ const RecipientType = ({
     children,
 }: Props) => {
     return (
-        <span className={className}>
+        <span className={className} data-testid={`message-header-expanded:${label}`}>
             <span className="container-to pt0-5">{label}</span>
             <span className="flex-align-self-center message-recipient-item-expanded-content">{children}</span>
         </span>

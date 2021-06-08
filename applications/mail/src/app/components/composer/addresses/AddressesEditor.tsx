@@ -73,6 +73,7 @@ const AddressesEditor = ({ message, messageSendInfo, onChange, expanded, toggleE
                         inputFocusRef={inputFocusRefs.to}
                         placeholder={c('Placeholder').t`Email address`}
                         expanded={expanded}
+                        dataTestId="composer:to"
                     />
                     {!expanded && (
                         <LinkButton
@@ -106,7 +107,7 @@ const AddressesEditor = ({ message, messageSendInfo, onChange, expanded, toggleE
                             messageSendInfo={messageSendInfo}
                             onChange={handleChange('CCList')}
                             placeholder={c('Placeholder').t`Email address`}
-                            data-testid="composer:cc"
+                            dataTestId="composer:to-cc"
                             inputFocusRef={inputFocusRefs.cc}
                         />
                     </div>
@@ -128,7 +129,7 @@ const AddressesEditor = ({ message, messageSendInfo, onChange, expanded, toggleE
                             messageSendInfo={messageSendInfo}
                             onChange={handleChange('BCCList')}
                             placeholder={c('Placeholder').t`Email address`}
-                            data-testid="composer:bcc"
+                            dataTestId="composer:to-bcc"
                         />
                     </div>
                 </>

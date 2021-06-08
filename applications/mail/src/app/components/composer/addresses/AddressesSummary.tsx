@@ -34,6 +34,7 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
                 onFocus={onFocus}
                 tabIndex={0}
                 role="button"
+                data-testid="composer:address"
             >
                 <span className="text-ellipsis flex-item-fluid composer-addresses-fakefield-inner pr1" title={title}>
                     {getRecipients(message).length === 0 ? (
