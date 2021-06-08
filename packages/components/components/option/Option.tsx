@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { scrollIntoView } from 'proton-shared/lib/helpers/dom';
 import usePrevious from '../../hooks/usePrevious';
 import { DropdownMenuButton } from '../dropdown';
 import { classnames } from '../../helpers';
@@ -31,7 +32,7 @@ const Option = <V,>({
             if (focusOnActive) {
                 ref.current?.focus();
             } else {
-                ref.current?.scrollIntoView({ block: 'center' });
+                scrollIntoView(ref.current, { block: 'center' });
             }
         }
     }, [active]);
