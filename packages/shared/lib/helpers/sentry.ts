@@ -52,6 +52,7 @@ function main({
             'NetworkError when attempting to fetch resource.',
             'No network connection',
             'webkitExitFullScreen', // Bug in Firefox for iOS.
+            'InactiveSession',
         ],
     });
 
