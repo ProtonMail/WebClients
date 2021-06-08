@@ -8,7 +8,7 @@ const isNotSupported = () => {
     // IE11 or old edge (not chromium based) are not supported.
     const isOldEdgeOrIE = !('reversed' in document.createElement('ol'));
     // If these function get polyfilled they'll exist, this is a safety mechanism for when we stop supporting it
-    return isOldEdgeOrIE || !Object.fromEntries || !''.trimStart;
+    return isOldEdgeOrIE || !Object.fromEntries || !''.trimStart || !window.crypto.subtle;
 };
 
 window.protonSupportedBrowser = !isNotSupported();
