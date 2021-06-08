@@ -24,6 +24,7 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { buildTreeview } from 'proton-shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
 import { setItem, getItem } from 'proton-shared/lib/helpers/storage';
+import { scrollIntoView } from 'proton-shared/lib/helpers/dom';
 
 import { getCounterMap } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';
@@ -111,7 +112,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
         setFocusedItem(item);
         const element = sidebarRef?.current?.querySelector(`[data-shortcut-target~="${item}"]`) as HTMLElement;
         element?.focus();
-        element?.scrollIntoView({ block: 'nearest' });
+        scrollIntoView(element, { block: 'nearest' });
     };
 
     const sidebarListItems = useMemo(() => {

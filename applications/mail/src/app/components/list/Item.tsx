@@ -5,6 +5,7 @@ import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } fro
 import { MAILBOX_LABEL_IDS, VIEW_MODE } from 'proton-shared/lib/constants';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 import { MailSettings } from 'proton-shared/lib/interfaces';
+import { scrollIntoView } from 'proton-shared/lib/helpers/dom';
 import { isUnread, isMessage } from '../../helpers/elements';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
@@ -113,7 +114,7 @@ const Item = ({
 
     useEffect(() => {
         if (hasFocus) {
-            elementRef?.current?.scrollIntoView?.({ block: 'nearest' });
+            scrollIntoView(elementRef?.current, { block: 'nearest' });
         }
     }, [hasFocus]);
 
