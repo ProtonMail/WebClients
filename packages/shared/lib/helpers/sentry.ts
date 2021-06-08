@@ -28,13 +28,12 @@ function main({
         release: isProduction(host) ? APP_VERSION : COMMIT_RELEASE,
         environment: host,
         normalizeDepth: 5,
-        beforeSend(event) {
-            // @ts-ignore
-            if (event && 'error' in event && event.error?.stack) {
-                // @ts-ignore Filter out broken ferdi errors
-                if (event.error.stack.includes(/ferdi/i)) {
-                    return null;
-                }
+        beforeSend(event, hint) {
+            const error = hint?.originalException;
+            const stack = typeof error === 'string' ? error : error?.stack;
+            // Filter out broken ferdi errors
+            if (stack && stack.match(/ferdi/i)) {
+                return null;
             }
             return event;
         },
