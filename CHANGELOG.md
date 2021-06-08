@@ -1,3 +1,14 @@
+# [3.16.65] - 2021-06-08
+
+## Updates
+
+- Remove link to old version since v3 will be hosted only on old domain
+- Update encrypted outside design (mountains)
+
+## Fixes
+
+- IE11 fix for encrypted outside pages
+
 # [3.16.64] - 2021-06-03
 
 ## Fixes
