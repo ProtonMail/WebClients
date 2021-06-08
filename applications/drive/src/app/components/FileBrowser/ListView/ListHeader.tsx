@@ -92,7 +92,7 @@ const ListHeader = ({
                         direction={getSortDirectionForKey('ModifyTime')}
                         onSort={canSort(() => handleSort('ModifyTime'))}
                     >
-                        {c('TableHeader').t`Trashed`}
+                        {c('TableHeader').t`Deleted`}
                     </TableHeaderCell>
                 )}
                 {columns.includes('size') && (
