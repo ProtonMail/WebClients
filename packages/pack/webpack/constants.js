@@ -21,7 +21,8 @@ const BABEL_INCLUDE_NODE_MODULES = [
     'get-random-values',
     'sieve.js',
     'pm-srp',
-    'react-components'
+    'react-components',
+    'idb'
 ];
 const BABEL_EXCLUDE_FILES = ['mailparser.js'];
 
