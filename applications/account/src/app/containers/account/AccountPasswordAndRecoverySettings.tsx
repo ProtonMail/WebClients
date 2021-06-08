@@ -7,8 +7,10 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 
 export const getPasswordAndRecoveryPage = ({ user }: { user: UserModel }) => {
+    const hasRecoveryOptions = user.isPrivate;
+
     return {
-        text: c('Title').t`Password & recovery`,
+        text: hasRecoveryOptions ? c('Title').t`Password & recovery` : c('Title').t`Password`,
         to: '/authentication',
         icon: 'keys',
         subsections: [
@@ -16,7 +18,7 @@ export const getPasswordAndRecoveryPage = ({ user }: { user: UserModel }) => {
                 text: c('Title').t`Passwords`,
                 id: 'passwords',
             },
-            {
+            hasRecoveryOptions && {
                 text: c('Title').t`Recovery & notification`,
                 id: 'email',
             },
@@ -44,8 +46,8 @@ const AccountPasswordAndRecoverySettings = ({ location, setActiveSection, user }
             setActiveSection={setActiveSection}
         >
             <PasswordsSection open={action === 'change-password'} />
-            <RecoveryMethodsSection />
-            <DeleteSection />
+            {user.isPrivate && <RecoveryMethodsSection />}
+            {user.canPay && <DeleteSection />}
         </PrivateMainSettingsAreaWithPermissions>
     );
 };
