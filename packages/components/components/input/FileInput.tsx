@@ -17,7 +17,7 @@ const FileInput = (
     const combinedRef = useCombinedRefs(inputRef, ref);
 
     return (
-        <ButtonLike as="label" htmlFor={id}>
+        <ButtonLike as="label" htmlFor={id} className={className}>
             <input
                 id={id}
                 type="file"
