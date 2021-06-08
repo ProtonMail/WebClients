@@ -14,7 +14,7 @@ interface AddressesProps {
 const Addresses = ({ isOnlySelf, organization }: AddressesProps) => {
     const [user] = useUser();
 
-    return user.isAdmin ? (
+    return user.isAdmin && user.hasPaidMail ? (
         <AddressesWithMembers isOnlySelf={isOnlySelf} user={user} organization={organization} />
     ) : (
         <AddressesWithUser user={user} />
