@@ -80,3 +80,16 @@ export const getScrollParent = (element: HTMLElement | null | undefined, include
  * so we take the body computed font size and find computed root's one
  */
 export const rootFontSize = (parseInt(window.getComputedStyle(document.body).fontSize, 10) * 16) / 14;
+
+/**
+ * Firefox <58 does not support block: 'nearest' and just throws
+ */
+export const scrollIntoView = (element: HTMLElement | undefined | null, extra?: boolean | ScrollIntoViewOptions) => {
+    if (!element) {
+        return;
+    }
+    try {
+        element.scrollIntoView(extra);
+        // eslint-disable-next-line no-empty
+    } catch (e) {}
+};
