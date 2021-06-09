@@ -32,7 +32,7 @@ function main({
             const error = hint?.originalException;
             const stack = typeof error === 'string' ? error : error?.stack;
             // Filter out broken ferdi errors
-            if (stack && stack.match(/ferdi/i)) {
+            if (stack && stack.match(/ferdi|franz/i)) {
                 return null;
             }
             return event;
