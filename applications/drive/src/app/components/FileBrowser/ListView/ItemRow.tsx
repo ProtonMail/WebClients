@@ -90,11 +90,7 @@ const ItemRow = ({
         );
     };
 
-    const showShareOnHover = (
-        item.Type === LinkType.FILE
-        && item.Trashed === null
-        && !item.SharedUrl
-    );
+    const showShareOnHover = item.Type === LinkType.FILE && item.Trashed === null && !item.SharedUrl;
 
     return (
         <>
@@ -148,19 +144,25 @@ const ItemRow = ({
                     </TableCell>
                 )}
 
-                {isDesktop && columns.includes('modified') && (
+                {columns.includes('modified') && (
                     <TableCell className="m0 w25">
                         <TimeCell time={item.ModifyTime} />
                     </TableCell>
                 )}
 
-                {isDesktop && columns.includes('share_created') && (
+                {columns.includes('trashed') && (
+                    <TableCell className="m0 w25">
+                        <TimeCell time={item.Trashed!} />
+                    </TableCell>
+                )}
+
+                {columns.includes('share_created') && (
                     <TableCell className="m0 w15">
                         {item.SharedUrl?.CreateTime && <TimeCell time={item.SharedUrl.CreateTime} />}
                     </TableCell>
                 )}
 
-                {isDesktop && columns.includes('share_num_access') && (
+                {columns.includes('share_num_access') && (
                     <TableCell className="m0 w15">{shareURL?.NumAccesses || 0}</TableCell>
                 )}
 
