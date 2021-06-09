@@ -17,7 +17,7 @@ export const generateKeySaltAndPassphrase = async (password: string): Promise<{ 
  * @param KeySalts - KeySalts as received from the API
  */
 export const getPrimaryKeyWithSalt = (Keys: Key[] = [], KeySalts: tsKeySalt[] = []) => {
-    const { PrivateKey, ID } = Keys.find(({ Primary }) => Primary === 1) || {};
+    const [{ ID, PrivateKey } = { ID: '', PrivateKey: '' }] = Keys;
     const { KeySalt } = KeySalts.find(({ ID: keySaltID }) => ID === keySaltID) || {};
 
     // Not verifying that KeySalt exists because of old auth versions.
