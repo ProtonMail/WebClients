@@ -53,6 +53,8 @@ function main({
             'No network connection',
             'webkitExitFullScreen', // Bug in Firefox for iOS.
             'InactiveSession',
+            /chrome-extension/,
+            /moz-extension/,
         ],
     });
 
