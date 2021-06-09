@@ -8,19 +8,17 @@ import { useApi, useCache, useOrganization, useDomains, useModals, useLoading } 
 import DomainModal from './DomainModal';
 import DomainsTable from './DomainsTable';
 import RestoreAdministratorPrivileges from '../organization/RestoreAdministratorPrivileges';
-import useDomainsAddresses from '../../hooks/useDomainsAddresses';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 
 const DomainsSection = () => {
     const api = useApi();
     const cache = useCache();
     const [domains, loadingDomains] = useDomains();
-    const [domainsAddressesMap, loadingDomainsAddressesMap] = useDomainsAddresses(domains);
     const [organization, loadingOrganization] = useOrganization();
     const [loading, withLoading] = useLoading();
     const { createModal } = useModals();
 
-    if (loadingDomains || loadingDomainsAddressesMap || loadingOrganization) {
+    if (loadingDomains || loadingOrganization) {
         return <Loader />;
     }
 
@@ -44,7 +42,7 @@ const DomainsSection = () => {
                 <Button loading={loading} onClick={() => withLoading(handleRefresh())}>{c('Action')
                     .t`Refresh status`}</Button>
             </div>
-            {!domains.length ? null : <DomainsTable domains={domains} domainsAddressesMap={domainsAddressesMap} />}
+            {!domains.length ? null : <DomainsTable domains={domains} />}
             <div className="mb1 color-weak">
                 {UsedDomains} / {MaxDomains} {c('Info').ngettext(msgid`domain used`, `domains used`, UsedDomains)}
             </div>
