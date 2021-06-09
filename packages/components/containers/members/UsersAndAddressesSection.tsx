@@ -32,7 +32,6 @@ import MemberRole from './MemberRole';
 import RestoreAdministratorPrivileges from '../organization/RestoreAdministratorPrivileges';
 import MemberModal from './MemberModal';
 import { getOrganizationKeyInfo } from '../organization/helpers/organizationKeysHelper';
-import useDomainsAddresses from '../../hooks/useDomainsAddresses';
 import Avatar from '../../components/avatar';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 
@@ -80,7 +79,6 @@ const UsersAndAddressesSection = () => {
     const [organization, loadingOrganization] = useOrganization();
     const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
     const [domains, loadingDomains] = useDomains();
-    const [domainsAddressesMap, loadingDomainAddresses] = useDomainsAddresses(domains);
     const [memberAddressesMap, loadingMemberAddresses] = useMemberAddresses(members);
     const [keywords, setKeywords] = useState('');
 
@@ -121,12 +119,7 @@ const UsersAndAddressesSection = () => {
         }
 
         createModal(
-            <MemberModal
-                organization={organization}
-                organizationKey={organizationKey}
-                domains={verifiedDomains}
-                domainsAddressesMap={domainsAddressesMap}
-            />
+            <MemberModal organization={organization} organizationKey={organizationKey} domains={verifiedDomains} />
         );
     };
 
@@ -192,7 +185,7 @@ const UsersAndAddressesSection = () => {
             <Block className="flex flex-align-items-start">
                 <Button
                     shape="outline"
-                    disabled={loadingOrganization || loadingDomains || loadingDomainAddresses || loadingOrganizationKey}
+                    disabled={loadingOrganization || loadingDomains || loadingOrganizationKey}
                     onClick={handleAddUser}
                     className="on-mobile-mb0-5 mr1"
                 >
@@ -201,9 +194,7 @@ const UsersAndAddressesSection = () => {
                 <div className="flex-item-fluid mb1 mr1">
                     <Button
                         shape="outline"
-                        disabled={
-                            loadingOrganization || loadingDomains || loadingDomainAddresses || loadingOrganizationKey
-                        }
+                        disabled={loadingOrganization || loadingDomains || loadingOrganizationKey}
                         onClick={handleAddAddress}
                         className="on-mobile-mb0-5"
                     >

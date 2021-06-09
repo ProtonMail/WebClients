@@ -7,7 +7,7 @@ import DomainStatus from './DomainStatus';
 import DomainActions from './DomainActions';
 import DomainName from './DomainName';
 
-const DomainsTable = ({ domains = [], domainsAddressesMap = {}, loading = false }) => {
+const DomainsTable = ({ domains = [], loading = false }) => {
     return (
         <Table className="simple-table--has-actions">
             <TableHeader
@@ -19,14 +19,13 @@ const DomainsTable = ({ domains = [], domainsAddressesMap = {}, loading = false 
             />
             <TableBody loading={loading} colSpan={4}>
                 {domains.map((domain) => {
-                    const domainAddresses = domainsAddressesMap[domain.ID] || [];
                     return (
                         <TableRow
                             key={domain.ID}
                             cells={[
                                 <DomainName domain={domain} />,
-                                <DomainStatus domain={domain} domainAddresses={domainAddresses} />,
-                                <DomainActions domain={domain} domainAddresses={domainAddresses} />,
+                                <DomainStatus domain={domain} domainAddresses={domain.addresses} />,
+                                <DomainActions domain={domain} domainAddresses={domain.addresses} />,
                             ]}
                         />
                     );
@@ -38,7 +37,6 @@ const DomainsTable = ({ domains = [], domainsAddressesMap = {}, loading = false 
 
 DomainsTable.propTypes = {
     domains: PropTypes.array,
-    domainsAddressesMap: PropTypes.object,
     loading: PropTypes.bool,
 };
 
