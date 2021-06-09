@@ -9,6 +9,11 @@ import { SortKeys } from '../../interfaces/link';
 import useDriveSorting from '../../hooks/drive/useDriveSorting';
 import { FileBrowserItem } from '../FileBrowser/interfaces';
 
+export interface DriveSortParams {
+    sortField: SortKeys;
+    sortOrder: SORT_DIRECTION;
+}
+
 interface DriveContentProviderState {
     contents: FileBrowserItem[];
     loadNextPage: () => void;
