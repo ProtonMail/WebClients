@@ -21,6 +21,11 @@ export interface TransferMeta {
     size?: number;
 }
 
+export interface TransferSummary {
+    size: number;
+    progress: number;
+}
+
 export class TransferCancel extends Error {
     constructor(options: { id: string } | { message: string }) {
         super('id' in options ? `Transfer ${options.id} canceled` : options.message);
