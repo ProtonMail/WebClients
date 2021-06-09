@@ -21,6 +21,7 @@ interface Props {
     inputFocusRef?: MutableRefObject<() => void>;
     placeholder?: string;
     expanded?: boolean;
+    dataTestId?: string;
 }
 
 const AddressesInput = ({
@@ -31,6 +32,7 @@ const AddressesInput = ({
     inputFocusRef,
     placeholder,
     expanded = false,
+    dataTestId,
 }: Props) => {
     const { contactsMap: contactEmailsMap, groupsWithContactsMap } = useContactCache();
     const { getRecipientsOrGroups } = useRecipientLabel();
@@ -168,7 +170,7 @@ const AddressesInput = ({
                         placeholder={recipients.length > 0 ? '' : placeholder}
                         hasEmailPasting
                         hasAddOnBlur
-                        data-testid="composer:to"
+                        data-testid={dataTestId}
                     />
                 </div>
             </div>

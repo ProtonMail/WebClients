@@ -17,6 +17,7 @@ const SendWithExpirationModal = ({ emails, onSubmit, onClose, ...rest }: Props) 
         <FormModal
             title={c('Title').t`Send without expiration?`}
             submit={c('Action').t`Send anyway`}
+            data-testid="composer:send-anyway"
             onSubmit={handleSubmit}
             onClose={onClose}
             {...rest}
