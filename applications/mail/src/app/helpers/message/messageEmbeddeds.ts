@@ -143,10 +143,8 @@ export const replaceEmbeddedAttachments = (
  */
 export const removeEmbeddedHTML = (document: Element, attachment: Attachment) => {
     const cid = readCID(attachment);
-    const nodes = document.querySelectorAll(
-        `img[src="cid:${cid}"], img[data-embedded-img="cid:${cid}"], img[data-embedded-img="${cid}"]`
-    );
-    [...nodes].map((node) => node.remove());
+    const elements = findEmbedded(cid, document);
+    elements.map((node) => node.remove());
 };
 
 /**
