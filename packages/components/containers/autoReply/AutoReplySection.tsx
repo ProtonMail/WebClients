@@ -130,24 +130,54 @@ const AutoReplySection = () => {
         ],
     ]);
 
+    const renderForm = () => (
+        <form
+            onSubmit={async (e) => {
+                e.preventDefault();
+                await withUpdatingLoading(handleSubmit());
+            }}
+        >
+            <DurationField value={model.duration} onChange={updateModel('duration')} />
+
+            {formRenderer(model.duration)}
+
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <label className="text-semibold" onClick={() => editorRef.current?.focus()}>
+                        {c('Label').t`Message`}
+                    </label>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight>
+                    <div ref={composerRef} tabIndex={-1} className="w100">
+                        <SimpleSquireEditor
+                            ref={editorRef}
+                            supportImages={false}
+                            onReady={handleEditorReady}
+                            onChange={updateModel('message')}
+                            keydownHandler={squireKeydownHandler}
+                        />
+                    </div>
+
+                    <Button
+                        color="norm"
+                        type="submit"
+                        disabled={updatingLoading}
+                        loading={updatingLoading}
+                        className="mt1"
+                    >
+                        {c('Action').t`Save`}
+                    </Button>
+                </SettingsLayoutRight>
+            </SettingsLayout>
+        </form>
+    );
+
     return (
         <SettingsSectionWide className="no-scroll">
-            {hasPaidMail ? (
-                <SettingsParagraph className="mt0 mb1">
-                    {c('Info')
-                        .t`Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.`}
-                </SettingsParagraph>
-            ) : (
-                <Card className="flex flex-align-items-center mb1">
-                    <p className="m0 mr2 flex-item-fluid">
-                        {c('Info')
-                            .t`Upgrade to ProtonMail Professional to enable automatic replies for when you are out of the office.`}
-                    </p>
-                    <ButtonLike color="norm" as={SettingsLink} path="/dashboard">
-                        {c('Action').t`Upgrade`}
-                    </ButtonLike>
-                </Card>
-            )}
+            <SettingsParagraph className="mt0 mb1">
+                {c('Info')
+                    .t`Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.`}
+            </SettingsParagraph>
 
             <SettingsLayout>
                 <SettingsLayoutLeft>
@@ -167,47 +197,19 @@ const AutoReplySection = () => {
                 </SettingsLayoutRight>
             </SettingsLayout>
 
-            {hasPaidMail && isEnabled ? (
-                <form
-                    onSubmit={async (e) => {
-                        e.preventDefault();
-                        await withUpdatingLoading(handleSubmit());
-                    }}
-                >
-                    <DurationField value={model.duration} onChange={updateModel('duration')} />
-
-                    {formRenderer(model.duration)}
-
-                    <SettingsLayout>
-                        <SettingsLayoutLeft>
-                            <label className="text-semibold" onClick={() => editorRef.current?.focus()}>
-                                {c('Label').t`Message`}
-                            </label>
-                        </SettingsLayoutLeft>
-                        <SettingsLayoutRight>
-                            <div ref={composerRef} tabIndex={-1} className="w100">
-                                <SimpleSquireEditor
-                                    ref={editorRef}
-                                    supportImages={false}
-                                    onReady={handleEditorReady}
-                                    onChange={updateModel('message')}
-                                    keydownHandler={squireKeydownHandler}
-                                />
-                            </div>
-
-                            <Button
-                                color="norm"
-                                type="submit"
-                                disabled={updatingLoading}
-                                loading={updatingLoading}
-                                className="mt1"
-                            >
-                                {c('Action').t`Save`}
-                            </Button>
-                        </SettingsLayoutRight>
-                    </SettingsLayout>
-                </form>
-            ) : null}
+            {hasPaidMail ? (
+                isEnabled && renderForm()
+            ) : (
+                <Card className="flex flex-align-items-center mt2">
+                    <p className="m0 mr2 flex-item-fluid">
+                        {c('Info')
+                            .t`Upgrade to a Visionary or Professional plan to enable automatic replies for when you are out of the office.`}
+                    </p>
+                    <ButtonLike color="norm" as={SettingsLink} path="/dashboard">
+                        {c('Action').t`Upgrade`}
+                    </ButtonLike>
+                </Card>
+            )}
         </SettingsSectionWide>
     );
 };
