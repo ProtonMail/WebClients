@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { c } from 'ttag';
 
 interface Props {
     filename?: string;
@@ -22,11 +23,13 @@ const PDFPreview = ({ filename = 'preview.pdf', contents }: Props) => {
             {url && (
                 <object
                     data={url}
-                    className="w100 flex-no-min-children flex-item-fluid-auto"
+                    className="w100 flex-no-min-children flex-item-fluid-auto flex-column-reverse"
                     type="application/pdf"
                     title={filename}
                 >
                     <embed src={url} className="flex" type="application/pdf" />
+                    <p className="mauto">{c('Info')
+                        .t`This browser does not support previewing PDF documents. Please download the file.`}</p>
                 </object>
             )}
         </>
