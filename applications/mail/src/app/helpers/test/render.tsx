@@ -1,4 +1,4 @@
-import React, { ReactElement, useRef } from 'react';
+import React, { ReactElement, ReactNode, useRef } from 'react';
 import {
     CacheProvider,
     NotificationsProvider,
@@ -46,10 +46,6 @@ export const resetHistory = () => {
 };
 resetHistory();
 
-interface Props {
-    children: JSX.Element;
-}
-
 export const config = {
     APP_NAME: APPS.PROTONMAIL,
     APP_VERSION: 'test-version',
@@ -61,6 +57,10 @@ const mockDomApi = () => {
     window.HTMLElement.prototype.scrollIntoView = jest.fn();
     window.URL.createObjectURL = jest.fn();
 };
+
+interface Props {
+    children: ReactNode;
+}
 
 const TestProvider = ({ children }: Props) => {
     const contentRef = useRef<HTMLDivElement>(null);
@@ -122,7 +122,13 @@ export const render = async (ui: ReactElement, useMinimalCache = true): Promise<
         await tick(); // Should not be necessary, would be better not to use it, but fails without
     };
 
-    return { ...result, rerender };
+    const unmount = () => {
+        // Unmounting the component not the whole context
+        result.rerender(<TestProvider>{null}</TestProvider>);
+        return true;
+    };
+
+    return { ...result, rerender, unmount };
 };
 
 export const renderHook = (callback: (props: any) => any, useMinimalCache = true) => {

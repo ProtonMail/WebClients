@@ -23,8 +23,9 @@ import {
     createAttachment,
     attachmentsCache,
     clearAll,
+    addApiMock,
 } from '../../../helpers/test/helper';
-import { ID, prepareMessage, send } from './Composer.test.helpers';
+import { clickSend, ID, prepareMessage, renderComposer, send, setHTML } from './Composer.test.helpers';
 
 loudRejection();
 
@@ -488,5 +489,33 @@ describe('Composer sending', () => {
         // It's not "wrong", it works with OpenPGP and API accept it
         // But other clients (Android, iOS, Bridge) don't support it so it's critical to use only one key
         expect(decryptResult.signatures.length).toBe(1);
+    });
+
+    it('should ensure squire content before sending', async () => {
+        const content = 'test';
+        const squireContent = 'squire-test';
+
+        const message = prepareMessage({
+            document: createDocument(content),
+            data: { MIMEType: MIME_TYPES.DEFAULT },
+        });
+
+        minimalCache();
+        addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
+        addApiKeys(false, toAddress, []);
+
+        const renderResult = await renderComposer(message.localID, false);
+
+        setHTML(squireContent);
+        addApiMock(`mail/v4/messages/${ID}`, ({ data: { Message } }) => ({ Message }), 'put');
+
+        const sendRequest = await clickSend(renderResult);
+
+        const packages = sendRequest.data.Packages;
+        const pack = packages['text/html'];
+        const sessionKey = readSessionKey(pack.BodyKey);
+        const decryptResult = await decryptMessageLegacy(pack, fromKeys.privateKeys, sessionKey);
+
+        expect(decryptResult.data).toBe(squireContent);
     });
 });

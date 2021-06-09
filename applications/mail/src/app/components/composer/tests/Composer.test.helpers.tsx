@@ -56,8 +56,14 @@ export const prepareMessage = (message: PartialMessageExtended) => {
     return resultMessage as MessageExtendedWithData;
 };
 
-export const renderComposer = (localID: string, useMinimalCache = true) =>
-    render(<Composer {...props} messageID={localID} />, useMinimalCache);
+export const renderComposer = async (localID: string, useMinimalCache = true) => {
+    const renderResult = await render(<Composer {...props} messageID={localID} />, useMinimalCache);
+
+    // onClose will most likely unmount the component, it has to continue working
+    props.onClose.mockImplementation(renderResult.unmount);
+
+    return renderResult;
+};
 
 export const clickSend = async (renderResult: RenderResult) => {
     // Fake timers after render, it breaks rendering, I would love to know why

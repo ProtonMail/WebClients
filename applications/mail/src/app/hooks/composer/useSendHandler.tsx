@@ -78,10 +78,10 @@ export const useSendHandler = ({
             disableAutoClose: true,
         });
 
+        ensureMessageContent();
+
         // Closing the composer instantly, all the send process will be in background
         onClose();
-
-        ensureMessageContent();
 
         try {
             await promiseUpload;
