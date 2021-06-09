@@ -192,6 +192,11 @@
 	}
 }
 
+// if this is empty, we add an non-breakable-space
+.text-keep-space:empty::before {
+	content: '\00a0';
+}
+
 .user-select {
 	user-select: all;
 }
