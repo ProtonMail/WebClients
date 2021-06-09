@@ -2,6 +2,8 @@ import React, { MutableRefObject, useEffect, useState, ReactNode, useMemo, useCa
 import { c } from 'ttag';
 
 import { useHandler, useModals } from '../../../hooks';
+import { classnames } from '../../../helpers';
+
 import Icon from '../../icon/Icon';
 
 import InsertImageModal from '../modals/InsertImageModal';
@@ -162,7 +164,7 @@ const SquireToolbar = ({
                     <SquireToolbarButton
                         onClick={handleBold}
                         aria-pressed={squireInfos.bold}
-                        className="flex-item-noshrink"
+                        className={classnames(['flex-item-noshrink', squireInfos.bold && 'is-active'])}
                         title={c('Action').t`Bold`}
                         tabIndex={-1}
                     >
@@ -171,7 +173,7 @@ const SquireToolbar = ({
                     <SquireToolbarButton
                         onClick={handleItalic}
                         aria-pressed={squireInfos.italic}
-                        className="flex-item-noshrink"
+                        className={classnames(['flex-item-noshrink', squireInfos.italic && 'is-active'])}
                         title={c('Action').t`Italic`}
                         tabIndex={-1}
                     >
@@ -180,7 +182,7 @@ const SquireToolbar = ({
                     <SquireToolbarButton
                         onClick={handleUnderline}
                         aria-pressed={squireInfos.underline}
-                        className="flex-item-noshrink"
+                        className={classnames(['flex-item-noshrink', squireInfos.underline && 'is-active'])}
                         title={c('Action').t`Underline`}
                         tabIndex={-1}
                     >
@@ -192,7 +194,7 @@ const SquireToolbar = ({
                             <SquireToolbarButton
                                 onClick={handleUnorderedList}
                                 aria-pressed={squireInfos.unorderedList}
-                                className="flex-item-noshrink"
+                                className={classnames(['flex-item-noshrink', squireInfos.unorderedList && 'is-active'])}
                                 title={c('Action').t`Unordered list`}
                                 tabIndex={-1}
                             >
@@ -201,7 +203,7 @@ const SquireToolbar = ({
                             <SquireToolbarButton
                                 onClick={handleOrderedList}
                                 aria-pressed={squireInfos.orderedList}
-                                className="flex-item-noshrink"
+                                className={classnames(['flex-item-noshrink', squireInfos.orderedList && 'is-active'])}
                                 title={c('Action').t`Ordered list`}
                                 tabIndex={-1}
                             >
@@ -216,7 +218,7 @@ const SquireToolbar = ({
                             <SquireToolbarButton
                                 onClick={handleBlockquote}
                                 aria-pressed={squireInfos.blockquote}
-                                className="flex-item-noshrink"
+                                className={classnames(['flex-item-noshrink', squireInfos.blockquote && 'is-active'])}
                                 title={c('Action').t`Quote`}
                                 tabIndex={-1}
                             >
