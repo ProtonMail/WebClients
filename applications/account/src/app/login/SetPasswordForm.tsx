@@ -2,7 +2,11 @@ import { c } from 'ttag';
 import React, { useState } from 'react';
 import { PasswordInputTwo, Button, useLoading, useFormErrors, InputFieldTwo } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { confirmPasswordValidator, passwordLengthValidator } from 'proton-shared/lib/helpers/formValidators';
+import {
+    confirmPasswordValidator,
+    getMinPasswordLengthMessage,
+    passwordLengthValidator,
+} from 'proton-shared/lib/helpers/formValidators';
 
 interface Props {
     onSubmit: (newPassword: string) => Promise<void>;
@@ -32,6 +36,7 @@ const SetPasswordForm = ({ onSubmit }: Props) => {
                 id="password"
                 bigger
                 label={c('Label').t`New password`}
+                assistiveText={getMinPasswordLengthMessage()}
                 error={validator([passwordLengthValidator(newPassword)])}
                 disableChange={loading}
                 autoFocus
