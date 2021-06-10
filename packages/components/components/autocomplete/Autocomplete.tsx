@@ -67,7 +67,7 @@ const Autocomplete = <T,>({
                             id={getOptionID(index)}
                             title={text}
                             value={option}
-                            focusOnActive={false}
+                            disableFocusOnActive
                             onChange={handleSelectOption}
                         >
                             <Marks chunks={chunks}>{text}</Marks>
