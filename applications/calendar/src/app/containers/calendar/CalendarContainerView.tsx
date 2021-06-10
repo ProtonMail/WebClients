@@ -225,9 +225,15 @@ const CalendarContainerView = ({
         if (groupsEmailsMap && recipients) {
             return () => {
                 const noContactGroupIDs = selected.filter((groupID) => !groupsEmailsMap[groupID]?.length);
-                const invalidEmailGroupIDs = selected.filter(
-                    (groupID) => !validateEmailAddress(groupsEmailsMap[groupID]?.[0]?.Email || '')
-                );
+                const invalidEmailGroupIDs = selected.filter((groupID) => {
+                    const email = groupsEmailsMap[groupID]?.[0]?.Email;
+
+                    if (!email) {
+                        return false;
+                    }
+
+                    return !validateEmailAddress(email);
+                });
 
                 const getGroupWarningParts = (groupIDs: string[]) => {
                     const names = groupIDs.map((groupID) => groups.find((group) => group.ID === groupID)?.Name);
@@ -335,7 +341,7 @@ const CalendarContainerView = ({
                                             icon
                                             className="mr0-5 inline-flex pt0-5 pb0-5"
                                             onClick={onClick}
-                                            disabled={noSelection}
+                                            disabled={noSelection || !activeCalendars.length}
                                             title={c('Action').t`Create event`}
                                         >
                                             <Icon name="calendar" />
