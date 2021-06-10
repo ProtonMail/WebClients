@@ -82,11 +82,13 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, customActions
                 autoClose={false}
                 originalPlacement="bottom"
                 className="contacts-widget"
-                noMaxWidth
-                noMaxHeight
+                contentProps={{
+                    className: 'flex-no-min-children flex-column flex-nowrap',
+                }}
+                noMaxSize
             >
                 <Tabs
-                    className="flex flex-column flex-nowrap"
+                    className="flex flex-column flex-item-fluid flex-nowrap"
                     containerClassName="contacts-widget-tabs flex-item-noshrink"
                     contentClassNane="flex-item-fluid"
                     tabs={[
