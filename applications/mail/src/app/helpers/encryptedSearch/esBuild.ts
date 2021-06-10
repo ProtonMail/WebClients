@@ -302,6 +302,7 @@ const storeMessagesBatches = async (
     }
 
     let batchCount = 0;
+    let progress = 0;
     while (Messages.length) {
         const storeOutput = await storeMessages(
             Messages,
@@ -334,7 +335,8 @@ const storeMessagesBatches = async (
 
         setItem(`ES:${userID}:Recover`, JSON.stringify(recoveryPoint));
         updateSizeIDB(userID, batchSize);
-        recordProgress(Messages.length);
+        progress += Messages.length;
+        recordProgress(progress);
 
         resultMetadata = await queryMessagesMetadata(
             api,

@@ -208,7 +208,6 @@ export const uncachedSearch = async (
     indexKey: CryptoKey,
     userID: string,
     normalisedSearchParams: NormalisedSearchParams,
-    recordProgressLocal?: (progress: number) => void,
     incrementMessagesSearched?: () => void
 ) => {
     const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
@@ -243,10 +242,6 @@ export const uncachedSearch = async (
                 const { messageForSearch } = splitCachedMessage(messageToSearch);
                 resultsArray.push(messageForSearch);
             }
-        }
-
-        if (recordProgressLocal) {
-            recordProgressLocal(storedData.length);
         }
 
         if (lower[0] === initialTime) {
@@ -335,7 +330,6 @@ export const sortCachedMessages = (firstEl: CachedMessage, secondEl: CachedMessa
 export const cacheDB = async (
     indexKey: CryptoKey,
     userID: string,
-    recordProgressLocal: (progress: number) => void,
     cacheLimit: number = ES_MAX_CACHE,
     beginTime?: number,
     beginOrder?: number
@@ -376,10 +370,6 @@ export const cacheDB = async (
             }
         }
 
-        if (recordProgressLocal) {
-            recordProgressLocal(storedData.length);
-        }
-
         if (lower[0] === initialTime) {
             break;
         }
@@ -402,19 +392,11 @@ export const cacheDB = async (
 export const updateCache = async (
     indexKey: CryptoKey,
     userID: string,
-    recordProgressLocal: (progress: number) => void,
     lastEmail: LastEmail,
     esCache: CachedMessage[],
     cacheLimit: number
 ) => {
-    const { cachedMessages } = await cacheDB(
-        indexKey,
-        userID,
-        recordProgressLocal,
-        cacheLimit,
-        lastEmail.Time,
-        lastEmail.Order
-    );
+    const { cachedMessages } = await cacheDB(indexKey, userID, cacheLimit, lastEmail.Time, lastEmail.Order);
     esCache.push(...cachedMessages);
     esCache.sort(sortCachedMessages);
 };
@@ -458,7 +440,6 @@ const uncachedFromHybrid = async (
     normalisedSearchParams: NormalisedSearchParams,
     getUserKeys: GetUserKeys,
     userID: string,
-    recordProgress: (progress: number, total: number) => void,
     incrementMessagesSearched: () => void
 ) => {
     const indexKey = await getIndexKey(getUserKeys, userID);
@@ -466,11 +447,7 @@ const uncachedFromHybrid = async (
         throw new Error('Key not found');
     }
 
-    const recordProgressLocal = (progress: number) => {
-        recordProgress(progress, total);
-    };
-
-    return uncachedSearch(indexKey, userID, normalisedSearchParams, recordProgressLocal, incrementMessagesSearched);
+    return uncachedSearch(indexKey, userID, normalisedSearchParams, incrementMessagesSearched);
 };
 
 /**
@@ -482,7 +459,6 @@ export const hybridSearch = async (
     isCacheLimited: boolean,
     getUserKeys: GetUserKeys,
     userID: string,
-    recordProgress: (progress: number, total: number) => void,
     incrementMessagesSearched: () => void
 ) => {
     let searchResults: MessageForSearch[] = [];
@@ -507,7 +483,6 @@ export const hybridSearch = async (
                     },
                     getUserKeys,
                     userID,
-                    recordProgress,
                     incrementMessagesSearched
                 );
                 searchResults.push(...uncachedResults);
@@ -520,7 +495,6 @@ export const hybridSearch = async (
             normalisedSearchParams,
             getUserKeys,
             userID,
-            recordProgress,
             incrementMessagesSearched
         );
         searchResults = uncachedResult;

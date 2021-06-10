@@ -148,3 +148,14 @@ export const getTotalMessages = (messageCounts: any) => {
     );
     return Total;
 };
+
+/**
+ * Read whether a previous event catching up failed
+ */
+export const getCatchUpFail = (userID: string) => {
+    const catchUpFail = getItem(`ES:${userID}:CatchUpFail`);
+    if (!catchUpFail) {
+        return false;
+    }
+    return catchUpFail === 'true';
+};

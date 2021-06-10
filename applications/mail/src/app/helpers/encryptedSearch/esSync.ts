@@ -12,7 +12,7 @@ import {
     NormalisedSearchParams,
     StoredCiphertext,
 } from '../../models/encryptedSearch';
-import { AesKeyGenParams, ES_LIMIT, ES_MAX_CACHE, ES_MAX_PAGEBATCH } from '../../constants';
+import { AesKeyGenParams, ES_LIMIT, ES_MAX_CACHE, ES_MAX_PAGEBATCH, PAGE_SIZE } from '../../constants';
 import {
     getNumMessagesDB,
     getOldestMessage,
@@ -174,7 +174,8 @@ export const refreshIndex = async (
 
     // Fetching and preparing all metadata
     const Total = getTotalMessages(messageCounts);
-    const numPages = Math.ceil(Total / ES_LIMIT);
+    const numPages = Math.ceil(Total / PAGE_SIZE);
+    const numBatches = Math.ceil(numPages / ES_MAX_PAGEBATCH);
 
     // IF DB is partial, we want a reference to the oldest message to discriminate whether to update the DB or not
     const count = await getNumMessagesDB(userID);
@@ -184,7 +185,7 @@ export const refreshIndex = async (
     }
 
     // In case of big mailboxes, we don't want all pages at once in memory
-    for (let startPageBatch = 0; startPageBatch < numPages; startPageBatch += ES_MAX_PAGEBATCH) {
+    for (let startPageBatch = 0; startPageBatch < numBatches; startPageBatch++) {
         const startPage = startPageBatch * ES_MAX_PAGEBATCH;
         const endPage = Math.min((startPageBatch + 1) * ES_MAX_PAGEBATCH, numPages);
 
@@ -298,7 +299,7 @@ export const refreshIndex = async (
             }
         }
 
-        recordProgress(ES_MAX_PAGEBATCH * ES_LIMIT, Total);
+        recordProgress(startPageBatch + 1, numBatches);
     }
 
     try {
@@ -365,8 +366,8 @@ export const syncMessageEvents = async (
     const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
     let cacheChanged = false;
     let searchChanged = false;
-    let cacheOldestTime = esCache[0].Time;
-    let cacheOldestOrder = esCache[0].Order;
+    let cacheOldestTime = esCache.length ? esCache[0].Time : 0;
+    let cacheOldestOrder = esCache.length ? esCache[0].Order : 0;
     let cacheSize = sizeOfCache(esCache);
 
     // In case something happens while displaying search results, this function keeps
@@ -602,17 +603,11 @@ export const correctDecryptionErrors = async (
     getMessageKeys: GetMessageKeys,
     recordProgress: (progress: number, total: number) => void
 ) => {
-    let searchResults: MessageForSearch[] = [];
-
-    try {
-        searchResults = await uncachedSearch(indexKey, userID, {
-            labelID: '5',
-            normalisedKeywords: undefined,
-            decryptionError: true,
-        });
-    } catch (error) {
-        return;
-    }
+    const searchResults = await uncachedSearch(indexKey, userID, {
+        labelID: '5',
+        normalisedKeywords: undefined,
+        decryptionError: true,
+    });
 
     if (!searchResults.length) {
         // There are no messages for which decryption failed
@@ -621,27 +616,28 @@ export const correctDecryptionErrors = async (
 
     const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
 
-    const booleanArray = await Promise.all(
-        searchResults.map(async (message) => {
-            return fetchMessage(message.ID, api, getMessageKeys).then(async (newMessage) => {
-                if (!newMessage || newMessage.decryptionError) {
-                    return false;
-                }
-                const newCiphertextToStore = await encryptToDB(newMessage, indexKey);
-                if (!newCiphertextToStore) {
-                    return false;
-                }
+    let newMessagesFound = false;
+    for (let index = 0; index < searchResults.length; index++) {
+        const message = searchResults[index];
+        const newMessage = await fetchMessage(message.ID, api, getMessageKeys);
+        if (!newMessage || newMessage.decryptionError) {
+            continue;
+        }
+        const newCiphertextToStore = await encryptToDB(newMessage, indexKey);
+        if (!newCiphertextToStore) {
+            throw new Error('Failed to encrypt recovered message');
+        }
 
-                recordProgress(1, searchResults.length);
+        recordProgress(index + 1, searchResults.length);
 
-                return storeToDB(newCiphertextToStore, esDB);
-            });
-        })
-    );
+        const success = await storeToDB(newCiphertextToStore, esDB);
+        if (!success) {
+            throw new Error('Failed to store recovered message');
+        }
+        newMessagesFound = true;
+    }
 
     esDB.close();
 
-    return booleanArray.reduce((prev, current) => {
-        return prev || current;
-    });
+    return newMessagesFound;
 };

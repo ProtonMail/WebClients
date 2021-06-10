@@ -77,19 +77,21 @@ interface LabelInfo {
 }
 
 interface ESState {
-    value: number;
+    esProgress: number;
     startTime: number;
     endTime: number;
     oldestTime: number;
-    previousValue: number;
+    esPrevProgress: number;
+    totalIndexingMessages: number;
 }
 
 const defaultESState = {
-    value: 0,
+    esProgress: 0,
     startTime: 0,
     endTime: 0,
     oldestTime: 0,
-    previousValue: 0,
+    esPrevProgress: 0,
+    totalIndexingMessages: 0,
 };
 const UNDEFINED = undefined;
 const AUTO_WILDCARD = undefined;
@@ -165,10 +167,14 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     } = useEncryptedSearchContext();
     const { isBuilding, esEnabled, isDBLimited, isRefreshing } = getESDBStatus();
     const [esState, setESState] = useState<ESState>(defaultESState);
-    const { value, previousValue, startTime, endTime, oldestTime } = esState;
+    const { esProgress, esPrevProgress, startTime, endTime, oldestTime, totalIndexingMessages } = esState;
     let estimatedMinutes = 0;
-    if (value !== 0 && endTime > startTime && startTime !== 0 && value !== previousValue) {
-        estimatedMinutes = Math.ceil((((endTime - startTime) / (value - previousValue)) * (1 - value)) / 60000);
+    let progressValue = 0;
+    if (totalIndexingMessages !== 0 && endTime > startTime && startTime !== 0 && esProgress !== esPrevProgress) {
+        estimatedMinutes = Math.ceil(
+            (((endTime - startTime) / (esProgress - esPrevProgress)) * (totalIndexingMessages - esProgress)) / 60000
+        );
+        progressValue = Math.floor((esProgress / totalIndexingMessages) * 100);
     }
     const abortControllerRef = useRef<AbortController>(new AbortController());
     const { loading: loadingESFeature, feature: esFeature } = useFeature(FeatureCode.EnabledEncryptedSearch);
@@ -228,14 +234,11 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     const setProgress = async () => {
         while (!abortControllerRef.current.signal.aborted) {
             setESState((esState) => {
-                const newValue = getProgressRecorderRef().current;
-                if (esState.value === newValue) {
-                    return esState;
-                }
+                const [esProgress] = getProgressRecorderRef().current;
                 return {
                     ...esState,
                     endTime: performance.now(),
-                    value: newValue,
+                    esProgress,
                 };
             });
             await wait(5 * SECOND);
@@ -256,12 +259,13 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
 
     const startProgress = async () => {
         abortControllerRef.current = new AbortController();
-        const previousValue = getProgressRecorderRef().current;
+        const [esPrevProgress, totalIndexingMessages] = getProgressRecorderRef().current;
         setESState((esState) => {
             return {
                 ...esState,
                 startTime: performance.now(),
-                previousValue,
+                esPrevProgress,
+                totalIndexingMessages,
             };
         });
         await wait(10 * SECOND);
@@ -344,6 +348,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     const showAdvancedSearch = !showEncryptedSearch || showMore;
     const showProgress = indexKeyExists(user.ID) && esEnabled && (isBuilding || isRefreshing);
     const showSubTitleSection = wasIndexingDone(user.ID) && esEnabled && !isRefreshing && isDBLimited;
+    const isEstimating = estimatedMinutes === 0 && esProgress !== totalIndexingMessages;
 
     // Header
     const title = c('Action').t`Search message content`;
@@ -386,23 +391,22 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     );
 
     // Progress indicator
-    const progressStatus = isRefreshing
+    const progressStatus = isEstimating
+        ? c('Info').t`Estimating time remaining...`
+        : isRefreshing
         ? c('Info').t`Updating message content search...`
-        : c('Info').t`Activating message content search...`;
+        : // translator: esProgress is a number representing the current message being fetched, totalIndexingMessages is the total number of message in the mailbox
+          c('Info').jt`Downloading message ${esProgress} out of ${totalIndexingMessages}...`;
     const etaMessage =
-        estimatedMinutes === 0 && value !== 1
-            ? c('Info').t`Estimating time remaining...`
-            : estimatedMinutes <= 1
-            ? c('Info').t`Less than a minute remaining`
+        estimatedMinutes <= 1
+            ? c('Info').t`Estimated time remaining: Less than a minute`
             : // translator: the variable is a positive integer (written in digits) always strictly bigger than 1
               c('Info').ngettext(
-                  msgid`${estimatedMinutes} minute remaining`,
-                  `${estimatedMinutes} minutes remaining`,
+                  msgid`Estimated time remaining: ${estimatedMinutes} minute`,
+                  `Estimated time remaining: ${estimatedMinutes} minutes`,
                   estimatedMinutes
               );
-    const progressBar = (
-        <Progress value={Math.floor(value * 100)} aria-describedby="timeRemaining" className="mt1 mb1" />
-    );
+    const progressBar = <Progress value={progressValue} aria-describedby="timeRemaining" className="mt1 mb1" />;
 
     // Button to show advanced search options
     const showMoreTitle = showMore ? c('Action').t`Show less search options` : c('Action').t`Show more search options`;
@@ -481,7 +485,15 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                                     {progressStatus}
                                 </span>
                                 {progressBar}
-                                <span id="timeRemaining" aria-live="polite" aria-atomic="true" className="color-weak">
+                                <span
+                                    id="timeRemaining"
+                                    aria-live="polite"
+                                    aria-atomic="true"
+                                    className={classnames([
+                                        'color-weak',
+                                        isEstimating ? 'visibility-hidden' : undefined,
+                                    ])}
+                                >
                                     {etaMessage}
                                 </span>
                             </div>

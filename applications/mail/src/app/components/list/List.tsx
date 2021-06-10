@@ -120,8 +120,6 @@ const List = (
                     onFilter={onFilter}
                     filter={filter}
                     conversationMode={conversationMode}
-                    isSearch={isSearch}
-                    loading={loading}
                     mailSettings={mailSettings}
                 />
                 {expectedLength === 0 ? (

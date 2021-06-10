@@ -109,7 +109,7 @@ export interface EncryptedSearchFunctions {
     encryptedSearch: EncryptedSearch;
     cacheIndexedDB: CacheIndexedDB;
     getESDBStatus: () => ESDBStatus;
-    getProgressRecorderRef: () => React.MutableRefObject<number>;
+    getProgressRecorderRef: () => React.MutableRefObject<[number, number]>;
     toggleEncryptedSearch: () => void;
     resumeIndexing: () => Promise<void>;
     pauseIndexing: () => Promise<void>;
