@@ -11,7 +11,7 @@ import { useFocusTrap } from '../focus';
 import useIsClosing from './useIsClosing';
 
 interface ContentProps extends React.HTMLAttributes<HTMLDivElement> {
-    ref: React.RefObject<HTMLDivElement>;
+    ref?: React.RefObject<HTMLDivElement>;
 }
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
@@ -228,8 +228,8 @@ const Dropdown = ({
                 <div
                     ref={contentRef}
                     style={contentStyle}
-                    className={classnames(['dropdown-content'])}
                     {...contentProps}
+                    className={classnames(['dropdown-content', contentProps?.className])}
                 >
                     {children}
                 </div>
