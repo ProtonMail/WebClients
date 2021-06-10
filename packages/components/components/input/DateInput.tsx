@@ -162,6 +162,7 @@ const DateInput = ({
                 isOpen={isOpen}
                 anchorRef={anchorRef}
                 onClose={close}
+                disableDefaultArrowNavigation
             >
                 <LocalizedMiniCalendar
                     date={actualValue}
