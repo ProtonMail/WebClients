@@ -1,17 +1,18 @@
+@use "sass:math";
 @mixin progress-bar-size($size: 0.5em) {
 	height: $size;
-	border-radius: #{$size/2};
+	border-radius: #{math.div($size, 2)};
 
 	&::-webkit-progress-bar {
-		border-radius: #{$size/2};
+		border-radius: #{math.div($size, 2)};
 	}
 
 	&::-webkit-progress-value {
-		border-radius: #{$size/2};
+		border-radius: #{math.div($size, 2)};
 	}
 
 	&::-moz-progress-bar {
-		border-radius: #{$size/2};
+		border-radius: #{math.div($size, 2)};
 	}
 }
 

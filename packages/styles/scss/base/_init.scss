@@ -1,3 +1,4 @@
+@use "sass:math";
 *,
 *::before,
 *::after {
@@ -5,7 +6,7 @@
 }
 
 :root {
-	--px: #{1em / $base-font-size}; // For pixel-based calculation on css variables
+	--px: #{math.div(1em, $base-font-size)}; // For pixel-based calculation on css variables
 }
 
 html {

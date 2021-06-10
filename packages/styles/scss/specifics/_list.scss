@@ -1,3 +1,4 @@
+@use "sass:math";
 /*
  * Items
  * For conversations and contacts lists
@@ -9,7 +10,10 @@ $container-to-width: 3em !default;
 	width: var(
 		--width-conversation-column,
 		calc(
-			(100% + var(--width-sidebar, #{rem($width-sidebar)})) * #{$conversations-column-width/1%/100}
+			(100% + var(--width-sidebar, #{rem($width-sidebar)})) * #{math.div(
+					$conversations-column-width,
+					math.div(1%, 100)
+				)}
 		)
 	);
 }

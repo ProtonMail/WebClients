@@ -1,3 +1,4 @@
+@use "sass:math";
 /**
  * Calculate an em value from a px value
  * @param {Number} $px - A value to be converted in em
@@ -5,5 +6,5 @@
  * @return {Number} - The $px value converted in em
  */
 @function em($px, $base: $base-font-size) {
-	@return ($px / $base) * 1em;
+	@return (math.div($px, $base)) * 1em;
 }

@@ -1,3 +1,4 @@
+@use "sass:math";
 $height-wizard: rem(6) !default;
 $size-current-pin: rem(16) !default;
 
@@ -22,8 +23,8 @@ $size-current-pin: rem(16) !default;
 		background-image: radial-gradient(
 			circle,
 			var(--primary) 0,
-			var(--primary) #{$height-wizard/2},
-			transparent #{$height-wizard/2}
+			var(--primary) #{math.div($height-wizard, 2)},
+			transparent #{math.div($height-wizard, 2)}
 		);
 	}
 	&-marker-icon {
@@ -46,8 +47,9 @@ $size-current-pin: rem(16) !default;
 			background-image: linear-gradient(
 				to left,
 				var(--background-strong) 0,
-				var(--background-strong) calc(100% - #{$height-wizard/2}),
-				transparent calc(100% - #{$height-wizard/2})
+				var(--background-strong)
+					calc(100% - #{math.div($height-wizard, 2)}),
+				transparent calc(100% - #{math.div($height-wizard, 2)})
 			);
 		}
 
@@ -78,8 +80,8 @@ $size-current-pin: rem(16) !default;
 				background-image: radial-gradient(
 					circle,
 					var(--primary-contrast) 0,
-					var(--primary-contrast) #{$height-wizard/2},
-					var(--primary) #{$height-wizard/2}
+					var(--primary-contrast) #{math.div($height-wizard, 2)},
+					var(--primary) #{math.div($height-wizard, 2)}
 				);
 			}
 		}
