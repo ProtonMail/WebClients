@@ -262,4 +262,24 @@
 		box-sizing: content-box;
 		border-top: 1px solid var(--border-norm);
 	}
+
+	&-search {
+		position: sticky;
+		top: 0;
+		padding: 1rem;
+		background-color: var(--background-norm);
+		box-shadow: var(--shadow-norm);
+
+		&-no-result {
+			color: var(--text-weak);
+			padding: rem(40) rem(10);
+			letter-spacing: rem(0.25);
+		}
+	}
+
+	&--is-searchable {
+		.dropdown-content::before {
+			content: none;
+		}
+	}
 }
