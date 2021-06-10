@@ -466,6 +466,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         const totalMessages = getTotalFromBuildEvent(userID) || 0;
         const mailboxEmpty = totalMessages === 0;
+        progressRecorderRef.current = [await getNumMessagesDB(userID), totalMessages];
 
         setESDBStatus((esDBStatus) => {
             return {
@@ -489,7 +490,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 return;
             }
 
-            await wait(500);
+            await wait(2000);
         }
 
         // Finalise IndexedDB building by catching up with new messages
