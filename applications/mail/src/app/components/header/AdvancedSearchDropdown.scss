@@ -1,3 +1,4 @@
+@use "sass:math";
 @import '~design-system/scss/config/';
 
 .advanced-search {
@@ -6,7 +7,7 @@
         --max-width: 30em;
 
         @include respond-to(1200, 'min') {
-            --max-width: calc(100vw * #{$conversations-column-width/100%} - 1em);
+            --max-width: calc(100vw * #{math.div($conversations-column-width,100%)} - 1em);
         }
     }
 
