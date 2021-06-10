@@ -10,7 +10,7 @@ import { APPS, SSO_PATHS, UNPAID_STATE, isSSOMode, APPS_CONFIGURATION } from 'pr
 import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
 import { GetActiveSessionsResult } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import { stripLeadingAndTrailingSlash } from 'proton-shared/lib/helpers/string';
-import { ModalsChildren, SSOForkProducer, useApi } from 'react-components';
+import { ModalsChildren, SSOForkProducer, useApi, useClearPaidCookie } from 'react-components';
 import { stripLocalBasenameFromPathname } from 'proton-shared/lib/authentication/pathnameHelper';
 import { getAppHref } from 'proton-shared/lib/apps/helper';
 import { replaceUrl } from 'proton-shared/lib/helpers/browser';
@@ -72,6 +72,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const [activeSessions, setActiveSessions] = useState<LocalSessionResponse[] | undefined>();
     const ignoreAutoRef = useRef(false);
     const [hasBackToSwitch, setHasBackToSwitch] = useState(false);
+    useClearPaidCookie();
 
     const signupSearchParams = useMemo(() => {
         return location.pathname.includes(SSO_PATHS.SIGNUP)
