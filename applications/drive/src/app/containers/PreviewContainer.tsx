@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import { RouteComponentProps, useLocation } from 'react-router-dom';
 
 import { useLoading, usePreventLeave, isPreviewAvailable, FilePreview, NavigationControl } from 'react-components';
 
@@ -16,7 +16,7 @@ import { LinkMeta, LinkType } from '../interfaces/link';
 
 const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; linkId: string }>) => {
     const { shareId, linkId } = match.params;
-    const { navigateToLink } = useNavigate();
+    const { navigateToLink, navigateToSharedURLs } = useNavigate();
     const cache = useDriveCache();
     const downloadControls = useRef<DownloadControls>();
     const { setFolder } = useDriveActiveFolder();
@@ -27,11 +27,15 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
     const [contents, setContents] = useState<Uint8Array[]>();
     const [, setError] = useState();
 
+    const referer = new URLSearchParams(useLocation().search).get('r');
+    const useNavigation = !referer?.startsWith('/shared-urls');
+
     const rootRef = useRef<HTMLDivElement>(null);
 
     const meta = cache.get.linkMeta(shareId, linkId);
     const { sortedList } = useDriveSorting(
-        (sortParams) => (meta && cache.get.childLinkMetas(shareId, meta.ParentLinkID, sortParams)) || []
+        (sortParams) =>
+            (meta && useNavigation && cache.get.childLinkMetas(shareId, meta.ParentLinkID, sortParams)) || []
     );
 
     const linksAvailableForPreview = sortedList.filter(({ MIMEType }) => isPreviewAvailable(MIMEType));
@@ -88,10 +92,14 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
     }, [shareId, linkId]);
 
     const navigateToParent = useCallback(() => {
+        if (referer?.startsWith('/shared-urls')) {
+            navigateToSharedURLs();
+            return;
+        }
         if (meta?.ParentLinkID) {
             navigateToLink(shareId, meta.ParentLinkID, LinkType.FOLDER);
         }
-    }, [meta?.ParentLinkID, shareId]);
+    }, [meta?.ParentLinkID, shareId, referer]);
 
     const onOpen = useCallback(
         ({ LinkID }: LinkMeta) => {

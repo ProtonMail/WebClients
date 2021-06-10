@@ -1,30 +1,31 @@
 import React, { useEffect } from 'react';
 
 import { getDevice } from 'proton-shared/lib/helpers/browser';
-import { ToolbarSeparator, Toolbar, isPreviewAvailable, useActiveBreakpoint } from 'react-components';
+import { ToolbarSeparator, Toolbar, useActiveBreakpoint } from 'react-components';
 
 import useDrive from '../../hooks/drive/useDrive';
 import { useDriveContent } from './DriveContentProvider';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import { DriveFolder } from './DriveFolderProvider';
-import { LinkType } from '../../interfaces/link';
 import {
-    PreviewButton,
-    SortDropdown,
-    DownloadButton,
-    RenameButton,
     DetailsButton,
-    MoveToTrashButton,
-    MoveToFolderButton,
+    DownloadButton,
+    PreviewButton,
+    RenameButton,
+    ShareFileButton,
+    ShareLinkButton,
+} from '../FileBrowser/ToolbarButtons';
+import {
+    ActionsDropdown,
     BackButton,
     CreateNewFolderButton,
+    LayoutDropdown,
+    SortDropdown,
+    MoveToTrashButton,
+    MoveToFolderButton,
+    UploadFileButton,
+    UploadFolderButton,
 } from './ToolbarButtons';
-import UploadFolderButton from './ToolbarButtons/UploadFolderButton';
-import LayoutDropdown from './ToolbarButtons/LayoutDropdown';
-import ActionsDropdown from './ToolbarButtons/ActionsDropdown';
-import GetSecureLinkButton from './ToolbarButtons/GetSecureLinkButton';
-import UploadFileButton from './ToolbarButtons/UploadFileButton';
-import ShareFileButton from './ToolbarButtons/ShareFileButton';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -66,29 +67,21 @@ const DriveToolbar = ({ activeFolder }: Props) => {
             );
         }
 
-        const isMultiSelect = selectedItems.length > 1;
-        const hasFoldersSelected = selectedItems.some((item) => item.Type === LinkType.FOLDER);
-        const isPreviewDisabled =
-            isMultiSelect ||
-            hasFoldersSelected ||
-            !selectedItems[0]?.MIMEType ||
-            !isPreviewAvailable(selectedItems[0].MIMEType);
-
         return (
             <>
-                <PreviewButton disabled={isPreviewDisabled} />
-                <DownloadButton disabled={!selectedItems.length} />
+                <PreviewButton shareId={shareId} selectedItems={selectedItems} />
+                <DownloadButton shareId={shareId} selectedItems={selectedItems} />
                 <ToolbarSeparator />
                 {isNarrow ? (
                     <ActionsDropdown shareId={shareId} />
                 ) : (
                     <>
-                        <RenameButton disabled={isMultiSelect} />
-                        <DetailsButton disabled={isMultiSelect && hasFoldersSelected} />
+                        <RenameButton shareId={shareId} selectedItems={selectedItems} />
+                        <DetailsButton shareId={shareId} selectedItems={selectedItems} />
                         <ToolbarSeparator />
-                        <MoveToTrashButton />
-                        <MoveToFolderButton />
-                        <GetSecureLinkButton shareId={shareId} disabled={isMultiSelect || hasFoldersSelected} />
+                        <MoveToTrashButton sourceFolder={activeFolder} selectedItems={selectedItems} />
+                        <MoveToFolderButton sourceFolder={activeFolder} selectedItems={selectedItems} />
+                        <ShareLinkButton shareId={shareId} selectedItems={selectedItems} />
                     </>
                 )}
             </>

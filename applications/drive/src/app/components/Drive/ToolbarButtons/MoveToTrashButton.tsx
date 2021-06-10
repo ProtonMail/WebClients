@@ -4,24 +4,24 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton, useLoading } from 'react-components';
 
 import useToolbarActions from '../../../hooks/drive/useToolbarActions';
-import { useDriveContent } from '../DriveContentProvider';
+import { DriveFolder } from '../DriveFolderProvider';
+import { FileBrowserItem } from '../../FileBrowser/interfaces';
 
 interface Props {
-    disabled?: boolean;
+    sourceFolder: DriveFolder;
+    selectedItems: FileBrowserItem[];
 }
 
-const MoveToTrashButton = ({ disabled }: Props) => {
+const MoveToTrashButton = ({ sourceFolder, selectedItems }: Props) => {
     const [moveToTrashLoading, withMoveToTrashLoading] = useLoading();
     const { openMoveToTrash } = useToolbarActions();
-    const { fileBrowserControls } = useDriveContent();
-    const { selectedItems } = fileBrowserControls;
 
     return (
         <ToolbarButton
-            disabled={disabled || moveToTrashLoading}
+            disabled={moveToTrashLoading}
             title={c('Action').t`Move to trash`}
             icon={<Icon name="trash" />}
-            onClick={() => withMoveToTrashLoading(openMoveToTrash(selectedItems))}
+            onClick={() => withMoveToTrashLoading(openMoveToTrash(sourceFolder, selectedItems))}
             data-testid="toolbar-trash"
         />
     );

@@ -4,23 +4,22 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from 'react-components';
 
 import useToolbarActions from '../../../hooks/drive/useToolbarActions';
-import { useDriveContent } from '../DriveContentProvider';
+import { FileBrowserItem } from '../interfaces';
+import { noSelection, isMultiSelect, hasFoldersSelected } from './utils';
 
 interface Props {
     shareId: string;
-    disabled?: boolean;
+    selectedItems: FileBrowserItem[];
 }
 
-const GetSecureLinkButton = ({ shareId, disabled }: Props) => {
+const ShareLinkButton = ({ shareId, selectedItems }: Props) => {
     const { openLinkSharing } = useToolbarActions();
-    const { fileBrowserControls } = useDriveContent();
-    const { selectedItems } = fileBrowserControls;
 
     const hasSharedLink = !!selectedItems[0]?.SharedUrl;
 
     return (
         <ToolbarButton
-            disabled={disabled}
+            disabled={noSelection(selectedItems) || isMultiSelect(selectedItems) || hasFoldersSelected(selectedItems)}
             title={hasSharedLink ? c('Action').t`Sharing options` : c('Action').t`Share via link`}
             icon={<Icon name="link" />}
             onClick={() => openLinkSharing(shareId, selectedItems[0])}
@@ -29,4 +28,4 @@ const GetSecureLinkButton = ({ shareId, disabled }: Props) => {
     );
 };
 
-export default GetSecureLinkButton;
+export default ShareLinkButton;

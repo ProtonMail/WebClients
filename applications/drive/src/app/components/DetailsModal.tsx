@@ -3,7 +3,6 @@ import { c } from 'ttag';
 
 import { Row, Label, Field, DialogModal, HeaderModal, InnerModal, FooterModal, PrimaryButton } from 'react-components';
 import { LinkType } from '../interfaces/link';
-import { DriveFolder } from './Drive/DriveFolderProvider';
 import { FileBrowserItem } from './FileBrowser/interfaces';
 import UserNameCell from './FileBrowser/ListView/Cells/UserNameCell';
 import LocationCell from './FileBrowser/ListView/Cells/LocationCell';
@@ -14,8 +13,8 @@ import NameCell from './FileBrowser/ListView/Cells/NameCell';
 import MIMETypeCell from './FileBrowser/ListView/Cells/MIMETypeCell';
 
 interface Props {
+    shareId: string;
     item: FileBrowserItem;
-    activeFolder: DriveFolder;
     onClose?: () => void;
 }
 
@@ -35,7 +34,7 @@ const DetailsRow = ({ label, children }: RowProps) => {
     );
 };
 
-const DetailsModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
+const DetailsModal = ({ shareId, item, onClose, ...rest }: Props) => {
     const modalTitleID = 'details-modal';
     const isFile = item.Type === LinkType.FILE;
     const title = isFile ? c('Title').t`File details` : c('Title').t`Folder details`;
@@ -55,7 +54,7 @@ const DetailsModal = ({ activeFolder, item, onClose, ...rest }: Props) => {
                         <UserNameCell />
                     </DetailsRow>
                     <DetailsRow label={c('Title').t`Location`}>
-                        <LocationCell shareId={activeFolder.shareId} parentLinkId={item.ParentLinkID} />
+                        <LocationCell shareId={shareId} parentLinkId={item.ParentLinkID} />
                     </DetailsRow>
                     <DetailsRow label={c('Title').t`Modified`}>
                         <TimeCell time={item.ModifyTime} />

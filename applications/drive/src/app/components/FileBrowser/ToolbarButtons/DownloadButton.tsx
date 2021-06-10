@@ -4,23 +4,23 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from 'react-components';
 
 import useToolbarActions from '../../../hooks/drive/useToolbarActions';
-import { useDriveContent } from '../DriveContentProvider';
+import { FileBrowserItem } from '../interfaces';
+import { noSelection } from './utils';
 
 interface Props {
-    disabled?: boolean;
+    shareId: string;
+    selectedItems: FileBrowserItem[];
 }
 
-const DownloadButton = ({ disabled }: Props) => {
+const DownloadButton = ({ shareId, selectedItems }: Props) => {
     const { download } = useToolbarActions();
-    const { fileBrowserControls } = useDriveContent();
-    const { selectedItems } = fileBrowserControls;
 
     return (
         <ToolbarButton
-            disabled={disabled}
+            disabled={noSelection(selectedItems)}
             title={c('Action').t`Download`}
             icon={<Icon name="download" />}
-            onClick={() => download(selectedItems)}
+            onClick={() => download(shareId, selectedItems)}
             data-testid="toolbar-download"
         />
     );

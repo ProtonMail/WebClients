@@ -6,6 +6,7 @@ import { ContextMenu, DropdownMenuButton, Icon, isPreviewAvailable } from 'react
 import { FileBrowserItem, FileBrowserLayouts } from './interfaces';
 import { LinkType } from '../../interfaces/link';
 import useToolbarActions from '../../hooks/drive/useToolbarActions';
+import { useDriveActiveFolder } from '../Drive/DriveFolderProvider';
 
 interface Props {
     item: FileBrowserItem;
@@ -49,6 +50,8 @@ const ItemContextMenu = ({
         openStopSharing,
     } = useToolbarActions();
 
+    const { folder } = useDriveActiveFolder();
+
     const isMultiSelect = selectedItems.length > 1;
     const hasFoldersSelected = selectedItems.some((item) => item.Type === LinkType.FOLDER);
     const hasSharedLink = !!selectedItems[0]?.SharedUrl;
@@ -66,28 +69,28 @@ const ItemContextMenu = ({
             name: c('Action').t`Preview`,
             icon: 'read',
             testId: 'context-menu-preview',
-            action: () => preview(item),
+            action: () => preview(shareId, item),
         },
         {
             hidden: false,
             name: c('Action').t`Download`,
             icon: 'download',
             testId: 'context-menu-download',
-            action: () => download(selectedItems),
+            action: () => download(shareId, selectedItems),
         },
         {
             hidden: isMultiSelect,
             name: c('Action').t`Rename`,
             icon: 'file-edit',
             testId: 'context-menu-rename',
-            action: () => openRename(item),
+            action: () => openRename(shareId, item),
         },
         {
             hidden: isMultiSelect,
             name: c('Action').t`Details`,
             icon: 'info',
             testId: 'context-menu-details',
-            action: () => openDetails(item),
+            action: () => openDetails(shareId, item),
         },
         {
             hidden: !isMultiSelect || hasFoldersSelected,
@@ -97,11 +100,11 @@ const ItemContextMenu = ({
             action: () => openFilesDetails(selectedItems),
         },
         {
-            hidden: false,
+            hidden: !folder,
             name: c('Action').t`Move to folder`,
             icon: 'arrow-cross',
             testId: 'context-menu-move',
-            action: () => openMoveToFolder(selectedItems),
+            action: () => folder && openMoveToFolder(folder, selectedItems),
         },
         {
             hidden: isMultiSelect || hasFoldersSelected,
@@ -111,11 +114,11 @@ const ItemContextMenu = ({
             action: () => openLinkSharing(shareId, item),
         },
         {
-            hidden: false,
+            hidden: !folder,
             name: c('Action').t`Move to trash`,
             icon: 'trash',
             testId: 'context-menu-trash',
-            action: () => openMoveToTrash(selectedItems),
+            action: () => folder && openMoveToTrash(folder, selectedItems),
         },
     ];
 
@@ -137,6 +140,41 @@ const ItemContextMenu = ({
     ];
 
     const shareMenuItems = [
+        {
+            hidden: isPreviewHidden,
+            name: c('Action').t`Preview`,
+            icon: 'read',
+            testId: 'context-menu-preview',
+            action: () => preview(shareId, item),
+        },
+        {
+            hidden: false,
+            name: c('Action').t`Download`,
+            icon: 'download',
+            testId: 'context-menu-download',
+            action: () => download(shareId, selectedItems),
+        },
+        {
+            hidden: isMultiSelect,
+            name: c('Action').t`Rename`,
+            icon: 'file-edit',
+            testId: 'context-menu-rename',
+            action: () => openRename(shareId, item),
+        },
+        {
+            hidden: isMultiSelect,
+            name: c('Action').t`Details`,
+            icon: 'info',
+            testId: 'context-menu-details',
+            action: () => openDetails(shareId, item),
+        },
+        {
+            hidden: !isMultiSelect || hasFoldersSelected,
+            name: c('Action').t`Details`,
+            icon: 'info',
+            testId: 'context-menu-details',
+            action: () => openFilesDetails(selectedItems),
+        },
         {
             hidden: isMultiSelect,
             name: c('Action').t`Sharing options`,

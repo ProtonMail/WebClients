@@ -4,26 +4,25 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from 'react-components';
 
 import useToolbarActions from '../../../hooks/drive/useToolbarActions';
-import { useDriveContent } from '../DriveContentProvider';
+import { FileBrowserItem } from '../interfaces';
+import { noSelection, isMultiSelect, hasFoldersSelected } from './utils';
 
 interface Props {
-    disabled?: boolean;
+    shareId: string;
+    selectedItems: FileBrowserItem[];
 }
 
-const DetailsButton = ({ disabled }: Props) => {
+const DetailsButton = ({ shareId, selectedItems }: Props) => {
     const { openDetails, openFilesDetails } = useToolbarActions();
-
-    const { fileBrowserControls } = useDriveContent();
-    const { selectedItems } = fileBrowserControls;
 
     return (
         <ToolbarButton
-            disabled={disabled}
+            disabled={noSelection(selectedItems) || (isMultiSelect(selectedItems) && hasFoldersSelected(selectedItems))}
             title={c('Action').t`Details`}
             icon={<Icon name="info" />}
             onClick={() => {
                 if (selectedItems.length === 1) {
-                    openDetails(selectedItems[0]);
+                    openDetails(shareId, selectedItems[0]);
                 } else if (selectedItems.length > 1) {
                     openFilesDetails(selectedItems);
                 }
