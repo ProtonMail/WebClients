@@ -11,13 +11,14 @@ import {
 import { queryConversations, getConversation } from 'proton-shared/lib/api/conversations';
 import { queryMessageMetadata, getMessage } from 'proton-shared/lib/api/messages';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
-import { toMap } from 'proton-shared/lib/helpers/object';
+import { toMap, omit } from 'proton-shared/lib/helpers/object';
 import { ConversationCountsModel, MessageCountsModel } from 'proton-shared/lib/models';
 import { LabelCount } from 'proton-shared/lib/interfaces/Label';
 import { noop } from 'proton-shared/lib/helpers/function';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { STATUS } from 'proton-shared/lib/models/cache';
 import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
+import { captureMessage } from 'proton-shared/lib/helpers/sentry';
 import {
     sort as sortElements,
     hasLabel,
@@ -436,7 +437,8 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             elements.length !== expectedLength
         ) {
             if (!esEnabled) {
-                console.error('Elements list inconsistency error', {
+                const message = 'Elements list inconsistency error';
+                const context = {
                     conversationMode,
                     labelID,
                     search,
@@ -445,8 +447,11 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                     filter,
                     total,
                     expectedLength,
-                    cache,
-                });
+                    cache: omit(cache, ['elements']),
+                    ...cache.elements, // Sentry limit depth in extra data, this optimize our feedback
+                };
+                captureMessage(message, { extra: { context } });
+                console.error(message, context);
             }
             resetCache(cache.retry, !esEnabled && isSearch(search));
         }
