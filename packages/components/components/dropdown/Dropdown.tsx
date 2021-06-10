@@ -19,7 +19,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode;
     className?: string;
     style?: CSSProperties;
-    onClose?: () => void;
+    onClose?: (event?: React.MouseEvent<HTMLDivElement> | Event) => void;
     onClosed?: () => void;
     onContextMenu?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
     originalPlacement?: string;
@@ -82,9 +82,9 @@ const Dropdown = ({
         offset,
     });
 
-    const handleClickContent = () => {
+    const handleClickContent = (event: React.MouseEvent<HTMLDivElement>) => {
         if (autoClose) {
-            onClose();
+            onClose(event);
         }
     };
 

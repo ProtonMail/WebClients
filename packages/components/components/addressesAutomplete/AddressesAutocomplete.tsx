@@ -219,7 +219,7 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
                                 id={getOptionID(index)}
                                 title={option.label}
                                 value={option}
-                                focusOnActive={false}
+                                disableFocusOnActive
                                 onChange={handleSelect}
                             >
                                 {option.type === 'group' ? (
