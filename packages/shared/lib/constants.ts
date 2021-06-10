@@ -756,6 +756,17 @@ export const MAJOR_DOMAINS = [
     'yahoo.com',
 ];
 
+export const PROTON_DOMAINS = [
+    'protonmail.com',
+    'protonmail.ch',
+    'protonvpn.com',
+    'protonstatus.com',
+    'gdpr.eu',
+    'protonvpn.net',
+    'pm.me',
+    'protonirockerxow.onion',
+];
+
 export enum LINK_TYPES {
     WEB = 'web',
     EMAIL = 'email',
