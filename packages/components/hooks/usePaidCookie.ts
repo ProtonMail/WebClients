@@ -26,4 +26,18 @@ const usePaidCookie = () => {
     }, [user]);
 };
 
+export const useClearPaidCookie = () => {
+    useEffect(() => {
+        if (getCookie(COOKIE_NAME) === '1') {
+            setCookie({
+                cookieName: COOKIE_NAME,
+                cookieValue: undefined,
+                cookieDomain,
+                expirationDate: new Date(0).toUTCString(),
+                path: '/',
+            });
+        }
+    }, []);
+};
+
 export default usePaidCookie;

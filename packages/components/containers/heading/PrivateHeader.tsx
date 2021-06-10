@@ -3,7 +3,7 @@ import { APPS } from 'proton-shared/lib/constants';
 import { c } from 'ttag';
 
 import { AppLink, Hamburger, Icon, SettingsLink } from '../../components';
-import { useConfig, useUser, usePaidCookie } from '../../hooks';
+import { useConfig, useUser } from '../../hooks';
 import Header, { Props as HeaderProps } from '../../components/header/Header';
 
 import UserDropdown from './UserDropdown';
@@ -48,7 +48,6 @@ const PrivateHeader = ({
 }: Props) => {
     const [{ hasPaidMail, hasPaidVpn }] = useUser();
     const { APP_NAME } = useConfig();
-    usePaidCookie();
 
     if (backUrl) {
         return (
