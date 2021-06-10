@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef } from 'react';
+import React, { useState, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 import { Recipient } from 'proton-shared/lib/interfaces';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
@@ -33,7 +33,6 @@ const ContactsWidgetContainer = ({ onClose, onImport, onCompose, customActions }
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const api = useApi();
-    const mergeContactBannerRef = useRef<HTMLDivElement>(null);
 
     const [search, setSearch] = useState('');
 
@@ -190,7 +189,7 @@ const ContactsWidgetContainer = ({ onClose, onImport, onCompose, customActions }
 
     const loading = loadingContacts || loadingUser || loadingUserSettings || loadingUserKeys;
     const showPlaceholder = !loading && !contactsCount;
-    const showList = !showPlaceholder;
+    const showList = !loading && !showPlaceholder;
 
     return (
         <div className="flex flex-column flex-nowrap h100">
@@ -228,6 +227,7 @@ const ContactsWidgetContainer = ({ onClose, onImport, onCompose, customActions }
                     onClose={onClose}
                 />
             </div>
+            {showList && countMergeableContacts ? <MergeContactBanner onMerge={() => handleMerge(true)} /> : null}
             <div className="flex-item-fluid w100">
                 {loading ? (
                     <div className="flex h100">
@@ -243,29 +243,20 @@ const ContactsWidgetContainer = ({ onClose, onImport, onCompose, customActions }
                     />
                 ) : null}
                 {showList ? (
-                    <>
-                        {countMergeableContacts ? (
-                            <MergeContactBanner
-                                mergeContactBannerRef={mergeContactBannerRef}
-                                onMerge={() => handleMerge(true)}
-                            />
-                        ) : null}
-                        <ContactsList
-                            contactID={contactID}
-                            totalContacts={contactsLength}
-                            contacts={formattedContacts}
-                            contactGroupsMap={contactGroupsMap}
-                            user={user}
-                            userSettings={userSettings}
-                            onCheckOne={handleCheckOne}
-                            isDesktop={false}
-                            checkedIDs={checkedIDs}
-                            onCheck={handleCheck}
-                            onClick={handleDetails}
-                            activateDrag={false}
-                            mergeContactBannerRef={mergeContactBannerRef}
-                        />
-                    </>
+                    <ContactsList
+                        contactID={contactID}
+                        totalContacts={contactsLength}
+                        contacts={formattedContacts}
+                        contactGroupsMap={contactGroupsMap}
+                        user={user}
+                        userSettings={userSettings}
+                        onCheckOne={handleCheckOne}
+                        isDesktop={false}
+                        checkedIDs={checkedIDs}
+                        onCheck={handleCheck}
+                        onClick={handleDetails}
+                        activateDrag={false}
+                    />
                 ) : null}
             </div>
         </div>
