@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, ChangeEvent, useState } from 'react';
+import React, { useEffect, useRef, ChangeEvent } from 'react';
 import { DENSITY } from 'proton-shared/lib/constants';
 import { List, AutoSizer } from 'react-virtualized';
 import { ContactFormatted, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
@@ -22,7 +22,6 @@ interface Props {
     checkedIDs: string[];
     onClick: (contactID: string) => void;
     activateDrag?: boolean;
-    mergeContactBannerRef?: React.RefObject<HTMLDivElement>;
 }
 
 const ContactsList = ({
@@ -38,19 +37,10 @@ const ContactsList = ({
     checkedIDs,
     onClick,
     activateDrag = true,
-    mergeContactBannerRef,
 }: Props) => {
     const listRef = useRef<List>(null);
     const containerRef = useRef(null);
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
-    const [mergeContactBannerHeight, setMergeContactBannerHeight] = useState(0);
-
-    // Used to calculate the height of the Autosizer when the mergeContactBanner is displayed
-    useEffect(() => {
-        if (mergeContactBannerRef && mergeContactBannerRef.current) {
-            setMergeContactBannerHeight(mergeContactBannerRef.current.clientHeight);
-        }
-    }, [mergeContactBannerRef?.current]);
 
     useEffect(() => {
         const timeoutID = setTimeout(() => {
@@ -110,8 +100,8 @@ const ContactsList = ({
                                 />
                             )}
                             rowCount={contacts.length}
-                            height={mergeContactBannerHeight ? height - mergeContactBannerHeight : height}
-                            width={width - 1}
+                            height={height}
+                            width={width}
                             rowHeight={isCompactView ? contactRowHeightCompact : contactRowHeightComfort}
                         />
                     )}
