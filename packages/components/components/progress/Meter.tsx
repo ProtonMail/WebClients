@@ -38,7 +38,7 @@ export const getMeterColor = (
 ) => {
     const isLow = isBetween(value, min, low);
     const isMid = isBetween(value, low, high);
-    const isHigh = isBetween(value, high, max) || value === max;
+    const isHigh = isBetween(value, high, max) || value >= max;
 
     if (isBetween(optimum, min, low)) {
         if (isHigh) {
@@ -76,7 +76,11 @@ export const getMeterColor = (
         }
     }
 
-    throw new Error(`Misuse of getMeterColor, verify values provided for value, optimum, min, max, low, high`);
+    console.error(
+        `Misuse of getMeterColor, verify values provided for value (${value}), optimum (${optimum}), min (${min}), max (${max}), low (${low}), high (${high})`
+    );
+
+    return 'danger';
 };
 
 const Meter = ({
@@ -107,4 +111,5 @@ const Meter = ({
         </div>
     </div>
 );
+
 export default Meter;
