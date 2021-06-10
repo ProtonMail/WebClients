@@ -17,5 +17,5 @@ export default function useControlled<V>(controlled: V, defaultValue?: V) {
      * type-cast here to ensure that this hook's return type is a tuple
      * instead of an array as typescript seems to interpret it by default
      */
-    return [value, setValueIfUncontrolled] as [V, (v: V) => void];
+    return [value, setValueIfUncontrolled] as const;
 }

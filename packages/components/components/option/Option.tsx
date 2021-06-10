@@ -9,7 +9,8 @@ export interface Props<V> extends Omit<React.ComponentPropsWithoutRef<'button'>,
     selected?: boolean;
     active?: boolean;
     title: string;
-    focusOnActive?: boolean;
+    disableFocusOnActive?: boolean;
+    searchStrings?: string[];
 }
 
 const Option = <V,>({
@@ -20,7 +21,8 @@ const Option = <V,>({
     onChange,
     title,
     children = title,
-    focusOnActive = true,
+    disableFocusOnActive,
+    searchStrings,
     ...rest
 }: Props<V>) => {
     const ref = useRef<HTMLButtonElement | null>(null);
@@ -28,7 +30,7 @@ const Option = <V,>({
 
     useEffect(() => {
         if (!previousActive && active) {
-            if (focusOnActive) {
+            if (!disableFocusOnActive) {
                 ref.current?.focus();
             } else {
                 ref.current?.scrollIntoView({ block: 'center' });
