@@ -1,16 +1,29 @@
 .dropdown {
+	@include respond-to($breakpoint-small, 'min') {
+		--max-height-bounds: calc(100vh - (var(--top) * 1px) - 2px);
+		--max-width-bounds: calc(100vw - (var(--left) * 1px) - 2px);
+	}
+	// On mobile view, left and top are not used
+	@include respond-to($breakpoint-small, 'max') {
+		--max-height-bounds: 100vh;
+		--max-width-bounds: 100vw;
+	}
+
 	&:not(#{&}--no-max-size) {
 		--min-width: 10em;
-		--max-width: 20em;
-		--max-height: 20em;
+		--max-width: min(20em, var(--max-width-bounds));
+		--max-height: min(20em, var(--max-height-bounds));
+	}
+
+	&--no-max-size {
+		--max-height: var(--max-height-bounds);
+		--max-width: var(--max-width-bounds);
 	}
 
 	position: fixed;
 	z-index: 666;
 	color: var(--text-norm);
 	animation: 0.15s ease-out both;
-	// max-height: calc(100% - (var(--top) * 1px) - 2px);
-	// max-width: calc(100% - (var(--left) * 1px) - 2px);
 
 	@include respond-to($breakpoint-small, 'max') {
 		top: 0;
@@ -142,7 +155,9 @@
 	/* Scrollable insides of the dropdown */
 	&-content {
 		height: calc(var(--height) * 1px);
-		min-height: 1em;
+		// The min size can't be greater than the remaining space when the dropdown is positioned
+		min-width: min(var(--min-width, 1.5em), var(--max-width-bounds));
+		min-height: min(var(--min-height, 1em), var(--max-height-bounds));
 		overflow: auto;
 		border-radius: $global-border-radius;
 		background-color: var(--background-norm);
@@ -170,7 +185,6 @@
 
 		@include respond-to($breakpoint-small, 'min') {
 			width: calc(var(--width) * 1px);
-			min-width: var(--min-width, 1.5em);
 			max-width: var(--max-width, unset);
 			max-height: var(--max-height, unset);
 		}
