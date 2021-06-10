@@ -118,7 +118,7 @@ export const processInBatches = async ({
         const batchedEvents = batches[i];
         const [result] = await Promise.all([
             Promise.all(batchedEvents.map((event) => encryptEvent(event, addressKeys, calendarKeys))),
-            wait(100),
+            wait(300),
         ]);
         const { errors, rest: encrypted } = splitErrors(result);
         if (signal.aborted) {
