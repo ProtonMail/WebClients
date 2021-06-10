@@ -31,6 +31,7 @@ const STATE_TO_GROUP_MAP = {
     [TransferState.Finalizing]: TRANSFER_GROUP.ACTIVE,
     [TransferState.Paused]: TRANSFER_GROUP.ACTIVE,
     [TransferState.Canceled]: TRANSFER_GROUP.ACTIVE,
+    [TransferState.NetworkError]: TRANSFER_GROUP.ACTIVE,
     [TransferState.Done]: TRANSFER_GROUP.DONE,
     [TransferState.Error]: TRANSFER_GROUP.DONE,
     [TransferState.Initializing]: TRANSFER_GROUP.QUEUED,
@@ -95,12 +96,12 @@ function TransferManager() {
 
     const latestStats = statsHistory[0];
 
-    const getListEntry = <T extends TransferType>(type: T) => (
-        transfer: T extends TransferType.Download ? Download : Upload
-    ): TransferListEntry<T> => ({
-        transfer,
-        type,
-    });
+    const getListEntry =
+        <T extends TransferType>(type: T) =>
+        (transfer: T extends TransferType.Download ? Download : Upload): TransferListEntry<T> => ({
+            transfer,
+            type,
+        });
 
     const getDownloadListEntry = getListEntry(TransferType.Download);
     const getUploadListEntry = getListEntry(TransferType.Upload);
