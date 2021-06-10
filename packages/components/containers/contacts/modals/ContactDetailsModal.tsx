@@ -12,6 +12,7 @@ import ErrorBoundary from '../../app/ErrorBoundary';
 import GenericError from '../../error/GenericError';
 import FormModal from '../../../components/modal/FormModal';
 import ContactModal from './ContactModal';
+import { PrimaryButton } from '../../../components/button';
 
 interface Props {
     contactID: string;
@@ -58,9 +59,8 @@ const ContactDetailsModal = ({ contactID, onClose = noop, ...rest }: Props) => {
             title={c(`Title`).t`Contact details`}
             loading={isLoading}
             close={c('Action').t`Close`}
-            submit={c('Action').t`Edit`}
+            submit={<PrimaryButton onClick={openContactModal}>{c('Action').t`Edit`}</PrimaryButton>}
             disabled
-            onSubmit={openContactModal}
             onClose={onClose}
             {...rest}
         >
