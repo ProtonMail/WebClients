@@ -34,11 +34,5 @@ export const xorEncryptDecrypt = ({ key, data }: { key: string; data: string }) 
         xored[j] = +Uint8Key[j] ^ +Uint8Data[j];
     }
 
-    // Strip off padding
-    let unpaddedLength = Uint8Data.length;
-    while (unpaddedLength > 0 && xored[unpaddedLength - 1] === 0) {
-        unpaddedLength--;
-    }
-
-    return uint8ArrayToString(xored.slice(0, unpaddedLength));
+    return uint8ArrayToString(xored);
 };
