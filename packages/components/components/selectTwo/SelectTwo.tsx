@@ -186,6 +186,7 @@ const SelectTwo = <V extends any>({
                 noCaret
                 noMaxWidth
                 sameAnchorWidth
+                disableDefaultArrowNavigation
             >
                 <SelectOptions selected={selectedIndex} onKeyDown={handleMenuKeydown} onChange={handleChange}>
                     {children}

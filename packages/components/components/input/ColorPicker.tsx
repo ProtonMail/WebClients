@@ -41,7 +41,14 @@ const ColorPicker = <T extends React.ElementType>({
             >
                 <Icon className="flex-item-noshrink" name="circle" color={iconColor} />
             </DropdownButton>
-            <Dropdown id={uid} isOpen={isOpen} noMaxSize anchorRef={anchorRef} onClose={close}>
+            <Dropdown
+                id={uid}
+                isOpen={isOpen}
+                noMaxSize
+                anchorRef={anchorRef}
+                onClose={close}
+                disableDefaultArrowNavigation
+            >
                 <ColorSelector
                     selected={color}
                     onChange={onChange}

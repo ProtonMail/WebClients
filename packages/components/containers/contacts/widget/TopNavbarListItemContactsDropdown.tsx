@@ -82,10 +82,16 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, customActions
                 autoClose={false}
                 originalPlacement="bottom"
                 className="contacts-widget"
+<<<<<<< HEAD
                 contentProps={{
                     className: 'flex-no-min-children flex-column flex-nowrap',
                 }}
                 noMaxSize
+=======
+                noMaxWidth
+                noMaxHeight
+                disableDefaultArrowNavigation
+>>>>>>> 7ff6427e ([MAILWEB-879] - Dropdown shortcuts navigation)
             >
                 <Tabs
                     className="flex flex-column flex-item-fluid flex-nowrap"
