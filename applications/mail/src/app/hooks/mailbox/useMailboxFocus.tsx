@@ -44,12 +44,11 @@ export const useMailboxFocus = ({ elementIDs, showList, listRef, labelID, isComp
         trashWarning?.focus();
     };
 
-    const focusOnElementByID = (elementID: string) => {
+    const focusOnElementByID = (elementID?: string) => {
+        if (!elementID) {
+            return;
+        }
         const index = elementIDs.findIndex((id) => id === elementID);
-        const element = listRef.current?.querySelector(
-            `[data-shortcut-target="item-container"][data-element-id="${elementID}"]`
-        ) as HTMLElement;
-        element?.focus();
         setFocusIndex(index);
     };
 
@@ -57,19 +56,29 @@ export const useMailboxFocus = ({ elementIDs, showList, listRef, labelID, isComp
         if (labelIDRef.current !== labelID) {
             setFocusIndex(undefined);
             focusedIDRef.current = undefined;
+            labelIDRef.current = labelID;
+            return;
+        }
+
+        if (isComposerOpened || !elementIDs.length) {
+            return;
         }
 
         // keep focus on the same element if new messages are coming in
-        if (
-            !isComposerOpened &&
-            labelIDRef.current === labelID &&
-            focusedIDRef.current &&
-            elementIDs.includes(focusedIDRef.current)
-        ) {
-            focusOnElementByID(focusedIDRef.current);
+        if (focusedIDRef.current && elementIDs.includes(focusedIDRef.current)) {
+            setTimeout(() => focusOnElementByID(focusedIDRef.current));
+            return;
         }
 
-        labelIDRef.current = labelID;
+        // keep focus position when updating the list (moving/deleting items)
+        if (typeof focusIndex !== 'undefined') {
+            if (elementIDs[focusIndex]) {
+                setTimeout(() => focusOnElementByIndex(focusIndex));
+                return;
+            }
+
+            setTimeout(() => focusOnElementByIndex(elementIDs.length - 1));
+        }
     }, [labelID, elementIDs]);
 
     useEffect(() => {
