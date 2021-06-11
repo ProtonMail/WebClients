@@ -164,7 +164,6 @@ export const constructMime = async (
     const html = message.data?.MIMEType !== MIME_TYPES.PLAINTEXT ? prepareExport(message) : undefined;
     const attachments = await fetchMimeDependencies(message, messageKeys, cache, api);
     const embeddeds = message.embeddeds || new Map();
-
     return build(plaintext, html, attachments, embeddeds);
 };
 

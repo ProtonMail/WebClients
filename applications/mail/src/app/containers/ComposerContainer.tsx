@@ -1,7 +1,7 @@
 import React, { ReactNode, useState, useEffect, memo, useRef } from 'react';
 import { useWindowSize, useHandler, useBeforeUnload } from 'react-components';
 import { c } from 'ttag';
-import { updateMessageCache, useMessageCache } from './MessageProvider';
+import { useMessageCache } from './MessageProvider';
 import { Breakpoints, WindowSize } from '../models/utils';
 import { MAX_ACTIVE_COMPOSER_MOBILE, MAX_ACTIVE_COMPOSER_DESKTOP } from '../helpers/composerPositioning';
 import { useCompose } from '../hooks/composer/useCompose';
@@ -36,8 +36,6 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
     const maxActiveComposer = breakpoints.isNarrow ? MAX_ACTIVE_COMPOSER_MOBILE : MAX_ACTIVE_COMPOSER_DESKTOP;
 
     const handleClose = (messageID: string) => () => {
-        updateMessageCache(messageCache, messageID, { inComposer: false });
-
         return setMessageIDs((messageIDs) => {
             const newMessageIDs = messageIDs.filter((id) => id !== messageID);
 

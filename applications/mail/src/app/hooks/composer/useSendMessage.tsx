@@ -172,6 +172,7 @@ export const useSendMessage = () => {
                 updateMessageCache(messageCache, localID, {
                     ...currentMessage,
                     sending: false,
+                    inComposer: false,
                 });
                 void call();
             }

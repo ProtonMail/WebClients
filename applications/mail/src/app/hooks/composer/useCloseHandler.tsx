@@ -8,6 +8,7 @@ import SavingDraftNotification, {
 } from '../../components/notifications/SavingDraftNotification';
 import { MessageExtended } from '../../models/message';
 import { useOnCompose } from '../../containers/ComposeProvider';
+import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 
 export interface UseCloseHandlerParameters {
     modelMessage: MessageExtended;
@@ -36,7 +37,7 @@ export const useCloseHandler = ({
 }: UseCloseHandlerParameters) => {
     const { createNotification, hideNotification } = useNotifications();
     const isMounted = useIsMounted();
-
+    const messageCache = useMessageCache();
     const onCompose = useOnCompose();
 
     // Indicates that the composer is saving a draft
@@ -60,6 +61,7 @@ export const useCloseHandler = ({
         } finally {
             hideNotification(notificationID);
             setSaving(false);
+            updateMessageCache(messageCache, modelMessage.localID, { inComposer: false });
         }
     });
 
@@ -86,6 +88,7 @@ export const useCloseHandler = ({
         try {
             await promiseUpload;
         } catch (error) {
+            updateMessageCache(messageCache, modelMessage.localID, { inComposer: false });
             hideNotification(notificationID);
             setSaving(false);
             throw error;
