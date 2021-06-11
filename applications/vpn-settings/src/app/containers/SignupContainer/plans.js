@@ -43,12 +43,12 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
             upsell: {
                 planName: PLAN.BASIC,
                 features: [
-                    c('Plan Feature').t`High speed 1 Gbps VPN servers`,
                     c('Plan Feature').ngettext(
-                        msgid`17 servers in ${countries.free_vpn.count} country`,
-                        `17 servers in ${countries.free_vpn.count} countries`,
-                        countries.free_vpn.count
+                        msgid`350+ servers in ${countries[PLANS.VPNBASIC].count} country`,
+                        `350+ servers in ${countries[PLANS.VPNBASIC].count}+ countries`,
+                        countries[PLANS.VPNBASIC].count
                     ),
+                    c('Plan Feature').t`High speed`,
                     c('Plan Feature').t`Filesharing/P2P support`,
                 ],
             },
@@ -81,8 +81,8 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
             upsell: {
                 planName: PLAN.PLUS,
                 features: [
-                    c('Plan Feature').t`Highest speed servers (10 Gbps)`,
-                    c('Plan Feature').t`Access blocked content`,
+                    c('Plan Feature').t`Highest speed (up to 10 Gbps)`,
+                    c('Plan Feature').t`Streaming service support`,
                     c('Plan Feature').t`All advanced security features`,
                 ],
             },
