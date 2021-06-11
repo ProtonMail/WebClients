@@ -9,7 +9,6 @@ import runInQueue from 'proton-shared/lib/helpers/runInQueue';
 import { decryptMessage } from '../message/messageDecrypt';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import { locateBlockquote } from '../message/messageBlockquote';
-import { CLASSNAME_SIGNATURE_CONTAINER } from '../message/messageSignature';
 import {
     CachedMessage,
     EncryptedSearchDB,
@@ -72,10 +71,6 @@ export const cleanText = (text: string, removeQuote: boolean) => {
     const styleElements = body.getElementsByTagName('style');
     for (let index = 0; index < styleElements.length; index++) {
         styleElements[index].outerHTML = '';
-    }
-    const userSignatures = body.getElementsByClassName(CLASSNAME_SIGNATURE_CONTAINER);
-    for (let index = 0; index < userSignatures.length; index++) {
-        userSignatures[index].outerHTML = '';
     }
 
     let content = body.innerHTML;
