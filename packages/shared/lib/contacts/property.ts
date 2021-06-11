@@ -1,4 +1,4 @@
-import isTruthy from '../helpers/isTruthy';
+import { range } from '../helpers/array';
 
 const UNESCAPE_REGEX = /\\\\|\\,|\\;/gi;
 const UNESCAPE_EXTENDED_REGEX = /\\\\|\\:|\\,|\\;/gi;
@@ -63,19 +63,21 @@ export const getValue = (property: any, field: string): string | string[] => {
         return val.toString();
     });
 
-    // In some rare situations, ICAL can miss the multiple value nature of an adr field
+    // In some rare situations, ICAL can miss the multiple value nature of an 'adr' or 'org' field
     // It has been reproduced after a contact import from iOS including the address in a group
     // For that specific case, we have to split values manually
-    if (field === 'adr' && typeof values[0] === 'string') {
+    if ((field === 'adr' || field === 'org') && typeof values[0] === 'string') {
         return cleanMultipleValue(values[0]);
     }
 
-    // If one of the adr sections contains unescaped `,`
+    // If one of the adr or org sections contains unescaped `,`
     // ICAL will return a value of type (string | string[])[]
     // Which we don't support later in the code
     // Until we do, we flatten the value by joining these entries
-    if (field === 'adr') {
-        values[0] = (values[0] as (string | string[])[]).map((entry) => (Array.isArray(entry) ? entry.join(', ') : entry));
+    if (field === 'adr' || field === 'org') {
+        values[0] = (values[0] as (string | string[])[]).map((entry) =>
+            Array.isArray(entry) ? entry.join(', ') : entry
+        );
     }
 
     if (field === 'categories') {
@@ -106,11 +108,33 @@ export const getType = (types: string | string[] = []): string => {
 };
 
 /**
- * Transform an array value for the field 'adr' into a string to be displayed
+ * Sanitize a string or string-array value for the field 'adr' into an array of strings to be displayed on different lines
  */
-export const formatAdr = (adr: string[] = []): string => {
-    return adr
-        .filter(isTruthy)
-        .map((value) => value.trim())
-        .join(', ');
+export const formatAdr = (adr: string | string[]): string[] => {
+    let value: string[] = [];
+    try {
+        // Input sanitization
+        value = Array.isArray(adr) ? adr : [adr];
+        if (value.length < 7) {
+            value.push(...range(0, 7 - value.length).map(() => ''));
+        }
+
+        const filterEmpty = (source: string[]) => source.filter((line) => line !== undefined && line !== '');
+
+        // According to vCard RFC https://datatracker.ietf.org/doc/html/rfc6350#section-6.3.1
+        // Address is split into 7 strings with different meaning at each position
+        const [postOfficeBox, extendedAddress, streetAddress, locality, region, postalCode, country] = adr;
+        const lines = filterEmpty([
+            streetAddress,
+            extendedAddress,
+            filterEmpty([postalCode, locality]).join(', '),
+            postOfficeBox,
+            filterEmpty([region, country]).join(', '),
+        ]);
+        return lines;
+    } catch {
+        // Some addresses, especially imported can be strangely formated
+        // We don't want to break the whole page if the format is corrupted
+        return value;
+    }
 };

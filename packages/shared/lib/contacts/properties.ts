@@ -59,7 +59,7 @@ export const sanitizeProperties = (properties: ContactProperties = []): ContactP
         })
         .map((property) => {
             const { field, value } = property;
-            if (field === 'adr' && !Array.isArray(value)) {
+            if ((field === 'adr' || field === 'org') && !Array.isArray(value)) {
                 // assume the bad formatting used commas instead of semicolons
                 const newValue = value.split(',').slice(0, 6);
                 return { ...property, value: newValue };
