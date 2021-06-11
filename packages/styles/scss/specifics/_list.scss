@@ -12,7 +12,7 @@ $container-to-width: 3em !default;
 		calc(
 			(100% + var(--width-sidebar, #{rem($width-sidebar)})) * #{math.div(
 					$conversations-column-width,
-					math.div(1%, 100)
+					100%
 				)}
 		)
 	);
