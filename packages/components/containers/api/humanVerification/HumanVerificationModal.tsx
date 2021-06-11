@@ -5,7 +5,6 @@ import { HumanVerificationMethodType } from 'proton-shared/lib/interfaces';
 
 import { FormModal } from '../../../components';
 import { useLoading, useNotifications } from '../../../hooks';
-import './HumanVerificationModal.scss';
 import HumanVerificationForm, { Steps } from './HumanVerificationForm';
 
 interface Props<T> {
@@ -52,7 +51,7 @@ const HumanVerificationModal = <T,>({ token, methods = [], onSuccess, onVerify, 
     };
 
     return (
-        <FormModal title={title} small footer={null} {...rest}>
+        <FormModal className="modal--human-verification" title={title} footer={null} {...rest}>
             <HumanVerificationForm
                 step={step}
                 onChangeStep={setStep}
