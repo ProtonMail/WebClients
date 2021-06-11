@@ -1,9 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import { c, msgid } from 'ttag';
-import { Recipient } from 'proton-shared/lib/interfaces';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
 import { exportContacts } from 'proton-shared/lib/contacts/helpers/export';
 import { extractMergeable } from 'proton-shared/lib/contacts/helpers/merge';
+import { Recipient } from 'proton-shared/lib/interfaces';
 
 import { FullLoader, SearchInput } from '../../../components';
 import { useApi, useModals, useNotifications, useUser, useUserKeys, useUserSettings } from '../../../hooks';
@@ -22,10 +22,11 @@ interface Props {
     onClose: () => void;
     onImport: () => void;
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;
+    onMailTo?: (src: string) => void;
     customActions: CustomAction[];
 }
 
-const ContactsWidgetContainer = ({ onClose, onImport, onCompose, customActions }: Props) => {
+const ContactsWidgetContainer = ({ onClose, onImport, onCompose, onMailTo, customActions }: Props) => {
     const [user, loadingUser] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [userKeysList, loadingUserKeys] = useUserKeys();
@@ -144,7 +145,7 @@ const ContactsWidgetContainer = ({ onClose, onImport, onCompose, customActions }
     };
 
     const handleDetails = (contactID: string) => {
-        createModal(<ContactDetailsModal contactID={contactID} />);
+        createModal(<ContactDetailsModal contactID={contactID} onMailTo={onMailTo} />);
         onClose();
     };
 

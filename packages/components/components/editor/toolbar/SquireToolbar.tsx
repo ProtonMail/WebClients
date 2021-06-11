@@ -1,9 +1,8 @@
 import React, { MutableRefObject, useEffect, useState, ReactNode, useMemo, useCallback, memo } from 'react';
 import { c } from 'ttag';
-
-import { useHandler, useModals } from '../../../hooks';
+import { classnames } from '../../../helpers';
+import { useHandler, useIsMounted, useModals } from '../../../hooks';
 import Icon from '../../icon/Icon';
-
 import InsertImageModal from '../modals/InsertImageModal';
 import InsertLinkModal from '../modals/InsertLinkModal';
 import { SquireType, LinkData } from '../squireConfig';
@@ -48,11 +47,16 @@ const SquireToolbar = ({
     onAddImages,
     moreDropdownExtension,
 }: Props) => {
+    const isMounted = useIsMounted();
     const [squireInfos, setSquireInfos] = useState<{ [test: string]: boolean }>({});
 
     const { createModal } = useModals();
 
-    const handleCursor = useHandler(() => setSquireInfos(getPathInfo(squireRef.current)));
+    const handleCursor = useHandler(() => {
+        if (isMounted()) {
+            setSquireInfos(getPathInfo(squireRef.current));
+        }
+    });
     const handleCursorDebounced = useHandler(handleCursor, { debounce: 500 });
 
     const forceRefresh = (action: () => void) => () => {
@@ -110,6 +114,7 @@ const SquireToolbar = ({
 
     const handleAddImageUrl = useCallback((url: string) => {
         insertImage(squireRef.current, url);
+        squireRef.current?.fireEvent('input'); // For Squire to be aware of the change
     }, []);
 
     const handleLink = useCallback(() => {
@@ -161,7 +166,7 @@ const SquireToolbar = ({
                     <SquireToolbarButton
                         onClick={handleBold}
                         aria-pressed={squireInfos.bold}
-                        className="flex-item-noshrink"
+                        className={classnames(['flex-item-noshrink', squireInfos.bold && 'is-active'])}
                         title={c('Action').t`Bold`}
                         tabIndex={-1}
                     >
@@ -170,7 +175,7 @@ const SquireToolbar = ({
                     <SquireToolbarButton
                         onClick={handleItalic}
                         aria-pressed={squireInfos.italic}
-                        className="flex-item-noshrink"
+                        className={classnames(['flex-item-noshrink', squireInfos.italic && 'is-active'])}
                         title={c('Action').t`Italic`}
                         tabIndex={-1}
                     >
@@ -179,7 +184,7 @@ const SquireToolbar = ({
                     <SquireToolbarButton
                         onClick={handleUnderline}
                         aria-pressed={squireInfos.underline}
-                        className="flex-item-noshrink"
+                        className={classnames(['flex-item-noshrink', squireInfos.underline && 'is-active'])}
                         title={c('Action').t`Underline`}
                         tabIndex={-1}
                     >
@@ -191,7 +196,7 @@ const SquireToolbar = ({
                             <SquireToolbarButton
                                 onClick={handleUnorderedList}
                                 aria-pressed={squireInfos.unorderedList}
-                                className="flex-item-noshrink"
+                                className={classnames(['flex-item-noshrink', squireInfos.unorderedList && 'is-active'])}
                                 title={c('Action').t`Unordered list`}
                                 tabIndex={-1}
                             >
@@ -200,7 +205,7 @@ const SquireToolbar = ({
                             <SquireToolbarButton
                                 onClick={handleOrderedList}
                                 aria-pressed={squireInfos.orderedList}
-                                className="flex-item-noshrink"
+                                className={classnames(['flex-item-noshrink', squireInfos.orderedList && 'is-active'])}
                                 title={c('Action').t`Ordered list`}
                                 tabIndex={-1}
                             >
@@ -215,7 +220,7 @@ const SquireToolbar = ({
                             <SquireToolbarButton
                                 onClick={handleBlockquote}
                                 aria-pressed={squireInfos.blockquote}
-                                className="flex-item-noshrink"
+                                className={classnames(['flex-item-noshrink', squireInfos.blockquote && 'is-active'])}
                                 title={c('Action').t`Quote`}
                                 tabIndex={-1}
                             >

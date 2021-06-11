@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { generateUID } from '../../../helpers';
@@ -6,13 +6,8 @@ import FormModal from '../../modal/FormModal';
 import { Button, PrimaryButton } from '../../button';
 import Label from '../../label/Label';
 import Input from '../../input/Input';
-import Alert from '../../alert/Alert';
-import TextLoader from '../../loader/TextLoader';
-import LoaderIcon from '../../loader/LoaderIcon';
 
-import ReactiveImage from './ReactiveImage';
 import FileButton from '../../button/FileButton';
-import Icon from '../../icon/Icon';
 
 enum ImageState {
     Initial,
@@ -32,13 +27,26 @@ const InsertImageModal = ({ onAddUrl, onAddImages, onClose, ...rest }: Props) =>
     const [imageSrc, setImageSrc] = useState<string>();
     const [imageState, setImageState] = useState(ImageState.Initial);
 
-    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setImageSrc(event.target.value);
-    };
-
-    const handleLoading = () => setImageState(ImageState.Loading);
     const handleSuccess = () => setImageState(ImageState.Ok);
     const handleError = () => setImageState(ImageState.Error);
+
+    // Check if the image url is valid
+    const checkImageUrl = (url: string) => {
+        const image = new Image();
+        image.onload = () => handleSuccess();
+        image.onerror = () => handleError();
+        image.src = url;
+    };
+
+    useEffect(() => {
+        if (imageSrc) {
+            checkImageUrl(imageSrc);
+        }
+    }, [imageSrc]);
+
+    const handleChange = async (event: ChangeEvent<HTMLInputElement>) => {
+        setImageSrc(event.target.value);
+    };
 
     const handleSubmit = () => {
         onAddUrl(imageSrc as string);
@@ -58,56 +66,36 @@ const InsertImageModal = ({ onAddUrl, onAddImages, onClose, ...rest }: Props) =>
             footer={
                 <>
                     <Button type="reset">{c('Action').t`Cancel`}</Button>
-                    <FileButton className="inline-flex relative flex-align-items-center" onAddFiles={handleAddFiles}>
-                        <Icon name="attach" /> {c('Action').t`Add file`}
-                    </FileButton>
                     <PrimaryButton type="submit" disabled={imageState !== ImageState.Ok}>
-                        {c('Action').t`Insert`}
+                        {c('Action').t`Save`}
                     </PrimaryButton>
                 </>
             }
             {...rest}
         >
             <div className="flex flex-nowrap mb1 on-mobile-flex-column">
-                <Label htmlFor={`editor-image-address-${uid}`}>{c('Info').t`Web address`}</Label>
+                <Label htmlFor={`editor-image-address-${uid}`}>{c('Info').t`Add image URL`}</Label>
                 <div className="flex-item-fluid">
                     <Input
                         id={`editor-image-address-${uid}`}
                         type="text"
                         autoComplete="off"
+                        placeholder={c('Info').t`Image URL`}
                         error={imageState === ImageState.Error ? c('Info').t`Not a valid URL` : undefined}
                         onChange={handleChange}
                     />
                 </div>
             </div>
             <div className="flex flex-nowrap mb1 on-mobile-flex-column">
-                <Label htmlFor={`editor-image-preview-${uid}`}>{c('Info').t`Image preview`}</Label>
+                <Label htmlFor={`editor-image-upload-${uid}`}>{c('Info').t`Upload picture`}</Label>
                 <div className="flex-item-fluid">
-                    <ReactiveImage
-                        src={imageSrc}
-                        onLoading={handleLoading}
-                        onSuccess={handleSuccess}
-                        onError={handleError}
-                    />
-
-                    {imageState !== ImageState.Ok && (
-                        <Alert>
-                            {c('Info')
-                                .t`If your URL is correct, you'll see an image preview here. Large images may take a few minutes to appear.`}
-                        </Alert>
-                    )}
-
-                    {imageState === ImageState.Loading && (
-                        <span>
-                            <TextLoader>
-                                <LoaderIcon /> {c('Info').t`Loading image`}
-                            </TextLoader>
-                        </span>
-                    )}
-
-                    {imageState === ImageState.Error && (
-                        <span className="color-danger">{c('Info').t`Error loading image`}</span>
-                    )}
+                    <FileButton
+                        id={`editor-image-upload-${uid}`}
+                        className="inline-flex relative flex-align-items-center"
+                        onAddFiles={handleAddFiles}
+                    >
+                        {c('Action').t`Upload picture`}
+                    </FileButton>
                 </div>
             </div>
         </FormModal>
