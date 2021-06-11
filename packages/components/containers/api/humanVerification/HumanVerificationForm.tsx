@@ -16,6 +16,8 @@ import InvalidVerificationCodeModal from './InvalidVerificationCodeModal';
 import VerifyCodeForm from './VerifyCodeForm';
 import RequestNewCodeModal from './RequestNewCodeModal';
 
+import './HumanVerificationModal.scss';
+
 export enum Steps {
     ENTER_DESTINATION,
     VERIFY_CODE,

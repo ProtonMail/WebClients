@@ -1,20 +1,10 @@
 @import '~design-system/scss/config/';
 
-.human-verification-modal {
-	.field-container.payment-right {
-		width: 70%;
-	}
-	.country-list {
-		left: 0;
-		right: 0;
-	}
-}
-
-@include respond-to($breakpoint-small) {
-	.human-verification-modal {
-		.label.payment-left,
-		.field-container.payment-right {
-			width: 100%;
-		}
+.modal--human-verification {
+	&#{&} {
+		// Specificity -_-v
+		// Just tested this value, don't change it
+		width: rem(730);
+		max-width: rem(730);
 	}
 }
