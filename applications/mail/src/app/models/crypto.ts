@@ -5,7 +5,7 @@ export enum STATUS_ICONS_FILLS {
     CHECKMARK = 1,
     SIGN = 2,
     WARNING = 3,
-    FAIL = 4
+    FAIL = 4,
 }
 
 export enum X_PM_HEADERS {
@@ -21,7 +21,7 @@ export enum X_PM_HEADERS {
     EXTERNAL = 'external',
     END_TO_END = 'end-to-end',
     ON_COMPOSE = 'on-compose',
-    ON_DELIVERY = 'on-delivery'
+    ON_DELIVERY = 'on-delivery',
 }
 
 export interface StatusIcon {
@@ -35,12 +35,18 @@ export interface MapStatusIcons {
     [key: string]: StatusIcon | undefined;
 }
 
+export interface ContactSignatureInfo {
+    isVerified?: boolean;
+    creationTime?: Date;
+}
+
 export interface SendInfo {
     sendPreferences?: SendPreferences;
     sendIcon?: StatusIcon;
     loading: boolean;
     emailValidation: boolean;
     emailAddressWarnings?: string[];
+    contactSignatureInfo?: ContactSignatureInfo;
 }
 
 export interface MapSendInfo {

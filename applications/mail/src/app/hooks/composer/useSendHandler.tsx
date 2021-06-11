@@ -10,10 +10,12 @@ import { MessageAction, MessageExtended, MessageExtendedWithData } from '../../m
 import { useSendMessage } from './useSendMessage';
 import { useSendVerifications } from './useSendVerifications';
 import { useOnCompose } from '../../containers/ComposeProvider';
+import { MapSendInfo } from '../../models/crypto';
 
 export interface UseSendHandlerParameters {
     modelMessage: MessageExtended;
     ensureMessageContent: () => void;
+    mapSendInfo: MapSendInfo;
     promiseUpload: Promise<void>;
     pendingSave: RefObject<boolean>;
     autoSave: ((message: MessageExtended) => Promise<void>) & Abortable;
@@ -24,6 +26,7 @@ export interface UseSendHandlerParameters {
 export const useSendHandler = ({
     modelMessage,
     ensureMessageContent,
+    mapSendInfo,
     promiseUpload,
     pendingSave,
     autoSave,
@@ -40,7 +43,7 @@ export const useSendHandler = ({
     const handleSendAfterUploads = useHandler(async (notifManager: SendingMessageNotificationManager) => {
         let verificationResults;
         try {
-            verificationResults = await extendedVerifications(modelMessage as MessageExtendedWithData);
+            verificationResults = await extendedVerifications(modelMessage as MessageExtendedWithData, mapSendInfo);
         } catch {
             hideNotification(notifManager.ID);
             onCompose({ existingDraft: modelMessage, fromUndo: true });

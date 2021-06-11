@@ -1,6 +1,7 @@
 import { GetEncryptionPreferences } from 'proton-shared/lib/interfaces/hooks/GetEncryptionPreferences';
 import React, { Dispatch, SetStateAction, useCallback, useEffect, useMemo, useState } from 'react';
 import { Alert, useGetEncryptionPreferences, useModals } from 'react-components';
+import useIsMounted from 'react-components/hooks/useIsMounted';
 import { c, msgid } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
 import { getRecipientsAddresses } from 'proton-shared/lib/mail/messages';
@@ -29,14 +30,20 @@ export interface MessageSendInfo {
 }
 
 export const useMessageSendInfo = (message: MessageExtended) => {
+    const isMounted = useIsMounted();
     // Map of send preferences and send icons for each recipient
     const [mapSendInfo, setMapSendInfo] = useState<MapSendInfo>({});
+    const safeSetMapSendInfo = (value: SetStateAction<MapSendInfo>) => isMounted() && setMapSendInfo(value);
 
     // Use memo is ok there but not really effective as any message change will update the ref
-    const messageSendInfo: MessageSendInfo = useMemo(() => ({ message, mapSendInfo, setMapSendInfo }), [
-        message,
-        mapSendInfo,
-    ]);
+    const messageSendInfo: MessageSendInfo = useMemo(
+        () => ({
+            message,
+            mapSendInfo,
+            setMapSendInfo: safeSetMapSendInfo,
+        }),
+        [message, mapSendInfo]
+    );
 
     return messageSendInfo;
 };
@@ -83,6 +90,7 @@ export const useUpdateRecipientSendInfo = (
                         loading: false,
                         emailValidation,
                         emailAddressWarnings: [],
+                        contactSignatureInfo: undefined,
                     },
                 }));
                 return;
@@ -152,7 +160,10 @@ export const useUpdateRecipientSendInfo = (
                 return updateRecipientIcon();
             }
             const sendIcon = getSendStatusIcon(sendPreferences);
-
+            const contactSignatureInfo = {
+                isVerified: encryptionPreferences.isContactSignatureVerified,
+                creationTime: encryptionPreferences.contactSignatureTimestamp,
+            };
             setMapSendInfo((mapSendInfo) => ({
                 ...mapSendInfo,
                 [emailAddress]: {
@@ -161,6 +172,7 @@ export const useUpdateRecipientSendInfo = (
                     loading: false,
                     emailValidation,
                     emailAddressWarnings: encryptionPreferences.emailAddressWarnings || [],
+                    contactSignatureInfo,
                 },
             }));
         };
@@ -235,6 +247,10 @@ export const useUpdateGroupSendInfo = (
             const encryptionPreferences = await getEncryptionPreferences(emailAddress, 0, contactsMap);
             const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
             const sendIcon = getSendStatusIcon(sendPreferences);
+            const contactSignatureInfo = {
+                isVerified: encryptionPreferences.isContactSignatureVerified,
+                creationTime: encryptionPreferences.contactSignatureTimestamp,
+            };
             if (!signal.aborted) {
                 setMapSendInfo((mapSendInfo) => ({
                     ...mapSendInfo,
@@ -244,6 +260,7 @@ export const useUpdateGroupSendInfo = (
                         loading: false,
                         emailValidation,
                         emailAddressWarnings: encryptionPreferences.emailAddressWarnings || [],
+                        contactSignatureInfo,
                     },
                 }));
             }
@@ -351,11 +368,16 @@ const getUpdatedSendInfo = async (
     const encryptionPreferences = await getEncryptionPreferences(emailAddress, 0, contactsMap);
     const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
     const sendIcon = getSendStatusIcon(sendPreferences);
+    const contactSignatureInfo = {
+        isVerified: encryptionPreferences.isContactSignatureVerified,
+        creationTime: encryptionPreferences.contactSignatureTimestamp,
+    };
     const updatedSendInfo = {
         sendPreferences,
         sendIcon,
         loading: false,
         emailAddressWarnings: encryptionPreferences.emailAddressWarnings || [],
+        contactSignatureInfo,
     };
     setMapSendInfo((mapSendInfo) => {
         const sendInfo = mapSendInfo[emailAddress];

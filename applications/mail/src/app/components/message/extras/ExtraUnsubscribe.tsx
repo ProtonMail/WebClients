@@ -156,7 +156,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                 },
             };
 
-            const { cleanMessage, mapSendPrefs } = await sendVerification(inputMessage as MessageExtendedWithData);
+            const { cleanMessage, mapSendPrefs } = await sendVerification(inputMessage as MessageExtendedWithData, {});
             await addAction(() => sendMessage(cleanMessage, mapSendPrefs, onCompose));
         } else if (unsubscribeMethods.HttpClient) {
             await new Promise<void>((resolve, reject) => {

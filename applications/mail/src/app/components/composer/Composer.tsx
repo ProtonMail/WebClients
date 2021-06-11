@@ -465,6 +465,7 @@ const Composer = (
     const handleSend = useSendHandler({
         modelMessage,
         ensureMessageContent,
+        mapSendInfo: messageSendInfo.mapSendInfo,
         promiseUpload,
         pendingSave,
         autoSave,
