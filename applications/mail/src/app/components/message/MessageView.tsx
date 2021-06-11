@@ -15,7 +15,6 @@ import { Element } from '../../models/element';
 import { useMessage } from '../../hooks/message/useMessage';
 import { useMarkAs, MARK_AS_STATUS } from '../../hooks/useMarkAs';
 import { isUnread } from '../../helpers/elements';
-import { OnCompose } from '../../hooks/composer/useCompose';
 import { Breakpoints } from '../../models/utils';
 import { useLoadMessage } from '../../hooks/message/useLoadMessage';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
@@ -25,6 +24,7 @@ import { useVerifyMessage } from '../../hooks/message/useVerifyMessage';
 import { useMessageHotkeys } from '../../hooks/message/useMessageHotkeys';
 
 import './MessageView.scss';
+import { useOnCompose } from '../../containers/ComposeProvider';
 import { LOAD_RETRY_COUNT } from '../../constants';
 
 interface Props {
@@ -37,7 +37,6 @@ interface Props {
     conversationIndex?: number;
     conversationID?: string;
     onBack: () => void;
-    onCompose: OnCompose;
     breakpoints: Breakpoints;
     onFocus?: (index: number) => void;
     onMessageReady?: () => void;
@@ -64,7 +63,6 @@ const MessageView = (
         conversationIndex = 0,
         conversationID,
         onBack,
-        onCompose,
         breakpoints,
         onFocus = noop,
         onMessageReady,
@@ -99,6 +97,8 @@ const MessageView = (
     const loadEmbeddedImages = useLoadEmbeddedImages(message.localID);
     const resignContact = useResignContact(message.localID);
     const markAs = useMarkAs();
+
+    const onCompose = useOnCompose();
 
     const draft = !loading && isDraft(message.data);
     const outbox = !loading && (isOutbox(message.data) || message.sending);
@@ -286,7 +286,6 @@ const MessageView = (
         },
         {
             onFocus,
-            onCompose,
             setExpanded,
             toggleOriginalMessage,
             handleLoadRemoteImages,
@@ -329,7 +328,6 @@ const MessageView = (
                         mailSettings={mailSettings}
                         onToggle={handleToggle(false)}
                         onBack={onBack}
-                        onCompose={onCompose}
                         onSourceMode={setSourceMode}
                         breakpoints={breakpoints}
                         labelDropdownToggleRef={labelDropdownToggleRef}
@@ -356,7 +354,6 @@ const MessageView = (
                     isSentMessage={sent}
                     isUnreadMessage={unread}
                     onExpand={handleToggle(true)}
-                    onCompose={onCompose}
                     breakpoints={breakpoints}
                 />
             )}

@@ -28,15 +28,14 @@ import { MessageExtended, PartialMessageExtended, MessageExtendedWithData } from
 import { useMessage } from '../../../hooks/message/useMessage';
 import { useSendMessage } from '../../../hooks/composer/useSendMessage';
 import { findSender } from '../../../helpers/addresses';
-import { OnCompose } from '../../../hooks/composer/useCompose';
 import { useSendVerifications } from '../../../hooks/composer/useSendVerifications';
+import { useOnCompose } from '../../../containers/ComposeProvider';
 
 interface Props {
     message: MessageExtended;
-    onCompose: OnCompose;
 }
 
-const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
+const ExtraUnsubscribe = ({ message }: Props) => {
     const { createNotification } = useNotifications();
     const api = useApi();
     const { call } = useEventManager();
@@ -46,6 +45,7 @@ const ExtraUnsubscribe = ({ message, onCompose }: Props) => {
     const { extendedVerifications: sendVerification } = useSendVerifications();
     const sendMessage = useSendMessage();
     const [loading, withLoading] = useLoading();
+    const onCompose = useOnCompose();
     const toAddress = getOriginalTo(message.data);
     const address = addresses.find(({ Email }) => canonizeInternalEmail(Email) === canonizeInternalEmail(toAddress));
     const unsubscribeMethods = message?.data?.UnsubscribeMethods || {};

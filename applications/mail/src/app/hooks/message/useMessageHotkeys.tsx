@@ -3,15 +3,15 @@ import { noop } from 'proton-shared/lib/helpers/function';
 import { KeyboardKey } from 'proton-shared/lib/interfaces';
 import { useRef, useState } from 'react';
 import { useFolders, useHotkeys, useMailSettings, HotkeyTuple } from 'react-components';
-import { MESSAGE_ACTIONS } from '../../constants';
 import { isStarred } from '../../helpers/elements';
 import { getFolderName } from '../../helpers/labels';
 import { Element } from '../../models/element';
 import { MessageExtended } from '../../models/message';
-import { OnCompose } from '../composer/useCompose';
 import { useMoveToFolder, useStar } from '../useApplyLabels';
 import { MARK_AS_STATUS, useMarkAs } from '../useMarkAs';
 import { useFolderNavigationHotkeys } from '../mailbox/useFolderNavigationHotkeys';
+import { useOnCompose } from '../../containers/ComposeProvider';
+import { MESSAGE_ACTIONS } from '../../constants';
 
 const { TRASH, SPAM, ARCHIVE, INBOX } = MAILBOX_LABEL_IDS;
 
@@ -33,7 +33,6 @@ export interface MessageHotkeysContext {
 
 export interface MessageHotkeysHandlers {
     onFocus: (index: number) => void;
-    onCompose: OnCompose;
     setExpanded: (expanded: boolean) => void;
     toggleOriginalMessage: () => void;
     handleLoadRemoteImages: () => void;
@@ -54,7 +53,6 @@ export const useMessageHotkeys = (
     }: MessageHotkeysContext,
     {
         onFocus,
-        onCompose,
         setExpanded,
         toggleOriginalMessage,
         handleLoadRemoteImages,
@@ -74,6 +72,8 @@ export const useMessageHotkeys = (
     const star = useStar();
 
     const [hasFocus, setHasFocus] = useState(false);
+
+    const onCompose = useOnCompose();
 
     const handleFocus = () => {
         setHasFocus(true);

@@ -2,7 +2,6 @@ import { act } from '@testing-library/react';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { Recipient } from 'proton-shared/lib/interfaces';
 import React from 'react';
-import { MESSAGE_ACTIONS } from '../constants';
 import { addAddressToCache, clearAll, minimalCache, render, tick } from '../helpers/test/helper';
 import { OnCompose } from '../hooks/composer/useCompose';
 import { MessageExtended } from '../models/message';
@@ -10,6 +9,8 @@ import { Breakpoints } from '../models/utils';
 import ComposerContainer from './ComposerContainer';
 import { preparePlainText } from '../helpers/transforms/transforms';
 import { formatFullDate } from '../helpers/date';
+import { MESSAGE_ACTIONS } from '../constants';
+import { useOnCompose } from './ComposeProvider';
 
 const ID = 'ID';
 const Email = 'me@test.com';
@@ -45,13 +46,13 @@ with a link -> https://protonmail.com/`;
             ...(await preparePlainText(content, false)),
         } as MessageExtended;
 
+        const Inside = () => {
+            onCompose = useOnCompose();
+            return null;
+        };
+
         const { findByTestId } = await render(
-            <ComposerContainer breakpoints={{} as Breakpoints}>
-                {({ onCompose: inputOnCompose }) => {
-                    onCompose = inputOnCompose;
-                    return null;
-                }}
-            </ComposerContainer>,
+            <ComposerContainer breakpoints={{} as Breakpoints}>{() => <Inside />}</ComposerContainer>,
             false
         );
 

@@ -17,8 +17,6 @@ import PrivateLayout from '../components/layout/PrivateLayout';
 import MailboxContainer from './mailbox/MailboxContainer';
 import { HUMAN_TO_LABEL_IDS } from '../constants';
 import { Breakpoints } from '../models/utils';
-import { useLinkHandler } from '../hooks/useLinkHandler';
-import { OnCompose } from '../hooks/composer/useCompose';
 import { useDeepMemo } from '../hooks/useDeepMemo';
 import MailOnboardingModal from '../components/onboarding/MailOnboardingModal';
 import { MailUrlParams } from '../helpers/mailboxUrl';
@@ -28,12 +26,11 @@ import { usePageHotkeys } from '../hooks/mailbox/usePageHotkeys';
 interface Props {
     params: MailUrlParams;
     breakpoints: Breakpoints;
-    onCompose: OnCompose;
     isComposerOpened: boolean;
 }
 
 const PageContainer = (
-    { params: { elementID, labelID, messageID }, breakpoints, onCompose, isComposerOpened }: Props,
+    { params: { elementID, labelID, messageID }, breakpoints, isComposerOpened }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
     const location = useLocation();
@@ -80,14 +77,13 @@ const PageContainer = (
         }
     }, []);
 
-    useLinkHandler(onCompose);
     useContactsListener();
 
     const handleOpenShortcutsModal = () => {
         createModal(<MailShortcutsModal />, 'shortcuts-modal');
     };
 
-    usePageHotkeys({ onCompose, onOpenShortcutsModal: handleOpenShortcutsModal });
+    usePageHotkeys({ onOpenShortcutsModal: handleOpenShortcutsModal });
 
     if (!labelID) {
         return <Redirect to="/inbox" />;
@@ -102,7 +98,6 @@ const PageContainer = (
             location={location}
             history={history}
             breakpoints={breakpoints}
-            onCompose={onCompose}
         >
             <LocationErrorBoundary>
                 <MailboxContainer
@@ -114,7 +109,6 @@ const PageContainer = (
                     messageID={messageID}
                     location={location}
                     history={history}
-                    onCompose={onCompose}
                     isComposerOpened={isComposerOpened}
                 />
             </LocationErrorBoundary>
@@ -126,7 +120,6 @@ const MemoPageContainer = memo(forwardRef(PageContainer));
 
 interface PageParamsParserProps {
     breakpoints: Breakpoints;
-    onCompose: OnCompose;
     isComposerOpened: boolean;
 }
 

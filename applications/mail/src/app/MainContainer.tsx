@@ -25,7 +25,7 @@ const MainContainer = () => {
                             <ModalsChildren />
                             <MailContentRefProvider mailContentRef={mailContentRef}>
                                 <ComposerContainer breakpoints={breakpoints}>
-                                    {({ onCompose, isComposerOpened }) => (
+                                    {({ isComposerOpened }) => (
                                         <Switch>
                                             <Route
                                                 path={MAIN_ROUTE_PATH}
@@ -34,7 +34,6 @@ const MainContainer = () => {
                                                         ref={mailContentRef}
                                                         breakpoints={breakpoints}
                                                         isComposerOpened={isComposerOpened}
-                                                        onCompose={onCompose}
                                                     />
                                                 )}
                                             />

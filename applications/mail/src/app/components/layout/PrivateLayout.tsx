@@ -8,7 +8,6 @@ import MailSidebar from '../sidebar/MailSidebar';
 import { getHumanLabelID } from '../../helpers/labels';
 import { setKeywordInUrl } from '../../helpers/mailboxUrl';
 import { Breakpoints } from '../../models/utils';
-import { OnCompose } from '../../hooks/composer/useCompose';
 
 interface Props {
     children: ReactNode;
@@ -17,12 +16,11 @@ interface Props {
     breakpoints: Breakpoints;
     labelID: string;
     elementID: string | undefined;
-    onCompose: OnCompose;
     isBlurred?: boolean;
 }
 
 const PrivateLayout = (
-    { children, location, history, breakpoints, labelID, elementID, onCompose, isBlurred }: Props,
+    { children, location, history, breakpoints, labelID, elementID, isBlurred }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
     const [expanded, setExpand] = useState(false);
@@ -47,18 +45,11 @@ const PrivateLayout = (
             expanded={expanded}
             onToggleExpand={handleToggleExpand}
             onSearch={handleSearch}
-            onCompose={onCompose}
         />
     );
 
     const sidebar = (
-        <MailSidebar
-            labelID={labelID}
-            expanded={expanded}
-            location={location}
-            onToggleExpand={handleToggleExpand}
-            onCompose={onCompose}
-        />
+        <MailSidebar labelID={labelID} expanded={expanded} location={location} onToggleExpand={handleToggleExpand} />
     );
 
     return (

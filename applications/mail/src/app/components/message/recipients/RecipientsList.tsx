@@ -3,17 +3,15 @@ import { Recipient } from 'proton-shared/lib/interfaces/Address';
 
 import { MapStatusIcons } from '../../../models/crypto';
 import RecipientItem from './RecipientItem';
-import { OnCompose } from '../../../hooks/composer/useCompose';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 
 interface Props {
     list: Recipient[];
     mapStatusIcons?: MapStatusIcons;
-    onCompose: OnCompose;
     isLoading: boolean;
 }
 
-const RecipientsList = ({ list, mapStatusIcons, onCompose, isLoading }: Props) => {
+const RecipientsList = ({ list, mapStatusIcons, isLoading }: Props) => {
     const { getRecipientsOrGroups } = useRecipientLabel();
 
     const recipientsOrGroup = getRecipientsOrGroups(list);
@@ -25,7 +23,6 @@ const RecipientsList = ({ list, mapStatusIcons, onCompose, isLoading }: Props) =
                     key={index} // eslint-disable-line react/no-array-index-key
                     recipientOrGroup={recipientOrGroup}
                     mapStatusIcons={mapStatusIcons}
-                    onCompose={onCompose}
                     isLoading={isLoading}
                 />
             ))}

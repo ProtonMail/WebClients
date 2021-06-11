@@ -16,10 +16,10 @@ import { isOutbox, isScheduledSend, isDraft } from 'proton-shared/lib/mail/messa
 import { forceSend } from 'proton-shared/lib/api/messages';
 
 import { MessageExtended, PartialMessageExtended } from '../../models/message';
-import { MESSAGE_ACTIONS } from '../../constants';
 import { useDraft } from '../useDraft';
 import { isDirtyAddress } from '../../helpers/addresses';
 import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
+import { MESSAGE_ACTIONS } from '../../constants';
 
 export interface ComposeExisting {
     existingDraft: MessageExtended;

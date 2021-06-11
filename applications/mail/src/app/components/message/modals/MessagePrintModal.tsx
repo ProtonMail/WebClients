@@ -2,7 +2,6 @@ import { getSender, hasAttachments } from 'proton-shared/lib/mail/messages';
 import React, { useEffect } from 'react';
 import { FormModal } from 'react-components';
 import { c } from 'ttag';
-import { noop } from 'proton-shared/lib/helpers/function';
 
 import { Recipient } from 'proton-shared/lib/interfaces';
 import { MessageExtendedWithData } from '../../../models/message';
@@ -53,7 +52,7 @@ const MessagePrintModal = ({ labelID, message, onClose, ...rest }: Props) => {
                         {getRecipientLabel(sender as Recipient, true)}{' '}
                         <span className="color-weak">&lt;{sender?.Address}&gt;</span>
                     </RecipientType>
-                    <RecipientsDetails message={message} onCompose={noop} isLoading={false} />
+                    <RecipientsDetails message={message} isLoading={false} />
                     <RecipientType label={c('Label').t`Date:`}>
                         <ItemDate element={message.data} labelID={labelID} mode="full" />
                     </RecipientType>

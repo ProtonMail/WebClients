@@ -47,7 +47,6 @@ import { useHasScroll } from '../../hooks/useHasScroll';
 import { useReloadSendInfo, useMessageSendInfo } from '../../hooks/useSendInfo';
 import { useDebouncedHandler } from '../../hooks/useDebouncedHandler';
 import { DRAG_ADDRESS_KEY } from '../../constants';
-import { OnCompose } from '../../hooks/composer/useCompose';
 import { useComposerHotkeys } from '../../hooks/composer/useComposerHotkeys';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
@@ -85,7 +84,6 @@ interface Props {
     onFocus: () => void;
     onClose: () => void;
     onSubject: (subject: string) => void;
-    onCompose: OnCompose;
     isFocused: boolean;
 }
 
@@ -98,7 +96,6 @@ const Composer = (
         toggleMaximized,
         onFocus,
         onClose: inputOnClose,
-        onCompose,
         onSubject,
         isFocused,
     }: Props,
@@ -459,7 +456,6 @@ const Composer = (
         actualSave,
         autoSave,
         onClose,
-        onCompose,
         onDicard: handleDiscard,
         pendingSave,
         promiseUpload,
@@ -473,7 +469,6 @@ const Composer = (
         pendingSave,
         autoSave,
         addAction,
-        onCompose,
         onClose,
     });
 

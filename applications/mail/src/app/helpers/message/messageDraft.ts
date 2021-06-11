@@ -19,7 +19,6 @@ import {
 } from 'proton-shared/lib/mail/messages';
 import { generateUID } from 'react-components';
 import { c } from 'ttag';
-import { MESSAGE_ACTIONS } from '../../constants';
 
 import { EmbeddedMap, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
 import { getFromAddress } from '../addresses';
@@ -29,6 +28,7 @@ import { getDate } from '../elements';
 import { createEmbeddedMap } from '../embedded/embeddeds';
 import { exportPlainText, getDocumentContent, plainTextToHTML } from './messageContent';
 import { insertSignature } from './messageSignature';
+import { MESSAGE_ACTIONS } from '../../constants';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
 

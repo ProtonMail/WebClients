@@ -21,7 +21,6 @@ import { shiftKey } from 'proton-shared/lib/helpers/browser';
 
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
-import { MESSAGE_ACTIONS } from '../../../constants';
 import ItemLabels from '../../list/ItemLabels';
 import ItemLocation from '../../list/ItemLocation';
 import MoveDropdown from '../../dropdown/MoveDropdown';
@@ -39,11 +38,12 @@ import HeaderMoreDropdown from './HeaderMoreDropdown';
 import HeaderExpandedDetails from './HeaderExpandedDetails';
 import RecipientType from '../recipients/RecipientType';
 import RecipientItem from '../recipients/RecipientItem';
-import { OnCompose } from '../../../hooks/composer/useCompose';
 import { Breakpoints } from '../../../models/utils';
 import ItemAction from '../../list/ItemAction';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import { isSelfAddress } from '../../../helpers/addresses';
+import { useOnCompose } from '../../../containers/ComposeProvider';
+import { MESSAGE_ACTIONS } from '../../../constants';
 
 interface Props {
     labelID: string;
@@ -61,7 +61,6 @@ interface Props {
     onLoadEmbeddedImages: () => void;
     onToggle: () => void;
     onBack: () => void;
-    onCompose: OnCompose;
     onSourceMode: (sourceMode: boolean) => void;
     breakpoints: Breakpoints;
     labelDropdownToggleRef: React.MutableRefObject<() => void>;
@@ -85,7 +84,6 @@ const HeaderExpanded = ({
     mailSettings,
     onToggle,
     onBack,
-    onCompose,
     onSourceMode,
     breakpoints,
     labelDropdownToggleRef,
@@ -100,6 +98,8 @@ const HeaderExpanded = ({
     const isSendingMessage = message.sending;
     const isOutboxMessage = isOutbox(message.data);
     const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
+
+    const onCompose = useOnCompose();
 
     const handleClick = (event: MouseEvent) => {
         if (
@@ -129,7 +129,6 @@ const HeaderExpanded = ({
     const from = (
         <RecipientItem
             recipientOrGroup={{ recipient: message.data?.Sender }}
-            onCompose={onCompose}
             isLoading={!messageLoaded}
             signingPublicKey={showPinPublicKey ? message.verification?.signingPublicKey : undefined}
         />
@@ -261,7 +260,6 @@ const HeaderExpanded = ({
                         <RecipientsDetails
                             message={message}
                             mapStatusIcons={messageViewIcons.mapStatusIcon}
-                            onCompose={onCompose}
                             isLoading={!messageLoaded}
                         />
                     ) : (
@@ -349,7 +347,6 @@ const HeaderExpanded = ({
                 bodyLoaded={bodyLoaded}
                 onLoadRemoteImages={onLoadRemoteImages}
                 onLoadEmbeddedImages={onLoadEmbeddedImages}
-                onCompose={onCompose}
             />
 
             <div className="pt0-5 flex flex-justify-space-between border-top">

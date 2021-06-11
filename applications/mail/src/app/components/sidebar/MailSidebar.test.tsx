@@ -19,7 +19,6 @@ const props = {
     labelID,
     location: {} as Location,
     onToggleExpand: jest.fn(),
-    onCompose: jest.fn(),
 };
 
 const folder = { ID: 'folder1', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder1' };

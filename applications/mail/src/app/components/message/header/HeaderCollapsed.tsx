@@ -10,7 +10,6 @@ import ItemLocation from '../../list/ItemLocation';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import { MessageExtended } from '../../../models/message';
 import ItemExpiration from '../../list/ItemExpiration';
-import { OnCompose } from '../../../hooks/composer/useCompose';
 import ItemAction from '../../list/ItemAction';
 import { Breakpoints } from '../../../models/utils';
 import RecipientItem from '../recipients/RecipientItem';
@@ -23,7 +22,6 @@ interface Props {
     isSentMessage: boolean;
     isUnreadMessage: boolean;
     onExpand: () => void;
-    onCompose: OnCompose;
     breakpoints: Breakpoints;
 }
 
@@ -35,7 +33,6 @@ const HeaderCollapsed = ({
     isSentMessage,
     isUnreadMessage,
     onExpand,
-    onCompose,
     breakpoints,
 }: Props) => {
     const handleClick = (event: MouseEvent) => {
@@ -65,7 +62,6 @@ const HeaderCollapsed = ({
                 <RecipientItem
                     recipientOrGroup={{ recipient: message.data?.Sender }}
                     showAddress={false}
-                    onCompose={onCompose}
                     isLoading={!messageLoaded}
                 />
 

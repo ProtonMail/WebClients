@@ -7,7 +7,6 @@ import { OpenPGPKey } from 'pmcrypto';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import { RecipientOrGroup } from '../../../models/address';
 
-import { OnCompose } from '../../../hooks/composer/useCompose';
 import RecipientItemLayout from './RecipientItemLayout';
 import RecipientItemGroup from './RecipientItemGroup';
 import RecipientItemSingle from './RecipientItemSingle';
@@ -18,7 +17,6 @@ interface Props {
     globalIcon?: StatusIcon;
     showAddress?: boolean;
     showLockIcon?: boolean;
-    onCompose: OnCompose;
     isLoading: boolean;
     signingPublicKey?: OpenPGPKey;
 }
@@ -29,7 +27,6 @@ const RecipientItem = ({
     globalIcon,
     showAddress = true,
     showLockIcon = true,
-    onCompose,
     isLoading,
     signingPublicKey,
 }: Props) => {
@@ -52,7 +49,6 @@ const RecipientItem = ({
                 mapStatusIcons={mapStatusIcons}
                 globalIcon={globalIcon}
                 showAddress={showAddress}
-                onCompose={onCompose}
             />
         );
     }
@@ -65,7 +61,6 @@ const RecipientItem = ({
                 globalIcon={globalIcon}
                 showAddress={showAddress}
                 showLockIcon={showLockIcon}
-                onCompose={onCompose}
                 signingPublicKey={signingPublicKey}
             />
         );

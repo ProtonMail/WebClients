@@ -4,14 +4,15 @@ import { c } from 'ttag';
 import { updateMessageCache, useMessageCache } from './MessageProvider';
 import { Breakpoints, WindowSize } from '../models/utils';
 import { MAX_ACTIVE_COMPOSER_MOBILE, MAX_ACTIVE_COMPOSER_DESKTOP } from '../helpers/composerPositioning';
-import { useCompose, OnCompose } from '../hooks/composer/useCompose';
+import { useCompose } from '../hooks/composer/useCompose';
 import ComposerFrame from '../components/composer/ComposerFrame';
 import '../components/composer/composer.scss';
 import { useClickMailContent } from '../hooks/useClickMailContent';
+import { ComposeProvider } from './ComposeProvider';
 
 interface Props {
     breakpoints: Breakpoints;
-    children: (props: { onCompose: OnCompose; isComposerOpened: boolean }) => ReactNode;
+    children: (props: { isComposerOpened: boolean }) => ReactNode;
 }
 
 const ComposerContainer = ({ breakpoints, children }: Props) => {
@@ -74,8 +75,8 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
     };
 
     return (
-        <>
-            {children({ onCompose: handleCompose, isComposerOpened })}
+        <ComposeProvider onCompose={handleCompose}>
+            {children({ isComposerOpened })}
             <div className="composer-container">
                 {messageIDs.map((messageID, i) => (
                     <ComposerFrame
@@ -88,11 +89,10 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
                         breakpoints={breakpoints}
                         onFocus={handleFocus(messageID)}
                         onClose={handleClose(messageID)}
-                        onCompose={handleCompose}
                     />
                 ))}
             </div>
-        </>
+        </ComposeProvider>
     );
 };
 

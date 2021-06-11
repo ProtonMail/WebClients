@@ -22,9 +22,9 @@ import AdvancedSearchDropdown from './AdvancedSearchDropdown';
 import { extractSearchParameters, setParamsInUrl } from '../../helpers/mailboxUrl';
 import { Breakpoints } from '../../models/utils';
 import { getLabelName } from '../../helpers/labels';
-import { OnCompose } from '../../hooks/composer/useCompose';
-import { MESSAGE_ACTIONS } from '../../constants';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { useOnCompose, useOnMailTo } from '../../containers/ComposeProvider';
+import { MESSAGE_ACTIONS } from '../../constants';
 
 interface Props {
     labelID: string;
@@ -33,7 +33,6 @@ interface Props {
     history: History;
     breakpoints: Breakpoints;
     onSearch: (keyword?: string, labelID?: string) => void;
-    onCompose: OnCompose;
     expanded?: boolean;
     onToggleExpand: () => void;
 }
@@ -47,7 +46,6 @@ const MailHeader = ({
     expanded,
     onToggleExpand,
     onSearch,
-    onCompose,
 }: Props) => {
     const { keyword = '' } = extractSearchParameters(location);
     const [value, updateValue] = useState(keyword);
@@ -56,6 +54,9 @@ const MailHeader = ({
     const [folders = []] = useFolders();
     const { feature: featureCanUserSendFeedback } = useFeature(FeatureCode.CanUserSendFeedback);
     const { cacheIndexedDB } = useEncryptedSearchContext();
+
+    const onCompose = useOnCompose();
+    const onMailTo = useOnMailTo();
 
     // Update the search input field when the keyword in the url is changed
     useEffect(() => updateValue(keyword), [keyword]);
@@ -97,7 +98,7 @@ const MailHeader = ({
             backUrl={showBackButton && backUrl ? backUrl : undefined}
             title={labelName}
             settingsButton={<TopNavbarListItemSettingsDropdown to="/mail/general" toApp={APPS.PROTONACCOUNT} />}
-            contactsButton={<TopNavbarListItemContactsDropdown onCompose={handleContactsCompose} />}
+            contactsButton={<TopNavbarListItemContactsDropdown onCompose={handleContactsCompose} onMailTo={onMailTo} />}
             feedbackButton={featureCanUserSendFeedback?.Value ? <TopNavbarListItemFeedbackButton /> : null}
             searchBox={searchBox}
             searchDropdown={searchDropdown}

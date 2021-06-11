@@ -6,7 +6,6 @@ import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerP
 import { WindowSize, Breakpoints } from '../../models/utils';
 import { DRAG_ADDRESS_KEY } from '../../constants';
 import Composer, { ComposerAction } from './Composer';
-import { OnCompose } from '../../hooks/composer/useCompose';
 
 interface Props {
     messageID: string;
@@ -17,7 +16,6 @@ interface Props {
     breakpoints: Breakpoints;
     onFocus: () => void;
     onClose: () => void;
-    onCompose: OnCompose;
 }
 
 const ComposerFrame = ({
@@ -29,7 +27,6 @@ const ComposerFrame = ({
     breakpoints,
     onFocus,
     onClose: inputOnClose,
-    onCompose,
 }: Props) => {
     const [mailSettings] = useMailSettings();
 
@@ -113,7 +110,6 @@ const ComposerFrame = ({
                     onFocus={onFocus}
                     onClose={onClose}
                     onSubject={(subject) => setSubject(subject)}
-                    onCompose={onCompose}
                     isFocused={focus}
                 />
             </ErrorBoundary>

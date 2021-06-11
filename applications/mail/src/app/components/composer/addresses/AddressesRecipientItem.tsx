@@ -25,6 +25,7 @@ import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 import { useUpdateRecipientSendInfo, MessageSendInfo } from '../../../hooks/useSendInfo';
 import { DRAG_ADDRESS_KEY } from '../../../constants';
 import { useContactCache } from '../../../containers/ContactProvider';
+import { useOnMailTo } from '../../../containers/ComposeProvider';
 
 interface Props {
     recipient: Recipient;
@@ -66,6 +67,8 @@ const AddressesRecipientItem = ({
     } = usePopperAnchor<HTMLDivElement>();
 
     const { handleRemove } = useUpdateRecipientSendInfo(messageSendInfo, recipient, onRemove);
+
+    const onMailTo = useOnMailTo();
 
     const emailAddress = recipient.Address || '';
     const sendInfo = messageSendInfo?.mapSendInfo[emailAddress];
@@ -125,7 +128,7 @@ const AddressesRecipientItem = ({
         event.stopPropagation();
 
         if (ContactID) {
-            createModal(<ContactDetailsModal contactID={ContactID} />);
+            createModal(<ContactDetailsModal contactID={ContactID} onMailTo={onMailTo} />);
         } else {
             createModal(
                 <ContactModal

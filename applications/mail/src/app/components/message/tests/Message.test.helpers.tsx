@@ -32,7 +32,6 @@ export const defaultProps: MessageViewProps = {
     message: { ID: messageID } as Message,
     mailSettings: {} as MailSettings,
     onBack: jest.fn(),
-    onCompose: jest.fn(),
     breakpoints: {} as Breakpoints,
     onFocus: noop,
     isComposerOpened: false,

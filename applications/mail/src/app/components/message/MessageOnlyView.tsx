@@ -1,16 +1,17 @@
 import React, { useEffect, useRef } from 'react';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { useLabels, classnames, useHotkeys } from 'react-components';
+import { useLinkHandler } from 'react-components/hooks/useLinkHandler';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 
 import { isDraft } from 'proton-shared/lib/mail/messages';
 import MessageView, { MessageViewRef } from './MessageView';
 import { useMessage } from '../../hooks/message/useMessage';
-import { OnCompose } from '../../hooks/composer/useCompose';
 import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
 import { useLoadMessage } from '../../hooks/message/useLoadMessage';
 import ConversationHeader from '../conversation/ConversationHeader';
 import { Breakpoints } from '../../models/utils';
+import { useOnMailTo } from '../../containers/ComposeProvider';
 
 interface Props {
     hidden: boolean;
@@ -18,7 +19,6 @@ interface Props {
     messageID: string;
     mailSettings: MailSettings;
     onBack: () => void;
-    onCompose: OnCompose;
     breakpoints: Breakpoints;
     onMessageReady: () => void;
     columnLayout: boolean;
@@ -31,7 +31,6 @@ const MessageOnlyView = ({
     messageID,
     mailSettings,
     onBack,
-    onCompose,
     breakpoints,
     onMessageReady,
     columnLayout,
@@ -55,6 +54,10 @@ const MessageOnlyView = ({
     const data = message.data || ({ ID: messageID } as Message);
 
     const messageContainerRef = useRef(null);
+
+    const onMailTo = useOnMailTo();
+
+    useLinkHandler(messageContainerRef, onMailTo);
 
     useHotkeys(messageContainerRef, [
         [
@@ -102,7 +105,6 @@ const MessageOnlyView = ({
                     labels={labels}
                     mailSettings={mailSettings}
                     onBack={onBack}
-                    onCompose={onCompose}
                     breakpoints={breakpoints}
                     onMessageReady={onMessageReady}
                     columnLayout={columnLayout}

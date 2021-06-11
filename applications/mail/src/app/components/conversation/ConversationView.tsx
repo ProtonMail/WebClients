@@ -1,22 +1,25 @@
 import React, { useEffect, memo, useRef } from 'react';
 import { useLabels, useToggle, classnames } from 'react-components';
+import { useLinkHandler } from 'react-components/hooks/useLinkHandler';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
 import { isDraft } from 'proton-shared/lib/mail/messages';
+
 import MessageView, { MessageViewRef } from '../message/MessageView';
 import { useConversation } from '../../hooks/conversation/useConversation';
 import { findMessageToExpand } from '../../helpers/message/messageExpandable';
 import TrashWarning from './TrashWarning';
 import { hasLabel } from '../../helpers/elements';
-import { OnCompose } from '../../hooks/composer/useCompose';
 import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
 import ConversationHeader from './ConversationHeader';
 import { Breakpoints } from '../../models/utils';
+
 import UnreadMessages from './UnreadMessages';
 import { useConversationFocus } from '../../hooks/conversation/useConversationFocus';
 import { useConversationHotkeys } from '../../hooks/conversation/useConversationHotkeys';
+import { useOnMailTo } from '../../containers/ComposeProvider';
 import ConversationErrorBanner from './ConversationErrorBanner';
 
 const { TRASH } = MAILBOX_LABEL_IDS;
@@ -28,7 +31,6 @@ interface Props {
     messageID?: string;
     mailSettings: MailSettings;
     onBack: () => void;
-    onCompose: OnCompose;
     breakpoints: Breakpoints;
     onMessageReady: () => void;
     columnLayout: boolean;
@@ -45,7 +47,6 @@ const ConversationView = ({
     messageID,
     mailSettings,
     onBack,
-    onCompose,
     breakpoints,
     onMessageReady,
     columnLayout,
@@ -66,6 +67,9 @@ const ConversationView = ({
     const messageViewsRefs = useRef({} as { [messageID: string]: MessageViewRef | undefined });
 
     const wrapperRef = useRef<HTMLDivElement>(null);
+    const onMailTo = useOnMailTo();
+
+    useLinkHandler(wrapperRef, onMailTo);
 
     const { Conversation: conversation = {}, Messages: inputMessages = [] } = conversationCacheEntry || {};
     const messages = usePlaceholders(inputMessages, loadingMessages, conversation?.NumMessages || 1) as Message[];
@@ -162,7 +166,6 @@ const ConversationView = ({
                             conversationIndex={index}
                             conversationID={conversationID}
                             onBack={onBack}
-                            onCompose={onCompose}
                             breakpoints={breakpoints}
                             onFocus={handleFocus}
                             onMessageReady={onMessageReady}

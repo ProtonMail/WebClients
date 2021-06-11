@@ -32,12 +32,12 @@ interface RenderResult extends OriginalRenderResult {
     rerender: (ui: React.ReactElement) => Promise<void>;
 }
 
-export const authentication = {
+export const authentication = ({
     getUID: jest.fn(),
     getLocalID: jest.fn(),
     getPassword: jest.fn(),
     onLogout: jest.fn(),
-} as unknown as PrivateAuthenticationStore;
+} as unknown) as PrivateAuthenticationStore;
 
 let history: MemoryHistory;
 export const getHistory = () => history;

@@ -15,10 +15,10 @@ import {
 import { isPaid } from 'proton-shared/lib/user/helpers';
 
 import { createNewDraft, cloneDraft } from '../helpers/message/messageDraft';
-import { MESSAGE_ACTIONS } from '../constants';
 import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../models/message';
 import { useMessageCache } from '../containers/MessageProvider';
 import { findSender } from '../helpers/addresses';
+import { MESSAGE_ACTIONS } from '../constants';
 
 const CACHE_KEY = 'Draft';
 

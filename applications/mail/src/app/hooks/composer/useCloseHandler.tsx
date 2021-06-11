@@ -7,7 +7,7 @@ import SavingDraftNotification, {
     SavingDraftNotificationAction,
 } from '../../components/notifications/SavingDraftNotification';
 import { MessageExtended } from '../../models/message';
-import { OnCompose } from './useCompose';
+import { useOnCompose } from '../../containers/ComposeProvider';
 
 export interface UseCloseHandlerParameters {
     modelMessage: MessageExtended;
@@ -18,7 +18,6 @@ export interface UseCloseHandlerParameters {
     pendingSave: RefObject<boolean>;
     autoSave: ((message: MessageExtended) => Promise<void>) & Abortable;
     actualSave: (message: MessageExtended) => Promise<void>;
-    onCompose: OnCompose;
     onClose: () => void;
     onDicard: () => void;
 }
@@ -32,12 +31,13 @@ export const useCloseHandler = ({
     uploadInProgress,
     pendingSave,
     promiseUpload,
-    onCompose,
     onClose,
     onDicard,
 }: UseCloseHandlerParameters) => {
     const { createNotification, hideNotification } = useNotifications();
     const isMounted = useIsMounted();
+
+    const onCompose = useOnCompose();
 
     // Indicates that the composer is saving a draft
     const [saving, setSavingUnsafe] = useState(false);

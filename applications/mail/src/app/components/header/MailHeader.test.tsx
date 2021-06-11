@@ -23,7 +23,6 @@ const getProps = () => ({
     history: getHistory(),
     breakpoints: {} as Breakpoints,
     onSearch: jest.fn(),
-    onCompose: jest.fn(),
     expanded: true,
     onToggleExpand: jest.fn(),
     onOpenShortcutsModal: jest.fn(),

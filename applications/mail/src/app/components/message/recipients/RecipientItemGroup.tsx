@@ -15,22 +15,21 @@ import { getInitials } from 'proton-shared/lib/helpers/string';
 
 import { RecipientGroup } from '../../../models/address';
 import RecipientItemLayout from './RecipientItemLayout';
-import { MESSAGE_ACTIONS } from '../../../constants';
-import { OnCompose } from '../../../hooks/composer/useCompose';
 import GroupModal from '../modals/GroupModal';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import { useContactCache } from '../../../containers/ContactProvider';
+import { useOnCompose } from '../../../containers/ComposeProvider';
+import { MESSAGE_ACTIONS } from '../../../constants';
 
 interface Props {
     group: RecipientGroup;
     mapStatusIcons?: MapStatusIcons;
     globalIcon?: StatusIcon;
     showAddress?: boolean;
-    onCompose: OnCompose;
 }
 
-const RecipientItemGroup = ({ group, mapStatusIcons, globalIcon, showAddress = true, onCompose }: Props) => {
+const RecipientItemGroup = ({ group, mapStatusIcons, globalIcon, showAddress = true }: Props) => {
     const { getGroupLabel } = useRecipientLabel();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
@@ -39,6 +38,8 @@ const RecipientItemGroup = ({ group, mapStatusIcons, globalIcon, showAddress = t
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const label = getGroupLabel(group);
     const initial = getInitials(group.group?.Name);
+
+    const onCompose = useOnCompose();
 
     let addresses = group.recipients.map((recipient) => recipient.Address).join(', ');
     const allAddresses = addresses;

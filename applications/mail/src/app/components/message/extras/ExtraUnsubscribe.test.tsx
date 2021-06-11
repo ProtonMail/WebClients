@@ -29,7 +29,6 @@ describe('Unsubscribe banner', () => {
     const messageID = 'messageID';
     const toAddressID = 'toAddressID';
     const toAddress = 'to@domain.com';
-    const onCompose = jest.fn();
 
     const defaultMessage = {
         localID: messageID,
@@ -56,7 +55,7 @@ describe('Unsubscribe banner', () => {
             },
         });
 
-        const { getByTestId } = await render(<ExtraUnsubscribe message={message} onCompose={onCompose} />, false);
+        const { getByTestId } = await render(<ExtraUnsubscribe message={message} />, false);
 
         const banner = getByTestId('unsubscribe-banner');
 
@@ -101,7 +100,7 @@ describe('Unsubscribe banner', () => {
             },
         });
 
-        const { getByTestId } = await render(<ExtraUnsubscribe message={message} onCompose={onCompose} />, false);
+        const { getByTestId } = await render(<ExtraUnsubscribe message={message} />, false);
 
         const banner = getByTestId('unsubscribe-banner');
 
@@ -139,7 +138,7 @@ describe('Unsubscribe banner', () => {
             },
         });
 
-        const { getByTestId } = await render(<ExtraUnsubscribe message={message} onCompose={onCompose} />, false);
+        const { getByTestId } = await render(<ExtraUnsubscribe message={message} />, false);
 
         const banner = getByTestId('unsubscribe-banner');
 

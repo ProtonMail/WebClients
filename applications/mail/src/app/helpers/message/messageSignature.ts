@@ -3,13 +3,13 @@ import { PM_SIGNATURE } from 'proton-shared/lib/constants';
 import { isPlainText } from 'proton-shared/lib/mail/messages';
 import { message } from 'proton-shared/lib/sanitize';
 
-import { MESSAGE_ACTIONS } from '../../constants';
 import { dedentTpl } from '../dedent';
 import { replaceLineBreaks } from '../string';
 import { parseInDiv, isHTMLEmpty } from '../dom';
 import { MessageExtended } from '../../models/message';
 import { getPlainTextContent, exportPlainText } from './messageContent';
 import { CLASSNAME_BLOCKQUOTE } from './messageDraft';
+import { MESSAGE_ACTIONS } from '../../constants';
 
 export const CLASSNAME_SIGNATURE_CONTAINER = 'protonmail_signature_block';
 export const CLASSNAME_SIGNATURE_USER = 'protonmail_signature_block-user';

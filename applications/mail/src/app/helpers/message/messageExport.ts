@@ -5,7 +5,7 @@ import { Api } from 'proton-shared/lib/interfaces';
 import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { getAttachments, isPlainText } from 'proton-shared/lib/mail/messages';
 import { getSessionKey } from 'proton-shared/lib/mail/send/attachments';
-import { MESSAGE_ACTIONS } from '../../constants';
+
 import { MessageExtended, MessageExtendedWithData, MessageKeys } from '../../models/message';
 import { mutateHTMLCid } from '../embedded/embeddedParser';
 import { find } from '../embedded/embeddedFinder';
@@ -15,6 +15,7 @@ import { splitMail, combineHeaders } from '../mail';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import { insertActualRemoteImages } from '../transforms/transformRemote';
+import { MESSAGE_ACTIONS } from '../../constants';
 
 const removePasswordFromRequests: Pick<Message, 'Password' | 'PasswordHint'> = {
     Password: undefined,

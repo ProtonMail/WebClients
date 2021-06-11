@@ -2,13 +2,13 @@ import { PM_SIGNATURE } from 'proton-shared/lib/constants';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import { message } from 'proton-shared/lib/sanitize';
 
-import { MESSAGE_ACTIONS } from '../../constants';
 import {
     insertSignature,
     CLASSNAME_SIGNATURE_CONTAINER,
     CLASSNAME_SIGNATURE_USER,
-    CLASSNAME_SIGNATURE_EMPTY
+    CLASSNAME_SIGNATURE_EMPTY,
 } from './messageSignature';
+import { MESSAGE_ACTIONS } from '../../constants';
 
 const content = '<p>test</p>';
 const signature = `
@@ -99,7 +99,7 @@ describe('signature', () => {
                 MESSAGE_ACTIONS.NEW,
                 MESSAGE_ACTIONS.REPLY,
                 MESSAGE_ACTIONS.REPLY_ALL,
-                MESSAGE_ACTIONS.FORWARD
+                MESSAGE_ACTIONS.FORWARD,
             ];
             const isAfters = [false, true];
 

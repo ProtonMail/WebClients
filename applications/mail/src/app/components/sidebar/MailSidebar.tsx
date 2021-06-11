@@ -3,20 +3,21 @@ import { c } from 'ttag';
 import { Location } from 'history';
 import { Sidebar, SidebarPrimaryButton, SidebarNav, MainLogo, useMailSettings, Tooltip } from 'react-components';
 
-import { MESSAGE_ACTIONS } from '../../constants';
 import MailSidebarList from './MailSidebarList';
 import SidebarVersion from './SidebarVersion';
-import { OnCompose } from '../../hooks/composer/useCompose';
+import { useOnCompose } from '../../containers/ComposeProvider';
+import { MESSAGE_ACTIONS } from '../../constants';
 
 interface Props {
     labelID: string;
     expanded?: boolean;
     location: Location;
     onToggleExpand: () => void;
-    onCompose: OnCompose;
 }
 
-const MailSidebar = ({ labelID, expanded = false, location, onToggleExpand, onCompose }: Props) => {
+const MailSidebar = ({ labelID, expanded = false, location, onToggleExpand }: Props) => {
+    const onCompose = useOnCompose();
+
     const handleCompose = useCallback(() => {
         onCompose({ action: MESSAGE_ACTIONS.NEW });
     }, [onCompose]);

@@ -1,42 +1,8 @@
+import { Recipient } from 'proton-shared/lib/interfaces';
+import { message as purifyMessage, sanitizeString } from 'proton-shared/lib/sanitize';
 import { parseURL } from 'proton-shared/lib/helpers/browser';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { sanitizeString, message as purifyMessage } from 'proton-shared/lib/sanitize';
-import { Recipient } from 'proton-shared/lib/interfaces/Address';
-
 import { PartialMessageExtended } from '../models/message';
-
-export const isSubDomain = (hostname: string, domain: string) => {
-    if (hostname === domain) {
-        return true;
-    }
-
-    return hostname.endsWith(`.${domain}`);
-};
-
-export const getHostname = (url: string) => {
-    if (/^https?:\/\//.test(url)) {
-        // Absolute URL.
-        // The easy way to parse an URL, is to create <a> element.
-        // @see: https://gist.github.com/jlong/2428561
-        const parser = document.createElement('a');
-        parser.href = url;
-        return parser.hostname;
-    }
-    return window.location.hostname; // Relative URL.
-};
-
-export const isExternal = (url: string) => {
-    try {
-        return window.location.hostname !== getHostname(url);
-    } catch (e) {
-        /*
-         * IE11/Edge are the worst, they crash when they try to parse
-         * ex: http://xn--rotonmail-4sg.com
-         * so if it does we know it's an external link (⌐■_■)
-         */
-        return true;
-    }
-};
 
 /**
  * Split an addresses string to a list of recipients

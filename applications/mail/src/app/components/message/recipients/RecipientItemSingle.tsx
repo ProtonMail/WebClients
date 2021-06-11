@@ -17,15 +17,16 @@ import { ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/conta
 import { getInitials } from 'proton-shared/lib/helpers/string';
 import { textToClipboard } from 'proton-shared/lib/helpers/browser';
 import { Recipient } from 'proton-shared/lib/interfaces';
+
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
-import { MESSAGE_ACTIONS } from '../../../constants';
-import { OnCompose } from '../../../hooks/composer/useCompose';
 import RecipientItemLayout from './RecipientItemLayout';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import { useContactCache } from '../../../containers/ContactProvider';
 import { getContactEmail } from '../../../helpers/addresses';
+import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
+import { MESSAGE_ACTIONS } from '../../../constants';
 
 interface Props {
     recipient: Recipient;
@@ -33,7 +34,6 @@ interface Props {
     globalIcon?: StatusIcon;
     showAddress?: boolean;
     showLockIcon?: boolean;
-    onCompose: OnCompose;
     signingPublicKey?: OpenPGPKey;
 }
 
@@ -43,7 +43,6 @@ const RecipientItemSingle = ({
     globalIcon,
     showAddress = true,
     showLockIcon = true,
-    onCompose,
     signingPublicKey,
 }: Props) => {
     const [uid] = useState(generateUID('dropdown-recipient'));
@@ -52,6 +51,9 @@ const RecipientItemSingle = ({
     const { createModal } = useModals();
     const { contactsMap } = useContactCache();
     const { getRecipientLabel } = useRecipientLabel();
+
+    const onCompose = useOnCompose();
+    const onMailTo = useOnMailTo();
 
     const { ContactID } = getContactEmail(contactsMap, recipient.Address) || {};
     const icon = globalIcon || (mapStatusIcons ? mapStatusIcons[recipient.Address as string] : undefined);
@@ -79,7 +81,7 @@ const RecipientItemSingle = ({
         event.stopPropagation();
 
         if (ContactID) {
-            createModal(<ContactDetailsModal contactID={ContactID} />);
+            createModal(<ContactDetailsModal contactID={ContactID} onMailTo={onMailTo} />);
             return;
         }
 

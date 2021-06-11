@@ -28,7 +28,6 @@ import MessageOnlyView from '../../components/message/MessageOnlyView';
 import { PAGE_SIZE } from '../../constants';
 import { isMessage, isSearch as testIsSearch } from '../../helpers/elements';
 import { Breakpoints } from '../../models/utils';
-import { OnCompose } from '../../hooks/composer/useCompose';
 import { useWelcomeFlag } from '../../hooks/mailbox/useWelcomeFlag';
 import useNewEmailNotification from '../../hooks/mailbox/useNewEmailNotification';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
@@ -37,6 +36,7 @@ import { useMailboxHotkeys } from '../../hooks/mailbox/useMailboxHotkeys';
 import { useMailboxFocus } from '../../hooks/mailbox/useMailboxFocus';
 
 import './MailboxContainer.scss';
+import { useOnCompose } from '../ComposeProvider';
 
 interface Props {
     labelID: string;
@@ -47,7 +47,6 @@ interface Props {
     messageID?: string;
     location: Location;
     history: History;
-    onCompose: OnCompose;
     isComposerOpened: boolean;
 }
 
@@ -60,7 +59,6 @@ const MailboxContainer = ({
     messageID,
     location,
     history,
-    onCompose,
     isComposerOpened,
 }: Props) => {
     const getElementsFromIDs = useGetElementsFromIDs();
@@ -118,6 +116,8 @@ const MailboxContainer = ({
     });
 
     const handleBack = useCallback(() => history.push(setParamsInLocation(history.location, { labelID })), [labelID]);
+
+    const onCompose = useOnCompose();
 
     useEffect(() => setPage({ ...page, page: pageFromUrl(location) }), [searchParams.page]);
     useEffect(() => setPage({ ...page, total }), [total]);
@@ -293,7 +293,6 @@ const MailboxContainer = ({
                                     mailSettings={mailSettings}
                                     conversationID={elementID as string}
                                     onBack={handleBack}
-                                    onCompose={onCompose}
                                     breakpoints={breakpoints}
                                     onMessageReady={onMessageReady}
                                     columnLayout={columnLayout}
@@ -307,7 +306,6 @@ const MailboxContainer = ({
                                     mailSettings={mailSettings}
                                     messageID={elementID as string}
                                     onBack={handleBack}
-                                    onCompose={onCompose}
                                     breakpoints={breakpoints}
                                     onMessageReady={onMessageReady}
                                     columnLayout={columnLayout}

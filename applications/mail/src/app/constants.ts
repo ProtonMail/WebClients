@@ -87,17 +87,6 @@ export const DRAG_ELEMENT_ID_KEY = 'drag-element-id';
 export const DRAG_ADDRESS_KEY = 'drag-address';
 export const DRAG_ADDRESS_SIZE_KEY = 'drag-address-size';
 
-export const PROTON_DOMAINS = [
-    'protonmail.com',
-    'protonmail.ch',
-    'protonvpn.com',
-    'protonstatus.com',
-    'gdpr.eu',
-    'protonvpn.net',
-    'pm.me',
-    'protonirockerxow.onion',
-];
-
 export const MAX_ELEMENT_LIST_LOAD_RETRIES = 3;
 
 export const OPENPGP_REFRESH_CUTOFF = 10;

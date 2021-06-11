@@ -8,8 +8,8 @@ import SendingMessageNotification, {
 } from '../../components/notifications/SendingMessageNotification';
 import { MessageAction, MessageExtended, MessageExtendedWithData } from '../../models/message';
 import { useSendMessage } from './useSendMessage';
-import { OnCompose } from './useCompose';
 import { useSendVerifications } from './useSendVerifications';
+import { useOnCompose } from '../../containers/ComposeProvider';
 
 export interface UseSendHandlerParameters {
     modelMessage: MessageExtended;
@@ -18,7 +18,6 @@ export interface UseSendHandlerParameters {
     pendingSave: RefObject<boolean>;
     autoSave: ((message: MessageExtended) => Promise<void>) & Abortable;
     addAction: <T>(action: MessageAction<T>) => Promise<T>;
-    onCompose: OnCompose;
     onClose: () => void;
 }
 
@@ -29,13 +28,14 @@ export const useSendHandler = ({
     pendingSave,
     autoSave,
     addAction,
-    onCompose,
     onClose,
 }: UseSendHandlerParameters) => {
     const { createNotification, hideNotification } = useNotifications();
 
     const { preliminaryVerifications, extendedVerifications } = useSendVerifications();
     const sendMessage = useSendMessage();
+
+    const onCompose = useOnCompose();
 
     const handleSendAfterUploads = useHandler(async (notifManager: SendingMessageNotificationManager) => {
         let verificationResults;
