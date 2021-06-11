@@ -12,9 +12,9 @@ import { isConversationMode } from '../../helpers/mailSettings';
 
 interface Props {
     labelID: string;
-    mailSettings: MailSettings;
+    mailSettings: MailSettings | undefined;
     location: Location;
-    labelCount: LabelCount;
+    labelCount: LabelCount | undefined;
     checkedIDs?: string[];
     onCheckAll: (checked: boolean) => void;
 }
@@ -26,14 +26,10 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     const [folders] = useFolders();
 
     const isCustomLabel = testIsCustomLabel(labelID, labels);
-    const total = labelCount.Total || 0;
+    const total = labelCount?.Total || 0;
     const checkeds = checkedIDs.length;
 
-    const labelName = useMemo(() => getLabelName(labelCount.LabelID || '', labels, folders), [
-        labels,
-        folders,
-        labelCount,
-    ]);
+    const labelName = useMemo(() => getLabelName(labelID, labels, folders), [labelID, labels, folders]);
 
     const count = checkeds || total;
 
@@ -55,6 +51,8 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
 
     const text = isCustomLabel ? labelText : folderText;
 
+    const showText = checkeds || labelCount;
+
     return (
         <div className="mauto text-center p2 max-w100">
             {checkeds === 0 && labelName && (
@@ -62,7 +60,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
                     {labelName}
                 </h3>
             )}
-            <p className="mb2">{text}</p>
+            <p className="mb2 text-keep-space">{showText ? text : null}</p>
             <div className="mb2">
                 <img
                     src={conversationSvg}

@@ -2,7 +2,7 @@ import React from 'react';
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { act } from '@testing-library/react';
-import { PAGE_SIZE, SEARCH_PLACEHOLDERS_COUNT } from '../../../constants';
+import { PAGE_SIZE, DEFAULT_PLACEHOLDERS_COUNT } from '../../../constants';
 import { addApiMock, addApiResolver, addToCache, api, clearAll, render } from '../../../helpers/test/helper';
 import { Conversation, ConversationLabel } from '../../../models/conversation';
 import { Element } from '../../../models/element';
@@ -176,7 +176,7 @@ describe('Mailbox elements list reacting to events', () => {
         const getItems = () => getAllByTestId('message-item', { exact: false });
 
         // First load pending
-        expectElements(getItems, SEARCH_PLACEHOLDERS_COUNT, true);
+        expectElements(getItems, DEFAULT_PLACEHOLDERS_COUNT, true);
 
         await act(async () => {
             resolve({ Total: total, Messages: messages });
@@ -216,7 +216,7 @@ describe('Mailbox elements list reacting to events', () => {
         const getItems = () => getAllByTestId('message-item', { exact: false });
 
         // First load pending
-        expectElements(getItems, SEARCH_PLACEHOLDERS_COUNT, true);
+        expectElements(getItems, DEFAULT_PLACEHOLDERS_COUNT, true);
 
         await act(async () => {
             resolve({ Total: total, Messages: messages });
@@ -229,7 +229,7 @@ describe('Mailbox elements list reacting to events', () => {
         await rerender(<MailboxContainer {...getProps({ search: { keyword: 'changed' } })} />);
 
         // Params has changed, cache is reseted
-        expectElements(getItems, SEARCH_PLACEHOLDERS_COUNT, true);
+        expectElements(getItems, DEFAULT_PLACEHOLDERS_COUNT, true);
 
         await act(async () => {
             resolve({ Total: total, Messages: messages });

@@ -19,7 +19,7 @@ const defaultElements: Element[] = [];
 interface Props {
     labelID: string;
     loading: boolean;
-    expectedLength: number;
+    placeholderCount: number;
     elementID?: string;
     userSettings: UserSettings;
     mailSettings: MailSettings;
@@ -45,7 +45,7 @@ const List = (
     {
         labelID,
         loading,
-        expectedLength,
+        placeholderCount,
         elementID,
         userSettings,
         mailSettings,
@@ -72,7 +72,7 @@ const List = (
 
     const [labels] = useLabels();
 
-    const elements = usePlaceholders(inputElements, loading, expectedLength);
+    const elements = usePlaceholders(inputElements, loading, placeholderCount);
     const pagingHandlers = usePaging(inputPage, onPage);
     const { page, total } = pagingHandlers;
 
@@ -122,7 +122,7 @@ const List = (
                     conversationMode={conversationMode}
                     mailSettings={mailSettings}
                 />
-                {expectedLength === 0 ? (
+                {elements.length === 0 ? (
                     <EmptyView labelID={labelID} isSearch={isSearch} />
                 ) : (
                     <>

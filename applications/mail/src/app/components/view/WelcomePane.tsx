@@ -33,9 +33,9 @@ const Container = ({ children }: ContainerProps) => (
     </div>
 );
 interface Props {
-    mailSettings: MailSettings;
+    mailSettings: MailSettings | undefined;
     location: Location;
-    labelCount: LabelCount;
+    labelCount: LabelCount | undefined;
 }
 
 const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
@@ -49,8 +49,8 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
     const hasAlreadyImported = imports.length;
     const loading = importsLoading || loadingUsedMailMobileApp || loadingUser;
 
-    const unread = labelCount.Unread || 0;
-    const total = labelCount.Total || 0;
+    const unread = labelCount?.Unread || 0;
+    const total = labelCount?.Total || 0;
     const imageSvg = featureUsedMailMobileApp?.Value ? envelope : mobileMailApp;
     const userName = (
         <span key="display-name" className="inline-block max-w100 text-ellipsis align-bottom">
@@ -76,6 +76,10 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
         <strong key="total-label">{c('Info').ngettext(msgid`${total} message`, `${total} messages`, total)}</strong>
     );
 
+    const counterMessage = unread
+        ? c('Info').jt`You have ${unreadsLabel} in your inbox.`
+        : c('Info').jt`You have ${totalLabel} in your inbox.`;
+
     if (loading) {
         return (
             <Container>
@@ -96,12 +100,8 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
             )}
             <Container>
                 <h1>{user.DisplayName ? c('Title').jt`Welcome ${userName}` : c('Title').t`Welcome`}</h1>
-                <p>
-                    {unread
-                        ? c('Info').jt`You have ${unreadsLabel} in your inbox.`
-                        : c('Info').jt`You have ${totalLabel} in your inbox.`}
-                </p>
-                <div className="mb2 mt2" />
+                <p className="text-keep-space">{labelCount ? counterMessage : null}</p>
+                <hr className="mb2 mt2" />
                 <div className="text-rg">
                     <img className="hauto" src={imageSvg} alt={c('Alternative text for welcome image').t`Welcome`} />
                 </div>

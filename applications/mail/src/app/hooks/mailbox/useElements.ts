@@ -42,7 +42,7 @@ import {
 import {
     ELEMENTS_CACHE_REQUEST_SIZE,
     PAGE_SIZE,
-    SEARCH_PLACEHOLDERS_COUNT,
+    DEFAULT_PLACEHOLDERS_COUNT,
     MAX_ELEMENT_LIST_LOAD_RETRIES,
 } from '../../constants';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -60,7 +60,7 @@ interface Options {
 interface ReturnValue {
     labelID: string;
     elements: Element[];
-    expectedLength: number;
+    placeholderCount: number;
     pendingRequest: boolean;
     loading: boolean;
     total: number;
@@ -113,9 +113,14 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     const api = useApi();
     const abortControllerRef = useRef<AbortController>();
 
-    const [conversationCounts = []] = useConversationCounts() as [LabelCount[], boolean, Error];
-    const [messageCounts = []] = useMessageCounts() as [LabelCount[], boolean, Error];
+    const [conversationCounts = [], loadingConversationCounts] = useConversationCounts() as [
+        LabelCount[],
+        boolean,
+        Error
+    ];
+    const [messageCounts = [], loadingMessageCounts] = useMessageCounts() as [LabelCount[], boolean, Error];
     const counts = conversationMode ? conversationCounts : messageCounts;
+    const loadingCounts = conversationMode ? loadingConversationCounts : loadingMessageCounts;
 
     const { getESDBStatus, encryptedSearch } = useEncryptedSearchContext();
     const { dbExists, esEnabled } = getESDBStatus();
@@ -173,24 +178,39 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         return sorted.slice(startIndex, endIndex);
     }, [cache]);
 
+    // Define if we can base our calculations base on the counters or not
+    const baseOnCounters = useMemo(() => !isSearch(cache.params) && !loadingCounts, [cache.params, loadingCounts]);
+
+    // Define if we can expect the result count or not
+    const expectingLength = useMemo(
+        () => !cache.beforeFirstLoad || baseOnCounters,
+        [cache.beforeFirstLoad, baseOnCounters]
+    );
+
     const total = useMemo(() => {
-        if (isSearch(cache.params)) {
+        if (!baseOnCounters) {
             return cache.total;
         }
         return getTotal(counts, cache.params.labelID, cache.params.filter);
-    }, [counts, cache.params, cache.total, cache.pendingRequest]);
+    }, [counts, cache.params, cache.total, cache.pendingRequest, expectingLength]);
 
     const expectedLength = useMemo(() => {
-        if (isSearch(cache.params) && cache.pendingRequest && cache.total === 0) {
-            // Artificially show some placeholders when waiting for search results
-            return SEARCH_PLACEHOLDERS_COUNT;
-        }
         return expectedPageLength(cache.page, total, isFilter(cache.params.filter) ? cache.bypassFilter.length : 0);
     }, [cache.page, cache.params, total, cache.bypassFilter, cache.pendingRequest]);
 
+    const placeholderCount = useMemo(() => {
+        if (!expectingLength) {
+            return DEFAULT_PLACEHOLDERS_COUNT;
+        }
+        return expectedLength;
+    }, [expectingLength, expectedLength]);
+
     const expectedLengthMismatch = useMemo(() => {
+        if (!expectingLength) {
+            return 0;
+        }
         return Math.abs(elements.length - expectedLength);
-    }, [elements.length, expectedLength]);
+    }, [elements.length, expectedLength, expectingLength]);
 
     const paramsChanged = () =>
         labelID !== cache.params.labelID ||
@@ -229,7 +249,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         shouldResetCache() ||
         (!cache.pendingRequest &&
             cache.retry.count < MAX_ELEMENT_LIST_LOAD_RETRIES &&
-            (cache.invalidated || expectedLengthMismatch !== 0 || !pageCached()));
+            (cache.invalidated || (expectingLength && expectedLengthMismatch !== 0) || !pageCached()));
 
     const shouldUpdatePage = () => pageChanged() && pageCached();
 
@@ -295,7 +315,6 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         setCache((cache) => ({ ...cache, pendingRequest: true, page }));
         const queryParameters = getQueryElementsParameters();
         try {
-            const isSearchActive = isSearch(search);
             const { Total, Elements } = await queryElements(queryParameters);
             const elementsMap = toMap(Elements, 'ID');
             const updatedElements = cache.updatedElements.filter((elementID) => !elementsMap[elementID]);
@@ -303,7 +322,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
 
             // Sanity check that the query result total match the expected one
             // If not, we completely refresh the counters
-            if (!isSearchActive && Total !== expectedTotal) {
+            if (baseOnCounters && Total !== expectedTotal) {
                 const countModel = conversationMode ? ConversationCountsModel : MessageCountsModel;
                 const value = await countModel.get(api);
                 globalCache.set(countModel.key, { status: STATUS.RESOLVED, value });
@@ -421,7 +440,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
 
     // Move to the last page if the current one becomes empty
     useEffect(() => {
-        if (expectedLength === 0 && page > 0) {
+        if (expectingLength && expectedLength === 0 && page > 0) {
             const count = pageCount(total);
             if (count === 0 && page !== 0) {
                 onPage(0);
@@ -429,13 +448,14 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                 onPage(count - 1);
             }
         }
-    }, [expectedLength, page]);
+    }, [expectingLength, expectedLength, page]);
 
     useEffect(() => {
         if (
             !cache.beforeFirstLoad &&
             !cache.pendingRequest &&
             cache.retry.error === undefined &&
+            expectingLength &&
             elements.length !== expectedLength
         ) {
             if (!esEnabled) {
@@ -560,7 +580,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     return {
         labelID: cache.params.labelID,
         elements,
-        expectedLength,
+        placeholderCount,
         pendingRequest: cache.pendingRequest,
         loading,
         total: cache.total,

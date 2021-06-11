@@ -80,16 +80,19 @@ const MailboxContainer = ({
 
     const searchParams = getSearchParams(location.hash);
     const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
-    const searchParameters = useMemo<SearchParameters>(() => extractSearchParameters(location), [
-        searchParams.address,
-        searchParams.from,
-        searchParams.to,
-        searchParams.keyword,
-        searchParams.begin,
-        searchParams.end,
-        searchParams.attachments,
-        searchParams.wildcard,
-    ]);
+    const searchParameters = useMemo<SearchParameters>(
+        () => extractSearchParameters(location),
+        [
+            searchParams.address,
+            searchParams.from,
+            searchParams.to,
+            searchParams.keyword,
+            searchParams.begin,
+            searchParams.end,
+            searchParams.attachments,
+            searchParams.wildcard,
+        ]
+    );
     const isSearch = testIsSearch(searchParameters);
     const sort = useMemo<Sort>(() => sortFromUrl(location), [searchParams.sort]);
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
@@ -105,7 +108,7 @@ const MailboxContainer = ({
     const onMessageLoad = () => setIsMessageOpening(true);
     const onMessageReady = () => setIsMessageOpening(false);
 
-    const { labelID, elements, loading, expectedLength, total } = useElements({
+    const { labelID, elements, loading, placeholderCount, total } = useElements({
         conversationMode: isConversationMode(inputLabelID, mailSettings, location),
         labelID: inputLabelID,
         page: pageFromUrl(location),
@@ -144,9 +147,10 @@ const MailboxContainer = ({
     useCalendars();
     useCalendarUserSettings();
 
+    const elementsLength = loading ? placeholderCount : elements.length;
     const showToolbar = !breakpoints.isNarrow || !elementID;
     const showList = columnMode || !elementID;
-    const showContentPanel = (columnMode && !!expectedLength) || !!elementID;
+    const showContentPanel = (columnMode && !!elementsLength) || !!elementID;
     const showPlaceholder = !breakpoints.isNarrow && (!elementID || !!checkedIDs.length);
     const showContentView = showContentPanel && !!elementID;
     const elementIDForList = checkedIDs.length ? undefined : elementID;
@@ -250,7 +254,7 @@ const MailboxContainer = ({
                         conversationMode={conversationMode}
                         labelID={labelID}
                         loading={loading}
-                        expectedLength={expectedLength}
+                        placeholderCount={placeholderCount}
                         columnLayout={columnLayout}
                         mailSettings={mailSettings}
                         elementID={elementIDForList}
