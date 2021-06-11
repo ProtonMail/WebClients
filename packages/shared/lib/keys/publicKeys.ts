@@ -158,6 +158,7 @@ export const getContactPublicKeyModel = async ({
         mimeType: vcardMimeType,
         isContact,
         isContactSignatureVerified,
+        contactSignatureTimestamp,
     } = pinnedKeysConfig;
     const trustedFingerprints = new Set<string>();
     const expiredFingerprints = new Set<string>();
@@ -209,6 +210,7 @@ export const getContactPublicKeyModel = async ({
         pgpAddressDisabled: isDisabledUser(apiKeysConfig),
         isContact,
         isContactSignatureVerified,
+        contactSignatureTimestamp,
         emailAddressWarnings: apiKeysConfig.Warnings,
         emailAddressErrors: apiKeysConfig.Errors,
     };

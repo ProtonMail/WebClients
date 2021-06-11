@@ -132,7 +132,7 @@ export const extractNewValue = (
     mergedValues: (ContactValue | ContactValue[])[] = []
 ): { isNewValue: boolean; newValue: ContactValue | ContactValue[] | undefined } => {
     //  the fields n and adr have to be treated separately since they are array-valued
-    if (['adr', 'n'].includes(field)) {
+    if (['adr', 'n', 'org'].includes(field)) {
         // value is an array in this case, whose elements can be strings or arrays of strings
 
         // compare with merged values. Normalize all strings
