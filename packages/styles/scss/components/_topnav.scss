@@ -30,7 +30,7 @@
 	}
 }
 
-@include respond-to(1300) {
+@include respond-to(1700) {
 	.topnav-list--four-elements {
 		.navigation-title {
 			// equivalent of .sr-only, but impossible to extend in a breakpoint
@@ -98,13 +98,13 @@
 	}
 
 	.topnav-list--four-elements .topnav-link {
-		padding-left: rem(17.5);
-		padding-right: rem(17.5);
+		padding-left: rem(10);
+		padding-right: rem(10);
 	}
 
 	.topnav-list--four-elements .topnav-link--blackfriday::before,
 	.topnav-link--blackfriday::before {
-		left: calc(#{rem(17.5)} + #{rem(22)});
+		left: calc(#{rem(10)} + #{rem(22)});
 		top: calc(50% - #{rem(18)});
 	}
 }
@@ -112,8 +112,8 @@
 @include respond-to($breakpoint-tiny) {
 	.topnav-list--four-elements .topnav-link,
 	.topnav-link {
-		padding-left: rem(5);
-		padding-right: rem(5);
+		padding-left: rem(2);
+		padding-right: rem(2);
 	}
 
 	.topnav-list--four-elements .topnav-link--blackfriday::before,
