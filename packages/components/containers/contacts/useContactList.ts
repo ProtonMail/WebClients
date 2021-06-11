@@ -17,7 +17,7 @@ const useContactList = ({ search, contactID, contactGroupID }: Props) => {
     const [contacts = [], loadingContacts] = useContacts() as [Contact[], boolean, any];
     const [contactGroups = [], loadingContactGroups] = useContactGroups();
 
-    const normalizedSearch = normalize(search);
+    const normalizedSearch = normalize(search, true);
 
     const { contactGroupName, totalContactsInGroup } = useMemo<{
         contactGroupName?: string;
@@ -58,7 +58,7 @@ const useContactList = ({ search, contactID, contactGroupID }: Props) => {
                 ? (contactEmailsMap[ID] as ContactEmail[]).map(({ Email }) => Email).join(' ')
                 : '';
             const searchFilter = normalizedSearch.length
-                ? normalize(`${Name} ${emails}`).includes(normalizedSearch)
+                ? normalize(`${Name} ${emails}`, true).includes(normalizedSearch)
                 : true;
 
             const groupFilter = contactGroupID ? LabelIDs.includes(contactGroupID) : true;

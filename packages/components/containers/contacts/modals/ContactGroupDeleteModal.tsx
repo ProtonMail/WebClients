@@ -41,6 +41,16 @@ const ContactGroupDeleteModal = ({ groupIDs = [], onDelete, onClose = noop, ...r
             : // translator: the variable is a positive integer (written in digits) always strictly bigger than 1
               c('Title').ngettext(msgid`Delete ${count} contact group`, `Delete ${count} contact groups`, count);
 
+    const alertText =
+        count === 1
+            ? c('Warning').t`Are you sure you want to permanently delete this contact group?`
+            : // tranlator: the variable is a positive integer (written in digits) always greater than 1
+              c('Warning').ngettext(
+                  msgid`Are you sure you want to permanently delete ${count} contact group?`,
+                  `Are you sure you want to permanently delete ${count} contact groups?`,
+                  count
+              );
+
     return (
         <FormModal
             title={title}
@@ -54,7 +64,7 @@ const ContactGroupDeleteModal = ({ groupIDs = [], onDelete, onClose = noop, ...r
             <Alert type="info">
                 {c('Info').t`Please note that addresses assigned to this group will NOT be deleted.`}
             </Alert>
-            <Alert type="error">{c('Info').t`Are you sure you want to permanently delete this contact group?`}</Alert>
+            <Alert type="error">{alertText}</Alert>
         </FormModal>
     );
 };

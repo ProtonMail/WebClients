@@ -12,13 +12,16 @@ import ErrorBoundary from '../../app/ErrorBoundary';
 import GenericError from '../../error/GenericError';
 import FormModal from '../../../components/modal/FormModal';
 import ContactModal from './ContactModal';
+import { PrimaryButton } from '../../../components/button';
+import { useLinkHandler } from '../../../hooks/useLinkHandler';
 
 interface Props {
     contactID: string;
     onClose?: () => void;
+    onMailTo?: (src: string) => void;
 }
 
-const ContactDetailsModal = ({ contactID, onClose = noop, ...rest }: Props) => {
+const ContactDetailsModal = ({ contactID, onClose = noop, onMailTo, ...rest }: Props) => {
     const { createModal } = useModals();
     const [contactGroups = [], loadingContactGroups] = useContactGroups();
     const [userKeysList, loadingUserKeys] = useUserKeys();
@@ -26,6 +29,9 @@ const ContactDetailsModal = ({ contactID, onClose = noop, ...rest }: Props) => {
     const { loading: loadingContacts, contactEmailsMap } = useContactList({});
     const [contact, loadingContact] = useContact(contactID);
     const modalRef = useRef<HTMLDivElement>(null);
+    const modalContentRef = useRef<HTMLDivElement>(null);
+
+    useLinkHandler(modalContentRef, onMailTo);
 
     const [{ properties }] = useContactProperties({ contact, userKeysList });
 
@@ -58,10 +64,10 @@ const ContactDetailsModal = ({ contactID, onClose = noop, ...rest }: Props) => {
             title={c(`Title`).t`Contact details`}
             loading={isLoading}
             close={c('Action').t`Close`}
-            submit={c('Action').t`Edit`}
+            submit={<PrimaryButton onClick={openContactModal}>{c('Action').t`Edit`}</PrimaryButton>}
             disabled
-            onSubmit={openContactModal}
             onClose={onClose}
+            innerRef={modalContentRef}
             {...rest}
         >
             <ErrorBoundary

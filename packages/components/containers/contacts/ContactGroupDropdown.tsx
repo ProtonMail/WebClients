@@ -114,6 +114,11 @@ const ContactGroupDropdown = ({
         return contactGroups.filter(({ Name }) => normalize(Name, true).includes(normalizedKeyword));
     }, [keyword, contactGroups]);
 
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        await withLoading(handleApply());
+    };
+
     return (
         <>
             <Tooltip title={tooltip}>
@@ -144,76 +149,86 @@ const ContactGroupDropdown = ({
                 autoClose={false}
                 noMaxSize
             >
-                <div className="flex flex-justify-space-between flex-align-items-center m1 mb0">
-                    <strong>{c('Label').t`Add to group`}</strong>
-                    <Tooltip title={c('Info').t`Create a new contact group`}>
-                        <Button icon size="small" onClick={handleAdd} className="flex flex-align-items-center">
-                            <Icon name="contacts-groups" /> +
-                        </Button>
-                    </Tooltip>
-                </div>
-                <div className="m1 mb0">
-                    <SearchInput
-                        value={keyword}
-                        onChange={setKeyword}
-                        autoFocus
-                        placeholder={c('Placeholder').t`Filter groups`}
-                    />
-                </div>
-                <div className="scroll-if-needed scroll-smooth-touch mt1 contactGroupDropdown-list-container">
-                    {filteredContactGroups.length ? (
-                        <ul className="unstyled mt0 mb0">
-                            {filteredContactGroups.map(({ ID, Name, Color }) => {
-                                const checkboxId = `${uid}${ID}`;
-                                return (
-                                    <li
-                                        key={ID}
-                                        className="dropdown-item w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1"
-                                    >
-                                        <Checkbox
-                                            className="flex-item-noshrink"
-                                            id={checkboxId}
-                                            checked={model[ID] === CHECKED}
-                                            indeterminate={model[ID] === INDETERMINATE}
-                                            onChange={handleCheck(ID)}
-                                        />
-                                        <label
-                                            htmlFor={checkboxId}
-                                            className="flex flex-align-items-center flex-item-fluid flex-nowrap"
+                <form onSubmit={handleSubmit}>
+                    <div className="flex flex-justify-space-between flex-align-items-center m1 mb0">
+                        <strong>{c('Label').t`Add to group`}</strong>
+                        <Tooltip title={c('Info').t`Create a new contact group`}>
+                            <Button
+                                icon
+                                size="small"
+                                onClick={handleAdd}
+                                className="flex flex-align-items-center"
+                                data-prevent-arrow-navigation
+                            >
+                                <Icon name="contacts-groups" /> +
+                            </Button>
+                        </Tooltip>
+                    </div>
+                    <div className="m1 mb0">
+                        <SearchInput
+                            value={keyword}
+                            onChange={setKeyword}
+                            autoFocus
+                            placeholder={c('Placeholder').t`Filter groups`}
+                            data-prevent-arrow-navigation
+                        />
+                    </div>
+                    <div className="scroll-if-needed scroll-smooth-touch mt1 contactGroupDropdown-list-container">
+                        {filteredContactGroups.length ? (
+                            <ul className="unstyled mt0 mb0">
+                                {filteredContactGroups.map(({ ID, Name, Color }) => {
+                                    const checkboxId = `${uid}${ID}`;
+                                    return (
+                                        <li
+                                            key={ID}
+                                            className="dropdown-item w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1"
                                         >
-                                            <Icon
-                                                name="circle"
-                                                className="ml0-25 mr0-5 flex-item-noshrink"
-                                                size={12}
-                                                color={Color}
+                                            <Checkbox
+                                                className="flex-item-noshrink"
+                                                id={checkboxId}
+                                                checked={model[ID] === CHECKED}
+                                                indeterminate={model[ID] === INDETERMINATE}
+                                                onChange={handleCheck(ID)}
                                             />
-                                            <span className="flex-item-fluid text-ellipsis" title={Name}>
-                                                <Mark value={keyword}>{Name}</Mark>
-                                            </span>
-                                        </label>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    ) : null}
-                    {!filteredContactGroups.length && keyword ? (
-                        <div className="w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1">
-                            <Icon name="attention" className="mr0-5" />
-                            {c('Info').t`No group found`}
-                        </div>
-                    ) : null}
-                </div>
-                <div className="m1">
-                    <Button
-                        color="norm"
-                        fullWidth
-                        loading={loading}
-                        disabled={!filteredContactGroups.length}
-                        onClick={() => withLoading(handleApply())}
-                    >
-                        {c('Action').t`Apply`}
-                    </Button>
-                </div>
+                                            <label
+                                                htmlFor={checkboxId}
+                                                className="flex flex-align-items-center flex-item-fluid flex-nowrap"
+                                            >
+                                                <Icon
+                                                    name="circle"
+                                                    className="ml0-25 mr0-5 flex-item-noshrink"
+                                                    size={12}
+                                                    color={Color}
+                                                />
+                                                <span className="flex-item-fluid text-ellipsis" title={Name}>
+                                                    <Mark value={keyword}>{Name}</Mark>
+                                                </span>
+                                            </label>
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        ) : null}
+                        {!filteredContactGroups.length && keyword ? (
+                            <div className="w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1">
+                                <Icon name="attention" className="mr0-5" />
+                                {c('Info').t`No group found`}
+                            </div>
+                        ) : null}
+                    </div>
+                    <div className="m1">
+                        <Button
+                            color="norm"
+                            fullWidth
+                            loading={loading}
+                            disabled={!filteredContactGroups.length}
+                            data-prevent-arrow-navigation
+                            type="submit"
+                        >
+                            {c('Action').t`Apply`}
+                        </Button>
+                    </div>
+                </form>
             </Dropdown>
         </>
     );
