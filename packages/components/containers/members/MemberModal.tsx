@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, GIGA, MEMBER_ROLE } from 'proton-shared/lib/constants';
 import { createMember, createMemberAddress, updateRole } from 'proton-shared/lib/api/members';
 import { srpVerify } from 'proton-shared/lib/srp';
-import { Organization, Address, CachedOrganizationKey } from 'proton-shared/lib/interfaces';
+import { Domain, Organization, Address, CachedOrganizationKey } from 'proton-shared/lib/interfaces';
 import { setupMemberKey } from 'proton-shared/lib/keys';
 import { useApi, useNotifications, useEventManager, useGetAddresses } from '../../hooks';
 import { FormModal, Row, Field, Label, PasswordInput, Input, Toggle, SelectTwo, Option } from '../../components';
@@ -11,7 +11,6 @@ import { FormModal, Row, Field, Label, PasswordInput, Input, Toggle, SelectTwo, 
 import MemberStorageSelector, { getStorageRange } from './MemberStorageSelector';
 import MemberVPNSelector, { getVPNRange } from './MemberVPNSelector';
 import SelectEncryption from '../keys/addKey/SelectEncryption';
-import { EnhancedDomain } from '../../hooks/useDomains';
 
 const FIVE_GIGA = 5 * GIGA;
 
@@ -19,10 +18,11 @@ interface Props {
     onClose?: () => void;
     organization: Organization;
     organizationKey: CachedOrganizationKey;
-    domains: EnhancedDomain[];
+    domains: Domain[];
+    domainsAddressesMap: any; // TODO: better typing
 }
 
-const MemberModal = ({ onClose, organization, organizationKey, domains, ...rest }: Props) => {
+const MemberModal = ({ onClose, organization, organizationKey, domains, domainsAddressesMap, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
@@ -110,7 +110,7 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, ...rest 
         }
 
         const domain = domains.find(({ DomainName }) => DomainName === model.domain);
-        const address = (domain?.addresses || []).find(
+        const address = (domainsAddressesMap[domain?.ID || ''] || []).find(
             ({ Email }: Address) => Email === `${model.address}@${model.domain}`
         );
 
