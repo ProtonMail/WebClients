@@ -1,6 +1,6 @@
 import React, { useEffect, useState, RefObject } from 'react';
 import { c } from 'ttag';
-import psl from 'psl';
+import { getSecondLevelDomain } from 'proton-shared/lib/helpers/url';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import { isIE11, isEdge } from 'proton-shared/lib/helpers/browser';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
@@ -119,7 +119,7 @@ export const useLinkHandler = (wrapperRef: RefObject<HTMLDivElement>, onMailTo?:
 
         const askForConfirmation = mailSettings?.ConfirmLink === undefined ? 1 : mailSettings?.ConfirmLink;
         const hostname = getHostname(src.raw);
-        const currentDomain = psl.get(window.location.hostname);
+        const currentDomain = getSecondLevelDomain();
 
         /*
          * If the modal is already active --- do nothing
