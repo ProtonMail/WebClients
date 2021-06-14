@@ -8,17 +8,21 @@ import { useApi, useCache, useOrganization, useDomains, useModals, useLoading } 
 import DomainModal from './DomainModal';
 import DomainsTable from './DomainsTable';
 import RestoreAdministratorPrivileges from '../organization/RestoreAdministratorPrivileges';
+import useDomainsAddresses from '../../hooks/useDomainsAddresses';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 
 const DomainsSection = () => {
     const api = useApi();
     const cache = useCache();
     const [domains, loadingDomains] = useDomains();
+    const [domainsAddressesMap, loadingDomainsAddressesMap] = useDomainsAddresses(domains);
     const [organization, loadingOrganization] = useOrganization();
     const [loading, withLoading] = useLoading();
     const { createModal } = useModals();
 
-    if (loadingDomains || loadingOrganization) {
+    const allModelsArePresent = domains && domainsAddressesMap && organization;
+
+    if (!allModelsArePresent && (loadingDomains || loadingDomainsAddressesMap || loadingOrganization)) {
         return <Loader />;
     }
 
@@ -39,10 +43,11 @@ const DomainsSection = () => {
                 <Button color="norm" onClick={() => createModal(<DomainModal />)} className="mr1">
                     {c('Action').t`Add domain`}
                 </Button>
-                <Button loading={loading} onClick={() => withLoading(handleRefresh())}>{c('Action')
-                    .t`Refresh status`}</Button>
+                <Button loading={loading || loadingDomainsAddressesMap} onClick={() => withLoading(handleRefresh())}>{c(
+                    'Action'
+                ).t`Refresh status`}</Button>
             </div>
-            {!domains.length ? null : <DomainsTable domains={domains} />}
+            {!domains.length ? null : <DomainsTable domains={domains} domainsAddressesMap={domainsAddressesMap} />}
             <div className="mb1 color-weak">
                 {UsedDomains} / {MaxDomains} {c('Info').ngettext(msgid`domain used`, `domains used`, UsedDomains)}
             </div>
