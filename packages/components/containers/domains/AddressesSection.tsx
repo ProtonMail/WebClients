@@ -23,7 +23,7 @@ const AddressesSection = ({ onClose }: Props) => {
                 </div>
                 <Alert>{c('Info for domain modal').t`Add a new address for any user of your organization.`}</Alert>
                 <div className="mb1">
-                    <ButtonLike as={SettingsLink} color="norm" onClick={() => onClose?.()} path="/users-addresses`">{c(
+                    <ButtonLike as={SettingsLink} color="norm" onClick={() => onClose?.()} path="/users-addresses">{c(
                         'Action'
                     ).t`Add address`}</ButtonLike>
                 </div>
