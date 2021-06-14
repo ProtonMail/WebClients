@@ -69,11 +69,15 @@ const LinkTable = ({ linksMap, onCopyLink, onDelete, onEdit, isLoadingMap, user 
                                     key={CalendarUrlID}
                                     cells={[
                                         <div key="calendar">
-                                            <div className="flex">
-                                                <Icon name="calendar" style={{ color }} className="mr0-75" />
+                                            <div className="flex flex-nowrap">
+                                                <Icon
+                                                    name="calendar"
+                                                    style={{ color }}
+                                                    className="mr0-75 flex-item-noshrink"
+                                                />
                                                 <div className="text-ellipsis">
                                                     {calendarName}
-                                                    <div className="text-sm m0">
+                                                    <div className="text-sm color-weak m0">
                                                         {accessLevel === ACCESS_LEVEL.FULL
                                                             ? c('Access level').t`Full`
                                                             : c('Access level').t`Limited`}
