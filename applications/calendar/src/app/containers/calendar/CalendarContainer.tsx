@@ -125,9 +125,11 @@ const CalendarContainer = ({
         };
     }, []);
 
-    const { view: urlView, range: urlRange, date: urlDate } = useMemo(() => fromUrlParams(location.pathname), [
-        location.pathname,
-    ]);
+    const {
+        view: urlView,
+        range: urlRange,
+        date: urlDate,
+    } = useMemo(() => fromUrlParams(location.pathname), [location.pathname]);
 
     // In the same to get around setStates not being batched in the range selector callback.
     const [{ view: customView, range: customRange, date: customUtcDate }, setCustom] = useReducer(
@@ -318,7 +320,7 @@ const CalendarContainer = ({
             utcDate={utcDate}
             utcDateRange={utcDateRange}
             onCreateEvent={
-                disableCreate || !defaultCalendarBootstrap
+                disableCreate || !defaultCalendarBootstrap || !activeCalendars.length
                     ? undefined
                     : (attendees: AttendeeModel[] = []) => interactiveRef.current?.createEvent(attendees)
             }
