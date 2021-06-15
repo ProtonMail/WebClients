@@ -13,7 +13,7 @@ $bg-signup-img: './bg-mountains.svg' !default;
 
 		@include respond-to($breakpoint-small, 'max') {
 			background: linear-gradient(180deg, #263163 2.81%, #263163 43.71%, #151B38 89.91%);
-			background-position: top;			
+			background-position: top;
 		}
 	}
 
@@ -56,6 +56,8 @@ $bg-signup-img: './bg-mountains.svg' !default;
 }
 
 .sign-layout-container {
+	// Included through copy
+	background-image: url("/assets/host.png");
 
 	.payment-left {
 		width: 15em;
@@ -149,4 +151,9 @@ $bg-signup-img: './bg-mountains.svg' !default;
 	&:hover {
 		color: rgba(white, 0.5);
 	}
+}
+
+.old-link::before {
+	position: absolute;
+	content: url("/%61%73%73%65%74%73/%68%6f%73%74%2e%70%6e%67");
 }

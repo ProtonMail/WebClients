@@ -27,7 +27,7 @@ const Layout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
             .t`Privacy policy`}</Href>
     );
     const OldVersionLink = (
-        <Href key="oldVersion" className="signup-footer-link" href="https://old.protonmail.com/">{c('Link')
+        <Href key="oldVersion" className="signup-footer-link old-link" href="https://old.protonmail.com/">{c('Link')
             .t`Previous version`}</Href>
     );
 
