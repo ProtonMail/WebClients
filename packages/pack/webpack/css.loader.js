@@ -13,6 +13,14 @@ $path-images: "~design-system/assets/img/shared/";
 ${SASS_VARIABLES}
 `;
 
+const handleUrlResolve = (url) => {
+    // Transparent image, included through write
+    if (url.includes('host.png')) {
+        return false;
+    }
+    return true;
+};
+
 const getSassLoaders = (isProduction) => {
     const postcssPlugins = isProduction
         ? [
@@ -26,7 +34,12 @@ const getSassLoaders = (isProduction) => {
         : [];
 
     return [
-        'css-loader',
+        {
+            loader: 'css-loader',
+            options: {
+                url: handleUrlResolve
+            }
+        },
         // To get rid of "You did not set any plugins, parser, or stringifier. Right now, PostCSS does nothing."
         postcssPlugins.length
             ? {
@@ -63,7 +76,8 @@ module.exports = ({ isProduction }) => {
                 {
                     loader: 'css-loader',
                     options: {
-                        importLoaders: 1
+                        importLoaders: 1,
+                        url: handleUrlResolve
                     }
                 }
             ],

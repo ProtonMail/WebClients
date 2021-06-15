@@ -91,6 +91,10 @@ module.exports = ({ isProduction, publicPath, appMode, featureFlags, writeSRI })
             }))
         ),
 
+        new WriteWebpackPlugin([
+            { name: 'assets/host.png', data: Buffer.from('R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7', 'base64') }
+        ]),
+
         // Fix max file limit if the folder does not exist
         fs.existsSync('public') &&
             new CopyWebpackPlugin({
