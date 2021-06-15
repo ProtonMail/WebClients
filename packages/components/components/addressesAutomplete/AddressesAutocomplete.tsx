@@ -15,7 +15,6 @@ import {
     AddressesAutocompleteItem,
     getContactsAutocompleteItems,
     getContactGroupsAutocompleteItems,
-    getMajorListAutocompleteItems,
     getNumberOfMembersText,
     GroupsWithContactsMap,
 } from './helper';
@@ -95,18 +94,7 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
             ];
         }, [contactEmails, contactGroups, recipientsByAddress, recipientsByGroup]);
 
-        const majorList = useMemo(() => {
-            return getMajorListAutocompleteItems(input, (email) => {
-                const canonicalEmail = canonizeEmail(email);
-                return (
-                    !recipientsByAddress.has(canonicalEmail) &&
-                    !contactEmailsMap?.[canonicalEmail] &&
-                    !validate(canonicalEmail)
-                );
-            });
-        }, [input, contactEmailsMap, recipientsByAddress]);
-
-        const options = [...contactsAutocompleteItems, ...majorList];
+        const options = [...contactsAutocompleteItems];
 
         const safeAddRecipients = (newRecipients: Recipient[]) => {
             const uniqueNewRecipients = newRecipients.filter(({ Address }) => {
