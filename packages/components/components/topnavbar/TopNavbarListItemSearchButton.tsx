@@ -13,6 +13,7 @@ const TopNavbarListItemSearchButton = React.forwardRef(
                 as="button"
                 type="button"
                 icon={<Icon name="search" />}
+                title={c('Header').t`Search`}
                 text={c('Header').t`Search`}
             />
         );
