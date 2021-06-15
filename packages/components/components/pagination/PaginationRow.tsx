@@ -18,6 +18,7 @@ interface Props {
     disabled?: boolean;
     step?: number;
     className?: string;
+    disableGoToLast?: boolean;
 }
 
 const PaginationRow = ({
@@ -31,6 +32,7 @@ const PaginationRow = ({
     total,
     step = 1,
     className,
+    disableGoToLast = false,
 }: Props) => {
     const pages = range(page - step, page + step + 1).filter((pageNumber) => pageNumber > 0 && pageNumber <= total);
     const goToPageTitle = (page: number) => c('Action').t`Go to page ${page}`;
@@ -70,7 +72,7 @@ const PaginationRow = ({
                 </Button>
             </Tooltip>
             <Tooltip title={c('Action').t`Go to last page`}>
-                <Button icon disabled={disabled || disableNext} onClick={() => onEnd()}>
+                <Button icon disabled={disabled || disableNext || disableGoToLast} onClick={() => onEnd()}>
                     <Icon name="caret-double-left" className="block mirror" alt={c('Action').t`Go to last page`} />
                 </Button>
             </Tooltip>
