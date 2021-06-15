@@ -13,6 +13,7 @@ const SriPlugin = require('webpack-subresource-integrity');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
+const SriStripPlugin = require('./sri-strip-plugin');
 const { getSource } = require('./helpers/source');
 const transformOpenpgpFiles = require('./helpers/openpgp');
 const { OPENPGP_FILES } = require('./constants');
@@ -121,8 +122,10 @@ module.exports = ({ isProduction, publicPath, appMode, featureFlags, writeSRI })
             ? [
                   new SriPlugin({
                       hashFuncNames: ['sha384'],
-                      enabled: isProduction,
-                      ignored: /index.+\.css$/
+                      enabled: isProduction
+                  }),
+                  new SriStripPlugin({
+                      ignore: /\.css$/
                   })
               ]
             : []),
