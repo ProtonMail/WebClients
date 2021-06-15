@@ -12,14 +12,14 @@ export const MEMORY_DOWNLOAD_LIMIT = (isMobile() ? 100 : 1000) * MB;
 export const MAX_THREADS_PER_DOWNLOAD = 3;
 export const MAX_THREADS_PER_REQUEST = 5;
 export const DEFAULT_SORT_FIELD = 'ModifyTime';
-export const DEFAULT_SORT_ORDER = SORT_DIRECTION.ASC;
+export const DEFAULT_SORT_ORDER = SORT_DIRECTION.DESC;
 export const DEFAULT_SORT_PARAMS: SortParams = {
     sortField: DEFAULT_SORT_FIELD,
     sortOrder: DEFAULT_SORT_ORDER,
 };
 export const DEFAULT_USER_SETTINGS: UserSettings = {
     Layout: LayoutSetting.List,
-    Sort: SortSetting.ModifiedAsc,
+    Sort: SortSetting.ModifiedDesc,
 };
 export const UPLOAD_TIMEOUT = 90000;
 export const DOWNLOAD_TIMEOUT = 90000;

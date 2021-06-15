@@ -37,10 +37,11 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
     const [modalState, setModalState] = useState(SharingModalState.Loading);
     const [deleting, withDeleting] = useLoading(false);
     const [saving, withSaving] = useLoading(false);
-    const [shareUrlInfo, setShareUrlInfo] = useState<{
-        ShareURL: ShareURL;
-        keyInfo: SharedURLSessionKeyPayload;
-    }>();
+    const [shareUrlInfo, setShareUrlInfo] =
+        useState<{
+            ShareURL: ShareURL;
+            keyInfo: SharedURLSessionKeyPayload;
+        }>();
     const [passwordToggledOn, setPasswordToggledOn] = useState(false);
     const [expirationToggledOn, setExpirationToggledOn] = useState(false);
 

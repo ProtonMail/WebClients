@@ -10,6 +10,7 @@ export const queryFolderChildren = (
         PageSize = FOLDER_PAGE_SIZE,
         FoldersOnly = 0,
         Sort = DEFAULT_SORT_FIELD,
+        // @ts-ignore
         Desc = DEFAULT_SORT_ORDER === SORT_DIRECTION.ASC ? 0 : 1,
     }: { Page: number; PageSize?: number; FoldersOnly?: number; Sort?: string; Desc?: 0 | 1 }
 ) => ({

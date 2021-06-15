@@ -36,9 +36,9 @@ const ListHeader = ({
         }
 
         const direction =
-            sortParams.sortField === key && sortParams.sortOrder === SORT_DIRECTION.DESC
-                ? SORT_DIRECTION.ASC
-                : SORT_DIRECTION.DESC;
+            sortParams.sortField === key && sortParams.sortOrder === SORT_DIRECTION.ASC
+                ? SORT_DIRECTION.DESC
+                : SORT_DIRECTION.ASC;
 
         setSorting(key, direction);
     };

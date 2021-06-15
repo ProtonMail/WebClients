@@ -114,7 +114,7 @@ function ItemCell({
                     />
                 </div>
                 {item.SharedUrl && (
-                    <SharedURLIcon expired={item.UrlsExpired} className="flex file-browser-grid-item--share" />
+                    <SharedURLIcon shareId={shareId} item={item} className="flex file-browser-grid-item--share" />
                 )}
                 <div className="flex flex-item-fluid flex-justify-center flex-align-items-center">
                     {item.CachedThumbnailURL ? (
