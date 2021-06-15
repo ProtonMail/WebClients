@@ -1,3 +1,26 @@
+# [4.0.0-beta.16] - 2021-06-15
+
+This time we Proton Drive team brings you updates to the Shared section, improved upload visuals and many more improvements which will enlighten your day using Proton Drive Beta.
+
+## Fixed
+
+- Sorting files or folders selection is now highlighted
+- Restarting a download in case of connection issue, will resume already downloaded progress
+- Deleted time in Trash is now calculated and displayed correctly
+- When user clicks on Name column for first time, sorting will happen from A to Z
+
+## Added
+
+- The Shared section will now have Preview, Download, Rename, and View details functionality for the files shared (via toolbar or context menu)
+- Updated the drag & drop upload visuals
+- Additional settings row in Share via link modal is now fully clickable
+- Users can click on Shared icon to open Sharing options modal in My files view
+- Updated the default sorting of files (now it's by modified date, Newest to oldest)
+- Added Download and Share buttons to the Preview mode
+- Added number of accesses to file Details screen for when a file is shared
+
+
+
 # [4.0.0-beta.15] - 2021-05-26
 
 With this product iteration we give you ability to view thumbnails (for new uploads only) in Grid layout mode.
