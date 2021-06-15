@@ -135,6 +135,7 @@ html,
 .hamburger {
 	@include respond-to($breakpoint-small) {
 		flex-shrink: 0; // this has to stay
+		margin-right: 0.1em; // just for not touching the text on hover state :)
 	}
 }
 
