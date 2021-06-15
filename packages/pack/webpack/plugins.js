@@ -121,7 +121,8 @@ module.exports = ({ isProduction, publicPath, appMode, featureFlags, writeSRI })
             ? [
                   new SriPlugin({
                       hashFuncNames: ['sha384'],
-                      enabled: isProduction
+                      enabled: isProduction,
+                      ignored: /index.+\.css$/
                   })
               ]
             : []),
