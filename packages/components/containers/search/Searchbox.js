@@ -47,7 +47,14 @@ const Searchbox = ({ delay, className = '', advanced, placeholder = '', value = 
                     onFocus={onFocus}
                 />
             </label>
-            <Button type="submit" icon shape="ghost" color="weak" className="searchbox-search-button flex">
+            <Button
+                type="submit"
+                icon
+                shape="ghost"
+                color="weak"
+                className="searchbox-search-button flex"
+                title={c('Action').t`Search`}
+            >
                 <Icon name="search" size={22} className="mauto searchbox-search-button-icon" />
                 <span className="sr-only">{c('Action').t`Search`}</span>
             </Button>
