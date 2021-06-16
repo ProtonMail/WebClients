@@ -1,7 +1,7 @@
 module.exports = {
     setupFilesAfterEnv: ['./rtl.setup.js'],
     verbose: true,
-    moduleDirectories: ['<rootDir>/node_modules'],
+    moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     transform: {
         '^.+\\.(js|tsx?)$': '<rootDir>/jest.transform.js',
     },
