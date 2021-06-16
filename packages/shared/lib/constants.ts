@@ -745,17 +745,6 @@ export const USER_SCOPES = {
     DRIVE: 68719476736,
 };
 
-export const MAJOR_DOMAINS = [
-    'protonmail.com',
-    'protonmail.ch',
-    'pm.me',
-    'gmail.com',
-    'live.com',
-    'outlook.com',
-    'hotmail.com',
-    'yahoo.com',
-];
-
 export const PROTON_DOMAINS = [
     'protonmail.com',
     'protonmail.ch',
