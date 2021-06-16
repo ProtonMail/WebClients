@@ -108,6 +108,12 @@ export const getProps = ({
     return { ...props, location, labelID, elementID };
 };
 
+export const baseApiMocks = () => {
+    addApiMock('mail/v4/importers', () => ({ Importers: [] }));
+    addApiMock('settings/calendar', () => ({}));
+    addApiMock('calendar/v1', () => ({}));
+};
+
 export const setup = async ({
     messages = [],
     conversations = [],
@@ -118,6 +124,7 @@ export const setup = async ({
     ...propsArgs
 }: SetupArgs = {}) => {
     minimalCache();
+    baseApiMocks();
     const props = getProps(propsArgs);
 
     addToCache('Labels', [{ ID: props.labelID }]);
@@ -127,7 +134,6 @@ export const setup = async ({
     if (mockConversations) {
         addApiMock('mail/v4/conversations', () => ({ Total: totalConversations, Conversations: conversations }));
     }
-    addApiMock('mail/v4/importers', () => ({ Importers: [] }));
 
     addToCache('Labels', [...labels, ...folders]);
     addToCache('MessageCounts', [{ LabelID: props.labelID, Total: totalMessages, Unread: totalMessages }]);

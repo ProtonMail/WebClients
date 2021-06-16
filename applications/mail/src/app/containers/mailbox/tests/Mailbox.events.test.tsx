@@ -3,12 +3,12 @@ import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { act } from '@testing-library/react';
 import { PAGE_SIZE, DEFAULT_PLACEHOLDERS_COUNT } from '../../../constants';
-import { addApiMock, addApiResolver, addToCache, api, clearAll, render } from '../../../helpers/test/helper';
+import { addApiResolver, addToCache, api, clearAll, render } from '../../../helpers/test/helper';
 import { Conversation, ConversationLabel } from '../../../models/conversation';
 import { Element } from '../../../models/element';
 import { ConversationEvent, MessageEvent } from '../../../models/event';
 import MailboxContainer from '../MailboxContainer';
-import { expectElements, getElements, getProps, props, sendEvent, setup } from './Mailbox.test.helpers';
+import { baseApiMocks, expectElements, getElements, getProps, props, sendEvent, setup } from './Mailbox.test.helpers';
 
 describe('Mailbox elements list reacting to events', () => {
     const { labelID } = props;
@@ -166,7 +166,7 @@ describe('Mailbox elements list reacting to events', () => {
         const search = { keyword: 'test' };
         const messages = getElements(total);
 
-        addApiMock('mail/v4/importers', () => ({ Importers: [] }));
+        baseApiMocks();
 
         addToCache('ConversationCounts', []);
         addToCache('MessageCounts', [{ LabelID: labelID, Total: total }]);
@@ -206,7 +206,7 @@ describe('Mailbox elements list reacting to events', () => {
         const search = { keyword: 'test' };
         const messages = getElements(total);
 
-        addApiMock('mail/v4/importers', () => ({ Importers: [] }));
+        baseApiMocks();
 
         addToCache('ConversationCounts', []);
         addToCache('MessageCounts', [{ LabelID: labelID, Total: total }]);
