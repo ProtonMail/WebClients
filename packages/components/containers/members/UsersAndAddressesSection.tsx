@@ -191,7 +191,7 @@ const UsersAndAddressesSection = () => {
                 .t`Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more.`}</Alert> */}
             <Block className="flex flex-align-items-start">
                 <Button
-                    shape="outline"
+                    color="norm"
                     disabled={loadingOrganization || loadingDomains || loadingDomainAddresses || loadingOrganizationKey}
                     onClick={handleAddUser}
                     className="on-mobile-mb0-5 mr1"
