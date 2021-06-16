@@ -1,10 +1,13 @@
 ## Release: 4.0.1 — June 30, 2021
+
 ### New features
-- Enable the search of time zones
+- Enabled the search of time zones
+
+### Improvements
+- Minor UI improvements
 
 ### Fixes
-- Fix the display of sent invites with specific encryption settings that were displayed encrypted in the sent folder
-- Small fixes on the contact widget in calendar when encountering an error
+- Fixed the display of sent invites with specific security settings that would show as encrypted in the sent folder
 
 # Proton Calendar for web is live!
 
