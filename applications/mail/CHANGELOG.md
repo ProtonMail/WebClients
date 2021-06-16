@@ -1,3 +1,36 @@
+## Release: 4.0.1 — June 16, 2021
+
+### Improvements
+
+-   Added support for keyboard shortcuts inside dropdown menus
+-   Improved and accelerated the loading of messages in the list view
+-   Improved loading times of the composer when replying to/forwarding a message with a lot of attachments
+-   Added a retry mechanism in cases where a message fails to load due to network issues
+-   Added an inactive state to the composer if the focus is somewhere else
+-   Improved contact search by adding diacritics support
+-   Improved the way the focus returns to the previous element after closing the composer
+
+### Bug fixes
+
+-   Fixed an issue where exporting a message containing an attachment with a decryption error would fail
+-   Fixed an issue where the contact encryption status would not be updated if changing the status while the composer is open
+-   Fixed an issue where contacts in a particular format could not be merged
+-   Fixed an issue where images inserted from an external URL would not be displayed
+-   Fixed an issue where a single message would be auto-focused when selecting a conversation in row layout
+-   Fixed an issue where an update would not be visible on the web client if previously updated from a mobile client
+-   Fixed an issue where an error message would be displayed when deleting messages on the last folder page
+-   Fixed an issue where addresses in contacts would be displayed without line breaks
+-   Fixed an issue where the specific folders icons were missing inside the "Move to" menu
+-   Fixed an issue where the focus would disappear from the conversation if navigating to a draft message inside
+-   Fixed an issue where the formatting option selected would not be highlighted in the composer toolbar
+-   Fixed an issue where the "Trust key" banner would be displayed even if the key was already trusted
+-   Fixed an issue where the notification option would appear disabled for folders created using the "Move to" menu in the navigation bar
+-   Fixed an issue where the "Unread" filter would disappear in the responsive view
+-   Fixed an issue where messages that were partially hidden below the toolbar could not be selected
+-   Fixed an issue where empty groups would be suggested in the composer autocomplete element
+-   Fixed an issue where selecting a date field in contacts and then changing the selection would result in the value being displayed incorrectly
+-   Fixed an issue where on some occasions the Unsubscribe URL would be shown twice in the Unsubscribe confirmation modal
+
 # Introducing the new ProtonMail!
 
 ## Release: 4.0.0 — June 8, 2021
