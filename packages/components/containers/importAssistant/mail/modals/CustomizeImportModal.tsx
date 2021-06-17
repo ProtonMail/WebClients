@@ -25,14 +25,14 @@ import {
     Label as FormLabel,
 } from '../../../../components';
 
-import { ImportModalModel, ImportPayloadModel, TIME_UNIT } from '../interfaces';
+import { ImportMailModalModel, ImportPayloadModel, TIME_UNIT } from '../interfaces';
 import { timeUnitLabels } from '../constants';
 import ImportManageFolders from './ImportManageFolders';
 import { mappingHasFoldersTooLong, mappingHasLabelsTooLong, mappingHasUnavailableNames } from '../helpers';
 
 interface Props {
-    modalModel: ImportModalModel;
-    updateModalModel: (newModel: ImportModalModel) => void;
+    modalModel: ImportMailModalModel;
+    updateModalModel: (newModel: ImportMailModalModel) => void;
     addresses: Address[];
     onClose?: () => void;
     customizeFoldersOpen: boolean;

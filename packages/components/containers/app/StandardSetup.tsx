@@ -11,6 +11,8 @@ import { useAuthentication, useConfig } from '../../hooks';
 import { PrivateAuthenticationStore, PublicAuthenticationStore } from './interface';
 import SSOPublicApp from './SSOPublicApp';
 import SSOForkConsumer from './SSOForkConsumer';
+import LoaderPage from './LoaderPage';
+import { G_OAUTH_REDIRECT_PATH } from '../importAssistant/constants';
 
 const ReplaceToBase = () => {
     document.location.replace(document.location.origin);
@@ -49,6 +51,9 @@ const StandardSetup = ({ locales, PrivateApp }: Props) => {
         };
         return (
             <Switch>
+                <Route path={G_OAUTH_REDIRECT_PATH}>
+                    <LoaderPage />
+                </Route>
                 <Route path={SSO_PATHS.FORK}>
                     <SSOForkConsumer
                         onEmptyFork={handleInactiveSession}

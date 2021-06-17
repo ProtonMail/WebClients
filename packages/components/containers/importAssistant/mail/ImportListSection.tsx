@@ -5,7 +5,7 @@ import { useImporters, useImportHistory } from '../../../hooks';
 import { Loader, Alert, Table, TableBody, TableCell, Href } from '../../../components';
 
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
-import ImportListRow from './ImportListRow';
+import ImportListRow from './list/ImportListRow';
 import { Importer, ImportHistory, ImportMailStatus, ImportMailError } from './interfaces';
 
 const sortActiveImports = (a: Importer, b: Importer) => {
@@ -24,7 +24,9 @@ const ImportListSection = () => {
 
     const activeImports = imports.filter(({ Active }) => Active);
 
-    if (!activeImports.length && !pastImports.length) {
+    const isLoading = importsLoading || pastImportsLoading;
+
+    if (!isLoading && !activeImports.length && !pastImports.length) {
         return <SettingsParagraph>{c('Info').t`No imports to display.`}</SettingsParagraph>;
     }
 
@@ -113,7 +115,7 @@ const ImportListSection = () => {
 
     return (
         <SettingsSectionWide>
-            {importsLoading || pastImportsLoading ? (
+            {isLoading ? (
                 <Loader />
             ) : (
                 <>

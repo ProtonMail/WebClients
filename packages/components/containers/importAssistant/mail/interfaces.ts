@@ -46,7 +46,7 @@ export enum Step {
     INSTRUCTIONS,
 }
 
-export interface ImportModalModel {
+export interface ImportMailModalModel {
     providerFolders: MailImportFolder[];
     step: Step;
     needIMAPDetails: boolean;
@@ -189,19 +189,9 @@ export enum PROVIDER_INSTRUCTIONS {
     YAHOO = 'yahoo',
 }
 
-export enum OAUTH_PROVIDER {
-    GMAIL = 'GMAIL',
-}
-
 export enum GMAIL_INSTRUCTIONS {
     IMAP = 1,
     LABELS = 2,
     TWO_STEPS = 3,
     CAPTCHA = 4,
-}
-
-export interface OAuthProps {
-    code: string;
-    provider: OAUTH_PROVIDER;
-    redirectURI: string;
 }
