@@ -1,20 +1,14 @@
 import React from 'react';
 import { c } from 'ttag';
-import { resumeMailImport, cancelMailImport, updateMailImport } from 'proton-shared/lib/api/mailImport';
+import { resumeMailImportJob, cancelMailImportJob, updateMailImport } from 'proton-shared/lib/api/mailImport';
 
-import { Alert, ConfirmModal, DropdownActions, Button } from '../../../components';
-import { useApi, useLoading, useNotifications, useEventManager, useModals } from '../../../hooks';
-import ImportMailModal from './modals/ImportMailModal';
-import {
-    OAuthProps,
-    OAUTH_PROVIDER,
-    Importer,
-    ImportMailStatus,
-    ImportMailError,
-    AuthenticationMethod,
-} from './interfaces';
-import useOAuthPopup from '../../../hooks/useOAuthPopup';
-import { getOAuthRedirectURL as getRedirectURL, getOAuthAuthorizationUrl } from './helpers';
+import { Alert, ConfirmModal, DropdownActions, Button } from '../../../../components';
+import { useApi, useLoading, useNotifications, useEventManager, useModals, useAddresses } from '../../../../hooks';
+import useOAuthPopup, { getOAuthAuthorizationUrl } from '../../../../hooks/useOAuthPopup';
+import ImportMailModal from '../modals/ImportMailModal';
+import { Importer, ImportMailStatus, ImportMailError, AuthenticationMethod } from '../interfaces';
+import { OAuthProps, OAUTH_PROVIDER } from '../../interfaces';
+import { G_OAUTH_SCOPE_MAIL } from '../../constants';
 
 interface Props {
     currentImport: Importer;
@@ -27,16 +21,16 @@ const ActiveImportRowActions = ({ currentImport }: Props) => {
     const { call } = useEventManager();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
+    const [addresses, loadingAddresses] = useAddresses();
     const [loadingPrimaryAction, withLoadingPrimaryAction] = useLoading();
     const [loadingSecondaryAction, withLoadingSecondaryAction] = useLoading();
 
     const { triggerOAuthPopup } = useOAuthPopup({
-        getRedirectURL,
-        getAuthorizationUrl: () => getOAuthAuthorizationUrl(Email),
+        authorizationUrl: getOAuthAuthorizationUrl({ scope: G_OAUTH_SCOPE_MAIL, login_hint: Email }),
     });
 
     const handleReconnectOAuth = async () => {
-        triggerOAuthPopup(OAUTH_PROVIDER.GMAIL, async (oauthProps: OAuthProps) => {
+        triggerOAuthPopup(OAUTH_PROVIDER.GOOGLE, async (oauthProps: OAuthProps) => {
             await api(
                 updateMailImport(ID, {
                     Code: oauthProps.code,
@@ -46,19 +40,19 @@ const ActiveImportRowActions = ({ currentImport }: Props) => {
                     RedirectUri: oauthProps?.redirectURI,
                 })
             );
-            await api(resumeMailImport(ID));
+            await api(resumeMailImportJob(ID));
             await call();
         });
     };
 
     const handleResume = async (importID: string) => {
-        await api(resumeMailImport(importID));
+        await api(resumeMailImportJob(importID));
         await call();
         createNotification({ text: c('Success').t`Import resumed` });
     };
 
     const handleReconnect = async () => {
-        await createModal(<ImportMailModal currentImport={currentImport} />);
+        await createModal(<ImportMailModal addresses={addresses} currentImport={currentImport} />);
     };
 
     const handleCancel = async (importID: string) => {
@@ -78,7 +72,7 @@ const ActiveImportRowActions = ({ currentImport }: Props) => {
                 </ConfirmModal>
             );
         });
-        await api(cancelMailImport(importID));
+        await api(cancelMailImportJob(importID));
         await call();
         createNotification({ text: c('Success').t`Import canceled` });
     };
@@ -100,6 +94,7 @@ const ActiveImportRowActions = ({ currentImport }: Props) => {
                 return withLoadingSecondaryAction(handleResume(ID));
             },
             loading: loadingSecondaryAction,
+            disabled: loadingAddresses,
         });
     }
 

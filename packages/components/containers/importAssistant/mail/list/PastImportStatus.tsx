@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Badge } from '../../../components';
+import { Badge } from '../../../../components';
 
-import { ImportMailReportStatus } from './interfaces';
+import { ImportMailReportStatus } from '../interfaces';
 
 interface Props {
     status: ImportMailReportStatus;

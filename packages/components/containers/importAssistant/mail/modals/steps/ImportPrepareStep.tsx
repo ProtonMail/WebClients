@@ -18,7 +18,7 @@ import {
     TextLoader,
 } from '../../../../../components';
 
-import { ImportModalModel, MailImportFolder, DestinationFolder, IMPORT_ERROR } from '../../interfaces';
+import { ImportMailModalModel, MailImportFolder, DestinationFolder, IMPORT_ERROR } from '../../interfaces';
 import { IMAPS, timeUnitLabels } from '../../constants';
 import {
     escapeSlashes,
@@ -31,14 +31,15 @@ import {
 } from '../../helpers';
 
 import CustomizeImportModal from '../CustomizeImportModal';
+import { OAUTH_PROVIDER } from '../../../interfaces';
 
 interface LabelColorMap {
     [key: string]: string;
 }
 
 interface Props {
-    modalModel: ImportModalModel;
-    updateModalModel: (newModel: ImportModalModel) => void;
+    modalModel: ImportMailModalModel;
+    updateModalModel: (newModel: ImportMailModalModel) => void;
     addresses: Address[];
 }
 
@@ -51,7 +52,7 @@ enum CustomFieldsBitmap {
 const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) => {
     const availableAddresses = addresses.filter((addr) => addr.Receive && addr.Send && addr.Keys.some((k) => k.Active));
 
-    const initialModel = useRef<ImportModalModel>(modalModel);
+    const initialModel = useRef<ImportMailModalModel>(modalModel);
     const [user, userLoading] = useUser();
     const { createModal } = useModals();
     const { providerFolders, password } = modalModel;
@@ -59,7 +60,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
     const [folders = [], foldersLoading] = useFolders();
     const [labels = [], labelsLoading] = useLabels();
 
-    const isLabelMapping = modalModel.imap === IMAPS.GMAIL;
+    const isLabelMapping = modalModel.imap === IMAPS[OAUTH_PROVIDER.GOOGLE];
 
     const { payload, selectedPeriod } = modalModel;
 
@@ -78,16 +79,15 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
 
     const importSize = useMemo(() => selectedFolders.reduce((acc, { Size = 0 }) => acc + Size, 0), [selectedFolders]);
 
-    const showSizeWarning = useMemo(() => importSize + user.UsedSpace >= user.MaxSpace * 2, [
-        importSize,
-        user.UsedSpace,
-        user.MaxSpace,
-    ]);
+    const showSizeWarning = useMemo(
+        () => importSize + user.UsedSpace >= user.MaxSpace * 2,
+        [importSize, user.UsedSpace, user.MaxSpace]
+    );
 
-    const showMaxFoldersError = useMemo(() => selectedFolders.length + folders.length >= 500, [
-        selectedFolders,
-        folders,
-    ]);
+    const showMaxFoldersError = useMemo(
+        () => selectedFolders.length + folders.length >= 500,
+        [selectedFolders, folders]
+    );
 
     const showUnavailableNamesError = useMemo(
         () => mappingHasUnavailableNames(payload.Mapping, isLabelMapping ? folders : labels, isLabelMapping),
@@ -297,12 +297,18 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
         return (
             <div className="p1 text-center w100">
                 <FullLoader size={100} />
-                <TextLoader>{c('Loading info').t`Connecting to your mailbox`}</TextLoader>
+                <TextLoader>{c('Loading info').t`Connecting to your email provider`}</TextLoader>
             </div>
         );
     }
 
     const addressToDisplay = addresses.find((addr) => addr.ID === modalModel.payload.AddressID);
+
+    const fromEmailAddress = <strong>{modalModel.email}</strong>;
+    const toEmailAddress = <strong>{addressToDisplay?.Email}</strong>;
+
+    const from = c('Label').jt`From: ${fromEmailAddress}`;
+    const to = c('Label').jt`To: ${toEmailAddress}`;
 
     return (
         <>
@@ -345,16 +351,8 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
             )}
 
             <div className="flex pb1 mb1 border-bottom">
-                <div className="flex-item-fluid text-ellipsis mr0-5">
-                    <span>{c('Label').t`From`}</span>
-                    {`: `}
-                    <strong>{modalModel.email}</strong>
-                </div>
-                <div className="flex-item-fluid text-ellipsis ml0-5 text-right">
-                    <span>{c('Label').t`To`}</span>
-                    {`: `}
-                    <strong>{addressToDisplay?.Email}</strong>
-                </div>
+                <div className="flex-item-fluid text-ellipsis mr0-5">{from}</div>
+                <div className="flex-item-fluid text-ellipsis ml0-5 text-right">{to}</div>
             </div>
 
             <div className="pb1 mb1 border-bottom">

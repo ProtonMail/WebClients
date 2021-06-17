@@ -3,9 +3,9 @@ import { format } from 'date-fns';
 
 import humanSize from 'proton-shared/lib/helpers/humanSize';
 
-import { TableRow } from '../../../components';
+import { TableRow } from '../../../../components';
 
-import { Importer, ImportHistory } from './interfaces';
+import { Importer, ImportHistory } from '../interfaces';
 
 import PastImportStatus from './PastImportStatus';
 import ActiveImportRowActions from './ActiveImportRowActions';

@@ -6,7 +6,7 @@ import { Folder } from 'proton-shared/lib/interfaces/Folder';
 import { Label } from 'proton-shared/lib/interfaces/Label';
 
 import {
-    ImportModalModel,
+    ImportMailModalModel,
     ImportPayloadModel,
     FolderMapping,
     MailImportFolder,
@@ -26,7 +26,7 @@ import { Alert } from '../../../../components';
 import ImportManageFoldersRow from './ImportManageFoldersRow';
 
 interface Props {
-    modalModel: ImportModalModel;
+    modalModel: ImportMailModalModel;
     addresses: Address[];
     payload: ImportPayloadModel;
     onChangePayload: (newPayload: ImportPayloadModel) => void;
