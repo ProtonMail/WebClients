@@ -5,10 +5,10 @@ import { Address } from 'proton-shared/lib/interfaces';
 
 import importStartedSvg from 'design-system/assets/img/onboarding/import-assistant.svg';
 
-import { ImportModalModel } from '../../interfaces';
+import { ImportMailModalModel } from '../../interfaces';
 
 interface Props {
-    modalModel: ImportModalModel;
+    modalModel: ImportMailModalModel;
     addresses: Address[];
 }
 
