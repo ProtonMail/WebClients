@@ -159,7 +159,7 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                                 {PrimaryEmail}
                             </div>
                         </div>
-                        <div className="ml1 block no-tiny-mobile no-scroll button-show-on-hover-element button-account-login text-sm m0 flex flex-align-items-center color-primary">
+                        <div className="ml1 block text-no-wrap no-tiny-mobile no-scroll button-show-on-hover-element button-account-login text-sm m0 flex flex-align-items-center color-primary">
                             {loadingMap[LocalID] ? <CircleLoader /> : c('Action').t`Sign in`}
                         </div>
                     </div>
