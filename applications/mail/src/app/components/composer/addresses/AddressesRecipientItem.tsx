@@ -195,6 +195,7 @@ const AddressesRecipientItem = ({
                         onKeyDown={handleInputKey}
                         onContextMenu={handleContextMenu}
                         ref={editableRef}
+                        data-testid="composer-addresses-item-label"
                     />
                 </Tooltip>
                 <Tooltip title={c('Action').t`Remove`}>
@@ -202,6 +203,7 @@ const AddressesRecipientItem = ({
                         type="button"
                         className="composer-addresses-item-remove border-left flex flex-item-noshrink pl0-25 pr0-25"
                         onClick={handleRemove}
+                        data-testid={`remove-address-button-${recipient.Address}`}
                     >
                         <Icon name="off" size={12} className="mauto" />
                         <span className="sr-only">{c('Action').t`Remove`}</span>
