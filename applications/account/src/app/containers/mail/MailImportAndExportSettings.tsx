@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { UserModel } from 'proton-shared/lib/interfaces';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import {
-    StartImportSection,
-    ImportListSection,
-    ImportExportSection,
+    StartMailImportSection,
+    MailImportListSection,
+    MailImportExportSection,
     SettingsPropsShared,
     useUser,
 } from 'react-components';
@@ -43,9 +43,9 @@ const MailImportAndExportSettings = ({ setActiveSection, location }: SettingsPro
             setActiveSection={setActiveSection}
             location={location}
         >
-            <StartImportSection />
-            <ImportListSection />
-            {!user.isFree && <ImportExportSection />}
+            <StartMailImportSection />
+            <MailImportListSection />
+            {!user.isFree && <MailImportExportSection />}
         </PrivateMainSettingsAreaWithPermissions>
     );
 };
