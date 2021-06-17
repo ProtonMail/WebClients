@@ -1,3 +1,12 @@
+## Release: 4.0.1 — June 30, 2021
+
+### Improvements
+- General user interface and accessibility improvements
+- Increased level of detail and improved clarity of error notifications 
+
+### Fixes
+- Minor bug fixes in the organization, custom domain, and password settings flows
+- Minor visual bug fixes
 
 # Proton services: same privacy, better experience
 
