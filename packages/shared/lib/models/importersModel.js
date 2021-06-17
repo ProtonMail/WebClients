@@ -1,12 +1,12 @@
-import { queryMailImport, queryMailImportHistory } from '../api/mailImport';
+import { getMailImports, getMailImportReports } from '../api/mailImport';
 import updateCollection from '../helpers/updateCollection';
 
 export const getImportersModel = (api) => {
-    return api(queryMailImport()).then(({ Importers }) => Importers);
+    return api(getMailImports()).then(({ Importers }) => Importers);
 };
 
 export const getImportHistoriesModel = (api) => {
-    return api(queryMailImportHistory()).then(({ Imports }) => Imports);
+    return api(getMailImportReports()).then(({ Imports }) => Imports);
 };
 
 export const ImportersModel = {
