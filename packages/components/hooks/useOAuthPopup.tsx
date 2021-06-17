@@ -5,19 +5,41 @@ import { generateProtonWebUID } from 'proton-shared/lib/helpers/uid';
 
 import useNotifications from './useNotifications';
 
-import { OAuthProps, OAUTH_PROVIDER } from '../containers/mail/import/interfaces';
-
-export interface OAuthHookContext {
-    getRedirectURL: () => string;
-    getAuthorizationUrl: () => string;
-}
+import { OAuthProps, OAUTH_PROVIDER } from '../containers/importAssistant/interfaces';
+import { G_OAUTH_CLIENT_ID, G_OAUTH_REDIRECT_PATH } from '../containers/importAssistant/constants';
 
 const WINDOW_WIDTH = 500;
 const WINDOW_HEIGHT = 600;
 
-const INTERVAL = 100;
+const POLLING_INTERVAL = 100;
 
-const useOAuth = ({ getRedirectURL, getAuthorizationUrl }: OAuthHookContext) => {
+const getOAuthRedirectURL = () => {
+    const { protocol, host } = window.location;
+    return `${protocol}//${host}${G_OAUTH_REDIRECT_PATH}`;
+};
+
+export const getOAuthAuthorizationUrl = ({ scope, login_hint }: { scope: string; login_hint?: string }) => {
+    const params = new URLSearchParams();
+
+    params.append('redirect_uri', getOAuthRedirectURL());
+    params.append('response_type', 'code');
+    params.append('access_type', 'offline');
+    params.append('client_id', G_OAUTH_CLIENT_ID);
+    params.append('scope', scope);
+    params.append('prompt', 'consent');
+
+    if (login_hint) {
+        params.append('login_hint', login_hint);
+    }
+
+    return `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
+};
+
+interface OAuthHookContext {
+    authorizationUrl: string;
+}
+
+const useOAuthPopup = ({ authorizationUrl }: OAuthHookContext) => {
     const { createNotification } = useNotifications();
     const stateId = useRef<string>();
 
@@ -26,13 +48,13 @@ const useOAuth = ({ getRedirectURL, getAuthorizationUrl }: OAuthHookContext) => 
         callback: (oauthProps: OAuthProps) => void | Promise<void>
     ) => {
         let interval: number;
-        const redirectURI = getRedirectURL();
+        const redirectURI = getOAuthRedirectURL();
 
         const uid = generateProtonWebUID();
         stateId.current = uid;
 
         const authWindow = window.open(
-            `${getAuthorizationUrl()}&state=${uid}`,
+            `${authorizationUrl}&state=${uid}`,
             'oauthPopup',
             `height=${WINDOW_HEIGHT},width=${WINDOW_WIDTH},top=${window.screen.height / 2 - WINDOW_HEIGHT / 2},left=${
                 window.screen.width / 2 - WINDOW_WIDTH / 2
@@ -104,11 +126,11 @@ const useOAuth = ({ getRedirectURL, getAuthorizationUrl }: OAuthHookContext) => 
                 } catch (err) {
                     // silent error
                 }
-            }, INTERVAL);
+            }, POLLING_INTERVAL);
         }
     };
 
     return { triggerOAuthPopup };
 };
 
-export default useOAuth;
+export default useOAuthPopup;

@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Badge, Tooltip, Icon, Meter } from '../../../components';
+import { Badge, Tooltip, Icon, Meter } from '../../../../components';
 
-import { ImportMailStatus, ImportMailError } from './interfaces';
+import { ImportMailStatus, ImportMailError } from '../interfaces';
 
 interface Props {
     processed: number;
