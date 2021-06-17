@@ -63,7 +63,7 @@ const CalendarSidebar = ({
             to="/calendar/calendars"
             target="_self"
             title={c('Info').t`Manage your calendars`}
-            icon="settings-singular"
+            icon="settings"
             info={c('Link').t`Calendars`}
         />
     );
