@@ -124,7 +124,7 @@ export const Custom = () => {
                             id={getOptionID(index)}
                             title={text}
                             value={option}
-                            focusOnActive={false}
+                            disableFocusOnActive
                             onChange={handleSelectOption}
                         >
                             <Icon name={option.icon} /> <Marks chunks={chunks}>{text}</Marks> ({index})
