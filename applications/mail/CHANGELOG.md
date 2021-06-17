@@ -12,6 +12,8 @@
 
 ### Bug fixes
 
+-   Fixed an issue where the focus would be lost after taking action on messages in the list view using keyboard shortcuts
+-   Fixed an issue where the contact widget would not be fully displayed for some screen resolutions
 -   Fixed an issue where exporting a message containing an attachment with a decryption error would fail
 -   Fixed an issue where the contact encryption status would not be updated if changing the status while the composer is open
 -   Fixed an issue where contacts in a particular format could not be merged
