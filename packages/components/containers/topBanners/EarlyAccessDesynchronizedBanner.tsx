@@ -5,13 +5,19 @@ import { getAppName } from 'proton-shared/lib/apps/helper';
 import { APPS } from 'proton-shared/lib/constants';
 
 import { InlineLinkButton } from '../../components';
-import { useConfig } from '../../hooks';
+import { useConfig, useFeature } from '../../hooks';
 import useEarlyAccess from '../../hooks/useEarlyAccess';
 import TopBanner from './TopBanner';
+import { FeatureCode } from '../features';
 
 const EarlyAccessDesynchronizedBanner = () => {
     const { APP_NAME } = useConfig();
     const earlyAccess = useEarlyAccess();
+    const { feature: { Value, DefaultValue } = {} } = useFeature(FeatureCode.EnabledEarlyAccessDesynchronization);
+
+    if (!(Value || DefaultValue)) {
+        return null;
+    }
 
     if (!earlyAccess.isEnabled) {
         return null;
