@@ -11,10 +11,10 @@ import {
     useNotifications,
 } from 'react-components';
 import { c } from 'ttag';
-import { getUser, queryCreateOldUser, queryDirectSignupStatus } from 'proton-shared/lib/api/user';
+import { getUser, queryCreateUser, queryDirectSignupStatus } from 'proton-shared/lib/api/user';
 import { auth } from 'proton-shared/lib/api/auth';
-import { subscribe, setPaymentMethod, verifyPayment, checkSubscription } from 'proton-shared/lib/api/payments';
-import { withAuthHeaders } from 'proton-shared/lib/fetch/headers';
+import { subscribe, checkSubscription } from 'proton-shared/lib/api/payments';
+import { withAuthHeaders, getVerificationHeaders } from 'proton-shared/lib/fetch/headers';
 import { persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
 import {
     DEFAULT_CURRENCY,
@@ -183,7 +183,7 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
         const amount = selectedPlan.price.total;
 
         if (amount > 0) {
-            const { Payment } = await handlePaymentToken({
+            return handlePaymentToken({
                 params: {
                     Amount: selectedPlan.price.total,
                     Currency: model.currency,
@@ -192,16 +192,6 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
                 api,
                 createModal,
             });
-
-            const { VerifyCode } = await api(
-                verifyPayment({
-                    Amount: amount,
-                    Currency: model.currency,
-                    Payment,
-                })
-            );
-
-            return { VerifyCode, Payment };
         }
 
         return null;
@@ -212,7 +202,7 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
             return { Token: `${invite.selector}:${invite.token}`, TokenType: TOKEN_TYPES.INVITE };
         }
         if (paymentDetails) {
-            return { Token: paymentDetails.VerifyCode, TokenType: TOKEN_TYPES.PAYMENT };
+            return { Token: paymentDetails.Payment.Details.Token, TokenType: TOKEN_TYPES.PAYMENT };
         }
         if (coupon) {
             return { Token: coupon.code, TokenType: TOKEN_TYPES.COUPON };
@@ -228,14 +218,15 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
         await srpVerify({
             api,
             credentials: { password },
-            config: queryCreateOldUser({
-                Token,
-                TokenType,
-                Type: CLIENT_TYPE,
-                Email: email,
-                Username: username,
-                Payload: payload,
-            }),
+            config: {
+                headers: getVerificationHeaders(Token, TokenType),
+                ...queryCreateUser({
+                    Type: CLIENT_TYPE,
+                    Email: email,
+                    Username: username,
+                    Payload: payload,
+                }),
+            },
         });
 
         const authResult = await srpAuth({
@@ -245,27 +236,22 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
         });
         const { UID, AccessToken } = authResult;
 
-        // Add subscription
-        // Amount = 0 means - paid before subscription
         if (planName !== PLAN.FREE) {
             const bundle = PLAN_BUNDLES[selectedPlan.planName];
             const plans = bundle ? bundle.map((name) => getPlanByName(name)) : [selectedPlan];
             const subscription = {
                 PlanIDs: toPlanMap(plans),
-                Amount: 0,
+                Amount: selectedPlan.price.total,
                 Currency: currency,
                 Cycle: cycle,
                 CouponCode: signupToken.coupon ? signupToken.coupon.code : undefined,
+                Payment:
+                    signupToken.paymentDetails &&
+                    [PAYMENT_METHOD_TYPES.CARD, PAYMENT_METHOD_TYPES.PAYPAL].includes(signupToken.paymentMethodType)
+                        ? signupToken.paymentDetails.Payment
+                        : undefined,
             };
             await api(withAuthHeaders(UID, AccessToken, subscribe(subscription)));
-        }
-
-        // Add payment method
-        if (
-            signupToken.paymentDetails &&
-            [PAYMENT_METHOD_TYPES.CARD, PAYMENT_METHOD_TYPES.PAYPAL].includes(signupToken.paymentMethodType)
-        ) {
-            await api(withAuthHeaders(UID, AccessToken, setPaymentMethod(signupToken.paymentDetails.Payment)));
         }
 
         const { User } = await api(withAuthHeaders(UID, AccessToken, getUser()));
