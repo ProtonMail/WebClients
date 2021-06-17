@@ -38,7 +38,7 @@ const Captcha = ({ token, onSubmit }: Props) => {
             }
 
             if (data.type === 'pm_height') {
-                const height = event.data.height + 40;
+                const height = event.data.height + 40 + 100;
                 setStyle({ height: `${height / 16}rem` });
             }
         };
