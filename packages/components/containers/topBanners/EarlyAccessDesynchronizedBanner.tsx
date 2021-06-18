@@ -15,11 +15,11 @@ const EarlyAccessDesynchronizedBanner = () => {
     const earlyAccess = useEarlyAccess();
     const { feature: { Value, DefaultValue } = {} } = useFeature(FeatureCode.EnabledEarlyAccessDesynchronization);
 
-    if (!(Value || DefaultValue)) {
-        return null;
-    }
+    const isVpnSettings = APP_NAME === APPS.PROTONVPN_SETTINGS;
+    const earlyAccessDesynchronizationIsDisabled = !(Value || DefaultValue);
+    const earlyAccessIsDisabled = !earlyAccess.isEnabled;
 
-    if (!earlyAccess.isEnabled) {
+    if (isVpnSettings || earlyAccessIsDisabled || earlyAccessDesynchronizationIsDisabled) {
         return null;
     }
 
