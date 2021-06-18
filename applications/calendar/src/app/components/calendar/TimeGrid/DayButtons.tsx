@@ -24,7 +24,9 @@ const DayButtons = ({ days, now, date, onClickDate, weekdaysLong }: Props) => {
                 </span>
 
                 <span className="calendar-grid-heading-day text-ellipsis block mt0 mb0 text-lg">
-                    <span className="calendar-grid-heading-day-fullname">{weekdaysLong[day.getUTCDay()]}</span>
+                    <span className="calendar-grid-heading-day-fullname text-semibold">
+                        {weekdaysLong[day.getUTCDay()]}
+                    </span>
 
                     <span className="calendar-grid-heading-day-shortname no-desktop no-tablet" aria-hidden="true">
                         {weekdaysLong[day.getUTCDay()][0]}

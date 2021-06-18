@@ -125,9 +125,11 @@ const CalendarContainer = ({
         };
     }, []);
 
-    const { view: urlView, range: urlRange, date: urlDate } = useMemo(() => fromUrlParams(location.pathname), [
-        location.pathname,
-    ]);
+    const {
+        view: urlView,
+        range: urlRange,
+        date: urlDate,
+    } = useMemo(() => fromUrlParams(location.pathname), [location.pathname]);
 
     // In the same to get around setStates not being batched in the range selector callback.
     const [{ view: customView, range: customRange, date: customUtcDate }, setCustom] = useReducer(
@@ -249,25 +251,25 @@ const CalendarContainer = ({
         }, 10);
     }, []);
 
-    const handleChangeView = useCallback((newView) => {
+    const handleChangeView = useCallback((newView: VIEWS) => {
         setCustom({ view: newView, range: undefined });
         scrollToNow();
     }, []);
 
     const handleClickToday = useCallback(() => {
         utcDefaultDateRef.current = undefined; // Purpose: Reset the minicalendar when clicking today multiple times
-        setCustom({ date: utcDefaultDate });
+        setCustom({ date: utcDefaultDate, range: undefined });
         scrollToNow();
     }, [utcDefaultDate]);
 
-    const handleChangeDate = useCallback((newDate) => {
+    const handleChangeDate = useCallback((newDate: Date) => {
         if (newDate < MINIMUM_DATE_UTC || newDate > MAXIMUM_DATE_UTC) {
             return;
         }
         setCustom({ date: newDate });
     }, []);
 
-    const handleChangeDateRange = useCallback((newDate, numberOfDays) => {
+    const handleChangeDateRange = useCallback((newDate: Date, numberOfDays: number, resetRange?: boolean) => {
         if (newDate < MINIMUM_DATE_UTC || newDate > MAXIMUM_DATE_UTC) {
             return;
         }
@@ -281,12 +283,12 @@ const CalendarContainer = ({
         }
         setCustom({
             view: WEEK,
-            range: numberOfDays,
+            range: resetRange ? undefined : numberOfDays,
             date: newDate,
         });
     }, []);
 
-    const handleClickDateWeekView = useCallback((newDate) => {
+    const handleClickDateWeekView = useCallback((newDate: Date) => {
         if (newDate < MINIMUM_DATE_UTC || newDate > MAXIMUM_DATE_UTC) {
             return;
         }

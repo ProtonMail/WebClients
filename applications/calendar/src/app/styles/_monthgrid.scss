@@ -19,10 +19,12 @@
 			font-weight: bold;
 		}
 
-		&[aria-pressed='true'] &-number {
-			background-color: var(--primary);
-			color: var(--primary-contrast);
-			font-weight: bold;
+		@include respond-to($breakpoint-small) {
+			&[aria-pressed='true'] &-number {
+				background-color: var(--primary);
+				color: var(--primary-contrast);
+				font-weight: bold;
+			}
 		}
 	}
 }
