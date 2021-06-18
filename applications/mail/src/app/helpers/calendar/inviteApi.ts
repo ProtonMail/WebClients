@@ -352,7 +352,7 @@ const updateEventApi = async ({
             throw new Error('Missing shared data');
         }
         const Events: CreateCalendarEventSyncData[] = [
-            { Event: { Permissions: 3, IsOrganizer: 0, ...data }, Overwrite: overwrite ? 1 : 0 },
+            { Event: { Permissions: 1, IsOrganizer: 0, ...data }, Overwrite: overwrite ? 1 : 0 },
         ];
         const {
             Responses: [
@@ -376,7 +376,7 @@ const updateEventApi = async ({
     const deleteEvents = deleteIds.map((id) => ({ ID: id }));
     const Events: (UpdateCalendarEventSyncData | DeleteCalendarEventSyncData)[] = [
         ...deleteEvents,
-        { Event: { Permissions: 3, ...data }, ID: calendarEvent.ID },
+        { Event: { Permissions: 1, ...data }, ID: calendarEvent.ID },
     ];
     const result = await api<SyncMultipleApiResponse>({
         ...syncMultipleEvents(calendarID, { MemberID: memberID, Events }),
@@ -748,7 +748,7 @@ export const createCalendarEventFromInvitation = async ({
         : [
               {
                   Overwrite: overwrite ? 1 : 0,
-                  Event: { IsOrganizer: 0, Permissions: 3, ...data },
+                  Event: { IsOrganizer: 0, Permissions: 1, ...data },
               },
           ];
     const {
