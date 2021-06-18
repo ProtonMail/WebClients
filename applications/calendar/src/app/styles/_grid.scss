@@ -9,10 +9,6 @@
 			border-radius: $global-border-radius;
 		}
 
-		&-day-fullname {
-			font-weight: bold;
-		}
-
 		&:hover &-number {
 			background-color: var(--interaction-default-hover);
 			color: var(--text-norm);
@@ -23,10 +19,12 @@
 			font-weight: bold;
 		}
 
-		&[aria-pressed='true'] &-number {
-			background-color: var(--primary);
-			color: var(--primary-contrast);
-			font-weight: bold;
+		@include respond-to($breakpoint-small) {
+			&[aria-pressed='true'] &-number {
+				background-color: var(--primary);
+				color: var(--primary-contrast);
+				font-weight: bold;
+			}
 		}
 
 		&-day-shortname {

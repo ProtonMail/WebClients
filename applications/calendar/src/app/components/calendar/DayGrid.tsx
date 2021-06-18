@@ -123,7 +123,7 @@ const DayGrid = ({
                                     day.getUTCDay() === now.getUTCDay() && isSameMonth(date, now) ? 'true' : undefined
                                 }
                             >
-                                <span className="calendar-grid-heading-day-fullname">
+                                <span className="calendar-grid-heading-day-fullname text-semibold">
                                     {weekdaysLong[day.getUTCDay()]}
                                 </span>
                                 <span

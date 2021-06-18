@@ -64,7 +64,7 @@ interface Props {
     onClickToday: () => void;
     onChangeView: (view: VIEWS) => void;
     onChangeDate: (date: Date) => void;
-    onChangeDateRange: (date: Date, range: number) => void;
+    onChangeDateRange: (date: Date, range: number, resetRange?: boolean) => void;
     containerRef: Ref<HTMLDivElement>;
     addresses: Address[];
 }
@@ -116,10 +116,10 @@ const CalendarContainerView = ({
         return [toLocalDate(fromUTCDate(utcStart)), toLocalDate(fromUTCDate(utcEnd))];
     }, [utcDateRange]);
 
-    const handleSelectDateRange = useCallback(([start, end]) => {
+    const handleSelectDateRange = useCallback(([start, end]: [Date, Date], resetRange?: boolean) => {
         const numberOfDays = differenceInCalendarDays(end, start);
         const newDate = localToUtcDate(start);
-        onChangeDateRange(newDate, numberOfDays);
+        onChangeDateRange(newDate, numberOfDays, resetRange);
     }, []);
 
     const handleClickLocalDate = useCallback((newDate) => {
@@ -376,9 +376,8 @@ const CalendarContainerView = ({
                     date={localDate}
                     now={localNowDate}
                     displayWeekNumbers={displayWeekNumbers}
-                    dateRange={range > 0 ? localDateRange : undefined}
+                    dateRange={view === VIEWS.WEEK || range > 0 ? localDateRange : undefined}
                     weekStartsOn={weekStartsOn}
-                    displayedOnDarkBackground
                 />
             }
             activeCalendars={activeCalendars}
