@@ -145,7 +145,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
         const addressKeys = addressKeysMap[addressID];
 
         const permissionData = {
-            Permissions: 3,
+            Permissions: 1,
         };
 
         if (getIsCreateSyncOperation(operation)) {

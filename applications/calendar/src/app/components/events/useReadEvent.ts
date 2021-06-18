@@ -40,7 +40,7 @@ const useReadEvent = (value: DecryptedEventTupleResult | undefined, tzid: string
                 selfAddressData: {},
             },
             {},
-            { Permissions: 3, IsOrganizer: 1 },
+            { Permissions: 1, IsOrganizer: 1 },
         ];
         const isAllDay = getIsAllDay(veventComponent);
         const isOrganizer = !!IsOrganizer;
