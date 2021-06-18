@@ -48,7 +48,7 @@ const submitEvents = async (events: EncryptedEvent[], calendarID: string, member
     const Events = events.map(
         (event): CreateCalendarEventSyncData => ({
             Overwrite: 1,
-            Event: { Permissions: 3, ...event.data },
+            Event: { Permissions: 1, ...event.data },
         })
     );
     // submit the data
