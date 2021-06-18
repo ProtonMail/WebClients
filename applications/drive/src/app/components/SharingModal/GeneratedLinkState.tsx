@@ -40,6 +40,11 @@ interface Props {
     onIncludeExpirationTimeToogle: () => void;
 }
 
+const SHARING_INFO_LABEL = {
+    default: c('Info').t`Anyone with this link can access your file.`,
+    withPassword: c('Info').t`Only the people with the link and the password can access this file.`,
+};
+
 function GeneratedLinkState({
     modalTitleID,
     onClose,
@@ -159,7 +164,7 @@ function GeneratedLinkState({
                                 ).t`Copy link`}</PrimaryButton>
                             </div>
                         </Row>
-                        <Alert>{c('Info').jt`Anyone with this link can access your file.`}</Alert>
+                        <Alert>{password ? SHARING_INFO_LABEL.withPassword : SHARING_INFO_LABEL.default}</Alert>
                         <Details
                             defaultOpen={defaultAdditionalSettingsExpanded}
                             onToggle={() => {
