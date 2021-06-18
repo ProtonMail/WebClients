@@ -55,6 +55,7 @@ const ContactsWidgetGroupsToolbar = ({
                         className="ml0-5"
                         checked={allChecked}
                         onChange={handleCheck}
+                        data-testid="contacts:select-all-contact-group"
                     />
                     <label htmlFor="id_contact-widget-select-all" className="sr-only">
                         {allChecked ? c('Action').t`Deselect all` : c('Action').t`Select all`}
@@ -68,6 +69,7 @@ const ContactsWidgetGroupsToolbar = ({
                         className="inline-flex mr0-5 pt0-5 pb0-5"
                         onClick={onCompose}
                         disabled={noContactInSelected}
+                        data-testid="contacts:compose-contact-group"
                     >
                         <Icon name="email" alt={c('Action').t`Compose`} />
                     </Button>
@@ -83,12 +85,19 @@ const ContactsWidgetGroupsToolbar = ({
                     onClick={onDelete}
                     disabled={noSelection}
                     title={deleteText}
+                    data-testid="contacts:delete-contact-group"
                 >
                     <Icon name="trash" />
                 </Button>
             </Tooltip>
             <Tooltip title={c('Action').t`Add new group`}>
-                <Button icon color="norm" className="mlauto inline-flex pt0-5 pb0-5" onClick={onCreate}>
+                <Button
+                    icon
+                    color="norm"
+                    className="mlauto inline-flex pt0-5 pb0-5"
+                    onClick={onCreate}
+                    data-testid="contacts:add-contact-group"
+                >
                     <Icon name="contacts-group-add" alt={c('Action').t`Add new group`} />
                 </Button>
             </Tooltip>
