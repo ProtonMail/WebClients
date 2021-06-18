@@ -152,7 +152,7 @@ const ItemRow = ({
 
                 {columns.includes('trashed') && (
                     <TableCell className="m0 w25">
-                        <TimeCell time={item.Trashed!} />
+                        <TimeCell time={item.Trashed || item.ModifyTime} />
                     </TableCell>
                 )}
 
