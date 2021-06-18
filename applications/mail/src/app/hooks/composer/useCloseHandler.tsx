@@ -124,6 +124,8 @@ export const useCloseHandler = ({
                 });
                 onCompose({ existingDraft: modelMessage, fromUndo: true });
             }
+        } else {
+            updateMessageCache(messageCache, modelMessage.localID, { inComposer: false });
         }
     });
 
