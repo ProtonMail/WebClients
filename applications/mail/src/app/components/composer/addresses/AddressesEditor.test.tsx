@@ -152,7 +152,7 @@ describe('AddressesEditor', () => {
 
         expect(displayedAddresses.length).toEqual(2);
 
-        const addressesInput = getByTestId('addresses-autocomplete-input');
+        const addressesInput = getByTestId('composer:to');
 
         fireEvent.change(addressesInput, { target: { value: email3 } });
         fireEvent.keyDown(addressesInput, { key: 'Enter' });

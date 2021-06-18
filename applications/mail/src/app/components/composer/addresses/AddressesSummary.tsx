@@ -21,10 +21,7 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
     const { getRecipientsOrGroups, getRecipientsOrGroupsLabels, getRecipientOrGroupLabel } = useRecipientLabel();
     const title = getRecipientsOrGroupsLabels(getRecipientsOrGroups(getRecipients(message))).join(', ');
     return (
-        <div
-            className="flex flex-row flex-nowrap flex-align-items-center m0-5 pl0-5 pr0-5 relative"
-            data-testid="addresses-summary"
-        >
+        <div className="flex flex-row flex-nowrap flex-align-items-center m0-5 pl0-5 pr0-5 relative">
             <Label className={classnames(['composer-meta-label pr0-5 pt0 text-bold', disabled && 'placeholder'])}>
                 {c('Title').t`To`}
             </Label>
