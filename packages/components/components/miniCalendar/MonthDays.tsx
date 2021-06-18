@@ -1,5 +1,5 @@
 import { isBefore, isAfter, isSameDay, isSameMonth, isWithinInterval } from 'date-fns';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, Ref } from 'react';
 
 import { classnames } from '../../helpers';
 import { DateTuple } from './index.d';
@@ -13,9 +13,8 @@ const getTargetDate = (target: any, days: Date[]) => {
 
 export interface Props {
     days: Date[];
-    markers: { [ts: string]: boolean };
-    onSelectDate: (a1: Date) => void;
-    onSelectDateRange: (a1: DateTuple) => void;
+    onSelectDate?: (a1: Date) => void;
+    onSelectDateRange?: (a1: DateTuple) => void;
     now: Date;
     selectedDate?: Date;
     activeDate: Date;
@@ -25,12 +24,12 @@ export interface Props {
     formatDay: (a1: Date) => string;
     numberOfDays: number;
     numberOfWeeks: number;
+    cellRef: Ref<HTMLLIElement>;
 }
 
 const MonthDays = ({
     days,
     onSelectDate,
-    markers = {},
     onSelectDateRange,
     dateRange,
     formatDay,
@@ -41,14 +40,15 @@ const MonthDays = ({
     activeDate,
     numberOfDays,
     numberOfWeeks,
+    cellRef,
 }: Props) => {
     const [temporaryDateRange, setTemporaryDateRange] = useState<[Date, Date | undefined] | undefined>(undefined);
     const rangeStartRef = useRef<Date | undefined>(undefined);
     const rangeEndRef = useRef<Date | undefined>(undefined);
 
     const style = {
-        '--minicalendar-days-numberOfDays': numberOfDays,
-        '--minicalendar-days-numberOfWeeks': numberOfWeeks,
+        '--cols': numberOfDays,
+        '--rows': numberOfWeeks,
     };
 
     const handleMouseDown = ({ target }: React.MouseEvent<HTMLUListElement>) => {
@@ -98,7 +98,7 @@ const MonthDays = ({
     const handleClick = ({ target }: React.MouseEvent<HTMLUListElement>) => {
         const value = getTargetDate(target, days);
         if (value) {
-            onSelectDate(value);
+            onSelectDate?.(value);
         }
     };
 
@@ -106,7 +106,7 @@ const MonthDays = ({
 
     return (
         <ul
-            className="unstyled m0 text-center minicalendar-days"
+            className="minicalendar-monthdays unstyled m0 text-center"
             style={style}
             onClick={handleClick}
             onMouseDown={handleMouseDown}
@@ -122,33 +122,28 @@ const MonthDays = ({
                 const isInterval =
                     (rangeStart && rangeEnd && isWithinInterval(dayDate, { start: rangeStart, end: rangeEnd })) ||
                     (rangeStart && isSameDay(rangeStart, dayDate));
-                const isIntervalBound =
-                    rangeStart && rangeEnd ? isSameDay(rangeStart, dayDate) || isSameDay(rangeEnd, dayDate) : false;
                 const isPressed = selectedDate ? isSameDay(selectedDate, dayDate) || isInterval : false;
 
-                // only for CSS layout: beginning/end of week OR beginning/end of interval in week
-                const isIntervalBoundBegin =
+                // only for CSS layout: start/end of week OR start/end of interval in week
+                const isIntervalBoundStart =
                     (isInterval && i % numberOfDays === 0) ||
                     (isInterval && rangeStart && isSameDay(rangeStart, dayDate));
                 const isIntervalBoundEnd =
                     (isInterval && i % numberOfDays === numberOfDays - 1) ||
                     (isInterval && rangeEnd && isSameDay(rangeEnd, dayDate)) ||
-                    (!rangeEnd && isIntervalBoundBegin);
-
-                const hasMarker = markers[dayDate.getTime()];
+                    (!rangeEnd && isIntervalBoundStart);
 
                 const className = classnames([
                     'minicalendar-day no-pointer-events-children',
-                    !isActiveMonth && 'minicalendar-day--inactive-month',
-                    isIntervalBound && 'minicalendar-day--range-bound',
-                    isIntervalBoundBegin && 'minicalendar-day--range-bound-begin',
-                    isIntervalBoundEnd && 'minicalendar-day--range-bound-end',
+                    !isActiveMonth && 'minicalendar-day--out-of-month',
                     isInterval && 'minicalendar-day--range',
+                    isIntervalBoundStart && 'minicalendar-day--range-bound-start',
+                    isIntervalBoundEnd && 'minicalendar-day--range-bound-end',
                     selectedDate && isSameDay(selectedDate, dayDate) && 'minicalendar-day--selected',
                 ]);
 
                 return (
-                    <li key={dayDate.toString()}>
+                    <li key={dayDate.toString()} ref={i === 0 ? cellRef : undefined}>
                         <button
                             disabled={isOutsideMinMax}
                             aria-label={formatDay(dayDate)}
@@ -156,11 +151,9 @@ const MonthDays = ({
                             aria-pressed={isPressed ? true : undefined}
                             className={className}
                             data-i={i}
-                            data-current-day={dayDate.getDate()}
                             type="button"
                         >
-                            <span className="minicalendar-day-inner">{dayDate.getDate()}</span>
-                            {hasMarker ? <span className="minicalendar-day--marker" /> : null}
+                            <span className="minicalendar-day-number">{dayDate.getDate()}</span>
                         </button>
                     </li>
                 );

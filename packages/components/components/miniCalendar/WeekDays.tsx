@@ -14,7 +14,7 @@ export interface Props {
 
 const WeekDays = ({ weekdaysShort, weekdaysLong, weekStartsOn = 1, numberOfDays, activeDateDay }: Props) => {
     const style = {
-        '--minicalendar-weekdays-numberOfDaysInWeek': numberOfDays,
+        '--weekdays-count': numberOfDays,
     };
 
     const weekDaysLabels = useMemo(() => {
