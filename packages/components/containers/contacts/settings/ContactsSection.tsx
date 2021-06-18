@@ -15,7 +15,7 @@ const ContactsSection = () => {
     return (
         <SettingsLayout>
             <SettingsLayoutLeft>
-                <label htmlFor="saveContactToggle">
+                <label htmlFor="saveContactToggle" data-testid="contacts:save-contact-label">
                     <span className="mr0-5 text-semibold">{c('Label').t`Automatically save contacts`}</span>
                     <Info url="https://protonmail.com/support/knowledge-base/autosave-contact-list/" />
                 </label>

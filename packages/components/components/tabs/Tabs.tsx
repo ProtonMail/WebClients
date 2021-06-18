@@ -63,6 +63,7 @@ export const Tabs = ({
                                     aria-controls={key}
                                     tabIndex={0}
                                     aria-selected={value === index}
+                                    data-testid={`tab-header-${title}-button`}
                                 >
                                     {title}
                                 </button>
