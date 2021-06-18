@@ -217,7 +217,6 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
                         }
                     }}
                     error={emailError}
-                    data-testid="addresses-autocomplete-input"
                 />
                 <AutocompleteList anchorRef={anchorRef} {...suggestionProps}>
                     {filteredAndSortedOptions.map(({ chunks, text, option }, index) => {
