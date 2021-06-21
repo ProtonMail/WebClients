@@ -130,9 +130,11 @@ const EditorLinkModal = ({ inputLink, onSubmit, onClose, onMailTo, ...rest }: Pr
             </Row>
             <Row>
                 <Label>{c('Info').t`Test link`}</Label>
-                <Field className="pt0-5">
+                <Field className="pt0-5 text-ellipsis">
                     {url && label ? (
-                        <Href url={addLinkPrefix(url, type)}>{label}</Href>
+                        <Href url={addLinkPrefix(url, type)} title={label}>
+                            {label}
+                        </Href>
                     ) : (
                         <span className="placeholder">{i18n[type]['test-placeholder']}</span>
                     )}
