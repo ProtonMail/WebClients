@@ -57,6 +57,7 @@ const ContactsWidgetToolbar = ({
                         className="ml0-5"
                         checked={allChecked}
                         onChange={handleCheck}
+                        data-testid="contacts:select-all"
                     />
                     <label htmlFor="id_contact-widget-select-all" className="sr-only">
                         {allChecked ? c('Action').t`Deselect all` : c('Action').t`Select all`}
@@ -72,6 +73,7 @@ const ContactsWidgetToolbar = ({
                             onClick={onCompose}
                             disabled={noEmailInSelected}
                             title={c('Action').t`Compose`}
+                            data-testid="contacts:compose"
                         >
                             <Icon name="email" />
                         </Button>
@@ -83,6 +85,7 @@ const ContactsWidgetToolbar = ({
                             onClick={onForward}
                             disabled={noEmailInSelected}
                             title={c('Action').t`Forward as attachment`}
+                            data-testid="contacts:forward-attachment"
                         >
                             <Icon name="forward" />
                         </Button>
@@ -97,6 +100,7 @@ const ContactsWidgetToolbar = ({
                     onClick={onMerge}
                     disabled={!canMerge}
                     title={c('Action').t`Merge contacts`}
+                    data-testid="contacts:merge-contacts"
                 >
                     <Icon name="merge" />
                 </Button>
@@ -108,6 +112,7 @@ const ContactsWidgetToolbar = ({
                     onClick={onDelete}
                     disabled={noSelection}
                     title={deleteText}
+                    data-testid="contacts:delete-contacts"
                 >
                     <Icon name="trash" />
                 </Button>
@@ -119,6 +124,7 @@ const ContactsWidgetToolbar = ({
                     className="mlauto inline-flex pt0-5 pb0-5"
                     onClick={onCreate}
                     title={c('Action').t`Add new contact`}
+                    data-testid="contacts:add-new-contact"
                 >
                     <Icon name="contact-add" />
                 </Button>
