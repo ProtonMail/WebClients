@@ -10,6 +10,7 @@ export interface Props extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
     size?: number;
     color?: string;
     rotate?: number;
+    nameSpaceSvg?: string;
 }
 
 /**
@@ -25,7 +26,7 @@ export interface Props extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
  * @param rotate    How many degrees the icon should be rotated
  */
 const Icon = (
-    { name, alt, title, color, className = '', viewBox = '0 0 16 16', size = 16, rotate = 0, ...rest }: Props,
+    { name, alt, title, color, className = '', viewBox = '0 0 16 16', size = 16, rotate = 0, nameSpaceSvg = 'shape', ...rest }: Props,
     ref: React.Ref<SVGSVGElement>
 ) => {
     const style = {
@@ -44,7 +45,7 @@ const Icon = (
                 {...rest}
             >
                 {title ? <title>{title}</title> : null}
-                <use xlinkHref={name.startsWith('#') ? name : `#shape-${name}`} />
+                <use xlinkHref={name.startsWith('#') ? name : `#${nameSpaceSvg}-${name}`} />
             </svg>
             {alt ? <span className="sr-only">{alt}</span> : null}
         </>
