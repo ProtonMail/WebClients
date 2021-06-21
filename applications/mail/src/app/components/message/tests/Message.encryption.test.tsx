@@ -184,7 +184,7 @@ describe('MessageView encryption', () => {
 
             const icon = await findByTestId('encryption-icon');
 
-            assertIcon(icon, 'locks-check', 'color-info');
+            assertIcon(icon, 'shape-locks-check', 'color-info');
         });
 
         it('verified sender external', async () => {
@@ -229,7 +229,7 @@ describe('MessageView encryption', () => {
 
             const icon = await findByTestId('encryption-icon');
 
-            assertIcon(icon, 'locks-check', 'color-success');
+            assertIcon(icon, 'shape-locks-check', 'color-success');
         });
 
         it('signature verification error', async () => {
@@ -265,7 +265,7 @@ describe('MessageView encryption', () => {
 
             const icon = await findByTestId('encryption-icon');
 
-            assertIcon(icon, 'locks-warning', 'color-info');
+            assertIcon(icon, 'shape-locks-warning', 'color-info');
         });
     });
 });

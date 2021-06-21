@@ -23,7 +23,7 @@ describe('Message attachments', () => {
     };
     const Attachments = [attachment1, attachment2, attachment3];
     const NumAttachments = Attachments.length;
-    const icons = ['file-unknown', 'file-pdf', 'file-image'];
+    const icons = ['mime-md-unknown', 'mime-md-pdf', 'mime-md-image'];
     const totalSize = Attachments.map((attachment) => attachment.Size).reduce((acc, size) => acc + size, 0);
 
     afterEach(clearAll);

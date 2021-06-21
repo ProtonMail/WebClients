@@ -4,7 +4,7 @@ export const assertIcon = (iconElement: Element | null | undefined, iconName?: s
     }
 
     if (iconName) {
-        expect((iconElement.firstChild as Element).getAttribute('xlink:href')).toBe(`#shape-${iconName}`);
+        expect((iconElement.firstChild as Element).getAttribute('xlink:href')).toBe(`#${iconName}`);
     }
 
     if (iconColor) {

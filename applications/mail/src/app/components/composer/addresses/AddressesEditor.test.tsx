@@ -5,7 +5,15 @@ import { Recipient } from 'proton-shared/lib/interfaces';
 import { act, getByText, getAllByRole } from '@testing-library/react';
 import { fireEvent } from '@testing-library/dom';
 
-import { addToCache, clearAll, getDropdown, getModal, minimalCache, render } from '../../../helpers/test/helper';
+import {
+    addApiMock,
+    addToCache,
+    clearAll,
+    getDropdown,
+    getModal,
+    minimalCache,
+    render,
+} from '../../../helpers/test/helper';
 import AddressesEditor from './AddressesEditor';
 import { MessageExtended } from '../../../models/message';
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
@@ -146,6 +154,8 @@ describe('AddressesEditor', () => {
     });
 
     it('should add an address', async () => {
+        addApiMock('keys', () => ({}));
+
         const { getAllByTestId, getByTestId, rerender } = await render(<AddressesEditor {...props} />);
 
         const displayedAddresses = getAllByTestId('composer-addresses-item');
@@ -300,6 +310,7 @@ describe('AddressesEditor', () => {
     it('should add a contact from insert contact modal', async () => {
         minimalCache();
         addToCache('ContactEmails', contactEmails);
+        addApiMock('keys', () => ({}));
 
         const { getByTestId, getAllByTestId, rerender } = await render(<AddressesEditor {...props} />, false);
 
