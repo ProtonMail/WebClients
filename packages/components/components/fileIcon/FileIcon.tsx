@@ -1,41 +1,42 @@
 import React from 'react';
-import { isSupportedImage, isSupportedText, isVideo } from '../../containers/filePreview/helpers';
-import Icon, { Props as IconProps } from '../icon/Icon';
+import { isSupportedImage, isSupportedText, isPDF, isVideo } from '../../containers/filePreview/helpers';
+import { Props as IconProps } from '../icon/Icon';
+import MimeIcon from '../icon/MimeIcon';
 
 const iconsMap: { [mimeType: string]: { name: string } } = {
     Folder: { name: 'folder' },
-    'application/msword': { name: 'file-doc' },
+    'application/msword': { name: 'doc' },
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document': {
-        name: 'file-docx',
+        name: 'doc',
     },
-    'application/pdf': { name: 'file-pdf' },
-    'application/vnd.ms-powerpoint': { name: 'file-ppt' },
+    'application/vnd.ms-powerpoint': { name: 'ppt' },
     'application/vnd.openxmlformats-officedocument.presentationml.presentation': {
-        name: 'file-pptx',
+        name: 'ppt',
     },
-    'application/x-rar-compressed': { name: 'file-rar-zip' },
-    'application/zip': { name: 'file-rar-zip' },
-    'application/vnd.ms-excel': { name: 'file-xls' },
+    'application/x-rar-compressed': { name: 'zip' },
+    'application/zip': { name: 'zip' },
+    'application/vnd.ms-excel': { name: 'xls' },
     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': {
-        name: 'file-xslx',
+        name: 'xls',
     },
-    'application/xliff+xml': { name: 'file-xliff' },
-    'application/xml': { name: 'file-xml' },
-    'application/pgp-keys': { name: 'keys' },
+    'application/xliff+xml': { name: 'xml' },
+    'application/xml': { name: 'xml' },
 };
 
 const getIconName = (mimeType: string) => {
-    let name = 'file-unknown';
+    let name = 'unknown';
 
     if (isSupportedImage(mimeType)) {
-        name = 'file-image';
+        name = 'image';
     } else if (mimeType === 'text/xml') {
         // Exception for XML to use it's own icon and not fallback as text
-        name = 'file-xml';
+        name = 'xml';
     } else if (isSupportedText(mimeType)) {
-        name = 'file-txt';
+        name = 'text';
+    } else if (isPDF(mimeType)) {
+        name = 'pdf';
     } else if (isVideo(mimeType)) {
-        name = 'file-video';
+        name = 'video';
     } else if (iconsMap[mimeType]) {
         name = iconsMap[mimeType].name;
     }
@@ -47,10 +48,15 @@ interface Props extends Omit<IconProps, 'name'> {
     mimeType: string;
 }
 
+/**
+ * Component to render SVG file icons.
+ * It's wrapper around MimeIcon component which finds the proper icon
+ * name based on the mime type.
+ */
 const FileIcon = ({ mimeType, ...rest }: Props) => {
     const name = getIconName(mimeType);
 
-    return <Icon name={name} className="flex-item-noshrink mr0-5" {...rest} />;
+    return <MimeIcon name={name} className="flex-item-noshrink mr0-5" {...rest} />;
 };
 
 export default FileIcon;
