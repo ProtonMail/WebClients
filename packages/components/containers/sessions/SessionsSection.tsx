@@ -18,7 +18,7 @@ import { useApi, useAuthentication, useModals, useLoading, useNotifications } fr
 import SessionAction from './SessionAction';
 import { Session } from './interface';
 import { getClientsI18N } from './helper';
-import { SettingsParagraph, SettingsSection } from '../account';
+import { SettingsParagraph, SettingsSectionWide } from '../account';
 
 const PAGE_SIZE = 10;
 
@@ -77,7 +77,7 @@ const SessionsSection = () => {
     const currentUID = authentication.getUID();
 
     return (
-        <SettingsSection>
+        <SettingsSectionWide>
             <SettingsParagraph learnMoreUrl="https://protonmail.com/support/knowledge-base/log-out-all-other-sessions/">
                 {c('Info')
                     .t`Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.`}
@@ -121,7 +121,7 @@ const SessionsSection = () => {
                     })}
                 </TableBody>
             </Table>
-        </SettingsSection>
+        </SettingsSectionWide>
     );
 };
 
