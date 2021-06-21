@@ -101,7 +101,7 @@ const HeaderCollapsed = ({
 
                         <ItemExpiration element={message.data} className="flex flex-item-noshrink ml0-25 mr0-25" />
 
-                        <ItemDate className="ml0-25" element={message.data} labelID={labelID} />
+                        <ItemDate className="ml0-5" element={message.data} labelID={labelID} />
                     </>
                 ) : (
                     <span className="message-header-metas ml0-5 flex" />
