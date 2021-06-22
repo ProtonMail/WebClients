@@ -39,6 +39,7 @@ import {
     getTotalFromBuildEvent,
     getBuildEvent,
     getCatchUpFail,
+    setCurrentFromBuildEvent,
 } from '../helpers/encryptedSearch/esUtils';
 import { buildDB, encryptToDB, fetchMessage, getIndexKey, initialiseDB } from '../helpers/encryptedSearch/esBuild';
 import {
@@ -464,7 +465,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             indexKey = existingIndexKey;
         }
 
-        const totalMessages = getTotalFromBuildEvent(userID) || 0;
+        const totalMessages = getTotalFromBuildEvent(userID);
         const mailboxEmpty = totalMessages === 0;
         progressRecorderRef.current = [await getNumMessagesDB(userID), totalMessages];
 
@@ -480,7 +481,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             const currentMessages = await getNumMessagesDB(userID);
             progressRecorderRef.current = [currentMessages, totalMessages];
             const recordProgressLocal = (progress: number) => {
-                recordProgress(currentMessages + progress, totalMessages);
+                const newProgress = currentMessages + progress;
+                setCurrentFromBuildEvent(userID, newProgress);
+                recordProgress(newProgress, totalMessages);
             };
 
             success = await buildDB(userID, indexKey, getMessageKeys, api, abortControllerRef, recordProgressLocal);
@@ -692,6 +695,14 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 return;
             }
 
+            setESDBStatus((esDBStatus) => {
+                return {
+                    ...esDBStatus,
+                    dbExists: wasIndexingDone(userID),
+                    esEnabled: isESEnabled(userID),
+                };
+            });
+
             // If indexing was not successful, try to recover (unless it was paused).
             // Otherwise, just set the correct parameters to ESDBStatus
             if (isRecoveryNeeded(userID)) {
@@ -700,14 +711,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 }
                 return;
             }
-
-            setESDBStatus((esDBStatus) => {
-                return {
-                    ...esDBStatus,
-                    dbExists: wasIndexingDone(userID),
-                    esEnabled: isESEnabled(userID),
-                };
-            });
 
             // Refresh of IndexedDB has to be completed in one run, so if this blob
             // is in localStorage it means that something went wrong with a previous

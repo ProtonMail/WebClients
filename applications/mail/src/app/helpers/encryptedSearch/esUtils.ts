@@ -79,10 +79,34 @@ export const getNumMessagesDB = async (userID: string) => {
 export const getTotalFromBuildEvent = (userID: string) => {
     const buildBlob = getItem(`ES:${userID}:BuildEvent`);
     if (!buildBlob) {
-        return;
+        return 0;
     }
     const { totalMessages }: { totalMessages: number } = JSON.parse(buildBlob);
     return totalMessages;
+};
+
+/**
+ * Fetch the number of messages already indexed
+ */
+export const getCurrentFromBuildEvent = (userID: string) => {
+    const buildBlob = getItem(`ES:${userID}:BuildEvent`);
+    if (!buildBlob) {
+        return 0;
+    }
+    const { currentMessages }: { currentMessages: number | undefined } = JSON.parse(buildBlob);
+    return currentMessages || 0;
+};
+
+/**
+ * Set the number of messages already indexed in BuildEvent and save it to localStorage
+ */
+export const setCurrentFromBuildEvent = (userID: string, currentMessages: number) => {
+    const buildBlob = getItem(`ES:${userID}:BuildEvent`);
+    if (!buildBlob) {
+        return;
+    }
+    const { event, totalMessages }: { event: string; totalMessages: number } = JSON.parse(buildBlob);
+    setItem(`ES:${userID}:BuildEvent`, JSON.stringify({ event, totalMessages, currentMessages }));
 };
 
 /**

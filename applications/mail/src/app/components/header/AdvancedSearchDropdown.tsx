@@ -30,6 +30,7 @@ import {
     Progress,
     useFeature,
     FeatureCode,
+    Tooltip,
 } from 'react-components';
 import { MAILBOX_LABEL_IDS, SECOND, SHOW_MOVED } from 'proton-shared/lib/constants';
 import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
@@ -51,6 +52,9 @@ import {
     getOldestTime,
     wasIndexingDone,
     isDBReadyAfterBuilding,
+    isPaused,
+    getTotalFromBuildEvent,
+    getCurrentFromBuildEvent,
 } from '../../helpers/encryptedSearch/esUtils';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
@@ -170,11 +174,18 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     const { esProgress, esPrevProgress, startTime, endTime, oldestTime, totalIndexingMessages } = esState;
     let estimatedMinutes = 0;
     let progressValue = 0;
-    if (totalIndexingMessages !== 0 && endTime > startTime && startTime !== 0 && esProgress !== esPrevProgress) {
+    if (esProgress !== 0 && totalIndexingMessages !== 0 && endTime !== startTime && esProgress !== esPrevProgress) {
         estimatedMinutes = Math.ceil(
             (((endTime - startTime) / (esProgress - esPrevProgress)) * (totalIndexingMessages - esProgress)) / 60000
         );
-        progressValue = Math.floor((esProgress / totalIndexingMessages) * 100);
+        if (wasIndexingDone(user.ID)) {
+            progressValue = Math.ceil((esProgress / totalIndexingMessages) * 100);
+        }
+    }
+    if (!wasIndexingDone(user.ID)) {
+        const totalFromBuildEvent = getTotalFromBuildEvent(user.ID);
+        progressValue =
+            totalFromBuildEvent !== 0 ? Math.ceil((getCurrentFromBuildEvent(user.ID) / totalFromBuildEvent) * 100) : 0;
     }
     const abortControllerRef = useRef<AbortController>(new AbortController());
     const { loading: loadingESFeature, feature: esFeature } = useFeature(FeatureCode.EnabledEncryptedSearch);
@@ -274,7 +285,12 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
 
     const stopProgress = () => {
         abortControllerRef.current.abort();
-        setESState(() => defaultESState);
+        setESState((esState) => {
+            return {
+                ...defaultESState,
+                totalIndexingMessages: esState.totalIndexingMessages,
+            };
+        });
     };
 
     useEffect(() => {
@@ -346,52 +362,62 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     // Switches
     const showEncryptedSearch = !isMobile() && !!esFeature && !!esFeature.Value && !!isPaid(user);
     const showAdvancedSearch = !showEncryptedSearch || showMore;
-    const showProgress = indexKeyExists(user.ID) && esEnabled && (isBuilding || isRefreshing);
-    const showSubTitleSection = wasIndexingDone(user.ID) && esEnabled && !isRefreshing && isDBLimited;
-    const isEstimating = estimatedMinutes === 0 && esProgress !== totalIndexingMessages;
+    const showProgress = indexKeyExists(user.ID) && esEnabled && !isDBReadyAfterBuilding(user.ID);
+    const showSubTitleSection = wasIndexingDone(user.ID) && !isRefreshing && isDBLimited;
+    const isEstimating =
+        estimatedMinutes === 0 && (totalIndexingMessages === 0 || esProgress !== totalIndexingMessages);
 
     // Header
-    const title = c('Action').t`Search message content`;
+    const esTitle = <span className="mr0-5">{c('Action').t`Search message content`}</span>;
     // Remove one day from limit because the last day in IndexedDB might not be complete
     const oldestDate = formatSimpleDate(add(new Date(oldestTime), { days: 1 }));
     const subTitleSection = (
         // translator: the variable is a date, which is already localised
         <span className="color-weak mr0-5">{c('Info').jt`For messages newer than ${oldestDate}`}</span>
     );
-    const esToggle = (
-        <Toggle
-            id="es-toggle"
-            className="mlauto flex-item-noshrink"
-            checked={(isBuilding || wasIndexingDone(user.ID)) && esEnabled}
-            onChange={({ target: { checked } }) => {
-                if (checked) {
-                    if (!indexKeyExists(user.ID)) {
-                        confirmationToIndex();
-                    } else if (!isDBReadyAfterBuilding(user.ID)) {
-                        void resumeIndexing();
-                    } else {
-                        toggleEncryptedSearch();
-                    }
-                } else if (isBuilding) {
-                    void pauseIndexing();
-                } else {
-                    toggleEncryptedSearch();
-                }
-            }}
-            loading={esEnabled && !indexKeyExists(user.ID)}
-        />
+    const esToggleTooltip = wasIndexingDone(user.ID)
+        ? c('Info').t`Turn off content search. Activation progress won't be lost.`
+        : c('Info').t`Activation in progress`;
+    const esCTA = indexKeyExists(user.ID) ? (
+        <Tooltip title={esToggleTooltip}>
+            <span>
+                <Toggle
+                    id="es-toggle"
+                    className="mlauto flex-item-noshrink"
+                    checked={wasIndexingDone(user.ID) && esEnabled}
+                    onChange={toggleEncryptedSearch}
+                    disabled={!wasIndexingDone(user.ID)}
+                />
+            </span>
+        </Tooltip>
+    ) : (
+        <Button onClick={confirmationToIndex} loading={esEnabled && !indexKeyExists(user.ID)}>
+            {c('Action').t`Activate`}
+        </Button>
     );
     const info = (
         <Info
             questionMark
-            className="ml0-5"
             title={c('Tooltip')
                 .t`This action will download all messages so they can be searched locally. Clearing your browser data or logging out will disable this option.`}
         />
     );
+    const esHeader = indexKeyExists(user.ID) ? (
+        <Label htmlFor="es-toggle" className="text-bold p0 pr1 flex flex-item-fluid flex-align-items-center">
+            {esTitle}
+            {info}
+        </Label>
+    ) : (
+        <div className="text-bold p0 pr1 flex flex-item-fluid flex-align-items-center">
+            {esTitle}
+            {info}
+        </div>
+    );
 
     // Progress indicator
-    const progressStatus = isEstimating
+    const progressStatus = isPaused(user.ID)
+        ? c('Info').t`Indexing paused`
+        : isEstimating
         ? c('Info').t`Estimating time remaining...`
         : isRefreshing
         ? c('Info').t`Updating message content search...`
@@ -406,7 +432,25 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                   `Estimated time remaining: ${estimatedMinutes} minutes`,
                   estimatedMinutes
               );
-    const progressBar = <Progress value={progressValue} aria-describedby="timeRemaining" className="mt1 mb1" />;
+    const progressBar = (
+        <Progress
+            value={progressValue}
+            aria-describedby="timeRemaining"
+            className={classnames([
+                'mt1 mb1 flex-item-fluid',
+                isPaused(user.ID) ? 'progress-bar--disabled' : undefined,
+            ])}
+        />
+    );
+    const pauseResumeButton = isPaused(user.ID) ? (
+        <Button shape="solid" color="norm" className="ml1 w25" onClick={resumeIndexing}>
+            {c('Action').t`Resume`}
+        </Button>
+    ) : (
+        <Button className="ml1 w25" onClick={pauseIndexing}>
+            {c('Action').t`Pause`}
+        </Button>
+    );
 
     // Button to show advanced search options
     const showMoreTitle = showMore ? c('Action').t`Show less search options` : c('Action').t`Show more search options`;
@@ -468,30 +512,27 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                     <div className="pl1 pr1 pt1">
                         <div className="flex flex-column">
                             <div className="flex flew-nowrap mb0-5 flex-align-items-center">
-                                <Label
-                                    htmlFor="es-toggle"
-                                    className="text-bold p0 pr1 flex flex-item-fluid flex-align-items-center"
-                                >
-                                    {title}
-                                    {info}
-                                </Label>
-                                {esToggle}
+                                {esHeader}
+                                {esCTA}
                             </div>
                             {showSubTitleSection && subTitleSection}
                         </div>
                         {showProgress && (
-                            <div className="bg-strong rounded mt1 p1 flex flex-column">
+                            <div className="mt1 flex flex-column">
                                 <span className="color-weak" aria-live="polite" aria-atomic="true">
                                     {progressStatus}
                                 </span>
-                                {progressBar}
+                                <div className="flex flex-justify-space-between">
+                                    {progressBar}
+                                    {!wasIndexingDone(user.ID) && pauseResumeButton}
+                                </div>
                                 <span
                                     id="timeRemaining"
                                     aria-live="polite"
                                     aria-atomic="true"
                                     className={classnames([
                                         'color-weak',
-                                        isEstimating ? 'visibility-hidden' : undefined,
+                                        isEstimating || isPaused(user.ID) ? 'visibility-hidden' : undefined,
                                     ])}
                                 >
                                     {etaMessage}
