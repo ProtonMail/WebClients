@@ -59,7 +59,8 @@ const ContactsWidgetSettingsContainer = ({ onClose, onImport }: Props) => {
                 <div className="pl2 pr2 pt1 pb1 scroll-if-needed h100">
                     <div className="flex mb1 on-mobile-flex-column">
                         <Label htmlFor="saveContactToggle">
-                            <span className="mr0-5 text-semibold">{c('Label').t`Automatically save contacts`}</span>
+                            <span className="mr0-5 text-semibold" role="heading" aria-level={2}>{c('Label')
+                                .t`Automatically save contacts`}</span>
                             <Info url="https://protonmail.com/support/knowledge-base/autosave-contact-list/" />
                         </Label>
                         <Field className="pt0-5">
@@ -68,7 +69,7 @@ const ContactsWidgetSettingsContainer = ({ onClose, onImport }: Props) => {
                     </div>
                     <div className="mb2">
                         <Label htmlFor="import-contacts-button" className="text-semibold">
-                            {c('Label').t`Import contacts`}
+                            <span role="heading" aria-level={2}>{c('Label').t`Import contacts`}</span>
                         </Label>
                         {OAUTH_TEST_IDS.includes(user.ID) ? (
                             <div className="mt1">
@@ -95,7 +96,7 @@ const ContactsWidgetSettingsContainer = ({ onClose, onImport }: Props) => {
                     </div>
                     <div className="mb2">
                         <Label htmlFor="export-contacts-button" className="text-semibold">
-                            {c('Label').t`Export contacts`}
+                            <span role="heading" aria-level={2}>{c('Label').t`Export contacts`}</span>
                         </Label>
                         <p className="color-weak mt0-5 mb1">
                             {c('Info')
