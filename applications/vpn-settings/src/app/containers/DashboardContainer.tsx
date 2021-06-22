@@ -40,9 +40,8 @@ export const getDashboardPage = (user: UserModel) => {
                 id: 'plans',
             },
             {
-                text: c('Title').t`Subscription`,
+                text: !user.hasPaidVpn ? c('Title').t`Your current plan` : c('Title').t`Your plan`,
                 id: 'subscription',
-                permissions: [PAID],
             },
             {
                 text: c('Title').t`Billing`,
