@@ -61,7 +61,6 @@ export const useCloseHandler = ({
         } finally {
             hideNotification(notificationID);
             setSaving(false);
-            updateMessageCache(messageCache, modelMessage.localID, { inComposer: false });
         }
     });
 
@@ -88,7 +87,6 @@ export const useCloseHandler = ({
         try {
             await promiseUpload;
         } catch (error) {
-            updateMessageCache(messageCache, modelMessage.localID, { inComposer: false });
             hideNotification(notificationID);
             setSaving(false);
             throw error;
@@ -123,6 +121,8 @@ export const useCloseHandler = ({
                     type: 'error',
                 });
                 onCompose({ existingDraft: modelMessage, fromUndo: true });
+            } finally {
+                updateMessageCache(messageCache, modelMessage.localID, { inComposer: false });
             }
         } else {
             updateMessageCache(messageCache, modelMessage.localID, { inComposer: false });
