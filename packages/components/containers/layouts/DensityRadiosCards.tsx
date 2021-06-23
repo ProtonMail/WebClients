@@ -15,9 +15,11 @@ interface Props {
     onChange: (density: DENSITY) => void;
     loading: boolean;
     describedByID: string;
+    className?: string;
+    liClassName?: string;
 }
 
-const DensityRadiosCards = ({ density, onChange, loading, describedByID, ...rest }: Props) => {
+const DensityRadiosCards = ({ density, onChange, loading, className, liClassName, describedByID, ...rest }: Props) => {
     const layoutCardComfortable = {
         value: COMFORTABLE,
         selected: density === COMFORTABLE,
@@ -43,7 +45,15 @@ const DensityRadiosCards = ({ density, onChange, loading, describedByID, ...rest
         describedByID,
     };
 
-    return <LayoutCards list={[layoutCardComfortable, layoutCardCompact]} describedByID={describedByID} {...rest} />;
+    return (
+        <LayoutCards
+            list={[layoutCardComfortable, layoutCardCompact]}
+            className={className}
+            liClassName={liClassName}
+            describedByID={describedByID}
+            {...rest}
+        />
+    );
 };
 
 export default DensityRadiosCards;
