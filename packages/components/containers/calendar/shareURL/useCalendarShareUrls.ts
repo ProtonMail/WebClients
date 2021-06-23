@@ -1,4 +1,3 @@
-import { getPublicLinks } from 'proton-shared/lib/api/calendars';
 import {
     getIsCalendarUrlEventManagerCreate,
     getIsCalendarUrlEventManagerDelete,
@@ -9,7 +8,7 @@ import {
 import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
 import { updateItem } from 'proton-shared/lib/helpers/array';
 import { SimpleMap } from 'proton-shared/lib/interfaces';
-import { Calendar, CalendarLink, CalendarUrl, CalendarUrlsResponse } from 'proton-shared/lib/interfaces/calendar';
+import { Calendar, CalendarLink, CalendarUrl } from 'proton-shared/lib/interfaces/calendar';
 import {
     CalendarEventManager,
     CalendarUrlEventManager,
@@ -17,13 +16,14 @@ import {
 } from 'proton-shared/lib/interfaces/calendar/EventManager';
 import { splitKeys } from 'proton-shared/lib/keys';
 import { useEffect, useMemo, useState } from 'react';
-import { useApi, useEventManager, useGetCalendarInfo, useLoading, useNotifications } from '../../../hooks';
+import { useEventManager, useGetCalendarInfo, useLoading, useNotifications } from '../../../hooks';
+import { useGetCalendarPublicLinks } from '../../../hooks/useGetCalendarPublicLinks';
 import { useCalendarModelEventManager } from '../../eventManager';
 
 const useCalendarShareUrls = (calendars: Calendar[]) => {
-    const api = useApi();
     const { createNotification } = useNotifications();
     const getCalendarInfo = useGetCalendarInfo();
+    const getPublicLinks = useGetCalendarPublicLinks();
     const { subscribe: standardSubscribe } = useEventManager();
     const { subscribe: calendarSubscribe } = useCalendarModelEventManager();
 
@@ -90,7 +90,7 @@ const useCalendarShareUrls = (calendars: Calendar[]) => {
                     const { decryptedCalendarKeys, decryptedPassphrase } = await getCalendarInfo(calendarID);
                     const { privateKeys } = splitKeys(decryptedCalendarKeys);
                     try {
-                        const { CalendarUrls } = await api<CalendarUrlsResponse>(getPublicLinks(calendarID));
+                        const { CalendarUrls } = await getPublicLinks(calendarID);
                         map[calendarID] = await transformLinksFromAPI({
                             calendarUrls: CalendarUrls,
                             calendar,
