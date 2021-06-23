@@ -1,29 +1,39 @@
+import { getIsPersonalCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
 import React from 'react';
 import {
-    SettingsPropsShared,
-    CalendarsSection,
+    ButtonLike,
     CalendarImportSection,
     CalendarShareSection,
     Card,
-    ButtonLike,
+    FeatureCode,
+    PersonalCalendarsSection,
     SettingsLink,
+    SettingsPropsShared,
     SettingsSection,
+    SubscribedCalendarsSection,
+    useFeature,
 } from 'react-components';
 import { c } from 'ttag';
 
 import { Address, UserModel } from 'proton-shared/lib/interfaces';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 
+import { partition } from 'proton-shared/lib/helpers/array';
+import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import PrivateMainSettingsAreaWithPermissions from '../../content/PrivateMainSettingsAreaWithPermissions';
 
-const generalSettingsConfig = {
+const generalSettingsConfig = (showCalendarSubscription: boolean) => ({
     to: '/calendar/calendars',
     icon: 'calendar',
     text: c('Link').t`Calendars`,
     subsections: [
         {
-            text: c('Title').t`Calendars`,
-            id: 'calendars',
+            text: c('Title').t`My calendars`,
+            id: 'my-calendars',
+        },
+        showCalendarSubscription && {
+            text: c('Title').t`Other calendars`,
+            id: 'other-calendars',
         },
         {
             text: c('Title').t`Import`,
@@ -33,8 +43,8 @@ const generalSettingsConfig = {
             text: c('Title').t`Share outside Proton`,
             id: 'share',
         },
-    ],
-};
+    ].filter(isTruthy),
+});
 
 interface Props extends SettingsPropsShared {
     activeAddresses: Address[];
@@ -54,17 +64,36 @@ const CalendarCalendarsSettings = ({
     defaultCalendar,
     user,
 }: Props) => {
+    const [personalCalendars, otherCalendars] = partition<Calendar>(calendars, getIsPersonalCalendar);
+    const [personalActiveCalendars] = partition<Calendar>(activeCalendars, getIsPersonalCalendar);
+    const [personalDisabledCalendars] = partition<Calendar>(disabledCalendars, getIsPersonalCalendar);
+    const { feature: featureUsedCalendarSubscription, loading: loadingUsedCalendarSubscription } = useFeature(
+        FeatureCode.CalendarSubscription
+    );
+    const showCalendarSubscription = !loadingUsedCalendarSubscription && !!featureUsedCalendarSubscription?.Value;
+
     return (
-        <PrivateMainSettingsAreaWithPermissions config={generalSettingsConfig} location={location}>
-            <CalendarsSection
+        <PrivateMainSettingsAreaWithPermissions
+            config={generalSettingsConfig(showCalendarSubscription)}
+            location={location}
+        >
+            <PersonalCalendarsSection
                 activeAddresses={activeAddresses}
-                calendars={calendars}
-                activeCalendars={activeCalendars}
-                disabledCalendars={disabledCalendars}
+                calendars={personalCalendars}
+                activeCalendars={personalActiveCalendars}
+                disabledCalendars={personalDisabledCalendars}
                 defaultCalendar={defaultCalendar}
                 user={user}
             />
-            <CalendarImportSection activeCalendars={activeCalendars} defaultCalendar={defaultCalendar} user={user} />
+            {showCalendarSubscription && (
+                <SubscribedCalendarsSection activeAddresses={activeAddresses} calendars={otherCalendars} user={user} />
+            )}
+            <CalendarImportSection
+                activeCalendars={personalActiveCalendars}
+                defaultCalendar={defaultCalendar}
+                user={user}
+            />
+
             {user.isFree ? (
                 <SettingsSection>
                     <Card className="mb1">
@@ -80,7 +109,7 @@ const CalendarCalendarsSettings = ({
                     </Card>
                 </SettingsSection>
             ) : (
-                <CalendarShareSection calendars={calendars} defaultCalendar={defaultCalendar} user={user}/>
+                <CalendarShareSection calendars={personalCalendars} defaultCalendar={defaultCalendar} user={user} />
             )}
         </PrivateMainSettingsAreaWithPermissions>
     );
