@@ -11,7 +11,7 @@ import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { SimpleMap, UserModel } from 'proton-shared/lib/interfaces';
 
 import { Badge, DropdownActions, Icon, Info, Table, TableBody, TableHeader, TableRow } from '../../../components';
-import useGetCalendarEmail from '../hooks/useGetCalendarEmail';
+import useGetCalendarsEmails from '../hooks/useGetCalendarsEmails';
 
 import './CalendarsTable.scss';
 import { classnames } from '../../../helpers';
@@ -37,7 +37,7 @@ const CalendarsTable = ({
     loadingMap,
 }: Props) => {
     const { hasNonDelinquentScope } = user;
-    const calendarAddressMap = useGetCalendarEmail(calendars);
+    const calendarAddressMap = useGetCalendarsEmails(calendars);
 
     return (
         <Table className="simple-table--has-actions">
