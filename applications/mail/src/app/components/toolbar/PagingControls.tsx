@@ -1,20 +1,40 @@
 import React from 'react';
 import { Icon, DropdownMenu, DropdownMenuButton, ToolbarButton } from 'react-components';
 import { c } from 'ttag';
+import { Location } from 'history';
 
 import ToolbarDropdown from './ToolbarDropdown';
 
 import { Page } from '../../models/tools';
 import { usePaging } from '../../hooks/usePaging';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { extractSearchParameters } from '../../helpers/mailboxUrl';
+import { isSearch as testIsSearch } from '../../helpers/elements';
 
 interface Props {
     loading: boolean;
     page: Page;
     onPage: (page: number) => void;
+    location: Location;
 }
 
-const PagingControls = ({ loading, page: inputPage, onPage: inputOnPage }: Props) => {
+const PagingControls = ({ loading, page: inputPage, onPage: inputOnPage, location }: Props) => {
     const { onPrevious, onNext, onPage, page, total } = usePaging(inputPage, inputOnPage);
+    const { getESDBStatus } = useEncryptedSearchContext();
+    const { dbExists, esEnabled, isSearchPartial, isCacheLimited } = getESDBStatus();
+    const searchParameters = extractSearchParameters(location);
+    const isSearch = testIsSearch(searchParameters);
+
+    const useLoadMore = isSearch && !loading && dbExists && esEnabled && isCacheLimited && isSearchPartial;
+    const loadMore = (
+        <DropdownMenuButton
+            className="text-underline"
+            onClick={() => onPage(total + 1)}
+            aria-label={c('Action').t`Load more`}
+        >
+            {c('Action').t`Load more`}
+        </DropdownMenuButton>
+    );
 
     return (
         <>
@@ -50,6 +70,7 @@ const PagingControls = ({ loading, page: inputPage, onPage: inputOnPage }: Props
                                 </DropdownMenuButton>
                             );
                         })}
+                        {useLoadMore && loadMore}
                     </DropdownMenu>
                 )}
             </ToolbarDropdown>

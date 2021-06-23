@@ -78,7 +78,15 @@ export interface NormalisedSearchParams extends Omit<SearchParameters, 'wildcard
     decryptionError?: boolean;
 }
 
-export interface ESDBStatus {
+export type ESSetsElementsCache = (Elements: Element[], page?: number) => void;
+
+export interface ESStatus {
+    permanentResults: MessageForSearch[];
+    setElementsCache: ESSetsElementsCache;
+    labelID: string;
+    cachePromise: Promise<CachedMessage[]>;
+    lastEmail: LastEmail | undefined;
+    page: number;
     dbExists: boolean;
     isBuilding: boolean;
     isDBLimited: boolean;
@@ -86,21 +94,35 @@ export interface ESDBStatus {
     isCacheReady: boolean;
     isCacheLimited: boolean;
     isRefreshing: boolean;
+    isSearchPartial: boolean;
+    isSearching: boolean;
 }
 
-export interface ESSearchStatus {
-    permanentResults: MessageForSearch[];
-    setElementsCache: (Elements: Element[]) => void;
-    labelID: string;
-    cachePromise: Promise<CachedMessage[]>;
-}
+export type ESDBStatus = Pick<
+    ESStatus,
+    | 'dbExists'
+    | 'isBuilding'
+    | 'isDBLimited'
+    | 'esEnabled'
+    | 'isCacheReady'
+    | 'isCacheLimited'
+    | 'isRefreshing'
+    | 'isSearchPartial'
+    | 'isSearching'
+>;
 
 export type GetUserKeys = () => Promise<DecryptedKey[]>;
 
 export type EncryptedSearch = (
     searchParams: SearchParameters,
     labelID: string,
-    setCache: (Elements: Element[]) => void
+    setCache: ESSetsElementsCache
+) => Promise<boolean>;
+
+export type IncrementSearch = (
+    page: number,
+    setElementsCache: ESSetsElementsCache,
+    shouldLoadMore: boolean
 ) => Promise<boolean>;
 
 export type CacheIndexedDB = (force?: boolean) => Promise<{ cachedMessages: CachedMessage[]; isCacheLimited: boolean }>;
@@ -113,4 +135,5 @@ export interface EncryptedSearchFunctions {
     toggleEncryptedSearch: () => void;
     resumeIndexing: () => Promise<void>;
     pauseIndexing: () => Promise<void>;
+    incrementSearch: IncrementSearch;
 }

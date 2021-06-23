@@ -76,7 +76,7 @@ const MailHeader = ({
             onChange={updateValue}
             value={value}
             advanced={searchDropdown}
-            onFocus={cacheIndexedDB}
+            onFocus={() => cacheIndexedDB()}
         />
     );
 

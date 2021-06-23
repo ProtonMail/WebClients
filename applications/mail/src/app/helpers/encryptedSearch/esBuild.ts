@@ -180,8 +180,7 @@ export const fetchMessage = async (
         const keys = await getMessageKeys(message);
         const decryptionResult = await decryptMessage(message, keys.privateKeys, undefined);
         if (!decryptionResult.errors) {
-            decryptedSubject = decryptionResult.decryptedSubject;
-            decryptedBody = decryptionResult.decryptedBody;
+            ({ decryptedSubject, decryptedBody } = decryptionResult);
             decryptionError = false;
         }
     } catch (error) {
@@ -288,7 +287,7 @@ const storeMessagesBatches = async (
 
     let Messages: Message[];
     if (resultMetadata) {
-        Messages = resultMetadata.Messages;
+        ({ Messages } = resultMetadata);
     } else {
         if (inputLastMessage) {
             setItem(`ES:${userID}:Recover`, JSON.stringify(inputLastMessage));

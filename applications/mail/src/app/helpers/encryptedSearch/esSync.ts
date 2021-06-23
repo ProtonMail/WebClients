@@ -149,10 +149,15 @@ export const refreshIndex = async (
     // is to avoid checking whether the body was modified or not
     let searchResults: MessageForSearch[] = [];
     try {
-        searchResults = await uncachedSearch(indexKey, userID, {
-            labelID: '8',
-            normalisedKeywords: undefined,
-        });
+        ({ resultsArray: searchResults } = await uncachedSearch(
+            indexKey,
+            userID,
+            {
+                labelID: '8',
+                normalisedKeywords: undefined,
+            },
+            {}
+        ));
     } catch (error) {
         // leave empty array
     }
@@ -603,11 +608,22 @@ export const correctDecryptionErrors = async (
     getMessageKeys: GetMessageKeys,
     recordProgress: (progress: number, total: number) => void
 ) => {
-    const searchResults = await uncachedSearch(indexKey, userID, {
-        labelID: '5',
-        normalisedKeywords: undefined,
-        decryptionError: true,
-    });
+    let searchResults: MessageForSearch[] = [];
+
+    try {
+        ({ resultsArray: searchResults } = await uncachedSearch(
+            indexKey,
+            userID,
+            {
+                labelID: '5',
+                normalisedKeywords: undefined,
+                decryptionError: true,
+            },
+            {}
+        ));
+    } catch (error) {
+        return;
+    }
 
     if (!searchResults.length) {
         // There are no messages for which decryption failed

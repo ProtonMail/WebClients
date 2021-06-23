@@ -22,11 +22,12 @@ import {
     EncryptedSearchDB,
     EncryptedSearchFunctions,
     ESDBStatus,
-    ESSearchStatus,
+    ESStatus,
+    IncrementSearch,
     LastEmail,
     MessageForSearch,
 } from '../models/encryptedSearch';
-import { defaultESDBStatus, defaultESSearchStatus, ES_MAX_CACHE } from '../constants';
+import { defaultESStatus, ES_MAX_CACHE, PAGE_SIZE } from '../constants';
 import { extractSearchParameters } from '../helpers/mailboxUrl';
 import { isSearch as testIsSearch } from '../helpers/elements';
 import {
@@ -48,6 +49,7 @@ import {
     hybridSearch,
     normaliseSearchParams,
     sizeOfCache,
+    uncachedSearch,
     updateCache,
 } from '../helpers/encryptedSearch/esSearch';
 import {
@@ -75,10 +77,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const { createNotification } = useNotifications();
     const [messageCounts] = useMessageCounts();
 
-    // Keep a state of cached messages and search results to update in case of new events
-    const [esSearchStatus, setESSearchStatus] = useState<ESSearchStatus>(defaultESSearchStatus);
-    // Store information on the status of IndexedDB
-    const [esDBStatus, setESDBStatus] = useState<ESDBStatus>(defaultESDBStatus);
+    // Keep a state of cached messages, search results to update in case of new events
+    // and information on the status of IndexedDB
+    const [esStatus, setESStatus] = useState<ESStatus>(defaultESStatus);
     // Allow to abort indexing
     const abortControllerRef = useRef<AbortController>(new AbortController());
     // Allow to track progress during indexing or refreshing
@@ -115,8 +116,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      */
     const dbCorruptError = async () => {
         await esDelete();
-        setESSearchStatus(() => defaultESSearchStatus);
-        setESDBStatus(() => defaultESDBStatus);
+        setESStatus(() => defaultESStatus);
         createNotification({
             text: c('Error').t`Please activate your content search again`,
             type: 'error',
@@ -141,6 +141,28 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Report the status of IndexedDB
      */
     const getESDBStatus = () => {
+        const {
+            dbExists,
+            isBuilding,
+            isDBLimited,
+            esEnabled,
+            isCacheReady,
+            isCacheLimited,
+            isRefreshing,
+            isSearchPartial,
+            isSearching,
+        } = esStatus;
+        const esDBStatus: ESDBStatus = {
+            dbExists,
+            isBuilding,
+            isDBLimited,
+            esEnabled,
+            isCacheReady,
+            isCacheLimited,
+            isRefreshing,
+            isSearchPartial,
+            isSearching,
+        };
         return esDBStatus;
     };
 
@@ -148,10 +170,10 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Once encrypted search is active, allow to switch back to server-side metadata search
      */
     const toggleEncryptedSearch = () => {
-        const currentOption = esDBStatus.esEnabled;
-        setESDBStatus((esDBStatus) => {
+        const currentOption = esStatus.esEnabled;
+        setESStatus((esStatus) => {
             return {
-                ...esDBStatus,
+                ...esStatus,
                 esEnabled: !currentOption,
             };
         });
@@ -166,8 +188,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Cache the whole IndexedDB and returns the cache promise
      */
     const cacheIndexedDB: CacheIndexedDB = async (force) => {
-        const { esEnabled, dbExists } = esDBStatus;
-        const esCache = await esSearchStatus.cachePromise;
+        const { esEnabled, dbExists, cachePromise } = esStatus;
+        const esCache = await cachePromise;
         const defaultResult = {
             cachedMessages: [],
             isCacheLimited: false,
@@ -183,9 +205,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             const cacheDBPromise = cacheDB(indexKey, userID);
             const cachePromise = cacheDBPromise
                 .then((result) => {
-                    setESDBStatus((esDBStatus) => {
+                    setESStatus((esStatus) => {
                         return {
-                            ...esDBStatus,
+                            ...esStatus,
                             isCacheReady: true,
                             isCacheLimited: result.isCacheLimited,
                         };
@@ -194,9 +216,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 })
                 .catch(() => [] as CachedMessage[]);
 
-            setESSearchStatus((esSearchStatus) => {
+            setESStatus((esStatus) => {
                 return {
-                    ...esSearchStatus,
+                    ...esStatus,
                     cachePromise,
                 };
             });
@@ -218,18 +240,18 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         progressRecorderRef.current = [0, 0];
 
-        setESDBStatus((esDBStatus) => {
+        setESStatus((esStatus) => {
             return {
-                ...esDBStatus,
+                ...esStatus,
                 isRefreshing: true,
             };
         });
 
         const newMessagesFound = await correctDecryptionErrors(userID, indexKey, api, getMessageKeys, recordProgress);
 
-        setESDBStatus((esDBStatus) => {
+        setESStatus((esStatus) => {
             return {
-                ...esDBStatus,
+                ...esStatus,
                 isRefreshing: false,
             };
         });
@@ -237,14 +259,14 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         if (newMessagesFound) {
             // Check if DB became limited after this update
             const isDBLimited = await checkIsDBLimited(userID, messageCounts);
-            setESDBStatus((esDBStatus) => {
+            setESStatus((esStatus) => {
                 return {
-                    ...esDBStatus,
+                    ...esStatus,
                     isDBLimited,
                 };
             });
             // Force cache re-build to account for new messages
-            if (esDBStatus.isCacheReady) {
+            if (esStatus.isCacheReady) {
                 void cacheIndexedDB(true);
             }
         }
@@ -263,7 +285,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             return;
         }
 
-        const { labelID, permanentResults, setElementsCache, cachePromise } = esSearchStatus;
+        const { labelID, permanentResults, setElementsCache, cachePromise } = esStatus;
         const esCache = await cachePromise;
 
         const searchParameters = extractSearchParameters(location);
@@ -284,9 +306,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         if (searchChanged) {
             setElementsCache(permanentResults);
-            setESSearchStatus((esSearchStatus) => {
+            setESStatus((esStatus) => {
                 return {
-                    ...esSearchStatus,
+                    ...esStatus,
                     permanentResults,
                 };
             });
@@ -300,9 +322,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 const cacheLimit = ES_MAX_CACHE - sizeOfCache(esCache);
                 await updateCache(indexKey, userID, lastEmail, esCache, cacheLimit);
             }
-            setESSearchStatus((esSearchStatus) => {
+            setESStatus((esStatus) => {
                 return {
-                    ...esSearchStatus,
+                    ...esStatus,
                     cachePromise: Promise.resolve(esCache),
                 };
             });
@@ -311,9 +333,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         // Check if DB or cache became limited after this update
         const isCacheLimited = await checkIsCacheLimited(userID, esCache.length);
         const isDBLimited = await checkIsDBLimited(userID, messageCounts);
-        setESDBStatus((esDBStatus) => {
+        setESStatus((esStatus) => {
             return {
-                ...esDBStatus,
+                ...esStatus,
                 isDBLimited,
                 isCacheLimited,
             };
@@ -336,9 +358,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             if (messageEvent.Refresh) {
                 progressRecorderRef.current = [0, 0];
 
-                setESDBStatus((esDBStatus) => {
+                setESStatus((esStatus) => {
                     return {
-                        ...esDBStatus,
+                        ...esStatus,
                         isRefreshing: true,
                     };
                 });
@@ -356,9 +378,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
                 // Check if DB became limited after this update
                 const isDBLimited = await checkIsDBLimited(userID, messageCounts);
-                setESDBStatus((esDBStatus) => {
+                setESStatus((esStatus) => {
                     return {
-                        ...esDBStatus,
+                        ...esStatus,
                         isRefreshing: false,
                         isDBLimited,
                     };
@@ -412,9 +434,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      */
     const pauseIndexing = async () => {
         abortControllerRef.current.abort();
-        setESDBStatus((esDBStatus) => {
+        setESStatus((esStatus) => {
             return {
-                ...esDBStatus,
+                ...esStatus,
                 isBuilding: false,
             };
         });
@@ -427,9 +449,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const resumeIndexing = async () => {
         const isResumed = isPaused(userID);
 
-        setESDBStatus((esDBStatus) => {
+        setESStatus((esStatus) => {
             return {
-                ...esDBStatus,
+                ...esStatus,
                 esEnabled: true,
             };
         });
@@ -442,7 +464,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                     : c('Error').t`A problem occurred, please try again`,
                 type: 'error',
             });
-            setESDBStatus(() => defaultESDBStatus);
+            setESStatus(() => defaultESStatus);
         };
 
         removeItem(`ES:${userID}:Pause`);
@@ -469,9 +491,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         const mailboxEmpty = totalMessages === 0;
         progressRecorderRef.current = [await getNumMessagesDB(userID), totalMessages];
 
-        setESDBStatus((esDBStatus) => {
+        setESStatus((esStatus) => {
             return {
-                ...esDBStatus,
+                ...esStatus,
                 isBuilding: true,
             };
         });
@@ -516,9 +538,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         // The check whether the DB is limited is performed after sync to account for new messages
         const isDBLimited = await checkIsDBLimited(userID, messageCounts);
-        setESDBStatus((esDBStatus) => {
+        setESStatus((esStatus) => {
             return {
-                ...esDBStatus,
+                ...esStatus,
                 dbExists: true,
                 isBuilding: false,
                 isDBLimited,
@@ -535,17 +557,25 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      */
     const encryptedSearch: EncryptedSearch = async (searchParams, labelID, setCache) => {
         const t1 = performance.now();
-        const { dbExists, esEnabled, isCacheReady } = esDBStatus;
+        const { dbExists, esEnabled, isCacheReady, cachePromise } = esStatus;
 
         if (!dbExists || !esEnabled) {
             return false;
         }
 
+        setESStatus((esStatus) => {
+            return {
+                ...esStatus,
+                isSearching: true,
+                isSearchPartial: true,
+            };
+        });
+
         const normalisedSearchParams = normaliseSearchParams(searchParams, labelID);
 
         // Wait for the cache to be built, falls back to uncached search if caching fails
-        let esCache = await esSearchStatus.cachePromise;
-        let { isCacheLimited } = esDBStatus;
+        let esCache = await cachePromise;
+        let { isCacheLimited } = esStatus;
 
         // If encrypted search is enabled while search results (from a previous server-side search) are
         // being shown, the cache will naturally be empty, therefore we trigger it. If, despite this,
@@ -564,15 +594,18 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         };
 
         let searchResults: MessageForSearch[] = [];
+        let isSearchPartial = false;
+        let lastEmail: LastEmail | undefined;
         try {
-            searchResults = await hybridSearch(
+            ({ searchResults, isSearchPartial, lastEmail } = await hybridSearch(
                 esCache,
                 normalisedSearchParams,
                 isCacheLimited,
                 getUserKeys,
                 userID,
-                incrementMessagesSearched
-            );
+                incrementMessagesSearched,
+                setCache
+            ));
         } catch (error) {
             // If the key is the problem, then we want to wipe the DB and fall back to
             // server-side search, otherwise we want to show a generic error and still
@@ -584,12 +617,16 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             throw error;
         }
 
-        setESSearchStatus((esSearchStatus) => {
+        setESStatus((esStatus) => {
             return {
-                ...esSearchStatus,
+                ...esStatus,
                 permanentResults: searchResults,
                 labelID,
                 setElementsCache: setCache,
+                lastEmail,
+                page: 0,
+                isSearchPartial,
+                isSearching: false,
             };
         });
         setCache(searchResults);
@@ -610,8 +647,98 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         return true;
     };
 
+    /**
+     * Increase the number of results in case the cache is limited as the user changes page
+     */
+    const incrementSearch: IncrementSearch = async (page, setElementsCache, shouldLoadMore) => {
+        const {
+            dbExists,
+            esEnabled,
+            isCacheLimited,
+            labelID,
+            permanentResults,
+            lastEmail,
+            page: lastPage,
+            isSearchPartial,
+        } = esStatus;
+        if (!dbExists || !esEnabled || !isCacheLimited) {
+            return false;
+        }
+
+        setESStatus((esStatus) => {
+            return {
+                ...esStatus,
+                page,
+            };
+        });
+
+        const lastFilledPage = Math.floor(permanentResults.length / PAGE_SIZE) - 1;
+        if (page <= lastPage || page < lastFilledPage) {
+            return false;
+        }
+
+        const searchParameters = extractSearchParameters(location);
+        const isSearch = testIsSearch(searchParameters);
+        if (!isSearch || !isSearchPartial) {
+            return false;
+        }
+
+        const neededResults = PAGE_SIZE * (lastFilledPage + 2);
+        let messageLimit = 0;
+        if (permanentResults.length < neededResults) {
+            messageLimit = neededResults - permanentResults.length;
+        } else {
+            return false;
+        }
+        // If the user wants to load more, then one page is added such that
+        // the page+1 wrt the one the user is visualising is already cached
+        if (shouldLoadMore) {
+            messageLimit += PAGE_SIZE;
+        }
+
+        const normalisedSearchParams = normaliseSearchParams(searchParameters, labelID);
+        const indexKey = await getIndexKey(getUserKeys, userID);
+        if (!indexKey) {
+            await dbCorruptError();
+            return false;
+        }
+
+        setESStatus((esStatus) => {
+            return {
+                ...esStatus,
+                isSearching: true,
+            };
+        });
+
+        const searchOutput = await uncachedSearch(
+            indexKey,
+            userID,
+            { ...normalisedSearchParams, end: lastEmail?.Time },
+            {
+                messageLimit,
+                beginOrder: lastEmail?.Order,
+            }
+        );
+
+        permanentResults.push(...searchOutput.resultsArray);
+        const newIsSearchPartial = !!searchOutput.lastEmail;
+
+        setESStatus((esStatus) => {
+            return {
+                ...esStatus,
+                permanentResults,
+                lastEmail: searchOutput.lastEmail,
+                isSearchPartial: newIsSearchPartial,
+                isSearching: false,
+            };
+        });
+        setElementsCache(permanentResults, page);
+
+        return true;
+    };
+
     useSubscribeEventManager(async (event: Event) => {
-        const { dbExists, isRefreshing } = esDBStatus;
+        const { dbExists, isRefreshing } = esStatus;
         // If building is happening, either because of initial indexing or because
         // we got a Refresh=1, new events are not synced
         if (!dbExists || isRefreshing) {
@@ -695,9 +822,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 return;
             }
 
-            setESDBStatus((esDBStatus) => {
+            setESStatus((esStatus) => {
                 return {
-                    ...esDBStatus,
+                    ...esStatus,
                     dbExists: wasIndexingDone(userID),
                     esEnabled: isESEnabled(userID),
                 };
@@ -738,6 +865,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         resumeIndexing,
         pauseIndexing,
         getProgressRecorderRef,
+        incrementSearch,
     };
 
     return <EncryptedSearchContext.Provider value={esFunctions}>{children}</EncryptedSearchContext.Provider>;

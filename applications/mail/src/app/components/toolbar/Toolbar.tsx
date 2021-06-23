@@ -176,7 +176,7 @@ const Toolbar = ({
                     <MoreDropdown labelID={labelID} elementIDs={elementIDs} selectedIDs={selectedIDs} />
                 )}
                 {listInView ? (
-                    <PagingControls loading={loading} page={page} onPage={onPage} />
+                    <PagingControls loading={loading} page={page} onPage={onPage} location={location} />
                 ) : (
                     <NavigationControls
                         loading={loading}

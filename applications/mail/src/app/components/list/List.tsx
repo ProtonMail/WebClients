@@ -1,6 +1,6 @@
 import React, { useEffect, ChangeEvent, Ref, memo, forwardRef, MutableRefObject } from 'react';
 import { c, msgid } from 'ttag';
-import { useLabels, classnames, PaginationRow, useItemsDraggable } from 'react-components';
+import { useLabels, classnames, PaginationRow, useItemsDraggable, EllipsisLoader } from 'react-components';
 import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
 import { DENSITY } from 'proton-shared/lib/constants';
 import Item from './Item';
@@ -12,6 +12,7 @@ import { Breakpoints } from '../../models/utils';
 import { Page, Sort, Filter } from '../../models/tools';
 import { usePaging } from '../../hooks/usePaging';
 import ListSettings from './ListSettings';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 const defaultCheckedIDs: string[] = [];
 const defaultElements: Element[] = [];
@@ -71,6 +72,8 @@ const List = (
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
 
     const [labels] = useLabels();
+    const { getESDBStatus } = useEncryptedSearchContext();
+    const { dbExists, esEnabled, isSearchPartial, isCacheLimited, isSearching } = getESDBStatus();
 
     const elements = usePlaceholders(inputElements, loading, placeholderCount);
     const pagingHandlers = usePaging(inputPage, onPage);
@@ -100,6 +103,18 @@ const List = (
                       selectionCount
                   );
         }
+    );
+
+    const searchLimitedMode = isSearch && !loading && dbExists && esEnabled && isCacheLimited;
+    const disableGoToLast = searchLimitedMode && isSearchPartial;
+    const isLastPage = page === total;
+    const useLoadingElement = searchLimitedMode && (isSearching || !isSearchPartial) && isLastPage;
+    const loadingText = isSearching ? c('Info').t`Loading` : c('Info').t`No more results found`;
+    const loadingElement = (
+        <div className="flex flex-nowrap flex-align-items-center flex-justify-center color-weak mt1-5 mb1-5">
+            {loadingText}
+            {isSearching && <EllipsisLoader />}
+        </div>
     );
 
     return (
@@ -148,9 +163,14 @@ const List = (
                                 onFocus={onFocus}
                             />
                         ))}
+                        {useLoadingElement && loadingElement}
                         {!loading && total > 1 && (
                             <div className="p1-5 flex flex-column flex-align-items-center">
-                                <PaginationRow {...pagingHandlers} disabled={loading} />
+                                <PaginationRow
+                                    {...pagingHandlers}
+                                    disabled={loading}
+                                    disableGoToLast={disableGoToLast}
+                                />
                             </div>
                         )}
                     </>

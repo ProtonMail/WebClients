@@ -1,7 +1,8 @@
 import { Recipient } from 'proton-shared/lib/interfaces';
-import { openDB } from 'idb';
+import { IDBPDatabase, openDB } from 'idb';
 import { endOfDay, endOfToday, startOfMonth, sub } from 'date-fns';
 import { SearchParameters } from '../../models/tools';
+import { Element } from '../../models/element';
 import {
     CachedMessage,
     EncryptedSearchDB,
@@ -9,8 +10,9 @@ import {
     LastEmail,
     MessageForSearch,
     NormalisedSearchParams,
+    StoredCiphertext,
 } from '../../models/encryptedSearch';
-import { ES_MAX_CACHE } from '../../constants';
+import { ES_MAX_CACHE, PAGE_SIZE } from '../../constants';
 import { getNumMessagesDB, getOldestTime } from './esUtils';
 import { decryptFromDB } from './esSync';
 import { getIndexKey } from './esBuild';
@@ -202,15 +204,55 @@ export const initialiseQuery = async (userID: string, begin?: number, end?: numb
 };
 
 /**
+ * Initialise some variables for the query
+ */
+export const initialiseVariables = (beginOrder: number | undefined) => {
+    const lower: [number, number] = [0, 0];
+    const upper: [number, number] = [0, 0];
+    const startingOrder = beginOrder ? beginOrder - 1 : undefined;
+    return { lower, upper, startingOrder };
+};
+
+/**
+ * Fetch a new batch of messages from IDB
+ */
+export const queryNewData = async (
+    getTimes: (start: number) => {
+        lower: [number, number];
+        upper: [number, number];
+    },
+    lower: [number, number],
+    upper: [number, number],
+    startingOrder: number | undefined,
+    esDB: IDBPDatabase<EncryptedSearchDB>
+) => {
+    const bounds = getTimes(lower[0]);
+    ({ lower, upper } = bounds);
+    if (startingOrder) {
+        upper[1] = startingOrder;
+        startingOrder = undefined;
+    }
+
+    const storedData = await esDB.getAllFromIndex('messages', 'byTime', IDBKeyRange.bound(lower, upper));
+    return { lower, upper, startingOrder, storedData };
+};
+
+/**
  * Perfom an uncached search, i.e. fetching and searching messages from IndexedDB
  */
 export const uncachedSearch = async (
     indexKey: CryptoKey,
     userID: string,
     normalisedSearchParams: NormalisedSearchParams,
-    incrementMessagesSearched?: () => void
+    options: {
+        incrementMessagesSearched?: () => void;
+        messageLimit?: number;
+        setCache?: (newResults: MessageForSearch[]) => void;
+        beginOrder?: number;
+    }
 ) => {
     const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
+    const { incrementMessagesSearched, messageLimit, beginOrder, setCache } = options;
     const { getTimes, initialTime } = await initialiseQuery(
         userID,
         normalisedSearchParams.begin,
@@ -218,16 +260,12 @@ export const uncachedSearch = async (
     );
     const resultsArray: MessageForSearch[] = [];
 
-    let lower: [number, number] = [0, 0];
-    let upper: [number, number] = [0, 0];
+    let { lower, upper, startingOrder } = initialiseVariables(beginOrder);
+    let lastEmail: LastEmail | undefined;
 
-    const keepQuerying = true;
-    while (keepQuerying) {
-        const bounds = getTimes(lower[0]);
-        lower = bounds.lower;
-        upper = bounds.upper;
-
-        const storedData = await esDB.getAllFromIndex('messages', 'byTime', IDBKeyRange.bound(lower, upper));
+    while (!lastEmail) {
+        let storedData: StoredCiphertext[];
+        ({ lower, upper, startingOrder, storedData } = await queryNewData(getTimes, lower, upper, startingOrder, esDB));
 
         for (let index = storedData.length - 1; index >= 0; index--) {
             const storedCiphertext = storedData[index];
@@ -242,16 +280,24 @@ export const uncachedSearch = async (
                 const { messageForSearch } = splitCachedMessage(messageToSearch);
                 resultsArray.push(messageForSearch);
             }
+            if (messageLimit && resultsArray.length >= messageLimit) {
+                lastEmail = { Time: storedCiphertext.Time, Order: storedCiphertext.Order };
+                break;
+            }
         }
 
         if (lower[0] === initialTime) {
             break;
         }
+
+        if (setCache && resultsArray.length > 0) {
+            setCache(resultsArray);
+        }
     }
 
     esDB.close();
 
-    return resultsArray;
+    return { resultsArray, lastEmail };
 };
 
 /**
@@ -331,29 +377,29 @@ export const cacheDB = async (
     indexKey: CryptoKey,
     userID: string,
     cacheLimit: number = ES_MAX_CACHE,
-    beginTime?: number,
+    endTime?: number,
     beginOrder?: number
 ) => {
     const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
-    const { getTimes, initialTime } = await initialiseQuery(userID, beginTime);
+
+    // If IDB is empty, there is nothing to cache
+    if ((await esDB.count('messages')) === 0) {
+        return {
+            cachedMessages: [],
+            isCacheLimited: false,
+        };
+    }
+
+    const { getTimes, initialTime } = await initialiseQuery(userID, undefined, endTime);
     const cachedMessages: CachedMessage[] = [];
     let cacheSize = 0;
     let isCacheLimited = false;
 
-    let lower: [number, number] = [0, 0];
-    let upper: [number, number] = [0, 0];
-    let startingOrder = beginOrder;
+    let { lower, upper, startingOrder } = initialiseVariables(beginOrder);
 
     while (!isCacheLimited) {
-        const bounds = getTimes(lower[0]);
-        lower = bounds.lower;
-        upper = bounds.upper;
-        if (startingOrder) {
-            lower[1] = startingOrder;
-            startingOrder = undefined;
-        }
-
-        const storedData = await esDB.getAllFromIndex('messages', 'byTime', IDBKeyRange.bound(lower, upper));
+        let storedData: StoredCiphertext[];
+        ({ lower, upper, startingOrder, storedData } = await queryNewData(getTimes, lower, upper, startingOrder, esDB));
 
         for (let index = storedData.length - 1; index >= 0; index--) {
             const storedCiphertext = storedData[index];
@@ -436,18 +482,23 @@ export const cachedSearch = async (
  * Helper to perfom an uncached search from an hybrid search
  */
 const uncachedFromHybrid = async (
-    total: number,
     normalisedSearchParams: NormalisedSearchParams,
     getUserKeys: GetUserKeys,
     userID: string,
-    incrementMessagesSearched: () => void
+    incrementMessagesSearched: () => void,
+    messageLimit: number,
+    setCache: (newResults: MessageForSearch[]) => void
 ) => {
     const indexKey = await getIndexKey(getUserKeys, userID);
     if (!indexKey) {
         throw new Error('Key not found');
     }
 
-    return uncachedSearch(indexKey, userID, normalisedSearchParams, incrementMessagesSearched);
+    return uncachedSearch(indexKey, userID, normalisedSearchParams, {
+        incrementMessagesSearched,
+        messageLimit,
+        setCache,
+    });
 };
 
 /**
@@ -459,13 +510,23 @@ export const hybridSearch = async (
     isCacheLimited: boolean,
     getUserKeys: GetUserKeys,
     userID: string,
-    incrementMessagesSearched: () => void
+    incrementMessagesSearched: () => void,
+    setCache: (Elements: Element[]) => void
 ) => {
     let searchResults: MessageForSearch[] = [];
+    let isSearchPartial = false;
+    let lastEmail: LastEmail | undefined;
+
     if (esCache.length) {
         searchResults = await cachedSearch(esCache, normalisedSearchParams, incrementMessagesSearched);
 
         if (isCacheLimited) {
+            // If enough messages to fill two pages were already found, we don't continue the search
+            if (searchResults.length >= 2 * PAGE_SIZE) {
+                const lastEmailInCache: LastEmail = { Time: esCache[0].Time, Order: esCache[0].Order };
+                return { searchResults, isSearchPartial: true, lastEmail: lastEmailInCache };
+            }
+
             // The remaining messages are searched from DB, but only if the indicated timespan
             // hasn't been already covered by cache. If isCacheLimited is true, the cache is
             // ordered such that the first message is the oldest
@@ -474,8 +535,17 @@ export const hybridSearch = async (
             const intervalStart = normalisedSearchParams.begin || 0;
 
             if (intervalStart < startCache) {
-                const uncachedResults = await uncachedFromHybrid(
-                    (await getNumMessagesDB(userID)) - esCache.length,
+                if (searchResults.length > 0) {
+                    setCache(searchResults);
+                }
+
+                const remainingMessages = 2 * PAGE_SIZE - searchResults.length;
+
+                const setCacheIncremental = (newResults: MessageForSearch[]) => {
+                    setCache(searchResults.concat(newResults));
+                };
+
+                const uncachedResult = await uncachedFromHybrid(
                     {
                         ...normalisedSearchParams,
                         begin: intervalStart,
@@ -483,21 +553,29 @@ export const hybridSearch = async (
                     },
                     getUserKeys,
                     userID,
-                    incrementMessagesSearched
+                    incrementMessagesSearched,
+                    remainingMessages,
+                    setCacheIncremental
                 );
-                searchResults.push(...uncachedResults);
+                searchResults.push(...uncachedResult.resultsArray);
+                lastEmail = uncachedResult.lastEmail;
+                isSearchPartial = !!lastEmail;
             }
         }
     } else {
         // This is used if the cache is empty
         const uncachedResult = await uncachedFromHybrid(
-            await getNumMessagesDB(userID),
             normalisedSearchParams,
             getUserKeys,
             userID,
-            incrementMessagesSearched
+            incrementMessagesSearched,
+            2 * PAGE_SIZE,
+            setCache
         );
-        searchResults = uncachedResult;
+        searchResults = uncachedResult.resultsArray;
+        lastEmail = uncachedResult.lastEmail;
+        isSearchPartial = !!lastEmail;
     }
-    return searchResults;
+
+    return { searchResults, isSearchPartial, lastEmail };
 };
