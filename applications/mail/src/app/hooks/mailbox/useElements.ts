@@ -384,25 +384,31 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         });
     };
 
-    const sendRequest = () => {
-        if (isSearch(search)) {
-            setCache((cache) => ({ ...cache, pendingRequest: true }));
-            void encryptedSearch(search, labelID, setEncryptedSearchResults)
-                .then((success) => {
-                    if (!success) {
-                        void load();
-                    }
-                })
-                .catch(() => {
+    const executeSearch = async () => {
+        setCache((cache) => ({ ...cache, pendingRequest: true }));
+        try {
+            const success = await encryptedSearch(search, labelID, setEncryptedSearchResults);
+            if (!success) {
+                if (page >= 200) {
+                    // This block will most likely be called two times
+                    // Fortunately notification system use a de-duplication system
                     createNotification({
                         text: c('Error')
-                            .t`There has been an issue with content search. Default search has been used instead`,
+                            .t`Your search matched too many results. Please limit your search and try again`,
                         type: 'error',
                     });
-                    void load();
-                });
-        } else {
-            void load();
+                    setCache((cache) => ({ ...cache, pendingRequest: false }));
+                    onPage(0);
+                } else {
+                    await load();
+                }
+            }
+        } catch (error) {
+            createNotification({
+                text: c('Error').t`There has been an issue with content search. Default search has been used instead`,
+                type: 'error',
+            });
+            await load();
         }
     };
 
@@ -412,7 +418,11 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             resetCache();
         }
         if (shouldSendRequest()) {
-            sendRequest();
+            if (isSearch(search)) {
+                void executeSearch();
+            } else {
+                void load();
+            }
         }
         if (shouldUpdatePage()) {
             updatePage();
