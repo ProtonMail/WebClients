@@ -4,9 +4,10 @@ import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
 import { Address } from 'proton-shared/lib/interfaces';
 import {
     Calendar,
-    CalendarViewModelFull,
-    CalendarSettings,
+    CALENDAR_TYPE,
     CalendarErrors,
+    CalendarSettings,
+    CalendarViewModelFull,
 } from 'proton-shared/lib/interfaces/calendar';
 import { CalendarCreateData } from 'proton-shared/lib/interfaces/calendar/Api';
 import { modelToNotifications } from 'proton-shared/lib/calendar/modelToNotifications';
@@ -63,6 +64,7 @@ export const getCalendarModel = ({
         duration: DefaultEventDuration,
         partDayNotifications: devicePartDayNotifications,
         fullDayNotifications: deviceFullDayNotifications,
+        type: Calendar.Type,
     };
 };
 
@@ -80,6 +82,7 @@ export const getDefaultModel = (defaultColor: boolean): CalendarViewModelFull =>
         defaultFullDayNotification: DEFAULT_FULL_DAY_NOTIFICATION,
         partDayNotifications: notificationsToModel(DEFAULT_PART_DAY_NOTIFICATIONS, false),
         fullDayNotifications: notificationsToModel(DEFAULT_FULL_DAY_NOTIFICATIONS, true),
+        type: CALENDAR_TYPE.PERSONAL,
     };
 };
 
@@ -99,6 +102,7 @@ export const getCalendarPayload = (model: CalendarViewModelFull): CalendarCreate
         Color: model.color,
         Display: model.display ? 1 : 0,
         Description: model.description,
+        URL: model.url,
     };
 };
 
