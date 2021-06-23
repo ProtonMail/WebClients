@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { ACCESS_LEVEL } from 'proton-shared/lib/interfaces/calendar';
 
-import { Alert, FormModal, Input } from '../../../components';
+import { FormModal, Input } from '../../../components';
 
 interface Props {
     link: string;
@@ -22,21 +22,21 @@ const ShareLinkSuccessModal = ({ link, onSubmit, accessLevel, ...rest }: Props) 
         >
             {accessLevel === ACCESS_LEVEL.FULL ? (
                 <>
-                    <Alert type="error">{c('Info')
-                        .t`By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.`}</Alert>
-                    <Alert>{c('Info')
-                        .t`Anyone with this link can see all the event details of this calendar such as title, location or participants.`}</Alert>
+                    <p className="mt0">{c('Info')
+                        .t`By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.`}</p>
+                    <p>{c('Info')
+                        .t`Anyone with this link can see all the event details of this calendar such as title, location or participants.`}</p>
                 </>
             ) : (
-                <Alert>
+                <p className="mt0">
                     {c('Info')
                         .t`Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.`}
-                </Alert>
+                </p>
             )}
             <label htmlFor="your-calendar-url" className="sr-only">
                 {c('Label').t`Your calendar URL`}
             </label>
-            <Input id="your-calendar-url" className="mt1-5" value={link} />
+            <Input id="your-calendar-url" value={link} />
         </FormModal>
     );
 };

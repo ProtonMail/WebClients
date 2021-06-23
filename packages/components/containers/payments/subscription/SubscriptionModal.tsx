@@ -1,32 +1,34 @@
 import { getCalendars } from 'proton-shared/lib/models/calendarsModel';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { APPS, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES } from 'proton-shared/lib/constants';
-import { checkSubscription, subscribe, deleteSubscription } from 'proton-shared/lib/api/payments';
+import { checkSubscription, deleteSubscription, subscribe } from 'proton-shared/lib/api/payments';
 import { getPublicLinks } from 'proton-shared/lib/api/calendars';
 import { hasBonuses } from 'proton-shared/lib/helpers/organization';
 import { getPlanIDs } from 'proton-shared/lib/helpers/subscription';
 import { hasPlanIDs } from 'proton-shared/lib/helpers/planIDs';
 import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { Cycle, Currency, PlanIDs, SubscriptionCheckResponse } from 'proton-shared/lib/interfaces';
+import { Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from 'proton-shared/lib/interfaces';
 import { Calendar, CalendarUrlsResponse } from 'proton-shared/lib/interfaces/calendar';
 import { MAX_CALENDARS_PER_FREE_USER } from 'proton-shared/lib/calendar/constants';
 import { getFreeCheckResult } from 'proton-shared/lib/subscription/freePlans';
 import { getAppFromPathnameSafe } from 'proton-shared/lib/apps/slugHelper';
+import { unary } from 'proton-shared/lib/helpers/function';
+import { getIsPersonalCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
 
 import { Alert, FormModal } from '../../../components';
 import {
-    usePlans,
     useApi,
-    useLoading,
+    useConfig,
     useEventManager,
-    useUser,
+    useLoading,
+    useModals,
     useNotifications,
     useOrganization,
+    usePlans,
     useSubscription,
-    useModals,
-    useConfig,
+    useUser,
     useVPNCountriesCount,
 } from '../../../hooks';
 import { classnames } from '../../../helpers';
@@ -119,13 +121,14 @@ const SubscriptionModal = ({
 
     const handleUnsubscribe = async () => {
         const calendars: Calendar[] = await getCalendars(api);
+        const personalCalendars = calendars.filter(unary(getIsPersonalCalendar));
         const hasLinks = !!(
             await Promise.all(
-                (calendars || []).map((calendar) => api<CalendarUrlsResponse>(getPublicLinks(calendar.ID)))
+                personalCalendars.map((calendar) => api<CalendarUrlsResponse>(getPublicLinks(calendar.ID)))
             )
         ).flatMap(({ CalendarUrls }) => CalendarUrls).length;
 
-        if (calendars.length > MAX_CALENDARS_PER_FREE_USER || hasLinks) {
+        if (personalCalendars.length > MAX_CALENDARS_PER_FREE_USER || hasLinks) {
             await new Promise<void>((resolve, reject) => {
                 const handleClose = () => {
                     onClose?.();
