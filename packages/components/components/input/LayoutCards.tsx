@@ -1,16 +1,18 @@
 import React from 'react';
 
 import LayoutCard, { LayoutCardProps } from './LayoutCard';
+import { classnames } from '../../helpers';
 
 interface Props {
     list: LayoutCardProps[];
+    className?: string;
     liClassName?: string;
     describedByID: string;
 }
 
-const LayoutCards = ({ list = [], liClassName, describedByID }: Props) => {
+const LayoutCards = ({ list = [], className, liClassName, describedByID }: Props) => {
     return (
-        <ul className="unstyled m0 flex">
+        <ul className={classnames(['unstyled m0 flex', className])}>
             {list.map(({ selected, label, src, onChange, disabled }, index) => {
                 return (
                     <li className={liClassName} key={label}>

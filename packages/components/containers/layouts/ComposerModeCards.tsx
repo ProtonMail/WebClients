@@ -15,9 +15,19 @@ interface Props {
     onChange: (composerMode: COMPOSER_MODE) => void;
     loading: boolean;
     describedByID: string;
+    className?: string;
+    liClassName?: string;
 }
 
-const ComposerModeCards = ({ composerMode, onChange, loading, describedByID, ...rest }: Props) => {
+const ComposerModeCards = ({
+    composerMode,
+    onChange,
+    className,
+    liClassName,
+    loading,
+    describedByID,
+    ...rest
+}: Props) => {
     const layoutCardPopup = {
         value: POPUP,
         selected: composerMode === POPUP,
@@ -43,7 +53,15 @@ const ComposerModeCards = ({ composerMode, onChange, loading, describedByID, ...
         describedByID,
     };
 
-    return <LayoutCards list={[layoutCardPopup, layoutCardMaximized]} describedByID={describedByID} {...rest} />;
+    return (
+        <LayoutCards
+            list={[layoutCardPopup, layoutCardMaximized]}
+            className={className}
+            liClassName={liClassName}
+            describedByID={describedByID}
+            {...rest}
+        />
+    );
 };
 
 export default ComposerModeCards;

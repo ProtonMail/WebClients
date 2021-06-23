@@ -1,0 +1,21 @@
+@import '~design-system/scss/config/';
+
+.layoutCards-two-per-row {
+	&#{&} {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 1em;
+
+		.layout-card-button {
+			margin: 0;
+			width: 100%;
+		}
+		.layout-card-image {
+			width: 100%;
+		}
+
+		@include respond-to($breakpoint-tiny) {
+			grid-template-columns: 1fr;
+		}
+	}
+}
