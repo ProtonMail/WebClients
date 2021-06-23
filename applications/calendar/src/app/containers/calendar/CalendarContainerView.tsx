@@ -44,8 +44,7 @@ import getDateDiff from './getDateDiff';
 const localToUtcDate = (date: Date) => new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
 
 interface Props {
-    activeCalendars?: Calendar[];
-    disabledCalendars?: Calendar[];
+    calendars?: Calendar[];
     isLoading?: boolean;
     isNarrow?: boolean;
     isBlurred?: boolean;
@@ -70,8 +69,7 @@ interface Props {
 }
 
 const CalendarContainerView = ({
-    activeCalendars = [],
-    disabledCalendars = [],
+    calendars = [],
     isLoading = false,
     isBlurred = false,
     isNarrow = false,
@@ -341,7 +339,7 @@ const CalendarContainerView = ({
                                             icon
                                             className="mr0-5 inline-flex pt0-5 pb0-5"
                                             onClick={onClick}
-                                            disabled={noSelection || !activeCalendars.length}
+                                            disabled={noSelection || !onCreateEvent}
                                             title={c('Action').t`Create event`}
                                         >
                                             <Icon name="calendar" />
@@ -380,8 +378,7 @@ const CalendarContainerView = ({
                     weekStartsOn={weekStartsOn}
                 />
             }
-            activeCalendars={activeCalendars}
-            disabledCalendars={disabledCalendars}
+            calendars={calendars}
         />
     );
 

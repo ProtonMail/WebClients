@@ -44,6 +44,7 @@ interface Props {
     isCreateEvent: boolean;
     setParticipantError?: (value: boolean) => void;
     textareaMaxHeight?: number;
+    isSubscribedCalendar?: boolean;
 }
 
 const EventForm = ({
@@ -59,6 +60,7 @@ const EventForm = ({
     isCreateEvent,
     setParticipantError,
     textareaMaxHeight,
+    isSubscribedCalendar,
     ...props
 }: Props & HTMLAttributes<HTMLDivElement>) => {
     const {
@@ -81,13 +83,13 @@ const EventForm = ({
     const showParticipants = !isImportedEvent;
     // selfAddress may not need be defined
     const isSelfAddressActive = selfAddress ? getIsAddressActive(selfAddress) : true;
-    const canEditSharedEventData = isOrganizer && isSelfAddressActive;
+    const canEditSharedEventData = !isSubscribedCalendar && isOrganizer && isSelfAddressActive;
     const canChangeCalendar = isOrganizer ? !model.organizer : !isSingleEdit;
     const notifications = isAllDay ? fullDayNotifications : partDayNotifications;
     const canAddNotifications = notifications.length < MAX_NOTIFICATIONS;
     const showNotifications =
         canAddNotifications || notifications.some(({ type }) => type === SETTINGS_NOTIFICATION_TYPE.DEVICE);
-    const isOrganizerDisabled = isOrganizer && !isSelfAddressActive;
+    const isOrganizerDisabled = !isSubscribedCalendar && isOrganizer && !isSelfAddressActive;
 
     const dateRow = isMinimal ? (
         <MiniDateTimeRows
@@ -107,7 +109,8 @@ const EventForm = ({
             tzid={tzid!}
         />
     );
-    const titleRow = canEditSharedEventData ? (
+
+    const titleRow = (
         <IconRow id={TITLE_INPUT_ID} title={c('Label').t`Event title`}>
             <Input
                 id={TITLE_INPUT_ID}
@@ -118,7 +121,142 @@ const EventForm = ({
                 {...createHandlers({ model, setModel, field: 'title' }).native}
             />
         </IconRow>
-    ) : null;
+    );
+
+    const frequencyRow = (
+        <IconRow icon="reload" title={c('Label').t`Event frequency`} id={FREQUENCY_INPUT_ID}>
+            <FrequencyInput
+                className={classnames([isCustomFrequencySet && 'mb0-5', 'w100'])}
+                id={FREQUENCY_INPUT_ID}
+                data-test-id="event-modal/frequency:select"
+                value={frequencyModel.type}
+                onChange={(type) =>
+                    setModel({
+                        ...model,
+                        frequencyModel: { ...frequencyModel, type },
+                        hasTouchedRrule: true,
+                    })
+                }
+                title={c('Title').t`Select event frequency`}
+            />
+            {isCustomFrequencySet && (
+                <CustomFrequencySelector
+                    frequencyModel={frequencyModel}
+                    start={start}
+                    displayWeekNumbers={displayWeekNumbers}
+                    weekStartsOn={weekStartsOn}
+                    errors={errors}
+                    isSubmitted={isSubmitted}
+                    onChange={(frequencyModel) => setModel({ ...model, frequencyModel, hasTouchedRrule: true })}
+                />
+            )}
+        </IconRow>
+    );
+
+    const locationRow = (
+        <IconRow icon="address" title={c('Label').t`Event location`} id={LOCATION_INPUT_ID}>
+            <Input
+                id={LOCATION_INPUT_ID}
+                placeholder={c('Placeholder').t`Add location`}
+                maxLength={MAX_LENGTHS.LOCATION}
+                title={c('Title').t`Add event location`}
+                {...createHandlers({ model, setModel, field: 'location' }).native}
+            />
+        </IconRow>
+    );
+
+    const descriptionRow = (
+        <IconRow icon="text-align-left" title={c('Label').t`Description`} id={DESCRIPTION_INPUT_ID}>
+            <TextArea
+                id={DESCRIPTION_INPUT_ID}
+                minRows={2}
+                autoGrow
+                placeholder={c('Placeholder').t`Add description`}
+                maxLength={MAX_LENGTHS.EVENT_DESCRIPTION}
+                style={{ maxHeight: textareaMaxHeight }}
+                title={c('Title').t`Add more information related to this event`}
+                {...createHandlers({ model, setModel, field: 'description' }).native}
+            />
+        </IconRow>
+    );
+
+    const notificationsRow = (
+        <IconRow id={NOTIFICATION_INPUT_ID} icon="notifications-enabled" title={c('Label').t`Event notifications`}>
+            {isAllDay ? (
+                <Notifications
+                    {...{
+                        errors,
+                        canAdd: canAddNotifications,
+                        notifications: fullDayNotifications,
+                        defaultNotification: defaultFullDayNotification,
+                        onChange: (notifications: NotificationModel[]) => {
+                            setModel({
+                                ...model,
+                                fullDayNotifications: notifications,
+                                hasTouchedNotifications: {
+                                    ...model.hasTouchedNotifications,
+                                    fullDay: true,
+                                },
+                            });
+                        },
+                    }}
+                />
+            ) : (
+                <Notifications
+                    {...{
+                        errors,
+                        canAdd: canAddNotifications,
+                        notifications: partDayNotifications,
+                        defaultNotification: defaultPartDayNotification,
+                        onChange: (notifications: NotificationModel[]) => {
+                            setModel({
+                                ...model,
+                                partDayNotifications: notifications,
+                                hasTouchedNotifications: {
+                                    ...model.hasTouchedNotifications,
+                                    partDay: true,
+                                },
+                            });
+                        },
+                    }}
+                />
+            )}
+        </IconRow>
+    );
+
+    const participantsRow = (
+        <IconRow icon="contacts-groups" title={c('Label').t`Participants`} id={PARTICIPANTS_INPUT_ID}>
+            <ParticipantsInput
+                placeholder={c('Placeholder').t`Add participants`}
+                id={PARTICIPANTS_INPUT_ID}
+                model={model}
+                addresses={addresses}
+                setParticipantError={setParticipantError}
+                {...createHandlers({ model, setModel, field: 'attendees' }).model}
+            />
+        </IconRow>
+    );
+
+    const calendarRow = (
+        <IconRow
+            icon="calendar"
+            title={c('Label').t`Your calendars`}
+            id={CALENDAR_INPUT_ID}
+            className="flex-item-fluid relative"
+        >
+            <CalendarSelect
+                withIcon={false}
+                id={CALENDAR_INPUT_ID}
+                className="w100"
+                title={c('Title').t`Select which calendar to add this event to`}
+                frozen={!canChangeCalendar}
+                model={model}
+                setModel={setModel}
+                isCreateEvent={isCreateEvent}
+            />
+        </IconRow>
+    );
+
     const organizerDisabledAlert = isOrganizerDisabled ? (
         <Alert type="warning">
             <span className="mr0-25">
@@ -131,140 +269,14 @@ const EventForm = ({
     return (
         <div className="mt0-5" {...props}>
             {organizerDisabledAlert}
-            {titleRow}
+            {canEditSharedEventData && titleRow}
             {canEditSharedEventData && dateRow}
-            {!isMinimal && canEditSharedEventData && (
-                <IconRow icon="reload" title={c('Label').t`Event frequency`} id={FREQUENCY_INPUT_ID}>
-                    <FrequencyInput
-                        className={classnames([isCustomFrequencySet && 'mb0-5', 'w100'])}
-                        id={FREQUENCY_INPUT_ID}
-                        data-test-id="event-modal/frequency:select"
-                        value={frequencyModel.type}
-                        onChange={(type) =>
-                            setModel({
-                                ...model,
-                                frequencyModel: { ...frequencyModel, type },
-                                hasTouchedRrule: true,
-                            })
-                        }
-                        title={c('Title').t`Select event frequency`}
-                    />
-                    {isCustomFrequencySet && (
-                        <CustomFrequencySelector
-                            frequencyModel={frequencyModel}
-                            start={start}
-                            displayWeekNumbers={displayWeekNumbers}
-                            weekStartsOn={weekStartsOn}
-                            errors={errors}
-                            isSubmitted={isSubmitted}
-                            onChange={(frequencyModel) => setModel({ ...model, frequencyModel, hasTouchedRrule: true })}
-                        />
-                    )}
-                </IconRow>
-            )}
-            {!isMinimal && canEditSharedEventData && showParticipants && (
-                <IconRow icon="contacts-groups" title={c('Label').t`Participants`} id={PARTICIPANTS_INPUT_ID}>
-                    <ParticipantsInput
-                        placeholder={c('Placeholder').t`Add participants`}
-                        id={PARTICIPANTS_INPUT_ID}
-                        model={model}
-                        addresses={addresses}
-                        setParticipantError={setParticipantError}
-                        {...createHandlers({ model, setModel, field: 'attendees' }).model}
-                    />
-                </IconRow>
-            )}
-            {canEditSharedEventData && (
-                <IconRow icon="address" title={c('Label').t`Event location`} id={LOCATION_INPUT_ID}>
-                    <Input
-                        id={LOCATION_INPUT_ID}
-                        placeholder={c('Placeholder').t`Add location`}
-                        maxLength={MAX_LENGTHS.LOCATION}
-                        title={c('Title').t`Add event location`}
-                        {...createHandlers({ model, setModel, field: 'location' }).native}
-                    />
-                </IconRow>
-            )}
-            {!isMinimal && showNotifications && (
-                <IconRow
-                    id={NOTIFICATION_INPUT_ID}
-                    icon="notifications-enabled"
-                    title={c('Label').t`Event notifications`}
-                >
-                    {isAllDay ? (
-                        <Notifications
-                            {...{
-                                errors,
-                                canAdd: canAddNotifications,
-                                notifications: fullDayNotifications,
-                                defaultNotification: defaultFullDayNotification,
-                                onChange: (notifications: NotificationModel[]) => {
-                                    setModel({
-                                        ...model,
-                                        fullDayNotifications: notifications,
-                                        hasTouchedNotifications: {
-                                            ...model.hasTouchedNotifications,
-                                            fullDay: true,
-                                        },
-                                    });
-                                },
-                            }}
-                        />
-                    ) : (
-                        <Notifications
-                            {...{
-                                errors,
-                                canAdd: canAddNotifications,
-                                notifications: partDayNotifications,
-                                defaultNotification: defaultPartDayNotification,
-                                onChange: (notifications: NotificationModel[]) => {
-                                    setModel({
-                                        ...model,
-                                        partDayNotifications: notifications,
-                                        hasTouchedNotifications: {
-                                            ...model.hasTouchedNotifications,
-                                            partDay: true,
-                                        },
-                                    });
-                                },
-                            }}
-                        />
-                    )}
-                </IconRow>
-            )}
-            {calendars.length > 0 ? (
-                <IconRow
-                    icon="calendar"
-                    title={c('Label').t`Your calendars`}
-                    id={CALENDAR_INPUT_ID}
-                    className="flex-item-fluid relative"
-                >
-                    <CalendarSelect
-                        withIcon={false}
-                        id={CALENDAR_INPUT_ID}
-                        className="w100"
-                        title={c('Title').t`Select which calendar to add this event to`}
-                        frozen={!canChangeCalendar}
-                        model={model}
-                        setModel={setModel}
-                        isCreateEvent={isCreateEvent}
-                    />
-                </IconRow>
-            ) : null}
-            {canEditSharedEventData && (
-                <IconRow icon="text-align-left" title={c('Label').t`Description`} id={DESCRIPTION_INPUT_ID}>
-                    <TextArea
-                        id={DESCRIPTION_INPUT_ID}
-                        minRows={2}
-                        autoGrow
-                        placeholder={c('Placeholder').t`Add description`}
-                        maxLength={MAX_LENGTHS.EVENT_DESCRIPTION}
-                        style={{ maxHeight: textareaMaxHeight }}
-                        title={c('Title').t`Add more information related to this event`}
-                        {...createHandlers({ model, setModel, field: 'description' }).native}
-                    />
-                </IconRow>
-            )}
+            {!isMinimal && canEditSharedEventData && frequencyRow}
+            {!isMinimal && canEditSharedEventData && showParticipants && participantsRow}
+            {canEditSharedEventData && locationRow}
+            {!isMinimal && showNotifications && notificationsRow}
+            {!isSubscribedCalendar && calendars.length > 0 && calendarRow}
+            {canEditSharedEventData && descriptionRow}
         </div>
     );
 };

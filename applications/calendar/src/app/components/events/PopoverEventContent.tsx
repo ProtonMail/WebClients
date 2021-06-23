@@ -1,6 +1,8 @@
 import { filterEmailNotifications } from 'proton-shared/lib/calendar/alarms';
+import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
 import { getTimezonedFrequencyString } from 'proton-shared/lib/calendar/integration/getFrequencyString';
+import { getIsSubscribedCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
 import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
 import { canonizeEmailByGuess, canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { getInitials } from 'proton-shared/lib/helpers/string';
@@ -38,8 +40,7 @@ type GroupedAttendees = {
 const { ACCEPTED, DECLINED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
 
 interface Props {
-    Calendar: tsCalendar;
-    isCalendarDisabled: boolean;
+    calendar: tsCalendar;
     event: CalendarViewEvent | CalendarViewEventTemporaryEvent;
     tzid: string;
     weekStartsOn: WeekStartsOn;
@@ -48,8 +49,7 @@ interface Props {
     displayNameEmailMap: SimpleMap<DisplayNameEmail>;
 }
 const PopoverEventContent = ({
-    Calendar,
-    isCalendarDisabled,
+    calendar,
     event: {
         data: { eventReadResult },
     },
@@ -60,15 +60,17 @@ const PopoverEventContent = ({
     displayNameEmailMap,
 }: Props) => {
     const [tab, setTab] = useState(0);
-    const { Name: calendarName, Color } = Calendar;
+    const { Name: calendarName, Color } = calendar;
 
     const isInvitation = !model.isOrganizer;
+    const isCalendarDisabled = getIsCalendarDisabled(calendar);
+    const isSubscribedCalendar = getIsSubscribedCalendar(calendar);
     const { organizer, attendees } = model;
     const hasOrganizer = !!organizer;
     const numberOfParticipants = attendees.length;
     const { name: organizerName, title: organizerTitle } = getOrganizerDisplayData(
         organizer,
-        isInvitation,
+        isInvitation || isSubscribedCalendar,
         displayNameEmailMap
     );
     const organizerString = c('Event info').t`Organized by:`;

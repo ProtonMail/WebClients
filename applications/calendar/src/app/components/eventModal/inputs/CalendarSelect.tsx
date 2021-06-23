@@ -21,7 +21,7 @@ const CalendarSelect = ({ withIcon = false, model, setModel, isCreateEvent, froz
     const getAddresses = useGetAddresses();
 
     const { color, id } = model.calendar;
-    const options = model.calendars;
+    const options = model.calendars.filter(({ isSubscribed }) => !isSubscribed);
     const name = options.find(({ value }) => value === id)?.text;
 
     if (frozen) {
@@ -74,7 +74,7 @@ const CalendarSelect = ({ withIcon = false, model, setModel, isCreateEvent, froz
 
         setModel({
             ...model,
-            calendar: { id: newId, color: newColor },
+            calendar: { id: newId, color: newColor, isSubscribed: false },
             ...getInitialMemberModel(Addresses, Members, Member, Address),
             defaultEventDuration,
             partDayNotifications,

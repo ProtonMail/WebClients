@@ -15,6 +15,8 @@ import { getWeekStartsOn } from 'proton-shared/lib/settings/helper';
 import React, { MutableRefObject, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { useAppTitle, useCalendarBootstrap, useModals } from 'react-components';
 import { useHistory, useLocation } from 'react-router-dom';
+import { unary } from 'proton-shared/lib/helpers/function';
+import { getIsPersonalCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
 import {
     canAskTimezoneSuggestion,
     getTimezoneSuggestionKey,
@@ -78,7 +80,7 @@ interface Props {
     activeAddresses: Address[];
     visibleCalendars: Calendar[];
     activeCalendars: Calendar[];
-    disabledCalendars: Calendar[];
+    calendars: Calendar[];
     defaultCalendar?: Calendar;
     userSettings: UserSettings;
     calendarUserSettings: CalendarUserSettings;
@@ -92,8 +94,8 @@ const CalendarContainer = ({
     user,
     addresses,
     activeAddresses,
+    calendars,
     activeCalendars,
-    disabledCalendars,
     visibleCalendars,
     defaultCalendar,
     userSettings,
@@ -305,8 +307,7 @@ const CalendarContainer = ({
 
     return (
         <CalendarContainerView
-            activeCalendars={activeCalendars}
-            disabledCalendars={disabledCalendars}
+            calendars={calendars}
             isLoading={isLoading}
             displayWeekNumbers={displayWeekNumbers}
             weekStartsOn={weekStartsOn}
@@ -320,7 +321,7 @@ const CalendarContainer = ({
             utcDate={utcDate}
             utcDateRange={utcDateRange}
             onCreateEvent={
-                disableCreate || !defaultCalendarBootstrap || !activeCalendars.length
+                disableCreate || !defaultCalendarBootstrap || !activeCalendars.find(unary(getIsPersonalCalendar))
                     ? undefined
                     : (attendees: AttendeeModel[] = []) => interactiveRef.current?.createEvent(attendees)
             }

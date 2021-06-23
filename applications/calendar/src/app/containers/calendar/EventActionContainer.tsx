@@ -143,7 +143,7 @@ const EventActionContainer = ({ tzid, calendars, eventTargetActionRef }: Props) 
                         return handleLinkError();
                     }
 
-                    const eventsByUID = await getAllEventsByUID(api, parsedEvent.uid.value, calendarID);
+                    const eventsByUID = await getAllEventsByUID(api, calendarID, parsedEvent.uid.value);
 
                     const { dtstart } = parsedEvent;
                     const localRecurrenceID = toUTCDate(

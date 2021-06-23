@@ -1,4 +1,6 @@
 import { CALENDAR_FLAGS } from 'proton-shared/lib/calendar/constants';
+import { getIsPersonalCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
+import { unary } from 'proton-shared/lib/helpers/function';
 import React, { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import {
@@ -28,7 +30,7 @@ const MainContainer = () => {
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
 
     const [hasCalendarToGenerate, setHasCalendarToGenerate] = useState(() => {
-        return memoedCalendars.length === 0;
+        return memoedCalendars.filter(unary(getIsPersonalCalendar)).length === 0;
     });
 
     const [calendarsToReset, setCalendarsToReset] = useState(() => {

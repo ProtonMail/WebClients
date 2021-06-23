@@ -3,10 +3,10 @@ import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiReq
 import { toApiPartstat } from 'proton-shared/lib/calendar/attendees';
 import { getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
 import {
+    DELETE_CONFIRMATION_TYPES,
     ICAL_ATTENDEE_STATUS,
     MAXIMUM_DATE_UTC,
     MINIMUM_DATE_UTC,
-    DELETE_CONFIRMATION_TYPES,
     SAVE_CONFIRMATION_TYPES,
 } from 'proton-shared/lib/calendar/constants';
 import { reformatApiErrorMessage } from 'proton-shared/lib/calendar/helper';
@@ -25,13 +25,13 @@ import { omit, pick } from 'proton-shared/lib/helpers/object';
 import { dateLocale } from 'proton-shared/lib/i18n';
 import { Address } from 'proton-shared/lib/interfaces';
 import {
+    AttendeeModel,
     Calendar,
     CalendarBootstrap,
     CalendarEvent,
-    SyncMultipleApiResponse,
     DateTimeModel,
     EventModel,
-    AttendeeModel,
+    SyncMultipleApiResponse,
     UpdateEventPartApiResponse,
 } from 'proton-shared/lib/interfaces/calendar';
 import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
@@ -48,17 +48,17 @@ import React, {
     useState,
 } from 'react';
 import {
+    FeatureCode,
     useApi,
     useBeforeUnload,
     useConfig,
     useContactEmails,
     useEventManager,
+    useFeature,
     useGetAddressKeys,
     useGetCalendarEventRaw,
     useModals,
     useNotifications,
-    useFeature,
-    FeatureCode,
 } from 'react-components';
 import { useReadCalendarBootstrap } from 'react-components/hooks/useGetCalendarBootstrap';
 import useGetCalendarEventPersonal from 'react-components/hooks/useGetCalendarEventPersonal';

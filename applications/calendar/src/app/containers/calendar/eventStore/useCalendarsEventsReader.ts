@@ -104,7 +104,7 @@ const useCalendarsEventsReader = (
                 return oldFetchPromise.promise;
             }
 
-            const newFetchPromise = getAllEventsByUID(api, uid, calendarID)
+            const newFetchPromise = getAllEventsByUID(api, calendarID, uid)
                 .then((eventOccurrences) => {
                     eventOccurrences.forEach((eventOccurrence) => {
                         upsertCalendarApiEvent(eventOccurrence, calendarEventsCache);

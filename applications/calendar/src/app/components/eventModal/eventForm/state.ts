@@ -1,33 +1,34 @@
 import {
     DAILY_TYPE,
+    DEFAULT_EVENT_DURATION,
     END_TYPE,
+    EVENT_VERIFICATION_STATUS,
     FREQUENCY,
     ICAL_EVENT_STATUS,
     MONTHLY_TYPE,
     WEEKLY_TYPE,
     YEARLY_TYPE,
-    EVENT_VERIFICATION_STATUS,
-    DEFAULT_EVENT_DURATION,
 } from 'proton-shared/lib/calendar/constants';
 import {
     DEFAULT_FULL_DAY_NOTIFICATION,
+    DEFAULT_FULL_DAY_NOTIFICATIONS,
     DEFAULT_PART_DAY_NOTIFICATION,
     DEFAULT_PART_DAY_NOTIFICATIONS,
-    DEFAULT_FULL_DAY_NOTIFICATIONS,
 } from 'proton-shared/lib/calendar/notificationDefaults';
+import { getIsSubscribedCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
 
 import { getIsAllDay, getRecurrenceId } from 'proton-shared/lib/calendar/vcalHelper';
 import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
 import { Address as tsAddress } from 'proton-shared/lib/interfaces';
 import {
+    AttendeeModel,
     Calendar as tsCalendar,
     CalendarSettings as tsCalendarSettings,
-    Member as tsMember,
-    SelfAddressData,
     DateTimeModel,
     EventModel,
     FrequencyModel,
-    AttendeeModel,
+    Member as tsMember,
+    SelfAddressData,
 } from 'proton-shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
 
@@ -121,10 +122,16 @@ const getCalendarsModel = (Calendar: tsCalendar, Calendars: tsCalendar[] = []) =
         throw new Error('Calendar not found');
     }
     return {
-        calendars: Calendars.map(({ ID, Name, Color }) => ({ text: Name, value: ID, color: Color })),
+        calendars: Calendars.map((calendar) => ({
+            text: calendar.Name,
+            value: calendar.ID,
+            color: calendar.Color,
+            isSubscribed: getIsSubscribedCalendar(calendar),
+        })),
         calendar: {
             id: Calendar.ID,
             color: Calendar.Color,
+            isSubscribed: getIsSubscribedCalendar(Calendar),
         },
     };
 };

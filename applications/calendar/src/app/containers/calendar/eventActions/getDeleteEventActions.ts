@@ -172,7 +172,7 @@ const getDeleteEventActions = async ({
         });
     }
 
-    const recurrences = await getAllEventsByUID(api, oldEditEventData.uid, oldEditEventData.calendarID);
+    const recurrences = await getAllEventsByUID(api, oldEditEventData.calendarID, oldEditEventData.uid);
     const originalEventData = getOriginalEvent(recurrences);
     const isOrphanSingleEdit = isSingleEdit && !originalEventData;
     // If it's an orphan single edit, treat as a single event

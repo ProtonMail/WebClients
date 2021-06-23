@@ -1,7 +1,11 @@
 import React from 'react';
-import { Checkbox, SidebarListItem, SidebarListItemContent, SidebarListItemDiv } from 'react-components';
+import { c } from 'ttag';
+
+import { Checkbox, classnames, SidebarListItem, SidebarListItemContent, SidebarListItemDiv } from 'react-components';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
+
 import { getConstrastingColor } from '../../helpers/color';
 
 interface Props {
@@ -14,7 +18,10 @@ const CalendarSidebarListItems = ({ calendars = [], loading = false, onChangeVis
     if (calendars.length === 0) {
         return null;
     }
-    const result = calendars.map(({ ID, Name, Display, Color }, i) => {
+    const result = calendars.map((calendar, i) => {
+        const { ID, Name, Display, Color } = calendar;
+        const isCalendarDisabled = getIsCalendarDisabled(calendar);
+
         const left = (
             <Checkbox
                 className="mr0-25 flex-item-noshrink"
@@ -31,8 +38,19 @@ const CalendarSidebarListItems = ({ calendars = [], loading = false, onChangeVis
         return (
             <SidebarListItem key={ID}>
                 <SidebarListItemDiv>
-                    <SidebarListItemContent data-test-id="calendar-sidebar:user-calendars" left={left}>
-                        {Name}
+                    <SidebarListItemContent
+                        data-test-id="calendar-sidebar:user-calendars"
+                        left={left}
+                        className={classnames([isCalendarDisabled && 'color-weak', 'flex'])}
+                    >
+                        <div className="flex flex-nowrap">
+                            <div className="text-ellipsis">{Name}</div>
+                            {isCalendarDisabled && (
+                                <div className="flex-item-noshrink">
+                                    &nbsp;({c('Disabled calendar name suffix').t`disabled`})
+                                </div>
+                            )}
+                        </div>
                     </SidebarListItemContent>
                 </SidebarListItemDiv>
             </SidebarListItem>
