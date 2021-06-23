@@ -1,7 +1,7 @@
 import React, { ReactNode, useState, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { Row, Label, Field, DialogModal, HeaderModal, InnerModal, FooterModal, PrimaryButton } from 'react-components';
+import { Row, DialogModal, HeaderModal, InnerModal, FooterModal, PrimaryButton } from 'react-components';
 import { LinkType } from '../interfaces/link';
 import { FileBrowserItem } from './FileBrowser/interfaces';
 import UserNameCell from './FileBrowser/ListView/Cells/UserNameCell';
@@ -28,10 +28,10 @@ interface RowProps {
 const DetailsRow = ({ label, children }: RowProps) => {
     return (
         <Row>
-            <Label style={{ cursor: 'default' }}>{label}</Label>
-            <Field className="pt0-5">
+            <span className="label cursor-default">{label}</span>
+            <div className="pt0-5">
                 <b>{children}</b>
-            </Field>
+            </div>
         </Row>
     );
 };
