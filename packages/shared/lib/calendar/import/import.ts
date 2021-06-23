@@ -112,7 +112,7 @@ const getComponentIdentifier = (vcalComponent: VcalCalendarComponentOrError) => 
     }
     if (getIsEventComponent(vcalComponent)) {
         const { summary, dtstart } = vcalComponent;
-        const shortTitle = truncate(summary?.value);
+        const shortTitle = truncate(summary?.value || '');
         if (shortTitle) {
             return shortTitle;
         }

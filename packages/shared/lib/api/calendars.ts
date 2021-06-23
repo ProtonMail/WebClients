@@ -137,7 +137,10 @@ export const getEventsCount = (calendarID: string) => ({
     method: 'get',
 });
 
-export const queryEvents = (calendarID: string, params: CalendarEventsQuery | CalendarExportEventsQuery) => ({
+export const queryEvents = (
+    calendarID: string,
+    params: CalendarEventsQuery | CalendarExportEventsQuery | GetEventByUIDArguments
+) => ({
     url: `${CALENDAR_V1}/${calendarID}/events`,
     method: 'get',
     params,
@@ -268,4 +271,9 @@ export const editPublicLink = ({
     url: `${CALENDAR_V1}/${calendarID}/urls/${urlID}`,
     method: 'put',
     data: { EncryptedPurpose: encryptedPurpose },
+});
+
+export const getSubscriptionParameters = (calendarID: string) => ({
+    url: `${CALENDAR_V1}/${calendarID}/subscription`,
+    method: 'get',
 });

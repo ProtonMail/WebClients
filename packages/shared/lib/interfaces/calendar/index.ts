@@ -14,4 +14,5 @@ export * from './Notification';
 export * from './PartResult';
 export * from './Passphrase';
 export * from './Link';
+export * from './Subscription';
 export * from './VcalModel';
