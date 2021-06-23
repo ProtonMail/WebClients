@@ -4,7 +4,7 @@ import { Calendar } from './Calendar';
 import { Attendee, CalendarEventData } from './Event';
 import { ACCESS_LEVEL } from './Link';
 
-export type CalendarCreateData = Omit<Calendar, 'Flags' | 'ID'>;
+export type CalendarCreateData = Omit<Calendar, 'Flags' | 'ID' | 'Type'> & { URL?: string };
 
 export interface CalendarCreateArguments extends CalendarCreateData {
     AddressID: string;

@@ -1,8 +1,13 @@
-import { Member } from './Member';
-import { Passphrase } from './Passphrase';
-import { CalendarKey } from './CalendarKey';
-import { NotificationModel } from './Notification';
 import { SETTINGS_NOTIFICATION_TYPE } from '../../calendar/constants';
+import { CalendarKey } from './CalendarKey';
+import { Member } from './Member';
+import { NotificationModel } from './Notification';
+import { Passphrase } from './Passphrase';
+
+export enum CALENDAR_TYPE {
+    PERSONAL = 0,
+    SUBSCRIPTION = 1,
+}
 
 export interface Calendar {
     ID: string;
@@ -11,6 +16,7 @@ export interface Calendar {
     Display: 0 | 1;
     Color: string;
     Flags: number;
+    Type: CALENDAR_TYPE;
 }
 
 export enum SETTINGS_VIEW {
@@ -70,6 +76,8 @@ export interface CalendarViewModelFull {
     defaultFullDayNotification: NotificationModel;
     partDayNotifications: NotificationModel[];
     fullDayNotifications: NotificationModel[];
+    url?: string;
+    type: CALENDAR_TYPE;
 }
 
 export interface CalendarErrors {
