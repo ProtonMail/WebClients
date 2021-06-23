@@ -35,10 +35,8 @@ const CalendarSettingsRouter = ({ user }: Props) => {
     const [calendars, loadingCalendars] = useCalendars();
     const memoizedCalendars = useMemo(() => calendars || [], [calendars]);
 
-    const [
-        calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS,
-        loadingCalendarUserSettings,
-    ] = useCalendarUserSettings();
+    const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS, loadingCalendarUserSettings] =
+        useCalendarUserSettings();
     const { activeCalendars, disabledCalendars, allCalendarIDs } = useMemo(() => {
         return {
             calendars: memoizedCalendars,
