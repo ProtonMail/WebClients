@@ -67,6 +67,7 @@ const CreateEventModal = ({
         type: model.isOrganizer ? INVITE_ACTION_TYPES.SEND_INVITATION : INVITE_ACTION_TYPES.NONE,
         selfAddress,
     };
+    const { isSubscribed: isSubscribedCalendar } = model.calendar;
 
     // Can't use default close button in FormModal because button type reset resets selects
     const closeButton = (
@@ -106,12 +107,14 @@ const CreateEventModal = ({
         submitButton
     ) : (
         <div>
-            <Button
-                onClick={loadingAction ? noop : handleDeleteWithNotice}
-                loading={loadingAction && lastAction === ACTION.DELETE}
-                disabled={loadingAction}
-                className="mr1"
-            >{c('Action').t`Delete`}</Button>
+            {!isSubscribedCalendar && (
+                <Button
+                    onClick={loadingAction ? noop : handleDeleteWithNotice}
+                    loading={loadingAction && lastAction === ACTION.DELETE}
+                    disabled={loadingAction}
+                    className="mr1"
+                >{c('Action').t`Delete`}</Button>
+            )}
             {submitButton}
         </div>
     );
@@ -138,6 +141,7 @@ const CreateEventModal = ({
                 tzid={tzid}
                 isCreateEvent={isCreateEvent}
                 setParticipantError={setParticipantError}
+                isSubscribedCalendar={isSubscribedCalendar}
             />
         </FormModal>
     );

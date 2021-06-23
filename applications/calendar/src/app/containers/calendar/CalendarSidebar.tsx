@@ -1,3 +1,4 @@
+import { getIsPersonalCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
 import { APPS } from 'proton-shared/lib/constants';
 import React, { ReactNode, useState } from 'react';
 import {
@@ -14,6 +15,7 @@ import {
 import { c } from 'ttag';
 import { updateCalendar } from 'proton-shared/lib/api/calendars';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { partition } from 'proton-shared/lib/helpers/array';
 import CalendarSidebarListItems from './CalendarSidebarListItems';
 import CalendarSidebarVersion from './CalendarSidebarVersion';
 
@@ -21,8 +23,7 @@ interface Props {
     expanded?: boolean;
     onToggleExpand: () => void;
     logo?: ReactNode;
-    activeCalendars: Calendar[];
-    disabledCalendars: Calendar[];
+    calendars: Calendar[];
     miniCalendar: ReactNode;
     onCreateEvent?: () => void;
 }
@@ -31,14 +32,15 @@ const CalendarSidebar = ({
     logo,
     expanded = false,
     onToggleExpand,
-    activeCalendars = [],
-    disabledCalendars = [],
+    calendars = [],
     miniCalendar,
     onCreateEvent,
 }: Props) => {
     const { call } = useEventManager();
     const api = useApi();
     const [loadingAction, withLoadingAction] = useLoading();
+
+    const [personalCalendars, otherCalendars] = partition<Calendar>(calendars, getIsPersonalCalendar);
 
     const handleChangeVisibility = async (calendarID: string, checked: boolean) => {
         await api(updateCalendar(calendarID, { Display: checked ? 1 : 0 }));
@@ -54,8 +56,8 @@ const CalendarSidebar = ({
         >{c('Action').t`New event`}</SidebarPrimaryButton>
     );
 
-    const [displayCalendars, setDisplayCalendars] = useState(true);
-    const [displayDisabledCalendars, setDisplayDisabledCalendars] = useState(true);
+    const [displayPersonalCalendars, setDisplayPersonalCalendars] = useState(true);
+    const [displayOtherCalendars, setDisplayOtherCalendars] = useState(true);
 
     const headerButton = (
         <SidebarListItemHeaderLink
@@ -68,17 +70,17 @@ const CalendarSidebar = ({
         />
     );
 
-    const calendarsList = (
+    const personalCalendarsList = (
         <SidebarList>
             <SimpleSidebarListItemHeader
-                toggle={displayCalendars}
-                onToggle={() => setDisplayCalendars(!displayCalendars)}
+                toggle={displayPersonalCalendars}
+                onToggle={() => setDisplayPersonalCalendars((prevState) => !prevState)}
                 right={headerButton}
-                text={c('Link').t`Calendars`}
+                text={c('Link').t`My calendars`}
             />
-            {displayCalendars && (
+            {displayPersonalCalendars && (
                 <CalendarSidebarListItems
-                    calendars={activeCalendars}
+                    calendars={personalCalendars}
                     onChangeVisibility={(calendarID, value) =>
                         withLoadingAction(handleChangeVisibility(calendarID, value))
                     }
@@ -88,17 +90,17 @@ const CalendarSidebar = ({
         </SidebarList>
     );
 
-    const disabledCalendarsList = disabledCalendars.length ? (
+    const otherCalendarsList = otherCalendars.length ? (
         <SidebarList>
             <SimpleSidebarListItemHeader
-                toggle={displayDisabledCalendars}
-                onToggle={() => setDisplayDisabledCalendars(!displayDisabledCalendars)}
+                toggle={displayOtherCalendars}
+                onToggle={() => setDisplayOtherCalendars((prevState) => !prevState)}
                 right={headerButton}
-                text={c('Header').t`Disabled calendars`}
+                text={c('Link').t`Other calendars`}
             />
-            {displayDisabledCalendars && (
+            {displayOtherCalendars && (
                 <CalendarSidebarListItems
-                    calendars={disabledCalendars}
+                    calendars={otherCalendars}
                     onChangeVisibility={(calendarID, value) =>
                         withLoadingAction(handleChangeVisibility(calendarID, value))
                     }
@@ -118,8 +120,8 @@ const CalendarSidebar = ({
         >
             <SidebarNav data-test-id="calendar-sidebar:calendars-list-area">
                 <div className="flex-item-noshrink">{miniCalendar}</div>
-                {calendarsList}
-                {disabledCalendarsList}
+                {personalCalendarsList}
+                {otherCalendarsList}
             </SidebarNav>
         </Sidebar>
     );

@@ -1,18 +1,19 @@
+import { getIsPersonalCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
+import { unary } from 'proton-shared/lib/helpers/function';
 import React, { useMemo, useRef, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 import {
     useActiveBreakpoint,
-    useUserSettings,
-    useCalendarUserSettings,
     useCalendarsKeysSettingsListener,
+    useCalendarUserSettings,
+    useUserSettings,
 } from 'react-components';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { Address, UserModel } from 'proton-shared/lib/interfaces';
 import {
-    getDefaultCalendar,
-    getIsCalendarDisabled,
-    getProbablyActiveCalendars,
     DEFAULT_CALENDAR_USER_SETTINGS,
+    getDefaultCalendar,
+    getProbablyActiveCalendars,
 } from 'proton-shared/lib/calendar/calendar';
 import { getTimezone } from 'proton-shared/lib/date/timezone';
 import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
@@ -39,11 +40,10 @@ const MainContainerSetup = ({ user, addresses, calendars }: Props) => {
     const [userSettings] = useUserSettings();
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS] = useCalendarUserSettings();
 
-    const { activeCalendars, disabledCalendars, visibleCalendars, allCalendarIDs } = useMemo(() => {
+    const { activeCalendars, visibleCalendars, allCalendarIDs } = useMemo(() => {
         return {
             calendars,
             activeCalendars: getProbablyActiveCalendars(calendars),
-            disabledCalendars: calendars.filter((calendar) => getIsCalendarDisabled(calendar)),
             visibleCalendars: calendars.filter(({ Display }) => !!Display),
             allCalendarIDs: calendars.map(({ ID }) => ID),
         };
@@ -62,7 +62,10 @@ const MainContainerSetup = ({ user, addresses, calendars }: Props) => {
         return getActiveAddresses(addresses);
     }, [addresses]);
 
-    const defaultCalendar = getDefaultCalendar(activeCalendars, calendarUserSettings.DefaultCalendarID);
+    const defaultCalendar = getDefaultCalendar(
+        activeCalendars.filter(unary(getIsPersonalCalendar)),
+        calendarUserSettings.DefaultCalendarID
+    );
 
     const [localTzid] = useState(() => getTimezone());
     const [customTzid, setCustomTzid] = useState('');
@@ -89,7 +92,7 @@ const MainContainerSetup = ({ user, addresses, calendars }: Props) => {
                         activeAddresses={activeAddresses}
                         visibleCalendars={visibleCalendars}
                         activeCalendars={activeCalendars}
-                        disabledCalendars={disabledCalendars}
+                        calendars={calendars}
                         defaultCalendar={defaultCalendar}
                         calendarsEventsCacheRef={calendarsEventsCacheRef}
                         calendarUserSettings={calendarUserSettings}

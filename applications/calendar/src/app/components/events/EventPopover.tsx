@@ -1,12 +1,13 @@
 import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
+import { getIsSubscribedCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
 import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
 
 import { format as formatUTC } from 'proton-shared/lib/date-fns-utc';
 import { noop } from 'proton-shared/lib/helpers/function';
 import { wait } from 'proton-shared/lib/helpers/promise';
 import { dateLocale } from 'proton-shared/lib/i18n';
-import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
+import { Calendar, CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import React, { useMemo } from 'react';
 import {
@@ -49,11 +50,13 @@ const MoreButtons = ({
     onDelete,
     loadingAction,
     isCalendarDisabled,
+    hideDelete = false,
 }: {
     onEdit?: () => void;
     onDelete?: () => void;
     loadingAction?: boolean;
     isCalendarDisabled?: boolean;
+    hideDelete?: boolean;
 }) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const emptyContent = '';
@@ -90,14 +93,16 @@ const MoreButtons = ({
                     >
                         {c('Action').t`Edit`}
                     </DropdownMenuButton>
-                    <DropdownMenuButton
-                        data-test-id="event-popover:delete"
-                        className="text-left"
-                        onClick={loadingAction ? noop : onDelete}
-                        loading={loadingAction}
-                    >
-                        {c('Action').t`Delete`}
-                    </DropdownMenuButton>
+                    {!hideDelete && (
+                        <DropdownMenuButton
+                            data-test-id="event-popover:delete"
+                            className="text-left"
+                            onClick={loadingAction ? noop : onDelete}
+                            loading={loadingAction}
+                        >
+                            {c('Action').t`Delete`}
+                        </DropdownMenuButton>
+                    )}
                 </DropdownMenu>
             </Dropdown>
         </>
@@ -106,7 +111,7 @@ const MoreButtons = ({
 
 interface Props {
     formatTime: (date: Date) => string;
-    onEdit: (event: CalendarEvent) => void;
+    onEdit: (event: CalendarEvent, calendarData: Calendar) => void;
     onChangePartstat: (partstat: ICAL_ATTENDEE_STATUS) => Promise<void>;
     onDelete: (inviteActions: InviteActions) => Promise<void>;
     onClose: () => void;
@@ -142,14 +147,10 @@ const EventPopover = ({
     const isCalendarDisabled = getIsCalendarDisabled(calendarData);
 
     const model = useReadEvent(eventReadResult?.result, tzid);
-    const {
-        eventReadError,
-        isEventReadLoading,
-        eventTitleSafe,
-        isCancelled,
-        userPartstat,
-        isSelfAddressActive,
-    } = getEventInformation(targetEvent, model);
+    const { eventReadError, isEventReadLoading, eventTitleSafe, isCancelled, userPartstat, isSelfAddressActive } =
+        getEventInformation(targetEvent, model);
+
+    const isSubscribedCalendar = getIsSubscribedCalendar(calendarData);
 
     const handleDelete = () => {
         if (eventData && getIsCalendarEvent(eventData)) {
@@ -178,7 +179,7 @@ const EventPopover = ({
 
     const handleEdit = () => {
         if (eventData && getIsCalendarEvent(eventData)) {
-            onEdit(eventData);
+            onEdit(eventData, calendarData);
         }
     };
 
@@ -227,7 +228,7 @@ const EventPopover = ({
             {c('Action').t`Edit`}
         </Button>
     );
-    const deleteButton = (
+    const deleteButton = !isSubscribedCalendar && (
         <Button
             data-test-id="event-popover:delete"
             onClick={loadingAction ? noop : handleDelete}
@@ -257,7 +258,7 @@ const EventPopover = ({
                     <h1 className="h3">{c('Error').t`Error`}</h1>
                 </PopoverHeader>
                 <Alert type="error">{getEventErrorMessage(eventReadError)}</Alert>
-                <PopoverFooter>{deleteButton}</PopoverFooter>
+                {!isSubscribedCalendar && <PopoverFooter>{deleteButton}</PopoverFooter>}
             </PopoverContainer>
         );
     }
@@ -286,8 +287,7 @@ const EventPopover = ({
             <div className="scroll-if-needed mb1">
                 <PopoverEventContent
                     key={targetEvent.id}
-                    Calendar={calendarData}
-                    isCalendarDisabled={isCalendarDisabled}
+                    calendar={calendarData}
                     event={targetEvent}
                     tzid={tzid}
                     weekStartsOn={weekStartsOn}
@@ -296,29 +296,32 @@ const EventPopover = ({
                     displayNameEmailMap={displayNameEmailMap}
                 />
             </div>
-            <PopoverFooter className="flex-item-noshrink" key={targetEvent.id}>
-                {isCancelled || model.isOrganizer ? (
-                    <>
-                        {deleteButton}
-                        {editButton}
-                    </>
-                ) : (
-                    <>
-                        <CalendarInviteButtons
-                            className="mr1"
-                            actions={actions}
-                            partstat={userPartstat}
-                            disabled={isCalendarDisabled || !isSelfAddressActive}
-                        />
-                        <MoreButtons
-                            onEdit={handleEdit}
-                            onDelete={handleDelete}
-                            loadingAction={loadingAction}
-                            isCalendarDisabled={isCalendarDisabled}
-                        />
-                    </>
-                )}
-            </PopoverFooter>
+            {!isSubscribedCalendar && (
+                <PopoverFooter className="flex-item-noshrink" key={targetEvent.id}>
+                    {isCancelled || model.isOrganizer ? (
+                        <>
+                            {deleteButton}
+                            {editButton}
+                        </>
+                    ) : (
+                        <>
+                            <CalendarInviteButtons
+                                className="mr1"
+                                actions={actions}
+                                partstat={userPartstat}
+                                disabled={isCalendarDisabled || !isSelfAddressActive}
+                            />
+                            <MoreButtons
+                                onEdit={handleEdit}
+                                onDelete={handleDelete}
+                                loadingAction={loadingAction}
+                                isCalendarDisabled={isCalendarDisabled}
+                                hideDelete={isSubscribedCalendar}
+                            />
+                        </>
+                    )}
+                </PopoverFooter>
+            )}
         </PopoverContainer>
     );
 };
