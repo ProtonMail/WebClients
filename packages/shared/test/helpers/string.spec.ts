@@ -104,5 +104,18 @@ describe('string', () => {
                 '12…789'
             );
         });
+
+        it('should truncate in the middle', () => {
+            expect(truncateMore({ string: '', charsToDisplay: 1 })).toEqual('');
+            expect(truncateMore({ string: 'a', charsToDisplay: 1 })).toEqual('a');
+            expect(truncateMore({ string: 'ab', charsToDisplay: 1 })).toEqual('…');
+            expect(truncateMore({ string: 'ab', charsToDisplay: 2 })).toEqual('ab');
+            expect(truncateMore({ string: 'abc', charsToDisplay: 4, charsToDisplayStart: 1 })).toEqual('abc');
+            expect(truncateMore({ string: 'abc', charsToDisplay: 2 })).toEqual('a…');
+            expect(truncateMore({ string: 'abc', charsToDisplay: 2, skewEnd: true })).toEqual('…c');
+            expect(truncateMore({ string: 'abcde', charsToDisplay: 5, charsToDisplayEnd: 4 })).toEqual('abcde');
+            expect(truncateMore({ string: '12345', charsToDisplay: 4, skewEnd: true })).toEqual('1…45');
+            expect(truncateMore({ string: '123456789', charsToDisplay: 5 })).toEqual('12…89');
+        });
     });
 });

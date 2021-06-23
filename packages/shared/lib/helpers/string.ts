@@ -73,7 +73,7 @@ export const uncapitalize = (str: any) => {
  * Given a maximum number of characters to display,
  * truncate a string by adding omission if too long
  */
-export const truncate = (str = '', charsToDisplay = 50, omission = '…') => {
+export const truncate = (str: string, charsToDisplay = 50, omission = '…') => {
     if (str.length === 0) {
         return str;
     }
@@ -85,11 +85,33 @@ export const truncate = (str = '', charsToDisplay = 50, omission = '…') => {
 
 /**
  * Given a maximum number of characters to capture from a string at the start and end of it,
- * truncate the string by adding omission if too long
+ * truncate the string by adding omission if too long. If only a maximum number of characters
+ * is passed, the string is truncated by adding omission in the middle of it if too long
  */
-export const truncateMore = ({ string = '', charsToDisplayStart = 0, charsToDisplayEnd = 0, omission = '…' }) => {
+export const truncateMore = ({
+    string,
+    charsToDisplay,
+    charsToDisplayStart = 0,
+    charsToDisplayEnd = 0,
+    omission = '…',
+    skewEnd = false,
+}: {
+    string: string;
+    charsToDisplay?: number;
+    charsToDisplayStart?: number;
+    charsToDisplayEnd?: number;
+    omission?: string;
+    skewEnd?: boolean;
+}): string => {
     if (string.length === 0) {
         return string;
+    }
+    if (charsToDisplay !== undefined) {
+        // truncate symmetrically
+        const visibleChars = charsToDisplay - omission.length;
+        const charsToDisplayStart = skewEnd ? Math.floor(visibleChars / 2) : Math.ceil(visibleChars / 2);
+        const charsToDisplayEnd = visibleChars - charsToDisplayStart;
+        return truncateMore({ string, charsToDisplayStart, charsToDisplayEnd, omission });
     }
     if (string.length <= charsToDisplayStart + charsToDisplayEnd + omission.length) {
         return string;
