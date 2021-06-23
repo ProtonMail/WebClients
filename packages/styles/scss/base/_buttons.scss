@@ -37,7 +37,11 @@
 
 	&:active,
 	&.is-active,
-	&[aria-expanded='true'] {
+	// When clicking on a button to expand a container, we usually don't need to specify the `aria-controls` attribute
+	// because the expanded container is right next to that button, so the `aria-expanded` style makes sense,
+	// but in some cases that expanded container isn't so obviously visually connected to that button, so we use
+	// `aria-controls` to specify it, and avoid the `aria-expanded` style in the same time.
+	&[aria-expanded='true']:not([aria-controls]) {
 		box-shadow: inset 0 0 0 var(--button-active-border-width, 0)
 			var(--button-active-border-color, transparent);
 		background-color: var(--button-active-background-color, transparent);
