@@ -1,6 +1,4 @@
 import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
-import { getEmailParts, validateEmailAddress } from 'proton-shared/lib/helpers/email';
-import { MAJOR_DOMAINS } from 'proton-shared/lib/constants';
 import { contactToInput, contactToRecipient, majorToRecipient } from 'proton-shared/lib/mail/recipient';
 import { c, msgid } from 'ttag';
 import { SimpleMap } from 'proton-shared/lib/interfaces';
@@ -43,17 +41,6 @@ const compare = (item1: AddressesAutocompleteItem, item2: AddressesAutocompleteI
     }
 
     return 0;
-};
-
-const getMajorList = (input: string) => {
-    const [localPart] = getEmailParts(input);
-    if (!localPart) {
-        return [];
-    }
-    if (!validateEmailAddress(`${localPart}@a.com`)) {
-        return [];
-    }
-    return MAJOR_DOMAINS.map((domain) => `${localPart}@${domain}`);
 };
 
 export const getRecipientFromAutocompleteItem = (
@@ -109,19 +96,6 @@ export const getContactGroupsAutocompleteItems = (
             } as const;
         })
         .sort(compare);
-};
-
-export const getMajorListAutocompleteItems = (input: string, filter: (email: string) => boolean) => {
-    return getMajorList(input)
-        .filter(filter)
-        .map((email) => {
-            return {
-                label: email,
-                value: email,
-                key: email,
-                type: 'major',
-            } as const;
-        });
 };
 
 export const getNumberOfMembersText = (groupID: string, groupsWithContactsMap?: GroupsWithContactsMap) => {
