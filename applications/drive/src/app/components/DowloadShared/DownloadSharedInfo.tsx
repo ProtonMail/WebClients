@@ -54,6 +54,14 @@ const DownloadSharedInfo = ({ name, size, expirationTime, downloadFile }: Props)
             contents.title = c('Title').t`Download completed`;
             contents.info = c('Info').t`Your file has finished downloading.`;
             contents.content = <Icon name="check-circle" size={100} className="fill-primary" />;
+        } else if (download.state === TransferState.Error) {
+            contents.title = c('Title').t`Download failed`;
+            contents.info = c('Info').t`Your file failed to download.`;
+            contents.content = <Icon name="attention-circle" size={100} className="fill-primary" />;
+        } else if (download.state === TransferState.Canceled) {
+            contents.title = c('Title').t`Download canceled`;
+            contents.info = c('Info').t`Your download has been canceled.`;
+            contents.content = <Icon name="off" size={100} className="fill-primary" />;
         } else {
             contents.title = c('Title').t`Downloading`;
             contents.info = c('Info').t`Your file is being downloaded.`;
