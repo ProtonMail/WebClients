@@ -6,6 +6,8 @@ import {
     getMaxUserCalendarsDisabled,
     getProbablyActiveCalendars,
 } from 'proton-shared/lib/calendar/calendar';
+import { getIsPersonalCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
+import { unary } from 'proton-shared/lib/helpers/function';
 import isTruthy from 'proton-shared/lib/helpers/isTruthy';
 import { Calendar } from 'proton-shared/lib/interfaces/calendar';
 import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
@@ -60,11 +62,12 @@ const ExtraEvents = ({ message }: Props) => {
         []
     );
     const [calData, setCalData] = useState<{
+        calendars: Calendar[];
         defaultCalendar?: Calendar;
         canCreateCalendar: boolean;
         maxUserCalendarsDisabled: boolean;
         mustReactivateCalendars: boolean;
-    }>({ canCreateCalendar: true, maxUserCalendarsDisabled: false, mustReactivateCalendars: false });
+    }>({ calendars: [], canCreateCalendar: true, maxUserCalendarsDisabled: false, mustReactivateCalendars: false });
     const loadingConfigs = loadingContactEmails || loadingAddresses || loadingUserSettings || loadingUser;
     const messageHasDecryptionError = !!message.errors?.decryption?.length;
 
@@ -89,21 +92,23 @@ const ExtraEvents = ({ message }: Props) => {
                     getCalendars(),
                     getCalendarUserSettings(),
                 ]);
-                const activeCalendars = getProbablyActiveCalendars(calendars);
+                const personalCalendars = calendars.filter(unary(getIsPersonalCalendar));
+                const activeCalendars = getProbablyActiveCalendars(personalCalendars);
                 const defaultCalendar = getDefaultCalendar(activeCalendars, DefaultCalendarID);
-                const disabledCalendars = calendars.filter((calendar) => getIsCalendarDisabled(calendar));
+                const disabledCalendars = personalCalendars.filter(unary(getIsCalendarDisabled));
                 if (!isMounted()) {
                     return;
                 }
                 const canCreateCalendar = getCanCreateCalendar(
                     activeCalendars,
                     disabledCalendars,
-                    calendars,
+                    personalCalendars,
                     user.isFree
                 );
                 const maxUserCalendarsDisabled = getMaxUserCalendarsDisabled(disabledCalendars, user.isFree);
                 const mustReactivateCalendars = !defaultCalendar && !canCreateCalendar && !maxUserCalendarsDisabled;
                 setCalData({
+                    calendars: personalCalendars,
                     defaultCalendar,
                     canCreateCalendar,
                     maxUserCalendarsDisabled,
@@ -171,6 +176,7 @@ const ExtraEvents = ({ message }: Props) => {
                         key={index} // eslint-disable-line react/no-array-index-key
                         invitationOrError={invitation}
                         message={message}
+                        calendars={calData.calendars}
                         defaultCalendar={calData.defaultCalendar}
                         canCreateCalendar={calData.canCreateCalendar}
                         maxUserCalendarsDisabled={calData.maxUserCalendarsDisabled}
