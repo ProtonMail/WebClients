@@ -1,20 +1,9 @@
-import React, { useState, useEffect, useMemo, ChangeEvent } from 'react';
+import { getIsSubscribedCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
+import React, { useState, useMemo, ChangeEvent } from 'react';
 import { c } from 'ttag';
 
-import {
-    createCalendar,
-    updateCalendarSettings,
-    updateCalendar,
-    updateCalendarUserSettings,
-} from 'proton-shared/lib/api/calendars';
-import { CalendarCreateData } from 'proton-shared/lib/interfaces/calendar/Api';
-import { getPrimaryKey } from 'proton-shared/lib/keys';
-
-import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
 import { noop } from 'proton-shared/lib/helpers/function';
-import { loadModels } from 'proton-shared/lib/models/helper';
-import { CalendarsModel } from 'proton-shared/lib/models';
-import { Calendar, CalendarSettings } from 'proton-shared/lib/interfaces/calendar';
+import { Calendar, SubscribedCalendar } from 'proton-shared/lib/interfaces/calendar';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from 'proton-shared/lib/calendar/alarms';
 
 import { MAX_DEFAULT_NOTIFICATIONS, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
@@ -31,30 +20,18 @@ import {
     TextArea,
     Toggle,
 } from '../../../components';
-import {
-    getCalendarModel,
-    getCalendarPayload,
-    getCalendarSettingsPayload,
-    getDefaultModel,
-    validate,
-} from './calendarModalState';
-import { setupCalendarKey } from '../../keys/calendar';
-import {
-    useApi,
-    useCache,
-    useEventManager,
-    useGetAddresses,
-    useGetAddressKeys,
-    useGetCalendarBootstrap,
-    useLoading,
-    useNotifications,
-} from '../../../hooks';
-import { useCalendarModelEventManager } from '../../eventManager';
+import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel, validate } from './calendarModalState';
+import { useLoading } from '../../../hooks';
 import { GenericError } from '../../error';
 import Notifications from '../notifications/Notifications';
+import useGetCalendarSetup from '../hooks/useGetCalendarSetup';
+import useGetCalendarActions from '../hooks/useGetCalendarActions';
+import { TruncatedText } from '../../../components/truncatedText';
+
+const URL_MAX_DISPLAY_LENGTH = 100;
 
 interface Props {
-    calendar?: Calendar;
+    calendar?: Calendar | SubscribedCalendar;
     activeCalendars?: Calendar[];
     defaultCalendarID?: string;
     defaultColor?: boolean;
@@ -68,16 +45,7 @@ export const CalendarModal = ({
     defaultColor = false,
     ...rest
 }: Props) => {
-    const api = useApi();
-    const { call } = useEventManager();
-    const { call: calendarCall } = useCalendarModelEventManager();
-    const cache = useCache();
-    const getAddresses = useGetAddresses();
-    const getCalendarBootstrap = useGetCalendarBootstrap();
-    const getAddressKeys = useGetAddressKeys();
-    const [loadingSetup, withLoading] = useLoading(true);
     const [loadingAction, withLoadingAction] = useLoading();
-    const { createNotification } = useNotifications();
 
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [error, setError] = useState(false);
@@ -89,134 +57,21 @@ export const CalendarModal = ({
         return (option && option.text) || '';
     }, [model.addressID, model.addressOptions]);
 
-    useEffect(() => {
-        const initializeEmptyCalendar = async () => {
-            const activeAdresses = getActiveAddresses(await getAddresses());
-            if (!activeAdresses.length) {
-                setError(true);
-                return createNotification({ text: c('Error').t`No valid address found`, type: 'error' });
-            }
+    const isSubscribedCalendar = initialCalendar && getIsSubscribedCalendar(initialCalendar);
+    const subscribeURL =
+        initialCalendar && getIsSubscribedCalendar(initialCalendar)
+            ? initialCalendar.SubscriptionParameters.URL
+            : undefined;
 
-            setModel((prev) => ({
-                ...prev,
-                addressID: activeAdresses[0].ID,
-                addressOptions: activeAdresses.map(({ ID, Email = '' }) => ({ value: ID, text: Email })),
-            }));
-        };
-
-        const initializeCalendar = async () => {
-            if (!initialCalendar) {
-                throw new Error('No initial calendar');
-            }
-
-            const [{ Members, CalendarSettings }, Addresses] = await Promise.all([
-                getCalendarBootstrap(initialCalendar.ID),
-                getAddresses(),
-            ]);
-
-            const [{ Email: memberEmail } = { Email: '' }] = Members;
-            const { ID: AddressID } = Addresses.find(({ Email }) => memberEmail === Email) || {};
-
-            if (!AddressID) {
-                setError(true);
-                return createNotification({ text: c('Error').t`No valid address found`, type: 'error' });
-            }
-
-            setModel((prev) => ({
-                ...prev,
-                ...getCalendarModel({ Calendar: initialCalendar, CalendarSettings, Addresses, AddressID }),
-            }));
-        };
-
-        const promise = initialCalendar ? initializeCalendar() : initializeEmptyCalendar();
-
-        withLoading(
-            promise.catch(() => {
-                setError(true);
-            })
-        );
-    }, []);
-
-    const handleCreateCalendar = async (
-        addressID: string,
-        calendarPayload: CalendarCreateData,
-        calendarSettingsPayload: Partial<CalendarSettings>
-    ) => {
-        const [addresses, addressKeys] = await Promise.all([getAddresses(), getAddressKeys(addressID)]);
-
-        const { privateKey: primaryAddressKey } = getPrimaryKey(addressKeys) || {};
-        if (!primaryAddressKey) {
-            createNotification({ text: c('Error').t`Primary address key is not decrypted.`, type: 'error' });
-            setError(true);
-            throw new Error('Missing primary key');
-        }
-
-        const {
-            Calendar,
-            Calendar: { ID: newCalendarID },
-        } = await api<{ Calendar: Calendar }>(
-            createCalendar({
-                ...calendarPayload,
-                AddressID: addressID,
-            })
-        );
-
-        await setupCalendarKey({
-            api,
-            calendarID: newCalendarID,
-            addresses,
-            getAddressKeys,
-        }).catch((e: Error) => {
-            // Hard failure if the keys fail to setup. Force the user to reload.
-            setError(true);
-            throw e;
-        });
-
-        // Set the calendar in case one of the following calls fails so that it ends up in the update function after this.
-        setCalendar(Calendar);
-
-        await Promise.all([
-            api(updateCalendarSettings(newCalendarID, calendarSettingsPayload)),
-            (() => {
-                if (defaultCalendarID) {
-                    return;
-                }
-                const newDefaultCalendarID = activeCalendars.length ? activeCalendars[0].ID : newCalendarID;
-                return api(updateCalendarUserSettings({ DefaultCalendarID: newDefaultCalendarID }));
-            })(),
-        ]);
-
-        // Refresh the calendar model in order to ensure flags are correct
-        await loadModels([CalendarsModel], { api, cache, useCache: false });
-        await call();
-
-        rest.onClose?.();
-
-        createNotification({ text: c('Success').t`Calendar created` });
-    };
-
-    const handleUpdateCalendar = async (
-        calendar: Calendar,
-        calendarPayload: Partial<Calendar>,
-        calendarSettingsPayload: Partial<CalendarSettings>
-    ) => {
-        const calendarID = calendar.ID;
-        await Promise.all([
-            api(updateCalendar(calendarID, calendarPayload)),
-            api(updateCalendarSettings(calendarID, calendarSettingsPayload)),
-        ]);
-        // Case: Calendar has been created, and keys have been setup, but one of the calendar settings call failed in the creation.
-        // Here we are in create -> edit mode. So we have to fetch the calendar model again.
-        if (!initialCalendar) {
-            await loadModels([CalendarsModel], { api, cache, useCache: false });
-        }
-        await call();
-        await calendarCall([calendarID]);
-
-        rest.onClose?.();
-
-        createNotification({ text: c('Success').t`Calendar updated` });
-    };
+    const { error: setupError, loading: loadingSetup } = useGetCalendarSetup({ calendar: initialCalendar, setModel });
+    const { handleCreateCalendar, handleUpdateCalendar } = useGetCalendarActions({
+        calendar: initialCalendar,
+        setCalendar,
+        setError,
+        defaultCalendarID,
+        onClose: rest?.onClose,
+        activeCalendars,
+    });
 
     const formattedModel = {
         ...model,
@@ -245,7 +100,7 @@ export const CalendarModal = ({
     };
 
     const { section, ...modalProps } = (() => {
-        if (error) {
+        if (error || setupError) {
             return {
                 title: c('Title').t`Error`,
                 submit: c('Action').t`Close`,
@@ -269,7 +124,7 @@ export const CalendarModal = ({
                 if (Object.keys(errors).length > 0) {
                     return;
                 }
-                withLoadingAction(handleProcessCalendar());
+                void withLoadingAction(handleProcessCalendar());
             },
         };
     })();
@@ -307,24 +162,26 @@ export const CalendarModal = ({
                             />
                         </Field>
                     </Row>
-                    <Row>
-                        <Label htmlFor="calendar-address-select">{c('Label').t`Default email`}</Label>
-                        <Field className="flex flex-align-items-center">
-                            {model.calendarID ? (
-                                addressText
-                            ) : (
-                                <SelectTwo
-                                    id="calendar-address-select"
-                                    value={model.addressID}
-                                    onChange={({ value }) => setModel({ ...model, addressID: value })}
-                                >
-                                    {model.addressOptions.map(({ value, text }) => (
-                                        <Option key={value} value={value} title={text} />
-                                    ))}
-                                </SelectTwo>
-                            )}
-                        </Field>
-                    </Row>
+                    {!isSubscribedCalendar && (
+                        <Row>
+                            <Label htmlFor="calendar-address-select">{c('Label').t`Default email`}</Label>
+                            <Field className="flex flex-align-items-center">
+                                {model.calendarID ? (
+                                    addressText
+                                ) : (
+                                    <SelectTwo
+                                        id="calendar-address-select"
+                                        value={model.addressID}
+                                        onChange={({ value }) => setModel({ ...model, addressID: value })}
+                                    >
+                                        {model.addressOptions.map(({ value, text }) => (
+                                            <Option key={value} value={value} title={text} />
+                                        ))}
+                                    </SelectTwo>
+                                )}
+                            </Field>
+                        </Row>
+                    )}
                     <Row>
                         <Label htmlFor="calendar-display-toggle">{c('Label').t`Display`}</Label>
                         <Field>
@@ -354,64 +211,81 @@ export const CalendarModal = ({
                             />
                         </Field>
                     </Row>
-                    <Row>
-                        <Label htmlFor="duration-select">{c('Label').t`Default event duration`}</Label>
-                        <Field>
-                            <SelectTwo
-                                id="duration-select"
-                                data-test-id="create-calendar/event-settings:event-duration"
-                                value={model.duration}
-                                onChange={({ value }) => setModel({ ...model, duration: +value })}
-                            >
-                                {[
-                                    { text: c('Duration').t`30 minutes`, value: 30 },
-                                    { text: c('Duration').t`60 minutes`, value: 60 },
-                                    { text: c('Duration').t`90 minutes`, value: 90 },
-                                    { text: c('Duration').t`120 minutes`, value: 120 },
-                                ].map(({ value, text }) => (
-                                    <Option key={value} value={value} title={text} />
-                                ))}
-                            </SelectTwo>
-                        </Field>
-                    </Row>
-                    <Row>
-                        <Label>{c('Label').t`Default notifications`}</Label>
-                        <div
-                            data-test-id="create-calendar/event-settings:default-notification"
-                            className="flex-item-fluid"
-                        >
-                            <Notifications
-                                notifications={model.partDayNotifications}
-                                canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
-                                defaultNotification={model.defaultPartDayNotification}
-                                onChange={(notifications) => {
-                                    setModel({
-                                        ...model,
-                                        partDayNotifications: notifications,
-                                    });
-                                }}
-                            />
-                        </div>
-                    </Row>
-                    <Row>
-                        <Label>{c('Label').t`Default full day notifications`}</Label>
-                        <div
-                            data-test-id="create-calendar/event-settings:default-full-day-notification"
-                            className="flex-item-fluid"
-                        >
-                            <Notifications
-                                notifications={model.fullDayNotifications}
-                                canAdd={model.fullDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
-                                defaultNotification={model.defaultFullDayNotification}
-                                onChange={(notifications) => {
-                                    setModel({
-                                        ...model,
-                                        fullDayNotifications: notifications,
-                                    });
-                                }}
-                            />
-                        </div>
-                    </Row>
+                    {!isSubscribedCalendar && (
+                        <Row>
+                            <Label htmlFor="duration-select">{c('Label').t`Default event duration`}</Label>
+                            <Field>
+                                <SelectTwo
+                                    id="duration-select"
+                                    data-test-id="create-calendar/event-settings:event-duration"
+                                    value={model.duration}
+                                    onChange={({ value }) => setModel({ ...model, duration: +value })}
+                                >
+                                    {[
+                                        { text: c('Duration').t`30 minutes`, value: 30 },
+                                        { text: c('Duration').t`60 minutes`, value: 60 },
+                                        { text: c('Duration').t`90 minutes`, value: 90 },
+                                        { text: c('Duration').t`120 minutes`, value: 120 },
+                                    ].map(({ value, text }) => (
+                                        <Option key={value} value={value} title={text} />
+                                    ))}
+                                </SelectTwo>
+                            </Field>
+                        </Row>
+                    )}
+                    {subscribeURL && (
+                        <>
+                            <Row>
+                                <Label>{c('Label').t`URL`}</Label>
+                                <span style={{ wordBreak: 'break-all' }}>
+                                    <TruncatedText maxChars={URL_MAX_DISPLAY_LENGTH}>{subscribeURL}</TruncatedText>
+                                </span>
+                            </Row>
+                        </>
+                    )}
+
+                    {!isSubscribedCalendar && (
+                        <>
+                            <Row>
+                                <Label>{c('Label').t`Default notifications`}</Label>
+                                <div
+                                    data-test-id="create-calendar/event-settings:default-notification"
+                                    className="flex-item-fluid"
+                                >
+                                    <Notifications
+                                        notifications={model.partDayNotifications}
+                                        canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
+                                        defaultNotification={model.defaultPartDayNotification}
+                                        onChange={(notifications) => {
+                                            setModel({
+                                                ...model,
+                                                partDayNotifications: notifications,
+                                            });
+                                        }}
+                                    />
+                                </div>
+                            </Row>
+                            <Row>
+                                <Label>{c('Label').t`Default full day notifications`}</Label>
+                                <div
+                                    data-test-id="create-calendar/event-settings:default-full-day-notification"
+                                    className="flex-item-fluid"
+                                >
+                                    <Notifications
+                                        notifications={model.fullDayNotifications}
+                                        canAdd={model.fullDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
+                                        defaultNotification={model.defaultFullDayNotification}
+                                        onChange={(notifications) => {
+                                            setModel({
+                                                ...model,
+                                                fullDayNotifications: notifications,
+                                            });
+                                        }}
+                                    />
+                                </div>
+                            </Row>
+                        </>
+                    )}
                 </>
             )}
         </FormModal>

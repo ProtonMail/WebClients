@@ -41,6 +41,7 @@ export enum FeatureCode {
     CanUserSendFeedback = 'CanUserSendFeedback',
     EnabledEncryptedSearch = 'EnabledEncryptedSearch',
     EnabledProtonProtonInvites = 'EnabledProtonProtonInvites',
+    CalendarSubscription = 'CalendarSubscription',
 }
 
 export interface FeaturesContextValue {

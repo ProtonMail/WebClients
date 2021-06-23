@@ -7,6 +7,8 @@ import { hasBonuses } from 'proton-shared/lib/helpers/organization';
 import { MAX_CALENDARS_PER_FREE_USER } from 'proton-shared/lib/calendar/constants';
 import { Calendar, CalendarUrlsResponse } from 'proton-shared/lib/interfaces/calendar';
 import { getPublicLinks } from 'proton-shared/lib/api/calendars';
+import { getIsPersonalCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
+import { unary } from 'proton-shared/lib/helpers/function';
 import Button, { ButtonProps } from '../../../components/button/Button';
 import {
     useApi,
@@ -61,14 +63,15 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
         }
 
         const calendars: Calendar[] = await getCalendars(api);
+        const personalCalendars = calendars.filter(unary(getIsPersonalCalendar));
 
         const hasLinks = !!(
             await Promise.all(
-                (calendars || []).map((calendar) => api<CalendarUrlsResponse>(getPublicLinks(calendar.ID)))
+                personalCalendars.map((calendar) => api<CalendarUrlsResponse>(getPublicLinks(calendar.ID)))
             )
         ).flatMap(({ CalendarUrls }) => CalendarUrls).length;
 
-        if (calendars.length > MAX_CALENDARS_PER_FREE_USER || hasLinks) {
+        if (personalCalendars.length > MAX_CALENDARS_PER_FREE_USER || hasLinks) {
             await new Promise<void>((resolve, reject) => {
                 createModal(<CalendarDowngradeModal onSubmit={resolve} onClose={reject} />);
             });
