@@ -9,8 +9,6 @@
  * * Local parts should have a maximum length of 64 octets
  */
 import isTruthy from './isTruthy';
-import { MAJOR_DOMAINS } from '../constants';
-import { Recipient } from '../interfaces';
 
 export enum CANONIZE_SCHEME {
     DEFAULT,
@@ -215,15 +213,4 @@ export const getEmailTo = (str: string, decode?: boolean): string => {
     } catch (e) {
         return str;
     }
-};
-
-export const majorDomainsMatcher = (inputValue: string) => {
-    const [localPart, domainPart] = getEmailParts(inputValue);
-    if (!localPart || typeof domainPart !== 'string') {
-        return [];
-    }
-    return MAJOR_DOMAINS.map((domain) => {
-        const email = `${localPart}@${domain}`;
-        return { Address: email, Name: email } as Recipient;
-    });
 };
