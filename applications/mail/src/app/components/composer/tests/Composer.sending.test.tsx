@@ -3,7 +3,6 @@ import { MIME_TYPES, PGP_SIGN } from 'proton-shared/lib/constants';
 import { MailSettings } from 'proton-shared/lib/interfaces';
 import loudRejection from 'loud-rejection';
 import { arrayToBase64 } from '../../../helpers/base64';
-import { createEmbeddedMap } from '../../../helpers/embedded/embeddeds';
 import { addApiContact } from '../../../helpers/test/contact';
 import {
     addApiKeys,
@@ -24,6 +23,8 @@ import {
     attachmentsCache,
     clearAll,
     addApiMock,
+    createEmbeddedImage,
+    createMessageImages,
 } from '../../../helpers/test/helper';
 import { clickSend, ID, prepareMessage, renderComposer, send, setHTML } from './Composer.test.helpers';
 
@@ -430,9 +431,8 @@ describe('Composer sending', () => {
                 },
                 fromKeys.publicKeys
             );
-
-            const embeddeds = createEmbeddedMap();
-            embeddeds.set(cid, { attachment, url: imageUrl });
+            const image = createEmbeddedImage(attachment);
+            const messageImages = createMessageImages([image]);
 
             const content = `<img src="${imageUrl}" data-embedded-img="${cid}">`;
             const document = window.document.createElement('div');
@@ -440,7 +440,7 @@ describe('Composer sending', () => {
 
             const message = prepareMessage({
                 document,
-                embeddeds,
+                messageImages,
                 data: { MIMEType: MIME_TYPES.DEFAULT, Attachments: [attachment] },
             });
 

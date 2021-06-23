@@ -13,11 +13,6 @@ export interface MessageAction<T = void> {
     (): Promise<T>;
 }
 
-export interface EmbeddedInfo {
-    attachment: Attachment;
-    url?: string;
-}
-
 export interface MessageErrors {
     network?: Error[];
     decryption?: Error[];
@@ -65,7 +60,34 @@ export interface MessageVerification {
  * Message attachments limited to the embedded images
  * Mapped by the CID of the embedded attachment
  */
-export type EmbeddedMap = Map<string, EmbeddedInfo>;
+// export type EmbeddedMap = Map<string, EmbeddedInfo>;
+
+export interface MessageRemoteImage {
+    type: 'remote';
+    original: HTMLElement;
+    url: string;
+    id: string;
+}
+
+export interface MessageEmbeddedImage {
+    type: 'embedded';
+    original?: HTMLElement;
+    cid: string;
+    url?: string;
+    attachment: Attachment;
+    id: string;
+    status: 'not-loaded' | 'loading' | 'loaded';
+}
+
+export type MessageImage = MessageRemoteImage | MessageEmbeddedImage;
+
+export interface MessageImages {
+    hasRemoteImages: boolean;
+    hasEmbeddedImages: boolean;
+    showRemoteImages: boolean;
+    showEmbeddedImages: boolean;
+    images: MessageImage[];
+}
 
 export interface MessageExtended {
     /**
@@ -135,22 +157,6 @@ export interface MessageExtended {
     initialized?: boolean;
 
     /**
-     * Show remote message in rendered message
-     * undefined: check user mail settings
-     * false: no
-     * true: yes
-     */
-    showRemoteImages?: boolean;
-
-    /**
-     * Show remote message in rendered message
-     * undefined: check user mail settings
-     * false: no
-     * true: yes
-     */
-    showEmbeddedImages?: boolean;
-
-    /**
      * Expiration offset in seconds from time of delivery
      */
     expiresIn?: number;
@@ -180,11 +186,6 @@ export interface MessageExtended {
      * Override auto save contacts preference
      */
     autoSaveContacts?: number;
-
-    /**
-     * Embedded images mapped by CID list
-     */
-    embeddeds?: EmbeddedMap;
 
     /**
      * Signature verifications results
@@ -221,6 +222,11 @@ export interface MessageExtended {
      * Flag to know whether the message is currently being composed or not
      */
     inComposer?: boolean;
+
+    /**
+     * All data relative to remote and embedded images present in the message
+     */
+    messageImages?: MessageImages;
 }
 
 /**

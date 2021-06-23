@@ -89,3 +89,7 @@ export const plainTextToHTML = (
     const sender = findSender(addresses, message);
     return textToHtml(plainTextContent, sender?.Signature || '', mailSettings);
 };
+
+export const querySelectorAll = (message: Partial<MessageExtended> | undefined, selector: string) => [
+    ...((message?.document?.querySelectorAll(selector) || []) as HTMLElement[]),
+];

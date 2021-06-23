@@ -139,7 +139,6 @@ const ComposerContent = ({
                 <AttachmentList
                     attachments={attachments}
                     pendingUploads={pendingUploads}
-                    embeddeds={message.embeddeds}
                     message={message as MessageExtendedWithData}
                     primaryAction={AttachmentAction.Preview}
                     secondaryAction={AttachmentAction.Remove}

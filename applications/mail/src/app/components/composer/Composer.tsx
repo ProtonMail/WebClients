@@ -54,6 +54,7 @@ import { useSendHandler } from '../../hooks/composer/useSendHandler';
 import { useCloseHandler } from '../../hooks/composer/useCloseHandler';
 import { updateKeyPackets } from '../../helpers/attachment/attachment';
 import { Event } from '../../models/event';
+import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
 
 enum ComposerInnerModal {
     None,
@@ -183,13 +184,18 @@ const Composer = (
                     // Attachments are updated by the draft creation request
                     Attachments: syncedMessage.data?.Attachments,
                 } as Message,
+                messageImages: replaceEmbeddedAttachments(modelMessage, syncedMessage.data?.Attachments),
             };
             setModelMessage(newModelMessage);
         } else {
             const { changed, Attachments } = updateKeyPackets(modelMessage, syncedMessage);
 
             if (changed) {
-                setModelMessage({ ...modelMessage, data: { ...modelMessage.data, Attachments } as Message });
+                setModelMessage({
+                    ...modelMessage,
+                    data: { ...modelMessage.data, Attachments } as Message,
+                    messageImages: replaceEmbeddedAttachments(modelMessage, Attachments),
+                });
             }
         }
     }, [syncInProgress, syncedMessage.data?.ID]);
@@ -211,7 +217,7 @@ const Composer = (
                 ...syncedMessage,
                 ...modelMessage,
                 document: syncedMessage.document,
-                embeddeds: syncedMessage.embeddeds,
+                messageImages: syncedMessage.messageImages,
                 plainText: syncedMessage.plainText,
                 data: {
                     ...syncedMessage.data,

@@ -1,11 +1,12 @@
+import generateUID from 'proton-shared/lib/helpers/generateUID';
 import { Api, MailSettings } from 'proton-shared/lib/interfaces';
-import { isDraft } from 'proton-shared/lib/mail/messages';
-import { find } from '../embedded/embeddedFinder';
-import { mutateHTMLBlob, decrypt, prepareImages } from '../embedded/embeddedParser';
-import { MessageExtended, MessageKeys } from '../../models/message';
+import { getAttachments, isDraft } from 'proton-shared/lib/mail/messages';
+import { MessageEmbeddedImage, MessageExtended, MessageKeys } from '../../models/message';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
-import { MessageCache, updateMessageCache } from '../../containers/MessageProvider';
+import { MessageCache } from '../../containers/MessageProvider';
 import { hasShowEmbedded } from '../mailSettings';
+import { getEmbeddedImages, insertImageAnchor } from '../message/messageImages';
+import { findEmbedded, readCID, decryptEmbeddedImages } from '../message/messageEmbeddeds';
 
 export const transformEmbedded = async (
     message: MessageExtended,
@@ -15,23 +16,55 @@ export const transformEmbedded = async (
     api: Api,
     mailSettings: MailSettings | undefined
 ) => {
-    const show = message.showEmbeddedImages === true || hasShowEmbedded(mailSettings) || isDraft(message.data);
+    const draft = isDraft(message.data);
 
-    message.embeddeds = find(message, message.document as Element);
-    const showEmbeddedImages = prepareImages(message, show);
+    const showEmbeddedImages =
+        message.messageImages?.showEmbeddedImages === true || hasShowEmbedded(mailSettings) || draft;
 
-    if (show && message.embeddeds.size) {
-        const run = async () => {
-            await decrypt(message, messageKeys, api, attachmentsCache);
+    let newEmbeddedImages: MessageEmbeddedImage[] = [];
 
-            const messageAfterDowload = messageCache.get(message.localID) as MessageExtended;
-            mutateHTMLBlob(message.embeddeds, messageAfterDowload.document);
-            updateMessageCache(messageCache, message.localID, { document: messageAfterDowload.document });
-        };
-
-        // Run asynchronously to render loader first and update document later
-        void run();
+    if (message.document) {
+        newEmbeddedImages = getAttachments(message.data)
+            .map((attachment) => {
+                const cid = readCID(attachment);
+                const matches = findEmbedded(cid, message.document as Element);
+                return matches.map((match) => {
+                    const id = generateUID('embedded');
+                    if (!draft) {
+                        insertImageAnchor(id, 'embedded', match);
+                    }
+                    return {
+                        type: 'embedded' as 'embedded',
+                        original: match,
+                        id,
+                        cid,
+                        attachment,
+                        status: 'not-loaded' as 'not-loaded',
+                    };
+                });
+            })
+            .flat();
     }
 
-    return { showEmbeddedImages, embeddeds: message.embeddeds };
+    let embeddedImages = [...getEmbeddedImages(message), ...newEmbeddedImages];
+
+    const hasEmbeddedImages = !!embeddedImages.length;
+
+    if (showEmbeddedImages) {
+        embeddedImages = decryptEmbeddedImages(
+            embeddedImages,
+            message.localID,
+            message.verification,
+            messageKeys,
+            messageCache,
+            attachmentsCache,
+            api
+        );
+    }
+
+    return {
+        showEmbeddedImages: hasEmbeddedImages ? showEmbeddedImages : undefined,
+        embeddedImages,
+        hasEmbeddedImages,
+    };
 };

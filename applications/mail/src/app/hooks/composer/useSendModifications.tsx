@@ -3,9 +3,10 @@ import { useCallback } from 'react';
 import { useAuthentication } from 'react-components';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { ATTACHMENT_ACTION, upload } from '../../helpers/attachment/attachmentUploader';
-import { replaceDataUrl } from '../../helpers/embedded/embeddedDataUrl';
-import { cloneEmbedddedMap, createEmbeddedInfo } from '../../helpers/embedded/embeddeds';
 import { attachPublicKey } from '../../helpers/message/messageAttachPublicKey';
+import { replaceDataUrl } from '../../helpers/message/messageDataUrl';
+import { createEmbeddedImageFromUpload } from '../../helpers/message/messageEmbeddeds';
+import { getEmbeddedImages, updateImages } from '../../helpers/message/messageImages';
 import { MessageExtendedWithData } from '../../models/message';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 
@@ -18,7 +19,7 @@ export const useSendMoficiations = () => {
         const message = messageCache.get(inputMessage.localID) as MessageExtendedWithData;
         const messageKeys = await getMessageKeys(message.data);
         const attachments = [...message.data.Attachments];
-        const embeddeds = cloneEmbedddedMap(inputMessage.embeddeds);
+        const embeddedImages = getEmbeddedImages(inputMessage);
 
         // Add public key if selected
         if (isAttachPublicKey(message.data)) {
@@ -35,19 +36,19 @@ export const useSendMoficiations = () => {
                 const [uploadInfo] = upload([file], message, messageKeys, ATTACHMENT_ACTION.INLINE, auth.UID, cid);
                 const uploadResult = await uploadInfo.resultPromise;
                 attachments.push(uploadResult.attachment);
-                embeddeds.set(cid, createEmbeddedInfo(uploadResult));
+                embeddedImages.push(createEmbeddedImageFromUpload(uploadResult));
             }
         }
 
         // Centralized update cache after modifications
         // Theses changes are willingly not saved to the draft
         return updateMessageCache(messageCache, inputMessage.localID, {
-            embeddeds,
             data: {
                 Attachments: attachments,
                 // Needed to keep encryption flags right after saving
                 Flags: inputMessage.data.Flags,
             },
+            messageImages: updateImages(message.messageImages, undefined, undefined, embeddedImages),
         });
     }, []);
 };

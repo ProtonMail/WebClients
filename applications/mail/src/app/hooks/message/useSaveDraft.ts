@@ -7,7 +7,7 @@ import { useGetMessageKeys } from './useGetMessageKeys';
 import { mergeMessages } from '../../helpers/message/messages';
 import { useMessageCache, updateMessageCache } from '../../containers/MessageProvider';
 import { createMessage, updateMessage } from '../../helpers/message/messageExport';
-import { createEquivalentEmbeddeds } from '../../helpers/embedded/embeddeds';
+import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
 
 /**
  * Only takes technical stuff from the updated message
@@ -36,9 +36,9 @@ export const useCreateDraft = () => {
                 Subject: newMessage.Subject,
             },
             ...messageKeys,
-            embeddeds: createEquivalentEmbeddeds(message.embeddeds, newMessage.Attachments),
             document: message.document,
             plainText: message.plainText,
+            messageImages: replaceEmbeddedAttachments(message, newMessage.Attachments),
         });
         await call();
     }, []);

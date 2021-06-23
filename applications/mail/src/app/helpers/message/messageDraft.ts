@@ -4,7 +4,7 @@ import { setBit } from 'proton-shared/lib/helpers/bitset';
 import { canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
 import { Address, MailSettings } from 'proton-shared/lib/interfaces';
 import { Recipient } from 'proton-shared/lib/interfaces/Address';
-import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Message } from 'proton-shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
 import {
     DRAFT_ID_PREFIX,
@@ -19,16 +19,15 @@ import {
 } from 'proton-shared/lib/mail/messages';
 import { generateUID } from 'react-components';
 import { c } from 'ttag';
-
-import { EmbeddedMap, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
+import { MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
+import { MESSAGE_ACTIONS } from '../../constants';
 import { getFromAddress } from '../addresses';
 import { formatFullDate } from '../date';
 import { parseInDiv } from '../dom';
 import { getDate } from '../elements';
-import { createEmbeddedMap } from '../embedded/embeddeds';
 import { exportPlainText, getDocumentContent, plainTextToHTML } from './messageContent';
+import { getEmbeddedImages, restoreImages, updateImages } from './messageImages';
 import { insertSignature } from './messageSignature';
-import { MESSAGE_ACTIONS } from '../../constants';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
 
@@ -37,20 +36,12 @@ export const CLASSNAME_BLOCKQUOTE = 'protonmail_quote';
 /**
  * Copy embeddeds images from the reference message
  */
-export const keepEmbeddeds = (refEmbeddeds?: EmbeddedMap) => {
-    if (!refEmbeddeds) {
-        return {};
-    }
+export const keepEmbeddeds = (message: PartialMessageExtended) => {
+    const embeddedImages = getEmbeddedImages(message);
+    const Attachments = embeddedImages.map((image) => image.attachment);
+    const messageImages = updateImages(message.messageImages, undefined, [], embeddedImages);
 
-    const Attachments: Attachment[] = [];
-    const embeddeds: EmbeddedMap = createEmbeddedMap();
-
-    refEmbeddeds.forEach((value, key) => {
-        embeddeds.set(key, value);
-        Attachments.push(value.attachment);
-    });
-
-    return { Attachments, embeddeds };
+    return { Attachments, messageImages };
 };
 
 /**
@@ -82,11 +73,11 @@ const reply = (referenceMessage: PartialMessageExtended, useEncrypted = false): 
             ? referenceMessage.data?.ToList
             : referenceMessage.data?.ReplyTos;
 
-    const { Attachments, embeddeds } = keepEmbeddeds(referenceMessage.embeddeds);
+    const { Attachments, messageImages } = keepEmbeddeds(referenceMessage);
 
     return {
         data: { Subject, ToList, Attachments },
-        embeddeds,
+        messageImages,
     };
 };
 
@@ -102,12 +93,12 @@ const replyAll = (
 
     const Subject = formatSubject(useEncrypted ? decryptedSubject : data.Subject, RE_PREFIX);
 
-    const { Attachments, embeddeds } = keepEmbeddeds(referenceMessage.embeddeds);
+    const { Attachments, messageImages } = keepEmbeddeds(referenceMessage);
 
     if (isSent(referenceMessage.data) || isSentAndReceived(referenceMessage.data)) {
         return {
             data: { Subject, ToList: data.ToList, CCList: data.CCList, BCCList: data.BCCList, Attachments },
-            embeddeds,
+            messageImages,
         };
     }
 
@@ -118,7 +109,7 @@ const replyAll = (
     const CCListAll: Recipient[] = unique([...(data.ToList || []), ...(data.CCList || [])]);
     const CCList = CCListAll.filter(({ Address = '' }) => !userAddresses.includes(canonizeInternalEmail(Address)));
 
-    return { data: { Subject, ToList, CCList, Attachments }, embeddeds };
+    return { data: { Subject, ToList, CCList, Attachments }, messageImages };
 };
 
 /**
@@ -172,7 +163,7 @@ const generateBlockquote = (
         ? referenceMessage.data?.Body
         : isPlainText(referenceMessage.data)
         ? plainTextToHTML(referenceMessage.data as Message, referenceMessage.decryptedBody, mailSettings, addresses)
-        : getDocumentContent(referenceMessage.document);
+        : getDocumentContent(restoreImages(referenceMessage.document, referenceMessage.messageImages));
 
     return `<div class="${CLASSNAME_BLOCKQUOTE}">
         ${ORIGINAL_MESSAGE}<br>
@@ -189,7 +180,7 @@ export const createNewDraft = (
     mailSettings: MailSettings,
     addresses: Address[]
 ): PartialMessageExtended => {
-    const MIMEType = referenceMessage?.data?.MIMEType || ((mailSettings.DraftMIMEType as unknown) as MIME_TYPES);
+    const MIMEType = referenceMessage?.data?.MIMEType || (mailSettings.DraftMIMEType as unknown as MIME_TYPES);
     const { RightToLeft } = mailSettings;
 
     let Flags = 0;
@@ -200,10 +191,8 @@ export const createNewDraft = (
         Flags = setBit(Flags, MESSAGE_FLAGS.FLAG_SIGN);
     }
 
-    const {
-        data: { Subject = '', ToList = [], CCList = [], BCCList = [], Attachments = [] } = {},
-        embeddeds,
-    } = handleActions(action, referenceMessage, addresses);
+    const { data: { Subject = '', ToList = [], CCList = [], BCCList = [], Attachments = [] } = {}, messageImages } =
+        handleActions(action, referenceMessage, addresses);
 
     const originalTo = getOriginalTo(referenceMessage?.data);
     const originalAddressID = referenceMessage?.data?.AddressID;
@@ -250,7 +239,7 @@ export const createNewDraft = (
         originalTo,
         originalAddressID,
         initialized: true,
-        embeddeds,
+        messageImages,
         initialAttachments,
         inComposer: true,
     };

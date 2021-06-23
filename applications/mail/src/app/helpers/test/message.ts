@@ -6,11 +6,11 @@ import {
     encryptMessage as realEncryptMessage,
 } from 'pmcrypto';
 import { enums } from 'openpgp';
-
 import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
-
 import { base64ToArray, arrayToBase64 } from '../base64';
 import { generateSessionKey, encryptSessionKey, GeneratedKey } from './crypto';
+import { MessageEmbeddedImage, MessageImage } from '../../models/message';
+import { readCID } from '../message/messageEmbeddeds';
 
 export const createDocument = (content: string): Element => {
     const document = window.document.createElement('div');
@@ -70,3 +70,21 @@ export const encryptMessage = async (body: string, fromKeys: GeneratedKey, toKey
     });
     return data;
 };
+
+export const createEmbeddedImage = (attachment: Attachment) =>
+    ({
+        type: 'embedded',
+        attachment,
+        cid: readCID(attachment),
+        url: 'url',
+        id: 'image-id',
+        status: 'loaded',
+    } as MessageEmbeddedImage);
+
+export const createMessageImages = (images: MessageImage[] = []) => ({
+    showEmbeddedImages: true,
+    showRemoteImages: true,
+    hasEmbeddedImages: true,
+    hasRemoteImages: true,
+    images,
+});

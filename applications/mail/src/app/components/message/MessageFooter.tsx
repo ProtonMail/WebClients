@@ -26,7 +26,6 @@ const MessageFooter = ({ message, showActions = true }: Props) => {
         >
             <AttachmentList
                 attachments={attachments}
-                embeddeds={message.embeddeds}
                 message={message as MessageExtendedWithData}
                 primaryAction={AttachmentAction.Preview}
                 secondaryAction={showActions ? AttachmentAction.Download : AttachmentAction.None}

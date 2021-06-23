@@ -43,62 +43,20 @@
     font-family: $font-family-monospace;
 }
 
-/* Also exist inside squireEditor.js */
-.proton-embedded:not([src]) {
-    position: relative;
-    min-height: 38px; /* placeholder */
-    border: 1px solid;
-    border-color: #444 #ccc #ccc #444;
-    background: url('../../assets/broken-img.png') no-repeat 0 50% #fff;
+.proton-image-placeholder {
+    box-sizing: border-box;
+    background-color: #00000011;
+
+    &:not(.color-danger) {
+        color: black;
+    }
 }
 
 .protonmail_signature_block-empty {
     display: none;
 }
 
-/** safari can't override the img border on non-src img
-    chrome can't override the img border on non-src, non-alt img
-    so to not display double border remove our border **/
-.ua-chrome .proton-embedded:not([src]):not([alt]),
-.ua-safari .proton-embedded:not([src]) {
-    border: 0;
-}
-
-/** ie, edge, safari can't add ::after content properly on alt img, so offset our background to compensate for their forced text */
-.ua-ie .proton-embedded[alt]:not([src]),
-.ua-edge .proton-embedded[alt]:not([src]),
-.ua-safari .proton-embedded[alt]:not([src]) {
-    background-position-y: 80%;
-}
-
-/** browser bug? img without alt does not get ::after element, so display the broken img background in the middle */
-.proton-embedded:not([src]):not([alt]) {
-    background-position-x: 50%;
-}
-
-/** img with ALT but not SRC we can display ::after on chrome and firefox */
-.proton-embedded[alt]:not([src])::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    content: ' ' attr(alt);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding: 10px 0 0 20px;
-    color: rgba(0, 0, 0, 0.5);
-    background: url('../../assets/broken-img.png') no-repeat 0 50% #fff; /* override the background in far left */
-}
-
-.proton-embedded-loading > .proton-embedded:not([src])::after {
-    content: '';
-    background: #fff;
-}
-
 /* Responsiveness of our embedded images */
-
 .proton-embedded:not([width]):not([style*='width']) {
     /*  1. do not handle responsivess if there is a width attribute / inline width style
         2. do not set auto height as long as it's not need to handle our embedded images (no height attribute)

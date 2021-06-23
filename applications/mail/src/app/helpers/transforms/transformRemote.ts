@@ -1,106 +1,74 @@
+import generateUID from 'proton-shared/lib/helpers/generateUID';
 import { MailSettings } from 'proton-shared/lib/interfaces';
+import { isDraft } from 'proton-shared/lib/mail/messages';
 import { MessageExtended } from '../../models/message';
-import { getContent, getDocumentContent, setDocumentContent } from '../message/messageContent';
+import { querySelectorAll } from '../message/messageContent';
 import { hasShowRemote } from '../mailSettings';
+import { getRemoteImages, insertImageAnchor } from '../message/messageImages';
 
 const WHITELIST = ['notify@protonmail.com'];
 
-const ATTRIBUTES = ['url', 'xlink:href', 'srcset', 'src', 'svg', 'background', 'poster'].map(
-    (name) => `proton-${name}`
-);
+export const ATTRIBUTES = ['url', 'xlink:href', 'srcset', 'src', 'svg', 'background', 'poster'];
 
-const REGEXP_FIXER = (() => {
-    const str = ATTRIBUTES.map((key) => {
-        if (key === 'proton-src') {
-            return `${key}=(?!"(cid|data):)`;
+const SELECTOR = ATTRIBUTES.map((name) => {
+    if (name === 'src') {
+        return '[proton-src]:not([proton-src^="cid"]):not([proton-src^="data"])';
+    }
+
+    // https://stackoverflow.com/questions/23034283/is-it-possible-to-use-htmls-queryselector-to-select-by-xlink-attribute-in-an
+    if (name === 'xlink:href') {
+        return '[*|href]:not([href])';
+    }
+
+    return `[proton-${name}]`;
+}).join(',');
+
+const removeProtonPrefix = (match: HTMLElement) => {
+    ATTRIBUTES.forEach((attr) => {
+        const protonAttr = `proton-${attr}`;
+        if (match.hasAttribute(protonAttr)) {
+            match.setAttribute(attr, match.getAttribute(protonAttr) as string);
+            match.removeAttribute(attr);
         }
-        return key;
-    }).join('|');
-    return `(${str})`;
-})();
-
-/**
- * Find inside the current parser DOM every content escaped
- * and build a list of Object <attribute>:<value> but don't parse them if
- * it is an embedded content.
- * As we have many differents attributes we create a list
- * @param  html parser
- */
-function prepareInjection(html: Element) {
-    // Query selector
-    const selector = ATTRIBUTES.map((attr) => {
-        const [key] = attr.split(':');
-        return `[${key}]`;
-    })
-        .concat('[style]')
-        .join(', ');
-
-    /**
-     * Create a map of every proton-x attribute and its value
-     * @param  {Node} node Current element
-     * @return {Object}
-     */
-    const mapAttributes = (node: Element) => {
-        return [...node.attributes]
-            .filter((attr) => ATTRIBUTES.indexOf(attr.name) !== -1)
-            .reduce<{ [name: string]: string }>((acc, attr) => {
-                acc[`${attr.name}`] = attr.value;
-                return acc;
-            }, {});
-    };
-
-    const $list = [...html.querySelectorAll(selector)];
-
-    // Create a list containing a map of every attributes (proton-x) per node
-    const attributes = $list.reduce((acc, node) => {
-        if (node.hasAttribute('proton-src')) {
-            const src = node.getAttribute('proton-src') as string;
-
-            // We don't want to unescape attachments or inline embedded as we are going to process them later
-            if (src.indexOf('cid:') !== -1) {
-                return acc;
-            }
-            if (src.indexOf('data:') !== -1) {
-                return acc;
-            }
-        }
-        acc.push(mapAttributes(node));
-        return acc;
-    }, [] as { [name: string]: string }[]);
-
-    return attributes;
-}
-
-export const insertActualRemoteImages = (content: string) => {
-    const regex = new RegExp(REGEXP_FIXER, 'g');
-    // const content = getDocumentContent(document);
-    return content.replace(regex, (_, $1) => $1.substring(7));
-    // setDocumentContent(document, newContent);
+    });
 };
 
 export const transformRemote = (message: MessageExtended, mailSettings?: Partial<MailSettings>) => {
-    const regex = new RegExp(REGEXP_FIXER, 'g');
-    const showImages =
-        message.showRemoteImages ||
-        !!(hasShowRemote(mailSettings) || WHITELIST.includes(message.data?.Sender?.Address || ''));
-    const content = getContent(message);
-    const hasImages = regex.test(content);
+    const showRemoteImages =
+        message.messageImages?.showRemoteImages ||
+        hasShowRemote(mailSettings) ||
+        WHITELIST.includes(message.data?.Sender?.Address || '');
 
-    if (showImages) {
-        // If load:manual we use a custom directive to inject the content
-        if (message.action?.toString() === 'user.inject') {
-            // TODO: uncoment this block
-            // const list = prepareInjection(html);
-            prepareInjection(message.document as Element);
-            // const hasSVG = /svg/.test(html.innerHTML);
-            // if (list.length || hasSVG) {
-            //     dispatcher['message.open']('remote.injected', { action, list, message, hasSVG });
-            // }
-        } else {
-            const content = getDocumentContent(message.document);
-            const newContent = insertActualRemoteImages(content);
-            setDocumentContent(message.document, newContent);
+    const draft = isDraft(message.data);
+
+    const matches = querySelectorAll(message, SELECTOR);
+
+    const hasRemoteImages = !!matches.length;
+
+    const remoteImages = getRemoteImages(message);
+
+    matches.forEach((match) => {
+        if (showRemoteImages) {
+            removeProtonPrefix(match);
         }
-    }
-    return { document, showRemoteImages: hasImages ? showImages : undefined };
+        if (match.tagName === 'IMG') {
+            const id = generateUID('remote');
+            if (!draft) {
+                insertImageAnchor(id, 'remote', match);
+            }
+            remoteImages.push({
+                type: 'remote',
+                url: match.getAttribute('proton-src') || '',
+                original: match,
+                id,
+            });
+        }
+    });
+
+    return {
+        document,
+        showRemoteImages: hasRemoteImages ? showRemoteImages : undefined,
+        remoteImages,
+        hasRemoteImages,
+    };
 };

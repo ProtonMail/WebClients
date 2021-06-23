@@ -3,7 +3,13 @@ import { isDraft, isPlainText } from 'proton-shared/lib/mail/messages';
 import { useCallback } from 'react';
 import { useApi, useMailSettings } from 'react-components';
 import { wait } from 'proton-shared/lib/helpers/promise';
-import { MessageExtended, MessageErrors, MessageExtendedWithData, EmbeddedMap } from '../../models/message';
+import {
+    MessageExtended,
+    MessageErrors,
+    MessageExtendedWithData,
+    MessageImage,
+    MessageImages,
+} from '../../models/message';
 import { loadMessage } from '../../helpers/message/messageRead';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { decryptMessage } from '../../helpers/message/messageDecrypt';
@@ -21,7 +27,10 @@ interface Preparation {
     document?: Element;
     showEmbeddedImages?: boolean;
     showRemoteImages?: boolean;
-    embeddeds?: EmbeddedMap;
+    hasRemoteImages?: boolean;
+    hasEmbeddedImages?: boolean;
+    remoteImages?: MessageImage[];
+    embeddedImages?: MessageImage[];
 }
 
 export const useInitializeMessage = (localID: string, labelID?: string) => {
@@ -54,6 +63,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
         let decryption;
         let preparation: Preparation | undefined;
         let dataChanges;
+        let messageImages: MessageImages | undefined;
 
         try {
             // Ensure the message data is loaded
@@ -95,6 +105,16 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                       api,
                       mailSettings
                   );
+
+            if (!isPlainText({ MIMEType })) {
+                messageImages = {
+                    hasRemoteImages: preparation.hasRemoteImages as boolean,
+                    showRemoteImages: preparation.showRemoteImages as boolean,
+                    hasEmbeddedImages: preparation.hasEmbeddedImages as boolean,
+                    showEmbeddedImages: preparation.showEmbeddedImages as boolean,
+                    images: [...(preparation.remoteImages || []), ...(preparation.embeddedImages || [])],
+                };
+            }
         } catch (error) {
             if (isNetworkError(error)) {
                 errors.network = [error];
@@ -105,6 +125,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
             } else {
                 errors.processing = [error];
             }
+            console.error('Message initialization error', error);
         } finally {
             updateMessageCache(messageCache, localID, {
                 data: dataChanges,
@@ -114,12 +135,10 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                 decryptedRawContent: decryption?.decryptedRawContent,
                 signature: decryption?.signature,
                 decryptedSubject: decryption?.decryptedSubject,
-                showEmbeddedImages: preparation?.showEmbeddedImages,
-                showRemoteImages: preparation?.showRemoteImages,
-                embeddeds: preparation?.embeddeds,
                 errors,
                 loadRetry: loadRetry + 1,
                 initialized,
+                messageImages,
             });
         }
     }, [localID]);

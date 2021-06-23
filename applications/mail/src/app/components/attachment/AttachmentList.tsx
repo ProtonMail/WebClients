@@ -9,10 +9,11 @@ import { diff } from 'proton-shared/lib/helpers/array';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
 import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
 import AttachmentItem from './AttachmentItem';
-import { EmbeddedMap, MessageExtendedWithData } from '../../models/message';
+import { MessageExtendedWithData } from '../../models/message';
 import { PendingUpload } from '../../hooks/composer/useAttachments';
 import { useDownload, useDownloadAll } from '../../hooks/useDownload';
 import AttachmentPreview, { AttachmentPreviewControls } from './AttachmentPreview';
+import { getEmbeddedImages } from '../../helpers/message/messageImages';
 
 export enum AttachmentAction {
     Download,
@@ -28,7 +29,6 @@ export type AttachmentHandler =
 interface Props {
     attachments: Attachment[];
     pendingUploads?: PendingUpload[];
-    embeddeds?: EmbeddedMap;
     message: MessageExtendedWithData;
     primaryAction: AttachmentAction;
     secondaryAction: AttachmentAction;
@@ -42,7 +42,6 @@ interface Props {
 const AttachmentList = ({
     attachments,
     pendingUploads,
-    embeddeds,
     message,
     primaryAction,
     secondaryAction,
@@ -72,7 +71,8 @@ const AttachmentList = ({
     const size = attachmentsSize({ Attachments: attachments } as Message);
     const sizeLabel = humanSize(size);
 
-    const embeddedAttachments = [...(embeddeds?.values() || [])].map(({ attachment }) => attachment);
+    const embeddedImages = getEmbeddedImages(message);
+    const embeddedAttachments = embeddedImages.map(({ attachment }) => attachment);
     const pureAttachments = diff(attachments, embeddedAttachments);
 
     const pureAttachmentsCount = pureAttachments.length;

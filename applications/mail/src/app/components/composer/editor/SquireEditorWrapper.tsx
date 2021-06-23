@@ -9,7 +9,7 @@ import { RIGHT_TO_LEFT, MIME_TYPES } from 'proton-shared/lib/constants';
 import { diff } from 'proton-shared/lib/helpers/array';
 import { noop } from 'proton-shared/lib/helpers/function';
 import useIsMounted from 'react-components/hooks/useIsMounted';
-import { MessageExtended, EmbeddedMap } from '../../../models/message';
+import { MessageExtended } from '../../../models/message';
 import { Breakpoints } from '../../../models/utils';
 import { MessageChange } from '../Composer';
 import {
@@ -19,16 +19,15 @@ import {
     setDocumentContent,
 } from '../../../helpers/message/messageContent';
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
-import { removeEmbeddedHTML } from '../../../helpers/embedded/embeddedParser';
-import { createEmbeddedMap } from '../../../helpers/embedded/embeddeds';
 import EditorToolbarExtension from './EditorToolbarExtension';
-import { findCIDsInContent } from '../../../helpers/embedded/embeddedFinder';
+import { getEmbeddedImages } from '../../../helpers/message/messageImages';
+import { createBlob, findCIDsInContent, readCID, removeEmbeddedHTML } from '../../../helpers/message/messageEmbeddeds';
 
 interface ExternalEditorActions {
     getContent: () => string;
     setContent: (message: MessageExtended) => void;
-    insertEmbedded: (embeddeds: EmbeddedMap) => void;
-    removeEmbedded: (attachments: Attachment[]) => void;
+    insertEmbedded: (attachment: Attachment, data: string | Uint8Array) => void;
+    removeEmbedded: (attachment: Attachment) => void;
 }
 
 export type EditorActionsRef = MutableRefObject<ExternalEditorActions | undefined>;
@@ -166,9 +165,11 @@ const SquireEditorWrapper = ({
             const newCIDs = findCIDsInContent(squireEditorRef.current?.value || '');
             const removedCIDs = diff(cids, newCIDs);
             removedCIDs.forEach((cid) => {
-                const info = message.embeddeds?.get(cid);
-                if (info) {
-                    void onRemoveAttachment(info.attachment);
+                // const info = message.embeddeds?.get(cid);
+                const embeddedImages = getEmbeddedImages(message);
+                const attachment = embeddedImages.find((image) => image.cid === cid)?.attachment;
+                if (attachment) {
+                    void onRemoveAttachment(attachment);
                 }
             });
             setCIDs(newCIDs);
@@ -201,8 +202,9 @@ const SquireEditorWrapper = ({
     const switchToPlainText = () => {
         const MIMEType = MIME_TYPES.PLAINTEXT;
         const plainText = exportPlainText(getContent(message));
-        const embeddeds = createEmbeddedMap();
-        onChange({ plainText, data: { MIMEType }, embeddeds });
+        // const embeddeds = createEmbeddedMap();
+        const messageImages = message.messageImages ? { ...message.messageImages, images: [] } : undefined;
+        onChange({ plainText, data: { MIMEType }, messageImages });
     };
     const switchToHTML = () => {
         const MIMEType = MIME_TYPES.DEFAULT;
@@ -226,22 +228,22 @@ const SquireEditorWrapper = ({
     });
 
     // Editors actions ref to add and remove embedded image
-    const handleInsertEmbedded = useHandler(async (embeddeds: EmbeddedMap) => {
-        embeddeds.forEach((info, cid) => {
-            squireEditorRef.current?.insertImage(info.url || '', {
-                'data-embedded-img': cid,
-                alt: info.attachment.Name,
-            });
+    const handleInsertEmbedded = useHandler((attachment: Attachment, data: string | Uint8Array) => {
+        const cid = readCID(attachment);
+        const url = createBlob(attachment, data);
+
+        squireEditorRef.current?.insertImage(url, {
+            'data-embedded-img': cid,
+            alt: attachment.Name,
         });
     });
-    const handleRemoveEmbedded = useHandler(async (attachments: Attachment[]) => {
+    const handleRemoveEmbedded = useHandler(async (attachment: Attachment) => {
         const document = squireEditorRef.current?.document;
         if (document) {
-            attachments.forEach((attachment) => {
-                removeEmbeddedHTML(document, attachment);
-            });
+            removeEmbeddedHTML(document, attachment);
         }
     });
+
     useEffect(() => {
         editorActionsRef.current = {
             getContent: handleGetContent,

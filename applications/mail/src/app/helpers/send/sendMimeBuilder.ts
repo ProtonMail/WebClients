@@ -3,12 +3,12 @@ import { arrayToBinaryString } from 'pmcrypto';
 import { MIME_TYPES } from 'proton-shared/lib/constants';
 import { Api } from 'proton-shared/lib/interfaces';
 import { getAttachments, isPlainText as testIsPlainText } from 'proton-shared/lib/mail/messages';
-import { MessageExtended, EmbeddedMap, MessageKeys } from '../../models/message';
-import { readCID } from '../embedded/embeddeds';
+import { MessageEmbeddedImage, MessageExtended, MessageImages, MessageKeys } from '../../models/message';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { getPlainText } from '../message/messageContent';
 import { prepareExport } from '../message/messageExport';
 import { Download, formatDownload } from '../attachment/attachmentDownloader';
+import { readCID } from '../message/messageEmbeddeds';
 
 // Reference: Angular/src/app/composer/services/mimeMessageBuilder.js
 
@@ -23,14 +23,18 @@ const extractContentValue = (value = '') => {
     return value.substr(0, semicolonIndex);
 };
 
-const getAttachmentsByType = (attachments: Download[], embeddeds: EmbeddedMap, inline: boolean) =>
-    attachments.filter((attachmentData) => embeddeds.has(readCID(attachmentData.attachment)) === inline);
+const getAttachmentsByType = (attachments: Download[], messageImages: MessageImages | undefined, inline: boolean) =>
+    attachments.filter((attachmentData) => {
+        const cid = readCID(attachmentData.attachment);
+        const image = messageImages?.images.find((image) => (image as MessageEmbeddedImage).cid === cid);
+        return !!image === inline;
+    });
 
-const getEnbeddedAttachments = (attachments: Download[], embeddeds: EmbeddedMap) =>
-    getAttachmentsByType(attachments, embeddeds, true);
+const getEnbeddedAttachments = (attachments: Download[], messageImages: MessageImages | undefined) =>
+    getAttachmentsByType(attachments, messageImages, true);
 
-const getNormalAttachments = (attachments: Download[], embeddeds: EmbeddedMap) =>
-    getAttachmentsByType(attachments, embeddeds, false);
+const getNormalAttachments = (attachments: Download[], messageImages: MessageImages | undefined) =>
+    getAttachmentsByType(attachments, messageImages, false);
 
 const buildAttachments = (attachments: Download[]) =>
     attachments.map(({ attachment, data }) => {
@@ -57,7 +61,11 @@ const buildAttachments = (attachments: Download[]) =>
         return entity;
     });
 
-const buildEmbeddedHtml = (html: string | undefined, attachments: Download[], embeddeds: EmbeddedMap) => {
+const buildEmbeddedHtml = (
+    html: string | undefined,
+    attachments: Download[],
+    messageImages: MessageImages | undefined
+) => {
     const htmlEntity = mimemessage.factory({
         contentType: 'text/html;charset=utf-8',
         contentTransferEncoding: 'base64',
@@ -65,7 +73,7 @@ const buildEmbeddedHtml = (html: string | undefined, attachments: Download[], em
     });
 
     // Attachments
-    const inlineAttachments = getEnbeddedAttachments(attachments, embeddeds);
+    const inlineAttachments = getEnbeddedAttachments(attachments, messageImages);
     const attachmentEntities = buildAttachments(inlineAttachments);
 
     // add the attachments
@@ -94,11 +102,11 @@ const buildAlternateEntity = (
     plaintext: string | undefined,
     html: string | undefined,
     attachments: Download[],
-    embeddeds: EmbeddedMap
+    messageImages: MessageImages | undefined
 ) =>
     mimemessage.factory({
         contentType: 'multipart/alternative',
-        body: [buildPlaintextEntity(plaintext), buildEmbeddedHtml(html, attachments, embeddeds)],
+        body: [buildPlaintextEntity(plaintext), buildEmbeddedHtml(html, attachments, messageImages)],
     });
 
 /**
@@ -108,12 +116,12 @@ const buildBodyEntity = (
     plaintext: string | undefined,
     html: string | undefined,
     attachments: Download[],
-    embeddeds: EmbeddedMap
+    messageImages: MessageImages | undefined
 ) => {
     if (html !== undefined && plaintext !== undefined) {
-        return buildAlternateEntity(plaintext, html, attachments, embeddeds);
+        return buildAlternateEntity(plaintext, html, attachments, messageImages);
     }
-    return html !== undefined ? buildEmbeddedHtml(html, attachments, embeddeds) : buildPlaintextEntity(plaintext);
+    return html !== undefined ? buildEmbeddedHtml(html, attachments, messageImages) : buildPlaintextEntity(plaintext);
 };
 
 /**
@@ -124,10 +132,10 @@ const build = (
     plaintext: string | undefined,
     html: string | undefined,
     attachments: Download[],
-    embeddeds: EmbeddedMap
+    messageImages: MessageImages | undefined
 ): string => {
-    const bodyEntity = buildBodyEntity(plaintext, html, attachments, embeddeds);
-    const normalAttachments = getNormalAttachments(attachments, embeddeds);
+    const bodyEntity = buildBodyEntity(plaintext, html, attachments, messageImages);
+    const normalAttachments = getNormalAttachments(attachments, messageImages);
     const attachmentEntities = buildAttachments(normalAttachments);
     const body = [bodyEntity].concat(attachmentEntities);
 
@@ -163,8 +171,8 @@ export const constructMime = async (
     const plaintext = getPlainText(message, downconvert);
     const html = message.data?.MIMEType !== MIME_TYPES.PLAINTEXT ? prepareExport(message) : undefined;
     const attachments = await fetchMimeDependencies(message, messageKeys, cache, api);
-    const embeddeds = message.embeddeds || new Map();
-    return build(plaintext, html, attachments, embeddeds);
+
+    return build(plaintext, html, attachments, message.messageImages);
 };
 
 export const constructMimeFromSource = async (
@@ -186,7 +194,6 @@ export const constructMimeFromSource = async (
     }
 
     const attachments = await fetchMimeDependencies(message, messageKeys, cache, api);
-    const embeddeds = message.embeddeds || new Map();
 
-    return build(plaintext, html, attachments, embeddeds);
+    return build(plaintext, html, attachments, message.messageImages);
 };

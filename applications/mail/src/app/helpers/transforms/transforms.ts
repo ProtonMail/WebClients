@@ -27,7 +27,7 @@ export const prepareHtml = async (
 
     transformLinks(document);
 
-    const { showEmbeddedImages, embeddeds } = await transformEmbedded(
+    const { showEmbeddedImages, hasEmbeddedImages, embeddedImages } = await transformEmbedded(
         { ...message, document },
         messageKeys,
         messageCache,
@@ -40,11 +40,19 @@ export const prepareHtml = async (
 
     transformStylesheet(document);
 
-    const { showRemoteImages } = transformRemote({ ...message, document }, mailSettings);
+    const { showRemoteImages, hasRemoteImages, remoteImages } = transformRemote({ ...message, document }, mailSettings);
 
     attachBase64(document, base64Cache);
 
-    return { document, showRemoteImages, showEmbeddedImages, embeddeds };
+    return {
+        document,
+        showRemoteImages,
+        showEmbeddedImages,
+        hasRemoteImages,
+        remoteImages,
+        hasEmbeddedImages,
+        embeddedImages,
+    };
 };
 
 export const preparePlainText = async (body: string, isDraft: boolean) => {

@@ -8,9 +8,8 @@ import { getAttachments } from 'proton-shared/lib/mail/messages';
 import { encryptAttachment } from 'proton-shared/lib/mail/send/attachments';
 import { c } from 'ttag';
 import { ATTACHMENT_MAX_SIZE } from '../../constants';
-
 import { MessageExtended, MessageExtendedWithData, MessageKeys } from '../../models/message';
-import { generateCid, isEmbeddable } from '../embedded/embeddeds';
+import { generateCid, isEmbeddable } from '../message/messageEmbeddeds';
 import { RequestParams, upload as uploadHelper, Upload } from '../upload';
 
 // Reference: Angular/src/app/attachments/factories/attachmentModel.js

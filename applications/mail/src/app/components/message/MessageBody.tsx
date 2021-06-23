@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { isPlainText } from 'proton-shared/lib/mail/messages';
 import { classnames, Button, Tooltip } from 'react-components';
 import { c } from 'ttag';
@@ -6,6 +6,7 @@ import { MessageExtended } from '../../models/message';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
 
 import './MessageBody.scss';
+import MessageBodyImage from './MessageBodyImage';
 
 interface Props {
     messageLoaded: boolean;
@@ -33,12 +34,15 @@ const MessageBody = ({
     toggleOriginalMessage,
     onMessageReady,
 }: Props) => {
+    const bodyRef = useRef<HTMLDivElement>(null);
     const plain = isPlainText(message.data);
 
     const [content, blockquote] = useMemo(
         () => (plain ? [message.plainText as string, ''] : locateBlockquote(message.document)),
         [message.document?.innerHTML, message.plainText, plain]
     );
+
+    const [, forceRefresh] = useState({});
 
     const encryptedMode = messageLoaded && !!message.errors?.decryption?.length;
     const sourceMode = !encryptedMode && inputSourceMode;
@@ -55,8 +59,15 @@ const MessageBody = ({
         }
     }, [loadingMode, decryptingMode, message.data?.ID]);
 
+    useEffect(() => {
+        // Images need a second render to find the anchors for the portal
+        // This forced refresh create this doubled render when blockquote is toggled
+        setTimeout(() => forceRefresh({}));
+    }, [showBlockquote]);
+
     return (
         <div
+            ref={bodyRef}
             className={classnames([
                 'message-content scroll-horizontal-if-needed relative bodyDecrypted bg-norm color-norm',
                 plain && 'plain',
@@ -79,6 +90,15 @@ const MessageBody = ({
                 <>
                     {/* eslint-disable-next-line react/no-danger */}
                     <div dangerouslySetInnerHTML={{ __html: content }} />
+                    {message.messageImages?.images.map((image) => (
+                        <MessageBodyImage
+                            key={image.id}
+                            bodyRef={bodyRef}
+                            showRemoteImages={message.messageImages?.showRemoteImages || false}
+                            showEmbeddedImages={message.messageImages?.showEmbeddedImages || false}
+                            image={image}
+                        />
+                    ))}
                     {isBlockquote && (
                         <>
                             {showButton && (

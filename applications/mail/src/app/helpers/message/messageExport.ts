@@ -7,15 +7,14 @@ import { getAttachments, isPlainText } from 'proton-shared/lib/mail/messages';
 import { getSessionKey } from 'proton-shared/lib/mail/send/attachments';
 
 import { MessageExtended, MessageExtendedWithData, MessageKeys } from '../../models/message';
-import { mutateHTMLCid } from '../embedded/embeddedParser';
-import { find } from '../embedded/embeddedFinder';
 import { getDocumentContent, getPlainTextContent } from './messageContent';
 import { constructMimeFromSource } from '../send/sendMimeBuilder';
 import { splitMail, combineHeaders } from '../mail';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
-import { insertActualRemoteImages } from '../transforms/transformRemote';
 import { MESSAGE_ACTIONS } from '../../constants';
+import { getEmbeddedImages, restoreAllPrefixedAttributes } from './messageImages';
+import { insertActualEmbeddedImages } from './messageEmbeddeds';
 
 const removePasswordFromRequests: Pick<Message, 'Password' | 'PasswordHint'> = {
     Password: undefined,
@@ -30,13 +29,12 @@ export const prepareExport = (message: MessageExtended) => {
     const document = message.document.cloneNode(true) as Element;
 
     // Embedded images
-    const embeddeds = find(message, document);
-    mutateHTMLCid(embeddeds, document);
+    insertActualEmbeddedImages(document, getEmbeddedImages(message));
 
     let content = getDocumentContent(document);
 
     // Remote images
-    content = insertActualRemoteImages(content);
+    content = restoreAllPrefixedAttributes(content);
 
     return content;
 };

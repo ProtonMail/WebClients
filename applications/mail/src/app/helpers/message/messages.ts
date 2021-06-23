@@ -4,13 +4,15 @@ import { getAttachments } from 'proton-shared/lib/mail/messages';
 
 import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
 import { getContent, setContent } from './messageContent';
+import { getEmbeddedImages } from './messageImages';
 
 const { ALL_DRAFTS, ALL_SENT, DRAFTS, SENT, SPAM, INBOX } = MAILBOX_LABEL_IDS;
 
 export const getNumAttachmentByType = (message: MessageExtended): [number, number] => {
     const attachments = getAttachments(message.data);
     const numAttachments = attachments.length;
-    const numEmbedded = message.embeddeds?.size || 0;
+    const embeddedImages = getEmbeddedImages(message);
+    const numEmbedded = embeddedImages.length;
     const numPureAttachments = numAttachments - numEmbedded;
     return [numPureAttachments, numEmbedded];
 };

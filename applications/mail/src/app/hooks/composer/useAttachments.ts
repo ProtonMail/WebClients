@@ -7,13 +7,6 @@ import { removeAttachment } from 'proton-shared/lib/api/attachments';
 import { readFileAsBuffer } from 'proton-shared/lib/helpers/file';
 import { Upload } from '../../helpers/upload';
 import { UploadResult, ATTACHMENT_ACTION, isSizeExceeded, upload } from '../../helpers/attachment/attachmentUploader';
-import {
-    readCID,
-    isEmbeddable,
-    createEmbeddedMap,
-    createEmbeddedInfo,
-    cloneEmbedddedMap,
-} from '../../helpers/embedded/embeddeds';
 import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import { EditorActionsRef } from '../../components/composer/editor/SquireEditorWrapper';
 import { MessageChange } from '../../components/composer/Composer';
@@ -22,6 +15,8 @@ import { useAttachmentCache } from '../../containers/AttachmentProvider';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useLongLivingState } from '../useLongLivingState';
 import { usePromise } from '../usePromise';
+import { getEmbeddedImages, updateImages } from '../../helpers/message/messageImages';
+import { createEmbeddedImageFromUpload, isEmbeddable, readCID } from '../../helpers/message/messageEmbeddeds';
 
 export interface PendingUpload {
     file: File;
@@ -100,24 +95,19 @@ export const useAttachments = (
             onChange((message: MessageExtended) => {
                 // New attachment list
                 const Attachments = [...getAttachments(message.data), upload.attachment];
-
-                // Update embeddeds map if embedded attachments
-                const embeddeds = cloneEmbedddedMap(message.embeddeds);
+                const embeddedImages = getEmbeddedImages(message);
 
                 if (action === ATTACHMENT_ACTION.INLINE) {
-                    const embeddedsToInsert = createEmbeddedMap();
-                    const cid = readCID(upload.attachment);
-                    const info = createEmbeddedInfo(upload);
-
-                    embeddedsToInsert.set(cid, info);
-                    embeddeds.set(cid, info);
+                    embeddedImages.push(createEmbeddedImageFromUpload(upload));
 
                     setTimeout(() => {
-                        editorActionsRef.current?.insertEmbedded(embeddedsToInsert);
+                        editorActionsRef.current?.insertEmbedded(upload.attachment, upload.packets.Preview);
                     });
                 }
 
-                return { embeddeds, data: { Attachments } };
+                const messageImages = updateImages(message.messageImages, undefined, undefined, embeddedImages);
+
+                return { data: { Attachments }, messageImages };
             });
             removePendingUpload(pendingUpload);
         } catch (error) {
@@ -203,17 +193,19 @@ export const useAttachments = (
                 const Attachments = message.data?.Attachments?.filter((a: Attachment) => a.ID !== attachment.ID) || [];
 
                 const cid = readCID(attachment);
-                const embeddeds = cloneEmbedddedMap(message.embeddeds);
+                const embeddedImages = getEmbeddedImages(message);
+                const embeddedImage = embeddedImages.find((image) => image.cid === cid);
+                const newEmbeddedImages = embeddedImages.filter((image) => image.cid !== cid);
 
-                if (embeddeds.has(cid)) {
-                    embeddeds.delete(cid);
-
+                if (embeddedImage) {
                     setTimeout(() => {
-                        editorActionsRef.current?.removeEmbedded([attachment]);
+                        editorActionsRef.current?.removeEmbedded(embeddedImage.attachment);
                     });
                 }
 
-                return { embeddeds, data: { Attachments } };
+                const messageImages = updateImages(message.messageImages, undefined, undefined, newEmbeddedImages);
+
+                return { data: { Attachments }, messageImages };
             });
         },
         [onChange]

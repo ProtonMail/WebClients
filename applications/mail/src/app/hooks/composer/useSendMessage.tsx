@@ -142,7 +142,7 @@ export const useSendMessage = () => {
                 updateMessageCache(messageCache, localID, {
                     data: Sent,
                     initialized: undefined,
-                    showEmbeddedImages: undefined,
+                    messageImages: undefined,
                 });
 
                 // Navigation to the sent message

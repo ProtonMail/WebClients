@@ -12,13 +12,11 @@ interface Props {
     onLoadImages: () => void;
 }
 
-const ExtraImages = ({
-    message: { showRemoteImages = true, showEmbeddedImages = true },
-    type,
-    onLoadImages,
-}: Props) => {
+const ExtraImages = ({ message, type, onLoadImages }: Props) => {
     const [mailSettings] = useMailSettings();
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
+
+    const { showRemoteImages = true, showEmbeddedImages = true } = message.messageImages || {};
 
     if (type === 'embedded' && hasShowEmbedded(mailSettings)) {
         return null;

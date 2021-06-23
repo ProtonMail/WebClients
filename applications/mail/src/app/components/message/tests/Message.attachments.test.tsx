@@ -1,12 +1,12 @@
 import { fireEvent, within } from '@testing-library/dom';
 import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
-import { createEmbeddedMap } from '../../../helpers/embedded/embeddeds';
 import { assertIcon } from '../../../helpers/test/assertion';
-import { clearAll, tick } from '../../../helpers/test/helper';
+import { clearAll, createEmbeddedImage, createMessageImages, tick } from '../../../helpers/test/helper';
 import { initMessage, setup } from './Message.test.helpers';
 
 describe('Message attachments', () => {
-    const attachment1 = { ID: 'id1', Name: 'attachment-name-unknown', Size: 100 };
+    const cid = 'cid';
+    const attachment1 = { ID: 'id1', Name: 'attachment-name-unknown', Size: 100, Headers: { 'content-id': cid } };
     const attachment2 = { ID: 'id2', Name: 'attachment-name-pdf.pdf', Size: 200, MIMEType: 'application/pdf' };
     const attachment3 = {
         ID: 'id3',
@@ -25,6 +25,8 @@ describe('Message attachments', () => {
     const NumAttachments = Attachments.length;
     const icons = ['mime-md-unknown', 'mime-md-pdf', 'mime-md-image'];
     const totalSize = Attachments.map((attachment) => attachment.Size).reduce((acc, size) => acc + size, 0);
+    const embeddedImage = createEmbeddedImage(attachment1);
+    const messageImages = createMessageImages([embeddedImage]);
 
     afterEach(clearAll);
 
@@ -45,12 +47,7 @@ describe('Message attachments', () => {
     });
 
     it('should show global size and counters', async () => {
-        const cid = 'cid';
-        const url = 'url';
-        const embeddeds = createEmbeddedMap();
-        embeddeds.set(cid, { attachment: attachment1, url });
-
-        initMessage({ data: { NumAttachments, Attachments }, embeddeds });
+        initMessage({ data: { NumAttachments, Attachments }, messageImages });
 
         const { getByTestId } = await setup();
 
