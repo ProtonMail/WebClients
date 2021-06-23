@@ -6,7 +6,7 @@ import { Label } from 'proton-shared/lib/interfaces/Label';
 import { Folder } from 'proton-shared/lib/interfaces/Folder';
 import { hasBit } from 'proton-shared/lib/helpers/bitset';
 import { MailSettings } from 'proton-shared/lib/interfaces';
-import { LABELS_AUTO_READ, LABELS_UNMODIFIABLE_BY_USER, LABEL_IDS_TO_HUMAN, LABEL_IDS_TO_I18N } from '../constants';
+import { LABELS_AUTO_READ, LABELS_UNMODIFIABLE_BY_USER, LABEL_IDS_TO_HUMAN, getLabelIDsToI18N } from '../constants';
 import { Conversation } from '../models/conversation';
 import { getLabelIDs } from './elements';
 import { Element } from '../models/element';
@@ -31,7 +31,8 @@ const alwaysMessageLabels = [DRAFTS, ALL_DRAFTS, SENT, ALL_SENT];
 
 export const getHumanLabelID = (labelID: string) => LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS] || labelID;
 
-export const getI18nLabelID = (labelID: string) => LABEL_IDS_TO_I18N[labelID as MAILBOX_LABEL_IDS] || labelID;
+export const getI18nLabelID = (labelID: string) =>
+    getLabelIDsToI18N()[labelID as MAILBOX_LABEL_IDS] || getHumanLabelID(labelID);
 
 export const getLabelName = (labelID: string, labels: Label[] = [], folders: Folder[] = []): string => {
     if (labelID in LABEL_IDS_TO_HUMAN) {

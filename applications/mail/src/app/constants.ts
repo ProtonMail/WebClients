@@ -40,7 +40,7 @@ export const HUMAN_TO_LABEL_IDS = Object.entries(LABEL_IDS_TO_HUMAN).reduce((acc
     return acc;
 }, Object.create(null));
 
-export const LABEL_IDS_TO_I18N = {
+export const getLabelIDsToI18N = () => ({
     [MAILBOX_LABEL_IDS.INBOX]: c('Link').t`Inbox`,
     [MAILBOX_LABEL_IDS.ALL_DRAFTS]: c('Link').t`Drafts`,
     [MAILBOX_LABEL_IDS.ALL_SENT]: c('Link').t`Sent`,
@@ -52,7 +52,7 @@ export const LABEL_IDS_TO_I18N = {
     [MAILBOX_LABEL_IDS.DRAFTS]: c('Link').t`Drafts`,
     [MAILBOX_LABEL_IDS.STARRED]: c('Link').t`Starred`,
     [MAILBOX_LABEL_IDS.OUTBOX]: c('Link').t`Outbox`,
-};
+});
 
 // List of location where messages are marked automatically as read after moving by the API
 export const LABELS_AUTO_READ = [MAILBOX_LABEL_IDS.TRASH];
