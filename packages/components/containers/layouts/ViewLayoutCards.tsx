@@ -15,9 +15,11 @@ interface Props {
     onChange: (viewLayout: VIEW_LAYOUT) => void;
     loading: boolean;
     describedByID: string;
+    className?: string;
+    liClassName?: string;
 }
 
-const ViewLayoutCards = ({ viewLayout, onChange, loading, describedByID, ...rest }: Props) => {
+const ViewLayoutCards = ({ viewLayout, onChange, loading, className, liClassName, describedByID, ...rest }: Props) => {
     const layoutCardColumn = {
         value: COLUMN,
         selected: viewLayout === COLUMN,
@@ -43,7 +45,15 @@ const ViewLayoutCards = ({ viewLayout, onChange, loading, describedByID, ...rest
         describedByID,
     };
 
-    return <LayoutCards list={[layoutCardColumn, layoutCardRow]} describedByID={describedByID} {...rest} />;
+    return (
+        <LayoutCards
+            list={[layoutCardColumn, layoutCardRow]}
+            className={className}
+            liClassName={liClassName}
+            describedByID={describedByID}
+            {...rest}
+        />
+    );
 };
 
 export default ViewLayoutCards;
