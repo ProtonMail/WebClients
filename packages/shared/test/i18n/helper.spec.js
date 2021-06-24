@@ -18,6 +18,9 @@ describe('helper', () => {
         expect(getClosestLocaleMatch('en_US', { en_US: true, sv_SE: true })).toBe('en_US');
         expect(getClosestLocaleMatch('en_US', { aa_AA: true, en_US: true })).toBe('en_US');
         expect(getClosestLocaleMatch('en', { aa_AA: true, en_US: true })).toBe('en_US');
+        expect(getClosestLocaleMatch('fr_BE', { aa_AA: true, fr_CA: true, fr_FR: true, fr: true })).toBe('fr');
+        expect(getClosestLocaleMatch('fr_BE', { aa_AA: true, fr_CA: true, fr_FR: true })).toBe('fr_FR');
+        expect(getClosestLocaleMatch('fr', { aa_AA: true, fr_CA: true, fr_FR: true })).toBe('fr_FR');
     });
 
     it('should get the language code', () => {
