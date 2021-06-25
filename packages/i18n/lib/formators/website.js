@@ -6,6 +6,7 @@ const { success, info, warn } = require('../helpers/log')('proton-i18n');
 
 async function main(outputCloned) {
     info('check if we are on a custom branch', false);
+    // eslint-disable-next-line no-template-curly-in-string
     const { stdout: currentBranch = '' } = await bash('echo "${CI_COMMIT_BRANCH:-$(git rev-parse --abbrev-ref HEAD)}"');
 
     info(`validate current branch: ${currentBranch}`, false);
