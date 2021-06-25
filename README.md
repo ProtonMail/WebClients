@@ -35,6 +35,15 @@ yarn workspace proton-mail start
 
 For additional details on how to interact with the monorepo, see the [yarn docs](https://yarnpkg.com/) for reference.
 
+## Help us to translate the project
+
+You can help us to translate the application on crowdin.
+
+- For proton-mail, proton-drive, proton-account: [crowdin ProtonMail](https://crowdin.com/project/protonmail)
+- For proton-calendar: [crowdin ProtonCalendar](https://crowdin.com/project/proton-test-3)
+- For proton-mail, proton-drive, proton-account: [crowdin ProtonVPN](https://crowdin.com/project/protonvpn)
+
+
 ## License
 
 The code and data files in this distribution are licensed under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. See https://www.gnu.org/licenses/ for a copy of this license.
