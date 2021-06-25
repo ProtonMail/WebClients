@@ -14,7 +14,7 @@ const warn = (msg, info) => {
 };
 
 const success = (msg, { time, space = false } = {}) => {
-    const txt = `${chalk.bgGreen(SCOPE)} ${chalk.bold('✓ ' + msg)}`;
+    const txt = `${chalk.bgGreen(SCOPE)} ${chalk.bold(`✓ ${msg}`)}`;
     const message = [txt, time && `(${time})`].filter(Boolean).join('');
     if (space) {
         console.log();
