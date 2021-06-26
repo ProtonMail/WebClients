@@ -1,0 +1,34 @@
+@import '~design-system/scss/config/';
+
+.background-container {
+    background-image: url('../../assets/tv_bg.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1200px 800px;
+}
+.code-input-div {
+    .field,
+    .field:focus,
+    .field:active {
+        letter-spacing: rem(15);
+        text-indent: rem(19);
+        border: none;
+        color: white;
+        height: rem(45) !important;
+        font-size: rem(15);
+        background-color: rgba(0, 0, 0, 0.301);
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.76);
+        }
+    }
+}
+@include respond-to($breakpoint-small) {
+    .code-input-div {
+        .field,
+        .field:focus,
+        .field:active {
+            letter-spacing: rem(26);
+            text-indent: rem(35);
+        }
+    }
+}

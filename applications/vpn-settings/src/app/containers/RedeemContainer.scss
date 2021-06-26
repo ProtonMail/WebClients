@@ -1,0 +1,47 @@
+@import '~design-system/scss/config/';
+
+.redeem-header-wrapper {
+    border-top: solid 1px var(--border-norm);
+}
+
+.redeem-heading-bg {
+    background-image: url(~design-system/assets/img/pv-images/redeem/background.jpg);
+    background-size: cover;
+    flex: 1;
+}
+
+.redeem-heading-title {
+    font-size: rem(48);
+    max-width: em(200);
+}
+
+.redeem-form {
+    max-width: rem(325);
+}
+
+.redeem-coupon-code-input {
+    font-size: rem(16);
+    padding-top: 11px;
+    padding-bottom: 11px;
+    border-radius: 0;
+}
+
+.redeem-submit-button {
+    border-radius: 25px;
+    font-size: rem(14);
+    padding-top: 19px;
+    padding-bottom: 19px;
+}
+
+.redeem-promo-img {
+    display: block;
+    max-width: 40px;
+    max-height: 40px;
+}
+
+@include respond-to($breakpoint-medium) {
+    .redeem-heading-title {
+        font-size: rem(30);
+        font-weight: normal;
+    }
+}

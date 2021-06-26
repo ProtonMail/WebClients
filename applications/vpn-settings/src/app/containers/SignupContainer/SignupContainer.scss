@@ -1,0 +1,52 @@
+@import '~design-system/scss/config/';
+
+
+.container-plans-signup {
+    max-width: rem(1000);
+    width: 100%;
+
+    @include respond-to($breakpoint-medium) {
+        --label-width: 45%;
+    }
+
+    span[aria-describedby] {
+        position: relative;
+        z-index: 5;
+    }
+}
+
+.signup-title {
+    display: flex;
+    width: 100%;
+    font-weight: bold;
+    font-size: rem(22);
+
+    &::before,
+    &::after {
+        content: "";
+        flex: 1;
+        align-self: center;
+        border-bottom: 1px solid var(--border-norm);
+        margin-top: .25em;
+    }
+
+    &::before {
+        margin-right: 1em;
+    }
+
+    &::after {
+        margin-left: 1em;
+    }
+}
+
+.selected-plan {
+    min-width: 285px !important;
+}
+
+.plan-back-button,
+.plan-help-button {
+    @include respond-to($breakpoint-small) {
+        order: -1;
+        flex-basis: auto;
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "extends": ["proton-lint"],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    },
+    "rules": {
+        "react/forbid-prop-types": "warn",
+        "react/no-array-index-key": "warn",
+        "jsx-a11y/control-has-associated-label": "warn"
+    }
+}
