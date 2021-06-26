@@ -268,8 +268,6 @@ export const insertCustomStyle = (document: Document) => {
             min-width: 38px;
         }
 
-        .protonmail_signature_block-empty { display: none }
-
         .protonmail_quote {
             position: relative;
         }
