@@ -77,15 +77,15 @@ describe('auth handlers', () => {
     });
 
     it('should retry maximum 5 times', async () => {
-        const call = jasmine
-            .createSpy('call')
-            .and.returnValues(
-                Promise.reject(getApiError({ status: 429 })),
-                Promise.reject(getApiError({ status: 429 })),
-                Promise.reject(getApiError({ status: 429 })),
-                Promise.reject(getApiError({ status: 429 })),
-                Promise.reject(getApiError({ status: 429 }))
-            );
+        const returns = [
+            () => Promise.reject(getApiError({ status: 429 })),
+            () => Promise.reject(getApiError({ status: 429 })),
+            () => Promise.reject(getApiError({ status: 429 })),
+            () => Promise.reject(getApiError({ status: 429 })),
+            () => Promise.reject(getApiError({ status: 429 })),
+        ];
+        let i = 0;
+        const call = jasmine.createSpy('call').and.callFake(() => returns[i++]());
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             return e;
         });
@@ -171,14 +171,14 @@ describe('auth handlers', () => {
     });
 
     it('should refresh once and only logout if it is a 4xx error', async () => {
-        const call = jasmine
-            .createSpy('call')
-            .and.returnValues(
-                Promise.reject(getApiError({ status: 401 })),
-                Promise.reject(getApiError({ status: 500 })),
-                Promise.reject(getApiError({ status: 401 })),
-                Promise.reject(getApiError({ status: 422 }))
-            );
+        const returns = [
+            () => Promise.reject(getApiError({ status: 401 })),
+            () => Promise.reject(getApiError({ status: 500 })),
+            () => Promise.reject(getApiError({ status: 401 })),
+            () => Promise.reject(getApiError({ status: 422 })),
+        ];
+        let i = 0;
+        const call = jasmine.createSpy('call').and.callFake(() => returns[i++]());
 
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             return e;
@@ -196,17 +196,17 @@ describe('auth handlers', () => {
     });
 
     it('should refresh once and handle 429 max attempts', async () => {
-        const call = jasmine
-            .createSpy('call')
-            .and.returnValues(
-                Promise.reject(getApiError({ status: 401 })),
-                Promise.reject(getApiError({ status: 429 })),
-                Promise.reject(getApiError({ status: 429 })),
-                Promise.reject(getApiError({ status: 429 })),
-                Promise.reject(getApiError({ status: 429 })),
-                Promise.reject(getApiError({ status: 429 })),
-                Promise.reject(getApiError({ status: 429 }))
-            );
+        const returns = [
+            () => Promise.reject(getApiError({ status: 401 })),
+            () => Promise.reject(getApiError({ status: 429 })),
+            () => Promise.reject(getApiError({ status: 429 })),
+            () => Promise.reject(getApiError({ status: 429 })),
+            () => Promise.reject(getApiError({ status: 429 })),
+            () => Promise.reject(getApiError({ status: 429 })),
+            () => Promise.reject(getApiError({ status: 429 })),
+        ];
+        let i = 0;
+        const call = jasmine.createSpy('call').and.callFake(() => returns[i++]());
 
         const api = withApiHandlers({ call, UID: '126' });
         await expectAsync(api(123)).toBeRejectedWith(InactiveSessionError());
@@ -214,14 +214,15 @@ describe('auth handlers', () => {
     });
 
     it('should refresh once and handle 429', async () => {
-        const call = jasmine.createSpy('call').and.returnValues(
-            Promise.reject(getApiError({ status: 401 })), // need refresh
-            Promise.reject(getApiError({ status: 429 })), // retry
-            Promise.reject(getApiError({ status: 429 })), // retry
-            Promise.resolve(getApiResult('')), // refresh ok
-            Promise.resolve(getApiResult('123')) // actual result
-        );
-
+        const returns = [
+            () => Promise.reject(getApiError({ status: 401 })), // need refresh
+            () => Promise.reject(getApiError({ status: 429 })), // retry
+            () => Promise.reject(getApiError({ status: 429 })), // retry
+            () => Promise.resolve(getApiResult('')), // refresh ok
+            () => Promise.resolve(getApiResult('123')), // actual result
+        ];
+        let i = 0;
+        const call = jasmine.createSpy('call').and.callFake(() => returns[i++]());
         const api = withApiHandlers({ call, UID: 'abc' });
         const result = await api(123).then((result) => result.json());
         expect(call).toHaveBeenCalledTimes(5);
