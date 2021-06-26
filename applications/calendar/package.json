@@ -1,0 +1,85 @@
+{
+    "name": "proton-calendar",
+    "version": "4.1.11",
+    "description": "React web application to manage ProtonMail calendar",
+    "main": "index.js",
+    "config": {
+        "publicPathFlag": "--publicPath=/calendar/"
+    },
+    "scripts": {
+        "start": "proton-pack dev-server --appMode=standalone",
+        "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
+        "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+        "preversion": "git update-index --no-assume-unchanged package-lock.json",
+        "postversion": "git update-index --assume-unchanged package-lock.json && git push --tags",
+        "i18n:validate": "proton-i18n validate lint-functions",
+        "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
+        "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin --verbose",
+        "test": "jest --ci",
+        "deploy": "proton-bundler --git",
+        "deploy:standalone": "proton-bundler --git --appMode standalone",
+        "build": "cross-env NODE_ENV=production proton-pack compile $npm_package_config_publicPathFlag",
+        "build:sso": "cross-env NODE_ENV=production proton-pack compile --appMode=sso",
+        "build:standalone": "cross-env NODE_ENV=production proton-pack compile --appMode=standalone",
+        "deploy:prod": "proton-bundler --remote --branch=deploy-prod",
+        "bundle": "proton-bundler",
+        "check-types": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ProtonMail/proton-calendar.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": "https://github.com/ProtonMail/proton-calendar/issues"
+    },
+    "homepage": "https://github.com/ProtonMail/proton-calendar#readme",
+    "devDependencies": {
+        "@babel/preset-typescript": "^7.6.0",
+        "@testing-library/jest-dom": "^4.0.0",
+        "@testing-library/react": "^8.0.7",
+        "@types/jest": "^24.0.18",
+        "@types/react-helmet": "^6.1.1",
+        "babel-plugin-transform-require-context": "^0.1.1",
+        "cross-env": "^5.2.0",
+        "eslint": "^7.3.1",
+        "eslint-config-proton-lint": "github:ProtonMail/proton-lint#semver:^0.0.6",
+        "husky": "^4.3.0",
+        "jest": "^24.9.0",
+        "jest-junit": "^12.0.0",
+        "lint-staged": "^10.2.11",
+        "prettier": "^2.0.5",
+        "proton-bundler": "github:ProtonMail/proton-bundler#semver:^2.1.12",
+        "proton-i18n": "github:ProtonMail/proton-i18n#semver:^2.0.0",
+        "typescript": "^4.0.3"
+    },
+    "dependencies": {
+        "abortcontroller-polyfill": "^1.2.1",
+        "date-fns": "^2.5.0",
+        "design-system": "github:ProtonMail/design-system#master",
+        "dompurify": "^2.0.7",
+        "interval-tree": "github:ProtonMail/interval-tree#semver:^1.0.0",
+        "proton-pack": "github:ProtonMail/proton-pack#semver:^3.0.0",
+        "proton-shared": "github:ProtonMail/proton-shared#master",
+        "proton-translations": "github:ProtonMail/proton-translations#fe-calendar",
+        "proton-version": "github:ProtonMail/proton-version#semver:^1.0.0",
+        "react-components": "github:ProtonMail/react-components#master",
+        "react-helmet": "^6.1.0",
+        "tinycolor2": "^1.4.1",
+        "ttag": "^1.7.5",
+        "yetch": "^1.1.0"
+    },
+    "lint-staged": {
+        "(*.ts|*.tsx|*.js)": [
+            "prettier --write",
+            "eslint"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    }
+}

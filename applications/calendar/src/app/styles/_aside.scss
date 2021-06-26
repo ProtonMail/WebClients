@@ -1,0 +1,27 @@
+@import '~design-system/scss/config/';
+
+.calendar-aside {
+	width: $calendar-aside-width;
+	font-size: rem(10);
+}
+
+.calendar-primary-timezone-cell,
+.calendar-secondary-timezone-cell {
+	border-bottom: 1px solid var(--border-norm);
+}
+
+.calendar-secondary-timezone-cell {
+	border-right: 1px solid var(--border-norm);
+	background-color: var(--background-weak);
+
+	&--header {
+		border-top: 1px solid var(--border-norm);
+		border-right: 1px solid var(--border-norm);
+		border-top-right-radius: $global-border-radius;
+		border-top-left-radius: $global-border-radius;
+	}
+}
+
+.sticky-title .calendar-grid-dayLine::after {
+	border-left: 0;
+}
