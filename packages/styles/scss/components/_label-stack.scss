@@ -26,7 +26,9 @@
 		}
 
 		&-button {
-			padding: 0.125em 0.5em;
+			// values are "magic ones" for optically
+			// centering best as we could to Fit ALL cases (emoji/lowercase/etc.)
+			padding: em(1) 0.5em em(2.4) 0.5em;
 			text-align: left;
 		}
 
@@ -70,8 +72,7 @@
 		.label-stack-item {
 			overflow: hidden;
 			margin: 0;
-			transition: transform 0.1s 0.2s easing(easeOutQuart),
-				max-width 0.2s 0s easing(easeOutQuart);
+			transition: transform 0.1s 0.2s easing(easeOutQuart), max-width 0.2s 0s easing(easeOutQuart);
 
 			&:hover,
 			&:focus-within,
