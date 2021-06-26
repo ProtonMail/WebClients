@@ -174,6 +174,7 @@ const Composer = (
 
     // Manage populating the model from the server
     useEffect(() => {
+        // Draft creation
         if (modelMessage.data?.ID !== syncedMessage.data?.ID) {
             const newModelMessage = {
                 ...syncedMessage,
@@ -188,6 +189,7 @@ const Composer = (
             };
             setModelMessage(newModelMessage);
         } else {
+            // Draft update
             const { changed, Attachments } = updateKeyPackets(modelMessage, syncedMessage);
 
             if (changed) {
@@ -200,10 +202,9 @@ const Composer = (
         }
     }, [syncInProgress, syncedMessage.data?.ID]);
 
-    // Manage initializing the message content from the cache
+    // Manage initializing the message from an existing draft
     useEffect(() => {
-        const firstInitialization =
-            !syncInProgress && modelMessage.plainText === undefined && modelMessage.document === undefined;
+        const firstInitialization = !modelMessage.initialized && syncedMessage.initialized;
 
         if (firstInitialization) {
             const isOpenFromUndo = syncedMessage.openDraftFromUndo === true;
@@ -217,8 +218,9 @@ const Composer = (
                 ...syncedMessage,
                 ...modelMessage,
                 document: syncedMessage.document,
-                messageImages: syncedMessage.messageImages,
                 plainText: syncedMessage.plainText,
+                messageImages: syncedMessage.messageImages,
+                initialized: true,
                 data: {
                     ...syncedMessage.data,
                     ...password,
@@ -228,7 +230,7 @@ const Composer = (
             setModelMessage(newModelMessage);
             void reloadSendInfo(messageSendInfo, newModelMessage);
         }
-    }, [syncInProgress, syncedMessage.document, syncedMessage.plainText]);
+    }, [syncInProgress, syncedMessage.document, syncedMessage.plainText, syncedMessage.initialized]);
 
     const timeoutRef = useRef(0);
 
@@ -403,10 +405,10 @@ const Composer = (
             void uploadInitialAttachments();
         }
 
-        if (editorReady && !syncInProgress && !attachmentToUpload) {
+        if (editorReady && syncedMessage.initialized && !attachmentToUpload) {
             setOpening(false);
         }
-    }, [editorReady, syncInProgress, syncedMessage.data]);
+    }, [editorReady, syncedMessage.data, syncedMessage.initialized]);
 
     useEffect(() => {
         if (uploadInProgress) {
