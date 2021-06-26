@@ -76,6 +76,16 @@ a {
 	}
 }
 
+@supports selector(:focus-visible) {
+	// had to do this because of Safari
+	a,
+	button {
+		&:focus:not(:focus-visible) {
+			outline: 0;
+		}
+	}
+}
+
 /* it depends, it exceeds (french joke) */
 %reset-responsive-height-max-width {
 	height: auto;

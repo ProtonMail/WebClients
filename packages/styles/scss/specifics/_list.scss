@@ -416,7 +416,8 @@ $item-container-row-height-compact-mode: rem(40) !default;
 }
 
 .starbutton {
-	&:focus,
+	// no focus state, only focus-visible
+	&:focus-visible,
 	&:hover,
 	&--is-starred {
 		color: var(--favorite-icon-color);
