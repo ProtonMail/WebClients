@@ -12,8 +12,8 @@
 			}
 
 			@include respond-to($breakpoint-small) {
-				width: 1.75em;
-				height: 1.75em;
+				inline-size: 1.75em;
+				block-size: 1.75em;
 			}
 		}
 
@@ -44,7 +44,7 @@
 	}
 
 	&-gridcells {
-		border-bottom: $calendar-grid-border;
+		border-block-end: $calendar-grid-border;
 	}
 
 	&-dayLine,
@@ -59,56 +59,56 @@
 
 	&-dayLine {
 		&::after {
-			height: 100%;
-			margin-left: -1px;
-			border-left: $calendar-grid-border;
+			block-size: 100%;
+			margin-inline-start: -1px;
+			border-inline-start: $calendar-grid-border;
 		}
 	}
 
 	&-hourLine {
-		height: $calendar-hour-height;
+		block-size: $calendar-hour-height;
 
 		&::after {
-			width: 100%;
-			margin-top: -1px;
-			border-bottom: $calendar-grid-border;
+			inline-size: 100%;
+			margin-block-start: -1px;
+			border-block-end: $calendar-grid-border;
 		}
 	}
 
 	&-gridcell {
-		margin-right: $calendar-gridcell-margin;
+		margin-inline-end: $calendar-gridcell-margin;
 
 		&::after {
-			border-left: $calendar-grid-border;
-			height: 100%;
-			margin-left: -1px;
+			border-inline-start: $calendar-grid-border;
+			block-size: 100%;
+			margin-inline-start: -1px;
 		}
 	}
 
 	&-nowHourLine {
 		z-index: 6;
-		left: 0;
-		right: -$calendar-gridcell-margin;
-		border-bottom: 2px solid var(--primary);
+		inset-inline-start: 0;
+		inset-inline-end: -$calendar-gridcell-margin;
+		border-block-end: 2px solid var(--primary);
 
 		&::before {
 			content: '';
 			position: absolute;
-			top: rem(-3);
-			left: rem(-4);
-			width: rem(7);
-			height: rem(7);
+			inset-block-start: rem(-3);
+			inset-inline-start: rem(-4);
+			inline-size: rem(7);
+			block-size: rem(7);
 			border-radius: 50%;
 			background-color: var(--primary);
 		}
 	}
 
 	&-timeBlock {
-		height: $calendar-hour-height;
+		block-size: $calendar-hour-height;
 	}
 
 	&-timeText {
-		top: rem(-10);
+		inset-block-start: rem(-10);
 		font-size: rem(10);
 	}
 }

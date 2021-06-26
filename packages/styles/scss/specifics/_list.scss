@@ -7,16 +7,22 @@
 $container-to-width: 3em !default;
 
 .items-column-list {
-	width: var(
+	inline-size: var(
 		--width-conversation-column,
 		calc((100% + var(--width-sidebar, #{rem($width-sidebar)})) * #{math.div($conversations-column-width, 100%)})
 	);
 }
 
+// trick to have proper direction on react virtual lists
+.ReactVirtualized__Grid,
+.ReactVirtualized__List {
+	direction: inherit !important;
+}
+
 .items-column-list-inner,
 .ReactVirtualized__Grid__innerScrollContainer {
-	border-right: 1px solid var(--border-weak);
-	min-height: 100%;
+	border-inline-end: 1px solid var(--border-weak);
+	min-block-size: 100%;
 }
 
 .items-column-list-inner--no-border {
@@ -25,13 +31,13 @@ $container-to-width: 3em !default;
 }
 
 .items-column-list--mobile {
-	width: 100%;
+	inline-size: 100%;
 }
 
 .items-column-list,
 .items-column-list--mobile,
 .view-column-detail {
-	height: 100%;
+	block-size: 100%;
 }
 
 .view-column-detail,
@@ -41,8 +47,8 @@ $container-to-width: 3em !default;
 }
 
 $item-container-height: rem(64) !default;
-$item-container-padding-top-bottom: em(8.5) !default;
-$item-container-padding-left-right: em(12) !default;
+$item-container-padding-block: em(8.5) !default;
+$item-container-padding-inline: em(12) !default;
 
 $item-container-height-compact-mode: rem(48) !default;
 $item-container-row-height-compact-mode: rem(40) !default;
@@ -51,9 +57,10 @@ $item-container-row-height-compact-mode: rem(40) !default;
 .item-container-row {
 	@extend %appearing-container;
 	position: relative;
-	padding: $item-container-padding-top-bottom $item-container-padding-left-right; // design wants ~64 height
-	border-bottom: 1px solid var(--border-weak);
-	scroll-margin-top: $item-container-height;
+	padding-block: $item-container-padding-block; // design wants ~64 height
+	padding-inline: $item-container-padding-inline;
+	border-block-end: 1px solid var(--border-weak);
+	scroll-margin-block-start: $item-container-height;
 
 	// no transition, otherwhise there's a flash on page loading
 	// because of theme file loading after applying default theme colors
@@ -61,14 +68,11 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	&::after {
 		content: '';
 		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
+		inset: 0;
 		z-index: 1;
 		pointer-events: none;
 		transition: 0.15s easing(easeOutQuart);
-		border-left: 5px solid transparent;
+		border-inline-start: 5px solid transparent;
 	}
 
 	&:focus {
@@ -109,7 +113,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 
 	&:focus::after,
 	&.item-is-focused::after {
-		border-left-color: var(--email-item-focus-marker-color);
+		border-inline-start-color: var(--email-item-focus-marker-color);
 	}
 
 	&.item-is-selected,
@@ -120,7 +124,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 
 		&:focus::after,
 		&.item-is-focused::after {
-			border-left-color: var(--email-item-selected-focus-marker-color);
+			border-inline-start-color: var(--email-item-selected-focus-marker-color);
 		}
 
 		.item-icon {
@@ -142,7 +146,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 }
 
 .item-container {
-	height: $item-container-height;
+	block-size: $item-container-height;
 }
 
 .item-checkbox-label {
@@ -156,20 +160,20 @@ $item-container-row-height-compact-mode: rem(40) !default;
 
 	// fix for Firefox multi-selection issue
 	& > .item-checkbox {
-		width: 100%;
-		height: 100%;
+		inline-size: 100%;
+		block-size: 100%;
 		z-index: 1;
 	}
 }
 
 .item-firstline,
 .item-secondline {
-	height: em(20);
+	block-size: em(20);
 	line-height: calc(20 * 1.5 / 21);
 }
 
 .item-secondline:empty {
-	min-height: 1.5em;
+	min-block-size: 1.5em;
 }
 
 /* Compact view */
@@ -188,20 +192,21 @@ $item-container-row-height-compact-mode: rem(40) !default;
 .list-compact {
 	.item-container,
 	.item-container-row {
-		height: $item-container-height-compact-mode;
-		scroll-margin-top: $item-container-height-compact-mode;
+		block-size: $item-container-height-compact-mode;
+		scroll-margin-block-start: $item-container-height-compact-mode;
 
 		.item-container-inner {
-			padding: em(0) em(12);
+			padding-block: em(0);
+			padding-inline: em(12);
 		}
 	}
 
 	.item-container-row {
-		height: $item-container-row-height-compact-mode;
-		scroll-margin-top: $item-container-row-height-compact-mode;
+		block-size: $item-container-row-height-compact-mode;
+		scroll-margin-block-start: $item-container-row-height-compact-mode;
 		.item-icon-compact {
 			&::after {
-				height: $item-container-row-height-compact-mode;
+				block-size: $item-container-row-height-compact-mode;
 			}
 		}
 	}
@@ -242,10 +247,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		&::before {
 			content: '';
 			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
+			inset: 0;
 			z-index: 1;
 			border-radius: var(--border-radius-medium);
 			background-color: currentColor;
@@ -270,42 +272,42 @@ $item-container-row-height-compact-mode: rem(40) !default;
 
 	.item-senders {
 		&::before {
-			width: 35%;
+			inline-size: 35%;
 		}
 	}
 
 	.item-senddate-col {
-		min-width: 6em;
+		min-inline-size: 6em;
 
 		&::before {
-			width: 100%;
+			inline-size: 100%;
 		}
 	}
 
 	.item-senddate-row {
 		&::before {
-			width: 70%;
+			inline-size: 70%;
 		}
 	}
 
 	.item-weight {
-		min-width: 4em;
+		min-inline-size: 4em;
 
 		&::before {
-			width: 100%;
+			inline-size: 100%;
 		}
 	}
 
 	.item-subject {
 		&::before {
-			width: 60%;
+			inline-size: 60%;
 		}
 	}
 }
 
 .item-icon-compact {
-	width: rem($conversation-icon-size);
-	height: rem($conversation-icon-size);
+	inline-size: rem($conversation-icon-size);
+	block-size: rem($conversation-icon-size);
 	border-radius: 50%;
 	font-size: rem(12);
 	transition: background 0.25s ease;
@@ -317,10 +319,9 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	&::after {
 		content: '';
 		position: absolute;
-		left: -#{em(12)};
-		right: -#{em(12)};
-		top: calc(-1 * (#{$item-container-height-compact-mode} - #{rem($conversation-icon-size)}) / 2);
-		height: $item-container-height-compact-mode;
+		inset-inline: -#{em(12)};
+		inset-block-start: calc(-1 * (#{$item-container-height-compact-mode} - #{rem($conversation-icon-size)}) / 2);
+		block-size: $item-container-height-compact-mode;
 	}
 
 	.checkbox-fakecheck {
@@ -334,10 +335,9 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	&::after {
 		content: '';
 		position: absolute;
-		top: calc(-1 * ((#{$item-container-height} - #{rem($conversation-icon-size)}) / 2));
-		bottom: calc(-1 * ((#{$item-container-height} - #{rem($conversation-icon-size)}) / 2));
-		left: em(-12);
-		width: calc(#{rem($conversation-icon-size)} + #{$item-container-padding-left-right} + #{rem(5)});
+		inset-block: calc(-1 * ((#{$item-container-height} - #{rem($conversation-icon-size)}) / 2));
+		inset-inline-start: em(-12);
+		inline-size: calc(#{rem($conversation-icon-size)} + #{$item-container-padding-inline} + #{rem(5)});
 		// icon size + padding container + tiny margin for comfort
 	}
 
@@ -396,13 +396,12 @@ $item-container-row-height-compact-mode: rem(40) !default;
 .item-container-row {
 	.item-checkbox {
 		&::after {
-			top: -#{$item-container-padding-top-bottom};
-			bottom: -#{$item-container-padding-top-bottom};
+			inset-block: -#{$item-container-padding-block};
 		}
 	}
 
 	.item-weight {
-		min-width: 5em;
+		min-inline-size: 5em;
 	}
 }
 
@@ -412,7 +411,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 }
 
 .message-header-metas-container {
-	height: rem($conversation-icon-size);
+	block-size: rem($conversation-icon-size);
 }
 
 .starbutton {
@@ -426,7 +425,8 @@ $item-container-row-height-compact-mode: rem(40) !default;
 
 .pill-icon {
 	display: inline-flex;
-	padding: 0.125em 0.5em;
+	padding-block: 0.125em;
+	padding-inline: 0.5em;
 	border-radius: 1em;
 	line-height: 1;
 }

@@ -1,19 +1,19 @@
 .calendar-daygrid {
-	min-height: rem(410);
+	min-block-size: rem(410);
 
 	&-weeknumber {
-		border-bottom: $calendar-grid-border;
-		border-right: $calendar-grid-border;
+		border-block-end: $calendar-grid-border;
+		border-inline-end: $calendar-grid-border;
 		background-color: var(--background-weak);
 
 		&-width {
-			width: rem(25);
+			inline-size: rem(25);
 		}
 	}
 
 	&-row,
 	&-days {
-		border-bottom: $calendar-grid-border;
+		border-block-end: $calendar-grid-border;
 	}
 
 	&-day {
@@ -25,13 +25,10 @@
 
 	&-columns {
 		position: absolute;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		right: 0;
+		inset: 0;
 	}
 
 	&-column {
-		border-right: $calendar-grid-border;
+		border-inline-end: $calendar-grid-border;
 	}
 }

@@ -10,12 +10,12 @@
 
 	&-list-container {
 		@include respond-to($breakpoint-small, 'max') {
-			min-height: 5em;
+			min-block-size: 5em;
 		}
 
 		@include respond-to($breakpoint-small, 'min') {
-			max-width: 20em;
-			max-height: 15em;
+			max-inline-size: 20em;
+			max-block-size: 15em;
 		}
 	}
 }

@@ -20,10 +20,7 @@ $modal-tiny-width: em(288) !default;
 /* overlay covers everything */
 .modal-overlay {
 	position: fixed;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
+	inset: 0;
 	background: var(--backdrop-norm);
 	z-index: 666;
 	animation: anime-modal-overlay-in ease 0.5s 1 normal;
@@ -31,10 +28,7 @@ $modal-tiny-width: em(288) !default;
 
 .modal-container {
 	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
+	inset: 0;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -43,18 +37,18 @@ $modal-tiny-width: em(288) !default;
 
 	/* for very large inputs in modals, like rich text editor */
 	.field-container--full {
-		width: calc(100% - var(--label-width, #{$label-width}));
+		inline-size: calc(100% - var(--label-width, #{$label-width}));
 
 		@include respond-to(1360) {
-			width: $field-container;
+			inline-size: $field-container;
 		}
 
 		@include respond-to(830) {
-			width: calc(100% - var(--label-width, #{$label-width}));
+			inline-size: calc(100% - var(--label-width, #{$label-width}));
 		}
 
 		@include respond-to($breakpoint-small) {
-			width: 100%;
+			inline-size: 100%;
 		}
 	}
 }
@@ -90,9 +84,9 @@ $modal-tiny-width: em(288) !default;
 
 .modal {
 	position: relative;
-	width: $modal-max-width;
-	max-height: $modal-max-height;
-	max-width: $modal-max-width;
+	inline-size: $modal-max-width;
+	max-block-size: $modal-max-height;
+	max-inline-size: $modal-max-width;
 	background: var(--background-norm);
 	color: var(--text-norm);
 	padding: 0;
@@ -138,45 +132,45 @@ $modal-tiny-width: em(288) !default;
 }
 
 .modal--auto {
-	width: auto;
+	inline-size: auto;
 }
 
 .modal--intermediate {
-	width: $modal-intermediate-width;
+	inline-size: $modal-intermediate-width;
 }
 
 .modal--smaller {
-	width: $modal-smaller-width;
+	inline-size: $modal-smaller-width;
 }
 .modal--tiny {
-	width: $modal-tiny-width;
+	inline-size: $modal-tiny-width;
 	border-radius: var(--border-radius-large);
 }
 
 .modal--wider {
-	width: $modal-wider-width;
-	max-width: $modal-wider-max-width;
+	inline-size: $modal-wider-width;
+	max-inline-size: $modal-wider-max-width;
 }
 
 .modal--full {
-	width: $modal-full-dimension;
-	max-width: $modal-full-dimension;
-	height: $modal-full-dimension;
-	max-height: $modal-full-dimension;
+	inline-size: $modal-full-dimension;
+	max-inline-size: $modal-full-dimension;
+	block-size: $modal-full-dimension;
+	max-block-size: $modal-full-dimension;
 	margin: 1%;
 }
 
 .modal--height-auto {
-	height: auto;
-	max-height: $modal-full-dimension;
-	margin-top: 1%;
-	margin-bottom: 1%;
+	block-size: auto;
+	max-block-size: $modal-full-dimension;
+	margin-block-start: 1%;
+	margin-block-end: 1%;
 }
 
 .modal-close {
 	position: absolute;
-	right: 0;
-	top: 0;
+	inset-block-start: 0;
+	inset-inline-end: 0;
 	@extend .flex;
 	overflow: hidden;
 	font-size: 1.25em;
@@ -191,14 +185,6 @@ $modal-tiny-width: em(288) !default;
 // .modal-close:hover,
 // .modal-close:active {
 // }
-@if $rtl-option==true {
-	[dir='rtl'] {
-		.modal-close {
-			left: rem(5);
-			right: auto;
-		}
-	}
-}
 
 .modal-content {
 	display: flex;
@@ -209,7 +195,8 @@ $modal-tiny-width: em(288) !default;
 }
 
 .modal-header {
-	padding: rem(30) rem(30) rem(15) rem(30);
+	padding-block: rem(30) rem(15);
+	padding-inline: rem(30);
 	flex: 0;
 	flex-shrink: 0;
 }
@@ -217,28 +204,29 @@ $modal-tiny-width: em(288) !default;
 .modal-title {
 	font-size: rem(22);
 	line-height: 1.5;
-	margin-bottom: 0;
+	margin-block-end: 0;
 }
 
 .modal-footer {
-	padding: rem(15) rem(30) rem(30);
+	padding-block: rem(15) rem(30);
+	padding-inline: rem(30);
 	flex: 0;
 	flex-shrink: 0;
 
 	[class*='button'] {
 		// only for Safari the ugly
-		min-height: rem(34);
+		min-block-size: rem(34);
 	}
 
 	// single button on right
 	[class*='button']:only-child {
-		margin-left: auto;
+		margin-inline-start: auto;
 	}
 
 	// for vertically displayed buttons
 	&.flex-column {
 		[class*='button'] + [class*='button'] {
-			margin-top: 0.5em;
+			margin-block-start: 0.5em;
 		}
 	}
 }
@@ -248,16 +236,17 @@ $modal-tiny-width: em(288) !default;
 	overflow-x: hidden;
 	overflow-y: auto;
 	flex: 1 1 auto;
-	padding: 0 rem(30);
+	padding-block: 0;
+	padding-inline: rem(30);
 
 	background: var(--background-norm) no-repeat;
 
 	& > p:first-child {
-		margin-top: 0;
+		margin-block-start: 0;
 	}
 
 	& > p:last-child {
-		margin-bottom: 0;
+		margin-block-end: 0;
 	}
 }
 
@@ -265,41 +254,32 @@ $modal-tiny-width: em(288) !default;
 $label-shorter-width: 10em !default;
 
 .modal--shorter-labels .label {
-	width: var(--label-shorter-width, $label-shorter-width);
+	inline-size: var(--label-shorter-width, $label-shorter-width);
 }
 
 @include respond-to($breakpoint-small) {
 	.modal--shorter-labels .on-mobile-flex-column .label {
-		width: 100%;
+		inline-size: 100%;
 	}
 }
 
 // modal with title visually hidden
 .modal-header--no-title {
-	padding-top: rem(20);
-}
-
-@if $rtl-option==true {
-	[dir='rtl'] {
-		.modal-footer [class*='button']:only-child {
-			margin-right: auto;
-			margin-left: 0;
-		}
-	}
+	padding-block-start: rem(20);
 }
 
 @media (max-height: $breakpoint-low-height-modal) {
 	.modal {
-		max-height: $modal-full-dimension;
+		max-block-size: $modal-full-dimension;
 	}
 
 	.modal-footer {
-		padding-bottom: rem(10);
+		padding-block-end: rem(10);
 	}
 
 	.modal-header {
-		padding-top: rem(10);
-		padding-bottom: rem(5);
+		padding-block-start: rem(10);
+		padding-block-end: rem(5);
 	}
 }
 
@@ -307,22 +287,21 @@ $label-shorter-width: 10em !default;
 @media (max-width: $modal-breakpoint-width) {
 	.modal:not(.modal--tiny) {
 		margin: 1%;
-		min-width: 0;
-		width: 98%;
-		max-width: 98%;
-		max-height: 98%;
+		min-inline-size: 0;
+		inline-size: 98%;
+		max-inline-size: 98%;
+		max-block-size: 98%;
 		align-self: center;
 	}
 	.modal--tiny {
-		max-width: 95%;
-		max-height: 95%;
+		max-inline-size: 95%;
+		max-block-size: 95%;
 	}
 }
 
 @include respond-to($breakpoint-large, 'min') {
 	.modal--full {
-		max-width: $modal-full-max-width;
-		margin-left: auto;
-		margin-right: auto;
+		max-inline-size: $modal-full-max-width;
+		margin-inline: auto;
 	}
 }

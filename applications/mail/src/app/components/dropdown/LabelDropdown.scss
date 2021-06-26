@@ -1,23 +1,23 @@
 @import '~@proton/styles/scss/config';
 
 .label-dropdown {
-    .dropdown-content {
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: flex-start;
-        align-items: stretch;
-    }
+	.dropdown-content {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: flex-start;
+		align-items: stretch;
+	}
 
-    &-list-container {
-        flex: 1 1 auto;
+	&-list-container {
+		flex: 1 1 auto;
 
-        @include respond-to($breakpoint-small, 'min') {
-            max-width: 20em;
-            max-height: 12em;
-        }
+		@include respond-to($breakpoint-small, 'min') {
+			max-inline-size: 20em;
+			max-block-size: 12em;
+		}
 
-        .checkbox-fakecheck {
-            margin-right: 0;
-        }
-    }
+		.checkbox-fakecheck {
+			margin-inline-end: 0;
+		}
+	}
 }

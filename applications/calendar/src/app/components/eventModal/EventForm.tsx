@@ -171,14 +171,15 @@ const EventForm = ({
     );
 
     const descriptionRow = (
-        <IconRow icon="align-left" title={c('Label').t`Description`} id={DESCRIPTION_INPUT_ID}>
+        <IconRow icon="align-left" iconClassName="on-rtl-mirror" title={c('Label').t`Description`} id={DESCRIPTION_INPUT_ID}>
             <TextArea
                 id={DESCRIPTION_INPUT_ID}
                 minRows={2}
                 autoGrow
                 placeholder={c('Placeholder').t`Add description`}
                 maxLength={MAX_LENGTHS.EVENT_DESCRIPTION}
-                style={{ maxHeight: textareaMaxHeight }}
+                style={{ '--max-height-custom': `${textareaMaxHeight}px` }}
+                className="max-h-custom"
                 title={c('Title').t`Add more information related to this event`}
                 {...createHandlers({ model, setModel, field: 'description' }).native}
             />

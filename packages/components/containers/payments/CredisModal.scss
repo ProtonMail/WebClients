@@ -1,12 +1,12 @@
 @import '~@proton/styles/scss/config';
 
 .credits-modal .field-container.payment-right {
-	width: 70%;
+	inline-size: 70%;
 }
 
 @include respond-to($breakpoint-small) {
 	.credits-modal .label.payment-left,
 	.credits-modal .field-container.payment-right {
-		width: 100%;
+		inline-size: 100%;
 	}
 }

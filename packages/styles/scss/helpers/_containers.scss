@@ -16,29 +16,29 @@
 
 @each $placement in (top, right, bottom, left) {
 	.border-#{$placement} {
-		border-#{$placement}: 1px solid var(--border-norm);
+		border-#{placement-to-logical($placement)}: 1px solid var(--border-norm);
 
 		&--weak {
-			border-#{$placement}: 1px solid var(--border-weak);
+			border-#{placement-to-logical($placement)}: 1px solid var(--border-weak);
 		}
 
 		&--dashed {
-			border-#{$placement}-style: dashed;
+			border-#{placement-to-logical($placement)}-style: dashed;
 		}
 
 		&--currentColor {
-			border-#{$placement}-color: currentColor;
+			border-#{placement-to-logical($placement)}-color: currentColor;
 		}
 	}
 }
 
 .border-bottom-children {
 	> * {
-		border-bottom: 1px solid var(--border-norm);
+		border-block-end: 1px solid var(--border-norm);
 	}
 	&--not-last {
 		& > :last-child {
-			border-bottom: 0;
+			border-block-end: 0;
 		}
 	}
 }
@@ -73,14 +73,14 @@ $breakpoint-2-columns: 1180 !default;
 		flex-direction: column;
 
 		& > * {
-			margin-bottom: 1em;
-			width: 100%;
+			margin-block-end: 1em;
+			inline-size: 100%;
 			flex-basis: auto;
 		}
 	}
 
 	.boxes-placeholder-button {
-		margin-top: 0;
+		margin-block-start: 0;
 	}
 }
 
@@ -105,11 +105,11 @@ $breakpoint-2-columns: 1180 !default;
 }
 
 .rounded0-left {
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
+	border-start-start-radius: 0;
+	border-end-start-radius: 0;
 }
 
 .rounded0-right {
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
+	border-start-end-radius: 0;
+	border-end-end-radius: 0;
 }

@@ -3,23 +3,21 @@ $height-wizard: rem(6) !default;
 $size-current-pin: rem(16) !default;
 
 .wizard {
-	height: $height-wizard;
+	block-size: $height-wizard;
 	display: flex;
 
 	&-container {
-		padding-left: rem(
-			2
-		); // "optical" alignment, difficult to align text and circle ^^
+		padding-inline-start: rem(2); // "optical" alignment, difficult to align text and circle ^^
 	}
 
 	&-marker {
 		display: flex;
-		width: $size-current-pin;
-		height: $size-current-pin;
-		margin-left: -1px; // trick for high zoom level ^^
+		inline-size: $size-current-pin;
+		block-size: $size-current-pin;
+		margin-inline-start: -1px; // trick for high zoom level ^^
 		border-radius: 50%;
 		position: relative;
-		top: -#{$height-wizard - rem(1)};
+		inset-block-start: -#{$height-wizard - rem(1)};
 		background-image: radial-gradient(
 			circle,
 			var(--primary) 0,
@@ -47,8 +45,7 @@ $size-current-pin: rem(16) !default;
 			background-image: linear-gradient(
 				to left,
 				var(--background-strong) 0,
-				var(--background-strong)
-					calc(100% - #{math.div($height-wizard, 2)}),
+				var(--background-strong) calc(100% - #{math.div($height-wizard, 2)}),
 				transparent calc(100% - #{math.div($height-wizard, 2)})
 			);
 		}
@@ -71,7 +68,7 @@ $size-current-pin: rem(16) !default;
 			.wizard-marker {
 				background-color: var(--primary);
 				position: relative;
-				top: -#{$height-wizard - rem(1)};
+				inset-block-start: -#{$height-wizard - rem(1)};
 			}
 		}
 
@@ -95,23 +92,11 @@ $size-current-pin: rem(16) !default;
 			content: '';
 			position: relative;
 			display: block;
-			width: 100%;
-			height: $height-wizard;
-			top: -$size-current-pin;
+			inline-size: 100%;
+			block-size: $height-wizard;
+			inset-block-start: -$size-current-pin;
 			background-color: var(--primary);
 		}
-
-		// &[aria-current='step'] &-inner {
-		// 	position: absolute;
-		// 	top: 0;
-		// 	left: 0;
-		// 	font-size: rem(20);
-		// 	font-weight: bold;
-		// }
-
-		// &:not([aria-current]) &-inner {
-		// 	@extend .invisible;
-		// }
 	}
 
 	&-container--no-text-displayed &-item[aria-current='step'] &-item-inner {
@@ -123,10 +108,10 @@ $size-current-pin: rem(16) !default;
 		text-align: center;
 
 		&:first-child {
-			text-align: left;
+			text-align: start;
 		}
 		&:last-child {
-			text-align: right;
+			text-align: end;
 		}
 
 		&.is-complete {

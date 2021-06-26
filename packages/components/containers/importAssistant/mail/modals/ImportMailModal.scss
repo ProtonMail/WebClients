@@ -1,12 +1,12 @@
 @import '~@proton/styles/scss/config';
 
 .modal.import-modal {
-	width: 100%;
-	max-width: rem(1200);
-	max-height: 90%;
+	inline-size: 100%;
+	max-inline-size: rem(1200);
+	max-block-size: 90%;
 }
 
 .modal.customize-import-modal {
-	max-width: rem(840);
-	width: 100%;
+	max-inline-size: rem(840);
+	inline-size: 100%;
 }

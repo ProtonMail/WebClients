@@ -62,7 +62,7 @@ const DateCursorButtons = ({ view, range, currentDate, now, dateRange, onToday, 
             <button
                 type="button"
                 data-test-id="calendar-toolbar:previous"
-                className="toolbar-button flex-item-noshrink"
+                className="toolbar-button flex-item-noshrink on-rtl-mirror"
                 title={previous}
                 onClick={onPrev}
             >
@@ -72,7 +72,7 @@ const DateCursorButtons = ({ view, range, currentDate, now, dateRange, onToday, 
             <button
                 type="button"
                 data-test-id="calendar-toolbar:next"
-                className="toolbar-button flex-item-noshrink"
+                className="toolbar-button flex-item-noshrink on-rtl-mirror"
                 title={next}
                 onClick={onNext}
             >

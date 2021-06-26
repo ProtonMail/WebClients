@@ -200,7 +200,7 @@ const SwitchAccountContainer = ({ toApp, onLogin, activeSessions, onAddAccount, 
                 subTitle={toAppName ? c('Info').t`to continue to ${toAppName}` : undefined}
             />
             <Content>
-                <div className="scroll-if-needed" style={{ maxHeight: '20em' }}>
+                <div className="scroll-if-needed max-h-custom" style={{ '--max-height-custom': '20em' }}>
                     {inner()}
                 </div>
                 <div className="flex">

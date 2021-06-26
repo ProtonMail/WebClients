@@ -21,17 +21,17 @@
 
 	&-is-loading &-header {
 		&::before {
-			width: 25%;
+			inline-size: 25%;
 
 			@include respond-to($breakpoint-small) {
-				width: 50%;
+				inline-size: 50%;
 			}
 		}
 	}
 
 	&-is-loading &-stat {
 		&::before {
-			width: 2em;
+			inline-size: 2em;
 		}
 	}
 
@@ -96,44 +96,44 @@
 	}
 
 	&.is-loading .message-recipient-item-label {
-		width: 100%;
-		max-width: 7.5em;
+		inline-size: 100%;
+		max-inline-size: 7.5em;
 
 		&::before {
-			width: 100%;
+			inline-size: 100%;
 		}
 	}
 
 	&.is-loading .message-recipient-item-address {
-		width: 100%;
-		max-width: 12.5em;
+		inline-size: 100%;
+		max-inline-size: 12.5em;
 
 		&::before {
-			width: 100%;
+			inline-size: 100%;
 		}
 	}
 
 	&.is-loading &-metas {
 		&::before {
-			width: 10em;
+			inline-size: 10em;
 		}
 	}
 
 	&.is-loading &-to {
 		&::before {
-			width: 1.25em;
+			inline-size: 1.25em;
 		}
 	}
 
 	&.is-loading &-contact {
 		&::before {
-			width: 7.5em;
+			inline-size: 7.5em;
 		}
 	}
 
 	&.is-loading .message-show-hide-link-container {
 		&::before {
-			width: 6em;
+			inline-size: 6em;
 		}
 	}
 }
@@ -145,7 +145,8 @@
 
 // when expanded but no full details
 .message-header-expanded {
-	padding: 0.6em 0.6em 0;
+	padding-block: 0.6em 0;
+	padding-inline: 0.6em;
 
 	.message-show-hide-link {
 		padding: 0;
@@ -155,7 +156,7 @@
 // alignements when expanded/details
 .message-header--showDetails {
 	.message-show-hide-link-container {
-		padding-left: calc(#{$container-to-width} + #{($conversation-icon-size)} + 0.75em);
+		padding-inline-start: calc(#{$container-to-width} + #{($conversation-icon-size)} + 0.75em);
 	}
 
 	// show/hide details should go below otherwise it will be strangely place depending of recipients
@@ -163,20 +164,20 @@
 		flex-direction: column;
 
 		& > * {
-			width: 100%;
+			inline-size: 100%;
 			flex-basis: auto;
 		}
 	}
 
 	.message-recipient-item-expanded {
-		margin-top: 0.25em;
+		margin-block-start: 0.25em;
 
 		@include respond-to($breakpoint-small) {
-			margin-top: 0.5em;
+			margin-block-start: 0.5em;
 		}
 
 		.message-recipient-item:not(:first-child) {
-			margin-top: 0.25em;
+			margin-block-start: 0.25em;
 		}
 	}
 
@@ -193,7 +194,7 @@
 	.message-recipient-item-lockIcon::before {
 		@include respond-to($breakpoint-small) {
 			content: '\00a0';
-			width: 100%;
+			inline-size: 100%;
 		}
 	}
 }
@@ -207,9 +208,9 @@
 /* states classes */
 .message-container.is-opened {
 	& > .message-header {
-		border-bottom: 1px solid var(--border-norm);
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 0;
+		border-block-end: 1px solid var(--border-norm);
+		border-end-start-radius: 0;
+		border-end-end-radius: 0;
 		color: var(--text-norm);
 	}
 }
@@ -249,13 +250,14 @@
 		&::before {
 			@extend %item-loading-pseudo;
 			@extend %placeholder-loading;
-			width: 100%;
+			inline-size: 100%;
 		}
 	}
 }
 
 .message-expand {
-	padding: 0 0.5em 0.6em; // centers
+	padding-block: 0 0.6em; // centers
+	padding-inline: 0.5em;
 	background-color: var(--background-weak);
 	line-height: 0.75;
 }
@@ -265,7 +267,7 @@
 }
 
 .container-to {
-	min-width: $container-to-width;
+	min-inline-size: $container-to-width;
 
 	.item-icon {
 		&:focus,

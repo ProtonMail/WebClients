@@ -1,7 +1,7 @@
 /* fix bug on Chrome */
 body {
 	@extend .no-scroll;
-	height: 100%;
+	block-size: 100%;
 }
 
 @include respond-to($breakpoint-large, 'min') {
@@ -15,15 +15,12 @@ body {
 html,
 .app-root,
 .content-container {
-	height: 100%;
+	block-size: 100%;
 }
 
 .app-root-loader {
 	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	inset: 0;
 	// Static because css variables can't be reached on that components
 	background: #1c223d;
 	color: white;
@@ -31,10 +28,7 @@ html,
 
 .app-noscript {
 	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	inset: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -51,23 +45,16 @@ html,
 }
 
 .header {
-	padding: rem(10) rem(15) rem(10) 0;
-	height: rem($header-height);
+	padding-block: rem(10);
+	padding-inline: 0 rem(15);
+	block-size: rem($header-height);
 	flex-shrink: 0;
 	background-color: var(--header-background-color);
 	color: var(--header-text-color, var(--text-norm));
 }
 
-@if $rtl-option==true {
-	[dir='rtl'] {
-		.header {
-			padding: rem(10) 0 rem(10) rem(15);
-		}
-	}
-}
-
 .sidebar {
-	width: var(--width-sidebar, #{rem($width-sidebar)});
+	inline-size: var(--width-sidebar, #{rem($width-sidebar)});
 	visibility: visible;
 	transition: visibility 0s ease, transform 1s ease, width 0.6s ease, opacity 1s ease;
 	transition-delay: 0s;
@@ -77,15 +64,12 @@ html,
 
 	@include respond-to($breakpoint-small) {
 		position: fixed;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		top: 0;
+		inset: 0;
 		z-index: 500;
-		width: 100%;
-		max-width: 100%;
-		max-height: none;
-		padding-top: 1em;
+		inline-size: 100%;
+		max-inline-size: 100%;
+		max-block-size: none;
+		padding-block-start: 1em;
 		transform-origin: 0 50%;
 		transition: 0s visibility ease, 0.25s transform ease;
 		transition-delay: 0s;
@@ -103,28 +87,30 @@ html,
 }
 
 .logo-container {
-	padding: 0 1em;
-	width: var(--width-sidebar, #{rem($width-sidebar)});
+	padding-block: 0;
+	padding-inline: 1em;
+	inline-size: var(--width-sidebar, #{rem($width-sidebar)});
 }
 
 .logo-link {
 	@extend .interactive;
 
 	position: relative;
-	padding: 0.875em 0.5em 1.125em;
+	padding-block: 0.875em 1.125em;
+	padding-inline: 0.5em;
 	box-sizing: initial;
 
 	.plan {
 		position: absolute;
-		bottom: 0.5em;
-		left: rem(32);
+		inset-block-end: 0.5em;
+		inset-inline-start: rem(32);
 		font-size: rem(10);
 		line-height: 1;
 	}
 }
 
 .logo {
-	height: rem(22);
+	block-size: rem(22);
 }
 
 .logo g {
@@ -134,34 +120,30 @@ html,
 .hamburger {
 	@include respond-to($breakpoint-small) {
 		flex-shrink: 0; // this has to stay
-		margin-right: 0.1em; // just for not touching the text on hover state :)
+		margin-inline-end: 0.1em; // just for not touching the text on hover state :)
 	}
 }
 
 .topnav-container {
 	@include respond-to($breakpoint-small) {
 		flex-shrink: 0; // this has to stay
-		margin-left: auto; // case of mail display
+		margin-inline-start: auto; // case of mail display
 	}
 }
 
 .main {
 	overflow: hidden;
-	border-top-left-radius: 4px;
+	border-start-start-radius: 4px;
 	border: solid var(--main-border-color);
-	border-width: 1px 0 0 1px;
+	border-block-start-width: 1px;
+	border-block-end-width: 0;
+	border-inline-start-width: 1px;
+	border-inline-end-width: 0;
 	box-shadow: var(--main-box-shadow);
 
 	@include respond-to($breakpoint-small) {
-		margin-right: 0;
+		margin-inline-end: 0;
 		border-radius: 0;
-	}
-
-	@if $rtl-option==true {
-		[dir='rtl'] & {
-			border-top-left-radius: 0;
-			border-top-right-radius: 4px;
-		}
 	}
 }
 
@@ -185,29 +167,29 @@ $height-for-tablet: 5em !default;
 $height-for-mobile: 8em !default;
 
 .main-area--padding-fix {
-	padding-bottom: $height-for-tablet;
+	padding-block-end: $height-for-tablet;
 }
 
 .main-area-content--padding-fix::after {
 	content: '';
 	display: flex;
-	width: 100%;
-	height: $height-for-tablet;
+	inline-size: 100%;
+	block-size: $height-for-tablet;
 }
 
 @include respond-to($breakpoint-small) {
 	.main-area--padding-fix {
-		padding-bottom: $height-for-mobile;
+		padding-block-end: $height-for-mobile;
 		// thanks Apple for the fixed toolbar at the bottom
 	}
 
 	.main-area-content--padding-fix::after {
-		height: $height-for-mobile;
+		block-size: $height-for-mobile;
 	}
 }
 
 .main-full {
-	height: 100%;
+	block-size: 100%;
 	overflow: auto;
 	background-color: var(--background-norm);
 }
@@ -215,7 +197,7 @@ $height-for-mobile: 8em !default;
 .main-area--no-header {
 	@extend .main-area;
 	//height: 100vh; // create a crazy bug on Safari on VPN
-	max-height: 100%;
+	max-block-size: 100%;
 }
 
 .main-area--with-toolbar--no-header {
@@ -227,5 +209,5 @@ $height-for-mobile: 8em !default;
 }
 
 .main-area--row-mode .items-column-list {
-	width: 100%;
+	inline-size: 100%;
 }

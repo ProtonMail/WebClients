@@ -14,6 +14,8 @@ import {
     getSpecificMaxLength,
     getTrimmedString,
 } from './helper';
+import { classnames } from '../../../helpers';
+import useRightToLeft from "../../../containers/rightToLeft/useRightToLeft";
 import CountrySelect from './CountrySelect';
 
 const usePreviousValue = <T,>(value: T) => {
@@ -109,7 +111,10 @@ const PhoneInput = ({ value: actualValue = '', defaultCountry = 'US', onChange, 
 
     const countries = useMemo(() => getCountries(), []);
     const selectedValue = countries.find((data) => data.countryCode === countryCode);
+    const [isRTL] = useRightToLeft();
 
+    // we force dir="rtl" in all case, because otherwise phone number will be displayed
+    // in reverse in RTL languages, which is not recommended
     return (
         <InputTwo
             {...rest}
@@ -117,6 +122,8 @@ const PhoneInput = ({ value: actualValue = '', defaultCountry = 'US', onChange, 
             value={formattedValueInMode}
             ref={inputRef}
             placeholder={placeholder}
+            dir="ltr"
+            className={classnames([isRTL ? 'text-right' : null])}
             prefix={
                 <CountrySelect
                     value={selectedValue}

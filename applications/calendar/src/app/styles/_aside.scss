@@ -1,27 +1,27 @@
 @import '~@proton/styles/scss/config';
 
 .calendar-aside {
-	width: $calendar-aside-width;
+	inline-size: $calendar-aside-width;
 	font-size: rem(10);
 }
 
 .calendar-primary-timezone-cell,
 .calendar-secondary-timezone-cell {
-	border-bottom: 1px solid var(--border-norm);
+	border-block-end: 1px solid var(--border-norm);
 }
 
 .calendar-secondary-timezone-cell {
-	border-right: 1px solid var(--border-norm);
+	border-inline-end: 1px solid var(--border-norm);
 	background-color: var(--background-weak);
 
 	&--header {
-		border-top: 1px solid var(--border-norm);
-		border-right: 1px solid var(--border-norm);
-		border-top-right-radius: var(--border-radius-medium);
-		border-top-left-radius: var(--border-radius-medium);
+		border-block-start: 1px solid var(--border-norm);
+		border-inline-end: 1px solid var(--border-norm);
+		border-start-end-radius: var(--border-radius-medium);
+		border-start-start-radius: var(--border-radius-medium);
 	}
 }
 
 .sticky-title .calendar-grid-dayLine::after {
-	border-left: 0;
+	border-inline-start: 0;
 }

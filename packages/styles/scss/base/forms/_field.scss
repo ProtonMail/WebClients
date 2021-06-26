@@ -8,7 +8,7 @@
 $field-container: rem(260) !default;
 
 .field-container {
-	width: $field-container;
+	inline-size: $field-container;
 	@extend .max-w100;
 	@extend .inline-block;
 	@extend .relative;
@@ -19,15 +19,15 @@ $field-container: rem(260) !default;
 }
 
 .field {
-	height: rem($default-height-fields);
+	block-size: rem($default-height-fields);
 
 	@at-root {
 		details & {
-			height: auto; // crazy chrome bug in details (share drive modal)
+			block-size: auto; // crazy chrome bug in details (share drive modal)
 		}
 	}
-
-	padding: em(6) em(16); // design want 34px height (actually 35 to avoid .5px)
+	padding-inline: em(16);
+	padding-block: em(6); // design want 34px height (actually 35 to avoid .5px)
 	border-radius: var(--border-radius-medium);
 	border: 1px solid var(--field-norm);
 	background-color: var(--field-background-color);
@@ -36,10 +36,16 @@ $field-container: rem(260) !default;
 	filter: none; // fixes Firefox autofill color
 	transition: 0.15s easing(easeOutQuint), background-position 0s;
 
+	@at-root {
+		details & {
+			block-size: auto;
+		}
+	}
+
 	&.field--tiny,
 	&.field--small,
 	&.field--large {
-		height: auto;
+		block-size: auto;
 	}
 
 	&:hover {
@@ -72,15 +78,15 @@ $field-container: rem(260) !default;
 	}
 
 	&.w100 {
-		width: 100%;
+		inline-size: 100%;
 	}
 
 	&.wauto {
-		width: auto;
+		inline-size: auto;
 	}
 
 	&[type='search'] {
-		padding-left: 2em;
+		padding-inline-start: 2em;
 
 		&::-webkit-search-cancel-button {
 			display: none;
@@ -88,15 +94,15 @@ $field-container: rem(260) !default;
 	}
 
 	&[type='number'] {
-		padding-right: 0.25em;
+		padding-inline-end: 0.25em;
 	}
 
 	&.select {
 		@extend .field;
-		padding-right: rem(6);
+		padding-inline-end: rem(6);
 		.mauto {
 			display: flex;
-			width: 100%;
+			inline-size: 100%;
 		}
 		.mr0-5 {
 			flex: 1 1 0px;
@@ -114,20 +120,10 @@ select:-webkit-autofill {
 	-webkit-text-fill-color: var(--field-text-color) !important;
 }
 
-@if $rtl-option==true {
-	[dir='rtl'] {
-		[type='search'].field {
-			padding-left: 0;
-			padding-right: 2em;
-		}
-	}
-}
-
 select.field {
 	background: var(--select-background-color);
 	background-size: rem(15);
-	padding-left: 1em;
-	padding-right: rem(20);
+	padding-inline: 1em rem(20);
 	text-overflow: ellipsis;
 	overflow: hidden;
 	cursor: pointer;
@@ -147,7 +143,7 @@ select.text-center {
 }
 
 textarea.field {
-	height: auto;
+	block-size: auto;
 }
 
 /* errors */
@@ -165,7 +161,7 @@ textarea.field {
 .field-icon-container:focus-within + .error-zone,
 .field:focus + .error-zone {
 	transform: scaleY(0);
-	max-height: 0;
+	max-block-size: 0;
 }
 
 /* sizes/other modifiers */
@@ -174,11 +170,13 @@ textarea.field {
 }
 
 .field--small {
-	padding: em(2) em(16); // design want 26px height (actually 27 to avoid .5px)
+	padding-block: em(2); // design want 26px height (actually 27 to avoid .5px)
+	padding-inline: em(16);
 }
 
 .field--large {
-	padding: em(10) em(16); // design want 42px height (actually 43 to avoid .5px)
+	padding-block: em(10); // design want 42px height (actually 43 to avoid .5px)
+	padding-inline: em(16);
 }
 
 .field--highlight {
@@ -193,12 +191,12 @@ textarea.field {
 
 	> .field {
 		border: 0;
-		width: calc(100% - 1.5em);
+		inline-size: calc(100% - 1.5em);
 	}
 	&,
 	&-empty {
 		// for drive, to keep the same height
-		min-height: calc(#{rem($default-height-fields)} + 2px);
+		min-block-size: calc(#{rem($default-height-fields)} + 2px);
 	}
 
 	&:focus-within {
@@ -224,12 +222,13 @@ textarea.field {
 /* @protonmail.com field */
 .field--username,
 .sign-layout-container .field--username.field--username {
-	padding-right: var(--padding-right-field-above, 9em);
+	padding-inline-end: var(--padding-right-field-above, 9em);
 }
 
 /* special stupid case for signup iframe challenge... not using same styles for the moment */
 .sign-layout-container {
 	.field--username {
-		padding: em(10) em(16); // design want 42px height (actually 41 to avoid .5px)
+		padding-block: em(10);
+		padding-inline: em(16); // design want 42px height (actually 41 to avoid .5px)
 	}
 }

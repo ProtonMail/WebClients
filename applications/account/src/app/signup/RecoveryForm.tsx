@@ -140,12 +140,13 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
                     e.preventDefault();
                     withLoading(handleSubmit()).catch(noop);
                 }}
+                className="top-custom left-custom"
                 style={
                     model.step === RECOVERY_EMAIL && challengeLoading
                         ? {
                               position: 'absolute',
-                              top: '-1000px',
-                              left: '-1000px',
+                              '--top-custom': '-1000px',
+                              '--left-custom': '-1000px',
                           }
                         : undefined
                 }

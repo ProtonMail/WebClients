@@ -5,13 +5,13 @@
 
 	position: fixed;
 	z-index: 666;
-	min-width: 10em;
-	max-width: 20em;
+	min-inline-size: 10em;
+	max-inline-size: 20em;
 	transform: scale(1);
 	border-radius: var(--border-radius-large);
 	box-shadow: var(--shadow-lifted);
 	border: 1px solid var(--border-norm);
-	text-align: left;
+	text-align: start;
 	word-break: break-word;
 	animation: 0.15s ease-out both anime-spotlight-in;
 
@@ -47,7 +47,8 @@
 	&-inner {
 		position: relative;
 		z-index: 1;
-		padding: 1em 3em 1em 1.5em;
+		padding-block: 1em;
+		padding-inline: 1.5em 3em;
 		border-radius: var(--border-radius-large);
 		background-color: var(--background-norm);
 	}
@@ -57,8 +58,8 @@
 		content: '';
 		position: absolute;
 		z-index: 0;
-		width: $arrow-width;
-		height: $arrow-width;
+		inline-size: $arrow-width;
+		block-size: $arrow-width;
 		transform: rotate(45deg);
 		border: inherit;
 		background-color: var(--background-norm);
@@ -70,7 +71,7 @@
 	&--top-left,
 	&--top-right {
 		&::before {
-			bottom: -#{math.div($arrow-width, 2)};
+			inset-block-end: -#{math.div($arrow-width, 2)};
 		}
 	}
 
@@ -78,7 +79,7 @@
 	&--bottom-left,
 	&--bottom-right {
 		&::before {
-			top: -#{math.div($arrow-width, 2)};
+			inset-block-start: -#{math.div($arrow-width, 2)};
 		}
 	}
 
@@ -86,7 +87,7 @@
 	&--right-top,
 	&--right-bottom {
 		&::before {
-			left: -#{math.div($arrow-width, 2)};
+			inset-inline-start: -#{math.div($arrow-width, 2)};
 		}
 	}
 
@@ -94,56 +95,56 @@
 	&--left-top,
 	&--left-bottom {
 		&::before {
-			right: -#{math.div($arrow-width, 2)};
+			inset-inline-end: -#{math.div($arrow-width, 2)};
 		}
 	}
 
 	&--top,
 	&--bottom {
 		&::before {
-			left: calc(50% - #{math.div($arrow-width, 2)});
+			inset-inline-start: calc(50% - #{math.div($arrow-width, 2)});
 		}
 	}
 
 	&--top-left,
 	&--bottom-left {
 		&::before {
-			left: max(calc(var(--arrow-offset, 0) - #{math.div($arrow-width, 2)}), 0px);
+			inset-inline-start: max(calc(var(--arrow-offset, 0) - #{math.div($arrow-width, 2)}), 0px);
 		}
 	}
 
 	&--top-right,
 	&--bottom-right {
 		&::before {
-			right: max(calc(var(--arrow-offset, 0) - #{math.div($arrow-width, 2)}), 0px);
+			inset-inline-end: max(calc(var(--arrow-offset, 0) - #{math.div($arrow-width, 2)}), 0px);
 		}
 	}
 
 	&--left,
 	&--right {
 		&::before {
-			top: calc(50% - #{math.div($arrow-width, 2)});
+			inset-block-start: calc(50% - #{math.div($arrow-width, 2)});
 		}
 	}
 
 	&--left-top,
 	&--right-top {
 		&::before {
-			top: max(calc(var(--arrow-offset, 0) - #{math.div($arrow-width, 2)}), 0px);
+			inset-block-start: max(calc(var(--arrow-offset, 0) - #{math.div($arrow-width, 2)}), 0px);
 		}
 	}
 
 	&--left-bottom,
 	&--right-bottom {
 		&::before {
-			bottom: max(calc(var(--arrow-offset, 0) - #{math.div($arrow-width, 2)}), 0px);
+			inset-block-end: max(calc(var(--arrow-offset, 0) - #{math.div($arrow-width, 2)}), 0px);
 		}
 	}
 
 	&-close {
 		position: absolute;
-		top: 0.5em;
-		right: 0.5em;
+		inset-block-start: 0.5em;
+		inset-inline-end: 0.5em;
 		z-index: 1;
 	}
 }

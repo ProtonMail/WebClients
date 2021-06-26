@@ -3802,6 +3802,7 @@ __metadata:
     postcss: ^8.3.6
     postcss-color-functional-notation: ^3.0.2
     postcss-loader: ^6.1.1
+    postcss-logical: ^4.0.2
     prettier: ^2.1.2
     react-refresh: ^0.10.0
     regenerator-runtime: ^0.13.5
@@ -3913,6 +3914,7 @@ __metadata:
     sass: ^1.34.1
     stylelint: ^13.8.0
     stylelint-config-prettier: ^8.0.2
+    stylelint-use-logical: ^1.1.0
     svgo: ^2.3.1
   languageName: unknown
   linkType: soft
@@ -23176,6 +23178,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"postcss-logical@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "postcss-logical@npm:4.0.2"
+  dependencies:
+    postcss: ^7.0.17
+  checksum: a7c1e79f7a2efd0b8c5f5e0aa1031e3088d35a5f60c82b2c541c5ba3006f3ae9c235075fa6136e77235c24193b236fb5aa90c6a56b5e9104c4015a5605514930
+  languageName: node
+  linkType: hard
+
 "postcss-media-query-parser@npm:^0.2.3":
   version: 0.2.3
   resolution: "postcss-media-query-parser@npm:0.2.3"
@@ -23606,7 +23617,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"postcss@npm:^7.0.14, postcss@npm:^7.0.2, postcss@npm:^7.0.21, postcss@npm:^7.0.26, postcss@npm:^7.0.27, postcss@npm:^7.0.32, postcss@npm:^7.0.35, postcss@npm:^7.0.36, postcss@npm:^7.0.5, postcss@npm:^7.0.6":
+"postcss@npm:^7.0.14, postcss@npm:^7.0.17, postcss@npm:^7.0.2, postcss@npm:^7.0.21, postcss@npm:^7.0.26, postcss@npm:^7.0.27, postcss@npm:^7.0.32, postcss@npm:^7.0.35, postcss@npm:^7.0.36, postcss@npm:^7.0.5, postcss@npm:^7.0.6":
   version: 7.0.36
   resolution: "postcss@npm:7.0.36"
   dependencies:
@@ -27729,6 +27740,15 @@ fsevents@^1.2.7:
     stylelint-config-prettier: bin/check.js
     stylelint-config-prettier-check: bin/check.js
   checksum: 6a3bfdf840b7e0b01875e68a0b144d9c02495a1038167c32fc03b0f76d07d989bbe90dec1552b9f5f79119f27b4f1780acde05ee23d5034d7e1ffbdcb362c6d8
+  languageName: node
+  linkType: hard
+
+"stylelint-use-logical@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "stylelint-use-logical@npm:1.1.0"
+  peerDependencies:
+    stylelint: ^9.6.0
+  checksum: bb15ec0e4fc26ed64de94ecee4d7a528f8ae21e22d88f8151d9d82f877d1cc9e55c55935760c1df8693753e2ace1182fbfd1686b0651f93660ee443e5bc672b4
   languageName: node
   linkType: hard
 

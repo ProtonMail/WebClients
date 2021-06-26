@@ -1,7 +1,7 @@
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { Icon, classnames, useLoading, FileIcon, useIsMounted, CircleLoader } from '@proton/components';
+import { Icon, classnames, useLoading, FileIcon, useIsMounted, useRightToLeft, CircleLoader } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { PendingUpload } from '../../hooks/composer/useAttachments';
@@ -70,6 +70,7 @@ const AttachmentItem = ({
     const [loading, withLoading] = useLoading();
     const [progression, setProgression] = useState<number>(0);
     const isMounted = useIsMounted();
+    const [isRTL] = useRightToLeft();
 
     useEffect(() => {
         if (pendingUpload) {
@@ -84,10 +85,11 @@ const AttachmentItem = ({
     const name = attachment ? attachment.Name || '' : pendingUpload?.file.name || '';
     const value = Math.round(progression * 100);
     const progressionHappening = progression !== 0;
+    const directionLoadingProgress = isRTL ? 'left' : 'right';
     const backgroundImage =
         progression === 0
             ? 'none'
-            : `linear-gradient(to right, var(--signal-info) 0%, var(--signal-info) ${value}%, transparent ${value}%)`;
+            : `linear-gradient(to ${directionLoadingProgress}, var(--signal-info) 0%, var(--signal-info) ${value}%, transparent ${value}%)`;
     const humanAttachmentSize = progressionHappening === false ? `(${humanSize(attachment?.Size)})` : ``;
 
     const primaryTitle = `${name} ${humanAttachmentSize}${getSenderVerificationString(attachmentVerified)}`;

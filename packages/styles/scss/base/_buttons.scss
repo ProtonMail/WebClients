@@ -3,7 +3,8 @@
  */
 .button {
 	display: inline-block;
-	padding: em(7) em(16) em(7); // 35px height
+	padding-block: em(7);
+	padding-inline: em(16);
 
 	// usage of box-shadow instead of border to enable increasing size of _visual_ border without shifting button size
 	box-shadow: inset 0 0 0 var(--button-default-border-width, 0) var(--button-default-border-color, transparent);
@@ -68,7 +69,8 @@
  */
 .button-link {
 	display: inline-block;
-	padding: em(5) 0 em(6);
+	padding-block: em(5) em(6);
+	padding-inline: 0;
 	outline: none; // be careful of a11y
 	color: var(--button-default-text-color, inherit);
 	text-decoration: underline;
@@ -194,23 +196,28 @@
  */
 
 .button-small {
-	padding: em(1) em(12) em(2); // 24px height
+	padding-block: em(1) em(2); // 24px height
+	padding-inline: em(12);
 	border-radius: var(--border-radius-small);
 }
 
 .button-large {
-	padding: em(9) em(20) em(10); // 40px height
+	padding-block: em(9) em(10); // 40px height
+	padding-inline: em(20);
 }
 
 .button-for-icon {
-	padding: em(9.5) em(10); // To have same height as fields
+	padding-block: em(9.5); // To have same height as fields
+	padding-inline: em(10);
 
 	&.button-small {
-		padding: em(4) em(6);
+		padding-block: em(4);
+		padding-inline: em(6);
 	}
 
 	&.button-large {
-		padding: em(12) em(14);
+		padding-block: em(12);
+		padding-inline: em(14);
 	}
 
 	& > svg {
@@ -243,33 +250,32 @@
 	&:not(.button-for-icon) {
 		&:not(.w100) {
 			&:not(.button-small, .button-large) {
-				padding-right: em(40);
+				padding-inline-end: em(40);
 			}
 
 			&.button-small {
-				padding-right: em(36);
+				padding-inline-end: em(36);
 			}
 
 			&.button-large {
-				padding-right: em(44);
+				padding-inline-end: em(44);
 			}
 		}
 
 		.loader-container {
-			top: 0;
-			bottom: 0;
+			inset-block: 0;
 		}
 
 		&:not(.button-small, .button-large) .loader-container {
-			right: em(16);
+			inset-inline-end: em(16);
 		}
 
 		&.button-small .loader-container {
-			right: em(12);
+			inset-inline-end: em(12);
 		}
 
 		&.button-large .loader-container {
-			right: em(20);
+			inset-inline-end: em(20);
 		}
 	}
 
@@ -279,10 +285,7 @@
 		}
 
 		.loader-container {
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
+			inset: 0;
 		}
 	}
 }

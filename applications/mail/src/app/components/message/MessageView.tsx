@@ -150,7 +150,8 @@ const MessageView = (
         }
 
         const parent = elementRef.current.parentNode as HTMLElement;
-        parent.style.paddingBottom = `${value}px`;
+        parent.classList.add('pb-custom');
+        parent.style.setProperty('--padding-bottom-custom', `${value}px`);
     };
 
     const resetParentBottomPadding = () => {

@@ -10,7 +10,11 @@
 .calendar-dayeventcell-inner,
 .calendar-eventcell {
 	border: solid rgb(0 0 0 / 0.2);
-	border-width: 1px 1px 1px 5px;
+	border-block-start-width: 1px;
+	border-block-end-width: 1px;
+	border-inline-start-width: 5px;
+	border-inline-end-width: 1px;
+
 	border-radius: var(--border-radius-medium);
 	background-color: var(--background-strong);
 	color: var(--text-norm);
@@ -41,7 +45,7 @@
 
 	&.isUnanswered {
 		border-color: var(--color-alpha);
-		border-left-color: var(--color-alt);
+		border-inline-start-color: var(--color-alt);
 		background-color: var(--background-norm);
 		background-image: linear-gradient(
 			105deg,
@@ -59,7 +63,7 @@
 
 	&.isPast {
 		border-color: rgb(0 0 0 / 0.1);
-		border-left-color: var(--color-alt);
+		border-inline-start-color: var(--color-alt);
 		background: var(--background-strong);
 		color: inherit;
 
@@ -77,7 +81,7 @@
 		&.isDeclined,
 		&.isCancelled,
 		&.isUnanswered {
-			border-left-color: var(--color-alt);
+			border-inline-start-color: var(--color-alt);
 		}
 	}
 }
@@ -96,15 +100,16 @@
 */
 
 .calendar-dayeventcell {
-	height: var(--height);
-	padding-right: $calendar-gridcell-margin;
-	padding-top: $calendar-gridcell-gutter;
+	block-size: var(--height);
+	padding-inline-end: $calendar-gridcell-margin;
+	padding-block-start: $calendar-gridcell-gutter;
 	white-space: nowrap;
 
 	&-inner {
 		position: relative;
-		min-height: 100%;
-		padding: 0 0.5em;
+		min-block-size: 100%;
+		padding-block: 0;
+		padding-inline: 0.5em;
 
 		&.isNotAllDay {
 			border: none;
@@ -127,19 +132,19 @@
 	}
 
 	&.isOutsideStart &-inner {
-		padding-left: 0;
+		padding-inline-start: 0;
 	}
 
 	&.isOutsideEnd,
 	&.isOutsideEnd &-inner {
-		padding-right: 0;
+		padding-inline-end: 0;
 	}
 
 	&-circle {
 		color: var(--background-strong);
 	}
 	&-inner.isLoaded &-circle {
-		margin-top: 0.125em;
+		margin-block-start: 0.125em;
 		color: var(--color-main);
 	}
 }

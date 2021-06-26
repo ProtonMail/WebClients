@@ -12,8 +12,8 @@
 	th {
 		padding: em(16);
 		border: 1px solid var(--border-norm);
-		border-bottom: 0;
-		border-right: 0;
+		border-block-end: 0;
+		border-inline-end: 0;
 
 		@include respond-to($breakpoint-medium) {
 			padding: em(10);
@@ -30,7 +30,7 @@
 
 	tr td:last-child,
 	tr th:last-child {
-		border-right: 1px solid var(--border-norm);
+		border-inline-end: 1px solid var(--border-norm);
 	}
 
 	thead {
@@ -54,20 +54,20 @@
 			&:last-of-type {
 				td,
 				th {
-					border-bottom: 1px solid var(--border-norm);
+					border-block-end: 1px solid var(--border-norm);
 				}
 
 				& :first-child {
-					border-bottom-left-radius: var(--border-radius-medium);
+					border-end-start-radius: var(--border-radius-medium);
 				}
 
 				& :last-child {
-					border-bottom-right-radius: var(--border-radius-medium);
+					border-end-end-radius: var(--border-radius-medium);
 				}
 			}
 
 			.simple-table-row-th {
-				padding-left: 2em;
+				padding-inline-start: 2em;
 
 				@include respond-to(1100) {
 					padding: em(10);
@@ -91,16 +91,15 @@ $nb-plans-max: 4 !default;
 	.pm-table--highlight[data-plan-number='#{$i}'] {
 		& tr td:nth-child(#{$i + 1}),
 		& tr th:nth-child(#{$i + 1}) {
-			border-left: #{$border-width} solid var(--primary);
-			border-right: #{$border-width} solid var(--primary);
+			border-inline: #{$border-width} solid var(--primary);
 		}
 
 		& tr:last-child td:nth-child(#{$i + 1}) {
-			border-bottom: #{$border-width} solid var(--primary);
+			border-block-end: #{$border-width} solid var(--primary);
 		}
 
 		& tr th:nth-child(#{$i + 1}) {
-			border-top: #{$border-width} solid var(--primary);
+			border-block-start: #{$border-width} solid var(--primary);
 			position: relative;
 			color: var(--primary);
 
@@ -108,9 +107,8 @@ $nb-plans-max: 4 !default;
 				content: attr(data-highlight);
 				display: block;
 				position: absolute;
-				bottom: 100%;
-				left: -#{$border-width};
-				right: -#{$border-width};
+				inset-block-end: 100%;
+				inset-inline: -#{$border-width};
 				background-color: var(--primary);
 				color: var(--primary-contrast);
 				text-align: center;
@@ -118,13 +116,16 @@ $nb-plans-max: 4 !default;
 				text-transform: uppercase;
 				font-size: rem(12);
 				padding: 0.25em;
-				border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
+				border-start-start-radius: var(--border-radius-medium);
+				border-start-end-radius: var(--border-radius-medium);
+				border-end-start-radius: 0;
+				border-end-end-radius: 0;
 			}
 		}
 
 		& tr td:nth-child(#{$i + 2}),
 		& tr th:nth-child(#{$i + 2}) {
-			border-left: 0;
+			border-inline-start: 0;
 		}
 	}
 }
