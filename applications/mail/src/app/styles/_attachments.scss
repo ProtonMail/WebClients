@@ -1,0 +1,89 @@
+@import '~design-system/scss/config/';
+
+.message-attachments {
+    font-size: rem(14);
+}
+
+.message-attachmentList-item {
+    background-color: var(--background-norm);
+}
+
+.message-attachmentSecondaryAction {
+    svg[aria-busy="true"] {
+        background-size: 16px;
+    }
+}
+
+.message-attachment {
+    line-height: 1.3;
+    padding: 0;
+}
+
+.message-attachmentList-item-container {
+    margin-top: .5em;
+    width: 50%;
+
+    &:first-child,
+    &:nth-child(2) {
+        margin-top: 0;
+    }
+
+    &:nth-child(even) {
+        padding-left: 0.5em;
+    }
+
+    &:nth-child(odd) {
+        padding-right: 0.5em;
+    }
+
+    // fix on last only if there are more than 4
+    &:nth-child(n + 5):last-child {
+        padding-bottom: 0.5em;
+    }
+
+    @include respond-to($breakpoint-tiny) {
+        width: 100%;
+
+        &:nth-child(even),
+        &:nth-child(odd) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        &:nth-child(2) {
+            margin-top: .5em;
+        }
+    }
+
+}
+
+.message-attachmentList-item {
+    &--uploadInProgress {
+        background-color: var(--background-weak);
+
+        .message-attachmentSecondaryAction {
+            border: 0;
+        }
+    }
+
+    &--loading {
+        background-color: var(--background-weak);
+    }
+}
+
+$message-attachment-icon-width: 2.6em !default;
+.message-attachmentIcon {
+    width: $message-attachment-icon-width;
+}
+
+
+.message-attachmentInfo {
+    border-left: 1px solid var(--border-norm);
+    padding: .3em .7em;
+    max-width: calc(100% - #{$message-attachment-icon-width});
+}
+
+.message-attachmentSize {
+    font-size: rem(12);
+    color: var(--text-weak);
+}

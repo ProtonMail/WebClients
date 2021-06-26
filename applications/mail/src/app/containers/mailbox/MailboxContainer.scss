@@ -1,0 +1,18 @@
+@import '~design-system/scss/config/';
+
+.button.mobile-compose {
+    position: fixed;
+    bottom: 1em;
+    right: 1.6em;
+    z-index: 77;
+    height: rem(66);
+    width: rem(66);
+    border-radius: 50%;
+    padding: 0.5em;
+    box-shadow: var(--shadow-lifted);
+
+    svg {
+        height: rem(25);
+        width: rem(25);
+    }
+}

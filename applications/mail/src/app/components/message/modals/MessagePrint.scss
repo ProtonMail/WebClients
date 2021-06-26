@@ -1,0 +1,27 @@
+.message-print-subject {
+    font-size: rem(20);
+    border-bottom: 1px solid var(--border-norm);
+}
+
+.message-print-header {
+    border-bottom: 1px solid var(--border-weak);
+}
+
+.message-recipient-item-expanded {
+    .message-recipient-item-expanded-content {
+        padding-top: .5em;
+    }
+}
+
+.is-printed-version {
+    .item-icon,
+    .container-to.container-to--item {
+        display: none;
+    }
+    .item-date {
+        font-size: 1em;
+    }
+    .color-weak {
+        color: var(--text-norm);
+    }
+}

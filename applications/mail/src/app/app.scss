@@ -1,0 +1,9 @@
+@import '~design-system/scss/proton-mail';
+
+// Specific styles
+@import
+    '~design-system/scss/specifics/placeholder-loading',
+    '~design-system/scss/specifics/list',
+    'styles/message',
+    'styles/attachments',
+    'styles/email-reset';
