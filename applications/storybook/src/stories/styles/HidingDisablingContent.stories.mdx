@@ -1,0 +1,78 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+
+<Meta title="CSS / Front-End helpers / Hiding - Disabling elements" />
+
+# Hiding/disabling elements
+
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies a <code>display: none</code> to element.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span hidden>Lorem ipsum dolor</span>
+<span className="hidden">Lorem ipsum dolor</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies a <code>visibility: hidden</code> to element (keeps space used but hides it).
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="visibility-hidden">Lorem ipsum dolor</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Makes element disappear but element remain vocalized by speech synthesis (<code>display: none</code>/<code>visibility: hidden</code> elements won't be vocalized)
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="sr-only">Lorem ipsum dolor</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies <code>pointer-events: none</code> to element.<br />
+    If you need to remove pointer events on all children of an element, you may use <code>no-pointer-events-children</code> class.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<a className="no-pointer-events">Lorem ipsum dolor</a>
+`}
+/>
+  </div>
+</div>

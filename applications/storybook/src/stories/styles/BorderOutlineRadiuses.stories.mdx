@@ -1,0 +1,118 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+
+<Meta title="CSS / Front-End helpers / Border - Outline - Radiuses " />
+
+# Border, outline and radiuses helpers
+
+## Border helpers
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies <code>border: 0</code> to element.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="no-border">Lorem ipsum dolor</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies <code>outline: 0</code> to element. Please use it <strong class="text-uppercase">really</strong> if you need to, removing outline is 99% a <strong class="text-uppercase">bad</strong> idea.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span class="no-outline">Lorem ipsum dolor</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies <code>border-collapse: collapse</code> to <code>table</code>.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<table class="border-collapse">
+`}
+/>
+  </div>
+</div>
+
+## Border radiuses
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies standard <code>border-radius</code> to element (value defined with <code>$global-border-radius</code>).<br />
+    If you need to cancel <code>border-radius</code>, you might use <code>rounded0</code>, <code>rounded0-left</code> and <code>rounded0-right</code> helpers.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div class="rounded">
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies <code>border-radius: 50%</code> to element.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span class="rounded50">
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies <code>border-radius: 1em</code> to element.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span class="rounded1e">
+`}
+/>
+  </div>
+</div>
+
+
+
+

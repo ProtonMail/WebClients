@@ -1,0 +1,64 @@
+{
+  "name": "proton-ui-storybook",
+  "version": "0.0.13",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "storybook": "start-storybook -p 6006 -s src/assets/favicons",
+    "start": "proton-pack config && start-storybook -p 6006 -s src/assets/favicons",
+    "lint": "eslint src --ext .js,.ts,.tsx --quiet",
+    "pretty": "prettier --write $(find . -path ./node_modules -prune -o -path ./src -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+    "build": "build-storybook -s src/assets/favicons",
+    "deploy": "netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID --dir storybook-static --alias $NETLIFY_ALIAS",
+    "deploy:prod": "netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID --prod --dir storybook-static",
+    "check-types": "tsc",
+    "build-storybook": "build-storybook -s src/assets/favicons"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GPL-3.0",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "(*.ts|*.tsx|*.js)": [
+      "prettier --write",
+      "eslint",
+      "git add"
+    ],
+    "(*.scss)": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "design-system": "github:ProtonMail/design-system#master",
+    "eslint": "^7.9.0",
+    "eslint-config-proton-lint": "github:ProtonMail/proton-lint#semver:^0.0.6",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.1.2",
+    "prop-types": "15.7.2",
+    "proton-pack": "github:ProtonMail/proton-pack#semver:^3.0.0",
+    "proton-shared": "github:ProtonMail/proton-shared#master",
+    "react": "^16.8.3",
+    "react-components": "github:ProtonMail/react-components#master",
+    "react-dom": "^16.8.3",
+    "ts-loader": "^8.0.7",
+    "typescript": "^4.0.5",
+    "webpack": "^4.43.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@storybook/addon-actions": "^6.1.21",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.1.21",
+    "@storybook/addon-storysource": "^6.1.21",
+    "@storybook/react": "^6.1.21",
+    "babel-loader": "^8.2.2",
+    "netlify-cli": "^2.67.4"
+  }
+}

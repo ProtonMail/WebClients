@@ -1,0 +1,112 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+
+<Meta title="CSS / Front-End helpers / Transforms" />
+
+# Transform helpers
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+	Applies <code>transform: rotate(180deg);</code> to element.<br />
+	If you need to flip an element only in RTL adaptation, you might use <code>on-rtl-mirror</code> class (for arrow icons per example).
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="mirror">
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies <code>transform: rotateX(180deg);</code> to element.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="rotateX-180">
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies <code>transform: rotateZ(90deg);</code> to element.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="rotateZ-90">
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies <code>transform: rotateZ(270deg);</code> to element.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="rotateZ-270">
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies <code>opacity: .5</code> to element. Also exists <code>opacity-40</code> and <code>opacity-30</code>.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="opacity-50">
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Makes something <span class="filter-blur">blurry</span>
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="filter-blur">
+`}
+/>
+  </div>
+</div>

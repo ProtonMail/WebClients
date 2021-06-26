@@ -1,0 +1,173 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+
+<Meta title="CSS / Front-End helpers / Absolute - Sticky - Fixed - Relative" />
+
+# Relative, sticky, fixed, absolute and other helpers
+
+## Relative and fixed
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+<div class="w49 flex-align-self-center">
+    Applies <code>position: relative</code> to element.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="relative">…</span>
+`}
+/>
+
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies <code>position: fixed</code> to element.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="fixed">…</span>
+`}
+/>
+  </div>
+</div>
+
+## Absolute, sticky and other helpers
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies <code>position: absolute</code> to element + <code>z-index: 1</code>.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="absolute">…</span>
+`}
+/>
+  </div>
+</div>
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies <code>position: sticky</code> to element + <code>z-index: 1</code> + <code>top: 0</code>.
+    <code>sticky-bottom</code> does the same but with <code>bottom: 0</code>.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="sticky-top">…</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Centers absolute-positionned element via <code>top: 50%; left: 50%; transform: translate(-50%, -50%);</code>.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="centered-absolute">…</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Centers absolute-positionned element via <code>left: 50%; transform: translate(-50%, 0);</code>.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="centered-absolute-horizontal">…</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    <code>covered-absolute</code> class applies <code>position: absolute; top: 0; right: 0; bottom: 0; left: 0;</code>.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="covered-absolute">…</span>
+`} 
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies <code>top: 0; right: 0;</code> to absolute-positionned element.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="top-right">…</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+	<div class="w49 flex-align-self-center">
+	  Applies <code>bottom: 0;</code> to absolute-positionned element.
+	</div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="bottom">…</span>
+`}
+/>
+	</div>
+</div>
+
+In case of, there are helpers on mobile like <code>on-mobile-static</code> which can cancel fixed/absolute positionning.
+
+

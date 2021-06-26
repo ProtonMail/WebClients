@@ -1,0 +1,89 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+
+<Meta title="CSS / Front-End helpers / Sizing" />
+
+# Sizing helpers
+
+Here is the list of available sizing helpers:
+
+<ul class="list-2columns on-tablet-list-1column">
+  <li><code>.w0 </code> = <code> width: 0;</code></li>
+  <li><code>.w1 </code> = <code> width: 1%;</code></li>
+  <li><code>.w2 </code> = <code> width: 2%;</code></li>
+  <li><code>.w3 </code> = <code> width: 3%;</code></li>
+  <li><code>.w5 </code> = <code> width: 5%;</code></li>
+  <li><code>.w10 </code> = <code> width: 10%;</code></li>
+  <li><code>.w15 </code> = <code> width: 15%;</code></li>
+  <li><code>.w20 </code> = <code> width: 20%;</code></li>
+  <li><code>.w25 </code> = <code> width: 25%;</code></li>
+  <li><code>.w30 </code> = <code> width: 30%;</code></li>
+  <li><code>.w33 </code> = <code> width: 33.333%;</code></li>
+  <li><code>.w40 </code> = <code> width: 40%;</code></li>
+  <li><code>.w45 </code> = <code> width: 45%;</code></li>
+  <li><code>.w49 </code> = <code> width: 49%;</code></li>
+  <li><code>.w50 </code> = <code> width: 50%;</code></li>
+  <li><code>.w60 </code> = <code> width: 60%;</code></li>
+  <li><code>.w66 </code> = <code> width: 66.666%;</code></li>
+  <li><code>.w70 </code> = <code> width: 70%;</code></li>
+  <li><code>.w75 </code> = <code> width: 75%;</code></li>
+  <li><code>.w80 </code> = <code> width: 80%;</code></li>
+  <li><code>.w90 </code> = <code> width: 90%;</code></li>
+  <li><code>.w95 </code> = <code> width: 95%;</code></li>
+  <li><code>.w100 </code> = <code> width: 100%;</code></li>
+  <li><code>.max-w50 </code> = <code> max-width: 50%;</code></li>
+  <li><code>.max-w60 </code> = <code> max-width: 60%;</code></li>
+  <li><code>.max-w80 </code> = <code> max-width: 80%;</code></li>
+  <li><code>.max-w100 </code> = <code> max-width: 100%;</code></li>
+  <li><code>.h100 </code> = <code> height: 100%;</code></li>
+  <li><code>.h100v </code> = <code> height: 100vh;</code></li>
+</ul>
+
+Some other are available, please check in your Sass files the ones used, you can define Sass variables to generate the ones your need:
+
+<ul class="list-2columns on-tablet-list-1column">
+  <li><code>$list-width-px</code></li>
+  <li><code>$list-width-rem</code></li>
+  <li><code>$list-width-em</code></li>
+  <li><code>$list-max-widths</code><br /> (ex.: <code>.max-w100 </code> = <code>max-width: 100%</code>)</li>
+  <li><code>$list-max-width-px</code></li>
+  <li><code>$list-max-width-em</code><br />  (ex.: <code>.max-w15e </code> = <code>max-width: 15em;</code>)</li>
+  <li><code>$list-min-width-em</code></li>
+</ul>
+
+<h2>Height helpers</h2>
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies <code>height: 100%</code> to element.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="h100">
+`}
+/>
+
+  </div>
+</div>
+
+<code>h100v</code> applies <code>height: 100vh</code> to an element. (better <span class="text-uppercase">not</span> using it, thanks to mobiles that don't support it correctly)
+
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+	<div class="w49 flex-align-self-center">
+	  Applies <code>height: auto</code> to element. Make sure this is really needed.
+	</div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="hauto">
+`}
+/>
+	</div>
+</div>

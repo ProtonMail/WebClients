@@ -1,0 +1,32 @@
+import { Canvas, Story, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Toggle } from "react-components";
+
+# Toggle
+
+`Toggle` is a simple component used for activating one of two predefined options. Commonly used as an on/off button.
+
+### Basic
+
+`checked` and `onChange` let you control the state of the `Toggle` component.
+
+<Canvas>
+    <Story id="components-toggle--basic" />
+</Canvas>
+
+### Loading state
+
+By using the `loading` boolean attribute, it displays a loader and automatically block the interaction with the `Toggle` component.
+
+<Canvas>
+    <Story id="components-toggle--loading" />
+</Canvas>
+
+### Disabled state
+
+Add the `disabled` boolean attribute to the `Toggle` component to automatically style and blocke it.
+
+<Canvas>
+    <Story id="components-toggle--disabled" />
+</Canvas>
+
+<ArgsTable of={Toggle} />

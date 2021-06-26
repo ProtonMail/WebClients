@@ -1,0 +1,103 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="CSS / Front-End conventions / Sass and CSS variables" />
+
+# Sass and CSS variables
+
+## General rules for Sass variables
+
+
+- If possible, create Sass variables, once a property or a value is often used in a module or if the information inside is useful for several modules.
+- “Global/local” variable: if your variable is aimed to be used only in the partial (only related to something in your partial and nothing else), leave it in the partial. <br />
+  Otherwise, please put it in <code>design-system-config</code>, in order to make people understand that it can be used in several cases.
+- And if possible, do open an issue on Design System to document it. :)
+
+### List of all most important Sass variables
+
+#### Global layout
+
+
+- <code>$header-height</code>: height of top header
+- <code>$width-sidebar</code>: width of the left sidebar
+- <code>$toolbar-height</code>: height of the grey toolbar
+- <code>$conversations-column-width</code>: used for conversations column width (!), and to align searchbox container
+- <code>$pm-primary</code>: alias for main color on the project (by default to <code>$pm-blue</code>)
+- <code>$pm-primary-light</code>: alias for main light color on the project (by default to <code>$pm-blue-light</code>)
+- <code>$pm-primary-dark</code>: alias for main dark color on the project (by default to <code>$pm-blue-dark</code>)
+
+For color variables, have a look at <a href="/colors/">colors section</a>.
+
+### Overwriting variables
+
+If you need (for your project) to set up different values than the default one of the design system, do overwrite variables in <code>styles-pm.scss</code>, <strong class="text-uppercase">not</strong> in Sass partials, as they could be updated later.
+
+Each variable in Sass partials <strong class="text-uppercase">must</strong> have <code>!default</code>, in order to avoid break layout on each project with different settings.
+
+## CSS variables (custom properties)
+
+These CSS custom properties are present to allow easy theming of the interface.
+
+### Global ones
+
+
+#### Colors
+
+
+- <code>--main-bg-color</code>: global main color
+- <code>--secondary-bg-color</code>: secondary main color
+- <code>--bgcolor-searchbox-field</code>: background-color of searchbox
+- <code>--boxshadow-main</code>: used to apply a box shadow on main content (used for light theme for example)
+- <code>--bgcolor-main-area</code>: background-color of the main area (settings)
+- <code>--color-main-area</code>: color of the main area (settings)
+- <code>--bgcolor-toolbar</code>: background-color of the toolbar
+
+- <code>--color-nav-link</code>: color used for navigation links
+- <code>--color-nav-active</code>: color used for navigation links when active
+- <code>--color-standard-text</code>: color used for text
+
+- <code>--fillcolor-logo</code>: color used for filling SVG logo
+- <code>--fillcolor-icons</code>: color used for filling icons
+
+#### Inputs
+
+
+- <code>--bordercolor-input</code>: border-color of the inputs
+- <code>--bgcolor-input</code>: background-color of the inputs
+- <code>--color-input</code>: color of the text in inputs
+
+#### List mails/contacts
+
+
+- <code>--bgcolor-item-column-list</code>: background-color of the list of items/mails (left column in conversations)
+- <code>--bgcolor-unread-item-column-list</code>: background-color of unread items/mails (left column in conversations)
+- <code>--bgcolor-item-column-active</code>: background-color of the list of items/mails (left column in conversations)
+- <code>--bgcolor-view-column-detail</code>: background-color of the detail view of emails (right column in conversations)
+
+#### UI widths/sizes
+
+
+- <code>--width-sidebar</code>: width of the navigation
+- <code>--width-conversation-column</code>: width of the conversation column
+- <code>--width-subnav</code>: width of the sub navigation (short links)
+- <code>--body-fontsize</code>: global font size.
+- <code>--label-width</code>: the width of <code>label</code> (in forms)
+
+#### Other specific components
+
+
+- <code>--bgcolor-highlight</code>: background-color of highlight helper
+- <code>--bgcolor-muted</code>: background-color of muted color
+- <code>--bgcolor-meter-bar</code>: the background color of <code>meter</code>
+- <code>--bgcolor-mark</code>: the background color of <code>mark</code>
+- <code>--color-mark</code>: the color of <code>mark</code>
+- <code>--bgcolor-calendar-now-indicator</code>: background-color for now hour line indicator
+
+#### To triage
+
+- <code>--bgcolor-spacebar</code>: background-color of remaining space bar
+- <code>--bgcolor-aside-link</code>: background-color of link icons in aside bar.
+
+
+Updating these custom properties allows to create simple themes without surcharging all the CSS stuff.
+
+If you need to check where they are used, perform a search of have a look at <code>design-system-website/_themes.scss</code>, it contains all rules that are using them. This partial should <strong class="text-uppercase">not</strong> be used in production, it is only for testing and reference purposes.

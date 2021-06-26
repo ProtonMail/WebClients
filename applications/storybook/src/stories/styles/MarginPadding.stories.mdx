@@ -1,0 +1,91 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+
+<Meta title="CSS / Front-End helpers / Margin - Padding" />
+
+# Margin/padding helpers
+
+Here is a set of margin and padding helpers - check in Design system fragments the values you have.
+
+- <code>.m</code> = <code>margin</code>
+- <code>.p</code> = <code>padding</code>
+- <code>t/r/b/l</code> = <code>top/right/bottom/left</code>
+- <code>0/0-5/1/2</code> = 0/0.5em/1em/2em
+
+Examples:
+
+<div class="flex flex-justify-space-between mb1 on-mobile-flex-column">
+  <div class="w49 on-mobile-mb1">
+    <div class="pt2 bg-primary">
+      <code>.pt2</code> = <code>padding-top: 2em</code>.
+    </div>
+  </div>
+  <div class="w49 on-mobile-mb1">
+    <div class="pl2 bg-primary">
+      <code>.pl2</code> = <code>padding-left: 2em</code>.
+    </div>
+  </div>
+</div>
+<br />
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 on-mobile-mb1">
+    <div class="p1 bg-primary">
+      <code>.p1</code> = <code>padding: 1em</code>.
+    </div>
+  </div>
+  <div class="w49 on-mobile-mb1">
+    <div class="pl1 pr1 bg-primary">
+      <code>.pl1</code> + <code>.pr1</code>  = <code>padding-left: 1em</code> + <code>padding-right: 1em</code>.
+    </div>
+  </div>
+</div>
+
+Also available:
+
+<ul>
+  <li><code>.mtauto</code> = <code>margin-top: auto</code>.</li>
+  <li><code>.mrauto</code> = <code>margin-right: auto</code>.</li>
+  <li><code>.mbauto</code> = <code>margin-bottom: auto</code>.</li>
+  <li><code>.mlauto</code> = <code>margin-left: auto</code>.</li>
+  <li><code>.mauto</code> = <code>margin: auto</code>.</li>
+  <li><code>.center</code> = <code>.mlauto</code> + <code>.mrauto</code></li>
+</ul>
+
+This helps for positionning blocks or [with flexbox](?path=/docs/front-end-helpers-flexbox--page).
+
+For some very rare cases, we also have helpers in <code>rem</code>: <code>.mt1r</code>, <code>mt0-5r</code>, <code>mr0-5r</code>.
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    <div class="bordered color-global-light">
+     <div class="w50 mlauto bg-primary p1">Right-aligned block</div>
+    </div>
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="w50 mlauto">Right-aligned block</div>
+`}
+/>
+  </div>
+</div>
+<br />
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    <div class="bordered color-global-light">
+     <div class="w50 center bg-primary p1">Centered block</div>
+    </div>
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="w50 center">Centered block</div>
+`}
+/>
+  </div>
+</div>

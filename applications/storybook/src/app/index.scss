@@ -1,0 +1,80 @@
+@import '~design-system/scss/proton-ui-storybook';
+
+body {
+	overflow: scroll !important;
+	color: inherit;
+}
+
+// dirty fixes while whaiting to have better solutions
+.language-markup code {
+	width: 100%;
+	white-space: pre-wrap;
+}
+.mauto {
+	margin: auto !important;
+}
+.mlauto {
+	margin-left: auto !important;
+}
+.center {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+.mb1 {
+	margin-bottom: 1em !important;
+}
+.mb0-5 {
+	margin-bottom: 0.5em !important;
+}
+
+.inputform-label-hint,
+.inputform-assist {
+	font-size: 1.2rem !important;
+}
+.inputform-field,
+.inputform-label-text {
+	font-size: 1.4rem !important;
+}
+
+@include respond-to($breakpoint-medium) {
+	.on-tablet-m1 {
+		margin: 1em !important;
+	}
+}
+@include respond-to($breakpoint-small) {
+	.on-mobile-m1 {
+		margin: 1em !important;
+	}
+}
+@include respond-to($breakpoint-tiny) {
+	.on-tiny-mobile-m1 {
+		margin: 1em !important;
+	}
+}
+
+.icon-ko::after,
+.icon-ok::after {
+	content: '⚠';
+	position: absolute;
+	top: 0.75em;
+	right: 0;
+	padding: 0 0.5em 0 0;
+	font-size: 2em;
+}
+.icon-ok::after {
+	content: '✔';
+	color: var(--signal-danger);
+}
+.icon-ok::after {
+	content: '✔';
+	color: var(--signal-success);
+}
+.icon-ko button {
+	display: none; // don't copy shit!
+}
+
+table.no-bg {
+	tr {
+		background: none !important;
+	}
+}

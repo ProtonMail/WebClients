@@ -1,0 +1,217 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+
+<Meta title="CSS / Front-End helpers / Responsive / 3. Mobile" />
+
+# Responsive - Mobile
+
+## Hiding something on mobile and lower
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+	Applies <code>display: none</code> to the element for mobile breakpoint. (will stay hidden even on tinymobile breakpoint)
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="no-mobile">…</span>
+`}
+/>
+  </div>
+</div>
+
+## Linearizing content on mobile
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+	Applies <code>float: none; display: block; width: auto;</code> to the element for mobile and smaller breakpoints.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="auto-mobile">…</span>
+`}
+/>
+  </div>
+</div>
+
+<br />
+
+<strong>Flexbox version:</strong> resize the window, by default, elements take all the width on mobile thanks to <code>on-mobile-flex-column</code>.
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    <div class="flex flex-justify-space-between on-mobile-flex-column bordered color-global-light">
+      <div class="bg-primary p1 w30">.w30</div>
+      <span class="bg-primary p1 w30">.w30</span>
+      <em class="bg-primary p1 w30">.w30</em>
+    </div>
+  </div>
+  <div class="w49 flex-align-self-center">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex flex-justify-space-between on-mobile-flex-column">
+  <div className="w30">div</div>
+  <span className="w30">span</span>
+  <em className="w30">em</em>
+</div>
+`}
+/>
+
+  </div>
+</div>
+
+This can also be used on <code>.autogrid</code> class.
+
+Other flexbox helpers for mobile:
+
+- <code>on-mobile-flex-item-fluid</code> applies <code>flex: 1 1 0px</code> to the element for mobile and smaller breakpoints.
+- <code>on-mobile-flex-item-fluid-auto</code> applies <code>flex: 1 1 auto</code> to the element for mobile and smaller breakpoints.
+- <code>on-mobile-no-flex</code> applies <code>flex: 0 0 auto</code> to the element for mobile and smaller breakpoints.
+- <code>on-mobile-flex-shrink</code> applies <code>flex-shrink: 1</code> to the element for mobile and smaller breakpoints.
+- <code>on-mobile-flex-align-self-start</code> applies <code>align-self: start</code> to the element for mobile and smaller breakpoints.
+- <code>on-mobile-flex-wrap</code> applies <code>flex-wrap: wrap;</code> to the element for mobile and smaller breakpoints.
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+	Applies <code>position: static</code> to the element for mobile and smaller breakpoints.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="on-mobile-static">…</span>
+`}
+/>
+  </div>
+</div>
+
+
+## Margin/padding helpers
+
+Please check before how <a href="?path=/docs/front-end-helpers-margin-padding--page">margin/padding helpers</a> work.
+
+- <code>.on-mobile-m</code> = <code>margin</code>
+- <code>.on-mobile-p</code> = <code>padding</code>
+- <code>t/r/b/l</code> = <code>top/right/bottom/left</code>
+- <code>0/0.25/0.5/1/2/3.5</code> = 0/0.25em/0.5em/1em/2em/3.5em
+
+Examples:
+
+<div class="flex flex-justify-space-between mb1 on-mobile-flex-column">
+  <div class="w49 on-mobile-mb1 bordered">
+    <div class="on-mobile-pt2 bg-primary ">
+      <code>.on-mobile-pt2</code> = <code>padding-top: 2em</code> <span class="color-white">on mobile and smaller</span>.
+    </div>
+  </div>
+  <div class="w49 on-mobile-mb1 bordered">
+    <div class="on-mobile-pl2 bg-primary">
+      <code>.on-mobile-pl2</code> = <code>padding-left: 2em</code> <span class="color-white">on mobile and smaller</span>.
+    </div>
+  </div>
+</div>
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 on-mobile-mb1 bordered">
+    <div class="on-mobile-p1 bg-primary">
+      <code>.on-mobile-p1</code> = <code>padding: 1em</code> <span class="color-white">on mobile and smaller</span>.
+    </div>
+  </div>
+  <div class="w49 on-mobile-mb1 bordered">
+    <div class="on-mobile-pl1 on-mobile-pr1 on-mobile-m1 bg-primary">
+      <code>.on-mobile-pl1</code> + <code>.on-mobile-pr1</code> + <code>.on-mobile-m1</code>  = <code>padding-left: 1em</code> + <code>padding-right: 1em</code> + <code>margin: 1em</code> <span class="color-white">on mobile and smaller</span>.
+    </div>
+  </div>
+</div>
+
+## Width/max-width helpers
+
+<div><ul class="list-2columns on-mobile-list-1column">
+  <li><code>.on-mobile-w25</code> = <code>width: 25%;</code></li>
+  <li><code>.on-mobile-w100</code> = <code>width: 100%;</code></li>
+  <li><code>.on-mobile-wauto</code> = <code>width: auto;</code></li>
+  <li><code>.on-mobile-max-w100</code> = <code>max-width: 100%;</code></li>
+  <li><code>.on-mobile-min-w100</code> = <code>min-width: 100%;</code></li>
+</ul></div>
+
+These apply for mobile breakpoint and smaller.
+
+## Text alignments
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+	Applies <code>text-align: left</code>/<code>text-align: center</code>/<code>text-align: right</code> to the element for mobile and smaller breakpoints.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="on-mobile-text-left">…</span>
+<span className="on-mobile-text-center">…</span>
+<span className="on-mobile-text-right">…</span>
+`}
+/>
+  </div>
+</div>
+
+
+## Table helpers
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+	Hides the second, third, fourth and fifth column of a table for mobile breakpoint and smaller.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<table className="on-mobile-hide-td2">…
+<table className="on-mobile-hide-td3">…
+<table className="on-mobile-hide-td4">…
+<table className="on-mobile-hide-td5">…
+`}
+/>
+
+  </div>
+</div>
+
+## List helper
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Will use css multicolumn to display the list on 2 columns. On mobile, the list will be put on one column.
+	<ul class="list-2columns on-mobile-list-1column">
+		<li>Normal</li>
+		<li>list</li>
+		<li>list</li>
+		<li>list</li>
+		<li>list</li>
+		<li>list end</li>
+	</ul>
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<ul className="list-2columns on-mobile-list-1column">
+…
+</ul>
+`}
+/>
+  </div>
+</div>

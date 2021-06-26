@@ -1,0 +1,186 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+
+<Meta title="CSS / Front-End helpers / Responsive / 2. Tablet" />
+
+# Responsive - Tablet
+
+## Hiding something between tablet and mobile
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+	Applies <code>display: none</code> to the element for tablet breakpoint. <br />
+	On mobile breakpoint, will be “reseted” by <code>display: block</code>.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="no-tablet">…</span>
+`}
+/>
+
+  </div>
+</div>
+
+## Linearizing content on tablet
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+	Applies <code>float: none; display: block; width: auto;</code> to the element for tablet and smaller breakpoints.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="auto-tablet">…</span>
+`}
+/>
+  </div>
+</div>
+
+<br />
+
+<strong>Flexbox version:</strong> resize the window, by default, elements take all the width on tablet thanks to <code>on-tablet-flex-column</code>.
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    <div class="flex flex-justify-space-between on-tablet-flex-column bordered color-global-light">
+      <div class="bg-primary p1 w30">.w30</div>
+      <span class="bg-primary p1 w30">.w30</span>
+      <em class="bg-primary p1 w30">.w30</em>
+    </div>
+  </div>
+  <div class="w49 flex-align-self-center">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="flex flex-justify-space-between on-tablet-flex-column">
+  <div className="w30">div</div>
+  <span className="w30">span</span>
+  <em className="w30">em</em>
+</div>
+`}
+/>
+  </div>
+</div>
+
+## Margin/padding helpers
+
+Please check before how <a href="?path=/docs/front-end-helpers-margin-padding--page">margin/padding helpers</a> work.
+
+- <code>.on-tablet-m</code> = <code>margin</code>
+- <code>.on-tablet-p</code> = <code>padding</code>
+- <code>t/r/b/l</code> = <code>top/right/bottom/left</code>
+- <code>0/1/2</code> = 0/1em/2em
+
+Examples:
+
+<div class="flex flex-justify-space-between mb1 on-mobile-flex-column">
+  <div class="w49 on-mobile-mb1 bordered">
+    <div class="on-tablet-pt2 bg-primary ">
+      <code>.on-tablet-pt2</code> = <code>padding-top: 2em</code> <span class="color-white">on tablet and smaller</span>.
+    </div>
+  </div>
+  <div class="w49 on-mobile-mb1 bordered">
+    <div class="on-tablet-pl2 bg-primary">
+      <code>.on-tablet-pl2</code> = <code>padding-left: 2em</code> <span class="color-white">on tablet and smaller</span>.
+    </div>
+  </div>
+</div>
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 on-mobile-mb1 bordered">
+    <div class="on-tablet-p1 bg-primary">
+      <code>.on-tablet-p1</code> = <code>padding: 1em</code> <span class="color-white">on tablet and smaller</span>.
+    </div>
+  </div>
+  <div class="w49 on-mobile-mb1 bordered">
+    <div class="on-tablet-pl1 on-tablet-pr1 on-tablet-m1 bg-primary">
+      <code>.on-tablet-pl1</code> + <code>.on-tablet-pr1</code> + <code>.on-tablet-m1</code>  = <code>padding-left: 1em</code> + <code>padding-right: 1em</code> + <code>margin: 1em</code> <span class="color-white">on tablet and smaller</span>.
+    </div>
+  </div>
+</div>
+
+## Width/max-width helpers
+
+<div><ul class="list-2columns on-tablet-list-1column">
+  <li><code>.on-tablet-w25</code> = <code>width: 25%;</code></li>
+  <li><code>.on-tablet-w100</code> = <code>width: 100%;</code></li>
+  <li><code>.on-tablet-wauto</code> = <code>width: auto;</code></li>
+  <li><code>.on-tablet-max-w100</code> = <code>max-width: 100%;</code></li>
+</ul></div>
+
+These apply for tablet breakpoint and smaller.
+
+## Text alignments
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+	Applies <code>text-align: left</code>/<code>text-align: center</code>/<code>text-align: right</code> to the element for tablet and smaller breakpoints.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="on-tablet-text-left">…</span>
+<span className="on-tablet-text-center">…</span>
+<span className="on-tablet-text-right">…</span>
+`}
+/>
+  </div>
+</div>
+
+
+## Table helpers
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+	Hides the second and third column of a table for tablet breakpoint and smaller.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<table className="on-tablet-hide-td2 on-tablet-hide-td3">…
+`}
+/>
+
+  </div>
+</div>
+
+## List helper
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Will use css multicolumn to display the list on 2 columns. On tablet, the list will be put on one column.
+	<ul class="list-2columns on-tablet-list-1column">
+		<li>Normal</li>
+		<li>list</li>
+		<li>list</li>
+		<li>list</li>
+		<li>list</li>
+		<li>list end</li>
+	</ul>
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<ul className="list-2columns on-tablet-list-1column">
+…
+</ul>
+`}
+/>
+  </div>
+</div>

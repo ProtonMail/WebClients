@@ -1,0 +1,34 @@
+import { Canvas, Story, ArgsTable } from "@storybook/addon-docs/blocks";
+import { LabelStack } from "react-components"
+
+# LabelStack
+
+The `LabelStack` component allows you to add a label list with embeded look and feel, with interactions, buttons for filtering or removing. Please use the this component even if you have one and only label to display.
+
+`max-w100`: on main container, will remove the maximum width set to 10em on each item.
+
+### Basic 
+
+<Canvas>
+    <Story id="components-labelstack--basic" />
+</Canvas>
+
+### With delete option 
+
+<Canvas>
+    <Story id="components-labelstack--with-delete" />
+</Canvas>
+
+### With stacked option 
+
+<Canvas>
+    <Story id="components-labelstack--stacked" />
+</Canvas>
+
+### With max number option 
+
+<Canvas>
+    <Story id="components-labelstack--max" />
+</Canvas>
+
+<ArgsTable of={LabelStack} />

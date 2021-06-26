@@ -1,0 +1,259 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+
+<Meta title="CSS / Front-End conventions / DOs - DONTs" />
+
+# DOs / DONTs
+
+## CSS
+
+### General
+
+- <strong>Do NOT reinvent the wheel</strong>.
+- <strong>Have a look at what is already existing</strong>, and use it.
+- Using <strong>several classes for an element</strong> is a good practice.
+- <strong>Separating design styles of a module from its positionning</strong> (if possible) is also a good practice: better for reusability/responsive/etc.
+
+### Sass nesting inferno
+
+<div class="flex flex-nowrap flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 icon-ko relative">
+
+<Source
+  language='css'
+  dark
+  format
+  copy={false}
+  code={`
+.my-module {
+  .blabla {
+    .why-not-more-complexifing {
+      em {
+      …
+      }
+    }
+  }
+}
+`}
+/>
+
+  </div>
+  <div class="w49 icon-ok relative">
+
+<Source
+  language='css'
+  dark
+  format
+  code={`
+.my-module {
+  …
+}
+.my-module-title {
+}
+.my-module-other {
+}
+.my-module-important {
+}
+`}
+/>
+  </div>
+</div>
+
+Stop doing Sass nesting inferno. The structure must <strong class="text-uppercase">NOT</strong> be so complex and intricated with CSS, and it is a pain to surcharge (and the weight of the CSS will be far lighter not doing this). Let's be flexible!
+
+### Targetting elements
+
+<div class="flex flex-nowrap flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 icon-ko relative">
+
+<Source
+  language='css'
+  dark
+  format
+  code={`
+#my-module {
+  …
+}
+#my-module a {
+  …
+}
+.icon-30-blah, .icon-30-blahblah { /* etc. */
+  …
+} 
+`}
+/>
+  </div>
+  <div class="w49 icon-ok relative">
+
+<Source
+  language='css'
+  dark
+  format
+  code={`
+.my-module {
+  …
+}
+.my-module-link {
+  …
+}
+[class*=icon-30] {
+    …
+}
+`}
+/>
+  </div>
+</div>
+
+Please avoid targetting via id and neighbour, better use a direct target via a class (<a href="https://openweb.eu.org/articles/performance-seen-from-css">See performance from CSS point of view</a>). Also better factorising when possible.
+
+### line-height
+
+No unit for this property. Do <strong>NOT</strong> use it to center vertically text.
+
+<div class="flex flex-nowrap flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 icon-ko relative">
+<Source
+  language='css'
+  dark
+  format
+  code={`
+line-height: 36px;
+line-height: 3em;
+`}
+/>
+  </div>
+  <div class="w49 icon-ok relative">
+
+<Source
+  language='css'
+  dark
+  format
+  code={`
+line-height: 1.5;
+line-height: normal
+`}
+/>
+  </div>
+</div>
+
+See <a href="https://tzi.fr/css/line-height-units/">unitless values for line-height</a>.
+
+
+### Positionning
+
+Unless you really have to, avoid mixing positionning on tables (creates bugs on some browsers).
+
+<div class="flex flex-nowrap flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 icon-ko relative">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<td class="my-module-style">
+`}
+/>
+  </div>
+  <div class="w49 icon-ok relative">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<td><span class="my-module-style">…</span>
+`}
+/>
+  </div>
+</div>
+<div class="flex flex-nowrap flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 icon-ko relative">
+<Source
+  language='css'
+  dark
+  format
+  code={`
+.my-module-style {
+  display: flex
+  …
+}
+`}
+/>
+  </div>
+  <div class="w49 icon-ok relative">
+<Source
+  language='css'
+  dark
+  format
+  code={`
+.my-module-style {
+  display: flex
+  …
+}
+`}
+/>
+  </div>
+</div>
+
+A bug on v3, so trust me :)
+
+
+## HTML
+
+<div class="flex flex-nowrap flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 icon-ko relative">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<button></button>
+<button><span></span></button>
+`}
+/>
+  </div>
+  <div class="w49 icon-ok relative">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<button title="What it does"></button>
+<button><img alt="What it does" …></button>
+<button>
+<span class="sr-only">What it does</span>
+</button>
+`}
+/>
+  </div>
+</div>
+
+Put a <code>title</code> in the button, an image with <code>alt</code> in it, a <code>span class="sr-only"</code> in it, but do not leave it empty, otherwise, will be vocalized “button” without any information for the user.
+
+<div class="flex flex-nowrap flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 icon-ko relative">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<button class="text-ellipsis">
+lorem dolor si amet…
+</button>
+`}
+/>
+  </div>
+  <div class="w49 icon-ok relative">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<button class="text-ellipsis" 
+ title="lorem dolor si amet consegur">
+lorem dolor si amet…
+</button>
+`}
+/>
+  </div>
+</div>
+
+When using the class <code>text-ellipsis</code>, add a <code>title</code> attribute with the full version.

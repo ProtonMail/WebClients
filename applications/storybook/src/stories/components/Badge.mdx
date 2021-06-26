@@ -1,0 +1,31 @@
+import { Canvas, Story, ArgsTable, PRIMARY_STORY } from "@storybook/addon-docs/blocks";
+
+# Badge
+
+The `Badge` is a small but versatile element. It's very useful as a way to attach information to a block or other component. Its size makes it also easy to display in numbers, making it appropriate for long lists of items. 
+
+### Basic Badge
+
+Like with buttons, there are different colors available. 
+
+<Canvas>
+    <Story id="components-badge--basic" />
+</Canvas>
+
+### With className
+
+You can easily customize the `Badge` by adding a `className`. By default `mr1` is set to the `className` prop.
+
+<Canvas>
+    <Story id="components-badge--with-class-name" />
+</Canvas>
+
+### With tooltip
+
+By using `tooltip` prop, you can attach a Javascript tooltip to it.
+
+<Canvas>
+    <Story id="components-badge--with-tooltip" />
+</Canvas>
+
+<ArgsTable story={PRIMARY_STORY} />

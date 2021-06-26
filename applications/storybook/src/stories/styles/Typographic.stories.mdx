@@ -1,0 +1,439 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+
+<Meta title="CSS / Front-End helpers / Typographic" />
+
+# Typographic helpers
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    <span class="text-ellipsis inline-block max-w100p">Lorem sit amet, consectetur adipiscing elit. Duis auctor lectus eu massa fermentum scelerisque. Praesent vitae massa vel nulla sodales consectetur in vitae urna.</span><br />
+    To be used with <code>max-w100</code> and <code>inline-block</code> (or with flexbox helpers).<br /><br />
+    If you need a multiline ellipsis, use <code>text-ellipsis-four-lines</code>/<code>text-ellipsis-two-lines</code> helper.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="text-ellipsis">…</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+      Applies a <code>text-transform: uppercase</code> to element: <span class="text-uppercase">Uppercase</span>
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="text-uppercase">…</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+      Applies a <code>text-transform: capitalize</code> to element: <span class="text-capitalize">Capitalize</span>
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="text-capitalize">…</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+      Unlike previous rule capitalizes only the first word, element has to be block: <div class="text-capitalize-block">Cap Italize</div>
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="text-capitalize-sentence">…</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+      <span class="text-strong">if you need to be bold</span> without using <code>strong</code> tag. <code>text-bold</code> class is an alias for this.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="text-strong">…</span>
+<span className="text-bold">…</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+      If you need to be semibold: <span class="text-semibold">Semibold</span>.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="text-semibold">…</span>
+`}
+/>
+
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+      <span class="text-italic">if you need to be italic</span> without using <code>em</code> or <code>i</code> tag
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="text-italic">…</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+	<div class="w49 flex-align-self-center">
+		<span class="text-strike">if you need to be strike</span>, please use wisely.
+	</div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="text-strike">…</span>
+`}
+/>
+	</div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+      Applies standard <code>line-height</code> (defined with Sass variable <code>$base-line-height</code> in <code>design-system-config</code>) to element.<br /> 
+      This helps to fix some issues caused by vertical rhythm formulas (if you want to reduce <code>line-height</code>, you may use <code>lh100</code>, but use it wisely, it may create issues with user-generated content).
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="lh-rg">…</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+	  For browsers that do <strong>not</strong> support <code>hyphens: auto</code>: applies <code>word-wrap: break-word</code>.<br />
+	  For browsers that <strong>do</strong> support <code>hyphens: auto</code>: no <code>word-wrap: break-word</code>, only hyphenation.<br />
+	  = to break a text, at any price.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="text-cut">…</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+      Applies hyphenation only to content (no fallback with <code>word-break</code>).
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="text-hyphens">…</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+      Applies only <code>word-wrap: break-word;</code> to element (when hyphenation is not needed)
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="text-break">…</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+      Applies <code>text-decoration: none</code> to element
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="text-no-decoration">…</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+      Applies <code>text-decoration: underline</code> to element
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="text-underline">…</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+      Applies <code>text-decoration: underline</code> to element only when hovered/focused.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="text-underline-on-hover">…</span>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    <p class="text-right">Right-aligned text</p>
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<p className="text-right">Right-aligned text.</p>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    <p class="text-center">Centered-aligned text</p>
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<p className="text-center">Centered-aligned text.</p>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    <p class="text-left">Left-aligned text</p>
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<p className="text-left">Left-aligned text.</p>
+`}
+/>
+  </div>
+</div>
+
+Other text alignment helpers: <code>align-top</code>,<code>align-bottom</code>, <code>align-middle</code> may be used (<code>align-sub</code> and <code>align-baseline</code> are also available).
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    <p class="text-left">Example of <button type="button" class="link align-baseline">why <code>align-baseline</code> is useful</button> (fixes some alignments)</p>
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<p>Example of 
+  <button className="link align-baseline">
+  why align-baseline is useful
+  </button>…</p>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+	<div class="w49 flex-align-self-center">
+	  <p class="text-pre-wrap">A text with
+new lines<br />
+and long      spaces</p>
+	</div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<p className="text-pre-wrap">A text with new lines
+and long      spaces</p>
+`}
+/>
+	</div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+	<div class="w49 flex-align-self-center">
+	  <p class="text-pre">A text with  spaces</p>
+	</div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<p className="text-pre">A text with  spaces</p>
+`}
+/>
+	</div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    <p class="text-left">Applies <code>white-space: no-wrap</code>, for some very rare use-cases (better use <code>text-ellipsis)</code></p>
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<p className="text-no-wrap">no wrapping.</p>
+`}
+/>
+  </div>
+</div>
+
+If you want to apply <code>text-ellipsis</code> and <code>pre</code> classes, you need to wrap your content like this:
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    <span class="text-ellipsis inline-block max-w100p"><span class="text-pre">Lorem    ipsum dolor sit amet</span></span><br />
+    To be used with <code>max-w100</code> and <code>inline-block</code> (or with flexbox helpers).
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="text-ellipsis">
+  <span className="text-pre">
+  Lorem    ipsum dolor sit amet
+  </span>
+  </span>
+`}
+/>
+
+  </div>
+</div>
+
+These helpers may be prefixed by <code>on-tablet-/on-mobile-</code> to apply them only for tablets/mobiles.
+

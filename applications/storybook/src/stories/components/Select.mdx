@@ -1,0 +1,42 @@
+import { Canvas, Story, Meta, ArgsTable, Primary, PRIMARY_STORY } from "@storybook/addon-docs/blocks";
+import { SelectTwo} from "react-components";
+
+# Select
+
+The Select component allows a user to select from a list of options.
+
+In line with trying to emulate the native os `<select />`s as well as possible, this Select component implements keyboard navigation in line with the behaviour of OSX' native `<select />` implementation, including keyboard searchability which resets a given search-input after a timeout (configurable through the `clearSearchAfter` prop).
+
+### Basic Select
+
+The most basic usage of the Select component comes in the form of using just strings as both the value of the option as well as the contents of the option.
+
+<Canvas>
+    <Story id="components-select--basic" />
+</Canvas>
+
+### Rich option content
+
+Any rich option content is supported through React's `children` api as the following example demonstrates by using icons inside the children of the `<Option />` component's children prop.
+
+<Canvas>
+    <Story id="components-select--with-rich-option-content" />
+</Canvas>
+
+### Complex values
+
+As opposed to native selects, this Select component allows for `<Option />` values to be of complex types (e.g. `Object`).
+
+<Canvas>
+    <Story id="components-select--with-complex-values" />
+</Canvas>
+
+### Accessibility
+
+This component supporting complex values, together with the fact that option contents can be rich in nature causes an uncertainty about which human-readable part of either `value` or `children` can be used for accessibility labels.
+
+To make up for this, an API anomaly is introduced for this component making the `title` prop of the option required, however, in the case that you're using Select in it's most basic form (string `value` & string `children`) you're only required to pass `title` & `value`, leaving `children` out (as can be seen in the [Basic Select](#basic-select)) example.
+
+<Primary />
+
+<ArgsTable story={PRIMARY_STORY} />

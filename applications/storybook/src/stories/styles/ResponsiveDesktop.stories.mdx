@@ -1,0 +1,52 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+
+<Meta title="CSS / Front-End helpers / Responsive / 1. Breakpoints and Desktop" />
+
+# Responsive - Desktop
+
+## Breakpoints
+
+Values are given in “pixels” (in standard cases: with base font size to <code>16px</code>), but breakpoints are computed into <code>em</code>, which helps to better manage zoom. (for example, “mobile” breakpoint can be triggered on a large screen if you zoom a lot)
+
+The current active breakpoint value is available in <code>body::before content</code> value (for major breakpoints), if you need to know (from JavaScript pov) which major breakpoint is active, use the <code>useActiveBreakpoint.ts</code> helper in <code>react-components</code>.
+
+<div class="flex flex-justify-space-between mb2 on-tablet-flex-column">
+  <div class="w49">
+	<h3>Major breakpoints</h3>
+	<ul class="mb0 on-tablet-mb1">
+		<li><code>$breakpoint-medium</code>: set up to <code>910px</code> by default</li>
+		<li><code>$breakpoint-small</code>: set up to <code>680px</code> by default</li>
+		<li><code>$breakpoint-tiny</code>: set up to <code>450px</code> by default</li>
+	</ul>
+  </div>
+  <div class="w49">
+	<h3>Minor breakpoints</h3>
+	<ul class="mb0">
+		<li><code>$breakpoint-large</code>: set up to <code>1500px</code> by default</li>
+		<li><code>$breakpoint-medium-landscape</code>: set up to <code>1100px</code> by default</li>
+	</ul>
+  </div>
+</div>
+
+They can be overidden depending of the needs of the project. Be careful while updating major breakpoints, good that Proton universe keeps some consistency.
+
+## Desktop helper
+
+### Hiding something between deskop and tablet
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+	Applies <code>display: none</code> to the element for desktop breakpoint. <br />
+	On tablet breakpoint, will be “reseted” by <code>display: block</code>.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="no-desktop">…</span>
+`}
+/>
+  </div>
+</div>
