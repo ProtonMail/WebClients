@@ -1,0 +1,20 @@
+.drag-element {
+	position: absolute;
+	background-color: white;
+	color: black;
+	font-weight: bold;
+
+	z-index: -1;
+	top: 0;
+	left: 0;
+}
+
+.item-dragging {
+	opacity: 0.5;
+}
+
+.navigation__dragover {
+	background: rgba(255, 255, 255, 0.05);
+	color: var(--color-nav-link, #f6f7fa);
+	text-decoration: none;
+}

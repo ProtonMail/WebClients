@@ -1,0 +1,27 @@
+@import '~design-system/scss/config/';
+
+.contacts-widget {
+	--min-width: #{em(500)};
+	--min-height: #{em(550)};
+
+	&-search-container,
+	&-toolbar,
+	.item-container {
+		padding-left: em(24);
+		padding-right: em(24);
+	}
+	&-tabs {
+		padding-top: em(12);
+		margin-left: em(24);
+		margin-right: em(24);
+	}
+	.ReactVirtualized__Grid__innerScrollContainer {
+		border: 0;
+	}
+	@include respond-to($breakpoint-small) {
+		&.dropdown {
+			padding-left: 5%;
+			padding-right: 5%;
+		}
+	}
+}

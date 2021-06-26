@@ -1,0 +1,21 @@
+@import '~design-system/scss/config/';
+
+.members-table {
+	table-layout: auto;
+
+	& td {
+		vertical-align: top;
+	}
+
+	@include respond-to($breakpoint-small, 'max') {
+		display: none;
+	}
+}
+
+.members-table-mobile {
+	display: none;
+
+	@include respond-to($breakpoint-small, 'max') {
+		display: block;
+	}
+}

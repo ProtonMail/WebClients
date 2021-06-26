@@ -1,0 +1,88 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const path = require('path');
+const execa = require('execa');
+const bash = (cli) => execa.shell(cli, { shell: '/bin/bash' });
+
+const ucFirst = (input) => {
+    return input.charAt(0).toUpperCase() + input.slice(1);
+};
+
+const NO_EXPORT_FILES = [
+    'manager', 'index', 'reducer', 'actions',
+    'AddressStatus', 'countries', 'cardValidator'
+];
+
+async function main() {
+    const { stdout } = await bash("find {components,containers,context,helpers,hooks} -type f -name '*.js'");
+
+    const getExport = ({ fileName, dir, filePath }) => {
+        if (/context$/.test(dir)) {
+            return `${ucFirst(fileName)}Context`;
+        }
+
+        // Do not change the userX or Main module
+        if (/modal$/.test(dir) && !fileName.startsWith('use') && fileName !== 'Modal') {
+            return `${ucFirst(fileName)}Modal`;
+        }
+
+        if (fileName === 'Provider' || fileName === 'Container') {
+            console.log(`⚠ Broken name for ${filePath} you need to change it`);
+            const type = path.basename(dir);
+            return `${ucFirst(type)}${fileName}`;
+        }
+        return fileName;
+    };
+
+    const getConfig = (file) => {
+        const fileName = path.basename(file, '.js');
+        const dir = path.dirname(file);
+        const filePath = path.join(dir, fileName);
+        return { fileName, filePath, dir };
+    };
+
+    const isExportable = ({ fileName, filePath, dir }) => {
+
+        if (fileName === 'AddressesSection') {
+            const type = path.basename(dir);
+            const test = type !== 'addresses';
+
+            if (test) {
+                console.log(`⚠ Broken name for ${filePath} you need to change it`);
+                return false;
+            }
+        }
+
+        // export only useX
+        if (/helpers$/.test(dir)) {
+            return fileName.startsWith('use');
+        }
+
+        const isExportable = !NO_EXPORT_FILES.includes(fileName);
+
+        // Do not export Models are they are private or tests
+        return isExportable && !/(\.test|Model)$/.test(fileName)
+    };
+
+    const makeExport = (config) => {
+        return `export { default as ${getExport(config)} } from './${config.filePath}';`;
+    };
+
+    const content = stdout
+        .split('\n')
+        .reduce((acc, file) => {
+            const config = getConfig(file);
+
+            if (isExportable(config)) {
+                acc.push(makeExport(config));
+            }
+            return acc;
+        }, [])
+        .join('\n');
+
+    fs.writeFileSync('index.js', content);
+    console.log('✓ Export all the things.')
+}
+
+main();

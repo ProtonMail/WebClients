@@ -1,0 +1,163 @@
+@import '~design-system/scss/config/';
+
+$amount-size: 48;
+$price-size: 21;
+
+// overrides for dark/light mode => same design
+.blackfriday-mail-modal.modal {
+	background: #1c1736;
+
+	width: rem(800);
+	max-width: rem(800);
+
+	.modal-content-inner,
+	.modal-title,
+	.modal-header {
+		color: white;
+	}
+	.modal-content-inner {
+		background: #1c1736 url(#{$path-images}world.svg) 50% 50%;
+	}
+	.scrollshadow-static {
+		background: #1c1736;
+	}
+	.scrollshadow-sticky {
+		&--top {
+			background-image: radial-gradient(farthest-side at 50% 0, #505560, transparent);
+		}
+		&--bottom {
+			bottom: 0;
+			background-image: radial-gradient(farthest-side at 50% 100%, #505560, transparent);
+		}
+	}
+
+	.modal-close-icon {
+		fill: white;
+	}
+
+	.blackfriday-currency-selector {
+		// Overrides for specific case -_-v
+		--border-norm: #505560;
+		--background-norm: transparent;
+	}
+
+	.blackfriday-currency-selector button {
+		color: white;
+	}
+
+	.modal-header {
+		padding-bottom: 0.5em;
+	}
+	.modal-title {
+		text-align: center;
+		padding-right: 0;
+	}
+	// no dark theme
+	.blackfriday-plan {
+		background-color: white;
+		color: #262a33;
+	}
+
+	@include respond-to($breakpoint-medium) {
+		width: 98%;
+		max-width: 98%;
+	}
+	@include respond-to(750, 'height') {
+		max-height: 90%;
+	}
+	@include respond-to($breakpoint-small) {
+		max-height: 98%;
+	}
+}
+
+// then regular styles
+.blackfriday-mostPopular {
+	border-radius: $global-border-radius $global-border-radius 0 0;
+	left: 0;
+	right: 0;
+	bottom: 100%;
+}
+
+.blackfriday-percentage {
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	border-radius: 1em;
+	padding: 0.1em 0.75em;
+	z-index: 10;
+}
+
+.blackfriday-monthly-price.blackfriday-monthly-price {
+	display: block;
+	.suffix {
+		display: block;
+	}
+	.amount {
+		font-size: em($amount-size);
+		font-weight: bold;
+	}
+	.currency {
+		font-size: em($price-size);
+		font-weight: bold;
+	}
+	.decimal {
+		font-size: em($price-size, $amount-size);
+		font-weight: bold;
+	}
+}
+
+.blackfriday-plan-container {
+	flex: 1;
+	max-width: 25em;
+	&:not(:first-child) {
+		margin-left: 1em;
+		@include respond-to($breakpoint-small) {
+			margin-left: 0;
+		}
+	}
+	@include respond-to($breakpoint-small) {
+		max-width: none;
+	}
+}
+
+.blackfriday-plan-name {
+	min-height: 3em;
+	@include respond-to($breakpoint-small) {
+		min-height: 0;
+	}
+}
+
+.blackfriday-protonDrive-free {
+	display: inline-block;
+	border-radius: 1em;
+}
+
+.blackfriday-standardPrice .price {
+	text-decoration: line-through;
+}
+
+// some tiny modifications
+.blackfriday-plan-container--mostPopular {
+	.blackfriday-plan {
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		border-width: 2px;
+		//border-color: var(--primary);
+	}
+	.blackfriday-percentage {
+		top: -2.8em;
+		z-index: 10;
+	}
+}
+
+@include respond-to($breakpoint-small) {
+	.blackfriday-plan-container {
+		margin-bottom: 2em;
+
+		&:first-of-type {
+			order: 10;
+		}
+	}
+	.blackfriday-plan-container--productPayer {
+		margin-bottom: 0;
+	}
+}

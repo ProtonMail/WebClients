@@ -1,0 +1,38 @@
+@import '~design-system/scss/config/';
+
+.file-button {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+
+	// hack to save space for the hover halo on the button
+	padding: 5px;
+	margin: -5px;
+
+	input[type='file'] {
+		position: absolute;
+		opacity: 0;
+		visibility: hidden;
+		z-index: -1;
+	}
+
+	input[type='file']:focus + .button-solid-norm {
+		--button-hover-background-color: var(--interaction-norm-hover);
+		--button-hover-text-color: var(--interaction-norm-contrast);
+	}
+
+	input[type='file']:focus + .button-solid-weak {
+		--button-hover-background-color: var(--interaction-weak-hover);
+		--button-hover-text-color: var(--interaction-weak-contrast);
+	}
+
+	input[type='file']:active + .button-solid-norm {
+		--button-active-background-color: var(--interaction-norm-active);
+		--button-active-text-color: var(--interaction-norm-contrast);
+	}
+
+	input[type='file']:active + .button-solid-weak {
+		--button-active-background-color: var(--interaction-weak-active);
+		--button-active-text-color: var(--interaction-weak-contrast);
+	}
+}

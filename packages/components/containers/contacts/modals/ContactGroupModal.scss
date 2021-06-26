@@ -1,0 +1,43 @@
+@import '~design-system/scss/config/';
+
+.contact-group-emails-autocomplete {
+	ul {
+		position: absolute;
+		left: 0;
+		top: calc(100% + 5px);
+		z-index: 10;
+		list-style: none;
+		box-shadow: var(--shadow-lifted);
+		background-color: var(--background-norm);
+		color: var(--text-norm);
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		max-height: rem(200);
+		overflow-y: auto;
+
+		mark,
+		li:hover mark,
+		li[aria-selected='true'] mark {
+			background: var(--primary);
+		}
+	}
+
+	li {
+		cursor: pointer;
+		padding: 0.5em;
+
+		&[aria-selected='true'] {
+			background-color: var(--interaction-norm);
+		}
+
+		&:hover {
+			background-color: var(--interaction-default-hover);
+		}
+	}
+
+	.visually-hidden {
+		position: absolute;
+		clip: rect(0, 0, 0, 0);
+	}
+}

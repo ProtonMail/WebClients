@@ -1,0 +1,101 @@
+@import '~design-system/scss/config/';
+
+/*
+ * cycle selector
+*/
+@include respond-to(1100) {
+	.cycle-currency-selectors {
+		&.flex-nowrap {
+			flex-wrap: wrap;
+			> .flex-item-fluid {
+				min-width: 100%;
+				margin-left: 0;
+				margin-bottom: 0.25em;
+			}
+		}
+	}
+}
+
+.plan-selection {
+	display: grid;
+	grid-gap: 1em;
+	grid-template-columns: repeat(var(--plan-selection-number, 4), 1fr);
+	& &-plan {
+		// specificity ^^
+		border-radius: $global-bigger-border-radius;
+	}
+	.plan-selection {
+		&-plan-current {
+			background-color: var(--primary);
+			color: var(--primary-contrast);
+			position: absolute;
+			bottom: 100%;
+			left: -1px;
+			right: -1px;
+			border-radius: $global-bigger-border-radius $global-bigger-border-radius 0 0;
+			padding: 0.35em; // Design wants 28px height ^^
+			&-card {
+				border-color: var(--primary);
+				border-radius: 0 0 $global-bigger-border-radius $global-bigger-border-radius;
+			}
+		}
+
+		&-info {
+			min-height: 4em;
+			@include respond-to(1100) {
+				min-height: 5.5em;
+			}
+			@include respond-to(1000) {
+				min-height: 6.5em;
+			}
+			@include respond-to($breakpoint-medium) {
+				min-height: 0;
+			}
+		}
+
+		&-main-price {
+			.amount,
+			.currency {
+				font-size: 2em;
+				@include respond-to(1000) {
+					font-size: 1.8em;
+				}
+				@include respond-to(950) {
+					font-size: 1.6em;
+				}
+				@include respond-to($breakpoint-medium) {
+					font-size: 2em;
+				}
+				line-height: 1.2; // font only takes the place for characters ^^
+			}
+			.suffix {
+				opacity: 0.5; // while waiting for new taxonomy
+			}
+		}
+	}
+	@include respond-to($breakpoint-medium) {
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 2.2em 1em;
+	}
+	@include respond-to($breakpoint-small) {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+.subscriptionCheckout-column {
+	width: 22em;
+	@include respond-to($breakpoint-medium) {
+		width: 18em;
+	}
+	@include respond-to($breakpoint-small) {
+		width: 100%;
+	}
+}
+
+.plan-customiser {
+	& &-addon-label {
+		@include respond-to($breakpoint-medium) {
+			min-width: 8em;
+		}
+	}
+}

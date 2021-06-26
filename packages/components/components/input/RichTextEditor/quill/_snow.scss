@@ -1,0 +1,36 @@
+@import '~design-system/scss/config/';
+
+$themeName: 'snow' !default;
+$activeColor: var(--interaction-norm) !default;
+$borderColor: var(--border-norm) !default;
+$backgroundColor: var(--background-norm) !default;
+$inactiveColor: var(--text-norm) !default;
+$shadowColor: var(--shadow-norm) !default;
+$textColor: var(--text-norm) !default;
+
+@import 'core';
+@import 'base';
+@import 'snow/toolbar';
+@import 'snow/tooltip';
+
+.ql-snow {
+	a {
+		color: $activeColor;
+	}
+}
+
+.ql-container {
+	//background-color: $backgroundColor;
+	&.ql-snow {
+		border: 1px solid $borderColor;
+	}
+}
+
+// fixes for our case
+.ql-container {
+	min-height: 12em;
+	border-radius: 0 0 $global-border-radius $global-border-radius;
+}
+.ql-toolbar {
+	border-radius: $global-border-radius $global-border-radius 0 0;
+}
