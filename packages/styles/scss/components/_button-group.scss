@@ -1,0 +1,75 @@
+@use "sass:math";
+.button-group {
+	@extend .inline-flex;
+	@extend .flex-nowrap;
+	@extend .flex-align-items-stretch;
+
+	padding: em(3);
+	border: 1px solid transparent;
+	border-radius: $global-border-radius;
+	background-color: var(--background-norm);
+	vertical-align: middle;
+
+	&-outline {
+		border-color: var(--border-norm);
+	}
+
+	&-item {
+		padding: em(3) em(8) em(3);
+		border-radius: math.div($global-border-radius, 2);
+
+		&.button-for-icon {
+			padding: em(5.5) em(6) em(5.5);
+		}
+
+		&.is-selected {
+			background-color: var(--interaction-norm);
+			color: var(--interaction-norm-contrast);
+		}
+	}
+
+	.vr {
+		margin: em(2) em(3);
+	}
+
+	/*
+	 * Small variant
+	 */
+
+	&-small {
+		padding: em(2);
+
+		.vr {
+			margin: em(2) em(2);
+		}
+	}
+
+	&-small &-item {
+		padding: em(1) em(4) em(1);
+		line-height: $base-line-height * 0.8;
+
+		&.button-for-icon {
+			padding: em(2);
+		}
+	}
+
+	/*
+	 * Large variant
+	 */
+
+	&-large {
+		padding: em(4);
+
+		.vr {
+			margin: em(2) em(4);
+		}
+	}
+
+	&-large &-item {
+		padding: em(4.5) em(12) em(4.5);
+
+		&.button-for-icon {
+			padding: em(7);
+		}
+	}
+}

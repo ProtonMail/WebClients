@@ -1,0 +1,73 @@
+/**
+ * Easing functions for transitions and animations
+ * Learn more at http://easings.net/
+ * @param {String} $type - The wanted easing name
+ * @returns {String} - The easing function, using cubic-bezier
+ */
+@function easing($type: 'ease') {
+	$value: '';
+
+	@if $type == 'linear' {
+		$value: '0, 0, 1, 1';
+	} @else if $type == 'ease' {
+		$value: '0.25, 0.1, 0.25, 1';
+	} @else if $type == 'easeIn' {
+		$value: '0.42, 0, 1, 1';
+	} @else if $type == 'easeOut' {
+		$value: '0, 0, 0.58, 1';
+	} @else if $type == 'easeInOut' {
+		$value: '0.42, 0, 0.58, 1';
+	} @else if $type == 'easeInSine' {
+		$value: '0.12, 0, 0.39, 0';
+	} @else if $type == 'easeInQuad' {
+		$value: '0.11, 0, 0.5, 0';
+	} @else if $type == 'easeInCubic' {
+		$value: '0.32, 0, 0.67, 0';
+	} @else if $type == 'easeInQuart' {
+		$value: '0.5 , 0, 0.75, 0';
+	} @else if $type == 'easeInQuint' {
+		$value: '0.64, 0, 0.78, 0';
+	} @else if $type == 'easeInExpo' {
+		$value: '0.7 , 0, 0.84, 0';
+	} @else if $type == 'easeInCirc' {
+		$value: '0.55, 0, 1, 0.45';
+	} @else if $type == 'easeInBack' {
+		$value: '0.36, 0, 0.66, -0.56';
+	} @else if $type == 'easeOutSine' {
+		$value: '0.61, 1, 0.88, 1';
+	} @else if $type == 'easeOutQuad' {
+		$value: '0.5, 1, 0.89, 1';
+	} @else if $type == 'easeOutCubic' {
+		$value: '0.33, 1, 0.68, 1';
+	} @else if $type == 'easeOutQuart' {
+		$value: '0.25, 1, 0.5, 1';
+	} @else if $type == 'easeOutQuint' {
+		$value: '0.22, 1, 0.36, 1';
+	} @else if $type == 'easeOutExpo' {
+		$value: '0.16, 1, 0.3, 1';
+	} @else if $type == 'easeOutCirc' {
+		$value: '0, 0.55, 0.45, 1';
+	} @else if $type == 'easeOutBack' {
+		$value: '0.34, 1.56, 0.64, 1';
+	} @else if $type == 'easeInOutSine' {
+		$value: '0.37, 0, 0.63, 1';
+	} @else if $type == 'easeInOutQuad' {
+		$value: '0.45, 0, 0.55, 1';
+	} @else if $type == 'easeInOutCubic' {
+		$value: '0.65, 0, 0.35, 1';
+	} @else if $type == 'easeInOutQuart' {
+		$value: '0.76, 0, 0.24, 1';
+	} @else if $type == 'easeInOutQuint' {
+		$value: '0.83, 0, 0.17, 1';
+	} @else if $type == 'easeInOutExpo' {
+		$value: '0.87, 0, 0.13, 1';
+	} @else if $type == 'easeInOutCirc' {
+		$value: '0.85, 0, 0.15, 1';
+	} @else if $type == 'easeInOutBack' {
+		$value: '0.68, -0.6, 0.32, 1.6';
+	} @else {
+		@error "'#{$type}' is not a correct value for easing().";
+	}
+
+	@return cubic-bezier(unquote($value));
+}

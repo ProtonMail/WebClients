@@ -1,0 +1,84 @@
+.notifications-container {
+	position: fixed;
+	top: 1em;
+	left: 50%;
+	z-index: 777;
+	transform: translateX(-50%);
+
+	@include respond-to($breakpoint-small) {
+		text-align: center;
+	}
+
+	@include respond-to($breakpoint-tiny) {
+		[class*='notification-'] {
+			transform: none;
+			left: 1em;
+			right: 1em;
+			width: calc(100% - 2em);
+		}
+	}
+}
+
+[class*='notification-'] {
+	display: block;
+	overflow: hidden;
+	border-radius: $global-border-radius;
+	box-shadow: var(--shadow-lifted);
+
+	a,
+	.link,
+	.button-link,
+	.button-henlo {
+		@extend .color-inherit;
+	}
+}
+
+.notification {
+	@each $color in (danger, warning, success, info) {
+		&-#{$color} {
+			background-color: var(--signal-#{$color});
+			color: var(--signal-#{$color}-contrast);
+		}
+	}
+
+	&--in {
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+		animation-timing-function: ease;
+		animation-name: anime-notification-in;
+	}
+
+	&--out {
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+		animation-timing-function: ease;
+		animation-name: anime-notification-out;
+	}
+}
+
+@keyframes anime-notification-in {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes anime-notification-out {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(0);
+		max-height: 0;
+		padding: 0;
+		margin-bottom: 0;
+	}
+}

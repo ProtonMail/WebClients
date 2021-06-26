@@ -1,0 +1,65 @@
+.searchbox {
+	&-container {
+		width: $conversations-column-width;
+
+		&:empty {
+			width: 0;
+
+			// if there is no search bar, the next element (navigation) is pushed to the right (VPN/settings/etc.)
+			/*
+			&+.topnav-container {
+				& .topnav-list {
+					justify-content: flex-end;
+
+					&>li:last-child {
+						margin-left: 0;
+					}
+				}
+			}
+			*/
+		}
+
+		&--reset-advanced {
+			.searchbox-field[type='search'] {
+				padding-right: rem(62.5);
+			}
+
+			[type='reset'].searchbox-advanced-search-button {
+				right: rem(32);
+			}
+		}
+	}
+
+	&-field[type='search'] {
+		height: rem(35);
+		padding-left: calc(2em + #{rem(20)});
+		padding-right: rem(40);
+		background-color: var(--searchbox-background-color, transparent);
+		background-image: none;
+		color: var(--searchbox-text-color, var(--text-norm));
+	}
+
+	&-search-button {
+		position: absolute;
+		left: 0.25em;
+		top: 0;
+		bottom: 0;
+		padding-top: 0.125em;
+		padding-bottom: 0;
+		margin: 0.25em 0;
+	}
+
+	&-advanced-search-button {
+		position: absolute;
+		right: 0.25em;
+		top: 0;
+		bottom: 0;
+		width: rem(28);
+		padding: 0;
+		margin: 0.25em 0;
+
+		@include respond-to($breakpoint-small) {
+			position: static;
+		}
+	}
+}

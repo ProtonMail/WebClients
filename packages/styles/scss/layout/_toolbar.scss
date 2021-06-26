@@ -1,0 +1,91 @@
+.toolbar {
+	--padding-toolbar-button: #{em(16, $base-font-size)};
+	--padding-toolbar-button-dropdown: #{em(12, $base-font-size)};
+
+	position: relative;
+	z-index: 1;
+	height: rem($toolbar-height);
+	border-bottom: 1px solid
+		var(--toolbar-border-bottom-color, var(--border-norm));
+	background-color: var(--toolbar-background-color, var(--background-weak));
+	color: var(--toolbar-text-color, var(--text-norm));
+}
+
+.toolbar-button {
+	@extend .interactive;
+
+	padding-left: var(--padding-toolbar-button);
+	padding-right: var(--padding-toolbar-button);
+	display: flex; // alignment fix on Chrome
+}
+
+.toolbar-button--dropdown {
+	padding-left: var(--padding-toolbar-button-dropdown);
+	padding-right: var(--padding-toolbar-button-dropdown);
+}
+
+.toolbar-separator {
+	width: 1px;
+	background: var(--toolbar-separator-color, var(--border-norm));
+}
+
+.toolbar button[aria-disabled='true'],
+.toolbar .toolbar-button[aria-disabled='true'] {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+// new select
+.toolbar .select {
+	@extend .interactive;
+
+	border: unset;
+	border-radius: unset;
+	background-color: unset;
+	color: currentColor;
+	height: auto;
+}
+
+.toolbar--heavy {
+	@include respond-to(1100) {
+		--padding-toolbar-button: #{em(12, $base-font-size)};
+		--padding-toolbar-button-dropdown: #{em(10, $base-font-size)};
+	}
+
+	// use the forceps Luke ^^
+	@include respond-to(980) {
+		--padding-toolbar-button: #{em(11, $base-font-size)};
+		--padding-toolbar-button-dropdown: #{em(8, $base-font-size)};
+	}
+
+	@include respond-to($breakpoint-medium) {
+		--padding-toolbar-button: #{em(16, $base-font-size)};
+		--padding-toolbar-button-dropdown: #{em(12, $base-font-size)};
+	}
+
+	@include respond-to(750) {
+		--padding-toolbar-button: #{em(12, $base-font-size)};
+		--padding-toolbar-button-dropdown: #{em(8, $base-font-size)};
+	}
+
+	@include respond-to($breakpoint-small) {
+		--padding-toolbar-button: #{em(16, $base-font-size)};
+		--padding-toolbar-button-dropdown: #{em(12, $base-font-size)};
+	}
+
+	@include respond-to($breakpoint-tiny) {
+		--padding-toolbar-button: #{em(14, $base-font-size)};
+		--padding-toolbar-button-dropdown: #{em(10, $base-font-size)};
+	}
+
+	@include respond-to(320) {
+		--padding-toolbar-button: #{em(12, $base-font-size)};
+		--padding-toolbar-button-dropdown: #{em(6, $base-font-size)};
+	}
+}
+
+@include respond-to($breakpoint-small) {
+	.toolbar {
+		border-radius: 0;
+	}
+}

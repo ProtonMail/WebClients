@@ -1,0 +1,82 @@
+.radio {
+	@extend .sr-only;
+
+	&-fakeradio {
+		@extend .checkbox-fakecheck;
+		border-radius: 50%;
+
+		&::before {
+			content: '';
+			width: em(10);
+			height: em(10);
+			margin: auto;
+			border-radius: 50%;
+			background: transparent;
+			transform: scale(0);
+			transition: 0.15s easing(easeOutCubic),
+				0.15s transform easing(easeOutBack);
+		}
+	}
+
+	&:focus + &-fakeradio {
+		border-color: var(--interaction-norm);
+		background-color: var(
+			--field-focus-background-color,
+			var(--background-norm)
+		);
+	}
+
+	&[aria-invalid='true'] + &-fakeradio {
+		border-color: var(--signal-danger);
+		background-color: var(--field-background-color, var(--background-norm));
+	}
+
+	&[disabled] + &-fakeradio {
+		border-color: var(--field-disabled);
+		background-color: var(
+			--field-disabled-background-color,
+			var(--background-norm)
+		);
+	}
+
+	/*
+	 * Checked state
+	 */
+	&:checked + &-fakeradio {
+		&::before {
+			transform: scale(1);
+			background-color: var(--interaction-norm);
+		}
+
+		&:hover {
+			border-color: var(--interaction-norm-hover);
+
+			&::before {
+				background-color: var(--interaction-norm-hover);
+			}
+		}
+	}
+
+	&:checked:focus + &-fakeradio {
+		border-color: var(--interaction-norm-hover);
+
+		&::before {
+			background-color: var(--interaction-norm-hover);
+		}
+	}
+
+	&:checked[aria-invalid='true'] + &-fakeradio::before {
+		background-color: var(--signal-danger);
+	}
+
+	&:checked[disabled] + &-fakeradio::before {
+		background-color: var(--field-disabled);
+	}
+
+	/*
+	 * Modifiers
+	 */
+	&--ontop &-fakeradio {
+		margin-top: 0.25em;
+	}
+}

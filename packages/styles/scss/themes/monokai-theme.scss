@@ -1,0 +1,80 @@
+/*
+ * Theme: Monokai
+ */
+:root,
+.ui-standard {
+	--primary: #e53265;
+	--primary-contrast: white;
+
+	--signal-danger: #f5680a;
+	--signal-danger-hover: #fa7923;
+	--signal-danger-active: #ff8b3d;
+	--signal-danger-contrast: white;
+
+	--signal-warning: #f5d922;
+	--signal-warning-hover: #fae039;
+	--signal-warning-active: #ffe852;
+	--signal-warning-contrast: black;
+
+	--signal-success: #2fd6b5;
+	--signal-success-hover: #32e5c2;
+	--signal-success-active: #36f5cf;
+	--signal-success-contrast: black;
+
+	--signal-info: #28acf6;
+	--signal-info-hover: #40b5f6;
+	--signal-info-active: #59bef6;
+	--signal-info-contrast: white;
+
+	--text-norm: white;
+	--text-weak: #979bb0;
+	--text-hint: #575c75;
+	--text-disabled: #454a61;
+	--text-invert: #262a33;
+
+	--field-norm: #454a61;
+	--field-hover: #575c75;
+	--field-disabled: #34384e;
+
+	--border-norm: #34384e;
+	--border-weak: #25283a;
+
+	--background-norm: #171926;
+	--background-weak: #1e2130;
+	--background-strong: #25283a;
+
+	--interaction-norm: #e53265;
+	--interaction-norm-hover: #f04d7a;
+	--interaction-norm-active: #f5678f;
+	--interaction-norm-contrast: white;
+
+	--interaction-weak: #34384e;
+	--interaction-weak-hover: #454a61;
+	--interaction-weak-active: #575c75;
+
+	--interaction-default: transparent;
+	--interaction-default-hover: rgb(52 56 78 / 0.5);
+	--interaction-default-active: rgb(52 56 78 / 0.7);
+
+	--shadow-norm-opacity: 0.5;
+	--shadow-lifted-opacity: 0.75;
+
+	--backdrop-norm: rgb(0 0 0 / 0.75);
+
+	// Optional colors
+
+	--scrollbar-thumb-color: #34384e;
+	--scrollbar-thumb-hover-color: #454a61;
+
+	--navigation-current-item-text-color: #2fd6b5;
+	--navigation-item-count-background-color: #8838ff;
+
+	--email-item-read-background-color: #11121d;
+	--email-item-read-text-color: var(--text-weak);
+}
+
+// Prominent UI specifics
+
+.ui-prominent {
+	--background-norm: #11121d;
+}

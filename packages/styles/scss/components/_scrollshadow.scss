@@ -1,0 +1,44 @@
+$scrollshadow-height: rem(5) !default;
+
+.scrollshadow {
+	&-sticky {
+		position: sticky;
+		display: block;
+		height: $scrollshadow-height;
+
+		&--top {
+			top: 0;
+			background-image: radial-gradient(
+				farthest-side at 50% 0,
+				var(--background-strong),
+				transparent
+			);
+		}
+
+		&--bottom {
+			bottom: 0;
+			background-image: radial-gradient(
+				farthest-side at 50% 100%,
+				var(--background-strong),
+				transparent
+			);
+		}
+	}
+
+	&-static {
+		position: absolute;
+		display: block;
+		left: 0;
+		right: 0;
+		height: $scrollshadow-height;
+		background: var(--background-norm);
+
+		&--top {
+			top: 0;
+		}
+
+		&--bottom {
+			bottom: 0;
+		}
+	}
+}

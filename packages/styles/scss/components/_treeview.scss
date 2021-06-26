@@ -1,0 +1,116 @@
+@use "sass:math";
+$treeview-border-width: 1px !default;
+$treeview-indentation-margin: rem(30) !default;
+
+.treeview-item {
+	border-bottom: $treeview-border-width solid var(--border-norm);
+	margin-bottom: -$treeview-border-width;
+
+	$arrow-width: rem(9) !default;
+	$arrow-height: rem(7) !default;
+	$circle-size: rem(8) !default;
+
+	&--move-inside,
+	&--move-top,
+	&--move-bottom {
+		&::before {
+			content: '';
+			position: absolute;
+		}
+	}
+
+	&--move-inside {
+		background-color: var(--background-weak);
+
+		&::before {
+			left: -$arrow-width;
+			height: 0;
+			width: 0;
+			border: $arrow-height solid transparent;
+			border-left-color: var(--interaction-norm);
+			border-left-width: $arrow-width;
+		}
+	}
+
+	&--move-top,
+	&--move-bottom {
+		&::before {
+			left: -#{math.div($circle-size, 2)};
+			height: $circle-size;
+			width: $circle-size;
+			border-radius: 50%;
+			background: var(--interaction-norm);
+		}
+	}
+
+	&--move-inside#{&}--self-grabbed {
+		// no primary color on the self grabbed element
+		&::before {
+			border-left-color: var(--border-norm);
+		}
+	}
+
+	&--move-top::before {
+		top: -#{math.div($circle-size, 2)};
+	}
+
+	&--move-bottom::before {
+		bottom: -#{math.div($circle-size, 2)};
+	}
+
+	&--move-top::after,
+	&--move-bottom::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: var(--interaction-norm);
+	}
+
+	&--move-top::after {
+		top: 0;
+	}
+
+	&--move-bottom::after {
+		bottom: -1px;
+	}
+
+	.treeview-item .treeview-item {
+		padding-left: $treeview-indentation-margin;
+
+		&.treeview-item--move-inside {
+			background: linear-gradient(
+				to right,
+				transparent 0,
+				transparent #{$treeview-indentation-margin},
+				var(--background-weak) #{$treeview-indentation-margin}
+			);
+
+			&::before {
+				left: calc(-#{$arrow-width} + #{$treeview-indentation-margin});
+			}
+		}
+
+		&.treeview-item--move-top,
+		&.treeview-item--move-bottom {
+			&::before {
+				left: calc(
+					-#{math.div($circle-size, 2)} + #{$treeview-indentation-margin}
+				);
+			}
+		}
+
+		&--move-top::after,
+		&--move-bottom::after {
+			left: #{$treeview-indentation-margin};
+		}
+	}
+}
+
+@include respond-to($breakpoint-medium) {
+	.treeview-toggle,
+	.treeview-actions {
+		width: em(100);
+	}
+}

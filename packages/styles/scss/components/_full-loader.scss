@@ -1,0 +1,82 @@
+// Init values
+$animation-duration: 3s !default;
+$second-circle-time-offset: 0.125s !default;
+
+// We need to adjust animation for each size.
+$stroke-map: (
+	default: 4.5,
+	bold: 6.5,
+	xbold: 15,
+) !default;
+
+.full-loader {
+	// We need a different duration than each circle for the whole loader
+	// to have an animation that seems visually "random", so here, duration +20% and ease.
+	animation: anime-loader-rotation #{$animation-duration * 1.2} ease-in-out infinite;
+	will-change: transform;
+
+	@keyframes anime-loader-rotation {
+		from {
+			transform: rotate(0);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	&-circle {
+		transform-origin: 50%;
+		fill: none;
+		stroke: currentColor;
+		stroke-width: map-get($stroke-map, default);
+		will-change: transform;
+		animation: $animation-duration linear infinite;
+
+		&:nth-of-type(1) {
+			animation-name: anime-loader-orbit-x;
+		}
+
+		&:nth-of-type(2) {
+			animation-name: anime-loader-orbit-y;
+			animation-delay: $second-circle-time-offset;
+		}
+	}
+
+	@each $name, $value in $stroke-map {
+		@if $name != 'default' {
+			&.is-#{$name} &-circle {
+				stroke-width: $value;
+
+				&:nth-of-type(1) {
+					animation-name: #{'anime-loader-orbit-x-' + $name};
+				}
+
+				&:nth-of-type(2) {
+					animation-name: #{'anime-loader-orbit-y-' + $name};
+				}
+			}
+		}
+
+		@each $axis in (x, y) {
+			@keyframes #{'anime-loader-orbit-' + $axis + if($name == 'default', '', '-' + $name)} {
+				from {
+					transform: #{'rotate' + $axis + '(0)'};
+					stroke-width: $value;
+				}
+				25% {
+					stroke-width: $value * 2;
+				}
+				50% {
+					stroke-width: $value;
+				}
+				75% {
+					stroke-width: $value * 2;
+				}
+				to {
+					transform: #{'rotate' + $axis + '(360deg)'};
+					stroke-width: $value;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,77 @@
+/*
+ * Theme: Carbon
+ */
+:root,
+.ui-standard {
+	--primary: #657ee4;
+	--primary-contrast: white;
+
+	--signal-danger: #ed4c51;
+	--signal-danger-hover: #f7595e;
+	--signal-danger-active: #ff666b;
+	--signal-danger-contrast: white;
+
+	--signal-warning: #f5930a;
+	--signal-warning-hover: #f5a716;
+	--signal-warning-active: #f5b922;
+	--signal-warning-contrast: black;
+
+	--signal-success: #349172;
+	--signal-success-hover: #339c79;
+	--signal-success-active: #31a67f;
+	--signal-success-contrast: white;
+
+	--signal-info: #2c89db;
+	--signal-info-hover: #3491e3;
+	--signal-info-active: #3d99eb;
+	--signal-info-contrast: white;
+
+	--text-norm: white;
+	--text-weak: #a4a9b5;
+	--text-hint: #696f7d;
+	--text-disabled: #575d6b;
+	--text-invert: #262a33;
+
+	--field-norm: #575d6b;
+	--field-hover: #696f7d;
+	--field-disabled: #464b58;
+
+	--border-norm: #464b58;
+	--border-weak: #363a46;
+
+	--background-norm: #262a33;
+	--background-weak: #2e323c;
+	--background-strong: #363a46;
+
+	--interaction-norm: #657ee4;
+	--interaction-norm-hover: #7d92e8;
+	--interaction-norm-active: #98a9ee;
+	--interaction-norm-contrast: white;
+
+	--interaction-weak: #464b58;
+	--interaction-weak-hover: #575d6b;
+	--interaction-weak-active: #696f7d;
+
+	--interaction-default: transparent;
+	--interaction-default-hover: rgb(87 93 107 / 0.2);
+	--interaction-default-active: rgb(87 93 107 / 0.3);
+
+	--shadow-norm-opacity: 0.32;
+	--shadow-lifted-opacity: 0.4;
+
+	--backdrop-norm: rgb(0 0 0 / 0.32);
+
+	// Optional colors
+
+	--scrollbar-thumb-color: #464b58;
+	--scrollbar-thumb-hover-color: #575d6b;
+
+	--email-item-read-background-color: #1a1d24;
+	--email-item-read-text-color: var(--text-weak);
+}
+
+// Prominent UI specifics
+
+.ui-prominent {
+	--background-norm: #1a1d24;
+}

@@ -1,0 +1,234 @@
+@use "sass:math";
+*,
+*::before,
+*::after {
+	box-sizing: inherit; // From html
+}
+
+:root {
+	--px: #{math.div(1em, $base-font-size)}; // For pixel-based calculation on css variables
+}
+
+html {
+	box-sizing: border-box;
+	overscroll-behavior: none;
+
+	/* base font size at 10px */
+	@if $root-equiv-10-px==true {
+		font-size: 62.5%;
+
+		@if ($use-ie-calc-font-fallback==true) {
+			font-size: calc(1em * 0.625);
+		}
+	}
+}
+
+body {
+	@if $apply-body-styles==true {
+		background: var(--background-norm);
+		color: var(--text-norm);
+		font-family: var(--font-family, $font-family);
+		text-rendering: geometricPrecision;
+		-webkit-font-smoothing: antialiased;
+
+		@if $typo-unit== 'use_em' {
+			@if $root-equiv-10-px==true {
+				font-size: em($base-font-size, 10);
+			} @else {
+				font-size: em($base-font-size, $root-default-font-size);
+			}
+		} @else if $typo-unit== 'use_rem' {
+			font-size: var(--body-fontsize, rem($base-font-size));
+		} @else if $typo-unit== 'use_rem_with_em_fallback' {
+			@if $root-equiv-10-px==true {
+				font-size: em($base-font-size, 10);
+			} @else {
+				font-size: em($base-font-size, $root-default-font-size);
+			}
+
+			font-size: rem($base-font-size);
+		}
+
+		line-height: $base-line-height;
+		min-height: 100%;
+	}
+}
+
+::selection {
+	background-color: var(--selection-background-color, var(--primary));
+	color: var(--selection-text-color, var(--primary-contrast));
+}
+
+a {
+	color: var(--interaction-norm);
+	text-decoration: underline;
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		color: var(--interaction-norm-hover);
+		text-decoration: none;
+	}
+
+	&:active {
+		color: var(--interaction-norm-active);
+		text-decoration: none;
+	}
+}
+
+/* it depends, it exceeds (french joke) */
+%reset-responsive-height-max-width {
+	height: auto;
+	max-width: 100%;
+}
+
+%reset-responsive-max-width-only {
+	max-width: 100%;
+}
+
+blockquote,
+code,
+pre,
+textarea,
+input,
+svg {
+	@extend %reset-responsive-height-max-width;
+}
+
+@if $use-height-auto-td==true {
+	td {
+		@extend %reset-responsive-height-max-width;
+	}
+} @else {
+	td {
+		@extend %reset-responsive-max-width-only;
+	}
+}
+
+@if $use-height-auto-img==true {
+	img {
+		@extend %reset-responsive-height-max-width;
+	}
+} @else {
+	img {
+		@extend %reset-responsive-max-width-only;
+	}
+}
+
+@if $use-height-auto-table==true {
+	table {
+		@extend %reset-responsive-height-max-width;
+	}
+} @else {
+	table {
+		@extend %reset-responsive-max-width-only;
+	}
+}
+
+textarea {
+	min-height: #{rem($default-height-fields)}; // Equals field inputs height
+}
+
+/*
+ * avoids dimensioning for radio, checkboxes and images
+ * and a different display on IE
+ */
+input[type='radio'],
+input[type='checkbox'],
+input[type='image'] {
+	background-color: transparent;
+	border: 0;
+	width: auto;
+}
+
+// for components that rely on checkboxes
+input[type='radio'],
+input[type='checkbox'] {
+	opacity: 0;
+}
+
+/* removes X in input when typing in IE/EDGE */
+input::-ms-clear {
+	width: 0;
+	height: 0;
+}
+
+/* removes native password revealer for IE/EDGE */
+input::-ms-reveal {
+	display: none;
+}
+
+/* avoid ugly line-height */
+sup,
+sub {
+	vertical-align: 0;
+	position: relative;
+}
+
+sup {
+	bottom: 1ex;
+}
+
+sub {
+	top: 0.5ex;
+}
+
+mark {
+	background-color: var(--mark-background-color, inset);
+	color: var(--mark-text-color, inherit);
+	font-weight: var(--mark-font-weight, bold);
+}
+
+/* avoid margin on nested elements */
+li {
+	p,
+	ul {
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+}
+
+kbd {
+	padding: 0 0.25em;
+	background-color: var(--background-strong);
+	border: 1px solid var(--border-norm);
+	border-radius: $global-border-radius;
+}
+
+hr {
+	background-color: var(--border-norm);
+	border: 0;
+	height: 1px;
+	margin: 0 0 1em;
+	padding: 0;
+}
+
+table {
+	margin-bottom: 1.5em;
+	table-layout: fixed;
+}
+
+details {
+	border-bottom: 1px solid var(--border-norm);
+
+	& > summary::-webkit-details-marker {
+		display: none;
+	}
+
+	&:first-child {
+		border-top: 1px solid var(--border-norm);
+	}
+
+	&[open] > summary {
+		.summary-caret {
+			@extend .mirror;
+		}
+	}
+}
+
+summary {
+	padding: 0.5em 0;
+	list-style: none;
+	border: 0;
+	cursor: pointer;
+}

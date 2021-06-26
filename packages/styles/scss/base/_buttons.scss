@@ -1,0 +1,330 @@
+/*
+ * Button shape
+ */
+.button-henlo {
+	display: inline-block;
+	padding: em(7) em(16) em(7);
+
+	// usage of box-shadow instead of border to enable increasing size of _visual_ border without shifting button size
+	box-shadow: inset 0 0 0 var(--button-default-border-width, 0)
+		var(--button-default-border-color, transparent);
+
+	border: none;
+	border-radius: $global-border-radius;
+	outline: none; // be careful of a11y
+	background-color: var(--button-default-background-color, transparent);
+	color: var(--button-default-text-color, inherit);
+	text-align: center;
+	transition: 0.15s easing(easeOutQuint), background-position 0s;
+
+	&,
+	&:hover,
+	&:focus,
+	&:focus-within,
+	&:active {
+		text-decoration: none;
+	}
+
+	&:hover,
+	&:focus,
+	&:focus-within,
+	&.is-hover {
+		box-shadow: inset 0 0 0 var(--button-hover-border-width, 0)
+			var(--button-hover-border-color, transparent);
+		background-color: var(--button-hover-background-color, transparent);
+		color: var(--button-hover-text-color, inherit);
+	}
+
+	&:active,
+	&.is-active,
+	// When clicking on a button to expand a container, we usually don't need to specify the `aria-controls` attribute
+	// because the expanded container is right next to that button, so the `aria-expanded` style makes sense,
+	// but in some cases that expanded container isn't so obviously visually connected to that button, so we use
+	// `aria-controls` to specify it, and avoid the `aria-expanded` style in the same time.
+	&[aria-expanded='true']:not([aria-controls]) {
+		box-shadow: inset 0 0 0 var(--button-active-border-width, 0)
+			var(--button-active-border-color, transparent);
+		background-color: var(--button-active-background-color, transparent);
+		color: var(--button-active-text-color, inherit);
+	}
+
+	&[disabled],
+	&.is-disabled {
+		pointer-events: none;
+
+		&:not([aria-busy='true']) {
+			opacity: 0.5;
+		}
+	}
+
+	&[aria-expanded='true'] .caret-like {
+		@extend .rotateX-180;
+	}
+}
+
+/*
+ * Link shape
+ */
+.button-link {
+	display: inline-block;
+	padding: em(5) 0 em(6);
+	outline: none; // be careful of a11y
+	color: var(--button-default-text-color, inherit);
+	text-decoration: underline;
+
+	&:hover,
+	&:focus,
+	&:focus-within,
+	&:active {
+		text-decoration: none;
+	}
+
+	&:hover,
+	&:focus,
+	&:focus-within {
+		color: var(--button-hover-text-color, inherit);
+	}
+
+	&:active,
+	&.is-active {
+		color: var(--button-active-text-color, inherit);
+	}
+
+	&[disabled],
+	&.is-disabled {
+		pointer-events: none;
+
+		&:not([aria-busy='true']) {
+			opacity: 0.5;
+		}
+	}
+}
+
+/*
+ * Button variants
+ */
+@each $color in (norm, weak, danger, warning, success, info) {
+	// Initialize namespace
+	$group: 'signal-';
+	@if $color == 'norm' or $color == 'weak' {
+		$group: 'interaction-';
+	}
+
+	// Default shape
+	.button-solid-#{$color} {
+		--button-default-background-color: var(--#{$group + $color});
+		--button-default-text-color: var(--#{$group + $color}-contrast);
+
+		@each $state in (hover, active) {
+			--button-#{$state}-background-color: var(
+				--#{$group + $color}-#{$state}
+			);
+			--button-#{$state}-text-color: var(--#{$group + $color}-contrast);
+		}
+	}
+
+	// Outline shape
+	.button-outline-#{$color} {
+		--button-default-border-width: 1px;
+		--button-default-border-color: var(--#{$group + $color});
+
+		@if $color == 'weak' {
+			--button-default-text-color: var(--text-norm);
+		} @else {
+			--button-default-text-color: var(--#{$group + $color});
+		}
+
+		@each $state in (hover, active) {
+			--button-#{$state}-border-width: 2px;
+			--button-#{$state}-border-color: var(
+				--#{$group + $color}-#{$state}
+			);
+
+			@if $color == 'weak' {
+				--button-#{$state}-text-color: var(--text-norm);
+			} @else {
+				--button-#{$state}-text-color: var(
+					--#{$group + $color}-#{$state}
+				);
+			}
+		}
+	}
+
+	// Ghost shape
+	.button-ghost-#{$color} {
+		--button-default-background-color: var(--interaction-default);
+
+		@if $color == 'weak' {
+			--button-default-text-color: var(--text-norm);
+		} @else {
+			--button-default-text-color: var(--#{$group + $color});
+		}
+
+		@each $state in (hover, active) {
+			--button-#{$state}-background-color: var(
+				--interaction-default-#{$state}
+			);
+
+			@if $color == 'weak' {
+				--button-#{$state}-text-color: var(--text-norm);
+			} @else {
+				--button-#{$state}-text-color: var(
+					--#{$group + $color}-#{$state}
+				);
+			}
+		}
+	}
+
+	// Link shape
+	.button-link-#{$color} {
+		@if $color == 'weak' {
+			--button-default-text-color: var(--text-weak);
+		} @else {
+			--button-default-text-color: var(--#{$group + $color});
+		}
+
+		@each $state in (hover, active) {
+			@if $color == 'weak' {
+				--button-#{$state}-text-color: var(--text-norm);
+			} @else {
+				--button-#{$state}-text-color: var(
+					--#{$group + $color}-#{$state}
+				);
+			}
+		}
+	}
+}
+
+/*
+ * Modifiers
+ */
+
+.button-small {
+	padding: em(1) em(12) em(2); // design want 26px height
+}
+
+.button-large {
+	padding: em(9) em(20) em(10); // design want 42px height
+}
+
+.button-for-icon {
+	padding: em(9.5) em(10); // To have same height as fields
+
+	&.button-small {
+		padding: em(4) em(6);
+	}
+
+	&.button-large {
+		padding: em(12) em(14);
+	}
+
+	& > svg {
+		display: block;
+		transition: opacity 0.25s ease-out;
+	}
+}
+
+// Loading state
+.button-henlo[aria-busy='true'] {
+	position: relative;
+
+	.loader-container {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		animation: 0.25s ease-out both anime-loader-container-fade-in;
+
+		@keyframes anime-loader-container-fade-in {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+		}
+	}
+
+	&:not(.button-for-icon) {
+		&:not(.w100) {
+			&:not(.button-small, .button-large) {
+				padding-right: em(40);
+			}
+
+			&.button-small {
+				padding-right: em(36);
+			}
+
+			&.button-large {
+				padding-right: em(44);
+			}
+		}
+
+		.loader-container {
+			top: 0;
+			bottom: 0;
+		}
+
+		&:not(.button-small, .button-large) .loader-container {
+			right: em(16);
+		}
+
+		&.button-small .loader-container {
+			right: em(12);
+		}
+
+		&.button-large .loader-container {
+			right: em(20);
+		}
+	}
+
+	&.button-for-icon {
+		& > svg {
+			opacity: 0;
+		}
+
+		.loader-container {
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+	}
+}
+
+.button-pill {
+	border-radius: 2em;
+}
+
+/*
+ * Interactive gives only default colors on every states
+ */
+.interactive {
+	outline: none; // be careful of a11y
+	background-color: var(--interaction-default);
+	color: inherit;
+	transition: 0.15s easing(easeOutQuint), background-position 0s;
+
+	&:hover,
+	&:focus,
+	&:focus-within {
+		background-color: var(--interaction-default-hover);
+		color: inherit;
+	}
+
+	&:active,
+	&.is-active,
+	&[aria-expanded='true'] {
+		background-color: var(--interaction-default-active);
+		color: inherit;
+	}
+
+	&[disabled],
+	&.is-disabled {
+		pointer-events: none;
+
+		&:not([aria-busy='true']) {
+			opacity: 0.5;
+		}
+	}
+}

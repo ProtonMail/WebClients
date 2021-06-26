@@ -1,0 +1,179 @@
+$padding-left-link: rem(20) !default;
+
+.navigation-link,
+.navigation-link-header-group {
+	padding: rem(9.5) 1em rem(9.5) $padding-left-link;
+	text-decoration: none;
+	display: block;
+}
+
+.navigation-icon {
+	color: var(--text-weak);
+}
+
+.navigation-refresh {
+	display: none;
+}
+
+.navigation-link {
+	@extend .interactive;
+
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		pointer-events: none;
+		transition: 0.15s easing(easeOutQuart);
+		border-left: 4px solid transparent;
+	}
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+
+	&:focus::after {
+		border-left: 4px solid
+			var(--navigation-current-item-marker-color, var(--interaction-norm));
+	}
+}
+
+[aria-current='page'].navigation-link {
+	background-color: var(
+		--navigation-current-item-background-color,
+		var(--interaction-default-hover)
+	);
+	color: var(--navigation-current-item-text-color, var(--text-norm));
+	font-weight: bold;
+
+	&:hover .navigation-icon:not(.navigation-icon--expand),
+	.navigation-icon {
+		color: inherit;
+	}
+
+	.navigation-refresh {
+		display: inline-flex;
+	}
+}
+
+// labels/folders sections
+.navigation-link-header-group-link {
+	outline: none;
+	color: var(--text-weak);
+
+	&:hover,
+	&:focus {
+		color: var(--text-norm);
+	}
+}
+
+.navigation-link-header-group-control {
+	@extend .interactive;
+
+	padding: 0.5em;
+	border-radius: $global-border-radius;
+	color: var(--text-weak);
+
+	.navigation-icon--expand {
+		color: var(--text-weak);
+	}
+
+	//&:focus, // gimme focus-visible !!!!
+	&:hover {
+		color: var(--text-norm);
+
+		.navigation-icon {
+			color: inherit;
+		}
+	}
+}
+
+.navigation-link--expand:focus,
+.navigation-link--expand:hover,
+//.navigation-link-header-group-link:focus,
+.navigation-link-header-group-link:hover {
+	.navigation-icon--expand {
+		color: inherit;
+	}
+}
+
+/* items counters */
+.navigation-counter-item {
+	background: var(--navigation-item-count-background-color, var(--primary));
+	color: var(--navigation-item-count-text-color, var(--primary-contrast));
+	font-size: rem(11);
+	padding: rem(2) 0.4em 0; // em value for top gives non rounded value, so rem
+	border-radius: rem(11);
+	line-height: 1;
+	height: rem(16);
+	font-variant: tabular-nums;
+
+	&:empty {
+		display: none; // removes a bug on Webkit
+	}
+}
+
+/* Sub folders */
+.navigation-item {
+	[data-level='1'] {
+		padding-left: 1em;
+	}
+
+	[data-level='2'] {
+		padding-left: 2em;
+	}
+}
+
+/* Sub-navigation */
+.navigation-sublist {
+	margin-left: $padding-left-link;
+	overflow: hidden;
+	opacity: 1;
+	transition: visibility 0s ease, transform 0.5s ease, opacity 0.5s ease,
+		max-height 0.5s ease;
+	transform-origin: top center;
+	transform: scale(1, 1);
+	max-height: 44em;
+	visibility: visible;
+	transition-delay: 0s;
+
+	&[aria-hidden='true'] {
+		display: block;
+		opacity: 0;
+		max-height: 0;
+		visibility: hidden;
+		transform: scale(1, 0);
+		transition-duration: 0s, 0.25s, 0.25s, 0.25s;
+		transition-delay: 0.5s, 0s, 0s, 0s;
+	}
+}
+
+.navigation-subitem {
+	margin-left: rem(7);
+}
+
+.navigation-sublink {
+	@extend .interactive;
+
+	border-left: 2px solid var(--border-norm);
+	display: block;
+	padding: rem(7.5) rem(10) rem(7.5) rem(15);
+	text-decoration: none;
+
+	&[aria-current='true'] {
+		background-color: var(
+			--navigation-current-item-background-color,
+			var(--interaction-default-hover)
+		);
+		color: var(--navigation-current-item-text-color, var(--text-norm));
+		border-left: 2px solid
+			var(--navigation-current-item-marker-color, var(--interaction-norm));
+		font-weight: bold;
+	}
+}

@@ -1,0 +1,229 @@
+@if $use-other-typo-helpers==true {
+	@each $name,
+		$size
+			in (
+				2xs: 9,
+				xs: 10,
+				sm: 12,
+				rg: $base-font-size,
+				lg: 16,
+				xl: 18,
+				2xl: 20
+			)
+	{
+		.text-#{$name} {
+			@include rhythm($size, 'double_top_double_bottom_without_coef');
+		}
+	}
+
+	.text-40 {
+		font-size: rem(40);
+	}
+}
+
+@if $use-other-line-height-helpers==true {
+	.lh100 {
+		line-height: 1;
+	}
+
+	.lh120 {
+		line-height: 1.2;
+	}
+
+	.lh130 {
+		line-height: 1.3;
+	}
+
+	.lh-rg {
+		line-height: $base-line-height;
+	}
+}
+
+/* Hyphenation: Thou shalt not pass (Moïse or Gandalf, don’t remember) */
+@if $hyphenation==false {
+	.text-cut {
+		word-break: break-word;
+	}
+
+	@supports (-webkit-hyphens: auto) or (hyphens: auto) {
+		.text-cut {
+			word-break: normal;
+			@include vendor-prefix(hyphens, auto, webkit);
+		}
+	}
+}
+
+.link {
+	@extend a;
+}
+
+/* remove hyphenation if needed */
+.text-no-cut {
+	word-wrap: normal;
+}
+
+@supports (-webkit-hyphens: auto) or (hyphens: auto) {
+	.text-no-cut {
+		@include vendor-prefix(hyphens, none, webkit);
+	}
+}
+
+.text-break {
+	word-break: break-word;
+}
+
+.text-hyphens {
+	@include vendor-prefix(hyphens, auto, webkit);
+}
+
+@each $align in (left, center, right) {
+	.text-#{$align} {
+		text-align: $align;
+	}
+}
+
+@each $align
+	in (baseline, sub, super, text-top, text-bottom, middle, top, bottom)
+{
+	.align-#{$align} {
+		vertical-align: $align;
+	}
+}
+
+@if $rtl-option==true {
+	/* RTL */
+	[dir='rtl'] .text-right {
+		text-align: left;
+	}
+
+	[dir='rtl'] .text-left {
+		text-align: right;
+	}
+}
+
+.text-ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.text-ellipsis-two-lines,
+.text-ellipsis-four-lines {
+	/* stylelint-disable-next-line */
+	display: -webkit-box;
+	/* stylelint-disable-next-line */
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.text-ellipsis-two-lines {
+	-webkit-line-clamp: 2;
+}
+
+.text-ellipsis-four-lines {
+	-webkit-line-clamp: 4;
+}
+
+.text-uppercase {
+	text-transform: uppercase;
+}
+
+.text-capitalize {
+	text-transform: capitalize;
+}
+
+.text-capitalize-block {
+	text-transform: lowercase;
+
+	&::first-letter {
+		text-transform: uppercase;
+	}
+}
+
+.text-strong,
+.text-bold {
+	font-weight: bold;
+}
+
+.text-no-bold {
+	font-weight: normal;
+}
+
+.text-semibold {
+	font-weight: 600;
+}
+
+.text-italic {
+	font-style: italic;
+}
+
+.no-outline {
+	outline: 0;
+}
+
+.text-strike {
+	text-decoration: line-through;
+}
+
+.text-pre {
+	white-space: pre;
+}
+
+.text-pre-wrap {
+	white-space: pre-wrap;
+}
+
+.text-no-wrap {
+	white-space: nowrap;
+}
+
+.text-no-decoration {
+	text-decoration: none;
+}
+
+.text-underline {
+	text-decoration: underline;
+}
+
+.text-underline-on-hover {
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}
+
+// if this is empty, we add an non-breakable-space
+.text-keep-space:empty::before {
+	content: '\00a0';
+}
+
+.user-select {
+	user-select: all;
+}
+
+/* TODO: If everything works fine, remove this!
+.primary-link {
+	&:focus,
+	&:hover {
+		color: var(--primary);
+	}
+}
+
+.hover-same-color {
+	&:focus,
+	&:hover {
+		color: currentColor;
+	}
+}
+*/
+
+.button-show-on-hover {
+	&-element {
+		visibility: hidden;
+	}
+
+	&:focus &-element,
+	&:hover &-element {
+		visibility: visible;
+	}
+}

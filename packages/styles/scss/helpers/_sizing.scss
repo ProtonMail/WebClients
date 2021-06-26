@@ -1,0 +1,99 @@
+@use "sass:math";
+.wauto {
+	width: auto;
+	min-width: 0;
+}
+
+.hauto {
+	height: auto;
+}
+
+.h100 {
+	height: 100%;
+}
+
+.h100v {
+	height: 100vh;
+}
+
+// .w50 { width: 50%; }
+/* prettier-ignore */
+@each $width in (0, 1, 2, 3, 5, 10, 15, 20, 25, 30, math.div(100,3), 40, 45, 49, 50, 60, math.div(100,3) * 2, 70, 75, 80, 90, 95, 100) {
+	.w#{floor($width)} {
+		width: #{$width * 1%};
+	}
+}
+
+// .w500p { width: 500px; }
+@each $width in (40, 50, 70, 90, 150, 200, 500) {
+	.w#{$width}p {
+		width: #{$width}px;
+	}
+}
+
+// .w500r { width: 500rem; }
+// seems
+// @each $width in (33) {
+// 	.w#{$width}r {
+// 		width: #{$width}rem;
+// 	}
+// }
+
+// .w16e { width: 16em; }
+@each $width in (2, 3, 6, 8, 10, 11, 13, 14, 16, 20, 24) {
+	.w#{$width}e {
+		width: #{$width}em;
+	}
+}
+
+// .max-w50 { max-width: 50%; }
+@each $max-width in (50, 60, 80, 100) {
+	.max-w#{$max-width} {
+		max-width: #{$max-width * 1%};
+	}
+}
+
+// .max-w500p { max-width: 500px; }
+@each $max-width in (100, 650) {
+	.max-w#{$max-width}p {
+		max-width: #{$max-width}px;
+	}
+}
+
+// .max-w500ch { max-width: 500ch; }
+@each $max-width in (70) {
+	.max-w#{$max-width}ch {
+		max-width: #{$max-width}ch;
+	}
+}
+
+// .max-w50e { max-width: 50em; }
+@each $max-width in (5, 7, 8, 13, 15, 18, 30, 37, 40, 43, 46, 50, 69) {
+	.max-w#{$max-width}e {
+		max-width: #{$max-width}em;
+	}
+}
+
+// .mw48r { max-width: 48rem; }
+@each $max-width in (30) {
+	.mw#{$max-width}r {
+		max-width: #{$max-width}rem;
+	}
+}
+
+// .min-w50e { min-width: 50em; }
+@each $min-width in (1.4, 3, 5, 7, 14, 35) {
+	// inspect to convert to string
+	$fragment-class: str-replace(inspect($min-width), '.', '-');
+
+	.min-w#{$fragment-class}e {
+		min-width: #{$min-width}em;
+	}
+}
+
+// .min-h50e { min-height: 50em; }
+@each $min-height in (5, 16) {
+	.min-h#{$min-height}e {
+		min-height: #{$min-height}em;
+	}
+}

@@ -1,0 +1,291 @@
+article,
+aside,
+datalist,
+details,
+dialog,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section {
+	display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+	display: inline-block;
+}
+
+abbr,
+mark,
+meter,
+time,
+output {
+	display: inline;
+}
+
+/* reset minimum */
+html,
+body,
+blockquote,
+ul,
+ol,
+form,
+button,
+figure {
+	margin: 0;
+	padding: 0;
+}
+
+button,
+progress {
+	border: 0;
+}
+
+p,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+menu,
+td,
+th {
+	font-size: 1em;
+	line-height: $base-line-height;
+	margin: $base-line-height * 1em 0;
+}
+
+@if $use-reset-button==true {
+	/* reset buttons, remember to style them in forms */
+	input,
+	select,
+	textarea,
+	optgroup,
+	button {
+		background: transparent;
+		border: 0;
+		font: inherit;
+		color: inherit;
+		/* stylelint-disable-next-line */
+		-webkit-appearance: none;
+	}
+	// -webkit-appearance: none makes vocalization failing
+
+	input[type='checkbox'] {
+		/* stylelint-disable-next-line */
+		-webkit-appearance: checkbox;
+	}
+
+	input[type='radio'] {
+		/* stylelint-disable-next-line */
+		-webkit-appearance: radio;
+	}
+} @else {
+	input,
+	select,
+	textarea,
+	optgroup,
+	button {
+		font: inherit;
+		color: inherit;
+	}
+}
+
+/* makes you want to click on */
+label,
+button,
+input[type='submit'],
+input[type='button'],
+input[type='reset'] {
+	cursor: pointer;
+}
+
+button[disabled],
+input[type='submit'][disabled],
+input[type='button'][disabled],
+input[type='reset'][disabled] {
+	cursor: default;
+	pointer-events: none;
+}
+
+/* avoid dummy resize */
+textarea {
+	resize: vertical;
+	cursor: auto; // fixes an issue on Chrome using CSS custom scroll
+}
+
+/* remove a Firefox difference on button tag */
+button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+label,
+button,
+input,
+select {
+	color: currentColor;
+	vertical-align: middle;
+}
+
+@if $use-reset-button==false {
+	/** fix typo inputs **/
+	input,
+	select,
+	textarea,
+	optgroup,
+	button {
+		font: inherit;
+	}
+}
+
+/* fix display img/iframe */
+img,
+iframe {
+	vertical-align: middle;
+}
+
+iframe,
+dialog {
+	border: 0;
+}
+
+ul,
+ol,
+menu {
+	padding-left: 2em;
+}
+
+dd {
+	margin-left: 2em;
+}
+
+// Right to left resets
+@if $rtl-option==true {
+	/* RTL */
+	[dir='rtl'] {
+		ul,
+		ol {
+			padding-left: 0;
+			padding-right: 2em;
+		}
+
+		dd {
+			margin-left: 0;
+			margin-right: 2em;
+		}
+	}
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+/* harmonization between Chrome/Firefox */
+pre,
+code,
+kbd,
+samp {
+	font-family: $font-family-monospace;
+	font-size: 1em;
+}
+
+pre {
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+small {
+	font-size: 80%;
+}
+
+/* avoid border on images in links */
+a {
+	&:link,
+	&:visited {
+		img {
+			border-style: none;
+		}
+	}
+}
+
+/* fix border image IE */
+img {
+	border-style: none;
+}
+
+/* tiny control */
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+/* important, abbr are good */
+/* only those with a title are shown */
+abbr[title] {
+	border-bottom: dotted 1px;
+	cursor: help;
+	text-decoration: none;
+	/* color inherited from text */
+}
+
+code,
+pre,
+samp {
+	white-space: pre-wrap;
+}
+
+code {
+	line-height: 1;
+}
+
+dfn {
+	font-style: italic;
+}
+
+/*
+ * taken from http://tinytypo.tetue.net/ made by @tetue
+ * tuned with the help of https://www.nicolas-hoffmann.net/utilitaires/codes-hexas-ascii-unicode-utf8-caracteres-usuels.php
+ *
+ * see https://en.wikipedia.org/wiki/Quotation_mark#Summary_table for reference
+ */
+html {
+	quotes: '\201C''\201D''\2018''\2019'; // default
+}
+
+@each $quotes
+	in (
+		(
+			'lang': 'fr',
+			'quotes':
+				'"\00AB\00A0" "\00A0\00BB" "\201C" "\201D" "\2018" "\2019"'
+		),
+		('lang': 'en', 'quotes': '"\201C" "\201D" "\2018" "\2019"'),
+		('lang': 'es', 'quotes': '"\00AB" "\00BB" "\201C" "\201D"'),
+		('lang': 'it', 'quotes': '"\00AB\00A0" "\00A0\00BB" "\201C" "\201D"'),
+		('lang': 'de', 'quotes': '"\201e" "\201c" "\201a" "\2018"'),
+		('lang': 'ja', 'quotes': '"\300c" "\300d" "\300e" "\300f"'),
+		('lang': 'ar', 'quotes': '"\201C" "\201D"')
+	)
+{
+	:lang(#{map-get($quotes, 'lang')}) {
+		quotes: #{map-get($quotes, 'quotes')};
+	}
+}
+
+blockquote,
+q {
+	&::before {
+		content: open-quote;
+	}
+
+	&::after {
+		content: close-quote;
+	}
+}

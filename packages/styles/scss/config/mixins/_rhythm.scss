@@ -1,0 +1,20 @@
+/**
+ * Calculate line height and margins for right vertical rhythm
+ * @param {Number} $value - The font size of the element to calculate from
+ * @param {String} $type-vr - The type of wanted vertical rhythm
+ * @param {String} $type-unit - The wanted unit in return
+ * @return {String} - Line height and margin for vertical rhythm
+ */
+@mixin rhythm($value, $type-vr: $vertical-rhythm, $type-unit: $typo-unit) {
+	@if $type-unit== 'use_em' {
+		font-size: em($value);
+	} @else if $type-unit== 'use_rem' {
+		font-size: rem($value);
+	} @else if $type-unit== 'use_rem_with_em_fallback' {
+		font-size: em($value);
+		font-size: rem($value);
+	}
+
+	line-height: line-height($value, $base-line-height, $base-font-size);
+	margin: margin-em($value, $base-line-height, $base-font-size, $type-vr);
+}

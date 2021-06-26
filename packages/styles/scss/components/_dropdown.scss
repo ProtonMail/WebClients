@@ -1,0 +1,299 @@
+.dropdown {
+	@include respond-to($breakpoint-small, 'min') {
+		--max-height-bounds: calc(100vh - (var(--top) * 1px) - 2px);
+		--max-width-bounds: calc(100vw - (var(--left) * 1px) - 2px);
+	}
+	// On mobile view, left and top are not used
+	@include respond-to($breakpoint-small, 'max') {
+		--max-height-bounds: 100vh;
+		--max-width-bounds: 100vw;
+	}
+
+	&:not(#{&}--no-max-size) {
+		--min-width: 10em;
+		--max-width: min(20em, var(--max-width-bounds));
+		--max-height: min(20em, var(--max-height-bounds));
+	}
+
+	&--no-max-size {
+		--max-height: var(--max-height-bounds);
+		--max-width: var(--max-width-bounds);
+	}
+
+	position: fixed;
+	z-index: 666;
+	color: var(--text-norm);
+	animation: 0.15s ease-out both;
+
+	@include respond-to($breakpoint-small, 'max') {
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		padding: 15% 25%;
+		overflow: hidden;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+		background-color: var(--backdrop-norm);
+		animation-name: anime-dropdown-in-small;
+
+		@keyframes anime-dropdown-in-small {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+		}
+
+		// Out animation
+		&.is-dropdown-out {
+			animation-name: anime-dropdown-out-small;
+
+			@keyframes anime-dropdown-out-small {
+				from {
+					opacity: 1;
+				}
+				to {
+					opacity: 0;
+				}
+			}
+		}
+	}
+
+	@include respond-to($breakpoint-tiny, 'max') {
+		padding: 15%;
+	}
+
+	@include respond-to($breakpoint-small, 'min') {
+		top: calc(var(--top) * 1px);
+		left: calc(var(--left) * 1px);
+		transform: scale(1);
+		border-radius: $global-border-radius;
+		box-shadow: var(--shadow-lifted);
+		border: 1px solid var(--border-norm);
+		background: var(--background-norm);
+		animation-name: anime-dropdown-in-large;
+
+		@keyframes anime-dropdown-in-large {
+			from {
+				transform: scale(0.75);
+				opacity: 0;
+			}
+			to {
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
+
+		// Out animation
+		&.is-dropdown-out {
+			animation-name: anime-dropdown-out-large;
+
+			@keyframes anime-dropdown-out-large {
+				from {
+					transform: scale(1);
+					opacity: 1;
+				}
+				to {
+					transform: scale(0.75);
+					opacity: 0;
+				}
+			}
+		}
+
+		// Transform origins regarding dropdown position
+		@each $position,
+			$origin
+				in (
+					(top, bottom center),
+					(top-left, bottom left),
+					(top-right, bottom right),
+					(bottom, top center),
+					(bottom-left, top left),
+					(bottom-right, top right),
+					(left, right center),
+					(left-bottom, right bottom),
+					(left-top, right top),
+					(right, left center),
+					(right-bottom, left bottom),
+					(right-top, left top)
+				)
+		{
+			&--#{$position} {
+				transform-origin: $origin;
+			}
+		}
+	}
+
+	/* Backdrop button, meant to override 'autoClose' option on mobile */
+	&-backdrop {
+		@include respond-to($breakpoint-small, 'max') {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			border: none;
+			outline: none;
+			background: none;
+		}
+
+		@include respond-to($breakpoint-small, 'min') {
+			display: none;
+		}
+	}
+
+	/* Scrollable insides of the dropdown */
+	&-content {
+		height: calc(var(--height) * 1px);
+		// The min size can't be greater than the remaining space when the dropdown is positioned
+		min-width: min(var(--min-width, 1.5em), var(--max-width-bounds));
+		min-height: min(var(--min-height, 1em), var(--max-height-bounds));
+		overflow: auto;
+		border-radius: $global-border-radius;
+		background-color: var(--background-norm);
+		background-image: radial-gradient(
+				farthest-side at 50% 0,
+				var(--backdrop-norm),
+				transparent
+			),
+			radial-gradient(
+				farthest-side at 50% 100%,
+				var(--backdrop-norm),
+				transparent
+			);
+		background-position: 50% 0, 0 100%;
+		background-size: calc(100% - #{rem(20)}) rem(3);
+		background-repeat: no-repeat;
+
+		@include respond-to($breakpoint-small, 'max') {
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			box-shadow: var(--shadow-lifted);
+			transition: transform 0.1s ease-out;
+		}
+
+		@include respond-to($breakpoint-small, 'min') {
+			width: calc(var(--width) * 1px);
+			max-width: var(--max-width, unset);
+			max-height: var(--max-height, unset);
+		}
+
+		&::before,
+		&::after {
+			content: '';
+			position: relative;
+			z-index: 1;
+			display: block;
+			height: rem(3);
+			flex: 0 0 rem(3);
+			background: var(--background-norm);
+		}
+	}
+
+	@include respond-to($breakpoint-small, 'max') {
+		&-content {
+			animation: anime-dropdown-content-scale-in 0.15s ease-out both;
+
+			@keyframes anime-dropdown-content-scale-in {
+				from {
+					transform: scale(0.8);
+				}
+				to {
+					transform: scale(1);
+				}
+			}
+		}
+
+		&.is-dropdown-out &-content {
+			animation-name: anime-dropdown-content-scale-out;
+
+			@keyframes anime-dropdown-content-scale-out {
+				from {
+					transform: scale(1);
+				}
+				to {
+					transform: scale(0.8);
+				}
+			}
+		}
+	}
+
+	&-item {
+		&-button,
+		&-link {
+			@extend .interactive;
+
+			&,
+			&:hover,
+			&:focus,
+			&:active {
+				color: var(--text-norm);
+				text-decoration: none;
+			}
+
+			&.active {
+				background-color: var(--interaction-default-hover);
+			}
+		}
+
+		&--delete {
+			&,
+			&:hover,
+			&:focus {
+				.dropdown-item-button {
+					color: var(--signal-danger);
+				}
+			}
+		}
+
+		& [aria-current='true'],
+		& &--is-selected {
+			// Specificity -_-v
+			&,
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: var(--interaction-norm);
+				color: var(--interaction-norm-contrast);
+				pointer-events: none;
+			}
+		}
+	}
+
+	&-item-hr {
+		height: 0;
+		box-sizing: content-box;
+		border-top: 1px solid var(--border-norm);
+	}
+
+	&-search {
+		position: sticky;
+		top: 0;
+		padding: 1rem;
+		background-color: var(--background-norm);
+		box-shadow: var(--shadow-norm);
+
+		&-no-result {
+			color: var(--text-weak);
+			padding: rem(40) rem(10);
+			letter-spacing: rem(0.25);
+		}
+	}
+
+	&--is-searchable {
+		.dropdown-content::before {
+			content: none;
+		}
+	}
+}

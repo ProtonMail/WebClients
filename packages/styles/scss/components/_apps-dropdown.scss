@@ -1,0 +1,48 @@
+.apps-dropdown {
+	&#{&}.dropdown {
+		--min-width: #{em(200)};
+		--max-height: #{em(400)};
+	}
+
+	&-button {
+		@extend .interactive;
+
+		border-radius: $global-border-radius;
+		padding: 0.25em;
+
+		& &-icon {
+			// override icon-16p
+			width: 1em;
+			height: 1em;
+			font-size: 2em;
+		}
+	}
+
+	&-list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	&-item-hr {
+		margin: 0.5em 0;
+		grid-column: 1 / -1;
+	}
+
+	&-link {
+		@extend .interactive;
+
+		display: block;
+		padding: 0.75em;
+		border-radius: $global-border-radius;
+		text-align: center;
+		text-decoration: none;
+	}
+
+	&-icon {
+		color: #657ee4; // Hard coded because it should not come from theme
+
+		&-vpn {
+			color: #4da358; // Hard coded because it should not come from theme
+		}
+	}
+}

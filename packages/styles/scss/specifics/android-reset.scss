@@ -1,0 +1,260 @@
+/*
+ * Specific reset for Android
+ */
+
+article,
+aside,
+datalist,
+details,
+dialog,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section {
+	display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+	display: inline-block;
+}
+
+abbr,
+mark,
+meter,
+time,
+output {
+	display: inline;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html,
+body,
+blockquote,
+ul,
+ol,
+form,
+button,
+figure {
+	margin: 0;
+	padding: 0;
+}
+
+button,
+progress {
+	border: 0;
+}
+
+p,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+menu,
+td,
+th {
+	font-size: 1em;
+	line-height: 1.5;
+	margin: 1.5em 0;
+}
+
+input,
+select,
+textarea,
+optgroup,
+button {
+	font: inherit;
+}
+
+/* fix display img/iframe */
+img,
+iframe {
+	vertical-align: middle;
+}
+
+ul,
+ol,
+menu {
+	padding-left: 2em;
+}
+
+dd {
+	margin-left: 2em;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+/* harmonization between Chrome/Firefox */
+pre,
+code,
+kbd,
+samp {
+	/* stylelint-disable font-family-no-duplicate-names */
+	font-family: SFMono-Regular, Consolas, 'Liberation Mono', 'Menlo', monospace,
+		monospace;
+	/* stylelint-enable font-family-no-duplicate-names */
+	font-size: 1em;
+}
+
+pre {
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+mark {
+	background-color: yellow;
+	color: black;
+	font-weight: bold;
+}
+
+small {
+	font-size: 80%;
+}
+
+/* avoid border on images in links + fix border image IE */
+a:link img,
+a:visited img,
+img {
+	border-style: none;
+}
+
+/* tiny control */
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+/* important, abbr are good */
+/* only those with a title are shown */
+abbr[title] {
+	border-bottom: dotted 1px;
+	cursor: help;
+	text-decoration: none;
+	/* color inherited from text */
+}
+
+code,
+pre,
+samp {
+	white-space: pre-wrap;
+}
+
+code {
+	line-height: 1;
+}
+
+dfn {
+	font-style: italic;
+}
+
+/*
+ * Deal with typo
+ */
+$use-other-typo-helpers: false;
+$use-other-line-height-helpers: false;
+
+$base-font-size: 16;
+$typo-unit: 'use_em';
+$vertical-rhythm: 'single_top_single_bottom';
+$title-sizes: (
+	h1: 32,
+	h2: 24,
+	h3: 19,
+	h4: 16,
+	h5: 13,
+	h6: 12,
+);
+
+@import '../config/';
+@import '../base/typo';
+
+/*
+ * Vars
+ */
+:root {
+	--background-norm: white;
+	--text-norm: #262a33;
+}
+
+/*
+ * Base styles
+ */
+body {
+	font-size: 100%;
+	width: 100%;
+	font-family: $font-family;
+	padding: 1rem;
+	line-height: $base-line-height;
+	background-color: var(--background-norm);
+	color: var(--text-norm);
+}
+
+// Specific to Android/iOS
+q {
+	quotes: none;
+
+	&::after,
+	&::before {
+		content: none;
+	}
+}
+
+a {
+	&:focus {
+		outline: dotted thin;
+	}
+
+	&:active,
+	&:hover {
+		outline: 0;
+	}
+}
+
+img {
+	border: 0;
+	max-width: 100%;
+}
+
+table img {
+	max-width: none;
+}
+
+/* styling quotes for messages */
+blockquote {
+	padding: 0.2em 1.2em !important;
+	/*margin: 1em 0 2em 0 !important;*/
+	margin: 0 !important; // actually on web
+	border: 3px solid var(--primary) !important;
+	border-width: 0 0 0 3px !important;
+}
+
+// limit - same as mail web
+blockquote blockquote blockquote blockquote blockquote blockquote {
+	padding: 0 !important;
+	border: none !important;
+}
+
+/*
+ * Helpers
+ */
+[hidden] {
+	display: none;
+}

@@ -1,0 +1,119 @@
+.inline-flex,
+.inline-flex-vcenter {
+	display: inline-flex;
+	flex-wrap: wrap;
+}
+
+.flex,
+.flex-flex-children,
+.flex-no-min-children {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+@each $direction in (row, row-reverse, column, column-reverse) {
+	.flex-#{$direction} {
+		flex-direction: $direction;
+	}
+}
+
+@each $justify
+	in (start, center, end, space-between, space-around, space-evenly)
+{
+	// Remove prefix when 'start' and 'end' will be recognized by browsers
+	$prefix: '';
+	@if $justify == start or $justify == end {
+		$prefix: 'flex-';
+	}
+
+	.flex-justify-#{$justify} {
+		justify-content: #{$prefix + $justify};
+	}
+}
+
+@each $align in (start, center, end, baseline, stretch) {
+	// Remove prefix when 'start' and 'end' will be recognized by browsers
+	$prefix: '';
+	@if $align == start or $align == end {
+		$prefix: 'flex-';
+	}
+
+	.flex-align-items-#{$align} {
+		align-items: #{$prefix + $align};
+	}
+
+	.flex-align-self-#{$align} {
+		align-self: #{$prefix + $align};
+	}
+}
+
+.flex-nowrap {
+	flex-wrap: nowrap;
+}
+
+/* fix aspect ratio */
+.flex > *,
+.no-min-dimensions {
+	min-height: 0;
+	min-width: 0;
+}
+
+.flex-flex-children > * {
+	display: flex;
+}
+.flex-flex-align-items-center > * {
+	align-items: center;
+}
+
+.inline-flex-vcenter > *,
+.flex-item-centered-vert {
+	margin-top: auto;
+	margin-bottom: auto;
+	align-self: center;
+}
+
+.flex-item-fluid {
+	flex: 1 1 0px;
+}
+
+.flex-item-fluid-auto {
+	flex: 1 1 auto;
+}
+
+.flex-item-noshrink {
+	flex-shrink: 0;
+}
+
+.flex-item-shrink-1 {
+	flex-shrink: 1;
+}
+
+.flex-item-nogrow {
+	flex-grow: 0;
+}
+
+.flex-item-grow-2 {
+	flex-grow: 2;
+}
+.flex-item-grow-1-8 {
+	flex-grow: 1.8;
+}
+
+.flex-item-noflex {
+	flex: 0;
+}
+
+.flex-autogrid {
+	@extend .flex;
+	@extend .flex-justify-space-between;
+	margin: 0 -0.5em;
+}
+
+.flex-autogrid-item {
+	@extend .flex-item-fluid;
+	padding: 0 0.5em 1em;
+
+	&.pb0 {
+		padding-bottom: 0;
+	}
+}

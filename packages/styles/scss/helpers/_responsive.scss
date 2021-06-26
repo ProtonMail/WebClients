@@ -1,0 +1,351 @@
+// For global structure adaptation in JS (page / skip links / header / main content / footer)
+@include body-before('desktop', true);
+
+.no-desktop {
+	display: none;
+}
+
+/**
+ * medium/tablet landscape minor breakpoint
+ */
+@include respond-to($breakpoint-medium-landscape) {
+	@include padding-generator(
+		// coordinates
+		(p, pt, pr, pb, pl),
+		// padding sizes
+		(0, 1),
+		// prefix
+		'on-tablet-landscape-'
+	);
+}
+
+/**
+ * medium/tablet breakpoint
+ */
+@include respond-to($breakpoint-medium, 'min') {
+	.on-desktop {
+		&-h100 {
+			height: 100%;
+		}
+	}
+}
+
+/**
+ * medium/tablet breakpoint
+ */
+@include respond-to($breakpoint-medium) {
+	// For global structure adaptation in JS (page / skip links / header / main content / footer)
+	@include body-before('tablet');
+
+	.no-desktop {
+		display: block;
+	}
+
+	.no-tablet {
+		display: none;
+	}
+
+	.auto-tablet {
+		float: none;
+		display: block;
+		width: auto;
+	}
+
+	@include margin-generator(
+		// coordinates
+		(m, mt, mr, mb, ml),
+		// margin sizes
+		(0, 1, 2),
+		// prefix
+		'on-tablet-'
+	);
+
+	@include padding-generator(
+		// coordinates
+		(p, pt, pr, pb, pl),
+		// padding sizes
+		(0, 1, 2),
+		// prefix
+		'on-tablet-'
+	);
+
+	.on-tablet {
+		&-text-left {
+			text-align: left;
+		}
+
+		&-text-center {
+			text-align: center;
+		}
+
+		&-text-right {
+			text-align: right;
+		}
+
+		&-flex-column {
+			flex-direction: column;
+
+			& > * {
+				width: 100%;
+				flex-basis: auto;
+			}
+		}
+
+		&-w25 {
+			width: 25%;
+		}
+
+		&-w100 {
+			width: 100%;
+		}
+
+		&-max-w100 {
+			max-width: 100%;
+		}
+
+		&-wauto {
+			width: auto;
+		}
+
+		@for $i from 2 through 3 {
+			&-hide-td#{$i} td:nth-child(#{$i}) {
+				display: none;
+			}
+		}
+
+		&-list-1column {
+			column-count: 1;
+		}
+	}
+}
+
+/**
+ * small/mobile breakpoint
+ */
+@include respond-to($breakpoint-small) {
+	// For global structure adaptation in JS (page / skip links / header / main content / footer)
+	@include body-before('mobile');
+
+	.no-tablet {
+		display: block;
+	}
+
+	.no-mobile {
+		display: none;
+	}
+
+	/* linearization of floating content/table-layout */
+	// 🚗
+	.auto-mobile {
+		float: none;
+		display: block;
+		width: auto;
+	}
+
+	@include margin-generator(
+		// coordinates
+		(m, mt, mr, mb, ml),
+		// margin sizes
+		(0, 0.25, 0.5, 1, 2, 3.5),
+		// prefix
+		'on-mobile-'
+	);
+
+	@include padding-generator(
+		// coordinates
+		(p, pt, pr, pb, pl),
+		// padding sizes
+		(0, 0.25, 0.5, 1, 2),
+		// prefix
+		'on-mobile-'
+	);
+
+	.on-mobile {
+		&-text-left {
+			text-align: left;
+		}
+
+		&-text-center {
+			text-align: center;
+		}
+
+		&-text-right {
+			text-align: right;
+		}
+
+		&-center {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&-flex-column {
+			flex-direction: column;
+
+			& > * {
+				width: 100%;
+				flex-basis: auto;
+			}
+
+			&.flex-autogrid {
+				margin: 0;
+
+				&.mb1 {
+					margin-bottom: 1em;
+				}
+			}
+
+			& > .flex-autogrid-item {
+				padding: 0;
+				min-height: auto;
+			}
+		}
+
+		&-flex-column-no-stretch {
+			flex-direction: column;
+
+			& > * {
+				align-self: center;
+			}
+		}
+
+		&-flex-item-fluid {
+			flex: 1 1 0px;
+		}
+
+		&-flex-item-fluid-auto {
+			flex: 1 1 auto;
+		}
+
+		&-no-flex {
+			flex: 0 0 auto;
+		}
+
+		&-flex-shrink {
+			flex-shrink: 1;
+		}
+
+		&-flex-align-self-start {
+			align-self: start;
+		}
+
+		&-flex-wrap {
+			flex-wrap: wrap;
+		}
+
+		&-max-w33 {
+			max-width: 33%;
+		}
+
+		&-max-w100 {
+			max-width: 100%;
+		}
+
+		&-min-w100 {
+			min-width: 100%;
+		}
+
+		&-min-h0 {
+			min-height: 0;
+		}
+
+		&-wauto {
+			width: auto;
+		}
+
+		&-w25 {
+			width: 25%;
+		}
+
+		&-w33 {
+			width: 33%;
+		}
+
+		&-w100 {
+			width: 100%;
+		}
+
+		&-no-border {
+			border: 0;
+		}
+
+		&-static {
+			position: static;
+		}
+
+		@for $i from 2 through 5 {
+			&-hide-td#{$i} td:nth-child(#{$i}) {
+				display: none;
+			}
+		}
+
+		&-list-1column {
+			column-count: 1;
+		}
+	}
+}
+
+/**
+ * tiny/small mobile breakpoint
+ */
+@include respond-to($breakpoint-tiny) {
+	// For global structure adaptation in JS (page / skip links / header / main content / footer)
+	@include body-before('tinymobile');
+
+	.no-tiny-mobile {
+		display: none;
+	}
+
+	/* linearization of floating content/table-layout */
+	.auto-tiny-mobile {
+		float: none;
+		display: block;
+		width: auto;
+	}
+
+	.on-tiny-mobile {
+		&-wauto {
+			width: auto;
+		}
+		&-w100 {
+			width: 100%;
+		}
+		&-text-left {
+			text-align: left;
+		}
+
+		&-flex-align-self-start {
+			align-self: flex-start;
+		}
+
+		&-flex-column {
+			flex-direction: column;
+
+			& > * {
+				width: 100%;
+				flex-basis: auto;
+			}
+		}
+
+		&-hide-td3 td:nth-child(3) {
+			display: none;
+		}
+	}
+
+	@include margin-generator(
+		// coordinates
+		(m, mt, mr, mb, ml),
+		// margin sizes
+		(0, 1),
+		// prefix
+		'on-tiny-mobile-'
+	);
+
+	@include padding-generator(
+		// coordinates
+		(p, pt, pr, pb, pl),
+		// padding sizes
+		(0),
+		// prefix
+		'on-tiny-mobile-'
+	);
+}

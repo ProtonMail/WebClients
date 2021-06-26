@@ -1,0 +1,10 @@
+@use "sass:math";
+/**
+ * Calculate an em value from a px value
+ * @param {Number} $px - A value to be converted in em
+ * @param {Number} $base - The base pixel value of the app
+ * @return {Number} - The $px value converted in em
+ */
+@function em($px, $base: $base-font-size) {
+	@return (math.div($px, $base)) * 1em;
+}

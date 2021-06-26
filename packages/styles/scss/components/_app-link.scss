@@ -1,0 +1,26 @@
+.aside-link {
+	border-radius: 50%;
+	width: rem(32);
+	height: rem(32);
+	padding: rem(7);
+	background: var(--interaction-weak);
+	color: var(--text-norm);
+
+	&:hover,
+	&:focus {
+		background: var(--interaction-weak-hover);
+		color: var(--primary);
+	}
+
+	&:active,
+	&[aria-current='true'] {
+		background: var(--interaction-weak-active);
+		color: var(--primary);
+	}
+
+	&-icon {
+		width: rem(17);
+		height: rem(17);
+		fill: currentColor;
+	}
+}
