@@ -1,6 +1,6 @@
-import { updateCalendarUserSettings } from 'proton-shared/lib/api/calendars';
-import { getTimezone } from 'proton-shared/lib/date/timezone';
-import { CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
+import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
+import { getTimezone } from '@proton/shared/lib/date/timezone';
+import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 import React, { useState } from 'react';
 import { c } from 'ttag';
 

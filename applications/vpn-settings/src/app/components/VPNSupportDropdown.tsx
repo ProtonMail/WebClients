@@ -9,9 +9,9 @@ import {
     Icon,
     BugModal,
     useModals,
-} from 'react-components';
+} from '@proton/components';
 
-import SimpleDropdown, { Props as SimpleDropdownProps } from 'react-components/components/dropdown/SimpleDropdown';
+import SimpleDropdown, { Props as SimpleDropdownProps } from '@proton/components/components/dropdown/SimpleDropdown';
 
 interface Props extends Omit<SimpleDropdownProps<typeof Button>, 'as' | 'content'> {}
 

@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { order, getParents } from 'proton-shared/lib/helpers/folder';
-import { Folder } from 'proton-shared/lib/interfaces/Folder';
-import { orderFolders, updateLabel } from 'proton-shared/lib/api/labels';
-import { ROOT_FOLDER } from 'proton-shared/lib/constants';
+import { order, getParents } from '@proton/shared/lib/helpers/folder';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import { orderFolders, updateLabel } from '@proton/shared/lib/api/labels';
+import { ROOT_FOLDER } from '@proton/shared/lib/constants';
 
 import { Icon, TreeViewContainer, TreeViewItem } from '../../components';
 import { useApi, useLoading, useEventManager, useActiveBreakpoint } from '../../hooks';

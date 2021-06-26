@@ -1,4 +1,4 @@
-import getRandomValues from 'get-random-values';
+import getRandomValues from '@proton/get-random-values';
 import { APP_NAMES, APPS, APPS_CONFIGURATION, SSO_PATHS } from '../constants';
 import { encodeBase64URL, uint8ArrayToString } from '../helpers/encoding';
 import { replaceUrl } from '../helpers/browser';

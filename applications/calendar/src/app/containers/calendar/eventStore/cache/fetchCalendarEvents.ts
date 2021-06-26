@@ -1,5 +1,5 @@
-import { generateUID } from 'proton-shared/lib/calendar/helper';
-import { Api } from 'proton-shared/lib/interfaces';
+import { generateUID } from '@proton/shared/lib/calendar/helper';
+import { Api } from '@proton/shared/lib/interfaces';
 import { CalendarEventsCache } from '../interface';
 import getPaginatedEvents from '../getPaginatedEvents';
 import upsertCalendarApiEvent from './upsertCalendarApiEvent';

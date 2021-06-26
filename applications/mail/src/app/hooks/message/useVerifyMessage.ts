@@ -1,7 +1,7 @@
 import { getMatchingKey, OpenPGPSignature } from 'pmcrypto';
-import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
+import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { useCallback } from 'react';
-import { useApi, useGetEncryptionPreferences } from 'react-components';
+import { useApi, useGetEncryptionPreferences } from '@proton/components';
 import { MessageErrors, MessageExtendedWithData } from '../../models/message';
 import { verifyMessage } from '../../helpers/message/messageDecrypt';
 import { useAttachmentCache } from '../../containers/AttachmentProvider';

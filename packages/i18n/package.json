@@ -1,64 +1,45 @@
 {
-  "name": "proton-i18n",
-  "version": "2.2.0",
-  "description": "CLI to manage translations for client apps",
-  "main": "index.js",
-  "bin": {
-    "proton-i18n": "index.js"
-  },
-  "scripts": {
-    "lint": "eslint lib index.js config.js --ext .js --quiet --cache",
-    "pretty": "prettier --write  $(find lib/ index.js -type f -name '*.js')",
-    "test": "del test/compile/* && ./test/run.sh test",
-    "sync:lock": "npm run follow:lock && git add package-lock.json && git commit -m 'Sync package-lock.json' && git push && npm run unfollow:lock",
-    "follow:lock": "git update-index --no-assume-unchanged package-lock.json",
-    "unfollow:lock": "git update-index --assume-unchanged package-lock.json",
-    "preversion": "npm run follow:lock",
-    "postversion": "npm run unfollow:lock && git push --tags && git push"
-  },
-  "keywords": [],
-  "engines": {
-    "node": ">= 12.13.0"
-  },
-  "author": "Proton Technologies AG",
-  "license": "ISC",
-  "dependencies": {
-    "angular-gettext-cli": "github:huston007/angular-gettext-cli#a59bc3e142a5bee1b21d1876d1bb88008bd115b7",
-    "chalk": "^4.1.0",
-    "dedent": "^0.7.0",
-    "dotenv": "^8.2.0",
-    "execa": "^5.0.0",
-    "gettext-parser": "^4.0.4",
-    "lodash": "^4.17.21",
-    "minimist": "^1.2.5",
-    "tar": "^6.1.0",
-    "ttag-cli": "^1.9.1"
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "cross-env": "^7.0.3",
-    "del-cli": "^3.0.1",
-    "eslint": "^7.21.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-react-app": "^6.0.0",
-    "eslint-plugin-flowtype": "^5.3.1",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "^5.1.3",
-    "lint-staged": "^10.5.4",
-    "prettier": "^2.2.1"
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
+    "name": "@proton/i18n",
+    "description": "CLI to manage translations for client apps",
+    "keywords": [],
+    "license": "ISC",
+    "author": "Proton Technologies AG",
+    "main": "index.js",
+    "bin": {
+        "proton-i18n": "index.js"
+    },
+    "scripts": {
+        "lint": "eslint lib index.js config.js --ext .js --quiet --cache",
+        "pretty": "prettier --write  $(find lib/ index.js -type f -name '*.js')",
+        "test": "del test/compile/* && ./test/run.sh test"
+    },
+    "dependencies": {
+        "angular-gettext-cli": "github:huston007/angular-gettext-cli#a59bc3e142a5bee1b21d1876d1bb88008bd115b7",
+        "chalk": "^4.1.0",
+        "dedent": "^0.7.0",
+        "dotenv": "^8.2.0",
+        "execa": "^5.0.0",
+        "gettext-parser": "^4.0.4",
+        "lodash": "^4.17.21",
+        "minimist": "^1.2.5",
+        "tar": "^6.1.0",
+        "ttag-cli": "^1.9.1"
+    },
+    "devDependencies": {
+        "babel-eslint": "^10.1.0",
+        "cross-env": "^7.0.3",
+        "del-cli": "^3.0.1",
+        "eslint": "^7.21.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-config-react-app": "^6.0.0",
+        "eslint-plugin-flowtype": "^5.3.1",
+        "eslint-plugin-import": "^2.22.0",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-react": "^7.22.0",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "prettier": "^2.2.1"
+    },
+    "engines": {
+        "node": ">= 12.13.0"
     }
-  }
 }

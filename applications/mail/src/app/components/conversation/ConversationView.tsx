@@ -1,10 +1,10 @@
 import React, { useEffect, memo, useRef } from 'react';
-import { useLabels, useToggle, classnames } from 'react-components';
-import { useLinkHandler } from 'react-components/hooks/useLinkHandler';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { MailSettings } from 'proton-shared/lib/interfaces';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import { isDraft } from 'proton-shared/lib/mail/messages';
+import { useLabels, useToggle, classnames } from '@proton/components';
+import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MailSettings } from '@proton/shared/lib/interfaces';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { isDraft } from '@proton/shared/lib/mail/messages';
 
 import MessageView, { MessageViewRef } from '../message/MessageView';
 import { useConversation } from '../../hooks/conversation/useConversation';

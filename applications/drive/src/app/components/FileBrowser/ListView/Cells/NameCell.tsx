@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileNameDisplay } from 'react-components';
+import { FileNameDisplay } from '@proton/components';
 
 interface Props {
     name: string;

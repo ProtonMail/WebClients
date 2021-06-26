@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Tabs } from 'react-components';
+import { Tabs } from '@proton/components';
 
 import mdx from './Tabs.mdx';
 import bulbasaur from '../../assets/bulbasaur.png';

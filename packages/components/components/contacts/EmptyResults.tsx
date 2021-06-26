@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import noResultsImg from 'design-system/assets/img/placeholders/empty-search.svg';
+import noResultsImg from '@proton/styles/assets/img/placeholders/empty-search.svg';
 import { LinkButton } from '../button';
 
 interface Props {

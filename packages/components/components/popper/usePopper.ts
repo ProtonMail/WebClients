@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getScrollParent } from 'proton-shared/lib/helpers/dom';
+import { getScrollParent } from '@proton/shared/lib/helpers/dom';
 
 import { adjustPosition, computedSize, ALL_PLACEMENTS, Position } from './utils';
 

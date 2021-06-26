@@ -1,4 +1,4 @@
-import { getOccurrences, getOccurrencesBetween, RecurringResult } from 'proton-shared/lib/calendar/recurring';
+import { getOccurrences, getOccurrencesBetween, RecurringResult } from '@proton/shared/lib/calendar/recurring';
 import { EventsCache, RecurringEventsCache } from '../interface';
 
 interface Result {

@@ -1,6 +1,6 @@
 import { useRef } from 'react';
-import { useHandler } from 'react-components';
-import { Handler, Abortable } from 'react-components/hooks/useHandler';
+import { useHandler } from '@proton/components';
+import { Handler, Abortable } from '@proton/components/hooks/useHandler';
 
 /**
  * Return the handler debounced but with additional features:

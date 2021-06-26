@@ -1,4 +1,4 @@
-import getRandomValues from 'get-random-values';
+import getRandomValues from '@proton/get-random-values';
 import { withAuthHeaders, withUIDHeaders } from '../fetch/headers';
 import { getLocalKey, getLocalSessions, setCookies, setLocalKey } from '../api/auth';
 import { getUser } from '../api/user';

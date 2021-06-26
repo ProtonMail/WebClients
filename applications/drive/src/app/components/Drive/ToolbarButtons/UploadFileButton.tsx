@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Icon, ToolbarButton } from 'react-components';
+import { Icon, ToolbarButton } from '@proton/components';
 import useFileUploadInput from '../../../hooks/drive/useFileUploadInput';
 
 const UploadFileButton = () => {

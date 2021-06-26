@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import { format } from 'date-fns';
-import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { DecryptedKey } from 'proton-shared/lib/interfaces';
-import { Contact } from 'proton-shared/lib/interfaces/contacts';
-import { exportContactsFromLabel } from 'proton-shared/lib/contacts/helpers/export';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { DecryptedKey } from '@proton/shared/lib/interfaces';
+import { Contact } from '@proton/shared/lib/interfaces/contacts';
+import { exportContactsFromLabel } from '@proton/shared/lib/contacts/helpers/export';
 
 import { FormModal, Button, PrimaryButton, Alert, DynamicProgress } from '../../../components';
 import { useContacts, useApi } from '../../../hooks';

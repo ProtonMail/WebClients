@@ -1,4 +1,4 @@
-import { Organization } from 'proton-shared/lib/interfaces';
+import { Organization } from '@proton/shared/lib/interfaces';
 import useCache from './useCache';
 import { useUser } from './useUser';
 import { useGetOrganizationKeyRaw } from './useGetOrganizationKeyRaw';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useUser } from 'react-components';
+import { useUser } from '@proton/components';
 
 const UserNameCell = () => {
     const [{ Name }] = useUser();

@@ -1,10 +1,10 @@
-import { END_TYPE, FREQUENCY, MONTHLY_TYPE } from 'proton-shared/lib/calendar/constants';
-import { getNegativeSetpos, getPositiveSetpos } from 'proton-shared/lib/calendar/helper';
-import { getUntilProperty, numericDayToDay } from 'proton-shared/lib/calendar/vcalConverter';
-import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
-import { unique } from 'proton-shared/lib/helpers/array';
-import { VcalRruleProperty } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { EventModel } from 'proton-shared/lib/interfaces/calendar';
+import { END_TYPE, FREQUENCY, MONTHLY_TYPE } from '@proton/shared/lib/calendar/constants';
+import { getNegativeSetpos, getPositiveSetpos } from '@proton/shared/lib/calendar/helper';
+import { getUntilProperty, numericDayToDay } from '@proton/shared/lib/calendar/vcalConverter';
+import { fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
+import { unique } from '@proton/shared/lib/helpers/array';
+import { VcalRruleProperty } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 
 const modelToFrequencyProperties = ({ frequencyModel, start, isAllDay, isOrganizer }: EventModel) => {
     const { type, frequency, interval, weekly, monthly, ends, rruleValue } = frequencyModel;

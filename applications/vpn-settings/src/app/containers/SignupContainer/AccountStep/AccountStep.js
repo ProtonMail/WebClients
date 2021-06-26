@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Row, SubTitle, useModals } from 'react-components';
+import { Row, SubTitle, useModals } from '@proton/components';
 import { c } from 'ttag';
-import { hasProtonDomain } from 'proton-shared/lib/helpers/string';
+import { hasProtonDomain } from '@proton/shared/lib/helpers/string';
 import AccountForm from './AccountForm';
 
 import LoginPromptModal from './LoginPromptModal';

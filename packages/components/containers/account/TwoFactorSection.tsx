@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { APPS } from 'proton-shared/lib/constants';
-import { getHasTOTPSettingEnabled } from 'proton-shared/lib/settings/twoFactor';
+import { APPS } from '@proton/shared/lib/constants';
+import { getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 
 import { Info, Toggle } from '../../components';
 import { useConfig, useModals, useUserSettings } from '../../hooks';

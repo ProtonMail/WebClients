@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 import React, { useState } from 'react';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { Api } from 'proton-shared/lib/interfaces';
-import { validateEmail } from 'proton-shared/lib/api/core/validate';
-import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
-import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { Api } from '@proton/shared/lib/interfaces';
+import { validateEmail } from '@proton/shared/lib/api/core/validate';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { Button, useFormErrors, InputFieldTwo } from '../../../components';
 import { useLoading } from '../../../hooks';

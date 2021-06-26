@@ -1,29 +1,29 @@
-import { updateAttendeePartstat, updateCalendar, updatePersonalEventPart } from 'proton-shared/lib/api/calendars';
-import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
-import { toApiPartstat } from 'proton-shared/lib/calendar/attendees';
-import { getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
+import { updateAttendeePartstat, updateCalendar, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
+import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
+import { toApiPartstat } from '@proton/shared/lib/calendar/attendees';
+import { getIsCalendarProbablyActive } from '@proton/shared/lib/calendar/calendar';
 import {
     DELETE_CONFIRMATION_TYPES,
     ICAL_ATTENDEE_STATUS,
     MAXIMUM_DATE_UTC,
     MINIMUM_DATE_UTC,
     SAVE_CONFIRMATION_TYPES,
-} from 'proton-shared/lib/calendar/constants';
-import { reformatApiErrorMessage } from 'proton-shared/lib/calendar/helper';
-import getMemberAndAddress from 'proton-shared/lib/calendar/integration/getMemberAndAddress';
-import { withDtstamp } from 'proton-shared/lib/calendar/veventHelper';
-import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
-import { getProdId } from 'proton-shared/lib/calendar/vcalHelper';
-import { API_CODES, SECOND } from 'proton-shared/lib/constants';
-import { format, isSameDay } from 'proton-shared/lib/date-fns-utc';
-import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
-import { unique } from 'proton-shared/lib/helpers/array';
-import { canonizeEmailByGuess, canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
-import { noop } from 'proton-shared/lib/helpers/function';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { omit, pick } from 'proton-shared/lib/helpers/object';
-import { dateLocale } from 'proton-shared/lib/i18n';
-import { Address } from 'proton-shared/lib/interfaces';
+} from '@proton/shared/lib/calendar/constants';
+import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/helper';
+import getMemberAndAddress from '@proton/shared/lib/calendar/integration/getMemberAndAddress';
+import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
+import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import { getProdId } from '@proton/shared/lib/calendar/vcalHelper';
+import { API_CODES, SECOND } from '@proton/shared/lib/constants';
+import { format, isSameDay } from '@proton/shared/lib/date-fns-utc';
+import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
+import { unique } from '@proton/shared/lib/helpers/array';
+import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { noop } from '@proton/shared/lib/helpers/function';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { omit, pick } from '@proton/shared/lib/helpers/object';
+import { dateLocale } from '@proton/shared/lib/i18n';
+import { Address } from '@proton/shared/lib/interfaces';
 import {
     AttendeeModel,
     Calendar,
@@ -33,10 +33,10 @@ import {
     EventModel,
     SyncMultipleApiResponse,
     UpdateEventPartApiResponse,
-} from 'proton-shared/lib/interfaces/calendar';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
-import { EncryptionPreferencesError } from 'proton-shared/lib/mail/encryptionPreferences';
+} from '@proton/shared/lib/interfaces/calendar';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
 import React, {
     MutableRefObject,
     RefObject,
@@ -59,13 +59,13 @@ import {
     useGetCalendarEventRaw,
     useModals,
     useNotifications,
-} from 'react-components';
-import { useReadCalendarBootstrap } from 'react-components/hooks/useGetCalendarBootstrap';
-import useGetCalendarEventPersonal from 'react-components/hooks/useGetCalendarEventPersonal';
-import { useGetCanonicalEmailsMap } from 'react-components/hooks/useGetCanonicalEmailsMap';
-import { useGetCalendarKeys } from 'react-components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
-import { useGetVtimezonesMap } from 'react-components/hooks/useGetVtimezonesMap';
-import useSendIcs from 'react-components/hooks/useSendIcs';
+} from '@proton/components';
+import { useReadCalendarBootstrap } from '@proton/components/hooks/useGetCalendarBootstrap';
+import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
+import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
+import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
+import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
+import useSendIcs from '@proton/components/hooks/useSendIcs';
 import { Prompt } from 'react-router';
 import { c } from 'ttag';
 import { serverTime } from 'pmcrypto';

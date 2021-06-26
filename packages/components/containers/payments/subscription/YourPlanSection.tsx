@@ -1,10 +1,10 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { PLANS, PLAN_NAMES, APPS } from 'proton-shared/lib/constants';
-import humanSize from 'proton-shared/lib/helpers/humanSize';
-import percentage from 'proton-shared/lib/helpers/percentage';
-import { getPlanIDs } from 'proton-shared/lib/helpers/subscription';
-import { getAppName } from 'proton-shared/lib/apps/helper';
+import { PLANS, PLAN_NAMES, APPS } from '@proton/shared/lib/constants';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
+import percentage from '@proton/shared/lib/helpers/percentage';
+import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 
 import { Href, Loader, Meter, Button } from '../../../components';
 import { useModals, useSubscription, useOrganization, useUser, useAddresses } from '../../../hooks';

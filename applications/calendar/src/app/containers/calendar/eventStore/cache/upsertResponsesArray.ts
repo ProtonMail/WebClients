@@ -1,9 +1,9 @@
-import { API_CODES } from 'proton-shared/lib/constants';
+import { API_CODES } from '@proton/shared/lib/constants';
 import {
     SyncMultipleApiResponse,
     SyncMultipleApiResponses,
     UpdateEventPartApiResponse,
-} from 'proton-shared/lib/interfaces/calendar';
+} from '@proton/shared/lib/interfaces/calendar';
 import { UpdatePartstatOperation, UpdatePersonalPartOperation } from '../../../../interfaces/Invite';
 import upsertCalendarApiEvent from './upsertCalendarApiEvent';
 import { getIsDeleteSyncOperation, SyncEventActionOperations } from '../../getSyncMultipleEventsPayload';

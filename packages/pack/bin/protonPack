@@ -58,7 +58,6 @@ async function main() {
         debug(appConfig, 'app config');
         await fs.writeFile(appConfigPath, appConfig);
         success(`generated ${appConfigPath}`);
-        await hasDirectory(path.join('node_modules', 'proton-translations'), true);
     }
 
     if (is('print-config')) {

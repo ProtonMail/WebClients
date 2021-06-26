@@ -10,7 +10,7 @@ function main({ branch, argv, hookPostTaskClone }) {
             title: 'Clear previous dist-deploy',
             async task() {
                 await del(['dist-deploy'], { dryRun: false });
-            }
+            },
         },
         {
             title: 'Check if the deploy branch exists',
@@ -36,11 +36,11 @@ function main({ branch, argv, hookPostTaskClone }) {
                     await bash(`git remote set-url origin ${process.env.GIT_REMOTE_URL_CI}`);
                 }
                 return script('createNewDeployBranch.sh', ['--check', branch.replace('deploy-', '')], 'inherit');
-            }
+            },
         },
         {
             title: `Pull dist branch ${branch}`,
-            task: () => pull(branch, argv.forceFetch, argv.fromCi)
+            task: () => pull(branch, argv.forceFetch, argv.fromCi),
         },
         ...hookPostTaskClone,
         {
@@ -51,25 +51,25 @@ function main({ branch, argv, hookPostTaskClone }) {
                 ctx.originBranch = branch;
                 ctx.tag = version;
                 debug(ctx, 'release env bundle');
-            }
+            },
         },
         {
             title: 'Sync bundle into dist-deploy directory before we push',
             async task() {
                 const cli = ['rsync -av --progress dist/ dist-deploy --exclude .git'];
                 await bash(cli.join(' && '));
-            }
+            },
         },
         {
             title: `Push dist to ${branch}`,
-            task: (ctx) => push(branch, ctx)
+            task: (ctx) => push(branch, ctx),
         },
         {
             title: 'Clear all the things !',
             async task() {
                 await del(['dist-deploy'], { dryRun: false });
-            }
-        }
+            },
+        },
     ];
 
     return list;

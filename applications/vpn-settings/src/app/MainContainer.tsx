@@ -15,8 +15,8 @@ import {
     MainLogo,
     ErrorBoundary,
     StandardErrorPage,
-} from 'react-components';
-import { hasPermission } from 'proton-shared/lib/helpers/permissions';
+} from '@proton/components';
+import { hasPermission } from '@proton/shared/lib/helpers/permissions';
 import { c } from 'ttag';
 import { getPages } from './pages';
 import DashboardContainer from './containers/DashboardContainer';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { Table, TableHeader, TableBody, TableRow, TableCell } from '../table';
 import { Button } from '../button';
 

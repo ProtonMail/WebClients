@@ -1,10 +1,10 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { VIEW_LAYOUT } from 'proton-shared/lib/constants';
+import { VIEW_LAYOUT } from '@proton/shared/lib/constants';
 
-import inboxColumnSvg from 'design-system/assets/img/pm-images/inbox-column.svg';
-import inboxRowSvg from 'design-system/assets/img/pm-images/inbox-row.svg';
+import inboxColumnSvg from '@proton/styles/assets/img/pm-images/inbox-column.svg';
+import inboxRowSvg from '@proton/styles/assets/img/pm-images/inbox-row.svg';
 
 import { LayoutCards } from '../../components';
 

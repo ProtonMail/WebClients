@@ -1,8 +1,8 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { useCallback } from 'react';
-import { useApi } from 'react-components';
-import { getMessage } from 'proton-shared/lib/api/messages';
-import { wait } from 'proton-shared/lib/helpers/promise';
+import { useApi } from '@proton/components';
+import { getMessage } from '@proton/shared/lib/api/messages';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { useInitializeMessage } from './useInitializeMessage';
 import { LOAD_RETRY_DELAY } from '../../constants';

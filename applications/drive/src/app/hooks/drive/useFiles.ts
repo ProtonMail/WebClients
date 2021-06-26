@@ -1,4 +1,4 @@
-import { useApi, useEventManager, useNotifications, usePreventLeave, useGetUser } from 'react-components';
+import { useApi, useEventManager, useNotifications, usePreventLeave, useGetUser } from '@proton/components';
 import { ReadableStream } from 'web-streams-polyfill';
 import { decryptMessage, encryptMessage, getMessage, getSignature } from 'pmcrypto';
 import { c } from 'ttag';
@@ -8,11 +8,11 @@ import {
     generateLookupHash,
     encryptName,
     getStreamMessage,
-} from 'proton-shared/lib/keys/driveKeys';
-import { range, mergeUint8Arrays } from 'proton-shared/lib/helpers/array';
-import humanSize from 'proton-shared/lib/helpers/humanSize';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { uint8ArrayToBase64String } from 'proton-shared/lib/helpers/encoding';
+} from '@proton/shared/lib/keys/driveKeys';
+import { range, mergeUint8Arrays } from '@proton/shared/lib/helpers/array';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import {
     DriveFileRevisionResult,
     CreateFileResult,
@@ -246,9 +246,9 @@ function useFiles() {
 
         let createdFile:
             | {
-                ID: string;
-                RevisionID: string;
-            }
+                  ID: string;
+                  RevisionID: string;
+              }
             | undefined;
 
         return addToUploadQueue(preUploadData, setupPromise, {
@@ -258,10 +258,8 @@ function useFiles() {
                 return result;
             },
             transform: async (data, attachedSignature = false) => {
-                const [
-                    { sessionKey, privateKey: nodePrivateKey },
-                    { privateKey: addressPrivateKey },
-                ] = await Promise.all([setupPromise, getPrimaryAddressKey()]);
+                const [{ sessionKey, privateKey: nodePrivateKey }, { privateKey: addressPrivateKey }] =
+                    await Promise.all([setupPromise, getPrimaryAddressKey()]);
 
                 // Thumbnail has signature attached, regular file detached.
                 if (attachedSignature) {
@@ -303,11 +301,13 @@ function useFiles() {
                 const BlockList = await Promise.all(
                     blocks.map(({ Hash, ...block }) => ({ ...block, Hash: uint8ArrayToBase64String(Hash) }))
                 );
-                const thumbnailParams = thumbnailBlock ? {
-                    Thumbnail: 1,
-                    ThumbnailHash: uint8ArrayToBase64String(thumbnailBlock.Hash),
-                    ThumbnailSize: thumbnailBlock.Size,
-                } : {};
+                const thumbnailParams = thumbnailBlock
+                    ? {
+                          Thumbnail: 1,
+                          ThumbnailHash: uint8ArrayToBase64String(thumbnailBlock.Hash),
+                          ThumbnailSize: thumbnailBlock.Size,
+                      }
+                    : {};
 
                 if (!createdFile) {
                     throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
@@ -320,7 +320,7 @@ function useFiles() {
                         LinkID: createdFile.ID,
                         RevisionID: createdFile.RevisionID,
                         ShareID: shareId,
-                        ...thumbnailParams
+                        ...thumbnailParams,
                     })
                 );
                 return { UploadLinks, ThumbnailLink };
@@ -334,7 +334,7 @@ function useFiles() {
                     // Thumbnail has index 0, which is optional. If file has
                     // no thumbnail, index starts from 1.
                     const indexStart = blockTokens.get(0) ? 0 : 1;
-                    for (let Index = indexStart; Index < (indexStart + blockTokens.size); Index++) {
+                    for (let Index = indexStart; Index < indexStart + blockTokens.size; Index++) {
                         const info = blockTokens.get(Index);
                         if (!info) {
                             throw new Error(`Block Token not found for ${Index} in upload ${config?.id}`);
@@ -508,9 +508,10 @@ function useFiles() {
 
                                     // Wait for parent folders to be created first
                                     // If root folder's in tree, it's name must be checked, all other folders are new ones
-                                    const promise = (parentFolderPromise
-                                        ? parentFolderPromise.then(({ Folder }) => createFolder(Folder.ID, folder))
-                                        : createFolder(ParentLinkID, folder, !parent)
+                                    const promise = (
+                                        parentFolderPromise
+                                            ? parentFolderPromise.then(({ Folder }) => createFolder(Folder.ID, folder))
+                                            : createFolder(ParentLinkID, folder, !parent)
                                     ).then(async (args) => {
                                         await events.call(shareId);
                                         return args;
@@ -547,55 +548,57 @@ function useFiles() {
         }
     );
 
-    const decryptBlockStream = (shareId: string, linkId: string): StreamTransformer => async (stream, encSignature) => {
-        // TODO: implement root hash validation when file updates are implemented
-        const keys = await getLinkKeys(shareId, linkId);
-        if (!('sessionKeys' in keys)) {
-            throw new Error('Session key missing on file link');
-        }
+    const decryptBlockStream =
+        (shareId: string, linkId: string): StreamTransformer =>
+        async (stream, encSignature) => {
+            // TODO: implement root hash validation when file updates are implemented
+            const keys = await getLinkKeys(shareId, linkId);
+            if (!('sessionKeys' in keys)) {
+                throw new Error('Session key missing on file link');
+            }
 
-        // NOTE: the message is signed under the uploader's address key, so that's what it should be used here
-        // to verify it. Note that getPrimaryAddressKey will give the current user's address key, meaning that
-        // if the file was uploaded by a different user, this verification will fail.
+            // NOTE: the message is signed under the uploader's address key, so that's what it should be used here
+            // to verify it. Note that getPrimaryAddressKey will give the current user's address key, meaning that
+            // if the file was uploaded by a different user, this verification will fail.
 
-        // TODO: Fetch addressPublicKey of signer when we start supporting drive volumes with multiple users.
-        const { privateKey: addressPrivateKey } = await getPrimaryAddressKey();
+            // TODO: Fetch addressPublicKey of signer when we start supporting drive volumes with multiple users.
+            const { privateKey: addressPrivateKey } = await getPrimaryAddressKey();
 
-        // Thumbnails have attached signature, regular file detached one.
-        if (!encSignature) {
-            const message = await getStreamMessage(stream)
+            // Thumbnails have attached signature, regular file detached one.
+            if (!encSignature) {
+                const message = await getStreamMessage(stream);
+                const { data } = await decryptMessage({
+                    message,
+                    sessionKeys: keys.sessionKeys,
+                    publicKeys: addressPrivateKey.toPublic(),
+                    streaming: 'web',
+                    format: 'binary',
+                });
+                return data as ReadableStream<Uint8Array>;
+            }
+
+            const signatureMessage = await getMessage(encSignature);
+            const decryptedSignature = await decryptMessage({
+                privateKeys: keys.privateKey,
+                message: signatureMessage,
+                format: 'binary',
+            });
+            const [message, signature] = await Promise.all([
+                getStreamMessage(stream),
+                getSignature(decryptedSignature.data),
+            ]);
+
             const { data } = await decryptMessage({
                 message,
+                signature,
                 sessionKeys: keys.sessionKeys,
                 publicKeys: addressPrivateKey.toPublic(),
                 streaming: 'web',
                 format: 'binary',
             });
+
             return data as ReadableStream<Uint8Array>;
-        }
-
-        const signatureMessage = await getMessage(encSignature);
-        const decryptedSignature = await decryptMessage({
-            privateKeys: keys.privateKey,
-            message: signatureMessage,
-            format: 'binary',
-        });
-        const [message, signature] = await Promise.all([
-            getStreamMessage(stream),
-            getSignature(decryptedSignature.data),
-        ]);
-
-        const { data } = await decryptMessage({
-            message,
-            signature,
-            sessionKeys: keys.sessionKeys,
-            publicKeys: addressPrivateKey.toPublic(),
-            streaming: 'web',
-            format: 'binary',
-        });
-
-        return data as ReadableStream<Uint8Array>;
-    };
+        };
 
     const getFileRevision = async (
         shareId: string,
@@ -648,12 +651,15 @@ function useFiles() {
             reject = rej;
         });
 
-        const getBlocks = async (abortSignal: AbortSignal, pagination?: { FromBlockIndex: number, PageSize: number }): Promise<DriveFileBlock[]> => {
+        const getBlocks = async (
+            abortSignal: AbortSignal,
+            pagination?: { FromBlockIndex: number; PageSize: number }
+        ): Promise<DriveFileBlock[]> => {
             if (driveBlocks) {
                 return driveBlocks;
             }
             return getFileBlocks(shareId, linkId, abortSignal, pagination);
-        }
+        };
 
         const { downloadControls } = initDownload({
             transformBlockStream: decryptBlockStream(shareId, linkId),

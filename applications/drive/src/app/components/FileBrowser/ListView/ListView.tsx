@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
-import { TableBody, useActiveBreakpoint, Table, classnames, useElementRect, TableCellBusy } from 'react-components';
+import { TableBody, useActiveBreakpoint, Table, classnames, useElementRect, TableCellBusy } from '@proton/components';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
-import { buffer } from 'proton-shared/lib/helpers/function';
-import { rootFontSize } from 'proton-shared/lib/helpers/dom';
+import { buffer } from '@proton/shared/lib/helpers/function';
+import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import ItemRow from './ItemRow';
 import { FileBrowserProps, FileBrowserItem, DragMoveControls, FileBrowserLayouts } from '../interfaces';
 import FolderContextMenu from '../FolderContextMenu';

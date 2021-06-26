@@ -1,6 +1,6 @@
 import { useRef, useCallback, useState } from 'react';
-import { usePopperAnchor, useDragMove } from 'react-components';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { usePopperAnchor, useDragMove } from '@proton/components';
+import { noop } from '@proton/shared/lib/helpers/function';
 import { msgid, c } from 'ttag';
 import { LinkType } from '../../interfaces/link';
 import { FileBrowserItem, DragMoveControls } from './interfaces';

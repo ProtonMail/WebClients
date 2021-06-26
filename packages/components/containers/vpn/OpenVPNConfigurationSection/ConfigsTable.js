@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { textToClipboard } from 'proton-shared/lib/helpers/browser';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { getVPNServerConfig } from 'proton-shared/lib/api/vpn';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
 import { c } from 'ttag';
 import {
     Table,
@@ -70,18 +70,20 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, isU
     const { createNotification } = useNotifications();
     const [{ hasPaidVpn }] = useUser();
 
-    const handleClickDownload = ({ ID, ExitCountry, Domain }) => async () => {
-        const buffer = await request({
-            LogicalID: category === CATEGORY.COUNTRY ? undefined : ID,
-            Platform: platform,
-            Protocol: protocol,
-            Country: ExitCountry,
-        });
-        const blob = new Blob([buffer], { type: 'application/x-openvpn-profile' });
-        const [country, ...rest] = Domain.split('.');
-        const domain = category === CATEGORY.COUNTRY ? [country.substring(0, 2), ...rest].join('.') : Domain;
-        downloadFile(blob, `${domain}.${protocol}.ovpn`);
-    };
+    const handleClickDownload =
+        ({ ID, ExitCountry, Domain }) =>
+        async () => {
+            const buffer = await request({
+                LogicalID: category === CATEGORY.COUNTRY ? undefined : ID,
+                Platform: platform,
+                Protocol: protocol,
+                Country: ExitCountry,
+            });
+            const blob = new Blob([buffer], { type: 'application/x-openvpn-profile' });
+            const [country, ...rest] = Domain.split('.');
+            const domain = category === CATEGORY.COUNTRY ? [country.substring(0, 2), ...rest].join('.') : Domain;
+            downloadFile(blob, `${domain}.${protocol}.ovpn`);
+        };
 
     return (
         <Table className="simple-table--has-actions">

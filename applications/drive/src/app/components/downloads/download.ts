@@ -1,10 +1,10 @@
-import { generateUID } from 'react-components';
-import { orderBy, areUint8Arrays } from 'proton-shared/lib/helpers/array';
+import { generateUID } from '@proton/components';
+import { orderBy, areUint8Arrays } from '@proton/shared/lib/helpers/array';
 import { ReadableStream } from 'web-streams-polyfill';
 import { createReadableStreamWrapper } from '@mattiasbuelens/web-streams-adapter';
-import { Api } from 'proton-shared/lib/interfaces';
-import runInQueue from 'proton-shared/lib/helpers/runInQueue';
-import { getIsUnreachableError, getIsOfflineError } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+import { Api } from '@proton/shared/lib/interfaces';
+import runInQueue from '@proton/shared/lib/helpers/runInQueue';
+import { getIsUnreachableError, getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { DriveFileBlock } from '../../interfaces/file';
 import { queryFileBlock } from '../../api/files';
 import { ObserverStream, untilStreamEnd } from '../../utils/stream';

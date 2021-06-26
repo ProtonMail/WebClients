@@ -1,5 +1,5 @@
-import { canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
-import { getOriginalTo, isUnsubscribed } from 'proton-shared/lib/mail/messages';
+import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { getOriginalTo, isUnsubscribed } from '@proton/shared/lib/mail/messages';
 import React from 'react';
 import {
     Icon,
@@ -17,12 +17,12 @@ import {
     Label,
     Field,
     Row,
-} from 'react-components';
-import { MIME_TYPES } from 'proton-shared/lib/constants';
+} from '@proton/components';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
-import { openNewTab } from 'proton-shared/lib/helpers/browser';
-import { oneClickUnsubscribe, markAsUnsubscribed } from 'proton-shared/lib/api/messages';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { openNewTab } from '@proton/shared/lib/helpers/browser';
+import { oneClickUnsubscribe, markAsUnsubscribed } from '@proton/shared/lib/api/messages';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 import { MessageExtended, PartialMessageExtended, MessageExtendedWithData } from '../../../models/message';
 import { useMessage } from '../../../hooks/message/useMessage';

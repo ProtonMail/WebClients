@@ -1,4 +1,4 @@
-import { parse } from 'proton-shared/lib/calendar/vcal';
+import { parse } from '@proton/shared/lib/calendar/vcal';
 import { propertiesToModel } from './propertiesToModel';
 
 describe('properties to model', () => {

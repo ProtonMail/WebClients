@@ -2,7 +2,7 @@
 // import { flow, filter, find } from 'lodash/fp';
 import { createMessage, getSignature, verifyMessage } from 'pmcrypto';
 
-import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
+import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 /* @ngInject */
 // function SignatureVerifier(dispatchers, addressesModel, publicKeyStore) {
@@ -66,7 +66,7 @@ const verifyAllSignatures = (decryptedAttachment, signatures, publicKeys) => {
         return verifyMessage({
             message: attMessage,
             publicKeys,
-            signature
+            signature,
         }).then(({ verified }) => verified);
     });
 

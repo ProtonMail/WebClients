@@ -1,9 +1,9 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
 
-import { noop } from 'proton-shared/lib/helpers/function';
-import { ContactGroup } from 'proton-shared/lib/interfaces/contacts';
-import { deleteLabel } from 'proton-shared/lib/api/labels';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import { deleteLabel } from '@proton/shared/lib/api/labels';
 
 import { useApi, useContactGroups, useEventManager, useLoading, useNotifications } from '../../../hooks';
 import { Alert, ErrorButton, FormModal } from '../../../components';

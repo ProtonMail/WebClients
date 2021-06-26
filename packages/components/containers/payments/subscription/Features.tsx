@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { PLANS, APP_NAMES, APPS_CONFIGURATION } from 'proton-shared/lib/constants';
+import { PLANS, APP_NAMES, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 
 import { useActiveBreakpoint } from '../../../hooks';
 import { MailFeature, VPNFeature, CalendarFeature, DriveFeature, PlanLabel } from './interface';

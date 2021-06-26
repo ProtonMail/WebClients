@@ -1,6 +1,6 @@
 import { useEffect, useReducer } from 'react';
-import { SimpleMap } from 'proton-shared/lib/interfaces';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { SimpleMap } from '@proton/shared/lib/interfaces';
+import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { useGetCalendarBootstrap } from '../../../hooks';
 

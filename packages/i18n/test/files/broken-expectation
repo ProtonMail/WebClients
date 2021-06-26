@@ -28,7 +28,7 @@ Found 11 error(s) inside 3 file(s)
 {
   "msgid": "Contact group apply",
   "comments": {
-    "reference": "node_modules/react-components/containers/contacts/ContactGroupDropdown.tsx:149"
+    "reference": "node_modules/@proton/components/containers/contacts/ContactGroupDropdown.tsx:149"
   },
   "msgid_plural": "Contact groups apply",
   "msgstr": [
@@ -39,7 +39,7 @@ Found 11 error(s) inside 3 file(s)
 {
   "msgid": "Contact signature not verified",
   "comments": {
-    "reference": "node_modules/proton-shared/lib/contacts/decrypt.ts:80"
+    "reference": "node_modules/@proton/shared/lib/contacts/decrypt.ts:80"
   },
   "msgstr": [
     ""
@@ -51,7 +51,7 @@ Found 11 error(s) inside 3 file(s)
   "msgid": "1 Member",
   "msgctxt": "Info",
   "comments": {
-    "reference": "node_modules/react-components/containers/contacts/modals/ContactGroupModal.tsx:187"
+    "reference": "node_modules/@proton/components/containers/contacts/modals/ContactGroupModal.tsx:187"
   },
   "msgid_plural": "${ model.contactEmails.length } Members",
   "msgstr": [
@@ -63,7 +63,7 @@ Found 11 error(s) inside 3 file(s)
   "msgid": "Delete ${ name }",
   "msgctxt": "Title",
   "comments": {
-    "reference": "node_modules/react-components/containers/contacts/modals/ContactDeleteModal.tsx:51",
+    "reference": "node_modules/@proton/components/containers/contacts/modals/ContactDeleteModal.tsx:51",
     "flag": "javascript-format"
   },
   "msgid_plural": "Delete ${ count } contacts",

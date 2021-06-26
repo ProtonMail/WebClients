@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
-import { Api } from 'proton-shared/lib/interfaces';
-import { queryScopes } from 'proton-shared/lib/api/auth';
+import { Api } from '@proton/shared/lib/interfaces';
+import { queryScopes } from '@proton/shared/lib/api/auth';
 
 import useApi from './useApi';
 import useCache from './useCache';

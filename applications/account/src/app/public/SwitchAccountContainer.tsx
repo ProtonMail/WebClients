@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
 import * as History from 'history';
 
-import { APP_NAMES, BRAND_NAME } from 'proton-shared/lib/constants';
-import { resumeSession, getActiveSessions } from 'proton-shared/lib/authentication/persistedSessionHelper';
-import { getPersistedSession, removePersistedSession } from 'proton-shared/lib/authentication/persistedSessionStorage';
-import { InvalidPersistentSessionError } from 'proton-shared/lib/authentication/error';
-import { LocalSessionResponse } from 'proton-shared/lib/authentication/interface';
-import { getInitials } from 'proton-shared/lib/helpers/string';
-import { wait } from 'proton-shared/lib/helpers/promise';
-import { withUIDHeaders } from 'proton-shared/lib/fetch/headers';
-import { revoke } from 'proton-shared/lib/api/auth';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
+import { resumeSession, getActiveSessions } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { getPersistedSession, removePersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
+import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
+import { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
+import { getInitials } from '@proton/shared/lib/helpers/string';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { revoke } from '@proton/shared/lib/api/auth';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 import {
     LinkButton,
@@ -22,7 +22,7 @@ import {
     useErrorHandler,
     useLoading,
     useNotifications,
-} from 'react-components';
+} from '@proton/components';
 import { getToAppName } from './helper';
 import Main from './Main';
 import Header from './Header';

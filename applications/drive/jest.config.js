@@ -7,7 +7,7 @@ module.exports = {
     },
     collectCoverage: false,
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
-    transformIgnorePatterns: ['node_modules/(?!(proton-shared|react-components|mutex-browser)/)'],
+    transformIgnorePatterns: ['node_modules/(?!(@proton/shared|@proton/components|mutex-browser)/)'],
     moduleNameMapper: {
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)$': '<rootDir>/__mocks__/fileMock.js',
         '\\.(css|scss|less)$': '<rootDir>/__mocks__/styleMock.js',

@@ -1,7 +1,7 @@
-import { isMac, isSafari as checkIsSafari } from 'proton-shared/lib/helpers/browser';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { isMac, isSafari as checkIsSafari } from '@proton/shared/lib/helpers/browser';
+import { noop } from '@proton/shared/lib/helpers/function';
 import { RefObject, useRef } from 'react';
-import { useHandler, useHotkeys, useMailSettings } from 'react-components';
+import { useHandler, useHotkeys, useMailSettings } from '@proton/components';
 
 export interface ComposerHotkeysHandlers {
     composerRef: RefObject<HTMLDivElement>;

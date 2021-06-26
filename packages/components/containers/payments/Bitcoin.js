@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { createBitcoinPayment, createBitcoinDonation } from 'proton-shared/lib/api/payments';
-import { MIN_BITCOIN_AMOUNT, APPS, CURRENCIES } from 'proton-shared/lib/constants';
+import { createBitcoinPayment, createBitcoinDonation } from '@proton/shared/lib/api/payments';
+import { MIN_BITCOIN_AMOUNT, APPS, CURRENCIES } from '@proton/shared/lib/constants';
 
 import { Alert, Price, Button, Loader } from '../../components';
 import { useConfig, useApi, useLoading } from '../../hooks';

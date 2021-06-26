@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
-import { APP_NAMES, APPS } from 'proton-shared/lib/constants';
-import { getAppFromPathnameSafe, getSlugFromApp } from 'proton-shared/lib/apps/slugHelper';
+import { APP_NAMES, APPS } from '@proton/shared/lib/constants';
+import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { useLocation } from 'react-router-dom';
 
 import useAppLink from './useAppLink';

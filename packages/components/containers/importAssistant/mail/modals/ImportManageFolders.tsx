@@ -1,9 +1,9 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { Address } from 'proton-shared/lib/interfaces';
-import { Folder } from 'proton-shared/lib/interfaces/Folder';
-import { Label } from 'proton-shared/lib/interfaces/Label';
+import { Address } from '@proton/shared/lib/interfaces';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import { Label } from '@proton/shared/lib/interfaces/Label';
 
 import {
     ImportMailModalModel,

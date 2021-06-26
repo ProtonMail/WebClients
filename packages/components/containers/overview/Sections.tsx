@@ -1,6 +1,6 @@
 import React from 'react';
-import { hasPermission } from 'proton-shared/lib/helpers/permissions';
-import { PERMISSIONS } from 'proton-shared/lib/constants';
+import { hasPermission } from '@proton/shared/lib/helpers/permissions';
+import { PERMISSIONS } from '@proton/shared/lib/constants';
 
 import LinkItem from './LinkItem';
 import { SubSectionConfig } from '../../components/layout';

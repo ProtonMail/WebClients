@@ -12,17 +12,17 @@ import {
     useErrorHandler,
     useModals,
     useTheme,
-} from 'react-components';
-import { ThemeTypes } from 'proton-shared/lib/themes/themes';
-import { queryAddresses } from 'proton-shared/lib/api/addresses';
-import { Address } from 'proton-shared/lib/interfaces';
-import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
-import { handleCreateInternalAddressAndKey } from 'proton-shared/lib/keys';
-import { getHasOnlyExternalAddresses } from 'proton-shared/lib/helpers/address';
-import { getAppName } from 'proton-shared/lib/apps/helper';
-import { APP_NAMES, APPS } from 'proton-shared/lib/constants';
-import { getValidatedApp } from 'proton-shared/lib/authentication/sessionForkValidation';
-import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+} from '@proton/components';
+import { ThemeTypes } from '@proton/shared/lib/themes/themes';
+import { queryAddresses } from '@proton/shared/lib/api/addresses';
+import { Address } from '@proton/shared/lib/interfaces';
+import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
+import { handleCreateInternalAddressAndKey } from '@proton/shared/lib/keys';
+import { getHasOnlyExternalAddresses } from '@proton/shared/lib/helpers/address';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APP_NAMES, APPS } from '@proton/shared/lib/constants';
+import { getValidatedApp } from '@proton/shared/lib/authentication/sessionForkValidation';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { getToAppName } from '../public/helper';
 import GenerateInternalAddressStep, { InternalAddressGeneration } from '../login/GenerateInternalAddressStep';

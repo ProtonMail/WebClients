@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { deletePaymentMethod, orderPaymentMethods } from 'proton-shared/lib/api/payments';
-import { isExpired } from 'proton-shared/lib/helpers/card';
-import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
+import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
+import { isExpired } from '@proton/shared/lib/helpers/card';
+import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { DropdownActions, ConfirmModal, Alert, ErrorButton } from '../../components';
 import { useModals, useApi, useNotifications, useEventManager } from '../../hooks';
 import EditCardModal from '../payments/EditCardModal';

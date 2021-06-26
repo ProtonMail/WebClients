@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Recipient } from 'proton-shared/lib/interfaces';
-import { Tooltip } from 'react-components';
+import { Recipient } from '@proton/shared/lib/interfaces';
+import { Tooltip } from '@proton/components';
 import { OpenPGPKey } from 'pmcrypto';
 
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';

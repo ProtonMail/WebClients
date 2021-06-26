@@ -1,4 +1,4 @@
-import { queryDomainAddresses } from 'proton-shared/lib/api/domains';
+import { queryDomainAddresses } from '@proton/shared/lib/api/domains';
 import { cachedPromise } from './helpers/cachedPromise';
 import usePromiseResult from './usePromiseResult';
 import useCache from './useCache';

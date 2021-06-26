@@ -1,6 +1,6 @@
 import React, { MutableRefObject, useEffect, useRef, MouseEvent, useCallback } from 'react';
-import { useToggle } from 'react-components';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { useToggle } from '@proton/components';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 import { MessageExtended } from '../../../models/message';
 import AddressesEditor from './AddressesEditor';

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Progress } from 'react-components';
+import { Progress } from '@proton/components';
 
 import mdx from './Progress.mdx';
 

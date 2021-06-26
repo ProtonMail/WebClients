@@ -1,4 +1,4 @@
-import { isReceived } from 'proton-shared/lib/mail/messages';
+import { isReceived } from '@proton/shared/lib/mail/messages';
 import React from 'react';
 import ExtraImages from '../extras/ExtraImages';
 import ExtraUnsubscribe from '../extras/ExtraUnsubscribe';

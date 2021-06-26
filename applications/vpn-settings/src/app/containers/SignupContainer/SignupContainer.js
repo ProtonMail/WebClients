@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Title, useLoading, TextLoader, VpnLogo, Href, FullLoader, useApi } from 'react-components';
+import { Button, Title, useLoading, TextLoader, VpnLogo, Href, FullLoader, useApi } from '@proton/components';
 import { c } from 'ttag';
-import { BLACK_FRIDAY, CYCLE } from 'proton-shared/lib/constants';
-import { checkCookie } from 'proton-shared/lib/helpers/cookies';
-import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
+import { BLACK_FRIDAY, CYCLE } from '@proton/shared/lib/constants';
+import { checkCookie } from '@proton/shared/lib/helpers/cookies';
+import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import AccountStep from './AccountStep/AccountStep';
 import PlanStep from './PlanStep/PlanStep';
 import useSignup from './useSignup';

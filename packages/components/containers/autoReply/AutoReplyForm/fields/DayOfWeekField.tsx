@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
-import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
-import { dateLocale } from 'proton-shared/lib/i18n';
+import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
+import { dateLocale } from '@proton/shared/lib/i18n';
 import { Select } from '../../../../components';
 import SettingsLayout from '../../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../../account/SettingsLayoutLeft';

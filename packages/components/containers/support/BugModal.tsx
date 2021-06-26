@@ -2,11 +2,11 @@ import React, { useState, useEffect, ChangeEvent } from 'react';
 import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
-import { reportBug } from 'proton-shared/lib/api/reports';
-import { APPS } from 'proton-shared/lib/constants';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { getClientID } from 'proton-shared/lib/apps/helper';
-import { omit } from 'proton-shared/lib/helpers/object';
+import { reportBug } from '@proton/shared/lib/api/reports';
+import { APPS } from '@proton/shared/lib/constants';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { getClientID } from '@proton/shared/lib/apps/helper';
+import { omit } from '@proton/shared/lib/helpers/object';
 
 import AttachScreenshot from './AttachScreenshot';
 import { getReportInfo, getClient } from '../../helpers/report';
@@ -112,10 +112,10 @@ const BugModal = ({ onClose = noop, username: Username = '', addresses = [], ...
     const { state: showDetails, toggle: toggleDetails } = useToggle(false);
     const [images, setImages] = useState([]);
     const link = <Href key="linkClearCache" url={clearCacheLink}>{c('Link').t`clearing your browser cache`}</Href>;
-    const handleChange = (key: string) => ({
-        target,
-    }: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
-        update({ ...model, [key]: target.value });
+    const handleChange =
+        (key: string) =>
+        ({ target }: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
+            update({ ...model, [key]: target.value });
 
     const handleSubmit = async () => {
         const getParameters = () => {

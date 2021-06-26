@@ -1,12 +1,12 @@
-import { getIsSubscribedCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
+import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import React, { useState, useMemo, ChangeEvent } from 'react';
 import { c } from 'ttag';
 
-import { noop } from 'proton-shared/lib/helpers/function';
-import { Calendar, SubscribedCalendar } from 'proton-shared/lib/interfaces/calendar';
-import { dedupeNotifications, sortNotificationsByAscendingTrigger } from 'proton-shared/lib/calendar/alarms';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { Calendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 
-import { MAX_DEFAULT_NOTIFICATIONS, MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
+import { MAX_DEFAULT_NOTIFICATIONS, MAX_LENGTHS } from '@proton/shared/lib/calendar/constants';
 import {
     ColorPicker,
     Field,

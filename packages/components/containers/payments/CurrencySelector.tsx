@@ -1,7 +1,7 @@
 import React from 'react';
-import { CURRENCIES, DEFAULT_CURRENCY } from 'proton-shared/lib/constants';
+import { CURRENCIES, DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
-import { Currency } from 'proton-shared/lib/interfaces';
+import { Currency } from '@proton/shared/lib/interfaces';
 
 import { Select, ButtonGroup, Button } from '../../components';
 import { classnames } from '../../helpers';

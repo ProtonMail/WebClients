@@ -1,5 +1,5 @@
-import { queryAddresses } from 'proton-shared/lib/api/members';
-import { Address, Member } from 'proton-shared/lib/interfaces';
+import { queryAddresses } from '@proton/shared/lib/api/members';
+import { Address, Member } from '@proton/shared/lib/interfaces';
 import useCache from './useCache';
 import useApi from './useApi';
 import usePromiseResult from './usePromiseResult';

@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Organization } from 'proton-shared/lib/interfaces';
-import { APPS, PLANS, PLAN_NAMES } from 'proton-shared/lib/constants';
-import { hasMailProfessional, hasVisionary } from 'proton-shared/lib/helpers/subscription';
-import { unlockPasswordChanges } from 'proton-shared/lib/api/user';
+import { Organization } from '@proton/shared/lib/interfaces';
+import { APPS, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { hasMailProfessional, hasVisionary } from '@proton/shared/lib/helpers/subscription';
+import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 
 import { Row, Field, Label, Loader, Button, ButtonLike, SettingsLink, PrimaryButton, Card } from '../../components';
 import { useModals, useNotifications, useSubscription } from '../../hooks';

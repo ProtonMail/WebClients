@@ -1,5 +1,5 @@
 import React from 'react';
-import { StandardPrivateApp, LoaderPage, useApi, useCache, useAppTitle } from 'react-components';
+import { StandardPrivateApp, LoaderPage, useApi, useCache, useAppTitle } from '@proton/components';
 import {
     UserModel,
     UserSettingsModel,
@@ -10,9 +10,9 @@ import {
     ContactEmailsModel,
     ContactsModel,
     LabelsModel,
-} from 'proton-shared/lib/models';
-import { loadModels } from 'proton-shared/lib/models/helper';
-import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
+} from '@proton/shared/lib/models';
+import { loadModels } from '@proton/shared/lib/models/helper';
+import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 const EVENT_MODELS = [
     UserModel,

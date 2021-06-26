@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { APPS } from 'proton-shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 
 import { Label, Row, Field, Href } from '../../components';
 import { useUser, useConfig } from '../../hooks';

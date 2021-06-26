@@ -1,8 +1,8 @@
 import React from 'react';
-import { Icons, NotificationsProvider, ModalsProvider, ModalsChildren, CacheProvider } from 'react-components';
-import ApiProvider from 'react-components/containers/api/ApiProvider';
-import ConfigProvider from 'react-components/containers/config/Provider';
-import createCache from 'proton-shared/lib/helpers/cache';
+import { Icons, NotificationsProvider, ModalsProvider, ModalsChildren, CacheProvider } from "@proton/components";
+import ApiProvider from "@proton/components/containers/api/ApiProvider";
+import ConfigProvider from "@proton/components/containers/config/Provider";
+import createCache from "@proton/shared/lib/helpers/cache";
 
 import * as config from '../src/app/config';
 import theme from './theme';

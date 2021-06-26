@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as History from 'history';
-import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
+import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import {
     APP_NAMES,
     CYCLE,
@@ -10,8 +10,8 @@ import {
     PLANS,
     TOKEN_TYPES,
     ADDON_NAMES,
-} from 'proton-shared/lib/constants';
-import { checkSubscription, subscribe } from 'proton-shared/lib/api/payments';
+} from '@proton/shared/lib/constants';
+import { checkSubscription, subscribe } from '@proton/shared/lib/api/payments';
 import { c } from 'ttag';
 import {
     Address,
@@ -22,14 +22,14 @@ import {
     Plan,
     SubscriptionCheckResponse,
     User as tsUser,
-} from 'proton-shared/lib/interfaces';
-import { queryAddresses } from 'proton-shared/lib/api/addresses';
-import { persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
-import { updateLocale } from 'proton-shared/lib/api/settings';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { handleSetupAddress, handleSetupKeys } from 'proton-shared/lib/keys';
-import { localeCode } from 'proton-shared/lib/i18n';
-import { getUser } from 'proton-shared/lib/api/user';
+} from '@proton/shared/lib/interfaces';
+import { queryAddresses } from '@proton/shared/lib/api/addresses';
+import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { updateLocale } from '@proton/shared/lib/api/settings';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { handleSetupAddress, handleSetupKeys } from '@proton/shared/lib/keys';
+import { localeCode } from '@proton/shared/lib/i18n';
+import { getUser } from '@proton/shared/lib/api/user';
 import {
     Alert,
     Button,
@@ -47,13 +47,13 @@ import {
     usePayment,
     usePlans,
     useVPNCountriesCount,
-} from 'react-components';
-import { Payment, PaymentParameters } from 'react-components/containers/payments/interface';
-import { handlePaymentToken } from 'react-components/containers/payments/paymentTokenHelper';
-import { Steps } from 'react-components/containers/api/humanVerification/HumanVerificationForm';
-import PlanCustomization from 'react-components/containers/payments/subscription/PlanCustomization';
-import { getHasPlanType, hasPlanIDs } from 'proton-shared/lib/helpers/planIDs';
-import { getFreeCheckResult } from 'proton-shared/lib/subscription/freePlans';
+} from '@proton/components';
+import { Payment, PaymentParameters } from '@proton/components/containers/payments/interface';
+import { handlePaymentToken } from '@proton/components/containers/payments/paymentTokenHelper';
+import { Steps } from '@proton/components/containers/api/humanVerification/HumanVerificationForm';
+import PlanCustomization from '@proton/components/containers/payments/subscription/PlanCustomization';
+import { getHasPlanType, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 
 import BackButton from '../public/BackButton';
 import CreateAccountForm from './CreateAccountForm';

@@ -1,9 +1,9 @@
 import React, { useLayoutEffect, ReactNode } from 'react';
 
-import createCache from 'proton-shared/lib/helpers/cache';
-import createLRU from 'proton-shared/lib/helpers/lru';
-import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
-import { STATUS } from 'proton-shared/lib/models/cache';
+import createCache from '@proton/shared/lib/helpers/cache';
+import createLRU from '@proton/shared/lib/helpers/lru';
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
+import { STATUS } from '@proton/shared/lib/models/cache';
 
 import { useInstance, useEventManager } from '../../hooks';
 

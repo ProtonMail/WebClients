@@ -1,9 +1,9 @@
 import { useRef, useState, useEffect } from 'react';
 
-import { splitKeys } from 'proton-shared/lib/keys';
-import { prepareContact, CryptoProcessingError } from 'proton-shared/lib/contacts/decrypt';
-import { DecryptedKey } from 'proton-shared/lib/interfaces';
-import { Contact, ContactProperties } from 'proton-shared/lib/interfaces/contacts/Contact';
+import { splitKeys } from '@proton/shared/lib/keys';
+import { prepareContact, CryptoProcessingError } from '@proton/shared/lib/contacts/decrypt';
+import { DecryptedKey } from '@proton/shared/lib/interfaces';
+import { Contact, ContactProperties } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 export type ContactPropertiesModel = {
     ID?: string;

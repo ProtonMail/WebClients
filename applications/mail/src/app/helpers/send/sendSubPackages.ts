@@ -1,11 +1,11 @@
 import { arrayToBinaryString, encodeBase64, encryptMessage, generateSessionKey } from 'pmcrypto';
-import { AES256, MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
-import { Api } from 'proton-shared/lib/interfaces';
-import { Package, Packages, SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
-import { getAttachments, isEO } from 'proton-shared/lib/mail/messages';
-import { srpGetVerify } from 'proton-shared/lib/srp';
+import { AES256, MIME_TYPES, PACKAGE_TYPE } from '@proton/shared/lib/constants';
+import { Api } from '@proton/shared/lib/interfaces';
+import { Package, Packages, SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import { getAttachments, isEO } from '@proton/shared/lib/mail/messages';
+import { srpGetVerify } from '@proton/shared/lib/srp';
 
 import { MessageExtendedWithData } from '../../models/message';
 

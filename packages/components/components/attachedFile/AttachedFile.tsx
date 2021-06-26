@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import humanSize from 'proton-shared/lib/helpers/humanSize';
-import { splitExtension } from 'proton-shared/lib/helpers/file';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { splitExtension } from '@proton/shared/lib/helpers/file';
 import Icon from '../icon/Icon';
 import Button from '../button/Button';
 

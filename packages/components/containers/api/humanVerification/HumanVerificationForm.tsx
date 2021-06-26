@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { c } from 'ttag';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { HumanVerificationMethodType } from 'proton-shared/lib/interfaces';
-import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { Alert, Href, LearnMore, Tabs } from '../../../components';
 import Captcha from './Captcha';

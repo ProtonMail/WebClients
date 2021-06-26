@@ -1,8 +1,8 @@
 import React, { CSSProperties, Ref } from 'react';
-import { classnames } from 'react-components';
+import { classnames } from '@proton/components';
 
-import formatUTC from 'proton-shared/lib/date-fns-utc/format';
-import { dateLocale } from 'proton-shared/lib/i18n';
+import formatUTC from '@proton/shared/lib/date-fns-utc/format';
+import { dateLocale } from '@proton/shared/lib/i18n';
 import FullDayEvent from './FullDayEvent';
 import PopoverHeader from './PopoverHeader';
 import { TYPE } from '../calendar/interactions/constants';

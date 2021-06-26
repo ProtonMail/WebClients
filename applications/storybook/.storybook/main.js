@@ -1,8 +1,8 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const getAlias = require('proton-pack/webpack/alias');
-const { getJsLoader } = require('proton-pack/webpack/js.loader');
-const getCssLoaders = require('proton-pack/webpack/css.loader');
-const getAssetsLoaders = require('proton-pack/webpack/assets.loader');
+const getAlias = require('@proton/pack/webpack/alias');
+const { getJsLoader } = require('@proton/pack/webpack/js.loader');
+const getCssLoaders = require('@proton/pack/webpack/css.loader');
+const getAssetsLoaders = require('@proton/pack/webpack/assets.loader');
 
 module.exports = {
     webpackFinal: async (config, { configType }) => {

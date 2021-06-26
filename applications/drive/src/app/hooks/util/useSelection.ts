@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 type ItemId = string | number;
 

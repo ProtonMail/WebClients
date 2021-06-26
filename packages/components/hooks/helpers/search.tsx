@@ -1,5 +1,5 @@
 import React from 'react';
-import { normalize } from 'proton-shared/lib/helpers/string';
+import { normalize } from '@proton/shared/lib/helpers/string';
 
 /**
  *  Returns a formatted JSX with all matches wrapped with <b></b>

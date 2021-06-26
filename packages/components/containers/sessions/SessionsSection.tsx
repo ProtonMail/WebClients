@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { querySessions, revokeOtherSessions, revokeSession } from 'proton-shared/lib/api/auth';
+import { querySessions, revokeOtherSessions, revokeSession } from '@proton/shared/lib/api/auth';
 import {
     Button,
     Table,

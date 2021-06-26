@@ -1,4 +1,4 @@
-import { CalendarEvent, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
+import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { InviteActions } from '../../../interfaces/Invite';
 
 export const getUpdatePersonalPartOperation = ({

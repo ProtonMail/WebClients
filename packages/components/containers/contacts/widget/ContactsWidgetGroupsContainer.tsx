@@ -1,10 +1,10 @@
 import React, { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
-import { Recipient } from 'proton-shared/lib/interfaces';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { normalize } from 'proton-shared/lib/helpers/string';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { orderContactGroups } from 'proton-shared/lib/helpers/contactGroups';
+import { Recipient } from '@proton/shared/lib/interfaces';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { normalize } from '@proton/shared/lib/helpers/string';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { orderContactGroups } from '@proton/shared/lib/helpers/contactGroups';
 
 import { ContactUpgradeModal, FullLoader, SearchInput } from '../../../components';
 import {

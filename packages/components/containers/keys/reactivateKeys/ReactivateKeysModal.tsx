@@ -7,10 +7,10 @@ import {
     OnKeyReactivationCallback,
     decryptPrivateKeyWithSalt,
     getHasMigratedAddressKey,
-} from 'proton-shared/lib/keys';
-import { KeySalt } from 'proton-shared/lib/interfaces';
-import { getKeySalts } from 'proton-shared/lib/api/keys';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+} from '@proton/shared/lib/keys';
+import { KeySalt } from '@proton/shared/lib/interfaces';
+import { getKeySalts } from '@proton/shared/lib/api/keys';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 import { Alert, Field, FormModal, InlineLinkButton, Label, Loader, PasswordInput } from '../../../components';
 import { useApi, useModals, useNotifications } from '../../../hooks';

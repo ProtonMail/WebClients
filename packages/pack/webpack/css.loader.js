@@ -1,15 +1,15 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
 const fs = require('fs');
-const { getSource } = require('./helpers/source');
+const path = require('path');
 
 const DESIGN_SYSTEM_THEME = /.*theme\.scss$/;
 
-const SASS_VARIABLES_FILEPATH = getSource('src/app/variables.scss');
+const SASS_VARIABLES_FILEPATH = path.resolve('./src/app/variables.scss');
 const SASS_VARIABLES = fs.existsSync(SASS_VARIABLES_FILEPATH) ? fs.readFileSync(SASS_VARIABLES_FILEPATH) : '';
 // Set up the variables to the design system so that files are resolved properly.
 const PREPEND_SASS = `
-$path-images: "~design-system/assets/img/shared/";
+$path-images: "~@proton/styles/assets/img/shared/";
 ${SASS_VARIABLES}
 `;
 
@@ -35,7 +35,7 @@ const getSassLoaders = (isProduction) => {
 
     return [
         {
-            loader: 'css-loader',
+            loader: require.resolve('css-loader'),
             options: {
                 url: handleUrlResolve
             }
@@ -43,7 +43,7 @@ const getSassLoaders = (isProduction) => {
         // To get rid of "You did not set any plugins, parser, or stringifier. Right now, PostCSS does nothing."
         postcssPlugins.length
             ? {
-                  loader: 'postcss-loader',
+                  loader: require.resolve('postcss-loader'),
                   options: {
                       ident: 'postcss',
                       plugins: postcssPlugins,
@@ -52,7 +52,7 @@ const getSassLoaders = (isProduction) => {
               }
             : undefined,
         {
-            loader: 'sass-loader',
+            loader: require.resolve('sass-loader'),
             options: {
                 additionalData: PREPEND_SASS
             }
@@ -74,7 +74,7 @@ module.exports = ({ isProduction }) => {
             use: [
                 miniLoader,
                 {
-                    loader: 'css-loader',
+                    loader: require.resolve('css-loader'),
                     options: {
                         importLoaders: 1,
                         url: handleUrlResolve

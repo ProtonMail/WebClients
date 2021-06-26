@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { c, msgid } from 'ttag';
 
-import { deleteLabel, orderContactGroup } from 'proton-shared/lib/api/labels';
-import { move } from 'proton-shared/lib/helpers/array';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { deleteLabel, orderContactGroup } from '@proton/shared/lib/api/labels';
+import { move } from '@proton/shared/lib/helpers/array';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import {
     DropdownActions,

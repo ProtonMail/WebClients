@@ -1,5 +1,5 @@
 import React from 'react';
-import { getEmailMismatchWarning } from 'proton-shared/lib/keys/publicKeys';
+import { getEmailMismatchWarning } from '@proton/shared/lib/keys/publicKeys';
 
 import { OpenPGPKey } from 'pmcrypto';
 import Icon from './Icon';

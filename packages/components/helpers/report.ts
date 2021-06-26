@@ -1,5 +1,5 @@
-import { getOS, getBrowser, getDevice } from 'proton-shared/lib/helpers/browser';
-import { CLIENT_ID_KEYS, CLIENT_IDS } from 'proton-shared/lib/constants';
+import { getOS, getBrowser, getDevice } from '@proton/shared/lib/helpers/browser';
+import { CLIENT_ID_KEYS, CLIENT_IDS } from '@proton/shared/lib/constants';
 
 export const getClient = (clientID: CLIENT_ID_KEYS) => {
     return CLIENT_IDS[clientID];

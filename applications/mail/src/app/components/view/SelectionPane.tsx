@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
-import { Button, useLabels, useFolders } from 'react-components';
+import { Button, useLabels, useFolders } from '@proton/components';
 import { c, msgid } from 'ttag';
-import { MailSettings } from 'proton-shared/lib/interfaces';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Location } from 'history';
 
-import { LabelCount } from 'proton-shared/lib/interfaces/Label';
-import conversationSvg from 'design-system/assets/img/placeholders/selected-emails.svg';
+import { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import conversationSvg from '@proton/styles/assets/img/placeholders/selected-emails.svg';
 
 import { getLabelName, isCustomLabel as testIsCustomLabel } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';

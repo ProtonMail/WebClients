@@ -7,12 +7,12 @@ import {
     SettingsPropsShared,
     PmMeSection,
     useAddresses,
-} from 'react-components';
+} from '@proton/components';
 
-import { ADDRESS_TYPE } from 'proton-shared/lib/constants';
-import { UserModel } from 'proton-shared/lib/interfaces';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { getHasOnlyExternalAddresses } from 'proton-shared/lib/helpers/address';
+import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
+import { UserModel } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { getHasOnlyExternalAddresses } from '@proton/shared/lib/helpers/address';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 import PrivateMainAreaLoading from '../../components/PrivateMainAreaLoading';

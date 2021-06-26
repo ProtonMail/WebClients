@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { range } from 'proton-shared/lib/helpers/array';
+import { range } from '@proton/shared/lib/helpers/array';
 
 import { ButtonGroup, Button } from '../button';
 import { Icon } from '../icon';

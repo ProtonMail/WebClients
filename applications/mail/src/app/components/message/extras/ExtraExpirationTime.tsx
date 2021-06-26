@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from 'react-components';
+import { Icon } from '@proton/components';
 
 import { MessageExtended } from '../../../models/message';
 import { useExpiration } from '../../../hooks/useExpiration';

@@ -1,10 +1,10 @@
 import { encryptSessionKey, encryptMessage, OpenPGPKey, encodeBase64, arrayToBinaryString } from 'pmcrypto';
 import { enums } from 'openpgp';
-import { createDraft, updateDraft } from 'proton-shared/lib/api/messages';
-import { Api } from 'proton-shared/lib/interfaces';
-import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { getAttachments, isPlainText } from 'proton-shared/lib/mail/messages';
-import { getSessionKey } from 'proton-shared/lib/mail/send/attachments';
+import { createDraft, updateDraft } from '@proton/shared/lib/api/messages';
+import { Api } from '@proton/shared/lib/interfaces';
+import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
+import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 
 import { MessageExtended, MessageExtendedWithData, MessageKeys } from '../../models/message';
 import { getDocumentContent, getPlainTextContent } from './messageContent';

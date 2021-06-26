@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { Price } from 'react-components';
-import { CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
+import { Price } from '@proton/components';
+import { CYCLE, CURRENCIES } from '@proton/shared/lib/constants';
 
 import './PlanPrice.scss';
 

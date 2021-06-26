@@ -1,6 +1,6 @@
 import React from 'react';
-import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { act } from '@testing-library/react';
 import { PAGE_SIZE, DEFAULT_PLACEHOLDERS_COUNT } from '../../../constants';
 import { addApiResolver, addToCache, api, clearAll, render } from '../../../helpers/test/helper';

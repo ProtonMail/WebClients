@@ -1,9 +1,9 @@
 import React, { memo, Fragment, MouseEvent } from 'react';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { getRecipients } from 'proton-shared/lib/mail/messages';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { getRecipients } from '@proton/shared/lib/mail/messages';
 import { c } from 'ttag';
-import { Label, LinkButton, classnames } from 'react-components';
-import { Recipient } from 'proton-shared/lib/interfaces/Address';
+import { Label, LinkButton, classnames } from '@proton/components';
+import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { MapSendInfo, STATUS_ICONS_FILLS } from '../../../models/crypto';
 import { recipientTypes } from '../../../models/address';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';

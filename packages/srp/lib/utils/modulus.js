@@ -39,7 +39,7 @@ export const verifyModulus = async (keys, modulus) => {
     try {
         const { verified = NOT_SIGNED } = await verifyMessage({
             message: modulus,
-            publicKeys: keys
+            publicKeys: keys,
         });
 
         if (verified !== SIGNED_AND_VALID) {

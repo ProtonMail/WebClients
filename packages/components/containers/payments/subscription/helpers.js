@@ -1,6 +1,6 @@
-import { PLAN_SERVICES, PLAN_TYPES, ADDON_NAMES } from 'proton-shared/lib/constants';
-import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { getLastCancelledSubscription } from 'proton-shared/lib/api/payments';
+import { PLAN_SERVICES, PLAN_TYPES, ADDON_NAMES } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { getLastCancelledSubscription } from '@proton/shared/lib/api/payments';
 import { getUnixTime } from 'date-fns';
 
 const { PLAN, ADDON } = PLAN_TYPES;

@@ -1,6 +1,6 @@
 import React from 'react';
-import { TableRowSticky, TableHeaderCell, Checkbox, useActiveBreakpoint } from 'react-components';
-import { SORT_DIRECTION } from 'proton-shared/lib/constants';
+import { TableRowSticky, TableHeaderCell, Checkbox, useActiveBreakpoint } from '@proton/components';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import { SortKeys, SortParams } from '../../../interfaces/link';
 import { FileBrowserItem, FileBrowserLayouts } from '../interfaces';

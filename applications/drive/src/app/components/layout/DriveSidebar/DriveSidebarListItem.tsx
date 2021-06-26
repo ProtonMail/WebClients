@@ -1,5 +1,5 @@
-import { noop } from 'proton-shared/lib/helpers/function';
-import { wait } from 'proton-shared/lib/helpers/promise';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import React from 'react';
 import {
     SidebarListItem,
@@ -7,7 +7,7 @@ import {
     SidebarListItemContentIcon,
     SidebarListItemLink,
     useLoading,
-} from 'react-components';
+} from '@proton/components';
 import { useRouteMatch } from 'react-router-dom';
 import useDrive from '../../../hooks/drive/useDrive';
 import LocationAside from './ReloadSpinner';

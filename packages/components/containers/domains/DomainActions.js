@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { deleteDomain } from 'proton-shared/lib/api/domains';
+import { deleteDomain } from '@proton/shared/lib/api/domains';
 import { Alert, DropdownActions, ConfirmModal, ErrorButton } from '../../components';
 import { useModals, useApiWithoutResult, useNotifications, useEventManager } from '../../hooks';
 

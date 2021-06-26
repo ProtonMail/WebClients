@@ -1,5 +1,5 @@
-import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
-import { pick } from 'proton-shared/lib/helpers/object';
+import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import { pick } from '@proton/shared/lib/helpers/object';
 import { CalendarEventsCache } from '../interface';
 import getComponentFromCalendarEvent from './getComponentFromCalendarEvent';
 import { getCalendarEventStoreRecord, upsertCalendarEventStoreRecord } from './upsertCalendarEventStoreRecord';

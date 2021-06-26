@@ -1,5 +1,5 @@
 import React from 'react';
-import { TableRowBusy } from 'react-components';
+import { TableRowBusy } from '@proton/components';
 import { LinkType } from '../../interfaces/link';
 import ExpandableRow from './ExpandableRow';
 

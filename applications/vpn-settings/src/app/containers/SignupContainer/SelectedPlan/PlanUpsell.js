@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { PrimaryButton, Price, Icon } from 'react-components';
-import { CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
+import { PrimaryButton, Price, Icon } from '@proton/components';
+import { CYCLE, CURRENCIES } from '@proton/shared/lib/constants';
 import { PLAN } from '../plans';
 
 const PlanUpsell = ({ selectedPlan, getPlanByName, cycle, currency, onExtendCycle, onUpgrade }) => {

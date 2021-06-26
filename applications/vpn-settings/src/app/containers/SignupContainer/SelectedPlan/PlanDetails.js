@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
-import { Icon } from 'react-components';
+import { CYCLE, CURRENCIES } from '@proton/shared/lib/constants';
+import { Icon } from '@proton/components';
 
 import { PLAN } from '../plans';
 import PriceInfo from './PriceInfo';

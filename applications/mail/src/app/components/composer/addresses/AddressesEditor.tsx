@@ -9,8 +9,8 @@ import {
     ContactListModal,
     useModals,
     InlineLinkButton,
-} from 'react-components';
-import { Recipient } from 'proton-shared/lib/interfaces/Address';
+} from '@proton/components';
+import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { MessageExtended } from '../../../models/message';
 import { RecipientType } from '../../../models/address';
 import { MessageChange } from '../Composer';

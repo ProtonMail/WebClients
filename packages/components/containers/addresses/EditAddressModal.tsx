@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState, useRef } from 'react';
 import { c } from 'ttag';
-import { updateAddress } from 'proton-shared/lib/api/addresses';
-import { Address } from 'proton-shared/lib/interfaces';
+import { updateAddress } from '@proton/shared/lib/api/addresses';
+import { Address } from '@proton/shared/lib/interfaces';
 import { FormModal, Row, Field, Label, Input, SimpleSquireEditor } from '../../components';
 import { useApi, useLoading, useNotifications, useEventManager } from '../../hooks';
 import { SquireEditorRef } from '../../components/editor/SquireEditor';

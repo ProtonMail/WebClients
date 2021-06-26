@@ -8,7 +8,7 @@ import {
     FilePreview,
     NavigationControl,
     useModals,
-} from 'react-components';
+} from '@proton/components';
 
 import useFiles from '../hooks/drive/useFiles';
 import useDrive from '../hooks/drive/useDrive';

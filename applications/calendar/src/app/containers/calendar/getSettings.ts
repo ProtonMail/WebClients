@@ -1,5 +1,5 @@
-import { CalendarUserSettings, SETTINGS_VIEW } from 'proton-shared/lib/interfaces/calendar';
-import { VIEWS } from 'proton-shared/lib/calendar/constants';
+import { CalendarUserSettings, SETTINGS_VIEW } from '@proton/shared/lib/interfaces/calendar';
+import { VIEWS } from '@proton/shared/lib/calendar/constants';
 
 export const getAutoDetectPrimaryTimezone = (calendarUserSettings: CalendarUserSettings) => {
     return !!calendarUserSettings.AutoDetectPrimaryTimezone;

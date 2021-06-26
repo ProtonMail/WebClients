@@ -9,15 +9,17 @@ export class ValidationError extends Error {
     }
 }
 
-const composeValidators = <T>(validators: ((value: T) => string | undefined)[]) => (value: T) => {
-    for (const validator of validators) {
-        const result = validator(value);
-        if (result) {
-            return result;
+const composeValidators =
+    <T>(validators: ((value: T) => string | undefined)[]) =>
+    (value: T) => {
+        for (const validator of validators) {
+            const result = validator(value);
+            if (result) {
+                return result;
+            }
         }
-    }
-    return undefined;
-};
+        return undefined;
+    };
 
 const validateSpaceEnd = (str: string) => {
     return str.endsWith(' ') ? c('Validation Error').t`Name must not end with a space` : undefined;

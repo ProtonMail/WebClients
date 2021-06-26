@@ -1,10 +1,10 @@
-import { truncate } from 'proton-shared/lib/helpers/string';
+import { truncate } from '@proton/shared/lib/helpers/string';
 import { c } from 'ttag';
 import {
     MAX_FILENAME_CHARS_DISPLAY,
     MAX_IMPORT_CONTACTS_STRING,
     MAX_IMPORT_FILE_SIZE_STRING,
-} from 'proton-shared/lib/contacts/constants';
+} from '@proton/shared/lib/contacts/constants';
 
 export enum IMPORT_ERROR_TYPE {
     NO_FILE_SELECTED,

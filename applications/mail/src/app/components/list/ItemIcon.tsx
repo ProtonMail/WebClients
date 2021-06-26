@@ -1,6 +1,6 @@
 import React from 'react';
-import { Icon, useFolderColor } from 'react-components';
-import { Folder } from 'proton-shared/lib/interfaces/Folder';
+import { Icon, useFolderColor } from '@proton/components';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
 
 import { FolderInfo } from '../../helpers/labels';
 

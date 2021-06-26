@@ -7,12 +7,12 @@ import {
     SectionConfig,
     ButtonLike,
     SettingsLink,
-} from 'react-components';
-import { hasPermission } from 'proton-shared/lib/helpers/permissions';
-import { PERMISSIONS } from 'proton-shared/lib/constants';
+} from '@proton/components';
+import { hasPermission } from '@proton/shared/lib/helpers/permissions';
+import { PERMISSIONS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
-import upgradeSvg from 'design-system/assets/img/placeholders/upgrade.svg';
-import noAccess from 'design-system/assets/img/errors/no-access-page.svg';
+import upgradeSvg from '@proton/styles/assets/img/placeholders/upgrade.svg';
+import noAccess from '@proton/styles/assets/img/errors/no-access-page.svg';
 
 const { ADMIN, MEMBER } = PERMISSIONS;
 

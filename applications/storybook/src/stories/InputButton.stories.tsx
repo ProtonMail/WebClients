@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { InputButton } from 'react-components';
-import { remove } from 'proton-shared/lib/helpers/array';
+import { InputButton } from '@proton/components';
+import { remove } from '@proton/shared/lib/helpers/array';
 
 import mdx from './InputButton.mdx';
 

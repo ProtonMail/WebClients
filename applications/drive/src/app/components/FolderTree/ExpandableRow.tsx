@@ -1,6 +1,6 @@
 import React, { useState, ReactNode, useEffect } from 'react';
 import { c } from 'ttag';
-import { Icon, useLoading, Button, LinkButton, classnames, TableRowBusy, FileIcon } from 'react-components';
+import { Icon, useLoading, Button, LinkButton, classnames, TableRowBusy, FileIcon } from '@proton/components';
 import { LinkType } from '../../interfaces/link';
 
 interface Props {

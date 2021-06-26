@@ -29,7 +29,7 @@ async function pull(branch, force, fromCi) {
         branch,
         force,
         fromCi,
-        GIT_REMOTE_URL_CI: process.env.GIT_REMOTE_URL_CI
+        GIT_REMOTE_URL_CI: process.env.GIT_REMOTE_URL_CI,
     });
 
     // For the CI to force SSH
@@ -67,5 +67,5 @@ module.exports = {
     getConfig,
     generateChangelog,
     push,
-    pull
+    pull,
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { DENSITY } from 'proton-shared/lib/constants';
-import { updateDensity } from 'proton-shared/lib/api/settings';
+import { DENSITY } from '@proton/shared/lib/constants';
+import { updateDensity } from '@proton/shared/lib/api/settings';
 
 import { useUserSettings, useApi, useLoading, useEventManager, useNotifications } from '../../hooks';
 import { FormModal } from '../../components';

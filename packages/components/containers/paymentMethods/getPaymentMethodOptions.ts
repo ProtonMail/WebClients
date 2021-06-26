@@ -1,8 +1,13 @@
 import { c } from 'ttag';
-import { isExpired as getIsExpired } from 'proton-shared/lib/helpers/card';
-import { BLACK_FRIDAY, MIN_BITCOIN_AMOUNT, MIN_PAYPAL_AMOUNT, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
-import { PaymentMethod, PaymentMethodStatus } from 'proton-shared/lib/interfaces';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { isExpired as getIsExpired } from '@proton/shared/lib/helpers/card';
+import {
+    BLACK_FRIDAY,
+    MIN_BITCOIN_AMOUNT,
+    MIN_PAYPAL_AMOUNT,
+    PAYMENT_METHOD_TYPES,
+} from '@proton/shared/lib/constants';
+import { PaymentMethod, PaymentMethodStatus } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { PaymentMethodData, PaymentMethodFlows } from './interface';
 
 const getMethod = (paymentMethod: PaymentMethod) => {

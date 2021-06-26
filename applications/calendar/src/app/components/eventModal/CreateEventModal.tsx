@@ -1,13 +1,13 @@
-import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from 'proton-shared/lib/calendar/constants';
-import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
-import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
-import { getIsAddressActive } from 'proton-shared/lib/helpers/address';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { Address } from 'proton-shared/lib/interfaces';
+import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from '@proton/shared/lib/calendar/constants';
+import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
+import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { Address } from '@proton/shared/lib/interfaces';
 import React, { useState } from 'react';
-import { Button, FormModal, PrimaryButton } from 'react-components';
+import { Button, FormModal, PrimaryButton } from '@proton/components';
 import { c } from 'ttag';
-import { EventModel } from 'proton-shared/lib/interfaces/calendar';
+import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
 
 import EventForm from './EventForm';

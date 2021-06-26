@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton, useLoading } from 'react-components';
+import { Icon, ToolbarButton, useLoading } from '@proton/components';
 
 import { useTrashContent } from '../TrashContentProvider';
 import useToolbarActions from '../../../../hooks/drive/useToolbarActions';

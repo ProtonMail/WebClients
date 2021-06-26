@@ -1,5 +1,5 @@
 import React from 'react';
-import { LayoutsSection, ThemesSection, AppearanceOtherSection, SettingsPropsShared } from 'react-components';
+import { LayoutsSection, ThemesSection, AppearanceOtherSection, SettingsPropsShared } from '@proton/components';
 import { c } from 'ttag';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';

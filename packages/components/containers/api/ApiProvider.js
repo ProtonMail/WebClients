@@ -1,19 +1,19 @@
 import React, { useReducer, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import xhr from 'proton-shared/lib/fetch/fetch';
-import configureApi from 'proton-shared/lib/api';
-import withApiHandlers from 'proton-shared/lib/api/helpers/withApiHandlers';
-import { getDateHeader } from 'proton-shared/lib/fetch/helpers';
+import xhr from '@proton/shared/lib/fetch/fetch';
+import configureApi from '@proton/shared/lib/api';
+import withApiHandlers from '@proton/shared/lib/api/helpers/withApiHandlers';
+import { getDateHeader } from '@proton/shared/lib/fetch/helpers';
 import { updateServerTime } from 'pmcrypto';
 import {
     getApiError,
     getApiErrorMessage,
     getIsOfflineError,
     getIsUnreachableError,
-} from 'proton-shared/lib/api/helpers/apiErrorHelper';
-import { getClientID } from 'proton-shared/lib/apps/helper';
-import { localeCode } from 'proton-shared/lib/i18n';
-import { withLocaleHeaders } from 'proton-shared/lib/fetch/headers';
+} from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getClientID } from '@proton/shared/lib/apps/helper';
+import { localeCode } from '@proton/shared/lib/i18n';
+import { withLocaleHeaders } from '@proton/shared/lib/fetch/headers';
 
 import ApiContext from './apiContext';
 import ApiStatusContext, { defaultApiStatus } from './apiStatusContext';

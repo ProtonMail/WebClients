@@ -1,7 +1,7 @@
 import React from 'react';
 import squire from 'squire-rte';
 import { act, fireEvent, RenderResult } from '@testing-library/react';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { mergeMessages } from '../../../helpers/message/messages';
 import { messageCache } from '../../../helpers/test/cache';
 import { addApiKeys, apiKeys } from '../../../helpers/test/crypto';

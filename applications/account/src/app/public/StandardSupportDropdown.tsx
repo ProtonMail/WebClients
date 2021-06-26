@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import React from 'react';
-import { BugModal, DropdownMenuButton, DropdownMenuLink, Icon, useModals } from 'react-components';
+import { BugModal, DropdownMenuButton, DropdownMenuLink, Icon, useModals } from '@proton/components';
 import SupportDropdown from './SupportDropdown';
 
 const StandardSupportDropdown = () => {

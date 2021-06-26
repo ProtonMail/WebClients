@@ -8,12 +8,12 @@ import {
     useModals,
     OrganizationSection,
     OrganizationPasswordSection,
-} from 'react-components';
-import { getOrganizationKeyInfo } from 'react-components/containers/organization/helpers/organizationKeysHelper';
+} from '@proton/components';
+import { getOrganizationKeyInfo } from '@proton/components/containers/organization/helpers/organizationKeysHelper';
 import ReactivateOrganizationKeysModal, {
     MODES,
-} from 'react-components/containers/organization/ReactivateOrganizationKeysModal';
-import { PERMISSIONS } from 'proton-shared/lib/constants';
+} from '@proton/components/containers/organization/ReactivateOrganizationKeysModal';
+import { PERMISSIONS } from '@proton/shared/lib/constants';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 

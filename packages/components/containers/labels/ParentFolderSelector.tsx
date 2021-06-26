@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { buildTreeview, formatFolderName } from 'proton-shared/lib/helpers/folder';
-import { ROOT_FOLDER } from 'proton-shared/lib/constants';
-import { FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
+import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
+import { ROOT_FOLDER } from '@proton/shared/lib/constants';
+import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
 import { Loader, Select } from '../../components';
 import { useFolders } from '../../hooks';
@@ -44,9 +44,10 @@ const ParentFolderSelector = ({ id, value, onChange, className, disableOptions =
     };
 
     const treeview = buildTreeview(folders);
-    const options = treeview.reduce<OptionProps[]>((acc, folder) => reducer(acc, folder), [
-        { value: ROOT_FOLDER, text: c('Option').t`No parent folder` },
-    ]);
+    const options = treeview.reduce<OptionProps[]>(
+        (acc, folder) => reducer(acc, folder),
+        [{ value: ROOT_FOLDER, text: c('Option').t`No parent folder` }]
+    );
 
     return (
         <Select

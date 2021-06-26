@@ -1,5 +1,5 @@
 import { matchPath } from 'react-router';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 type HttpMethod = 'get' | 'post' | 'put' | 'delete';
 

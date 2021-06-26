@@ -1,17 +1,17 @@
-import { textToClipboard } from 'proton-shared/lib/helpers/browser';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import React, { MouseEvent, useState } from 'react';
 import { c } from 'ttag';
-import { Calendar, ACCESS_LEVEL, CalendarUrlResponse } from 'proton-shared/lib/interfaces/calendar';
+import { Calendar, ACCESS_LEVEL, CalendarUrlResponse } from '@proton/shared/lib/interfaces/calendar';
 
 import {
     buildLink,
     generateEncryptedPurpose,
     getCreatePublicLinkPayload,
-} from 'proton-shared/lib/calendar/shareUrl/helpers';
-import { createPublicLink, deletePublicLink, editPublicLink } from 'proton-shared/lib/api/calendars';
-import { splitKeys } from 'proton-shared/lib/keys';
-import { Nullable, SimpleMap } from 'proton-shared/lib/interfaces/utils';
-import { UserModel } from 'proton-shared/lib/interfaces';
+} from '@proton/shared/lib/calendar/shareUrl/helpers';
+import { createPublicLink, deletePublicLink, editPublicLink } from '@proton/shared/lib/api/calendars';
+import { splitKeys } from '@proton/shared/lib/keys';
+import { Nullable, SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import { UserModel } from '@proton/shared/lib/interfaces';
 import { useApi, useGetCalendarInfo, useModals, useNotifications } from '../../../hooks';
 import { useCalendarModelEventManager } from '../../eventManager';
 

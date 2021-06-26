@@ -1,5 +1,5 @@
 import React from 'react';
-import { SimpleDropdown, DropdownMenu, DropdownMenuButton, Button, Icon } from 'react-components';
+import { SimpleDropdown, DropdownMenu, DropdownMenuButton, Button, Icon } from '@proton/components';
 import { c } from 'ttag';
 
 import { Sort } from '../../models/tools';

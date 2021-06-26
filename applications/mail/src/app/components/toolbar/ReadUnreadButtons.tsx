@@ -1,7 +1,7 @@
 import React from 'react';
-import { MESSAGE_BUTTONS } from 'proton-shared/lib/constants';
-import { MailSettings } from 'proton-shared/lib/interfaces';
-import { Icon, useLoading, useMailSettings, ToolbarButton } from 'react-components';
+import { MESSAGE_BUTTONS } from '@proton/shared/lib/constants';
+import { MailSettings } from '@proton/shared/lib/interfaces';
+import { Icon, useLoading, useMailSettings, ToolbarButton } from '@proton/components';
 import { c } from 'ttag';
 
 import { useMarkAs, MARK_AS_STATUS } from '../../hooks/useMarkAs';

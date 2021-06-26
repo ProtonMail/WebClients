@@ -1,8 +1,8 @@
-import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import React, { createContext, ReactNode, useContext } from 'react';
-import { useInstance } from 'react-components';
-import createCache, { Cache } from 'proton-shared/lib/helpers/cache';
-import createLRU from 'proton-shared/lib/helpers/lru';
+import { useInstance } from '@proton/components';
+import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
+import createLRU from '@proton/shared/lib/helpers/lru';
 import { DecryptResultPmcrypto } from 'pmcrypto';
 
 export interface BlobInfo {
@@ -33,9 +33,7 @@ interface Props {
  */
 const AttachmentProvider = ({ children, cache: testCache }: Props) => {
     const realCache: AttachmentsCache = useInstance(() => {
-        return createCache(
-            createLRU<string, DecryptResultPmcrypto>({ max: 50 })
-        );
+        return createCache(createLRU<string, DecryptResultPmcrypto>({ max: 50 }));
     });
 
     const cache = testCache || realCache;

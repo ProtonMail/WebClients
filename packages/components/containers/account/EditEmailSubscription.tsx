@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { updateNews } from 'proton-shared/lib/api/settings';
+import { updateNews } from '@proton/shared/lib/api/settings';
 
 import { useUserSettings, useEventManager, useNotifications, useApi, useLoading } from '../../hooks';
 import EmailSubscriptionCheckboxes from './EmailSubscriptionCheckboxes';

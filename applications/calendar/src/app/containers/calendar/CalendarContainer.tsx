@@ -1,5 +1,5 @@
-import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC, VIEWS } from 'proton-shared/lib/calendar/constants';
-import { isSameDay, MILLISECONDS_IN_MINUTE } from 'proton-shared/lib/date-fns-utc';
+import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC, VIEWS } from '@proton/shared/lib/calendar/constants';
+import { isSameDay, MILLISECONDS_IN_MINUTE } from '@proton/shared/lib/date-fns-utc';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
@@ -8,15 +8,15 @@ import {
     getTimezone,
     getTimezoneOffset,
     toUTCDate,
-} from 'proton-shared/lib/date/timezone';
-import { Address, User, UserSettings } from 'proton-shared/lib/interfaces';
-import { AttendeeModel, Calendar, CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
-import { getWeekStartsOn } from 'proton-shared/lib/settings/helper';
+} from '@proton/shared/lib/date/timezone';
+import { Address, User, UserSettings } from '@proton/shared/lib/interfaces';
+import { AttendeeModel, Calendar, CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import React, { MutableRefObject, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
-import { useAppTitle, useCalendarBootstrap, useModals } from 'react-components';
+import { useAppTitle, useCalendarBootstrap, useModals } from '@proton/components';
 import { useHistory, useLocation } from 'react-router-dom';
-import { unary } from 'proton-shared/lib/helpers/function';
-import { getIsPersonalCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
+import { unary } from '@proton/shared/lib/helpers/function';
+import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import {
     canAskTimezoneSuggestion,
     getTimezoneSuggestionKey,

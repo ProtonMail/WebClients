@@ -1,5 +1,5 @@
 import React from 'react';
-import { APPS } from 'proton-shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 
 import { AppLink, Hamburger, Icon, SettingsLink } from '../../components';

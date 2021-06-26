@@ -1,4 +1,4 @@
-import { Recipient } from 'proton-shared/lib/interfaces';
+import { Recipient } from '@proton/shared/lib/interfaces';
 import { IDBPDatabase, openDB } from 'idb';
 import { endOfDay, endOfToday, startOfMonth, sub } from 'date-fns';
 import { SearchParameters } from '../../models/tools';

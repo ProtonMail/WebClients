@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import sentry from 'proton-shared/lib/helpers/sentry';
-import { LoaderPage, ProtonApp, ErrorBoundary, StandardErrorPage } from 'react-components';
-import { G_OAUTH_REDIRECT_PATH } from 'react-components/containers/importAssistant/constants';
+import sentry from '@proton/shared/lib/helpers/sentry';
+import { LoaderPage, ProtonApp, ErrorBoundary, StandardErrorPage } from '@proton/components';
+import { G_OAUTH_REDIRECT_PATH } from '@proton/components/containers/importAssistant/constants';
 
 import * as config from './config';
 import Setup from './Setup';

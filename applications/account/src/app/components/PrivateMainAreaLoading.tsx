@@ -5,7 +5,7 @@ import {
     SettingsParagraph,
     SettingsSection,
     SettingsSectionTitle,
-} from 'react-components';
+} from '@proton/components';
 
 const PrivateMainAreaLoading = () => {
     return (

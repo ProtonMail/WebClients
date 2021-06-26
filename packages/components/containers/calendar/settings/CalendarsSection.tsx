@@ -1,9 +1,9 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { Calendar, SubscribedCalendar } from 'proton-shared/lib/interfaces/calendar';
-import { SimpleMap, UserModel } from 'proton-shared/lib/interfaces';
+import { Calendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
 
-import { MAX_CALENDARS_PER_USER } from 'proton-shared/lib/calendar/constants';
+import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { Alert, ButtonLike, Card, CircleLoader, PrimaryButton, SettingsLink } from '../../../components';
 
 import { SettingsParagraph, SettingsSection } from '../../account';

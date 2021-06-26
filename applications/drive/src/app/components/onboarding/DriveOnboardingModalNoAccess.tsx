@@ -1,10 +1,10 @@
 import { c } from 'ttag';
-import { OnboardingContent, OnboardingModal, OnboardingStep, useSettingsLink } from 'react-components';
+import { OnboardingContent, OnboardingModal, OnboardingStep, useSettingsLink } from '@proton/components';
 import React from 'react';
-import { APPS } from 'proton-shared/lib/constants';
-import { getAppName } from 'proton-shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 
-import onboardingWelcome from 'design-system/assets/img/onboarding/drive-upgrade.svg';
+import onboardingWelcome from '@proton/styles/assets/img/onboarding/drive-upgrade.svg';
 
 const DriveOnboardingModalNoAccess = (props: any) => {
     const goToSettings = useSettingsLink();

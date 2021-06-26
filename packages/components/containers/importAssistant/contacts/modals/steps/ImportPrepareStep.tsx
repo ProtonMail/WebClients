@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Address } from 'proton-shared/lib/interfaces';
+import { Address } from '@proton/shared/lib/interfaces';
 
 import { Icon, FullLoader, TextLoader } from '../../../../../components';
 

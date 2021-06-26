@@ -1,20 +1,20 @@
-import { updateCalendar } from 'proton-shared/lib/api/calendars';
-import { getSupportedEvents, parseIcs, splitErrors } from 'proton-shared/lib/calendar/import/import';
-import { ImportFatalError } from 'proton-shared/lib/calendar/import/ImportFatalError';
-import { splitExtension } from 'proton-shared/lib/helpers/file';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { updateCalendar } from '@proton/shared/lib/api/calendars';
+import { getSupportedEvents, parseIcs, splitErrors } from '@proton/shared/lib/calendar/import/import';
+import { ImportFatalError } from '@proton/shared/lib/calendar/import/ImportFatalError';
+import { splitExtension } from '@proton/shared/lib/helpers/file';
+import { noop } from '@proton/shared/lib/helpers/function';
 import {
     Calendar,
     StoredEncryptedEvent,
     IMPORT_STEPS,
     ImportCalendarModel,
-} from 'proton-shared/lib/interfaces/calendar';
+} from '@proton/shared/lib/interfaces/calendar';
 import React, { ChangeEvent, useState, DragEvent } from 'react';
 import { c } from 'ttag';
 
-import { IMPORT_ERROR_TYPE, MAX_IMPORT_FILE_SIZE } from 'proton-shared/lib/calendar/constants';
+import { IMPORT_ERROR_TYPE, MAX_IMPORT_FILE_SIZE } from '@proton/shared/lib/calendar/constants';
 
-import { ImportFileError } from 'proton-shared/lib/calendar/import/ImportFileError';
+import { ImportFileError } from '@proton/shared/lib/calendar/import/ImportFileError';
 
 import { useApi, useEventManager } from '../../../hooks';
 import { FormModal, PrimaryButton, onlyDragFiles } from '../../../components';

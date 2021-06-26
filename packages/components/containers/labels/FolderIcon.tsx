@@ -1,5 +1,5 @@
 import React from 'react';
-import { FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
+import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
 import { Icon } from '../../components';
 import { useFolderColor } from '../../hooks';

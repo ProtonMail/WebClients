@@ -1,6 +1,6 @@
-import { isAttachPublicKey } from 'proton-shared/lib/mail/messages';
+import { isAttachPublicKey } from '@proton/shared/lib/mail/messages';
 import { useCallback } from 'react';
-import { useAuthentication } from 'react-components';
+import { useAuthentication } from '@proton/components';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { ATTACHMENT_ACTION, upload } from '../../helpers/attachment/attachmentUploader';
 import { attachPublicKey } from '../../helpers/message/messageAttachPublicKey';

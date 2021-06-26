@@ -12,12 +12,12 @@ import {
     Checkbox,
     generateUID,
     Button,
-} from 'react-components';
-import { normalize } from 'proton-shared/lib/helpers/string';
-import { LABEL_COLORS, LABEL_TYPE, MAILBOX_IDENTIFIERS } from 'proton-shared/lib/constants';
-import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
-import { Label } from 'proton-shared/lib/interfaces/Label';
-import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
+} from '@proton/components';
+import { normalize } from '@proton/shared/lib/helpers/string';
+import { LABEL_COLORS, LABEL_TYPE, MAILBOX_IDENTIFIERS } from '@proton/shared/lib/constants';
+import { randomIntFromInterval } from '@proton/shared/lib/helpers/function';
+import { Label } from '@proton/shared/lib/interfaces/Label';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 import { Element } from '../../models/element';
 import { getLabelIDs } from '../../helpers/elements';
@@ -88,11 +88,10 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
     const applyLabels = useApplyLabels();
     const moveToFolder = useMoveToFolder();
 
-    const initialState = useMemo(() => getInitialState(labels, getElementsFromIDs(selectedIDs)), [
-        selectedIDs,
-        labels,
-        labelID,
-    ]);
+    const initialState = useMemo(
+        () => getInitialState(labels, getElementsFromIDs(selectedIDs)),
+        [selectedIDs, labels, labelID]
+    );
     const [selectedLabelIDs, setSelectedLabelIDs] = useState<SelectionState>(initialState);
 
     useEffect(() => onLock(!containFocus), [containFocus]);
@@ -158,20 +157,22 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
         setSelectedLabelIDs({ ...selectedLabelIDs, ...update });
     };
 
-    const handleCheck = (labelID: string) => ({ target, nativeEvent }: ChangeEvent<HTMLInputElement>) => {
-        const { shiftKey } = nativeEvent as any;
-        const labelIDs = [labelID];
+    const handleCheck =
+        (labelID: string) =>
+        ({ target, nativeEvent }: ChangeEvent<HTMLInputElement>) => {
+            const { shiftKey } = nativeEvent as any;
+            const labelIDs = [labelID];
 
-        if (lastChecked && shiftKey) {
-            const start = list.findIndex(({ ID }) => ID === labelID);
-            const end = list.findIndex(({ ID }) => ID === lastChecked);
-            labelIDs.push(...list.slice(Math.min(start, end), Math.max(start, end) + 1).map(({ ID = '' }) => ID));
-        }
+            if (lastChecked && shiftKey) {
+                const start = list.findIndex(({ ID }) => ID === labelID);
+                const end = list.findIndex(({ ID }) => ID === lastChecked);
+                labelIDs.push(...list.slice(Math.min(start, end), Math.max(start, end) + 1).map(({ ID = '' }) => ID));
+            }
 
-        setLastChecked(labelID);
+            setLastChecked(labelID);
 
-        applyCheck(labelIDs, target.checked);
-    };
+            applyCheck(labelIDs, target.checked);
+        };
 
     const handleAddNewLabel = (label?: Partial<Label>) => {
         applyCheck([label?.ID || ''], true);

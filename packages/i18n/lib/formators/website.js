@@ -25,13 +25,13 @@ async function main(outputCloned) {
             if (key === 'languageBase' || key === 'language') {
                 return {
                     ...acc,
-                    [key]: json[key]
+                    [key]: json[key],
                 };
             }
 
             return {
                 ...acc,
-                [key]: { ...DEFAULT_JSON[key], ...json[key] }
+                [key]: { ...DEFAULT_JSON[key], ...json[key] },
             };
         }, Object.create(null));
     };

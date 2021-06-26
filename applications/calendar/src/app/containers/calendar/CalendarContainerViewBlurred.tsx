@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { endOfWeek, startOfWeek } from 'proton-shared/lib/date-fns-utc';
-import { VIEWS } from 'proton-shared/lib/calendar/constants';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { endOfWeek, startOfWeek } from '@proton/shared/lib/date-fns-utc';
+import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import CalendarContainerView from './CalendarContainerView';
 import TimeGrid from '../../components/calendar/TimeGrid';
 import { TimeGridRef } from './interface';

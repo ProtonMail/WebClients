@@ -24,13 +24,13 @@ module.exports = () => [
                 test: new RegExp(`${DESIGN_SYSTEM_ICONS_SVG}$`),
                 use: [
                     {
-                        loader: 'svg-inline-loader'
+                        loader: require.resolve('svg-inline-loader')
                     }
                 ]
             },
             {
                 test: /\.(bmp|png|jpg|jpeg|gif|svg)$/,
-                loader: 'url-loader',
+                loader: require.resolve('url-loader'),
                 exclude: new RegExp(`${DESIGN_SYSTEM_CSS_SVG}`),
                 options: {
                     limit: LIMIT,
@@ -41,7 +41,7 @@ module.exports = () => [
                 test: /\.(bmp|png|jpg|jpeg|gif|svg|woff|woff2|eot|ttf|otf)$/,
                 use: [
                     {
-                        loader: 'file-loader',
+                        loader: require.resolve('file-loader'),
                         options: {
                             name: 'assets/[name].[hash:8].[ext]'
                         }
@@ -52,7 +52,7 @@ module.exports = () => [
                 test: /\.md$/,
                 use: [
                     {
-                        loader: 'raw-loader',
+                        loader: require.resolve('raw-loader'),
                         options: {
                             esModule: false
                         }

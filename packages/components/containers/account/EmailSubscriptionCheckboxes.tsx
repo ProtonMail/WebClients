@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { NEWS } from 'proton-shared/lib/constants';
-import { toggleBit, hasBit } from 'proton-shared/lib/helpers/bitset';
+import { NEWS } from '@proton/shared/lib/constants';
+import { toggleBit, hasBit } from '@proton/shared/lib/helpers/bitset';
 
 import { Toggle } from '../../components';
 

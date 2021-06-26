@@ -12,16 +12,8 @@ const getSendPreferences = (
     encryptionPreferences: EncryptionPreferences,
     message?: Partial<Message>
 ): SendPreferences => {
-    const {
-        encrypt,
-        sign,
-        sendKey,
-        isSendKeyPinned,
-        hasApiKeys,
-        hasPinnedKeys,
-        warnings,
-        error,
-    } = encryptionPreferences;
+    const { encrypt, sign, sendKey, isSendKeyPinned, hasApiKeys, hasPinnedKeys, warnings, error } =
+        encryptionPreferences;
     const isEncryptedToOutside = isEO(message);
     // override encrypt if necessary
     const newEncrypt = encrypt || isEncryptedToOutside;

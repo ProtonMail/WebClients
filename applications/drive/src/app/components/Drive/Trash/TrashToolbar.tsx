@@ -1,5 +1,5 @@
 import React from 'react';
-import { Toolbar, ToolbarSeparator } from 'react-components';
+import { Toolbar, ToolbarSeparator } from '@proton/components';
 import { useTrashContent } from './TrashContentProvider';
 import { DeletePermanentlyButton, RestoreFromTrashButton } from './ToolbarButtons';
 import LayoutDropdown from '../ToolbarButtons/LayoutDropdown';

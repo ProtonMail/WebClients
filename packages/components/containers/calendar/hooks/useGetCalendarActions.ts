@@ -1,15 +1,15 @@
-import { CalendarCreateData } from 'proton-shared/lib/interfaces/calendar/Api';
-import { Calendar, CalendarSettings, SubscribedCalendar } from 'proton-shared/lib/interfaces/calendar';
-import { getPrimaryKey } from 'proton-shared/lib/keys';
+import { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
+import { Calendar, CalendarSettings, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { getPrimaryKey } from '@proton/shared/lib/keys';
 import { c } from 'ttag';
 import {
     createCalendar,
     updateCalendar,
     updateCalendarSettings,
     updateCalendarUserSettings,
-} from 'proton-shared/lib/api/calendars';
-import { loadModels } from 'proton-shared/lib/models/helper';
-import { CalendarsModel } from 'proton-shared/lib/models';
+} from '@proton/shared/lib/api/calendars';
+import { loadModels } from '@proton/shared/lib/models/helper';
+import { CalendarsModel } from '@proton/shared/lib/models';
 import { setupCalendarKey } from '../../keys/calendar';
 import {
     useApi,

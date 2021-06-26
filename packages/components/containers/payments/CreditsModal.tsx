@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { buyCredit } from 'proton-shared/lib/api/payments';
+import { buyCredit } from '@proton/shared/lib/api/payments';
 import {
     APPS,
     DEFAULT_CURRENCY,
     DEFAULT_CREDITS_AMOUNT,
     MIN_CREDIT_AMOUNT,
     PAYMENT_METHOD_TYPES,
-} from 'proton-shared/lib/constants';
-import { Currency } from 'proton-shared/lib/interfaces';
+} from '@proton/shared/lib/constants';
+import { Currency } from '@proton/shared/lib/interfaces';
 
 import { FormModal, PrimaryButton, Alert, useDebounceInput } from '../../components';
 import { useNotifications, useEventManager, useConfig, useModals, useApi, useLoading } from '../../hooks';

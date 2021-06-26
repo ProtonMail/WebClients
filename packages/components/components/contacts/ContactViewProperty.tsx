@@ -2,16 +2,16 @@ import React, { Fragment } from 'react';
 import { parseISO, isValid, format } from 'date-fns';
 import { c } from 'ttag';
 
-import { dateLocale } from 'proton-shared/lib/i18n';
-import { clearType, getType, formatAdr } from 'proton-shared/lib/contacts/property';
-import { getTypeLabels } from 'proton-shared/lib/helpers/contacts';
-import { DecryptedKey } from 'proton-shared/lib/interfaces';
+import { dateLocale } from '@proton/shared/lib/i18n';
+import { clearType, getType, formatAdr } from '@proton/shared/lib/contacts/property';
+import { getTypeLabels } from '@proton/shared/lib/helpers/contacts';
+import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import {
     ContactProperty,
     ContactProperties,
     ContactEmail,
     ContactGroup,
-} from 'proton-shared/lib/interfaces/contacts/Contact';
+} from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import EncryptedIcon from './EncryptedIcon';
 

@@ -1,11 +1,11 @@
 import React, { useState, ChangeEvent, useRef, useMemo } from 'react';
 import { c, msgid } from 'ttag';
-import { randomIntFromInterval, noop } from 'proton-shared/lib/helpers/function';
-import { diff, orderBy } from 'proton-shared/lib/helpers/array';
-import { LABEL_COLORS } from 'proton-shared/lib/constants';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts/Contact';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
+import { randomIntFromInterval, noop } from '@proton/shared/lib/helpers/function';
+import { diff, orderBy } from '@proton/shared/lib/helpers/array';
+import { LABEL_COLORS } from '@proton/shared/lib/constants';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import {
     FormModal,
     Input,

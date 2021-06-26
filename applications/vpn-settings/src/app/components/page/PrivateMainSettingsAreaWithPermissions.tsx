@@ -5,11 +5,11 @@ import {
     SettingsPropsShared,
     PrivateMainSettingsArea,
     SectionConfig,
-} from 'react-components';
+} from '@proton/components';
 import { c } from 'ttag';
 import { Link } from 'react-router-dom';
-import { hasPermission } from 'proton-shared/lib/helpers/permissions';
-import upgradeSvg from 'design-system/assets/img/placeholders/upgrade.svg';
+import { hasPermission } from '@proton/shared/lib/helpers/permissions';
+import upgradeSvg from '@proton/styles/assets/img/placeholders/upgrade.svg';
 
 interface Props extends SettingsPropsShared {
     config: SectionConfig;

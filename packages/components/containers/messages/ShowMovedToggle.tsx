@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { updateShowMoved } from 'proton-shared/lib/api/mailSettings';
-import { SHOW_MOVED } from 'proton-shared/lib/constants';
+import { updateShowMoved } from '@proton/shared/lib/api/mailSettings';
+import { SHOW_MOVED } from '@proton/shared/lib/constants';
 
 import { useApi, useEventManager, useToggle, useMailSettings, useNotifications, useLoading } from '../../hooks';
 import { Toggle } from '../../components';

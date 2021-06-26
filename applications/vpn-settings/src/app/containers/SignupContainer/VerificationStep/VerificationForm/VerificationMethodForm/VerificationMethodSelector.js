@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Select } from 'react-components';
+import { Select } from '@proton/components';
 
 const VerificationMethodSelector = ({ allowedMethods, method, onSelect, ...rest }) => {
     const handleChange = ({ target }) => onSelect(target.value);

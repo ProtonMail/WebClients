@@ -18,7 +18,7 @@ async function send(data, { env, mode = 'deploy', api }) {
                 ${data}
             `.trim();
             return { text, url: process.env.CHANGELOG_QA_HOOK };
-        }
+        },
     };
 
     try {
@@ -32,7 +32,7 @@ async function send(data, { env, mode = 'deploy', api }) {
 
         const body = JSON.stringify({
             mrkdwn: true,
-            text
+            text,
         });
 
         // Escape the body.

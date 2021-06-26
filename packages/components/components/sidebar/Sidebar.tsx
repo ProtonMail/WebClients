@@ -1,10 +1,10 @@
 import React, { ReactNode, useRef, useMemo } from 'react';
 import { c } from 'ttag';
 
-import { APPS } from 'proton-shared/lib/constants';
-import humanSize from 'proton-shared/lib/helpers/humanSize';
-import percentage from 'proton-shared/lib/helpers/percentage';
-import { hasMailProfessional, hasVisionary } from 'proton-shared/lib/helpers/subscription';
+import { APPS } from '@proton/shared/lib/constants';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
+import percentage from '@proton/shared/lib/helpers/percentage';
+import { hasMailProfessional, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { SettingsLink } from '../link';
 import { Meter, getMeterColor } from '../progress';
 import { Tooltip } from '../tooltip';

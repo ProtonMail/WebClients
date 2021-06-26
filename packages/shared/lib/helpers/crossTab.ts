@@ -1,4 +1,4 @@
-import getRandomValues from 'get-random-values';
+import getRandomValues from '@proton/get-random-values';
 
 import { removeItem, setItem } from './storage';
 import { uint8ArrayToBase64String } from './encoding';

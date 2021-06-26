@@ -1,7 +1,7 @@
-import { Api } from 'proton-shared/lib/interfaces';
-import { srpVerify } from 'proton-shared/lib/srp';
-import { queryCreateUser } from 'proton-shared/lib/api/user';
-import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
+import { Api } from '@proton/shared/lib/interfaces';
+import { srpVerify } from '@proton/shared/lib/srp';
+import { queryCreateUser } from '@proton/shared/lib/api/user';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { HumanVerificationError } from '../interfaces';
 
 interface CreateUserArgs {

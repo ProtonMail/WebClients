@@ -1,5 +1,5 @@
 import React, { useRef, Ref, forwardRef } from 'react';
-import { useCombinedRefs, useFocusTrap, classnames } from 'react-components';
+import { useCombinedRefs, useFocusTrap, classnames } from '@proton/components';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
     isOpen?: boolean;

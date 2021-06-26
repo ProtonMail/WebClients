@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { c } from 'ttag';
-import { Button, Icon } from 'react-components';
+import { Button, Icon } from '@proton/components';
 import { ConversationErrors } from '../../models/conversation';
 import { hasError } from '../../helpers/errors';
 

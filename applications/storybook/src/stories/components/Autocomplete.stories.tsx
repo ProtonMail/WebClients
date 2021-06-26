@@ -9,7 +9,7 @@ import {
     useAutocompleteFilter,
     Marks,
     Icon,
-} from 'react-components';
+} from '@proton/components';
 import mdx from './Autocomplete.mdx';
 
 export default {

@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
-import { deleteAddress, enableAddress, disableAddress } from 'proton-shared/lib/api/addresses';
-import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { Address, UserModel, Member, CachedOrganizationKey } from 'proton-shared/lib/interfaces';
+import { deleteAddress, enableAddress, disableAddress } from '@proton/shared/lib/api/addresses';
+import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { Address, UserModel, Member, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 
 import { DropdownActions, Alert, ErrorButton, ConfirmModal } from '../../components';
 import { useModals, useApi, useEventManager, useLoading, useNotifications } from '../../hooks';

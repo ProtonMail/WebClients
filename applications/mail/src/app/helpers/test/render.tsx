@@ -6,19 +6,19 @@ import {
     PrivateAuthenticationStore,
     ModalsChildren,
     EventModelListener,
-} from 'react-components';
+} from '@proton/components';
 import { Router } from 'react-router';
 import { createMemoryHistory, MemoryHistory } from 'history';
 import { render as originalRender, RenderResult as OriginalRenderResult, act } from '@testing-library/react';
 import { renderHook as originalRenderHook } from '@testing-library/react-hooks';
-import ApiContext from 'react-components/containers/api/apiContext';
-import ConfigProvider from 'react-components/containers/config/Provider';
-import { wait } from 'proton-shared/lib/helpers/promise';
-import { APPS } from 'proton-shared/lib/constants';
-import { ProtonConfig } from 'proton-shared/lib/interfaces';
-import AuthenticationProvider from 'react-components/containers/authentication/Provider';
-import FeaturesProvider from 'react-components/containers/features/FeaturesProvider';
-import { ConversationCountsModel, MessageCountsModel } from 'proton-shared/lib/models';
+import ApiContext from '@proton/components/containers/api/apiContext';
+import ConfigProvider from '@proton/components/containers/config/Provider';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import { APPS } from '@proton/shared/lib/constants';
+import { ProtonConfig } from '@proton/shared/lib/interfaces';
+import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import FeaturesProvider from '@proton/components/containers/features/FeaturesProvider';
+import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 import MessageProvider from '../../containers/MessageProvider';
 import ConversationProvider from '../../containers/ConversationProvider';
 import { minimalCache, cache, messageCache, conversationCache, attachmentsCache, contactCache } from './cache';
@@ -32,12 +32,12 @@ interface RenderResult extends OriginalRenderResult {
     rerender: (ui: React.ReactElement) => Promise<void>;
 }
 
-export const authentication = ({
+export const authentication = {
     getUID: jest.fn(),
     getLocalID: jest.fn(),
     getPassword: jest.fn(),
     onLogout: jest.fn(),
-} as unknown) as PrivateAuthenticationStore;
+} as unknown as PrivateAuthenticationStore;
 
 let history: MemoryHistory;
 export const getHistory = () => history;

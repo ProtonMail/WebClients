@@ -16,12 +16,16 @@ const warn = (msg, info) => {
 const success = (msg, { time, space = false } = {}) => {
     const txt = `${chalk.bgGreen(SCOPE)} ${chalk.bold('✓ ' + msg)}`;
     const message = [txt, time && `(${time})`].filter(Boolean).join('');
-    space && console.log();
+    if (space) {
+        console.log();
+    }
     console.log(message);
 };
 
 const json = (data, noSpace) => {
-    !noSpace && console.log();
+    if (!noSpace) {
+        console.log();
+    }
     console.log(JSON.stringify(data, null, 2).trim());
     console.log();
 };
@@ -51,5 +55,5 @@ module.exports = {
     error,
     json,
     debug,
-    warn
+    warn,
 };

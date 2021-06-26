@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 
-import { Button, Label, PasswordInput, useLoading } from 'react-components';
+import { Button, Label, PasswordInput, useLoading } from '@proton/components';
 
 interface Props {
     submitPassword: (password: string) => Promise<void>;

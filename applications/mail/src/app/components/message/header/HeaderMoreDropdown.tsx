@@ -1,4 +1,4 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import React, { useRef } from 'react';
 import { c } from 'ttag';
 import {
@@ -18,12 +18,12 @@ import {
     Tooltip,
     useLabels,
     useMailSettings,
-} from 'react-components';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import { noop } from 'proton-shared/lib/helpers/function';
-import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { reportPhishing } from 'proton-shared/lib/api/reports';
-import { deleteMessages } from 'proton-shared/lib/api/messages';
+} from '@proton/components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { noop } from '@proton/shared/lib/helpers/function';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { reportPhishing } from '@proton/shared/lib/api/reports';
+import { deleteMessages } from '@proton/shared/lib/api/messages';
 
 import { MessageExtended, MessageExtendedWithData } from '../../../models/message';
 import MessageHeadersModal from '../modals/MessageHeadersModal';

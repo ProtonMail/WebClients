@@ -1,4 +1,4 @@
-import { isSameDay } from 'proton-shared/lib/date-fns-utc';
+import { isSameDay } from '@proton/shared/lib/date-fns-utc';
 import { CalendarViewEvent } from '../../containers/calendar/interface';
 
 const getIsBeforeNow = (event: CalendarViewEvent, now: Date) => {

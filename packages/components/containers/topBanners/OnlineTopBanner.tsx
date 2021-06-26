@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { c } from 'ttag';
-import { ping } from 'proton-shared/lib/api/tests';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { ping } from '@proton/shared/lib/api/tests';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 import { useOnline } from '../../hooks';
 import TopBanner from './TopBanner';

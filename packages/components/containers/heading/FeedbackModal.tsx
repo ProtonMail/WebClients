@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { sendFeedback } from 'proton-shared/lib/api/feedback';
+import { sendFeedback } from '@proton/shared/lib/api/feedback';
 
 import { FormModal, Scale, TextArea } from '../../components';
 import { useApi, useLoading, useNotifications } from '../../hooks';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { readableTime } from 'proton-shared/lib/helpers/time';
+import { readableTime } from '@proton/shared/lib/helpers/time';
 
 import Time from './Time';
 

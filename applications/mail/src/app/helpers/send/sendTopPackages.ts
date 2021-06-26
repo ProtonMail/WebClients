@@ -1,9 +1,9 @@
-import { MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { Api } from 'proton-shared/lib/interfaces';
-import { Package, Packages, PackageStatus, SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
-import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
-import { addReceived } from 'proton-shared/lib/mail/messages';
+import { MIME_TYPES, PACKAGE_TYPE } from '@proton/shared/lib/constants';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { Api } from '@proton/shared/lib/interfaces';
+import { Package, Packages, PackageStatus, SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
+import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import { addReceived } from '@proton/shared/lib/mail/messages';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
 import { MessageExtended, MessageKeys } from '../../models/message';

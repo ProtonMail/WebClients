@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, ConfirmModal } from 'react-components';
+import { Alert, ConfirmModal } from '@proton/components';
 
 const RecurringMatchWarning = (props: any) => {
     return (

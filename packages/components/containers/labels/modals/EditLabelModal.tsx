@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 
-import { LABEL_COLORS, ROOT_FOLDER, LABEL_TYPE } from 'proton-shared/lib/constants';
-import { randomIntFromInterval, noop } from 'proton-shared/lib/helpers/function';
-import { create as createLabel, updateLabel, checkLabelAvailability } from 'proton-shared/lib/api/labels';
-import { Folder } from 'proton-shared/lib/interfaces/Folder';
-import { Label } from 'proton-shared/lib/interfaces/Label';
-import { omit } from 'proton-shared/lib/helpers/object';
+import { LABEL_COLORS, ROOT_FOLDER, LABEL_TYPE } from '@proton/shared/lib/constants';
+import { randomIntFromInterval, noop } from '@proton/shared/lib/helpers/function';
+import { create as createLabel, updateLabel, checkLabelAvailability } from '@proton/shared/lib/api/labels';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import { Label } from '@proton/shared/lib/interfaces/Label';
+import { omit } from '@proton/shared/lib/helpers/object';
 
 import { FormModal } from '../../../components';
 import { useEventManager, useLoading, useApi, useNotifications } from '../../../hooks';

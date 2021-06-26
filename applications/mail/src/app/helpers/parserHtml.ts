@@ -1,6 +1,6 @@
 import TurndownService from 'turndown';
 
-import { identity } from 'proton-shared/lib/helpers/function';
+import { identity } from '@proton/shared/lib/helpers/function';
 
 /**
  * Transform HTML to text

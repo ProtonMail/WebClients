@@ -1,4 +1,4 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { Conversation } from '../models/conversation';
 import {
     applyLabelChangesOnMessage,
@@ -11,9 +11,9 @@ const labelID = 'LabelID';
 describe('labels', () => {
     describe('applyLabelChangesOnMessage', () => {
         it('should remove a label from a message', () => {
-            const input = ({
+            const input = {
                 LabelIDs: [labelID],
-            } as unknown) as Message;
+            } as unknown as Message;
             const changes = { [labelID]: false };
 
             const message = applyLabelChangesOnMessage(input, changes);
@@ -22,9 +22,9 @@ describe('labels', () => {
         });
 
         it('should add a label for a message', () => {
-            const input = ({
+            const input = {
                 LabelIDs: [],
-            } as unknown) as Message;
+            } as unknown as Message;
             const changes = { [labelID]: true };
 
             const message = applyLabelChangesOnMessage(input, changes);

@@ -1,5 +1,5 @@
-import { omit } from 'proton-shared/lib/helpers/object';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { omit } from '@proton/shared/lib/helpers/object';
+import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { getSafeRruleCount, getSafeRruleUntil } from './helper';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 

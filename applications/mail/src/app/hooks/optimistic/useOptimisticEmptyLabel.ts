@@ -1,6 +1,6 @@
-import { useHandler, useCache } from 'react-components';
-import { MessageCountsModel, ConversationCountsModel } from 'proton-shared/lib/models';
-import { LabelCount } from 'proton-shared/lib/interfaces/Label';
+import { useHandler, useCache } from '@proton/components';
+import { MessageCountsModel, ConversationCountsModel } from '@proton/shared/lib/models';
+import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { useMessageCache } from '../../containers/MessageProvider';
 import { useGetElementsCache, useSetElementsCache } from '../mailbox/useElementsCache';
 import { MessageExtended } from '../../models/message';

@@ -11,8 +11,8 @@ import {
     DropdownMenuButton,
     useNotifications,
     useDragOver,
-} from 'react-components';
-import { textToClipboard } from 'proton-shared/lib/helpers/browser';
+} from '@proton/components';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import AddressesGroupModal from './AddressesGroupModal';
 import { RecipientGroup } from '../../../models/address';
 import { useUpdateGroupSendInfo, MessageSendInfo } from '../../../hooks/useSendInfo';

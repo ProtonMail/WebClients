@@ -1,13 +1,13 @@
-const { getSource, firstExisting } = require('./webpack/helpers/source');
+const path = require('path');
+const { firstExisting } = require('./webpack/helpers/source');
 const { getJsLoaders } = require('./webpack/js.loader');
 const getCssLoaders = require('./webpack/css.loader');
 const getAssetsLoaders = require('./webpack/assets.loader');
 const getAlias = require('./webpack/alias');
 const getPlugins = require('./webpack/plugins');
 const getOptimizations = require('./webpack/optimization');
-const { outputPath } = require('./webpack/paths');
 
-function main({ port, publicPath, flow, appMode, featureFlags, writeSRI = true }) {
+function main({ publicPath, flow, appMode, featureFlags, writeSRI = true }) {
     const isProduction = process.env.NODE_ENV === 'production';
     const isTtag = flow === 'i18n';
 
@@ -35,13 +35,13 @@ function main({ port, publicPath, flow, appMode, featureFlags, writeSRI = true }
         entry: {
             // The order is important. The supported.js file sets a global variable that is used by unsupported.js to detect if the main bundle could be parsed.
             index: [
-                firstExisting(['./src/app/index.tsx', './src/app/index.js']),
-                getSource('./node_modules/proton-shared/lib/browser/supported.js')
+                firstExisting([path.resolve('./src/app/index.tsx'), path.resolve('./src/app/index.js')]),
+                require.resolve('@proton/shared/lib/browser/supported.js')
             ],
-            unsupported: [getSource('./node_modules/proton-shared/lib/browser/unsupported.js')]
+            unsupported: [require.resolve('@proton/shared/lib/browser/unsupported.js')]
         },
         output: {
-            path: outputPath,
+            path: path.resolve('./dist'),
             filename: isProduction ? '[name].[chunkhash:8].js' : '[name].js',
             publicPath,
             chunkFilename: isProduction ? '[name].[chunkhash:8].chunk.js' : '[name].chunk.js',
@@ -63,7 +63,6 @@ function main({ port, publicPath, flow, appMode, featureFlags, writeSRI = true }
                 index: publicPath
             },
             disableHostCheck: true,
-            contentBase: outputPath,
             publicPath,
             stats: 'minimal'
         }

@@ -1,21 +1,21 @@
-import { getCalendars } from 'proton-shared/lib/models/calendarsModel';
+import { getCalendars } from '@proton/shared/lib/models/calendarsModel';
 import React, { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
-import { APPS, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES } from 'proton-shared/lib/constants';
-import { checkSubscription, deleteSubscription, subscribe } from 'proton-shared/lib/api/payments';
-import { getPublicLinks } from 'proton-shared/lib/api/calendars';
-import { hasBonuses } from 'proton-shared/lib/helpers/organization';
-import { getPlanIDs } from 'proton-shared/lib/helpers/subscription';
-import { hasPlanIDs } from 'proton-shared/lib/helpers/planIDs';
-import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from 'proton-shared/lib/interfaces';
-import { Calendar, CalendarUrlsResponse } from 'proton-shared/lib/interfaces/calendar';
-import { MAX_CALENDARS_PER_FREE_USER } from 'proton-shared/lib/calendar/constants';
-import { getFreeCheckResult } from 'proton-shared/lib/subscription/freePlans';
-import { getAppFromPathnameSafe } from 'proton-shared/lib/apps/slugHelper';
-import { unary } from 'proton-shared/lib/helpers/function';
-import { getIsPersonalCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
+import { APPS, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES } from '@proton/shared/lib/constants';
+import { checkSubscription, deleteSubscription, subscribe } from '@proton/shared/lib/api/payments';
+import { getPublicLinks } from '@proton/shared/lib/api/calendars';
+import { hasBonuses } from '@proton/shared/lib/helpers/organization';
+import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { Calendar, CalendarUrlsResponse } from '@proton/shared/lib/interfaces/calendar';
+import { MAX_CALENDARS_PER_FREE_USER } from '@proton/shared/lib/calendar/constants';
+import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
+import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
+import { unary } from '@proton/shared/lib/helpers/function';
+import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 
 import { Alert, FormModal } from '../../../components';
 import {

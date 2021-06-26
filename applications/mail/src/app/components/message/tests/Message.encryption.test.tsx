@@ -1,5 +1,5 @@
-import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { MIME_TYPES } from 'proton-shared/lib/constants';
+import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
 import {
     clearAll,
     addApiMock,

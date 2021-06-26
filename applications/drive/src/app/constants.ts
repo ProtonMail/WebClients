@@ -1,5 +1,5 @@
-import { isMobile } from 'proton-shared/lib/helpers/browser';
-import { SORT_DIRECTION } from 'proton-shared/lib/constants';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { SortParams } from './interfaces/link';
 import { SupportedMimeTypes } from './utils/MimeTypeParser/constants';
 import { LayoutSetting, SortSetting, UserSettings } from './interfaces/userSettings';

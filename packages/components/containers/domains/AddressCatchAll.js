@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { updateCatchAll } from 'proton-shared/lib/api/domains';
-import { ADDRESS_TYPE } from 'proton-shared/lib/constants';
+import { updateCatchAll } from '@proton/shared/lib/api/domains';
+import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { Checkbox } from '../../components';
 import { useApiWithoutResult, useNotifications, useOrganization } from '../../hooks';
 

@@ -1,5 +1,5 @@
-import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from 'proton-shared/lib/calendar/constants';
-import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
+import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '@proton/shared/lib/calendar/constants';
+import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import React, { ReactNode, Ref, useCallback, useEffect, useMemo } from 'react';
 import {
     LocalizedMiniCalendar,
@@ -18,19 +18,19 @@ import {
     Button,
     useNotifications,
     useContactGroups,
-} from 'react-components';
+} from '@proton/components';
 import { c, msgid } from 'ttag';
 import { differenceInCalendarDays } from 'date-fns';
 
-import { fromUTCDate, toLocalDate } from 'proton-shared/lib/date/timezone';
-import { AttendeeModel, Calendar } from 'proton-shared/lib/interfaces/calendar';
-import { APPS } from 'proton-shared/lib/constants';
-import { CONTACT_WIDGET_TABS, CustomActionRenderProps } from 'react-components/containers/contacts/widget/types';
-import { emailToAttendee } from 'proton-shared/lib/calendar/attendees';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { Address } from 'proton-shared/lib/interfaces';
-import { canonizeInternalEmail, validateEmailAddress } from 'proton-shared/lib/helpers/email';
-import { uniqueBy } from 'proton-shared/lib/helpers/array';
+import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
+import { AttendeeModel, Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { APPS } from '@proton/shared/lib/constants';
+import { CONTACT_WIDGET_TABS, CustomActionRenderProps } from '@proton/components/containers/contacts/widget/types';
+import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { Address } from '@proton/shared/lib/interfaces';
+import { canonizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import { uniqueBy } from '@proton/shared/lib/helpers/array';
 import CalendarSidebar from './CalendarSidebar';
 import CalendarToolbar from './CalendarToolbar';
 import DateCursorButtons from '../../components/DateCursorButtons';

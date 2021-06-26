@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import { StandardPublicApp } from 'react-components';
+import { StandardPublicApp } from '@proton/components';
 
 import ForgotUsernameContainer from './containers/ForgotUsernameContainer';
 import ResetPasswordContainer from './containers/ResetPasswordContainer';

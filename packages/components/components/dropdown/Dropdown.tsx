@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef, CSSProperties, useLayoutEffect } from 'react';
 import { c } from 'ttag';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { noop } from '@proton/shared/lib/helpers/function';
 import { classnames } from '../../helpers';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import { usePopper } from '../popper';

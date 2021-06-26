@@ -1,18 +1,18 @@
-import { ICAL_ATTENDEE_ROLE } from 'proton-shared/lib/calendar/constants';
-import { uniqueBy } from 'proton-shared/lib/helpers/array';
+import { ICAL_ATTENDEE_ROLE } from '@proton/shared/lib/calendar/constants';
+import { uniqueBy } from '@proton/shared/lib/helpers/array';
 import {
     CANONIZE_SCHEME,
     canonizeEmail,
     canonizeInternalEmail,
     validateEmailAddress,
-} from 'proton-shared/lib/helpers/email';
-import { Address, Recipient } from 'proton-shared/lib/interfaces';
-import { inputToRecipient } from 'proton-shared/lib/mail/recipient';
+} from '@proton/shared/lib/helpers/email';
+import { Address, Recipient } from '@proton/shared/lib/interfaces';
+import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
 import React, { memo, useMemo, useRef } from 'react';
-import { AddressesAutocomplete, Alert, Details, Summary } from 'react-components';
+import { AddressesAutocomplete, Alert, Details, Summary } from '@proton/components';
 import { c, msgid } from 'ttag';
-import { AttendeeModel, EventModel } from 'proton-shared/lib/interfaces/calendar';
-import { emailToAttendee } from 'proton-shared/lib/calendar/attendees';
+import { AttendeeModel, EventModel } from '@proton/shared/lib/interfaces/calendar';
+import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
 import { useContactEmailsCache } from '../../../containers/calendar/ContactEmailsProvider';
 
 import OrganizerRow from '../rows/OrganizerRow';

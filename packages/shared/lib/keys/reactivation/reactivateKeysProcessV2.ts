@@ -208,49 +208,46 @@ const reactivateKeysProcessV2 = async ({
     addresses: oldAddresses,
     userKeys: oldUserKeys,
 }: ReactivateKeysProcessV2Arguments) => {
-    const {
-        userRecord,
-        addressRecordsInV2Format,
-        addressRecordsInLegacyFormatOrWithBackup,
-    } = keyReactivationRecords.reduce<{
-        addressRecordsInV2Format: KeyReactivationRecord[];
-        addressRecordsInLegacyFormatOrWithBackup: KeyReactivationRecord[];
-        userRecord?: KeyReactivationRecord;
-    }>(
-        (acc, record) => {
-            const { user, address, keysToReactivate, keys } = record;
-            if (user) {
-                acc.userRecord = record;
-            }
-            if (address) {
-                const keysInV2Format = keysToReactivate.filter(
-                    ({ privateKey, Key }) => !privateKey && getHasMigratedAddressKey(Key)
-                );
-                const keysInLegacyFormatOrWithBackup = keysToReactivate.filter(
-                    ({ privateKey, Key }) => privateKey || !getHasMigratedAddressKey(Key)
-                );
-
-                if (keysInV2Format.length) {
-                    acc.addressRecordsInV2Format.push({
-                        address,
-                        keys,
-                        keysToReactivate: keysInV2Format,
-                    });
+    const { userRecord, addressRecordsInV2Format, addressRecordsInLegacyFormatOrWithBackup } =
+        keyReactivationRecords.reduce<{
+            addressRecordsInV2Format: KeyReactivationRecord[];
+            addressRecordsInLegacyFormatOrWithBackup: KeyReactivationRecord[];
+            userRecord?: KeyReactivationRecord;
+        }>(
+            (acc, record) => {
+                const { user, address, keysToReactivate, keys } = record;
+                if (user) {
+                    acc.userRecord = record;
                 }
+                if (address) {
+                    const keysInV2Format = keysToReactivate.filter(
+                        ({ privateKey, Key }) => !privateKey && getHasMigratedAddressKey(Key)
+                    );
+                    const keysInLegacyFormatOrWithBackup = keysToReactivate.filter(
+                        ({ privateKey, Key }) => privateKey || !getHasMigratedAddressKey(Key)
+                    );
 
-                if (keysInLegacyFormatOrWithBackup.length) {
-                    acc.addressRecordsInLegacyFormatOrWithBackup.push({
-                        address,
-                        keys,
-                        keysToReactivate: keysInLegacyFormatOrWithBackup,
-                    });
+                    if (keysInV2Format.length) {
+                        acc.addressRecordsInV2Format.push({
+                            address,
+                            keys,
+                            keysToReactivate: keysInV2Format,
+                        });
+                    }
+
+                    if (keysInLegacyFormatOrWithBackup.length) {
+                        acc.addressRecordsInLegacyFormatOrWithBackup.push({
+                            address,
+                            keys,
+                            keysToReactivate: keysInLegacyFormatOrWithBackup,
+                        });
+                    }
                 }
-            }
-            return acc;
-        },
+                return acc;
+            },
 
-        { addressRecordsInV2Format: [], addressRecordsInLegacyFormatOrWithBackup: [], userRecord: undefined }
-    );
+            { addressRecordsInV2Format: [], addressRecordsInLegacyFormatOrWithBackup: [], userRecord: undefined }
+        );
 
     let userKeys = oldUserKeys;
     let addresses = oldAddresses;

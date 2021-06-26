@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { setCookie, getCookie } from 'proton-shared/lib/helpers/cookies';
-import { getSecondLevelDomain } from 'proton-shared/lib/helpers/url';
+import { setCookie, getCookie } from '@proton/shared/lib/helpers/cookies';
+import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 
 import { useUser } from './useUser';
 

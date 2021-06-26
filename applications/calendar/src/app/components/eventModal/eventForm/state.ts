@@ -8,18 +8,18 @@ import {
     MONTHLY_TYPE,
     WEEKLY_TYPE,
     YEARLY_TYPE,
-} from 'proton-shared/lib/calendar/constants';
+} from '@proton/shared/lib/calendar/constants';
 import {
     DEFAULT_FULL_DAY_NOTIFICATION,
     DEFAULT_FULL_DAY_NOTIFICATIONS,
     DEFAULT_PART_DAY_NOTIFICATION,
     DEFAULT_PART_DAY_NOTIFICATIONS,
-} from 'proton-shared/lib/calendar/notificationDefaults';
-import { getIsSubscribedCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
+} from '@proton/shared/lib/calendar/notificationDefaults';
+import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 
-import { getIsAllDay, getRecurrenceId } from 'proton-shared/lib/calendar/vcalHelper';
-import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
-import { Address as tsAddress } from 'proton-shared/lib/interfaces';
+import { getIsAllDay, getRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
+import { fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
+import { Address as tsAddress } from '@proton/shared/lib/interfaces';
 import {
     AttendeeModel,
     Calendar as tsCalendar,
@@ -29,11 +29,11 @@ import {
     FrequencyModel,
     Member as tsMember,
     SelfAddressData,
-} from 'proton-shared/lib/interfaces/calendar';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+} from '@proton/shared/lib/interfaces/calendar';
+import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
-import { getDeviceNotifications } from 'proton-shared/lib/calendar/notificationModel';
-import { notificationsToModel } from 'proton-shared/lib/calendar/notificationsToModel';
+import { getDeviceNotifications } from '@proton/shared/lib/calendar/notificationModel';
+import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
 import { SharedVcalVeventComponent } from '../../../containers/calendar/eventStore/interface';
 import { stripAllTags } from '../../../helpers/sanitize';
 

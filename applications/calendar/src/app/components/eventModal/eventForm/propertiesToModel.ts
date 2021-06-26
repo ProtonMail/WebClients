@@ -1,10 +1,10 @@
-import { MAX_LENGTHS, EVENT_VERIFICATION_STATUS } from 'proton-shared/lib/calendar/constants';
-import { EventModelView, DecryptedVeventResult } from 'proton-shared/lib/interfaces/calendar';
-import { getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
-import { getEventStatus } from 'proton-shared/lib/calendar/vcalHelper';
-import { truncate } from 'proton-shared/lib/helpers/string';
+import { MAX_LENGTHS, EVENT_VERIFICATION_STATUS } from '@proton/shared/lib/calendar/constants';
+import { EventModelView, DecryptedVeventResult } from '@proton/shared/lib/interfaces/calendar';
+import { getDtendProperty } from '@proton/shared/lib/calendar/vcalConverter';
+import { getEventStatus } from '@proton/shared/lib/calendar/vcalHelper';
+import { truncate } from '@proton/shared/lib/helpers/string';
 
-import { RequireSome } from 'proton-shared/lib/interfaces/utils';
+import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
 import { propertiesToAttendeeModel } from './propertiesToAttendeeModel';
 import propertiesToDateTimeModel from './propertiesToDateTimeModel';

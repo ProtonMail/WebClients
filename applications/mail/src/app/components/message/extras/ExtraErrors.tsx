@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Button, Icon, SettingsLink } from 'react-components';
+import { Button, Icon, SettingsLink } from '@proton/components';
 import { c } from 'ttag';
-import { APPS } from 'proton-shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { MessageExtended, MessageErrors } from '../../../models/message';
 import { useMessage } from '../../../hooks/message/useMessage';
 import { useReloadMessage } from '../../../hooks/message/useLoadMessage';

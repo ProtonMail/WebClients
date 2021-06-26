@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { CryptoProcessingError } from 'proton-shared/lib/contacts/decrypt';
-import { CRYPTO_PROCESSING_TYPES } from 'proton-shared/lib/contacts/constants';
+import { CryptoProcessingError } from '@proton/shared/lib/contacts/decrypt';
+import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import Icon from '../../components/icon/Icon';
 import Href from '../../components/link/Href';
 import { Button } from '../../components';

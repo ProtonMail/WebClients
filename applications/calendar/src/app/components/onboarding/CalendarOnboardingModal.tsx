@@ -6,10 +6,10 @@ import {
     OnboardingStep,
     OnboardingStepRenderCallback,
     useSettingsLink,
-} from 'react-components';
-import { APPS } from 'proton-shared/lib/constants';
-import { CALENDAR_APP_NAME } from 'proton-shared/lib/calendar/constants';
-import onboardingWelcome from 'design-system/assets/img/onboarding/calendar-welcome.svg';
+} from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
+import { CALENDAR_APP_NAME } from '@proton/shared/lib/calendar/constants';
+import onboardingWelcome from '@proton/styles/assets/img/onboarding/calendar-welcome.svg';
 
 const CalendarOnboardingModal = (props: any) => {
     const goToSettings = useSettingsLink();

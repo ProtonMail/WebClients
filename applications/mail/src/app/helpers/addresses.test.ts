@@ -1,7 +1,7 @@
-import { Address } from 'proton-shared/lib/interfaces';
-import { Recipient } from 'proton-shared/lib/interfaces/Address';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { ContactGroup } from 'proton-shared/lib/interfaces/contacts';
+import { Address } from '@proton/shared/lib/interfaces';
+import { Recipient } from '@proton/shared/lib/interfaces/Address';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import {
     findSender,
     getNumParticipants,

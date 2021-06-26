@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import { useHistory } from 'react-router-dom';
-import { ConfirmModal, Alert } from 'react-components';
+import { ConfirmModal, Alert } from '@proton/components';
 
 interface Props {
     email: string;

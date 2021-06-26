@@ -1,9 +1,9 @@
-import { DRAFT_ID_PREFIX, isSent } from 'proton-shared/lib/mail/messages';
+import { DRAFT_ID_PREFIX, isSent } from '@proton/shared/lib/mail/messages';
 import React, { useEffect, createContext, ReactNode, useContext, useLayoutEffect } from 'react';
-import { useInstance, useEventManager } from 'react-components';
-import createCache, { Cache } from 'proton-shared/lib/helpers/cache';
-import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { useInstance, useEventManager } from '@proton/components';
+import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { Event, LabelIDsChanges } from '../models/event';
 import { MessageExtended, PartialMessageExtended } from '../models/message';
 import { parseLabelIDsInEvent } from '../helpers/elements';
@@ -49,54 +49,59 @@ export const getLocalID = (cache: MessageCache, messageID: string) => {
 /**
  * Event management logic for messages
  */
-const messageEventListener = (cache: MessageCache) => ({ Messages }: Event) => {
-    if (!Array.isArray(Messages)) {
-        return;
-    }
-
-    for (const { ID, Action, Message } of Messages) {
-        const localID = getLocalID(cache, ID);
-
-        // Ignore updates for non-fetched messages.
-        if (!cache.has(localID)) {
-            continue;
+const messageEventListener =
+    (cache: MessageCache) =>
+    ({ Messages }: Event) => {
+        if (!Array.isArray(Messages)) {
+            return;
         }
-        if (Action === EVENT_ACTIONS.DELETE) {
-            cache.delete(localID);
-        }
-        if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
-            const currentValue = cache.get(localID) as MessageExtended;
 
-            if (currentValue.data) {
-                const MessageToUpdate = parseLabelIDsInEvent(currentValue.data, Message as Message & LabelIDsChanges);
-                let removeBody: Partial<Message> = {};
-                let removeInit: Partial<MessageExtended> = {};
+        for (const { ID, Action, Message } of Messages) {
+            const localID = getLocalID(cache, ID);
 
-                // Draft updates can contains body updates but will not contains it in the event
-                // By removing the current body value in the cache, we will reload it next time we need it
-                if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
-                    removeBody = { Body: undefined };
+            // Ignore updates for non-fetched messages.
+            if (!cache.has(localID)) {
+                continue;
+            }
+            if (Action === EVENT_ACTIONS.DELETE) {
+                cache.delete(localID);
+            }
+            if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
+                const currentValue = cache.get(localID) as MessageExtended;
 
-                    // Update draft and sent means it just passed from draft to sent status
-                    // It can have been done from outside of the app and will have to be reinitialized to use it
-                    if (!currentValue.inComposer || isSent(Message)) {
-                        removeInit = { initialized: undefined, document: undefined, plainText: undefined };
+                if (currentValue.data) {
+                    const MessageToUpdate = parseLabelIDsInEvent(
+                        currentValue.data,
+                        Message as Message & LabelIDsChanges
+                    );
+                    let removeBody: Partial<Message> = {};
+                    let removeInit: Partial<MessageExtended> = {};
+
+                    // Draft updates can contains body updates but will not contains it in the event
+                    // By removing the current body value in the cache, we will reload it next time we need it
+                    if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
+                        removeBody = { Body: undefined };
+
+                        // Update draft and sent means it just passed from draft to sent status
+                        // It can have been done from outside of the app and will have to be reinitialized to use it
+                        if (!currentValue.inComposer || isSent(Message)) {
+                            removeInit = { initialized: undefined, document: undefined, plainText: undefined };
+                        }
                     }
-                }
 
-                cache.set(localID, {
-                    ...currentValue,
-                    data: {
-                        ...currentValue.data,
-                        ...MessageToUpdate,
-                        ...removeBody,
-                    },
-                    ...removeInit,
-                });
+                    cache.set(localID, {
+                        ...currentValue,
+                        data: {
+                            ...currentValue.data,
+                            ...MessageToUpdate,
+                            ...removeBody,
+                        },
+                        ...removeInit,
+                    });
+                }
             }
         }
-    }
-};
+    };
 
 const messageCacheListener = (cache: MessageCache) => async (changedMessageID: string) => {
     let message = cache.get(changedMessageID);

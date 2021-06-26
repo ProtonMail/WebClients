@@ -1,8 +1,8 @@
 import React, { useEffect, ChangeEvent, Ref, memo, forwardRef, MutableRefObject } from 'react';
 import { c, msgid } from 'ttag';
-import { useLabels, classnames, PaginationRow, useItemsDraggable, EllipsisLoader } from 'react-components';
-import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
-import { DENSITY } from 'proton-shared/lib/constants';
+import { useLabels, classnames, PaginationRow, useItemsDraggable, EllipsisLoader } from '@proton/components';
+import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import { DENSITY } from '@proton/shared/lib/constants';
 import Item from './Item';
 import { Element } from '../../models/element';
 import EmptyView from '../view/EmptyView';

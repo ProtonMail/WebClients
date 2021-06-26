@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { usePreventLeave, useModals } from 'react-components';
+import { usePreventLeave, useModals } from '@proton/components';
 
 import useQueuedFunction from '../util/useQueuedFunction';
 import useFiles from './useFiles';

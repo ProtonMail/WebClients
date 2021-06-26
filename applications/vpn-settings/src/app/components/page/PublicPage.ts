@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { useAppTitle } from 'react-components';
+import { useAppTitle } from '@proton/components';
 
 type Props = {
     children: ReactNode;

@@ -1,6 +1,6 @@
 import { act } from '@testing-library/react';
-import { MIME_TYPES } from 'proton-shared/lib/constants';
-import { Recipient } from 'proton-shared/lib/interfaces';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { Recipient } from '@proton/shared/lib/interfaces';
 import React from 'react';
 import { addAddressToCache, clearAll, minimalCache, render, tick } from '../helpers/test/helper';
 import { OnCompose } from '../hooks/composer/useCompose';

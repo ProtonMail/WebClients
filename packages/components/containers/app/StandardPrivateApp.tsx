@@ -1,18 +1,18 @@
-import { getHasNonDelinquentScope } from 'proton-shared/lib/user/helpers';
+import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
 import React, { useState, useRef, useEffect, FunctionComponent } from 'react';
-import { AddressesModel, UserModel, UserSettingsModel } from 'proton-shared/lib/models';
-import { unique } from 'proton-shared/lib/helpers/array';
-import { loadDateLocale, loadLocale } from 'proton-shared/lib/i18n/loadLocale';
-import createEventManager from 'proton-shared/lib/eventManager/eventManager';
-import { loadModels } from 'proton-shared/lib/models/helper';
-import { destroyOpenPGP, loadOpenPGP } from 'proton-shared/lib/openpgp';
-import { Model } from 'proton-shared/lib/interfaces/Model';
-import { Address, User as tsUser, UserSettings as tsUserSettings } from 'proton-shared/lib/interfaces';
-import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
-import { getApiErrorMessage, getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
-import { getBrowserLocale, getClosestLocaleCode } from 'proton-shared/lib/i18n/helper';
-import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS, REQUIRES_NONDELINQUENT } from 'proton-shared/lib/constants';
-import { getHasOnlyExternalAddresses } from 'proton-shared/lib/helpers/address';
+import { AddressesModel, UserModel, UserSettingsModel } from '@proton/shared/lib/models';
+import { unique } from '@proton/shared/lib/helpers/array';
+import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
+import createEventManager from '@proton/shared/lib/eventManager/eventManager';
+import { loadModels } from '@proton/shared/lib/models/helper';
+import { destroyOpenPGP, loadOpenPGP } from '@proton/shared/lib/openpgp';
+import { Model } from '@proton/shared/lib/interfaces/Model';
+import { Address, User as tsUser, UserSettings as tsUserSettings } from '@proton/shared/lib/interfaces';
+import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
+import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS, REQUIRES_NONDELINQUENT } from '@proton/shared/lib/constants';
+import { getHasOnlyExternalAddresses } from '@proton/shared/lib/helpers/address';
 
 import { useApi, useCache, useConfig, useErrorHandler } from '../../hooks';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { AddressesSection, IdentitySection, SettingsPropsShared } from 'react-components';
+import { AddressesSection, IdentitySection, SettingsPropsShared } from '@proton/components';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 

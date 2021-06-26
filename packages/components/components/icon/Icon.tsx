@@ -26,7 +26,18 @@ export interface Props extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
  * @param rotate    How many degrees the icon should be rotated
  */
 const Icon = (
-    { name, alt, title, color, className = '', viewBox = '0 0 16 16', size = 16, rotate = 0, nameSpaceSvg = 'shape', ...rest }: Props,
+    {
+        name,
+        alt,
+        title,
+        color,
+        className = '',
+        viewBox = '0 0 16 16',
+        size = 16,
+        rotate = 0,
+        nameSpaceSvg = 'shape',
+        ...rest
+    }: Props,
     ref: React.Ref<SVGSVGElement>
 ) => {
     const style = {

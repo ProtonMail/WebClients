@@ -17,17 +17,17 @@ import {
     PasswordInputTwo,
     InputFieldTwo,
     useFormErrors,
-} from 'react-components';
+} from '@proton/components';
 import { c } from 'ttag';
-import { queryCheckUsernameAvailability } from 'proton-shared/lib/api/user';
+import { queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
 import {
     passwordLengthValidator,
     confirmPasswordValidator,
     getMinPasswordLengthMessage,
     requiredValidator,
     emailValidator,
-} from 'proton-shared/lib/helpers/formValidators';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+} from '@proton/shared/lib/helpers/formValidators';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 const AccountForm = ({ model, onSubmit }) => {
     const [challengeLoading, setChallengeLoading] = useState(true);

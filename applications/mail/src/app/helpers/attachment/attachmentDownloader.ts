@@ -1,9 +1,9 @@
 import JSZip from 'jszip';
-import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { splitExtension } from 'proton-shared/lib/helpers/file';
-import { Api } from 'proton-shared/lib/interfaces';
-import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { splitExtension } from '@proton/shared/lib/helpers/file';
+import { Api } from '@proton/shared/lib/interfaces';
+import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 
 import { MessageKeys, MessageVerification } from '../../models/message';

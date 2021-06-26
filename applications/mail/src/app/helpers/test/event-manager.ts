@@ -1,4 +1,4 @@
-import { useEventManager } from 'react-components';
+import { useEventManager } from '@proton/components';
 
 import { Event } from '../../models/event';
 

@@ -1,8 +1,8 @@
 import { fireEvent } from '@testing-library/dom';
 import { act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
-import { MIME_TYPES } from 'proton-shared/lib/constants';
-import { MailSettings } from 'proton-shared/lib/interfaces';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { addApiKeys, addKeysToAddressKeysCache, GeneratedKey, generateKeys } from '../../../helpers/test/crypto';
 import {
     addToCache,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Alert, ErrorButton, FormModal, Button } from 'react-components';
-import { RECURRING_TYPES } from 'proton-shared/lib/calendar/constants';
+import { Alert, ErrorButton, FormModal, Button } from '@proton/components';
+import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import { INVITE_ACTION_TYPES, InviteActions, RecurringActionData } from '../../../interfaces/Invite';
 
 const { DECLINE_INVITATION, DECLINE_DISABLED, CANCEL_INVITATION, CANCEL_DISABLED } = INVITE_ACTION_TYPES;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { InlineLinkButton } from 'react-components';
+import { InlineLinkButton } from '@proton/components';
 
 interface Props {
     onUndo: () => void;

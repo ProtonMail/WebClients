@@ -1,5 +1,5 @@
-import { useCache, useApi } from 'react-components';
-import { Api } from 'proton-shared/lib/interfaces';
+import { useCache, useApi } from '@proton/components';
+import { Api } from '@proton/shared/lib/interfaces';
 
 const useDebouncedRequest = () => {
     const api = useApi();

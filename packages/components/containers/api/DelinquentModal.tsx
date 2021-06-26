@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { getInvoicesPathname } from 'proton-shared/lib/apps/helper';
+import { getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 
 import { Alert, ButtonLike, FormModal, SettingsLink } from '../../components';
 import { useConfig } from '../../hooks';

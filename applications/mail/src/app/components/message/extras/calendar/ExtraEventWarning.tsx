@@ -1,10 +1,10 @@
-import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
-import { RequireSome } from 'proton-shared/lib/interfaces/utils';
+import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import React from 'react';
-import { Alert } from 'react-components';
+import { Alert } from '@proton/components';
 import { c } from 'ttag';
-import { APPS } from 'proton-shared/lib/constants';
-import { getAppName } from 'proton-shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 import { EVENT_TIME_STATUS, InvitationModel } from '../../../../helpers/calendar/invite';
 
 const calendarAppName = getAppName(APPS.PROTONCALENDAR);

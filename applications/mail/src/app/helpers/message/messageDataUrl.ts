@@ -1,5 +1,5 @@
-import { base64StringToUint8Array } from 'proton-shared/lib/helpers/encoding';
-import { generateProtonWebUID } from 'proton-shared/lib/helpers/uid';
+import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
 import { MessageExtended } from '../../models/message';
 import { generateCid } from './messageEmbeddeds';
 

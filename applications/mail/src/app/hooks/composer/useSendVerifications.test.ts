@@ -1,6 +1,6 @@
-import { PGP_SCHEMES, MIME_TYPES, MIME_TYPES_MORE, PACKAGE_TYPE } from 'proton-shared/lib/constants';
-import getSendPreferences from 'proton-shared/lib/mail/send/getSendPreferences';
-import { EncryptionPreferences } from 'proton-shared/lib/mail/encryptionPreferences';
+import { PGP_SCHEMES, MIME_TYPES, MIME_TYPES_MORE, PACKAGE_TYPE } from '@proton/shared/lib/constants';
+import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
+import { EncryptionPreferences } from '@proton/shared/lib/mail/encryptionPreferences';
 import { useSendVerifications } from './useSendVerifications';
 import { renderHook, clearAll } from '../../helpers/test/helper';
 import { SendInfo } from '../../models/crypto';
@@ -117,7 +117,7 @@ const mockEncryptionPreferences: { [email: string]: EncryptionPreferences } = {
     },
 };
 
-jest.mock('react-components/hooks/useGetEncryptionPreferences.ts', () => {
+jest.mock('@proton/components/hooks/useGetEncryptionPreferences.ts', () => {
     const useGetEncryptionPreferences = () => {
         const getEncryptionPreferences: (emailAddress: string) => EncryptionPreferences = (emailAddress) =>
             mockEncryptionPreferences[emailAddress];
@@ -127,7 +127,7 @@ jest.mock('react-components/hooks/useGetEncryptionPreferences.ts', () => {
 });
 
 const mockCreateModalSpy = jest.fn(({ props }) => props.onSubmit());
-jest.mock('react-components/hooks/useModals.ts', () => {
+jest.mock('@proton/components/hooks/useModals.ts', () => {
     const useModals = () => ({
         createModal: mockCreateModalSpy,
     });

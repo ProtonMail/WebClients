@@ -1,4 +1,4 @@
-import { queryVerificationCode } from 'proton-shared/lib/api/user';
+import { queryVerificationCode } from '@proton/shared/lib/api/user';
 import { VerificationModel } from './interface';
 
 export const getFormattedCode = (value: string, code: string) => {

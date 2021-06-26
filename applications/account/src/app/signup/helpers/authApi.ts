@@ -1,8 +1,8 @@
-import { srpAuth } from 'proton-shared/lib/srp';
-import { AuthResponse } from 'proton-shared/lib/authentication/interface';
-import { auth } from 'proton-shared/lib/api/auth';
-import { withAuthHeaders } from 'proton-shared/lib/fetch/headers';
-import { Api } from 'proton-shared/lib/interfaces';
+import { srpAuth } from '@proton/shared/lib/srp';
+import { AuthResponse } from '@proton/shared/lib/authentication/interface';
+import { auth } from '@proton/shared/lib/api/auth';
+import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
+import { Api } from '@proton/shared/lib/interfaces';
 
 interface Args {
     api: Api;

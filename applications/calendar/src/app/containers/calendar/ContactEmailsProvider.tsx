@@ -1,8 +1,8 @@
-import { canonizeEmail } from 'proton-shared/lib/helpers/email';
-import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
-import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
+import { canonizeEmail } from '@proton/shared/lib/helpers/email';
+import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import React, { createContext, ReactNode, useContext, useMemo } from 'react';
-import { useContactEmails, useContactGroups } from 'react-components';
+import { useContactEmails, useContactGroups } from '@proton/components';
 
 export type GroupWithContacts = { group: ContactGroup; contacts: ContactEmail[] };
 export type GroupsWithContactsMap = SimpleMap<GroupWithContacts>;

@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { prepareContacts } from 'proton-shared/lib/contacts/encrypt';
-import { hasCategories, reOrderByPref } from 'proton-shared/lib/contacts/properties';
-import { addContacts } from 'proton-shared/lib/api/contacts';
-import getPublicKeysEmailHelper from 'proton-shared/lib/api/helpers/getPublicKeysEmailHelper';
-import { extractScheme } from 'proton-shared/lib/api/helpers/mailSettings';
+import { prepareContacts } from '@proton/shared/lib/contacts/encrypt';
+import { hasCategories, reOrderByPref } from '@proton/shared/lib/contacts/properties';
+import { addContacts } from '@proton/shared/lib/api/contacts';
+import getPublicKeysEmailHelper from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
+import { extractScheme } from '@proton/shared/lib/api/helpers/mailSettings';
 import {
     sortPinnedKeys,
     sortApiKeys,
     getContactPublicKeyModel,
     getIsValidForSending,
-} from 'proton-shared/lib/keys/publicKeys';
-import { uniqueBy } from 'proton-shared/lib/helpers/array';
-import { getKeyInfoFromProperties, toKeyProperty } from 'proton-shared/lib/contacts/keyProperties';
-import { DecryptedKey, Api, ContactPublicKeyModel } from 'proton-shared/lib/interfaces';
-import { ContactProperties, ContactProperty } from 'proton-shared/lib/interfaces/contacts/Contact';
-import { AddContactsApiResponses } from 'proton-shared/lib/interfaces/contacts/Import';
+} from '@proton/shared/lib/keys/publicKeys';
+import { uniqueBy } from '@proton/shared/lib/helpers/array';
+import { getKeyInfoFromProperties, toKeyProperty } from '@proton/shared/lib/contacts/keyProperties';
+import { DecryptedKey, Api, ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
+import { ContactProperties, ContactProperty } from '@proton/shared/lib/interfaces/contacts/Contact';
+import { AddContactsApiResponses } from '@proton/shared/lib/interfaces/contacts/Import';
 
-import { VCARD_KEY_FIELDS, CATEGORIES } from 'proton-shared/lib/contacts/constants';
-import { API_CODES, CONTACT_MIME_TYPES, MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES } from 'proton-shared/lib/constants';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { VCARD_KEY_FIELDS, CATEGORIES } from '@proton/shared/lib/contacts/constants';
+import { API_CODES, CONTACT_MIME_TYPES, MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES } from '@proton/shared/lib/constants';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 import ContactMIMETypeSelect from '../../../components/contacts/ContactMIMETypeSelect';
 import ContactPgpSettings from '../ContactPgpSettings';

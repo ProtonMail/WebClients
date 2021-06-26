@@ -1,7 +1,7 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { Api } from 'proton-shared/lib/interfaces';
-import { setItem } from 'proton-shared/lib/helpers/storage';
-import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { Api } from '@proton/shared/lib/interfaces';
+import { setItem } from '@proton/shared/lib/helpers/storage';
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { openDB, IDBPDatabase } from 'idb';
 import { MessageEvent } from '../../models/event';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';

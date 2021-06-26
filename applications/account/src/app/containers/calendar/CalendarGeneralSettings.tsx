@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
-import { SettingsPropsShared, ThemesSection, CalendarTimeSection, CalendarLayoutSection } from 'react-components';
+import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+import { SettingsPropsShared, ThemesSection, CalendarTimeSection, CalendarLayoutSection } from '@proton/components';
 
 import PrivateMainSettingsAreaWithPermissions from '../../content/PrivateMainSettingsAreaWithPermissions';
 

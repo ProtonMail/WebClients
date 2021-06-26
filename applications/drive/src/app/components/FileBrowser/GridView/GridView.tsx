@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import { FixedSizeGrid, GridChildComponentProps } from 'react-window';
-import { classnames, Loader, useElementRect } from 'react-components';
-import { buffer } from 'proton-shared/lib/helpers/function';
-import { rootFontSize } from 'proton-shared/lib/helpers/dom';
+import { classnames, Loader, useElementRect } from '@proton/components';
+import { buffer } from '@proton/shared/lib/helpers/function';
+import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import { FileBrowserItem, FileBrowserProps } from '../interfaces';
 import ItemCell, { Props as ItemCellProps } from './ItemCell';
 import FolderContextMenu from '../FolderContextMenu';

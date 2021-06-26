@@ -11,9 +11,9 @@ import {
     getTimezone,
     getTimeZoneOptions,
     toLocalDate,
-} from 'proton-shared/lib/date/timezone';
-import { AutoReplyDuration } from 'proton-shared/lib/constants';
-import { AutoResponder as tsAutoResponder } from 'proton-shared/lib/interfaces';
+} from '@proton/shared/lib/date/timezone';
+import { AutoReplyDuration } from '@proton/shared/lib/constants';
+import { AutoResponder as tsAutoResponder } from '@proton/shared/lib/interfaces';
 
 import { DAY_SECONDS, HOUR_SECONDS, MINUTES_SECONDS, getDurationOptions, getMatchingTimezone } from '../utils';
 import { AutoReplyFormDate, AutoReplyFormModel } from './interfaces';

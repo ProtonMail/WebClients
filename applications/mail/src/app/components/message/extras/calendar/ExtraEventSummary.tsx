@@ -1,4 +1,4 @@
-import { RequireSome } from 'proton-shared/lib/interfaces/utils';
+import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import React, { ReactNode } from 'react';
 import { InvitationModel } from '../../../../helpers/calendar/invite';
 import {

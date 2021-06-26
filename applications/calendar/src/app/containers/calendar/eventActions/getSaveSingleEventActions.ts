@@ -1,11 +1,11 @@
-import { getCanonicalEmails } from 'proton-shared/lib/calendar/attendees';
-import { ICAL_METHOD, SAVE_CONFIRMATION_TYPES } from 'proton-shared/lib/calendar/constants';
-import { getUpdatedInviteVevent } from 'proton-shared/lib/calendar/integration/invite';
-import { omit } from 'proton-shared/lib/helpers/object';
-import { Address } from 'proton-shared/lib/interfaces';
-import { SyncMultipleApiResponse, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
-import { GetCanonicalEmailsMap } from 'proton-shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
-import { useGetCalendarKeys } from 'react-components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
+import { getCanonicalEmails } from '@proton/shared/lib/calendar/attendees';
+import { ICAL_METHOD, SAVE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants';
+import { getUpdatedInviteVevent } from '@proton/shared/lib/calendar/integration/invite';
+import { omit } from '@proton/shared/lib/helpers/object';
+import { Address } from '@proton/shared/lib/interfaces';
+import { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
+import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import {
     CleanSendIcsActionData,
     INVITE_ACTION_TYPES,

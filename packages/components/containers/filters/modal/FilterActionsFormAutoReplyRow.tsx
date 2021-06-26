@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { noop } from 'proton-shared/lib/helpers/function';
+import { noop } from '@proton/shared/lib/helpers/function';
 import { Toggle, Tooltip, SimpleSquireEditor } from '../../../components';
 import { useUser } from '../../../hooks';
 import { classnames } from '../../../helpers';

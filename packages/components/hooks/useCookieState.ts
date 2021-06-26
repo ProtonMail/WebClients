@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
-import { getCookie, setCookie, SetCookieArguments } from 'proton-shared/lib/helpers/cookies';
-import { getSecondLevelDomain } from 'proton-shared/lib/helpers/url';
+import { getCookie, setCookie, SetCookieArguments } from '@proton/shared/lib/helpers/cookies';
+import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 
 interface Props extends Omit<SetCookieArguments, 'cookieValue'> {
     cookieValue?: string;

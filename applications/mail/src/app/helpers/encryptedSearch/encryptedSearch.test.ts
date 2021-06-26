@@ -1,5 +1,5 @@
-import { MIME_TYPES } from 'proton-shared/lib/constants';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { localisedForwardFlags } from '../../constants';
 import { CachedMessage, MessageForSearch, NormalisedSearchParams } from '../../models/encryptedSearch';
 import { SearchParameters } from '../../models/tools';

@@ -1,5 +1,5 @@
 import { Annotation } from 'codemirror';
-import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from 'proton-shared/lib/constants';
+import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from '@proton/shared/lib/constants';
 
 export enum FilterStatement {
     ALL = 'all',

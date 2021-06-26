@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { c } from 'ttag';
 
-import { ContextMenu, DropdownMenuButton, Icon, isPreviewAvailable } from 'react-components';
+import { ContextMenu, DropdownMenuButton, Icon, isPreviewAvailable } from '@proton/components';
 
 import { FileBrowserItem, FileBrowserLayouts } from './interfaces';
 import { LinkType } from '../../interfaces/link';

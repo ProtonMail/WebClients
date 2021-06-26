@@ -1,5 +1,5 @@
 import { useEffect, MutableRefObject } from 'react';
-import { useElementRect } from 'react-components';
+import { useElementRect } from '@proton/components';
 
 const isScrollEnd = (target: HTMLElement | null, offsetRatio: number) =>
     target && target.scrollHeight - target.scrollTop <= target.clientHeight / offsetRatio;

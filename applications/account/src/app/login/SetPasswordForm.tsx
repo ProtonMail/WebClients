@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 import React, { useState } from 'react';
-import { PasswordInputTwo, Button, useLoading, useFormErrors, InputFieldTwo } from 'react-components';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { PasswordInputTwo, Button, useLoading, useFormErrors, InputFieldTwo } from '@proton/components';
+import { noop } from '@proton/shared/lib/helpers/function';
 import {
     confirmPasswordValidator,
     getMinPasswordLengthMessage,
     passwordLengthValidator,
-} from 'proton-shared/lib/helpers/formValidators';
+} from '@proton/shared/lib/helpers/formValidators';
 
 interface Props {
     onSubmit: (newPassword: string) => Promise<void>;

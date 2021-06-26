@@ -1,9 +1,9 @@
 import React, { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { Checkbox, FormModal, generateUID, Label, classnames, PrimaryButton } from 'react-components';
+import { Checkbox, FormModal, generateUID, Label, classnames, PrimaryButton } from '@proton/components';
 
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { contactToInput } from 'proton-shared/lib/mail/recipient';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { contactToInput } from '@proton/shared/lib/mail/recipient';
 
 import { RecipientGroup } from '../../../models/address';
 import { STATUS_ICONS_FILLS } from '../../../models/crypto';

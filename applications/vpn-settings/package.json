@@ -1,71 +1,46 @@
 {
     "name": "proton-vpn-settings",
-    "version": "4.1.57",
     "description": "ProtonVPN React web application",
+    "keywords": [],
+    "license": "GPL-3.0",
+    "author": "",
     "main": "index.js",
     "scripts": {
         "start": "proton-pack dev-server",
         "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
-        "preversion": "git update-index --no-assume-unchanged package-lock.json",
-        "postversion": "git update-index --assume-unchanged package-lock.json && git push --tags && git push",
-        "sync:lock": "./node_modules/proton-bundler/scripts/updatePackageLock.sh",
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
         "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin --verbose",
-        "deploy": "proton-bundler --git",
-        "deploy:standalone": "proton-bundler --git --appMode standalone",
         "bundle": "proton-bundler",
-        "build": "cross-env NODE_ENV=production proton-pack compile $npm_package_config_publicPathFlag",
         "build:standalone": "cross-env NODE_ENV=production proton-pack compile --appMode=standalone",
         "deploy:prod": "proton-bundler --remote --branch=deploy-prod",
         "check-types": "tsc",
-        "test": "echo 123"
+        "test": "echo 123",
+        "pack": "proton-pack",
+        "postinstall": "proton-pack config"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ProtonMail/protonvpn-settings.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "GPL-3.0",
-    "bugs": {
-        "url": "https://github.com/ProtonMail/protonvpn-settings/issues"
-    },
-    "homepage": "https://github.com/ProtonMail/protonvpn-settings#readme",
     "dependencies": {
+        "@proton/components": "workspace:packages/components",
+        "@proton/pack": "workspace:packages/pack",
+        "@proton/shared": "workspace:packages/shared",
+        "@proton/styles": "workspace:packages/styles",
+        "@types/react": "^16.0.0",
+        "@types/react-dom": "^16.0.0",
         "abortcontroller-polyfill": "^1.3.0",
-        "design-system": "github:ProtonMail/design-system#master",
-        "proton-pack": "github:ProtonMail/proton-pack#semver:^3.0.0",
-        "proton-shared": "github:ProtonMail/proton-shared#master",
+        "cross-env": "^7.0.3",
         "proton-translations": "github:ProtonMail/proton-translations#fe-vpn-settings",
-        "proton-version": "github:ProtonMail/proton-version#semver:^1.0.0",
-        "react-components": "github:ProtonMail/react-components#master",
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0",
         "ttag": "^1.7.14",
         "yetch": "^1.1.0"
     },
     "devDependencies": {
+        "@proton/bundler": "workspace:packages/bundler",
+        "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
+        "@proton/i18n": "workspace:packages/i18n",
         "eslint": "^7.5.0",
-        "eslint-config-proton-lint": "github:ProtonMail/proton-lint#semver:^0.0.5",
-        "husky": "^4.2.5",
-        "lint-staged": "^10.4.0",
         "prettier": "^2.0.5",
-        "proton-bundler": "github:ProtonMail/proton-bundler#semver:^2.0.0",
-        "proton-i18n": "github:ProtonMail/proton-i18n#semver:^2.0.0",
         "typescript": "^4.0.3"
-    },
-    "lint-staged": {
-        "(*.ts|*.tsx|*.js)": [
-            "prettier --write",
-            "eslint"
-        ]
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
-    "config": {
-        "publicPathFlag": "--publicPath=/"
     }
 }

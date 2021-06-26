@@ -1,5 +1,5 @@
 import React, { useEffect, ImgHTMLAttributes, useRef, useState, useCallback } from 'react';
-import { debounce } from 'proton-shared/lib/helpers/function';
+import { debounce } from '@proton/shared/lib/helpers/function';
 
 interface Props extends ImgHTMLAttributes<HTMLImageElement> {
     onLoading: () => void;

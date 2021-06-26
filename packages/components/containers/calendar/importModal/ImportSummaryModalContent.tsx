@@ -1,7 +1,7 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { ImportCalendarModel } from 'proton-shared/lib/interfaces/calendar';
-import { extractTotals } from 'proton-shared/lib/calendar/import/encryptAndSubmit';
+import { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar';
+import { extractTotals } from '@proton/shared/lib/calendar/import/encryptAndSubmit';
 
 import ErrorDetails from './ErrorDetails';
 import { Alert, DynamicProgress } from '../../../components';

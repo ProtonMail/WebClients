@@ -1,4 +1,4 @@
-import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
+import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { addAddressToCache, minimalCache } from '../../../helpers/test/cache';
 import { clearAll } from '../../../helpers/test/helper';
 import { initMessage, setup } from './Message.test.helpers';

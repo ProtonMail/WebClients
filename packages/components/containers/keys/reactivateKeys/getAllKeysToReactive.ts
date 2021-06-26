@@ -1,5 +1,5 @@
-import { Address, DecryptedKey, Key, UserModel } from 'proton-shared/lib/interfaces';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { Address, DecryptedKey, Key, UserModel } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { KeyReactivationRequest } from './interface';
 
 const getKeysToReactivate = (Keys: Key[], keys: DecryptedKey[] = []) => {

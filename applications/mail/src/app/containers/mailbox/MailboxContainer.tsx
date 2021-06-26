@@ -1,11 +1,11 @@
 import React, { useState, useMemo, useEffect, useCallback, useRef, memo } from 'react';
 import { History, Location } from 'history';
-import { PrivateMainArea, useCalendars, useCalendarUserSettings, useItemsSelection } from 'react-components';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { isDraft } from 'proton-shared/lib/mail/messages';
-import { VIEW_MODE } from 'proton-shared/lib/constants';
-import { MailSettings, UserSettings } from 'proton-shared/lib/interfaces';
-import { getSearchParams } from 'proton-shared/lib/helpers/url';
+import { PrivateMainArea, useCalendars, useCalendarUserSettings, useItemsSelection } from '@proton/components';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { isDraft } from '@proton/shared/lib/mail/messages';
+import { VIEW_MODE } from '@proton/shared/lib/constants';
+import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import { Sort, Filter, Page, SearchParameters } from '../../models/tools';
 import { useMailboxPageTitle } from '../../hooks/mailbox/useMailboxPageTitle';
 import { useElements } from '../../hooks/mailbox/useElements';

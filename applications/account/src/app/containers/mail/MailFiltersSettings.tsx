@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { FiltersSection, SpamFiltersSection, SettingsPropsShared } from 'react-components';
+import { FiltersSection, SpamFiltersSection, SettingsPropsShared } from '@proton/components';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 

@@ -1,6 +1,6 @@
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { getAttachments } from 'proton-shared/lib/mail/messages';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { getAttachments } from '@proton/shared/lib/mail/messages';
 
 import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
 import { getContent, setContent } from './messageContent';

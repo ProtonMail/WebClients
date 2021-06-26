@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { ROOT_FOLDER } from 'proton-shared/lib/constants';
-import { orderFolders } from 'proton-shared/lib/api/labels';
+import { ROOT_FOLDER } from '@proton/shared/lib/constants';
+import { orderFolders } from '@proton/shared/lib/api/labels';
 
 import { Loader, Button, Info } from '../../components';
 import {

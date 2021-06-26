@@ -1,14 +1,14 @@
-import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
-import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
-import { getIsSubscribedCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
-import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
+import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
+import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
+import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
+import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 
-import { format as formatUTC } from 'proton-shared/lib/date-fns-utc';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { wait } from 'proton-shared/lib/helpers/promise';
-import { dateLocale } from 'proton-shared/lib/i18n';
-import { Calendar, CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
-import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
+import { format as formatUTC } from '@proton/shared/lib/date-fns-utc';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import { dateLocale } from '@proton/shared/lib/i18n';
+import { Calendar, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import React, { useMemo } from 'react';
 import {
     Alert,
@@ -24,7 +24,7 @@ import {
     useLoading,
     usePopperAnchor,
     CalendarInviteButtons,
-} from 'react-components';
+} from '@proton/components';
 import { c } from 'ttag';
 import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
 import {

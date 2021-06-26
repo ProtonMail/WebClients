@@ -3,18 +3,18 @@ import {
     CreateLinkedCalendarEventsSyncData,
     DeleteCalendarEventSyncData,
     UpdateCalendarEventSyncData,
-} from 'proton-shared/lib/interfaces/calendar/Api';
-import { syncMultipleEvents as syncMultipleEventsRoute } from 'proton-shared/lib/api/calendars';
-import getCreationKeys from 'proton-shared/lib/calendar/integration/getCreationKeys';
+} from '@proton/shared/lib/interfaces/calendar/Api';
+import { syncMultipleEvents as syncMultipleEventsRoute } from '@proton/shared/lib/api/calendars';
+import getCreationKeys from '@proton/shared/lib/calendar/integration/getCreationKeys';
 import {
     createCalendarEvent,
     getHasSharedEventContent,
     getHasSharedKeyPacket,
-} from 'proton-shared/lib/calendar/serialize';
-import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { useGetAddressKeys } from 'react-components';
-import { useGetCalendarKeys } from 'react-components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
+} from '@proton/shared/lib/calendar/serialize';
+import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import { useGetAddressKeys } from '@proton/components';
+import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 
 export enum SyncOperationTypes {
     DELETE,
@@ -129,97 +129,101 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
 
     const { operations, calendarID, memberID, addressID } = sync;
 
-    const payloadPromise = operations.map(async (operation): Promise<
-        | DeleteCalendarEventSyncData
-        | CreateCalendarEventSyncData
-        | UpdateCalendarEventSyncData
-        | CreateLinkedCalendarEventsSyncData
-    > => {
-        if (getIsDeleteSyncOperation(operation)) {
-            return { ID: operation.data.Event.ID };
-        }
-
-        const { veventComponent } = operation.data;
-
-        const newCalendarKeys = calendarKeysMap[calendarID];
-        const addressKeys = addressKeysMap[addressID];
-
-        const permissionData = {
-            Permissions: 1,
-        };
-
-        if (getIsCreateSyncOperation(operation)) {
-            const data = await createCalendarEvent({
-                eventComponent: veventComponent,
-                isCreateEvent: true,
-                isSwitchCalendar: false,
-                ...(await getCreationKeys({ addressKeys, newCalendarKeys })),
-            });
-
-            const dataComplete = {
-                ...permissionData,
-                ...data,
-            };
-
-            if (!getHasSharedKeyPacket(dataComplete) || !getHasSharedEventContent(dataComplete)) {
-                throw new Error('Missing shared data');
+    const payloadPromise = operations.map(
+        async (
+            operation
+        ): Promise<
+            | DeleteCalendarEventSyncData
+            | CreateCalendarEventSyncData
+            | UpdateCalendarEventSyncData
+            | CreateLinkedCalendarEventsSyncData
+        > => {
+            if (getIsDeleteSyncOperation(operation)) {
+                return { ID: operation.data.Event.ID };
             }
 
-            return {
-                Overwrite: 0,
-                Event: dataComplete,
-            };
-        }
+            const { veventComponent } = operation.data;
 
-        if (getIsUpdateSyncOperation(operation)) {
-            const { Event, removedAttendees } = operation.data;
+            const newCalendarKeys = calendarKeysMap[calendarID];
+            const addressKeys = addressKeysMap[addressID];
 
-            const oldCalendarID = Event.CalendarID;
-            const isSwitchCalendar = oldCalendarID !== calendarID;
-
-            const oldCalendarKeys = isSwitchCalendar && oldCalendarID ? calendarKeysMap[oldCalendarID] : undefined;
-
-            const data = await createCalendarEvent({
-                eventComponent: veventComponent,
-                removedAttendees,
-                isCreateEvent: false,
-                isSwitchCalendar,
-                isInvitation: !Event.IsOrganizer,
-                ...(await getCreationKeys({ Event, addressKeys, newCalendarKeys, oldCalendarKeys })),
-            });
-            const isOrganizerData = { IsOrganizer: operation.data.Event.IsOrganizer };
-
-            const dataComplete = {
-                ...permissionData,
-                ...isOrganizerData,
-                ...data,
+            const permissionData = {
+                Permissions: 1,
             };
 
-            if (isSwitchCalendar) {
-                if (!getHasSharedKeyPacket(dataComplete)) {
-                    throw new Error('Missing shared key packet');
+            if (getIsCreateSyncOperation(operation)) {
+                const data = await createCalendarEvent({
+                    eventComponent: veventComponent,
+                    isCreateEvent: true,
+                    isSwitchCalendar: false,
+                    ...(await getCreationKeys({ addressKeys, newCalendarKeys })),
+                });
+
+                const dataComplete = {
+                    ...permissionData,
+                    ...data,
+                };
+
+                if (!getHasSharedKeyPacket(dataComplete) || !getHasSharedEventContent(dataComplete)) {
+                    throw new Error('Missing shared data');
                 }
+
                 return {
-                    Event: {
-                        ...dataComplete,
-                        UID: veventComponent.uid.value,
-                        SharedEventID: Event.SharedEventID,
-                    },
+                    Overwrite: 0,
+                    Event: dataComplete,
                 };
             }
 
-            if (!getHasSharedEventContent(dataComplete)) {
-                throw new Error('Missing shared event content');
+            if (getIsUpdateSyncOperation(operation)) {
+                const { Event, removedAttendees } = operation.data;
+
+                const oldCalendarID = Event.CalendarID;
+                const isSwitchCalendar = oldCalendarID !== calendarID;
+
+                const oldCalendarKeys = isSwitchCalendar && oldCalendarID ? calendarKeysMap[oldCalendarID] : undefined;
+
+                const data = await createCalendarEvent({
+                    eventComponent: veventComponent,
+                    removedAttendees,
+                    isCreateEvent: false,
+                    isSwitchCalendar,
+                    isInvitation: !Event.IsOrganizer,
+                    ...(await getCreationKeys({ Event, addressKeys, newCalendarKeys, oldCalendarKeys })),
+                });
+                const isOrganizerData = { IsOrganizer: operation.data.Event.IsOrganizer };
+
+                const dataComplete = {
+                    ...permissionData,
+                    ...isOrganizerData,
+                    ...data,
+                };
+
+                if (isSwitchCalendar) {
+                    if (!getHasSharedKeyPacket(dataComplete)) {
+                        throw new Error('Missing shared key packet');
+                    }
+                    return {
+                        Event: {
+                            ...dataComplete,
+                            UID: veventComponent.uid.value,
+                            SharedEventID: Event.SharedEventID,
+                        },
+                    };
+                }
+
+                if (!getHasSharedEventContent(dataComplete)) {
+                    throw new Error('Missing shared event content');
+                }
+
+                return {
+                    ID: Event.ID,
+                    Event: dataComplete,
+                };
             }
 
-            return {
-                ID: Event.ID,
-                Event: dataComplete,
-            };
+            throw new Error('Unknown operation');
         }
-
-        throw new Error('Unknown operation');
-    });
+    );
 
     return syncMultipleEventsRoute(calendarID, {
         MemberID: memberID,

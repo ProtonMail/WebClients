@@ -1,6 +1,6 @@
 import React, { useState, forwardRef, useImperativeHandle, Ref } from 'react';
 import { c } from 'ttag';
-import { InlineLinkButton } from 'react-components';
+import { InlineLinkButton } from '@proton/components';
 
 enum SavingStep {
     saving,

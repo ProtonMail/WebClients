@@ -1,12 +1,12 @@
 import React, { useState, Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 
-import { ImportContactsModel } from 'proton-shared/lib/interfaces/contacts/Import';
+import { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
 import {
     modifyContactField,
     modifyContactType,
     toggleContactChecked,
-} from 'proton-shared/lib/contacts/helpers/importCsv';
+} from '@proton/shared/lib/contacts/helpers/importCsv';
 
 import { useNotifications } from '../../../hooks';
 import { Table, Alert } from '../../../components';

@@ -1,7 +1,7 @@
 import { ReadableStream } from 'web-streams-polyfill';
 import { Writer as ZipWriter } from '@transcend-io/conflux';
-import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { isWindows } from 'proton-shared/lib/helpers/browser';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { isWindows } from '@proton/shared/lib/helpers/browser';
 import { openDownloadStream, initDownloadSW } from './download';
 import { TransferMeta } from '../../interfaces/transfer';
 import { streamToBuffer } from '../stream';

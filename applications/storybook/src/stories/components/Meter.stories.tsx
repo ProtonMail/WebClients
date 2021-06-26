@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meter } from 'react-components';
+import { Meter } from '@proton/components';
 
 import mdx from './Meter.mdx';
 

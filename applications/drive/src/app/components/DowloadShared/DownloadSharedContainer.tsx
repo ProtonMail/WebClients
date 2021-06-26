@@ -2,11 +2,11 @@ import React, { ReactNode, useEffect, useMemo, useCallback, useState } from 'rea
 import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
-import { useLoading, LoaderPage, Icon, usePreventLeave, Bordered, useNotifications } from 'react-components';
-import { getApiError } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+import { useLoading, LoaderPage, Icon, usePreventLeave, Bordered, useNotifications } from '@proton/components';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
-import { getAppName } from 'proton-shared/lib/apps/helper';
-import { APPS } from 'proton-shared/lib/constants';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
 import usePublicSharing from '../../hooks/drive/usePublicSharing';
 import FileSaver from '../../utils/FileSaver/FileSaver';
 import DownloadSharedInfo from './DownloadSharedInfo';

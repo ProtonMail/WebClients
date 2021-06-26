@@ -1,5 +1,5 @@
 import React, { Ref, useRef, useState } from 'react';
-import { normalize } from 'proton-shared/lib/helpers/string';
+import { normalize } from '@proton/shared/lib/helpers/string';
 import { List, AutoSizer, CellMeasurer, CellMeasurerCache } from 'react-virtualized';
 import { c } from 'ttag';
 import { CountryOptionData } from './helper';

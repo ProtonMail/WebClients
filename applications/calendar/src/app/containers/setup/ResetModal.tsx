@@ -9,11 +9,11 @@ import {
     Loader,
     useLoading,
     useCache,
-} from 'react-components';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { CALENDAR_FLAGS } from 'proton-shared/lib/calendar/constants';
-import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+} from '@proton/components';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { process } from './reset/resetHelper';
 import CalendarResetSection from './CalendarResetSection';
 import CalendarReactivateSection from './CalendarReactivateSection';

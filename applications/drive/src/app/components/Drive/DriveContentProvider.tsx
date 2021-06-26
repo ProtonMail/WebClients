@@ -1,5 +1,5 @@
 import React, { useState, createContext, useEffect, useContext, useRef, useCallback } from 'react';
-import { SORT_DIRECTION } from 'proton-shared/lib/constants';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import useSelection from '../../hooks/util/useSelection';
 import useDrive from '../../hooks/drive/useDrive';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';

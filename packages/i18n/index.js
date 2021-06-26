@@ -19,10 +19,6 @@ async function main() {
         return json(CONFIG.getEnv(), true);
     }
 
-    if (is('crowdin')) {
-        await require('./lib/crowdin').update();
-    }
-
     if (is('extract')) {
         await require('./lib/extract')(argv._[1]);
     }

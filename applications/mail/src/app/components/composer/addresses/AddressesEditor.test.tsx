@@ -1,7 +1,7 @@
 import React, { MutableRefObject } from 'react';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { Recipient } from 'proton-shared/lib/interfaces';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { Recipient } from '@proton/shared/lib/interfaces';
 import { act, getByText, getAllByRole } from '@testing-library/react';
 import { fireEvent } from '@testing-library/dom';
 

@@ -13,18 +13,18 @@ import {
     ChallengeRef,
     captureChallengeMessage,
     ChallengeError,
-} from 'react-components';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { queryCheckUsernameAvailability, queryVerificationCode } from 'proton-shared/lib/api/user';
-import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
-import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+} from '@proton/components';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { queryCheckUsernameAvailability, queryVerificationCode } from '@proton/shared/lib/api/user';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
     requiredValidator,
     emailValidator,
     passwordLengthValidator,
     confirmPasswordValidator,
     getMinPasswordLengthMessage,
-} from 'proton-shared/lib/helpers/formValidators';
+} from '@proton/shared/lib/helpers/formValidators';
 
 import { HumanApi } from './helpers/humanApi';
 import InsecureEmailInfo from './InsecureEmailInfo';

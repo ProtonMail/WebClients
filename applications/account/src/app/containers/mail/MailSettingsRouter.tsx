@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect, Switch, useRouteMatch, useLocation } from 'react-router-dom';
 
-import { useUser } from 'react-components';
+import { useUser } from '@proton/components';
 
 import MailAppearanceSettings from './MailAppearanceSettings';
 import MailAutoReplySettings from './MailAutoReplySettings';

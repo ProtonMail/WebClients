@@ -1,7 +1,7 @@
 import React from 'react';
-import locales from 'proton-shared/lib/i18n/locales';
+import locales from '@proton/shared/lib/i18n/locales';
 
-import { PublicAuthenticationStore, PrivateAuthenticationStore, useAuthentication } from 'react-components';
+import { PublicAuthenticationStore, PrivateAuthenticationStore, useAuthentication } from '@proton/components';
 
 import PrivateApp from './content/PrivateApp';
 import PublicApp from './content/PublicApp';

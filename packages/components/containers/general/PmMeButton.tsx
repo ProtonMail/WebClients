@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { setupAddress } from 'proton-shared/lib/api/addresses';
+import { setupAddress } from '@proton/shared/lib/api/addresses';
 import {
     useApi,
     useAddresses,

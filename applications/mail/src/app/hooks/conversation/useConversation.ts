@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { wait } from 'proton-shared/lib/helpers/promise';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { Conversation, ConversationCacheEntry } from '../../models/conversation';
 import {
     ConversationCache,

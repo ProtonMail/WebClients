@@ -1,5 +1,5 @@
 import React from 'react';
-import humanSize from 'proton-shared/lib/helpers/humanSize';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 interface Props {
     size: number;

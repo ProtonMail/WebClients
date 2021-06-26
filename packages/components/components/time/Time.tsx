@@ -1,6 +1,6 @@
 import React from 'react';
-import { readableTime } from 'proton-shared/lib/helpers/time';
-import { dateLocale } from 'proton-shared/lib/i18n';
+import { readableTime } from '@proton/shared/lib/helpers/time';
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 type Options = Parameters<typeof readableTime>[2];
 interface Props extends React.HTMLAttributes<HTMLTimeElement> {

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Icon, ToolbarButton, useMailSettings } from 'react-components';
+import { Icon, ToolbarButton, useMailSettings } from '@proton/components';
 import { c } from 'ttag';
 import { Location } from 'history';
-import { MailSettings } from 'proton-shared/lib/interfaces';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { isConversationMode } from '../../helpers/mailSettings';
 

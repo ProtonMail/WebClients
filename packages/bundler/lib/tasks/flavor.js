@@ -91,7 +91,7 @@ async function getNewConfig(api, flags = process.argv.slice(3), isCurrent = fals
         const { stdout = '' } = await bash('NODE_ENV=dist ./tasks/setupConfig.js', [
             '--print-config',
             `--branch deploy-${branch}`,
-            ...flags.map(cleanApi(api))
+            ...flags.map(cleanApi(api)),
         ]);
         debug(stdout, 'stdout config angular');
 
@@ -105,8 +105,8 @@ async function getNewConfig(api, flags = process.argv.slice(3), isCurrent = fals
             ...json,
             sentry: {
                 ...sentry,
-                dsn
-            }
+                dsn,
+            },
         };
 
         debug(newConfig, 'new config angular with right dsn');
@@ -119,7 +119,7 @@ async function getNewConfig(api, flags = process.argv.slice(3), isCurrent = fals
     debug({ stdout, deployConfig }, 'stdout config app');
     return {
         ...JSON.parse(stdout),
-        deployConfig
+        deployConfig,
     };
 }
 
@@ -136,13 +136,13 @@ async function writeNewConfig(api) {
     const {
         sentry: { dsn: currentSentryDSN } = {},
         secureUrl: currentSecureURL,
-        deployConfig: { version: currentVersionDeploy, versionDevelop: currentVersionDeployFromDevelop } = {} // no config for angular
+        deployConfig: { version: currentVersionDeploy, versionDevelop: currentVersionDeployFromDevelop } = {}, // no config for angular
     } = await getNewConfig(api, ['--api proxy'], true);
     const {
         apiUrl,
         sentry: { dsn: newSentryDSN } = {},
         secureUrl: newSecureURL,
-        deployConfig: { version: newVersionDeploy } = {} // no config for angular
+        deployConfig: { version: newVersionDeploy } = {}, // no config for angular
     } = await getNewConfig(api);
 
     debug({
@@ -150,13 +150,13 @@ async function writeNewConfig(api) {
             currentSentryDSN,
             currentSecureURL,
             currentVersionDeploy,
-            currentVersionDeployFromDevelop
+            currentVersionDeployFromDevelop,
         },
         newConfig: {
             newSentryDSN,
             newSecureURL,
-            newVersionDeploy
-        }
+            newVersionDeploy,
+        },
     });
 
     if (isWebClientLegacy()) {

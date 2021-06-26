@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent } from '@testing-library/dom';
-import { MIME_TYPES } from 'proton-shared/lib/constants';
-import { Recipient } from 'proton-shared/lib/interfaces';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { Recipient } from '@proton/shared/lib/interfaces';
 import { clearAll, messageCache, render, tick } from '../../../helpers/test/helper';
 import { MessageExtended } from '../../../models/message';
 import Composer from '../Composer';

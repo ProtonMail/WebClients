@@ -1,6 +1,6 @@
 import React from 'react';
-import { Icon, Input, Mark } from 'react-components';
-import iconSvg from 'design-system/_includes/sprite-icons.svg';
+import { Icon, Input, Mark } from '@proton/components';
+import iconSvg from '@proton/styles/_includes/sprite-icons.svg';
 
 export default { component: Icon, title: 'Proton UI / Icons' };
 

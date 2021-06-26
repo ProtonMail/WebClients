@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useRef, useEffect, useCallback } from 'react';
-import { useApi, generateUID } from 'react-components';
+import { useApi, generateUID } from '@proton/components';
 import { ReadableStream } from 'web-streams-polyfill';
 import {
     TransferState,

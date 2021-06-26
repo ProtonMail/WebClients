@@ -1,5 +1,5 @@
 import React from 'react';
-import { classnames, Progress } from 'react-components';
+import { classnames, Progress } from '@proton/components';
 
 export enum ProgressBarStatus {
     Disabled = 'disabled',

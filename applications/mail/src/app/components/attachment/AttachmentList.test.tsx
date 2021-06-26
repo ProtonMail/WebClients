@@ -1,5 +1,5 @@
 import React from 'react';
-import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { clearAll, createEmbeddedImage, createMessageImages, render } from '../../helpers/test/helper';
 import AttachmentList, { AttachmentAction } from './AttachmentList';
 

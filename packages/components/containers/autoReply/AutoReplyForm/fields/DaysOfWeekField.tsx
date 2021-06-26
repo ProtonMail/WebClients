@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { getFormattedWeekdays } from 'proton-shared/lib/date/date';
-import { dateLocale } from 'proton-shared/lib/i18n';
+import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { Checkbox } from '../../../../components';
 import SettingsLayout from '../../../account/SettingsLayout';

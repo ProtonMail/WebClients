@@ -1,5 +1,5 @@
-import { parse, serialize } from 'proton-shared/lib/calendar/vcal';
-import { getDateOrDateTimeProperty } from 'proton-shared/lib/calendar/vcalConverter';
+import { parse, serialize } from '@proton/shared/lib/calendar/vcal';
+import { getDateOrDateTimeProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import updateAllRecurrence from './updateAllRecurrence';
 import { UpdateAllPossibilities } from '../eventActions/getRecurringUpdateAllPossibilities';
 

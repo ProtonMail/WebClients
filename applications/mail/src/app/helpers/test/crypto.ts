@@ -11,7 +11,7 @@ import {
     decryptSessionKey as realDecryptSessionKey,
     splitMessage,
 } from 'pmcrypto';
-import { KEY_FLAG, RECIPIENT_TYPES } from 'proton-shared/lib/constants';
+import { KEY_FLAG, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 
 import { addressKeysCache, resolvedRequest, cache } from './cache';
 import { addApiMock } from './api';

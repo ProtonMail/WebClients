@@ -1,4 +1,4 @@
-import { noop } from 'proton-shared/lib/helpers/function';
+import { noop } from '@proton/shared/lib/helpers/function';
 import React, { useRef } from 'react';
 import Icon from '../icon/Icon';
 import { classnames } from '../../helpers';

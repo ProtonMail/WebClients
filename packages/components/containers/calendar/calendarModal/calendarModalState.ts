@@ -1,28 +1,28 @@
 import { c } from 'ttag';
-import { LABEL_COLORS } from 'proton-shared/lib/constants';
-import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
-import { Address } from 'proton-shared/lib/interfaces';
+import { LABEL_COLORS } from '@proton/shared/lib/constants';
+import { randomIntFromInterval } from '@proton/shared/lib/helpers/function';
+import { Address } from '@proton/shared/lib/interfaces';
 import {
     Calendar,
     CALENDAR_TYPE,
     CalendarErrors,
     CalendarSettings,
     CalendarViewModelFull,
-} from 'proton-shared/lib/interfaces/calendar';
-import { CalendarCreateData } from 'proton-shared/lib/interfaces/calendar/Api';
-import { modelToNotifications } from 'proton-shared/lib/calendar/modelToNotifications';
-import { notificationsToModel } from 'proton-shared/lib/calendar/notificationsToModel';
+} from '@proton/shared/lib/interfaces/calendar';
+import { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
+import { modelToNotifications } from '@proton/shared/lib/calendar/modelToNotifications';
+import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
 import {
     DEFAULT_CALENDAR,
     DEFAULT_EVENT_DURATION,
     SETTINGS_NOTIFICATION_TYPE,
-} from 'proton-shared/lib/calendar/constants';
+} from '@proton/shared/lib/calendar/constants';
 import {
     DEFAULT_FULL_DAY_NOTIFICATION,
     DEFAULT_FULL_DAY_NOTIFICATIONS,
     DEFAULT_PART_DAY_NOTIFICATION,
     DEFAULT_PART_DAY_NOTIFICATIONS,
-} from 'proton-shared/lib/calendar/notificationDefaults';
+} from '@proton/shared/lib/calendar/notificationDefaults';
 
 interface GetCalendarModelArguments {
     Calendar: Calendar;

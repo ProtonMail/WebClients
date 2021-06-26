@@ -1,11 +1,11 @@
 import React, { useCallback } from 'react';
 import { c, msgid } from 'ttag';
-import { useApi, useNotifications, useEventManager, useLabels, classnames } from 'react-components';
-import { labelMessages, unlabelMessages } from 'proton-shared/lib/api/messages';
-import { labelConversations, unlabelConversations } from 'proton-shared/lib/api/conversations';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { useApi, useNotifications, useEventManager, useLabels, classnames } from '@proton/components';
+import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
+import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 import UndoButton from '../components/notifications/UndoButton';
 import { isMessage as testIsMessage } from '../helpers/elements';

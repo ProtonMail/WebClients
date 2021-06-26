@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { c } from 'ttag';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import {
     reactivateKeysProcess,
     importKeysProcess,
@@ -8,7 +8,7 @@ import {
     setPrimaryAddressKey,
     addAddressKeysProcess,
     setAddressKeyFlags,
-} from 'proton-shared/lib/keys';
+} from '@proton/shared/lib/keys';
 
 import { Loader, Button } from '../../components';
 import {

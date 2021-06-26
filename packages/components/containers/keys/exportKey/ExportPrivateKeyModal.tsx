@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState } from 'react';
 import { OpenPGPKey, encryptPrivateKey } from 'pmcrypto';
-import { KEY_FILE_EXTENSION } from 'proton-shared/lib/constants';
-import downloadFile from 'proton-shared/lib/helpers/downloadFile';
+import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { c } from 'ttag';
 
 import { Alert, Row, Field, Label, PasswordInput, FormModal } from '../../../components';

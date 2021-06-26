@@ -1,14 +1,14 @@
 import { c } from 'ttag';
-import { useGetAddressKeys } from 'react-components';
-import { Address, Api } from 'proton-shared/lib/interfaces';
-import { createCalendar, updateCalendarUserSettings } from 'proton-shared/lib/api/calendars';
-import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
-import { getTimezone } from 'proton-shared/lib/date/timezone';
-import { getPrimaryKey } from 'proton-shared/lib/keys';
+import { useGetAddressKeys } from '@proton/components';
+import { Address, Api } from '@proton/shared/lib/interfaces';
+import { createCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
+import { Calendar as tsCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { getTimezone } from '@proton/shared/lib/date/timezone';
+import { getPrimaryKey } from '@proton/shared/lib/keys';
 
-import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
-import { DEFAULT_CALENDAR } from 'proton-shared/lib/calendar/constants';
-import { setupCalendarKey } from 'react-components/containers/keys/calendar';
+import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
+import { DEFAULT_CALENDAR } from '@proton/shared/lib/calendar/constants';
+import { setupCalendarKey } from '@proton/components/containers/keys/calendar';
 
 interface Args {
     addresses: Address[];

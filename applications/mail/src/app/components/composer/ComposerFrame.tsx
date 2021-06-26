@@ -1,6 +1,6 @@
 import React, { useEffect, DragEvent, useState, useRef } from 'react';
-import { classnames, useToggle, useMailSettings, useHandler, ErrorBoundary } from 'react-components';
-import { COMPOSER_MODE } from 'proton-shared/lib/constants';
+import { classnames, useToggle, useMailSettings, useHandler, ErrorBoundary } from '@proton/components';
+import { COMPOSER_MODE } from '@proton/shared/lib/constants';
 import ComposerTitleBar from './ComposerTitleBar';
 import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerPositioning';
 import { WindowSize, Breakpoints } from '../../models/utils';

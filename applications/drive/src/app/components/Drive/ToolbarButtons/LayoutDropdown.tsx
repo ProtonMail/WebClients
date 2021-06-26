@@ -8,7 +8,7 @@ import {
     DropdownMenuButton,
     ToolbarButton,
     DropdownCaret,
-} from 'react-components';
+} from '@proton/components';
 import useUserSettings from '../../../hooks/drive/useUserSettings';
 import { LayoutSetting } from '../../../interfaces/userSettings';
 

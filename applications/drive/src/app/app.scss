@@ -1,6 +1,6 @@
-@import '~design-system/scss/proton-drive';
-@import '~design-system/scss/specifics/placeholder-loading';
-@import '~design-system/scss/specifics/list';
+@import '@proton/styles/scss/proton-drive';
+@import '@proton/styles/scss/specifics/placeholder-loading';
+@import '@proton/styles/scss/specifics/list';
 
 @import './components/FileBrowser/FileBrowser.scss';
 @import './components/TransferManager/TransferManager.scss';

@@ -1,4 +1,4 @@
-import { Label, Icon } from 'react-components';
+import { Label, Icon } from '@proton/components';
 import React, { memo } from 'react';
 
 interface Props {

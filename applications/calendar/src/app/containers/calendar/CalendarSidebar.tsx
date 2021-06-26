@@ -1,5 +1,5 @@
-import { getIsPersonalCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
-import { APPS } from 'proton-shared/lib/constants';
+import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
+import { APPS } from '@proton/shared/lib/constants';
 import React, { ReactNode, useState } from 'react';
 import {
     useEventManager,
@@ -11,11 +11,11 @@ import {
     SidebarList,
     SidebarListItemHeaderLink,
     SimpleSidebarListItemHeader,
-} from 'react-components';
+} from '@proton/components';
 import { c } from 'ttag';
-import { updateCalendar } from 'proton-shared/lib/api/calendars';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
-import { partition } from 'proton-shared/lib/helpers/array';
+import { updateCalendar } from '@proton/shared/lib/api/calendars';
+import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { partition } from '@proton/shared/lib/helpers/array';
 import CalendarSidebarListItems from './CalendarSidebarListItems';
 import CalendarSidebarVersion from './CalendarSidebarVersion';
 

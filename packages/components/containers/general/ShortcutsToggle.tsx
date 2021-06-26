@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { updateShortcuts } from 'proton-shared/lib/api/mailSettings';
+import { updateShortcuts } from '@proton/shared/lib/api/mailSettings';
 
 import { useToggle, useEventManager, useApiWithoutResult, useNotifications, useMailSettings } from '../../hooks';
 import { Toggle } from '../../components';

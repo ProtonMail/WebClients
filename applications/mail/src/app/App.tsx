@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { LoaderPage, ProtonApp, StandardSetup } from 'react-components';
-import { G_OAUTH_REDIRECT_PATH } from 'react-components/containers/importAssistant/constants';
+import { LoaderPage, ProtonApp, StandardSetup } from '@proton/components';
+import { G_OAUTH_REDIRECT_PATH } from '@proton/components/containers/importAssistant/constants';
 
-import sentry from 'proton-shared/lib/helpers/sentry';
-import locales from 'proton-shared/lib/i18n/locales';
+import sentry from '@proton/shared/lib/helpers/sentry';
+import locales from '@proton/shared/lib/i18n/locales';
 
 import * as config from './config';
 import PrivateApp from './PrivateApp';

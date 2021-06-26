@@ -32,7 +32,7 @@
     "import/no-dynamic-require": "off",
     "object-shorthand": ["error", "always", { "avoidExplicitReturnArrows": true }],
     "arrow-parens": ["error", "always"],
-    "comma-dangle": ["error", "never"],
+    "comma-dangle": "off",
     "no-shadow": ["off", { "hoist": "never", "builtinGlobals": true  }],
     "array-bracket-spacing": ["off", "never"],
     "object-property-newline": "off",

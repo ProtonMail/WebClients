@@ -1,10 +1,10 @@
-import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
-import { FREQUENCY, FREQUENCY_INTERVALS_MAX } from 'proton-shared/lib/calendar/constants';
+import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import { FREQUENCY, FREQUENCY_INTERVALS_MAX } from '@proton/shared/lib/calendar/constants';
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { IntegerInput, SelectTwo, Option } from 'react-components';
+import { IntegerInput, SelectTwo, Option } from '@proton/components';
 
-import { DateTimeModel, FrequencyModel, EventModelErrors } from 'proton-shared/lib/interfaces/calendar';
+import { DateTimeModel, FrequencyModel, EventModelErrors } from '@proton/shared/lib/interfaces/calendar';
 import RepeatOnRow from './RepeatOnRow';
 import SelectMonthlyType from '../inputs/SelectMonthlyType';
 

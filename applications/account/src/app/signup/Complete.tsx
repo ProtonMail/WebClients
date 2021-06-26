@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Href } from 'react-components';
+import { Href } from '@proton/components';
 import { SignupModel } from './interfaces';
 
 interface Props {

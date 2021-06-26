@@ -1,5 +1,5 @@
 import React from 'react';
-import { LABEL_COLORS } from 'proton-shared/lib/constants';
+import { LABEL_COLORS } from '@proton/shared/lib/constants';
 import Input from '../input/Input';
 import { Icon } from '../icon';
 

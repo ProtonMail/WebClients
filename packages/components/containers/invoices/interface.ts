@@ -1,4 +1,4 @@
-import { INVOICE_STATE } from 'proton-shared/lib/constants';
+import { INVOICE_STATE } from '@proton/shared/lib/constants';
 
 export interface Invoice {
     ID: string;

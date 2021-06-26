@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'react-components';
+import { Button } from '@proton/components';
 import { c } from 'ttag';
 import EmailUnsubscribeCategories from './EmailUnsubscribeCategories';
 import EmailUnsubscribeLayout from './EmailUnsubscribeLayout';

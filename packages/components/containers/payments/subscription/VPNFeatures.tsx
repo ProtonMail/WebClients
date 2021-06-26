@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
-import { APPS, PLANS } from 'proton-shared/lib/constants';
-import { getAppName } from 'proton-shared/lib/apps/helper';
-import { Plan, VPNCountries } from 'proton-shared/lib/interfaces';
-import { FREE_VPN_PLAN } from 'proton-shared/lib/subscription/freePlans';
+import { APPS, PLANS } from '@proton/shared/lib/constants';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { Plan, VPNCountries } from '@proton/shared/lib/interfaces';
+import { FREE_VPN_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { useVPNCountriesCount } from '../../../hooks';
 import { Icon } from '../../../components';

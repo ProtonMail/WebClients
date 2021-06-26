@@ -1,6 +1,6 @@
 import React, { MutableRefObject, ReactNode } from 'react';
 import { c } from 'ttag';
-import { RIGHT_TO_LEFT } from 'proton-shared/lib/constants';
+import { RIGHT_TO_LEFT } from '@proton/shared/lib/constants';
 
 import DropdownMenu from '../../dropdown/DropdownMenu';
 import DropdownMenuButton from '../../dropdown/DropdownMenuButton';

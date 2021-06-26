@@ -1,9 +1,9 @@
-import { getSequence } from 'proton-shared/lib/calendar/vcalHelper';
+import { getSequence } from '@proton/shared/lib/calendar/vcalHelper';
 import React from 'react';
 import { c } from 'ttag';
-import { Button } from 'react-components';
-import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
-import { RequireSome } from 'proton-shared/lib/interfaces/utils';
+import { Button } from '@proton/components';
+import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { InvitationModel } from '../../../../helpers/calendar/invite';
 
 interface Props {

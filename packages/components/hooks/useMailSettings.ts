@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
-import { MailSettings as tsMailSettings } from 'proton-shared/lib/interfaces';
-import { MailSettingsModel } from 'proton-shared/lib/models';
+import { MailSettings as tsMailSettings } from '@proton/shared/lib/interfaces';
+import { MailSettingsModel } from '@proton/shared/lib/models';
 
 import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
 import useCache from './useCache';

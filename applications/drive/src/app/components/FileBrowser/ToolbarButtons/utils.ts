@@ -10,5 +10,5 @@ export function isMultiSelect(selectedItems: FileBrowserItem[]): boolean {
 }
 
 export function hasFoldersSelected(selectedItems: FileBrowserItem[]): boolean {
-    return selectedItems.some((item) => item.Type === LinkType.FOLDER)
+    return selectedItems.some((item) => item.Type === LinkType.FOLDER);
 }

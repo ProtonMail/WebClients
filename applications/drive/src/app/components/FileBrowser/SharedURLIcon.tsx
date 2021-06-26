@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { c } from 'ttag';
 
-import { Icon, Tooltip, useModals } from 'react-components';
+import { Icon, Tooltip, useModals } from '@proton/components';
 import SharingModal from '../SharingModal/SharingModal';
 import { FileBrowserItem } from './interfaces';
 

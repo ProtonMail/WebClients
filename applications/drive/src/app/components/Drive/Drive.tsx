@@ -22,25 +22,12 @@ function Drive({ activeFolder }: Props) {
     const cache = useDriveCache();
     const { getLinkMeta } = useDrive();
     const { navigateToLink } = useNavigate();
-    const {
-        loadNextPage,
-        fileBrowserControls,
-        loading,
-        contents,
-        complete,
-        sortParams,
-        setSorting,
-    } = useDriveContent();
+    const { loadNextPage, fileBrowserControls, loading, contents, complete, sortParams, setSorting } =
+        useDriveContent();
 
     const { linkId, shareId } = activeFolder;
-    const {
-        clearSelections,
-        selectedItems,
-        toggleSelectItem,
-        toggleAllSelected,
-        toggleRange,
-        selectItem,
-    } = fileBrowserControls;
+    const { clearSelections, selectedItems, toggleSelectItem, toggleAllSelected, toggleRange, selectItem } =
+        fileBrowserControls;
 
     const folderName = cache.get.linkMeta(shareId, linkId)?.Name;
     const { getDragMoveControls } = useDriveDragMove(shareId, selectedItems, clearSelections);

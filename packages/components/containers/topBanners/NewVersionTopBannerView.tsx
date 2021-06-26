@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { APPS_CONFIGURATION } from 'proton-shared/lib/constants';
+import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 
 import { useConfig } from '../../hooks';
 import { InlineLinkButton } from '../../components/button';

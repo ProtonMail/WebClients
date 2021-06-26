@@ -1,7 +1,7 @@
 import React, { forwardRef, Ref, useEffect, useRef } from 'react';
 import { c } from 'ttag';
-import { clearType, getType } from 'proton-shared/lib/contacts/property';
-import { ContactProperty, ContactPropertyChange } from 'proton-shared/lib/interfaces/contacts';
+import { clearType, getType } from '@proton/shared/lib/contacts/property';
+import { ContactProperty, ContactPropertyChange } from '@proton/shared/lib/interfaces/contacts';
 import { classnames } from '../../helpers';
 import ContactFieldProperty from './ContactFieldProperty';
 import ContactModalLabel from './ContactModalLabel';

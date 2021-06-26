@@ -1,19 +1,19 @@
 import {
     getIsCalendarSubscriptionEventManagerUpdate,
     getIsSubscribedCalendar,
-} from 'proton-shared/lib/calendar/subscribe/helpers';
+} from '@proton/shared/lib/calendar/subscribe/helpers';
 import {
     getIsCalendarEventManagerCreate,
     getIsCalendarEventManagerDelete,
     getIsCalendarEventManagerUpdate,
-} from 'proton-shared/lib/eventManager/helpers';
+} from '@proton/shared/lib/eventManager/helpers';
 import { useEffect, useMemo, useState } from 'react';
 import {
     CalendarEventManager,
     CalendarSubscriptionEventManager,
-} from 'proton-shared/lib/interfaces/calendar/EventManager';
-import { removeItem, updateItem } from 'proton-shared/lib/helpers/array';
-import { Calendar, CalendarSubscription, SubscribedCalendar } from 'proton-shared/lib/interfaces/calendar';
+} from '@proton/shared/lib/interfaces/calendar/EventManager';
+import { removeItem, updateItem } from '@proton/shared/lib/helpers/array';
+import { Calendar, CalendarSubscription, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
 import useLoading from './useLoading';
 import useEventManager from './useEventManager';
 import { useCalendarModelEventManager } from '../containers/eventManager/calendar/ModelEventManagerProvider';

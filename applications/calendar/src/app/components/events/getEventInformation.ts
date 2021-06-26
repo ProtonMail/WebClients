@@ -1,8 +1,8 @@
-import { FREQUENCY, ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from 'proton-shared/lib/calendar/constants';
-import { getAggregatedEventVerificationStatus } from 'proton-shared/lib/calendar/decrypt';
-import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
-import { getIsAddressActive } from 'proton-shared/lib/helpers/address';
-import { EventModelReadView } from 'proton-shared/lib/interfaces/calendar';
+import { FREQUENCY, ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from '@proton/shared/lib/calendar/constants';
+import { getAggregatedEventVerificationStatus } from '@proton/shared/lib/calendar/decrypt';
+import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
+import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
+import { EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
 import getIsTemporaryViewEvent from '../../containers/calendar/getIsTemporaryViewEvent';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 

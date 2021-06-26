@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
-import { SubscriptionModel as tsSubscriptionModel } from 'proton-shared/lib/interfaces';
-import { FREE_SUBSCRIPTION } from 'proton-shared/lib/constants';
-import { SubscriptionModel } from 'proton-shared/lib/models/subscriptionModel';
-import { UserModel } from 'proton-shared/lib/models/userModel';
+import { SubscriptionModel as tsSubscriptionModel } from '@proton/shared/lib/interfaces';
+import { FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
+import { SubscriptionModel } from '@proton/shared/lib/models/subscriptionModel';
+import { UserModel } from '@proton/shared/lib/models/userModel';
 
 import useCachedModelResult from './useCachedModelResult';
 import useApi from './useApi';

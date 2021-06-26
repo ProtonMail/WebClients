@@ -1,5 +1,5 @@
-import { toMap } from 'proton-shared/lib/helpers/object';
-import { LabelCount } from 'proton-shared/lib/interfaces/Label';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { hasLabel, isUnread as testIsUnread } from './elements';
 import { Element } from '../models/element';
 import { isAutoRead, isUnmodifiableByUser, LabelChanges } from './labels';

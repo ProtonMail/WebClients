@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppVersion } from 'react-components';
+import { AppVersion } from '@proton/components';
 
 import changelog from '../../../../CHANGELOG.md';
 

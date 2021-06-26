@@ -12,12 +12,12 @@ describe('scaleImageFile', () => {
                     listener();
                 }
             }
-        }
+        };
         // @ts-ignore
         global.HTMLCanvasElement.prototype.getContext = jest.fn(() => {
             return {
                 drawImage: jest.fn(),
-            }
+            };
         });
         global.HTMLCanvasElement.prototype.toBlob = jest.fn((callback) => {
             callback(new Blob(['abc']));
@@ -33,27 +33,26 @@ describe('scaleImageFile', () => {
         global.Image = class {
             addEventListener(type: string, listener: (value?: any) => void) {
                 if (type === 'error') {
-                    listener(new Error("Failed to load image"));
+                    listener(new Error('Failed to load image'));
                 }
             }
-        }
-        await expect(scaleImageFile(new Blob())).rejects.toEqual(new Error("Failed to load image"))
+        };
+        await expect(scaleImageFile(new Blob())).rejects.toEqual(new Error('Failed to load image'));
     });
 
     it('fails due to no small enough thumbnail', async () => {
         global.HTMLCanvasElement.prototype.toBlob = jest.fn((callback) => {
             callback(new Blob(['x'.repeat(THUMBNAIL_MAX_SIZE + 1)]));
         });
-        await expect(scaleImageFile(new Blob())).rejects.toEqual(new Error("Cannot create small enough thumbnail"))
+        await expect(scaleImageFile(new Blob())).rejects.toEqual(new Error('Cannot create small enough thumbnail'));
     });
 
     it('fails due to no blob', async () => {
         global.HTMLCanvasElement.prototype.toBlob = jest.fn((callback) => {
             callback(null);
         });
-        await expect(scaleImageFile(new Blob())).rejects.toEqual(new Error("Blob not available"));
+        await expect(scaleImageFile(new Blob())).rejects.toEqual(new Error('Blob not available'));
     });
-
 });
 
 describe('calculateThumbnailSize', () => {

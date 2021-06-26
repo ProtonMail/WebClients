@@ -12,12 +12,12 @@ import {
     useHotkeys,
     useMailSettings,
     useItemsDroppable,
-} from 'react-components';
+} from '@proton/components';
 import { useHistory } from 'react-router-dom';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import { wait } from 'proton-shared/lib/helpers/promise';
-import { noop } from 'proton-shared/lib/helpers/function';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import { noop } from '@proton/shared/lib/helpers/function';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import LocationAside from './LocationAside';
 import { LABEL_IDS_TO_HUMAN } from '../../constants';
 import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { handlePaymentToken } from 'react-components/containers/payments/paymentTokenHelper';
-import { srpVerify, srpAuth } from 'proton-shared/lib/srp';
+import { handlePaymentToken } from '@proton/components/containers/payments/paymentTokenHelper';
+import { srpVerify, srpAuth } from '@proton/shared/lib/srp';
 import {
     useApi,
     usePlans,
@@ -9,13 +9,13 @@ import {
     useModals,
     useVPNCountriesCount,
     useNotifications,
-} from 'react-components';
+} from '@proton/components';
 import { c } from 'ttag';
-import { getUser, queryCreateUser, queryDirectSignupStatus } from 'proton-shared/lib/api/user';
-import { auth } from 'proton-shared/lib/api/auth';
-import { subscribe, checkSubscription } from 'proton-shared/lib/api/payments';
-import { withAuthHeaders, getVerificationHeaders } from 'proton-shared/lib/fetch/headers';
-import { persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
+import { getUser, queryCreateUser, queryDirectSignupStatus } from '@proton/shared/lib/api/user';
+import { auth } from '@proton/shared/lib/api/auth';
+import { subscribe, checkSubscription } from '@proton/shared/lib/api/payments';
+import { withAuthHeaders, getVerificationHeaders } from '@proton/shared/lib/fetch/headers';
+import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
     DEFAULT_CURRENCY,
     CYCLE,
@@ -23,7 +23,7 @@ import {
     TOKEN_TYPES,
     CURRENCIES,
     PAYMENT_METHOD_TYPES,
-} from 'proton-shared/lib/constants';
+} from '@proton/shared/lib/constants';
 import { getPlan, PLAN, VPN_PLANS, PLAN_BUNDLES } from './plans';
 
 const firstIn = (array, values) => values.find((value) => value && array.includes(value));

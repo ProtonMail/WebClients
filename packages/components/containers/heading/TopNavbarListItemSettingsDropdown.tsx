@@ -1,7 +1,7 @@
 import React, { ComponentPropsWithoutRef } from 'react';
 import { c } from 'ttag';
-import { PROTON_THEMES } from 'proton-shared/lib/themes/themes';
-import { APPS, COMPOSER_MODE, DENSITY, VIEW_LAYOUT } from 'proton-shared/lib/constants';
+import { PROTON_THEMES } from '@proton/shared/lib/themes/themes';
+import { APPS, COMPOSER_MODE, DENSITY, VIEW_LAYOUT } from '@proton/shared/lib/constants';
 
 import { AppLink, DropdownMenu, DropdownMenuButton, DropdownMenuLink, Icon } from '../../components';
 import SimpleDropdown from '../../components/dropdown/SimpleDropdown';
@@ -42,9 +42,8 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
     const earlyAccess = useEarlyAccess();
     const [theme] = useTheme();
     const [{ Density }] = useUserSettings();
-    const [
-        { Shortcuts, ComposerMode, ViewLayout } = { Shortcuts: 0, ComposerMode: 0, ViewLayout: 0 },
-    ] = useMailSettings();
+    const [{ Shortcuts, ComposerMode, ViewLayout } = { Shortcuts: 0, ComposerMode: 0, ViewLayout: 0 }] =
+        useMailSettings();
 
     const handleEarlyAccessClick = () => {
         createModal(<EarlyAccessModal />);

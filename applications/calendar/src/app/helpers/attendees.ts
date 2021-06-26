@@ -1,11 +1,11 @@
-import { canonizeEmailByGuess, canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
+import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { c } from 'ttag';
-import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
-import { CalendarSettings, EventModel } from 'proton-shared/lib/interfaces/calendar';
-import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
+import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
+import { CalendarSettings, EventModel } from '@proton/shared/lib/interfaces/calendar';
+import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
-import { getDeviceNotifications } from 'proton-shared/lib/calendar/notificationModel';
-import { notificationsToModel } from 'proton-shared/lib/calendar/notificationsToModel';
+import { getDeviceNotifications } from '@proton/shared/lib/calendar/notificationModel';
+import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
 import { DisplayNameEmail } from '../containers/calendar/interface';
 
 const { NEEDS_ACTION, DECLINED, ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;

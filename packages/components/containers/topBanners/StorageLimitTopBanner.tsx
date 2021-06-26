@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { getItem, setItem } from 'proton-shared/lib/helpers/storage';
+import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import { useUser } from '../../hooks';
 import { SettingsLink } from '../../components';

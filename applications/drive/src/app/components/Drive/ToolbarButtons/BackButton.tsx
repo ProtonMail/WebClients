@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from 'react-components';
+import { Icon, ToolbarButton } from '@proton/components';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { LinkType } from '../../../interfaces/link';

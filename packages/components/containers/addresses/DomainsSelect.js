@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
+import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { Select } from '../../components';
 import { useApi, useLoading, useUser, useDomains, usePremiumDomains } from '../../hooks';
 

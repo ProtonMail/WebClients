@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react';
-import { getAllTypes } from 'proton-shared/lib/contacts/helpers/types';
+import { getAllTypes } from '@proton/shared/lib/contacts/helpers/types';
 
 import { Label, Select } from '../../../components';
 

@@ -9,11 +9,13 @@ import { VCardKey } from '../../interfaces/contacts/VCard';
  */
 const modifyPreVcardField = (preVcard: PreVcardProperty, newField: string) => {
     const types = getTypeValues();
-    const newType = (types[newField].includes(preVcard.type || '')
-        ? preVcard.type
-        : types[newField].length
-        ? types[newField][0]
-        : undefined) as VCardKey;
+    const newType = (
+        types[newField].includes(preVcard.type || '')
+            ? preVcard.type
+            : types[newField].length
+            ? types[newField][0]
+            : undefined
+    ) as VCardKey;
 
     return { ...preVcard, field: newField, type: newType, custom: false };
 };

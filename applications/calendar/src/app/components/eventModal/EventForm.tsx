@@ -10,15 +10,15 @@ import {
     NOTIFICATION_INPUT_ID,
     PARTICIPANTS_INPUT_ID,
     TITLE_INPUT_ID,
-} from 'proton-shared/lib/calendar/constants';
-import { getIsProtonUID } from 'proton-shared/lib/calendar/helper';
-import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
-import { getIsAddressActive } from 'proton-shared/lib/helpers/address';
-import { Address } from 'proton-shared/lib/interfaces';
+} from '@proton/shared/lib/calendar/constants';
+import { getIsProtonUID } from '@proton/shared/lib/calendar/helper';
+import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
+import { Address } from '@proton/shared/lib/interfaces';
 
-import { EventModel, EventModelErrors, NotificationModel } from 'proton-shared/lib/interfaces/calendar';
+import { EventModel, EventModelErrors, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
 import React, { HTMLAttributes } from 'react';
-import { Alert, classnames, Input, Notifications, TextArea } from 'react-components';
+import { Alert, classnames, Input, Notifications, TextArea } from '@proton/components';
 import { c } from 'ttag';
 
 import createHandlers from './eventForm/createPropFactory';

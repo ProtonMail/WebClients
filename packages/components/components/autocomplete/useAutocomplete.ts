@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { normalize } from 'proton-shared/lib/helpers/string';
-import { escapeRegex, getMatches, MatchChunk } from 'proton-shared/lib/helpers/regex';
+import { normalize } from '@proton/shared/lib/helpers/string';
+import { escapeRegex, getMatches, MatchChunk } from '@proton/shared/lib/helpers/regex';
 
 export interface DataWithMatches<T> {
     option: T;

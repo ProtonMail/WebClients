@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
-import { getFullCalendar } from 'proton-shared/lib/api/calendars';
-import createCache from 'proton-shared/lib/helpers/cache';
-import { STATUS } from 'proton-shared/lib/models/cache';
+import { getFullCalendar } from '@proton/shared/lib/api/calendars';
+import createCache from '@proton/shared/lib/helpers/cache';
+import { STATUS } from '@proton/shared/lib/models/cache';
 import useCache from './useCache';
 import useApi from './useApi';
 import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';

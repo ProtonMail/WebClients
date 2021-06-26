@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { updateDelaySend } from 'proton-shared/lib/api/mailSettings';
+import { updateDelaySend } from '@proton/shared/lib/api/mailSettings';
 import { c } from 'ttag';
 
 import { useEventManager, useNotifications, useApi, useLoading } from '../../hooks';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StandardPrivateApp, LoaderPage, useAppTitle } from 'react-components';
+import { StandardPrivateApp, LoaderPage, useAppTitle } from '@proton/components';
 import {
     UserModel,
     UserSettingsModel,
@@ -7,8 +7,8 @@ import {
     ContactsModel,
     ContactEmailsModel,
     LabelsModel,
-} from 'proton-shared/lib/models';
-import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
+} from '@proton/shared/lib/models';
+import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { openpgpConfig } from './openpgpConfig';
 import useUserSettings from './hooks/drive/useUserSettings';
 import UserSettingsProvider from './components/Drive/UserSettings/UserSettingsProvider';

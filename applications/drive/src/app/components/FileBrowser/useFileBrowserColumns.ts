@@ -1,4 +1,4 @@
-import { useActiveBreakpoint } from 'react-components';
+import { useActiveBreakpoint } from '@proton/components';
 import { FileBrowserLayouts, ItemRowColumns } from './interfaces';
 
 const COLUMNS_DESKTOP: Record<FileBrowserLayouts, ItemRowColumns[]> = {

@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { c } from 'ttag';
-import { PLANS, PLAN_SERVICES } from 'proton-shared/lib/constants';
-import { switchPlan } from 'proton-shared/lib/helpers/planIDs';
-import { Organization, Plan, PlanIDs } from 'proton-shared/lib/interfaces';
+import { PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
+import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import { Organization, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
 import { Button, Icon } from '../../../components';
 import MailFeatures from './MailFeatures';
 import VPNFeatures from './VPNFeatures';

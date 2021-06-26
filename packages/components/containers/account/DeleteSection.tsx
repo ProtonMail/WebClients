@@ -1,5 +1,5 @@
 import React from 'react';
-import { APPS } from 'proton-shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import { Href, Button, Loader } from '../../components';
 import { useModals, useUser, useSubscription, useAddresses, useConfig } from '../../hooks';

@@ -1,11 +1,11 @@
 import { MutableRefObject, useEffect, useMemo, useState } from 'react';
-import { useApi } from 'react-components';
+import { useApi } from '@proton/components';
 
-import { addMilliseconds } from 'proton-shared/lib/date-fns-utc';
-import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { addMilliseconds } from '@proton/shared/lib/date-fns-utc';
+import { Calendar as tsCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { noop } from '@proton/shared/lib/helpers/function';
 
-import { DAY } from 'proton-shared/lib/constants';
+import { DAY } from '@proton/shared/lib/constants';
 import getCalendarsAlarmsCached from './getCalendarsAlarmsCached';
 import { CalendarsAlarmsCache } from './CacheInterface';
 

@@ -1,4 +1,4 @@
-import { USER_ROLES, PERMISSIONS } from 'proton-shared/lib/constants';
+import { USER_ROLES, PERMISSIONS } from '@proton/shared/lib/constants';
 import { useUser } from './useUser';
 import useOrganization from './useOrganization';
 

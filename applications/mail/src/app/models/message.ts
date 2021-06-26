@@ -1,7 +1,7 @@
 import { OpenPGPKey, OpenPGPSignature } from 'pmcrypto';
-import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { RequireSome } from 'proton-shared/lib/interfaces/utils';
-import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
+import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { MESSAGE_ACTIONS } from '../constants';
 
 export interface MessageKeys {

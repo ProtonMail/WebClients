@@ -1,5 +1,5 @@
 import React, { forwardRef, Ref, MutableRefObject } from 'react';
-import { toBase64 } from 'proton-shared/lib/helpers/file';
+import { toBase64 } from '@proton/shared/lib/helpers/file';
 
 import SquireEditor, { SquireEditorRef } from './SquireEditor';
 import { classnames } from '../../helpers';

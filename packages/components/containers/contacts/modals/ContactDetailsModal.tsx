@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useRef } from 'react';
 import { c } from 'ttag';
-import { toMap } from 'proton-shared/lib/helpers/object';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import ContactContainer from '../ContactContainer';
 import { useModals, useContactGroups, useAddresses, useUserKeys } from '../../../hooks';
 import useContactList from '../useContactList';

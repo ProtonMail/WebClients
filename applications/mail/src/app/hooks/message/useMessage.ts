@@ -1,4 +1,4 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { useEffect, useState, useMemo } from 'react';
 
 import { MessageExtended, MessageAction } from '../../models/message';

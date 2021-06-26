@@ -1,11 +1,11 @@
-import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
-import getMemberAndAddress from 'proton-shared/lib/calendar/integration/getMemberAndAddress';
-import { getSelfAttendeeToken } from 'proton-shared/lib/calendar/integration/invite';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { Address, Api } from 'proton-shared/lib/interfaces';
-import { CalendarBootstrap, CalendarEvent, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
-import { DELETE_CONFIRMATION_TYPES } from 'proton-shared/lib/calendar/constants';
-import { useGetCalendarKeys } from 'react-components';
+import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
+import getMemberAndAddress from '@proton/shared/lib/calendar/integration/getMemberAndAddress';
+import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/integration/invite';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { Address, Api } from '@proton/shared/lib/interfaces';
+import { CalendarBootstrap, CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import { DELETE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants';
+import { useGetCalendarKeys } from '@proton/components';
 
 import { getEventDeletedText, getRecurringEventDeletedText } from '../../../components/eventModal/eventForm/i18n';
 import { EventOldData } from '../../../interfaces/EventData';

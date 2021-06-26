@@ -1,7 +1,7 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { useCallback } from 'react';
-import { useApi, useEventManager, useMailSettings } from 'react-components';
-import { deleteMessages } from 'proton-shared/lib/api/messages';
+import { useApi, useEventManager, useMailSettings } from '@proton/components';
+import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { mergeMessages } from '../../helpers/message/messages';

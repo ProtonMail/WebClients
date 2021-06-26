@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { APPS, BRAND_NAME, APP_NAMES } from 'proton-shared/lib/constants';
-import { getAppFromPathnameSafe } from 'proton-shared/lib/apps/slugHelper';
+import { APPS, BRAND_NAME, APP_NAMES } from '@proton/shared/lib/constants';
+import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 
 import { Icon, DropdownMenu, DropdownMenuButton, DropdownMenuLink } from '../../components';
 import { useModals, useAuthentication, useConfig } from '../../hooks';

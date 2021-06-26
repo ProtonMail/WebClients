@@ -1,6 +1,6 @@
 import { SetStateAction, useCallback, useEffect, useState } from 'react';
-import { useCache } from 'react-components';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { useCache } from '@proton/components';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 import { Element } from '../../models/element';
 import { Filter, Sort } from '../../models/tools';

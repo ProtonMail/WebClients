@@ -1,10 +1,10 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { Icon, useFolders } from 'react-components';
-import humanSize from 'proton-shared/lib/helpers/humanSize';
-import { Label } from 'proton-shared/lib/interfaces/Label';
+import { Icon, useFolders } from '@proton/components';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { Label } from '@proton/shared/lib/interfaces/Label';
 
-import { MailSettings } from 'proton-shared/lib/interfaces';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
 import { MessageExtended } from '../../../models/message';

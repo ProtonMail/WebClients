@@ -1,11 +1,11 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { Api } from 'proton-shared/lib/interfaces';
-import { getItem, removeItem, setItem } from 'proton-shared/lib/helpers/storage';
-import { destroyOpenPGP, loadOpenPGP } from 'proton-shared/lib/openpgp';
-import { wait } from 'proton-shared/lib/helpers/promise';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { Api } from '@proton/shared/lib/interfaces';
+import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
+import { destroyOpenPGP, loadOpenPGP } from '@proton/shared/lib/openpgp';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { openDB, IDBPDatabase, deleteDB } from 'idb';
 import { decryptMessage as pmcryptoDecryptMessage, getMessage as pmcryptoGetMessage, encryptMessage } from 'pmcrypto';
-import runInQueue from 'proton-shared/lib/helpers/runInQueue';
+import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { decryptMessage } from '../message/messageDecrypt';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import { locateBlockquote } from '../message/messageBlockquote';

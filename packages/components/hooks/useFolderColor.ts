@@ -1,5 +1,5 @@
-import { toMap } from 'proton-shared/lib/helpers/object';
-import { Folder } from 'proton-shared/lib/interfaces/Folder';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
 
 import { useFolders } from './useCategories';
 import { useMailSettings } from './useMailSettings';

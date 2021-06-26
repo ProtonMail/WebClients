@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useRouteMatch } from 'react-router';
-import { load } from 'proton-shared/lib/api/core/load';
+import { load } from '@proton/shared/lib/api/core/load';
 
 import useApi from './useApi';
 

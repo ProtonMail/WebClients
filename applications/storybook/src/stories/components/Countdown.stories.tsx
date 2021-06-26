@@ -1,5 +1,5 @@
 import React from 'react';
-import { Countdown } from 'react-components';
+import { Countdown } from '@proton/components';
 
 import mdx from './Countdown.mdx';
 

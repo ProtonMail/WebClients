@@ -1,9 +1,9 @@
 import React, { useState, ChangeEvent } from 'react';
 import { c, msgid } from 'ttag';
 
-import { Contact, ContactEmail } from 'proton-shared/lib/interfaces/contacts';
+import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import useContactEmails from '../../../hooks/useContactEmails';
 import { FormModal, Alert, Row, Label, Field, Checkbox } from '../../../components';
 import { useContactGroups } from '../../../hooks';
@@ -64,15 +64,17 @@ const SelectEmailsModal = ({ contacts, groupIDs, onSubmit, onClose, ...rest }: P
         onClose?.();
     };
 
-    const handleCheck = (contactID: string, contactEmailID: string) => ({ target }: ChangeEvent<HTMLInputElement>) => {
-        const copy = [...model];
-        const contactIndex = model.findIndex(({ ID }) => ID === contactID);
-        const contactEmailIndex = model[contactIndex].contactEmails.findIndex(
-            ({ ID }: ContactEmail) => ID === contactEmailID
-        );
-        copy[contactIndex].contactEmails[contactEmailIndex].isChecked = target.checked;
-        setModel(copy);
-    };
+    const handleCheck =
+        (contactID: string, contactEmailID: string) =>
+        ({ target }: ChangeEvent<HTMLInputElement>) => {
+            const copy = [...model];
+            const contactIndex = model.findIndex(({ ID }) => ID === contactID);
+            const contactEmailIndex = model[contactIndex].contactEmails.findIndex(
+                ({ ID }: ContactEmail) => ID === contactEmailID
+            );
+            copy[contactIndex].contactEmails[contactEmailIndex].isChecked = target.checked;
+            setModel(copy);
+        };
 
     const isSingleContact = contacts.length === 1;
     const isSingleGroup = groups.length === 1;

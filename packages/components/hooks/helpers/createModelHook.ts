@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { Api } from 'proton-shared/lib/interfaces';
+import { Api } from '@proton/shared/lib/interfaces';
 import useCachedModelResult from '../useCachedModelResult';
 import useApi from '../useApi';
 import useCache from '../useCache';

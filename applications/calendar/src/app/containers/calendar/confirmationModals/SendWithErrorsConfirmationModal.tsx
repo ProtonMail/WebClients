@@ -1,10 +1,10 @@
-import { getAttendeeEmail } from 'proton-shared/lib/calendar/attendees';
-import { reformatApiErrorMessage } from 'proton-shared/lib/calendar/helper';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
-import { SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
-import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
+import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
+import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/helper';
+import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
+import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import React from 'react';
-import { Alert, ErrorButton, FormModal } from 'react-components';
+import { Alert, ErrorButton, FormModal } from '@proton/components';
 import { c } from 'ttag';
 import { CleanSendIcsActionData, INVITE_ACTION_TYPES, InviteActions } from '../../../interfaces/Invite';
 

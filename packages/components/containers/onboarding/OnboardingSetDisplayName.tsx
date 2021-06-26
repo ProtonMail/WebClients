@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import onboardingDisplayName from 'design-system/assets/img/onboarding/display-name.svg';
+import onboardingDisplayName from '@proton/styles/assets/img/onboarding/display-name.svg';
 
 import { InputFieldTwo } from '../../components';
 import OnboardingContent, { Props as OnboardingContentProps } from './OnboardingContent';

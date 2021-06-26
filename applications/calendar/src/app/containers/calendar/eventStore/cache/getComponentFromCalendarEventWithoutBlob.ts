@@ -1,9 +1,9 @@
 import { fromUnixTime } from 'date-fns';
-import { CalendarEventWithoutBlob } from 'proton-shared/lib/interfaces/calendar';
-import { VcalRrulePropertyValue } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { getDateProperty, getDateTimeProperty } from 'proton-shared/lib/calendar/vcalConverter';
-import { fromUTCDate } from 'proton-shared/lib/date/timezone';
-import { fromRruleString } from 'proton-shared/lib/calendar/vcal';
+import { CalendarEventWithoutBlob } from '@proton/shared/lib/interfaces/calendar';
+import { VcalRrulePropertyValue } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import { getDateProperty, getDateTimeProperty } from '@proton/shared/lib/calendar/vcalConverter';
+import { fromUTCDate } from '@proton/shared/lib/date/timezone';
+import { fromRruleString } from '@proton/shared/lib/calendar/vcal';
 import { MetadataVcalVeventComponent } from '../interface';
 import { toExdate } from '../../recurrence/helper';
 import { utcTimestampToTimezone, getRecurrenceIdValueFromTimestamp } from '../../event/getEventHelper';

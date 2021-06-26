@@ -3,8 +3,7 @@ const webpack = require('webpack');
 
 function main(config) {
     const compiler = webpack(config);
-    const server = new WebpackDevServer(compiler, config.devServer);
-    return server;
+    return new WebpackDevServer(compiler, config.devServer);
 }
 
 module.exports = main;

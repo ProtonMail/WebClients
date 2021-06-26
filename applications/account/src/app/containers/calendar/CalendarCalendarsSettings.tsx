@@ -1,4 +1,4 @@
-import { getIsPersonalCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
+import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import React from 'react';
 import {
     ButtonLike,
@@ -12,14 +12,14 @@ import {
     SettingsSection,
     SubscribedCalendarsSection,
     useFeature,
-} from 'react-components';
+} from '@proton/components';
 import { c } from 'ttag';
 
-import { Address, UserModel } from 'proton-shared/lib/interfaces';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { Address, UserModel } from '@proton/shared/lib/interfaces';
+import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { partition } from 'proton-shared/lib/helpers/array';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { partition } from '@proton/shared/lib/helpers/array';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import PrivateMainSettingsAreaWithPermissions from '../../content/PrivateMainSettingsAreaWithPermissions';
 
 const generalSettingsConfig = (showCalendarSubscription: boolean) => ({

@@ -10,9 +10,9 @@ import {
     LocationErrorBoundary,
     MailShortcutsModal,
     BetaOnboardingModal,
-} from 'react-components';
-import { Label } from 'proton-shared/lib/interfaces/Label';
-import { MailSettings } from 'proton-shared/lib/interfaces';
+} from '@proton/components';
+import { Label } from '@proton/shared/lib/interfaces/Label';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import PrivateLayout from '../components/layout/PrivateLayout';
 import MailboxContainer from './mailbox/MailboxContainer';
 import { HUMAN_TO_LABEL_IDS } from '../constants';

@@ -20,7 +20,7 @@ const COMPAT_HASHES_MAP = {
     'protonmail-web-v4': 'aac2baaadd06b04fea46c5e330adf62834162679',
     'proton-calendar': '49efd660fb00f0d5077e64b6d4c746443e7c8ab2',
     'proton-contacts': '2c7f0fb2349d87aa38a32a4c764f9009c400691f',
-    'proton-mail-settings': 'c21c22834aed6a56240ab329b50aefad5fa653da'
+    'proton-mail-settings': 'c21c22834aed6a56240ab329b50aefad5fa653da',
 };
 
 const getAppEnvInfo = () => {
@@ -72,12 +72,12 @@ async function getDeployedLocales() {
         info(`installing locales: ${version} from ${new Date(buildDate)}`, false);
 
         curl(`https://api.github.com/repos/ProtonMail/proton-translations/tarball/${locales}`, ['-L'], {
-            encoding: null
+            encoding: null,
         })
             .stdout.pipe(
                 tar.x({
                     strip: 1,
-                    C: OUTPUT_CLONE // alias for cwd:'some-dir', also ok
+                    C: OUTPUT_CLONE, // alias for cwd:'some-dir', also ok
                 })
             )
             .on('error', (e) => {
@@ -120,7 +120,7 @@ async function main() {
         `rm -rf ${OUTPUT_CLONE} || echo`,
         `git clone ${I18N_DEPENDENCY_REPO} --depth 1 --branch ${I18N_DEPENDENCY_BRANCH} ${OUTPUT_CLONE}`,
         `cd ${OUTPUT_CLONE} && git log --format="%H" -n 1 > .version && cd -`,
-        `rm -rf ${path.join(OUTPUT_CLONE, '.git')}`
+        `rm -rf ${path.join(OUTPUT_CLONE, '.git')}`,
     ].join(' && ');
 
     await bash(commands);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
+import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import StandardPublicApp from './StandardPublicApp';
 import MinimalLoginContainer from '../login/MinimalLoginContainer';
 import { OnLoginCallback } from './interface';

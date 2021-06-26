@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { RIGHT_TO_LEFT } from 'proton-shared/lib/constants';
+import { RIGHT_TO_LEFT } from '@proton/shared/lib/constants';
 
 import { Select } from '../../components';
 

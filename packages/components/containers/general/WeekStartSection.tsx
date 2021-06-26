@@ -1,11 +1,11 @@
 import React from 'react';
 import { c } from 'ttag';
-import { SETTINGS_WEEK_START } from 'proton-shared/lib/interfaces';
-import { updateWeekStart } from 'proton-shared/lib/api/settings';
-import { loadDateLocale } from 'proton-shared/lib/i18n/loadLocale';
-import { dateLocaleCode } from 'proton-shared/lib/i18n';
-import { getDefaultWeekStartsOn } from 'proton-shared/lib/settings/helper';
-import { getBrowserLocale } from 'proton-shared/lib/i18n/helper';
+import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
+import { updateWeekStart } from '@proton/shared/lib/api/settings';
+import { loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
+import { dateLocaleCode } from '@proton/shared/lib/i18n';
+import { getDefaultWeekStartsOn } from '@proton/shared/lib/settings/helper';
+import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 
 import { Option, SelectTwo } from '../../components';
 import { useApi, useEventManager, useNotifications, useLoading, useUserSettings } from '../../hooks';

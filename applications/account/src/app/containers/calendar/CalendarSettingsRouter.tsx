@@ -1,4 +1,4 @@
-import { UserModel } from 'proton-shared/lib/interfaces';
+import { UserModel } from '@proton/shared/lib/interfaces';
 import React, { useMemo } from 'react';
 import { Switch, Route, Redirect, useRouteMatch, useLocation } from 'react-router-dom';
 import {
@@ -6,15 +6,15 @@ import {
     useCalendars,
     useCalendarsKeysSettingsListener,
     useCalendarUserSettings,
-} from 'react-components';
+} from '@proton/components';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getDefaultCalendar,
     getIsCalendarDisabled,
     getProbablyActiveCalendars,
-} from 'proton-shared/lib/calendar/calendar';
+} from '@proton/shared/lib/calendar/calendar';
 
-import { getActiveAddresses } from 'proton-shared/lib/helpers/address';
+import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 
 import PrivateMainAreaLoading from '../../components/PrivateMainAreaLoading';
 

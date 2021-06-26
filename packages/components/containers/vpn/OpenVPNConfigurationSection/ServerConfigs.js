@@ -1,6 +1,6 @@
 import React, { useMemo, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { groupWith, compare } from 'proton-shared/lib/helpers/array';
+import { groupWith, compare } from '@proton/shared/lib/helpers/array';
 import { Details, Summary } from '../../../components';
 import { useUser, useUserVPN } from '../../../hooks';
 import { classnames } from '../../../helpers';

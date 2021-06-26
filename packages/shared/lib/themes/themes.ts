@@ -1,21 +1,21 @@
 // @ts-nocheck Disable import errors from ds
-import themeDefaultSvg from 'design-system/assets/img/themes/theme-default.svg';
-import defaultTheme from 'design-system/scss/themes/default-theme.scss';
+import themeDefaultSvg from '@proton/styles/assets/img/themes/theme-default.svg';
+import defaultTheme from '@proton/styles/scss/themes/default-theme.scss';
 
-import themeDarkSvg from 'design-system/assets/img/themes/theme-dark.svg';
-import darkTheme from 'design-system/scss/themes/dark-theme.scss';
+import themeDarkSvg from '@proton/styles/assets/img/themes/theme-dark.svg';
+import darkTheme from '@proton/styles/scss/themes/dark-theme.scss';
 
-import themeLightSvg from 'design-system/assets/img/themes/theme-light.svg';
-import lightTheme from 'design-system/scss/themes/light-theme.scss';
+import themeLightSvg from '@proton/styles/assets/img/themes/theme-light.svg';
+import lightTheme from '@proton/styles/scss/themes/light-theme.scss';
 
-import themeMonokaiSvg from 'design-system/assets/img/themes/theme-monokai.svg';
-import monokaiTheme from 'design-system/scss/themes/monokai-theme.scss';
+import themeMonokaiSvg from '@proton/styles/assets/img/themes/theme-monokai.svg';
+import monokaiTheme from '@proton/styles/scss/themes/monokai-theme.scss';
 
-import themeContrastSvg from 'design-system/assets/img/themes/theme-contrast.svg';
-import contrastTheme from 'design-system/scss/themes/contrast-theme.scss';
+import themeContrastSvg from '@proton/styles/assets/img/themes/theme-contrast.svg';
+import contrastTheme from '@proton/styles/scss/themes/contrast-theme.scss';
 
-import themeLegacySvg from 'design-system/assets/img/themes/theme-legacy.svg';
-import legacyTheme from 'design-system/scss/themes/legacy-theme.scss';
+import themeLegacySvg from '@proton/styles/assets/img/themes/theme-legacy.svg';
+import legacyTheme from '@proton/styles/scss/themes/legacy-theme.scss';
 
 import { c } from 'ttag';
 

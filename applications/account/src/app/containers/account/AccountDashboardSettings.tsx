@@ -15,14 +15,14 @@ import {
     useSubscription,
     useOrganization,
     useLoad,
-} from 'react-components';
-import { UserModel, Plan, PlanIDs } from 'proton-shared/lib/interfaces';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { DEFAULT_CYCLE, PLAN_SERVICES, CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
-import { toMap } from 'proton-shared/lib/helpers/object';
-import { SUBSCRIPTION_STEPS } from 'react-components/containers/payments/subscription/constants';
-import { getPlanIDs } from 'proton-shared/lib/helpers/subscription';
-import { switchPlan } from 'proton-shared/lib/helpers/planIDs';
+} from '@proton/components';
+import { UserModel, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { DEFAULT_CYCLE, PLAN_SERVICES, CYCLE, CURRENCIES } from '@proton/shared/lib/constants';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 
 export const getDashboardPage = ({ user }: { user: UserModel }) => {

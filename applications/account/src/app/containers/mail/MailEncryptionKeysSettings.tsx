@@ -7,7 +7,7 @@ import {
     AddressKeysSection,
     UserKeysSection,
     SettingsPropsShared,
-} from 'react-components';
+} from '@proton/components';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 

@@ -1,11 +1,11 @@
-import { VcalDateOrDateTimeProperty } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { VcalDateOrDateTimeProperty } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import {
     getDateOrDateTimeProperty,
     getDateProperty,
     getDateTimeProperty,
-} from 'proton-shared/lib/calendar/vcalConverter';
-import { getIsPropertyAllDay } from 'proton-shared/lib/calendar/vcalHelper';
-import { toUTCDate } from 'proton-shared/lib/date/timezone';
+} from '@proton/shared/lib/calendar/vcalConverter';
+import { getIsPropertyAllDay } from '@proton/shared/lib/calendar/vcalHelper';
+import { toUTCDate } from '@proton/shared/lib/date/timezone';
 
 export const getStartDateTimeMerged = (
     newProperty: VcalDateOrDateTimeProperty,

@@ -1,10 +1,10 @@
-import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
-import { getAttachments, hasFlag } from 'proton-shared/lib/mail/messages';
+import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
+import { getAttachments, hasFlag } from '@proton/shared/lib/mail/messages';
 import React, { MutableRefObject } from 'react';
 import { c } from 'ttag';
 import { isToday, isYesterday } from 'date-fns';
-import { Button, classnames, Tooltip, Icon, EllipsisLoader, useMailSettings } from 'react-components';
-import { metaKey, shiftKey, altKey } from 'proton-shared/lib/helpers/browser';
+import { Button, classnames, Tooltip, Icon, EllipsisLoader, useMailSettings } from '@proton/components';
+import { metaKey, shiftKey, altKey } from '@proton/shared/lib/helpers/browser';
 import { formatSimpleDate } from '../../helpers/date';
 import { MessageExtended } from '../../models/message';
 import AttachmentsButton from '../attachment/AttachmentsButton';

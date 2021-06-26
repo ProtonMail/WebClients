@@ -1,12 +1,12 @@
 import { useCallback } from 'react';
-import { getPersonalPartMap, readPersonalPart } from 'proton-shared/lib/calendar/deserialize';
-import { splitKeys } from 'proton-shared/lib/keys';
-import { getAddressesMembersMap } from 'proton-shared/lib/keys/calendarKeys';
+import { getPersonalPartMap, readPersonalPart } from '@proton/shared/lib/calendar/deserialize';
+import { splitKeys } from '@proton/shared/lib/keys';
+import { getAddressesMembersMap } from '@proton/shared/lib/keys/calendarKeys';
 import {
     CalendarEvent,
     DecryptedPersonalVeventMapResult,
     DecryptedVeventResult,
-} from 'proton-shared/lib/interfaces/calendar';
+} from '@proton/shared/lib/interfaces/calendar';
 import { useGetAddresses } from './useAddresses';
 import { useGetAddressKeys } from './useGetAddressKeys';
 import { useGetCalendarBootstrap } from './useGetCalendarBootstrap';

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { c } from 'ttag';
-import { SETTINGS_PASSWORD_MODE } from 'proton-shared/lib/interfaces';
+import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 
 import { Button, Info, Loader, Toggle } from '../../components';
 import { useAddresses, useModals, useUserSettings } from '../../hooks';

@@ -1,7 +1,7 @@
 import React, { RefObject } from 'react';
 import { c } from 'ttag';
-import { useHandler, useNotifications } from 'react-components';
-import { Abortable } from 'react-components/hooks/useHandler';
+import { useHandler, useNotifications } from '@proton/components';
+import { Abortable } from '@proton/components/hooks/useHandler';
 import SendingMessageNotification, {
     createSendingMessageNotificationManager,
     SendingMessageNotificationManager,

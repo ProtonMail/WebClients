@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, useRef } from 'react';
 import { c } from 'ttag';
-import { LINK_TYPES } from 'proton-shared/lib/constants';
-import { linkToType, addLinkPrefix } from 'proton-shared/lib/helpers/url';
+import { LINK_TYPES } from '@proton/shared/lib/constants';
+import { linkToType, addLinkPrefix } from '@proton/shared/lib/helpers/url';
 
 import FormModal from '../../modal/FormModal';
 import { PrimaryButton } from '../../button';

@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 import React, { useState } from 'react';
-import { BRAND_NAME } from 'proton-shared/lib/constants';
-import { Button, Tabs, useLoading, useFormErrors, PhoneInput, InputFieldTwo } from 'react-components';
-import { ResetPasswordState, ResetPasswordSetters } from 'react-components/containers/resetPassword/useResetPassword';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { Button, Tabs, useLoading, useFormErrors, PhoneInput, InputFieldTwo } from '@proton/components';
+import { ResetPasswordState, ResetPasswordSetters } from '@proton/components/containers/resetPassword/useResetPassword';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 interface Props {
     onSubmit: () => Promise<void>;

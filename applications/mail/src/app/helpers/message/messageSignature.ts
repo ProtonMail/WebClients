@@ -1,7 +1,7 @@
-import { MailSettings } from 'proton-shared/lib/interfaces';
-import { PM_SIGNATURE } from 'proton-shared/lib/constants';
-import { isPlainText } from 'proton-shared/lib/mail/messages';
-import { message } from 'proton-shared/lib/sanitize';
+import { MailSettings } from '@proton/shared/lib/interfaces';
+import { PM_SIGNATURE } from '@proton/shared/lib/constants';
+import { isPlainText } from '@proton/shared/lib/mail/messages';
+import { message } from '@proton/shared/lib/sanitize';
 
 import { dedentTpl } from '../dedent';
 import { replaceLineBreaks } from '../string';

@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
-import { generateUID } from 'react-components';
-import { range } from 'proton-shared/lib/helpers/array';
+import { generateUID } from '@proton/components';
+import { range } from '@proton/shared/lib/helpers/array';
 
 import { Element } from '../models/element';
 
@@ -16,10 +16,10 @@ export const usePlaceholders = (
         [loading, expectedLength]
     );
 
-    const elements: Element[] = useMemo(() => (loading ? placeholders : (inputElements as Element[])), [
-        loading,
-        inputElements,
-    ]);
+    const elements: Element[] = useMemo(
+        () => (loading ? placeholders : (inputElements as Element[])),
+        [loading, inputElements]
+    );
 
     return elements;
 };

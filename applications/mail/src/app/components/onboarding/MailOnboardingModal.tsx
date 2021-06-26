@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import onboardingMailWelcome from 'design-system/assets/img/onboarding/mail-welcome.svg';
-import onboardingImportAssistant from 'design-system/assets/img/onboarding/import-assistant.svg';
+import onboardingMailWelcome from '@proton/styles/assets/img/onboarding/mail-welcome.svg';
+import onboardingImportAssistant from '@proton/styles/assets/img/onboarding/import-assistant.svg';
 import {
     OnboardingContent,
     OnboardingModal,
@@ -12,9 +12,9 @@ import {
     useFeature,
     useImporters,
     FeatureCode,
-} from 'react-components';
-import { getAppName } from 'proton-shared/lib/apps/helper';
-import { APPS } from 'proton-shared/lib/constants';
+} from '@proton/components';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
 
 const MailOnboardingModal = (props: any) => {
     const appName = getAppName(APPS.PROTONMAIL);

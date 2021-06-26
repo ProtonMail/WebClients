@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT } from 'proton-shared/lib/constants';
-import { doNotWindowOpen } from 'proton-shared/lib/helpers/browser';
-import paypalSvg from 'design-system/assets/img/bank-icons/paypal.svg';
+import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT } from '@proton/shared/lib/constants';
+import { doNotWindowOpen } from '@proton/shared/lib/helpers/browser';
+import paypalSvg from '@proton/styles/assets/img/bank-icons/paypal.svg';
 import { c } from 'ttag';
 
 import { Alert, DoNotWindowOpenAlertError, Price, Loader } from '../../components';

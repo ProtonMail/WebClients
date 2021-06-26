@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { ADDRESS_COMPONENTS } from 'proton-shared/lib/contacts/constants';
+import { ADDRESS_COMPONENTS } from '@proton/shared/lib/contacts/constants';
 import { classnames, generateUID } from '../../helpers';
 import Input from '../input/Input';
 
@@ -20,12 +20,14 @@ const ContactAdrField = ({ value, onChange }: Props) => {
     const [uid] = useState(generateUID('contact-adr'));
     const [address, setAddress] = useState(initialAddress(value));
 
-    const handleChange = (index: number) => ({ target }: ChangeEvent<HTMLInputElement>) => {
-        const newAddress = [...address];
-        newAddress[index] = target.value;
-        setAddress(newAddress);
-        onChange(newAddress);
-    };
+    const handleChange =
+        (index: number) =>
+        ({ target }: ChangeEvent<HTMLInputElement>) => {
+            const newAddress = [...address];
+            newAddress[index] = target.value;
+            setAddress(newAddress);
+            onChange(newAddress);
+        };
 
     return (
         <>

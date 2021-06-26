@@ -1,11 +1,11 @@
-import { APPS } from 'proton-shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import React from 'react';
 import {
     PrivateHeader,
     useActiveBreakpoint,
     TopNavbarListItemContactsDropdown,
     TopNavbarListItemSettingsDropdown,
-} from 'react-components';
+} from '@proton/components';
 import { c } from 'ttag';
 
 interface Props {

@@ -1,4 +1,4 @@
-import { Organization } from 'proton-shared/lib/interfaces';
+import { Organization } from '@proton/shared/lib/interfaces';
 import React from 'react';
 
 import { useUser } from '../../hooks';

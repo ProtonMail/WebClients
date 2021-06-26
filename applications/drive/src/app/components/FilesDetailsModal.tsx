@@ -1,7 +1,16 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Row, Label, Field, DialogModal, HeaderModal, InnerModal, FooterModal, PrimaryButton } from 'react-components';
+import {
+    Row,
+    Label,
+    Field,
+    DialogModal,
+    HeaderModal,
+    InnerModal,
+    FooterModal,
+    PrimaryButton,
+} from '@proton/components';
 
 import { FileBrowserItem } from './FileBrowser/interfaces';
 import SizeCell from './FileBrowser/ListView/Cells/SizeCell';

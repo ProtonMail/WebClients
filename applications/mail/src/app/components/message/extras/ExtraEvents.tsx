@@ -5,14 +5,14 @@ import {
     getIsCalendarDisabled,
     getMaxUserCalendarsDisabled,
     getProbablyActiveCalendars,
-} from 'proton-shared/lib/calendar/calendar';
-import { getIsPersonalCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
-import { unary } from 'proton-shared/lib/helpers/function';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
-import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
-import { RequireSome } from 'proton-shared/lib/interfaces/utils';
-import { getAttachments } from 'proton-shared/lib/mail/messages';
+} from '@proton/shared/lib/calendar/calendar';
+import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
+import { unary } from '@proton/shared/lib/helpers/function';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import { getAttachments } from '@proton/shared/lib/mail/messages';
 import React, { useEffect, useState } from 'react';
 import {
     useAddresses,
@@ -24,7 +24,7 @@ import {
     useLoading,
     useUser,
     useUserSettings,
-} from 'react-components';
+} from '@proton/components';
 import { useAttachmentCache } from '../../../containers/AttachmentProvider';
 import { updateMessageCache, useMessageCache } from '../../../containers/MessageProvider';
 import { formatDownload } from '../../../helpers/attachment/attachmentDownloader';

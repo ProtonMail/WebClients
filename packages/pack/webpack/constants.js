@@ -1,6 +1,4 @@
-const { getSource } = require('./helpers/source');
-
-const bindNodeModulesPrefix = (name) => getSource(`node_modules/${name}`);
+const bindNodeModulesPrefix = (name) => require.resolve(name);
 
 const OPENPGP_FILES = Object.fromEntries(
     Object.entries({
@@ -14,14 +12,14 @@ const OPENPGP_FILES = Object.fromEntries(
 const BABEL_INCLUDE_NODE_MODULES = [
     'asmcrypto.js',
     'pmcrypto',
-    'proton-pack',
-    'proton-shared',
+    '@proton/pack',
+    '@proton/shared',
+    '@proton/get-random-values',
+    '@proton/srp',
+    '@proton/components',
     'mutex-browser',
     'interval-tree',
-    'get-random-values',
     'sieve.js',
-    'pm-srp',
-    'react-components',
     'idb'
 ];
 const BABEL_EXCLUDE_FILES = ['mailparser.js'];

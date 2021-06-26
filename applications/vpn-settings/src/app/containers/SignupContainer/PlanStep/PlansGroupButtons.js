@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ButtonGroup, Button, classnames } from 'react-components';
-import { CURRENCIES, CYCLE } from 'proton-shared/lib/constants';
+import { ButtonGroup, Button, classnames } from '@proton/components';
+import { CURRENCIES, CYCLE } from '@proton/shared/lib/constants';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 

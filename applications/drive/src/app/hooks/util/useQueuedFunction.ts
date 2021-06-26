@@ -1,5 +1,5 @@
-import { noop } from 'proton-shared/lib/helpers/function';
-import { useCache } from 'react-components';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { useCache } from '@proton/components';
 
 type FunctionQueue<R> = [number, (() => Promise<R>)[]];
 

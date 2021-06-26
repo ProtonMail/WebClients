@@ -5,7 +5,7 @@ import {
     SidebarListItemContent,
     SidebarListItemContentIcon,
     SidebarListItemLink,
-} from 'react-components';
+} from '@proton/components';
 
 const SettingsListItem = ({ to, icon, children }: { to: string; icon: string; children: React.ReactNode }) => (
     <SidebarListItem>

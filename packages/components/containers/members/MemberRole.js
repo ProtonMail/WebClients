@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { USER_ROLES } from 'proton-shared/lib/constants';
+import { USER_ROLES } from '@proton/shared/lib/constants';
 
 const SUPER_ADMIN_ROLE = 'superman';
 

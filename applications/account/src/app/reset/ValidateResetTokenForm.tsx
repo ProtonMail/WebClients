@@ -8,10 +8,10 @@ import {
     useModals,
     ConfirmModal,
     InputFieldTwo,
-} from 'react-components';
-import { ResetPasswordSetters, ResetPasswordState } from 'react-components/containers/resetPassword/useResetPassword';
-import { BRAND_NAME } from 'proton-shared/lib/constants';
-import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
+} from '@proton/components';
+import { ResetPasswordSetters, ResetPasswordState } from '@proton/components/containers/resetPassword/useResetPassword';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 interface Props {
     onSubmit: () => Promise<void>;

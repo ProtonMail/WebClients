@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { SETTINGS_VIEW } from 'proton-shared/lib/calendar/constants';
+import { SETTINGS_VIEW } from '@proton/shared/lib/calendar/constants';
 
 import { SelectTwo, Option } from '../../../components';
 

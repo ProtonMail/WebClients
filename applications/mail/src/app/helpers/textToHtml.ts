@@ -1,5 +1,5 @@
 import markdownit from 'markdown-it';
-import { MailSettings } from 'proton-shared/lib/interfaces';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { templateBuilder } from './message/messageSignature';
 import { toText } from './parserHtml';

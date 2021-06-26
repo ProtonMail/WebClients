@@ -9,11 +9,11 @@ import {
     binaryStringToArray,
     concatArrays,
 } from 'pmcrypto';
-import { getAttachment } from 'proton-shared/lib/api/attachments';
-import { decodeBase64 } from 'proton-shared/lib/helpers/base64';
-import { Api } from 'proton-shared/lib/interfaces';
-import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
-import { getSessionKey } from 'proton-shared/lib/mail/send/attachments';
+import { getAttachment } from '@proton/shared/lib/api/attachments';
+import { decodeBase64 } from '@proton/shared/lib/helpers/base64';
+import { Api } from '@proton/shared/lib/interfaces';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { MessageKeys, MessageVerification } from '../../models/message';
 

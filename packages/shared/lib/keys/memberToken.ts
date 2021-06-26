@@ -1,5 +1,5 @@
 import { decryptMessage, encryptMessage, getMessage, OpenPGPKey, VERIFICATION_STATUS } from 'pmcrypto';
-import getRandomValues from 'get-random-values';
+import getRandomValues from '@proton/get-random-values';
 
 import { uint8ArrayToBase64String } from '../helpers/encoding';
 

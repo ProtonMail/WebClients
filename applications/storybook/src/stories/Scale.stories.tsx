@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Scale } from 'react-components';
+import { Scale } from '@proton/components';
 
 import mdx from './Scale.mdx';
 

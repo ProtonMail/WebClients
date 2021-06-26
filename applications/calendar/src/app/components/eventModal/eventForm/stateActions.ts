@@ -1,5 +1,5 @@
-import { addDays, isSameDay } from 'proton-shared/lib/date-fns-utc';
-import { EventModel } from 'proton-shared/lib/interfaces/calendar';
+import { addDays, isSameDay } from '@proton/shared/lib/date-fns-utc';
+import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import { getInitialDateTimeModel } from './state';
 import { getTimeInUtc } from './time';
 

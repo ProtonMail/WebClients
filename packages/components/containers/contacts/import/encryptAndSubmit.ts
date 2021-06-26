@@ -1,28 +1,28 @@
-import { addContacts, labelContactEmails, labelContacts } from 'proton-shared/lib/api/contacts';
-import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
-import { createContactGroup } from 'proton-shared/lib/api/labels';
-import { API_CODES, HOUR, LABEL_COLORS } from 'proton-shared/lib/constants';
-import { CATEGORIES, OVERWRITE } from 'proton-shared/lib/contacts/constants';
-import { prepareContact } from 'proton-shared/lib/contacts/encrypt';
-import { getContactCategories, getContactEmails } from 'proton-shared/lib/contacts/properties';
-import { chunk, uniqueBy } from 'proton-shared/lib/helpers/array';
-import { noop, randomIntFromInterval } from 'proton-shared/lib/helpers/function';
-import { wait } from 'proton-shared/lib/helpers/promise';
-import { Api, KeyPair, Label, SimpleMap } from 'proton-shared/lib/interfaces';
+import { addContacts, labelContactEmails, labelContacts } from '@proton/shared/lib/api/contacts';
+import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
+import { createContactGroup } from '@proton/shared/lib/api/labels';
+import { API_CODES, HOUR, LABEL_COLORS } from '@proton/shared/lib/constants';
+import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
+import { prepareContact } from '@proton/shared/lib/contacts/encrypt';
+import { getContactCategories, getContactEmails } from '@proton/shared/lib/contacts/properties';
+import { chunk, uniqueBy } from '@proton/shared/lib/helpers/array';
+import { noop, randomIntFromInterval } from '@proton/shared/lib/helpers/function';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import { Api, KeyPair, Label, SimpleMap } from '@proton/shared/lib/interfaces';
 import {
     ContactProperties,
     IMPORT_GROUPS_ACTION,
     ImportCategories,
     ImportedContact,
-} from 'proton-shared/lib/interfaces/contacts';
-import { getContactId, splitErrors, extractContactImportCategories } from 'proton-shared/lib/contacts/helpers/import';
+} from '@proton/shared/lib/interfaces/contacts';
+import { getContactId, splitErrors, extractContactImportCategories } from '@proton/shared/lib/contacts/helpers/import';
 import {
     AddContactsApiResponse,
     AddContactsApiResponses,
     EncryptedContact,
     ImportContactsModel,
-} from 'proton-shared/lib/interfaces/contacts/Import';
-import { IMPORT_CONTACT_ERROR_TYPE, ImportContactError } from 'proton-shared/lib/contacts/errors/ImportContactError';
+} from '@proton/shared/lib/interfaces/contacts/Import';
+import { IMPORT_CONTACT_ERROR_TYPE, ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';
 
 const { SINGLE_SUCCESS } = API_CODES;
 const BATCH_SIZE = 10;

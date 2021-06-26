@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, Tooltip } from 'react-components';
+import { Icon, Tooltip } from '@proton/components';
 import { c } from 'ttag';
 
 import { MessageExtended } from '../../../models/message';

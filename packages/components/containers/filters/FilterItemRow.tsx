@@ -1,8 +1,8 @@
 import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { FILTER_STATUS } from 'proton-shared/lib/constants';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { toggleEnable, deleteFilter } from 'proton-shared/lib/api/filters';
+import { FILTER_STATUS } from '@proton/shared/lib/constants';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { toggleEnable, deleteFilter } from '@proton/shared/lib/api/filters';
 
 import { Alert, Toggle, DropdownActions, ConfirmModal, OrderableTableRow, Button } from '../../components';
 import { useApi, useModals, useEventManager, useLoading, useNotifications } from '../../hooks';

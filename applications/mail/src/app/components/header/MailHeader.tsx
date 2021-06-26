@@ -15,9 +15,9 @@ import {
     Icon,
     useFeature,
     FeatureCode,
-} from 'react-components';
-import { MAILBOX_LABEL_IDS, APPS } from 'proton-shared/lib/constants';
-import { Recipient } from 'proton-shared/lib/interfaces';
+} from '@proton/components';
+import { MAILBOX_LABEL_IDS, APPS } from '@proton/shared/lib/constants';
+import { Recipient } from '@proton/shared/lib/interfaces';
 import AdvancedSearchDropdown from './AdvancedSearchDropdown';
 import { extractSearchParameters, setParamsInUrl } from '../../helpers/mailboxUrl';
 import { Breakpoints } from '../../models/utils';

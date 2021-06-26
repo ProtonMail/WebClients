@@ -1,10 +1,10 @@
 import React, { useState, ChangeEvent, useEffect, createRef, RefObject } from 'react';
 import { c, msgid } from 'ttag';
 
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts/Contact';
-import { normalize } from 'proton-shared/lib/helpers/string';
-import { toMap } from 'proton-shared/lib/helpers/object';
-import { Recipient } from 'proton-shared/lib/interfaces/Address';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
+import { normalize } from '@proton/shared/lib/helpers/string';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { Recipient } from '@proton/shared/lib/interfaces/Address';
 
 import { Checkbox, SearchInput, PrimaryButton, FormModal } from '../../../components';
 import { useActiveBreakpoint, useUserSettings, useContactEmailsSortedByName } from '../../../hooks';
@@ -54,9 +54,8 @@ const ContactListModal = ({ onSubmit, onClose, inputValue, ...rest }: Props) => 
     const [isAllChecked, setIsAllChecked] = useState(false);
 
     const [filteredContactEmails, setFilteredContactEmails] = useState(contactEmails);
-    const [checkedContactEmailMap, setCheckedContactEmailMap] = useState<{ [key: string]: boolean }>(
-        initialCheckedContactEmailsMap
-    );
+    const [checkedContactEmailMap, setCheckedContactEmailMap] =
+        useState<{ [key: string]: boolean }>(initialCheckedContactEmailsMap);
     const [checkedContactEmails, setCheckedContactEmails] = useState<ContactEmail[]>([]);
     const totalChecked = checkedContactEmails.length;
 

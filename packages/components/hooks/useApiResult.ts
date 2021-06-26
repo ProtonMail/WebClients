@@ -35,7 +35,7 @@ const useApiResult = <R, F extends QueryFunction>(
     useEffect(() => {
         // If user has specified any dependencies, auto request
         if (dependencies) {
-            requestAndSetResults(...(([] as unknown) as Parameters<F>)).catch(() => {
+            requestAndSetResults(...([] as unknown as Parameters<F>)).catch(() => {
                 // catch the error to stop the "uncaught exception error"
             });
         }

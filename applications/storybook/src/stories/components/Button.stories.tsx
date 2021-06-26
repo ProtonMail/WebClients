@@ -9,7 +9,7 @@ import {
     RadioGroup,
     ButtonLike,
     Checkbox,
-} from 'react-components';
+} from '@proton/components';
 
 import mdx from './Button.mdx';
 

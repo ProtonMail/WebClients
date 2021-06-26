@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
-import { validateEmail, validatePhone } from 'proton-shared/lib/api/core/validate';
-import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
-import { emailValidator, requiredValidator } from 'proton-shared/lib/helpers/formValidators';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { validateEmail, validatePhone } from '@proton/shared/lib/api/core/validate';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 import {
     Button,
@@ -19,7 +19,7 @@ import {
     captureChallengeMessage,
     ChallengeResult,
     ChallengeRef,
-} from 'react-components';
+} from '@proton/components';
 
 import { SignupModel, SIGNUP_STEPS } from './interfaces';
 import Loader from './Loader';

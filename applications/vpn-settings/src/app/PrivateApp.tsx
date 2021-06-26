@@ -1,5 +1,5 @@
 import React from 'react';
-import { StandardPrivateApp } from 'react-components';
+import { StandardPrivateApp } from '@proton/components';
 import {
     UserModel,
     MailSettingsModel,
@@ -8,8 +8,8 @@ import {
     OrganizationModel,
     AddressesModel,
     PaymentMethodsModel,
-} from 'proton-shared/lib/models';
-import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
+} from '@proton/shared/lib/models';
+import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 const getAppContainer = () => import('./MainContainer');
 

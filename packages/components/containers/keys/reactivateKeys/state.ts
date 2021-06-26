@@ -1,6 +1,6 @@
 import { getKeys, OpenPGPKey } from 'pmcrypto';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { getRandomString } from 'proton-shared/lib/helpers/string';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { getRandomString } from '@proton/shared/lib/helpers/string';
 import {
     KeyReactivationRequestStateData,
     Status,
@@ -16,29 +16,27 @@ export const getInitialStates = async (initial: KeyReactivationRequest[]): Promi
     return Promise.all(
         initial.map(async (record) => {
             const keyStates = await Promise.all(
-                record.keysToReactivate.map(
-                    async (Key): Promise<KeyReactivationRequestStateData> => {
-                        try {
-                            const [key] = await getKeys(Key.PrivateKey);
-                            return {
-                                id: getRandomString(12),
-                                Key,
-                                key,
-                                fingerprint: key.getFingerprint(),
-                                status: Status.INACTIVE,
-                                result: undefined,
-                            };
-                        } catch (e) {
-                            return {
-                                id: getRandomString(12),
-                                Key,
-                                fingerprint: '-',
-                                status: Status.ERROR,
-                                result: undefined,
-                            };
-                        }
+                record.keysToReactivate.map(async (Key): Promise<KeyReactivationRequestStateData> => {
+                    try {
+                        const [key] = await getKeys(Key.PrivateKey);
+                        return {
+                            id: getRandomString(12),
+                            Key,
+                            key,
+                            fingerprint: key.getFingerprint(),
+                            status: Status.INACTIVE,
+                            result: undefined,
+                        };
+                    } catch (e) {
+                        return {
+                            id: getRandomString(12),
+                            Key,
+                            fingerprint: '-',
+                            status: Status.ERROR,
+                            result: undefined,
+                        };
                     }
-                )
+                })
             );
             return {
                 ...record,

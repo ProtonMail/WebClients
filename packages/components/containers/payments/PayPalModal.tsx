@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { c } from 'ttag';
-import { createToken, setPaymentMethod } from 'proton-shared/lib/api/payments';
-import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
+import { createToken, setPaymentMethod } from '@proton/shared/lib/api/payments';
+import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 
 import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 import { Alert, Button, FormModal, Loader, PrimaryButton } from '../../components';

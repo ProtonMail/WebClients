@@ -7,11 +7,11 @@ import {
     DecryptResultPmcrypto,
 } from 'pmcrypto';
 import processMIMESource from 'pmcrypto/lib/message/processMIME';
-import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
-import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { getDate, getParsedHeadersFirstValue, getSender, isMIME } from 'proton-shared/lib/mail/messages';
+import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { getDate, getParsedHeadersFirstValue, getSender, isMIME } from '@proton/shared/lib/mail/messages';
 import { c } from 'ttag';
-import { MIME_TYPES } from 'proton-shared/lib/constants';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { MessageErrors } from '../../models/message';
 import { AttachmentMime } from '../../models/attachment';
 import { convert } from '../attachment/attachmentConverter';

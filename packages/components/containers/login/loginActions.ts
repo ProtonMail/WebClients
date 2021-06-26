@@ -4,28 +4,28 @@ import {
     KeySalt as tsKeySalt,
     Member as tsMember,
     User as tsUser,
-} from 'proton-shared/lib/interfaces';
-import { AUTH_VERSION } from 'pm-srp';
+} from '@proton/shared/lib/interfaces';
+import { AUTH_VERSION } from '@proton/srp';
 import { c } from 'ttag';
-import { srpVerify } from 'proton-shared/lib/srp';
-import { upgradePassword } from 'proton-shared/lib/api/settings';
-import { auth2FA, getInfo, revoke } from 'proton-shared/lib/api/auth';
-import { getUser } from 'proton-shared/lib/api/user';
-import { getKeySalts } from 'proton-shared/lib/api/keys';
-import { HTTP_ERROR_CODES } from 'proton-shared/lib/errors';
-import { InfoResponse } from 'proton-shared/lib/authentication/interface';
-import loginWithFallback from 'proton-shared/lib/authentication/loginWithFallback';
-import { withAuthHeaders } from 'proton-shared/lib/fetch/headers';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { maybeResumeSessionByUser, persistSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
-import { MEMBER_PRIVATE, USER_ROLES } from 'proton-shared/lib/constants';
-import { queryAddresses } from 'proton-shared/lib/api/addresses';
-import { getHasV2KeysToUpgrade, upgradeV2KeysHelper } from 'proton-shared/lib/keys/upgradeKeysV2';
-import { traceError } from 'proton-shared/lib/helpers/sentry';
-import { getMember } from 'proton-shared/lib/api/members';
-import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
-import { handleSetupAddressKeys } from 'proton-shared/lib/keys/setupAddressKeys';
-import { wait } from 'proton-shared/lib/helpers/promise';
+import { srpVerify } from '@proton/shared/lib/srp';
+import { upgradePassword } from '@proton/shared/lib/api/settings';
+import { auth2FA, getInfo, revoke } from '@proton/shared/lib/api/auth';
+import { getUser } from '@proton/shared/lib/api/user';
+import { getKeySalts } from '@proton/shared/lib/api/keys';
+import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
+import { InfoResponse } from '@proton/shared/lib/authentication/interface';
+import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallback';
+import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { MEMBER_PRIVATE, USER_ROLES } from '@proton/shared/lib/constants';
+import { queryAddresses } from '@proton/shared/lib/api/addresses';
+import { getHasV2KeysToUpgrade, upgradeV2KeysHelper } from '@proton/shared/lib/keys/upgradeKeysV2';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
+import { getMember } from '@proton/shared/lib/api/members';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { handleSetupAddressKeys } from '@proton/shared/lib/keys/setupAddressKeys';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { getAuthTypes, handleUnlockKey } from './loginHelper';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';

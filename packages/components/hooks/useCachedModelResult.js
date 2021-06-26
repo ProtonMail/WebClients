@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useMemo } from 'react';
-import { STATUS } from 'proton-shared/lib/models/cache';
+import { STATUS } from '@proton/shared/lib/models/cache';
 
 const ERROR_IDX = 2;
 

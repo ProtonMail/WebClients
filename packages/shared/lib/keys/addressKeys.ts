@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import getRandomValues from 'get-random-values';
+import getRandomValues from '@proton/get-random-values';
 import {
     arrayToHexString,
     createMessage,

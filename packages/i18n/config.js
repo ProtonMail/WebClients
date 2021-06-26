@@ -17,16 +17,6 @@ const getPackageApp = () => {
     }
 };
 
-const PROTON_DEPENDENCIES = {
-    app: ['src/app'].concat(
-        ['react-components/{components,containers,helpers,hooks}', 'proton-shared/lib'].map(
-            (name) => `node_modules/${name}`
-        )
-    ),
-    reactComponents: ['{components,containers,helpers,hooks}'],
-    shared: ['lib']
-};
-
 /**
  * Detect the beta v4 -> we have a custom pot for this one
  * @return {Boolean}
@@ -51,7 +41,7 @@ const isWebClientLegacy = () => {
  */
 const isBetaAngularV4 = () => {
     const { name, 'version-beta': versionBeta, version } = getPackageApp();
-    const isV4 = version.startsWith('4') || versionBeta;
+    const isV4 = (version && version.startsWith('4')) || versionBeta;
     return isV4 && name === 'protonmail-web';
 };
 
@@ -111,6 +101,5 @@ module.exports = {
     getCrowdin,
     getFiles,
     getPackageApp,
-    ENV_FILE,
-    PROTON_DEPENDENCIES
+    ENV_FILE
 };

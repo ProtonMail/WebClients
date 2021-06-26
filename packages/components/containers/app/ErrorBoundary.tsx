@@ -1,6 +1,6 @@
 import React, { ErrorInfo } from 'react';
 
-import { traceError } from 'proton-shared/lib/helpers/sentry';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
 import GenericError from '../error/GenericError';
 
 interface Props {

@@ -1,14 +1,14 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { toMap } from 'proton-shared/lib/helpers/object';
-import { orderBy } from 'proton-shared/lib/helpers/array';
-import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { PLAN_SERVICES, PLAN_TYPES, CYCLE, PLANS, ADDON_NAMES, APPS, BLACK_FRIDAY } from 'proton-shared/lib/constants';
-import humanSize from 'proton-shared/lib/helpers/humanSize';
-import { getTimeRemaining } from 'proton-shared/lib/date/date';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { Plan, Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from 'proton-shared/lib/interfaces';
-import { getAppName } from 'proton-shared/lib/apps/helper';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { orderBy } from '@proton/shared/lib/helpers/array';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { PLAN_SERVICES, PLAN_TYPES, CYCLE, PLANS, ADDON_NAMES, APPS, BLACK_FRIDAY } from '@proton/shared/lib/constants';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { getTimeRemaining } from '@proton/shared/lib/date/date';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { Plan, Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 
 import { Time, Info } from '../../../components';
 import { useConfig } from '../../../hooks';

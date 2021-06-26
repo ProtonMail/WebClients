@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 import React, { useState } from 'react';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { isNumber } from 'proton-shared/lib/helpers/validators';
-import { numberValidator, requiredValidator } from 'proton-shared/lib/helpers/formValidators';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { isNumber } from '@proton/shared/lib/helpers/validators';
+import { numberValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { Button, useFormErrors, InputFieldTwo } from '../../../components';
 import { useLoading } from '../../../hooks';
 import { VerificationModel } from './interface';

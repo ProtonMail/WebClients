@@ -1,7 +1,7 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { DomainsModel } from 'proton-shared/lib/models';
-import { loadModels } from 'proton-shared/lib/models/helper';
+import { DomainsModel } from '@proton/shared/lib/models';
+import { loadModels } from '@proton/shared/lib/models/helper';
 
 import { Button, Loader } from '../../components';
 import { useApi, useCache, useOrganization, useDomains, useModals, useLoading } from '../../hooks';

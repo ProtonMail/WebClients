@@ -7,9 +7,9 @@ import {
     SidebarListItemContentIcon,
     SidebarListItemLink,
     useUser,
-} from 'react-components';
-import { UserModel } from 'proton-shared/lib/interfaces';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+} from '@proton/components';
+import { UserModel } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 import { getDashboardPage } from './AccountDashboardSettings';
 import { getPasswordAndRecoveryPage } from './AccountPasswordAndRecoverySettings';

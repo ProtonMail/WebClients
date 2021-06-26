@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { arrayMove, ContainerGetter, SortEndHandler } from 'react-sortable-hoc';
-import { updateFilterOrder } from 'proton-shared/lib/api/filters';
+import { updateFilterOrder } from '@proton/shared/lib/api/filters';
 
 import { Loader } from '../../components';
 import { useFilters, useApiWithoutResult, useEventManager } from '../../hooks';

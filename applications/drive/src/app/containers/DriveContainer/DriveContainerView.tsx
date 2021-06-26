@@ -2,7 +2,7 @@ import React, { useEffect, useState, useMemo, useRef } from 'react';
 import { RouteComponentProps } from 'react-router';
 import { c } from 'ttag';
 
-import { Toolbar, PrivateMainArea, useAppTitle } from 'react-components';
+import { Toolbar, PrivateMainArea, useAppTitle } from '@proton/components';
 
 import { useDriveActiveFolder } from '../../components/Drive/DriveFolderProvider';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';

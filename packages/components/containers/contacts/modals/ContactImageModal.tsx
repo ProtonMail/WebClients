@@ -1,8 +1,8 @@
 import React, { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
 
-import { resizeImage } from 'proton-shared/lib/helpers/image';
-import { CONTACT_IMG_SIZE } from 'proton-shared/lib/contacts/constants';
+import { resizeImage } from '@proton/shared/lib/helpers/image';
+import { CONTACT_IMG_SIZE } from '@proton/shared/lib/contacts/constants';
 
 import { useNotifications } from '../../../hooks';
 import { Row, Label, Field, Input, FileInput, FormModal } from '../../../components';

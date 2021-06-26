@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { noop } from '@proton/shared/lib/helpers/function';
 import {
     activateMemberAddressKeys,
     getAddressesWithKeysToActivate,
     generateAllPrivateMemberKeys,
     getAddressesWithKeysToGenerate,
-} from 'proton-shared/lib/keys';
-import { traceError } from 'proton-shared/lib/helpers/sentry';
+} from '@proton/shared/lib/keys';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import {
     useAuthentication,

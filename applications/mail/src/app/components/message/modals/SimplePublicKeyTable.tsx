@@ -1,12 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { Table, TableBody, TableRow, KeyWarningIcon, useActiveBreakpoint, useLoading, Loader } from 'react-components';
+import {
+    Table,
+    TableBody,
+    TableRow,
+    KeyWarningIcon,
+    useActiveBreakpoint,
+    useLoading,
+    Loader,
+} from '@proton/components';
 import { c } from 'ttag';
 import { algorithmInfo } from 'pmcrypto';
-import { getFormattedAlgorithmName } from 'proton-shared/lib/keys';
-import { dateLocale } from 'proton-shared/lib/i18n';
+import { getFormattedAlgorithmName } from '@proton/shared/lib/keys';
+import { dateLocale } from '@proton/shared/lib/i18n';
 import { isValid, format } from 'date-fns';
 
-import { ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
+import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 
 interface Props {
     contact: ContactWithBePinnedPublicKey;

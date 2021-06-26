@@ -9,8 +9,8 @@ import React, {
     Ref,
     RefObject,
 } from 'react';
-import { eachDayOfInterval, format, isSameDay } from 'proton-shared/lib/date-fns-utc';
-import { classnames } from 'react-components';
+import { eachDayOfInterval, format, isSameDay } from '@proton/shared/lib/date-fns-utc';
+import { classnames } from '@proton/components';
 
 import handleTimeGridMouseDown from './interactions/timeGridMouseHandler';
 import handleDayGridMouseDown from './interactions/dayGridMouseHandler';

@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
-import { APP_NAMES, APPS, isSSOMode, isStandaloneMode } from 'proton-shared/lib/constants';
-import { getAppHref, getAppHrefBundle } from 'proton-shared/lib/apps/helper';
+import { APP_NAMES, APPS, isSSOMode, isStandaloneMode } from '@proton/shared/lib/constants';
+import { getAppHref, getAppHrefBundle } from '@proton/shared/lib/apps/helper';
 
 import { useConfig, useAuthentication } from '../../hooks';
 

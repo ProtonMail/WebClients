@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { STICKY_LABELS } from 'proton-shared/lib/constants';
+import { STICKY_LABELS } from '@proton/shared/lib/constants';
 
 import { Toggle } from '../../components';
 import { useToggle } from '../../hooks';

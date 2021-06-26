@@ -1,5 +1,5 @@
 import { arrayToBinaryString, arrayToHexString, binaryStringToArray, SHA256 } from 'pmcrypto';
-import getRandomValues from 'get-random-values';
+import getRandomValues from '@proton/get-random-values';
 
 import { stringToUint8Array, uint8ArrayToBase64String, uint8ArrayToString } from './encoding';
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Route, Switch } from 'react-router-dom';
-import { Sidebar, SidebarNav, SidebarList, SidebarListItem, useUser, SidebarBackButton } from 'react-components';
-import { APPS, APP_NAMES } from 'proton-shared/lib/constants';
-import { getSlugFromApp } from 'proton-shared/lib/apps/slugHelper';
+import { Sidebar, SidebarNav, SidebarList, SidebarListItem, useUser, SidebarBackButton } from '@proton/components';
+import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 
 import MailSettingsSidebarList from '../containers/mail/MailSettingsSidebarList';
 import CalendarSettingsSidebarList from '../containers/calendar/CalendarSettingsSidebarList';

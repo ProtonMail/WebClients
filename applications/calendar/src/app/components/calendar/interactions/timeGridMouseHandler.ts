@@ -1,4 +1,4 @@
-import { addMinutes } from 'proton-shared/lib/date-fns-utc';
+import { addMinutes } from '@proton/shared/lib/date-fns-utc';
 import { getKey, splitTimeGridEventsPerDay } from '../splitTimeGridEventsPerDay';
 import { getTargetIndex } from '../mouseHelpers/mathHelpers';
 import { getDiffTime, getNewTime, getSnappedDate, getTargetMinutes } from '../mouseHelpers/dateHelpers';

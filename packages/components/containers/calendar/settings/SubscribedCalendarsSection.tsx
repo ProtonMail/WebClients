@@ -1,7 +1,7 @@
-import { removeCalendar } from 'proton-shared/lib/api/calendars';
-import { MAX_SUBSCRIBED_CALENDARS_PER_USER } from 'proton-shared/lib/calendar/constants';
-import { Address, UserModel } from 'proton-shared/lib/interfaces';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { removeCalendar } from '@proton/shared/lib/api/calendars';
+import { MAX_SUBSCRIBED_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
+import { Address, UserModel } from '@proton/shared/lib/interfaces';
+import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import { Alert, ConfirmModal, ErrorButton } from '../../../components';

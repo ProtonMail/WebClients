@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, GIGA, MEMBER_ROLE } from 'proton-shared/lib/constants';
-import { createMember, createMemberAddress, updateRole } from 'proton-shared/lib/api/members';
-import { srpVerify } from 'proton-shared/lib/srp';
-import { Domain, Organization, Address, CachedOrganizationKey } from 'proton-shared/lib/interfaces';
-import { setupMemberKey } from 'proton-shared/lib/keys';
+import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, GIGA, MEMBER_ROLE } from '@proton/shared/lib/constants';
+import { createMember, createMemberAddress, updateRole } from '@proton/shared/lib/api/members';
+import { srpVerify } from '@proton/shared/lib/srp';
+import { Domain, Organization, Address, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
+import { setupMemberKey } from '@proton/shared/lib/keys';
 import { useApi, useNotifications, useEventManager, useGetAddresses } from '../../hooks';
 import { FormModal, Row, Field, Label, PasswordInput, Input, Toggle, SelectTwo, Option } from '../../components';
 
@@ -50,7 +50,10 @@ const MemberModal = ({ onClose, organization, organizationKey, domains, domainsA
     const domainOptions = domains.map(({ DomainName }) => ({ text: DomainName, value: DomainName }));
 
     // TODO: better typings
-    const handleChange = (key: string) => ({ target }: any) => update(key, target.value);
+    const handleChange =
+        (key: string) =>
+        ({ target }: any) =>
+            update(key, target.value);
     const handleChangePrivate = ({ target }: any) => update('private', target.checked);
     const handleChangeAdmin = ({ target }: any) => update('admin', target.checked);
     const handleChangeStorage = (value: any) => update('storage', value);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Badge } from 'react-components';
+import { Badge } from '@proton/components';
 
 import mdx from './Badge.mdx';
 

@@ -1,10 +1,10 @@
 import React, { useRef, ChangeEvent } from 'react';
-import { DENSITY } from 'proton-shared/lib/constants';
+import { DENSITY } from '@proton/shared/lib/constants';
 import { List, AutoSizer } from 'react-virtualized';
-import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
-import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
-import { UserSettings } from 'proton-shared/lib/interfaces';
-import { rootFontSize } from 'proton-shared/lib/helpers/dom';
+import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import { UserSettings } from '@proton/shared/lib/interfaces';
+import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import { classnames } from '../../helpers';
 import ContactGroupRow from './ContactGroupRow';
 

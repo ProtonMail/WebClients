@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import errorSvg from 'design-system/assets/img/errors/generic-error.svg';
-import { ADD_CARD_MODE, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
-import { doNotWindowOpen } from 'proton-shared/lib/helpers/browser';
+import errorSvg from '@proton/styles/assets/img/errors/generic-error.svg';
+import { ADD_CARD_MODE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { doNotWindowOpen } from '@proton/shared/lib/helpers/browser';
 
 import { useNotifications } from '../../hooks';
 import { FormModal, Alert, Loader, Button, PrimaryButton, DoNotWindowOpenAlertError } from '../../components';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { classnames, FloatingButton, Icon, SidebarPrimaryButton } from 'react-components';
+import { classnames, FloatingButton, Icon, SidebarPrimaryButton } from '@proton/components';
 
 import { useDriveActiveFolder } from '../Drive/DriveFolderProvider';
 import useFileUploadInput from '../../hooks/drive/useFileUploadInput';

@@ -1,4 +1,4 @@
-import { Recipient } from 'proton-shared/lib/interfaces';
+import { Recipient } from '@proton/shared/lib/interfaces';
 
 import { RecipientOrGroup, RecipientGroup } from '../../models/address';
 import {
@@ -18,13 +18,8 @@ const getGroupKey = (recipientGroup: RecipientGroup) =>
         .join('-')}`;
 
 export const useRecipientLabel = () => {
-    const {
-        contactsMap,
-        contactGroupsMap,
-        groupsWithContactsMap,
-        recipientsLabelCache,
-        groupsLabelCache,
-    } = useContactCache();
+    const { contactsMap, contactGroupsMap, groupsWithContactsMap, recipientsLabelCache, groupsLabelCache } =
+        useContactCache();
 
     const getRecipientLabel = (recipient: Recipient | undefined, detailed = false) => {
         if (!recipient) {

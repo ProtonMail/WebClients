@@ -1,6 +1,6 @@
 import React from 'react';
-import { CompatibilityCheckView, getCompatibilityList } from 'react-components';
-import { APPS } from 'proton-shared/lib/constants';
+import { CompatibilityCheckView, getCompatibilityList } from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
 
 export default { title: 'Proton UI / Errors' };
 
@@ -10,7 +10,7 @@ export {
     AccessDeniedError,
     NotFoundError,
     StandardLoadErrorPage,
-} from 'react-components';
+} from '@proton/components';
 
 export const CompatibilityCheck = () => {
     return <CompatibilityCheckView appName={APPS.PROTONMAIL} incompatibilities={getCompatibilityList()} />;

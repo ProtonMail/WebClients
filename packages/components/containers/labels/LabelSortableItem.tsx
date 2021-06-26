@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Label } from 'proton-shared/lib/interfaces/Label';
+import { Label } from '@proton/shared/lib/interfaces/Label';
 
 import { OrderableTableRow, Icon } from '../../components';
 

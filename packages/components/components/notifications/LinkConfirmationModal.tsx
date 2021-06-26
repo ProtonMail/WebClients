@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { isEdge, isIE11, openNewTab } from 'proton-shared/lib/helpers/browser';
-import { updateConfirmLink } from 'proton-shared/lib/api/mailSettings';
+import { isEdge, isIE11, openNewTab } from '@proton/shared/lib/helpers/browser';
+import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';
 import { useApi, useEventManager } from '../../hooks';
 import { ConfirmModal } from '../modal';
 import { Button } from '../button';

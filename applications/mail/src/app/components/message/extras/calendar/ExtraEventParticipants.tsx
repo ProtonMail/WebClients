@@ -1,6 +1,6 @@
-import { Participant } from 'proton-shared/lib/interfaces/calendar';
+import { Participant } from '@proton/shared/lib/interfaces/calendar';
 import React from 'react';
-import { buildMailTo } from 'proton-shared/lib/helpers/email';
+import { buildMailTo } from '@proton/shared/lib/helpers/email';
 
 interface Props {
     list?: Participant[];

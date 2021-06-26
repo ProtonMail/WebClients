@@ -1,6 +1,6 @@
 import React from 'react';
-import { PreVcardsProperty } from 'proton-shared/lib/interfaces/contacts/Import';
-import { toVcard } from 'proton-shared/lib/contacts/helpers/csv';
+import { PreVcardsProperty } from '@proton/shared/lib/interfaces/contacts/Import';
+import { toVcard } from '@proton/shared/lib/contacts/helpers/csv';
 
 import { Checkbox } from '../../../components';
 

@@ -3,7 +3,7 @@
  * @param {string} str
  * @return {string}
  */
-const escapeRegex = str => str.replace(/[-.]/g, "\\$&");
+const escapeRegex = (str) => str.replace(/[-.]/g, '\\$&');
 
 /**
  * Transform an array of strings into a regex catch.
@@ -11,7 +11,7 @@ const escapeRegex = str => str.replace(/[-.]/g, "\\$&");
  * @return {string}
  */
 const transform = (arr = []) => {
-  return arr.map(escapeRegex).join("|");
+  return arr.map(escapeRegex).join('|');
 };
 
 /**

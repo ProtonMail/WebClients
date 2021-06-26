@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { algorithmInfo, getKeys, OpenPGPKey } from 'pmcrypto';
-import { Address, DecryptedKey, UserModel, Key } from 'proton-shared/lib/interfaces';
-import { getParsedSignedKeyList, getSignedKeyListMap } from 'proton-shared/lib/keys';
+import { Address, DecryptedKey, UserModel, Key } from '@proton/shared/lib/interfaces';
+import { getParsedSignedKeyList, getSignedKeyListMap } from '@proton/shared/lib/keys';
 import { getDisplayKey } from './getDisplayKey';
 
 interface Props {

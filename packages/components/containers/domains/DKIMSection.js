@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { DKIM_STATE } from 'proton-shared/lib/constants';
+import { DKIM_STATE } from '@proton/shared/lib/constants';
 import { Alert, Table, TableHeader, TableBody, TableRow, TableCell, Copy } from '../../components';
 import { useNotifications } from '../../hooks';
 

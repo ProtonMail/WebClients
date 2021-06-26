@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { OpenPGPKey, getKeys, algorithmInfo as tsAlgorithmInfo } from 'pmcrypto';
-import { CachedOrganizationKey } from 'proton-shared/lib/interfaces';
-import { getFormattedAlgorithmName } from 'proton-shared/lib/keys';
+import { CachedOrganizationKey } from '@proton/shared/lib/interfaces';
+import { getFormattedAlgorithmName } from '@proton/shared/lib/keys';
 
 const useDisplayOrganizationKey = (organizationKey?: CachedOrganizationKey) => {
     const [parsedKey, setParsedKey] = useState<OpenPGPKey>();

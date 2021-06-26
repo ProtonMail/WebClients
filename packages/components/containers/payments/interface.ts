@@ -1,4 +1,4 @@
-import { PAYMENT_METHOD_TYPE } from 'proton-shared/lib/constants';
+import { PAYMENT_METHOD_TYPE } from '@proton/shared/lib/constants';
 
 interface TokenPaymentDetails {
     Token: string;

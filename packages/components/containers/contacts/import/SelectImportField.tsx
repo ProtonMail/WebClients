@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react';
 
-import { getAllFields } from 'proton-shared/lib/contacts/helpers/fields';
+import { getAllFields } from '@proton/shared/lib/contacts/helpers/fields';
 
 import { Label, Select } from '../../../components';
 

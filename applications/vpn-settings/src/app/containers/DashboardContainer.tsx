@@ -13,16 +13,16 @@ import {
     GiftCodeSection,
     CreditsSection,
     CancelSubscriptionSection,
-} from 'react-components';
+} from '@proton/components';
 import { useHistory } from 'react-router-dom';
-import { PERMISSIONS, DEFAULT_CYCLE, PLAN_SERVICES, CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
-import { Plan, PlanIDs, UserModel } from 'proton-shared/lib/interfaces';
+import { PERMISSIONS, DEFAULT_CYCLE, PLAN_SERVICES, CYCLE, CURRENCIES } from '@proton/shared/lib/constants';
+import { Plan, PlanIDs, UserModel } from '@proton/shared/lib/interfaces';
 import { c } from 'ttag';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { getPlanIDs } from 'proton-shared/lib/helpers/subscription';
-import { switchPlan } from 'proton-shared/lib/helpers/planIDs';
-import { toMap } from 'proton-shared/lib/helpers/object';
-import { SUBSCRIPTION_STEPS } from 'react-components/containers/payments/subscription/constants';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 
 import PrivateMainSettingsAreaWithPermissions from '../components/page/PrivateMainSettingsAreaWithPermissions';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Currency, Cycle } from 'proton-shared/lib/interfaces';
-import { CYCLE, PLAN_SERVICES } from 'proton-shared/lib/constants';
+import { Currency, Cycle } from '@proton/shared/lib/interfaces';
+import { CYCLE, PLAN_SERVICES } from '@proton/shared/lib/constants';
 
 import { Icon } from '../../components';
 import CycleSelector from './CycleSelector';

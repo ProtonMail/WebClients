@@ -1,8 +1,8 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
 
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts/Contact';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
+import { noop } from '@proton/shared/lib/helpers/function';
 import { FormModal, ContactGroupTable, Icon, TitleModal, Button, ContactUpgradeModal } from '../../../components';
 import { useContactEmails, useContactGroups, useModals, useUser } from '../../../hooks';
 import './ContactGroupDetailsModal.scss';
@@ -54,7 +54,9 @@ const ContactGroupDetailsModal = ({ contactGroupID, onClose = noop, ...rest }: P
                         className="contact-group-details-chip rounded50 mr0-5 flex-item-noshrink"
                         style={{ backgroundColor: group?.Color }}
                     />
-                    <span className="text-ellipsis" title={group?.Name}>{group?.Name}</span>
+                    <span className="text-ellipsis" title={group?.Name}>
+                        {group?.Name}
+                    </span>
                 </TitleModal>
             }
             onClose={onClose}

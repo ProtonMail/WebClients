@@ -1,6 +1,6 @@
-import { usePreventLeave } from 'react-components';
-import { chunk } from 'proton-shared/lib/helpers/array';
-import runInQueue from 'proton-shared/lib/helpers/runInQueue';
+import { usePreventLeave } from '@proton/components';
+import { chunk } from '@proton/shared/lib/helpers/array';
+import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { queryTrashLinks, queryRestoreLinks, queryEmptyTrashOfShare, queryDeleteTrashedLinks } from '../../api/link';
 import { LinkMeta, FolderLinkMeta } from '../../interfaces/link';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
@@ -48,13 +48,14 @@ function useTrash() {
         cache.set.linksLocked(true, shareId, linkIds);
         const batches = chunk(linkIds, BATCH_REQUEST_SIZE);
 
-        const trashQueue = batches.map((batch, i) => () =>
-            debouncedRequest(queryTrashLinks(shareId, parentLinkID, batch))
-                .then(() => batch)
-                .catch((error): string[] => {
-                    console.error(`Failed to trash #${i} batch of links: `, error);
-                    return [];
-                })
+        const trashQueue = batches.map(
+            (batch, i) => () =>
+                debouncedRequest(queryTrashLinks(shareId, parentLinkID, batch))
+                    .then(() => batch)
+                    .catch((error): string[] => {
+                        console.error(`Failed to trash #${i} batch of links: `, error);
+                        return [];
+                    })
         );
 
         try {
@@ -70,11 +71,12 @@ function useTrash() {
         cache.set.linksLocked(true, shareId, linkIds);
         const batches = chunk(linkIds, BATCH_REQUEST_SIZE);
 
-        const restoreQueue = batches.map((batch, i) => () =>
-            debouncedRequest<RestoreFromTrashResult>(queryRestoreLinks(shareId, batch)).catch((error) => {
-                console.error(`Failed to restore #${i} batch of links: `, error);
-                return { Responses: [] };
-            })
+        const restoreQueue = batches.map(
+            (batch, i) => () =>
+                debouncedRequest<RestoreFromTrashResult>(queryRestoreLinks(shareId, batch)).catch((error) => {
+                    console.error(`Failed to restore #${i} batch of links: `, error);
+                    return { Responses: [] };
+                })
         );
         try {
             const responses = await preventLeave(runInQueue(restoreQueue, MAX_THREADS_PER_REQUEST));
@@ -112,13 +114,14 @@ function useTrash() {
         cache.set.linksLocked(true, shareId, linkIds);
         const batches = chunk(linkIds, BATCH_REQUEST_SIZE);
 
-        const deleteQueue = batches.map((batch, i) => () =>
-            debouncedRequest(queryDeleteTrashedLinks(shareId, batch))
-                .then(() => batch)
-                .catch((error): string[] => {
-                    console.error(`Failed to delete #${i} batch of links: `, error);
-                    return [];
-                })
+        const deleteQueue = batches.map(
+            (batch, i) => () =>
+                debouncedRequest(queryDeleteTrashedLinks(shareId, batch))
+                    .then(() => batch)
+                    .catch((error): string[] => {
+                        console.error(`Failed to delete #${i} batch of links: `, error);
+                        return [];
+                    })
         );
 
         const deletedBatches = await preventLeave(runInQueue(deleteQueue, MAX_THREADS_PER_REQUEST));

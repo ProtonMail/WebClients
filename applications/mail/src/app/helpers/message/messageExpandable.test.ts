@@ -1,6 +1,6 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { findMessageToExpand } from './messageExpandable';
 
 describe('messageExpandable', () => {

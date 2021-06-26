@@ -7,7 +7,7 @@ import {
     SidebarListItemContentIcon,
     SidebarListItemLink,
     useOrganization,
-} from 'react-components';
+} from '@proton/components';
 
 const OrganizationSettingsSidebarList = ({ appSlug }: { appSlug: string }) => {
     const [organization, loading] = useOrganization();

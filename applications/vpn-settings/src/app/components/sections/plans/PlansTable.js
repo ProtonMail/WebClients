@@ -10,10 +10,10 @@ import {
     Loader,
     useVPNCountriesCount,
     useToggle,
-} from 'react-components';
+} from '@proton/components';
 import { c } from 'ttag';
-import { PLANS, PLAN_SERVICES, DEFAULT_CURRENCY, DEFAULT_CYCLE, CYCLE } from 'proton-shared/lib/constants';
-import { getPlanName } from 'proton-shared/lib/helpers/subscription';
+import { PLANS, PLAN_SERVICES, DEFAULT_CURRENCY, DEFAULT_CYCLE, CYCLE } from '@proton/shared/lib/constants';
+import { getPlanName } from '@proton/shared/lib/helpers/subscription';
 
 import PlanPrice from './PlanPrice';
 

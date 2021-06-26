@@ -8,11 +8,11 @@ import {
     getSignature,
     OpenPGPMessage,
 } from 'pmcrypto';
-import { splitKeys } from 'proton-shared/lib/keys/keys';
-import { Address } from 'proton-shared/lib/interfaces/Address';
-import { DecryptedKey } from 'proton-shared/lib/interfaces';
-import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
-import { getPrimaryKey } from 'proton-shared/lib/keys';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
+import { Address } from '@proton/shared/lib/interfaces/Address';
+import { DecryptedKey } from '@proton/shared/lib/interfaces';
+import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
+import { getPrimaryKey } from '@proton/shared/lib/keys';
 import { ShareMeta } from '../../interfaces/share';
 
 export interface PrimaryAddressKey {

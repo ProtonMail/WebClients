@@ -188,18 +188,13 @@ export const createMemberAddressKeysLegacy = async ({
     organizationKey,
     encryptionConfig,
 }: CreateMemberAddressKeysLegacyArguments) => {
-    const {
-        privateKey,
-        activationToken,
-        privateKeyArmored,
-        privateKeyArmoredOrganization,
-        organizationToken,
-    } = await generateMemberAddressKey({
-        email: memberAddress.Email,
-        primaryKey: memberUserKey,
-        organizationKey,
-        encryptionConfig,
-    });
+    const { privateKey, activationToken, privateKeyArmored, privateKeyArmoredOrganization, organizationToken } =
+        await generateMemberAddressKey({
+            email: memberAddress.Email,
+            primaryKey: memberUserKey,
+            organizationKey,
+            encryptionConfig,
+        });
 
     const activeKeys = await getActiveKeys(memberAddress.SignedKeyList, memberAddress.Keys, memberAddressKeys);
     const newActiveKey = await getActiveKeyObject(privateKey, { ID: 'tmp', primary: getPrimaryFlag(activeKeys) });

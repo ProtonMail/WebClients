@@ -1,8 +1,8 @@
-import { requireReadReceipt } from 'proton-shared/lib/mail/messages';
+import { requireReadReceipt } from '@proton/shared/lib/mail/messages';
 import React from 'react';
 import { c } from 'ttag';
-import { Icon, InlineLinkButton, useApi, useEventManager, useNotifications, useLoading } from 'react-components';
-import { readReceipt } from 'proton-shared/lib/api/messages';
+import { Icon, InlineLinkButton, useApi, useEventManager, useNotifications, useLoading } from '@proton/components';
+import { readReceipt } from '@proton/shared/lib/api/messages';
 
 import { MessageExtended } from '../../../models/message';
 

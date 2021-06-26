@@ -33,11 +33,7 @@ export const queryFileRevision = (
     return query;
 };
 
-export const queryFileRevisionThumbnail = (
-    shareId: string,
-    linkId: string,
-    revisionId: number,
-) => {
+export const queryFileRevisionThumbnail = (shareId: string, linkId: string, revisionId: number) => {
     return {
         method: 'get',
         url: `drive/shares/${shareId}/files/${linkId}/revisions/${revisionId}/thumbnail`,

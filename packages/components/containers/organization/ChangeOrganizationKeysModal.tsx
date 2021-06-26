@@ -1,11 +1,11 @@
 import React, { ChangeEvent, useState } from 'react';
 import { c } from 'ttag';
-import { updateOrganizationKeys } from 'proton-shared/lib/api/organization';
+import { updateOrganizationKeys } from '@proton/shared/lib/api/organization';
 import { OpenPGPKey } from 'pmcrypto';
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from 'proton-shared/lib/constants';
-import { generateOrganizationKeys, reEncryptOrganizationTokens } from 'proton-shared/lib/keys';
-import { queryAddresses } from 'proton-shared/lib/api/members';
-import { Address, Member } from 'proton-shared/lib/interfaces';
+import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '@proton/shared/lib/constants';
+import { generateOrganizationKeys, reEncryptOrganizationTokens } from '@proton/shared/lib/keys';
+import { queryAddresses } from '@proton/shared/lib/api/members';
+import { Address, Member } from '@proton/shared/lib/interfaces';
 import { FormModal, Alert, Row, Label, Field, PasswordInput } from '../../components';
 import {
     useEventManager,
@@ -53,16 +53,12 @@ const ChangeOrganizationKeysModal = ({
         }
         setConfirmError('');
 
-        const {
-            privateKey,
-            privateKeyArmored,
-            backupKeySalt,
-            backupArmoredPrivateKey,
-        } = await generateOrganizationKeys({
-            keyPassword: authentication.getPassword(),
-            backupPassword: newPassword,
-            encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
-        });
+        const { privateKey, privateKeyArmored, backupKeySalt, backupArmoredPrivateKey } =
+            await generateOrganizationKeys({
+                keyPassword: authentication.getPassword(),
+                backupPassword: newPassword,
+                encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
+            });
 
         // Check this case for safety.
         if (nonPrivateMembers.length >= 1 && !organizationKey) {

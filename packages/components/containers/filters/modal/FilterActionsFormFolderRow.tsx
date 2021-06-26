@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { buildTreeview, formatFolderName } from 'proton-shared/lib/helpers/folder';
-import { Folder, FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
+import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
+import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import { Button, Select, Icon } from '../../../components';
 import { useModals } from '../../../hooks';
 import { classnames } from '../../../helpers';

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { checkInvoice, payInvoice } from 'proton-shared/lib/api/payments';
-import { toPrice } from 'proton-shared/lib/helpers/string';
-import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
+import { checkInvoice, payInvoice } from '@proton/shared/lib/api/payments';
+import { toPrice } from '@proton/shared/lib/helpers/string';
+import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { Input, FormModal, PrimaryButton, Row, Label, Field, Price } from '../../components';
 import { useApiResult, useModals, useNotifications, useApi, useLoading, useEventManager } from '../../hooks';
 

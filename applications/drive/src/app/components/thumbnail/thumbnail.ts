@@ -1,4 +1,4 @@
-import { isSupportedImage } from 'react-components/containers/filePreview/helpers';
+import { isSupportedImage } from '@proton/components/containers/filePreview/helpers';
 
 import { scaleImageFile } from './image';
 

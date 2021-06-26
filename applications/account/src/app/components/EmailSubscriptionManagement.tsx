@@ -1,7 +1,7 @@
 import React from 'react';
-import { EmailSubscriptionCheckboxes } from 'react-components';
+import { EmailSubscriptionCheckboxes } from '@proton/components';
 import { c } from 'ttag';
-import protonLogoSvg from 'design-system/assets/img/shared/proton-logo.svg';
+import protonLogoSvg from '@proton/styles/assets/img/shared/proton-logo.svg';
 
 import EmailUnsubscribeBorderedContainer from './EmailUnsubscribeBorderedContainer';
 import './EmailUnsubscribeLayout.scss';

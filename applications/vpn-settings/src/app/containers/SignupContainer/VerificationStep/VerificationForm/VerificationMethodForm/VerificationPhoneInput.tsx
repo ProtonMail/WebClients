@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { PrimaryButton, InputFieldTwo, PhoneInput, useFormErrors } from 'react-components';
+import { PrimaryButton, InputFieldTwo, PhoneInput, useFormErrors } from '@proton/components';
 import { c } from 'ttag';
-import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 interface Props {
     loading?: boolean;

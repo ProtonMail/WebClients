@@ -1,8 +1,8 @@
 import React from 'react';
-import { Icon, DropdownMenu, DropdownMenuButton, useApi, useEventManager, useLoading } from 'react-components';
-import { VIEW_LAYOUT } from 'proton-shared/lib/constants';
-import { MailSettings } from 'proton-shared/lib/interfaces';
-import { updateViewLayout } from 'proton-shared/lib/api/mailSettings';
+import { Icon, DropdownMenu, DropdownMenuButton, useApi, useEventManager, useLoading } from '@proton/components';
+import { VIEW_LAYOUT } from '@proton/shared/lib/constants';
+import { MailSettings } from '@proton/shared/lib/interfaces';
+import { updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 import { c } from 'ttag';
 
 import ToolbarDropdown from './ToolbarDropdown';

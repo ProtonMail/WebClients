@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { isProductPayerPeriod } from 'proton-shared/lib/helpers/blackfriday';
+import { isProductPayerPeriod } from '@proton/shared/lib/helpers/blackfriday';
 
 const EVERY_MINUTE = 60 * 1000;
 

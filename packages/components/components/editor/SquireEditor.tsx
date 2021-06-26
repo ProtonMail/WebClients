@@ -10,8 +10,8 @@ import React, {
     useMemo,
     memo,
 } from 'react';
-import { RIGHT_TO_LEFT } from 'proton-shared/lib/constants';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { RIGHT_TO_LEFT } from '@proton/shared/lib/constants';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 import { classnames } from '../../helpers';
 import EditorToolbar from './toolbar/SquireToolbar';
@@ -116,7 +116,7 @@ const SquireEditor = (
                 if (metadata.isPlainText) {
                     return undefined;
                 }
-                return (squireRef.current.getDocument() as any) as Element;
+                return squireRef.current.getDocument() as any as Element;
             },
             focus: () => {
                 if (metadata.isPlainText) {

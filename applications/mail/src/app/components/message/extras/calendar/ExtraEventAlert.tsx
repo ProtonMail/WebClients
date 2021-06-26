@@ -1,9 +1,9 @@
-import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
-import { getIsEventCancelled } from 'proton-shared/lib/calendar/veventHelper';
-import { APPS } from 'proton-shared/lib/constants';
-import { RequireSome } from 'proton-shared/lib/interfaces/utils';
+import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
+import { APPS } from '@proton/shared/lib/constants';
+import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import React from 'react';
-import { Alert, SettingsLink } from 'react-components';
+import { Alert, SettingsLink } from '@proton/components';
 import { c } from 'ttag';
 import { InvitationModel } from '../../../../helpers/calendar/invite';
 

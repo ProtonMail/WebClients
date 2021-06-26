@@ -8,9 +8,9 @@ import {
     SimpleDropdown,
     useActiveBreakpoint,
     Icon,
-} from 'react-components';
-import { MailSettings } from 'proton-shared/lib/interfaces';
-import { MESSAGE_BUTTONS } from 'proton-shared/lib/constants';
+} from '@proton/components';
+import { MailSettings } from '@proton/shared/lib/interfaces';
+import { MESSAGE_BUTTONS } from '@proton/shared/lib/constants';
 
 import { Filter } from '../../models/tools';
 

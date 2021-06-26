@@ -11,8 +11,8 @@ import {
     useGetUser,
     useAddresses,
     useMailSettings,
-} from 'react-components';
-import { isPaid } from 'proton-shared/lib/user/helpers';
+} from '@proton/components';
+import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { createNewDraft, cloneDraft } from '../helpers/message/messageDraft';
 import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../models/message';

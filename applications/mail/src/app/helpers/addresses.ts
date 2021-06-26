@@ -1,9 +1,9 @@
-import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
-import { unique } from 'proton-shared/lib/helpers/array';
-import { addPlusAlias, canonizeEmail, canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
-import { Address, Key } from 'proton-shared/lib/interfaces';
-import { Recipient } from 'proton-shared/lib/interfaces/Address';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
+import { unique } from '@proton/shared/lib/helpers/array';
+import { addPlusAlias, canonizeEmail, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { Address, Key } from '@proton/shared/lib/interfaces';
+import { Recipient } from '@proton/shared/lib/interfaces/Address';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { c } from 'ttag';
 import { ContactGroupsMap, ContactsMap } from '../containers/ContactProvider';
 import { RecipientGroup, RecipientOrGroup } from '../models/address';

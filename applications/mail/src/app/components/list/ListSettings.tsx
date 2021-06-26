@@ -1,5 +1,5 @@
 import React from 'react';
-import { MailSettings } from 'proton-shared/lib/interfaces';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import FilterActions from '../toolbar/FilterActions';
 import SortDropdown from '../toolbar/SortDropdown';

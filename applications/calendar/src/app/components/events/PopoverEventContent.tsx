@@ -1,16 +1,16 @@
-import { filterEmailNotifications } from 'proton-shared/lib/calendar/alarms';
-import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
-import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
-import { getTimezonedFrequencyString } from 'proton-shared/lib/calendar/integration/getFrequencyString';
-import { getIsSubscribedCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
-import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
-import { canonizeEmailByGuess, canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
-import { getInitials } from 'proton-shared/lib/helpers/string';
-import { dateLocale } from 'proton-shared/lib/i18n';
-import { Calendar as tsCalendar, EventModelReadView } from 'proton-shared/lib/interfaces/calendar';
-import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
+import { filterEmailNotifications } from '@proton/shared/lib/calendar/alarms';
+import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
+import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
+import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/integration/getFrequencyString';
+import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
+import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { getInitials } from '@proton/shared/lib/helpers/string';
+import { dateLocale } from '@proton/shared/lib/i18n';
+import { Calendar as tsCalendar, EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
+import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import React, { useMemo, useState } from 'react';
-import { Icon, Info, Tabs, Tooltip } from 'react-components';
+import { Icon, Info, Tabs, Tooltip } from '@proton/components';
 import { c, msgid } from 'ttag';
 
 import { getOrganizerDisplayData } from '../../helpers/attendees';

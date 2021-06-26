@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { c } from 'ttag';
 
-import { generateProtonWebUID } from 'proton-shared/lib/helpers/uid';
+import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
 
 import useNotifications from './useNotifications';
 

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import React, { useEffect, useRef, useState } from 'react';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { noop } from '@proton/shared/lib/helpers/function';
 import {
     useLoading,
     InputFieldTwo,
@@ -13,10 +13,10 @@ import {
     ChallengeError,
     ChallengeResult,
     LearnMore,
-} from 'react-components';
+} from '@proton/components';
 import { Link } from 'react-router-dom';
-import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
-import { BRAND_NAME } from 'proton-shared/lib/constants';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import Loader from '../signup/Loader';
 
 interface Props {

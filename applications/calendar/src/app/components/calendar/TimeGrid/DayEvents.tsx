@@ -1,6 +1,6 @@
 import React, { Ref, useMemo } from 'react';
-import { isNextDay } from 'proton-shared/lib/date-fns-utc';
-import { HOUR } from 'proton-shared/lib/constants';
+import { isNextDay } from '@proton/shared/lib/date-fns-utc';
+import { HOUR } from '@proton/shared/lib/constants';
 
 import { layout, LayoutEvent } from '../layout';
 import { toPercent } from '../mouseHelpers/mathHelpers';

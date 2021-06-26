@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, ReactNode, ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { normalize } from 'proton-shared/lib/helpers/string';
-import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts/Contact';
+import { normalize } from '@proton/shared/lib/helpers/string';
+import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { usePopperAnchor } from '../../components/popper';
 import { useLoading, useContactGroups, useModals } from '../../hooks';
 import { classnames, generateUID } from '../../helpers';
@@ -79,8 +79,10 @@ const ContactGroupDropdown = ({
         createModal(<ContactGroupModal selectedContactEmails={contactEmails} />);
         close();
     };
-    const handleCheck = (contactGroupID: string) => ({ target }: ChangeEvent<HTMLInputElement>) =>
-        setModel({ ...model, [contactGroupID]: +target.checked });
+    const handleCheck =
+        (contactGroupID: string) =>
+        ({ target }: ChangeEvent<HTMLInputElement>) =>
+            setModel({ ...model, [contactGroupID]: +target.checked });
 
     const handleApply = async () => {
         const changes = Object.entries(model).reduce<{ [groupID: string]: boolean }>((acc, [groupID, isChecked]) => {

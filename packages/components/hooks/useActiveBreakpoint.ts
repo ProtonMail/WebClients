@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
-import { debounce } from 'proton-shared/lib/helpers/function';
+import { debounce } from '@proton/shared/lib/helpers/function';
 
 const getBreakpoint = () => {
     const bodyEl = document.querySelector('body');

@@ -1,11 +1,11 @@
 import { useRef } from 'react';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import { KeyboardKey } from 'proton-shared/lib/interfaces';
-import { HotkeyTuple, useFolders, useHotkeys, useLabels, useMailSettings } from 'react-components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { KeyboardKey } from '@proton/shared/lib/interfaces';
+import { HotkeyTuple, useFolders, useHotkeys, useLabels, useMailSettings } from '@proton/components';
 import { useHistory } from 'react-router-dom';
 import { Location } from 'history';
-import { noop } from 'proton-shared/lib/helpers/function';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { noop } from '@proton/shared/lib/helpers/function';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { getFolderName, labelIncludes } from '../../helpers/labels';
 import { useMoveToFolder, useStar } from '../useApplyLabels';
 import { MARK_AS_STATUS, useMarkAs } from '../useMarkAs';

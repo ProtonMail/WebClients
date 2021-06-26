@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { APPS } from 'proton-shared/lib/constants';
-import { getAppName } from 'proton-shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 import { FormModal, AppLink, Alert } from '../../../components';
 
 interface Props {

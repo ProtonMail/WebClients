@@ -1,6 +1,6 @@
 import React, { useImperativeHandle, forwardRef, Ref, useState, useRef } from 'react';
 
-import { getInvoice } from 'proton-shared/lib/api/payments';
+import { getInvoice } from '@proton/shared/lib/api/payments';
 
 import { useApi } from '../../hooks';
 import { FilePreview, NavigationControl } from '../filePreview';

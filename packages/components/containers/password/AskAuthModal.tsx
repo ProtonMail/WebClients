@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { getHasTOTPEnabled, getHasTOTPSettingEnabled } from 'proton-shared/lib/settings/twoFactor';
-import { InfoAuthedResponse, TwoFaResponse } from 'proton-shared/lib/authentication/interface';
-import { getInfo } from 'proton-shared/lib/api/auth';
+import { getHasTOTPEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
+import { InfoAuthedResponse, TwoFaResponse } from '@proton/shared/lib/authentication/interface';
+import { getInfo } from '@proton/shared/lib/api/auth';
 
 import { FormModal, Loader } from '../../components';
 import { useApi, useUser, useUserSettings } from '../../hooks';

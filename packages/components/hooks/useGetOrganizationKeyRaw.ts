@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
-import { OrganizationKey } from 'proton-shared/lib/interfaces';
-import { getCachedOrganizationKey } from 'proton-shared/lib/keys';
-import { getOrganizationKeys } from 'proton-shared/lib/api/organization';
+import { OrganizationKey } from '@proton/shared/lib/interfaces';
+import { getCachedOrganizationKey } from '@proton/shared/lib/keys';
+import { getOrganizationKeys } from '@proton/shared/lib/api/organization';
 
 import useApi from './useApi';
 import useAuthentication from './useAuthentication';

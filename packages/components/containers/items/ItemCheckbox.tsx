@@ -1,6 +1,6 @@
 import React, { ChangeEvent, MouseEvent } from 'react';
-import { DENSITY } from 'proton-shared/lib/constants';
-import { getInitials } from 'proton-shared/lib/helpers/string';
+import { DENSITY } from '@proton/shared/lib/constants';
+import { getInitials } from '@proton/shared/lib/helpers/string';
 import { useUserSettings } from '../../hooks';
 import { Checkbox, Icon } from '../../components';
 import { classnames } from '../../helpers';

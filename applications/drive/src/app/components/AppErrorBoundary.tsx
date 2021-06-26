@@ -9,8 +9,8 @@ import {
     NotFoundError,
     AccessDeniedError,
     PrivateMainArea,
-} from 'react-components';
-import { ApiError } from 'proton-shared/lib/fetch/ApiError';
+} from '@proton/components';
+import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 
 import { useDriveActiveFolder } from './Drive/DriveFolderProvider';
 import { STATUS_CODE } from '../constants';

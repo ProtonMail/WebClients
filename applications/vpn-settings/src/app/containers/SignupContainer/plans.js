@@ -1,11 +1,11 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { PLANS, PLAN_TYPES, CYCLE } from 'proton-shared/lib/constants';
-import { Info } from 'react-components';
-import freePlanSvg from 'design-system/assets/img/pv-images/plans/free.svg';
-import basicPlanSvg from 'design-system/assets/img/pv-images/plans/basic.svg';
-import plusPlanSvg from 'design-system/assets/img/pv-images/plans/plus.svg';
-import visionaryPlanSvg from 'design-system/assets/img/pv-images/plans/visionary.svg';
+import { PLANS, PLAN_TYPES, CYCLE } from '@proton/shared/lib/constants';
+import { Info } from '@proton/components';
+import freePlanSvg from '@proton/styles/assets/img/pv-images/plans/free.svg';
+import basicPlanSvg from '@proton/styles/assets/img/pv-images/plans/basic.svg';
+import plusPlanSvg from '@proton/styles/assets/img/pv-images/plans/plus.svg';
+import visionaryPlanSvg from '@proton/styles/assets/img/pv-images/plans/visionary.svg';
 
 export const PLAN = {
     FREE: 'free',

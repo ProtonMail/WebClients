@@ -8,18 +8,22 @@ function main(config) {
     new ProgressBarPlugin({
         format: '  build [:bar] :percent (:elapsed seconds)',
         clear: false,
-        width: 60
+        width: 60,
     }).apply(compiler);
 
     compiler.run((err, stats) => {
         if (err) {
-            error(err);
+            error(err.stack || err);
+            if (err.details) {
+                error(err.details);
+            }
+            return;
         }
 
         success(
             stats.toString({
                 chunks: false,
-                colors: true
+                colors: true,
             })
         );
     });

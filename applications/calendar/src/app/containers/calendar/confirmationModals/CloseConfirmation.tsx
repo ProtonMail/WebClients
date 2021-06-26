@@ -1,4 +1,4 @@
-import { Alert, ConfirmModal, Button } from 'react-components';
+import { Alert, ConfirmModal, Button } from '@proton/components';
 import { c } from 'ttag';
 import React from 'react';
 

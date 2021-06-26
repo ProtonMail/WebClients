@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { useGlobalLoader } from 'react-components';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { useGlobalLoader } from '@proton/components';
+import { noop } from '@proton/shared/lib/helpers/function';
 import { c } from 'ttag';
 import { LinkType, LinkMeta } from '../../interfaces/link';
 import useDrive from './useDrive';
@@ -22,28 +22,30 @@ export default function useDriveDragMove(
     const [activeDropTarget, setActiveDropTarget] = useState<FileBrowserItem>();
     const dragEnterCounter = useRef(0);
 
-    const getHandleItemDrop = <T extends FileBrowserItem | LinkMeta>(item: T) => async (e: React.DragEvent) => {
-        const toMove: T[] = JSON.parse(e.dataTransfer.getData(CUSTOM_DATA_FORMAT));
-        const toMoveIds = toMove.map(({ LinkID }) => LinkID);
-        const parentFolderId = activeFolder?.linkId;
-        dragEnterCounter.current = 0;
+    const getHandleItemDrop =
+        <T extends FileBrowserItem | LinkMeta>(item: T) =>
+        async (e: React.DragEvent) => {
+            const toMove: T[] = JSON.parse(e.dataTransfer.getData(CUSTOM_DATA_FORMAT));
+            const toMoveIds = toMove.map(({ LinkID }) => LinkID);
+            const parentFolderId = activeFolder?.linkId;
+            dragEnterCounter.current = 0;
 
-        clearSelections();
-        setActiveDropTarget(undefined);
+            clearSelections();
+            setActiveDropTarget(undefined);
 
-        const moveResult = await withGlobalLoader(moveLinks(shareId, item.LinkID, toMoveIds));
+            const moveResult = await withGlobalLoader(moveLinks(shareId, item.LinkID, toMoveIds));
 
-        const undoAction = async () => {
-            if (!parentFolderId) {
-                return;
-            }
-            const toMoveBackIds = moveResult.moved.map(({ LinkID }) => LinkID);
-            const moveBackResult = await withGlobalLoader(moveLinks(shareId, parentFolderId, toMoveBackIds));
-            createMoveLinksNotifications(toMove, moveBackResult);
+            const undoAction = async () => {
+                if (!parentFolderId) {
+                    return;
+                }
+                const toMoveBackIds = moveResult.moved.map(({ LinkID }) => LinkID);
+                const moveBackResult = await withGlobalLoader(moveLinks(shareId, parentFolderId, toMoveBackIds));
+                createMoveLinksNotifications(toMove, moveBackResult);
+            };
+
+            createMoveLinksNotifications(toMove, moveResult, undoAction);
         };
-
-        createMoveLinksNotifications(toMove, moveResult, undoAction);
-    };
 
     const getDragMoveControls = (item: FileBrowserItem): DragMoveControls => {
         const dragging = allDragging.some(({ LinkID }) => LinkID === item.LinkID);

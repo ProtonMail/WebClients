@@ -1,6 +1,6 @@
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { getRecipients, getSender } from 'proton-shared/lib/mail/messages';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { getRecipients, getSender } from '@proton/shared/lib/mail/messages';
 import { getMessagesAuthorizedToMove } from './messages';
 
 const { INBOX, TRASH, SENT } = MAILBOX_LABEL_IDS;

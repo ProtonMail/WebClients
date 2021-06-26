@@ -1,5 +1,5 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { DecryptedKey } from 'proton-shared/lib/interfaces';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { DBSchema } from 'idb';
 import { SearchParameters } from './tools';
 import { Element } from './element';

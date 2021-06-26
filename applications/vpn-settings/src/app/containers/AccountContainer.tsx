@@ -8,7 +8,7 @@ import {
     RecoveryMethodsSection,
     OpenVPNCredentialsSection,
     SettingsPropsShared,
-} from 'react-components';
+} from '@proton/components';
 import { c } from 'ttag';
 
 import PrivateMainSettingsAreaWithPermissions from '../components/page/PrivateMainSettingsAreaWithPermissions';

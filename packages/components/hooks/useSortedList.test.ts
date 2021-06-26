@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react-hooks';
-import { SORT_DIRECTION } from 'proton-shared/lib/constants';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import useSortedList from './useSortedList';
 
 describe('useSortedList hook', () => {

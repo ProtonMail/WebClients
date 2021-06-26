@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { SidebarList } from 'react-components';
+import { SidebarList } from '@proton/components';
 import DriveSidebarListItem from './DriveSidebarListItem';
 import FileRecoveryIcon from '../../FilesRecoveryModal/FileRecoveryIcon';
 
