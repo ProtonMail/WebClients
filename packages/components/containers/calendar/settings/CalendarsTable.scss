@@ -1,0 +1,13 @@
+@import '~design-system/scss/config/variables';
+@import '~design-system/scss/config/functions/easing';
+@import '~design-system/scss/specifics/placeholder-loading';
+
+.calendar-email {
+	color: green;
+
+	&::before {
+		@extend %item-loading-pseudo;
+		@extend %placeholder-loading;
+		width: 70%;
+	}
+}

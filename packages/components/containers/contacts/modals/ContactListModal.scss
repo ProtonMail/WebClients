@@ -1,0 +1,14 @@
+.contact-list {
+	.ReactVirtualized__Grid__innerScrollContainer {
+		border-right: 0;
+	}
+}
+
+.contact-list-row {
+	user-select: none;
+	border-bottom: 1px solid var(--border-norm);
+
+	&--selected {
+		background: var(--background-strong);
+	}
+}

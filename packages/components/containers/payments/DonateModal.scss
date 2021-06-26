@@ -1,0 +1,12 @@
+@import '~design-system/scss/config/';
+
+.donate-modal .field-container.payment-right {
+	width: 70%;
+}
+
+@include respond-to($breakpoint-small) {
+	.donate-modal .label.payment-left,
+	.donate-modal .field-container.payment-right {
+		width: 100%;
+	}
+}

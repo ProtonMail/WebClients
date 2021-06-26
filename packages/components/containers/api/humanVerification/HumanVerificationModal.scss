@@ -1,0 +1,10 @@
+@import '~design-system/scss/config/';
+
+.modal--human-verification {
+	&#{&} {
+		// Specificity -_-v
+		// Just tested this value, don't change it
+		width: rem(730);
+		max-width: rem(730);
+	}
+}

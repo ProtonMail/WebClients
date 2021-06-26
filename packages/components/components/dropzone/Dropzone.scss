@@ -1,0 +1,25 @@
+@import '~design-system/scss/config/';
+
+.dropzone {
+	border: 5px dashed var(--border-norm);
+	background: var(--background-norm);
+	opacity: 0;
+	visibility: hidden;
+	transition-property: opacity, visibility;
+	transition-duration: 0.15s;
+	transition-timing-function: easing(easeIn);
+
+	&.is-hovered {
+		opacity: 0.85;
+		visibility: visible;
+	}
+
+	&-content {
+		min-height: 100px; // no need of rem
+	}
+
+	&-text {
+		font-size: 2em;
+		opacity: 0.75;
+	}
+}

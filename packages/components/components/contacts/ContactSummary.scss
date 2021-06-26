@@ -1,0 +1,12 @@
+@import '~design-system/scss/config/';
+
+// ?????
+.contactsummary-list-item {
+	height: rem(25);
+}
+
+@include respond-to($breakpoint-small) {
+	.contact-modal-select {
+		max-width: calc(100% - 3.3em);
+	}
+}

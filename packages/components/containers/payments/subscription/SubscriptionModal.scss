@@ -1,0 +1,58 @@
+@import '~design-system/scss/config/';
+
+// Hide show all features link in the modal
+.subscription-modal .subscriptionTable-show-features-container {
+	display: none;
+}
+// Hide images in subscription table
+.subscription-modal .subscriptionTable-image-container {
+	display: none;
+}
+
+// Hide customize button in subscription table
+.subscription-modal .subscriptionTable-customize-button {
+	display: none;
+}
+
+// Hide first subscription table in the subscription modal
+.subscription-modal.is-free-user .subscriptionCustomization-section:first-child .vpnSubscriptionTable-container,
+.subscription-modal.is-free-user .subscriptionCustomization-section:first-child .mailSubscriptionTable-container {
+	display: none;
+}
+
+// Hide visionary plan for the second table in the subscription modal
+.subscription-modal .subscriptionCustomization-section:nth-child(2) [data-plan-name='visionary'] {
+	display: none;
+}
+
+// Adjust header height
+.subscription-modal .subscriptionTable-header {
+	min-height: rem(110);
+}
+
+.subscription-modal .subscriptionTable-description,
+.subscription-modal .subscriptionTable-footer {
+	min-height: auto;
+}
+
+.subscription-modal .label.payment-left {
+	width: 30%;
+	min-width: var(--label-width, 18em);
+}
+
+.subscription-modal .field-container.payment-right {
+	width: 70%;
+}
+
+@include respond-to(1500) {
+	.subscriptionTable-plan .suffix {
+		width: 100%;
+	}
+}
+
+@include respond-to($breakpoint-small) {
+	.subscription-modal .label.payment-left,
+	.subscription-modal .field-container.payment-right {
+		width: 100%;
+	}
+}

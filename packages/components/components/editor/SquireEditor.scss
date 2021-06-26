@@ -1,0 +1,107 @@
+@import '~design-system/scss/config/';
+
+.simple-squire-editor.editor {
+	min-height: 14em;
+}
+
+.editor {
+	border: 1px solid var(--border-norm);
+
+	textarea {
+		color: currentColor;
+	}
+
+	.editor-toolbar-button {
+		padding: 0.3em 0.5em;
+		min-height: 2.1em;
+	}
+
+	.composer-toolbar-fontDropDown {
+		flex-shrink: 1;
+
+		& > span {
+			display: flex;
+
+			& > * {
+				min-width: 0;
+			}
+		}
+	}
+}
+
+.editor-toolbar {
+	border-bottom: 1px solid var(--border-norm);
+}
+.editor-toolbar-separator {
+	border-left: 1px solid var(--border-norm);
+}
+
+.editor-squire-wrapper {
+	.placeholder {
+		// The point is to match exactly Squire text content and position
+		font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+		font-size: rem(14);
+		line-height: 1.65;
+		margin-left: rem(8);
+		margin-top: rem(8);
+		color: grey;
+	}
+}
+
+.editor-toolbar-dropdown {
+	ul {
+		margin: 0;
+	}
+
+	button {
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+	}
+}
+
+.editor-toolbar-dropdown .color-selector-container {
+	max-width: rem(210);
+}
+
+.editor-toolbar-dropdown .color-selector-item {
+	height: rem(28);
+	width: rem(28);
+	margin: 0 rem(2) rem(2) 0;
+}
+
+.editor--disabled::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: var(--background-weak);
+	border-radius: $global-border-radius;
+}
+
+.editor-toolbar-more-menu .dropdown-item.dropdown-item--no-separator {
+	border-top: none;
+}
+
+.editor-toolbar-button {
+	padding: 0.5em;
+
+	& > span {
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+		display: flex;
+		align-items: center;
+
+		& > .mr0-5 {
+			flex: 1 1 0px;
+			text-align: left;
+			display: inline-flex;
+		}
+	}
+
+	.editor-toolbar-icon {
+		color: var(--text-norm);
+	}
+}

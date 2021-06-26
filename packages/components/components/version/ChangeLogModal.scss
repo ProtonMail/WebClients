@@ -1,0 +1,18 @@
+@import '~design-system/scss/config/';
+
+.modal-content-inner-changelog {
+	h1 {
+		@include rhythm(map-get($title-sizes, 'h2'));
+	}
+	h2 {
+		@include rhythm(map-get($title-sizes, 'h4'));
+		margin-bottom: 0.5em;
+	}
+	h3 {
+		@include rhythm(map-get($title-sizes, 'h4'));
+		margin-bottom: 0.5em;
+	}
+	ul {
+		margin-top: 0.5em;
+	}
+}
