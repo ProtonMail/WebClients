@@ -3922,8 +3922,8 @@ __metadata:
     hi-base32: ^0.5.0
     ical.js: "github:ProtonMail/ical.js.git#semver:~1.3.1"
     is-valid-domain: 0.0.14
-    jasmine: 3.5.0
-    jasmine-core: 3.5.0
+    jasmine: ^3.7.0
+    jasmine-core: ^3.7.1
     jsbi: ^3.1.2
     karma: ^4.1.0
     karma-chrome-launcher: ^2.2.0
@@ -18367,29 +18367,22 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jasmine-core@npm:3.5.0, jasmine-core@npm:~3.5.0":
-  version: 3.5.0
-  resolution: "jasmine-core@npm:3.5.0"
-  checksum: 04b3922443dcf9d75aab94100a2759c10daadeb5c37e22a5659c67afeea7eff9999acc7c222c59668b4838b725a87e0a252d0b208fb38419b642854f52c23e14
-  languageName: node
-  linkType: hard
-
-"jasmine-core@npm:^3.3":
+"jasmine-core@npm:^3.3, jasmine-core@npm:^3.7.1, jasmine-core@npm:~3.7.0":
   version: 3.7.1
   resolution: "jasmine-core@npm:3.7.1"
   checksum: dd89c934653b893f2a2c0b5977286177d47343bed37f77ba4b1a6ee7c357f63a5d3040ca540e98f69f3438436d689449c4b3b2e3183cc854dd0cfb5f601206c6
   languageName: node
   linkType: hard
 
-"jasmine@npm:3.5.0":
-  version: 3.5.0
-  resolution: "jasmine@npm:3.5.0"
+"jasmine@npm:^3.7.0":
+  version: 3.7.0
+  resolution: "jasmine@npm:3.7.0"
   dependencies:
-    glob: ^7.1.4
-    jasmine-core: ~3.5.0
+    glob: ^7.1.6
+    jasmine-core: ~3.7.0
   bin:
-    jasmine: ./bin/jasmine.js
-  checksum: d5919e7f79b21423be902203af6c581bc1964cbd282ce3ef89133d144a8f55b2e7b81d84d864dd6bd212d90917465f4e73e0ce01cac50d5f96ffdd98d82b5922
+    jasmine: bin/jasmine.js
+  checksum: 0a7d69988c4bfbedc0057bdfb8ef94447389469085c1ae6e6c1a99020f12bbbc4b9397e8bf1e247c9597431a5514e0812800f249df3f05babc3316d6af98156c
   languageName: node
   linkType: hard
 
