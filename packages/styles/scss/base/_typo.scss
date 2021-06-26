@@ -8,11 +8,7 @@
 }
 
 /* avoid margin problems */
-@if $vertical-rhythm ==
-	'single_top' or
-	$vertical-rhythm ==
-	'double_top_single_bottom'
-{
+@if $vertical-rhythm == 'single_top' or $vertical-rhythm == 'double_top_single_bottom' {
 	h1,
 	.h1,
 	h2,
@@ -26,7 +22,7 @@
 	h6,
 	.h6 {
 		&:first-child {
-			margin-top: 0;
+			margin-block-start: 0;
 		}
 	}
 
@@ -39,7 +35,7 @@
 	pre,
 	table {
 		&:last-child {
-			margin-bottom: 0;
+			margin-block-end: 0;
 		}
 	}
 }

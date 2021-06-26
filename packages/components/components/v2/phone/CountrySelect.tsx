@@ -72,7 +72,9 @@ const CountrySelect = ({ value, options, onChange, onClosed }: Props) => {
                         />
                     )}
                 </span>
-                <span className="min-w3e inline-flex">+{value ? value.countryCallingCode : '00'}</span>
+                <span className="min-w3e inline-flex" dir="ltr">
+                    +{value ? value.countryCallingCode : '00'}
+                </span>
             </DropdownButton>
 
             <Dropdown
@@ -128,7 +130,7 @@ const CountrySelect = ({ value, options, onChange, onClosed }: Props) => {
                     />
                 </form>
 
-                <div style={{ height: '20em', minWidth: '18em' }}>
+                <div className="h-custom min-w-custom" style={{ '--height-custom': '20em', '--min-width-custom': '18em' }}>
                     {!filteredOptions.length ? (
                         <div className="pl1">{c('Info').t`No results found`}</div>
                     ) : (

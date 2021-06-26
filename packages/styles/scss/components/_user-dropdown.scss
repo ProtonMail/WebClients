@@ -1,7 +1,7 @@
 .user-dropdown {
 	&-button {
 		@include respond-to(1500) {
-			margin-left: 0.5em;
+			margin-inline-start: 0.5em;
 		}
 
 		.user-initials {
@@ -28,7 +28,7 @@
 	&-text {
 		&#{&} {
 			// Specificity -_-v
-			max-width: em(200);
+			max-inline-size: em(200);
 		}
 
 		@include respond-to($breakpoint-large) {
@@ -41,7 +41,7 @@
 .user-initials {
 	&#{&} {
 		// Specificity -_-v
-		min-width: 2.5em;
-		min-height: 2.5em;
+		min-inline-size: 2.5em;
+		min-block-size: 2.5em;
 	}
 }

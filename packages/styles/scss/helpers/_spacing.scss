@@ -1,33 +1,33 @@
 .mt1r {
-	margin-top: rem(10);
+	margin-block-start: rem(10);
 }
 
 .mt0-5r {
-	margin-top: rem(5);
+	margin-block-start: rem(5);
 }
 
 .mr0-5r {
-	margin-right: rem(5);
+	margin-inline-end: rem(5);
 }
 
 .mr-2 {
-	margin-right: -2em;
+	margin-inline-end: -2em;
 }
 
 .mr-6p {
-	margin-right: em(-6);
+	margin-inline-end: em(-6);
 }
 
 .mr-0-5 {
-	margin-right: -0.5em;
+	margin-inline-end: -0.5em;
 }
 
 .mt-0-5 {
-	margin-top: -0.5em;
+	margin-block-start: -0.5em;
 }
 
 .mb-0-5 {
-	margin-bottom: -0.5em;
+	margin-block-end: -0.5em;
 }
 
 @include margin-generator(
@@ -45,35 +45,37 @@
 );
 
 .mtauto {
-	margin-top: auto;
+	margin-block-start: auto;
 }
 
 .mrauto {
-	margin-right: auto;
+	margin-inline-end: auto;
 }
 
 .mbauto {
-	margin-bottom: auto;
+	margin-block-end: auto;
 }
 
 .mlauto {
-	margin-left: auto;
+	margin-inline-start: auto;
+}
+
+.ml-custom {
+	&#{&} {
+		margin-inline-start: var(--margin-left-custom);
+	}
+}
+.pl-custom {
+	&#{&} {
+		padding-inline-start: var(--padding-left-custom);
+	}
+}
+.pb-custom {
+	&#{&} {
+		padding-block-end: var(--padding-bottom-custom);
+	}
 }
 
 .mauto {
 	margin: auto;
-}
-
-@if $rtl-option==true {
-	[dir='rtl'] {
-		.mrauto {
-			margin-right: 0;
-			margin-left: auto;
-		}
-
-		.mlauto {
-			margin-left: 0;
-			margin-right: auto;
-		}
-	}
 }

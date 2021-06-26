@@ -1,11 +1,16 @@
 .calendar-loader-container {
 	position: fixed;
-	top: 1em;
-	left: 50%;
+	inset-block-start: 1em;
+	inset-inline-start: 50%;
 	z-index: 100;
-	max-width: 100%;
+	max-inline-size: 100%;
 	padding: 1em;
 	transform: translateX(-50%);
+	@at-root {
+		[dir='rtl'] & {
+			transform: translateX(50%);
+		}
+	}
 	border-radius: var(--border-radius-medium);
 	box-shadow: var(--shadow-lifted);
 	background-color: var(--signal-info);

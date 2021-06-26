@@ -1,16 +1,16 @@
 @import '~@proton/styles/scss/config';
 
 .settings-layout-left {
-	min-width: em(240);
-	width: em(240);
-	max-width: em(240);
-	padding-top: 0.5em;
-	padding-right: 0.5em;
+	min-inline-size: em(240);
+	inline-size: em(240);
+	max-inline-size: em(240);
+	padding-block-start: 0.5em;
+	padding-inline-end: 0.5em;
 
 	@include respond-to($breakpoint-small, 'max') {
-		width: 100%;
-		max-width: none;
-		margin-bottom: 0.5em;
+		inline-size: 100%;
+		max-inline-size: none;
+		margin-block-end: 0.5em;
 		display: flex;
 		flex-direction: column;
 	}

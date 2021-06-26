@@ -2,11 +2,11 @@
 	grid-template-columns: min-content minmax(5em, 1fr);
 
 	& > .border-bottom {
-		padding-bottom: 1em;
+		padding-block-end: 1em;
 	}
 
 	& > :not(.border-bottom) {
-		margin-top: 1em;
+		margin-block-start: 1em;
 	}
 
 	// not enough place
@@ -21,11 +21,11 @@
 		gap: 0.5em;
 
 		& > .on-mobile-pb0 {
-			padding-bottom: 0;
+			padding-block-end: 0;
 		}
 
 		& > :not(.border-bottom) {
-			margin-top: 0;
+			margin-block-start: 0;
 		}
 	}
 }

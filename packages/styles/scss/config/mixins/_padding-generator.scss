@@ -14,13 +14,13 @@
 			$property: padding;
 
 			@if $temp_t==t {
-				$property: padding-top;
+				$property: padding-block-start;
 			} @else if $temp_t==r {
-				$property: padding-right;
+				$property: padding-inline-end;
 			} @else if $temp_t==b {
-				$property: padding-bottom;
+				$property: padding-block-end;
 			} @else if $temp_t==l {
-				$property: padding-left;
+				$property: padding-inline-start;
 			}
 
 			$value: $padding + 0em;
@@ -35,7 +35,7 @@
 			// from 1.5 to 1-5
 			$property-class: str-replace($text-padding, '.', '-');
 
-			// .pr1-5 { padding-right: 1.5em; }
+			// .pr1-5 { padding-inline-end: 1.5em; }
 			.#{$prefix}#{$padding-type}#{$property-class} {
 				#{$property}: #{$value};
 			}

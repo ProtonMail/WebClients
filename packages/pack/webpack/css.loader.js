@@ -37,7 +37,10 @@ module.exports = ({ browserslist }) => {
                             overrideBrowserslist: browserslist,
                             flexbox: 'no-2009',
                         }),
-                        require('postcss-color-functional-notation'),
+                        require('postcss-color-functional-notation')(),
+                        require('postcss-logical')({
+                            dir: 'ltr',
+                        }),
                     ],
                 },
             },

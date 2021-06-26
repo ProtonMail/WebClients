@@ -277,7 +277,7 @@ const UsersAndAddressesSection = () => {
                     return (
                         <div key={member.ID} className="pt1 pb1 border-bottom">
                             <div className="flex mb1-5">
-                                <span style={{ minWidth: 100 }} className="text-bold">
+                                <span style={{ '--min-width-custom': `100px` }} className="text-bold min-w-custom mr1">
                                     {c('Title header for members table').t`Name`}
                                 </span>
                                 <div>
@@ -288,7 +288,7 @@ const UsersAndAddressesSection = () => {
                                 </div>
                             </div>
                             <div className="flex mb1-5">
-                                <span style={{ minWidth: 100 }} className="text-bold">
+                                <span style={{ '--min-width-custom': `100px` }} className="text-bold min-w-custom mr1">
                                     <span className="mr0-5">{c('Title header for members table').t`Role`}</span>
                                     <span className="no-mobile">
                                         <Info url="https://protonmail.com/support/knowledge-base/member-roles/" />
@@ -297,7 +297,7 @@ const UsersAndAddressesSection = () => {
                                 <MemberRole member={member} />
                             </div>
                             <div className="flex mb1-5">
-                                <span style={{ minWidth: 100 }} className="text-bold">
+                                <span style={{ '--min-width-custom': `100px` }} className="text-bold min-w-custom mr1">
                                     <span
                                         className="text-ellipsis inline-block align-bottom max-w100"
                                         title={c('Title header for members table').t`Addresses`}
@@ -306,7 +306,7 @@ const UsersAndAddressesSection = () => {
                                 <MemberAddresses addresses={memberAddresses} />
                             </div>
                             <div className="flex mb1-5">
-                                <div style={{ minWidth: 100 }} className="text-bold">
+                                <div style={{ '--min-width-custom': `100px` }} className="text-bold min-w-custom mr1">
                                     <span
                                         className="text-ellipsis inline-block align-bottom max-w100"
                                         title={c('Title header for members table').t`Features`}
@@ -317,7 +317,7 @@ const UsersAndAddressesSection = () => {
                                 </div>
                             </div>
                             <div className="flex mb1-5">
-                                <span style={{ minWidth: 100 }} />
+                                <span style={{ '--min-width-custom': `100px` }} className="min-w-custom mr1" />
                                 <MemberActions
                                     member={member}
                                     addresses={memberAddresses}

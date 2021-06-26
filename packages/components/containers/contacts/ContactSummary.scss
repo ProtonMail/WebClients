@@ -2,11 +2,11 @@
 
 // ?????
 .contactsummary-list-item {
-	height: rem(25);
+	block-size: rem(25);
 }
 
 @include respond-to($breakpoint-small) {
 	.contact-modal-select {
-		max-width: calc(100% - 3.3em);
+		max-inline-size: calc(100% - 3.3em);
 	}
 }

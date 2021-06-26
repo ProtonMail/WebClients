@@ -6,13 +6,13 @@
 	}
 	h2 {
 		@include rhythm(map-get($title-sizes, 'h4'));
-		margin-bottom: 0.5em;
+		margin-block-end: 0.5em;
 	}
 	h3 {
 		@include rhythm(map-get($title-sizes, 'h4'));
-		margin-bottom: 0.5em;
+		margin-block-end: 0.5em;
 	}
 	ul {
-		margin-top: 0.5em;
+		margin-block-start: 0.5em;
 	}
 }

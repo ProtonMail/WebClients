@@ -1,7 +1,7 @@
 @import '~@proton/styles/scss/config';
 
 .redeem-header-wrapper {
-    border-top: solid 1px var(--border-norm);
+	border-block-start: solid 1px var(--border-norm);
 }
 
 .redeem-heading-bg {
@@ -11,37 +11,35 @@
 }
 
 .redeem-heading-title {
-    font-size: rem(48);
-    max-width: em(200);
+	font-size: rem(48);
+	max-inline-size: em(200);
 }
 
 .redeem-form {
-    max-width: rem(325);
+	max-inline-size: rem(325);
 }
 
 .redeem-coupon-code-input {
-    font-size: rem(16);
-    padding-top: 11px;
-    padding-bottom: 11px;
-    border-radius: 0;
+	font-size: rem(16);
+	padding-block: 11px;
+	border-radius: 0;
 }
 
 .redeem-submit-button {
-    border-radius: 25px;
-    font-size: rem(14);
-    padding-top: 19px;
-    padding-bottom: 19px;
+	border-radius: 25px;
+	font-size: rem(14);
+	padding-block: 19px;
 }
 
 .redeem-promo-img {
-    display: block;
-    max-width: 40px;
-    max-height: 40px;
+	display: block;
+	max-inline-size: 40px;
+	max-block-size: 40px;
 }
 
 @include respond-to($breakpoint-medium) {
-    .redeem-heading-title {
-        font-size: rem(30);
-        font-weight: normal;
-    }
+	.redeem-heading-title {
+		font-size: rem(30);
+		font-weight: normal;
+	}
 }

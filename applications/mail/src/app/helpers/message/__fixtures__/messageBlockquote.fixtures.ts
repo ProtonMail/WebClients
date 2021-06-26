@@ -26,7 +26,7 @@ const gmail1 = `
         <br>
         <div class="gmail_quote">
             <div class="gmail_attr" dir="ltr">Le&nbsp;ven. 14 févr. 2020 à&nbsp;10:19, swiip.test &lt;swiip.test@protonmail.blue&gt; a écrit&nbsp;:<br></div>
-            <blockquote style="margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex" class="gmail_quote">
+            <blockquote style="margin:0px 0px 0px 0.8ex;border-inline-start:1px solid rgb(204,204,204);padding-inline-start:1ex" class="gmail_quote">
                 <div>
                     <div>2<br></div><div><br></div><div><div><br></div><div>Sent with <a target="_blank" href="https://protonmail.com/?utm_campaign=ww-all-2a-mail-pmm_mail-protonmail_signature&utm_source=proton_users&utm_medium=cta&utm_content=sent_with_protonmail_secure_email" rel="noreferrer nofollow noopener">ProtonMail</a> Secure Email.<br></div></div><div><br></div><span>‐‐‐‐‐‐‐ Original Message ‐‐‐‐‐‐‐</span><br>
                     On Monday 19 January 1970 à 08:21, Matthieu Lux  wrote:<br>
@@ -47,7 +47,7 @@ const gmail1 = `
 const android = `
  <p>Hello</p>
 <div class="gmail_quote">02.04.2012 14:20 пользователь &quot;<a href="mailto:bob@xxx.mailgun.org">bob@xxx.mailgun.org</a>&quot; &lt;<a href="mailto:bob@xxx.mailgun.org">bob@xxx.mailgun.org</a>&gt; написал:<br type="attribution">
-<blockquote class="gmail_quote" style="margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex">Hi<br>
+<blockquote class="gmail_quote" style="margin:0 0 0 .8ex;border-inline-start:1px #ccc solid;padding-inline-start:1ex">Hi<br>
 </blockquote></div>
  `;
 
@@ -97,7 +97,7 @@ Hello<br><br><hr id="zwchr"><b>From: </b>bob@xxx.mailgun.org<br><b>To: </b>xxx@g
 `;
 
 const gmail2 = `
-Hello<br><br><div class="gmail_quote">On Mon, Apr 2, 2012 at 6:26 PM, Megan One <span dir="ltr">&lt;<a href="mailto:xxx@gmail.com">xxx@gmail.com</a>&gt;</span> wrote:<br><blockquote class="gmail_quote" style="margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex">
+Hello<br><br><div class="gmail_quote">On Mon, Apr 2, 2012 at 6:26 PM, Megan One <span dir="ltr">&lt;<a href="mailto:xxx@gmail.com">xxx@gmail.com</a>&gt;</span> wrote:<br><blockquote class="gmail_quote" style="margin:0 0 0 .8ex;border-inline-start:1px #ccc solid;padding-inline-start:1ex">
 Hi
 
 </blockquote></div><br>
@@ -106,7 +106,7 @@ Hi
 const gmail3 = `
 <div dir="ltr"><div class="gmail_default"><div class="gmail_default" style>Hi. I am fine.</div><div class="gmail_default" style><br></div><div class="gmail_default" style>Thanks,</div><div class="gmail_default" style>Alex</div>
 </div></div><div class="gmail_extra"><br><br><div class="gmail_quote">On Thu, Jun 26, 2014 at 2:14 PM, Alexander L <span dir="ltr">&lt;<a href="mailto:abc@example.com" target="_blank">a@example.com</a>&gt;</span> wrote:<br>
-<blockquote class="gmail_quote" style="margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div dir="ltr"><div class="gmail_default" style="font-size:small"><div class="gmail_default" style="font-family:arial,sans-serif">
+<blockquote class="gmail_quote" style="margin:0 0 0 .8ex;border-inline-start:1px #ccc solid;padding-inline-start:1ex"><div dir="ltr"><div class="gmail_default" style="font-size:small"><div class="gmail_default" style="font-family:arial,sans-serif">
 Hello! How are you?</div><div class="gmail_default" style="font-family:arial,sans-serif"><br>
 </div><div class="gmail_default" style="font-family:arial,sans-serif">Thanks,</div><div class="gmail_default" style="font-family:arial,sans-serif">Sasha.</div></div></div>
 </blockquote></div><br></div>
@@ -165,7 +165,7 @@ const outlook1 = `
 /* Style Definitions */
 p.MsoNormal, li.MsoNormal, div.MsoNormal
 	{margin:0cm;
-	margin-bottom:.0001pt;
+	margin-block-end:.0001pt;
 	font-size:12.0pt;
 	font-family:"Times New Roman","serif";}
 a:link, span.MsoHyperlink
@@ -220,7 +220,7 @@ w\\:* {behavior:url(#default#VML);}
  /* Style Definitions */
  p.MsoNormal, li.MsoNormal, div.MsoNormal
 	{margin:0cm;
-	margin-bottom:.0001pt;
+	margin-block-end:.0001pt;
 	font-size:12.0pt;
 	font-family:"Times New Roman";}
 a:link, span.MsoHyperlink
@@ -349,7 +349,7 @@ const outlook2007 = `
 /* Style Definitions */
 p.MsoNormal, li.MsoNormal, div.MsoNormal
 	{margin:0cm;
-	margin-bottom:.0001pt;
+	margin-block-end:.0001pt;
 	font-size:12.0pt;
 	font-family:"Times New Roman","serif";}
 a:link, span.MsoHyperlink
@@ -384,7 +384,7 @@ div.WordSection1
 <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'>Thanks,<o:p></o:p></span></p>
 <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'>Alex<o:p></o:p></span></p>
 <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:#1F497D'><o:p>&nbsp;</o:p></span></p>
-<div style='border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0cm 0cm 0cm'>
+<div style='border:none;border-block-start:solid #B5C4DF 1.0pt;padding-block:3.0pt 0cm;padding-inline:0'>
     <p class=MsoNormal><b><span lang=RU style='font-size:10.0pt;font-family:"Tahoma","sans-serif"'>From:</span></b><span lang=RU style='font-size:10.0pt;font-family:"Tahoma","sans-serif"'> Alexander L [mailto:abc@example.com] <br><b>Sent:</b> Thursday, July 03, 2014 3:50 PM<br><b>To:</b> alex.l@example.com<br><b>Subject:</b> Test message<o:p></o:p></span></p>
 </div>
 <p class=MsoNormal><o:p>&nbsp;</o:p></p>
@@ -407,16 +407,16 @@ const outlook2010 = `
 /* Style Definitions */
 p.MsoNormal, li.MsoNormal, div.MsoNormal
 	{margin:0in;
-	margin-bottom:.0001pt;
+	margin-block-end:.0001pt;
 	font-size:12.0pt;
 	font-family:"Times New Roman","serif";}
 h3
 	{mso-style-priority:9;
 	mso-style-link:"Heading 3 Char";
-	mso-margin-top-alt:auto;
-	margin-right:0in;
-	mso-margin-bottom-alt:auto;
-	margin-left:0in;
+	mso-margin-block-start-alt:auto;
+	margin-inline-end:0in;
+	mso-margin-block-end-alt:auto;
+	margin-inline-start:0in;
 	font-size:13.5pt;
 	font-family:"Times New Roman","serif";
 	font-weight:bold;}
@@ -430,10 +430,10 @@ a:visited, span.MsoHyperlinkFollowed
 	text-decoration:underline;}
 p
 	{mso-style-priority:99;
-	mso-margin-top-alt:auto;
-	margin-right:0in;
-	mso-margin-bottom-alt:auto;
-	margin-left:0in;
+	mso-margin-block-start-alt:auto;
+	margin-inline-end:0in;
+	mso-margin-block-end-alt:auto;
+	margin-inline-start:0in;
 	font-size:12.0pt;
 	font-family:"Times New Roman","serif";}
 span.Heading3Char
@@ -491,8 +491,8 @@ x</div><div>Sent with <a href=3D=22http://www.sparrowmailapp.com/=3Fsig=22=
 =20
 <p style=3D=22color: =23A0A0A8;=22>On Tuesday, April 3, 2=
 012 at 4:55 PM, xxx wrote:</p>
-<blockquote type=3D=22cite=22 style=3D=22border-left-styl=
-e:solid;border-width:1px;margin-left:0px;padding-left:10px;=22>
+<blockquote type=3D=22cite=22 style=3D=22border-inline-start-styl=
+e:solid;border-width:1px;margin-inline-start:0px;padding-inline-start:10px;=22>
 <span><div><div><div>Hello</div><div><br></div><div>O=
 n Apr 3, 2012, at 4:19 PM, bob wrote:</div><div><br></div><blo=
 ckquote type=3D=22cite=22><div>Hi</div></blockquote></div></div></span>
@@ -509,7 +509,7 @@ ckquote type=3D=22cite=22><div>Hi</div></blockquote></div></div></span>
 
 export const mail_ru = `
 <HTML><BODY><p>Hi. I am fine.</p><p>Thanks,<br>Alex</p><br><br><br>Thu, 26 Jun 2014 14:00:51 +0400 от Alexander L &lt;abc@example.com&gt;:<br>
-<blockquote style="border-left:1px solid #0857A6; margin:10px; padding:0 0 0 10px;">
+<blockquote style="border-inline-start:1px solid #0857A6; margin:10px; padding-block:0; padding-inline: 10px 0;">
 	<div id="">
 <div class="js-helper js-readmsg-msg">
 	<style type="text/css"></style>
@@ -568,29 +568,29 @@ const windows_mail = `
 <meta name="generator" content="Windows Mail 17.5.9600.20498">
 <style data-externalstyle="true"><!--
 p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph {
-margin-top:0in;
-margin-right:0in;
-margin-bottom:0in;
-margin-left:.5in;
-margin-bottom:.0001pt;
+margin-block-start:0in;
+margin-inline-end:0in;
+margin-block-end:0in;
+margin-inline-start:.5in;
+margin-block-end:.0001pt;
 }
 p.MsoNormal, li.MsoNormal, div.MsoNormal {
 margin:0in;
-margin-bottom:.0001pt;
+margin-block-end:.0001pt;
 }
 p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst,
 p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle,
 p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast {
-margin-top:0in;
-margin-right:0in;
-margin-bottom:0in;
-margin-left:.5in;
-margin-bottom:.0001pt;
+margin-block-start:0in;
+margin-inline-end:0in;
+margin-block-end:0in;
+margin-inline-start:.5in;
+margin-block-end:.0001pt;
 line-height:115%;
 }
 --></style></head>
 <body dir="ltr">
-<div data-externalstyle="false" dir="ltr" style="font-family: 'Calibri', 'Segoe UI', 'Meiryo', 'Microsoft YaHei UI', 'Microsoft JhengHei UI', 'Malgun Gothic', 'sans-serif';font-size:12pt;"><div>Hi. I am fine.</div><div><br></div><div>Thanks,</div><div>Alex<br></div><div data-signatureblock="true"><div><br></div><div><br></div></div><div style="padding-top: 5px; border-top-color: rgb(229, 229, 229); border-top-width: 1px; border-top-style: solid;"><div><font face=" 'Calibri', 'Segoe UI', 'Meiryo', 'Microsoft YaHei UI', 'Microsoft JhengHei UI', 'Malgun Gothic', 'sans-serif'" style='line-height: 15pt; letter-spacing: 0.02em; font-family: "Calibri", "Segoe UI", "Meiryo", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "sans-serif"; font-size: 12pt;'><b>От:</b>&nbsp;<a href="mailto:abc@example.com" target="_parent">Alexander L</a><br><b>Отправлено:</b>&nbsp;‎четверг‎, ‎26‎ ‎июня‎ ‎2014‎ г. ‎15‎:‎05<br><b>Кому:</b>&nbsp;<a href="mailto:alex-ninja@example.com" target="_parent">Alex</a></font></div></div><div><br></div><div dir=""><div dir="ltr"><div class="gmail_default" style="font-size: small;"><div class="gmail_default" style="font-family: arial,sans-serif;">Hello! How are you?</div><div class="gmail_default" style="font-family: arial,sans-serif;"><br>
+<div data-externalstyle="false" dir="ltr" style="font-family: 'Calibri', 'Segoe UI', 'Meiryo', 'Microsoft YaHei UI', 'Microsoft JhengHei UI', 'Malgun Gothic', 'sans-serif';font-size:12pt;"><div>Hi. I am fine.</div><div><br></div><div>Thanks,</div><div>Alex<br></div><div data-signatureblock="true"><div><br></div><div><br></div></div><div style="padding-block-start: 5px; border-block-start-color: rgb(229, 229, 229); border-block-start-width: 1px; border-block-start-style: solid;"><div><font face=" 'Calibri', 'Segoe UI', 'Meiryo', 'Microsoft YaHei UI', 'Microsoft JhengHei UI', 'Malgun Gothic', 'sans-serif'" style='line-height: 15pt; letter-spacing: 0.02em; font-family: "Calibri", "Segoe UI", "Meiryo", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "sans-serif"; font-size: 12pt;'><b>От:</b>&nbsp;<a href="mailto:abc@example.com" target="_parent">Alexander L</a><br><b>Отправлено:</b>&nbsp;‎четверг‎, ‎26‎ ‎июня‎ ‎2014‎ г. ‎15‎:‎05<br><b>Кому:</b>&nbsp;<a href="mailto:alex-ninja@example.com" target="_parent">Alex</a></font></div></div><div><br></div><div dir=""><div dir="ltr"><div class="gmail_default" style="font-size: small;"><div class="gmail_default" style="font-family: arial,sans-serif;">Hello! How are you?</div><div class="gmail_default" style="font-family: arial,sans-serif;"><br>
 </div><div class="gmail_default" style="font-family: arial,sans-serif;">Thanks,</div><div class="gmail_default" style="font-family: arial,sans-serif;">Sasha.</div></div></div>
 </div></div>
 </body>
@@ -651,7 +651,7 @@ const gmail4 = `
             <div dir="ltr" class="gmail_attr">冯伟 &lt;<a href="mailto:felixfw1111@gmail.com">felixfw1111@gmail.com</a>&gt;
                 于2019年7月2日周二 下午5:36写道：<br></div>
             <blockquote class="gmail_quote"
-                style="margin:0px 0px 0px 0.8ex;border-left-width:1px;border-left-style:solid;border-left-color:rgb(204,204,204);padding-left:1ex">
+                style="margin-block:0; margin-inline: 0.8ex 0;border-inline-start-width:1px;border-inline-start-style:solid;border-inline-start-color:rgb(204,204,204);padding-inline-start:1ex">
                 <div dir="ltr"><b>this is content 1</b>
                     <div><b><u>this is content 2</u><br></b>
                         <div><br></div>
@@ -669,8 +669,8 @@ content1<br />
 content2<br>
 <br>
 <div name="quote"
-    style='margin:10px 5px 5px 10px; padding: 10px 0 10px 10px; border-left:2px solid #C3D9E5; word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;'>
-    <div style="margin:0 0 10px 0;">
+    style='margin-block: 10px 5px; margin-inline: 10px 5px; padding-block: 10px; padding-inline: 10px 0; border-inline-start:2px solid #C3D9E5; word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;'>
+    <div style="margin-block: 0 10px; margin-inline: 0;">
         <b>Sent:</b>&nbsp;Tuesday, July 02, 2019 at 6:15 PM<br />
         <b>From:</b>&nbsp;&quot;冯伟&quot; &lt;felixfw1111@gmail.com&gt;<br />
         <b>To:</b>&nbsp;felixfw1111@gmx.com<br />
@@ -692,8 +692,8 @@ const hotmail3 = `
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
         <style type="text/css" style="display:none;"> P {
-            margin-top: 0;
-            margin-bottom: 0;
+            margin-block-start: 0;
+            margin-block-end: 0;
         } </style>
     </head>
     <body dir="ltr">
@@ -708,7 +708,7 @@ const hotmail3 = `
             <i><u style="background-color: rgb(255, 0, 0)">content2</u></i></div>
         <br>
     </div>
-    <hr tabindex="-1" style="display:inline-block; width:98%">
+    <hr tabindex="-1" style="display:inline-block; inline-size:98%">
     <div id="divRplyFwdMsg" dir="ltr"><font face="Calibri, sans-serif" color="#000000" style="font-size:11pt"><b>From:</b>
         冯伟 &lt;felixfw1111@gmail.com&gt;<br>
         <b>Sent:</b> Tuesday, July 2, 2019 5:43 PM<br>
@@ -732,8 +732,8 @@ const icloud = `
 <div>
     <meta charset="utf-8">
     <blockquote type="cite"
-        style="padding: 0px 12px; border-left: 2px solid #003399; margin: 0px; color: #003399; font-family: SFNSText, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"
-        data-mce-style="padding: 0px 12px; border-left: 2px solid #003399; margin: 0px; color: #003399; font-family: SFNSText, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;">
+        style="padding-block: 0; padding-inline: 12px; border-inline-start: 2px solid #003399; margin: 0px; color: #003399; font-family: SFNSText, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;"
+        data-mce-style="padding-block: 0; padding-inline: 12px; border-inline-start: 2px solid #003399; margin: 0px; color: #003399; font-family: SFNSText, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 300; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-style: initial; text-decoration-color: initial;">
         <div class="msg-quote">
             <div dir="ltr"><b>content1</b>
                 <div><i><u data-mce-style="background-color: #ff0000;" style="background-color: rgb(255, 0, 0);">content2</u></i>
@@ -760,7 +760,7 @@ const icloud = `
 
 const netease = `
 回复内容<br>content1<br>content2<br><br>At 2019-07-04 11:20:38, "冯伟" &lt;felixfw1111@gmail.com&gt; wrote:<br>
-<blockquote id="isReplyContent" style="PADDING-LEFT: 1ex; MARGIN: 0px 0px 0px 0.8ex; BORDER-LEFT: #ccc 1px solid">
+<blockquote id="isReplyContent" style="padding-inline-start: 1ex; margin-block: 0; margin-inline: 0.8ex 0; border-inline-start: #ccc 1px solid">
     <div dir="ltr"><b>content1</b>
         <div><i><u style="background-color:rgb(255,0,0)">content2</u></i></div>
     </div>
@@ -772,8 +772,8 @@ const outlook2 = `
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
     <style type="text/css" style="display:none;"> P {
-        margin-top: 0;
-        margin-bottom: 0;
+        margin-block-start: 0;
+        margin-block-end: 0;
     } </style>
 </head>
 <body dir="ltr">
@@ -788,7 +788,7 @@ const outlook2 = `
         <i><u style="background-color: rgb(255, 0, 0)">content2</u></i></div>
     <br>
 </div>
-<hr tabindex="-1" style="display:inline-block; width:98%">
+<hr tabindex="-1" style="display:inline-block; inline-size:98%">
 <div id="divRplyFwdMsg" dir="ltr"><font face="Calibri, sans-serif" color="#000000" style="font-size:11pt"><b>From:</b>
     冯伟 &lt;felixfw1111@gmail.com&gt;<br>
     <b>Sent:</b> Tuesday, July 2, 2019 5:43 PM<br>
@@ -852,7 +852,7 @@ const tencent = `
 </div>
 <div><br></div>
 <div><br></div>
-<div style="font-size: 12px;font-family: Arial Narrow;padding:2px 0 2px 0;">------------------&nbsp;原始邮件&nbsp;------------------</div>
+<div style="font-size: 12px;font-family: Arial Narrow;padding-block: 2px; padding-inline: 0;">------------------&nbsp;原始邮件&nbsp;------------------</div>
 <div style="font-size: 12px;background:#efefef;padding:8px;">
     <div><b>发件人:</b> "felixfw1111"&lt;felixfw1111@gmail.com&gt;;</div>
     <div><b>发送时间:</b> 2019年7月4日(星期四) 中午11:18</div>
@@ -897,7 +897,7 @@ const yahoo = `
                 data-testid="toolbar-hover-area">
                 <div class="ydp7263f265D_F ydp7263f265W_6D6F ydp7263f265r_BN ydp7263f265gl_C"
                     data-testid="card-toolbar"
-                    style="width: 903.406px;"></div>
+                    style="inline-size: 903.406px;"></div>
             </div>
         </div>
         <br></div>
@@ -951,7 +951,7 @@ const zoho = `
 <div style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt;">
     <div>回复内容<br></div>
     <div class="zmail_extra" style="">
-        <blockquote style="border-left: 1px solid rgb(204, 204, 204); padding-left: 6px; margin: 0px 0px 0px 5px;">
+        <blockquote style="border-inline-start: 1px solid rgb(204, 204, 204); padding-inline-start: 6px; margin-block: 0; margin-inline: 5px 0;">
             <div>
                 <div dir="ltr"><b>content1</b>
                     <div><i><u style="background-color:rgb(255,0,0);">content2</u></i><br></div>
@@ -968,7 +968,7 @@ const zoho = `
         <div id="Zm-_Id_-Sgn1">---- 在 星期二, 02 七月 2019 17:55:32 +0800 <b>冯伟 &lt;felixfw1111@gmail.com&gt;</b> 撰写 ----<br>
         </div>
         <br>
-        <blockquote style="border-left: 1px solid rgb(204, 204, 204); padding-left: 6px; margin: 0px 0px 0px 5px;">
+        <blockquote style="border-inline-start: 1px solid rgb(204, 204, 204); padding-inline-start: 6px; margin-block: 0; margin-inline: 5px 0;">
             <div>
                 <div dir="ltr"><b>content1</b>
                     <div><i><u style="background-color:rgb(255,0,0);">content2</u></i><br></div>

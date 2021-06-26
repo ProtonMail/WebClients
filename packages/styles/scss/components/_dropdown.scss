@@ -26,12 +26,10 @@
 	animation: 0.15s ease-out both;
 
 	@include respond-to($breakpoint-small, 'max') {
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
+		inset: 0;
 		display: flex;
-		padding: 15% 25%;
+		padding-block: 15%;
+		padding-inline: 25%;
 		overflow: hidden;
 		flex-flow: column nowrap;
 		justify-content: center;
@@ -68,8 +66,10 @@
 	}
 
 	@include respond-to($breakpoint-small, 'min') {
-		top: calc(var(--top) * 1px);
-		left: calc(var(--left) * 1px);
+		inset-block-start: calc(var(--top) * 1px);
+		/* stylelint-disable */
+		left: calc(var(--left) * 1px); // JS provide left value only
+		/* stylelint-enable */
 		transform: scale(1);
 		border-radius: var(--border-radius-large);
 		box-shadow: var(--shadow-lifted);
@@ -111,14 +111,11 @@
 	&-backdrop {
 		@include respond-to($breakpoint-small, 'max') {
 			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
+			inset: 0;
 			z-index: 0;
 			display: block;
-			width: 100%;
-			height: 100%;
+			inline-size: 100%;
+			block-size: 100%;
 			margin: 0;
 			padding: 0;
 			border: none;
@@ -133,10 +130,10 @@
 
 	/* Scrollable insides of the dropdown */
 	&-content {
-		height: calc(var(--height) * 1px);
+		block-size: calc(var(--height) * 1px);
 		// The min size can't be greater than the remaining space when the dropdown is positioned
-		min-width: min(var(--min-width, 1.5em), var(--max-width-bounds));
-		min-height: min(var(--min-height, 1em), var(--max-height-bounds));
+		min-inline-size: min(var(--min-width, 1.5em), var(--max-width-bounds));
+		min-block-size: min(var(--min-height, 1em), var(--max-height-bounds));
 		overflow: auto;
 		border-radius: var(--border-radius-large);
 		background-color: var(--background-norm);
@@ -149,15 +146,15 @@
 		@include respond-to($breakpoint-small, 'max') {
 			position: relative;
 			z-index: 1;
-			width: 100%;
+			inline-size: 100%;
 			box-shadow: var(--shadow-lifted);
 			transition: transform 0.1s ease-out;
 		}
 
 		@include respond-to($breakpoint-small, 'min') {
-			width: calc(var(--width) * 1px);
-			max-width: var(--max-width, unset);
-			max-height: var(--max-height, unset);
+			inline-size: calc(var(--width) * 1px);
+			max-inline-size: var(--max-width, unset);
+			max-block-size: var(--max-height, unset);
 		}
 
 		&::before,
@@ -166,7 +163,7 @@
 			position: relative;
 			z-index: 1;
 			display: block;
-			height: rem(3);
+			block-size: rem(3);
 			flex: 0 0 rem(3);
 			background: var(--background-norm);
 		}
@@ -280,21 +277,22 @@
 	}
 
 	&-item-hr {
-		height: 0;
+		block-size: 0;
 		box-sizing: content-box;
-		border-top: 1px solid var(--border-norm);
+		border-block-start: 1px solid var(--border-norm);
 	}
 
 	&-search {
 		position: sticky;
-		top: 0;
+		inset-block-start: 0;
 		padding: 1rem;
 		background-color: var(--background-norm);
 		box-shadow: var(--shadow-norm);
 
 		&-no-result {
 			color: var(--text-weak);
-			padding: rem(40) rem(10);
+			padding-block: rem(40);
+			padding-inline: rem(10);
 			letter-spacing: rem(0.25);
 		}
 	}

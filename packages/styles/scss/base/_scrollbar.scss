@@ -13,8 +13,8 @@ $scrollbar-margin: rem(2) !default;
 
 		// webkit specific
 		&::-webkit-scrollbar {
-			width: $real-size;
-			height: $real-size;
+			inline-size: $real-size;
+			block-size: $real-size;
 		}
 
 		&::-webkit-scrollbar-thumb {

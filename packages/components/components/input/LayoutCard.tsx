@@ -29,7 +29,7 @@ const LayoutCard = ({ label, src, selected, onChange, disabled, describedByID }:
             aria-describedby={describedByID}
         >
             <span className="flex flex-nowrap flex-column">
-                <img alt="" src={src} className="mb0-5 layout-card-image" width={149} height={82} />
+                <img alt="" src={src} className="mb0-5 layout-card-image on-rtl-mirror" width={149} height={82} />
                 <span>{label}</span>
             </span>
         </Button>

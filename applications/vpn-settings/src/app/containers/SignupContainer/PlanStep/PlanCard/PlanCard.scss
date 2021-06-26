@@ -1,45 +1,43 @@
 @import '~@proton/styles/scss/config';
 
 .plan-card {
-    margin-right: 2em;
+	margin-inline-end: 2em;
 
-    &:nth-of-type(3) {
-        margin-right: 0;
-    }
+	&:nth-of-type(3) {
+		margin-inline-end: 0;
+	}
 
-    &:last-of-type {
-        margin-left: 2em;
-        margin-right: 0;
-    }
+	&:last-of-type {
+		margin-inline: 2em 0;
+	}
 
-    @include respond-to($breakpoint-small) {
-        &,
-        &:last-of-type {
-            margin: 0;
-        }
-    }
+	@include respond-to($breakpoint-small) {
+		&,
+		&:last-of-type {
+			margin: 0;
+		}
+	}
 
-    &:hover,
-    &--active {
-        .border-top {
-            border-color: var(--primary);
-        }
-    }
+	&:hover,
+	&--active {
+		.border-top {
+			border-color: var(--primary);
+		}
+	}
 
-    &-image {
-        height: rem(70);
-    }
+	&-image {
+		block-size: rem(70);
+	}
 
-    &-mostPopular {
-        @include respond-to($breakpoint-medium) {
-            position: absolute;
-            top: calc( #{rem(-70)} - 2.5em); // height of image container + some text
-            left: 0;
-            right: 0;
-        }
+	&-mostPopular {
+		@include respond-to($breakpoint-medium) {
+			position: absolute;
+			inset-block-start: calc(#{rem(-70)} - 2.5em); // height of image container + some text
+			inset-inline: 0;
+		}
 
-        @include respond-to($breakpoint-small) {
-            position: static;
-        }
-    }
+		@include respond-to($breakpoint-small) {
+			position: static;
+		}
+	}
 }

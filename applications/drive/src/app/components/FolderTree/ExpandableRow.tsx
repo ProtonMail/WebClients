@@ -61,11 +61,11 @@ const ExpandableRow = ({
         }
     }, [isExpanded]);
 
-    const paddingLeft = `${depth * 1.5}em`;
-    const viewMorePadding = { paddingLeft: `${(depth + 1) * 1.5}em` };
+    const paddingElement = { '--padding-left-custom': `${depth * 1.5}em` };
+    const viewMorePadding = { '--padding-left-custom': `${(depth + 1) * 1.5}em` };
     const viewMoreRow = !childrenComplete ? (
         <tr>
-            <td style={viewMorePadding}>
+            <td style={viewMorePadding} className="pl-custom">
                 <LinkButton className="ml0-5" onClick={handleLoadMore(linkId)}>
                     {c('Action').t`View more`}
                 </LinkButton>
@@ -79,7 +79,7 @@ const ExpandableRow = ({
                 className={classnames(['folder-tree-list-item cursor-pointer', isSelected && 'bg-strong'])}
                 onClick={handleSelect(linkId)}
             >
-                <td style={{ paddingLeft }} className="flex flex-align-items-center flex-nowrap m0">
+                <td style={paddingElement} className="flex flex-align-items-center flex-nowrap m0 pl-custom">
                     <div className="folder-tree-list-item-expand flex-item-noshrink relative">
                         <Button
                             disabled={disabled}

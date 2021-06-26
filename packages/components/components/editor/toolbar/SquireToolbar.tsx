@@ -210,7 +210,7 @@ const SquireToolbar = ({
                                 title={c('Action').t`Unordered list`}
                                 tabIndex={-1}
                             >
-                                <Icon name="list" className="mauto" alt={c('Action').t`Unordered list`} />
+                                <Icon name="list" className="mauto on-rtl-mirror" alt={c('Action').t`Unordered list`} />
                             </SquireToolbarButton>
                             <SquireToolbarButton
                                 onClick={handleOrderedList}
@@ -219,7 +219,7 @@ const SquireToolbar = ({
                                 title={c('Action').t`Ordered list`}
                                 tabIndex={-1}
                             >
-                                <Icon name="list-numbers" className="mauto" alt={c('Action').t`Ordered list`} />
+                                <Icon name="list-numbers" className="mauto on-rtl-mirror" alt={c('Action').t`Ordered list`} />
                             </SquireToolbarButton>
                             <SquireToolbarSeparator />
                             <SquireToolbarAlignmentDropdown

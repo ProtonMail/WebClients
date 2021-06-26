@@ -2,8 +2,8 @@
 	--stroke-width: 20;
 
 	display: inline-block;
-	width: 1em;
-	height: 1em;
+	inline-size: 1em;
+	block-size: 1em;
 	transform-origin: 50%;
 	vertical-align: middle;
 	animation: anime-loader-rotation 2s linear infinite;

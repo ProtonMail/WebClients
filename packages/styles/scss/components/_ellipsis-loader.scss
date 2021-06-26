@@ -1,8 +1,8 @@
 .ellipsis-loader {
 	display: inline-block;
-	width: 1.4em;
+	inline-size: 1.4em;
 	vertical-align: baseline;
-	text-align: left;
+	text-align: start;
 
 	&::before {
 		content: ' ';

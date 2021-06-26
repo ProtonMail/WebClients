@@ -8,10 +8,10 @@
 
 		.layout-card-button {
 			margin: 0;
-			width: 100%;
+			inline-size: 100%;
 		}
 		.layout-card-image {
-			width: 100%;
+			inline-size: 100%;
 		}
 
 		@include respond-to($breakpoint-tiny) {

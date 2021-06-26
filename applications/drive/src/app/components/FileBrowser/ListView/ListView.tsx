@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import * as React from 'react';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 
-import { TableBody, useActiveBreakpoint, Table, classnames, useElementRect, TableCellBusy } from '@proton/components';
+import { TableBody, useActiveBreakpoint, Table, classnames, useElementRect, TableCellBusy, useRightToLeft } from '@proton/components';
 import { buffer } from '@proton/shared/lib/helpers/function';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
@@ -149,6 +149,8 @@ const ListView = ({
     const { isDesktop } = useActiveBreakpoint();
     const itemCount = loading ? contents.length + 1 : contents.length;
 
+    const [isRTL] = useRightToLeft();
+
     const itemHeight = rootFontSize * 2.5; // 2.5 x 16 = we want 40px by default
 
     // TODO heading padding on scrollbar
@@ -182,6 +184,7 @@ const ListView = ({
             <div className="flex-no-min-children flex-column flex-item-fluid w100 no-scroll" ref={containerRef}>
                 {rect && (
                     <FixedSizeList
+                        direction={isRTL ? 'rtl' : 'ltr'}
                         itemCount={itemCount}
                         itemSize={itemHeight}
                         itemData={{

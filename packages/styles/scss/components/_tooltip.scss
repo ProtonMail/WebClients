@@ -5,12 +5,13 @@
 
 	position: fixed;
 	z-index: 666;
-	min-width: $arrow-width;
-	max-width: $tooltip-width;
+  min-inline-size: $arrow-width;
+	max-inline-size: $tooltip-width;
 	border-radius: var(--border-radius-medium);
 	background-color: var(--tooltip-background-color);
 	color: var(--tooltip-text-color);
-	padding: 0.5em 0.75em;
+	padding-block: 0.5em;
+	padding-inline: 0.75em;
 	text-align: center;
 	word-break: break-word;
 
@@ -31,8 +32,8 @@
 		background-color: #464b58;
 	}
 
-	// Placement
-
+	// Placement - no need for logical props - managed by plugins
+	/* stylelint-disable */
 	&--top-left {
 		border-bottom-left-radius: 0;
 	}
@@ -64,6 +65,7 @@
 	&--right-top {
 		border-top-left-radius: 0;
 	}
+	/* stylelint-enable */
 
 	/* pseudo-element to make arrows */
 	&::before {
@@ -71,12 +73,12 @@
 		speak: none;
 		position: absolute;
 		z-index: 666;
-		width: $arrow-width;
-		height: $arrow-width;
+		inline-size: $arrow-width;
+		block-size: $arrow-width;
 		pointer-events: none;
 		border: $arrow-width solid transparent;
 	}
-
+	/* stylelint-disable */
 	&--top::before,
 	&--top-left::before,
 	&--top-right::before {
@@ -134,4 +136,6 @@
 	&--right-bottom::before {
 		bottom: max(calc(var(--arrow-offset, 0) - #{$arrow-width}), 0px);
 	}
+
+	/* stylelint-enable */
 }
