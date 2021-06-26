@@ -1,0 +1,29 @@
+@import '~design-system/scss/config/';
+
+.upload-drag-drop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: var(--backdrop-norm);
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-infobox {
+        width: rem(490);
+        min-width: rem(380);
+        background: var(--background-norm);
+        color: var(--text-norm);
+        border-radius: $global-border-radius;
+        box-shadow: var(--shadow-lifted);
+        text-align: center;
+        pointer-events: none;
+    }
+
+    &-image {
+        max-width: rem(380);
+    }
+}

@@ -1,0 +1,86 @@
+{
+    "name": "proton-drive",
+    "version": "4.1.0",
+    "description": "Proton-drive",
+    "main": "index.ts",
+    "scripts": {
+        "start": "proton-pack dev-server --appMode=standalone",
+        "lint": "eslint src --ext .js,.ts,.tsx --cache",
+        "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+        "preversion": "git update-index --no-assume-unchanged package-lock.json",
+        "postversion": "git update-index --assume-unchanged package-lock.json && git push --tags",
+        "i18n:validate": "proton-i18n validate lint-functions",
+        "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
+        "i18n:getlatest": "proton-i18n upgrade",
+        "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin -u --verbose",
+        "deploy": "proton-bundler --git",
+        "deploy:standalone": "proton-bundler --git --appMode standalone",
+        "build": "cross-env NODE_ENV=production proton-pack compile $npm_package_config_publicPathFlag",
+        "build:sso": "cross-env NODE_ENV=production proton-pack compile --appMode=sso",
+        "build:standalone": "cross-env NODE_ENV=production proton-pack compile --appMode=standalone",
+        "bundle": "proton-bundler",
+        "check-types": "tsc",
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ProtonMail/proton-drive.git"
+    },
+    "author": "",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": "https://github.com/ProtonMail/proton-drive/issues"
+    },
+    "homepage": "https://github.com/ProtonMail/proton-drive#readme",
+    "config": {
+        "publicPathFlag": "--publicPath=/drive/"
+    },
+    "dependencies": {
+        "@mattiasbuelens/web-streams-adapter": "0.1.0-alpha.5",
+        "@transcend-io/conflux": "github:ProtonMail/conflux#master",
+        "abortcontroller-polyfill": "^1.3.0",
+        "design-system": "github:ProtonMail/design-system.git#master",
+        "mime-types": "^2.1.27",
+        "openpgp": "^4.10.7",
+        "proton-pack": "github:ProtonMail/proton-pack.git#semver:^3.0.0",
+        "proton-shared": "github:ProtonMail/proton-shared#master",
+        "proton-translations": "github:ProtonMail/proton-translations#fe-drive",
+        "proton-version": "github:ProtonMail/proton-version#semver:^1.0.0",
+        "react-components": "github:ProtonMail/react-components.git#master",
+        "react-window": "^1.8.5",
+        "ttag": "^1.7.14",
+        "web-streams-polyfill": "^2.1.1",
+        "yetch": "^1.1.0"
+    },
+    "devDependencies": {
+        "@testing-library/jest-dom": "^5.1.1",
+        "@testing-library/react": "^10.0.4",
+        "@testing-library/react-hooks": "^3.2.1",
+        "@types/mime-types": "^2.1.0",
+        "@types/react-window": "^1.8.2",
+        "babel-plugin-transform-class-properties": "^6.24.1",
+        "babel-plugin-transform-require-context": "^0.1.1",
+        "cross-var": "^1.1.0",
+        "eslint-config-proton-lint": "github:ProtonMail/proton-lint#semver:^0.0.4",
+        "husky": "^4.3.0",
+        "jest": "^25.1.0",
+        "lint-staged": "^10.4.2",
+        "prettier": "^2.0.5",
+        "proton-bundler": "github:ProtonMail/proton-bundler#semver:^2.0.0",
+        "proton-i18n": "github:ProtonMail/proton-i18n#semver:^2.1.0",
+        "react-test-renderer": "^16.9.0",
+        "service-worker-loader": "^4.0.2",
+        "typescript": "^4.0.2"
+    },
+    "lint-staged": {
+        "(*.js|*.ts|*.tsx)": [
+            "prettier --write",
+            "eslint"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    }
+}

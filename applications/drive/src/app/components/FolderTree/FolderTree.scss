@@ -1,0 +1,45 @@
+.folder-tree {
+    @extend .bordered;
+    @extend .scroll-if-needed;
+
+    border-radius: $global-border-radius;
+    height: 28em;
+
+    &-table {
+        width: auto;
+        min-width: 100%;
+        max-width: initial;
+    }
+
+    &-list-item {
+        td {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        &-expand {
+            padding: 0.85em;
+
+            &-button {
+                @extend .button;
+                @extend .button-for-icon;
+
+                display: flex;
+                padding: 0;
+            }
+        }
+    }
+
+    &-list-item-name {
+        min-width: 10em;
+    }
+
+    &-list-item-selected {
+        justify-content: center;
+        min-width: 3em;
+
+        &-check {
+            padding: 0.15em;
+        }
+    }
+}
