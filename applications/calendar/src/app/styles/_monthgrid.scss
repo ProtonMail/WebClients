@@ -1,0 +1,30 @@
+.calendar-monthgrid {
+	&-day {
+		color: var(--text-norm);
+
+		&-number {
+			display: inline-flex;
+			width: 1.75em;
+			height: 1.75em;
+			border-radius: $global-border-radius;
+		}
+
+		&:hover &-number {
+			background-color: var(--interaction-default-hover);
+			color: var(--text-norm);
+		}
+
+		&[aria-current='date'] &-number {
+			color: var(--primary);
+			font-weight: bold;
+		}
+
+		@include respond-to($breakpoint-small) {
+			&[aria-pressed='true'] &-number {
+				background-color: var(--primary);
+				color: var(--primary-contrast);
+				font-weight: bold;
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+@import '~design-system/scss/proton-calendar';
+
+// Specific styles
+@import
+    '~design-system/scss/specifics/placeholder-loading',
+    '~design-system/scss/specifics/list',
+    'styles/config',
+    'styles/specifics',
+    'styles/grid',
+    'styles/monthgrid',
+    'styles/daygrid',
+    'styles/eventcell',
+    'styles/aside',
+    'styles/eventpopover',
+    'styles/debug',
+    'styles/loader-container';
+

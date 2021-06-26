@@ -1,0 +1,14 @@
+.calendar-loader-container {
+	position: fixed;
+	top: 1em;
+	left: 50%;
+	z-index: 100;
+	max-width: 100%;
+	padding: 1em;
+	transform: translateX(-50%);
+	border-radius: $global-border-radius;
+	box-shadow: var(--shadow-lifted);
+	background-color: var(--signal-info);
+	color: var(--signal-info-contrast);
+	text-align: center;
+}

@@ -1,0 +1,33 @@
+// fix for Safari mobile shitty way to handle vh unit
+.is-day-view,
+.is-week-view,
+.is-month-view {
+	&::after {
+		content: '';
+		display: flex;
+		width: 100%;
+		height: 5em;
+	}
+}
+
+@include respond-to($breakpoint-small) {
+	.is-day-view,
+	.is-week-view,
+	.is-month-view {
+		&::after {
+			padding-bottom: 8em;
+			// thanks Apple for the fixed toolbar at the bottom
+		}
+	}
+}
+
+// hide the thing on desktop devices supporting media query 4 spec
+@media (pointer: fine) {
+	.is-day-view,
+	.is-week-view,
+	.is-month-view {
+		&::after {
+			content: none;
+		}
+	}
+}

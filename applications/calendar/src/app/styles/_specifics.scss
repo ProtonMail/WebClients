@@ -1,0 +1,41 @@
+.calendar-fullday-row {
+	border-bottom: $calendar-grid-border;
+	padding-bottom: $calendar-gridcell-gutter;
+}
+
+.calendar-first-row-heading {
+	border-bottom: $calendar-grid-border;
+}
+
+.address-item {
+	background: var(--background-weak);
+	border-radius: 5px;
+	button {
+		display: block;
+	}
+}
+
+@include respond-to($breakpoint-small) {
+
+	// we show abbreviated version only on week/month view
+	.is-week-view,
+	.is-month-view {
+		.calendar-grid-heading-day-fullname {
+			border: 0;
+			clip: rect(0 0 0 0);
+			height: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute;
+			width: 1px;
+		}
+	}
+
+	// thus hide the abbrievated version on day view
+	.is-day-view {
+		.calendar-grid-heading-day-shortname {
+			display: none;
+		}
+	}
+}
