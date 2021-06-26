@@ -1,0 +1,37 @@
+{
+  "name": "eslint-config-proton-lint",
+  "version": "0.0.8",
+  "license": "ISC",
+  "author": "Proton Technologies AG",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.1.0",
+    "@typescript-eslint/parser": "^3.1.0",
+    "eslint": "^7.14.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-typescript": "^8.0.2",
+    "eslint-config-prettier": "^6.x",
+    "eslint-plugin-es": "^4.1.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "json-schema": "^0.2.5"
+  },
+  "description": "Modern eslint config for a more civilized age",
+  "peerDependencies": {
+    "prettier": "2.x",
+    "typescript": "*"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config",
+    "airbnb",
+    "javascript",
+    "styleguide",
+    "es2015",
+    "es2016",
+    "es2017",
+    "es2018"
+  ]
+}
