@@ -1,0 +1,18 @@
+Usage: $ proton-i18n <command>
+Available commands:
+  - [blue]post-install[/blue]
+      To install locales as a dependency
+
+  - [blue]crowdin[/blue]
+      To send new translations to crowdin
+
+  - [blue]validate[/blue] [yellow]<type>[/yellow]
+      To validate the translations, check if we have contexts
+        - type: default (default) validate we don't have missing context
+        - type: lint-functions check if we use the right format for ttag
+
+  - [blue]extract[/blue] [yellow]<type>[/yellow]
+      Extract all translations from the projet
+      - type: default (app) extract translations from the app and reactComponents + shared
+      - type: reactComponents extract only translations from react-components
+      - type: shared extract only translations from proton-shared

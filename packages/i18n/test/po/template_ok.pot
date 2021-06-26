@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: node_modules/proton-shared/lib/contacts/decrypt.ts:80
+msgctxt "Error"
+msgid "Contact signature not verified"
+msgstr ""
+
+#: node_modules/react-components/containers/contacts/ContactGroupDropdown.tsx:149
+msgctxt "Info"
+msgid "Contact group apply"
+msgid_plural "Contact groups apply"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/app/components/ContactGroupsTable.js:109
+#, javascript-format
+msgctxt "Info"
+msgid "${ countEmailAddresses } email address"
+msgid_plural "${ countEmailAddresses } email addresses"
+msgstr[0] ""
+msgstr[1] ""
+

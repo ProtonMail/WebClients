@@ -1,0 +1,33 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: node_modules/proton-shared/lib/contacts/decrypt.ts:67
+#: node_modules/proton-shared/lib/contacts/decrypt.ts:95
+msgctxt "Error"
+msgid "Missing signature"
+msgstr ""
+
+#: node_modules/react-components/containers/contacts/modals/ContactGroupModal.tsx:187
+msgctxt "Info"
+msgid "1 Member"
+msgid_plural "${ model.contactEmails.length } Members"
+msgstr[0] ""
+msgstr[1] ""
+
+#: node_modules/react-components/containers/contacts/modals/ContactDeleteModal.tsx:51
+#, javascript-format
+msgctxt "Title"
+msgid "Delete ${ name }"
+msgid_plural "Delete ${ count } contacts"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/app/components/ContactPlaceholder.js:159
+msgctxt "Action"
+msgid "Deselect"
+msgid_plural "Deselect all"
+msgstr[0] ""
+msgstr[1] ""
+
