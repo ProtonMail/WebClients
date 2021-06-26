@@ -1,0 +1,45 @@
+@import '~design-system/scss/config/';
+
+.plan-card {
+    margin-right: 2em;
+
+    &:nth-of-type(3) {
+        margin-right: 0;
+    }
+
+    &:last-of-type {
+        margin-left: 2em;
+        margin-right: 0;
+    }
+
+    @include respond-to($breakpoint-small) {
+        &,
+        &:last-of-type {
+            margin: 0;
+        }
+    }
+
+    &:hover,
+    &--active {
+        .border-top {
+            border-color: var(--primary);
+        }
+    }
+
+    &-image {
+        height: rem(70);
+    }
+
+    &-mostPopular {
+        @include respond-to($breakpoint-medium) {
+            position: absolute;
+            top: calc( #{rem(-70)} - 2.5em); // height of image container + some text
+            left: 0;
+            right: 0;
+        }
+
+        @include respond-to($breakpoint-small) {
+            position: static;
+        }
+    }
+}

@@ -1,0 +1,130 @@
+@import '~design-system/scss/config/';
+
+.pm-plans-table {
+	border-collapse: separate;
+	border-spacing: 0;
+
+	caption {
+		transform: scale(0);
+	}
+
+	td,
+	th {
+		padding: em(16);
+		border: 1px solid var(--border-norm);
+		border-bottom: 0;
+		border-right: 0;
+
+		@include respond-to($breakpoint-medium) {
+			padding: em(10);
+		}
+	}
+
+	th.is-empty {
+		border: 0;
+	}
+
+	th:not(.simple-table-row-th) {
+		text-transform: uppercase;
+	}
+
+	tr td:last-child,
+	tr th:last-child {
+		border-right: 1px solid var(--border-norm);
+	}
+
+	thead {
+		tr:first-of-type {
+			& :nth-child(2) {
+				border-top-left-radius: $global-border-radius;
+			}
+
+			& :last-child {
+				border-top-right-radius: $global-border-radius;
+			}
+		}
+	}
+
+	tbody {
+		tr {
+			&:first-of-type .simple-table-row-th {
+				border-top-left-radius: $global-border-radius;
+			}
+
+			&:last-of-type {
+				td,
+				th {
+					border-bottom: 1px solid var(--border-norm);
+				}
+
+				& :first-child {
+					border-bottom-left-radius: $global-border-radius;
+				}
+
+				& :last-child {
+					border-bottom-right-radius: $global-border-radius;
+				}
+			}
+
+			.simple-table-row-th {
+				padding-left: 2em;
+
+				@include respond-to(1100) {
+					padding: em(10);
+				}
+			}
+		}
+	}
+}
+
+/* modifiers for highlighting a plan */
+/* ADR :
+	 - getting type or unit from attr is not supported by any browser => https://developer.mozilla.org/en-US/docs/Web/CSS/attr
+	 - CSS custom properties can't be used in selectors => https://css-irl.info/practical-tips-css-variables/
+	 - content attribute can't be herited https://stackoverflow.com/questions/7175113/content-attribute-to-inherit-node-value
+   */
+
+$border-width: 2px !default;
+$nb-plans-max: 4 !default;
+
+@for $i from 1 through $nb-plans-max {
+	.pm-table--highlight[data-plan-number='#{$i}'] {
+		& tr td:nth-child(#{$i + 1}),
+		& tr th:nth-child(#{$i + 1}) {
+			border-left: #{$border-width} solid var(--primary);
+			border-right: #{$border-width} solid var(--primary);
+		}
+
+		& tr:last-child td:nth-child(#{$i + 1}) {
+			border-bottom: #{$border-width} solid var(--primary);
+		}
+
+		& tr th:nth-child(#{$i + 1}) {
+			border-top: #{$border-width} solid var(--primary);
+			position: relative;
+			color: var(--primary);
+
+			&::before {
+				content: attr(data-highlight);
+				display: block;
+				position: absolute;
+				bottom: 100%;
+				left: -#{$border-width};
+				right: -#{$border-width};
+				background-color: var(--primary);
+				color: var(--primary-contrast);
+				text-align: center;
+				font-weight: bold;
+				text-transform: uppercase;
+				font-size: rem(12);
+				padding: 0.25em;
+				border-radius: $global-border-radius $global-border-radius 0 0;
+			}
+		}
+
+		& tr td:nth-child(#{$i + 2}),
+		& tr th:nth-child(#{$i + 2}) {
+			border-left: 0;
+		}
+	}
+}

@@ -1,0 +1,56 @@
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { useNotifications } from 'react-components';
+import { c } from 'ttag';
+import VerificationMethodForm from './VerificationMethodForm/VerificationMethodForm';
+import VerificationCodeForm from './VerificationCodeForm/VerificationCodeForm';
+
+const VerificationForm = ({ defaultEmail, allowedMethods, onRequestCode, onSubmit }) => {
+    const { createNotification } = useNotifications();
+    const [params, setParams] = useState(null);
+
+    const handleBack = () => setParams(null);
+
+    const sendCode = async (params) => {
+        const destination = params.Destination.Phone || params.Destination.Address;
+        await onRequestCode(params);
+        createNotification({ text: c('Notification').t`Verification code successfully sent to ${destination}` });
+    };
+
+    const handleResendCode = () => sendCode(params);
+
+    const handleRequestCode = async (params) => {
+        await sendCode(params);
+        setParams(params);
+    };
+
+    const handleSubmitCode = (code) => onSubmit(code, params);
+
+    if (!params) {
+        return (
+            <VerificationMethodForm
+                defaultEmail={defaultEmail}
+                allowedMethods={allowedMethods}
+                onSubmit={handleRequestCode}
+            />
+        );
+    }
+
+    return (
+        <VerificationCodeForm
+            destination={params.Destination}
+            onSubmit={handleSubmitCode}
+            onBack={handleBack}
+            onResend={handleResendCode}
+        />
+    );
+};
+
+VerificationForm.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+    onRequestCode: PropTypes.func.isRequired,
+    defaultEmail: PropTypes.string.isRequired,
+    allowedMethods: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
+export default VerificationForm;
