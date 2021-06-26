@@ -148,6 +148,37 @@ export const removeEmbeddedHTML = (document: Element, attachment: Attachment) =>
 };
 
 /**
+ * Set blob url src on embedded images of the document
+ */
+export const insertBlobImages = (document: Element, embeddedImages: MessageEmbeddedImage[]) => {
+    embeddedImages.forEach((embeddedImage) => {
+        const { cid, url } = embeddedImage;
+        if (url) {
+            findEmbedded(cid, document).forEach((element) => {
+                element.removeAttribute('proton-src');
+                element.setAttribute('src', url);
+            });
+        }
+    });
+};
+
+/**
+ * Based on the loadResults, update the embeddedImages with a url and the loaded state
+ */
+export const markEmbeddedImagesAsLoaded = (
+    embeddedImages: MessageEmbeddedImage[],
+    loadResults: { attachment: Attachment; blob: string }[]
+) => {
+    return embeddedImages.map((image) => {
+        const result = loadResults.find((loadResult) => loadResult.attachment === image.attachment);
+        if (result) {
+            return { ...image, url: result?.blob, status: 'loaded' as 'loaded' };
+        }
+        return image;
+    });
+};
+
+/**
  * Download and decrypt embedded images
  */
 export const decryptEmbeddedImages = (
@@ -186,24 +217,16 @@ export const decryptEmbeddedImages = (
 
         const message = messageCache.get(localID);
         if (message && message.messageImages) {
-            const messageImages = updateImages(
-                message.messageImages,
-                undefined,
-                undefined,
-                getEmbeddedImages(message).map((image) => {
-                    const result = results.find((result) => result.attachment === image.attachment);
-                    if (result) {
-                        return { ...image, url: result?.blob, status: 'loaded' };
-                    }
-                    return image;
-                })
-            );
-
+            const embeddedImages = getEmbeddedImages(message);
+            const updatedEmbeddedImages = markEmbeddedImagesAsLoaded(embeddedImages, results);
+            const messageImages = updateImages(message.messageImages, undefined, undefined, updatedEmbeddedImages);
             messageCache.set(localID, { ...message, messageImages });
         }
+
+        return results;
     };
 
-    void download();
+    const downloadPromise = download();
 
-    return updatedImages;
+    return { updatedImages, downloadPromise };
 };

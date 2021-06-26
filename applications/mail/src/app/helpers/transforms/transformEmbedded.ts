@@ -6,7 +6,13 @@ import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { MessageCache } from '../../containers/MessageProvider';
 import { hasShowEmbedded } from '../mailSettings';
 import { getEmbeddedImages, insertImageAnchor } from '../message/messageImages';
-import { findEmbedded, readCID, decryptEmbeddedImages } from '../message/messageEmbeddeds';
+import {
+    findEmbedded,
+    readCID,
+    decryptEmbeddedImages,
+    markEmbeddedImagesAsLoaded,
+    insertBlobImages,
+} from '../message/messageEmbeddeds';
 
 export const transformEmbedded = async (
     message: MessageExtended,
@@ -18,8 +24,7 @@ export const transformEmbedded = async (
 ) => {
     const draft = isDraft(message.data);
 
-    const showEmbeddedImages =
-        message.messageImages?.showEmbeddedImages === true || hasShowEmbedded(mailSettings) || draft;
+    const showEmbeddedImages = message.messageImages?.showEmbeddedImages === true || hasShowEmbedded(mailSettings);
 
     const existingEmbeddedImage = getEmbeddedImages(message);
     let newEmbeddedImages: MessageEmbeddedImage[] = [];
@@ -36,9 +41,12 @@ export const transformEmbedded = async (
                 }
 
                 const matches = findEmbedded(cid, message.document as Element);
+
                 return matches.map((match) => {
                     const id = generateUID('embedded');
-                    if (!draft) {
+                    if (draft) {
+                        match.setAttribute('data-embedded-img', cid);
+                    } else {
                         insertImageAnchor(id, 'embedded', match);
                     }
                     return {
@@ -59,7 +67,7 @@ export const transformEmbedded = async (
     const hasEmbeddedImages = !!embeddedImages.length;
 
     if (showEmbeddedImages) {
-        embeddedImages = decryptEmbeddedImages(
+        const { updatedImages, downloadPromise } = decryptEmbeddedImages(
             embeddedImages,
             message.localID,
             message.verification,
@@ -68,6 +76,16 @@ export const transformEmbedded = async (
             attachmentsCache,
             api
         );
+        embeddedImages = updatedImages;
+
+        // In draft, we actually want image in the document
+        if (draft) {
+            const downloadResults = await downloadPromise;
+            embeddedImages = markEmbeddedImagesAsLoaded(embeddedImages, downloadResults);
+            if (message.document) {
+                insertBlobImages(message.document, embeddedImages);
+            }
+        }
     }
 
     return {
