@@ -1,0 +1,20 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="CSS / Front-End helpers / Cursor" />
+
+# Cursor helpers
+
+Hover the squares to see cursor change (inside, the class to use to apply the cursor change to element):
+
+<div class="flex">
+{
+  ['default', 'help', 'wait', 'row-resize', 'pointer'].map((cursor) => (
+  <div class="pb2 pt0-5 pr0-5">
+    <div class={ `p1 bordered  cursor-${cursor}` }>
+      <code class="mauto">.cursor-{ cursor }</code>
+    </div>
+  </div>
+))}
+</div>
+
+<strong>Note</strong>: use this wisely only when you have to, do <strong class="text-uppercase">not</strong> change element native cursors.

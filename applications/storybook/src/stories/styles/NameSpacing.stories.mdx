@@ -1,0 +1,28 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="CSS / Front-End conventions / Namespacing classes" />
+
+# Namespacing classes
+
+Elements are written in CamelCase, separated by dashes.
+
+- Component: <code><strong>.myComponent</strong></code>
+- Component container: <code>.myComponent<strong>-container</strong></code>
+- Component child: <code>.myComponent<strong>-child</strong></code>
+- Component element state: <code>.myComponent<strong>-stateDescriptionElement</strong></code>
+- Component modifier: <code>.myComponent<strong>--modifier</strong></code> (double dash)
+
+## Example, a contact list
+
+- Component: <code><strong>.contactList</strong></code>
+- Component container: <code>.contactList<strong>-container</strong></code>
+- Component child: <code>.contactList<strong>-table</strong></code>, <code>.contactList<strong>-item</strong></code>, etc.
+- Component element state : <code>.contactList-item<strong>-activeCursorContact</strong></code>, <code>.contactList-item<strong>-activeContact</strong></code>, etc.
+- Component modifier: <code>.contactList-item<strong>--important</strong></code>, etc.
+
+If there are animations (for appearing/disappearing for example), please use this convention:
+
+- For animation names: <code>myComponentIn</code> and <code>myComponentOut</code>
+- If you need a class to apply these changes: <code>.myComponentIn</code> and <code>.myComponentOut</code>
+
+

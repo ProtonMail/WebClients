@@ -1,0 +1,183 @@
+import { Meta, Source } from '@storybook/addon-docs/blocks';
+
+<Meta title="CSS / Front-End helpers / MISC - Lists - Click, Tap zone - Print - Dark Mode " />
+
+# MISC: Lists/Click, Tap zone/Print/Dark mode
+
+## Lists
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Removes styles for <code>ul</code> or <code>ol</code>. Example:
+    <div class="flex-autogrid">
+      <div class="flex-autogrid-item">
+        <ul class="m0">
+          <li>Normal</li>
+          <li>list</li>
+        </ul>
+      </div>
+      <div class="flex-autogrid-item">
+        <ul class="unstyled m0">
+          <li>unstyled</li>
+          <li>list</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<ul className="unstyled"> … </ul>
+`}
+/>
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Will use css multicolumn to display the list on 2 columns. On tablet, the list will be put on one column. Same helper exists also for mobile <code>on-mobile-list-1column</code>.
+    <ul class="list-2columns on-tablet-list-1column">
+      <li>Normal</li>
+      <li>list</li>
+      <li>list</li>
+      <li>list</li>
+      <li>list</li>
+      <li>list end</li>
+    </ul>
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<ul className="list-2columns on-tablet-list-1column">
+…
+</ul>
+`}
+/>
+
+  </div>
+</div>
+
+
+## Increase click/tap surface
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Increase link/button tap/click zone to the closest parent that has <code>position: relative</code>.<br />
+    (used in <a href="/drop-down/#pagination-dropdown">pagination drop down</a>)
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<div className="relative">
+  <a className="increase-click-surface">
+`}
+/>
+
+  </div>
+</div>
+
+
+## Something that should appear on <code>hover</code> in a parent
+
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center relative">
+    <button class="button-show-on-hover increase-click-surface" type="button">
+      hover me, pikaaaaa…
+      <span class="visibility-hidden button-show-on-hover-element">CHU</span>
+      </button>
+      <br /><br />
+    Careful when using this, might create issues with some tap devices like iPhone/iPads, etc.
+
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<button className="button-show-on-hover">
+  hover me, pikaaaaa…
+  <span 
+    className="visibility-hidden button-show-on-hover-element">
+  CHU</span>
+`}
+/>
+
+  </div>
+</div>
+
+
+## For media print
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies a big reset of all properties for <code>@media print</code>
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="reset4print">Lorem ipsum dolor</span>
+`}
+/>
+
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies <code>display: none</code> for <code>@media print</code> (element won't be printed)
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="no-print">Lorem ipsum dolor</span>
+`}
+/>
+
+  </div>
+</div>
+
+<br /><br />
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies <code>display: block</code> for <code>@media print</code> (hidden elements will be printed)
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  dark
+  format
+  code={`
+<span className="on-print">Lorem ipsum dolor</span>
+`}
+/>
+
+  </div>
+</div>
+
+## Dark Mode
+
+For React applications, a <code>isDarkMode</code> (<code>appConfigBody-darkmode</code> for Angular) class is applied to the <code>body</code> when dark mode is triggered.
+
+Then you have two helpers: <code>hide-on-darkmode</code> will hide something when dark mode is triggered, and <code>display-on-darkmode</code> (which is hidden by default) will be displayed when dark mode is triggered.
