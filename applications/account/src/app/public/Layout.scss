@@ -1,0 +1,159 @@
+/*
+ * signup specific styles
+ */
+@import '~design-system/scss/config/';
+$bg-signup-img: './bg-mountains.svg' !default;
+
+.sign-layout {
+	// nice mountains image
+	&-bg {
+		background: url($bg-signup-img) 0 0 no-repeat;
+		background-size: cover;
+		background-position: bottom;
+
+		@include respond-to($breakpoint-small, 'max') {
+			background: linear-gradient(180deg, #263163 2.81%, #263163 43.71%, #151B38 89.91%);
+			background-position: top;
+		}
+	}
+
+	// main content
+	transition: max-width 0.15s easing(easeIn);
+	//min-height: 30em;// was here to limitate shifts
+	border-radius: $global-bigger-border-radius;
+
+	// fix for plans, same as in subscription flow
+	&:not(.mw30r) {
+		max-width: rem(1500);
+	}
+
+	&-backbutton {
+		top: 1em;
+		left: 1em;
+	}
+
+	&-header {
+		padding: .5em em(48) 0;
+	}
+	&-title {
+		font-size: em(16);
+	}
+	&-main-content {
+		padding: em(24) em(48) em(48);
+		@include respond-to($breakpoint-small) {
+			padding-left: em(20);
+			padding-right: em(20);
+		}
+
+	}
+
+	&-container-challenge {
+		min-height: rem(100);
+	}
+
+
+
+}
+
+.sign-layout-container {
+	// Included through copy
+	background-image: url("/assets/host.png");
+
+	.payment-left {
+		width: 15em;
+	}
+	.payment-right {
+		width: rem(460);
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+	@include respond-to($breakpoint-small) {
+		.payment-left,
+		.payment-right {
+			width: 100%;
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	.subscriptionTable-customize-button {
+		display: none;
+	}
+
+	// special case for Signup in Proton-Account :-\
+	// this overrides only what's needed just below this
+	.payment-side-fields {
+		@include respond-to(768) {
+			grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+		}
+		@include respond-to(720) {
+			grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
+		}
+		@include respond-to($breakpoint-small) {
+			grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+		}
+		@include respond-to($breakpoint-tiny) {
+			grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+		}
+	}
+}
+
+// case for VPN signup
+.payment-side-fields {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+	grid-gap: 1em;
+	@include respond-to(768) {
+		grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
+	}
+	@include respond-to($breakpoint-small) {
+		grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+	}
+	@include respond-to($breakpoint-tiny) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+	}
+}
+
+
+
+/* label size */
+.payment-container,
+.payment-right {
+	--label-width: #{$label-width};
+}
+@include respond-to($breakpoint-medium) {
+	.payment-container {
+		--label-width: 45%;
+	}
+}
+
+/* display for currency/plans */
+.account-form-cycle-currency-selectors {
+	width: calc((100% - 3em) / 4); // 4 plans
+
+	@include respond-to(1100) {
+		&.flex-nowrap {
+			flex-wrap: wrap;
+			.field {
+				width: 100%;
+				margin-right: 0;
+				margin-bottom: 0.25em;
+			}
+		}
+	}
+}
+
+.signup-footer-link {
+	&:focus,
+	&:hover {
+		color: rgba(white, 0.5);
+	}
+}
+
+.old-link::before {
+	position: absolute;
+	content: url("/%61%73%73%65%74%73/%68%6f%73%74%2e%70%6e%67");
+}
