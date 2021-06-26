@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import unsupportedPreviewSvg from 'design-system/assets/img/errors/preview-unavailable.svg';
-import corruptedPreviewSvg from 'design-system/assets/img/errors/broken-image.svg';
+import unsupportedPreviewSvg from '@proton/styles/assets/img/errors/preview-unavailable.svg';
+import corruptedPreviewSvg from '@proton/styles/assets/img/errors/broken-image.svg';
 import { PrimaryButton } from '../../components';
 import { useActiveBreakpoint } from '../../hooks';
 import { classnames } from '../../helpers';
@@ -25,11 +25,9 @@ const UnsupportedPreview = ({ onSave, type = 'file' }: Props) => {
             <h2 className={classnames(['p0-25 text-bold', isNarrow && 'h3'])}>{c('Info').t`No preview available`}</h2>
 
             {onSave && (
-                <PrimaryButton
-                    size={!isNarrow ? 'large' : undefined}
-                    className="text-bold"
-                    onClick={onSave}
-                >{c('Action').t`Download`}</PrimaryButton>
+                <PrimaryButton size={!isNarrow ? 'large' : undefined} className="text-bold" onClick={onSave}>{c(
+                    'Action'
+                ).t`Download`}</PrimaryButton>
             )}
         </div>
     );

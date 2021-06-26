@@ -1,4 +1,4 @@
-import { Api, MailSettings } from 'proton-shared/lib/interfaces';
+import { Api, MailSettings } from '@proton/shared/lib/interfaces';
 import { transformEscape, attachBase64 } from './transformEscape';
 import { Base64Cache } from '../../hooks/useBase64Cache';
 import { transformBase } from './transformBase';

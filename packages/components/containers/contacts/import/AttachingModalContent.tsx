@@ -5,8 +5,8 @@ import {
     MAX_IMPORT_FILE_SIZE_STRING,
     MAX_IMPORT_CONTACTS_STRING,
     MAX_IMPORT_CONTACTS,
-} from 'proton-shared/lib/contacts/constants';
-import { ImportContactsModel } from 'proton-shared/lib/interfaces/contacts/Import';
+} from '@proton/shared/lib/contacts/constants';
+import { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
 
 import { Bordered, FileInput, Alert, AttachedFile, Dropzone } from '../../../components';
 import { classnames } from '../../../helpers';

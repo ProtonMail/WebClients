@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { getStatus, request, Status } from 'proton-shared/lib/helpers/desktopNotification';
-import { APP_NAMES, APPS } from 'proton-shared/lib/constants';
-import { getAppName } from 'proton-shared/lib/apps/helper';
+import { getStatus, request, Status } from '@proton/shared/lib/helpers/desktopNotification';
+import { APP_NAMES, APPS } from '@proton/shared/lib/constants';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 
 import TopBanner from './TopBanner';
 import { useLocalState, useConfig } from '../../hooks';

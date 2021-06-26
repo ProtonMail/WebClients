@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Row, Field, CurrencySelector, CycleSelector, SubTitle, useModals, LinkButton } from 'react-components';
-import { CURRENCIES, CYCLE } from 'proton-shared/lib/constants';
+import { Row, Field, CurrencySelector, CycleSelector, SubTitle, useModals, LinkButton } from '@proton/components';
+import { CURRENCIES, CYCLE } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import PlanCard from './PlanCard/PlanCard';
 import PlanComparisonModal from './PlanComparisonModal';

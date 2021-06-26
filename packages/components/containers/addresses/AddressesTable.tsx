@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Address, CachedOrganizationKey, Member, UserModel } from 'proton-shared/lib/interfaces';
+import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
 
 import { Table, TableHeader, TableBody, TableRow } from '../../components';
 import { getStatus } from './helper';

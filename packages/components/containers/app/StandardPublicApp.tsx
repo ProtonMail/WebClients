@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { loadOpenPGP } from 'proton-shared/lib/openpgp';
-import { loadDateLocale, loadLocale } from 'proton-shared/lib/i18n/loadLocale';
-import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
-import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from 'proton-shared/lib/i18n/helper';
+import { loadOpenPGP } from '@proton/shared/lib/openpgp';
+import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
+import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { useHistory } from 'react-router-dom';
-import { getCookie } from 'proton-shared/lib/helpers/cookies';
+import { getCookie } from '@proton/shared/lib/helpers/cookies';
 
 import ModalsChildren from '../modals/Children';
 import LoaderPage from './LoaderPage';

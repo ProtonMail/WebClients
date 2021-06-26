@@ -1,4 +1,4 @@
-import { SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
+import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 
 export enum STATUS_ICONS_FILLS {
     PLAIN = 0,

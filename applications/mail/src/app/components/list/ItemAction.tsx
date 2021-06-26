@@ -1,6 +1,6 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import React from 'react';
-import { classnames, Icon, Tooltip } from 'react-components';
+import { classnames, Icon, Tooltip } from '@proton/components';
 import { c } from 'ttag';
 
 import { Element } from '../../models/element';

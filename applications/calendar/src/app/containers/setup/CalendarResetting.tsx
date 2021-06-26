@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { Alert, Loader } from 'react-components';
+import { Alert, Loader } from '@proton/components';
 import React from 'react';
 
 const CalendarResetting = () => {

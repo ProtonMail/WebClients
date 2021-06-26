@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { USER_ROLES } from 'proton-shared/lib/constants';
+import { USER_ROLES } from '@proton/shared/lib/constants';
 import { Alert, Block, Button, Loader, Table, TableBody, TableHeader, TableRow } from '../../components';
 import { useMembers, useModals, useNotifications, useOrganization, useOrganizationKey } from '../../hooks';
 
@@ -28,9 +28,8 @@ const OrganizationSection = () => {
         return <Alert type="warning">{c('Info').t`Multi-user support not enabled.`}</Alert>;
     }
 
-    const { hasOrganizationKey, isOrganizationKeyActive, isOrganizationKeyInactive } = getOrganizationKeyInfo(
-        organizationKey
-    );
+    const { hasOrganizationKey, isOrganizationKeyActive, isOrganizationKeyInactive } =
+        getOrganizationKeyInfo(organizationKey);
 
     const hasOtherAdmins = members.some(({ Role, Self }) => Self !== 1 && Role === USER_ROLES.ADMIN_ROLE);
 

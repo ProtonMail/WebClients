@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { SubTitle, Href, Icon, Paragraph, ButtonLike } from 'react-components';
+import { SubTitle, Href, Icon, Paragraph, ButtonLike } from '@proton/components';
 
 const MobileRedirectionStep = ({ model }) => {
     return (

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { range } from 'proton-shared/lib/helpers/array';
+import { range } from '@proton/shared/lib/helpers/array';
 
 import InputButton, { InputButtonProps } from './InputButton';
 import { concatStringProp, generateUID } from '../../helpers';

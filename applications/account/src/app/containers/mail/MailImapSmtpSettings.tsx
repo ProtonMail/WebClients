@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { ProtonMailBridgeSection, SettingsPropsShared } from 'react-components';
+import { ProtonMailBridgeSection, SettingsPropsShared } from '@proton/components';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 

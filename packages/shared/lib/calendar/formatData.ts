@@ -8,7 +8,7 @@ import { CALENDAR_CARD_TYPE } from './constants';
 const { ENCRYPTED_AND_SIGNED, SIGNED } = CALENDAR_CARD_TYPE;
 
 // Wrong typings in openpgp.d.ts...
-export const getArmoredSignatureString = (signature: OpenPGPSignature) => (signature.armor() as unknown) as string;
+export const getArmoredSignatureString = (signature: OpenPGPSignature) => signature.armor() as unknown as string;
 
 /**
  * Format the data into what the API expects.

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Checkbox } from 'react-components';
-import { Props as CheckboxProps } from 'react-components/components/input/Checkbox';
+import { Checkbox } from '@proton/components';
+import { Props as CheckboxProps } from '@proton/components/components/input/Checkbox';
 import { c } from 'ttag';
 
 interface Props extends Omit<CheckboxProps, 'onChange'> {

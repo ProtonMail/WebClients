@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
-import { classnames } from 'react-components';
-import { Label } from 'proton-shared/lib/interfaces/Label';
-import humanSize from 'proton-shared/lib/helpers/humanSize';
+import { classnames } from '@proton/components';
+import { Label } from '@proton/shared/lib/interfaces/Label';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import ItemStar from './ItemStar';
 import ItemLabels from './ItemLabels';

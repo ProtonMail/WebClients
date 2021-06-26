@@ -1,5 +1,5 @@
-import { Api } from 'proton-shared/lib/interfaces';
-import { getMessage } from 'proton-shared/lib/api/messages';
+import { Api } from '@proton/shared/lib/interfaces';
+import { getMessage } from '@proton/shared/lib/api/messages';
 import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 
 export const loadMessage = async (message: MessageExtended, api: Api): Promise<MessageExtendedWithData> => {

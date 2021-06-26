@@ -1,10 +1,10 @@
-import { canonizeEmail } from 'proton-shared/lib/helpers/email';
+import { canonizeEmail } from '@proton/shared/lib/helpers/email';
 import React, { useCallback, useMemo, useState } from 'react';
-import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
-import { Recipient } from 'proton-shared/lib/interfaces';
-import { inputToRecipient } from 'proton-shared/lib/mail/recipient';
-import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import { Recipient } from '@proton/shared/lib/interfaces';
+import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
+import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 import Input, { Props as InputProps } from '../input/Input';
 import { Option } from '../option';

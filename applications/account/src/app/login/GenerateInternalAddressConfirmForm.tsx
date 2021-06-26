@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
-import { useLoading, Button } from 'react-components';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { BRAND_NAME } from 'proton-shared/lib/constants';
+import { useLoading, Button } from '@proton/components';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 interface Props {
     onSubmit: () => Promise<void>;

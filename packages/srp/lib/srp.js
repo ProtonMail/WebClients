@@ -1,6 +1,6 @@
 import { BigNumber, Modulus } from 'asmcrypto.js/dist_es8/bignum/bignum';
 import { concatArrays, arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64 } from 'pmcrypto';
-import getRandomValues from 'get-random-values';
+import getRandomValues from '@proton/get-random-values';
 
 import { expandHash, hashPassword } from './passwords';
 import { fromBN, toBN } from './utils/bigNumber';
@@ -66,7 +66,7 @@ const generateParameters = async ({ len, generator, modulus, serverEphemeralArra
     return {
         clientSecret,
         clientEphemeral,
-        scramblingParam
+        scramblingParam,
     };
 };
 
@@ -84,7 +84,7 @@ const getParameters = async ({ len, generator, modulus, serverEphemeralArray }) 
             len,
             generator,
             modulus,
-            serverEphemeralArray
+            serverEphemeralArray,
         });
 
         if (scramblingParam.compare(ZERO_BN) === 0) {
@@ -94,7 +94,7 @@ const getParameters = async ({ len, generator, modulus, serverEphemeralArray }) 
         return {
             clientSecret,
             clientEphemeral,
-            scramblingParam
+            scramblingParam,
         };
     }
     throw new Error('Could not find safe parameters');
@@ -142,7 +142,7 @@ export const generateProofs = async ({ len, modulusArray, hashedPasswordArray, s
         len,
         generator,
         modulus,
-        serverEphemeralArray
+        serverEphemeralArray,
     });
 
     let subtracted = serverEphemeral.subtract(
@@ -153,28 +153,21 @@ export const generateProofs = async ({ len, modulusArray, hashedPasswordArray, s
         subtracted = subtracted.add(modulus);
     }
 
-    const exponent = scramblingParam
-        .multiply(hashedPassword)
-        .add(clientSecret)
-        .divide(modulusMinusOne).remainder;
+    const exponent = scramblingParam.multiply(hashedPassword).add(clientSecret).divide(modulusMinusOne).remainder;
 
     const sharedSession = modulus.power(subtracted, exponent);
 
     const clientEphemeralArray = fromBN(len, clientEphemeral);
     const sharedSessionArray = fromBN(len, sharedSession);
 
-    const clientProof = await srpHasher(
-        concatArrays([clientEphemeralArray, serverEphemeralArray, sharedSessionArray])
-    );
-    const expectedServerProof = await srpHasher(
-        concatArrays([clientEphemeralArray, clientProof, sharedSessionArray])
-    );
+    const clientProof = await srpHasher(concatArrays([clientEphemeralArray, serverEphemeralArray, sharedSessionArray]));
+    const expectedServerProof = await srpHasher(concatArrays([clientEphemeralArray, clientProof, sharedSessionArray]));
 
     return {
         clientEphemeral: clientEphemeralArray,
         clientProof,
         expectedServerProof,
-        sharedSession: sharedSessionArray
+        sharedSession: sharedSessionArray,
     };
 };
 
@@ -208,21 +201,21 @@ export const getSrp = async (
         password,
         salt: authVersion < 3 ? undefined : decodeBase64(Salt),
         username: authVersion < 3 ? Username : undefined,
-        modulus: modulusArray
+        modulus: modulusArray,
     });
 
     const { clientEphemeral, clientProof, expectedServerProof, sharedSession } = await generateProofs({
         len: SRP_LEN,
         modulusArray,
         hashedPasswordArray,
-        serverEphemeralArray
+        serverEphemeralArray,
     });
 
     return {
         clientEphemeral: encodeBase64(arrayToBinaryString(clientEphemeral)),
         clientProof: encodeBase64(arrayToBinaryString(clientProof)),
         expectedServerProof: encodeBase64(arrayToBinaryString(expectedServerProof)),
-        sharedSession
+        sharedSession,
     };
 };
 
@@ -263,7 +256,7 @@ export const getRandomSrpVerifier = async (
         username,
         password,
         salt,
-        modulus
+        modulus,
     });
 
     const verifier = generateVerifier(SRP_LEN, hashedPassword, modulus);
@@ -271,6 +264,6 @@ export const getRandomSrpVerifier = async (
     return {
         version,
         salt: encodeBase64(salt),
-        verifier: encodeBase64(arrayToBinaryString(verifier))
+        verifier: encodeBase64(arrayToBinaryString(verifier)),
     };
 };

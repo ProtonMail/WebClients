@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { Alert, FullLoader } from 'react-components';
+import { Alert, FullLoader } from '@proton/components';
 import React from 'react';
 
 const CalendarCreating = () => {

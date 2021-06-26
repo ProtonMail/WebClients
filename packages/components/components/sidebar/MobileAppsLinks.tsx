@@ -1,5 +1,5 @@
 import React from 'react';
-import { APPS_CONFIGURATION, VPN_HOSTNAME } from 'proton-shared/lib/constants';
+import { APPS_CONFIGURATION, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 
 import { useConfig, useApps } from '../../hooks';
 import MobileNavServices from './MobileNavServices';

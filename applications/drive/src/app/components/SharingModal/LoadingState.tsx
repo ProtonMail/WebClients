@@ -1,5 +1,5 @@
 import React from 'react';
-import { InnerModal, Loader, TextLoader } from 'react-components';
+import { InnerModal, Loader, TextLoader } from '@proton/components';
 import { c } from 'ttag';
 
 interface Props {

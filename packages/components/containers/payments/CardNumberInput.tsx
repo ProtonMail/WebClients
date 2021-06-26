@@ -1,11 +1,11 @@
 import React from 'react';
 import creditCardType from 'credit-card-type';
-import { isNumber } from 'proton-shared/lib/helpers/validators';
+import { isNumber } from '@proton/shared/lib/helpers/validators';
 
 import Input, { Props as InputProps } from '../../components/input/Input';
 import { Icon } from '../../components';
 
-const banks = require.context('design-system/assets/img/credit-card-icons', true, /.svg$/);
+const banks = require.context('@proton/styles/assets/img/credit-card-icons', true, /.svg$/);
 
 const banksMap = banks.keys().reduce<{ [key: string]: () => { default: string } }>((acc, key) => {
     acc[key] = () => banks(key);

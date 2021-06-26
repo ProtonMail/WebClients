@@ -1,6 +1,6 @@
 import React, { Ref, RefObject } from 'react';
 
-import { VIEWS } from 'proton-shared/lib/calendar/constants';
+import { VIEWS } from '@proton/shared/lib/calendar/constants';
 
 import TimeGrid from '../../components/calendar/TimeGrid';
 import DayGrid from '../../components/calendar/DayGrid';

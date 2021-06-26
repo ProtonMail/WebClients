@@ -1,6 +1,6 @@
-import { getConversation } from 'proton-shared/lib/api/conversations';
+import { getConversation } from '@proton/shared/lib/api/conversations';
 import { useCallback } from 'react';
-import { useApi } from 'react-components';
+import { useApi } from '@proton/components';
 import { useUpdateConversationCache } from '../../containers/ConversationProvider';
 import { isNetworkError } from '../../helpers/errors';
 import { ConversationCacheEntry, ConversationErrors, ConversationResult } from '../../models/conversation';

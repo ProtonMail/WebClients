@@ -1,10 +1,10 @@
 import { algorithmInfo } from 'pmcrypto';
 
-import { getFormattedAlgorithmName, getDefaultKeyFlags } from 'proton-shared/lib/keys';
-import { KEY_FLAG } from 'proton-shared/lib/constants';
-import { Address, Key, SignedKeyListItem, UserModel } from 'proton-shared/lib/interfaces';
-import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
+import { getFormattedAlgorithmName, getDefaultKeyFlags } from '@proton/shared/lib/keys';
+import { KEY_FLAG } from '@proton/shared/lib/constants';
+import { Address, Key, SignedKeyListItem, UserModel } from '@proton/shared/lib/interfaces';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import { KeyDisplay } from './interface';
 

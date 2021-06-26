@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import { c, msgid } from 'ttag';
-import { useInterval, useHandler } from 'react-components';
+import { useInterval, useHandler } from '@proton/components';
 import { fromUnixTime, isAfter, differenceInSeconds } from 'date-fns';
 
 import { Element } from '../models/element';

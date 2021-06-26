@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icons } from 'react-components';
+import { Icons } from '@proton/components';
 
 const PublicLayout = ({ children }) => {
     return (
@@ -12,7 +12,7 @@ const PublicLayout = ({ children }) => {
 };
 
 PublicLayout.propTypes = {
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
 };
 
 export default PublicLayout;

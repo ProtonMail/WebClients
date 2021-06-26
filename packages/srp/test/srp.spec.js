@@ -8,7 +8,7 @@ import { AUTH_RESPONSE, SERVER_MODULUS, SERVER_MODULUS_FAKE, FAKE_RANDOM } from 
 const mockRandomValues = (buf) => new Uint8Array(FAKE_RANDOM.slice(0, buf.length));
 
 const mocks = {
-    'get-random-values': mockRandomValues
+    '@proton/get-random-values': mockRandomValues
 };
 
 const { getRandomSrpVerifier, getSrp } = requireInject('../lib/srp', mocks);

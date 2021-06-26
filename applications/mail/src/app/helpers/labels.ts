@@ -1,11 +1,11 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { c } from 'ttag';
-import { MAILBOX_LABEL_IDS, SHOW_MOVED } from 'proton-shared/lib/constants';
-import { toMap } from 'proton-shared/lib/helpers/object';
-import { Label } from 'proton-shared/lib/interfaces/Label';
-import { Folder } from 'proton-shared/lib/interfaces/Folder';
-import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { MailSettings } from 'proton-shared/lib/interfaces';
+import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { Label } from '@proton/shared/lib/interfaces/Label';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { LABELS_AUTO_READ, LABELS_UNMODIFIABLE_BY_USER, LABEL_IDS_TO_HUMAN, getLabelIDsToI18N } from '../constants';
 import { Conversation } from '../models/conversation';
 import { getLabelIDs } from './elements';

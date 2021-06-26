@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { PACKAGE_TYPE } from 'proton-shared/lib/constants';
-import { updateAttachPublicKey, updatePGPScheme, updateSign } from 'proton-shared/lib/api/mailSettings';
+import { PACKAGE_TYPE } from '@proton/shared/lib/constants';
+import { updateAttachPublicKey, updatePGPScheme, updateSign } from '@proton/shared/lib/api/mailSettings';
 
 import { ConfirmModal, Alert, Info, Toggle } from '../../components';
 import { useMailSettings, useEventManager, useApi, useLoading, useNotifications, useModals } from '../../hooks';

@@ -1,7 +1,7 @@
 import React, { useMemo, useCallback } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { Switch, Route, Redirect } from 'react-router';
-import { PrivateAppContainer, useToggle, MainLogo } from 'react-components';
+import { PrivateAppContainer, useToggle, MainLogo } from '@proton/components';
 import AppErrorBoundary from '../../components/AppErrorBoundary';
 import DriveHeader from '../../components/layout/DriveHeader';
 import DriveSidebar from '../../components/layout/DriveSidebar/DriveSidebar';

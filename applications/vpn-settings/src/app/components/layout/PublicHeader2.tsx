@@ -1,5 +1,5 @@
 import React from 'react';
-import { Href, VpnLogo } from 'react-components';
+import { Href, VpnLogo } from '@proton/components';
 import { c } from 'ttag';
 
 interface Props {

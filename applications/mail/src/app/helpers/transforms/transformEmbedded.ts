@@ -1,6 +1,6 @@
-import generateUID from 'proton-shared/lib/helpers/generateUID';
-import { Api, MailSettings } from 'proton-shared/lib/interfaces';
-import { getAttachments, isDraft } from 'proton-shared/lib/mail/messages';
+import generateUID from '@proton/shared/lib/helpers/generateUID';
+import { Api, MailSettings } from '@proton/shared/lib/interfaces';
+import { getAttachments, isDraft } from '@proton/shared/lib/mail/messages';
 import { MessageEmbeddedImage, MessageExtended, MessageKeys } from '../../models/message';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { MessageCache } from '../../containers/MessageProvider';

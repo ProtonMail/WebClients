@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tooltip } from 'react-components';
+import { Tooltip } from '@proton/components';
 
 interface Props {
     icon: React.ReactNode;

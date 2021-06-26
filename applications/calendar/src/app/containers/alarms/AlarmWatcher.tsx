@@ -1,15 +1,15 @@
 import { MutableRefObject, useEffect, useRef } from 'react';
 import { c } from 'ttag';
-import { useApi, useGetCalendarEventRaw } from 'react-components';
+import { useApi, useGetCalendarEventRaw } from '@proton/components';
 import { fromUnixTime, differenceInMilliseconds } from 'date-fns';
-import { getEvent as getEventRoute } from 'proton-shared/lib/api/calendars';
-import { create } from 'proton-shared/lib/helpers/desktopNotification';
-import { dateLocale } from 'proton-shared/lib/i18n';
-import { CalendarAlarm, CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { getEvent as getEventRoute } from '@proton/shared/lib/api/calendars';
+import { create } from '@proton/shared/lib/helpers/desktopNotification';
+import { dateLocale } from '@proton/shared/lib/i18n';
+import { CalendarAlarm, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import { noop } from '@proton/shared/lib/helpers/function';
 
-import { getAlarmMessage, getNextEventTime } from 'proton-shared/lib/calendar/alarms';
-import { MINUTE } from 'proton-shared/lib/constants';
+import { getAlarmMessage, getNextEventTime } from '@proton/shared/lib/calendar/alarms';
+import { MINUTE } from '@proton/shared/lib/constants';
 import notificationIcon from '../../../assets/notification.gif';
 
 import { CalendarsEventsCache } from '../calendar/eventStore/interface';

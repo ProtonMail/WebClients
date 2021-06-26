@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Row, Alert, SubTitle } from 'react-components';
+import { Row, Alert, SubTitle } from '@proton/components';
 import { c } from 'ttag';
 
 import VerificationForm from './VerificationForm/VerificationForm';

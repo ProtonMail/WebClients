@@ -1,8 +1,8 @@
 import React from 'react';
-import { hasVpnBasic, getPlanIDs } from 'proton-shared/lib/helpers/subscription';
-import { switchPlan } from 'proton-shared/lib/helpers/planIDs';
-import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES, PLANS } from 'proton-shared/lib/constants';
-import { toMap } from 'proton-shared/lib/helpers/object';
+import { hasVpnBasic, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES, PLANS } from '@proton/shared/lib/constants';
+import { toMap } from '@proton/shared/lib/helpers/object';
 import { c } from 'ttag';
 import { Loader, Button, Card } from '../../../components';
 import { useUser, useSubscription, useModals, usePlans, useOrganization } from '../../../hooks';

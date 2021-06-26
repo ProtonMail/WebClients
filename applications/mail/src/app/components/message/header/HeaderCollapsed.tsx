@@ -1,8 +1,8 @@
-import { hasAttachments, isDraft, isOutbox } from 'proton-shared/lib/mail/messages';
+import { hasAttachments, isDraft, isOutbox } from '@proton/shared/lib/mail/messages';
 import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
-import { classnames } from 'react-components';
-import { Label } from 'proton-shared/lib/interfaces/Label';
+import { classnames } from '@proton/components';
+import { Label } from '@proton/shared/lib/interfaces/Label';
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';

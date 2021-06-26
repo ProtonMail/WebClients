@@ -1,5 +1,5 @@
-import { useCache } from 'react-components';
-import createCache, { Cache } from 'proton-shared/lib/helpers/cache';
+import { useCache } from '@proton/components';
+import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
 
 const CACHE_KEY = 'Base64';
 

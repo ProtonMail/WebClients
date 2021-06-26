@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { disableTotp } from 'proton-shared/lib/api/settings';
-import { srpAuth } from 'proton-shared/lib/srp';
-import { PASSWORD_WRONG_ERROR } from 'proton-shared/lib/api/auth';
-import { getApiError } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+import { disableTotp } from '@proton/shared/lib/api/settings';
+import { srpAuth } from '@proton/shared/lib/srp';
+import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { Alert, FormModal } from '../../components';
 import { useLoading, useApi, useEventManager, useNotifications } from '../../hooks';

@@ -1,13 +1,13 @@
-import { RequireSome } from 'proton-shared/lib/interfaces/utils';
+import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import React from 'react';
-import { classnames } from 'react-components';
+import { classnames } from '@proton/components';
 import { c } from 'ttag';
-import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
-import { getFrequencyString } from 'proton-shared/lib/calendar/integration/getFrequencyString';
-import { dateLocale } from 'proton-shared/lib/i18n';
-import { getAllDayInfo, getDtendProperty } from 'proton-shared/lib/calendar/vcalConverter';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
+import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { getFrequencyString } from '@proton/shared/lib/calendar/integration/getFrequencyString';
+import { dateLocale } from '@proton/shared/lib/i18n';
+import { getAllDayInfo, getDtendProperty } from '@proton/shared/lib/calendar/vcalConverter';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { formatEndDateTime, formatStartDateTime, InvitationModel } from '../../../../helpers/calendar/invite';
 import ExtraEventParticipants from './ExtraEventParticipants';
 

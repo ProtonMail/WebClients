@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
-import { APPS } from 'proton-shared/lib/constants';
-import { getAppName } from 'proton-shared/lib/apps/helper';
-import { getShortcuts } from 'proton-shared/lib/shortcuts/mail';
+import { APPS } from '@proton/shared/lib/constants';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { getShortcuts } from '@proton/shared/lib/shortcuts/mail';
 import { useMailSettings } from '../../hooks';
 import { classnames } from '../../helpers';
 import { Field, Row, ShortcutsSectionView, Alert, Label, ShortcutsModal } from '../../components';

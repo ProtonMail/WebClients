@@ -1,8 +1,8 @@
-import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
-import { getAttachments } from 'proton-shared/lib/mail/messages';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { getAttachments } from '@proton/shared/lib/mail/messages';
 import React, { MutableRefObject, DragEvent, useState, DragEventHandler } from 'react';
 import { c } from 'ttag';
-import { classnames, EllipsisLoader } from 'react-components';
+import { classnames, EllipsisLoader } from '@proton/components';
 
 import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';

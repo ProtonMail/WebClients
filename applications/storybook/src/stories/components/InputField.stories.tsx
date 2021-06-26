@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Icon, InputFieldTwo, PasswordInputTwo } from 'react-components';
+import { Icon, InputFieldTwo, PasswordInputTwo } from '@proton/components';
 import mdx from './InputField.mdx';
 
 export default {

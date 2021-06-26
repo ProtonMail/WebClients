@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { PrivateMainArea, useAppTitle } from 'react-components';
+import { PrivateMainArea, useAppTitle } from '@proton/components';
 import TrashToolbar from '../../components/Drive/Trash/TrashToolbar';
 import Trash from '../../components/Drive/Trash/Trash';
 import TrashContentProvider from '../../components/Drive/Trash/TrashContentProvider';

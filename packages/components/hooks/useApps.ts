@@ -1,4 +1,4 @@
-import { APPS } from 'proton-shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 
 const { PROTONMAIL, PROTONCALENDAR, PROTONDRIVE } = APPS;
 

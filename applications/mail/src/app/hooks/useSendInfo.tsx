@@ -1,19 +1,19 @@
-import { GetEncryptionPreferences } from 'proton-shared/lib/interfaces/hooks/GetEncryptionPreferences';
+import { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
 import React, { Dispatch, SetStateAction, useCallback, useEffect, useMemo, useState } from 'react';
-import { Alert, useGetEncryptionPreferences, useModals } from 'react-components';
-import useIsMounted from 'react-components/hooks/useIsMounted';
+import { Alert, useGetEncryptionPreferences, useModals } from '@proton/components';
+import useIsMounted from '@proton/components/hooks/useIsMounted';
 import { c, msgid } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
-import { getRecipientsAddresses } from 'proton-shared/lib/mail/messages';
-import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
-import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
-import { noop } from 'proton-shared/lib/helpers/function';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { omit } from 'proton-shared/lib/helpers/object';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from 'proton-shared/lib/mail/encryptionPreferences';
-import { Recipient } from 'proton-shared/lib/interfaces/Address';
-import getSendPreferences from 'proton-shared/lib/mail/send/getSendPreferences';
+import { getRecipientsAddresses } from '@proton/shared/lib/mail/messages';
+import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
+import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import { noop } from '@proton/shared/lib/helpers/function';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { omit } from '@proton/shared/lib/helpers/object';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '@proton/shared/lib/mail/encryptionPreferences';
+import { Recipient } from '@proton/shared/lib/interfaces/Address';
+import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import AskForKeyPinningModal from '../components/composer/addresses/AskForKeyPinningModal';
 import ContactResignModal from '../components/message/modals/ContactResignModal';
 import { getSendStatusIcon } from '../helpers/message/icon';
@@ -282,14 +282,16 @@ export const useUpdateGroupSendInfo = (
             abortController,
             checkForError,
         }: Pick<LoadParams, 'abortController' | 'checkForError'>): Promise<void> => {
-            const requests = contacts.map(({ Email, ContactID, Name }) => () =>
-                loadSendIcon({
-                    emailAddress: Email,
-                    contactID: ContactID,
-                    contactName: Name,
-                    abortController,
-                    checkForError,
-                })
+            const requests = contacts.map(
+                ({ Email, ContactID, Name }) =>
+                    () =>
+                        loadSendIcon({
+                            emailAddress: Email,
+                            contactID: ContactID,
+                            contactName: Name,
+                            abortController,
+                            checkForError,
+                        })
             );
             // the routes called in requests support 100 calls every 10 seconds
             const results = await processApiRequestsSafe(requests, 100, 10 * 1000);
@@ -404,8 +406,9 @@ export const useReloadSendInfo = () => {
             }
 
             const recipients = getRecipientsAddresses(message.data);
-            const requests = recipients.map((emailAddress) => () =>
-                getUpdatedSendInfo(emailAddress, message, setMapSendInfo, getEncryptionPreferences, contactsMap)
+            const requests = recipients.map(
+                (emailAddress) => () =>
+                    getUpdatedSendInfo(emailAddress, message, setMapSendInfo, getEncryptionPreferences, contactsMap)
             );
             const loadingMapSendInfo = recipients.reduce(
                 (acc, emailAddress) => {

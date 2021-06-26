@@ -1,13 +1,13 @@
 import { OpenPGPKey } from 'pmcrypto';
-import { getContact, updateContact } from 'proton-shared/lib/api/contacts';
-import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
-import { pinKeyUpdateContact } from 'proton-shared/lib/contacts/keyPinning';
-import { Api } from 'proton-shared/lib/interfaces';
-import { ContactCard, ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
-import { RequireSome } from 'proton-shared/lib/interfaces/utils';
-import { splitKeys } from 'proton-shared/lib/keys/keys';
+import { getContact, updateContact } from '@proton/shared/lib/api/contacts';
+import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
+import { pinKeyUpdateContact } from '@proton/shared/lib/contacts/keyPinning';
+import { Api } from '@proton/shared/lib/interfaces';
+import { ContactCard, ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
+import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
 import React from 'react';
-import { Alert, classnames, FormModal, useApi, useLoading, useNotifications, useUserKeys } from 'react-components';
+import { Alert, classnames, FormModal, useApi, useLoading, useNotifications, useUserKeys } from '@proton/components';
 import { c, msgid } from 'ttag';
 
 interface Params {
@@ -51,8 +51,8 @@ const AskForKeyPinningModal = ({ contacts, onTrust, onClose, onNotTrust, onError
 
     const handleSubmit = async () => {
         try {
-            const requests = contacts.map((contact) => () =>
-                updateContactPinnedKeys({ contact, api, publicKeys, privateKeys })
+            const requests = contacts.map(
+                (contact) => () => updateContactPinnedKeys({ contact, api, publicKeys, privateKeys })
             );
             // the routes called in requests support 100 calls every 10 seconds
             await processApiRequestsSafe(requests, 100, 10 * 1000);

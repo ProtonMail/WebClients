@@ -1,6 +1,6 @@
 import React, { CSSProperties, RefObject, useEffect, useRef, useState } from 'react';
-import { SimpleMap } from 'proton-shared/lib/interfaces';
-import { classnames, Icon, Loader, Tooltip } from 'react-components';
+import { SimpleMap } from '@proton/shared/lib/interfaces';
+import { classnames, Icon, Loader, Tooltip } from '@proton/components';
 import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 import { getAnchor } from '../../helpers/message/messageImages';

@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, FocusEvent } from 'react';
-import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from 'react-components';
+import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from '@proton/components';
 import { c } from 'ttag';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { noop } from '@proton/shared/lib/helpers/function';
 import { LinkType } from '../interfaces/link';
 import { validateLinkNameField } from '../utils/validation';
 import { formatLinkName, splitLinkName } from '../utils/link';

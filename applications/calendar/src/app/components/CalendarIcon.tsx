@@ -1,6 +1,6 @@
 import React from 'react';
 import tinycolor from 'tinycolor2';
-import { Icon, classnames } from 'react-components';
+import { Icon, classnames } from '@proton/components';
 
 interface Props {
     color?: string;

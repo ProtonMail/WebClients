@@ -1,4 +1,4 @@
-import { getSrp, getRandomSrpVerifier } from 'pm-srp';
+import { getSrp, getRandomSrpVerifier } from '@proton/srp';
 
 import { getInfo, getModulus } from './api/auth';
 import { Api } from './interfaces';

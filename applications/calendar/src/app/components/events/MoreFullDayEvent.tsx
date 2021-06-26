@@ -1,5 +1,5 @@
 import React, { CSSProperties, Ref } from 'react';
-import { classnames } from 'react-components';
+import { classnames } from '@proton/components';
 
 interface Props {
     style: CSSProperties;

@@ -1,5 +1,5 @@
-import { KEY_FLAG } from 'proton-shared/lib/constants';
-import { clearBit, setBit } from 'proton-shared/lib/helpers/bitset';
+import { KEY_FLAG } from '@proton/shared/lib/constants';
+import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { FlagAction } from './interface';
 
 export const getNewKeyFlags = (Flags = 0, action: FlagAction) => {

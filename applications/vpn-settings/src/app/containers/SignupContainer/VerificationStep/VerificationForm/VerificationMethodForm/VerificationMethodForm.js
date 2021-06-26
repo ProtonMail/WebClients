@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Row, useLoading, Radio, Label, Field, useMyLocation } from 'react-components';
+import { Row, useLoading, Radio, Label, Field, useMyLocation } from '@proton/components';
 import { c } from 'ttag';
-import { TOKEN_TYPES } from 'proton-shared/lib/constants';
+import { TOKEN_TYPES } from '@proton/shared/lib/constants';
 import VerificationEmailInput from './VerificationEmailInput';
 import VerificationPhoneInput from './VerificationPhoneInput';
 

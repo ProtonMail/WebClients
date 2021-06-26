@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { IllustrationPlaceholder, PrimaryButton, useModals } from 'react-components';
+import { IllustrationPlaceholder, PrimaryButton, useModals } from '@proton/components';
 
-import noLinksSvg from 'design-system/assets/img/placeholders/file-share.svg';
+import noLinksSvg from '@proton/styles/assets/img/placeholders/file-share.svg';
 
 import SelectedFileToShareModal from '../SelectedFileToShareModal';
 

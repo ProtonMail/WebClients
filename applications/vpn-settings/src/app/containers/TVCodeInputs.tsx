@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Input } from 'react-components';
+import { Input } from '@proton/components';
 import './TVCodeInputs.scss';
 
 interface Props {

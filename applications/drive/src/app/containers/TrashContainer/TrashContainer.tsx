@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useCallback } from 'react';
-import { PrivateAppContainer, useToggle, MainLogo } from 'react-components';
+import { PrivateAppContainer, useToggle, MainLogo } from '@proton/components';
 import { Route, Redirect, Switch, RouteComponentProps } from 'react-router-dom';
 import DriveHeader from '../../components/layout/DriveHeader';
 import DriveSidebar from '../../components/layout/DriveSidebar/DriveSidebar';

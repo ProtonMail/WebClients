@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { c } from 'ttag';
-import { parseKeyFiles } from 'proton-shared/lib/keys';
+import { parseKeyFiles } from '@proton/shared/lib/keys';
 import { OpenPGPKey } from 'pmcrypto';
 import FileInput from '../../../components/input/FileInput';
 import useCombinedRefs from '../../../hooks/useCombinedRefs';

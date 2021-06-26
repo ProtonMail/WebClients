@@ -2,13 +2,13 @@ import {
     getCalendarHasSubscriptionParameters,
     getCalendarIsSynced,
     getIsSubscribedCalendar,
-} from 'proton-shared/lib/calendar/subscribe/helpers';
+} from '@proton/shared/lib/calendar/subscribe/helpers';
 import React from 'react';
 import { c } from 'ttag';
-import { getIsCalendarDisabled, getIsCalendarProbablyActive } from 'proton-shared/lib/calendar/calendar';
-import { Calendar, SubscribedCalendar } from 'proton-shared/lib/interfaces/calendar';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { SimpleMap, UserModel } from 'proton-shared/lib/interfaces';
+import { getIsCalendarDisabled, getIsCalendarProbablyActive } from '@proton/shared/lib/calendar/calendar';
+import { Calendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
 
 import { Badge, DropdownActions, Icon, Info, Table, TableBody, TableHeader, TableRow } from '../../../components';
 import useGetCalendarsEmails from '../hooks/useGetCalendarsEmails';

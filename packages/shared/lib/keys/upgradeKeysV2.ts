@@ -1,4 +1,4 @@
-import { computeKeyPassword, generateKeySalt } from 'pm-srp';
+import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
 
 import {

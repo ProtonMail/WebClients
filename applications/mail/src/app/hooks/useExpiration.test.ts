@@ -1,4 +1,4 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { renderHook, clearAll } from '../helpers/test/helper';
 import { useExpiration } from './useExpiration';
 

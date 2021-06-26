@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
-import { LanguageSection, SettingsPropsShared } from 'react-components';
-import locales from 'proton-shared/lib/i18n/locales';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { LanguageSection, SettingsPropsShared } from '@proton/components';
+import locales from '@proton/shared/lib/i18n/locales';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 import PrivateMainSettingsAreaWithPermissions from '../components/page/PrivateMainSettingsAreaWithPermissions';
 

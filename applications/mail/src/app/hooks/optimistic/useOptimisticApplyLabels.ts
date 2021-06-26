@@ -1,10 +1,10 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { RequireSome } from 'proton-shared/lib/interfaces/utils';
-import { useHandler, useFolders, useCache } from 'react-components';
-import { MessageCountsModel, ConversationCountsModel } from 'proton-shared/lib/models';
-import { LabelCount } from 'proton-shared/lib/interfaces/Label';
-import { STATUS } from 'proton-shared/lib/models/cache';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import { useHandler, useFolders, useCache } from '@proton/components';
+import { MessageCountsModel, ConversationCountsModel } from '@proton/shared/lib/models';
+import { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import { STATUS } from '@proton/shared/lib/models/cache';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
 import { useGetElementsCache, useSetElementsCache } from '../mailbox/useElementsCache';
 import { Conversation } from '../../models/conversation';

@@ -1,4 +1,4 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import React, { useState } from 'react';
 import {
     AddFilterModal,
@@ -10,14 +10,14 @@ import {
     useNotifications,
     FilterUtils,
     FilterConstants,
-} from 'react-components';
+} from '@proton/components';
 import { c } from 'ttag';
 
-import { identity } from 'proton-shared/lib/helpers/function';
-import { isPaid } from 'proton-shared/lib/user/helpers';
-import { FILTER_STATUS } from 'proton-shared/lib/constants';
+import { identity } from '@proton/shared/lib/helpers/function';
+import { isPaid } from '@proton/shared/lib/user/helpers';
+import { FILTER_STATUS } from '@proton/shared/lib/constants';
 
-import { Filter, ConditionType, ConditionComparator } from 'react-components/containers/filters/interfaces';
+import { Filter, ConditionType, ConditionComparator } from '@proton/components/containers/filters/interfaces';
 
 const { computeTree, newFilter } = FilterUtils;
 const { OPERATORS } = FilterConstants;

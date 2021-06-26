@@ -1,18 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
-import { APP_NAMES, APPS, BRAND_NAME, REQUIRES_INTERNAL_EMAIL_ADDRESS } from 'proton-shared/lib/constants';
-import { Address as tsAddress } from 'proton-shared/lib/interfaces';
-import { withUIDHeaders } from 'proton-shared/lib/fetch/headers';
-import { queryAddresses } from 'proton-shared/lib/api/addresses';
-import { getHasOnlyExternalAddresses } from 'proton-shared/lib/helpers/address';
-import { revoke } from 'proton-shared/lib/api/auth';
-import { removePersistedSession } from 'proton-shared/lib/authentication/persistedSessionStorage';
-import { getAppName } from 'proton-shared/lib/apps/helper';
-import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
-import { handleCreateInternalAddressAndKey } from 'proton-shared/lib/keys';
-import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { APP_NAMES, APPS, BRAND_NAME, REQUIRES_INTERNAL_EMAIL_ADDRESS } from '@proton/shared/lib/constants';
+import { Address as tsAddress } from '@proton/shared/lib/interfaces';
+import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { queryAddresses } from '@proton/shared/lib/api/addresses';
+import { getHasOnlyExternalAddresses } from '@proton/shared/lib/helpers/address';
+import { revoke } from '@proton/shared/lib/api/auth';
+import { removePersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
+import { handleCreateInternalAddressAndKey } from '@proton/shared/lib/keys';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import {
     AbuseModal,
@@ -21,14 +21,14 @@ import {
     useApi,
     useErrorHandler,
     useModals,
-} from 'react-components';
+} from '@proton/components';
 import {
     handleLogin,
     handleSetupPassword,
     handleTotp,
     handleUnlock,
-} from 'react-components/containers/login/loginActions';
-import { AuthActionResponse, AuthCacheResult, AuthStep } from 'react-components/containers/login/interface';
+} from '@proton/components/containers/login/loginActions';
+import { AuthActionResponse, AuthCacheResult, AuthStep } from '@proton/components/containers/login/interface';
 
 import BackButton from '../public/BackButton';
 import { getToAppName } from '../public/helper';

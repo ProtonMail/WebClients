@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { VpnLogo, PrimaryButton, Icon, Href, useApi, useLoading, ProminentContainer } from 'react-components';
-import { pushForkSession } from 'proton-shared/lib/api/auth';
-import { CLIENT_IDS } from 'proton-shared/lib/constants';
+import { VpnLogo, PrimaryButton, Icon, Href, useApi, useLoading, ProminentContainer } from '@proton/components';
+import { pushForkSession } from '@proton/shared/lib/api/auth';
+import { CLIENT_IDS } from '@proton/shared/lib/constants';
 import TVCodeInputs from './TVCodeInputs';
 
 enum STEP {

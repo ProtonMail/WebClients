@@ -1,5 +1,5 @@
 import { format, formatDistanceToNow as dateFnsFormatDistanceToNow, isToday, isYesterday, isThisWeek } from 'date-fns';
-import { dateLocale } from 'proton-shared/lib/i18n';
+import { dateLocale } from '@proton/shared/lib/i18n';
 import { c } from 'ttag';
 
 export const formatSimpleDate = (date: Date) => {

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { c } from 'ttag';
-import { isDarkTheme } from 'proton-shared/lib/themes/helpers';
-import { UserSettings } from 'proton-shared/lib/interfaces';
+import { isDarkTheme } from '@proton/shared/lib/themes/helpers';
+import { UserSettings } from '@proton/shared/lib/interfaces';
 import { Alert } from '../../../../components';
 
 import SieveEditor from './SieveEditor';

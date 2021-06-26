@@ -1,7 +1,7 @@
-import { toUTCDate } from 'proton-shared/lib/date/timezone';
-import { addDays } from 'proton-shared/lib/date-fns-utc';
-import { VcalDateOrDateTimeProperty } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { getPropertyTzid } from 'proton-shared/lib/calendar/vcalHelper';
+import { toUTCDate } from '@proton/shared/lib/date/timezone';
+import { addDays } from '@proton/shared/lib/date-fns-utc';
+import { VcalDateOrDateTimeProperty } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import { getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
 import { getDateTimeState } from './time';
 
 const propertiesToDateTimeModel = (

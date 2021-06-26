@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { addDomain, getDomain } from 'proton-shared/lib/api/domains';
-import { VERIFY_STATE, DOMAIN_STATE, SPF_STATE, MX_STATE, DMARC_STATE, DKIM_STATE } from 'proton-shared/lib/constants';
+import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
+import { VERIFY_STATE, DOMAIN_STATE, SPF_STATE, MX_STATE, DMARC_STATE, DKIM_STATE } from '@proton/shared/lib/constants';
 import { FormModal, ButtonGroup, RoundedIcon, Tooltip, Icon, Button } from '../../components';
 import { useLoading, useApi, useStep, useNotifications, useDomains } from '../../hooks';
 import { classnames } from '../../helpers';

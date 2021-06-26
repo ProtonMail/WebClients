@@ -1,9 +1,9 @@
-@import '~design-system/scss/proton-calendar';
+@import '@proton/styles/scss/proton-calendar';
 
 // Specific styles
 @import
-    '~design-system/scss/specifics/placeholder-loading',
-    '~design-system/scss/specifics/list',
+    '@proton/styles/scss/specifics/placeholder-loading',
+    '@proton/styles/scss/specifics/list',
     'styles/config',
     'styles/specifics',
     'styles/grid',

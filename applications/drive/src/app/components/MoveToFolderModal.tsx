@@ -14,7 +14,7 @@ import {
     useActiveBreakpoint,
     Button,
     Icon,
-} from 'react-components';
+} from '@proton/components';
 
 import FolderTree, { FolderTreeItem } from './FolderTree/FolderTree';
 import { DriveFolder } from './Drive/DriveFolderProvider';

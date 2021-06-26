@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { updatePromptPin } from 'proton-shared/lib/api/mailSettings';
+import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
 import { Info, Toggle } from '../../components';
 import { useApi, useLoading, useMailSettings, useEventManager, useNotifications } from '../../hooks';
 

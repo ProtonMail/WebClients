@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent, MutableRefObject } from 'react';
-import { Select, generateUID, useAddresses, useMailSettings } from 'react-components';
+import { Select, generateUID, useAddresses, useMailSettings } from '@proton/components';
 import { MessageExtended } from '../../../models/message';
 import { getAddressFromEmail, getFromAddresses } from '../../../helpers/addresses';
 import { MessageChange } from '../Composer';

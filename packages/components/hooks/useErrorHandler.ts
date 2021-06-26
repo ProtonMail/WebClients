@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { c } from 'ttag';
-import { getApiErrorMessage, getIsUnreachableError } from 'proton-shared/lib/api/helpers/apiErrorHelper';
-import { traceError } from 'proton-shared/lib/helpers/sentry';
+import { getApiErrorMessage, getIsUnreachableError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import useNotifications from './useNotifications';
 

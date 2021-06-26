@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { arrayToHexString, binaryStringToArray, encodeUtf8, unsafeMD5 } from 'pmcrypto';
-import { getItem, setItem } from 'proton-shared/lib/helpers/storage';
+import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { useEventManager, useNotifications, useUser } from '../../hooks';
 
 const getID = async (text) => {

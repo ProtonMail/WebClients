@@ -1,7 +1,7 @@
 import React, { Ref } from 'react';
 import { c } from 'ttag';
 
-import { Icon, DropdownCaret, classnames } from 'react-components';
+import { Icon, DropdownCaret, classnames } from '@proton/components';
 
 interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     children?: React.ReactNode;

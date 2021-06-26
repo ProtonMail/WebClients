@@ -1,6 +1,6 @@
 import React from 'react';
-import { InvoicesSection, PaymentMethodsSection, SettingsPropsShared } from 'react-components';
-import { PERMISSIONS } from 'proton-shared/lib/constants';
+import { InvoicesSection, PaymentMethodsSection, SettingsPropsShared } from '@proton/components';
+import { PERMISSIONS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 
 import PrivateMainSettingsAreaWithPermissions from '../components/page/PrivateMainSettingsAreaWithPermissions';

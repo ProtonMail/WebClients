@@ -1,10 +1,10 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { DENSITY } from 'proton-shared/lib/constants';
+import { DENSITY } from '@proton/shared/lib/constants';
 
-import comfortableDensitySvg from 'design-system/assets/img/pm-images/comfortable-density.svg';
-import compactDensitySvg from 'design-system/assets/img/pm-images/compact-density.svg';
+import comfortableDensitySvg from '@proton/styles/assets/img/pm-images/comfortable-density.svg';
+import compactDensitySvg from '@proton/styles/assets/img/pm-images/compact-density.svg';
 
 import { LayoutCards } from '../../components';
 

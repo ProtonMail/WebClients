@@ -1,12 +1,12 @@
-import { generateKeySaltAndPassphrase } from 'proton-shared/lib/keys/keys';
+import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
 import { encryptSessionKey, splitMessage, decryptSessionKey, getMessage, SessionKey } from 'pmcrypto';
-import { computeKeyPassword } from 'pm-srp';
-import { srpGetVerify } from 'proton-shared/lib/srp';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from 'proton-shared/lib/helpers/encoding';
-import { chunk } from 'proton-shared/lib/helpers/array';
-import { decryptUnsigned, encryptUnsigned } from 'proton-shared/lib/keys/driveKeys';
-import runInQueue from 'proton-shared/lib/helpers/runInQueue';
-import { useApi, usePreventLeave } from 'react-components';
+import { computeKeyPassword } from '@proton/srp';
+import { srpGetVerify } from '@proton/shared/lib/srp';
+import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import { chunk } from '@proton/shared/lib/helpers/array';
+import { decryptUnsigned, encryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
+import runInQueue from '@proton/shared/lib/helpers/runInQueue';
+import { useApi, usePreventLeave } from '@proton/components';
 import {
     queryCreateSharedLink,
     querySharedLinks,
@@ -307,14 +307,15 @@ function useSharing() {
     const deleteMultipleSharedLinks = async (shareId: string, sharedUrlIds: string[]) => {
         const batches = chunk(sharedUrlIds, BATCH_REQUEST_SIZE);
 
-        const deleteSharedQueue = batches.map((batch) => () =>
-            debouncedRequest<{ Responses: { ShareURLID: string; Response: { Code: number } }[] }>(
-                queryDeleteMultipleSharedLinks(shareId, batch)
-            ).then(({ Responses }) =>
-                Responses.filter((res) => res.Response.Code === RESPONSE_CODE.SUCCESS).map(
-                    ({ ShareURLID }) => ShareURLID
+        const deleteSharedQueue = batches.map(
+            (batch) => () =>
+                debouncedRequest<{ Responses: { ShareURLID: string; Response: { Code: number } }[] }>(
+                    queryDeleteMultipleSharedLinks(shareId, batch)
+                ).then(({ Responses }) =>
+                    Responses.filter((res) => res.Response.Code === RESPONSE_CODE.SUCCESS).map(
+                        ({ ShareURLID }) => ShareURLID
+                    )
                 )
-            )
         );
 
         const deletedIds = await preventLeave(runInQueue(deleteSharedQueue, MAX_THREADS_PER_REQUEST));

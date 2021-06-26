@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { loadOpenPGP } from 'proton-shared/lib/openpgp';
-import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from 'proton-shared/lib/i18n/helper';
-import { loadLocale, loadDateLocale } from 'proton-shared/lib/i18n/loadLocale';
-import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
-import { LoaderPage, useApi, ProtonLoginCallback, StandardLoadErrorPage, useErrorHandler } from 'react-components';
+import { loadOpenPGP } from '@proton/shared/lib/openpgp';
+import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
+import { loadLocale, loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
+import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import { LoaderPage, useApi, ProtonLoginCallback, StandardLoadErrorPage, useErrorHandler } from '@proton/components';
 import {
     getActiveSessions,
     GetActiveSessionsResult,
     resumeSession,
-} from 'proton-shared/lib/authentication/persistedSessionHelper';
-import { getLocalIDFromPathname } from 'proton-shared/lib/authentication/pathnameHelper';
-import { InvalidPersistentSessionError } from 'proton-shared/lib/authentication/error';
-import { getApiErrorMessage, getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
-import { getCookie } from 'proton-shared/lib/helpers/cookies';
+} from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
+import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
+import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import * as H from 'history';
 
 interface Props {

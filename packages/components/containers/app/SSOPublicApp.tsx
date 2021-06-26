@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { InvalidPersistentSessionError } from 'proton-shared/lib/authentication/error';
-import { getLocalIDFromPathname } from 'proton-shared/lib/authentication/pathnameHelper';
-import { resumeSession } from 'proton-shared/lib/authentication/persistedSessionHelper';
-import { getApiErrorMessage, getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
+import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
+import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { useApi, useErrorHandler } from '../../hooks';
 import LoaderPage from './LoaderPage';

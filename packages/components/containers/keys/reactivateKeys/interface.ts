@@ -1,5 +1,5 @@
 import { OpenPGPKey } from 'pmcrypto';
-import { Address, DecryptedKey, Key, UserModel } from 'proton-shared/lib/interfaces';
+import { Address, DecryptedKey, Key, UserModel } from '@proton/shared/lib/interfaces';
 
 export enum Status {
     INACTIVE = 1,

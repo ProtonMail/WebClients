@@ -1,8 +1,8 @@
 import { Location } from 'history';
-import { MailSettings } from 'proton-shared/lib/interfaces';
-import { SHOW_IMAGES, VIEW_LAYOUT, VIEW_MODE } from 'proton-shared/lib/constants';
+import { MailSettings } from '@proton/shared/lib/interfaces';
+import { SHOW_IMAGES, VIEW_LAYOUT, VIEW_MODE } from '@proton/shared/lib/constants';
 
-import { hasBit } from 'proton-shared/lib/helpers/bitset';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { extractSearchParameters } from './mailboxUrl';
 import { isAlwaysMessageLabels } from './labels';
 

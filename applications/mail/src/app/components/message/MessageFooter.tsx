@@ -1,6 +1,6 @@
-import { getAttachments } from 'proton-shared/lib/mail/messages';
+import { getAttachments } from '@proton/shared/lib/mail/messages';
 import React from 'react';
-import { classnames } from 'react-components';
+import { classnames } from '@proton/components';
 import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 
 import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';

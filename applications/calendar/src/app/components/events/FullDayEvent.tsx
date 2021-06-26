@@ -1,5 +1,5 @@
 import React, { CSSProperties, Ref, useMemo } from 'react';
-import { Icon, classnames } from 'react-components';
+import { Icon, classnames } from '@proton/components';
 import { getEventStatusTraits } from '../../helpers/event';
 
 import useReadEvent from './useReadEvent';

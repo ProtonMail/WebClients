@@ -1,4 +1,4 @@
-import { differenceInCalendarDays, startOfDay, endOfDay, min, max } from 'proton-shared/lib/date-fns-utc';
+import { differenceInCalendarDays, startOfDay, endOfDay, min, max } from '@proton/shared/lib/date-fns-utc';
 import { CalendarViewEvent } from '../../containers/calendar/interface';
 import { LayoutEvent } from './layout';
 

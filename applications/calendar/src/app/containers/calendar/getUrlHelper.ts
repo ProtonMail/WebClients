@@ -1,5 +1,5 @@
-import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC, VIEWS } from 'proton-shared/lib/calendar/constants';
-import { isSameDay } from 'proton-shared/lib/date-fns-utc';
+import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC, VIEWS } from '@proton/shared/lib/calendar/constants';
+import { isSameDay } from '@proton/shared/lib/date-fns-utc';
 
 const URL_PARAMS_VIEWS_CONVERSION: { [key: string]: VIEWS } = {
     month: VIEWS.MONTH,

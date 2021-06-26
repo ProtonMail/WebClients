@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
-import { Icon, Href, useModals, Alert } from 'react-components';
+import { Icon, Href, useModals, Alert } from '@proton/components';
 import { c } from 'ttag';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import ContactResignModal from '../modals/ContactResignModal';
 import { MessageVerification } from '../../../models/message';
 import { useContactCache } from '../../../containers/ContactProvider';

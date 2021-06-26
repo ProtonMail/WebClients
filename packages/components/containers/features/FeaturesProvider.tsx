@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { getFeature, updateFeatureValue } from 'proton-shared/lib/api/features';
+import { getFeature, updateFeatureValue } from '@proton/shared/lib/api/features';
 
 import { useApi } from '../../hooks';
 import FeaturesContext, { Feature, FeatureCode } from './FeaturesContext';

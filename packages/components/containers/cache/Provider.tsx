@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Cache } from 'proton-shared/lib/helpers/cache';
+import { Cache } from '@proton/shared/lib/helpers/cache';
 import CacheContext from './cacheContext';
 
 interface Props<K, V> {

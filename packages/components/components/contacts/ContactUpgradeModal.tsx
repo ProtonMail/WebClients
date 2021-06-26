@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 import ConfirmModal from '../modal/Confirm';
 import Alert from '../alert/Alert';

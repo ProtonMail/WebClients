@@ -1,8 +1,8 @@
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { KeyboardKey } from 'proton-shared/lib/interfaces';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { useRef, useState } from 'react';
-import { useFolders, useHotkeys, useMailSettings, HotkeyTuple } from 'react-components';
+import { useFolders, useHotkeys, useMailSettings, HotkeyTuple } from '@proton/components';
 import { isStarred } from '../../helpers/elements';
 import { getFolderName } from '../../helpers/labels';
 import { Element } from '../../models/element';

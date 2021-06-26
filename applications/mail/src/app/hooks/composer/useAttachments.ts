@@ -1,10 +1,10 @@
-import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
-import { getAttachments, isPlainText } from 'proton-shared/lib/mail/messages';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 import { useState, useCallback } from 'react';
-import { useApi, useNotifications, useAuthentication, useHandler } from 'react-components';
+import { useApi, useNotifications, useAuthentication, useHandler } from '@proton/components';
 import { c } from 'ttag';
-import { removeAttachment } from 'proton-shared/lib/api/attachments';
-import { readFileAsBuffer } from 'proton-shared/lib/helpers/file';
+import { removeAttachment } from '@proton/shared/lib/api/attachments';
+import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
 import { Upload } from '../../helpers/upload';
 import { UploadResult, ATTACHMENT_ACTION, isSizeExceeded, upload } from '../../helpers/attachment/attachmentUploader';
 import { MessageExtended, MessageExtendedWithData } from '../../models/message';

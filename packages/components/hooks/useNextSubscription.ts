@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { checkSubscription } from 'proton-shared/lib/api/payments';
-import { SubscriptionCheckResponse } from 'proton-shared/lib/interfaces/Subscription';
-import { getPlanIDs } from 'proton-shared/lib/helpers/subscription';
+import { checkSubscription } from '@proton/shared/lib/api/payments';
+import { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces/Subscription';
+import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 
 import useApi from './useApi';
 import useLoading from './useLoading';

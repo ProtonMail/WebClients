@@ -18,13 +18,13 @@ import {
     HotkeyTuple,
     LabelModal,
     Icon,
-} from 'react-components';
-import { SHOW_MOVED, MAILBOX_LABEL_IDS, APPS } from 'proton-shared/lib/constants';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { buildTreeview } from 'proton-shared/lib/helpers/folder';
-import { Folder, FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
-import { setItem, getItem } from 'proton-shared/lib/helpers/storage';
-import { scrollIntoView } from 'proton-shared/lib/helpers/dom';
+} from '@proton/components';
+import { SHOW_MOVED, MAILBOX_LABEL_IDS, APPS } from '@proton/shared/lib/constants';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { buildTreeview } from '@proton/shared/lib/helpers/folder';
+import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import { setItem, getItem } from '@proton/shared/lib/helpers/storage';
+import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 
 import { getCounterMap } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { checkSubscription } from 'proton-shared/lib/api/payments';
-import { APPS, CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE } from 'proton-shared/lib/constants';
+import { checkSubscription } from '@proton/shared/lib/api/payments';
+import { APPS, CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
-import { Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from 'proton-shared/lib/interfaces';
-import { isProductPayer } from 'proton-shared/lib/helpers/blackfriday';
+import { Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { isProductPayer } from '@proton/shared/lib/helpers/blackfriday';
 
-import { getAppName } from 'proton-shared/lib/apps/helper';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 import { FormModal, FullLoader, Button, Price, Info } from '../../../components';
 import { useLoading, useApi, useSubscription } from '../../../hooks';
 import { classnames } from '../../../helpers';

@@ -1,7 +1,7 @@
 import { Location } from 'history';
 import { match, matchPath, generatePath } from 'react-router';
-import { isNumber } from 'proton-shared/lib/helpers/validators';
-import { getSearchParams, changeSearchParams } from 'proton-shared/lib/helpers/url';
+import { isNumber } from '@proton/shared/lib/helpers/validators';
+import { getSearchParams, changeSearchParams } from '@proton/shared/lib/helpers/url';
 import { Sort, Filter, SearchParameters } from '../models/tools';
 import { getHumanLabelID } from './labels';
 import { MAIN_ROUTE_PATH } from '../constants';

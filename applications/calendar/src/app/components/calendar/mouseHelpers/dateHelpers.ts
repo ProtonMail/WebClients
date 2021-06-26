@@ -1,4 +1,4 @@
-import { addDays, addMinutes, startOfDay } from 'proton-shared/lib/date-fns-utc';
+import { addDays, addMinutes, startOfDay } from '@proton/shared/lib/date-fns-utc';
 import { getRelativePosition } from './mathHelpers';
 
 export const getSnappedMinutes = (minutes: number, interval: number) => {

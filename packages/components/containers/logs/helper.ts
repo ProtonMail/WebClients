@@ -1,7 +1,7 @@
-import { queryLogs } from 'proton-shared/lib/api/logs';
-import queryPagesThrottled from 'proton-shared/lib/api/helpers/queryPagesThrottled';
-import { Api } from 'proton-shared/lib/interfaces';
-import { AuthLog } from 'proton-shared/lib/authlog';
+import { queryLogs } from '@proton/shared/lib/api/logs';
+import queryPagesThrottled from '@proton/shared/lib/api/helpers/queryPagesThrottled';
+import { Api } from '@proton/shared/lib/interfaces';
+import { AuthLog } from '@proton/shared/lib/authlog';
 
 export const getAllAuthenticationLogs = (api: Api) => {
     const pageSize = 150;

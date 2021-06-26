@@ -11,17 +11,19 @@ const AddressesTable = ({ domain, domainAddresses }) => {
     const { call } = useEventManager();
     const [addresses, setAddresses] = useState(() => domainAddresses);
 
-    const handleChange = ({ ID }) => async (newValue) => {
-        setAddresses(
-            addresses.map((address) => {
-                return {
-                    ...address,
-                    CatchAll: address.ID === ID ? +newValue : 0,
-                };
-            })
-        );
-        await call();
-    };
+    const handleChange =
+        ({ ID }) =>
+        async (newValue) => {
+            setAddresses(
+                addresses.map((address) => {
+                    return {
+                        ...address,
+                        CatchAll: address.ID === ID ? +newValue : 0,
+                    };
+                })
+            );
+            await call();
+        };
 
     return (
         <Table>

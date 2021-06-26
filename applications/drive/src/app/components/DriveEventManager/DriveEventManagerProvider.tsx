@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, createContext, ReactNode, useContext } from 'react';
-import { useApi } from 'react-components';
-import eventManager, { EventManager } from 'proton-shared/lib/eventManager/eventManager';
+import { useApi } from '@proton/components';
+import eventManager, { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 
 import { queryEvents, queryLatestEvents } from '../../api/share';
 import { LinkMeta } from '../../interfaces/link';

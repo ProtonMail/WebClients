@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { PasswordsSection, DeleteSection, RecoveryMethodsSection, SettingsPropsShared } from 'react-components';
+import { PasswordsSection, DeleteSection, RecoveryMethodsSection, SettingsPropsShared } from '@proton/components';
 import { c } from 'ttag';
-import { UserModel } from 'proton-shared/lib/interfaces';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { UserModel } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 

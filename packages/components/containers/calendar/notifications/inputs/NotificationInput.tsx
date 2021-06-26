@@ -1,12 +1,12 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { NotificationModel } from 'proton-shared/lib/interfaces/calendar/Notification';
+import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import {
     NOTIFICATION_INPUT_ID,
     NOTIFICATION_UNITS_MAX,
     SETTINGS_NOTIFICATION_TYPE,
-} from 'proton-shared/lib/calendar/constants';
+} from '@proton/shared/lib/calendar/constants';
 import {
     getDaysBefore,
     getHoursBefore,

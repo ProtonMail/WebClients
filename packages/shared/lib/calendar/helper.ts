@@ -1,4 +1,4 @@
-import getRandomValues from 'get-random-values';
+import getRandomValues from '@proton/get-random-values';
 import { c } from 'ttag';
 import { getDaysInMonth } from '../date-fns-utc';
 import { encodeBase64URL, uint8ArrayToString } from '../helpers/encoding';

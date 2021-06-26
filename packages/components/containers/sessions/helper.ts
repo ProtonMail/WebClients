@@ -1,5 +1,5 @@
-import { getAppName } from 'proton-shared/lib/apps/helper';
-import { APPS } from 'proton-shared/lib/constants';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 
 const calendarAppName = getAppName(APPS.PROTONCALENDAR);

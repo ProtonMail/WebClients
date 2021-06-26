@@ -1,6 +1,6 @@
 import React, { RefObject, ReactNode, useCallback, useMemo, useState, KeyboardEvent, useEffect, useRef } from 'react';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { sanitizeString } from 'proton-shared/lib/sanitize';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { sanitizeString } from '@proton/shared/lib/sanitize';
 
 import { getMatch } from './helpers/search';
 import useClickOutside from './useClickOutside';
@@ -62,16 +62,16 @@ function useSearch<T, K = keyof SearchableObject<T>>({
         // theoretically, this is an error in types, but it's the only way to let typescript
         // typecheck keys and mapFn arguments without doing the work in runtime
         if (mapFn) {
-            itemList = mapFn((itemList as unknown) as SearchableObject<T>[]);
+            itemList = mapFn(itemList as unknown as SearchableObject<T>[]);
         }
         const results = itemList
             .map((item) => {
                 const matchedProps: { [key in KeyOfUnion<T>]?: ReactNode } = {};
                 // when keys are not defined we still pick only searchable keys
                 const keyList = (keys ||
-                    Object.keys(item).filter((key) => typeof item[key as KeyOfUnion<T>] === 'string')) as KeyOfUnion<
-                    T
-                >[];
+                    Object.keys(item).filter(
+                        (key) => typeof item[key as KeyOfUnion<T>] === 'string'
+                    )) as KeyOfUnion<T>[];
                 for (const prop of keyList) {
                     const content = item[prop];
                     const match = content && typeof content === 'string' && getMatch(content, matchString, highlightFn);

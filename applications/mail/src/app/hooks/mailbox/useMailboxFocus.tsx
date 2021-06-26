@@ -1,5 +1,5 @@
 import { useEffect, useState, MutableRefObject, useRef } from 'react';
-import { useHandler } from 'react-components';
+import { useHandler } from '@proton/components';
 
 export interface MailboxFocusContext {
     elementIDs: string[];

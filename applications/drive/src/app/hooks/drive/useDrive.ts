@@ -12,16 +12,16 @@ import {
 } from 'pmcrypto';
 import { format } from 'date-fns';
 
-import { usePreventLeave, useGlobalLoader, useApi, useEventManager, useNotifications } from 'react-components';
+import { usePreventLeave, useGlobalLoader, useApi, useEventManager, useNotifications } from '@proton/components';
 
-import { getEncryptedSessionKey } from 'proton-shared/lib/calendar/encrypt';
-import { SORT_DIRECTION } from 'proton-shared/lib/constants';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from 'proton-shared/lib/helpers/encoding';
-import { chunk } from 'proton-shared/lib/helpers/array';
-import { Address, DecryptedKey } from 'proton-shared/lib/interfaces';
-import { dateLocale } from 'proton-shared/lib/i18n';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import runInQueue from 'proton-shared/lib/helpers/runInQueue';
+import { getEncryptedSessionKey } from '@proton/shared/lib/calendar/encrypt';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import { chunk } from '@proton/shared/lib/helpers/array';
+import { Address, DecryptedKey } from '@proton/shared/lib/interfaces';
+import { dateLocale } from '@proton/shared/lib/i18n';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import {
     decryptUnsigned,
     generateNodeKeys,
@@ -30,7 +30,7 @@ import {
     generateNodeHashKey,
     encryptPassphrase,
     encryptName,
-} from 'proton-shared/lib/keys/driveKeys';
+} from '@proton/shared/lib/keys/driveKeys';
 
 import {
     BATCH_REQUEST_SIZE,
@@ -474,15 +474,12 @@ function useDrive() {
                 throw new Error('Missing hash key on folder link');
             }
 
-            const [
-                Hash,
-                { NodeKey, NodePassphrase, privateKey, NodePassphraseSignature },
-                encryptedName,
-            ] = await Promise.all([
-                generateLookupHash(name, parentKeys.hashKey),
-                generateNodeKeys(parentKeys.privateKey, addressKey),
-                encryptName(name, parentKeys.privateKey.toPublic(), addressKey),
-            ]);
+            const [Hash, { NodeKey, NodePassphrase, privateKey, NodePassphraseSignature }, encryptedName] =
+                await Promise.all([
+                    generateLookupHash(name, parentKeys.hashKey),
+                    generateNodeKeys(parentKeys.privateKey, addressKey),
+                    encryptName(name, parentKeys.privateKey.toPublic(), addressKey),
+                ]);
 
             const { NodeHashKey } = await generateNodeHashKey(privateKey.toPublic());
 
@@ -790,13 +787,14 @@ function useDrive() {
         cache.set.linksLocked(true, shareId, linkIds);
         const batches = chunk(linkIds, BATCH_REQUEST_SIZE);
 
-        const deleteQueue = batches.map((batch, i) => () =>
-            debouncedRequest(queryDeleteChildrenLinks(shareId, parentLinkId, batch))
-                .then(() => batch)
-                .catch((error): string[] => {
-                    console.error(`Failed to delete #${i} batch of links: `, error);
-                    return [];
-                })
+        const deleteQueue = batches.map(
+            (batch, i) => () =>
+                debouncedRequest(queryDeleteChildrenLinks(shareId, parentLinkId, batch))
+                    .then(() => batch)
+                    .catch((error): string[] => {
+                        console.error(`Failed to delete #${i} batch of links: `, error);
+                        return [];
+                    })
         );
 
         const deletedBatches = await preventLeave(runInQueue(deleteQueue, MAX_THREADS_PER_REQUEST));
@@ -810,114 +808,118 @@ function useDrive() {
     };
 
     const events = {
-        handleEvents: (shareId: string) => async ({ Events = [] }: { Events: ShareEvent[] }) => {
-            const decryptLinkAsync = async (meta: LinkMeta) => {
-                const { privateKey } = meta.ParentLinkID
-                    ? await getLinkKeys(shareId, meta.ParentLinkID)
-                    : await getShareKeys(shareId);
+        handleEvents:
+            (shareId: string) =>
+            async ({ Events = [] }: { Events: ShareEvent[] }) => {
+                const decryptLinkAsync = async (meta: LinkMeta) => {
+                    const { privateKey } = meta.ParentLinkID
+                        ? await getLinkKeys(shareId, meta.ParentLinkID)
+                        : await getShareKeys(shareId);
 
-                return decryptLink(meta, privateKey);
-            };
+                    return decryptLink(meta, privateKey);
+                };
 
-            const isTrashedRestoredOrMoved = ({ LinkID, ParentLinkID, Trashed }: LinkMeta) => {
-                const existing = cache.get.linkMeta(shareId, LinkID);
-                return existing && (existing.Trashed !== Trashed || existing.ParentLinkID !== ParentLinkID);
-            };
+                const isTrashedRestoredOrMoved = ({ LinkID, ParentLinkID, Trashed }: LinkMeta) => {
+                    const existing = cache.get.linkMeta(shareId, LinkID);
+                    return existing && (existing.Trashed !== Trashed || existing.ParentLinkID !== ParentLinkID);
+                };
 
-            const actions = Events.reduce(
-                (actions, { EventType, Data, Link }) => {
-                    if (EventType === DELETE) {
-                        actions.delete.push(Link.LinkID);
-                        return actions;
-                    }
+                const actions = Events.reduce(
+                    (actions, { EventType, Data, Link }) => {
+                        if (EventType === DELETE) {
+                            actions.delete.push(Link.LinkID);
+                            return actions;
+                        }
 
-                    if (isTrashedRestoredOrMoved(Link)) {
-                        actions.softDelete.push(Link.LinkID);
-                    }
+                        if (isTrashedRestoredOrMoved(Link)) {
+                            actions.softDelete.push(Link.LinkID);
+                        }
 
-                    const decryptedLinkPromise = decryptLinkAsync(Link);
+                        const decryptedLinkPromise = decryptLinkAsync(Link);
 
-                    if (EventType === CREATE) {
-                        if (Data?.FLAG_RESTORE_COMPLETE) {
-                            actions.recovery[Link.ParentLinkID] = [
-                                ...(actions.recovery[Link.ParentLinkID] ?? []),
-                                decryptedLinkPromise,
-                            ];
+                        if (EventType === CREATE) {
+                            if (Data?.FLAG_RESTORE_COMPLETE) {
+                                actions.recovery[Link.ParentLinkID] = [
+                                    ...(actions.recovery[Link.ParentLinkID] ?? []),
+                                    decryptedLinkPromise,
+                                ];
 
-                            // Updates locked shares
-                            debouncedRequest<UserShareResult>(queryUserShares()).then(({ Shares }) => {
-                                const lockedShares = Shares.filter((share) => share.Locked && isPrimaryShare(share));
-                                cache.setLockedShares(lockedShares);
-                                createNotification({
-                                    text: c('Success').t`Your files were successfully recovered to "My files".`,
+                                // Updates locked shares
+                                debouncedRequest<UserShareResult>(queryUserShares()).then(({ Shares }) => {
+                                    const lockedShares = Shares.filter(
+                                        (share) => share.Locked && isPrimaryShare(share)
+                                    );
+                                    cache.setLockedShares(lockedShares);
+                                    createNotification({
+                                        text: c('Success').t`Your files were successfully recovered to "My files".`,
+                                    });
                                 });
-                            });
-                        } else if (Link.Trashed) {
-                            actions.trash.push(decryptedLinkPromise);
-                        } else {
-                            actions.create[Link.ParentLinkID] = [
-                                ...(actions.create[Link.ParentLinkID] ?? []),
-                                decryptedLinkPromise,
-                            ];
+                            } else if (Link.Trashed) {
+                                actions.trash.push(decryptedLinkPromise);
+                            } else {
+                                actions.create[Link.ParentLinkID] = [
+                                    ...(actions.create[Link.ParentLinkID] ?? []),
+                                    decryptedLinkPromise,
+                                ];
+                            }
                         }
-                    }
 
-                    if (EventType === UPDATE_METADATA) {
-                        if (Link.Trashed) {
-                            actions.trash.push(decryptedLinkPromise);
-                        } else {
-                            actions.update[Link.ParentLinkID] = [
-                                ...(actions.update[Link.ParentLinkID] ?? []),
-                                decryptedLinkPromise,
-                            ];
+                        if (EventType === UPDATE_METADATA) {
+                            if (Link.Trashed) {
+                                actions.trash.push(decryptedLinkPromise);
+                            } else {
+                                actions.update[Link.ParentLinkID] = [
+                                    ...(actions.update[Link.ParentLinkID] ?? []),
+                                    decryptedLinkPromise,
+                                ];
+                            }
                         }
+
+                        return actions;
+                    },
+                    {
+                        delete: [] as string[],
+                        softDelete: [] as string[],
+                        trash: [] as Promise<LinkMeta>[],
+                        create: {} as { [parentId: string]: Promise<LinkMeta>[] },
+                        update: {} as { [parentId: string]: Promise<LinkMeta>[] },
+                        recovery: {} as { [parentId: string]: Promise<LinkMeta>[] },
                     }
+                );
 
-                    return actions;
-                },
-                {
-                    delete: [] as string[],
-                    softDelete: [] as string[],
-                    trash: [] as Promise<LinkMeta>[],
-                    create: {} as { [parentId: string]: Promise<LinkMeta>[] },
-                    update: {} as { [parentId: string]: Promise<LinkMeta>[] },
-                    recovery: {} as { [parentId: string]: Promise<LinkMeta>[] },
-                }
-            );
+                cache.delete.links(shareId, actions.delete);
+                cache.delete.links(shareId, actions.softDelete, true);
 
-            cache.delete.links(shareId, actions.delete);
-            cache.delete.links(shareId, actions.softDelete, true);
+                const trashPromise = Promise.allSettled(actions.trash)
+                    .then(getSuccessfulSettled)
+                    .then((trashMetas: LinkMeta[]) => cache.set.trashLinkMetas(trashMetas, shareId, 'unlisted'))
+                    .catch((e) => console.error(e));
 
-            const trashPromise = Promise.allSettled(actions.trash)
-                .then(getSuccessfulSettled)
-                .then((trashMetas: LinkMeta[]) => cache.set.trashLinkMetas(trashMetas, shareId, 'unlisted'))
-                .catch((e) => console.error(e));
+                const createPromises = Object.entries(actions.create).map(async ([parentId, promises]) => {
+                    const metas = await Promise.allSettled(promises).then(getSuccessfulSettled);
+                    cache.set.childLinkMetas(metas, shareId, parentId, 'unlisted_create');
+                    cache.set.foldersOnlyLinkMetas(metas, shareId, parentId, 'unlisted_create');
+                });
 
-            const createPromises = Object.entries(actions.create).map(async ([parentId, promises]) => {
-                const metas = await Promise.allSettled(promises).then(getSuccessfulSettled);
-                cache.set.childLinkMetas(metas, shareId, parentId, 'unlisted_create');
-                cache.set.foldersOnlyLinkMetas(metas, shareId, parentId, 'unlisted_create');
-            });
+                const updatePromises = Object.entries(actions.update).map(async ([parentId, promises]) => {
+                    const metas = await Promise.allSettled(promises).then(getSuccessfulSettled);
+                    cache.set.childLinkMetas(metas, shareId, parentId, 'unlisted');
+                    cache.set.foldersOnlyLinkMetas(metas, shareId, parentId, 'unlisted');
+                });
 
-            const updatePromises = Object.entries(actions.update).map(async ([parentId, promises]) => {
-                const metas = await Promise.allSettled(promises).then(getSuccessfulSettled);
-                cache.set.childLinkMetas(metas, shareId, parentId, 'unlisted');
-                cache.set.foldersOnlyLinkMetas(metas, shareId, parentId, 'unlisted');
-            });
+                const recoveryPromises = Object.entries(actions.recovery).map(async ([parentId, promises]) => {
+                    const metas = await Promise.allSettled(promises).then(getSuccessfulSettled);
+                    cache.set.childLinkMetas(metas, shareId, parentId, 'unlisted');
+                    cache.set.foldersOnlyLinkMetas(metas, shareId, parentId, 'unlisted');
+                });
 
-            const recoveryPromises = Object.entries(actions.recovery).map(async ([parentId, promises]) => {
-                const metas = await Promise.allSettled(promises).then(getSuccessfulSettled);
-                cache.set.childLinkMetas(metas, shareId, parentId, 'unlisted');
-                cache.set.foldersOnlyLinkMetas(metas, shareId, parentId, 'unlisted');
-            });
-
-            await Promise.allSettled([
-                trashPromise,
-                Promise.allSettled(createPromises).then(logSettledErrors),
-                Promise.allSettled(updatePromises).then(logSettledErrors),
-                Promise.allSettled(recoveryPromises).then(logSettledErrors),
-            ]);
-        },
+                await Promise.allSettled([
+                    trashPromise,
+                    Promise.allSettled(createPromises).then(logSettledErrors),
+                    Promise.allSettled(updatePromises).then(logSettledErrors),
+                    Promise.allSettled(recoveryPromises).then(logSettledErrors),
+                ]);
+            },
 
         subscribe: async (shareId: string) => {
             const eventManager = getShareEventManager(shareId) || (await createShareEventManager(shareId));

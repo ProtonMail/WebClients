@@ -1,10 +1,10 @@
-import { ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
-import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
-import { Address, UserSettings } from 'proton-shared/lib/interfaces';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { RequireSome } from 'proton-shared/lib/interfaces/utils';
-import { getWeekStartsOn } from 'proton-shared/lib/settings/helper';
+import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
+import { Address, UserSettings } from '@proton/shared/lib/interfaces';
+import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import React, { useEffect, useState } from 'react';
 import {
     Icon,
@@ -14,10 +14,10 @@ import {
     useGetCalendarEventRaw,
     useGetCalendarInfo,
     useLoading,
-} from 'react-components';
-import { useGetCanonicalEmailsMap } from 'react-components/hooks/useGetCanonicalEmailsMap';
+} from '@proton/components';
+import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { c } from 'ttag';
-import useGetCalendarEventPersonal from 'react-components/hooks/useGetCalendarEventPersonal';
+import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from '../../../../helpers/calendar/EventInvitationError';
 import {
     EventInvitation,

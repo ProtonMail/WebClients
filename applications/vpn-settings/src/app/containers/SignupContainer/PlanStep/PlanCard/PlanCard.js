@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { classnames, Button, Tooltip, Badge } from 'react-components';
+import { classnames, Button, Tooltip, Badge } from '@proton/components';
 import { c } from 'ttag';
-import { CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
+import { CYCLE, CURRENCIES } from '@proton/shared/lib/constants';
 import PlanPrice from './PlanPrice';
 
 import './PlanCard.scss';

@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { SHOW_IMAGES } from 'proton-shared/lib/constants';
-import { updateShowImages } from 'proton-shared/lib/api/mailSettings';
-import { setBit, clearBit, hasBit } from 'proton-shared/lib/helpers/bitset';
+import { SHOW_IMAGES } from '@proton/shared/lib/constants';
+import { updateShowImages } from '@proton/shared/lib/api/mailSettings';
+import { setBit, clearBit, hasBit } from '@proton/shared/lib/helpers/bitset';
 
 import { Toggle } from '../../components';
 import { useEventManager, useToggle, useNotifications, useApi, useLoading } from '../../hooks';

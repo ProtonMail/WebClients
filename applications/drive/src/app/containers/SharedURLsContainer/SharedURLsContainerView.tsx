@@ -1,5 +1,5 @@
 import React from 'react';
-import { PrivateMainArea, useAppTitle } from 'react-components';
+import { PrivateMainArea, useAppTitle } from '@proton/components';
 import { c } from 'ttag';
 import SharedLinks from '../../components/SharedLinks/SharedLinks';
 import SharedLinksContentProvider from '../../components/SharedLinks/SharedLinksContentProvider';

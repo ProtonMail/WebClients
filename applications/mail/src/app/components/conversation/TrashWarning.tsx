@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { c } from 'ttag';
-import { InlineLinkButton, Icon, useHotkeys } from 'react-components';
+import { InlineLinkButton, Icon, useHotkeys } from '@proton/components';
 
 interface Props {
     inTrash: boolean;

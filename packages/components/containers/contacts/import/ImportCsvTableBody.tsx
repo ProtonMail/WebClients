@@ -1,5 +1,5 @@
 import React from 'react';
-import { PreVcardsContact } from 'proton-shared/lib/interfaces/contacts/Import';
+import { PreVcardsContact } from '@proton/shared/lib/interfaces/contacts/Import';
 
 import ImportCsvTableRows from './ImportCsvTableRows';
 

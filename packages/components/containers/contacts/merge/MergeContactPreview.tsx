@@ -1,14 +1,14 @@
-import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
+import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import React, { useState, useEffect, useMemo, ComponentProps } from 'react';
 import { c } from 'ttag';
-import { splitKeys } from 'proton-shared/lib/keys/keys';
-import { getContact } from 'proton-shared/lib/api/contacts';
-import { prepareContact } from 'proton-shared/lib/contacts/decrypt';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { toMap } from 'proton-shared/lib/helpers/object';
-import { DecryptedKey } from 'proton-shared/lib/interfaces';
-import { ContactProperties, ContactMergeModel } from 'proton-shared/lib/interfaces/contacts';
-import { merge } from 'proton-shared/lib/contacts/helpers/merge';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
+import { getContact } from '@proton/shared/lib/api/contacts';
+import { prepareContact } from '@proton/shared/lib/contacts/decrypt';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { DecryptedKey } from '@proton/shared/lib/interfaces';
+import { ContactProperties, ContactMergeModel } from '@proton/shared/lib/interfaces/contacts';
+import { merge } from '@proton/shared/lib/contacts/helpers/merge';
 
 import { useApi, useLoading, useEventManager, useContactEmails, useAddresses, useContactGroups } from '../../../hooks';
 import { Loader, FormModal, PrimaryButton, Button } from '../../../components';

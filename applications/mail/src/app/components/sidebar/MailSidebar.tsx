@@ -1,7 +1,7 @@
 import React, { useCallback, memo } from 'react';
 import { c } from 'ttag';
 import { Location } from 'history';
-import { Sidebar, SidebarPrimaryButton, SidebarNav, MainLogo, useMailSettings, Tooltip } from 'react-components';
+import { Sidebar, SidebarPrimaryButton, SidebarNav, MainLogo, useMailSettings, Tooltip } from '@proton/components';
 
 import MailSidebarList from './MailSidebarList';
 import SidebarVersion from './SidebarVersion';

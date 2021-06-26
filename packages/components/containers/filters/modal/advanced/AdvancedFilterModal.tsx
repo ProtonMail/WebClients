@@ -1,8 +1,8 @@
 import React, { useState, FormEvent, useMemo } from 'react';
 import { c } from 'ttag';
-import { normalize } from 'proton-shared/lib/helpers/string';
-import { checkSieveFilter, addTreeFilter, updateFilter } from 'proton-shared/lib/api/filters';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { normalize } from '@proton/shared/lib/helpers/string';
+import { checkSieveFilter, addTreeFilter, updateFilter } from '@proton/shared/lib/api/filters';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 import { FILTER_VERSION } from '../../constants';
 import { Filter, StepSieve, AdvancedSimpleFilterModalModel, ErrorsSieve } from '../../interfaces';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import onboardingOrganization from 'design-system/assets/img/onboarding/organization.svg';
+import onboardingOrganization from '@proton/styles/assets/img/onboarding/organization.svg';
 
 import OnboardingContent, { Props as OnboardingContentProps } from './OnboardingContent';
 

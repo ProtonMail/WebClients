@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-unresolved
-import unsupportedBrowser from 'design-system/assets/img/errors/unsupported-browser.svg';
+import unsupportedBrowser from '@proton/styles/assets/img/errors/unsupported-browser.svg';
 
 const showUnsupported = () => {
     const isProtonVPN = (document.location.origin || document.location.href).indexOf('protonvpn') !== -1;

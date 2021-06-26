@@ -1,6 +1,6 @@
 import React from 'react';
-import { IS_DATE_FORMAT_ENABLED } from 'proton-shared/lib/i18n/dateFnLocale';
-import locales from 'proton-shared/lib/i18n/locales';
+import { IS_DATE_FORMAT_ENABLED } from '@proton/shared/lib/i18n/dateFnLocale';
+import locales from '@proton/shared/lib/i18n/locales';
 
 import { SettingsSection } from '../account';
 import DateFormatSection from './DateFormatSection';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { ContactFormatted } from 'proton-shared/lib/interfaces/contacts';
+import { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
 
 import { Block, OrderableTable, TableCell, Button } from '../../../components';
 import MergeTableBody from './MergeTableBody';

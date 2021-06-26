@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { useModals } from 'react-components';
+import { useModals } from '@proton/components';
 
 import DriveOnboardingModalNoAccess from '../../components/onboarding/DriveOnboardingModalNoAccess';
 import DriveOnboardingModalNoBeta from '../../components/onboarding/DriveOnboardingModalNoBeta';

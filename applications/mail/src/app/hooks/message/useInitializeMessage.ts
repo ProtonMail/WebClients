@@ -1,8 +1,8 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { isDraft, isPlainText } from 'proton-shared/lib/mail/messages';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { isDraft, isPlainText } from '@proton/shared/lib/mail/messages';
 import { useCallback } from 'react';
-import { useApi, useMailSettings } from 'react-components';
-import { wait } from 'proton-shared/lib/helpers/promise';
+import { useApi, useMailSettings } from '@proton/components';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import {
     MessageExtended,
     MessageErrors,

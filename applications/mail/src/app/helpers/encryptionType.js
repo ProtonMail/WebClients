@@ -9,7 +9,7 @@ import {
     isInternalEncrypted,
     isSent,
     isSentEncrypted,
-} from 'proton-shared/lib/mail/messages';
+} from '@proton/shared/lib/mail/messages';
 
 const I18N = {
     pm: [

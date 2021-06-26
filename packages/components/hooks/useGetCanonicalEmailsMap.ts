@@ -1,8 +1,8 @@
-import { getCanonicalAddresses } from 'proton-shared/lib/api/addresses';
-import { API_CODES } from 'proton-shared/lib/constants';
-import { GetCanonicalEmailsMap } from 'proton-shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
-import { GetCanonicalAddressesApiResponse } from 'proton-shared/lib/interfaces/calendar';
-import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
+import { getCanonicalAddresses } from '@proton/shared/lib/api/addresses';
+import { API_CODES } from '@proton/shared/lib/constants';
+import { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
+import { GetCanonicalAddressesApiResponse } from '@proton/shared/lib/interfaces/calendar';
+import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { useCallback } from 'react';
 import useApi from './useApi';
 import useCache from './useCache';

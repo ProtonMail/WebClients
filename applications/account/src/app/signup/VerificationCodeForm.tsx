@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { TOKEN_TYPES } from 'proton-shared/lib/constants';
-import { queryCheckVerificationCode, queryVerificationCode } from 'proton-shared/lib/api/user';
-import InvalidVerificationCodeModal from 'react-components/containers/api/humanVerification/InvalidVerificationCodeModal';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
+import { TOKEN_TYPES } from '@proton/shared/lib/constants';
+import { queryCheckVerificationCode, queryVerificationCode } from '@proton/shared/lib/api/user';
+import InvalidVerificationCodeModal from '@proton/components/containers/api/humanVerification/InvalidVerificationCodeModal';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
-import { useModals, RequestNewCodeModal, VerifyCodeForm, useNotifications } from 'react-components';
+import { useModals, RequestNewCodeModal, VerifyCodeForm, useNotifications } from '@proton/components';
 import { SignupModel } from './interfaces';
 import { HumanApi } from './helpers/humanApi';
 

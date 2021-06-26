@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { Member } from 'proton-shared/lib/interfaces/Member';
+import { Member } from '@proton/shared/lib/interfaces/Member';
 
 import { Alert, Input, ErrorButton, DeleteModal, Card } from '../../components';
 

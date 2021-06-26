@@ -2,8 +2,8 @@ import React from 'react';
 import { c } from 'ttag';
 import { useRouteMatch } from 'react-router-dom';
 
-import { SidebarList, SidebarListItem, SidebarListItemContent } from 'react-components';
-import { APPS, APPS_CONFIGURATION } from 'proton-shared/lib/constants';
+import { SidebarList, SidebarListItem, SidebarListItemContent } from '@proton/components';
+import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 
 import SettingsListItem from '../../components/SettingsListItem';
 

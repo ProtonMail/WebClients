@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { updateConfirmLink } from 'proton-shared/lib/api/mailSettings';
+import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';
 
 import { useToggle, useEventManager, useNotifications, useApi, useLoading } from '../../hooks';
 import { Toggle } from '../../components';

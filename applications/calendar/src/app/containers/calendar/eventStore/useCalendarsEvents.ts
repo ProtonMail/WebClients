@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo, MutableRefObject } from 'react';
-import { fromUTCDate, toUTCDate, convertUTCDateTimeToZone } from 'proton-shared/lib/date/timezone';
-import { Calendar as tsCalendar } from 'proton-shared/lib/interfaces/calendar';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { fromUTCDate, toUTCDate, convertUTCDateTimeToZone } from '@proton/shared/lib/date/timezone';
+import { Calendar as tsCalendar } from '@proton/shared/lib/interfaces/calendar';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { getRecurringEvents } from './cache/getRecurringEvents';
 import { CalendarsEventsCache } from './interface';
 import { CalendarViewEvent, CalendarViewEventData } from '../interface';
@@ -122,8 +122,9 @@ const useCalendarsEvents = (
                     })
                     .flat(1);
 
-                return results.concat(recurringResults).map(
-                    ({ start: utcStart, end: utcEnd, isAllDay, isAllPartDay, data, id }): CalendarViewEvent => {
+                return results
+                    .concat(recurringResults)
+                    .map(({ start: utcStart, end: utcEnd, isAllDay, isAllPartDay, data, id }): CalendarViewEvent => {
                         const start = isAllDay
                             ? utcStart
                             : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcStart), tzid));
@@ -137,8 +138,7 @@ const useCalendarsEvents = (
                             end,
                             data,
                         };
-                    }
-                );
+                    });
             })
             .flat();
     }, [rerender, loading, tzid, requestedCalendars, utcDateRange]);

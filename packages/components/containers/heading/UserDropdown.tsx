@@ -1,12 +1,12 @@
 import React, { useState, MouseEvent } from 'react';
 import { c } from 'ttag';
-import { APPS, isSSOMode, PLAN_SERVICES, SSO_PATHS } from 'proton-shared/lib/constants';
-import { getAppHref } from 'proton-shared/lib/apps/helper';
-import { requestFork } from 'proton-shared/lib/authentication/sessionForking';
-import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
-import { getPlanName, hasLifetime } from 'proton-shared/lib/helpers/subscription';
-import { textToClipboard } from 'proton-shared/lib/helpers/browser';
-import { getAppFromPathnameSafe, getSlugFromApp } from 'proton-shared/lib/apps/slugHelper';
+import { APPS, isSSOMode, PLAN_SERVICES, SSO_PATHS } from '@proton/shared/lib/constants';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { requestFork } from '@proton/shared/lib/authentication/sessionForking';
+import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
+import { getPlanName, hasLifetime } from '@proton/shared/lib/helpers/subscription';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 
 import { useAuthentication, useConfig, useUser, useOrganization, useSubscription, useNotifications } from '../../hooks';
 import { usePopperAnchor, Dropdown, Icon, DropdownMenu, DropdownMenuButton, Tooltip, Button } from '../../components';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { PublicTopBanners } from 'react-components';
+import { PublicTopBanners } from '@proton/components';
 
 interface Props {
     children?: React.ReactNode;

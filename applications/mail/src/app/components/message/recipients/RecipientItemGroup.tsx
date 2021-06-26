@@ -9,9 +9,9 @@ import {
     DropdownMenuButton,
     useModals,
     useNotifications,
-} from 'react-components';
-import { textToClipboard } from 'proton-shared/lib/helpers/browser';
-import { getInitials } from 'proton-shared/lib/helpers/string';
+} from '@proton/components';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+import { getInitials } from '@proton/shared/lib/helpers/string';
 
 import { RecipientGroup } from '../../../models/address';
 import RecipientItemLayout from './RecipientItemLayout';

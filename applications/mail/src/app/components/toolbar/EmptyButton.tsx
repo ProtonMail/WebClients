@@ -1,7 +1,7 @@
 import React from 'react';
-import { Icon, useLoading, useLabels, useMailSettings, ToolbarButton, ToolbarSeparator } from 'react-components';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import { metaKey, shiftKey } from 'proton-shared/lib/helpers/browser';
+import { Icon, useLoading, useLabels, useMailSettings, ToolbarButton, ToolbarSeparator } from '@proton/components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 import { c } from 'ttag';
 
 import { Breakpoints } from '../../models/utils';

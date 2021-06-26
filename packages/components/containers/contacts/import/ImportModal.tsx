@@ -1,11 +1,11 @@
 import React, { ChangeEvent, useState, DragEvent } from 'react';
 import { c } from 'ttag';
 
-import { extractVcards, readVcf } from 'proton-shared/lib/contacts/vcard';
-import { splitExtension } from 'proton-shared/lib/helpers/file';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { MAX_IMPORT_CONTACTS, MAX_IMPORT_FILE_SIZE } from 'proton-shared/lib/contacts/constants';
-import { prepare, readCsv, toVcardContacts } from 'proton-shared/lib/contacts/helpers/csv';
+import { extractVcards, readVcf } from '@proton/shared/lib/contacts/vcard';
+import { splitExtension } from '@proton/shared/lib/helpers/file';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { MAX_IMPORT_CONTACTS, MAX_IMPORT_FILE_SIZE } from '@proton/shared/lib/contacts/constants';
+import { prepare, readCsv, toVcardContacts } from '@proton/shared/lib/contacts/helpers/csv';
 import {
     getHasPreVcardsContacts,
     getImportCategoriesModel,
@@ -13,16 +13,16 @@ import {
     getSupportedContacts,
     haveCategories,
     splitErrors,
-} from 'proton-shared/lib/contacts/helpers/import';
+} from '@proton/shared/lib/contacts/helpers/import';
 import {
     EXTENSION,
     IMPORT_GROUPS_ACTION,
     IMPORT_STEPS,
     ImportContactsModel,
     ImportedContact,
-} from 'proton-shared/lib/interfaces/contacts/Import';
-import { ImportFatalError } from 'proton-shared/lib/contacts/errors/ImportFatalError';
-import { IMPORT_ERROR_TYPE, ImportFileError } from 'proton-shared/lib/contacts/errors/ImportFileError';
+} from '@proton/shared/lib/interfaces/contacts/Import';
+import { ImportFatalError } from '@proton/shared/lib/contacts/errors/ImportFatalError';
+import { IMPORT_ERROR_TYPE, ImportFileError } from '@proton/shared/lib/contacts/errors/ImportFileError';
 import { submitCategories } from './encryptAndSubmit';
 
 import { useApi, useEventManager, useFeature } from '../../../hooks';

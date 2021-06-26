@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sidebar, SidebarNav } from 'react-components';
+import { Sidebar, SidebarNav } from '@proton/components';
 import { useDriveActiveFolder } from '../../Drive/DriveFolderProvider';
 import DriveSidebarFooter from './DriveSidebarFooter';
 import DriveSidebarList from './DriveSidebarList';

@@ -1,5 +1,5 @@
 import React, { MutableRefObject } from 'react';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { clearAll, render } from '../../../helpers/test/helper';
 import Addresses from './Addresses';

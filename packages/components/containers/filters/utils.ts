@@ -1,6 +1,6 @@
-import { toMap } from 'proton-shared/lib/helpers/object';
-import Sieve from 'proton-shared/lib/filters/sieve';
-import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import Sieve from '@proton/shared/lib/filters/sieve';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 import {
     FilterOperator,

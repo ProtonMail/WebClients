@@ -1,11 +1,11 @@
 import React, { useEffect, useMemo, useRef, useState, memo, forwardRef, Ref, useImperativeHandle } from 'react';
-import { hasAttachments, isDraft, isSent, isOutbox } from 'proton-shared/lib/mail/messages';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { classnames } from 'react-components';
-import { Label } from 'proton-shared/lib/interfaces/Label';
-import { MailSettings } from 'proton-shared/lib/interfaces';
-import { noop } from 'proton-shared/lib/helpers/function';
-import createScrollIntoView from 'react-components/helpers/createScrollIntoView';
+import { hasAttachments, isDraft, isSent, isOutbox } from '@proton/shared/lib/mail/messages';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { classnames } from '@proton/components';
+import { Label } from '@proton/shared/lib/interfaces/Label';
+import { MailSettings } from '@proton/shared/lib/interfaces';
+import { noop } from '@proton/shared/lib/helpers/function';
+import createScrollIntoView from '@proton/components/helpers/createScrollIntoView';
 import { getSentStatusIconInfo, getReceivedStatusIcon, MessageViewIcons } from '../../helpers/message/icon';
 import MessageBody from './MessageBody';
 import HeaderCollapsed from './header/HeaderCollapsed';
@@ -86,10 +86,13 @@ const MessageView = (
 
     const elementRef = useRef<HTMLElement>(null);
 
-    const { message, addAction, messageLoaded, bodyLoaded, loading: messageLoading } = useMessage(
-        inputMessage.ID,
-        conversationID
-    );
+    const {
+        message,
+        addAction,
+        messageLoaded,
+        bodyLoaded,
+        loading: messageLoading,
+    } = useMessage(inputMessage.ID, conversationID);
     const load = useLoadMessage(inputMessage);
     const initialize = useInitializeMessage(message.localID, labelID);
     const verify = useVerifyMessage(message.localID);

@@ -7,13 +7,13 @@ import {
     useEventManager,
     useGetAddresses,
     useGetAddressKeys,
-} from 'react-components';
-import { traceError } from 'proton-shared/lib/helpers/sentry';
-import { CalendarsModel, CalendarUserSettingsModel } from 'proton-shared/lib/models';
-import { loadModels } from 'proton-shared/lib/models/helper';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+} from '@proton/components';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
+import { CalendarsModel, CalendarUserSettingsModel } from '@proton/shared/lib/models';
+import { loadModels } from '@proton/shared/lib/models/helper';
+import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { setupCalendarKeys } from 'react-components/containers/keys/calendar';
+import { setupCalendarKeys } from '@proton/components/containers/keys/calendar';
 import setupCalendarHelper from './reset/setupCalendarHelper';
 
 interface Props {

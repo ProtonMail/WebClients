@@ -1,4 +1,4 @@
-// import { REGEX_IMAGE_EXTENSION } from 'proton-shared/lib/constants';
+// import { REGEX_IMAGE_EXTENSION } from '@proton/shared/lib/constants';
 
 /**
  * Convert base64 string to Image

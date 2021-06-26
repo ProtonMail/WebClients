@@ -1,4 +1,4 @@
-import { SORT_DIRECTION } from 'proton-shared/lib/constants';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { LinkType, SortParams, SortKeys, SharedUrlInfo } from '../../interfaces/link';
 import { LayoutSetting } from '../../interfaces/userSettings';
 

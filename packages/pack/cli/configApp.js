@@ -18,7 +18,9 @@ const readJSON = (file) => {
     try {
         return require(path.join(process.cwd(), fileName));
     } catch (e) {
-        !isSilent && warn(`Missing file ${fileName}`);
+        if (!isSilent) {
+            warn(`Missing file ${fileName}`);
+        }
         if (/SyntaxError/.test(e.stack)) {
             error(e);
         }
@@ -53,7 +55,7 @@ const CONFIG_ENV = (() => {
     // @todo load value from the env as it's done for proton-i19n
     return {
         env: readJSON('appConfig') || readJSON('env') || {},
-        pkg
+        pkg,
     };
 })();
 
@@ -63,7 +65,7 @@ const CONFIG_ENV = (() => {
  */
 const LOCALES = (() => {
     try {
-        return require(path.join(process.cwd(), 'node_modules', 'proton-translations', 'config', 'locales.json'));
+        return require('proton-translations/config/locales.json');
     } catch (e) {
         if (!process.argv.includes('print-config')) {
             warn('No po/locales.json available yet');
@@ -79,8 +81,12 @@ const ENV_CONFIG = Object.keys(CONFIG_ENV.env).reduce(
             return acc;
         }
         const { api, secure } = CONFIG_ENV.env[key];
-        api && (acc.api[key] = api);
-        secure && (acc.secure[key] = secure);
+        if (api) {
+            acc.api[key] = api;
+        }
+        if (secure) {
+            acc.secure[key] = secure;
+        }
         return acc;
     },
     { api: {}, secure: {}, pkg: CONFIG_ENV.pkg, app: {} }
@@ -91,7 +97,7 @@ const API_TARGETS = {
     local: 'https://protonmail.dev/api',
     localhost: 'https://localhost/api',
     build: '/api',
-    ...ENV_CONFIG.api
+    ...ENV_CONFIG.api,
 };
 
 /**
@@ -129,15 +135,15 @@ function main({ api = 'dev' }) {
     const json = {
         clientId: ENV_CONFIG.app.clientId || 'WebMail',
         appName: ENV_CONFIG.app.appName || ENV_CONFIG.pkg.name || 'protonmail',
-        version: ENV_CONFIG.app.version || ENV_CONFIG.pkg.version || '3.16.20',
+        version: ENV_CONFIG.app.version || ENV_CONFIG.pkg.version || '4.9.99',
         locales: LOCALES,
-        apiUrl
+        apiUrl,
     };
 
     const COMMIT_RELEASE = getBuildCommit();
 
     const isProduction = process.env.NODE_ENV === 'production';
-    const SENTRY_DSN = isProduction ? ENV_CONFIG.app.sentry : '';
+    const SENTRY_DSN = isProduction ? ENV_CONFIG.app.sentry || '' : '';
 
     const PUBLIC_APP_PATH = getPublicPath(argv);
 
@@ -161,7 +167,7 @@ function main({ api = 'dev' }) {
         config,
         apiUrl,
         json,
-        path: path.join(process.cwd(), 'src', 'app', 'config.ts')
+        path: path.join(process.cwd(), 'src', 'app', 'config.ts'),
     };
 }
 

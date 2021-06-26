@@ -1,7 +1,7 @@
-import { Recipient } from 'proton-shared/lib/interfaces';
-import { message as purifyMessage, sanitizeString } from 'proton-shared/lib/sanitize';
-import { parseURL } from 'proton-shared/lib/helpers/browser';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Recipient } from '@proton/shared/lib/interfaces';
+import { message as purifyMessage, sanitizeString } from '@proton/shared/lib/sanitize';
+import { parseURL } from '@proton/shared/lib/helpers/browser';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { PartialMessageExtended } from '../models/message';
 
 /**

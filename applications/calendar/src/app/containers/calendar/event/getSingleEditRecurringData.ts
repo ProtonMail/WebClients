@@ -1,6 +1,6 @@
-import { getOccurrences } from 'proton-shared/lib/calendar/recurring';
-import { addMilliseconds } from 'proton-shared/lib/date-fns-utc';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { getOccurrences } from '@proton/shared/lib/calendar/recurring';
+import { addMilliseconds } from '@proton/shared/lib/date-fns-utc';
+import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import { getRecurrenceIdDate } from './getEventHelper';
 

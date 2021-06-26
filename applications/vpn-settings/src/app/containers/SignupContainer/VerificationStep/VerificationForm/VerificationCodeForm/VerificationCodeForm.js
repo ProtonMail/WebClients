@@ -10,7 +10,7 @@ import {
     useLoading,
     Alert,
     useModals,
-} from 'react-components';
+} from '@proton/components';
 import { c } from 'ttag';
 import ResendCodeModal from './ResendCodeModal';
 

@@ -1,9 +1,9 @@
 // eslint-disable-next-line import/no-unresolved, import/no-webpack-loader-syntax
 import registerServiceWorker from 'service-worker-loader!./downloadSW';
-import { isSafari, isEdge, isEdgeChromium, isIos } from 'proton-shared/lib/helpers/browser';
+import { isSafari, isEdge, isEdgeChromium, isIos } from '@proton/shared/lib/helpers/browser';
 import { WritableStream } from 'web-streams-polyfill';
-import { stripLeadingAndTrailingSlash } from 'proton-shared/lib/helpers/string';
-import { PUBLIC_PATH } from 'proton-shared/lib/constants';
+import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
+import { PUBLIC_PATH } from '@proton/shared/lib/constants';
 import { TransferMeta } from '../../interfaces/transfer';
 
 /**

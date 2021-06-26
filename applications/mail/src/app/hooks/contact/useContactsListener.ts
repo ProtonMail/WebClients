@@ -1,14 +1,14 @@
-import { canonizeEmail } from 'proton-shared/lib/helpers/email';
+import { canonizeEmail } from '@proton/shared/lib/helpers/email';
 import { useEffect } from 'react';
 import { OpenPGPKey } from 'pmcrypto';
-import { useEventManager, useUserKeys, useCache } from 'react-components';
-import { Cache } from 'proton-shared/lib/helpers/cache';
-import { CONTACT_CARD_TYPE } from 'proton-shared/lib/constants';
-import { readSigned } from 'proton-shared/lib/contacts/decrypt';
-import { parse } from 'proton-shared/lib/contacts/vcard';
-import { Contact } from 'proton-shared/lib/interfaces/contacts';
-import { splitKeys } from 'proton-shared/lib/keys/keys';
-import { CACHE_KEY } from 'react-components/hooks/useGetEncryptionPreferences';
+import { useEventManager, useUserKeys, useCache } from '@proton/components';
+import { Cache } from '@proton/shared/lib/helpers/cache';
+import { CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
+import { readSigned } from '@proton/shared/lib/contacts/decrypt';
+import { parse } from '@proton/shared/lib/contacts/vcard';
+import { Contact } from '@proton/shared/lib/interfaces/contacts';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
+import { CACHE_KEY } from '@proton/components/hooks/useGetEncryptionPreferences';
 import { MessageCache, updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { Event } from '../../models/event';
 

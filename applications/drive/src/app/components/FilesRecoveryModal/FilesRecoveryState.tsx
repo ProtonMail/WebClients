@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { HeaderModal, InnerModal, FooterModal, Button, Alert, PrimaryButton } from 'react-components';
+import { HeaderModal, InnerModal, FooterModal, Button, Alert, PrimaryButton } from '@proton/components';
 
-import keyAndFileSvg from 'design-system/assets/img/placeholders/file-recovery.svg';
+import keyAndFileSvg from '@proton/styles/assets/img/placeholders/file-recovery.svg';
 
 interface Props {
     onRecovery: () => void;

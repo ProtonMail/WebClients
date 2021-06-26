@@ -1,8 +1,8 @@
 import React, { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
 
-import { toBlob, resize } from 'proton-shared/lib/helpers/image';
-import { MAX_SIZE_SCREENSHOT } from 'proton-shared/lib/constants';
+import { toBlob, resize } from '@proton/shared/lib/helpers/image';
+import { MAX_SIZE_SCREENSHOT } from '@proton/shared/lib/constants';
 import { useNotifications } from '../../hooks';
 import { Button, FileInput, Icon } from '../../components';
 

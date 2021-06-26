@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { requestUsername } from 'proton-shared/lib/api/reset';
+import { requestUsername } from '@proton/shared/lib/api/reset';
 import { useHistory } from 'react-router-dom';
-import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 import {
     Button,
@@ -16,7 +16,7 @@ import {
     PhoneInput,
     useMyLocation,
     InputFieldTwo,
-} from 'react-components';
+} from '@proton/components';
 import BackButton from './BackButton';
 import Content from './Content';
 import Main from './Main';

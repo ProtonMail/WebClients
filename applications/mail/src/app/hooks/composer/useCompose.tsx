@@ -11,9 +11,9 @@ import {
     useApi,
     useSettingsLink,
     useEventManager,
-} from 'react-components';
-import { isOutbox, isScheduledSend, isDraft } from 'proton-shared/lib/mail/messages';
-import { forceSend } from 'proton-shared/lib/api/messages';
+} from '@proton/components';
+import { isOutbox, isScheduledSend, isDraft } from '@proton/shared/lib/mail/messages';
+import { forceSend } from '@proton/shared/lib/api/messages';
 
 import { MessageExtended, PartialMessageExtended } from '../../models/message';
 import { useDraft } from '../useDraft';

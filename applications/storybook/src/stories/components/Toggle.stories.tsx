@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Toggle, useLoading } from 'react-components';
-import { wait } from 'proton-shared/lib/helpers/promise';
+import { Toggle, useLoading } from '@proton/components';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
 import mdx from './Toggle.mdx';
 

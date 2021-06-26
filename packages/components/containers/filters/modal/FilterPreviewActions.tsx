@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
 import { c } from 'ttag';
 
-import { Folder } from 'proton-shared/lib/interfaces/Folder';
-import { Label } from 'proton-shared/lib/interfaces/Label';
-import { toMap } from 'proton-shared/lib/helpers/object';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import { Label } from '@proton/shared/lib/interfaces/Label';
+import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { Icon, LabelStack } from '../../../components';
 import { classnames } from '../../../helpers';

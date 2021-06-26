@@ -1,6 +1,6 @@
-import { Api } from 'proton-shared/lib/interfaces';
-import { srpVerify } from 'proton-shared/lib/srp';
-import { queryCreateUserExternal } from 'proton-shared/lib/api/user';
+import { Api } from '@proton/shared/lib/interfaces';
+import { srpVerify } from '@proton/shared/lib/srp';
+import { queryCreateUserExternal } from '@proton/shared/lib/api/user';
 
 interface CreateUserArgs {
     api: Api;

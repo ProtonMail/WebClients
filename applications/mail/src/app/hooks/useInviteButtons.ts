@@ -1,14 +1,14 @@
-import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import {
     createInviteIcs,
     generateEmailBody,
     getParticipantHasAddressID,
-} from 'proton-shared/lib/calendar/integration/invite';
-import { getProdId } from 'proton-shared/lib/calendar/vcalHelper';
-import { withDtstamp } from 'proton-shared/lib/calendar/veventHelper';
-import { SECOND } from 'proton-shared/lib/constants';
-import { omit } from 'proton-shared/lib/helpers/object';
-import { wait } from 'proton-shared/lib/helpers/promise';
+} from '@proton/shared/lib/calendar/integration/invite';
+import { getProdId } from '@proton/shared/lib/calendar/vcalHelper';
+import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
+import { SECOND } from '@proton/shared/lib/constants';
+import { omit } from '@proton/shared/lib/helpers/object';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import {
     CalendarEvent,
     CalendarEventWithMetadata,
@@ -17,12 +17,12 @@ import {
     PartstatActions,
     PmInviteData,
     SavedInviteData,
-} from 'proton-shared/lib/interfaces/calendar';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+} from '@proton/shared/lib/interfaces/calendar';
+import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { useCallback } from 'react';
-import { useApi, useConfig } from 'react-components';
-import { useGetCanonicalEmailsMap } from 'react-components/hooks/useGetCanonicalEmailsMap';
-import useSendIcs from 'react-components/hooks/useSendIcs';
+import { useApi, useConfig } from '@proton/components';
+import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
+import useSendIcs from '@proton/components/hooks/useSendIcs';
 import { serverTime } from 'pmcrypto';
 import { useContactCache } from '../containers/ContactProvider';
 import { getHasFullCalendarData } from '../helpers/calendar/invite';

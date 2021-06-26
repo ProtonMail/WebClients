@@ -1,5 +1,5 @@
 import * as H from 'history';
-import { PERMISSIONS } from 'proton-shared/lib/constants';
+import { PERMISSIONS } from '@proton/shared/lib/constants';
 
 export interface SettingsPropsShared {
     location: H.Location;

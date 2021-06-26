@@ -1,5 +1,5 @@
 import React, { ReactNode, useState, useEffect, memo, useRef } from 'react';
-import { useWindowSize, useHandler, useBeforeUnload } from 'react-components';
+import { useWindowSize, useHandler, useBeforeUnload } from '@proton/components';
 import { c } from 'ttag';
 import { useMessageCache } from './MessageProvider';
 import { Breakpoints, WindowSize } from '../models/utils';

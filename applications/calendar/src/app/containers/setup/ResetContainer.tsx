@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { useModals } from 'react-components';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { useModals } from '@proton/components';
+import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 
 import ResetModal from './ResetModal';
 

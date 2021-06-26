@@ -10,13 +10,13 @@ import {
 } from 'pmcrypto';
 import { enums } from 'openpgp';
 
-import { identity } from 'proton-shared/lib/helpers/function';
-import { Package, Packages } from 'proton-shared/lib/interfaces/mail/crypto';
-import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { getAttachments } from 'proton-shared/lib/mail/messages';
-import { getSessionKey } from 'proton-shared/lib/mail/send/attachments';
-import { AES256, MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
+import { identity } from '@proton/shared/lib/helpers/function';
+import { Package, Packages } from '@proton/shared/lib/interfaces/mail/crypto';
+import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { getAttachments } from '@proton/shared/lib/mail/messages';
+import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
+import { AES256, MIME_TYPES, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 
 import { MessageExtended, MessageKeys } from '../../models/message';
 import { arrayToBase64 } from '../base64';

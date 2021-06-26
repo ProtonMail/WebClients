@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { MinimalResetPasswordContainer, OnLoginCallback } from 'react-components';
+import { MinimalResetPasswordContainer, OnLoginCallback } from '@proton/components';
 import SignInLayout from '../components/layout/SignInLayout';
 
 interface Props {

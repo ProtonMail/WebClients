@@ -1,5 +1,5 @@
 import { OpenPGPKey, SessionKey } from 'pmcrypto';
-import { AuthVersion } from 'proton-shared/lib/authentication/interface';
+import { AuthVersion } from '@proton/shared/lib/authentication/interface';
 import { DriveFileBlock } from './file';
 
 export interface CreateSharedURL {

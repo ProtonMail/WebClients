@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { MIME_TYPES } from 'proton-shared/lib/constants';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
 
 import { Select } from '../../components';
 

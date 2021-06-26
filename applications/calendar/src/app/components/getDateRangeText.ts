@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
-import { dateLocale } from 'proton-shared/lib/i18n';
-import { VIEWS } from 'proton-shared/lib/calendar/constants';
+import { dateLocale } from '@proton/shared/lib/i18n';
+import { VIEWS } from '@proton/shared/lib/calendar/constants';
 
 const { DAY, WEEK, MONTH, YEAR, AGENDA, CUSTOM } = VIEWS;
 

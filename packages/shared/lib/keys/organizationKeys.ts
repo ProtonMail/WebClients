@@ -1,5 +1,5 @@
 import { encryptMessage, encryptPrivateKey, generateKey, OpenPGPKey, reformatKey } from 'pmcrypto';
-import { computeKeyPassword, generateKeySalt } from 'pm-srp';
+import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 
 import { generateAddressKey } from './addressKeys';
 import { decryptMemberToken, encryptMemberToken, generateMemberToken } from './memberToken';

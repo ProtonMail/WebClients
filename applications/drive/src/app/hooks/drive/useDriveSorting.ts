@@ -1,7 +1,7 @@
-import { useMultiSortedList } from 'react-components';
+import { useMultiSortedList } from '@proton/components';
 import { useMemo } from 'react';
-import { SortConfig } from 'react-components/hooks/useSortedList';
-import { SORT_DIRECTION } from 'proton-shared/lib/constants';
+import { SortConfig } from '@proton/components/hooks/useSortedList';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { LinkMeta, SortKeys, SortParams } from '../../interfaces/link';
 import useUserSettings from './useUserSettings';
 import { SortSetting } from '../../interfaces/userSettings';

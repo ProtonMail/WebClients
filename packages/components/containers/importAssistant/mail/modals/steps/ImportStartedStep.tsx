@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Address } from 'proton-shared/lib/interfaces';
+import { Address } from '@proton/shared/lib/interfaces';
 
-import importStartedSvg from 'design-system/assets/img/onboarding/import-assistant.svg';
+import importStartedSvg from '@proton/styles/assets/img/onboarding/import-assistant.svg';
 
 import { ImportMailModalModel } from '../../interfaces';
 

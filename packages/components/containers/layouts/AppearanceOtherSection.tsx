@@ -7,8 +7,8 @@ import {
     updateStickyLabels,
     updateDraftType,
     updateRightToLeft,
-} from 'proton-shared/lib/api/mailSettings';
-import { MESSAGE_BUTTONS, VIEW_MODE, MIME_TYPES, RIGHT_TO_LEFT, STICKY_LABELS } from 'proton-shared/lib/constants';
+} from '@proton/shared/lib/api/mailSettings';
+import { MESSAGE_BUTTONS, VIEW_MODE, MIME_TYPES, RIGHT_TO_LEFT, STICKY_LABELS } from '@proton/shared/lib/constants';
 
 import { ButtonGroup, Label, Radio, Info, Icon, Button } from '../../components';
 import {

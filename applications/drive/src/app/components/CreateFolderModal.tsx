@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent, FocusEvent } from 'react';
-import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from 'react-components';
+import { FormModal, Input, Row, Label, Field, useLoading, useNotifications } from '@proton/components';
 import { c } from 'ttag';
 import { validateLinkNameField } from '../utils/validation';
 import { formatLinkName } from '../utils/link';

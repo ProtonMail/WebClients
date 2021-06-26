@@ -1,12 +1,12 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import gmailCaptchaImg from 'design-system/assets/img/import-instructions/gmail-captcha.jpg';
-import gmailImapFolderImg from 'design-system/assets/img/import-instructions/gmail-folder-imap.jpg';
-import gmailImapImg from 'design-system/assets/img/import-instructions/gmail-imap.jpg';
-import gmailLessSecureAppsImg from 'design-system/assets/img/import-instructions/gmail-less-secure-apps.jpg';
-import gmailAppPasswordImg from 'design-system/assets/img/import-instructions/gmail-2FA.jpg';
-import yahooAppPasswordImg from 'design-system/assets/img/import-instructions/yahoo.jpg';
+import gmailCaptchaImg from '@proton/styles/assets/img/import-instructions/gmail-captcha.jpg';
+import gmailImapFolderImg from '@proton/styles/assets/img/import-instructions/gmail-folder-imap.jpg';
+import gmailImapImg from '@proton/styles/assets/img/import-instructions/gmail-imap.jpg';
+import gmailLessSecureAppsImg from '@proton/styles/assets/img/import-instructions/gmail-less-secure-apps.jpg';
+import gmailAppPasswordImg from '@proton/styles/assets/img/import-instructions/gmail-2FA.jpg';
+import yahooAppPasswordImg from '@proton/styles/assets/img/import-instructions/yahoo.jpg';
 
 import { Alert, Button, Href, Icon, Tabs } from '../../../../../components';
 

@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { c, msgid } from 'ttag';
-import { Icon, Tooltip, classnames, Button } from 'react-components';
+import { Icon, Tooltip, classnames, Button } from '@proton/components';
 import { Download, Upload } from '../../interfaces/transfer';
 import {
     isTransferActive,

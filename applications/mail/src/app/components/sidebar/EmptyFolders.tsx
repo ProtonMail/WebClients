@@ -8,7 +8,7 @@ import {
     SidebarListItemContent,
     LabelModal,
     useModals,
-} from 'react-components';
+} from '@proton/components';
 
 interface Props {
     onFocus: () => void;

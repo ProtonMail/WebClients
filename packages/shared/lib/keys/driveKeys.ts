@@ -121,7 +121,11 @@ export const encryptPassphrase = async (
     rawPassphrase = generatePassphrase(),
     passphraseSessionKey?: SessionKey
 ) => {
-    const { data: NodePassphrase, signature: NodePassphraseSignature, sessionKey } = await encryptMessage({
+    const {
+        data: NodePassphrase,
+        signature: NodePassphraseSignature,
+        sessionKey,
+    } = await encryptMessage({
         data: rawPassphrase,
         privateKeys: addressKey,
         publicKeys: parentKey.toPublic(),
@@ -135,10 +139,8 @@ export const encryptPassphrase = async (
 
 export const generateNodeKeys = async (parentKey: OpenPGPKey, addressKey: OpenPGPKey = parentKey) => {
     const rawPassphrase = generatePassphrase();
-    const [
-        { NodePassphrase, NodePassphraseSignature, sessionKey },
-        { privateKey, privateKeyArmored: NodeKey },
-    ] = await Promise.all([encryptPassphrase(parentKey, addressKey, rawPassphrase), generateDriveKey(rawPassphrase)]);
+    const [{ NodePassphrase, NodePassphraseSignature, sessionKey }, { privateKey, privateKeyArmored: NodeKey }] =
+        await Promise.all([encryptPassphrase(parentKey, addressKey, rawPassphrase), generateDriveKey(rawPassphrase)]);
 
     return { privateKey, NodeKey, NodePassphrase, NodePassphraseSignature, sessionKey };
 };

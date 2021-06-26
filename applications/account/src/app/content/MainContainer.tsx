@@ -1,10 +1,10 @@
 import React, { Suspense, useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { Route, Redirect, Switch, useLocation } from 'react-router-dom';
-import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from 'proton-shared/lib/apps/slugHelper';
-import { APPS } from 'proton-shared/lib/constants';
+import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { APPS } from '@proton/shared/lib/constants';
 
-import { useActiveBreakpoint, useToggle, PrivateHeader, PrivateAppContainer, Logo, useUser } from 'react-components';
+import { useActiveBreakpoint, useToggle, PrivateHeader, PrivateAppContainer, Logo, useUser } from '@proton/components';
 
 import PrivateMainAreaLoading from '../components/PrivateMainAreaLoading';
 

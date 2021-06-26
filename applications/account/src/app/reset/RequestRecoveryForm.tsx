@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 import React from 'react';
-import { Button, useFormErrors, useLoading, InputFieldTwo } from 'react-components';
-import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
-import { ResetPasswordState, ResetPasswordSetters } from 'react-components/containers/resetPassword/useResetPassword';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { Button, useFormErrors, useLoading, InputFieldTwo } from '@proton/components';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { ResetPasswordState, ResetPasswordSetters } from '@proton/components/containers/resetPassword/useResetPassword';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 interface Props {
     onSubmit: () => Promise<void>;

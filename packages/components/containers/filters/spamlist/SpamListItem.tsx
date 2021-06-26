@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { IncomingDefault } from 'proton-shared/lib/interfaces/IncomingDefault';
-import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from 'proton-shared/lib/constants';
+import { IncomingDefault } from '@proton/shared/lib/interfaces/IncomingDefault';
+import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from '@proton/shared/lib/constants';
 import { Icon, Loader, Button, Tooltip } from '../../../components';
 import { classnames } from '../../../helpers';
 

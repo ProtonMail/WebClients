@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
-import { getDevice } from 'proton-shared/lib/helpers/browser';
-import { ToolbarSeparator, Toolbar, useActiveBreakpoint } from 'react-components';
+import { getDevice } from '@proton/shared/lib/helpers/browser';
+import { ToolbarSeparator, Toolbar, useActiveBreakpoint } from '@proton/components';
 
 import useDrive from '../../hooks/drive/useDrive';
 import { useDriveContent } from './DriveContentProvider';

@@ -1,5 +1,5 @@
 import React, { MouseEvent } from 'react';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { c } from 'ttag';
 import {
     classnames,
@@ -12,12 +12,12 @@ import {
     useMailSettings,
     InlineLinkButton,
     Button,
-} from 'react-components';
-import { Label } from 'proton-shared/lib/interfaces/Label';
-import { MailSettings } from 'proton-shared/lib/interfaces';
-import { isInternal, isOutbox } from 'proton-shared/lib/mail/messages';
-import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
-import { shiftKey } from 'proton-shared/lib/helpers/browser';
+} from '@proton/components';
+import { Label } from '@proton/shared/lib/interfaces/Label';
+import { MailSettings } from '@proton/shared/lib/interfaces';
+import { isInternal, isOutbox } from '@proton/shared/lib/mail/messages';
+import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { shiftKey } from '@proton/shared/lib/helpers/browser';
 
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';

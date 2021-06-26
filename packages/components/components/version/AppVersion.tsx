@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { APPS_CONFIGURATION } from 'proton-shared/lib/constants';
+import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 
 import { useModals, useConfig } from '../../hooks';
 import ChangelogModal from './ChangelogModal';

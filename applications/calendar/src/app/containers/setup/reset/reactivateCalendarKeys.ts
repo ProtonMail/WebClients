@@ -1,16 +1,16 @@
-import { Address, Api } from 'proton-shared/lib/interfaces';
-import { useGetAddressKeys } from 'react-components';
+import { Address, Api } from '@proton/shared/lib/interfaces';
+import { useGetAddressKeys } from '@proton/components';
 import {
     getAllCalendarKeys,
     getPassphrases,
     queryMembers,
     reactivateCalendarKey,
-} from 'proton-shared/lib/api/calendars';
-import { splitKeys } from 'proton-shared/lib/keys/keys';
-import { decryptPassphrase } from 'proton-shared/lib/keys/calendarKeys';
-import { Calendar, CalendarKey, Member, Passphrase } from 'proton-shared/lib/interfaces/calendar';
+} from '@proton/shared/lib/api/calendars';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
+import { decryptPassphrase } from '@proton/shared/lib/keys/calendarKeys';
+import { Calendar, CalendarKey, Member, Passphrase } from '@proton/shared/lib/interfaces/calendar';
 import { decryptPrivateKey, encryptPrivateKey } from 'pmcrypto';
-import { getMemberAddressWithAdminPermissions } from 'proton-shared/lib/calendar/getMemberWithAdmin';
+import { getMemberAddressWithAdminPermissions } from '@proton/shared/lib/calendar/getMemberWithAdmin';
 
 interface ReactivateCalendarsKeysArgumentsShared {
     api: Api;

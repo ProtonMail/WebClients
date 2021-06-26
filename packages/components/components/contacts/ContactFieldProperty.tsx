@@ -1,8 +1,8 @@
 import React, { ChangeEvent, forwardRef, Ref } from 'react';
 import { parseISO, formatISO, isValid } from 'date-fns';
 
-import { getAllFieldLabels } from 'proton-shared/lib/helpers/contacts';
-import { ContactPropertyChange } from 'proton-shared/lib/interfaces/contacts/Contact';
+import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
+import { ContactPropertyChange } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import { useModals } from '../../hooks';
 import ContactImageModal from '../../containers/contacts/modals/ContactImageModal';

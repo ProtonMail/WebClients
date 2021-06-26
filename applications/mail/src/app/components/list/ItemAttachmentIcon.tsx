@@ -1,6 +1,6 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { classnames, Icon, Tooltip } from 'react-components';
+import { classnames, Icon, Tooltip } from '@proton/components';
 
 import { getNumAttachments } from '../../helpers/elements';
 import { Element } from '../../models/element';

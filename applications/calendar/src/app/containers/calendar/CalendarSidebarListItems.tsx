@@ -1,10 +1,10 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Checkbox, classnames, SidebarListItem, SidebarListItemContent, SidebarListItemDiv } from 'react-components';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
-import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
+import { Checkbox, classnames, SidebarListItem, SidebarListItemContent, SidebarListItemDiv } from '@proton/components';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 
 import { getConstrastingColor } from '../../helpers/color';
 

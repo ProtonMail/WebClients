@@ -1,5 +1,5 @@
 import { RefObject, useEffect, useState } from 'react';
-import { useHandler } from 'react-components';
+import { useHandler } from '@proton/components';
 
 export const useHasScroll = (ref: RefObject<HTMLElement>) => {
     const [hasVerticalScrollbar, setHasVerticalScrollbar] = useState(false);

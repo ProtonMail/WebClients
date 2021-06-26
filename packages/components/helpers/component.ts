@@ -1,4 +1,4 @@
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 let current = 0;
 

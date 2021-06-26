@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DialogModal, HeaderModal, InnerModal, FooterModal, PrimaryButton, Button } from 'react-components';
+import { DialogModal, HeaderModal, InnerModal, FooterModal, PrimaryButton, Button } from '@proton/components';
 import { c } from 'ttag';
 
 const ResendCodeModal = ({ modalTitleID = 'modalTitle', onResend, onBack, destination, onClose, ...rest }) => {

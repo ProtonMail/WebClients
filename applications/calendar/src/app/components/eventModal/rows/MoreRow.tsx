@@ -1,4 +1,4 @@
-import { Label, LinkButton, Row } from 'react-components';
+import { Label, LinkButton, Row } from '@proton/components';
 import { c } from 'ttag';
 import React from 'react';
 

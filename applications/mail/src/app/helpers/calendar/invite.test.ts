@@ -1,9 +1,9 @@
 import { enUS } from 'date-fns/locale';
-import { getIsRruleSupported } from 'proton-shared/lib/calendar/rrule';
-import { parse } from 'proton-shared/lib/calendar/vcal';
-import { VcalDateProperty, VcalVcalendar, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { RequireSome } from 'proton-shared/lib/interfaces/utils';
+import { getIsRruleSupported } from '@proton/shared/lib/calendar/rrule';
+import { parse } from '@proton/shared/lib/calendar/vcal';
+import { VcalDateProperty, VcalVcalendar, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { formatEndDateTime, formatStartDateTime, getSupportedEventInvitation, parseEventInvitation } from './invite';
 
 describe('getIsRruleSupported for invitations', () => {

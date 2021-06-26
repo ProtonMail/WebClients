@@ -9,7 +9,7 @@ import {
     Icon,
     DropdownMenuButton,
     ToolbarButton,
-} from 'react-components';
+} from '@proton/components';
 
 import { useDriveContent } from '../DriveContentProvider';
 import { useDriveActiveFolder } from '../DriveFolderProvider';
@@ -23,14 +23,8 @@ interface Props {
 const ActionsDropdown = ({ shareId }: Props) => {
     const [uid] = useState(generateUID('actions-dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const {
-        openDetails,
-        openFilesDetails,
-        openMoveToFolder,
-        openMoveToTrash,
-        openRename,
-        openLinkSharing,
-    } = useToolbarActions();
+    const { openDetails, openFilesDetails, openMoveToFolder, openMoveToTrash, openRename, openLinkSharing } =
+        useToolbarActions();
     const { folder } = useDriveActiveFolder();
     const { fileBrowserControls } = useDriveContent();
     const { selectedItems } = fileBrowserControls;

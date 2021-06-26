@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import { Label } from 'proton-shared/lib/interfaces/Label';
+import { Label } from '@proton/shared/lib/interfaces/Label';
 
 import SidebarItem from './SidebarItem';
 import EmptyLabels from './EmptyLabels';

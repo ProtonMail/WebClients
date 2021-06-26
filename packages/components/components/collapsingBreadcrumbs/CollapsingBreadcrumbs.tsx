@@ -1,5 +1,5 @@
 import React, { useMemo, Fragment } from 'react';
-import { omit } from 'proton-shared/lib/helpers/object';
+import { omit } from '@proton/shared/lib/helpers/object';
 import Breadcrumb from './Breadcrumb';
 import CollapsedBreadcrumbs from './CollapsedBreadcrumbs';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';

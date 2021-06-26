@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 import React from 'react';
 
-import { OnboardingContent, OnboardingModal, OnboardingStep, EarlyAccessModal, useModals } from 'react-components';
-import { APPS } from 'proton-shared/lib/constants';
-import { getAppName } from 'proton-shared/lib/apps/helper';
-import onboardingWelcome from 'design-system/assets/img/onboarding/drive-upgrade.svg';
+import { OnboardingContent, OnboardingModal, OnboardingStep, EarlyAccessModal, useModals } from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import onboardingWelcome from '@proton/styles/assets/img/onboarding/drive-upgrade.svg';
 
 const DriveOnboardingModalNoBeta = (props: any) => {
     const appName = getAppName(APPS.PROTONDRIVE);

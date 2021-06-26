@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer, useRef, Reducer } from 'react';
-import { STATUS } from 'proton-shared/lib/models/cache';
+import { STATUS } from '@proton/shared/lib/models/cache';
 
 type ResolvedRecord<T> = {
     status: STATUS.RESOLVED;
@@ -61,22 +61,18 @@ const usePromiseResult = <T>(miss: () => Promise<T>, dependencies: React.Depende
         dispatch(record);
 
         promise
-            .then(
-                (value): ResolvedRecord<T> => {
-                    return {
-                        status: STATUS.RESOLVED,
-                        value,
-                    };
-                }
-            )
-            .catch(
-                (error): RejectedRecord => {
-                    return {
-                        status: STATUS.REJECTED,
-                        value: error,
-                    };
-                }
-            )
+            .then((value): ResolvedRecord<T> => {
+                return {
+                    status: STATUS.RESOLVED,
+                    value,
+                };
+            })
+            .catch((error): RejectedRecord => {
+                return {
+                    status: STATUS.REJECTED,
+                    value: error,
+                };
+            })
             .then((record) => {
                 if (unmountedRef.current) {
                     ref.current = undefined;

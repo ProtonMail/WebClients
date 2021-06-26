@@ -1,9 +1,9 @@
 import React from 'react';
-import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
+import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
-import { SubscriptionCheckResponse } from 'proton-shared/lib/interfaces';
+import { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
-import { PrimaryButton, PayPalButton } from 'react-components';
+import { PrimaryButton, PayPalButton } from '@proton/components';
 import { SignupPayPal } from './interfaces';
 
 interface Props {

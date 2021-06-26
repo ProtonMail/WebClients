@@ -9,9 +9,9 @@ import {
     useOnLogout,
     useSubscribeEventManager,
     useUser,
-} from 'react-components';
-import { getItem, removeItem, setItem } from 'proton-shared/lib/helpers/storage';
-import { wait } from 'proton-shared/lib/helpers/promise';
+} from '@proton/components';
+import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { openDB, deleteDB } from 'idb';
 import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
 import { Event } from '../models/event';

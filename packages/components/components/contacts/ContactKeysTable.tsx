@@ -3,11 +3,11 @@ import { algorithmInfo, OpenPGPKey } from 'pmcrypto';
 import { isValid, format } from 'date-fns';
 import { c } from 'ttag';
 
-import { move, uniqueBy } from 'proton-shared/lib/helpers/array';
-import { dateLocale } from 'proton-shared/lib/i18n';
-import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { getFormattedAlgorithmName } from 'proton-shared/lib/keys';
-import { ContactPublicKeyModel } from 'proton-shared/lib/interfaces';
+import { move, uniqueBy } from '@proton/shared/lib/helpers/array';
+import { dateLocale } from '@proton/shared/lib/i18n';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { getFormattedAlgorithmName } from '@proton/shared/lib/keys';
+import { ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
 
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import { Table, TableBody, TableRow } from '../table';

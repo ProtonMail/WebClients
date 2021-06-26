@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useRef, useEffect, forwardRef, Ref } from 'react';
-import { ButtonLike, ButtonLikeProps, classnames, Icon } from 'react-components';
+import { ButtonLike, ButtonLikeProps, classnames, Icon } from '@proton/components';
 
 interface Props extends ButtonLikeProps<'label'> {
     disabled?: boolean;

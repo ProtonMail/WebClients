@@ -1,4 +1,4 @@
-import { getFreeCheckResult } from 'proton-shared/lib/subscription/freePlans';
+import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { SIGNUP_STEPS, SignupModel } from './interfaces';
 
 export const YANDEX_DOMAINS = ['yandex.ru', 'yandex.ua'];

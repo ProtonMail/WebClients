@@ -1,11 +1,11 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { UserModel, UserSettings, Organization, Subscription, Plan } from 'proton-shared/lib/interfaces';
-import { getInitials } from 'proton-shared/lib/helpers/string';
-import { getPlan } from 'proton-shared/lib/helpers/subscription';
-import { PLAN_SERVICES, APPS, PLANS } from 'proton-shared/lib/constants';
-import { getAppName } from 'proton-shared/lib/apps/helper';
-import { getClosestLocaleCode } from 'proton-shared/lib/i18n/helper';
+import { UserModel, UserSettings, Organization, Subscription, Plan } from '@proton/shared/lib/interfaces';
+import { getInitials } from '@proton/shared/lib/helpers/string';
+import { getPlan } from '@proton/shared/lib/helpers/subscription';
+import { PLAN_SERVICES, APPS, PLANS } from '@proton/shared/lib/constants';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 
 import { Icon, Loader, SettingsLink } from '../../components';
 import { useConfig } from '../../hooks';

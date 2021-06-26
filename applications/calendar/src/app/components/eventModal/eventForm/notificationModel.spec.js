@@ -1,10 +1,10 @@
-import { fromTriggerString } from 'proton-shared/lib/calendar/vcal';
+import { fromTriggerString } from '@proton/shared/lib/calendar/vcal';
 import {
     SETTINGS_NOTIFICATION_TYPE,
     NOTIFICATION_UNITS,
     NOTIFICATION_WHEN,
-} from 'proton-shared/lib/calendar/constants';
-import { triggerToModel } from 'proton-shared/lib/calendar/notificationModel';
+} from '@proton/shared/lib/calendar/constants';
+import { triggerToModel } from '@proton/shared/lib/calendar/notificationModel';
 
 const { DEVICE } = SETTINGS_NOTIFICATION_TYPE;
 const { WEEK, DAY, HOURS, MINUTES } = NOTIFICATION_UNITS;

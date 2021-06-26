@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
-import { DOMAIN_STATE, VERIFY_STATE, MX_STATE, SPF_STATE, DKIM_STATE, DMARC_STATE } from 'proton-shared/lib/constants';
+import { DOMAIN_STATE, VERIFY_STATE, MX_STATE, SPF_STATE, DKIM_STATE, DMARC_STATE } from '@proton/shared/lib/constants';
 import { Badge } from '../../components';
 
 const VERIFY_TYPES = {

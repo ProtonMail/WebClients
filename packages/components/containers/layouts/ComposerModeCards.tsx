@@ -1,10 +1,10 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { COMPOSER_MODE } from 'proton-shared/lib/constants';
+import { COMPOSER_MODE } from '@proton/shared/lib/constants';
 
-import composerPopUpSvg from 'design-system/assets/img/pm-images/composer-popup.svg';
-import composerMaximizedSvg from 'design-system/assets/img/pm-images/composer-maximized.svg';
+import composerPopUpSvg from '@proton/styles/assets/img/pm-images/composer-popup.svg';
+import composerMaximizedSvg from '@proton/styles/assets/img/pm-images/composer-maximized.svg';
 
 import { LayoutCards } from '../../components';
 

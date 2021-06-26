@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { updateNotifyEmail, updateResetEmail, updateResetPhone } from 'proton-shared/lib/api/settings';
-import { CLIENT_TYPES } from 'proton-shared/lib/constants';
+import { updateNotifyEmail, updateResetEmail, updateResetPhone } from '@proton/shared/lib/api/settings';
+import { CLIENT_TYPES } from '@proton/shared/lib/constants';
 
 import { Toggle, Info, Loader } from '../../components';
 

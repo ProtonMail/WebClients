@@ -1,5 +1,5 @@
-import { useConfig, useApi } from 'react-components';
-import { queryCheckVerificationCode, queryVerificationCode } from 'proton-shared/lib/api/user';
+import { useConfig, useApi } from '@proton/components';
+import { queryCheckVerificationCode, queryVerificationCode } from '@proton/shared/lib/api/user';
 
 const useVerification = () => {
     const api = useApi();

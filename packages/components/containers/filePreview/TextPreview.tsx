@@ -1,5 +1,5 @@
 import React from 'react';
-import { mergeUint8Arrays } from 'proton-shared/lib/helpers/array';
+import { mergeUint8Arrays } from '@proton/shared/lib/helpers/array';
 
 interface Props {
     contents?: Uint8Array[];

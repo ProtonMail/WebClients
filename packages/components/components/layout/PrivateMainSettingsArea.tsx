@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { noop } from '@proton/shared/lib/helpers/function';
 import ErrorBoundary from '../../containers/app/ErrorBoundary';
 import SettingsPageTitle from '../../containers/account/SettingsPageTitle';
 import useAppTitle from '../../hooks/useAppTitle';

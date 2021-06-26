@@ -1,7 +1,7 @@
-import { serializeData } from 'proton-shared/lib/fetch/helpers';
-import { getUIDHeaders } from 'proton-shared/lib/fetch/headers';
-import createListeners from 'proton-shared/lib/helpers/listeners';
-import { getClientID } from 'proton-shared/lib/apps/helper';
+import { serializeData } from '@proton/shared/lib/fetch/helpers';
+import { getUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import createListeners from '@proton/shared/lib/helpers/listeners';
+import { getClientID } from '@proton/shared/lib/apps/helper';
 import { APP_VERSION, API_VERSION, API_URL, APP_NAME } from '../config';
 
 export type HTTPHeaders = { [key: string]: string };

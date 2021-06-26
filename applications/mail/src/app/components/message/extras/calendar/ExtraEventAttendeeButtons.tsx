@@ -1,14 +1,21 @@
-import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from 'proton-shared/lib/calendar/constants';
-import { reformatApiErrorMessage } from 'proton-shared/lib/calendar/helper';
-import { getAttendeePartstat, getAttendeeToken } from 'proton-shared/lib/calendar/vcalHelper';
-import { omit } from 'proton-shared/lib/helpers/object';
-import { wait } from 'proton-shared/lib/helpers/promise';
-import { Participant, SavedInviteData } from 'proton-shared/lib/interfaces/calendar';
-import { RequireSome } from 'proton-shared/lib/interfaces/utils';
-import { EncryptionPreferencesError } from 'proton-shared/lib/mail/encryptionPreferences';
-import { formatSubject, RE_PREFIX } from 'proton-shared/lib/mail/messages';
+import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/helper';
+import { getAttendeePartstat, getAttendeeToken } from '@proton/shared/lib/calendar/vcalHelper';
+import { omit } from '@proton/shared/lib/helpers/object';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import { Participant, SavedInviteData } from '@proton/shared/lib/interfaces/calendar';
+import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
+import { formatSubject, RE_PREFIX } from '@proton/shared/lib/mail/messages';
 import React, { useCallback, Dispatch, SetStateAction } from 'react';
-import { Icon, InlineLinkButton, Loader, useLoading, useNotifications, CalendarInviteButtons } from 'react-components';
+import {
+    Icon,
+    InlineLinkButton,
+    Loader,
+    useLoading,
+    useNotifications,
+    CalendarInviteButtons,
+} from '@proton/components';
 import { c } from 'ttag';
 import {
     EVENT_INVITATION_ERROR_TYPE,

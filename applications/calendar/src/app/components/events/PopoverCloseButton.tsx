@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Button, Icon } from 'react-components';
+import { Button, Icon } from '@proton/components';
 
 interface Props {
     onClose: () => void;

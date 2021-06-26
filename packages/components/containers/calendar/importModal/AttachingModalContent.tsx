@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 import React, { ChangeEvent, DragEvent } from 'react';
 
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
+import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import {
     IMPORT_CALENDAR_FAQ_URL,
     MAX_IMPORT_EVENTS_STRING,
     MAX_IMPORT_FILE_SIZE_STRING,
-} from 'proton-shared/lib/calendar/constants';
-import { ImportCalendarModel } from 'proton-shared/lib/interfaces/calendar/Import';
+} from '@proton/shared/lib/calendar/constants';
+import { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
 
 import {
     Bordered,

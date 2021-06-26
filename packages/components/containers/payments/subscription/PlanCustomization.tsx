@@ -1,8 +1,8 @@
 import React from 'react';
-import { PLAN_SERVICES, PLAN_TYPES, PLANS } from 'proton-shared/lib/constants';
-import { toMap } from 'proton-shared/lib/helpers/object';
-import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { Currency, Cycle, Organization, Plan, PlanIDs, Subscription } from 'proton-shared/lib/interfaces';
+import { PLAN_SERVICES, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { Currency, Cycle, Organization, Plan, PlanIDs, Subscription } from '@proton/shared/lib/interfaces';
 
 import ProtonPlanPicker from '../ProtonPlanPicker';
 import ProtonPlanCustomizer from '../ProtonPlanCustomizer';

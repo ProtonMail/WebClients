@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { msgid, c } from 'ttag';
-import { Address } from 'proton-shared/lib/interfaces';
+import { Address } from '@proton/shared/lib/interfaces';
 
 import { Button, Icon } from '../../components';
 import { classnames } from '../../helpers';

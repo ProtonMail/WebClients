@@ -1,4 +1,4 @@
-import { getSHA256String } from 'proton-shared/lib/helpers/crypto';
+import { getSHA256String } from '@proton/shared/lib/helpers/crypto';
 
 const DAY_IN_MILLISECONDS = 86400000;
 const LOCALSTORAGE_TZ_KEY = 'tzSuggestion';

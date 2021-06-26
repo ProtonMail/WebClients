@@ -1,9 +1,9 @@
-import { generateUID } from 'react-components';
-import { generateContentHash } from 'proton-shared/lib/keys/driveKeys';
-import { serializeFormData } from 'proton-shared/lib/fetch/helpers';
-import { createApiError } from 'proton-shared/lib/fetch/ApiError';
-import runInQueue from 'proton-shared/lib/helpers/runInQueue';
-import { traceError } from 'proton-shared/lib/helpers/sentry';
+import { generateUID } from '@proton/components';
+import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
+import { serializeFormData } from '@proton/shared/lib/fetch/helpers';
+import { createApiError } from '@proton/shared/lib/fetch/ApiError';
+import runInQueue from '@proton/shared/lib/helpers/runInQueue';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import ChunkFileReader from './ChunkFileReader';
 import { UploadLink } from '../../interfaces/file';
@@ -21,7 +21,7 @@ const MAX_RETRIES_BEFORE_FAIL = 3;
 type ThumbnailBlock = {
     Hash: Uint8Array;
     Size: number;
-}
+};
 
 export type BlockList = {
     EncSignature: string;
@@ -53,11 +53,12 @@ interface EncryptedBlock {
 
 export interface UploadCallbacks {
     transform: (buffer: Uint8Array, attached?: boolean) => ChunkPromise;
-    requestUpload: (blockList: BlockList, thumbnailBlock?: ThumbnailBlock) => Promise<{ UploadLinks: UploadLink[], ThumbnailLink?: UploadLink }>;
+    requestUpload: (
+        blockList: BlockList,
+        thumbnailBlock?: ThumbnailBlock
+    ) => Promise<{ UploadLinks: UploadLink[]; ThumbnailLink?: UploadLink }>;
     finalize: (blocklist: Map<number, BlockTokenInfo>, config?: { id: string }) => Promise<void>;
-    initialize: (
-        abortSignal: AbortSignal
-    ) => Promise<{
+    initialize: (abortSignal: AbortSignal) => Promise<{
         filename: string;
         MIMEType: string;
     }>;
@@ -253,51 +254,55 @@ export function initUpload(
 
         const blockUploaders: (() => Promise<void>)[] = [];
 
-        const getBlockUploader = (block: EncryptedBlock, numRetries = 0) => async () => {
-            const { index, originalSize, chunk, meta: blockMeta } = block;
-            const { encryptedData } = await chunk;
+        const getBlockUploader =
+            (block: EncryptedBlock, numRetries = 0) =>
+            async () => {
+                const { index, originalSize, chunk, meta: blockMeta } = block;
+                const { encryptedData } = await chunk;
 
-            if (!blockMeta) {
-                throw new Error(`Block #${index} URL could not be resolved for upload ${id}`);
-            }
+                if (!blockMeta) {
+                    throw new Error(`Block #${index} URL could not be resolved for upload ${id}`);
+                }
 
-            const {
-                uploadLink: { URL },
-            } = blockMeta;
+                const {
+                    uploadLink: { URL },
+                } = blockMeta;
 
-            try {
-                await upload(
-                    id,
-                    URL,
-                    encryptedData,
-                    (relativeIncrement) => {
-                        const increment = Math.ceil(originalSize * relativeIncrement);
-                        block.progress = (block.progress ?? 0) + increment;
-                        onProgress?.(increment);
-                    },
-                    abortSignal
-                );
-                uploadingBlocks.delete(index);
-            } catch (err) {
-                if (err?.data?.Code === RESPONSE_CODE.ALREADY_EXISTS) {
-                    console.warn(`Redundant upload for block #${index}. Proceeding, but this might indicate an issue.`);
+                try {
+                    await upload(
+                        id,
+                        URL,
+                        encryptedData,
+                        (relativeIncrement) => {
+                            const increment = Math.ceil(originalSize * relativeIncrement);
+                            block.progress = (block.progress ?? 0) + increment;
+                            onProgress?.(increment);
+                        },
+                        abortSignal
+                    );
                     uploadingBlocks.delete(index);
-                    return;
-                }
+                } catch (err) {
+                    if (err?.data?.Code === RESPONSE_CODE.ALREADY_EXISTS) {
+                        console.warn(
+                            `Redundant upload for block #${index}. Proceeding, but this might indicate an issue.`
+                        );
+                        uploadingBlocks.delete(index);
+                        return;
+                    }
 
-                if (
-                    !isTransferCancelError(err) &&
-                    err.status !== STATUS_CODE.NOT_FOUND &&
-                    numRetries < MAX_RETRIES_BEFORE_FAIL
-                ) {
-                    console.error(`Failed block #${index} upload for ${id}. Retry num: ${numRetries}`);
-                    resetBlockUploadProgress(block);
-                    blockUploaders.push(getBlockUploader(block, numRetries + 1));
-                } else {
-                    throw err;
+                    if (
+                        !isTransferCancelError(err) &&
+                        err.status !== STATUS_CODE.NOT_FOUND &&
+                        numRetries < MAX_RETRIES_BEFORE_FAIL
+                    ) {
+                        console.error(`Failed block #${index} upload for ${id}. Retry num: ${numRetries}`);
+                        resetBlockUploadProgress(block);
+                        blockUploaders.push(getBlockUploader(block, numRetries + 1));
+                    } else {
+                        throw err;
+                    }
                 }
-            }
-        };
+            };
 
         uploadingBlocks.forEach((block) => {
             const { index, meta: blockMeta } = block;
@@ -360,15 +365,17 @@ export function initUpload(
                     const { MIMEType: mimeType } = await initialize?.(abortController.signal);
                     initialized = true;
 
-                    await makeThumbnail(mimeType, file).then(thumbnailData => {
-                        if (thumbnailData) {
-                            uploadingBlocks.set(0, {
-                                index: 0,
-                                originalSize: thumbnailData.length,
-                                chunk: transform(thumbnailData, true),
-                            });
-                        }
-                    }).catch(traceError); // Do not fail upload just because of thumbnail, but report it so we know.
+                    await makeThumbnail(mimeType, file)
+                        .then((thumbnailData) => {
+                            if (thumbnailData) {
+                                uploadingBlocks.set(0, {
+                                    index: 0,
+                                    originalSize: thumbnailData.length,
+                                    chunk: transform(thumbnailData, true),
+                                });
+                            }
+                        })
+                        .catch(traceError); // Do not fail upload just because of thumbnail, but report it so we know.
                 }
 
                 // Keep filling queue with up to 20 blocks and uploading them

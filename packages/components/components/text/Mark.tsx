@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import { normalize } from 'proton-shared/lib/helpers/string';
-import { escapeRegex, getMatches } from 'proton-shared/lib/helpers/regex';
+import { normalize } from '@proton/shared/lib/helpers/string';
+import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
 import Marks from './Marks';
 
 interface Props {

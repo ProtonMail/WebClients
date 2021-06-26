@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
-import { getAppFromPathnameSafe } from 'proton-shared/lib/apps/slugHelper';
-import { getAppName } from 'proton-shared/lib/apps/helper';
-import { APPS } from 'proton-shared/lib/constants';
+import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
 
 import { InlineLinkButton } from '../../components';
 import { useConfig, useFeature } from '../../hooks';

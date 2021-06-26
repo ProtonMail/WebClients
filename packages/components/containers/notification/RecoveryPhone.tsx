@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { updatePhone } from 'proton-shared/lib/api/settings';
+import { updatePhone } from '@proton/shared/lib/api/settings';
 
 import AuthModal from '../password/AuthModal';
 import { ConfirmModal, Alert, Button, InputFieldTwo, PhoneInput, useFormErrors } from '../../components';

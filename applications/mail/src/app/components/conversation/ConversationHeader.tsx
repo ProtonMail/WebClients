@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLabels, classnames } from 'react-components';
+import { useLabels, classnames } from '@proton/components';
 
 import ItemStar from '../list/ItemStar';
 import NumMessages from './NumMessages';

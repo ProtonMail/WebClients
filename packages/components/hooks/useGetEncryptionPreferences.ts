@@ -1,10 +1,10 @@
-import getPublicKeysVcardHelper from 'proton-shared/lib/api/helpers/getPublicKeysVcardHelper';
-import { MINUTE, RECIPIENT_TYPES } from 'proton-shared/lib/constants';
-import { canonizeEmail, canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
-import { GetEncryptionPreferences } from 'proton-shared/lib/interfaces/hooks/GetEncryptionPreferences';
-import { splitKeys } from 'proton-shared/lib/keys/keys';
-import { getContactPublicKeyModel } from 'proton-shared/lib/keys/publicKeys';
-import extractEncryptionPreferences from 'proton-shared/lib/mail/encryptionPreferences';
+import getPublicKeysVcardHelper from '@proton/shared/lib/api/helpers/getPublicKeysVcardHelper';
+import { MINUTE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
+import { canonizeEmail, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
+import { getContactPublicKeyModel } from '@proton/shared/lib/keys/publicKeys';
+import extractEncryptionPreferences from '@proton/shared/lib/mail/encryptionPreferences';
 import { useCallback } from 'react';
 import { useGetAddresses } from './useAddresses';
 import useApi from './useApi';

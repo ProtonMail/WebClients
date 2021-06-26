@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { BRAND_NAME, SUBSCRIPTION_CANCELLATION_REASONS } from 'proton-shared/lib/constants';
+import { BRAND_NAME, SUBSCRIPTION_CANCELLATION_REASONS } from '@proton/shared/lib/constants';
 import { FormModal, SelectTwo, TextArea, Option, Scale, Button } from '../../../components';
 
 export interface SubscriptionCancelModel {

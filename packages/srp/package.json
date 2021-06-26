@@ -1,56 +1,34 @@
 {
-  "name": "pm-srp",
-  "version": "1.0.1",
-  "description": "ProtonMail SRP and auth library",
-  "main": "lib/index.js",
-  "module": "lib/module.js",
-  "scripts": {
-    "test": "mocha -r esm 'test/**/*.spec.js'",
-    "lint": "eslint lib test --ext .js --quiet --cache",
-    "pretty": "prettier --write $(find lib -type f -name '*.js')"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
+    "name": "@proton/srp",
+    "description": "ProtonMail SRP and auth library",
+    "license": "MIT",
+    "author": "ProtonMail",
+    "main": "lib/index.js",
+    "module": "lib/module.js",
+    "scripts": {
+        "test": "mocha -r esm 'test/**/*.spec.js'",
+        "lint": "eslint lib test --ext .js --quiet --cache",
+        "pretty": "prettier --write $(find lib -type f -name '*.js')"
+    },
+    "dependencies": {
+        "@proton/get-random-values": "workspace:packages/get-random-values",
+        "asmcrypto.js": "^2.3.2",
+        "bcryptjs": "^2.4.3",
+        "esm": "^3.2.4"
+    },
+    "devDependencies": {
+        "eslint": "^7.29.0",
+        "eslint-config-airbnb-base": "^13.1.0",
+        "eslint-plugin-import": "^2.16.0",
+        "mocha": "^5.2.0",
+        "pmcrypto": "github:ProtonMail/pmcrypto.git#semver:^6.0.0",
+        "prettier": "^2.3.2",
+        "require-inject": "^1.4.4"
+    },
+    "peerDependencies": {
+        "pmcrypto": "*"
+    },
+    "esm": {
+        "mode": "auto"
     }
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ProtonMail/pm-srp.git"
-  },
-  "author": "ProtonMail",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ProtonMail/pm-srp/issues"
-  },
-  "esm": {
-    "mode": "auto"
-  },
-  "homepage": "https://github.com/ProtonMail/pm-srp#readme",
-  "dependencies": {
-    "asmcrypto.js": "^2.3.2",
-    "bcryptjs": "^2.4.3",
-    "esm": "^3.2.4",
-    "get-random-values": "github:ProtonMail/get-random-values#semver:^1.0.0"
-  },
-  "devDependencies": {
-    "eslint": "^5.3.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0",
-    "husky": "^1.3.1",
-    "lint-staged": "^8.1.4",
-    "mocha": "^5.2.0",
-    "prettier": "^1.16.1",
-    "pmcrypto": "github:ProtonMail/pmcrypto.git#semver:^6.0.0",
-    "require-inject": "^1.4.4"
-  },
-  "peerDependencies": {
-    "pmcrypto": "github:ProtonMail/pmcrypto.git#semver:^6.0.0"
-  }
 }

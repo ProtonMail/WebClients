@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { IllustrationPlaceholder } from 'react-components';
+import { IllustrationPlaceholder } from '@proton/components';
 
-import noContentSvg from 'design-system/assets/img/placeholders/empty-trash.svg';
+import noContentSvg from '@proton/styles/assets/img/placeholders/empty-trash.svg';
 
 const EmptyTrash = () => (
     <div className="p2 mt2 flex w100 flex flex-item-fluid">

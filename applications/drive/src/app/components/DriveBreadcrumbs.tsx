@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
-import { CollapsingBreadcrumbs, Icon, useNotifications } from 'react-components';
-import { BreadcrumbInfo } from 'react-components/components/collapsingBreadcrumbs/interfaces';
+import { CollapsingBreadcrumbs, Icon, useNotifications } from '@proton/components';
+import { BreadcrumbInfo } from '@proton/components/components/collapsingBreadcrumbs/interfaces';
 
 import { DriveFolder } from './Drive/DriveFolderProvider';
 import { LinkType } from '../interfaces/link';

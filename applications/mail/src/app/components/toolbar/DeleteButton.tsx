@@ -1,6 +1,6 @@
 import React from 'react';
-import { Icon, useLoading, useMailSettings, ToolbarButton } from 'react-components';
-import { metaKey } from 'proton-shared/lib/helpers/browser';
+import { Icon, useLoading, useMailSettings, ToolbarButton } from '@proton/components';
+import { metaKey } from '@proton/shared/lib/helpers/browser';
 import { c } from 'ttag';
 
 import { usePermanentDelete } from '../../hooks/usePermanentDelete';

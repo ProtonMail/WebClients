@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { INVOICE_STATE } from 'proton-shared/lib/constants';
+import { INVOICE_STATE } from '@proton/shared/lib/constants';
 import { Badge } from '../../components';
 import { Invoice } from './interface';
 

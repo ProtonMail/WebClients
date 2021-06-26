@@ -99,6 +99,6 @@ module.exports = (scope) => {
         error,
         json,
         warn,
-        IS_VERBOSE
+        IS_VERBOSE,
     };
 };

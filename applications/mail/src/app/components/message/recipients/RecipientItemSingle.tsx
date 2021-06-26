@@ -11,12 +11,12 @@ import {
     Icon,
     useNotifications,
     useModals,
-} from 'react-components';
+} from '@proton/components';
 import { OpenPGPKey } from 'pmcrypto';
-import { ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
-import { getInitials } from 'proton-shared/lib/helpers/string';
-import { textToClipboard } from 'proton-shared/lib/helpers/browser';
-import { Recipient } from 'proton-shared/lib/interfaces';
+import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
+import { getInitials } from '@proton/shared/lib/helpers/string';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+import { Recipient } from '@proton/shared/lib/interfaces';
 
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';

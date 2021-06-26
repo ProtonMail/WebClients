@@ -1,4 +1,4 @@
-import { LoadingMap } from 'proton-shared/lib/interfaces/utils';
+import { LoadingMap } from '@proton/shared/lib/interfaces/utils';
 import React, { useState, useEffect } from 'react';
 import {
     Alert,
@@ -10,12 +10,12 @@ import {
     useGetUserKeys,
     PrimaryButton,
     useNotifications,
-} from 'react-components';
-import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
-import { resignCards } from 'proton-shared/lib/contacts/resign';
-import { splitKeys } from 'proton-shared/lib/keys/keys';
-import { updateContact, getContact } from 'proton-shared/lib/api/contacts';
-import { ContactEmail, ContactCard } from 'proton-shared/lib/interfaces/contacts';
+} from '@proton/components';
+import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
+import { resignCards } from '@proton/shared/lib/contacts/resign';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
+import { updateContact, getContact } from '@proton/shared/lib/api/contacts';
+import { ContactEmail, ContactCard } from '@proton/shared/lib/interfaces/contacts';
 import { c } from 'ttag';
 
 interface Props {
@@ -102,8 +102,10 @@ const ContactResignModal = ({
                     resignedCardsMap[contactID] = resignedCards;
                 })
             );
-            const requests = contacts.map(({ contactID }) => () =>
-                api(updateContact(contactID, { Cards: resignedCardsMap[contactID] }))
+            const requests = contacts.map(
+                ({ contactID }) =>
+                    () =>
+                        api(updateContact(contactID, { Cards: resignedCardsMap[contactID] }))
             );
             // the routes called in requests support 100 calls every 10 seconds
             await processApiRequestsSafe(requests, 100, 10 * 1000);

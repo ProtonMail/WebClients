@@ -1,9 +1,9 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { c, msgid } from 'ttag';
-import { queryVPNLogicalServerInfo, getVPNServerConfig } from 'proton-shared/lib/api/vpn';
-import { groupWith } from 'proton-shared/lib/helpers/array';
-import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { PLANS, SORT_DIRECTION, VPN_HOSTNAME } from 'proton-shared/lib/constants';
+import { queryVPNLogicalServerInfo, getVPNServerConfig } from '@proton/shared/lib/api/vpn';
+import { groupWith } from '@proton/shared/lib/helpers/array';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { PLANS, SORT_DIRECTION, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 
 import {
     Href,

@@ -1,9 +1,9 @@
-import { EventModel } from 'proton-shared/lib/interfaces/calendar';
+import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import {
     SETTINGS_NOTIFICATION_TYPE,
     NOTIFICATION_UNITS,
     NOTIFICATION_WHEN,
-} from 'proton-shared/lib/calendar/constants';
+} from '@proton/shared/lib/calendar/constants';
 
 import { modelToValarmComponents } from './modelToProperties';
 

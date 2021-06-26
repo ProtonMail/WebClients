@@ -1,9 +1,9 @@
-import { getSender, hasAttachments } from 'proton-shared/lib/mail/messages';
+import { getSender, hasAttachments } from '@proton/shared/lib/mail/messages';
 import React, { useEffect } from 'react';
-import { FormModal } from 'react-components';
+import { FormModal } from '@proton/components';
 import { c } from 'ttag';
 
-import { Recipient } from 'proton-shared/lib/interfaces';
+import { Recipient } from '@proton/shared/lib/interfaces';
 import { MessageExtendedWithData } from '../../../models/message';
 import MessageBody from '../MessageBody';
 import RecipientsDetails from '../recipients/RecipientsDetails';

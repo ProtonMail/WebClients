@@ -1,5 +1,5 @@
 import { decryptPrivateKey, OpenPGPKey, getKeys } from 'pmcrypto';
-import { computeKeyPassword, generateKeySalt } from 'pm-srp';
+import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 
 import { Key, KeyPair, KeySalt as tsKeySalt } from '../interfaces';
 

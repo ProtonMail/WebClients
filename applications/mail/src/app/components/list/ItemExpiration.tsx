@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Icon, Tooltip, classnames } from 'react-components';
+import { Icon, Tooltip, classnames } from '@proton/components';
 import { c } from 'ttag';
 import { fromUnixTime } from 'date-fns';
 

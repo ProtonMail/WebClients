@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { updateInvoiceText } from 'proton-shared/lib/api/settings';
+import { updateInvoiceText } from '@proton/shared/lib/api/settings';
 import { FormModal, Alert, Label, TextArea, Block } from '../../components';
 import { useApiWithoutResult, useUserSettings, useEventManager, useNotifications } from '../../hooks';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FullLoader } from 'react-components';
+import { FullLoader } from '@proton/components';
 
 const Loader = () => {
     return <FullLoader className="color-primary" size={100} />;

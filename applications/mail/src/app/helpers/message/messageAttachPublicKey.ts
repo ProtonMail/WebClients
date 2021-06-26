@@ -1,5 +1,5 @@
 import { keyInfo } from 'pmcrypto/lib/pmcrypto';
-import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { MessageExtended, MessageExtendedWithData, MessageKeys } from '../../models/message';
 import { upload, ATTACHMENT_ACTION } from '../attachment/attachmentUploader';

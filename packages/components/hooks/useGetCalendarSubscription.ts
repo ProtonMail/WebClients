@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 
-import { CalendarSubscriptionResponse } from 'proton-shared/lib/interfaces/calendar';
-import { getSubscriptionParameters } from 'proton-shared/lib/api/calendars';
-import createCache from 'proton-shared/lib/helpers/cache';
+import { CalendarSubscriptionResponse } from '@proton/shared/lib/interfaces/calendar';
+import { getSubscriptionParameters } from '@proton/shared/lib/api/calendars';
+import createCache from '@proton/shared/lib/helpers/cache';
 
 import { getPromiseValue } from './useCachedModelResult';
 import { useApi, useCache } from './index';

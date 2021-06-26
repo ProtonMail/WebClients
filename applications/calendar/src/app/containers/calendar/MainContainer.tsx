@@ -1,6 +1,6 @@
-import { CALENDAR_FLAGS } from 'proton-shared/lib/calendar/constants';
-import { getIsPersonalCalendar } from 'proton-shared/lib/calendar/subscribe/helpers';
-import { unary } from 'proton-shared/lib/helpers/function';
+import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
+import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
+import { unary } from '@proton/shared/lib/helpers/function';
 import React, { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import {
@@ -10,7 +10,7 @@ import {
     useCalendars,
     useUser,
     useWelcomeFlags,
-} from 'react-components';
+} from '@proton/components';
 
 import CalendarOnboardingContainer from '../setup/CalendarOnboardingContainer';
 import CalendarSetupContainer from '../setup/CalendarSetupContainer';

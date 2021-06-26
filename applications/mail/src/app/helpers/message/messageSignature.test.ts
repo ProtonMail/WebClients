@@ -1,6 +1,6 @@
-import { PM_SIGNATURE } from 'proton-shared/lib/constants';
-import { MailSettings } from 'proton-shared/lib/interfaces';
-import { message } from 'proton-shared/lib/sanitize';
+import { PM_SIGNATURE } from '@proton/shared/lib/constants';
+import { MailSettings } from '@proton/shared/lib/interfaces';
+import { message } from '@proton/shared/lib/sanitize';
 
 import {
     insertSignature,

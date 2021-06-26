@@ -1,4 +1,4 @@
-import { LABEL_TYPE } from 'proton-shared/lib/constants';
+import { LABEL_TYPE } from '@proton/shared/lib/constants';
 
 export enum DestinationFolder {
     INBOX = 'Inbox',

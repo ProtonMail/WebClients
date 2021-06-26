@@ -1,6 +1,6 @@
 import React from 'react';
-import { StandardPrivateApp } from 'react-components';
-import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
+import { StandardPrivateApp } from '@proton/components';
+import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import {
     UserModel,
     MailSettingsModel,
@@ -19,7 +19,7 @@ import {
     CalendarUserSettingsModel,
     ContactsModel,
     ContactEmailsModel,
-} from 'proton-shared/lib/models';
+} from '@proton/shared/lib/models';
 
 const EVENT_MODELS = [
     UserModel,

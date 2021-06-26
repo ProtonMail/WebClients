@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
-import { BRAND_NAME } from 'proton-shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
-import { Address, Api } from 'proton-shared/lib/interfaces';
+import { Address, Api } from '@proton/shared/lib/interfaces';
 
 import Header from '../public/Header';
 import BackButton from '../public/BackButton';

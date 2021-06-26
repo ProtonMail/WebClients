@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { c } from 'ttag';
 
-import { getTimeZoneOptions } from 'proton-shared/lib/date/timezone';
+import { getTimeZoneOptions } from '@proton/shared/lib/date/timezone';
 
 import { Select } from '../../../../components';
 import SettingsLayout from '../../../account/SettingsLayout';

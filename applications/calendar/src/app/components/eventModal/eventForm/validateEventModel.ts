@@ -1,8 +1,8 @@
-import { END_TYPE, FREQUENCY, MAX_NOTIFICATIONS } from 'proton-shared/lib/calendar/constants';
+import { END_TYPE, FREQUENCY, MAX_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
 import { c } from 'ttag';
 import { isBefore } from 'date-fns';
 
-import { EventModel, EventModelErrors } from 'proton-shared/lib/interfaces/calendar';
+import { EventModel, EventModelErrors } from '@proton/shared/lib/interfaces/calendar';
 import { getTimeInUtc } from './time';
 
 // returns array of ids exceeding MAX_NOTIFICATIONS

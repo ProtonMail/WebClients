@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { c } from 'ttag';
 import { getUnixTime } from 'date-fns';
-import { textToClipboard } from 'proton-shared/lib/helpers/browser';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import {
     Alert,
     Button,
@@ -17,7 +17,7 @@ import {
     useNotifications,
     Details,
     Summary,
-} from 'react-components';
+} from '@proton/components';
 
 import ExpirationTimeDatePicker from './ExpirationTimeDatePicker';
 import useConfirm from '../../hooks/util/useConfirm';

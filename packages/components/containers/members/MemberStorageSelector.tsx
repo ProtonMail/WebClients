@@ -1,7 +1,7 @@
 import React from 'react';
-import { range } from 'proton-shared/lib/helpers/array';
-import { GIGA } from 'proton-shared/lib/constants';
-import humanSize from 'proton-shared/lib/helpers/humanSize';
+import { range } from '@proton/shared/lib/helpers/array';
+import { GIGA } from '@proton/shared/lib/constants';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { Option, SelectTwo } from '../../components';
 
 export const getStorageRange = (

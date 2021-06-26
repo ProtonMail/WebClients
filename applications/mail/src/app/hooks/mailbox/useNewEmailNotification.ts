@@ -1,11 +1,11 @@
-import { isImported } from 'proton-shared/lib/mail/messages';
+import { isImported } from '@proton/shared/lib/mail/messages';
 import { useHistory } from 'react-router-dom';
-import { useFolders, useMailSettings, useSubscribeEventManager } from 'react-components';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import { create } from 'proton-shared/lib/helpers/desktopNotification';
+import { useFolders, useMailSettings, useSubscribeEventManager } from '@proton/components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { create } from '@proton/shared/lib/helpers/desktopNotification';
 import { c } from 'ttag';
 
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { Event } from '../../models/event';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { setParamsInLocation } from '../../helpers/mailboxUrl';

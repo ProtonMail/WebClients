@@ -1,5 +1,5 @@
 import React from 'react';
-import { PrimaryButton, ConfirmModal, useModals } from 'react-components';
+import { PrimaryButton, ConfirmModal, useModals } from '@proton/components';
 
 export default { component: ConfirmModal, title: 'Proton UI / Modal' };
 

@@ -1,11 +1,11 @@
-import { MAX_LENGTHS } from 'proton-shared/lib/calendar/constants';
-import { truncateMore } from 'proton-shared/lib/helpers/string';
+import { MAX_LENGTHS } from '@proton/shared/lib/calendar/constants';
+import { truncateMore } from '@proton/shared/lib/helpers/string';
 import React, { useState } from 'react';
 import { c } from 'ttag';
 
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { isURL } from 'proton-shared/lib/helpers/validators';
+import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { isURL } from '@proton/shared/lib/helpers/validators';
 import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel } from '../calendarModal/calendarModalState';
 import { FormModal, InputFieldTwo, Loader } from '../../../components';
 import { useLoading } from '../../../hooks';

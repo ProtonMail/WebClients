@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { useHistory, useLocation } from 'react-router';
-import { updateAddress } from 'proton-shared/lib/api/addresses';
-import { updateWelcomeFlags, updateThemeType, updateFlags } from 'proton-shared/lib/api/settings';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { range } from 'proton-shared/lib/helpers/array';
-import { PROTON_THEMES, ThemeTypes } from 'proton-shared/lib/themes/themes';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { hasVisionary } from 'proton-shared/lib/helpers/subscription';
+import { updateAddress } from '@proton/shared/lib/api/addresses';
+import { updateWelcomeFlags, updateThemeType, updateFlags } from '@proton/shared/lib/api/settings';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { range } from '@proton/shared/lib/helpers/array';
+import { PROTON_THEMES, ThemeTypes } from '@proton/shared/lib/themes/themes';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
 
 import { Icon, StepDots, StepDot, FormModal, Button, useSettingsLink } from '../../components';
 import {

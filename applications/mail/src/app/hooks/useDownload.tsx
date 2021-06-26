@@ -1,8 +1,8 @@
-import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
-import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
-import { getAttachments } from 'proton-shared/lib/mail/messages';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { getAttachments } from '@proton/shared/lib/mail/messages';
 import React, { useCallback } from 'react';
-import { Alert, ConfirmModal, useApi, useModals } from 'react-components';
+import { Alert, ConfirmModal, useApi, useModals } from '@proton/components';
 import { c, msgid } from 'ttag';
 import { useAttachmentCache } from '../containers/AttachmentProvider';
 import { useMessageCache } from '../containers/MessageProvider';

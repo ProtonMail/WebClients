@@ -8,9 +8,9 @@ import {
     DragMoveContainer,
     FileIcon,
     TableCell,
-} from 'react-components';
-import { isEquivalent, pick } from 'proton-shared/lib/helpers/object';
-import { shallowEqual } from 'proton-shared/lib/helpers/array';
+} from '@proton/components';
+import { isEquivalent, pick } from '@proton/shared/lib/helpers/object';
+import { shallowEqual } from '@proton/shared/lib/helpers/array';
 import { c } from 'ttag';
 import { ItemProps } from '../interfaces';
 import { LinkType } from '../../../interfaces/link';

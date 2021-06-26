@@ -14,11 +14,10 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 const SriStripPlugin = require('./sri-strip-plugin');
-const { getSource } = require('./helpers/source');
 const transformOpenpgpFiles = require('./helpers/openpgp');
 const { OPENPGP_FILES } = require('./constants');
 
-const { logo, ...logoConfig } = require(getSource('src/assets/logoConfig.js'));
+const { logo, ...logoConfig } = require(path.resolve(('./src/assets/logoConfig.js')));
 
 const HTML_MINIFY = {
     removeAttributeQuotes: true,
@@ -108,13 +107,13 @@ module.exports = ({ isProduction, publicPath, appMode, featureFlags, writeSRI })
         }),
 
         new HtmlWebpackPlugin({
-            template: getSource('src/app.ejs'),
+            template: path.resolve('./src/app.ejs'),
             inject: 'body',
             minify: isProduction && HTML_MINIFY
         }),
 
         new FaviconsWebpackPlugin({
-            logo: getSource(logo),
+            logo: path.resolve(logo),
             ...logoConfig
         }),
 

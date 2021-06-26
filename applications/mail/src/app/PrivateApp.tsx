@@ -1,7 +1,7 @@
 import React from 'react';
-import { StandardPrivateApp } from 'react-components';
-import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
-import { Model } from 'proton-shared/lib/interfaces/Model';
+import { StandardPrivateApp } from '@proton/components';
+import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import { Model } from '@proton/shared/lib/interfaces/Model';
 import {
     UserModel,
     MailSettingsModel,
@@ -20,7 +20,7 @@ import {
     PaymentMethodsModel,
     ImportersModel,
     ImportHistoriesModel,
-} from 'proton-shared/lib/models';
+} from '@proton/shared/lib/models';
 
 interface Props {
     onLogout: () => void;

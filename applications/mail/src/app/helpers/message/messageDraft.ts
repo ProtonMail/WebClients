@@ -1,11 +1,11 @@
-import { MIME_TYPES } from 'proton-shared/lib/constants';
-import { unique } from 'proton-shared/lib/helpers/array';
-import { setBit } from 'proton-shared/lib/helpers/bitset';
-import { canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
-import { Address, MailSettings } from 'proton-shared/lib/interfaces';
-import { Recipient } from 'proton-shared/lib/interfaces/Address';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { unique } from '@proton/shared/lib/helpers/array';
+import { setBit } from '@proton/shared/lib/helpers/bitset';
+import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { Address, MailSettings } from '@proton/shared/lib/interfaces';
+import { Recipient } from '@proton/shared/lib/interfaces/Address';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import {
     DRAFT_ID_PREFIX,
     formatSubject,
@@ -16,8 +16,8 @@ import {
     isSentAndReceived,
     ORIGINAL_MESSAGE,
     RE_PREFIX,
-} from 'proton-shared/lib/mail/messages';
-import { generateUID } from 'react-components';
+} from '@proton/shared/lib/mail/messages';
+import { generateUID } from '@proton/components';
 import { c } from 'ttag';
 import { MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
 import { MESSAGE_ACTIONS } from '../../constants';

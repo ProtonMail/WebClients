@@ -1,7 +1,7 @@
 import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
 
-import { ACCESS_LEVEL } from 'proton-shared/lib/interfaces/calendar';
+import { ACCESS_LEVEL } from '@proton/shared/lib/interfaces/calendar';
 
 import { FormModal, Input } from '../../../components';
 

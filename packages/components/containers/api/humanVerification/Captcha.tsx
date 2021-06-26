@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { getRelativeApiHostname } from 'proton-shared/lib/helpers/url';
+import { getRelativeApiHostname } from '@proton/shared/lib/helpers/url';
 import { useConfig } from '../../../hooks';
 
 const getIframeUrl = (apiUrl: string, token: string) => {

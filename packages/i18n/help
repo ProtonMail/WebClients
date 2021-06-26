@@ -14,5 +14,5 @@ Available commands:
   - [blue]extract[/blue] [yellow]<type>[/yellow]
       Extract all translations from the projet
       - type: default (app) extract translations from the app and reactComponents + shared
-      - type: reactComponents extract only translations from react-components
-      - type: shared extract only translations from proton-shared
+      - type: reactComponents extract only translations from @proton/components
+      - type: shared extract only translations from @proton/shared

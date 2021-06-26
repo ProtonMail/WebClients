@@ -13,7 +13,7 @@ function main({
     hookPreTasks,
     customConfigSetup,
     hookPostTaskBuild,
-    hookPostTasks
+    hookPostTasks,
 }) {
     const configTasks = customConfigSetup.length
         ? customConfigSetup
@@ -21,9 +21,9 @@ function main({
               {
                   title: 'Setup app config',
                   task() {
-                      return bash('npx proton-pack', process.argv.slice(2));
-                  }
-              }
+                      return bash('yarn run pack', process.argv.slice(2));
+                  },
+              },
           ];
 
     return [
@@ -33,12 +33,12 @@ function main({
             async task() {
                 await del(['dist', 'distCurrent', 'distback'], { dryRun: false });
                 await bash('mkdir dist');
-            }
+            },
         },
         {
             title: 'Lint sources',
             enabled: () => argv.lint !== false && !isRemoteBuild,
-            task: () => execa('npm', ['run', 'lint'])
+            task: () => execa('yarn', ['run', 'lint']),
         },
         ...configTasks,
         {
@@ -49,7 +49,7 @@ function main({
                 ctx.originBranch = branch;
                 ctx.tag = tag;
                 debug(ctx, 'git env bundle');
-            }
+            },
         },
         {
             title: 'Copy some files',
@@ -57,38 +57,38 @@ function main({
                 const externalFiles = getExternalFiles();
                 const rule = externalFiles.length > 1 ? `{${externalFiles.join(',')}}` : externalFiles.join(',');
                 return bash(`cp src/${rule} dist/`);
-            }
+            },
         },
         {
             title: 'Build the application',
             async task(ctx = {}) {
                 const args = process.argv.slice(2);
                 if (buildMode === 'sso') {
-                    const output = await bash('npm', ['run', 'build:sso', '--', ...args]);
+                    const output = await bash('yarn', ['run', 'build:sso', '--', ...args]);
                     ctx.outputBuild = output;
                     return true;
                 }
                 if (buildMode === 'standalone') {
-                    const output = await bash('npm', ['run', 'build:standalone', '--', ...args]);
+                    const output = await bash('yarn', ['run', 'build:standalone', '--', ...args]);
                     ctx.outputBuild = output;
                     return true;
                 }
                 if (buildMode === 'standalone-with-prefix-path') {
-                    const output = await bash('npm', [
+                    const output = await bash('yarn', [
                         'run',
                         'build:standalone',
                         '--',
                         '$npm_package_config_publicPathFlag',
-                        ...args
+                        ...args,
                     ]);
                     ctx.outputBuild = output;
                     return true;
                 }
 
-                const output = await bash('npm', ['run', 'build', '--', ...args]);
+                const output = await bash('yarn', ['run', 'build', '--', ...args]);
                 ctx.outputBuild = output;
                 return true;
-            }
+            },
         },
         {
             title: 'Check the build output content',
@@ -96,7 +96,7 @@ function main({
             async task(ctx = {}) {
                 await script('validateBuild.sh');
                 delete ctx.outputBuild; // clean as we won't need it anymore
-            }
+            },
         },
         ...hookPostTaskBuild,
         {
@@ -112,13 +112,13 @@ function main({
                     `--branch ${originBranch}`,
                     `--output ${fileName}`,
                     `--build-mode ${buildMode}`,
-                    '--debug'
+                    '--debug',
                 ];
 
                 return script('createVersionJSON.sh', args);
-            }
+            },
         },
-        ...hookPostTasks
+        ...hookPostTasks,
     ];
 }
 

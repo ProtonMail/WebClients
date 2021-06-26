@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { SHOW_IMAGES } from 'proton-shared/lib/constants';
-import { isURL } from 'proton-shared/lib/helpers/validators';
+import { SHOW_IMAGES } from '@proton/shared/lib/constants';
+import { isURL } from '@proton/shared/lib/helpers/validators';
 import Button from '../button/Button';
 import { useMailSettings } from '../../hooks';
 

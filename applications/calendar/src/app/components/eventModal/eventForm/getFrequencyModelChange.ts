@@ -1,10 +1,10 @@
-import { MONTHLY_TYPE, WEEKLY_TYPE } from 'proton-shared/lib/calendar/constants';
-import { getNegativeSetpos, getPositiveSetpos } from 'proton-shared/lib/calendar/helper';
-import { replace } from 'proton-shared/lib/helpers/array';
-import { fromLocalDate, toUTCDate } from 'proton-shared/lib/date/timezone';
+import { MONTHLY_TYPE, WEEKLY_TYPE } from '@proton/shared/lib/calendar/constants';
+import { getNegativeSetpos, getPositiveSetpos } from '@proton/shared/lib/calendar/helper';
+import { replace } from '@proton/shared/lib/helpers/array';
+import { fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { isBefore } from 'date-fns';
 
-import { DateTimeModel, FrequencyModel } from 'proton-shared/lib/interfaces/calendar';
+import { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
 
 const getFrequencyModelChange = (
     oldStart: DateTimeModel,

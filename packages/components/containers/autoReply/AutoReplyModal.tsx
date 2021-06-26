@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import { c } from 'ttag';
 
-import { AutoResponder } from 'proton-shared/lib/interfaces';
-import { updateAutoresponder } from 'proton-shared/lib/api/mailSettings';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { AutoReplyDuration } from 'proton-shared/lib/constants';
+import { AutoResponder } from '@proton/shared/lib/interfaces';
+import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { AutoReplyDuration } from '@proton/shared/lib/constants';
 
 import { useEventManager, useNotifications, useApi, useLoading } from '../../hooks';
 import { FormModal, SimpleSquireEditor } from '../../components';

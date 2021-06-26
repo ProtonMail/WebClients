@@ -1,6 +1,6 @@
-import { getLatestID } from 'proton-shared/lib/api/events';
-import { Cache } from 'proton-shared/lib/helpers/cache';
-import { Api } from 'proton-shared/lib/interfaces';
+import { getLatestID } from '@proton/shared/lib/api/events';
+import { Cache } from '@proton/shared/lib/helpers/cache';
+import { Api } from '@proton/shared/lib/interfaces';
 
 export const getTmpEventID = (cache: Cache<string, any>) => {
     const tmpEventID = cache.get('tmpEventID');

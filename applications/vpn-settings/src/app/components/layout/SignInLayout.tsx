@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 
-import { Title, Href, VpnLogo, ButtonLike, useAppTitle, FooterDetails, ProminentContainer } from 'react-components';
+import { Title, Href, VpnLogo, ButtonLike, useAppTitle, FooterDetails, ProminentContainer } from '@proton/components';
 import PublicHeader from './PublicHeader';
 import VPNSupportDropdown from '../VPNSupportDropdown';
 

@@ -9,11 +9,11 @@ import {
     CollapsingBreadcrumbs,
     ModalsChildren,
     Icon,
-} from 'react-components';
+} from '@proton/components';
 import { c } from 'ttag';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { getAppName } from 'proton-shared/lib/apps/helper';
-import { APPS } from 'proton-shared/lib/constants';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
 import DriveSidebar from '../components/layout/DriveSidebar/DriveSidebar';
 import DriveHeader from '../components/layout/DriveHeader';
 import ListView from '../components/FileBrowser/ListView/ListView';

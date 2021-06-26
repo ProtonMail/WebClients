@@ -6,10 +6,10 @@ import {
     SettingsPropsShared,
     GiftCodeSection,
     CreditsSection,
-} from 'react-components';
+} from '@proton/components';
 import { c } from 'ttag';
-import { PERMISSIONS } from 'proton-shared/lib/constants';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { PERMISSIONS } from '@proton/shared/lib/constants';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 
@@ -53,7 +53,7 @@ const AccountPaymentSettings = ({ location, setActiveSection }: SettingsPropsSha
             location={location}
             config={getPaymentPage()}
             setActiveSection={setActiveSection}
-    >
+        >
             <BillingSection />
             <PaymentMethodsSection />
             <CreditsSection />

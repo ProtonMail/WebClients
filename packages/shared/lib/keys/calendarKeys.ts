@@ -10,7 +10,7 @@ import {
     decryptPrivateKey,
     OpenPGPKey,
 } from 'pmcrypto';
-import getRandomValues from 'get-random-values';
+import getRandomValues from '@proton/get-random-values';
 import { c } from 'ttag';
 
 import { ENCRYPTION_TYPES, ENCRYPTION_CONFIGS } from '../constants';

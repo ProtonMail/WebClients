@@ -1,9 +1,9 @@
 import React, { useState, useMemo, FormEvent, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { createCalendarImport, startCalendarImportJob } from 'proton-shared/lib/api/calendarImport';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { Address } from 'proton-shared/lib/interfaces';
+import { createCalendarImport, startCalendarImportJob } from '@proton/shared/lib/api/calendarImport';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { Address } from '@proton/shared/lib/interfaces';
 
 import { useLoading, useModals, useApi, useEventManager, useNotifications } from '../../../../hooks';
 import useOAuthPopup, { getOAuthAuthorizationUrl } from '../../../../hooks/useOAuthPopup';

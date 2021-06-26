@@ -1,6 +1,6 @@
 import { DecryptResultPmcrypto } from 'pmcrypto';
-import { MIME_TYPES, PGP_SIGN } from 'proton-shared/lib/constants';
-import { MailSettings } from 'proton-shared/lib/interfaces';
+import { MIME_TYPES, PGP_SIGN } from '@proton/shared/lib/constants';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import loudRejection from 'loud-rejection';
 import { arrayToBase64 } from '../../../helpers/base64';
 import { addApiContact } from '../../../helpers/test/contact';

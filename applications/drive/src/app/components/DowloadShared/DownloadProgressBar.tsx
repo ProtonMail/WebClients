@@ -1,5 +1,5 @@
 import React from 'react';
-import { Progress } from 'react-components';
+import { Progress } from '@proton/components';
 
 import { TransfersStats } from '../TransferManager/interfaces';
 import { Download } from '../../interfaces/transfer';

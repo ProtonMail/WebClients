@@ -1,4 +1,4 @@
-import { DecryptedKey } from 'proton-shared/lib/interfaces';
+import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { KEY as USER_KEYS_CACHE_KEY } from '../../hooks/useUserKeys';
 import { CACHE_KEY as ADDRESS_KEYS_CACHE } from '../../hooks/useGetAddressKeys';
 

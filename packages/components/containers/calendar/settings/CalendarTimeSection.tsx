@@ -1,5 +1,5 @@
 import React from 'react';
-import { CalendarUserSettings } from 'proton-shared/lib/interfaces/calendar';
+import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 
 import { SettingsSection } from '../../account';
 

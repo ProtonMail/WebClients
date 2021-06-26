@@ -1,4 +1,4 @@
-import { Cache } from 'proton-shared/lib/helpers/cache';
+import { Cache } from '@proton/shared/lib/helpers/cache';
 
 type CacheValue<V, D> =
     | {

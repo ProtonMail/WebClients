@@ -6,7 +6,7 @@ import {
     encryptMessage as realEncryptMessage,
 } from 'pmcrypto';
 import { enums } from 'openpgp';
-import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { base64ToArray, arrayToBase64 } from '../base64';
 import { generateSessionKey, encryptSessionKey, GeneratedKey } from './crypto';
 import { MessageEmbeddedImage, MessageImage } from '../../models/message';

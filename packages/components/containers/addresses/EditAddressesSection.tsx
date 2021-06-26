@@ -1,9 +1,9 @@
 import React, { ChangeEvent, useState, useRef, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { isMac } from 'proton-shared/lib/helpers/browser';
-import { updateAddress } from 'proton-shared/lib/api/addresses';
-import { Address } from 'proton-shared/lib/interfaces';
+import { isMac } from '@proton/shared/lib/helpers/browser';
+import { updateAddress } from '@proton/shared/lib/api/addresses';
+import { Address } from '@proton/shared/lib/interfaces';
 
 import { Input, SimpleSquireEditor, Button } from '../../components';
 import {

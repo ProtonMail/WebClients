@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
+import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { c } from 'ttag';
 
-import { Icon } from 'react-components';
+import { Icon } from '@proton/components';
 import {
     INSECURE_DOMAINS,
     YANDEX_DOMAINS,

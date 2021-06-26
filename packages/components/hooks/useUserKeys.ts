@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
-import { DecryptedKey } from 'proton-shared/lib/interfaces';
-import { Unwrap } from 'proton-shared/lib/interfaces/utils';
+import { DecryptedKey } from '@proton/shared/lib/interfaces';
+import { Unwrap } from '@proton/shared/lib/interfaces/utils';
 
 import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
 import useCache from './useCache';

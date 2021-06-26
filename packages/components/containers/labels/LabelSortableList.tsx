@@ -2,7 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 import { SortableContainerProps } from 'react-sortable-hoc';
 
-import { Label } from 'proton-shared/lib/interfaces/Label';
+import { Label } from '@proton/shared/lib/interfaces/Label';
 
 import { OrderableTable, OrderableTableBody, OrderableTableHeader, Icon } from '../../components';
 import LabelSortableItem from './LabelSortableItem';

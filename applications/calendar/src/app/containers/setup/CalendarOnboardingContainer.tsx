@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useModals } from 'react-components';
+import { useModals } from '@proton/components';
 
 import CalendarContainerViewBlurred from '../calendar/CalendarContainerViewBlurred';
 import CalendarOnboardingModal from '../../components/onboarding/CalendarOnboardingModal';

@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { updateComposerMode, updateViewLayout } from 'proton-shared/lib/api/mailSettings';
-import { updateDensity } from 'proton-shared/lib/api/settings';
-import { DENSITY, VIEW_LAYOUT, COMPOSER_MODE } from 'proton-shared/lib/constants';
+import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';
+import { updateDensity } from '@proton/shared/lib/api/settings';
+import { DENSITY, VIEW_LAYOUT, COMPOSER_MODE } from '@proton/shared/lib/constants';
 
 import { Info, Loader } from '../../components';
 import { useNotifications, useUserSettings, useMailSettings, useEventManager, useLoading, useApi } from '../../hooks';

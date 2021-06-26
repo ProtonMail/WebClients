@@ -7,9 +7,9 @@ import {
     SidebarListItemContent,
     SidebarListItemContentIcon,
     SidebarListItemLink,
-} from 'react-components';
+} from '@proton/components';
 import { c } from 'ttag';
-import { APPS, APPS_CONFIGURATION } from 'proton-shared/lib/constants';
+import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 
 const LocalListItem = ({ to, icon, children }: { to: string; icon: string; children: React.ReactNode }) => (
     <SidebarListItem>

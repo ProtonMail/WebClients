@@ -5,11 +5,11 @@ import {
     ENCRYPTION_CONFIGS,
     ENCRYPTION_TYPES,
     MEMBER_PRIVATE,
-} from 'proton-shared/lib/constants';
-import { missingKeysMemberProcess, missingKeysSelfProcess } from 'proton-shared/lib/keys';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { Address, Member, CachedOrganizationKey } from 'proton-shared/lib/interfaces';
-import { queryAddresses } from 'proton-shared/lib/api/members';
+} from '@proton/shared/lib/constants';
+import { missingKeysMemberProcess, missingKeysSelfProcess } from '@proton/shared/lib/keys';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { Address, Member, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
+import { queryAddresses } from '@proton/shared/lib/api/members';
 
 import { FormModal, Alert, Table, TableHeader, TableBody, TableRow } from '../../../components';
 import {

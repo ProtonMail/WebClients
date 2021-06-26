@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { VIEW_LAYOUT } from 'proton-shared/lib/constants';
-import { updateViewLayout } from 'proton-shared/lib/api/mailSettings';
+import { VIEW_LAYOUT } from '@proton/shared/lib/constants';
+import { updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 
 import { useApi, useLoading, useEventManager, useNotifications, useMailSettings } from '../../hooks';
 import { FormModal } from '../../components';

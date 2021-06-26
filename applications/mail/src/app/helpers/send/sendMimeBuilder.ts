@@ -1,8 +1,8 @@
 import mimemessage from 'mimemessage';
 import { arrayToBinaryString } from 'pmcrypto';
-import { MIME_TYPES } from 'proton-shared/lib/constants';
-import { Api } from 'proton-shared/lib/interfaces';
-import { getAttachments, isPlainText as testIsPlainText } from 'proton-shared/lib/mail/messages';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { Api } from '@proton/shared/lib/interfaces';
+import { getAttachments, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import { MessageEmbeddedImage, MessageExtended, MessageImages, MessageKeys } from '../../models/message';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { getPlainText } from '../message/messageContent';

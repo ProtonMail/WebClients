@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
-import { MembersModel } from 'proton-shared/lib/models/membersModel';
-import { Member } from 'proton-shared/lib/interfaces';
-import { UserModel } from 'proton-shared/lib/models/userModel';
+import { MembersModel } from '@proton/shared/lib/models/membersModel';
+import { Member } from '@proton/shared/lib/interfaces';
+import { UserModel } from '@proton/shared/lib/models/userModel';
 
 import useCachedModelResult from './useCachedModelResult';
 import useApi from './useApi';

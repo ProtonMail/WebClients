@@ -1,10 +1,10 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import React, { useEffect, createContext, ReactNode, useContext, useCallback } from 'react';
-import { useInstance, useEventManager } from 'react-components';
-import createCache, { Cache } from 'proton-shared/lib/helpers/cache';
-import createLRU from 'proton-shared/lib/helpers/lru';
-import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
-import { identity } from 'proton-shared/lib/helpers/function';
+import { useInstance, useEventManager } from '@proton/components';
+import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
+import createLRU from '@proton/shared/lib/helpers/lru';
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
+import { identity } from '@proton/shared/lib/helpers/function';
 import { Event, LabelIDsChanges } from '../models/event';
 import { parseLabelIDsInEvent } from '../helpers/elements';
 import { useExpirationCheck } from '../hooks/useExpiration';
@@ -178,9 +178,7 @@ interface Props {
  */
 const ConversationProvider = ({ children, cache: testCache }: Props) => {
     const realCache: ConversationCache = useInstance(() => {
-        return createCache(
-            createLRU<string, ConversationCacheEntry>({ max: 50 })
-        );
+        return createCache(createLRU<string, ConversationCacheEntry>({ max: 50 }));
     });
 
     const cache = testCache || realCache;

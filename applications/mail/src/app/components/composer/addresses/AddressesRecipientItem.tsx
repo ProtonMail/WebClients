@@ -12,12 +12,12 @@ import {
     useNotifications,
     ContactModal,
     useDragOver,
-} from 'react-components';
+} from '@proton/components';
 import { c } from 'ttag';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { Recipient } from 'proton-shared/lib/interfaces/Address';
-import { textToClipboard } from 'proton-shared/lib/helpers/browser';
-import { inputToRecipient, recipientToInput } from 'proton-shared/lib/mail/recipient';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { Recipient } from '@proton/shared/lib/interfaces/Address';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+import { inputToRecipient, recipientToInput } from '@proton/shared/lib/mail/recipient';
 
 import { getContactEmail } from '../../../helpers/addresses';
 import { STATUS_ICONS_FILLS } from '../../../models/crypto';

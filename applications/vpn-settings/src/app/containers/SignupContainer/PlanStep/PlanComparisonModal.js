@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { DialogModal, HeaderModal, InnerModal, usePlans } from 'react-components';
+import { DialogModal, HeaderModal, InnerModal, usePlans } from '@proton/components';
 import { c } from 'ttag';
-import { CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
+import { CYCLE, CURRENCIES } from '@proton/shared/lib/constants';
 
 import PlansTable from '../../../components/sections/plans/PlansTable';
 

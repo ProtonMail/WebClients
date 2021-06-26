@@ -1,9 +1,9 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { move } from 'proton-shared/lib/helpers/array';
-import { orderAddress } from 'proton-shared/lib/api/addresses';
-import { Address, CachedOrganizationKey, Member, UserModel } from 'proton-shared/lib/interfaces';
-import { ADDRESS_TYPE } from 'proton-shared/lib/constants';
+import { move } from '@proton/shared/lib/helpers/array';
+import { orderAddress } from '@proton/shared/lib/api/addresses';
+import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
+import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 
 import { Alert, OrderableTable, OrderableTableHeader, OrderableTableBody, OrderableTableRow } from '../../components';
 import { useApi, useEventManager, useAddresses, useNotifications } from '../../hooks';

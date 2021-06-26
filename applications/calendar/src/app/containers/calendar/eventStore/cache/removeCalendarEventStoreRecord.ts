@@ -1,4 +1,4 @@
-import { getIsRecurring } from 'proton-shared/lib/calendar/vcalHelper';
+import { getIsRecurring } from '@proton/shared/lib/calendar/vcalHelper';
 
 import { CalendarEventsCache } from '../interface';
 import { getRecurrenceIdDate, getUidValue } from '../../event/getEventHelper';

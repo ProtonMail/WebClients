@@ -1,7 +1,11 @@
-import { ICAL_ATTENDEE_STATUS, DELETE_CONFIRMATION_TYPES, RECURRING_TYPES } from 'proton-shared/lib/calendar/constants';
-import { getHasNonCancelledSingleEdits, getMustResetPartstat } from 'proton-shared/lib/calendar/integration/invite';
-import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import {
+    ICAL_ATTENDEE_STATUS,
+    DELETE_CONFIRMATION_TYPES,
+    RECURRING_TYPES,
+} from '@proton/shared/lib/calendar/constants';
+import { getHasNonCancelledSingleEdits, getMustResetPartstat } from '@proton/shared/lib/calendar/integration/invite';
+import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import { getHasFutureOption, getRecurrenceEvents } from './recurringHelper';
 import { InviteActions } from '../../../interfaces/Invite';

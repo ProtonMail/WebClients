@@ -1,9 +1,9 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import React, { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { Alert, Href, Label, Input, generateUID, useNotifications, PasswordInput } from 'react-components';
-import { clearBit, setBit } from 'proton-shared/lib/helpers/bitset';
+import { Alert, Href, Label, Input, generateUID, useNotifications, PasswordInput } from '@proton/components';
+import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 
 import ComposerInnerModal from './ComposerInnerModal';
 import { MessageChange } from './Composer';

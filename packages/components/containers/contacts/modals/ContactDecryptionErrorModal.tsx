@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { Contact } from 'proton-shared/lib/interfaces/contacts';
-import { getKeyUsedForContact } from 'proton-shared/lib/contacts/keyVerifications';
-import { Key } from 'proton-shared/lib/interfaces';
-import { APPS } from 'proton-shared/lib/constants';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { Contact } from '@proton/shared/lib/interfaces/contacts';
+import { getKeyUsedForContact } from '@proton/shared/lib/contacts/keyVerifications';
+import { Key } from '@proton/shared/lib/interfaces';
+import { APPS } from '@proton/shared/lib/constants';
 import { Alert, Copy, FormModal, LinkButton, useAppLink } from '../../../components';
 import { useModals, useNotifications, useUser } from '../../../hooks';
 import ContactClearDataConfirmModal from './ContactClearDataConfirmModal';

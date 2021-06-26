@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { LABEL_TYPE } from 'proton-shared/lib/constants';
-import { Label as tsLabel } from 'proton-shared/lib/interfaces/Label';
-import { Folder } from 'proton-shared/lib/interfaces/Folder';
+import { LABEL_TYPE } from '@proton/shared/lib/constants';
+import { Label as tsLabel } from '@proton/shared/lib/interfaces/Label';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
 
 import { Alert, Input, Label, Row, Field, ColorPicker, Toggle, Info } from '../../components';
 

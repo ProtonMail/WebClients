@@ -1,5 +1,5 @@
-import { AuthResponse, AuthVersion } from 'proton-shared/lib/authentication/interface';
-import { Api, KeySalt as tsKeySalt, User as tsUser, Address as tsAddress } from 'proton-shared/lib/interfaces';
+import { AuthResponse, AuthVersion } from '@proton/shared/lib/authentication/interface';
+import { Api, KeySalt as tsKeySalt, User as tsUser, Address as tsAddress } from '@proton/shared/lib/interfaces';
 
 export enum AuthStep {
     LOGIN,

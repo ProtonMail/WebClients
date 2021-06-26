@@ -1,4 +1,4 @@
-import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { useRef, useMemo, DependencyList } from 'react';
 
 /**

@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
-import { INVOICE_STATE } from 'proton-shared/lib/constants';
-import { getPaymentMethodStatus } from 'proton-shared/lib/api/payments';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { INVOICE_STATE } from '@proton/shared/lib/constants';
+import { getPaymentMethodStatus } from '@proton/shared/lib/api/payments';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 import { DropdownActions } from '../../components';
 import { useApi, useLoading, useModals, useNotifications } from '../../hooks';

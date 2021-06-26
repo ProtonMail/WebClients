@@ -6,7 +6,7 @@
     },
     "rules": {
         "indent": "off",
-        "comma-dangle": ["error", "never"],
+        "comma-dangle": "off",
         "object-curly-newline": "off",
         "prefer-template": "off",
         "no-plusplus": "off",

@@ -1,4 +1,4 @@
-import { FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
+import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
 import { UnreadCounts } from '../components/sidebar/MailSidebarList';
 

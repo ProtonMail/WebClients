@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton, isPreviewAvailable } from 'react-components';
+import { Icon, ToolbarButton, isPreviewAvailable } from '@proton/components';
 
 import useToolbarActions from '../../../hooks/drive/useToolbarActions';
 import { FileBrowserItem } from '../interfaces';

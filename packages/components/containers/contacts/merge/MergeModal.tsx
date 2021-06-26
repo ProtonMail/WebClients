@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, ComponentProps } from 'react';
 import { c } from 'ttag';
-import { DecryptedKey } from 'proton-shared/lib/interfaces';
-import { ContactFormatted, ContactMergeModel } from 'proton-shared/lib/interfaces/contacts';
+import { DecryptedKey } from '@proton/shared/lib/interfaces';
+import { ContactFormatted, ContactMergeModel } from '@proton/shared/lib/interfaces/contacts';
 
 import { FormModal, Button, PrimaryButton } from '../../../components';
 import { useEventManager } from '../../../hooks';

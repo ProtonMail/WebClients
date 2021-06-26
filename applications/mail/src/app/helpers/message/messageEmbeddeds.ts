@@ -1,8 +1,8 @@
-import { unique } from 'proton-shared/lib/helpers/array';
-import { getEmailParts } from 'proton-shared/lib/helpers/email';
-import generateUID from 'proton-shared/lib/helpers/generateUID';
-import { Api } from 'proton-shared/lib/interfaces';
-import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
+import { unique } from '@proton/shared/lib/helpers/array';
+import { getEmailParts } from '@proton/shared/lib/helpers/email';
+import generateUID from '@proton/shared/lib/helpers/generateUID';
+import { Api } from '@proton/shared/lib/interfaces';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ENCRYPTED_STATUS } from '../../constants';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { MessageCache } from '../../containers/MessageProvider';

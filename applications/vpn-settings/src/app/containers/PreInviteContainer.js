@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Loader, useApi, useNotifications } from 'react-components';
-import { checkInvitation } from 'proton-shared/lib/api/invites';
-import { INVITE_TYPES } from 'proton-shared/lib/constants';
+import { Loader, useApi, useNotifications } from '@proton/components';
+import { checkInvitation } from '@proton/shared/lib/api/invites';
+import { INVITE_TYPES } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import SignInLayout from '../components/layout/SignInLayout';
 

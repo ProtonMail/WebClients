@@ -1,0 +1,35 @@
+{
+    "name": "root",
+    "private": true,
+    "license": "GPL-3.0",
+    "workspaces": [
+        "packages/*",
+        "applications/*",
+        "utilities/*"
+    ],
+    "scripts": {
+        "version": "yarn workspace scripts run version:applications"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "resolutions": {
+        "@types/jest": "^26.0.0",
+        "@types/react": "^16.0.0",
+        "@types/react-dom": "^16.0.0",
+        "safe-buffer": "^5.2.1"
+    },
+    "dependencies": {
+        "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
+        "@proton/stylelint-config-proton": "workspace:packages/stylelint-config-proton",
+        "typescript": "^4.1.3"
+    },
+    "devDependencies": {
+        "husky": "^4.3.6",
+        "lint-staged": "^10.5.3",
+        "prettier": "^2.2.1",
+        "sort-package-json": "^1.48.1"
+    }
+}

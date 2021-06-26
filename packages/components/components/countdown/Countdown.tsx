@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
-import { DAY, HOUR, MINUTE, SECOND } from 'proton-shared/lib/constants';
+import { DAY, HOUR, MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { isBefore, isAfter, differenceInMilliseconds } from 'date-fns';
 
 const EVERY_SECOND = SECOND;

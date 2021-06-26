@@ -10,9 +10,9 @@ import {
     useLoading,
     SubTitle,
     PayPalButton,
-} from 'react-components';
+} from '@proton/components';
 import { c } from 'ttag';
-import { PAYMENT_METHOD_TYPES, CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
+import { PAYMENT_METHOD_TYPES, CYCLE, CURRENCIES } from '@proton/shared/lib/constants';
 
 import LoginPanel from '../LoginPanel';
 

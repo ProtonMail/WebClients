@@ -1,5 +1,5 @@
-import { RIGHT_TO_LEFT } from 'proton-shared/lib/constants';
-import { getElement } from 'proton-shared/lib/helpers/dom';
+import { RIGHT_TO_LEFT } from '@proton/shared/lib/constants';
+import { getElement } from '@proton/shared/lib/helpers/dom';
 
 import {
     SquireType,
@@ -248,7 +248,7 @@ export const setTextDirectionWithoutFocus = (squire: SquireType, direction: RIGH
 export const pasteFileHandler = (event: ClipboardEvent, onAddImages: (files: File[]) => void) => {
     const { clipboardData } = event;
     // Edge needs items as files is undefined
-    const files = Array.from(clipboardData?.files || ((clipboardData?.items as any) as FileList) || []);
+    const files = Array.from(clipboardData?.files || (clipboardData?.items as any as FileList) || []);
     if (files.length && files.every((file) => EMBEDDABLE_TYPES.includes(file.type))) {
         onAddImages(files);
     }

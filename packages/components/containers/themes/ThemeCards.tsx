@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeTypes } from 'proton-shared/lib/themes/themes';
+import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
 import ThemeCard from './ThemeCard';
 import { classnames } from '../../helpers';

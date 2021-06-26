@@ -1,9 +1,9 @@
 import React from 'react';
-import { useLoading, useGetCalendarBootstrap, SelectTwo, Option, useGetAddresses } from 'react-components';
-import { Props as SelectProps } from 'react-components/components/selectTwo/SelectTwo';
-import { EventModel } from 'proton-shared/lib/interfaces/calendar';
-import { getDeviceNotifications } from 'proton-shared/lib/calendar/notificationModel';
-import { notificationsToModel } from 'proton-shared/lib/calendar/notificationsToModel';
+import { useLoading, useGetCalendarBootstrap, SelectTwo, Option, useGetAddresses } from '@proton/components';
+import { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
+import { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import { getDeviceNotifications } from '@proton/shared/lib/calendar/notificationModel';
+import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
 import CalendarIcon from '../../CalendarIcon';
 import { getInitialMemberModel } from '../eventForm/state';
 

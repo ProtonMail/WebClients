@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { c } from 'ttag';
-import { Icon, Tooltip, classnames, useMailSettings } from 'react-components';
-import { metaKey, shiftKey, isSafari as checkIsSafari } from 'proton-shared/lib/helpers/browser';
+import { Icon, Tooltip, classnames, useMailSettings } from '@proton/components';
+import { metaKey, shiftKey, isSafari as checkIsSafari } from '@proton/shared/lib/helpers/browser';
 
 interface ButtonProps {
     onClick: () => void;

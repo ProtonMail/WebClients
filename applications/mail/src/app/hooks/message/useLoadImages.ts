@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { useApi, useMailSettings } from 'react-components';
+import { useApi, useMailSettings } from '@proton/components';
 import { MessageExtended, MessageExtendedWithData } from '../../models/message';
 import { useAttachmentCache } from '../../containers/AttachmentProvider';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';

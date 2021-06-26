@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
-import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
-import { getRelativeApiHostname } from 'proton-shared/lib/helpers/url';
+import { randomIntFromInterval } from '@proton/shared/lib/helpers/function';
+import { getRelativeApiHostname } from '@proton/shared/lib/helpers/url';
 
 import { classnames } from '../../helpers';
 import { useConfig } from '../../hooks';

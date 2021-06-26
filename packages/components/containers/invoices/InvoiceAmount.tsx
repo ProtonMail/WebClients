@@ -1,5 +1,5 @@
 import React from 'react';
-import { INVOICE_STATE } from 'proton-shared/lib/constants';
+import { INVOICE_STATE } from '@proton/shared/lib/constants';
 import { Price } from '../../components';
 import { Invoice } from './interface';
 

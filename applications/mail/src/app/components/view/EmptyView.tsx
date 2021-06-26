@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import noResultSearchSvg from 'design-system/assets/img/placeholders/empty-search.svg';
-import noResultInboxSvg from 'design-system/assets/img/placeholders/empty-mailbox.svg';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import noResultSearchSvg from '@proton/styles/assets/img/placeholders/empty-search.svg';
+import noResultInboxSvg from '@proton/styles/assets/img/placeholders/empty-mailbox.svg';
 
 interface Props {
     labelID: string;

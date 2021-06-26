@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { useActiveBreakpoint, ModalsChildren, ErrorBoundary, StandardErrorPage } from 'react-components';
+import { useActiveBreakpoint, ModalsChildren, ErrorBoundary, StandardErrorPage } from '@proton/components';
 
 import MessageProvider from './containers/MessageProvider';
 import ConversationProvider from './containers/ConversationProvider';

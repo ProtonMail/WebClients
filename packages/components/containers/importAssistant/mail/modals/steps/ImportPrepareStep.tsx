@@ -2,9 +2,9 @@ import React, { useMemo, useEffect, useRef, useState } from 'react';
 import { format } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Address } from 'proton-shared/lib/interfaces';
-import { LABEL_TYPE } from 'proton-shared/lib/constants';
-import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
+import { Address } from '@proton/shared/lib/interfaces';
+import { LABEL_TYPE } from '@proton/shared/lib/constants';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 import { useFolders, useUser, useModals, useLabels } from '../../../../../hooks';
 import {

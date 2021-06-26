@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { Recipient } from 'proton-shared/lib/interfaces';
+import { Recipient } from '@proton/shared/lib/interfaces';
 
 import { Dropdown, DropdownButton, Icon, Tabs, usePopperAnchor } from '../../../components';
 import { useModals } from '../../../hooks';

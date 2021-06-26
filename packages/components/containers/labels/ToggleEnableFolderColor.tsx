@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { updateEnableFolderColor } from 'proton-shared/lib/api/mailSettings';
+import { updateEnableFolderColor } from '@proton/shared/lib/api/mailSettings';
 
 import { Toggle } from '../../components';
 import { useApi, useLoading, useEventManager, useNotifications, useMailSettings } from '../../hooks';

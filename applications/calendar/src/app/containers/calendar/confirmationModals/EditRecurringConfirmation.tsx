@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Alert, ConfirmModal, FormModal } from 'react-components';
+import { Alert, ConfirmModal, FormModal } from '@proton/components';
 import { c } from 'ttag';
-import { RECURRING_TYPES } from 'proton-shared/lib/calendar/constants';
+import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../../interfaces/Invite';
 import SelectRecurringType from './SelectRecurringType';
 

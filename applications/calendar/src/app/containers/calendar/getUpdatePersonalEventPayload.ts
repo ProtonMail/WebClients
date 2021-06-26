@@ -1,7 +1,7 @@
-import { createPersonalEvent } from 'proton-shared/lib/calendar/serialize';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
-import { getPrimaryKey } from 'proton-shared/lib/keys';
-import { useGetAddressKeys } from 'react-components';
+import { createPersonalEvent } from '@proton/shared/lib/calendar/serialize';
+import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import { getPrimaryKey } from '@proton/shared/lib/keys';
+import { useGetAddressKeys } from '@proton/components';
 
 interface UpdatePersonalEventPayloadArguments {
     eventComponent?: VcalVeventComponent;

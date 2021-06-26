@@ -1,11 +1,11 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { PLAN_NAMES, CYCLE, APPS, PLANS } from 'proton-shared/lib/constants';
-import { unique } from 'proton-shared/lib/helpers/array';
-import { getMonthlyBaseAmount, hasVisionary } from 'proton-shared/lib/helpers/subscription';
-import humanSize from 'proton-shared/lib/helpers/humanSize';
-import { getAppName } from 'proton-shared/lib/apps/helper';
-import { Cycle } from 'proton-shared/lib/interfaces';
+import { PLAN_NAMES, CYCLE, APPS, PLANS } from '@proton/shared/lib/constants';
+import { unique } from '@proton/shared/lib/helpers/array';
+import { getMonthlyBaseAmount, hasVisionary } from '@proton/shared/lib/helpers/subscription';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { Cycle } from '@proton/shared/lib/interfaces';
 
 import { Loader, Time } from '../../components';
 import { useUser, useSubscription, useOrganization, usePlans } from '../../hooks';

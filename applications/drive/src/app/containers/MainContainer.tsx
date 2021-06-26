@@ -6,9 +6,9 @@ import {
     useLoading,
     useWelcomeFlags,
     useEarlyAccess,
-} from 'react-components';
+} from '@proton/components';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 import DriveEventManagerProvider from '../components/DriveEventManager/DriveEventManagerProvider';
 import DriveCacheProvider from '../components/DriveCache/DriveCacheProvider';

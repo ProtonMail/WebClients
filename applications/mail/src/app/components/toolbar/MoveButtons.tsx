@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react';
 import { c } from 'ttag';
-import { Icon, useLoading, useMailSettings, ToolbarButton } from 'react-components';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import { Label } from 'proton-shared/lib/interfaces/Label';
-import { Folder } from 'proton-shared/lib/interfaces/Folder';
+import { Icon, useLoading, useMailSettings, ToolbarButton } from '@proton/components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { Label } from '@proton/shared/lib/interfaces/Label';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
 
 import { Breakpoints } from '../../models/utils';
 import { getFolderName, isCustomFolder, isCustomLabel } from '../../helpers/labels';

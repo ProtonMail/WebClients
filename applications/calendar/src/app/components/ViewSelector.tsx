@@ -1,8 +1,8 @@
 import React from 'react';
-import { classnames } from 'react-components';
+import { classnames } from '@proton/components';
 import { c } from 'ttag';
 
-import { VIEWS } from 'proton-shared/lib/calendar/constants';
+import { VIEWS } from '@proton/shared/lib/calendar/constants';
 
 const { DAY, WEEK, MONTH, CUSTOM } = VIEWS;
 

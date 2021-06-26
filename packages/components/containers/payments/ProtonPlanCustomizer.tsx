@@ -1,6 +1,6 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { Cycle, Currency, Plan, Organization, PlanIDs } from 'proton-shared/lib/interfaces';
+import { Cycle, Currency, Plan, Organization, PlanIDs } from '@proton/shared/lib/interfaces';
 import {
     PLANS,
     PLAN_SERVICES,
@@ -13,10 +13,10 @@ import {
     MAX_VPN_ADDON,
     GIGA,
     PLAN_NAMES,
-} from 'proton-shared/lib/constants';
-import { range } from 'proton-shared/lib/helpers/array';
-import { switchPlan, getSupportedAddons, setQuantity } from 'proton-shared/lib/helpers/planIDs';
-import { getAppName } from 'proton-shared/lib/apps/helper';
+} from '@proton/shared/lib/constants';
+import { range } from '@proton/shared/lib/helpers/array';
+import { switchPlan, getSupportedAddons, setQuantity } from '@proton/shared/lib/helpers/planIDs';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 
 import { InlineLinkButton, Icon, Info, Price } from '../../components';
 

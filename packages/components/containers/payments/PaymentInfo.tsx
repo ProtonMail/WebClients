@@ -1,5 +1,5 @@
 import React from 'react';
-import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
+import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 
 import { Alert } from '../../components';

@@ -1,14 +1,14 @@
 import React from 'react';
 import { c } from 'ttag';
-import { UserModel } from 'proton-shared/lib/interfaces';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { UserModel } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import {
     StartMailImportSection,
     MailImportListSection,
     MailImportExportSection,
     SettingsPropsShared,
     useUser,
-} from 'react-components';
+} from '@proton/components';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 

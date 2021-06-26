@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { useNotifications, FloatingButton, SidebarPrimaryButton, Icon } from 'react-components';
+import { useNotifications, FloatingButton, SidebarPrimaryButton, Icon } from '@proton/components';
 import useTrash from '../../../hooks/drive/useTrash';
 import useConfirm from '../../../hooks/util/useConfirm';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';

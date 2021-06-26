@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { APPS, SECOND } from 'proton-shared/lib/constants';
-import { isCyberMonday } from 'proton-shared/lib/helpers/blackfriday';
-import { getAppName } from 'proton-shared/lib/apps/helper';
+import { APPS, SECOND } from '@proton/shared/lib/constants';
+import { isCyberMonday } from '@proton/shared/lib/helpers/blackfriday';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 
 const EVERY_SECOND = SECOND;
 

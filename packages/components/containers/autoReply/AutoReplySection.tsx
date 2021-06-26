@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
 import { c } from 'ttag';
 
-import { isMac } from 'proton-shared/lib/helpers/browser';
-import { updateAutoresponder } from 'proton-shared/lib/api/mailSettings';
-import { AutoReplyDuration } from 'proton-shared/lib/constants';
+import { isMac } from '@proton/shared/lib/helpers/browser';
+import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
+import { AutoReplyDuration } from '@proton/shared/lib/constants';
 
 import {
     useMailSettings,

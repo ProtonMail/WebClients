@@ -1,0 +1,13 @@
+{
+    "name": "@proton/stylelint-config-proton",
+    "license": "ISC",
+    "author": "Proton Technologies AG",
+    "main": "index.js",
+    "files": [
+        "index.js"
+    ],
+    "dependencies": {
+        "stylelint": "^13.8.0",
+        "stylelint-config-prettier": "^8.0.2"
+    }
+}

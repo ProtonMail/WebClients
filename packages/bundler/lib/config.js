@@ -3,7 +3,7 @@ const { bash } = require('./helpers/cli');
 const extractArgument = require('./helpers/arguments');
 const {
     customBundler: { tasks: customTasks, config: customConfig },
-    getCustomHooks
+    getCustomHooks,
 } = require('./custom');
 const { warn, debug, about } = require('./helpers/log')('proton-bundler');
 
@@ -45,7 +45,9 @@ async function get(argv) {
     const isOnlyDeployGit = argv['only-git'];
 
     if (appMode) {
-        warn('--appMode is deprecated as it can be confused with its namesake in proton-pack. For proton-bundler, use --buildMode instead.');
+        warn(
+            '--appMode is deprecated as it can be confused with its namesake in proton-pack. For proton-bundler, use --buildMode instead.'
+        );
     }
 
     debug({ customConfig, argv, branch }, 'configuration deploy');
@@ -69,8 +71,8 @@ async function get(argv) {
             apiUrl,
             isRemoteBuild,
             featureFlags,
-            SENTRY: process.env.NODE_ENV_SENTRY
-        })
+            SENTRY: process.env.NODE_ENV_SENTRY,
+        }),
     });
 
     return {
@@ -82,7 +84,7 @@ async function get(argv) {
         isOnlyDeployGit,
         featureFlags,
         isRemoteBuild,
-        apiUrl
+        apiUrl,
     };
 }
 
@@ -108,5 +110,5 @@ module.exports = {
     getPackage,
     getExternalFiles,
     isWebClientLegacy,
-    readCurrentRelease
+    readCurrentRelease,
 };

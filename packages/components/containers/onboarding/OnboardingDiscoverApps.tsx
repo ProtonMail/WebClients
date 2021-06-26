@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import onboardingDiscover from 'design-system/assets/img/onboarding/discover.svg';
+import onboardingDiscover from '@proton/styles/assets/img/onboarding/discover.svg';
 
 import OnboardingContent, { Props as OnboardingContentProps } from './OnboardingContent';
 

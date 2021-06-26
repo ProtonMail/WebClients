@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
-import { toMap } from 'proton-shared/lib/helpers/object';
-import { PLANS } from 'proton-shared/lib/constants';
-import { Currency, Cycle } from 'proton-shared/lib/interfaces';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { PLANS } from '@proton/shared/lib/constants';
+import { Currency, Cycle } from '@proton/shared/lib/interfaces';
 
 import { Loader } from '../../../components';
 import { usePlans } from '../../../hooks';

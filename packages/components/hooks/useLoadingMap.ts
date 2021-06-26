@@ -1,5 +1,5 @@
-import { noop } from 'proton-shared/lib/helpers/function';
-import { LoadingMap, SimpleMap } from 'proton-shared/lib/interfaces/utils';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { LoadingMap, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { useRef, useState, useEffect, useCallback } from 'react';
 
 type WithLoadingMap = (promiseMap: { [key: string]: Promise<void> }) => Promise<void>;

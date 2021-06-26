@@ -1,5 +1,5 @@
 import React from 'react';
-import { isSameDay } from 'proton-shared/lib/date-fns-utc';
+import { isSameDay } from '@proton/shared/lib/date-fns-utc';
 
 interface Props {
     days: Date[];

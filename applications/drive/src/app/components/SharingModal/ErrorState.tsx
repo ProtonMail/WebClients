@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, Button, FooterModal, HeaderModal, InnerModal } from 'react-components';
+import { Alert, Button, FooterModal, HeaderModal, InnerModal } from '@proton/components';
 import { c } from 'ttag';
 
 interface Props {

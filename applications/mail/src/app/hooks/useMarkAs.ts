@@ -1,10 +1,10 @@
 import { useCallback } from 'react';
-import { useApi, useEventManager, useMailSettings } from 'react-components';
+import { useApi, useEventManager, useMailSettings } from '@proton/components';
 import { useHistory } from 'react-router-dom';
-import { markMessageAsRead, markMessageAsUnread } from 'proton-shared/lib/api/messages';
-import { markConversationsAsRead, markConversationsAsUnread } from 'proton-shared/lib/api/conversations';
+import { markMessageAsRead, markMessageAsUnread } from '@proton/shared/lib/api/messages';
+import { markConversationsAsRead, markConversationsAsUnread } from '@proton/shared/lib/api/conversations';
 
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isMessage as testIsMessage } from '../helpers/elements';
 import { Element } from '../models/element';
 

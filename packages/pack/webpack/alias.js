@@ -7,20 +7,21 @@ const getAlias = () => {
         'react-router',
         'react-router-dom',
         'react-refresh',
-        'pmcrypto',
-        'design-system',
-        'react-components',
+        '@proton/styles/package.json',
+        '@proton/components',
         'ttag',
         'date-fns',
-        'proton-translations',
-        '@babel/runtime'
+        'proton-translations/package.json',
+        '@babel/runtime/package.json'
         // Ensure that the correct package is used when symlinking
-    ].reduce((acc, key) => ({ ...acc, [key]: path.resolve(`./node_modules/${key}`) }), {});
+    ].reduce((acc, key) => {
+        return { ...acc, [key]: path.dirname(require.resolve(key)) };
+    }, {});
 
     return {
         ...standard,
         // Custom alias as we're building for the web (mimemessage)
-        iconv: 'iconv-lite'
+        iconv: path.dirname(require.resolve('iconv-lite'))
     };
 };
 

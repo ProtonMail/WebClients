@@ -1,5 +1,5 @@
 import { fireEvent, within } from '@testing-library/dom';
-import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
+import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { assertIcon } from '../../../helpers/test/assertion';
 import { clearAll, createEmbeddedImage, createMessageImages, tick } from '../../../helpers/test/helper';
 import { initMessage, setup } from './Message.test.helpers';

@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { c } from 'ttag';
 import { Link } from 'react-router-dom';
-import { APPS } from 'proton-shared/lib/constants';
-import { confirmPasswordValidator, passwordLengthValidator } from 'proton-shared/lib/helpers/formValidators';
+import { APPS } from '@proton/shared/lib/constants';
+import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { Alert, Href, Label, PasswordInput, ConfirmModal, PrimaryButton } from '../../components';
 import { GenericError } from '../error';
@@ -20,15 +20,8 @@ interface Props {
 }
 
 const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
-    const {
-        state,
-        dangerWord,
-        handleRequest,
-        handleValidateResetToken,
-        handleDanger,
-        handleNewPassword,
-        setters,
-    } = useResetPassword({ onLogin });
+    const { state, dangerWord, handleRequest, handleValidateResetToken, handleDanger, handleNewPassword, setters } =
+        useResetPassword({ onLogin });
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [loading, withLoading] = useLoading();

@@ -1,6 +1,6 @@
 import React from 'react';
-import { MailSettings } from 'proton-shared/lib/interfaces';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { MailSettings } from '@proton/shared/lib/interfaces';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { act } from '@testing-library/react';
 import {
     render,

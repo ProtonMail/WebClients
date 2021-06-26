@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { SettingsPropsShared, ContactsSettingsContactsSection, ThemesSection } from 'react-components';
+import { SettingsPropsShared, ContactsSettingsContactsSection, ThemesSection } from '@proton/components';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 

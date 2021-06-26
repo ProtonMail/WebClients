@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { ThemeTypes } from 'proton-shared/lib/themes/themes';
+import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
 import OnboardingContent, { Props as OnboardingContentProps } from './OnboardingContent';
 import ThemeCards, { Theme } from '../themes/ThemeCards';

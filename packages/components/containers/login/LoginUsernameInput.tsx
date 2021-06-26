@@ -1,5 +1,5 @@
 import React from 'react';
-import { EMAIL_PLACEHOLDER } from 'proton-shared/lib/constants';
+import { EMAIL_PLACEHOLDER } from '@proton/shared/lib/constants';
 import { Input } from '../../components';
 
 interface Props {

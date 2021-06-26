@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
-import { updateLocale } from 'proton-shared/lib/api/settings';
-import { loadLocale, loadDateLocale } from 'proton-shared/lib/i18n/loadLocale';
-import { getBrowserLocale, getClosestLocaleCode } from 'proton-shared/lib/i18n/helper';
-import { TtagLocaleMap } from 'proton-shared/lib/interfaces/Locale';
+import { updateLocale } from '@proton/shared/lib/api/settings';
+import { loadLocale, loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
+import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
+import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import {
     useApi,
     useConfig,

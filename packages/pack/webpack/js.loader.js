@@ -3,14 +3,14 @@ const { BABEL_EXCLUDE_FILES, BABEL_INCLUDE_NODE_MODULES } = require('./constants
 
 const UNSUPPORTED_JS_LOADER = [
     {
-        loader: 'babel-loader',
+        loader: require.resolve('babel-loader'),
         options: {
             cacheDirectory: true,
             cacheCompression: true,
             compact: true,
             presets: [
                 [
-                    '@babel/preset-env',
+                    require.resolve('@babel/preset-env'),
                     {
                         targets: { browsers: ['ie 11'] },
                         useBuiltIns: 'entry',
@@ -26,18 +26,18 @@ const UNSUPPORTED_JS_LOADER = [
 const getBabelLoader = ({ isProduction = false, hasReactRefresh = true, isTtag = false } = {}) => {
     const babelReactRefresh = hasReactRefresh ? [require.resolve('react-refresh/babel')] : [];
     const babelPluginsDev = [...babelReactRefresh];
-    const babelPluginsProd = [['babel-plugin-transform-react-remove-prop-types', { removeImport: true }]];
+    const babelPluginsProd = [[require.resolve('babel-plugin-transform-react-remove-prop-types'), { removeImport: true }]];
 
     return {
-        loader: 'babel-loader',
+        loader: require.resolve('babel-loader'),
         options: {
             cacheDirectory: true,
             cacheCompression: isProduction,
             compact: isProduction,
             presets: [
-                ['@babel/preset-typescript'],
+                [require.resolve('@babel/preset-typescript')],
                 [
-                    '@babel/preset-env',
+                    require.resolve('@babel/preset-env'),
                     {
                         targets: {
                             browsers: isProduction
@@ -50,7 +50,7 @@ const getBabelLoader = ({ isProduction = false, hasReactRefresh = true, isTtag =
                     }
                 ],
                 [
-                    '@babel/preset-react',
+                    require.resolve('@babel/preset-react'),
                     {
                         // Adds component stack to warning messages
                         // Adds __self attribute to JSX which React will use for some warnings
@@ -59,15 +59,15 @@ const getBabelLoader = ({ isProduction = false, hasReactRefresh = true, isTtag =
                 ]
             ],
             plugins: [
-                '@babel/plugin-syntax-dynamic-import',
-                '@babel/plugin-proposal-object-rest-spread',
-                '@babel/plugin-proposal-nullish-coalescing-operator',
-                '@babel/plugin-proposal-optional-chaining',
-                ['@babel/plugin-proposal-class-properties', { loose: true }],
-                ['@babel/plugin-proposal-private-methods', { loose: true }],
+                require.resolve('@babel/plugin-syntax-dynamic-import'),
+                require.resolve('@babel/plugin-proposal-object-rest-spread'),
+                require.resolve('@babel/plugin-proposal-nullish-coalescing-operator'),
+                require.resolve('@babel/plugin-proposal-optional-chaining'),
+                [require.resolve('@babel/plugin-proposal-class-properties'), { loose: true }],
+                [require.resolve('@babel/plugin-proposal-private-methods'), { loose: true }],
                 require.resolve('babel-plugin-lodash'),
-                '@babel/plugin-transform-runtime',
-                ...(isTtag ? [['ttag', { extract: { output: 'i18n/template.pot' } }]] : []),
+                require.resolve('@babel/plugin-transform-runtime'),
+                ...(isTtag ? [[require.resolve('ttag'), { extract: { output: 'i18n/template.pot' } }]] : []),
                 ...(isProduction ? babelPluginsProd : babelPluginsDev)
             ]
         }
@@ -89,7 +89,7 @@ const getJsLoaders = (options) => {
     return [
         {
             test: /\.(ts|tsx|js|jsx)?$/,
-            use: ['source-map-loader'],
+            use: [require.resolve('source-map-loader')],
             exclude: /web-streams-polyfill/,
             enforce: 'pre'
         },

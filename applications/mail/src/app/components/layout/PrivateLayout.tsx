@@ -1,6 +1,6 @@
 import React, { useState, useEffect, ReactNode, useCallback, forwardRef, Ref } from 'react';
-import { PrivateAppContainer } from 'react-components';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { PrivateAppContainer } from '@proton/components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Location, History } from 'history';
 
 import MailHeader from '../header/MailHeader';

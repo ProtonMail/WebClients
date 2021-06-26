@@ -1,6 +1,6 @@
 import React, { useMemo, useState, useEffect, FormEvent, useRef } from 'react';
 import { addMonths, endOfMonth, startOfMonth, format, isSameMonth } from 'date-fns';
-import { dateLocale } from 'proton-shared/lib/i18n';
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { useElementRect } from '../../hooks';
 import { getDaysInMonth, getDateTupleFromWeekNumber } from './helper';

@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useRef, useMemo } from 'react';
-import { useToggle, classnames, useElementRect, useActiveBreakpoint } from 'react-components';
+import { useToggle, classnames, useElementRect, useActiveBreakpoint } from '@proton/components';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
-import { buffer } from 'proton-shared/lib/helpers/function';
-import { rootFontSize } from 'proton-shared/lib/helpers/dom';
+import { buffer } from '@proton/shared/lib/helpers/function';
+import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import { c } from 'ttag';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { useUploadProvider } from '../uploads/UploadProvider';

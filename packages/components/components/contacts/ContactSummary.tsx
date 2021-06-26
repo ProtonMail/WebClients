@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
-import { formatImage } from 'proton-shared/lib/helpers/image';
-import { getPreferredValue } from 'proton-shared/lib/contacts/properties';
-import { ContactProperties } from 'proton-shared/lib/interfaces/contacts';
+import { formatImage } from '@proton/shared/lib/helpers/image';
+import { getPreferredValue } from '@proton/shared/lib/contacts/properties';
+import { ContactProperties } from '@proton/shared/lib/interfaces/contacts';
 import ContactImageSummary from './ContactImageSummary';
 import './ContactSummary.scss';
 import Tooltip from '../tooltip/Tooltip';

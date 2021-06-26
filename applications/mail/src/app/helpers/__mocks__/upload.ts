@@ -10,6 +10,6 @@ export const upload = <T>(uid: string, paramsPromise: RequestParams | Promise<Re
         xhr: {} as XMLHttpRequest,
         addProgressListener: jest.fn(),
         abort: jest.fn(),
-        resultPromise: asyncResolution() as Promise<T>
+        resultPromise: asyncResolution() as Promise<T>,
     };
 };

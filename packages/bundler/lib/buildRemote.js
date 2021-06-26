@@ -12,13 +12,13 @@ async function main({ name }) {
             title: `Clone remote ${name}`,
             async task() {
                 await script('manageRemote.sh', ['clone', name]);
-            }
+            },
         },
         {
             title: 'Install dependencies',
             async task() {
                 await script('manageRemote.sh', ['install', name]);
-            }
+            },
         },
         {
             title: 'Import appConfig.json',
@@ -32,13 +32,13 @@ async function main({ name }) {
                 }
 
                 fs.createReadStream(input).pipe(fs.createWriteStream(output));
-            }
-        }
+            },
+        },
     ];
 
     const tasks = new Listr(list, {
         renderer: UpdaterRenderer,
-        collapse: false
+        collapse: false,
     });
 
     await tasks.run();

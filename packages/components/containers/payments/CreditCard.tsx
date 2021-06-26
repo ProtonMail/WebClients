@@ -16,9 +16,10 @@ interface Props {
 
 const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
     const countries = getFullList().map(({ value, label: text }) => ({ value, text }));
-    const handleChange = (key: keyof CardModel) => ({
-        target,
-    }: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) => onChange(key, target.value);
+    const handleChange =
+        (key: keyof CardModel) =>
+        ({ target }: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) =>
+            onChange(key, target.value);
 
     return (
         <>

@@ -2,11 +2,11 @@ import React, { useState, ChangeEvent, useMemo } from 'react';
 import { subYears, subMonths } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { noop } from 'proton-shared/lib/helpers/function';
-import { Address } from 'proton-shared/lib/interfaces';
-import { Folder } from 'proton-shared/lib/interfaces/Folder';
-import { Label } from 'proton-shared/lib/interfaces/Label';
-import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { Address } from '@proton/shared/lib/interfaces';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import { Label } from '@proton/shared/lib/interfaces/Label';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 import EditLabelModal from '../../../labels/modals/EditLabelModal';
 
@@ -64,12 +64,14 @@ const CustomizeImportModal = ({
         () => mappingHasUnavailableNames(customizedPayload.Mapping, isLabelMapping ? folders : labels, isLabelMapping),
         [customizedPayload.Mapping, folders, labels]
     );
-    const hasFoldersTooLongError = useMemo(() => mappingHasFoldersTooLong(customizedPayload.Mapping), [
-        customizedPayload.Mapping,
-    ]);
-    const hasLabelsTooLongError = useMemo(() => mappingHasLabelsTooLong(customizedPayload.Mapping), [
-        customizedPayload.Mapping,
-    ]);
+    const hasFoldersTooLongError = useMemo(
+        () => mappingHasFoldersTooLong(customizedPayload.Mapping),
+        [customizedPayload.Mapping]
+    );
+    const hasLabelsTooLongError = useMemo(
+        () => mappingHasLabelsTooLong(customizedPayload.Mapping),
+        [customizedPayload.Mapping]
+    );
 
     const addressesOptions = addresses
         .filter((addr) => addr.Keys.some((k) => k.Active))

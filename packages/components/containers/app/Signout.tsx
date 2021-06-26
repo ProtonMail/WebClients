@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { revoke } from 'proton-shared/lib/api/auth';
-import { removePersistedSession } from 'proton-shared/lib/authentication/persistedSessionStorage';
+import { revoke } from '@proton/shared/lib/api/auth';
+import { removePersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { c } from 'ttag';
-import { wait } from 'proton-shared/lib/helpers/promise';
-import { removeLastRefreshDate } from 'proton-shared/lib/api/helpers/refreshStorage';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import { removeLastRefreshDate } from '@proton/shared/lib/api/helpers/refreshStorage';
 
 import { useApi, useAuthentication } from '../../hooks';
 import LoaderPage from './LoaderPage';

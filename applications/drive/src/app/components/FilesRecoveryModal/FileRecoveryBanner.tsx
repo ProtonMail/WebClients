@@ -9,10 +9,10 @@ import {
     useAddressesKeys,
     useUser,
     useLoading,
-} from 'react-components';
-import { APPS } from 'proton-shared/lib/constants';
-import { Address, DecryptedKey } from 'proton-shared/lib/interfaces';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+} from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
+import { Address, DecryptedKey } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 import FilesRecoveryModal from './FilesRecoveryModal';
 import { useDriveCache } from '../DriveCache/DriveCacheProvider';

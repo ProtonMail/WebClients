@@ -18,7 +18,7 @@ const loadUserConfig = (cfg) => {
                 '[ProtonPack] Error',
                 'The custom config from proton.config.js must export a function.',
                 'This function takes one argument which is the webpack config.',
-                ''
+                '',
             ].join('\n');
             console.error(msg);
             process.exit(1);

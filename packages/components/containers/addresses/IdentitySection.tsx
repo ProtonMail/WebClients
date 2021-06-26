@@ -1,8 +1,8 @@
 import React, { ChangeEvent, useEffect, useState, useMemo } from 'react';
 import { c } from 'ttag';
 
-import { ADDRESS_STATUS, RECEIVE_ADDRESS, SEND_ADDRESS } from 'proton-shared/lib/constants';
-import { Address } from 'proton-shared/lib/interfaces';
+import { ADDRESS_STATUS, RECEIVE_ADDRESS, SEND_ADDRESS } from '@proton/shared/lib/constants';
+import { Address } from '@proton/shared/lib/interfaces';
 
 import { Select, Loader, Info } from '../../components';
 import { useAddresses, useMailSettings } from '../../hooks';

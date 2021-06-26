@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
-import { SettingsPropsShared, OrganizationSection, useOrganization } from 'react-components';
-import { PERMISSIONS } from 'proton-shared/lib/constants';
-import { Organization } from 'proton-shared/lib/interfaces';
+import { SettingsPropsShared, OrganizationSection, useOrganization } from '@proton/components';
+import { PERMISSIONS } from '@proton/shared/lib/constants';
+import { Organization } from '@proton/shared/lib/interfaces';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 

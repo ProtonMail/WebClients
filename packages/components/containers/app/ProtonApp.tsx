@@ -1,28 +1,28 @@
 import React, { useState, useCallback, useRef, useMemo, useEffect } from 'react';
 import { Router } from 'react-router';
 import { History, createBrowserHistory as createHistory } from 'history';
-import createAuthentication from 'proton-shared/lib/authentication/createAuthenticationStore';
-import createCache, { Cache } from 'proton-shared/lib/helpers/cache';
-import { AddressesModel } from 'proton-shared/lib/models';
-import { formatUser, UserModel } from 'proton-shared/lib/models/userModel';
-import { STATUS } from 'proton-shared/lib/models/cache';
-import createSecureSessionStorage from 'proton-shared/lib/authentication/createSecureSessionStorage';
-import createSecureSessionStorage2 from 'proton-shared/lib/authentication/createSecureSessionStorage2';
-import { isSSOMode, MAILBOX_PASSWORD_KEY, UID_KEY, SSO_PATHS, APPS } from 'proton-shared/lib/constants';
-import { getPersistedSession } from 'proton-shared/lib/authentication/persistedSessionStorage';
-import { noop } from 'proton-shared/lib/helpers/function';
-import createListeners from 'proton-shared/lib/helpers/listeners';
+import createAuthentication from '@proton/shared/lib/authentication/createAuthenticationStore';
+import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
+import { AddressesModel } from '@proton/shared/lib/models';
+import { formatUser, UserModel } from '@proton/shared/lib/models/userModel';
+import { STATUS } from '@proton/shared/lib/models/cache';
+import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
+import createSecureSessionStorage2 from '@proton/shared/lib/authentication/createSecureSessionStorage2';
+import { isSSOMode, MAILBOX_PASSWORD_KEY, UID_KEY, SSO_PATHS, APPS } from '@proton/shared/lib/constants';
+import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
+import { noop } from '@proton/shared/lib/helpers/function';
+import createListeners from '@proton/shared/lib/helpers/listeners';
 import {
     getBasename,
     getLocalIDFromPathname,
     stripLocalBasenameFromPathname,
-} from 'proton-shared/lib/authentication/pathnameHelper';
-import { stripLeadingAndTrailingSlash } from 'proton-shared/lib/helpers/string';
-import { ProtonConfig } from 'proton-shared/lib/interfaces';
-import { replaceUrl } from 'proton-shared/lib/helpers/browser';
-import { getAppHref } from 'proton-shared/lib/apps/helper';
-import { requestFork } from 'proton-shared/lib/authentication/sessionForking';
-import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
+} from '@proton/shared/lib/authentication/pathnameHelper';
+import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
+import { ProtonConfig } from '@proton/shared/lib/interfaces';
+import { replaceUrl } from '@proton/shared/lib/helpers/browser';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { requestFork } from '@proton/shared/lib/authentication/sessionForking';
+import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 
 import { Icons } from '../../components';
 import Signout from './Signout';

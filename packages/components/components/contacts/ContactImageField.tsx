@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { formatImage } from 'proton-shared/lib/helpers/image';
+import { formatImage } from '@proton/shared/lib/helpers/image';
 
 import { Button } from '../button';
 

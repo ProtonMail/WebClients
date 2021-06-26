@@ -7,7 +7,7 @@ import {
     encodeBase64,
     encodeUtf8,
     SHA512,
-    unsafeMD5
+    unsafeMD5,
 } from 'pmcrypto';
 
 import { cleanUsername } from './utils/username';

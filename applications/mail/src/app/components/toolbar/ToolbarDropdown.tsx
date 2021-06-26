@@ -1,5 +1,5 @@
 import React, { ReactNode, useState, useEffect } from 'react';
-import { classnames, usePopperAnchor, DropdownButton, Dropdown, generateUID, Tooltip } from 'react-components';
+import { classnames, usePopperAnchor, DropdownButton, Dropdown, generateUID, Tooltip } from '@proton/components';
 
 interface LockableDropdownProps {
     onClose: () => void;

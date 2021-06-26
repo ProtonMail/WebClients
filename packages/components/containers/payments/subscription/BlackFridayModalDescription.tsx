@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import { isBefore } from 'date-fns';
-import { BLACK_FRIDAY, SECOND } from 'proton-shared/lib/constants';
-import { isCyberMonday } from 'proton-shared/lib/helpers/blackfriday';
+import { BLACK_FRIDAY, SECOND } from '@proton/shared/lib/constants';
+import { isCyberMonday } from '@proton/shared/lib/helpers/blackfriday';
 
 import { Countdown } from '../../../components';
 

@@ -1,9 +1,9 @@
-import { SETTINGS_NOTIFICATION_TYPE } from 'proton-shared/lib/calendar/constants';
+import { SETTINGS_NOTIFICATION_TYPE } from '@proton/shared/lib/calendar/constants';
 import React from 'react';
 import { c } from 'ttag';
-import { NotificationModel } from 'proton-shared/lib/interfaces/calendar/Notification';
-import { EventModelErrors } from 'proton-shared/lib/interfaces/calendar';
-import { addItem, removeItem, updateItem } from 'proton-shared/lib/helpers/array';
+import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
+import { EventModelErrors } from '@proton/shared/lib/interfaces/calendar';
+import { addItem, removeItem, updateItem } from '@proton/shared/lib/helpers/array';
 import { classnames, generateUID } from '../../../helpers';
 import { Tooltip, Icon, ErrorZone, LinkButton } from '../../../components';
 import NotificationInput from './inputs/NotificationInput';

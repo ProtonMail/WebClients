@@ -10,8 +10,8 @@ import {
     useApi,
     useLabels,
     useFolders,
-} from 'react-components';
-import { emptyLabel as emptyLabelRequest } from 'proton-shared/lib/api/messages';
+} from '@proton/components';
+import { emptyLabel as emptyLabelRequest } from '@proton/shared/lib/api/messages';
 
 import { useOptimisticEmptyLabel } from './optimistic/useOptimisticEmptyLabel';
 import { isCustomLabel, getLabelName } from '../helpers/labels';

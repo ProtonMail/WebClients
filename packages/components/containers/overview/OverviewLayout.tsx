@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { c } from 'ttag';
-import { hasMailPlus } from 'proton-shared/lib/helpers/subscription';
+import { hasMailPlus } from '@proton/shared/lib/helpers/subscription';
 
 import { SectionConfig, ButtonLike, SettingsLink } from '../../components';
 import { useUser, useSubscription, useOrganization, useUserSettings } from '../../hooks';

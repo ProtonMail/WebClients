@@ -6,7 +6,7 @@ const { success, debug } = require('./helpers/log')('proton-bundler');
 const defaultHook = [];
 const defaultCustom = {
     config: {},
-    tasks() {}
+    tasks() {},
 };
 
 /**
@@ -62,7 +62,7 @@ function loadCustomBundler(argv) {
             const msg = [
                 '[proton-bundler] Error',
                 'The custom config from proton.bundler.js must export a function, which returns { tasks: <Function>, config: <Object> }',
-                ''
+                '',
             ].join('\n');
             console.error(msg);
             process.exit(1);
@@ -72,7 +72,7 @@ function loadCustomBundler(argv) {
     } catch (e) {
         debug(
             {
-                'Error loading custom config': e
+                'Error loading custom config': e,
             },
             'proton.bundler.js'
         );
@@ -90,11 +90,11 @@ function getCustomHooks(customConfig = {}) {
         hookPostTasks: defaultHook,
         hookPostTaskClone: defaultHook,
         hookPostTaskBuild: defaultHook,
-        ...customConfig
+        ...customConfig,
     };
 }
 
 module.exports = {
     customBundler: loadCustomBundler(argv),
-    getCustomHooks
+    getCustomHooks,
 };

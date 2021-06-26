@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { setupTotp, TOTP_WRONG_ERROR } from 'proton-shared/lib/api/settings';
-import { srpAuth } from 'proton-shared/lib/srp';
-import { PASSWORD_WRONG_ERROR } from 'proton-shared/lib/api/auth';
-import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { APPS } from 'proton-shared/lib/constants';
-import { getApiError } from 'proton-shared/lib/api/helpers/apiErrorHelper';
-import { getTOTPData } from 'proton-shared/lib/settings/twoFactor';
+import { setupTotp, TOTP_WRONG_ERROR } from '@proton/shared/lib/api/settings';
+import { srpAuth } from '@proton/shared/lib/srp';
+import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { APPS } from '@proton/shared/lib/constants';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getTOTPData } from '@proton/shared/lib/settings/twoFactor';
 
 import { QRCode, Alert, Href, InlineLinkButton, Loader, Block, FormModal, Button } from '../../components';
 import {

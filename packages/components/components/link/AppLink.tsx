@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
-import { APP_NAMES, APPS, isSSOMode, isStandaloneMode, VPN_HOSTNAME } from 'proton-shared/lib/constants';
-import { getAppHref, getAppHrefBundle } from 'proton-shared/lib/apps/helper';
-import { LoginTypes } from 'proton-shared/lib/authentication/LoginInterface';
-import { stripLeadingAndTrailingSlash } from 'proton-shared/lib/helpers/string';
+import { APP_NAMES, APPS, isSSOMode, isStandaloneMode, VPN_HOSTNAME } from '@proton/shared/lib/constants';
+import { getAppHref, getAppHrefBundle } from '@proton/shared/lib/apps/helper';
+import { LoginTypes } from '@proton/shared/lib/authentication/LoginInterface';
+import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 
 import { useAuthentication, useConfig, useLoginType } from '../../hooks';
 import Tooltip from '../tooltip/Tooltip';

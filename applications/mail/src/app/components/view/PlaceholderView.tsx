@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useLocation } from 'react-router';
-import { useConversationCounts, useMailSettings, useMessageCounts } from 'react-components';
-import { LabelCount } from 'proton-shared/lib/interfaces/Label';
+import { useConversationCounts, useMailSettings, useMessageCounts } from '@proton/components';
+import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import WelcomePane from './WelcomePane';
 import SelectionPane from './SelectionPane';
 import { ELEMENT_TYPES } from '../../constants';

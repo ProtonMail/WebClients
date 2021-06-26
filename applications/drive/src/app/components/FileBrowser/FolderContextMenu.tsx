@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { c } from 'ttag';
 
-import { ContextMenu, DropdownMenuButton, Icon } from 'react-components';
+import { ContextMenu, DropdownMenuButton, Icon } from '@proton/components';
 
 import useToolbarActions from '../../hooks/drive/useToolbarActions';
 import useFileUploadInput from '../../hooks/drive/useFileUploadInput';
@@ -22,9 +22,11 @@ interface Props {
 const FolderContextMenu = ({ anchorRef, isOpen, position, open, close }: Props) => {
     const { openCreateFolder } = useToolbarActions();
     const { inputRef: fileInput, handleClick: uploadFile, handleChange: handleFileChange } = useFileUploadInput();
-    const { inputRef: folderInput, handleClick: uploadFolder, handleChange: handleFolderChange } = useFileUploadInput(
-        true
-    );
+    const {
+        inputRef: folderInput,
+        handleClick: uploadFolder,
+        handleChange: handleFolderChange,
+    } = useFileUploadInput(true);
 
     useEffect(() => {
         if (position) {

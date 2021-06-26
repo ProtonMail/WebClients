@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 export const useConversationFocus = (messages: Message[]) => {
     const [focusIndex, setFocusIndex] = useState<number>();

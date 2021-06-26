@@ -1,9 +1,9 @@
-import { useGetAddresses, useGetAddressKeys, useNotifications } from 'react-components';
-import { sign as signMessage } from 'proton-shared/lib/keys/driveKeys';
-import { Address } from 'proton-shared/lib/interfaces/Address';
+import { useGetAddresses, useGetAddressKeys, useNotifications } from '@proton/components';
+import { sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
+import { Address } from '@proton/shared/lib/interfaces/Address';
 import { OpenPGPKey } from 'pmcrypto';
 import { useCallback } from 'react';
-import { ADDRESS_STATUS } from 'proton-shared/lib/constants';
+import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import { ShareMeta } from '../../interfaces/share';
 import {

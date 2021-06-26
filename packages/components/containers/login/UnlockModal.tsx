@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { srpAuth } from 'proton-shared/lib/srp';
-import { queryUnlock } from 'proton-shared/lib/api/user';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { srpAuth } from '@proton/shared/lib/srp';
+import { queryUnlock } from '@proton/shared/lib/api/user';
+import { noop } from '@proton/shared/lib/helpers/function';
 import { FormModal, Row, Label, Field, PasswordInput } from '../../components';
 import { useApi } from '../../hooks';
 

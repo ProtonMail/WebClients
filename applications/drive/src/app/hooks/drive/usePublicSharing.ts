@@ -1,10 +1,10 @@
 import { ReadableStream } from 'web-streams-polyfill';
 import { decryptMessage, decryptPrivateKey, getMessage, OpenPGPKey, SessionKey } from 'pmcrypto';
-import { computeKeyPassword } from 'pm-srp';
-import { useApi } from 'react-components';
-import { srpAuth } from 'proton-shared/lib/srp';
-import { base64StringToUint8Array } from 'proton-shared/lib/helpers/encoding';
-import { decryptUnsigned, getStreamMessage } from 'proton-shared/lib/keys/driveKeys';
+import { computeKeyPassword } from '@proton/srp';
+import { useApi } from '@proton/components';
+import { srpAuth } from '@proton/shared/lib/srp';
+import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { decryptUnsigned, getStreamMessage } from '@proton/shared/lib/keys/driveKeys';
 
 import { queryInitSRPHandshake, queryGetSharedLinkPayload } from '../../api/sharing';
 import { getDecryptedSessionKey } from '../../utils/drive/driveCrypto';
@@ -82,21 +82,21 @@ function usePublicSharing() {
         };
     };
 
-    const decryptSharedBlockStream = (sessionKey: SessionKey, privateKey: OpenPGPKey): StreamTransformer => async (
-        stream: ReadableStream<Uint8Array>
-    ) => {
-        // TODO: implement root hash validation when file updates are implemented
+    const decryptSharedBlockStream =
+        (sessionKey: SessionKey, privateKey: OpenPGPKey): StreamTransformer =>
+        async (stream: ReadableStream<Uint8Array>) => {
+            // TODO: implement root hash validation when file updates are implemented
 
-        const { data } = await decryptMessage({
-            message: await getStreamMessage(stream),
-            sessionKeys: sessionKey,
-            publicKeys: privateKey.toPublic(),
-            streaming: 'web',
-            format: 'binary',
-        });
+            const { data } = await decryptMessage({
+                message: await getStreamMessage(stream),
+                sessionKeys: sessionKey,
+                publicKeys: privateKey.toPublic(),
+                streaming: 'web',
+                format: 'binary',
+            });
 
-        return data as ReadableStream<Uint8Array>;
-    };
+            return data as ReadableStream<Uint8Array>;
+        };
 
     const getSharedFileBlocks = async (
         token: string,

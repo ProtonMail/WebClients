@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
-import { CONTACT_MIME_TYPES, MIME_TYPES, MIME_TYPES_MORE } from 'proton-shared/lib/constants';
+import { CONTACT_MIME_TYPES, MIME_TYPES, MIME_TYPES_MORE } from '@proton/shared/lib/constants';
 
 import Select from '../select/Select';
 

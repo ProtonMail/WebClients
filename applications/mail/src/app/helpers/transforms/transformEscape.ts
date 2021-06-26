@@ -1,4 +1,4 @@
-import { protonizer as purifyHTML } from 'proton-shared/lib/sanitize';
+import { protonizer as purifyHTML } from '@proton/shared/lib/sanitize';
 import { uniqID } from '../string';
 import { Base64Cache } from '../../hooks/useBase64Cache';
 import { inlineCss } from '../dom';

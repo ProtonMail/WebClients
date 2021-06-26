@@ -1,4 +1,4 @@
-import { CachedOrganizationKey } from 'proton-shared/lib/interfaces';
+import { CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 
 export const getOrganizationKeyInfo = (organizationKey?: CachedOrganizationKey) => {
     // If the member has the organization key (not the organization itself).

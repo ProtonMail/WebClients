@@ -1,11 +1,11 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import {
     isAttachPublicKey as testIsAttachPublicKey,
     isRequestReadReceipt as testIsRequestReadReceipt,
-} from 'proton-shared/lib/mail/messages';
+} from '@proton/shared/lib/mail/messages';
 import React, { memo } from 'react';
-import { DropdownMenuButton, Icon, classnames } from 'react-components';
+import { DropdownMenuButton, Icon, classnames } from '@proton/components';
 import { c } from 'ttag';
 
 import { MessageChangeFlag } from '../Composer';

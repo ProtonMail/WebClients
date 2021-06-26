@@ -1,13 +1,13 @@
-import { getAttendeeEmail } from 'proton-shared/lib/calendar/attendees';
-import { MIME_TYPES } from 'proton-shared/lib/constants';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
-import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
-import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
-import getSendPreferences from 'proton-shared/lib/mail/send/getSendPreferences';
+import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
+import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
+import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import { useCallback } from 'react';
-import { useApi, useGetEncryptionPreferences, useGetMailSettings } from 'react-components';
+import { useApi, useGetEncryptionPreferences, useGetMailSettings } from '@proton/components';
 import { INVITE_ACTION_TYPES, InviteActions } from '../interfaces/Invite';
 
 const useGetSendIcsPreferencesMap = () => {

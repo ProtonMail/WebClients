@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { updateAutoSaveContacts } from 'proton-shared/lib/api/mailSettings';
+import { updateAutoSaveContacts } from '@proton/shared/lib/api/mailSettings';
 
 import { useNotifications, useEventManager, useApi, useLoading } from '../../hooks';
 import { Toggle } from '../../components';

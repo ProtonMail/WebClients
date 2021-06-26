@@ -6,34 +6,33 @@ import { AUTH_FALLBACK_VERSION } from './constants';
  * @param {Object} authInfo
  * @param {String} username - The entered username
  * @param {number} [lastAuthVersion] - The previously attempted auth version
- * @return {Object}
  */
 export default ({ Version }, username, lastAuthVersion) => {
     if (Version !== 0) {
         return {
             version: Version,
-            done: true
+            done: true,
         };
     }
 
     if (typeof lastAuthVersion === 'undefined') {
         return {
             version: AUTH_FALLBACK_VERSION,
-            done: false
+            done: false,
         };
     }
 
     if (lastAuthVersion === 2 && cleanUsername(username) !== username.toLowerCase()) {
         return {
             version: 1,
-            done: false
+            done: false,
         };
     }
 
     if (lastAuthVersion === 1 || lastAuthVersion === 2) {
         return {
             version: 0,
-            done: true
+            done: true,
         };
     }
 

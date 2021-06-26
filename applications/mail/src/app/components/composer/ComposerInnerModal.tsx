@@ -9,7 +9,7 @@ import {
     PrimaryButton,
     useFocusTrap,
     useHotkeys,
-} from 'react-components';
+} from '@proton/components';
 
 interface Props {
     title: ReactNode;

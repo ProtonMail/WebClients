@@ -1,5 +1,5 @@
-import { Currency, Cycle, HumanVerificationMethodType, SubscriptionCheckResponse } from 'proton-shared/lib/interfaces';
-import { APPS } from 'proton-shared/lib/constants';
+import { Currency, Cycle, HumanVerificationMethodType, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { APPS } from '@proton/shared/lib/constants';
 
 export enum SIGNUP_STEPS {
     NO_SIGNUP = 'no-signup',

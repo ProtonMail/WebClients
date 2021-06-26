@@ -1,7 +1,7 @@
 import React from 'react';
-import { CatchAllSection, DomainsSection, SettingsPropsShared } from 'react-components';
+import { CatchAllSection, DomainsSection, SettingsPropsShared } from '@proton/components';
 import { c } from 'ttag';
-import { PERMISSIONS } from 'proton-shared/lib/constants';
+import { PERMISSIONS } from '@proton/shared/lib/constants';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 

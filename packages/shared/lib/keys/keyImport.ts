@@ -3,7 +3,8 @@ import { getKeys } from 'pmcrypto';
 import { readFileAsString } from '../helpers/file';
 import isTruthy from '../helpers/isTruthy';
 
-const PRIVATE_KEY_EXPR = /-----BEGIN PGP (PRIVATE|PUBLIC) KEY BLOCK-----(?:(?!-----)[\s\S])*-----END PGP (PRIVATE|PUBLIC) KEY BLOCK-----/g;
+const PRIVATE_KEY_EXPR =
+    /-----BEGIN PGP (PRIVATE|PUBLIC) KEY BLOCK-----(?:(?!-----)[\s\S])*-----END PGP (PRIVATE|PUBLIC) KEY BLOCK-----/g;
 
 export const parseArmoredKeys = (fileString: string) => {
     return fileString.match(PRIVATE_KEY_EXPR) || [];

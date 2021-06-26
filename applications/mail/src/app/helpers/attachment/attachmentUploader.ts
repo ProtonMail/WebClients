@@ -1,11 +1,11 @@
 import { OpenPGPKey } from 'pmcrypto';
-import { uploadAttachment } from 'proton-shared/lib/api/attachments';
-import { readFileAsBuffer } from 'proton-shared/lib/helpers/file';
-import { generateProtonWebUID } from 'proton-shared/lib/helpers/uid';
-import { Packets } from 'proton-shared/lib/interfaces/mail/crypto';
-import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
-import { getAttachments } from 'proton-shared/lib/mail/messages';
-import { encryptAttachment } from 'proton-shared/lib/mail/send/attachments';
+import { uploadAttachment } from '@proton/shared/lib/api/attachments';
+import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
+import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
+import { Packets } from '@proton/shared/lib/interfaces/mail/crypto';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { getAttachments } from '@proton/shared/lib/mail/messages';
+import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 import { c } from 'ttag';
 import { ATTACHMENT_MAX_SIZE } from '../../constants';
 import { MessageExtended, MessageExtendedWithData, MessageKeys } from '../../models/message';

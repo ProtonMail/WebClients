@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState } from 'react';
 import { c } from 'ttag';
-import { updateBackupKey } from 'proton-shared/lib/api/organization';
-import { getBackupKeyData } from 'proton-shared/lib/keys';
+import { updateBackupKey } from '@proton/shared/lib/api/organization';
+import { getBackupKeyData } from '@proton/shared/lib/keys';
 import { OpenPGPKey } from 'pmcrypto';
 import { FormModal, Alert, Row, Label, Field, PasswordInput } from '../../components';
 import { useEventManager, useLoading, useModals, useNotifications } from '../../hooks';

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import React from 'react';
 
-import { ImportContactError } from 'proton-shared/lib/contacts/errors/ImportContactError';
+import { ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';
 
 import { Details, Summary, Bordered } from '../../../components';
 

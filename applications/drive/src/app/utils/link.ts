@@ -1,5 +1,5 @@
-import { splitExtension } from 'proton-shared/lib/helpers/file';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { splitExtension } from '@proton/shared/lib/helpers/file';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { SharedURLFlags } from '../interfaces/sharing';
 import { SHARE_GENERATED_PASSWORD_LENGTH } from '../constants';
 

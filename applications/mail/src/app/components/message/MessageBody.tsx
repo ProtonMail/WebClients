@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { isPlainText } from 'proton-shared/lib/mail/messages';
-import { classnames, Button, Tooltip } from 'react-components';
+import { isPlainText } from '@proton/shared/lib/mail/messages';
+import { classnames, Button, Tooltip } from '@proton/components';
 import { c } from 'ttag';
 import { MessageExtended } from '../../models/message';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';

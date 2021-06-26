@@ -4,8 +4,8 @@ import '@testing-library/jest-dom/extend-expect';
 // console.error = () => {};
 // console.warn = () => {};
 
-// Globally mocked react-components modules
-jest.mock('react-components/hooks/useEventManager.ts', () => {
+// Globally mocked @proton/components modules
+jest.mock('@proton/components/hooks/useEventManager.ts', () => {
     const subscribe = jest.fn();
     const call = jest.fn();
     const stop = jest.fn();

@@ -42,10 +42,7 @@ const EarlyAccessModal = (props: { onClose?: () => void }) => {
                 {c('Beta access description')
                     .t`Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.`}
             </p>
-            <p>
-                {c('Beta access description')
-                    .t`If you encounter issues, you can always disable Beta Access.`}
-            </p>
+            <p>{c('Beta access description').t`If you encounter issues, you can always disable Beta Access.`}</p>
             <div className="mb0-5 flex flex-align-items-center">
                 <label className="flex flex-nowrap" htmlFor="enable-early-access-checkbox">
                     <Checkbox
@@ -58,8 +55,7 @@ const EarlyAccessModal = (props: { onClose?: () => void }) => {
                 </label>
             </div>
             <p className="mb0-5 color-weak">
-                {c('Refresh on apply warning')
-                    .t`Note: the service will reload after you click the Apply button.`}
+                {c('Refresh on apply warning').t`Note: the service will reload after you click the Apply button.`}
             </p>
         </FormModal>
     );

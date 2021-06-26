@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { validateCredit, buyCredit } from 'proton-shared/lib/api/payments';
-import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
+import { validateCredit, buyCredit } from '@proton/shared/lib/api/payments';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { useLoading, useEventManager, useNotifications, useApiWithoutResult } from '../../hooks';
 

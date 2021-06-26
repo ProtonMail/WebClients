@@ -1,4 +1,4 @@
-import { isSameDay } from 'proton-shared/lib/date-fns-utc';
+import { isSameDay } from '@proton/shared/lib/date-fns-utc';
 import React from 'react';
 
 interface Props {

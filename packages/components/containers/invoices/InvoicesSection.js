@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { c } from 'ttag';
 
-import { queryInvoices, getInvoice } from 'proton-shared/lib/api/payments';
-import { ELEMENTS_PER_PAGE, INVOICE_OWNER, INVOICE_STATE } from 'proton-shared/lib/constants';
-import downloadFile from 'proton-shared/lib/helpers/downloadFile';
+import { queryInvoices, getInvoice } from '@proton/shared/lib/api/payments';
+import { ELEMENTS_PER_PAGE, INVOICE_OWNER, INVOICE_STATE } from '@proton/shared/lib/constants';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 import {
     Alert,
@@ -43,10 +43,12 @@ const InvoicesSection = () => {
     const { createModal } = useModals();
     const { page, onNext, onPrevious, onSelect } = usePaginationAsync(1);
 
-    const handleOwner = (own = USER) => () => {
-        setOwner(own);
-        onSelect(1);
-    };
+    const handleOwner =
+        (own = USER) =>
+        () => {
+            setOwner(own);
+            onSelect(1);
+        };
 
     const query = () =>
         queryInvoices({

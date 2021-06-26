@@ -6,11 +6,11 @@ import {
     ImportedContact,
     IMPORT_STEPS,
     ImportContactsModel,
-} from 'proton-shared/lib/interfaces/contacts/Import';
-import { splitKeys } from 'proton-shared/lib/keys/keys';
-import { OVERWRITE, CATEGORIES } from 'proton-shared/lib/contacts/constants';
-import { ImportContactError } from 'proton-shared/lib/contacts/errors/ImportContactError';
-import { ImportFatalError } from 'proton-shared/lib/contacts/errors/ImportFatalError';
+} from '@proton/shared/lib/interfaces/contacts/Import';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
+import { OVERWRITE, CATEGORIES } from '@proton/shared/lib/contacts/constants';
+import { ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';
+import { ImportFatalError } from '@proton/shared/lib/contacts/errors/ImportFatalError';
 
 import { useApi, useBeforeUnload, useGetUserKeys } from '../../../hooks';
 import { Alert, DynamicProgress } from '../../../components';

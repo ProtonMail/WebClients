@@ -1,0 +1,17 @@
+{
+  "printWidth": 120,
+  "arrowParens": "always",
+  "singleQuote": true,
+  "tabWidth": 4,
+  "proseWrap": "never",
+  "overrides": [
+    {
+      "files": "*.scss",
+      "options": {
+        "tabWidth": 2,
+        "useTabs": true,
+        "singleQuote": true
+      }
+    }
+  ]
+}

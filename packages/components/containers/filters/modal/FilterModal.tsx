@@ -1,10 +1,10 @@
 import React, { useState, useMemo, FormEvent, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { normalize } from 'proton-shared/lib/helpers/string';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { addTreeFilter, updateFilter } from 'proton-shared/lib/api/filters';
-import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
+import { normalize } from '@proton/shared/lib/helpers/string';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { addTreeFilter, updateFilter } from '@proton/shared/lib/api/filters';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { FormModal, ConfirmModal, Alert, Loader, Button } from '../../../components';
 import {
     useLoading,

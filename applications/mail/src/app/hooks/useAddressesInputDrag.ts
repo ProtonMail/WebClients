@@ -1,6 +1,6 @@
 import { useState, DragEvent, RefObject, Dispatch, SetStateAction, useEffect } from 'react';
-import { generateUID, useCache, useDragOver, useHandler } from 'react-components';
-import { Recipient } from 'proton-shared/lib/interfaces';
+import { generateUID, useCache, useDragOver, useHandler } from '@proton/components';
+import { Recipient } from '@proton/shared/lib/interfaces';
 
 import { RecipientOrGroup } from '../models/address';
 import { DRAG_ADDRESS_KEY } from '../constants';
@@ -39,9 +39,7 @@ interface UseAddressesInputDrag {
             onDragOver: (event: DragEvent) => void;
             onDrop: (event: DragEvent) => void;
         };
-        itemDragHandlers: (
-            recipient: RecipientOrGroup
-        ) => {
+        itemDragHandlers: (recipient: RecipientOrGroup) => {
             onDragStart: (event: DragEvent) => void;
             onDragEnd: (event: DragEvent) => void;
             onDragOver: (ref: RefObject<HTMLDivElement>) => (event: DragEvent) => void;
@@ -159,9 +157,9 @@ export const useAddressesInputDrag: UseAddressesInputDrag = (recipientsOrGroups,
         { throttle: 100 }
     );
 
-    const handleItemDragOver = (recipient: RecipientOrGroup) => (ref: RefObject<HTMLDivElement>) => (
-        event: DragEvent
-    ) => handleItemDragOverThrottled(recipient, ref, event);
+    const handleItemDragOver =
+        (recipient: RecipientOrGroup) => (ref: RefObject<HTMLDivElement>) => (event: DragEvent) =>
+            handleItemDragOverThrottled(recipient, ref, event);
 
     const cacheListener = useHandler((changedKey) => {
         if (changedKey === ADDRESS_DRAG_CACHE_KEY && placeholderPosition !== undefined) {

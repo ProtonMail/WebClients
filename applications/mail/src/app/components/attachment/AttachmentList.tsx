@@ -1,13 +1,13 @@
-import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { attachmentsSize } from 'proton-shared/lib/mail/messages';
+import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { attachmentsSize } from '@proton/shared/lib/mail/messages';
 import React, { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
-import { Icon, classnames, CircleLoader } from 'react-components';
-import humanSize from 'proton-shared/lib/helpers/humanSize';
-import { diff } from 'proton-shared/lib/helpers/array';
+import { Icon, classnames, CircleLoader } from '@proton/components';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { diff } from '@proton/shared/lib/helpers/array';
 
-import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
-import { SimpleMap } from 'proton-shared/lib/interfaces/utils';
+import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import AttachmentItem from './AttachmentItem';
 import { MessageExtendedWithData } from '../../models/message';
 import { PendingUpload } from '../../hooks/composer/useAttachments';

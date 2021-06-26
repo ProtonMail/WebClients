@@ -10,8 +10,8 @@ import {
     DropdownMenuButton,
     ToolbarButton,
     DropdownCaret,
-} from 'react-components';
-import { SORT_DIRECTION } from 'proton-shared/lib/constants';
+} from '@proton/components';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { DriveSortParams, useDriveContent } from '../DriveContentProvider';
 

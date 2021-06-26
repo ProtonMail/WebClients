@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
-import { move } from 'proton-shared/lib/helpers/array';
-import { DecryptedKey } from 'proton-shared/lib/interfaces';
-import { ContactFormatted, ContactMergeModel } from 'proton-shared/lib/interfaces/contacts';
+import { move } from '@proton/shared/lib/helpers/array';
+import { DecryptedKey } from '@proton/shared/lib/interfaces';
+import { ContactFormatted, ContactMergeModel } from '@proton/shared/lib/interfaces/contacts';
 
 import { Alert } from '../../../components';
 import { useModals } from '../../../hooks';
@@ -52,12 +52,14 @@ const MergeModalContent = ({ contactID, userKeysList, model, updateModel, beMerg
             beDeleted: { ...beDeleted, [ID]: !beDeleted[ID] },
         }));
     };
-    const handleSortEnd = (groupIndex: number) => ({ oldIndex, newIndex }: { oldIndex: number; newIndex: number }) => {
-        updateModel((model) => ({
-            ...model,
-            orderedContacts: moveInGroup(orderedContacts, groupIndex, { oldIndex, newIndex }),
-        }));
-    };
+    const handleSortEnd =
+        (groupIndex: number) =>
+        ({ oldIndex, newIndex }: { oldIndex: number; newIndex: number }) => {
+            updateModel((model) => ({
+                ...model,
+                orderedContacts: moveInGroup(orderedContacts, groupIndex, { oldIndex, newIndex }),
+            }));
+        };
 
     const handleClickDetails = (contactID: string) => {
         createModal(<ContactDetails contactID={contactID} userKeysList={userKeysList} />);

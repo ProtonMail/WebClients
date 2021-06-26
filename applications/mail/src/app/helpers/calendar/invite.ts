@@ -1,7 +1,7 @@
 import { format, getUnixTime } from 'date-fns';
-import { getAppName } from 'proton-shared/lib/apps/helper';
-import { getAttendeeEmail, getSupportedAttendee } from 'proton-shared/lib/calendar/attendees';
-import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { getAttendeeEmail, getSupportedAttendee } from '@proton/shared/lib/calendar/attendees';
+import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import {
     CALENDAR_FLAGS,
     ICAL_ATTENDEE_STATUS,
@@ -10,17 +10,17 @@ import {
     ICAL_METHODS_ATTENDEE,
     ICAL_MIME_TYPE,
     MAX_LENGTHS,
-} from 'proton-shared/lib/calendar/constants';
-import { findAttendee, getParticipant, getSelfAddressData } from 'proton-shared/lib/calendar/integration/invite';
-import { getOccurrencesBetween } from 'proton-shared/lib/calendar/recurring';
+} from '@proton/shared/lib/calendar/constants';
+import { findAttendee, getParticipant, getSelfAddressData } from '@proton/shared/lib/calendar/integration/invite';
+import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurring';
 
-import { getHasConsistentRrule, getSupportedRrule } from 'proton-shared/lib/calendar/rrule';
+import { getHasConsistentRrule, getSupportedRrule } from '@proton/shared/lib/calendar/rrule';
 import {
     getIsDateOutOfBounds,
     getIsWellFormedDateOrDateTime,
     getSupportedUID,
-} from 'proton-shared/lib/calendar/support';
-import { parseWithErrors } from 'proton-shared/lib/calendar/vcal';
+} from '@proton/shared/lib/calendar/support';
+import { parseWithErrors } from '@proton/shared/lib/calendar/vcal';
 import {
     buildVcalOrganizer,
     dateTimeToProperty,
@@ -29,7 +29,7 @@ import {
     getDateTimePropertyInDifferentTimezone,
     getDtendProperty,
     propertyToUTCDate,
-} from 'proton-shared/lib/calendar/vcalConverter';
+} from '@proton/shared/lib/calendar/vcalConverter';
 import {
     getHasDtStart,
     getHasRecurrenceId,
@@ -46,18 +46,18 @@ import {
     getPmSharedSessionKey,
     getPropertyTzid,
     getSequence,
-} from 'proton-shared/lib/calendar/vcalHelper';
-import { getIsEventCancelled } from 'proton-shared/lib/calendar/veventHelper';
-import { APPS, SECOND } from 'proton-shared/lib/constants';
-import { addDays, format as formatUTC } from 'proton-shared/lib/date-fns-utc';
-import { convertUTCDateTimeToZone, fromUTCDate, getSupportedTimezone } from 'proton-shared/lib/date/timezone';
-import { getIsAddressActive, getIsAddressDisabled } from 'proton-shared/lib/helpers/address';
-import { unique } from 'proton-shared/lib/helpers/array';
-import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
-import { splitExtension } from 'proton-shared/lib/helpers/file';
-import { truncate } from 'proton-shared/lib/helpers/string';
-import { Address } from 'proton-shared/lib/interfaces';
+} from '@proton/shared/lib/calendar/vcalHelper';
+import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
+import { APPS, SECOND } from '@proton/shared/lib/constants';
+import { addDays, format as formatUTC } from '@proton/shared/lib/date-fns-utc';
+import { convertUTCDateTimeToZone, fromUTCDate, getSupportedTimezone } from '@proton/shared/lib/date/timezone';
+import { getIsAddressActive, getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
+import { unique } from '@proton/shared/lib/helpers/array';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { splitExtension } from '@proton/shared/lib/helpers/file';
+import { truncate } from '@proton/shared/lib/helpers/string';
+import { Address } from '@proton/shared/lib/interfaces';
 import {
     Calendar,
     CalendarEvent,
@@ -65,7 +65,7 @@ import {
     CalendarWidgetData,
     Participant,
     PmInviteData,
-} from 'proton-shared/lib/interfaces/calendar';
+} from '@proton/shared/lib/interfaces/calendar';
 import {
     VcalDateOrDateTimeProperty,
     VcalDateTimeProperty,
@@ -74,11 +74,11 @@ import {
     VcalVeventComponent,
     VcalVtimezoneComponent,
     VcalXOrIanaComponent,
-} from 'proton-shared/lib/interfaces/calendar/VcalModel';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { RequireSome, Unwrap } from 'proton-shared/lib/interfaces/utils';
-import { getOriginalTo } from 'proton-shared/lib/mail/messages';
+} from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
+import { getOriginalTo } from '@proton/shared/lib/mail/messages';
 import { c } from 'ttag';
 import { MessageExtendedWithData } from '../../models/message';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';

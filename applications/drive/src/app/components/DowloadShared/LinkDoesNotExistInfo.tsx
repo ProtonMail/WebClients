@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Icon } from 'react-components';
+import { Icon } from '@proton/components';
 
 const LinkDoesNotExistInfo = () => {
     return (

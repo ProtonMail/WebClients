@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { UNPAID_STATE } from 'proton-shared/lib/constants';
-import { getInvoicesPathname } from 'proton-shared/lib/apps/helper';
+import { UNPAID_STATE } from '@proton/shared/lib/constants';
+import { getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 
 import { useUser, useConfig } from '../../hooks';
 import { SettingsLink } from '../../components';

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { queryVPNCountriesCount } from 'proton-shared/lib/api/vpn';
-import { PLANS } from 'proton-shared/lib/constants';
-import { VPNCountries } from 'proton-shared/lib/interfaces';
+import { queryVPNCountriesCount } from '@proton/shared/lib/api/vpn';
+import { PLANS } from '@proton/shared/lib/constants';
+import { VPNCountries } from '@proton/shared/lib/interfaces';
 
 import useApi from './useApi';
 import useLoading from './useLoading';

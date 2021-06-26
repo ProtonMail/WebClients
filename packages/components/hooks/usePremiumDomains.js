@@ -1,4 +1,4 @@
-import { queryPremiumDomains } from 'proton-shared/lib/api/domains';
+import { queryPremiumDomains } from '@proton/shared/lib/api/domains';
 
 import { useCallback } from 'react';
 import useCachedModelResult from './useCachedModelResult';

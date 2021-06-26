@@ -12,13 +12,13 @@ import {
     FolderIcon,
     Icon,
     Button,
-} from 'react-components';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
-import { normalize } from 'proton-shared/lib/helpers/string';
-import { buildTreeview } from 'proton-shared/lib/helpers/folder';
-import { Folder, FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+} from '@proton/components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { normalize } from '@proton/shared/lib/helpers/string';
+import { buildTreeview } from '@proton/shared/lib/helpers/folder';
+import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { useMoveToFolder } from '../../hooks/useApplyLabels';

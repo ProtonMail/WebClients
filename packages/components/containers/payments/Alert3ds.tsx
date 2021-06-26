@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 import React from 'react';
-import americanExpressSafekeySvg from 'design-system/assets/img/bank-icons/amex-safekey.svg';
-import discoverProtectBuySvg from 'design-system/assets/img/bank-icons/discover-protectbuy.svg';
-import mastercardSecurecodeSvg from 'design-system/assets/img/bank-icons/mastercard-securecode.svg';
-import verifiedByVisaSvg from 'design-system/assets/img/bank-icons/visa-secure.svg';
+import americanExpressSafekeySvg from '@proton/styles/assets/img/bank-icons/amex-safekey.svg';
+import discoverProtectBuySvg from '@proton/styles/assets/img/bank-icons/discover-protectbuy.svg';
+import mastercardSecurecodeSvg from '@proton/styles/assets/img/bank-icons/mastercard-securecode.svg';
+import verifiedByVisaSvg from '@proton/styles/assets/img/bank-icons/visa-secure.svg';
 
 const Alert3ds = () => {
     return (

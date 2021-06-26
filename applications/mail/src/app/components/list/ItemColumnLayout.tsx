@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Label } from 'proton-shared/lib/interfaces/Label';
+import { Label } from '@proton/shared/lib/interfaces/Label';
 
 import ItemStar from './ItemStar';
 import ItemLabels from './ItemLabels';

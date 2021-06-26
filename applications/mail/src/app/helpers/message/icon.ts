@@ -1,8 +1,8 @@
-import { PACKAGE_TYPE } from 'proton-shared/lib/constants';
-import { SendPreferences } from 'proton-shared/lib/interfaces/mail/crypto';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
-import { getParsedHeadersFirstValue, inSigningPeriod } from 'proton-shared/lib/mail/messages';
+import { PACKAGE_TYPE } from '@proton/shared/lib/constants';
+import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { getParsedHeadersFirstValue, inSigningPeriod } from '@proton/shared/lib/mail/messages';
 import { c, msgid } from 'ttag';
 import { MapStatusIcons, STATUS_ICONS_FILLS, StatusIcon, X_PM_HEADERS } from '../../models/crypto';
 import { MessageExtended, MessageVerification } from '../../models/message';

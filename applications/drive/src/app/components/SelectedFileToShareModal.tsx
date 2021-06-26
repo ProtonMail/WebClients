@@ -14,7 +14,7 @@ import {
     useModals,
     Loader,
     TextLoader,
-} from 'react-components';
+} from '@proton/components';
 
 import FolderTree, { FolderTreeItem } from './FolderTree/FolderTree';
 import useDrive from '../hooks/drive/useDrive';

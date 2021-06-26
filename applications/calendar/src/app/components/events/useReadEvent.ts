@@ -1,11 +1,11 @@
-import { EVENT_VERIFICATION_STATUS } from 'proton-shared/lib/calendar/constants';
-import { getIsAllDay } from 'proton-shared/lib/calendar/vcalHelper';
+import { EVENT_VERIFICATION_STATUS } from '@proton/shared/lib/calendar/constants';
+import { getIsAllDay } from '@proton/shared/lib/calendar/vcalHelper';
 import {
     DecryptedPersonalVeventMapResult,
     DecryptedVeventResult,
     EventModelReadView,
-} from 'proton-shared/lib/interfaces/calendar';
-import { VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+} from '@proton/shared/lib/interfaces/calendar';
+import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { useMemo } from 'react';
 
 import { EventInternalProperties } from '../../interfaces/EventInternalProperties';

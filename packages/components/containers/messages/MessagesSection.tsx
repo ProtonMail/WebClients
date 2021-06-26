@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 
-import { SHOW_IMAGES } from 'proton-shared/lib/constants';
+import { SHOW_IMAGES } from '@proton/shared/lib/constants';
 
 import { Info } from '../../components';
 import { useMailSettings } from '../../hooks';

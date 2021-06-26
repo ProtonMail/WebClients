@@ -1,6 +1,6 @@
 import React, { useState, useRef, useMemo } from 'react';
 import { c } from 'ttag';
-import { normalize } from 'proton-shared/lib/helpers/string';
+import { normalize } from '@proton/shared/lib/helpers/string';
 
 import { Dropdown } from '../dropdown';
 import { Props as OptionProps } from '../option/Option';

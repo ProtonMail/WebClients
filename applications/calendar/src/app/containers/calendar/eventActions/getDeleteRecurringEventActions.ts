@@ -1,9 +1,9 @@
-import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from 'proton-shared/lib/calendar/constants';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { CalendarEvent, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
+import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 
-import { getResetPartstatActions } from 'proton-shared/lib/calendar/integration/invite';
-import { getIsEventCancelled } from 'proton-shared/lib/calendar/veventHelper';
+import { getResetPartstatActions } from '@proton/shared/lib/calendar/integration/invite';
+import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
 import {
     INVITE_ACTION_TYPES,
     InviteActions,

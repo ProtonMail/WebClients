@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from 'proton-shared/lib/constants';
-import { IncomingDefault } from 'proton-shared/lib/interfaces/IncomingDefault';
+import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from '@proton/shared/lib/constants';
+import { IncomingDefault } from '@proton/shared/lib/interfaces/IncomingDefault';
 
 import { WHITE_OR_BLACK_LOCATION } from '../containers/filters/interfaces';
 
@@ -22,26 +22,25 @@ const useSpamList = () => {
     const [whiteListFiltered, filterWhiteList] = useState(whiteList);
     const [blackListFiltered, filterBlackList] = useState(blackList);
 
-    const refreshList = (type: 'blackList' | 'whitelist') => (
-        data: IncomingDefault[],
-        { updateRawList = true, refreshSearch = true } = {}
-    ) => {
-        const filter = getFilterSearch(searchQuery);
+    const refreshList =
+        (type: 'blackList' | 'whitelist') =>
+        (data: IncomingDefault[], { updateRawList = true, refreshSearch = true } = {}) => {
+            const filter = getFilterSearch(searchQuery);
 
-        if (type === 'blackList') {
+            if (type === 'blackList') {
+                if (updateRawList) {
+                    setBlackList(data);
+                }
+                const list = !refreshSearch ? data : data.filter(filter);
+                return filterBlackList(list);
+            }
+
             if (updateRawList) {
-                setBlackList(data);
+                setWhiteList(data);
             }
             const list = !refreshSearch ? data : data.filter(filter);
-            return filterBlackList(list);
-        }
-
-        if (updateRawList) {
-            setWhiteList(data);
-        }
-        const list = !refreshSearch ? data : data.filter(filter);
-        return filterWhiteList(list);
-    };
+            return filterWhiteList(list);
+        };
     const refreshWhiteList = refreshList('whitelist');
     const refreshBlackList = refreshList('blackList');
 

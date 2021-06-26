@@ -1,4 +1,4 @@
-import { useMailSettings } from 'react-components';
+import { useMailSettings } from '@proton/components';
 
 const useDelaySendSeconds = () => {
     const [mailSettings] = useMailSettings();

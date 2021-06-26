@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 import { Link } from 'react-router-dom';
-import { ButtonLike } from 'react-components';
+import { ButtonLike } from '@proton/components';
 
 const LoginPanel = () => {
     return (

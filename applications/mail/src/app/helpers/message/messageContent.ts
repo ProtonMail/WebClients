@@ -1,7 +1,7 @@
-import { MailSettings, Address } from 'proton-shared/lib/interfaces';
-import { isPlainText } from 'proton-shared/lib/mail/messages';
+import { MailSettings, Address } from '@proton/shared/lib/interfaces';
+import { isPlainText } from '@proton/shared/lib/mail/messages';
 
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MessageExtended, PartialMessageExtended } from '../../models/message';
 import { toText } from '../parserHtml';
 import { findSender } from '../addresses';

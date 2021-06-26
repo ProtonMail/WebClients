@@ -1,10 +1,10 @@
-import { updatePromptPin } from 'proton-shared/lib/api/mailSettings';
-import { canonizeInternalEmail } from 'proton-shared/lib/helpers/email';
-import { Address, MailSettings } from 'proton-shared/lib/interfaces';
-import { ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
-import { isInternal } from 'proton-shared/lib/mail/messages';
+import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
+import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { Address, MailSettings } from '@proton/shared/lib/interfaces';
+import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { isInternal } from '@proton/shared/lib/mail/messages';
 import React, { useMemo } from 'react';
 import {
     Button,
@@ -19,7 +19,7 @@ import {
     useMailSettings,
     useModals,
     useNotifications,
-} from 'react-components';
+} from '@proton/components';
 import { c } from 'ttag';
 import { useContactCache } from '../../../containers/ContactProvider';
 import { getContactEmail } from '../../../helpers/addresses';

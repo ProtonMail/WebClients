@@ -1,10 +1,10 @@
-import { pick } from 'proton-shared/lib/helpers/object';
+import { pick } from '@proton/shared/lib/helpers/object';
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
-import useGetCalendarEventPersonal from 'react-components/hooks/useGetCalendarEventPersonal';
-import { useApi, useGetCalendarEventRaw } from 'react-components';
-import { wait } from 'proton-shared/lib/helpers/promise';
-import { CalendarEvent } from 'proton-shared/lib/interfaces/calendar';
-import { getEvent as getEventRoute } from 'proton-shared/lib/api/calendars';
+import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
+import { useApi, useGetCalendarEventRaw } from '@proton/components';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import { getEvent as getEventRoute } from '@proton/shared/lib/api/calendars';
 import { c } from 'ttag';
 
 import upsertCalendarApiEvent from './cache/upsertCalendarApiEvent';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { splitExtension } from 'proton-shared/lib/helpers/file';
+import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { MiddleEllipsis } from '../ellipsis';
 
 const CHARACTERS_BEFORE_EXTENSION = 3;

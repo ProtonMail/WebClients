@@ -1,10 +1,10 @@
 import React, { ReactNode } from 'react';
 import { c } from 'ttag';
-import locales from 'proton-shared/lib/i18n/locales';
-import { APPS, APP_NAMES } from 'proton-shared/lib/constants';
-import { getAppName } from 'proton-shared/lib/apps/helper';
+import locales from '@proton/shared/lib/i18n/locales';
+import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 
-import { getAppVersion, useConfig, PublicTopBanners, Href, Icon, ProminentContainer, Logo } from 'react-components';
+import { getAppVersion, useConfig, PublicTopBanners, Href, Icon, ProminentContainer, Logo } from '@proton/components';
 
 import LanguageSelect from './LanguageSelect';
 

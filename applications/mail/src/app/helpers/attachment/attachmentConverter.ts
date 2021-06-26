@@ -1,5 +1,5 @@
 import { DecryptResultPmcrypto, VERIFICATION_STATUS } from 'pmcrypto';
-import { Attachment, Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ENCRYPTED_STATUS } from '../../constants';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { AttachmentMime } from '../../models/attachment';

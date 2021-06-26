@@ -1,6 +1,6 @@
 import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
-import { Icon, useLoading, classnames, Tooltip, useMailSettings } from 'react-components';
+import { Icon, useLoading, classnames, Tooltip, useMailSettings } from '@proton/components';
 
 import { Element } from '../../models/element';
 import { isStarred as testIsStarred, isMessage } from '../../helpers/elements';

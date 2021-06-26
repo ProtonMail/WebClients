@@ -3,11 +3,11 @@ import {
     ICAL_ATTENDEE_STATUS,
     ICAL_EVENT_STATUS,
     ICAL_METHOD,
-} from 'proton-shared/lib/calendar/constants';
-import { getDisplayTitle } from 'proton-shared/lib/calendar/helper';
-import { getEventStatus } from 'proton-shared/lib/calendar/vcalHelper';
+} from '@proton/shared/lib/calendar/constants';
+import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
+import { getEventStatus } from '@proton/shared/lib/calendar/vcalHelper';
 import { c } from 'ttag';
-import { RequireSome } from 'proton-shared/lib/interfaces/utils';
+import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { InvitationModel, UPDATE_ACTION } from './invite';
 
 const { REPLY, COUNTER, REFRESH, REQUEST, CANCEL, ADD } = ICAL_METHOD;

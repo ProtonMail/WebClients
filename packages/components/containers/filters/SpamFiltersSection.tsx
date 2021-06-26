@@ -4,9 +4,9 @@ import {
     getIncomingDefaults,
     updateIncomingDefault,
     deleteIncomingDefaults,
-} from 'proton-shared/lib/api/incomingDefaults';
-import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from 'proton-shared/lib/constants';
-import { IncomingDefault } from 'proton-shared/lib/interfaces/IncomingDefault';
+} from '@proton/shared/lib/api/incomingDefaults';
+import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from '@proton/shared/lib/constants';
+import { IncomingDefault } from '@proton/shared/lib/interfaces/IncomingDefault';
 
 import { SearchInput } from '../../components';
 import { useApiResult, useApiWithoutResult, useApi, useNotifications, useModals } from '../../hooks';

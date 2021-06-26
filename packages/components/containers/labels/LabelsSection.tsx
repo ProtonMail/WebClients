@@ -2,7 +2,7 @@ import React from 'react';
 import { c } from 'ttag';
 import { arrayMove } from 'react-sortable-hoc';
 
-import { orderLabels } from 'proton-shared/lib/api/labels';
+import { orderLabels } from '@proton/shared/lib/api/labels';
 
 import { Loader, Button } from '../../components';
 import { useLabels, useEventManager, useModals, useApi, useNotifications, useLoading } from '../../hooks';

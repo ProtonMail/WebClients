@@ -1,9 +1,9 @@
 import { getUnixTime } from 'date-fns';
-import { toIcsPartstat } from 'proton-shared/lib/calendar/attendees';
-import { ICAL_ATTENDEE_STATUS } from 'proton-shared/lib/calendar/constants';
-import { getAttendeeToken, getHasAttendees } from 'proton-shared/lib/calendar/vcalHelper';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { CalendarEvent, VcalVeventComponent } from 'proton-shared/lib/interfaces/calendar';
+import { toIcsPartstat } from '@proton/shared/lib/calendar/attendees';
+import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
+import { getAttendeeToken, getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import {
     InviteActions,
     SendIcsActionData,

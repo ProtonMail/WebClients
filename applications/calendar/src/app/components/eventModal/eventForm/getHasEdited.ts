@@ -1,5 +1,5 @@
-import { isSameDay } from 'proton-shared/lib/date-fns-utc';
-import { DateTimeModel, EventModel, NotificationModel } from 'proton-shared/lib/interfaces/calendar';
+import { isSameDay } from '@proton/shared/lib/date-fns-utc';
+import { DateTimeModel, EventModel, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
 
 const keys = ['title', 'location', 'description', 'isAllDay', 'frequency'];
 

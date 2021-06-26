@@ -10,8 +10,8 @@ import React, {
     useImperativeHandle,
 } from 'react';
 import { c } from 'ttag';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { getRecipients } from 'proton-shared/lib/mail/messages';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { getRecipients } from '@proton/shared/lib/mail/messages';
 import {
     classnames,
     useNotifications,
@@ -21,12 +21,12 @@ import {
     ConfirmModal,
     ErrorButton,
     Alert,
-} from 'react-components';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { setBit, clearBit } from 'proton-shared/lib/helpers/bitset';
-import useIsMounted from 'react-components/hooks/useIsMounted';
-import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
-import { canonizeEmail } from 'proton-shared/lib/helpers/email';
+} from '@proton/components';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { setBit, clearBit } from '@proton/shared/lib/helpers/bitset';
+import useIsMounted from '@proton/components/hooks/useIsMounted';
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
+import { canonizeEmail } from '@proton/shared/lib/helpers/email';
 import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
 import ComposerMeta from './ComposerMeta';
 import ComposerContent from './ComposerContent';

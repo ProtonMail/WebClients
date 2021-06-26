@@ -1,12 +1,12 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Cycle, Currency, Plan, Organization, Subscription, PlanIDs } from 'proton-shared/lib/interfaces';
-import { CYCLE, PLANS, PLAN_SERVICES, APPS } from 'proton-shared/lib/constants';
-import { getPlan } from 'proton-shared/lib/helpers/subscription';
-import { switchPlan } from 'proton-shared/lib/helpers/planIDs';
-import { getAppName } from 'proton-shared/lib/apps/helper';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { FREE_MAIL_PLAN, FREE_VPN_PLAN } from 'proton-shared/lib/subscription/freePlans';
+import { Cycle, Currency, Plan, Organization, Subscription, PlanIDs } from '@proton/shared/lib/interfaces';
+import { CYCLE, PLANS, PLAN_SERVICES, APPS } from '@proton/shared/lib/constants';
+import { getPlan } from '@proton/shared/lib/helpers/subscription';
+import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { FREE_MAIL_PLAN, FREE_VPN_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { Radio, Button, InlineLinkButton, Price } from '../../components';
 import { classnames } from '../../helpers';

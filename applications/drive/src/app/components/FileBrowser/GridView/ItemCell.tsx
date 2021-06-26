@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { FileIcon, Checkbox, classnames, DragMoveContainer, FileNameDisplay } from 'react-components';
+import { FileIcon, Checkbox, classnames, DragMoveContainer, FileNameDisplay } from '@proton/components';
 
 import { LinkType } from '../../../interfaces/link';
 import { ItemProps } from '../interfaces';

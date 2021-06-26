@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
-import { getSlugFromApp } from 'proton-shared/lib/apps/slugHelper';
-import { APPS } from 'proton-shared/lib/constants';
+import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { APPS } from '@proton/shared/lib/constants';
 
-import { SettingsPropsShared, ThemesSection } from 'react-components';
+import { SettingsPropsShared, ThemesSection } from '@proton/components';
 
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
 

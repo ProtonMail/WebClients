@@ -1,13 +1,21 @@
 import React from 'react';
 import { c, msgid } from 'ttag';
-import { Currency, Cycle, Organization, Plan, PlanIDs, Subscription, VPNCountries } from 'proton-shared/lib/interfaces';
-import { toMap } from 'proton-shared/lib/helpers/object';
-import { APPS, CYCLE, PLAN_SERVICES, PLANS, PLAN_NAMES } from 'proton-shared/lib/constants';
-import { switchPlan } from 'proton-shared/lib/helpers/planIDs';
-import { getAppName } from 'proton-shared/lib/apps/helper';
-import { getPlan } from 'proton-shared/lib/helpers/subscription';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { FREE_MAIL_PLAN, FREE_VPN_PLAN } from 'proton-shared/lib/subscription/freePlans';
+import {
+    Currency,
+    Cycle,
+    Organization,
+    Plan,
+    PlanIDs,
+    Subscription,
+    VPNCountries,
+} from '@proton/shared/lib/interfaces';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { APPS, CYCLE, PLAN_SERVICES, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { getPlan } from '@proton/shared/lib/helpers/subscription';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { FREE_MAIL_PLAN, FREE_VPN_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { Button, Info } from '../../../components';
 

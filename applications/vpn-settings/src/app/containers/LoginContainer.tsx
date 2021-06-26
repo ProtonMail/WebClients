@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import * as H from 'history';
 import { c } from 'ttag';
-import { useApi, MinimalLoginContainer, Href, SimpleDropdown, DropdownMenu, OnLoginCallback } from 'react-components';
-import { queryAvailableDomains } from 'proton-shared/lib/api/domains';
-import { isMember } from 'proton-shared/lib/user/helpers';
+import { useApi, MinimalLoginContainer, Href, SimpleDropdown, DropdownMenu, OnLoginCallback } from '@proton/components';
+import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
+import { isMember } from '@proton/shared/lib/user/helpers';
 import SignInLayout from '../components/layout/SignInLayout';
 
 interface Props {

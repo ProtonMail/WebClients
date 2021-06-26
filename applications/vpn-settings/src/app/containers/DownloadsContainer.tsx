@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { ProtonVPNClientsSection, OpenVPNConfigurationSection, SettingsPropsShared } from 'react-components';
+import { ProtonVPNClientsSection, OpenVPNConfigurationSection, SettingsPropsShared } from '@proton/components';
 
 import PrivateMainSettingsAreaWithPermissions from '../components/page/PrivateMainSettingsAreaWithPermissions';
 

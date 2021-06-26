@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { classnames } from 'react-components';
+import { classnames } from '@proton/components';
 
 interface Props {
     button?: ReactNode;

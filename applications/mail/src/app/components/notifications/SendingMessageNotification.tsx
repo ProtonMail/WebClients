@@ -1,8 +1,8 @@
 import React, { useState, useRef, useLayoutEffect } from 'react';
 import { c } from 'ttag';
-import createListeners from 'proton-shared/lib/helpers/listeners';
-import { wait } from 'proton-shared/lib/helpers/promise';
-import { useIsMounted } from 'react-components';
+import createListeners from '@proton/shared/lib/helpers/listeners';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import { useIsMounted } from '@proton/components';
 import UndoButton from './UndoButton';
 
 export const createSendingMessageNotificationManager = () => {

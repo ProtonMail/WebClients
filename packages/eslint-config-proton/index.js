@@ -8,18 +8,11 @@ module.exports = {
   },
   extends: [
     "eslint-config-airbnb-typescript",
-    "prettier",
-    "prettier/@typescript-eslint",
-    "prettier/react",
+    "prettier"
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 2018,
     project: "./tsconfig.json",
-    sourceType: "module",
   },
   plugins: ["react", "react-hooks", "import", "@typescript-eslint", "es"],
   rules: {
@@ -29,6 +22,7 @@ module.exports = {
         default: "array",
       },
     ],
+    "@typescript-eslint/no-redeclare": ["error"],
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/indent": "off",
     "@typescript-eslint/no-explicit-any": "off",
@@ -54,6 +48,7 @@ module.exports = {
         format: ["PascalCase", "UPPER_CASE"],
       },
     ],
+    "arrow-body-style": "off",
     "consistent-return": "off",
     "curly": ["error", "all"],
     "import/default": 2,
@@ -70,6 +65,7 @@ module.exports = {
       },
     ],
     "import/prefer-default-export": "off",
+    "no-redeclare": "off",
     "no-await-in-loop": "off",
     "no-bitwise": "off",
     "no-console": "warn",

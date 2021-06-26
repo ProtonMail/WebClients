@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { updateOrganizationName } from 'proton-shared/lib/api/organization';
+import { updateOrganizationName } from '@proton/shared/lib/api/organization';
 import { InputModal } from '../../components';
 import { useEventManager, useApi, useLoading } from '../../hooks';
 

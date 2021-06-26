@@ -1,7 +1,7 @@
-import { GetAddressKeys } from 'proton-shared/lib/interfaces/hooks/GetAddressKeys';
+import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import { useCallback } from 'react';
-import { DecryptedKey } from 'proton-shared/lib/interfaces';
-import { getDecryptedAddressKeys } from 'proton-shared/lib/keys';
+import { DecryptedKey } from '@proton/shared/lib/interfaces';
+import { getDecryptedAddressKeys } from '@proton/shared/lib/keys';
 
 import useAuthentication from './useAuthentication';
 import useCache from './useCache';

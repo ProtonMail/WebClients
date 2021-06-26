@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { noop } from '@proton/shared/lib/helpers/function';
 import { Alert, FormModal } from '../../../components';
 import { useModals } from '../../../hooks';
 import ContactResignExecutionModal from './ContactResignExecutionModal';

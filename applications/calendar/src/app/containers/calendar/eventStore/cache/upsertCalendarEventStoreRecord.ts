@@ -1,7 +1,7 @@
-import { addDays, max } from 'proton-shared/lib/date-fns-utc';
-import { CalendarEvent, CalendarEventSharedData } from 'proton-shared/lib/interfaces/calendar';
-import { getDtendProperty, propertyToUTCDate } from 'proton-shared/lib/calendar/vcalConverter';
-import { getIsAllDay, getIsRecurring } from 'proton-shared/lib/calendar/vcalHelper';
+import { addDays, max } from '@proton/shared/lib/date-fns-utc';
+import { CalendarEvent, CalendarEventSharedData } from '@proton/shared/lib/interfaces/calendar';
+import { getDtendProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
+import { getIsAllDay, getIsRecurring } from '@proton/shared/lib/calendar/vcalHelper';
 import { differenceInHours } from 'date-fns';
 
 import { setEventInRecurrenceInstances, setEventInRecurringCache } from './recurringCache';

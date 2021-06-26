@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CYCLE, CURRENCIES } from 'proton-shared/lib/constants';
+import { CYCLE, CURRENCIES } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
-import { Price } from 'react-components';
+import { Price } from '@proton/components';
 
 const PriceInfo = ({ plan, cycle, currency }) => {
     const baseTotal = plan.price.monthly * cycle;

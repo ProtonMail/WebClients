@@ -1,5 +1,5 @@
-import { SectionConfig } from 'react-components';
-import { UserModel } from 'proton-shared/lib/interfaces';
+import { SectionConfig } from '@proton/components';
+import { UserModel } from '@proton/shared/lib/interfaces';
 
 import { getDashboardPage } from './containers/DashboardContainer';
 import { getGeneralPage } from './containers/GeneralContainer';

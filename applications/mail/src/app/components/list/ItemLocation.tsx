@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFolders, Tooltip, useMailSettings, classnames } from 'react-components';
+import { useFolders, Tooltip, useMailSettings, classnames } from '@proton/components';
 
 import { getCurrentFolders } from '../../helpers/labels';
 import { Element } from '../../models/element';

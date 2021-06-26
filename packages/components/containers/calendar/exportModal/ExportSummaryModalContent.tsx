@@ -6,9 +6,9 @@ import {
     EXPORT_EVENT_ERROR_TYPES,
     ExportCalendarModel,
     ExportError,
-} from 'proton-shared/lib/interfaces/calendar';
+} from '@proton/shared/lib/interfaces/calendar';
 
-import { partition } from 'proton-shared/lib/helpers/array';
+import { partition } from '@proton/shared/lib/helpers/array';
 import { Alert, Bordered, Details, DynamicProgress, Href, Summary } from '../../../components';
 
 const getErrorMessage = (hasMultiplePasswordResetErrors: boolean) => (type: EXPORT_EVENT_ERROR_TYPES) => {

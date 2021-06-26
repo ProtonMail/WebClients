@@ -7,18 +7,18 @@ import {
     useMessageCounts,
     useNotifications,
     useSubscribeEventManager,
-} from 'react-components';
-import { queryConversations, getConversation } from 'proton-shared/lib/api/conversations';
-import { queryMessageMetadata, getMessage } from 'proton-shared/lib/api/messages';
-import { EVENT_ACTIONS } from 'proton-shared/lib/constants';
-import { toMap, omit } from 'proton-shared/lib/helpers/object';
-import { ConversationCountsModel, MessageCountsModel } from 'proton-shared/lib/models';
-import { LabelCount } from 'proton-shared/lib/interfaces/Label';
-import { noop } from 'proton-shared/lib/helpers/function';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { STATUS } from 'proton-shared/lib/models/cache';
-import isDeepEqual from 'proton-shared/lib/helpers/isDeepEqual';
-import { captureMessage } from 'proton-shared/lib/helpers/sentry';
+} from '@proton/components';
+import { queryConversations, getConversation } from '@proton/shared/lib/api/conversations';
+import { queryMessageMetadata, getMessage } from '@proton/shared/lib/api/messages';
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
+import { toMap, omit } from '@proton/shared/lib/helpers/object';
+import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
+import { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import { noop } from '@proton/shared/lib/helpers/function';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { STATUS } from '@proton/shared/lib/models/cache';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
     sort as sortElements,
     hasLabel,

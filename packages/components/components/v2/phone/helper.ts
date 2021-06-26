@@ -7,7 +7,7 @@ import parsePhoneNumberFromString, {
 } from 'libphonenumber-js/min';
 import metadata from 'libphonenumber-js/metadata.min.json';
 import examples from 'libphonenumber-js/examples.mobile.json';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { getFlagSvg } from './flagSvgs';
 import { callingCodeToLeading, countries } from './data';
 

@@ -1,5 +1,5 @@
-import { extractEmailAddress } from 'proton-shared/lib/calendar/vcalConverter';
-import { VcalOrganizerProperty } from 'proton-shared/lib/interfaces/calendar/VcalModel';
+import { extractEmailAddress } from '@proton/shared/lib/calendar/vcalConverter';
+import { VcalOrganizerProperty } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 export const propertiesToOrganizerModel = (organizer?: VcalOrganizerProperty) => {
     if (!organizer) {

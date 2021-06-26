@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { c } from 'ttag';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { API_CUSTOM_ERROR_CODES } from 'proton-shared/lib/errors';
-import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { useApi, useErrorHandler, useLoading, useModals, useNotifications } from '../../hooks';
 import { Label, LinkButton, PrimaryButton } from '../../components';

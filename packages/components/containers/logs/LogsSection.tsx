@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { fromUnixTime } from 'date-fns';
-import { clearLogs, queryLogs } from 'proton-shared/lib/api/logs';
-import { updateLogAuth } from 'proton-shared/lib/api/settings';
-import downloadFile from 'proton-shared/lib/helpers/downloadFile';
-import { SETTINGS_LOG_AUTH_STATE } from 'proton-shared/lib/interfaces';
-import { wait } from 'proton-shared/lib/helpers/promise';
-import { AuthLog } from 'proton-shared/lib/authlog';
+import { clearLogs, queryLogs } from '@proton/shared/lib/api/logs';
+import { updateLogAuth } from '@proton/shared/lib/api/settings';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { SETTINGS_LOG_AUTH_STATE } from '@proton/shared/lib/interfaces';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import { AuthLog } from '@proton/shared/lib/authlog';
 import { Alert, Button, ConfirmModal, Icon, Info, Pagination, Toggle, usePaginationAsync } from '../../components';
 import { useApi, useLoading, useModals, useUserSettings } from '../../hooks';
 

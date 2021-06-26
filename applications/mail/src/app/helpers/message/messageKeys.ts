@@ -1,9 +1,9 @@
 import { getKeys, arrayToBinaryString } from 'pmcrypto';
-import { splitExtension } from 'proton-shared/lib/helpers/file';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { Api } from 'proton-shared/lib/interfaces';
-import { Attachment } from 'proton-shared/lib/interfaces/mail/Message';
-import { getParsedAutocryptHeader } from 'proton-shared/lib/mail/autocrypt';
+import { splitExtension } from '@proton/shared/lib/helpers/file';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { Api } from '@proton/shared/lib/interfaces';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { getParsedAutocryptHeader } from '@proton/shared/lib/mail/autocrypt';
 import { LARGE_KEY_SIZE } from '../../constants';
 import { AttachmentsCache } from '../../containers/AttachmentProvider';
 import { MessageKeys } from '../../models/message';

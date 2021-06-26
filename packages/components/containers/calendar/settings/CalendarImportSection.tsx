@@ -1,9 +1,9 @@
-import { UserModel } from 'proton-shared/lib/interfaces';
+import { UserModel } from '@proton/shared/lib/interfaces';
 import React from 'react';
 import { c } from 'ttag';
-import { Calendar } from 'proton-shared/lib/interfaces/calendar';
-import { getAppName } from 'proton-shared/lib/apps/helper';
-import { APPS } from 'proton-shared/lib/constants';
+import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
 
 import { Alert, PrimaryButton, Icon } from '../../../components';
 import { useAddresses, useModals } from '../../../hooks';

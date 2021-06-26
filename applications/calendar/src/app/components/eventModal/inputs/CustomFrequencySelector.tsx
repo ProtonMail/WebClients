@@ -1,7 +1,7 @@
-import { WeekStartsOn } from 'proton-shared/lib/date-fns-utc/interface';
+import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import React from 'react';
 
-import { DateTimeModel, FrequencyModel } from 'proton-shared/lib/interfaces/calendar';
+import { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
 import RepeatEveryRow from '../rows/RepeatEveryRow';
 import EndsRow from '../rows/EndsRow';
 

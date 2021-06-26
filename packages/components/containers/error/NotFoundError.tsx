@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import notFoundErrorSvg from 'design-system/assets/img/errors/error-404.svg';
+import notFoundErrorSvg from '@proton/styles/assets/img/errors/error-404.svg';
 import IllustrationPlaceholder from '../illustration/IllustrationPlaceholder';
 
 const NotFoundError = () => {

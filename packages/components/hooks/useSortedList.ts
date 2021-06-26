@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { SORT_DIRECTION } from 'proton-shared/lib/constants';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 export interface SortConfig<T> {
     key: keyof T;

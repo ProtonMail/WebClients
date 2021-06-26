@@ -1,9 +1,9 @@
-import { LABEL_COLORS } from 'proton-shared/lib/constants';
-import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { LABEL_COLORS } from '@proton/shared/lib/constants';
+import { randomIntFromInterval } from '@proton/shared/lib/helpers/function';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
-import { Folder } from 'proton-shared/lib/interfaces/Folder';
-import { Label } from 'proton-shared/lib/interfaces/Label';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import { Label } from '@proton/shared/lib/interfaces/Label';
 
 import { FolderMapping, FolderRelationshipsMap, MailImportFolder } from './interfaces';
 

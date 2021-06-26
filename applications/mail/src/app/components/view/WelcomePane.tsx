@@ -9,17 +9,17 @@ import {
     Loader,
     ButtonLike,
     SettingsLink,
-} from 'react-components';
+} from '@proton/components';
 import { c, msgid } from 'ttag';
 import { Location } from 'history';
-import { MailSettings } from 'proton-shared/lib/interfaces';
-import { MAILBOX_LABEL_IDS, APPS } from 'proton-shared/lib/constants';
-import { capitalize } from 'proton-shared/lib/helpers/string';
-import { LabelCount } from 'proton-shared/lib/interfaces/Label';
-import envelope from 'design-system/assets/img/placeholders/welcome-pane.svg';
-import mobileMailApp from 'design-system/assets/img/placeholders/app-teaser.svg';
-import appStore from 'design-system/assets/img/shared/app-store.svg';
-import playStore from 'design-system/assets/img/shared/play-store.svg';
+import { MailSettings } from '@proton/shared/lib/interfaces';
+import { MAILBOX_LABEL_IDS, APPS } from '@proton/shared/lib/constants';
+import { capitalize } from '@proton/shared/lib/helpers/string';
+import { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import envelope from '@proton/styles/assets/img/placeholders/welcome-pane.svg';
+import mobileMailApp from '@proton/styles/assets/img/placeholders/app-teaser.svg';
+import appStore from '@proton/styles/assets/img/shared/app-store.svg';
+import playStore from '@proton/styles/assets/img/shared/play-store.svg';
 
 import { isConversationMode } from '../../helpers/mailSettings';
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import noContactsImg from 'design-system/assets/img/placeholders/empty-address-book.svg';
-import { noop } from 'proton-shared/lib/helpers/function';
+import noContactsImg from '@proton/styles/assets/img/placeholders/empty-address-book.svg';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 import { useModals } from '../../hooks';
 

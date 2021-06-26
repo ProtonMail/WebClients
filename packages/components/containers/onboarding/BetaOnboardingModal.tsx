@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import earlyAccessSvg from 'design-system/assets/img/onboarding/early-access.svg';
-import { noop } from 'proton-shared/lib/helpers/function';
+import earlyAccessSvg from '@proton/styles/assets/img/onboarding/early-access.svg';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 import useEarlyAccess from '../../hooks/useEarlyAccess';
 import useLoading from '../../hooks/useLoading';

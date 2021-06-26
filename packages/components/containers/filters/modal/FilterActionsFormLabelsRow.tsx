@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { Label } from 'proton-shared/lib/interfaces/Label';
+import { Label } from '@proton/shared/lib/interfaces/Label';
 import { Checkbox, Button, Icon, LabelStack } from '../../../components';
 import { classnames } from '../../../helpers';
 import { useModals } from '../../../hooks';

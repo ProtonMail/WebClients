@@ -1,7 +1,7 @@
 import React, { useMemo, useCallback } from 'react';
 import { c } from 'ttag';
-import { getFormattedMonths, getFormattedWeekdays, getWeekStartsOn } from 'proton-shared/lib/date/date';
-import { dateLocale } from 'proton-shared/lib/i18n';
+import { getFormattedMonths, getFormattedWeekdays, getWeekStartsOn } from '@proton/shared/lib/date/date';
+import { dateLocale } from '@proton/shared/lib/i18n';
 import { format } from 'date-fns';
 
 import MiniCalendar, { Props as MiniCalProps } from './MiniCalendar';

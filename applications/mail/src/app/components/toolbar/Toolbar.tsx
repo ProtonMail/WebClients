@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import { c } from 'ttag';
 import { Location } from 'history';
-import { Icon, useMailSettings, useLabels, useFolders, ToolbarButton, ToolbarSeparator } from 'react-components';
-import { MailSettings } from 'proton-shared/lib/interfaces';
+import { Icon, useMailSettings, useLabels, useFolders, ToolbarButton, ToolbarSeparator } from '@proton/components';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import ReadUnreadButtons from './ReadUnreadButtons';
 import ToolbarDropdown from './ToolbarDropdown';

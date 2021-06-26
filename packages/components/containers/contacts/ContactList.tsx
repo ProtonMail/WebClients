@@ -1,7 +1,7 @@
 import React, { useRef, CSSProperties } from 'react';
 import { List, AutoSizer } from 'react-virtualized';
-import { DENSITY } from 'proton-shared/lib/constants';
-import { UserSettings } from 'proton-shared/lib/interfaces/UserSettings';
+import { DENSITY } from '@proton/shared/lib/constants';
+import { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
 interface Props {
     rowCount: number;

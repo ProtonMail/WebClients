@@ -1,10 +1,10 @@
 import React from 'react';
 import { c } from 'ttag';
-import { APPS, PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
-import mailThanksSvg from 'design-system/assets/img/pm-images/thank-you-mail.svg';
-import vpnThanksSvg from 'design-system/assets/img/pv-images/thank-you-vpn.svg';
-import appStoreSvg from 'design-system/assets/img/shared/app-store.svg';
-import playStoreSvg from 'design-system/assets/img/shared/play-store.svg';
+import { APPS, PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import mailThanksSvg from '@proton/styles/assets/img/pm-images/thank-you-mail.svg';
+import vpnThanksSvg from '@proton/styles/assets/img/pv-images/thank-you-vpn.svg';
+import appStoreSvg from '@proton/styles/assets/img/shared/app-store.svg';
+import playStoreSvg from '@proton/styles/assets/img/shared/play-store.svg';
 import { PrimaryButton, Href } from '../../../components';
 import { useConfig } from '../../../hooks';
 

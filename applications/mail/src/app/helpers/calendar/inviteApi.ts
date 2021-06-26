@@ -1,61 +1,61 @@
 import { getUnixTime } from 'date-fns';
-import { syncMultipleEvents, updateAttendeePartstat, updatePersonalEventPart } from 'proton-shared/lib/api/calendars';
-import { processApiRequestsSafe } from 'proton-shared/lib/api/helpers/safeApiRequests';
+import { syncMultipleEvents, updateAttendeePartstat, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
+import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import {
     getAttendeeEmail,
     modifyAttendeesPartstat,
     toApiPartstat,
     withPmAttendees,
-} from 'proton-shared/lib/calendar/attendees';
-import { getIsCalendarDisabled } from 'proton-shared/lib/calendar/calendar';
+} from '@proton/shared/lib/calendar/attendees';
+import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import {
     CALENDAR_FLAGS,
     ICAL_ATTENDEE_STATUS,
     ICAL_EVENT_STATUS,
     ICAL_METHOD,
-} from 'proton-shared/lib/calendar/constants';
+} from '@proton/shared/lib/calendar/constants';
 import {
     CreateCalendarEventSyncData,
     CreateLinkedCalendarEventsSyncData,
     CreateSinglePersonalEventData,
     DeleteCalendarEventSyncData,
     UpdateCalendarEventSyncData,
-} from 'proton-shared/lib/interfaces/calendar/Api';
-import { GetCalendarInfo } from 'proton-shared/lib/interfaces/hooks/GetCalendarInfo';
-import getCreationKeys from 'proton-shared/lib/calendar/integration/getCreationKeys';
-import getPaginatedEventsByUID from 'proton-shared/lib/calendar/integration/getPaginatedEventsByUID';
+} from '@proton/shared/lib/interfaces/calendar/Api';
+import { GetCalendarInfo } from '@proton/shared/lib/interfaces/hooks/GetCalendarInfo';
+import getCreationKeys from '@proton/shared/lib/calendar/integration/getCreationKeys';
+import getPaginatedEventsByUID from '@proton/shared/lib/calendar/integration/getPaginatedEventsByUID';
 import {
     findAttendee,
     getInvitedEventWithAlarms,
     getResetPartstatActions,
-} from 'proton-shared/lib/calendar/integration/invite';
-import { getIsRruleEqual } from 'proton-shared/lib/calendar/rruleEqual';
+} from '@proton/shared/lib/calendar/integration/invite';
+import { getIsRruleEqual } from '@proton/shared/lib/calendar/rruleEqual';
 import {
     createCalendarEvent,
     createPersonalEvent,
     getHasSharedEventContent,
     getHasSharedKeyPacket,
-} from 'proton-shared/lib/calendar/serialize';
+} from '@proton/shared/lib/calendar/serialize';
 import {
     getHasModifiedAttendees,
     getHasModifiedDateTimes,
     getHasModifiedDtstamp,
     propertyToUTCDate,
-} from 'proton-shared/lib/calendar/vcalConverter';
+} from '@proton/shared/lib/calendar/vcalConverter';
 import {
     getEventStatus,
     getHasAttendee,
     getHasRecurrenceId,
     getIsAlarmComponent,
     getSequence,
-} from 'proton-shared/lib/calendar/vcalHelper';
-import { getIsEventCancelled, withDtstamp } from 'proton-shared/lib/calendar/veventHelper';
-import { API_CODES } from 'proton-shared/lib/constants';
-import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { noop } from 'proton-shared/lib/helpers/function';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { omit, pick } from 'proton-shared/lib/helpers/object';
-import { Address, Api } from 'proton-shared/lib/interfaces';
+} from '@proton/shared/lib/calendar/vcalHelper';
+import { getIsEventCancelled, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
+import { API_CODES } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { noop } from '@proton/shared/lib/helpers/function';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { omit, pick } from '@proton/shared/lib/helpers/object';
+import { Address, Api } from '@proton/shared/lib/interfaces';
 import {
     Calendar,
     CalendarEvent,
@@ -70,11 +70,11 @@ import {
     VcalAttendeeProperty,
     VcalDateOrDateTimeProperty,
     VcalVeventComponent,
-} from 'proton-shared/lib/interfaces/calendar';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { GetCanonicalEmailsMap } from 'proton-shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
-import { RequireSome, Unwrap } from 'proton-shared/lib/interfaces/utils';
-import { getPrimaryKey } from 'proton-shared/lib/keys';
+} from '@proton/shared/lib/interfaces/calendar';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
+import { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
+import { getPrimaryKey } from '@proton/shared/lib/keys';
 import { MessageExtendedWithData } from '../../models/message';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
 import {

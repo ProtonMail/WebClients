@@ -1,4 +1,4 @@
-import getRandomValues from 'get-random-values';
+import getRandomValues from '@proton/get-random-values';
 
 enum CURRENCIES {
     USD = '$',

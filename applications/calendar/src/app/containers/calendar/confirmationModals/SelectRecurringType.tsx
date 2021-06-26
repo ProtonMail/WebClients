@@ -1,8 +1,8 @@
 import { c } from 'ttag';
-import { Radio, Row } from 'react-components';
+import { Radio, Row } from '@proton/components';
 import React from 'react';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { RECURRING_TYPES } from 'proton-shared/lib/calendar/constants';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 
 interface Props {
     types: RECURRING_TYPES[];

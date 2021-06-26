@@ -1,8 +1,8 @@
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { Api } from 'proton-shared/lib/interfaces';
-import { getEvents, getLatestID } from 'proton-shared/lib/api/events';
-import { getMessage, queryMessageMetadata } from 'proton-shared/lib/api/messages';
-import { wait } from 'proton-shared/lib/helpers/promise';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { Api } from '@proton/shared/lib/interfaces';
+import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
+import { getMessage, queryMessageMetadata } from '@proton/shared/lib/api/messages';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { GetUserKeys, ESMetricsReport } from '../../models/encryptedSearch';
 import { Event } from '../../models/event';
 import { ES_LIMIT } from '../../constants';

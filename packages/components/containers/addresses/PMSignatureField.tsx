@@ -1,8 +1,8 @@
 import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { PM_SIGNATURE } from 'proton-shared/lib/constants';
-import { updatePMSignature } from 'proton-shared/lib/api/mailSettings';
-import { MailSettings } from 'proton-shared/lib/interfaces';
+import { PM_SIGNATURE } from '@proton/shared/lib/constants';
+import { updatePMSignature } from '@proton/shared/lib/api/mailSettings';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { useToggle, useNotifications, useEventManager, useApiWithoutResult } from '../../hooks';
 import { Toggle } from '../../components';

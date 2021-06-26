@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, Button, useLoading, usePreventLeave } from 'react-components';
+import { Icon, Button, useLoading, usePreventLeave } from '@proton/components';
 import { c } from 'ttag';
 import { useUploadProvider } from '../uploads/UploadProvider';
 import {

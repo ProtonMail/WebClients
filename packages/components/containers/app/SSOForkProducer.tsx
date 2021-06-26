@@ -3,15 +3,15 @@ import {
     getActiveSessions,
     GetActiveSessionsResult,
     resumeSession,
-} from 'proton-shared/lib/authentication/persistedSessionHelper';
+} from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
     getProduceForkParameters,
     produceFork,
     ProduceForkParameters,
-} from 'proton-shared/lib/authentication/sessionForking';
-import { InvalidPersistentSessionError } from 'proton-shared/lib/authentication/error';
-import { getApiErrorMessage, getIs401Error } from 'proton-shared/lib/api/helpers/apiErrorHelper';
-import { FORK_TYPE } from 'proton-shared/lib/authentication/ForkInterface';
+} from '@proton/shared/lib/authentication/sessionForking';
+import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
+import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 
 import { useApi, useErrorHandler } from '../../hooks';
 import LoaderPage from './LoaderPage';

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { resetVPNSettings } from 'proton-shared/lib/api/vpn';
+import { resetVPNSettings } from '@proton/shared/lib/api/vpn';
 
 import { useApi, useLoading, useNotifications, useUserVPN } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';

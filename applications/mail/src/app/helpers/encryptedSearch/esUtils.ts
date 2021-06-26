@@ -1,5 +1,5 @@
-import { getItem, setItem } from 'proton-shared/lib/helpers/storage';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { IDBPDatabase, openDB } from 'idb';
 import { EncryptedSearchDB, StoredCiphertext } from '../../models/encryptedSearch';
 import { getMessageFromDB } from './esSync';

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, MutableRefObject, useRef, MouseEvent, Fragment } from 'react';
-import { AddressesAutocomplete, classnames, useContactEmails, useContactGroups } from 'react-components';
-import { noop } from 'proton-shared/lib/helpers/function';
-import { ContactEmail } from 'proton-shared/lib/interfaces/contacts';
-import { Recipient } from 'proton-shared/lib/interfaces/Address';
+import { AddressesAutocomplete, classnames, useContactEmails, useContactGroups } from '@proton/components';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { Recipient } from '@proton/shared/lib/interfaces/Address';
 
 import AddressesRecipientItem from './AddressesRecipientItem';
 import { recipientsWithoutGroup, getRecipientOrGroupKey } from '../../../helpers/addresses';
@@ -105,13 +105,8 @@ const AddressesInput = ({
         }
     };
 
-    const {
-        draggedRecipient,
-        placeholderPosition,
-        placeholderSize,
-        containerDragHandlers,
-        itemDragHandlers,
-    } = useAddressesInputDrag(recipientsOrGroups, setRecipientsOrGroups, onChange);
+    const { draggedRecipient, placeholderPosition, placeholderSize, containerDragHandlers, itemDragHandlers } =
+        useAddressesInputDrag(recipientsOrGroups, setRecipientsOrGroups, onChange);
 
     const dragPlaceholder = (
         <div

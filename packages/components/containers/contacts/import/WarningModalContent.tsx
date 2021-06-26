@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import React from 'react';
 
-import { ImportContactsModel } from 'proton-shared/lib/interfaces/contacts/Import';
+import { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
 
 import { Alert } from '../../../components';
 

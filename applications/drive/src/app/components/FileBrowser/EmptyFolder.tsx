@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { IllustrationPlaceholder, usePopperAnchor } from 'react-components';
+import { IllustrationPlaceholder, usePopperAnchor } from '@proton/components';
 
-import noContentSvg from 'design-system/assets/img/placeholders/empty-folder.svg';
+import noContentSvg from '@proton/styles/assets/img/placeholders/empty-folder.svg';
 import UploadButton from '../uploads/UploadButton';
 import FolderContextMenu from './FolderContextMenu';
 

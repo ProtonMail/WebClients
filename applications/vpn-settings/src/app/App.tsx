@@ -6,9 +6,9 @@ import {
     PrivateAuthenticationStore,
     ErrorBoundary,
     StandardErrorPage,
-} from 'react-components';
-import locales from 'proton-shared/lib/i18n/locales';
-import sentry from 'proton-shared/lib/helpers/sentry';
+} from '@proton/components';
+import locales from '@proton/shared/lib/i18n/locales';
+import sentry from '@proton/shared/lib/helpers/sentry';
 
 import * as config from './config';
 import PrivateApp from './PrivateApp';

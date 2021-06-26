@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Toolbar, ToolbarSeparator } from 'react-components';
+import { Toolbar, ToolbarSeparator } from '@proton/components';
 
 interface Props {
     dateCursorButtons: ReactNode;

@@ -1,4 +1,4 @@
-import { API_CODES, CONTACT_CARD_TYPE } from 'proton-shared/lib/constants';
+import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import React from 'react';
 import {
     Alert,
@@ -9,14 +9,14 @@ import {
     useGetUserKeys,
     useLoading,
     useNotifications,
-} from 'react-components';
+} from '@proton/components';
 import { c } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
-import { addContacts, getContact, updateContact } from 'proton-shared/lib/api/contacts';
-import { pinKeyCreateContact, pinKeyUpdateContact } from 'proton-shared/lib/contacts/keyPinning';
-import { Api } from 'proton-shared/lib/interfaces';
-import { ContactCard, ContactWithBePinnedPublicKey } from 'proton-shared/lib/interfaces/contacts';
-import { splitKeys } from 'proton-shared/lib/keys/keys';
+import { addContacts, getContact, updateContact } from '@proton/shared/lib/api/contacts';
+import { pinKeyCreateContact, pinKeyUpdateContact } from '@proton/shared/lib/contacts/keyPinning';
+import { Api } from '@proton/shared/lib/interfaces';
+import { ContactCard, ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
 
 import SimplePublicKeyTable from './SimplePublicKeyTable';
 

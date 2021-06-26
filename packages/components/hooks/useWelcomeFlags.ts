@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { UserSettingsModel } from 'proton-shared/lib/models';
+import { UserSettingsModel } from '@proton/shared/lib/models';
 import useCache from './useCache';
 
 export interface WelcomeFlagsState {

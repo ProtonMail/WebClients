@@ -1,4 +1,4 @@
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import { CachedMessage, ESStatus } from './models/encryptedSearch';
 

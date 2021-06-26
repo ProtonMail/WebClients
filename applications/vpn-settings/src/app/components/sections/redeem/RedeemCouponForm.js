@@ -1,9 +1,9 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { useApi, useConfig, PrimaryButton, Input, useLoading } from 'react-components';
-import { queryCheckVerificationCode } from 'proton-shared/lib/api/user';
-import { TOKEN_TYPES } from 'proton-shared/lib/constants';
+import { useApi, useConfig, PrimaryButton, Input, useLoading } from '@proton/components';
+import { queryCheckVerificationCode } from '@proton/shared/lib/api/user';
+import { TOKEN_TYPES } from '@proton/shared/lib/constants';
 
 const RedeemCouponForm = ({ history }) => {
     const api = useApi();

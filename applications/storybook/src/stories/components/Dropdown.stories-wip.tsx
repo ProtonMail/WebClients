@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { SimpleDropdown, DropdownMenu, DropdownMenuButton, Icon } from 'react-components';
+import { SimpleDropdown, DropdownMenu, DropdownMenuButton, Icon } from '@proton/components';
 
 export default { component: SimpleDropdown, title: 'Proton UI / Dropdown' };
 

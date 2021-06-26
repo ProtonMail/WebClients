@@ -1,5 +1,5 @@
 import { Ref, RefObject, MutableRefObject } from 'react';
-import { content } from 'proton-shared/lib/sanitize';
+import { content } from '@proton/shared/lib/sanitize';
 import { c } from 'ttag';
 
 export enum FONT_FACE {
@@ -121,7 +121,7 @@ export interface LinkData {
 
 export const getSquireRef = (ref: Ref<SquireType>) => (ref as RefObject<SquireType>).current as SquireType;
 export const setSquireRef = (ref: Ref<SquireType>, squire: any) => {
-    ((ref as any) as MutableRefObject<any>).current = squire;
+    (ref as any as MutableRefObject<any>).current = squire;
 };
 
 export const SQUIRE_CONFIG = {
@@ -298,7 +298,7 @@ const wrapInsertHTML = (squire: any) => {
         if (isPaste) {
             try {
                 const fragment = SQUIRE_CONFIG.sanitizeToDOMFragment(html, isPaste, squire);
-                const { firstElementChild: first, lastElementChild: last } = (fragment as any) as ParentNode;
+                const { firstElementChild: first, lastElementChild: last } = fragment as any as ParentNode;
 
                 // Check if it is just one image being pasted.
                 // If so, block normal insertion because it will be added as embedded image.

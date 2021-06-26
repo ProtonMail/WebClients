@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { checkSubscription, deleteSubscription } from 'proton-shared/lib/api/payments';
-import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES, APPS } from 'proton-shared/lib/constants';
-import { getPlanIDs } from 'proton-shared/lib/helpers/subscription';
-import { hasBonuses } from 'proton-shared/lib/helpers/organization';
-import { Currency, Organization, PlanIDs, Subscription, SubscriptionCheckResponse } from 'proton-shared/lib/interfaces';
-import { hasPlanIDs } from 'proton-shared/lib/helpers/planIDs';
-import { getAppFromPathnameSafe } from 'proton-shared/lib/apps/slugHelper';
+import { checkSubscription, deleteSubscription } from '@proton/shared/lib/api/payments';
+import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES, APPS } from '@proton/shared/lib/constants';
+import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { hasBonuses } from '@proton/shared/lib/helpers/organization';
+import {
+    Currency,
+    Organization,
+    PlanIDs,
+    Subscription,
+    SubscriptionCheckResponse,
+} from '@proton/shared/lib/interfaces';
+import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 
 import { Button, Loader } from '../../components';
 import {

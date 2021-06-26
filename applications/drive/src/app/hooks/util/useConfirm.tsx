@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { useModals, Alert, ConfirmModal, ErrorButton } from 'react-components';
+import { useModals, Alert, ConfirmModal, ErrorButton } from '@proton/components';
 
 const useConfirm = () => {
     const { createModal } = useModals();

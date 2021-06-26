@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { APPS_CONFIGURATION, BRAND_NAME, APPS } from 'proton-shared/lib/constants';
+import { APPS_CONFIGURATION, BRAND_NAME, APPS } from '@proton/shared/lib/constants';
 
 import { AppLink, Icon, SimpleDropdown, SettingsLink } from '../../components';
 import { useApps } from '../../hooks';

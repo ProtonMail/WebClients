@@ -2,8 +2,8 @@ import React from 'react';
 import { c } from 'ttag';
 import { useHistory } from 'react-router-dom';
 
-import { Button, ButtonLike, GenericError, Href, OnLoginCallback, useMyLocation } from 'react-components';
-import useResetPassword, { STEPS } from 'react-components/containers/resetPassword/useResetPassword';
+import { Button, ButtonLike, GenericError, Href, OnLoginCallback, useMyLocation } from '@proton/components';
+import useResetPassword, { STEPS } from '@proton/components/containers/resetPassword/useResetPassword';
 import BackButton from '../public/BackButton';
 import Main from '../public/Main';
 import Header from '../public/Header';

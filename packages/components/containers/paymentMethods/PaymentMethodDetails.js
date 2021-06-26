@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
+import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { Bordered } from '../../components';
 import useSvgGraphicsBbox from '../../hooks/useSvgGraphicsBbox';
 
-const banks = require.context('design-system/assets/img/credit-card-icons', true, /.svg$/);
+const banks = require.context('@proton/styles/assets/img/credit-card-icons', true, /.svg$/);
 
 const banksMap = banks.keys().reduce((acc, key) => {
     acc[key] = () => banks(key);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { c } from 'ttag';
-import { APPS, PAYMENT_METHOD_TYPES } from 'proton-shared/lib/constants';
+import { APPS, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { useModals, useSubscription, useConfig, usePaymentMethods } from '../../hooks';
 import { Button, Loader } from '../../components';
 

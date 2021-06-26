@@ -6,8 +6,8 @@ import {
     MIN_CREDIT_AMOUNT,
     DEFAULT_CURRENCY,
     PAYMENT_METHOD_TYPES,
-} from 'proton-shared/lib/constants';
-import { Currency } from 'proton-shared/lib/interfaces';
+} from '@proton/shared/lib/constants';
+import { Currency } from '@proton/shared/lib/interfaces';
 
 import { classnames } from '../../helpers';
 

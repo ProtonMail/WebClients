@@ -1,9 +1,9 @@
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import React from 'react';
-import { LabelStack } from 'react-components';
-import { toMap } from 'proton-shared/lib/helpers/object';
-import { orderBy } from 'proton-shared/lib/helpers/array';
-import { Label } from 'proton-shared/lib/interfaces/Label';
+import { LabelStack } from '@proton/components';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { orderBy } from '@proton/shared/lib/helpers/array';
+import { Label } from '@proton/shared/lib/interfaces/Label';
 import { useHistory } from 'react-router-dom';
 
 import { Element } from '../../models/element';

@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { useApi, useGetEncryptionPreferences } from 'react-components';
+import { useApi, useGetEncryptionPreferences } from '@proton/components';
 import { MessageExtended } from '../../models/message';
 import { loadMessage } from '../../helpers/message/messageRead';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';

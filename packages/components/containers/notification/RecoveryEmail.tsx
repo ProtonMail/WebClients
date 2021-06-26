@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { updateEmail } from 'proton-shared/lib/api/settings';
-import { emailValidator } from 'proton-shared/lib/helpers/formValidators';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
+import { updateEmail } from '@proton/shared/lib/api/settings';
+import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 import { Alert, Button, ConfirmModal, InputFieldTwo, useFormErrors } from '../../components';
 import { useLoading, useModals, useNotifications, useEventManager } from '../../hooks';

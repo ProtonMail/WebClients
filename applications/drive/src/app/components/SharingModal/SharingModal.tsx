@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { SessionKey } from 'pmcrypto';
-import { getRandomString } from 'proton-shared/lib/helpers/string';
-import { DialogModal, useLoading, useNotifications } from 'react-components';
+import { getRandomString } from '@proton/shared/lib/helpers/string';
+import { DialogModal, useLoading, useNotifications } from '@proton/components';
 
 import useDrive from '../../hooks/drive/useDrive';
 import useSharing from '../../hooks/drive/useSharing';
@@ -37,11 +37,10 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
     const [modalState, setModalState] = useState(SharingModalState.Loading);
     const [deleting, withDeleting] = useLoading(false);
     const [saving, withSaving] = useLoading(false);
-    const [shareUrlInfo, setShareUrlInfo] =
-        useState<{
-            ShareURL: ShareURL;
-            keyInfo: SharedURLSessionKeyPayload;
-        }>();
+    const [shareUrlInfo, setShareUrlInfo] = useState<{
+        ShareURL: ShareURL;
+        keyInfo: SharedURLSessionKeyPayload;
+    }>();
     const [passwordToggledOn, setPasswordToggledOn] = useState(false);
     const [expirationToggledOn, setExpirationToggledOn] = useState(false);
 

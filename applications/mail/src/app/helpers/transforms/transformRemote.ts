@@ -1,6 +1,6 @@
-import generateUID from 'proton-shared/lib/helpers/generateUID';
-import { MailSettings } from 'proton-shared/lib/interfaces';
-import { isDraft } from 'proton-shared/lib/mail/messages';
+import generateUID from '@proton/shared/lib/helpers/generateUID';
+import { MailSettings } from '@proton/shared/lib/interfaces';
+import { isDraft } from '@proton/shared/lib/mail/messages';
 import { MessageExtended } from '../../models/message';
 import { querySelectorAll } from '../message/messageContent';
 import { hasShowRemote } from '../mailSettings';

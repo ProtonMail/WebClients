@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import noContentSvg from 'design-system/assets/img/placeholders/empty-folder.svg';
+import noContentSvg from '@proton/styles/assets/img/placeholders/empty-folder.svg';
 
 const HasNoFilesToShare = () => {
     const title = c('Title').t`You have no files to share`;

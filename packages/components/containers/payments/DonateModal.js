@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
-import { donate } from 'proton-shared/lib/api/payments';
+import { donate } from '@proton/shared/lib/api/payments';
 import {
     DEFAULT_CURRENCY,
     DEFAULT_DONATION_AMOUNT,
     PAYMENT_METHOD_TYPES,
     MIN_DONATION_AMOUNT,
-} from 'proton-shared/lib/constants';
+} from '@proton/shared/lib/constants';
 import { FormModal, PrimaryButton, useDebounceInput } from '../../components';
 import { useNotifications, useApi, useLoading, useModals } from '../../hooks';
 

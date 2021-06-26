@@ -1,11 +1,11 @@
 import { OpenPGPKey } from 'pmcrypto';
-import { SIGNATURE_START, VERIFICATION_STATUS } from 'proton-shared/lib/mail/constants';
+import { SIGNATURE_START, VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import {
     ENCRYPTION_PREFERENCES_ERROR_TYPES,
     EncryptionPreferencesError,
-} from 'proton-shared/lib/mail/encryptionPreferences';
-import { MIME_TYPES, PACKAGE_TYPE } from 'proton-shared/lib/constants';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+} from '@proton/shared/lib/mail/encryptionPreferences';
+import { MIME_TYPES, PACKAGE_TYPE } from '@proton/shared/lib/constants';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { StatusIcon, STATUS_ICONS_FILLS } from '../../models/crypto';
 import { MessageExtended, MessageVerification } from '../../models/message';
 import { getReceivedStatusIcon, getSendStatusIcon, getSentStatusIconInfo, getStatusIconName } from './icon';
@@ -270,11 +270,11 @@ describe('icon', () => {
     describe('getSentStatusIcon for individual recipients', () => {
         const email = 'test@pm.me';
         const getIconFromHeaders = (headers: { [key: string]: string }, emailAddress: string) => {
-            const message = ({
+            const message = {
                 data: {
                     ParsedHeaders: headers,
                 },
-            } as unknown) as MessageExtended;
+            } as unknown as MessageExtended;
             const { mapStatusIcon } = getSentStatusIconInfo(message) || {};
             return mapStatusIcon[emailAddress];
         };
@@ -443,11 +443,11 @@ describe('icon', () => {
 
     describe('getSentStatusIcon for aggregated icon', () => {
         const getIconFromHeaders = (headers: { [key: string]: string }) => {
-            const message = ({
+            const message = {
                 data: {
                     ParsedHeaders: headers,
                 },
-            } as unknown) as MessageExtended;
+            } as unknown as MessageExtended;
             const { globalIcon } = getSentStatusIconInfo(message);
             return globalIcon;
         };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, classnames, FormModal } from 'react-components';
+import { Alert, classnames, FormModal } from '@proton/components';
 import { c } from 'ttag';
 
 interface Props {

@@ -31,17 +31,17 @@ import {
     useFeature,
     FeatureCode,
     Tooltip,
-} from 'react-components';
-import { MAILBOX_LABEL_IDS, SECOND, SHOW_MOVED } from 'proton-shared/lib/constants';
-import { validateEmailAddress } from 'proton-shared/lib/helpers/email';
-import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { buildTreeview, formatFolderName } from 'proton-shared/lib/helpers/folder';
-import { FolderWithSubFolders } from 'proton-shared/lib/interfaces/Folder';
-import { changeSearchParams, getSearchParams } from 'proton-shared/lib/helpers/url';
-import { Recipient } from 'proton-shared/lib/interfaces/Address';
-import { wait } from 'proton-shared/lib/helpers/promise';
-import { isMobile } from 'proton-shared/lib/helpers/browser';
-import { isPaid } from 'proton-shared/lib/user/helpers';
+} from '@proton/components';
+import { MAILBOX_LABEL_IDS, SECOND, SHOW_MOVED } from '@proton/shared/lib/constants';
+import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
+import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import { changeSearchParams, getSearchParams } from '@proton/shared/lib/helpers/url';
+import { Recipient } from '@proton/shared/lib/interfaces/Address';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { getHumanLabelID } from '../../helpers/labels';
 import AddressesInput from '../composer/addresses/AddressesInput';

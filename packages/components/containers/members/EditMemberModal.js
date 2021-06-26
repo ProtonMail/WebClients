@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { privatizeMember, updateName, updateQuota, updateRole, updateVPN } from 'proton-shared/lib/api/members';
-import { GIGA, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_SUBSCRIBER } from 'proton-shared/lib/constants';
+import { privatizeMember, updateName, updateQuota, updateRole, updateVPN } from '@proton/shared/lib/api/members';
+import { GIGA, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
 import { FormModal, Row, Field, Label, Input, Toggle, ConfirmModal, Alert } from '../../components';
 import { useApi, useNotifications, useEventManager, useOrganization, useLoading, useModals } from '../../hooks';
 

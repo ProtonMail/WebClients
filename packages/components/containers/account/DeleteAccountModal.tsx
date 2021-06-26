@@ -1,14 +1,14 @@
 import React, { useState, useMemo, ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { ACCOUNT_DELETION_REASONS, APPS } from 'proton-shared/lib/constants';
-import { deleteUser, canDelete, unlockPasswordChanges } from 'proton-shared/lib/api/user';
-import { reportBug } from 'proton-shared/lib/api/reports';
-import { srpAuth } from 'proton-shared/lib/srp';
-import { wait } from 'proton-shared/lib/helpers/promise';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { getClientID, getAppName } from 'proton-shared/lib/apps/helper';
-import { getHasTOTPSettingEnabled } from 'proton-shared/lib/settings/twoFactor';
-import { omit } from 'proton-shared/lib/helpers/object';
+import { ACCOUNT_DELETION_REASONS, APPS } from '@proton/shared/lib/constants';
+import { deleteUser, canDelete, unlockPasswordChanges } from '@proton/shared/lib/api/user';
+import { reportBug } from '@proton/shared/lib/api/reports';
+import { srpAuth } from '@proton/shared/lib/srp';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { getClientID, getAppName } from '@proton/shared/lib/apps/helper';
+import { getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
+import { omit } from '@proton/shared/lib/helpers/object';
 
 import { getReportInfo, getClient } from '../../helpers/report';
 import {
@@ -75,13 +75,13 @@ const DeleteAccountModal = ({ onClose, ...rest }: Props) => {
         return false;
     }, [model.check, model.reason, model.feedback, model.email, model.password, model.twoFa]);
 
-    const handleChange = (key: string) => ({
-        target,
-    }: ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>) =>
-        setModel({
-            ...model,
-            [key]: target.value,
-        });
+    const handleChange =
+        (key: string) =>
+        ({ target }: ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>) =>
+            setModel({
+                ...model,
+                [key]: target.value,
+            });
 
     const reasons = [
         { text: c('Option').t`Select a reason`, value: '', disabled: true },

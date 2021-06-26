@@ -1,6 +1,6 @@
 import { act } from '@testing-library/react';
 import { waitFor } from '@testing-library/dom';
-import { useEventManager } from 'react-components';
+import { useEventManager } from '@proton/components';
 import { ELEMENTS_CACHE_KEY } from '../../hooks/mailbox/useElementsCache';
 import {
     clearCache,
@@ -49,7 +49,7 @@ export const waitForSpyCall = async (mock: jest.Mock) =>
 
 export const waitForEventManagerCall = async () => {
     // Hard override of the typing as event manager is mocked
-    const { call } = ((useEventManager as any) as () => { call: jest.Mock })();
+    const { call } = (useEventManager as any as () => { call: jest.Mock })();
     await waitForSpyCall(call);
 };
 

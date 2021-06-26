@@ -1,5 +1,5 @@
 import React from 'react';
-import { Copy } from 'react-components';
+import { Copy } from '@proton/components';
 
 import mdx from './Copy.mdx';
 

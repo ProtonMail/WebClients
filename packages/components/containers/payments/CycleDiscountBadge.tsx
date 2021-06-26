@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { CYCLE } from 'proton-shared/lib/constants';
-import { Cycle } from 'proton-shared/lib/interfaces';
+import { CYCLE } from '@proton/shared/lib/constants';
+import { Cycle } from '@proton/shared/lib/interfaces';
 
 import { Badge } from '../../components';
 

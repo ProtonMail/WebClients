@@ -1,10 +1,10 @@
 import React from 'react';
 import { c } from 'ttag';
-import { getAppName } from 'proton-shared/lib/apps/helper';
-import { OnboardingContent, OnboardingModal, OnboardingStep, OnboardingStepRenderCallback } from 'react-components';
-import { APPS } from 'proton-shared/lib/constants';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { OnboardingContent, OnboardingModal, OnboardingStep, OnboardingStepRenderCallback } from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
 
-import onboardingWelcome from 'design-system/assets/img/onboarding/drive-welcome.svg';
+import onboardingWelcome from '@proton/styles/assets/img/onboarding/drive-welcome.svg';
 
 const DriveOnboardingModal = (props: any) => {
     const appName = getAppName(APPS.PROTONDRIVE);

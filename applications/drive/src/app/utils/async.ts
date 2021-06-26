@@ -4,7 +4,9 @@
 export const waitUntil = (conditionFn: () => boolean) => {
     return new Promise<void>((resolve) => {
         const waitForCondition = () => {
-            if (conditionFn()) return resolve();
+            if (conditionFn()) {
+                return resolve();
+            }
             setTimeout(waitForCondition, 50);
         };
 

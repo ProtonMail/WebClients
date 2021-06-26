@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react';
 import { c } from 'ttag';
-import { updateInheritParentFolderColor } from 'proton-shared/lib/api/mailSettings';
+import { updateInheritParentFolderColor } from '@proton/shared/lib/api/mailSettings';
 
 import { Toggle } from '../../components';
 import { useApi, useLoading, useEventManager, useNotifications, useMailSettings } from '../../hooks';

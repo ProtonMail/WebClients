@@ -8,11 +8,11 @@ import {
     LabelModal,
     useModals,
     SidebarListItemContentIcon,
-} from 'react-components';
-import { randomIntFromInterval } from 'proton-shared/lib/helpers/function';
-import { LABEL_COLORS, LABEL_TYPE } from 'proton-shared/lib/constants';
+} from '@proton/components';
+import { randomIntFromInterval } from '@proton/shared/lib/helpers/function';
+import { LABEL_COLORS, LABEL_TYPE } from '@proton/shared/lib/constants';
 
-import { Label } from 'proton-shared/lib/interfaces/Label';
+import { Label } from '@proton/shared/lib/interfaces/Label';
 
 interface Props {
     onFocus: () => void;

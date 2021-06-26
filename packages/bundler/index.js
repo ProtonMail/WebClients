@@ -16,8 +16,8 @@ const argv = require('minimist')(process.argv.slice(2), {
         remote: false,
         forceFetch: false,
         'only-git': false,
-        'default-branch': 'master'
-    }
+        'default-branch': 'master',
+    },
 });
 
 // Compat mode WebClient
@@ -56,7 +56,7 @@ async function main() {
     const listTasks = getTasks({ config, argv });
     const tasks = new Listr(listTasks, {
         renderer: UpdaterRenderer,
-        collapse: false
+        collapse: false,
     });
 
     await tasks.run();

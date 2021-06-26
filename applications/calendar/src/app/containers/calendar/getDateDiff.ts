@@ -1,5 +1,5 @@
-import { addDays, addWeeks, addMonths, addYears } from 'proton-shared/lib/date-fns-utc';
-import { VIEWS } from 'proton-shared/lib/calendar/constants';
+import { addDays, addWeeks, addMonths, addYears } from '@proton/shared/lib/date-fns-utc';
+import { VIEWS } from '@proton/shared/lib/calendar/constants';
 
 const getDateDiff = (date: Date, range: number, view: VIEWS, direction: number) => {
     switch (view) {

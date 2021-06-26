@@ -1,5 +1,5 @@
-import { Recipient } from 'proton-shared/lib/interfaces/Address';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
+import { Recipient } from '@proton/shared/lib/interfaces/Address';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 export interface Conversation {
     ID?: string;

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { c } from 'ttag';
-import { requiredValidator } from 'proton-shared/lib/helpers/formValidators';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { noop } from '@proton/shared/lib/helpers/function';
 
-import { Button, useLoading, useFormErrors, InputFieldTwo, LinkButton } from 'react-components';
+import { Button, useLoading, useFormErrors, InputFieldTwo, LinkButton } from '@proton/components';
 
 interface Props {
     onSubmit: (totp: string) => Promise<void>;

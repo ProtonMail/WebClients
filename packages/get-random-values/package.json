@@ -1,11 +1,10 @@
 {
-  "name": "get-random-values",
-  "version": "1.0.1",
-  "description": "Cross browser and node.js implementation to generate random values",
-  "main": "./index.js",
-  "module": "./index.js",
-  "types": "./index.d.ts",
-  "keywords": [],
-  "author": "ProtonMail",
-  "license": "MIT"
+    "name": "@proton/get-random-values",
+    "description": "Cross browser and node.js implementation to generate random values",
+    "keywords": [],
+    "license": "MIT",
+    "author": "ProtonMail",
+    "main": "./index.js",
+    "module": "./index.js",
+    "types": "./index.d.ts"
 }

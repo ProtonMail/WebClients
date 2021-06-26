@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react';
-import { useFolders } from 'react-components';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { useFolders } from '@proton/components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { MessageExtended } from '../models/message';
 import { hasLabel, getCurrentFolderID } from '../helpers/elements';

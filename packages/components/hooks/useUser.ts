@@ -1,5 +1,5 @@
-import { UserModel } from 'proton-shared/lib/models/userModel';
-import { UserModel as tsUserModel } from 'proton-shared/lib/interfaces';
+import { UserModel } from '@proton/shared/lib/models/userModel';
+import { UserModel as tsUserModel } from '@proton/shared/lib/interfaces';
 import { useCallback } from 'react';
 import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
 import useCache from './useCache';

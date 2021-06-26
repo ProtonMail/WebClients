@@ -1,7 +1,7 @@
-import { ContactEmail, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
-import { contactToInput, contactToRecipient, majorToRecipient } from 'proton-shared/lib/mail/recipient';
+import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import { contactToInput, contactToRecipient, majorToRecipient } from '@proton/shared/lib/mail/recipient';
 import { c, msgid } from 'ttag';
-import { SimpleMap } from 'proton-shared/lib/interfaces';
+import { SimpleMap } from '@proton/shared/lib/interfaces';
 
 export type AddressesAutocompleteItem =
     | {

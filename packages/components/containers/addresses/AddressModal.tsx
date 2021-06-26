@@ -1,8 +1,8 @@
 import React from 'react';
 import { c } from 'ttag';
-import { createAddress } from 'proton-shared/lib/api/addresses';
-import { ADDRESS_TYPE, MEMBER_PRIVATE } from 'proton-shared/lib/constants';
-import { Member, CachedOrganizationKey } from 'proton-shared/lib/interfaces';
+import { createAddress } from '@proton/shared/lib/api/addresses';
+import { ADDRESS_TYPE, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
+import { Member, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 import { FormModal, Row, Field, Label, Input, SelectTwo, Option } from '../../components';
 import {
     useLoading,
@@ -39,7 +39,10 @@ const AddressModal = ({ onClose, member, members, organizationKey, ...rest }: Pr
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const hasPremium = addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
-    const handleChange = (key: string) => ({ target }: any) => update(key, target.value);
+    const handleChange =
+        (key: string) =>
+        ({ target }: any) =>
+            update(key, target.value);
 
     const selectedMember = members.find((otherMember) => otherMember.ID === model.id);
 

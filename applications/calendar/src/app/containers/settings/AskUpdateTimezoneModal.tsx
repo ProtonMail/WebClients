@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Button, useApi, useEventManager, useNotifications, FormModal, useLoading } from 'react-components';
-import { updateCalendarUserSettings } from 'proton-shared/lib/api/calendars';
+import { Button, useApi, useEventManager, useNotifications, FormModal, useLoading } from '@proton/components';
+import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 
 interface Props {
     localTzid: string;

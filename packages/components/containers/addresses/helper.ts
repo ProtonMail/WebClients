@@ -1,5 +1,5 @@
-import { ADDRESS_STATUS, ADDRESS_TYPE, MEMBER_PRIVATE, RECEIVE_ADDRESS } from 'proton-shared/lib/constants';
-import { Address, Member, UserModel, CachedOrganizationKey } from 'proton-shared/lib/interfaces';
+import { ADDRESS_STATUS, ADDRESS_TYPE, MEMBER_PRIVATE, RECEIVE_ADDRESS } from '@proton/shared/lib/constants';
+import { Address, Member, UserModel, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 
 const { TYPE_ORIGINAL, TYPE_CUSTOM_DOMAIN, TYPE_PREMIUM } = ADDRESS_TYPE;
 const { READABLE } = MEMBER_PRIVATE;

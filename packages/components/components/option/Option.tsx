@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { scrollIntoView } from 'proton-shared/lib/helpers/dom';
+import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import usePrevious from '../../hooks/usePrevious';
 import { DropdownMenuButton } from '../dropdown';
 import { classnames } from '../../helpers';

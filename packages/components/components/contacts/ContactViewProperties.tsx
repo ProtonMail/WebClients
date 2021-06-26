@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { OTHER_INFORMATION_FIELDS } from 'proton-shared/lib/contacts/constants';
-import { DecryptedKey } from 'proton-shared/lib/interfaces';
-import { ContactEmail, ContactProperties, ContactGroup } from 'proton-shared/lib/interfaces/contacts';
+import { OTHER_INFORMATION_FIELDS } from '@proton/shared/lib/contacts/constants';
+import { DecryptedKey } from '@proton/shared/lib/interfaces';
+import { ContactEmail, ContactProperties, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 
 import ContactViewProperty from './ContactViewProperty';
 import { classnames } from '../../helpers';

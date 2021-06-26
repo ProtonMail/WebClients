@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PrimaryButton, useModals } from 'react-components';
+import { PrimaryButton, useModals } from '@proton/components';
 import { c } from 'ttag';
 import SharingModal from '../../../SharingModal/SharingModal';
 import { FileBrowserItem } from '../../interfaces';

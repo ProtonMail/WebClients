@@ -1,22 +1,22 @@
 import React from 'react';
 import { c } from 'ttag';
-import { authMember, removeMember, updateRole } from 'proton-shared/lib/api/members';
-import { revokeSessions } from 'proton-shared/lib/api/memberSessions';
-import { APPS, isSSOMode, isStandaloneMode, MEMBER_PRIVATE, MEMBER_ROLE } from 'proton-shared/lib/constants';
-import memberLogin from 'proton-shared/lib/authentication/memberLogin';
-import { Address, CachedOrganizationKey, Member, Organization, User as tsUser } from 'proton-shared/lib/interfaces';
-import { noop } from 'proton-shared/lib/helpers/function';
-import isTruthy from 'proton-shared/lib/helpers/isTruthy';
-import { revoke } from 'proton-shared/lib/api/auth';
+import { authMember, removeMember, updateRole } from '@proton/shared/lib/api/members';
+import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
+import { APPS, isSSOMode, isStandaloneMode, MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
+import memberLogin from '@proton/shared/lib/authentication/memberLogin';
+import { Address, CachedOrganizationKey, Member, Organization, User as tsUser } from '@proton/shared/lib/interfaces';
+import { noop } from '@proton/shared/lib/helpers/function';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { revoke } from '@proton/shared/lib/api/auth';
 import {
     maybeResumeSessionByUser,
     persistSessionWithPassword,
-} from 'proton-shared/lib/authentication/persistedSessionHelper';
-import { getAppHref } from 'proton-shared/lib/apps/helper';
-import { withUIDHeaders } from 'proton-shared/lib/fetch/headers';
-import { getUser } from 'proton-shared/lib/api/user';
-import { MemberAuthResponse } from 'proton-shared/lib/authentication/interface';
-import { LoginTypes } from 'proton-shared/lib/authentication/LoginInterface';
+} from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { getUser } from '@proton/shared/lib/api/user';
+import { MemberAuthResponse } from '@proton/shared/lib/authentication/interface';
+import { LoginTypes } from '@proton/shared/lib/authentication/LoginInterface';
 
 import { DropdownActions } from '../../components';
 import {

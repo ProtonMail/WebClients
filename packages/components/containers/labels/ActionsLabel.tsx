@@ -1,9 +1,9 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { LABEL_TYPE } from 'proton-shared/lib/constants';
-import { deleteLabel } from 'proton-shared/lib/api/labels';
-import { Label } from 'proton-shared/lib/interfaces/Label';
+import { LABEL_TYPE } from '@proton/shared/lib/constants';
+import { deleteLabel } from '@proton/shared/lib/api/labels';
+import { Label } from '@proton/shared/lib/interfaces/Label';
 
 import { Alert, DropdownActions, ConfirmModal, ErrorButton } from '../../components';
 import { useApi, useModals, useEventManager, useNotifications } from '../../hooks';

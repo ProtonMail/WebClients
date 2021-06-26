@@ -7,9 +7,9 @@ import {
     useMessageCounts,
     useMailSettings,
     useFolders,
-} from 'react-components';
-import { toMap } from 'proton-shared/lib/helpers/object';
-import { LabelCount } from 'proton-shared/lib/interfaces/Label';
+} from '@proton/components';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { getLabelName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 

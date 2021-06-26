@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { PASSWORD_WRONG_ERROR } from 'proton-shared/lib/api/auth';
-import { srpAuth } from 'proton-shared/lib/srp';
-import { getApiErrorMessage } from 'proton-shared/lib/api/helpers/apiErrorHelper';
-import { noop } from 'proton-shared/lib/helpers/function';
+import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
+import { srpAuth } from '@proton/shared/lib/srp';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { noop } from '@proton/shared/lib/helpers/function';
 
 import { useApi } from '../../hooks';
 import AskAuthModal from './AskAuthModal';

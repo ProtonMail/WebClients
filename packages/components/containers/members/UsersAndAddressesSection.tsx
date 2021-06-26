@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { c } from 'ttag';
-import { getInitials, normalize } from 'proton-shared/lib/helpers/string';
-import { DOMAIN_STATE } from 'proton-shared/lib/constants';
-import { Organization as tsOrganization, Domain, CachedOrganizationKey } from 'proton-shared/lib/interfaces';
+import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
+import { DOMAIN_STATE } from '@proton/shared/lib/constants';
+import { Organization as tsOrganization, Domain, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 import {
     Table,
     TableCell,

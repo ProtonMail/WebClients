@@ -1,4 +1,4 @@
-@import '~design-system/scss/config/';
+@import '@proton/styles/scss/config/';
 
 .orderableHelper {
 	z-index: 666;
@@ -11,7 +11,7 @@
 
 	/**
      * We replace td with custom class here because we don't have direct access to it.
-     * See: https://github.com/ProtonMail/react-components/pull/113/files#r305374317
+     * See: https://github.com/ProtonMail/@proton/components/pull/113/files#r305374317
      */
 	td {
 		flex: 1;

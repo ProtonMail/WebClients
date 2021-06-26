@@ -1,4 +1,4 @@
-import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, ICAL_METHODS_ATTENDEE } from 'proton-shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, ICAL_METHODS_ATTENDEE } from '@proton/shared/lib/calendar/constants';
 import { c } from 'ttag';
 
 export enum EVENT_INVITATION_ERROR_TYPE {

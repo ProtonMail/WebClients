@@ -1,5 +1,5 @@
-import { MESSAGE_FLAGS } from 'proton-shared/lib/mail/constants';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import React from 'react';
 import {
     Icon,
@@ -12,10 +12,10 @@ import {
     useEventManager,
     useApi,
     useNotifications,
-} from 'react-components';
+} from '@proton/components';
 import { c } from 'ttag';
-import { hasBit } from 'proton-shared/lib/helpers/bitset';
-import { markAsHam } from 'proton-shared/lib/api/messages';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { markAsHam } from '@proton/shared/lib/api/messages';
 
 import { MessageExtended } from '../../../models/message';
 

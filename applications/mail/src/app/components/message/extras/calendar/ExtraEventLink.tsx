@@ -1,6 +1,6 @@
-import { APP_NAMES, APPS } from 'proton-shared/lib/constants';
+import { APP_NAMES, APPS } from '@proton/shared/lib/constants';
 import React from 'react';
-import { AppLink } from 'react-components';
+import { AppLink } from '@proton/components';
 
 interface Props {
     to?: string;

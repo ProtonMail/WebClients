@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { c } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
-import { getRandomString } from 'proton-shared/lib/helpers/string';
-import { OnKeyImportCallback } from 'proton-shared/lib/keys';
+import { getRandomString } from '@proton/shared/lib/helpers/string';
+import { OnKeyImportCallback } from '@proton/shared/lib/keys';
 
 import { Alert, FormModal } from '../../../components';
 import { useModals, useNotifications } from '../../../hooks';

@@ -1,5 +1,5 @@
-import { createExportIcs } from 'proton-shared/lib/calendar/export/createExportIcs';
-import { getUniqueVtimezones } from 'proton-shared/lib/calendar/vtimezoneHelper';
+import { createExportIcs } from '@proton/shared/lib/calendar/export/createExportIcs';
+import { getUniqueVtimezones } from '@proton/shared/lib/calendar/vtimezoneHelper';
 import {
     Calendar,
     EXPORT_ERRORS,
@@ -7,16 +7,16 @@ import {
     ExportCalendarModel,
     ExportError,
     VcalVeventComponent,
-} from 'proton-shared/lib/interfaces/calendar';
-import { getWeekStartsOn } from 'proton-shared/lib/settings/helper';
+} from '@proton/shared/lib/interfaces/calendar';
+import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import React, { useState } from 'react';
 import { c } from 'ttag';
 
-import { getProdIdFromNameAndVersion } from 'proton-shared/lib/calendar/vcalHelper';
-import downloadFile from 'proton-shared/lib/helpers/downloadFile';
+import { getProdIdFromNameAndVersion } from '@proton/shared/lib/calendar/vcalHelper';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { format } from 'date-fns';
-import { getAppHref, getClientID } from 'proton-shared/lib/apps/helper';
-import { APPS } from 'proton-shared/lib/constants';
+import { getAppHref, getClientID } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
 import { Button, FormModal } from '../../../components';
 import { useGetVtimezonesMap } from '../../../hooks/useGetVtimezonesMap';
 import ExportingModalContent from './ExportingModalContent';

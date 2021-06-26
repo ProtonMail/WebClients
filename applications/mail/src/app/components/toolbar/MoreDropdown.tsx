@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
-import { Icon, DropdownMenu, DropdownMenuButton, ToolbarSeparator, useLoading } from 'react-components';
-import { MAILBOX_LABEL_IDS } from 'proton-shared/lib/constants';
+import { Icon, DropdownMenu, DropdownMenuButton, ToolbarSeparator, useLoading } from '@proton/components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import ToolbarDropdown from './ToolbarDropdown';
 import { useEmptyLabel } from '../../hooks/useEmptyLabel';

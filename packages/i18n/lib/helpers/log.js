@@ -75,6 +75,6 @@ module.exports = (scope) => {
         debug,
         error,
         info,
-        warn
+        warn,
     };
 };

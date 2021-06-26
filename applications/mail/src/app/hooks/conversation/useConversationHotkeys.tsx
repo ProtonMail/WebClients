@@ -1,6 +1,6 @@
 import { useRef } from 'react';
-import { Message } from 'proton-shared/lib/interfaces/mail/Message';
-import { HotkeyTuple, useHotkeys } from 'react-components';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { HotkeyTuple, useHotkeys } from '@proton/components';
 
 export interface ConversationHotkeysContext {
     messages: Message[];

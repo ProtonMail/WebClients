@@ -1,11 +1,11 @@
 import React from 'react';
 import { c } from 'ttag';
-import { SETTINGS_TIME_FORMAT } from 'proton-shared/lib/interfaces';
-import { dateLocaleCode } from 'proton-shared/lib/i18n';
-import { updateTimeFormat } from 'proton-shared/lib/api/settings';
-import { loadDateLocale } from 'proton-shared/lib/i18n/loadLocale';
-import { getBrowserLocale } from 'proton-shared/lib/i18n/helper';
-import { getDefaultTimeFormat } from 'proton-shared/lib/settings/helper';
+import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
+import { dateLocaleCode } from '@proton/shared/lib/i18n';
+import { updateTimeFormat } from '@proton/shared/lib/api/settings';
+import { loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
+import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
+import { getDefaultTimeFormat } from '@proton/shared/lib/settings/helper';
 
 import { Option, SelectTwo } from '../../components';
 import { useApi, useEventManager, useLoading, useNotifications, useUserSettings } from '../../hooks';

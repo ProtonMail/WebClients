@@ -1,4 +1,4 @@
-import { isSafari, hasPDFSupport } from 'proton-shared/lib/helpers/browser';
+import { isSafari, hasPDFSupport } from '@proton/shared/lib/helpers/browser';
 
 export const isSupportedImage = (mimeType: string) =>
     [

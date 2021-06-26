@@ -1,12 +1,12 @@
 /* eslint-disable react/display-name */
 import React from 'react';
 import { renderHook } from '@testing-library/react-hooks';
-import { useApi, CacheProvider } from 'react-components';
-import createCache from 'proton-shared/lib/helpers/cache';
-import { Api } from 'proton-shared/lib/interfaces';
+import { useApi, CacheProvider } from '@proton/components';
+import createCache from '@proton/shared/lib/helpers/cache';
+import { Api } from '@proton/shared/lib/interfaces';
 import useDebouncedRequest from './useDebouncedRequest';
 
-jest.mock('react-components/hooks/useApi');
+jest.mock('@proton/components/hooks/useApi');
 
 const mockUseApi = useApi as jest.MockedFunction<typeof useApi>;
 
