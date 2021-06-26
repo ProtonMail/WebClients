@@ -1,0 +1,232 @@
+/* fix bug on Chrome */
+body {
+	@extend .no-scroll;
+	height: 100%;
+}
+
+@include respond-to($breakpoint-large, 'min') {
+	:root {
+		--width-sidebar: #{rem(250)};
+		--width-context-bar: #{rem(450)};
+	}
+}
+
+/* === page === */
+html,
+.app-root,
+.content-container {
+	height: 100%;
+}
+
+.app-root-loader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	// Static because css variables can't be reached on that components
+	background: #1c223d;
+	color: white;
+}
+
+.app-noscript {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 3em;
+	font-size: 1.2em;
+	// Static because css variables can't be reached on that components
+	background: #1c223d;
+	color: white;
+}
+
+.content {
+	background-color: var(--sidebar-background-color, var(--background-norm));
+	color: var(--sidebar-text-color, var(--text-norm));
+}
+
+.header {
+	padding: rem(10) rem(15) rem(10) 0;
+	height: rem($header-height);
+	flex-shrink: 0;
+	background-color: var(--header-background-color, var(--background-norm));
+	color: var(--header-text-color, var(--text-norm));
+}
+
+@if $rtl-option==true {
+	[dir='rtl'] {
+		.header {
+			padding: rem(10) 0 rem(10) rem(15);
+		}
+	}
+}
+
+.sidebar {
+	width: var(--width-sidebar, #{rem($width-sidebar)});
+	visibility: visible;
+	transition: visibility 0s ease, transform 1s ease, width 0.6s ease,
+		opacity 1s ease;
+	transition-delay: 0s;
+	overflow: auto;
+	background-color: var(--sidebar-background-color, var(--background-norm));
+	color: var(--sidebar-text-color, var(--text-norm));
+
+	@include respond-to($breakpoint-small) {
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		z-index: 500;
+		width: 100%;
+		max-width: 100%;
+		max-height: none;
+		padding-top: 1em;
+		transform-origin: 0 50%;
+		transition: 0s visibility ease, 0.25s transform ease;
+		transition-delay: 0s;
+
+		&[data-expanded='false'] {
+			transform: translateX(-100%);
+			visibility: hidden;
+			transition-delay: 0.25s, 0s;
+		}
+
+		&[aria-hidden='true'] {
+			transform: translateX(0);
+		}
+	}
+}
+
+.logo-container {
+	padding: 0 1em;
+	width: var(--width-sidebar, #{rem($width-sidebar)});
+}
+
+.logo-link {
+	@extend .interactive;
+
+	position: relative;
+	padding: 0.875em 0.5em 1.125em;
+	box-sizing: initial;
+
+	.plan {
+		position: absolute;
+		bottom: 0.5em;
+		left: rem(32);
+		font-size: rem(10);
+		line-height: 1;
+	}
+}
+
+.logo {
+	height: rem(22);
+}
+
+.logo g {
+	fill: currentColor;
+}
+
+.hamburger {
+	@include respond-to($breakpoint-small) {
+		flex-shrink: 0; // this has to stay
+		margin-right: 0.1em; // just for not touching the text on hover state :)
+	}
+}
+
+.topnav-container {
+	@include respond-to($breakpoint-small) {
+		flex-shrink: 0; // this has to stay
+		margin-left: auto; // case of mail display
+	}
+}
+
+.main {
+	overflow: hidden;
+	border-top-left-radius: 4px;
+	border: solid var(--main-border-color, var(--border-norm));
+	border-width: 1px 0 0 1px;
+	box-shadow: var(--main-box-shadow, none);
+
+	@include respond-to($breakpoint-small) {
+		margin-right: 0;
+		border-radius: 0;
+	}
+
+	@if $rtl-option==true {
+		[dir='rtl'] & {
+			border-top-left-radius: 0;
+			border-top-right-radius: 4px;
+		}
+	}
+}
+
+.main-area {
+	background: var(--background-norm);
+	color: var(--text-norm);
+	overflow: auto;
+
+	&.no-scroll {
+		overflow: hidden;
+	}
+}
+
+.main-area--with-toolbar {
+	@extend .main-area;
+	border-radius: 0;
+}
+
+// only for Safari mobile shitty way to handle vh unit
+$height-for-tablet: 5em !default;
+$height-for-mobile: 8em !default;
+
+.main-area--padding-fix {
+	padding-bottom: $height-for-tablet;
+}
+
+.main-area-content--padding-fix::after {
+	content: '';
+	display: flex;
+	width: 100%;
+	height: $height-for-tablet;
+}
+
+@include respond-to($breakpoint-small) {
+	.main-area--padding-fix {
+		padding-bottom: $height-for-mobile;
+		// thanks Apple for the fixed toolbar at the bottom
+	}
+
+	.main-area-content--padding-fix::after {
+		height: $height-for-mobile;
+	}
+}
+
+.main-full {
+	height: 100%;
+	overflow: auto;
+	background-color: var(--background-norm);
+}
+
+.main-area--no-header {
+	@extend .main-area;
+	//height: 100vh; // create a crazy bug on Safari on VPN
+	max-height: 100%;
+}
+
+.main-area--with-toolbar--no-header {
+	@extend .main-area--with-toolbar;
+}
+
+.main-area-content {
+	background: var(--background-norm);
+}
+
+.main-area--row-mode .items-column-list {
+	width: 100%;
+}

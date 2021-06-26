@@ -1,0 +1,214 @@
+$inputform-default-spacing-text: rem(4) !default;
+$inputform-height-phone-prefix: rem(28) !default;
+
+// fix for standard select component
+select {
+	padding: 0; // for Firefox difference
+	option {
+		background-color: var(--field-background-color, var(--background-norm));
+	}
+}
+
+.inputform {
+	&-container {
+		@extend .field-container;
+	}
+
+	&-label {
+		padding-bottom: $inputform-default-spacing-text;
+	}
+	&-label-hint,
+	&-assist {
+		font-size: rem(12);
+		color: var(--text-weak);
+	}
+	&-label-hint {
+		padding-bottom: rem(
+			1
+		); // just to compensate the difference of text size
+	}
+	&-assist {
+		min-height: 1.9em;
+		padding-top: $inputform-default-spacing-text;
+	}
+	&-label-text {
+		font-weight: 600;
+	}
+
+	&-suffix,
+	&-prefix {
+		color: var(--text-weak);
+	}
+
+	&-field {
+		height: rem($default-height-fields-inputforms);
+		padding: em(6) em(16); // design want 34px height (actually 35 to avoid .5px)
+		border-radius: $global-border-radius;
+		border: 1px solid var(--field-norm);
+		background-color: var(--field-background-color, var(--background-norm));
+		color: var(--field-text-color, var(--text-norm));
+		outline: none;
+		filter: none; // fixes Firefox autofill color
+		transition: 0.15s easing(easeOutQuint), background-position 0s;
+
+		&.error {
+			border-color: var(--signal-danger);
+		}
+
+		&:hover,
+		&.hover {
+			border-color: var(--field-hover);
+			background-color: var(
+				--field-hover-background-color,
+				var(--background-norm)
+			);
+			color: var(--field-hover-text-color, var(--text-norm));
+		}
+
+		&:focus,
+		&.focus,
+		&:focus-within {
+			border-color: var(--interaction-norm);
+			background-color: var(
+				--field-focus-background-color,
+				var(--background-norm)
+			);
+			color: var(--field-focus-text-color, var(--text-norm));
+		}
+
+		&:-moz-ui-invalid {
+			// fixes some Firefox issues with HTML5 validation
+			box-shadow: none;
+		}
+
+		&[type='search'] {
+			padding-left: 2em;
+
+			&::-webkit-search-cancel-button {
+				display: none;
+			}
+		}
+
+		select#{&} {
+			background-size: rem(15);
+			padding-right: rem(20);
+			text-overflow: ellipsis;
+			overflow: hidden;
+			cursor: pointer;
+
+			&::-ms-expand {
+				display: none;
+			}
+
+			& > optgroup {
+				background-color: var(--background-weak);
+			}
+		}
+	}
+
+	& &-prefix-phone {
+		height: $inputform-height-phone-prefix; // no variation for bigger - select of content needs to be "fixed"
+	}
+
+	// global error state on container
+	&-container--invalid {
+		.inputform {
+			&-label-text,
+			&-assist {
+				color: var(--signal-danger);
+				font-weight: 600;
+			}
+
+			&-field {
+				border-color: var(--signal-danger);
+			}
+		}
+	}
+
+	// field icon container
+	&-icon-container {
+		@extend .inputform-field; // added focus-within inside on inputform-field for this fake-field :)
+		padding: 0;
+
+		.inputform-field {
+			height: 100%;
+
+			&,
+			&:focus {
+				border: 0;
+				width: calc(100% - 1.5em);
+				outline: 0;
+			}
+
+			&[type='tel'] {
+				width: 100%;
+				padding-left: 0.5em;
+			}
+		}
+
+		&-empty {
+			// for drive, to keep the same height
+			min-height: calc(#{rem($default-height-fields-inputforms)} + 2px);
+		}
+
+		&:focus-within {
+			.inputform-field {
+				background-color: transparent;
+				box-shadow: none;
+				outline: 0;
+				border: 0;
+			}
+		}
+	}
+
+	// bigger inputs
+	&-container--bigger {
+		.right-icon,
+		.inputform-field,
+		.inputform-icon-container {
+			height: rem($bigger-height-fields-inputforms);
+		}
+		.inputform-field {
+			&[type='search'] {
+				background-size: rem(20);
+				padding-left: 2.2em;
+			}
+		}
+		.inputform-icon-container {
+			&-empty {
+				// for drive, to keep the same height
+				min-height: calc(
+					#{rem($bigger-height-fields-inputforms)} + 2px
+				);
+			}
+			.inputform-field {
+				height: 100%;
+			}
+		}
+	}
+
+	// disabled input
+	&-container--disabled {
+		&,
+		& .inputform-field,
+		& .inputform-label-hint,
+		& .inputform-assist,
+		& .inputform-prefix {
+			color: var(--field-disabled-text-color, var(--text-disabled));
+			cursor: auto;
+		}
+		& .inputform-label {
+			cursor: auto;
+		}
+		& .inputform-field {
+			&:hover,
+			&.hover {
+				border-color: var(--field-disabled);
+				background-color: var(
+					--field-disabled-background-color,
+					var(--background-norm)
+				);
+			}
+		}
+	}
+}

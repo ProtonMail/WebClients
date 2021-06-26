@@ -1,0 +1,9 @@
+.grid-align-icon {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	align-items: center;
+}
+
+.grid-align-icon > *:not(svg) {
+	grid-column-start: 2;
+}

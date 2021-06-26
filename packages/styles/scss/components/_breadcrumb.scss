@@ -1,0 +1,17 @@
+.breadcrumb {
+	&-container {
+		@extend .bordered;
+	}
+
+	&-button {
+		padding: 0.4em;
+		opacity: 0.3;
+		color: inherit;
+
+		&[disabled][aria-current='step'] {
+			font-weight: bold;
+			opacity: 1;
+			color: inherit;
+		}
+	}
+}

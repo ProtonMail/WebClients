@@ -1,0 +1,20 @@
+.collapsing-breadcrumbs {
+	@extend .flex-nowrap;
+	@extend .flex-align-items-center;
+	@extend .pt0-25;
+	@extend .pb0-25;
+	@extend .pl0;
+	@extend .m0;
+	min-height: 2.5em;
+	display: flex;
+}
+
+.collapsing-breadcrumb {
+	@extend .flex-nowrap;
+	display: flex;
+	flex: 0 1 auto;
+
+	&:not(#{&}--no-shrink) {
+		min-width: 1.5em;
+	}
+}

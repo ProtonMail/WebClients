@@ -1,0 +1,46 @@
+.autocomplete-suggestions {
+	position: absolute;
+	z-index: -1;
+	top: calc(100% - 2px);
+	left: 0.35em;
+	right: 0.35em;
+	min-height: 80%;
+	max-height: calc(5 * 2.3em);
+	overflow: scroll;
+	background-color: var(--background-norm);
+	box-shadow: var(--shadow-lifted);
+	color: var(--text-norm);
+	border: 1px solid var(--border-norm);
+	transform: translateY(-1.5em);
+	opacity: 0;
+	transition: transform 100ms ease-in, opacity 100ms ease-out 20ms;
+
+	&,
+	div:last-child {
+		border-bottom-left-radius: $global-border-radius;
+		border-bottom-right-radius: $global-border-radius;
+	}
+
+	div {
+		@extend .interactive;
+
+		&.selected {
+			background-color: var(--interaction-norm);
+			color: var(--interaction-norm-contrast);
+			pointer-events: none;
+		}
+	}
+
+	.button.button-link {
+		color: inherit;
+	}
+
+	&--open {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.autocomplete-input {
+	z-index: 1;
+}

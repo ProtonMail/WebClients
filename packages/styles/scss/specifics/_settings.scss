@@ -1,0 +1,40 @@
+.settings-loading-page-title,
+.settings-loading-section-title,
+.settings-loading-paragraph-line {
+	&::before {
+		@extend %item-loading-pseudo;
+		@extend %placeholder-loading;
+	}
+}
+
+.settings-loading-page-title {
+	&::before {
+		width: 30%;
+	}
+}
+
+.settings-loading-section-title {
+	&::before {
+		width: 50%;
+	}
+}
+
+.settings-loading-paragraph-line {
+	&:nth-child(1) {
+		&::before {
+			width: 90%;
+		}
+	}
+
+	&:nth-child(2) {
+		&::before {
+			width: 100%;
+		}
+	}
+
+	&:nth-child(3) {
+		&::before {
+			width: 40%;
+		}
+	}
+}

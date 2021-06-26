@@ -1,0 +1,139 @@
+$tooltip-width: 14.5em !default;
+$arrow-width: 0.5em !default;
+$tooltip-bg-color: var(--tooltip-background-color, black);
+$tooltip-text-color: var(--tooltip-text-color, white);
+
+/* basic tooltip styles */
+.tooltip {
+	position: fixed;
+	z-index: 666;
+	min-width: $arrow-width;
+	max-width: $tooltip-width;
+	border-radius: $global-border-radius;
+	background: $tooltip-bg-color;
+	color: $tooltip-text-color;
+	padding: 0.5em 0.75em;
+	text-align: center;
+	word-break: break-word;
+
+	// colored versions
+	@each $color in (primary, danger, warning, success, info) {
+		$prefix: '';
+		@if $color != 'primary' {
+			$prefix: 'signal-';
+		}
+
+		&-#{$color} {
+			--tooltip-background-color: var(--#{$prefix + $color});
+			--tooltip-text-color: var(--#{$prefix + $color}-contrast);
+		}
+	}
+
+	kbd {
+		background-color: #464b58;
+	}
+
+	// Placement
+
+	&--top-left {
+		border-bottom-left-radius: 0;
+	}
+
+	&--top-right {
+		border-bottom-right-radius: 0;
+	}
+
+	&--bottom-left {
+		border-top-left-radius: 0;
+	}
+
+	&--bottom-right {
+		border-top-right-radius: 0;
+	}
+
+	&--left-bottom {
+		border-bottom-right-radius: 0;
+	}
+
+	&--right-bottom {
+		border-bottom-left-radius: 0;
+	}
+
+	&--left-top {
+		border-top-right-radius: 0;
+	}
+
+	&--right-top {
+		border-top-left-radius: 0;
+	}
+
+	/* pseudo-element to make arrows */
+	&::before {
+		content: '';
+		speak: none;
+		position: absolute;
+		z-index: 666;
+		width: $arrow-width;
+		height: $arrow-width;
+		pointer-events: none;
+		border: $arrow-width solid transparent;
+	}
+
+	&--top::before,
+	&--top-left::before,
+	&--top-right::before {
+		top: 100%;
+		border-top: $arrow-width solid $tooltip-bg-color;
+	}
+
+	&--bottom::before,
+	&--bottom-left::before,
+	&--bottom-right::before {
+		bottom: 100%;
+		border-bottom: $arrow-width solid $tooltip-bg-color;
+	}
+
+	&--right::before,
+	&--right-top::before,
+	&--right-bottom::before {
+		left: -#{$arrow-width * 2};
+		border-right: $arrow-width solid $tooltip-bg-color;
+	}
+
+	&--left::before,
+	&--left-top::before,
+	&--left-bottom::before {
+		right: -#{$arrow-width * 2};
+		border-left: $arrow-width solid $tooltip-bg-color;
+	}
+
+	&--top::before,
+	&--bottom::before {
+		left: calc(50% - #{$arrow-width});
+	}
+
+	&--top-left::before,
+	&--bottom-left::before {
+		left: 0;
+	}
+
+	&--top-right::before,
+	&--bottom-right::before {
+		right: 0;
+	}
+
+	&--left::before,
+	&--right::before {
+		top: calc(50% - #{$arrow-width});
+	}
+
+	&--left-top::before,
+	&--right-top::before {
+		top: 0;
+	}
+
+	&--left-bottom::before,
+	&--right-bottom::before {
+		bottom: 0;
+	}
+}

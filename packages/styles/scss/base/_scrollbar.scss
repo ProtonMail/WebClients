@@ -1,0 +1,54 @@
+@use "sass:math";
+$scrollbar-thumb-default-color: #{rgba(grey, 0.25)};
+$scrollbar-thumb-default-hover-color: #{rgba(grey, 0.5)};
+
+$scrollbar-size: rem(6) !default;
+$scrollbar-margin: rem(2) !default;
+
+@if $custom-scroll {
+	* {
+		$real-size: $scrollbar-size + ($scrollbar-margin * 2);
+
+		// W3C, Firefox
+		scrollbar-width: thin;
+		scrollbar-color: var(
+				--scrollbar-thumb-color,
+				$scrollbar-thumb-default-color
+			)
+			transparent;
+
+		// webkit specific
+		&::-webkit-scrollbar {
+			width: $real-size;
+			height: $real-size;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			border: $scrollbar-margin solid transparent; // Margin
+			background-clip: padding-box; // Booyah!
+			border-radius: math.div($real-size, 2);
+			background-color: var(
+				--scrollbar-thumb-color,
+				$scrollbar-thumb-default-color
+			);
+		}
+
+		&::-webkit-scrollbar-track {
+			background-color: transparent;
+		}
+
+		&::-webkit-scrollbar-thumb:horizontal,
+		&::-webkit-scrollbar-thumb:vertical {
+			&:hover {
+				background-color: var(
+					--scrollbar-thumb-hover-color,
+					$scrollbar-thumb-default-hover-color
+				);
+			}
+		}
+
+		&::-webkit-scrollbar-corner {
+			visibility: hidden;
+		}
+	}
+}

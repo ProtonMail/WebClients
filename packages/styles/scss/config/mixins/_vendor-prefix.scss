@@ -1,0 +1,16 @@
+/**
+ * Generate vendor prefixes for a given property
+ * @param {String} $property - The given property from which generate vendor prefixes
+ * @param {String} $value - The value of the property
+ * @param {String} $prefixes - Wanted prefix•es
+ * @return {String} - The property with each prefix
+ */
+@mixin vendor-prefix($property, $value, $prefixes: (webkit, moz, ms, o)) {
+	@if $prefixes {
+		@each $prefix in $prefixes {
+			#{'-' + $prefix + '-' + $property}: $value;
+		}
+	}
+
+	#{$property}: $value;
+}

@@ -1,0 +1,488 @@
+@use "sass:math";
+/*
+ * Items
+ * For conversations and contacts lists
+ */
+
+$container-to-width: 3em !default;
+
+.items-column-list {
+	width: var(
+		--width-conversation-column,
+		calc(
+			(100% + var(--width-sidebar, #{rem($width-sidebar)})) * #{math.div(
+					$conversations-column-width,
+					100%
+				)}
+		)
+	);
+}
+
+.items-column-list-inner,
+.ReactVirtualized__Grid__innerScrollContainer {
+	border-right: 1px solid var(--border-weak);
+	min-height: 100%;
+}
+
+.items-column-list-inner--no-border {
+	// fix for Contact and ReactVirtualized__Grid
+	border: 0;
+}
+
+.items-column-list--mobile {
+	width: 100%;
+}
+
+.items-column-list,
+.items-column-list--mobile,
+.view-column-detail {
+	height: 100%;
+}
+
+.view-column-detail,
+// because it's sticky on top
+.message-conversation-summary {
+	background-color: var(
+		--email-message-view-background-color,
+		var(--background-norm)
+	);
+}
+
+$item-container-height: rem(64) !default;
+$item-container-padding-top-bottom: em(8.5) !default;
+$item-container-padding-left-right: em(12) !default;
+
+$item-container-height-compact-mode: rem(48) !default;
+$item-container-row-height-compact-mode: rem(40) !default;
+
+.item-container,
+.item-container-row {
+	@extend %appearing-container;
+	position: relative;
+	padding: $item-container-padding-top-bottom
+		$item-container-padding-left-right; // design wants ~64 height
+	border-bottom: 1px solid var(--border-weak);
+	scroll-margin-top: $item-container-height;
+
+	// no transition, otherwhise there's a flash on page loading
+	// because of theme file loading after applying default theme colors
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		pointer-events: none;
+		transition: 0.15s easing(easeOutQuart);
+		border-left: 5px solid transparent;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&.read {
+		background-color: var(
+			--email-item-read-background-color,
+			var(--background-weak)
+		);
+		color: var(--email-item-read-text-color, var(--text-norm));
+
+		.item-icon {
+			background-color: var(
+				--email-item-read-icon-background-color,
+				var(--background-strong)
+			);
+			color: var(--email-item-read-icon-text-color, inherit);
+		}
+	}
+
+	&.unread {
+		background-color: var(
+			--email-item-unread-background-color,
+			var(--background-norm)
+		);
+		color: var(--email-item-unread-text-color, var(--text-norm));
+
+		.item-senders,
+		.item-senddate-col,
+		.item-senddate-row,
+		.item-weight,
+		.item-subject {
+			font-weight: bold;
+		}
+
+		.item-icon {
+			background-color: var(
+				--email-item-unread-icon-background-color,
+				var(--background-strong)
+			);
+			color: var(--email-item-unread-icon-text-color, inherit);
+		}
+	}
+
+	&:hover::after {
+		box-shadow: var(--shadow-norm);
+	}
+
+	&:focus::after,
+	&.item-is-focused::after {
+		border-left-color: var(
+			--email-item-focus-marker-color,
+			var(--interaction-norm)
+		);
+	}
+
+	&.item-is-selected,
+	// alias for Angular
+	&.item-container.active {
+		background-color: var(
+			--email-item-selected-background-color,
+			var(--interaction-norm)
+		);
+		color: var(
+			--email-item-selected-text-color,
+			var(--interaction-norm-contrast)
+		);
+
+		&:focus::after,
+		&.item-is-focused::after {
+			border-left-color: var(
+				--email-item-focus-marker-color,
+				var(--interaction-norm-hover)
+			);
+		}
+
+		.item-icon {
+			background-color: var(
+				--email-item-selected-icon-background-color,
+				var(--interaction-norm-hover)
+			);
+			color: var(--email-item-selected-icon-text-color, inherit);
+		}
+	}
+
+	// Styling for contact items inside contact dropdown
+	&.item-contact {
+		background-color: var(
+			--email-item-unread-background-color,
+			var(--background-norm)
+		);
+		color: var(--email-item-unread-text-color, var(--text-norm));
+
+		.item-icon {
+			background-color: var(
+				--email-item-unread-icon-background-color,
+				var(--background-strong)
+			);
+			color: var(--email-item-unread-icon-text-color, inherit);
+		}
+	}
+}
+
+.item-container {
+	height: $item-container-height;
+}
+
+.item-checkbox-label {
+	.item-checkbox {
+		// this is a crazy fix for Firefox - for having ::after stuff working on it for mail conversations
+		// to have increased area around checkbox for clicking
+		/* autoprefixer: ignore next */
+		/* stylelint-disable-next-line */
+		-moz-appearance: initial;
+	}
+
+	// fix for Firefox multi-selection issue
+	& > .item-checkbox {
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
+}
+
+.item-firstline,
+.item-secondline {
+	height: em(20);
+	line-height: calc(20 * 1.5 / 21);
+}
+
+.item-secondline:empty {
+	min-height: 1.5em;
+}
+
+/* Compact view */
+.is-shown-when-compact {
+	display: none;
+}
+
+.item-senddate-col {
+	font-size: em(12);
+}
+
+.item-subject {
+	font-size: em(13);
+}
+
+.is-compact {
+	.item-container,
+	.item-container-row {
+		height: $item-container-height-compact-mode;
+		scroll-margin-top: $item-container-height-compact-mode;
+
+		.item-container-inner {
+			padding: em(0) em(12);
+		}
+	}
+
+	.item-container-row {
+		height: $item-container-row-height-compact-mode;
+		scroll-margin-top: $item-container-row-height-compact-mode;
+		.item-icon-compact {
+			&::after {
+				height: $item-container-row-height-compact-mode;
+			}
+		}
+	}
+
+	.item-firstline,
+	.item-secondline {
+		margin: 0;
+	}
+
+	.is-hidden-when-compact {
+		display: none;
+	}
+
+	.is-shown-when-compact {
+		display: flex;
+	}
+}
+
+.item-is-loading {
+	background-color: var(--background-norm);
+	pointer-events: none;
+
+	.item-checkbox-label::before,
+	.item-icon-compact::before,
+	.item-senders::before,
+	.item-senddate-col::before,
+	.item-senddate-row::before,
+	.item-weight::before,
+	.item-star,
+	.item-subject::before {
+		@extend %placeholder-loading;
+	}
+
+	.item-checkbox-label,
+	.item-icon-compact {
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 1;
+			border-radius: $global-border-radius;
+			background-color: currentColor;
+			opacity: 0;
+		}
+
+		.item-icon,
+		.checkbox-fakecheck {
+			opacity: 0;
+		}
+	}
+
+	.item-senders,
+	.item-senddate-col,
+	.item-senddate-row,
+	.item-weight,
+	.item-subject {
+		&::before {
+			@extend %item-loading-pseudo;
+		}
+	}
+
+	.item-senders {
+		&::before {
+			width: 35%;
+		}
+	}
+
+	.item-senddate-col {
+		min-width: 6em;
+
+		&::before {
+			width: 100%;
+		}
+	}
+
+	.item-senddate-row {
+		&::before {
+			width: 70%;
+		}
+	}
+
+	.item-weight {
+		min-width: 4em;
+
+		&::before {
+			width: 100%;
+		}
+	}
+
+	.item-subject {
+		&::before {
+			width: 60%;
+		}
+	}
+}
+
+.item-icon-compact {
+	width: rem($conversation-icon-size);
+	height: rem($conversation-icon-size);
+	border-radius: 50%;
+	font-size: rem(12);
+	transition: background 0.25s ease;
+
+	&:hover {
+		background: var(--background-strong);
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		left: -#{em(12)};
+		right: -#{em(12)};
+		top: calc(
+			-1 * (
+					#{$item-container-height-compact-mode} - #{rem(
+							$conversation-icon-size
+						)}
+				) / 2
+		);
+		height: $item-container-height-compact-mode;
+	}
+
+	.checkbox-fakecheck {
+		margin: auto;
+		background: var(--background-norm);
+	}
+}
+
+.item-checkbox {
+	// for allowing hovering larger than fake circle
+	&::after {
+		content: '';
+		position: absolute;
+		top: calc(
+			-1 * ((#{$item-container-height} - #{rem($conversation-icon-size)}) /
+						2)
+		);
+		bottom: calc(
+			-1 * ((#{$item-container-height} - #{rem($conversation-icon-size)}) /
+						2)
+		);
+		left: em(-12);
+		width: calc(
+			#{rem($conversation-icon-size)} + #{$item-container-padding-left-right} +
+				#{rem(5)}
+		);
+		// icon size + padding container + tiny margin for comfort
+	}
+
+	// hidden fake check by default
+	& + .item-icon > .item-icon-fakecheck {
+		display: none;
+	}
+
+	&:focus + .item-icon {
+		border-color: var(--interaction-norm);
+	}
+
+	// hover state of checkbox
+	&:hover + .item-icon,
+	& + .item-icon:hover {
+		& > .item-abbr {
+			display: none;
+		}
+
+		& > .item-icon-fakecheck {
+			display: flex;
+			transform: scale(1);
+		}
+	}
+
+	// checked state
+	&:checked + .item-icon {
+		background-color: var(--interaction-norm);
+
+		& > .item-abbr {
+			display: none;
+		}
+
+		& > .item-icon-fakecheck {
+			display: flex;
+			animation: anime-conversation-icon-in easing(easeOutQuint) 0.15s;
+		}
+
+		@keyframes anime-conversation-icon-in {
+			0% {
+				transform: scale(0);
+			}
+
+			100% {
+				transform: scale(1);
+			}
+		}
+
+		.item-icon-fakecheck-icon {
+			fill: var(--interaction-norm-contrast);
+		}
+	}
+}
+
+// fix pseudo element for row layout
+.item-container-row {
+	.item-checkbox {
+		&::after {
+			top: -#{$item-container-padding-top-bottom};
+			bottom: -#{$item-container-padding-top-bottom};
+		}
+	}
+
+	.item-weight {
+		min-width: 5em;
+	}
+}
+
+.item-sender--smaller,
+.item-date {
+	font-size: em(12);
+}
+
+.message-header-metas-container {
+	height: rem($conversation-icon-size);
+}
+
+.starbutton {
+	&:focus,
+	&:hover,
+	&--is-starred {
+		color: var(--favorite-icon-color, orange);
+	}
+}
+
+.pill-icon {
+	display: inline-flex;
+	padding: 0.125em 0.5em;
+	border-radius: 1em;
+	line-height: 1;
+}

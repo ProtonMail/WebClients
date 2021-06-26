@@ -1,0 +1,78 @@
+@media print {
+	/**
+	 * add in this all elements which need to be hardly reseted for print
+	 */
+	body,
+	html,
+	.page,
+	.reset4print {
+		background-color: white;
+		background-image: none;
+		border: 0;
+		box-shadow: none;
+		color: black;
+		float: none;
+		height: auto;
+		margin: 0;
+		max-width: 100%;
+		min-height: 0;
+		padding: 0;
+		position: static;
+		width: auto;
+		opacity: 1;
+		visibility: visible;
+		max-height: none;
+		display: block;
+	}
+
+	body {
+		padding: 0.5em;
+		overflow: auto;
+	}
+
+	/* hide unnecessary elements */
+	.no-print {
+		display: none;
+	}
+
+	.is-printed-version {
+		.modal-container,
+		.modal,
+		.modal-content-inner,
+		.modal-content {
+			@extend .reset4print;
+		}
+
+		.modal-content-inner::before,
+		.modal-content-inner::after {
+			content: none;
+		}
+
+		.app-root,
+		.modal-overlay,
+		.modal-header,
+		.modal-footer,
+		.item-icon,
+		[class^='scrollshadow-'] {
+			@extend .no-print;
+		}
+	}
+
+	/* display specific elements for print */
+	.on-print {
+		display: block;
+	}
+
+	/* avoid problematic page break */
+	ul,
+	ol {
+		page-break-inside: avoid;
+	}
+
+	h1,
+	h2,
+	h3,
+	caption {
+		page-break-after: avoid;
+	}
+}

@@ -1,0 +1,6 @@
+.scale-buttons-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 2.5em);
+	grid-gap: rem(5);
+	justify-content: space-between;
+}

@@ -1,0 +1,23 @@
+.app-infos {
+	&-fake-meter {
+		height: em(4);
+	}
+
+	&-storage,
+	&-version {
+		color: var(--text-weak);
+	}
+
+	a#{&}-storage,
+	&-version {
+		&:hover,
+		&:focus {
+			color: var(--text-norm);
+		}
+	}
+
+	// If storage is displayed, hide app name
+	&-storage + &-version &-name {
+		@extend .sr-only;
+	}
+}

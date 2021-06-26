@@ -1,0 +1,70 @@
+@use "sass:math";
+@mixin progress-bar-size($size: 0.5em) {
+	height: $size;
+	border-radius: #{math.div($size, 2)};
+
+	&::-webkit-progress-bar {
+		border-radius: #{math.div($size, 2)};
+	}
+
+	&::-webkit-progress-value {
+		border-radius: #{math.div($size, 2)};
+	}
+
+	&::-moz-progress-bar {
+		border-radius: #{math.div($size, 2)};
+	}
+}
+
+.progress-bar {
+	@include progress-bar-size();
+
+	background: var(--background-weak);
+	color: var(--signal-info);
+	appearance: none;
+
+	&::-webkit-progress-bar {
+		background-color: var(--background-weak);
+	}
+
+	&::-webkit-progress-value {
+		background: var(--signal-info);
+		transition: 0.25s width easing(easeInOutQuint);
+	}
+
+	&::-moz-progress-bar {
+		background: var(--signal-info);
+		transition: 0.25s width easing(easeInOutQuint);
+	}
+
+	&::-ms-fill {
+		border-color: currentColor;
+	}
+
+	@each $variant,
+		$color
+			in (
+				disabled: var(--background-strong),
+				running: var(--signal-info),
+				success: var(--signal-success),
+				warning: var(--signal-warning),
+				error: var(--signal-danger)
+			)
+	{
+		&--#{$variant} {
+			color: $color;
+
+			&::-webkit-progress-value {
+				background: $color;
+			}
+
+			&::-moz-progress-bar {
+				background: $color;
+			}
+		}
+	}
+
+	&.is-thin {
+		@include progress-bar-size(0.25em);
+	}
+}

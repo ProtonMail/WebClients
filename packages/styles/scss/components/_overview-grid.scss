@@ -1,0 +1,16 @@
+.overview-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(#{rem(250)}, 1fr));
+	grid-auto-flow: row dense;
+	grid-gap: rem(20);
+
+	&-item {
+		&--tall {
+			grid-row: span 2;
+		}
+
+		&--full {
+			grid-column: 1 / -1;
+		}
+	}
+}

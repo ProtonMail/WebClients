@@ -1,0 +1,42 @@
+.input-button.button-henlo {
+	--button-default-border-width: 1px;
+	--button-default-border-color: var(--field-norm);
+	--button-default-background-color: var(--background-norm);
+	--button-default-text-color: var(--text-norm);
+	--button-hover-border-width: 1px;
+	--button-hover-border-color: var(--field-hover);
+	--button-hover-background-color: var(--interaction-default-hover);
+	--button-hover-text-color: var(--text-norm);
+	--button-active-border-width: 1px;
+	--button-active-border-color: var(--interaction-norm);
+	--button-active-background-color: var(--interaction-default-active);
+	--button-active-text-color: var(--text-norm);
+
+	width: 2.5em;
+	padding: em(7); // Same as inputs
+}
+
+.input-button-input {
+	&:focus + .input-button {
+		--button-default-background-color: var(--interaction-default-hover);
+		--button-default-text-color: var(--text-norm);
+	}
+
+	&:checked + .input-button {
+		// Need !important because current dark mode management. Remove those as soon as possible.
+		--button-default-border-color: var(--interaction-norm);
+		--button-default-background-color: var(--interaction-norm);
+		--button-default-text-color: var(--interaction-norm-contrast);
+		--button-hover-border-color: var(--interaction-norm-hover);
+		--button-hover-background-color: var(--interaction-norm-hover);
+		--button-hover-text-color: var(--interaction-norm-contrast);
+		--button-active-border-color: var(--interaction-norm-active);
+		--button-active-background-color: var(--interaction-norm-active);
+		--button-active-text-color: var(--interaction-norm-contrast);
+	}
+
+	&:checked:focus + .input-button {
+		--button-default-background-color: var(--interaction-norm-hover);
+		--button-default-text-color: var(--interaction-norm-contrast);
+	}
+}

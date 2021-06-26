@@ -1,0 +1,21 @@
+.meter-bar {
+	--size: #{em(10)};
+
+	width: 100%;
+	overflow: hidden;
+	background: var(--background-weak);
+
+	&,
+	&-thumb {
+		height: var(--size);
+	}
+
+	&:not(.is-squared),
+	&:not(.is-squared) &-thumb {
+		border-radius: calc(var(--size) / 2);
+	}
+
+	&.is-thin {
+		--size: #{em(4)};
+	}
+}

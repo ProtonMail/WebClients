@@ -1,0 +1,34 @@
+.button-account {
+	&-container {
+		border: 1px solid var(--border-norm); // inconsistent with borders...
+		max-height: 50vh;
+
+		@include respond-to($breakpoint-small) {
+			max-height: none;
+		}
+
+		&-inner {
+			border-right: 1px solid var(--border-norm); // inconsistent with borders...
+		}
+	}
+
+	&-login {
+		transition: opacity 0.35s easing(easeInOut), visibility 0s;
+		opacity: 0;
+		width: 0;
+		transition-delay: 0s, 0.35s;
+	}
+
+	&:focus,
+	&:hover,
+	&:active {
+		background-color: var(--background-norm);
+		color: var(--text-norm);
+
+		.button-account-login {
+			opacity: 1;
+			width: auto;
+			transition-delay: 0s;
+		}
+	}
+}

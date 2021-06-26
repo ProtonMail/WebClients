@@ -1,0 +1,67 @@
+@each $color in (primary, danger, warning, success, info) {
+	$prefix: '';
+	@if $color != 'primary' {
+		$prefix: 'signal-';
+	}
+
+	.bg-#{$color} {
+		background-color: var(--#{$prefix + $color});
+		color: var(--#{$prefix + $color}-contrast);
+
+		a,
+		.link,
+		.button-link,
+		.button-henlo {
+			@extend .color-inherit;
+		}
+	}
+
+	.color-#{$color} {
+		color: var(--#{$prefix + $color});
+	}
+
+	.fill-#{$color} {
+		fill: var(--#{$prefix + $color});
+	}
+}
+
+@each $color in (norm, weak, strong) {
+	.bg-#{$color} {
+		background-color: var(--background-#{$color});
+	}
+}
+
+@each $color in (norm, weak, hint, disabled, invert) {
+	.color-#{$color} {
+		color: var(--text-#{$color});
+	}
+}
+
+.color-inherit {
+	color: inherit;
+
+	&[class*='button-outline'],
+	&[class*='button-ghost'],
+	&.button-link {
+		--button-default-text-color: inherit;
+		--button-hover-text-color: inherit;
+		--button-active-text-color: inherit;
+	}
+
+	&[class*='button-outline'] {
+		--button-default-border-color: currentColor;
+		--button-hover-border-color: currentColor;
+		--button-active-border-color: currentColor;
+	}
+
+	&.link {
+		&:hover,
+		&:focus {
+			color: inherit;
+		}
+	}
+}
+
+.fill-currentColor {
+	fill: currentColor;
+}

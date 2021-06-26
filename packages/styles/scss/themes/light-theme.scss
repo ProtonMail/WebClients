@@ -1,0 +1,68 @@
+/*
+ * Theme: Snow
+ */
+:root,
+.ui-standard {
+	--primary: #657ee4;
+	--primary-contrast: white;
+
+	--signal-danger: #d42f34;
+	--signal-danger-hover: #c7262b;
+	--signal-danger-active: #ba1e23;
+	--signal-danger-contrast: white;
+
+	--signal-warning: #f5830a;
+	--signal-warning-hover: #f5730a;
+	--signal-warning-active: #f5640a;
+	--signal-warning-contrast: black;
+
+	--signal-success: #1b8561;
+	--signal-success-hover: #147857;
+	--signal-success-active: #0f6b4c;
+	--signal-success-contrast: white;
+
+	--signal-info: #1578cf;
+	--signal-info-hover: #0e6dc2;
+	--signal-info-active: #0764b5;
+	--signal-info-contrast: white;
+
+	--text-norm: #262a33;
+	--text-weak: #696f7d;
+	--text-hint: #a4a9b5;
+	--text-disabled: #babec7;
+	--text-invert: white;
+
+	--field-norm: #babec7;
+	--field-hover: #a4a9b5;
+	--field-disabled: #d0d3da;
+
+	--border-norm: #d0d3da;
+	--border-weak: #e7e9ec;
+
+	--background-norm: white;
+	--background-weak: #f3f4f6;
+	--background-strong: #e7e9ec;
+
+	--interaction-norm: #657ee4;
+	--interaction-norm-hover: #5064b6;
+	--interaction-norm-active: #3c4b88;
+	--interaction-norm-contrast: white;
+
+	--interaction-weak: #d0d3da;
+	--interaction-weak-hover: #babec7;
+	--interaction-weak-active: #a4a9b5;
+
+	--interaction-default: transparent;
+	--interaction-default-hover: rgb(186 190 199 / 0.2);
+	--interaction-default-active: rgb(186 190 199 / 0.3);
+
+	--shadow-norm-opacity: 0.1;
+	--shadow-lifted-opacity: 0.16;
+
+	--backdrop-norm: rgb(0 0 0 / 0.48);
+
+	// Optional colors
+
+	--scrollbar-thumb-color: #d0d3da;
+	--scrollbar-thumb-hover-color: #babec7;
+}

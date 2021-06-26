@@ -1,0 +1,129 @@
+/*
+ * Theme: Proton (legacy)
+ */
+:root,
+.ui-standard {
+	--primary: #9397cd;
+	--primary-contrast: white;
+
+	--signal-danger: #cb7c7c;
+	--signal-danger-hover: #b86868;
+	--signal-danger-active: #a26262;
+	--signal-danger-contrast: white;
+
+	--signal-warning: #debc0b;
+	--signal-warning-hover: #bba015;
+	--signal-warning-active: #bba015;
+	--signal-warning-contrast: white;
+
+	--signal-success: #8eb67a;
+	--signal-success-hover: #7ea16d;
+	--signal-success-active: #70935f;
+	--signal-success-contrast: white;
+
+	--signal-info: #80a1d2;
+	--signal-info-hover: #5e8bcf;
+	--signal-info-active: #4a7ac2;
+	--signal-info-contrast: white;
+
+	--text-norm: black;
+	--text-weak: #737386;
+	--text-hint: #aaaabd;
+	--text-disabled: #bcbcd0;
+	--text-invert: white;
+
+	--field-norm: #bcbcd0;
+	--field-hover: #aaaabd;
+	--field-disabled: #ced2df;
+
+	--border-norm: #ced2df;
+	--border-weak: #d9dfe8;
+
+	--background-norm: white;
+	--background-weak: #e6eaf0;
+	--background-strong: #d9dfe8;
+
+	--interaction-norm: #9397cd;
+	--interaction-norm-hover: #8286c5;
+	--interaction-norm-active: #7276b5;
+	--interaction-norm-contrast: white;
+
+	--interaction-weak: #ced2df;
+	--interaction-weak-hover: #bcbcd0;
+	--interaction-weak-active: #aaaabd;
+
+	--interaction-default: transparent;
+	--interaction-default-hover: rgb(188 188 208 / 0.2);
+	--interaction-default-active: rgb(188 188 208 / 0.3);
+
+	--shadow-norm-opacity: 0.1;
+	--shadow-lifted-opacity: 0.16;
+
+	--backdrop-norm: rgb(80 80 97 / 0.48);
+
+	// Optional colors
+
+	--scrollbar-thumb-color: #ced2df;
+	--scrollbar-thumb-hover-color: #bcbcd0;
+
+	--main-border-color: transparent;
+}
+
+// Prominent UI specifics
+
+.ui-prominent {
+	--signal-danger: #cb7c7c;
+	--signal-danger-hover: #d68282;
+	--signal-danger-active: #e78c8c;
+	--signal-danger-contrast: white;
+
+	--signal-warning: #debc0b;
+	--signal-warning-hover: #e8c613;
+	--signal-warning-active: #f1cf1b;
+	--signal-warning-contrast: black;
+
+	--signal-success: #8eb67a;
+	--signal-success-hover: #94bf7e;
+	--signal-success-active: #9ece85;
+	--signal-success-contrast: white;
+
+	--signal-info: #80a1d2;
+	--signal-info-hover: #87ace3;
+	--signal-info-active: #8fb6ef;
+	--signal-info-contrast: white;
+
+	--text-norm: white;
+	--text-weak: #c9c9de;
+	--text-hint: #b5b5c9;
+	--text-disabled: #a4a4bc;
+	--text-invert: black;
+
+	--field-norm: #b5b5c9;
+	--field-hover: #c9c9de;
+	--field-disabled: #9393ae;
+
+	--border-norm: #9393ae;
+	--border-weak: #83839f;
+
+	--background-norm: #505061;
+	--background-weak: #71718a;
+	--background-strong: #83839f;
+
+	--interaction-norm: #9397cd;
+	--interaction-norm-hover: #a2a5da;
+	--interaction-norm-active: #aeb0e3;
+	--interaction-norm-contrast: white;
+
+	--interaction-weak: #9393ae;
+	--interaction-weak-hover: #a4a4bc;
+	--interaction-weak-active: #b5b5c9;
+
+	--interaction-default: transparent;
+	--interaction-default-hover: rgb(164 164 188 / 0.4);
+	--interaction-default-active: rgb(164 164 188 / 0.6);
+
+	// Optional colors
+
+	--scrollbar-thumb-color: #9393ae;
+	--scrollbar-thumb-hover-color: #a4a4bc;
+}

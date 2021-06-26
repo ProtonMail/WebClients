@@ -1,0 +1,51 @@
+.file-preview {
+	color: var(--file-preview-text-color, var(--text-norm));
+	background-color: var(
+		--file-preview-background-color,
+		var(--background-norm)
+	);
+	@extend .flex-item-fluid-auto;
+	@extend .flex-column;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 78;
+	display: flex;
+
+	&-container {
+		@extend .relative;
+		@extend .flex-column;
+		@extend .flex-item-fluid-auto;
+		@extend .scroll-if-needed;
+		@extend .flex-no-min-children;
+	}
+
+	&-filename {
+		max-width: calc(50% - 5em);
+	}
+
+	&-text {
+		background-color: whitesmoke;
+		color: black;
+		@extend .p2;
+		@extend .center;
+		@extend .flex-item-fluid-auto;
+		@extend .mt0;
+		@extend .mb2;
+		word-break: break-word;
+		white-space: pre-wrap;
+		width: 100%;
+		max-width: rem(800);
+	}
+
+	&-image {
+		@extend .mauto;
+		object-fit: cover;
+		max-width: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}

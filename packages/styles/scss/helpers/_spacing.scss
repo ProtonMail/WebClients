@@ -1,0 +1,79 @@
+.mt1r {
+	margin-top: rem(10);
+}
+
+.mt0-5r {
+	margin-top: rem(5);
+}
+
+.mr0-5r {
+	margin-right: rem(5);
+}
+
+.mr-2 {
+	margin-right: -2em;
+}
+
+.mr-6p {
+	margin-right: em(-6);
+}
+
+.mr-0-5 {
+	margin-right: -0.5em;
+}
+
+.mt-0-5 {
+	margin-top: -0.5em;
+}
+
+.mb-0-5 {
+	margin-bottom: -0.5em;
+}
+
+@include margin-generator(
+	// coordinates
+	(m, mt, mr, mb, ml),
+	// margin sizes
+	(0, 0.1, 0.25, 0.4, 0.5, 0.6, 0.75, 1, 1.25, 1.5, 1.75, 2, 4)
+);
+
+@include padding-generator(
+	// coordinates
+	(p, pt, pr, pb, pl),
+	// padding sizes
+	(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 2, 3, 4)
+);
+
+.mtauto {
+	margin-top: auto;
+}
+
+.mrauto {
+	margin-right: auto;
+}
+
+.mbauto {
+	margin-bottom: auto;
+}
+
+.mlauto {
+	margin-left: auto;
+}
+
+.mauto {
+	margin: auto;
+}
+
+@if $rtl-option==true {
+	[dir='rtl'] {
+		.mrauto {
+			margin-right: 0;
+			margin-left: auto;
+		}
+
+		.mlauto {
+			margin-left: 0;
+			margin-right: auto;
+		}
+	}
+}

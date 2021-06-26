@@ -1,0 +1,106 @@
+.no-border {
+	border: 0;
+}
+
+.qr-code {
+	border: 1px solid white;
+}
+
+.border-collapse {
+	border-collapse: collapse;
+}
+
+.unstyled {
+	padding-left: 0;
+	list-style-type: none;
+
+	@if $rtl-option==true {
+		[dir='rtl'] & {
+			padding-right: 0;
+		}
+	}
+}
+
+/* hardware-acceleration activation */
+.hardware-accelerated {
+	@include vendor-prefix(transform, translateZ(0));
+}
+
+/* to hide text with accessibility… a11y */
+.invisible,
+.sr-only {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	top: 0; // needed for Safari dumb and 💩 behaviour
+}
+
+.visibility-hidden {
+	visibility: hidden;
+}
+
+.opacity-65 {
+	opacity: 0.65;
+}
+
+.opacity-50 {
+	opacity: 0.5;
+}
+
+.opacity-40 {
+	opacity: 0.4;
+}
+
+.opacity-30 {
+	opacity: 0.3;
+}
+
+.on-hover-opacity-100 {
+	&:hover,
+	&:focus,
+	&:focus-within {
+		opacity: 1;
+	}
+}
+
+.filter-blur {
+	filter: blur(4px);
+}
+
+/* RTL/others */
+.mirror,
+[dir='rtl'] .on-rtl-mirror {
+	transform: rotateZ(180deg);
+}
+
+.rotateX-180 {
+	transform: rotateX(180deg);
+}
+
+.rotateZ-90 {
+	transform: rotateZ(90deg);
+}
+
+.rotateZ-270 {
+	transform: rotateZ(270deg);
+}
+
+/* increase surface click/tap */
+.increase-click-surface::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.no-pointer-events,
+.no-pointer-events-children * {
+	pointer-events: none;
+}

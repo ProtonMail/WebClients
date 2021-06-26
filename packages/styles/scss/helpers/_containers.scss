@@ -1,0 +1,111 @@
+.bordered {
+	border: 1px solid var(--border-norm);
+}
+
+.bordered--dashed {
+	border: 1px dashed var(--border-norm);
+}
+
+.border--danger {
+	border-color: var(--signal-danger);
+}
+
+.border--currentColor {
+	border: 1px solid currentColor;
+}
+
+@each $placement in (top, right, bottom, left) {
+	.border-#{$placement} {
+		border-#{$placement}: 1px solid var(--border-norm);
+
+		&--weak {
+			border-#{$placement}: 1px solid var(--border-weak);
+		}
+
+		&--dashed {
+			border-#{$placement}-style: dashed;
+		}
+
+		&--currentColor {
+			border-#{$placement}-color: currentColor;
+		}
+	}
+}
+
+.border-bottom-children {
+	> * {
+		border-bottom: 1px solid var(--border-norm);
+	}
+	&--not-last {
+		& > :last-child {
+			border-bottom: 0;
+		}
+	}
+}
+
+.shadow-norm {
+	box-shadow: var(--shadow-norm);
+}
+
+.shadow-lifted {
+	box-shadow: var(--shadow-lifted);
+}
+
+.row--orderable {
+	z-index: 666;
+	/* In case the modal is open */
+	background: var(--background-norm);
+	color: var(--text-norm);
+}
+
+/*
+ * Welcome boxes in a 2 column design
+ * Make breakpoint overable
+ */
+$breakpoint-2-columns: 1180 !default;
+
+@include respond-to($breakpoint-2-columns) {
+	.boxes-placeholder-container {
+		flex-direction: column;
+
+		& > * {
+			margin-bottom: 1em;
+			width: 100%;
+			flex-basis: auto;
+		}
+	}
+
+	.boxes-placeholder-button {
+		margin-top: 0;
+	}
+}
+
+.rounded {
+	border-radius: $global-border-radius;
+}
+
+.rounded-bigger {
+	border-radius: $global-bigger-border-radius;
+}
+
+.rounded50 {
+	border-radius: 50%;
+}
+
+.rounded1e {
+	border-radius: 1em;
+}
+
+.rounded0 {
+	border-radius: 0;
+}
+
+.rounded0-left {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.rounded0-right {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}

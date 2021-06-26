@@ -1,0 +1,20 @@
+.context-bar {
+	background: var(--background-strong);
+
+	@include respond-to($breakpoint-medium, 'min') {
+		width: $context-bar-width;
+		min-width: rem($context-bar-min-width);
+		max-width: var(--width-context-bar, $context-bar-max-width);
+		border-left: 1px solid var(--border-norm);
+	}
+
+	@include respond-to($breakpoint-medium) {
+		border-top: 1px solid var(--border-norm);
+	}
+
+	&-inner {
+		position: sticky;
+		top: 0;
+		padding: 2em;
+	}
+}

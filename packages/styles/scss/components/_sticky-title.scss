@@ -1,0 +1,60 @@
+$sticky-title-height: rem(100) !default;
+
+.sticky-title {
+	position: sticky;
+	top: 0;
+	box-shadow: 0 5px 5px 0 rgb(0 0 0 / var(--shadow-norm-opacity));
+	padding: 0.5em 0.75em;
+	background: inherit;
+	z-index: 11;
+
+	&--on-top {
+		box-shadow: none;
+	}
+
+	&--no-padding {
+		padding: 0;
+	}
+}
+
+.container-section-sticky {
+	padding: 0 2em;
+	max-width: 120ch; // avoid too long lines
+	margin-left: auto;
+	margin-right: auto;
+
+	@include respond-to($breakpoint-large, 'min') {
+		max-width: 75vw;
+	}
+
+	&--full-width {
+		max-width: none;
+	}
+
+	&-section {
+		margin-bottom: rem(80);
+	}
+}
+
+/* trick for fixing anchor links */
+.header-height-anchor {
+	position: absolute;
+	top: -#{$sticky-title-height};
+}
+
+// not sticky on mobile
+@include respond-to($breakpoint-small) {
+	.sticky-title:not(.on-mobile-remain-sticky) {
+		position: static;
+		box-shadow: none;
+	}
+
+	.container-section-sticky-section {
+		margin-bottom: rem(80);
+	}
+
+	.header-height-anchor {
+		position: static;
+		top: 0;
+	}
+}

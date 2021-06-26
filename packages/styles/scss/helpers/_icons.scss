@@ -1,0 +1,48 @@
+@use "sass:math";
+%icon {
+	display: inline-block;
+	vertical-align: middle;
+	fill: currentColor;
+}
+
+@each $width
+	in (
+		6,
+		8,
+		10,
+		11,
+		12,
+		14,
+		16,
+		18,
+		20,
+		22,
+		24,
+		28,
+		40,
+		42,
+		48,
+		56,
+		60,
+		100,
+		110
+	)
+{
+	.icon-#{$width}p {
+		@extend %icon; // 🤔
+		width: rem($width);
+		height: rem($width);
+	}
+}
+
+@each $width in (50) {
+	.icon-#{$width} {
+		@extend %icon; // 🤔
+		width: percentage(math.div($width, 100));
+		height: percentage(math.div($width, 100));
+	}
+}
+
+.path2x {
+	stroke-width: 1px;
+}

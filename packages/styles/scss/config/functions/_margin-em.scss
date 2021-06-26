@@ -1,0 +1,34 @@
+@use "sass:math";
+/**
+ * Calculate margins in em unit for vertical rhythm
+ * @param {Number} $font-size - The font size of the element from which calculate
+ * @param {Number} $base-height - The base line height from which calculate
+ * @param {Number} $base-font-size - The base font size from which calculate
+ * @param {String} $type-vr - The type of wanted vertical rhythm
+ * @return {String} - The 4 margin values
+ */
+@function margin-em($font-size, $base-height, $base-font-size, $type-vr) {
+	$coef: ceil(
+		math.div(1, ((math.div(($base-height * $base-font-size), $font-size))))
+	);
+	$other_coef: ceil(math.div(($base-height * $base-font-size), $font-size));
+	$height: math.div(($base-font-size * $base-height), $font-size);
+	$margin: ($height * $coef);
+
+	@if $type-vr== 'double_top_single_bottom' {
+		@return (
+			($margin * $other_coef) * 1em 0
+				((math.div($margin, 2)) * $other_coef) * 1em 0
+		);
+	}
+
+	@if $type-vr== 'single_top_single_bottom' {
+		@return (((math.div($margin, 2)) * $other_coef) * 1em 0);
+	} @else if $type-vr== 'single_bottom' {
+		@return (0 0 ((math.div($margin, 2)) * $other_coef) * 1em 0);
+	} @else if $type-vr== 'single_top' {
+		@return (((math.div($margin, 2)) * $other_coef) * 1em 0 0 0);
+	} @else if $type-vr == 'double_top_double_bottom_without_coef' {
+		@return (($margin * 1em) 0);
+	}
+}

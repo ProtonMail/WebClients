@@ -1,0 +1,123 @@
+.topnav-link {
+	&--blackfriday::before {
+		content: '';
+		position: absolute;
+		width: rem(7);
+		height: rem(7);
+		background: var(--signal-danger);
+		border-radius: 50%;
+		left: calc(#{rem(17.5)} + #{rem(15)});
+		top: calc(50% - #{rem(14)});
+	}
+}
+
+.topnav-list > li:not(:last-child) {
+	margin-right: 0.25em;
+
+	/* Decrease margins (was 1em) */
+	@include respond-to(1500) {
+		margin-right: 1px;
+	}
+}
+
+.topnav-icon {
+	margin-right: 0.5em;
+}
+
+.topnav-vr {
+	@include respond-to(1500) {
+		display: none;
+	}
+}
+
+@include respond-to(1700) {
+	.topnav-list--four-elements {
+		.navigation-title {
+			// equivalent of .sr-only, but impossible to extend in a breakpoint
+			border: 0;
+			clip: rect(0 0 0 0);
+			height: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute;
+			width: 1px;
+		}
+
+		.topnav-icon {
+			margin-right: 0;
+
+			&.expand-caret {
+				margin-left: 0.25em;
+			}
+		}
+	}
+}
+
+@include respond-to(870) {
+	.topnav-list--four-elements {
+		.topnav-link {
+			padding-left: rem(5);
+			padding-right: rem(5);
+		}
+
+		.topnav-link--blackfriday::before {
+			left: calc(#{rem(5)} + #{rem(15)});
+		}
+	}
+}
+
+@include respond-to(1100) {
+	.navigation-title {
+		// equivalent of .sr-only, but impossible to extend in a breakpoint
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+
+	.topnav-icon {
+		// Specificity -_-v
+		&#{&} {
+			margin-right: 0;
+		}
+	}
+}
+
+@include respond-to($breakpoint-small) {
+	.topnav-icon {
+		// Specificity -_-v
+		&#{&} {
+			width: rem(24);
+			height: rem(24);
+		}
+	}
+
+	.topnav-list--four-elements .topnav-link {
+		padding-left: rem(10);
+		padding-right: rem(10);
+	}
+
+	.topnav-list--four-elements .topnav-link--blackfriday::before,
+	.topnav-link--blackfriday::before {
+		left: calc(#{rem(10)} + #{rem(22)});
+		top: calc(50% - #{rem(18)});
+	}
+}
+
+@include respond-to($breakpoint-tiny) {
+	.topnav-list--four-elements .topnav-link,
+	.topnav-link {
+		padding-left: rem(2);
+		padding-right: rem(2);
+	}
+
+	.topnav-list--four-elements .topnav-link--blackfriday::before,
+	.topnav-link--blackfriday::before {
+		left: calc(#{rem(5)} + #{rem(22)});
+	}
+}

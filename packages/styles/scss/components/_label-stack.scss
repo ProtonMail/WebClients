@@ -1,0 +1,134 @@
+.label-stack {
+	--item-wide: 10em;
+	--item-narrow: 1.25em;
+	--item-scale: 0.7;
+
+	font-weight: normal; // Overrides when unread email context
+
+	&.max-w100 {
+		--item-wide: 100%;
+	}
+
+	&-item,
+	&-overflow-count {
+		border-radius: 1em;
+		line-height: 1;
+	}
+
+	&-item {
+		max-width: var(--item-wide);
+		margin: 0.125em;
+		background-color: var(--color, currentColor);
+
+		&-button,
+		&-delete {
+			color: white;
+		}
+
+		&-button {
+			padding: 0.125em 0.5em;
+			text-align: left;
+		}
+
+		&-delete {
+			margin-right: 0.5em;
+
+			& &-icon {
+				display: block;
+			}
+		}
+	}
+
+	&-overflow-count {
+		background-color: rgb(0 0 0 / 0.5);
+		margin-left: 0.125em;
+		cursor: pointer;
+
+		& > * {
+			display: block;
+			padding: 0.125em 0.375em 0.125em 0.25em;
+			color: white;
+		}
+	}
+
+	&:not(.is-stacked) {
+		margin: -0.125em;
+
+		.label-stack-item {
+			&:hover,
+			&:focus-within {
+				box-shadow: var(--shadow-norm);
+			}
+		}
+	}
+
+	&.is-stacked {
+		overflow: hidden;
+		align-items: baseline;
+		flex-wrap: nowrap;
+
+		.label-stack-item {
+			overflow: hidden;
+			margin: 0;
+			transition: transform 0.1s 0.2s easing(easeOutQuart),
+				max-width 0.2s 0s easing(easeOutQuart);
+
+			&:hover,
+			&:focus-within,
+			&:first-child {
+				transition-delay: 0s, 0.075s;
+			}
+
+			&:not(:first-child) {
+				--button-opacity: 0;
+				max-width: var(--item-narrow);
+				transform: scale(var(--item-scale));
+			}
+
+			&-button,
+			&-delete-icon {
+				transition: opacity 0.2s 0.1s easing(easeOutQuart);
+			}
+
+			&-button {
+				opacity: var(--button-opacity, 1);
+			}
+
+			&-delete {
+				overflow: hidden;
+
+				&-icon {
+					opacity: var(--button-opacity, 1);
+				}
+			}
+		}
+
+		@include respond-to($breakpoint-small, 'max') {
+			.label-stack-item-delete {
+				display: none;
+			}
+		}
+
+		@include respond-to($breakpoint-small, 'min') {
+			&:hover,
+			&:focus-within {
+				.label-stack-item {
+					// Avoid gitch effect on first-child
+					&:first-child:not(:hover):not(:focus-within) {
+						--button-opacity: 0;
+						max-width: var(--item-narrow);
+						transform: scale(var(--item-scale));
+						transition-delay: 0.2s, 0s;
+					}
+
+					&:not(:first-child):hover,
+					&:not(:first-child):focus-within {
+						--button-opacity: 1;
+						max-width: var(--item-wide);
+						transform: scale(1);
+					}
+				}
+			}
+		}
+	}
+}

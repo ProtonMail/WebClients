@@ -1,0 +1,42 @@
+{
+	"name": "design-system",
+	"version": "1.8.6",
+	"description": "Proton Design system, for all Proton Projects: https://design-system.protontech.ch/",
+	"main": "index.js",
+	"scripts": {
+		"lint:scss": "stylelint --syntax=scss '**/*.scss'",
+		"build:reset": "sass --no-source-map --style=compressed scss/specifics/android-reset.scss assets/css/android-reset.css; sass --no-source-map --style=compressed scss/specifics/android-dark-mode.scss assets/css/android-dark-mode.css"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:ProtonMail/design-system.git"
+	},
+	"keywords": [
+		"Design System",
+		"CSS guidelines",
+		"Flexbox",
+		"a11y",
+		"ProtonMail",
+		"SVG"
+	],
+	"author": "Proton Technologies AG",
+	"license": "ISC",
+	"dependencies": {},
+	"devDependencies": {
+		"husky": "^4.3.5",
+		"lint-staged": "^10.5.3",
+		"prettier": "^2.2.1",
+		"sass": "^1.34.1",
+		"stylelint": "^13.8.0",
+		"stylelint-config-prettier": "^8.0.2"
+	},
+	"lint-staged": {
+		"\"*.scss\"": "stylelint --syntax=scss",
+		"*.{scss,json}": "prettier --write"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	}
+}

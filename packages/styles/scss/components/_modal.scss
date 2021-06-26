@@ -1,0 +1,329 @@
+$modal-width: 50% !default;
+$modal-max-width: rem(700) !default;
+
+$modal-breakpoint-width: 52em !default;
+$modal-breakpoint-height: 22em !default;
+$breakpoint-low-height-modal: em(500, 16) !default;
+
+$modal-max-height: 80% !default;
+
+$modal-wider-width: 70% !default;
+$modal-wider-max-width: rem(1000) !default;
+
+$modal-full-dimension: 98% !default;
+$modal-full-max-width: rem(1280) !default;
+
+$modal-intermediate-width: rem(480);
+$modal-smaller-width: 28em !default;
+$modal-tiny-width: em(288) !default;
+
+/* overlay covers everything */
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background: var(--backdrop-norm);
+	z-index: 666;
+	animation: anime-modal-overlay-in ease 0.5s 1 normal;
+}
+
+.modal-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	z-index: 666;
+	// -webkit-tap-highlight-color: rgb(255 255 255 / 0);
+
+	/* for very large inputs in modals, like rich text editor */
+	.field-container--full {
+		width: calc(100% - var(--label-width, #{$label-width}));
+
+		@include respond-to(1360) {
+			width: $field-container;
+		}
+
+		@include respond-to(830) {
+			width: calc(100% - var(--label-width, #{$label-width}));
+		}
+
+		@include respond-to($breakpoint-small) {
+			width: 100%;
+		}
+	}
+}
+
+.modal-container--in-background {
+	z-index: 600;
+}
+
+.modal-overlay--out {
+	animation: anime-modal-overlay-out ease 0.5s 1 normal;
+	animation-fill-mode: forwards;
+}
+
+@keyframes anime-modal-overlay-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes anime-modal-overlay-out {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+.modal {
+	position: relative;
+	width: $modal-max-width;
+	max-height: $modal-max-height;
+	max-width: $modal-max-width;
+	background: var(--background-norm);
+	color: var(--text-norm);
+	padding: 0;
+	overflow: hidden;
+	border-radius: $global-border-radius;
+	box-shadow: var(--shadow-lifted);
+	animation: anime-modal-in ease 0.15s 1 normal;
+	animation-fill-mode: both;
+	animation-delay: 0.1s; // stupid fix for Safari crazy display bug
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	cursor: default;
+}
+
+@keyframes anime-modal-in {
+	0% {
+		opacity: 0;
+		transform: scale(0.8);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes anime-modal-out {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(0.8);
+	}
+}
+
+.modal--out {
+	animation: anime-modal-out ease 0.15s 1 normal;
+	animation-fill-mode: both;
+}
+
+.modal--auto {
+	width: auto;
+}
+
+.modal--intermediate {
+	width: $modal-intermediate-width;
+}
+
+.modal--smaller {
+	width: $modal-smaller-width;
+}
+.modal--tiny {
+	width: $modal-tiny-width;
+	border-radius: $global-bigger-border-radius;
+}
+
+.modal--wider {
+	width: $modal-wider-width;
+	max-width: $modal-wider-max-width;
+}
+
+.modal--full {
+	width: $modal-full-dimension;
+	max-width: $modal-full-dimension;
+	height: $modal-full-dimension;
+	max-height: $modal-full-dimension;
+	margin: 1%;
+}
+
+.modal--height-auto {
+	height: auto;
+	max-height: $modal-full-dimension;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+.modal-close {
+	position: absolute;
+	right: 0;
+	top: 0;
+	@extend .flex;
+	overflow: hidden;
+	font-size: 1.25em;
+	z-index: 1;
+}
+
+// not defined, left this in case of
+// .modal-close:focus,
+// .modal-close:hover,
+// .modal-close:active {
+// }
+// .modal-close:hover,
+// .modal-close:active {
+// }
+@if $rtl-option==true {
+	[dir='rtl'] {
+		.modal-close {
+			left: rem(5);
+			right: auto;
+		}
+	}
+}
+
+.modal-content {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	overflow: hidden;
+	position: relative;
+}
+
+.modal-header {
+	padding: rem(30) rem(30) rem(15) rem(30);
+	flex: 0;
+	flex-shrink: 0;
+}
+
+.modal-title {
+	font-size: rem(22);
+	line-height: 1.5;
+	margin-bottom: 0;
+}
+
+.modal-footer {
+	padding: rem(15) rem(30) rem(30);
+	flex: 0;
+	flex-shrink: 0;
+
+	[class*='button'] {
+		// only for Safari the ugly
+		min-height: rem(34);
+	}
+
+	// single button on right
+	[class*='button']:only-child {
+		margin-left: auto;
+	}
+
+	// for vertically displayed buttons
+	&.flex-column {
+		[class*='button'] + [class*='button'] {
+			margin-top: 0.5em;
+		}
+	}
+}
+
+.modal-content-inner {
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: auto;
+	flex: 1 1 auto;
+	padding: 0 rem(30);
+
+	background: var(--background-norm) no-repeat;
+
+	& > p:first-child {
+		margin-top: 0;
+	}
+
+	& > p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+// adaptation for labels
+$label-shorter-width: 10em !default;
+
+.modal--shorter-labels .label {
+	width: var(--label-shorter-width, $label-shorter-width);
+}
+
+@include respond-to($breakpoint-small) {
+	.modal--shorter-labels .on-mobile-flex-column .label {
+		width: 100%;
+	}
+}
+
+// modal with title visually hidden
+.modal-header--no-title {
+	padding-top: rem(20);
+}
+
+@if $rtl-option==true {
+	[dir='rtl'] {
+		.modal-footer [class*='button']:only-child {
+			margin-right: auto;
+			margin-left: 0;
+		}
+	}
+}
+
+@media (max-height: $breakpoint-low-height-modal) {
+	.modal {
+		max-height: $modal-full-dimension;
+	}
+
+	.modal-footer {
+		padding-bottom: rem(10);
+		min-height: rem(59); // only for Safari the ugly
+	}
+
+	.modal-header {
+		padding-top: rem(10);
+		padding-bottom: rem(5);
+	}
+}
+
+// small viewports
+@media (max-width: $modal-breakpoint-width) {
+	.modal:not(.modal--tiny) {
+		margin: 1%;
+		min-width: 0;
+		width: 98%;
+		max-width: 98%;
+		max-height: 98%;
+		align-self: center;
+	}
+	.modal--tiny {
+		max-width: 95%;
+		max-height: 95%;
+	}
+}
+
+@include respond-to($breakpoint-large, 'min') {
+	.modal--full {
+		max-width: $modal-full-max-width;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

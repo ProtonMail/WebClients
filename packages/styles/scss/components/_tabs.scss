@@ -1,0 +1,66 @@
+.tabs-list {
+	margin: 0;
+	padding: 0;
+	@extend .unstyled;
+	@extend .flex;
+	@extend .relative;
+	white-space: nowrap;
+}
+
+.tabs-list-item {
+	margin-right: rem(10);
+	color: var(--text-weak);
+	min-width: auto;
+}
+
+.tabs-list-link {
+	@extend .flex;
+	color: inherit;
+	border-bottom: 2px solid transparent;
+	padding: 0.5em;
+	@extend .text-no-decoration;
+	@extend .relative;
+	top: 1px;
+	transition: color 0.15s ease-out, border-bottom 0.15s ease-out;
+
+	&:focus,
+	&:hover {
+		@extend .text-no-decoration;
+		color: var(--text-norm);
+		border-bottom: 2px solid var(--border-norm);
+	}
+
+	&[disabled] {
+		opacity: 0.4;
+		cursor: default;
+		pointer-events: none;
+	}
+}
+
+[aria-selected='true'].tabs-list-link {
+	border-bottom: 2px solid var(--interaction-norm);
+	color: var(--text-norm);
+}
+
+.tabs-container {
+	border-bottom: 1px solid var(--border-weak);
+
+	&[class*='sticky'] {
+		background: var(--background-norm);
+	}
+}
+
+.tabs-indicator {
+	position: absolute;
+	border-bottom: 2px solid var(--interaction-norm);
+	content: '';
+	height: 0;
+	bottom: -1px;
+	left: 0;
+	right: 0;
+	transform-origin: left center;
+	transition: transform 0.15s ease-out;
+	transform: translateX(var(--translate)) scaleX(var(--scale));
+}
+
+/* hidden state for content is not necessary for React, added in exception for Design system website */

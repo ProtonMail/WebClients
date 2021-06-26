@@ -1,0 +1,203 @@
+@use "sass:math";
+$toggle-width: em(40) !default;
+$toggle-width-button: em(24) !default;
+
+.toggle-label {
+	&#{&} {
+		// specificity issue with flex helpers
+		position: relative;
+		z-index: 0; // Create stacking context
+		display: inline-flex;
+		width: $toggle-width;
+		min-height: $toggle-width-button;
+		max-height: $toggle-width-button;
+		box-shadow: inset 0 0 0 1px var(--field-norm);
+		border-radius: #{math.div($toggle-width, 2)};
+		background-color: var(--background-norm);
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		z-index: 2;
+		width: #{$toggle-width-button};
+		transform: translateX(0);
+		border-radius: $toggle-width-button;
+		background-color: var(--field-norm);
+		transition: transform 0.25s easing(easeOutBack),
+			background-color 0.25s easing(easeOutCubic);
+	}
+
+	& > .toggle-label-text {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		z-index: 2;
+		display: inline-flex;
+		border-radius: $toggle-width-button;
+		width: $toggle-width-button;
+
+		&:first-child {
+			z-index: 3;
+			left: 0;
+			color: var(--text-norm);
+		}
+
+		&:last-child {
+			z-index: 1;
+			right: 0;
+			color: var(--interaction-norm-contrast);
+		}
+
+		.toggle-label-img {
+			margin: auto;
+			opacity: 0;
+			transition: opacity 0.15s easing(easeOutCubic);
+		}
+
+		.toggle-label-loader {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 1;
+			display: flex;
+			animation: 0.25s easing(easeOutCubic) forwards
+				anime-toggle-label-loader-fade-in;
+
+			@keyframes anime-toggle-label-loader-fade-in {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+		}
+
+		.circle-loader {
+			margin: auto;
+			font-size: em(16);
+		}
+	}
+
+	// will be done later
+	// &--with-icons {
+
+	// }
+
+	/**
+	 * states
+	 */
+	// checked
+	&--checked {
+		.toggle-label-text {
+			&:first-child {
+				z-index: 1;
+			}
+
+			&:last-child {
+				z-index: 3;
+
+				.toggle-label-img {
+					opacity: 1;
+				}
+			}
+		}
+
+		&::before {
+			transform: translateX(#{$toggle-width - $toggle-width-button});
+			background-color: var(--interaction-norm);
+		}
+	}
+
+	// disabled
+	&--disabled {
+		cursor: default;
+		// disabled but not loading
+		&:not(.toggle-label--loading) {
+			box-shadow: none;
+			background-color: var(--background-strong);
+
+			&::before {
+				background-color: var(--field-disabled);
+			}
+
+			&.toggle-label--checked {
+				&::before {
+					background-color: var(--field-norm);
+				}
+			}
+		}
+
+		// disabled loading
+		&.toggle-label--loading {
+			.toggle-label-text .toggle-label-img {
+				opacity: 0;
+			}
+
+			&:not(.toggle-label--checked) {
+				&::before {
+					background-color: var(--field-hover);
+				}
+			}
+
+			&.toggle-label--checked {
+				&::before {
+					background-color: var(--interaction-norm-hover);
+				}
+			}
+		}
+	}
+
+	&:not(.toggle-label--disabled) {
+		&:hover,
+		&:focus-within {
+			&::before {
+				background-color: var(--field-hover);
+			}
+		}
+
+		&.toggle-label--checked:focus-within,
+		&.toggle-label--checked:hover {
+			&::before {
+				background-color: var(--interaction-norm-hover);
+			}
+		}
+
+		&.toggle-label--loading {
+			.toggle-label-text .toggle-label-img {
+				opacity: 0;
+			}
+
+			&:not(.toggle-label--checked) {
+				&::before {
+					background-color: var(--field-hover);
+				}
+			}
+
+			&.toggle-label--checked {
+				&::before {
+					background-color: var(--interaction-norm-hover);
+				}
+			}
+		}
+	}
+
+	/**
+	 * Sizes
+	 */
+	&--small {
+		margin-top: 0.25em;
+		font-size: 0.8em;
+
+		.toggle-label-img {
+			width: rem(13);
+			height: rem(13);
+		}
+	}
+}

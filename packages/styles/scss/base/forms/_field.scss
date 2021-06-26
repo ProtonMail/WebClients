@@ -1,0 +1,251 @@
+.placeholder,
+::placeholder {
+	color: var(--field-placeholder-color, var(--text-hint));
+	font-style: normal;
+	opacity: 1; // For Firefox -_-v
+}
+
+$field-container: rem(260) !default;
+
+.field-container {
+	width: $field-container;
+	@extend .max-w100;
+	@extend .inline-block;
+	@extend .relative;
+
+	&.auto {
+		@extend .auto;
+	}
+}
+
+.field {
+	height: rem($default-height-fields);
+
+	@at-root {
+		details & {
+			height: auto; // crazy chrome bug in details (share drive modal)
+		}
+	}
+
+	padding: em(6) em(16); // design want 34px height (actually 35 to avoid .5px)
+	border-radius: $global-border-radius;
+	border: 1px solid var(--field-norm);
+	background-color: var(--field-background-color, var(--background-norm));
+	color: var(--field-text-color, var(--text-norm));
+	outline: none;
+	filter: none; // fixes Firefox autofill color
+	transition: 0.15s easing(easeOutQuint), background-position 0s;
+
+	&.field--tiny,
+	&.field--small,
+	&.field--large {
+		height: auto;
+	}
+
+	&:hover {
+		border-color: var(--field-hover);
+		background-color: var(
+			--field-hover-background-color,
+			var(--background-norm)
+		);
+		color: var(--field-hover-text-color, var(--text-norm));
+	}
+
+	&:focus,
+	&.focus,
+	&:focus-within {
+		border-color: var(--interaction-norm);
+		background-color: var(
+			--field-focus-background-color,
+			var(--background-norm)
+		);
+		color: var(--field-focus-text-color, var(--text-norm));
+	}
+
+	&[disabled] {
+		border-color: var(--field-disabled);
+		background-color: var(
+			--field-disabled-background-color,
+			var(--background-norm)
+		);
+		color: var(--field-disabled-text-color, var(--text-disabled));
+	}
+
+	&[aria-invalid='true']:not(:focus),
+	&[aria-invalid='true']:not(.ng-pristine) {
+		border-color: var(--signal-danger);
+	}
+
+	&.is-valid:not(:focus) {
+		border-color: var(--signal-success);
+	}
+
+	&.w100 {
+		width: 100%;
+	}
+
+	&.wauto {
+		width: auto;
+	}
+
+	&[type='search'] {
+		padding-left: 2em;
+
+		&::-webkit-search-cancel-button {
+			display: none;
+		}
+	}
+
+	&[type='number'] {
+		padding-right: 0.25em;
+	}
+
+	&.select {
+		@extend .field;
+		padding-right: rem(6);
+		.mauto {
+			display: flex;
+			width: 100%;
+		}
+		.mr0-5 {
+			flex: 1 1 0px;
+			@extend .text-ellipsis;
+		}
+	}
+}
+
+// Fix autofill state
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+	// Trick to replace the background color
+	box-shadow: 0 0 0 1000px
+		var(--field-background-color, var(--background-norm)) inset !important;
+	-webkit-text-fill-color: var(
+		--field-text-color,
+		var(--text-norm)
+	) !important;
+}
+
+@if $rtl-option==true {
+	[dir='rtl'] {
+		[type='search'].field {
+			padding-left: 0;
+			padding-right: 2em;
+		}
+	}
+}
+
+select.field {
+	background: var(
+		--select-background-color,
+		var(--field-background-color, var(--background-norm))
+	);
+	background-size: rem(15);
+	padding-left: 1em;
+	padding-right: rem(20);
+	text-overflow: ellipsis;
+	overflow: hidden;
+	cursor: pointer;
+
+	&::-ms-expand {
+		display: none;
+	}
+
+	& > optgroup {
+		background-color: var(--background-weak);
+	}
+}
+
+/* hotfix for Chrome */
+select.text-center {
+	text-align-last: center;
+}
+
+textarea.field {
+	height: auto;
+}
+
+/* errors */
+.error-zone {
+	transition: transform 0.15s linear, max-height 0.15s linear;
+	transform: scaleY(1);
+	transform-origin: top center;
+
+	&:empty {
+		transform: scaleY(0);
+	}
+}
+
+// general rule: if focus is on the field => don't display error yet
+.field-icon-container:focus-within + .error-zone,
+.field:focus + .error-zone {
+	transform: scaleY(0);
+	max-height: 0;
+}
+
+/* sizes/other modifiers */
+.field--tiny {
+	padding: em(6); // useful for address group
+}
+
+.field--small {
+	padding: em(2) em(16); // design want 26px height (actually 27 to avoid .5px)
+}
+
+.field--large {
+	padding: em(10) em(16); // design want 42px height (actually 43 to avoid .5px)
+}
+
+.field--highlight {
+	border-color: var(--primary);
+	border-width: 2px;
+}
+
+/* field with icon */
+.field-icon-container {
+	@extend .field; // added focus-within inside on field for this fake-field :)
+	padding: 0;
+
+	> .field {
+		border: 0;
+		width: calc(100% - 1.5em);
+	}
+	&,
+	&-empty {
+		// for drive, to keep the same height
+		min-height: calc(#{rem($default-height-fields)} + 2px);
+	}
+
+	&:focus-within {
+		> .field {
+			background-color: transparent;
+			box-shadow: none;
+			outline: 0;
+		}
+	}
+}
+
+.field-icon-container--invalid:not(:focus-within) {
+	border-color: var(--signal-danger);
+
+	> .field {
+		border-color: var(--signal-danger);
+	}
+}
+
+/*
+ * REMOVE THIS IF POSSIBLE
+ */
+/* @protonmail.com field */
+.field--username,
+.sign-layout-container .field--username.field--username {
+	padding-right: var(--padding-right-field-above, 9em);
+}
+
+/* special stupid case for signup iframe challenge... not using same styles for the moment */
+.sign-layout-container {
+	.field--username {
+		padding: em(10) em(16); // design want 42px height (actually 41 to avoid .5px)
+	}
+}

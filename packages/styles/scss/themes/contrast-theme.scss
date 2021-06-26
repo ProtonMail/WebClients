@@ -1,0 +1,68 @@
+/*
+ * Theme: Contrast
+ */
+:root,
+.ui-standard {
+	--primary: #3956cc;
+	--primary-contrast: white;
+
+	--signal-danger: #d42f34;
+	--signal-danger-hover: #c7262b;
+	--signal-danger-active: #ba1e23;
+	--signal-danger-contrast: white;
+
+	--signal-warning: #f5830a;
+	--signal-warning-hover: #f5730a;
+	--signal-warning-active: #f5640a;
+	--signal-warning-contrast: black;
+
+	--signal-success: #1b8561;
+	--signal-success-hover: #147857;
+	--signal-success-active: #0f6b4c;
+	--signal-success-contrast: white;
+
+	--signal-info: #1578cf;
+	--signal-info-hover: #0e6dc2;
+	--signal-info-active: #0764b5;
+	--signal-info-contrast: white;
+
+	--text-norm: #08080d;
+	--text-weak: #4b4f65;
+	--text-hint: #60657b;
+	--text-disabled: #a8acbd;
+	--text-invert: white;
+
+	--field-norm: #60657b;
+	--field-hover: #4b4f65;
+	--field-disabled: #a8acbd;
+
+	--border-norm: #c4c6d3;
+	--border-weak: #e1e2e9;
+
+	--background-norm: white;
+	--background-weak: #f0f0f4;
+	--background-strong: #e1e2e9;
+
+	--interaction-norm: #3956cc;
+	--interaction-norm-hover: #2e49b2;
+	--interaction-norm-active: #253c99;
+	--interaction-norm-contrast: white;
+
+	--interaction-weak: #c4c6d3;
+	--interaction-weak-hover: #a8acbd;
+	--interaction-weak-active: #8f93a7;
+
+	--interaction-default: transparent;
+	--interaction-default-hover: rgb(168 172 189 / 0.2);
+	--interaction-default-active: rgb(168 172 189 / 0.3);
+
+	--shadow-norm-opacity: 0.1;
+	--shadow-lifted-opacity: 0.16;
+
+	--backdrop-norm: rgb(0 0 0 / 0.48);
+
+	// Optional colors
+
+	--scrollbar-thumb-color: #c4c6d3;
+	--scrollbar-thumb-hover-color: #a8acbd;
+}
