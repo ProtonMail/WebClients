@@ -1,0 +1,26 @@
+@import '~design-system/scss/config/';
+
+.move-dropdown {
+    .dropdown-content {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+
+    &-list-container {
+        flex: 1 1 auto;
+
+        @include respond-to($breakpoint-small, 'min') {
+            max-width: 20em;
+            max-height: 15em;
+        }
+
+        [data-level='1'] {
+            padding-left: 2em;
+        }
+        [data-level='2'] {
+            padding-left: 3em;
+        }
+    }
+}

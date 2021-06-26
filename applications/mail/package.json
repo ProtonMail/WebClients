@@ -1,0 +1,106 @@
+{
+    "name": "proton-mail",
+    "version": "4.1.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "proton-pack dev-server --appMode=standalone",
+        "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
+        "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+        "preversion": "git update-index --no-assume-unchanged package-lock.json",
+        "postversion": "git update-index --assume-unchanged package-lock.json && git push --tags",
+        "i18n:validate": "proton-i18n validate lint-functions",
+        "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
+        "i18n:getlatest": "proton-i18n upgrade",
+        "i18n:upgrade": "proton-i18n extract --verbose && proton-i18n crowdin -u --verbose",
+        "deploy": "proton-bundler --git",
+        "deploy:standalone": "proton-bundler --git --appMode=standalone",
+        "test": "jest --runInBand --ci",
+        "test:dev": "jest --watch --coverage=false",
+        "build": "cross-env NODE_ENV=production proton-pack compile $npm_package_config_publicPathFlag",
+        "build:sso": "cross-env NODE_ENV=production proton-pack compile --appMode=sso",
+        "build:standalone": "cross-env NODE_ENV=production proton-pack compile --appMode=standalone",
+        "bundle": "proton-bundler",
+        "sync:lock": "npm run follow:lock && git add package-lock.json && git commit -m 'Sync package-lock.json' && git push && npm run unfollow:lock",
+        "follow:lock": "git update-index --no-assume-unchanged package-lock.json",
+        "unfollow:lock": "git update-index --assume-unchanged package-lock.json",
+        "check-types": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ProtonMail/proton-mail.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": "https://github.com/ProtonMail/proton-mail/issues"
+    },
+    "homepage": "https://github.com/ProtonMail/proton-mail#readme",
+    "dependencies": {
+        "@babel/plugin-transform-runtime": "^7.13.15",
+        "abortcontroller-polyfill": "^1.3.0",
+        "core-js": "^3.3.6",
+        "css-loader": "^5.2.4",
+        "date-fns": "^2.4.1",
+        "declassify": "^2.1.0",
+        "design-system": "github:ProtonMail/design-system#master",
+        "dompurify": "^2.0.7",
+        "idb": "^6.0.0",
+        "jszip": "^3.2.2",
+        "juice": "^6.0.0",
+        "linkify-it": "^3.0.2",
+        "markdown-it": "^10.0.0",
+        "mimemessage": "github:ProtonMail/mimemessage.js#semver:~v1.1.4",
+        "proton-pack": "github:ProtonMail/proton-pack#semver:^3.0.0",
+        "proton-shared": "github:ProtonMail/proton-shared#master",
+        "proton-translations": "github:ProtonMail/proton-translations#fe-mail",
+        "proton-version": "github:ProtonMail/proton-version#semver:^1.0.0",
+        "react-components": "github:ProtonMail/react-components#master",
+        "react-refresh": "^0.10.0",
+        "ttag": "^1.7.14",
+        "turndown": "^5.0.3",
+        "yetch": "^1.1.0"
+    },
+    "devDependencies": {
+        "@testing-library/dom": "^7.26.3",
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.3.2",
+        "@testing-library/react-hooks": "^3.2.1",
+        "@types/dompurify": "^2.0.1",
+        "@types/history": "^4.7.3",
+        "@types/jest": "^24.0.23",
+        "@types/turndown": "^5.0.0",
+        "@typescript-eslint/eslint-plugin": "^4.4.1",
+        "@typescript-eslint/parser": "^4.4.1",
+        "babel-plugin-transform-require-context": "^0.1.1",
+        "eslint": "^7.3.1",
+        "eslint-config-airbnb-typescript": "^7.2.1",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-config-proton-lint": "github:ProtonMail/proton-lint#semver:^0.0.6",
+        "husky": "^4.3.0",
+        "jest": "^24.9.0",
+        "jest-junit": "^12.0.0",
+        "lint-staged": "^10.4.2",
+        "loud-rejection": "^2.2.0",
+        "prettier": "^2.0.5",
+        "proton-bundler": "github:ProtonMail/proton-bundler#semver:^2.0.0",
+        "proton-i18n": "github:ProtonMail/proton-i18n#semver:^2.0.0",
+        "react-test-renderer": "^16.12.0",
+        "typescript": "^4.1.2"
+    },
+    "config": {
+        "publicPathFlag": "--publicPath=/"
+    },
+    "lint-staged": {
+        "(*.ts|*.tsx|*.js)": [
+            "prettier --write",
+            "eslint"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    }
+}
