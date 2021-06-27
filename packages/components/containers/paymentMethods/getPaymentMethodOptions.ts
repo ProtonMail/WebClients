@@ -34,8 +34,6 @@ const getIcon = (paymentMethod: PaymentMethod) => {
                 return 'payments-type-amex';
             case 'Visa':
                 return 'payments-type-visa';
-            case 'Discover':
-                return 'payments-type-discover';
             case 'MasterCard':
                 return 'payments-type-mastercard';
             default:
