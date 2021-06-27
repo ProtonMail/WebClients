@@ -124,6 +124,34 @@ const ItemContextMenu = ({
 
     const trashMenuItems = [
         {
+            hidden: isPreviewHidden,
+            name: c('Action').t`Preview`,
+            icon: 'read',
+            testId: 'context-menu-preview',
+            action: () => preview(shareId, item),
+        },
+        {
+            hidden: false,
+            name: c('Action').t`Download`,
+            icon: 'download',
+            testId: 'context-menu-download',
+            action: () => download(shareId, selectedItems),
+        },
+        {
+            hidden: isMultiSelect,
+            name: c('Action').t`Details`,
+            icon: 'info',
+            testId: 'context-menu-details',
+            action: () => openDetails(shareId, item),
+        },
+        {
+            hidden: !isMultiSelect || hasFoldersSelected,
+            name: c('Action').t`Details`,
+            icon: 'info',
+            testId: 'context-menu-details',
+            action: () => openFilesDetails(selectedItems),
+        },
+        {
             hidden: false,
             name: c('Action').t`Restore from trash`,
             icon: 'repeat',

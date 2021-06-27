@@ -22,10 +22,15 @@ function useNavigate() {
         history.push(`/shared-urls`);
     }, [history]);
 
+    const navigateToTrash = useCallback(() => {
+        history.push(`/trash`);
+    }, [history]);
+
     return {
         navigateToLink,
         navigateToRoot,
         navigateToSharedURLs,
+        navigateToTrash,
     };
 }
 
