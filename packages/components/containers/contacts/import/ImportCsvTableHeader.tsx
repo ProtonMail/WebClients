@@ -23,10 +23,10 @@ const ImportCsvTableHeader = ({ disabledPrevious = true, disabledNext = true, on
                         <span className="flex-item-centered-vert mr0-5">{c('TableHeader').t`Values`}</span>
                         <span className="flex flex-nowrap">
                             <Button icon disabled={disabledPrevious} onClick={onPrevious}>
-                                <Icon name="caret" className="flex-item-noshrink rotateZ-90" />
+                                <Icon name="angle-down" className="flex-item-noshrink rotateZ-90" />
                             </Button>
                             <Button icon disabled={disabledNext} onClick={onNext}>
-                                <Icon name="caret" className="flex-item-noshrink rotateZ-270" />
+                                <Icon name="angle-down" className="flex-item-noshrink rotateZ-270" />
                             </Button>
                         </span>
                     </div>

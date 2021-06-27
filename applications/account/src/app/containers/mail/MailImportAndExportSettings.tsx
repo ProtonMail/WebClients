@@ -15,7 +15,7 @@ export const getImportPage = ({ user }: { user: UserModel }) => {
     return {
         text: user.isFree ? c('Title').t`Import Assistant` : c('Title').t`Import & export`,
         to: '/mail/import-export',
-        icon: 'import',
+        icon: 'arrow-down-to-screen',
         subsections: [
             {
                 text: c('Title').t`Import Assistant`,

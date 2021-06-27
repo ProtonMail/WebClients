@@ -87,7 +87,7 @@ const MoveButtons = ({
             onClick={() => withLoading(handleMove(ARCHIVE))}
             disabled={!selectedIDs.length}
             data-testid="toolbar:movetoarchive"
-            icon={<Icon name="archive" alt={c('Action').t`Move to archive`} />}
+            icon={<Icon name="box-archive" alt={c('Action').t`Move to archive`} />}
         />
     );
 
@@ -108,7 +108,7 @@ const MoveButtons = ({
             onClick={() => withLoading(handleMove(SPAM))}
             disabled={loading || !selectedIDs.length}
             data-testid="toolbar:movetospam"
-            icon={<Icon name="spam" alt={c('Action').t`Move to spam`} />}
+            icon={<Icon name="fire" alt={c('Action').t`Move to spam`} />}
         />
     );
 
@@ -129,7 +129,7 @@ const MoveButtons = ({
             onClick={() => withLoading(handleMove(INBOX))}
             disabled={loading || !selectedIDs.length}
             data-testid="toolbar:movetonospam"
-            icon={<Icon name="nospam" alt={c('Action').t`Move to inbox (not spam)`} />}
+            icon={<Icon name="fire-slash" alt={c('Action').t`Move to inbox (not spam)`} />}
         />
     );
 

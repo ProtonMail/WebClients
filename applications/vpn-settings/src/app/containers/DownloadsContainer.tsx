@@ -7,7 +7,7 @@ export const getDownloadsPage = () => {
     return {
         text: c('Title').t`Downloads`,
         to: '/downloads',
-        icon: 'download',
+        icon: 'arrow-down-to-rectangle',
         subsections: [
             {
                 text: c('Title').t`ProtonVPN clients`,

@@ -7,7 +7,7 @@ export const getAppearancePage = () => {
     return {
         text: c('Title').t`Appearance`,
         to: '/mail/appearance',
-        icon: 'apparence',
+        icon: 'paint-roller',
         subsections: [
             {
                 text: c('Title').t`Theme`,

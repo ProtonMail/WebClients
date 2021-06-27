@@ -24,7 +24,7 @@ const PreviewButton = ({ shareId, selectedItems }: Props) => {
         <ToolbarButton
             disabled={disabled}
             title={c('Action').t`Preview`}
-            icon={<Icon name="read" />}
+            icon={<Icon name="eye" />}
             onClick={() => {
                 if (selectedItems.length) {
                     preview(shareId, selectedItems[0]);

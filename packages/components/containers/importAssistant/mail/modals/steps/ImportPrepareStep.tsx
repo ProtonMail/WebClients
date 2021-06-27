@@ -283,7 +283,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
     if (modalModel.errorCode === IMPORT_ERROR.IMAP_CONNECTION_ERROR) {
         return (
             <div className="p1 text-center w100 color-danger">
-                <Icon name="attention" size={60} />
+                <Icon name="triangle-exclamation" size={60} />
                 <div className="mt0-5 mlauto mrauto mb0-5 max-w30e">
                     {c('Error').t`We were unable to connect to your service provider.`}
                     <br />
@@ -369,7 +369,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
                 </div>
 
                 <div className="mb1 ml1 flex flex-align-items-center flex-nowrap">
-                    <Icon className="flex-item-noshrink mr0-5" name="label" />
+                    <Icon className="flex-item-noshrink mr0-5" name="tag" />
                     <span className="flex-item-noshrink">{c('Info').t`Label all imported messages as`}</span>
                     {payload.ImportLabel && payload.ImportLabel.Name && (
                         <span className="ml0-5">
@@ -388,7 +388,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
                 </div>
 
                 <div className="mb1 ml1 flex flex-align-items-center">
-                    <Icon className="mr0-5" name={isLabelMapping ? 'folder-label' : 'parent-folder'} />
+                    <Icon className="mr0-5" name={isLabelMapping ? 'tags' : 'folders'} />
                     {isLabelMapping
                         ? c('Info').ngettext(
                               msgid`${providerFoldersNumLocalized} label found in Gmail`,
@@ -410,7 +410,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
                             }
                             originalPlacement="right"
                         >
-                            <Icon className="ml0-5" name="attention-plain" size={18} />
+                            <Icon className="ml0-5" name="triangle-exclamation-filled" size={18} />
                         </Tooltip>
                     )}
                 </div>
@@ -418,7 +418,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
                 {selectedFolders.length !== providerFoldersNum && (
                     <div className="mb1 ml2 flex flex-align-items-center">
                         <strong>
-                            <Icon className="mr0-5" name={isLabelMapping ? 'folder-label' : 'parent-folder'} />
+                            <Icon className="mr0-5" name={isLabelMapping ? 'tags' : 'folders'} />
                             {isLabelMapping
                                 ? c('Info').ngettext(
                                       msgid`${selectedFoldersCountLocalized} label selected`,
@@ -445,7 +445,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
                             }
                             originalPlacement="right"
                         >
-                            <Icon name="attention-plain" size={20} className="ml0-5" />
+                            <Icon name="triangle-exclamation-filled" size={20} className="ml0-5" />
                         </Tooltip>
                     )}
                     {isCustom && (

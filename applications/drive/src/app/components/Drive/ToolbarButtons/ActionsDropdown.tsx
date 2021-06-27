@@ -37,28 +37,28 @@ const ActionsDropdown = ({ shareId }: Props) => {
         {
             hidden: isMultiSelect,
             name: c('Action').t`Rename`,
-            icon: 'file-edit',
+            icon: 'note-pen',
             testId: 'actions-dropdown-rename',
             action: () => openRename(shareId, selectedItems[0]),
         },
         {
             hidden: isMultiSelect,
             name: c('Action').t`Details`,
-            icon: 'info',
+            icon: 'circle-info',
             testId: 'actions-dropdown-details',
             action: () => openDetails(shareId, selectedItems[0]),
         },
         {
             hidden: !isMultiSelect || hasFoldersSelected,
             name: c('Action').t`Details`,
-            icon: 'info',
+            icon: 'circle-info',
             testId: 'actions-dropdown-details',
             action: () => openFilesDetails(selectedItems),
         },
         {
             hidden: false,
             name: c('Action').t`Move to folder`,
-            icon: 'arrow-cross',
+            icon: 'arrows-up-down-left-right',
             testId: 'actions-dropdown-move',
             action: () => folder && openMoveToFolder(folder, selectedItems),
         },
@@ -106,7 +106,7 @@ const ActionsDropdown = ({ shareId }: Props) => {
                 ref={anchorRef}
                 aria-expanded={isOpen}
                 onClick={toggle}
-                icon={<Icon name="caret" rotate={isOpen ? 180 : 0} />}
+                icon={<Icon name="angle-down" rotate={isOpen ? 180 : 0} />}
                 data-testid="actions-dropdown"
                 title={c('Title').t`Show actions`}
             />

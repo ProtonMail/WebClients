@@ -107,10 +107,18 @@ const ComposerTitleBar = ({ title, minimized, maximized, toggleMinimized, toggle
                 onClick={toggleMaximized}
                 dataTestId="composer:maximize-button"
             >
-                <Icon name={maximized ? 'contract-window' : 'expand'} alt={title} className="mauto" />
+                <Icon
+                    name={
+                        maximized
+                            ? 'arrow-down-left-and-arrow-up-right-to-center'
+                            : 'arrow-up-right-and-arrow-down-left-from-center'
+                    }
+                    alt={title}
+                    className="mauto"
+                />
             </TitleBarButton>
             <TitleBarButton title={titleClose} onClick={onClose} dataTestId="composer:close-button">
-                <Icon name="close" alt={title} className="mauto" />
+                <Icon name="xmark" alt={title} className="mauto" />
             </TitleBarButton>
         </header>
     );

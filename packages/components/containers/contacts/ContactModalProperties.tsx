@@ -10,11 +10,11 @@ import ContactModalRow from '../../components/contacts/ContactModalRow';
 import EncryptedIcon from '../../components/contacts/EncryptedIcon';
 
 const ICONS: { [key: string]: string } = {
-    fn: 'contact',
-    email: 'email',
-    tel: 'phone',
-    adr: 'address',
-    other: 'info',
+    fn: 'user',
+    email: 'envelope',
+    tel: 'phone-rotary',
+    adr: 'map-marker',
+    other: 'circle-info',
 };
 
 const TITLES: { [key: string]: string } = {
@@ -128,7 +128,7 @@ const ContactModalProperties = (
             {canAdd && (
                 <div className="flex flex-nowrap flex-item-noshrink">
                     <div className="mr0-5 flex flex-align-items-center flex-item-noshrink">
-                        <Icon name="text-justify visibility-hidden" />
+                        <Icon name="align-justify visibility-hidden" />
                     </div>
                     <div className="flex flex-nowrap w95">
                         <Button color="norm" shape="outline" className="mb1" onClick={onAdd}>

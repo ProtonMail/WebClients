@@ -57,7 +57,7 @@ const InsecureEmailInfo = ({ email }: Props) => {
                     className="w100 p0 flex flex-justify-space-between flex-nowrap flex-align-items-center"
                 >
                     <span>{c('Title').t`This address might compromise your privacy.`}</span>
-                    <Icon name="caret" className={expanded ? 'rotateX-180' : ''} />
+                    <Icon name="angle-down" className={expanded ? 'rotateX-180' : ''} />
                 </button>
                 {expanded ? <div className="pt0-5">{getInfo(domain)}</div> : null}
             </div>

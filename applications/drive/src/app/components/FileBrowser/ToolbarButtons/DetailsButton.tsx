@@ -18,7 +18,7 @@ const DetailsButton = ({ shareId, selectedItems }: Props) => {
         <ToolbarButton
             disabled={noSelection(selectedItems) || (isMultiSelect(selectedItems) && hasFoldersSelected(selectedItems))}
             title={c('Action').t`Details`}
-            icon={<Icon name="info" />}
+            icon={<Icon name="circle-info" />}
             onClick={() => {
                 if (selectedItems.length === 1) {
                     openDetails(shareId, selectedItems[0]);

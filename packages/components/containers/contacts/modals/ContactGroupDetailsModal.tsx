@@ -63,7 +63,7 @@ const ContactGroupDetailsModal = ({ contactGroupID, onClose = noop, ...rest }: P
         >
             <div className="flex flex-no-min-children flex-item-fluid">
                 <h4 className="mb1 flex flex-align-items-center flex-item-fluid">
-                    <Icon className="mr0-5" name="contacts-groups" />
+                    <Icon className="mr0-5" name="user-group" />
                     <span>
                         {c('Title').ngettext(msgid`${emailsCount} member`, `${emailsCount} members`, emailsCount)}
                     </span>

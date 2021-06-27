@@ -12,7 +12,7 @@ export const getPasswordAndRecoveryPage = ({ user }: { user: UserModel }) => {
     return {
         text: hasRecoveryOptions ? c('Title').t`Password & recovery` : c('Title').t`Password`,
         to: '/authentication',
-        icon: 'keys',
+        icon: 'key',
         subsections: [
             {
                 text: c('Title').t`Passwords`,

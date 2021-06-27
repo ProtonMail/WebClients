@@ -34,7 +34,7 @@ const Header = ({
         >
             {hasClose ? (
                 <Button icon shape="ghost" size="small" className="modal-close" title={closeText} onClick={onClose}>
-                    <Icon className="modal-close-icon" name="close" alt={closeText} />
+                    <Icon className="modal-close-icon" name="xmark" alt={closeText} />
                 </Button>
             ) : null}
             {typeof children === 'string' ? (

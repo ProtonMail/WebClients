@@ -20,7 +20,7 @@ const AppsDropdown = () => {
             as="button"
             type="button"
             hasCaret={false}
-            content={<Icon name="more" className="apps-dropdown-button-icon flex-item-noshrink" />}
+            content={<Icon name="grid-3" className="apps-dropdown-button-icon flex-item-noshrink" />}
             className="apps-dropdown-button flex-item-noshrink"
             dropdownClassName="apps-dropdown"
             originalPlacement="bottom-left"
@@ -57,7 +57,7 @@ const AppsDropdown = () => {
                         title={c('Apps dropdown').t`Go to ${vpnName}`}
                         className="apps-dropdown-link"
                     >
-                        <Icon name="protonvpn" size={28} className="apps-dropdown-icon apps-dropdown-icon-vpn" />
+                        <Icon name="brand-proton-vpn" size={28} className="apps-dropdown-icon apps-dropdown-icon-vpn" />
                         <div>{BRAND_NAME}</div>
                         <div className="text-bold">{vpnName}</div>
                     </SettingsLink>

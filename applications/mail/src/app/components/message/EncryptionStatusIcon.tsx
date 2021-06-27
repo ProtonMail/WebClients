@@ -38,7 +38,6 @@ const EncryptionStatusIcon = ({
             <span className={classnames(['inline-flex flex-item-noshrink align-middle', className])}>
                 <Href href={href} className="flex flex-item-noshrink mauto" tabIndex={disabled ? -1 : undefined}>
                     <Icon
-                        viewBox={iconName === 'attention' ? '0 0 16 16' : '0 0 18 18'}
                         size={16}
                         name={iconName}
                         className={colorClassName}

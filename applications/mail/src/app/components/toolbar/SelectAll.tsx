@@ -71,7 +71,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                             onClick={handleAll(true)}
                             data-testid="toolbar:select-all"
                         >
-                            <Icon name="selectall" className="mr0-5" />
+                            <Icon name="check-triple" className="mr0-5" />
                             {c('Action').t`Select All`}
                         </DropdownMenuButton>
                         <DropdownMenuButton
@@ -79,7 +79,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                             onClick={handleRead(true)}
                             data-testid="toolbar:all-read"
                         >
-                            <Icon name="read" className="mr0-5" />
+                            <Icon name="eye" className="mr0-5" />
                             {c('Action').t`All Read`}
                         </DropdownMenuButton>
                         <DropdownMenuButton
@@ -87,7 +87,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                             onClick={handleRead(false)}
                             data-testid="toolbar:all-unread"
                         >
-                            <Icon name="unread" className="mr0-5" />
+                            <Icon name="eye-slash" className="mr0-5" />
                             {c('Action').t`All Unread`}
                         </DropdownMenuButton>
                         <DropdownMenuButton
@@ -95,7 +95,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                             onClick={handleStarred(true)}
                             data-testid="toolbar:all-starred"
                         >
-                            <Icon name="starfull" className="mr0-5" />
+                            <Icon name="star-filled" className="mr0-5" />
                             {c('Action').t`All Starred`}
                         </DropdownMenuButton>
                         <DropdownMenuButton

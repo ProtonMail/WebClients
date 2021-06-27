@@ -142,16 +142,16 @@ const PlansTable = ({
                         />
                     </th>
                     <td className="text-center">
-                        <Icon name="off" />
+                        <Icon name="xmark" />
                     </td>
                     <td className="text-center">
-                        <Icon name="on" />
+                        <Icon name="check" />
                     </td>
                     <td className="text-center">
-                        <Icon name="on" />
+                        <Icon name="check" />
                     </td>
                     <td className="text-center">
-                        <Icon name="on" />
+                        <Icon name="check" />
                     </td>
                 </tr>
 
@@ -165,16 +165,16 @@ const PlansTable = ({
                         />
                     </th>
                     <td className="text-center">
-                        <Icon name="off" />
+                        <Icon name="xmark" />
                     </td>
                     <td className="text-center">
-                        <Icon name="off" />
+                        <Icon name="xmark" />
                     </td>
                     <td className="text-center">
-                        <Icon name="on" />
+                        <Icon name="check" />
                     </td>
                     <td className="text-center">
-                        <Icon name="on" />
+                        <Icon name="check" />
                     </td>
                 </tr>
 
@@ -187,16 +187,16 @@ const PlansTable = ({
                         />
                     </th>
                     <td className="text-center">
-                        <Icon name="off" />
+                        <Icon name="xmark" />
                     </td>
                     <td className="text-center">
-                        <Icon name="off" />
+                        <Icon name="xmark" />
                     </td>
                     <td className="text-center">
-                        <Icon name="on" />
+                        <Icon name="check" />
                     </td>
                     <td className="text-center">
-                        <Icon name="on" />
+                        <Icon name="check" />
                     </td>
                 </tr>
 
@@ -206,16 +206,16 @@ const PlansTable = ({
                             <span className="mr0-5">{c('Header').t`Apps for Android / Linux / iOS / Windows`}</span>
                         </th>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                     </tr>
                 ) : null}
@@ -226,16 +226,16 @@ const PlansTable = ({
                             <span className="mr0-5">{c('Header').t`Advanced encryption`}</span>
                         </th>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                     </tr>
                 ) : null}
@@ -246,16 +246,16 @@ const PlansTable = ({
                             <span className="mr0-5">{c('Header').t`Kill Switch / Always-on`}</span>
                         </th>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                     </tr>
                 ) : null}
@@ -266,16 +266,16 @@ const PlansTable = ({
                             <span className="mr0-5">{c('Header').t`No logs policy`}</span>
                         </th>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                     </tr>
                 ) : null}
@@ -286,16 +286,16 @@ const PlansTable = ({
                             <span className="mr0-5">{c('Header').t`No data limits`}</span>
                         </th>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                     </tr>
                 ) : null}
@@ -311,16 +311,16 @@ const PlansTable = ({
                             />
                         </th>
                         <td className="text-center">
-                            <Icon name="off" />
+                            <Icon name="xmark" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                     </tr>
                 ) : null}
@@ -332,16 +332,16 @@ const PlansTable = ({
                             <Info title={c('Tooltip').t`Includes ProtonMail encrypted email with all features`} />
                         </th>
                         <td className="text-center">
-                            <Icon name="off" />
+                            <Icon name="xmark" />
                         </td>
                         <td className="text-center">
-                            <Icon name="off" />
+                            <Icon name="xmark" />
                         </td>
                         <td className="text-center">
-                            <Icon name="off" />
+                            <Icon name="xmark" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                     </tr>
                 ) : null}
@@ -353,13 +353,13 @@ const PlansTable = ({
                         </th>
                         <td className="text-center" />
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                     </tr>
                 ) : null}
@@ -370,16 +370,16 @@ const PlansTable = ({
                             <span className="mr0-5">{c('Header').t`Streaming service support`}</span>
                         </th>
                         <td className="text-center">
-                            <Icon name="off" />
+                            <Icon name="xmark" />
                         </td>
                         <td className="text-center">
-                            <Icon name="off" />
+                            <Icon name="xmark" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                         <td className="text-center">
-                            <Icon name="on" />
+                            <Icon name="check" />
                         </td>
                     </tr>
                 ) : null}

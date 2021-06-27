@@ -59,7 +59,7 @@ const ExtraErrors = ({ message }: Props) => {
                         className="bg-danger rounded p0-5 mb0-5 flex flex-nowrap flex-align-items-center"
                         data-testid="errors-banner"
                     >
-                        <Icon name="attention" className="flex-item-noshrink mtauto mbauto" />
+                        <Icon name="triangle-exclamation" className="flex-item-noshrink mtauto mbauto" />
                         <span className="pl0-5 pr0-5 flex-item-fluid">{getTranslations(errorType, alreadyTried)}</span>
                         {showReload && (
                             <span className="flex-item-noshrink flex">

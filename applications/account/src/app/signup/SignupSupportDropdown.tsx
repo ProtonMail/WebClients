@@ -16,11 +16,11 @@ const SignupSupportDropdown = () => {
                 target="_blank"
                 className="text-left"
             >
-                <Icon name="help-answer" className="mr0-5" />
+                <Icon name="messages" className="mr0-5" />
                 {c('Link').t`Common sign up issues`}
             </DropdownMenuLink>
             <DropdownMenuButton className="flex flex-nowrap text-left" onClick={handleBugReportClick}>
-                <Icon name="report-bug" className="mr0-5" />
+                <Icon name="bug" className="mr0-5" />
                 {c('Action').t`Report a problem`}
             </DropdownMenuButton>
         </SupportDropdown>

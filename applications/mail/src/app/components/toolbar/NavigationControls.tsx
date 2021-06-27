@@ -86,7 +86,7 @@ const NavigationControls = ({
                 icon={
                     <Icon
                         className="rotateZ-90"
-                        name="caret"
+                        name="angle-down"
                         alt={conversationMode ? c('Action').t`Previous conversation` : c('Action').t`Previous message`}
                     />
                 }
@@ -99,7 +99,7 @@ const NavigationControls = ({
                 icon={
                     <Icon
                         className="rotateZ-270"
-                        name="caret"
+                        name="angle-down"
                         alt={conversationMode ? c('Action').t`Next conversation` : c('Action').t`Next message`}
                     />
                 }

@@ -62,13 +62,13 @@ describe('MailSidebar', () => {
         const folderIcon = folderElement.querySelector('svg');
 
         expect(folderElement.textContent).toContain(folder.Name);
-        expect((folderIcon?.firstChild as Element).getAttribute('xlink:href')).toBe('#shape-parent-folder');
+        expect((folderIcon?.firstChild as Element).getAttribute('xlink:href')).toBe('#ic-folders');
 
         const subfolderElement = getByTestId(`navigation-link:${subfolder.Name}`);
         const subfolderIcon = subfolderElement.querySelector('svg');
 
         expect(subfolderElement.textContent).toContain(subfolder.Name);
-        expect((subfolderIcon?.firstChild as Element).getAttribute('xlink:href')).toBe('#shape-folder');
+        expect((subfolderIcon?.firstChild as Element).getAttribute('xlink:href')).toBe('#ic-folder');
 
         const collapseButton = folderElement.querySelector('button');
 
@@ -88,7 +88,7 @@ describe('MailSidebar', () => {
         const labelIcon = labelElement.querySelector('svg');
 
         expect(labelElement.textContent).toContain(label.Name);
-        expect((labelIcon?.firstChild as Element).getAttribute('xlink:href')).toBe('#shape-circle');
+        expect((labelIcon?.firstChild as Element).getAttribute('xlink:href')).toBe('#ic-circle-filled');
     });
 
     it('should show unread counters', async () => {

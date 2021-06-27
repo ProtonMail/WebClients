@@ -10,7 +10,7 @@ export const getOrganizationPage = () => {
     return {
         text: c('Title').t`Users and addresses`,
         to: '/organization',
-        icon: 'organization',
+        icon: 'buildings',
         permissions: [ADMIN, NOT_SUB_USER],
         subsections: [
             {

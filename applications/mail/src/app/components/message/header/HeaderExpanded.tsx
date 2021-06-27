@@ -327,7 +327,7 @@ const HeaderExpanded = ({
                     {messageLoaded ? (
                         <>
                             <div className="flex flex-nowrap flex-align-items-center">
-                                <Icon name="calendar" className="ml0-5 mr0-5" />
+                                <Icon name="calendar-days" className="ml0-5 mr0-5" />
                                 <ItemDate element={message.data} labelID={labelID} />
                             </div>
                             <div className="mlauto flex flex-nowrap">
@@ -427,7 +427,7 @@ const HeaderExpanded = ({
                                 icon
                                 autoClose={false}
                                 noMaxSize
-                                content={<Icon name="label" alt={c('Action').t`Label as`} />}
+                                content={<Icon name="tag" alt={c('Action').t`Label as`} />}
                                 className="messageLabelDropdownButton"
                                 dropDownClassName="label-dropdown"
                                 title={titleLabelAs}
@@ -458,7 +458,7 @@ const HeaderExpanded = ({
                                 onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
                                 data-testid="message-view:reply"
                             >
-                                <Icon name="reply" alt={c('Title').t`Reply`} />
+                                <Icon name="arrow-up-and-left-big" alt={c('Title').t`Reply`} />
                             </Button>
                         </Tooltip>
                         <Tooltip title={titleReplyAll}>
@@ -468,7 +468,7 @@ const HeaderExpanded = ({
                                 onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
                                 data-testid="message-view:reply-all"
                             >
-                                <Icon name="reply-all" alt={c('Title').t`Reply all`} />
+                                <Icon name="arrow-up-and-left-double-big" alt={c('Title').t`Reply all`} />
                             </Button>
                         </Tooltip>
                         <Tooltip title={titleForward}>
@@ -478,7 +478,7 @@ const HeaderExpanded = ({
                                 onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
                                 data-testid="message-view:forward"
                             >
-                                <Icon name="forward" alt={c('Title').t`Forward`} />
+                                <Icon name="arrow-right-big" alt={c('Title').t`Forward`} />
                             </Button>
                         </Tooltip>
                     </ButtonGroup>

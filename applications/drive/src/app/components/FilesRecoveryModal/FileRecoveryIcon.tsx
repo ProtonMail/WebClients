@@ -17,7 +17,7 @@ const FileRecoveryIcon = ({ className }: Props) => {
         <Tooltip title={c('Title').t`You have inaccessible files`}>
             <Icon
                 color="red"
-                name="spam"
+                name="fire"
                 className={className}
                 onClick={(e) => {
                     e.preventDefault();

@@ -101,7 +101,7 @@ const MailHeader = ({
             isNarrow={breakpoints.isNarrow}
             floatingButton={
                 <FloatingButton onClick={() => onCompose({ action: MESSAGE_ACTIONS.NEW })}>
-                    <Icon size={24} name="compose" className="mauto" />
+                    <Icon size={24} name="pen" className="mauto" />
                 </FloatingButton>
             }
         />

@@ -62,7 +62,7 @@ const ExtraImages = ({ message, type, onLoadImages }: Props) => {
 
     return (
         <div className="bg-norm rounded bordered p0-5 mb0-5 flex flex-nowrap">
-            <Icon name="insert-image" className="mtauto mbauto" />
+            <Icon name="image" className="mtauto mbauto" />
             <span className="pl0-5 pr0-5 flex-item-fluid">
                 {type === 'remote'
                     ? c('Action').t`This message contains remote content.`

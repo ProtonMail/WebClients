@@ -103,7 +103,7 @@ const CalendarsTable = ({
                             cells={[
                                 <div key="id">
                                     <div className="grid-align-icon">
-                                        <Icon name="calendar" color={Color} className="mr0-5 flex-item-noshrink" />
+                                        <Icon name="calendar-days" color={Color} className="mr0-5 flex-item-noshrink" />
                                         <div className="text-ellipsis" title={Name}>
                                             {Name}
                                         </div>

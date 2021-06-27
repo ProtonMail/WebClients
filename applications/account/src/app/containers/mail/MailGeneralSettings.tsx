@@ -20,7 +20,7 @@ export const getGeneralPage = (user: UserModel, showPmMeSection: boolean) => {
     return {
         text: c('Title').t`General`,
         to: '/mail/general',
-        icon: 'general',
+        icon: 'sliders',
         subsections: [
             showPmMeSection && {
                 text: c('Title').t`Short domain (@pm.me)`,

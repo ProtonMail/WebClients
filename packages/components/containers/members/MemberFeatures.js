@@ -12,7 +12,7 @@ const MemberFeatures = ({ member }) => {
         <>
             <span className="mb0-5 flex flex-nowrap">
                 <span className="flex-item-noshrink flex mt0-1">
-                    <Icon name="user-storage" />
+                    <Icon name="filing-cabinet" />
                 </span>
                 <span className="flex-item-fluid pl0-25">
                     {humanSize(UsedSpace, 'GB')} / {humanSize(MaxSpace, 'GB')}
@@ -20,7 +20,7 @@ const MemberFeatures = ({ member }) => {
             </span>
             <span className="flex flex-nowrap">
                 <span className="flex-item-noshrink flex mt0-1">
-                    <Icon name="protonvpn" />
+                    <Icon name="brand-proton-vpn" />
                 </span>
                 <span className="flex-item-fluid pl0-25">
                     {MaxVPN} {c('Feature').t`VPN ${connectionsPluralized}`}

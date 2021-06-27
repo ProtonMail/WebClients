@@ -131,7 +131,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
                     className="transfers-manager-list-item-controls-button"
                     title={isTransferPaused(transfer) ? resumeText : pauseText}
                 >
-                    <Icon size={12} name={isTransferPaused(transfer) ? 'resume' : 'pause'} />
+                    <Icon size={12} name={isTransferPaused(transfer) ? 'play' : 'pause'} />
                 </Button>
             )}
             {isRestartAvailable && (
@@ -141,7 +141,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
                     className="transfers-manager-list-item-controls-button"
                     title={restartText}
                 >
-                    <Icon size={12} name="repeat" />
+                    <Icon size={12} name="arrow-rotate-right" />
                 </Button>
             )}
             <Button
@@ -152,7 +152,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
                 className="transfers-manager-list-item-controls-button"
                 title={isFinished ? removeText : cancelText}
             >
-                <Icon size={12} name={isFinished ? 'swipe' : 'off'} />
+                <Icon size={12} name={isFinished ? 'brush' : 'xmark'} />
             </Button>
         </div>
     );

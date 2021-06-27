@@ -16,7 +16,7 @@ export interface Props extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
 
 /**
  * Component to print svg icon
- * <Icon name="label" alt="My label" />
+ * <Icon name="tag" alt="My label" />
  * @param name of the svg icon present in the design-system
  * @param className used on svg tag
  * @param size      To construct the icon size className icon-<size>p (default 16)
@@ -36,7 +36,7 @@ const Icon = (
         viewBox = '0 0 16 16',
         size = 16,
         rotate = 0,
-        nameSpaceSvg = 'shape',
+        nameSpaceSvg = 'ic',
         ...rest
     }: Props,
     ref: React.Ref<SVGSVGElement>

@@ -7,7 +7,7 @@ describe('Icon component', () => {
         const name = 'account';
         const alt = 'Account';
         const { container } = render(<Icon name={name} alt={alt} />);
-        const svgNode = container.querySelector(`[xlink:href="#shape-${name}"]`);
+        const svgNode = container.querySelector(`[xlink:href="#ic-${name}"]`);
         const srpNode = container.querySelector('.sr-only');
 
         expect(svgNode).toBeDefined();

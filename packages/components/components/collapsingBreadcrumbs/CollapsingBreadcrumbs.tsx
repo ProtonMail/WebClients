@@ -58,7 +58,7 @@ const CollapsingBreadcrumbs = ({ breadcrumbs }: Props) => {
                                 {text}
                             </Breadcrumb>
                         )}
-                        {!isLast && <Icon size={12} className="flex-item-noshrink" name="caret" rotate={270} />}
+                        {!isLast && <Icon size={12} className="flex-item-noshrink" name="angle-down" rotate={270} />}
                     </Fragment>
                 );
             })}

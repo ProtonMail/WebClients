@@ -111,12 +111,12 @@ const ContactModalRow = (
             {isOrderable ? (
                 <OrderableHandle key="icon">
                     <div className="cursor-row-resize mr0-5 flex flex-item-noshrink mb1">
-                        <Icon name="text-justify" className="mt0-75 " />
+                        <Icon name="align-justify" className="mt0-75 " />
                     </div>
                 </OrderableHandle>
             ) : (
                 <div className="mr0-5 flex flex-align-items-center flex-item-noshrink">
-                    <Icon name="text-justify" className="visibility-hidden" />
+                    <Icon name="align-justify" className="visibility-hidden" />
                 </div>
             )}
             <div className="contact-modal-field relative flex flex-nowrap on-mobile-flex-column w100 flex-align-items-start">
@@ -176,7 +176,7 @@ const ContactModalRow = (
                                                 onDelayedSave={handleUpdateContactGroups}
                                                 tooltip={c('Title').t`Contact group`}
                                             >
-                                                <Icon name="contacts-groups" alt={c('Action').t`Contact group`} />
+                                                <Icon name="user-group" alt={c('Action').t`Contact group`} />
                                             </ContactGroupDropdown>
                                         ) : (
                                             <Tooltip title={c('Title').t`Contact group`}>
@@ -185,7 +185,7 @@ const ContactModalRow = (
                                                     onClick={() => createModal(<ContactUpgradeModal />)}
                                                     className="mr0-5"
                                                 >
-                                                    <Icon name="contacts-groups" alt={c('Action').t`Contact group`} />
+                                                    <Icon name="user-group" alt={c('Action').t`Contact group`} />
                                                 </Button>
                                             </Tooltip>
                                         ))}

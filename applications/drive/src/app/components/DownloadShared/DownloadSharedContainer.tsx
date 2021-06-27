@@ -175,7 +175,7 @@ const DownloadSharedContainer = () => {
                         <div className="flex flex-column flex-nowrap flex-align-items-center text-center p2 pb0 w100">
                             <h3>
                                 <span className="flex flex-nowrap flex-align-items-center">
-                                    <Icon name="protondrive" className="mr0-25" size={20} />
+                                    <Icon name="brand-proton-drive" className="mr0-25" size={20} />
                                     <b>{appName}</b>
                                 </span>
                             </h3>

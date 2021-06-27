@@ -14,7 +14,7 @@ const DriveSettingsSidebarList = () => {
             <SidebarListItem className="text-uppercase text-left navigation-link-header-group">
                 <SidebarListItemContent>{APPS_CONFIGURATION[APPS.PROTONDRIVE].name}</SidebarListItemContent>
             </SidebarListItem>
-            <SettingsListItem to={`${path}/general`} icon="apps">
+            <SettingsListItem to={`${path}/general`} icon="grid">
                 {c('Settings section title').t`General`}
             </SettingsListItem>
         </SidebarList>

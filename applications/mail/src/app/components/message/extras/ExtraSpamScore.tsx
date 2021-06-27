@@ -33,7 +33,7 @@ const ExtraSpamScore = ({ message }: Props) => {
     if (hasBit(Flags, MESSAGE_FLAGS.FLAG_DMARC_FAIL)) {
         return (
             <div className="bg-danger rounded p0-5 mb0-5 flex flex-nowrap">
-                <Icon name="spam" className="flex-item-noshrink mtauto mbauto" />
+                <Icon name="fire" className="flex-item-noshrink mtauto mbauto" />
                 <span className="pl0-5 pr0-5 flex-item-fluid">{c('Info')
                     .t`This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!`}</span>
                 <span className="flex-item-noshrink flex">
@@ -72,7 +72,7 @@ const ExtraSpamScore = ({ message }: Props) => {
         };
         return (
             <div className="bg-danger rounded p0-5 mb0-5 flex flex-nowrap" data-testid="phishing-banner">
-                <Icon name="spam" className="flex-item-noshrink mtauto mbauto" />
+                <Icon name="fire" className="flex-item-noshrink mtauto mbauto" />
                 <span className="pl0-5 pr0-5 flex-item-fluid">
                     {c('Info')
                         .t`Our system flagged this message as a phishing attempt. Please check that it is legitimate.`}

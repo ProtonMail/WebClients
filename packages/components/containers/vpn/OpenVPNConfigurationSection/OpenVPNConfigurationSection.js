@@ -291,23 +291,23 @@ const OpenVPNConfigurationSection = () => {
                             .t`Get ProtonVPN Plus to access all servers`}</h3>
                         <ul className="unstyled inline-flex mt0 mb2 on-mobile-flex-column">
                             <li className="flex flex-nowrap flex-align-items-center mr1">
-                                <Icon name="on" className="color-success mr0-5" />
+                                <Icon name="check" className="color-success mr0-5" />
                                 <span className="text-bold">{c('Feature').t`Access to all countries`}</span>
                             </li>
                             <li className="flex flex-nowrap flex-align-items-center mr1">
-                                <Icon name="on" className="color-success mr0-5" />
+                                <Icon name="check" className="color-success mr0-5" />
                                 <span className="text-bold">{c('Feature').t`Secure Core servers`}</span>
                             </li>
                             <li className="flex flex-nowrap flex-align-items-center mr1">
-                                <Icon name="on" className="color-success mr0-5" />
+                                <Icon name="check" className="color-success mr0-5" />
                                 <span className="text-bold">{c('Feature').t`Fastest VPN servers`}</span>
                             </li>
                             <li className="flex flex-nowrap flex-align-items-center mr1">
-                                <Icon name="on" className="color-success mr0-5" />
+                                <Icon name="check" className="color-success mr0-5" />
                                 <span className="text-bold">{c('Feature').t`Torrenting support (P2P)`}</span>
                             </li>
                             <li className="flex flex-nowrap flex-align-items-center mr1">
-                                <Icon name="on" className="color-success mr0-5" />
+                                <Icon name="check" className="color-success mr0-5" />
                                 <span className="text-bold">
                                     {c('Feature').ngettext(
                                         msgid`Connection for up to ${plusVpnConnections} device`,
@@ -317,7 +317,7 @@ const OpenVPNConfigurationSection = () => {
                                 </span>
                             </li>
                             <li className="flex flex-nowrap flex-align-items-center ">
-                                <Icon name="on" className="color-success mr0-5" />
+                                <Icon name="check" className="color-success mr0-5" />
                                 <span className="text-bold mr0-5">{c('Feature').t`Secure streaming support`}</span>
                                 <Info
                                     url="https://protonvpn.com/support/streaming-guide/"

@@ -54,12 +54,12 @@ const Searchbox = ({ delay, className = '', advanced, placeholder = '', value = 
                 className="searchbox-search-button flex"
                 title={c('Action').t`Search`}
             >
-                <Icon name="search" size={22} className="mauto searchbox-search-button-icon" />
+                <Icon name="magnifying-glass" size={22} className="mauto searchbox-search-button-icon" />
                 <span className="sr-only">{c('Action').t`Search`}</span>
             </Button>
             {value.length ? (
                 <Button type="reset" icon shape="ghost" color="weak" className="searchbox-advanced-search-button flex">
-                    <Icon name="close" className="mauto searchbox-search-button-icon" />
+                    <Icon name="xmark" className="mauto searchbox-search-button-icon" />
                     <span className="sr-only">{c('Action').t`Clear`}</span>
                 </Button>
             ) : null}

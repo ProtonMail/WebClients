@@ -53,8 +53,8 @@ const Toggle = (
                 ref={ref}
                 {...rest}
             />
-            {label('off', loading && !checked)}
-            {label('on', loading && checked)}
+            {label('xmark', loading && !checked)}
+            {label('check', loading && checked)}
         </label>
     );
 };

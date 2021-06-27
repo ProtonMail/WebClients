@@ -9,7 +9,7 @@ const SearchDropdown = ({
     search: initialSearch = '',
     onSearch,
     placeholder = c('Placeholder').t`Search`,
-    content = <Icon name="search" />,
+    content = <Icon name="magnifying-glass" />,
     originalPlacement,
     ...rest
 }) => {

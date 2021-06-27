@@ -66,7 +66,7 @@ const ContactSummary = ({
                                     onClick={onExport}
                                     className="inline-flex ml0-5"
                                 >
-                                    <Icon name="export" alt={c('Action').t`Export`} />
+                                    <Icon name="arrow-up-from-screen" alt={c('Action').t`Export`} />
                                 </Button>
                             </Tooltip>
                         )}
