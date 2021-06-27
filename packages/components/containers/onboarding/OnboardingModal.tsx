@@ -30,7 +30,7 @@ import OnboardingSetupOrganization from './OnboardingSetupOrganization';
 import { getOrganizationKeyInfo } from '../organization/helpers/organizationKeysHelper';
 import { useTheme } from '../themes/ThemeProvider';
 
-const availableThemes = Object.values(PROTON_THEMES);
+const themes = Object.values(PROTON_THEMES);
 
 interface Props {
     title?: string;
@@ -80,9 +80,6 @@ const OnboardingModal = ({
         organization.UsedMembers === 1 &&
         !hasOrganizationKey &&
         !hasVisionary(subscription);
-    const themes = availableThemes.map(({ identifier, getI18NLabel, src }) => {
-        return { identifier, label: getI18NLabel(), src };
-    });
 
     const handleUpdateWelcomeFlags = async () => {
         if (setWelcomeFlags) {
