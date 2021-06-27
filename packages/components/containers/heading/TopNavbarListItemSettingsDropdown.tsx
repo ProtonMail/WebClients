@@ -102,7 +102,7 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
                     className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
                 >
                     <span className="flex-item-fluid text-left">{c('Action').t`Theme`}</span>
-                    <span className="color-primary ml0-5">{PROTON_THEMES[theme].getI18NLabel()}</span>
+                    <span className="color-primary ml0-5">{PROTON_THEMES[theme].label}</span>
                 </DropdownMenuButton>
                 {APP_NAME === APPS.PROTONMAIL && (
                     <>
