@@ -149,3 +149,16 @@ export const defaultESStatus: ESStatus = {
     isSearchPartial: false,
     isSearching: false,
 };
+
+export const WELCOME_PANE_OPTIONS_URLS = {
+    plansSelection: '/dashboard',
+    protonShop: 'https://shop.protonmail.com',
+    proton2FA: 'https://protonmail.com/support/knowledge-base/two-factor-authentication/',
+    protonBusiness: 'https://protonmail.com/business/',
+};
+
+export const WELCOME_PANE_OPTIONS_CTA_TEXTS = () => ({
+    upgrade: c('Action').t`Upgrade`,
+    learnMore: c('Action').t`Learn more`,
+    openShop: c('Action').t`Open shop`,
+});
