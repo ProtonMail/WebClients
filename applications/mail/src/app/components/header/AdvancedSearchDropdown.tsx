@@ -399,7 +399,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
         <Info
             questionMark
             title={c('Tooltip')
-                .t`This action will download all messages so they can be searched locally. Clearing your browser data or logging out will disable this option.`}
+                .t`This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.`}
         />
     );
     const esHeader = indexKeyExists(user.ID) ? (
