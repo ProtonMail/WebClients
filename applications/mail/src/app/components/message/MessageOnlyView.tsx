@@ -23,6 +23,7 @@ interface Props {
     onMessageReady: () => void;
     columnLayout: boolean;
     isComposerOpened: boolean;
+    highlightKeywords?: boolean;
 }
 
 const MessageOnlyView = ({
@@ -35,6 +36,7 @@ const MessageOnlyView = ({
     onMessageReady,
     columnLayout,
     isComposerOpened,
+    highlightKeywords = false,
 }: Props) => {
     const [labels = []] = useLabels();
 
@@ -90,6 +92,7 @@ const MessageOnlyView = ({
                 loading={!messageLoaded}
                 element={message.data || {}}
                 labelID={labelID}
+                highlightKeywords={highlightKeywords}
             />
             <div
                 className={classnames(['flex-item-fluid pt0-5 pr1-5 pl1-5 max-w100 no-outline', hidden && 'hidden'])}
@@ -109,6 +112,7 @@ const MessageOnlyView = ({
                     onMessageReady={onMessageReady}
                     columnLayout={columnLayout}
                     isComposerOpened={isComposerOpened}
+                    highlightKeywords={highlightKeywords}
                 />
             </div>
         </>

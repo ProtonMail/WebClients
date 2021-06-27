@@ -132,13 +132,20 @@ export type IncrementSearch = (
 
 export type CacheIndexedDB = (force?: boolean) => Promise<{ cachedMessages: CachedMessage[]; isCacheLimited: boolean }>;
 
+export type HighlightString = (content: string, setAutoScroll: boolean) => string;
+
+export type HighlightMetadata = (metadata: string) => JSX.Element;
+
 export interface EncryptedSearchFunctions {
     encryptedSearch: EncryptedSearch;
     cacheIndexedDB: CacheIndexedDB;
+    highlightString: HighlightString;
+    highlightMetadata: HighlightMetadata;
     getESDBStatus: () => ESDBStatus;
     getProgressRecorderRef: () => React.MutableRefObject<[number, number]>;
     toggleEncryptedSearch: () => void;
     resumeIndexing: () => Promise<void>;
     pauseIndexing: () => Promise<void>;
     incrementSearch: IncrementSearch;
+    shouldHighlight: () => boolean;
 }

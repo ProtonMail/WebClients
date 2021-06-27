@@ -35,6 +35,7 @@ interface Props {
     showAddress?: boolean;
     showLockIcon?: boolean;
     signingPublicKey?: OpenPGPKey;
+    highlightKeywords?: boolean;
 }
 
 const RecipientItemSingle = ({
@@ -44,6 +45,7 @@ const RecipientItemSingle = ({
     showAddress = true,
     showLockIcon = true,
     signingPublicKey,
+    highlightKeywords = false,
 }: Props) => {
     const [uid] = useState(generateUID('dropdown-recipient'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
@@ -175,6 +177,7 @@ const RecipientItemSingle = ({
                     </span>
                 )
             }
+            highlightKeywords={highlightKeywords}
         />
     );
 };

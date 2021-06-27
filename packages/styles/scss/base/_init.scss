@@ -174,9 +174,16 @@ sub {
 }
 
 mark {
-	background-color: var(--mark-background-color, inset);
-	color: var(--mark-text-color, inherit);
-	font-weight: var(--mark-font-weight, bold);
+	background-color: var(--mark-background-color, yellow);
+	color: var(--mark-text-color, black);
+	font-weight: var(--mark-font-weight, normal);
+
+	// Lighter style for less prominent UI
+	&.is-light {
+		background-color: unset;
+		color: inherit;
+		font-weight: bold;
+	}
 }
 
 /* avoid margin on nested elements */

@@ -7,7 +7,7 @@ import { normalize } from '@proton/shared/lib/helpers/string';
 export const getMatch = (
     input: string | undefined,
     match: string,
-    getHighlightedText = (str: string) => <mark>{str}</mark>
+    getHighlightedText = (str: string) => <mark className="is-light">{str}</mark>
 ) => {
     if (!input) {
         return input;
