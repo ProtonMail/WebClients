@@ -61,16 +61,16 @@ export const WithRichOptionContent = () => {
     return (
         <SelectTwo value={value} onChange={({ value: v }) => setValue(v)}>
             <Option title="Reddit" value="reddit">
-                <Icon name="reddit" /> Reddit
+                <Icon name="brand-reddit" /> Reddit
             </Option>
             <Option title="Twitter" value="twitter">
-                <Icon name="twitter" /> Twitter
+                <Icon name="brand-twitter" /> Twitter
             </Option>
             <Option title="Yahoo" value="yahoo">
-                <Icon name="yahoo" /> Yahoo
+                <Icon name="brand-yahoo" /> Yahoo
             </Option>
             <Option title="Youtube" value="youtube">
-                <Icon name="youtube" /> Youtube
+                <Icon name="brand-youtube" /> Youtube
             </Option>
         </SelectTwo>
     );

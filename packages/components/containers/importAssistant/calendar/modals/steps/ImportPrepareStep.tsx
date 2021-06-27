@@ -17,7 +17,7 @@ const ImportPrepareStep = ({ modalModel, addresses }: Props) => {
     if (modalModel.errorCode === IMPORT_ERROR.IMAP_CONNECTION_ERROR) {
         return (
             <div className="p1 text-center w100 color-danger">
-                <Icon name="attention" size={60} />
+                <Icon name="triangle-exclamation" size={60} />
                 <div className="mt0-5 mlauto mrauto mb0-5 max-w30e">
                     {c('Error').t`We were unable to connect to your service provider.`}
                     <br />
@@ -53,7 +53,7 @@ const ImportPrepareStep = ({ modalModel, addresses }: Props) => {
 
             <div className="pb1 mb1 border-bottom">
                 <div className="flex flex-align-items-center">
-                    <Icon className="mr0-5" name="calendar" />
+                    <Icon className="mr0-5" name="calendar-days" />
                     {c('Info').t`Import calendars`}
                 </div>
             </div>

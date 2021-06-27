@@ -130,7 +130,7 @@ const EventForm = ({
     );
 
     const frequencyRow = (
-        <IconRow icon="reload" title={c('Label').t`Event frequency`} id={FREQUENCY_INPUT_ID}>
+        <IconRow icon="arrows-rotate" title={c('Label').t`Event frequency`} id={FREQUENCY_INPUT_ID}>
             <FrequencyInput
                 className={classnames([isCustomFrequencySet && 'mb0-5', 'w100'])}
                 id={FREQUENCY_INPUT_ID}
@@ -172,7 +172,7 @@ const EventForm = ({
     );
 
     const descriptionRow = (
-        <IconRow icon="text-align-left" title={c('Label').t`Description`} id={DESCRIPTION_INPUT_ID}>
+        <IconRow icon="align-left" title={c('Label').t`Description`} id={DESCRIPTION_INPUT_ID}>
             <TextArea
                 id={DESCRIPTION_INPUT_ID}
                 minRows={2}
@@ -187,7 +187,7 @@ const EventForm = ({
     );
 
     const notificationsRow = (
-        <IconRow id={NOTIFICATION_INPUT_ID} icon="notifications-enabled" title={c('Label').t`Event notifications`}>
+        <IconRow id={NOTIFICATION_INPUT_ID} icon="bell" title={c('Label').t`Event notifications`}>
             {isAllDay ? (
                 <Notifications
                     hasType={emailNotificationsEnabled}
@@ -233,7 +233,7 @@ const EventForm = ({
     );
 
     const participantsRow = (
-        <IconRow icon="contacts-groups" title={c('Label').t`Participants`} id={PARTICIPANTS_INPUT_ID}>
+        <IconRow icon="user-group" title={c('Label').t`Participants`} id={PARTICIPANTS_INPUT_ID}>
             <ParticipantsInput
                 placeholder={c('Placeholder').t`Add participants`}
                 id={PARTICIPANTS_INPUT_ID}
@@ -247,7 +247,7 @@ const EventForm = ({
 
     const calendarRow = (
         <IconRow
-            icon="calendar"
+            icon="calendar-days"
             title={c('Label').t`Your calendars`}
             id={CALENDAR_INPUT_ID}
             className="flex-item-fluid relative"

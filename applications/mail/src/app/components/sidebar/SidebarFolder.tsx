@@ -62,7 +62,7 @@ const SidebarFolder = ({ currentLabelID, folder, level, onToggle, unreadCount, e
                             }}
                         >
                             <Icon
-                                name="caret"
+                                name="angle-down"
                                 className={classnames([
                                     'navigation-icon navigation-icon--expand',
                                     !!folder.Expanded && 'rotateX-180',

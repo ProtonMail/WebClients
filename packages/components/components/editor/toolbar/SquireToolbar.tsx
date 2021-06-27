@@ -178,7 +178,7 @@ const SquireToolbar = ({
                         title={c('Action').t`Bold`}
                         tabIndex={-1}
                     >
-                        <Icon name="text-bold" className="mauto" alt={c('Action').t`Bold`} />
+                        <Icon name="bold" className="mauto" alt={c('Action').t`Bold`} />
                     </SquireToolbarButton>
                     <SquireToolbarButton
                         onClick={handleItalic}
@@ -187,7 +187,7 @@ const SquireToolbar = ({
                         title={c('Action').t`Italic`}
                         tabIndex={-1}
                     >
-                        <Icon name="text-italic" className="mauto" alt={c('Action').t`Italic`} />
+                        <Icon name="italic" className="mauto" alt={c('Action').t`Italic`} />
                     </SquireToolbarButton>
                     <SquireToolbarButton
                         onClick={handleUnderline}
@@ -196,7 +196,7 @@ const SquireToolbar = ({
                         title={c('Action').t`Underline`}
                         tabIndex={-1}
                     >
-                        <Icon name="text-underline" className="mauto" alt={c('Action').t`Underline`} />
+                        <Icon name="underline" className="mauto" alt={c('Action').t`Underline`} />
                     </SquireToolbarButton>
                     <SquireToolbarSeparator />
                     {!isNarrow && (
@@ -208,7 +208,7 @@ const SquireToolbar = ({
                                 title={c('Action').t`Unordered list`}
                                 tabIndex={-1}
                             >
-                                <Icon name="bullet-points" className="mauto" alt={c('Action').t`Unordered list`} />
+                                <Icon name="list" className="mauto" alt={c('Action').t`Unordered list`} />
                             </SquireToolbarButton>
                             <SquireToolbarButton
                                 onClick={handleOrderedList}
@@ -217,7 +217,7 @@ const SquireToolbar = ({
                                 title={c('Action').t`Ordered list`}
                                 tabIndex={-1}
                             >
-                                <Icon name="ordered-list" className="mauto" alt={c('Action').t`Ordered list`} />
+                                <Icon name="list-numbers" className="mauto" alt={c('Action').t`Ordered list`} />
                             </SquireToolbarButton>
                             <SquireToolbarSeparator />
                             <SquireToolbarAlignmentDropdown
@@ -232,7 +232,7 @@ const SquireToolbar = ({
                                 title={c('Action').t`Quote`}
                                 tabIndex={-1}
                             >
-                                <Icon name="text-quote" className="mauto" alt={c('Action').t`Quote`} />
+                                <Icon name="quote-right" className="mauto" alt={c('Action').t`Quote`} />
                             </SquireToolbarButton>
                             <SquireToolbarButton
                                 onClick={handleLink}
@@ -248,11 +248,7 @@ const SquireToolbar = ({
                                 title={c('Action').t`Clear all formatting`}
                                 tabIndex={-1}
                             >
-                                <Icon
-                                    name="remove-text-formatting"
-                                    className="mauto"
-                                    alt={c('Action').t`Clear all formatting`}
-                                />
+                                <Icon name="eraser" className="mauto" alt={c('Action').t`Clear all formatting`} />
                             </SquireToolbarButton>
                             <SquireToolbarSeparator />
                             {metadata.supportImages && (

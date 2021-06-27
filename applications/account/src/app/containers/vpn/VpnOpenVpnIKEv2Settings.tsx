@@ -7,7 +7,7 @@ export const getOpenVpnIKEv2Page = () => {
     return {
         text: c('Title').t`OpenVPN / IKEv2`,
         to: 'vpn/OpenVpnIKEv2',
-        icon: 'keys',
+        icon: 'key',
         subsections: [
             {
                 text: c('Title').t`Credentials`,

@@ -29,10 +29,10 @@ const CalendarSettingsSidebarList = () => {
             <SidebarListItem className="text-uppercase text-left navigation-link-header-group">
                 <SidebarListItemContent>{APPS_CONFIGURATION[APPS.PROTONCALENDAR].name}</SidebarListItemContent>
             </SidebarListItem>
-            <LocalListItem to={`${path}/general`} icon="apps">
+            <LocalListItem to={`${path}/general`} icon="grid">
                 {c('Settings section title').t`General`}
             </LocalListItem>
-            <LocalListItem to={`${path}/calendars`} icon="calendar">
+            <LocalListItem to={`${path}/calendars`} icon="calendar-days">
                 {c('Settings section title').t`Calendars`}
             </LocalListItem>
         </SidebarList>

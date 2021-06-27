@@ -74,32 +74,32 @@ export const getStandardFolders = (): FolderMap => ({
         to: '/trash',
     },
     [SPAM]: {
-        icon: 'spam',
+        icon: 'fire',
         name: c('Mailbox').t`Spam`,
         to: '/spam',
     },
     [ARCHIVE]: {
-        icon: 'archive',
+        icon: 'box-archive',
         name: c('Mailbox').t`Archive`,
         to: '/archive',
     },
     [SENT]: {
-        icon: 'sent',
+        icon: 'paper-plane',
         name: c('Mailbox').t`Sent`,
         to: `/${LABEL_IDS_TO_HUMAN[SENT]}`,
     },
     [ALL_SENT]: {
-        icon: 'sent',
+        icon: 'paper-plane',
         name: c('Mailbox').t`Sent`,
         to: `/${LABEL_IDS_TO_HUMAN[ALL_SENT]}`,
     },
     [DRAFTS]: {
-        icon: 'drafts',
+        icon: 'file-lines',
         name: c('Mailbox').t`Drafts`,
         to: `/${LABEL_IDS_TO_HUMAN[DRAFTS]}`,
     },
     [ALL_DRAFTS]: {
-        icon: 'drafts',
+        icon: 'file-lines',
         name: c('Mailbox').t`Drafts`,
         to: `/${LABEL_IDS_TO_HUMAN[ALL_DRAFTS]}`,
     },
@@ -109,7 +109,7 @@ export const getStandardFolders = (): FolderMap => ({
         to: `/${LABEL_IDS_TO_HUMAN[SCHEDULED]}`,
     },
     // [OUTBOX]: {
-    //     icon: 'outbox',
+    //     icon: 'inbox-out',
     //     name: c('Mailbox').t`Outbox`,
     //     to: `/${LABEL_IDS_TO_HUMAN[OUTBOX]}`,
     // },

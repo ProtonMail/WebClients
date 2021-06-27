@@ -28,7 +28,7 @@ const ItemLocation = ({
             {
                 to: infos.map((info) => info.to).join(','),
                 name: infos.map((info) => info.name).join(', '),
-                icon: 'parent-folder',
+                icon: 'folders',
             },
         ];
     }

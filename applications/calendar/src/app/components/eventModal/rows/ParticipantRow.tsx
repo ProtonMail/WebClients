@@ -44,7 +44,7 @@ const ParticipantRow = ({ attendee, contactEmailsMap, onToggleOptional, onDelete
                     className="flex flex-item-noshrink"
                     onClick={() => onToggleOptional(attendee)}
                 >
-                    <Icon name={isOptional ? 'contact' : 'contact-full'} alt={c('Action').t`Remove this participant`} />
+                    <Icon name={isOptional ? 'user' : 'user-filled'} alt={c('Action').t`Remove this participant`} />
                 </Button>
             </Tooltip>
             <Tooltip title={c('Action').t`Remove this participant`}>

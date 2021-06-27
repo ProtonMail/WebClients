@@ -14,7 +14,7 @@ interface Props extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLB
 
 const defaultChildren = (
     <>
-        <Icon name="support1" className="flex-item-noshrink mr0-5 flex-item-centered-vert" />
+        <Icon name="life-ring" className="flex-item-noshrink mr0-5 flex-item-centered-vert" />
         <span>{c('Action').t`Support`}</span>
     </>
 );

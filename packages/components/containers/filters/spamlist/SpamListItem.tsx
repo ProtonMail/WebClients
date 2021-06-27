@@ -70,7 +70,7 @@ function SpamListItem({ list, type, onCreate, onMove, onRemove, className, loadi
                                         className="p0-5"
                                         icon
                                     >
-                                        <Icon name="arrow-double-horizontal" size={16} />
+                                        <Icon name="arrows-left-right" size={16} />
                                     </Button>
                                 </Tooltip>
 

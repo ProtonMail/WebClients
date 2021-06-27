@@ -53,7 +53,7 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
 
     return (
         <div className="bg-norm rounded bordered p0-5 mb0-5 flex flex-nowrap">
-            <Icon name="attention" className="flex-item-noshrink mtauto mbauto" />
+            <Icon name="triangle-exclamation" className="flex-item-noshrink mtauto mbauto" />
             <span className="pl0-5 pr0-5 flex-item-fluid flex-align-self-center">
                 <span className="mr0-25">{c('Info').t`We could not verify the sender's trusted keys.`}</span>
                 <Href

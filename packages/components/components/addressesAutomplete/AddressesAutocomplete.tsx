@@ -224,7 +224,7 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
                                 {option.type === 'group' ? (
                                     <div className="flex flex-nowrap flex-flex-align-items-center">
                                         <Icon
-                                            name="circle"
+                                            name="circle-filled"
                                             color={option.value.Color}
                                             size={12}
                                             className="mr0-5 flex-item-noshrink flex-item-centered-vert"

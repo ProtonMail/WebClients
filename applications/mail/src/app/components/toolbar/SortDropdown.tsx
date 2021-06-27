@@ -60,7 +60,7 @@ const SortDropdown = ({
             content={
                 <span className="flex flex-align-items-center flex-nowrap" data-testid="toolbar:sort-dropdown">
                     <span className="text-sm m0 mr0-5">{getTextContent()}</span>
-                    <Icon className="toolbar-icon" name="sort" />
+                    <Icon className="toolbar-icon" name="arrow-down-arrow-up" />
                 </span>
             }
             title={conversationMode ? c('Title').t`Sort conversations` : c('Title').t`Sort messages`}

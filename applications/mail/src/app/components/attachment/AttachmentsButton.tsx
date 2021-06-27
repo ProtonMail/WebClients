@@ -41,7 +41,7 @@ const AttachmentsButton = (
                 {...rest}
                 data-testid="composer:attachment-button"
             >
-                <Icon name="attach" />
+                <Icon name="paperclip" />
                 <input
                     ref={inputRef}
                     type="file"

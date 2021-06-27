@@ -59,7 +59,7 @@ const ReadUnreadButtons = ({ labelID, mailSettings, selectedIDs, onBack }: Props
             onClick={() => withLoading(handleMarkAs(READ))}
             className="no-tablet no-mobile"
             data-testid="toolbar:read"
-            icon={<Icon name="read" alt={c('Action').t`Mark as read`} />}
+            icon={<Icon name="eye" alt={c('Action').t`Mark as read`} />}
         />,
         <ToolbarButton
             key="unread"
@@ -67,7 +67,7 @@ const ReadUnreadButtons = ({ labelID, mailSettings, selectedIDs, onBack }: Props
             disabled={loading || !selectedIDs.length}
             onClick={() => withLoading(handleMarkAs(UNREAD))}
             data-testid="toolbar:unread"
-            icon={<Icon name="unread" alt={c('Action').t`Mark as unread`} />}
+            icon={<Icon name="eye-slash" alt={c('Action').t`Mark as unread`} />}
         />,
     ];
 

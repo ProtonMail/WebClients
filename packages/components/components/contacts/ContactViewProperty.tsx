@@ -89,7 +89,7 @@ const ContactViewProperty = ({
                         {!isOwnAddress && (
                             <Tooltip title={c('Title').t`Email settings`}>
                                 <Button icon color="weak" shape="outline" onClick={handleSettings} className="ml0-5">
-                                    <Icon name="settings" alt={c('Action').t`Email settings`} />
+                                    <Icon name="gear" alt={c('Action').t`Email settings`} />
                                 </Button>
                             </Tooltip>
                         )}
@@ -102,12 +102,12 @@ const ContactViewProperty = ({
                                 contactEmails={[contactEmail]}
                                 tooltip={c('Title').t`Contact group`}
                             >
-                                <Icon name="contacts-groups" alt={c('Action').t`Contact group`} />
+                                <Icon name="user-group" alt={c('Action').t`Contact group`} />
                             </ContactGroupDropdown>
                         ) : (
                             <Tooltip title={c('Title').t`Contact group`}>
                                 <Button icon onClick={() => createModal(<ContactUpgradeModal />)} className="ml0-5">
-                                    <Icon name="contacts-groups" alt={c('Action').t`Contact group`} />
+                                    <Icon name="user-group" alt={c('Action').t`Contact group`} />
                                 </Button>
                             </Tooltip>
                         )}

@@ -152,7 +152,7 @@ const Toolbar = ({
                     autoClose={false}
                     noMaxSize
                     disabled={!selectedIDs || !selectedIDs.length}
-                    content={<Icon className="toolbar-icon" name="label" />}
+                    content={<Icon className="toolbar-icon" name="tag" />}
                     dropDownClassName="label-dropdown"
                     className="label-dropdown-button"
                     title={titleLabel}

@@ -216,7 +216,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
                         data-testid="label-dropdown:add-label"
                         data-prevent-arrow-navigation
                     >
-                        <Icon name="label" /> +
+                        <Icon name="tag" /> +
                     </Button>
                 </Tooltip>
             </div>
@@ -248,7 +248,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
                                 data-testid={`label-dropdown:label-${Name}`}
                             >
                                 <Icon
-                                    name="circle"
+                                    name="circle-filled"
                                     size={12}
                                     color={Color}
                                     className="flex-item-noshrink relative ml0-25 mr0-5"

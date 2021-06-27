@@ -23,7 +23,7 @@ const ZoomControl = ({ scale, onZoomIn, onZoomOut, onReset }: Props) => {
                     onClick={onZoomOut}
                     title={c('Action').t`Zoom out`}
                 >
-                    <Icon name="minus" size={12} alt={c('Action').t`Zoom out`} />
+                    <Icon name="dash" size={12} alt={c('Action').t`Zoom out`} />
                 </Button>
                 <Button shape="ghost" title={c('Action').t`Reset zoom`} className="ml0-5 mr0-5" onClick={onReset}>
                     <span>{Math.round(scale * 100)}%</span>

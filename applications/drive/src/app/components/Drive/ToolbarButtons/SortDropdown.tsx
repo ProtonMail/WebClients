@@ -38,7 +38,7 @@ const menuItems: {
     },
     {
         name: c('Action').t`Modified date: new to old`,
-        icon: 'sort-new-old',
+        icon: 'clock-rotate-right',
         sortParams: {
             sortField: 'ModifyTime',
             sortOrder: SORT_DIRECTION.DESC,
@@ -46,7 +46,7 @@ const menuItems: {
     },
     {
         name: c('Action').t`Modified date: old to new`,
-        icon: 'sort-old-new',
+        icon: 'clock-rotate-left',
         sortParams: {
             sortField: 'ModifyTime',
             sortOrder: SORT_DIRECTION.ASC,
@@ -70,7 +70,7 @@ const menuItems: {
     },
     {
         name: c('Action').t`Size: small to large`,
-        icon: 'sort-small-large',
+        icon: 'arrow-down-short-wide',
         sortParams: {
             sortField: 'Size',
             sortOrder: SORT_DIRECTION.ASC,
@@ -78,7 +78,7 @@ const menuItems: {
     },
     {
         name: c('Action').t`Size: large to small`,
-        icon: 'sort-large-small',
+        icon: 'arrow-down-wide-short',
         sortParams: {
             sortField: 'Size',
             sortOrder: SORT_DIRECTION.DESC,

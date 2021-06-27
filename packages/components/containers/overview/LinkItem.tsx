@@ -13,7 +13,7 @@ const LinkItem = ({ to, text, permission }: Props) => {
             <span className="mr0-5">{text}</span>
             {permission ? null : (
                 <Tooltip title={c('Tag').t`Premium feature`}>
-                    <Icon name="starfull" className="color-warning" />
+                    <Icon name="star-filled" className="color-warning" />
                 </Tooltip>
             )}
         </Link>

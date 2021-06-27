@@ -40,7 +40,7 @@ const MoreDropdown = ({ labelID = '', elementIDs = [], selectedIDs = [] }: Props
         <>
             <ToolbarDropdown
                 title={c('Action').t`More`}
-                content={<Icon className="toolbar-icon" name="3-dots-vertical" />}
+                content={<Icon className="toolbar-icon" name="ellipsis-vertical" />}
                 data-testid="toolbar:more-dropdown"
                 hasCaret={false}
             >

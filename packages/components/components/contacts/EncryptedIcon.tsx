@@ -6,7 +6,7 @@ import Icon from '../icon/Icon';
 const EncryptedIcon = ({ ...rest }) => {
     return (
         <Tooltip title={c('Tooltip').t`Encrypted data with verified digital signature`}>
-            <Icon name="lock" className="flex flex-item-centered" {...rest} />
+            <Icon name="lock-filled" className="flex flex-item-centered" {...rest} />
         </Tooltip>
     );
 };

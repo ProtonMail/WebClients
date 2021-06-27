@@ -71,7 +71,7 @@ const ContactsWidgetGroupsToolbar = ({
                         disabled={noContactInSelected}
                         data-testid="contacts:compose-contact-group"
                     >
-                        <Icon name="email" alt={c('Action').t`Compose`} />
+                        <Icon name="envelope" alt={c('Action').t`Compose`} />
                     </Button>
                 </Tooltip>
             ) : null}
@@ -98,7 +98,7 @@ const ContactsWidgetGroupsToolbar = ({
                     onClick={onCreate}
                     data-testid="contacts:add-contact-group"
                 >
-                    <Icon name="contacts-group-add" alt={c('Action').t`Add new group`} />
+                    <Icon name="user-group-plus" alt={c('Action').t`Add new group`} />
                 </Button>
             </Tooltip>
         </div>

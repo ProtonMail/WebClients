@@ -31,7 +31,7 @@ export const getDashboardPage = ({ user }: { user: UserModel }) => {
     return {
         text: c('Title').t`Dashboard`,
         to: '/dashboard',
-        icon: 'apps',
+        icon: 'grid',
         subsections: [
             isFree && {
                 text: c('Title').t`Select plan`,

@@ -41,7 +41,7 @@ const SetupSupportDropdown = () => {
     return (
         <SupportDropdown>
             <DropdownMenuButton className="text-left" onClick={handleBugReportClick}>
-                <Icon name="report-bug" className="mr0-5" />
+                <Icon name="bug" className="mr0-5" />
                 {c('Action').t`Report a problem`}
             </DropdownMenuButton>
         </SupportDropdown>

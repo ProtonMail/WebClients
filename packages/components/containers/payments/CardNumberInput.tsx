@@ -60,7 +60,7 @@ const CardNumberInput = ({ value, onChange, ...rest }: Props) => {
                 value && bankIcon ? (
                     <img src={bankIcon} className="mauto" title={niceType} alt={niceType} width="20" />
                 ) : (
-                    <Icon className="mauto" name="payments-type-card" />
+                    <Icon className="mauto" name="credit-card" />
                 )
             }
             {...rest}

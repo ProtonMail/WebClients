@@ -26,15 +26,15 @@ const SYSTEM_FOLDERS = Object.values(DestinationFolder) as string[];
 
 const FOLDER_ICONS = {
     [DestinationFolder.INBOX]: 'inbox',
-    [DestinationFolder.ALL_DRAFTS]: 'drafts',
-    [DestinationFolder.ALL_SENT]: 'sent',
+    [DestinationFolder.ALL_DRAFTS]: 'file-lines',
+    [DestinationFolder.ALL_SENT]: 'paper-plane',
     [DestinationFolder.TRASH]: 'trash',
     [DestinationFolder.SPAM]: 'spam',
-    [DestinationFolder.ARCHIVE]: 'archive',
-    [DestinationFolder.SENT]: 'sent',
-    [DestinationFolder.DRAFTS]: 'drafts',
+    [DestinationFolder.ARCHIVE]: 'box-archive',
+    [DestinationFolder.SENT]: 'paper-plane',
+    [DestinationFolder.DRAFTS]: 'file-lines',
     [DestinationFolder.STARRED]: 'star',
-    [DestinationFolder.ALL_MAIL]: 'all-emails',
+    [DestinationFolder.ALL_MAIL]: 'envelopes',
 };
 
 const DIMMED_OPACITY_CLASSNAME = 'opacity-30';
@@ -246,7 +246,7 @@ const ImportManageFoldersRow = ({
                 <Tooltip title={error} type="error">
                     <Icon
                         tabIndex={-1}
-                        name="info"
+                        name="circle-info"
                         className="color-danger inline-flex flex-align-self-center flex-item-noshrink"
                     />
                 </Tooltip>
@@ -338,13 +338,13 @@ const ImportManageFoldersRow = ({
                 <>
                     {nameTooLongError && (
                         <Tooltip title={ERRORS.nameTooLongError} type="error">
-                            <Icon tabIndex={-1} name="info" className="color-danger" />
+                            <Icon tabIndex={-1} name="circle-info" className="color-danger" />
                         </Tooltip>
                     )}
 
                     {!checked && nameAlreadyExistsError && !nameTooLongError && (
                         <Tooltip title={ERRORS.nameAlreadyExistsError} type="error">
-                            <Icon tabIndex={-1} name="info" className="color-danger" />
+                            <Icon tabIndex={-1} name="circle-info" className="color-danger" />
                         </Tooltip>
                     )}
                 </>
@@ -416,25 +416,25 @@ const ImportManageFoldersRow = ({
             <>
                 {nameTooLongError && (
                     <Tooltip title={ERRORS.nameTooLongError} type="error">
-                        <Icon tabIndex={-1} name="info" className="color-danger" />
+                        <Icon tabIndex={-1} name="circle-info" className="color-danger" />
                     </Tooltip>
                 )}
 
                 {nameAlreadyExistsError && !nameTooLongError && (
                     <Tooltip title={ERRORS.nameAlreadyExistsError} type="error">
-                        <Icon tabIndex={-1} name="info" className="color-danger" />
+                        <Icon tabIndex={-1} name="circle-info" className="color-danger" />
                     </Tooltip>
                 )}
 
                 {mergeWarning && (
                     <Tooltip title={WARNINGS.mergeWarning} type="warning">
-                        <Icon tabIndex={-1} name="info" className="color-warning" />
+                        <Icon tabIndex={-1} name="circle-info" className="color-warning" />
                     </Tooltip>
                 )}
 
                 {isSystemSubfolder && !mergeWarning && (
                     <Tooltip title={c('Tooltip').t`System subfolders will show up as separate folders in ProtonMail`}>
-                        <Icon tabIndex={-1} name="info" />
+                        <Icon tabIndex={-1} name="circle-info" />
                     </Tooltip>
                 )}
             </>

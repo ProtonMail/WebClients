@@ -8,7 +8,7 @@ export const getBridgePage = () => {
     return {
         text: c('Title').t`IMAP/SMTP`,
         to: '/mail/imap-smtp',
-        icon: 'imap-smtp',
+        icon: 'servers',
         subsections: [
             {
                 text: c('Title').t`ProtonMail Bridge`,

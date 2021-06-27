@@ -8,7 +8,7 @@ export const getGeneralPage = () => {
     return {
         text: c('Title').t`General`,
         to: '/general',
-        icon: 'general',
+        icon: 'sliders',
         subsections: [
             {
                 text: c('Title').t`Language`,

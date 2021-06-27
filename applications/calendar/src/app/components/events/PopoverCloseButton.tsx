@@ -15,7 +15,7 @@ const PopoverCloseButton = ({ onClose }: Props) => {
             title={c('Action').t`Close popover`}
             onClick={onClose}
         >
-            <Icon name="close" alt={c('Action').t`Close popover`} />
+            <Icon name="xmark" alt={c('Action').t`Close popover`} />
         </Button>
     );
 };

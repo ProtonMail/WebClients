@@ -7,7 +7,7 @@ import PrivateMainSettingsAreaWithPermissions from '../../content/PrivateMainSet
 
 const generalSettingsConfig = {
     to: '/calendar/general',
-    icon: 'settings-master',
+    icon: 'sliders',
     text: c('Link').t`General`,
     subsections: [
         {

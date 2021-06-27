@@ -75,7 +75,7 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
             )}
             <div className="mb0-5 flex flex-nowrap">
                 <span className="container-to flex">
-                    <Icon name="calendar" className="mauto" alt={c('Label').t`Date:`} />
+                    <Icon name="calendar-days" className="mauto" alt={c('Label').t`Date:`} />
                 </span>
                 <span className="flex-align-self-center mr0-5 text-ellipsis">
                     <ItemDate element={message.data} labelID={labelID} mode="full" />
@@ -99,7 +99,7 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
             </div>
             <div className="mb0-5 flex flex-nowrap">
                 <span className="container-to flex">
-                    <Icon name="user-storage" className="mauto" alt={c('Label').t`Size:`} />
+                    <Icon name="filing-cabinet" className="mauto" alt={c('Label').t`Size:`} />
                 </span>
                 <span className="flex-align-self-center mr0-5 text-ellipsis" title={sizeText}>
                     {sizeText}
@@ -108,7 +108,7 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
             {attachmentsText && (
                 <div className="mb0-5 flex flex-nowrap">
                     <span className="container-to flex">
-                        <Icon name="attach" className="mauto" alt={c('Alt').t`Has attachments`} />
+                        <Icon name="paperclip" className="mauto" alt={c('Alt').t`Has attachments`} />
                     </span>
                     <span className="flex-align-self-center mr0-5 text-ellipsis" title={attachmentsText}>
                         {attachmentsText}
@@ -118,7 +118,7 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
             {labelIDs.length > 0 && (
                 <div className="mb0-5 flex flex-nowrap">
                     <span className="container-to flex">
-                        <Icon name="label" className="mauto" alt={c('Label').t`Labels:`} />
+                        <Icon name="tag" className="mauto" alt={c('Label').t`Labels:`} />
                     </span>
                     <ItemLabels
                         isCollapsed={false}

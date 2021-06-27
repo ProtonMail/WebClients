@@ -94,8 +94,7 @@ const PopoverEventContent = ({
     const calendarString = useMemo(() => {
         if (isCalendarDisabled) {
             const disabledText = <span className="text-italic">({c('Disabled calendar').t`Disabled`})</span>;
-            const tooltipText = c('Disabled calendar tooltip')
-                .t`The event belongs to a disabled calendar.`;
+            const tooltipText = c('Disabled calendar tooltip').t`The event belongs to a disabled calendar.`;
             return (
                 <>
                     <span className="text-ellipsis flex-item-fluid-auto flex-item-nogrow mr0-5" title={calendarName}>
@@ -121,13 +120,13 @@ const PopoverEventContent = ({
         <>
             {frequencyString ? (
                 <div className={wrapClassName}>
-                    <Icon name="reload" className={iconClassName} />
+                    <Icon name="arrows-rotate" className={iconClassName} />
                     <span>{frequencyString}</span>
                 </div>
             ) : null}
             {trimmedLocation ? (
                 <div className={wrapClassName}>
-                    <Icon name="address" className={iconClassName} />
+                    <Icon name="map-marker" className={iconClassName} />
                     <span
                         className="text-hyphens scroll-if-needed"
                         dangerouslySetInnerHTML={{ __html: trimmedLocation }}
@@ -136,7 +135,7 @@ const PopoverEventContent = ({
             ) : null}
             {hasOrganizer && (isInvitation || numberOfParticipants) ? (
                 <div className={wrapClassName}>
-                    <Icon name="contact" className={iconClassName} />
+                    <Icon name="user" className={iconClassName} />
                     <span className="mr0-5r">{organizerString}</span>
                     <Tooltip title={organizerTitle}>
                         <span className="max-w100 inline-block text-ellipsis flex-item-fluid">{organizerName}</span>
@@ -145,13 +144,13 @@ const PopoverEventContent = ({
             ) : null}
             {calendarString ? (
                 <div className={wrapClassName}>
-                    <Icon name="circle" color={Color} className={iconClassName} />
+                    <Icon name="circle-filled" color={Color} className={iconClassName} />
                     {calendarString}
                 </div>
             ) : null}
             {model.notifications?.length ? (
                 <div className={wrapClassName}>
-                    <Icon name="notifications-enabled" className={iconClassName} />
+                    <Icon name="bell" className={iconClassName} />
                     <div className="flex flex-column">
                         {model.notifications.map((notification) => (
                             <PopoverNotification
@@ -165,7 +164,7 @@ const PopoverEventContent = ({
             ) : null}
             {htmlString ? (
                 <div className={wrapClassName}>
-                    <Icon name="text-align-left" className={iconClassName} />
+                    <Icon name="align-left" className={iconClassName} />
                     <div
                         className="text-break mt0 mb0 text-pre-wrap"
                         dangerouslySetInnerHTML={{ __html: htmlString }}

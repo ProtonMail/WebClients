@@ -9,7 +9,7 @@ import { Icon } from '../../../components';
 import { VPNFeature } from './interface';
 import Features from './Features';
 
-const CheckIcon = () => <Icon className="color-primary" name="on" alt={c('information').t`Included`} />;
+const CheckIcon = () => <Icon className="color-primary" name="check" alt={c('information').t`Included`} />;
 const EmDash = '—';
 
 const getFeatures = (

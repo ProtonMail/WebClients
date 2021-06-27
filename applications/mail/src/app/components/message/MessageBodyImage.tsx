@@ -49,7 +49,7 @@ const MessageBodyImage = ({ showRemoteImages, showEmbeddedImages, image, anchor 
             ? c('Message image').t`Image could not be loaded`
             : c('Message image').t`Image has not been loaded in order to protect your privacy`;
     }
-    const icon = isError ? 'delete' : 'remote-content';
+    const icon = isError ? 'circle-xmark' : 'file-shapes';
 
     const attributes =
         image.original?.getAttributeNames().reduce<SimpleMap<string>>((acc, name) => {

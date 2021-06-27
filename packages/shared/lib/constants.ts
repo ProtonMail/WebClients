@@ -41,7 +41,7 @@ export const APPS_CONFIGURATION = {
         name: 'Proton Account',
         bareName: 'Account',
         clientID: 'WebAccount',
-        icon: 'protonaccount',
+        icon: 'brand-proton-account',
         settingsSlug: 'account',
     },
     [APPS.PROTONMAIL]: {
@@ -50,7 +50,7 @@ export const APPS_CONFIGURATION = {
         name: 'ProtonMail',
         bareName: 'Mail',
         clientID: 'WebMail',
-        icon: 'protonmail',
+        icon: 'brand-proton-mail',
         settingsSlug: 'mail',
     },
     [APPS.PROTONCONTACTS]: {
@@ -59,7 +59,7 @@ export const APPS_CONFIGURATION = {
         name: 'ProtonContacts',
         bareName: 'Contacts',
         clientID: 'WebContacts',
-        icon: 'protoncontacts',
+        icon: 'brand-proton-contacts',
         settingsSlug: 'contacts',
     },
     [APPS.PROTONDRIVE]: {
@@ -68,7 +68,7 @@ export const APPS_CONFIGURATION = {
         name: 'ProtonDrive',
         bareName: 'Drive',
         clientID: 'WebDrive',
-        icon: 'protondrive',
+        icon: 'brand-proton-drive',
         settingsSlug: 'drive',
     },
     [APPS.PROTONCALENDAR]: {
@@ -77,7 +77,7 @@ export const APPS_CONFIGURATION = {
         name: 'ProtonCalendar',
         bareName: 'Calendar',
         clientID: 'WebCalendar',
-        icon: 'protoncalendar',
+        icon: 'brand-proton-calendar',
         settingsSlug: 'calendar',
     },
     [APPS.PROTONVPN_SETTINGS]: {
@@ -86,7 +86,7 @@ export const APPS_CONFIGURATION = {
         name: 'ProtonVPN',
         bareName: 'VPN',
         clientID: 'WebVPNSettings',
-        icon: 'protonvpn',
+        icon: 'brand-proton-vpn',
         settingsSlug: 'vpn',
     },
     [APPS.PROTONADMIN]: {

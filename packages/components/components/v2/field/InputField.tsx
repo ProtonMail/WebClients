@@ -74,7 +74,7 @@ const InputField: <E extends React.ElementType = typeof defaultElement>(
 
         const errorElement = error && typeof error !== 'boolean' && (
             <>
-                <Icon name="exclamation-circle-filled" className="aligntop mr0-25" />
+                <Icon name="circle-exclamation-filled" className="aligntop mr0-25" />
                 <span>{error}</span>
             </>
         );

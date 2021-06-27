@@ -45,7 +45,7 @@ const AttachingModalContent = ({
             {alert}
             <Bordered className={classnames(['flex relative', !!model.failure && 'border--danger'])}>
                 {model.fileAttached ? (
-                    <AttachedFile file={model.fileAttached} iconName="contacts-groups" onClear={onClear} />
+                    <AttachedFile file={model.fileAttached} iconName="user-group" onClear={onClear} />
                 ) : (
                     <Dropzone
                         isHovered={isDropzoneHovered}

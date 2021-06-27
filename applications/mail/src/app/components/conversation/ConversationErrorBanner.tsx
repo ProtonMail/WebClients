@@ -33,7 +33,7 @@ const ConversationErrorBanner = ({ errors = {}, onRetry }: Props, ref: React.Ref
             className="bg-danger rounded p0-5 m1 flex flex-nowrap flex-align-items-center"
             data-shortcut-target="trash-warning"
         >
-            <Icon name="attention" className="mr1" />
+            <Icon name="triangle-exclamation" className="mr1" />
             <span className="pl0-5 pr0-5 flex-item-fluid">{getTranslations(errorType)}</span>
             <span className="flex-item-noshrink flex">
                 <Button size="small" onClick={onRetry}>

@@ -93,7 +93,7 @@ const OpenVPNCredentialsSection = (props: Props) => {
                             onClick={() => setShow(!show)}
                             title={show ? c('Action').t`Hide` : c('Action').t`Show`}
                         >
-                            <Icon name={show ? 'unread' : 'read'} />
+                            <Icon name={show ? 'eye-slash' : 'eye'} />
                         </Button>
                     </div>
                 </SettingsLayoutRight>

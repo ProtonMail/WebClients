@@ -27,7 +27,7 @@ const PasswordInputTwo = ({ disabled, ...rest }: Omit<InputTwoProps, 'type'>) =>
                     type="button"
                     onClick={toggle}
                 >
-                    <Icon className="mauto" name={type === 'password' ? 'read' : 'unread'} />
+                    <Icon className="mauto" name={type === 'password' ? 'eye' : 'eye-slash'} />
                 </button>
             }
         />

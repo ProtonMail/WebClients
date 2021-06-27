@@ -12,7 +12,7 @@ interface Props extends Omit<IconProps, 'name'> {
 const getIconName = (isParent: boolean, color?: string, name?: string) => {
     let iconName;
     if (isParent) {
-        iconName = color ? 'parent-folder-filled' : 'parent-folder';
+        iconName = color ? 'folders-filled' : 'folders';
     } else {
         iconName = color ? 'folder-filled' : name || 'folder';
     }

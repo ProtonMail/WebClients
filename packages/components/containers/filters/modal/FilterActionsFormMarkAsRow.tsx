@@ -43,7 +43,7 @@ const FilterActionsFormMarkAsRow = ({ isNarrow, actions, handleUpdateActions }: 
             <div className="pt0-5">
                 {markAs?.read && (
                     <span className="inline-flex flex-align-items-center mr2">
-                        <Icon name="read" className="mr0-5" />
+                        <Icon name="eye" className="mr0-5" />
                         {c('Label').t`Read`}
                     </span>
                 )}
@@ -60,7 +60,7 @@ const FilterActionsFormMarkAsRow = ({ isNarrow, actions, handleUpdateActions }: 
     return (
         <div className="border-bottom flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1">
             <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb1'])} onClick={toggleSection}>
-                <Icon name="caret" className={classnames([isOpen && 'rotateX-180'])} />
+                <Icon name="angle-down" className={classnames([isOpen && 'rotateX-180'])} />
                 <span className={classnames(['ml0-5', actions.error && 'color-danger'])}>{c('Label').t`Mark as`}</span>
             </button>
             <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml1'])}>

@@ -35,7 +35,7 @@ const LanguageSelect = ({ className, locales = {} }: Props) => {
 
     const selectedLanguage = (
         <>
-            <Icon name="world" />
+            <Icon name="earth" />
             <span className="ml0-5">{LOCALES[localeCode]}</span>
         </>
     );
