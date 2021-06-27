@@ -48,6 +48,10 @@ const formatModel = (properties: ContactProperties = []): ContactProperties => {
         .map((property) => ({ ...property, uid: generateUID(UID_PREFIX) })); // Add UID to localize the property easily
 };
 
+const getNotEditableProperties = (properties: ContactProperties = []): ContactProperties => {
+    return properties.filter(({ field }) => !editableFields.includes(field));
+};
+
 interface Props {
     contactID?: string;
     properties?: ContactProperties;
@@ -71,6 +75,9 @@ const ContactModal = ({
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [userKeysList, loadingUserKeys] = useUserKeys();
     const [allProperties, setAllProperties] = useState<ContactProperties>(formatModel(initialProperties));
+    const [notEditableProperties, setNotEditableProperties] = useState<ContactProperties>(
+        getNotEditableProperties(initialProperties)
+    );
     const nameFieldRef = useRef<HTMLInputElement>(null);
 
     const title = contactID ? c('Title').t`Edit contact` : c('Title').t`Create contact`;
@@ -97,6 +104,12 @@ const ContactModal = ({
 
     const handleRemove = (propertyUID: string) => {
         const property = allProperties.find(({ uid }) => uid === propertyUID);
+
+        // If we remove an email with groups attached to it, remove all groups properties too
+        if (property?.group) {
+            const notEditablePropertiesUpdated = notEditableProperties.filter((prop) => prop.group !== property.group);
+            setNotEditableProperties(notEditablePropertiesUpdated);
+        }
 
         // Never remove the last photo property
         if (property?.field === 'photo') {
@@ -139,7 +152,6 @@ const ContactModal = ({
             return;
         }
 
-        const notEditableProperties = initialProperties.filter(({ field }) => !editableFields.includes(field));
         const Contacts = await prepareContacts([allProperties.concat(notEditableProperties)], userKeysList[0]);
         const labels = hasCategories(notEditableProperties) ? INCLUDE : IGNORE;
         const {
