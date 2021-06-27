@@ -265,8 +265,10 @@ function useFiles() {
                 parentKeys.privateKey,
                 addressKeyInfo.privateKey
             );
-
-            const { sessionKey, ContentKeyPacket } = await generateContentKeys(privateKey);
+            const { sessionKey, ContentKeyPacket, ContentKeyPacketSignature } = await generateContentKeys(
+                privateKey,
+                addressKeyInfo.privateKey
+            );
 
             if (!ContentKeyPacket) {
                 throw new Error('Could not generate ContentKeyPacket');
@@ -277,6 +279,7 @@ function useFiles() {
                 NodePassphrase,
                 NodePassphraseSignature,
                 ContentKeyPacket,
+                ContentKeyPacketSignature,
                 sessionKey,
                 privateKey,
                 parentKeys,
@@ -286,14 +289,15 @@ function useFiles() {
 
         const createFile = async (abortSignal: AbortSignal, filename: string, hash: string): Promise<FileRevision> => {
             const {
+                addressKeyInfo,
+                ContentKeyPacket,
+                ContentKeyPacketSignature,
                 NodeKey,
                 NodePassphrase,
                 NodePassphraseSignature,
-                ContentKeyPacket,
-                sessionKey,
-                privateKey,
                 parentKeys,
-                addressKeyInfo,
+                privateKey,
+                sessionKey,
             } = await setupPromise;
 
             const MIMEType = await mimeTypeFromFile(file);
@@ -306,26 +310,27 @@ function useFiles() {
             // If create draft hasn't been cancel up to this point do not try to cancel it anymore
             const { File: createdFile } = await debouncedRequest<CreateFileResult>(
                 queryCreateFile(shareId, {
-                    Name,
-                    MIMEType,
+                    ContentKeyPacket,
+                    ContentKeyPacketSignature,
                     Hash: hash,
+                    MIMEType,
+                    Name,
                     NodeKey,
                     NodePassphrase,
                     NodePassphraseSignature,
-                    SignatureAddress: addressKeyInfo.address.Email,
-                    ContentKeyPacket,
                     ParentLinkID: await parentLinkID,
+                    SignatureAddress: addressKeyInfo.address.Email,
                 })
             );
 
             return {
+                fileID: createdFile.ID,
+                filename,
                 isNewFile: true,
                 MIMEType,
-                filename,
-                fileID: createdFile.ID,
+                privateKey,
                 revisionID: createdFile.RevisionID,
                 sessionKey,
-                privateKey,
             };
         };
 

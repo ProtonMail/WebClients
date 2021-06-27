@@ -16,6 +16,7 @@ export interface CreateDriveFile {
     NodeKey: string;
     MIMEType: string;
     ContentKeyPacket: string;
+    ContentKeyPacketSignature: string;
 }
 
 export interface RevisionManifest {

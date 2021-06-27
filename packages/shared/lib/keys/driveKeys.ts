@@ -104,12 +104,12 @@ export const generateLookupHash = async (name: string, hashKey: string) => {
     return arrayToHexString(new Uint8Array(signature));
 };
 
-export const generateNodeHashKey = async (publicKey: OpenPGPKey) => {
-    const message = generatePassphrase();
-
-    const NodeHashKey = await encryptUnsigned({
-        message,
-        publicKey,
+export const generateNodeHashKey = async (publicKey: OpenPGPKey, addressPrivateKey: OpenPGPKey) => {
+    const { data: NodeHashKey } = await encryptMessage({
+        data: generatePassphrase(),
+        publicKeys: publicKey,
+        privateKeys: addressPrivateKey,
+        detached: false,
     });
 
     return { NodeHashKey };
@@ -150,12 +150,13 @@ export const generateContentHash = async (content: Uint8Array) => {
     return { HashType: 'sha256', BlockHash: data };
 };
 
-export const generateContentKeys = async (nodeKey: OpenPGPKey) => {
+export const generateContentKeys = async (nodeKey: OpenPGPKey, addressPrivateKey: OpenPGPKey) => {
     const publicKey = nodeKey.toPublic();
     const sessionKey = await createSessionKey(publicKey);
+    const sessionKeySignature = await sign(sessionKey.data, addressPrivateKey);
     const contentKeys = await getEncryptedSessionKey(sessionKey, publicKey);
     const ContentKeyPacket = uint8ArrayToBase64String(contentKeys);
-    return { sessionKey, ContentKeyPacket };
+    return { sessionKey, ContentKeyPacket, ContentKeyPacketSignature: sessionKeySignature };
 };
 
 export const generateDriveBootstrap = async (addressPrivateKey: OpenPGPKey) => {
