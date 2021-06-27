@@ -25,7 +25,9 @@ describe('Mark component', () => {
     });
 
     it('should highlight print result properly', () => {
-        expect(container.innerHTML).toBe(`<mark>E</mark>h, toi, l'ours mal l<mark>é</mark>ch<mark>é</mark>`);
+        expect(container.innerHTML).toBe(
+            `<mark class="is-light">E</mark>h, toi, l'ours mal l<mark class="is-light">é</mark>ch<mark class="is-light">é</mark>`
+        );
     });
 
     it('should return original children if no match', () => {

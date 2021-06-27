@@ -44,6 +44,7 @@ interface Props {
     isComposerOpened: boolean;
     containerRef?: React.RefObject<HTMLElement>;
     wrapperRef?: React.RefObject<HTMLDivElement>;
+    highlightKeywords?: boolean;
 }
 
 export interface MessageViewRef {
@@ -70,6 +71,7 @@ const MessageView = (
         isComposerOpened,
         containerRef,
         wrapperRef,
+        highlightKeywords = false,
     }: Props,
     ref: Ref<MessageViewRef>
 ) => {
@@ -336,6 +338,7 @@ const MessageView = (
                         labelDropdownToggleRef={labelDropdownToggleRef}
                         moveDropdownToggleRef={moveDropdownToggleRef}
                         filterDropdownToggleRef={filterDropdownToggleRef}
+                        highlightKeywords={highlightKeywords}
                     />
                     <MessageBody
                         messageLoaded={messageLoaded}
@@ -345,6 +348,7 @@ const MessageView = (
                         originalMessageMode={originalMessageMode}
                         toggleOriginalMessage={toggleOriginalMessage}
                         onMessageReady={onMessageReady}
+                        highlightKeywords={highlightKeywords}
                     />
                     {showFooter ? <MessageFooter message={message} /> : null}
                 </>
@@ -358,6 +362,7 @@ const MessageView = (
                     isUnreadMessage={unread}
                     onExpand={handleToggle(true)}
                     breakpoints={breakpoints}
+                    highlightKeywords={highlightKeywords}
                 />
             )}
         </article>

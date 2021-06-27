@@ -23,6 +23,7 @@ interface Props {
     isUnreadMessage: boolean;
     onExpand: () => void;
     breakpoints: Breakpoints;
+    highlightKeywords?: boolean;
 }
 
 const HeaderCollapsed = ({
@@ -34,6 +35,7 @@ const HeaderCollapsed = ({
     isUnreadMessage,
     onExpand,
     breakpoints,
+    highlightKeywords = false,
 }: Props) => {
     const handleClick = (event: MouseEvent) => {
         if ((event.target as HTMLElement).closest('.stop-propagation')) {
@@ -63,6 +65,7 @@ const HeaderCollapsed = ({
                     recipientOrGroup={{ recipient: message.data?.Sender }}
                     showAddress={false}
                     isLoading={!messageLoaded}
+                    highlightKeywords={highlightKeywords}
                 />
 
                 {messageLoaded && (
