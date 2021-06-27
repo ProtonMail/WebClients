@@ -1,5 +1,7 @@
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { Api } from '@proton/shared/lib/interfaces';
+import { getMessageCountsModel } from '@proton/shared/lib/models/messageCountsModel';
 import { IDBPDatabase, openDB } from 'idb';
 import { EncryptedSearchDB, StoredCiphertext } from '../../models/encryptedSearch';
 import { getMessageFromDB } from './esSync';
@@ -166,7 +168,9 @@ export const removeMessageSize = async (
 /**
  * Read the current total amount of messages
  */
-export const getTotalMessages = (messageCounts: any) => {
+export const getTotalMessages = async (inputMessageCounts: any, api: Api) => {
+    // If messageCounts hasn't been loaded, we fetch the information directly
+    const messageCounts = inputMessageCounts || (await getMessageCountsModel(api));
     const { Total }: { Total: number } = messageCounts.find(
         ({ LabelID }: { LabelID: string }) => LabelID === MAILBOX_LABEL_IDS.ALL_MAIL
     );
