@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 import { fromUnixTime, getUnixTime, addDays, addHours, startOfDay } from 'date-fns';
 
@@ -177,6 +177,20 @@ const useAutoReplyForm = (AutoResponder: tsAutoResponder) => {
     };
 
     const [model, setModel] = useState<AutoReplyFormModel>(getInitialModel());
+
+    useEffect(() => {
+        // Avoid having end time before start time if start day is equal to end day. Only used for fixed duration auto reply type
+        if (
+            model.start.date &&
+            model.end.date &&
+            model.start.time &&
+            model.end.time &&
+            model.start.date?.getTime() === model.end.date?.getTime() &&
+            model.start.time.getTime() > model.end.time.getTime()
+        ) {
+            setModel({ ...model, end: { date: model.end.date, time: model.start.time } });
+        }
+    }, [model]);
 
     const updateModel = (key: string): UpdateFunction => {
         if (key === 'duration') {

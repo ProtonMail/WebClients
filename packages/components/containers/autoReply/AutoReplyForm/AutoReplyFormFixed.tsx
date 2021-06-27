@@ -15,6 +15,21 @@ interface Props {
 }
 
 const AutoReplyFormFixed = ({ model: { start, end, timezone }, updateModel }: Props) => {
+    // Min date is used to calculate options.
+    // In order to have rounded options such as 9:00AM or 9:30AM, we need to round the min date we give to the TimeInput
+    const getMinTimeField = (date: Date) => {
+        const dateMin = new Date(date);
+        const minutes = dateMin.getMinutes();
+
+        if (minutes < 30) {
+            dateMin.setMinutes(30);
+        } else {
+            dateMin.setMinutes(0);
+            dateMin.setHours(dateMin.getHours() + 1);
+        }
+        return dateMin;
+    };
+
     return (
         <>
             <SettingsParagraph>
@@ -44,6 +59,12 @@ const AutoReplyFormFixed = ({ model: { start, end, timezone }, updateModel }: Pr
                 onChange={updateModel('end.time')}
                 label={c('Label').t`End time`}
                 id="endTime"
+                min={
+                    start.time && start.date?.getTime() === end.date?.getTime()
+                        ? getMinTimeField(start.time)
+                        : undefined
+                }
+                preventNextDayOverflow
             />
             <TimeZoneField value={timezone} onChange={updateModel('timezone')} />
         </>
