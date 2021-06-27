@@ -20,6 +20,7 @@ export interface FileBrowserItem {
     Trashed: number | null;
     MIMEType: string;
     Size: number;
+    ActiveRevisionSize?: number;
     ParentLinkID: string;
     Location?: string;
     Disabled?: boolean;
