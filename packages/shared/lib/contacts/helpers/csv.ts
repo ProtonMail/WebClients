@@ -97,7 +97,7 @@ const parse = ({ headers = [], contacts = [] }: ParsedCsvContacts): PreVcardsPro
                 // some headers can be mapped to several properties, so we need to flatten
                 .flat()
         )
-        .map((contact) => contact.filter((preVcard) => !!preVcard));
+        .map((contact) => contact.filter((preVcard) => !!preVcard)) as PreVcardsProperty[];
 };
 
 /**
