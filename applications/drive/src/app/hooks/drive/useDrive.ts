@@ -121,7 +121,7 @@ function useDrive() {
     const createVolume = async () => {
         const { address, privateKey } = await getPrimaryAddressKey();
         const { bootstrap, folderPrivateKey } = await generateDriveBootstrap(privateKey);
-        const { NodeHashKey: FolderHashKey } = await generateNodeHashKey(folderPrivateKey.toPublic());
+        const { NodeHashKey: FolderHashKey } = await generateNodeHashKey(folderPrivateKey.toPublic(), privateKey);
 
         const { Volume } = await debouncedRequest<CreatedDriveVolumeResult>(
             queryCreateDriveVolume({
@@ -481,7 +481,7 @@ function useDrive() {
                     encryptName(name, parentKeys.privateKey.toPublic(), addressKey),
                 ]);
 
-            const { NodeHashKey } = await generateNodeHashKey(privateKey.toPublic());
+            const { NodeHashKey } = await generateNodeHashKey(privateKey.toPublic(), privateKey);
 
             return debouncedRequest<{ Folder: { ID: string } }>(
                 queryCreateFolder(shareId, {
