@@ -3920,7 +3920,7 @@ __metadata:
     eslint: ^7.3.1
     file-saver: ^2.0.2
     hi-base32: ^0.5.0
-    ical.js: "github:ProtonMail/ical.js.git#semver:~1.3.1"
+    ical.js: ^1.4.0
     is-valid-domain: 0.0.14
     jasmine: ^3.7.0
     jasmine-core: ^3.7.1
@@ -5434,15 +5434,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@transcend-io/conflux@github:ProtonMail/conflux#master":
+"@transcend-io/conflux@npm:^3.2.0":
   version: 3.2.0
-  resolution: "@transcend-io/conflux@https://github.com/ProtonMail/conflux.git#commit=2bd05e5c9ab4db8bbca5087a260b8834376cc806"
+  resolution: "@transcend-io/conflux@npm:3.2.0"
   dependencies:
     "@babel/runtime-corejs3": ^7.11.0
     jsbi: ^3.1.2
     pako: ^1.0.11
     web-streams-polyfill: ^3.0.0
-  checksum: 3b931ea534d7db2cb873f5c652e62804220f8a7fc98200b1c13f5567bdf91ff61bda3be4b004f4cac1a634a6d94f5ecefad2cad1344db0ceb95561d0b8bac8bb
+  checksum: 0b5d6ad7f1a9f2b809673b697a96af88002f2c0c60f4f3408113115841e9d224d4b87b0479db6b4f5cb5aa09bcc721ee26b4aca6a390b152f32819079cd31742
   languageName: node
   linkType: hard
 
@@ -16820,10 +16820,10 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"ical.js@github:ProtonMail/ical.js.git#semver:~1.3.1":
-  version: 1.3.1
-  resolution: "ical.js@https://github.com/ProtonMail/ical.js.git#commit=13b608d622d944a0617bb9e0c0d05c0d35dd9f11"
-  checksum: dcfc4dc0c971cf519977ed58cd418b899f31edeb465d8496314726a6bd1ae32f2be610802466ef19c38e6bb7fef204f4ce83fbae0740aa82a456445b42096ba1
+"ical.js@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "ical.js@npm:1.4.0"
+  checksum: bc64030e97db80296c5a93457bf1d25302cab777712b1ec449a1b669482b3630ab7989d9d6bb622fe35f65b883de8a72375d3cba8a1c4dd75ac78306ae813139
   languageName: node
   linkType: hard
 
@@ -25508,7 +25508,7 @@ fsevents@^1.2.7:
     "@testing-library/jest-dom": ^5.1.1
     "@testing-library/react": ^10.0.4
     "@testing-library/react-hooks": ^3.2.1
-    "@transcend-io/conflux": "github:ProtonMail/conflux#master"
+    "@transcend-io/conflux": ^3.2.0
     "@types/mime-types": ^2.1.0
     "@types/react": ^16.0.0
     "@types/react-dom": ^16.0.0
