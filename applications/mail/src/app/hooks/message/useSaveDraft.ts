@@ -1,6 +1,6 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { useCallback } from 'react';
-import { useApi, useEventManager, useMailSettings } from '@proton/components';
+import { useApi, useEventManager, useMailSettings, useNotifications } from '@proton/components';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
@@ -10,6 +10,7 @@ import { mergeMessages } from '../../helpers/message/messages';
 import { useMessageCache, updateMessageCache } from '../../containers/MessageProvider';
 import { createMessage, updateMessage } from '../../helpers/message/messageExport';
 import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
+import { SAVE_DRAFT_ERROR_CODES } from '../../constants';
 
 const { ALL_DRAFTS, DRAFTS } = MAILBOX_LABEL_IDS;
 
@@ -74,16 +75,34 @@ const useUpdateDraft = () => {
     }, []);
 };
 
-export const useSaveDraft = () => {
+interface UseUpdateDraftParameters {
+    onMessageAlreadySent?: () => void;
+}
+
+export const useSaveDraft = ({ onMessageAlreadySent }: UseUpdateDraftParameters = {}) => {
     const messageCache = useMessageCache();
     const updateDraft = useUpdateDraft();
     const createDraft = useCreateDraft();
+    const { createNotification } = useNotifications();
 
     return useCallback(async (message: MessageExtendedWithData) => {
         const messageFromCache = messageCache.get(message.localID) as MessageExtended;
 
         if (messageFromCache?.data?.ID) {
-            await updateDraft(message);
+            try {
+                await updateDraft(message);
+            } catch (error) {
+                if (error.data.Code === SAVE_DRAFT_ERROR_CODES.MESSAGE_ALREADY_SENT) {
+                    onMessageAlreadySent?.();
+                    throw error;
+                }
+
+                createNotification({
+                    text: error,
+                    type: 'error',
+                });
+                throw error;
+            }
         } else {
             await createDraft(message);
         }

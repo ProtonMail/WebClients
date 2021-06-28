@@ -1,5 +1,5 @@
-import { DRAFT_ID_PREFIX } from '@proton/shared/lib/mail/messages';
 import { useEffect, createContext, ReactNode, useContext, useLayoutEffect } from 'react';
+import { DRAFT_ID_PREFIX, isSent } from '@proton/shared/lib/mail/messages';
 import { useInstance, useEventManager } from '@proton/components';
 import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
@@ -40,7 +40,7 @@ export const updateMessageCache = (
  */
 export const getLocalID = (cache: MessageCache, messageID: string) => {
     const localID = [...cache.keys()]
-        .filter((key) => key.startsWith(DRAFT_ID_PREFIX))
+        .filter((key) => key?.startsWith(DRAFT_ID_PREFIX))
         .find((key) => cache.get(key)?.data?.ID === messageID);
 
     return localID || messageID;
@@ -68,6 +68,7 @@ const messageEventListener =
             }
             if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
                 const currentValue = cache.get(localID) as MessageExtended;
+                const isSentDraft = isSent(Message);
 
                 if (currentValue.data) {
                     const MessageToUpdate = parseLabelIDsInEvent(
@@ -75,16 +76,22 @@ const messageEventListener =
                         Message as Message & LabelIDsChanges
                     );
                     let removeBody: PartialMessageExtended = {};
+                    const flags: Partial<MessageExtended> = {};
 
                     // Draft updates can contains body updates but will not contains it in the event
                     // By removing the current body value in the cache, we will reload it next time we need it
                     if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
                         removeBody = { initialized: undefined, data: { Body: undefined } };
+
+                        if (isSentDraft) {
+                            flags.isSentDraft = true;
+                        }
                     }
 
                     cache.set(localID, {
                         ...currentValue,
                         ...removeBody,
+                        ...flags,
                         data: {
                             ...currentValue.data,
                             ...MessageToUpdate,

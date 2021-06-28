@@ -11,7 +11,6 @@ import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences'
 import { HOUR } from '@proton/shared/lib/constants';
 import { serverTime } from 'pmcrypto/lib/serverTime';
 import { normalize } from '@proton/shared/lib/helpers/string';
-
 import SendWithErrorsModal from '../../components/composer/addresses/SendWithErrorsModal';
 import { removeMessageRecipients, uniqueMessageRecipients } from '../../helpers/message/cleanMessage';
 import { MessageExtendedWithData } from '../../models/message';
@@ -21,6 +20,8 @@ import SendWithChangedPreferencesModal from '../../components/composer/addresses
 import { useContactCache } from '../../containers/ContactProvider';
 import { MapSendInfo } from '../../models/crypto';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
+import { useMessageCache } from '../../containers/MessageProvider';
+import { SEND_VERIFICATION_ERRORS } from '../../constants';
 
 const FR_REGEX =
     /voir pi\u00e8ce jointe|voir pi\u00e8ces jointes|voir fichier joint|voir fichiers joints|voir fichier associ\u00e9|voir fichiers associ\u00e9s|joint|joints|jointe|jointes|joint \u00e0 cet e-mail|jointe \u00e0 cet e-mail|joints \u00e0 cet e-mail|jointes \u00e0 cet e-mail|joint \u00e0 ce message|jointe \u00e0 ce message|joints \u00e0 ce message|jointes \u00e0 ce message|je joins|j'ai joint|ci-joint|pi\u00e8ce jointe|pi\u00e8ces jointes|fichier joint|fichiers joints|voir le fichier joint|voir les fichiers joints|voir la pi\u00e8ce jointe|voir les pi\u00e8ces jointes/gi;
@@ -37,8 +38,16 @@ export const useSendVerifications = () => {
     const { createNotification } = useNotifications();
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const { contactsMap } = useContactCache();
+    const messageCache = useMessageCache();
 
     const preliminaryVerifications = useCallback(async (message: MessageExtendedWithData): Promise<void> => {
+        const { isSentDraft } = messageCache.get(message.localID) as MessageExtendedWithData;
+
+        // Message already sent
+        if (isSentDraft) {
+            throw new Error(SEND_VERIFICATION_ERRORS.MESSAGE_ALREADY_SENT);
+        }
+
         // No recipients
         if (!getRecipients(message.data).length) {
             await new Promise((resolve, reject) => {
