@@ -6,13 +6,17 @@ import {
     getMaxUserCalendarsDisabled,
     getProbablyActiveCalendars,
 } from '@proton/shared/lib/calendar/calendar';
+import { ICAL_MIME_TYPE } from '@proton/shared/lib/calendar/constants';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { unary } from '@proton/shared/lib/helpers/function';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
+import {
+    EVENT_INVITATION_ERROR_TYPE,
+    EventInvitationError,
+} from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import React, { useEffect, useState } from 'react';
 import {
     useAddresses,
@@ -28,12 +32,11 @@ import {
 import { useAttachmentCache } from '../../../containers/AttachmentProvider';
 import { updateMessageCache, useMessageCache } from '../../../containers/MessageProvider';
 import { formatDownload } from '../../../helpers/attachment/attachmentDownloader';
-import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from '../../../helpers/calendar/EventInvitationError';
 import {
     EventInvitation,
     filterAttachmentsForEvents,
-    getSupportedEventInvitation,
-    parseEventInvitation,
+    getSupportedVcalendarData,
+    parseVcalendar,
 } from '../../../helpers/calendar/invite';
 import { isNetworkError } from '../../../helpers/errors';
 import { getMessageHasData } from '../../../helpers/message/messages';
@@ -58,9 +61,7 @@ const ExtraEvents = ({ message }: Props) => {
     const getCalendarUserSettings = useGetCalendarUserSettings();
     const [loadingWidget, withLoadingWidget] = useLoading();
     const [loadedWidget, setLoadedWidget] = useState('');
-    const [invitations, setInvitations] = useState<(RequireSome<EventInvitation, 'method'> | EventInvitationError)[]>(
-        []
-    );
+    const [invitations, setInvitations] = useState<(EventInvitation | EventInvitationError)[]>([]);
     const [calData, setCalData] = useState<{
         calendars: Calendar[];
         defaultCalendar?: Calendar;
@@ -114,9 +115,19 @@ const ExtraEvents = ({ message }: Props) => {
                     maxUserCalendarsDisabled,
                     mustReactivateCalendars,
                 });
+                // re-order attachments by MIME Type, as we prefer 'text/calendar' in case of duplicate uids
+                const sortedEventAttachments = [...eventAttachments].sort(({ MIMEType: a }, { MIMEType: b }) => {
+                    if (a === ICAL_MIME_TYPE) {
+                        return -1;
+                    }
+                    if (b === ICAL_MIME_TYPE) {
+                        return 1;
+                    }
+                    return 0;
+                });
                 const invitations = (
                     await Promise.all(
-                        eventAttachments.map(async (attachment: Attachment) => {
+                        sortedEventAttachments.map(async (attachment: Attachment) => {
                             try {
                                 const messageKeys = await getMessageKeys(message.data);
                                 const download = await formatDownload(
@@ -129,13 +140,18 @@ const ExtraEvents = ({ message }: Props) => {
                                 if (download.isError) {
                                     return new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.DECRYPTION_ERROR);
                                 }
-                                const parsedInvitation = parseEventInvitation(
-                                    decodeUtf8(arrayToBinaryString(download.data))
-                                );
-                                if (!parsedInvitation) {
+                                const binaryIcsString = arrayToBinaryString(download.data);
+                                const parsedVcalendar = parseVcalendar(decodeUtf8(binaryIcsString));
+                                if (!parsedVcalendar) {
                                     return;
                                 }
-                                return getSupportedEventInvitation(parsedInvitation, message.data);
+                                const supportedVcalendarData = await getSupportedVcalendarData(
+                                    parsedVcalendar,
+                                    message.data,
+                                    binaryIcsString,
+                                    attachment.Name || ''
+                                );
+                                return supportedVcalendarData;
                             } catch (error) {
                                 if (error instanceof EventInvitationError) {
                                     return error;
@@ -145,10 +161,30 @@ const ExtraEvents = ({ message }: Props) => {
                         })
                     )
                 ).filter(isTruthy);
+                const { uniqueInvitations } = invitations.reduce<{
+                    uniqueInvitations: (EventInvitation | EventInvitationError)[];
+                    uniqueUids: string[];
+                }>(
+                    (acc, invitation) => {
+                        const { uniqueInvitations, uniqueUids } = acc;
+                        if (invitation instanceof EventInvitationError) {
+                            uniqueInvitations.push(invitation);
+                            return acc;
+                        }
+                        const uid = invitation.originalUid || invitation.vevent.uid.value;
+                        if (uniqueUids.includes(uid)) {
+                            return acc;
+                        }
+                        uniqueUids.push(uid);
+                        uniqueInvitations.push(invitation);
+                        return acc;
+                    },
+                    { uniqueInvitations: [], uniqueUids: [] }
+                );
                 if (!isMounted()) {
                     return;
                 }
-                setInvitations(invitations);
+                setInvitations(uniqueInvitations);
             };
 
             void withLoadingWidget(run());

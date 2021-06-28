@@ -13,6 +13,8 @@ interface Props {
 const ExtraEventAlert = ({ model }: Props) => {
     const {
         isOrganizerMode,
+        isImport,
+        hasMultipleVevents,
         isOutdated,
         isPartyCrasher,
         invitationIcs: { method },
@@ -25,7 +27,7 @@ const ExtraEventAlert = ({ model }: Props) => {
     } = model;
     const isCancel = method === ICAL_METHOD.CANCEL;
 
-    if (isOutdated || isPartyCrasher) {
+    if (isOutdated || isPartyCrasher || (isImport && hasMultipleVevents)) {
         return null;
     }
 
@@ -63,7 +65,7 @@ const ExtraEventAlert = ({ model }: Props) => {
         if (isCancel) {
             return null;
         }
-        if (!isAddressActive) {
+        if (!isAddressActive && !isImport) {
             return (
                 <Alert type="warning">
                     <span className="mr0-5">{c('Info').t`You cannot reply from the invited address.`}</span>
@@ -110,6 +112,11 @@ const ExtraEventAlert = ({ model }: Props) => {
                 );
             }
         }
+        return null;
+    }
+
+    // for import we do not care about the state of the calendar where the event was saved
+    if (isImport) {
         return null;
     }
 

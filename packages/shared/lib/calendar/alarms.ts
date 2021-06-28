@@ -1,30 +1,28 @@
 import { differenceInMinutes } from 'date-fns';
+import { convertUTCDateTimeToZone, fromUTCDate, getTimezoneOffset, toUTCDate } from '../date/timezone';
+import { uniqueBy } from '../helpers/array';
+import { omit } from '../helpers/object';
 import { truncate } from '../helpers/string';
 import {
+    NotificationModel,
     VcalDateOrDateTimeProperty,
     VcalDateTimeProperty,
     VcalDurationValue,
     VcalTriggerProperty,
-    VcalValarmComponent,
     VcalValarmRelativeComponent,
     VcalVeventComponent,
-    DateTimeValue,
-    NotificationModel,
 } from '../interfaces/calendar';
-import { propertyToUTCDate } from './vcalConverter';
-import { getDisplayTitle } from './helper';
-import { convertUTCDateTimeToZone, fromUTCDate, getTimezoneOffset, toUTCDate } from '../date/timezone';
-import { getIsAllDay, getIsDateTimeValue, getIsPropertyAllDay } from './vcalHelper';
-import { getMillisecondsFromTriggerString } from './vcal';
-import { NOTIFICATION_UNITS, NOTIFICATION_UNITS_MAX, NOTIFICATION_WHEN, SETTINGS_NOTIFICATION_TYPE } from './constants';
-import { getValarmTrigger } from './getValarmTrigger';
-import { omit } from '../helpers/object';
-import { uniqueBy } from '../helpers/array';
+import { NOTIFICATION_UNITS, NOTIFICATION_WHEN, SETTINGS_NOTIFICATION_TYPE } from './constants';
 import getAlarmMessageText from './getAlarmMessageText';
+import { getValarmTrigger } from './getValarmTrigger';
+import { getDisplayTitle } from './helper';
+import { getMillisecondsFromTriggerString } from './vcal';
+import { propertyToUTCDate } from './vcalConverter';
+import { getIsAllDay, getIsPropertyAllDay } from './vcalHelper';
 
 const MINUTE = 60;
 const HOUR = 60 * MINUTE;
-const DAY = 24 * HOUR;
+export const DAY = 24 * HOUR;
 const WEEK = 7 * DAY;
 
 /**
@@ -78,10 +76,21 @@ export const getNextEventTime = ({ Occurrence, Trigger, tzid }: Params) => {
     return eventTime - offsetDifference * MINUTE * 1000;
 };
 
-const isAbsoluteTrigger = (trigger: VcalTriggerProperty): trigger is VcalDateTimeProperty => {
-    return (trigger as VcalDateTimeProperty).parameters?.type === 'date-time';
+/**
+ * Filter out future notifications
+ */
+export const filterFutureNotifications = (notifications: NotificationModel[]) => {
+    return notifications.filter(({ when, value }) => {
+        if (when === NOTIFICATION_WHEN.BEFORE) {
+            return true;
+        }
+        return value === 0;
+    });
 };
 
+export const isAbsoluteTrigger = (trigger: VcalTriggerProperty): trigger is VcalDateTimeProperty => {
+    return (trigger as VcalDateTimeProperty).parameters?.type === 'date-time';
+};
 const absoluteToRelative = (trigger: VcalDateTimeProperty, dtstart: VcalDateOrDateTimeProperty) => {
     const utcStartDate = propertyToUTCDate(dtstart);
     const triggerDate = propertyToUTCDate(trigger);
@@ -95,9 +104,9 @@ const absoluteToRelative = (trigger: VcalDateTimeProperty, dtstart: VcalDateOrDa
 };
 
 /**
- * If you export this function, notice unit has to be in seconds, not milliseconds
+ * If you import this function, notice unit has to be in seconds, not milliseconds
  */
-const normalizeDurationToUnit = (duration: Partial<VcalDurationValue>, unit: number) => {
+export const normalizeDurationToUnit = (duration: Partial<VcalDurationValue>, unit: number) => {
     const normalizedUnits = [
         Math.floor(((duration.weeks || 0) * WEEK) / unit),
         Math.floor(((duration.days || 0) * DAY) / unit),
@@ -131,85 +140,6 @@ export const normalizeTrigger = (trigger: VcalTriggerProperty, dtstart: VcalDate
         return { ...result, days: normalizeDurationToUnit(duration, DAY) };
     }
     return { ...result, weeks: normalizeDurationToUnit(duration, WEEK) };
-};
-
-/**
- * Determine if a VALARM component is correct according to the RFC
- */
-export const getIsValidAlarm = (alarm: VcalValarmComponent) => {
-    const { action, trigger, duration, repeat } = alarm;
-    if (!['AUDIO', 'DISPLAY', 'EMAIL'].includes(action?.value)) {
-        return false;
-    }
-    if (!trigger) {
-        return false;
-    }
-    // absolute triggers should have the right format
-    if (isAbsoluteTrigger(trigger) && !getIsDateTimeValue(trigger.value as DateTimeValue)) {
-        return false;
-    }
-    // duration and repeat must be both present or absent
-    if (+!duration ^ +!repeat) {
-        return false;
-    }
-    return true;
-};
-
-/**
- * Given a VALARM component, try to transform it into something that we support.
- * Return undefined otherwise
- */
-export const getSupportedAlarm = (
-    alarm: VcalValarmComponent,
-    dtstart: VcalDateOrDateTimeProperty
-): VcalValarmRelativeComponent | undefined => {
-    if (!getIsValidAlarm(alarm)) {
-        return;
-    }
-
-    const { trigger } = alarm;
-
-    if (!isAbsoluteTrigger(trigger) && trigger.parameters?.related?.toLocaleLowerCase() === 'end') {
-        return;
-    }
-    if (alarm.action.value === 'EMAIL') {
-        return;
-    }
-
-    const normalizedTrigger = normalizeTrigger(trigger, dtstart);
-    const triggerDurationInSeconds = normalizeDurationToUnit(normalizedTrigger, 1);
-
-    const inFuture = getIsPropertyAllDay(dtstart)
-        ? !normalizedTrigger.isNegative && triggerDurationInSeconds >= DAY
-        : !normalizedTrigger.isNegative && triggerDurationInSeconds !== 0;
-    const nonSupportedTrigger =
-        normalizedTrigger.seconds !== 0 ||
-        normalizedTrigger.minutes > NOTIFICATION_UNITS_MAX[NOTIFICATION_UNITS.MINUTES] ||
-        normalizedTrigger.hours > NOTIFICATION_UNITS_MAX[NOTIFICATION_UNITS.HOURS] ||
-        normalizedTrigger.days > NOTIFICATION_UNITS_MAX[NOTIFICATION_UNITS.DAY] ||
-        normalizedTrigger.weeks > NOTIFICATION_UNITS_MAX[NOTIFICATION_UNITS.WEEK];
-
-    if (inFuture || nonSupportedTrigger) {
-        return;
-    }
-
-    return {
-        component: 'valarm',
-        action: { value: 'DISPLAY' },
-        trigger: { value: normalizedTrigger },
-    };
-};
-
-/**
- * Filter out future notifications
- */
-export const filterFutureNotifications = (notifications: NotificationModel[]) => {
-    return notifications.filter(({ when, value }) => {
-        if (when === NOTIFICATION_WHEN.BEFORE) {
-            return true;
-        }
-        return value === 0;
-    });
 };
 
 /**

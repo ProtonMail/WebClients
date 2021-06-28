@@ -1,4 +1,4 @@
-import { generateUID } from '@proton/shared/lib/calendar/helper';
+import { generateProtonCalendarUID } from '@proton/shared/lib/calendar/helper';
 import { Api } from '@proton/shared/lib/interfaces';
 import { CalendarEventsCache } from '../interface';
 import getPaginatedEvents from '../getPaginatedEvents';
@@ -28,7 +28,7 @@ export const fetchCalendarEvents = (
     const { fetchCache, fetchTree } = calendarEventsCache;
 
     if (!existingFetch) {
-        const fetchId = generateUID();
+        const fetchId = generateProtonCalendarUID();
         const promise = getPaginatedEvents(api, calendarID, dateRange, tzid, (Event) =>
             upsertCalendarApiEvent(Event, calendarEventsCache)
         )

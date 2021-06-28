@@ -25,7 +25,7 @@ import {
 } from './constants';
 import { parse, serialize } from './vcal';
 import { dateTimeToProperty } from './vcalConverter';
-import { generateUID, hasMoreThan, wrap } from './helper';
+import { generateProtonCalendarUID, hasMoreThan, wrap } from './helper';
 import { getEventStatus, getIsCalendar, getIsEventComponent } from './vcalHelper';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
@@ -53,7 +53,7 @@ export const withUid = <T>(properties: VcalVeventComponent & T): VcalVeventCompo
     }
     return {
         ...properties,
-        uid: { value: generateUID() },
+        uid: { value: generateProtonCalendarUID() },
     };
 };
 
