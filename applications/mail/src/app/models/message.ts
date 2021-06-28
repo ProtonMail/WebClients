@@ -227,6 +227,11 @@ export interface MessageExtended {
      * Desired time for schedule send (timestamp)
      */
     scheduledAt?: number;
+
+    /**
+     * Flag for draft that has already been sent
+     */
+    isSentDraft?: boolean;
 }
 
 /**

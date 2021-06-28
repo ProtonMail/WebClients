@@ -12,6 +12,7 @@ import { useSendVerifications } from './useSendVerifications';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { MapSendInfo } from '../../models/crypto';
 import { useMessageCache } from '../../containers/MessageProvider';
+import { SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES, SEND_VERIFICATION_ERRORS } from '../../constants';
 
 export interface UseSendHandlerParameters {
     modelMessage: MessageExtended;
@@ -22,6 +23,7 @@ export interface UseSendHandlerParameters {
     autoSave: ((message: MessageExtended) => Promise<void>) & Abortable;
     addAction: <T>(action: MessageAction<T>) => Promise<T>;
     onClose: () => void;
+    onMessageAlreadySent: () => void;
 }
 
 export const useSendHandler = ({
@@ -33,6 +35,7 @@ export const useSendHandler = ({
     autoSave,
     addAction,
     onClose,
+    onMessageAlreadySent,
 }: UseSendHandlerParameters) => {
     const { createNotification, hideNotification } = useNotifications();
 
@@ -60,9 +63,26 @@ export const useSendHandler = ({
 
         await addAction(async () => {
             try {
-                await sendMessage(cleanMessage, mapSendPrefs, onCompose, alreadySaved, notifManager);
+                await sendMessage({
+                    inputMessage: cleanMessage,
+                    mapSendPrefs,
+                    onCompose,
+                    alreadySaved,
+                    sendingMessageNotificationManager: notifManager,
+                    useSilentApi: true,
+                });
             } catch (error) {
                 hideNotification(notifManager.ID);
+
+                if (
+                    [SAVE_DRAFT_ERROR_CODES.MESSAGE_ALREADY_SENT, SEND_EMAIL_ERROR_CODES.MESSAGE_ALREADY_SENT].includes(
+                        error.data.Code
+                    )
+                ) {
+                    onMessageAlreadySent();
+                    throw error;
+                }
+
                 createNotification({
                     text: c('Error').t`Error while sending the message. Message is not sent`,
                     type: 'error',
@@ -79,7 +99,14 @@ export const useSendHandler = ({
 
         // If scheduledAt is set we already performed the preliminary verifications
         if (!scheduledAt) {
-            await preliminaryVerifications(modelMessage as MessageExtendedWithData);
+            try {
+                await preliminaryVerifications(modelMessage as MessageExtendedWithData);
+            } catch (error) {
+                if (error.message === SEND_VERIFICATION_ERRORS.MESSAGE_ALREADY_SENT) {
+                    onMessageAlreadySent();
+                    throw error;
+                }
+            }
         }
 
         // Display growler to receive direct feedback (UX) since sendMessage function is added to queue (and other async process could need to complete first)

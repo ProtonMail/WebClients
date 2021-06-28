@@ -142,9 +142,14 @@ export const updateMessage = async (
             messageKeys.publicKeys
         );
     }
-    const { Message: updatedMessage } = await api(
-        updateDraft(message.data?.ID, { ...message.data, Body, ...removePasswordFromRequests }, AttachmentKeyPackets)
-    );
+    const { Message: updatedMessage } = await api({
+        ...updateDraft(
+            message.data?.ID,
+            { ...message.data, Body, ...removePasswordFromRequests },
+            AttachmentKeyPackets
+        ),
+        silence: true,
+    });
     return updatedMessage;
 };
 
