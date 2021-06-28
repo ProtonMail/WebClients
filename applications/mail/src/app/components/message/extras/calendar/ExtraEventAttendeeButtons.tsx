@@ -7,6 +7,11 @@ import { Participant, SavedInviteData } from '@proton/shared/lib/interfaces/cale
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
 import { formatSubject, RE_PREFIX } from '@proton/shared/lib/mail/messages';
+import {
+    EVENT_INVITATION_ERROR_TYPE,
+    EventInvitationError,
+    getErrorMessage,
+} from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import React, { useCallback, Dispatch, SetStateAction } from 'react';
 import {
     Icon,
@@ -17,11 +22,6 @@ import {
     CalendarInviteButtons,
 } from '@proton/components';
 import { c } from 'ttag';
-import {
-    EVENT_INVITATION_ERROR_TYPE,
-    EventInvitationError,
-    getErrorMessage,
-} from '../../../../helpers/calendar/EventInvitationError';
 import { getIsPmInvite, getIsReinvite, InvitationModel, UPDATE_ACTION } from '../../../../helpers/calendar/invite';
 import useInviteButtons from '../../../../hooks/useInviteButtons';
 import { MessageExtended } from '../../../../models/message';

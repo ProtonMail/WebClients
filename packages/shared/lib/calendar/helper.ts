@@ -1,18 +1,74 @@
 import getRandomValues from '@proton/get-random-values';
+import { arrayToHexString, binaryStringToArray, unsafeSHA1 } from 'pmcrypto';
 import { c } from 'ttag';
+import { API_CODES } from '../constants';
 import { getDaysInMonth } from '../date-fns-utc';
 import { encodeBase64URL, uint8ArrayToString } from '../helpers/encoding';
+import {
+    SyncMultipleApiResponses,
+    SyncMultipleApiSuccessResponses,
+    VcalDateOrDateTimeProperty,
+    VcalDateTimeProperty,
+    VcalUidProperty,
+} from '../interfaces/calendar';
+import { MAX_LENGTHS, MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC } from './constants';
+import { propertyToUTCDate } from './vcalConverter';
+import { getIsPropertyAllDay } from './vcalHelper';
+
+export const HASH_UID_PREFIX = 'sha1-uid-';
+export const ORIGINAL_UID_PREFIX = '-original-uid-';
+
+export const getIsSuccessSyncApiResponse = (
+    response: SyncMultipleApiResponses
+): response is SyncMultipleApiSuccessResponses => {
+    const {
+        Response: { Code, Event },
+    } = response;
+    return Code === API_CODES.SINGLE_SUCCESS && !!Event;
+};
 
 /**
  * Generates a calendar UID of the form 'RandomBase64String@proton.me'
  * RandomBase64String has a length of 28 characters
  */
-export const generateUID = () => {
+export const generateProtonCalendarUID = () => {
     // by convention we generate 21 bytes of random data
     const randomBytes = getRandomValues(new Uint8Array(21));
     const base64String = encodeBase64URL(uint8ArrayToString(randomBytes));
     // and we encode them in base 64
     return `${base64String}@proton.me`;
+};
+
+export const generateVeventHashUID = async (binaryString: string, uid = '') => {
+    const hash = arrayToHexString(await unsafeSHA1(binaryStringToArray(binaryString)));
+    if (!uid) {
+        return `${HASH_UID_PREFIX}${hash}`;
+    }
+    const sandwichedHash = `${HASH_UID_PREFIX}${hash}${ORIGINAL_UID_PREFIX}`;
+    const uidLength = uid.length;
+    const availableLength = MAX_LENGTHS.UID - sandwichedHash.length;
+    const croppedUID = uid.substring(uidLength - availableLength, uidLength);
+    return `${sandwichedHash}${croppedUID}`;
+};
+
+export const getSupportedUID = (uid: VcalUidProperty) => {
+    // The API does not accept UIDs longer than 191 characters
+    const uidLength = uid.value.length;
+    const croppedUID = uid.value.substring(uidLength - MAX_LENGTHS.UID, uidLength);
+    return { value: croppedUID };
+};
+
+const getIsWellFormedDateTime = (property: VcalDateTimeProperty) => {
+    return property.value.isUTC || !!property.parameters!.tzid;
+};
+
+export const getIsWellFormedDateOrDateTime = (property: VcalDateOrDateTimeProperty) => {
+    return getIsPropertyAllDay(property) || getIsWellFormedDateTime(property);
+};
+
+export const getIsDateOutOfBounds = (property: VcalDateOrDateTimeProperty) => {
+    const dateUTC: Date = propertyToUTCDate(property);
+    return +dateUTC < +MINIMUM_DATE_UTC || +dateUTC > +MAXIMUM_DATE_UTC;
 };
 
 /**

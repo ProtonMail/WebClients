@@ -11,9 +11,9 @@ import {
     EncryptedEvent,
     IMPORT_STEPS,
     ImportCalendarModel,
-    StoredEncryptedEvent,
+    ImportedEvent,
 } from '@proton/shared/lib/interfaces/calendar';
-import { ImportEventError } from '@proton/shared/lib/calendar/import/ImportEventError';
+import { ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
 import { extractTotals, processInBatches } from '@proton/shared/lib/calendar/import/encryptAndSubmit';
 
 import { Alert, DynamicProgress } from '../../../components';
@@ -22,7 +22,7 @@ import { useApi, useBeforeUnload, useGetCalendarInfo } from '../../../hooks';
 interface Props {
     model: ImportCalendarModel;
     setModel: Dispatch<SetStateAction<ImportCalendarModel>>;
-    onFinish: (result: StoredEncryptedEvent[]) => void;
+    onFinish: (result: ImportedEvent[]) => void;
 }
 const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
     const api = useApi();
@@ -71,7 +71,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                     signal,
                     onProgress: handleImportProgress,
                 };
-                const importedEvents = await processInBatches(processData);
+                const { importedEvents } = await processInBatches(processData);
                 const formattedEventsWithRecurrenceId = await getSupportedEventsWithRecurrenceId({
                     eventsWithRecurrenceId: withRecurrenceId,
                     parentEvents: importedEvents,
@@ -80,7 +80,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 });
                 const { errors, rest: supportedEventsWithRecurrenceID } = splitErrors(formattedEventsWithRecurrenceId);
                 handleImportProgress([], [], errors);
-                const recurrenceImportedEvents = await processInBatches({
+                const { importedEvents: recurrenceImportedEvents } = await processInBatches({
                     ...processData,
                     events: supportedEventsWithRecurrenceID,
                 });

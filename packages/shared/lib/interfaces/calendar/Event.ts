@@ -14,6 +14,7 @@ import {
     WEEKLY_TYPE,
     YEARLY_TYPE,
 } from '../../calendar/constants';
+import { API_CODES } from '../../constants';
 import { pick } from '../../helpers/object';
 import { Address } from '../Address';
 import { NotificationModel } from './Notification';
@@ -77,6 +78,14 @@ export interface CalendarEvent extends CalendarEventSharedData, CalendarEventBlo
 export interface CalendarEventWithMetadata extends CalendarEvent, CalendarEventMetadata {}
 
 export interface CalendarEventWithoutBlob extends CalendarEventSharedData, CalendarEventMetadata {}
+
+export interface SyncMultipleApiSuccessResponses {
+    Index: number;
+    Response: {
+        Code: API_CODES.SINGLE_SUCCESS;
+        Event: CalendarEvent;
+    };
+}
 
 export interface SyncMultipleApiResponses {
     Index: number;
