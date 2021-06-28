@@ -31,6 +31,10 @@ const TimeOutOfSyncTopBanner = () => {
         onceRef.current = true;
         captureMessage('Client time difference larger than 24 hours', {
             level: Severity.Info,
+            extra: {
+                serverTime: serverTime!.toString(),
+                localTime: new Date().toString(),
+            },
         });
     }, [showWarning]);
 
