@@ -19,7 +19,7 @@ import {
 } from '../../../../../components';
 
 import { ImportMailModalModel, MailImportFolder, DestinationFolder, IMPORT_ERROR } from '../../interfaces';
-import { IMAPS, timeUnitLabels } from '../../constants';
+import { IMAPS, MAX_FOLDER_LIMIT, timeUnitLabels } from '../../constants';
 import {
     escapeSlashes,
     getFolderRelationshipsMap,
@@ -85,7 +85,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
     );
 
     const showMaxFoldersError = useMemo(
-        () => selectedFolders.length + folders.length >= 500,
+        () => selectedFolders.length + folders.length >= MAX_FOLDER_LIMIT,
         [selectedFolders, folders]
     );
 
