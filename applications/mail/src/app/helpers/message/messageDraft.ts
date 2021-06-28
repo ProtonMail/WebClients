@@ -207,9 +207,12 @@ export const createNewDraft = (
 
     const ParentID = action === MESSAGE_ACTIONS.NEW ? undefined : referenceMessage?.data?.ID;
 
-    let content =
-        action === MESSAGE_ACTIONS.NEW ? '' : generateBlockquote(referenceMessage || {}, mailSettings, addresses);
-    content = insertSignature(content, senderAddress?.Signature, action, mailSettings);
+    let content = referenceMessage?.decryptedBody
+        ? referenceMessage?.decryptedBody
+        : action === MESSAGE_ACTIONS.NEW
+        ? ''
+        : generateBlockquote(referenceMessage || {}, mailSettings, addresses);
+    content = insertSignature(content, senderAddress?.Signature, action, mailSettings, true);
 
     const plain = isPlainText({ MIMEType });
     const document = plain ? undefined : parseInDiv(content);

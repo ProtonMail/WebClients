@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback, useRef, memo } from 'react';
+import React, { useState, useMemo, useEffect, useCallback, useRef, memo } from 'react';
 import { History, Location } from 'history';
 import { PrivateMainArea, useCalendars, useCalendarUserSettings, useItemsSelection } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -25,6 +25,7 @@ import List from '../../components/list/List';
 import ConversationView from '../../components/conversation/ConversationView';
 import PlaceholderView from '../../components/view/PlaceholderView';
 import MessageOnlyView from '../../components/message/MessageOnlyView';
+import { MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM } from '../../constants';
 import { isMessage, isSearch as testIsSearch } from '../../helpers/elements';
 import { Breakpoints } from '../../models/utils';
 import { useWelcomeFlag } from '../../hooks/mailbox/useWelcomeFlag';
@@ -33,10 +34,10 @@ import { useDeepMemo } from '../../hooks/useDeepMemo';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElementsCache';
 import { useMailboxHotkeys } from '../../hooks/mailbox/useMailboxHotkeys';
 import { useMailboxFocus } from '../../hooks/mailbox/useMailboxFocus';
+import { useOnCompose, useOnMailTo } from '../ComposeProvider';
 import { useEncryptedSearchContext } from '../EncryptedSearchProvider';
 
 import './MailboxContainer.scss';
-import { useOnCompose } from '../ComposeProvider';
 
 interface Props {
     labelID: string;
@@ -70,6 +71,21 @@ const MailboxContainer = ({
     const columnLayout = columnModeSetting || forceRowMode;
 
     const messageContainerRef = useRef<HTMLElement>(null);
+
+    const onMailTo = useOnMailTo();
+
+    // Open a composer when the url contains a mailto query
+    useEffect(() => {
+        if (location.search) {
+            const searchParams = location.search.substring(1).split('&');
+            searchParams.forEach((param) => {
+                const pair = param.split('=');
+                if (pair[0] === MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM) {
+                    onMailTo(decodeURIComponent(pair[1]));
+                }
+            });
+        }
+    }, [location.search]);
 
     const page = pageFromUrl(location);
     const searchParams = getSearchParams(location.hash);
