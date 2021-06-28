@@ -96,8 +96,8 @@ const PopoverEventContent = ({
     const calendarString = useMemo(() => {
         if (isCalendarDisabled) {
             const disabledText = <span className="text-italic">({c('Disabled calendar').t`Disabled`})</span>;
-            const tooltipText = c('Disabled calendar')
-                .t`The event belongs to a disabled calendar and you cannot modify it.`;
+            const tooltipText = c('Disabled calendar tooltip')
+                .t`The event belongs to a disabled calendar.`;
             return (
                 <>
                     <span className="text-ellipsis flex-item-fluid-auto flex-item-nogrow mr0-5" title={calendarName}>
