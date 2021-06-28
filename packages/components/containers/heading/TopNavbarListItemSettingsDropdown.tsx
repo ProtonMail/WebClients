@@ -90,8 +90,8 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
                         onClick={handleEarlyAccessClick}
                         className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
                     >
-                        {c('Action').t`Beta Access`}
-                        <span className="color-primary ml1">
+                        <span className="flex-item-fluid text-left">{c('Action').t`Beta Access`}</span>
+                        <span className="color-primary ml0-5">
                             {earlyAccess.value ? c('Enabled').t`On` : c('Disabled').t`Off`}
                         </span>
                     </DropdownMenuButton>
@@ -101,8 +101,8 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
                     onClick={handleThemeClick}
                     className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
                 >
-                    {c('Action').t`Theme`}
-                    <span className="color-primary ml1">{PROTON_THEMES[theme].getI18NLabel()}</span>
+                    <span className="flex-item-fluid text-left">{c('Action').t`Theme`}</span>
+                    <span className="color-primary ml0-5">{PROTON_THEMES[theme].getI18NLabel()}</span>
                 </DropdownMenuButton>
                 {APP_NAME === APPS.PROTONMAIL && (
                     <>
@@ -111,8 +111,8 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
                             onClick={handleKeyboardShortcutsClick}
                             className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
                         >
-                            {c('Action').t`Keyboard shortcuts`}
-                            <span className="color-primary ml1">
+                            <span className="flex-item-fluid text-left">{c('Action').t`Keyboard shortcuts`}</span>
+                            <span className="color-primary ml0-5">
                                 {Shortcuts ? c('Enabled').t`On` : c('Disabled').t`Off`}
                             </span>
                         </DropdownMenuButton>
@@ -120,8 +120,8 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
                             onClick={handleViewLayoutClick}
                             className="flex flex-nowrap flex-justify-space-between flex-align-items-center no-mobile"
                         >
-                            {c('Action').t`Mailbox layout`}
-                            <span className="color-primary ml1">
+                            <span className="flex-item-fluid text-left">{c('Action').t`Mailbox layout`}</span>
+                            <span className="color-primary ml0-5">
                                 {ViewLayout === VIEW_LAYOUT.COLUMN
                                     ? c('Layout mode').t`Column`
                                     : c('Layout mode').t`Row`}
@@ -131,8 +131,8 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
                             onClick={handleDensityClick}
                             className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
                         >
-                            {c('Action').t`Mailbox density`}
-                            <span className="color-primary ml1">
+                            <span className="flex-item-fluid text-left">{c('Action').t`Mailbox density`}</span>
+                            <span className="color-primary flex-item-noshrink ml0-5">
                                 {Density === DENSITY.COMFORTABLE
                                     ? c('Density mode').t`Comfortable`
                                     : c('Density mode').t`Compact`}
@@ -142,8 +142,8 @@ const TopNavbarListItemSettingsDropdown = (props: Props) => {
                             onClick={handleComposerModeClick}
                             className="flex flex-nowrap flex-justify-space-between flex-align-items-center no-mobile"
                         >
-                            {c('Action').t`Composer mode`}
-                            <span className="color-primary ml1">
+                            <span className="flex-item-fluid text-left">{c('Action').t`Composer mode`}</span>
+                            <span className="color-primary ml0-5">
                                 {ComposerMode === COMPOSER_MODE.MAXIMIZED
                                     ? c('Composer mode').t`Maximized`
                                     : c('Composer mode').t`Normal`}
