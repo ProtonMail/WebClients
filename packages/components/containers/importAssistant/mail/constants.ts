@@ -9,6 +9,8 @@ export const timeUnitLabels = {
     [TIME_UNIT.LAST_MONTH]: c('Label').t`Last month only`,
 };
 
+export const MAX_FOLDER_LIMIT = 2000;
+
 export const IMAPS = {
     [OAUTH_PROVIDER.GOOGLE]: 'imap.gmail.com',
     YAHOO: 'imap.mail.yahoo.com',
