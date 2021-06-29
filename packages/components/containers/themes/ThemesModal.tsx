@@ -7,7 +7,7 @@ import { FormModal } from '../../components';
 import { useApi } from '../../hooks';
 import { ThemeCards, useTheme } from '.';
 
-const availableThemes = Object.values(PROTON_THEMES);
+const themes = Object.values(PROTON_THEMES);
 
 const ThemesModal = (props: { onClose?: () => void }) => {
     const api = useApi();
@@ -21,10 +21,6 @@ const ThemesModal = (props: { onClose?: () => void }) => {
     const handleSubmit = () => {
         props.onClose?.();
     };
-
-    const themes = availableThemes.map(({ identifier, getI18NLabel, src }) => {
-        return { identifier, label: getI18NLabel(), src };
-    });
 
     return (
         <FormModal {...props} intermediate close={null} submit={c('Action').t`OK`} onSubmit={handleSubmit}>
