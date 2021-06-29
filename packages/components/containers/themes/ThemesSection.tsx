@@ -10,15 +10,11 @@ import { SettingsSectionWide, SettingsParagraph } from '../account';
 import ThemeCards from './ThemeCards';
 import { useTheme } from './ThemeProvider';
 
-const availableThemes = Object.values(PROTON_THEMES);
+const themes = Object.values(PROTON_THEMES);
 
 const ThemesSection = () => {
     const api = useApi();
     const [theme, setTheme] = useTheme();
-
-    const themes = availableThemes.map(({ identifier, getI18NLabel, src }) => {
-        return { identifier, label: getI18NLabel(), src };
-    });
 
     const handleThemeChange = (newThemeType: ThemeTypes) => {
         setTheme(newThemeType);

@@ -17,8 +17,6 @@ import contrastTheme from '@proton/styles/scss/themes/contrast-theme.scss';
 import themeLegacySvg from '@proton/styles/assets/img/themes/theme-legacy.svg';
 import legacyTheme from '@proton/styles/scss/themes/legacy-theme.scss';
 
-import { c } from 'ttag';
-
 export enum ThemeTypes {
     Default = 0,
     Dark = 1,
@@ -30,37 +28,37 @@ export enum ThemeTypes {
 
 export const PROTON_THEMES = {
     [ThemeTypes.Default]: {
-        getI18NLabel: () => c('Theme').t`Proton`,
+        label: 'Proton',
         identifier: ThemeTypes.Default,
         src: themeDefaultSvg,
         theme: defaultTheme.toString(),
     },
     [ThemeTypes.Dark]: {
-        getI18NLabel: () => c('Theme').t`Carbon`,
+        label: 'Carbon',
         identifier: ThemeTypes.Dark,
         src: themeDarkSvg,
         theme: darkTheme.toString(),
     },
     [ThemeTypes.Light]: {
-        getI18NLabel: () => c('Theme').t`Snow`,
+        label: 'Snow',
         identifier: ThemeTypes.Light,
         src: themeLightSvg,
         theme: lightTheme.toString(),
     },
     [ThemeTypes.Monokai]: {
-        getI18NLabel: () => c('Theme').t`Monokai`,
+        label: 'Monokai',
         identifier: ThemeTypes.Monokai,
         src: themeMonokaiSvg,
         theme: monokaiTheme.toString(),
     },
     [ThemeTypes.Contrast]: {
-        getI18NLabel: () => c('Theme').t`Contrast`,
+        label: 'Contrast',
         identifier: ThemeTypes.Contrast,
         src: themeContrastSvg,
         theme: contrastTheme.toString(),
     },
     [ThemeTypes.Legacy]: {
-        getI18NLabel: () => c('Theme').t`Legacy`,
+        label: 'Legacy',
         identifier: ThemeTypes.Legacy,
         src: themeLegacySvg,
         theme: legacyTheme.toString(),
