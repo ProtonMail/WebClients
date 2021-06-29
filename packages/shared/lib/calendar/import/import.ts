@@ -182,26 +182,25 @@ export const getSupportedEvents = async ({
     const hasXWrTimezone = !!xWrTimezone;
     const calendarTzid = xWrTimezone ? getSupportedTimezone(xWrTimezone) : undefined;
     const guessTzid = extractGuessTzid(components);
-    return Promise.all(
-        components
-            .map(async (vcalComponent) => {
-                try {
-                    const supportedEvent = await extractSupportedEvent({
-                        vcalComponent,
-                        calendarTzid,
-                        hasXWrTimezone,
-                        guessTzid,
-                    });
-                    return supportedEvent;
-                } catch (e) {
-                    if (e instanceof ImportEventError && e.type === IMPORT_EVENT_ERROR_TYPE.TIMEZONE_IGNORE) {
-                        return;
-                    }
-                    return e;
+    const supportedEvents = await Promise.all(
+        components.map(async (vcalComponent) => {
+            try {
+                const supportedEvent = await extractSupportedEvent({
+                    vcalComponent,
+                    calendarTzid,
+                    hasXWrTimezone,
+                    guessTzid,
+                });
+                return supportedEvent;
+            } catch (e) {
+                if (e instanceof ImportEventError && e.type === IMPORT_EVENT_ERROR_TYPE.TIMEZONE_IGNORE) {
+                    return;
                 }
-            })
-            .filter(isTruthy)
+                return e;
+            }
+        })
     );
+    return supportedEvents.filter(isTruthy);
 };
 
 /**
