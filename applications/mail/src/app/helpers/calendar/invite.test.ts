@@ -109,7 +109,12 @@ END:VCALENDAR`;
         const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
         const message = { Time: Math.round(Date.now() / 1000) } as Message;
         await expect(
-            getSupportedVcalendarData(parsedInvitation, message, invitation, 'test.ics')
+            getSupportedVcalendarData({
+                vcalComponent: parsedInvitation,
+                message,
+                icsBinaryString: invitation,
+                icsFileName: 'test.ics',
+            })
         ).rejects.toMatchObject(
             new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: ICAL_METHOD.REQUEST })
         );

@@ -140,17 +140,17 @@ const ExtraEvents = ({ message }: Props) => {
                                 if (download.isError) {
                                     return new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.DECRYPTION_ERROR);
                                 }
-                                const binaryIcsString = arrayToBinaryString(download.data);
-                                const parsedVcalendar = parseVcalendar(decodeUtf8(binaryIcsString));
+                                const icsBinaryString = arrayToBinaryString(download.data);
+                                const parsedVcalendar = parseVcalendar(decodeUtf8(icsBinaryString));
                                 if (!parsedVcalendar) {
                                     return;
                                 }
-                                const supportedVcalendarData = await getSupportedVcalendarData(
-                                    parsedVcalendar,
-                                    message.data,
-                                    binaryIcsString,
-                                    attachment.Name || ''
-                                );
+                                const supportedVcalendarData = await getSupportedVcalendarData({
+                                    vcalComponent: parsedVcalendar,
+                                    message: message.data,
+                                    icsBinaryString,
+                                    icsFileName: attachment.Name || '',
+                                });
                                 return supportedVcalendarData;
                             } catch (error) {
                                 if (error instanceof EventInvitationError) {
