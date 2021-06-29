@@ -66,7 +66,7 @@ import { LinkKeys, useDriveCache } from '../../components/DriveCache/DriveCacheP
 import { useDriveEventManager, ShareEvent } from '../../components/DriveEventManager/DriveEventManagerProvider';
 import { GLOBAL_FORBIDDEN_CHARACTERS } from '../../utils/link';
 
-const { CREATE, DELETE, UPDATE_METADATA } = EVENT_TYPES;
+const { CREATE, DELETE, UPDATE, UPDATE_METADATA } = EVENT_TYPES;
 
 export interface FetchLinkConfig {
     fetchLinkMeta?: (id: string) => Promise<LinkMeta>;
@@ -864,7 +864,7 @@ function useDrive() {
                             }
                         }
 
-                        if (EventType === UPDATE_METADATA) {
+                        if (EventType === UPDATE || EventType === UPDATE_METADATA) {
                             if (Link.Trashed) {
                                 actions.trash.push(decryptedLinkPromise);
                             } else {

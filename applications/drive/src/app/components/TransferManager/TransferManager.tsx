@@ -35,6 +35,7 @@ const STATE_TO_GROUP_MAP = {
     [TransferState.Done]: TRANSFER_GROUP.DONE,
     [TransferState.Error]: TRANSFER_GROUP.DONE,
     [TransferState.Initializing]: TRANSFER_GROUP.QUEUED,
+    [TransferState.Conflict]: TRANSFER_GROUP.QUEUED,
     [TransferState.Pending]: TRANSFER_GROUP.QUEUED,
 };
 

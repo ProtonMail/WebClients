@@ -65,7 +65,7 @@ function ItemCell({
                 return contents;
             }).catch(console.error);
         }
-    }, []);
+    }, [item.ModifyTime]); // Reload thumbnail when file changes.
 
     return (
         <div className={classnames(['flex flex-col', className])} style={style}>
