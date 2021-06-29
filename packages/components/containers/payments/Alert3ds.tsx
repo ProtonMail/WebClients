@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 import React from 'react';
 import americanExpressSafekeySvg from '@proton/styles/assets/img/bank-icons/amex-safekey.svg';
-import discoverProtectBuySvg from '@proton/styles/assets/img/bank-icons/discover-protectbuy.svg';
 import mastercardSecurecodeSvg from '@proton/styles/assets/img/bank-icons/mastercard-securecode.svg';
 import verifiedByVisaSvg from '@proton/styles/assets/img/bank-icons/visa-secure.svg';
 
@@ -12,7 +11,6 @@ const Alert3ds = () => {
             <div className="flex flex-nowrap flex-align-items-center">
                 <img height="44" alt="" className="mr1" src={verifiedByVisaSvg} />
                 <img height="44" alt="" className="mr1" src={mastercardSecurecodeSvg} />
-                <img height="44" alt="" className="mr1" src={discoverProtectBuySvg} />
                 <img height="44" alt="" className="mr1" src={americanExpressSafekeySvg} />
             </div>
         </div>
