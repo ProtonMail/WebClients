@@ -18,7 +18,7 @@ import { forceSend } from '@proton/shared/lib/api/messages';
 import { MessageExtended, PartialMessageExtended } from '../../models/message';
 import { useDraft } from '../useDraft';
 import { isDirtyAddress } from '../../helpers/addresses';
-import { useMessageCache, getLocalID } from '../../containers/MessageProvider';
+import { useMessageCache, getLocalID, updateMessageCache } from '../../containers/MessageProvider';
 import { MESSAGE_ACTIONS } from '../../constants';
 
 export interface ComposeExisting {
@@ -123,25 +123,39 @@ export const useCompose = (
             const { existingDraft, fromUndo } = composeExisting;
             const localID = getLocalID(messageCache, existingDraft.localID);
 
-            const existingMessage = messageCache.get(localID);
-
-            if (existingMessage) {
-                // Plaintext drafts have a different sanitization as plaintext mail content
-                // So we have to restart the sanitization process on a cached draft
-                // Should be needed only for undo but safer to do it for all plaintext drafts
-                if (isDraft(existingDraft.data)) {
-                    existingMessage.initialized = undefined;
-                    existingMessage.plainText = undefined;
-                }
-                existingMessage.openDraftFromUndo = fromUndo;
-                existingMessage.inComposer = true;
-            }
-
             const existingMessageID = openComposers.find((id) => id === localID);
 
             if (existingMessageID) {
                 focusComposer(existingMessageID);
                 return;
+            }
+
+            const existingMessage = messageCache.get(localID);
+
+            if (existingMessage?.inComposer === true) {
+                focusComposer(existingMessage.localID);
+                return;
+            }
+
+            if (existingMessage) {
+                // Plaintext drafts have a different sanitization as plaintext mail content
+                // So we have to restart the sanitization process on a cached draft
+                // Should be needed only for undo but safer to do it for all plaintext drafts
+                let initPlainText = {};
+                if (isDraft(existingDraft.data)) {
+                    initPlainText = { initialized: undefined, plainText: undefined };
+                }
+                updateMessageCache(messageCache, localID, {
+                    ...initPlainText,
+                    openDraftFromUndo: fromUndo,
+                    inComposer: true,
+                });
+            } else {
+                messageCache.set(localID, {
+                    localID,
+                    openDraftFromUndo: fromUndo,
+                    inComposer: true,
+                });
             }
 
             openComposer(localID, returnFocusTo);
