@@ -1,4 +1,3 @@
-const path = require('path');
 const del = require('del');
 const execa = require('execa');
 
@@ -9,7 +8,7 @@ const { debug } = require('../helpers/log')('proton-bundler');
 
 function main({
     argv,
-    config: { buildMode, isRemoteBuild, PKG },
+    config: { buildMode, isRemoteBuild },
     hookPreTasks,
     customConfigSetup,
     hookPostTaskBuild,
@@ -99,25 +98,6 @@ function main({
             },
         },
         ...hookPostTaskBuild,
-        {
-            title: 'Generate the version info',
-            task(ctx) {
-                const { tag = `v${PKG.version}`, originCommit, originBranch } = ctx || {};
-                const fileName = path.join('dist', 'assets/version.json');
-                const version = PKG['version-beta'] || tag; // custom version for v4
-
-                const args = [
-                    `--tag ${version}`,
-                    `--commit ${originCommit}`,
-                    `--branch ${originBranch}`,
-                    `--output ${fileName}`,
-                    `--build-mode ${buildMode}`,
-                    '--debug',
-                ];
-
-                return script('createVersionJSON.sh', args);
-            },
-        },
         ...hookPostTasks,
     ];
 }

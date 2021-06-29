@@ -10,7 +10,8 @@ export interface ProtonConfig {
     LOCALES: { [key: string]: string };
     API_VERSION: string;
     DATE_VERSION: string;
-    COMMIT_RELEASE: string;
+    COMMIT: string;
+    BRANCH: string;
     SENTRY_DSN: string;
     VERSION_PATH: string;
 }
