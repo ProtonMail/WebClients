@@ -134,7 +134,6 @@ const getApi = (api) => {
 function main({ api = 'dev' }) {
     const { url: apiUrl } = getApi(api);
     const json = {
-        clientId: ENV_CONFIG.app.clientId || 'WebMail',
         appName: ENV_CONFIG.app.appName || ENV_CONFIG.pkg.name || 'protonmail',
         version: ENV_CONFIG.app.version || ENV_CONFIG.pkg.version || '4.9.99',
         locales: LOCALES,
@@ -149,7 +148,6 @@ function main({ api = 'dev' }) {
     const PUBLIC_APP_PATH = getPublicPath(argv);
 
     const config = dedent`
-    export const CLIENT_ID = '${json.clientId}';
     export const CLIENT_TYPE = ${ENV_CONFIG.app.clientType || 1};
     export const CLIENT_SECRET = '${ENV_CONFIG.app.clientSecret || ''}';
     export const APP_VERSION = '${json.version}';
@@ -158,7 +156,6 @@ function main({ api = 'dev' }) {
     export const LOCALES = ${JSON.stringify(LOCALES)};
     export const API_VERSION = '3';
     export const DATE_VERSION = '${new Date().toGMTString()}';
-    export const CHANGELOG_PATH = '${PUBLIC_APP_PATH}assets/changelog.tpl.html';
     export const VERSION_PATH = '${PUBLIC_APP_PATH}assets/version.json';
     export const COMMIT_RELEASE = '${COMMIT_RELEASE}';
     export const SENTRY_DSN = '${SENTRY_DSN}';
