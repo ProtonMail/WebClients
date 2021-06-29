@@ -7,6 +7,7 @@ import {
     ICAL_ATTENDEE_STATUS,
     ICAL_EXTENSIONS,
     ICAL_METHOD,
+    ICAL_METHODS_ATTENDEE,
 } from '@proton/shared/lib/calendar/constants';
 import { generateVeventHashUID } from '@proton/shared/lib/calendar/helper';
 import { getSupportedEvent } from '@proton/shared/lib/calendar/icsSurgery/vevent';
@@ -14,7 +15,12 @@ import { findAttendee, getParticipant, getSelfAddressData } from '@proton/shared
 import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurring';
 
 import { parseWithErrors } from '@proton/shared/lib/calendar/vcal';
-import { dateTimeToProperty, getDtendProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
+import {
+    buildVcalOrganizer,
+    dateTimeToProperty,
+    getDtendProperty,
+    propertyToUTCDate,
+} from '@proton/shared/lib/calendar/vcalConverter';
 import {
     getHasDtStart,
     getHasRecurrenceId,
@@ -577,11 +583,17 @@ export const getSupportedVcalendarData = async (
     if (!getIsEventInvitationValid(vevent)) {
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: supportedMethod });
     }
-    const veventWithUidAndSequence = withOutsideUIDAndSequence(vevent, vcal);
-    const originalUid = veventWithUidAndSequence.uid?.value;
+    const completeVevent = withOutsideUIDAndSequence(vevent, vcal);
+    const originalUid = completeVevent.uid?.value;
     if (supportedMethod === ICAL_METHOD.PUBLISH) {
         const sha1Uid = await generateVeventHashUID(ics, originalUid);
-        veventWithUidAndSequence.uid = { value: sha1Uid };
+        completeVevent.uid = { value: sha1Uid };
+    } else if (!completeVevent.organizer) {
+        // The ORGANIZER field is mandatory in an invitation
+        const guessOrganizerEmail = ICAL_METHODS_ATTENDEE.includes(supportedMethod)
+            ? getOriginalTo(message)
+            : message.SenderAddress;
+        completeVevent.organizer = buildVcalOrganizer(guessOrganizerEmail);
     }
     const hasXWrTimezone = !!xWrTimezone?.value;
     const calendarTzid = xWrTimezone ? getSupportedTimezone(xWrTimezone.value) : undefined;
@@ -590,7 +602,7 @@ export const getSupportedVcalendarData = async (
     try {
         const supportedEvent = await getSupportedEvent({
             method: supportedMethod,
-            vcalVeventComponent: withMessageDtstamp(veventWithUidAndSequence, message),
+            vcalVeventComponent: withMessageDtstamp(completeVevent, message),
             hasXWrTimezone,
             calendarTzid,
             guessTzid,
