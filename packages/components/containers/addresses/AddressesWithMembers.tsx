@@ -96,7 +96,11 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
                                 .jt`You must ${activateLink} organization keys before adding an email address to a non-private member.`}
                         </Alert>
                     ) : (
-                        <Button shape="outline" onClick={() => handleAddAddress(currentMember)}>
+                        <Button
+                            shape="outline"
+                            onClick={() => handleAddAddress(currentMember)}
+                            data-testid="settings:identity-section:add-address"
+                        >
                             {c('Action').t`Add address`}
                         </Button>
                     )}

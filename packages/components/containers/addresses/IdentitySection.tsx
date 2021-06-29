@@ -64,7 +64,12 @@ const IdentitySection = () => {
                             </label>
                         </SettingsLayoutLeft>
                         <SettingsLayoutRight className="on-mobile-pb0 flex flex-row flex-nowrap">
-                            <Select id="addressSelector" options={options} onChange={handleChange} />
+                            <Select
+                                id="addressSelector"
+                                options={options}
+                                onChange={handleChange}
+                                data-testid="settings:identity-section:address"
+                            />
                         </SettingsLayoutRight>
                     </SettingsLayout>
 
@@ -72,7 +77,11 @@ const IdentitySection = () => {
 
                     <SettingsLayout>
                         <SettingsLayoutLeft>
-                            <label htmlFor="pmSignatureToggle" className="text-semibold">
+                            <label
+                                htmlFor="pmSignatureToggle"
+                                className="text-semibold"
+                                data-testid="settings:identity-section:signature-toggle-label"
+                            >
                                 <span className="mr0-5">{c('Label').t`ProtonMail footer`}</span>
                                 <Info title={c('Info').t`Let your contacts know you care about their privacy.`} />
                             </label>
