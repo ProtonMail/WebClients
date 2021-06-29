@@ -1,8 +1,9 @@
 import { LinkType } from './link';
 
 export enum TransferState {
-    Initializing = 'initializing',
     Pending = 'pending',
+    Initializing = 'initializing',
+    Conflict = 'conflict',
     Progress = 'progress',
     Finalizing = 'finalizing',
     Done = 'done',
@@ -31,6 +32,13 @@ export class TransferCancel extends Error {
     constructor(options: { id: string } | { message: string }) {
         super('id' in options ? `Transfer ${options.id} canceled` : options.message);
         this.name = 'TransferCancel';
+    }
+}
+
+export class TransferConflict extends Error {
+    constructor(options: { id: string } | { message: string }) {
+        super('id' in options ? `Transfer ${options.id} is conflicting` : options.message);
+        this.name = 'TransferConflict';
     }
 }
 

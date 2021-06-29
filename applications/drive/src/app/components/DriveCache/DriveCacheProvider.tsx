@@ -114,8 +114,12 @@ const useDriveCacheState = () => {
                 if (!isFolderLinkMeta(meta) && !meta.FileProperties.ActiveRevision && revision) {
                     meta.FileProperties.ActiveRevision = revision;
                 }
-                // CachedThumbnailURL is computed, so keep cached version if already set.
-                if (links[meta.LinkID].meta.CachedThumbnailURL) {
+                // CachedThumbnailURL is computed, so keep cached version if already set
+                // for the same revision (other revision can have different thumbnail).
+                if (
+                    links[meta.LinkID].meta.CachedThumbnailURL &&
+                    revision?.ID === meta.FileProperties?.ActiveRevision?.ID
+                ) {
                     meta.CachedThumbnailURL = links[meta.LinkID].meta.CachedThumbnailURL;
                 }
                 links[meta.LinkID].meta = meta;
