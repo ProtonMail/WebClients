@@ -564,13 +564,18 @@ export const getInitialInvitationModel = ({
     return result;
 };
 
-export const getSupportedVcalendarData = async (
-    vcal: VcalVcalendar,
-    message: Message,
-    ics: string,
-    icsFileName: string
-): Promise<EventInvitation | undefined> => {
-    const { version, calscale, 'x-wr-timezone': xWrTimezone, method } = vcal;
+export const getSupportedVcalendarData = async ({
+    vcalComponent,
+    message,
+    icsBinaryString,
+    icsFileName,
+}: {
+    vcalComponent: VcalVcalendar;
+    message: Message;
+    icsBinaryString: string;
+    icsFileName: string;
+}): Promise<EventInvitation | undefined> => {
+    const { version, calscale, 'x-wr-timezone': xWrTimezone, method } = vcalComponent;
     const supportedMethod = getIcalMethod(method);
     if (!supportedMethod) {
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVALID_METHOD);
@@ -578,15 +583,15 @@ export const getSupportedVcalendarData = async (
     if ((calscale && calscale.value.toLowerCase() !== 'gregorian') || version?.value !== '2.0') {
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { method: supportedMethod });
     }
-    const vevent = extractVevent(vcal);
-    const vtimezone = extractVTimezone(vcal);
+    const vevent = extractVevent(vcalComponent);
+    const vtimezone = extractVTimezone(vcalComponent);
     if (!getIsEventInvitationValid(vevent)) {
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: supportedMethod });
     }
-    const completeVevent = withOutsideUIDAndSequence(vevent, vcal);
+    const completeVevent = withOutsideUIDAndSequence(vevent, vcalComponent);
     const originalUid = completeVevent.uid?.value;
     if (supportedMethod === ICAL_METHOD.PUBLISH) {
-        const sha1Uid = await generateVeventHashUID(ics, originalUid);
+        const sha1Uid = await generateVeventHashUID(icsBinaryString, originalUid);
         completeVevent.uid = { value: sha1Uid };
     } else if (!completeVevent.organizer) {
         // The ORGANIZER field is mandatory in an invitation
@@ -613,7 +618,7 @@ export const getSupportedVcalendarData = async (
             method: supportedMethod,
             vevent: supportedEvent,
             vtimezone,
-            originalVcalInvitation: vcal,
+            originalVcalInvitation: vcalComponent,
             originalUid,
             fileName: icsFileName,
         };
