@@ -115,14 +115,13 @@ export const useCloseHandler = ({
         if (pendingSave.current || uploadInProgress) {
             try {
                 await handleManualSave();
+                updateMessageCache(messageCache, modelMessage.localID, { inComposer: false });
             } catch {
                 createNotification({
                     text: c('Error').t`Draft could not be saved. Try again.`,
                     type: 'error',
                 });
                 onCompose({ existingDraft: modelMessage, fromUndo: true });
-            } finally {
-                updateMessageCache(messageCache, modelMessage.localID, { inComposer: false });
             }
         } else {
             updateMessageCache(messageCache, modelMessage.localID, { inComposer: false });
