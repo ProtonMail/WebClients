@@ -9,14 +9,14 @@ const EVERY_THIRTY_MINUTES = 30 * 60 * 1000;
 const isDifferent = (a?: string, b?: string) => !!a && !!b && b !== a;
 
 const NewVersionTopBanner = () => {
-    const { VERSION_PATH, COMMIT_RELEASE } = useConfig();
+    const { VERSION_PATH, COMMIT } = useConfig();
     const [newVersionAvailable, setNewVersionAvailable] = useState(false);
     const { appVersionBad } = useApiStatus();
 
     const isNewVersionAvailable = async () => {
         try {
             const { commit } = await fetch(VERSION_PATH).then((response) => response.json());
-            setNewVersionAvailable(isDifferent(commit, COMMIT_RELEASE));
+            setNewVersionAvailable(isDifferent(commit, COMMIT));
         } catch (error) {
             traceError(error);
         }

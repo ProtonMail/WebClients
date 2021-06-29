@@ -27,11 +27,16 @@ const readJSON = (file) => {
     }
 };
 
-/**
- * Get the hash of the current commit we build against
- * @return {String} fill hash of the commit
- */
-const getBuildCommit = () => {
+const getGitBranch = () => {
+    try {
+        const { stdout = '' } = sync('git describe --all');
+        return stdout.trim();
+    } catch (e) {
+        return '';
+    }
+};
+
+const getGitCommitHash = () => {
     try {
         const { stdout = '' } = sync('git rev-parse HEAD');
         return stdout.trim();
@@ -39,6 +44,22 @@ const getBuildCommit = () => {
         return '';
     }
 };
+
+const getGitTagVersion = (applicationName) => {
+    try {
+        const { stdout = '' } = sync(`git describe --abbrev=0 --match=${applicationName}*`);
+        return stdout.trim();
+    } catch (e) {
+        return '';
+    }
+};
+
+/**
+ * Clean ex. proton-mail@4.x.x to 4.x.x
+ */
+const getVersionNumberFromTag = (tag) => {
+    return tag.replace(/[^@]*@/g, '');
+}
 
 /**
  * Extract the config of a project
@@ -132,37 +153,54 @@ const getApi = (api) => {
 };
 
 function main({ api = 'dev' }) {
+    const appName = ENV_CONFIG.app.appName || ENV_CONFIG.pkg.name;
+    if (!appName) {
+        throw new Error('Missing app name');
+    }
+
+    const branch = process.env.CI_COMMIT_REF_NAME || getGitBranch();
+    const commit = process.env.CI_COMMIT_SHA || getGitCommitHash();
+    const version = getVersionNumberFromTag(process.env.CI_COMMIT_TAG || getGitTagVersion(appName));
+
     const { url: apiUrl } = getApi(api);
+
     const json = {
-        appName: ENV_CONFIG.app.appName || ENV_CONFIG.pkg.name || 'protonmail',
-        version: ENV_CONFIG.app.version || ENV_CONFIG.pkg.version || '4.9.99',
+        appName,
+        version: ENV_CONFIG.app.version || ENV_CONFIG.pkg.version || version || '4.0.0',
         locales: LOCALES,
         apiUrl,
     };
-
-    const COMMIT_RELEASE = getBuildCommit();
 
     const isProduction = process.env.NODE_ENV === 'production';
     const SENTRY_DSN = isProduction ? ENV_CONFIG.app.sentry || '' : '';
 
     const PUBLIC_APP_PATH = getPublicPath(argv);
 
+    const buildData = {
+        version: json.version,
+        commit,
+        branch,
+        date: new Date().toGMTString()
+    };
+
     const config = dedent`
     export const CLIENT_TYPE = ${ENV_CONFIG.app.clientType || 1};
     export const CLIENT_SECRET = '${ENV_CONFIG.app.clientSecret || ''}';
-    export const APP_VERSION = '${json.version}';
+    export const APP_VERSION = '${buildData.version}';
+    export const COMMIT = '${buildData.commit}';
+    export const BRANCH = '${buildData.branch}';
+    export const DATE_VERSION = '${buildData.date}';
     export const APP_NAME = '${json.appName}';
     export const API_URL = '${apiUrl}';
     export const LOCALES = ${JSON.stringify(LOCALES)};
     export const API_VERSION = '3';
-    export const DATE_VERSION = '${new Date().toGMTString()}';
     export const VERSION_PATH = '${PUBLIC_APP_PATH}assets/version.json';
-    export const COMMIT_RELEASE = '${COMMIT_RELEASE}';
     export const SENTRY_DSN = '${SENTRY_DSN}';
     `;
 
     return {
         config,
+        buildData,
         apiUrl,
         json,
         path: path.join(process.cwd(), 'src', 'app', 'config.ts'),

@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const fs = require('fs').promises;
-const path = require('path');
 const chalk = require('chalk');
 const dedent = require('dedent');
 const argv = require('minimist')(process.argv.slice(2), {
@@ -14,7 +13,7 @@ const argv = require('minimist')(process.argv.slice(2), {
 });
 const localIp = require('my-local-ip');
 
-const configBuilder = require('../cli/config');
+const getConfig = require('../cli/config');
 const configAppBuilder = require('../cli/configApp');
 const { json, debug, success, error } = require('../cli/helpers/log');
 const { hasDirectory } = require('../cli/helpers/file');
@@ -40,9 +39,9 @@ const getAppMode = () => {
 };
 
 async function main() {
-
     const {
         config: appConfig,
+        buildData,
         path: appConfigPath,
         apiUrl,
         json: jsonConfig
@@ -66,14 +65,15 @@ async function main() {
 
     if (is('compile') || is('extract-i18n')) {
         const compile = require('../cli/compile');
-        const CONFIG = configBuilder({
+        const config = getConfig({
             publicPath,
+            buildData,
             appMode: APP_MODE,
             featureFlags: FEATURE_FLAGS,
             writeSRI: WRITE_SRI,
             ...is('extract-i18n') && { flow: 'i18n' }
         });
-        return compile(CONFIG);
+        return compile(config);
     }
 
     // Run the dev server, but first find an available port
@@ -88,9 +88,9 @@ async function main() {
             ➙ API: ${chalk.yellow(apiUrl)}
             \n
         `);
-        const CONFIG = configBuilder({ port, publicPath, appMode: APP_MODE, featureFlags: FEATURE_FLAGS });
+        const config = getConfig({ port, publicPath, appMode: APP_MODE, buildData, featureFlags: FEATURE_FLAGS });
 
-        const run = server(CONFIG);
+        const run = server(config);
         run.listen(port);
     }
 
