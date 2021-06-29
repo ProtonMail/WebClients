@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { c, msgid } from 'ttag';
 import { Calendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
@@ -5,7 +6,7 @@ import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
 import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { Alert, ButtonLike, Card, PrimaryButton, SettingsLink } from '../../../components';
 
-import { SettingsParagraph, SettingsSection } from '../../account';
+import { SettingsSection } from '../../account';
 
 import CalendarsTable from './CalendarsTable';
 
@@ -15,16 +16,16 @@ interface Props {
     user: UserModel;
     loading?: boolean;
     loadingMap: SimpleMap<boolean>;
-    calendarsLimit: number;
     canAdd: boolean;
-    hasDisabledCalendar?: boolean;
     add: string;
+    description?: ReactNode;
     onAdd: () => Promise<void>;
     onSetDefault?: (id: string) => Promise<void>;
     onEdit: (calendar: Calendar) => Promise<void>;
     onDelete: (id: string) => Promise<void>;
     onExport?: (calendar: Calendar) => void;
     canUpgradeLimit?: boolean;
+    calendarLimitReachedText: string;
 }
 const CalendarsSection = ({
     calendars = [],
@@ -32,28 +33,20 @@ const CalendarsSection = ({
     user,
     loading = false,
     loadingMap,
-    calendarsLimit,
     canAdd,
-    hasDisabledCalendar = false,
     add,
+    description,
     onAdd,
     onEdit,
     onSetDefault,
     onDelete,
     onExport,
     canUpgradeLimit = true,
+    calendarLimitReachedText,
 }: Props) => {
     return (
         <SettingsSection>
-            {!canAdd && user.hasNonDelinquentScope && (
-                <Alert type="warning">
-                    {c('Calendar limit warning').ngettext(
-                        msgid`You have reached the maximum number of ${calendarsLimit} calendar.`,
-                        `You have reached the maximum number of ${calendarsLimit} calendars.`,
-                        calendarsLimit
-                    )}
-                </Alert>
-            )}
+            {!canAdd && user.hasNonDelinquentScope && <Alert type="warning">{calendarLimitReachedText}</Alert>}
             {user.isFree && canUpgradeLimit && !canAdd && (
                 <Card className="mb1">
                     <div className="flex flex-nowrap flex-align-items-center">
@@ -70,17 +63,12 @@ const CalendarsSection = ({
                     </div>
                 </Card>
             )}
+            {description}
             <div className="mb1">
                 <PrimaryButton data-test-id="calendar-setting-page:add-calendar" disabled={!canAdd} onClick={onAdd}>
                     {add}
                 </PrimaryButton>
             </div>
-            {hasDisabledCalendar ? (
-                <SettingsParagraph>
-                    {c('Disabled calendar')
-                        .t`A calendar is marked as disabled when it is linked to a disabled email address or a free @pm.me address. You can still access your disabled calendar and view events in read-only mode or delete them. You can enable the calendar by re-enabling the email address or upgrading your plan to use @pm.me addresses.`}
-                </SettingsParagraph>
-            ) : null}
             {!!calendars.length && (
                 <CalendarsTable
                     calendars={calendars}

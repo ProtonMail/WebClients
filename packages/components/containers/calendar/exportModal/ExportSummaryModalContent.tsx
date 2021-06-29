@@ -98,8 +98,8 @@ const ExportSummaryModalContent = ({ model }: Props) => {
                             .t`Due to a password reset, none of your events could be decrypted and exported.`}
                     </div>
                     <div>
-                        <a href={kbLink} target="_blank" rel="noreferrer noopener nofollow">{c('Export calendar')
-                            .t`Learn how to restore encrypted events with old password`}</a>
+                        <Href url={kbLink}>{c('Export calendar')
+                            .t`Learn how to restore encrypted events with old password`}</Href>
                     </div>
                 </>
             );

@@ -33,7 +33,7 @@ const CalendarDowngradeModal = ({ onSubmit, onClose, ...rest }: Props) => {
         >
             <Alert type="warning">
                 {c('Info')
-                    .jt`You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${linkButton}`}
+                    .jt`You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${linkButton}`}
             </Alert>
         </FormModal>
     );

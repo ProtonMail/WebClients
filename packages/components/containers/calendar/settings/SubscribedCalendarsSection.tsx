@@ -3,13 +3,14 @@ import { MAX_SUBSCRIBED_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/c
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { useState } from 'react';
-import { c } from 'ttag';
-import { Alert, ConfirmModal, ErrorButton } from '../../../components';
+import { c, msgid } from 'ttag';
+import { Alert, ConfirmModal, ErrorButton, Href } from '../../../components';
 import { useApi, useEventManager, useModals, useNotifications } from '../../../hooks';
 import { CalendarModal } from '../calendarModal/CalendarModal';
 import useSubscribedCalendars from '../../../hooks/useSubscribedCalendars';
 import SubscribeCalendarModal from '../subscribeCalendarModal/SubscribeCalendarModal';
 import CalendarsSection from './CalendarsSection';
+import { SettingsParagraph } from '../../account';
 
 interface Props {
     activeAddresses: Address[];
@@ -33,10 +34,9 @@ const SubscribedCalendarsSection = ({ activeAddresses, calendars = [], user }: P
     };
 
     const handleDelete = async (id: string) => {
-        const title = c('Title').t`Unsubscribe from calendar`;
-        const confirmText = c('Action').t`Unsubscribe`;
-        const alertText = c('Info')
-            .t`The calendar will be deleted and won’t be synchronised anymore with the link provided.`;
+        const title = c('Title').t`Remove calendar`;
+        const confirmText = c('Action').t`Remove calendar`;
+        const alertText = c('Info').t`The calendar will be removed from your account.`;
 
         await new Promise<void>((resolve, reject) => {
             createModal(
@@ -74,9 +74,22 @@ const SubscribedCalendarsSection = ({ activeAddresses, calendars = [], user }: P
             user={user}
             loading={loading}
             loadingMap={loadingMap}
-            calendarsLimit={MAX_SUBSCRIBED_CALENDARS_PER_USER}
             canAdd={canAddCalendar}
             add={c('Action').t`Subscribe to calendar`}
+            calendarLimitReachedText={c('Calendar limit warning').ngettext(
+                msgid`You have reached the maximum of ${MAX_SUBSCRIBED_CALENDARS_PER_USER} subscribed calendar.`,
+                `You have reached the maximum of ${MAX_SUBSCRIBED_CALENDARS_PER_USER} subscribed calendars.`,
+                MAX_SUBSCRIBED_CALENDARS_PER_USER
+            )}
+            description={
+                <SettingsParagraph>
+                    {c('Subscribed calendar section description')
+                        .t`Add public, external, or shared calendars using a URL.`}
+                    <br />
+                    <Href url="https://protonmail.com/support/knowledge-base/calendar-subscribe">{c('Knowledge base link label')
+                        .t`Here's how`}</Href>
+                </SettingsParagraph>
+            }
             onAdd={handleCreate}
             onEdit={handleEdit}
             onDelete={handleDelete}
