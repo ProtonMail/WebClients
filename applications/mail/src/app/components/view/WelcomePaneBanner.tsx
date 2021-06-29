@@ -5,6 +5,7 @@ import ThemesModal from '@proton/components/containers/themes/ThemesModal';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import { Plan, UserSettings } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { WELCOME_PANE_OPTIONS_CTA_TEXTS, WELCOME_PANE_OPTIONS_URLS } from '../../constants';
 
@@ -19,8 +20,9 @@ interface Props {
     plans: Plan[];
     theme: ThemeTypes;
     userSettings: UserSettings;
+    calendars?: Calendar[];
 }
-const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
+const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props) => {
     const { createModal } = useModals();
     const [option, setOption] = useState<MessageOption>();
     const [{ Currency } = { Currency: undefined }] = plans;
@@ -290,6 +292,24 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
                 >
                     {WELCOME_PANE_OPTIONS_CTA_TEXTS().upgrade}
                 </SettingsLink>
+            ),
+        },
+        {
+            id: 20,
+            text: c('Info').t`You can use ProtonVPN for free today.`,
+            cta: (
+                <Href url={WELCOME_PANE_OPTIONS_URLS.vpn} className="text-bold link align-baseline color-inherit">
+                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().learnMore}
+                </Href>
+            ),
+        },
+        calendars?.length === 0 && {
+            id: 21,
+            text: c('Info').t`Use Proton Calendar to keep your agenda private.`,
+            cta: (
+                <Href url={WELCOME_PANE_OPTIONS_URLS.calendar} className="text-bold link align-baseline color-inherit">
+                    {WELCOME_PANE_OPTIONS_CTA_TEXTS().openCalendar}
+                </Href>
             ),
         },
     ].filter(isTruthy);
