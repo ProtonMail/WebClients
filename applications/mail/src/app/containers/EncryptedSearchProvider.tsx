@@ -41,6 +41,7 @@ import {
     getBuildEvent,
     getCatchUpFail,
     setCurrentFromBuildEvent,
+    canUseES,
 } from '../helpers/encryptedSearch/esUtils';
 import { buildDB, encryptToDB, fetchMessage, getIndexKey, initialiseDB } from '../helpers/encryptedSearch/esBuild';
 import {
@@ -182,6 +183,11 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         } else {
             setItem(`ES:${userID}:ESEnabled`, 'true');
         }
+        canUseES(userID).then((isIDBIntact) => {
+            if (!isIDBIntact) {
+                void dbCorruptError();
+            }
+        });
     };
 
     /**
@@ -197,7 +203,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         if (dbExists && esEnabled && (!esCache.length || !!force)) {
             const indexKey = await getIndexKey(getUserKeys, userID);
-            if (!indexKey) {
+            const isIDBIntact = await canUseES(userID);
+            if (!indexKey || !isIDBIntact) {
                 await dbCorruptError();
                 return defaultResult;
             }
@@ -233,7 +240,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      */
     const retryIndexEncryptedSearch = async () => {
         const indexKey = await getIndexKey(getUserKeys, userID);
-        if (!indexKey) {
+        const isIDBIntact = await canUseES(userID);
+        if (!indexKey || !isIDBIntact) {
             await dbCorruptError();
             return;
         }
@@ -282,6 +290,12 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             await retryIndexEncryptedSearch();
         }
         if (!Messages || !Messages.length) {
+            return;
+        }
+
+        const isIDBIntact = await canUseES(userID);
+        if (!isIDBIntact) {
+            await dbCorruptError();
             return;
         }
 
@@ -408,6 +422,12 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             return messageEvent;
         };
 
+        const isIDBIntact = await canUseES(userID);
+        if (!isIDBIntact) {
+            await dbCorruptError();
+            return false;
+        }
+
         // The first time indexing is complete, we have to check whether anything changed since BuildEvent
         const buildEvent = getBuildEvent(userID);
         // Otherwise, we catch up from the last "seen" event
@@ -441,6 +461,10 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             };
         });
         setItem(`ES:${userID}:Pause`, 'true');
+        const isIDBIntact = await canUseES(userID);
+        if (!isIDBIntact) {
+            await dbCorruptError();
+        }
     };
 
     /**
@@ -515,6 +539,12 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 return;
             }
 
+            const isIDBIntact = await canUseES(userID);
+            if (!isIDBIntact) {
+                await dbCorruptError();
+                return;
+            }
+
             await wait(2000);
         }
 
@@ -560,6 +590,12 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         const { dbExists, esEnabled, isCacheReady, cachePromise } = esStatus;
 
         if (!dbExists || !esEnabled) {
+            return false;
+        }
+
+        const isIDBIntact = await canUseES(userID);
+        if (!isIDBIntact) {
+            await dbCorruptError();
             return false;
         }
 
@@ -698,7 +734,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         const normalisedSearchParams = normaliseSearchParams(searchParameters, labelID);
         const indexKey = await getIndexKey(getUserKeys, userID);
-        if (!indexKey) {
+        const isIDBIntact = await canUseES(userID);
+        if (!indexKey || !isIDBIntact) {
             await dbCorruptError();
             return false;
         }
@@ -746,7 +783,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         }
 
         const indexKey = await getIndexKey(getUserKeys, userID);
-        if (!indexKey) {
+        const isIDBIntact = await canUseES(userID);
+        if (!indexKey || !isIDBIntact) {
             await dbCorruptError();
             return;
         }
@@ -817,7 +855,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         const run = async () => {
             const indexKey = await getIndexKey(getUserKeys, userID);
-            if (!indexKey) {
+            const isIDBIntact = await canUseES(userID);
+            if (!indexKey || !isIDBIntact) {
                 await dbCorruptError();
                 return;
             }
