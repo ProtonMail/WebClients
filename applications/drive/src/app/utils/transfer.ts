@@ -8,9 +8,13 @@ export const isTransferFinished = ({ state }: { state: TransferState }) =>
     [TransferState.Error, TransferState.Canceled, TransferState.Done].includes(state);
 
 export const isTransferActive = ({ state }: { state: TransferState }) =>
-    [TransferState.Pending, TransferState.Progress, TransferState.Initializing, TransferState.Finalizing].includes(
-        state
-    );
+    [
+        TransferState.Pending,
+        TransferState.Initializing,
+        TransferState.Conflict,
+        TransferState.Progress,
+        TransferState.Finalizing,
+    ].includes(state);
 
 export const isTransferFailed = ({ state }: { state: TransferState }) =>
     [TransferState.Error, TransferState.Canceled].includes(state);
@@ -21,6 +25,8 @@ export const isTransferError = ({ state }: { state: TransferState }) =>
     state === TransferState.Error || state === TransferState.NetworkError;
 
 export const isTransferCanceled = ({ state }: { state: TransferState }) => state === TransferState.Canceled;
+
+export const isTransferConflict = ({ state }: { state: TransferState }) => state === TransferState.Conflict;
 
 export const isTransferProgress = ({ state }: { state: TransferState }) => state === TransferState.Progress;
 

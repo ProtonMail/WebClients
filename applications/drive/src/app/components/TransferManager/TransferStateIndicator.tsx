@@ -35,6 +35,9 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
         [TransferState.Initializing]: {
             text: c('Info').t`Initializing`,
         },
+        [TransferState.Conflict]: {
+            text: c('Info').t`Conflict`,
+        },
         [TransferState.Pending]: {
             text: c('Info').t`Queued`,
             icon: 'clock',

@@ -14,7 +14,7 @@ export const queryCreateFile = (shareId: string, data: CreateDriveFile) => {
 export const queryFileRevision = (
     shareId: string,
     linkId: string,
-    revisionId: number,
+    revisionId: string,
     pagination?: { FromBlockIndex: number; PageSize: number }
 ) => {
     const query = {
@@ -33,7 +33,7 @@ export const queryFileRevision = (
     return query;
 };
 
-export const queryFileRevisionThumbnail = (shareId: string, linkId: string, revisionId: number) => {
+export const queryFileRevisionThumbnail = (shareId: string, linkId: string, revisionId: string) => {
     return {
         method: 'get',
         url: `drive/shares/${shareId}/files/${linkId}/revisions/${revisionId}/thumbnail`,
@@ -76,6 +76,18 @@ export const queryUploadFileBlock = (url: string, chunk: Uint8Array) => {
     };
 };
 
+export const queryCreateFileRevision = (shareId: string, linkId: string, currentRevisiontID: string) => {
+    return {
+        method: 'post',
+        timeout: UPLOAD_TIMEOUT,
+        url: `drive/shares/${shareId}/files/${linkId}/revisions`,
+        silence: true,
+        data: {
+            CurrentRevisionID: currentRevisiontID,
+        },
+    };
+};
+
 export const queryUpdateFileRevision = (
     shareID: string,
     linkID: string,
@@ -86,5 +98,12 @@ export const queryUpdateFileRevision = (
         method: 'put',
         url: `drive/shares/${shareID}/files/${linkID}/revisions/${revisionID}`,
         data,
+    };
+};
+
+export const queryDeleteFileRevision = (shareId: string, linkId: string, revisiontID: string) => {
+    return {
+        method: 'delete',
+        url: `drive/shares/${shareId}/files/${linkId}/revisions/${revisiontID}`,
     };
 };

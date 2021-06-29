@@ -1,7 +1,8 @@
-import { useApi, useEventManager, useNotifications, usePreventLeave, useGetUser } from '@proton/components';
 import { ReadableStream } from 'web-streams-polyfill';
-import { decryptMessage, encryptMessage, getMessage, getSignature } from 'pmcrypto';
+import { OpenPGPKey, SessionKey, decryptMessage, encryptMessage, getMessage, getSignature } from 'pmcrypto';
 import { c } from 'ttag';
+
+import { useApi, useEventManager, useNotifications, usePreventLeave, useGetUser } from '@proton/components';
 import {
     generateNodeKeys,
     generateContentKeys,
@@ -13,21 +14,38 @@ import { range, mergeUint8Arrays } from '@proton/shared/lib/helpers/array';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+
 import {
     DriveFileRevisionResult,
     CreateFileResult,
+    CreateFileRevisionResult,
     FileRevisionState,
     RequestUploadResult,
     NestedFileStream,
     DriveFileBlock,
 } from '../../interfaces/file';
-import { queryFileRevision, queryCreateFile, queryUpdateFileRevision, queryRequestUpload } from '../../api/files';
+import {
+    queryFileRevision,
+    queryCreateFile,
+    queryCreateFileRevision,
+    queryUpdateFileRevision,
+    queryDeleteFileRevision,
+    queryRequestUpload,
+} from '../../api/files';
 import { useUploadProvider } from '../../components/uploads/UploadProvider';
-import { TransferMeta, TransferState, DownloadInfo, PreUploadData, TransferCancel } from '../../interfaces/transfer';
+import { TransferConflictStrategy } from '../../components/uploads/upload';
+import {
+    TransferMeta,
+    TransferState,
+    DownloadInfo,
+    PreUploadData,
+    TransferCancel,
+    TransferConflict,
+} from '../../interfaces/transfer';
 import { useDownloadProvider } from '../../components/downloads/DownloadProvider';
 import { initDownload, StreamTransformer } from '../../components/downloads/download';
 import { streamToBuffer } from '../../utils/stream';
-import { HashCheckResult, LinkType } from '../../interfaces/link';
+import { HashCheckResult, LinkType, FileLinkMeta, isFolderLinkMeta } from '../../interfaces/link';
 import { queryCheckAvailableHashes } from '../../api/link';
 import { ValidationError, validateLinkName } from '../../utils/validation';
 import useDriveCrypto from './useDriveCrypto';
@@ -41,8 +59,25 @@ import { getMetaForTransfer, isTransferCancelError } from '../../utils/transfer'
 import { mimeTypeFromFile } from '../../utils/MimeTypeParser/MimeTypeParser';
 import useConfirm from '../util/useConfirm';
 import { adjustName, splitLinkName } from '../../utils/link';
+import useTrash from './useTrash';
 
 const HASH_CHECK_AMOUNT = 10;
+
+interface FileRevision {
+    isNewFile: boolean;
+    MIMEType: string;
+    filename: string;
+    fileID: string;
+    revisionID: string;
+    previousRevisionID?: string;
+    sessionKey: SessionKey;
+    privateKey: OpenPGPKey;
+}
+
+interface Folder {
+    isNewFolder: boolean;
+    folderID: string;
+}
 
 function useFiles() {
     const api = useApi();
@@ -55,10 +90,17 @@ function useFiles() {
     const { getPrimaryAddressKey, sign } = useDriveCrypto();
     const { getLinkMeta, getLinkKeys, fetchAllFolderPages, createNewFolder } = useDrive();
     const { addToDownloadQueue, addFolderToDownloadQueue } = useDownloadProvider();
-    const { addToUploadQueue, getUploadsImmediate, getUploadsProgresses, getAbortController } = useUploadProvider();
+    const {
+        addToUploadQueue,
+        getUploadsImmediate,
+        getUploadsProgresses,
+        getAbortController,
+        getFolderConflictStrategy,
+    } = useUploadProvider();
     const { preventLeave } = usePreventLeave();
     const { call } = useEventManager();
     const { openConfirmModal } = useConfirm();
+    const { trashLinks } = useTrash();
 
     const findAvailableName = queuedFunction(
         'findAvailableName',
@@ -106,40 +148,107 @@ function useFiles() {
         5
     );
 
-    const uploadEmptyFolder = (
+    const getLinkByName = async (shareId: string, parentLinkID: string, name: string) => {
+        await fetchAllFolderPages(shareId, parentLinkID);
+        const children = cache.get.childLinkMetas(shareId, parentLinkID);
+        return children?.find((link) => link.Name === name);
+    };
+
+    const createEmptyFolder = async (shareId: string, parentLinkID: string, folderName: string): Promise<Folder> => {
+        const {
+            Folder: { ID: folderID },
+        } = await createNewFolder(shareId, parentLinkID, folderName);
+        await events.call(shareId);
+        return {
+            folderID,
+            isNewFolder: true,
+        };
+    };
+
+    const getFolder = async (
         shareId: string,
-        ParentLinkID: string,
+        parentLinkID: string,
+        folderName: string,
+        abortSignal?: AbortSignal
+    ): Promise<Folder> => {
+        const link = await getLinkByName(shareId, parentLinkID, folderName);
+        if (!link) {
+            throw Error('Folder not found');
+        }
+        if (!isFolderLinkMeta(link)) {
+            throw Error('File cannot be merged with folder');
+        }
+        if (abortSignal?.aborted) {
+            throw new TransferCancel({ message: `Transfer canceled for file "${folderName}"` });
+        }
+
+        return {
+            folderID: link.LinkID,
+            isNewFolder: false,
+        };
+    };
+
+    const replaceFolder = async (
+        shareId: string,
+        parentLinkID: string,
+        folderName: string,
+        abortSignal?: AbortSignal
+    ): Promise<Folder> => {
+        const link = await getLinkByName(shareId, parentLinkID, folderName);
+        if (!link) {
+            throw Error('Folder or file not found');
+        }
+        if (abortSignal?.aborted) {
+            throw new TransferCancel({ message: `Transfer canceled for file "${folderName}"` });
+        }
+
+        await trashLinks(shareId, parentLinkID, [link.LinkID]);
+        return createEmptyFolder(shareId, parentLinkID, folderName);
+    };
+
+    const prepareFolder = (
+        shareId: string,
+        parentLinkID: string,
         folderName: string,
         { checkNameAvailability = true, signal }: { checkNameAvailability?: boolean; signal?: AbortSignal } = {}
-    ) => {
+    ): Promise<Folder> => {
         const lowercaseName = folderName.toLowerCase();
 
         return queuedFunction(`upload_empty_folder:${lowercaseName}`, async () => {
             let adjustedFolderName = folderName;
-
             if (checkNameAvailability && !signal?.aborted) {
-                const checkResult = await findAvailableName(shareId, ParentLinkID, adjustedFolderName);
-
+                const checkResult = await findAvailableName(shareId, parentLinkID, adjustedFolderName);
                 adjustedFolderName = checkResult.filename;
             }
 
             if (signal?.aborted) {
-                throw new TransferCancel({ message: `Upload folder "${folderName}" aborted in ${ParentLinkID}` });
+                throw new TransferCancel({ message: `Upload folder "${folderName}" aborted in ${parentLinkID}` });
             }
 
-            return createNewFolder(shareId, ParentLinkID, adjustedFolderName);
+            if (folderName === adjustedFolderName) {
+                return createEmptyFolder(shareId, parentLinkID, folderName);
+            }
+
+            const link = await getLinkByName(shareId, parentLinkID, folderName);
+            const originalIsFolder = link ? isFolderLinkMeta(link) : false;
+            const conflictStrategy = await getFolderConflictStrategy(parentLinkID, folderName, originalIsFolder);
+            if (conflictStrategy === TransferConflictStrategy.Rename) {
+                return createEmptyFolder(shareId, parentLinkID, adjustedFolderName);
+            }
+            if (conflictStrategy === TransferConflictStrategy.Replace) {
+                return replaceFolder(shareId, parentLinkID, folderName, signal);
+            }
+            if (conflictStrategy === TransferConflictStrategy.Merge) {
+                return getFolder(shareId, parentLinkID, folderName, signal);
+            }
+            if (conflictStrategy === TransferConflictStrategy.Skip) {
+                throw new TransferCancel({ message: `Upload folder "${folderName}" skipped` });
+            }
+            throw new Error(`Unknown conflict strategy: ${conflictStrategy}`);
         })();
     };
 
-    const uploadDriveFile = async (
-        shareId: string,
-        parentLinkID: string | Promise<string>,
-        file: File,
-        noNameCheck = false
-    ) => {
-        const queuedFnId = `upload_setup:${file.name}`;
-        // Queue for files with same name, to not duplicate names
-        // Another queue for uploads in general so that they don't timeout
+    const uploadDriveFile = async (shareId: string, parentLinkID: string | Promise<string>, file: File) => {
         const setupPromise = (async () => {
             const error = validateLinkName(file.name);
 
@@ -175,66 +284,151 @@ function useFiles() {
             };
         })();
 
-        // Queue for files with same name, to not duplicate names
-        // Another queue for uploads in general so that they don't timeout
-        const createFile = queuedFunction(
-            'create_file',
-            queuedFunction(queuedFnId, async (abortSignal: AbortSignal) => {
-                const {
-                    addressKeyInfo,
-                    parentKeys,
-                    ContentKeyPacket,
+        const createFile = async (abortSignal: AbortSignal, filename: string, hash: string): Promise<FileRevision> => {
+            const {
+                NodeKey,
+                NodePassphrase,
+                NodePassphraseSignature,
+                ContentKeyPacket,
+                sessionKey,
+                privateKey,
+                parentKeys,
+                addressKeyInfo,
+            } = await setupPromise;
+
+            const MIMEType = await mimeTypeFromFile(file);
+            const Name = await encryptName(filename, parentKeys.privateKey.toPublic(), addressKeyInfo.privateKey);
+
+            if (abortSignal.aborted) {
+                throw new TransferCancel({ message: `Transfer canceled for file "${filename}"` });
+            }
+
+            // If create draft hasn't been cancel up to this point do not try to cancel it anymore
+            const { File: createdFile } = await debouncedRequest<CreateFileResult>(
+                queryCreateFile(shareId, {
+                    Name,
+                    MIMEType,
+                    Hash: hash,
+                    NodeKey,
                     NodePassphrase,
                     NodePassphraseSignature,
-                    NodeKey,
-                } = await setupPromise;
+                    SignatureAddress: addressKeyInfo.address.Email,
+                    ContentKeyPacket,
+                    ParentLinkID: await parentLinkID,
+                })
+            );
 
-                if (abortSignal.aborted) {
-                    throw new TransferCancel({ message: `Transfer canceled for file "${file.name}"` });
+            return {
+                isNewFile: true,
+                MIMEType,
+                filename,
+                fileID: createdFile.ID,
+                revisionID: createdFile.RevisionID,
+                sessionKey,
+                privateKey,
+            };
+        };
+
+        const createRevision = async (abortSignal: AbortSignal, link: FileLinkMeta): Promise<FileRevision> => {
+            const currentActiveRevisionID = link.FileProperties.ActiveRevision?.ID;
+            if (!currentActiveRevisionID) {
+                throw Error('Missing active link revision');
+            }
+
+            const keys = await getLinkKeys(shareId, link.LinkID);
+            if (!('sessionKeys' in keys)) {
+                throw new Error('Session key missing on file link');
+            }
+
+            if (abortSignal.aborted) {
+                throw new TransferCancel({ message: `Transfer canceled for file "${link.Name}"` });
+            }
+
+            const { Revision } = await debouncedRequest<CreateFileRevisionResult>(
+                queryCreateFileRevision(shareId, link.LinkID, currentActiveRevisionID)
+            ).catch((err) => {
+                if (err.data?.Code === 2500) {
+                    throw Error('The new revision of original file is not uploaded yet. Please try again later.');
                 }
+                throw err;
+            });
 
-                const generateNameHash = async () => {
-                    if (!('hashKey' in parentKeys)) {
-                        throw Error('Missing hash key on folder link');
+            const MIMEType = await mimeTypeFromFile(file);
+
+            return {
+                isNewFile: false,
+                MIMEType,
+                filename: file.name,
+                fileID: link.LinkID,
+                revisionID: Revision.ID,
+                previousRevisionID: currentActiveRevisionID,
+                sessionKey: keys.sessionKeys as SessionKey,
+                privateKey: keys.privateKey,
+            };
+        };
+
+        // Replace file loads all children in the target folder and finds the link
+        // which is about to be replaced. In case of the replacing link is folder,
+        // the whole folder is moved to trash and new file is created. In case of
+        // replacing file, new revision is created.
+        const replaceFile = async (abortSignal: AbortSignal, filename: string): Promise<FileRevision> => {
+            const link = await getLinkByName(shareId, await parentLinkID, file.name);
+            // If collision happened but the link is not present, that means
+            // the file is just being uploaded.
+            if (!link) {
+                throw Error('The original file is not uploaded yet. Please try again later.');
+            }
+
+            if (abortSignal.aborted) {
+                throw new TransferCancel({ message: `Transfer canceled for file "${filename}"` });
+            }
+
+            if (isFolderLinkMeta(link)) {
+                const { parentKeys } = await setupPromise;
+                if (!('hashKey' in parentKeys)) {
+                    throw Error('Missing hash key on folder link');
+                }
+                const hash = await generateLookupHash(file.name, parentKeys.hashKey);
+
+                await trashLinks(shareId, await parentLinkID, [link.LinkID]);
+                return createFile(abortSignal, file.name, hash);
+            }
+            return createRevision(abortSignal, link);
+        };
+
+        // Double queue: one deduplicated by file name to not upload file
+        // with the same name in parallel, and one more queue around it
+        // to not timeout (so the creation do not wait too long).
+        const createFileRevision = queuedFunction(
+            'create_file_revision',
+            queuedFunction(
+                `upload_setup:${file.name}`,
+                async (abortSignal: AbortSignal, conflictStrategy?: string): Promise<FileRevision> => {
+                    const { filename: newName, hash } = await findAvailableName(shareId, await parentLinkID, file.name);
+                    if (abortSignal.aborted) {
+                        throw new TransferCancel({ message: `Transfer canceled for file "${file.name}"` });
                     }
-                    return {
-                        filename: file.name,
-                        hash: await generateLookupHash(file.name, parentKeys.hashKey),
-                    };
-                };
-
-                const { filename, hash: Hash } = noNameCheck
-                    ? await generateNameHash()
-                    : await findAvailableName(shareId, await parentLinkID, file.name);
-
-                const Name = await encryptName(filename, parentKeys.privateKey.toPublic(), addressKeyInfo.privateKey);
-                const MIMEType = await mimeTypeFromFile(file);
-
-                if (abortSignal.aborted) {
-                    throw new TransferCancel({ message: `Transfer canceled for file "${filename}"` });
+                    if (file.name === newName) {
+                        return createFile(abortSignal, file.name, hash);
+                    }
+                    if (!conflictStrategy) {
+                        throw new TransferConflict({ message: `Transfer conflict for file "${file.name}"` });
+                    }
+                    if (conflictStrategy === TransferConflictStrategy.Rename) {
+                        return createFile(abortSignal, newName, hash);
+                    }
+                    if (
+                        conflictStrategy === TransferConflictStrategy.Replace ||
+                        conflictStrategy === TransferConflictStrategy.Merge
+                    ) {
+                        return replaceFile(abortSignal, file.name);
+                    }
+                    if (conflictStrategy === TransferConflictStrategy.Skip) {
+                        throw new TransferCancel({ message: `Transfer skipped for file "${file.name}"` });
+                    }
+                    throw new Error(`Unknown conflict strategy: ${conflictStrategy}`);
                 }
-
-                // If create draft hasn't been cancel up to this point do not try to cancel it anymore
-                const { File } = await debouncedRequest<CreateFileResult>(
-                    queryCreateFile(shareId, {
-                        Name,
-                        MIMEType,
-                        Hash,
-                        NodeKey,
-                        NodePassphrase,
-                        NodePassphraseSignature,
-                        SignatureAddress: addressKeyInfo.address.Email,
-                        ContentKeyPacket,
-                        ParentLinkID: await parentLinkID,
-                    })
-                );
-
-                return {
-                    filename,
-                    File,
-                    MIMEType,
-                };
-            }),
+            ),
             5
         );
 
@@ -244,28 +438,25 @@ function useFiles() {
             ShareID: shareId,
         };
 
-        let createdFile:
-            | {
-                  ID: string;
-                  RevisionID: string;
-              }
-            | undefined;
+        let createdFileRevision: FileRevision | undefined;
 
         return addToUploadQueue(preUploadData, setupPromise, {
-            initialize: async (abortSignal) => {
-                const result = await createFile(abortSignal);
-                createdFile = result.File;
+            initialize: async (abortSignal, conflictStrategy) => {
+                const result = await createFileRevision(abortSignal, conflictStrategy);
+                createdFileRevision = result;
                 return result;
             },
             transform: async (data, attachedSignature = false) => {
-                const [{ sessionKey, privateKey: nodePrivateKey }, { privateKey: addressPrivateKey }] =
-                    await Promise.all([setupPromise, getPrimaryAddressKey()]);
+                if (!createdFileRevision) {
+                    throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
+                }
+                const { privateKey: addressPrivateKey } = await getPrimaryAddressKey();
 
                 // Thumbnail has signature attached, regular file detached.
                 if (attachedSignature) {
                     const { message } = await encryptMessage({
                         data,
-                        sessionKey,
+                        sessionKey: createdFileRevision.sessionKey,
                         privateKeys: addressPrivateKey,
                         armor: false,
                         detached: false,
@@ -277,7 +468,7 @@ function useFiles() {
 
                 const { message, signature } = await encryptMessage({
                     data,
-                    sessionKey,
+                    sessionKey: createdFileRevision.sessionKey,
                     privateKeys: addressPrivateKey,
                     armor: false,
                     detached: true,
@@ -285,8 +476,8 @@ function useFiles() {
 
                 const { data: encryptedSignature } = await encryptMessage({
                     data: signature.packets.write(),
-                    sessionKey,
-                    publicKeys: nodePrivateKey.toPublic(),
+                    sessionKey: createdFileRevision.sessionKey,
+                    publicKeys: createdFileRevision.privateKey.toPublic(),
                     armor: true,
                 });
 
@@ -309,7 +500,7 @@ function useFiles() {
                       }
                     : {};
 
-                if (!createdFile) {
+                if (!createdFileRevision) {
                     throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
                 }
 
@@ -317,8 +508,8 @@ function useFiles() {
                     queryRequestUpload({
                         BlockList,
                         AddressID: addressKeyInfo.address.ID,
-                        LinkID: createdFile.ID,
-                        RevisionID: createdFile.RevisionID,
+                        LinkID: createdFileRevision.fileID,
+                        RevisionID: createdFileRevision.revisionID,
                         ShareID: shareId,
                         ...thumbnailParams,
                     })
@@ -352,26 +543,51 @@ function useFiles() {
                         address: { Email: SignatureAddress },
                     } = await sign(contentHashes);
 
-                    if (!createdFile) {
+                    if (!createdFileRevision) {
                         throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
                     }
 
                     await debouncedRequest(
-                        queryUpdateFileRevision(shareId, createdFile.ID, createdFile.RevisionID, {
+                        queryUpdateFileRevision(shareId, createdFileRevision.fileID, createdFileRevision.revisionID, {
                             State: FileRevisionState.Active,
                             BlockList,
                             ManifestSignature: signature,
                             SignatureAddress,
                         })
                     );
+
+                    // Replacing file should keep only one revision because we
+                    // don't use revisions now at all (UI is not ready to handle
+                    // situation that size of the file is sum of all revisions,
+                    // there is no option to list them or delete them and so on).
+                    if (createdFileRevision.previousRevisionID) {
+                        await debouncedRequest(
+                            queryDeleteFileRevision(
+                                shareId,
+                                createdFileRevision.fileID,
+                                createdFileRevision.previousRevisionID
+                            )
+                        );
+                    }
+
                     events.callAll(shareId).catch(console.error);
                 },
                 5
             ),
             onError: async () => {
                 try {
-                    if (createdFile) {
-                        await deleteChildrenLinks(shareId, await parentLinkID, [createdFile.ID]);
+                    if (createdFileRevision) {
+                        if (createdFileRevision.isNewFile) {
+                            await deleteChildrenLinks(shareId, await parentLinkID, [createdFileRevision.fileID]);
+                        } else {
+                            await debouncedRequest(
+                                queryDeleteFileRevision(
+                                    shareId,
+                                    createdFileRevision.fileID,
+                                    createdFileRevision.revisionID
+                                )
+                            );
+                        }
                     }
                 } catch (err) {
                     if (!isTransferCancelError(err)) {
@@ -453,7 +669,7 @@ function useFiles() {
                 });
             }
 
-            const folderPromises = new Map<string, ReturnType<typeof createNewFolder>>();
+            const folderPromises = new Map<string, Promise<Folder>>();
 
             for (let i = 0; i < files.length; i++) {
                 const entry = files[i];
@@ -464,9 +680,9 @@ function useFiles() {
                     return;
                 }
 
-                const uploadFile = (parentLinkID: string | Promise<string>, file: File, noNameCheck?: boolean) => {
+                const uploadFile = (parentLinkID: string | Promise<string>, file: File) => {
                     if (!signal.aborted) {
-                        preventLeave(uploadDriveFile(shareId, parentLinkID, file, noNameCheck)).catch((err) => {
+                        preventLeave(uploadDriveFile(shareId, parentLinkID, file)).catch((err) => {
                             if (!isTransferCancelError(err)) {
                                 console.error(err);
                             }
@@ -474,9 +690,15 @@ function useFiles() {
                     }
                 };
 
-                const createFolder = (ParentLinkID: string, folderName: string, checkNameAvailability = false) => {
-                    return uploadEmptyFolder(shareId, ParentLinkID, folderName, {
-                        checkNameAvailability,
+                const uploadFolder = (parentLinkID: string, folderName: string, isParentNew = false) => {
+                    return prepareFolder(shareId, parentLinkID, folderName, {
+                        // Only freshly created parents can skip check name
+                        // duplicity for children folders. Folders are created
+                        // right away, so its safe. But with files, its better
+                        // to always do the check because any other client
+                        // could upload duplicate files even to new folders
+                        // (consider that upload can take hours to finish).
+                        checkNameAvailability: !isParentNew,
                         signal,
                     });
                 };
@@ -505,31 +727,21 @@ function useFiles() {
 
                                 if (!folderPromises.has(path)) {
                                     const parentFolderPromise = folderPromises.get(parent);
-
-                                    // Wait for parent folders to be created first
-                                    // If root folder's in tree, it's name must be checked, all other folders are new ones
-                                    const promise = (
-                                        parentFolderPromise
-                                            ? parentFolderPromise.then(({ Folder }) => createFolder(Folder.ID, folder))
-                                            : createFolder(ParentLinkID, folder, !parent)
-                                    ).then(async (args) => {
-                                        await events.call(shareId);
-                                        return args;
-                                    });
-
-                                    // Fetch events to get keys required for encryption in the new folder
+                                    const promise = parentFolderPromise
+                                        ? parentFolderPromise.then(({ folderID, isNewFolder }) =>
+                                              uploadFolder(folderID, folder, isNewFolder)
+                                          )
+                                        : uploadFolder(ParentLinkID, folder, false);
                                     folderPromises.set(path, promise);
                                 }
 
-                                const folderPromise = folderPromises.get(path)?.then(({ Folder: { ID } }) => ID);
+                                const folderIDPromise = folderPromises.get(path)?.then(({ folderID }) => folderID);
 
-                                if (file && folderPromise) {
-                                    const promise = folderPromise;
-                                    uploadFile(promise, file, true);
+                                if (folderIDPromise && file) {
+                                    uploadFile(folderIDPromise, file);
                                 }
 
-                                // Log unhandled exceptions
-                                folderPromise?.catch((err) => {
+                                folderIDPromise?.catch((err) => {
                                     if (!isTransferCancelError(err)) {
                                         console.error(err);
                                     }

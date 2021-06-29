@@ -51,6 +51,13 @@ interface EncryptedBlock {
     };
 }
 
+export enum TransferConflictStrategy {
+    Rename = 'rename',
+    Replace = 'replace',
+    Merge = 'merge',
+    Skip = 'skip',
+}
+
 export interface UploadCallbacks {
     transform: (buffer: Uint8Array, attached?: boolean) => ChunkPromise;
     requestUpload: (
@@ -58,7 +65,10 @@ export interface UploadCallbacks {
         thumbnailBlock?: ThumbnailBlock
     ) => Promise<{ UploadLinks: UploadLink[]; ThumbnailLink?: UploadLink }>;
     finalize: (blocklist: Map<number, BlockTokenInfo>, config?: { id: string }) => Promise<void>;
-    initialize: (abortSignal: AbortSignal) => Promise<{
+    initialize: (
+        abortSignal: AbortSignal,
+        conflictStrategy?: TransferConflictStrategy
+    ) => Promise<{
         filename: string;
         MIMEType: string;
     }>;
@@ -425,10 +435,7 @@ export function initUpload(
     const uploadControls: UploadControls = {
         start: () =>
             start().catch((err) => {
-                // Cancel throws the error itself to make it instant
-                if (!isTransferCancelError(err)) {
-                    onError?.(err);
-                }
+                onError?.(err);
                 throw err;
             }),
         cancel,

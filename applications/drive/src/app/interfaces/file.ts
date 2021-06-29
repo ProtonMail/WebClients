@@ -40,6 +40,12 @@ export interface CreateFileResult {
     };
 }
 
+export interface CreateFileRevisionResult {
+    Revision: {
+        ID: string;
+    };
+}
+
 export interface UploadLink {
     Token: string;
     URL: string;
