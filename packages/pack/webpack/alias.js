@@ -12,16 +12,19 @@ const getAlias = () => {
         'ttag',
         'date-fns',
         'proton-translations/package.json',
-        '@babel/runtime/package.json'
-        // Ensure that the correct package is used when symlinking
+        '@babel/runtime/package.json',
     ].reduce((acc, key) => {
-        return { ...acc, [key]: path.dirname(require.resolve(key)) };
+        // Resolve with precedence from cwd
+        return {
+            ...acc,
+            [key.replace('/package.json', '')]: path.dirname(require.resolve(key, { paths: [process.cwd()] })),
+        };
     }, {});
 
     return {
         ...standard,
         // Custom alias as we're building for the web (mimemessage)
-        iconv: path.dirname(require.resolve('iconv-lite'))
+        iconv: path.dirname(require.resolve('iconv-lite', { paths: [process.cwd()] })),
     };
 };
 
