@@ -360,12 +360,10 @@ export const getSupportedEvent = ({
             if (organizer) {
                 validated.organizer = { ...organizer };
             } else {
-                // TODO: take care outside
                 // The ORGANIZER field is mandatory in an invitation
-                // const guessOrganizerEmail = ICAL_METHODS_ATTENDEE.includes(method)
-                //     ? getOriginalTo(message)
-                //     : message.SenderAddress;
-                // validated.organizer = buildVcalOrganizer(guessOrganizerEmail);
+                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, {
+                    method,
+                });
             }
 
             if (attendee) {
