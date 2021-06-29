@@ -650,15 +650,6 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
         return {};
     }
 
-    if (isImport && hasMultipleVevents) {
-        return {
-            to: 'calendar/calendars#import',
-            toApp: APPS.PROTONACCOUNT,
-            text: c('Link')
-                .t`This ICS file contains more than one event. Please download it and import the events in ${calendarAppName}`,
-        };
-    }
-
     const hasAlsoReplied =
         attendeeIcs?.partstat &&
         [ICAL_ATTENDEE_STATUS.ACCEPTED, ICAL_ATTENDEE_STATUS.TENTATIVE, ICAL_ATTENDEE_STATUS.DECLINED].includes(
@@ -677,7 +668,13 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
 
     const safeCalendarNeedsUserAction = calendarData?.calendarNeedsUserAction && !isPartyCrasher;
     // the calendar needs a user action to be active
-    if ((safeCalendarNeedsUserAction || mustReactivateCalendars) && !isImport) {
+    if (safeCalendarNeedsUserAction || mustReactivateCalendars) {
+        if (isImport) {
+            return {
+                to: '',
+                text: c('Link').t`You need to activate your calendar keys to add this event`,
+            };
+        }
         if (canBeManaged) {
             return {
                 to: '',
@@ -699,9 +696,18 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
         return {};
     }
 
+    if (isImport && hasMultipleVevents) {
+        return {
+            to: 'calendar/calendars#import',
+            toApp: APPS.PROTONACCOUNT,
+            text: c('Link')
+                .t`This ICS file contains more than one event. Please download it and import the events in ${calendarAppName}`,
+        };
+    }
+
     // the invitation is unanswered
     if (!invitationApi) {
-        if (hasDecryptionError && !isImport) {
+        if (hasDecryptionError) {
             // the event exists in the db but couldn't be decrypted
             const to = `/mail/encryption-keys#addresses`;
             const toApp = APPS.PROTONACCOUNT;
