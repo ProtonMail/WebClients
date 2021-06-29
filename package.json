@@ -8,6 +8,7 @@
         "utilities/*"
     ],
     "scripts": {
+        "config-app": "packages/config/install",
         "version": "yarn workspace scripts run version:applications"
     },
     "husky": {

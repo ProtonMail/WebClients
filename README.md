@@ -39,10 +39,9 @@ For additional details on how to interact with the monorepo, see the [yarn docs]
 
 You can help us to translate the application on crowdin.
 
-- For proton-mail, proton-drive, proton-account: [Crowdin ProtonMail](https://crowdin.com/project/protonmail)
-- For proton-calendar: [Crowdin ProtonCalendar](https://crowdin.com/project/proton-test-3)
-- For proton-vpnsettings: [Crowdin ProtonVPN](https://crowdin.com/project/protonvpn)
-
+-   For proton-mail, proton-drive, proton-account: [Crowdin ProtonMail](https://crowdin.com/project/protonmail)
+-   For proton-calendar: [Crowdin ProtonCalendar](https://crowdin.com/project/proton-test-3)
+-   For proton-vpnsettings: [Crowdin ProtonVPN](https://crowdin.com/project/protonvpn)
 
 ## License
 
