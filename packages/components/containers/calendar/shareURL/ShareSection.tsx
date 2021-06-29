@@ -171,7 +171,7 @@ const ShareSection = ({ calendars, defaultCalendar, user }: Props) => {
                 </>
             ) : (
                 <>
-                    <Alert type="warning">{c('Info').t`You need to have a calendar to create a link.`}</Alert>
+                    <Alert type="warning">{c('Info').t`You need to have a personal calendar to create a link.`}</Alert>
                     {infoParagraph}
                 </>
             )}

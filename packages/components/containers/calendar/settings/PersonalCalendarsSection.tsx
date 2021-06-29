@@ -3,7 +3,7 @@ import { MAX_CALENDARS_PER_FREE_USER, MAX_CALENDARS_PER_USER } from '@proton/sha
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { useState } from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { Alert, ConfirmModal, ErrorButton } from '../../../components';
 import { useApi, useEventManager, useModals, useNotifications } from '../../../hooks';
 import { CalendarModal } from '../calendarModal/CalendarModal';
@@ -13,7 +13,6 @@ import CalendarsSection from './CalendarsSection';
 interface Props {
     activeAddresses: Address[];
     calendars: Calendar[];
-    disabledCalendars: Calendar[];
     activeCalendars: Calendar[];
     defaultCalendar?: Calendar;
     user: UserModel;
@@ -22,7 +21,6 @@ const PersonalCalendarsSection = ({
     activeAddresses,
     calendars = [],
     defaultCalendar,
-    disabledCalendars = [],
     activeCalendars = [],
     user,
 }: Props) => {
@@ -113,9 +111,12 @@ const PersonalCalendarsSection = ({
             user={user}
             defaultCalendarID={defaultCalendar?.ID}
             loadingMap={loadingMap}
-            add={c('Action').t`Add calendar`}
-            hasDisabledCalendar={disabledCalendars.length > 0}
-            calendarsLimit={calendarsLimit}
+            add={c('Action').t`Create calendar`}
+            calendarLimitReachedText={c('Calendar limit warning').ngettext(
+                msgid`You have reached the maximum of ${calendarsLimit} calendar.`,
+                `You have reached the maximum of ${calendarsLimit} calendars.`,
+                calendarsLimit
+            )}
             canAdd={activeAddresses.length > 0 && isBelowLimit && user.hasNonDelinquentScope}
             onAdd={handleCreate}
             onSetDefault={handleSetDefault}

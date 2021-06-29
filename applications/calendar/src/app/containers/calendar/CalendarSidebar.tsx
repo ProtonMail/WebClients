@@ -150,7 +150,7 @@ const CalendarSidebar = ({
                 toggle={displayOtherCalendars}
                 onToggle={() => setDisplayOtherCalendars((prevState) => !prevState)}
                 right={headerButton}
-                text={c('Link').t`Other calendars`}
+                text={c('Link').t`Subscribed calendars`}
             />
             {displayOtherCalendars && (
                 <CalendarSidebarListItems
