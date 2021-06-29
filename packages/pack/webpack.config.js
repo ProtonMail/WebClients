@@ -7,7 +7,7 @@ const getAlias = require('./webpack/alias');
 const getPlugins = require('./webpack/plugins');
 const getOptimizations = require('./webpack/optimization');
 
-function main({ publicPath, flow, appMode, featureFlags, writeSRI = true }) {
+function main({ publicPath, flow, appMode, buildData, featureFlags, writeSRI = true }) {
     const isProduction = process.env.NODE_ENV === 'production';
     const isTtag = flow === 'i18n';
 
@@ -16,6 +16,7 @@ function main({ publicPath, flow, appMode, featureFlags, writeSRI = true }) {
         isTtag,
         publicPath: publicPath || '/',
         appMode,
+        buildData,
         featureFlags,
         writeSRI
     };

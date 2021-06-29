@@ -17,7 +17,7 @@ const SriStripPlugin = require('./sri-strip-plugin');
 const transformOpenpgpFiles = require('./helpers/openpgp');
 const { OPENPGP_FILES } = require('./constants');
 
-const { logo, ...logoConfig } = require(path.resolve(('./src/assets/logoConfig.js')));
+const { logo, ...logoConfig } = require(path.resolve('./src/assets/logoConfig.js'));
 
 const HTML_MINIFY = {
     removeAttributeQuotes: true,
@@ -25,7 +25,7 @@ const HTML_MINIFY = {
     html5: true,
     minifyCSS: true,
     removeComments: true,
-    removeEmptyAttributes: true
+    removeEmptyAttributes: true,
 };
 
 const PRODUCTION_PLUGINS = [
@@ -36,12 +36,12 @@ const PRODUCTION_PLUGINS = [
                 {
                     reduceInitial: false,
                     discardComments: {
-                        removeAll: true
+                        removeAll: true,
                     },
-                    svgo: false
-                }
-            ]
-        }
+                    svgo: false,
+                },
+            ],
+        },
     }),
     new ImageminPlugin({
         cacheFolder: path.resolve('./node_modules/.cache'),
@@ -49,24 +49,24 @@ const PRODUCTION_PLUGINS = [
         disable: false,
         test: /\.(jpe?g|png)$/i,
         optipng: {
-            optimizationLevel: 7
+            optimizationLevel: 7,
         },
         pngquant: {
-            quality: '80-100'
+            quality: '80-100',
         },
         jpegtran: {
-            progressive: true
+            progressive: true,
         },
         plugins: [
             imageminMozjpeg({
                 quality: 80,
-                progressive: true
-            })
-        ]
-    })
+                progressive: true,
+            }),
+        ],
+    }),
 ];
 
-module.exports = ({ isProduction, publicPath, appMode, featureFlags, writeSRI }) => {
+module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, writeSRI }) => {
     const { main, worker, elliptic, compat, definition } = transformOpenpgpFiles(
         OPENPGP_FILES,
         publicPath,
@@ -80,52 +80,67 @@ module.exports = ({ isProduction, publicPath, appMode, featureFlags, writeSRI })
                   new webpack.HotModuleReplacementPlugin(),
                   new webpack.NamedModulesPlugin(),
                   new ReactRefreshWebpackPlugin({
-                      overlay: false
-                  })
+                      overlay: false,
+                  }),
               ]),
 
         new WriteWebpackPlugin(
             [main, compat, elliptic, worker].map(({ filepath, contents }) => ({
                 name: filepath,
-                data: Buffer.from(contents)
+                data: Buffer.from(contents),
             }))
         ),
 
         new WriteWebpackPlugin([
-            { name: 'assets/host.png', data: Buffer.from('R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7', 'base64') }
+            {
+                name: 'assets/version.json',
+                data: Buffer.from(
+                    JSON.stringify({
+                        ...buildData,
+                        mode: appMode,
+                    }, null, 2)
+                ),
+            },
+        ]),
+
+        new WriteWebpackPlugin([
+            {
+                name: 'assets/host.png',
+                data: Buffer.from('R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7', 'base64'),
+            },
         ]),
 
         // Fix max file limit if the folder does not exist
         fs.existsSync('public') &&
             new CopyWebpackPlugin({
-                patterns: [{ from: 'public', noErrorOnMissing: true }]
+                patterns: [{ from: 'public', noErrorOnMissing: true }],
             }),
 
         new MiniCssExtractPlugin({
             filename: isProduction ? '[name].[contenthash:8].css' : '[name].css',
-            chunkFilename: isProduction ? '[id].[contenthash:8].css' : '[id].css'
+            chunkFilename: isProduction ? '[id].[contenthash:8].css' : '[id].css',
         }),
 
         new HtmlWebpackPlugin({
             template: path.resolve('./src/app.ejs'),
             inject: 'body',
-            minify: isProduction && HTML_MINIFY
+            minify: isProduction && HTML_MINIFY,
         }),
 
         new FaviconsWebpackPlugin({
             logo: path.resolve(logo),
-            ...logoConfig
+            ...logoConfig,
         }),
 
         ...(writeSRI
             ? [
                   new SriPlugin({
                       hashFuncNames: ['sha384'],
-                      enabled: isProduction
+                      enabled: isProduction,
                   }),
                   new SriStripPlugin({
-                      ignore: /\.css$/
-                  })
+                      ignore: /\.css$/,
+                  }),
               ]
             : []),
 
@@ -133,18 +148,18 @@ module.exports = ({ isProduction, publicPath, appMode, featureFlags, writeSRI })
             WEBPACK_OPENPGP: JSON.stringify(definition),
             WEBPACK_APP_MODE: JSON.stringify(appMode),
             WEBPACK_PUBLIC_PATH: JSON.stringify(publicPath),
-            WEBPACK_FEATURE_FLAGS: JSON.stringify(featureFlags)
+            WEBPACK_FEATURE_FLAGS: JSON.stringify(featureFlags),
         }),
 
         new ScriptExtHtmlWebpackPlugin({
-            defaultAttribute: 'defer'
+            defaultAttribute: 'defer',
         }),
 
         new webpack.SourceMapDevToolPlugin({
             test: /.js$/,
-            filename: '[file].map'
+            filename: '[file].map',
         }),
 
-        ...(isProduction ? PRODUCTION_PLUGINS : [])
+        ...(isProduction ? PRODUCTION_PLUGINS : []),
     ].filter(Boolean);
 };

@@ -9,9 +9,9 @@ const isProduction = (host: string) => host.endsWith('.protonmail.com') || host 
 
 function main({
     SENTRY_DSN,
-    COMMIT_RELEASE,
+    COMMIT,
     APP_VERSION,
-}: Pick<ProtonConfig, 'SENTRY_DSN' | 'COMMIT_RELEASE' | 'APP_VERSION'>) {
+}: Pick<ProtonConfig, 'SENTRY_DSN' | 'COMMIT' | 'APP_VERSION'>) {
     const { host } = window.location;
 
     // No need to configure it if we don't load the DSN
@@ -25,7 +25,7 @@ function main({
 
     Sentry.init({
         dsn,
-        release: isProduction(host) ? APP_VERSION : COMMIT_RELEASE,
+        release: isProduction(host) ? APP_VERSION : COMMIT,
         environment: host,
         normalizeDepth: 5,
         beforeSend(event, hint) {
