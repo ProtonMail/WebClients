@@ -55,6 +55,7 @@ const DomainsSelect = ({ member, onChange, className }) => {
             value={domain}
             options={options}
             onChange={handleChange}
+            data-testid="settings:identity-section:add-address:domain-select"
         />
     );
 };

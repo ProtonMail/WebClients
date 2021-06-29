@@ -32,7 +32,7 @@ const PMSignature = ({ id, mailSettings = {} }: Props) => {
                 // eslint-disable-next-line react/no-danger
                 dangerouslySetInnerHTML={{ __html: PM_SIGNATURE }}
             />
-            <div className="ml0-5 pt0-5 on-mobile-ml0">
+            <div className="ml0-5 pt0-5 on-mobile-ml0" data-testid="settings:identity-section:signature-toggle">
                 <Toggle loading={loading} id={id} checked={state} onChange={handleChange} />
             </div>
         </div>
