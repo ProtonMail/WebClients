@@ -65,7 +65,8 @@ const CONFIG_ENV = (() => {
  */
 const LOCALES = (() => {
     try {
-        return require('proton-translations/config/locales.json');
+        // Local dependency relative to the application
+        return require(require.resolve('proton-translations/config/locales.json', { paths: [process.cwd()]}));
     } catch (e) {
         if (!process.argv.includes('print-config')) {
             warn('No po/locales.json available yet');
