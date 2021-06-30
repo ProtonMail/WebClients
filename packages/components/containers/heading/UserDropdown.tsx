@@ -192,7 +192,7 @@ const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
                             onClick={handleTourClick}
                         >
                             {c('Action').t`${BRAND_NAME} introduction`}
-                            <Icon className="ml1" name="external-link" />
+                            <Icon className="ml1" name="presentation" />
                         </DropdownMenuButton>
                     )}
 
