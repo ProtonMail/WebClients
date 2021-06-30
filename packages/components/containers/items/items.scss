@@ -14,7 +14,5 @@
 }
 
 .navigation__dragover {
-	background: rgba(255, 255, 255, 0.05);
-	color: var(--color-nav-link, #f6f7fa);
-	text-decoration: none;
+	background: var(--interaction-default-hover);
 }
