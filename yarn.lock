@@ -3931,7 +3931,7 @@ __metadata:
     mimemessage: "github:ProtonMail/mimemessage.js#semver:~v1.1.4"
     mutex-browser: "github:ProtonMail/mutex-browser#semver:^1.0.0"
     papaparse: ^5.0.0
-    pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.3.2"
+    pmcrypto: "github:ProtonMail/pmcrypto#semver:~6.4.0"
     prettier: ^2.0.5
     puppeteer: ^10.1.0
     push.js: ^1.0.12
@@ -23784,14 +23784,14 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pmcrypto@github:ProtonMail/pmcrypto#semver:~6.3.2, pmcrypto@github:ProtonMail/pmcrypto.git#semver:^6.0.0":
-  version: 6.3.20
-  resolution: "pmcrypto@https://github.com/ProtonMail/pmcrypto.git#commit=c1dc08900b809d2e0170657deaf5659d7ada2ad2"
+"pmcrypto@github:ProtonMail/pmcrypto#semver:~6.4.0, pmcrypto@github:ProtonMail/pmcrypto.git#semver:^6.0.0":
+  version: 6.4.0
+  resolution: "pmcrypto@https://github.com/ProtonMail/pmcrypto.git#commit=e84ef1d7031006fd48aa54b34004d340154a6d2d"
   dependencies:
     "@types/openpgp": ^4.4.12
     esm: ^3.0.84
     openpgp: ^4.10.8
-  checksum: 60a75d95d7b5efae33d730813400e105baf868442e237d8a0bd7d04a0738ca4316d158353fb24da58546b2803fe59c85dfab41cc4c4ad2ddb37cc333508bea3f
+  checksum: 16fec7185db42b1885b1b2479d3d427d7a1132ab2d30e217778c931316456ff79c0a3327e0c55c34480e08df97449f2633056dd8d49ceb378ad0df24156e37e3
   languageName: node
   linkType: hard
 

@@ -21,7 +21,7 @@ interface Props {
 }
 
 const SimplePublicKeyTable = ({ contact }: Props) => {
-    const [expirationDate, setExpirationDate] = useState<Date | undefined>();
+    const [expirationDate, setExpirationDate] = useState<Date | typeof Infinity | null>();
     const [loading, withLoading] = useLoading();
     const { isNarrow, isTinyMobile } = useActiveBreakpoint();
 
@@ -32,8 +32,8 @@ const SimplePublicKeyTable = ({ contact }: Props) => {
 
     useEffect(() => {
         const getExpirationTime = async () => {
-            const time = await publicKey.getExpirationTime('encrypt');
-            setExpirationDate(new Date(time));
+            const time = await publicKey.getExpirationTime();
+            setExpirationDate(time);
         };
         void withLoading(getExpirationTime());
     }, []);

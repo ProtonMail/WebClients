@@ -2,7 +2,7 @@ import React, { ChangeEvent, Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
 
-import { getIsValidForSending, getKeyEncryptStatus } from '@proton/shared/lib/keys/publicKeys';
+import { getIsValidForSending, getKeyEncryptionCapableStatus } from '@proton/shared/lib/keys/publicKeys';
 import { MailSettings, ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
 
 import { CONTACT_PGP_SCHEMES, MIME_TYPES_MORE } from '@proton/shared/lib/constants';
@@ -43,8 +43,7 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
         }
         const pinnedKeys = [...model.publicKeys.pinnedKeys];
         const trustedFingerprints = new Set(model.trustedFingerprints);
-        const revokedFingerprints = new Set(model.revokedFingerprints);
-        const expiredFingerprints = new Set(model.expiredFingerprints);
+        const encryptionCapableFingerprints = new Set(model.encryptionCapableFingerprints);
 
         await Promise.all(
             files.map(async (publicKey) => {
@@ -57,12 +56,9 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
                     return;
                 }
                 const fingerprint = publicKey.getFingerprint();
-                const { isExpired, isRevoked } = await getKeyEncryptStatus(publicKey);
-                if (isExpired) {
-                    expiredFingerprints.add(fingerprint);
-                }
-                if (isRevoked) {
-                    revokedFingerprints.add(fingerprint);
+                const canEncrypt = await getKeyEncryptionCapableStatus(publicKey);
+                if (canEncrypt) {
+                    encryptionCapableFingerprints.add(fingerprint);
                 }
                 if (!trustedFingerprints.has(fingerprint)) {
                     trustedFingerprints.add(fingerprint);
@@ -79,8 +75,7 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
             ...model,
             publicKeys: { ...model.publicKeys, pinnedKeys },
             trustedFingerprints,
-            expiredFingerprints,
-            revokedFingerprints,
+            encryptionCapableFingerprints,
         });
     };
 
@@ -110,7 +105,7 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
             )}
             {model.isPGPExternalWithoutWKDKeys && noPinnedKeyCanSend && (
                 <Alert type="error" learnMore="https://protonmail.com/support/knowledge-base/how-to-use-pgp/">{c('Info')
-                    .t`All uploaded keys are expired or revoked! Encryption is automatically disabled.`}</Alert>
+                    .t`None of the uploaded keys are valid for encryption. Encryption is automatically disabled.`}</Alert>
             )}
             {!hasApiKeys && (
                 <Row>

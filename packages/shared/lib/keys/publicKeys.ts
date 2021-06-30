@@ -1,4 +1,4 @@
-import { OpenPGPKey, serverTime } from 'pmcrypto';
+import { OpenPGPKey, serverTime, canKeyEncrypt } from 'pmcrypto';
 import { c } from 'ttag';
 import { KEY_FLAG, MIME_TYPES_MORE, PGP_SCHEMES_MORE, RECIPIENT_TYPES } from '../constants';
 import { canonizeEmailByGuess, canonizeInternalEmail } from '../helpers/email';
@@ -71,18 +71,14 @@ export const sortApiKeys = (
 /**
  * Sort list of pinned keys retrieved from the API. Keys that can be used for sending take preference
  */
-export const sortPinnedKeys = (
-    keys: OpenPGPKey[] = [],
-    expiredFingerprints: Set<string>,
-    revokedFingerprints: Set<string>
-): OpenPGPKey[] =>
+export const sortPinnedKeys = (keys: OpenPGPKey[] = [], encryptionCapableFingerprints: Set<string>): OpenPGPKey[] =>
     keys
         .reduce<OpenPGPKey[][]>(
             (acc, key) => {
                 const fingerprint = key.getFingerprint();
                 // calculate order through a bitmap
                 const index = toBitMap({
-                    cannotSend: expiredFingerprints.has(fingerprint) || revokedFingerprints.has(fingerprint),
+                    cannotSend: !encryptionCapableFingerprints.has(fingerprint),
                 });
                 acc[index].push(key);
                 return acc;
@@ -92,28 +88,16 @@ export const sortPinnedKeys = (
         .flat();
 
 /**
- * Given a public key, return its expiration and revoke status
+ * Given a public key, return true if it is capable of encrypting messages.
+ * This includes checking that the key is neither expired nor revoked.
  */
-export const getKeyEncryptStatus = async (
-    publicKey: OpenPGPKey,
-    timestamp?: number
-): Promise<{
-    isExpired: boolean;
-    isRevoked: boolean;
-}> => {
+export const getKeyEncryptionCapableStatus = async (publicKey: OpenPGPKey, timestamp?: number): Promise<boolean> => {
     const now = timestamp || +serverTime();
-    const creationTime = +publicKey.getCreationTime();
-    // notice there are different expiration times depending on the use of the key.
-    const expirationTime = await publicKey.getExpirationTime('encrypt');
-    const isExpired = !(creationTime <= now && now <= expirationTime);
-
-    // TODO: OpenPGP types not up-to-date, remove assertions when fixed
-    const isRevoked = (await publicKey.isRevoked(null as any, null as any, timestamp as any)) as boolean;
-    return { isExpired, isRevoked };
+    return canKeyEncrypt(publicKey, new Date(now));
 };
 
 /**
- * Given a public key retrieved from the API, return true if it has been marked by the API as
+ * Given a public key retrieved from the API, return true if it has been marked as obsolete, and it is thus
  * verification-only. Return false if it's marked valid for encryption. Return undefined otherwise
  */
 export const getKeyVerificationOnlyStatus = (publicKey: OpenPGPKey, config: ApiKeysConfig): boolean | undefined => {
@@ -133,12 +117,8 @@ export const getIsValidForSending = (
     fingerprint: string,
     publicKeyModel: PublicKeyModel | ContactPublicKeyModel
 ): boolean => {
-    const { verifyOnlyFingerprints, revokedFingerprints, expiredFingerprints } = publicKeyModel;
-    return (
-        !verifyOnlyFingerprints.has(fingerprint) &&
-        !revokedFingerprints.has(fingerprint) &&
-        !expiredFingerprints.has(fingerprint)
-    );
+    const { verifyOnlyFingerprints, encryptionCapableFingerprints } = publicKeyModel;
+    return !verifyOnlyFingerprints.has(fingerprint) && encryptionCapableFingerprints.has(fingerprint);
 };
 
 /**
@@ -161,35 +141,39 @@ export const getContactPublicKeyModel = async ({
         contactSignatureTimestamp,
     } = pinnedKeysConfig;
     const trustedFingerprints = new Set<string>();
-    const expiredFingerprints = new Set<string>();
-    const revokedFingerprints = new Set<string>();
+    const encryptionCapableFingerprints = new Set<string>();
 
     // prepare keys retrieved from the vCard
     await Promise.all(
         pinnedKeys.map(async (publicKey) => {
             const fingerprint = publicKey.getFingerprint();
-            const { isExpired, isRevoked } = await getKeyEncryptStatus(publicKey);
+            const canEncrypt = await getKeyEncryptionCapableStatus(publicKey);
             trustedFingerprints.add(fingerprint);
-            if (isExpired) {
-                expiredFingerprints.add(fingerprint);
-            }
-            if (isRevoked) {
-                revokedFingerprints.add(fingerprint);
+            if (canEncrypt) {
+                encryptionCapableFingerprints.add(fingerprint);
             }
         })
     );
-    const orderedPinnedKeys = sortPinnedKeys(pinnedKeys, expiredFingerprints, revokedFingerprints);
+    const orderedPinnedKeys = sortPinnedKeys(pinnedKeys, encryptionCapableFingerprints);
 
     // prepare keys retrieved from the API
     const isInternalUser = getIsInternalUser(apiKeysConfig);
     const isExternalUser = !isInternalUser;
     const verifyOnlyFingerprints = new Set<string>();
     const apiKeys = apiKeysConfig.publicKeys.filter(isTruthy);
-    apiKeys.forEach((publicKey) => {
-        if (getKeyVerificationOnlyStatus(publicKey, apiKeysConfig)) {
-            verifyOnlyFingerprints.add(publicKey.getFingerprint());
-        }
-    });
+    await Promise.all(
+        apiKeys.map(async (publicKey) => {
+            const fingerprint = publicKey.getFingerprint();
+            if (getKeyVerificationOnlyStatus(publicKey, apiKeysConfig)) {
+                verifyOnlyFingerprints.add(publicKey.getFingerprint());
+            }
+            const canEncrypt = await getKeyEncryptionCapableStatus(publicKey);
+            if (canEncrypt) {
+                encryptionCapableFingerprints.add(fingerprint);
+            }
+        })
+    );
+
     const orderedApiKeys = sortApiKeys(apiKeys, trustedFingerprints, verifyOnlyFingerprints);
 
     return {
@@ -200,9 +184,8 @@ export const getContactPublicKeyModel = async ({
         emailAddress,
         publicKeys: { apiKeys: orderedApiKeys, pinnedKeys: orderedPinnedKeys },
         trustedFingerprints,
-        expiredFingerprints,
-        revokedFingerprints,
         verifyOnlyFingerprints,
+        encryptionCapableFingerprints,
         isPGPExternal: isExternalUser,
         isPGPInternal: isInternalUser,
         isPGPExternalWithWKDKeys: isExternalUser && !!apiKeys.length,

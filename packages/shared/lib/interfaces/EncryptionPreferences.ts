@@ -54,9 +54,8 @@ export interface ContactPublicKeyModel {
     mimeType: CONTACT_MIME_TYPES;
     scheme: CONTACT_PGP_SCHEMES;
     trustedFingerprints: Set<string>;
-    expiredFingerprints: Set<string>;
-    revokedFingerprints: Set<string>;
-    verifyOnlyFingerprints: Set<string>;
+    verifyOnlyFingerprints: Set<string>; // Keys that are not allowed to encrypt, because they are marked as obsolete.
+    encryptionCapableFingerprints: Set<string>; // Keys that are capable of encryption (regardless of whether they are allowed to encrypt).
     isPGPExternal: boolean;
     isPGPInternal: boolean;
     isPGPExternalWithWKDKeys: boolean;
@@ -77,9 +76,8 @@ export interface PublicKeyModel {
     mimeType: CONTACT_MIME_TYPES;
     scheme: PGP_SCHEMES;
     trustedFingerprints: Set<string>;
-    expiredFingerprints: Set<string>;
-    revokedFingerprints: Set<string>;
     verifyOnlyFingerprints: Set<string>;
+    encryptionCapableFingerprints: Set<string>;
     isPGPExternal: boolean;
     isPGPInternal: boolean;
     isPGPExternalWithWKDKeys: boolean;
