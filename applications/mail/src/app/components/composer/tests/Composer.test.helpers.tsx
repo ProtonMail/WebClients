@@ -1,6 +1,6 @@
 import React from 'react';
 import squire from 'squire-rte';
-import { act, fireEvent, RenderResult } from '@testing-library/react';
+import { fireEvent, RenderResult } from '@testing-library/react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { mergeMessages } from '../../../helpers/message/messages';
 import { messageCache } from '../../../helpers/test/cache';
@@ -66,9 +66,6 @@ export const renderComposer = async (localID: string, useMinimalCache = true) =>
 };
 
 export const clickSend = async (renderResult: RenderResult) => {
-    // Fake timers after render, it breaks rendering, I would love to know why
-    jest.useFakeTimers();
-
     const sendSpy = jest.fn(() => Promise.resolve({ Sent: {} }));
     addApiMock(`mail/v4/messages/${ID}`, sendSpy, 'post');
     addApiMock(`mail/v4/messages/${ID}`, () => {}, 'get');
@@ -78,10 +75,6 @@ export const clickSend = async (renderResult: RenderResult) => {
 
     // Wait for the event manager to be called as it's the last step of the sendMessage hook
     await waitForEventManagerCall();
-
-    await act(async () => {
-        jest.runAllTimers();
-    });
 
     const sendRequest = (sendSpy.mock.calls[0] as any[])[0];
 
