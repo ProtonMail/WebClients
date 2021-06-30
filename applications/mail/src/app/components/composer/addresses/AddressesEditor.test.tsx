@@ -2,9 +2,8 @@ import React, { MutableRefObject } from 'react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { act, getByText, getAllByRole } from '@testing-library/react';
-import { fireEvent } from '@testing-library/dom';
-
+import { act, getByText } from '@testing-library/react';
+import { fireEvent, getAllByRole } from '@testing-library/dom';
 import {
     addApiMock,
     addToCache,
@@ -319,30 +318,32 @@ describe('AddressesEditor', () => {
         // Open the modal
         fireEvent.click(toButton);
 
+        const { modal } = getModal();
+
+        // Check if the modal is displayed with all contacts
+        getByText(modal, 'Insert contacts');
+        getByText(modal, contactEmails[0].Name);
+        getByText(modal, contactEmails[1].Name);
+        getByText(modal, contactEmails[2].Name);
+
+        // Expect contacts "email1" and "email2" to be checked by default
+        const checkedCheckboxes = getAllByRole(modal, 'checkbox', { checked: true });
+        expect(checkedCheckboxes.length).toEqual(2);
+
+        // Expect contact "email3" and "select all" checkboxes not to be checked
+        const notCheckedCheckboxes = getAllByRole(modal, 'checkbox', { checked: false });
+        expect(notCheckedCheckboxes.length).toEqual(2);
+
         await act(async () => {
-            const { modal } = await getModal();
-
-            // Check if the modal is displayed with all contacts
-            getByText(modal, 'Insert contacts');
-            getByText(modal, contactEmails[0].Name);
-            getByText(modal, contactEmails[1].Name);
-            getByText(modal, contactEmails[2].Name);
-
-            // Expect contacts "email1" and "email2" to be checked by default
-            const checkedCheckboxes = getAllByRole(modal, 'checkbox', { checked: true });
-            expect(checkedCheckboxes.length).toEqual(2);
-
-            // Expect contact "email3" and "select all" checkboxes not to be checked
-            const notCheckedCheckboxes = getAllByRole(modal, 'checkbox', { checked: false });
-            expect(notCheckedCheckboxes.length).toEqual(2);
-
             // Click on a non-checked checkbox (does not matter if this is the select all as long as there is only 3 contacts here)
             fireEvent.click(notCheckedCheckboxes[0]);
+        });
 
-            // Check if all checkboxes are now checked
-            const checkedCheckboxesAfterClick = getAllByRole(modal, 'checkbox', { checked: true });
-            expect(checkedCheckboxesAfterClick.length).toEqual(4);
+        // Check if all checkboxes are now checked
+        const checkedCheckboxesAfterClick = getAllByRole(modal, 'checkbox', { checked: true });
+        expect(checkedCheckboxesAfterClick.length).toEqual(4);
 
+        await act(async () => {
             // Insert the third contact
             const insertButton = getByText(modal, 'Insert 3 contacts');
             fireEvent.click(insertButton);

@@ -2,8 +2,8 @@ import React, { MutableRefObject } from 'react';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { act, waitFor } from '@testing-library/react';
-import { fireEvent } from '@testing-library/dom';
+import { act } from '@testing-library/react';
+import { fireEvent, waitFor } from '@testing-library/dom';
 import loudRejection from 'loud-rejection';
 import { render } from '../../../helpers/test/render';
 import { Breakpoints } from '../../../models/utils';
@@ -54,9 +54,11 @@ export const setup = async (specificProps: Partial<MessageViewProps> = {}, useMi
 
         await act(async () => {
             ref.current?.expand();
-            // Message decryption can take a bit of time and can be on another thread than the test
-            // By waiting on the completion of the decryption, we ensure not to continue too early
-            await waitFor(() => expect(messageDecrypt.decryptMessage).toHaveBeenCalled());
+            // Wait for message initialization to be finished before continuing
+            await waitFor(() => {
+                const message = messageCache.get(props.message.ID);
+                expect(message?.initialized).toBe(true);
+            });
         });
     };
 
