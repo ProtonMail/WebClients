@@ -14,6 +14,7 @@ const iconsMap: { [mimeType: string]: { name: string } } = {
         name: 'ppt',
     },
     'application/x-rar-compressed': { name: 'zip' },
+    'application/x-zip-compressed': { name: 'zip' },
     'application/zip': { name: 'zip' },
     'application/vnd.ms-excel': { name: 'xls' },
     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': {
