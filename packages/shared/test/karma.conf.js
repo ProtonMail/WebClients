@@ -1,15 +1,17 @@
+process.env.CHROME_BIN = require('puppeteer').executablePath();
+
 module.exports = (config) => {
     config.set({
         basePath: '..',
         frameworks: ['jasmine'],
         files: ['test/index.spec.js'],
         preprocessors: {
-            'test/index.spec.js': ['webpack']
+            'test/index.spec.js': ['webpack'],
         },
         webpack: {
             mode: 'development',
             resolve: {
-                extensions: ['.js', '.ts', '.tsx']
+                extensions: ['.js', '.ts', '.tsx'],
             },
             module: {
                 rules: [
@@ -18,20 +20,20 @@ module.exports = (config) => {
                         use: [
                             {
                                 loader: 'ts-loader',
-                                options: { transpileOnly: true }
-                            }
+                                options: { transpileOnly: true },
+                            },
                         ],
-                        exclude: /node_modules/
-                    }
-                ]
+                        exclude: /node_modules/,
+                    },
+                ],
             },
-            devtool: 'inline-source-map'
+            devtool: 'inline-source-map',
         },
         webpackMiddleware: {
-            stats: 'minimal'
+            stats: 'minimal',
         },
         mime: {
-            'text/x-typescript': ['ts', 'tsx']
+            'text/x-typescript': ['ts', 'tsx'],
         },
         reporters: ['progress'],
         port: 9876,
@@ -39,13 +41,13 @@ module.exports = (config) => {
         logLevel: config.LOG_INFO,
         autoWatch: false,
         customLaunchers: {
-          ChromeHeadlessCI: {
-            base: 'ChromeHeadless',
-            flags: ['--no-sandbox']
-          }
+            ChromeHeadlessCI: {
+                base: 'ChromeHeadless',
+                flags: ['--no-sandbox'],
+            },
         },
         browsers: ['ChromeHeadlessCI'],
         singleRun: true,
-        concurrency: Infinity
+        concurrency: Infinity,
     });
 };
