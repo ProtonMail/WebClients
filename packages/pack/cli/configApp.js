@@ -59,7 +59,7 @@ const getGitTagVersion = (applicationName) => {
  */
 const getVersionNumberFromTag = (tag) => {
     return tag.replace(/[^@]*@/g, '');
-}
+};
 
 /**
  * Extract the config of a project
@@ -87,7 +87,7 @@ const CONFIG_ENV = (() => {
 const LOCALES = (() => {
     try {
         // Local dependency relative to the application
-        return require(require.resolve('proton-translations/config/locales.json', { paths: [process.cwd()]}));
+        return require(require.resolve('proton-translations/config/locales.json', { paths: [process.cwd()] }));
     } catch (e) {
         if (!process.argv.includes('print-config')) {
             warn('No po/locales.json available yet');
@@ -166,7 +166,7 @@ function main({ api = 'dev' }) {
 
     const json = {
         appName,
-        version: ENV_CONFIG.app.version || ENV_CONFIG.pkg.version || version || '4.0.0',
+        version: version || '4.9.99',
         locales: LOCALES,
         apiUrl,
     };
@@ -180,7 +180,7 @@ function main({ api = 'dev' }) {
         version: json.version,
         commit,
         branch,
-        date: new Date().toGMTString()
+        date: new Date().toGMTString(),
     };
 
     const config = dedent`
