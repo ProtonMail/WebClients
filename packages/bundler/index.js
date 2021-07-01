@@ -1,88 +1,104 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const Listr = require('listr');
+const {
+    promises: { access, rm },
+    constants: FS_CONSTANTS,
+} = require('fs');
+const path = require('path');
 const chalk = require('chalk');
-const UpdaterRenderer = require('listr-update-renderer');
-const moment = require('moment');
 const argv = require('minimist')(process.argv.slice(2), {
-    string: ['appMode'],
-    boolean: ['lint', 'git', 'only-git'],
+    string: ['buildMode'],
+    boolean: ['verbose'],
     default: {
-        git: false,
-        lint: true,
-        fromCi: false,
-        appMode: 'bundle',
-        remote: false,
-        forceFetch: false,
-        'only-git': false,
-        'default-branch': 'master',
+        verbose: false,
+        buildMode: 'standalone',
     },
 });
 
-// Compat mode WebClient
-const ENV_FILE = fs.existsSync('.env') ? '.env' : 'env/.env';
-require('dotenv').config({ path: ENV_FILE });
+const { bash, script } = require('./lib/helpers/cli');
 
-const { success, error } = require('./lib/helpers/log')('proton-bundler');
-const { get: getConfig } = require('./lib/config');
-const getTasks = require('./lib/tasks/index');
-const remoteBuildProcesss = require('./lib/tasks/remote');
-const changelogProcess = require('./lib/tasks/changelog');
-const flavorProcess = require('./lib/tasks/flavor');
-const { script } = require('./lib/helpers/cli');
-
-const successMessage = (time, { isOnlyDeployGit, isDeployGit }) => {
-    if (isOnlyDeployGit || isDeployGit) {
-        return success(`App deployment done -> ${chalk.bold('dist')}`, { time, space: true });
-    }
-    return success(`Bundle done, available -> ${chalk.bold('dist')}`, { time, space: true });
-};
+const IS_VERBOSE = process.env.IS_VERBOSE || argv.verbose;
+const hashFileOrDirectory = (itemPath) => access(itemPath, FS_CONSTANTS.R_OK);
 
 async function main() {
-    /*
-        If we build from the remote repository we need to:
-            - clone the repository inside /tmp
-            - install dependencies
-            - run the deploy command again from this directory
-        So let's put an end to the current deploy.
-     */
-    if (argv.remote) {
-        return remoteBuildProcesss();
+    const tasks = [
+        {
+            title: 'Setup app config',
+            task() {
+                return bash('yarn run pack', process.argv.slice(2));
+            },
+        },
+        {
+            title: 'Clear previous dist',
+            async task() {
+                const outputDir = path.join(process.cwd(), 'dist');
+
+                try {
+                    await hashFileOrDirectory(outputDir);
+                    await rm(outputDir);
+                } catch (e) {
+                    // osef if we don't have the directory
+                }
+            },
+        },
+        {
+            title: 'Build the application',
+            async task(ctx = {}) {
+                const { buildMode } = argv;
+                const args = process.argv.slice(2);
+                if (buildMode === 'sso') {
+                    const output = await bash('yarn', ['run', 'build:sso', '--', ...args]);
+                    ctx.outputBuild = output;
+                    return true;
+                }
+
+                if (buildMode === 'standalone') {
+                    const output = await bash('yarn', ['run', 'build:standalone', '--', ...args]);
+                    ctx.outputBuild = output;
+                    return true;
+                }
+
+                if (buildMode === 'standalone-with-prefix-path') {
+                    const output = await bash('yarn', [
+                        'run',
+                        'build:standalone',
+                        '--',
+                        '$npm_package_config_publicPathFlag',
+                        ...args,
+                    ]);
+                    ctx.outputBuild = output;
+                    return true;
+                }
+
+                const output = await bash('yarn', ['run', 'build', '--', ...args]);
+                ctx.outputBuild = output;
+                return true;
+            },
+        },
+        {
+            title: 'Check the build output content',
+            // Extract stdout from the output as webpack can throw error and still use stdout + exit code 0
+            async task(ctx = {}) {
+                await script('validateBuild.sh');
+                delete ctx.outputBuild; // clean as we won't need it anymore
+            },
+        },
+    ];
+
+    for (const { title, task } of tasks) {
+        console.log('[~]', title, chalk.cyan('running'));
+        await task();
+        console.log('[~]', title, chalk.green('ok'));
     }
 
-    const config = await getConfig(argv);
-    const start = moment(Date.now());
-    const listTasks = getTasks({ config, argv });
-    const tasks = new Listr(listTasks, {
-        renderer: UpdaterRenderer,
-        collapse: false,
-    });
-
-    await tasks.run();
-
-    const now = moment(Date.now());
-    const total = now.diff(start, 'seconds');
-    const time = total > 60 ? moment.utc(total * 1000).format('mm:ss') : `${total}s`;
-
-    successMessage(time, config);
+    console.log('[~]', chalk.green('bundle success'));
 }
 
-/*
-    To catch unhandledPromiseRejection
- */
-(async () => {
-    if (argv._.includes('hosts')) {
-        return script('createNewDeployBranch.sh', process.argv.slice(3)).then(({ stdout }) => console.log(stdout));
+main().catch((e) => {
+    if (IS_VERBOSE) {
+        console.error(e);
     }
 
-    if (argv._.includes('flavor')) {
-        return flavorProcess(argv);
-    }
-
-    if (argv._.includes('changelog')) {
-        return changelogProcess(argv);
-    }
-
-    main().catch(error);
-})().catch(error);
+    console.error(chalk.red('[Error]'), e.message);
+    process.exit(1);
+});
