@@ -40,7 +40,7 @@ interface Props extends Omit<InputProps, 'onChange' | 'min' | 'max' | 'value'> {
     displayDuration?: boolean;
     base?: Date;
     interval?: number;
-    preventNextDayOverflow?: boolean;
+    preventNextDayOverflow?: boolean; // If we have a min hour, we may want to avoid having calculated options overflowing on the next day
 }
 
 const TimeInput = ({
