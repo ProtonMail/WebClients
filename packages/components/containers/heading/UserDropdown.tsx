@@ -264,14 +264,18 @@ const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
                         </>
                     ) : null}
 
-                    <DropdownMenuButton
-                        className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
-                        onClick={handleLogout}
-                        data-cy-header-user-dropdown="logout"
-                    >
-                        <span className="mr1">{c('Action').t`Sign out`}</span>
-                        <Icon name="sign-out-right" />
-                    </DropdownMenuButton>
+                    <div className="pr1 pl1 pt0-25 pb0-75">
+                        <Button
+                            shape="solid"
+                            color="norm"
+                            className="w100 flex flex-justify-center flex-align-items-center"
+                            onClick={handleLogout}
+                            data-cy-header-user-dropdown="logout"
+                        >
+                            <span className="mr0-5">{c('Action').t`Sign out`}</span>
+                            <Icon name="sign-out-right" />
+                        </Button>
+                    </div>
                 </DropdownMenu>
             </Dropdown>
         </>
