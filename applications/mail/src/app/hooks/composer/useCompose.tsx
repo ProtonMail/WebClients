@@ -137,11 +137,6 @@ export const useCompose = (
 
             const existingMessage = messageCache.get(localID);
 
-            if (existingMessage?.inComposer === true) {
-                focusComposer(existingMessage.localID);
-                return;
-            }
-
             if (existingMessage) {
                 // Drafts have a different sanitization as mail content
                 // So we have to restart the sanitization process on a cached draft
@@ -150,13 +145,11 @@ export const useCompose = (
                     plainText: undefined,
                     document: undefined,
                     openDraftFromUndo: fromUndo,
-                    inComposer: true,
                 });
             } else {
                 messageCache.set(localID, {
                     localID,
                     openDraftFromUndo: fromUndo,
-                    inComposer: true,
                 });
             }
 

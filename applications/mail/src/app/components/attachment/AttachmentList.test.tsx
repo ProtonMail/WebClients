@@ -5,8 +5,8 @@ import AttachmentList, { AttachmentAction } from './AttachmentList';
 
 const localID = 'localID';
 const cid = 'cid';
-const normalAttachment = {} as Attachment;
-const embeddedAttachment = { Headers: { 'content-id': cid } } as Attachment;
+const normalAttachment = { ID: 'ID1' } as Attachment;
+const embeddedAttachment = { ID: 'ID2', Headers: { 'content-id': cid } } as Attachment;
 const image = createEmbeddedImage(embeddedAttachment);
 const messageImages = createMessageImages([image]);
 

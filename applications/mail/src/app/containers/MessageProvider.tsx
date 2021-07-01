@@ -1,4 +1,4 @@
-import { DRAFT_ID_PREFIX, isSent } from '@proton/shared/lib/mail/messages';
+import { DRAFT_ID_PREFIX } from '@proton/shared/lib/mail/messages';
 import React, { useEffect, createContext, ReactNode, useContext, useLayoutEffect } from 'react';
 import { useInstance, useEventManager } from '@proton/components';
 import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
@@ -74,29 +74,22 @@ const messageEventListener =
                         currentValue.data,
                         Message as Message & LabelIDsChanges
                     );
-                    let removeBody: Partial<Message> = {};
-                    let removeInit: Partial<MessageExtended> = {};
+                    let removeBody: PartialMessageExtended = {};
 
                     // Draft updates can contains body updates but will not contains it in the event
                     // By removing the current body value in the cache, we will reload it next time we need it
                     if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
-                        removeBody = { Body: undefined };
-
-                        // Update draft and sent means it just passed from draft to sent status
-                        // It can have been done from outside of the app and will have to be reinitialized to use it
-                        if (!currentValue.inComposer || isSent(Message)) {
-                            removeInit = { initialized: undefined, document: undefined, plainText: undefined };
-                        }
+                        removeBody = { initialized: undefined, data: { Body: undefined } };
                     }
 
                     cache.set(localID, {
                         ...currentValue,
+                        ...removeBody,
                         data: {
                             ...currentValue.data,
                             ...MessageToUpdate,
-                            ...removeBody,
+                            ...removeBody.data,
                         },
-                        ...removeInit,
                     });
                 }
             }

@@ -219,11 +219,6 @@ export interface MessageExtended {
     loadRetry?: number;
 
     /**
-     * Flag to know whether the message is currently being composed or not
-     */
-    inComposer?: boolean;
-
-    /**
      * All data relative to remote and embedded images present in the message
      */
     messageImages?: MessageImages;
