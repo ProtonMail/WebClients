@@ -29,6 +29,7 @@ const Autocomplete = <T,>({
     ...rest
 }: Props<T>) => {
     const ref = useRef<HTMLInputElement>(null);
+    const rootRef = useRef<HTMLDivElement>(null);
 
     const filteredOptions = useAutocompleteFilter(value, options, getData, limit, searchMinLength);
 
@@ -41,6 +42,7 @@ const Autocomplete = <T,>({
         options: filteredOptions,
         onSelect: handleSelect,
         input: value,
+        rootRef,
     });
 
     const handleSelectOption = (optionValue: T) => {
@@ -49,7 +51,7 @@ const Autocomplete = <T,>({
     };
 
     return (
-        <>
+        <div ref={rootRef}>
             <Input
                 {...rest}
                 {...inputProps}
@@ -57,6 +59,14 @@ const Autocomplete = <T,>({
                 value={value}
                 onChange={(event) => {
                     onChange(event.currentTarget.value.trimStart());
+                }}
+                onKeyDown={(event) => {
+                    if (!inputProps.onKeyDown(event)) {
+                        if (event.key === 'Enter') {
+                            handleSelectOption(value as any);
+                            event.preventDefault();
+                        }
+                    }
                 }}
             />
             <AutocompleteList anchorRef={ref} {...suggestionProps}>
@@ -75,7 +85,7 @@ const Autocomplete = <T,>({
                     );
                 })}
             </AutocompleteList>
-        </>
+        </div>
     );
 };
 
