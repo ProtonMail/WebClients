@@ -25,6 +25,7 @@ interface Props {
     onDelete: (id: string) => void;
     onExport?: (calendar: Calendar) => void;
     loadingMap: SimpleMap<boolean>;
+    actionsDisabled: boolean;
 }
 const CalendarsTable = ({
     calendars = [],
@@ -35,6 +36,7 @@ const CalendarsTable = ({
     onDelete,
     onExport,
     loadingMap,
+    actionsDisabled = false,
 }: Props) => {
     const { hasNonDelinquentScope } = user;
     const calendarAddressMap = useGetCalendarsEmails(calendars);
@@ -119,6 +121,7 @@ const CalendarsTable = ({
                                     className="button--small"
                                     key="actions"
                                     list={list}
+                                    disabled={actionsDisabled}
                                     loading={!!loadingMap[ID]}
                                 />,
                             ]}
