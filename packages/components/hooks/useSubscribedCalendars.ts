@@ -110,7 +110,7 @@ const useSubscribedCalendars = (calendars: Calendar[]) => {
 
     useEffect(() => {
         const run = async () => {
-            const subscribedCalendars = await Promise.all(
+            const newSubscribedCalendars = await Promise.all(
                 calendars.map(async (calendar) => {
                     const { CalendarSubscription } = await getCalendarSubscription(calendar.ID);
 
@@ -121,11 +121,11 @@ const useSubscribedCalendars = (calendars: Calendar[]) => {
                 })
             );
 
-            void setSubscribedCalendars(subscribedCalendars);
+            void setSubscribedCalendars(newSubscribedCalendars);
         };
 
         withLoading(run());
-    }, [calendarIDs]);
+    }, [calendars]);
 
     return { subscribedCalendars, loading };
 };

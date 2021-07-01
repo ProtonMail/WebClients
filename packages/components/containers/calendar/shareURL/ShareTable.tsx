@@ -1,10 +1,11 @@
 import { MAX_LINKS_PER_CALENDAR } from '@proton/shared/lib/calendar/constants';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { Calendar, ACCESS_LEVEL, CalendarLink } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import { UserModel } from '@proton/shared/lib/interfaces';
+import { useLocation } from 'react-router-dom';
 import {
     Icon,
     Table,
@@ -42,6 +43,20 @@ const ShareTable = ({
     const [accessLevel, setAccessLevel] = useState<ACCESS_LEVEL>(ACCESS_LEVEL.LIMITED);
     const maxLinksPerCalendarReached = linksMap[selectedCalendarID]?.length === MAX_LINKS_PER_CALENDAR;
     const shouldDisableCreateButton = disabled || maxLinksPerCalendarReached || !user.hasNonDelinquentScope;
+    const { search } = useLocation();
+    const shareTableWrapperRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const searchParams = new URLSearchParams(search);
+        const shareParam = searchParams.get('share');
+
+        if (shareParam) {
+            setTimeout(() => {
+                setSelectedCalendarID(shareParam);
+                shareTableWrapperRef?.current?.scrollIntoView();
+            }, 0);
+        }
+    }, []);
 
     useEffect(() => {
         // if the selected calendar gets deleted, use next preferred one
@@ -55,7 +70,7 @@ const ShareTable = ({
     }
 
     return (
-        <>
+        <div ref={shareTableWrapperRef}>
             <Table>
                 <TableHeader
                     cells={[
@@ -131,7 +146,7 @@ const ShareTable = ({
                 <Alert className="mb1-5" type="warning">{c('Info')
                     .t`You can create up to ${MAX_LINKS_PER_CALENDAR} links per calendar. To create a new link to this calendar, delete one from the list below.`}</Alert>
             )}
-        </>
+        </div>
     );
 };
 

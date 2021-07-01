@@ -70,6 +70,7 @@ const CalendarCalendarsSettings = ({
     const { feature: featureUsedCalendarSubscription, loading: loadingUsedCalendarSubscription } = useFeature(
         FeatureCode.CalendarSubscription
     );
+    // TODO: remove feature
     const showCalendarSubscription = !loadingUsedCalendarSubscription && !!featureUsedCalendarSubscription?.Value;
 
     return (

@@ -70,7 +70,7 @@ const SubscribedCalendarsSection = ({ activeAddresses, calendars = [], user }: P
 
     return (
         <CalendarsSection
-            calendars={subscribedCalendars}
+            calendars={loading ? calendars : subscribedCalendars}
             user={user}
             loading={loading}
             loadingMap={loadingMap}
