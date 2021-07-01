@@ -109,7 +109,8 @@ const NO_ATTACHMENTS = 0;
 const WITH_ATTACHMENTS = 1;
 const SHOW_READ_ONLY = 'read';
 const SHOW_UNREAD_ONLY = 'unread';
-const { INBOX, TRASH, SPAM, STARRED, ARCHIVE, ALL_MAIL, ALL_SENT, SENT, ALL_DRAFTS, DRAFTS } = MAILBOX_LABEL_IDS;
+const { INBOX, TRASH, SPAM, STARRED, ARCHIVE, ALL_MAIL, ALL_SENT, SENT, ALL_DRAFTS, DRAFTS, SCHEDULED } =
+    MAILBOX_LABEL_IDS;
 const DEFAULT_MODEL: SearchModel = {
     keyword: '',
     labelID: ALL_MAIL,
@@ -361,6 +362,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                 text: c('Mailbox').t`Drafts`,
                 group: c('Group').t`Default folders`,
             },
+            { value: SCHEDULED, text: c('Mailbox').t`Scheduled`, group: c('Group').t`Default folders` },
             {
                 value: hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.SENT) ? ALL_SENT : SENT,
                 text: c('Mailbox').t`Sent`,
