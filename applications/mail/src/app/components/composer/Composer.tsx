@@ -166,11 +166,18 @@ const Composer = (
         if (
             !syncInProgress &&
             (syncedMessage.data?.ID || (!syncedMessage.data?.ID && !isNewDraft(syncedMessage.localID))) &&
-            syncedMessage.initialized === undefined
+            syncedMessage.initialized === undefined &&
+            modelMessage.initialized === undefined
         ) {
             void addAction(initialize);
         }
-    }, [syncInProgress, syncedMessage.document, syncedMessage.data?.ID, syncedMessage.initialized]);
+    }, [
+        syncInProgress,
+        syncedMessage.localID,
+        syncedMessage.data?.ID,
+        syncedMessage.initialized,
+        modelMessage.initialized,
+    ]);
 
     // Manage populating the model from the server
     useEffect(() => {

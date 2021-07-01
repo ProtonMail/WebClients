@@ -142,6 +142,8 @@ export const useSendMessage = () => {
                 updateMessageCache(messageCache, localID, {
                     data: Sent,
                     initialized: undefined,
+                    plainText: undefined,
+                    document: undefined,
                     messageImages: undefined,
                 });
 
@@ -172,7 +174,6 @@ export const useSendMessage = () => {
                 updateMessageCache(messageCache, localID, {
                     ...currentMessage,
                     sending: false,
-                    inComposer: false,
                 });
                 void call();
             }
