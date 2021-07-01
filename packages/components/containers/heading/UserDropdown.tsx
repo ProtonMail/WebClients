@@ -251,17 +251,13 @@ const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
                     <hr className="mt0-5 mb0-5" />
 
                     {isSSOMode ? (
-                        <>
-                            <DropdownMenuButton
-                                className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
-                                onClick={handleSwitchAccount}
-                            >
-                                {c('Action').t`Switch account`}
-                                <Icon className="ml1" name="account-switch" />
-                            </DropdownMenuButton>
-
-                            <hr className="mt0-5 mb0-5" />
-                        </>
+                        <DropdownMenuButton
+                            className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                            onClick={handleSwitchAccount}
+                        >
+                            {c('Action').t`Switch account`}
+                            <Icon className="ml1" name="account-switch" />
+                        </DropdownMenuButton>
                     ) : null}
 
                     <div className="pr1 pl1 pt0-25 pb0-75">
