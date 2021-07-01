@@ -22,6 +22,7 @@ const iconsMap: { [mimeType: string]: { name: string } } = {
     },
     'application/xliff+xml': { name: 'xml' },
     'application/xml': { name: 'xml' },
+    'application/pgp-keys': { name: 'keytrust' },
 };
 
 const getIconName = (mimeType: string) => {
