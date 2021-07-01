@@ -1,5 +1,5 @@
 import { canonizeEmail } from '@proton/shared/lib/helpers/email';
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
@@ -61,6 +61,7 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
     ) => {
         const [input, setInput] = useState('');
         const [emailError, setEmailError] = useState('');
+        const rootRef = useRef<HTMLDivElement>(null);
 
         const [recipientsByAddress, recipientsByGroup] = useMemo(() => {
             return recipients.reduce<[Set<string>, Set<string>]>(
@@ -154,6 +155,7 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
             options: filteredOptions,
             onSelect: handleSelect,
             input,
+            rootRef,
         });
 
         const handleInputChange = (newValue: string) => {
@@ -177,7 +179,7 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
         };
 
         return (
-            <>
+            <div ref={rootRef}>
                 <Input
                     {...rest}
                     {...inputProps}
@@ -237,7 +239,7 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
                         );
                     })}
                 </AutocompleteList>
-            </>
+            </div>
         );
     }
 );

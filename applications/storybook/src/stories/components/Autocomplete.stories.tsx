@@ -76,6 +76,7 @@ interface ServiceOption {
 export const Custom = () => {
     const [value, setValue] = useState('');
     const ref = useRef<HTMLInputElement>(null);
+    const rootRef = useRef<HTMLDivElement>(null);
 
     const options = ['reddit', 'twitter', 'yahoo', 'youtube'].map((service) => {
         return {
@@ -98,6 +99,7 @@ export const Custom = () => {
         options: filteredOptions,
         onSelect: handleSelect,
         input: value,
+        rootRef,
     });
 
     const handleSelectOption = (optionValue: ServiceOption) => {
@@ -106,7 +108,7 @@ export const Custom = () => {
     };
 
     return (
-        <>
+        <div ref={rootRef}>
             <Input
                 {...inputProps}
                 placeholder="Service"
@@ -132,6 +134,6 @@ export const Custom = () => {
                     );
                 })}
             </AutocompleteList>
-        </>
+        </div>
     );
 };
