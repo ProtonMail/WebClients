@@ -14,7 +14,7 @@ import { getSupportedEvent } from '@proton/shared/lib/calendar/icsSurgery/vevent
 import { findAttendee, getParticipant, getSelfAddressData } from '@proton/shared/lib/calendar/integration/invite';
 import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurring';
 
-import { parseWithErrors } from '@proton/shared/lib/calendar/vcal';
+import { parseWithErrors, serialize } from '@proton/shared/lib/calendar/vcal';
 import {
     buildVcalOrganizer,
     dateTimeToProperty,
@@ -85,7 +85,7 @@ export enum EVENT_TIME_STATUS {
 
 export interface EventInvitation {
     originalVcalInvitation?: VcalVcalendar;
-    originalUid?: string;
+    originalUniqueIdentifier?: string;
     fileName?: string;
     vevent: VcalVeventComponent;
     calendarEvent?: CalendarEvent;
@@ -589,9 +589,12 @@ export const getSupportedEventInvitation = async ({
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: supportedMethod });
     }
     const completeVevent = withOutsideUIDAndSequence(vevent, vcalComponent);
-    const originalUid = completeVevent.uid?.value;
+    // To filter potentially equivalent invitation ics's, we have to generate a reliable
+    // unique identifier (resistant to format differences, like \n --> \r\n) for the ics if it has no UID
+    const originalUniqueIdentifier =
+        completeVevent.uid?.value || (await generateVeventHashUID(serialize(vcalComponent)));
     if (supportedMethod === ICAL_METHOD.PUBLISH) {
-        const sha1Uid = await generateVeventHashUID(icsBinaryString, originalUid);
+        const sha1Uid = await generateVeventHashUID(icsBinaryString, completeVevent.uid?.value);
         completeVevent.uid = { value: sha1Uid };
         if (completeVevent['recurrence-id']) {
             // Since we changed the UID, we ignore the RECURRENCE-ID if present
@@ -623,7 +626,7 @@ export const getSupportedEventInvitation = async ({
             vevent: supportedEvent,
             vtimezone,
             originalVcalInvitation: vcalComponent,
-            originalUid,
+            originalUniqueIdentifier,
             fileName: icsFileName,
         };
     } catch (error) {
