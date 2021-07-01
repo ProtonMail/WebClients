@@ -95,10 +95,14 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
             {
                 name: 'assets/version.json',
                 data: Buffer.from(
-                    JSON.stringify({
-                        ...buildData,
-                        mode: appMode,
-                    }, null, 2)
+                    JSON.stringify(
+                        {
+                            ...buildData,
+                            mode: appMode,
+                        },
+                        null,
+                        2
+                    )
                 ),
             },
         ]),
@@ -110,11 +114,13 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
             },
         ]),
 
-        // Fix max file limit if the folder does not exist
-        fs.existsSync('public') &&
-            new CopyWebpackPlugin({
-                patterns: [{ from: 'public', noErrorOnMissing: true }],
-            }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: 'src/.htaccess' },
+                // Fix max file limit if the folder does not exist
+                fs.existsSync('public') && { from: 'public', noErrorOnMissing: true },
+            ].filter(Boolean),
+        }),
 
         new MiniCssExtractPlugin({
             filename: isProduction ? '[name].[contenthash:8].css' : '[name].css',
