@@ -171,7 +171,7 @@ const ExtraEvents = ({ message }: Props) => {
                             uniqueInvitations.push(invitation);
                             return acc;
                         }
-                        const uid = invitation.originalUid || invitation.vevent.uid.value;
+                        const uid = invitation.originalUniqueIdentifier || invitation.vevent.uid.value;
                         if (uniqueUids.includes(uid)) {
                             return acc;
                         }
