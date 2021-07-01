@@ -11,7 +11,7 @@ import { Conversation } from '../models/conversation';
 import { getLabelIDs } from './elements';
 import { Element } from '../models/element';
 
-const { INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, ALL_SENT, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
+const { INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, ALL_SENT, ALL_DRAFTS, SCHEDULED } = MAILBOX_LABEL_IDS;
 
 export type LabelChanges = { [labelID: string]: boolean };
 
@@ -102,6 +102,11 @@ export const getStandardFolders = (): FolderMap => ({
         icon: 'drafts',
         name: c('Mailbox').t`Drafts`,
         to: `/${LABEL_IDS_TO_HUMAN[ALL_DRAFTS]}`,
+    },
+    [SCHEDULED]: {
+        icon: 'clock',
+        name: c('Mailbox').t`Scheduled`,
+        to: `/${LABEL_IDS_TO_HUMAN[SCHEDULED]}`,
     },
     // [OUTBOX]: {
     //     icon: 'outbox',

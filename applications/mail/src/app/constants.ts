@@ -33,6 +33,7 @@ export const LABEL_IDS_TO_HUMAN = {
     [MAILBOX_LABEL_IDS.DRAFTS]: 'drafts',
     [MAILBOX_LABEL_IDS.STARRED]: 'starred',
     [MAILBOX_LABEL_IDS.OUTBOX]: 'outbox',
+    [MAILBOX_LABEL_IDS.SCHEDULED]: 'scheduled',
 };
 
 export const HUMAN_TO_LABEL_IDS = Object.entries(LABEL_IDS_TO_HUMAN).reduce((acc, [key, value]) => {
@@ -52,6 +53,7 @@ export const getLabelIDsToI18N = () => ({
     [MAILBOX_LABEL_IDS.DRAFTS]: c('Link').t`Drafts`,
     [MAILBOX_LABEL_IDS.STARRED]: c('Link').t`Starred`,
     [MAILBOX_LABEL_IDS.OUTBOX]: c('Link').t`Outbox`,
+    [MAILBOX_LABEL_IDS.SCHEDULED]: c('Link').t`Scheduled`,
 });
 
 // List of location where messages are marked automatically as read after moving by the API
@@ -63,6 +65,7 @@ export const LABELS_UNMODIFIABLE_BY_USER = [
     MAILBOX_LABEL_IDS.ALL_SENT,
     MAILBOX_LABEL_IDS.ALL_DRAFTS,
     MAILBOX_LABEL_IDS.OUTBOX,
+    MAILBOX_LABEL_IDS.SCHEDULED,
 ];
 
 export enum ENCRYPTED_STATUS {
