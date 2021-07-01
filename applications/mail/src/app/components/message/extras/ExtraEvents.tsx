@@ -35,7 +35,7 @@ import { formatDownload } from '../../../helpers/attachment/attachmentDownloader
 import {
     EventInvitation,
     filterAttachmentsForEvents,
-    getSupportedVcalendarData,
+    getSupportedEventInvitation,
     parseVcalendar,
 } from '../../../helpers/calendar/invite';
 import { isNetworkError } from '../../../helpers/errors';
@@ -145,13 +145,13 @@ const ExtraEvents = ({ message }: Props) => {
                                 if (!parsedVcalendar) {
                                     return;
                                 }
-                                const supportedVcalendarData = await getSupportedVcalendarData({
+                                const supportedEventInvitation = await getSupportedEventInvitation({
                                     vcalComponent: parsedVcalendar,
                                     message: message.data,
                                     icsBinaryString,
                                     icsFileName: attachment.Name || '',
                                 });
-                                return supportedVcalendarData;
+                                return supportedEventInvitation;
                             } catch (error) {
                                 if (error instanceof EventInvitationError) {
                                     return error;

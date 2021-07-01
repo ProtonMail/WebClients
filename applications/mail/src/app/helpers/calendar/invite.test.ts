@@ -9,7 +9,7 @@ import { parse } from '@proton/shared/lib/calendar/vcal';
 import { VcalDateProperty, VcalVcalendar, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
-import { formatEndDateTime, formatStartDateTime, getSupportedVcalendarData, parseVcalendar } from './invite';
+import { formatEndDateTime, formatStartDateTime, getSupportedEventInvitation, parseVcalendar } from './invite';
 
 describe('getIsRruleSupported for invitations', () => {
     test('should accept events with daily recurring rules valid for invitations', () => {
@@ -109,7 +109,7 @@ END:VCALENDAR`;
         const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
         const message = { Time: Math.round(Date.now() / 1000) } as Message;
         await expect(
-            getSupportedVcalendarData({
+            getSupportedEventInvitation({
                 vcalComponent: parsedInvitation,
                 message,
                 icsBinaryString: invitation,
