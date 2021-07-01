@@ -122,6 +122,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
         return [
             'inbox',
             'drafts',
+            'scheduled',
             'sent',
             'starred',
             'archive',
@@ -241,6 +242,14 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                     isFolder
                     id="drafts"
                     onFocus={() => setFocusedItem('drafts')}
+                />
+                <SidebarItem
+                    {...getCommonProps(MAILBOX_LABEL_IDS.SCHEDULED)}
+                    icon="clock"
+                    text={c('Link').t`Scheduled`}
+                    isFolder
+                    id="scheduled"
+                    onFocus={() => setFocusedItem('scheduled')}
                 />
                 <SidebarItem
                     {...getCommonProps(

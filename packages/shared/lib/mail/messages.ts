@@ -57,6 +57,7 @@ export const isSentAndReceived = hasFlag(FLAG_SENT | FLAG_RECEIVED);
 export const isDraft = (message?: Partial<Message>) =>
     message?.Flags !== undefined && !isSent(message) && !isReceived(message);
 export const isOutbox = (message?: Partial<Message>) => message?.LabelIDs?.includes(MAILBOX_LABEL_IDS.OUTBOX);
+export const isScheduled = (message?: Partial<Message>) => message?.LabelIDs?.includes(MAILBOX_LABEL_IDS.SCHEDULED);
 export const isScheduledSend = hasFlag(FLAG_SCHEDULED_SEND);
 export const isE2E = hasFlag(FLAG_E2E);
 export const isSentEncrypted = hasFlag(FLAG_E2E | FLAG_SENT);

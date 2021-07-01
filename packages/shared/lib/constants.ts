@@ -701,6 +701,7 @@ export enum MAILBOX_LABEL_IDS {
     SENT = '7',
     DRAFTS = '8',
     OUTBOX = '9',
+    SCHEDULED = '12',
 }
 
 export enum AutoReplyDuration {
