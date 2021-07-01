@@ -564,7 +564,7 @@ export const getInitialInvitationModel = ({
     return result;
 };
 
-export const getSupportedVcalendarData = async ({
+export const getSupportedEventInvitation = async ({
     vcalComponent,
     message,
     icsBinaryString,
