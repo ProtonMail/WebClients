@@ -9,7 +9,8 @@
     ],
     "scripts": {
         "config-app": "packages/config/install",
-        "version": "yarn workspace scripts run version:applications"
+        "version": "yarn workspace scripts run version:applications",
+        "start-all": "cd utilities/local-sso && ./run.sh"
     },
     "husky": {
         "hooks": {
