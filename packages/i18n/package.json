@@ -1,6 +1,6 @@
 {
     "name": "@proton/i18n",
-    "description": "CLI to manage translations for client apps",
+    "description": "CLI to extract/validate translations from the code",
     "keywords": [],
     "license": "ISC",
     "author": "Proton Technologies AG",
@@ -11,24 +11,16 @@
     "scripts": {
         "lint": "eslint lib index.js config.js --ext .js --quiet --cache",
         "pretty": "prettier --write  $(find lib/ index.js -type f -name '*.js')",
-        "test": "del test/compile/* && ./test/run.sh test"
+        "test": "./test/test-linter.sh* && ./test/test-validator.sh"
     },
     "dependencies": {
-        "angular-gettext-cli": "github:huston007/angular-gettext-cli#a59bc3e142a5bee1b21d1876d1bb88008bd115b7",
-        "chalk": "^4.1.0",
-        "dedent": "^0.7.0",
-        "dotenv": "^8.2.0",
         "execa": "^5.0.0",
         "gettext-parser": "^4.0.4",
-        "lodash": "^4.17.21",
-        "minimist": "^1.2.5",
-        "tar": "^6.1.0",
         "ttag-cli": "^1.9.1"
     },
     "devDependencies": {
         "babel-eslint": "^10.1.0",
         "cross-env": "^7.0.3",
-        "del-cli": "^3.0.1",
         "eslint": "^7.21.0",
         "eslint-config-airbnb-base": "^14.2.1",
         "eslint-config-react-app": "^6.0.0",

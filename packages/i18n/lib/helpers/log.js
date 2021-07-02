@@ -1,7 +1,6 @@
-const argv = require('minimist')(process.argv.slice(2));
 const chalk = require('chalk');
 
-const IS_VERBOSE = argv.v || argv.verbose;
+const { IS_VERBOSE } = process.env;
 
 module.exports = (scope) => {
     const warn = (msg, addSpaces = true) => {
@@ -42,12 +41,15 @@ module.exports = (scope) => {
         // Better log for CLI commands, better than a JSON version of stdX
         if (e.stdout || e.stderr) {
             console.log();
-            console.log('Stdout + stderr');
+            console.log('------------------------ [Stdout + stderr] -----------------------');
             console.log(e.stdout);
             console.error(e.stderr);
             process.exit(1);
         }
-        console.error(e);
+
+        if (IS_VERBOSE) {
+            console.error(e);
+        }
 
         process.exit(1);
     };
