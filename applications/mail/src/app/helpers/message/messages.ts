@@ -6,7 +6,7 @@ import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from
 import { getContent, setContent } from './messageContent';
 import { getEmbeddedImages } from './messageImages';
 
-const { ALL_DRAFTS, ALL_SENT, DRAFTS, SENT, SPAM, INBOX } = MAILBOX_LABEL_IDS;
+const { ALL_DRAFTS, ALL_SENT, DRAFTS, SENT, SPAM, INBOX, SCHEDULED, TRASH } = MAILBOX_LABEL_IDS;
 
 export const getNumAttachmentByType = (message: MessageExtended): [number, number] => {
     const attachments = getAttachments(message.data);
@@ -38,6 +38,11 @@ export const mergeMessages = (
 export const getMessagesAuthorizedToMove = (messages: Message[], destinationFolderID: string) => {
     return messages.filter((messsage) => {
         const { LabelIDs } = messsage;
+
+        // Prevent moving scheduled messages to trash
+        if (LabelIDs.includes(SCHEDULED) && destinationFolderID === TRASH) {
+            return false;
+        }
 
         if (
             LabelIDs.includes(DRAFTS) ||

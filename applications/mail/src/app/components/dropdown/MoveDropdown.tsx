@@ -76,6 +76,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
     const isMessage = testIsMessage(elements[0]);
     const canMoveToInbox = isMessage ? !!getMessagesAuthorizedToMove(elements as Message[], INBOX).length : true;
     const canMoveToSpam = isMessage ? !!getMessagesAuthorizedToMove(elements as Message[], SPAM).length : true;
+    const canMoveToTrash = labelID !== MAILBOX_LABEL_IDS.SCHEDULED;
 
     const list = treeview
         .reduce<FolderItem[]>((acc, folder) => folderReducer(acc, folder), [])
@@ -91,7 +92,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                 Name: c('Mailbox').t`Spam`,
                 icon: 'spam',
             },
-            { ID: TRASH, Name: c('Mailbox').t`Trash`, icon: 'trash' },
+            canMoveToTrash && { ID: TRASH, Name: c('Mailbox').t`Trash`, icon: 'trash' },
         ] as FolderItem[])
         .filter(isTruthy)
         .filter(({ Name = '' }: { Name: string }) => {
