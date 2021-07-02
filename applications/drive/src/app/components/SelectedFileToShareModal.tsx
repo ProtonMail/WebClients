@@ -12,8 +12,6 @@ import {
     Button,
     Alert,
     useModals,
-    Loader,
-    TextLoader,
 } from '@proton/components';
 
 import FolderTree, { FolderTreeItem } from './FolderTree/FolderTree';
@@ -24,6 +22,7 @@ import SharingModal from './SharingModal/SharingModal';
 import { mapLinksToChildren } from './Drive/helpers';
 import { LinkType } from '../interfaces/link';
 import HasNoFilesToShare from './FileBrowser/HasNoFilesToShare';
+import ModalContentLoader from './ModalContentLoader';
 
 interface Props {
     shareId: string;
@@ -159,18 +158,7 @@ const SelectedFileToShareModal = ({ shareId, onClose, ...rest }: Props) => {
         ) as ReactNode,
     };
 
-    if (initializing) {
-        modalContents = {
-            content: (
-                <div className="flex flex-column flex-align-items-center pt2 pb3">
-                    <Loader size="medium" className="mt1 mb1" />
-                    <TextLoader className="m0">{c('Info').t`Loading`}</TextLoader>
-                </div>
-            ),
-            title: '',
-            footer: null,
-        };
-    } else if (!treeItems[0]?.children.list.length) {
+    if (!initializing && !treeItems[0]?.children.list.length) {
         modalContents = {
             content: <HasNoFilesToShare />,
             title: '',
@@ -183,17 +171,21 @@ const SelectedFileToShareModal = ({ shareId, onClose, ...rest }: Props) => {
             <HeaderModal modalTitleID={modalTitleID} hasClose={!loading} onClose={onClose}>
                 {modalContents.title}
             </HeaderModal>
-            <ContentModal
-                onSubmit={() => {
-                    withLoading(handleSubmit()).catch(console.error);
-                }}
-                onReset={() => {
-                    onClose?.();
-                }}
-            >
-                <InnerModal>{modalContents.content}</InnerModal>
-                {modalContents.footer}
-            </ContentModal>
+            {initializing ? (
+                <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
+            ) : (
+                <ContentModal
+                    onSubmit={() => {
+                        withLoading(handleSubmit()).catch(console.error);
+                    }}
+                    onReset={() => {
+                        onClose?.();
+                    }}
+                >
+                    <InnerModal>{modalContents.content}</InnerModal>
+                    {modalContents.footer}
+                </ContentModal>
+            )}
         </DialogModal>
     );
 };

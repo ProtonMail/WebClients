@@ -12,7 +12,6 @@ import { SharedURLSessionKeyPayload, ShareURL } from '../../interfaces/sharing';
 import { FileBrowserItem } from '../FileBrowser/interfaces';
 import GeneratedLinkState from './GeneratedLinkState';
 import ErrorState from './ErrorState';
-import LoadingState from './LoadingState';
 import {
     isWithoutCustomPassword,
     isCustomSharedURLPassword,
@@ -20,6 +19,7 @@ import {
     splitGeneratedAndCustomPassword,
 } from '../../utils/link';
 import { SHARE_GENERATED_PASSWORD_LENGTH } from '../../constants';
+import ModalContentLoader from '../ModalContentLoader';
 
 interface Props {
     onClose?: () => void;
@@ -213,7 +213,10 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
 
     const renderModalState = () => {
         if (loading) {
-            return <LoadingState generated={!!item.SharedUrl} />;
+            const loadingMessage = item.SharedUrl
+                ? c('Info').t`Preparing link to file`
+                : c('Info').t`Creating link to file`;
+            return <ModalContentLoader>{loadingMessage}</ModalContentLoader>;
         }
 
         if (error || !shareUrlInfo || !item) {

@@ -25,6 +25,7 @@ import useDrive from '../hooks/drive/useDrive';
 import useListNotifications from '../hooks/util/useListNotifications';
 import { useDriveCache } from './DriveCache/DriveCacheProvider';
 import { FileBrowserItem } from './FileBrowser/interfaces';
+import ModalContentLoader from './ModalContentLoader';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -107,7 +108,7 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
         let appended = false;
 
         const childrenData = await fetchChildrenData(linkId, loadNextPage);
-        const rootFolder = [...folders][0];
+        const rootFolder = folders[0];
 
         const appendChildren = (parent: FolderTreeItem) => {
             const childrenIds = parent.children.list.map(({ linkId }) => linkId);
@@ -225,7 +226,7 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
         ) as ReactNode,
     };
 
-    if (!folders[0]?.children.list.length) {
+    if (!initializing && !folders[0]?.children.list.length) {
         modalContents = {
             content: (
                 <HasNoFolders
@@ -245,17 +246,21 @@ const MoveToFolderModal = ({ activeFolder, selectedItems, onClose, ...rest }: Pr
             <HeaderModal modalTitleID={modalTitleID} hasClose={!loading} onClose={onClose}>
                 {modalContents.title}
             </HeaderModal>
-            <ContentModal
-                onSubmit={() => {
-                    withLoading(handleSubmit()).catch(console.error);
-                }}
-                onReset={() => {
-                    onClose?.();
-                }}
-            >
-                <InnerModal>{modalContents.content}</InnerModal>
-                {modalContents.footer}
-            </ContentModal>
+            {initializing ? (
+                <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>
+            ) : (
+                <ContentModal
+                    onSubmit={() => {
+                        withLoading(handleSubmit()).catch(console.error);
+                    }}
+                    onReset={() => {
+                        onClose?.();
+                    }}
+                >
+                    <InnerModal>{modalContents.content}</InnerModal>
+                    {modalContents.footer}
+                </ContentModal>
+            )}
         </DialogModal>
     );
 };
