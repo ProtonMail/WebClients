@@ -60,7 +60,6 @@ const submitEvents = async (
     // submit the data
     let responses: SyncMultipleApiResponses[];
     try {
-        // throw new Error('malena')
         const { Responses } = await api<SyncMultipleApiResponse>({
             ...syncMultipleEvents(calendarID, { MemberID: memberID, IsImport: 1, Events }),
             timeout: HOUR,

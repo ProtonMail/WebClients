@@ -44,7 +44,7 @@ const ExtraEventImportButton = ({ model, setModel }: Props) => {
 
     const handleError = useCallback(() => {
         createNotification({
-            type: 'success',
+            type: 'error',
             text: c('Import ICS file from Mail').t`Creating calendar event failed`,
         });
     }, []);
