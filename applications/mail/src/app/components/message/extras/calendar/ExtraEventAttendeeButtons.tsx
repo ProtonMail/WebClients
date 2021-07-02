@@ -22,7 +22,13 @@ import {
     CalendarInviteButtons,
 } from '@proton/components';
 import { c } from 'ttag';
-import { getIsPmInvite, getIsReinvite, InvitationModel, UPDATE_ACTION } from '../../../../helpers/calendar/invite';
+import {
+    getDisableButtons,
+    getIsPmInvite,
+    getIsReinvite,
+    InvitationModel,
+    UPDATE_ACTION,
+} from '../../../../helpers/calendar/invite';
 import useInviteButtons from '../../../../hooks/useInviteButtons';
 import { MessageExtended } from '../../../../models/message';
 
@@ -42,7 +48,6 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         calendarData,
         pmData,
         singleEditData,
-        isAddressActive,
         error,
         hasDecryptionError,
         reinviteEventID,
@@ -152,11 +157,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         });
     };
 
-    const buttonsDisabled =
-        !calendarData?.calendar ||
-        calendarData.isCalendarDisabled ||
-        !isAddressActive ||
-        calendarData.calendarNeedsUserAction;
+    const buttonsDisabled = getDisableButtons(model);
     const isPmInvite =
         getIsPmInvite({ invitationIcs, invitationApi, pmData }) ||
         (pmData && getIsReinvite({ invitationIcs, invitationApi, isOrganizerMode }));
