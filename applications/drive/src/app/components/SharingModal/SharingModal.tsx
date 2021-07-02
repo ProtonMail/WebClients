@@ -35,6 +35,7 @@ enum SharingModalState {
 
 function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, ...rest }: Props) {
     const [modalState, setModalState] = useState(SharingModalState.Loading);
+    const [isSharingFormDirty, setIsSharingFormDirty] = useState(false);
     const [deleting, withDeleting] = useLoading(false);
     const [saving, withSaving] = useLoading(false);
     const [shareUrlInfo, setShareUrlInfo] = useState<{
@@ -187,6 +188,25 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
         });
     };
 
+    const handleFormStateChange = ({ isFormDirty }: { isFormDirty: boolean }) => {
+        setIsSharingFormDirty(isFormDirty);
+    };
+
+    const handleClose = () => {
+        if (!isSharingFormDirty) {
+            onClose?.();
+            return;
+        }
+
+        openConfirmModal({
+            title: c('Title').t`Discard changes?`,
+            confirm: c('Title').t`Discard`,
+            message: c('Info').t`You will lose all unsaved changes.`,
+            onConfirm: () => onClose?.(),
+            canUndo: true,
+        });
+    };
+
     const loading = modalState === SharingModalState.Loading;
 
     const [generatedPassword, customPassword] = splitGeneratedAndCustomPassword(password, shareUrlInfo?.ShareURL);
@@ -207,11 +227,12 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
                     passwordToggledOn={passwordToggledOn}
                     expirationToggledOn={expirationToggledOn}
                     itemName={item.Name}
-                    onClose={onClose}
+                    onClose={handleClose}
                     onIncludePasswordToggle={handleToggleIncludePassword}
                     onIncludeExpirationTimeToogle={handleToggleIncludeExpirationTime}
                     onSaveLinkClick={handleSaveSharedLink}
                     onDeleteLinkClick={handleDeleteLinkClick}
+                    onFormStateChange={handleFormStateChange}
                     generatedPassword={generatedPassword}
                     customPassword={customPassword}
                     initialExpiration={initialExpiration}
@@ -224,7 +245,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
     };
 
     return (
-        <DialogModal modalTitleID={modalTitleID} onClose={onClose} {...rest}>
+        <DialogModal modalTitleID={modalTitleID} onClose={handleClose} {...rest}>
             {renderModalState()}
         </DialogModal>
     );
