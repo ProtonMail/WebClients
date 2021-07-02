@@ -1,11 +1,5 @@
 Usage: $ proton-i18n <command>
 Available commands:
-  - [blue]post-install[/blue]
-      To install locales as a dependency
-
-  - [blue]crowdin[/blue]
-      To send new translations to crowdin
-
   - [blue]validate[/blue] [yellow]<type>[/yellow]
       To validate the translations, check if we have contexts
         - type: default (default) validate we don't have missing context
