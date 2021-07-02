@@ -3,10 +3,9 @@ const path = require('path');
 const gettextParser = require('gettext-parser');
 
 const { success, debug } = require('./helpers/log')('proton-i18n');
-const { getFiles, isWebClientLegacy } = require('../config');
+const { TEMPLATE_FILE } = require('../config');
 const { script } = require('./helpers/cli');
 
-const { TEMPLATE_FILE } = getFiles();
 const isLint = process.argv.includes('--lint');
 
 /**
@@ -27,10 +26,7 @@ const getNoContextsExcept = (translations, except) => {
 };
 
 function validateWithoutContext(translations) {
-    const translationsWithoutContext = getNoContextsExcept(
-        translations,
-        isWebClientLegacy() ? 'Project-Id-Version' : 'Plural-Forms'
-    );
+    const translationsWithoutContext = getNoContextsExcept(translations, 'Plural-Forms');
 
     const total = translationsWithoutContext.length;
     if (!total) {
@@ -66,9 +62,6 @@ function getWithoutMatchingVariables(translations) {
 }
 
 function validateVariables(translations) {
-    if (isWebClientLegacy()) {
-        return;
-    }
     const translationsWithoutMatching = getWithoutMatchingVariables(translations);
 
     const total = translationsWithoutMatching.length;
@@ -81,7 +74,7 @@ function validateVariables(translations) {
     throw new Error(`${total} ${total > 1 ? 'translations' : 'translation'} without matching variables !`);
 }
 
-function main(mode, { dir } = {}) {
+async function main(mode, { dir } = {}) {
     /*
      * Validate the code to check if we use the correct format when we write ttag translations.
      */
