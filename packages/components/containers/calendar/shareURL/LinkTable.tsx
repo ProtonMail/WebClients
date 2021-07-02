@@ -32,7 +32,8 @@ const LinkTable = ({ linksMap, onCopyLink, onDelete, onEdit, isLoadingMap, user 
                     cells={[
                         c('Header').t`Calendar`,
                         <>
-                            {c('Header').t`Label`} <Info title={c('Info').t`Only you can see the labels.`} />
+                            <span className="mr0-5">{c('Header').t`Label`}</span>
+                            <Info title={c('Info').t`Only you can see the labels.`} />
                         </>,
                         c('Header').t`Actions`,
                     ]}
