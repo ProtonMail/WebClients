@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { c } from 'ttag';
 import { getUnixTime } from 'date-fns';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
@@ -20,7 +20,6 @@ import {
 } from '@proton/components';
 
 import ExpirationTimeDatePicker from './ExpirationTimeDatePicker';
-import useConfirm from '../../hooks/util/useConfirm';
 
 interface Props {
     itemName: string;
@@ -38,6 +37,7 @@ interface Props {
     onDeleteLinkClick: () => void;
     onIncludePasswordToggle: () => void;
     onIncludeExpirationTimeToogle: () => void;
+    onFormStateChange: (state: { isFormDirty: boolean }) => void;
 }
 
 const SHARING_INFO_LABEL = {
@@ -61,10 +61,10 @@ function GeneratedLinkState({
     onDeleteLinkClick,
     onIncludePasswordToggle,
     onIncludeExpirationTimeToogle,
+    onFormStateChange,
 }: Props) {
     const contentRef = useRef<HTMLDivElement>(null);
     const { createNotification } = useNotifications();
-    const { openConfirmModal } = useConfirm();
     const baseUrl = `${window.location.origin}/urls`;
 
     const [password, setPassword] = useState(customPassword);
@@ -85,6 +85,10 @@ function GeneratedLinkState({
     const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPassword(e.target.value);
     };
+
+    useEffect(() => {
+        onFormStateChange({ isFormDirty });
+    }, [isFormDirty, onFormStateChange]);
 
     const handleCopyURLClick = () => {
         if (contentRef.current) {
@@ -111,20 +115,6 @@ function GeneratedLinkState({
         }
     };
 
-    const handleClose = () => {
-        if (isFormDirty) {
-            openConfirmModal({
-                title: c('Title').t`Discard changes?`,
-                confirm: c('Title').t`Discard`,
-                message: c('Info').t`You will lose all unsaved changes.`,
-                onConfirm: () => onClose?.(),
-                canUndo: true,
-            });
-        } else {
-            onClose?.();
-        }
-    };
-
     const boldNameText = (
         <b key="name" className="text-break">
             {`${itemName}`}
@@ -133,7 +123,7 @@ function GeneratedLinkState({
 
     return (
         <>
-            <HeaderModal modalTitleID={modalTitleID} hasClose={!saving && !deleting} onClose={handleClose}>
+            <HeaderModal modalTitleID={modalTitleID} hasClose={!saving && !deleting} onClose={onClose}>
                 {c('Title').t`Share via link`}
             </HeaderModal>
             <ContentModal
@@ -143,7 +133,7 @@ function GeneratedLinkState({
                 }}
                 onReset={(e) => {
                     e.preventDefault();
-                    handleClose();
+                    onClose?.();
                 }}
             >
                 <InnerModal>
