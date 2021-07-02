@@ -3800,13 +3800,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/i18n@workspace:packages/i18n"
   dependencies:
-    angular-gettext-cli: "github:huston007/angular-gettext-cli#a59bc3e142a5bee1b21d1876d1bb88008bd115b7"
     babel-eslint: ^10.1.0
-    chalk: ^4.1.0
     cross-env: ^7.0.3
-    dedent: ^0.7.0
-    del-cli: ^3.0.1
-    dotenv: ^8.2.0
     eslint: ^7.21.0
     eslint-config-airbnb-base: ^14.2.1
     eslint-config-react-app: ^6.0.0
@@ -3817,10 +3812,7 @@ __metadata:
     eslint-plugin-react-hooks: ^4.2.0
     execa: ^5.0.0
     gettext-parser: ^4.0.4
-    lodash: ^4.17.21
-    minimist: ^1.2.5
     prettier: ^2.2.1
-    tar: ^6.1.0
     ttag-cli: ^1.9.1
   bin:
     proton-i18n: index.js
@@ -5617,9 +5609,9 @@ __metadata:
   linkType: hard
 
 "@types/estree@npm:*":
-  version: 0.0.48
-  resolution: "@types/estree@npm:0.0.48"
-  checksum: 1f948e0a7730254ec77f543e4ac2c101f90147d21202d16b22b524e6e3e5d5a770d003fac3e218499d25f5db126f12c774bb16d8993114c7883496d358e1b7af
+  version: 0.0.49
+  resolution: "@types/estree@npm:0.0.49"
+  checksum: 3defc98b145582b8e14872a5308fa4717397f4a3ea6be9785e46c18fe21fa742b489aec7769424b6c4b4b5002b74d22e2ad6d43e624c735e5117eab21bd1fb4a
   languageName: node
   linkType: hard
 
@@ -5944,9 +5936,9 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*, @types/node@npm:>= 8":
-  version: 15.12.5
-  resolution: "@types/node@npm:15.12.5"
-  checksum: 42485de7a0b7277ddaae25b36ab4174fc8f23e8a5de9ccaedd002ecec17135c48227a5e09088d181c2bc34fe6b2064feb4a468954372076fd8addac2f72dad7e
+  version: 15.14.0
+  resolution: "@types/node@npm:15.14.0"
+  checksum: b36835ddec52e4aec18dd042b7e960790641e895c3d32d6ed7363bfa33b012b8a41add6a82c5b9f4b83a10f9654b6eb60f5a19f6b648c3a5f4a59e20a36301b6
   languageName: node
   linkType: hard
 
@@ -6305,9 +6297,9 @@ __metadata:
   linkType: hard
 
 "@types/webpack-env@npm:^1.15.3, @types/webpack-env@npm:^1.16.0":
-  version: 1.16.0
-  resolution: "@types/webpack-env@npm:1.16.0"
-  checksum: eaf62fb65ba18737174a520a444bb7407e5a6f32581690c5a7a687e6f86e9d4ce336fd9e79989aafa19e5f390046ad54b9100cd3d70a43dcf0ab0161d30cd5bd
+  version: 1.16.1
+  resolution: "@types/webpack-env@npm:1.16.1"
+  checksum: 7d1a3ba850855ddb69691dc3553a93c955cb3d7eb287bf9a3079494f482126b4d967a2fdda32754e03f6ee3d789109af67768bac5e9f697436ab07f10a939431
   languageName: node
   linkType: hard
 
@@ -7027,32 +7019,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"angular-gettext-cli@github:huston007/angular-gettext-cli#a59bc3e142a5bee1b21d1876d1bb88008bd115b7":
-  version: 1.1.2
-  resolution: "angular-gettext-cli@https://github.com/huston007/angular-gettext-cli.git#commit=a59bc3e142a5bee1b21d1876d1bb88008bd115b7"
-  dependencies:
-    angular-gettext-tools: ^2
-    glob: ^7.1
-    minimist: ^1.2
-  bin:
-    angular-gettext-cli: bin/gettext
-  checksum: 8ecb71a49d06da76e902feea6401bc4731f0f52bf60c84585ad788bb50fc7ab0a32624a811464d2d38c952484af24aa3482e45ed8dd963cf0288e712eb66d7df
-  languageName: node
-  linkType: hard
-
-"angular-gettext-tools@npm:^2":
-  version: 2.5.3
-  resolution: "angular-gettext-tools@npm:2.5.3"
-  dependencies:
-    "@babel/parser": ^7.4.3
-    binary-search: ^1.2.0
-    cheerio: ^0.22.0
-    lodash: ^4.17.5
-    pofile: ~1.0.0
-  checksum: 4a93640b7b9c5e009d91c86e681048c8a7f7973479c84d6d0417e9099956d53e8156cb53be94474d757c6749d2c052a64a86968b38810edceca2de6ad6108abb
-  languageName: node
-  linkType: hard
-
 "ansi-align@npm:^3.0.0":
   version: 3.0.0
   resolution: "ansi-align@npm:3.0.0"
@@ -7723,8 +7689,8 @@ __metadata:
   linkType: hard
 
 "aws-sdk@npm:^2.689.0":
-  version: 2.937.0
-  resolution: "aws-sdk@npm:2.937.0"
+  version: 2.938.0
+  resolution: "aws-sdk@npm:2.938.0"
   dependencies:
     buffer: 4.9.2
     events: 1.1.1
@@ -7735,7 +7701,7 @@ __metadata:
     url: 0.10.3
     uuid: 3.3.2
     xml2js: 0.4.19
-  checksum: 93133d2fb0df376da6ef6f0de5a5639a0ab69769ce8d1bcd9784c1f859d1d222d276b7d7e9362973a653c75bb5d4e1cb78b27696c3b05bbeb94f60d5d150b6f4
+  checksum: 3b71b26748404ff2b569cd4527ee97754cd1643f2ebd011f0a95d94f4a28a02da20e8808bc3b702d45cfde45e6b5708db82ab8256dbab1287dd4e49a3e4ce3c7
   languageName: node
   linkType: hard
 
@@ -9196,13 +9162,6 @@ __metadata:
   version: 2.2.0
   resolution: "binary-extensions@npm:2.2.0"
   checksum: 0f5f5685f344b035c4f98d06fa288962d262294a1441c1481ac99e895037bde971ebe6e09a4bd8aa18ab2525bfc00b1ad4af71dbf9e933a72e0df6919706a728
-  languageName: node
-  linkType: hard
-
-"binary-search@npm:^1.2.0":
-  version: 1.3.6
-  resolution: "binary-search@npm:1.3.6"
-  checksum: cfca2b6ef721657fb3130fa4d05dddf9152541a592b6302d1d50be2b52b0b175d1c82b79d5cb1c1f2643c53d0dfe3ebeea7acba82d763409dd66b6513ffccd98
   languageName: node
   linkType: hard
 
@@ -12982,9 +12941,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.3.564, electron-to-chromium@npm:^1.3.723":
-  version: 1.3.763
-  resolution: "electron-to-chromium@npm:1.3.763"
-  checksum: 2fae294cc9b7a38629af9d5eaa7b0ad6d4fd5b2691628583c7d5a36a7a2d588018fea6bff6ad862d742c37618cd8daf7b562a119fa4684777db2b2efd93a6e3a
+  version: 1.3.765
+  resolution: "electron-to-chromium@npm:1.3.765"
+  checksum: 7873f19a8336081f1b254999230e9f67d17ef099d852079c97752a8c3ca74bae0862d40f280be293d5e4fda607ca3a55b4cf4648cbb0033ebff70667a8b494fd
   languageName: node
   linkType: hard
 
@@ -14884,9 +14843,9 @@ __metadata:
   linkType: hard
 
 "flatted@npm:^3.1.0":
-  version: 3.1.1
-  resolution: "flatted@npm:3.1.1"
-  checksum: 1065cd78294ea651b8c1b96c298a3e70893a23da655e2288e40c06d5d9b1ebce4bd977e604678e01065a92580f3de5078d60d9ee4cdcede9a9989859d7eb5057
+  version: 3.2.0
+  resolution: "flatted@npm:3.2.0"
+  checksum: 8352f321fc171bd67df61e9d4b6955aae75b2f2066251010e027dc1b9dcda4f289aa0f78593a0fc43085c0e6dfdb5e86dcbc1fe2f4154b1c0fcae50fb54f9af7
   languageName: node
   linkType: hard
 
@@ -15613,7 +15572,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"glob@npm:^7.0.0, glob@npm:^7.0.3, glob@npm:^7.1, glob@npm:^7.1.1, glob@npm:^7.1.2, glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.1.6":
+"glob@npm:^7.0.0, glob@npm:^7.0.3, glob@npm:^7.1.1, glob@npm:^7.1.2, glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.1.6":
   version: 7.1.7
   resolution: "glob@npm:7.1.7"
   dependencies:
@@ -18327,22 +18286,22 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jasmine-core@npm:^3.3, jasmine-core@npm:^3.7.1, jasmine-core@npm:~3.7.0":
-  version: 3.7.1
-  resolution: "jasmine-core@npm:3.7.1"
-  checksum: dd89c934653b893f2a2c0b5977286177d47343bed37f77ba4b1a6ee7c357f63a5d3040ca540e98f69f3438436d689449c4b3b2e3183cc854dd0cfb5f601206c6
+"jasmine-core@npm:^3.3, jasmine-core@npm:^3.7.1, jasmine-core@npm:~3.8.0":
+  version: 3.8.0
+  resolution: "jasmine-core@npm:3.8.0"
+  checksum: 1f6dcc5137107650eb0d7fbbd0908284e30e4376e794ef900ab8af73b1987b97101ca1a1c5c740c7bc1cdefe169ef7e06bd4c9ab1fab7e0981de8835ee864737
   languageName: node
   linkType: hard
 
 "jasmine@npm:^3.7.0":
-  version: 3.7.0
-  resolution: "jasmine@npm:3.7.0"
+  version: 3.8.0
+  resolution: "jasmine@npm:3.8.0"
   dependencies:
     glob: ^7.1.6
-    jasmine-core: ~3.7.0
+    jasmine-core: ~3.8.0
   bin:
     jasmine: bin/jasmine.js
-  checksum: 0a7d69988c4bfbedc0057bdfb8ef94447389469085c1ae6e6c1a99020f12bbbc4b9397e8bf1e247c9597431a5514e0812800f249df3f05babc3316d6af98156c
+  checksum: c46e7014045cbece560e19772942ff61e0cfae4a4c824be80c78d5bff9e91665e0741ae2f4b8484ffb2315f484132b6769c06cb85da1e16c270b8da729999ca2
   languageName: node
   linkType: hard
 
@@ -21583,7 +21542,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"minimist@npm:^1.1.1, minimist@npm:^1.1.3, minimist@npm:^1.2, minimist@npm:^1.2.0, minimist@npm:^1.2.3, minimist@npm:^1.2.5":
+"minimist@npm:^1.1.1, minimist@npm:^1.1.3, minimist@npm:^1.2.0, minimist@npm:^1.2.3, minimist@npm:^1.2.5":
   version: 1.2.5
   resolution: "minimist@npm:1.2.5"
   checksum: b77b8590147a4e217ff34266236bc39de23b52e6e33054076991ff674c7397a1380a7bde11111916f16f003a94aaa7e4f3d92595a32189644ff607fabc65a5b6
@@ -23924,13 +23883,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pofile@npm:~1.0.0":
-  version: 1.0.11
-  resolution: "pofile@npm:1.0.11"
-  checksum: 243bf2e7f1fcd710bffc7d7e36585126d326ffe051aab8087381b711118b06fbf71b822609b5c74b4f7f096429bf6f674157a07fbc49c73546b20816bb909ccc
-  languageName: node
-  linkType: hard
-
 "polished@npm:^4.0.5":
   version: 4.1.3
   resolution: "polished@npm:4.1.3"
@@ -25313,7 +25265,6 @@ fsevents@^1.2.7:
     eslint: ^7.5.0
     jest: ^24.9.0
     prettier: ^2.0.5
-    proton-translations: "github:ProtonMail/proton-translations#fe-account"
     react: ^16.0.0
     react-dom: ^16.0.0
     ttag: ^1.7.22
@@ -25384,7 +25335,6 @@ fsevents@^1.2.7:
     jest: ^24.9.0
     jest-junit: ^12.0.0
     prettier: ^2.0.5
-    proton-translations: "github:ProtonMail/proton-translations#fe-calendar"
     react: ^16.0.0
     react-dom: ^16.0.0
     react-helmet: ^6.1.0
@@ -25425,7 +25375,6 @@ fsevents@^1.2.7:
     mime-types: ^2.1.27
     openpgp: ^4.10.7
     prettier: ^2.0.5
-    proton-translations: "github:ProtonMail/proton-translations#fe-drive"
     react: ^16.0.0
     react-dom: ^16.0.0
     react-test-renderer: ^16.9.0
@@ -25483,7 +25432,6 @@ fsevents@^1.2.7:
     markdown-it: ^10.0.0
     mimemessage: "github:ProtonMail/mimemessage.js#semver:~v1.1.4"
     prettier: ^2.0.5
-    proton-translations: "github:ProtonMail/proton-translations#fe-mail"
     react: ^16.0.0
     react-dom: ^16.0.0
     react-refresh: ^0.10.0
@@ -25526,41 +25474,6 @@ fsevents@^1.2.7:
   languageName: unknown
   linkType: soft
 
-"proton-translations@github:ProtonMail/proton-translations#fe-account":
-  version: 1.0.0
-  resolution: "proton-translations@https://github.com/ProtonMail/proton-translations.git#commit=f63a30f9745e3d97cf54ef2caedf237b9ec964d9"
-  checksum: eed471b9b7ecdb36ff21d6736272fdf086905ff4f171c91ebd625208a89c0e43db4258fcb5d2d6291058e17dd25bbc8832e5a52a22c3ff517ff13f086585a532
-  languageName: node
-  linkType: hard
-
-"proton-translations@github:ProtonMail/proton-translations#fe-calendar":
-  version: 1.0.0
-  resolution: "proton-translations@https://github.com/ProtonMail/proton-translations.git#commit=5e0f47023f870a3f050b6e67043f4f11410548e1"
-  checksum: a2e372c279fecf495e626a0a435772142bb453e010dd9078fb815579cfb7aa1559bfb7d27429e3093d38b07cd558847282942a16dc799d39f1e9b4653f4d9b96
-  languageName: node
-  linkType: hard
-
-"proton-translations@github:ProtonMail/proton-translations#fe-drive":
-  version: 1.0.0
-  resolution: "proton-translations@https://github.com/ProtonMail/proton-translations.git#commit=f2fbe088ac1a22d14a9092b49642d1de5903a267"
-  checksum: b6b37ac47bab32f69cf3d51afdaed0ae799e3650868253615016307943cc22559fd3b48c3169ffc8710a4e3d70a7b21f23862575f8444042c256c0efdae3d833
-  languageName: node
-  linkType: hard
-
-"proton-translations@github:ProtonMail/proton-translations#fe-mail":
-  version: 1.0.0
-  resolution: "proton-translations@https://github.com/ProtonMail/proton-translations.git#commit=49a67f77fa478284f6aa3265faec7b7eeba77500"
-  checksum: ed4ada8d5f17aea38e715f7d9912cb042eb5ff056660344564d94d917a95b14a3eb48a04705c65e91afdb6fa04e07f4e3e076f9778df70e69718c99aff1b90ac
-  languageName: node
-  linkType: hard
-
-"proton-translations@github:ProtonMail/proton-translations#fe-vpn-settings":
-  version: 1.0.0
-  resolution: "proton-translations@https://github.com/ProtonMail/proton-translations.git#commit=19abe1c92dce8ca0bf1a58ed7d74cd48253e7d50"
-  checksum: 47c1c48a3d1e3d48eeac24fc1f8ec6842a61fdc5b0866c8f24be381b33547c409882604b0cb317fba63cc4bf5ce7f8148e9019cab3209c217cfcf69974760599
-  languageName: node
-  linkType: hard
-
 "proton-vpn-settings@workspace:applications/vpn-settings":
   version: 0.0.0-use.local
   resolution: "proton-vpn-settings@workspace:applications/vpn-settings"
@@ -25578,7 +25491,6 @@ fsevents@^1.2.7:
     cross-env: ^7.0.3
     eslint: ^7.5.0
     prettier: ^2.0.5
-    proton-translations: "github:ProtonMail/proton-translations#fe-vpn-settings"
     react: ^16.0.0
     react-dom: ^16.0.0
     ttag: ^1.7.14
@@ -27448,8 +27360,8 @@ resolve@1.1.7:
   linkType: hard
 
 "rollup@npm:^2.23.1":
-  version: 2.52.6
-  resolution: "rollup@npm:2.52.6"
+  version: 2.52.7
+  resolution: "rollup@npm:2.52.7"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -27457,7 +27369,7 @@ resolve@1.1.7:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: 51a21b72adab22c6727ab25a94b6704595bfac8e49a0fffe71e1bb7d5b91a3e1781bbb7d73cbb2a1eee21574e0007edc63618541bfec9ad6123494c6fa98f228
+  checksum: 341065bf751b811b6b88bf99282ef45da277bcd9e035a2e449a960db011b0916b2ea164999f13d435a9c64d016b61d474dfbf7def517b828f99c2eee8f00cf04
   languageName: node
   linkType: hard
 
