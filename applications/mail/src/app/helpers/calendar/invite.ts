@@ -809,3 +809,10 @@ export const getDoNotDisplayButtons = (model: RequireSome<InvitationModel, 'invi
         isPartyCrasher
     );
 };
+
+export const getDisableButtons = (model: RequireSome<InvitationModel, 'invitationIcs'>) => {
+    const { calendarData, isAddressActive, isImport } = model;
+    const alwaysDisable =
+        !calendarData?.calendar || calendarData.isCalendarDisabled || calendarData.calendarNeedsUserAction;
+    return isImport ? alwaysDisable : alwaysDisable || !isAddressActive;
+};

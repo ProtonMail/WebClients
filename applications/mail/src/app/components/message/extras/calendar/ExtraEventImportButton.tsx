@@ -5,7 +5,7 @@ import { ImportedEvent } from '@proton/shared/lib/interfaces/calendar';
 import React, { useCallback, Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 import { useNotifications, AddToCalendarButton } from '@proton/components';
-import { InvitationModel, UPDATE_ACTION } from '../../../../helpers/calendar/invite';
+import { getDisableButtons, InvitationModel, UPDATE_ACTION } from '../../../../helpers/calendar/invite';
 
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
@@ -53,6 +53,7 @@ const ExtraEventImportButton = ({ model, setModel }: Props) => {
         <AddToCalendarButton
             events={[veventToSave]}
             calendarData={calendarData}
+            disabled={getDisableButtons(model)}
             onSuccess={handleSuccess}
             onError={handleError}
             className="mb0-5"

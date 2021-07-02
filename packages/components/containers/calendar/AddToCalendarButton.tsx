@@ -11,17 +11,17 @@ import { useApi, useLoading } from '../../hooks';
 interface Props {
     events: VcalVeventComponent[];
     calendarData?: CalendarWidgetData;
+    disabled?: boolean;
     onSuccess: (data: ImportedEvent[]) => void;
     onError: (data: ImportEventError[]) => void;
     className?: string;
 }
 
-const AddToCalendarButton = ({ events, calendarData, onSuccess, onError, className }: Props) => {
+const AddToCalendarButton = ({ events, calendarData, disabled, onSuccess, onError, className }: Props) => {
     const api = useApi();
     const [loading, withLoading] = useLoading();
 
     const { calendar, isCalendarDisabled, calendarKeys, memberID, addressKeys } = calendarData || {};
-    const disabled = !calendar || isCalendarDisabled || !calendarKeys || !memberID || !addressKeys;
 
     const handleAdd = useCallback(async () => {
         if (!calendar || isCalendarDisabled || !calendarKeys || !memberID || !addressKeys) {
