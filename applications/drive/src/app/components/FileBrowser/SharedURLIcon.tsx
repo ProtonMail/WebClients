@@ -11,6 +11,17 @@ interface Props {
     className?: string;
 }
 
+const getItemTooltipText = (item: FileBrowserItem) => {
+    if (item.UrlsExpired) {
+        return c('Tooltip').t`Expired sharing link`;
+    }
+    if (item.Trashed) {
+        return c('Tooltip').t`Inactive sharing link`;
+    }
+
+    return c('Tooltip').t`Active sharing link`;
+};
+
 const SharedURLIcon = ({ shareId, item, className }: Props) => {
     const { createModal } = useModals();
 
@@ -23,8 +34,10 @@ const SharedURLIcon = ({ shareId, item, className }: Props) => {
         [shareId, item]
     );
 
+    const iconClassName = !item.UrlsExpired && !item.Trashed ? 'color-info' : 'color-weak';
+
     return (
-        <Tooltip title={item.UrlsExpired ? c('Tooltip').t`Expired sharing link` : c('Tooltip').t`Active sharing link`}>
+        <Tooltip title={getItemTooltipText(item)}>
             <button
                 type="button"
                 className={className || 'flex flex-item-noshrink'}
@@ -35,7 +48,7 @@ const SharedURLIcon = ({ shareId, item, className }: Props) => {
                     }
                 }}
             >
-                <Icon className={!item.UrlsExpired ? 'color-info' : 'color-weak'} name="link" />
+                <Icon className={iconClassName} name="link" alt={c('Action').t`Show shared link details`} />
             </button>
         </Tooltip>
     );
