@@ -112,7 +112,7 @@ export const useCompose = (
         if (openComposers.length >= maxActiveComposer) {
             createNotification({
                 type: 'error',
-                text: c('Error').t`Maximum composer reached`,
+                text: c('Error').t`You cannot open more than 3 composer windows at a time.`,
             });
             return;
         }
