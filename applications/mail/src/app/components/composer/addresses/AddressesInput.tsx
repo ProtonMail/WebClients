@@ -1,5 +1,12 @@
 import React, { useState, useEffect, MutableRefObject, useRef, MouseEvent, Fragment } from 'react';
-import { AddressesAutocomplete, classnames, useContactEmails, useContactGroups } from '@proton/components';
+import { c, msgid } from 'ttag';
+import {
+    AddressesAutocomplete,
+    classnames,
+    useContactEmails,
+    useContactGroups,
+    useNotifications,
+} from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
@@ -39,6 +46,8 @@ const AddressesInput = ({
     const [contactEmails] = useContactEmails() as [ContactEmail[] | undefined, boolean, any];
     const [contactGroups] = useContactGroups();
 
+    const { createNotification } = useNotifications();
+
     const inputRef = useRef<HTMLInputElement>(null);
     const anchorRef = useRef<HTMLDivElement>(null);
 
@@ -65,12 +74,44 @@ const AddressesInput = ({
         return Address.trim();
     };
 
+    const showDuplicateNotif = (addresses: string[]) => {
+        const recipents = addresses.length > 1 ? addresses.join(', ') : addresses[0];
+
+        const text = c('Error').ngettext(
+            msgid`Removed duplicate recipient: ${recipents}`,
+            `Removed duplicate recipients: ${recipents}`,
+            addresses.length
+        );
+
+        createNotification({
+            text,
+            type: 'warning',
+        });
+    };
+
     const handleAddRecipient = (newRecipients: Recipient[]) => {
         const filteredRecipients = newRecipients.filter(isNonEmptyRecipient);
-        if (!filteredRecipients.length) {
+
+        const duplicates: Recipient[] = [];
+
+        const dedupRecipients = filteredRecipients.reduce<Recipient[]>((acc, recipient) => {
+            if (recipients.some(({ Address }) => Address === recipient.Address)) {
+                duplicates.push(recipient);
+                return acc;
+            }
+
+            return [...acc, recipient];
+        }, []);
+
+        if (duplicates.length) {
+            showDuplicateNotif(duplicates.map(({ Address }) => Address));
+        }
+
+        if (!dedupRecipients.length) {
             return;
         }
-        onChange([...recipients, ...filteredRecipients]);
+
+        onChange([...recipients, ...dedupRecipients]);
     };
 
     const handleRecipientRemove = (toRemove: Recipient) => () => {
@@ -82,6 +123,12 @@ const AddressesInput = ({
         if (!isNonEmptyRecipient(value)) {
             return handleRecipientRemove(toChange)();
         }
+
+        if (recipients.some(({ Address }) => Address === value.Address)) {
+            showDuplicateNotif([value.Address]);
+            return handleRecipientRemove(toChange)();
+        }
+
         onChange(recipients.map((recipient) => (recipient === toChange ? value : recipient)));
     };
 
