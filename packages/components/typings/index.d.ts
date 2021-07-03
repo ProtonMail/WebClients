@@ -12,8 +12,3 @@ declare module 'squire-rte';
 declare module 'pm-srp';
 
 declare module 'is-valid-domain';
-
-// Broken types from imagemin-webpack-plugin
-declare module 'svgo' {
-    export interface Options {}
-}

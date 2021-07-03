@@ -4,8 +4,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WriteWebpackPlugin = require('write-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const imageminMozjpeg = require('imagemin-mozjpeg');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
@@ -42,27 +40,6 @@ const PRODUCTION_PLUGINS = [
                 },
             ],
         },
-    }),
-    new ImageminPlugin({
-        cacheFolder: path.resolve('./node_modules/.cache'),
-        maxConcurrency: Infinity,
-        disable: false,
-        test: /\.(jpe?g|png)$/i,
-        optipng: {
-            optimizationLevel: 7,
-        },
-        pngquant: {
-            quality: '80-100',
-        },
-        jpegtran: {
-            progressive: true,
-        },
-        plugins: [
-            imageminMozjpeg({
-                quality: 80,
-                progressive: true,
-            }),
-        ],
     }),
 ];
 
