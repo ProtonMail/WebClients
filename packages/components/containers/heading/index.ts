@@ -4,3 +4,4 @@ export { default as Header } from '../../components/header/Header';
 export { default as TopNavbarListItemHelpDropdown } from './TopNavbarListItemHelpDropdown';
 export { default as TopNavbarListItemSettingsDropdown } from './TopNavbarListItemSettingsDropdown';
 export { default as TopNavbarListItemFeedbackButton } from './TopNavbarListItemFeedbackButton';
+export { default as FeedbackModal } from './FeedbackModal';

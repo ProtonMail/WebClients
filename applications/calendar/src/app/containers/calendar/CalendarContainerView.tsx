@@ -14,16 +14,21 @@ import {
     Icon,
     TopNavbarListItemSettingsDropdown,
     TopNavbarListItemContactsDropdown,
+    TopNavbarListItemFeedbackButton,
+    FeedbackModal,
     Tooltip,
     Button,
     useNotifications,
     useContactGroups,
+    useFeature,
+    FeatureCode,
 } from '@proton/components';
 import { c, msgid } from 'ttag';
 import { differenceInCalendarDays } from 'date-fns';
 
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
 import { AttendeeModel, Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { CONTACT_WIDGET_TABS, CustomActionRenderProps } from '@proton/components/containers/contacts/widget/types';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
@@ -100,6 +105,8 @@ const CalendarContainerView = ({
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { createNotification } = useNotifications();
     const [groups = []] = useContactGroups();
+    const { feature: featureCalendarFeedbackEnabled } = useFeature(FeatureCode.CalendarFeedbackEnabled);
+    const calendarAppName = getAppName(APPS.PROTONCALENDAR);
 
     const localNowDate = useMemo(() => {
         return new Date(utcDefaultDate.getUTCFullYear(), utcDefaultDate.getUTCMonth(), utcDefaultDate.getUTCDate());
@@ -351,6 +358,20 @@ const CalendarContainerView = ({
                         },
                     ]}
                 />
+            }
+            feedbackButton={
+                featureCalendarFeedbackEnabled?.Value ? (
+                    <TopNavbarListItemFeedbackButton
+                        modal={
+                            <FeedbackModal
+                                feedbackType="calendar_launch"
+                                description={c('Info')
+                                    .t`${calendarAppName} has been added to the Proton suite. We would love to hear what you think about it!`}
+                                scaleTitle={c('Label').t`How would you rate your experience with ${calendarAppName}?`}
+                            />
+                        }
+                    />
+                ) : null
             }
             title={c('Title').t`Calendar`}
             expanded={expanded}

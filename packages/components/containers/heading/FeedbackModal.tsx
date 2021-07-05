@@ -12,9 +12,12 @@ interface FeedbackModalModel {
 
 interface Props {
     onClose?: () => void;
+    feedbackType: string;
+    description: string;
+    scaleTitle: string;
 }
 
-const FeedbackModal = ({ onClose, ...rest }: Props) => {
+const FeedbackModal = ({ onClose, feedbackType, description, scaleTitle, ...rest }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -35,7 +38,7 @@ const FeedbackModal = ({ onClose, ...rest }: Props) => {
             sendFeedback({
                 Score: model.Score,
                 Feedback: model.Feedback,
-                FeedbackType: 'v4_migration',
+                FeedbackType: feedbackType,
             })
         );
         createNotification({ text: c('Success notification when user send feedback').t`Feedback sent` });
@@ -62,11 +65,11 @@ const FeedbackModal = ({ onClose, ...rest }: Props) => {
             onClose={onClose}
             {...rest}
         >
-            <p className="mb2">{c('Info')
-                .t`Proton has received a facelift. We would love to hear what you think about it!`}</p>
+            <p className="mb2">{description}</p>
             <div className="mb2">
-                <label className="mb1 block" id="score-label">{c('Label')
-                    .t`How would you rate your experience with the new ProtonMail?`}</label>
+                <label className="mb1 block" id="score-label">
+                    {scaleTitle}
+                </label>
                 <div className="w75 on-mobile-w100">
                     <Scale
                         from={0}
@@ -81,7 +84,7 @@ const FeedbackModal = ({ onClose, ...rest }: Props) => {
             </div>
             <div>
                 <label className="mb1 block" htmlFor="feedback-label">{c('Label')
-                    .t`Please let us know about any additional feedback that you might have. Thank you for helping us making Proton products better!`}</label>
+                    .t`Please provide any additional feedback. Thank you for helping us make Proton products better!`}</label>
                 <TextArea
                     id="feedback-label"
                     value={model.Feedback}
