@@ -84,7 +84,7 @@ const FeedbackModal = ({ onClose, feedbackType, description, scaleTitle, ...rest
             </div>
             <div>
                 <label className="mb1 block" htmlFor="feedback-label">{c('Label')
-                    .t`Please provide any additional feedback. Thank you for helping us make Proton products better!`}</label>
+                    .t`What is the primary reason for this rating?`}</label>
                 <TextArea
                     id="feedback-label"
                     value={model.Feedback}
