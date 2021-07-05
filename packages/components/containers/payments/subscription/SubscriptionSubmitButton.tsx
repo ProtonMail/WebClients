@@ -4,7 +4,7 @@ import { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { c } from 'ttag';
 import { PrimaryButton } from '../../../components';
 
-import PayPalButton from '../PayPalButton';
+import StyledPayPalButton from '../StyledPayPalButton';
 import { PayPalHook } from '../usePayPal';
 
 import { SUBSCRIPTION_STEPS } from './constants';
@@ -49,13 +49,12 @@ const SubscriptionSubmitButton = ({
 
     if (method === PAYMENT_METHOD_TYPES.PAYPAL) {
         return (
-            <PayPalButton
+            <StyledPayPalButton
                 flow="subscription"
                 paypal={paypal}
-                color="norm"
                 className={className}
                 amount={checkResult?.AmountDue || 0}
-            >{c('Action').t`Pay`}</PayPalButton>
+            />
         );
     }
 
