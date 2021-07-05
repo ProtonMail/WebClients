@@ -3,6 +3,7 @@ import { SimpleDropdown, DropdownMenu, DropdownMenuButton, Button, Icon } from '
 import { c } from 'ttag';
 
 import { Sort } from '../../models/tools';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 const TIME = 'Time';
 const SIZE = 'Size';
@@ -14,9 +15,21 @@ interface Props {
     onSort: (sort: Sort) => void;
     className?: string;
     hasCaret?: boolean;
+    isSearch: boolean;
 }
 
-const SortDropdown = ({ loading, conversationMode, sort: { sort, desc }, onSort, className, hasCaret }: Props) => {
+const SortDropdown = ({
+    loading,
+    conversationMode,
+    sort: { sort, desc },
+    onSort,
+    className,
+    hasCaret,
+    isSearch,
+}: Props) => {
+    const { getESDBStatus } = useEncryptedSearchContext();
+    const { dbExists, esEnabled } = getESDBStatus();
+    const hideSizeSorting = isSearch && dbExists && esEnabled;
     const SORT_OPTIONS = {
         SMALL_TO_LARGE: c('Sort option').t`Smallest first`,
         LARGE_TO_SMALL: c('Sort option').t`Largest first`,
@@ -69,24 +82,28 @@ const SortDropdown = ({ loading, conversationMode, sort: { sort, desc }, onSort,
                 >
                     {SORT_OPTIONS.OLD_TO_NEW}
                 </DropdownMenuButton>
-                <DropdownMenuButton
-                    data-testid="toolbar:sort-desc"
-                    isSelected={sort === SIZE && desc}
-                    className="text-left"
-                    loading={loading}
-                    onClick={() => onSort({ sort: SIZE, desc: true })}
-                >
-                    {SORT_OPTIONS.LARGE_TO_SMALL}
-                </DropdownMenuButton>
-                <DropdownMenuButton
-                    data-testid="toolbar:sort-asc"
-                    isSelected={sort === SIZE && !desc}
-                    className="text-left"
-                    loading={loading}
-                    onClick={() => onSort({ sort: SIZE, desc: false })}
-                >
-                    {SORT_OPTIONS.SMALL_TO_LARGE}
-                </DropdownMenuButton>
+                {!hideSizeSorting && (
+                    <DropdownMenuButton
+                        data-testid="toolbar:sort-desc"
+                        isSelected={sort === SIZE && desc}
+                        className="text-left"
+                        loading={loading}
+                        onClick={() => onSort({ sort: SIZE, desc: true })}
+                    >
+                        {SORT_OPTIONS.LARGE_TO_SMALL}
+                    </DropdownMenuButton>
+                )}
+                {!hideSizeSorting && (
+                    <DropdownMenuButton
+                        data-testid="toolbar:sort-asc"
+                        isSelected={sort === SIZE && !desc}
+                        className="text-left"
+                        loading={loading}
+                        onClick={() => onSort({ sort: SIZE, desc: false })}
+                    >
+                        {SORT_OPTIONS.SMALL_TO_LARGE}
+                    </DropdownMenuButton>
+                )}
             </DropdownMenu>
         </SimpleDropdown>
     );
