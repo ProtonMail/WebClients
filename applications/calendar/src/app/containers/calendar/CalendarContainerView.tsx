@@ -367,7 +367,8 @@ const CalendarContainerView = ({
                                 feedbackType="calendar_launch"
                                 description={c('Info')
                                     .t`${calendarAppName} has been added to the Proton suite. We would love to hear what you think about it!`}
-                                scaleTitle={c('Label').t`How would you rate your experience with ${calendarAppName}?`}
+                                scaleTitle={c('Label')
+                                    .t`How likely are you to recommend ${calendarAppName} to a friend or colleague?`}
                             />
                         }
                     />
