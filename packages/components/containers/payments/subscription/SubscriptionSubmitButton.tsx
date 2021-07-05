@@ -50,7 +50,7 @@ const SubscriptionSubmitButton = ({
     if (method === PAYMENT_METHOD_TYPES.PAYPAL) {
         return (
             <PayPalButton
-                type="subscription"
+                flow="subscription"
                 paypal={paypal}
                 color="norm"
                 className={className}

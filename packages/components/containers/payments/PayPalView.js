@@ -29,7 +29,7 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit }) => {
         <PayPalButton
             shape="outline"
             color="norm"
-            type={type}
+            flow={type}
             key="click-here"
             size="small"
             paypal={paypalCredit}

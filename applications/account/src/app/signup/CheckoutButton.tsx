@@ -20,7 +20,7 @@ const CheckoutButton = ({ className, paypal, canPay, loading, method, checkResul
         return (
             <PayPalButton
                 paypal={paypal}
-                type="signup"
+                flow="signup"
                 color="norm"
                 className={className}
                 amount={checkResult ? checkResult.AmountDue : 0}
