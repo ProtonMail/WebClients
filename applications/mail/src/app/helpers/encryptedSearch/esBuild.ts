@@ -209,13 +209,19 @@ const storeMessages = async (
     indexKey: CryptoKey,
     api: Api,
     getMessageKeys: GetMessageKeys,
-    abortControllerRef: React.MutableRefObject<AbortController>
+    abortControllerRef: React.MutableRefObject<AbortController>,
+    recordLocalProgress: (localProgress: number) => void
 ) => {
     const numMessagesBefore = await esDB.count('messages');
     const messagesToStore: StoredCiphertext[] = [];
     let batchSize = 0;
+    let counter = 1;
 
     const esIteratee = async (message: Message) => {
+        if (abortControllerRef.current.signal.aborted) {
+            throw new Error('Operation aborted');
+        }
+
         const messageToCache = await fetchMessage(message.ID, api, getMessageKeys, abortControllerRef.current.signal);
 
         if (!messageToCache) {
@@ -230,6 +236,7 @@ const storeMessages = async (
         }
 
         messagesToStore.push(newCiphertextToStore);
+        recordLocalProgress(counter++);
     };
 
     await runInQueue<void>(
@@ -298,13 +305,19 @@ const storeMessagesBatches = async (
     let batchCount = 0;
     let progress = 0;
     while (Messages.length) {
+        const inloopProgress = progress;
+        const recordLocalProgress = (localProgress: number) => {
+            recordProgress(inloopProgress + localProgress);
+        };
+
         const storeOutput = await storeMessages(
             Messages,
             esDB,
             indexKey,
             api,
             getMessageKeys,
-            abortControllerRef
+            abortControllerRef,
+            recordLocalProgress
         ).catch((error) => {
             if (error.name === 'QuotaExceededError') {
                 const quotaRecoveryPoint: RecoveryPoint = { ID: '', Time: -1 };
@@ -315,7 +328,7 @@ const storeMessagesBatches = async (
             }
         });
 
-        if (!storeOutput) {
+        if (!storeOutput || abortControllerRef.current.signal.aborted) {
             return false;
         }
         const { recoveryPoint, batchSize } = storeOutput;
@@ -330,7 +343,6 @@ const storeMessagesBatches = async (
         setItem(`ES:${userID}:Recover`, JSON.stringify(recoveryPoint));
         updateSizeIDB(userID, batchSize);
         progress += Messages.length;
-        recordProgress(progress);
 
         resultMetadata = await queryMessagesMetadata(
             api,
