@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode, useContext, useState, useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 import {
     useApi,
@@ -28,7 +28,7 @@ import {
     MessageForSearch,
 } from '../models/encryptedSearch';
 import { defaultESStatus, ES_MAX_CACHE, PAGE_SIZE } from '../constants';
-import { extractSearchParameters } from '../helpers/mailboxUrl';
+import { extractSearchParameters, filterFromUrl, setSortInUrl, sortFromUrl } from '../helpers/mailboxUrl';
 import { isSearch as testIsSearch } from '../helpers/elements';
 import {
     indexKeyExists,
@@ -49,6 +49,7 @@ import {
     checkIsCacheLimited,
     hybridSearch,
     normaliseSearchParams,
+    shouldOnlySortResults,
     sizeOfCache,
     uncachedSearch,
     updateCache,
@@ -71,12 +72,14 @@ interface Props {
 
 const EncryptedSearchProvider = ({ children }: Props) => {
     const location = useLocation();
+    const history = useHistory();
     const getUserKeys = useGetUserKeys();
     const getMessageKeys = useGetMessageKeys();
     const api = useApi();
     const [{ ID: userID }] = useUser();
     const { createNotification } = useNotifications();
     const [messageCounts] = useMessageCounts();
+    const isSearch = testIsSearch(extractSearchParameters(location));
 
     // Keep a state of cached messages, search results to update in case of new events
     // and information on the status of IndexedDB
@@ -181,6 +184,11 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         if (currentOption) {
             removeItem(`ES:${userID}:ESEnabled`);
         } else {
+            // Every time ES is enabled, we reset sorting to avoid carrying on with size sorting if
+            // it was previously used
+            if (testIsSearch(extractSearchParameters(location))) {
+                history.push(setSortInUrl(history.location, { sort: 'Time', desc: true }));
+            }
             setItem(`ES:${userID}:ESEnabled`, 'true');
         }
         canUseES(userID).then((isIDBIntact) => {
@@ -194,14 +202,13 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Cache the whole IndexedDB and returns the cache promise
      */
     const cacheIndexedDB: CacheIndexedDB = async (force) => {
-        const { esEnabled, dbExists, cachePromise } = esStatus;
-        const esCache = await cachePromise;
+        const { esEnabled, dbExists } = esStatus;
         const defaultResult = {
             cachedMessages: [],
             isCacheLimited: false,
         };
 
-        if (dbExists && esEnabled && (!esCache.length || !!force)) {
+        if (dbExists && esEnabled) {
             const indexKey = await getIndexKey(getUserKeys, userID);
             const isIDBIntact = await canUseES(userID);
             if (!indexKey || !isIDBIntact) {
@@ -209,8 +216,17 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 return defaultResult;
             }
 
+            const { cachePromise, isCacheLimited } = esStatus;
+            const esCache = await cachePromise;
+            if ((esCache.length || (await getNumMessagesDB(userID)) === 0) && !force) {
+                return {
+                    cachedMessages: esCache,
+                    isCacheLimited,
+                };
+            }
+
             const cacheDBPromise = cacheDB(indexKey, userID);
-            const cachePromise = cacheDBPromise
+            const newCachePromise = cacheDBPromise
                 .then((result) => {
                     setESStatus((esStatus) => {
                         return {
@@ -226,7 +242,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             setESStatus((esStatus) => {
                 return {
                     ...esStatus,
-                    cachePromise,
+                    cachePromise: newCachePromise,
+                    cachedIndexKey: indexKey,
                 };
             });
             return cacheDBPromise;
@@ -239,7 +256,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * have happened during indexing
      */
     const retryIndexEncryptedSearch = async () => {
-        const indexKey = await getIndexKey(getUserKeys, userID);
+        const { cachedIndexKey } = esStatus;
+
+        const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
         const isIDBIntact = await canUseES(userID);
         if (!indexKey || !isIDBIntact) {
             await dbCorruptError();
@@ -303,8 +322,10 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         const esCache = await cachePromise;
 
         const searchParameters = extractSearchParameters(location);
+        const filterParameter = filterFromUrl(location);
+        const sortParameter = sortFromUrl(location);
         const isSearch = testIsSearch(searchParameters);
-        const normalisedSearchParams = normaliseSearchParams(searchParameters, labelID);
+        const normalisedSearchParams = normaliseSearchParams(searchParameters, labelID, filterParameter, sortParameter);
 
         const { failedMessageEvents, cacheChanged, searchChanged } = await syncMessageEvents(
             Messages,
@@ -585,9 +606,18 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     /**
      * Execute an encrypted search
      */
-    const encryptedSearch: EncryptedSearch = async (searchParams, labelID, setCache) => {
+    const encryptedSearch: EncryptedSearch = async (labelID, setCache) => {
         const t1 = performance.now();
-        const { dbExists, esEnabled, isCacheReady, cachePromise } = esStatus;
+        const {
+            dbExists,
+            esEnabled,
+            isCacheReady,
+            cachePromise,
+            previousNormSearchParams,
+            permanentResults,
+            isSearchPartial: wasSearchPartial,
+            cachedIndexKey,
+        } = esStatus;
 
         if (!dbExists || !esEnabled) {
             return false;
@@ -599,6 +629,20 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             return false;
         }
 
+        const searchParameters = extractSearchParameters(location);
+        const filterParameter = filterFromUrl(location);
+        const sortParameter = sortFromUrl(location);
+        const normalisedSearchParams = normaliseSearchParams(searchParameters, labelID, filterParameter, sortParameter);
+
+        // In case only sorting changed, for complete searches it doesn't make sense to perform a new search
+        if (!wasSearchPartial && previousNormSearchParams) {
+            const shouldSortOnly = shouldOnlySortResults(normalisedSearchParams, previousNormSearchParams);
+            if (shouldSortOnly) {
+                setCache(permanentResults);
+                return true;
+            }
+        }
+
         setESStatus((esStatus) => {
             return {
                 ...esStatus,
@@ -606,8 +650,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 isSearchPartial: true,
             };
         });
-
-        const normalisedSearchParams = normaliseSearchParams(searchParams, labelID);
 
         // Wait for the cache to be built, falls back to uncached search if caching fails
         let esCache = await cachePromise;
@@ -637,6 +679,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 esCache,
                 normalisedSearchParams,
                 isCacheLimited,
+                cachedIndexKey,
                 getUserKeys,
                 userID,
                 incrementMessagesSearched,
@@ -660,6 +703,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 labelID,
                 setElementsCache: setCache,
                 lastEmail,
+                previousNormSearchParams: normalisedSearchParams,
                 page: 0,
                 isSearchPartial,
                 isSearching: false,
@@ -669,7 +713,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         const t2 = performance.now();
         void sendESMetrics(
-            getUserKeys,
             api,
             userID,
             sizeOfCache(esCache),
@@ -696,6 +739,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             lastEmail,
             page: lastPage,
             isSearchPartial,
+            cachedIndexKey,
         } = esStatus;
         if (!dbExists || !esEnabled || !isCacheLimited) {
             return false;
@@ -714,6 +758,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         }
 
         const searchParameters = extractSearchParameters(location);
+        const filterParameter = filterFromUrl(location);
+        const sortParameter = sortFromUrl(location);
         const isSearch = testIsSearch(searchParameters);
         if (!isSearch || !isSearchPartial) {
             return false;
@@ -732,8 +778,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             messageLimit += PAGE_SIZE;
         }
 
-        const normalisedSearchParams = normaliseSearchParams(searchParameters, labelID);
-        const indexKey = await getIndexKey(getUserKeys, userID);
+        const normalisedSearchParams = normaliseSearchParams(searchParameters, labelID, filterParameter, sortParameter);
+        const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
         const isIDBIntact = await canUseES(userID);
         if (!indexKey || !isIDBIntact) {
             await dbCorruptError();
@@ -747,15 +793,11 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             };
         });
 
-        const searchOutput = await uncachedSearch(
-            indexKey,
-            userID,
-            { ...normalisedSearchParams, end: lastEmail?.Time },
-            {
-                messageLimit,
-                beginOrder: lastEmail?.Order,
-            }
-        );
+        const searchOutput = await uncachedSearch(userID, indexKey, normalisedSearchParams, {
+            messageLimit,
+            beginOrder: lastEmail?.Order,
+            lastEmailTime: lastEmail?.Time,
+        });
 
         permanentResults.push(...searchOutput.resultsArray);
         const newIsSearchPartial = !!searchOutput.lastEmail;
@@ -775,14 +817,14 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     };
 
     useSubscribeEventManager(async (event: Event) => {
-        const { dbExists, isRefreshing } = esStatus;
+        const { dbExists, isRefreshing, cachedIndexKey } = esStatus;
         // If building is happening, either because of initial indexing or because
         // we got a Refresh=1, new events are not synced
         if (!dbExists || isRefreshing) {
             return;
         }
 
-        const indexKey = await getIndexKey(getUserKeys, userID);
+        const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
         const isIDBIntact = await canUseES(userID);
         if (!indexKey || !isIDBIntact) {
             await dbCorruptError();
@@ -847,6 +889,23 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             setItem(`ES:${userID}:Event`, EventID);
         }
     });
+
+    // Remove previous search data from the status when no longer in search mode
+    useEffect(() => {
+        if (!isSearch) {
+            setESStatus((esStatus) => {
+                return {
+                    ...esStatus,
+                    permanentResults: defaultESStatus.permanentResults,
+                    setElementsCache: defaultESStatus.setElementsCache,
+                    labelID: defaultESStatus.labelID,
+                    lastEmail: defaultESStatus.lastEmail,
+                    previousNormSearchParams: defaultESStatus.previousNormSearchParams,
+                    page: defaultESStatus.page,
+                };
+            });
+        }
+    }, [isSearch]);
 
     useEffect(() => {
         if (!indexKeyExists(userID)) {

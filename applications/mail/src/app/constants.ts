@@ -90,10 +90,11 @@ export const DRAG_ADDRESS_SIZE_KEY = 'drag-address-size';
 export const MAX_ELEMENT_LIST_LOAD_RETRIES = 3;
 
 export const OPENPGP_REFRESH_CUTOFF = 10;
-export const ES_LIMIT = 150;
+export const ES_MAX_METADATA_QUERY = 150;
 export const ES_MAX_CONCURRENT = 10;
 export const ES_MAX_CACHE = 500000000; // 500 MB
-export const ES_MAX_PAGEBATCH = 100;
+export const ES_MAX_PAGES_PER_BATCH = 100;
+export const ES_MAX_MESSAGES_PER_BATCH = 1000;
 export const AesKeyGenParams: AesKeyGenParams = { name: 'AES-GCM', length: 128 };
 export const KeyUsages: KeyUsage[] = ['encrypt', `decrypt`];
 export const localisedForwardFlags = [
@@ -129,7 +130,9 @@ export const defaultESStatus: ESStatus = {
     labelID: '',
     cachePromise: (async () => [] as CachedMessage[])(),
     lastEmail: undefined,
+    previousNormSearchParams: undefined,
     page: 0,
+    cachedIndexKey: undefined,
     dbExists: false,
     isBuilding: false,
     isDBLimited: false,
