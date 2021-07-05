@@ -220,6 +220,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                 wildcard: wildcard ? String(wildcard) : UNDEFINED,
                 filter,
                 sort: UNDEFINED, // Make sure to reset sort parameter when performing an advanced search
+                page: UNDEFINED, // Reset page parameter when performing an advanced search so that search results are shown from the first page
             })
         );
 
