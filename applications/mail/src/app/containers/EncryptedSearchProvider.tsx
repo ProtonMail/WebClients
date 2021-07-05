@@ -24,6 +24,8 @@ import {
     ESDBStatus,
     ESStatus,
     IncrementSearch,
+    HighlightMetadata,
+    HighlightString,
     LastEmail,
     MessageForSearch,
 } from '../models/encryptedSearch';
@@ -62,6 +64,7 @@ import {
     syncMessageEvents,
 } from '../helpers/encryptedSearch/esSync';
 import { queryEvents, sendESMetrics } from '../helpers/encryptedSearch/esAPI';
+import { highlightJSX, insertMarks } from '../helpers/encryptedSearch/esHighlight';
 
 const EncryptedSearchContext = createContext<EncryptedSearchFunctions>(null as any);
 export const useEncryptedSearchContext = () => useContext(EncryptedSearchContext);
@@ -816,6 +819,58 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         return true;
     };
 
+    /**
+     * Check whether to highlight keywords upon opening a result of an encrypted search
+     */
+    const shouldHighlight = () => {
+        const { dbExists, esEnabled } = esStatus;
+        if (!dbExists || !esEnabled) {
+            return false;
+        }
+
+        const searchParameters = extractSearchParameters(location);
+        const isSearch = testIsSearch(searchParameters);
+        if (!isSearch) {
+            return false;
+        }
+
+        const { labelID } = esStatus;
+        const { normalisedKeywords } = normaliseSearchParams(searchParameters, labelID);
+        if (!normalisedKeywords) {
+            return false;
+        }
+
+        return true;
+    };
+
+    /**
+     * Highlight keywords in body. Return a string with the new body
+     */
+    const highlightString: HighlightString = (content, setAutoScroll) => {
+        const searchParameters = extractSearchParameters(location);
+        const { labelID } = esStatus;
+        const { normalisedKeywords } = normaliseSearchParams(searchParameters, labelID);
+        if (!normalisedKeywords) {
+            return content;
+        }
+
+        return insertMarks(content, normalisedKeywords, setAutoScroll);
+    };
+
+    /**
+     * Highlight keywords in metadata. Return the JSX element to be rendered
+     */
+    const highlightMetadata: HighlightMetadata = (metadata) => {
+        const searchParameters = extractSearchParameters(location);
+        const { labelID } = esStatus;
+        const { normalisedKeywords } = normaliseSearchParams(searchParameters, labelID);
+        if (!normalisedKeywords) {
+            return <span>{metadata}</span>;
+        }
+
+        return highlightJSX(metadata, normalisedKeywords);
+    };
+
     useSubscribeEventManager(async (event: Event) => {
         const { dbExists, isRefreshing, cachedIndexKey } = esStatus;
         // If building is happening, either because of initial indexing or because
@@ -964,6 +1019,9 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         pauseIndexing,
         getProgressRecorderRef,
         incrementSearch,
+        highlightString,
+        highlightMetadata,
+        shouldHighlight,
     };
 
     return <EncryptedSearchContext.Provider value={esFunctions}>{children}</EncryptedSearchContext.Provider>;

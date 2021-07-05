@@ -33,7 +33,7 @@ function useSearch<T, K = keyof SearchableObject<T>>({
     resetField,
     sources,
     keys,
-    highlightFn = (str: string) => <mark>{str}</mark>,
+    highlightFn = (str: string) => <mark className="is-light">{str}</mark>,
 }: {
     inputValue?: string;
     minSymbols?: number;

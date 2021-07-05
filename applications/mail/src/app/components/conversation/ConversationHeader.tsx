@@ -6,18 +6,23 @@ import NumMessages from './NumMessages';
 import ItemLabels from '../list/ItemLabels';
 import { isConversation as testIsConversation } from '../../helpers/elements';
 import { Element } from '../../models/element';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 interface Props {
     className: string;
     loading: boolean;
     element: Element;
     labelID: string;
+    highlightKeywords?: boolean;
 }
 
-const ConversationHeader = ({ className, loading, element, labelID }: Props) => {
+const ConversationHeader = ({ className, loading, element, labelID, highlightKeywords = false }: Props) => {
     const [labels = []] = useLabels();
+    const { highlightMetadata } = useEncryptedSearchContext();
 
     const isConversation = testIsConversation(element);
+    const subjectElement =
+        !!element.Subject && highlightKeywords ? highlightMetadata(element.Subject) : <span>{element.Subject}</span>;
 
     return (
         <header
@@ -38,7 +43,7 @@ const ConversationHeader = ({ className, loading, element, labelID }: Props) => 
                     {!loading ? (
                         <>
                             {isConversation && <NumMessages className="mr0-25" conversation={element} />}
-                            <span>{element.Subject}</span>
+                            {subjectElement}
                         </>
                     ) : (
                         <>&nbsp;</>

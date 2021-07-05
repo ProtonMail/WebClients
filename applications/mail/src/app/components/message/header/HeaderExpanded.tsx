@@ -66,6 +66,7 @@ interface Props {
     labelDropdownToggleRef: React.MutableRefObject<() => void>;
     moveDropdownToggleRef: React.MutableRefObject<() => void>;
     filterDropdownToggleRef: React.MutableRefObject<() => void>;
+    highlightKeywords?: boolean;
 }
 
 const HeaderExpanded = ({
@@ -89,6 +90,7 @@ const HeaderExpanded = ({
     labelDropdownToggleRef,
     moveDropdownToggleRef,
     filterDropdownToggleRef,
+    highlightKeywords = false,
 }: Props) => {
     const [addresses = []] = useAddresses();
     const [folders = []] = useFolders();
@@ -131,6 +133,7 @@ const HeaderExpanded = ({
             recipientOrGroup={{ recipient: message.data?.Sender }}
             isLoading={!messageLoaded}
             signingPublicKey={showPinPublicKey ? message.verification?.signingPublicKey : undefined}
+            highlightKeywords={highlightKeywords}
         />
     );
 
@@ -261,9 +264,14 @@ const HeaderExpanded = ({
                             message={message}
                             mapStatusIcons={messageViewIcons.mapStatusIcon}
                             isLoading={!messageLoaded}
+                            highlightKeywords={highlightKeywords}
                         />
                     ) : (
-                        <RecipientsSimple message={message.data} isLoading={!messageLoaded} />
+                        <RecipientsSimple
+                            message={message.data}
+                            isLoading={!messageLoaded}
+                            highlightKeywords={highlightKeywords}
+                        />
                     )}
                     <span
                         className={classnames([

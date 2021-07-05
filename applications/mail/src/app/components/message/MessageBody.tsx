@@ -1,9 +1,11 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
+import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { classnames, Button, Tooltip } from '@proton/components';
 import { c } from 'ttag';
 import { MessageExtended } from '../../models/message';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 import './MessageBody.scss';
 import MessageBodyImage from './MessageBodyImage';
@@ -22,6 +24,7 @@ interface Props {
      */
     forceBlockquote?: boolean;
     onMessageReady?: () => void;
+    highlightKeywords?: boolean;
 }
 
 const MessageBody = ({
@@ -33,8 +36,10 @@ const MessageBody = ({
     originalMessageMode,
     toggleOriginalMessage,
     onMessageReady,
+    highlightKeywords = false,
 }: Props) => {
     const bodyRef = useRef<HTMLDivElement>(null);
+    const { highlightString } = useEncryptedSearchContext();
     const plain = isPlainText(message.data);
 
     const [content, blockquote] = useMemo(
@@ -52,6 +57,8 @@ const MessageBody = ({
     const isBlockquote = blockquote !== '';
     const showButton = !forceBlockquote && isBlockquote;
     const showBlockquote = forceBlockquote || originalMessageMode;
+    const htmlContent = !!content && highlightKeywords ? highlightString(content, true) : content;
+    const htmlBlockquote = !!blockquote && highlightKeywords ? highlightString(blockquote, false) : blockquote;
 
     useEffect(() => {
         if (!loadingMode && !decryptingMode && onMessageReady) {
@@ -64,6 +71,13 @@ const MessageBody = ({
         // This forced refresh create this doubled render when blockquote is toggled
         setTimeout(() => forceRefresh({}));
     }, [showBlockquote]);
+
+    useEffect(() => {
+        if (!!content && highlightKeywords) {
+            const el = bodyRef.current?.querySelector('[data-auto-scroll]') as HTMLElement;
+            scrollIntoView(el, { block: 'center', behavior: 'smooth' });
+        }
+    }, [htmlContent]);
 
     return (
         <div
@@ -89,7 +103,7 @@ const MessageBody = ({
             {contentMode && (
                 <>
                     {/* eslint-disable-next-line react/no-danger */}
-                    <div dangerouslySetInnerHTML={{ __html: content }} />
+                    <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
                     {message.messageImages?.images.map((image) => (
                         <MessageBodyImage
                             key={image.id}
@@ -121,7 +135,7 @@ const MessageBody = ({
                                 </Tooltip>
                             )}
                             {/* eslint-disable-next-line react/no-danger */}
-                            {showBlockquote && <div dangerouslySetInnerHTML={{ __html: blockquote }} />}
+                            {showBlockquote && <div dangerouslySetInnerHTML={{ __html: htmlBlockquote }} />}
                         </>
                     )}
                 </>

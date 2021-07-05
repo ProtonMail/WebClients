@@ -20,8 +20,6 @@ import {
 import { useContactEmails, useContactGroups, useEventListener } from '../../../hooks';
 import useUpdateGroup from '../useUpdateGroup';
 
-import './ContactGroupModal.scss';
-
 interface Props {
     contactGroupID?: string;
     selectedContactEmails?: ContactEmail[];

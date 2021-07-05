@@ -4,14 +4,17 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
+import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 
 interface Props {
     message?: Message;
     isLoading?: boolean;
+    highlightKeywords?: boolean;
 }
 
-const RecipientsSimple = ({ message, isLoading }: Props) => {
+const RecipientsSimple = ({ message, isLoading, highlightKeywords = false }: Props) => {
     const { getRecipientsOrGroups, getRecipientOrGroupLabel } = useRecipientLabel();
+    const { highlightMetadata } = useEncryptedSearchContext();
     const recipients = getRecipients(message);
     const recipientsOrGroup = getRecipientsOrGroups(recipients);
 
@@ -24,13 +27,15 @@ const RecipientsSimple = ({ message, isLoading }: Props) => {
                         {recipients.length
                             ? recipientsOrGroup.map((recipientOrGroup, index) => {
                                   const label = getRecipientOrGroupLabel(recipientOrGroup);
+                                  const highlightedLabel =
+                                      !!label && highlightKeywords ? highlightMetadata(label) : label;
 
                                   return (
                                       <span
                                           key={index} // eslint-disable-line react/no-array-index-key
                                           title={label}
                                       >
-                                          {label}
+                                          <span>{highlightedLabel}</span>
                                           {index < recipientsOrGroup.length - 1 && ', '}
                                       </span>
                                   );

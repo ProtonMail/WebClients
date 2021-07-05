@@ -19,6 +19,7 @@ interface Props {
     showLockIcon?: boolean;
     isLoading: boolean;
     signingPublicKey?: OpenPGPKey;
+    highlightKeywords?: boolean;
 }
 
 const RecipientItem = ({
@@ -29,6 +30,7 @@ const RecipientItem = ({
     showLockIcon = true,
     isLoading,
     signingPublicKey,
+    highlightKeywords = false,
 }: Props) => {
     if (isLoading) {
         return (
@@ -49,6 +51,7 @@ const RecipientItem = ({
                 mapStatusIcons={mapStatusIcons}
                 globalIcon={globalIcon}
                 showAddress={showAddress}
+                highlightKeywords={highlightKeywords}
             />
         );
     }
@@ -62,6 +65,7 @@ const RecipientItem = ({
                 showAddress={showAddress}
                 showLockIcon={showLockIcon}
                 signingPublicKey={signingPublicKey}
+                highlightKeywords={highlightKeywords}
             />
         );
     }
