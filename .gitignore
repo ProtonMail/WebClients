@@ -9,6 +9,7 @@ yarn-error.log*
 node_modules
 dist
 config.ts
+tsconfig.tsbuildinfo
 .yarn/*
 !.yarn/releases
 !.yarn/plugins
