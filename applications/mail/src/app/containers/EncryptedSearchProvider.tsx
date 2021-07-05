@@ -266,7 +266,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         if (newMessagesFound) {
             // Check if DB became limited after this update
-            const isDBLimited = await checkIsDBLimited(userID, messageCounts);
+            const isDBLimited = await checkIsDBLimited(userID, messageCounts, api);
             setESStatus((esStatus) => {
                 return {
                     ...esStatus,
@@ -346,7 +346,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         // Check if DB or cache became limited after this update
         const isCacheLimited = await checkIsCacheLimited(userID, esCache.length);
-        const isDBLimited = await checkIsDBLimited(userID, messageCounts);
+        const isDBLimited = await checkIsDBLimited(userID, messageCounts, api);
         setESStatus((esStatus) => {
             return {
                 ...esStatus,
@@ -391,7 +391,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
                 );
 
                 // Check if DB became limited after this update
-                const isDBLimited = await checkIsDBLimited(userID, messageCounts);
+                const isDBLimited = await checkIsDBLimited(userID, messageCounts, api);
                 setESStatus((esStatus) => {
                     return {
                         ...esStatus,
@@ -567,7 +567,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         }
 
         // The check whether the DB is limited is performed after sync to account for new messages
-        const isDBLimited = await checkIsDBLimited(userID, messageCounts);
+        const isDBLimited = await checkIsDBLimited(userID, messageCounts, api);
         setESStatus((esStatus) => {
             return {
                 ...esStatus,

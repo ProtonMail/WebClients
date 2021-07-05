@@ -29,9 +29,9 @@ import { encryptToDB, fetchMessage, prepareMessageMetadata } from './esBuild';
  * Check whether the DB is limited, either after indexing or if it became so
  * after an update
  */
-export const checkIsDBLimited = async (userID: string, messageCounts: any) => {
+export const checkIsDBLimited = async (userID: string, messageCounts: any, api: Api) => {
     const count = await getNumMessagesDB(userID);
-    const totalMessages = getTotalMessages(messageCounts);
+    const totalMessages = await getTotalMessages(messageCounts, api);
     return count < totalMessages;
 };
 
@@ -178,7 +178,7 @@ export const refreshIndex = async (
     );
 
     // Fetching and preparing all metadata
-    const Total = getTotalMessages(messageCounts);
+    const Total = await getTotalMessages(messageCounts, api);
     const numPages = Math.ceil(Total / PAGE_SIZE);
     const numBatches = Math.ceil(numPages / ES_MAX_PAGEBATCH);
 
