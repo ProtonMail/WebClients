@@ -1,8 +1,8 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { DBSchema } from 'idb';
-import { SearchParameters } from './tools';
 import { Element } from './element';
+import { ElementsCacheParams } from '../hooks/mailbox/useElementsCache';
 
 export interface ESMetricsReport {
     numMessagesIDB: number;
@@ -72,8 +72,7 @@ export interface LastEmail {
     Order: number;
 }
 
-export interface NormalisedSearchParams extends Omit<SearchParameters, 'wildcard' | 'keyword'> {
-    labelID: string;
+export interface NormalisedSearchParams extends Omit<ElementsCacheParams, 'wildcard' | 'keyword' | 'esEnabled'> {
     normalisedKeywords: string[] | undefined;
     decryptionError?: boolean;
 }
@@ -86,7 +85,9 @@ export interface ESStatus {
     labelID: string;
     cachePromise: Promise<CachedMessage[]>;
     lastEmail: LastEmail | undefined;
+    previousNormSearchParams: NormalisedSearchParams | undefined;
     page: number;
+    cachedIndexKey: CryptoKey | undefined;
     dbExists: boolean;
     isBuilding: boolean;
     isDBLimited: boolean;
@@ -111,13 +112,17 @@ export type ESDBStatus = Pick<
     | 'isSearching'
 >;
 
+export interface UncachedSearchOptions {
+    incrementMessagesSearched?: () => void;
+    messageLimit?: number;
+    setCache?: (newResults: MessageForSearch[]) => void;
+    beginOrder?: number;
+    lastEmailTime?: number;
+}
+
 export type GetUserKeys = () => Promise<DecryptedKey[]>;
 
-export type EncryptedSearch = (
-    searchParams: SearchParameters,
-    labelID: string,
-    setCache: ESSetsElementsCache
-) => Promise<boolean>;
+export type EncryptedSearch = (labelID: string, setCache: ESSetsElementsCache) => Promise<boolean>;
 
 export type IncrementSearch = (
     page: number,

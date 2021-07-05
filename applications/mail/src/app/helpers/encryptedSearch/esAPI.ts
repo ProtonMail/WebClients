@@ -3,11 +3,10 @@ import { Api } from '@proton/shared/lib/interfaces';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import { getMessage, queryMessageMetadata } from '@proton/shared/lib/api/messages';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { GetUserKeys, ESMetricsReport } from '../../models/encryptedSearch';
+import { ESMetricsReport } from '../../models/encryptedSearch';
 import { Event } from '../../models/event';
-import { ES_LIMIT } from '../../constants';
+import { ES_MAX_METADATA_QUERY } from '../../constants';
 import { getNumMessagesDB, getSizeIDB } from './esUtils';
-import { getIndexKey } from './esBuild';
 
 /**
  * Api calls for ES should be transparent and with low priority to avoid jailing
@@ -49,7 +48,7 @@ export const queryMessagesMetadata = async (
         api,
         signal,
         queryMessageMetadata({
-            Limit: ES_LIMIT,
+            Limit: ES_MAX_METADATA_QUERY,
             Location: '5',
             Sort: 'Time',
             Desc: 1,
@@ -81,7 +80,6 @@ export const queryMessage = async (api: Api, messageID: string, signal?: AbortSi
  * Send metrics about encrypted search usage
  */
 export const sendESMetrics = async (
-    getUserKeys: GetUserKeys,
     api: Api,
     userID: string,
     sizeCache: number,
@@ -95,11 +93,6 @@ export const sendESMetrics = async (
     // Random number of seconds between 1 second and 3 minutes, expressed in milliseconds
     const randomDelay = 1000 * Math.floor(180 * Math.random() + 1);
     const storeManager = navigator.storage;
-
-    const indexKey = await getIndexKey(getUserKeys, userID);
-    if (!indexKey) {
-        return;
-    }
 
     const [numMessagesIDB, sizeIDBOnDisk] = await Promise.all([
         getNumMessagesDB(userID),

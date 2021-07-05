@@ -12,7 +12,7 @@ import {
     NormalisedSearchParams,
     StoredCiphertext,
 } from '../../models/encryptedSearch';
-import { AesKeyGenParams, ES_LIMIT, ES_MAX_CACHE, ES_MAX_PAGEBATCH, PAGE_SIZE } from '../../constants';
+import { AesKeyGenParams, ES_MAX_CACHE, ES_MAX_PAGES_PER_BATCH, PAGE_SIZE } from '../../constants';
 import {
     getNumMessagesDB,
     getOldestMessage,
@@ -21,7 +21,14 @@ import {
     removeMessageSize,
     getTotalMessages,
 } from './esUtils';
-import { applySearch, sizeOfCache, sizeOfCachedMessage, splitCachedMessage, uncachedSearch } from './esSearch';
+import {
+    applySearch,
+    normaliseSearchParams,
+    sizeOfCache,
+    sizeOfCachedMessage,
+    splitCachedMessage,
+    uncachedSearch,
+} from './esSearch';
 import { queryEvents, queryMessagesMetadata } from './esAPI';
 import { encryptToDB, fetchMessage, prepareMessageMetadata } from './esBuild';
 
@@ -149,15 +156,7 @@ export const refreshIndex = async (
     // is to avoid checking whether the body was modified or not
     let searchResults: MessageForSearch[] = [];
     try {
-        ({ resultsArray: searchResults } = await uncachedSearch(
-            indexKey,
-            userID,
-            {
-                labelID: '8',
-                normalisedKeywords: undefined,
-            },
-            {}
-        ));
+        ({ resultsArray: searchResults } = await uncachedSearch(userID, indexKey, normaliseSearchParams({}, '8'), {}));
     } catch (error) {
         // leave empty array
     }
@@ -180,7 +179,7 @@ export const refreshIndex = async (
     // Fetching and preparing all metadata
     const Total = await getTotalMessages(messageCounts, api);
     const numPages = Math.ceil(Total / PAGE_SIZE);
-    const numBatches = Math.ceil(numPages / ES_MAX_PAGEBATCH);
+    const numBatches = Math.ceil(numPages / ES_MAX_PAGES_PER_BATCH);
 
     // IF DB is partial, we want a reference to the oldest message to discriminate whether to update the DB or not
     const count = await getNumMessagesDB(userID);
@@ -191,13 +190,13 @@ export const refreshIndex = async (
 
     // In case of big mailboxes, we don't want all pages at once in memory
     for (let startPageBatch = 0; startPageBatch < numBatches; startPageBatch++) {
-        const startPage = startPageBatch * ES_MAX_PAGEBATCH;
-        const endPage = Math.min((startPageBatch + 1) * ES_MAX_PAGEBATCH, numPages);
+        const startPage = startPageBatch * ES_MAX_PAGES_PER_BATCH;
+        const endPage = Math.min((startPageBatch + 1) * ES_MAX_PAGES_PER_BATCH, numPages);
 
         const metadataPromiseArray: Promise<Message[]>[] = [];
         for (let Page = startPage; Page < endPage; Page++) {
             metadataPromiseArray.push(
-                queryMessagesMetadata(api, { Page, PageSize: ES_LIMIT }).then((resultMetadata) => {
+                queryMessagesMetadata(api, { Page }).then((resultMetadata) => {
                     if (!resultMetadata) {
                         throw new Error('Metadata fetching failed');
                     }
@@ -210,7 +209,7 @@ export const refreshIndex = async (
         if (!metadataMatrix) {
             // In case anything failed during page fetching, retry only the current batch
             if (startPageBatch !== 0) {
-                startPageBatch -= ES_MAX_PAGEBATCH;
+                startPageBatch -= ES_MAX_PAGES_PER_BATCH;
                 continue;
             }
             return;
@@ -612,13 +611,9 @@ export const correctDecryptionErrors = async (
 
     try {
         ({ resultsArray: searchResults } = await uncachedSearch(
-            indexKey,
             userID,
-            {
-                labelID: '5',
-                normalisedKeywords: undefined,
-                decryptionError: true,
-            },
+            indexKey,
+            { ...normaliseSearchParams({}, '5'), decryptionError: true },
             {}
         ));
     } catch (error) {
