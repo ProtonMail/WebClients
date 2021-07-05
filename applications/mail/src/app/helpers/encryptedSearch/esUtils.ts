@@ -183,3 +183,17 @@ export const getCatchUpFail = (userID: string) => {
     }
     return catchUpFail === 'true';
 };
+
+/**
+ * Check whether ES can be used not just because the index key exists in localStorage
+ * but also because IDB is not corrupt, i.e. the object store exists
+ */
+export const canUseES = async (userID: string) => {
+    if (!indexKeyExists) {
+        return false;
+    }
+    const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
+    const isIntact = esDB.objectStoreNames.contains('messages');
+    esDB.close();
+    return isIntact;
+};
