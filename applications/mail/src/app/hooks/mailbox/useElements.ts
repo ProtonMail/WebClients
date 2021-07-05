@@ -12,6 +12,7 @@ import { queryConversations, getConversation } from '@proton/shared/lib/api/conv
 import { queryMessageMetadata, getMessage } from '@proton/shared/lib/api/messages';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { toMap, omit } from '@proton/shared/lib/helpers/object';
+import { range } from '@proton/shared/lib/helpers/array';
 import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { noop } from '@proton/shared/lib/helpers/function';
@@ -257,10 +258,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
 
     const setEncryptedSearchResults: ESSetsElementsCache = (Elements, inputPage) => {
         const Total = Elements.length;
-        const pages = [0];
-        for (let page = 1; page < Math.ceil(Total / PAGE_SIZE); page++) {
-            pages.push(page);
-        }
+        const pages = range(0, Math.ceil(Total / PAGE_SIZE));
         // Retry is disabled for encrypted search results, to avoid re-triggering the search several times
         // when there are no results
         setCache((cache) => {
