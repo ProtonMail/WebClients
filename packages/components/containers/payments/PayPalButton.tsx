@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { doNotWindowOpen } from '@proton/shared/lib/helpers/browser';
 import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
-import { Button } from '../../components';
+import { Button, ButtonProps } from '../../components';
 import { useNotifications } from '../../hooks';
+import { PayPalHook } from './usePayPal';
+import { PaymentMethodFlows } from '../paymentMethods/interface';
 
-/**
- * @type any
- */
-const PayPalButton = ({ amount, type, children, paypal, ...rest }) => {
+interface Props extends ButtonProps {
+    amount: number;
+    paypal: PayPalHook;
+    flow?: PaymentMethodFlows;
+}
+
+const PayPalButton = ({ amount, flow, children, paypal, ...rest }: Props) => {
     const [retry, setRetry] = useState(false);
     const { createNotification } = useNotifications();
 
-    if (amount < MIN_PAYPAL_AMOUNT && type !== 'invoice') {
+    if (amount < MIN_PAYPAL_AMOUNT && flow !== 'invoice') {
         return null;
     }
 
@@ -54,13 +58,6 @@ const PayPalButton = ({ amount, type, children, paypal, ...rest }) => {
             {children}
         </Button>
     );
-};
-
-PayPalButton.propTypes = {
-    type: PropTypes.string,
-    amount: PropTypes.number.isRequired,
-    children: PropTypes.node.isRequired,
-    paypal: PropTypes.object.isRequired,
 };
 
 export default PayPalButton;
