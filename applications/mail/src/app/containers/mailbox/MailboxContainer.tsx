@@ -34,6 +34,7 @@ import { useDeepMemo } from '../../hooks/useDeepMemo';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElementsCache';
 import { useMailboxHotkeys } from '../../hooks/mailbox/useMailboxHotkeys';
 import { useMailboxFocus } from '../../hooks/mailbox/useMailboxFocus';
+import { useEncryptedSearchContext } from '../EncryptedSearchProvider';
 
 import './MailboxContainer.scss';
 import { useOnCompose } from '../ComposeProvider';
@@ -62,6 +63,7 @@ const MailboxContainer = ({
     isComposerOpened,
 }: Props) => {
     const getElementsFromIDs = useGetElementsFromIDs();
+    const { shouldHighlight } = useEncryptedSearchContext();
     const listRef = useRef<HTMLDivElement>(null);
     const forceRowMode = breakpoints.isNarrow || breakpoints.isTablet;
     const columnModeSetting = isColumnMode(mailSettings);
@@ -302,6 +304,7 @@ const MailboxContainer = ({
                                     columnLayout={columnLayout}
                                     isComposerOpened={isComposerOpened}
                                     containerRef={messageContainerRef}
+                                    highlightKeywords={shouldHighlight()}
                                 />
                             ) : (
                                 <MessageOnlyView
@@ -314,6 +317,7 @@ const MailboxContainer = ({
                                     onMessageReady={onMessageReady}
                                     columnLayout={columnLayout}
                                     isComposerOpened={isComposerOpened}
+                                    highlightKeywords={shouldHighlight()}
                                 />
                             ))}
                     </section>

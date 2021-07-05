@@ -27,9 +27,16 @@ interface Props {
     mapStatusIcons?: MapStatusIcons;
     globalIcon?: StatusIcon;
     showAddress?: boolean;
+    highlightKeywords?: boolean;
 }
 
-const RecipientItemGroup = ({ group, mapStatusIcons, globalIcon, showAddress = true }: Props) => {
+const RecipientItemGroup = ({
+    group,
+    mapStatusIcons,
+    globalIcon,
+    showAddress = true,
+    highlightKeywords = false,
+}: Props) => {
     const { getGroupLabel } = useRecipientLabel();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
@@ -118,6 +125,7 @@ const RecipientItemGroup = ({ group, mapStatusIcons, globalIcon, showAddress = t
             showAddress={showAddress}
             address={addresses}
             title={`${label} ${allAddresses}`}
+            highlightKeywords={highlightKeywords}
         />
     );
 };

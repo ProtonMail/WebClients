@@ -11,9 +11,10 @@ interface Props {
     message: MessageExtended;
     mapStatusIcons?: MapStatusIcons;
     isLoading: boolean;
+    highlightKeywords?: boolean;
 }
 
-const RecipientsDetails = ({ message, mapStatusIcons, isLoading }: Props) => {
+const RecipientsDetails = ({ message, mapStatusIcons, isLoading, highlightKeywords = false }: Props) => {
     const { ToList = [], CCList = [], BCCList = [] } = message?.data || {};
 
     const undisclosedRecipients = ToList.length + CCList.length + BCCList.length === 0;
@@ -22,17 +23,32 @@ const RecipientsDetails = ({ message, mapStatusIcons, isLoading }: Props) => {
         <div className="flex flex-column">
             {ToList.length > 0 && (
                 <RecipientType label={c('Label').t`To:`}>
-                    <RecipientsList list={ToList} mapStatusIcons={mapStatusIcons} isLoading={isLoading} />
+                    <RecipientsList
+                        list={ToList}
+                        mapStatusIcons={mapStatusIcons}
+                        isLoading={isLoading}
+                        highlightKeywords={highlightKeywords}
+                    />
                 </RecipientType>
             )}
             {CCList.length > 0 && (
                 <RecipientType label={c('Label').t`CC:`}>
-                    <RecipientsList list={CCList} mapStatusIcons={mapStatusIcons} isLoading={isLoading} />
+                    <RecipientsList
+                        list={CCList}
+                        mapStatusIcons={mapStatusIcons}
+                        isLoading={isLoading}
+                        highlightKeywords={highlightKeywords}
+                    />
                 </RecipientType>
             )}
             {BCCList.length > 0 && (
                 <RecipientType label={c('Label').t`BCC:`}>
-                    <RecipientsList list={BCCList} mapStatusIcons={mapStatusIcons} isLoading={isLoading} />
+                    <RecipientsList
+                        list={BCCList}
+                        mapStatusIcons={mapStatusIcons}
+                        isLoading={isLoading}
+                        highlightKeywords={highlightKeywords}
+                    />
                 </RecipientType>
             )}
             {undisclosedRecipients && (

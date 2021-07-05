@@ -9,9 +9,10 @@ interface Props {
     list: Recipient[];
     mapStatusIcons?: MapStatusIcons;
     isLoading: boolean;
+    highlightKeywords?: boolean;
 }
 
-const RecipientsList = ({ list, mapStatusIcons, isLoading }: Props) => {
+const RecipientsList = ({ list, mapStatusIcons, isLoading, highlightKeywords = false }: Props) => {
     const { getRecipientsOrGroups } = useRecipientLabel();
 
     const recipientsOrGroup = getRecipientsOrGroups(list);
@@ -24,6 +25,7 @@ const RecipientsList = ({ list, mapStatusIcons, isLoading }: Props) => {
                     recipientOrGroup={recipientOrGroup}
                     mapStatusIcons={mapStatusIcons}
                     isLoading={isLoading}
+                    highlightKeywords={highlightKeywords}
                 />
             ))}
         </>

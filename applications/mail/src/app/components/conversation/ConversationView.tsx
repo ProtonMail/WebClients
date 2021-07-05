@@ -36,6 +36,7 @@ interface Props {
     columnLayout: boolean;
     isComposerOpened: boolean;
     containerRef: React.RefObject<HTMLElement>;
+    highlightKeywords?: boolean;
 }
 
 const DEFAULT_FILTER_VALUE = true;
@@ -52,6 +53,7 @@ const ConversationView = ({
     columnLayout,
     isComposerOpened,
     containerRef,
+    highlightKeywords = false,
 }: Props) => {
     const [labels = []] = useLabels();
     const {
@@ -138,6 +140,7 @@ const ConversationView = ({
                 loading={loadingConversation}
                 element={conversation}
                 labelID={labelID}
+                highlightKeywords={highlightKeywords}
             />
             <div ref={wrapperRef} className="flex-item-fluid pt0-5 pr1 pl1">
                 <div
@@ -173,6 +176,7 @@ const ConversationView = ({
                             isComposerOpened={isComposerOpened}
                             containerRef={containerRef}
                             wrapperRef={wrapperRef}
+                            highlightKeywords={highlightKeywords}
                         />
                     ))}
                 </div>
