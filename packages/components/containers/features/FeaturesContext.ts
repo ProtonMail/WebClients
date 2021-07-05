@@ -38,10 +38,11 @@ export enum FeatureCode {
     BundlePromoShown = 'BundlePromoShown',
     UsedMailMobileApp = 'UsedMailMobileApp',
     UsedContactsImport = 'UsedContactsImport',
-    CanUserSendFeedback = 'CanUserSendFeedback',
     EnabledEncryptedSearch = 'EnabledEncryptedSearch',
     EnabledProtonProtonInvites = 'EnabledProtonProtonInvites',
     CalendarSubscription = 'CalendarSubscription',
+    MailFeedbackEnabled = 'MailFeedbackEnabled',
+    CalendarFeedbackEnabled = 'CalendarFeedbackEnabled',
 }
 
 export interface FeaturesContextValue {
