@@ -398,11 +398,11 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     };
 
     const executeSearch = async () => {
-        setCache((cache) => ({ ...cache, pendingRequest: true }));
+        setPendingRequest();
         try {
             let success = false;
             if (useES) {
-                success = await encryptedSearch(search, labelID, setEncryptedSearchResults);
+                success = await encryptedSearch(labelID, setEncryptedSearchResults);
             }
             if (!success) {
                 if (page >= 200) {
@@ -441,7 +441,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             }
         }
         if (shouldUpdatePage() || shouldLoadMoreES()) {
-            updatePage();
+            void updatePage();
         }
     }, [
         labelID,

@@ -1,7 +1,7 @@
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { IDBPDatabase, openDB } from 'idb';
 import { endOfDay, endOfToday, startOfMonth, sub } from 'date-fns';
-import { SearchParameters } from '../../models/tools';
+import { Filter, SearchParameters, Sort } from '../../models/tools';
 import { Element } from '../../models/element';
 import {
     CachedMessage,
@@ -11,8 +11,9 @@ import {
     MessageForSearch,
     NormalisedSearchParams,
     StoredCiphertext,
+    UncachedSearchOptions,
 } from '../../models/encryptedSearch';
-import { ES_MAX_CACHE, PAGE_SIZE } from '../../constants';
+import { ES_MAX_CACHE, ES_MAX_MESSAGES_PER_BATCH, PAGE_SIZE } from '../../constants';
 import { getNumMessagesDB, getOldestTime } from './esUtils';
 import { decryptFromDB } from './esSync';
 import { getIndexKey } from './esBuild';
@@ -35,7 +36,12 @@ const roundMilliseconds = (time: number) => Math.floor(time / 1000);
 /**
  * Remove wildcard, normalise keyword and include end day
  */
-export const normaliseSearchParams = (searchParams: SearchParameters, labelID: string) => {
+export const normaliseSearchParams = (
+    searchParams: SearchParameters,
+    labelID: string,
+    filter?: Filter,
+    sort?: Sort
+) => {
     const { wildcard, keyword, end, to, from, ...otherParams } = searchParams;
     let normalisedKeywords: string[] | undefined;
     if (keyword) {
@@ -53,6 +59,8 @@ export const normaliseSearchParams = (searchParams: SearchParameters, labelID: s
         normalisedKeywords,
         from: from ? from.toLocaleLowerCase() : undefined,
         to: to ? to.toLocaleLowerCase() : undefined,
+        filter: filter || {},
+        sort: sort || { sort: 'Time', desc: true },
     };
 
     return normalisedSearchParams;
@@ -113,7 +121,7 @@ export const applySearch = (
     messageToSearch: CachedMessage,
     incrementMessagesSearched?: () => void
 ) => {
-    const { address, from, to, normalisedKeywords, begin, end, attachments, labelID, decryptionError } =
+    const { address, from, to, normalisedKeywords, begin, end, attachments, labelID, decryptionError, filter } =
         normalisedSearchParams;
 
     if (
@@ -127,7 +135,8 @@ export const applySearch = (
         (typeof attachments !== 'undefined' &&
             ((attachments === 0 && messageToSearch.NumAttachments > 0) ||
                 (attachments === 1 && messageToSearch.NumAttachments === 0))) ||
-        (typeof decryptionError !== 'undefined' && decryptionError !== messageToSearch.decryptionError)
+        (typeof decryptionError !== 'undefined' && decryptionError !== messageToSearch.decryptionError) ||
+        (typeof filter?.Unread !== 'undefined' && filter?.Unread !== messageToSearch.Unread)
     ) {
         return false;
     }
@@ -193,24 +202,17 @@ export const splitCachedMessage = (cachedMessage: CachedMessage) => {
 /**
  * Initialise some helpers to query the correct time frames
  */
-export const initialiseQuery = async (userID: string, begin?: number, end?: number) => {
+export const initialiseQuery = async (userID: string, beginOrder: number | undefined, begin?: number, end?: number) => {
     // Data is retrieved in batches, in such a way that decryption of earlier batches
     // can start before fetching later batches. Messages are retrieved in reverse chronological order.
     // Initial time represents the oldest moment in time the search has to go back to. It is
     // "begin" if specified, otherwise it's the oldest date in IndexedDB
     const initialTime = begin || (await getOldestTime(userID));
     const getTimes = (start: number) => getTimeLimits(start, initialTime, end);
-    return { getTimes, initialTime };
-};
-
-/**
- * Initialise some variables for the query
- */
-export const initialiseVariables = (beginOrder: number | undefined) => {
     const lower: [number, number] = [0, 0];
     const upper: [number, number] = [0, 0];
     const startingOrder = beginOrder ? beginOrder - 1 : undefined;
-    return { lower, upper, startingOrder };
+    return { getTimes, initialTime, lower, upper, startingOrder };
 };
 
 /**
@@ -238,29 +240,88 @@ export const queryNewData = async (
 };
 
 /**
- * Perfom an uncached search, i.e. fetching and searching messages from IndexedDB
+ * Perfom an uncached search in ascending order, i.e. fetching and searching messages from IndexedDB
  */
-export const uncachedSearch = async (
+export const uncachedSearchAsc = async (
     indexKey: CryptoKey,
     userID: string,
     normalisedSearchParams: NormalisedSearchParams,
-    options: {
-        incrementMessagesSearched?: () => void;
-        messageLimit?: number;
-        setCache?: (newResults: MessageForSearch[]) => void;
-        beginOrder?: number;
+    options: UncachedSearchOptions
+) => {
+    const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
+    const { incrementMessagesSearched, messageLimit, setCache, beginOrder } = options;
+    const resultsArray: MessageForSearch[] = [];
+
+    let lastEmail: LastEmail | undefined;
+    let lowerBound = [normalisedSearchParams.begin || (await getOldestTime(userID)), beginOrder || 0];
+
+    while (!lastEmail) {
+        const storedData = await esDB.getAllFromIndex(
+            'messages',
+            'byTime',
+            IDBKeyRange.lowerBound(lowerBound, true),
+            ES_MAX_MESSAGES_PER_BATCH
+        );
+
+        if (!storedData.length) {
+            break;
+        }
+
+        lowerBound = [storedData[storedData.length - 1].Time, storedData[storedData.length - 1].Order];
+
+        for (const storedCiphertext of storedData) {
+            if (!storedCiphertext.LabelIDs.includes(normalisedSearchParams.labelID)) {
+                continue;
+            }
+            const messageToSearch = await decryptFromDB(storedCiphertext, indexKey);
+            if (!messageToSearch) {
+                continue;
+            }
+            if (applySearch(normalisedSearchParams, messageToSearch, incrementMessagesSearched)) {
+                const { messageForSearch } = splitCachedMessage(messageToSearch);
+                resultsArray.push(messageForSearch);
+            }
+            if (messageLimit && resultsArray.length >= messageLimit) {
+                lastEmail = { Time: storedCiphertext.Time, Order: storedCiphertext.Order };
+                break;
+            }
+        }
+
+        if (normalisedSearchParams.end && storedData[storedData.length - 1].Time > normalisedSearchParams.end) {
+            break;
+        }
+
+        if (setCache && resultsArray.length > 0) {
+            setCache(resultsArray);
+        }
     }
+
+    esDB.close();
+
+    return { resultsArray, lastEmail };
+};
+
+/**
+ * Perfom an uncached search in descending order, i.e. fetching and searching messages from IndexedDB
+ */
+export const uncachedSearchDesc = async (
+    indexKey: CryptoKey,
+    userID: string,
+    normalisedSearchParams: NormalisedSearchParams,
+    options: UncachedSearchOptions
 ) => {
     const esDB = await openDB<EncryptedSearchDB>(`ES:${userID}:DB`);
     const { incrementMessagesSearched, messageLimit, beginOrder, setCache } = options;
-    const { getTimes, initialTime } = await initialiseQuery(
+    const resultsArray: MessageForSearch[] = [];
+
+    const queryStart = await initialiseQuery(
         userID,
+        beginOrder,
         normalisedSearchParams.begin,
         normalisedSearchParams.end
     );
-    const resultsArray: MessageForSearch[] = [];
-
-    let { lower, upper, startingOrder } = initialiseVariables(beginOrder);
+    const { getTimes, initialTime } = queryStart;
+    let { lower, upper, startingOrder } = queryStart;
     let lastEmail: LastEmail | undefined;
 
     while (!lastEmail) {
@@ -390,12 +451,12 @@ export const cacheDB = async (
         };
     }
 
-    const { getTimes, initialTime } = await initialiseQuery(userID, undefined, endTime);
+    const queryStart = await initialiseQuery(userID, beginOrder, undefined, endTime);
+    const { getTimes, initialTime } = queryStart;
+    let { lower, upper, startingOrder } = queryStart;
     const cachedMessages: CachedMessage[] = [];
     let cacheSize = 0;
     let isCacheLimited = false;
-
-    let { lower, upper, startingOrder } = initialiseVariables(beginOrder);
 
     while (!isCacheLimited) {
         let storedData: StoredCiphertext[];
@@ -479,26 +540,21 @@ export const cachedSearch = async (
 };
 
 /**
- * Helper to perfom an uncached search from an hybrid search
+ * Perfom an uncached search in either ascending or descending order
  */
-const uncachedFromHybrid = async (
-    normalisedSearchParams: NormalisedSearchParams,
-    getUserKeys: GetUserKeys,
+export const uncachedSearch = async (
     userID: string,
-    incrementMessagesSearched: () => void,
-    messageLimit: number,
-    setCache: (newResults: MessageForSearch[]) => void
+    indexKey: CryptoKey,
+    normalisedSearchParams: NormalisedSearchParams,
+    options: UncachedSearchOptions
 ) => {
-    const indexKey = await getIndexKey(getUserKeys, userID);
-    if (!indexKey) {
-        throw new Error('Key not found');
+    const { lastEmailTime } = options;
+
+    if (normalisedSearchParams.sort.desc) {
+        return uncachedSearchDesc(indexKey, userID, { ...normalisedSearchParams, end: lastEmailTime }, options);
     }
 
-    return uncachedSearch(indexKey, userID, normalisedSearchParams, {
-        incrementMessagesSearched,
-        messageLimit,
-        setCache,
-    });
+    return uncachedSearchAsc(indexKey, userID, { ...normalisedSearchParams, begin: lastEmailTime }, options);
 };
 
 /**
@@ -508,6 +564,7 @@ export const hybridSearch = async (
     esCache: CachedMessage[],
     normalisedSearchParams: NormalisedSearchParams,
     isCacheLimited: boolean,
+    cachedIndexKey: CryptoKey | undefined,
     getUserKeys: GetUserKeys,
     userID: string,
     incrementMessagesSearched: () => void,
@@ -516,9 +573,14 @@ export const hybridSearch = async (
     let searchResults: MessageForSearch[] = [];
     let isSearchPartial = false;
     let lastEmail: LastEmail | undefined;
+    const isDescending = normalisedSearchParams.sort.desc;
 
     if (esCache.length) {
-        searchResults = await cachedSearch(esCache, normalisedSearchParams, incrementMessagesSearched);
+        // The cache contains the newest messages, which means that if chronological order is chosen with
+        // a limited cache, the latter should be ignored
+        if (!isCacheLimited || isDescending) {
+            searchResults = await cachedSearch(esCache, normalisedSearchParams, incrementMessagesSearched);
+        }
 
         if (isCacheLimited) {
             // If enough messages to fill two pages were already found, we don't continue the search
@@ -527,14 +589,25 @@ export const hybridSearch = async (
                 return { searchResults, isSearchPartial: true, lastEmail: lastEmailInCache };
             }
 
-            // The remaining messages are searched from DB, but only if the indicated timespan
-            // hasn't been already covered by cache. If isCacheLimited is true, the cache is
-            // ordered such that the first message is the oldest
-            const startCache = esCache[0].Time;
-            const intervalEnd = Math.min(startCache - 1, normalisedSearchParams.end || Number.MAX_SAFE_INTEGER);
-            const intervalStart = normalisedSearchParams.begin || 0;
+            // If the cache hasn't been searched because the order is ascending, the search
+            // parameters shouldn't be influenced by the cache timespan
+            let shouldKeepSearching = true;
+            if (isDescending) {
+                // The remaining messages are searched from DB, but only if the indicated timespan
+                // hasn't been already covered by cache. If isCacheLimited is true, the cache is
+                // ordered such that the first message is the oldest
+                const startCache = esCache[0].Time;
+                const intervalEnd = Math.min(startCache - 1, normalisedSearchParams.end || Number.MAX_SAFE_INTEGER);
+                const intervalStart = normalisedSearchParams.begin || 0;
+                shouldKeepSearching = intervalStart < startCache;
+                normalisedSearchParams = {
+                    ...normalisedSearchParams,
+                    begin: intervalStart,
+                    end: intervalEnd,
+                };
+            }
 
-            if (intervalStart < startCache) {
+            if (shouldKeepSearching) {
                 if (searchResults.length > 0) {
                     setCache(searchResults);
                 }
@@ -545,37 +618,91 @@ export const hybridSearch = async (
                     setCache(searchResults.concat(newResults));
                 };
 
-                const uncachedResult = await uncachedFromHybrid(
-                    {
-                        ...normalisedSearchParams,
-                        begin: intervalStart,
-                        end: intervalEnd,
-                    },
-                    getUserKeys,
-                    userID,
+                const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
+                if (!indexKey) {
+                    throw new Error('Key not found');
+                }
+
+                const uncachedResult = await uncachedSearch(userID, indexKey, normalisedSearchParams, {
                     incrementMessagesSearched,
-                    remainingMessages,
-                    setCacheIncremental
-                );
+                    messageLimit: remainingMessages,
+                    setCache: setCacheIncremental,
+                });
                 searchResults.push(...uncachedResult.resultsArray);
                 lastEmail = uncachedResult.lastEmail;
                 isSearchPartial = !!lastEmail;
             }
         }
     } else {
+        const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
+        if (!indexKey) {
+            throw new Error('Key not found');
+        }
+
         // This is used if the cache is empty
-        const uncachedResult = await uncachedFromHybrid(
-            normalisedSearchParams,
-            getUserKeys,
-            userID,
+        const uncachedResult = await uncachedSearch(userID, indexKey, normalisedSearchParams, {
             incrementMessagesSearched,
-            2 * PAGE_SIZE,
-            setCache
-        );
+            messageLimit: 2 * PAGE_SIZE,
+            setCache,
+        });
         searchResults = uncachedResult.resultsArray;
         lastEmail = uncachedResult.lastEmail;
         isSearchPartial = !!lastEmail;
     }
 
     return { searchResults, isSearchPartial, lastEmail };
+};
+
+/**
+ * Check whether only sorting changed and, if so, only sort existing results
+ * rather than executing a new search
+ */
+export const shouldOnlySortResults = (
+    normalisedSearchParams: NormalisedSearchParams,
+    previousNormSearchParams: NormalisedSearchParams
+) => {
+    const { labelID, filter, address, from, to, begin, end, attachments, normalisedKeywords, decryptionError } =
+        normalisedSearchParams;
+    const {
+        labelID: prevLabelID,
+        filter: prevFilter,
+        address: prevAddress,
+        from: prevFrom,
+        to: prevTo,
+        begin: prevBegin,
+        end: prevEnd,
+        attachments: prevAttachments,
+        normalisedKeywords: prevNormalisedKeywords,
+        decryptionError: prevDecryptionError,
+    } = previousNormSearchParams;
+
+    // In case search parameters are different, then a new search is needed
+    if (
+        labelID !== prevLabelID ||
+        address !== prevAddress ||
+        from !== prevFrom ||
+        to !== prevTo ||
+        begin !== prevBegin ||
+        end !== prevEnd ||
+        attachments !== prevAttachments ||
+        decryptionError !== prevDecryptionError ||
+        !!normalisedKeywords !== !!prevNormalisedKeywords ||
+        filter?.Unread !== prevFilter?.Unread
+    ) {
+        return false;
+    }
+
+    // Same goes for keywords
+    if (normalisedKeywords && prevNormalisedKeywords) {
+        if (normalisedKeywords.length !== prevNormalisedKeywords.length) {
+            return false;
+        }
+        for (let i = 0; i < normalisedKeywords.length; i++) {
+            if (normalisedKeywords[i] !== prevNormalisedKeywords[i]) {
+                return false;
+            }
+        }
+    }
+
+    return true;
 };
