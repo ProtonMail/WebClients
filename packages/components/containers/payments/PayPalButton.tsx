@@ -7,13 +7,13 @@ import { useNotifications } from '../../hooks';
 import { PayPalHook } from './usePayPal';
 import { PaymentMethodFlows } from '../paymentMethods/interface';
 
-interface Props extends ButtonProps {
+export interface PayPalButtonProps extends ButtonProps {
     amount: number;
     paypal: PayPalHook;
     flow?: PaymentMethodFlows;
 }
 
-const PayPalButton = ({ amount, flow, children, paypal, ...rest }: Props) => {
+const PayPalButton = ({ amount, flow, children, paypal, ...rest }: PayPalButtonProps) => {
     const [retry, setRetry] = useState(false);
     const { createNotification } = useNotifications();
 
