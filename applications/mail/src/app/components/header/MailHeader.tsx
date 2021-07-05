@@ -12,6 +12,7 @@ import {
     TopNavbarListItemHelpDropdown,
     TopNavbarListItemContactsDropdown,
     TopNavbarListItemFeedbackButton,
+    FeedbackModal,
     Icon,
     useFeature,
     FeatureCode,
@@ -52,7 +53,7 @@ const MailHeader = ({
     const oldLabelIDRef = useRef<string>(MAILBOX_LABEL_IDS.INBOX);
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
-    const { feature: featureCanUserSendFeedback } = useFeature(FeatureCode.CanUserSendFeedback);
+    const { feature: featureMailFeedbackEnabled } = useFeature(FeatureCode.MailFeedbackEnabled);
     const { cacheIndexedDB } = useEncryptedSearchContext();
 
     const onCompose = useOnCompose();
@@ -99,7 +100,20 @@ const MailHeader = ({
             title={labelName}
             settingsButton={<TopNavbarListItemSettingsDropdown to="/mail/general" toApp={APPS.PROTONACCOUNT} />}
             contactsButton={<TopNavbarListItemContactsDropdown onCompose={handleContactsCompose} onMailTo={onMailTo} />}
-            feedbackButton={featureCanUserSendFeedback?.Value ? <TopNavbarListItemFeedbackButton /> : null}
+            feedbackButton={
+                featureMailFeedbackEnabled?.Value ? (
+                    <TopNavbarListItemFeedbackButton
+                        modal={
+                            <FeedbackModal
+                                feedbackType="v4_migration"
+                                description={c('Info')
+                                    .t`Proton has received a facelift. We would love to hear what you think about it!`}
+                                scaleTitle={c('Label').t`How would you rate your experience with the new ProtonMail?`}
+                            />
+                        }
+                    />
+                ) : null
+            }
             searchBox={searchBox}
             searchDropdown={searchDropdown}
             expanded={!!expanded}
