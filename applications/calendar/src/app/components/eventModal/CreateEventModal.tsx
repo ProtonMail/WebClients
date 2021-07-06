@@ -91,11 +91,13 @@ const CreateEventModal = ({
     const deleteInviteActions = model.isOrganizer
         ? {
               type: isSelfAddressActive ? INVITE_ACTION_TYPES.CANCEL_INVITATION : INVITE_ACTION_TYPES.CANCEL_DISABLED,
+              isProtonProtonInvite: model.isProtonProtonInvite,
               selfAddress: model.selfAddress,
               selfAttendeeIndex: model.selfAttendeeIndex,
           }
         : {
               type: isSelfAddressActive ? INVITE_ACTION_TYPES.DECLINE_INVITATION : INVITE_ACTION_TYPES.DECLINE_DISABLED,
+              isProtonProtonInvite: model.isProtonProtonInvite,
               partstat: ICAL_ATTENDEE_STATUS.DECLINED,
               sendCancellationNotice,
               selfAddress: model.selfAddress,

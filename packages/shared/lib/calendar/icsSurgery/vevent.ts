@@ -165,6 +165,7 @@ export const getSupportedEvent = ({
             duration,
             'x-pm-session-key': sharedSessionKey,
             'x-pm-shared-event-id': sharedEventID,
+            'x-pm-proton-reply': protonReply,
         } = vcalVeventComponent;
         const trimmedSummaryValue = summary?.value.trim();
         const trimmedDescriptionValue = description?.value.trim();
@@ -354,6 +355,9 @@ export const getSupportedEvent = ({
             }
             if (sharedEventID) {
                 validated['x-pm-shared-event-id'] = { ...sharedEventID };
+            }
+            if (protonReply) {
+                validated['x-pm-proton-reply'] = { ...protonReply };
             }
             if (organizer) {
                 validated.organizer = { ...organizer };

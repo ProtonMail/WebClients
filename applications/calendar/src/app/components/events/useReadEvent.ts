@@ -32,7 +32,7 @@ const useReadEvent = (value: DecryptedEventTupleResult | undefined, tzid: string
         const [
             { veventComponent = DEFAULT_VEVENT, verificationStatus, selfAddressData },
             alarmMap = {},
-            { IsOrganizer },
+            { IsOrganizer, IsProtonProtonInvite },
         ]: [DecryptedVeventResult, DecryptedPersonalVeventMapResult, EventInternalProperties] = value || [
             {
                 veventComponent: DEFAULT_VEVENT,
@@ -40,16 +40,18 @@ const useReadEvent = (value: DecryptedEventTupleResult | undefined, tzid: string
                 selfAddressData: {},
             },
             {},
-            { Permissions: 1, IsOrganizer: 1 },
+            { Permissions: 1, IsOrganizer: 1, IsProtonProtonInvite: 0 },
         ];
         const isAllDay = getIsAllDay(veventComponent);
-        const isOrganizer = !!IsOrganizer;
-        const model = propertiesToModel(
-            { veventComponent, verificationStatus, selfAddressData },
+        const model = propertiesToModel({
+            veventComponent,
+            verificationStatus,
+            selfAddressData,
             isAllDay,
-            isOrganizer,
-            tzid
-        );
+            isOrganizer: !!IsOrganizer,
+            isProtonProtonInvite: !!IsProtonProtonInvite,
+            tzid,
+        });
         const notifications = Object.keys(alarmMap)
             .map((key) => {
                 return propertiesToNotificationModel(alarmMap[key]?.veventComponent, isAllDay);

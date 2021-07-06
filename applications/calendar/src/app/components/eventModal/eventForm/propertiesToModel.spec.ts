@@ -1,4 +1,5 @@
 import { parse } from '@proton/shared/lib/calendar/vcal';
+import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { propertiesToModel } from './propertiesToModel';
 
 describe('properties to model', () => {
@@ -8,7 +9,15 @@ DTSTART;TZID=America/New_York:20190719T120000
 DTEND;TZID=Europe/Zurich:20190719T183000
 SUMMARY:My title
 END:VEVENT`;
-        expect(propertiesToModel({ veventComponent: parse(VEVENT) })).toMatchObject({
+        expect(
+            propertiesToModel({
+                veventComponent: parse(VEVENT) as VcalVeventComponent,
+                isAllDay: false,
+                isOrganizer: true,
+                isProtonProtonInvite: false,
+                tzid: 'Europe/Zurich',
+            })
+        ).toMatchObject({
             title: 'My title',
             start: {
                 date: new Date(2019, 6, 19),
@@ -28,7 +37,15 @@ END:VEVENT`;
 DTSTART;TZID=Europe/Zurich:20190719T120000
 DTEND;TZID=Europe/Zurich:20190719T110000
 END:VEVENT`;
-        expect(propertiesToModel({ veventComponent: parse(VEVENT) })).toMatchObject({
+        expect(
+            propertiesToModel({
+                veventComponent: parse(VEVENT) as VcalVeventComponent,
+                isAllDay: false,
+                isOrganizer: true,
+                isProtonProtonInvite: false,
+                tzid: 'Europe/Zurich',
+            })
+        ).toMatchObject({
             start: {
                 date: new Date(2019, 6, 19),
                 time: new Date(2000, 0, 1, 12),
@@ -47,16 +64,22 @@ END:VEVENT`;
 DTSTART;VALUE=DATE:20190719
 DTEND;VALUE=DATE:20190718
 END:VEVENT`;
-        expect(propertiesToModel({ veventComponent: parse(VEVENT) }, true, true, 'Europe/Zurich')).toMatchObject({
+        expect(
+            propertiesToModel({
+                veventComponent: parse(VEVENT) as VcalVeventComponent,
+                isAllDay: true,
+                isOrganizer: true,
+                isProtonProtonInvite: false,
+                tzid: 'Europe/Zurich',
+            })
+        ).toMatchObject({
             start: {
                 date: new Date(2019, 6, 19),
                 time: new Date(2000, 0, 1, 0),
-                tzid: 'Europe/Zurich',
             },
             end: {
                 date: new Date(2019, 6, 17),
                 time: new Date(2000, 0, 1, 0),
-                tzid: 'Europe/Zurich',
             },
         });
     });

@@ -250,7 +250,7 @@ const InteractiveCalendarView = ({
         return Promise.all([
             getCalendarEventRaw(eventData),
             getCalendarEventPersonal(eventData),
-            pick(eventData, ['Permissions', 'IsOrganizer']),
+            pick(eventData, ['Permissions', 'IsOrganizer', 'IsProtonProtonInvite']),
         ]);
     };
 
@@ -414,6 +414,7 @@ const InteractiveCalendarView = ({
             veventComponentParentPartial,
             tzid,
             isOrganizer: !!eventData.IsOrganizer,
+            isProtonProtonInvite: !!eventData.IsProtonProtonInvite,
             selfAddressData,
         });
         if (partstat) {
@@ -1253,7 +1254,7 @@ const InteractiveCalendarView = ({
                                     return;
                                 }
                                 const inviteActions = {
-                                    isInvitation: true,
+                                    isProtonProtonInvite: newTemporaryModel.isProtonProtonInvite,
                                     type: INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
                                     partstat,
                                     selfAddress: newTemporaryModel.selfAddress,

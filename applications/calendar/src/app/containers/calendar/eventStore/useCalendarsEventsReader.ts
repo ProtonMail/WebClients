@@ -68,7 +68,7 @@ const useCalendarsEventsReader = (
             return Promise.all([
                 getCalendarEventRaw(eventData),
                 getCalendarEventPersonal(eventData),
-                pick(eventData, ['Permissions', 'IsOrganizer']),
+                pick(eventData, ['Permissions', 'IsOrganizer', 'IsProtonProtonInvite']),
             ]);
         };
 

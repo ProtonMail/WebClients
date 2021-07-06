@@ -1,3 +1,4 @@
+import { getLinkedDateTimeProperty } from '@proton/shared/lib/calendar/icsSurgery/vevent';
 import { getUnixTime } from 'date-fns';
 import { syncMultipleEvents, updateAttendeePartstat, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
@@ -14,7 +15,6 @@ import {
     ICAL_EVENT_STATUS,
     ICAL_METHOD,
 } from '@proton/shared/lib/calendar/constants';
-import { getLinkedDateTimeProperty } from '@proton/shared/lib/calendar/icsSurgery/vevent';
 import {
     CreateCalendarEventSyncData,
     CreateLinkedCalendarEventsSyncData,
@@ -87,7 +87,7 @@ import {
     getInvitationHasAttendee,
     getIsInvitationFromFuture,
     getIsInvitationOutdated,
-    getIsPmInvite,
+    getIsProtonInvite,
     getSingleEditWidgetData,
     processEventInvitation,
     UPDATE_ACTION,
@@ -395,7 +395,7 @@ const updateEventApi = async ({
 
 interface UpdateEventInvitationArgs {
     isOrganizerMode: boolean;
-    invitationIcs: EventInvitation;
+    invitationIcs: RequireSome<EventInvitation, 'method'>;
     invitationApi: RequireSome<EventInvitation, 'calendarEvent'>;
     parentInvitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
     calendarData: Required<CalendarWidgetData>;
@@ -441,7 +441,7 @@ export const updateEventInvitation = async ({
         getIsEventCancelled(calendarEvent) ||
         !attendeeIcs ||
         !attendeeApi ||
-        getIsPmInvite({ invitationIcs, invitationApi, pmData })
+        getIsProtonInvite({ invitationIcs, invitationApi, pmData })
     ) {
         // do not update
         return { action: NONE };
@@ -737,7 +737,7 @@ export const createCalendarEventFromInvitation = async ({
     if (!getHasSharedKeyPacket(data) || !getHasSharedEventContent(data)) {
         throw new Error('Missing shared data');
     }
-    const Events: (CreateCalendarEventSyncData | CreateLinkedCalendarEventsSyncData)[] = pmData
+    const Events: (CreateCalendarEventSyncData | CreateLinkedCalendarEventsSyncData)[] = pmData?.sharedEventID
         ? [
               {
                   Overwrite: overwrite ? 1 : 0,

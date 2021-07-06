@@ -185,6 +185,7 @@ export const getInitialModel = ({
         isAllDay,
         verificationStatus,
         isOrganizer: true,
+        isProtonProtonInvite: false,
         status: ICAL_EVENT_STATUS.CONFIRMED,
         defaultEventDuration,
         frequencyModel,
@@ -201,15 +202,17 @@ const getParentMerge = (
     veventComponentParentPartial: SharedVcalVeventComponent,
     recurrenceStart: DateTimeModel,
     isOrganizer: boolean,
+    isProtonProtonInvite: boolean,
     tzid: string
 ) => {
     const isAllDay = getIsAllDay(veventComponentParentPartial);
-    const parentModel = propertiesToModel(
-        { veventComponent: veventComponentParentPartial },
+    const parentModel = propertiesToModel({
+        veventComponent: veventComponentParentPartial,
         isAllDay,
         isOrganizer,
-        tzid
-    );
+        isProtonProtonInvite,
+        tzid,
+    });
     const { frequencyModel, start } = parentModel;
     return {
         frequencyModel: getFrequencyModelChange(start, recurrenceStart, frequencyModel),
@@ -221,6 +224,7 @@ interface GetExistingEventArguments {
     veventValarmComponent?: VcalVeventComponent;
     veventComponentParentPartial?: SharedVcalVeventComponent;
     isOrganizer: boolean;
+    isProtonProtonInvite: boolean;
     tzid: string;
     selfAddressData?: SelfAddressData;
 }
@@ -230,20 +234,34 @@ export const getExistingEvent = ({
     veventValarmComponent,
     veventComponentParentPartial,
     isOrganizer,
+    isProtonProtonInvite,
     tzid,
     selfAddressData,
 }: GetExistingEventArguments): Partial<EventModel> => {
     const isAllDay = getIsAllDay(veventComponent);
     const recurrenceId = getRecurrenceId(veventComponent);
 
-    const newModel = propertiesToModel({ veventComponent, selfAddressData }, isAllDay, isOrganizer, tzid);
+    const newModel = propertiesToModel({
+        veventComponent,
+        selfAddressData,
+        isAllDay,
+        isOrganizer,
+        isProtonProtonInvite,
+        tzid,
+    });
     const strippedDescription = stripAllTags(newModel.description);
 
     const newNotifications = propertiesToNotificationModel(veventValarmComponent, isAllDay);
 
     const parentMerge =
         veventComponentParentPartial && recurrenceId
-            ? getParentMerge(veventComponentParentPartial, newModel.start, newModel.isOrganizer, tzid)
+            ? getParentMerge(
+                  veventComponentParentPartial,
+                  newModel.start,
+                  newModel.isOrganizer,
+                  newModel.isProtonProtonInvite,
+                  tzid
+              )
             : {};
 
     return {
