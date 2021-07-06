@@ -57,6 +57,7 @@ module.exports = {
     "import/namespace": 2,
     "import/no-extraneous-dependencies": "off",
     "import/no-named-as-default": "off",
+    "import/no-mutable-exports": "off",
     "import/no-unresolved": [
       2,
       {
