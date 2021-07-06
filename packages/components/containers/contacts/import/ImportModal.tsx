@@ -25,7 +25,7 @@ import { ImportFatalError } from '@proton/shared/lib/contacts/errors/ImportFatal
 import { IMPORT_ERROR_TYPE, ImportFileError } from '@proton/shared/lib/contacts/errors/ImportFileError';
 import { submitCategories } from './encryptAndSubmit';
 
-import { useApi, useEventManager, useFeature } from '../../../hooks';
+import { useApi, useEventManager, useFeature, useUser } from '../../../hooks';
 import { FormModal, onlyDragFiles, PrimaryButton } from '../../../components';
 import { useGetContactGroups } from '../../../hooks/useCategories';
 
@@ -63,6 +63,7 @@ const ImportModal = ({ ...rest }: Props) => {
         FeatureCode.UsedContactsImport
     );
     const getContactGroups = useGetContactGroups();
+    const [user] = useUser();
 
     const { content, ...modalProps } = (() => {
         if (model.step <= IMPORT_STEPS.ATTACHED) {
@@ -268,7 +269,7 @@ const ImportModal = ({ ...rest }: Props) => {
         }
 
         if (model.step === IMPORT_STEPS.SUMMARY) {
-            const canImportGroups = haveCategories(model.importedContacts);
+            const canImportGroups = haveCategories(model.importedContacts) && user.hasPaidMail;
             const submit = (
                 <PrimaryButton type="submit" loading={model.loading}>
                     {canImportGroups ? c('Action').t`Next` : c('Action').t`Close`}
