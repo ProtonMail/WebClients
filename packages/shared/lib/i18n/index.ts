@@ -1,4 +1,3 @@
-/* eslint-disable import/no-mutable-exports,prefer-destructuring */
 import { enUSLocale } from './dateFnLocales';
 
 /**
