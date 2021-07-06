@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, ChangeEvent } from 'react';
+import React, { useRef, ChangeEvent } from 'react';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { List, AutoSizer } from 'react-virtualized';
 import { ContactFormatted, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
@@ -10,13 +10,11 @@ import { useItemsDraggable } from '../items';
 import { classnames } from '../../helpers';
 
 interface Props {
-    totalContacts: number;
     contacts: ContactFormatted[];
     contactGroupsMap: SimpleMap<ContactGroup>;
     onCheckOne: (event: ChangeEvent, contactID: string) => void;
     user: UserModel;
     userSettings: UserSettings;
-    contactID: string;
     isDesktop: boolean;
     onCheck: (contactIDs: string[], checked: boolean, replace: boolean) => void;
     checkedIDs: string[];
@@ -25,13 +23,11 @@ interface Props {
 }
 
 const ContactsList = ({
-    totalContacts,
     contacts,
     contactGroupsMap,
     onCheckOne,
     user,
     userSettings,
-    contactID,
     isDesktop = true,
     onCheck,
     checkedIDs,
@@ -41,19 +37,6 @@ const ContactsList = ({
     const listRef = useRef<List>(null);
     const containerRef = useRef(null);
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
-
-    useEffect(() => {
-        const timeoutID = setTimeout(() => {
-            if (contactID && totalContacts) {
-                const index = contacts.findIndex(({ ID }) => contactID === ID);
-                listRef.current?.scrollToRow(index);
-            }
-        }, 200);
-
-        return () => {
-            clearTimeout(timeoutID);
-        };
-    }, [contactID]);
 
     // Useless if activateDrag is false but hook has to be run anyway
     const { draggedIDs, handleDragStart, handleDragEnd } = useItemsDraggable(
@@ -86,7 +69,6 @@ const ContactsList = ({
                                 <ContactRow
                                     style={style}
                                     key={key}
-                                    contactID={contactID}
                                     checked={checkedIDs.includes(contacts[index].ID)}
                                     hasPaidMail={!!user.hasPaidMail}
                                     contactGroupsMap={contactGroupsMap}
