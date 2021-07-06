@@ -1,4 +1,4 @@
-import React, { MouseEvent, ReactNode } from 'react';
+import React, { MouseEvent, ReactNode, useState } from 'react';
 import { c } from 'ttag';
 import { Info } from '../link';
 
@@ -8,9 +8,11 @@ import DropdownMenu from './DropdownMenu';
 import DropdownMenuButton, { Props as DropdownMenuButtonProps } from './DropdownMenuButton';
 import SimpleDropdown from './SimpleDropdown';
 
-import { classnames } from '../../helpers';
+import { classnames, generateUID } from '../../helpers';
+import { Tooltip } from '../tooltip';
+import { Color } from '../button';
 
-const wrapTooltip = (text: string | ReactNode, tooltip?: string) => {
+const wrapTooltip = (text: string | ReactNode, tooltip?: string | ReactNode) => {
     if (!tooltip) {
         return text;
     }
@@ -25,10 +27,10 @@ const wrapTooltip = (text: string | ReactNode, tooltip?: string) => {
     );
 };
 
-interface DropdownActionProps extends DropdownMenuButtonProps {
+export interface DropdownActionProps extends DropdownMenuButtonProps {
     key?: string;
     text: string | ReactNode;
-    tooltip?: string;
+    tooltip?: string | ReactNode;
     onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
@@ -38,6 +40,7 @@ interface Props extends ButtonProps {
     list?: DropdownActionProps[];
     className?: string;
     autoFocus?: boolean;
+    color?: Color;
 }
 
 const DropdownActions = ({
@@ -47,34 +50,56 @@ const DropdownActions = ({
     className = '',
     autoFocus = false,
     size,
+    color,
     ...restButtonProps
 }: Props) => {
+    const [uid] = useState(generateUID('composer-send-button'));
+
     if (!list.length) {
         return null;
     }
 
     const [{ text, tooltip, ...restProps }, ...restList] = list;
 
+    const isTextString = typeof text === 'string';
+
     if (list.length === 1) {
-        return (
-            <Button
-                size={size}
-                loading={loading}
-                disabled={disabled}
-                className={className}
-                {...restProps}
-                {...restButtonProps}
-            >
-                {wrapTooltip(text, tooltip)}
-            </Button>
+        const buttonProps = {
+            size,
+            loading,
+            disabled,
+            className,
+            ...restProps,
+            ...restButtonProps,
+        };
+
+        return isTextString ? (
+            <Button {...buttonProps}>{wrapTooltip(text, tooltip)}</Button>
+        ) : (
+            <Tooltip title={tooltip}>
+                <Button {...buttonProps}>{text}</Button>
+            </Tooltip>
         );
     }
 
+    const mainButtonProps = {
+        disabled,
+        loading,
+        className,
+        ...restProps,
+        ...restButtonProps,
+    };
+
     return (
-        <ButtonGroup size={size}>
-            <Button disabled={disabled} loading={loading} className={className} {...restProps} {...restButtonProps}>
-                {wrapTooltip(text, tooltip)}
-            </Button>
+        <ButtonGroup color={color} size={size}>
+            {isTextString ? (
+                <Button {...mainButtonProps}>{wrapTooltip(text, tooltip)}</Button>
+            ) : (
+                <Tooltip title={tooltip}>
+                    <Button {...mainButtonProps}>{text}</Button>
+                </Tooltip>
+            )}
+
             <SimpleDropdown
                 as={Button}
                 icon
@@ -88,10 +113,25 @@ const DropdownActions = ({
             >
                 <DropdownMenu>
                     {restList.map(({ text, tooltip, ...restProps }, index) => {
+                        const dropdownMenuButtonProps = {
+                            className: 'text-left',
+                            ...restProps,
+                        };
+
+                        const key = `${uid}-${index}`;
+
+                        if (isTextString) {
+                            return (
+                                <DropdownMenuButton key={key} {...dropdownMenuButtonProps}>
+                                    {wrapTooltip(text, tooltip)}
+                                </DropdownMenuButton>
+                            );
+                        }
+
                         return (
-                            <DropdownMenuButton className="text-left" key={index} {...restProps}>
-                                {wrapTooltip(text, tooltip)}
-                            </DropdownMenuButton>
+                            <Tooltip title={tooltip} key={key}>
+                                <DropdownMenuButton {...dropdownMenuButtonProps}>{text}</DropdownMenuButton>
+                            </Tooltip>
                         );
                     })}
                 </DropdownMenu>
