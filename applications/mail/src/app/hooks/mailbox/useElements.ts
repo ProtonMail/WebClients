@@ -17,7 +17,6 @@ import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { noop } from '@proton/shared/lib/helpers/function';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { STATUS } from '@proton/shared/lib/models/cache';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
@@ -63,9 +62,8 @@ interface ReturnValue {
     labelID: string;
     elements: Element[];
     placeholderCount: number;
-    pendingRequest: boolean;
     loading: boolean;
-    total: number;
+    total: number | undefined;
 }
 
 interface UseElements {
@@ -102,7 +100,7 @@ const emptyCache = (
         pendingRequest: false,
         params,
         page,
-        total: 0,
+        total: undefined,
         elements: {},
         pages: [],
         updatedElements: [],
@@ -181,39 +179,47 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         return sorted.slice(startIndex, endIndex);
     }, [cache]);
 
-    // Define if we can base our calculations base on the counters or not
-    const baseOnCounters = useMemo(() => !isSearch(cache.params) && !loadingCounts, [cache.params, loadingCounts]);
-
-    // Define if we can expect the result count or not
-    const expectingLength = useMemo(
-        () => !cache.beforeFirstLoad || baseOnCounters,
-        [cache.beforeFirstLoad, baseOnCounters]
-    );
-
-    const total = useMemo(() => {
-        if (!baseOnCounters) {
-            return cache.total;
+    /**
+     * Computed up to date total of elements for the current parameters
+     * Warning: this value has been proved not to be 100% consistent
+     * Has to be used only for non sensitive behaviors
+     */
+    const dynamicTotal = useMemo(() => {
+        if (isSearch(cache.params) || loadingCounts) {
+            return undefined;
         }
         return getTotal(counts, cache.params.labelID, cache.params.filter);
-    }, [counts, cache.params, cache.total, cache.pendingRequest, expectingLength]);
+    }, [counts, loadingCounts, cache.params]);
 
-    const expectedLength = useMemo(() => {
-        return expectedPageLength(cache.page, total, isFilter(cache.params.filter) ? cache.bypassFilter.length : 0);
-    }, [cache.page, cache.params, total, cache.bypassFilter, cache.pendingRequest]);
+    /**
+     * Computed up to date number of elements on the current page
+     * Warning: this value has been proved not to be 100% consistent
+     * Has to be used only for non sensitive behaviors
+     */
+    const dynamicPageLength = useMemo(() => {
+        if (dynamicTotal === undefined) {
+            return undefined;
+        }
+        return expectedPageLength(
+            cache.page,
+            dynamicTotal,
+            isFilter(cache.params.filter) ? cache.bypassFilter.length : 0
+        );
+    }, [dynamicTotal, cache.page, cache.params, cache.bypassFilter]);
 
     const placeholderCount = useMemo(() => {
-        if (!expectingLength) {
-            return DEFAULT_PLACEHOLDERS_COUNT;
+        if (dynamicPageLength) {
+            return dynamicPageLength;
         }
-        return expectedLength;
-    }, [expectingLength, expectedLength]);
-
-    const expectedLengthMismatch = useMemo(() => {
-        if (!expectingLength) {
-            return 0;
+        if (cache.total !== undefined) {
+            return expectedPageLength(
+                cache.page,
+                cache.total,
+                isFilter(cache.params.filter) ? cache.bypassFilter.length : 0
+            );
         }
-        return Math.abs(elements.length - expectedLength);
-    }, [elements.length, expectedLength, expectingLength]);
+        return DEFAULT_PLACEHOLDERS_COUNT;
+    }, [dynamicPageLength, cache.page, cache.total, cache.params]);
 
     const paramsChanged = () =>
         labelID !== cache.params.labelID ||
@@ -252,7 +258,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         shouldResetCache() ||
         (!cache.pendingRequest &&
             cache.retry.count < MAX_ELEMENT_LIST_LOAD_RETRIES &&
-            (cache.invalidated || (expectingLength && expectedLengthMismatch !== 0) || !pageCached()));
+            (cache.invalidated || !pageCached()));
 
     const shouldUpdatePage = () => pageChanged() && pageCached();
 
@@ -282,7 +288,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
 
     const setPendingRequest = () => setCache((cache) => ({ ...cache, pendingRequest: true }));
 
-    const updatePage = async () => {
+    const updatePage = () => {
         if (useES) {
             if (shouldLoadMoreES()) {
                 setPendingRequest();
@@ -355,15 +361,6 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             const { Total, Elements } = await queryElements(queryParameters);
             const elementsMap = toMap(Elements, 'ID');
             const updatedElements = cache.updatedElements.filter((elementID) => !elementsMap[elementID]);
-            const expectedTotal = getTotal(counts, labelID, filter);
-
-            // Sanity check that the query result total match the expected one
-            // If not, we completely refresh the counters
-            if (baseOnCounters && Total !== expectedTotal) {
-                const countModel = conversationMode ? ConversationCountsModel : MessageCountsModel;
-                const value = await countModel.get(api);
-                globalCache.set(countModel.key, { status: STATUS.RESOLVED, value });
-            }
 
             setCache((cache) => {
                 return {
@@ -380,7 +377,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                     },
                     updatedElements,
                     bypassFilter: cache.bypassFilter,
-                    retry: newRetry({ ...queryParameters, expectedTotal }, undefined),
+                    retry: newRetry(queryParameters, undefined),
                 };
             });
         } catch (error) {
@@ -391,7 +388,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                     beforeFirstLoad: false,
                     invalidated: false,
                     pendingRequest: false,
-                    retry: newRetry({ ...queryParameters, total }, error),
+                    retry: newRetry(queryParameters, error),
                 }));
             }, 2000);
         }
@@ -466,23 +463,30 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
 
     // Move to the last page if the current one becomes empty
     useEffect(() => {
-        if (expectingLength && expectedLength === 0 && page > 0 && (!useES || !(isCacheLimited && isSearchPartial))) {
-            const count = pageCount(total);
-            if (count === 0 && page !== 0) {
+        if (page === 0) {
+            return;
+        }
+
+        const expectingEmpty = dynamicPageLength === 0;
+        const loadedEmpty = !cache.beforeFirstLoad && cache.pendingRequest === false && cache.total === 0;
+        const partialESSearch = useES && (isCacheLimited || isSearchPartial);
+
+        if (!partialESSearch && (expectingEmpty || loadedEmpty)) {
+            const count = dynamicTotal ? pageCount(dynamicTotal) : 0;
+            if (count === 0) {
                 onPage(0);
             } else if (page !== count - 1) {
                 onPage(count - 1);
             }
         }
-    }, [expectingLength, expectedLength, page]);
+    }, [page, dynamicPageLength, cache.beforeFirstLoad, cache.pendingRequest, cache.total]);
 
     useEffect(() => {
         if (
             !cache.beforeFirstLoad &&
             !cache.pendingRequest &&
             cache.retry.error === undefined &&
-            expectingLength &&
-            elements.length !== expectedLength
+            cache.retry.count === 3
         ) {
             if (!esEnabled) {
                 const message = 'Elements list inconsistency error';
@@ -493,122 +497,112 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                     page,
                     sort,
                     filter,
-                    total,
-                    expectedLength,
+                    dynamicTotal,
                     cache: omit(cache, ['elements']),
                     ...cache.elements, // Sentry limit depth in extra data, this optimize our feedback
                 };
-                captureMessage(message, { extra: { context } });
                 console.error(message, context);
+                captureMessage(message, { extra: { context } });
             }
             resetCache(cache.retry, !esEnabled && isSearch(search));
         }
     }, [cache.pendingRequest]);
 
     // Listen to event manager and update de cache
-    useSubscribeEventManager(
-        async ({ Conversations = [], Messages = [], ConversationCounts = [], MessageCounts = [] }: Event) => {
-            const Elements: ElementEvent[] = conversationMode ? Conversations : Messages;
-            const Counts: LabelCount[] = conversationMode ? ConversationCounts : MessageCounts;
+    useSubscribeEventManager(async ({ Conversations = [], Messages = [] }: Event) => {
+        const Elements: ElementEvent[] = conversationMode ? Conversations : Messages;
 
-            // If it's an encrypted search, its event manager will deal with the change
-            if (useES) {
-                return;
-            }
-
-            if (!Elements.length && !Counts.length) {
-                return;
-            }
-
-            if (!isLiveCache()) {
-                if (Elements.length) {
-                    setCache((cache) => ({ ...cache, invalidated: true }));
-                }
-                return;
-            }
-
-            const total = isSearch(search) ? cache.total : getTotal(Counts, labelID, filter);
-
-            const { toCreate, toUpdate, toDelete } = Elements.reduce<{
-                toCreate: (Element & LabelIDsChanges)[];
-                toUpdate: (Element & LabelIDsChanges)[];
-                toDelete: string[];
-            }>(
-                ({ toCreate, toUpdate, toDelete }, event) => {
-                    const { ID, Action } = event;
-                    const Element = conversationMode
-                        ? (event as ConversationEvent).Conversation
-                        : (event as MessageEvent).Message;
-
-                    if (Action === EVENT_ACTIONS.CREATE) {
-                        toCreate.push(Element as Element);
-                    } else if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
-                        toUpdate.push({ ID, ...Element });
-                    } else if (Action === EVENT_ACTIONS.DELETE) {
-                        toDelete.push(ID);
-                    }
-
-                    return { toCreate, toUpdate, toDelete };
-                },
-                { toCreate: [], toUpdate: [], toDelete: [] }
-            );
-
-            const toUpdateCompleted = (
-                await Promise.all(
-                    toUpdate
-                        .filter(({ ID = '' }) => !toDelete.includes(ID)) // No need to get deleted element
-                        .map(async (element) => {
-                            const elementID = element.ID || '';
-                            const existingElement = cache.elements[elementID];
-
-                            if (existingElement) {
-                                element = parseLabelIDsInEvent(existingElement, element);
-                            }
-
-                            return existingElement
-                                ? { ...existingElement, ...element }
-                                : queryElement(elementID).catch(noop);
-                        })
-                )
-            ).filter(isTruthy);
-
-            setCache((cache) => {
-                const newReplacements: { [ID: string]: Element } = {};
-
-                [...toCreate, ...toUpdateCompleted].forEach((element) => {
-                    newReplacements[element.ID || ''] = element;
-                });
-                const newElements = {
-                    ...cache.elements,
-                    ...newReplacements,
-                };
-                toDelete.forEach((elementID) => {
-                    delete newElements[elementID];
-                });
-
-                const updatedElements = [...cache.updatedElements, ...Object.keys(newReplacements), ...toDelete];
-
-                return {
-                    ...cache,
-                    elements: newElements,
-                    total,
-                    updatedElements,
-                };
-            });
+        // If it's an encrypted search, its event manager will deal with the change
+        if (useES) {
+            return;
         }
-    );
 
-    const bigMismatch = expectedLengthMismatch * 2 > expectedLength;
-    const smallMismatch = expectedLengthMismatch > 0 && !bigMismatch;
-    const loading =
-        (cache.beforeFirstLoad || cache.pendingRequest || bigMismatch) && !cache.invalidated && !smallMismatch;
+        if (!Elements.length) {
+            return;
+        }
+
+        if (!isLiveCache()) {
+            if (Elements.length) {
+                setCache((cache) => ({ ...cache, invalidated: true }));
+            }
+            return;
+        }
+
+        const { toCreate, toUpdate, toDelete } = Elements.reduce<{
+            toCreate: (Element & LabelIDsChanges)[];
+            toUpdate: (Element & LabelIDsChanges)[];
+            toDelete: string[];
+        }>(
+            ({ toCreate, toUpdate, toDelete }, event) => {
+                const { ID, Action } = event;
+                const Element = conversationMode
+                    ? (event as ConversationEvent).Conversation
+                    : (event as MessageEvent).Message;
+
+                if (Action === EVENT_ACTIONS.CREATE) {
+                    toCreate.push(Element as Element);
+                } else if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
+                    toUpdate.push({ ID, ...Element });
+                } else if (Action === EVENT_ACTIONS.DELETE) {
+                    toDelete.push(ID);
+                }
+
+                return { toCreate, toUpdate, toDelete };
+            },
+            { toCreate: [], toUpdate: [], toDelete: [] }
+        );
+
+        const toUpdateCompleted = (
+            await Promise.all(
+                toUpdate
+                    .filter(({ ID = '' }) => !toDelete.includes(ID)) // No need to get deleted element
+                    .map(async (element) => {
+                        const elementID = element.ID || '';
+                        const existingElement = cache.elements[elementID];
+
+                        if (existingElement) {
+                            element = parseLabelIDsInEvent(existingElement, element);
+                        }
+
+                        return existingElement
+                            ? { ...existingElement, ...element }
+                            : queryElement(elementID).catch(noop);
+                    })
+            )
+        ).filter(isTruthy);
+
+        setCache((cache) => {
+            const newReplacements: { [ID: string]: Element } = {};
+
+            [...toCreate, ...toUpdateCompleted].forEach((element) => {
+                newReplacements[element.ID || ''] = element;
+            });
+            const newElements = {
+                ...cache.elements,
+                ...newReplacements,
+            };
+            toDelete.forEach((elementID) => {
+                delete newElements[elementID];
+            });
+
+            const updatedElements = [...cache.updatedElements, ...Object.keys(newReplacements), ...toDelete];
+
+            return {
+                ...cache,
+                elements: newElements,
+                updatedElements,
+            };
+        });
+    });
+
+    const loading = (cache.beforeFirstLoad || cache.pendingRequest) && !cache.invalidated;
+    const total = dynamicTotal || cache.total;
 
     return {
         labelID: cache.params.labelID,
         elements,
         placeholderCount,
-        pendingRequest: cache.pendingRequest,
         loading,
-        total: cache.total,
+        total,
     };
 };
