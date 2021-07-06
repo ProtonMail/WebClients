@@ -12,7 +12,6 @@ interface Props {
     onClick: (ID: string) => void;
     onCheck: (event: ChangeEvent) => void;
     style: CSSProperties;
-    contactID: string;
     hasPaidMail: boolean;
     contactGroupsMap: SimpleMap<ContactGroup>;
     contact: ContactFormatted;
@@ -25,7 +24,6 @@ interface Props {
 const ContactRow = ({
     checked,
     style,
-    contactID,
     hasPaidMail,
     contactGroupsMap,
     contact,
@@ -51,7 +49,6 @@ const ContactRow = ({
             onDragEnd={onDragEnd}
             className={classnames([
                 'item-container item-contact flex cursor-pointer bg-global-white',
-                contactID === ID && 'item-is-selected',
                 dragged && 'item-dragging',
             ])}
         >

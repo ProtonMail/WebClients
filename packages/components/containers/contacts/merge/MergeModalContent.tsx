@@ -11,7 +11,6 @@ import MergeContactPreview from './MergeContactPreview';
 import MergeTable from './MergeTable';
 
 interface Props {
-    contactID: string;
     userKeysList: DecryptedKey[];
     model: ContactMergeModel;
     updateModel: React.Dispatch<React.SetStateAction<ContactMergeModel>>;
@@ -35,7 +34,7 @@ const moveInGroup = (
     });
 };
 
-const MergeModalContent = ({ contactID, userKeysList, model, updateModel, beMergedModel, beDeletedModel }: Props) => {
+const MergeModalContent = ({ userKeysList, model, updateModel, beMergedModel, beDeletedModel }: Props) => {
     const { createModal } = useModals();
 
     const { orderedContacts, isChecked, beDeleted } = model;
@@ -74,7 +73,6 @@ const MergeModalContent = ({ contactID, userKeysList, model, updateModel, beMerg
 
         createModal(
             <MergeContactPreview
-                contactID={contactID}
                 userKeysList={userKeysList}
                 beMergedModel={beMergedModelSingle}
                 beDeletedModel={beDeletedModelSingle}
