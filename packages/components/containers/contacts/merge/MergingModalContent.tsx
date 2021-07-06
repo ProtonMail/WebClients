@@ -1,7 +1,6 @@
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import React, { useState, useEffect, useMemo } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { getContact, addContacts, deleteContacts } from '@proton/shared/lib/api/contacts';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -27,26 +26,24 @@ const { SINGLE_SUCCESS } = API_CODES;
 type Signal = { signal: AbortSignal };
 
 interface Props {
-    contactID: string;
     userKeysList: DecryptedKey[];
     alreadyMerged?: ContactProperties;
     beMergedModel: { [ID: string]: string[] };
     beDeletedModel: { [ID: string]: string };
     totalBeMerged: number;
+    totalBeDeleted: number;
     onFinish: () => void;
 }
 
 const MergingModalContent = ({
-    contactID,
     userKeysList,
     alreadyMerged,
     beMergedModel = {},
     beDeletedModel = {},
     totalBeMerged = 0,
+    totalBeDeleted = 0,
     onFinish,
 }: Props) => {
-    const history = useHistory();
-    const location = useLocation();
     const api = useApi();
     const { privateKeys, publicKeys } = useMemo(() => splitKeys(userKeysList), []);
 
@@ -56,11 +53,13 @@ const MergingModalContent = ({
         failedOnMergeAndEncrypt: string[];
         submitted: string[];
         failedOnSubmit: string[];
+        deleted: string[];
     }>({
         mergedAndEncrypted: [],
         failedOnMergeAndEncrypt: [],
         submitted: [],
         failedOnSubmit: [],
+        deleted: [],
     });
 
     useEffect(() => {
@@ -195,10 +194,6 @@ const MergingModalContent = ({
                         setModel((model) => ({ ...model, submitted: [...model.submitted, ...groupIDs] }));
                     }
                     beDeletedBatchIDs.push(...beDeletedAfterMergeIDs);
-                    if (!signal.aborted && beDeletedAfterMergeIDs.includes(contactID)) {
-                        // if the current contact is merged, update URL
-                        history.replace({ ...location, state: { ignoreClose: true }, pathname: `/${ID}` });
-                    }
                 } else if (!signal.aborted) {
                     setModel((model) => ({ ...model, failedOnSubmit: [...model.failedOnSubmit, ...groupIDs] }));
                 }
@@ -237,14 +232,8 @@ const MergingModalContent = ({
         const deleteMarkedForDeletion = async ({ signal }: Signal) => {
             const beDeletedIDs = Object.keys(beDeletedModel);
             if (!signal.aborted && !!beDeletedIDs.length) {
+                setModel((model) => ({ ...model, deleted: [...model.deleted, ...beDeletedIDs] }));
                 await apiWithAbort(deleteContacts(beDeletedIDs));
-            }
-            if (!signal.aborted && beDeletedIDs.includes(contactID)) {
-                history.replace({
-                    ...location,
-                    state: { ignoreClose: true },
-                    pathname: `/${beDeletedModel[contactID]}`,
-                });
             }
         };
 
@@ -286,27 +275,41 @@ const MergingModalContent = ({
             total: totalBeMerged - model.failedOnMergeAndEncrypt.length,
         },
     ]);
-    const success = model.failedOnMergeAndEncrypt.length + model.failedOnSubmit.length !== totalBeMerged;
+    const successDelete = model.deleted.length === totalBeDeleted;
+    const successMerge = model.failedOnMergeAndEncrypt.length + model.failedOnSubmit.length !== totalBeMerged;
 
     const progressMessage = c('Progress bar description').t`Progress: ${combinedProgress}%`;
 
-    const endMessage = success
-        ? c('Progress bar description')
-              .t`${model.submitted.length} out of ${totalBeMerged} contacts successfully merged.`
-        : c('Progress bar description').t`No contacts merged.`;
+    const endMessage =
+        successDelete && !successMerge
+            ? c('Progress bar description').ngettext(
+                  msgid`${model.deleted.length} out of ${totalBeDeleted} contact successfully deleted.`,
+                  `${model.deleted.length} out of ${totalBeDeleted} contacts successfully deleted.`,
+                  totalBeDeleted
+              )
+            : successMerge
+            ? c('Progress bar description').ngettext(
+                  msgid`${model.submitted.length} out of ${totalBeMerged} contact successfully merged.`,
+                  `${model.submitted.length} out of ${totalBeMerged} contacts successfully merged.`,
+                  totalBeMerged
+              )
+            : c('Progress bar description').t`No contacts merged.`;
 
     return (
         <>
             <Alert>
-                {c('Description')
-                    .t`Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.`}
+                {totalBeMerged > 0
+                    ? c('Description')
+                          .t`Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.`
+                    : c('Description')
+                          .t`Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.`}
             </Alert>
             <DynamicProgress
                 id="progress-merge-contacts"
                 loading={loading}
                 value={combinedProgress}
                 max={100}
-                success={success}
+                success={successMerge || successDelete}
                 display={loading ? progressMessage : endMessage}
             />
         </>

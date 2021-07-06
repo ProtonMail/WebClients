@@ -17,21 +17,13 @@ import MergeErrorContent from './MergeErrorContent';
 import MergingModalContent from './MergingModalContent';
 
 interface Props extends ComponentProps<typeof FormModal> {
-    contactID: string;
     userKeysList: DecryptedKey[];
     beMergedModel: { [ID: string]: string[] };
     beDeletedModel: { [ID: string]: string };
     updateModel: React.Dispatch<React.SetStateAction<ContactMergeModel>>;
 }
 
-const MergeContactPreview = ({
-    contactID,
-    userKeysList,
-    beMergedModel,
-    beDeletedModel,
-    updateModel,
-    ...rest
-}: Props) => {
+const MergeContactPreview = ({ userKeysList, beMergedModel, beDeletedModel, updateModel, ...rest }: Props) => {
     const { call } = useEventManager();
     const api = useApi();
     const { privateKeys, publicKeys } = useMemo(() => splitKeys(userKeysList), []);
@@ -111,8 +103,8 @@ const MergeContactPreview = ({
 
                 return (
                     <ContactView
+                        contactID=""
                         properties={model.mergedContact as ContactProperties}
-                        contactID={contactID}
                         contactEmails={contactEmails}
                         contactGroupsMap={contactGroupsMap}
                         ownAddresses={ownAddresses}
@@ -155,12 +147,12 @@ const MergeContactPreview = ({
             hasClose: false,
             content: (
                 <MergingModalContent
-                    contactID={contactID}
                     userKeysList={userKeysList}
                     alreadyMerged={model.mergedContact as ContactProperties}
                     beMergedModel={beMergedModel}
                     beDeletedModel={beDeletedModel}
                     totalBeMerged={beMergedIDs.length}
+                    totalBeDeleted={beDeletedIDs.length}
                     onFinish={handleFinish}
                 />
             ),
