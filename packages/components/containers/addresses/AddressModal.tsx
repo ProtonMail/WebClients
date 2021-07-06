@@ -121,6 +121,7 @@ const AddressModal = ({ onClose, member, members, organizationKey, ...rest }: Pr
                                 placeholder={c('Placeholder').t`Choose address`}
                                 onChange={handleChange('address')}
                                 required
+                                data-testid="settings:identity-section:add-address:address"
                             />
                         </div>
                         <div className="flex-autogrid-item pb0">
@@ -136,6 +137,7 @@ const AddressModal = ({ onClose, member, members, organizationKey, ...rest }: Pr
                         value={model.name}
                         placeholder={c('Placeholder').t`Choose display name`}
                         onChange={handleChange('name')}
+                        data-testid="settings:identity-section:add-address:display-name"
                     />
                 </Field>
             </Row>
