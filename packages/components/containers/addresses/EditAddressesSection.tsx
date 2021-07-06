@@ -125,6 +125,7 @@ const EditAddressesSection = ({ address }: Props) => {
                         value={model.displayName}
                         placeholder={c('Placeholder').t`Choose display name`}
                         onChange={handleDisplayName}
+                        data-testid="settings:identity-section:display-name"
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>
@@ -146,7 +147,14 @@ const EditAddressesSection = ({ address }: Props) => {
                         />
                     </div>
 
-                    <Button color="norm" type="submit" disabled={loading} loading={loading} className="mt1">
+                    <Button
+                        color="norm"
+                        type="submit"
+                        disabled={loading}
+                        loading={loading}
+                        className="mt1"
+                        data-testid="settings:identity-section:update"
+                    >
                         {c('Action').t`Update`}
                     </Button>
                 </SettingsLayoutRight>
