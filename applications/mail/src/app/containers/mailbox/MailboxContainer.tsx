@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect, useCallback, useRef, memo } from 'react';
+import React, { useState, useMemo, useCallback, useRef, memo } from 'react';
 import { History, Location } from 'history';
 import { PrivateMainArea, useCalendars, useCalendarUserSettings, useItemsSelection } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -6,7 +6,7 @@ import { isDraft } from '@proton/shared/lib/mail/messages';
 import { VIEW_MODE } from '@proton/shared/lib/constants';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
-import { Sort, Filter, Page, SearchParameters } from '../../models/tools';
+import { Sort, Filter, SearchParameters } from '../../models/tools';
 import { useMailboxPageTitle } from '../../hooks/mailbox/useMailboxPageTitle';
 import { useElements } from '../../hooks/mailbox/useElements';
 import { isColumnMode, isConversationMode } from '../../helpers/mailSettings';
@@ -25,7 +25,6 @@ import List from '../../components/list/List';
 import ConversationView from '../../components/conversation/ConversationView';
 import PlaceholderView from '../../components/view/PlaceholderView';
 import MessageOnlyView from '../../components/message/MessageOnlyView';
-import { PAGE_SIZE } from '../../constants';
 import { isMessage, isSearch as testIsSearch } from '../../helpers/elements';
 import { Breakpoints } from '../../models/utils';
 import { useWelcomeFlag } from '../../hooks/mailbox/useWelcomeFlag';
@@ -72,14 +71,7 @@ const MailboxContainer = ({
 
     const messageContainerRef = useRef<HTMLElement>(null);
 
-    // Page state is hybrid: page number is handled by the url, total computed in useElements, size and limit are constants
-    // Yet, it is simpler to co-localize all these data in one object
-    const [page, setPage] = useState<Page>({
-        page: pageFromUrl(location),
-        total: 0,
-        size: PAGE_SIZE,
-    });
-
+    const page = pageFromUrl(location);
     const searchParams = getSearchParams(location.hash);
     const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
     const searchParameters = useMemo<SearchParameters>(
@@ -123,9 +115,6 @@ const MailboxContainer = ({
     const handleBack = useCallback(() => history.push(setParamsInLocation(history.location, { labelID })), [labelID]);
 
     const onCompose = useOnCompose();
-
-    useEffect(() => setPage({ ...page, page: pageFromUrl(location) }), [searchParams.page]);
-    useEffect(() => setPage({ ...page, total }), [total]);
 
     useMailboxPageTitle(labelID, location);
 
@@ -241,6 +230,7 @@ const MailboxContainer = ({
                     breakpoints={breakpoints}
                     onCheck={handleCheck}
                     page={page}
+                    total={total}
                     onPage={handlePage}
                     onBack={handleBack}
                     onElement={handleElement}
@@ -268,6 +258,7 @@ const MailboxContainer = ({
                         isSearch={isSearch}
                         breakpoints={breakpoints}
                         page={page}
+                        total={total}
                         onPage={handlePage}
                         onFocus={handleFocus}
                         onCheckOne={handleCheckOne}

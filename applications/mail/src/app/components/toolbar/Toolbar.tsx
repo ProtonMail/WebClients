@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { Location } from 'history';
 import { Icon, useMailSettings, useLabels, useFolders, ToolbarButton, ToolbarSeparator } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-
 import ReadUnreadButtons from './ReadUnreadButtons';
 import ToolbarDropdown from './ToolbarDropdown';
 import MoveButtons from './MoveButtons';
@@ -12,7 +11,6 @@ import SelectAll from './SelectAll';
 import MoveDropdown from '../dropdown/MoveDropdown';
 import LabelDropdown from '../dropdown/LabelDropdown';
 import PagingControls from './PagingControls';
-import { Page } from '../../models/tools';
 import { Breakpoints } from '../../models/utils';
 import NavigationControls from './NavigationControls';
 
@@ -31,7 +29,8 @@ interface Props {
     columnMode: boolean;
     conversationMode: boolean;
     breakpoints: Breakpoints;
-    page: Page;
+    page: number;
+    total: number | undefined;
     onPage: (page: number) => void;
     onBack: () => void;
     onElement: (elementID: string | undefined) => void;
@@ -55,6 +54,7 @@ const Toolbar = ({
     loading = false,
     onBack,
     page,
+    total,
     onPage,
     onElement,
     labelDropdownToggleRef,
@@ -176,7 +176,7 @@ const Toolbar = ({
                     <MoreDropdown labelID={labelID} elementIDs={elementIDs} selectedIDs={selectedIDs} />
                 )}
                 {listInView ? (
-                    <PagingControls loading={loading} page={page} onPage={onPage} location={location} />
+                    <PagingControls loading={loading} page={page} total={total} onPage={onPage} />
                 ) : (
                     <NavigationControls
                         loading={loading}

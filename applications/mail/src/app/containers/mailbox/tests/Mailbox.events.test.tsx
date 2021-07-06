@@ -6,7 +6,7 @@ import { PAGE_SIZE, DEFAULT_PLACEHOLDERS_COUNT } from '../../../constants';
 import { addApiResolver, addToCache, api, clearAll, render } from '../../../helpers/test/helper';
 import { Conversation, ConversationLabel } from '../../../models/conversation';
 import { Element } from '../../../models/element';
-import { ConversationEvent, MessageEvent } from '../../../models/event';
+import { MessageEvent } from '../../../models/event';
 import MailboxContainer from '../MailboxContainer';
 import { baseApiMocks, expectElements, getElements, getProps, props, sendEvent, setup } from './Mailbox.test.helpers';
 
@@ -105,22 +105,6 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, total, false);
-        expect(api.mock.calls.length).toBe(6);
-    });
-
-    it('should reload the list on count event and expected length not matched when several pages of elements', async () => {
-        // Removing 5 elements should trigger an expected length mismatch and trigger a new request
-
-        const total = PAGE_SIZE + 3;
-        const conversations = getElements(total);
-        await setup({ conversations });
-
-        await sendEvent({
-            Conversations: conversations
-                .slice(0, 5)
-                .map((element) => ({ ID: element.ID, Action: EVENT_ACTIONS.DELETE } as ConversationEvent)),
-        });
-
         expect(api.mock.calls.length).toBe(6);
     });
 
