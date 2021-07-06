@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { ProtonApp, StandardPublicApp, StandardSetup, ModalsChildren, ProminentContainer } from '@proton/components';
-import locales from '@proton/shared/lib/i18n/locales';
+import { initLocales } from '@proton/shared/lib/i18n/locales';
 import sentry from '@proton/shared/lib/helpers/sentry';
 
 import * as config from './config';
@@ -20,6 +20,8 @@ const PublicDriveLinkContainer = () => {
         </DownloadProvider>
     );
 };
+
+const locales = initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 
 const enhancedConfig = {
     APP_VERSION_DISPLAY: '4.0.0-beta.16',

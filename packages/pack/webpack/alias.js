@@ -11,17 +11,10 @@ const getAlias = () => {
         '@proton/components',
         'ttag',
         'date-fns',
-        'proton-translations/package.json',
         '@babel/runtime/package.json',
     ].reduce((acc, key) => {
         const name = key.replace('/package.json', '');
 
-        if (key.includes('proton-translations')) {
-            return {
-                ...acc,
-                [name]: path.resolve(process.cwd(), 'locales'),
-            };
-        }
         // Resolve with precedence from cwd
         return {
             ...acc,
