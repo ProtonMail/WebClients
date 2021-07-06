@@ -11,12 +11,11 @@ import MergingModalContent from './MergingModalContent';
 
 interface Props extends ComponentProps<typeof FormModal> {
     contacts: ContactFormatted[][];
-    contactID: string;
     userKeysList: DecryptedKey[];
     onMerged: () => void;
 }
 
-const MergeModal = ({ contacts, contactID, userKeysList, onMerged, ...rest }: Props) => {
+const MergeModal = ({ contacts, userKeysList, onMerged, ...rest }: Props) => {
     const { call } = useEventManager();
 
     const [isMerging, setIsMerging] = useState(false);
@@ -45,12 +44,13 @@ const MergeModal = ({ contacts, contactID, userKeysList, onMerged, ...rest }: Pr
 
     // beMergedModel = { 'ID of be-merged contact': [IDs to be merged] }
     // beDeletedModel = { 'ID of be-deleted contact': 'ID to navigate to in case it is the current ID' }
-    const { beMergedModel, beDeletedModel, totalBeMerged } = useMemo(
+    const { beMergedModel, beDeletedModel, totalBeMerged, totalBeDeleted } = useMemo(
         () =>
             orderedContacts.reduce<{
                 beMergedModel: { [ID: string]: string[] };
                 beDeletedModel: { [ID: string]: string };
                 totalBeMerged: number;
+                totalBeDeleted: number;
             }>(
                 (acc, group) => {
                     const groupIDs = group.map(({ ID }) => ID);
@@ -67,18 +67,23 @@ const MergeModal = ({ contacts, contactID, userKeysList, onMerged, ...rest }: Pr
                     for (const ID of beDeletedIDs) {
                         // route to merged contact or to /contacts if no associated contact is merged
                         acc.beDeletedModel[ID] = willBeMerged ? beMergedIDs[0] : '';
+                        acc.totalBeDeleted += 1;
                     }
                     return acc;
                 },
-                { beMergedModel: {}, beDeletedModel: {}, totalBeMerged: 0 }
+                { beMergedModel: {}, beDeletedModel: {}, totalBeMerged: 0, totalBeDeleted: 0 }
             ),
         [orderedContacts, isChecked, beDeleted]
     );
 
     const { content, ...modalProps } = (() => {
+        const isDeleteOnly = totalBeMerged <= 0 && totalBeDeleted > 0;
+
         // Display table with mergeable contacts
         if (!isMerging) {
-            const submit = (
+            const submit = isDeleteOnly ? (
+                <PrimaryButton type="submit">{c('Action').t`Continue`}</PrimaryButton>
+            ) : (
                 <PrimaryButton type="submit" disabled={!totalBeMerged}>{c('Action').t`Merge`}</PrimaryButton>
             );
 
@@ -88,7 +93,6 @@ const MergeModal = ({ contacts, contactID, userKeysList, onMerged, ...rest }: Pr
                 title: c('Title').t`Merge contacts`,
                 content: (
                     <MergeModalContent
-                        contactID={contactID}
                         userKeysList={userKeysList}
                         model={model}
                         updateModel={setModel}
@@ -116,15 +120,15 @@ const MergeModal = ({ contacts, contactID, userKeysList, onMerged, ...rest }: Pr
         };
 
         return {
-            title: c('Title').t`Merging contacts`,
+            title: isDeleteOnly ? c('Title').t`Deleting contacts` : c('Title').t`Merging contacts`,
             hasClose: false,
             content: (
                 <MergingModalContent
-                    contactID={contactID}
                     userKeysList={userKeysList}
                     beMergedModel={beMergedModel}
                     beDeletedModel={beDeletedModel}
                     totalBeMerged={totalBeMerged}
+                    totalBeDeleted={totalBeDeleted}
                     onFinish={handleFinish}
                 />
             ),
