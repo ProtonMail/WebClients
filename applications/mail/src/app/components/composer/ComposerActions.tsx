@@ -3,7 +3,18 @@ import { getAttachments, hasFlag } from '@proton/shared/lib/mail/messages';
 import React, { MutableRefObject } from 'react';
 import { c } from 'ttag';
 import { isToday, isYesterday } from 'date-fns';
-import { Button, classnames, Tooltip, Icon, EllipsisLoader, useMailSettings } from '@proton/components';
+import {
+    Button,
+    classnames,
+    Tooltip,
+    Icon,
+    EllipsisLoader,
+    useMailSettings,
+    DropdownActions,
+    useFeature,
+    FeatureCode,
+} from '@proton/components';
+import { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import { metaKey, shiftKey, altKey } from '@proton/shared/lib/helpers/browser';
 import { formatSimpleDate } from '../../helpers/date';
 import { MessageExtended } from '../../models/message';
@@ -114,6 +125,39 @@ const ComposerActions = ({
         </>
     ) : null;
 
+    const { feature, loading: loadingFeature } = useFeature(FeatureCode.ScheduledSend);
+    const hasScheduleSendAccess = !loadingFeature && feature?.Value;
+
+    const sendButtonActions: (DropdownActionProps & {
+        'data-testid'?: string;
+    })[] = [
+        {
+            text: (
+                <>
+                    <Icon name="sent" className="no-desktop no-tablet on-mobile-flex" />
+                    <span className="pl1 pr1 no-mobile">{c('Action').t`Send`}</span>
+                </>
+            ),
+            loading: loadingFeature,
+            onClick: onSend,
+            disabled: sendDisabled,
+            className: 'composer-send-button',
+            tooltip: titleSendButton,
+            'data-testid': 'composer:send-button',
+        },
+    ];
+
+    if (hasScheduleSendAccess) {
+        sendButtonActions.push({
+            text: (
+                <>
+                    <Icon name="clock" />
+                    <span className="pl1 pr1">{c('Action').t`Schedule send`}</span>
+                </>
+            ),
+        });
+    }
+
     return (
         <footer
             className={classnames([
@@ -122,18 +166,7 @@ const ComposerActions = ({
             ])}
             onClick={addressesBlurRef.current}
         >
-            <Tooltip title={titleSendButton}>
-                <Button
-                    color="norm"
-                    className="composer-send-button"
-                    disabled={sendDisabled}
-                    onClick={onSend}
-                    data-testid="composer:send-button"
-                >
-                    <Icon name="sent" className="no-desktop no-tablet on-mobile-flex" />
-                    <span className="pl1 pr1 no-mobile">{c('Action').t`Send`}</span>
-                </Button>
-            </Tooltip>
+            <DropdownActions disabled={loadingFeature} loading={loadingFeature} color="norm" list={sendButtonActions} />
             <div className="flex flex-item-fluid">
                 <div className="flex">
                     <Tooltip title={titleAttachment}>
