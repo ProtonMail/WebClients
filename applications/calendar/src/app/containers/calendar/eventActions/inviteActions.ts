@@ -204,6 +204,7 @@ export const getSendIcsAction =
             type,
             sharedEventID,
             sharedSessionKey,
+            isProtonProtonInvite,
             selfAddress,
             selfAttendeeIndex,
             partstat,
@@ -482,13 +483,15 @@ export const getSendIcsAction =
                         partstat,
                     },
                 };
-                const pmVevent = enabledProtonProtonInvites
-                    ? {
-                          ...vevent,
-                          'x-pm-shared-event-id': { value: sharedEventID },
-                          'x-pm-session-key': { value: sharedSessionKey },
-                      }
-                    : { ...vevent };
+                const pmVevent =
+                    enabledProtonProtonInvites && isProtonProtonInvite
+                        ? {
+                              ...vevent,
+                              'x-pm-shared-event-id': { value: sharedEventID },
+                              'x-pm-session-key': { value: sharedSessionKey },
+                              'x-pm-proton-reply': { value: 'true', parameters: { type: 'boolean' } } as const,
+                          }
+                        : { ...vevent };
                 const replyIcs = createInviteIcs({
                     method: ICAL_METHOD.REPLY,
                     prodId,

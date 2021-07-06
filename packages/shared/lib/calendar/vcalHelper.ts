@@ -218,6 +218,14 @@ export const getAttendeeToken = (attendee: Partial<VcalAttendeeProperty> = {}) =
     return attendee?.parameters?.['x-pm-token'];
 };
 
+export const getIsProtonReply = (veventComponent: VcalVeventComponent) => {
+    const stringifiedValue = veventComponent['x-pm-proton-reply']?.value;
+    if (!stringifiedValue) {
+        return;
+    }
+    return stringifiedValue === 'true';
+};
+
 export const getPmSharedEventID = (veventComponent: VcalVeventComponent) => {
     return veventComponent['x-pm-shared-event-id']?.value;
 };

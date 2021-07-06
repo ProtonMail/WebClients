@@ -14,6 +14,7 @@ const FIELDS_TO_KEEP = [
     'Author',
     'Permissions',
     'IsOrganizer',
+    'IsProtonProtonInvite',
 
     'CalendarKeyPacket',
     'CalendarEvents',

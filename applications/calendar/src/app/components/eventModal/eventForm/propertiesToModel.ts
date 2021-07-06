@@ -1,10 +1,8 @@
 import { MAX_LENGTHS, EVENT_VERIFICATION_STATUS } from '@proton/shared/lib/calendar/constants';
-import { EventModelView, DecryptedVeventResult } from '@proton/shared/lib/interfaces/calendar';
+import { EventModelView, VcalVeventComponent, SelfAddressData } from '@proton/shared/lib/interfaces/calendar';
 import { getDtendProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import { getEventStatus } from '@proton/shared/lib/calendar/vcalHelper';
 import { truncate } from '@proton/shared/lib/helpers/string';
-
-import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
 import { propertiesToAttendeeModel } from './propertiesToAttendeeModel';
 import propertiesToDateTimeModel from './propertiesToDateTimeModel';
@@ -17,16 +15,23 @@ const DEFAULT_TIME = {
     parameters: { tzid: 'UTC' },
 };
 
-export const propertiesToModel = (
-    {
-        veventComponent,
-        verificationStatus = EVENT_VERIFICATION_STATUS.NOT_VERIFIED,
-        selfAddressData,
-    }: RequireSome<Partial<DecryptedVeventResult>, 'veventComponent'>,
-    isAllDay: boolean,
-    isOrganizer: boolean,
-    tzid: string
-): EventModelView => {
+export const propertiesToModel = ({
+    veventComponent,
+    verificationStatus = EVENT_VERIFICATION_STATUS.NOT_VERIFIED,
+    selfAddressData,
+    isAllDay,
+    isOrganizer,
+    isProtonProtonInvite,
+    tzid,
+}: {
+    veventComponent: VcalVeventComponent;
+    verificationStatus?: EVENT_VERIFICATION_STATUS;
+    selfAddressData?: SelfAddressData;
+    isAllDay: boolean;
+    isOrganizer: boolean;
+    isProtonProtonInvite: boolean;
+    tzid: string;
+}): EventModelView => {
     const {
         uid,
         location,
@@ -54,6 +59,7 @@ export const propertiesToModel = (
         attendees: propertiesToAttendeeModel(attendee),
         organizer: propertiesToOrganizerModel(organizer),
         isOrganizer,
+        isProtonProtonInvite,
         status: getEventStatus(veventComponent),
         verificationStatus,
         selfAttendeeIndex,

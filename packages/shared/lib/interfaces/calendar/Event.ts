@@ -58,6 +58,7 @@ export interface CalendarEventSharedData {
     ModifyTime: number;
     Permissions: number;
     IsOrganizer: 1 | 0;
+    IsProtonProtonInvite: 1 | 0;
     Author: string;
 }
 
@@ -189,6 +190,7 @@ export interface EventModelView {
     attendees: AttendeeModel[];
     organizer?: OrganizerModel;
     isOrganizer: boolean;
+    isProtonProtonInvite: boolean;
     selfAttendeeIndex?: number;
     selfAddress?: Address;
     status: ICAL_EVENT_STATUS;
@@ -206,7 +208,6 @@ export interface EventModel extends EventModelView {
         addressID: string;
     };
     isAllDay: boolean;
-    isOrganizer: boolean;
     defaultPartDayNotification: NotificationModel;
     defaultFullDayNotification: NotificationModel;
     fullDayNotifications: NotificationModel[];

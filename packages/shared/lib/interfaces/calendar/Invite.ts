@@ -24,8 +24,9 @@ export interface CalendarWidgetData {
 }
 
 export interface PmInviteData {
-    sharedEventID: string;
-    sharedSessionKey: string;
+    isProtonReply?: boolean;
+    sharedEventID?: string;
+    sharedSessionKey?: string;
 }
 
 export interface Participant {
