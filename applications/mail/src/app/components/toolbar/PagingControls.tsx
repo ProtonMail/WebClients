@@ -1,11 +1,8 @@
 import React from 'react';
 import { Icon, DropdownMenu, DropdownMenuButton, ToolbarButton } from '@proton/components';
 import { c } from 'ttag';
-import { Location } from 'history';
-
+import { useLocation } from 'react-router';
 import ToolbarDropdown from './ToolbarDropdown';
-
-import { Page } from '../../models/tools';
 import { usePaging } from '../../hooks/usePaging';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { extractSearchParameters } from '../../helpers/mailboxUrl';
@@ -13,13 +10,14 @@ import { isSearch as testIsSearch } from '../../helpers/elements';
 
 interface Props {
     loading: boolean;
-    page: Page;
+    page: number;
+    total: number | undefined;
     onPage: (page: number) => void;
-    location: Location;
 }
 
-const PagingControls = ({ loading, page: inputPage, onPage: inputOnPage, location }: Props) => {
-    const { onPrevious, onNext, onPage, page, total } = usePaging(inputPage, inputOnPage);
+const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: inputOnPage }: Props) => {
+    const location = useLocation();
+    const { onPrevious, onNext, onPage, page, total } = usePaging(inputPage, inputTotal, inputOnPage);
     const { getESDBStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled, isSearchPartial, isCacheLimited } = getESDBStatus();
     const searchParameters = extractSearchParameters(location);

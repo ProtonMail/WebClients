@@ -31,16 +31,64 @@ export interface RetryData {
 }
 
 export interface ElementsCache {
+    /**
+     * True when the first request has not been sent
+     * Allow to show a loading state even before the first request is sent
+     */
     beforeFirstLoad: boolean;
+
+    /**
+     * The cache is invalidated and the request should be re-sent
+     */
     invalidated: boolean;
+
+    /**
+     * A request is currently pending
+     */
     pendingRequest: boolean;
+
+    /**
+     * Current parameters of the list (label, filter, sort, search)
+     */
     params: ElementsCacheParams;
+
+    /**
+     * Current page number
+     */
     page: number;
+
+    /**
+     * List of page number currently in the cache
+     */
     pages: number[];
-    total: number;
+
+    /**
+     * Total of elements returned by the current request
+     * Undefined before the request return
+     * Warning, if the user perform move actions, this value can be hugely outdated
+     */
+    total: number | undefined;
+
+    /**
+     * Actual cache of elements indexed by there ids
+     * Contains all elements loaded since last cache reset
+     */
     elements: { [ID: string]: Element };
+
+    /**
+     * List of element's id which have been updated by recent events
+     */
     updatedElements: string[];
+
+    /**
+     * List of element's id which are allowed to bypass the current filter
+     */
     bypassFilter: string[];
+
+    /**
+     * Retry data about the last request
+     * Keeps track of the last request to count the number of attemps
+     */
     retry: RetryData;
 }
 
