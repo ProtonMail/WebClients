@@ -12,12 +12,6 @@ export interface Sort {
     desc: boolean;
 }
 
-export interface Page {
-    page: number;
-    total: number;
-    size: number;
-}
-
 export interface SearchParameters {
     address?: string;
     from?: string;

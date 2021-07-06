@@ -9,7 +9,7 @@ import EmptyView from '../view/EmptyView';
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
 import { Breakpoints } from '../../models/utils';
-import { Page, Sort, Filter } from '../../models/tools';
+import { Sort, Filter } from '../../models/tools';
 import { usePaging } from '../../hooks/usePaging';
 import ListSettings from './ListSettings';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -34,7 +34,8 @@ interface Props {
     conversationMode: boolean;
     isSearch: boolean;
     breakpoints: Breakpoints;
-    page: Page;
+    page: number;
+    total: number | undefined;
     onPage: (page: number) => void;
     sort: Sort;
     onSort: (sort: Sort) => void;
@@ -59,6 +60,7 @@ const List = (
         isSearch,
         breakpoints,
         page: inputPage,
+        total: inputTotal,
         onPage,
         onFocus,
         onCheckOne,
@@ -76,7 +78,7 @@ const List = (
     const { dbExists, esEnabled, isSearchPartial, isCacheLimited, isSearching } = getESDBStatus();
 
     const elements = usePlaceholders(inputElements, loading, placeholderCount);
-    const pagingHandlers = usePaging(inputPage, onPage);
+    const pagingHandlers = usePaging(inputPage, inputTotal, onPage);
     const { page, total } = pagingHandlers;
 
     // Scroll top when changing page
