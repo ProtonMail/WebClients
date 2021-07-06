@@ -13,6 +13,7 @@ export const ATTACHMENT_MAX_SIZE = 25000000; // bytes -> 25MB
 export const LARGE_KEY_SIZE = 50 * 1024;
 export const LOAD_RETRY_COUNT = 3;
 export const LOAD_RETRY_DELAY = 3000; // in ms => 3s
+export const PREVENT_CANCEL_SEND_INTERVAL = 30000; // Prevent form cancelling a message about to be sent 30s before
 
 export const UNDO_SEND_DELAY = 5000;
 
