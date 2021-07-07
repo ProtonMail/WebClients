@@ -1,8 +1,8 @@
+import { c } from 'ttag';
 import {
     FREQUENCY,
     MAX_LENGTHS,
     MAX_NOTIFICATIONS,
-    SETTINGS_NOTIFICATION_TYPE,
     CALENDAR_INPUT_ID,
     DESCRIPTION_INPUT_ID,
     FREQUENCY_INPUT_ID,
@@ -17,9 +17,9 @@ import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { Address } from '@proton/shared/lib/interfaces';
 
 import { EventModel, EventModelErrors, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
-import { HTMLAttributes } from 'react';
-import { Alert, classnames, Input, Notifications, TextArea } from '@proton/components';
-import { c } from 'ttag';
+import { HTMLAttributes, useRef } from 'react';
+import { Alert, classnames, FeatureCode, Input, Notifications, TextArea, useFeature } from '@proton/components';
+import { isEmailNotification } from '@proton/shared/lib/calendar/alarms';
 
 import createHandlers from './eventForm/createPropFactory';
 import IconRow from './IconRow';
@@ -87,9 +87,15 @@ const EventForm = ({
     const canChangeCalendar = isOrganizer ? !model.organizer : !isSingleEdit;
     const notifications = isAllDay ? fullDayNotifications : partDayNotifications;
     const canAddNotifications = notifications.length < MAX_NOTIFICATIONS;
-    const showNotifications =
-        canAddNotifications || notifications.some(({ type }) => type === SETTINGS_NOTIFICATION_TYPE.DEVICE);
+    const showNotifications = canAddNotifications || notifications.length;
     const isOrganizerDisabled = !isSubscribedCalendar && isOrganizer && !isSelfAddressActive;
+    // email notification editing needs to be possible for events that initially have them
+    // and since the model is updated onChange, the ref makes sure it is possible even if you
+    // delete the only email notification
+    const emailNotificationsEnabled = useRef(
+        !!useFeature(FeatureCode.CalendarEmailNotificationEnabled)?.feature?.Value ||
+            notifications.some(isEmailNotification)
+    ).current;
 
     const dateRow = isMinimal ? (
         <MiniDateTimeRows
@@ -184,6 +190,7 @@ const EventForm = ({
         <IconRow id={NOTIFICATION_INPUT_ID} icon="notifications-enabled" title={c('Label').t`Event notifications`}>
             {isAllDay ? (
                 <Notifications
+                    hasType={emailNotificationsEnabled}
                     {...{
                         errors,
                         canAdd: canAddNotifications,
@@ -203,6 +210,7 @@ const EventForm = ({
                 />
             ) : (
                 <Notifications
+                    hasType={emailNotificationsEnabled}
                     {...{
                         errors,
                         canAdd: canAddNotifications,

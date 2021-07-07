@@ -321,10 +321,9 @@ export const getEventWithCalendarAlarms = (vevent: VcalVeventComponent, calendar
         ? calendarSettings.DefaultFullDayNotifications
         : calendarSettings.DefaultPartDayNotifications;
     const valarmComponents = notifications
-        .filter(({ Type }) => Type === SETTINGS_NOTIFICATION_TYPE.DEVICE)
-        .map<VcalValarmComponent>(({ Trigger }) => ({
+        .map<VcalValarmComponent>(({ Trigger, Type }) => ({
             component: 'valarm',
-            action: { value: 'DISPLAY' },
+            action: { value: Type === SETTINGS_NOTIFICATION_TYPE.EMAIL ? 'EMAIL' : 'DISPLAY' },
             trigger: { value: fromTriggerString(Trigger) },
         }));
 

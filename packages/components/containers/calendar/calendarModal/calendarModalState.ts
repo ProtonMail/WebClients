@@ -12,25 +12,28 @@ import {
 import { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
 import { modelToNotifications } from '@proton/shared/lib/calendar/modelToNotifications';
 import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
-import { DEFAULT_EVENT_DURATION, SETTINGS_NOTIFICATION_TYPE } from '@proton/shared/lib/calendar/constants';
+import { DEFAULT_EVENT_DURATION } from '@proton/shared/lib/calendar/constants';
 import {
     DEFAULT_FULL_DAY_NOTIFICATION,
     DEFAULT_FULL_DAY_NOTIFICATIONS,
     DEFAULT_PART_DAY_NOTIFICATION,
     DEFAULT_PART_DAY_NOTIFICATIONS,
 } from '@proton/shared/lib/calendar/notificationDefaults';
+import { getDeviceNotifications } from '@proton/shared/lib/calendar/notificationModel';
 
 interface GetCalendarModelArguments {
     Calendar: Calendar;
     CalendarSettings: CalendarSettings;
     Addresses: Address[];
     AddressID: string;
+    emailNotificationsEnabled?: boolean;
 }
 export const getCalendarModel = ({
     Calendar,
     CalendarSettings,
     Addresses,
     AddressID,
+    emailNotificationsEnabled,
 }: GetCalendarModelArguments): Partial<CalendarViewModelFull> => {
     const {
         DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
@@ -38,16 +41,8 @@ export const getCalendarModel = ({
         DefaultEventDuration = DEFAULT_EVENT_DURATION,
     } = CalendarSettings;
 
-    const partDayNotifications = notificationsToModel(DefaultPartDayNotifications, false);
-    const fullDayNotifications = notificationsToModel(DefaultFullDayNotifications, true);
-
-    // Filter out any email notifications because they are currently not supported.
-    const devicePartDayNotifications = partDayNotifications.filter(
-        ({ type }) => type === SETTINGS_NOTIFICATION_TYPE.DEVICE
-    );
-    const deviceFullDayNotifications = fullDayNotifications.filter(
-        ({ type }) => type === SETTINGS_NOTIFICATION_TYPE.DEVICE
-    );
+    const partDayNotifications = emailNotificationsEnabled ? notificationsToModel(DefaultPartDayNotifications, false) : getDeviceNotifications(notificationsToModel(DefaultPartDayNotifications, false));
+    const fullDayNotifications = emailNotificationsEnabled ? notificationsToModel(DefaultFullDayNotifications, true) : getDeviceNotifications(notificationsToModel(DefaultFullDayNotifications, true));
 
     return {
         calendarID: Calendar.ID,
@@ -58,13 +53,13 @@ export const getCalendarModel = ({
         addressID: AddressID,
         addressOptions: Addresses.map(({ ID, Email = '' }) => ({ value: ID, text: Email })),
         duration: DefaultEventDuration,
-        partDayNotifications: devicePartDayNotifications,
-        fullDayNotifications: deviceFullDayNotifications,
+        partDayNotifications,
+        fullDayNotifications,
         type: Calendar.Type,
     };
 };
 
-export const getDefaultModel = (): CalendarViewModelFull => {
+export const getDefaultModel = (emailNotificationsEnabled?: boolean): CalendarViewModelFull => {
     return {
         calendarID: '',
         name: '',
@@ -76,8 +71,8 @@ export const getDefaultModel = (): CalendarViewModelFull => {
         duration: DEFAULT_EVENT_DURATION,
         defaultPartDayNotification: DEFAULT_PART_DAY_NOTIFICATION,
         defaultFullDayNotification: DEFAULT_FULL_DAY_NOTIFICATION,
-        partDayNotifications: notificationsToModel(DEFAULT_PART_DAY_NOTIFICATIONS, false),
-        fullDayNotifications: notificationsToModel(DEFAULT_FULL_DAY_NOTIFICATIONS, true),
+        partDayNotifications: emailNotificationsEnabled ? notificationsToModel(DEFAULT_PART_DAY_NOTIFICATIONS, false) : getDeviceNotifications(notificationsToModel(DEFAULT_PART_DAY_NOTIFICATIONS, false)),
+        fullDayNotifications: emailNotificationsEnabled ? notificationsToModel(DEFAULT_FULL_DAY_NOTIFICATIONS, true) : getDeviceNotifications(notificationsToModel(DEFAULT_FULL_DAY_NOTIFICATIONS, true)),
         type: CALENDAR_TYPE.PERSONAL,
     };
 };

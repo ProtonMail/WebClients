@@ -59,9 +59,32 @@ const NotificationInput = ({
 
     return (
         <div className={classnames(['flex flex-nowrap flex-item-fluid on-mobile-flex-column', className])}>
+            {hasType && (
+                <span
+                    className={classnames([
+                        'flex flex-nowrap flex-item-fluid on-mobile-mt0-5 on-mobile-mb0-5 mr0-5',
+                        isAllDay && at ? 'on-tiny-mobile-ml0' : 'on-mobile-ml0',
+                    ])}
+                >
+                    <SelectTwo
+                        value={type}
+                        onChange={({ value }) => onChange({ ...notification, type: +value })}
+                        title={c('Title').t`Select the way to send this notification`}
+                        {...errorProps}
+                    >
+                        {[
+                            { text: c('Notification type').t`notification`, value: DEVICE },
+                            { text: c('Notification type').t`email`, value: EMAIL },
+                            // { text: c('Notification type').t`both notification and email`, value: BOTH },
+                        ].map(({ value, text }) => (
+                            <Option key={value} value={value} title={text} />
+                        ))}
+                    </SelectTwo>
+                </span>
+            )}
             <span className="flex flex-nowrap flex-item-fluid">
                 {hasValueInput && (
-                    <span className="flex-item-fluid mr0-5">
+                    <span className="flex-item-noshrink mr0-5 w5e">
                         <IntegerInput
                             id={NOTIFICATION_INPUT_ID}
                             data-test-id="notification-time-input"
@@ -108,7 +131,7 @@ const NotificationInput = ({
                     ))}
                 </SelectTwo>
             </span>
-            {((isAllDay && at) || hasType) && (
+            {isAllDay && at && (
                 <span className="flex on-tiny-mobile-flex-column flex-nowrap flex-item-fluid">
                     {isAllDay && at && (
                         <span className="flex flex-nowrap flex-item-fluid flex-align-items-center on-mobile-mt0-5">
@@ -121,29 +144,6 @@ const NotificationInput = ({
                                 title={c('Title').t`Select the time to send this notification`}
                                 {...errorProps}
                             />
-                        </span>
-                    )}
-                    {hasType && (
-                        <span
-                            className={classnames([
-                                'flex flex-nowrap flex-item-fluid on-mobile-mt0-5 ml0-5',
-                                isAllDay && at ? 'on-tiny-mobile-ml0' : 'on-mobile-ml0',
-                            ])}
-                        >
-                            <SelectTwo
-                                value={type}
-                                onChange={({ value }) => onChange({ ...notification, type: +value })}
-                                title={c('Title').t`Select the way to send this notification`}
-                                {...errorProps}
-                            >
-                                {[
-                                    { text: c('Notification type').t`via notification`, value: DEVICE },
-                                    { text: c('Notification type').t`by email`, value: EMAIL },
-                                    // { text: c('Notification type').t`both notification and email`, value: BOTH },
-                                ].map(({ value, text }) => (
-                                    <Option value={value} title={text} />
-                                ))}
-                            </SelectTwo>
                         </span>
                     )}
                 </span>

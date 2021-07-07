@@ -244,6 +244,8 @@ const InteractiveCalendarView = ({
     const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
     const getSendIcsPreferencesMap = useGetMapSendIcsPreferences();
 
+    const emailNotificationsEnabled = !!useFeature(FeatureCode.CalendarEmailNotificationEnabled)?.feature?.Value;
+
     const getEventDecrypted = (eventData: CalendarEvent): Promise<DecryptedEventTupleResult> => {
         return Promise.all([
             getCalendarEventRaw(eventData),
@@ -351,6 +353,7 @@ const InteractiveCalendarView = ({
             isAllDay,
             tzid,
             attendees,
+            emailNotificationsEnabled,
         });
     };
 
