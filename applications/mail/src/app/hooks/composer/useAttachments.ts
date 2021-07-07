@@ -1,6 +1,6 @@
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import { useApi, useNotifications, useAuthentication, useHandler } from '@proton/components';
 import { c } from 'ttag';
 import { removeAttachment } from '@proton/shared/lib/api/attachments';
@@ -185,31 +185,30 @@ export const useAttachments = (
     /**
      * Remove an existing attachment, deal with potential embedded image
      */
-    const handleRemoveAttachment = useCallback(
-        async (attachment: Attachment) => {
-            await api(removeAttachment(attachment.ID || '', message.data?.ID || ''));
+    const handleRemoveAttachment = useHandler(async (attachment: Attachment) => {
+        if (attachment.ID && message.data?.ID) {
+            await api(removeAttachment(attachment.ID, message.data.ID));
+        }
 
-            onChange((message: MessageExtended) => {
-                const Attachments = message.data?.Attachments?.filter((a: Attachment) => a.ID !== attachment.ID) || [];
+        onChange((message: MessageExtended) => {
+            const Attachments = message.data?.Attachments?.filter((a: Attachment) => a.ID !== attachment.ID) || [];
 
-                const cid = readCID(attachment);
-                const embeddedImages = getEmbeddedImages(message);
-                const embeddedImage = embeddedImages.find((image) => image.cid === cid);
-                const newEmbeddedImages = embeddedImages.filter((image) => image.cid !== cid);
+            const cid = readCID(attachment);
+            const embeddedImages = getEmbeddedImages(message);
+            const embeddedImage = embeddedImages.find((image) => image.cid === cid);
+            const newEmbeddedImages = embeddedImages.filter((image) => image.cid !== cid);
 
-                if (embeddedImage) {
-                    setTimeout(() => {
-                        editorActionsRef.current?.removeEmbedded(embeddedImage.attachment);
-                    });
-                }
+            if (embeddedImage) {
+                setTimeout(() => {
+                    editorActionsRef.current?.removeEmbedded(embeddedImage.attachment);
+                });
+            }
 
-                const messageImages = updateImages(message.messageImages, undefined, undefined, newEmbeddedImages);
+            const messageImages = updateImages(message.messageImages, undefined, undefined, newEmbeddedImages);
 
-                return { data: { Attachments }, messageImages };
-            });
-        },
-        [onChange]
-    );
+            return { data: { Attachments }, messageImages };
+        });
+    });
 
     /**
      * Cancel pending upload
