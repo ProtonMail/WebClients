@@ -112,6 +112,30 @@ const SquireEditorWrapper = ({
         return editorContent;
     });
 
+    // Watch for image deletion
+    // Angular/src/app/squire/services/removeInlineWatcher.js
+    const checkImageDeletion = useHandler(
+        () => {
+            // Debounce event can be triggered after composer is closed
+            if (!isMounted()) {
+                return;
+            }
+            const newCIDs = findCIDsInContent(handleGetContent());
+            const removedCIDs = diff(cids, newCIDs);
+            console.log('checkImageDeletion', { newCIDs, removedCIDs, embeddedImages: getEmbeddedImages(message) });
+            removedCIDs.forEach((cid) => {
+                // const info = message.embeddeds?.get(cid);
+                const embeddedImages = getEmbeddedImages(message);
+                const attachment = embeddedImages.find((image) => image.cid === cid)?.attachment;
+                if (attachment) {
+                    void onRemoveAttachment(attachment);
+                }
+            });
+            setCIDs(newCIDs);
+        },
+        { debounce: 500 }
+    );
+
     const handleSetContent = (message: MessageExtended) => {
         let content;
 
@@ -134,6 +158,8 @@ const SquireEditorWrapper = ({
         if (squireEditorRef.current) {
             squireEditorRef.current.value = content;
         }
+
+        checkImageDeletion();
     };
 
     // Initialize Squire (or textarea) content at (and only) startup
@@ -153,29 +179,6 @@ const SquireEditorWrapper = ({
             onChangeContent(handleGetContent(), false, true);
         }
     }, [documentReady, isPlainText, editorReady, blockquoteSaved !== undefined]);
-
-    // Watch for image deletion
-    // Angular/src/app/squire/services/removeInlineWatcher.js
-    const checkImageDeletion = useHandler(
-        () => {
-            // Debounce event can be triggered after composer is closed
-            if (!isMounted()) {
-                return;
-            }
-            const newCIDs = findCIDsInContent(squireEditorRef.current?.value || '');
-            const removedCIDs = diff(cids, newCIDs);
-            removedCIDs.forEach((cid) => {
-                // const info = message.embeddeds?.get(cid);
-                const embeddedImages = getEmbeddedImages(message);
-                const attachment = embeddedImages.find((image) => image.cid === cid)?.attachment;
-                if (attachment) {
-                    void onRemoveAttachment(attachment);
-                }
-            });
-            setCIDs(newCIDs);
-        },
-        { debounce: 500 }
-    );
 
     // Handle input considering blockquote
     const handleInput = useCallback(
