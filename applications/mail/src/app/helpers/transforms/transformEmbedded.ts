@@ -21,12 +21,20 @@ export const transformEmbedded = async (
     const showEmbeddedImages =
         message.messageImages?.showEmbeddedImages === true || hasShowEmbedded(mailSettings) || draft;
 
+    const existingEmbeddedImage = getEmbeddedImages(message);
     let newEmbeddedImages: MessageEmbeddedImage[] = [];
 
     if (message.document) {
         newEmbeddedImages = getAttachments(message.data)
             .map((attachment) => {
                 const cid = readCID(attachment);
+
+                const existing = existingEmbeddedImage.find((embeddedImage) => embeddedImage.cid === cid);
+
+                if (existing) {
+                    return [];
+                }
+
                 const matches = findEmbedded(cid, message.document as Element);
                 return matches.map((match) => {
                     const id = generateUID('embedded');
@@ -46,7 +54,7 @@ export const transformEmbedded = async (
             .flat();
     }
 
-    let embeddedImages = [...getEmbeddedImages(message), ...newEmbeddedImages];
+    let embeddedImages = [...existingEmbeddedImage, ...newEmbeddedImages];
 
     const hasEmbeddedImages = !!embeddedImages.length;
 
