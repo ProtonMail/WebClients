@@ -369,6 +369,8 @@ const CalendarContainerView = ({
                                     .t`${calendarAppName} has been added to the Proton suite. We would love to hear what you think about it!`}
                                 scaleTitle={c('Label')
                                     .t`How likely are you to recommend ${calendarAppName} to a friend or colleague?`}
+                                scaleFromLabel={c('Label').t`0 - Not likely`}
+                                scaleToLabel={c('Label').t`10 - Extremely likely`}
                             />
                         }
                     />
