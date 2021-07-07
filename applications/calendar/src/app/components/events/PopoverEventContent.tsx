@@ -1,4 +1,3 @@
-import { filterEmailNotifications } from '@proton/shared/lib/calendar/alarms';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/integration/getFrequencyString';
@@ -79,7 +78,6 @@ const PopoverEventContent = ({
         const description = urlify(model.description.trim());
         return sanitizeDescription(description);
     }, [model.description]);
-    const displayNotifications = filterEmailNotifications(model.notifications);
 
     const frequencyString = useMemo(() => {
         const [{ veventComponent: eventComponent }] = eventReadResult?.result || [{}];
@@ -151,11 +149,11 @@ const PopoverEventContent = ({
                     {calendarString}
                 </div>
             ) : null}
-            {displayNotifications?.length ? (
+            {model.notifications?.length ? (
                 <div className={wrapClassName}>
                     <Icon name="notifications-enabled" className={iconClassName} />
                     <div className="flex flex-column">
-                        {displayNotifications.map((notification) => (
+                        {model.notifications.map((notification) => (
                             <PopoverNotification
                                 key={notification.id}
                                 notification={notification}

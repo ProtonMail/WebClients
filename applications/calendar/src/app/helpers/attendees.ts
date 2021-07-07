@@ -3,8 +3,6 @@ import { c } from 'ttag';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { CalendarSettings, EventModel } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-
-import { getDeviceNotifications } from '@proton/shared/lib/calendar/notificationModel';
 import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
 import { DisplayNameEmail } from '../containers/calendar/interface';
 
@@ -39,8 +37,8 @@ export const modifyEventModelPartstat = (
     const { DefaultPartDayNotifications, DefaultFullDayNotifications } = calendarSettings;
     return {
         ...modelWithPartstat,
-        partDayNotifications: getDeviceNotifications(notificationsToModel(DefaultPartDayNotifications, false)),
-        fullDayNotifications: getDeviceNotifications(notificationsToModel(DefaultFullDayNotifications, true)),
+        partDayNotifications: notificationsToModel(DefaultPartDayNotifications, false),
+        fullDayNotifications: notificationsToModel(DefaultFullDayNotifications, true),
     };
 };
 

@@ -1,13 +1,23 @@
 import isTruthy from '../../helpers/isTruthy';
+import { normalize } from '../../helpers/string';
 import {
     DateTimeValue,
     VcalDateOrDateTimeProperty,
+    VcalStringProperty,
     VcalValarmComponent,
     VcalValarmRelativeComponent,
 } from '../../interfaces/calendar';
 import { MAX_NOTIFICATIONS, NOTIFICATION_UNITS, NOTIFICATION_UNITS_MAX } from '../constants';
 import { getIsAbsoluteTrigger, normalizeDurationToUnit, normalizeTrigger } from '../trigger';
 import { getIsDateTimeValue, getIsPropertyAllDay } from '../vcalHelper';
+
+const getSupportedAlarmAction = (action: VcalStringProperty) => {
+    if (normalize(action.value) === 'email') {
+        return { value: 'EMAIL' };
+    }
+
+    return { value: 'DISPLAY' };
+};
 
 /**
  * Determine if a VALARM component is correct according to the RFC
@@ -48,9 +58,6 @@ export const getSupportedAlarm = (
     if (!getIsAbsoluteTrigger(trigger) && trigger.parameters?.related?.toLocaleLowerCase() === 'end') {
         return;
     }
-    if (alarm.action.value === 'EMAIL') {
-        return;
-    }
 
     const normalizedTrigger = normalizeTrigger(trigger, dtstart);
     const triggerDurationInSeconds = normalizeDurationToUnit(normalizedTrigger, 1);
@@ -71,7 +78,7 @@ export const getSupportedAlarm = (
 
     return {
         component: 'valarm',
-        action: { value: 'DISPLAY' },
+        action: getSupportedAlarmAction(alarm.action),
         trigger: { value: normalizedTrigger },
     };
 };

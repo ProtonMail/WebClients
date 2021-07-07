@@ -94,9 +94,9 @@ const useSubscribedCalendars = (calendars: Calendar[]) => {
         return calendarSubscribe(
             calendarIDs,
             ({
-                CalendarSubscription: CalendarSubscriptionEvents = [],
+                CalendarSubscriptions: CalendarSubscriptionEvents = [],
             }: {
-                CalendarSubscription?: CalendarSubscriptionEventManager[];
+                CalendarSubscriptions?: CalendarSubscriptionEventManager[];
             }) => {
                 CalendarSubscriptionEvents.forEach((calendarSubscriptionChange) => {
                     if (getIsCalendarSubscriptionEventManagerUpdate(calendarSubscriptionChange)) {

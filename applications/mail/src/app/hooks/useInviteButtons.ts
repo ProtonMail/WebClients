@@ -2,6 +2,7 @@ import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/c
 import {
     createInviteIcs,
     generateEmailBody,
+    getEventWithCalendarAlarms,
     getParticipantHasAddressID,
 } from '@proton/shared/lib/calendar/integration/invite';
 import { getProdId } from '@proton/shared/lib/calendar/vcalHelper';
@@ -88,6 +89,7 @@ const useInviteButtons = ({
     const sendReplyEmail = useCallback(
         async (partstat: ICAL_ATTENDEE_STATUS, timestamp: number) => {
             const vevent = veventApi || veventIcs;
+            const veventWithAlarms = calendarData?.calendarSettings ? getEventWithCalendarAlarms(vevent, calendarData.calendarSettings) : vevent;
             if (!vevent || !attendee || !getParticipantHasAddressID(attendee) || !organizer || !config) {
                 onUnexpectedError();
                 return false;
@@ -104,7 +106,7 @@ const useInviteButtons = ({
                 const ics = createInviteIcs({
                     method: ICAL_METHOD.REPLY,
                     prodId,
-                    vevent: withDtstamp(omit(vevent, ['dtstamp']), timestamp),
+                    vevent: withDtstamp(omit(veventWithAlarms, ['dtstamp']), timestamp),
                     attendeesTo: [attendeeWithPartstat],
                     keepDtstamp: true,
                 });
@@ -118,7 +120,7 @@ const useInviteButtons = ({
                     subject,
                     plainTextBody: generateEmailBody({
                         method: ICAL_METHOD.REPLY,
-                        vevent,
+                        vevent: veventWithAlarms,
                         emailAddress: attendee.emailAddress,
                         partstat,
                     }),
