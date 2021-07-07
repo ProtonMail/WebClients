@@ -1,3 +1,24 @@
+## Release: 4.0.2 — July 14, 2021
+
+### Improvements
+
+-   Removed automatic domain suggestions in the autocomplete dropdown in the composer so that only saved contacts are now appearing as suggestions
+-   Added the ability to change the mailbox layout, density and composer mode from the top navigation bar ("Settings" menu)
+-   Updated attachment icons
+-   Improved the display of remote and embedded images that are not loaded inside an email
+-   Improved the messaging for cases where remote content cannot be loaded due to a certificate validity issue on sender's side
+-   Improved error messaging for cases when a key associated with a calendar is deleted
+-   Improved error messaging for cases where too many search results are found and the search needs to be further limited
+-   Added headings to the Contacts widget to improve accessibility
+-   Removed icons indicating Sent and Draft messages inside the Sent and Draft locations
+
+### Bug fixes
+
+-   Fixed an issue where the message format would be broken if changing from HTML to default composer mode back and forth several times
+-   Fixed an issue where in some cases, embedded images would not be removed if deleting respective placeholders when forwarding an email
+-   Fixed an issue where the translated version of a folder title would not be displayed inside the browser tab page title
+-   Fixed an issue where an English version of a confirmation modal would be displayed for non-English versions
+
 ## Release: 4.0.1 — June 16, 2021
 
 ### Improvements
