@@ -523,6 +523,14 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
             field: 'lang',
         });
     }
+    if (property === 'member') {
+        return (value: ContactValue) => ({
+            header,
+            value,
+            checked: true,
+            field: 'member',
+        });
+    }
     if (property === 'notes' || property.includes('custom field')) {
         return (value: ContactValue) => ({
             header,

@@ -140,11 +140,7 @@ export const getTypeLabels = () => ({
 });
 
 export const getAllTypes: () => { [key: string]: { text: string; value: string }[] } = () => ({
-    fn: [
-        { text: c('Property type').t`Name`, value: '' },
-        // translator: Yomi name is a field for entering the phonetic equivalent for Japanese names
-        { text: c('Property type').t`Yomi`, value: 'yomi' },
-    ],
+    fn: [{ text: c('Property type').t`Name`, value: '' }],
     email: [
         { text: c('Property type').t`Email`, value: '' },
         { text: c('Property type').t`Home`, value: 'home' },
