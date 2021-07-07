@@ -65,8 +65,12 @@ const InsertImageModal = ({ onAddUrl, onAddImages, onClose, ...rest }: Props) =>
             onClose={onClose}
             footer={
                 <>
-                    <Button type="reset">{c('Action').t`Cancel`}</Button>
-                    <PrimaryButton type="submit" disabled={imageState !== ImageState.Ok}>
+                    <Button type="reset" data-testid="insert-image:cancel">{c('Action').t`Cancel`}</Button>
+                    <PrimaryButton
+                        type="submit"
+                        disabled={imageState !== ImageState.Ok}
+                        data-testid="insert-image:save"
+                    >
                         {c('Action').t`Save`}
                     </PrimaryButton>
                 </>
@@ -83,12 +87,13 @@ const InsertImageModal = ({ onAddUrl, onAddImages, onClose, ...rest }: Props) =>
                         placeholder={c('Info').t`Image URL`}
                         error={imageState === ImageState.Error ? c('Info').t`Not a valid URL` : undefined}
                         onChange={handleChange}
+                        data-testid="insert-image:url"
                     />
                 </div>
             </div>
             <div className="flex flex-nowrap mb1 on-mobile-flex-column">
                 <Label htmlFor={`editor-image-upload-${uid}`}>{c('Info').t`Upload picture`}</Label>
-                <div className="flex-item-fluid">
+                <div className="flex-item-fluid" data-testid="insert-image:upload">
                     <FileButton
                         id={`editor-image-upload-${uid}`}
                         className="inline-flex relative flex-align-items-center"
