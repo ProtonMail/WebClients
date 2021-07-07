@@ -5,7 +5,7 @@ import { getRecipients, getRecipientsAddresses } from '@proton/shared/lib/mail/m
 import React, { useCallback } from 'react';
 import { c, msgid } from 'ttag';
 import { unique } from '@proton/shared/lib/helpers/array';
-import { useGetEncryptionPreferences, useModals, ConfirmModal, Alert, useNotifications } from '@proton/components';
+import { useGetEncryptionPreferences, useModals, ConfirmModal, Alert } from '@proton/components';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import { HOUR } from '@proton/shared/lib/constants';
@@ -21,7 +21,6 @@ import { MapSendInfo } from '../../models/crypto';
 
 export const useSendVerifications = () => {
     const { createModal } = useModals();
-    const { createNotification } = useNotifications();
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const { contactsMap } = useContactCache();
 
@@ -59,6 +58,38 @@ export const useSendVerifications = () => {
                 );
             });
         }
+
+        const uniqueMessage = {
+            ...message,
+            data: uniqueMessageRecipients(message.data),
+        };
+        const emails = unique(getRecipientsAddresses(uniqueMessage.data));
+
+        // Invalid addresses
+        const invalids = emails.filter((email) => !validateEmailAddress(email));
+
+        if (invalids.length > 0) {
+            const invalidAddresses = invalids.join(', ');
+            await new Promise((resolve, reject) => {
+                createModal(
+                    <ConfirmModal
+                        onConfirm={reject}
+                        onClose={reject}
+                        title={invalids.length > 1 ? c('Title').t`Invalid recipients` : c('Title').t`Invalid recipient`}
+                        confirm={c('Action').t`OK`}
+                        cancel={null}
+                    >
+                        <Alert type="warning">
+                            {c('Send email with warnings').ngettext(
+                                msgid`The following address is not valid: ${invalidAddresses}`,
+                                `The following addresses are not valid: ${invalidAddresses}`,
+                                invalids.length
+                            )}
+                        </Alert>
+                    </ConfirmModal>
+                );
+            });
+        }
     }, []);
 
     const extendedVerifications = useCallback(
@@ -75,21 +106,6 @@ export const useSendVerifications = () => {
                 data: uniqueMessageRecipients(message.data),
             };
             const emails = unique(getRecipientsAddresses(uniqueMessage.data));
-
-            // Invalid addresses
-            const invalids = emails.filter((email) => !validateEmailAddress(email));
-            if (invalids.length > 0) {
-                const invalidAddresses = invalids.join(', ');
-                createNotification({
-                    text: c('Send email with warnings').ngettext(
-                        msgid`The following address is not valid: ${invalidAddresses}`,
-                        `The following addresses are not valid: ${invalidAddresses}`,
-                        invalids.length
-                    ),
-                    type: 'error',
-                });
-                throw new Error();
-            }
 
             const emailWarnings: { [email: string]: string[] } = {};
             const mapSendPrefs: SimpleMap<SendPreferences> = {};
