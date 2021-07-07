@@ -35,6 +35,7 @@ interface Props extends Omit<InputProps, 'min' | 'max' | 'value' | 'onChange'> {
     onChange: (value: Date | undefined) => void;
     // In some cases we want to prevent the 'reset' of the value, if value > max or < min
     preventValueReset?: boolean;
+    customInputFormat?: (value: Date, locale: Locale) => string;
 }
 const DateInput = ({
     value,
@@ -50,6 +51,7 @@ const DateInput = ({
     min = DEFAULT_MIN,
     max = DEFAULT_MAX,
     preventValueReset = false,
+    customInputFormat,
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
@@ -63,7 +65,15 @@ const DateInput = ({
     }, [value ? +value : undefined]);
 
     const currentInput = useMemo(() => {
-        return value ? toFormatted(value, dateLocale) : '';
+        if (!value) {
+            return '';
+        }
+
+        if (typeof customInputFormat === 'function') {
+            return customInputFormat(value, dateLocale);
+        }
+
+        return toFormatted(value, dateLocale);
     }, [value ? +value : undefined]);
 
     const temporaryValue = useMemo(() => {

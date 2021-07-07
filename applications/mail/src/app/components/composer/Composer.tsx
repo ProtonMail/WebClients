@@ -35,6 +35,7 @@ import { mergeMessages } from '../../helpers/message/messages';
 import { getContent, setContent } from '../../helpers/message/messageContent';
 import ComposerPasswordModal from './ComposerPasswordModal';
 import ComposerExpirationModal from './ComposerExpirationModal';
+import ComposerScheduleSendModal from './ComposerScheduleSendModal';
 import { useMessage } from '../../hooks/message/useMessage';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
 import { useSaveDraft, useDeleteDraft } from '../../hooks/message/useSaveDraft';
@@ -55,11 +56,13 @@ import { useCloseHandler } from '../../hooks/composer/useCloseHandler';
 import { updateKeyPackets } from '../../helpers/attachment/attachment';
 import { Event } from '../../models/event';
 import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
+import { useSendVerifications } from '../../hooks/composer/useSendVerifications';
 
 enum ComposerInnerModal {
     None,
     Password,
     Expiration,
+    ScheduleSend,
 }
 
 export type MessageUpdate = PartialMessageExtended | ((message: MessageExtended) => PartialMessageExtended);
@@ -106,6 +109,8 @@ const Composer = (
     const messageCache = useMessageCache();
     const { createNotification } = useNotifications();
     const isMounted = useIsMounted();
+
+    const { preliminaryVerifications } = useSendVerifications();
 
     const bodyRef = useRef<HTMLDivElement>(null);
     const [hasVerticalScroll] = useHasScroll(bodyRef);
@@ -431,6 +436,10 @@ const Composer = (
     const handleExpiration = () => {
         setInnerModal(ComposerInnerModal.Expiration);
     };
+    const handleScheduleSendModal = async () => {
+        await preliminaryVerifications(modelMessage as MessageExtendedWithData);
+        setInnerModal(ComposerInnerModal.ScheduleSend);
+    };
     const handleCloseInnerModal = () => {
         setInnerModal(ComposerInnerModal.None);
     };
@@ -488,6 +497,9 @@ const Composer = (
         onClose,
     });
 
+    /* @todo implement actual schedule send */
+    const handleScheduleSend = (date: Date) => console.log('Email scheduled', date);
+
     useImperativeHandle(ref, () => ({
         close: handleClose,
     }));
@@ -531,6 +543,9 @@ const Composer = (
                     onClose={handleCloseInnerModal}
                     onChange={handleChange}
                 />
+            )}
+            {innerModal === ComposerInnerModal.ScheduleSend && (
+                <ComposerScheduleSendModal onClose={handleCloseInnerModal} onSubmit={handleScheduleSend} />
             )}
             <div
                 className={classnames([
@@ -583,6 +598,7 @@ const Composer = (
                     onAddAttachments={handleAddAttachmentsStart}
                     onExpiration={handleExpiration}
                     onPassword={handlePassword}
+                    onScheduleSendModal={handleScheduleSendModal}
                     onSend={handleSend}
                     onDelete={handleDelete}
                     addressesBlurRef={addressesBlurRef}

@@ -17,9 +17,10 @@ interface Props {
     children?: ReactNode;
     onCancel: () => void;
     onSubmit: () => void;
+    submit?: ReactNode;
 }
 
-const ComposerInnerModal = ({ title, disabled = false, children, onCancel, onSubmit }: Props) => {
+const ComposerInnerModal = ({ title, disabled = false, children, onCancel, onSubmit, submit }: Props) => {
     const rootRef = useRef<HTMLDivElement>(null);
     const focusTrapProps = useFocusTrap({
         rootRef,
@@ -52,7 +53,7 @@ const ComposerInnerModal = ({ title, disabled = false, children, onCancel, onSub
                             {c('Action').t`Cancel`}
                         </Button>
                         <PrimaryButton type="submit" disabled={disabled} data-testid="modal-footer:set-button">
-                            {c('Action').t`Set`}
+                            {submit || c('Action').t`Set`}
                         </PrimaryButton>
                     </FooterModal>
                 </ContentModal>

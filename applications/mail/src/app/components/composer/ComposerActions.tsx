@@ -30,6 +30,7 @@ interface Props {
     onAddAttachments: (files: File[]) => void;
     onPassword: () => void;
     onExpiration: () => void;
+    onScheduleSendModal: () => void;
     onSend: () => Promise<void>;
     onDelete: () => Promise<void>;
     addressesBlurRef: MutableRefObject<() => void>;
@@ -46,6 +47,7 @@ const ComposerActions = ({
     onAddAttachments,
     onPassword,
     onExpiration,
+    onScheduleSendModal,
     onSend,
     onDelete,
     addressesBlurRef,
@@ -155,6 +157,7 @@ const ComposerActions = ({
                     <span className="pl1 pr1">{c('Action').t`Schedule send`}</span>
                 </>
             ),
+            onClick: onScheduleSendModal,
         });
     }
 
