@@ -15,9 +15,19 @@ interface Props {
     feedbackType: string;
     description: string;
     scaleTitle: string;
+    scaleFromLabel: string;
+    scaleToLabel: string;
 }
 
-const FeedbackModal = ({ onClose, feedbackType, description, scaleTitle, ...rest }: Props) => {
+const FeedbackModal = ({
+    onClose,
+    feedbackType,
+    description,
+    scaleTitle,
+    scaleFromLabel,
+    scaleToLabel,
+    ...rest
+}: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -74,8 +84,8 @@ const FeedbackModal = ({ onClose, feedbackType, description, scaleTitle, ...rest
                     <Scale
                         from={0}
                         to={10}
-                        fromLabel={c('Label').t`0 - Not a fan`}
-                        toLabel={c('Label').t`10 - Love it!`}
+                        fromLabel={scaleFromLabel}
+                        toLabel={scaleToLabel}
                         value={model.Score}
                         InputButtonProps={{ 'aria-describedby': 'score-label' }}
                         onChange={handleScoreChange}
