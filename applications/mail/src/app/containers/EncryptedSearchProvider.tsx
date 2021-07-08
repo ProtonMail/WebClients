@@ -194,7 +194,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             }
             setItem(`ES:${userID}:ESEnabled`, 'true');
         }
-        canUseES(userID).then((isIDBIntact) => {
+        void canUseES(userID).then((isIDBIntact) => {
             if (!isIDBIntact) {
                 void dbCorruptError();
             }
