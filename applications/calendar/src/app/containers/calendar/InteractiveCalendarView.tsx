@@ -214,7 +214,6 @@ const InteractiveCalendarView = ({
     const getVTimezonesMap = useGetVtimezonesMap();
     const config = useConfig();
     const isSavingEvent = useRef(false);
-    const { feature: featureEnabledProtonProtonInvites } = useFeature(FeatureCode.EnabledProtonProtonInvites);
 
     const [eventModalID, setEventModalID] = useState();
 
@@ -720,7 +719,6 @@ const InteractiveCalendarView = ({
             contactEmailsMap,
             getVTimezonesMap,
             prodId,
-            enabledProtonProtonInvites: !!featureEnabledProtonProtonInvites?.Value,
             onRequestError,
             onReplyError,
             onCancelError,
