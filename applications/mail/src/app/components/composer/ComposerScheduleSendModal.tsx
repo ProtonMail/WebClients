@@ -31,7 +31,7 @@ const formatDateInput = (value: Date, locale: Locale) => {
 };
 interface Props {
     onClose: () => void;
-    onSubmit: (date: Date) => void;
+    onSubmit: (timestamp: number) => void;
 }
 
 const ComposerScheduleSendModal = ({ onClose, onSubmit }: Props) => {
@@ -66,11 +66,7 @@ const ComposerScheduleSendModal = ({ onClose, onSubmit }: Props) => {
     };
 
     const handleSubmit = () => {
-        console.log({
-            DeliveryTime: getUnixTime(scheduleDateTime),
-        });
-
-        onSubmit(scheduleDateTime);
+        onSubmit(getUnixTime(scheduleDateTime));
         onClose();
     };
 
@@ -105,13 +101,13 @@ const ComposerScheduleSendModal = ({ onClose, onSubmit }: Props) => {
         <ComposerInnerModal
             title={c('Title').t`Schedule send`}
             disabled={disabled}
-            submit={c('Action').t`Schedule send`}
+            submit={c('Action').t`Schedule message`}
             onSubmit={handleSubmit}
             onCancel={handleCancel}
         >
             {/* @todo update learn more link */}
             <Alert learnMore="https://protonmail.com/support/knowledge-base/">
-                {c('Info').t`Your email will be sent at a time defined below.`}
+                {c('Info').t`When do you want your message to be sent?`}
             </Alert>
 
             <div className="flex flex-nowrap mt2 flex-align-items-center on-mobile-flex-column">

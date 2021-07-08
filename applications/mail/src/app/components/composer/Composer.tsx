@@ -497,8 +497,13 @@ const Composer = (
         onClose,
     });
 
-    /* @todo implement actual schedule send */
-    const handleScheduleSend = (date: Date) => console.log('Email scheduled', date);
+    const handleScheduleSend = (scheduledAt: number) => {
+        setModelMessage({
+            ...modelMessage,
+            scheduledAt,
+        });
+        setTimeout(handleSend);
+    };
 
     useImperativeHandle(ref, () => ({
         close: handleClose,

@@ -100,19 +100,26 @@ export const useSendMessage = () => {
                 packages = await encryptPackages(message, messageKeys, packages);
 
                 // expiresIn is not saved on the API and then empty in `message`, we need to refer to `inputMessage`
-                const { expiresIn, autoSaveContacts } = inputMessage;
-                return api<{ Sent: Message; DeliveryTime: number }>(
-                    sendMessage(message.data?.ID, {
-                        Packages: packages,
-                        ExpiresIn: expiresIn === 0 ? undefined : expiresIn,
-                        DelaySeconds: delaySendSeconds, // Once the API receive this request, it calculates how much time the notification needs to be display
-                        AutoSaveContacts: autoSaveContacts,
-                    } as any)
-                );
+                const { expiresIn, autoSaveContacts, scheduledAt } = inputMessage;
+
+                const payload: any = {
+                    Packages: packages,
+                    ExpiresIn: expiresIn === 0 ? undefined : expiresIn,
+                    DelaySeconds: delaySendSeconds, // Once the API receive this request, it calculates how much time the notification needs to be display
+                    AutoSaveContacts: autoSaveContacts,
+                };
+
+                if (scheduledAt) {
+                    payload.DeliveryTime = scheduledAt;
+                }
+
+                return api<{ Sent: Message }>(sendMessage(message.data?.ID, payload));
             };
 
             const promise = prepareMessageToSend().then((result) => {
-                const delta = result.DeliveryTime * 1000 - Date.now();
+                const now = Date.now();
+                const delay = now + delaySendSeconds * 1000;
+                const delta = delay - now;
                 const undoTimeout = delta > 0 ? delta : 0;
                 return { ...result, undoTimeout };
             });

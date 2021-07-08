@@ -2,7 +2,7 @@ import React, { MouseEvent, ReactNode, useState } from 'react';
 import { c } from 'ttag';
 import { Info } from '../link';
 
-import ButtonGroup from '../button/ButtonGroup';
+import ButtonGroup, { Color, Shape } from '../button/ButtonGroup';
 import Button, { ButtonProps } from '../button/Button';
 import DropdownMenu from './DropdownMenu';
 import DropdownMenuButton, { Props as DropdownMenuButtonProps } from './DropdownMenuButton';
@@ -10,7 +10,6 @@ import SimpleDropdown from './SimpleDropdown';
 
 import { classnames, generateUID } from '../../helpers';
 import { Tooltip } from '../tooltip';
-import { Color } from '../button';
 
 const wrapTooltip = (text: string | ReactNode, tooltip?: string | ReactNode) => {
     if (!tooltip) {
@@ -41,6 +40,7 @@ interface Props extends ButtonProps {
     className?: string;
     autoFocus?: boolean;
     color?: Color;
+    shape?: Shape;
 }
 
 const DropdownActions = ({
@@ -51,6 +51,7 @@ const DropdownActions = ({
     autoFocus = false,
     size,
     color,
+    shape,
     ...restButtonProps
 }: Props) => {
     const [uid] = useState(generateUID('composer-send-button'));
@@ -91,7 +92,7 @@ const DropdownActions = ({
     };
 
     return (
-        <ButtonGroup color={color} size={size}>
+        <ButtonGroup shape={shape} color={color} size={size}>
             {isTextString ? (
                 <Button {...mainButtonProps}>{wrapTooltip(text, tooltip)}</Button>
             ) : (
