@@ -1,13 +1,23 @@
 import React, { forwardRef, Ref, useEffect, useRef } from 'react';
 import { c } from 'ttag';
 import { clearType, getType } from '@proton/shared/lib/contacts/property';
-import { ContactProperty, ContactPropertyChange } from '@proton/shared/lib/interfaces/contacts';
+import {
+    ContactEmail,
+    ContactEmailModel,
+    ContactProperty,
+    ContactPropertyChange,
+} from '@proton/shared/lib/interfaces/contacts';
 import { classnames } from '../../helpers';
 import ContactFieldProperty from './ContactFieldProperty';
 import ContactModalLabel from './ContactModalLabel';
 import Icon from '../icon/Icon';
 import { OrderableHandle } from '../orderable';
 import DropdownActions from '../dropdown/DropdownActions';
+import ContactGroupDropdown from '../../containers/contacts/ContactGroupDropdown';
+import Tooltip from '../tooltip/Tooltip';
+import { Button } from '../button';
+import ContactUpgradeModal from './ContactUpgradeModal';
+import { useModals, useUser } from '../../hooks';
 
 interface Props {
     property: ContactProperty;
@@ -20,6 +30,8 @@ interface Props {
     fixedType?: boolean;
     labelWidthClassName?: string;
     filteredTypes?: string[];
+    contactEmail?: ContactEmailModel;
+    onContactEmailChange?: (contactEmail: ContactEmailModel) => void;
 }
 
 const ContactModalRow = (
@@ -34,12 +46,16 @@ const ContactModalRow = (
         labelWidthClassName,
         fixedType,
         filteredTypes,
+        contactEmail,
+        onContactEmailChange,
     }: Props,
     ref: Ref<HTMLInputElement>
 ) => {
     const { field, value } = property;
     const type = clearType(getType(property.type));
     const canDelete = !(field === 'photo' && !value);
+    const [{ hasPaidMail }] = useUser();
+    const { createModal } = useModals();
     const prevField = useRef<string>();
     const fieldsToReset = ['bday', 'anniversary', 'photo', 'logo'];
 
@@ -58,6 +74,20 @@ const ContactModalRow = (
             },
         });
     }
+
+    const handleUpdateContactGroups = (changes: { [groupID: string]: boolean }) => {
+        if (contactEmail && onContactEmailChange) {
+            let LabelIDs = [...contactEmail.LabelIDs];
+            Object.entries(changes).forEach(([groupID, checked]) => {
+                if (checked) {
+                    LabelIDs.push(groupID);
+                } else {
+                    LabelIDs = contactEmail.LabelIDs.filter((id: string) => id !== groupID);
+                }
+            });
+            onContactEmailChange({ ...contactEmail, LabelIDs, changes: { ...contactEmail.changes, ...changes } });
+        }
+    };
 
     useEffect(() => {
         // Reset the value if coming from Birthday/Anniversary/Photo/Logo input
@@ -117,7 +147,7 @@ const ContactModalRow = (
                         />
                     </span>
                     {actionRow && (
-                        <span className="mb1 flex ml1">
+                        <span className="mb1 flex ml0-5">
                             {list.length > 0 && (
                                 <div
                                     className={classnames([
@@ -131,6 +161,32 @@ const ContactModalRow = (
                                             'flex-align-items-start',
                                     ])}
                                 >
+                                    {field === 'email' &&
+                                        (hasPaidMail ? (
+                                            <ContactGroupDropdown
+                                                icon
+                                                color="weak"
+                                                shape="outline"
+                                                className="mr0-5"
+                                                contactEmails={
+                                                    (contactEmail ? [contactEmail] : []) as any as ContactEmail[]
+                                                }
+                                                onDelayedSave={handleUpdateContactGroups}
+                                                tooltip={c('Title').t`Contact group`}
+                                            >
+                                                <Icon name="contacts-groups" alt={c('Action').t`Contact group`} />
+                                            </ContactGroupDropdown>
+                                        ) : (
+                                            <Tooltip title={c('Title').t`Contact group`}>
+                                                <Button
+                                                    icon
+                                                    onClick={() => createModal(<ContactUpgradeModal />)}
+                                                    className="mr0-5"
+                                                >
+                                                    <Icon name="contacts-groups" alt={c('Action').t`Contact group`} />
+                                                </Button>
+                                            </Tooltip>
+                                        ))}
                                     <DropdownActions icon list={list} />
                                 </div>
                             )}
