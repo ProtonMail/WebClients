@@ -73,12 +73,12 @@ const FeedbackModal = ({ onClose, feedbackType, description, scaleTitle, scalePr
                 </label>
                 <div className="w75 on-mobile-w100">
                     <Scale
+                        {...scaleProps}
                         from={0}
                         to={10}
                         value={model.Score}
                         InputButtonProps={{ 'aria-describedby': 'score-label' }}
                         onChange={handleScoreChange}
-                        {...scaleProps}
                     />
                 </div>
             </div>
