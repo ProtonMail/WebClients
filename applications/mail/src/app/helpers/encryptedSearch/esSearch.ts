@@ -551,10 +551,20 @@ export const uncachedSearch = async (
     const { lastEmailTime } = options;
 
     if (normalisedSearchParams.sort.desc) {
-        return uncachedSearchDesc(indexKey, userID, { ...normalisedSearchParams, end: lastEmailTime }, options);
+        return uncachedSearchDesc(
+            indexKey,
+            userID,
+            { ...normalisedSearchParams, end: lastEmailTime || normalisedSearchParams.end },
+            options
+        );
     }
 
-    return uncachedSearchAsc(indexKey, userID, { ...normalisedSearchParams, begin: lastEmailTime }, options);
+    return uncachedSearchAsc(
+        indexKey,
+        userID,
+        { ...normalisedSearchParams, begin: lastEmailTime || normalisedSearchParams.begin },
+        options
+    );
 };
 
 /**
@@ -579,7 +589,7 @@ export const hybridSearch = async (
         // The cache contains the newest messages, which means that if chronological order is chosen with
         // a limited cache, the latter should be ignored
         if (!isCacheLimited || isDescending) {
-            searchResults = await cachedSearch(esCache, normalisedSearchParams, incrementMessagesSearched);
+            searchResults.push(...(await cachedSearch(esCache, normalisedSearchParams, incrementMessagesSearched)));
         }
 
         if (isCacheLimited) {
@@ -592,12 +602,13 @@ export const hybridSearch = async (
             // If the cache hasn't been searched because the order is ascending, the search
             // parameters shouldn't be influenced by the cache timespan
             let shouldKeepSearching = true;
+            let beginOrder: number | undefined;
             if (isDescending) {
                 // The remaining messages are searched from DB, but only if the indicated timespan
-                // hasn't been already covered by cache. If isCacheLimited is true, the cache is
-                // ordered such that the first message is the oldest
-                const startCache = esCache[0].Time;
-                const intervalEnd = Math.min(startCache - 1, normalisedSearchParams.end || Number.MAX_SAFE_INTEGER);
+                // hasn't been already covered by cache. The cache is ordered such that the first message is the oldest
+                const { Time: startCache } = esCache[0];
+                beginOrder = esCache[0].Order;
+                const intervalEnd = Math.min(startCache, normalisedSearchParams.end || Number.MAX_SAFE_INTEGER);
                 const intervalStart = normalisedSearchParams.begin || 0;
                 shouldKeepSearching = intervalStart < startCache;
                 normalisedSearchParams = {
@@ -627,6 +638,7 @@ export const hybridSearch = async (
                     incrementMessagesSearched,
                     messageLimit: remainingMessages,
                     setCache: setCacheIncremental,
+                    beginOrder,
                 });
                 searchResults.push(...uncachedResult.resultsArray);
                 lastEmail = uncachedResult.lastEmail;

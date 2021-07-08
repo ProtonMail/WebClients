@@ -469,7 +469,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
 
         const expectingEmpty = dynamicPageLength === 0;
         const loadedEmpty = !cache.beforeFirstLoad && cache.pendingRequest === false && cache.total === 0;
-        const partialESSearch = useES && (isCacheLimited || isSearchPartial);
+        const partialESSearch = useES && isCacheLimited && isSearchPartial;
 
         if (!partialESSearch && (expectingEmpty || loadedEmpty)) {
             const count = dynamicTotal ? pageCount(dynamicTotal) : 0;
@@ -486,7 +486,8 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             !cache.beforeFirstLoad &&
             !cache.pendingRequest &&
             cache.retry.error === undefined &&
-            cache.retry.count === 3
+            cache.retry.count === 3 &&
+            !useES
         ) {
             if (!esEnabled) {
                 const message = 'Elements list inconsistency error';
