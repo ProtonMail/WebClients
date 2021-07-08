@@ -106,7 +106,7 @@ const testKeyword = (normalisedKeywords: string[], messageToSearch: CachedMessag
                     .join(' ')
                     .toLocaleLowerCase()
                     .includes(keyword) ||
-                (!!decryptedBody && decryptedBody.includes(keyword)));
+                (!!decryptedBody && decryptedBody.toLocaleLowerCase().includes(keyword)));
         index++;
     }
 

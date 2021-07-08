@@ -84,8 +84,7 @@ export const cleanText = (text: string, removeQuote: boolean) => {
         .replace(/\s+/gi, ' ')
         .split(' ')
         .filter((s) => s)
-        .join(' ')
-        .toLocaleLowerCase();
+        .join(' ');
 };
 
 /**
