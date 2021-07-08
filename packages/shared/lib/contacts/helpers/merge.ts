@@ -138,8 +138,10 @@ export const extractNewValue = (
         // compare with merged values. Normalize all strings
         const isNotRepeatedValue = mergedValues
             .map((mergedValue) => {
+                const components = (Array.isArray(mergedValue) ? mergedValue : [mergedValue]) as ContactValue[];
+
                 // check element by element to see if there are new values
-                const newComponents = (mergedValue as ContactValue[])
+                const newComponents = components
                     .map((component, index) => {
                         // each of the components inside be an array itself
                         const componentIsArray = Array.isArray(component);
