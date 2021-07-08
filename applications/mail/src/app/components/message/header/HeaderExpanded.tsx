@@ -470,7 +470,6 @@ const HeaderExpanded = ({
                                     loading={!messageLoaded}
                                     externalToggleRef={moveDropdownToggleRef}
                                     data-testid="message-header-expanded:folder-dropdown"
-                                    preventArrowKeyNavigationAutofocus
                                 >
                                     {({ onClose, onLock }) => (
                                         <MoveDropdown
@@ -495,7 +494,6 @@ const HeaderExpanded = ({
                                     loading={!messageLoaded}
                                     externalToggleRef={labelDropdownToggleRef}
                                     data-testid="message-header-expanded:label-dropdown"
-                                    preventArrowKeyNavigationAutofocus
                                 >
                                     {({ onClose, onLock }) => (
                                         <LabelDropdown

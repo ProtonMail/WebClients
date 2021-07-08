@@ -169,7 +169,13 @@ const ComposerActions = ({
             ])}
             onClick={addressesBlurRef.current}
         >
-            <DropdownActions disabled={loadingFeature} loading={loadingFeature} color="norm" list={sendButtonActions} />
+            <DropdownActions
+                disabled={loadingFeature}
+                loading={loadingFeature}
+                shape="solid"
+                color="norm"
+                list={sendButtonActions}
+            />
             <div className="flex flex-item-fluid">
                 <div className="flex">
                     <Tooltip title={titleAttachment}>

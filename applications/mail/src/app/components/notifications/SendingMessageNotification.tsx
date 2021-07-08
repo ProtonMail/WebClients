@@ -1,8 +1,9 @@
 import React, { useState, useRef, useLayoutEffect } from 'react';
 import { c } from 'ttag';
+import { format, isToday, isTomorrow } from 'date-fns';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { useIsMounted } from '@proton/components';
+import { AppLink, useIsMounted } from '@proton/components';
 import UndoButton from './UndoButton';
 
 export const createSendingMessageNotificationManager = () => {
@@ -19,6 +20,7 @@ export type SendingMessageNotificationManager = ReturnType<typeof createSendingM
 
 interface SendingMessageNotificationProps {
     manager: SendingMessageNotificationManager;
+    scheduledAt?: number;
 }
 
 enum SendingStep {
@@ -27,7 +29,7 @@ enum SendingStep {
     sentWithUndo,
 }
 
-const SendingMessageNotification = ({ manager }: SendingMessageNotificationProps) => {
+const SendingMessageNotification = ({ manager, scheduledAt }: SendingMessageNotificationProps) => {
     const [state, setState] = useState(SendingStep.sending);
     const onUndoRef = useRef<() => Promise<void> | undefined>();
     const isMounted = useIsMounted();
@@ -49,12 +51,46 @@ const SendingMessageNotification = ({ manager }: SendingMessageNotificationProps
     }, []);
 
     if (state === SendingStep.sent) {
-        return <>{c('Info').t`Message sent`}</>;
+        return <>{scheduledAt ? c('Info').t`Message scheduled` : c('Info').t`Message sent`}</>;
     }
 
     const onUndo = onUndoRef.current;
 
     if (state === SendingStep.sentWithUndo && onUndo) {
+        if (scheduledAt) {
+            const scheduleDate = scheduledAt * 1000;
+
+            const formattedDate = format(scheduleDate, 'EEEE, iii d');
+            const formattedTime = format(scheduleDate, 'p');
+
+            // translator: This segment is part of a longer sentence which looks like this "Message will be sent on Tuesday, May 11 at 12:30 PM"
+            let dateString = c('Date label').t`on ${formattedDate}`;
+
+            if (isToday(scheduleDate)) {
+                dateString = c('Date label').t`Today`;
+            }
+
+            if (isTomorrow(scheduleDate)) {
+                dateString = c('Date label').t`Tomorrow`;
+            }
+
+            /*
+             * translator: The variables here are the following.
+             * ${dateString} can be either "on Tuesday, May 11", for example, or "Today" or "Tomorrow"
+             * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
+             * Full sentence for reference: "Message will be sent on Tuesday, May 11 at 12:30 PM"
+             */
+            const notification = c('Info').t`Message will be sent ${dateString} at ${formattedTime}`;
+
+            return (
+                <>
+                    <span className="mr1">{notification}</span>
+                    <UndoButton className="mr1" onUndo={onUndo} />
+                    {/* @todo update link to actual email */}
+                    <AppLink to="/scheduled">{c('Action').t`View message`}</AppLink>
+                </>
+            );
+        }
         return (
             <>
                 <span className="mr1">{c('Info').t`Message sent`}</span>
@@ -63,7 +99,7 @@ const SendingMessageNotification = ({ manager }: SendingMessageNotificationProps
         );
     }
 
-    return <>{c('Info').t`Sending message...`}</>;
+    return <>{scheduledAt ? c('Info').t`Scheduling message...` : c('Info').t`Sending message...`}</>;
 };
 
 export default SendingMessageNotification;
