@@ -3738,11 +3738,9 @@ __metadata:
     prop-types: ^15.7.2
     push.js: ^1.0.9
     qrcode.react: ^0.9.3
-    quill: ^1.3.6
     react: ^16.13.1
     react-codemirror2: ^6.0.0
     react-dom: ^16.13.1
-    react-quill: ^1.3.3
     react-router: ^5.2.0
     react-router-dom: ^5.2.0
     react-sortable-hoc: ^1.9.1
@@ -6057,15 +6055,6 @@ __metadata:
   version: 6.9.6
   resolution: "@types/qs@npm:6.9.6"
   checksum: a5f3c4f6ad6de2692e710302f5f82fe8db3ec0de1a75ada02a432f75f64025a6e38d28fcc4ed146d3145017e1312cc5cb3d81a0f41a798ec0463b5f47f017963
-  languageName: node
-  linkType: hard
-
-"@types/quill@npm:1.3.10":
-  version: 1.3.10
-  resolution: "@types/quill@npm:1.3.10"
-  dependencies:
-    parchment: ^1.1.2
-  checksum: 299718d530910e3fbcb7261d371c5e7c2d81d0795968c3fd5345f50e73871b0430c3392a889306ee03c75ce85042242f0d341989295443d19ddb385b6a43a493
   languageName: node
   linkType: hard
 
@@ -11254,16 +11243,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"create-react-class@npm:^15.6.0":
-  version: 15.7.0
-  resolution: "create-react-class@npm:15.7.0"
-  dependencies:
-    loose-envify: ^1.3.1
-    object-assign: ^4.1.1
-  checksum: b961a66896ff89ad5451e6cf6a686c03716ecb50f7c61b24864cda5aa18d52ce817b94bbeace3e126b19a1cc926c75f34c0777a6f4004fc947221836b13d4479
-  languageName: node
-  linkType: hard
-
 "create-react-context@npm:0.3.0":
   version: 0.3.0
   resolution: "create-react-context@npm:0.3.0"
@@ -13844,13 +13823,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eventemitter3@npm:^2.0.3":
-  version: 2.0.3
-  resolution: "eventemitter3@npm:2.0.3"
-  checksum: ef4875784b1d5e175fb27718e06c73b11fc92a412f56dcb62def92c8bd9eecd533f5444c0e4a17de524da885b51c3fa2330996300f9b83d01ff85b0f5548d0d6
-  languageName: node
-  linkType: hard
-
 "eventemitter3@npm:^4.0.0":
   version: 4.0.7
   resolution: "eventemitter3@npm:4.0.7"
@@ -14192,7 +14164,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"extend@npm:^3.0.0, extend@npm:^3.0.2, extend@npm:~3.0.2":
+"extend@npm:^3.0.0, extend@npm:~3.0.2":
   version: 3.0.2
   resolution: "extend@npm:3.0.2"
   checksum: 1406da1f0c4b00b839497e4cdd0ec4303ce2ae349144b7c28064a5073c93ce8c08da4e8fb1bc5cb459ffcdff30a35fc0fe54344eb88320e70100c1baea6f195c
@@ -14275,13 +14247,6 @@ __metadata:
   version: 3.1.3
   resolution: "fast-deep-equal@npm:3.1.3"
   checksum: 451526766b219503131d11e823eaadd1533080b0be4860e316670b039dcaf31cd1007c2fe036a9b922abba7c040dfad5e942ed79d21f2ff849e50049f36e0fb7
-  languageName: node
-  linkType: hard
-
-"fast-diff@npm:1.1.2":
-  version: 1.1.2
-  resolution: "fast-diff@npm:1.1.2"
-  checksum: da9aec22af75159330ade58076544cf7518f533c2b3c1a0932a28f768908425ab4b6262e51823d7b1fa335060151d3602ad60d09e25d6d5042a93c0e26a01070
   languageName: node
   linkType: hard
 
@@ -23296,13 +23261,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"parchment@npm:^1.1.2, parchment@npm:^1.1.4":
-  version: 1.1.4
-  resolution: "parchment@npm:1.1.4"
-  checksum: b36d4a8b6d6473ba78a74447980afd7566e578b054808c07dc564248e814c00b98177b615238bb4bc6cda7c25e0987325df89e6c40c6b8f83deb2b60960474a0
-  languageName: node
-  linkType: hard
-
 "parent-module@npm:^1.0.0":
   version: 1.0.1
   resolution: "parent-module@npm:1.0.1"
@@ -25214,7 +25172,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"prop-types@npm:15.7.2, prop-types@npm:^15.0.0, prop-types@npm:^15.5.10, prop-types@npm:^15.5.7, prop-types@npm:^15.6.0, prop-types@npm:^15.6.1, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
+"prop-types@npm:15.7.2, prop-types@npm:^15.0.0, prop-types@npm:^15.5.7, prop-types@npm:^15.6.0, prop-types@npm:^15.6.1, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
   version: 15.7.2
   resolution: "prop-types@npm:15.7.2"
   dependencies:
@@ -25784,31 +25742,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"quill-delta@npm:^3.6.2":
-  version: 3.6.3
-  resolution: "quill-delta@npm:3.6.3"
-  dependencies:
-    deep-equal: ^1.0.1
-    extend: ^3.0.2
-    fast-diff: 1.1.2
-  checksum: ac28eab2603326f835a4bc264d25ed462375dea032ca77ed1bded0a1d2f80d925582d9e5e602b22f0f9e62dc5df6a6709b750a365aaef466473ddd0a9eb5eb4a
-  languageName: node
-  linkType: hard
-
-"quill@npm:^1.3.6, quill@npm:^1.3.7":
-  version: 1.3.7
-  resolution: "quill@npm:1.3.7"
-  dependencies:
-    clone: ^2.1.1
-    deep-equal: ^1.0.1
-    eventemitter3: ^2.0.3
-    extend: ^3.0.2
-    parchment: ^1.1.4
-    quill-delta: ^3.6.2
-  checksum: 866c28e58d739ab69c3abb0135fd4dcb3bb026e407add1eeac52cf52b11cad8b8afc5972e1326dbbcf5ca9a9f357dba3a1fed567046f061a54e81b1332347309
-  languageName: node
-  linkType: hard
-
 "ramda@npm:^0.21.0":
   version: 0.21.0
   resolution: "ramda@npm:0.21.0"
@@ -26006,13 +25939,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-dom-factories@npm:^1.0.0":
-  version: 1.0.2
-  resolution: "react-dom-factories@npm:1.0.2"
-  checksum: 595e0c1104aaa7a7eecc83a1fa7ac369d527bce7938072b5ec7784b64201764bd3e7289112e9952ed9a82ff1a38251904d329810eb550fe3dd332f6d3e9b8cb5
-  languageName: node
-  linkType: hard
-
 "react-dom@npm:^16.0.0, react-dom@npm:^16.13.1":
   version: 16.14.0
   resolution: "react-dom@npm:16.14.0"
@@ -26190,22 +26116,6 @@ fsevents@^1.2.7:
     "@popperjs/core": ^2.0.0
     react: ^16.8.0 || ^17
   checksum: 5cac009001e2a7c640ba931afedbbf33c94a672a3f7c6ef672e55561b72778c6941a09f57156962114b9e47793779728088845fc306c43477ddc645cdb8793ea
-  languageName: node
-  linkType: hard
-
-"react-quill@npm:^1.3.3":
-  version: 1.3.5
-  resolution: "react-quill@npm:1.3.5"
-  dependencies:
-    "@types/quill": 1.3.10
-    create-react-class: ^15.6.0
-    lodash: ^4.17.4
-    prop-types: ^15.5.10
-    quill: ^1.3.7
-    react-dom-factories: ^1.0.0
-  peerDependencies:
-    react: ^0.14.9 || ^15.3.0 || ^16.0.0
-  checksum: 51064f1986310b725b9878cfdba3d9facea0181c2334384ae83e22b0203699364192f095f03f72c3a513afce8409a557adaaa1a104c1f03df93aa2a35706f897
   languageName: node
   linkType: hard
 

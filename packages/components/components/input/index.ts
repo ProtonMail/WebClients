@@ -13,7 +13,6 @@ export { default as Radio } from './Radio';
 export { default as LayoutCard } from './LayoutCard';
 export { default as LayoutCards } from './LayoutCards';
 export { default as RadioGroup } from './RadioGroup';
-export { default as RichTextEditor } from './LazyRichTextEditor';
 export { default as SearchInput } from './SearchInput';
 export { default as Scale } from './Scale';
 export { default as TelInput } from './TelInput';
