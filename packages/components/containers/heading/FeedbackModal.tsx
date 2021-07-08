@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 import { sendFeedback } from '@proton/shared/lib/api/feedback';
 
-import { FormModal, Scale, TextArea } from '../../components';
+import { FormModal, Scale, ScaleProps, TextArea } from '../../components';
 import { useApi, useLoading, useNotifications } from '../../hooks';
 
 interface FeedbackModalModel {
@@ -15,19 +15,10 @@ interface Props {
     feedbackType: string;
     description: string;
     scaleTitle: string;
-    scaleFromLabel: string;
-    scaleToLabel: string;
+    scaleProps: Pick<ScaleProps, 'fromLabel' | 'toLabel'>;
 }
 
-const FeedbackModal = ({
-    onClose,
-    feedbackType,
-    description,
-    scaleTitle,
-    scaleFromLabel,
-    scaleToLabel,
-    ...rest
-}: Props) => {
+const FeedbackModal = ({ onClose, feedbackType, description, scaleTitle, scaleProps, ...rest }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -84,11 +75,10 @@ const FeedbackModal = ({
                     <Scale
                         from={0}
                         to={10}
-                        fromLabel={scaleFromLabel}
-                        toLabel={scaleToLabel}
                         value={model.Score}
                         InputButtonProps={{ 'aria-describedby': 'score-label' }}
                         onChange={handleScoreChange}
+                        {...scaleProps}
                     />
                 </div>
             </div>
