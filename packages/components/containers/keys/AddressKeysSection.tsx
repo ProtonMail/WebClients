@@ -314,8 +314,6 @@ const AddressKeysSection = () => {
         <SettingsSectionWide>
             <SettingsParagraph>
                 {c('Info').t`Download your PGP keys for use with other PGP-compatible services.`}
-                <br />
-                {c('Info').t`Only incoming messages in inline OpenPGP format are currently supported.`}
             </SettingsParagraph>
             {canReactivate && (
                 <div className="mb1">
