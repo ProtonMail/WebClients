@@ -83,6 +83,11 @@ export type ContactPropertyChange = {
     key?: string;
 };
 
+export type ContactEmailModel = Pick<ContactEmail, 'Email' | 'ContactID' | 'LabelIDs'> & {
+    uid: string;
+    changes: { [groupID: string]: boolean };
+};
+
 export type ContactCache = Map<string, Contact>;
 
 export type ContactEmailCache = Map<string, ContactEmail>;

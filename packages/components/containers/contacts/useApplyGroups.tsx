@@ -44,7 +44,7 @@ const useApplyGroups = () => {
     const [groups = []] = useContactGroups();
 
     const applyGroups = useCallback(
-        async (contactEmails: ContactEmail[], changes: { [groupID: string]: boolean }) => {
+        async (contactEmails: ContactEmail[], changes: { [groupID: string]: boolean }, preventNotification = false) => {
             const { contacts: collectedContacts } = collectContacts(contactEmails, contacts);
 
             // contact emails in contacts with only one email (and then, skipping the modal)
@@ -106,7 +106,9 @@ const useApplyGroups = () => {
 
             await call();
 
-            createNotification({ text: c('Info').t`Group assignment applied` });
+            if (!preventNotification) {
+                createNotification({ text: c('Info').t`Group assignment applied` });
+            }
         },
         [contacts, groups]
     );

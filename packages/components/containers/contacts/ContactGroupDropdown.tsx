@@ -54,6 +54,7 @@ interface Props extends ButtonProps {
     contactEmails: ContactEmail[];
     tooltip?: string;
     forToolbar?: boolean;
+    onDelayedSave?: (changes: { [groupID: string]: boolean }) => void;
 }
 
 const ContactGroupDropdown = ({
@@ -63,6 +64,7 @@ const ContactGroupDropdown = ({
     disabled = false,
     forToolbar = false,
     tooltip = c('Action').t`Add to group`,
+    onDelayedSave,
     ...rest
 }: Props) => {
     const [keyword, setKeyword] = useState('');
@@ -92,7 +94,11 @@ const ContactGroupDropdown = ({
             return acc;
         }, {});
 
-        await applyGroups(contactEmails, changes);
+        if (onDelayedSave) {
+            onDelayedSave(changes);
+        } else {
+            await applyGroups(contactEmails, changes);
+        }
 
         close();
     };
