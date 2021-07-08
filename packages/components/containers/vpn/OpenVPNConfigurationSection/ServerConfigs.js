@@ -49,7 +49,7 @@ const ServerConfigs = ({ servers, category, ...rest }) => {
             {sortedGroups.map((group) => {
                 const server = group[0];
                 return (
-                    <Details key={server.Country} defaultOpen={server.open}>
+                    <Details key={server.Country} open={server.open}>
                         <Summary>
                             <div className="ml0-5 flex flex-nowrap flex-align-items-center">
                                 <div className={classnames([category === CATEGORY.SERVER ? 'w33' : ''])}>
