@@ -8,15 +8,28 @@ import { getEditableFields, getOtherInformationFields } from '@proton/shared/lib
 import { API_CODES } from '@proton/shared/lib/constants';
 import { OVERWRITE, CATEGORIES } from '@proton/shared/lib/contacts/constants';
 import {
+    ContactEmail,
+    ContactEmailModel,
     ContactProperties,
     ContactProperty,
     ContactPropertyChange,
 } from '@proton/shared/lib/interfaces/contacts/Contact';
+import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import { canonizeEmail } from '@proton/shared/lib/helpers/email';
 import ContactModalProperties from '../ContactModalProperties';
-import { useUserKeys, useApi, useNotifications, useLoading, useEventManager } from '../../../hooks';
+import {
+    useUserKeys,
+    useApi,
+    useNotifications,
+    useLoading,
+    useEventManager,
+    useContactEmails,
+    useHandler,
+} from '../../../hooks';
 import { FormModal, PrimaryButton } from '../../../components';
 import { generateUID } from '../../../helpers';
 import ContactModalRow from '../../../components/contacts/ContactModalRow';
+import useApplyGroups from '../useApplyGroups';
 
 const DEFAULT_MODEL = [
     { field: 'fn', value: '' },
@@ -79,6 +92,9 @@ const ContactModal = ({
         getNotEditableProperties(initialProperties)
     );
     const nameFieldRef = useRef<HTMLInputElement>(null);
+    const [contactEmails, loadingContactEmails] = useContactEmails() as [ContactEmail[], boolean, any];
+    const [modelContactEmails, setModelContactEmails] = useState<SimpleMap<ContactEmailModel>>({});
+    const applyGroups = useApplyGroups();
 
     const title = contactID ? c('Title').t`Edit contact` : c('Title').t`Create contact`;
 
@@ -96,6 +112,53 @@ const ContactModal = ({
         () => allProperties.filter((property) => property !== nameProperty && property !== photoProperty),
         [allProperties]
     );
+
+    useEffect(() => {
+        if (loadingContactEmails) {
+            return;
+        }
+
+        const newModelContactEmails = { ...modelContactEmails };
+
+        const emails = allProperties.filter((property) => property.field === 'email');
+
+        emails.forEach((emailProperty) => {
+            const uid = emailProperty.uid as string;
+            const email = emailProperty.value as string;
+
+            const existingModel = Object.values(newModelContactEmails).find(
+                (contactEmail) => contactEmail?.uid === uid
+            );
+
+            if (existingModel) {
+                if (existingModel.Email !== email) {
+                    const oldEmail = existingModel.Email;
+                    newModelContactEmails[email] = { ...existingModel, Email: email };
+                    delete newModelContactEmails[oldEmail];
+                }
+                return;
+            }
+
+            const existingContactEmail = contactEmails.find(
+                (contactEmail) => canonizeEmail(contactEmail.Email) === canonizeEmail(email)
+            );
+
+            if (existingContactEmail) {
+                newModelContactEmails[email] = { ...existingContactEmail, uid, changes: {} };
+                return;
+            }
+
+            newModelContactEmails[email] = {
+                uid,
+                changes: {},
+                Email: email,
+                ContactID: contactID || '',
+                LabelIDs: [],
+            };
+        });
+
+        setModelContactEmails(newModelContactEmails);
+    }, [loadingContactEmails, allProperties]);
 
     const isFormValid = () => {
         const nameFilled = !!nameProperty?.value;
@@ -144,6 +207,22 @@ const ContactModal = ({
         setAllProperties([...allProperties, { field, value: '', uid: generateUID(UID_PREFIX) }]);
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
+    const saveContactGroups = useHandler(async () => {
+        await Promise.all(
+            Object.values(modelContactEmails).map(async (modelContactEmail) => {
+                if (modelContactEmail) {
+                    const contactEmail = contactEmails.find(
+                        (contactEmail) => contactEmail.Email === modelContactEmail?.Email
+                    );
+                    if (contactEmail) {
+                        await applyGroups([contactEmail], modelContactEmail.changes, true);
+                    }
+                }
+            })
+        );
+    });
+
     const handleSubmit = async () => {
         setIsSubmitted(true);
 
@@ -163,6 +242,7 @@ const ContactModal = ({
                 Labels: labels,
             })
         );
+
         if (Code !== SINGLE_SUCCESS) {
             onClose();
             return createNotification({ text: c('Error').t`Contact could not be saved`, type: 'error' });
@@ -171,6 +251,9 @@ const ContactModal = ({
         if (!contactID) {
             onAdd();
         }
+
+        await saveContactGroups();
+
         onClose();
         createNotification({ text: c('Success').t`Contact saved` });
     };
@@ -187,6 +270,9 @@ const ContactModal = ({
         });
         setAllProperties(newProperties);
     };
+
+    const handleContactEmailChange = (contactEmail: ContactEmailModel) =>
+        setModelContactEmails((modelContactEmails) => ({ ...modelContactEmails, [contactEmail.Email]: contactEmail }));
 
     const handleOrderChange = useCallback(
         (field, orderedProperties) => {
@@ -207,7 +293,6 @@ const ContactModal = ({
     return (
         <FormModal
             loading={loading || loadingUserKeys}
-            onSubmit={() => withLoading(handleSubmit())}
             title={title}
             submit={
                 <PrimaryButton loading={loading || loadingUserKeys} onClick={() => withLoading(handleSubmit())}>
@@ -256,6 +341,8 @@ const ContactModal = ({
                 onRemove={handleRemove}
                 onOrderChange={handleOrderChange}
                 onAdd={handleAdd('email')}
+                contactEmails={modelContactEmails}
+                onContactEmailChange={handleContactEmailChange}
             />
             <ContactModalProperties
                 properties={properties}
