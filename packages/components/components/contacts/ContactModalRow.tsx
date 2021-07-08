@@ -90,18 +90,20 @@ const ContactModalRow = (
     };
 
     useEffect(() => {
-        // Reset the value if coming from Birthday/Anniversary/Photo/Logo input
-        if (field !== prevField.current) {
-            if (prevField.current && fieldsToReset.includes(prevField.current)) {
+        // Skip if it's initialization
+        if (prevField.current) {
+            // Reset the value if coming from Birthday/Anniversary/Photo/Logo input
+            if (field !== prevField.current && fieldsToReset.includes(prevField.current)) {
                 onChange({ ...property, value: '' });
             }
-            prevField.current = field;
+
+            // Reset the value if going to Birthday/Anniversary/Photo/Logo input
+            if (fieldsToReset.includes(field)) {
+                onChange({ ...property, value: '' });
+            }
         }
 
-        // Reset the value if going to Birthday/Anniversary/Photo/Logo input
-        if (fieldsToReset.includes(field)) {
-            onChange({ ...property, value: '' });
-        }
+        prevField.current = field;
     }, [field]);
 
     return (
