@@ -156,7 +156,7 @@ function GeneratedLinkState({
                         </Row>
                         <Alert>{password ? SHARING_INFO_LABEL.withPassword : SHARING_INFO_LABEL.default}</Alert>
                         <Details
-                            defaultOpen={defaultAdditionalSettingsExpanded}
+                            open={defaultAdditionalSettingsExpanded}
                             onToggle={() => {
                                 setAdditionalSettingsExpanded(!additionalSettingsExpanded);
                             }}
