@@ -15,7 +15,7 @@ interface Props {
     feedbackType: string;
     description: string;
     scaleTitle: string;
-    scaleProps: Pick<ScaleProps, 'fromLabel' | 'toLabel'>;
+    scaleProps: Omit<ScaleProps, 'to' | 'from' | 'value' | 'InputButtonProps' | 'onChange'>;
 }
 
 const FeedbackModal = ({ onClose, feedbackType, description, scaleTitle, scaleProps, ...rest }: Props) => {
