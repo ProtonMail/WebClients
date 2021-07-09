@@ -55,11 +55,26 @@ export const parse = (vcard = ''): ContactProperties => {
     const comp = new ICAL.Component(ICAL.parse(vcard));
     const properties = comp.getAllProperties() as any[];
 
+    // Apple AddressBook can add custom headers 'X-ABLabel' to properties that we need to take care of
+    const customHeaders = properties.reduce<{ name: string; value: string }[]>((acc, property) => {
+        if (property.name.includes('x-ablabel')) {
+            const [propertyName, propertyField]: [string, string | undefined] = property.name.split('.');
+            const field = propertyField && propertyField.length > 0 ? propertyField : propertyName;
+            const value = getValue(property, field);
+            if (typeof value === 'string') {
+                return [...acc, { name: propertyName, value }];
+            }
+            return acc;
+        }
+        return acc;
+    }, []);
+
     const sortedProperties = properties
         .reduce<ContactProperty[]>((acc, property) => {
             const splitProperty = property.name.split('.');
             const field = splitProperty[1] ? splitProperty[1] : splitProperty[0];
-            const type = property.getParameter('type');
+            const customType = customHeaders.find((header) => header.name === splitProperty[0]);
+            const type = customType ? customType.value : property.getParameter('type');
             const prefValue = property.getParameter('pref');
             const pref = typeof prefValue === 'string' && hasPref(field) ? +prefValue : undefined;
 
