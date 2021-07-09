@@ -4,8 +4,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 import { Icon, classnames, CircleLoader } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { diff } from '@proton/shared/lib/helpers/array';
-
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import AttachmentItem from './AttachmentItem';
@@ -73,7 +71,9 @@ const AttachmentList = ({
 
     const embeddedImages = getEmbeddedImages(message);
     const embeddedAttachments = embeddedImages.map(({ attachment }) => attachment);
-    const pureAttachments = diff(attachments, embeddedAttachments);
+    const pureAttachments = attachments.filter(
+        (attachment) => !embeddedAttachments.find((embeddedAttachment) => attachment.ID === embeddedAttachment.ID)
+    );
 
     const pureAttachmentsCount = pureAttachments.length;
     const embeddedAttachmentsCount = embeddedAttachments.length;
