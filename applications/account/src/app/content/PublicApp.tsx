@@ -188,10 +188,18 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         return false;
     };
 
-    const handleSignOutAll = async () => {
+    const handleSignOutAll = () => {
         setActiveSessions([]);
         setHasBackToSwitch(false);
         history.push('/login');
+    };
+
+    const handleSignOut = (updatedActiveSessions?: LocalSessionResponse[]) => {
+        if (updatedActiveSessions?.length === 0) {
+            handleSignOutAll();
+            return;
+        }
+        setActiveSessions(updatedActiveSessions);
     };
 
     const handleAddAccount = () => {
@@ -223,6 +231,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                             activeSessions={activeSessions}
                                             toApp={toApp}
                                             onLogin={handleLogin}
+                                            onSignOut={handleSignOut}
                                             onSignOutAll={handleSignOutAll}
                                             onAddAccount={handleAddAccount}
                                         />
