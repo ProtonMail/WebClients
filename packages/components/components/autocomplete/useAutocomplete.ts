@@ -51,10 +51,10 @@ interface UseAutocompleteProps<V> {
     onSelect: (value: V) => void;
     options: DataWithMatches<V>[];
     input: string;
-    rootRef: React.RefObject<HTMLDivElement>;
+    inputRef: React.RefObject<HTMLInputElement>;
 }
 
-export const useAutocomplete = <T>({ id, options, onSelect, input, rootRef }: UseAutocompleteProps<T>) => {
+export const useAutocomplete = <T>({ id, options, onSelect, input, inputRef }: UseAutocompleteProps<T>) => {
     const [highlightedIndex, setHighlightedIndex] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
 
@@ -93,7 +93,7 @@ export const useAutocomplete = <T>({ id, options, onSelect, input, rootRef }: Us
         }
     }, [input]);
 
-    useHotkeys(rootRef, [
+    useHotkeys(inputRef, [
         [
             'Escape',
             (e) => {
