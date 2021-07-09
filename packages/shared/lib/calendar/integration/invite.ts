@@ -314,6 +314,26 @@ export const getSelfAddressData = ({
     };
 };
 
+export const getEventWithCalendarAlarms = (vevent: VcalVeventComponent, calendarSettings: CalendarSettings) => {
+    const { components } = vevent;
+    const isAllDay = getIsAllDay(vevent);
+    const notifications = isAllDay
+        ? calendarSettings.DefaultFullDayNotifications
+        : calendarSettings.DefaultPartDayNotifications;
+    const valarmComponents = notifications
+        .filter(({ Type }) => Type === SETTINGS_NOTIFICATION_TYPE.DEVICE)
+        .map<VcalValarmComponent>(({ Trigger }) => ({
+            component: 'valarm',
+            action: { value: 'DISPLAY' },
+            trigger: { value: fromTriggerString(Trigger) },
+        }));
+
+    return {
+        ...vevent,
+        components: components ? components.concat(valarmComponents) : valarmComponents,
+    };
+};
+
 export const getInvitedEventWithAlarms = (
     vevent: VcalVeventComponent,
     partstat: ICAL_ATTENDEE_STATUS,
@@ -342,22 +362,8 @@ export const getInvitedEventWithAlarms = (
     if (!calendarSettings) {
         throw new Error('Cannot retrieve calendar default notifications');
     }
-    const isAllDay = getIsAllDay(vevent);
-    const notifications = isAllDay
-        ? calendarSettings.DefaultFullDayNotifications
-        : calendarSettings.DefaultPartDayNotifications;
-    const valarmComponents = notifications
-        .filter(({ Type }) => Type === SETTINGS_NOTIFICATION_TYPE.DEVICE)
-        .map<VcalValarmComponent>(({ Trigger }) => ({
-            component: 'valarm',
-            action: { value: 'DISPLAY' },
-            trigger: { value: fromTriggerString(Trigger) },
-        }));
 
-    return {
-        ...vevent,
-        components: components ? components.concat(valarmComponents) : valarmComponents,
-    };
+    return getEventWithCalendarAlarms(vevent, calendarSettings);
 };
 
 export const getSelfAttendeeToken = (vevent?: VcalVeventComponent, addresses: Address[] = []) => {

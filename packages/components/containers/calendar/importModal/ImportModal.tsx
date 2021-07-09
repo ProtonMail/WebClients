@@ -3,12 +3,7 @@ import { getSupportedEvents, parseIcs, splitErrors } from '@proton/shared/lib/ca
 import { ImportFatalError } from '@proton/shared/lib/calendar/import/ImportFatalError';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { noop } from '@proton/shared/lib/helpers/function';
-import {
-    Calendar,
-    StoredEncryptedEvent,
-    IMPORT_STEPS,
-    ImportCalendarModel,
-} from '@proton/shared/lib/interfaces/calendar';
+import { Calendar, ImportedEvent, IMPORT_STEPS, ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar';
 import React, { ChangeEvent, useState, DragEvent } from 'react';
 import { c } from 'ttag';
 
@@ -121,7 +116,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                     setModel({ ...model, loading: true });
                     const { components, calscale, xWrTimezone } = await parseIcs(fileAttached);
                     const { errors, rest: parsed } = splitErrors(
-                        getSupportedEvents({ components, calscale, xWrTimezone })
+                        await getSupportedEvents({ components, calscale, xWrTimezone })
                     );
                     if (!parsed.length && !errors.length) {
                         throw new ImportFileError(IMPORT_ERROR_TYPE.NO_EVENTS, fileAttached.name);
@@ -189,7 +184,7 @@ const ImportModal = ({ calendars, defaultCalendar, ...rest }: Props) => {
                 </PrimaryButton>
             );
 
-            const handleFinish = async (importedEvents: StoredEncryptedEvent[]) => {
+            const handleFinish = async (importedEvents: ImportedEvent[]) => {
                 setModel((model) => ({ ...model, step: IMPORT_STEPS.FINISHED }));
                 if (!importedEvents.length) {
                     return;

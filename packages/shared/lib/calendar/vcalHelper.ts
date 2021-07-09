@@ -175,8 +175,11 @@ export const getProdId = (config: ProtonConfig) => {
     return getProdIdFromNameAndVersion(appName, appVersion);
 };
 
-export const getIcalMethod = ({ value }: VcalStringProperty) => {
-    const normalizedValue = normalize(value);
+export const getIcalMethod = (method?: VcalStringProperty) => {
+    if (!method) {
+        return ICAL_METHOD.PUBLISH;
+    }
+    const normalizedValue = normalize(method.value);
     const matchesNormalizedValue = (icalMethod: ICAL_METHOD) => normalize(icalMethod) === normalizedValue;
 
     return Object.values(ICAL_METHOD).find(matchesNormalizedValue);
