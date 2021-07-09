@@ -1,5 +1,5 @@
 import React from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import {
     useHandler,
     useNotifications,
@@ -112,7 +112,12 @@ export const useCompose = (
         if (openComposers.length >= maxActiveComposer) {
             createNotification({
                 type: 'error',
-                text: c('Error').t`You cannot open more than 3 composer windows at a time.`,
+                // translator: maxActiveComposer should never be 1, is fixed to 3 today but can potentially vary from 2 to 5(?) in the future.
+                text: c('Error').ngettext(
+                    msgid`You cannot open more than ${maxActiveComposer} composer window at a time.`,
+                    `You cannot open more than ${maxActiveComposer} composer windows at a time.`,
+                    maxActiveComposer
+                ),
             });
             return;
         }
