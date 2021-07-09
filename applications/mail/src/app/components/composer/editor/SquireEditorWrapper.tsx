@@ -122,15 +122,19 @@ const SquireEditorWrapper = ({
             }
             const newCIDs = findCIDsInContent(handleGetContent());
             const removedCIDs = diff(cids, newCIDs);
-            console.log('checkImageDeletion', { newCIDs, removedCIDs, embeddedImages: getEmbeddedImages(message) });
-            removedCIDs.forEach((cid) => {
-                // const info = message.embeddeds?.get(cid);
-                const embeddedImages = getEmbeddedImages(message);
-                const attachment = embeddedImages.find((image) => image.cid === cid)?.attachment;
-                if (attachment) {
-                    void onRemoveAttachment(attachment);
-                }
-            });
+
+            if (removedCIDs.length) {
+                removedCIDs.forEach((cid) => {
+                    // const info = message.embeddeds?.get(cid);
+                    const embeddedImages = getEmbeddedImages(message);
+                    const attachment = embeddedImages.find((image) => image.cid === cid)?.attachment;
+                    if (attachment) {
+                        void onRemoveAttachment(attachment);
+                    }
+                });
+                squireEditorRef.current?.clearUndoHistory();
+            }
+
             setCIDs(newCIDs);
         },
         { debounce: 500 }

@@ -17,7 +17,7 @@ import { classnames } from '../../helpers';
 import EditorToolbar from './toolbar/SquireToolbar';
 import SquireIframe from './SquireIframe';
 import { SquireType } from './squireConfig';
-import { setTextDirectionWithoutFocus, insertImage } from './squireActions';
+import { setTextDirectionWithoutFocus, insertImage, clearUndoHistory } from './squireActions';
 import { SquireEditorMetadata } from './interface';
 
 import './SquireEditor.scss';
@@ -35,6 +35,10 @@ export interface SquireEditorRef {
     value: string;
     document?: Element;
     insertImage: (url: string, attrs?: { [key: string]: string | undefined }) => void;
+    /**
+     * Clear Squire undo history, do nothing in plaintext mode
+     */
+    clearUndoHistory: () => void;
 }
 
 interface Props {
@@ -128,6 +132,11 @@ const SquireEditor = (
             insertImage: (url: string, attrs: { [key: string]: string | undefined } = {}) => {
                 insertImage(squireRef.current, url, attrs);
                 onChange(squireRef.current?.getHTML());
+            },
+            clearUndoHistory: () => {
+                if (squireRef.current) {
+                    clearUndoHistory(squireRef.current);
+                }
             },
         };
     }, [metadata]);

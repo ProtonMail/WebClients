@@ -1,6 +1,5 @@
 import { RIGHT_TO_LEFT } from '@proton/shared/lib/constants';
 import { getElement } from '@proton/shared/lib/helpers/dom';
-
 import {
     SquireType,
     LinkData,
@@ -272,4 +271,12 @@ export const scrollIntoViewIfNeeded = (squire: SquireType) => {
         const paddingPx = parseInt(/(\d+)px/.exec(paddingValue)?.[1] || '8', 10);
         scrollable.scroll({ top: scrollable.scrollTop + cursorRect.bottom - containerRect.height + paddingPx });
     }
+};
+
+/**
+ * Hacky implementation but setting HTML content in Squire will reset the undo history
+ * Unfortunately also move the cursor to the beginning of the document
+ */
+export const clearUndoHistory = (squire: SquireType) => {
+    squire.setHTML(squire.getHTML());
 };
