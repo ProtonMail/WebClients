@@ -252,7 +252,7 @@ const MessageView = (
     // Mark as read a message already loaded (when user marked as unread)
     useEffect(() => {
         if (expanded && unread && bodyLoaded) {
-            markAs([message.data as Element], labelID, MARK_AS_STATUS.READ);
+            markAs([message.data as Element], labelID, MARK_AS_STATUS.READ, true);
         }
     }, [expanded, unread, bodyLoaded]);
 
