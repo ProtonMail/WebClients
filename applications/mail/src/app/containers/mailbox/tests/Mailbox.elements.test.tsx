@@ -191,7 +191,7 @@ describe('Mailbox element list', () => {
                 Messages: [message],
             }));
             addApiMock(`mail/v4/messages/messageID1`, () => ({ Message: message }));
-            addApiMock(`mail/v4/messages/read`, () => {});
+            addApiMock(`mail/v4/messages/read`, () => ({ UndoToken: { Token: 'Token' } }));
             await rerender({ elementID: element1.ID });
 
             const items = getItems();
