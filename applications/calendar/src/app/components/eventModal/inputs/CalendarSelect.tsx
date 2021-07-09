@@ -7,6 +7,8 @@ import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsT
 import CalendarIcon from '../../CalendarIcon';
 import { getInitialMemberModel } from '../eventForm/state';
 
+import './CalendarSelect.scss';
+
 export interface Props extends Omit<SelectProps<string>, 'children'> {
     withIcon?: boolean;
     model: EventModel;
@@ -91,8 +93,13 @@ const CalendarSelect = ({ withIcon = false, model, setModel, isCreateEvent, froz
                 onChange={({ selectedIndex }) => withLoading(handleChangeCalendar(selectedIndex))}
                 {...rest}
             >
-                {options.map(({ value, text }) => (
-                    <Option value={value} title={text} key={value} />
+                {options.map(({ value, text, color: calendarColor }) => (
+                    <Option value={value} title={text} key={value}>
+                        <div className="flex flex-align-items-center">
+                            <div className="calendar-select-color mr0-75" style={{ backgroundColor: calendarColor }} />
+                            {text}
+                        </div>
+                    </Option>
                 ))}
             </SelectTwo>
         </>

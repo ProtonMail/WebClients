@@ -23,7 +23,7 @@ interface Props {
 const SubscribeCalendarModal = ({ ...rest }: Props) => {
     const [, setCalendar] = useState<Calendar | undefined>();
     const [calendarURL, setCalendarURL] = useState('');
-    const [model, setModel] = useState(() => getDefaultModel(false));
+    const [model, setModel] = useState(() => getDefaultModel());
     const [error, setError] = useState(false);
 
     const [loadingAction, withLoadingAction] = useLoading();
