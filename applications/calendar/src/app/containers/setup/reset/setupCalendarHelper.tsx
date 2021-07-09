@@ -9,6 +9,8 @@ import { getPrimaryKey } from '@proton/shared/lib/keys';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { DEFAULT_CALENDAR } from '@proton/shared/lib/calendar/constants';
 import { setupCalendarKey } from '@proton/components/containers/keys/calendar';
+import { LABEL_COLORS } from '@proton/shared/lib/constants';
+import { randomIntFromInterval } from '@proton/shared/lib/helpers/function';
 
 interface Args {
     addresses: Address[];
@@ -31,7 +33,7 @@ const setupCalendarHelper = async ({ addresses, api, getAddressKeys }: Args) => 
     const { Calendar } = await api<{ Calendar: tsCalendar }>(
         createCalendar({
             Name: DEFAULT_CALENDAR.name,
-            Color: DEFAULT_CALENDAR.color,
+            Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
             Description: DEFAULT_CALENDAR.description,
             Display: 1,
             AddressID: addressID,

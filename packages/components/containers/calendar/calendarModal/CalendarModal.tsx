@@ -34,7 +34,6 @@ interface Props {
     calendar?: Calendar | SubscribedCalendar;
     activeCalendars?: Calendar[];
     defaultCalendarID?: string;
-    defaultColor?: boolean;
     onClose?: () => void;
 }
 
@@ -42,7 +41,6 @@ export const CalendarModal = ({
     calendar: initialCalendar,
     activeCalendars = [],
     defaultCalendarID = '',
-    defaultColor = false,
     ...rest
 }: Props) => {
     const [loadingAction, withLoadingAction] = useLoading();
@@ -50,7 +48,7 @@ export const CalendarModal = ({
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [error, setError] = useState(false);
     const [calendar, setCalendar] = useState(initialCalendar);
-    const [model, setModel] = useState(() => getDefaultModel(defaultColor));
+    const [model, setModel] = useState(() => getDefaultModel());
 
     const addressText = useMemo(() => {
         const option = model.addressOptions.find(({ value: ID }) => ID === model.addressID);
