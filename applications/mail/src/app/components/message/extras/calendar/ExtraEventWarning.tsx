@@ -14,6 +14,7 @@ interface Props {
 }
 const ExtraEventWarning = ({ model }: Props) => {
     const {
+        isImport,
         isOrganizerMode,
         invitationIcs: { method, vevent: veventIcs },
         invitationApi,
@@ -23,7 +24,8 @@ const ExtraEventWarning = ({ model }: Props) => {
         timeStatus,
         isPartyCrasher,
     } = model;
-    if (isPartyCrasher) {
+
+    if (isPartyCrasher && !isImport) {
         const text = isOrganizerMode
             ? c('Calendar invite info')
                   .t`The sender of this email has not been invited to this event and cannot be added as a participant.`

@@ -3,8 +3,11 @@ import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { Address, UserSettings } from '@proton/shared/lib/interfaces';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
+import {
+    EVENT_INVITATION_ERROR_TYPE,
+    EventInvitationError,
+} from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import React, { useEffect, useState } from 'react';
 import {
     Icon,
@@ -18,7 +21,6 @@ import {
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { c } from 'ttag';
 import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
-import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from '../../../../helpers/calendar/EventInvitationError';
 import {
     EventInvitation,
     getEventTimeStatus,
@@ -53,7 +55,7 @@ const { DECLINECOUNTER, REPLY } = ICAL_METHOD;
 
 interface Props {
     message: MessageExtendedWithData;
-    invitationOrError: RequireSome<EventInvitation, 'method'> | EventInvitationError;
+    invitationOrError: EventInvitation | EventInvitationError;
     canCreateCalendar: boolean;
     maxUserCalendarsDisabled: boolean;
     mustReactivateCalendars: boolean;
@@ -119,7 +121,10 @@ const ExtraEvent = ({
         method && [DECLINECOUNTER, REPLY].includes(method) && model.invitationApi?.vevent
             ? model.invitationApi?.vevent
             : model.invitationIcs?.vevent;
-    const title = getDisplayTitle(displayVevent?.summary?.value);
+    const title =
+        model.isImport && model.hasMultipleVevents
+            ? model.invitationIcs?.fileName || ''
+            : getDisplayTitle(displayVevent?.summary?.value);
 
     useEffect(() => {
         let unmounted = false;

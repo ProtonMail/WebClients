@@ -14,6 +14,7 @@ import {
     ICAL_EVENT_STATUS,
     ICAL_METHOD,
 } from '@proton/shared/lib/calendar/constants';
+import { getLinkedDateTimeProperty } from '@proton/shared/lib/calendar/icsSurgery/vevent';
 import {
     CreateCalendarEventSyncData,
     CreateLinkedCalendarEventsSyncData,
@@ -75,8 +76,11 @@ import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
 import { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
+import {
+    EVENT_INVITATION_ERROR_TYPE,
+    EventInvitationError,
+} from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { MessageExtendedWithData } from '../../models/message';
-import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
 import {
     EventInvitation,
     getCanCreateSingleEdit,
@@ -84,7 +88,6 @@ import {
     getIsInvitationFromFuture,
     getIsInvitationOutdated,
     getIsPmInvite,
-    getLinkedDateTimeProperty,
     getSingleEditWidgetData,
     processEventInvitation,
     UPDATE_ACTION,
@@ -163,6 +166,7 @@ const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, api, recurrenceId
     if (!event && recurrenceId) {
         try {
             const supportedRecurrenceId = getLinkedDateTimeProperty({
+                component: 'vevent',
                 property: recurrenceId,
                 isAllDay: !!parentEvent.FullDay,
                 tzid: parentEvent.StartTimezone,
@@ -391,7 +395,7 @@ const updateEventApi = async ({
 
 interface UpdateEventInvitationArgs {
     isOrganizerMode: boolean;
-    invitationIcs: RequireSome<EventInvitation, 'method'>;
+    invitationIcs: EventInvitation;
     invitationApi: RequireSome<EventInvitation, 'calendarEvent'>;
     parentInvitationApi?: RequireSome<EventInvitation, 'calendarEvent'>;
     calendarData: Required<CalendarWidgetData>;

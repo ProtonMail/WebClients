@@ -1,9 +1,9 @@
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '../../calendar/constants';
+import { DecryptedKey } from '../Key';
 import { Calendar, CalendarSettings } from './Calendar';
+import { DecryptedCalendarKey } from './CalendarKey';
 import { CalendarEvent } from './Event';
 import { VcalAttendeeProperty, VcalOrganizerProperty, VcalVeventComponent } from './VcalModel';
-import { DecryptedKey } from '../Key';
-import { DecryptedCalendarKey } from './CalendarKey';
 
 export interface PartstatActions {
     accept: () => Promise<void>;
@@ -43,8 +43,11 @@ export interface Participant {
     attendeeID?: string;
 }
 
-export interface SavedInviteData {
+export interface SavedImportData {
     savedEvent: CalendarEvent;
     savedVevent: VcalVeventComponent;
+}
+
+export interface SavedInviteData extends SavedImportData {
     savedVcalAttendee: VcalAttendeeProperty;
 }

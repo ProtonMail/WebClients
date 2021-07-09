@@ -1,6 +1,6 @@
 import { format, getUnixTime } from 'date-fns';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { getAttendeeEmail, getSupportedAttendee } from '@proton/shared/lib/calendar/attendees';
+import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import {
     CALENDAR_FLAGS,
@@ -8,55 +8,42 @@ import {
     ICAL_EXTENSIONS,
     ICAL_METHOD,
     ICAL_METHODS_ATTENDEE,
-    ICAL_MIME_TYPE,
-    MAX_LENGTHS,
 } from '@proton/shared/lib/calendar/constants';
+import { generateVeventHashUID } from '@proton/shared/lib/calendar/helper';
+import { getSupportedEvent } from '@proton/shared/lib/calendar/icsSurgery/vevent';
 import { findAttendee, getParticipant, getSelfAddressData } from '@proton/shared/lib/calendar/integration/invite';
 import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurring';
 
-import { getHasConsistentRrule, getSupportedRrule } from '@proton/shared/lib/calendar/rrule';
-import {
-    getIsDateOutOfBounds,
-    getIsWellFormedDateOrDateTime,
-    getSupportedUID,
-} from '@proton/shared/lib/calendar/support';
-import { parseWithErrors } from '@proton/shared/lib/calendar/vcal';
+import { parseWithErrors, serialize } from '@proton/shared/lib/calendar/vcal';
 import {
     buildVcalOrganizer,
     dateTimeToProperty,
-    getDateProperty,
-    getDateTimeProperty,
-    getDateTimePropertyInDifferentTimezone,
     getDtendProperty,
     propertyToUTCDate,
 } from '@proton/shared/lib/calendar/vcalConverter';
 import {
     getHasDtStart,
     getHasRecurrenceId,
-    getHasUid,
     getIcalMethod,
     getIsCalendar,
     getIsEventComponent,
-    getIsPropertyAllDay,
     getIsRecurring,
     getIsTimezoneComponent,
     getIsValidMethod,
     getIsXOrIanaComponent,
     getPmSharedEventID,
     getPmSharedSessionKey,
-    getPropertyTzid,
     getSequence,
 } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
 import { APPS, SECOND } from '@proton/shared/lib/constants';
 import { addDays, format as formatUTC } from '@proton/shared/lib/date-fns-utc';
-import { convertUTCDateTimeToZone, fromUTCDate, getSupportedTimezone } from '@proton/shared/lib/date/timezone';
+import { fromUTCDate, getSupportedTimezone } from '@proton/shared/lib/date/timezone';
 import { getIsAddressActive, getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
-import { unique } from '@proton/shared/lib/helpers/array';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
-import { truncate } from '@proton/shared/lib/helpers/string';
+import { unary } from '@proton/shared/lib/helpers/function';
 import { Address } from '@proton/shared/lib/interfaces';
 import {
     Calendar,
@@ -65,11 +52,12 @@ import {
     CalendarWidgetData,
     Participant,
     PmInviteData,
+    VcalNumberProperty,
+    VcalStringProperty,
 } from '@proton/shared/lib/interfaces/calendar';
 import {
     VcalDateOrDateTimeProperty,
     VcalDateTimeProperty,
-    VcalFloatingDateTimeProperty,
     VcalVcalendar,
     VcalVeventComponent,
     VcalVtimezoneComponent,
@@ -79,9 +67,12 @@ import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { getOriginalTo } from '@proton/shared/lib/mail/messages';
+import {
+    EVENT_INVITATION_ERROR_TYPE,
+    EventInvitationError,
+} from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { c } from 'ttag';
 import { MessageExtendedWithData } from '../../models/message';
-import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
 import { FetchAllEventsByUID } from './inviteApi';
 
 const calendarAppName = getAppName(APPS.PROTONCALENDAR);
@@ -94,6 +85,8 @@ export enum EVENT_TIME_STATUS {
 
 export interface EventInvitation {
     originalVcalInvitation?: VcalVcalendar;
+    originalUniqueIdentifier?: string;
+    fileName?: string;
     vevent: VcalVeventComponent;
     calendarEvent?: CalendarEvent;
     method?: ICAL_METHOD;
@@ -113,7 +106,9 @@ export enum UPDATE_ACTION {
 }
 
 export interface InvitationModel {
+    isImport: boolean;
     isOrganizerMode: boolean;
+    hasMultipleVevents: boolean;
     timeStatus: EVENT_TIME_STATUS;
     isPartyCrasher?: boolean;
     isAddressActive: boolean;
@@ -138,6 +133,11 @@ export interface InvitationModel {
     hasDecryptionError?: boolean;
 }
 
+interface NonRFCCompliantVcalendar extends VcalVcalendar {
+    uid?: VcalStringProperty;
+    sequence?: VcalNumberProperty;
+}
+
 export const getHasInvitation = (model: InvitationModel): model is RequireSome<InvitationModel, 'invitationIcs'> => {
     return !!model.invitationIcs;
 };
@@ -160,10 +160,21 @@ export const getHasFullCalendarData = (data?: CalendarWidgetData): data is Requi
 };
 
 export const filterAttachmentsForEvents = (attachments: Attachment[]): Attachment[] =>
-    attachments.filter(
-        ({ Name = '', MIMEType = '' }) =>
-            ICAL_EXTENSIONS.includes(splitExtension(Name)[1]) && MIMEType.includes(ICAL_MIME_TYPE)
-    );
+    attachments.filter(({ Name = '' }) => ICAL_EXTENSIONS.includes(splitExtension(Name)[1]));
+
+// Some external providers include UID and SEQUENCE outside the VEVENT component
+export const withOutsideUIDAndSequence = (vevent: VcalVeventComponent, vcal: NonRFCCompliantVcalendar) => {
+    const { uid: veventUid, sequence: veventSequence } = vevent;
+    const { uid: vcalUid, sequence: vcalSequence } = vcal;
+    const result = { ...vevent };
+    if (!veventUid && vcalUid) {
+        result.uid = { ...vcalUid };
+    }
+    if (!veventSequence && vcalSequence) {
+        result.sequence = { ...vcalSequence };
+    }
+    return result;
+};
 
 const withMessageDtstamp = <T>(properties: VcalVeventComponent & T, { Time }: Message): VcalVeventComponent & T => {
     if (properties.dtstamp) {
@@ -176,16 +187,27 @@ const withMessageDtstamp = <T>(properties: VcalVeventComponent & T, { Time }: Me
     };
 };
 
+export const getHasMultipleVevents = (vcal?: VcalVcalendar) => {
+    const numberOfVevents = vcal?.components?.filter(unary(getIsEventComponent)).length || 0;
+    return numberOfVevents > 1;
+};
+
 export const extractVevent = (vcal?: VcalVcalendar): VcalVeventComponent | undefined => {
-    return vcal?.components?.find(getIsEventComponent);
+    const result = vcal?.components?.find(getIsEventComponent);
+    // return a copy
+    return result ? { ...result } : undefined;
 };
 
 export const extractVTimezone = (vcal?: VcalVcalendar): VcalVtimezoneComponent | undefined => {
-    return vcal?.components?.find(getIsTimezoneComponent);
+    const result = vcal?.components?.find(getIsTimezoneComponent);
+    // return a copy
+    return result ? { ...result } : undefined;
 };
 
 export const extractXOrIanaComponents = (vcal?: VcalVcalendar): VcalXOrIanaComponent[] | undefined => {
-    return vcal?.components?.filter(getIsXOrIanaComponent);
+    const result = vcal?.components?.filter(getIsXOrIanaComponent);
+    // return a copy
+    return result ? { ...result } : undefined;
 };
 
 export const getIsOrganizerMode = (event: VcalVeventComponent, emailTo: string) => {
@@ -353,13 +375,13 @@ export const formatEndDateTime = (property: VcalDateOrDateTimeProperty, locale: 
 };
 
 const getIsEventInvitationValid = (event: VcalVeventComponent | undefined): event is VcalVeventComponent => {
-    if (!event || !getHasDtStart(event) || !getHasUid(event)) {
+    if (!event || !getHasDtStart(event)) {
         return false;
     }
     return true;
 };
 
-export const parseEventInvitation = (data: string): VcalVcalendar | undefined => {
+export const parseVcalendar = (data: string): VcalVcalendar | undefined => {
     try {
         if (!data) {
             return;
@@ -375,7 +397,9 @@ export const parseEventInvitation = (data: string): VcalVcalendar | undefined =>
 };
 
 interface ProcessedInvitation<T> {
+    isImport: boolean;
     isOrganizerMode: boolean;
+    hasMultipleVevents: boolean;
     timeStatus: EVENT_TIME_STATUS;
     isAddressActive: boolean;
     isAddressDisabled: boolean;
@@ -387,13 +411,15 @@ export const processEventInvitation = <T>(
     contactEmails: ContactEmail[],
     ownAddresses: Address[]
 ): ProcessedInvitation<T> => {
-    const { vevent, calendarEvent } = invitation;
+    const { originalVcalInvitation, vevent, calendarEvent, method } = invitation;
+    const isImport = method === ICAL_METHOD.PUBLISH;
+    const hasMultipleVevents = getHasMultipleVevents(originalVcalInvitation);
     const timeStatus = getEventTimeStatus(vevent, Date.now());
     const attendees = vevent.attendee || [];
     const { organizer } = vevent;
     const originalTo = getOriginalTo(message.data);
     const originalFrom = message.data.SenderAddress;
-    const isOrganizerMode = getIsOrganizerMode(vevent, originalTo);
+    const isOrganizerMode = isImport ? false : getIsOrganizerMode(vevent, originalTo);
     const { selfAddress, selfAttendee } = getSelfAddressData({
         isOrganizer: isOrganizerMode,
         organizer,
@@ -445,11 +471,19 @@ export const processEventInvitation = <T>(
         });
     }
 
-    return { isOrganizerMode, timeStatus, isAddressActive, isAddressDisabled, invitation: processed };
+    return {
+        isImport,
+        isOrganizerMode,
+        hasMultipleVevents,
+        timeStatus,
+        isAddressActive,
+        isAddressDisabled,
+        invitation: processed,
+    };
 };
 
 interface GetInitialInvitationModelArgs {
-    invitationOrError: RequireSome<EventInvitation, 'method'> | EventInvitationError;
+    invitationOrError: EventInvitation | EventInvitationError;
     message: MessageExtendedWithData;
     contactEmails: ContactEmail[];
     ownAddresses: Address[];
@@ -472,6 +506,8 @@ export const getInitialInvitationModel = ({
 }: GetInitialInvitationModelArgs) => {
     if (invitationOrError instanceof EventInvitationError) {
         return {
+            isImport: false,
+            hasMultipleVevents: false,
             isOrganizerMode: false,
             isAddressDisabled: false,
             isAddressActive: true,
@@ -483,14 +519,19 @@ export const getInitialInvitationModel = ({
             error: invitationOrError,
         };
     }
-    const { isOrganizerMode, timeStatus, isAddressActive, isAddressDisabled, invitation } = processEventInvitation(
-        invitationOrError,
-        message,
-        contactEmails,
-        ownAddresses
-    );
+    const {
+        isOrganizerMode,
+        isImport,
+        hasMultipleVevents,
+        timeStatus,
+        isAddressActive,
+        isAddressDisabled,
+        invitation,
+    } = processEventInvitation(invitationOrError, message, contactEmails, ownAddresses);
     const result: InvitationModel = {
         isOrganizerMode,
+        isImport,
+        hasMultipleVevents,
         timeStatus,
         isAddressActive,
         isAddressDisabled,
@@ -499,7 +540,7 @@ export const getInitialInvitationModel = ({
         mustReactivateCalendars,
         hasNoCalendars,
         invitationIcs: invitation,
-        isPartyCrasher: isOrganizerMode ? false : !invitation.attendee,
+        isPartyCrasher: isOrganizerMode || isImport ? false : !invitation.attendee,
     };
     if (calendar) {
         result.calendarData = {
@@ -510,7 +551,7 @@ export const getInitialInvitationModel = ({
                 hasBit(calendar.Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE),
         };
     }
-    if (!getIsValidMethod(invitation.method, isOrganizerMode)) {
+    if (!isImport && !getIsValidMethod(invitation.method, isOrganizerMode)) {
         result.error = new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVALID_METHOD, {
             method: invitation.method,
         });
@@ -523,327 +564,87 @@ export const getInitialInvitationModel = ({
     return result;
 };
 
-interface GetSupportedDateOrDateTimePropertyArgs {
-    property: VcalDateOrDateTimeProperty | VcalFloatingDateTimeProperty;
-    hasXWrTimezone: boolean;
-    calendarTzid?: string;
-    isRecurring?: boolean;
-    method?: ICAL_METHOD;
-}
-export const getSupportedDateOrDateTimeProperty = ({
-    property,
-    hasXWrTimezone,
-    calendarTzid,
-    isRecurring = false,
-    method,
-}: GetSupportedDateOrDateTimePropertyArgs) => {
-    if (getIsPropertyAllDay(property)) {
-        return getDateProperty(property.value);
-    }
-
-    const partDayProperty = property;
-
-    // account for non-RFC-compliant Google Calendar exports
-    // namely localize Zulu date-times for non-recurring events with x-wr-timezone if present and accepted by us
-    if (partDayProperty.value.isUTC && !isRecurring && hasXWrTimezone && calendarTzid) {
-        const localizedDateTime = convertUTCDateTimeToZone(partDayProperty.value, calendarTzid);
-        return getDateTimeProperty(localizedDateTime, calendarTzid);
-    }
-    const partDayPropertyTzid = getPropertyTzid(partDayProperty);
-
-    // A floating date-time property
-    if (!partDayPropertyTzid) {
-        if (!hasXWrTimezone) {
-            throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { method });
-        }
-        if (hasXWrTimezone && !calendarTzid) {
-            throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { method });
-        }
-        return getDateTimeProperty(partDayProperty.value, calendarTzid);
-    }
-
-    const supportedTzid = getSupportedTimezone(partDayPropertyTzid);
-    if (!supportedTzid) {
-        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { method });
-    }
-    return getDateTimeProperty(partDayProperty.value, supportedTzid);
-};
-
-interface GetLinkedDateTimePropertyArgs {
-    property: VcalDateOrDateTimeProperty;
-    isAllDay: boolean;
-    tzid?: string;
-    method?: ICAL_METHOD;
-}
-export const getLinkedDateTimeProperty = ({
-    property,
-    isAllDay,
-    tzid,
-    method,
-}: GetLinkedDateTimePropertyArgs): VcalDateOrDateTimeProperty => {
-    if (isAllDay) {
-        return getDateProperty(property.value);
-    }
-    if (getIsPropertyAllDay(property)) {
-        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method });
-    }
-    const supportedTzid = getPropertyTzid(property);
-    if (!supportedTzid || !tzid) {
-        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { method });
-    }
-    if (tzid !== supportedTzid) {
-        // the linked date-time property should have the same tzid as dtstart
-        return getDateTimePropertyInDifferentTimezone(property, tzid, isAllDay);
-    }
-    return getDateTimeProperty(property.value, tzid);
-};
-
-export const getSupportedEventInvitation = (
-    vcalInvitation: VcalVcalendar,
-    message: Message
-): RequireSome<EventInvitation, 'method'> | undefined => {
-    const { version, calscale, 'x-wr-timezone': xWrTimezone, method } = vcalInvitation;
-    const supportedMethod = method ? getIcalMethod(method) : undefined;
-    if (!method || supportedMethod === ICAL_METHOD.PUBLISH) {
-        // Ignore the ics. We don't know if it is an invitation
-        return;
-    }
+export const getSupportedEventInvitation = async ({
+    vcalComponent,
+    message,
+    icsBinaryString,
+    icsFileName,
+}: {
+    vcalComponent: VcalVcalendar;
+    message: Message;
+    icsBinaryString: string;
+    icsFileName: string;
+}): Promise<EventInvitation | undefined> => {
+    const { version, calscale, 'x-wr-timezone': xWrTimezone, method } = vcalComponent;
+    const supportedMethod = getIcalMethod(method);
     if (!supportedMethod) {
-        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVALID_METHOD, { method: supportedMethod });
+        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVALID_METHOD);
     }
     if ((calscale && calscale.value.toLowerCase() !== 'gregorian') || version?.value !== '2.0') {
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { method: supportedMethod });
     }
-    const vevent = extractVevent(vcalInvitation);
-    const vtimezone = extractVTimezone(vcalInvitation);
+    const vevent = extractVevent(vcalComponent);
+    const vtimezone = extractVTimezone(vcalComponent);
     if (!getIsEventInvitationValid(vevent)) {
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: supportedMethod });
     }
+    const completeVevent = withOutsideUIDAndSequence(vevent, vcalComponent);
+    // To filter potentially equivalent invitation ics's, we have to generate a reliable
+    // unique identifier (resistant to format differences, like \n --> \r\n) for the ics if it has no UID
+    const originalUniqueIdentifier =
+        completeVevent.uid?.value || (await generateVeventHashUID(serialize(vcalComponent)));
+    if (supportedMethod === ICAL_METHOD.PUBLISH) {
+        const sha1Uid = await generateVeventHashUID(icsBinaryString, completeVevent.uid?.value);
+        completeVevent.uid = { value: sha1Uid };
+        if (completeVevent['recurrence-id']) {
+            // Since we changed the UID, we ignore the RECURRENCE-ID if present
+            delete completeVevent['recurrence-id'];
+        }
+    } else if (!completeVevent.organizer) {
+        // The ORGANIZER field is mandatory in an invitation
+        const guessOrganizerEmail = ICAL_METHODS_ATTENDEE.includes(supportedMethod)
+            ? getOriginalTo(message)
+            : message.SenderAddress;
+        completeVevent.organizer = buildVcalOrganizer(guessOrganizerEmail);
+    }
+    const hasXWrTimezone = !!xWrTimezone?.value;
+    const calendarTzid = xWrTimezone ? getSupportedTimezone(xWrTimezone.value) : undefined;
+    const invitationTzid = vtimezone?.tzid.value;
+    const guessTzid = invitationTzid ? getSupportedTimezone(invitationTzid) : undefined;
     try {
-        const event = withMessageDtstamp(vevent, message);
-        const {
-            component,
-            uid,
-            dtstamp,
-            dtstart,
-            dtend,
-            rrule,
-            exdate,
-            description,
-            summary,
-            location,
-            sequence,
-            'recurrence-id': recurrenceId,
-            organizer,
-            attendee,
-            duration,
-            'x-pm-session-key': sharedSessionKey,
-            'x-pm-shared-event-id': sharedEventID,
-        } = event;
-        const trimmedSummaryValue = summary?.value.trim();
-        const trimmedDescriptionValue = description?.value.trim();
-        const trimmedLocationValue = location?.value.trim();
-        const isRecurring = !!rrule || !!recurrenceId;
-
-        const validated: VcalVeventComponent & Required<Pick<VcalVeventComponent, 'uid' | 'dtstamp' | 'dtstart'>> = {
-            component,
-            uid: getSupportedUID(uid),
-            dtstamp: { ...dtstamp },
-            dtstart: { ...dtstart },
-        };
-        let ignoreRrule = false;
-
-        if (sharedSessionKey) {
-            validated['x-pm-session-key'] = { ...sharedSessionKey };
-        }
-        if (sharedEventID) {
-            validated['x-pm-shared-event-id'] = { ...sharedEventID };
-        }
-        if (organizer) {
-            validated.organizer = { ...organizer };
-        } else {
-            // The ORGANIZER field is mandatory in an invitation
-            const guessOrganizerEmail = ICAL_METHODS_ATTENDEE.includes(supportedMethod)
-                ? getOriginalTo(message)
-                : message.SenderAddress;
-            validated.organizer = buildVcalOrganizer(guessOrganizerEmail);
-        }
-
-        if (attendee) {
-            if (attendee.length > 100) {
-                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
-                    method: supportedMethod,
-                });
-            }
-            const attendeeEmails = attendee.map((att) => getAttendeeEmail(att));
-            if (unique(attendeeEmails).length !== attendeeEmails.length) {
-                // Do not accept invitations with repeated emails as they will cause problems.
-                // Usually external providers don't allow this to happen
-                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
-                    method: supportedMethod,
-                });
-            }
-            validated.attendee = attendee.map((vcalAttendee) => getSupportedAttendee(vcalAttendee));
-        }
-
-        if (trimmedSummaryValue) {
-            validated.summary = {
-                ...summary,
-                value: truncate(trimmedSummaryValue, MAX_LENGTHS.TITLE),
-            };
-        }
-        if (trimmedDescriptionValue) {
-            validated.description = {
-                ...description,
-                value: truncate(trimmedDescriptionValue, MAX_LENGTHS.EVENT_DESCRIPTION),
-            };
-        }
-        if (trimmedLocationValue) {
-            validated.location = {
-                ...location,
-                value: truncate(trimmedLocationValue, MAX_LENGTHS.LOCATION),
-            };
-        }
-        const sequenceValue = sequence?.value || 0;
-        const sequenceSafeValue = Number.isSafeInteger(sequenceValue) ? sequenceValue : 0;
-        validated.sequence = { value: Math.max(0, sequenceSafeValue) };
-
-        const hasXWrTimezone = !!xWrTimezone?.value;
-        const calendarTzid = xWrTimezone ? getSupportedTimezone(xWrTimezone.value) : undefined;
-
-        validated.dtstart = getSupportedDateOrDateTimeProperty({
-            property: dtstart,
+        const supportedEvent = await getSupportedEvent({
+            method: supportedMethod,
+            vcalVeventComponent: withMessageDtstamp(completeVevent, message),
             hasXWrTimezone,
             calendarTzid,
-            isRecurring,
-            method: supportedMethod,
+            guessTzid,
+            dropAlarms: true,
+            isEventInvitation: true,
         });
-        const isAllDayStart = getIsPropertyAllDay(validated.dtstart);
-        const startTzid = getPropertyTzid(validated.dtstart);
-        if (!getIsWellFormedDateOrDateTime(validated.dtstart)) {
-            throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: supportedMethod });
-        }
-        if (getIsDateOutOfBounds(validated.dtstart)) {
-            throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
-                method: supportedMethod,
-            });
-        }
-        if (dtend) {
-            const supportedDtend = getSupportedDateOrDateTimeProperty({
-                property: dtend,
-                hasXWrTimezone,
-                calendarTzid,
-                isRecurring,
-                method: supportedMethod,
-            });
-            if (!getIsWellFormedDateOrDateTime(supportedDtend)) {
-                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, {
-                    method: supportedMethod,
-                });
-            }
-            if (getIsDateOutOfBounds(supportedDtend)) {
-                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
-                    method: supportedMethod,
-                });
-            }
-            const startDateUTC = propertyToUTCDate(validated.dtstart);
-            const endDateUTC = propertyToUTCDate(supportedDtend);
-            // allow a non-RFC-compliant all-day event with DTSTART = DTEND
-            const modifiedEndDateUTC =
-                !getIsPropertyAllDay(dtend) || +startDateUTC === +endDateUTC ? endDateUTC : addDays(endDateUTC, -1);
-            const duration = +modifiedEndDateUTC - +startDateUTC;
-
-            if (duration > 0) {
-                validated.dtend = supportedDtend;
-            }
-        } else if (duration) {
-            throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
-                method: supportedMethod,
-            });
-        }
-        const isAllDayEnd = validated.dtend ? getIsPropertyAllDay(validated.dtend) : undefined;
-        if (isAllDayEnd !== undefined && +isAllDayStart ^ +isAllDayEnd) {
-            throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: supportedMethod });
-        }
-        if (exdate) {
-            if (!rrule) {
-                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, {
-                    method: supportedMethod,
-                });
-            }
-            const supportedExdate = exdate.map((property) =>
-                getSupportedDateOrDateTimeProperty({
-                    property,
-                    hasXWrTimezone,
-                    calendarTzid,
-                    isRecurring,
-                    method: supportedMethod,
-                })
-            );
-            validated.exdate = supportedExdate.map((property) =>
-                getLinkedDateTimeProperty({
-                    property,
-                    isAllDay: isAllDayStart,
-                    tzid: startTzid,
-                    method: supportedMethod,
-                })
-            );
-        }
-        if (recurrenceId) {
-            if (rrule) {
-                if (supportedMethod === ICAL_METHOD.REPLY) {
-                    // the external provider forgot to remove the RRULE
-                    ignoreRrule = true;
-                } else {
-                    throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
-                        method: supportedMethod,
-                    });
-                }
-            }
-            // RECURRENCE-ID cannot be linked with DTSTART of the parent event at this point since we do not have access to it
-            validated['recurrence-id'] = getSupportedDateOrDateTimeProperty({
-                property: recurrenceId,
-                hasXWrTimezone,
-                calendarTzid,
-                isRecurring,
-                method: supportedMethod,
-            });
-        }
-
-        if (rrule && !ignoreRrule) {
-            const invitationTzid = vtimezone?.tzid.value;
-            const guessTzid = invitationTzid ? getSupportedTimezone(invitationTzid) : undefined;
-            const supportedRrule = getSupportedRrule({ ...validated, rrule }, true, guessTzid);
-            if (!supportedRrule) {
-                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
-                    method: supportedMethod,
-                });
-            }
-            validated.rrule = supportedRrule;
-            if (!getHasConsistentRrule(validated)) {
-                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, {
-                    method: supportedMethod,
-                });
-            }
-        }
-
         return {
             method: supportedMethod,
-            vevent: validated,
+            vevent: supportedEvent,
             vtimezone,
-            originalVcalInvitation: vcalInvitation,
+            originalVcalInvitation: vcalComponent,
+            originalUniqueIdentifier,
+            fileName: icsFileName,
         };
     } catch (error) {
         if (error instanceof EventInvitationError) {
             throw error;
         }
-        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { externalError: error });
+        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
+            externalError: error,
+            method: supportedMethod,
+        });
     }
 };
 
 export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invitationIcs'>) => {
     const {
         isOrganizerMode,
+        isImport,
+        hasMultipleVevents,
         hideLink,
         isPartyCrasher,
         isOutdated,
@@ -866,9 +667,13 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
         [ICAL_ATTENDEE_STATUS.ACCEPTED, ICAL_ATTENDEE_STATUS.TENTATIVE, ICAL_ATTENDEE_STATUS.DECLINED].includes(
             attendeeIcs?.partstat
         );
-    const canBeAnswered = !isOrganizerMode && method === ICAL_METHOD.REQUEST && !isOutdated && isAddressActive;
+    const canBeAdded = isImport;
+    const canBeAnswered =
+        !isOrganizerMode && method === ICAL_METHOD.REQUEST && !isOutdated && isAddressActive && !isImport;
     const canBeManaged =
-        isOrganizerMode && (method === ICAL_METHOD.REPLY || (method === ICAL_METHOD.COUNTER && hasAlsoReplied));
+        isOrganizerMode &&
+        (method === ICAL_METHOD.REPLY || (method === ICAL_METHOD.COUNTER && hasAlsoReplied)) &&
+        !isImport;
     const canBeSeenUpdated =
         [ICAL_METHOD.CANCEL, ICAL_METHOD.COUNTER, ICAL_METHOD.REFRESH].includes(method) ||
         (!isOrganizerMode && method === ICAL_METHOD.REQUEST && isOutdated);
@@ -876,6 +681,12 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
     const safeCalendarNeedsUserAction = calendarData?.calendarNeedsUserAction && !isPartyCrasher;
     // the calendar needs a user action to be active
     if (safeCalendarNeedsUserAction || mustReactivateCalendars) {
+        if (isImport) {
+            return {
+                to: '',
+                text: c('Link').t`You need to activate your calendar keys to add this event`,
+            };
+        }
         if (canBeManaged) {
             return {
                 to: '',
@@ -895,6 +706,15 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
             return { to: '', text };
         }
         return {};
+    }
+
+    if (isImport && hasMultipleVevents) {
+        return {
+            to: 'calendar/calendars#import',
+            toApp: APPS.PROTONACCOUNT,
+            text: c('Link')
+                .t`This ICS file contains more than one event. Please download it and import the events in ${calendarAppName}`,
+        };
     }
 
     // the invitation is unanswered
@@ -919,6 +739,12 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
             }
         }
         if (hasNoCalendars && canCreateCalendar && !isPartyCrasher) {
+            if (canBeAdded) {
+                return {
+                    to: '',
+                    text: c('Link').t`Create a new calendar to add this event`,
+                };
+            }
             if (canBeAnswered) {
                 return {
                     to: '',
@@ -961,15 +787,18 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
 
 export const getDoNotDisplayButtons = (model: RequireSome<InvitationModel, 'invitationIcs'>) => {
     const {
+        isImport,
+        hasMultipleVevents,
         isOrganizerMode,
         isPartyCrasher,
         invitationIcs: { method },
+        invitationApi,
         calendarData,
         isOutdated,
         isAddressActive,
     } = model;
 
-    if (isOrganizerMode) {
+    if (isOrganizerMode || (isImport && (invitationApi || hasMultipleVevents))) {
         return true;
     }
     return (
@@ -979,4 +808,11 @@ export const getDoNotDisplayButtons = (model: RequireSome<InvitationModel, 'invi
         !!calendarData?.isCalendarDisabled ||
         isPartyCrasher
     );
+};
+
+export const getDisableButtons = (model: RequireSome<InvitationModel, 'invitationIcs'>) => {
+    const { calendarData, isAddressActive, isImport } = model;
+    const alwaysDisable =
+        !calendarData?.calendar || calendarData.isCalendarDisabled || calendarData.calendarNeedsUserAction;
+    return isImport ? alwaysDisable : alwaysDisable || !isAddressActive;
 };

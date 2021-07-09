@@ -7,6 +7,11 @@ import { Participant, SavedInviteData } from '@proton/shared/lib/interfaces/cale
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
 import { formatSubject, RE_PREFIX } from '@proton/shared/lib/mail/messages';
+import {
+    EVENT_INVITATION_ERROR_TYPE,
+    EventInvitationError,
+    getErrorMessage,
+} from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import React, { useCallback, Dispatch, SetStateAction } from 'react';
 import {
     Icon,
@@ -18,11 +23,12 @@ import {
 } from '@proton/components';
 import { c } from 'ttag';
 import {
-    EVENT_INVITATION_ERROR_TYPE,
-    EventInvitationError,
-    getErrorMessage,
-} from '../../../../helpers/calendar/EventInvitationError';
-import { getIsPmInvite, getIsReinvite, InvitationModel, UPDATE_ACTION } from '../../../../helpers/calendar/invite';
+    getDisableButtons,
+    getIsPmInvite,
+    getIsReinvite,
+    InvitationModel,
+    UPDATE_ACTION,
+} from '../../../../helpers/calendar/invite';
 import useInviteButtons from '../../../../hooks/useInviteButtons';
 import { MessageExtended } from '../../../../models/message';
 
@@ -42,7 +48,6 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         calendarData,
         pmData,
         singleEditData,
-        isAddressActive,
         error,
         hasDecryptionError,
         reinviteEventID,
@@ -152,11 +157,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         });
     };
 
-    const buttonsDisabled =
-        !calendarData?.calendar ||
-        calendarData.isCalendarDisabled ||
-        !isAddressActive ||
-        calendarData.calendarNeedsUserAction;
+    const buttonsDisabled = getDisableButtons(model);
     const isPmInvite =
         getIsPmInvite({ invitationIcs, invitationApi, pmData }) ||
         (pmData && getIsReinvite({ invitationIcs, invitationApi, isOrganizerMode }));

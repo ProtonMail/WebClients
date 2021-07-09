@@ -1,3 +1,4 @@
+import { RequireSome } from '../interfaces';
 import { getOccurrences } from './recurring';
 import { propertyToUTCDate } from './vcalConverter';
 import { getIsDateTimeValue, getIsPropertyAllDay, getPropertyTzid } from './vcalHelper';
@@ -363,7 +364,7 @@ export const getSupportedUntil = (
 };
 
 export const getSupportedRrule = (
-    vevent: VcalVeventComponent,
+    vevent: RequireSome<Partial<VcalVeventComponent>, 'dtstart'>,
     isInvitation = false,
     guessTzid?: string
 ): VcalRruleProperty | undefined => {
@@ -389,7 +390,7 @@ export const getSupportedRrule = (
     return supportedRrule;
 };
 
-export const getHasConsistentRrule = (vevent: VcalVeventComponent) => {
+export const getHasConsistentRrule = (vevent: RequireSome<Partial<VcalVeventComponent>, 'dtstart'>) => {
     const { dtstart, rrule } = vevent;
 
     if (!rrule?.value) {

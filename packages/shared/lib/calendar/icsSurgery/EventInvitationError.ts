@@ -1,5 +1,5 @@
-import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, ICAL_METHODS_ATTENDEE } from '@proton/shared/lib/calendar/constants';
 import { c } from 'ttag';
+import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, ICAL_METHODS_ATTENDEE } from '../constants';
 
 export enum EVENT_INVITATION_ERROR_TYPE {
     INVITATION_INVALID,
@@ -17,20 +17,31 @@ export enum EVENT_INVITATION_ERROR_TYPE {
 }
 
 export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, config?: EventInvitationErrorConfig) => {
+    const isUnknown = !config?.method;
+    const isImport = config?.method === ICAL_METHOD.PUBLISH;
     const isResponse = config?.method && ICAL_METHODS_ATTENDEE.includes(config?.method);
     if (errorType === EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID) {
+        if (isUnknown) {
+            return c('Attached ics file error').t`Invalid ICS file`;
+        }
+        if (isImport) {
+            return c('Attached ics file error').t`Invalid event`;
+        }
         return isResponse
             ? c('Event invitation error').t`Invalid response`
             : c('Event invitation error').t`Invalid invitation`;
     }
     if (errorType === EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED) {
+        if (isImport) {
+            return c('Attached ics file error').t`Unsupported event`;
+        }
         return isResponse
             ? c('Event invitation error').t`Unsupported response`
             : c('Event invitation error').t`Unsupported invitation`;
     }
     if (errorType === EVENT_INVITATION_ERROR_TYPE.INVALID_METHOD) {
-        if (!config?.method) {
-            return c('Event invitation error').t`Invalid method`;
+        if (isUnknown) {
+            return c('Attached ics file error').t`Invalid ICS file`;
         }
         // Here we invert response <-> invitation as we take the perspective of the sender
         return isResponse
@@ -38,10 +49,10 @@ export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, config?:
             : c('Event invitation error').t`Invalid response`;
     }
     if (errorType === EVENT_INVITATION_ERROR_TYPE.PARSING_ERROR) {
-        return c('Event invitation error').t`Attached invitation could not be parsed`;
+        return c('Event invitation error').t`Attached ICS file could not be parsed`;
     }
     if (errorType === EVENT_INVITATION_ERROR_TYPE.DECRYPTION_ERROR) {
-        return c('Event invitation error').t`Attached invitation could not be decrypted`;
+        return c('Event invitation error').t`Attached ICS file could not be decrypted`;
     }
     if (errorType === EVENT_INVITATION_ERROR_TYPE.FETCHING_ERROR) {
         return c('Event invitation error').t`We could not retrieve the event from your calendar`;

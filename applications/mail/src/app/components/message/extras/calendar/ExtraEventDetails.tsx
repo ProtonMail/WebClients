@@ -20,6 +20,8 @@ interface Props {
 const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
     const {
         isOrganizerMode,
+        isImport,
+        hasMultipleVevents,
         calendarData,
         invitationIcs,
         invitationIcs: { method },
@@ -68,6 +70,10 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
             key: 'participants',
         },
     ].filter(isTruthy);
+
+    if (isImport && hasMultipleVevents) {
+        return null;
+    }
 
     return (
         <>
