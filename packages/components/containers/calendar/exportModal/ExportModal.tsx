@@ -74,7 +74,7 @@ export const ExportModal = ({ calendar, ...rest }: Props) => {
                 const ics = createExportIcs({
                     calendar,
                     prodId: getProdIdFromNameAndVersion(clientId, appVersion),
-                    events: exportedEvents,
+                    eventsWithSummary: exportedEvents,
                     defaultTzid,
                     vtimezones: uniqueTimezones,
                 });
