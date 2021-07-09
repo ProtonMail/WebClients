@@ -19,6 +19,7 @@ import {
     GroupsWithContactsMap,
 } from './helper';
 import Icon from '../icon/Icon';
+import { useCombinedRefs } from '../../hooks';
 
 interface Props extends Omit<InputProps, 'value'> {
     id: string;
@@ -61,7 +62,7 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
     ) => {
         const [input, setInput] = useState('');
         const [emailError, setEmailError] = useState('');
-        const rootRef = useRef<HTMLDivElement>(null);
+        const inputRef = useRef<HTMLInputElement>(null);
 
         const [recipientsByAddress, recipientsByGroup] = useMemo(() => {
             return recipients.reduce<[Set<string>, Set<string>]>(
@@ -155,7 +156,7 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
             options: filteredOptions,
             onSelect: handleSelect,
             input,
-            rootRef,
+            inputRef,
         });
 
         const handleInputChange = (newValue: string) => {
@@ -179,11 +180,11 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
         };
 
         return (
-            <div ref={rootRef}>
+            <>
                 <Input
                     {...rest}
                     {...inputProps}
-                    ref={ref}
+                    ref={useCombinedRefs(ref, inputRef)}
                     value={input}
                     onChange={(event) => {
                         handleInputChange(event.currentTarget.value.trimStart());
@@ -239,7 +240,7 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
                         );
                     })}
                 </AutocompleteList>
-            </div>
+            </>
         );
     }
 );

@@ -28,8 +28,8 @@ const Autocomplete = <T,>({
     getData,
     ...rest
 }: Props<T>) => {
-    const ref = useRef<HTMLInputElement>(null);
-    const rootRef = useRef<HTMLDivElement>(null);
+    const inputRef = useRef<HTMLInputElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
 
     const filteredOptions = useAutocompleteFilter(value, options, getData, limit, searchMinLength);
 
@@ -42,7 +42,7 @@ const Autocomplete = <T,>({
         options: filteredOptions,
         onSelect: handleSelect,
         input: value,
-        rootRef,
+        inputRef,
     });
 
     const handleSelectOption = (optionValue: T) => {
@@ -51,11 +51,12 @@ const Autocomplete = <T,>({
     };
 
     return (
-        <div ref={rootRef}>
+        <>
             <Input
                 {...rest}
                 {...inputProps}
-                {...(rest.icon ? { containerRef: ref } : { ref })}
+                containerRef={containerRef}
+                ref={inputRef}
                 value={value}
                 onChange={(event) => {
                     onChange(event.currentTarget.value.trimStart());
@@ -69,7 +70,7 @@ const Autocomplete = <T,>({
                     }
                 }}
             />
-            <AutocompleteList anchorRef={ref} {...suggestionProps}>
+            <AutocompleteList anchorRef={containerRef} {...suggestionProps}>
                 {filteredOptions.map(({ chunks, text, option }, index) => {
                     return (
                         <Option
@@ -85,7 +86,7 @@ const Autocomplete = <T,>({
                     );
                 })}
             </AutocompleteList>
-        </div>
+        </>
     );
 };
 
