@@ -43,6 +43,7 @@ import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isPaid } from '@proton/shared/lib/user/helpers';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
 import { getHumanLabelID } from '../../helpers/labels';
 import AddressesInput from '../composer/addresses/AddressesInput';
@@ -187,6 +188,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
     }
     const abortControllerRef = useRef<AbortController>(new AbortController());
     const { loading: loadingESFeature, feature: esFeature } = useFeature(FeatureCode.EnabledEncryptedSearch);
+    const { feature: scheduledFeature, loading: loadingScheduledFeature } = useFeature(FeatureCode.ScheduledSend);
 
     // Get right keyword value depending on the current situation
     const getKeyword = (keyword: string, reset?: boolean) => {
@@ -349,7 +351,13 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
         void setOldestTime();
     }, [isBuilding, isRefreshing]);
 
-    const loading = loadingLabels || loadingFolders || loadingAddresses || loadingMailSettings || loadingESFeature;
+    const loading =
+        loadingLabels ||
+        loadingFolders ||
+        loadingAddresses ||
+        loadingMailSettings ||
+        loadingESFeature ||
+        loadingScheduledFeature;
 
     const treeview: FolderWithSubFolders[] = buildTreeview(folders);
 
@@ -362,7 +370,11 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                 text: c('Mailbox').t`Drafts`,
                 group: c('Group').t`Default folders`,
             },
-            { value: SCHEDULED, text: c('Mailbox').t`Scheduled`, group: c('Group').t`Default folders` },
+            scheduledFeature?.Value && {
+                value: SCHEDULED,
+                text: c('Mailbox').t`Scheduled`,
+                group: c('Group').t`Default folders`,
+            },
             {
                 value: hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.SENT) ? ALL_SENT : SENT,
                 text: c('Mailbox').t`Sent`,
@@ -374,6 +386,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
             { value: TRASH, text: c('Mailbox').t`Trash`, group: c('Group').t`Default folders` },
         ] as LabelInfo[]
     )
+        .filter(isTruthy)
         .concat(treeview.reduce<LabelInfo[]>((acc, folder) => folderReducer(acc, folder), []))
         .concat(labels.map(({ ID: value, Name: text }) => ({ value, text, group: c('Group').t`Labels` })));
 

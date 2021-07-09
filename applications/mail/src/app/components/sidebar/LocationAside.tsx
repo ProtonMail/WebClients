@@ -7,6 +7,7 @@ import './RefreshRotation.scss';
 
 interface Props {
     unreadCount?: number;
+    totalMessagesCount?: number;
     active?: boolean;
     refreshing?: boolean;
 }
@@ -14,7 +15,7 @@ interface Props {
 const { GROUP } = VIEW_MODE;
 const UNREAD_LIMIT = 9999;
 
-const LocationAside = ({ unreadCount = 0, active = false, refreshing = false }: Props) => {
+const LocationAside = ({ unreadCount = 0, totalMessagesCount = 0, active = false, refreshing = false }: Props) => {
     const [mailSettings] = useMailSettings();
 
     const getUnreadTitle = () => {
@@ -28,6 +29,14 @@ const LocationAside = ({ unreadCount = 0, active = false, refreshing = false }: 
         return c('Info').ngettext(msgid`${unreadCount} unread message`, `${unreadCount} unread messages`, unreadCount);
     };
 
+    const getTotalMessagesTitle = () => {
+        return c('Info').ngettext(
+            msgid`${totalMessagesCount} scheduled message`,
+            `${totalMessagesCount} scheduled messages`,
+            totalMessagesCount
+        );
+    };
+
     return (
         <>
             {active && (
@@ -37,6 +46,15 @@ const LocationAside = ({ unreadCount = 0, active = false, refreshing = false }: 
                     data-testid="navigation-link:refresh-folder"
                 />
             )}
+            {totalMessagesCount && totalMessagesCount > 0 ? (
+                <span
+                    className="navigation-counter-item navigation-counter-item--transparent flex-item-noshrink"
+                    title={getTotalMessagesTitle()}
+                    data-testid="navigation-link:total-messages-count"
+                >
+                    {totalMessagesCount > UNREAD_LIMIT ? '9999+' : totalMessagesCount}
+                </span>
+            ) : null}
             {unreadCount > 0 ? (
                 <span
                     className="navigation-counter-item flex-item-noshrink"
