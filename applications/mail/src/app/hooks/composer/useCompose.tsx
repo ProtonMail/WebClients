@@ -12,7 +12,7 @@ import {
     useSettingsLink,
     useEventManager,
 } from '@proton/components';
-import { isOutbox, isScheduledSend, isDraft } from '@proton/shared/lib/mail/messages';
+import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
 import { forceSend } from '@proton/shared/lib/api/messages';
 
 import { MessageExtended, PartialMessageExtended } from '../../models/message';
@@ -137,29 +137,19 @@ export const useCompose = (
 
             const existingMessage = messageCache.get(localID);
 
-            if (existingMessage?.inComposer === true) {
-                focusComposer(existingMessage.localID);
-                return;
-            }
-
             if (existingMessage) {
-                // Plaintext drafts have a different sanitization as plaintext mail content
+                // Drafts have a different sanitization as mail content
                 // So we have to restart the sanitization process on a cached draft
-                // Should be needed only for undo but safer to do it for all plaintext drafts
-                let initPlainText = {};
-                if (isDraft(existingDraft.data)) {
-                    initPlainText = { initialized: undefined, plainText: undefined };
-                }
                 updateMessageCache(messageCache, localID, {
-                    ...initPlainText,
+                    initialized: undefined,
+                    plainText: undefined,
+                    document: undefined,
                     openDraftFromUndo: fromUndo,
-                    inComposer: true,
                 });
             } else {
                 messageCache.set(localID, {
                     localID,
                     openDraftFromUndo: fromUndo,
-                    inComposer: true,
                 });
             }
 

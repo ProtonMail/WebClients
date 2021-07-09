@@ -241,7 +241,6 @@ export const createNewDraft = (
         initialized: true,
         messageImages,
         initialAttachments,
-        inComposer: true,
     };
 };
 
