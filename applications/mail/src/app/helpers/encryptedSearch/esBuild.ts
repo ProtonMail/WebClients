@@ -27,6 +27,7 @@ import {
 import { updateSizeIDB } from './esUtils';
 import { queryEvents, queryMessage, queryMessagesCount, queryMessagesMetadata } from './esAPI';
 import { sizeOfCachedMessage } from './esSearch';
+import { toText } from '../parserHtml';
 
 /**
  * Retrieve and decrypt the index key from localStorage. Return undefined if something goes wrong.
@@ -68,9 +69,14 @@ export const cleanText = (text: string, removeQuote: boolean) => {
     const domParser = new DOMParser();
 
     const { body } = domParser.parseFromString(text, 'text/html');
-    const styleElements = body.getElementsByTagName('style');
-    for (let index = 0; index < styleElements.length; index++) {
-        styleElements[index].outerHTML = '';
+    let removeStyle = true;
+    while (removeStyle) {
+        const styleElements = body.getElementsByTagName('style');
+        const styleElement = styleElements.item(0);
+        if (styleElement) {
+            styleElement.outerHTML = '';
+        }
+        removeStyle = styleElements.length !== 0;
     }
 
     let content = body.innerHTML;
@@ -78,13 +84,8 @@ export const cleanText = (text: string, removeQuote: boolean) => {
         const [noQuoteContent] = locateBlockquote(body);
         content = noQuoteContent;
     }
-    const { body: newBody } = domParser.parseFromString(content, 'text/html');
 
-    return newBody.innerText
-        .replace(/\s+/gi, ' ')
-        .split(' ')
-        .filter((s) => s)
-        .join(' ');
+    return toText(content);
 };
 
 /**
