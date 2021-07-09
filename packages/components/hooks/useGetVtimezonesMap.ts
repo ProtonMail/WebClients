@@ -1,6 +1,6 @@
 import { getVtimezones } from '@proton/shared/lib/api/calendars';
 import { parse } from '@proton/shared/lib/calendar/vcal';
-import { unique } from '@proton/shared/lib/helpers/array';
+import { chunk, unique } from '@proton/shared/lib/helpers/array';
 import { GetVTimezonesMap, VTimezoneObject } from '@proton/shared/lib/interfaces/hooks/GetVTimezonesMap';
 import { VcalVtimezoneComponent } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
@@ -10,6 +10,7 @@ import useCache from './useCache';
 import { getIsRecordInvalid, getPromiseValue } from './useCachedModelResult';
 
 const CACHE_KEY = 'VTIMEZONES';
+const TIMEZONES_ROUTE_LIMIT = 10;
 
 export const useGetVtimezonesMap = () => {
     const api = useApi();
@@ -19,20 +20,31 @@ export const useGetVtimezonesMap = () => {
         async (tzids: string[]) => {
             const uniqueTzids = unique(tzids.filter((tzid) => tzid.toLowerCase() !== 'utc'));
             const encodedTzids = uniqueTzids.map((tzid) => encodeURIComponent(tzid));
+
             if (!uniqueTzids.length) {
                 return Promise.resolve({});
             }
-            const { Timezones = {} } = await api<{ Timezones: SimpleMap<string> }>(getVtimezones(encodedTzids));
-            return tzids.reduce<SimpleMap<VTimezoneObject>>((acc, tzid) => {
-                const vtimezoneString = Timezones[tzid];
-                if (vtimezoneString) {
-                    acc[tzid] = {
-                        vtimezoneString,
-                        vtimezone: parse(vtimezoneString) as VcalVtimezoneComponent,
-                    };
-                }
-                return acc;
-            }, {});
+
+            const batchedTimezones = chunk(encodedTzids, TIMEZONES_ROUTE_LIMIT);
+
+            return Promise.all(
+                batchedTimezones.flatMap(async (batch) => {
+                    const { Timezones = {} } = await api<{ Timezones: SimpleMap<string> }>(getVtimezones(batch));
+
+                    return tzids.reduce<SimpleMap<VTimezoneObject>>((acc, tzid) => {
+                        const vtimezoneString = Timezones[tzid];
+
+                        if (vtimezoneString) {
+                            acc[tzid] = {
+                                vtimezoneString,
+                                vtimezone: parse(vtimezoneString) as VcalVtimezoneComponent,
+                            };
+                        }
+
+                        return acc;
+                    }, {});
+                })
+            );
         },
         [api, cache]
     );
