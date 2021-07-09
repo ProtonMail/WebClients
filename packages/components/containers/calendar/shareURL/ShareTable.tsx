@@ -61,7 +61,7 @@ const ShareTable = ({
                     cells={[
                         c('Header').t`Calendar`,
                         <div className="flex flex-align-items-center">
-                            {c('Header').t`What others see`}{' '}
+                            <span className="mr0-5">{c('Header').t`What others see`}</span>
                             <Info
                                 title={c('Info')
                                     .t`Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.`}
