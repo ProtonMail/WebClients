@@ -5,7 +5,6 @@ import {
     transformLinkFromAPI,
     transformLinksFromAPI,
 } from '@proton/shared/lib/calendar/shareUrl/helpers';
-import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { updateItem } from '@proton/shared/lib/helpers/array';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { Calendar, CalendarLink, CalendarUrl } from '@proton/shared/lib/interfaces/calendar';
@@ -16,6 +15,10 @@ import {
 } from '@proton/shared/lib/interfaces/calendar/EventManager';
 import { splitKeys } from '@proton/shared/lib/keys';
 import { useEffect, useMemo, useState } from 'react';
+import {
+    getIsCalendarEventManagerDelete,
+    getIsCalendarEventManagerUpdate,
+} from '@proton/shared/lib/eventManager/helpers';
 import { useEventManager, useGetCalendarInfo, useLoading, useNotifications } from '../../../hooks';
 import { useGetCalendarPublicLinks } from '../../../hooks/useGetCalendarPublicLinks';
 import { useCalendarModelEventManager } from '../../eventManager';
@@ -39,6 +42,17 @@ const useCalendarShareUrls = (calendars: Calendar[]) => {
             delete newMap[calendarID];
             return newMap;
         });
+    };
+
+    const handleUpdateCalendar = (calendar: Calendar) => {
+        setLinksMap((linksMap) => ({
+            ...linksMap,
+            [calendar.ID]: linksMap?.[calendar.ID]?.map((calendarLink) => ({
+                ...calendarLink,
+                color: calendar.Color,
+                calendarName: calendar.Name,
+            })),
+        }));
     };
 
     const handleDeleteLink = ({ ID }: CalendarUrlEventManagerDelete) => {
@@ -111,9 +125,13 @@ const useCalendarShareUrls = (calendars: Calendar[]) => {
     // subscribe to general event loop
     useEffect(() => {
         return standardSubscribe(({ Calendars = [] }: { Calendars?: CalendarEventManager[] }) => {
-            Calendars.forEach(({ ID, Action }) => {
-                if (Action === EVENT_ACTIONS.DELETE) {
-                    handleDeleteCalendar(ID);
+            Calendars.forEach((event) => {
+                if (getIsCalendarEventManagerDelete(event)) {
+                    handleDeleteCalendar(event.ID);
+                }
+
+                if (getIsCalendarEventManagerUpdate(event)) {
+                    handleUpdateCalendar(event.Calendar);
                 }
             });
         });
