@@ -3,7 +3,7 @@ import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/co
 import { c } from 'ttag';
 import { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
-import { PrimaryButton, PayPalButton } from '@proton/components';
+import { PrimaryButton, StyledPayPalButton } from '@proton/components';
 import { SignupPayPal } from './interfaces';
 
 interface Props {
@@ -18,13 +18,12 @@ interface Props {
 const CheckoutButton = ({ className, paypal, canPay, loading, method, checkResult }: Props) => {
     if (method === PAYMENT_METHOD_TYPES.PAYPAL) {
         return (
-            <PayPalButton
+            <StyledPayPalButton
                 paypal={paypal}
                 flow="signup"
-                color="norm"
                 className={className}
                 amount={checkResult ? checkResult.AmountDue : 0}
-            >{c('Action').t`Pay`}</PayPalButton>
+            />
         );
     }
 
