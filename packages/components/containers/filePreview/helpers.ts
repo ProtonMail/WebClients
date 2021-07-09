@@ -18,6 +18,7 @@ export const isSupportedImage = (mimeType: string) =>
 export const isSupportedText = (mimeType: string) =>
     mimeType.startsWith('text/') || ['application/javascript', 'application/typescript'].includes(mimeType);
 export const isVideo = (mimeType: string) => mimeType.startsWith('video/');
+export const isICS = (mimeType: string) => mimeType.startsWith('text/calendar');
 export const isPDF = (mimeType: string) => mimeType === 'application/pdf' || mimeType === 'x-pdf';
 
 // Will include more rules in the future
