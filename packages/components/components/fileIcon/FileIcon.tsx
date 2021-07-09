@@ -1,5 +1,5 @@
 import React from 'react';
-import { isSupportedImage, isSupportedText, isPDF, isVideo } from '../../containers/filePreview/helpers';
+import { isSupportedImage, isSupportedText, isPDF, isICS, isVideo } from '../../containers/filePreview/helpers';
 import { Props as IconProps } from '../icon/Icon';
 import MimeIcon from '../icon/MimeIcon';
 
@@ -33,6 +33,8 @@ const getIconName = (mimeType: string) => {
     } else if (mimeType === 'text/xml') {
         // Exception for XML to use it's own icon and not fallback as text
         name = 'xml';
+    } else if (isICS(mimeType)) {
+        name = 'calendar';
     } else if (isSupportedText(mimeType)) {
         name = 'text';
     } else if (isPDF(mimeType)) {
