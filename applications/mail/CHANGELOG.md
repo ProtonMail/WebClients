@@ -1,3 +1,27 @@
+## Release 4.0.3 — July 28, 2021
+
+### Improvements
+
+-   Added the ability to add an email address to a group directly during the contact creation process
+-   Improved the error message shown when the maximum number of composers is reached
+-   Improved the warning shown when trying to send to invalid recipients
+-   Added the ability to add events that do not require a response to calendar
+
+### Bug fixes
+
+-   Fixed an issue where in some rare cases the message list view would not load
+-   Fixed an issue where copy & pasted content in signatures would be sent incorrectly
+-   Fixed an issue where an embedded image from a draft could not be removed on reopening
+-   Fixed an issue where on rare occasions an embedded image would not be sent when deleting and undoing the delete action immediately
+-   Fixed an issue where merging contacts could not proceed if all contacts are marked for deletion
+-   Fixed an issue where custom field headings would be replaced by "Other" headings on contact import
+-   Fixed an issue where the confirmation modal would display "Delete conversation" when deleting a single message
+-   Fixed an issue where contacts containing specific characters could not be merged
+-   Fixed an issue where incorrect attachment icons would be displayed for key, .zip and .ics files
+-   Fixed an issue where duplicated recipients in the CC field could not be deleted if typing their email addresses manually beforehand
+-   Fixed an issue where folder names would disappear when dragging something into them on light themes
+-   Fixed an issue where a contact image would not be displayed if editing a contact just after adding it
+
 ## Release: 4.0.2 — July 14, 2021
 
 ### Improvements
