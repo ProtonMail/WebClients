@@ -5,11 +5,13 @@ import { getRecipients, getRecipientsAddresses } from '@proton/shared/lib/mail/m
 import React, { useCallback } from 'react';
 import { c, msgid } from 'ttag';
 import { unique } from '@proton/shared/lib/helpers/array';
-import { useGetEncryptionPreferences, useModals, ConfirmModal, Alert } from '@proton/components';
+import { useGetEncryptionPreferences, useModals, ConfirmModal, Alert, useNotifications } from '@proton/components';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import { HOUR } from '@proton/shared/lib/constants';
 import { serverTime } from 'pmcrypto/lib/serverTime';
+import { normalize } from '@proton/shared/lib/helpers/string';
+
 import SendWithErrorsModal from '../../components/composer/addresses/SendWithErrorsModal';
 import { removeMessageRecipients, uniqueMessageRecipients } from '../../helpers/message/cleanMessage';
 import { MessageExtendedWithData } from '../../models/message';
@@ -19,8 +21,19 @@ import SendWithChangedPreferencesModal from '../../components/composer/addresses
 import { useContactCache } from '../../containers/ContactProvider';
 import { MapSendInfo } from '../../models/crypto';
 
+const FR_REGEX =
+    /voir pi\u00e8ce jointe|voir pi\u00e8ces jointes|voir fichier joint|voir fichiers joints|voir fichier associ\u00e9|voir fichiers associ\u00e9s|joint|joints|jointe|jointes|joint \u00e0 cet e-mail|jointe \u00e0 cet e-mail|joints \u00e0 cet e-mail|jointes \u00e0 cet e-mail|joint \u00e0 ce message|jointe \u00e0 ce message|joints \u00e0 ce message|jointes \u00e0 ce message|je joins|j'ai joint|ci-joint|pi\u00e8ce jointe|pi\u00e8ces jointes|fichier joint|fichiers joints|voir le fichier joint|voir les fichiers joints|voir la pi\u00e8ce jointe|voir les pi\u00e8ces jointes"/g;
+const EN_REGEX =
+    /see attached|see attachment|see included|is attached|attached is|are attached|attached are|attached to this email|attached to this message|I’m attaching|I am attaching|I’ve attached|I have attached|I attach|I attached|find attached|find the attached|find included|find the included|attached file|see the attached|see attachments|attached files|see the attachment/g;
+const DE_REGEX =
+    /siehe Anhang|angeh\u00e4ngt|anbei|hinzugef\u00fcgt|ist angeh\u00e4ngt|angeh\u00e4ngt ist|sind angeh\u00e4ngt|angeh\u00e4ngt sind|an diese E-Mail angeh\u00e4ngt|an diese Nachricht angeh\u00e4ngt|Anhang hinzuf\u00fcgen|Anhang anbei|Anhang hinzugef\u00fcgt|anbei finden|anbei|im Anhang|mit dieser E-Mail sende ich|angeh\u00e4ngte Datei|siehe angeh\u00e4ngte Datei|siehe Anh\u00e4nge|angeh\u00e4ngte Dateien|siehe Anlage|siehe Anlagen/g;
+const ES_REGEX =
+    /ver adjunto|ver archivo adjunto|ver archivo incluido|se ha adjuntado|adjuntado|se han adjuntado|adjuntados|se ha adjuntado a este correo|se ha adjuntado a este mensaje|Adjunto te env\u00edo|He adjuntado|He adjuntado un archivo|adjunto|adjunto el archivo|incluyo el archivo|archivo adjunto|mira el archivo adjunto|ver archivos adjuntos|archivos adjuntos|ver el archivo adjunto/g;
+const RU_REGEX = /прикрепленный файл|прикреплённый файл|прикреплен|прикреплён|прикрепил|прикрепила/g;
+
 export const useSendVerifications = () => {
     const { createModal } = useModals();
+    const { createNotification } = useNotifications();
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const { contactsMap } = useContactCache();
 
@@ -59,33 +72,26 @@ export const useSendVerifications = () => {
             });
         }
 
-        const uniqueMessage = {
-            ...message,
-            data: uniqueMessageRecipients(message.data),
-        };
-        const emails = unique(getRecipientsAddresses(uniqueMessage.data));
+        const normalized = normalize(`${message.data.Subject} ${message.document?.textContent || ''}`, true);
+        const [keyword] =
+            normalized.match(EN_REGEX) ||
+            normalized.match(FR_REGEX) ||
+            normalized.match(DE_REGEX) ||
+            normalized.match(ES_REGEX) ||
+            normalized.match(RU_REGEX) ||
+            [];
 
-        // Invalid addresses
-        const invalids = emails.filter((email) => !validateEmailAddress(email));
-
-        if (invalids.length > 0) {
-            const invalidAddresses = invalids.join(', ');
+        // Attachment word without attachments
+        if (keyword && !message.data.Attachments.length) {
             await new Promise((resolve, reject) => {
                 createModal(
                     <ConfirmModal
-                        onConfirm={reject}
+                        onConfirm={() => resolve(undefined)}
                         onClose={reject}
-                        title={invalids.length > 1 ? c('Title').t`Invalid recipients` : c('Title').t`Invalid recipient`}
-                        confirm={c('Action').t`OK`}
-                        cancel={null}
+                        title={c('Title').t`No attachment found`}
+                        confirm={c('Action').t`Send anyway`}
                     >
-                        <Alert type="warning">
-                            {c('Send email with warnings').ngettext(
-                                msgid`The following address is not valid: ${invalidAddresses}`,
-                                `The following addresses are not valid: ${invalidAddresses}`,
-                                invalids.length
-                            )}
-                        </Alert>
+                        <Alert>{c('Info').t`Do you want to send your message anyway?`}</Alert>
                     </ConfirmModal>
                 );
             });
@@ -106,6 +112,21 @@ export const useSendVerifications = () => {
                 data: uniqueMessageRecipients(message.data),
             };
             const emails = unique(getRecipientsAddresses(uniqueMessage.data));
+
+            // Invalid addresses
+            const invalids = emails.filter((email) => !validateEmailAddress(email));
+            if (invalids.length > 0) {
+                const invalidAddresses = invalids.join(', ');
+                createNotification({
+                    text: c('Send email with warnings').ngettext(
+                        msgid`The following address is not valid: ${invalidAddresses}`,
+                        `The following addresses are not valid: ${invalidAddresses}`,
+                        invalids.length
+                    ),
+                    type: 'error',
+                });
+                throw new Error();
+            }
 
             const emailWarnings: { [email: string]: string[] } = {};
             const mapSendPrefs: SimpleMap<SendPreferences> = {};
