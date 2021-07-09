@@ -5,7 +5,7 @@ import { ICAL_METHOD } from '../constants';
 
 interface CreateExportIcsParams {
     prodId: string;
-    events: VcalVeventComponent[];
+    eventsWithSummary: VcalVeventComponent[];
     vtimezones?: VcalVtimezoneComponent[];
     calendar: Calendar;
     defaultTzid: string;
@@ -20,13 +20,13 @@ type ExportVcal = RequireSome<VcalVcalendar, 'components'> & {
 export const createExportIcs = ({
     calendar,
     prodId,
-    events,
+    eventsWithSummary,
     vtimezones = [],
     defaultTzid,
 }: CreateExportIcsParams): string => {
     const exportVcal: ExportVcal = {
         component: 'vcalendar',
-        components: [...vtimezones, ...events],
+        components: [...vtimezones, ...eventsWithSummary],
         prodid: { value: prodId },
         version: { value: '2.0' },
         method: { value: ICAL_METHOD.PUBLISH },

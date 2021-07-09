@@ -32,6 +32,7 @@ import { dateLocale } from '../../i18n';
 import { WeekStartsOn } from '../../date-fns-utc/interface';
 import { SECOND } from '../../constants';
 import formatUTC from '../../date-fns-utc/format';
+import { withSummary } from '../veventHelper';
 
 export const getHasCalendarEventMatchingSigningKeys = async (event: CalendarEvent, keys: Key[]) => {
     // OpenPGP types are broken
@@ -144,12 +145,13 @@ const decryptEvent = async ({
             calendarSessionKey,
             addresses,
         });
-        const veventWithAlarms: VcalVeventComponent = {
+        const veventWithAlarmsAndSummary: VcalVeventComponent = {
             ...valarms,
-            ...veventComponent,
+            // SUMMARY is mandatory in a PUBLISH ics
+            ...withSummary(veventComponent),
         };
 
-        return veventWithAlarms;
+        return veventWithAlarmsAndSummary;
     } catch (error) {
         const inactiveKeys = addresses.flatMap(({ Keys }) => Keys.filter(({ Active }) => !Active));
         return getError({
