@@ -12,11 +12,7 @@ import {
 import { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
 import { modelToNotifications } from '@proton/shared/lib/calendar/modelToNotifications';
 import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
-import {
-    DEFAULT_CALENDAR,
-    DEFAULT_EVENT_DURATION,
-    SETTINGS_NOTIFICATION_TYPE,
-} from '@proton/shared/lib/calendar/constants';
+import { DEFAULT_EVENT_DURATION, SETTINGS_NOTIFICATION_TYPE } from '@proton/shared/lib/calendar/constants';
 import {
     DEFAULT_FULL_DAY_NOTIFICATION,
     DEFAULT_FULL_DAY_NOTIFICATIONS,
@@ -68,12 +64,12 @@ export const getCalendarModel = ({
     };
 };
 
-export const getDefaultModel = (defaultColor: boolean): CalendarViewModelFull => {
+export const getDefaultModel = (): CalendarViewModelFull => {
     return {
         calendarID: '',
         name: '',
         description: '',
-        color: defaultColor ? DEFAULT_CALENDAR.color : LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
+        color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
         display: true,
         addressID: '',
         addressOptions: [],
