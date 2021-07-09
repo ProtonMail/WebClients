@@ -27,24 +27,26 @@ export const useGetVtimezonesMap = () => {
 
             const batchedTimezones = chunk(encodedTzids, TIMEZONES_ROUTE_LIMIT);
 
-            return Promise.all(
-                batchedTimezones.flatMap(async (batch) => {
-                    const { Timezones = {} } = await api<{ Timezones: SimpleMap<string> }>(getVtimezones(batch));
+            return (
+                await Promise.all(
+                    batchedTimezones.map(async (batch) => {
+                        const { Timezones = {} } = await api<{ Timezones: SimpleMap<string> }>(getVtimezones(batch));
 
-                    return tzids.reduce<SimpleMap<VTimezoneObject>>((acc, tzid) => {
-                        const vtimezoneString = Timezones[tzid];
+                        return tzids.reduce<SimpleMap<VTimezoneObject>>((acc, tzid) => {
+                            const vtimezoneString = Timezones[tzid];
 
-                        if (vtimezoneString) {
-                            acc[tzid] = {
-                                vtimezoneString,
-                                vtimezone: parse(vtimezoneString) as VcalVtimezoneComponent,
-                            };
-                        }
+                            if (vtimezoneString) {
+                                acc[tzid] = {
+                                    vtimezoneString,
+                                    vtimezone: parse(vtimezoneString) as VcalVtimezoneComponent,
+                                };
+                            }
 
-                        return acc;
-                    }, {});
-                })
-            );
+                            return acc;
+                        }, {});
+                    })
+                )
+            ).reduce<SimpleMap<VTimezoneObject>>((acc, curr) => ({ ...acc, ...curr }), {});
         },
         [api, cache]
     );
