@@ -3,7 +3,8 @@ import { c, msgid } from 'ttag';
 
 import { noop } from '@proton/shared/lib/helpers/function';
 import { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
-import { deleteLabel } from '@proton/shared/lib/api/labels';
+import { deleteLabels } from '@proton/shared/lib/api/labels';
+import { allSucceded } from '@proton/shared/lib/api/helpers/response';
 
 import { useApi, useContactGroups, useEventManager, useLoading, useNotifications } from '../../../hooks';
 import { Alert, ErrorButton, FormModal } from '../../../components';
@@ -24,10 +25,13 @@ const ContactGroupDeleteModal = ({ groupIDs = [], onDelete, onClose = noop, ...r
     const submit = <ErrorButton type="submit" loading={loading}>{c('Action').t`Delete`}</ErrorButton>;
 
     const handleDelete = async () => {
-        await Promise.all(groupIDs.map((groupID) => api(deleteLabel(groupID))));
+        const apiSuccess = allSucceded(await api(deleteLabels(groupIDs)));
         await call();
         onDelete?.();
         onClose();
+        if (!apiSuccess) {
+            return createNotification({ text: c('Error').t`Some groups could not be deleted`, type: 'warning' });
+        }
         createNotification({
             text: c('Success').ngettext(msgid`Contact group deleted`, `Contact groups deleted`, groupIDs.length),
         });
