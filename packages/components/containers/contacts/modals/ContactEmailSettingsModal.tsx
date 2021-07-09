@@ -187,19 +187,10 @@ const ContactEmailSettingsModal = ({
                     model.trustedFingerprints,
                     model.verifyOnlyFingerprints
                 ),
-                pinnedKeys: sortPinnedKeys(
-                    model?.publicKeys?.pinnedKeys,
-                    model.expiredFingerprints,
-                    model.revokedFingerprints
-                ),
+                pinnedKeys: sortPinnedKeys(model?.publicKeys?.pinnedKeys, model.encryptionCapableFingerprints),
             },
         }));
-    }, [
-        model?.trustedFingerprints,
-        model?.expiredFingerprints,
-        model?.revokedFingerprints,
-        model?.verifyOnlyFingerprints,
-    ]);
+    }, [model?.trustedFingerprints, model?.verifyOnlyFingerprints, model?.encryptionCapableFingerprints]);
 
     useEffect(() => {
         // take into account rules relating email format and cryptographic scheme

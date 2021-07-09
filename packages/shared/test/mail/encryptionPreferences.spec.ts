@@ -77,8 +77,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
         scheme: PGP_SCHEMES_MORE.GLOBAL_DEFAULT,
         mimeType: MIME_TYPES_MORE.AUTOMATIC,
         trustedFingerprints: new Set([]),
-        expiredFingerprints: new Set([]),
-        revokedFingerprints: new Set([]),
+        encryptionCapableFingerprints: new Set([]),
         verifyOnlyFingerprints: new Set([]),
         isPGPExternal: false,
         isPGPInternal: true,
@@ -104,7 +103,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             isContactSignatureVerified: undefined,
             contactSignatureTimestamp: undefined,
             publicKeys: { apiKeys, pinnedKeys },
-            expiredFingerprints: new Set(['fakeKey2']),
+            encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey3']),
             verifyOnlyFingerprints: new Set(['fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
@@ -135,7 +134,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
         const publicKeyModel = {
             ...model,
             publicKeys: { apiKeys, pinnedKeys },
-            expiredFingerprints: new Set(['fakeKey2']),
+            encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey3']),
             verifyOnlyFingerprints: new Set(['fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
@@ -167,7 +166,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             ...model,
             publicKeys: { apiKeys, pinnedKeys },
             trustedFingerprints: new Set(['fakeKey1', 'fakeKey2']),
-            expiredFingerprints: new Set(['fakeKey2']),
+            encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey3']),
             verifyOnlyFingerprints: new Set(['fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
@@ -199,6 +198,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             ...model,
             publicKeys: { apiKeys, pinnedKeys },
             trustedFingerprints: new Set(['fakeKey2']),
+            encryptionCapableFingerprints: new Set(['fakeKey2', 'fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -211,6 +211,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
         const publicKeyModel = {
             ...model,
             publicKeys: { apiKeys, pinnedKeys },
+            encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2', 'fakeKey3']),
             verifyOnlyFingerprints: new Set(['fakeKey1']),
             emailAddressErrors: ['Recipient could not be found'],
         };
@@ -225,6 +226,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
         const publicKeyModel = {
             ...model,
             publicKeys: { apiKeys, pinnedKeys },
+            encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2', 'fakeKey3']),
             verifyOnlyFingerprints: new Set(['fakeKey1']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
@@ -238,6 +240,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
         const publicKeyModel = {
             ...model,
             publicKeys: { apiKeys, pinnedKeys },
+            encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2']),
             trustedFingerprints: new Set(['fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
@@ -252,6 +255,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             ...model,
             publicKeys: { apiKeys, pinnedKeys },
             trustedFingerprints: new Set(['fakeKey1']),
+            encryptionCapableFingerprints: new Set(['fakeKey1']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -265,8 +269,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             ...model,
             publicKeys: { apiKeys, pinnedKeys },
             trustedFingerprints: new Set(['fakeKey1']),
-            expiredFingerprints: new Set(['fakeKey1']),
-            revokedFingerprints: new Set(['fakeKey2']),
+            encryptionCapableFingerprints: new Set(['fakeKey3']),
             verifyOnlyFingerprints: new Set(['fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
@@ -281,6 +284,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             ...model,
             isContactSignatureVerified: false,
             publicKeys: { apiKeys, pinnedKeys },
+            encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2', 'fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -295,8 +299,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         scheme: PGP_SCHEMES.PGP_INLINE,
         mimeType: MIME_TYPES.PLAINTEXT as CONTACT_MIME_TYPES,
         trustedFingerprints: new Set([]),
-        expiredFingerprints: new Set([]),
-        revokedFingerprints: new Set([]),
+        encryptionCapableFingerprints: new Set([]),
         verifyOnlyFingerprints: new Set([]),
         isPGPExternal: true,
         isPGPInternal: false,
@@ -322,7 +325,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
             isContactSignatureVerified: undefined,
             contactSignatureTimestamp: undefined,
             publicKeys: { apiKeys, pinnedKeys },
-            expiredFingerprints: new Set(['fakeKey2']),
+            encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey3']),
             verifyOnlyFingerprints: new Set(['fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
@@ -353,7 +356,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         const publicKeyModel = {
             ...model,
             publicKeys: { apiKeys, pinnedKeys },
-            expiredFingerprints: new Set(['fakeKey2']),
+            encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey3']),
             verifyOnlyFingerprints: new Set(['fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
@@ -385,7 +388,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
             ...model,
             publicKeys: { apiKeys, pinnedKeys },
             trustedFingerprints: new Set(['fakeKey1', 'fakeKey2']),
-            expiredFingerprints: new Set(['fakeKey2']),
+            encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey3']),
             verifyOnlyFingerprints: new Set(['fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
@@ -417,6 +420,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
             ...model,
             publicKeys: { apiKeys, pinnedKeys },
             trustedFingerprints: new Set(['fakeKey2']),
+            encryptionCapableFingerprints: new Set(['fakeKey2', 'fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -427,6 +431,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         const publicKeyModel = {
             ...model,
             publicKeys: { apiKeys: [fakeKey1, fakeKey2, fakeKey3], pinnedKeys: [pinnedFakeKey1] },
+            encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2', 'fakeKey3']),
             verifyOnlyFingerprints: new Set(['fakeKey1']),
             emailAddressErrors: ['Recipient could not be found'],
         };
@@ -439,6 +444,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         const publicKeyModel = {
             ...model,
             publicKeys: { apiKeys: [fakeKey1, fakeKey2, fakeKey3], pinnedKeys: [pinnedFakeKey1] },
+            encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2', 'fakeKey3']),
             verifyOnlyFingerprints: new Set(['fakeKey1']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
@@ -450,6 +456,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
         const publicKeyModel = {
             ...model,
             publicKeys: { apiKeys: [fakeKey1, fakeKey2], pinnedKeys: [pinnedFakeKey3] },
+            encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2', 'fakeKey3']),
             trustedFingerprints: new Set(['fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
@@ -462,8 +469,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
             ...model,
             publicKeys: { apiKeys: [fakeKey1, fakeKey2, fakeKey3], pinnedKeys: [pinnedFakeKey1] },
             trustedFingerprints: new Set(['fakeKey1']),
-            expiredFingerprints: new Set(['fakeKey1']),
-            revokedFingerprints: new Set(['fakeKey2']),
+            encryptionCapableFingerprints: new Set(['fakeKey3']),
             verifyOnlyFingerprints: new Set(['fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
@@ -478,6 +484,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
             ...model,
             isContactSignatureVerified: false,
             publicKeys: { apiKeys, pinnedKeys },
+            encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2', 'fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -494,8 +501,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         scheme: PGP_SCHEMES_MORE.GLOBAL_DEFAULT,
         mimeType: MIME_TYPES_MORE.AUTOMATIC,
         trustedFingerprints: new Set([]),
-        expiredFingerprints: new Set([]),
-        revokedFingerprints: new Set([]),
+        encryptionCapableFingerprints: new Set([]),
         verifyOnlyFingerprints: new Set([]),
         isPGPExternal: true,
         isPGPInternal: false,
@@ -588,6 +594,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             ...model,
             publicKeys: { apiKeys, pinnedKeys },
             trustedFingerprints: new Set(['fakeKey2', 'fakeKey3']),
+            encryptionCapableFingerprints: new Set(['fakeKey2', 'fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -616,6 +623,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             ...model,
             publicKeys: { apiKeys: [], pinnedKeys: [pinnedFakeKey1] },
             trustedFingerprints: new Set(['fakeKey1']),
+            encryptionCapableFingerprints: new Set(['fakeKey1']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -626,8 +634,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         const publicKeyModel = {
             ...model,
             publicKeys: { apiKeys: [], pinnedKeys: [pinnedFakeKey2, pinnedFakeKey1] },
-            expiredFingerprints: new Set(['fakeKey1']),
-            revokedFingerprints: new Set(['fakeKey2']),
+            encryptionCapableFingerprints: new Set([]),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -639,6 +646,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             ...model,
             isContactSignatureVerified: false,
             publicKeys: { apiKeys: [], pinnedKeys: [pinnedFakeKey2, pinnedFakeKey1] },
+            encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -655,8 +663,7 @@ describe('extractEncryptionPreferences for an own address', () => {
         mimeType: MIME_TYPES_MORE.AUTOMATIC,
         scheme: PGP_SCHEMES_MORE.GLOBAL_DEFAULT,
         trustedFingerprints: new Set([]),
-        expiredFingerprints: new Set([]),
-        revokedFingerprints: new Set([]),
+        encryptionCapableFingerprints: new Set([]),
         verifyOnlyFingerprints: new Set([]),
         isPGPExternal: false,
         isPGPInternal: true,

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
-import { algorithmInfo, OpenPGPKey } from 'pmcrypto';
+import { algorithmInfo, OpenPGPKey, isExpiredKey, isRevokedKey } from 'pmcrypto';
 import { isValid, format } from 'date-fns';
 import { c } from 'ttag';
 
@@ -33,6 +33,7 @@ type LocaKeyModel = {
     isRevoked: boolean;
     isTrusted: boolean;
     isVerificationOnly: boolean;
+    supportsEncryption: boolean;
     isUploaded: boolean;
     canBePrimary?: boolean;
     canBeTrusted: boolean;
@@ -57,21 +58,21 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
             uniqueKeys.map(async (publicKey, index) => {
                 const fingerprint = publicKey.getFingerprint();
                 const creationTime = publicKey.getCreationTime();
-                const expirationTime = await publicKey.getExpirationTime('encrypt');
+                const expirationTime = await publicKey.getExpirationTime();
                 const algoInfo = publicKey.getAlgorithmInfo();
                 const algo = getFormattedAlgorithmName(algoInfo as algorithmInfo);
+                const isExpired = await isExpiredKey(publicKey);
+                const isRevoked = await isRevokedKey(publicKey);
                 const isTrusted = model.trustedFingerprints.has(fingerprint);
-                const isExpired = model.expiredFingerprints.has(fingerprint);
-                const isRevoked = model.revokedFingerprints.has(fingerprint);
+                const supportsEncryption = model.encryptionCapableFingerprints.has(fingerprint);
                 const isVerificationOnly = model.verifyOnlyFingerprints.has(fingerprint);
                 const isPrimary =
-                    !index && !isExpired && !isRevoked && !isVerificationOnly && (totalApiKeys ? true : model.encrypt);
+                    !index && supportsEncryption && !isVerificationOnly && (totalApiKeys ? true : model.encrypt);
                 const isWKD = model.isPGPExternal && index < totalApiKeys;
                 const isUploaded = index >= totalApiKeys;
                 const canBePrimary =
                     !!index &&
-                    !isExpired &&
-                    !isRevoked &&
+                    supportsEncryption &&
                     !isVerificationOnly &&
                     (index < totalApiKeys ? isTrusted : !totalApiKeys && model.encrypt);
                 const canBeTrusted = !isTrusted && !isUploaded;
@@ -87,6 +88,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                     isExpired,
                     isRevoked,
                     isTrusted,
+                    supportsEncryption,
                     isVerificationOnly,
                     isUploaded,
                     canBePrimary,
@@ -145,6 +147,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                         isExpired,
                         isRevoked,
                         isTrusted,
+                        supportsEncryption,
                         isVerificationOnly,
                         isUploaded,
                         canBePrimary,
@@ -241,16 +244,13 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                 text: c('Action').t`Remove`,
                                 onClick: () => {
                                     const trustedFingerprints = new Set(model.trustedFingerprints);
-                                    const expiredFingerprints = new Set(model.expiredFingerprints);
-                                    const revokedFingerprints = new Set(model.revokedFingerprints);
+                                    const encryptionCapableFingerprints = new Set(model.encryptionCapableFingerprints);
                                     trustedFingerprints.delete(fingerprint);
-                                    expiredFingerprints.delete(fingerprint);
-                                    revokedFingerprints.delete(fingerprint);
+                                    encryptionCapableFingerprints.delete(fingerprint);
                                     setModel({
                                         ...model,
                                         trustedFingerprints,
-                                        expiredFingerprints,
-                                        revokedFingerprints,
+                                        encryptionCapableFingerprints,
                                         publicKeys: {
                                             ...model.publicKeys,
                                             pinnedKeys: model.publicKeys.pinnedKeys.filter(
@@ -269,6 +269,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                     publicKey={publicKey}
                                     emailAddress={model.emailAddress}
                                     isInternal={model.isPGPInternal}
+                                    supportsEncryption={supportsEncryption}
                                 />
                                 <span className="flex-item-fluid text-ellipsis">{fingerprint}</span>
                             </div>,
