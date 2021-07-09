@@ -1,71 +1,67 @@
 @import '@proton/styles/scss/config/';
 
 .bodyDecrypted {
-    /* Forbidden property on almost ALL clients IE add a space :) */
-    [style*='position:absolute'],
-    [style*='position: absolute'] {
-        position: relative !important;
-    }
+	/* Forbidden property on almost ALL clients IE add a space :) */
+	[style*='position:absolute'],
+	[style*='position: absolute'] {
+		position: relative !important;
+	}
 
-    table {
-        table-layout: auto;
-    }
+	table {
+		table-layout: auto;
+	}
 
-    pre code {
-        white-space: pre-wrap;
-        background-color: transparent;
-    }
+	pre code {
+		white-space: pre-wrap;
+		background-color: transparent;
+	}
 
-    .protonmail_quote {
-        padding: 0.2em 0 0.2em 1.2em;
-        border-color: #657ee4;
-        border-left-width: 3px;
-        border-left-style: solid;
-    }
-    .protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote {
-        padding-left: 0;
-        padding-right: 0;
-        border-left-width: 0;
-    }
+	.protonmail_quote {
+		padding: 0.2em 0 0.2em 1.2em;
+		border-color: #657ee4;
+		border-left-width: 3px;
+		border-left-style: solid;
+	}
+	.protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote .protonmail_quote {
+		padding-left: 0;
+		padding-right: 0;
+		border-left-width: 0;
+	}
 
-    // fix for some embedded images bugs
-    img {
-        max-width: none;
-    }
+	// fix for some embedded images bugs
+	img {
+		max-width: none;
+	}
 
-    * {
-        line-height: normal;
-    }
+	* {
+		line-height: normal;
+	}
 }
 
 .bodyDecrypted.plain {
-    white-space: pre-wrap;
-    font-family: $font-family-monospace;
+	white-space: pre-wrap;
+	font-family: $font-family-monospace;
 }
 
 .proton-image-placeholder {
-    box-sizing: border-box;
-    background-color: #00000011;
+	box-sizing: border-box;
+	background-color: #00000011;
 
-    &:not(.color-danger) {
-        color: black;
-    }
-}
-
-.protonmail_signature_block-empty {
-    display: none;
+	&:not(.color-danger) {
+		color: black;
+	}
 }
 
 /* Responsiveness of our embedded images */
 .proton-embedded:not([width]):not([style*='width']) {
-    /*  1. do not handle responsivess if there is a width attribute / inline width style
+	/*  1. do not handle responsivess if there is a width attribute / inline width style
         2. do not set auto height as long as it's not need to handle our embedded images (no height attribute)
         3. set at least a min width or it's possible it won't be shown
         4. remove min-width when image loaded - for tiny images
     */
-    max-width: 100%;
-    min-width: 38px;
-    &[src] {
-        min-width: 0;
-    }
+	max-width: 100%;
+	min-width: 38px;
+	&[src] {
+		min-width: 0;
+	}
 }
