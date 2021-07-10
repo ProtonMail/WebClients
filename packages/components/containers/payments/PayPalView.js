@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT } from '@proton/shared/lib/constants';
 import { doNotWindowOpen } from '@proton/shared/lib/helpers/browser';
-import paypalSvg from '@proton/styles/assets/img/bank-icons/paypal.svg';
 import { c } from 'ttag';
 
 import { Alert, DoNotWindowOpenAlertError, Price, Loader } from '../../components';
@@ -67,9 +66,6 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit }) => {
                         {c('Info')
                             .t`This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.`}
                     </Alert>
-                    <div className="text-center mb1">
-                        <img src={paypalSvg} alt="PayPal" width="250" />
-                    </div>
                     <Alert>{c('Info')
                         .t`You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.`}</Alert>
                 </>
@@ -80,9 +76,6 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit }) => {
                         {c('Info')
                             .t`We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.`}
                     </Alert>
-                    <div className="text-center">
-                        <img src={paypalSvg} alt="PayPal" width="250" />
-                    </div>
                 </>
             ) : null}
         </div>
