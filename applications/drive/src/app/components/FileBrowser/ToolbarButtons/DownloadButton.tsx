@@ -5,19 +5,20 @@ import { Icon, ToolbarButton } from '@proton/components';
 
 import useToolbarActions from '../../../hooks/drive/useToolbarActions';
 import { FileBrowserItem } from '../interfaces';
-import { noSelection } from './utils';
+import { noSelection, hasFoldersSelected } from './utils';
 
 interface Props {
     shareId: string;
     selectedItems: FileBrowserItem[];
+    disabledFolders?: boolean;
 }
 
-const DownloadButton = ({ shareId, selectedItems }: Props) => {
+const DownloadButton = ({ shareId, selectedItems, disabledFolders }: Props) => {
     const { download } = useToolbarActions();
 
     return (
         <ToolbarButton
-            disabled={noSelection(selectedItems)}
+            disabled={noSelection(selectedItems) || (disabledFolders && hasFoldersSelected(selectedItems))}
             title={c('Action').t`Download`}
             icon={<Icon name="download" />}
             onClick={() => download(shareId, selectedItems)}

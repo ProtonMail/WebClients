@@ -131,7 +131,7 @@ const ItemContextMenu = ({
             action: () => preview(shareId, item),
         },
         {
-            hidden: false,
+            hidden: hasFoldersSelected,
             name: c('Action').t`Download`,
             icon: 'download',
             testId: 'context-menu-download',

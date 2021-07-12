@@ -18,7 +18,7 @@ const TrashToolbar = ({ shareId }: Props) => {
     return (
         <Toolbar>
             <PreviewButton shareId={shareId} selectedItems={selectedItems} />
-            <DownloadButton shareId={shareId} selectedItems={selectedItems} />
+            <DownloadButton shareId={shareId} selectedItems={selectedItems} disabledFolders />
             <ToolbarSeparator />
             <DetailsButton shareId={shareId} selectedItems={selectedItems} />
             <ToolbarSeparator />
