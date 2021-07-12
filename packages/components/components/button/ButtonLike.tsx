@@ -69,14 +69,13 @@ const ButtonLike: <E extends React.ElementType = typeof defaultElement>(
 
         const actualShape = group ? 'ghost' : shape;
         const actualColor = group ? 'weak' : color;
-        const actualSize = group ? 'medium' : size;
 
         const buttonClassName = classnames([
             actualShape === 'link' ? 'button-link' : 'button-henlo',
             pill && 'button-pill',
             icon && 'button-for-icon',
             group && 'button-group-item',
-            actualSize !== 'medium' && `button-${actualSize}`,
+            size !== 'medium' && `button-${size}`,
             `button-${actualShape}-${actualColor}`,
             restProps.as !== 'button' ? 'inline-block text-center' : '',
             fullWidth && 'w100',
@@ -107,4 +106,5 @@ const ButtonLike: <E extends React.ElementType = typeof defaultElement>(
     }
 );
 
+(ButtonLike as any).displayName = 'ButtonLike';
 export default ButtonLike;

@@ -80,7 +80,7 @@ export const Sandbox = () => {
                         options={shapes.map((shape) => ({ value: shape, label: shape }))}
                     />
                 </div>
-                <div>
+                <div className="mr2">
                     <strong className="block mb1">Size</strong>
                     <RadioGroup
                         name="selected-size"
@@ -89,7 +89,7 @@ export const Sandbox = () => {
                         options={sizes.map((size) => ({ value: size, label: size }))}
                     />
                 </div>
-                <div>
+                <div className="mr2">
                     <strong className="block mb1">Toggles</strong>
                     {toggles.map((prop, i) => {
                         return (
