@@ -1,0 +1,18 @@
+@import '@proton/styles/scss/config/';
+
+.calendar-sidebar-list-item {
+	box-shadow: none;
+
+	&-action {
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity 0.15s easing(easeOutQuint);
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		&:hover &-action {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}

@@ -1,6 +1,6 @@
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { APPS } from '@proton/shared/lib/constants';
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode, useMemo, useState } from 'react';
 import {
     useEventManager,
     useApi,
@@ -21,6 +21,7 @@ import { c } from 'ttag';
 import { updateCalendar } from '@proton/shared/lib/api/calendars';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { partition } from '@proton/shared/lib/helpers/array';
+import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
 import { CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
 import { getIsCalendarActive } from '@proton/shared/lib/calendar/calendar';
 import getHasUserReachedCalendarLimit from '@proton/shared/lib/calendar/getHasUserReachedCalendarLimit';
@@ -45,14 +46,18 @@ const CalendarSidebar = ({
     onCreateEvent,
 }: Props) => {
     const { call } = useEventManager();
-    const api = useApi();
-    const [loadingAction, withLoadingAction] = useLoading();
-
     const { createModal } = useModals();
-
+    const api = useApi();
     const [user] = useUser();
     const getCalendarUserSettings = useGetCalendarUserSettings();
-    const [personalCalendars, otherCalendars] = partition<Calendar>(calendars, getIsPersonalCalendar);
+    const [loadingAction, withLoadingAction] = useLoading();
+
+    const [personalCalendars, otherCalendars] = useMemo(
+        () => partition<Calendar>(calendars, getIsPersonalCalendar),
+        [calendars]
+    );
+
+    const { subscribedCalendars, loading: loadingSubscribedCalendars } = useSubscribedCalendars(otherCalendars);
 
     const canAddPersonalCalendars = !getHasUserReachedCalendarLimit({
         calendarsLength: personalCalendars.length,
@@ -139,7 +144,7 @@ const CalendarSidebar = ({
         </SidebarList>
     );
 
-    const otherCalendarsList = otherCalendars.length ? (
+    const subscribedCalendarsList = otherCalendars.length ? (
         <SidebarList>
             <SimpleSidebarListItemHeader
                 toggle={displayOtherCalendars}
@@ -149,7 +154,8 @@ const CalendarSidebar = ({
             />
             {displayOtherCalendars && (
                 <CalendarSidebarListItems
-                    calendars={otherCalendars}
+                    actionsDisabled={loadingSubscribedCalendars}
+                    calendars={loadingSubscribedCalendars ? otherCalendars : subscribedCalendars}
                     onChangeVisibility={(calendarID, value) =>
                         withLoadingAction(handleChangeVisibility(calendarID, value))
                     }
@@ -170,7 +176,7 @@ const CalendarSidebar = ({
             <SidebarNav data-test-id="calendar-sidebar:calendars-list-area">
                 <div className="flex-item-noshrink">{miniCalendar}</div>
                 {personalCalendarsList}
-                {otherCalendarsList}
+                {subscribedCalendarsList}
             </SidebarNav>
         </Sidebar>
     );
