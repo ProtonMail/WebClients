@@ -15,7 +15,7 @@ import LinkDoesNotExistInfo from './LinkDoesNotExistInfo';
 import { InitHandshake, SharedLinkInfo } from '../../interfaces/sharing';
 import { useDownloadProvider } from '../downloads/DownloadProvider';
 import { STATUS_CODE, BATCH_REQUEST_SIZE } from '../../constants';
-import { isCustomSharedURLPassword, isGeneratedWithCustomSharedURLPassword } from '../../utils/link';
+import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../../utils/link';
 
 const REPORT_ABUSE_EMAIL = 'abuse@protonmail.com';
 const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
@@ -40,7 +40,7 @@ const DownloadSharedContainer = () => {
     const initHandshake = useCallback(async () => {
         return initSRPHandshake(token)
             .then((handshakeInfo) => {
-                if (isCustomSharedURLPassword(handshakeInfo)) {
+                if (hasCustomPassword(handshakeInfo)) {
                     setPassword('');
                 }
                 setHandshakeInfo(handshakeInfo);
@@ -111,7 +111,7 @@ const DownloadSharedContainer = () => {
 
     const submitPassword = (customPassword: string) => {
         let password = customPassword;
-        if (handshakeInfo && isGeneratedWithCustomSharedURLPassword(handshakeInfo)) {
+        if (handshakeInfo && hasGeneratedPasswordIncluded(handshakeInfo)) {
             password = urlPassword + customPassword;
         }
         return getSharedLinkInfo(password).catch(console.error);
