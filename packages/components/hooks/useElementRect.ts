@@ -1,5 +1,6 @@
 import { RefObject, useLayoutEffect, useState } from 'react';
 import { debounce } from '@proton/shared/lib/helpers/function';
+import useInstance from './useInstance';
 
 // Can't loop over DOMRect keys with getOwnPropertyNames.
 const keys = ['bottom', 'height', 'left', 'right', 'top', 'width', 'x', 'y'];
@@ -27,7 +28,23 @@ const getElementRect = (target?: HTMLElement | null) => {
 
 type RateLimiter = <A extends any[]>(func: (...args: A) => void, wait: number) => (...args: A) => void;
 
-const useElementRect = <E extends HTMLElement>(ref: RefObject<E>, rateLimiter: RateLimiter = debounce) => {
+const equivalentReducer = (oldRect?: DOMRect, newRect?: DOMRect) => {
+    return isEquivalent(oldRect, newRect) ? oldRect : newRect;
+}
+const defaultReducer = (oldRect: DOMRect | undefined, newRect: DOMRect | undefined, sizeCache: (DOMRect | undefined)[]) => {
+    const [prevOld, prevNew] = sizeCache;
+    // If it's flipping back and forth, settle on the previous value to prevent jiggling effects
+    if (isEquivalent(prevOld, newRect) && isEquivalent(prevNew, oldRect)) {
+        return oldRect;
+    }
+    sizeCache[0] = oldRect;
+    sizeCache[1] = newRect;
+    return equivalentReducer(oldRect, newRect);
+}
+type Reducer = typeof defaultReducer;
+
+const useElementRect = <E extends HTMLElement>(ref: RefObject<E>, rateLimiter: RateLimiter = debounce, reducer: Reducer = defaultReducer) => {
+    const sizeCache = useInstance((): (DOMRect | undefined)[] => [])
     const [elementRect, setElementRect] = useState(() => getElementRect(ref.current));
 
     useLayoutEffect(() => {
@@ -35,7 +52,6 @@ const useElementRect = <E extends HTMLElement>(ref: RefObject<E>, rateLimiter: R
         if (!target) {
             return;
         }
-        const reducer = (old?: DOMRect, newRect?: DOMRect) => (isEquivalent(old, newRect) ? old : newRect);
 
         if (typeof ResizeObserver === 'function') {
             const resizeObserver = new ResizeObserver(
@@ -43,21 +59,21 @@ const useElementRect = <E extends HTMLElement>(ref: RefObject<E>, rateLimiter: R
                 rateLimiter(([{ contentRect }]) => {
                     // The contentRect does not give correct global positions?
                     // setElementRect((old) => reducer(old, contentRect));
-                    setElementRect((old) => reducer(old, getElementRect(target)));
+                    setElementRect((old) => reducer(old, getElementRect(target), sizeCache));
                 }, 100)
             );
             resizeObserver.observe(target, { box: 'border-box' });
-            setElementRect((old) => reducer(old, getElementRect(target)));
+            setElementRect((old) => reducer(old, getElementRect(target), sizeCache));
             return () => {
                 resizeObserver.disconnect();
             };
         }
 
         const onResize = rateLimiter(() => {
-            setElementRect((old) => reducer(old, getElementRect(target)));
+            setElementRect((old) => reducer(old, getElementRect(target), sizeCache));
         }, 100);
         window.addEventListener('resize', onResize);
-        setElementRect((old) => reducer(old, getElementRect(target)));
+        setElementRect((old) => reducer(old, getElementRect(target), sizeCache));
         return () => {
             window.removeEventListener('resize', onResize);
         };
