@@ -3,11 +3,10 @@
  */
 .button-henlo {
 	display: inline-block;
-	padding: em(7) em(16) em(7);
+	padding: em(7) em(16) em(7); // 35px height
 
 	// usage of box-shadow instead of border to enable increasing size of _visual_ border without shifting button size
-	box-shadow: inset 0 0 0 var(--button-default-border-width, 0)
-		var(--button-default-border-color, transparent);
+	box-shadow: inset 0 0 0 var(--button-default-border-width, 0) var(--button-default-border-color, transparent);
 
 	border: none;
 	border-radius: $global-border-radius;
@@ -29,8 +28,7 @@
 	&:focus,
 	&:focus-within,
 	&.is-hover {
-		box-shadow: inset 0 0 0 var(--button-hover-border-width, 0)
-			var(--button-hover-border-color, transparent);
+		box-shadow: inset 0 0 0 var(--button-hover-border-width, 0) var(--button-hover-border-color, transparent);
 		background-color: var(--button-hover-background-color, transparent);
 		color: var(--button-hover-text-color, inherit);
 	}
@@ -42,8 +40,7 @@
 	// but in some cases that expanded container isn't so obviously visually connected to that button, so we use
 	// `aria-controls` to specify it, and avoid the `aria-expanded` style in the same time.
 	&[aria-expanded='true']:not([aria-controls]) {
-		box-shadow: inset 0 0 0 var(--button-active-border-width, 0)
-			var(--button-active-border-color, transparent);
+		box-shadow: inset 0 0 0 var(--button-active-border-width, 0) var(--button-active-border-color, transparent);
 		background-color: var(--button-active-background-color, transparent);
 		color: var(--button-active-text-color, inherit);
 	}
@@ -113,13 +110,21 @@
 	// Default shape
 	.button-solid-#{$color} {
 		--button-default-background-color: var(--#{$group + $color});
-		--button-default-text-color: var(--#{$group + $color}-contrast);
+
+		@if $color == 'weak' {
+			--button-default-text-color: var(--text-norm);
+		} @else {
+			--button-default-text-color: var(--#{$group + $color}-contrast);
+		}
 
 		@each $state in (hover, active) {
-			--button-#{$state}-background-color: var(
-				--#{$group + $color}-#{$state}
-			);
-			--button-#{$state}-text-color: var(--#{$group + $color}-contrast);
+			--button-#{$state}-background-color: var(--#{$group + $color}-#{$state});
+
+			@if $color == 'weak' {
+				--button-#{$state}-text-color: var(--text-norm);
+			} @else {
+				--button-#{$state}-text-color: var(--#{$group + $color}-contrast);
+			}
 		}
 	}
 
@@ -136,16 +141,12 @@
 
 		@each $state in (hover, active) {
 			--button-#{$state}-border-width: 2px;
-			--button-#{$state}-border-color: var(
-				--#{$group + $color}-#{$state}
-			);
+			--button-#{$state}-border-color: var(--#{$group + $color}-#{$state});
 
 			@if $color == 'weak' {
 				--button-#{$state}-text-color: var(--text-norm);
 			} @else {
-				--button-#{$state}-text-color: var(
-					--#{$group + $color}-#{$state}
-				);
+				--button-#{$state}-text-color: var(--#{$group + $color}-#{$state});
 			}
 		}
 	}
@@ -161,16 +162,12 @@
 		}
 
 		@each $state in (hover, active) {
-			--button-#{$state}-background-color: var(
-				--interaction-default-#{$state}
-			);
+			--button-#{$state}-background-color: var(--interaction-default-#{$state});
 
 			@if $color == 'weak' {
 				--button-#{$state}-text-color: var(--text-norm);
 			} @else {
-				--button-#{$state}-text-color: var(
-					--#{$group + $color}-#{$state}
-				);
+				--button-#{$state}-text-color: var(--#{$group + $color}-#{$state});
 			}
 		}
 	}
@@ -187,9 +184,7 @@
 			@if $color == 'weak' {
 				--button-#{$state}-text-color: var(--text-norm);
 			} @else {
-				--button-#{$state}-text-color: var(
-					--#{$group + $color}-#{$state}
-				);
+				--button-#{$state}-text-color: var(--#{$group + $color}-#{$state});
 			}
 		}
 	}
@@ -200,11 +195,11 @@
  */
 
 .button-small {
-	padding: em(1) em(12) em(2); // design want 26px height
+	padding: em(1) em(12) em(2); // 24px height
 }
 
 .button-large {
-	padding: em(9) em(20) em(10); // design want 42px height
+	padding: em(9) em(20) em(10); // 40px height
 }
 
 .button-for-icon {

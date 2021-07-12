@@ -23,7 +23,6 @@
 	}
 
 	&:checked + .input-button {
-		// Need !important because current dark mode management. Remove those as soon as possible.
 		--button-default-border-color: var(--interaction-norm);
 		--button-default-background-color: var(--interaction-norm);
 		--button-default-text-color: var(--interaction-norm-contrast);
