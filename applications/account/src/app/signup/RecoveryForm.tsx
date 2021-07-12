@@ -217,6 +217,7 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
                         bodyClassName="sign-layout-container"
                         challengeRef={challengeRefRecovery}
                         type={1}
+                        name="recovery"
                         onSuccess={(logs) => {
                             setChallengeLoading(false);
                             captureChallengeMessage('Failed to load RecoveryAccountForm iframe partially', logs);

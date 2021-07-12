@@ -2,7 +2,15 @@ import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import * as H from 'history';
 import { c } from 'ttag';
-import { useApi, MinimalLoginContainer, Href, SimpleDropdown, DropdownMenu, OnLoginCallback } from '@proton/components';
+import {
+    useApi,
+    MinimalLoginContainer,
+    Href,
+    SimpleDropdown,
+    DropdownMenu,
+    OnLoginCallback,
+    ButtonLike,
+} from '@proton/components';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { isMember } from '@proton/shared/lib/user/helpers';
 import SignInLayout from '../components/layout/SignInLayout';
@@ -24,6 +32,7 @@ const LoginContainer = ({ onLogin }: Props) => {
         <SignInLayout title={c('Title').t`Log in`}>
             <h2>{c('Title').t`User log in`}</h2>
             <MinimalLoginContainer
+                hasChallenge
                 onLogin={(data) => {
                     const { User } = data;
                     const previousLocation = location.state?.from;
@@ -33,6 +42,15 @@ const LoginContainer = ({ onLogin }: Props) => {
                     const pathWithSearch = `${path}${previousSearch}${previousHash}`;
                     return onLogin({ ...data, path: pathWithSearch });
                 }}
+                footer={
+                    <div className="w100 flex flex-justify-center flex-align-items-center flex-column mt1">
+                        <span className="flex-item-noshrink">
+                            <p className="text-bold">{c('Link').t`Don't have an account yet? Sign up for free!`}</p>
+                        </span>
+                        <ButtonLike as={Link} color="norm" className="ml1" to="/signup">{c('Link')
+                            .t`Sign up for free`}</ButtonLike>
+                    </div>
+                }
                 needHelp={
                     <SimpleDropdown content={c('Dropdown button').t`Need help?`} shape="link" color="norm">
                         <DropdownMenu>
