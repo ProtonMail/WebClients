@@ -1,5 +1,6 @@
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { decodeBase64 } from '@proton/shared/lib/helpers/base64';
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
+
 import { MessageExtended } from '../../models/message';
 import { generateCid } from './messageEmbeddeds';
 
@@ -14,10 +15,14 @@ const dataUrlToFile = (fileName: string, dataUrl: string) => {
     // separate out the mime component
     const mimeString = mime.split(':')[1].split(';')[0];
     // write the bytes of the string to an ArrayBuffer
-    const data = base64StringToUint8Array(byte);
-
-    // write the ArrayBuffer to a blob, and you're done
-    return new File([data], fileName, { type: mimeString });
+    try {
+        const data = decodeBase64(decodeURIComponent(byte));
+        // write the ArrayBuffer to a blob, and you're done
+        return new File([data], fileName, { type: mimeString });
+    } catch {
+        // Leave the image inline as-is, if the image fails to be parsed
+        return new File([byte], fileName, { type: mimeString });
+    }
 };
 
 /**
