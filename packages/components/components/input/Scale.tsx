@@ -4,7 +4,7 @@ import { range } from '@proton/shared/lib/helpers/array';
 import InputButton, { InputButtonProps } from './InputButton';
 import { concatStringProp, generateUID } from '../../helpers';
 
-interface ScaleProps extends Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'> {
+export interface ScaleProps extends Omit<React.ComponentPropsWithoutRef<'div'>, 'onChange'> {
     from: number;
     to: number;
     fromLabel: string;
