@@ -56,13 +56,6 @@ const SignInLayout = ({ children, title = '' }: Props) => {
                 <div className="flex flex-column flex-nowrap flex-item-noshrink">
                     <div className="center ui-standard bg-norm color-norm mt2 max-w40e w100 p2 bordered flex-item-noshrink">
                         {children}
-                        <div className="w100 flex flex-justify-center flex-align-items-center flex-column mt1">
-                            <span className="flex-item-noshrink">
-                                <p className="text-bold">{c('Link').t`Don't have an account yet? Sign up for free!`}</p>
-                            </span>
-                            <ButtonLike as={Link} color="norm" className="ml1" to="/signup">{c('Link')
-                                .t`Sign up for free`}</ButtonLike>
-                        </div>
                     </div>
                 </div>
                 <footer className="opacity-50 flex-item-noshrink text-center pb1 mt1">

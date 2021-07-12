@@ -189,6 +189,7 @@ const CreateAccountForm = ({
                         loaderClassName="center flex"
                         challengeRef={challengeRefLogin}
                         type={0}
+                        name="username"
                         onSuccess={(logs) => {
                             setChallengeLoading(false);
                             captureChallengeMessage('Failed to load CreateAccountForm iframe partially', logs);
