@@ -1,13 +1,24 @@
-## Release: 4.0.1 — June 30, 2021
+## Release: 4.0.2 — July 21, 2021
 
+### Improvements
+- Add shortcuts for calendar creation, edition and sharing from the calendar sidebar
+- Allow import of events with missing UID
+- Design improvements in mini calendar
+- Make the calendar linked address more obvious in the settings list of calendars
+- Add calendar color in the calendar select when creating or editing an event
+### Fixes
+- Various small bug fixes
+
+## Release: 4.0.1 — June 30, 2021
+__
 ### New features
-- Enabled the search of time zones
+- Enable the search of time zones
 
 ### Improvements
 - Minor UI improvements
 
 ### Fixes
-- Fixed the display of sent invites with specific security settings that would show as encrypted in the sent folder
+- Fix the display of sent invites with specific security settings that would show as encrypted in the sent folder
 
 # Proton Calendar for web is live!
 
