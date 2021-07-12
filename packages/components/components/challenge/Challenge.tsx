@@ -12,11 +12,12 @@ import { ChallengeLog } from './interface';
 
 interface Props extends Omit<ChallengeProps, 'src' | 'onError' | 'onSuccess'> {
     type: number;
+    name: string;
     onSuccess: (challengeLog: ChallengeLog[]) => void;
     onError: (challengeLog: ChallengeLog[]) => void;
 }
 
-const Challenge = ({ children, style, onSuccess, onError, bodyClassName, loaderClassName, type, ...rest }: Props) => {
+const Challenge = ({ children, style, onSuccess, onError, bodyClassName, loaderClassName, name, type, ...rest }: Props) => {
     const config = useConfig();
 
     const [isLoading, setIsLoading] = useState(true);
@@ -29,6 +30,7 @@ const Challenge = ({ children, style, onSuccess, onError, bodyClassName, loaderC
         url.hostname = getRelativeApiHostname(url.hostname);
         url.pathname = '/challenge/v4/html';
         url.searchParams.set('Type', `${type}`);
+        url.searchParams.set('Name', name);
         if (errorRetry) {
             url.searchParams.set('Retry', `${errorRetry}`);
         }

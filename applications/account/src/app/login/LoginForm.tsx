@@ -85,6 +85,7 @@ const LoginForm = ({ onSubmit, defaultUsername = '' }: Props) => {
                     tabIndex={-1}
                     challengeRef={challengeRefLogin}
                     type={0}
+                    name="login"
                     onSuccess={(logs) => {
                         setChallengeLoading(false);
                         captureChallengeMessage('Failed to load LoginForm iframe partially', logs);
