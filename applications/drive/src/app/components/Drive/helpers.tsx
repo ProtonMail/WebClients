@@ -44,6 +44,7 @@ export const mapLinksToChildren = (
             Type,
             ModifyTime,
             Size,
+            ActiveRevisionSize: FileProperties?.ActiveRevision?.Size,
             MIMEType,
             ParentLinkID,
             Trashed,

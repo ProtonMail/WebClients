@@ -44,10 +44,14 @@ export const isTransferFinalizing = ({ state }: { state: TransferState }) => sta
 export const isTransferCancelError = (error: Error) => error.name === 'TransferCancel' || error.name === 'AbortError';
 
 export const getMetaForTransfer = (item: FileBrowserItem | LinkMeta): TransferMeta => {
+    const size =
+        (item as FileBrowserItem).ActiveRevisionSize ||
+        (item as LinkMeta).FileProperties?.ActiveRevision?.Size ||
+        item.Size;
     return {
         filename: item.Name,
         mimeType: item.MIMEType,
-        size: item.Size,
+        size,
     };
 };
 
