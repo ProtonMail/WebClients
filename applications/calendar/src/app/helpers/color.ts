@@ -3,7 +3,7 @@ import tinycolor from 'tinycolor2';
 
 import { COLORS } from '@proton/shared/lib/calendar/constants';
 
-export const getConstrastingColor = (backgroundColor = '') => {
+export const getContrastingColor = (backgroundColor = '') => {
     const colorModel = tinycolor(backgroundColor) as any;
     return colorModel.isLight() ? COLORS.BLACK : COLORS.WHITE;
 };
@@ -17,6 +17,6 @@ export const getEventStyle = (backgroundColor = '', style: CSSProperties = {}) =
         '--color-main': backgroundColor,
         '--color-alt': colorAlt,
         '--color-alpha': colorAlpha,
-        '--foreground': getConstrastingColor(backgroundColor),
+        '--foreground': getContrastingColor(backgroundColor),
     };
 };
