@@ -250,7 +250,11 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
                 CouponCode: signupToken.coupon ? signupToken.coupon.code : undefined,
                 Payment:
                     signupToken.paymentDetails &&
-                    [PAYMENT_METHOD_TYPES.CARD, PAYMENT_METHOD_TYPES.PAYPAL].includes(signupToken.paymentMethodType)
+                    [
+                        PAYMENT_METHOD_TYPES.CARD,
+                        PAYMENT_METHOD_TYPES.PAYPAL,
+                        PAYMENT_METHOD_TYPES.PAYPAL_CREDIT,
+                    ].includes(signupToken.paymentMethodType)
                         ? signupToken.paymentDetails.Payment
                         : undefined,
             };
