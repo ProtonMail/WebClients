@@ -23,6 +23,7 @@ import {
     FOLDER_PAGE_SIZE,
     MAX_THREADS_PER_REQUEST,
     RESPONSE_CODE,
+    SHARE_GENERATED_PASSWORD_LENGTH,
 } from '../../constants';
 import { SharedURLFlags, SharedURLSessionKeyPayload, ShareURL, UpdateSharedURL } from '../../interfaces/sharing';
 import { LinkMeta } from '../../interfaces/link';
@@ -136,6 +137,35 @@ function useSharing() {
         };
     };
 
+    /*
+     * Password can come in several shapes:
+     * - <custom>, flags === 1 – legacy custom password (comes separately from generated)
+     * - <generated>, flags === 3 – empty custom password
+     * - <generated><custom>, flags === 3, contains both generated and custom paswords
+     */
+    const getSharedLinkUpdatedFlags = (password: string, flags: number) => {
+        /*
+         * There are three bit array states that can be returned here:
+         * - `0` – all bits are zero, meaning file's only protected with
+         * generated password. If newPassword's length equals SHARE_GENERATED_PASSWORD_LENGTH
+         * it means no custom password was provided.
+         * - `3` - first and second bits equal one (having both CustomPassword and
+         * GeneratedPasswordIncluded flags active).
+         * - `1` - first bit equals one, meaning we encounter a link protected
+         * with a legacy password. We disable password deletion for these files
+         * and their flags must stay as they were.
+         */
+        if (password.length === SHARE_GENERATED_PASSWORD_LENGTH && flags & SharedURLFlags.GeneratedPasswordIncluded) {
+            return 0;
+        }
+
+        if ((flags & SharedURLFlags.CustomPassword) === 0 || flags & SharedURLFlags.GeneratedPasswordIncluded) {
+            return SharedURLFlags.CustomPassword | SharedURLFlags.GeneratedPasswordIncluded;
+        }
+
+        return SharedURLFlags.CustomPassword;
+    };
+
     const getFieldsToUpdateForPassword = async (
         newPassword: string,
         flags: number,
@@ -160,15 +190,8 @@ function useSharing() {
             }),
         ]);
 
-        // Old shares with legacy custom password has to stay that way, so the
-        // old links still works. But all new shares should use new logic.
-        let newFlags = SharedURLFlags.CustomPassword;
-        if ((flags & SharedURLFlags.CustomPassword) === 0 || flags & SharedURLFlags.GeneratedPasswordIncluded) {
-            newFlags |= SharedURLFlags.GeneratedPasswordIncluded;
-        }
-
         const fieldsToUpdate: Partial<UpdateSharedURL> = {
-            Flags: newFlags,
+            Flags: getSharedLinkUpdatedFlags(newPassword, flags),
             Password,
             SharePassphraseKeyPacket,
             SRPVerifier,
@@ -180,18 +203,23 @@ function useSharing() {
     };
 
     const updateSharedLink = async (
-        shareId: string,
-        token: string,
-        flags: number,
-        keyInfo: SharedURLSessionKeyPayload,
+        shareUrlInfo: {
+            shareId: string;
+            token: string;
+            flags: number;
+            keyInfo: SharedURLSessionKeyPayload;
+        },
         newDuration?: number | null,
         newPassword?: string
     ) => {
+        const { shareId, token, flags, keyInfo } = shareUrlInfo;
         let fieldsToUpdate: Partial<UpdateSharedURL> = {};
+
         if (newDuration !== undefined) {
             fieldsToUpdate = { ExpirationDuration: newDuration };
         }
-        if (newPassword) {
+
+        if (newPassword !== undefined) {
             const fieldsToUpdateForPassword = await getFieldsToUpdateForPassword(newPassword, flags, keyInfo);
             fieldsToUpdate = {
                 ...fieldsToUpdate,

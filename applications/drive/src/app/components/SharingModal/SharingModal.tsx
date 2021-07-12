@@ -13,9 +13,9 @@ import { FileBrowserItem } from '../FileBrowser/interfaces';
 import GeneratedLinkState from './GeneratedLinkState';
 import ErrorState from './ErrorState';
 import {
-    isWithoutCustomPassword,
-    isCustomSharedURLPassword,
-    isGeneratedWithCustomSharedURLPassword,
+    hasNoCustomPassword,
+    hasCustomPassword,
+    hasGeneratedPasswordIncluded,
     splitGeneratedAndCustomPassword,
 } from '../../utils/link';
 import { SHARE_GENERATED_PASSWORD_LENGTH } from '../../constants';
@@ -84,7 +84,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
 
             setShareUrlInfo(shareUrlInfo);
 
-            setPasswordToggledOn(isCustomSharedURLPassword(shareUrlInfo.ShareURL));
+            setPasswordToggledOn(hasCustomPassword(shareUrlInfo.ShareURL));
             setExpirationToggledOn(!!shareUrlInfo.ShareURL?.ExpirationTime);
             setPassword(shareUrlInfo.ShareURL.Password);
             setInitialExpiration(shareUrlInfo.ShareURL?.ExpirationTime);
@@ -105,6 +105,8 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
             return;
         }
 
+        // Empty string as a newCustomPassword will remove it from the link.
+        // `undefined` is to leave the password as it is.
         let newPassword = newCustomPassword;
         // Generated password has to be used for any new custom password (no
         // custom password set yet), or when generated password was already
@@ -112,19 +114,20 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
         // This can be simplified once legacy custom password without generated
         // prefix is not used anymore.
         if (
-            newCustomPassword &&
-            (isWithoutCustomPassword(shareUrlInfo.ShareURL) ||
-                isGeneratedWithCustomSharedURLPassword(shareUrlInfo.ShareURL))
+            newCustomPassword !== undefined &&
+            (hasNoCustomPassword(shareUrlInfo.ShareURL) || hasGeneratedPasswordIncluded(shareUrlInfo.ShareURL))
         ) {
             newPassword = password.substring(0, SHARE_GENERATED_PASSWORD_LENGTH) + newCustomPassword;
         }
 
         const update = async () => {
             const res = await updateSharedLink(
-                shareUrlInfo.ShareURL.ShareID,
-                shareUrlInfo.ShareURL.Token,
-                shareUrlInfo.ShareURL.Flags,
-                shareUrlInfo.keyInfo,
+                {
+                    shareId: shareUrlInfo.ShareURL.ShareID,
+                    token: shareUrlInfo.ShareURL.Token,
+                    flags: shareUrlInfo.ShareURL.Flags,
+                    keyInfo: shareUrlInfo.keyInfo,
+                },
                 newDuration,
                 newPassword
             );
@@ -224,6 +227,9 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
         }
 
         if (modalState === SharingModalState.GeneratedLink) {
+            const isValidForPasswordRemoval =
+                hasCustomPassword(shareUrlInfo.ShareURL) && !hasGeneratedPasswordIncluded(shareUrlInfo.ShareURL);
+
             return (
                 <GeneratedLinkState
                     modalTitleID={modalTitleID}
@@ -240,6 +246,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
                     customPassword={customPassword}
                     initialExpiration={initialExpiration}
                     token={shareUrlInfo.ShareURL.Token}
+                    isValidForPasswordRemoval={isValidForPasswordRemoval}
                     deleting={deleting}
                     saving={saving}
                 />

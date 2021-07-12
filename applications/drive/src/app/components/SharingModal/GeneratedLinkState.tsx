@@ -17,6 +17,7 @@ import {
     useNotifications,
     Details,
     Summary,
+    Tooltip,
 } from '@proton/components';
 
 import ExpirationTimeDatePicker from './ExpirationTimeDatePicker';
@@ -26,6 +27,7 @@ interface Props {
     initialExpiration: number | null;
     token: string;
     passwordToggledOn: boolean;
+    isValidForPasswordRemoval: boolean;
     expirationToggledOn: boolean;
     generatedPassword: string;
     customPassword: string;
@@ -45,6 +47,10 @@ const SHARING_INFO_LABEL = {
     withPassword: c('Info').t`Only the people with the link and the password can access this file.`,
 };
 
+const PASSWORD_TOGGLE_DISABLE_REASON = c('Info').t`This link was created in \
+a previous version and can not be modified. Delete this link and create a \
+new one to change the settings.`;
+
 function GeneratedLinkState({
     modalTitleID,
     onClose,
@@ -56,6 +62,7 @@ function GeneratedLinkState({
     deleting,
     saving,
     passwordToggledOn,
+    isValidForPasswordRemoval,
     expirationToggledOn,
     onSaveLinkClick,
     onDeleteLinkClick,
@@ -69,13 +76,16 @@ function GeneratedLinkState({
 
     const [password, setPassword] = useState(customPassword);
     const [expiration, setExpiration] = useState(initialExpiration);
-    const defaultAdditionalSettingsExpanded = !!customPassword || !!initialExpiration;
-    const [additionalSettingsExpanded, setAdditionalSettingsExpanded] = useState(defaultAdditionalSettingsExpanded);
+    const [additionalSettingsExpanded, setAdditionalSettingsExpanded] = useState(
+        Boolean(customPassword || initialExpiration)
+    );
 
-    const isFormDirty =
+    const isFormDirty = Boolean(
         (expiration !== initialExpiration && expirationToggledOn) ||
-        (initialExpiration && !expirationToggledOn) ||
-        (password !== customPassword && passwordToggledOn);
+            (initialExpiration && !expirationToggledOn) ||
+            (password !== customPassword && passwordToggledOn) ||
+            (!passwordToggledOn && customPassword)
+    );
 
     const isSaveDisabled =
         !isFormDirty || deleting || (passwordToggledOn && !password) || (expirationToggledOn && !expiration);
@@ -100,7 +110,20 @@ function GeneratedLinkState({
     };
 
     const handleSubmit = async () => {
-        const newCustomPassword = password !== customPassword ? password : undefined;
+        // The idea here is following:
+        // newCustomPassword is undefined in case we don't want to update it
+        // or newCustomPassword is an empty string when password needs to be removed
+        // or newCustomPassword is, well, a password string
+        let newCustomPassword;
+
+        if (!passwordToggledOn) {
+            if (customPassword.length !== 0) {
+                newCustomPassword = '';
+            }
+        } else if (password !== customPassword) {
+            newCustomPassword = password;
+        }
+
         let newDuration: number | null | undefined = null;
         if (expirationToggledOn) {
             newDuration =
@@ -120,6 +143,8 @@ function GeneratedLinkState({
             {`${itemName}`}
         </b>
     );
+
+    const passwordTooltipText = isValidForPasswordRemoval ? PASSWORD_TOGGLE_DISABLE_REASON : null;
 
     return (
         <>
@@ -156,7 +181,7 @@ function GeneratedLinkState({
                         </Row>
                         <Alert>{password ? SHARING_INFO_LABEL.withPassword : SHARING_INFO_LABEL.default}</Alert>
                         <Details
-                            open={defaultAdditionalSettingsExpanded}
+                            open={additionalSettingsExpanded}
                             onToggle={() => {
                                 setAdditionalSettingsExpanded(!additionalSettingsExpanded);
                             }}
@@ -169,21 +194,23 @@ function GeneratedLinkState({
                                 <Label htmlFor="passwordModeToggle">
                                     <span className="mr0-5">{c('Label').t`Protect with password`}</span>
                                 </Label>
-                                <div className="flex flex-justify-start pt0-5 mr0-5 on-mobile-mr0">
-                                    <Toggle
-                                        id="passwordModeToggle"
-                                        className="on-mobile-mb0-5"
-                                        disabled={!!customPassword || saving}
-                                        checked={passwordToggledOn}
-                                        onChange={() => {
-                                            onIncludePasswordToggle();
-                                            if (!passwordToggledOn) {
-                                                setPassword(customPassword);
-                                            }
-                                        }}
-                                        data-testid="sharing-modal-passwordModeToggle"
-                                    />
-                                </div>
+                                <Tooltip title={passwordTooltipText}>
+                                    <div className="flex flex-justify-start pt0-5 mr0-5 on-mobile-mr0">
+                                        <Toggle
+                                            id="passwordModeToggle"
+                                            className="on-mobile-mb0-5"
+                                            disabled={isValidForPasswordRemoval || saving}
+                                            checked={passwordToggledOn}
+                                            onChange={() => {
+                                                onIncludePasswordToggle();
+                                                if (!passwordToggledOn) {
+                                                    setPassword(customPassword);
+                                                }
+                                            }}
+                                            data-testid="sharing-modal-passwordModeToggle"
+                                        />
+                                    </div>
+                                </Tooltip>
                                 <div className="flex-no-min-children flex-item-fluid flex-align-items-center on-mobile-mb0-5 field-icon-container-empty on-mobile-min-h0">
                                     {passwordToggledOn && (
                                         <>
