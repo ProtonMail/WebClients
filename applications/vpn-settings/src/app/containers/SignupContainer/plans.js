@@ -2,6 +2,7 @@ import React from 'react';
 import { c, msgid } from 'ttag';
 import { PLANS, PLAN_TYPES, CYCLE } from '@proton/shared/lib/constants';
 import { Info } from '@proton/components';
+
 import freePlanSvg from '@proton/styles/assets/img/pv-images/plans/free.svg';
 import basicPlanSvg from '@proton/styles/assets/img/pv-images/plans/basic.svg';
 import plusPlanSvg from '@proton/styles/assets/img/pv-images/plans/plus.svg';
@@ -30,11 +31,17 @@ export const PLAN_BUNDLES = {
 export const VPN_PLANS = [PLAN.FREE, PLAN.BASIC, PLAN.PLUS, PLAN.VISIONARY];
 export const BEST_DEAL_PLANS = [PLAN.BASIC, PLAN.PLUS, PLAN.VISIONARY];
 
-const getPlanFeatures = (plan, maxConnections, countries) => {
+const getPlanFeatures = (plan, maxConnections, countries, freeServersCount) => {
     const netflix = <b key={1}>{c('Netflix').t`Netflix`}</b>;
     const disney = <b key={2}>{c('Disney').t`Disney+`}</b>;
     const primeVideo = <b key={3}>{c('Prime Video').t`Prime Video`}</b>;
     const many = <b key={4}>{c('Many Others').t`and many others`}</b>;
+
+    const nFreeServers = c('Plan Feature').ngettext(
+        msgid`${freeServersCount.free_vpn} server`,
+        `${freeServersCount.free_vpn} servers`,
+        freeServersCount.free_vpn
+    );
 
     return {
         [PLAN.FREE]: {
@@ -54,8 +61,8 @@ const getPlanFeatures = (plan, maxConnections, countries) => {
             },
             features: [
                 c('Plan Feature').ngettext(
-                    msgid`17 servers in ${countries.free_vpn.count} country`,
-                    `17 servers in ${countries.free_vpn.count} countries`,
+                    msgid`${nFreeServers} in ${countries.free_vpn.count} country`,
+                    `${nFreeServers} in ${countries.free_vpn.count} countries`,
                     countries.free_vpn.count
                 ),
                 c('Plan Feature').ngettext(
@@ -286,12 +293,12 @@ const getPlanPrice = (plan, cycle) => {
     return { monthly, total, totalMonthly, saved };
 };
 
-export const getPlan = (planName, cycle, plans = [], countries = []) => {
+export const getPlan = (planName, cycle, plans = [], countries = [], serversCount = {}) => {
     const plan = plans.find(({ Type, Name }) => Type === PLAN_TYPES.PLAN && Name === planName);
     const price = (plan && getPlanPrice(plan, cycle)) || { monthly: 0, total: 0, totalMonthly: 0, saved: 0 };
 
     return {
-        ...getPlanFeatures(planName, plan ? plan.MaxVPN || 0 : 1, countries),
+        ...getPlanFeatures(planName, plan ? plan.MaxVPN || 0 : 1, countries, serversCount),
         planName,
         title: PLAN_NAMES[planName],
         ID: plan && plan.ID,
