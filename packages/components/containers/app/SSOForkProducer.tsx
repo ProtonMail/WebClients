@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { c } from 'ttag';
 import {
     getActiveSessions,
     GetActiveSessionsResult,
@@ -10,12 +11,18 @@ import {
     ProduceForkParameters,
 } from '@proton/shared/lib/authentication/sessionForking';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
-import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import {
+    getApiErrorMessage,
+    getIs401Error,
+    getIsTooManyChildSessionsError,
+} from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 
 import { useApi, useErrorHandler } from '../../hooks';
 import LoaderPage from './LoaderPage';
 import StandardLoadErrorPage from './StandardLoadErrorPage';
+import StandardErrorPage from './StandardErrorPage';
+import { Href } from '../../components';
 
 interface Props {
     onActiveSessions: (data: ProduceForkParameters, activeSessions: GetActiveSessionsResult) => void;
@@ -24,6 +31,7 @@ interface Props {
 
 const SSOForkProducer = ({ onActiveSessions, onInvalidFork }: Props) => {
     const [error, setError] = useState<{ message?: string } | null>(null);
+    const [tooManyChildSessionsError, setTooManyChildSessionsError] = useState<boolean>(false);
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
@@ -80,12 +88,28 @@ const SSOForkProducer = ({ onActiveSessions, onInvalidFork }: Props) => {
             }
         };
         run().catch((e) => {
+            const isTooManyChildSessionsError = getIsTooManyChildSessionsError(e);
+            if (isTooManyChildSessionsError) {
+                setTooManyChildSessionsError(true);
+                return;
+            }
+
             errorHandler(e);
             setError({
                 message: getApiErrorMessage(e),
             });
         });
     }, []);
+
+    if (tooManyChildSessionsError) {
+        return (
+            <StandardErrorPage>
+                {c('Error message').jt`Too many child sessions, please clear your cookies and sign back in.`}
+                <Href href="https://protonmail.com/support/knowledge-base/how-to-clean-cache-and-cookies/">{c('Info')
+                    .t`More Info`}</Href>
+            </StandardErrorPage>
+        );
+    }
 
     if (error) {
         return <StandardLoadErrorPage errorMessage={error.message} />;
