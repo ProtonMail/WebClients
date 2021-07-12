@@ -130,6 +130,10 @@ export const getConsumeForkParameters = () => {
     };
 };
 
+export const removeHashParameters = () => {
+    window.location.hash = '';
+};
+
 interface ConsumeForkArguments {
     api: Api;
     selector: string;
