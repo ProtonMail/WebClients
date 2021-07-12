@@ -6,11 +6,12 @@ interface Props extends LinkProps {
     icon: string;
     info: string;
 }
-export const SidebarListItemHeaderLinkButton = ({ info, icon, ...rest }: Props) => {
+export const SidebarListItemHeaderLinkButton = ({ info, icon, ...rest }: Props, ref: React.Ref<HTMLAnchorElement>) => {
     return (
         <AppLink
             className="flex navigation-link-header-group-control flex-item-noshrink mr-0-5"
             type="button"
+            ref={ref}
             {...rest}
         >
             <Icon name={icon} className="navigation-icon" />
@@ -19,4 +20,4 @@ export const SidebarListItemHeaderLinkButton = ({ info, icon, ...rest }: Props) 
     );
 };
 
-export default SidebarListItemHeaderLinkButton;
+export default React.forwardRef<HTMLAnchorElement, Props>(SidebarListItemHeaderLinkButton);
