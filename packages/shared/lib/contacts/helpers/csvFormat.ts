@@ -233,7 +233,6 @@ const templates = {
             checked: true,
             pref: 1,
             field: 'fn',
-            type: 'main',
             combineInto: 'fn-main',
             combineIndex: index,
         };
@@ -245,7 +244,6 @@ const templates = {
             checked: true,
             pref: 2,
             field: 'fn',
-            type: 'yomi',
             combineInto: 'fn-yomi',
             combineIndex: index,
         };
