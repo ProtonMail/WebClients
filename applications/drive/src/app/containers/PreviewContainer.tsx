@@ -26,7 +26,7 @@ import { LinkMeta, LinkType } from '../interfaces/link';
 
 const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; linkId: string }>) => {
     const { shareId, linkId } = match.params;
-    const { navigateToLink, navigateToSharedURLs } = useNavigate();
+    const { navigateToLink, navigateToSharedURLs, navigateToTrash } = useNavigate();
     const cache = useDriveCache();
     const downloadControls = useRef<DownloadControls>();
     const { setFolder } = useDriveActiveFolder();
@@ -39,7 +39,7 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
     const { createModal } = useModals();
 
     const referer = new URLSearchParams(useLocation().search).get('r');
-    const useNavigation = !referer?.startsWith('/shared-urls');
+    const useNavigation = !referer?.startsWith('/shared-urls') && !referer?.startsWith('/trash');
 
     const rootRef = useRef<HTMLDivElement>(null);
 
@@ -58,11 +58,7 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
 
         const preloadFile = async () => {
             try {
-                const { ParentLinkID, MIMEType, Trashed } = meta ?? (await getLinkMeta(shareId, linkId));
-
-                if (Trashed) {
-                    throw new Error('Link is trashed.');
-                }
+                const { ParentLinkID, MIMEType } = meta ?? (await getLinkMeta(shareId, linkId));
 
                 if (canceled) {
                     return;
@@ -105,6 +101,10 @@ const PreviewContainer = ({ match }: RouteComponentProps<{ shareId: string; link
     const navigateToParent = useCallback(() => {
         if (referer?.startsWith('/shared-urls')) {
             navigateToSharedURLs();
+            return;
+        }
+        if (referer?.startsWith('/trash')) {
+            navigateToTrash();
             return;
         }
         if (meta?.ParentLinkID) {
