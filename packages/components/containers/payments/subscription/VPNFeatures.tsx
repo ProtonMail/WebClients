@@ -2,10 +2,10 @@ import React from 'react';
 import { c } from 'ttag';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { Plan, VPNCountries } from '@proton/shared/lib/interfaces';
+import { Plan, VPNCountries, VPNServers } from '@proton/shared/lib/interfaces';
 import { FREE_VPN_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
-import { useVPNCountriesCount } from '../../../hooks';
+import { useVPNCountriesCount, useVPNServersCount } from '../../../hooks';
 import { Icon } from '../../../components';
 import { VPNFeature } from './interface';
 import Features from './Features';
@@ -13,7 +13,11 @@ import Features from './Features';
 const CheckIcon = () => <Icon className="color-primary" name="on" alt={c('information').t`Included`} />;
 const EmDash = '—';
 
-const getFeatures = (vpnCountries: VPNCountries, planNamesMap: { [key: string]: Plan }): VPNFeature[] => {
+const getFeatures = (
+    vpnCountries: VPNCountries,
+    planNamesMap: { [key: string]: Plan },
+    serversCount: VPNServers
+): VPNFeature[] => {
     const mailAppName = getAppName(APPS.PROTONMAIL);
 
     return [
@@ -36,7 +40,7 @@ const getFeatures = (vpnCountries: VPNCountries, planNamesMap: { [key: string]: 
         {
             name: 'servers',
             label: c('VPN feature').t`VPN servers`,
-            free: 17,
+            free: serversCount.free_vpn,
             [PLANS.VPNBASIC]: '350+',
             [PLANS.VPNPLUS]: '1200+',
             [PLANS.VISIONARY]: '1200+',
@@ -278,8 +282,9 @@ interface Props {
 
 const VPNFeatures = ({ onSelect, planNamesMap, activeTab, onSetActiveTab }: Props) => {
     const [vpnCountries] = useVPNCountriesCount();
+    const [vpnServersCount] = useVPNServersCount();
 
-    const features = getFeatures(vpnCountries, planNamesMap);
+    const features = getFeatures(vpnCountries, planNamesMap, vpnServersCount);
     const planLabels = [
         { label: 'Free', key: 'free' } as const,
         { label: 'Basic', key: PLANS.VPNBASIC },

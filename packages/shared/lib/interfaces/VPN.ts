@@ -17,3 +17,9 @@ export interface VPNCountries {
     [PLANS.VPNBASIC]: VPNCountry;
     [PLANS.VPNPLUS]: VPNCountry;
 }
+
+export interface VPNServers {
+    free_vpn: number;
+    [PLANS.VPNBASIC]: number;
+    [PLANS.VPNPLUS]: number;
+}
