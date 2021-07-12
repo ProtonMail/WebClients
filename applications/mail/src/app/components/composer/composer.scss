@@ -1,194 +1,195 @@
 @import '@proton/styles/scss/config/';
 
 .composer {
-    position: absolute;
-    bottom: 0;
-    z-index: 300;
+	position: absolute;
+	bottom: 0;
+	z-index: 300;
 
-    height: rem(520);
-    width: rem(600);
-    max-height: 100%;
-    max-width: 100%;
-    overflow: hidden;
+	height: rem(520);
+	width: rem(600);
+	max-height: 100%;
+	max-width: 100%;
+	overflow: hidden;
 
-    background: var(--background-norm);
-    box-shadow: var(--shadow-lifted);
-    border-radius: $global-border-radius $global-border-radius 0 0;
-    color: var(--text-norm);
+	background: var(--background-norm);
+	box-shadow: var(--shadow-lifted);
+	border-radius: $global-border-radius $global-border-radius 0 0;
+	color: var(--text-norm);
 
-    transition: 0.15s easing(easeOutQuint);
+	transition: 0.15s easing(easeOutQuint);
 
-    .composer-content {
-        min-height: 10em;
-    }
+	.composer-content {
+		min-height: 10em;
+	}
 }
 
 .composer--is-blur {
-    --blur-opacity: 0.25;
+	--blur-opacity: 0.25;
 
-    box-shadow: var(--shadow-norm);
+	box-shadow: var(--shadow-norm);
 
-    .composer-title-bar {
-        background: var(--background-weak);
-        color: var(text-norm);
+	.composer-title-bar {
+		background: var(--background-weak);
+		color: var(text-norm);
 
-        & > * {
-            opacity: var(--blur-opacity);
-        }
-    }
+		& > * {
+			opacity: var(--blur-opacity);
+		}
+	}
 
-    .composer-blur-container {
-        opacity: var(--blur-opacity);
-        pointer-events: none;
-    }
+	.composer-blur-container {
+		opacity: var(--blur-opacity);
+		pointer-events: none;
+	}
 }
 
 .composer--is-minimized {
-    height: 2.5em; // title bar height
+	height: 2.5em; // title bar height
 }
 
 @include respond-to($breakpoint-medium-landscape, 'min') {
-    .composer--is-maximized {
-        .message-attachmentList-item-container {
-            width: 33%;
+	.composer--is-maximized {
+		.message-attachmentList-item-container {
+			width: 33%;
 
-            &:first-child,
-            &:nth-child(2),
-            &:nth-child(3) {
-                margin-top: 0;
-            }
-            &:nth-child(even) {
-                padding-left: 0;
-            }
-            &:nth-child(odd) {
-                padding-right: 0;
-            }
-            &:nth-child(3n-1),
-            &:nth-child(3n) {
-                padding-left: 1em;
-            }
-        }
-    }
+			&:first-child,
+			&:nth-child(2),
+			&:nth-child(3) {
+				margin-top: 0;
+			}
+			&:nth-child(even) {
+				padding-left: 0;
+			}
+			&:nth-child(odd) {
+				padding-right: 0;
+			}
+			&:nth-child(3n-1),
+			&:nth-child(3n) {
+				padding-left: 1em;
+			}
+		}
+	}
 }
 
 .composer-title-bar {
-    background: var(--background-strong);
-    color: var(--text-norm);
-    transition: background 0.15s ease-out;
+	background: var(--background-strong);
+	color: var(--text-norm);
+	transition: background 0.15s ease-out;
 
-    & > * {
-        transition: opacity 0.15s ease-out;
-    }
+	& > * {
+		transition: opacity 0.15s ease-out;
+	}
 }
 
 .composer-title-bar-tooltip {
-    align-self: stretch;
-    justify-content: stretch;
-    align-items: stretch;
+	align-self: stretch;
+	justify-content: stretch;
+	align-items: stretch;
 }
 
 .composer-container {
-    overflow: hidden;
-    background: var(--background-norm);
+	overflow: hidden;
+	background: var(--background-norm);
 }
 
 .composer-blur-container {
-    transition: opacity 0.15s ease-out;
+	transition: opacity 0.15s ease-out;
 }
 
 .composer-meta-label,
 .label.composer-meta-label {
-    max-width: 8em;
-    width: 15%;
-    @include respond-to($breakpoint-small) {
-        // temporary workaround
-        width: 25%;
-    }
+	max-width: 8em;
+	width: 15%;
+	@include respond-to($breakpoint-small) {
+		// temporary workaround
+		width: 25%;
+	}
 }
 
 .composer-meta .composer-addresses-fakefield {
-    min-height: rem(35);
-    max-height: 2.5em;
-    padding-right: em(16);
-    cursor: text;
-    &.disabled {
-        color: var(--field-disabled-text-color, var(--text-disabled));
-        border-color: var(--field-disabled);
-        .composer-addresses-addressIcon {
-            opacity: .5;
-        }
-    }
+	min-height: rem(35);
+	max-height: 2.5em;
+	padding-right: em(16);
+	cursor: text;
+	&.disabled {
+		color: var(--field-disabled-text-color, var(--text-disabled));
+		border-color: var(--field-disabled);
+		.composer-addresses-addressIcon {
+			opacity: 0.5;
+		}
+	}
 }
 
 .composer-addresses-container-line:not(:first-child) {
-    padding-right: rem(30);
+	padding-right: rem(30);
 }
 
 .composer-addresses-container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    position: relative;
-    max-height: 100px;
-    overflow-y: auto;
-    overflow-x: hidden;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	position: relative;
+	max-height: 100px;
+	overflow-y: auto;
+	overflow-x: hidden;
 
-    &.field {
-        padding: 0.25em 0.5em;
-        height: auto !important;
-    }
+	&.field {
+		padding: 0.25em 0.5em;
+		height: auto !important;
+	}
 
-    &.composer-addresses-container-closed {
-        padding-right: 1em;
-    }
+	&.composer-addresses-container-closed {
+		padding-right: 1em;
+	}
 
-    &::after {
-        // trick to keep space in case of loooooooong email with scroll and last one
-        content: '';
-        width: 100%;
-        height: rem(1);
-    }
+	&::after {
+		// trick to keep space in case of loooooooong email with scroll and last one
+		content: '';
+		width: 100%;
+		height: rem(1);
+	}
 
-    .field {
-        border: none;
-        padding: 0;
-        min-width: rem(100);
-        background: inherit;
-        height: auto;
+	.field {
+		border: none;
+		padding: 0;
+		min-width: rem(100);
+		background: inherit;
+		height: auto;
 
-        &:focus {
-            box-shadow: none;
-        }
-    }
+		&:focus {
+			box-shadow: none;
+		}
+	}
 }
 .composer-to-editor {
-    height: auto;
-    min-height: rem($default-height-fields); // to avoid tiny layout shifts
-    padding-top: em(1);
-    padding-bottom: em(0);
-    &.composer-editor-expanded {
-        padding-top: .25em;
-        padding-bottom: .25em;
-        padding-left: 0.5em;
-        .field:empty { // only for placeholder position when empty
-            margin-left: .65em;
-        }
-    }
-    .composer-addresses-input-container {
-        margin-left: 0;
-    }
+	height: auto;
+	min-height: rem($default-height-fields); // to avoid tiny layout shifts
+	padding-top: em(1);
+	padding-bottom: em(0);
+	&.composer-editor-expanded {
+		padding-top: 0.25em;
+		padding-bottom: 0.25em;
+		padding-left: 0.5em;
+		.field:empty {
+			// only for placeholder position when empty
+			margin-left: 0.65em;
+		}
+	}
+	.composer-addresses-input-container {
+		margin-left: 0;
+	}
 }
 
 .composer-editor-collapsed .field {
-    border: none;
-    padding: 0;
-    min-width: rem(100);
-    background: inherit;
-    height: auto;
+	border: none;
+	padding: 0;
+	min-width: rem(100);
+	background: inherit;
+	height: auto;
 
-    &:focus {
-        box-shadow: none;
-    }
+	&:focus {
+		box-shadow: none;
+	}
 }
 
 /*
@@ -197,216 +198,216 @@
   image this way
 */
 .composer-addresses-addressIcon {
-    top: rem(-2);
-    &:empty {
-        margin-right: 0;
-    }
+	top: rem(-2);
+	&:empty {
+		margin-right: 0;
+	}
 }
 
 .composer-addresses-autocomplete {
-    ul {
-        position: absolute;
-        left: 0;
-        top: calc(100% + 5px);
-        z-index: 10;
-        list-style: none;
-        box-shadow: var(--shadow-lifted);
-        background: var(--background-norm);
-        width: calc(100% - 40px);
-        margin: 0 0 0 20px;
-        padding: 0;
+	ul {
+		position: absolute;
+		left: 0;
+		top: calc(100% + 5px);
+		z-index: 10;
+		list-style: none;
+		box-shadow: var(--shadow-lifted);
+		background: var(--background-norm);
+		width: calc(100% - 40px);
+		margin: 0 0 0 20px;
+		padding: 0;
 
-        max-height: rem(200);
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
+		max-height: rem(200);
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
 
-    li {
-        cursor: pointer;
-        padding: 0.5em;
-        text-overflow: ellipsis;
-        max-width: 100%;
-        overflow: hidden;
+	li {
+		cursor: pointer;
+		padding: 0.5em;
+		text-overflow: ellipsis;
+		max-width: 100%;
+		overflow: hidden;
 
-        &[aria-selected='true'] {
-            background-color: var(--interaction-norm);
-            color: var(--interaction-norm-contrast);
-        }
+		&[aria-selected='true'] {
+			background-color: var(--interaction-norm);
+			color: var(--interaction-norm-contrast);
+		}
 
-        &:hover {
-            background-color: var(--background-weak);
-        }
-    }
+		&:hover {
+			background-color: var(--background-weak);
+		}
+	}
 
-    .visually-hidden {
-        position: absolute;
-        clip: rect(0, 0, 0, 0);
-    }
+	.visually-hidden {
+		position: absolute;
+		clip: rect(0, 0, 0, 0);
+	}
 }
 
 // .composer-to-editor.composer-editor-expanded .composer-addresses-input-container
 .composer-addresses-input-container {
-    // Here I tried to keep field height only with margin calculations
-    margin: calc(#{em(6)} - 0.25em) 0.5em calc(#{em(6)} - 0.25em) calc(#{em(16)} - 0.5em);
+	// Here I tried to keep field height only with margin calculations
+	margin: calc(#{em(6)} - 0.25em) 0.5em calc(#{em(6)} - 0.25em) calc(#{em(16)} - 0.5em);
 }
 
 .composer-addresses-item {
-    background-color: var(--background-weak);
-    text-shadow: none;
+	background-color: var(--background-weak);
+	text-shadow: none;
 
-    + .composer-addresses-input-container {
-        margin-left: 0;
-        margin-top: calc(0.25em + 1px);
-        margin-bottom: calc(0.25em + 1px);
-    }
+	+ .composer-addresses-input-container {
+		margin-left: 0;
+		margin-top: calc(0.25em + 1px);
+		margin-bottom: calc(0.25em + 1px);
+	}
 }
 
 .composer-addresses-item.invalid {
-    border-color: var(--signal-danger);
-    color: var(--signal-danger);
+	border-color: var(--signal-danger);
+	color: var(--signal-danger);
 
-    .composer-addresses-item-label {
-        border-right-color: currentColor;
-    }
+	.composer-addresses-item-label {
+		border-right-color: currentColor;
+	}
 }
 
 .addresses-contacts-table {
-    th:first-child {
-        width: rem(35);
-    }
+	th:first-child {
+		width: rem(35);
+	}
 }
 
 .composer-editor-embedded {
-    overflow: hidden;
-    z-index: 1500; // ask Embedding should always be on top of the toolbar!
-    color: var(--text-norm);
-    text-align: center;
+	overflow: hidden;
+	z-index: 1500; // ask Embedding should always be on top of the toolbar!
+	color: var(--text-norm);
+	text-align: center;
 
-    &::before {
-        content: '';
-        position: absolute;
-        z-index: 3;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: var(--background-norm);
-        opacity: .5;
-        backdrop-filter: blur(3px);
-    }
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: 3;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: var(--background-norm);
+		opacity: 0.5;
+		backdrop-filter: blur(3px);
+	}
 
-    .modal {
-        z-index: 667;
-        footer {
-            padding-bottom: 0.5em;
-        }
-    }
-    .modal-header {
-        padding-top: 0.5em;
-    }
+	.modal {
+		z-index: 667;
+		footer {
+			padding-bottom: 0.5em;
+		}
+	}
+	.modal-header {
+		padding-top: 0.5em;
+	}
 
-    .modal-title {
-        padding-right: 0;
-    }
+	.modal-title {
+		padding-right: 0;
+	}
 
-    // TODO: Add the image icon in background
+	// TODO: Add the image icon in background
 }
 
 .composer-editor-dropzone {
-    border: 5px dashed var(--border-norm);
-    background-color: var(--background-norm);
-    opacity: 0.85;
+	border: 5px dashed var(--border-norm);
+	background-color: var(--background-norm);
+	opacity: 0.85;
 
-    &-text {
-        font-size: 2em;
-        opacity: 0.75;
-    }
+	&-text {
+		font-size: 2em;
+		opacity: 0.75;
+	}
 }
 
 .composer-body-container {
-    overflow-y: auto;
-    overflow-x: hidden;
+	overflow-y: auto;
+	overflow-x: hidden;
 
-    textarea {
-        resize: none;
-        font-family: $font-family-monospace;
-    }
+	textarea {
+		resize: none;
+		font-family: $font-family-monospace;
+	}
 }
 
 .composer-attachments-button-wrapper {
-    position: relative;
-    overflow: hidden;
-    padding: 5px; // hack to save space for the hover halo on the button
-    margin: -5px;
+	position: relative;
+	overflow: hidden;
+	padding: 5px; // hack to save space for the hover halo on the button
+	margin: -5px;
 
-    input[type='file'] {
-        position: absolute;
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
+	input[type='file'] {
+		position: absolute;
+		opacity: 0;
+		width: 0;
+		height: 0;
+	}
 
-    input[type='file']:hover + .button,
-    input[type='file']:focus + .button,
-    input[type='file']:focus-within + .button {
-        color: var(--text-norm);
-        box-shadow: var(--shadow-norm);
-    }
+	input[type='file']:hover + .button,
+	input[type='file']:focus + .button,
+	input[type='file']:focus-within + .button {
+		color: var(--text-norm);
+		box-shadow: var(--shadow-norm);
+	}
 
-    /* Fix for Safari */
-    input[type='file']::-webkit-file-upload-button {
-        display: none;
-    }
+	/* Fix for Safari */
+	input[type='file']::-webkit-file-upload-button {
+		display: none;
+	}
 }
 
 .composer .editor-squire-wrapper {
-    background: white;
+	background: white;
 }
 
 .editor-squire-wrapper,
 .editor-ellipsis-button-container {
-    border-bottom-left-radius: $global-border-radius;
-    border-bottom-right-radius: $global-border-radius;
+	border-bottom-left-radius: $global-border-radius;
+	border-bottom-right-radius: $global-border-radius;
 }
 .composer-content--has-attachments,
 .editor--showEllipsisButton {
-    .editor,
-    .editor::after,
-    .editor-squire-wrapper {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
+	.editor,
+	.editor::after,
+	.editor-squire-wrapper {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
 }
 .composer-content--has-attachments {
-    .editor-ellipsis-button-container {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
+	.editor-ellipsis-button-container {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
 }
 
 // overrides only in composer case
 .composer-attachments-list {
-    border-left: 1px solid var(--border-norm);
-    border-right: 1px solid var(--border-norm);
-    border-bottom: 1px solid var(--border-norm);
-    border-bottom-left-radius: $global-border-radius;
-    border-bottom-right-radius: $global-border-radius;
+	border-left: 1px solid var(--border-norm);
+	border-right: 1px solid var(--border-norm);
+	border-bottom: 1px solid var(--border-norm);
+	border-bottom-left-radius: $global-border-radius;
+	border-bottom-right-radius: $global-border-radius;
 
-    .message-attachmentList {
-        border-top: 1px solid var(--border-norm);
-        overflow: auto;
-        max-height: 8.5em;
-        padding-top: 1em;
-    }
+	.message-attachmentList {
+		border-top: 1px solid var(--border-norm);
+		overflow: auto;
+		max-height: 8.5em;
+		padding-top: 1em;
+	}
 }
 
 .composer-inner-modal .modal {
-    width: 90%;
-    height: 90%;
-    max-height: 90%;
-    @include respond-to($breakpoint-small) {
-        height: auto;
-    }
+	width: 90%;
+	height: 90%;
+	max-height: 90%;
+	@include respond-to($breakpoint-small) {
+		height: auto;
+	}
 }
 
 /*
@@ -414,27 +415,26 @@
  */
 
 .composer-actions--has-scroll {
-    margin-top: 0.5em;
-    padding-top: 0.5em;
-    box-shadow: 0 -5px 5px 0 var(--background-strong);
+	margin-top: 0.5em;
+	padding-top: 0.5em;
+	box-shadow: 0 -5px 5px 0 var(--background-strong);
 }
 
 // Keep minimal size when activity label is empty
 .composer-send-button {
-    min-height: rem(34);
-    min-width: rem(40);
-    @include respond-to($breakpoint-small) {
-        min-width: 0;
-    }
+	min-width: rem(40);
+	@include respond-to($breakpoint-small) {
+		min-width: 0;
+	}
 }
 
 .composer-addresses-item-dragged {
-    position: absolute;
-    cursor: move;
+	position: absolute;
+	cursor: move;
 }
 
 .composer-addresses-item-drag-placeholder {
-    width: var(--width, 5em);
-    border-radius: $global-border-radius;
-    border: 1px dashed currentColor;
+	width: var(--width, 5em);
+	border-radius: $global-border-radius;
+	border: 1px dashed currentColor;
 }
