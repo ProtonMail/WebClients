@@ -1,6 +1,8 @@
 .minicalendar {
-	// Size of each cell width and height when `fixedSize`property is set.
-	--fixed-cell-size: #{em(34)};
+	@supports not (aspect-ratio: 1 / 1) {
+		// Size of each cell width and height when `fixedSize`property is set.
+		--fixed-cell-size: #{em(34)};
+	}
 
 	min-width: rem(150);
 	max-width: rem(400);
@@ -21,10 +23,17 @@
 
 		& > * {
 			display: flex;
-			width: var(--cell-width);
-			height: var(--cell-height);
 			justify-content: center;
 			align-items: stretch;
+
+			@supports (aspect-ratio: 1 / 1) {
+				aspect-ratio: 1 / 1;
+			}
+
+			@supports not (aspect-ratio: 1 / 1) {
+				width: var(--cell-width);
+				height: var(--cell-height);
+			}
 		}
 	}
 
@@ -47,25 +56,27 @@
 				'weeknumbers rule monthdays';
 		}
 
-		@include respond-to($breakpoint-small) {
-			// Ensure the aspect ratio while waiting for aspect-ratio property
-			--cell-width: auto;
-			--cell-height: var(--computed-cell-width, var(--fixed-cell-size));
-		}
-
-		@include respond-to($breakpoint-small, 'min') {
-			&:not(.is-fixed-size) {
+		@supports not (aspect-ratio: 1 / 1) {
+			@include respond-to($breakpoint-small) {
 				// Ensure the aspect ratio while waiting for aspect-ratio property
 				--cell-width: auto;
-				--cell-height: var(
-					--computed-cell-width,
-					var(--fixed-cell-size)
-				);
+				--cell-height: var(--computed-cell-width, var(--fixed-cell-size));
 			}
 
-			&.is-fixed-size {
-				--cell-width: var(--fixed-cell-size);
-				--cell-height: var(--fixed-cell-size);
+			@include respond-to($breakpoint-small, 'min') {
+				&:not(.is-fixed-size) {
+					// Ensure the aspect ratio while waiting for aspect-ratio property
+					--cell-width: auto;
+					--cell-height: var(
+							--computed-cell-width,
+							var(--fixed-cell-size)
+					);
+				}
+
+				&.is-fixed-size {
+					--cell-width: var(--fixed-cell-size);
+					--cell-height: var(--fixed-cell-size);
+				}
 			}
 		}
 	}
