@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 import { fromUnixTime, getUnixTime, addDays, addHours, startOfDay } from 'date-fns';
 
@@ -93,6 +93,32 @@ export const getMatchingValues = ({ Zone, Repeat }: tsAutoResponder) => {
     };
 };
 
+const setModelEndDate = (
+    model: AutoReplyFormModel,
+    setModel: any,
+    endObject: { date: Date; time: Date },
+    a: string | undefined = undefined,
+    b: string | undefined = undefined,
+    value: string | number | boolean | number[] | AutoReplyFormDate | undefined = undefined
+) => {
+    if (a && b && value) {
+        return setModel((prev: any) => ({
+            ...prev,
+            end: endObject,
+            [a]: !b
+                ? value
+                : {
+                      ...prev[a],
+                      [b]: value,
+                  },
+        }));
+    }
+    return setModel((prev: any) => ({
+        ...prev,
+        end: endObject,
+    }));
+};
+
 export const toModel = (
     { Message, StartTime, EndTime, DaysSelected, Subject, IsEnabled }: tsAutoResponder,
     { timezone, duration }: { timezone: string; duration: AutoReplyDuration }
@@ -178,20 +204,6 @@ const useAutoReplyForm = (AutoResponder: tsAutoResponder) => {
 
     const [model, setModel] = useState<AutoReplyFormModel>(getInitialModel());
 
-    useEffect(() => {
-        // Avoid having end time before start time if start day is equal to end day. Only used for fixed duration auto reply type
-        if (
-            model.start.date &&
-            model.end.date &&
-            model.start.time &&
-            model.end.time &&
-            model.start.date?.getTime() === model.end.date?.getTime() &&
-            model.start.time.getTime() > model.end.time.getTime()
-        ) {
-            setModel({ ...model, end: { date: model.end.date, time: model.start.time } });
-        }
-    }, [model]);
-
     const updateModel = (key: string): UpdateFunction => {
         if (key === 'duration') {
             // When changing the duration, reset the model.
@@ -221,7 +233,76 @@ const useAutoReplyForm = (AutoResponder: tsAutoResponder) => {
         const [a, b] = key.split('.');
 
         return (value) => {
-            setModel((prev: any) => ({
+            const valueDate = new Date(value as string);
+
+            // If start date, end date, start time and end time are set, it means that we are using the Fixed duration autoreply type
+            if (model.start.date && model.end.date && model.start.time && model.end.time) {
+                /*
+                    In Fixed duration, we don't want to have end date before start date.
+                    For each cases we set the end date if the change we are making makes the end date before the start date
+                 */
+                if (a === 'start' && b === 'date') {
+                    if (
+                        valueDate.getTime() === model.end.date.getTime() &&
+                        model.start.time.getTime() > model.end.time.getTime()
+                    ) {
+                        return setModelEndDate(
+                            model,
+                            setModel,
+                            { date: model.end.date, time: model.start.time },
+                            a,
+                            b,
+                            value
+                        );
+                    }
+                    if (valueDate.getTime() > model.end.date.getTime()) {
+                        return setModelEndDate(
+                            model,
+                            setModel,
+                            { date: valueDate, time: model.start.time },
+                            a,
+                            b,
+                            value
+                        );
+                    }
+                }
+
+                if (
+                    a === 'start' &&
+                    b === 'time' &&
+                    model.start.date.getTime() === model.end.date.getTime() &&
+                    valueDate.getTime() > model.end.time.getTime()
+                ) {
+                    return setModelEndDate(model, setModel, { date: model.end.date, time: valueDate }, a, b, value);
+                }
+
+                if (a === 'end' && b === 'date') {
+                    if (
+                        valueDate.getTime() === model.start.date.getTime() &&
+                        model.end.time.getTime() < model.start.time.getTime()
+                    ) {
+                        return setModelEndDate(model, setModel, { date: model.start.date, time: model.start.time });
+                    }
+                    // should not be possible with the dateInput component
+                    if (valueDate.getTime() < model.start.date.getTime()) {
+                        if (model.end.time.getTime() > model.start.time.getTime()) {
+                            return setModelEndDate(model, setModel, { date: model.start.date, time: model.start.time });
+                        }
+                        return setModelEndDate(model, setModel, { date: model.start.date, time: model.end.time });
+                    }
+                }
+
+                if (
+                    a === 'end' &&
+                    b === 'time' &&
+                    model.start.date.getTime() === model.end.date.getTime() &&
+                    valueDate.getTime() < model.start.time.getTime()
+                ) {
+                    return setModelEndDate(model, setModel, { date: model.end.date, time: model.start.time });
+                }
+            }
+
+            return setModel((prev: any) => ({
                 ...prev,
                 [a]: !b
                     ? value

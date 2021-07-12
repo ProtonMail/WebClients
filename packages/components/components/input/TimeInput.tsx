@@ -30,6 +30,18 @@ const formatDuration = (label: string, minutes: number) => {
 
 const getMinutes = (date: Date) => date.getHours() * 60 + date.getMinutes();
 
+// Get minutes from midnight to prevent having options going further than 11:30 PM (when prevent preventNextDayOverflow prop is active)
+const getBaseDateMinutes = (baseDate: Date, interval: number) => {
+    const baseMinutes = baseDate.getMinutes();
+    let minutes = 0;
+    if (baseMinutes > interval) {
+        // calculate minutes to remove depending on the interval
+        minutes = Math.floor(baseMinutes / interval) * interval;
+    }
+
+    return (24 - baseDate.getHours()) * 60 - minutes;
+};
+
 const MAX_MINUTES = 24 * 60;
 
 interface Props extends Omit<InputProps, 'onChange' | 'min' | 'max' | 'value'> {
@@ -100,18 +112,6 @@ const TimeInput = ({
         setTemporaryInput(toFormatted(value, dateLocale));
     };
 
-    // Get minutes from midnight to prevent having options going further than 11:30 PM (when prevent preventNextDayOverflow prop is active)
-    const getBaseDateMinutes = () => {
-        const baseMinutes = base.getMinutes();
-        let minutes = 0;
-        if (baseMinutes > interval) {
-            // calculate minutes to remove depending on the interval
-            minutes = Math.floor(baseMinutes / interval) * interval;
-        }
-
-        return (24 - base.getHours()) * 60 - minutes;
-    };
-
     const handleBlur = () => {
         parseAndSetDate(temporaryInput);
         close();
@@ -138,7 +138,7 @@ const TimeInput = ({
     const listRef = useRef<HTMLUListElement>(null);
 
     const options = useMemo(() => {
-        const totalMinutes = preventNextDayOverflow ? getBaseDateMinutes() : MAX_MINUTES;
+        const totalMinutes = preventNextDayOverflow ? getBaseDateMinutes(base, interval) : MAX_MINUTES;
         const length = Math.floor(totalMinutes / interval);
         const minutes = Array.from({ length }, (a, i) => i * interval);
 
