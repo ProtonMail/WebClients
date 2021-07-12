@@ -153,6 +153,7 @@ const AccountForm = ({ model, onSubmit }) => {
                             hasSizeObserver
                             challengeRef={challengeRefUsername}
                             type="0"
+                            name="username"
                             onSuccess={handleChallengeLoaded}
                             onError={handleChallengeLoadingError}
                         >
@@ -223,6 +224,7 @@ const AccountForm = ({ model, onSubmit }) => {
                                 hasSizeObserver
                                 challengeRef={challengeRefEmail}
                                 type="1"
+                                name="recovery"
                                 onSuccess={handleChallengeLoaded}
                                 onError={handleChallengeLoadingError}
                             >
