@@ -9,6 +9,7 @@ import {
     useModals,
     useVPNCountriesCount,
     useNotifications,
+    useVPNServersCount,
 } from '@proton/components';
 import { c } from 'ttag';
 import { getUser, queryCreateUser, queryDirectSignupStatus } from '@proton/shared/lib/api/user';
@@ -63,6 +64,8 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
     const [plans] = usePlans();
     const [plansWithCoupons, setPlansWithCoupons] = useState();
     const [countries, countriesLoading] = useVPNCountriesCount();
+    const [vpnServersCount] = useVPNServersCount();
+
     const [appliedCoupon, setAppliedCoupon] = useState();
     const [appliedInvite, setAppliedInvite] = useState();
 
@@ -87,7 +90,7 @@ const useSignup = (onLogin, { coupon, invite, availablePlans = VPN_PLANS } = {},
     });
 
     const getPlanByName = (planName, cycle = model.cycle) =>
-        getPlan(planName, cycle, plansWithCoupons || [], countries);
+        getPlan(planName, cycle, plansWithCoupons || [], countries, vpnServersCount);
 
     // Until we can query plans+coupons at once, we need to check each plan individually
     useEffect(() => {
