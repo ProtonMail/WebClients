@@ -25,7 +25,7 @@ interface Props {
     calendar?: Calendar | SubscribedCalendar;
     setCalendar: React.Dispatch<React.SetStateAction<Calendar | undefined>>;
     setError: React.Dispatch<React.SetStateAction<boolean>>;
-    defaultCalendarID?: string;
+    defaultCalendarID?: string | null;
     onClose?: () => void;
     activeCalendars?: Calendar[];
     isOtherCalendar?: boolean;

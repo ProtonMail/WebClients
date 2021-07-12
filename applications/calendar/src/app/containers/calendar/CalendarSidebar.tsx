@@ -11,11 +11,19 @@ import {
     SidebarList,
     SidebarListItemHeaderLink,
     SimpleSidebarListItemHeader,
+    Icon,
+    useModals,
+    useGetCalendarUserSettings,
+    useUser,
+    Tooltip,
 } from '@proton/components';
 import { c } from 'ttag';
 import { updateCalendar } from '@proton/shared/lib/api/calendars';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { partition } from '@proton/shared/lib/helpers/array';
+import { CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
+import { getIsCalendarActive } from '@proton/shared/lib/calendar/calendar';
+import getHasUserReachedCalendarLimit from '@proton/shared/lib/calendar/getHasUserReachedCalendarLimit';
 import CalendarSidebarListItems from './CalendarSidebarListItems';
 import CalendarSidebarVersion from './CalendarSidebarVersion';
 
@@ -40,11 +48,32 @@ const CalendarSidebar = ({
     const api = useApi();
     const [loadingAction, withLoadingAction] = useLoading();
 
+    const { createModal } = useModals();
+
+    const [user] = useUser();
+    const getCalendarUserSettings = useGetCalendarUserSettings();
     const [personalCalendars, otherCalendars] = partition<Calendar>(calendars, getIsPersonalCalendar);
+
+    const canAddPersonalCalendars = !getHasUserReachedCalendarLimit({
+        calendarsLength: personalCalendars.length,
+        isFreeUser: user.isFree,
+        isSubscribedCalendar: false,
+    });
 
     const handleChangeVisibility = async (calendarID: string, checked: boolean) => {
         await api(updateCalendar(calendarID, { Display: checked ? 1 : 0 }));
         await call();
+    };
+
+    const handleCreate = async () => {
+        const calendarUserSettings = await getCalendarUserSettings();
+
+        return createModal(
+            <CalendarModal
+                activeCalendars={personalCalendars.filter(getIsCalendarActive)}
+                defaultCalendarID={calendarUserSettings.DefaultCalendarID}
+            />
+        );
     };
 
     const primaryAction = (
@@ -60,14 +89,15 @@ const CalendarSidebar = ({
     const [displayOtherCalendars, setDisplayOtherCalendars] = useState(true);
 
     const headerButton = (
-        <SidebarListItemHeaderLink
-            toApp={APPS.PROTONACCOUNT}
-            to="/calendar/calendars"
-            target="_self"
-            title={c('Info').t`Manage your calendars`}
-            icon="settings"
-            info={c('Link').t`Calendars`}
-        />
+        <Tooltip title={c('Info').t`Manage your calendars`}>
+            <SidebarListItemHeaderLink
+                toApp={APPS.PROTONACCOUNT}
+                to="/calendar/calendars"
+                target="_self"
+                icon="settings"
+                info={c('Link').t`Calendars`}
+            />
+        </Tooltip>
     );
 
     const personalCalendarsList = (
@@ -75,7 +105,26 @@ const CalendarSidebar = ({
             <SimpleSidebarListItemHeader
                 toggle={displayPersonalCalendars}
                 onToggle={() => setDisplayPersonalCalendars((prevState) => !prevState)}
-                right={headerButton}
+                right={
+                    <div className="flex flex-nowrap flex-align-items-center">
+                        {canAddPersonalCalendars && (
+                            <button
+                                className="navigation-link-header-group-control flex cursor-pointer"
+                                onClick={handleCreate}
+                                type="button"
+                            >
+                                <Tooltip title={c('Add calendar icon tooltip').t`Create calendar`}>
+                                    <Icon
+                                        name="plus"
+                                        className="navigation-icon"
+                                        alt={c('Add calendar icon tooltip').t`Create calendar`}
+                                    />
+                                </Tooltip>
+                            </button>
+                        )}
+                        {headerButton}
+                    </div>
+                }
                 text={c('Link').t`My calendars`}
             />
             {displayPersonalCalendars && (

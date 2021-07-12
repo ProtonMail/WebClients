@@ -33,7 +33,8 @@ const URL_MAX_DISPLAY_LENGTH = 100;
 interface Props {
     calendar?: Calendar | SubscribedCalendar;
     activeCalendars?: Calendar[];
-    defaultCalendarID?: string;
+    defaultCalendarID?: string | null;
+    defaultColor?: boolean;
     onClose?: () => void;
 }
 
