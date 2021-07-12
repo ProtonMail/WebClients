@@ -93,32 +93,6 @@ export const getMatchingValues = ({ Zone, Repeat }: tsAutoResponder) => {
     };
 };
 
-const setModelEndDate = (
-    model: AutoReplyFormModel,
-    setModel: any,
-    endObject: { date: Date; time: Date },
-    a: string | undefined = undefined,
-    b: string | undefined = undefined,
-    value: string | number | boolean | number[] | AutoReplyFormDate | undefined = undefined
-) => {
-    if (a && b && value) {
-        return setModel((prev: any) => ({
-            ...prev,
-            end: endObject,
-            [a]: !b
-                ? value
-                : {
-                      ...prev[a],
-                      [b]: value,
-                  },
-        }));
-    }
-    return setModel((prev: any) => ({
-        ...prev,
-        end: endObject,
-    }));
-};
-
 export const toModel = (
     { Message, StartTime, EndTime, DaysSelected, Subject, IsEnabled }: tsAutoResponder,
     { timezone, duration }: { timezone: string; duration: AutoReplyDuration }
@@ -190,7 +164,10 @@ const toAutoResponder = ({
     EndTime: toUnixTime(end, timezone, duration),
 });
 
-type UpdateFunction = (value: number | number[] | string | boolean | AutoReplyFormDate) => void;
+type UpdateFunction = (
+    value: number | number[] | string | boolean | AutoReplyFormDate,
+    extra?: Partial<AutoReplyFormModel>
+) => void;
 
 const useAutoReplyForm = (AutoResponder: tsAutoResponder) => {
     const matches = useMemo(() => getMatchingValues(AutoResponder), [AutoResponder]);
@@ -233,84 +210,72 @@ const useAutoReplyForm = (AutoResponder: tsAutoResponder) => {
         const [a, b] = key.split('.');
 
         return (value) => {
-            const valueDate = new Date(value as string);
+            const genericSetter: UpdateFunction = (value, extra?: Partial<AutoReplyFormModel>) =>
+                setModel((prev: any) => ({
+                    ...prev,
+                    [a]: !b
+                        ? value
+                        : {
+                              ...prev[a],
+                              [b]: value,
+                          },
+                    ...extra,
+                }));
 
             // If start date, end date, start time and end time are set, it means that we are using the Fixed duration autoreply type
             if (model.start.date && model.end.date && model.start.time && model.end.time) {
+                const valueDate = new Date(value as string);
+
                 /*
                     In Fixed duration, we don't want to have end date before start date.
                     For each cases we set the end date if the change we are making makes the end date before the start date
                  */
-                if (a === 'start' && b === 'date') {
+                if (key === 'start.date') {
                     if (
                         valueDate.getTime() === model.end.date.getTime() &&
                         model.start.time.getTime() > model.end.time.getTime()
                     ) {
-                        return setModelEndDate(
-                            model,
-                            setModel,
-                            { date: model.end.date, time: model.start.time },
-                            a,
-                            b,
-                            value
-                        );
+                        return genericSetter(value, { end: { date: model.end.date, time: model.start.time } });
                     }
                     if (valueDate.getTime() > model.end.date.getTime()) {
-                        return setModelEndDate(
-                            model,
-                            setModel,
-                            { date: valueDate, time: model.start.time },
-                            a,
-                            b,
-                            value
-                        );
+                        return genericSetter(value, { end: { date: valueDate, time: model.start.time } });
                     }
                 }
 
                 if (
-                    a === 'start' &&
-                    b === 'time' &&
+                    key === 'start.time' &&
                     model.start.date.getTime() === model.end.date.getTime() &&
                     valueDate.getTime() > model.end.time.getTime()
                 ) {
-                    return setModelEndDate(model, setModel, { date: model.end.date, time: valueDate }, a, b, value);
+                    return genericSetter(value, { end: { date: model.end.date, time: valueDate } });
                 }
 
-                if (a === 'end' && b === 'date') {
+                if (key === 'end.date') {
                     if (
                         valueDate.getTime() === model.start.date.getTime() &&
                         model.end.time.getTime() < model.start.time.getTime()
                     ) {
-                        return setModelEndDate(model, setModel, { date: model.start.date, time: model.start.time });
+                        return genericSetter(value, { end: { date: model.start.date, time: model.start.time } });
                     }
                     // should not be possible with the dateInput component
                     if (valueDate.getTime() < model.start.date.getTime()) {
                         if (model.end.time.getTime() > model.start.time.getTime()) {
-                            return setModelEndDate(model, setModel, { date: model.start.date, time: model.start.time });
+                            return genericSetter(value, { end: { date: model.start.date, time: model.start.time } });
                         }
-                        return setModelEndDate(model, setModel, { date: model.start.date, time: model.end.time });
+                        return genericSetter(value, { end: { date: model.start.date, time: model.end.time } });
                     }
                 }
 
                 if (
-                    a === 'end' &&
-                    b === 'time' &&
+                    key === 'end.time' &&
                     model.start.date.getTime() === model.end.date.getTime() &&
                     valueDate.getTime() < model.start.time.getTime()
                 ) {
-                    return setModelEndDate(model, setModel, { date: model.end.date, time: model.start.time });
+                    return genericSetter(value, { end: { date: model.end.date, time: model.start.time } });
                 }
             }
 
-            return setModel((prev: any) => ({
-                ...prev,
-                [a]: !b
-                    ? value
-                    : {
-                          ...prev[a],
-                          [b]: value,
-                      },
-            }));
+            return genericSetter(value);
         };
     };
 
