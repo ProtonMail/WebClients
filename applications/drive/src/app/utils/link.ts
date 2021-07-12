@@ -1,5 +1,7 @@
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
+
 import { SharedURLFlags } from '../interfaces/sharing';
 import { SHARE_GENERATED_PASSWORD_LENGTH } from '../constants';
 
@@ -31,25 +33,21 @@ export const WINDOWS_RESERVED_NAMES = [
     'LPT9',
 ];
 
-export const isCustomSharedURLPassword = (sharedURL?: { Flags?: number }): boolean => {
-    return !!(sharedURL && typeof sharedURL.Flags !== 'undefined' && sharedURL.Flags & SharedURLFlags.CustomPassword);
+export const hasCustomPassword = (sharedURL?: { Flags?: number }): boolean => {
+    return !!sharedURL && hasBit(sharedURL.Flags, SharedURLFlags.CustomPassword);
 };
 
-export const isGeneratedWithCustomSharedURLPassword = (sharedURL?: { Flags?: number }): boolean => {
-    return !!(
-        sharedURL &&
-        typeof sharedURL.Flags !== 'undefined' &&
-        sharedURL.Flags & SharedURLFlags.GeneratedPasswordIncluded
-    );
+export const hasGeneratedPasswordIncluded = (sharedURL?: { Flags?: number }): boolean => {
+    return !!sharedURL && hasBit(sharedURL.Flags, SharedURLFlags.GeneratedPasswordIncluded);
 };
 
-export const isWithoutCustomPassword = (sharedURL?: { Flags?: number }): boolean => {
-    return !isCustomSharedURLPassword(sharedURL) && !isGeneratedWithCustomSharedURLPassword(sharedURL);
+export const hasNoCustomPassword = (sharedURL?: { Flags?: number }): boolean => {
+    return !hasCustomPassword(sharedURL) && !hasGeneratedPasswordIncluded(sharedURL);
 };
 
 export const splitGeneratedAndCustomPassword = (password: string, sharedURL?: { Flags?: number }): [string, string] => {
-    if (isCustomSharedURLPassword(sharedURL)) {
-        if (isGeneratedWithCustomSharedURLPassword(sharedURL)) {
+    if (hasCustomPassword(sharedURL)) {
+        if (hasGeneratedPasswordIncluded(sharedURL)) {
             return [
                 password.substring(0, SHARE_GENERATED_PASSWORD_LENGTH),
                 password.substring(SHARE_GENERATED_PASSWORD_LENGTH),
