@@ -8,6 +8,7 @@ import {
     PlanIDs,
     Subscription,
     VPNCountries,
+    VPNServers,
 } from '@proton/shared/lib/interfaces';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { APPS, CYCLE, PLAN_SERVICES, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
@@ -16,7 +17,6 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { FREE_MAIL_PLAN, FREE_VPN_PLAN } from '@proton/shared/lib/subscription/freePlans';
-
 import { Button, Info } from '../../../components';
 
 import CurrencySelector from '../CurrencySelector';
@@ -26,9 +26,12 @@ import PlanCard, { PlanCardFeature } from './PlanCard';
 
 import './PlanSelection.scss';
 import PlanSelectionComparison from './PlanSelectionComparison';
+import { useVPNServersCount } from '../../../hooks';
 
 const getVpnConnectionsText = (n = 0) =>
     c('Plan Feature').ngettext(msgid`${n} VPN connection`, `${n} VPN connections`, n);
+
+const getFreeVpnServersText = (n = 0) => c('Plan Feature').ngettext(msgid`${n} server`, `${n} servers`, n);
 
 const NAMES = {
     free_mail: 'Free',
@@ -40,11 +43,17 @@ const NAMES = {
     [PLANS.VISIONARY]: 'Visionary',
 } as const;
 
-const getFeatures = (plan: Plan, service: PLAN_SERVICES, vpnCountries: VPNCountries): PlanCardFeature[] => {
+const getFeatures = (
+    plan: Plan,
+    service: PLAN_SERVICES,
+    vpnCountries: VPNCountries,
+    serversCount: VPNServers
+): PlanCardFeature[] => {
     const netflix = <b key={1}>{c('Netflix').t`Netflix`}</b>;
     const disney = <b key={2}>{c('Disney').t`Disney+`}</b>;
     const primeVideo = <b key={3}>{c('Prime Video').t`Prime Video`}</b>;
     const many = <b key={4}>{c('Many Others').t`and many others`}</b>;
+
     const freeCountries = vpnCountries.free_vpn.count;
     const basicCountries = vpnCountries[PLANS.VPNBASIC].count;
 
@@ -101,13 +110,14 @@ const getFeatures = (plan: Plan, service: PLAN_SERVICES, vpnCountries: VPNCountr
     };
 
     const vpnConnections = { content: getVpnConnectionsText(plan.MaxVPN) };
+    const freeServers = getFreeVpnServersText(serversCount.free_vpn);
 
     if (planName === 'free_vpn') {
         return [
             {
                 content: c('Plan feature').ngettext(
-                    msgid`17 servers in ${freeCountries} country`,
-                    `17 servers in ${freeCountries} countries`,
+                    msgid`${freeServers} in ${freeCountries} country`,
+                    `${freeServers} in ${freeCountries} countries`,
                     freeCountries
                 ),
             },
@@ -285,6 +295,8 @@ const PlanSelection = ({
     const mailAppName = getAppName(APPS.PROTONMAIL);
     const isVpnApp = service === PLAN_SERVICES.VPN;
     const planNamesMap = toMap(plans, 'Name');
+    const [vpnServersCount] = useVPNServersCount();
+
     const MailPlans = [
         hasFreePlan && FREE_MAIL_PLAN,
         planNamesMap[PLANS.PLUS],
@@ -363,7 +375,7 @@ const PlanSelection = ({
                             key={plan.ID}
                             price={plan.Pricing[cycle]}
                             info={INFOS[plan.Name as PLANS]}
-                            features={getFeatures(plan, service, vpnCountries)}
+                            features={getFeatures(plan, service, vpnCountries, vpnServersCount)}
                             onClick={() => {
                                 onChangePlanIDs(
                                     switchPlan({

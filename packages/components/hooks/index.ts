@@ -50,6 +50,7 @@ export { default as useGetOrganizationKeyRaw } from './useGetOrganizationKeyRaw'
 export { default as useSortedList, useSortedListAsync, useMultiSortedList } from './useSortedList';
 export { useMainArea, MainAreaContext } from './useMainArea';
 export { default as useVPNCountriesCount } from './useVPNCountriesCount';
+export { default as useVPNServersCount } from './useVPNServersCount';
 export { default as useMessageCounts } from './useMessageCounts';
 export { default as useConversationCounts } from './useConversationCounts';
 export { default as usePlans } from './usePlans';
