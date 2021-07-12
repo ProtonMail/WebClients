@@ -1,5 +1,62 @@
 import { SharedURLFlags } from '../interfaces/sharing';
-import { splitGeneratedAndCustomPassword, adjustName, splitLinkName } from './link';
+import {
+    splitGeneratedAndCustomPassword,
+    adjustName,
+    splitLinkName,
+    hasCustomPassword,
+    hasGeneratedPasswordIncluded,
+    hasNoCustomPassword,
+} from './link';
+
+describe('Password flags checks', () => {
+    describe('Missing data check', () => {
+        it('returns false if flags are undefined', () => {
+            expect(hasCustomPassword({})).toEqual(false);
+            expect(hasGeneratedPasswordIncluded({})).toEqual(false);
+        });
+        it('returns false if SharedURLInfo is abscent', () => {
+            expect(hasCustomPassword()).toEqual(false);
+            expect(hasGeneratedPasswordIncluded()).toEqual(false);
+        });
+    });
+
+    describe('hasCustomPassword', () => {
+        it('returns true is CustomPassword flag is present', () => {
+            expect(hasCustomPassword({ Flags: 0 | SharedURLFlags.CustomPassword })).toEqual(true);
+            expect(
+                hasCustomPassword({ Flags: SharedURLFlags.GeneratedPasswordIncluded | SharedURLFlags.CustomPassword })
+            ).toEqual(true);
+            expect(hasCustomPassword({ Flags: 0 })).toEqual(false);
+        });
+    });
+
+    describe('hasGeneratedPasswordIncluded', () => {
+        it('returns true is CustomPassword flag is present', () => {
+            expect(hasGeneratedPasswordIncluded({ Flags: 0 | SharedURLFlags.GeneratedPasswordIncluded })).toEqual(true);
+            expect(
+                hasGeneratedPasswordIncluded({
+                    Flags: SharedURLFlags.GeneratedPasswordIncluded | SharedURLFlags.CustomPassword,
+                })
+            ).toEqual(true);
+            expect(hasGeneratedPasswordIncluded({ Flags: 0 })).toEqual(false);
+        });
+    });
+
+    describe('hasNoCustomPassword', () => {
+        it('returns true is CustomPassword flag is present', () => {
+            expect(hasNoCustomPassword({ Flags: 0 | 4 })).toEqual(true);
+            expect(hasNoCustomPassword({ Flags: 0 })).toEqual(true);
+            expect(hasNoCustomPassword({ Flags: SharedURLFlags.CustomPassword })).toEqual(false);
+            expect(hasNoCustomPassword({ Flags: SharedURLFlags.GeneratedPasswordIncluded }));
+        });
+        it('returns true if SharedURLInfo is abscent', () => {
+            expect(hasNoCustomPassword()).toEqual(true);
+        });
+        it('returns true if flags are undefined', () => {
+            expect(hasNoCustomPassword({})).toEqual(true);
+        });
+    });
+});
 
 describe('splitGeneratedAndCustomPassword', () => {
     it('no custom password returns only generated password', () => {
