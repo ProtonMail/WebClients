@@ -38,7 +38,6 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
     autoCloseOutsideAnchor?: boolean;
     contentProps?: ContentProps;
     disableDefaultArrowNavigation?: boolean;
-    preventArrowKeyNavigationAutofocus?: boolean;
     UNSTABLE_AUTO_HEIGHT?: boolean;
 }
 
@@ -66,7 +65,6 @@ const Dropdown = ({
     autoCloseOutsideAnchor = true,
     contentProps,
     disableDefaultArrowNavigation = false,
-    preventArrowKeyNavigationAutofocus = false,
     UNSTABLE_AUTO_HEIGHT,
     ...rest
 }: Props) => {
@@ -104,9 +102,6 @@ const Dropdown = ({
 
     const { shortcutHandlers: arrowNavigationShortcutHandlers } = useDropdownArrowNavigation({
         rootRef,
-        isOpen,
-        disabled: disableDefaultArrowNavigation,
-        preventArrowKeyNavigationAutofocus,
     });
 
     const defaultShortcutHandlers: HotkeyTuple = [
@@ -122,7 +117,7 @@ const Dropdown = ({
         : [...arrowNavigationShortcutHandlers, defaultShortcutHandlers];
 
     useHotkeys(rootRef, hotkeyTuples, {
-        dependencies: [isOpen],
+        dependencies: [isOpen, !disableDefaultArrowNavigation],
     });
 
     useLayoutEffect(() => {
