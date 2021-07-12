@@ -109,6 +109,10 @@ const MailHeader = ({
                                 description={c('Info')
                                     .t`Proton has received a facelift. We would love to hear what you think about it!`}
                                 scaleTitle={c('Label').t`How would you rate your experience with the new ProtonMail?`}
+                                scaleProps={{
+                                    fromLabel: c('Label').t`0 - Not a fan`,
+                                    toLabel: c('Label').t`10 - Love it!`,
+                                }}
                             />
                         }
                     />
