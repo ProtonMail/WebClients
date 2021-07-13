@@ -42,6 +42,7 @@ describe('getIsRruleSupported for invitations', () => {
             `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;UNTIL=20200330T150000Z;INTERVAL=1;BYDAY=MO,SU,TH;BYMONTHDAY=30,31;BYMONTH=3\r\nEND:VEVENT`,
             `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=2;BYSECOND=30;BYHOUR=10;BYMONTH=5\r\nEND:VEVENT`,
             `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=2;BYMONTH=3;BYMONTHDAY=17,22;COUNT=499\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=2TU;BYMONTH=7\r\nEND:VEVENT`,
         ];
         const rrules = vevents.map((vevent) => {
             const parsedVevent = parse(vevent) as RequireSome<VcalVeventComponent, 'rrule'>;
