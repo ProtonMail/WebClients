@@ -1,18 +1,13 @@
 import React from 'react';
 import { CatchAllSection, DomainsSection, SettingsPropsShared } from '@proton/components';
 import { c } from 'ttag';
-import { PERMISSIONS } from '@proton/shared/lib/constants';
-
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';
-
-const { ADMIN, NOT_SUB_USER } = PERMISSIONS;
 
 export const getOrganizationPage = () => {
     return {
         text: c('Title').t`Domain names`,
         to: '/domain-names',
         icon: 'globe',
-        permissions: [ADMIN, NOT_SUB_USER],
         subsections: [
             { id: 'domains' },
             {
