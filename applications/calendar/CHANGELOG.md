@@ -6,11 +6,12 @@
 - Design improvements in mini calendar
 - Make the calendar linked address more obvious in the settings list of calendars
 - Add calendar color in the calendar select when creating or editing an event
+
 ### Fixes
 - Various small bug fixes
 
 ## Release: 4.0.1 — June 30, 2021
-__
+
 ### New features
 - Enable the search of time zones
 
