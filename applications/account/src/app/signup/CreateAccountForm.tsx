@@ -185,7 +185,6 @@ const CreateAccountForm = ({
             >
                 {hasChallenge ? (
                     <Challenge
-                        bodyClassName="sign-layout-container"
                         loaderClassName="center flex"
                         challengeRef={challengeRefLogin}
                         type={0}
