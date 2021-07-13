@@ -11,12 +11,9 @@ import {
     ProduceForkParameters,
 } from '@proton/shared/lib/authentication/sessionForking';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
-import {
-    getApiErrorMessage,
-    getIs401Error,
-    getIsTooManyChildSessionsError,
-} from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiError, getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { useApi, useErrorHandler } from '../../hooks';
 import LoaderPage from './LoaderPage';
@@ -88,8 +85,8 @@ const SSOForkProducer = ({ onActiveSessions, onInvalidFork }: Props) => {
             }
         };
         run().catch((e) => {
-            const isTooManyChildSessionsError = getIsTooManyChildSessionsError(e);
-            if (isTooManyChildSessionsError) {
+            const { code } = getApiError(error);
+            if (code === API_CUSTOM_ERROR_CODES.TOO_MANY_CHILDREN) {
                 setTooManyChildSessionsError(true);
                 return;
             }
