@@ -242,7 +242,7 @@ export const getSupportedEvent = ({
             }
             if (getIsDateOutOfBounds(supportedDtend)) {
                 if (isEventInvitation) {
-                    throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method });
+                    throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { method });
                 }
                 throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTEND_OUT_OF_BOUNDS, 'vevent', componentId);
             }
@@ -258,7 +258,7 @@ export const getSupportedEvent = ({
             }
         } else if (duration) {
             if (isEventInvitation) {
-                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method });
+                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { method });
             }
             throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.VEVENT_DURATION, 'vevent', componentId);
         }
@@ -320,7 +320,7 @@ export const getSupportedEvent = ({
         }
 
         if (rrule && !ignoreRrule) {
-            const supportedRrule = getSupportedRrule({ ...validated, rrule }, isEventInvitation, guessTzid);
+            const supportedRrule = getSupportedRrule({ ...validated, rrule }, !isImport, guessTzid);
             if (!supportedRrule) {
                 if (isEventInvitation) {
                     throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { method });
