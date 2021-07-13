@@ -21,6 +21,7 @@ import { useConversationFocus } from '../../hooks/conversation/useConversationFo
 import { useConversationHotkeys } from '../../hooks/conversation/useConversationHotkeys';
 import { useOnMailTo } from '../../containers/ComposeProvider';
 import ConversationErrorBanner from './ConversationErrorBanner';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 const { TRASH } = MAILBOX_LABEL_IDS;
 
@@ -55,6 +56,7 @@ const ConversationView = ({
     containerRef,
     highlightKeywords = false,
 }: Props) => {
+    const { isSearchResult } = useEncryptedSearchContext();
     const [labels = []] = useLabels();
     const {
         conversationID,
@@ -77,7 +79,9 @@ const ConversationView = ({
     const messages = usePlaceholders(inputMessages, loadingMessages, conversation?.NumMessages || 1) as Message[];
 
     const inTrash = labelID === TRASH;
-    const filteredMessages = messages.filter((message) => inTrash === hasLabel(message, TRASH));
+    const filteredMessages = messages.filter(
+        (message) => inTrash === hasLabel(message, TRASH) || isSearchResult(message.ID)
+    );
     const messagesToShow = !loadingMessages && filter ? filteredMessages : messages;
     const showTrashWarning = !loadingMessages && filteredMessages.length !== messages.length;
     const messageInUrl = conversationCacheEntry?.Messages?.find((message) => message.ID === messageID);

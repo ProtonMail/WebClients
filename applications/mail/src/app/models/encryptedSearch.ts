@@ -136,11 +136,14 @@ export type HighlightString = (content: string, setAutoScroll: boolean) => strin
 
 export type HighlightMetadata = (metadata: string) => JSX.Element;
 
+export type IsSearchResult = (ID: string) => boolean;
+
 export interface EncryptedSearchFunctions {
     encryptedSearch: EncryptedSearch;
     cacheIndexedDB: CacheIndexedDB;
     highlightString: HighlightString;
     highlightMetadata: HighlightMetadata;
+    isSearchResult: IsSearchResult;
     getESDBStatus: () => ESDBStatus;
     getProgressRecorderRef: () => React.MutableRefObject<[number, number]>;
     toggleEncryptedSearch: () => void;
