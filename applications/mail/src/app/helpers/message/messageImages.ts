@@ -79,6 +79,9 @@ export const restoreImages = (inputDocument: Element | undefined, images: Messag
         if (image.type === 'embedded') {
             original.setAttribute('data-embedded-img', image.cid);
             original.classList.add('proton-embedded');
+            if (images.showEmbeddedImages) {
+                original.setAttribute('src', image?.url || '');
+            }
         }
         parent.replaceChild(original, anchor);
     });
