@@ -1,4 +1,4 @@
-import React, { MouseEvent } from 'react';
+import React, { MouseEvent, useEffect, useState } from 'react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { c } from 'ttag';
 import {
@@ -114,6 +114,7 @@ const HeaderExpanded = ({
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { feature: scheduledFeature } = useFeature(FeatureCode.ScheduledSend);
+    const [nowDate, setNowDate] = useState(() => new Date());
 
     const isScheduledMessage = isScheduled(message.data);
 
@@ -122,13 +123,20 @@ const HeaderExpanded = ({
     const onCompose = useOnCompose();
     const { createModal } = useModals();
 
-    const beforeSendInterval = message.data ? message.data.Time * 1000 - new Date().getTime() : 0;
+    const beforeSendInterval = message.data ? message.data.Time * 1000 - nowDate.getTime() : 0;
     // Prevent from cancelling a message that is about to be sent 30s before
     const isScheduleSentShortly = beforeSendInterval < PREVENT_CANCEL_SEND_INTERVAL;
     const formattedDate =
         isScheduledMessage && message.data
             ? formatFullDate(new Date(message.data.Time * 1000))
             : formatFullDate(new Date());
+
+    useEffect(() => {
+        const handle = setInterval(() => setNowDate(new Date()), 30000);
+        return () => {
+            clearInterval(handle);
+        };
+    }, []);
 
     const handleClick = (event: MouseEvent) => {
         if (
