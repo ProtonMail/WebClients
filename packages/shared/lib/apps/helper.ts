@@ -6,6 +6,7 @@ import { getLocalIDPath } from '../authentication/pathnameHelper';
 interface TargetLocation {
     hostname: string;
     protocol: string;
+    port: string;
 }
 
 const getSSOAppTargetLocation = (location: TargetLocation = window.location): TargetLocation => {
@@ -13,6 +14,7 @@ const getSSOAppTargetLocation = (location: TargetLocation = window.location): Ta
         return {
             hostname: 'protonmail.com',
             protocol: 'https:',
+            port: '',
         };
     }
     return location;
@@ -26,15 +28,16 @@ export const getAppHref = (
 ) => {
     const { subdomain: targetSubdomain } = APPS_CONFIGURATION[toApp];
 
-    const { hostname, protocol } = getSSOAppTargetLocation(targetLocation);
+    const { hostname, protocol, port } = getSSOAppTargetLocation(targetLocation);
     const lastIndex = hostname.lastIndexOf('.');
     const secondLevelIndex = hostname.indexOf('.');
     // If there's no second level, just use the original hostname. NOTE: Does not work for tlds as .co.uk
     const secondLevelDomain = lastIndex !== secondLevelIndex ? hostname.substr(secondLevelIndex + 1) : hostname;
     const targetDomain = [targetSubdomain, secondLevelDomain].filter(isTruthy).join('.');
+    const targetPort = port.length > 0 ? `:${port}` : '';
 
     const path = [
-        targetDomain,
+        targetDomain + targetPort,
         stripLeadingAndTrailingSlash(''),
         getLocalIDPath(localID),
         stripLeadingAndTrailingSlash(to),
