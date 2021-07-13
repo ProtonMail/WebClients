@@ -155,7 +155,10 @@ function TransferManager() {
     const maxVisibleTransfers = isNarrow ? MAX_VISIBLE_TRANSFERS_MOBILE : MAX_VISIBLE_TRANSFERS;
 
     return (
-        <div className={classnames(['transfers-manager', minimized && 'transfers-manager--minimized'])}>
+        <div
+            id="transfer-manager"
+            className={classnames(['transfers-manager', minimized && 'transfers-manager--minimized'])}
+        >
             <Header
                 downloads={downloads}
                 uploads={uploads}
