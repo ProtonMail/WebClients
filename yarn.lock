@@ -3779,6 +3779,7 @@ __metadata:
     eslint-plugin-es: ^4.1.0
     eslint-plugin-import: ^2.22.0
     eslint-plugin-jsx-a11y: ^6.3.1
+    eslint-plugin-monorepo-cop: ^1.0.2
     eslint-plugin-react: ^7.20.3
     eslint-plugin-react-hooks: ^4.0.8
     json-schema: ^0.2.5
@@ -13400,6 +13401,16 @@ __metadata:
   peerDependencies:
     eslint: ^3 || ^4 || ^5 || ^6 || ^7
   checksum: 680d13f5e3e23f7e9b5208c87fa81497bff31909796cbaf5f6245462e54f4bf6b5d03db97662eb67afb344d3f525ade0902472bc807b411b2c3806549faf7203
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-monorepo-cop@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "eslint-plugin-monorepo-cop@npm:1.0.2"
+  dependencies:
+    read-pkg-up: ^6.0.0
+    requireindex: ~1.1.0
+  checksum: 7dd70285132ed49f527329028aac9ba767ff8f6788710271a14d3d0c70f9739a949a5c2084316bbd93e74156f7911caa3650470fbd6e2fec9a579f69500030cf
   languageName: node
   linkType: hard
 
@@ -25635,6 +25646,17 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"read-pkg-up@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "read-pkg-up@npm:6.0.0"
+  dependencies:
+    find-up: ^4.0.0
+    read-pkg: ^5.1.1
+    type-fest: ^0.5.0
+  checksum: 803caccb5a1c5f2ad7c321527639eca032272fb3460f9e2438809fe8f1c4cf1b1673565a78bb51ecdcd996ae31eff0628c08212bbaa00983aac1fe3b7ae63558
+  languageName: node
+  linkType: hard
+
 "read-pkg-up@npm:^7.0.1":
   version: 7.0.1
   resolution: "read-pkg-up@npm:7.0.1"
@@ -25657,7 +25679,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"read-pkg@npm:^5.2.0":
+"read-pkg@npm:^5.1.1, read-pkg@npm:^5.2.0":
   version: 5.2.0
   resolution: "read-pkg@npm:5.2.0"
   dependencies:
@@ -26235,6 +26257,13 @@ fsevents@^1.2.7:
   version: 2.0.1
   resolution: "require-package-name@npm:2.0.1"
   checksum: bc1b42ecffccc4936256536b12607115a5a6ba5bb6105e6b966fc271a1a2fd6ff2db72b44eb7e8b6366f128d0eead4541597b77d1260f53a61540bb3f074c2d1
+  languageName: node
+  linkType: hard
+
+"requireindex@npm:~1.1.0":
+  version: 1.1.0
+  resolution: "requireindex@npm:1.1.0"
+  checksum: 571a7c97bc3c881321c757c8a1bee09da41eeefab8294bd7858bc4f108eab73e4ad4ce80f8206e7c20ffa1482eda842f3b3021f28ab543ddfc1756272659c71e
   languageName: node
   linkType: hard
 
@@ -29479,6 +29508,13 @@ resolve@1.1.7:
   version: 0.3.1
   resolution: "type-fest@npm:0.3.1"
   checksum: 508923061144ff7ebc69d4f49bc812c7b8a81c633d10e89191092efb5746531ee6c4dd912db1447e954a766186ed48eee0dcfa53047c55a7646076a76640ff43
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^0.5.0":
+  version: 0.5.2
+  resolution: "type-fest@npm:0.5.2"
+  checksum: 6c677d30c66bc187bb172919ded3228080d366dde8a00ae2287778d72b1ea4de137927889c549317db2c2664bf90e2b41fd4a731e020db2b07d41ba3b4d0e7f9
   languageName: node
   linkType: hard
 
