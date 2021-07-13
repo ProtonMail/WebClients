@@ -61,11 +61,8 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
                 </ConfirmModal>
             );
         });
-        if (model.step === RECOVERY_EMAIL) {
-            const payload = await challengeRefRecovery.current?.getChallenge();
-            return onSkip(payload);
-        }
-        onSkip();
+        const payload = await challengeRefRecovery.current?.getChallenge();
+        return onSkip(payload);
     };
 
     const handleSubmit = async () => {
@@ -73,8 +70,9 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
             return;
         }
 
+        const payload = await challengeRefRecovery.current?.getChallenge();
+
         if (model.step === RECOVERY_EMAIL) {
-            const payload = await challengeRefRecovery.current?.getChallenge();
             try {
                 await api(validateEmail(model.recoveryEmail));
                 return onSubmit(payload);
@@ -87,7 +85,7 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
         if (model.step === RECOVERY_PHONE) {
             try {
                 await api(validatePhone(model.recoveryPhone));
-                return onSubmit();
+                return onSubmit(payload);
             } catch (error) {
                 setPhoneError(getApiErrorMessage(error) || c('Error').t`Can't validate phone, try again later`);
                 throw error;
@@ -214,7 +212,6 @@ const RecoveryForm = ({ model, hasChallenge, onChange, onSubmit, onSkip, default
                     <Challenge
                         key="challenge"
                         style={model.step === RECOVERY_EMAIL ? undefined : { display: 'none' }}
-                        bodyClassName="sign-layout-container"
                         challengeRef={challengeRefRecovery}
                         type={1}
                         name="recovery"
