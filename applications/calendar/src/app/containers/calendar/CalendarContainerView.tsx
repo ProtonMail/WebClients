@@ -196,7 +196,7 @@ const CalendarContainerView = ({
 
                     const text = c('Error').ngettext(
                         msgid`${list} doesn't have an email address`,
-                        `Some contacts have no email addresses: ${list} `,
+                        `Some contacts have no email addresses: ${list}`,
                         count
                     );
 
@@ -266,7 +266,7 @@ const CalendarContainerView = ({
 
                     const text = c('Error').ngettext(
                         msgid`${list} has no contacts`,
-                        `Some groups have no contacts: ${list} `,
+                        `Some groups have no contacts: ${list}`,
                         count
                     );
 
