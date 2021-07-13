@@ -80,7 +80,13 @@ export const useSendHandler = ({
 
         // Display growler to receive direct feedback (UX) since sendMessage function is added to queue (and other async process could need to complete first)
         notifManager.ID = createNotification({
-            text: <SendingMessageNotification scheduledAt={scheduledAt} manager={notifManager} />,
+            text: (
+                <SendingMessageNotification
+                    scheduledAt={scheduledAt}
+                    manager={notifManager}
+                    messageID={modelMessage.data?.ID}
+                />
+            ),
             expiration: -1,
             disableAutoClose: true,
         });

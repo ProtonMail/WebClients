@@ -21,6 +21,7 @@ export type SendingMessageNotificationManager = ReturnType<typeof createSendingM
 interface SendingMessageNotificationProps {
     manager: SendingMessageNotificationManager;
     scheduledAt?: number;
+    messageID?: string;
 }
 
 enum SendingStep {
@@ -29,7 +30,7 @@ enum SendingStep {
     sentWithUndo,
 }
 
-const SendingMessageNotification = ({ manager, scheduledAt }: SendingMessageNotificationProps) => {
+const SendingMessageNotification = ({ manager, scheduledAt, messageID }: SendingMessageNotificationProps) => {
     const [state, setState] = useState(SendingStep.sending);
     const onUndoRef = useRef<() => Promise<void> | undefined>();
     const isMounted = useIsMounted();
@@ -86,8 +87,7 @@ const SendingMessageNotification = ({ manager, scheduledAt }: SendingMessageNoti
                 <>
                     <span className="mr1">{notification}</span>
                     <UndoButton className="mr1" onUndo={onUndo} />
-                    {/* @todo update link to actual email */}
-                    <AppLink to="/scheduled">{c('Action').t`View message`}</AppLink>
+                    <AppLink to={`/scheduled/${messageID}`}>{c('Action').t`View message`}</AppLink>
                 </>
             );
         }
