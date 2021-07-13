@@ -53,14 +53,6 @@ export const getIsTimeoutError = (e: any) => {
     return e.name === 'TimeoutError' || [HTTP_ERROR_CODES.GATEWAY_TIMEOUT].includes(e.status);
 };
 
-export const getIsTooManyChildSessionsError = (e: any) => {
-    if (!e) {
-        return false;
-    }
-
-    return e.data.Code === 8003;
-};
-
 export const getApiErrorMessage = (e: Error) => {
     const { message } = getApiError(e);
     if (getIs401Error(e)) {
