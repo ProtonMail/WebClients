@@ -167,6 +167,7 @@ const Header = ({ downloads, uploads, latestStats, onClose, onToggleMinimize, mi
                         minimizeRef.current?.blur();
                     }}
                     aria-expanded={!minimized}
+                    aria-controls="transfer-manager"
                 >
                     <Icon className={classnames(['mauto', minimized && 'rotateX-180'])} name="minimize" />
                     <span className="sr-only">{minMaxTitle}</span>
