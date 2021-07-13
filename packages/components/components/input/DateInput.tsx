@@ -173,6 +173,7 @@ const DateInput = ({
                     weekStartsOn={weekStartsOn}
                     fixedSize
                     hasToday
+                    preventLeaveFocus
                 />
             </Dropdown>
         </>
