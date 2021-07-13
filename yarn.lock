@@ -3911,7 +3911,7 @@ __metadata:
     "@types/node": ^14.11.1
     "@types/papaparse": ^5.2.5
     "@types/ua-parser-js": ^0.7.33
-    "@types/webpack-env": ^1.15.3
+    "@types/webpack-env": ^1.16.2
     date-fns: ^2.2.1
     dompurify: ^2.0.7
     eslint: ^7.3.1
@@ -6231,10 +6231,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/webpack-env@npm:^1.15.3, @types/webpack-env@npm:^1.16.0":
+"@types/webpack-env@npm:^1.16.0":
   version: 1.16.1
   resolution: "@types/webpack-env@npm:1.16.1"
   checksum: 7d1a3ba850855ddb69691dc3553a93c955cb3d7eb287bf9a3079494f482126b4d967a2fdda32754e03f6ee3d789109af67768bac5e9f697436ab07f10a939431
+  languageName: node
+  linkType: hard
+
+"@types/webpack-env@npm:^1.16.2":
+  version: 1.16.2
+  resolution: "@types/webpack-env@npm:1.16.2"
+  checksum: ae77ca15de6d2c578a4870f2274d1ec93d900a20347ae821f9d0f6a391af7e8ac69a6e99100edd4f2f665d0cf474eea0967ac29bf0bcedf4cf3738f439f46918
   languageName: node
   linkType: hard
 
