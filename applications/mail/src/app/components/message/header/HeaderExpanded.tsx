@@ -1,4 +1,4 @@
-import React, { MouseEvent, useEffect, useState } from 'react';
+import React, { MouseEvent } from 'react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { c } from 'ttag';
 import {
@@ -12,20 +12,12 @@ import {
     useMailSettings,
     InlineLinkButton,
     Button,
-    ConfirmModal,
-    useModals,
-    useFeature,
-    FeatureCode,
-    useEventManager,
-    useApi,
-    useNotifications,
 } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { isInternal, isOutbox, isScheduled } from '@proton/shared/lib/mail/messages';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
-import { cancelSend } from '@proton/shared/lib/api/messages';
 
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
@@ -51,8 +43,7 @@ import ItemAction from '../../list/ItemAction';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import { isSelfAddress } from '../../../helpers/addresses';
 import { useOnCompose } from '../../../containers/ComposeProvider';
-import { MESSAGE_ACTIONS, PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
-import { formatFullDate } from '../../../helpers/date';
+import { MESSAGE_ACTIONS } from '../../../constants';
 
 interface Props {
     labelID: string;
@@ -103,7 +94,6 @@ const HeaderExpanded = ({
     highlightKeywords = false,
     parentMessageRef,
 }: Props) => {
-    const api = useApi();
     const [addresses = []] = useAddresses();
     const [folders = []] = useFolders();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
@@ -111,32 +101,12 @@ const HeaderExpanded = ({
     const currentFolderID = getCurrentFolderID(message.data?.LabelIDs, folders);
     const isSendingMessage = message.sending;
     const isOutboxMessage = isOutbox(message.data);
-    const { call } = useEventManager();
-    const { createNotification } = useNotifications();
-    const { feature: scheduledFeature } = useFeature(FeatureCode.ScheduledSend);
-    const [nowDate, setNowDate] = useState(() => new Date());
 
     const isScheduledMessage = isScheduled(message.data);
 
     const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
 
     const onCompose = useOnCompose();
-    const { createModal } = useModals();
-
-    const beforeSendInterval = message.data ? message.data.Time * 1000 - nowDate.getTime() : 0;
-    // Prevent from cancelling a message that is about to be sent 30s before
-    const isScheduleSentShortly = beforeSendInterval < PREVENT_CANCEL_SEND_INTERVAL;
-    const formattedDate =
-        isScheduledMessage && message.data
-            ? formatFullDate(new Date(message.data.Time * 1000))
-            : formatFullDate(new Date());
-
-    useEffect(() => {
-        const handle = setInterval(() => setNowDate(new Date()), 30000);
-        return () => {
-            clearInterval(handle);
-        };
-    }, []);
 
     const handleClick = (event: MouseEvent) => {
         if (
@@ -155,29 +125,6 @@ const HeaderExpanded = ({
             action,
             referenceMessage: message,
         });
-    };
-
-    const handleUnscheduleMessage = async () => {
-        await api(cancelSend(message.data?.ID));
-        await call();
-        createNotification({
-            text: c('Message notification').t`Scheduling cancelled. Message has been moved to Drafts.`,
-        });
-        onCompose({ existingDraft: message, fromUndo: false });
-    };
-
-    const handleEditScheduled = () => {
-        createModal(
-            <ConfirmModal
-                onConfirm={handleUnscheduleMessage}
-                title={c('Confirm modal title').t`Unschedule`}
-                cancel={c('Action').t`Cancel`}
-                confirm={<Button color="norm" type="submit">{c('Action').t`Unschedule`}</Button>}
-            >
-                {c('Info')
-                    .t`In order to edit this message, the scheduling needs to be cancelled first. It will be moved to your Drafts.`}
-            </ConfirmModal>
-        );
     };
 
     const showPinPublicKey =
@@ -251,25 +198,6 @@ const HeaderExpanded = ({
     ) : (
         c('Title').t`Label as`
     );
-
-    const scheduledBanner = scheduledFeature?.Value ? (
-        <div className="bg-info rounded p0-5 mb0-5 flex flex-nowrap">
-            <Icon name="clock" className="mtauto mbauto" />
-            <span className="pl0-5 pr0-5 flex-item-fluid">
-                {isScheduleSentShortly
-                    ? c('Action').t`This message will be sent shortly`
-                    : // The variable is the formatted date on which the message will be sent
-                      c('Action').t`This message will be sent on ${formattedDate}.`}
-            </span>
-            {!isScheduleSentShortly ? (
-                <button
-                    type="button"
-                    onClick={handleEditScheduled}
-                    className="flex flex-item-noshrink text-underline link mtauto mbauto"
-                >{c('Action').t`Edit`}</button>
-            ) : null}
-        </div>
-    ) : null;
 
     return (
         <div
@@ -551,9 +479,7 @@ const HeaderExpanded = ({
                         </Tooltip>
                     </ButtonGroup>
                 </div>
-            ) : (
-                scheduledBanner
-            )}
+            ) : null}
             {/* {messageLoaded ? <HeaderAttachmentEvent message={message} /> : null} */}
         </div>
     );
