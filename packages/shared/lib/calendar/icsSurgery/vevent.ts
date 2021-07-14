@@ -10,7 +10,7 @@ import {
     VcalVeventComponent,
 } from '../../interfaces/calendar';
 import { dedupeAlarmsWithNormalizedTriggers } from '../alarms';
-import { getAttendeeEmail, getSupportedAttendee } from '../attendees';
+import { getAttendeeEmail, getSupportedAttendee, getSupportedOrganizer } from '../attendees';
 import { ICAL_METHOD, MAX_LENGTHS } from '../constants';
 import { getHasConsistentRrule, getSupportedRrule } from '../rrule';
 import {
@@ -32,6 +32,7 @@ export const getSupportedDateOrDateTimeProperty = ({
     isRecurring = false,
     method,
     isInvite,
+    guessTzid,
 }: {
     property: VcalDateOrDateTimeProperty | VcalFloatingDateTimeProperty;
     component: string;
@@ -41,6 +42,7 @@ export const getSupportedDateOrDateTimeProperty = ({
     isRecurring?: boolean;
     method?: ICAL_METHOD;
     isInvite?: boolean;
+    guessTzid?: string;
 }) => {
     if (getIsPropertyAllDay(property)) {
         return getDateProperty(property.value);
@@ -59,6 +61,9 @@ export const getSupportedDateOrDateTimeProperty = ({
     // A floating date-time property
     if (!partDayPropertyTzid) {
         if (!hasXWrTimezone) {
+            if (guessTzid) {
+                return getDateTimeProperty(partDayProperty.value, guessTzid);
+            }
             if (isInvite) {
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { method });
             }
@@ -209,6 +214,7 @@ export const getSupportedEvent = ({
             hasXWrTimezone,
             calendarTzid,
             isRecurring,
+            guessTzid,
         });
         const isAllDayStart = getIsPropertyAllDay(validated.dtstart);
         const startTzid = getPropertyTzid(validated.dtstart);
@@ -232,6 +238,7 @@ export const getSupportedEvent = ({
                 hasXWrTimezone,
                 calendarTzid,
                 isRecurring,
+                guessTzid,
             });
             if (!getIsWellFormedDateOrDateTime(supportedDtend)) {
                 if (isEventInvitation) {
@@ -283,6 +290,7 @@ export const getSupportedEvent = ({
                     hasXWrTimezone,
                     calendarTzid,
                     isRecurring,
+                    guessTzid,
                 })
             );
             validated.exdate = supportedExdate.map((property) =>
@@ -315,6 +323,7 @@ export const getSupportedEvent = ({
                 hasXWrTimezone,
                 calendarTzid,
                 isRecurring,
+                guessTzid,
             });
         }
 
@@ -360,7 +369,7 @@ export const getSupportedEvent = ({
                 validated['x-pm-proton-reply'] = { ...protonReply };
             }
             if (organizer) {
-                validated.organizer = { ...organizer };
+                validated.organizer = getSupportedOrganizer(organizer);
             } else {
                 // The ORGANIZER field is mandatory in an invitation
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, {
