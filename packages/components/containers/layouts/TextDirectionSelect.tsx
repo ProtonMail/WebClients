@@ -14,7 +14,7 @@ interface Props {
     loading: boolean;
 }
 
-const TextDirectionSelect = ({ id, rightToLeft, onChange, loading }: Props) => {
+const TextDirectionSelect = ({ id, rightToLeft, onChange, loading, ...rest }: Props) => {
     const options = [
         { text: c('Option').t`Left to Right`, value: OFF },
         { text: c('Option').t`Right to Left`, value: ON },
@@ -24,7 +24,9 @@ const TextDirectionSelect = ({ id, rightToLeft, onChange, loading }: Props) => {
         onChange(parseInt(target.value, 10) as RIGHT_TO_LEFT);
     };
 
-    return <Select id={id} value={rightToLeft} options={options} disabled={loading} onChange={handleChange} />;
+    return (
+        <Select id={id} value={rightToLeft} options={options} disabled={loading} onChange={handleChange} {...rest} />
+    );
 };
 
 export default TextDirectionSelect;
