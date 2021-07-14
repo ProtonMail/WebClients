@@ -105,6 +105,7 @@ const AppearanceOtherSection = () => {
                         stickyLabels={StickyLabels}
                         loading={loadingStickyLabels}
                         onToggle={(value) => withLoadingStickyLabels(handleToggleStickyLabels(value))}
+                        data-testid="appearance:sticky-labels-toggle"
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>
@@ -126,6 +127,7 @@ const AppearanceOtherSection = () => {
                         viewMode={ViewMode}
                         loading={loadingViewMode}
                         onToggle={(value) => withLoadingViewMode(handleChangeViewMode(value))}
+                        data-testid="appearance:conversation-group-toggle"
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>
@@ -142,6 +144,7 @@ const AppearanceOtherSection = () => {
                         draftType={DraftMIMEType}
                         onChange={(value) => withLoadingDraftType(handleChangeDraftType(value))}
                         loading={loadingDraftType}
+                        data-testid="appearance:draft-type-select"
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>
@@ -158,6 +161,7 @@ const AppearanceOtherSection = () => {
                         rightToLeft={RightToLeft}
                         onChange={(value) => withLoadingRightToLeft(handleChangeRightToLeft(value))}
                         loading={loadingRightToLeft}
+                        data-testid="appearance:text-direction-select"
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>
@@ -175,6 +179,7 @@ const AppearanceOtherSection = () => {
                             disabled={loading}
                             onChange={handleButtonOrderChange}
                             value={READ_UNREAD}
+                            data-testid="appearance:read-unread-radio"
                         >
                             <ButtonGroup className="ml1 no-pointer-events">
                                 <Button icon title={c('Action').t`Read`}>
@@ -194,6 +199,7 @@ const AppearanceOtherSection = () => {
                             disabled={loading}
                             onChange={handleButtonOrderChange}
                             value={UNREAD_READ}
+                            data-testid="appearance:unread-read-radio"
                         >
                             <ButtonGroup className="ml1 no-pointer-events">
                                 <Button icon title={c('Action').t`Unread`}>

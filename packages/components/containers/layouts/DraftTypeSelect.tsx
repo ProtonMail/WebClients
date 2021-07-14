@@ -14,7 +14,7 @@ interface Props {
     loading: boolean;
 }
 
-const DraftTypeSelect = ({ id, draftType, onChange, loading }: Props) => {
+const DraftTypeSelect = ({ id, draftType, onChange, loading, ...rest }: Props) => {
     const options = [
         { text: c('Option').t`Normal`, value: DEFAULT },
         { text: c('Option').t`Plain text`, value: PLAINTEXT },
@@ -22,7 +22,7 @@ const DraftTypeSelect = ({ id, draftType, onChange, loading }: Props) => {
 
     const handleChange = ({ target }: React.ChangeEvent<HTMLSelectElement>) => onChange(target.value as MIME_TYPES);
 
-    return <Select id={id} value={draftType} options={options} disabled={loading} onChange={handleChange} />;
+    return <Select id={id} value={draftType} options={options} disabled={loading} onChange={handleChange} {...rest} />;
 };
 
 export default DraftTypeSelect;
