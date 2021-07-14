@@ -69,17 +69,21 @@ export const uncapitalize = (str: any) => {
     return str[0].toLowerCase() + str.slice(1);
 };
 
+export const DEFAULT_TRUNCATE_OMISSION = '…';
+
 /**
  * Given a maximum number of characters to display,
  * truncate a string by adding omission if too long
  */
-export const truncate = (str: string, charsToDisplay = 50, omission = '…') => {
+export const truncate = (str: string, charsToDisplay = 50, omission = DEFAULT_TRUNCATE_OMISSION) => {
     if (str.length === 0) {
         return str;
     }
+
     if (str.length > charsToDisplay) {
         return str.substring(0, charsToDisplay - omission.length) + omission;
     }
+
     return str;
 };
 
@@ -106,20 +110,37 @@ export const truncateMore = ({
     if (string.length === 0) {
         return string;
     }
+
     if (charsToDisplay !== undefined) {
         // truncate symmetrically
         const visibleChars = charsToDisplay - omission.length;
         const charsToDisplayStart = skewEnd ? Math.floor(visibleChars / 2) : Math.ceil(visibleChars / 2);
         const charsToDisplayEnd = visibleChars - charsToDisplayStart;
+
         return truncateMore({ string, charsToDisplayStart, charsToDisplayEnd, omission });
     }
+
     if (string.length <= charsToDisplayStart + charsToDisplayEnd + omission.length) {
         return string;
     }
+
     const strBegin = string.substring(0, charsToDisplayStart);
     const strEnd = string.substring(string.length - charsToDisplayEnd, string.length);
+
     return strBegin + omission + strEnd;
 };
+
+export const truncatePossiblyQuotedString = (string: string, charsToDisplay: number) => {
+  const match = string.match(/^"(.+)"$/);
+
+  if (!match) {
+      return truncateMore({ string, charsToDisplay });
+  }
+
+  const [, quotedString] = match;
+
+  return `"${truncateMore({ string: quotedString, charsToDisplay: charsToDisplay - 2 })}"`;
+}
 
 export const getInitials = (fullName = '') => {
     const [first, ...rest] = fullName

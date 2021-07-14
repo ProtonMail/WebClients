@@ -17,6 +17,7 @@ import { GetVTimezonesMap } from '@proton/shared/lib/interfaces/hooks/GetVTimezo
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { SendIcsParams } from '@proton/components/hooks/useSendIcs';
+import { getSupportedPlusAlias } from '@proton/shared/lib/mail/addresses';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../../interfaces/Invite';
 
 const {
@@ -222,6 +223,7 @@ export const getSendIcsAction =
         const from = { Address: selfAddress.Email, Name: selfAddress.DisplayName || selfAddress.Email };
         const hasAddedAttendees = !!addedAttendees?.length;
         const hasRemovedAttendees = !!removedAttendees?.length;
+        // Organizer actions
         if (type === SEND_INVITATION) {
             try {
                 if (!vevent) {
@@ -452,6 +454,7 @@ export const getSendIcsAction =
                 onCancelError(e);
             }
         }
+        // Attendee action
         if ([CHANGE_PARTSTAT, DECLINE_INVITATION].includes(type)) {
             try {
                 if (!vevent) {
@@ -462,6 +465,7 @@ export const getSendIcsAction =
                     throw new Error('Missing invitation data');
                 }
                 const selfAttendee = vevent.attendee[selfAttendeeIndex];
+                const supportedPlusAliasEmail = getSupportedPlusAlias({ selfAttendeeEmail: getAttendeeEmail(selfAttendee), selfAddressEmail: selfAddress.Email });
 
                 const organizerEmail = getAttendeeEmail(organizer);
                 const selfAttendeeWithPartstat = {
@@ -498,7 +502,7 @@ export const getSendIcsAction =
                     ics: replyIcs,
                     addressID: selfAddress.ID,
                     from: {
-                        Address: selfAddress.Email,
+                        Address: supportedPlusAliasEmail,
                         Name: displayName,
                     },
                     to: [{ Address: organizerEmail, Name: organizer.parameters?.cn || organizerEmail }],

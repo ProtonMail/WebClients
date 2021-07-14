@@ -41,6 +41,7 @@ import {
     getSequence,
 } from '../vcalHelper';
 import { getIsEventCancelled, withDtstamp, withSummary } from '../veventHelper';
+import { getSupportedPlusAlias } from '../../mail/addresses';
 
 export const getParticipantHasAddressID = (
     participant: Participant
@@ -51,14 +52,16 @@ export const getParticipantHasAddressID = (
 export const getParticipant = ({
     participant,
     contactEmails,
-    addresses,
+    selfAddress,
+    selfAttendee,
     emailTo,
     index,
     calendarAttendees,
 }: {
     participant: VcalAttendeeProperty | VcalOrganizerProperty;
     contactEmails: ContactEmail[];
-    addresses: Address[];
+    selfAddress?: Address;
+    selfAttendee?: VcalAttendeeProperty;
     emailTo?: string;
     index?: number;
     calendarAttendees?: Attendee[];
@@ -66,11 +69,11 @@ export const getParticipant = ({
     const emailAddress = getAttendeeEmail(participant);
     const canonicalInternalEmail = canonizeInternalEmail(emailAddress);
     const canonicalEmail = canonizeEmailByGuess(emailAddress);
-    const selfAddress = addresses.find(({ Email }) => canonizeInternalEmail(Email) === canonicalInternalEmail);
-    const isYou = emailTo ? canonizeInternalEmail(emailTo) === canonicalInternalEmail : !!selfAddress;
+    const isSelf = selfAddress && canonizeInternalEmail(selfAddress.Email) === canonicalInternalEmail;
+    const isYou = emailTo ? canonizeInternalEmail(emailTo) === canonicalInternalEmail : isSelf;
     const contact = contactEmails.find(({ Email }) => canonizeEmail(Email) === canonicalEmail);
     const participantName = participant?.parameters?.cn || emailAddress;
-    const displayName = selfAddress?.DisplayName || contact?.Name || participantName;
+    const displayName = (isSelf && selfAddress?.DisplayName) || contact?.Name || participantName;
     const result: Participant = {
         vcalComponent: participant,
         name: participantName,
@@ -94,10 +97,13 @@ export const getParticipant = ({
         result.updateTime = calendarAttendee.UpdateTime;
         result.attendeeID = calendarAttendee.ID;
     }
-    if (selfAddress) {
+    if (selfAddress && selfAttendee && isSelf) {
         result.addressID = selfAddress.ID;
         // Use Proton form of the email address (important for sending email)
-        result.emailAddress = selfAddress.Email;
+        result.emailAddress = getSupportedPlusAlias({
+            selfAttendeeEmail: getAttendeeEmail(selfAttendee),
+            selfAddressEmail: selfAddress.Email,
+        });
         // Use Proton name when sending out the email
         result.name = selfAddress.DisplayName || participantName;
     }
@@ -323,12 +329,11 @@ export const getEventWithCalendarAlarms = (vevent: VcalVeventComponent, calendar
     const notifications = isAllDay
         ? calendarSettings.DefaultFullDayNotifications
         : calendarSettings.DefaultPartDayNotifications;
-    const valarmComponents = notifications
-        .map<VcalValarmComponent>(({ Trigger, Type }) => ({
-            component: 'valarm',
-            action: { value: Type === SETTINGS_NOTIFICATION_TYPE.EMAIL ? 'EMAIL' : 'DISPLAY' },
-            trigger: { value: fromTriggerString(Trigger) },
-        }));
+    const valarmComponents = notifications.map<VcalValarmComponent>(({ Trigger, Type }) => ({
+        component: 'valarm',
+        action: { value: Type === SETTINGS_NOTIFICATION_TYPE.EMAIL ? 'EMAIL' : 'DISPLAY' },
+        trigger: { value: fromTriggerString(Trigger) },
+    }));
 
     return {
         ...vevent,

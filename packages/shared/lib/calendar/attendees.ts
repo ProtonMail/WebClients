@@ -16,7 +16,9 @@ import {
 } from '../interfaces/calendar';
 import { RequireSome, SimpleMap } from '../interfaces/utils';
 import { ATTENDEE_STATUS_API, ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from './constants';
-import { getAttendeeHasToken, getAttendeesHaveToken } from './vcalHelper';
+import { getAttendeeHasToken, getAttendeePartstat, getAttendeesHaveToken } from './vcalHelper';
+import { normalize, truncatePossiblyQuotedString } from '../helpers/string';
+import { CONTACT_NAME_MAX_LENGTH } from '../contacts/constants';
 
 export const generateAttendeeToken = async (normalizedEmail: string, uid: string) => {
     const uidEmail = `${uid}${normalizedEmail}`;
@@ -129,28 +131,49 @@ export const modifyAttendeesPartstat = (
     });
 };
 
+export const getSupportedOrganizer = (organizer: VcalOrganizerProperty) => {
+    const { parameters: { cn } = {} } = organizer;
+    const emailAddress = getAttendeeEmail(organizer);
+    const supportedOrganizer: RequireSome<VcalAttendeeProperty, 'parameters'> = {
+        value: buildMailTo(emailAddress),
+        parameters: {
+            cn: truncatePossiblyQuotedString(cn ?? emailAddress, CONTACT_NAME_MAX_LENGTH),
+        },
+    };
+
+    return supportedOrganizer;
+};
+
 export const getSupportedAttendee = (attendee: VcalAttendeeProperty) => {
     const { parameters: { cn, role, partstat, rsvp, 'x-pm-token': token } = {} } = attendee;
     const emailAddress = getAttendeeEmail(attendee);
     const supportedAttendee: RequireSome<VcalAttendeeProperty, 'parameters'> = {
         value: buildMailTo(emailAddress),
         parameters: {
-            cn: cn ?? emailAddress,
+            cn: truncatePossiblyQuotedString(cn ?? emailAddress, CONTACT_NAME_MAX_LENGTH),
         },
     };
-    const roleUpperCased = role?.toUpperCase();
-    if (roleUpperCased === ICAL_ATTENDEE_ROLE.REQUIRED || roleUpperCased === ICAL_ATTENDEE_ROLE.OPTIONAL) {
-        supportedAttendee.parameters.role = roleUpperCased;
+    const normalizedUppercasedRole = normalize(role).toUpperCase();
+
+    if (
+        normalizedUppercasedRole === ICAL_ATTENDEE_ROLE.REQUIRED ||
+        normalizedUppercasedRole === ICAL_ATTENDEE_ROLE.OPTIONAL
+    ) {
+        supportedAttendee.parameters.role = normalizedUppercasedRole;
     }
-    if (rsvp?.toUpperCase() === 'TRUE') {
-        supportedAttendee.parameters.rsvp = rsvp.toUpperCase();
+
+    if (normalize(rsvp) === 'true') {
+        supportedAttendee.parameters.rsvp = 'TRUE';
     }
+
     if (partstat) {
-        supportedAttendee.parameters.partstat = partstat.toUpperCase();
+        supportedAttendee.parameters.partstat = getAttendeePartstat(attendee);
     }
-    if (token) {
+
+    if (token?.length === 40) {
         supportedAttendee.parameters['x-pm-token'] = token;
     }
+
     return supportedAttendee;
 };
 
