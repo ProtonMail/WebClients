@@ -41,6 +41,8 @@ export default function ConflictModal({
     );
     const [applyAll, setApplyAll] = useState(false);
 
+    const uploadName = <strong className="text-break">{name}</strong>;
+
     return (
         <FormModal
             onClose={() => {
@@ -58,7 +60,7 @@ export default function ConflictModal({
             {...rest}
         >
             <p>
-                <strong className="text-break">{name}</strong> {c('Info').t`already exists in this location.`}
+                {c('Info').jt`${uploadName} already exists in this location.`}
                 <br />
                 {c('Info').t`What do you want to do?`}
             </p>
