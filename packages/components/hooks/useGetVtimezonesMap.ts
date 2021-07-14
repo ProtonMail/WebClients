@@ -1,5 +1,6 @@
 import { getVtimezones } from '@proton/shared/lib/api/calendars';
 import { parse } from '@proton/shared/lib/calendar/vcal';
+import { GET_VTIMEZONES_API_LIMIT } from '@proton/shared/lib/constants';
 import { chunk, unique } from '@proton/shared/lib/helpers/array';
 import { GetVTimezonesMap, VTimezoneObject } from '@proton/shared/lib/interfaces/hooks/GetVTimezonesMap';
 import { VcalVtimezoneComponent } from '@proton/shared/lib/interfaces/calendar';
@@ -10,13 +11,12 @@ import useCache from './useCache';
 import { getIsRecordInvalid, getPromiseValue } from './useCachedModelResult';
 
 const CACHE_KEY = 'VTIMEZONES';
-const TIMEZONES_ROUTE_LIMIT = 10;
 
 export const useGetVtimezonesMap = () => {
     const api = useApi();
     const cache = useCache();
 
-    const getVTimezones = useCallback(
+    const getVTimezonesMap = useCallback(
         async (tzids: string[]) => {
             const uniqueTzids = unique(tzids.filter((tzid) => tzid.toLowerCase() !== 'utc'));
             const encodedTzids = uniqueTzids.map((tzid) => encodeURIComponent(tzid));
@@ -25,7 +25,7 @@ export const useGetVtimezonesMap = () => {
                 return Promise.resolve({});
             }
 
-            const batchedTimezones = chunk(encodedTzids, TIMEZONES_ROUTE_LIMIT);
+            const batchedTimezones = chunk(encodedTzids, GET_VTIMEZONES_API_LIMIT);
 
             return (
                 await Promise.all(
@@ -60,7 +60,7 @@ export const useGetVtimezonesMap = () => {
             const missing = tzids.filter((tzid) => {
                 return getIsRecordInvalid(subCache.get(tzid));
             });
-            const promise = getVTimezones(missing);
+            const promise = getVTimezonesMap(missing);
             const miss = async (tzid: string) => {
                 const map = await promise;
                 return map[tzid];
@@ -80,6 +80,6 @@ export const useGetVtimezonesMap = () => {
                 }, {});
             });
         },
-        [cache, getVTimezones]
+        [cache, getVTimezonesMap]
     );
 };

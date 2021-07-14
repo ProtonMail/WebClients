@@ -1,5 +1,6 @@
 import { getCanonicalAddresses } from '@proton/shared/lib/api/addresses';
-import { API_CODES } from '@proton/shared/lib/constants';
+import { API_CODES, GET_CANONICAL_EMAILS_API_LIMIT } from '@proton/shared/lib/constants';
+import { chunk } from '@proton/shared/lib/helpers/array';
 import { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
 import { GetCanonicalAddressesApiResponse } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
@@ -20,19 +21,26 @@ export const useGetCanonicalEmailsMap = () => {
                 return Promise.resolve({});
             }
             const encodedEmails = emails.map((email) => encodeURIComponent(email));
-            const { Responses, Code } = await api<GetCanonicalAddressesApiResponse>(
-                getCanonicalAddresses(encodedEmails)
+            const batchedEmails = chunk(encodedEmails, GET_CANONICAL_EMAILS_API_LIMIT);
+
+            const maps = await Promise.all(
+                batchedEmails.map(async (batch) => {
+                    const { Responses, Code } = await api<GetCanonicalAddressesApiResponse>(
+                        getCanonicalAddresses(batch)
+                    );
+                    if (Code !== API_CODES.GLOBAL_SUCCESS) {
+                        throw new Error('Canonize operation failed');
+                    }
+                    return Responses.reduce<SimpleMap<string>>((acc, { Email, Response: { Code, CanonicalEmail } }) => {
+                        if (Code !== API_CODES.SINGLE_SUCCESS) {
+                            throw new Error('Canonize operation failed');
+                        }
+                        acc[Email] = CanonicalEmail;
+                        return acc;
+                    }, {});
+                })
             );
-            if (Code !== API_CODES.GLOBAL_SUCCESS) {
-                throw new Error('Canonize operation failed');
-            }
-            return Responses.reduce<SimpleMap<string>>((acc, { Email, Response: { Code, CanonicalEmail } }) => {
-                if (Code !== API_CODES.SINGLE_SUCCESS) {
-                    throw new Error('Canonize operation failed');
-                }
-                acc[Email] = CanonicalEmail;
-                return acc;
-            }, {});
+            return maps.reduce<SimpleMap<string>>((acc, curr) => ({ ...acc, ...curr }), {});
         },
         [api, cache]
     );
