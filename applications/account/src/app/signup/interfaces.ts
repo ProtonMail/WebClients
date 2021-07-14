@@ -1,5 +1,6 @@
 import { Currency, Cycle, HumanVerificationMethodType, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { APPS } from '@proton/shared/lib/constants';
+import { PayPalHook } from '@proton/components/containers/payments/usePayPal';
 
 export enum SIGNUP_STEPS {
     NO_SIGNUP = 'no-signup',
@@ -47,13 +48,7 @@ export interface SignupModel {
     checkResult: SubscriptionCheckResponse;
 }
 
-export interface SignupPayPal {
-    isReady: boolean;
-    loadingToken: boolean;
-    loadingVerification: boolean;
-    onToken: () => void;
-    onVerification: () => void;
-}
+export type SignupPayPal = PayPalHook;
 
 export class HumanVerificationError extends Error {
     methods: HumanVerificationMethodType[];

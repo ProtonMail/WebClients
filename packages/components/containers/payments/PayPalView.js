@@ -29,7 +29,7 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit }) => {
         <PayPalButton
             shape="outline"
             color="norm"
-            type={type}
+            flow={type}
             key="click-here"
             size="small"
             paypal={paypalCredit}
@@ -53,9 +53,6 @@ const PayPalView = ({ type, amount, currency, paypal, paypalCredit }) => {
                         {c('Info')
                             .t`We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.`}
                     </Alert>
-                    <div className="text-center mb1">
-                        <img src={paypalSvg} alt="PayPal" width="250" />
-                    </div>
                     <Alert>
                         {c('Info')
                             .t`You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.`}
