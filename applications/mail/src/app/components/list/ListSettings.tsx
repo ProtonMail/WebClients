@@ -36,6 +36,7 @@ const ListSettings = ({ sort, onSort, onFilter, filter, conversationMode, mailSe
                 onSort={onSort}
                 hasCaret={false}
                 isSearch={isSearch}
+                isScheduledLabel={!!isScheduledSettings}
             />
         </div>
     );

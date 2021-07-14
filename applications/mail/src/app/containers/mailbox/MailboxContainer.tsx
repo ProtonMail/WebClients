@@ -104,7 +104,7 @@ const MailboxContainer = ({
         ]
     );
     const isSearch = testIsSearch(searchParameters);
-    const sort = useMemo<Sort>(() => sortFromUrl(location), [searchParams.sort]);
+    const sort = useMemo<Sort>(() => sortFromUrl(location, inputLabelID), [searchParams.sort, inputLabelID]);
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
 
     const handlePage = useCallback((pageNumber: number) => {
