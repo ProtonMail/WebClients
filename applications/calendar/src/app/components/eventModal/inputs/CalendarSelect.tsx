@@ -95,7 +95,7 @@ const CalendarSelect = ({ withIcon = false, model, setModel, isCreateEvent, froz
             >
                 {options.map(({ value, text, color: calendarColor }) => (
                     <Option value={value} title={text} key={value}>
-                        <div className="flex flex-nowrap flex-align-items-center">
+                        <div className="flex flex-nowrap flex-align-items-center text-ellipsis">
                             <div className="calendar-select-color mr0-75" style={{ backgroundColor: calendarColor }} />
                             {text}
                         </div>
