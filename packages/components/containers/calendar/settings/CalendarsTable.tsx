@@ -10,7 +10,7 @@ import { Calendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/cale
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
 
-import { Badge, DropdownActions, Icon, Info, Table, TableBody, TableHeader, TableRow } from '../../../components';
+import { Badge, DropdownActions, Icon, Table, TableBody, TableHeader, TableRow } from '../../../components';
 import useGetCalendarsEmails from '../hooks/useGetCalendarsEmails';
 
 import './CalendarsTable.scss';
@@ -48,7 +48,7 @@ const CalendarsTable = ({
                     c('Header').t`Name`,
                     <div className="flex flex-align-items-center">
                         <span className="mr0-5">{c('Header').t`Status`} </span>
-                        <Info url="" /> {/* TODO: coming soon */}
+                        {/* TODO: when url available  <Info url="" /> */}
                     </div>,
                     c('Header').t`Actions`,
                 ]}
