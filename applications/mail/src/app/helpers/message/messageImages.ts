@@ -68,7 +68,7 @@ export const restoreImages = (inputDocument: Element | undefined, images: Messag
     }
 
     const document = inputDocument.cloneNode(true) as Element;
-    const { showEmbeddedImages } = images;
+    const { showEmbeddedImages, showRemoteImages } = images;
 
     images.images.forEach((image) => {
         const anchor = getAnchor(document, image);
@@ -82,6 +82,11 @@ export const restoreImages = (inputDocument: Element | undefined, images: Messag
             original.classList.add('proton-embedded');
 
             if (showEmbeddedImages) {
+                original.setAttribute('src', image?.url || '');
+            }
+        }
+        if (image.type === 'remote') {
+            if (showRemoteImages) {
                 original.setAttribute('src', image?.url || '');
             }
         }
