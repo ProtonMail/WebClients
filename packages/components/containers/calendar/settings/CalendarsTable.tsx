@@ -10,13 +10,11 @@ import { Calendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/cale
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
 
-import { Badge, DropdownActions, Icon, Info, Table, TableBody, TableHeader, TableRow } from '../../../components';
+import { Badge, DropdownActions, Icon, Table, TableBody, TableHeader, TableRow } from '../../../components';
 import useGetCalendarsEmails from '../hooks/useGetCalendarsEmails';
 
 import './CalendarsTable.scss';
 import { classnames } from '../../../helpers';
-import { useFeature } from '../../../hooks';
-import { FeatureCode } from '../../features';
 
 interface Props {
     calendars: (Calendar | SubscribedCalendar)[];
@@ -42,8 +40,6 @@ const CalendarsTable = ({
 }: Props) => {
     const { hasNonDelinquentScope } = user;
     const calendarAddressMap = useGetCalendarsEmails(calendars);
-    const { feature: featureUsedCalendarSubscription } = useFeature(FeatureCode.CalendarSubscription);
-    const showCalendarSubscription = !!featureUsedCalendarSubscription?.Value;
 
     return (
         <Table className="simple-table--has-actions">
@@ -52,7 +48,7 @@ const CalendarsTable = ({
                     c('Header').t`Name`,
                     <div className="flex flex-align-items-center">
                         <span className="mr0-5">{c('Header').t`Status`} </span>
-                        {showCalendarSubscription && <Info url="" />}
+                        {/* TODO: when url available  <Info url="" /> */}
                     </div>,
                     c('Header').t`Actions`,
                 ]}
