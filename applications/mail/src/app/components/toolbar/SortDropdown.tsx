@@ -16,6 +16,7 @@ interface Props {
     className?: string;
     hasCaret?: boolean;
     isSearch: boolean;
+    isScheduledLabel?: boolean;
 }
 
 const SortDropdown = ({
@@ -26,6 +27,7 @@ const SortDropdown = ({
     className,
     hasCaret,
     isSearch,
+    isScheduledLabel = false,
 }: Props) => {
     const { getESDBStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled } = getESDBStatus();
@@ -44,9 +46,10 @@ const SortDropdown = ({
             return SORT_OPTIONS.LARGE_TO_SMALL;
         }
         if (sort === TIME && !desc) {
-            return SORT_OPTIONS.OLD_TO_NEW;
+            // If we are on the scheduled label, we reverse the default sort to have the next to be sent on top (but still displayed as newest)
+            return !isScheduledLabel ? SORT_OPTIONS.OLD_TO_NEW : SORT_OPTIONS.NEW_TO_OLD;
         }
-        return SORT_OPTIONS.NEW_TO_OLD;
+        return !isScheduledLabel ? SORT_OPTIONS.NEW_TO_OLD : SORT_OPTIONS.OLD_TO_NEW;
     };
     return (
         <SimpleDropdown
@@ -66,7 +69,7 @@ const SortDropdown = ({
             <DropdownMenu>
                 <DropdownMenuButton
                     data-testid="toolbar:sort-new-to-old"
-                    isSelected={sort === TIME && desc}
+                    isSelected={!isScheduledLabel ? sort === TIME && desc : sort === TIME && !desc}
                     className="text-left"
                     loading={loading}
                     onClick={() => onSort({ sort: TIME, desc: true })}
@@ -75,7 +78,7 @@ const SortDropdown = ({
                 </DropdownMenuButton>
                 <DropdownMenuButton
                     data-testid="toolbar:sort-old-to-new"
-                    isSelected={sort === TIME && !desc}
+                    isSelected={!isScheduledLabel ? sort === TIME && !desc : sort === TIME && desc}
                     className="text-left"
                     loading={loading}
                     onClick={() => onSort({ sort: TIME, desc: false })}

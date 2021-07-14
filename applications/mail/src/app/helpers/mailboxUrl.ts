@@ -2,6 +2,7 @@ import { Location } from 'history';
 import { match, matchPath, generatePath } from 'react-router';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import { getSearchParams, changeSearchParams } from '@proton/shared/lib/helpers/url';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Sort, Filter, SearchParameters } from '../models/tools';
 import { getHumanLabelID } from './labels';
 import { MAIN_ROUTE_PATH } from '../constants';
@@ -43,16 +44,17 @@ const stringToPage = (string: string | undefined): number => {
     return 0;
 };
 
-const stringToSort = (string: string | undefined): Sort => {
+const stringToSort = (string: string | undefined, labelID?: string): Sort => {
+    const isScheduledLabel = labelID && labelID === MAILBOX_LABEL_IDS.SCHEDULED;
     switch (string) {
         case '-size':
             return { sort: 'Size', desc: true };
         case 'size':
             return { sort: 'Size', desc: false };
         case 'date':
-            return { sort: 'Time', desc: false };
+            return !isScheduledLabel ? { sort: 'Time', desc: false } : { sort: 'Time', desc: true };
         default:
-            return { sort: 'Time', desc: true };
+            return !isScheduledLabel ? { sort: 'Time', desc: true } : { sort: 'Time', desc: false };
     }
 };
 
@@ -87,7 +89,8 @@ export const keywordToString = (keyword: string): string | undefined => {
 
 export const pageFromUrl = (location: Location) => stringToPage(getSearchParams(location.hash).page);
 
-export const sortFromUrl = (location: Location) => stringToSort(getSearchParams(location.hash).sort);
+export const sortFromUrl = (location: Location, labelID?: string) =>
+    stringToSort(getSearchParams(location.hash).sort, labelID);
 
 export const filterFromUrl = (location: Location) => stringToFilter(getSearchParams(location.hash).filter);
 
