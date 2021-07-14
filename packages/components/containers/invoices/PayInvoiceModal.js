@@ -44,7 +44,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
 
     const submit =
         method === PAYMENT_METHOD_TYPES.PAYPAL ? (
-            <PayPalButton paypal={paypal} type="invoice" color="norm" amount={AmountDue}>{c('Action')
+            <PayPalButton paypal={paypal} flow="invoice" color="norm" amount={AmountDue}>{c('Action')
                 .t`Continue`}</PayPalButton>
         ) : (
             <PrimaryButton loading={loading} disabled={!canPay} type="submit">{c('Action').t`Pay`}</PrimaryButton>
