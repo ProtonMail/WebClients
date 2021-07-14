@@ -15,6 +15,8 @@ import useGetCalendarsEmails from '../hooks/useGetCalendarsEmails';
 
 import './CalendarsTable.scss';
 import { classnames } from '../../../helpers';
+import { useFeature } from '../../../hooks';
+import { FeatureCode } from '../../features';
 
 interface Props {
     calendars: (Calendar | SubscribedCalendar)[];
@@ -40,6 +42,8 @@ const CalendarsTable = ({
 }: Props) => {
     const { hasNonDelinquentScope } = user;
     const calendarAddressMap = useGetCalendarsEmails(calendars);
+    const { feature: featureUsedCalendarSubscription } = useFeature(FeatureCode.CalendarSubscription);
+    const showCalendarSubscription = !!featureUsedCalendarSubscription?.Value;
 
     return (
         <Table className="simple-table--has-actions">
@@ -48,7 +52,7 @@ const CalendarsTable = ({
                     c('Header').t`Name`,
                     <div className="flex flex-align-items-center">
                         <span className="mr0-5">{c('Header').t`Status`} </span>
-                        <Info url="" /> {/* TODO: coming soon */}
+                        {showCalendarSubscription && <Info url="" />}
                     </div>,
                     c('Header').t`Actions`,
                 ]}
