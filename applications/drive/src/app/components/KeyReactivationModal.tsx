@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import {
     Button,
+    ButtonLike,
     ContentModal,
     DialogModal,
     FooterModal,
     HeaderModal,
     InnerModal,
     RadioGroup,
+    SettingsLink,
 } from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 
@@ -18,7 +21,7 @@ You are also able to delete all of your old files`;
 
 interface Props {
     onClose?: () => void;
-    onSubmit?: () => void;
+    onSubmit?: (event: { type: ReactivationOptions }) => void;
 }
 
 export enum ReactivationOptions {
@@ -26,7 +29,7 @@ export enum ReactivationOptions {
     DeleteOldFiles,
 }
 
-const OptionLabel = ({ title, info }) => {
+const OptionLabel = ({ title, info }: { title: string; info: string }) => {
     return (
         <div className="ml0-5">
             <span className="text-bold">{title}</span>
@@ -56,11 +59,10 @@ const radioOptions = [
     },
 ];
 
-// TODO: data-test-id="calendar-toolbar:previous"
-const KeyReactivationModal = ({ onClose = noop, onSubmit, ...rest }: Props) => {
-    const [radioGroupValue, setRadioGroupValue] = useState<number>();
+const KeyReactivationModal = ({ onClose = noop, onSubmit = noop, ...rest }: Props) => {
+    const [radioGroupValue, setRadioGroupValue] = useState<number>(ReactivationOptions.ReactivateKeys);
 
-    const handleChange = (payload) => {
+    const handleChange = (payload: ReactivationOptions) => {
         setRadioGroupValue(payload);
     };
 
@@ -71,27 +73,44 @@ const KeyReactivationModal = ({ onClose = noop, onSubmit, ...rest }: Props) => {
             <HeaderModal hasClose displayTitle noEllipsis modalTitleID={modalTitleID} onClose={onClose}>
                 {c('Action').t`Key re-activation`}
             </HeaderModal>
-            <ContentModal onReset={onClose}>
+            <ContentModal onReset={onClose} onSubmit={() => onSubmit({ type: radioGroupValue })}>
                 <InnerModal className="mb1">
                     <p className="mt0">{INFO_TEXT}</p>
-                    <RadioGroup options={radioOptions} value={radioGroupValue} onChange={handleChange} />
+                    <RadioGroup
+                        options={radioOptions}
+                        value={radioGroupValue}
+                        onChange={handleChange}
+                        name="action-type"
+                    />
                 </InnerModal>
                 <FooterModal>
-                    <Button color="weak" type="button" onClick={onClose}>
+                    <Button
+                        color="weak"
+                        type="button"
+                        onClick={onClose}
+                        data-test-id="drive-key-reactivation-options:cancel"
+                    >
                         {c('Action').t`Decide later`}
                     </Button>
-                    <Button
-                        color="norm"
-                        type="button"
-                        onClick={() => onSubmit({ type: radioGroupValue })}
-                        disabled={radioGroupValue === undefined}
-                    >
-                        {c('Action').t`Continue`}
-                    </Button>
+                    {radioGroupValue === ReactivationOptions.ReactivateKeys ? (
+                        <ButtonLike
+                            as={SettingsLink}
+                            type="submit"
+                            color="norm"
+                            path="/encryption-keys?action=reactivate#addresses"
+                            app={APPS.PROTONMAIL}
+                            data-test-id="drive-key-reactivations-options:continue"
+                        >
+                            {c('Action').t`Continue`}
+                        </ButtonLike>
+                    ) : (
+                        <Button color="norm" type="submit" data-test-id="drive-key-reactivations-options:continue">
+                            {c('Action').t`Continue`}
+                        </Button>
+                    )}
                 </FooterModal>
             </ContentModal>
         </DialogModal>
     );
 };
-
 export default KeyReactivationModal;
