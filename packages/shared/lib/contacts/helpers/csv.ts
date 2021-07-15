@@ -12,6 +12,8 @@ import {
 } from '../../interfaces/contacts/Import';
 import { standarize, combine, display, toPreVcard } from './csvFormat';
 import { range } from '../../helpers/array';
+import { getAllTypes } from '../../helpers/contacts';
+import { VCardKey } from '../../interfaces/contacts/VCard';
 
 interface PapaParseOnCompleteArgs {
     data?: string[][];
@@ -168,10 +170,29 @@ export const toVcard = (preVcards: PreVcardProperty[]): ContactPropertyWithDispl
     if (!preVcards.length) {
         return;
     }
+
+    const types = getAllTypes();
+
     const { pref, field, type, custom } = preVcards[0];
+
+    // Need to get the default type if the field has a second dropdown to be displayed
+    const defaultType = types[field]?.[0]?.value as VCardKey | undefined;
+
     return custom
-        ? { pref, field, type, value: combine.custom(preVcards), display: display.custom(preVcards) }
-        : { pref, field, type, value: combine[field](preVcards), display: display[field](preVcards) };
+        ? {
+              pref,
+              field,
+              type: type || defaultType,
+              value: combine.custom(preVcards),
+              display: display.custom(preVcards),
+          }
+        : {
+              pref,
+              field,
+              type: type || defaultType,
+              value: combine[field](preVcards),
+              display: display[field](preVcards),
+          };
 };
 
 /**
