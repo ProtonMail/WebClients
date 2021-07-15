@@ -31,7 +31,7 @@
 			max-width: em(200);
 		}
 
-		@include respond-to(1500) {
+		@include respond-to($breakpoint-large) {
 			display: none;
 		}
 	}
