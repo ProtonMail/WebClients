@@ -64,11 +64,11 @@ const DynamicProgress = ({
                 max={max}
                 {...rest}
             />
-            {display ? (
+            {!!display && (
                 <p aria-atomic="true" aria-live="polite" id={id}>
                     {display}
                 </p>
-            ) : null}
+            )}
         </div>
     );
 };

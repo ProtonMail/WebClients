@@ -29,11 +29,14 @@ const ImportSummaryModalContent = ({ model }: Props) => {
               `An error occurred while encrypting and adding your events. No event could be imported.`,
               totalToImport
           );
-    const displayMessage = c('Import calendar').ngettext(
-        msgid`${totalImported}/${totalToImport} event encrypted and added to your calendar`,
-        `${totalImported}/${totalToImport} events encrypted and added to your calendar`,
-        totalToImport
-    );
+    const displayMessage =
+        isPartialSuccess || isSuccess
+            ? c('Import calendar').ngettext(
+                  msgid`${totalImported}/${totalToImport} event encrypted and added to your calendar`,
+                  `${totalImported}/${totalToImport} events encrypted and added to your calendar`,
+                  totalToImport
+              )
+            : '';
 
     return (
         <>
@@ -41,7 +44,7 @@ const ImportSummaryModalContent = ({ model }: Props) => {
             <DynamicProgress
                 id="progress-import-calendar"
                 value={totalProcessed}
-                display={isPartialSuccess || isSuccess ? displayMessage : undefined}
+                display={displayMessage}
                 max={totalToProcess}
                 loading={false}
                 success={isSuccess}
