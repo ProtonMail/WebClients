@@ -143,7 +143,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             return acc;
         }, {});
 
-        setCache({ ...cache, elements });
+        setCache((cache) => ({ ...cache, elements }));
 
         globalCache.delete(ConversationCountsModel.key);
         globalCache.delete(MessageCountsModel.key);
@@ -296,7 +296,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             void incrementSearch(page, setEncryptedSearchResults, shouldLoadMoreES());
         }
         if (!shouldLoadMoreES()) {
-            setCache({ ...cache, page });
+            setCache((cache) => ({ ...cache, page }));
         }
     };
 
