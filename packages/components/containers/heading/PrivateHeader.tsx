@@ -82,7 +82,7 @@ const PrivateHeader = ({
                 <TopNavbarList>
                     {isNarrow && searchDropdown ? <TopNavbarListItem>{searchDropdown}</TopNavbarListItem> : null}
                     {hasPaidMail || isVPN ? null : (
-                        <TopNavbarListItem noShrink>
+                        <TopNavbarListItem noShrink collapsedOnDesktop={false}>
                             <TopNavbarListItemButton
                                 as={SettingsLink}
                                 shape="outline"
@@ -95,7 +95,7 @@ const PrivateHeader = ({
                         </TopNavbarListItem>
                     )}
                     {hasPaidVpn || !isVPN ? null : (
-                        <TopNavbarListItem noShrink>
+                        <TopNavbarListItem noShrink collapsedOnDesktop={false}>
                             <TopNavbarListItemButton
                                 as={AppLink}
                                 text={c('Link').t`Upgrade`}
