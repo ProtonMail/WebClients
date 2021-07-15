@@ -1,6 +1,6 @@
 import { MutableRefObject, useEffect, useRef } from 'react';
 import { c } from 'ttag';
-import { useApi, useGetCalendarEventRaw } from '@proton/components';
+import { useApi, useGetCalendarEventRaw, useHasSuspendedCounter } from '@proton/components';
 import { fromUnixTime, differenceInMilliseconds } from 'date-fns';
 import { getEvent as getEventRoute } from '@proton/shared/lib/api/calendars';
 import { create } from '@proton/shared/lib/helpers/desktopNotification';
@@ -40,6 +40,7 @@ interface Props {
 }
 const AlarmWatcher = ({ alarms = [], tzid, calendarsEventsCacheRef }: Props) => {
     const api = useApi();
+    const hasSuspendedCounter = useHasSuspendedCounter({ refreshInterval: MINUTE, tolerance: MINUTE / 2 });
     const getCalendarEventRaw = useGetCalendarEventRaw();
     const cacheRef = useRef<Set<string>>();
 
@@ -118,7 +119,7 @@ const AlarmWatcher = ({ alarms = [], tzid, calendarsEventsCacheRef }: Props) => 
                 window.clearTimeout(timeoutHandle);
             }
         };
-    }, [alarms, tzid, getCalendarEventRaw]);
+    }, [alarms, tzid, getCalendarEventRaw, hasSuspendedCounter]);
 
     return null;
 };

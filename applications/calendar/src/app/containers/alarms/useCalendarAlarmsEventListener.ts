@@ -62,7 +62,6 @@ export const useCalendarsAlarmsEventListeners = (
                     const hasCalendarInCache = !!calendarsCache[CalendarID];
                     const occurrenceInMs = Occurrence > 0 ? Occurrence * 1000 : -1;
                     const isAlarmInRange = Occurrence !== -1 && occurrenceInMs >= +now && occurrenceInMs <= +end;
-
                     return hasCalendarInCache && isAlarmInRange;
                 });
 

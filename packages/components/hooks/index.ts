@@ -96,3 +96,4 @@ export * from './useHotkeys';
 export { default as useDragOver } from './useDragOver';
 export { default as useIsMounted } from './useIsMounted';
 export { default as useDropdownArrowNavigation } from './useDropdownArrowNavigation';
+export { default as useHasSuspendedCounter } from './useHasSuspendedCounter';
