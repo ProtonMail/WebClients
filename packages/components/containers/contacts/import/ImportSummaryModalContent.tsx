@@ -28,11 +28,14 @@ const ImportSummaryModalContent = ({ model }: Props) => {
               `An error occurred while encrypting and adding your contacts. No contact could be imported.`,
               totalToImport
           );
-    const displayMessage = c('Import contact').ngettext(
-        msgid`${totalImported}/${totalToImport} contact encrypted and added to your contact list`,
-        `${totalImported}/${totalToImport} contacts encrypted and added to your contact list`,
-        totalToImport
-    );
+    const displayMessage =
+        isPartialSuccess || isSuccess
+            ? c('Import contact').ngettext(
+                  msgid`${totalImported}/${totalToImport} contact encrypted and added to your contact list`,
+                  `${totalImported}/${totalToImport} contacts encrypted and added to your contact list`,
+                  totalToImport
+              )
+            : '';
 
     return (
         <>
@@ -40,7 +43,7 @@ const ImportSummaryModalContent = ({ model }: Props) => {
             <DynamicProgress
                 id="progress-import-contacts"
                 value={totalProcessed}
-                display={isPartialSuccess || isSuccess ? displayMessage : undefined}
+                display={displayMessage}
                 max={totalToProcess}
                 loading={false}
                 success={isSuccess}

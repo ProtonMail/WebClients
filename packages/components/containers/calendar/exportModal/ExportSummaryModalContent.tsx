@@ -32,11 +32,14 @@ const ExportSummaryModalContent = ({ model }: Props) => {
     const isPartialSuccess = totalProcessed > 0 && !isSuccess;
     const totalErrors = exportErrors.length;
 
-    const displayMessage = c('Export calendar').ngettext(
-        msgid`${totalProcessed}/${totalToProcess} event exported`,
-        `${totalProcessed}/${totalToProcess} events exported`,
-        totalToProcess
-    );
+    const displayMessage =
+        isPartialSuccess || isSuccess
+            ? c('Export calendar').ngettext(
+                  msgid`${totalProcessed}/${totalToProcess} event exported`,
+                  `${totalProcessed}/${totalToProcess} events exported`,
+                  totalToProcess
+              )
+            : '';
 
     const [passwordResetErrors, otherErrors] = partition<ExportError>(
         exportErrors,

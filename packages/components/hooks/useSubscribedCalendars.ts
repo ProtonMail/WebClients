@@ -125,7 +125,7 @@ const useSubscribedCalendars = (calendars: Calendar[]) => {
         };
 
         withLoading(run());
-    }, [calendars]);
+    }, [calendarIDs]);
 
     return { subscribedCalendars, loading };
 };
