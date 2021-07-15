@@ -7,11 +7,7 @@ const isLocalhost = (host: string) => host.startsWith('localhost');
 
 const isProduction = (host: string) => host.endsWith('.protonmail.com') || host === VPN_HOSTNAME;
 
-function main({
-    SENTRY_DSN,
-    COMMIT,
-    APP_VERSION,
-}: Pick<ProtonConfig, 'SENTRY_DSN' | 'COMMIT' | 'APP_VERSION'>) {
+function main({ SENTRY_DSN, COMMIT, APP_VERSION }: Pick<ProtonConfig, 'SENTRY_DSN' | 'COMMIT' | 'APP_VERSION'>) {
     const { host } = window.location;
 
     // No need to configure it if we don't load the DSN
@@ -53,6 +49,7 @@ function main({
             'No network connection',
             'webkitExitFullScreen', // Bug in Firefox for iOS.
             'InactiveSession',
+            'UnhandledRejection', // Happens too often in extensions and we have lints for that, so should be safe to ignore.
             /chrome-extension/,
             /moz-extension/,
         ],
