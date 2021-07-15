@@ -505,7 +505,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                 console.error(message, context);
                 captureMessage(message, { extra: { context } });
             }
-            resetCache(cache.retry, !esEnabled && isSearch(search));
+            resetCache(undefined, !esEnabled && isSearch(search));
         }
     }, [cache.pendingRequest]);
 
