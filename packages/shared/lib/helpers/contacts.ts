@@ -140,6 +140,7 @@ export const getTypeLabels = () => ({
 });
 
 export const getAllTypes: () => { [key: string]: { text: string; value: string }[] } = () => ({
+    fn: [],
     email: [
         { text: c('Property type').t`Email`, value: '' },
         { text: c('Property type').t`Home`, value: 'home' },
@@ -179,7 +180,7 @@ export const getAllTypes: () => { [key: string]: { text: string; value: string }
 });
 
 export const getTypeValues: () => { [key: string]: string[] } = () => ({
-    fn: ['', 'yomi'],
+    fn: [],
     email: ['', 'home', 'work', 'other'],
     tel: ['', 'home', 'work', 'other', 'cell', 'main', 'fax', 'pager'],
     adr: ['', 'home', 'work', 'other'],
