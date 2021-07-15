@@ -35,6 +35,7 @@ export interface Props {
     weekStartsOn?: WeekStartsOn;
     numberOfDays?: number;
     fixedSize?: boolean;
+    preventLeaveFocus?: boolean;
 }
 
 const MiniCalendar = ({
@@ -71,6 +72,7 @@ const MiniCalendar = ({
     numberOfWeeks = 6,
     displayWeekNumbers = false,
     fixedSize = false,
+    preventLeaveFocus = false,
 }: Props) => {
     const [temporaryDate, setTemporaryDate] = useState<Date | undefined>();
     const cellRef = useRef<HTMLLIElement>(null);
@@ -122,10 +124,10 @@ const MiniCalendar = ({
         setTemporaryDate(undefined);
     }, [selectedDate]);
 
-    const preventLeaveFocus = (e: FormEvent<HTMLElement>) => e.preventDefault();
+    const handleMouseDown = preventLeaveFocus ? (e: FormEvent<HTMLElement>) => e.preventDefault() : undefined;
 
     return (
-        <div className="minicalendar" onMouseDown={preventLeaveFocus} aria-label={monthLabel}>
+        <div className="minicalendar" onMouseDown={handleMouseDown} aria-label={monthLabel}>
             <div className="flex flex-align-items-center flex-nowrap p1">
                 <span className="text-bold flex-item-fluid text-ellipsis">{monthLabel}</span>
 
