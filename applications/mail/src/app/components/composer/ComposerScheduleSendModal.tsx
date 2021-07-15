@@ -105,8 +105,7 @@ const ComposerScheduleSendModal = ({ onClose, onSubmit }: Props) => {
             onSubmit={handleSubmit}
             onCancel={handleCancel}
         >
-            {/* @todo update learn more link */}
-            <Alert learnMore="https://protonmail.com/support/knowledge-base/">
+            <Alert learnMore="https://protonmail.com/support/knowledge-base/schedule-email-send/">
                 {c('Info').t`When do you want your message to be sent?`}
             </Alert>
 
