@@ -84,7 +84,7 @@ export const useSendHandler = ({
                 <SendingMessageNotification
                     scheduledAt={scheduledAt}
                     manager={notifManager}
-                    messageID={modelMessage.data?.ID}
+                    conversationID={modelMessage.data?.ConversationID}
                 />
             ),
             expiration: -1,
