@@ -5,10 +5,10 @@ import { Icon, FileIcon, FileNameDisplay, Button } from '../../components';
 const SHARED_STATUS_TO_COLOR = {
     '': undefined,
     shared: 'color-info',
-    expired: 'color-weak',
+    inactive: 'color-weak',
 };
 
-export type SharedStatus = '' | 'shared' | 'expired';
+export type SharedStatus = '' | 'shared' | 'inactive';
 
 interface Props {
     name?: string;
