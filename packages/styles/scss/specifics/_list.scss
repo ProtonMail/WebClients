@@ -227,7 +227,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	font-size: em(13);
 }
 
-.is-compact {
+.list-compact {
 	.item-container,
 	.item-container-row {
 		height: $item-container-height-compact-mode;
