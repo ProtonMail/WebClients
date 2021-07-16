@@ -136,7 +136,11 @@ export type CacheIndexedDB = (force?: boolean) => Promise<{ cachedMessages: Cach
 
 export type HighlightString = (content: string, setAutoScroll: boolean) => string;
 
-export type HighlightMetadata = (metadata: string) => JSX.Element;
+export type HighlightMetadata = (
+    metadata: string,
+    isBold?: boolean,
+    trim?: boolean
+) => { numOccurrences: number; resultJSX: JSX.Element };
 
 export type IsSearchResult = (ID: string) => boolean;
 

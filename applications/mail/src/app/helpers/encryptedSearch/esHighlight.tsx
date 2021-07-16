@@ -1,16 +1,18 @@
 import React, { ReactNode } from 'react';
+import { classnames } from '@proton/components';
 import { HighlightMetadata } from '../../models/encryptedSearch';
+import { ES_MAX_INITIAL_CHARS } from '../../constants';
 
 /**
  * Traverse an email's body to highlight only text within HTML tags
  */
-const recursiveBodyTraversal = (node: Node, applySearch: (text: string) => HTMLSpanElement | undefined) => {
+const recursiveBodyTraversal = (node: Node, applySearchMarkup: (text: string) => HTMLSpanElement | undefined) => {
     if (node.nodeName === 'STYLE') {
         return;
     }
     if (node.nodeName === '#text') {
         if (node.textContent) {
-            const highlightedSpan = applySearch(node.textContent);
+            const highlightedSpan = applySearchMarkup(node.textContent);
             if (highlightedSpan) {
                 node.parentNode?.replaceChild(highlightedSpan, node);
             }
@@ -18,7 +20,7 @@ const recursiveBodyTraversal = (node: Node, applySearch: (text: string) => HTMLS
         return;
     }
     for (const child of node.childNodes) {
-        recursiveBodyTraversal(child, applySearch);
+        recursiveBodyTraversal(child, applySearchMarkup);
     }
 };
 
@@ -75,7 +77,7 @@ export const insertMarks = (content: string, normalisedKeywords: string[], setAu
     const domParser = new DOMParser();
     const html = domParser.parseFromString(content, 'text/html');
 
-    const applySearch = (text: string) => {
+    const applySearchMarkup = (text: string) => {
         const sanitisedPositions = findOccurrences(text, normalisedKeywords);
         if (!sanitisedPositions.length) {
             return;
@@ -98,7 +100,7 @@ export const insertMarks = (content: string, normalisedKeywords: string[], setAu
         return span;
     };
 
-    recursiveBodyTraversal(html.body, applySearch);
+    recursiveBodyTraversal(html.body, applySearchMarkup);
 
     if (setAutoScroll) {
         const marks = html.body.getElementsByTagName('mark');
@@ -109,33 +111,53 @@ export const insertMarks = (content: string, normalisedKeywords: string[], setAu
 };
 
 /**
- * Creates an element containing the highlighted email subject
+ * Creates an element containing the highlighted email metadata
  */
-export const highlightJSX = (subject: string, normalisedKeywords: string[]) => {
-    const sanitisedPositions = findOccurrences(subject, normalisedKeywords);
+export const highlightJSX = (
+    metadata: string,
+    normalisedKeywords: string[],
+    isBold: boolean = false,
+    trim: boolean = false
+) => {
+    const sanitisedPositions = findOccurrences(metadata, normalisedKeywords);
 
-    if (sanitisedPositions.length) {
-        let previousIndex = 0;
-        return (
+    if (!sanitisedPositions.length) {
+        return {
+            numOccurrences: 0,
+            resultJSX: <span>{metadata}</span>,
+        };
+    }
+
+    let previousIndex = 0;
+    return {
+        numOccurrences: sanitisedPositions.length,
+        resultJSX: (
             <span>
                 {sanitisedPositions.map((position, index) => {
                     const oldPreviousIndex = previousIndex;
                     [, previousIndex] = position;
+                    const startingCharIndex = Math.max(0, position[0] - ES_MAX_INITIAL_CHARS);
+                    const startingSlice =
+                        index === 0 && trim
+                            ? `${startingCharIndex !== 0 ? '…' : ''}${metadata.slice(startingCharIndex, position[0])}`
+                            : metadata.slice(oldPreviousIndex, position[0]);
                     return (
                         <span
                             key={index} // eslint-disable-line react/no-array-index-key
                         >
-                            {subject.slice(oldPreviousIndex, position[0])}
-                            <mark>{subject.slice(position[0], position[1])}</mark>
+                            {startingSlice}
+                            <mark className={classnames([isBold && 'text-bold'])}>
+                                {metadata.slice(position[0], position[1])}
+                            </mark>
+                            {index === sanitisedPositions.length - 1
+                                ? metadata.slice(sanitisedPositions[sanitisedPositions.length - 1][1])
+                                : null}
                         </span>
                     );
                 })}
-                {subject.slice(sanitisedPositions[sanitisedPositions.length - 1][1])}
             </span>
-        );
-    }
-
-    return <span>{subject}</span>;
+        ),
+    };
 };
 
 /**
@@ -144,7 +166,7 @@ export const highlightJSX = (subject: string, normalisedKeywords: string[]) => {
 export const highlightNode = (node: ReactNode, highlightMetadata: HighlightMetadata) => {
     const nodeValue = node?.valueOf();
     if (typeof nodeValue === 'string') {
-        return highlightMetadata(nodeValue);
+        return highlightMetadata(nodeValue).resultJSX;
     }
     if (
         !!nodeValue &&
@@ -158,7 +180,7 @@ export const highlightNode = (node: ReactNode, highlightMetadata: HighlightMetad
         ) {
             const { children } = props;
             if (Array.isArray(props.children) && children.every((child: any) => typeof child === 'string')) {
-                return highlightMetadata(children.join(''));
+                return highlightMetadata(children.join('')).resultJSX;
             }
         }
     }

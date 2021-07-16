@@ -22,7 +22,11 @@ const ConversationHeader = ({ className, loading, element, labelID, highlightKey
 
     const isConversation = testIsConversation(element);
     const subjectElement =
-        !!element.Subject && highlightKeywords ? highlightMetadata(element.Subject) : <span>{element.Subject}</span>;
+        !!element.Subject && highlightKeywords ? (
+            highlightMetadata(element.Subject, true).resultJSX
+        ) : (
+            <span>{element.Subject}</span>
+        );
 
     return (
         <header
