@@ -347,7 +347,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
      * @param error: optional error from last request
      */
     const newRetry = (payload: any, error: Error | undefined) => {
-        const count = isDeepEqual(payload, cache.retry.payload) && error ? cache.retry.count + 1 : 1;
+        const count = error && isDeepEqual(payload, cache.retry.payload) ? cache.retry.count + 1 : 1;
         return { payload, count, error };
     };
 
