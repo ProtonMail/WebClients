@@ -9,7 +9,7 @@ import {
     Row,
     useLoading,
     SubTitle,
-    PayPalButton,
+    StyledPayPalButton,
 } from '@proton/components';
 import { c } from 'ttag';
 import { PAYMENT_METHOD_TYPES, CYCLE, CURRENCIES } from '@proton/shared/lib/constants';
@@ -63,8 +63,7 @@ const PaymentStep = ({ onPay, paymentAmount, model, children }) => {
                         )}
                         {method === PAYMENT_METHOD_TYPES.PAYPAL && (
                             <Field>
-                                <PayPalButton paypal={paypal} color="norm" amount={paymentAmount}>{c('Action')
-                                    .t`Continue`}</PayPalButton>
+                                <StyledPayPalButton paypal={paypal} amount={paymentAmount} />
                             </Field>
                         )}
                     </Payment>

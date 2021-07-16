@@ -7,7 +7,7 @@ import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { Input, FormModal, PrimaryButton, Row, Label, Field, Price } from '../../components';
 import { useApiResult, useModals, useNotifications, useApi, useLoading, useEventManager } from '../../hooks';
 
-import PayPalButton from '../payments/PayPalButton';
+import StyledPayPalButton from '../payments/StyledPayPalButton';
 import Payment from '../payments/Payment';
 import usePayment from '../payments/usePayment';
 import { handlePaymentToken } from '../payments/paymentTokenHelper';
@@ -44,8 +44,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
 
     const submit =
         method === PAYMENT_METHOD_TYPES.PAYPAL ? (
-            <PayPalButton paypal={paypal} flow="invoice" color="norm" amount={AmountDue}>{c('Action')
-                .t`Continue`}</PayPalButton>
+            <StyledPayPalButton paypal={paypal} flow="invoice" amount={AmountDue} />
         ) : (
             <PrimaryButton loading={loading} disabled={!canPay} type="submit">{c('Action').t`Pay`}</PrimaryButton>
         );

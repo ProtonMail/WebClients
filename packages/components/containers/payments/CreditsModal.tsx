@@ -18,7 +18,7 @@ import PaymentInfo from './PaymentInfo';
 import Payment from './Payment';
 import usePayment from './usePayment';
 import { handlePaymentToken } from './paymentTokenHelper';
-import PayPalButton from './PayPalButton';
+import StyledPayPalButton from './StyledPayPalButton';
 import { PaymentParameters } from './interface';
 
 const getCurrenciesI18N = () => ({
@@ -65,8 +65,7 @@ const CreditsModal = (props: Props) => {
     const submit =
         debouncedAmount >= MIN_CREDIT_AMOUNT ? (
             method === PAYMENT_METHOD_TYPES.PAYPAL ? (
-                <PayPalButton paypal={paypal} color="norm" amount={debouncedAmount}>{c('Action')
-                    .t`Continue`}</PayPalButton>
+                <StyledPayPalButton paypal={paypal} amount={debouncedAmount} />
             ) : (
                 <PrimaryButton loading={loading} disabled={!canPay} type="submit">{c('Action')
                     .t`Top up`}</PrimaryButton>
