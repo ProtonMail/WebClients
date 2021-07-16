@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { InvalidForkConsumeError } from '@proton/shared/lib/authentication/error';
-import { consumeFork, getConsumeForkParameters } from '@proton/shared/lib/authentication/sessionForking';
+import {
+    consumeFork,
+    getConsumeForkParameters,
+    removeHashParameters,
+} from '@proton/shared/lib/authentication/sessionForking';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { useApi, useErrorHandler } from '../../hooks';
@@ -38,6 +42,9 @@ const SSOForkConsumer = ({ onLogin, onEmptyFork, onInvalidFork }: Props) => {
                 if (e instanceof InvalidForkConsumeError) {
                     return onInvalidFork();
                 }
+
+                removeHashParameters();
+
                 throw e;
             }
         };
