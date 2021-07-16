@@ -72,7 +72,7 @@ export const useSendVerifications = () => {
             });
         }
 
-        const normalized = normalize(`${message.data.Subject} ${message.document?.textContent || ''}`, true);
+        const normalized = normalize(`${message.data.Subject} ${message.document?.textContent || ''}`);
         const [keyword] =
             normalized.match(EN_REGEX) ||
             normalized.match(FR_REGEX) ||
