@@ -24,5 +24,6 @@ export { default as usePayment } from './usePayment';
 export { default as getDefaultCard } from './getDefaultCard';
 export { default as DonateModal } from './DonateModal';
 export { default as PayPalButton } from './PayPalButton';
+export { default as StyledPayPalButton } from './StyledPayPalButton';
 
 export * from './subscription';

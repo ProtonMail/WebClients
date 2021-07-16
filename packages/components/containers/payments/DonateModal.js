@@ -16,7 +16,7 @@ import PaymentInfo from './PaymentInfo';
 import AmountRow from './AmountRow';
 import Payment from './Payment';
 import usePayment from './usePayment';
-import PayPalButton from './PayPalButton';
+import StyledPayPalButton from './StyledPayPalButton';
 import { handlePaymentToken } from './paymentTokenHelper';
 
 const DonateModal = ({ ...rest }) => {
@@ -51,8 +51,7 @@ const DonateModal = ({ ...rest }) => {
     const submit =
         debouncedAmount >= MIN_DONATION_AMOUNT ? (
             method === PAYMENT_METHOD_TYPES.PAYPAL ? (
-                <PayPalButton paypal={paypal} color="norm" amount={debouncedAmount}>{c('Action')
-                    .t`Continue`}</PayPalButton>
+                <StyledPayPalButton paypal={paypal} amount={debouncedAmount} />
             ) : (
                 <PrimaryButton loading={loading} disabled={!canPay} type="submit">{c('Action')
                     .t`Donate`}</PrimaryButton>
