@@ -8,6 +8,7 @@ import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import {
     CachedMessage,
     EncryptedSearchDB,
+    ESBaseMessage,
     MessageForSearch,
     NormalisedSearchParams,
     StoredCiphertext,
@@ -111,9 +112,9 @@ export const storeToDB = async (newCiphertextToStore: StoredCiphertext, esDB: ID
 };
 
 /**
- * Check whether two MessageForSearch objects are equal
+ * Check whether two ESBaseMessage objects are equal
  */
-export const compareMessagesForSearch = (message1: MessageForSearch, message2: MessageForSearch) => {
+export const compareESBaseMessages = (message1: ESBaseMessage, message2: ESBaseMessage) => {
     let key1: keyof typeof message1;
     for (key1 in message1) {
         if (JSON.stringify(message1[key1]) !== JSON.stringify(message2[key1])) {
@@ -240,15 +241,16 @@ export const refreshIndex = async (
                                 if (!oldMessage) {
                                     throw new Error('Old message is undefined');
                                 }
-                                const { decryptionError, decryptedBody, decryptedSubject, messageForSearch } =
-                                    splitCachedMessage(oldMessage);
-                                const newMessageForSearch = prepareMessageMetadata(message);
-                                if (!compareMessagesForSearch(messageForSearch, newMessageForSearch)) {
+                                const { decryptionError, decryptedBody, decryptedSubject } = oldMessage;
+                                const oldMessageForSearch = splitCachedMessage(oldMessage);
+                                const oldBaseMessage = prepareMessageMetadata(oldMessageForSearch);
+                                const newBaseMessage = prepareMessageMetadata(message);
+                                if (!compareESBaseMessages(oldBaseMessage, newBaseMessage)) {
                                     const newMessageToCache: CachedMessage = {
                                         decryptionError,
                                         decryptedBody,
                                         decryptedSubject,
-                                        ...newMessageForSearch,
+                                        ...newBaseMessage,
                                     };
 
                                     const newCiphertextToStore = await encryptToDB(newMessageToCache, indexKey);
@@ -384,7 +386,7 @@ export const syncMessageEvents = async (
         messageToCache?: CachedMessage;
     }) => {
         if (messageToCache) {
-            const { messageForSearch } = splitCachedMessage(messageToCache);
+            const messageForSearch = splitCachedMessage(messageToCache);
 
             if (resultIndex) {
                 permanentResults.splice(resultIndex, 1, messageForSearch);

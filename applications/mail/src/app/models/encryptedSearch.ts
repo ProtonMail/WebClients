@@ -16,7 +16,7 @@ export interface ESMetricsReport {
     isCacheLimited: boolean;
 }
 
-export type MessageForSearch = Pick<
+export type ESBaseMessage = Pick<
     Message,
     | 'ID'
     | 'Order'
@@ -39,11 +39,13 @@ export type MessageForSearch = Pick<
     | 'LabelIDs'
 >;
 
-export interface CachedMessage extends MessageForSearch {
+export interface CachedMessage extends ESBaseMessage {
     decryptedBody?: string;
     decryptedSubject?: string;
     decryptionError: boolean;
 }
+
+export type MessageForSearch = Omit<CachedMessage, 'decryptionError' | 'decryptedSubject'>;
 
 export interface AesGcmCiphertext {
     iv: Uint8Array;

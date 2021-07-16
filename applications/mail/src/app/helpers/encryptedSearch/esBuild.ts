@@ -12,6 +12,7 @@ import { locateBlockquote } from '../message/messageBlockquote';
 import {
     CachedMessage,
     EncryptedSearchDB,
+    ESBaseMessage,
     GetUserKeys,
     MessageForSearch,
     RecoveryPoint,
@@ -89,10 +90,10 @@ export const cleanText = (text: string, removeQuote: boolean) => {
 };
 
 /**
- * Turns a Message into a MessageForSearch
+ * Turns a Message into a ESBaseMessage
  */
-export const prepareMessageMetadata = (message: Message) => {
-    const messageForSearch: MessageForSearch = {
+export const prepareMessageMetadata = (message: Message | MessageForSearch) => {
+    const messageForSearch: ESBaseMessage = {
         ID: message.ID,
         ConversationID: message.ConversationID,
         Subject: message.Subject,
