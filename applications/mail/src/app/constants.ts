@@ -101,6 +101,7 @@ export const ES_MAX_CONCURRENT = 10;
 export const ES_MAX_CACHE = 500000000; // 500 MB
 export const ES_MAX_PAGES_PER_BATCH = 100;
 export const ES_MAX_MESSAGES_PER_BATCH = 1000;
+export const ES_MAX_INITIAL_CHARS = 20;
 export const AesKeyGenParams: AesKeyGenParams = { name: 'AES-GCM', length: 128 };
 export const KeyUsages: KeyUsage[] = ['encrypt', `decrypt`];
 export const localisedForwardFlags = [

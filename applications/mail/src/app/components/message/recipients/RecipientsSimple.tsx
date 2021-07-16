@@ -28,7 +28,7 @@ const RecipientsSimple = ({ message, isLoading, highlightKeywords = false }: Pro
                             ? recipientsOrGroup.map((recipientOrGroup, index) => {
                                   const label = getRecipientOrGroupLabel(recipientOrGroup);
                                   const highlightedLabel =
-                                      !!label && highlightKeywords ? highlightMetadata(label) : label;
+                                      !!label && highlightKeywords ? highlightMetadata(label).resultJSX : label;
 
                                   return (
                                       <span
