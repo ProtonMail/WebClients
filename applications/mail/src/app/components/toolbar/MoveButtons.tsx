@@ -172,7 +172,7 @@ const MoveButtons = ({
     } else if (labelID === SENT || labelID === ALL_SENT) {
         buttons = [trashButton, archiveButton, deleteButton];
     } else if (labelID === SCHEDULED) {
-        buttons = [trashButton, archiveButton, deleteButton];
+        buttons = [trashButton, archiveButton];
     } else if (labelID === STARRED) {
         buttons = [trashButton, archiveButton, spamButton];
     } else if (labelID === ARCHIVE) {

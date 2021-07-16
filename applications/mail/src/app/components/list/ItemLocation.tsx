@@ -1,7 +1,6 @@
 import React from 'react';
 import { useFolders, Tooltip, useMailSettings, classnames } from '@proton/components';
 
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getCurrentFolders } from '../../helpers/labels';
 import { Element } from '../../models/element';
 import ItemIcon from './ItemIcon';
@@ -33,11 +32,6 @@ const ItemLocation = ({
                 icon: 'parent-folder',
             },
         ];
-    }
-
-    // Scheduled messages are also in sent label, but we only want to display scheduled icon
-    if (labelID === MAILBOX_LABEL_IDS.SCHEDULED) {
-        infos = infos.filter((info) => info.name === 'Scheduled');
     }
 
     return (
