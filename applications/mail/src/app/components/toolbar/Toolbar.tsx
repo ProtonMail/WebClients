@@ -4,7 +4,6 @@ import { Location } from 'history';
 import { Icon, useMailSettings, useLabels, useFolders, ToolbarButton, ToolbarSeparator } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import ReadUnreadButtons from './ReadUnreadButtons';
 import ToolbarDropdown from './ToolbarDropdown';
 import MoveButtons from './MoveButtons';
@@ -107,27 +106,23 @@ const Toolbar = ({
                         data-testid="toolbar:back-button"
                     />
                 )}
-                {labelID !== MAILBOX_LABEL_IDS.SCHEDULED && (
-                    <>
-                        <ToolbarSeparator />
-                        <ReadUnreadButtons
-                            mailSettings={mailSettings}
-                            selectedIDs={selectedIDs}
-                            onBack={onBack}
-                            labelID={labelID}
-                        />
-                        <ToolbarSeparator />
-                        <MoveButtons
-                            labelID={labelID}
-                            elementID={elementID}
-                            labels={labels}
-                            folders={folders}
-                            breakpoints={breakpoints}
-                            selectedIDs={selectedIDs}
-                            onBack={onBack}
-                        />
-                    </>
-                )}
+                <ToolbarSeparator />
+                <ReadUnreadButtons
+                    mailSettings={mailSettings}
+                    selectedIDs={selectedIDs}
+                    onBack={onBack}
+                    labelID={labelID}
+                />
+                <ToolbarSeparator />
+                <MoveButtons
+                    labelID={labelID}
+                    elementID={elementID}
+                    labels={labels}
+                    folders={folders}
+                    breakpoints={breakpoints}
+                    selectedIDs={selectedIDs}
+                    onBack={onBack}
+                />
                 <ToolbarSeparator />
                 <ToolbarDropdown
                     autoClose={false}

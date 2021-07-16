@@ -2,7 +2,6 @@ import React from 'react';
 import { Checkbox, DropdownMenu, DropdownMenuButton, Icon, Tooltip } from '@proton/components';
 import { c } from 'ttag';
 
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import ToolbarDropdown from './ToolbarDropdown';
 import { isUnread, isStarred } from '../../helpers/elements';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElementsCache';
@@ -76,26 +75,22 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                             <Icon name="selectall" className="mr0-5" />
                             {c('Action').t`Select All`}
                         </DropdownMenuButton>
-                        {labelID !== MAILBOX_LABEL_IDS.SCHEDULED && (
-                            <>
-                                <DropdownMenuButton
-                                    className="text-left"
-                                    onClick={handleRead(true)}
-                                    data-testid="toolbar:all-read"
-                                >
-                                    <Icon name="read" className="mr0-5" />
-                                    {c('Action').t`All Read`}
-                                </DropdownMenuButton>
-                                <DropdownMenuButton
-                                    className="text-left"
-                                    onClick={handleRead(false)}
-                                    data-testid="toolbar:all-unread"
-                                >
-                                    <Icon name="unread" className="mr0-5" />
-                                    {c('Action').t`All Unread`}
-                                </DropdownMenuButton>
-                            </>
-                        )}
+                        <DropdownMenuButton
+                            className="text-left"
+                            onClick={handleRead(true)}
+                            data-testid="toolbar:all-read"
+                        >
+                            <Icon name="read" className="mr0-5" />
+                            {c('Action').t`All Read`}
+                        </DropdownMenuButton>
+                        <DropdownMenuButton
+                            className="text-left"
+                            onClick={handleRead(false)}
+                            data-testid="toolbar:all-unread"
+                        >
+                            <Icon name="unread" className="mr0-5" />
+                            {c('Action').t`All Unread`}
+                        </DropdownMenuButton>
                         <DropdownMenuButton
                             className="text-left"
                             onClick={handleStarred(true)}
