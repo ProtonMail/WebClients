@@ -362,90 +362,89 @@ const HeaderExpanded = ({
                 onLoadEmbeddedImages={onLoadEmbeddedImages}
             />
 
-            {!isScheduledMessage ? (
-                <div className="pt0-5 flex flex-justify-space-between border-top">
-                    <div className="flex">
-                        <HeaderMoreDropdown
-                            labelID={labelID}
-                            message={message}
-                            messageLoaded={messageLoaded}
-                            sourceMode={sourceMode}
-                            onBack={onBack}
-                            onToggle={onToggle}
-                            onSourceMode={onSourceMode}
-                            breakpoints={breakpoints}
-                            data-testid="message-header-expanded:more-dropdown"
-                            parentMessageRef={parentMessageRef}
-                        />
+            <div className="pt0-5 flex flex-justify-space-between border-top">
+                <div className="flex">
+                    <HeaderMoreDropdown
+                        labelID={labelID}
+                        message={message}
+                        messageLoaded={messageLoaded}
+                        sourceMode={sourceMode}
+                        onBack={onBack}
+                        onToggle={onToggle}
+                        onSourceMode={onSourceMode}
+                        breakpoints={breakpoints}
+                        data-testid="message-header-expanded:more-dropdown"
+                        parentMessageRef={parentMessageRef}
+                    />
 
-                        {!isNarrow && (
-                            <ButtonGroup className="mr1 mb0-5">
-                                <HeaderDropdown
-                                    icon
-                                    autoClose={false}
-                                    content={<Icon name="filter" alt={c('Action').t`Custom filter`} />}
-                                    className="messageFilterDropdownButton"
-                                    dropDownClassName="customFilterDropdown"
-                                    title={titleFilterOn}
-                                    loading={!messageLoaded}
-                                    externalToggleRef={filterDropdownToggleRef}
-                                    data-testid="message-header-expanded:filter-dropdown"
-                                >
-                                    {({ onClose }) => (
-                                        <CustomFilterDropdown message={message.data as Message} onClose={onClose} />
-                                    )}
-                                </HeaderDropdown>
-                                <HeaderDropdown
-                                    icon
-                                    autoClose={false}
-                                    noMaxSize
-                                    content={<Icon name="folder" alt={c('Action').t`Move to`} />}
-                                    className="messageMoveDropdownButton"
-                                    dropDownClassName="move-dropdown"
-                                    title={titleMoveTo}
-                                    loading={!messageLoaded}
-                                    externalToggleRef={moveDropdownToggleRef}
-                                    data-testid="message-header-expanded:folder-dropdown"
-                                >
-                                    {({ onClose, onLock }) => (
-                                        <MoveDropdown
-                                            labelID={currentFolderID}
-                                            selectedIDs={selectedIDs}
-                                            conversationMode={conversationMode}
-                                            onClose={onClose}
-                                            onLock={onLock}
-                                            onBack={onBack}
-                                            breakpoints={breakpoints}
-                                        />
-                                    )}
-                                </HeaderDropdown>
-                                <HeaderDropdown
-                                    icon
-                                    autoClose={false}
-                                    noMaxSize
-                                    content={<Icon name="label" alt={c('Action').t`Label as`} />}
-                                    className="messageLabelDropdownButton"
-                                    dropDownClassName="label-dropdown"
-                                    title={titleLabelAs}
-                                    loading={!messageLoaded}
-                                    externalToggleRef={labelDropdownToggleRef}
-                                    data-testid="message-header-expanded:label-dropdown"
-                                >
-                                    {({ onClose, onLock }) => (
-                                        <LabelDropdown
-                                            labelID={labelID}
-                                            labels={labels}
-                                            selectedIDs={selectedIDs}
-                                            onClose={onClose}
-                                            onLock={onLock}
-                                            breakpoints={breakpoints}
-                                        />
-                                    )}
-                                </HeaderDropdown>
-                            </ButtonGroup>
-                        )}
-                    </div>
-
+                    {!isNarrow && (
+                        <ButtonGroup className="mr1 mb0-5">
+                            <HeaderDropdown
+                                icon
+                                autoClose={false}
+                                content={<Icon name="filter" alt={c('Action').t`Custom filter`} />}
+                                className="messageFilterDropdownButton"
+                                dropDownClassName="customFilterDropdown"
+                                title={titleFilterOn}
+                                loading={!messageLoaded}
+                                externalToggleRef={filterDropdownToggleRef}
+                                data-testid="message-header-expanded:filter-dropdown"
+                            >
+                                {({ onClose }) => (
+                                    <CustomFilterDropdown message={message.data as Message} onClose={onClose} />
+                                )}
+                            </HeaderDropdown>
+                            <HeaderDropdown
+                                icon
+                                autoClose={false}
+                                noMaxSize
+                                content={<Icon name="folder" alt={c('Action').t`Move to`} />}
+                                className="messageMoveDropdownButton"
+                                dropDownClassName="move-dropdown"
+                                title={titleMoveTo}
+                                loading={!messageLoaded}
+                                externalToggleRef={moveDropdownToggleRef}
+                                data-testid="message-header-expanded:folder-dropdown"
+                            >
+                                {({ onClose, onLock }) => (
+                                    <MoveDropdown
+                                        labelID={currentFolderID}
+                                        selectedIDs={selectedIDs}
+                                        conversationMode={conversationMode}
+                                        onClose={onClose}
+                                        onLock={onLock}
+                                        onBack={onBack}
+                                        breakpoints={breakpoints}
+                                    />
+                                )}
+                            </HeaderDropdown>
+                            <HeaderDropdown
+                                icon
+                                autoClose={false}
+                                noMaxSize
+                                content={<Icon name="label" alt={c('Action').t`Label as`} />}
+                                className="messageLabelDropdownButton"
+                                dropDownClassName="label-dropdown"
+                                title={titleLabelAs}
+                                loading={!messageLoaded}
+                                externalToggleRef={labelDropdownToggleRef}
+                                data-testid="message-header-expanded:label-dropdown"
+                            >
+                                {({ onClose, onLock }) => (
+                                    <LabelDropdown
+                                        labelID={labelID}
+                                        labels={labels}
+                                        selectedIDs={selectedIDs}
+                                        onClose={onClose}
+                                        onLock={onLock}
+                                        breakpoints={breakpoints}
+                                    />
+                                )}
+                            </HeaderDropdown>
+                        </ButtonGroup>
+                    )}
+                </div>
+                {!isScheduledMessage && (
                     <ButtonGroup className="mb0-5">
                         <Tooltip title={titleReply}>
                             <Button
@@ -478,8 +477,8 @@ const HeaderExpanded = ({
                             </Button>
                         </Tooltip>
                     </ButtonGroup>
-                </div>
-            ) : null}
+                )}
+            </div>
             {/* {messageLoaded ? <HeaderAttachmentEvent message={message} /> : null} */}
         </div>
     );
