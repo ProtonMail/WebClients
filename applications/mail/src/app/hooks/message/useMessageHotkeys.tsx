@@ -88,6 +88,8 @@ export const useMessageHotkeys = (
     const isMessageReady = messageLoaded && bodyLoaded;
     const hotkeysEnabledAndMessageReady = Shortcuts && isMessageReady && expanded && !message.actionInProgress;
 
+    const isScheduledMessage = message.data?.LabelIDs?.includes(MAILBOX_LABEL_IDS.SCHEDULED);
+
     const moveElementTo = async (e: KeyboardEvent, LabelID: MAILBOX_LABEL_IDS) => {
         if (!message.data) {
             return;
@@ -169,7 +171,7 @@ export const useMessageHotkeys = (
         [
             'R',
             (e) => {
-                if (hotkeysEnabledAndMessageReady) {
+                if (hotkeysEnabledAndMessageReady && !isScheduledMessage) {
                     e.preventDefault();
                     e.stopPropagation();
                     onCompose({
@@ -182,7 +184,7 @@ export const useMessageHotkeys = (
         [
             ['Shift', 'R'],
             (e) => {
-                if (hotkeysEnabledAndMessageReady) {
+                if (hotkeysEnabledAndMessageReady && !isScheduledMessage) {
                     e.preventDefault();
                     e.stopPropagation();
                     onCompose({
@@ -195,7 +197,7 @@ export const useMessageHotkeys = (
         [
             ['Shift', 'F'],
             (e) => {
-                if (hotkeysEnabledAndMessageReady) {
+                if (hotkeysEnabledAndMessageReady && !isScheduledMessage) {
                     e.preventDefault();
                     e.stopPropagation();
                     onCompose({
