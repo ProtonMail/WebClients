@@ -189,14 +189,9 @@ export const getTimeLimits = (prevStart: number, begin: number | undefined, end:
  * Split a CachedMessage into a MessageForSearch and other fields
  */
 export const splitCachedMessage = (cachedMessage: CachedMessage) => {
-    const { decryptedBody, decryptedSubject, decryptionError, ...otherFields } = cachedMessage;
+    const { decryptedSubject, decryptionError, ...otherFields } = cachedMessage;
     const messageForSearch: MessageForSearch = { ...otherFields };
-    return {
-        decryptedBody,
-        decryptedSubject,
-        decryptionError,
-        messageForSearch,
-    };
+    return messageForSearch;
 };
 
 /**
@@ -278,7 +273,7 @@ export const uncachedSearchAsc = async (
                 continue;
             }
             if (applySearch(normalisedSearchParams, messageToSearch, incrementMessagesSearched)) {
-                const { messageForSearch } = splitCachedMessage(messageToSearch);
+                const messageForSearch = splitCachedMessage(messageToSearch);
                 resultsArray.push(messageForSearch);
             }
             if (messageLimit && resultsArray.length >= messageLimit) {
@@ -338,7 +333,7 @@ export const uncachedSearchDesc = async (
                 continue;
             }
             if (applySearch(normalisedSearchParams, messageToSearch, incrementMessagesSearched)) {
-                const { messageForSearch } = splitCachedMessage(messageToSearch);
+                const messageForSearch = splitCachedMessage(messageToSearch);
                 resultsArray.push(messageForSearch);
             }
             if (messageLimit && resultsArray.length >= messageLimit) {
@@ -531,7 +526,7 @@ export const cachedSearch = async (
 
     esCache.forEach((messageToSearch: CachedMessage) => {
         if (applySearch(normalisedSearchParams, messageToSearch, incrementMessagesSearched)) {
-            const { messageForSearch } = splitCachedMessage(messageToSearch);
+            const messageForSearch = splitCachedMessage(messageToSearch);
             searchResults.push(messageForSearch);
         }
     });
