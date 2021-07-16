@@ -4,6 +4,7 @@ import { getAppHref } from '../../lib/apps/helper';
 const location = {
     hostname: 'calendar.protonmail.com',
     protocol: 'https:',
+    port: '',
 };
 describe('sso app href', () => {
     it('should produce links relative to the current second level domain', () => {
@@ -14,6 +15,7 @@ describe('sso app href', () => {
         const location = {
             hostname: 'localhost',
             protocol: 'http:',
+            port: '',
         };
         expect(getAppHref('/', APPS.PROTONACCOUNT, undefined, location)).toBe(`http://account.localhost`);
     });
@@ -22,6 +24,7 @@ describe('sso app href', () => {
         const location = {
             hostname: 'protonmail.com',
             protocol: 'https:',
+            port: '',
         };
         expect(getAppHref('/', APPS.PROTONACCOUNT, undefined, location)).toBe(`https://account.protonmail.com`);
     });
@@ -38,14 +41,25 @@ describe('sso app href', () => {
         const location = {
             hostname: 'test.com',
             protocol: 'https:',
+            port: '',
         };
         expect(getAppHref('/', APPS.PROTONCALENDAR, 2, location)).toBe(`https://calendar.test.com/u/2`);
+    });
+
+    it('should produce links respecting the port', () => {
+        const location = {
+            hostname: 'test.com',
+            protocol: 'https:',
+            port: '4443',
+        };
+        expect(getAppHref('/', APPS.PROTONCALENDAR, 2, location)).toBe(`https://calendar.test.com:4443/u/2`);
     });
 
     it('should produce links to other apps with another location', () => {
         const location = {
             hostname: 'test.com',
             protocol: 'https:',
+            port: '',
         };
         expect(getAppHref('/', APPS.PROTONCALENDAR, 2, location)).toBe(`https://calendar.test.com/u/2`);
     });
@@ -54,6 +68,7 @@ describe('sso app href', () => {
         const location = {
             hostname: 'account.protonvpn.com',
             protocol: 'https:',
+            port: '',
         };
         expect(getAppHref('/', APPS.PROTONCALENDAR, 2, location)).toBe(`https://calendar.protonmail.com/u/2`);
     });
