@@ -11,7 +11,6 @@ import { useLoading, useApi, useSubscription } from '../../../hooks';
 import { classnames } from '../../../helpers';
 import CurrencySelector from '../CurrencySelector';
 import './BlackFridayModal.scss';
-import BlackFridayModalDescription from './BlackFridayModalDescription';
 import useBlackFridayModalTitle from './useBlackFridayModalTitle';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
@@ -96,7 +95,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
 
     const getCTA = () => {
         if (productPayer) {
-            return c('blackfriday Action').t`Upgrade`;
+            return c('blackfriday Action').t`Get the offer`;
         }
         return c('blackfriday Action').t`Get limited-time deal`;
     };
@@ -194,7 +193,7 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                 </div>
             ) : (
                 <>
-                    <BlackFridayModalDescription isProductPayer={productPayer} />
+                    {/* <BlackFridayModalDescription isProductPayer={productPayer} /> */}
                     <div
                         className={classnames([
                             'flex flex-nowrap flex-justify-space-around on-mobile-flex-column',
@@ -268,26 +267,20 @@ const BlackFridayModal = ({ bundles = [], onSelect, ...rest }: Props) => {
                                                 <>
                                                     <p className="m0">{c('blackfriday Info').t`Includes`}</p>
                                                     <p className={classnames(['mt0', popular && 'color-success'])}>
-                                                        {c('blackfriday Info').t`early access to`}
                                                         <strong className="blackfriday-protonDrive-productName ml0-25">
-                                                            {driveAppName}
+                                                            {driveAppName} {c('blackfriday Info').t`beta`}
                                                         </strong>
                                                         <Info
                                                             buttonClass="inline-flex color-inherit ml0-25 mb0-1"
                                                             url="https://protonmail.com/support/knowledge-base/protondrive-early-access/?utm_campaign=ww-en-2c-mail-coms_inapp-protondrive_learn_more&utm_source=webmail&utm_medium=app_ad&utm_content=tooltip_v4"
                                                         />
-                                                        <span className="block">
-                                                            <span className="blackfriday-protonDrive-free bg-success text-uppercase text-bold pl0-5 pr0-5">
-                                                                {c('blackfriday Info').t`Free`}
-                                                            </span>
-                                                        </span>
                                                     </p>
                                                 </>
                                             ) : null}
                                         </div>
                                         <Button
                                             color="norm"
-                                            shape={popular || productPayer ? 'outline' : undefined}
+                                            shape={popular || productPayer ? 'solid' : undefined}
                                             className={classnames(['mb1 text-uppercase'])}
                                             onClick={() => {
                                                 rest.onClose?.();
