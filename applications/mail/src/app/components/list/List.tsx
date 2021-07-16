@@ -71,11 +71,11 @@ const List = (
     }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
-    const isCompactView = userSettings.Density === DENSITY.COMPACT;
-
     const [labels] = useLabels();
-    const { getESDBStatus } = useEncryptedSearchContext();
+    const { getESDBStatus, shouldHighlight } = useEncryptedSearchContext();
     const { dbExists, esEnabled, isSearchPartial, isCacheLimited, isSearching } = getESDBStatus();
+    // Override compactness of the list view to accomodate body preview when showing encrypted search results
+    const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldHighlight();
 
     const elements = usePlaceholders(inputElements, loading, placeholderCount);
     const pagingHandlers = usePaging(inputPage, inputTotal, onPage);
@@ -124,7 +124,7 @@ const List = (
             ref={ref}
             className={classnames([
                 'items-column-list scroll-if-needed scroll-smooth-touch',
-                isCompactView && 'is-compact',
+                isCompactView && 'list-compact',
             ])}
         >
             <h1 className="sr-only">
