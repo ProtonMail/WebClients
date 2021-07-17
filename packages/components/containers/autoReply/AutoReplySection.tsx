@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
-import { AutoReplyDuration } from '@proton/shared/lib/constants';
+import { AutoReplyDuration, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
 import {
     useMailSettings,
@@ -202,8 +202,9 @@ const AutoReplySection = () => {
             ) : (
                 <Card className="flex flex-align-items-center mt2">
                     <p className="m0 mr2 flex-item-fluid">
-                        {c('Info')
-                            .t`Upgrade to a Visionary or Professional plan to enable automatic replies for when you are out of the office.`}
+                        {c('Info').t`Upgrade to a ${PLAN_NAMES[PLANS.VISIONARY]} or ${
+                            PLAN_NAMES[PLANS.PROFESSIONAL]
+                        } plan to enable automatic replies for when you are out of the office.`}
                     </p>
                     <ButtonLike color="norm" as={SettingsLink} path="/dashboard">
                         {c('Action').t`Upgrade`}
