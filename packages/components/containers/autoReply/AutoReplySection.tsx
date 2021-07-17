@@ -16,7 +16,7 @@ import {
     useUser,
     useErrorHandler,
 } from '../../hooks';
-import { Toggle, SimpleSquireEditor, Button, Card, ButtonLike, SettingsLink } from '../../components';
+import { Toggle, SimpleSquireEditor, Button } from '../../components';
 
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 
@@ -32,6 +32,7 @@ import useAutoReplyForm, { getDefaultAutoResponder } from './AutoReplyForm/useAu
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import UpgradeBanner from '../account/UpgradeBanner';
 
 const AutoReplySection = () => {
     const errorHandler = useErrorHandler();
@@ -200,16 +201,11 @@ const AutoReplySection = () => {
             {hasPaidMail ? (
                 isEnabled && renderForm()
             ) : (
-                <Card className="flex flex-align-items-center mt2">
-                    <p className="m0 mr2 flex-item-fluid">
-                        {c('Info').t`Upgrade to a ${PLAN_NAMES[PLANS.VISIONARY]} or ${
-                            PLAN_NAMES[PLANS.PROFESSIONAL]
-                        } plan to enable automatic replies for when you are out of the office.`}
-                    </p>
-                    <ButtonLike color="norm" as={SettingsLink} path="/dashboard">
-                        {c('Action').t`Upgrade`}
-                    </ButtonLike>
-                </Card>
+                <UpgradeBanner className="mt2">
+                    {c('Info').t`Upgrade to a ${PLAN_NAMES[PLANS.VISIONARY]} or ${
+                        PLAN_NAMES[PLANS.PROFESSIONAL]
+                    } plan to enable automatic replies for when you are out of the office.`}
+                </UpgradeBanner>
             )}
         </SettingsSectionWide>
     );
