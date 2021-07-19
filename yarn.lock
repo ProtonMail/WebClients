@@ -3888,6 +3888,7 @@ __metadata:
     "@types/papaparse": ^5.2.5
     "@types/ua-parser-js": ^0.7.33
     "@types/webpack-env": ^1.16.2
+    bip39: "github:ProtonMail/bip39#semver:^1.0.2"
     date-fns: ^2.2.1
     dompurify: ^2.0.7
     eslint: ^7.3.1
@@ -9032,6 +9033,13 @@ __metadata:
   dependencies:
     file-uri-to-path: 1.0.0
   checksum: bd623dec58f126eb0c30f04a20da7080f06cdd5af26bf5a91615e70055fbba66c4cec5c88b156e8181c1d822f2392034a40a9121ef3ebc25638dc2163332b12d
+  languageName: node
+  linkType: hard
+
+"bip39@github:ProtonMail/bip39#semver:^1.0.2":
+  version: 1.0.1
+  resolution: "bip39@https://github.com/ProtonMail/bip39.git#commit=c8ed6f35d90db37844230b26199817c7c5fecd29"
+  checksum: ac037b3a6d78ebb0a188441713140d91daae8d73fcc84c4089f1803b65e6d501265b2e207d92281104658fb3df0b0b7ffbd85db6780fe74d0eb506a72522eef1
   languageName: node
   linkType: hard
 

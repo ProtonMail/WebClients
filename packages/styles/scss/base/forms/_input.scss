@@ -17,18 +17,22 @@ select {
 	&-label {
 		padding-bottom: $inputform-default-spacing-text;
 	}
+
 	&-label-hint,
 	&-assist {
 		font-size: rem(12);
 		color: var(--text-weak);
 	}
+
 	&-label-hint {
 		padding-bottom: rem(1); // just to compensate the difference of text size
 	}
+
 	&-assist {
 		min-height: 1.9em;
 		padding-top: $inputform-default-spacing-text;
 	}
+
 	&-label-text {
 		font-weight: 600;
 	}
@@ -38,8 +42,10 @@ select {
 		color: var(--text-weak);
 	}
 
-	&-field {
+	@at-root input#{&}-field {
 		height: rem($default-height-fields-inputforms);
+	}
+	&-field {
 		padding: em(6) em(16); // design want 34px height (actually 35 to avoid .5px)
 		border-radius: $global-border-radius;
 		border: 1px solid var(--field-norm);
@@ -116,6 +122,7 @@ select {
 			}
 		}
 	}
+
 	// global warning state on container
 	&-container--warning {
 		.inputform {
@@ -131,10 +138,13 @@ select {
 	&-icon-container {
 		@extend .inputform-field; // added focus-within inside on inputform-field for this fake-field :)
 		padding: 0;
+		height: rem($default-height-fields-inputforms);
+
+		input.inputform-field {
+			height: 100%;
+		}
 
 		.inputform-field {
-			height: 100%;
-
 			&,
 			&:focus {
 				border: 0;
@@ -166,21 +176,24 @@ select {
 	// bigger inputs
 	&-container--bigger {
 		.right-icon,
-		.inputform-field,
+		input.inputform-field,
 		.inputform-icon-container {
 			height: rem($bigger-height-fields-inputforms);
 		}
-		.inputform-field {
+
+		input.inputform-field {
 			&[type='search'] {
 				background-size: rem(20);
 				padding-left: 2.2em;
 			}
 		}
+
 		.inputform-icon-container {
 			&-empty {
 				// for drive, to keep the same height
 				min-height: calc(#{rem($bigger-height-fields-inputforms)} + 2px);
 			}
+
 			.inputform-field {
 				height: 100%;
 			}
@@ -197,9 +210,11 @@ select {
 			color: var(--field-disabled-text-color, var(--text-disabled));
 			cursor: auto;
 		}
+
 		& .inputform-label {
 			cursor: auto;
 		}
+
 		& .inputform-field {
 			&:hover,
 			&.hover {

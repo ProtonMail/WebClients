@@ -1,12 +1,9 @@
-import { useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { getHasTOTPEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
-import { InfoAuthedResponse, TwoFaResponse } from '@proton/shared/lib/authentication/interface';
-import { getInfo } from '@proton/shared/lib/api/auth';
+import { useState } from 'react';
 
 import { FormModal, Loader } from '../../components';
-import { useApi, useUser, useUserSettings } from '../../hooks';
 import PasswordTotpInputs from './PasswordTotpInputs';
+import useAskAuth from './useAskAuth';
 
 interface Props {
     onClose?: () => void;
@@ -20,29 +17,7 @@ interface Props {
 const AskAuthModal = ({ onClose, onSubmit, error, loading, ...rest }: Props) => {
     const [password, setPassword] = useState('');
     const [totp, setTotp] = useState('');
-    const [userSettings, loadingUserSettings] = useUserSettings();
-    const [{ isSubUser }] = useUser();
-    const api = useApi();
-    const [adminAuthTwoFA, setAdminAuthTwoFA] = useState<TwoFaResponse>();
-
-    useEffect(() => {
-        const run = async () => {
-            /**
-             * There is a special case for admins logged into non-private users. User settings returns two factor
-             * information for the non-private user, and not for the admin to which the session actually belongs.
-             * So we query auth info to get the information about the admin.
-             */
-            const infoResult = await api<InfoAuthedResponse>(getInfo());
-            setAdminAuthTwoFA(infoResult['2FA']);
-        };
-        run();
-    }, []);
-
-    const hasTOTPEnabled = isSubUser
-        ? getHasTOTPEnabled(adminAuthTwoFA?.Enabled)
-        : getHasTOTPSettingEnabled(userSettings);
-
-    const isLoading = loadingUserSettings || (isSubUser && !adminAuthTwoFA);
+    const [hasTOTPEnabled, isLoadingAuth] = useAskAuth();
 
     return (
         <FormModal
@@ -53,10 +28,10 @@ const AskAuthModal = ({ onClose, onSubmit, error, loading, ...rest }: Props) => 
             submit={c('Label').t`Submit`}
             error={error}
             small
-            loading={loading || isLoading}
+            loading={loading || isLoadingAuth}
             {...rest}
         >
-            {isLoading ? (
+            {isLoadingAuth ? (
                 <Loader />
             ) : (
                 <PasswordTotpInputs

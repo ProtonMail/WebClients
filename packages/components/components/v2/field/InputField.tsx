@@ -104,8 +104,8 @@ const InputField: <E extends React.ElementType = typeof defaultElement>(
                         {...rest}
                     />
                 </div>
-                <div className="inputform-assist flex" id={assistiveUid}>
-                    {errorElement || warningElement || (!error && !warning) && assistiveText}
+                <div className="inputform-assist flex flex-nowrap" id={assistiveUid}>
+                    {errorElement || warningElement || (!error && !warning && assistiveText)}
                 </div>
             </label>
         );
