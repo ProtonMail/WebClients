@@ -21,11 +21,14 @@
       "Authentication error.": [
         "Tuccḍa deg usesteb."
       ],
+      "Email address invalid": [
+        "Tansa imayl mači d tameɣtut"
+      ],
       "This field is required": [
         "Urti-agi ilaq"
       ],
-      "Email address invalid": [
-        "Tansa imayl mači d tameɣtut"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
       ],
       "The composer failed to load.": [
         "Asali n umsuddes ur yeddi ara."
@@ -122,9 +125,6 @@
       "Require at least one action": [
         "Yesra ma ulac yiwet n tigawt"
       ],
-      "Request timed out.": [
-        "Akud n usuter yemmut."
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Urti-a isra ma drus { minimumLength } n yizamulen."
       ],
@@ -136,6 +136,9 @@
       ],
       "Passwords do not match": [
         "Awalen uffiren ur menṭaḍen ara"
+      ],
+      "Request timed out.": [
+        "Akud n usuter yemmut."
       ],
       "Signature verification failed": [
         "Asenqed n uzmul yecceḍ"
@@ -294,6 +297,9 @@
       ],
       "Use “${ label }” setting": [
         "Seqdec iɣewwaṛen n “${ label }”"
+      ],
+      "refresh the page": [
+        "smiren asebter"
       ],
       "Remove": [
         "Kkes"
@@ -577,6 +583,18 @@
       "Next": [
         "Ɣer sdat"
       ],
+      "Clear": [
+        "Sfeḍ"
+      ],
+      "Add screenshot(s)": [
+        "Rnu tuṭṭfa(win) n ugdil"
+      ],
+      "Hide info": [
+        "Ffer isallen"
+      ],
+      "Show info": [
+        "Sken isallen"
+      ],
       "Continue import": [
         "Kemmel taktert"
       ],
@@ -597,9 +615,6 @@
       ],
       "Signing out": [
         "Tuffɣa"
-      ],
-      "refresh the page": [
-        "smiren asebter"
       ],
       "Log in": [
         "Tuqqna"
@@ -652,9 +667,6 @@
       "Search": [
         "Anadi"
       ],
-      "Clear": [
-        "Sfeḍ"
-      ],
       "Copy email to clipboard": [
         "Nɣel imayl ɣef afus"
       ],
@@ -699,15 +711,6 @@
       ],
       "Composer mode": [
         "Askar n umsuddes"
-      ],
-      "Add screenshot(s)": [
-        "Rnu tuṭṭfa(win) n ugdil"
-      ],
-      "Hide info": [
-        "Ffer isallen"
-      ],
-      "Show info": [
-        "Sken isallen"
       ],
       "Preview": [
         "Taskant"
@@ -1211,6 +1214,9 @@
       "Import contacts": [
         "Kter inermisen"
       ],
+      "Report a problem": [
+        "Azen aneqqis n wugur"
+      ],
       "Start import process": [
         "Bdu akala n uktar"
       ],
@@ -1261,9 +1267,6 @@
       ],
       "Give feedback": [
         "Mudd-d tikti"
-      ],
-      "Report a problem": [
-        "Azen aneqqis n wugur"
       ],
       "Beta Access": [
         "Anekcum Biṭa"
@@ -1498,6 +1501,9 @@
       ],
       "Loading": [
         "Azdam"
+      ],
+      "support team": [
+        ""
       ],
       "No contacts added yet": [
         "Ur ɛad ttwarnan inermisen"
@@ -1742,6 +1748,12 @@
         "${ addressCount } n tansa n yimayl",
         "${ addressCount } n tansiwin n yimayl"
       ],
+      "Screenshot(s) attached": [
+        "Tuṭṭfa n ugdil tedda (ddant)"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Asmiren n usebter n ${ link } ad yefru s wudem awurman aṭas n wuguren."
+      ],
       "Import contacts": [
         "Kter inermisen"
       ],
@@ -1837,12 +1849,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Tsenseḍ anekcum Biṭa. Ssit ɣef ${ refreshButton } akken ad tesqedceḍ lqem urkid n ${ appName }. Asnas ad yales asali."
-      ],
-      "Screenshot(s) attached": [
-        "Tuṭṭfa n ugdil tedda (ddant)"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Asmiren n usebter n ${ link } ad yefru s wudem awurman aṭas n wuguren."
       ],
       "Inherited from parent folder": [
         "Yettwaɣellet seg ukaram agejdan"
@@ -2434,6 +2440,30 @@
       "Export contacts": [
         "Sifeḍ inermisen"
       ],
+      "Operating system": [
+        "Anagraw n wammud"
+      ],
+      "Operating system version": [
+        "Lqem n unagraw n wammud"
+      ],
+      "Proton username": [
+        "Isem n useqdac Proton"
+      ],
+      "Category": [
+        "Taggayt"
+      ],
+      "What happened?": [
+        "D acu akka ay yeḍran?"
+      ],
+      "System information": [
+        "Talɣut n unagraw"
+      ],
+      "Browser": [
+        "Iminig"
+      ],
+      "Browser version": [
+        "Lqem n yiminig"
+      ],
       "From: ${ fromEmailAddress }": [
         "Sɣur: ${ fromEmailAddress }"
       ],
@@ -2473,38 +2503,8 @@
       "Select how your composer opens by default.": [
         "Fren amek ara yettban umsuddes-inek•inem s lexṣas."
       ],
-      "0 - Not a fan": [
-        "0 - Ulac imdanen ineḍfaren"
-      ],
-      "10 - Love it!": [
-        "10 -Ḥemmeleɣ-t!"
-      ],
       "What is the primary reason for this rating?": [
         ""
-      ],
-      "Operating system": [
-        "Anagraw n wammud"
-      ],
-      "Operating system version": [
-        "Lqem n unagraw n wammud"
-      ],
-      "Proton username": [
-        "Isem n useqdac Proton"
-      ],
-      "Category": [
-        "Taggayt"
-      ],
-      "What happened?": [
-        "D acu akka ay yeḍran?"
-      ],
-      "System information": [
-        "Talɣut n unagraw"
-      ],
-      "Browser": [
-        "Iminig"
-      ],
-      "Browser version": [
-        "Lqem n yiminig"
       ],
       "Enable Beta Access": [
         "Sermed anekcum Biṭa"
@@ -2701,6 +2701,12 @@
       "How would you rate your experience with the new ProtonMail?": [
         "Amek ara teskazleḍ tarmit-inek•inem akked ProtonMail amaynut?"
       ],
+      "0 - Not a fan": [
+        "0 - Ulac imdanen ineḍfaren"
+      ],
+      "10 - Love it!": [
+        "10 -Ḥemmeleɣ-t!"
+      ],
       "Also archive": [
         "Γber daɣen"
       ]
@@ -2717,6 +2723,9 @@
       "Request an invite": [
         "Suter tinubga"
       ],
+      "clearing your browser cache": [
+        "asfaḍ n tuffirt n iminig"
+      ],
       "Pay invoice": [
         "Xelleṣ tafaturt"
       ],
@@ -2728,9 +2737,6 @@
       ],
       "Go to subscription plans": [
         "Rzu ɣer yiɣawasen n ujerred"
-      ],
-      "clearing your browser cache": [
-        "asfaḍ n tuffirt n iminig"
       ],
       "Inbox": [
         "Tanaka n urmas"
@@ -2893,15 +2899,6 @@
       "Name": [
         "Isem"
       ],
-      "Mailbox password": [
-        "Awal uffir n tnaka n yimayl"
-      ],
-      "e.g. Julia Smith": [
-        "md. Julia Smith"
-      ],
-      "Feedback": [
-        "Awennit"
-      ],
       "OS name": [
         "Isem n unagraw n wammud"
       ],
@@ -2922,6 +2919,15 @@
       ],
       "Browser version": [
         "Lqem n yiminig"
+      ],
+      "Mailbox password": [
+        "Awal uffir n tnaka n yimayl"
+      ],
+      "e.g. Julia Smith": [
+        "md. Julia Smith"
+      ],
+      "Feedback": [
+        "Awennit"
       ],
       "Type text or keyword": [
         "Aru aḍris neɣ awal ufrin"
@@ -2999,14 +3005,14 @@
       "Contacts could not be merged": [
         "Ur nezmir ara ad nezdi inermisen"
       ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Tuzna n ibugen ur tettwagelhen ara seg yixef ar yixef, ur d-ttazen ara talɣut tamaẓlayt."
+      ],
       "Are you sure you want to discard your import?": [
         "D tidet tebɣiḍ ad tesfesxeḍ taktert-ik•m?"
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Isefka-inek·inem n wadeg akked iɣewwaren n wakud ur mtawan ara."
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Tuzna n ibugen ur tettwagelhen ara seg yixef ar yixef, ur d-ttazen ara talɣut tamaẓlayt."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Asenqed n uzmul n tceqquft yeddan.\nMazal tzemreḍ ad d-tsadreḍ taceqquft-a yeddan maca yezmer tettubeddel.",
@@ -3169,14 +3175,14 @@
       "Fingerprint copied to clipboard": [
         "Adriz n uḍad yettwanɣel ɣer tecfawit"
       ],
+      "Bug reported": [
+        "Abug yettwazen"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Ismenyifen n yinegzumen n unasiw ttwaleqqmen"
       ],
       "Preference saved": [
         "Ismenyifen ttwaskelsen"
-      ],
-      "Bug reported": [
-        "Abug yettwazen"
       ],
       "Message content search activated": [
         "Anadi n ugbur n yizen yettwarmad"
@@ -3594,6 +3600,118 @@
         "Inermisen ${ totalImported }/${ totalToImport } ttwawgelhnen syen ttwarnan ɣer tebdart-inek·inem n yinermisen"
       ]
     },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Ulac tugna yettwafernen"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Ugur n unekcum"
+      ],
+      "Sign up problem": [
+        "Ugur deg ujerred"
+      ],
+      "Payments problem": [
+        "Ugur n uxelleṣ"
+      ],
+      "Custom domain problem": [
+        "Ugur n taɣult tudmawant"
+      ],
+      "Bridge problem": [
+        "Ugur n tleggit"
+      ],
+      "Import / export problem": [
+        "Kter / sifeḍ ugur"
+      ],
+      "Connection problem": [
+        "Ugur n tuqqna"
+      ],
+      "Slow speed problem": [
+        "Ugur n urured"
+      ],
+      "Calendar problem": [
+        "Ugur n uwitay"
+      ],
+      "Contacts problem": [
+        "Ugur n yinermisen"
+      ],
+      "Drive problem": [
+        "Ugur n yimeɣri"
+      ],
+      "Mail problem": [
+        "Ugur n yimayl"
+      ],
+      "VPN problem": [
+        "Ugur n VPN"
+      ],
+      "Feature request": [
+        "Asuter n tmahilt"
+      ],
+      "Other": [
+        "Wayeḍ"
+      ],
+      "Signup problem": [
+        "Ugur deg ujerred"
+      ],
+      "Installation problem": [
+        "Ugur n usebded"
+      ],
+      "Update problem": [
+        "Ugur n uleqqem"
+      ],
+      "Application problem": [
+        "Ugur n usnas"
+      ],
+      "Speed problem": [
+        "Ugur n urured"
+      ],
+      "Manual setup problem": [
+        "Ugur deg usbadu s ufus"
+      ],
+      "Website access problem": [
+        "Ugur deg unekcum ɣer usmel web"
+      ],
+      "Streaming problem": [
+        "Ugur deg tɣuri s usuddem"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Amiḍan"
+      ],
+      "Apps": [
+        "Isnasen"
+      ],
+      "Network": [
+        "Aẓeṭṭa"
+      ],
+      "Services": [
+        "Imeẓluyen"
+      ],
+      "Other category": [
+        "Taggayin-nniḍen"
+      ],
+      "Custom folders": [
+        "Ikaramen udmawanen"
+      ],
+      "Default folders": [
+        "Ikaramen imezwar"
+      ],
+      "Labels": [
+        "Tibzimin"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Fren"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "Seddu tuṭṭfa(win) n ugdil"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Tuqqna ɣer usaǧǧaw n yinermisen inek•inem"
@@ -3750,118 +3868,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Awennit yettwazen"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Ulac tugna yettwafernen"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Ugur n unekcum"
-      ],
-      "Sign up problem": [
-        "Ugur deg ujerred"
-      ],
-      "Payments problem": [
-        "Ugur n uxelleṣ"
-      ],
-      "Custom domain problem": [
-        "Ugur n taɣult tudmawant"
-      ],
-      "Bridge problem": [
-        "Ugur n tleggit"
-      ],
-      "Import / export problem": [
-        "Kter / sifeḍ ugur"
-      ],
-      "Connection problem": [
-        "Ugur n tuqqna"
-      ],
-      "Slow speed problem": [
-        "Ugur n urured"
-      ],
-      "Calendar problem": [
-        "Ugur n uwitay"
-      ],
-      "Contacts problem": [
-        "Ugur n yinermisen"
-      ],
-      "Drive problem": [
-        "Ugur n yimeɣri"
-      ],
-      "Mail problem": [
-        "Ugur n yimayl"
-      ],
-      "VPN problem": [
-        "Ugur n VPN"
-      ],
-      "Feature request": [
-        "Asuter n tmahilt"
-      ],
-      "Other": [
-        "Wayeḍ"
-      ],
-      "Signup problem": [
-        "Ugur deg ujerred"
-      ],
-      "Installation problem": [
-        "Ugur n usebded"
-      ],
-      "Update problem": [
-        "Ugur n uleqqem"
-      ],
-      "Application problem": [
-        "Ugur n usnas"
-      ],
-      "Speed problem": [
-        "Ugur n urured"
-      ],
-      "Manual setup problem": [
-        "Ugur deg usbadu s ufus"
-      ],
-      "Website access problem": [
-        "Ugur deg unekcum ɣer usmel web"
-      ],
-      "Streaming problem": [
-        "Ugur deg tɣuri s usuddem"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Amiḍan"
-      ],
-      "Apps": [
-        "Isnasen"
-      ],
-      "Network": [
-        "Aẓeṭṭa"
-      ],
-      "Services": [
-        "Imeẓluyen"
-      ],
-      "Other category": [
-        "Taggayin-nniḍen"
-      ],
-      "Custom folders": [
-        "Ikaramen udmawanen"
-      ],
-      "Default folders": [
-        "Ikaramen imezwar"
-      ],
-      "Labels": [
-        "Tibzimin"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Fren"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Seddu tuṭṭfa(win) n ugdil"
       ]
     },
     "Beta access description": {

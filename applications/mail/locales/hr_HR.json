@@ -21,11 +21,14 @@
       "Authentication error.": [
         "Pogreška autentikacije."
       ],
+      "Email address invalid": [
+        "Adresa e-pošte nije valjana"
+      ],
       "This field is required": [
         "Ovo polje je obavezno"
       ],
-      "Email address invalid": [
-        "Adresa e-pošte nije valjana"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
       ],
       "The composer failed to load.": [
         "Neuspješno učitavanje prozora za novu poruku."
@@ -124,9 +127,6 @@
       "Require at least one action": [
         "Zahtijeva najmanje jednu radnju"
       ],
-      "Request timed out.": [
-        "Zahtjev je istekao."
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ovo polje zahtjeva najmanje ${ minimumLength } znakova."
       ],
@@ -138,6 +138,9 @@
       ],
       "Passwords do not match": [
         "Lozinke se ne poklapaju"
+      ],
+      "Request timed out.": [
+        "Zahtjev je istekao."
       ],
       "Signature verification failed": [
         "Potvrda potpisa je neuspješna"
@@ -299,6 +302,9 @@
       ],
       "Use “${ label }” setting": [
         "Koristi “${ label }” postavku"
+      ],
+      "refresh the page": [
+        "osvježi stranicu"
       ],
       "Remove": [
         "Ukloni"
@@ -585,6 +591,18 @@
       "Next": [
         "Sljedeće"
       ],
+      "Clear": [
+        "Očisti"
+      ],
+      "Add screenshot(s)": [
+        "Dodaj snimku(e) zaslona"
+      ],
+      "Hide info": [
+        "Sakrij informacije"
+      ],
+      "Show info": [
+        "Prikaži informacije"
+      ],
       "Continue import": [
         "Nastavi uvoz"
       ],
@@ -605,9 +623,6 @@
       ],
       "Signing out": [
         "Odjavljivanje"
-      ],
-      "refresh the page": [
-        "osvježi stranicu"
       ],
       "Log in": [
         "Prijavite se"
@@ -660,9 +675,6 @@
       "Search": [
         "Pretraga"
       ],
-      "Clear": [
-        "Očisti"
-      ],
       "Copy email to clipboard": [
         "Kopiraj adresu e-pošte u međuspremnik"
       ],
@@ -707,15 +719,6 @@
       ],
       "Composer mode": [
         "Način rada prozora za novu poruku"
-      ],
-      "Add screenshot(s)": [
-        "Dodaj snimku(e) zaslona"
-      ],
-      "Hide info": [
-        "Sakrij informacije"
-      ],
-      "Show info": [
-        "Prikaži informacije"
       ],
       "Preview": [
         "Pregled"
@@ -1224,6 +1227,9 @@
       "Import contacts": [
         "Uvezi kontakte"
       ],
+      "Report a problem": [
+        "Prijavi problem"
+      ],
       "Start import process": [
         "Započni uvoz"
       ],
@@ -1274,9 +1280,6 @@
       ],
       "Give feedback": [
         "Ostavi povratnu informaciju"
-      ],
-      "Report a problem": [
-        "Prijavi problem"
       ],
       "Beta Access": [
         "Beta pristup"
@@ -1515,6 +1518,9 @@
       ],
       "Loading": [
         "Učitavanje"
+      ],
+      "support team": [
+        ""
       ],
       "No contacts added yet": [
         "Nema dodanih kontakata"
@@ -1765,6 +1771,12 @@
         "${ addressCount } adrese e-pošte",
         "${ addressCount } adresa e-pošte"
       ],
+      "Screenshot(s) attached": [
+        "Snimka(e) zaslona su pridodane"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
+      ],
       "Import contacts": [
         "Uvezi kontakte"
       ],
@@ -1860,12 +1872,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Onemogućili ste Beta pristup. Kliknite ${ refreshButton } za korištenje stabilne verzije ${ appName }. Aplikacija će se ponovno učitati."
-      ],
-      "Screenshot(s) attached": [
-        "Snimka(e) zaslona su pridodane"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
       ],
       "Inherited from parent folder": [
         "Nasljedno iz roditeljske mape"
@@ -2481,6 +2487,30 @@
       "Export contacts": [
         "Izvezi kontakte"
       ],
+      "Operating system": [
+        "Operativni sustav"
+      ],
+      "Operating system version": [
+        "Verzija operativnog sustava"
+      ],
+      "Proton username": [
+        "Proton korisničko ime"
+      ],
+      "Category": [
+        "Kategorija"
+      ],
+      "What happened?": [
+        "Što se dogodilo?"
+      ],
+      "System information": [
+        "Informacije o sustavu"
+      ],
+      "Browser": [
+        "Preglednik"
+      ],
+      "Browser version": [
+        "Verzija preglednika"
+      ],
       "From: ${ fromEmailAddress }": [
         "Od: ${ fromEmailAddress }"
       ],
@@ -2520,38 +2550,8 @@
       "Select how your composer opens by default.": [
         "Odaberite kako će se vaš prozor za nove poruke otvarati po zadanom."
       ],
-      "0 - Not a fan": [
-        "0 - Ne sviđa mi se"
-      ],
-      "10 - Love it!": [
-        "10 - Sviđa mi se!"
-      ],
       "What is the primary reason for this rating?": [
         ""
-      ],
-      "Operating system": [
-        "Operativni sustav"
-      ],
-      "Operating system version": [
-        "Verzija operativnog sustava"
-      ],
-      "Proton username": [
-        "Proton korisničko ime"
-      ],
-      "Category": [
-        "Kategorija"
-      ],
-      "What happened?": [
-        "Što se dogodilo?"
-      ],
-      "System information": [
-        "Informacije o sustavu"
-      ],
-      "Browser": [
-        "Preglednik"
-      ],
-      "Browser version": [
-        "Verzija preglednika"
       ],
       "Enable Beta Access": [
         "Omogući Beta pristup"
@@ -2748,6 +2748,12 @@
       "How would you rate your experience with the new ProtonMail?": [
         "Kako biste ocijenili svoje iskustvo s novim ProtonMailom?"
       ],
+      "0 - Not a fan": [
+        "0 - Ne sviđa mi se"
+      ],
+      "10 - Love it!": [
+        "10 - Sviđa mi se!"
+      ],
       "Also archive": [
         "Također i arhivu"
       ]
@@ -2764,6 +2770,9 @@
       "Request an invite": [
         "Zatraži pozivnicu"
       ],
+      "clearing your browser cache": [
+        "čišćenje predmemorije preglednika"
+      ],
       "Pay invoice": [
         "Plati račun"
       ],
@@ -2775,9 +2784,6 @@
       ],
       "Go to subscription plans": [
         "Idi na planove pretplate"
-      ],
-      "clearing your browser cache": [
-        "čišćenje predmemorije preglednika"
       ],
       "Inbox": [
         "Pristigla pošta"
@@ -2940,15 +2946,6 @@
       "Name": [
         "Naziv"
       ],
-      "Mailbox password": [
-        "Lozinka sandučića e-pošte"
-      ],
-      "e.g. Julia Smith": [
-        "npr. Ana Horvat"
-      ],
-      "Feedback": [
-        "Povratne informacije"
-      ],
       "OS name": [
         "Naziv OS-a"
       ],
@@ -2969,6 +2966,15 @@
       ],
       "Browser version": [
         "Verzija preglednika"
+      ],
+      "Mailbox password": [
+        "Lozinka sandučića e-pošte"
+      ],
+      "e.g. Julia Smith": [
+        "npr. Ana Horvat"
+      ],
+      "Feedback": [
+        "Povratne informacije"
       ],
       "Type text or keyword": [
         "Unesite tekst ili ključnu riječ"
@@ -3048,14 +3054,14 @@
       "Contacts could not be merged": [
         "Nije bilo moguće spajanje kontakata"
       ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Izvještaji nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."
+      ],
       "Are you sure you want to discard your import?": [
         "Jeste li sigurni da želite odbaciti vaš uvoz?"
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Vaše lokalne postavke datuma i vremena nisu sinkronizirane."
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Izvještaji nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Provjera potpisa privitka nije uspjela.\nI dalje možete preuzeti ovaj privitak, ali je možda bio ugrožen.",
@@ -3221,14 +3227,14 @@
       "Fingerprint copied to clipboard": [
         "Otisak prsta je kopiran u međuspremnik"
       ],
+      "Bug reported": [
+        "Problem je prijavljen"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Postavke tipkovnih prečaca su ažurirane"
       ],
       "Preference saved": [
         "Postavke su spremljene"
-      ],
-      "Bug reported": [
-        "Problem je prijavljen"
       ],
       "Message content search activated": [
         "Aktivirano je pretraživanje sadržaja poruka"
@@ -3671,6 +3677,118 @@
         "${ totalImported }/${ totalToImport } kontakata šifrirano i dodano u vašu listu kontakata"
       ]
     },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Nije odabrana nijedna slika"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Problem s prijavom"
+      ],
+      "Sign up problem": [
+        "Problem s registracijom"
+      ],
+      "Payments problem": [
+        "Problem s naplatom"
+      ],
+      "Custom domain problem": [
+        "Problem s prilagođenim domenama"
+      ],
+      "Bridge problem": [
+        "Problem s Bridgeom"
+      ],
+      "Import / export problem": [
+        "Problem s uvozom/izvozom"
+      ],
+      "Connection problem": [
+        "Problem s vezom"
+      ],
+      "Slow speed problem": [
+        "Problem s sporom brzinom"
+      ],
+      "Calendar problem": [
+        "Problem s Calendarom"
+      ],
+      "Contacts problem": [
+        "Problem s Contactsima"
+      ],
+      "Drive problem": [
+        "Problem s Driveom"
+      ],
+      "Mail problem": [
+        "Problem s e-poštom"
+      ],
+      "VPN problem": [
+        "Problem s VPN-om"
+      ],
+      "Feature request": [
+        "Predložite novu značajku"
+      ],
+      "Other": [
+        "Ostalo"
+      ],
+      "Signup problem": [
+        "Problem s registracijom"
+      ],
+      "Installation problem": [
+        "Problem s instalacijom"
+      ],
+      "Update problem": [
+        "Problem s nadogradnjom"
+      ],
+      "Application problem": [
+        "Problem s aplikacijom"
+      ],
+      "Speed problem": [
+        "Problem s brzinom"
+      ],
+      "Manual setup problem": [
+        "Problem s ručnim postavljanjem"
+      ],
+      "Website access problem": [
+        "Problem s pristupom web stanici"
+      ],
+      "Streaming problem": [
+        "Problem s streamingom"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Korisnički račun"
+      ],
+      "Apps": [
+        "Aplikacije"
+      ],
+      "Network": [
+        "Mreža"
+      ],
+      "Services": [
+        "Usluge"
+      ],
+      "Other category": [
+        "Ostale kategorije"
+      ],
+      "Custom folders": [
+        "Prilagođene mape"
+      ],
+      "Default folders": [
+        "Zadane mape"
+      ],
+      "Labels": [
+        "Oznake"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Odaberi"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "Dodajte snimku(e) zaslona"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Spajanje s vašim pružateljem kontakata"
@@ -3827,118 +3945,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Povratna informacija je poslana"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Nije odabrana nijedna slika"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Problem s prijavom"
-      ],
-      "Sign up problem": [
-        "Problem s registracijom"
-      ],
-      "Payments problem": [
-        "Problem s naplatom"
-      ],
-      "Custom domain problem": [
-        "Problem s prilagođenim domenama"
-      ],
-      "Bridge problem": [
-        "Problem s Bridgeom"
-      ],
-      "Import / export problem": [
-        "Problem s uvozom/izvozom"
-      ],
-      "Connection problem": [
-        "Problem s vezom"
-      ],
-      "Slow speed problem": [
-        "Problem s sporom brzinom"
-      ],
-      "Calendar problem": [
-        "Problem s Calendarom"
-      ],
-      "Contacts problem": [
-        "Problem s Contactsima"
-      ],
-      "Drive problem": [
-        "Problem s Driveom"
-      ],
-      "Mail problem": [
-        "Problem s e-poštom"
-      ],
-      "VPN problem": [
-        "Problem s VPN-om"
-      ],
-      "Feature request": [
-        "Predložite novu značajku"
-      ],
-      "Other": [
-        "Ostalo"
-      ],
-      "Signup problem": [
-        "Problem s registracijom"
-      ],
-      "Installation problem": [
-        "Problem s instalacijom"
-      ],
-      "Update problem": [
-        "Problem s nadogradnjom"
-      ],
-      "Application problem": [
-        "Problem s aplikacijom"
-      ],
-      "Speed problem": [
-        "Problem s brzinom"
-      ],
-      "Manual setup problem": [
-        "Problem s ručnim postavljanjem"
-      ],
-      "Website access problem": [
-        "Problem s pristupom web stanici"
-      ],
-      "Streaming problem": [
-        "Problem s streamingom"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Korisnički račun"
-      ],
-      "Apps": [
-        "Aplikacije"
-      ],
-      "Network": [
-        "Mreža"
-      ],
-      "Services": [
-        "Usluge"
-      ],
-      "Other category": [
-        "Ostale kategorije"
-      ],
-      "Custom folders": [
-        "Prilagođene mape"
-      ],
-      "Default folders": [
-        "Zadane mape"
-      ],
-      "Labels": [
-        "Oznake"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Odaberi"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Dodajte snimku(e) zaslona"
       ]
     },
     "Beta access description": {

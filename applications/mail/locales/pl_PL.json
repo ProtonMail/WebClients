@@ -21,11 +21,14 @@
       "Authentication error.": [
         "Błąd uwierzytelniania."
       ],
+      "Email address invalid": [
+        "Adres e-mail jest nieprawidłowy"
+      ],
       "This field is required": [
         "Pole jest wymagane"
       ],
-      "Email address invalid": [
-        "Adres e-mail jest nieprawidłowy"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Coś poszło nie tak. ${ refresh }, aby kontynuować. Jeśli wciąż widzisz ten błąd, skontaktuj się z naszą ${ supportTeam }."
       ],
       "The composer failed to load.": [
         "Nie udało się załadować edytora."
@@ -126,9 +129,6 @@
       "Require at least one action": [
         "Co najmniej jedna akcja jest wymagana"
       ],
-      "Request timed out.": [
-        "Upłynął limit czasu żądania."
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Pole musi zawierać co najmniej ${ minimumLength } znaków."
       ],
@@ -140,6 +140,9 @@
       ],
       "Passwords do not match": [
         "Hasła nie pasują do siebie"
+      ],
+      "Request timed out.": [
+        "Upłynął limit czasu żądania."
       ],
       "Signature verification failed": [
         "Weryfikacja podpisu nie powiodła się"
@@ -304,6 +307,9 @@
       ],
       "Use “${ label }” setting": [
         "Użyj ustawień “${ label }”"
+      ],
+      "refresh the page": [
+        "Odśwież stronę"
       ],
       "Remove": [
         "Usuń"
@@ -593,6 +599,18 @@
       "Next": [
         "Dalej"
       ],
+      "Clear": [
+        "Wyczyść"
+      ],
+      "Add screenshot(s)": [
+        "Dodaj zrzuty ekranu"
+      ],
+      "Hide info": [
+        "Ukryj informacje"
+      ],
+      "Show info": [
+        "Pokaż informacje"
+      ],
       "Continue import": [
         "Kontynuuj importowanie"
       ],
@@ -613,9 +631,6 @@
       ],
       "Signing out": [
         "Wylogowywanie"
-      ],
-      "refresh the page": [
-        "Odśwież stronę"
       ],
       "Log in": [
         "Zaloguj się"
@@ -668,9 +683,6 @@
       "Search": [
         "Szukaj"
       ],
-      "Clear": [
-        "Wyczyść"
-      ],
       "Copy email to clipboard": [
         "Kopiuj adres e-mail do schowka"
       ],
@@ -715,15 +727,6 @@
       ],
       "Composer mode": [
         "Tryb edytora"
-      ],
-      "Add screenshot(s)": [
-        "Dodaj zrzuty ekranu"
-      ],
-      "Hide info": [
-        "Ukryj informacje"
-      ],
-      "Show info": [
-        "Pokaż informacje"
       ],
       "Preview": [
         "Podgląd"
@@ -1237,6 +1240,9 @@
       "Import contacts": [
         "Importuj kontakty"
       ],
+      "Report a problem": [
+        "Zgłoś problem"
+      ],
       "Start import process": [
         "Rozpocznij proces importowania"
       ],
@@ -1287,9 +1293,6 @@
       ],
       "Give feedback": [
         "Wyślij opinię"
-      ],
-      "Report a problem": [
-        "Zgłoś problem"
       ],
       "Beta Access": [
         "Dostęp beta"
@@ -1343,7 +1346,7 @@
         "Usuń szkic"
       ],
       "Delete ${ count } draft": [
-        "Usuń ${ count } szkic",
+        "Usuń szkic",
         "Usuń ${ count } szkice",
         "Usuń ${ count } szkiców",
         "Usuń ${ count } szkiców"
@@ -1355,13 +1358,13 @@
         "Usuń wątek"
       ],
       "Delete ${ count } conversation": [
-        "Usuń ${ count } wątek",
+        "Usuń wątek",
         "Usuń ${ count } wątki",
         "Usuń ${ count } wątków",
         "Usuń ${ count } wątków"
       ],
       "Delete ${ count } message": [
-        "Usuń ${ count } wiadomość",
+        "Usuń wiadomość",
         "Usuń ${ count } wiadomości",
         "Usuń ${ count } wiadomości",
         "Usuń ${ count } wiadomości"
@@ -1533,6 +1536,9 @@
       "Loading": [
         "Ładowanie"
       ],
+      "support team": [
+        "pomocą techniczną"
+      ],
       "No contacts added yet": [
         "Nie dodano jeszcze żadnych kontaktów"
       ],
@@ -1636,7 +1642,7 @@
         "Upuść plik tutaj, aby przesłać"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Twoje konto jest obecnie zawieszone. Ureguluj zobowiązania."
+        "Twoje konto Proton jest obecnie zawieszone. Ureguluj zobowiązania."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Czy chcesz otrzymać nowy kod weryfikacyjny lub użyć innej metody weryfikacji?"
@@ -1788,6 +1794,12 @@
         "${ addressCount } adresów e-mail",
         "${ addressCount } adresów e-mail"
       ],
+      "Screenshot(s) attached": [
+        "Zrzuty ekranu zostały dołączone"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
+      ],
       "Import contacts": [
         "Importuj kontakty"
       ],
@@ -1883,12 +1895,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Dostęp beta został wyłączony. Kliknij ${ refreshButton }, aby użyć stabilnej wersji ${ appName }. Aplikacja zostanie odświeżona."
-      ],
-      "Screenshot(s) attached": [
-        "Zrzuty ekranu zostały dołączone"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
       "Inherited from parent folder": [
         "Zastosowano z folderu nadrzędnego"
@@ -2011,7 +2017,7 @@
         "Czy na pewno chcesz trwale usunąć ten szkic?"
       ],
       "Are you sure you want to permanently delete ${ count } draft?": [
-        "Czy na pewno chcesz trwale usunąć ${ count } szkic?",
+        "Czy na pewno chcesz trwale usunąć szkic?",
         "Czy na pewno chcesz trwale usunąć ${ count } szkice?",
         "Czy na pewno chcesz trwale usunąć ${ count } szkiców?",
         "Czy na pewno chcesz trwale usunąć ${ count } szkiców?"
@@ -2023,13 +2029,13 @@
         "Czy na pewno chcesz trwale usunąć ten wątek?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
-        "Czy na pewno chcesz trwale usunąć ${ count } wątek?",
+        "Czy na pewno chcesz trwale usunąć wątek?",
         "Czy na pewno chcesz trwale usunąć ${ count } wątki?",
         "Czy na pewno chcesz trwale usunąć ${ count } wątków?",
         "Czy na pewno chcesz trwale usunąć ${ count } wątków?"
       ],
       "Are you sure you want to permanently delete ${ count } message?": [
-        "Czy na pewno chcesz trwale usunąć ${ count } wiadomość?",
+        "Czy na pewno chcesz trwale usunąć wiadomość?",
         "Czy na pewno chcesz trwale usunąć ${ count } wiadomości?",
         "Czy na pewno chcesz trwale usunąć ${ count } wiadomości?",
         "Czy na pewno chcesz trwale usunąć ${ count } wiadomości?"
@@ -2528,6 +2534,30 @@
       "Export contacts": [
         "Eksportuj kontakty"
       ],
+      "Operating system": [
+        "System operacyjny"
+      ],
+      "Operating system version": [
+        "Wersja systemu operacyjnego"
+      ],
+      "Proton username": [
+        "Nazwa użytkownika Proton"
+      ],
+      "Category": [
+        "Kategoria"
+      ],
+      "What happened?": [
+        "Co się stało?"
+      ],
+      "System information": [
+        "Informacje o systemie"
+      ],
+      "Browser": [
+        "Przeglądarka"
+      ],
+      "Browser version": [
+        "Wersja przeglądarki"
+      ],
       "From: ${ fromEmailAddress }": [
         "Od: ${ fromEmailAddress }"
       ],
@@ -2567,38 +2597,8 @@
       "Select how your composer opens by default.": [
         "Wybierz domyślny tryb edytora."
       ],
-      "0 - Not a fan": [
-        "0 - Nie jestem fanem"
-      ],
-      "10 - Love it!": [
-        "10 - Uwielbiam!"
-      ],
       "What is the primary reason for this rating?": [
         "Jaki jest główny powód tej oceny?"
-      ],
-      "Operating system": [
-        "System operacyjny"
-      ],
-      "Operating system version": [
-        "Wersja systemu operacyjnego"
-      ],
-      "Proton username": [
-        "Nazwa użytkownika Proton"
-      ],
-      "Category": [
-        "Kategoria"
-      ],
-      "What happened?": [
-        "Co się stało?"
-      ],
-      "System information": [
-        "Informacje o systemie"
-      ],
-      "Browser": [
-        "Przeglądarka"
-      ],
-      "Browser version": [
-        "Wersja przeglądarki"
       ],
       "Enable Beta Access": [
         "Włącz dostęp beta"
@@ -2795,6 +2795,12 @@
       "How would you rate your experience with the new ProtonMail?": [
         "Jak oceniasz nową aplikację ProtonMaila?"
       ],
+      "0 - Not a fan": [
+        "0 - Nie jestem fanem"
+      ],
+      "10 - Love it!": [
+        "10 - Uwielbiam!"
+      ],
       "Also archive": [
         "Również archiwizuj"
       ]
@@ -2811,6 +2817,9 @@
       "Request an invite": [
         "Poproś o zaproszenie"
       ],
+      "clearing your browser cache": [
+        "wyczyszczenie pamięci podręcznej przeglądarki"
+      ],
       "Pay invoice": [
         "Zapłać fakturę"
       ],
@@ -2822,9 +2831,6 @@
       ],
       "Go to subscription plans": [
         "Przejdź do subskrypcji planów"
-      ],
-      "clearing your browser cache": [
-        "wyczyszczenie pamięci podręcznej przeglądarki"
       ],
       "Inbox": [
         "Odebrane"
@@ -2987,15 +2993,6 @@
       "Name": [
         "Nazwa"
       ],
-      "Mailbox password": [
-        "Hasło skrzynki pocztowej"
-      ],
-      "e.g. Julia Smith": [
-        "np. Julia Nowak"
-      ],
-      "Feedback": [
-        "Opinia"
-      ],
       "OS name": [
         "Nazwa systemu operacyjnego"
       ],
@@ -3016,6 +3013,15 @@
       ],
       "Browser version": [
         "Wersja przeglądarki"
+      ],
+      "Mailbox password": [
+        "Hasło skrzynki pocztowej"
+      ],
+      "e.g. Julia Smith": [
+        "np. Julia Nowak"
+      ],
+      "Feedback": [
+        "Opinia"
       ],
       "Type text or keyword": [
         "Wpisz tekst lub słowo kluczowe"
@@ -3062,7 +3068,7 @@
         "Czy na pewno chcesz trwale usunąć tę grupę kontaktów?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Czy na pewno chcesz trwale usunąć ${ count } grupę kontaktów?",
+        "Czy na pewno chcesz trwale usunąć grupę kontaktów?",
         "Czy na pewno chcesz trwale usunąć ${ count } grupy kontaktów?",
         "Czy na pewno chcesz trwale usunąć ${ count } grup kontaktów?",
         "Czy na pewno chcesz trwale usunąć ${ count } grupy kontaktów?"
@@ -3071,7 +3077,7 @@
         "Czy na pewno chcesz trwale usunąć ten kontakt?"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
-        "Czy na pewno chcesz trwale usunąć ${ count } kontakt?",
+        "Czy na pewno chcesz trwale usunąć kontakt?",
         "Czy na pewno chcesz trwale usunąć ${ count } kontakty?",
         "Czy na pewno chcesz trwale usunąć ${ count } kontaktów?",
         "Czy na pewno chcesz trwale usunąć ${ count } kontaktów?"
@@ -3097,14 +3103,14 @@
       "Contacts could not be merged": [
         "Kontakty nie mogły zostać scalone"
       ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Raporty nie są szyfrowane end-to-end. Nie wysyłaj żadnych poufnych informacji."
+      ],
       "Are you sure you want to discard your import?": [
         "Czy na pewno chcesz odrzucić swój import?"
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Twoje ustawienia daty i czasu nie są zsynchronizowane."
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Raporty nie są szyfrowane end-to-end. Nie wysyłaj żadnych poufnych informacji."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Weryfikacja podpisu załącznika nie powiodła się.\nNadal możesz pobrać ten załącznik, ale mógł on zostać naruszony.",
@@ -3273,14 +3279,14 @@
       "Fingerprint copied to clipboard": [
         "Odcisk klucza został skopiowany do schowka"
       ],
+      "Bug reported": [
+        "Błąd został zgłoszony"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Ustawienia skrótów klawiszowych zostały zaktualizowane"
       ],
       "Preference saved": [
         "Ustawienia zostały zapisane"
-      ],
-      "Bug reported": [
-        "Błąd został zgłoszony"
       ],
       "Message content search activated": [
         "Wyszukiwanie zawartości wiadomości zostało włączone"
@@ -3748,6 +3754,118 @@
         "Zaszyfrowanych i dodanych kontaktów: ${ totalImported }/${ totalToImport }"
       ]
     },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Nie wybrałeś obrazu"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Problem z logowaniem"
+      ],
+      "Sign up problem": [
+        "Problem z rejestracją"
+      ],
+      "Payments problem": [
+        "Problem z płatnościami"
+      ],
+      "Custom domain problem": [
+        "Problem z niestandardową domeną"
+      ],
+      "Bridge problem": [
+        "Problem z aplikacją Bridge"
+      ],
+      "Import / export problem": [
+        "Import / eksport"
+      ],
+      "Connection problem": [
+        "Problem z połączeniem"
+      ],
+      "Slow speed problem": [
+        "Problem z wolną prędkością"
+      ],
+      "Calendar problem": [
+        "Problem z kalendarzem"
+      ],
+      "Contacts problem": [
+        "Problem z kontaktami"
+      ],
+      "Drive problem": [
+        "Problem z dyskiem"
+      ],
+      "Mail problem": [
+        "Problem z pocztą"
+      ],
+      "VPN problem": [
+        "Problem z usługą VPN"
+      ],
+      "Feature request": [
+        "Prośba o dodatkową funkcję"
+      ],
+      "Other": [
+        "Inna"
+      ],
+      "Signup problem": [
+        "Problem z rejestracją"
+      ],
+      "Installation problem": [
+        "Problem z instalacją"
+      ],
+      "Update problem": [
+        "Problem z aktualizacją"
+      ],
+      "Application problem": [
+        "Problem z aplikacją"
+      ],
+      "Speed problem": [
+        "Problem z prędkością"
+      ],
+      "Manual setup problem": [
+        "Problem z konfiguracją"
+      ],
+      "Website access problem": [
+        "Problem z dostępem do strony"
+      ],
+      "Streaming problem": [
+        "Problem ze streamingiem"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Konto"
+      ],
+      "Apps": [
+        "Aplikacje"
+      ],
+      "Network": [
+        "Sieć"
+      ],
+      "Services": [
+        "Usługi"
+      ],
+      "Other category": [
+        "Inna kategoria"
+      ],
+      "Custom folders": [
+        "Niestandardowe foldery"
+      ],
+      "Default folders": [
+        "Domyślne foldery"
+      ],
+      "Labels": [
+        "Etykiety"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Wybierz"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "Dołącz zrzuty ekranu"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Łączenie z dostawcą kontaktów"
@@ -3904,118 +4022,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Opinia została wysłana"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Nie wybrałeś obrazu"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Problem z logowaniem"
-      ],
-      "Sign up problem": [
-        "Problem z rejestracją"
-      ],
-      "Payments problem": [
-        "Problem z płatnościami"
-      ],
-      "Custom domain problem": [
-        "Problem z niestandardową domeną"
-      ],
-      "Bridge problem": [
-        "Problem z aplikacją Bridge"
-      ],
-      "Import / export problem": [
-        "Import / eksport"
-      ],
-      "Connection problem": [
-        "Problem z połączeniem"
-      ],
-      "Slow speed problem": [
-        "Problem z wolną prędkością"
-      ],
-      "Calendar problem": [
-        "Problem z kalendarzem"
-      ],
-      "Contacts problem": [
-        "Problem z kontaktami"
-      ],
-      "Drive problem": [
-        "Problem z dyskiem"
-      ],
-      "Mail problem": [
-        "Problem z pocztą"
-      ],
-      "VPN problem": [
-        "Problem z usługą VPN"
-      ],
-      "Feature request": [
-        "Prośba o dodatkową funkcję"
-      ],
-      "Other": [
-        "Inna"
-      ],
-      "Signup problem": [
-        "Problem z rejestracją"
-      ],
-      "Installation problem": [
-        "Problem z instalacją"
-      ],
-      "Update problem": [
-        "Problem z aktualizacją"
-      ],
-      "Application problem": [
-        "Problem z aplikacją"
-      ],
-      "Speed problem": [
-        "Problem z prędkością"
-      ],
-      "Manual setup problem": [
-        "Problem z konfiguracją"
-      ],
-      "Website access problem": [
-        "Problem z dostępem do strony"
-      ],
-      "Streaming problem": [
-        "Problem ze streamingiem"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Konto"
-      ],
-      "Apps": [
-        "Aplikacje"
-      ],
-      "Network": [
-        "Sieć"
-      ],
-      "Services": [
-        "Usługi"
-      ],
-      "Other category": [
-        "Inna kategoria"
-      ],
-      "Custom folders": [
-        "Niestandardowe foldery"
-      ],
-      "Default folders": [
-        "Domyślne foldery"
-      ],
-      "Labels": [
-        "Etykiety"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Wybierz"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Dołącz zrzuty ekranu"
       ]
     },
     "Beta access description": {

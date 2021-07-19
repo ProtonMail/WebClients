@@ -21,11 +21,14 @@
       "Authentication error.": [
         ""
       ],
+      "Email address invalid": [
+        "La dirección de correo electrónico no es válida"
+      ],
       "This field is required": [
         "Este campo es obligatorio"
       ],
-      "Email address invalid": [
-        "La dirección de correo electrónico no es válida"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
       ],
       "The composer failed to load.": [
         "No se pudo cargar el editor."
@@ -122,9 +125,6 @@
       "Require at least one action": [
         "Requiere al menos una acción"
       ],
-      "Request timed out.": [
-        "Tiempo de espera agotado."
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
@@ -136,6 +136,9 @@
       ],
       "Passwords do not match": [
         "Las contraseñas no coinciden"
+      ],
+      "Request timed out.": [
+        "Tiempo de espera agotado."
       ],
       "Signature verification failed": [
         "La verificación de la firma ha fallado"
@@ -294,6 +297,9 @@
       ],
       "Use “${ label }” setting": [
         ""
+      ],
+      "refresh the page": [
+        "actualizar la página"
       ],
       "Remove": [
         "Eliminar"
@@ -577,6 +583,18 @@
       "Next": [
         "Siguiente"
       ],
+      "Clear": [
+        "Borrar"
+      ],
+      "Add screenshot(s)": [
+        "Añadir captura(s) de pantalla"
+      ],
+      "Hide info": [
+        "Ocultar información"
+      ],
+      "Show info": [
+        "Mostrar información"
+      ],
       "Continue import": [
         ""
       ],
@@ -597,9 +615,6 @@
       ],
       "Signing out": [
         "Cerrando sesión"
-      ],
-      "refresh the page": [
-        "actualizar la página"
       ],
       "Log in": [
         "Iniciar sesión"
@@ -652,9 +667,6 @@
       "Search": [
         "Buscar"
       ],
-      "Clear": [
-        "Borrar"
-      ],
       "Copy email to clipboard": [
         "Copiar correo al portapapeles"
       ],
@@ -699,15 +711,6 @@
       ],
       "Composer mode": [
         ""
-      ],
-      "Add screenshot(s)": [
-        "Añadir captura(s) de pantalla"
-      ],
-      "Hide info": [
-        "Ocultar información"
-      ],
-      "Show info": [
-        "Mostrar información"
       ],
       "Preview": [
         "Previsualizar"
@@ -1211,6 +1214,9 @@
       "Import contacts": [
         "Importar contactos"
       ],
+      "Report a problem": [
+        "Notificar un problema"
+      ],
       "Start import process": [
         ""
       ],
@@ -1261,9 +1267,6 @@
       ],
       "Give feedback": [
         "Deja un comentario"
-      ],
-      "Report a problem": [
-        "Notificar un problema"
       ],
       "Beta Access": [
         "Acceso beta"
@@ -1498,6 +1501,9 @@
       ],
       "Loading": [
         "Cargando"
+      ],
+      "support team": [
+        ""
       ],
       "No contacts added yet": [
         "Todavía no se han añadido contactos"
@@ -1742,6 +1748,12 @@
         "{ addressCount } dirección de correo electrónico",
         "{ addressCount } direcciones de correo electrónico"
       ],
+      "Screenshot(s) attached": [
+        "Capturas de pantalla adjuntadas"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Actualizar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
+      ],
       "Import contacts": [
         ""
       ],
@@ -1837,12 +1849,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         ""
-      ],
-      "Screenshot(s) attached": [
-        "Capturas de pantalla adjuntadas"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Actualizar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
       ],
       "Inherited from parent folder": [
         "Heredado de la carpeta padre"
@@ -2434,6 +2440,30 @@
       "Export contacts": [
         "Exportar contactos"
       ],
+      "Operating system": [
+        "Sistema operativo"
+      ],
+      "Operating system version": [
+        "Versión del sistema operativo"
+      ],
+      "Proton username": [
+        "Nombre de usuario de Proton"
+      ],
+      "Category": [
+        "Categoría"
+      ],
+      "What happened?": [
+        "¿Qué ha ocurrido?"
+      ],
+      "System information": [
+        "Información del sistema"
+      ],
+      "Browser": [
+        "Navegador"
+      ],
+      "Browser version": [
+        "Versión del navegador"
+      ],
       "From: ${ fromEmailAddress }": [
         ""
       ],
@@ -2473,38 +2503,8 @@
       "Select how your composer opens by default.": [
         ""
       ],
-      "0 - Not a fan": [
-        "0 - No soy fan"
-      ],
-      "10 - Love it!": [
-        "10 - ¡Me encanta!"
-      ],
       "What is the primary reason for this rating?": [
         ""
-      ],
-      "Operating system": [
-        "Sistema operativo"
-      ],
-      "Operating system version": [
-        "Versión del sistema operativo"
-      ],
-      "Proton username": [
-        "Nombre de usuario de Proton"
-      ],
-      "Category": [
-        "Categoría"
-      ],
-      "What happened?": [
-        "¿Qué ha ocurrido?"
-      ],
-      "System information": [
-        "Información del sistema"
-      ],
-      "Browser": [
-        "Navegador"
-      ],
-      "Browser version": [
-        "Versión del navegador"
       ],
       "Enable Beta Access": [
         "Habilitar acceso beta"
@@ -2701,6 +2701,12 @@
       "How would you rate your experience with the new ProtonMail?": [
         "¿Cómo evaluarías tu experiencia con el nuevo ProtonMail?"
       ],
+      "0 - Not a fan": [
+        "0 - No soy fan"
+      ],
+      "10 - Love it!": [
+        "10 - ¡Me encanta!"
+      ],
       "Also archive": [
         "Además archivar"
       ]
@@ -2717,6 +2723,9 @@
       "Request an invite": [
         "Solicitar una invitación"
       ],
+      "clearing your browser cache": [
+        "limpiando la memoria caché de tu navegador"
+      ],
       "Pay invoice": [
         "Pagar factura"
       ],
@@ -2728,9 +2737,6 @@
       ],
       "Go to subscription plans": [
         "Ir a los planes de suscripción"
-      ],
-      "clearing your browser cache": [
-        "limpiando la memoria caché de tu navegador"
       ],
       "Inbox": [
         "Buzón"
@@ -2893,15 +2899,6 @@
       "Name": [
         "Nombre"
       ],
-      "Mailbox password": [
-        "Contraseña del buzón"
-      ],
-      "e.g. Julia Smith": [
-        "p.ej. Julia Smith"
-      ],
-      "Feedback": [
-        "Comentarios"
-      ],
       "OS name": [
         "Sistema operativo"
       ],
@@ -2922,6 +2919,15 @@
       ],
       "Browser version": [
         "Versión del navegador"
+      ],
+      "Mailbox password": [
+        "Contraseña del buzón"
+      ],
+      "e.g. Julia Smith": [
+        "p.ej. Julia Smith"
+      ],
+      "Feedback": [
+        "Comentarios"
       ],
       "Type text or keyword": [
         "Escribe texto o palabra clave"
@@ -2999,14 +3005,14 @@
       "Contacts could not be merged": [
         "No se pudieron combinar los contactos"
       ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Los informes no están cifrados de extremo a extremo, no envíes ninguna información confidencial."
+      ],
       "Are you sure you want to discard your import?": [
         ""
       ],
       "Your local date & time settings seem to be out of sync.": [
         "La configuración de fecha y hora local parece no estar sincronizada."
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Los informes no están cifrados de extremo a extremo, no envíes ninguna información confidencial."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "No se ha podido verificar la firma del archivo adjunto.\nTodavía puedes descargar este archivo adjunto, pero podría haber sido manipulado.",
@@ -3169,14 +3175,14 @@
       "Fingerprint copied to clipboard": [
         "Huella digital copiada al portapapeles"
       ],
+      "Bug reported": [
+        "Fallo reportado"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Preferencias de atajos de teclado actualizadas"
       ],
       "Preference saved": [
         "Preferencia guardada"
-      ],
-      "Bug reported": [
-        "Fallo reportado"
       ],
       "Message content search activated": [
         "Búsqueda de contenido de mensajes activada"
@@ -3594,6 +3600,118 @@
         "${ totalImported }/${ totalToImport } contactos cifrados y agregados a tu lista de contactos"
       ]
     },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "No se ha seleccionado ninguna imagen"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Problema con el inicio de sesión"
+      ],
+      "Sign up problem": [
+        "Problema con el registro"
+      ],
+      "Payments problem": [
+        "Problema con los pagos"
+      ],
+      "Custom domain problem": [
+        "Problema con el dominio personalizado"
+      ],
+      "Bridge problem": [
+        "Problema con el Bridge"
+      ],
+      "Import / export problem": [
+        "Problema de importación/exportación"
+      ],
+      "Connection problem": [
+        "Problema con la conexión"
+      ],
+      "Slow speed problem": [
+        "Problema de velocidad baja"
+      ],
+      "Calendar problem": [
+        "Problema con el calendario"
+      ],
+      "Contacts problem": [
+        "Problema con los contactos"
+      ],
+      "Drive problem": [
+        "Problema con Drive"
+      ],
+      "Mail problem": [
+        "Problema con el correo"
+      ],
+      "VPN problem": [
+        "Problema con la VPN"
+      ],
+      "Feature request": [
+        "Solicitar funcionalidad"
+      ],
+      "Other": [
+        "Otro"
+      ],
+      "Signup problem": [
+        "Problema con el registro"
+      ],
+      "Installation problem": [
+        "Problema con la instalación"
+      ],
+      "Update problem": [
+        "Problema de actualización"
+      ],
+      "Application problem": [
+        "Problema de la aplicación"
+      ],
+      "Speed problem": [
+        "Problema de velocidad"
+      ],
+      "Manual setup problem": [
+        "Problema de configuración manual"
+      ],
+      "Website access problem": [
+        "Problema de acceso al sitio web"
+      ],
+      "Streaming problem": [
+        "Problema de transmisión"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Cuenta"
+      ],
+      "Apps": [
+        "Aplicaciones"
+      ],
+      "Network": [
+        "Red"
+      ],
+      "Services": [
+        "Servicios"
+      ],
+      "Other category": [
+        "Otra categoría"
+      ],
+      "Custom folders": [
+        "Carpetas personalizadas"
+      ],
+      "Default folders": [
+        "Carpetas predeterminadas"
+      ],
+      "Labels": [
+        "Etiquetas"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Seleccionar"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "Adjuntar captura(s) de pantalla"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -3750,118 +3868,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Comentarios enviados"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "No se ha seleccionado ninguna imagen"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Problema con el inicio de sesión"
-      ],
-      "Sign up problem": [
-        "Problema con el registro"
-      ],
-      "Payments problem": [
-        "Problema con los pagos"
-      ],
-      "Custom domain problem": [
-        "Problema con el dominio personalizado"
-      ],
-      "Bridge problem": [
-        "Problema con el Bridge"
-      ],
-      "Import / export problem": [
-        "Problema de importación/exportación"
-      ],
-      "Connection problem": [
-        "Problema con la conexión"
-      ],
-      "Slow speed problem": [
-        "Problema de velocidad baja"
-      ],
-      "Calendar problem": [
-        "Problema con el calendario"
-      ],
-      "Contacts problem": [
-        "Problema con los contactos"
-      ],
-      "Drive problem": [
-        "Problema con Drive"
-      ],
-      "Mail problem": [
-        "Problema con el correo"
-      ],
-      "VPN problem": [
-        "Problema con la VPN"
-      ],
-      "Feature request": [
-        "Solicitar funcionalidad"
-      ],
-      "Other": [
-        "Otro"
-      ],
-      "Signup problem": [
-        "Problema con el registro"
-      ],
-      "Installation problem": [
-        "Problema con la instalación"
-      ],
-      "Update problem": [
-        "Problema de actualización"
-      ],
-      "Application problem": [
-        "Problema de la aplicación"
-      ],
-      "Speed problem": [
-        "Problema de velocidad"
-      ],
-      "Manual setup problem": [
-        "Problema de configuración manual"
-      ],
-      "Website access problem": [
-        "Problema de acceso al sitio web"
-      ],
-      "Streaming problem": [
-        "Problema de transmisión"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Cuenta"
-      ],
-      "Apps": [
-        "Aplicaciones"
-      ],
-      "Network": [
-        "Red"
-      ],
-      "Services": [
-        "Servicios"
-      ],
-      "Other category": [
-        "Otra categoría"
-      ],
-      "Custom folders": [
-        "Carpetas personalizadas"
-      ],
-      "Default folders": [
-        "Carpetas predeterminadas"
-      ],
-      "Labels": [
-        "Etiquetas"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Seleccionar"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Adjuntar captura(s) de pantalla"
       ]
     },
     "Beta access description": {

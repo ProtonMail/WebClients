@@ -21,11 +21,14 @@
       "Authentication error.": [
         "Erro de autenticação."
       ],
+      "Email address invalid": [
+        "Endereço de email inválido"
+      ],
       "This field is required": [
         "Este campo é requerido"
       ],
-      "Email address invalid": [
-        "Endereço de email inválido"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Algo correu mal, por favor ${ refresh } para continuar. Se ainda vir esta mensagem de erro, por favor, contacte a nossa ${ supportTeam }."
       ],
       "The composer failed to load.": [
         "Falha ao carregar o compositor."
@@ -122,9 +125,6 @@
       "Require at least one action": [
         "Requer pelo menos uma acção"
       ],
-      "Request timed out.": [
-        "O pedido expirou."
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requer um mínimo de ${ minimumLength } caracteres."
       ],
@@ -136,6 +136,9 @@
       ],
       "Passwords do not match": [
         "As senhas não coincidem"
+      ],
+      "Request timed out.": [
+        "O pedido expirou."
       ],
       "Signature verification failed": [
         "Falha ao verificar a assinatura"
@@ -294,6 +297,9 @@
       ],
       "Use “${ label }” setting": [
         "Usar a definição \"${ label }\""
+      ],
+      "refresh the page": [
+        "actualizar a página"
       ],
       "Remove": [
         "Remover"
@@ -577,6 +583,18 @@
       "Next": [
         "Seguinte"
       ],
+      "Clear": [
+        "Limpar"
+      ],
+      "Add screenshot(s)": [
+        "Adicionar capturas de ecrã"
+      ],
+      "Hide info": [
+        "Ocultar informação"
+      ],
+      "Show info": [
+        "Mostrar informação"
+      ],
       "Continue import": [
         "Continuar a importação"
       ],
@@ -597,9 +615,6 @@
       ],
       "Signing out": [
         "A terminar sessão"
-      ],
-      "refresh the page": [
-        "actualizar a página"
       ],
       "Log in": [
         "Iniciar sessão"
@@ -652,9 +667,6 @@
       "Search": [
         "Procurar"
       ],
-      "Clear": [
-        "Limpar"
-      ],
       "Copy email to clipboard": [
         "Copiar mensagem para a área de transferência"
       ],
@@ -699,15 +711,6 @@
       ],
       "Composer mode": [
         "Modo do compositor"
-      ],
-      "Add screenshot(s)": [
-        "Adicionar capturas de ecrã"
-      ],
-      "Hide info": [
-        "Ocultar informação"
-      ],
-      "Show info": [
-        "Mostrar informação"
       ],
       "Preview": [
         "Antever"
@@ -1211,6 +1214,9 @@
       "Import contacts": [
         "Importar contactos"
       ],
+      "Report a problem": [
+        "Relatar um problema"
+      ],
       "Start import process": [
         "Iniciar o processo de importação"
       ],
@@ -1261,9 +1267,6 @@
       ],
       "Give feedback": [
         "Comentar"
-      ],
-      "Report a problem": [
-        "Relatar um problema"
       ],
       "Beta Access": [
         "Acesso Beta"
@@ -1498,6 +1501,9 @@
       ],
       "Loading": [
         "A carregar"
+      ],
+      "support team": [
+        "equipa de assistência"
       ],
       "No contacts added yet": [
         "Ainda não adicionou contactos"
@@ -1742,6 +1748,12 @@
         "${ addressCount } endereço de email",
         "${ addressCount } endereços de email"
       ],
+      "Screenshot(s) attached": [
+        "Capturas de ecrã anexadas"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
+      ],
       "Import contacts": [
         "Importar contactos"
       ],
@@ -1837,12 +1849,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Desactivou o acesso Beta. Clique em ${ refreshButton } para usar a versão estável do ${ appName }. A aplicação será recarregada."
-      ],
-      "Screenshot(s) attached": [
-        "Capturas de ecrã anexadas"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
       ],
       "Inherited from parent folder": [
         "Herança da pasta-mãe"
@@ -2434,6 +2440,30 @@
       "Export contacts": [
         "Exportar contactos"
       ],
+      "Operating system": [
+        "Sistema operativo"
+      ],
+      "Operating system version": [
+        "Versão do sistema operativo"
+      ],
+      "Proton username": [
+        "Utilizador Proton"
+      ],
+      "Category": [
+        "Categoria"
+      ],
+      "What happened?": [
+        "O que é que aconteceu?"
+      ],
+      "System information": [
+        "Informação do sistema"
+      ],
+      "Browser": [
+        "Navegador"
+      ],
+      "Browser version": [
+        "Versão do navegador"
+      ],
       "From: ${ fromEmailAddress }": [
         "De: ${ fromEmailAddress }"
       ],
@@ -2473,38 +2503,8 @@
       "Select how your composer opens by default.": [
         "Escolha a aparência predefinida do compositor."
       ],
-      "0 - Not a fan": [
-        "0 - Não sou fã"
-      ],
-      "10 - Love it!": [
-        "10 - Adoro!"
-      ],
       "What is the primary reason for this rating?": [
         "Qual é a principal razão para esta avaliação?"
-      ],
-      "Operating system": [
-        "Sistema operativo"
-      ],
-      "Operating system version": [
-        "Versão do sistema operativo"
-      ],
-      "Proton username": [
-        "Utilizador Proton"
-      ],
-      "Category": [
-        "Categoria"
-      ],
-      "What happened?": [
-        "O que é que aconteceu?"
-      ],
-      "System information": [
-        "Informação do sistema"
-      ],
-      "Browser": [
-        "Navegador"
-      ],
-      "Browser version": [
-        "Versão do navegador"
       ],
       "Enable Beta Access": [
         "Activar acesso Beta"
@@ -2701,6 +2701,12 @@
       "How would you rate your experience with the new ProtonMail?": [
         "Como é que classificaria a sua experiência com o novo Proton?"
       ],
+      "0 - Not a fan": [
+        "0 - Não sou fã"
+      ],
+      "10 - Love it!": [
+        "10 - Adoro!"
+      ],
       "Also archive": [
         "Arquivar também"
       ]
@@ -2717,6 +2723,9 @@
       "Request an invite": [
         "Pedir um convite"
       ],
+      "clearing your browser cache": [
+        "limpar a memória do navegador"
+      ],
       "Pay invoice": [
         "Pagar factura"
       ],
@@ -2728,9 +2737,6 @@
       ],
       "Go to subscription plans": [
         "Ir para os planos de subscrição"
-      ],
-      "clearing your browser cache": [
-        "limpar a memória do navegador"
       ],
       "Inbox": [
         "Caixa de entrada"
@@ -2811,22 +2817,22 @@
         "Active o seu endereço para responder a este convite."
       ],
       "Create a calendar linked to an active email address.": [
-        "Criar uma agenda vinculada a um endereço de email activo."
+        "Criar uma agenda vinculada a um endereço electrónico activo."
       ],
       "Enable an email address linked to one of your calendars.": [
-        "Active um email associado a uma das suas agendas."
+        "Active um endereço electrónico associado a uma das suas agendas."
       ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "Ou pode eliminar uma das suas agendas e criar uma nova vinculada a um email activo."
+        "Ou pode eliminar uma das suas agendas e criar uma nova vinculada a um endereço electrónico activo."
       ],
       "Enable your address again to modify your answer.": [
         "Active o seu endereço novamente para modificar a sua resposta."
       ],
       "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Active o email associado à agenda desactivada para cancelar o evento."
+        "Active o endereço electrónico associado à agenda desactivada para cancelar o evento."
       ],
       "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Active o endereço de email vinculado à agenda desactivada para modificar sua resposta."
+        "Active o endereço electrónico vinculado à agenda desactivada para modificar sua resposta."
       ],
       "Add folder": [
         "Adicionar pasta"
@@ -2893,15 +2899,6 @@
       "Name": [
         "Nome"
       ],
-      "Mailbox password": [
-        "Senha da caixa de correio"
-      ],
-      "e.g. Julia Smith": [
-        "e.g. Júlia Silva"
-      ],
-      "Feedback": [
-        "Comentários"
-      ],
       "OS name": [
         "Nome do SO"
       ],
@@ -2922,6 +2919,15 @@
       ],
       "Browser version": [
         "Versão do navegador"
+      ],
+      "Mailbox password": [
+        "Senha da caixa de correio"
+      ],
+      "e.g. Julia Smith": [
+        "e.g. Júlia Silva"
+      ],
+      "Feedback": [
+        "Comentários"
       ],
       "Type text or keyword": [
         "Digite o texto ou palavra-chave"
@@ -2999,14 +3005,14 @@
       "Contacts could not be merged": [
         "Não foi possível unir os contactos"
       ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Os relatórios não são encriptados de ponta-a-ponta. Por favor, não envie nenhuma informação sensível."
+      ],
       "Are you sure you want to discard your import?": [
         "Tem certeza de que deseja descartar a importação?"
       ],
       "Your local date & time settings seem to be out of sync.": [
         "As definições locais de data e hora não parecem estar sincronizadas."
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Os relatórios não são encriptados de ponta-a-ponta. Por favor, não envie nenhuma informação sensível."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "A verificação da assinatura do anexo falhou.\nAinda pode transferir-lo, mas pode ter sido adulterado.",
@@ -3169,14 +3175,14 @@
       "Fingerprint copied to clipboard": [
         "Impressão digital copiada para a área de transferência"
       ],
+      "Bug reported": [
+        "Erro reportado"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Preferências de atalhos de teclado actualizadas"
       ],
       "Preference saved": [
         "Preferência gravada"
-      ],
-      "Bug reported": [
-        "Erro reportado"
       ],
       "Message content search activated": [
         "Procura de conteúdo da mensagem activada"
@@ -3594,6 +3600,118 @@
         "${ totalImported }/${ totalToImport } contactos encriptados e adicionados à lista de contactos"
       ]
     },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Nenhuma imagem seleccionada"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Problema ao registar"
+      ],
+      "Sign up problem": [
+        "Problema ao registar"
+      ],
+      "Payments problem": [
+        "Problema com os pagamentos"
+      ],
+      "Custom domain problem": [
+        "Problema nos domínios personalizados"
+      ],
+      "Bridge problem": [
+        "Problema na Bridge"
+      ],
+      "Import / export problem": [
+        "Problema ao importar/exportar"
+      ],
+      "Connection problem": [
+        "Problema com a ligação"
+      ],
+      "Slow speed problem": [
+        "Problema de velocidade lenta"
+      ],
+      "Calendar problem": [
+        "Problema na agenda"
+      ],
+      "Contacts problem": [
+        "Problema nos contactos"
+      ],
+      "Drive problem": [
+        "Problema na Drive"
+      ],
+      "Mail problem": [
+        "Problema no correio"
+      ],
+      "VPN problem": [
+        "Problema de VPN"
+      ],
+      "Feature request": [
+        "Pedido de funcionalidade"
+      ],
+      "Other": [
+        "Outro"
+      ],
+      "Signup problem": [
+        "Problema ao registar"
+      ],
+      "Installation problem": [
+        "Problema na instalação"
+      ],
+      "Update problem": [
+        "Problema de actualização"
+      ],
+      "Application problem": [
+        "Problema de aplicação"
+      ],
+      "Speed problem": [
+        "Problema de velocidade"
+      ],
+      "Manual setup problem": [
+        "Problema de configuração manual"
+      ],
+      "Website access problem": [
+        "Problema de acesso à página web"
+      ],
+      "Streaming problem": [
+        "Problema de transmissão"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Conta"
+      ],
+      "Apps": [
+        "Aplicações"
+      ],
+      "Network": [
+        "Rede"
+      ],
+      "Services": [
+        "Serviços"
+      ],
+      "Other category": [
+        "Outra categoria"
+      ],
+      "Custom folders": [
+        "Pastas personalizadas"
+      ],
+      "Default folders": [
+        "Pastas predefinidas"
+      ],
+      "Labels": [
+        "Etiquetas"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Seleccionar"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "Anexar capturas de ecrã"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "A ligar ao seu fornecedor de contactos"
@@ -3750,118 +3868,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Comentários enviados"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Nenhuma imagem seleccionada"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Problema ao registar"
-      ],
-      "Sign up problem": [
-        "Problema ao registar"
-      ],
-      "Payments problem": [
-        "Problema com os pagamentos"
-      ],
-      "Custom domain problem": [
-        "Problema nos domínios personalizados"
-      ],
-      "Bridge problem": [
-        "Problema na Bridge"
-      ],
-      "Import / export problem": [
-        "Problema ao importar/exportar"
-      ],
-      "Connection problem": [
-        "Problema com a ligação"
-      ],
-      "Slow speed problem": [
-        "Problema de velocidade lenta"
-      ],
-      "Calendar problem": [
-        "Problema na agenda"
-      ],
-      "Contacts problem": [
-        "Problema nos contactos"
-      ],
-      "Drive problem": [
-        "Problema na Drive"
-      ],
-      "Mail problem": [
-        "Problema no correio"
-      ],
-      "VPN problem": [
-        "Problema de VPN"
-      ],
-      "Feature request": [
-        "Pedido de funcionalidade"
-      ],
-      "Other": [
-        "Outro"
-      ],
-      "Signup problem": [
-        "Problema ao registar"
-      ],
-      "Installation problem": [
-        "Problema na instalação"
-      ],
-      "Update problem": [
-        "Problema de actualização"
-      ],
-      "Application problem": [
-        "Problema de aplicação"
-      ],
-      "Speed problem": [
-        "Problema de velocidade"
-      ],
-      "Manual setup problem": [
-        "Problema de configuração manual"
-      ],
-      "Website access problem": [
-        "Problema de acesso à página web"
-      ],
-      "Streaming problem": [
-        "Problema de transmissão"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Conta"
-      ],
-      "Apps": [
-        "Aplicações"
-      ],
-      "Network": [
-        "Rede"
-      ],
-      "Services": [
-        "Serviços"
-      ],
-      "Other category": [
-        "Outra categoria"
-      ],
-      "Custom folders": [
-        "Pastas personalizadas"
-      ],
-      "Default folders": [
-        "Pastas predefinidas"
-      ],
-      "Labels": [
-        "Etiquetas"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Seleccionar"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Anexar capturas de ecrã"
       ]
     },
     "Beta access description": {
@@ -5630,7 +5636,7 @@
         "Evento actualizado"
       ],
       "Creating calendar event failed": [
-        "Falha ao agendar evento"
+        "Falha ao criar evento na agenda"
       ],
       "Updating calendar event failed": [
         "Falha ao actualizar evento"

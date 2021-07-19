@@ -21,11 +21,14 @@
       "Authentication error.": [
         ""
       ],
+      "Email address invalid": [
+        "Érvénytelen e-mail cím"
+      ],
       "This field is required": [
         "A mező kitöltése kötelező"
       ],
-      "Email address invalid": [
-        "Érvénytelen e-mail cím"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
       ],
       "The composer failed to load.": [
         "A szerkesztőt nem sikerült betölteni."
@@ -122,9 +125,6 @@
       "Require at least one action": [
         "Legalább egy művelet szükséges"
       ],
-      "Request timed out.": [
-        "A kérés túllépte az időkorlátot."
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Legalább ${ minimumLength } karakter szükséges ebben a mezőben."
       ],
@@ -136,6 +136,9 @@
       ],
       "Passwords do not match": [
         "A jelszavak nem egyeznek"
+      ],
+      "Request timed out.": [
+        "A kérés túllépte az időkorlátot."
       ],
       "Signature verification failed": [
         "Aláírás ellenőrzése sikertelen"
@@ -294,6 +297,9 @@
       ],
       "Use “${ label }” setting": [
         ""
+      ],
+      "refresh the page": [
+        "frissítse az oldalt"
       ],
       "Remove": [
         "Eltávolítás"
@@ -577,6 +583,18 @@
       "Next": [
         "Következő"
       ],
+      "Clear": [
+        "Törlés"
+      ],
+      "Add screenshot(s)": [
+        "Képernyőkép hozzáadása"
+      ],
+      "Hide info": [
+        "Információ elrejtése"
+      ],
+      "Show info": [
+        "Információ megjelenítése"
+      ],
       "Continue import": [
         ""
       ],
@@ -597,9 +615,6 @@
       ],
       "Signing out": [
         "Kijelentkezés"
-      ],
-      "refresh the page": [
-        "frissítse az oldalt"
       ],
       "Log in": [
         "Bejelentkezés"
@@ -652,9 +667,6 @@
       "Search": [
         "Keresés"
       ],
-      "Clear": [
-        "Törlés"
-      ],
       "Copy email to clipboard": [
         "E-mail másolása a vágólapra"
       ],
@@ -699,15 +711,6 @@
       ],
       "Composer mode": [
         ""
-      ],
-      "Add screenshot(s)": [
-        "Képernyőkép hozzáadása"
-      ],
-      "Hide info": [
-        "Információ elrejtése"
-      ],
-      "Show info": [
-        "Információ megjelenítése"
       ],
       "Preview": [
         "Előnézet"
@@ -1211,6 +1214,9 @@
       "Import contacts": [
         "Névjegyek importálása"
       ],
+      "Report a problem": [
+        "Probléma jelentése"
+      ],
       "Start import process": [
         ""
       ],
@@ -1261,9 +1267,6 @@
       ],
       "Give feedback": [
         "Adjon visszajelzést"
-      ],
-      "Report a problem": [
-        "Probléma jelentése"
       ],
       "Beta Access": [
         "Béta hozzáférés"
@@ -1498,6 +1501,9 @@
       ],
       "Loading": [
         "Betöltés"
+      ],
+      "support team": [
+        ""
       ],
       "No contacts added yet": [
         "Még nincsenek névjegyek"
@@ -1742,6 +1748,12 @@
         "${ addressCount } e-mail cím",
         "${ addressCount } e-mail cím"
       ],
+      "Screenshot(s) attached": [
+        "Képernyőkép(ek) csatolva"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Az oldal frissítése vagy a ${ link } automatikusan megoldja a legtöbb problémát."
+      ],
       "Import contacts": [
         ""
       ],
@@ -1837,12 +1849,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         ""
-      ],
-      "Screenshot(s) attached": [
-        "Képernyőkép(ek) csatolva"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Az oldal frissítése vagy a ${ link } automatikusan megoldja a legtöbb problémát."
       ],
       "Inherited from parent folder": [
         "Örökölve a tartalmazó mappáról"
@@ -2434,6 +2440,30 @@
       "Export contacts": [
         "Névjegyek exportálása"
       ],
+      "Operating system": [
+        "Operációs rendszer"
+      ],
+      "Operating system version": [
+        "Az operációs rendszer verziója"
+      ],
+      "Proton username": [
+        "Proton felhasználónév"
+      ],
+      "Category": [
+        "Kategória"
+      ],
+      "What happened?": [
+        "Mi történt?"
+      ],
+      "System information": [
+        "Rendszer információk"
+      ],
+      "Browser": [
+        "Böngésző"
+      ],
+      "Browser version": [
+        "Böngésző verziója"
+      ],
       "From: ${ fromEmailAddress }": [
         ""
       ],
@@ -2473,38 +2503,8 @@
       "Select how your composer opens by default.": [
         ""
       ],
-      "0 - Not a fan": [
-        "0 - Nem rajongok érte"
-      ],
-      "10 - Love it!": [
-        "10 - Imádom!"
-      ],
       "What is the primary reason for this rating?": [
         ""
-      ],
-      "Operating system": [
-        "Operációs rendszer"
-      ],
-      "Operating system version": [
-        "Az operációs rendszer verziója"
-      ],
-      "Proton username": [
-        "Proton felhasználónév"
-      ],
-      "Category": [
-        "Kategória"
-      ],
-      "What happened?": [
-        "Mi történt?"
-      ],
-      "System information": [
-        "Rendszer információk"
-      ],
-      "Browser": [
-        "Böngésző"
-      ],
-      "Browser version": [
-        "Böngésző verziója"
       ],
       "Enable Beta Access": [
         "\"Béta hozzáférés\" engedélyezése"
@@ -2701,6 +2701,12 @@
       "How would you rate your experience with the new ProtonMail?": [
         "Hogyan értékeli a tapasztalatát az új ProtonMail-lel kapcsolatban?"
       ],
+      "0 - Not a fan": [
+        "0 - Nem rajongok érte"
+      ],
+      "10 - Love it!": [
+        "10 - Imádom!"
+      ],
       "Also archive": [
         "Archiválás is"
       ]
@@ -2717,6 +2723,9 @@
       "Request an invite": [
         "Meghívó kérése"
       ],
+      "clearing your browser cache": [
+        "böngésző gyorsítótárának ürítése"
+      ],
       "Pay invoice": [
         "Számla kifizetése"
       ],
@@ -2728,9 +2737,6 @@
       ],
       "Go to subscription plans": [
         "Előfizetési csomagok megnyitása"
-      ],
-      "clearing your browser cache": [
-        "böngésző gyorsítótárának ürítése"
       ],
       "Inbox": [
         "Beérkezett üzenetek"
@@ -2893,15 +2899,6 @@
       "Name": [
         "Név"
       ],
-      "Mailbox password": [
-        "E-mail titkosítási jelszó"
-      ],
-      "e.g. Julia Smith": [
-        "pl. Kovács János"
-      ],
-      "Feedback": [
-        "Visszajelzés"
-      ],
       "OS name": [
         "Operációs rendszer neve"
       ],
@@ -2922,6 +2919,15 @@
       ],
       "Browser version": [
         "Böngésző verziója"
+      ],
+      "Mailbox password": [
+        "E-mail titkosítási jelszó"
+      ],
+      "e.g. Julia Smith": [
+        "pl. Kovács János"
+      ],
+      "Feedback": [
+        "Visszajelzés"
       ],
       "Type text or keyword": [
         "Írjon be szöveget"
@@ -2999,14 +3005,14 @@
       "Contacts could not be merged": [
         "A névjegyek egyesítése nem sikerült"
       ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "A hibajelentések nem titkosítottak a végpontok közt, kérjük ne küldjön semmilyen érzékeny információt."
+      ],
       "Are you sure you want to discard your import?": [
         ""
       ],
       "Your local date & time settings seem to be out of sync.": [
         ""
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "A hibajelentések nem titkosítottak a végpontok közt, kérjük ne küldjön semmilyen érzékeny információt."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "A melléklet aláírásának ellenőrzése nem sikerült.\nLetöltheti a mellékletet, de elképzelhető, hogy megváltoztatták a tartalmát.",
@@ -3169,14 +3175,14 @@
       "Fingerprint copied to clipboard": [
         "Ujjlenyomat a vágólapra másolva"
       ],
+      "Bug reported": [
+        "Hiba bejelentve"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Gyorsbillentyű beállítások frissítve"
       ],
       "Preference saved": [
         "Beállítások mentve"
-      ],
-      "Bug reported": [
-        "Hiba bejelentve"
       ],
       "Message content search activated": [
         "Keresés az üzenetek tartalmában aktiválva"
@@ -3594,6 +3600,118 @@
         "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez"
       ]
     },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Nincs kép kiválasztva"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Probléma a bejelentkezéssel"
+      ],
+      "Sign up problem": [
+        "Probléma a regisztrációval"
+      ],
+      "Payments problem": [
+        "Fizetéssel kapcsolatos probléma"
+      ],
+      "Custom domain problem": [
+        "Probléma saját domain névvel"
+      ],
+      "Bridge problem": [
+        "A Birdge-zsel kapcsolatos probléma"
+      ],
+      "Import / export problem": [
+        "Importálási vagy exportálási probléma"
+      ],
+      "Connection problem": [
+        "Kapcsolódási probléma"
+      ],
+      "Slow speed problem": [
+        "Túl lassú működés"
+      ],
+      "Calendar problem": [
+        "Naptár probléma"
+      ],
+      "Contacts problem": [
+        "Névjegyzék probléma"
+      ],
+      "Drive problem": [
+        "ProtonDrive probléma"
+      ],
+      "Mail problem": [
+        "Levelezési probléma"
+      ],
+      "VPN problem": [
+        "VPN probléma"
+      ],
+      "Feature request": [
+        "Ötlet, javaslat"
+      ],
+      "Other": [
+        "Egyéb"
+      ],
+      "Signup problem": [
+        "Probléma a regisztrációval"
+      ],
+      "Installation problem": [
+        "Telepítési probléma"
+      ],
+      "Update problem": [
+        "Frissítési probléma"
+      ],
+      "Application problem": [
+        "Probléma az alkalmazással"
+      ],
+      "Speed problem": [
+        "Probléma a sebességgel"
+      ],
+      "Manual setup problem": [
+        "Probléma a kézi beállítással"
+      ],
+      "Website access problem": [
+        "Probléma a weboldal elérésével"
+      ],
+      "Streaming problem": [
+        "Videó nézési probléma"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Fiók"
+      ],
+      "Apps": [
+        "Alkalmazások"
+      ],
+      "Network": [
+        "Hálózat"
+      ],
+      "Services": [
+        "Szolgáltatások"
+      ],
+      "Other category": [
+        "Egyéb kategória"
+      ],
+      "Custom folders": [
+        "Saját mappák"
+      ],
+      "Default folders": [
+        "Alapértelmezett mappák"
+      ],
+      "Labels": [
+        "Címkék"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Kiválasztás"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "Képernyőkép csatolása"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -3750,118 +3868,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Visszajelzés elküldve"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Nincs kép kiválasztva"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Probléma a bejelentkezéssel"
-      ],
-      "Sign up problem": [
-        "Probléma a regisztrációval"
-      ],
-      "Payments problem": [
-        "Fizetéssel kapcsolatos probléma"
-      ],
-      "Custom domain problem": [
-        "Probléma saját domain névvel"
-      ],
-      "Bridge problem": [
-        "A Birdge-zsel kapcsolatos probléma"
-      ],
-      "Import / export problem": [
-        "Importálási vagy exportálási probléma"
-      ],
-      "Connection problem": [
-        "Kapcsolódási probléma"
-      ],
-      "Slow speed problem": [
-        "Túl lassú működés"
-      ],
-      "Calendar problem": [
-        "Naptár probléma"
-      ],
-      "Contacts problem": [
-        "Névjegyzék probléma"
-      ],
-      "Drive problem": [
-        "ProtonDrive probléma"
-      ],
-      "Mail problem": [
-        "Levelezési probléma"
-      ],
-      "VPN problem": [
-        "VPN probléma"
-      ],
-      "Feature request": [
-        "Ötlet, javaslat"
-      ],
-      "Other": [
-        "Egyéb"
-      ],
-      "Signup problem": [
-        "Probléma a regisztrációval"
-      ],
-      "Installation problem": [
-        "Telepítési probléma"
-      ],
-      "Update problem": [
-        "Frissítési probléma"
-      ],
-      "Application problem": [
-        "Probléma az alkalmazással"
-      ],
-      "Speed problem": [
-        "Probléma a sebességgel"
-      ],
-      "Manual setup problem": [
-        "Probléma a kézi beállítással"
-      ],
-      "Website access problem": [
-        "Probléma a weboldal elérésével"
-      ],
-      "Streaming problem": [
-        "Videó nézési probléma"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Fiók"
-      ],
-      "Apps": [
-        "Alkalmazások"
-      ],
-      "Network": [
-        "Hálózat"
-      ],
-      "Services": [
-        "Szolgáltatások"
-      ],
-      "Other category": [
-        "Egyéb kategória"
-      ],
-      "Custom folders": [
-        "Saját mappák"
-      ],
-      "Default folders": [
-        "Alapértelmezett mappák"
-      ],
-      "Labels": [
-        "Címkék"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Kiválasztás"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Képernyőkép csatolása"
       ]
     },
     "Beta access description": {

@@ -6,9 +6,6 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Eroare necunoscută."
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Acest mesaj poate conține unele legături care nu pot fi deschise corect de navigatorul actual."
       ],
@@ -21,11 +18,17 @@
       "Authentication error.": [
         "Eroare autentificare."
       ],
-      "This field is required": [
-        "Acest câmp este obligatoriu"
+      "Unknown error": [
+        "Eroare necunoscută."
       ],
       "Email address invalid": [
         "Adresă de e-mail nevalidă"
+      ],
+      "This field is required": [
+        "Acest câmp este obligatoriu"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
       ],
       "Can't validate email, try again later": [
         "Nu se poate valida adresa de e-mail, reîncercați mai târziu."
@@ -91,14 +94,23 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
+      "Primary address key is not decrypted": [
+        "Cheia primară a adresei nu este decriptată."
+      ],
       "Incorrect mailbox password. Please try again": [
         "Parolă mesaje incorectă. Reîncercați."
       ],
       "Incorrect login credentials. Please try again": [
         "Date de conectare incorecte. Reîncercați."
       ],
-      "Primary address key is not decrypted": [
+      "No valid address found": [
+        "Nu s-a găsit o adresă de e-mail validă"
+      ],
+      "Primary address key is not decrypted.": [
         "Cheia primară a adresei nu este decriptată."
+      ],
+      "Name required": [
+        "Numele este obligatoriu"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Acest câmp necesită un minim de ${ minimumLength } caractere."
@@ -203,12 +215,6 @@
       ],
       "Invalid link to the event": [
         "Legătură nevalidă la eveniment."
-      ],
-      "No valid address found": [
-        "Nu s-a găsit o adresă de e-mail validă"
-      ],
-      "Primary address key is not decrypted.": [
-        "Cheia primară a adresei nu este decriptată."
       ],
       "Please create an address first.": [
         "Mai întâi creați o adresă."
@@ -323,8 +329,17 @@
       "Confirm opening of link ${ link }": [
         "Confirmați deschiderea legăturii ${ link }"
       ],
+      "refresh the page": [
+        "împrospătați pagina"
+      ],
       "Select timezone": [
         "Selectare fus orar"
+      ],
+      "Show less": [
+        "Afișare mai puțin"
+      ],
+      "Show more": [
+        "Afișare mai mult"
       ],
       "View invoice": [
         "Afișare factură"
@@ -349,9 +364,6 @@
       ],
       "Edit phone number": [
         "Editare număr de telefon"
-      ],
-      "refresh the page": [
-        "împrospătați pagina"
       ],
       "Signing out": [
         "Deconectare"
@@ -474,6 +486,18 @@
       "Next": [
         "Înainte"
       ],
+      "Clear": [
+        "Eliminare"
+      ],
+      "Add screenshot(s)": [
+        "Adăugare capturi de ecran"
+      ],
+      "Hide info": [
+        "Ascundere informații"
+      ],
+      "Show info": [
+        "Afișare informații"
+      ],
       "Continue import": [
         ""
       ],
@@ -485,15 +509,6 @@
       ],
       "Start import": [
         ""
-      ],
-      "Use ${ label } theme": [
-        "Folosire tema ${ label }"
-      ],
-      "OK": [
-        "OK"
-      ],
-      "Log in": [
-        "Conectare"
       ],
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
@@ -540,18 +555,6 @@
       "Composer mode": [
         "Mod editor mesaje"
       ],
-      "Clear": [
-        "Eliminare"
-      ],
-      "Add screenshot(s)": [
-        "Adăugare capturi de ecran"
-      ],
-      "Hide info": [
-        "Ascundere informații"
-      ],
-      "Show info": [
-        "Afișare informații"
-      ],
       "Get started": [
         "Să începem"
       ],
@@ -563,6 +566,15 @@
       ],
       "Back": [
         "Înapoi"
+      ],
+      "Use ${ label } theme": [
+        "Folosire tema ${ label }"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Log in": [
+        "Conectare"
       ],
       "Close this banner": [
         "Închidere acest banner"
@@ -582,6 +594,12 @@
       "Add notification": [
         "Adăugare notificare"
       ],
+      "Update": [
+        "Actualizare"
+      ],
+      "Create": [
+        "Creare"
+      ],
       "Yes, I'll attend": [
         "Da, voi participa"
       ],
@@ -600,14 +618,14 @@
       "No": [
         "Nu"
       ],
+      "Share": [
+        "Partajare"
+      ],
       "New event": [
         "Eveniment nou"
       ],
       "Create event": [
         "Creare eveniment"
-      ],
-      "Update": [
-        "Actualizare"
       ],
       "Send": [
         "Trimitere"
@@ -802,26 +820,14 @@
       "Import contacts": [
         "Importare contacte"
       ],
+      "Report a problem": [
+        "Raportare problemă"
+      ],
       "Start import process": [
         ""
       ],
       "Import in progress": [
         ""
-      ],
-      "Select a theme": [
-        "Selectaţi o temă"
-      ],
-      "Sign in again to continue": [
-        "Reconectați-vă pentru a continua"
-      ],
-      "Account suspended": [
-        "Cont suspendat"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Introduceți numele de utilizator sau adresa de e-mail ProtonMail"
-      ],
-      "Enter your password": [
-        "Introduceţi parola"
       ],
       "Open help menu": [
         "Deschidere meniu ajutor"
@@ -841,8 +847,8 @@
       "Give feedback": [
         "Oferiți feedback"
       ],
-      "Report a problem": [
-        "Raportare problemă"
+      "Select a theme": [
+        "Selectaţi o temă"
       ],
       "${ appName } Keyboard Shortcuts": [
         "Combinații de taste ${ appName }"
@@ -859,6 +865,18 @@
       "Beta Access": [
         "Acces la Beta"
       ],
+      "Sign in again to continue": [
+        "Reconectați-vă pentru a continua"
+      ],
+      "Account suspended": [
+        "Cont suspendat"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Introduceți numele de utilizator sau adresa de e-mail ProtonMail"
+      ],
+      "Enter your password": [
+        "Introduceţi parola"
+      ],
       "Select when you want this notification to be sent": [
         "Selectați când doriți să fie trimisă această notificare"
       ],
@@ -870,6 +888,15 @@
       ],
       "Add another notification to remind you of this event": [
         "Adăugare altă notificare pentru reamintirea acestui eveniment"
+      ],
+      "Error": [
+        "Eroare"
+      ],
+      "Update calendar": [
+        "Actualizare calendar"
+      ],
+      "Create calendar": [
+        "Creare calendar"
       ],
       "Change my answer": [
         "Schimbare răspuns"
@@ -909,9 +936,6 @@
       ],
       "You have invited participants with equivalent emails": [
         "Ați invitat participanți cu adrese de e-mail asemănătoare"
-      ],
-      "Error": [
-        "Eroare"
       ],
       "Reset calendar keys": [
         "Resetare chei calendar"
@@ -1025,6 +1049,9 @@
       ],
       "Learn more": [
         "Detalii"
+      ],
+      "support team": [
+        "echipa de suport"
       ],
       "Drop the file here to upload": [
         "Plasați fișierul aici pentru a fi încărcat"
@@ -1155,8 +1182,8 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Schimbați aceste setări doar dacă utilizați PGP cu destinatari non-ProtonMail."
       ],
-      "All uploaded keys are expired or revoked! Encryption is automatically disabled.": [
-        "Toate cheile încărcate sunt expirate sau revocate! Criptarea a fost dezactivată automat."
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        "Niciuna dintre cheile încărcate nu este validă pentru criptare. Criptarea este dezactivată automat."
       ],
       "Primary": [
         "Primară"
@@ -1185,6 +1212,12 @@
         "${ addressCount } adrese de e-mail",
         "${ addressCount } de adrese de e-mail"
       ],
+      "Screenshot(s) attached": [
+        "Capturi de ecran adăugate"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
+      ],
       "Import contacts": [
         ""
       ],
@@ -1209,6 +1242,9 @@
       "Your import will not be processed.": [
         ""
       ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Navigarea de bază și acțiunile rămân disponibile indiferent de combinațiile de taste care sunt active sau nu în setări."
+      ],
       "here": [
         "aici"
       ],
@@ -1217,15 +1253,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Dacă credeți că acest lucru este o eroare, vă rugăm să ne contactați la ${ contactLink }."
-      ],
-      "Screenshot(s) attached": [
-        "Capturi de ecran adăugate"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Navigarea de bază și acțiunile rămân disponibile indiferent de combinațiile de taste care sunt active sau nu în setări."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură restantă. Accesul a fost restricționat. ${ payInvoiceLink }"
@@ -1556,39 +1583,6 @@
       "Export contacts": [
         "Exportare contacte"
       ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Cancel": [
-        "Anulare"
-      ],
-      "Submit": [
-        "Trimitere"
-      ],
-      "Password": [
-        "Parola"
-      ],
-      "Mailbox password": [
-        "Parolă mesaje"
-      ],
-      "Two-factor authentication code": [
-        "Cod autentificare cu doi factori"
-      ],
-      "Username or ProtonMail address": [
-        "Nume de utilizator sau e-mail ProtonMail"
-      ],
-      "0 - Not a fan": [
-        "0 - Nu-mi place"
-      ],
-      "10 - Love it!": [
-        "10 - Îmi place!"
-      ],
-      "What is the primary reason for this rating?": [
-        "Care este motivul principal pentru această evaluare?"
-      ],
       "Operating system": [
         "Sistem de operare"
       ],
@@ -1613,6 +1607,15 @@
       "Browser version": [
         "Versiune navigator"
       ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        "Care este motivul principal pentru această evaluare?"
+      ],
       "Display name": [
         "Nume afișat"
       ],
@@ -1631,8 +1634,59 @@
       "Enable Beta Access": [
         "Activare acces la Beta"
       ],
+      "Cancel": [
+        "Anulare"
+      ],
+      "Submit": [
+        "Trimitere"
+      ],
+      "Password": [
+        "Parola"
+      ],
+      "Mailbox password": [
+        "Parolă mesaje"
+      ],
+      "Two-factor authentication code": [
+        "Cod autentificare cu doi factori"
+      ],
+      "Username or ProtonMail address": [
+        "Nume de utilizator sau e-mail ProtonMail"
+      ],
+      "Name": [
+        "Nume"
+      ],
+      "Choose a color": [
+        "Alegere culoare"
+      ],
+      "Default email": [
+        "E-mail implicit"
+      ],
+      "Display": [
+        "Afișare"
+      ],
+      "Description": [
+        "Descriere"
+      ],
+      "Default event duration": [
+        "Durată implicită eveniment"
+      ],
+      "URL": [
+        "Adresa URL"
+      ],
+      "Default notifications": [
+        "Notificări implicite"
+      ],
+      "Default full day notifications": [
+        "Notificări întreaga zi implicite"
+      ],
       "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
         "Cât de probabil este să recomandați ${ calendarAppName } unui prieten sau coleg?"
+      ],
+      "0 - Not likely": [
+        "0 - Probabil nu"
+      ],
+      "10 - Extremely likely": [
+        "10 - Extrem de probabil"
       ],
       "All day": [
         "Toată ziua"
@@ -1667,9 +1721,6 @@
       "Event location": [
         "Loc eveniment"
       ],
-      "Description": [
-        "Descriere"
-      ],
       "Event notifications": [
         "Notificări eveniment"
       ],
@@ -1680,6 +1731,11 @@
         "Calendare"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Cheia nu poate fi folosită pentru criptare."
+      ]
+    },
     "Link": {
       "Learn more": [
         "Detalii"
@@ -1687,14 +1743,14 @@
       "Request an invite": [
         "Solicitați o invitație"
       ],
+      "clearing your browser cache": [
+        "golind bufferul navigatorului"
+      ],
       "Upgrade": [
         "Migrare"
       ],
       "Go to subscription plans": [
         "Accesare planuri abonamente"
-      ],
-      "clearing your browser cache": [
-        "golind bufferul navigatorului"
       ],
       "Pay invoice": [
         "Plată factură"
@@ -1734,12 +1790,6 @@
       "Name": [
         "Nume"
       ],
-      "Mailbox password": [
-        "Parolă mesaje"
-      ],
-      "Feedback": [
-        "Feedback"
-      ],
       "OS name": [
         "Sistem de operare"
       ],
@@ -1761,8 +1811,20 @@
       "Browser version": [
         "Versiune navigator"
       ],
+      "Feedback": [
+        "Feedback"
+      ],
       "e.g. Julia Smith": [
         "ex: Iulia Sandu"
+      ],
+      "Mailbox password": [
+        "Parolă mesaje"
+      ],
+      "Add a calendar name": [
+        "Adăugare nume calendar"
+      ],
+      "Add a calendar description": [
+        "Adăugare descriere calendar"
       ],
       "Add title": [
         "Adăugare titlu"
@@ -1926,11 +1988,11 @@
       "Contacts could not be merged": [
         "Contactele nu au putut fi îmbinate"
       ],
-      "Are you sure you want to discard your import?": [
-        ""
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
+      ],
+      "Are you sure you want to discard your import?": [
+        ""
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Setările locale de dată și oră par să nu fie sincronizate."
@@ -1982,6 +2044,15 @@
       ],
       "Preference saved": [
         "Preferințe salvate"
+      ],
+      "Calendar created. It might take a few minutes to sync.": [
+        "Calendarul a fost creat. Sincronizarea ar putea dura câteva minute."
+      ],
+      "Calendar created": [
+        "Calendar creat"
+      ],
+      "Calendar updated": [
+        "Calendar actualizat"
       ],
       "An invitation will be sent to added participants for all the events in this series.": [
         "O invitație va fi trimisă participanților adăugați pentru toate evenimentele din această serie."
@@ -2413,100 +2484,6 @@
         "S-au criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } de contacte."
       ]
     },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        ""
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        ""
-      ],
-      "Configure Import": [
-        ""
-      ],
-      "Import": [
-        ""
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        ""
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Confortabilă"
-      ],
-      "Compact": [
-        "Compactă"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Coloane"
-      ],
-      "Row": [
-        "Rânduri"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Maximizat"
-      ]
-    },
-    "Text": {
-      "Settings": [
-        "Setări"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Activat"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Dezactivat"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Coloane"
-      ],
-      "Row": [
-        "Rânduri"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Confortabilă"
-      ],
-      "Compact": [
-        "Compactă"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "Maximizat"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Scorul este obligatoriu"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Mesajul a fost trimis"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nicio imagine selectată"
@@ -2610,6 +2587,76 @@
         "Atașare capturi de ecran"
       ]
     },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        ""
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        ""
+      ],
+      "Configure Import": [
+        ""
+      ],
+      "Import": [
+        ""
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        ""
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Setări"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Activat"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Dezactivat"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Coloane"
+      ],
+      "Row": [
+        "Rânduri"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Confortabilă"
+      ],
+      "Compact": [
+        "Compactă"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "Maximizat"
+      ],
+      "Normal": [
+        "Normal"
+      ]
+    },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Scorul este obligatoriu"
+      ]
+    },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Mesajul a fost trimis"
+      ]
+    },
     "Onboarding Proton": {
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
         "Aceasta e ceea ce vor vedea oamenii când le trimiteți un e-mail, îi veți invita la un eveniment sau când le veți partaja un fișier."
@@ -2653,6 +2700,30 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Notă: serviciul se va reîncărca după ce faceți clic pe butonul «Aplicare»."
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Confortabilă"
+      ],
+      "Compact": [
+        "Compactă"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Coloane"
+      ],
+      "Row": [
+        "Rânduri"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Maximizat"
       ]
     },
     "Select files": {
@@ -2711,11 +2782,18 @@
         "prin e-mail"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Parola trebuie să conțină cel puțin un caracter.",
-        "Parola trebuie să conțină cel puțin ${ length } caractere.",
-        "Parola trebuie să conțină cel puțin ${ length } de caractere."
+    "Duration": {
+      "30 minutes": [
+        "30 de minute"
+      ],
+      "60 minutes": [
+        "60 de minute"
+      ],
+      "90 minutes": [
+        "90 de minute"
+      ],
+      "120 minutes": [
+        "120 de minute"
       ]
     },
     "Contact field label": {
@@ -2913,6 +2991,13 @@
         "De urgență"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Parola trebuie să conțină cel puțin un caracter.",
+        "Parola trebuie să conțină cel puțin ${ length } caractere.",
+        "Parola trebuie să conțină cel puțin ${ length } de caractere."
+      ]
+    },
     "file size format": {
       "bytes": [
         "baiți"
@@ -2930,6 +3015,73 @@
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "Adresa de e-mail nu a fost găsită printre id-urile de utilizatori definite în cheia de trimitere (${ keyUserIds })"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        "${ title } începe acum"
+      ],
+      "${ title } starts today": [
+        "${ title } începe astăzi"
+      ],
+      "${ title } started at ${ formattedHour }": [
+        "${ title } a început la ${ formattedHour }"
+      ],
+      "${ title } started yesterday": [
+        "${ title } a început ieri"
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        "${ title } a început ieri la ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDate }": [
+        "${ title } a început ${ formattedDate }"
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } a început ${ formattedDate } la ${ formattedHour }"
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        "${ title } a început ${ _formattedDate }"
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        "${ title } a început ${ _formattedDate } la ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        "${ title } a început ${ formattedDateWithoutTime }"
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        "${ title } a început ${ _formattedDateWithTime }"
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        "${ title } va începe la ${ formattedHour }"
+      ],
+      "${ title } will start tomorrow": [
+        "${ title } va începe mâine"
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        "${ title } va începe mâine la ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        "${ title } va începe ${ _formattedDate2 }"
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title } va începe ${ _formattedDate2 } la ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        "${ title } va începe ${ _formattedDate3 }"
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title } va începe ${ _formattedDate3 } la ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        "${ title } va începe ${ _formattedDateWithoutTime }"
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        "${ title } va începe ${ formattedDateWithTime }"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(fără titlu)"
       ]
     },
     "Participant name": {
@@ -3440,73 +3592,6 @@
         "La fiecare ${ interval } de ani, ${ untilString }"
       ]
     },
-    "Alarm notification": {
-      "${ title } starts now": [
-        "${ title } începe acum"
-      ],
-      "${ title } starts today": [
-        "${ title } începe astăzi"
-      ],
-      "${ title } started at ${ formattedHour }": [
-        "${ title } a început la ${ formattedHour }"
-      ],
-      "${ title } started yesterday": [
-        "${ title } a început ieri"
-      ],
-      "${ title } started yesterday at ${ formattedHour }": [
-        "${ title } a început ieri la ${ formattedHour }"
-      ],
-      "${ title } started on ${ formattedDate }": [
-        "${ title } a început ${ formattedDate }"
-      ],
-      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } a început ${ formattedDate } la ${ formattedHour }"
-      ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } a început ${ _formattedDate }"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } a început ${ _formattedDate } la ${ formattedHour }"
-      ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } a început ${ formattedDateWithoutTime }"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } a început ${ _formattedDateWithTime }"
-      ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } va începe la ${ formattedHour }"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } va începe mâine"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } va începe mâine la ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } va începe ${ _formattedDate2 }"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } va începe ${ _formattedDate2 } la ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } va începe ${ _formattedDate3 }"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } va începe ${ _formattedDate3 } la ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } va începe ${ _formattedDateWithoutTime }"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } va începe ${ formattedDateWithTime }"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(fără titlu)"
-      ]
-    },
     "Keyboard shortcut section name": {
       "Basic navigation": [
         "Navigare de bază"
@@ -3835,6 +3920,16 @@
     "Disabled calendar name suffix": {
       "disabled": [
         "dezactivat"
+      ]
+    },
+    "Sidebar calendar edit tooltip": {
+      "Manage calendar": [
+        "Gestionare calendar"
+      ]
+    },
+    "Add calendar icon tooltip": {
+      "Create calendar": [
+        "Creare calendar"
       ]
     },
     "Placeholder for contact with no name": {

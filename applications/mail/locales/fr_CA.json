@@ -21,11 +21,14 @@
       "Authentication error.": [
         "Erreur d'authentification."
       ],
+      "Email address invalid": [
+        "Adresse courriel invalide"
+      ],
       "This field is required": [
         "Ce champ est requis"
       ],
-      "Email address invalid": [
-        "Adresse courriel invalide"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Une erreur est survenue, veuillez ${ refresh } pour continuer. Si vous voyez toujours ce message d'erreur, veuillez contacter notre ${ supportTeam }."
       ],
       "The composer failed to load.": [
         "Le composeur n'a pas pu être chargé."
@@ -122,9 +125,6 @@
       "Require at least one action": [
         "Nécessite au moins une action"
       ],
-      "Request timed out.": [
-        "La demande a expiré."
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ce champ nécessite un minimum de ${ minimumLength } caractères."
       ],
@@ -136,6 +136,9 @@
       ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas"
+      ],
+      "Request timed out.": [
+        "La demande a expiré."
       ],
       "Signature verification failed": [
         "Échec de la vérification de la signature"
@@ -207,8 +210,8 @@
         "Contactez l’administrateur de votre organisation pour résoudre ce problème."
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
-        "",
-        ""
+        "Vous ne pouvez pas ouvrir plus de ${ maxActiveComposer } fenêtre de composeur à la fois.",
+        "Vous ne pouvez pas ouvrir plus de ${ maxActiveComposer } fenêtres de composeur à la fois."
       ],
       "Message needs to be sent first": [
         "Le message doit d'abord être envoyé"
@@ -236,8 +239,8 @@
         "Un problème est survenu avec la recherche de contenu. La recherche par défaut a été utilisée à la place"
       ],
       "Removed duplicate recipient: ${ recipents }": [
-        "",
-        ""
+        "Destinataire dupliqué supprimé: ${ recipents }",
+        "Destinataires dupliqués supprimés: ${ recipents }"
       ],
       "Message passwords do not match.": [
         "Les mots de passe du message ne correspondent pas."
@@ -294,6 +297,9 @@
       ],
       "Use “${ label }” setting": [
         "Utiliser le paramètre « ${ label } »"
+      ],
+      "refresh the page": [
+        "actualiser la page"
       ],
       "Remove": [
         "Supprimer"
@@ -577,6 +583,18 @@
       "Next": [
         "Suivant"
       ],
+      "Clear": [
+        "Effacer"
+      ],
+      "Add screenshot(s)": [
+        "Ajouter une ou des capture(s) d'écran"
+      ],
+      "Hide info": [
+        "Masquer les infos"
+      ],
+      "Show info": [
+        "Afficher les infos"
+      ],
       "Continue import": [
         "Continuer l'importation"
       ],
@@ -597,9 +615,6 @@
       ],
       "Signing out": [
         "Déconnexion"
-      ],
-      "refresh the page": [
-        "actualiser la page"
       ],
       "Log in": [
         "Se connecter"
@@ -652,9 +667,6 @@
       "Search": [
         "Rechercher"
       ],
-      "Clear": [
-        "Effacer"
-      ],
       "Copy email to clipboard": [
         "Copier l’adresse électronique dans le presse-papiers"
       ],
@@ -699,15 +711,6 @@
       ],
       "Composer mode": [
         "Mode du composeur"
-      ],
-      "Add screenshot(s)": [
-        "Ajouter une ou des capture(s) d'écran"
-      ],
-      "Hide info": [
-        "Masquer les infos"
-      ],
-      "Show info": [
-        "Afficher les infos"
       ],
       "Preview": [
         "Aperçu"
@@ -755,7 +758,7 @@
         "Non"
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
-        ""
+        "Ajouter à ${ CALENDAR_APP_NAME }"
       ],
       "Send anyway": [
         "Envoyer quand même"
@@ -1211,6 +1214,9 @@
       "Import contacts": [
         "Importer les contacts"
       ],
+      "Report a problem": [
+        "Signaler un problème"
+      ],
       "Start import process": [
         "Démarrer le processus d'importation"
       ],
@@ -1262,9 +1268,6 @@
       "Give feedback": [
         "Donnez votre avis"
       ],
-      "Report a problem": [
-        "Signaler un problème"
-      ],
       "Beta Access": [
         "Accès à la version bêta"
       ],
@@ -1299,10 +1302,10 @@
         "Message sans objet?"
       ],
       "Invalid recipients": [
-        ""
+        "Destinataires non valides"
       ],
       "Invalid recipient": [
-        ""
+        "Destinataire non valide"
       ],
       "Re-sign contact": [
         "Signer à nouveau le contact"
@@ -1498,6 +1501,9 @@
       ],
       "Loading": [
         "Chargement"
+      ],
+      "support team": [
+        "équipe d'assistance"
       ],
       "No contacts added yet": [
         "Aucun contact ajouté pour l'instant"
@@ -1719,7 +1725,7 @@
         "Ne modifiez ces paramètres que si vous utilisez PGP avec des destinataires qui n'utilisent pas ProtonMail."
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        ""
+        "Aucune des clés téléversées n'est valide pour le chiffrement. Le chiffrement est automatiquement désactivé."
       ],
       "No email address": [
         "Aucune adresse courriel"
@@ -1741,6 +1747,12 @@
       "${ addressCount } email address": [
         "${ addressCount } adresse courriel",
         "${ addressCount } adresses courriel"
+      ],
+      "Screenshot(s) attached": [
+        "Capture(s) d’écran jointe(s)"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Rafraîchir la page ou ${ link } résoudra automatiquement la plupart des problèmes."
       ],
       "Import contacts": [
         "Importer les contacts"
@@ -1837,12 +1849,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Vous avez désactivé l'accès à la version bêta. Cliquez ${ refreshButton } pour utiliser la version stable de ${ appName }. L'application sera rechargée."
-      ],
-      "Screenshot(s) attached": [
-        "Capture(s) d’écran jointe(s)"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Rafraîchir la page ou ${ link } résoudra automatiquement la plupart des problèmes."
       ],
       "Inherited from parent folder": [
         "Hérité du dossier parent"
@@ -2434,6 +2440,30 @@
       "Export contacts": [
         "Exporter les contacts"
       ],
+      "Operating system": [
+        "Système d'exploitation"
+      ],
+      "Operating system version": [
+        "Version du système d'exploitation"
+      ],
+      "Proton username": [
+        "Nom d'utilisateur Proton"
+      ],
+      "Category": [
+        "Catégorie"
+      ],
+      "What happened?": [
+        "Que s'est-il passé?"
+      ],
+      "System information": [
+        "Informations système"
+      ],
+      "Browser": [
+        "Navigateur"
+      ],
+      "Browser version": [
+        "Version du navigateur"
+      ],
       "From: ${ fromEmailAddress }": [
         "De: { fromEmailAddress }$"
       ],
@@ -2473,38 +2503,8 @@
       "Select how your composer opens by default.": [
         "Sélectionnez la façon dont votre composeur s'ouvre par défaut."
       ],
-      "0 - Not a fan": [
-        "0 - Pas fan"
-      ],
-      "10 - Love it!": [
-        "10 - J'adore!"
-      ],
       "What is the primary reason for this rating?": [
-        ""
-      ],
-      "Operating system": [
-        "Système d'exploitation"
-      ],
-      "Operating system version": [
-        "Version du système d'exploitation"
-      ],
-      "Proton username": [
-        "Nom d'utilisateur Proton"
-      ],
-      "Category": [
-        "Catégorie"
-      ],
-      "What happened?": [
-        "Que s'est-il passé?"
-      ],
-      "System information": [
-        "Informations système"
-      ],
-      "Browser": [
-        "Navigateur"
-      ],
-      "Browser version": [
-        "Version du navigateur"
+        "Quelle est la principale raison pour laquelle cette note est attribuée?"
       ],
       "Enable Beta Access": [
         "Activer l'accès à la version bêta"
@@ -2701,13 +2701,19 @@
       "How would you rate your experience with the new ProtonMail?": [
         "Comment évalueriez-vous votre expérience avec le nouveau ProtonMail?"
       ],
+      "0 - Not a fan": [
+        "0 - Pas fan"
+      ],
+      "10 - Love it!": [
+        "10 - J'adore!"
+      ],
       "Also archive": [
         "Archiver aussi"
       ]
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
-        ""
+        "La clé ne peut pas être utilisée pour le chiffrement"
       ]
     },
     "Link": {
@@ -2716,6 +2722,9 @@
       ],
       "Request an invite": [
         "Demander une invitation"
+      ],
+      "clearing your browser cache": [
+        "vider le cache de votre navigateur"
       ],
       "Pay invoice": [
         "Payer la facture"
@@ -2728,9 +2737,6 @@
       ],
       "Go to subscription plans": [
         "Aller aux abonnements"
-      ],
-      "clearing your browser cache": [
-        "vider le cache de votre navigateur"
       ],
       "Inbox": [
         "Boîte de réception"
@@ -2760,7 +2766,7 @@
         "Boîte d'envoi"
       ],
       "You need to activate your calendar keys to add this event": [
-        ""
+        "Vous devez activer vos clés de calendrier pour ajouter cet événement"
       ],
       "You need to activate your calendar keys to manage this invitation": [
         "Vous devez activer vos clés de calendrier pour gérer cette invitation"
@@ -2775,7 +2781,7 @@
         "Vous devez activer les clés de votre calendrier pour voir l'invitation mise à jour"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        ""
+        "Ce fichier ICS contient plus d'un événement. Veuillez le télécharger et importer les événements dans ${ calendarAppName }"
       ],
       "You need to reactivate your keys to manage this invitation": [
         "Vous devez réactiver vos clés pour gérer cette invitation"
@@ -2787,7 +2793,7 @@
         "Vous devez réactiver vos clés pour voir l'invitation mise à jour"
       ],
       "Create a new calendar to add this event": [
-        ""
+        "Créer un nouveau calendrier pour ajouter cet événement"
       ],
       "Create a new calendar to answer this invitation": [
         "Créez un nouveau calendrier pour répondre à cette invitation"
@@ -2893,15 +2899,6 @@
       "Name": [
         "Nom"
       ],
-      "Mailbox password": [
-        "Mot de passe de la messagerie"
-      ],
-      "e.g. Julia Smith": [
-        "p. ex. Julie Tremblay"
-      ],
-      "Feedback": [
-        "Votre avis"
-      ],
       "OS name": [
         "Nom du système d'exploitation"
       ],
@@ -2922,6 +2919,15 @@
       ],
       "Browser version": [
         "Version du navigateur"
+      ],
+      "Mailbox password": [
+        "Mot de passe de la messagerie"
+      ],
+      "e.g. Julia Smith": [
+        "p. ex. Julie Tremblay"
+      ],
+      "Feedback": [
+        "Votre avis"
       ],
       "Type text or keyword": [
         "Tapez le texte ou le mot-clé"
@@ -2999,14 +3005,14 @@
       "Contacts could not be merged": [
         "Les contacts n'ont pas pu être fusionnés"
       ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Les rapports d’erreur ne sont pas chiffrés de bout en bout, merci de ne pas envoyer d'informations sensibles."
+      ],
       "Are you sure you want to discard your import?": [
         "Êtes-vous sûr·e de vouloir annuler votre importation?"
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Vos paramètres de date et d'heure locaux semblent désynchronisés."
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Les rapports d’erreur ne sont pas chiffrés de bout en bout, merci de ne pas envoyer d'informations sensibles."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "La signature de la pièce jointe a échoué à la vérification.\nVous pouvez toujours télécharger cette pièce jointe mais elle pourrait avoir été altérée.",
@@ -3169,14 +3175,14 @@
       "Fingerprint copied to clipboard": [
         "Empreinte copiée dans le presse-papier"
       ],
+      "Bug reported": [
+        "Bug signalé"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Préférences des raccourcis clavier mises à jour"
       ],
       "Preference saved": [
         "Préférence enregistrée"
-      ],
-      "Bug reported": [
-        "Bug signalé"
       ],
       "Message content search activated": [
         "Recherche de contenu de message activée"
@@ -3404,12 +3410,12 @@
         "Progression: ${ combinedProgress } %"
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "",
-        ""
+        "${ model.deleted.length } sur ${ totalBeDeleted } contact correctement supprimé.",
+        "${ model.deleted.length } sur ${ totalBeDeleted } contacts correctement supprimés."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "",
-        ""
+        "${ model.submitted.length } sur ${ totalBeMerged } contact correctement fusionné.",
+        "${ model.submitted.length } sur ${ totalBeMerged } contacts correctement fusionnés."
       ],
       "No contacts merged.": [
         "Aucun contact fusionné."
@@ -3423,7 +3429,7 @@
         "Fusion des contacts... ceci peut prendre quelques minutes. Lorsque le processus sera terminé, vous pourrez fermer cette boîte de dialogue."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        ""
+        "Suppression des contacts... Ceci peut prendre quelques minutes. Une fois le processus terminé, vous pouvez fermer cette fenêtre."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne souhaitez pas fusionner."
@@ -3594,6 +3600,118 @@
         "${ totalImported }/${ totalToImport } contacts chiffrés et ajoutés à votre liste de contacts"
       ]
     },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Aucune image sélectionnée"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Problèmes de connexion"
+      ],
+      "Sign up problem": [
+        "Problème d'inscription"
+      ],
+      "Payments problem": [
+        "Problème de paiement"
+      ],
+      "Custom domain problem": [
+        "Problème avec les domaines personnalisés"
+      ],
+      "Bridge problem": [
+        "Problème avec Bridge"
+      ],
+      "Import / export problem": [
+        "Problème avec Import/Export"
+      ],
+      "Connection problem": [
+        "Problème de connexion"
+      ],
+      "Slow speed problem": [
+        "Problème de vitesse lente"
+      ],
+      "Calendar problem": [
+        "Problème avec Calendar"
+      ],
+      "Contacts problem": [
+        "Problème avec Contacts"
+      ],
+      "Drive problem": [
+        "Problème avec Drive"
+      ],
+      "Mail problem": [
+        "Problème avec ProtonMail"
+      ],
+      "VPN problem": [
+        "Problème avec le RPV"
+      ],
+      "Feature request": [
+        "Demande de fonctionnalité"
+      ],
+      "Other": [
+        "Autre"
+      ],
+      "Signup problem": [
+        "Problème d'inscription"
+      ],
+      "Installation problem": [
+        "Problème d'installation"
+      ],
+      "Update problem": [
+        "Problème de mise à jour"
+      ],
+      "Application problem": [
+        "Problème de l'application"
+      ],
+      "Speed problem": [
+        "Problème de vitesse"
+      ],
+      "Manual setup problem": [
+        "Problème avec la configuration manuelle"
+      ],
+      "Website access problem": [
+        "Problème d'accès au site web"
+      ],
+      "Streaming problem": [
+        "Problème de streaming"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Compte"
+      ],
+      "Apps": [
+        "Applications"
+      ],
+      "Network": [
+        "Réseau"
+      ],
+      "Services": [
+        "Services"
+      ],
+      "Other category": [
+        "Autre catégorie"
+      ],
+      "Custom folders": [
+        "Dossiers personnalisés"
+      ],
+      "Default folders": [
+        "Dossiers par défaut"
+      ],
+      "Labels": [
+        "Labels"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Sélectionner"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "Joindre une ou des capture(s) d'écran"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Connexion à votre fournisseur de contacts"
@@ -3750,118 +3868,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Avis envoyé"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Aucune image sélectionnée"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Problèmes de connexion"
-      ],
-      "Sign up problem": [
-        "Problème d'inscription"
-      ],
-      "Payments problem": [
-        "Problème de paiement"
-      ],
-      "Custom domain problem": [
-        "Problème avec les domaines personnalisés"
-      ],
-      "Bridge problem": [
-        "Problème avec Bridge"
-      ],
-      "Import / export problem": [
-        "Problème avec Import/Export"
-      ],
-      "Connection problem": [
-        "Problème de connexion"
-      ],
-      "Slow speed problem": [
-        "Problème de vitesse lente"
-      ],
-      "Calendar problem": [
-        "Problème avec Calendar"
-      ],
-      "Contacts problem": [
-        "Problème avec Contacts"
-      ],
-      "Drive problem": [
-        "Problème avec Drive"
-      ],
-      "Mail problem": [
-        "Problème avec ProtonMail"
-      ],
-      "VPN problem": [
-        "Problème avec le RPV"
-      ],
-      "Feature request": [
-        "Demande de fonctionnalité"
-      ],
-      "Other": [
-        "Autre"
-      ],
-      "Signup problem": [
-        "Problème d'inscription"
-      ],
-      "Installation problem": [
-        "Problème d'installation"
-      ],
-      "Update problem": [
-        "Problème de mise à jour"
-      ],
-      "Application problem": [
-        "Problème de l'application"
-      ],
-      "Speed problem": [
-        "Problème de vitesse"
-      ],
-      "Manual setup problem": [
-        "Problème avec la configuration manuelle"
-      ],
-      "Website access problem": [
-        "Problème d'accès au site web"
-      ],
-      "Streaming problem": [
-        "Problème de streaming"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Compte"
-      ],
-      "Apps": [
-        "Applications"
-      ],
-      "Network": [
-        "Réseau"
-      ],
-      "Services": [
-        "Services"
-      ],
-      "Other category": [
-        "Autre catégorie"
-      ],
-      "Custom folders": [
-        "Dossiers personnalisés"
-      ],
-      "Default folders": [
-        "Dossiers par défaut"
-      ],
-      "Labels": [
-        "Labels"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Sélectionner"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Joindre une ou des capture(s) d'écran"
       ]
     },
     "Beta access description": {
@@ -4288,34 +4294,34 @@
         "Une erreur inattendue s'est produite. L'importation doit être relancée."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        ""
+        "Une erreur s'est produite lors du téléversement de votre fichier. Aucun fichier n'a été sélectionné."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        ""
+        "Une erreur s'est produite lors du téléversement de votre fichier ${ formattedFilename }. Seuls les fichiers au format ICS sont autorisés."
       ],
       "Your file ${ formattedFilename } is empty.": [
-        ""
+        "Votre fichier ${ formattedFilename } est vide."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        ""
+        "Une erreur s'est produite lors du téléversement de votre fichier ${ formattedFilename }. La taille maximale d’un fichier doit être de ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
-        ""
+        "Votre fichier ${ formattedFilename } n'est pas un calendrier."
       ],
       "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        ""
+        "${ CALENDAR_APP_NAME } prend en charge l'importation de calendriers uniquement avec iCal version 2.0."
       ],
       "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        ""
+        "Votre fichier ${ formattedFilename } est une invitation et ne peut pas être importé."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        ""
+        "Votre fichier ${ formattedFilename } n'a pas d'événements à importer."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        ""
+        "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_EVENTS_STRING } événements."
       ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        ""
+        "Une erreur s'est produite lors de la lecture de votre fichier ${ formattedFilename }. Le fichier n'a pas le bon format."
       ]
     },
     "Error importing contacts": {
@@ -4518,13 +4524,13 @@
     },
     "Attached ics file error": {
       "Invalid ICS file": [
-        ""
+        "Fichier ICS invalide"
       ],
       "Invalid event": [
-        ""
+        "Événement invalide"
       ],
       "Unsupported event": [
-        ""
+        "Événement non pris en charge"
       ]
     },
     "Event invitation error": {
@@ -4541,10 +4547,10 @@
         "Invitation non prise en charge"
       ],
       "Attached ICS file could not be parsed": [
-        ""
+        "Le fichier ICS joint n'a pas pu être analysé"
       ],
       "Attached ICS file could not be decrypted": [
-        ""
+        "Le fichier ICS joint n'a pas pu être déchiffré"
       ],
       "We could not retrieve the event from your calendar": [
         "Nous n'avons pas pu récupérer l'événement de votre calendrier"
@@ -4567,22 +4573,22 @@
     },
     "Error importing event": {
       "Component with wrong format": [
-        ""
+        "Élément au mauvais format"
       ],
       "Non-Gregorian": [
-        ""
+        "Non grégorien"
       ],
       "To-do entry": [
-        ""
+        "Tâche à réaliser"
       ],
       "Journal entry": [
-        ""
+        "Entrée du journal"
       ],
       "Free-busy time information": [
-        ""
+        "Information de disponibilité"
       ],
       "Custom timezone": [
-        ""
+        "Fuseau horaire personnalisé"
       ],
       "Invalid event": [
         "Événement invalide"
@@ -4591,58 +4597,58 @@
         "Événement non pris en charge"
       ],
       "Malformed all-day event": [
-        ""
+        "Événement pour la journée entière malformé"
       ],
       "Missing start time": [
-        ""
+        "Heure de début manquante"
       ],
       "Malformed start time": [
-        ""
+        "Heure de début malformée"
       ],
       "Floating times not supported": [
-        ""
+        "Heures variables non prises en charge"
       ],
       "Start time out of bounds": [
-        ""
+        "Heure de début hors limites"
       ],
       "Malformed end time": [
-        ""
+        "Heure de fin malformée"
       ],
       "End time out of bounds": [
-        ""
+        "Heure de fin hors limites"
       ],
       "Event duration not supported": [
-        ""
+        "Durée de l'événement non prise en charge"
       ],
       "Calendar timezone not supported": [
-        ""
+        "Fuseau horaire du calendrier non pris en charge"
       ],
       "Timezone not supported": [
-        ""
+        "Fuseau horaire non pris en charge"
       ],
       "Malformed recurring event": [
-        ""
+        "Événement récurrent mal formaté"
       ],
       "Recurring rule not supported": [
-        ""
+        "Récurrence non prise en charge"
       ],
       "Edited event not supported": [
-        ""
+        "Événement édité non pris en charge"
       ],
       "Notification out of bounds": [
-        ""
+        "Notification hors limites"
       ],
       "Event validation failed": [
-        ""
+        "Échec de la validation d'événement"
       ],
       "Encryption failed": [
-        ""
+        "Échec du chiffrement"
       ],
       "Original recurring event could not be found": [
-        ""
+        "L'événement récurrent original n'a pas pu être trouvé"
       ],
       "no UID, title or start time": [
-        ""
+        "aucun UID, titre ou heure de début"
       ]
     },
     "Event title": {
