@@ -24820,6 +24820,12 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"publish@workspace:utilities/publish":
+  version: 0.0.0-use.local
+  resolution: "publish@workspace:utilities/publish"
+  languageName: unknown
+  linkType: soft
+
 "pump@npm:^1.0.0":
   version: 1.0.3
   resolution: "pump@npm:1.0.3"
