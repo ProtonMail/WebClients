@@ -113,20 +113,6 @@ describe('MailHeader', () => {
             assertAppLink(settingsLink, '/mail/general');
         });
 
-        it('should open help dropdown', async () => {
-            const { getByText } = await setup();
-
-            const help = getByText('Help');
-            fireEvent.click(help);
-
-            const dropdown = await getDropdown();
-            const { textContent } = dropdown;
-
-            expect(textContent).toContain('question');
-            expect(textContent).toContain('feature');
-            expect(textContent).toContain('problem');
-        });
-
         it('should open user dropdown', async () => {
             const { getByText: getByTextHeader } = await setup();
 
@@ -134,7 +120,12 @@ describe('MailHeader', () => {
             fireEvent.click(userButton);
 
             const dropdown = await getDropdown();
-            getByText(dropdown, 'Sign out');
+            const { textContent } = dropdown;
+
+            expect(textContent).toContain('Proton introduction');
+            expect(textContent).toContain('Get help');
+            expect(textContent).toContain('Proton shop');
+            expect(textContent).toContain('Sign out');
         });
 
         it('should show upgrade button', async () => {
