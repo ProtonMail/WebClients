@@ -1,4 +1,4 @@
-## Release: 4.0.2 — July 21, 2021
+## Release: 4.0.2 — July 28, 2021
 
 ### Improvements
 - Add shortcuts for calendar creation, edition and sharing from the calendar sidebar
@@ -8,6 +8,7 @@
 - Add calendar color in the calendar select when creating or editing an event
 
 ### Fixes
+- Trigger browser notifications at the right time after computer sleep mode
 - Various small bug fixes
 
 ## Release: 4.0.1 — June 30, 2021
