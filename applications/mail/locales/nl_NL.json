@@ -21,11 +21,14 @@
       "Authentication error.": [
         "Verificatiefout."
       ],
+      "Email address invalid": [
+        "E-mailadres is ongeldig"
+      ],
       "This field is required": [
         "Dit veld is vereist"
       ],
-      "Email address invalid": [
-        "E-mailadres is ongeldig"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
       ],
       "The composer failed to load.": [
         "Kon het opstelvenster niet laden."
@@ -122,9 +125,6 @@
       "Require at least one action": [
         "Vereist minstens één actie"
       ],
-      "Request timed out.": [
-        "Het verzoek timed out."
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dit veld vereist een minimum van ${ minimumLength } tekens."
       ],
@@ -136,6 +136,9 @@
       ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
+      ],
+      "Request timed out.": [
+        "Het verzoek timed out."
       ],
       "Signature verification failed": [
         "Controle van handtekening mislukt"
@@ -294,6 +297,9 @@
       ],
       "Use “${ label }” setting": [
         "Gebruik “${ label }”-instelling"
+      ],
+      "refresh the page": [
+        "pagina vernieuwen"
       ],
       "Remove": [
         "Verwijderen"
@@ -577,6 +583,18 @@
       "Next": [
         "Volgende"
       ],
+      "Clear": [
+        "Wissen"
+      ],
+      "Add screenshot(s)": [
+        "Screenshot(s) toevoegen"
+      ],
+      "Hide info": [
+        "Informatie verbergen"
+      ],
+      "Show info": [
+        "Informatie tonen"
+      ],
       "Continue import": [
         "Doorgaan met importeren"
       ],
@@ -597,9 +615,6 @@
       ],
       "Signing out": [
         "Uitloggen"
-      ],
-      "refresh the page": [
-        "pagina vernieuwen"
       ],
       "Log in": [
         "Aanmelden"
@@ -652,9 +667,6 @@
       "Search": [
         "Zoeken"
       ],
-      "Clear": [
-        "Wissen"
-      ],
       "Copy email to clipboard": [
         "E-mailadres kopiëren naar klembord"
       ],
@@ -699,15 +711,6 @@
       ],
       "Composer mode": [
         "Opstelmodus"
-      ],
-      "Add screenshot(s)": [
-        "Screenshot(s) toevoegen"
-      ],
-      "Hide info": [
-        "Informatie verbergen"
-      ],
-      "Show info": [
-        "Informatie tonen"
       ],
       "Preview": [
         "Voorbeeld"
@@ -1211,6 +1214,9 @@
       "Import contacts": [
         "Contactpersonen importeren"
       ],
+      "Report a problem": [
+        "Meld een probleem"
+      ],
       "Start import process": [
         "Importproces starten"
       ],
@@ -1261,9 +1267,6 @@
       ],
       "Give feedback": [
         "Feedback geven"
-      ],
-      "Report a problem": [
-        "Meld een probleem"
       ],
       "Beta Access": [
         "Bèta toegang"
@@ -1498,6 +1501,9 @@
       ],
       "Loading": [
         "Laden"
+      ],
+      "support team": [
+        ""
       ],
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
@@ -1742,6 +1748,12 @@
         "${ addressCount } e-mailadres",
         "${ addressCount } e-mailadressen"
       ],
+      "Screenshot(s) attached": [
+        "Schermafdruk(ken) bijgevoegd"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
+      ],
       "Import contacts": [
         "Contactpersonen importeren"
       ],
@@ -1837,12 +1849,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "U hebt Bèta Toegang uitgeschakeld. Klik op ${ refreshButton } om de stabiele versie van ${ appName } te gebruiken. De applicatie wordt herladen."
-      ],
-      "Screenshot(s) attached": [
-        "Schermafdruk(ken) bijgevoegd"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
       ],
       "Inherited from parent folder": [
         "Overgenomen van bovenliggende map"
@@ -2434,6 +2440,30 @@
       "Export contacts": [
         "Contacten exporteren"
       ],
+      "Operating system": [
+        "Besturingssysteem"
+      ],
+      "Operating system version": [
+        "Versie van besturingssysteem"
+      ],
+      "Proton username": [
+        "Proton gebruikersnaam"
+      ],
+      "Category": [
+        "Categorie"
+      ],
+      "What happened?": [
+        "Wat is er gebeurd?"
+      ],
+      "System information": [
+        "Systeeminformatie"
+      ],
+      "Browser": [
+        "Browser"
+      ],
+      "Browser version": [
+        "Browserversie"
+      ],
       "From: ${ fromEmailAddress }": [
         "Van: ${ fromEmailAddress }"
       ],
@@ -2473,38 +2503,8 @@
       "Select how your composer opens by default.": [
         "Selecteer hoe uw opstelvenster standaard opent."
       ],
-      "0 - Not a fan": [
-        "0 - Bevalt niet"
-      ],
-      "10 - Love it!": [
-        "10 - Geweldig!"
-      ],
       "What is the primary reason for this rating?": [
         ""
-      ],
-      "Operating system": [
-        "Besturingssysteem"
-      ],
-      "Operating system version": [
-        "Versie van besturingssysteem"
-      ],
-      "Proton username": [
-        "Proton gebruikersnaam"
-      ],
-      "Category": [
-        "Categorie"
-      ],
-      "What happened?": [
-        "Wat is er gebeurd?"
-      ],
-      "System information": [
-        "Systeeminformatie"
-      ],
-      "Browser": [
-        "Browser"
-      ],
-      "Browser version": [
-        "Browserversie"
       ],
       "Enable Beta Access": [
         "Bèta-toegang inschakelen"
@@ -2701,6 +2701,12 @@
       "How would you rate your experience with the new ProtonMail?": [
         "Hoe zou u uw ervaring met de nieuwe ProtonMail tot nu toe beoordelen?"
       ],
+      "0 - Not a fan": [
+        "0 - Bevalt niet"
+      ],
+      "10 - Love it!": [
+        "10 - Geweldig!"
+      ],
       "Also archive": [
         "Ook archiveren"
       ]
@@ -2717,6 +2723,9 @@
       "Request an invite": [
         "Uitnodiging aanvragen"
       ],
+      "clearing your browser cache": [
+        "browsercache legen"
+      ],
       "Pay invoice": [
         "Factuur betalen"
       ],
@@ -2728,9 +2737,6 @@
       ],
       "Go to subscription plans": [
         "Ga naar abonnementsplannen"
-      ],
-      "clearing your browser cache": [
-        "browsercache legen"
       ],
       "Inbox": [
         "Inbox"
@@ -2893,15 +2899,6 @@
       "Name": [
         "Naam"
       ],
-      "Mailbox password": [
-        "Mailboxwachtwoord"
-      ],
-      "e.g. Julia Smith": [
-        "bijv. Julia Smith"
-      ],
-      "Feedback": [
-        "Feedback"
-      ],
       "OS name": [
         "Naam besturingssysteem"
       ],
@@ -2922,6 +2919,15 @@
       ],
       "Browser version": [
         "Browserversie"
+      ],
+      "Mailbox password": [
+        "Mailboxwachtwoord"
+      ],
+      "e.g. Julia Smith": [
+        "bijv. Julia Smith"
+      ],
+      "Feedback": [
+        "Feedback"
       ],
       "Type text or keyword": [
         "Voer tekst of trefwoord in"
@@ -2999,14 +3005,14 @@
       "Contacts could not be merged": [
         "Contactpersonen konden niet samengevoegd worden"
       ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
+      ],
       "Are you sure you want to discard your import?": [
         "Weet u zeker dat u uw import wilt verwijderen?"
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Uw lokale datum- en tijdinstellingen lijken niet gesynchroniseerd te zijn."
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Verificatie van de bijlage is mislukt.\nU kunt deze bijlage nog steeds downloaden, maar het kan zijn veranderd.",
@@ -3169,14 +3175,14 @@
       "Fingerprint copied to clipboard": [
         "Vingerafdruk gekopieerd naar klembord"
       ],
+      "Bug reported": [
+        "Bug gemeld"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Sneltoetsvoorkeuren bijgewerkt"
       ],
       "Preference saved": [
         "Voorkeur opgeslagen"
-      ],
-      "Bug reported": [
-        "Bug gemeld"
       ],
       "Message content search activated": [
         "Zoeken naar berichtinhoud geactiveerd"
@@ -3594,6 +3600,118 @@
         "${ totalImported }/${ totalToImport } contacten versleuteld en toegevoegd aan uw contactenlijst"
       ]
     },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Geen afbeelding geselecteerd"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Inlogprobleem"
+      ],
+      "Sign up problem": [
+        "Aanmeldprobleem"
+      ],
+      "Payments problem": [
+        "Probleem met betalingen"
+      ],
+      "Custom domain problem": [
+        "Probleem met eigen domeinnaam"
+      ],
+      "Bridge problem": [
+        "Probleem met Bridge"
+      ],
+      "Import / export problem": [
+        "Probleem met importeren / exporteren"
+      ],
+      "Connection problem": [
+        "Verbindingsprobleem"
+      ],
+      "Slow speed problem": [
+        "Snelheidsprobleem"
+      ],
+      "Calendar problem": [
+        "Probleem met agenda"
+      ],
+      "Contacts problem": [
+        "Probleem met contacten"
+      ],
+      "Drive problem": [
+        "Probleem met Drive"
+      ],
+      "Mail problem": [
+        "E-mailproblemen"
+      ],
+      "VPN problem": [
+        "VPN-probleem"
+      ],
+      "Feature request": [
+        "Feature-verzoek"
+      ],
+      "Other": [
+        "Anders"
+      ],
+      "Signup problem": [
+        "Aanmeldprobleem"
+      ],
+      "Installation problem": [
+        "Installatieprobleem"
+      ],
+      "Update problem": [
+        "Updateprobleem"
+      ],
+      "Application problem": [
+        "Applicatieprobleem"
+      ],
+      "Speed problem": [
+        "Snelheidsprobleem"
+      ],
+      "Manual setup problem": [
+        "Probleem met eigen setup"
+      ],
+      "Website access problem": [
+        "Probleem met toegang tot website"
+      ],
+      "Streaming problem": [
+        "Streamingproblemen"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Account"
+      ],
+      "Apps": [
+        "Apps"
+      ],
+      "Network": [
+        "Netwerk"
+      ],
+      "Services": [
+        "Diensten"
+      ],
+      "Other category": [
+        "Andere categorie"
+      ],
+      "Custom folders": [
+        "Aangepaste mappen"
+      ],
+      "Default folders": [
+        "Standaardmappen"
+      ],
+      "Labels": [
+        "Labels"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Selecteren"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "Schermafdruk(ken) toevoegen"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Verbinding maken met uw contactpersonen provider"
@@ -3750,118 +3868,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Feedback verzonden"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Geen afbeelding geselecteerd"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Inlogprobleem"
-      ],
-      "Sign up problem": [
-        "Aanmeldprobleem"
-      ],
-      "Payments problem": [
-        "Probleem met betalingen"
-      ],
-      "Custom domain problem": [
-        "Probleem met eigen domeinnaam"
-      ],
-      "Bridge problem": [
-        "Probleem met Bridge"
-      ],
-      "Import / export problem": [
-        "Probleem met importeren / exporteren"
-      ],
-      "Connection problem": [
-        "Verbindingsprobleem"
-      ],
-      "Slow speed problem": [
-        "Snelheidsprobleem"
-      ],
-      "Calendar problem": [
-        "Probleem met agenda"
-      ],
-      "Contacts problem": [
-        "Probleem met contacten"
-      ],
-      "Drive problem": [
-        "Probleem met Drive"
-      ],
-      "Mail problem": [
-        "E-mailproblemen"
-      ],
-      "VPN problem": [
-        "VPN-probleem"
-      ],
-      "Feature request": [
-        "Feature-verzoek"
-      ],
-      "Other": [
-        "Anders"
-      ],
-      "Signup problem": [
-        "Aanmeldprobleem"
-      ],
-      "Installation problem": [
-        "Installatieprobleem"
-      ],
-      "Update problem": [
-        "Updateprobleem"
-      ],
-      "Application problem": [
-        "Applicatieprobleem"
-      ],
-      "Speed problem": [
-        "Snelheidsprobleem"
-      ],
-      "Manual setup problem": [
-        "Probleem met eigen setup"
-      ],
-      "Website access problem": [
-        "Probleem met toegang tot website"
-      ],
-      "Streaming problem": [
-        "Streamingproblemen"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Account"
-      ],
-      "Apps": [
-        "Apps"
-      ],
-      "Network": [
-        "Netwerk"
-      ],
-      "Services": [
-        "Diensten"
-      ],
-      "Other category": [
-        "Andere categorie"
-      ],
-      "Custom folders": [
-        "Aangepaste mappen"
-      ],
-      "Default folders": [
-        "Standaardmappen"
-      ],
-      "Labels": [
-        "Labels"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Selecteren"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Schermafdruk(ken) toevoegen"
       ]
     },
     "Beta access description": {

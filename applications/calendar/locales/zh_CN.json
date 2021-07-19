@@ -6,9 +6,6 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "未知错误"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "此邮件含有浏览器不能打开的链接"
       ],
@@ -21,11 +18,17 @@
       "Authentication error.": [
         "验证错误"
       ],
-      "This field is required": [
-        "此项必须填写"
+      "Unknown error": [
+        "未知错误"
       ],
       "Email address invalid": [
         "电子邮箱地址无效"
+      ],
+      "This field is required": [
+        "此项必须填写"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "出错了，请${ refresh }以继续。若仍出现此错误，请联系我们的${ supportTeam }"
       ],
       "Can't validate email, try again later": [
         "无法验证电子邮件，请稍后再试"
@@ -43,7 +46,7 @@
         "无法保存偏好设置"
       ],
       "Some groups could not be deleted": [
-        ""
+        "部分群组无法删除"
       ],
       "Image upload failed": [
         "图片上传失败"
@@ -87,14 +90,23 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
+      "Primary address key is not decrypted": [
+        "主密钥尚未解密。"
+      ],
       "Incorrect mailbox password. Please try again": [
         "邮箱密码不正确。请重试"
       ],
       "Incorrect login credentials. Please try again": [
         "登录凭据不正确。请重试"
       ],
-      "Primary address key is not decrypted": [
+      "No valid address found": [
+        "未找到有效地址"
+      ],
+      "Primary address key is not decrypted.": [
         "主密钥尚未解密。"
+      ],
+      "Name required": [
+        "姓名 (必填)"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "此字段至少需要 ${ minimumLength } 个字符。"
@@ -191,12 +203,6 @@
       ],
       "Invalid link to the event": [
         "无效的日程链接"
-      ],
-      "No valid address found": [
-        "未找到有效地址"
-      ],
-      "Primary address key is not decrypted.": [
-        "主密钥尚未解密。"
       ],
       "Please create an address first.": [
         "请先创建地址。"
@@ -311,8 +317,17 @@
       "Confirm opening of link ${ link }": [
         "确认打开链接 ${ link }"
       ],
+      "refresh the page": [
+        "刷新页面"
+      ],
       "Select timezone": [
         "选择时区"
+      ],
+      "Show less": [
+        "显示更少"
+      ],
+      "Show more": [
+        "显示更多"
       ],
       "View invoice": [
         "查看账单"
@@ -337,9 +352,6 @@
       ],
       "Edit phone number": [
         "编辑电话号码"
-      ],
-      "refresh the page": [
-        "刷新页面"
       ],
       "Signing out": [
         "退出"
@@ -458,6 +470,18 @@
       "Next": [
         "下一步"
       ],
+      "Clear": [
+        "移除"
+      ],
+      "Add screenshot(s)": [
+        "添加屏幕截图"
+      ],
+      "Hide info": [
+        "隐藏信息"
+      ],
+      "Show info": [
+        "显示信息"
+      ],
       "Continue import": [
         ""
       ],
@@ -469,15 +493,6 @@
       ],
       "Start import": [
         ""
-      ],
-      "Use ${ label } theme": [
-        "使用${ label }主题"
-      ],
-      "OK": [
-        "确定"
-      ],
-      "Log in": [
-        "登录"
       ],
       "Copy email to clipboard": [
         "复制邮箱地址"
@@ -524,18 +539,6 @@
       "Composer mode": [
         "编辑窗模式"
       ],
-      "Clear": [
-        "移除"
-      ],
-      "Add screenshot(s)": [
-        "添加屏幕截图"
-      ],
-      "Hide info": [
-        "隐藏信息"
-      ],
-      "Show info": [
-        "显示信息"
-      ],
       "Get started": [
         "入门"
       ],
@@ -547,6 +550,15 @@
       ],
       "Back": [
         "返回"
+      ],
+      "Use ${ label } theme": [
+        "使用${ label }主题"
+      ],
+      "OK": [
+        "确定"
+      ],
+      "Log in": [
+        "登录"
       ],
       "Close this banner": [
         "关闭此横幅"
@@ -566,6 +578,12 @@
       "Add notification": [
         "添加通知"
       ],
+      "Update": [
+        "更改"
+      ],
+      "Create": [
+        "创建"
+      ],
       "Yes, I'll attend": [
         "是，我将参加"
       ],
@@ -584,14 +602,14 @@
       "No": [
         "否"
       ],
+      "Share": [
+        "分享"
+      ],
       "New event": [
         "新日程"
       ],
       "Create event": [
         "创建事件"
-      ],
-      "Update": [
-        "更改"
       ],
       "Send": [
         "发送​​"
@@ -749,7 +767,7 @@
         "合并联系人"
       ],
       "Deleting contacts": [
-        ""
+        "删除联系人中"
       ],
       "View contacts": [
         "查看联系人"
@@ -778,26 +796,14 @@
       "Import contacts": [
         "导入联系人"
       ],
+      "Report a problem": [
+        "反馈问题"
+      ],
       "Start import process": [
         ""
       ],
       "Import in progress": [
         ""
-      ],
-      "Select a theme": [
-        "选择主题"
-      ],
-      "Sign in again to continue": [
-        "此操作需要重新登录"
-      ],
-      "Account suspended": [
-        "帐号已被停用"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "输入用户名或 ProtonMail 邮箱"
-      ],
-      "Enter your password": [
-        "输入密码"
       ],
       "Open help menu": [
         "打开帮助菜单"
@@ -809,16 +815,16 @@
         "打开设置菜单"
       ],
       "Send feedback": [
-        ""
+        "发送反馈"
       ],
       "Feedback": [
-        ""
+        "用户反馈"
       ],
       "Give feedback": [
-        ""
+        "提供反馈"
       ],
-      "Report a problem": [
-        "反馈问题"
+      "Select a theme": [
+        "选择主题"
       ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } 快捷键"
@@ -835,6 +841,18 @@
       "Beta Access": [
         "测试版功能"
       ],
+      "Sign in again to continue": [
+        "此操作需要重新登录"
+      ],
+      "Account suspended": [
+        "帐号已被停用"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "输入用户名或 ProtonMail 邮箱"
+      ],
+      "Enter your password": [
+        "输入密码"
+      ],
       "Select when you want this notification to be sent": [
         "选择您希望发送该通知的时间"
       ],
@@ -846,6 +864,15 @@
       ],
       "Add another notification to remind you of this event": [
         "添加另一个提醒您此日程的通知"
+      ],
+      "Error": [
+        "错误"
+      ],
+      "Update calendar": [
+        "更新日历"
+      ],
+      "Create calendar": [
+        "创建日历"
       ],
       "Change my answer": [
         "更改答复"
@@ -885,9 +912,6 @@
       ],
       "You have invited participants with equivalent emails": [
         "您已通过相同的邮件邀请了参与者"
-      ],
-      "Error": [
-        "错误"
       ],
       "Reset calendar keys": [
         "重置日历密钥"
@@ -1001,6 +1025,9 @@
       ],
       "Learn more": [
         "了解详情"
+      ],
+      "support team": [
+        "客服团队"
       ],
       "Drop the file here to upload": [
         "请将文件拖拽至此处进行上传"
@@ -1125,8 +1152,8 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "只有在与 ProtonMail 以外的邮箱使用 PGP 通讯时才应更改下列选项"
       ],
-      "All uploaded keys are expired or revoked! Encryption is automatically disabled.": [
-        "所有上传的密钥均已过期或作废，加密已自动关闭"
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        "所有上传的密钥都不适用于加密，加密将自动禁用"
       ],
       "Primary": [
         "主密钥"
@@ -1148,6 +1175,12 @@
       ],
       "${ addressCount } email address": [
         "${ addressCount } 个电子邮件地址"
+      ],
+      "Screenshot(s) attached": [
+        "已附加的屏幕截图"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "大多数问题都能通过刷新页面或${link}来解决。"
       ],
       "Import contacts": [
         ""
@@ -1173,6 +1206,9 @@
       "Your import will not be processed.": [
         ""
       ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "无论设置中键盘快捷键是否激活，一些基本的导航和操作始终可用"
+      ],
       "here": [
         "这里"
       ],
@@ -1181,15 +1217,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "如果您坚信其中有误，请联系 ${ contactLink }"
-      ],
-      "Screenshot(s) attached": [
-        "已附加的屏幕截图"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "大多数问题都能通过刷新页面或${link}来解决。"
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "无论设置中键盘快捷键是否激活，一些基本的导航和操作始终可用"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "您的账户至少有一张逾期发票。 您的存取权限已被限制。 ${ payInvoiceLink }"
@@ -1267,7 +1294,7 @@
         "管理您的日历"
       ],
       "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        ""
+        "${ calendarAppName } 已被添加到 Proton 套装中，我们很乐意倾听你对其的看法！"
       ],
       "Loading events": [
         "日程加载中"
@@ -1520,39 +1547,6 @@
       "Export contacts": [
         "导出联系人"
       ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Cancel": [
-        "取消"
-      ],
-      "Submit": [
-        "确定"
-      ],
-      "Password": [
-        "密码"
-      ],
-      "Mailbox password": [
-        "邮箱密码"
-      ],
-      "Two-factor authentication code": [
-        "双重认证验证码"
-      ],
-      "Username or ProtonMail address": [
-        "用户名或 ProtonMail 地址"
-      ],
-      "0 - Not a fan": [
-        ""
-      ],
-      "10 - Love it!": [
-        ""
-      ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
       "Operating system": [
         "操作系统"
       ],
@@ -1577,6 +1571,15 @@
       "Browser version": [
         "浏览器版本"
       ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        "该评分的主要原因是什么"
+      ],
       "Display name": [
         "显示名称"
       ],
@@ -1595,8 +1598,59 @@
       "Enable Beta Access": [
         "启用测试版功能"
       ],
+      "Cancel": [
+        "取消"
+      ],
+      "Submit": [
+        "确定"
+      ],
+      "Password": [
+        "密码"
+      ],
+      "Mailbox password": [
+        "邮箱密码"
+      ],
+      "Two-factor authentication code": [
+        "双重认证验证码"
+      ],
+      "Username or ProtonMail address": [
+        "用户名或 ProtonMail 地址"
+      ],
+      "Name": [
+        "姓名"
+      ],
+      "Choose a color": [
+        "选择颜色"
+      ],
+      "Default email": [
+        "首选邮箱"
+      ],
+      "Display": [
+        "显示"
+      ],
+      "Description": [
+        "说明："
+      ],
+      "Default event duration": [
+        "默认日程时长"
+      ],
+      "URL": [
+        "网址"
+      ],
+      "Default notifications": [
+        "预设提醒时间"
+      ],
+      "Default full day notifications": [
+        "预设全天提醒"
+      ],
       "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        ""
+        "您有多大可能向朋友或同事推荐 ${ calendarAppName }？"
+      ],
+      "0 - Not likely": [
+        "0 - 不可能"
+      ],
+      "10 - Extremely likely": [
+        "10 - 极有可能"
       ],
       "All day": [
         "全天"
@@ -1631,9 +1685,6 @@
       "Event location": [
         "日程地点"
       ],
-      "Description": [
-        "说明："
-      ],
       "Event notifications": [
         "日程通知"
       ],
@@ -1644,6 +1695,11 @@
         "您的日历"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "此密钥不能用于加密"
+      ]
+    },
     "Link": {
       "Learn more": [
         "了解更多"
@@ -1651,14 +1707,14 @@
       "Request an invite": [
         "请求邀请"
       ],
+      "clearing your browser cache": [
+        "清除浏览器缓存"
+      ],
       "Upgrade": [
         "升级"
       ],
       "Go to subscription plans": [
-        "转到订阅计划"
-      ],
-      "clearing your browser cache": [
-        "清除浏览器缓存"
+        "转至订阅计划"
       ],
       "Pay invoice": [
         "支付"
@@ -1698,12 +1754,6 @@
       "Name": [
         "名称"
       ],
-      "Mailbox password": [
-        "邮箱密码"
-      ],
-      "Feedback": [
-        ""
-      ],
       "OS name": [
         "操作系统名称"
       ],
@@ -1725,8 +1775,20 @@
       "Browser version": [
         "浏览器版本"
       ],
+      "Feedback": [
+        "用户反馈"
+      ],
       "e.g. Julia Smith": [
         "例如：Julia Smith"
+      ],
+      "Mailbox password": [
+        "邮箱密码"
+      ],
+      "Add a calendar name": [
+        "填写分类名称"
+      ],
+      "Add a calendar description": [
+        "填写分类描述"
       ],
       "Add title": [
         "添加标题"
@@ -1882,11 +1944,11 @@
       "Contacts could not be merged": [
         "无法合并联系人"
       ],
-      "Are you sure you want to discard your import?": [
-        ""
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息"
+      ],
+      "Are you sure you want to discard your import?": [
+        ""
       ],
       "Your local date & time settings seem to be out of sync.": [
         "您的本地日期和时间设置似乎不同步"
@@ -1934,6 +1996,15 @@
       ],
       "Preference saved": [
         "设置已保存"
+      ],
+      "Calendar created. It might take a few minutes to sync.": [
+        "日历已创建，可能需要几分钟才能同步"
+      ],
+      "Calendar created": [
+        "日历已创建"
+      ],
+      "Calendar updated": [
+        "日历已更新"
       ],
       "An invitation will be sent to added participants for all the events in this series.": [
         "将向该系列活动中的所有活动添加的参与者发送邀请"
@@ -2119,10 +2190,10 @@
         "进度：${ combinedProgress }%"
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        ""
+        "${ model.deleted.length }/${ totalBeDeleted } 联系人已成功删除"
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        ""
+        "${ model.submitted.length }/${ totalBeMerged } 联系人已成功合并"
       ],
       "No contacts merged.": [
         "没有合并联系人"
@@ -2136,7 +2207,7 @@
         "正在合并联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了"
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        ""
+        "正在删除联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "通过拖放可调整联系人合并优先级，未勾选的联系人不会被合并"
@@ -2341,100 +2412,6 @@
         "${ totalImported }/${ totalToImport } 联系人已加密并添至您的联系人列表"
       ]
     },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        ""
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        ""
-      ],
-      "Configure Import": [
-        ""
-      ],
-      "Import": [
-        ""
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        ""
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "标准"
-      ],
-      "Compact": [
-        "紧凑"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "分栏"
-      ],
-      "Row": [
-        "整行"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "常规"
-      ],
-      "Maximized": [
-        "最大化"
-      ]
-    },
-    "Text": {
-      "Settings": [
-        "设置"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "开"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "关"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "分栏"
-      ],
-      "Row": [
-        "整行"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "标准"
-      ],
-      "Compact": [
-        "紧凑"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "最大化"
-      ],
-      "Normal": [
-        "常规"
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        ""
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        ""
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "没有选择图像"
@@ -2538,6 +2515,76 @@
         "添加截图"
       ]
     },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        ""
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        ""
+      ],
+      "Configure Import": [
+        ""
+      ],
+      "Import": [
+        ""
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        ""
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "设置"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "开"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "关"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "分栏"
+      ],
+      "Row": [
+        "整行"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "标准"
+      ],
+      "Compact": [
+        "紧凑"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "最大化"
+      ],
+      "Normal": [
+        "常规"
+      ]
+    },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "分数 (必填)"
+      ]
+    },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "反馈已发送"
+      ]
+    },
     "Onboarding Proton": {
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
         "这是当您向他们发送电子邮件、邀请他们参加活动或与他们共享文件时他们会看到的内容"
@@ -2581,6 +2628,30 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "请注意：点击 \"应用\" 按钮后，服务将重新加载"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "标准"
+      ],
+      "Compact": [
+        "紧凑"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "分栏"
+      ],
+      "Row": [
+        "整行"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "常规"
+      ],
+      "Maximized": [
+        "最大化"
       ]
     },
     "Select files": {
@@ -2631,9 +2702,18 @@
         "按电子邮件"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "密码必须至少包含 ${ length } 个字符"
+    "Duration": {
+      "30 minutes": [
+        "30 分钟"
+      ],
+      "60 minutes": [
+        "60 分钟"
+      ],
+      "90 minutes": [
+        "90 分钟"
+      ],
+      "120 minutes": [
+        "120 分钟"
       ]
     },
     "Contact field label": {
@@ -2831,6 +2911,11 @@
         "紧急联系人"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "密码必须至少包含 ${ length } 个字符"
+      ]
+    },
     "file size format": {
       "bytes": [
         "字节"
@@ -2848,6 +2933,73 @@
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        "${ title } 现在开始"
+      ],
+      "${ title } starts today": [
+        "${ title } 今天开始"
+      ],
+      "${ title } started at ${ formattedHour }": [
+        "${ title } 以${ formattedHour } 开始"
+      ],
+      "${ title } started yesterday": [
+        "${ title } 于昨天开始"
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        "${ title } 昨天${ formattedHour } 开始"
+      ],
+      "${ title } started on ${ formattedDate }": [
+        "${ title } 开始于 ${ formattedDate }"
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } ${ formattedDate } 开始, ${ formattedHour }"
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        "${ title } 开始于 ${ _formattedDate }"
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        "${ title } ${ _formattedDate } ${ formattedHour } 开始"
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        "${ title } 开始于 ${ formattedDateWithoutTime }"
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        "${ title } 开始于 ${ _formattedDateWithTime }"
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        "${ title } 将以${ formattedHour } 开始"
+      ],
+      "${ title } will start tomorrow": [
+        "${ title } 将于明天开始"
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        "${ title } 明天将以${ formattedHour } 开始"
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        "${ title } 将于 ${ _formattedDate2 } 开始"
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title } 将以${ _formattedDate2 } 开始，并${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        "${ title } 将从 ${ _formattedDate3 } 开始"
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title } 将以${ _formattedDate3 } 开始，并${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        "${ title } 将从 ${ _formattedDateWithoutTime } 开始"
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        "${ title } 将从 ${ formattedDateWithTime } 开始"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(无标题)"
       ]
     },
     "Participant name": {
@@ -3284,73 +3436,6 @@
         "每 ${ interval } 年，${ untilString }"
       ]
     },
-    "Alarm notification": {
-      "${ title } starts now": [
-        "${ title } 现在开始"
-      ],
-      "${ title } starts today": [
-        "${ title } 今天开始"
-      ],
-      "${ title } started at ${ formattedHour }": [
-        "${ title } 以${ formattedHour } 开始"
-      ],
-      "${ title } started yesterday": [
-        "${ title } 于昨天开始"
-      ],
-      "${ title } started yesterday at ${ formattedHour }": [
-        "${ title } 昨天${ formattedHour } 开始"
-      ],
-      "${ title } started on ${ formattedDate }": [
-        "${ title } 开始于 ${ formattedDate }"
-      ],
-      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } ${ formattedDate } 开始, ${ formattedHour }"
-      ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } 开始于 ${ _formattedDate }"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } ${ _formattedDate } ${ formattedHour } 开始"
-      ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } 开始于 ${ formattedDateWithoutTime }"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } 开始于 ${ _formattedDateWithTime }"
-      ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } 将以${ formattedHour } 开始"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } 将于明天开始"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } 明天将以${ formattedHour } 开始"
-      ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } 将于 ${ _formattedDate2 } 开始"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } 将以${ _formattedDate2 } 开始，并${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } 将从 ${ _formattedDate3 } 开始"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } 将以${ _formattedDate3 } 开始，并${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } 将从 ${ _formattedDateWithoutTime } 开始"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } 将从 ${ formattedDateWithTime } 开始"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(无标题)"
-      ]
-    },
     "Keyboard shortcut section name": {
       "Basic navigation": [
         "基本导航"
@@ -3649,6 +3734,16 @@
         "已停用"
       ]
     },
+    "Sidebar calendar edit tooltip": {
+      "Manage calendar": [
+        "管理日历"
+      ]
+    },
+    "Add calendar icon tooltip": {
+      "Create calendar": [
+        "创建日历"
+      ]
+    },
     "Placeholder for contact with no name": {
       "(No name)": [
         "(无姓名)"
@@ -3735,7 +3830,7 @@
     },
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
-        ""
+        "此为已停用日历中的事件"
       ]
     }
   }

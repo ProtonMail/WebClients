@@ -6,9 +6,6 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Невідома помилка"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити у цьому браузері"
       ],
@@ -21,11 +18,17 @@
       "Authentication error.": [
         "Помилка автентифікації."
       ],
-      "This field is required": [
-        "Це поле обов'язкове"
+      "Unknown error": [
+        "Невідома помилка"
       ],
       "Email address invalid": [
         "Недійсна адреса електронної пошти"
+      ],
+      "This field is required": [
+        "Це поле обов'язкове"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
       ],
       "Can't validate email, try again later": [
         "Не вдається підтвердити електронну пошту. Спробуйте знову пізніше"
@@ -43,7 +46,7 @@
         "Не вдалося зберегти налаштування"
       ],
       "Some groups could not be deleted": [
-        ""
+        "Не вдається видалити деякі групи"
       ],
       "Image upload failed": [
         "Не вдалося завантажити зображення"
@@ -93,14 +96,23 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
+      "Primary address key is not decrypted": [
+        "Основний ключ адреси не розшифрований"
+      ],
       "Incorrect mailbox password. Please try again": [
         "Неправильний пароль поштової скриньки. Спробуйте знову"
       ],
       "Incorrect login credentials. Please try again": [
         "Неправильні дані для входу. Будь ласка спробуйте ще раз"
       ],
-      "Primary address key is not decrypted": [
-        "Основний ключ адреси не розшифрований"
+      "No valid address found": [
+        "Не знайдено дійсної адреси"
+      ],
+      "Primary address key is not decrypted.": [
+        "Основний ключ адреси не розшифрований."
+      ],
+      "Name required": [
+        "Назва обов'язкова"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "В цьому полі повинно бути не менше ${ minimumLength } символів."
@@ -209,12 +221,6 @@
       ],
       "Invalid link to the event": [
         "Недійсне посилання на подію"
-      ],
-      "No valid address found": [
-        "Не знайдено дійсної адреси"
-      ],
-      "Primary address key is not decrypted.": [
-        "Основний ключ адреси не розшифрований."
       ],
       "Please create an address first.": [
         "Спочатку створіть адресу."
@@ -329,8 +335,17 @@
       "Confirm opening of link ${ link }": [
         "Підтвердити відкриття посилання ${ link }"
       ],
+      "refresh the page": [
+        "оновити сторінку"
+      ],
       "Select timezone": [
         "Вибрати часовий пояс"
+      ],
+      "Show less": [
+        "Згорнути"
+      ],
+      "Show more": [
+        "Розгорнути"
       ],
       "View invoice": [
         "Переглянути рахунок-фактуру"
@@ -355,9 +370,6 @@
       ],
       "Edit phone number": [
         "Змінити номер телефону"
-      ],
-      "refresh the page": [
-        "оновити сторінку"
       ],
       "Signing out": [
         "Вихід"
@@ -482,6 +494,18 @@
       "Next": [
         "Далі"
       ],
+      "Clear": [
+        "Очистити"
+      ],
+      "Add screenshot(s)": [
+        "Додати знімки екрана"
+      ],
+      "Hide info": [
+        "Сховати відомості"
+      ],
+      "Show info": [
+        "Показати відомості"
+      ],
       "Continue import": [
         ""
       ],
@@ -493,15 +517,6 @@
       ],
       "Start import": [
         ""
-      ],
-      "Use ${ label } theme": [
-        "Використовувати тему ${ label }"
-      ],
-      "OK": [
-        "Гаразд"
-      ],
-      "Log in": [
-        "Увійти"
       ],
       "Copy email to clipboard": [
         "Копіювати е-пошту в буфер обміну"
@@ -548,18 +563,6 @@
       "Composer mode": [
         "Режим редактора"
       ],
-      "Clear": [
-        "Очистити"
-      ],
-      "Add screenshot(s)": [
-        "Додати знімки екрана"
-      ],
-      "Hide info": [
-        "Сховати відомості"
-      ],
-      "Show info": [
-        "Показати відомості"
-      ],
       "Get started": [
         "Розпочнімо"
       ],
@@ -571,6 +574,15 @@
       ],
       "Back": [
         "Назад"
+      ],
+      "Use ${ label } theme": [
+        "Використовувати тему ${ label }"
+      ],
+      "OK": [
+        "Гаразд"
+      ],
+      "Log in": [
+        "Увійти"
       ],
       "Close this banner": [
         "Закрити цей банер"
@@ -590,6 +602,12 @@
       "Add notification": [
         "Додати сповіщення"
       ],
+      "Update": [
+        "Оновити"
+      ],
+      "Create": [
+        "Створити"
+      ],
       "Yes, I'll attend": [
         "Так, я долучуся"
       ],
@@ -608,14 +626,14 @@
       "No": [
         "Ні"
       ],
+      "Share": [
+        "Поділитися"
+      ],
       "New event": [
         "Нова подія"
       ],
       "Create event": [
         "Створити подію"
-      ],
-      "Update": [
-        "Оновити"
       ],
       "Send": [
         "Надіслати"
@@ -814,26 +832,14 @@
       "Import contacts": [
         "Імпортувати контакти"
       ],
+      "Report a problem": [
+        "Повідомити про проблему"
+      ],
       "Start import process": [
         ""
       ],
       "Import in progress": [
         ""
-      ],
-      "Select a theme": [
-        "Вибрати тему"
-      ],
-      "Sign in again to continue": [
-        "Увійдіть знову для продовження"
-      ],
-      "Account suspended": [
-        "Обліковий запис призупинено"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Введіть своє ім'я користувача або електронну адресу ProtonMail"
-      ],
-      "Enter your password": [
-        "Введіть свій пароль"
       ],
       "Open help menu": [
         "Відкрити меню довідки"
@@ -853,8 +859,8 @@
       "Give feedback": [
         "Залишити відгук"
       ],
-      "Report a problem": [
-        "Повідомити про проблему"
+      "Select a theme": [
+        "Вибрати тему"
       ],
       "${ appName } Keyboard Shortcuts": [
         "Комбінації клавіш ${ appName }"
@@ -871,6 +877,18 @@
       "Beta Access": [
         "Бета-доступ"
       ],
+      "Sign in again to continue": [
+        "Увійдіть знову для продовження"
+      ],
+      "Account suspended": [
+        "Обліковий запис призупинено"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Введіть своє ім'я користувача або електронну адресу ProtonMail"
+      ],
+      "Enter your password": [
+        "Введіть свій пароль"
+      ],
       "Select when you want this notification to be sent": [
         "Виберіть якщо ви хочете, щоб це сповіщення було надіслано"
       ],
@@ -882,6 +900,15 @@
       ],
       "Add another notification to remind you of this event": [
         "Додати ще сповіщення, щоб нагадати вам про цю подію"
+      ],
+      "Error": [
+        "Помилка"
+      ],
+      "Update calendar": [
+        "Оновити календар"
+      ],
+      "Create calendar": [
+        "Створити календар"
       ],
       "Change my answer": [
         "Змінити моє рішення"
@@ -921,9 +948,6 @@
       ],
       "You have invited participants with equivalent emails": [
         "Ви запросили учасників з еквівалентною електронною поштою"
-      ],
-      "Error": [
-        "Помилка"
       ],
       "Reset calendar keys": [
         "Скинути ключі календаря"
@@ -1037,6 +1061,9 @@
       ],
       "Learn more": [
         "Докладніше"
+      ],
+      "support team": [
+        "командою підтримки"
       ],
       "Drop the file here to upload": [
         "Для завантаження файлу перетягніть його сюди"
@@ -1170,8 +1197,8 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Змінюйте ці налаштування лише якщо ви використовуєте PGP з отримувачами поза ProtonMail."
       ],
-      "All uploaded keys are expired or revoked! Encryption is automatically disabled.": [
-        "Всі вивантажені ключі прострочені або відкликані! Шифрування автоматично вимкнено."
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        "Жоден із вивантажених ключів не є дійсним для шифрування. Шифрування автоматично вимкнено."
       ],
       "Primary": [
         "Головний"
@@ -1203,6 +1230,12 @@
         "${ addressCount } адрес е-пошти",
         "${ addressCount } адрес е-пошти"
       ],
+      "Screenshot(s) attached": [
+        "Знімки екрана додано"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
+      ],
       "Import contacts": [
         ""
       ],
@@ -1227,6 +1260,9 @@
       "Your import will not be processed.": [
         ""
       ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Основні функції навігації та дії залишаються доступними, незалежно від того, активовані комбінації клавіш в налаштуваннях чи ні."
+      ],
       "here": [
         "тут"
       ],
@@ -1235,15 +1271,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Якщо ви вважаєте, що це помилка, зв'яжіться з нами ${ contactLink }."
-      ],
-      "Screenshot(s) attached": [
-        "Знімки екрана додано"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Основні функції навігації та дії залишаються доступними, незалежно від того, активовані комбінації клавіш в налаштуваннях чи ні."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Ваш обліковий запис має принаймні один протермінований рахунок. Ваш доступ було обмежено. ${ payInvoiceLink }"
@@ -1574,39 +1601,6 @@
       "Export contacts": [
         "Експортувати контакти"
       ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Cancel": [
-        "Скасувати"
-      ],
-      "Submit": [
-        "Надіслати"
-      ],
-      "Password": [
-        "Пароль"
-      ],
-      "Mailbox password": [
-        "Пароль поштової скриньки"
-      ],
-      "Two-factor authentication code": [
-        "Код двоетапної перевірки"
-      ],
-      "Username or ProtonMail address": [
-        "Ім'я користувача або адреса ProtonMail"
-      ],
-      "0 - Not a fan": [
-        "0 - Не подобається"
-      ],
-      "10 - Love it!": [
-        "10 - У захваті!"
-      ],
-      "What is the primary reason for this rating?": [
-        "Яка основна причина такої оцінки?"
-      ],
       "Operating system": [
         "Операційна система"
       ],
@@ -1631,6 +1625,15 @@
       "Browser version": [
         "Версія браузера"
       ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        "Яка основна причина такої оцінки?"
+      ],
       "Display name": [
         "Показуване ім'я"
       ],
@@ -1649,8 +1652,59 @@
       "Enable Beta Access": [
         "Увімкнути бета-доступ"
       ],
+      "Cancel": [
+        "Скасувати"
+      ],
+      "Submit": [
+        "Надіслати"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Mailbox password": [
+        "Пароль поштової скриньки"
+      ],
+      "Two-factor authentication code": [
+        "Код двоетапної перевірки"
+      ],
+      "Username or ProtonMail address": [
+        "Ім'я користувача або адреса ProtonMail"
+      ],
+      "Name": [
+        "Назва"
+      ],
+      "Choose a color": [
+        "Вибрати колір"
+      ],
+      "Default email": [
+        "Типова електронна пошта"
+      ],
+      "Display": [
+        "Вигляд"
+      ],
+      "Description": [
+        "Опис"
+      ],
+      "Default event duration": [
+        "Типова тривалість події"
+      ],
+      "URL": [
+        "URL-адреса"
+      ],
+      "Default notifications": [
+        "Типові сповіщення"
+      ],
+      "Default full day notifications": [
+        "Типові сповіщення на весь день"
+      ],
       "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
         "Яка ймовірність, що ви порадите ${ calendarAppName } другові або колезі?"
+      ],
+      "0 - Not likely": [
+        "0 - малоймовірно"
+      ],
+      "10 - Extremely likely": [
+        "10 - Неодмінно"
       ],
       "All day": [
         "Весь день"
@@ -1685,9 +1739,6 @@
       "Event location": [
         "Місце події"
       ],
-      "Description": [
-        "Опис"
-      ],
       "Event notifications": [
         "Сповіщення про події"
       ],
@@ -1698,6 +1749,11 @@
         "Ваші календарі"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Ключ не можна застосовувати для шифрування"
+      ]
+    },
     "Link": {
       "Learn more": [
         "Докладніше"
@@ -1705,14 +1761,14 @@
       "Request an invite": [
         "Запитати запрошення"
       ],
+      "clearing your browser cache": [
+        "очищення кешу браузера"
+      ],
       "Upgrade": [
         "Покращити"
       ],
       "Go to subscription plans": [
         "Перейти до тарифних планів"
-      ],
-      "clearing your browser cache": [
-        "очищення кешу браузера"
       ],
       "Pay invoice": [
         "Сплатити рахунок-фактуру"
@@ -1752,12 +1808,6 @@
       "Name": [
         "Назва"
       ],
-      "Mailbox password": [
-        "Пароль поштової скриньки"
-      ],
-      "Feedback": [
-        "Відгук"
-      ],
       "OS name": [
         "Назва ОС"
       ],
@@ -1779,8 +1829,20 @@
       "Browser version": [
         "Версія браузера"
       ],
+      "Feedback": [
+        "Відгук"
+      ],
       "e.g. Julia Smith": [
         "наприклад, Оксана Пазиненко"
+      ],
+      "Mailbox password": [
+        "Пароль поштової скриньки"
+      ],
+      "Add a calendar name": [
+        "Додати назву календаря"
+      ],
+      "Add a calendar description": [
+        "Додати опис календаря"
       ],
       "Add title": [
         "Додати заголовок"
@@ -1948,11 +2010,11 @@
       "Contacts could not be merged": [
         "Не вдається об'єднати контакти"
       ],
-      "Are you sure you want to discard your import?": [
-        ""
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Повідомлення не шифруються наскрізно. Будь ласка, не відправляйте в них будь-яку конфіденційну інформацію."
+      ],
+      "Are you sure you want to discard your import?": [
+        ""
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Здається, ваші локальні налаштування дати та часу не синхронізовані."
@@ -2006,6 +2068,15 @@
       ],
       "Preference saved": [
         "Налаштування збережено"
+      ],
+      "Calendar created. It might take a few minutes to sync.": [
+        "Календар створено. Може знадобитися кілька хвилин для синхронізації."
+      ],
+      "Calendar created": [
+        "Календар створено"
+      ],
+      "Calendar updated": [
+        "Календар оновлено"
       ],
       "An invitation will be sent to added participants for all the events in this series.": [
         "Запрошення буде надіслано вказаним учасникам для всіх подій у цій серії."
@@ -2449,100 +2520,6 @@
         "${ totalImported }/${ totalToImport } контактів зашифровано та додано до вашого списку контактів"
       ]
     },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        ""
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        ""
-      ],
-      "Configure Import": [
-        ""
-      ],
-      "Import": [
-        ""
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        ""
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Комфортний"
-      ],
-      "Compact": [
-        "Компактний"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Стовпчик"
-      ],
-      "Row": [
-        "Рядок"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Звичайний"
-      ],
-      "Maximized": [
-        "Розгорнутий"
-      ]
-    },
-    "Text": {
-      "Settings": [
-        "Налаштування"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Увімкнено"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Вимкнено"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Стовпчик"
-      ],
-      "Row": [
-        "Рядок"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Комфортний"
-      ],
-      "Compact": [
-        "Компактний"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "Розгорнутий"
-      ],
-      "Normal": [
-        "Звичайний"
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Оцінка обов'язкова"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Відгук надіслано"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Не вибрано жодного зображення"
@@ -2646,6 +2623,76 @@
         "Додати знімки екрана"
       ]
     },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        ""
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        ""
+      ],
+      "Configure Import": [
+        ""
+      ],
+      "Import": [
+        ""
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        ""
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Налаштування"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Увімкнено"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Вимкнено"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Стовпчик"
+      ],
+      "Row": [
+        "Рядок"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Комфортний"
+      ],
+      "Compact": [
+        "Компактний"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "Розгорнутий"
+      ],
+      "Normal": [
+        "Звичайний"
+      ]
+    },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Оцінка обов'язкова"
+      ]
+    },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Відгук надіслано"
+      ]
+    },
     "Onboarding Proton": {
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
         "Ось, що побачать люди, коли ви надішлете їм лист, запросите на подію, чи поділитесь доступом до файлу."
@@ -2689,6 +2736,30 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Примітка: Після натискання кнопки Застосувати сервіс перезавантажиться."
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Комфортний"
+      ],
+      "Compact": [
+        "Компактний"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Стовпчик"
+      ],
+      "Row": [
+        "Рядок"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Звичайний"
+      ],
+      "Maximized": [
+        "Розгорнутий"
       ]
     },
     "Select files": {
@@ -2751,12 +2822,18 @@
         "електронною поштою"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Пароль повинен містити принаймні ${ length } символ",
-        "Пароль повинен містити принаймні ${ length } символи",
-        "Пароль повинен містити принаймні ${ length } символів",
-        "Пароль повинен містити принаймні ${ length } символів"
+    "Duration": {
+      "30 minutes": [
+        "30 хвилин"
+      ],
+      "60 minutes": [
+        "60 хвилин"
+      ],
+      "90 minutes": [
+        "90 хвилин"
+      ],
+      "120 minutes": [
+        "120 хвилин"
       ]
     },
     "Contact field label": {
@@ -2954,6 +3031,14 @@
         "Екстрені"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Пароль повинен містити принаймні ${ length } символ",
+        "Пароль повинен містити принаймні ${ length } символи",
+        "Пароль повинен містити принаймні ${ length } символів",
+        "Пароль повинен містити принаймні ${ length } символів"
+      ]
+    },
     "file size format": {
       "bytes": [
         "байт"
@@ -2971,6 +3056,73 @@
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "Адресу електронної пошти не знайдено серед ідентифікаторів користувачів, визначених у ключі надсилання (${ keyUserIds })"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        "${ title } розпочинається зараз"
+      ],
+      "${ title } starts today": [
+        "${ title } розпочинається сьогодні"
+      ],
+      "${ title } started at ${ formattedHour }": [
+        "${ title } розпочато о ${ formattedHour }"
+      ],
+      "${ title } started yesterday": [
+        "${ title } розпочато вчора"
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        "${ title } розпочато вчора о ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDate }": [
+        "${ title } розпочато ${ formattedDate }"
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } розпочато ${ formattedDate } о ${ formattedHour }"
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        "${ title } розпочато ${ _formattedDate }"
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        "${ title } розпочато ${ _formattedDate } о ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        "${ title } розпочато ${ formattedDateWithoutTime }"
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        "${ title } розпочато ${ _formattedDateWithTime }"
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        "${ title } розпочнеться о ${ formattedHour }"
+      ],
+      "${ title } will start tomorrow": [
+        "${ title } розпочнеться завтра"
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        "${ title } розпочнеться завтра по ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        "${ title } розпочнеться ${ _formattedDate2 }"
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title } розпочнеться ${ _formattedDate2 } о ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        "${ title } розпочнеться ${ _formattedDate3 }"
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title } розпочнеться ${ _formattedDate3 }, ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        "${ title } розпочнеться ${ _formattedDateWithoutTime }"
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        "${ title } розпочнеться ${ formattedDateWithTime }"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(без назви)"
       ]
     },
     "Participant name": {
@@ -3518,73 +3670,6 @@
         "Кожні ${ interval } років, ${ untilString }"
       ]
     },
-    "Alarm notification": {
-      "${ title } starts now": [
-        "${ title } розпочинається зараз"
-      ],
-      "${ title } starts today": [
-        "${ title } розпочинається сьогодні"
-      ],
-      "${ title } started at ${ formattedHour }": [
-        "${ title } розпочато о ${ formattedHour }"
-      ],
-      "${ title } started yesterday": [
-        "${ title } розпочато вчора"
-      ],
-      "${ title } started yesterday at ${ formattedHour }": [
-        "${ title } розпочато вчора о ${ formattedHour }"
-      ],
-      "${ title } started on ${ formattedDate }": [
-        "${ title } розпочато ${ formattedDate }"
-      ],
-      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } розпочато ${ formattedDate } о ${ formattedHour }"
-      ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } розпочато ${ _formattedDate }"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } розпочато ${ _formattedDate } о ${ formattedHour }"
-      ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } розпочато ${ formattedDateWithoutTime }"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } розпочато ${ _formattedDateWithTime }"
-      ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } розпочнеться о ${ formattedHour }"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } розпочнеться завтра"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } розпочнеться завтра по ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } розпочнеться ${ _formattedDate2 }"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } розпочнеться ${ _formattedDate2 } о ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } розпочнеться ${ _formattedDate3 }"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } розпочнеться ${ _formattedDate3 }, ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } розпочнеться ${ _formattedDateWithoutTime }"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } розпочнеться ${ formattedDateWithTime }"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(без назви)"
-      ]
-    },
     "Keyboard shortcut section name": {
       "Basic navigation": [
         "Основна навігація"
@@ -3931,6 +4016,16 @@
         "вимкнено"
       ]
     },
+    "Sidebar calendar edit tooltip": {
+      "Manage calendar": [
+        "Керувати календарем"
+      ]
+    },
+    "Add calendar icon tooltip": {
+      "Create calendar": [
+        "Створити календар"
+      ]
+    },
     "Placeholder for contact with no name": {
       "(No name)": [
         "(Без імені)"
@@ -4023,7 +4118,7 @@
     },
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
-        ""
+        "Подія з вимкненого календаря."
       ]
     }
   }

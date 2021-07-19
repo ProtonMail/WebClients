@@ -21,11 +21,14 @@
       "Authentication error.": [
         "Kesalahan otentikasi."
       ],
+      "Email address invalid": [
+        "Alamat surel tidak valid"
+      ],
       "This field is required": [
         "Bagian ini wajib isi"
       ],
-      "Email address invalid": [
-        "Alamat surel tidak valid"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Terjadi kesalahan, silakan ${ refresh } untuk meneruskan. Jika Anda masih melihat pesan galat ini harap kontak ${ supportTeam } kami."
       ],
       "The composer failed to load.": [
         "Komposer gagal memuat."
@@ -46,7 +49,7 @@
         "Kode verifikasi tidak valid"
       ],
       "Some groups could not be deleted": [
-        ""
+        "Beberapa grup tidak dapat dihapus"
       ],
       "Image upload failed": [
         "Pengunggahan gambar gagal"
@@ -120,9 +123,6 @@
       "Require at least one action": [
         "Perlu minimal satu tindakan"
       ],
-      "Request timed out.": [
-        "Terlalu lama memuat."
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Bidang ini membutuhkan minimal ${ minimumLength } karakter."
       ],
@@ -134,6 +134,9 @@
       ],
       "Passwords do not match": [
         "Kata sandi tidak cocok"
+      ],
+      "Request timed out.": [
+        "Terlalu lama memuat."
       ],
       "Signature verification failed": [
         "Verifikasi tanda tangan gagal"
@@ -205,7 +208,7 @@
         "Hubungi administrator organisasi Anda untuk menyelesaikan ini."
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
-        ""
+        "Anda tidak dapat membuka lebih dari ${ maxActiveComposer } jendela komposer sekaligus."
       ],
       "Message needs to be sent first": [
         "Pesan perlu dikirim lebih dahulu"
@@ -232,7 +235,7 @@
         "Telah terjadi sebuah masalah dengan pencarian konten. Pencarian standar telah digunakan sebagai gantinya"
       ],
       "Removed duplicate recipient: ${ recipents }": [
-        ""
+        "Penerima duplikat dihapus: ${ recipents }"
       ],
       "Message passwords do not match.": [
         "Kata sandi pesan tidak cocok."
@@ -289,6 +292,9 @@
       ],
       "Use “${ label }” setting": [
         "Gunakan pengaturan \"${ label }\""
+      ],
+      "refresh the page": [
+        "segarkan halaman"
       ],
       "Remove": [
         "Hapus"
@@ -569,6 +575,18 @@
       "Next": [
         "Selanjutnya"
       ],
+      "Clear": [
+        "Bersihkan"
+      ],
+      "Add screenshot(s)": [
+        "Tambah tangkapan layar"
+      ],
+      "Hide info": [
+        "Sembunyikan info"
+      ],
+      "Show info": [
+        "Tampilkan info"
+      ],
       "Continue import": [
         "Lanjutkan impor"
       ],
@@ -589,9 +607,6 @@
       ],
       "Signing out": [
         "Keluar"
-      ],
-      "refresh the page": [
-        "segarkan halaman"
       ],
       "Log in": [
         "Masuk"
@@ -644,9 +659,6 @@
       "Search": [
         "Pencarian"
       ],
-      "Clear": [
-        "Bersihkan"
-      ],
       "Copy email to clipboard": [
         "Salin surel ke papan klip"
       ],
@@ -691,15 +703,6 @@
       ],
       "Composer mode": [
         "Mode menulis"
-      ],
-      "Add screenshot(s)": [
-        "Tambah tangkapan layar"
-      ],
-      "Hide info": [
-        "Sembunyikan info"
-      ],
-      "Show info": [
-        "Tampilkan info"
       ],
       "Preview": [
         "Pratinjau"
@@ -747,7 +750,7 @@
         "Tidak"
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
-        ""
+        "Tambah ke ${ CALENDAR_APP_NAME }"
       ],
       "Send anyway": [
         "Tetap kirim"
@@ -1169,7 +1172,7 @@
         "Gabungkan kontak"
       ],
       "Deleting contacts": [
-        ""
+        "Menghapus kontak"
       ],
       "View contacts": [
         "Lihat kontak"
@@ -1197,6 +1200,9 @@
       ],
       "Import contacts": [
         "Impor kontak"
+      ],
+      "Report a problem": [
+        "Laporkan sebuah masalah"
       ],
       "Start import process": [
         "Mulai proses impor"
@@ -1249,9 +1255,6 @@
       "Give feedback": [
         "Berikan umpan balik"
       ],
-      "Report a problem": [
-        "Laporkan sebuah masalah"
-      ],
       "Beta Access": [
         "Akses Beta"
       ],
@@ -1286,10 +1289,10 @@
         "Pesan tanpa subjek?"
       ],
       "Invalid recipients": [
-        ""
+        "Penerima tidak valid"
       ],
       "Invalid recipient": [
-        ""
+        "Penerima tidak valid"
       ],
       "Re-sign contact": [
         "Tanda tangani ulang kontak"
@@ -1481,6 +1484,9 @@
       ],
       "Loading": [
         "Memuat"
+      ],
+      "support team": [
+        "tim dukungan"
       ],
       "No contacts added yet": [
         "Belum ada kontak yang ditambahkan"
@@ -1699,7 +1705,7 @@
         "Ubah pengaturan ini jika Anda menggunakan PGP dengan bukan pengguna ProtonMail."
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        ""
+        "Kunci yang diunggah tidak ada yang valid untuk enkripsi. Enkripsi secara otomatis dinonaktifkan."
       ],
       "No email address": [
         "Tidak ada alamat surel"
@@ -1718,6 +1724,12 @@
       ],
       "${ addressCount } email address": [
         "${ addressCount } alamat email"
+      ],
+      "Screenshot(s) attached": [
+        "Tangkapan layar terlampir"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
       ],
       "Import contacts": [
         "Impor kontak"
@@ -1814,12 +1826,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Anda telah menonaktifkan Akses Beta. Klik ${ refreshButton } untuk menggunakan versi stabil dari ${ appName }. Aplikasi akan dimuat ulang."
-      ],
-      "Screenshot(s) attached": [
-        "Tangkapan layar terlampir"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
       ],
       "Inherited from parent folder": [
         "Ikuti folder induk"
@@ -2230,7 +2236,7 @@
         "(Tidak Ada Penerima)"
       ],
       "No more results found": [
-        ""
+        "Hasil tidak ditemukan lagi"
       ],
       "This conversation contains non-trashed messages.": [
         "Percakapan ini berisi pesan yang tidak dibuang."
@@ -2387,6 +2393,30 @@
       "Export contacts": [
         "Ekspor kontak"
       ],
+      "Operating system": [
+        "Sistem operasi"
+      ],
+      "Operating system version": [
+        "Versi sistem operasi"
+      ],
+      "Proton username": [
+        "Nama Pengguna Proton"
+      ],
+      "Category": [
+        "Kategori"
+      ],
+      "What happened?": [
+        "Apa yang terjadi?"
+      ],
+      "System information": [
+        "Informasi sistem"
+      ],
+      "Browser": [
+        "Peramban"
+      ],
+      "Browser version": [
+        "Versi peramban"
+      ],
       "From: ${ fromEmailAddress }": [
         "Dari: ${ fromEmailAddress }"
       ],
@@ -2426,38 +2456,8 @@
       "Select how your composer opens by default.": [
         "Pilih bagaimana komposer Anda tebuka secara bawaan."
       ],
-      "0 - Not a fan": [
-        "0 - Tidak suka"
-      ],
-      "10 - Love it!": [
-        "10 - Suka!"
-      ],
       "What is the primary reason for this rating?": [
-        ""
-      ],
-      "Operating system": [
-        "Sistem operasi"
-      ],
-      "Operating system version": [
-        "Versi sistem operasi"
-      ],
-      "Proton username": [
-        "Nama Pengguna Proton"
-      ],
-      "Category": [
-        "Kategori"
-      ],
-      "What happened?": [
-        "Apa yang terjadi?"
-      ],
-      "System information": [
-        "Informasi sistem"
-      ],
-      "Browser": [
-        "Peramban"
-      ],
-      "Browser version": [
-        "Versi peramban"
+        "Apa alasan utama penilaian ini?"
       ],
       "Enable Beta Access": [
         "Aktifkan Akses Beta"
@@ -2654,13 +2654,19 @@
       "How would you rate your experience with the new ProtonMail?": [
         "Bagaimana Anda menilai pengalaman Anda dengan ProtonMail yang baru?"
       ],
+      "0 - Not a fan": [
+        "0 - Tidak suka"
+      ],
+      "10 - Love it!": [
+        "10 - Suka!"
+      ],
       "Also archive": [
         "Arsipkan juga"
       ]
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
-        ""
+        "Kunci tidak dapat digunakan untuk enkripsi"
       ]
     },
     "Link": {
@@ -2669,6 +2675,9 @@
       ],
       "Request an invite": [
         "Minta undangan"
+      ],
+      "clearing your browser cache": [
+        "membersihkan cache peramban Anda"
       ],
       "Pay invoice": [
         "Bayar tagihan"
@@ -2681,9 +2690,6 @@
       ],
       "Go to subscription plans": [
         "Ke paket langganan"
-      ],
-      "clearing your browser cache": [
-        "membersihkan cache peramban Anda"
       ],
       "Inbox": [
         "Kotak masuk"
@@ -2713,7 +2719,7 @@
         "Kotak Keluar"
       ],
       "You need to activate your calendar keys to add this event": [
-        ""
+        "Anda perlu mengaktifkan kunci kalender Anda untuk menambahkan acara ini"
       ],
       "You need to activate your calendar keys to manage this invitation": [
         "Anda perlu mengaktifkan kunci kalender Anda untuk mengelola undangan ini"
@@ -2728,7 +2734,7 @@
         "Anda perlu mengaktifkan kunci kalender Anda untuk melihat undangan yang diperbarui"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        ""
+        "Berkas ICS ini berisi lebih dari satu acara. Silakan unduh dan impor acara di ${ calendarAppName }"
       ],
       "You need to reactivate your keys to manage this invitation": [
         "Anda perlu mengaktifkan ulang kunci Anda untuk mengelola undangan ini"
@@ -2740,7 +2746,7 @@
         "Anda perlu mengaktifkan ulang kunci Anda untuk melihat undangan yang diperbarui"
       ],
       "Create a new calendar to add this event": [
-        ""
+        "Buat kalender baru untuk menambahkan acara ini"
       ],
       "Create a new calendar to answer this invitation": [
         "Buat kalender baru untuk menjawab undangan ini"
@@ -2846,15 +2852,6 @@
       "Name": [
         "Nama"
       ],
-      "Mailbox password": [
-        "Sandi kotak pesan"
-      ],
-      "e.g. Julia Smith": [
-        "cth. Julia Smith"
-      ],
-      "Feedback": [
-        "Umpan balik"
-      ],
       "OS name": [
         "Nama Sistem Operasi"
       ],
@@ -2875,6 +2872,15 @@
       ],
       "Browser version": [
         "Versi peramban"
+      ],
+      "Mailbox password": [
+        "Sandi kotak pesan"
+      ],
+      "e.g. Julia Smith": [
+        "cth. Julia Smith"
+      ],
+      "Feedback": [
+        "Umpan balik"
       ],
       "Type text or keyword": [
         "Ketik teks atau kata kunci"
@@ -2950,14 +2956,14 @@
       "Contacts could not be merged": [
         "Kontak tidak dapat digabung"
       ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Laporan tidak dienkripsi secara end-to-end, mohon tidak mengirim informasi sensitif apapun."
+      ],
       "Are you sure you want to discard your import?": [
         "Yakin ingin membuang impor Anda?"
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Pengaturan waktu & tanggal lokal Anda sepertinya tidak tersinkronisasi."
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Laporan tidak dienkripsi secara end-to-end, mohon tidak mengirim informasi sensitif apapun."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Tanda tangan lampiran gagal diverifikasi.\nAnda tetap dapat mengunduh lampiran ini tapi mungkin saja sudah rusak."
@@ -3018,7 +3024,7 @@
         "Fitur ini hanya tersedia untuk pengguna berbayar"
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        ""
+        "Tindakan ini akan mengunduh semua pesan sehingga dapat dicari secara lokal. Membersihkan data peramban Anda akan menonaktifkan opsi ini."
       ]
     },
     "Error message": {
@@ -3117,14 +3123,14 @@
       "Fingerprint copied to clipboard": [
         "Sidik jari disalin ke clipboard"
       ],
+      "Bug reported": [
+        "Bug berhasil dilaporkan"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Preferensi pintasan papan ketik diperbarui"
       ],
       "Preference saved": [
         "Preferensi disimpan"
-      ],
-      "Bug reported": [
-        "Bug berhasil dilaporkan"
       ],
       "Message content search activated": [
         "Pencarian konten pesan diaktifkan"
@@ -3334,10 +3340,10 @@
         "Proses: ${ combinedProgress }%"
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        ""
+        "${ model.deleted.length } dari ${ totalBeDeleted } kontak berhasil dihapus."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        ""
+        "${ model.submitted.length } dari ${ totalBeMerged } kontak berhasil digabung."
       ],
       "No contacts merged.": [
         "Tidak ada kontak yang digabung."
@@ -3351,7 +3357,7 @@
         "Penggabungan kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        ""
+        "Menghapus kontak... Ini perlu beberapa menit. Saat proses selesai, Anda dapat menutup jendela ini."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Tandai kontak yang ingin digabung."
@@ -3517,6 +3523,118 @@
         "${ totalImported }/${ totalToImport } kontak dienkripsi dan ditambahkan ke daftar kontak"
       ]
     },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Gambar belum dipilih"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Masalah masuk"
+      ],
+      "Sign up problem": [
+        "Masalah pendaftaran"
+      ],
+      "Payments problem": [
+        "Masalah pembayaran"
+      ],
+      "Custom domain problem": [
+        "Masalah domain khusus"
+      ],
+      "Bridge problem": [
+        "Masalah bridge"
+      ],
+      "Import / export problem": [
+        "Masalah impor / ekspor"
+      ],
+      "Connection problem": [
+        "Masalah koneksi"
+      ],
+      "Slow speed problem": [
+        "Masalah kecepatan lambat"
+      ],
+      "Calendar problem": [
+        "Masalah kalender"
+      ],
+      "Contacts problem": [
+        "Masalah kontak"
+      ],
+      "Drive problem": [
+        "Masalah Drive"
+      ],
+      "Mail problem": [
+        "Masalah Mail"
+      ],
+      "VPN problem": [
+        "Masalah VPN"
+      ],
+      "Feature request": [
+        "Permintaan fitur"
+      ],
+      "Other": [
+        "Lainnya"
+      ],
+      "Signup problem": [
+        "Masalah pendaftaran"
+      ],
+      "Installation problem": [
+        "Masalah instalasi"
+      ],
+      "Update problem": [
+        "Masalah pemutakhiran"
+      ],
+      "Application problem": [
+        "Masalah aplikasi"
+      ],
+      "Speed problem": [
+        "Masalah kecepatan"
+      ],
+      "Manual setup problem": [
+        "Masalah pemasangan manual"
+      ],
+      "Website access problem": [
+        "Masalah akses situs"
+      ],
+      "Streaming problem": [
+        "Masalah pemutaran konten"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Akun"
+      ],
+      "Apps": [
+        "Aplikasi"
+      ],
+      "Network": [
+        "Jaringan"
+      ],
+      "Services": [
+        "Layanan"
+      ],
+      "Other category": [
+        "Kategori lain"
+      ],
+      "Custom folders": [
+        "Folder kustom"
+      ],
+      "Default folders": [
+        "Folder bawaan"
+      ],
+      "Labels": [
+        "Label"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Pilih"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "Lampirkan tangkapan layar"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Menghubungkan ke penyedia kontak Anda"
@@ -3673,118 +3791,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Umpan balik terkirim"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Gambar belum dipilih"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Masalah masuk"
-      ],
-      "Sign up problem": [
-        "Masalah pendaftaran"
-      ],
-      "Payments problem": [
-        "Masalah pembayaran"
-      ],
-      "Custom domain problem": [
-        "Masalah domain khusus"
-      ],
-      "Bridge problem": [
-        "Masalah bridge"
-      ],
-      "Import / export problem": [
-        "Masalah impor / ekspor"
-      ],
-      "Connection problem": [
-        "Masalah koneksi"
-      ],
-      "Slow speed problem": [
-        "Masalah kecepatan lambat"
-      ],
-      "Calendar problem": [
-        "Masalah kalender"
-      ],
-      "Contacts problem": [
-        "Masalah kontak"
-      ],
-      "Drive problem": [
-        "Masalah Drive"
-      ],
-      "Mail problem": [
-        "Masalah Mail"
-      ],
-      "VPN problem": [
-        "Masalah VPN"
-      ],
-      "Feature request": [
-        "Permintaan fitur"
-      ],
-      "Other": [
-        "Lainnya"
-      ],
-      "Signup problem": [
-        "Masalah pendaftaran"
-      ],
-      "Installation problem": [
-        "Masalah instalasi"
-      ],
-      "Update problem": [
-        "Masalah pemutakhiran"
-      ],
-      "Application problem": [
-        "Masalah aplikasi"
-      ],
-      "Speed problem": [
-        "Masalah kecepatan"
-      ],
-      "Manual setup problem": [
-        "Masalah pemasangan manual"
-      ],
-      "Website access problem": [
-        "Masalah akses situs"
-      ],
-      "Streaming problem": [
-        "Masalah pemutaran konten"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Akun"
-      ],
-      "Apps": [
-        "Aplikasi"
-      ],
-      "Network": [
-        "Jaringan"
-      ],
-      "Services": [
-        "Layanan"
-      ],
-      "Other category": [
-        "Kategori lain"
-      ],
-      "Custom folders": [
-        "Folder kustom"
-      ],
-      "Default folders": [
-        "Folder bawaan"
-      ],
-      "Labels": [
-        "Label"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Pilih"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Lampirkan tangkapan layar"
       ]
     },
     "Beta access description": {
@@ -4210,34 +4216,34 @@
         "Ada kesalahan tidak terduga. Proses impor harus diulang."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        ""
+        "Galat saat mengunggah berkas Anda. Tidak ada berkas yang dipilih."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        ""
+        "Terjadi kesalahan saat mengunggah berkas Anda ${ formattedFilename }. Hanya format berkas ICS yang diizinkan."
       ],
       "Your file ${ formattedFilename } is empty.": [
-        ""
+        "Berkas ${ formattedFilename } Anda kosong."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        ""
+        "Ada kesalahan saat mengunggah berkas ${ formattedFilename }. Ukuran maksimum berkas ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
-        ""
+        "Berkas ${ formattedFilename } Anda bukan kalender."
       ],
       "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        ""
+        "${ CALENDAR_APP_NAME } hanya mendukung impor kalendar dengan iCal versi 2.0."
       ],
       "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        ""
+        "Berkas Anda ${ formattedFilename } adalah undangan dan tidak dapat diimpor."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        ""
+        "Berkas ${ formattedFilename } tidak memiliki acara untuk diimpor."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        ""
+        "Berkas ${ formattedFilename } Anda berisi lebih dari ${ MAX_IMPORT_EVENTS_STRING } acara."
       ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        ""
+        "Terjadi galat saat membaca berkas ${ formattedFilename }. Format berkas salah."
       ]
     },
     "Error importing contacts": {
@@ -4440,13 +4446,13 @@
     },
     "Attached ics file error": {
       "Invalid ICS file": [
-        ""
+        "Berkas ICS tidak valid"
       ],
       "Invalid event": [
-        ""
+        "Acara tidak valid"
       ],
       "Unsupported event": [
-        ""
+        "Acara tidak didukung"
       ]
     },
     "Event invitation error": {
@@ -4463,10 +4469,10 @@
         "Undangan tidak didukung"
       ],
       "Attached ICS file could not be parsed": [
-        ""
+        "Berkas ICS terlampir tidak dapar diurai"
       ],
       "Attached ICS file could not be decrypted": [
-        ""
+        "Berkas ICS terlampir tidak dapat didekripsi"
       ],
       "We could not retrieve the event from your calendar": [
         "Kami tidak dapat mengambil acara dari kalender Anda"
@@ -4489,82 +4495,82 @@
     },
     "Error importing event": {
       "Component with wrong format": [
-        ""
+        "Komponen dengan format salah"
       ],
       "Non-Gregorian": [
-        ""
+        "Non-Gregorian"
       ],
       "To-do entry": [
-        ""
+        "Entri to-do"
       ],
       "Journal entry": [
-        ""
+        "Entri Jurnal"
       ],
       "Free-busy time information": [
-        ""
+        "Informasi waktu luang-sibuk"
       ],
       "Custom timezone": [
-        ""
+        "Zona waktu khusus"
       ],
       "Invalid event": [
-        ""
+        "Acara tidak valid"
       ],
       "Unsupported event": [
-        ""
+        "Acara tidak didukung"
       ],
       "Malformed all-day event": [
-        ""
+        "Acara sepanjang hari salah format"
       ],
       "Missing start time": [
-        ""
+        "Waktu mulai hilang"
       ],
       "Malformed start time": [
-        ""
+        "Waktu mulai salah format"
       ],
       "Floating times not supported": [
-        ""
+        "Waktu mengapung tidak didukung"
       ],
       "Start time out of bounds": [
-        ""
+        "Waktu mulai di luar batas"
       ],
       "Malformed end time": [
-        ""
+        "Waktu akhir salah format"
       ],
       "End time out of bounds": [
-        ""
+        "Waktu akhif di luar batas"
       ],
       "Event duration not supported": [
-        ""
+        "Durasi acara tidak didukung"
       ],
       "Calendar timezone not supported": [
-        ""
+        "Zona waktu kalender tidak didukung"
       ],
       "Timezone not supported": [
-        ""
+        "Zona waktu tidak didukung"
       ],
       "Malformed recurring event": [
-        ""
+        "Acara berulang salah format"
       ],
       "Recurring rule not supported": [
-        ""
+        "Aturan berulang tidak didukung"
       ],
       "Edited event not supported": [
-        ""
+        "Acara yang telah diedit tidak didukung"
       ],
       "Notification out of bounds": [
-        ""
+        "Notifikasi di luar batas"
       ],
       "Event validation failed": [
-        ""
+        "Validasi acara gagal"
       ],
       "Encryption failed": [
-        ""
+        "Enkripsi gagal"
       ],
       "Original recurring event could not be found": [
-        ""
+        "Acara berulang yang asli tidak ditemukan"
       ],
       "no UID, title or start time": [
-        ""
+        "tidak ada UID, judul atau waktu mulai"
       ]
     },
     "Event title": {
@@ -5516,10 +5522,10 @@
     },
     "Import ICS file from Mail": {
       "Calendar event created": [
-        ""
+        "Kalender acara dibuat"
       ],
       "Creating calendar event failed": [
-        ""
+        "Gagal membuat kalender acara"
       ]
     },
     "Attachment signature verification": {

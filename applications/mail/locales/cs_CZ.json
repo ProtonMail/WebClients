@@ -21,11 +21,14 @@
       "Authentication error.": [
         ""
       ],
+      "Email address invalid": [
+        "E-mailová adresa je neplatná"
+      ],
       "This field is required": [
         "Toto pole je povinné"
       ],
-      "Email address invalid": [
-        "E-mailová adresa je neplatná"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
       ],
       "The composer failed to load.": [
         "Editor se nepodařilo načíst."
@@ -126,9 +129,6 @@
       "Require at least one action": [
         "Vyžaduje alespoň jednu akci"
       ],
-      "Request timed out.": [
-        "Vypršel časový limit žádosti."
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         ""
       ],
@@ -140,6 +140,9 @@
       ],
       "Passwords do not match": [
         "Hesla se neshodují"
+      ],
+      "Request timed out.": [
+        "Vypršel časový limit žádosti."
       ],
       "Signature verification failed": [
         "Ověření podpisu selhalo"
@@ -304,6 +307,9 @@
       ],
       "Use “${ label }” setting": [
         ""
+      ],
+      "refresh the page": [
+        "obnovit stránku"
       ],
       "Remove": [
         "Odstranit"
@@ -593,6 +599,18 @@
       "Next": [
         "Další"
       ],
+      "Clear": [
+        "Vyčistit"
+      ],
+      "Add screenshot(s)": [
+        "Přidat snímek(y) obrazovky"
+      ],
+      "Hide info": [
+        "Skrýt informace"
+      ],
+      "Show info": [
+        "Zobrazit informace"
+      ],
       "Continue import": [
         ""
       ],
@@ -613,9 +631,6 @@
       ],
       "Signing out": [
         "Odhlašování"
-      ],
-      "refresh the page": [
-        "obnovit stránku"
       ],
       "Log in": [
         "Přihlásit se"
@@ -668,9 +683,6 @@
       "Search": [
         "Vyhledat"
       ],
-      "Clear": [
-        "Vyčistit"
-      ],
       "Copy email to clipboard": [
         "Zkopírovat e-mail do schránky"
       ],
@@ -715,15 +727,6 @@
       ],
       "Composer mode": [
         ""
-      ],
-      "Add screenshot(s)": [
-        "Přidat snímek(y) obrazovky"
-      ],
-      "Hide info": [
-        "Skrýt informace"
-      ],
-      "Show info": [
-        "Zobrazit informace"
       ],
       "Preview": [
         "Nahled"
@@ -1237,6 +1240,9 @@
       "Import contacts": [
         "Importovat kontakty"
       ],
+      "Report a problem": [
+        "Nahlásit problém"
+      ],
       "Start import process": [
         ""
       ],
@@ -1287,9 +1293,6 @@
       ],
       "Give feedback": [
         "Poskytnout zpětnou vazbu"
-      ],
-      "Report a problem": [
-        "Nahlásit problém"
       ],
       "Beta Access": [
         "Beta přístup"
@@ -1532,6 +1535,9 @@
       ],
       "Loading": [
         "Načítání"
+      ],
+      "support team": [
+        ""
       ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
@@ -1788,6 +1794,12 @@
         "",
         ""
       ],
+      "Screenshot(s) attached": [
+        "Snímek/snímky byly připojeny"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
+      ],
       "Import contacts": [
         ""
       ],
@@ -1883,12 +1895,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         ""
-      ],
-      "Screenshot(s) attached": [
-        "Snímek/snímky byly připojeny"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
       ],
       "Inherited from parent folder": [
         ""
@@ -2528,6 +2534,30 @@
       "Export contacts": [
         "Exportovat kontakty"
       ],
+      "Operating system": [
+        "Operační systém"
+      ],
+      "Operating system version": [
+        "Verze operačního systému"
+      ],
+      "Proton username": [
+        "Proton uživatelské jméno"
+      ],
+      "Category": [
+        "Kategorie"
+      ],
+      "What happened?": [
+        "Co se stalo?"
+      ],
+      "System information": [
+        "Informace o systému"
+      ],
+      "Browser": [
+        "Prohlížeč"
+      ],
+      "Browser version": [
+        "Verze prohlížeče"
+      ],
       "From: ${ fromEmailAddress }": [
         ""
       ],
@@ -2567,38 +2597,8 @@
       "Select how your composer opens by default.": [
         ""
       ],
-      "0 - Not a fan": [
-        ""
-      ],
-      "10 - Love it!": [
-        ""
-      ],
       "What is the primary reason for this rating?": [
         ""
-      ],
-      "Operating system": [
-        "Operační systém"
-      ],
-      "Operating system version": [
-        "Verze operačního systému"
-      ],
-      "Proton username": [
-        "Proton uživatelské jméno"
-      ],
-      "Category": [
-        "Kategorie"
-      ],
-      "What happened?": [
-        "Co se stalo?"
-      ],
-      "System information": [
-        "Informace o systému"
-      ],
-      "Browser": [
-        "Prohlížeč"
-      ],
-      "Browser version": [
-        "Verze prohlížeče"
       ],
       "Enable Beta Access": [
         ""
@@ -2795,6 +2795,12 @@
       "How would you rate your experience with the new ProtonMail?": [
         ""
       ],
+      "0 - Not a fan": [
+        ""
+      ],
+      "10 - Love it!": [
+        ""
+      ],
       "Also archive": [
         "Také archivovat"
       ]
@@ -2811,6 +2817,9 @@
       "Request an invite": [
         "Požádat o pozvánku"
       ],
+      "clearing your browser cache": [
+        ""
+      ],
       "Pay invoice": [
         "Zaplatit fakturu"
       ],
@@ -2821,9 +2830,6 @@
         "Upgradovat"
       ],
       "Go to subscription plans": [
-        ""
-      ],
-      "clearing your browser cache": [
         ""
       ],
       "Inbox": [
@@ -2987,15 +2993,6 @@
       "Name": [
         "Jméno"
       ],
-      "Mailbox password": [
-        "Heslo k poštovní schránce"
-      ],
-      "e.g. Julia Smith": [
-        "např. Julie Nováková"
-      ],
-      "Feedback": [
-        "Zpětná vazba"
-      ],
       "OS name": [
         "Název OS"
       ],
@@ -3016,6 +3013,15 @@
       ],
       "Browser version": [
         "Verze prohlížeče"
+      ],
+      "Mailbox password": [
+        "Heslo k poštovní schránce"
+      ],
+      "e.g. Julia Smith": [
+        "např. Julie Nováková"
+      ],
+      "Feedback": [
+        "Zpětná vazba"
       ],
       "Type text or keyword": [
         "Zadejte text nebo klíčové slovo"
@@ -3097,14 +3103,14 @@
       "Contacts could not be merged": [
         "Kontakty nebylo možné sloučit"
       ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Reporty nejsou šifrovány end-to-end metodou, neposílejte žádné citlivé informace."
+      ],
       "Are you sure you want to discard your import?": [
         ""
       ],
       "Your local date & time settings seem to be out of sync.": [
         ""
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Reporty nejsou šifrovány end-to-end metodou, neposílejte žádné citlivé informace."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "",
@@ -3273,14 +3279,14 @@
       "Fingerprint copied to clipboard": [
         ""
       ],
+      "Bug reported": [
+        "Chyba nahlášena"
+      ],
       "Keyboard shortcuts preferences updated": [
         ""
       ],
       "Preference saved": [
         ""
-      ],
-      "Bug reported": [
-        "Chyba nahlášena"
       ],
       "Message content search activated": [
         ""
@@ -3748,6 +3754,118 @@
         ""
       ]
     },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Není vybrán žádný obrázek"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Problém s přihlášením"
+      ],
+      "Sign up problem": [
+        "Problém s registrací"
+      ],
+      "Payments problem": [
+        "Problém s platbami"
+      ],
+      "Custom domain problem": [
+        "Problém s vlastní doménou"
+      ],
+      "Bridge problem": [
+        "Problém s aplikací Bridge"
+      ],
+      "Import / export problem": [
+        "Problém s importem / exportem"
+      ],
+      "Connection problem": [
+        "Problém s připojením"
+      ],
+      "Slow speed problem": [
+        ""
+      ],
+      "Calendar problem": [
+        "Problém s aplikací Kalendář"
+      ],
+      "Contacts problem": [
+        "Problém s aplikací Kontaky"
+      ],
+      "Drive problem": [
+        "Problém s aplikací Drive"
+      ],
+      "Mail problem": [
+        "Problém s aplikací Mail"
+      ],
+      "VPN problem": [
+        "Problém s VPN"
+      ],
+      "Feature request": [
+        "Žádost o novou funkci"
+      ],
+      "Other": [
+        "Ostatní"
+      ],
+      "Signup problem": [
+        "Problém s registrací"
+      ],
+      "Installation problem": [
+        "Problém s instalací"
+      ],
+      "Update problem": [
+        "Problém s aktualizací"
+      ],
+      "Application problem": [
+        "Problém s aplikací"
+      ],
+      "Speed problem": [
+        "Problém s rychlostí"
+      ],
+      "Manual setup problem": [
+        ""
+      ],
+      "Website access problem": [
+        "Problém s přístupem k webové stránce"
+      ],
+      "Streaming problem": [
+        ""
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Účet"
+      ],
+      "Apps": [
+        "Aplikace"
+      ],
+      "Network": [
+        "Síť"
+      ],
+      "Services": [
+        "Služby"
+      ],
+      "Other category": [
+        "Ostatní kategorie"
+      ],
+      "Custom folders": [
+        "Vlastní složky"
+      ],
+      "Default folders": [
+        "Výchozí složky"
+      ],
+      "Labels": [
+        "Štítky"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Vybrat"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "Přiložit snímek/snímky obrazovky"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -3904,118 +4022,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Zpětná vazba byla odeslána"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Není vybrán žádný obrázek"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Problém s přihlášením"
-      ],
-      "Sign up problem": [
-        "Problém s registrací"
-      ],
-      "Payments problem": [
-        "Problém s platbami"
-      ],
-      "Custom domain problem": [
-        "Problém s vlastní doménou"
-      ],
-      "Bridge problem": [
-        "Problém s aplikací Bridge"
-      ],
-      "Import / export problem": [
-        "Problém s importem / exportem"
-      ],
-      "Connection problem": [
-        "Problém s připojením"
-      ],
-      "Slow speed problem": [
-        ""
-      ],
-      "Calendar problem": [
-        "Problém s aplikací Kalendář"
-      ],
-      "Contacts problem": [
-        "Problém s aplikací Kontaky"
-      ],
-      "Drive problem": [
-        "Problém s aplikací Drive"
-      ],
-      "Mail problem": [
-        "Problém s aplikací Mail"
-      ],
-      "VPN problem": [
-        "Problém s VPN"
-      ],
-      "Feature request": [
-        "Žádost o novou funkci"
-      ],
-      "Other": [
-        "Ostatní"
-      ],
-      "Signup problem": [
-        "Problém s registrací"
-      ],
-      "Installation problem": [
-        "Problém s instalací"
-      ],
-      "Update problem": [
-        "Problém s aktualizací"
-      ],
-      "Application problem": [
-        "Problém s aplikací"
-      ],
-      "Speed problem": [
-        "Problém s rychlostí"
-      ],
-      "Manual setup problem": [
-        ""
-      ],
-      "Website access problem": [
-        "Problém s přístupem k webové stránce"
-      ],
-      "Streaming problem": [
-        ""
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Účet"
-      ],
-      "Apps": [
-        "Aplikace"
-      ],
-      "Network": [
-        "Síť"
-      ],
-      "Services": [
-        "Služby"
-      ],
-      "Other category": [
-        "Ostatní kategorie"
-      ],
-      "Custom folders": [
-        "Vlastní složky"
-      ],
-      "Default folders": [
-        "Výchozí složky"
-      ],
-      "Labels": [
-        "Štítky"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Vybrat"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Přiložit snímek/snímky obrazovky"
       ]
     },
     "Beta access description": {
