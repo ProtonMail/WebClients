@@ -1,13 +1,11 @@
-import { useState, useEffect, ChangeEvent } from 'react';
+import { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
-import { InfoAuthedResponse, TwoFaResponse } from '@proton/shared/lib/authentication/interface';
-import { getInfo, PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
+import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys';
 import { isSSOMode } from '@proton/shared/lib/constants';
 import { persistSessionWithPassword } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from '@proton/shared/lib/helpers/crossTab';
-import { getHasTOTPEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { srpVerify } from '@proton/shared/lib/srp';
 import { Address } from '@proton/shared/lib/interfaces';
@@ -24,13 +22,13 @@ import {
     useNotifications,
     useApi,
     useUser,
-    useUserSettings,
     useGetUserKeys,
     useGetOrganizationKeyRaw,
     useBeforeUnload,
     useGetAddresses,
     useGetAddressKeys,
 } from '../../hooks';
+import { useAskAuth } from '../password';
 
 export enum MODES {
     CHANGE_ONE_PASSWORD_MODE = 1,
@@ -74,10 +72,8 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
     const getAddresses = useGetAddresses();
 
     const [User] = useUser();
-    const [userSettings, loadingUserSettings] = useUserSettings();
 
     const { isSubUser, isAdmin, Name, Email } = User;
-    const [adminAuthTwoFA, setAdminAuthTwoFA] = useState<TwoFaResponse>();
 
     const [inputs, setInputs] = useState<Inputs>({
         oldPassword: '',
@@ -96,25 +92,9 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
     const setPartialInput = (object: Partial<Inputs>) => setInputs((oldState) => ({ ...oldState, ...object }));
     const resetErrors = () => setErrors(DEFAULT_ERRORS);
 
-    useEffect(() => {
-        if (!isSubUser) {
-            return;
-        }
-        const run = async () => {
-            try {
-                /**
-                 * There is a special case for admins logged into non-private users. User settings returns two factor
-                 * information for the non-private user, and not for the admin to which the session actually belongs.
-                 * So we query auth info to get the information about the admin.
-                 */
-                const infoResult = await api<InfoAuthedResponse>(getInfo());
-                setAdminAuthTwoFA(infoResult['2FA']);
-            } catch (e) {
-                setPartialError({ fatalError: true });
-            }
-        };
-        run();
-    }, []);
+    const [hasTOTPEnabled, isLoadingAuth] = useAskAuth(() => {
+        setPartialError({ fatalError: true });
+    });
 
     const newPasswordError = passwordLengthValidator(inputs.newPassword);
     const confirmPasswordError =
@@ -463,8 +443,6 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
         throw new Error('Unknown mode');
     })();
 
-    const isLoading = loadingUserSettings || (isSubUser && !adminAuthTwoFA);
-
     const boldAlert = <b key="bold-alert">{c('Info').t`Proton can't help you recover any lost passwords`}</b>;
     const alert = (
         <>
@@ -475,11 +453,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
         </>
     );
 
-    const hasTOTPEnabled = isSubUser
-        ? getHasTOTPEnabled(adminAuthTwoFA?.Enabled)
-        : getHasTOTPSettingEnabled(userSettings);
-
-    const children = isLoading ? (
+    const children = isLoadingAuth ? (
         <Loader />
     ) : (
         <>
@@ -587,7 +561,7 @@ const ChangePasswordModal = ({ onClose, mode, ...rest }: Props) => {
         <FormModal
             close={c('Action').t`Close`}
             submit={c('Action').t`Save`}
-            loading={loading || isLoading}
+            loading={loading || isLoadingAuth}
             onClose={onClose}
             hasClose={false}
             {...modalProps}

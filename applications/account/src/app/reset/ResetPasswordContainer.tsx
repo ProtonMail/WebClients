@@ -17,6 +17,7 @@ import {
 } from '@proton/components';
 import {
     handleNewPassword,
+    handleNewPasswordMnemonic,
     handleRequestRecoveryMethods,
     handleRequestToken,
     handleValidateResetToken,
@@ -224,9 +225,19 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
                             onSubmit={async (newPassword: string) => {
                                 createNotification({
                                     text: c('Info')
-                                        .t`This can take a few seconds or a few minutes depending on your device.`,
+                                        .t`This can take a few seconds or a few minutes depending on your device`,
                                     type: 'info',
                                 });
+
+                                if (cache?.method === 'mnemonic') {
+                                    return handleNewPasswordMnemonic({
+                                        password: newPassword,
+                                        cache,
+                                    })
+                                        .then(handleResult)
+                                        .catch(handleError);
+                                }
+
                                 const keyMigrationFeatureValue = await keyMigrationFeature
                                     .get<number>()
                                     .then(({ Value }) => Value)
