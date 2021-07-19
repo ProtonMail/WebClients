@@ -17,6 +17,8 @@ export const PREVENT_CANCEL_SEND_INTERVAL = 30000; // Prevent form cancelling a 
 
 export const UNDO_SEND_DELAY = 5000;
 
+export const SCHEDULED_MESSAGES_LIMIT = 100;
+
 export const ELEMENT_TYPES = {
     MESSAGE: 'message',
     CONVERSATION: 'conversation',
