@@ -1,5 +1,6 @@
 import { differenceInMinutes, differenceInHours, differenceInDays, differenceInWeeks } from 'date-fns';
 import { enUS } from 'date-fns/locale';
+import { normalizeTrigger } from '../../lib/calendar/trigger';
 import { convertZonedDateTimeToUTC, convertUTCDateTimeToZone, toUTCDate } from '../../lib/date/timezone';
 import { pick } from '../../lib/helpers/object';
 import { SETTINGS_NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../lib/calendar/constants';
@@ -19,7 +20,6 @@ import {
     dedupeNotifications,
     dedupeAlarmsWithNormalizedTriggers,
     sortNotificationsByAscendingTrigger,
-    normalizeTrigger,
 } from '../../lib/calendar/alarms';
 
 const formatOptions = { locale: enUS };
@@ -531,7 +531,7 @@ describe('normalizeTrigger', () => {
             { weeks: 0, days: 1, hours: 2, minutes: 1, seconds: 0, isNegative: false },
             { weeks: 0, days: 10, hours: 2, minutes: 0, seconds: 0, isNegative: true },
             { weeks: 2, days: 0, hours: 0, minutes: 0, seconds: 0, isNegative: false },
-            { weeks: 0, days: 14, hours: 0, minutes: 0, seconds: 0, isNegative: true },
+            { weeks: 2, days: 0, hours: 0, minutes: 0, seconds: 0, isNegative: true },
         ];
         const results = triggerValues.map((trigger) => normalizeTrigger({ value: trigger }, dtstartAllDay));
         expect(results).toEqual(expected);
