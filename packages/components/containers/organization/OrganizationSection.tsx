@@ -5,11 +5,11 @@ import { APPS, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { hasMailProfessional, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 
-import { Row, Field, Label, Loader, Button, ButtonLike, SettingsLink, PrimaryButton, Card } from '../../components';
+import { Row, Field, Label, Loader, Button, ButtonLike, SettingsLink, PrimaryButton } from '../../components';
 import { useModals, useNotifications, useSubscription } from '../../hooks';
 import RestoreAdministratorPrivileges from './RestoreAdministratorPrivileges';
 import OrganizationNameModal from './OrganizationNameModal';
-import { SettingsParagraph, SettingsSectionWide } from '../account';
+import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 import AuthModal from '../password/AuthModal';
 import SetupOrganizationModal from './SetupOrganizationModal';
 
@@ -36,16 +36,11 @@ const OrganizationSection = ({ organization, onSetupOrganization }: Props) => {
                         .t`ProtonMail lets you create email addresses for other people. This is perfect for businesses, families, or groups.`}
                 </SettingsParagraph>
 
-                <Card className="flex flex-align-items-center mt2">
-                    <p className="m0 mr2 flex-item-fluid">
-                        {c('Info').t`Upgrade to a ${PLAN_NAMES[PLANS.VISIONARY]} or ${
-                            PLAN_NAMES[PLANS.PROFESSIONAL]
-                        } plan to get started.`}
-                    </p>
-                    <ButtonLike color="norm" as={SettingsLink} path="/dashboard">
-                        {c('Action').t`Upgrade`}
-                    </ButtonLike>
-                </Card>
+                <UpgradeBanner>
+                    {c('Info').t`Upgrade to a ${PLAN_NAMES[PLANS.VISIONARY]} or ${
+                        PLAN_NAMES[PLANS.PROFESSIONAL]
+                    } plan to get started.`}
+                </UpgradeBanner>
             </SettingsSectionWide>
         );
     }
