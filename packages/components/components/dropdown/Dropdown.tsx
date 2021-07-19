@@ -135,13 +135,14 @@ const Dropdown = ({
         }
 
         const handleClickOutside = ({ target }: MouseEvent) => {
-            const targetNode = target as Node;
+            const targetNode = target as HTMLElement;
             const anchorEl = anchorRef.current;
             // Do nothing if clicking ref's element or descendent elements
             if (
                 !autoCloseOutside ||
                 (autoCloseOutsideAnchor && anchorEl?.contains(targetNode)) ||
-                popperEl?.contains(targetNode)
+                popperEl?.contains(targetNode) ||
+                targetNode.dataset?.ignoreClose
             ) {
                 return;
             }
@@ -225,6 +226,7 @@ const Dropdown = ({
                 <div
                     role="button"
                     tabIndex={0}
+                    data-ignore-close="true"
                     className="dropdown-backdrop"
                     title={c('Action').t`Close`}
                     onClick={onClose}

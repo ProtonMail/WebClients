@@ -8,7 +8,6 @@ import Header, { Props as HeaderProps } from '../../components/header/Header';
 
 import UserDropdown from './UserDropdown';
 import { AppsDropdown } from '../app';
-import TopNavbarListItemHelpDropdown from './TopNavbarListItemHelpDropdown';
 import { TopNavbar, TopNavbarList, TopNavbarListItem } from '../../components/topnavbar';
 import TopNavbarListItemButton from '../../components/topnavbar/TopNavbarListItemButton';
 import { Vr } from '../../components/vr';
@@ -22,7 +21,6 @@ interface Props extends HeaderProps {
     floatingButton?: React.ReactNode;
     searchBox?: React.ReactNode;
     searchDropdown?: React.ReactNode;
-    helpDropdown?: React.ReactNode;
     hasAppsDropdown?: boolean;
     title: string;
     expanded: boolean;
@@ -40,7 +38,6 @@ const PrivateHeader = ({
     backUrl,
     searchBox,
     searchDropdown,
-    helpDropdown,
     floatingButton,
     expanded,
     onToggleExpand,
@@ -85,7 +82,7 @@ const PrivateHeader = ({
                 <TopNavbarList>
                     {isNarrow && searchDropdown ? <TopNavbarListItem>{searchDropdown}</TopNavbarListItem> : null}
                     {hasPaidMail || isVPN ? null : (
-                        <TopNavbarListItem noShrink>
+                        <TopNavbarListItem noShrink collapsedOnDesktop={false}>
                             <TopNavbarListItemButton
                                 as={SettingsLink}
                                 shape="outline"
@@ -98,7 +95,7 @@ const PrivateHeader = ({
                         </TopNavbarListItem>
                     )}
                     {hasPaidVpn || !isVPN ? null : (
-                        <TopNavbarListItem noShrink>
+                        <TopNavbarListItem noShrink collapsedOnDesktop={false}>
                             <TopNavbarListItemButton
                                 as={AppLink}
                                 text={c('Link').t`Upgrade`}
@@ -111,7 +108,6 @@ const PrivateHeader = ({
                     {feedbackButton ? <TopNavbarListItem noShrink>{feedbackButton}</TopNavbarListItem> : null}
                     {contactsButton ? <TopNavbarListItem noShrink>{contactsButton}</TopNavbarListItem> : null}
                     {settingsButton ? <TopNavbarListItem noShrink>{settingsButton}</TopNavbarListItem> : null}
-                    <TopNavbarListItem noShrink>{helpDropdown || <TopNavbarListItemHelpDropdown />}</TopNavbarListItem>
                     {!isNarrow && (
                         <TopNavbarListItem noShrink className="flex-align-self-stretch topnav-vr">
                             <Vr className="h100 mr1 ml1" />

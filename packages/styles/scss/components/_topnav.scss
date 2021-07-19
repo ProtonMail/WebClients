@@ -1,3 +1,5 @@
+$breakpoint-topnav-text-adaptation: 1200 !default; // used to display or not text in top navigation
+
 .topnav-link {
 	&--blackfriday::before {
 		content: '';
@@ -25,30 +27,33 @@
 }
 
 .topnav-vr {
-	@include respond-to(1500) {
+	@include respond-to($breakpoint-large) {
 		display: none;
 	}
 }
 
-@include respond-to(1700) {
+@include respond-to($breakpoint-topnav-text-adaptation) {
 	.topnav-list--four-elements {
-		.navigation-title {
-			// equivalent of .sr-only, but impossible to extend in a breakpoint
-			border: 0;
-			clip: rect(0 0 0 0);
-			height: 1px;
-			margin: -1px;
-			overflow: hidden;
-			padding: 0;
-			position: absolute;
-			width: 1px;
-		}
+		.topnav-listItem:not(.topnav-listItem--noCollapse) {
+			// we collapse text as general case
+			.navigation-title {
+				// equivalent of .sr-only, but impossible to extend in a breakpoint
+				border: 0;
+				clip: rect(0 0 0 0);
+				height: 1px;
+				margin: -1px;
+				overflow: hidden;
+				padding: 0;
+				position: absolute;
+				width: 1px;
+			}
 
-		.topnav-icon {
-			margin-right: 0;
+			.topnav-icon {
+				margin-right: 0;
 
-			&.expand-caret {
-				margin-left: 0.25em;
+				&.expand-caret {
+					margin-left: 0.25em;
+				}
 			}
 		}
 	}
@@ -60,30 +65,24 @@
 			padding-left: rem(5);
 			padding-right: rem(5);
 		}
+		.navigation-title {
+			// collapse for ALL without any exception
+			// equivalent of .sr-only, but impossible to extend in a breakpoint
+			border: 0;
+			clip: rect(0 0 0 0);
+			height: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute;
+			width: 1px;
+		}
+		.topnav-icon {
+			margin-right: 0;
+		}
 
 		.topnav-link--blackfriday::before {
 			left: calc(#{rem(5)} + #{rem(15)});
-		}
-	}
-}
-
-@include respond-to(1100) {
-	.navigation-title {
-		// equivalent of .sr-only, but impossible to extend in a breakpoint
-		border: 0;
-		clip: rect(0 0 0 0);
-		height: 1px;
-		margin: -1px;
-		overflow: hidden;
-		padding: 0;
-		position: absolute;
-		width: 1px;
-	}
-
-	.topnav-icon {
-		// Specificity -_-v
-		&#{&} {
-			margin-right: 0;
 		}
 	}
 }

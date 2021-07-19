@@ -1,6 +1,6 @@
 import React, { useState, MouseEvent } from 'react';
 import { c } from 'ttag';
-import { APPS, isSSOMode, PLAN_SERVICES, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, APP_NAMES, isSSOMode, PLAN_SERVICES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { requestFork } from '@proton/shared/lib/authentication/sessionForking';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
@@ -8,12 +8,34 @@ import { getPlanName, hasLifetime } from '@proton/shared/lib/helpers/subscriptio
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 
-import { useAuthentication, useConfig, useUser, useOrganization, useSubscription, useNotifications } from '../../hooks';
-import { usePopperAnchor, Dropdown, Icon, DropdownMenu, DropdownMenuButton, Tooltip, Button } from '../../components';
+import {
+    useAuthentication,
+    useConfig,
+    useUser,
+    useOrganization,
+    useSubscription,
+    useNotifications,
+    useModals,
+} from '../../hooks';
+import {
+    usePopperAnchor,
+    Dropdown,
+    Icon,
+    DropdownMenu,
+    DropdownMenuButton,
+    Tooltip,
+    Button,
+    SimpleDropdown,
+    DropdownMenuLink,
+} from '../../components';
 import { classnames, generateUID } from '../../helpers';
 import UserDropdownButton, { Props } from './UserDropdownButton';
+import { OnboardingModal } from '../onboarding';
+import { AuthenticatedBugModal, BugModal } from '../support';
 
 const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
+    const { UID } = useAuthentication();
+    const isAuthenticated = !!UID;
     const { APP_NAME } = useConfig();
     const [organization] = useOrganization();
     const { Name: organizationName } = organization || {};
@@ -23,6 +45,7 @@ const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
     const { logout } = useAuthentication();
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+    const { createModal } = useModals();
 
     const { createNotification } = useNotifications();
     const handleCopyEmail = (e: MouseEvent<HTMLButtonElement>) => {
@@ -67,6 +90,21 @@ const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
             planName = getPlanName(subscription, VPN);
         }
     }
+
+    const handleTourClick = () => {
+        createModal(<OnboardingModal showGenericSteps allowClose hideDisplayName />);
+    };
+
+    const handleBugReportClick = () => {
+        createModal(isAuthenticated ? <AuthenticatedBugModal /> : <BugModal />);
+    };
+
+    const userVoiceLinks: Partial<{ [key in APP_NAMES]: string }> = {
+        [APPS.PROTONMAIL]: 'https://protonmail.uservoice.com/',
+        [APPS.PROTONCALENDAR]: 'https://protonmail.uservoice.com/forums/932842-proton-calendar',
+        [APPS.PROTONDRIVE]: 'https://protonmail.uservoice.com/forums/932839-proton-drive',
+        [APPS.PROTONVPN_SETTINGS]: 'https://protonmail.uservoice.com/forums/932836-protonvpn',
+    };
 
     return (
         <>
@@ -148,28 +186,92 @@ const UserDropdown = (rest: Omit<Props, 'user' | 'isOpen' | 'onClick'>) => {
 
                     <hr className="mt0-5 mb0-5" />
 
-                    {isSSOMode ? (
-                        <>
-                            <DropdownMenuButton
-                                className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
-                                onClick={handleSwitchAccount}
-                            >
-                                {c('Action').t`Switch account`}
-                                <Icon className="ml1" name="account-switch" />
-                            </DropdownMenuButton>
+                    {APP_NAME !== APPS.PROTONVPN_SETTINGS && (
+                        <DropdownMenuButton
+                            className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                            onClick={handleTourClick}
+                        >
+                            {c('Action').t`${BRAND_NAME} introduction`}
+                            <Icon className="ml1" name="presentation" />
+                        </DropdownMenuButton>
+                    )}
 
-                            <hr className="mt0-5 mb0-5" />
-                        </>
+                    <SimpleDropdown
+                        as={DropdownMenuButton}
+                        originalPlacement="left-top"
+                        hasCaret={false}
+                        dropdownStyle={{ '--min-width': '15em' }}
+                        title={c('Title').t`Open help menu`}
+                        content={
+                            <span className="flex flex-nowrap flex-justify-space-between flex-align-items-center">
+                                {c('Header').t`Get help`}
+                                <Icon className="ml1 rotateZ-270" name="caret" />
+                            </span>
+                        }
+                    >
+                        <DropdownMenu>
+                            <DropdownMenuLink
+                                className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                                href={
+                                    APP_NAME === PROTONVPN_SETTINGS
+                                        ? 'https://protonvpn.com/support/'
+                                        : 'https://protonmail.com/support/'
+                                }
+                                // eslint-disable-next-line react/jsx-no-target-blank
+                                target="_blank"
+                            >
+                                {c('Action').t`I have a question`}
+                                <Icon className="ml1" name="external-link" />
+                            </DropdownMenuLink>
+
+                            <DropdownMenuLink
+                                className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                                href={userVoiceLinks[APP_NAME] || userVoiceLinks[APPS.PROTONMAIL]}
+                                target="_blank"
+                            >
+                                {c('Action').t`Request a feature`}
+                                <Icon className="ml1" name="external-link" />
+                            </DropdownMenuLink>
+
+                            <DropdownMenuButton className="text-left" onClick={handleBugReportClick}>
+                                {c('Action').t`Report a problem`}
+                            </DropdownMenuButton>
+                        </DropdownMenu>
+                    </SimpleDropdown>
+
+                    <DropdownMenuLink
+                        className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                        href="https://shop.protonmail.com"
+                        target="_blank"
+                    >
+                        {c('Action').t`${BRAND_NAME} shop`}
+                        <Icon className="ml1" name="external-link" />
+                    </DropdownMenuLink>
+
+                    <hr className="mt0-5 mb0-5" />
+
+                    {isSSOMode ? (
+                        <DropdownMenuButton
+                            className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
+                            onClick={handleSwitchAccount}
+                        >
+                            {c('Action').t`Switch account`}
+                            <Icon className="ml1" name="account-switch" />
+                        </DropdownMenuButton>
                     ) : null}
 
-                    <DropdownMenuButton
-                        className="flex flex-nowrap flex-justify-space-between flex-align-items-center"
-                        onClick={handleLogout}
-                        data-cy-header-user-dropdown="logout"
-                    >
-                        <span className="mr1">{c('Action').t`Sign out`}</span>
-                        <Icon name="sign-out-right" />
-                    </DropdownMenuButton>
+                    <div className="pr1 pl1 pt0-25 pb0-75">
+                        <Button
+                            shape="solid"
+                            color="norm"
+                            className="w100 flex flex-justify-center flex-align-items-center"
+                            onClick={handleLogout}
+                            data-cy-header-user-dropdown="logout"
+                        >
+                            <span className="mr0-5">{c('Action').t`Sign out`}</span>
+                            <Icon name="sign-out-right" />
+                        </Button>
+                    </div>
                 </DropdownMenu>
             </Dropdown>
         </>
