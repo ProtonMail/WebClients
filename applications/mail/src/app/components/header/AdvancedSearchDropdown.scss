@@ -2,20 +2,27 @@
 @import '@proton/styles/scss/config/';
 
 .advanced-search {
-    &-dropdown {
-        --min-width: 30em;
-        --max-width: 30em;
+	&-dropdown {
+		--min-width: 30em;
+		--max-width: 30em;
 
-        @include respond-to(1200, 'min') {
-            --max-width: calc(100vw * #{math.div($conversations-column-width,100%)} - 1em);
-        }
-    }
+		@include respond-to(1200, 'min') {
+			--max-width: calc(100vw * #{math.div($conversations-column-width, 100%)} - 1em);
+		}
+	}
 
-    &-label.label {
-        width: 11em;
-    }
+	&-label.label {
+		width: 11em;
+	}
 
-    .composer-addresses-container.composer-addresses-container-closed {
-        padding-right: 0;
-    }
+	.composer-addresses-container.composer-addresses-container-closed {
+		padding-right: 0;
+	}
+
+	&-progress-status {
+		top: 0.5em;
+	}
+	&-time-remaining {
+		top: -0.5em;
+	}
 }
