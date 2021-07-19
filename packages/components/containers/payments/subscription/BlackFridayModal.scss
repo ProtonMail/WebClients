@@ -5,7 +5,8 @@ $price-size: 21;
 
 // overrides for dark/light mode => same design
 .blackfriday-mail-modal.modal {
-	background: #1c1736;
+	background: transparent url(bg-mountains.svg) 50% 50%;
+	background-size: cover;
 
 	width: rem(800);
 	max-width: rem(800);
@@ -15,19 +16,17 @@ $price-size: 21;
 	.modal-header {
 		color: white;
 	}
-	.modal-content-inner {
-		background: #1c1736 url(#{$path-images}world.svg) 50% 50%;
-	}
+	.modal-content-inner,
 	.scrollshadow-static {
-		background: #1c1736;
+		background: transparent;
 	}
 	.scrollshadow-sticky {
 		&--top {
-			background-image: radial-gradient(farthest-side at 50% 0, #505560, transparent);
+			background-image: none;
 		}
 		&--bottom {
 			bottom: 0;
-			background-image: radial-gradient(farthest-side at 50% 100%, #505560, transparent);
+			background-image: none;
 		}
 	}
 
@@ -119,12 +118,13 @@ $price-size: 21;
 	}
 }
 
-.blackfriday-plan-name {
-	min-height: 3em;
-	@include respond-to($breakpoint-small) {
-		min-height: 0;
-	}
-}
+// needed only if several plans are aside
+// .blackfriday-plan-name {
+// 	min-height: 3em;
+// 	@include respond-to($breakpoint-small) {
+// 		min-height: 0;
+// 	}
+// }
 
 .blackfriday-protonDrive-free {
 	display: inline-block;
