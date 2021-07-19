@@ -8,7 +8,6 @@ import Header, { Props as HeaderProps } from '../../components/header/Header';
 
 import UserDropdown from './UserDropdown';
 import { AppsDropdown } from '../app';
-import TopNavbarListItemHelpDropdown from './TopNavbarListItemHelpDropdown';
 import TopNavbarListItemBlackFridayButton from './TopNavbarListItemBlackFridayButton';
 import useBlackFriday from './useBlackFriday';
 
