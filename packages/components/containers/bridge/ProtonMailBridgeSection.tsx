@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { Select, Icon, ButtonLike, SettingsLink, Card } from '../../components';
+import { Select, Icon, ButtonLike } from '../../components';
 import { useUser } from '../../hooks';
-import { SettingsParagraph, SettingsSectionWide } from '../account';
+import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 
 import './ProtonMailBridgeSection.scss';
 
@@ -148,14 +148,9 @@ const ProtonMailBridgeSection = () => {
             {hasPaidMail ? (
                 <div className="mt2 bridge-grid">{bridgeClients.map(renderBox)}</div>
             ) : (
-                <Card className="flex flex-align-items-center mt2">
-                    <p className="m0 mr2 flex-item-fluid">
-                        {c('Info').t`Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.`}
-                    </p>
-                    <ButtonLike color="norm" as={SettingsLink} path="/dashboard">
-                        {c('Action').t`Upgrade`}
-                    </ButtonLike>
-                </Card>
+                <UpgradeBanner>
+                    {c('Info').t`Upgrade to a paid plan to unlock IMAP/SMTP support through ProtonMail Bridge.`}
+                </UpgradeBanner>
             )}
         </SettingsSectionWide>
     );

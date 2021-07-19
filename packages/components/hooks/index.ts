@@ -12,6 +12,7 @@ export { default as useCachedModelResult } from './useCachedModelResult';
 export { default as usePromiseResult } from './usePromiseResult';
 export { useAddresses, useGetAddresses } from './useAddresses';
 export { default as useDomains } from './useDomains';
+export { default as useDomainsAddresses } from './useDomainsAddresses';
 export { default as usePremiumDomains } from './usePremiumDomains';
 export { useCalendars, useGetCalendars } from './useCalendars';
 export { default as useActiveBreakpoint } from './useActiveBreakpoint';
