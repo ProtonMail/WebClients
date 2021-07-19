@@ -37,8 +37,6 @@ export const getAllFields = () => [
     { text: c('Contact field label').t`Logo`, value: 'logo' },
     // translator: this field is used to specify the group a contact would be a member of
     { text: c('Contact field label').t`Member`, value: 'member' },
-    // translator: this field is used to apply categories / tags to the contacts
-    { text: c('Contact field label').t`Categories`, value: 'categories' },
 ];
 
 export const getEditableFields = () => [
