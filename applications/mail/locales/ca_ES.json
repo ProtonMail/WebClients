@@ -21,11 +21,14 @@
       "Authentication error.": [
         "Error d'autenticació."
       ],
+      "Email address invalid": [
+        "Correu electrònic invàlid"
+      ],
       "This field is required": [
         "Aquest camp és obligatori"
       ],
-      "Email address invalid": [
-        "Correu electrònic invàlid"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
       ],
       "The composer failed to load.": [
         "El compositor no s'ha pogut carregar."
@@ -122,9 +125,6 @@
       "Require at least one action": [
         "Requereix al menys una acció"
       ],
-      "Request timed out.": [
-        "S'ha esgotat el temps d'espera."
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
       ],
@@ -136,6 +136,9 @@
       ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen"
+      ],
+      "Request timed out.": [
+        "S'ha esgotat el temps d'espera."
       ],
       "Signature verification failed": [
         "Verificació de la signatura fallida"
@@ -236,8 +239,8 @@
         "Hi ha hagut un problema amb la cerca de continguts. S'ha utilitzat la cerca per defecte"
       ],
       "Removed duplicate recipient: ${ recipents }": [
-        "",
-        ""
+        "Destinatari duplicat eliminat: ${ recipents }",
+        "Destinataris duplicats eliminats: ${ recipents }"
       ],
       "Message passwords do not match.": [
         "Les contrasenyes del missatge no coincideixen."
@@ -294,6 +297,9 @@
       ],
       "Use “${ label }” setting": [
         "Utilitzar la configuració \"${ label }\""
+      ],
+      "refresh the page": [
+        "refresqueu la pàgina"
       ],
       "Remove": [
         "Suprimeix"
@@ -577,6 +583,18 @@
       "Next": [
         "Següent"
       ],
+      "Clear": [
+        "Netejar"
+      ],
+      "Add screenshot(s)": [
+        "Afegir captura(es) de pantalla"
+      ],
+      "Hide info": [
+        "Amagar informació"
+      ],
+      "Show info": [
+        "Mostra informació"
+      ],
       "Continue import": [
         "Continuar importació"
       ],
@@ -597,9 +615,6 @@
       ],
       "Signing out": [
         "Tancant la sessió"
-      ],
-      "refresh the page": [
-        "refresqueu la pàgina"
       ],
       "Log in": [
         "Inicia sessió"
@@ -652,9 +667,6 @@
       "Search": [
         "Cerca"
       ],
-      "Clear": [
-        "Netejar"
-      ],
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
       ],
@@ -699,15 +711,6 @@
       ],
       "Composer mode": [
         "Mode d'editor"
-      ],
-      "Add screenshot(s)": [
-        "Afegir captura(es) de pantalla"
-      ],
-      "Hide info": [
-        "Amagar informació"
-      ],
-      "Show info": [
-        "Mostra informació"
       ],
       "Preview": [
         "Previsualització"
@@ -755,13 +758,13 @@
         "No"
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
-        ""
+        "Afegir a ${ CALENDAR_APP_NAME }"
       ],
       "Send anyway": [
         "Enviar de totes maneres"
       ],
       "Empty": [
-        "Buit"
+        "Buidar"
       ],
       "Maximize composer": [
         "Maximitzar el compositor"
@@ -1182,7 +1185,7 @@
         "Combinar contactes"
       ],
       "Deleting contacts": [
-        ""
+        "Eliminant contactes"
       ],
       "View contacts": [
         "Veure contactes"
@@ -1210,6 +1213,9 @@
       ],
       "Import contacts": [
         "Importar contactes"
+      ],
+      "Report a problem": [
+        "Avisar d'un problema"
       ],
       "Start import process": [
         "Iniciar el procés d'importació"
@@ -1262,9 +1268,6 @@
       "Give feedback": [
         "Doneu la vostra opinió"
       ],
-      "Report a problem": [
-        "Avisar d'un problema"
-      ],
       "Beta Access": [
         "Accés Beta"
       ],
@@ -1299,10 +1302,10 @@
         "Missatge sense assumpte?"
       ],
       "Invalid recipients": [
-        ""
+        "Destinataris invàlids"
       ],
       "Invalid recipient": [
-        ""
+        "Destinatari invàlid"
       ],
       "Re-sign contact": [
         "Re-signar contacte"
@@ -1498,6 +1501,9 @@
       ],
       "Loading": [
         "Carregant"
+      ],
+      "support team": [
+        "equip de suport"
       ],
       "No contacts added yet": [
         "Encara no s'han afegit contactes"
@@ -1719,7 +1725,7 @@
         "Canvieu aquestes funcions únicament si esteu emprant PGP amb destinataris sense ProtonMail."
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        ""
+        "Cap de les claus carregades és vàlida pel xifratge. S'ha deshabilitat el xifratge automàticament."
       ],
       "No email address": [
         "Sense adreça de correu electrònic"
@@ -1741,6 +1747,12 @@
       "${ addressCount } email address": [
         "${ addressCount } adreça de correu electrònic",
         "${ addressCount } adreces de correu electrònic"
+      ],
+      "Screenshot(s) attached": [
+        "Captures de pantalla(s) adjuntes"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
       "Import contacts": [
         "Importar contactes"
@@ -1837,12 +1849,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Heu desactivat l'accés a la versió Beta. Cliqueu ${ refreshButton } per utilitzar la versió estable de ${ appName }. Es tornarà a carregar l'aplicació."
-      ],
-      "Screenshot(s) attached": [
-        "Captures de pantalla(s) adjuntes"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
       "Inherited from parent folder": [
         "Heretat d'una carpeta principal"
@@ -2434,6 +2440,30 @@
       "Export contacts": [
         "Exportar contactes"
       ],
+      "Operating system": [
+        "Sistema operatiu"
+      ],
+      "Operating system version": [
+        "Versió del sistema operatiu"
+      ],
+      "Proton username": [
+        "Nom d'usuari de Proton"
+      ],
+      "Category": [
+        "Categoria"
+      ],
+      "What happened?": [
+        "Què ha passat?"
+      ],
+      "System information": [
+        "Informació del sistema"
+      ],
+      "Browser": [
+        "Navegador"
+      ],
+      "Browser version": [
+        "Versió del navegador"
+      ],
       "From: ${ fromEmailAddress }": [
         "De: ${ fromEmailAddress }"
       ],
@@ -2473,38 +2503,8 @@
       "Select how your composer opens by default.": [
         "Seleccioneu com el vostre editor s'obre per defecte."
       ],
-      "0 - Not a fan": [
-        "0 - No en sóc fan"
-      ],
-      "10 - Love it!": [
-        "10 - M'encanta!"
-      ],
       "What is the primary reason for this rating?": [
-        ""
-      ],
-      "Operating system": [
-        "Sistema operatiu"
-      ],
-      "Operating system version": [
-        "Versió del sistema operatiu"
-      ],
-      "Proton username": [
-        "Nom d'usuari de Proton"
-      ],
-      "Category": [
-        "Categoria"
-      ],
-      "What happened?": [
-        "Què ha passat?"
-      ],
-      "System information": [
-        "Informació del sistema"
-      ],
-      "Browser": [
-        "Navegador"
-      ],
-      "Browser version": [
-        "Versió del navegador"
+        "Quina és la raó principal per aquesta valoració?"
       ],
       "Enable Beta Access": [
         "Activar Accés Beta"
@@ -2701,13 +2701,19 @@
       "How would you rate your experience with the new ProtonMail?": [
         "Com valoraríeu l'experiència amb el nou ProtonMail?"
       ],
+      "0 - Not a fan": [
+        "0 - No en sóc fan"
+      ],
+      "10 - Love it!": [
+        "10 - M'encanta!"
+      ],
       "Also archive": [
         "Arxivar també"
       ]
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
-        ""
+        "La clau no es pot utilitzar per al xifratge"
       ]
     },
     "Link": {
@@ -2716,6 +2722,9 @@
       ],
       "Request an invite": [
         "Demana una invitació"
+      ],
+      "clearing your browser cache": [
+        "buidar la memòria cau del navegador"
       ],
       "Pay invoice": [
         "Pagar la factura"
@@ -2728,9 +2737,6 @@
       ],
       "Go to subscription plans": [
         "Anar als plans de subscripció"
-      ],
-      "clearing your browser cache": [
-        "buidar la memòria cau del navegador"
       ],
       "Inbox": [
         "Safata d'entrada"
@@ -2760,7 +2766,7 @@
         "Bústia de sortida"
       ],
       "You need to activate your calendar keys to add this event": [
-        ""
+        "Heu d'activar les claus del calendari per afegir aquest esdeveniment"
       ],
       "You need to activate your calendar keys to manage this invitation": [
         "Cal que activeu les claus del calendari per gestionar aquesta invitació"
@@ -2775,7 +2781,7 @@
         "Cal activar les claus del calendari per veure la invitació actualitzada"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        ""
+        "Aquest arxiu ICS conté més d'un esdeveniment. Descarregueu-lo i importeu els esdeveniments a ${ calendarAppName }"
       ],
       "You need to reactivate your keys to manage this invitation": [
         "Cal que reactiveu les vostres claus per gestionar aquesta invitació"
@@ -2787,7 +2793,7 @@
         "Cal reactivar les vostres claus per veure la invitació actualitzada"
       ],
       "Create a new calendar to add this event": [
-        ""
+        "Creeu un calendari nou per afegir aquest esdeveniment"
       ],
       "Create a new calendar to answer this invitation": [
         "Crea un calendari nou per respondre aquesta invitació"
@@ -2893,15 +2899,6 @@
       "Name": [
         "Nom"
       ],
-      "Mailbox password": [
-        "Contrasenya de la bústia"
-      ],
-      "e.g. Julia Smith": [
-        "ex. Julia Smith"
-      ],
-      "Feedback": [
-        "Suggeriments"
-      ],
       "OS name": [
         "Nom de Sistema Operatiu"
       ],
@@ -2922,6 +2919,15 @@
       ],
       "Browser version": [
         "Versió del navegador"
+      ],
+      "Mailbox password": [
+        "Contrasenya de la bústia"
+      ],
+      "e.g. Julia Smith": [
+        "ex. Julia Smith"
+      ],
+      "Feedback": [
+        "Suggeriments"
       ],
       "Type text or keyword": [
         "Escrigui text o paraula clau"
@@ -2999,14 +3005,14 @@
       "Contacts could not be merged": [
         "Els contactes no s’han pogut combinar"
       ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Els informes no estan xifrats d'extrem a extrem. Si us plau, no envieu informació sensible."
+      ],
       "Are you sure you want to discard your import?": [
         "N'esteu segur, de voler descartar la vostra importació?"
       ],
       "Your local date & time settings seem to be out of sync.": [
         "La vostra configuració de data i hora local no sembla estar sincronitzada."
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Els informes no estan xifrats d'extrem a extrem. Si us plau, no envieu informació sensible."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "No s'ha pogut verificar la signatura del fitxer adjunt.\nEncara podeu baixar aquest fitxer adjunt, però és possible que s'hagi manipulat.",
@@ -3068,7 +3074,7 @@
         "Aquesta funció només està disponible per a usuaris de pagament"
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Es descarregaran tots els missatges per a que es puguin cercar localment. Netejar les dades del vostre navegador deshabitarà aquesta opció."
+        "Aquesta acció descarregarà tots els missatges per a poder-los cercar localment. Netejar les dades del vostre navegador desactivarà aquesta opció."
       ]
     },
     "Error message": {
@@ -3169,14 +3175,14 @@
       "Fingerprint copied to clipboard": [
         "Empremta digital copiada al porta-retalls"
       ],
+      "Bug reported": [
+        "Error notificat"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Preferències de les dreceres de teclat actualitzades"
       ],
       "Preference saved": [
         "Preferències desades"
-      ],
-      "Bug reported": [
-        "Error notificat"
       ],
       "Message content search activated": [
         "Cerca de contingut del missatge activada"
@@ -3404,12 +3410,12 @@
         "Progrés: ${ combinedProgress }%"
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "",
-        ""
+        "${ model.deleted.length } de ${ totalBeDeleted } contacte eliminat satisfactòriament.",
+        "${ model.deleted.length } de ${ totalBeDeleted } contactes eliminats satisfactòriament."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "",
-        ""
+        "${ model.submitted.length } de ${ totalBeMerged } contacte combinat satisfactòriament.",
+        "${ model.submitted.length } de ${ totalBeMerged } contactes combinats satisfactòriament."
       ],
       "No contacts merged.": [
         "No s'han combinat contactes."
@@ -3423,7 +3429,7 @@
         "Combinant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        ""
+        "Eliminant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilitzeu Arrossegar i Deixar anar per classificar la prioritat de combinació entre els contactes. Desmarqueu els contactes que no vulgueu combinar."
@@ -3594,6 +3600,118 @@
         "${ totalImported }/${ totalToImport } contactes xifrats i afegits a la vostra llista de contactes"
       ]
     },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "No s'ha seleccionat cap imatge"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Problema d'inici de sessió"
+      ],
+      "Sign up problem": [
+        "Problema de registre"
+      ],
+      "Payments problem": [
+        "Problema de pagament"
+      ],
+      "Custom domain problem": [
+        "Problema als dominis personalitzats"
+      ],
+      "Bridge problem": [
+        "Problema a Bridge"
+      ],
+      "Import / export problem": [
+        "Problema d'importació / exportació"
+      ],
+      "Connection problem": [
+        "Problema de connexió"
+      ],
+      "Slow speed problem": [
+        "Problema de baixa velocitat"
+      ],
+      "Calendar problem": [
+        "Problemes del calendari"
+      ],
+      "Contacts problem": [
+        "Problemes de contactes"
+      ],
+      "Drive problem": [
+        "Problemes de Drive"
+      ],
+      "Mail problem": [
+        "Problemes de correu"
+      ],
+      "VPN problem": [
+        "Problema de VPN"
+      ],
+      "Feature request": [
+        "Petició d'una característica"
+      ],
+      "Other": [
+        "Altres"
+      ],
+      "Signup problem": [
+        "Problema de registre"
+      ],
+      "Installation problem": [
+        "Problema d'instal·lació"
+      ],
+      "Update problem": [
+        "Problema d'actualització"
+      ],
+      "Application problem": [
+        "Problema d’aplicació"
+      ],
+      "Speed problem": [
+        "Problema de velocitat"
+      ],
+      "Manual setup problem": [
+        "Problema de configuració manual"
+      ],
+      "Website access problem": [
+        "Problema d'acces a la web"
+      ],
+      "Streaming problem": [
+        "Problema de streaming"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Compte"
+      ],
+      "Apps": [
+        "Aplicacions"
+      ],
+      "Network": [
+        "Xarxa"
+      ],
+      "Services": [
+        "Serveis"
+      ],
+      "Other category": [
+        "Una altra categoria"
+      ],
+      "Custom folders": [
+        "Carpetes personalitzades"
+      ],
+      "Default folders": [
+        "Carpetes per defecte"
+      ],
+      "Labels": [
+        "Etiquetes"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Seleccionar"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "Adjunta captura(es) de pantalla"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Connectant al vostre proveïdor de contactes"
@@ -3750,118 +3868,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Opinió enviada"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "No s'ha seleccionat cap imatge"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Problema d'inici de sessió"
-      ],
-      "Sign up problem": [
-        "Problema de registre"
-      ],
-      "Payments problem": [
-        "Problema de pagament"
-      ],
-      "Custom domain problem": [
-        "Problema als dominis personalitzats"
-      ],
-      "Bridge problem": [
-        "Problema a Bridge"
-      ],
-      "Import / export problem": [
-        "Problema d'importació / exportació"
-      ],
-      "Connection problem": [
-        "Problema de connexió"
-      ],
-      "Slow speed problem": [
-        "Problema de baixa velocitat"
-      ],
-      "Calendar problem": [
-        "Problemes del calendari"
-      ],
-      "Contacts problem": [
-        "Problemes de contactes"
-      ],
-      "Drive problem": [
-        "Problemes de Drive"
-      ],
-      "Mail problem": [
-        "Problemes de correu"
-      ],
-      "VPN problem": [
-        "Problema de VPN"
-      ],
-      "Feature request": [
-        "Petició d'una característica"
-      ],
-      "Other": [
-        "Altres"
-      ],
-      "Signup problem": [
-        "Problema de registre"
-      ],
-      "Installation problem": [
-        "Problema d'instal·lació"
-      ],
-      "Update problem": [
-        "Problema d'actualització"
-      ],
-      "Application problem": [
-        "Problema d’aplicació"
-      ],
-      "Speed problem": [
-        "Problema de velocitat"
-      ],
-      "Manual setup problem": [
-        "Problema de configuració manual"
-      ],
-      "Website access problem": [
-        "Problema d'acces a la web"
-      ],
-      "Streaming problem": [
-        "Problema de streaming"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Compte"
-      ],
-      "Apps": [
-        "Aplicacions"
-      ],
-      "Network": [
-        "Xarxa"
-      ],
-      "Services": [
-        "Serveis"
-      ],
-      "Other category": [
-        "Una altra categoria"
-      ],
-      "Custom folders": [
-        "Carpetes personalitzades"
-      ],
-      "Default folders": [
-        "Carpetes per defecte"
-      ],
-      "Labels": [
-        "Etiquetes"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Seleccionar"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Adjunta captura(es) de pantalla"
       ]
     },
     "Beta access description": {
@@ -4288,34 +4294,34 @@
         "S'ha produït un error inesperat. S'ha de reiniciar la importació."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        ""
+        "S'ha produït un error carregant el fitxer. No s'ha seleccionat cap fitxer."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        ""
+        "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. Només es permet el format de fitxer ICS."
       ],
       "Your file ${ formattedFilename } is empty.": [
-        ""
+        "El vostre fitxer ${ formattedFilename } està buit."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        ""
+        "S'ha produït un error carregant el vostre fitxer ${ formattedFilename }. La mida màxima del fitxer és ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
-        ""
+        "El vostre fitxer ${ formattedFilename } no és un calendari."
       ],
       "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        ""
+        "El ${ CALENDAR_APP_NAME } només admet la importació de calendaris amb iCal versió 2.0."
       ],
       "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        ""
+        "El vostre fitxer ${ formattedFilename } és una invitació i no es pot importar."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        ""
+        "El vostre fitxer ${ formattedFilename } no conté esdeveniments per importar."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        ""
+        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniments."
       ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        ""
+        "S'ha produït un error llegint el fitxer ${ formattedFilename }. El fitxer no té el format adequat."
       ]
     },
     "Error importing contacts": {
@@ -4518,13 +4524,13 @@
     },
     "Attached ics file error": {
       "Invalid ICS file": [
-        ""
+        "Fitxer ICS invàlid"
       ],
       "Invalid event": [
-        ""
+        "Esdeveniment invàlid"
       ],
       "Unsupported event": [
-        ""
+        "Esdeveniment no suportat"
       ]
     },
     "Event invitation error": {
@@ -4541,10 +4547,10 @@
         "Invitació no compatible"
       ],
       "Attached ICS file could not be parsed": [
-        ""
+        "No es pot analitzar l'arxiu ICS adjuntat"
       ],
       "Attached ICS file could not be decrypted": [
-        ""
+        "No es pot desxifrar l'arxiu ICS adjuntat"
       ],
       "We could not retrieve the event from your calendar": [
         "No hem pogut recuperar l'esdeveniment del calendari"
@@ -4567,82 +4573,82 @@
     },
     "Error importing event": {
       "Component with wrong format": [
-        ""
+        "Component amb format erroni"
       ],
       "Non-Gregorian": [
-        ""
+        "No gregorià"
       ],
       "To-do entry": [
-        ""
+        "Entrada de tasques"
       ],
       "Journal entry": [
-        ""
+        "Entrada de diari"
       ],
       "Free-busy time information": [
-        ""
+        "Informació de disponibilitat temporal"
       ],
       "Custom timezone": [
-        ""
+        "Fus horari personalitzat"
       ],
       "Invalid event": [
-        ""
+        "Esdeveniment invàlid"
       ],
       "Unsupported event": [
-        ""
+        "Esdeveniment no suportat"
       ],
       "Malformed all-day event": [
-        ""
+        "Esdeveniment de tot el dia amb format incorrecte"
       ],
       "Missing start time": [
-        ""
+        "Falta l’hora d’inici"
       ],
       "Malformed start time": [
-        ""
+        "Hora de inici amb format incorrecte"
       ],
       "Floating times not supported": [
-        ""
+        "Temps flotants no compatibles"
       ],
       "Start time out of bounds": [
-        ""
+        "Hora d’inici fora de límits"
       ],
       "Malformed end time": [
-        ""
+        "Hora de finalització amb format incorrecte"
       ],
       "End time out of bounds": [
-        ""
+        "Hora de finalització fora de límits"
       ],
       "Event duration not supported": [
-        ""
+        "Durada d'esdeveniment no compatible"
       ],
       "Calendar timezone not supported": [
-        ""
+        "Fus horari del calendari no compatible"
       ],
       "Timezone not supported": [
-        ""
+        "Fus horari no compatible"
       ],
       "Malformed recurring event": [
-        ""
+        "Esdeveniment recurrent amb format incorrecte"
       ],
       "Recurring rule not supported": [
-        ""
+        "Regla recurrent no compatible"
       ],
       "Edited event not supported": [
-        ""
+        "Esdeveniment editat no compatible"
       ],
       "Notification out of bounds": [
-        ""
+        "Notificació fora de límits"
       ],
       "Event validation failed": [
-        ""
+        "Ha fallat la validació de l'esdeveniment"
       ],
       "Encryption failed": [
-        ""
+        "Ha fallat el xifratge"
       ],
       "Original recurring event could not be found": [
-        ""
+        "No es troba l'esdeveniment recurrent original"
       ],
       "no UID, title or start time": [
-        ""
+        "sense UID, títol o hora d'inici"
       ]
     },
     "Event title": {
@@ -5644,10 +5650,10 @@
     },
     "Import ICS file from Mail": {
       "Calendar event created": [
-        ""
+        "Esdeveniment de calendari creat"
       ],
       "Creating calendar event failed": [
-        ""
+        "Ha fallat la creació de l'esdeveniment de calendari"
       ]
     },
     "Attachment signature verification": {

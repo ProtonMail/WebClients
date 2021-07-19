@@ -21,11 +21,14 @@
       "Authentication error.": [
         "認證錯誤。"
       ],
+      "Email address invalid": [
+        "電子郵件地址無效"
+      ],
       "This field is required": [
         "此欄位必填"
       ],
-      "Email address invalid": [
-        "電子郵件地址無效"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
       ],
       "The composer failed to load.": [
         "撰寫器載入失敗。"
@@ -120,9 +123,6 @@
       "Require at least one action": [
         "必須有至少一個動作"
       ],
-      "Request timed out.": [
-        "請求已逾時。"
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "此欄位至少須有 ${ minimumLength } 個字元。"
       ],
@@ -134,6 +134,9 @@
       ],
       "Passwords do not match": [
         "密碼不符合"
+      ],
+      "Request timed out.": [
+        "請求已逾時。"
       ],
       "Signature verification failed": [
         "簽章驗證失敗"
@@ -289,6 +292,9 @@
       ],
       "Use “${ label }” setting": [
         "使用「${ label }」設定"
+      ],
+      "refresh the page": [
+        "更新頁面"
       ],
       "Remove": [
         "移除"
@@ -569,6 +575,18 @@
       "Next": [
         "下一步"
       ],
+      "Clear": [
+        "清除"
+      ],
+      "Add screenshot(s)": [
+        "新增螢幕截圖"
+      ],
+      "Hide info": [
+        "隱藏資訊"
+      ],
+      "Show info": [
+        "顯示資訊"
+      ],
       "Continue import": [
         "繼續匯入"
       ],
@@ -589,9 +607,6 @@
       ],
       "Signing out": [
         "正在登出"
-      ],
-      "refresh the page": [
-        "更新頁面"
       ],
       "Log in": [
         "登入"
@@ -644,9 +659,6 @@
       "Search": [
         "搜尋"
       ],
-      "Clear": [
-        "清除"
-      ],
       "Copy email to clipboard": [
         "複製電郵位址至剪貼簿"
       ],
@@ -691,15 +703,6 @@
       ],
       "Composer mode": [
         "撰寫器模式"
-      ],
-      "Add screenshot(s)": [
-        "新增螢幕截圖"
-      ],
-      "Hide info": [
-        "隱藏資訊"
-      ],
-      "Show info": [
-        "顯示資訊"
       ],
       "Preview": [
         "預覽"
@@ -1198,6 +1201,9 @@
       "Import contacts": [
         "匯入聯絡人"
       ],
+      "Report a problem": [
+        "回報問題"
+      ],
       "Start import process": [
         "開始匯入流程"
       ],
@@ -1248,9 +1254,6 @@
       ],
       "Give feedback": [
         "提供意見回饋"
-      ],
-      "Report a problem": [
-        "回報問題"
       ],
       "Beta Access": [
         "測試版體驗"
@@ -1481,6 +1484,9 @@
       ],
       "Loading": [
         "正在載入"
+      ],
+      "support team": [
+        "支援團隊"
       ],
       "No contacts added yet": [
         "未新增任何聯絡人"
@@ -1719,6 +1725,12 @@
       "${ addressCount } email address": [
         "${ addressCount } 個電子郵件地址"
       ],
+      "Screenshot(s) attached": [
+        "已附加的螢幕截圖"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "重新整理此頁面或${ link }將自動解決大部分問題。"
+      ],
       "Import contacts": [
         "匯入聯絡人"
       ],
@@ -1814,12 +1826,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "您已停用了測試版體驗。按一下${ refreshButton }以使用穩定版本的 ${ appName }。應用程式將會重新載入。"
-      ],
-      "Screenshot(s) attached": [
-        "已附加的螢幕截圖"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "重新整理此頁面或${ link }將自動解決大部分問題。"
       ],
       "Inherited from parent folder": [
         "繼承自上層資料夾"
@@ -2387,6 +2393,30 @@
       "Export contacts": [
         "匯出聯絡人"
       ],
+      "Operating system": [
+        "作業系統"
+      ],
+      "Operating system version": [
+        "作業系統版本"
+      ],
+      "Proton username": [
+        "Proton 使用者名稱"
+      ],
+      "Category": [
+        "類別"
+      ],
+      "What happened?": [
+        "發生了甚麼問題？"
+      ],
+      "System information": [
+        "系統資訊"
+      ],
+      "Browser": [
+        "瀏覽器"
+      ],
+      "Browser version": [
+        "瀏覽器版本"
+      ],
       "From: ${ fromEmailAddress }": [
         "寄件者：${ fromEmailAddress }"
       ],
@@ -2426,38 +2456,8 @@
       "Select how your composer opens by default.": [
         "選取預設情況下的編輯器開啟時的外觀。"
       ],
-      "0 - Not a fan": [
-        "0 - 沒感"
-      ],
-      "10 - Love it!": [
-        "10 - 超愛！"
-      ],
       "What is the primary reason for this rating?": [
         "這個評分的主要原因是什麼？"
-      ],
-      "Operating system": [
-        "作業系統"
-      ],
-      "Operating system version": [
-        "作業系統版本"
-      ],
-      "Proton username": [
-        "Proton 使用者名稱"
-      ],
-      "Category": [
-        "類別"
-      ],
-      "What happened?": [
-        "發生了甚麼問題？"
-      ],
-      "System information": [
-        "系統資訊"
-      ],
-      "Browser": [
-        "瀏覽器"
-      ],
-      "Browser version": [
-        "瀏覽器版本"
       ],
       "Enable Beta Access": [
         "啟用測試版體驗"
@@ -2654,6 +2654,12 @@
       "How would you rate your experience with the new ProtonMail?": [
         "您對新版 ProtonMail 的體驗會評多少分？"
       ],
+      "0 - Not a fan": [
+        "0 - 沒感"
+      ],
+      "10 - Love it!": [
+        "10 - 超愛！"
+      ],
       "Also archive": [
         "同時封存"
       ]
@@ -2670,6 +2676,9 @@
       "Request an invite": [
         "請求一個邀請"
       ],
+      "clearing your browser cache": [
+        "清除瀏覽器快取"
+      ],
       "Pay invoice": [
         "支付帳單"
       ],
@@ -2681,9 +2690,6 @@
       ],
       "Go to subscription plans": [
         "前往訂閱方案"
-      ],
-      "clearing your browser cache": [
-        "清除瀏覽器快取"
       ],
       "Inbox": [
         "收件匣"
@@ -2846,15 +2852,6 @@
       "Name": [
         "名稱"
       ],
-      "Mailbox password": [
-        "郵箱密碼"
-      ],
-      "e.g. Julia Smith": [
-        "範例：衛梓祐"
-      ],
-      "Feedback": [
-        "意見回饋"
-      ],
       "OS name": [
         "作業系統名稱"
       ],
@@ -2875,6 +2872,15 @@
       ],
       "Browser version": [
         "瀏覽器版本"
+      ],
+      "Mailbox password": [
+        "郵箱密碼"
+      ],
+      "e.g. Julia Smith": [
+        "範例：衛梓祐"
+      ],
+      "Feedback": [
+        "意見回饋"
       ],
       "Type text or keyword": [
         "鍵入文字或關鍵詞"
@@ -2950,14 +2956,14 @@
       "Contacts could not be merged": [
         "聯絡人無法合併"
       ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "錯誤提報表並未使用端到端加密，請勿傳送任何敏感資訊。"
+      ],
       "Are you sure you want to discard your import?": [
         "您確定要捨棄您的匯入嗎？"
       ],
       "Your local date & time settings seem to be out of sync.": [
         "您的本機日期和時間設定似乎出現偏差。"
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "錯誤提報表並未使用端到端加密，請勿傳送任何敏感資訊。"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "附件簽章驗證失敗。\n您仍可下載附件，惟附件可能已遭篡改。"
@@ -3117,14 +3123,14 @@
       "Fingerprint copied to clipboard": [
         "指紋已複製到剪貼簿"
       ],
+      "Bug reported": [
+        "錯誤已報告"
+      ],
       "Keyboard shortcuts preferences updated": [
         "鍵盤快捷鍵喜好設定已更新"
       ],
       "Preference saved": [
         "喜好設定已儲存"
-      ],
-      "Bug reported": [
-        "錯誤已報告"
       ],
       "Message content search activated": [
         "郵件內容搜尋已啟用"
@@ -3517,6 +3523,118 @@
         "${ totalImported }/${ totalToImport } 個聯絡人已加密並新增到您的聯絡人清單"
       ]
     },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "未選取任何影像"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "登入問題"
+      ],
+      "Sign up problem": [
+        "註冊問題"
+      ],
+      "Payments problem": [
+        "付款問題"
+      ],
+      "Custom domain problem": [
+        "自訂網域問題"
+      ],
+      "Bridge problem": [
+        "Bridge 問題"
+      ],
+      "Import / export problem": [
+        "匯入/匯出問題"
+      ],
+      "Connection problem": [
+        "連接問題"
+      ],
+      "Slow speed problem": [
+        "速度慢問題"
+      ],
+      "Calendar problem": [
+        "行事曆問題"
+      ],
+      "Contacts problem": [
+        "通訊錄問題"
+      ],
+      "Drive problem": [
+        "Drive 問題"
+      ],
+      "Mail problem": [
+        "Mail 問題"
+      ],
+      "VPN problem": [
+        "VPN 問題"
+      ],
+      "Feature request": [
+        "功能建議"
+      ],
+      "Other": [
+        "其他"
+      ],
+      "Signup problem": [
+        "註冊問題"
+      ],
+      "Installation problem": [
+        "安裝問題"
+      ],
+      "Update problem": [
+        "更新問題"
+      ],
+      "Application problem": [
+        "應用程式問題"
+      ],
+      "Speed problem": [
+        "速度問題"
+      ],
+      "Manual setup problem": [
+        "手動設置問題"
+      ],
+      "Website access problem": [
+        "網站存取問題"
+      ],
+      "Streaming problem": [
+        "串流問題"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "帳號"
+      ],
+      "Apps": [
+        "應用程式"
+      ],
+      "Network": [
+        "網路"
+      ],
+      "Services": [
+        "服務"
+      ],
+      "Other category": [
+        "其他類別"
+      ],
+      "Custom folders": [
+        "自訂資料夾"
+      ],
+      "Default folders": [
+        "預設資料夾"
+      ],
+      "Labels": [
+        "標籤"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "請選擇"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "附加螢幕截圖"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "連結到您的聯絡人提供者"
@@ -3673,118 +3791,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "意見回饋已傳送"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "未選取任何影像"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "登入問題"
-      ],
-      "Sign up problem": [
-        "註冊問題"
-      ],
-      "Payments problem": [
-        "付款問題"
-      ],
-      "Custom domain problem": [
-        "自訂網域問題"
-      ],
-      "Bridge problem": [
-        "Bridge 問題"
-      ],
-      "Import / export problem": [
-        "匯入/匯出問題"
-      ],
-      "Connection problem": [
-        "連接問題"
-      ],
-      "Slow speed problem": [
-        "速度慢問題"
-      ],
-      "Calendar problem": [
-        "行事曆問題"
-      ],
-      "Contacts problem": [
-        "通訊錄問題"
-      ],
-      "Drive problem": [
-        "Drive 問題"
-      ],
-      "Mail problem": [
-        "Mail 問題"
-      ],
-      "VPN problem": [
-        "VPN 問題"
-      ],
-      "Feature request": [
-        "功能建議"
-      ],
-      "Other": [
-        "其他"
-      ],
-      "Signup problem": [
-        "註冊問題"
-      ],
-      "Installation problem": [
-        "安裝問題"
-      ],
-      "Update problem": [
-        "更新問題"
-      ],
-      "Application problem": [
-        "應用程式問題"
-      ],
-      "Speed problem": [
-        "速度問題"
-      ],
-      "Manual setup problem": [
-        "手動設置問題"
-      ],
-      "Website access problem": [
-        "網站存取問題"
-      ],
-      "Streaming problem": [
-        "串流問題"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "帳號"
-      ],
-      "Apps": [
-        "應用程式"
-      ],
-      "Network": [
-        "網路"
-      ],
-      "Services": [
-        "服務"
-      ],
-      "Other category": [
-        "其他類別"
-      ],
-      "Custom folders": [
-        "自訂資料夾"
-      ],
-      "Default folders": [
-        "預設資料夾"
-      ],
-      "Labels": [
-        "標籤"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "請選擇"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "附加螢幕截圖"
       ]
     },
     "Beta access description": {

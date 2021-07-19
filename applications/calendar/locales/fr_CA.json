@@ -6,9 +6,6 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Erreur inconnue"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Il est possible que ce message contienne des liens URL qui pourraient ne pas être ouverts correctement par votre navigateur actuel"
       ],
@@ -21,11 +18,17 @@
       "Authentication error.": [
         "Erreur d'authentification."
       ],
-      "This field is required": [
-        "Ce champ est requis"
+      "Unknown error": [
+        "Erreur inconnue"
       ],
       "Email address invalid": [
         "Adresse courriel invalide"
+      ],
+      "This field is required": [
+        "Ce champ est requis"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Une erreur est survenue, veuillez ${ refresh } pour continuer. Si vous voyez toujours ce message d'erreur, veuillez contacter notre ${ supportTeam }."
       ],
       "Can't validate email, try again later": [
         "Impossible de valider l'adresse électronique, veuillez réessayer plus tard"
@@ -89,14 +92,23 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
+      "Primary address key is not decrypted": [
+        "La clé d'adresse principale n'est pas déchiffrée"
+      ],
       "Incorrect mailbox password. Please try again": [
         "Mot de passe de la messagerie incorrect. Veuillez réessayer"
       ],
       "Incorrect login credentials. Please try again": [
         "Identifiants de connexion incorrects. Veuillez réessayer"
       ],
-      "Primary address key is not decrypted": [
-        "La clé d'adresse principale n'est pas déchiffrée"
+      "No valid address found": [
+        "Aucune adresse valide trouvée"
+      ],
+      "Primary address key is not decrypted.": [
+        "La clé d'adresse principale n'est pas déchiffrée."
+      ],
+      "Name required": [
+        "Nom requis"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ce champ nécessite un minimum de ${ minimumLength } caractères."
@@ -197,12 +209,6 @@
       ],
       "Invalid link to the event": [
         "Lien invalide vers l'événement"
-      ],
-      "No valid address found": [
-        "Aucune adresse valide trouvée"
-      ],
-      "Primary address key is not decrypted.": [
-        "La clé d'adresse principale n'est pas déchiffrée."
       ],
       "Please create an address first.": [
         "Veuillez d'abord créer une adresse."
@@ -317,8 +323,17 @@
       "Confirm opening of link ${ link }": [
         "Confirmer l'ouverture du lien ${ link }"
       ],
+      "refresh the page": [
+        "actualiser la page"
+      ],
       "Select timezone": [
         "Sélectionner le fuseau horaire"
+      ],
+      "Show less": [
+        "En afficher moins"
+      ],
+      "Show more": [
+        "En afficher plus"
       ],
       "View invoice": [
         "Afficher la facture"
@@ -343,9 +358,6 @@
       ],
       "Edit phone number": [
         "Modifier le numéro de téléphone"
-      ],
-      "refresh the page": [
-        "actualiser la page"
       ],
       "Signing out": [
         "Déconnexion"
@@ -466,6 +478,18 @@
       "Next": [
         "Suivant"
       ],
+      "Clear": [
+        "Effacer"
+      ],
+      "Add screenshot(s)": [
+        "Ajouter une ou des capture(s) d'écran"
+      ],
+      "Hide info": [
+        "Masquer les infos"
+      ],
+      "Show info": [
+        "Afficher les infos"
+      ],
       "Continue import": [
         ""
       ],
@@ -477,15 +501,6 @@
       ],
       "Start import": [
         ""
-      ],
-      "Use ${ label } theme": [
-        "Utiliser le thème « ${ label } »"
-      ],
-      "OK": [
-        "OK"
-      ],
-      "Log in": [
-        "Connexion"
       ],
       "Copy email to clipboard": [
         "Copier le courriel dans le presse-papier"
@@ -532,18 +547,6 @@
       "Composer mode": [
         "Mode du composeur"
       ],
-      "Clear": [
-        "Effacer"
-      ],
-      "Add screenshot(s)": [
-        "Ajouter une ou des capture(s) d'écran"
-      ],
-      "Hide info": [
-        "Masquer les infos"
-      ],
-      "Show info": [
-        "Afficher les infos"
-      ],
       "Get started": [
         "Commencer"
       ],
@@ -555,6 +558,15 @@
       ],
       "Back": [
         "Retour"
+      ],
+      "Use ${ label } theme": [
+        "Utiliser le thème « ${ label } »"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Log in": [
+        "Connexion"
       ],
       "Close this banner": [
         "Fermer cette bannière"
@@ -574,6 +586,12 @@
       "Add notification": [
         "Ajouter une notification"
       ],
+      "Update": [
+        "Mettre à jour"
+      ],
+      "Create": [
+        "Créer"
+      ],
       "Yes, I'll attend": [
         "Oui, je participerai"
       ],
@@ -592,14 +610,14 @@
       "No": [
         "Non"
       ],
+      "Share": [
+        "Partager"
+      ],
       "New event": [
         "Nouvel événement"
       ],
       "Create event": [
         "Créer un événement"
-      ],
-      "Update": [
-        "Mettre à jour"
       ],
       "Send": [
         "Envoyer"
@@ -790,26 +808,14 @@
       "Import contacts": [
         "Importer les contacts"
       ],
+      "Report a problem": [
+        "Signaler un problème"
+      ],
       "Start import process": [
         ""
       ],
       "Import in progress": [
         ""
-      ],
-      "Select a theme": [
-        "Choisissez un thème"
-      ],
-      "Sign in again to continue": [
-        "Connectez-vous à nouveau pour continuer"
-      ],
-      "Account suspended": [
-        "Compte suspendu"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Saisissez votre nom d'utilisateur•rice ou votre adresse électronique ProtonMail"
-      ],
-      "Enter your password": [
-        "Saisissez votre mot de passe"
       ],
       "Open help menu": [
         "Ouvrir le menu d'aide"
@@ -829,8 +835,8 @@
       "Give feedback": [
         "Donnez votre avis"
       ],
-      "Report a problem": [
-        "Signaler un problème"
+      "Select a theme": [
+        "Choisissez un thème"
       ],
       "${ appName } Keyboard Shortcuts": [
         "Raccourcis clavier ${ appName }"
@@ -847,6 +853,18 @@
       "Beta Access": [
         "Accès à la version bêta"
       ],
+      "Sign in again to continue": [
+        "Connectez-vous à nouveau pour continuer"
+      ],
+      "Account suspended": [
+        "Compte suspendu"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Saisissez votre nom d'utilisateur•rice ou votre adresse électronique ProtonMail"
+      ],
+      "Enter your password": [
+        "Saisissez votre mot de passe"
+      ],
       "Select when you want this notification to be sent": [
         "Choisissez quand vous souhaitez que cette notification soit envoyée"
       ],
@@ -858,6 +876,15 @@
       ],
       "Add another notification to remind you of this event": [
         "Ajoutez une autre notification pour vous rappeler cet événement"
+      ],
+      "Error": [
+        "Erreur"
+      ],
+      "Update calendar": [
+        "Mettre à jour le calendrier"
+      ],
+      "Create calendar": [
+        "Créer le calendrier"
       ],
       "Change my answer": [
         "Changer ma réponse"
@@ -897,9 +924,6 @@
       ],
       "You have invited participants with equivalent emails": [
         "Vous avez invité des participant·e·s avec des courriels équivalents"
-      ],
-      "Error": [
-        "Erreur"
       ],
       "Reset calendar keys": [
         "Réinitialiser les clés du calendrier"
@@ -1013,6 +1037,9 @@
       ],
       "Learn more": [
         "En savoir plus"
+      ],
+      "support team": [
+        "équipe d'assistance"
       ],
       "Drop the file here to upload": [
         "Déposez un fichier ici pour le téléverser"
@@ -1140,8 +1167,8 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Ne changez ces paramètres que si vous utilisez PGP avec des destinataires qui ne sont pas sur ProtonMail."
       ],
-      "All uploaded keys are expired or revoked! Encryption is automatically disabled.": [
-        "Toutes les clés téléversées ont expirées ou sont révoquées! Le chiffrement est automatiquement désactivé."
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        "Aucune des clés téléversées n'est valide pour le chiffrement. Le chiffrement est automatiquement désactivé."
       ],
       "Primary": [
         "Principale"
@@ -1167,6 +1194,12 @@
         "${ addressCount } adresse courriel",
         "${ addressCount } adresses courriel"
       ],
+      "Screenshot(s) attached": [
+        "Capture(s) d'écran jointe(s)"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Rafraîchir la page ou ${ link } résoudra automatiquement la plupart des problèmes."
+      ],
       "Import contacts": [
         ""
       ],
@@ -1191,6 +1224,9 @@
       "Your import will not be processed.": [
         ""
       ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "La navigation de base et les actions restent disponibles indépendamment des raccourcis clavier activés ou non dans les paramètres."
+      ],
       "here": [
         "ici"
       ],
@@ -1199,15 +1235,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si vous pensez que c'est une erreur, veuillez nous contacter ${ contactLink }."
-      ],
-      "Screenshot(s) attached": [
-        "Capture(s) d'écran jointe(s)"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Rafraîchir la page ou ${ link } résoudra automatiquement la plupart des problèmes."
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "La navigation de base et les actions restent disponibles indépendamment des raccourcis clavier activés ou non dans les paramètres."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Votre compte possède au moins une facture impayée. Votre accès a été restreint. ${ payInvoiceLink }"
@@ -1538,39 +1565,6 @@
       "Export contacts": [
         "Exporter les contacts"
       ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Cancel": [
-        "Annuler"
-      ],
-      "Submit": [
-        "Envoyer"
-      ],
-      "Password": [
-        "Mot de passe"
-      ],
-      "Mailbox password": [
-        "Mot de passe de messagerie"
-      ],
-      "Two-factor authentication code": [
-        "Code d'authentification à deux facteurs"
-      ],
-      "Username or ProtonMail address": [
-        "Nom d'utilisateur•rice ou adresse ProtonMail"
-      ],
-      "0 - Not a fan": [
-        "0 - Pas fan"
-      ],
-      "10 - Love it!": [
-        "10 - J'adore !"
-      ],
-      "What is the primary reason for this rating?": [
-        "Quelle est la principale raison pour laquelle cette note est attribuée?"
-      ],
       "Operating system": [
         "Système d'exploitation"
       ],
@@ -1595,6 +1589,15 @@
       "Browser version": [
         "Version du navigateur"
       ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        "Quelle est la principale raison pour laquelle cette note est attribuée?"
+      ],
       "Display name": [
         "Nom d'affichage"
       ],
@@ -1613,8 +1616,59 @@
       "Enable Beta Access": [
         "Activer l'accès à la version bêta"
       ],
+      "Cancel": [
+        "Annuler"
+      ],
+      "Submit": [
+        "Envoyer"
+      ],
+      "Password": [
+        "Mot de passe"
+      ],
+      "Mailbox password": [
+        "Mot de passe de messagerie"
+      ],
+      "Two-factor authentication code": [
+        "Code d'authentification à deux facteurs"
+      ],
+      "Username or ProtonMail address": [
+        "Nom d'utilisateur•rice ou adresse ProtonMail"
+      ],
+      "Name": [
+        "Nom"
+      ],
+      "Choose a color": [
+        "Choisir une couleur"
+      ],
+      "Default email": [
+        "Courriel par défaut"
+      ],
+      "Display": [
+        "Afficher"
+      ],
+      "Description": [
+        "Description"
+      ],
+      "Default event duration": [
+        "Durée par défaut de l'événement"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Default notifications": [
+        "Notifications par défaut"
+      ],
+      "Default full day notifications": [
+        "Notifications par défaut pour la journée entière"
+      ],
       "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
         "Quelle est la probabilité que vous recommandiez ${ calendarAppName } à un ami ou à un collègue?"
+      ],
+      "0 - Not likely": [
+        "0 - Improbable"
+      ],
+      "10 - Extremely likely": [
+        "10 - Extrêmement probable"
       ],
       "All day": [
         "Journée entière"
@@ -1649,9 +1703,6 @@
       "Event location": [
         "Lieu de l'événement"
       ],
-      "Description": [
-        "Description"
-      ],
       "Event notifications": [
         "Notifications de l'événement"
       ],
@@ -1662,6 +1713,11 @@
         "Vos calendriers"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "La clé ne peut pas être utilisée pour le chiffrement"
+      ]
+    },
     "Link": {
       "Learn more": [
         "En savoir plus"
@@ -1669,14 +1725,14 @@
       "Request an invite": [
         "Demander une invitation"
       ],
+      "clearing your browser cache": [
+        "effacement du cache de votre navigateur"
+      ],
       "Upgrade": [
         "Mettre à jour"
       ],
       "Go to subscription plans": [
         "Aller aux abonnements"
-      ],
-      "clearing your browser cache": [
-        "effacement du cache de votre navigateur"
       ],
       "Pay invoice": [
         "Payer la facture"
@@ -1716,12 +1772,6 @@
       "Name": [
         "Nom"
       ],
-      "Mailbox password": [
-        "Mot de passe de messagerie"
-      ],
-      "Feedback": [
-        "Votre avis"
-      ],
       "OS name": [
         "Nom du système d'exploitation"
       ],
@@ -1743,8 +1793,20 @@
       "Browser version": [
         "Version du navigateur"
       ],
+      "Feedback": [
+        "Votre avis"
+      ],
       "e.g. Julia Smith": [
         "p. ex. Julie Tremblay"
+      ],
+      "Mailbox password": [
+        "Mot de passe de messagerie"
+      ],
+      "Add a calendar name": [
+        "Ajouter un nom au calendrier"
+      ],
+      "Add a calendar description": [
+        "Ajouter une description de calendrier"
       ],
       "Add title": [
         "Ajouter un titre"
@@ -1904,11 +1966,11 @@
       "Contacts could not be merged": [
         "Les contacts n'ont pas pu être fusionnés"
       ],
-      "Are you sure you want to discard your import?": [
-        ""
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Les rapports d’erreur ne sont pas chiffrés de bout en bout, merci de ne pas envoyer d'informations sensibles."
+      ],
+      "Are you sure you want to discard your import?": [
+        ""
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Vos paramètres de date et d'heure locaux semblent désynchronisés."
@@ -1958,6 +2020,15 @@
       ],
       "Preference saved": [
         "Préférence enregistrée"
+      ],
+      "Calendar created. It might take a few minutes to sync.": [
+        "Calendrier créé. La synchronisation peut prendre quelques minutes."
+      ],
+      "Calendar created": [
+        "Calendrier créé"
+      ],
+      "Calendar updated": [
+        "Calendrier mis à jour"
       ],
       "An invitation will be sent to added participants for all the events in this series.": [
         "Une invitation sera envoyée aux participants ajoutés pour tous les événements de cette série."
@@ -2377,100 +2448,6 @@
         "${ totalImported }/${ totalToImport } contacts chiffrés et ajoutés à votre liste de contacts"
       ]
     },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        ""
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        ""
-      ],
-      "Configure Import": [
-        ""
-      ],
-      "Import": [
-        ""
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        ""
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Confortable"
-      ],
-      "Compact": [
-        "Compact"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Colonne"
-      ],
-      "Row": [
-        "Ligne"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Maximisé"
-      ]
-    },
-    "Text": {
-      "Settings": [
-        "Paramètres"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Activé"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Désactivé"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Colonne"
-      ],
-      "Row": [
-        "Ligne"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Confortable"
-      ],
-      "Compact": [
-        "Compact"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "Maximisé"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "La note est requise"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Avis envoyé"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Aucune image sélectionnée"
@@ -2574,6 +2551,76 @@
         "Joindre une ou plusieurs captures d'écran"
       ]
     },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        ""
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        ""
+      ],
+      "Configure Import": [
+        ""
+      ],
+      "Import": [
+        ""
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        ""
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Paramètres"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Activé"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Désactivé"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Colonne"
+      ],
+      "Row": [
+        "Ligne"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Confortable"
+      ],
+      "Compact": [
+        "Compact"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "Maximisé"
+      ],
+      "Normal": [
+        "Normal"
+      ]
+    },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "La note est requise"
+      ]
+    },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Avis envoyé"
+      ]
+    },
     "Onboarding Proton": {
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
         "C'est ce que les gens verront quand vous leur enverrez un courriel, les inviterez à un événement ou partagerez un fichier avec eux."
@@ -2617,6 +2664,30 @@
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
         "Remarque: le service se rechargera après avoir cliqué sur le bouton Appliquer."
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Confortable"
+      ],
+      "Compact": [
+        "Compact"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Colonne"
+      ],
+      "Row": [
+        "Ligne"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Maximisé"
       ]
     },
     "Select files": {
@@ -2671,10 +2742,18 @@
         "par courriel"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Le mot de passe doit comporter au moins ${ length } caractère",
-        "Le mot de passe doit comporter au moins ${ length } caractères"
+    "Duration": {
+      "30 minutes": [
+        "30 minutes"
+      ],
+      "60 minutes": [
+        "60 minutes"
+      ],
+      "90 minutes": [
+        "90 minutes"
+      ],
+      "120 minutes": [
+        "120 minutes"
       ]
     },
     "Contact field label": {
@@ -2872,6 +2951,12 @@
         "Urgence"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Le mot de passe doit comporter au moins ${ length } caractère",
+        "Le mot de passe doit comporter au moins ${ length } caractères"
+      ]
+    },
     "file size format": {
       "bytes": [
         "octets"
@@ -2889,6 +2974,73 @@
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "Adresse électronique introuvable parmi les identifiants des utilisateur•rice•s définis dans la clé d'envoi (${ keyUserIds })"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        "${ title } commence maintenant"
+      ],
+      "${ title } starts today": [
+        "${ title } commence aujourd'hui"
+      ],
+      "${ title } started at ${ formattedHour }": [
+        "${ title } a commencé à ${ formattedHour }"
+      ],
+      "${ title } started yesterday": [
+        "${ title } a commencé hier"
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        "${ title } a commencé hier à ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDate }": [
+        "${ title } a commencé le ${ formattedDate }"
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } a commencé le ${ formattedDate } à ${ formattedHour }"
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        "${ title } a commencé le ${ _formattedDate }"
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        "${ title } a commencé le ${ _formattedDate } à ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        "${ title } a commencé le ${ formattedDateWithoutTime }"
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        "${ title } a commencé le ${ _formattedDateWithTime }"
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        "${ title } commencera à ${ formattedHour }"
+      ],
+      "${ title } will start tomorrow": [
+        "${ title } commencera demain"
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        "${ title } commencera demain à ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        "${ title } commencera le ${ _formattedDate2 }"
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title } commencera le ${ _formattedDate2 } à ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        "${ title } commencera le ${ _formattedDate3 }"
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title } commencera le ${ _formattedDate3 } à ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        "${ title } commencera le ${ _formattedDateWithoutTime }"
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        "${ title } commencera le ${ formattedDateWithTime }"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(sans titre)"
       ]
     },
     "Participant name": {
@@ -3362,73 +3514,6 @@
         "Tous les ${ interval } ans, jusqu’au ${ untilString }"
       ]
     },
-    "Alarm notification": {
-      "${ title } starts now": [
-        "${ title } commence maintenant"
-      ],
-      "${ title } starts today": [
-        "${ title } commence aujourd'hui"
-      ],
-      "${ title } started at ${ formattedHour }": [
-        "${ title } a commencé à ${ formattedHour }"
-      ],
-      "${ title } started yesterday": [
-        "${ title } a commencé hier"
-      ],
-      "${ title } started yesterday at ${ formattedHour }": [
-        "${ title } a commencé hier à ${ formattedHour }"
-      ],
-      "${ title } started on ${ formattedDate }": [
-        "${ title } a commencé le ${ formattedDate }"
-      ],
-      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } a commencé le ${ formattedDate } à ${ formattedHour }"
-      ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } a commencé le ${ _formattedDate }"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } a commencé le ${ _formattedDate } à ${ formattedHour }"
-      ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } a commencé le ${ formattedDateWithoutTime }"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } a commencé le ${ _formattedDateWithTime }"
-      ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } commencera à ${ formattedHour }"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } commencera demain"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } commencera demain à ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } commencera le ${ _formattedDate2 }"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } commencera le ${ _formattedDate2 } à ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } commencera le ${ _formattedDate3 }"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } commencera le ${ _formattedDate3 } à ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } commencera le ${ _formattedDateWithoutTime }"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } commencera le ${ formattedDateWithTime }"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(sans titre)"
-      ]
-    },
     "Keyboard shortcut section name": {
       "Basic navigation": [
         "Navigation basique"
@@ -3741,6 +3826,16 @@
     "Disabled calendar name suffix": {
       "disabled": [
         "désactivé"
+      ]
+    },
+    "Sidebar calendar edit tooltip": {
+      "Manage calendar": [
+        "Gérer le calendrier"
+      ]
+    },
+    "Add calendar icon tooltip": {
+      "Create calendar": [
+        "Créer le calendrier"
       ]
     },
     "Placeholder for contact with no name": {

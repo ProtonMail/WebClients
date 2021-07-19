@@ -21,11 +21,14 @@
       "Authentication error.": [
         ""
       ],
+      "Email address invalid": [
+        "邮箱格式不正确"
+      ],
       "This field is required": [
         "此项必须填写"
       ],
-      "Email address invalid": [
-        "邮箱格式不正确"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
       ],
       "The composer failed to load.": [
         "编辑器加载失败。"
@@ -120,9 +123,6 @@
       "Require at least one action": [
         "至少应有一项操作"
       ],
-      "Request timed out.": [
-        "请求超时。"
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         ""
       ],
@@ -134,6 +134,9 @@
       ],
       "Passwords do not match": [
         ""
+      ],
+      "Request timed out.": [
+        "请求超时。"
       ],
       "Signature verification failed": [
         "签名验证失败"
@@ -289,6 +292,9 @@
       ],
       "Use “${ label }” setting": [
         ""
+      ],
+      "refresh the page": [
+        "刷新页面"
       ],
       "Remove": [
         "移除"
@@ -569,6 +575,18 @@
       "Next": [
         "继续"
       ],
+      "Clear": [
+        "清除"
+      ],
+      "Add screenshot(s)": [
+        "添加屏幕截图"
+      ],
+      "Hide info": [
+        "隐藏信息"
+      ],
+      "Show info": [
+        "显示信息"
+      ],
       "Continue import": [
         ""
       ],
@@ -589,9 +607,6 @@
       ],
       "Signing out": [
         "正在退出账户"
-      ],
-      "refresh the page": [
-        "刷新页面"
       ],
       "Log in": [
         "登录"
@@ -644,9 +659,6 @@
       "Search": [
         "搜索"
       ],
-      "Clear": [
-        "清除"
-      ],
       "Copy email to clipboard": [
         ""
       ],
@@ -691,15 +703,6 @@
       ],
       "Composer mode": [
         ""
-      ],
-      "Add screenshot(s)": [
-        "添加屏幕截图"
-      ],
-      "Hide info": [
-        "隐藏信息"
-      ],
-      "Show info": [
-        "显示信息"
       ],
       "Preview": [
         "预览"
@@ -1198,6 +1201,9 @@
       "Import contacts": [
         ""
       ],
+      "Report a problem": [
+        ""
+      ],
       "Start import process": [
         ""
       ],
@@ -1247,9 +1253,6 @@
         ""
       ],
       "Give feedback": [
-        ""
-      ],
-      "Report a problem": [
         ""
       ],
       "Beta Access": [
@@ -1481,6 +1484,9 @@
       ],
       "Loading": [
         "加载中"
+      ],
+      "support team": [
+        ""
       ],
       "No contacts added yet": [
         "尚未添加联系人"
@@ -1719,6 +1725,12 @@
       "${ addressCount } email address": [
         ""
       ],
+      "Screenshot(s) attached": [
+        "已添加截图"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "大多数问题都能通过刷新页面或${ link }来解决。"
+      ],
       "Import contacts": [
         ""
       ],
@@ -1814,12 +1826,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         ""
-      ],
-      "Screenshot(s) attached": [
-        "已添加截图"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "大多数问题都能通过刷新页面或${ link }来解决。"
       ],
       "Inherited from parent folder": [
         "继承自母文件夹"
@@ -2387,6 +2393,30 @@
       "Export contacts": [
         ""
       ],
+      "Operating system": [
+        "操作系统"
+      ],
+      "Operating system version": [
+        "操作系统版本"
+      ],
+      "Proton username": [
+        "Proton 用户名"
+      ],
+      "Category": [
+        "类别"
+      ],
+      "What happened?": [
+        "发生了什么？"
+      ],
+      "System information": [
+        "系统信息"
+      ],
+      "Browser": [
+        "浏览器"
+      ],
+      "Browser version": [
+        "浏览器版本"
+      ],
       "From: ${ fromEmailAddress }": [
         ""
       ],
@@ -2426,38 +2456,8 @@
       "Select how your composer opens by default.": [
         ""
       ],
-      "0 - Not a fan": [
-        ""
-      ],
-      "10 - Love it!": [
-        ""
-      ],
       "What is the primary reason for this rating?": [
         ""
-      ],
-      "Operating system": [
-        "操作系统"
-      ],
-      "Operating system version": [
-        "操作系统版本"
-      ],
-      "Proton username": [
-        "Proton 用户名"
-      ],
-      "Category": [
-        "类别"
-      ],
-      "What happened?": [
-        "发生了什么？"
-      ],
-      "System information": [
-        "系统信息"
-      ],
-      "Browser": [
-        "浏览器"
-      ],
-      "Browser version": [
-        "浏览器版本"
       ],
       "Enable Beta Access": [
         "启用测试版功能"
@@ -2654,6 +2654,12 @@
       "How would you rate your experience with the new ProtonMail?": [
         ""
       ],
+      "0 - Not a fan": [
+        ""
+      ],
+      "10 - Love it!": [
+        ""
+      ],
       "Also archive": [
         "同时存档"
       ]
@@ -2670,6 +2676,9 @@
       "Request an invite": [
         "请求邀请"
       ],
+      "clearing your browser cache": [
+        "清除浏览器缓存"
+      ],
       "Pay invoice": [
         "前去支付"
       ],
@@ -2681,9 +2690,6 @@
       ],
       "Go to subscription plans": [
         ""
-      ],
-      "clearing your browser cache": [
-        "清除浏览器缓存"
       ],
       "Inbox": [
         "收件箱"
@@ -2846,15 +2852,6 @@
       "Name": [
         "名称"
       ],
-      "Mailbox password": [
-        "邮箱密码"
-      ],
-      "e.g. Julia Smith": [
-        "例如：Julia Smith"
-      ],
-      "Feedback": [
-        ""
-      ],
       "OS name": [
         "操作系统名称"
       ],
@@ -2875,6 +2872,15 @@
       ],
       "Browser version": [
         "浏览器版本"
+      ],
+      "Mailbox password": [
+        "邮箱密码"
+      ],
+      "e.g. Julia Smith": [
+        "例如：Julia Smith"
+      ],
+      "Feedback": [
+        ""
       ],
       "Type text or keyword": [
         "输入文本或关键词"
@@ -2950,13 +2956,13 @@
       "Contacts could not be merged": [
         ""
       ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        ""
+      ],
       "Are you sure you want to discard your import?": [
         ""
       ],
       "Your local date & time settings seem to be out of sync.": [
-        ""
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         ""
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
@@ -3117,14 +3123,14 @@
       "Fingerprint copied to clipboard": [
         ""
       ],
+      "Bug reported": [
+        "问题已反馈"
+      ],
       "Keyboard shortcuts preferences updated": [
         ""
       ],
       "Preference saved": [
         ""
-      ],
-      "Bug reported": [
-        "问题已反馈"
       ],
       "Message content search activated": [
         "邮件全文搜索已开启"
@@ -3517,6 +3523,118 @@
         ""
       ]
     },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "没有选择图像"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "登录问题"
+      ],
+      "Sign up problem": [
+        "注册问题"
+      ],
+      "Payments problem": [
+        "支付问题"
+      ],
+      "Custom domain problem": [
+        "自有域名问题"
+      ],
+      "Bridge problem": [
+        "Bridge 问题"
+      ],
+      "Import / export problem": [
+        "导入/导出问题"
+      ],
+      "Connection problem": [
+        "连接问题"
+      ],
+      "Slow speed problem": [
+        "速度缓慢"
+      ],
+      "Calendar problem": [
+        "日历问题"
+      ],
+      "Contacts problem": [
+        "通讯录问题"
+      ],
+      "Drive problem": [
+        "网盘问题"
+      ],
+      "Mail problem": [
+        "邮件问题"
+      ],
+      "VPN problem": [
+        "VPN 问题"
+      ],
+      "Feature request": [
+        "功能建议"
+      ],
+      "Other": [
+        "其他"
+      ],
+      "Signup problem": [
+        "注册问题"
+      ],
+      "Installation problem": [
+        "安装问题"
+      ],
+      "Update problem": [
+        "更新问题"
+      ],
+      "Application problem": [
+        "应用程序问题"
+      ],
+      "Speed problem": [
+        "速度问题"
+      ],
+      "Manual setup problem": [
+        "手动设置问题"
+      ],
+      "Website access problem": [
+        "网站连接问题"
+      ],
+      "Streaming problem": [
+        "视频播放问题"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "账户"
+      ],
+      "Apps": [
+        "应用"
+      ],
+      "Network": [
+        "网络"
+      ],
+      "Services": [
+        "服务"
+      ],
+      "Other category": [
+        "其他类别"
+      ],
+      "Custom folders": [
+        "用户文件夹"
+      ],
+      "Default folders": [
+        "系统文件夹"
+      ],
+      "Labels": [
+        "标签"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "选择"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "添加截图"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -3673,118 +3791,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         ""
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "没有选择图像"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "登录问题"
-      ],
-      "Sign up problem": [
-        "注册问题"
-      ],
-      "Payments problem": [
-        "支付问题"
-      ],
-      "Custom domain problem": [
-        "自有域名问题"
-      ],
-      "Bridge problem": [
-        "Bridge 问题"
-      ],
-      "Import / export problem": [
-        "导入/导出问题"
-      ],
-      "Connection problem": [
-        "连接问题"
-      ],
-      "Slow speed problem": [
-        "速度缓慢"
-      ],
-      "Calendar problem": [
-        "日历问题"
-      ],
-      "Contacts problem": [
-        "通讯录问题"
-      ],
-      "Drive problem": [
-        "网盘问题"
-      ],
-      "Mail problem": [
-        "邮件问题"
-      ],
-      "VPN problem": [
-        "VPN 问题"
-      ],
-      "Feature request": [
-        "功能建议"
-      ],
-      "Other": [
-        "其他"
-      ],
-      "Signup problem": [
-        "注册问题"
-      ],
-      "Installation problem": [
-        "安装问题"
-      ],
-      "Update problem": [
-        "更新问题"
-      ],
-      "Application problem": [
-        "应用程序问题"
-      ],
-      "Speed problem": [
-        "速度问题"
-      ],
-      "Manual setup problem": [
-        "手动设置问题"
-      ],
-      "Website access problem": [
-        "网站连接问题"
-      ],
-      "Streaming problem": [
-        "视频播放问题"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "账户"
-      ],
-      "Apps": [
-        "应用"
-      ],
-      "Network": [
-        "网络"
-      ],
-      "Services": [
-        "服务"
-      ],
-      "Other category": [
-        "其他类别"
-      ],
-      "Custom folders": [
-        "用户文件夹"
-      ],
-      "Default folders": [
-        "系统文件夹"
-      ],
-      "Labels": [
-        "标签"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "选择"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "添加截图"
       ]
     },
     "Beta access description": {

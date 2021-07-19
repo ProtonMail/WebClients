@@ -5,9 +5,160 @@
   },
   "contexts": {
     "": {},
+    "Error": {
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "Ez az üzenet olyan hivatkozásokat tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni"
+      ],
+      "Authentication canceled.": [
+        ""
+      ],
+      "Your import will not be processed.": [
+        ""
+      ],
+      "Authentication error.": [
+        ""
+      ],
+      "Unknown error": [
+        "Ismeretlen hiba"
+      ],
+      "Email address invalid": [
+        "Érvénytelen e-mail cím"
+      ],
+      "This field is required": [
+        "A mező kitöltése kötelező"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
+      ],
+      "Can't validate email, try again later": [
+        "E-mail ellenőrzése nem sikerült, próbálja meg később"
+      ],
+      "Can't validate phone, try again later": [
+        "Telefonszám ellenőrzése nem sikerült, próbálja meg később"
+      ],
+      "Enter 6 digits": [
+        "6 számjegyet írjon be"
+      ],
+      "Invalid verification code": [
+        "Érvénytelen ellenőrző kód"
+      ],
+      "Preferences could not be saved": [
+        "Beállítások mentése nem sikerült"
+      ],
+      "Some groups could not be deleted": [
+        ""
+      ],
+      "Image upload failed": [
+        "Képfeltöltés sikertelen"
+      ],
+      "Contact could not be saved": [
+        "A névjegy mentése nem sikerült"
+      ],
+      "Some contacts could not be deleted": [
+        "Néhány névjegy törlése nem sikerült"
+      ],
+      "Invalid public key file": [
+        "Érvénytelen nyilvános kulcs fájl"
+      ],
+      "You can't send a mail to more than 100 recipients": [
+        "Nem küldhet üzenetet több mint 100 címzettnek"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Az egyik névjegyhez nincs e-mail cím: ${ noEmailsContactNamesList }",
+        "Néhány névjegyhez nincs e-mail cím: ${ noEmailsContactNamesList } "
+      ],
+      "You can't send vCards of more than 10 contacts": [
+        "Egyszerre nem küldhet el több mint 10 vCard névjegyet"
+      ],
+      "There was an error when exporting the contacts vCards": [
+        "Hiba történt a névjegyek vCard formátumra exportálásakor"
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Az egyik csoportban nincsenek névjegyek: ${ noContactGroupList }",
+        "Néhány csoportban nincsenek névjegyek: ${ noContactGroupList } "
+      ],
+      "You must set a name": [
+        "Meg kell adnia egy nevet"
+      ],
+      "A group with this name already exists": [
+        "Már létezik csoport ezzel a névvel"
+      ],
+      "Invalid name": [
+        "Érvénytelen név"
+      ],
+      "File has no contents to preview": [
+        "Nincs előnézeti tartalom"
+      ],
+      "We were unable to connect to your service provider.": [
+        ""
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        ""
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Hibás e-mail titkosítási jelszó. Kérjük, próbálja újra"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Helytelen bejelentkezési adatok. Próbálja meg újra"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Legalább ${ minimumLength } karakter szükséges ebben a mezőben."
+      ],
+      "Email is not valid": [
+        "Érvénytelen e-mail cím"
+      ],
+      "Not a valid number": [
+        "Érvénytelen szám"
+      ],
+      "Passwords do not match": [
+        "A jelszavak nem egyeznek meg"
+      ],
+      "Request timed out.": [
+        "A kérés túllépte az időkorlátot."
+      ],
+      "Signature verification failed": [
+        "Aláírás ellenőrzése sikertelen"
+      ],
+      "Could not find address ${ email }.": [
+        "A(z) ${ email } e-mail cím nem található."
+      ],
+      "Missing signature": [
+        "Hiányzó aláírás"
+      ],
+      "Contact signature not verified": [
+        "Névjegy aláírása nincs ellenőrizve"
+      ],
+      "Signature not verified": [
+        "Aláírás nincs ellenőrizve"
+      ],
+      "No valid address found": [
+        "Nincs érvényes cím"
+      ],
+      "Incorrect password. Please try again.": [
+        "Hibás jelszó. Próbálja meg újra."
+      ]
+    },
     "Action": {
       "Close": [
         "Bezárás"
+      ],
+      "Confirm": [
+        "Megerősítés"
+      ],
+      "Cancel": [
+        "Mégsem"
+      ],
+      "Close modal": [
+        "Ablak bezárása"
+      ],
+      "Submit": [
+        "Küldés"
+      ],
+      "More info: ${ safeTitle }": [
+        "További információk: ${ safeTitle }"
+      ],
+      "Use “${ label }” setting": [
+        ""
       ],
       "Close navigation": [
         "Navigáció bezárása"
@@ -15,8 +166,8 @@
       "Open navigation": [
         "Navigáció megnyitása"
       ],
-      "Use “${ label }” setting": [
-        ""
+      "Go to panel ${ index }": [
+        "Váltás: ${ index }"
       ],
       "Load image": [
         "Kép betöltése"
@@ -57,62 +208,41 @@
       "Upload picture": [
         "Kép feltöltése"
       ],
-      "Confirm opening of link ${ link }": [
-        "Hivatkozás megnyitásának jóváhagyása: ${ link }"
-      ],
-      "Confirm": [
-        "Megerősítés"
-      ],
-      "Go to panel ${ index }": [
-        "Váltás: ${ index }"
-      ],
-      "More info: ${ safeTitle }": [
-        "További információk: ${ safeTitle }"
-      ],
       "Next month": [
         "Következő hónap"
       ],
       "Previous month": [
         "Előző hónap"
       ],
-      "Cancel": [
-        "Mégsem"
+      "Confirm opening of link ${ link }": [
+        "Hivatkozás megnyitásának jóváhagyása: ${ link }"
       ],
-      "Close modal": [
-        "Ablak bezárása"
+      "refresh the page": [
+        "oldalfrissítés"
       ],
-      "Submit": [
-        "Küldés"
+      "View invoice": [
+        "Számla megtekintése"
       ],
-      "Previous": [
-        "Előző"
+      "Get verification code": [
+        "Ellenőrző kód küldése"
       ],
-      "Next": [
-        "Következő"
+      "Try another method": [
+        "Másik módszer"
       ],
-      "Details": [
-        "Részletek"
+      "Request new code": [
+        "Új kód kérése"
       ],
-      "Share via link": [
-        "Megosztás hivatkozással"
+      "Verify": [
+        "Ellenőrzés"
       ],
-      "Sharing options": [
-        "Megosztási beállítások"
+      "Did not receive the code?": [
+        "Nem kapta meg a kódot?"
       ],
-      "Zoom out": [
-        "Távolítás"
+      "Edit email address": [
+        "E-mail cím módosítása"
       ],
-      "Reset zoom": [
-        "Nagyítás alaphelyzetbe"
-      ],
-      "Zoom in": [
-        "Közelítés"
-      ],
-      "Use ${ label } theme": [
-        "${ label } téma használata"
-      ],
-      "OK": [
-        "OK"
+      "Edit phone number": [
+        "Telefonszám módosítása"
       ],
       "Save": [
         "Mentés"
@@ -161,6 +291,9 @@
       ],
       "Preview contact": [
         "Névjegy előnézet"
+      ],
+      "Continue": [
+        "Tovább"
       ],
       "Delete contact": [
         "Névjegy törlése"
@@ -224,32 +357,32 @@
       "Import": [
         "Importálás"
       ],
-      "Continue": [
-        "Tovább"
+      "Next": [
+        "Következő"
       ],
-      "Continue import": [
-        ""
+      "Signing out": [
+        "Kijelentkezés"
       ],
-      "Discard": [
-        ""
+      "Details": [
+        "Részletek"
       ],
-      "Reconnect": [
-        ""
+      "Share via link": [
+        "Megosztás hivatkozással"
       ],
-      "Start import": [
-        ""
+      "Sharing options": [
+        "Megosztási beállítások"
       ],
-      "Get started": [
-        "Kezdés"
+      "Zoom out": [
+        "Távolítás"
       ],
-      "Start setup": [
-        "Beállítás megkezdése"
+      "Reset zoom": [
+        "Nagyítás alaphelyzetbe"
       ],
-      "Skip": [
-        "Kihagyás"
+      "Zoom in": [
+        "Közelítés"
       ],
-      "Back": [
-        "Vissza"
+      "Previous": [
+        "Előző"
       ],
       "Close this banner": [
         "Panel bezárása"
@@ -262,12 +395,6 @@
       ],
       "here": [
         ""
-      ],
-      "refresh the page": [
-        "oldalfrissítés"
-      ],
-      "Signing out": [
-        "Kijelentkezés"
       ],
       "Copy email to clipboard": [
         "E-mail másolása a vágólapra"
@@ -326,44 +453,86 @@
       "Show info": [
         "Információ megjelenítése"
       ],
-      "View invoice": [
-        "Számla megtekintése"
+      "Get started": [
+        "Kezdés"
       ],
-      "Get verification code": [
-        "Ellenőrző kód küldése"
+      "Start setup": [
+        "Beállítás megkezdése"
       ],
-      "Try another method": [
-        "Másik módszer"
+      "Skip": [
+        "Kihagyás"
       ],
-      "Request new code": [
-        "Új kód kérése"
+      "Back": [
+        "Vissza"
       ],
-      "Verify": [
-        "Ellenőrzés"
+      "Use ${ label } theme": [
+        "${ label } téma használata"
       ],
-      "Did not receive the code?": [
-        "Nem kapta meg a kódot?"
+      "OK": [
+        "OK"
       ],
-      "Edit email address": [
-        "E-mail cím módosítása"
+      "Continue import": [
+        ""
       ],
-      "Edit phone number": [
-        "Telefonszám módosítása"
+      "Discard": [
+        ""
+      ],
+      "Reconnect": [
+        ""
+      ],
+      "Start import": [
+        ""
       ],
       "Log in": [
         "Bejelentkezés"
       ],
-      "New upload": [
-        "Új feltöltés"
-      ],
       "Delete permanently": [
         "Végleges törlés"
       ],
-      "Restore from trash": [
-        "Visszaállítás a Lomtárból"
+      "Undo": [
+        "Visszavonás"
       ],
-      "Empty trash": [
-        "Lomtár ürítése"
+      "Maximize transfers": [
+        "Le- és feltöltések megnyitása"
+      ],
+      "Minimize transfers": [
+        "Le- és feltöltések összecsukása"
+      ],
+      "Close transfers": [
+        "Le- és feltöltések bezárása"
+      ],
+      "Pause download": [
+        "Letöltés szüneteltetése"
+      ],
+      "Pause upload": [
+        "Feltöltés szüneteltetése"
+      ],
+      "Resume download": [
+        "Letöltés folytatása"
+      ],
+      "Resume upload": [
+        "Feltöltés folytatása"
+      ],
+      "Cancel download": [
+        "Letöltés megszakítása"
+      ],
+      "Cancel upload": [
+        "Feltöltés megszakítása"
+      ],
+      "Restart download": [
+        "Letöltés újraindítása"
+      ],
+      "Restart upload": [
+        "Feltöltés újraindítása"
+      ],
+      "Remove from this list": [
+        "Eltávolítás a listából"
+      ],
+      "Cancel all uploads": [
+        ""
+      ],
+      "New upload": [
+        "Új feltöltés"
       ],
       "List layout": [
         "Lista elrendezés"
@@ -413,6 +582,12 @@
       "Upload folder": [
         "Mappa feltöltése"
       ],
+      "Restore from trash": [
+        "Visszaállítás a Lomtárból"
+      ],
+      "Empty trash": [
+        "Lomtár ürítése"
+      ],
       "Start recovering": [
         "Helyreállítás indítása"
       ],
@@ -442,56 +617,11 @@
       ],
       "Create link": [
         "Hivatkozás létrehozása"
-      ],
-      "Maximize transfers": [
-        "Le- és feltöltések megnyitása"
-      ],
-      "Minimize transfers": [
-        "Le- és feltöltések összecsukása"
-      ],
-      "Close transfers": [
-        "Le- és feltöltések bezárása"
-      ],
-      "Pause download": [
-        "Letöltés szüneteltetése"
-      ],
-      "Pause upload": [
-        "Feltöltés szüneteltetése"
-      ],
-      "Resume download": [
-        "Letöltés folytatása"
-      ],
-      "Resume upload": [
-        "Feltöltés folytatása"
-      ],
-      "Cancel download": [
-        "Letöltés megszakítása"
-      ],
-      "Cancel upload": [
-        "Feltöltés megszakítása"
-      ],
-      "Restart download": [
-        "Letöltés újraindítása"
-      ],
-      "Restart upload": [
-        "Feltöltés újraindítása"
-      ],
-      "Remove from this list": [
-        "Eltávolítás a listából"
-      ],
-      "Undo": [
-        "Visszavonás"
-      ],
-      "Cancel all uploads": [
-        ""
       ]
     },
     "Title": {
       "Open actions dropdown": [
         "Műveletek menü megnyitása"
-      ],
-      "What's new": [
-        "Újdonságok"
       ],
       "Upgrade required": [
         "Nagyobb csomag szükséges"
@@ -508,8 +638,17 @@
       "Keyboard Shortcuts": [
         "Gyorsbillentyűk"
       ],
-      "Select a theme": [
-        "Téma kiválasztása"
+      "What's new": [
+        "Újdonságok"
+      ],
+      "Invalid verification code": [
+        "Érvénytelen ellenőrző kód"
+      ],
+      "Request new verification code": [
+        "Új ellenőrző kód kérése"
+      ],
+      "Human verification": [
+        "Robot ellenőrzés"
       ],
       "Edit contact group": [
         "Névjegy csoport szerkesztése"
@@ -593,6 +732,9 @@
       "Merge contacts": [
         "Névjegyek egyesítése"
       ],
+      "Deleting contacts": [
+        ""
+      ],
       "View contacts": [
         "Névjegyek megtekintése"
       ],
@@ -620,15 +762,6 @@
       "Import contacts": [
         "Névjegyek importálása"
       ],
-      "Start import process": [
-        ""
-      ],
-      "Import in progress": [
-        ""
-      ],
-      "Beta Access": [
-        "Béta hozzáférés"
-      ],
       "Open help menu": [
         "Súgó menü megnyitása"
       ],
@@ -640,6 +773,15 @@
       ],
       "Report a problem": [
         "Probléma jelentése"
+      ],
+      "Select a theme": [
+        "Téma kiválasztása"
+      ],
+      "Start import process": [
+        ""
+      ],
+      "Import in progress": [
+        ""
       ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } gyorsbillentyűk"
@@ -653,14 +795,8 @@
       "Composer mode": [
         ""
       ],
-      "Invalid verification code": [
-        "Érvénytelen ellenőrző kód"
-      ],
-      "Request new verification code": [
-        "Új ellenőrző kód kérése"
-      ],
-      "Human verification": [
-        "Robot ellenőrzés"
+      "Beta Access": [
+        "Béta hozzáférés"
       ],
       "Sign in again to continue": [
         "Lépjen be újból a folytatáshoz"
@@ -674,14 +810,23 @@
       "Enter your password": [
         "Adja meg a jelszavát"
       ],
+      "Delete permanently": [
+        "Végleges törlés"
+      ],
+      "Stop sharing": [
+        "Megosztás megszüntetése"
+      ],
+      "Cancel all active transfers": [
+        "Minden folyamatban lévő átvitel megszakítása"
+      ],
+      "Duplicate folder found": [
+        ""
+      ],
+      "Duplicate file found": [
+        ""
+      ],
       "Drop to upload": [
         "Húzza a fájlokat ide a feltöltéshez"
-      ],
-      "Trash": [
-        "Lomtár"
-      ],
-      "Empty trash": [
-        "Lomtár ürítése"
       ],
       "Change layout": [
         "Elrendezés módosítása"
@@ -691,6 +836,12 @@
       ],
       "Sort files/folders": [
         "Fájlok és mappák rendezése"
+      ],
+      "Trash": [
+        "Lomtár"
+      ],
+      "Empty trash": [
+        "Lomtár ürítése"
       ],
       "Drive": [
         "Drive"
@@ -704,12 +855,6 @@
       "You have inaccessible files": [
         "Elérhetetlen fájljai vannak"
       ],
-      "Rename a folder": [
-        "Mappa átnevezése"
-      ],
-      "Rename a file": [
-        "Fájl átnevezése"
-      ],
       "My files": [
         "Saját fájlok"
       ],
@@ -718,6 +863,12 @@
       ],
       "You have no files to share": [
         "Még nincs fájl amit megoszthatna"
+      ],
+      "Rename a folder": [
+        "Mappa átnevezése"
+      ],
+      "Rename a file": [
+        "Fájl átnevezése"
       ],
       "File details": [
         "Fájl adatok"
@@ -764,12 +915,6 @@
       "Select link expiration time": [
         "Hivatkozás lejárati idejének kiválasztása"
       ],
-      "Discard changes?": [
-        "Módosítások elvetése?"
-      ],
-      "Discard": [
-        "Elvetés"
-      ],
       "Share via link": [
         "Megosztás hivatkozással"
       ],
@@ -782,6 +927,12 @@
       "Stop sharing with everyone?": [
         "Megszakítja a mindenkivel való megosztást?"
       ],
+      "Discard changes?": [
+        "Módosítások elvetése?"
+      ],
+      "Discard": [
+        "Elvetés"
+      ],
       "Files details": [
         "Fájlok adatai"
       ],
@@ -790,9 +941,6 @@
       ],
       "Total size": [
         "Teljes méret"
-      ],
-      "Cancel all active transfers": [
-        "Minden folyamatban lévő átvitel megszakítása"
       ],
       "Your file is ready to be downloaded": [
         "A fájl készen áll a letöltésre"
@@ -814,26 +962,20 @@
       ],
       "The link either does not exist or has expired": [
         "A hivatkozás nem létezik vagy leját"
-      ],
-      "Delete permanently": [
-        "Végleges törlés"
-      ],
-      "Stop sharing": [
-        "Megosztás megszüntetése"
-      ],
-      "Deleting contacts": [
-        ""
-      ],
-      "Duplicate folder found": [
-        ""
       ]
     },
     "Info": {
       "No results found": [
         "Nincs találat"
       ],
+      "Loading": [
+        "Betöltés"
+      ],
       "No contacts added yet": [
         "Még nincsenek névjegyek"
+      ],
+      "Week": [
+        "Hét"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Internet Explorerben és Edge-ben nem nyitható meg. Ha biztos benne, hogy ez egy érvényes link, használjon egy másik böngészőt a megnyitáshoz."
@@ -850,29 +992,38 @@
       "Drop the file here to upload": [
         "Húzza ide a fájlt a feltöltéshez"
       ],
-      "Week": [
-        "Hét"
+      "support team": [
+        ""
       ],
-      "Loading": [
-        "Betöltés"
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "A Proton fiók jelenleg fel van függesztve. A további használatához kérjük, egyenlítse ki a számlatartozását."
       ],
-      "of": [
-        "/"
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
       ],
-      "Unsupported file": [
-        "Nem támogatott fájltípus"
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
       ],
-      "No preview available": [
-        "Előnézet nem érhető el"
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
       ],
-      "Preview": [
-        "Előnézet"
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } címre új ellenőrzési kódot küldjünk. Ha hibás ez a cím, kattintson a Szerkesztés gombra."
       ],
-      "Loading preview": [
-        "Előnézet betöltése"
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } számra új ellenőrzési kódot küldjünk. Ha hibás ez a szám, kattintson a Szerkesztés gombra."
       ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "Ez a böngésző nem támogatja a PDF fájlok megjelenítését. Töltse le a fájlt."
+      "To fight spam and abuse, please verify you are human.": [
+        "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Az e-mail csak erre az egyszeri ellenőrzésre lesz felhasználva."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } tag",
@@ -960,8 +1111,8 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Ezeket a beállításokat csak akkor változtassa meg, ha nem ProtonMail címzettekkel használ PGP titkosítást."
       ],
-      "All uploaded keys are expired or revoked! Encryption is automatically disabled.": [
-        "Minden feltöltött kulcs lejárt vagy vissza van vonva. A titkosítás automatikusan kikapcsolt."
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        ""
       ],
       "Primary": [
         "Elsődleges"
@@ -987,29 +1138,26 @@
         "${ addressCount } e-mail cím",
         "${ addressCount } e-mail cím"
       ],
-      "Import contacts": [
-        ""
+      "Loading ${ appName }": [
+        "${ appName } betöltése"
       ],
-      "Your import has started!": [
-        ""
+      "Unsupported file": [
+        "Nem támogatott fájltípus"
       ],
-      "Your contacts are being imported from": [
-        ""
+      "No preview available": [
+        "Előnézet nem érhető el"
       ],
-      "to": [
-        ""
+      "Preview": [
+        "Előnézet"
       ],
-      "We will notify you once your import is finished.": [
-        ""
+      "Loading preview": [
+        "Előnézet betöltése"
       ],
-      "Large imports can take several days to complete.": [
-        ""
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        "Ez a böngésző nem támogatja a PDF fájlok megjelenítését. Töltse le a fájlt."
       ],
-      "You can continue using Proton services as usual.": [
-        ""
-      ],
-      "Your import will not be processed.": [
-        ""
+      "of": [
+        "/"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Lejárt számlatartozása van. Hozzáférése korlátozásra került. ${ payInvoiceLink }"
@@ -1050,47 +1198,38 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         ""
       ],
-      "Loading ${ appName }": [
-        "${ appName } betöltése"
-      ],
       "Screenshot(s) attached": [
         "Képernyőkép(ek) csatolva"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Az oldal frissítése vagy a ${ link } automatikusan megoldja a legtöbb problémát."
       ],
+      "Import contacts": [
+        ""
+      ],
+      "Your contacts are being imported from": [
+        ""
+      ],
+      "to": [
+        ""
+      ],
+      "Your import has started!": [
+        ""
+      ],
+      "We will notify you once your import is finished.": [
+        ""
+      ],
+      "Large imports can take several days to complete.": [
+        ""
+      ],
+      "You can continue using Proton services as usual.": [
+        ""
+      ],
+      "Your import will not be processed.": [
+        ""
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Az alapvető navigációs lehetőségek akkor is megmaradnak, ha a beállításokban letiltotta a gyorsbillentyűket."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "A Proton fiók jelenleg fel van függesztve. A további használatához kérjük, egyenlítse ki a számlatartozását."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } címre új ellenőrzési kódot küldjünk. Ha hibás ez a cím, kattintson a Szerkesztés gombra."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } számra új ellenőrzési kódot küldjünk. Ha hibás ez a szám, kattintson a Szerkesztés gombra."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Az e-mail csak erre az egyszeri ellenőrzésre lesz felhasználva."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
       ],
       "here": [
         "ide"
@@ -1109,6 +1248,128 @@
       ],
       "Servers are unreachable.": [
         "A szerverek nem érhetők el."
+      ],
+      "Loading folder contents": [
+        "Mappa tartalmának betöltése"
+      ],
+      "Uploading hundreds of files at once may have a performance impact.": [
+        "Fájlok százainak egyszerre való feltöltése fennakadásokat okozhat."
+      ],
+      "Are you sure you want to permanently delete selected item(s) from trash?": [
+        "Biztos, hogy véglegesen törli a kijelölt elemeket a lomtárból?"
+      ],
+      "This will delete the link(s) and remove access to your file(s) for anyone with the link(s).": [
+        "Ez törli a linkeket és megszünteti a fájlok elérhetőségét azok számára, akinek megvolt a link."
+      ],
+      "Moving files": [
+        "Fájlok áthelyezése"
+      ],
+      "You cannot undo this action.": [
+        "Ez a művelet nem vonható vissza."
+      ],
+      "${ doneCount } Finished": [
+        "${ doneCount } kész",
+        "${ doneCount } kész"
+      ],
+      "${ doneUploadsCount } Uploaded": [
+        "${ doneUploadsCount } Feltöltve",
+        "${ doneUploadsCount } Feltöltve"
+      ],
+      "${ doneDownloadsCount } Downloaded": [
+        "${ doneDownloadsCount } Letöltve",
+        "${ doneDownloadsCount } Letöltve"
+      ],
+      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
+        "${ activeUploadsCount } Feltöltés (${ uploadProgress }%)",
+        "${ activeUploadsCount } Feltöltés (${ uploadProgress }%)"
+      ],
+      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
+        "${ activeDownloadsCount } Letöltés (${ downloadProgress }%)",
+        "${ activeDownloadsCount } Letöltés (${ downloadProgress }%)"
+      ],
+      "${ pausedCount } Paused": [
+        "${ pausedCount } Felfüggesztve",
+        "${ pausedCount } Felfüggesztve"
+      ],
+      "${ canceledCount } Canceled": [
+        "${ canceledCount } Megszakítva",
+        "${ canceledCount } Megszakítva"
+      ],
+      "${ errorCount } Failed": [
+        "${ errorCount } Sikertelen",
+        "${ errorCount } Sikertelen"
+      ],
+      "Something went wrong, please try again later.": [
+        "Hiba történt. Kérjük, próbálkozzon később."
+      ],
+      "Initializing": [
+        "Inicializálás"
+      ],
+      "Conflict": [
+        ""
+      ],
+      "Queued": [
+        ""
+      ],
+      "${ speed }/s": [
+        "${ speed }/mp"
+      ],
+      "Paused": [
+        "Felfüggesztve"
+      ],
+      "Downloaded": [
+        "Letöltve"
+      ],
+      "Uploaded": [
+        "Feltöltve"
+      ],
+      "Failed": [
+        "Sikertelen"
+      ],
+      "Network issue": [
+        "Hálózati probléma"
+      ],
+      "Canceled": [
+        "Megszakítva"
+      ],
+      "Finalizing": [
+        "Befejezés"
+      ],
+      "Downloading": [
+        "Letöltés"
+      ],
+      "Uploading": [
+        "Feltöltés"
+      ],
+      "Closing transfer manager will cancel all active transfers, are you sure?": [
+        "Az áttöltéskezelő bezárása megszakítja az összes jelenlegi fájlátvitelt. Folytatja?"
+      ],
+      "${ uploadName } already exists in this location.": [
+        ""
+      ],
+      "What do you want to do?": [
+        ""
+      ],
+      "Folder contents will merge into a single folder": [
+        ""
+      ],
+      "A number will be added to the folder name": [
+        ""
+      ],
+      "A number will be added to the filename": [
+        ""
+      ],
+      "This will overwrite the existing folder": [
+        ""
+      ],
+      "This will overwrite the existing file": [
+        ""
+      ],
+      "Folder will not be uploaded": [
+        ""
+      ],
+      "File will not be uploaded": [
+        ""
       ],
       "Your files will be encrypted and then saved.": [
         "A fájlok titkosításra majd pedig feltöltésre kerülnek."
@@ -1164,8 +1425,8 @@
       "Only the people with the link and the password can access this file.": [
         ""
       ],
-      "You will lose all unsaved changes.": [
-        "Elveszíti a nem mentett módosításokat."
+      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
+        ""
       ],
       "Your secure, shareable link for ${ boldNameText }:": [
         "A biztonságos, megosztható hivatkozás ehhez: ${ boldNameText }:"
@@ -1173,88 +1434,20 @@
       "Failed to generate a secure link. Try again later.": [
         "Nem sikerült a biztonságos link létrehozása. Próbálja meg később."
       ],
+      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
+        "A hivatkozás véglegesen letiltásra kerül. Azok, akikkel korábban megosztotta, nem fognak hozzáférni a fájlhoz. A fájl újbóli megosztásához egy új hivatkozásra lesz szükség."
+      ],
+      "You will lose all unsaved changes.": [
+        "Elveszíti a nem mentett módosításokat."
+      ],
       "Preparing link to file": [
         "A fájl linkjének előkészítése"
       ],
       "Creating link to file": [
         "A fájl linkjének létrehozása"
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "A hivatkozás véglegesen letiltásra kerül. Azok, akikkel korábban megosztotta, nem fognak hozzáférni a fájlhoz. A fájl újbóli megosztásához egy új hivatkozásra lesz szükség."
-      ],
       "Select an uploaded file and create a link to it.": [
         "Válasszon ki egy feltöltött fájlt és hozzon létre egy linket hozzá."
-      ],
-      "${ doneCount } Finished": [
-        "${ doneCount } kész",
-        "${ doneCount } kész"
-      ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } Feltöltve",
-        "${ doneUploadsCount } Feltöltve"
-      ],
-      "${ doneDownloadsCount } Downloaded": [
-        "${ doneDownloadsCount } Letöltve",
-        "${ doneDownloadsCount } Letöltve"
-      ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } Feltöltés (${ uploadProgress }%)",
-        "${ activeUploadsCount } Feltöltés (${ uploadProgress }%)"
-      ],
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } Letöltés (${ downloadProgress }%)",
-        "${ activeDownloadsCount } Letöltés (${ downloadProgress }%)"
-      ],
-      "${ pausedCount } Paused": [
-        "${ pausedCount } Felfüggesztve",
-        "${ pausedCount } Felfüggesztve"
-      ],
-      "${ canceledCount } Canceled": [
-        "${ canceledCount } Megszakítva",
-        "${ canceledCount } Megszakítva"
-      ],
-      "${ errorCount } Failed": [
-        "${ errorCount } Sikertelen",
-        "${ errorCount } Sikertelen"
-      ],
-      "Something went wrong, please try again later.": [
-        "Hiba történt. Kérjük, próbálkozzon később."
-      ],
-      "Initializing": [
-        "Inicializálás"
-      ],
-      "${ speed }/s": [
-        "${ speed }/mp"
-      ],
-      "Paused": [
-        "Felfüggesztve"
-      ],
-      "Downloaded": [
-        "Letöltve"
-      ],
-      "Uploaded": [
-        "Feltöltve"
-      ],
-      "Failed": [
-        "Sikertelen"
-      ],
-      "Network issue": [
-        "Hálózati probléma"
-      ],
-      "Canceled": [
-        "Megszakítva"
-      ],
-      "Finalizing": [
-        "Befejezés"
-      ],
-      "Downloading": [
-        "Letöltés"
-      ],
-      "Uploading": [
-        "Feltöltés"
-      ],
-      "Closing transfer manager will cancel all active transfers, are you sure?": [
-        "Az áttöltéskezelő bezárása megszakítja az összes jelenlegi fájlátvitelt. Folytatja?"
       ],
       "Link expires: ": [
         "A link lejár: "
@@ -1271,266 +1464,17 @@
       "Your file is being downloaded.": [
         "A fájl letöltés alatt."
       ],
-      "You cannot undo this action.": [
-        "Ez a művelet nem vonható vissza."
-      ],
-      "Loading folder contents": [
-        "Mappa tartalmának betöltése"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Fájlok százainak egyszerre való feltöltése fennakadásokat okozhat."
-      ],
-      "Are you sure you want to permanently delete selected item(s) from trash?": [
-        "Biztos, hogy véglegesen törli a kijelölt elemeket a lomtárból?"
-      ],
-      "This will delete the link(s) and remove access to your file(s) for anyone with the link(s).": [
-        "Ez törli a linkeket és megszünteti a fájlok elérhetőségét azok számára, akinek megvolt a link."
-      ],
-      "Moving files": [
-        "Fájlok áthelyezése"
-      ],
       "Trash": [
         "Lomtár"
       ],
       "My Links": [
         "Saját hivatkozások"
-      ],
-      "What do you want to do?": [
-        ""
-      ],
-      "Folder contents will merge into a single folder": [
-        ""
-      ],
-      "A number will be added to the folder name": [
-        ""
-      ],
-      "A number will be added to the filename": [
-        ""
-      ],
-      "This will overwrite the existing folder": [
-        ""
-      ],
-      "This will overwrite the existing file": [
-        ""
-      ],
-      "Folder will not be uploaded": [
-        ""
-      ],
-      "File will not be uploaded": [
-        ""
-      ],
-      "Conflict": [
-        ""
-      ],
-      "Queued": [
-        ""
-      ]
-    },
-    "Storage": {
-      "Your current storage:": [
-        "Jelenlegi tárhelye:"
-      ],
-      "Upgrade storage": [
-        "Tárhely bővítése"
-      ],
-      "Release notes": [
-        "Kiadási megjegyzések"
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "Pl., "
-      ],
-      "Start typing an email address": [
-        "Kezdjen el írni egy e-mail címet"
-      ],
-      "Image URL": [
-        "Kép URL"
-      ],
-      "Filter groups": [
-        "Csoportok szűrése"
-      ],
-      "Search for name or email": [
-        "Név vagy e-mail cím keresése"
-      ],
-      "Search for group name": [
-        "Csoport név keresése"
-      ],
-      "Name": [
-        "Név"
-      ],
-      "e.g. Julia Smith": [
-        "pl. Kovács János"
-      ],
-      "OS name": [
-        "Operációs rendszer neve"
-      ],
-      "OS version": [
-        "Operációs rendszer verzió"
-      ],
-      "Proton username": [
-        "Proton felhasználónév"
-      ],
-      "A way to contact you": [
-        "Kapcsolatfelvételi lehetőség"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Írja le a problémát és másolja be az esetleges hibaüzeneteket"
-      ],
-      "Browser name": [
-        "Böngésző neve"
-      ],
-      "Browser version": [
-        "Böngésző verziója"
-      ],
-      "Mailbox password": [
-        "E-mail titkosítási jelszó"
-      ],
-      "New name": [
-        "Új név"
-      ],
-      "Enter a new folder name": [
-        "Adja meg az új mappa nevét"
-      ]
-    },
-    "Error": {
-      "Email address invalid": [
-        "Érvénytelen e-mail cím"
-      ],
-      "This field is required": [
-        "A mező kitöltése kötelező"
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Ez az üzenet olyan hivatkozásokat tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni"
-      ],
-      "Authentication canceled.": [
-        ""
-      ],
-      "Your import will not be processed.": [
-        ""
-      ],
-      "Authentication error.": [
-        ""
-      ],
-      "Unknown error": [
-        "Ismeretlen hiba"
-      ],
-      "File has no contents to preview": [
-        "Nincs előnézeti tartalom"
-      ],
-      "Preferences could not be saved": [
-        "Beállítások mentése nem sikerült"
-      ],
-      "Image upload failed": [
-        "Képfeltöltés sikertelen"
-      ],
-      "Contact could not be saved": [
-        "A névjegy mentése nem sikerült"
-      ],
-      "Some contacts could not be deleted": [
-        "Néhány névjegy törlése nem sikerült"
-      ],
-      "Invalid public key file": [
-        "Érvénytelen nyilvános kulcs fájl"
-      ],
-      "You can't send a mail to more than 100 recipients": [
-        "Nem küldhet üzenetet több mint 100 címzettnek"
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Az egyik névjegyhez nincs e-mail cím: ${ noEmailsContactNamesList }",
-        "Néhány névjegyhez nincs e-mail cím: ${ noEmailsContactNamesList } "
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "Egyszerre nem küldhet el több mint 10 vCard névjegyet"
-      ],
-      "There was an error when exporting the contacts vCards": [
-        "Hiba történt a névjegyek vCard formátumra exportálásakor"
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "Az egyik csoportban nincsenek névjegyek: ${ noContactGroupList }",
-        "Néhány csoportban nincsenek névjegyek: ${ noContactGroupList } "
-      ],
-      "You must set a name": [
-        "Meg kell adnia egy nevet"
-      ],
-      "A group with this name already exists": [
-        "Már létezik csoport ezzel a névvel"
-      ],
-      "Invalid name": [
-        "Érvénytelen név"
-      ],
-      "We were unable to connect to your service provider.": [
-        ""
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        ""
-      ],
-      "Can't validate email, try again later": [
-        "E-mail ellenőrzése nem sikerült, próbálja meg később"
-      ],
-      "Can't validate phone, try again later": [
-        "Telefonszám ellenőrzése nem sikerült, próbálja meg később"
-      ],
-      "Enter 6 digits": [
-        "6 számjegyet írjon be"
-      ],
-      "Invalid verification code": [
-        "Érvénytelen ellenőrző kód"
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Hibás e-mail titkosítási jelszó. Kérjük, próbálja újra"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Helytelen bejelentkezési adatok. Próbálja meg újra"
-      ],
-      "Missing signature": [
-        "Hiányzó aláírás"
-      ],
-      "Contact signature not verified": [
-        "Névjegy aláírása nincs ellenőrizve"
-      ],
-      "Signature not verified": [
-        "Aláírás nincs ellenőrizve"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Legalább ${ minimumLength } karakter szükséges ebben a mezőben."
-      ],
-      "Email is not valid": [
-        "Érvénytelen e-mail cím"
-      ],
-      "Not a valid number": [
-        "Érvénytelen szám"
-      ],
-      "Passwords do not match": [
-        "A jelszavak nem egyeznek meg"
-      ],
-      "Request timed out.": [
-        "A kérés túllépte az időkorlátot."
-      ],
-      "Signature verification failed": [
-        "Aláírás ellenőrzése sikertelen"
-      ],
-      "Could not find address ${ email }.": [
-        "A(z) ${ email } e-mail cím nem található."
-      ],
-      "Incorrect password. Please try again.": [
-        "Hibás jelszó. Próbálja meg újra."
-      ],
-      "No valid address found": [
-        "Nincs érvényes cím"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } óra",
-        "${ hours } óra"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } perc",
-        "${ minutes } perc"
       ]
     },
     "Label": {
+      "Copy": [
+        "Másolás"
+      ],
       "Reveal password": [
         "Jelszó felfedése"
       ],
@@ -1558,11 +1502,20 @@
       "Extended address": [
         "Bővebb cím"
       ],
-      "Copy": [
-        "Másolás"
-      ],
       "Do not ask again": [
         "Ne kérdezze újra"
+      ],
+      "Email address": [
+        "E-mail cím"
+      ],
+      "Phone number": [
+        "Telefonszám"
+      ],
+      "Verification code": [
+        "Ellenőrző kód"
+      ],
+      "Enter the 6-digit code": [
+        "Írja be a hatjegyű kódot"
       ],
       "Add email address": [
         "E-mail cím hozzáadása"
@@ -1600,18 +1553,6 @@
       "Export contacts": [
         "Névjegyek exportálása"
       ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Display name": [
-        "Megjelenített név"
-      ],
-      "Enable Beta Access": [
-        "Béta hozzáférés engedélyezése"
-      ],
       "Operating system": [
         "Operációs rendszer"
       ],
@@ -1620,9 +1561,6 @@
       ],
       "Proton username": [
         "Proton felhasználónév"
-      ],
-      "Email address": [
-        "E-mail cím"
       ],
       "Category": [
         "Kategória"
@@ -1639,6 +1577,15 @@
       "Browser version": [
         "Böngésző verziója"
       ],
+      "Display name": [
+        "Megjelenített név"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
       "Keyboard shortcuts": [
         "Gyorsbillentyűk"
       ],
@@ -1651,14 +1598,8 @@
       "Select how your composer opens by default.": [
         ""
       ],
-      "Phone number": [
-        "Telefonszám"
-      ],
-      "Verification code": [
-        "Ellenőrző kód"
-      ],
-      "Enter the 6-digit code": [
-        "Írja be a hatjegyű kódot"
+      "Enable Beta Access": [
+        "Béta hozzáférés engedélyezése"
       ],
       "Cancel": [
         "Mégsem"
@@ -1678,6 +1619,30 @@
       "Username or ProtonMail address": [
         "Felhasználónév vagy ProtonMail cím"
       ],
+      "Merge a folder": [
+        ""
+      ],
+      "Upload anyway": [
+        ""
+      ],
+      "Replace folder": [
+        ""
+      ],
+      "Replace file": [
+        ""
+      ],
+      "Skip folder": [
+        ""
+      ],
+      "Skip file": [
+        ""
+      ],
+      "Apply to all duplicated folders": [
+        ""
+      ],
+      "Apply to all duplicated files": [
+        ""
+      ],
       "Audio file": [
         "Hangfájl"
       ],
@@ -1692,12 +1657,6 @@
       ],
       "Unknown file": [
         "Ismeretlen fájl"
-      ],
-      "Folder name": [
-        "Mappa neve"
-      ],
-      "File name": [
-        "Fájl neve"
       ],
       "Folder": [
         "Mappa"
@@ -1714,6 +1673,12 @@
       "File": [
         "Fájl"
       ],
+      "Folder name": [
+        "Mappa neve"
+      ],
+      "File name": [
+        "Fájl neve"
+      ],
       "Protect with password": [
         "Jelszavas védelem"
       ],
@@ -1722,24 +1687,120 @@
       ],
       "Report abuse": [
         "Visszaélés jelentése"
-      ],
-      "Merge a folder": [
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
         ""
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "További információk"
       ],
-      "Upload anyway": [
-        ""
+      "Request an invite": [
+        "Meghívó kérése"
       ],
-      "Apply to all duplicated folders": [
-        ""
+      "Pay invoice": [
+        "Számla befizetése"
       ],
-      "Apply to all duplicated files": [
-        ""
+      "Upgrade account": [
+        "Csomag váltása"
       ],
-      "Replace folder": [
-        ""
+      "Upgrade": [
+        "Váltás nagyobb csomagra"
       ],
-      "Skip folder": [
-        ""
+      "Go to subscription plans": [
+        "Előfizetési csomagok megnyitása"
+      ],
+      "clearing your browser cache": [
+        "böngésző gyorsítótárának ürítése"
+      ],
+      "My files": [
+        "Saját fájlok"
+      ],
+      "Shared": [
+        "Megosztott"
+      ],
+      "Trash": [
+        "Lomtár"
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Pl., "
+      ],
+      "Start typing an email address": [
+        "Kezdjen el írni egy e-mail címet"
+      ],
+      "Image URL": [
+        "Kép URL"
+      ],
+      "Filter groups": [
+        "Csoportok szűrése"
+      ],
+      "Search for name or email": [
+        "Név vagy e-mail cím keresése"
+      ],
+      "Search for group name": [
+        "Csoport név keresése"
+      ],
+      "Name": [
+        "Név"
+      ],
+      "OS name": [
+        "Operációs rendszer neve"
+      ],
+      "OS version": [
+        "Operációs rendszer verzió"
+      ],
+      "Proton username": [
+        "Proton felhasználónév"
+      ],
+      "A way to contact you": [
+        "Kapcsolatfelvételi lehetőség"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Írja le a problémát és másolja be az esetleges hibaüzeneteket"
+      ],
+      "Browser name": [
+        "Böngésző neve"
+      ],
+      "Browser version": [
+        "Böngésző verziója"
+      ],
+      "e.g. Julia Smith": [
+        "pl. Kovács János"
+      ],
+      "Mailbox password": [
+        "E-mail titkosítási jelszó"
+      ],
+      "New name": [
+        "Új név"
+      ],
+      "Enter a new folder name": [
+        "Adja meg az új mappa nevét"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } óra",
+        "${ hours } óra"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } perc",
+        "${ minutes } perc"
+      ]
+    },
+    "Storage": {
+      "Your current storage:": [
+        "Jelenlegi tárhelye:"
+      ],
+      "Upgrade storage": [
+        "Tárhely bővítése"
+      ],
+      "Release notes": [
+        "Kiadási megjegyzések"
       ]
     },
     "Tooltip": {
@@ -1872,14 +1933,14 @@
       "Contacts could not be merged": [
         "A névjegyek egyesítése nem sikerült"
       ],
-      "Are you sure you want to discard your import?": [
-        ""
-      ],
       "Your local date & time settings seem to be out of sync.": [
         "A helyi dátum és idő beállítása valószínűleg hibás."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "A hibajelentések nem végpontok közt titkosítottak, kérünk ne küldjön semmilyen érzékeny információt."
+      ],
+      "Are you sure you want to discard your import?": [
+        ""
       ]
     },
     "Success": {
@@ -1891,6 +1952,12 @@
       ],
       "Address copied to clipboard": [
         "Cím a vágólapra másolva"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Kód elküldve: ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Sikeres ellenőrzés"
       ],
       "Preferences saved": [
         "Beállítások mentve"
@@ -1912,20 +1979,17 @@
       "Fingerprint copied to clipboard": [
         "Ujjlenyomat a vágólapra másolva"
       ],
+      "Bug reported": [
+        "Hiba bejelentve"
+      ],
       "Preference saved": [
         "Beállítások mentve"
       ],
       "Keyboard shortcuts preferences updated": [
         "Gyorsbillentyű beállítások frissítve"
       ],
-      "Bug reported": [
-        "Hiba bejelentve"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Kód elküldve: ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Sikeres ellenőrzés"
+      "Your files were successfully recovered to \"My files\".": [
+        "A fájljai sikeresen visszaállítva a \"Saját fájlok\" alá."
       ],
       "Recovery has started.": [
         "A helyreállítás megkezdődött."
@@ -1938,9 +2002,6 @@
       ],
       "The link to your file was successfully copied.": [
         "A fájlra mutató hivatkozás sikeresen másolva."
-      ],
-      "Your files were successfully recovered to \"My files\".": [
-        "A fájljai sikeresen visszaállítva a \"Saját fájlok\" alá."
       ]
     },
     "Hint": {
@@ -1952,36 +2013,26 @@
         "${ items.length } javaslatot találtunk, használja a billentyűzetet a navigáláshoz."
       ]
     },
-    "Link": {
-      "Learn more": [
-        "További információk"
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Lejárt számla"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
-      "Pay invoice": [
-        "Számla befizetése"
+      "Email": [
+        "E-mail"
       ],
-      "Upgrade account": [
-        "Csomag váltása"
+      "SMS": [
+        "SMS"
       ],
-      "Upgrade": [
-        "Váltás nagyobb csomagra"
+      "Manual": [
+        "Kézi"
       ],
-      "Go to subscription plans": [
-        "Előfizetési csomagok megnyitása"
-      ],
-      "clearing your browser cache": [
-        "böngésző gyorsítótárának ürítése"
-      ],
-      "Request an invite": [
-        "Meghívó kérése"
-      ],
-      "My files": [
-        "Saját fájlok"
-      ],
-      "Shared": [
-        "Megosztott"
-      ],
-      "Trash": [
-        "Lomtár"
+      "No verification method available": [
+        "Nincs elérhető ellenőrzési módszer"
       ]
     },
     "Notification": {
@@ -1991,41 +2042,8 @@
       "Contact group created": [
         "Névjegy csoport létrehozva"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Minden elem hamarosan törlésre fog kerülni a Lomtárban"
-      ],
-      "Move ${ movingCount } file": [
-        "${ movingCount } fájl áthelyezése",
-        "${ movingCount } fájl áthelyezése"
-      ],
-      "Move ${ movingCount } folder": [
-        "${ movingCount } mappa áthelyezése",
-        "${ movingCount } mappa áthelyezése"
-      ],
-      "Move ${ movingCount } item": [
-        "${ movingCount } elem áthelyezése",
-        "${ movingCount } elem áthelyezése"
-      ],
-      "Move ${ itemsToMoveCount } file": [
-        "${ itemsToMoveCount } fájl áthelyezése",
-        "${ itemsToMoveCount } fájl áthelyezése"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "${ itemsToMoveCount } mappa áthelyezése",
-        "${ itemsToMoveCount } mappa áthelyezése"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "${ itemsToMoveCount } elem áthelyezése",
-        "${ itemsToMoveCount } elem áthelyezése"
-      ],
-      "Your settings have been changed successfully.": [
-        "A beállítások módosítása sikeresen megtörtént."
-      ],
-      "The link to your file was deleted.": [
-        "A fájlra vonatkozó hivatkozás törölve."
-      ],
-      "Failed to move, please try again": [
-        "Nem sikerült áthelyezni, próbálja meg újra"
+      "Not enough space to upload ${ formattedRemaining }": [
+        "Nincs elég hely a feltöltéshez: ${ formattedRemaining }"
       ],
       "\"${ firstItemName }\" deleted permanently from trash": [
         "\"${ firstItemName }\" véglegesen törölve a lomtárból"
@@ -2105,6 +2123,9 @@
         "${ failedMovesCount } elem áthelyezése nem sikerült",
         "${ failedMovesCount } elem áthelyezése nem sikerült"
       ],
+      "The link to your file was deleted.": [
+        "A fájlra vonatkozó hivatkozás törölve."
+      ],
       "${ deletedCount } link to your file was deleted.": [
         "${ deletedCount } hivatkozás a fájlra törlésre került.",
         "${ deletedCount } hivatkozás a fájlra törlésre került."
@@ -2116,8 +2137,38 @@
         "${ failedCount }, a fájlra vonatkozó hivatkozás törlése nem sikerült.",
         "${ failedCount }, a fájlra vonatkozó hivatkozás törlése nem sikerült."
       ],
-      "Not enough space to upload ${ formattedRemaining }": [
-        "Nincs elég hely a feltöltéshez: ${ formattedRemaining }"
+      "All items will soon be permanently deleted from trash": [
+        "Minden elem hamarosan törlésre fog kerülni a Lomtárban"
+      ],
+      "Move ${ movingCount } file": [
+        "${ movingCount } fájl áthelyezése",
+        "${ movingCount } fájl áthelyezése"
+      ],
+      "Move ${ movingCount } folder": [
+        "${ movingCount } mappa áthelyezése",
+        "${ movingCount } mappa áthelyezése"
+      ],
+      "Move ${ movingCount } item": [
+        "${ movingCount } elem áthelyezése",
+        "${ movingCount } elem áthelyezése"
+      ],
+      "Move ${ itemsToMoveCount } file": [
+        "${ itemsToMoveCount } fájl áthelyezése",
+        "${ itemsToMoveCount } fájl áthelyezése"
+      ],
+      "Move ${ itemsToMoveCount } folder": [
+        "${ itemsToMoveCount } mappa áthelyezése",
+        "${ itemsToMoveCount } mappa áthelyezése"
+      ],
+      "Move ${ itemsToMoveCount } item": [
+        "${ itemsToMoveCount } elem áthelyezése",
+        "${ itemsToMoveCount } elem áthelyezése"
+      ],
+      "Your settings have been changed successfully.": [
+        "A beállítások módosítása sikeresen megtörtént."
+      ],
+      "Failed to move, please try again": [
+        "Nem sikerült áthelyezni, próbálja meg újra"
       ]
     },
     "Label for contact group name": {
@@ -2145,9 +2196,6 @@
       "Progress: ${ combinedProgress }%": [
         "Feldolgozás: ${ combinedProgress }%"
       ],
-      "No contacts merged.": [
-        "Egyetlen névjegy sem került egyesítésre."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "",
         ""
@@ -2155,6 +2203,9 @@
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
         "",
         ""
+      ],
+      "No contacts merged.": [
+        "Egyetlen névjegy sem került egyesítésre."
       ]
     },
     "Description": {
@@ -2163,6 +2214,9 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek egyesítése. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
+      ],
+      "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
+        ""
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Húzással határozza meg az egyesítés prioritását. Szüntesse meg a kijelölést azoknál, amelyeket nem szeretne egyesíteni."
@@ -2179,9 +2233,6 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
-      ],
-      "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        ""
       ]
     },
     "TableHeader": {
@@ -2354,82 +2405,6 @@
         "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Feltöltés"
-      ]
-    },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        ""
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        ""
-      ],
-      "Configure Import": [
-        ""
-      ],
-      "Import": [
-        ""
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        ""
-      ]
-    },
-    "Onboarding Proton": {
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Ezt fogják látni a címzettek, ha e-mailt küld, esemény meghívót küld, vagy fájlokat oszt meg."
-      ],
-      "Choose a display name": [
-        "Válasszon egy megjelenített nevet"
-      ],
-      "Select a theme": [
-        "Téma kiválasztása"
-      ],
-      "You can change this anytime in your settings.": [
-        "Ezt a beállításoknál bármikor megváltoztathatja."
-      ],
-      "Discover all Proton services": [
-        "Fedezze fel a Proton szolgáltatásokat"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Használja a bal felső sarokban található alkalmazás választót a Proton szolgáltatások eléréshez, mint például a VPN, Calendar vagy a Drive."
-      ],
-      "Welcome to Proton": [
-        "Üdvözöljük a Protonnál"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Célunk egy olyan internet felépítése, ahol az adatai és a magánszférája a saját kezében van. A közelmúltban frissítettük a Protont - üdvözöljük a biztonságos interneten."
-      ],
-      "Set up your organization": [
-        "Állítsa be szervezete adatait"
-      ],
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Állítsa be a saját szervezete adatait, irányítsa át a domain nevét, hozza létre a fiókokat, hogy a szervezet minden tagja élhessen a védelemmel."
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "A Béta hozzáférés lehetővé teszi az ön számára, hogy a ProtonMail, a Proton Calendar és a Proton Drive béta verzióit használja, mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez azt jelenti, hogy ön lehet az első, aki kipróbálja az új termékeket, megkapja a legújabb frissítéseket, valamint használhatja a legújabb funkciókat."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Ha problémába ütközik, mindig lesz lehetősége letiltani a Béta hozzáférést."
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Figyelem: Az \"Alkalmazás\" gombra kattintva a szolgáltatás újraindul."
-      ]
-    },
-    "Message display when a new app version is available": {
-      "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "A ${ appName } új verziója érhető el. ${ reloadButton }."
-      ]
-    },
     "Apps dropdown": {
       "Proton applications": [
         "Proton alkalmazások"
@@ -2454,23 +2429,28 @@
       "Error: ${ errorMessage }": [
         "Hiba: ${ errorMessage }"
       ],
-      "Access denied": [
-        "Hozzáférés megtagadva"
+      "Brace yourself till we get the error fixed.": [
+        "Kérjük várjon, amíg a hibát elhárítjuk."
       ],
-      "Not found": [
-        "Nem található"
+      "You may also ${ refresh } or try again later.": [
+        "Megpróbálhatja ${ refresh } az oldalt vagy később újra próbálni."
       ],
       "Internal server error": [
         "Belső szerverhiba"
       ],
-      "Brace yourself till we get the error fixed.": [
-        "Kérjük várjon, amíg a hibát elhárítjuk."
-      ],
       "You may also refresh the page or try again later.": [
         "Megpróbálhatja frissíteni az oldalt vagy később újra próbálni."
       ],
-      "You may also ${ refresh } or try again later.": [
-        "Megpróbálhatja ${ refresh } az oldalt vagy később újra próbálni."
+      "Not found": [
+        "Nem található"
+      ],
+      "Access denied": [
+        "Hozzáférés megtagadva"
+      ]
+    },
+    "Message display when a new app version is available": {
+      "A new version of ${ appName } is available. ${ reloadButton }.": [
+        "A ${ appName } új verziója érhető el. ${ reloadButton }."
       ]
     },
     "Text": {
@@ -2615,6 +2595,77 @@
         "Képernyőkép csatolása"
       ]
     },
+    "Onboarding Proton": {
+      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
+        "Ezt fogják látni a címzettek, ha e-mailt küld, esemény meghívót küld, vagy fájlokat oszt meg."
+      ],
+      "Choose a display name": [
+        "Válasszon egy megjelenített nevet"
+      ],
+      "Select a theme": [
+        "Téma kiválasztása"
+      ],
+      "You can change this anytime in your settings.": [
+        "Ezt a beállításoknál bármikor megváltoztathatja."
+      ],
+      "Discover all Proton services": [
+        "Fedezze fel a Proton szolgáltatásokat"
+      ],
+      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
+        "Használja a bal felső sarokban található alkalmazás választót a Proton szolgáltatások eléréshez, mint például a VPN, Calendar vagy a Drive."
+      ],
+      "Welcome to Proton": [
+        "Üdvözöljük a Protonnál"
+      ],
+      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
+        "Célunk egy olyan internet felépítése, ahol az adatai és a magánszférája a saját kezében van. A közelmúltban frissítettük a Protont - üdvözöljük a biztonságos interneten."
+      ],
+      "Set up your organization": [
+        "Állítsa be szervezete adatait"
+      ],
+      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
+        "Állítsa be a saját szervezete adatait, irányítsa át a domain nevét, hozza létre a fiókokat, hogy a szervezet minden tagja élhessen a védelemmel."
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        ""
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        ""
+      ],
+      "Configure Import": [
+        ""
+      ],
+      "Import": [
+        ""
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Feltöltés"
+      ]
+    },
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "A Béta hozzáférés lehetővé teszi az ön számára, hogy a ProtonMail, a Proton Calendar és a Proton Drive béta verzióit használja, mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez azt jelenti, hogy ön lehet az első, aki kipróbálja az új termékeket, megkapja a legújabb frissítéseket, valamint használhatja a legújabb funkciókat."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Ha problémába ütközik, mindig lesz lehetősége letiltani a Béta hozzáférést."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Figyelem: Az \"Alkalmazás\" gombra kattintva a szolgáltatás újraindul."
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         ""
@@ -2639,31 +2690,78 @@
         ""
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Lejárt számla"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
+    "Contact field label": {
+      "Name": [
+        "Név"
+      ],
+      "Compact name": [
+        "Tömör név"
+      ],
+      "Nickname": [
+        "Becenév"
       ],
       "Email": [
         "E-mail"
       ],
-      "SMS": [
-        "SMS"
+      "Phone": [
+        "Telefonszám"
       ],
-      "Manual": [
-        "Kézi"
+      "Address": [
+        "Cím"
       ],
-      "No verification method available": [
-        "Nincs elérhető ellenőrzési módszer"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "ismeretlen"
+      "Photo": [
+        "Fénykép"
+      ],
+      "Organization": [
+        "Szervezet"
+      ],
+      "Birthday": [
+        "Születésnap"
+      ],
+      "Anniversary": [
+        "Évforduló"
+      ],
+      "Title": [
+        "Beosztás"
+      ],
+      "Role": [
+        "Tevékenység"
+      ],
+      "Note": [
+        "Megjegyzés"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Gender": [
+        "Nem"
+      ],
+      "Language": [
+        "Nyelv"
+      ],
+      "Timezone": [
+        "Időzóna"
+      ],
+      "Geo": [
+        "Földrajzi hely"
+      ],
+      "Logo": [
+        "Logó"
+      ],
+      "Member": [
+        "Tag"
+      ],
+      "IMPP": [
+        "IMPP"
+      ],
+      "Related": [
+        "Kapcsolódó"
+      ],
+      "Categories": [
+        "Kategóriák"
+      ],
+      "Sound": [
+        "Hang"
       ]
     },
     "Contact type label": {
@@ -2787,78 +2885,34 @@
         "Vészhelyzeti"
       ]
     },
-    "Contact field label": {
-      "Name": [
-        "Név"
+    "file size format": {
+      "bytes": [
+        "bájt"
       ],
-      "Compact name": [
-        "Tömör név"
+      "KB": [
+        "KB"
       ],
-      "Nickname": [
-        "Becenév"
+      "MB": [
+        "MB"
       ],
-      "Email": [
-        "E-mail"
-      ],
-      "Phone": [
-        "Telefonszám"
-      ],
-      "Address": [
-        "Cím"
-      ],
-      "Photo": [
-        "Fénykép"
-      ],
-      "Organization": [
-        "Szervezet"
-      ],
-      "Birthday": [
-        "Születésnap"
-      ],
-      "Anniversary": [
-        "Évforduló"
-      ],
-      "Title": [
-        "Beosztás"
-      ],
-      "Role": [
-        "Tevékenység"
-      ],
-      "Note": [
-        "Megjegyzés"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Gender": [
-        "Nem"
-      ],
-      "Language": [
-        "Nyelv"
-      ],
-      "Timezone": [
-        "Időzóna"
-      ],
-      "Geo": [
-        "Földrajzi hely"
-      ],
-      "Logo": [
-        "Logó"
-      ],
-      "Member": [
-        "Tag"
-      ],
-      "IMPP": [
-        "IMPP"
-      ],
-      "Related": [
-        "Kapcsolódó"
-      ],
-      "Categories": [
-        "Kategóriák"
-      ],
-      "Sound": [
-        "Hang"
+      "GB": [
+        "GB"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "A jelszónak legalább ${ length } karakterből kell állnia",
+        "A jelszónak legalább ${ length } karakterből kell állnia"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "ismeretlen"
       ]
     },
     "Default display name vcard": {
@@ -2900,31 +2954,6 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "Hiba történt a fájl olvasása közben: ${ formattedFilename }. A fájl nem megfelelő formátumú."
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bájt"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "A jelszónak legalább ${ length } karakterből kell állnia",
-        "A jelszónak legalább ${ length } karakterből kell állnia"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -3100,26 +3129,6 @@
       ],
       "Show original message": [
         "Eredeti üzenet megjelenítése"
-      ]
-    },
-    "Theme": {
-      "Proton": [
-        "Proton"
-      ],
-      "Carbon": [
-        "Szén"
-      ],
-      "Snow": [
-        "Hó"
-      ],
-      "Monokai": [
-        "Monokai"
-      ],
-      "Contrast": [
-        "Kontraszt"
-      ],
-      "Legacy": [
-        "Hagyományos"
       ]
     },
     "Validation Error": {

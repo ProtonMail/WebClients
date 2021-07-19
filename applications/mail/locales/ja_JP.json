@@ -21,11 +21,14 @@
       "Authentication error.": [
         ""
       ],
+      "Email address invalid": [
+        "メールアドレスが不正です。"
+      ],
       "This field is required": [
         "この項目の入力は必須です"
       ],
-      "Email address invalid": [
-        "メールアドレスが不正です。"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
       ],
       "The composer failed to load.": [
         "Composerが読み込みに失敗しました。"
@@ -120,9 +123,6 @@
       "Require at least one action": [
         "少なくとも 1 つのアクションが必要です"
       ],
-      "Request timed out.": [
-        "リクエストはタイムアウトしました。"
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "このフィールドには最低${ minimumLength } 文字が必要です。"
       ],
@@ -134,6 +134,9 @@
       ],
       "Passwords do not match": [
         "パスワードが一致しません"
+      ],
+      "Request timed out.": [
+        "リクエストはタイムアウトしました。"
       ],
       "Signature verification failed": [
         "署名の検証に失敗しました"
@@ -289,6 +292,9 @@
       ],
       "Use “${ label }” setting": [
         ""
+      ],
+      "refresh the page": [
+        "ページを更新"
       ],
       "Remove": [
         "削除"
@@ -569,6 +575,18 @@
       "Next": [
         "次へ"
       ],
+      "Clear": [
+        "消去"
+      ],
+      "Add screenshot(s)": [
+        "スクリーンショットを追加"
+      ],
+      "Hide info": [
+        "情報を非表示"
+      ],
+      "Show info": [
+        "情報を表示"
+      ],
       "Continue import": [
         ""
       ],
@@ -589,9 +607,6 @@
       ],
       "Signing out": [
         "サインアウトしています"
-      ],
-      "refresh the page": [
-        "ページを更新"
       ],
       "Log in": [
         "ログイン"
@@ -644,9 +659,6 @@
       "Search": [
         "検索"
       ],
-      "Clear": [
-        "消去"
-      ],
       "Copy email to clipboard": [
         "メールをクリップボードにコピー"
       ],
@@ -691,15 +703,6 @@
       ],
       "Composer mode": [
         ""
-      ],
-      "Add screenshot(s)": [
-        "スクリーンショットを追加"
-      ],
-      "Hide info": [
-        "情報を非表示"
-      ],
-      "Show info": [
-        "情報を表示"
       ],
       "Preview": [
         "プレビュー"
@@ -1198,6 +1201,9 @@
       "Import contacts": [
         "連絡先をインポート"
       ],
+      "Report a problem": [
+        ""
+      ],
       "Start import process": [
         ""
       ],
@@ -1248,9 +1254,6 @@
       ],
       "Give feedback": [
         "ご意見"
-      ],
-      "Report a problem": [
-        ""
       ],
       "Beta Access": [
         "ベータ版アクセス"
@@ -1481,6 +1484,9 @@
       ],
       "Loading": [
         "読み込み中"
+      ],
+      "support team": [
+        ""
       ],
       "No contacts added yet": [
         ""
@@ -1719,6 +1725,12 @@
       "${ addressCount } email address": [
         ""
       ],
+      "Screenshot(s) attached": [
+        "スクリーンショットが添付されました"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "ほとんどの問題は、ページを更新するか、 ${ link } することで解決できます。"
+      ],
       "Import contacts": [
         ""
       ],
@@ -1814,12 +1826,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         ""
-      ],
-      "Screenshot(s) attached": [
-        "スクリーンショットが添付されました"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "ほとんどの問題は、ページを更新するか、 ${ link } することで解決できます。"
       ],
       "Inherited from parent folder": [
         ""
@@ -2387,6 +2393,30 @@
       "Export contacts": [
         "連絡先のエクスポート"
       ],
+      "Operating system": [
+        "オペレーティングシステム"
+      ],
+      "Operating system version": [
+        "OSのバージョン"
+      ],
+      "Proton username": [
+        "Proton ユーザー名"
+      ],
+      "Category": [
+        "カテゴリー"
+      ],
+      "What happened?": [
+        "どのような症状がでましたか？"
+      ],
+      "System information": [
+        "システム情報"
+      ],
+      "Browser": [
+        "ブラウザ"
+      ],
+      "Browser version": [
+        "ブラウザのバージョン"
+      ],
       "From: ${ fromEmailAddress }": [
         ""
       ],
@@ -2426,38 +2456,8 @@
       "Select how your composer opens by default.": [
         ""
       ],
-      "0 - Not a fan": [
-        "0 - 全く良くない"
-      ],
-      "10 - Love it!": [
-        "10 - 非常に素晴らしい"
-      ],
       "What is the primary reason for this rating?": [
         ""
-      ],
-      "Operating system": [
-        "オペレーティングシステム"
-      ],
-      "Operating system version": [
-        "OSのバージョン"
-      ],
-      "Proton username": [
-        "Proton ユーザー名"
-      ],
-      "Category": [
-        "カテゴリー"
-      ],
-      "What happened?": [
-        "どのような症状がでましたか？"
-      ],
-      "System information": [
-        "システム情報"
-      ],
-      "Browser": [
-        "ブラウザ"
-      ],
-      "Browser version": [
-        "ブラウザのバージョン"
       ],
       "Enable Beta Access": [
         "ベータ版アクセスを有効にする"
@@ -2654,6 +2654,12 @@
       "How would you rate your experience with the new ProtonMail?": [
         "新しい ProtonMail の使用感を評価していただけますか？"
       ],
+      "0 - Not a fan": [
+        "0 - 全く良くない"
+      ],
+      "10 - Love it!": [
+        "10 - 非常に素晴らしい"
+      ],
       "Also archive": [
         ""
       ]
@@ -2670,6 +2676,9 @@
       "Request an invite": [
         "登録を申請"
       ],
+      "clearing your browser cache": [
+        "ブラウザのキャッシュを消去"
+      ],
       "Pay invoice": [
         "請求の支払い"
       ],
@@ -2681,9 +2690,6 @@
       ],
       "Go to subscription plans": [
         ""
-      ],
-      "clearing your browser cache": [
-        "ブラウザのキャッシュを消去"
       ],
       "Inbox": [
         "受信箱"
@@ -2846,15 +2852,6 @@
       "Name": [
         "名前"
       ],
-      "Mailbox password": [
-        "メールボックスのパスワード"
-      ],
-      "e.g. Julia Smith": [
-        "例: Julia Smith"
-      ],
-      "Feedback": [
-        "ご意見"
-      ],
       "OS name": [
         "OS の名前"
       ],
@@ -2875,6 +2872,15 @@
       ],
       "Browser version": [
         "ブラウザのバージョン"
+      ],
+      "Mailbox password": [
+        "メールボックスのパスワード"
+      ],
+      "e.g. Julia Smith": [
+        "例: Julia Smith"
+      ],
+      "Feedback": [
+        "ご意見"
       ],
       "Type text or keyword": [
         "テキストまたはキーワードを入力"
@@ -2950,14 +2956,14 @@
       "Contacts could not be merged": [
         ""
       ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "レポートはエンドツーエンドで暗号化されていません。機密情報を送信しないでください。"
+      ],
       "Are you sure you want to discard your import?": [
         ""
       ],
       "Your local date & time settings seem to be out of sync.": [
         ""
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "レポートはエンドツーエンドで暗号化されていません。機密情報を送信しないでください。"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         ""
@@ -3117,14 +3123,14 @@
       "Fingerprint copied to clipboard": [
         "フィンガープリントをクリップボードにコピーしました"
       ],
+      "Bug reported": [
+        "バグの報告が送信されました。"
+      ],
       "Keyboard shortcuts preferences updated": [
         ""
       ],
       "Preference saved": [
         ""
-      ],
-      "Bug reported": [
-        "バグの報告が送信されました。"
       ],
       "Message content search activated": [
         "メッセージ内容の検索が有効になりました"
@@ -3517,6 +3523,118 @@
         ""
       ]
     },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "画像が選択されていません"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "サインインの問題"
+      ],
+      "Sign up problem": [
+        "アカウント登録の問題"
+      ],
+      "Payments problem": [
+        "支払いの問題"
+      ],
+      "Custom domain problem": [
+        "独自ドメインに関する問題"
+      ],
+      "Bridge problem": [
+        "Bridge の問題"
+      ],
+      "Import / export problem": [
+        "インポート・エクスポートの問題"
+      ],
+      "Connection problem": [
+        "接続の問題"
+      ],
+      "Slow speed problem": [
+        "通信速度が遅い問題"
+      ],
+      "Calendar problem": [
+        "カレンダーに関する問題"
+      ],
+      "Contacts problem": [
+        "連絡先に関する問題"
+      ],
+      "Drive problem": [
+        "ドライブに関する問題"
+      ],
+      "Mail problem": [
+        "電子メールに関する問題"
+      ],
+      "VPN problem": [
+        "VPN の問題"
+      ],
+      "Feature request": [
+        "機能の提案"
+      ],
+      "Other": [
+        "その他"
+      ],
+      "Signup problem": [
+        "アカウント登録の問題"
+      ],
+      "Installation problem": [
+        "インストールの問題"
+      ],
+      "Update problem": [
+        "更新の問題"
+      ],
+      "Application problem": [
+        "アプリケーションの問題"
+      ],
+      "Speed problem": [
+        "速度の問題"
+      ],
+      "Manual setup problem": [
+        "手動セットアップの問題"
+      ],
+      "Website access problem": [
+        "ウェブサイトへのアクセスに関する問題"
+      ],
+      "Streaming problem": [
+        "ストリーミングの問題"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "アカウント"
+      ],
+      "Apps": [
+        "アプリ"
+      ],
+      "Network": [
+        "ネットワーク"
+      ],
+      "Services": [
+        "サービス"
+      ],
+      "Other category": [
+        "その他のカテゴリー"
+      ],
+      "Custom folders": [
+        "カスタムフォルダー"
+      ],
+      "Default folders": [
+        "既定のフォルダー"
+      ],
+      "Labels": [
+        "ラベル"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "選択してください"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "スクリーンショットを添付"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -3673,118 +3791,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "意見が送信されました"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "画像が選択されていません"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "サインインの問題"
-      ],
-      "Sign up problem": [
-        "アカウント登録の問題"
-      ],
-      "Payments problem": [
-        "支払いの問題"
-      ],
-      "Custom domain problem": [
-        "独自ドメインに関する問題"
-      ],
-      "Bridge problem": [
-        "Bridge の問題"
-      ],
-      "Import / export problem": [
-        "インポート・エクスポートの問題"
-      ],
-      "Connection problem": [
-        "接続の問題"
-      ],
-      "Slow speed problem": [
-        "通信速度が遅い問題"
-      ],
-      "Calendar problem": [
-        "カレンダーに関する問題"
-      ],
-      "Contacts problem": [
-        "連絡先に関する問題"
-      ],
-      "Drive problem": [
-        "ドライブに関する問題"
-      ],
-      "Mail problem": [
-        "電子メールに関する問題"
-      ],
-      "VPN problem": [
-        "VPN の問題"
-      ],
-      "Feature request": [
-        "機能の提案"
-      ],
-      "Other": [
-        "その他"
-      ],
-      "Signup problem": [
-        "アカウント登録の問題"
-      ],
-      "Installation problem": [
-        "インストールの問題"
-      ],
-      "Update problem": [
-        "更新の問題"
-      ],
-      "Application problem": [
-        "アプリケーションの問題"
-      ],
-      "Speed problem": [
-        "速度の問題"
-      ],
-      "Manual setup problem": [
-        "手動セットアップの問題"
-      ],
-      "Website access problem": [
-        "ウェブサイトへのアクセスに関する問題"
-      ],
-      "Streaming problem": [
-        "ストリーミングの問題"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "アカウント"
-      ],
-      "Apps": [
-        "アプリ"
-      ],
-      "Network": [
-        "ネットワーク"
-      ],
-      "Services": [
-        "サービス"
-      ],
-      "Other category": [
-        "その他のカテゴリー"
-      ],
-      "Custom folders": [
-        "カスタムフォルダー"
-      ],
-      "Default folders": [
-        "既定のフォルダー"
-      ],
-      "Labels": [
-        "ラベル"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "選択してください"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "スクリーンショットを添付"
       ]
     },
     "Beta access description": {

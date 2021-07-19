@@ -6,9 +6,6 @@
   "contexts": {
     "": {},
     "Error": {
-      "Unknown error": [
-        "Ismeretlen hiba"
-      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         ""
       ],
@@ -21,11 +18,17 @@
       "Authentication error.": [
         ""
       ],
-      "This field is required": [
-        "A mező kitöltése kötelező"
+      "Unknown error": [
+        "Ismeretlen hiba"
       ],
       "Email address invalid": [
         "Érvénytelen e-mail cím"
+      ],
+      "This field is required": [
+        "A mező kitöltése kötelező"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
       ],
       "Can't validate email, try again later": [
         ""
@@ -89,14 +92,23 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
+      "Primary address key is not decrypted": [
+        "Az elsődleges cím kulcsa nincs visszafejtve"
+      ],
       "Incorrect mailbox password. Please try again": [
         "Hibás e-mail titkosítási jelszó. Kérjük, próbálja újra"
       ],
       "Incorrect login credentials. Please try again": [
         "Helytelen bejelentkezési adatok. Próbálja meg újra"
       ],
-      "Primary address key is not decrypted": [
-        "Az elsődleges cím kulcsa nincs visszafejtve"
+      "No valid address found": [
+        "Nem található érvényes e-mail cím"
+      ],
+      "Primary address key is not decrypted.": [
+        "Az elsődleges cím kulcsa nincs visszafejtve."
+      ],
+      "Name required": [
+        ""
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         ""
@@ -197,12 +209,6 @@
       ],
       "Invalid link to the event": [
         "Érvénytelen link az eseményhez"
-      ],
-      "No valid address found": [
-        "Nem található érvényes e-mail cím"
-      ],
-      "Primary address key is not decrypted.": [
-        "Az elsődleges cím kulcsa nincs visszafejtve."
       ],
       "Please create an address first.": [
         "Először létre kell hozni egy címet."
@@ -317,8 +323,17 @@
       "Confirm opening of link ${ link }": [
         ""
       ],
+      "refresh the page": [
+        "az oldal frissítése"
+      ],
       "Select timezone": [
         "Időzóna kiválasztása"
+      ],
+      "Show less": [
+        ""
+      ],
+      "Show more": [
+        ""
       ],
       "View invoice": [
         "Számla megtekintése"
@@ -343,9 +358,6 @@
       ],
       "Edit phone number": [
         ""
-      ],
-      "refresh the page": [
-        "az oldal frissítése"
       ],
       "Signing out": [
         "Kijelentkezés"
@@ -466,6 +478,18 @@
       "Next": [
         "Következő"
       ],
+      "Clear": [
+        "Törlés"
+      ],
+      "Add screenshot(s)": [
+        "Képernyőkép hozzáadása"
+      ],
+      "Hide info": [
+        "Információ elrejtése"
+      ],
+      "Show info": [
+        "Információ megjelenítése"
+      ],
       "Continue import": [
         ""
       ],
@@ -477,15 +501,6 @@
       ],
       "Start import": [
         ""
-      ],
-      "Use ${ label } theme": [
-        "${ label } téma használata"
-      ],
-      "OK": [
-        ""
-      ],
-      "Log in": [
-        "Belépés"
       ],
       "Copy email to clipboard": [
         ""
@@ -532,18 +547,6 @@
       "Composer mode": [
         ""
       ],
-      "Clear": [
-        "Törlés"
-      ],
-      "Add screenshot(s)": [
-        "Képernyőkép hozzáadása"
-      ],
-      "Hide info": [
-        "Információ elrejtése"
-      ],
-      "Show info": [
-        "Információ megjelenítése"
-      ],
       "Get started": [
         "Kezdés"
       ],
@@ -555,6 +558,15 @@
       ],
       "Back": [
         "Vissza"
+      ],
+      "Use ${ label } theme": [
+        "${ label } téma használata"
+      ],
+      "OK": [
+        ""
+      ],
+      "Log in": [
+        "Belépés"
       ],
       "Close this banner": [
         ""
@@ -574,6 +586,12 @@
       "Add notification": [
         "Új emlékeztető"
       ],
+      "Update": [
+        "Frissítés"
+      ],
+      "Create": [
+        ""
+      ],
       "Yes, I'll attend": [
         "Igen, ott leszek"
       ],
@@ -592,14 +610,14 @@
       "No": [
         "Nem"
       ],
+      "Share": [
+        ""
+      ],
       "New event": [
         "Új esemény"
       ],
       "Create event": [
         ""
-      ],
-      "Update": [
-        "Frissítés"
       ],
       "Send": [
         "Küldés"
@@ -790,26 +808,14 @@
       "Import contacts": [
         "Névjegyek importálása"
       ],
+      "Report a problem": [
+        ""
+      ],
       "Start import process": [
         ""
       ],
       "Import in progress": [
         ""
-      ],
-      "Select a theme": [
-        ""
-      ],
-      "Sign in again to continue": [
-        "Lépjen be újból a folytatáshoz"
-      ],
-      "Account suspended": [
-        ""
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Adja meg a ProtonMail e-mail címét vagy felhasználónevét"
-      ],
-      "Enter your password": [
-        "Adja meg a jelszavát"
       ],
       "Open help menu": [
         "Súgó menü megnyitása"
@@ -829,7 +835,7 @@
       "Give feedback": [
         ""
       ],
-      "Report a problem": [
+      "Select a theme": [
         ""
       ],
       "${ appName } Keyboard Shortcuts": [
@@ -847,6 +853,18 @@
       "Beta Access": [
         ""
       ],
+      "Sign in again to continue": [
+        "Lépjen be újból a folytatáshoz"
+      ],
+      "Account suspended": [
+        ""
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Adja meg a ProtonMail e-mail címét vagy felhasználónevét"
+      ],
+      "Enter your password": [
+        "Adja meg a jelszavát"
+      ],
       "Select when you want this notification to be sent": [
         "Válassza ki az emlékeztető elküldésének időpontját"
       ],
@@ -858,6 +876,15 @@
       ],
       "Add another notification to remind you of this event": [
         "További emlékeztető hozzáadása az eseményhez"
+      ],
+      "Error": [
+        "Hiba"
+      ],
+      "Update calendar": [
+        ""
+      ],
+      "Create calendar": [
+        ""
       ],
       "Change my answer": [
         "Válasz megváltoztatása"
@@ -897,9 +924,6 @@
       ],
       "You have invited participants with equivalent emails": [
         "A hasonló e-mail címmel rendelkező résztvevőket meghívta"
-      ],
-      "Error": [
-        "Hiba"
       ],
       "Reset calendar keys": [
         "Naptár kulcsok visszaállítása"
@@ -1012,6 +1036,9 @@
         ""
       ],
       "Learn more": [
+        ""
+      ],
+      "support team": [
         ""
       ],
       "Drop the file here to upload": [
@@ -1140,7 +1167,7 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         ""
       ],
-      "All uploaded keys are expired or revoked! Encryption is automatically disabled.": [
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         ""
       ],
       "Primary": [
@@ -1167,6 +1194,12 @@
         "",
         ""
       ],
+      "Screenshot(s) attached": [
+        "Képernyőkép(ek) csatolva"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Az oldal frissítése vagy ${ link } automatikusan megoldja a legtöbb problémát."
+      ],
       "Import contacts": [
         ""
       ],
@@ -1191,6 +1224,9 @@
       "Your import will not be processed.": [
         ""
       ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Az alapvető navigációs lehetőségek akkor is megmaradnak, ha a beállításokban letiltotta a gyorsbillentyűket."
+      ],
       "here": [
         "itt"
       ],
@@ -1199,15 +1235,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Ha úgy gondolja ez tévedés, vegye fel velük a kapcsolatot ${ contactLink }."
-      ],
-      "Screenshot(s) attached": [
-        "Képernyőkép(ek) csatolva"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Az oldal frissítése vagy ${ link } automatikusan megoldja a legtöbb problémát."
-      ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Az alapvető navigációs lehetőségek akkor is megmaradnak, ha a beállításokban letiltotta a gyorsbillentyűket."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Lejárt számlatartozása van. Hozzáférése korlátozásra került. ${ payInvoiceLink }"
@@ -1538,39 +1565,6 @@
       "Export contacts": [
         "Névjegyek exportálása"
       ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Cancel": [
-        "Mégsem"
-      ],
-      "Submit": [
-        "Küldés"
-      ],
-      "Password": [
-        "Jelszó"
-      ],
-      "Mailbox password": [
-        "E-mail titkosítási jelszó"
-      ],
-      "Two-factor authentication code": [
-        "Kétlépcsős hitelesítő kód"
-      ],
-      "Username or ProtonMail address": [
-        "Felhasználónév vagy ProtonMail cím"
-      ],
-      "0 - Not a fan": [
-        ""
-      ],
-      "10 - Love it!": [
-        ""
-      ],
-      "What is the primary reason for this rating?": [
-        ""
-      ],
       "Operating system": [
         "Operációs rendszer"
       ],
@@ -1595,6 +1589,15 @@
       "Browser version": [
         "A böngésző verziója"
       ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
+      "What is the primary reason for this rating?": [
+        ""
+      ],
       "Display name": [
         "Megjelenített név"
       ],
@@ -1613,7 +1616,58 @@
       "Enable Beta Access": [
         ""
       ],
+      "Cancel": [
+        "Mégsem"
+      ],
+      "Submit": [
+        "Küldés"
+      ],
+      "Password": [
+        "Jelszó"
+      ],
+      "Mailbox password": [
+        "E-mail titkosítási jelszó"
+      ],
+      "Two-factor authentication code": [
+        "Kétlépcsős hitelesítő kód"
+      ],
+      "Username or ProtonMail address": [
+        "Felhasználónév vagy ProtonMail cím"
+      ],
+      "Name": [
+        ""
+      ],
+      "Choose a color": [
+        ""
+      ],
+      "Default email": [
+        ""
+      ],
+      "Display": [
+        ""
+      ],
+      "Description": [
+        "Leírás"
+      ],
+      "Default event duration": [
+        ""
+      ],
+      "URL": [
+        ""
+      ],
+      "Default notifications": [
+        ""
+      ],
+      "Default full day notifications": [
+        ""
+      ],
       "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        ""
+      ],
+      "0 - Not likely": [
+        ""
+      ],
+      "10 - Extremely likely": [
         ""
       ],
       "All day": [
@@ -1649,9 +1703,6 @@
       "Event location": [
         "Esemény helye"
       ],
-      "Description": [
-        "Leírás"
-      ],
       "Event notifications": [
         "Esemény értesítések"
       ],
@@ -1662,6 +1713,11 @@
         "Az ön naptárai"
       ]
     },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        ""
+      ]
+    },
     "Link": {
       "Learn more": [
         "Tudjon meg többet"
@@ -1669,14 +1725,14 @@
       "Request an invite": [
         "Meghívó kérése"
       ],
+      "clearing your browser cache": [
+        "böngésző gyorsítótárának ürítése"
+      ],
       "Upgrade": [
         "Váltás nagyobb csomagra"
       ],
       "Go to subscription plans": [
         ""
-      ],
-      "clearing your browser cache": [
-        "böngésző gyorsítótárának ürítése"
       ],
       "Pay invoice": [
         "Számla befizetése"
@@ -1716,12 +1772,6 @@
       "Name": [
         ""
       ],
-      "Mailbox password": [
-        "E-mail titkosítási jelszó"
-      ],
-      "Feedback": [
-        ""
-      ],
       "OS name": [
         "Operációs rendszer neve"
       ],
@@ -1743,8 +1793,20 @@
       "Browser version": [
         "Böngésző verziója"
       ],
+      "Feedback": [
+        ""
+      ],
       "e.g. Julia Smith": [
         "pl. Kovács János"
+      ],
+      "Mailbox password": [
+        "E-mail titkosítási jelszó"
+      ],
+      "Add a calendar name": [
+        ""
+      ],
+      "Add a calendar description": [
+        ""
       ],
       "Add title": [
         "Cím megadása"
@@ -1904,10 +1966,10 @@
       "Contacts could not be merged": [
         "A névjegyek egyesítése nem sikerült"
       ],
-      "Are you sure you want to discard your import?": [
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         ""
       ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+      "Are you sure you want to discard your import?": [
         ""
       ],
       "Your local date & time settings seem to be out of sync.": [
@@ -1958,6 +2020,15 @@
       ],
       "Preference saved": [
         "Beállítások elmentve"
+      ],
+      "Calendar created. It might take a few minutes to sync.": [
+        ""
+      ],
+      "Calendar created": [
+        ""
+      ],
+      "Calendar updated": [
+        ""
       ],
       "An invitation will be sent to added participants for all the events in this series.": [
         "A sorozatban szereplő összes esemény hozzáadott résztvevőinek meghívó kerül elküldésre."
@@ -2377,100 +2448,6 @@
         "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez"
       ]
     },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        ""
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        ""
-      ],
-      "Configure Import": [
-        ""
-      ],
-      "Import": [
-        ""
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        ""
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        ""
-      ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        ""
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        ""
-      ],
-      "Maximized": [
-        ""
-      ]
-    },
-    "Text": {
-      "Settings": [
-        "Beállítások"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Be"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Ki"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        ""
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        ""
-      ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        ""
-      ],
-      "Normal": [
-        ""
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        ""
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        ""
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nincs kép kiválasztva"
@@ -2574,6 +2551,76 @@
         "Képernyőkép csatolása"
       ]
     },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        ""
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        ""
+      ],
+      "Configure Import": [
+        ""
+      ],
+      "Import": [
+        ""
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        ""
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Beállítások"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Be"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Ki"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        ""
+      ],
+      "Row": [
+        ""
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        ""
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        ""
+      ],
+      "Normal": [
+        ""
+      ]
+    },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        ""
+      ]
+    },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
         "Ezt fogják látni a címzettek, ha e-mailt küld, esemény meghívót küld, vagy fájlokat oszt meg."
@@ -2616,6 +2663,30 @@
     },
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
+        ""
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        ""
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        ""
+      ],
+      "Row": [
+        ""
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        ""
+      ],
+      "Maximized": [
         ""
       ]
     },
@@ -2671,9 +2742,17 @@
         "emailben"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "",
+    "Duration": {
+      "30 minutes": [
+        ""
+      ],
+      "60 minutes": [
+        ""
+      ],
+      "90 minutes": [
+        ""
+      ],
+      "120 minutes": [
         ""
       ]
     },
@@ -2872,6 +2951,12 @@
         ""
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "",
+        ""
+      ]
+    },
     "file size format": {
       "bytes": [
         "bájt"
@@ -2889,6 +2974,73 @@
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
+      ]
+    },
+    "Alarm notification": {
+      "${ title } starts now": [
+        "${ title } most kezdődik"
+      ],
+      "${ title } starts today": [
+        "${ title } ma kezdődik"
+      ],
+      "${ title } started at ${ formattedHour }": [
+        "${ title } elkezdődött ekkor: ${ formattedHour }"
+      ],
+      "${ title } started yesterday": [
+        "${ title } tegnap kezdődött"
+      ],
+      "${ title } started yesterday at ${ formattedHour }": [
+        "${ title } tegnap kezdődött ekkor: ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDate }": [
+        ""
+      ],
+      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } ekkor kezdődött: ${ formattedDate } ${ formattedHour }"
+      ],
+      "${ title } started on ${ _formattedDate }": [
+        "${ title } kezdődik: ${ _formattedDate }"
+      ],
+      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
+        "${ title } ekkor kezdődik: ${ _formattedDate } ${ formattedHour }"
+      ],
+      "${ title } started on ${ formattedDateWithoutTime }": [
+        "${ title } elkezdődött ekkor: ${ formattedDateWithTime }"
+      ],
+      "${ title } started on ${ _formattedDateWithTime }": [
+        "${ title } ekkor kezdődött: ${ formattedDateWithTime }"
+      ],
+      "${ title } will start at ${ formattedHour }": [
+        "${ title } ekkor kezdődik: ${ formattedHour }"
+      ],
+      "${ title } will start tomorrow": [
+        "${ title } holnap kezdődik"
+      ],
+      "${ title } will start tomorrow at ${ formattedHour }": [
+        "${ title } holnap ekkor kezdődik: ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate2 }": [
+        "${ title } ekkor kezdődik: ${ _formattedDate2 }"
+      ],
+      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title } ekkor kezdődik: ${ _formattedDate2 } ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDate3 }": [
+        "${ title } ekkor kezdődik: ${ _formattedDate3 }"
+      ],
+      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title } ekkor kezdődik: ${ _formattedDate3 } ${ formattedHour }"
+      ],
+      "${ title } will start on ${ _formattedDateWithoutTime }": [
+        "${ title } ekkor kezdődik: ${ _formattedDateWithoutTime }"
+      ],
+      "${ title } will start on ${ formattedDateWithTime }": [
+        "${ title } ekkor kezdődik: ${ formattedDateWithTime }"
+      ]
+    },
+    "Event title": {
+      "(no title)": [
+        "(névtelen)"
       ]
     },
     "Participant name": {
@@ -3362,73 +3514,6 @@
         "Minden ${ interval }. évben, ${ untilString }"
       ]
     },
-    "Alarm notification": {
-      "${ title } starts now": [
-        "${ title } most kezdődik"
-      ],
-      "${ title } starts today": [
-        "${ title } ma kezdődik"
-      ],
-      "${ title } started at ${ formattedHour }": [
-        "${ title } elkezdődött ekkor: ${ formattedHour }"
-      ],
-      "${ title } started yesterday": [
-        "${ title } tegnap kezdődött"
-      ],
-      "${ title } started yesterday at ${ formattedHour }": [
-        "${ title } tegnap kezdődött ekkor: ${ formattedHour }"
-      ],
-      "${ title } started on ${ formattedDate }": [
-        ""
-      ],
-      "${ title } started on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } ekkor kezdődött: ${ formattedDate } ${ formattedHour }"
-      ],
-      "${ title } started on ${ _formattedDate }": [
-        "${ title } kezdődik: ${ _formattedDate }"
-      ],
-      "${ title } started on ${ _formattedDate } at ${ formattedHour }": [
-        "${ title } ekkor kezdődik: ${ _formattedDate } ${ formattedHour }"
-      ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } elkezdődött ekkor: ${ formattedDateWithTime }"
-      ],
-      "${ title } started on ${ _formattedDateWithTime }": [
-        "${ title } ekkor kezdődött: ${ formattedDateWithTime }"
-      ],
-      "${ title } will start at ${ formattedHour }": [
-        "${ title } ekkor kezdődik: ${ formattedHour }"
-      ],
-      "${ title } will start tomorrow": [
-        "${ title } holnap kezdődik"
-      ],
-      "${ title } will start tomorrow at ${ formattedHour }": [
-        "${ title } holnap ekkor kezdődik: ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate2 }": [
-        "${ title } ekkor kezdődik: ${ _formattedDate2 }"
-      ],
-      "${ title } will start on ${ _formattedDate2 } at ${ formattedHour }": [
-        "${ title } ekkor kezdődik: ${ _formattedDate2 } ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDate3 }": [
-        "${ title } ekkor kezdődik: ${ _formattedDate3 }"
-      ],
-      "${ title } will start on ${ _formattedDate3 } at ${ formattedHour }": [
-        "${ title } ekkor kezdődik: ${ _formattedDate3 } ${ formattedHour }"
-      ],
-      "${ title } will start on ${ _formattedDateWithoutTime }": [
-        "${ title } ekkor kezdődik: ${ _formattedDateWithoutTime }"
-      ],
-      "${ title } will start on ${ formattedDateWithTime }": [
-        "${ title } ekkor kezdődik: ${ formattedDateWithTime }"
-      ]
-    },
-    "Event title": {
-      "(no title)": [
-        "(névtelen)"
-      ]
-    },
     "Keyboard shortcut section name": {
       "Basic navigation": [
         "Alapvető navigáció"
@@ -3740,6 +3825,16 @@
     },
     "Disabled calendar name suffix": {
       "disabled": [
+        ""
+      ]
+    },
+    "Sidebar calendar edit tooltip": {
+      "Manage calendar": [
+        ""
+      ]
+    },
+    "Add calendar icon tooltip": {
+      "Create calendar": [
         ""
       ]
     },

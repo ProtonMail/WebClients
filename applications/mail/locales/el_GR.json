@@ -21,11 +21,14 @@
       "Authentication error.": [
         ""
       ],
+      "Email address invalid": [
+        "Η διεύθυνση E-mail δεν είναι έγκυρη"
+      ],
       "This field is required": [
         "Αυτό το πεδίο είναι υποχρεωτικό"
       ],
-      "Email address invalid": [
-        "Η διεύθυνση E-mail δεν είναι έγκυρη"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
       ],
       "The composer failed to load.": [
         "Ο συνθέτης απέτυχε να φορτώσει."
@@ -122,9 +125,6 @@
       "Require at least one action": [
         "Απαίτηση τουλάχιστον μίας ενέργειας"
       ],
-      "Request timed out.": [
-        "Λήξη χρονικού ορίου αιτήματος."
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
       ],
@@ -136,6 +136,9 @@
       ],
       "Passwords do not match": [
         "Οι κωδικοί πρόσβασης δεν ταιριάζουν"
+      ],
+      "Request timed out.": [
+        "Λήξη χρονικού ορίου αιτήματος."
       ],
       "Signature verification failed": [
         "Η επαλήθευση υπογραφής απέτυχε"
@@ -294,6 +297,9 @@
       ],
       "Use “${ label }” setting": [
         ""
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ],
       "Remove": [
         "Αφαίρεση"
@@ -577,6 +583,18 @@
       "Next": [
         "Επόμενο"
       ],
+      "Clear": [
+        "Καθαρισμός"
+      ],
+      "Add screenshot(s)": [
+        "Προσθήκη στιγμιοτύπου/ων οθόνης"
+      ],
+      "Hide info": [
+        "Απόκρυψη πληροφοριών"
+      ],
+      "Show info": [
+        "Εμφάνιση πληροφοριών"
+      ],
       "Continue import": [
         ""
       ],
@@ -597,9 +615,6 @@
       ],
       "Signing out": [
         "Αποσύνδεση"
-      ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
       ],
       "Log in": [
         "Είσοδος"
@@ -652,9 +667,6 @@
       "Search": [
         "Αναζήτηση"
       ],
-      "Clear": [
-        "Καθαρισμός"
-      ],
       "Copy email to clipboard": [
         ""
       ],
@@ -699,15 +711,6 @@
       ],
       "Composer mode": [
         ""
-      ],
-      "Add screenshot(s)": [
-        "Προσθήκη στιγμιοτύπου/ων οθόνης"
-      ],
-      "Hide info": [
-        "Απόκρυψη πληροφοριών"
-      ],
-      "Show info": [
-        "Εμφάνιση πληροφοριών"
       ],
       "Preview": [
         "Προεπισκόπηση"
@@ -1211,6 +1214,9 @@
       "Import contacts": [
         ""
       ],
+      "Report a problem": [
+        ""
+      ],
       "Start import process": [
         ""
       ],
@@ -1260,9 +1266,6 @@
         ""
       ],
       "Give feedback": [
-        ""
-      ],
-      "Report a problem": [
         ""
       ],
       "Beta Access": [
@@ -1498,6 +1501,9 @@
       ],
       "Loading": [
         "Φόρτωση"
+      ],
+      "support team": [
+        ""
       ],
       "No contacts added yet": [
         "Δεν έχουν προστεθεί επαφές ακόμα"
@@ -1742,6 +1748,12 @@
         "${ addressCount } διεύθυνση ηλεκτρονικού ταχυδρομείου",
         "${ addressCount } διευθύνσεις ηλεκτρονικού ταχυδρομείου"
       ],
+      "Screenshot(s) attached": [
+        "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
+      ],
       "Import contacts": [
         ""
       ],
@@ -1837,12 +1849,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         ""
-      ],
-      "Screenshot(s) attached": [
-        "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
       ],
       "Inherited from parent folder": [
         "Κληρονoμήθηκαν από το γονικό φάκελο"
@@ -2434,6 +2440,30 @@
       "Export contacts": [
         ""
       ],
+      "Operating system": [
+        "Λειτουργικό σύστημα (OS)"
+      ],
+      "Operating system version": [
+        "Έκδοση λειτουργικού συστήματος"
+      ],
+      "Proton username": [
+        "Όνομα χρήστη Proton"
+      ],
+      "Category": [
+        "Κατηγορία"
+      ],
+      "What happened?": [
+        "Τι συνέβη;"
+      ],
+      "System information": [
+        "Πληροφορίες Συστήματος"
+      ],
+      "Browser": [
+        "Πρόγραμμα περιήγησης"
+      ],
+      "Browser version": [
+        "Έκδοση προγράμματος περιήγησης"
+      ],
       "From: ${ fromEmailAddress }": [
         ""
       ],
@@ -2473,38 +2503,8 @@
       "Select how your composer opens by default.": [
         ""
       ],
-      "0 - Not a fan": [
-        ""
-      ],
-      "10 - Love it!": [
-        ""
-      ],
       "What is the primary reason for this rating?": [
         ""
-      ],
-      "Operating system": [
-        "Λειτουργικό σύστημα (OS)"
-      ],
-      "Operating system version": [
-        "Έκδοση λειτουργικού συστήματος"
-      ],
-      "Proton username": [
-        "Όνομα χρήστη Proton"
-      ],
-      "Category": [
-        "Κατηγορία"
-      ],
-      "What happened?": [
-        "Τι συνέβη;"
-      ],
-      "System information": [
-        "Πληροφορίες Συστήματος"
-      ],
-      "Browser": [
-        "Πρόγραμμα περιήγησης"
-      ],
-      "Browser version": [
-        "Έκδοση προγράμματος περιήγησης"
       ],
       "Enable Beta Access": [
         ""
@@ -2701,6 +2701,12 @@
       "How would you rate your experience with the new ProtonMail?": [
         ""
       ],
+      "0 - Not a fan": [
+        ""
+      ],
+      "10 - Love it!": [
+        ""
+      ],
       "Also archive": [
         "Επίσης αρχειοθετείστε"
       ]
@@ -2717,6 +2723,9 @@
       "Request an invite": [
         "Ζητήστε μια πρόσκληση"
       ],
+      "clearing your browser cache": [
+        "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
+      ],
       "Pay invoice": [
         "Πληρωμή υπολοίπου"
       ],
@@ -2728,9 +2737,6 @@
       ],
       "Go to subscription plans": [
         ""
-      ],
-      "clearing your browser cache": [
-        "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
       ],
       "Inbox": [
         "Εισερχόμενα"
@@ -2893,15 +2899,6 @@
       "Name": [
         "Όνομα"
       ],
-      "Mailbox password": [
-        "Κωδικός Θυρίδας"
-      ],
-      "e.g. Julia Smith": [
-        "π.χ. Julia Smith"
-      ],
-      "Feedback": [
-        ""
-      ],
       "OS name": [
         "Όνομα Λειτουργικού Συστήματος (OS)"
       ],
@@ -2922,6 +2919,15 @@
       ],
       "Browser version": [
         "Έκδοση προγράμματος περιήγησης"
+      ],
+      "Mailbox password": [
+        "Κωδικός Θυρίδας"
+      ],
+      "e.g. Julia Smith": [
+        "π.χ. Julia Smith"
+      ],
+      "Feedback": [
+        ""
       ],
       "Type text or keyword": [
         "Πληκτρολόγηση κειμένου ή λέξης-κλειδιού"
@@ -2999,13 +3005,13 @@
       "Contacts could not be merged": [
         ""
       ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        ""
+      ],
       "Are you sure you want to discard your import?": [
         ""
       ],
       "Your local date & time settings seem to be out of sync.": [
-        ""
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         ""
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
@@ -3169,14 +3175,14 @@
       "Fingerprint copied to clipboard": [
         "Το αποτύπωμα αντιγράφηκε στο πρόχειρο"
       ],
+      "Bug reported": [
+        "Το σφάλμα αναφέρθηκε"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Οι προτιμήσεις συντομεύσεων πληκτρολογίου ενημερώθηκαν"
       ],
       "Preference saved": [
         ""
-      ],
-      "Bug reported": [
-        "Το σφάλμα αναφέρθηκε"
       ],
       "Message content search activated": [
         ""
@@ -3594,6 +3600,118 @@
         ""
       ]
     },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Δεν επιλέχθηκε εικόνα"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Πρόβλημα σύνδεσης"
+      ],
+      "Sign up problem": [
+        "Πρόβλημα εγγραφής"
+      ],
+      "Payments problem": [
+        "Πρόβλημα πληρωμής"
+      ],
+      "Custom domain problem": [
+        "Πρόβλημα προσαρμοσμένου τομέα"
+      ],
+      "Bridge problem": [
+        "Πρόβλημα Bridge"
+      ],
+      "Import / export problem": [
+        "Πρόβλημα εισαγωγής / εξαγωγής"
+      ],
+      "Connection problem": [
+        "Πρόβλημα σύνδεσης"
+      ],
+      "Slow speed problem": [
+        "Πρόβλημα αργής ταχύτητας"
+      ],
+      "Calendar problem": [
+        "Πρόβλημα ημερολογίου"
+      ],
+      "Contacts problem": [
+        "Πρόβλημα επαφών"
+      ],
+      "Drive problem": [
+        "Πρόβλημα Drive"
+      ],
+      "Mail problem": [
+        "Πρόβλημα αλληλογραφίας"
+      ],
+      "VPN problem": [
+        "Πρόβλημα VPN"
+      ],
+      "Feature request": [
+        "Αίτημα μελλοντικού χαρακτηριστικού"
+      ],
+      "Other": [
+        "Άλλο"
+      ],
+      "Signup problem": [
+        "Πρόβλημα εγγραφής"
+      ],
+      "Installation problem": [
+        "Πρόβλημα εγκατάστασης"
+      ],
+      "Update problem": [
+        "Πρόβλημα αναβάθμισης"
+      ],
+      "Application problem": [
+        "Πρόβλημα εφαρμογής"
+      ],
+      "Speed problem": [
+        "Πρόβλημα ταχύτητας"
+      ],
+      "Manual setup problem": [
+        "Πρόβλημα χειροκίνητης ρύθμισης"
+      ],
+      "Website access problem": [
+        "Πρόβλημα πρόσβασης ιστοσελίδας"
+      ],
+      "Streaming problem": [
+        "Πρόβλημα μετάδοσης"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Λογαριασμός"
+      ],
+      "Apps": [
+        "Εφαρμογές"
+      ],
+      "Network": [
+        "Δίκτυο"
+      ],
+      "Services": [
+        "Υπηρεσίες"
+      ],
+      "Other category": [
+        "Άλλη κατηγορία"
+      ],
+      "Custom folders": [
+        "Προσαρμοσμένοι φάκελοι"
+      ],
+      "Default folders": [
+        "Προεπιλεγμένοι φάκελοι"
+      ],
+      "Labels": [
+        "Ετικέτες"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Επιλέξτε"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "Επισύναψη στιγμιοτύπου/ων οθόνης"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         ""
@@ -3750,118 +3868,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         ""
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Δεν επιλέχθηκε εικόνα"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Πρόβλημα σύνδεσης"
-      ],
-      "Sign up problem": [
-        "Πρόβλημα εγγραφής"
-      ],
-      "Payments problem": [
-        "Πρόβλημα πληρωμής"
-      ],
-      "Custom domain problem": [
-        "Πρόβλημα προσαρμοσμένου τομέα"
-      ],
-      "Bridge problem": [
-        "Πρόβλημα Bridge"
-      ],
-      "Import / export problem": [
-        "Πρόβλημα εισαγωγής / εξαγωγής"
-      ],
-      "Connection problem": [
-        "Πρόβλημα σύνδεσης"
-      ],
-      "Slow speed problem": [
-        "Πρόβλημα αργής ταχύτητας"
-      ],
-      "Calendar problem": [
-        "Πρόβλημα ημερολογίου"
-      ],
-      "Contacts problem": [
-        "Πρόβλημα επαφών"
-      ],
-      "Drive problem": [
-        "Πρόβλημα Drive"
-      ],
-      "Mail problem": [
-        "Πρόβλημα αλληλογραφίας"
-      ],
-      "VPN problem": [
-        "Πρόβλημα VPN"
-      ],
-      "Feature request": [
-        "Αίτημα μελλοντικού χαρακτηριστικού"
-      ],
-      "Other": [
-        "Άλλο"
-      ],
-      "Signup problem": [
-        "Πρόβλημα εγγραφής"
-      ],
-      "Installation problem": [
-        "Πρόβλημα εγκατάστασης"
-      ],
-      "Update problem": [
-        "Πρόβλημα αναβάθμισης"
-      ],
-      "Application problem": [
-        "Πρόβλημα εφαρμογής"
-      ],
-      "Speed problem": [
-        "Πρόβλημα ταχύτητας"
-      ],
-      "Manual setup problem": [
-        "Πρόβλημα χειροκίνητης ρύθμισης"
-      ],
-      "Website access problem": [
-        "Πρόβλημα πρόσβασης ιστοσελίδας"
-      ],
-      "Streaming problem": [
-        "Πρόβλημα μετάδοσης"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Λογαριασμός"
-      ],
-      "Apps": [
-        "Εφαρμογές"
-      ],
-      "Network": [
-        "Δίκτυο"
-      ],
-      "Services": [
-        "Υπηρεσίες"
-      ],
-      "Other category": [
-        "Άλλη κατηγορία"
-      ],
-      "Custom folders": [
-        "Προσαρμοσμένοι φάκελοι"
-      ],
-      "Default folders": [
-        "Προεπιλεγμένοι φάκελοι"
-      ],
-      "Labels": [
-        "Ετικέτες"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Επιλέξτε"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Επισύναψη στιγμιοτύπου/ων οθόνης"
       ]
     },
     "Beta access description": {

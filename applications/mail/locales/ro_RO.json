@@ -21,11 +21,14 @@
       "Authentication error.": [
         "Eroare autentificare."
       ],
+      "Email address invalid": [
+        "Adresă de e-mail nevalidă"
+      ],
       "This field is required": [
         "Acest câmp este obligatoriu"
       ],
-      "Email address invalid": [
-        "Adresă de e-mail nevalidă"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
       ],
       "The composer failed to load.": [
         "Editorul de mesaje nu a putut fi încărcat."
@@ -124,9 +127,6 @@
       "Require at least one action": [
         "Necesită cel puțin o acțiune"
       ],
-      "Request timed out.": [
-        "Solicitarea a expirat."
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Acest câmp necesită un minimum de ${ minimumLength } caractere."
       ],
@@ -138,6 +138,9 @@
       ],
       "Passwords do not match": [
         "Parolele nu coincid"
+      ],
+      "Request timed out.": [
+        "Solicitarea a expirat."
       ],
       "Signature verification failed": [
         "Eșuare verificare semnătură"
@@ -299,6 +302,9 @@
       ],
       "Use “${ label }” setting": [
         "Folosire setarea „${ label }”"
+      ],
+      "refresh the page": [
+        "împrospătați pagina"
       ],
       "Remove": [
         "Eliminare"
@@ -585,6 +591,18 @@
       "Next": [
         "Înainte"
       ],
+      "Clear": [
+        "Eliminare"
+      ],
+      "Add screenshot(s)": [
+        "Adăugare captură"
+      ],
+      "Hide info": [
+        "Ascundere informații"
+      ],
+      "Show info": [
+        "Afișare informații"
+      ],
       "Continue import": [
         "Continuare importare"
       ],
@@ -605,9 +623,6 @@
       ],
       "Signing out": [
         "Deconectare"
-      ],
-      "refresh the page": [
-        "împrospătați pagina"
       ],
       "Log in": [
         "Conectare"
@@ -660,9 +675,6 @@
       "Search": [
         "Căutare"
       ],
-      "Clear": [
-        "Eliminare"
-      ],
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
       ],
@@ -707,15 +719,6 @@
       ],
       "Composer mode": [
         "Mod editor mesaje"
-      ],
-      "Add screenshot(s)": [
-        "Adăugare captură"
-      ],
-      "Hide info": [
-        "Ascundere informații"
-      ],
-      "Show info": [
-        "Afișare informații"
       ],
       "Preview": [
         "Examinare"
@@ -1224,6 +1227,9 @@
       "Import contacts": [
         "Importare contacte"
       ],
+      "Report a problem": [
+        "Raportare problemă"
+      ],
       "Start import process": [
         "Începere proces de importare"
       ],
@@ -1274,9 +1280,6 @@
       ],
       "Give feedback": [
         "Oferiți feedback"
-      ],
-      "Report a problem": [
-        "Raportare problemă"
       ],
       "Beta Access": [
         "Acces la Beta"
@@ -1515,6 +1518,9 @@
       ],
       "Loading": [
         "Se încarcă"
+      ],
+      "support team": [
+        "echipa de suport"
       ],
       "No contacts added yet": [
         "Încă nu s-au adăugat contacte"
@@ -1765,6 +1771,12 @@
         "${ addressCount } adrese de e-mail",
         "${ addressCount } de adrese de e-mail"
       ],
+      "Screenshot(s) attached": [
+        "Capturi de ecran adăugate"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
+      ],
       "Import contacts": [
         "Importare contacte"
       ],
@@ -1860,12 +1872,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Ați dezactivat accesul la versiunea Beta. Faceți clic ${ refreshButton } pentru a utiliza versiunea stabilă de ${ appName }. Aplicația va fi reîncărcată."
-      ],
-      "Screenshot(s) attached": [
-        "Capturi de ecran adăugate"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
       ],
       "Inherited from parent folder": [
         "Moştenit de la folderul părinte"
@@ -2481,6 +2487,30 @@
       "Export contacts": [
         "Exportare contacte"
       ],
+      "Operating system": [
+        "Sistem de operare"
+      ],
+      "Operating system version": [
+        "Versiune sistem de operare"
+      ],
+      "Proton username": [
+        "Utilizator Proton"
+      ],
+      "Category": [
+        "Categoria"
+      ],
+      "What happened?": [
+        "Ce s-a întâmplat?"
+      ],
+      "System information": [
+        "Informații sistem"
+      ],
+      "Browser": [
+        "Navigator"
+      ],
+      "Browser version": [
+        "Versiune navigator"
+      ],
       "From: ${ fromEmailAddress }": [
         "De la:{ fromEmailAddress }$"
       ],
@@ -2520,38 +2550,8 @@
       "Select how your composer opens by default.": [
         "Selectați modul în care se deschide implicit editorul de mesaje."
       ],
-      "0 - Not a fan": [
-        "0 - Nu-mi place"
-      ],
-      "10 - Love it!": [
-        "10 - Îmi place!"
-      ],
       "What is the primary reason for this rating?": [
         "Care este motivul principal pentru această evaluare?"
-      ],
-      "Operating system": [
-        "Sistem de operare"
-      ],
-      "Operating system version": [
-        "Versiune sistem de operare"
-      ],
-      "Proton username": [
-        "Utilizator Proton"
-      ],
-      "Category": [
-        "Categoria"
-      ],
-      "What happened?": [
-        "Ce s-a întâmplat?"
-      ],
-      "System information": [
-        "Informații sistem"
-      ],
-      "Browser": [
-        "Navigator"
-      ],
-      "Browser version": [
-        "Versiune navigator"
       ],
       "Enable Beta Access": [
         "Activare acces la Beta"
@@ -2748,6 +2748,12 @@
       "How would you rate your experience with the new ProtonMail?": [
         "Cum evaluați experiența cu noul ProtonMail?"
       ],
+      "0 - Not a fan": [
+        "0 - Nu-mi place"
+      ],
+      "10 - Love it!": [
+        "10 - Îmi place!"
+      ],
       "Also archive": [
         "Și arhivare"
       ]
@@ -2764,6 +2770,9 @@
       "Request an invite": [
         "Solicitați o invitație"
       ],
+      "clearing your browser cache": [
+        "golind bufferul navigatorului"
+      ],
       "Pay invoice": [
         "Plată factură"
       ],
@@ -2775,9 +2784,6 @@
       ],
       "Go to subscription plans": [
         "Accesare planuri abonamente"
-      ],
-      "clearing your browser cache": [
-        "golind bufferul navigatorului"
       ],
       "Inbox": [
         "Primite"
@@ -2940,15 +2946,6 @@
       "Name": [
         "Nume"
       ],
-      "Mailbox password": [
-        "Parolă mesaje"
-      ],
-      "e.g. Julia Smith": [
-        "ex: Iulia Sandu"
-      ],
-      "Feedback": [
-        "Feedback"
-      ],
       "OS name": [
         "Sistem de operare"
       ],
@@ -2969,6 +2966,15 @@
       ],
       "Browser version": [
         "Versiune navigator"
+      ],
+      "Mailbox password": [
+        "Parolă mesaje"
+      ],
+      "e.g. Julia Smith": [
+        "ex: Iulia Sandu"
+      ],
+      "Feedback": [
+        "Feedback"
       ],
       "Type text or keyword": [
         "Scrieți un text sau cuvânt cheie"
@@ -3048,14 +3054,14 @@
       "Contacts could not be merged": [
         "Contactele nu au putut fi îmbinate"
       ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
+      ],
       "Are you sure you want to discard your import?": [
         "Sigur doriți să anulați importarea?"
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Setările locale de dată și oră par să nu fie sincronizate."
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Verificarea semnăturii atașamentului a eșuat.\nÎncă puteți descărca acest atașament, dar este posibil să fi fost modificat.",
@@ -3221,14 +3227,14 @@
       "Fingerprint copied to clipboard": [
         "Amprenta a fost copiată în memorie"
       ],
+      "Bug reported": [
+        "Eroare raportată"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Preferințele combinațiilor de taste au fost actualizate"
       ],
       "Preference saved": [
         "Preferințe salvate"
-      ],
-      "Bug reported": [
-        "Eroare raportată"
       ],
       "Message content search activated": [
         "Căutarea în conținutul mesajelor este activată"
@@ -3671,6 +3677,118 @@
         "S-au criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } de contacte."
       ]
     },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Imagine neselectată"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Problemă autentificare"
+      ],
+      "Sign up problem": [
+        "Problemă înregistrare"
+      ],
+      "Payments problem": [
+        "Problemă plăți"
+      ],
+      "Custom domain problem": [
+        "Problemă domeniu personal"
+      ],
+      "Bridge problem": [
+        "Problemă „Bridge”"
+      ],
+      "Import / export problem": [
+        "Problemă importare/exportare"
+      ],
+      "Connection problem": [
+        "Problemă de conectare"
+      ],
+      "Slow speed problem": [
+        "Problemă viteză scăzută"
+      ],
+      "Calendar problem": [
+        "Problemă calendar"
+      ],
+      "Contacts problem": [
+        "Problemă contacte"
+      ],
+      "Drive problem": [
+        "Problemă „Drive”"
+      ],
+      "Mail problem": [
+        "Problemă e-mail"
+      ],
+      "VPN problem": [
+        "Problemă VPN"
+      ],
+      "Feature request": [
+        "Solicitare funcții noi"
+      ],
+      "Other": [
+        "Altele"
+      ],
+      "Signup problem": [
+        "Problemă înregistrare"
+      ],
+      "Installation problem": [
+        "Problemă la instalare"
+      ],
+      "Update problem": [
+        "Problemă la actualizare"
+      ],
+      "Application problem": [
+        "Problemă aplicație"
+      ],
+      "Speed problem": [
+        "Problemă viteză"
+      ],
+      "Manual setup problem": [
+        "Problemă setare manuală"
+      ],
+      "Website access problem": [
+        "Problemă accesare site web"
+      ],
+      "Streaming problem": [
+        "Problemă redare în flux"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Cont"
+      ],
+      "Apps": [
+        "Aplicaţii"
+      ],
+      "Network": [
+        "Reţea"
+      ],
+      "Services": [
+        "Servicii"
+      ],
+      "Other category": [
+        "Altă categorie"
+      ],
+      "Custom folders": [
+        "Foldere personalizate"
+      ],
+      "Default folders": [
+        "Foldere implicite"
+      ],
+      "Labels": [
+        "Etichete"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Selectare"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "Atașare captură ecran"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Conectare la furnizorul de contacte"
@@ -3827,118 +3945,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Mesajul a fost trimis"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Imagine neselectată"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Problemă autentificare"
-      ],
-      "Sign up problem": [
-        "Problemă înregistrare"
-      ],
-      "Payments problem": [
-        "Problemă plăți"
-      ],
-      "Custom domain problem": [
-        "Problemă domeniu personal"
-      ],
-      "Bridge problem": [
-        "Problemă „Bridge”"
-      ],
-      "Import / export problem": [
-        "Problemă importare/exportare"
-      ],
-      "Connection problem": [
-        "Problemă de conectare"
-      ],
-      "Slow speed problem": [
-        "Problemă viteză scăzută"
-      ],
-      "Calendar problem": [
-        "Problemă calendar"
-      ],
-      "Contacts problem": [
-        "Problemă contacte"
-      ],
-      "Drive problem": [
-        "Problemă „Drive”"
-      ],
-      "Mail problem": [
-        "Problemă e-mail"
-      ],
-      "VPN problem": [
-        "Problemă VPN"
-      ],
-      "Feature request": [
-        "Solicitare funcții noi"
-      ],
-      "Other": [
-        "Altele"
-      ],
-      "Signup problem": [
-        "Problemă înregistrare"
-      ],
-      "Installation problem": [
-        "Problemă la instalare"
-      ],
-      "Update problem": [
-        "Problemă la actualizare"
-      ],
-      "Application problem": [
-        "Problemă aplicație"
-      ],
-      "Speed problem": [
-        "Problemă viteză"
-      ],
-      "Manual setup problem": [
-        "Problemă setare manuală"
-      ],
-      "Website access problem": [
-        "Problemă accesare site web"
-      ],
-      "Streaming problem": [
-        "Problemă redare în flux"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Cont"
-      ],
-      "Apps": [
-        "Aplicaţii"
-      ],
-      "Network": [
-        "Reţea"
-      ],
-      "Services": [
-        "Servicii"
-      ],
-      "Other category": [
-        "Altă categorie"
-      ],
-      "Custom folders": [
-        "Foldere personalizate"
-      ],
-      "Default folders": [
-        "Foldere implicite"
-      ],
-      "Labels": [
-        "Etichete"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Selectare"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Atașare captură ecran"
       ]
     },
     "Beta access description": {

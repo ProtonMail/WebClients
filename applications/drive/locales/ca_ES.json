@@ -5,9 +5,160 @@
   },
   "contexts": {
     "": {},
+    "Error": {
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "Aquest missatge pot contenir algunes adreces URL que no es poden obrir amb el vostre navegador actual"
+      ],
+      "Authentication canceled.": [
+        "S'ha cancel·lat l'autenticació."
+      ],
+      "Your import will not be processed.": [
+        "La vostra importació no es processarà."
+      ],
+      "Authentication error.": [
+        "Error d'autenticació."
+      ],
+      "Unknown error": [
+        "Error desconegut"
+      ],
+      "Email address invalid": [
+        "L'adreça de correu electrònic no és vàlida"
+      ],
+      "This field is required": [
+        "Aquest camp és obligatori"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
+      ],
+      "Can't validate email, try again later": [
+        "No es pot validar el correu electrònic, torneu-ho a provar més tard"
+      ],
+      "Can't validate phone, try again later": [
+        "No es pot validar el telèfon, torneu-ho a provar més tard"
+      ],
+      "Enter 6 digits": [
+        "Introduïu 6 dígits"
+      ],
+      "Invalid verification code": [
+        "Codi de verificació no vàlid"
+      ],
+      "Preferences could not be saved": [
+        "No s'han pogut desar les preferències"
+      ],
+      "Some groups could not be deleted": [
+        "Alguns grups no poden ser eliminats"
+      ],
+      "Image upload failed": [
+        "La càrrega de la imatge ha fallat"
+      ],
+      "Contact could not be saved": [
+        "El contacte no s'ha pogut desar"
+      ],
+      "Some contacts could not be deleted": [
+        "Alguns contactes no s'han pogut esborrar"
+      ],
+      "Invalid public key file": [
+        "Arxiu de clau pública invàlid"
+      ],
+      "You can't send a mail to more than 100 recipients": [
+        "No podeu enviar un correu a més de 100 destinataris"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Un dels contactes no té adreça de correu electrònic: ${ noEmailsContactNamesList }",
+        "Alguns contactes no tenen adreça de correu electrònic: ${ noEmailsContactNamesList } "
+      ],
+      "You can't send vCards of more than 10 contacts": [
+        "No podeu enviar vCards de més de 10 contactes"
+      ],
+      "There was an error when exporting the contacts vCards": [
+        "Hi ha hagut un error exportant les vCards dels contactes"
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Un dels grups no té contactes: ${ noContactGroupList }",
+        "Alguns grups no tenen contactes: ${ noContactGroupList } "
+      ],
+      "You must set a name": [
+        "Heu d'establir un nom"
+      ],
+      "A group with this name already exists": [
+        "Ja existeix un grup amb aquest nom"
+      ],
+      "Invalid name": [
+        "Nom no vàlid"
+      ],
+      "File has no contents to preview": [
+        "L'arxiu no té contingut per previsualitzar"
+      ],
+      "We were unable to connect to your service provider.": [
+        ""
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        ""
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Contrasenya de bustia incorrecta, si us plau, torneu-ho a provar de nou"
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Credencials de connexió incorrectes. Si us plau, torni-ho a intentar"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
+      ],
+      "Email is not valid": [
+        "El correu electrònic no és vàlid"
+      ],
+      "Not a valid number": [
+        "Número no vàlid"
+      ],
+      "Passwords do not match": [
+        "Les contrasenyes no coincideixen"
+      ],
+      "Request timed out.": [
+        "S'ha esgotat el temps d'espera."
+      ],
+      "Signature verification failed": [
+        "Verificació de la signatura fallida"
+      ],
+      "Could not find address ${ email }.": [
+        "No s'ha pogut trobar l'adreça ${ email }."
+      ],
+      "Missing signature": [
+        "Signatura no trobada"
+      ],
+      "Contact signature not verified": [
+        "Signatura del contacte no verificada"
+      ],
+      "Signature not verified": [
+        "Signatura no verificada"
+      ],
+      "No valid address found": [
+        "No s’ha trobat una adreça vàlida"
+      ],
+      "Incorrect password. Please try again.": [
+        "Contrasenya incorrecta, torneu-ho a intentar."
+      ]
+    },
     "Action": {
       "Close": [
         "Tancar"
+      ],
+      "Confirm": [
+        "Confirmar"
+      ],
+      "Cancel": [
+        "Cancel·lar"
+      ],
+      "Close modal": [
+        "Tancar el modal"
+      ],
+      "Submit": [
+        "Enviar"
+      ],
+      "More info: ${ safeTitle }": [
+        "Més informació: ${ safeTitle }"
+      ],
+      "Use “${ label }” setting": [
+        "Utilitzar la configuració \"${ label }\""
       ],
       "Close navigation": [
         "Tanca la navegació"
@@ -15,8 +166,8 @@
       "Open navigation": [
         "Obre la navegació"
       ],
-      "Use “${ label }” setting": [
-        "Utilitzar la configuració \"${ label }\""
+      "Go to panel ${ index }": [
+        "Anar al panell ${ index }"
       ],
       "Load image": [
         "Carregar imatge"
@@ -57,62 +208,41 @@
       "Upload picture": [
         "Carregar imatge"
       ],
-      "Confirm opening of link ${ link }": [
-        "Confirmeu obrir l'enllaç ${ link }"
-      ],
-      "Confirm": [
-        "Confirmar"
-      ],
-      "Go to panel ${ index }": [
-        "Anar al panell ${ index }"
-      ],
-      "More info: ${ safeTitle }": [
-        "Més informació: ${ safeTitle }"
-      ],
       "Next month": [
         "Mes següent"
       ],
       "Previous month": [
         "Mes anterior"
       ],
-      "Cancel": [
-        "Cancel·lar"
+      "Confirm opening of link ${ link }": [
+        "Confirmeu obrir l'enllaç ${ link }"
       ],
-      "Close modal": [
-        "Tancar el modal"
+      "refresh the page": [
+        "refresqueu la pàgina"
       ],
-      "Submit": [
-        "Enviar"
+      "View invoice": [
+        "Veure factura"
       ],
-      "Previous": [
-        "Anterior"
+      "Get verification code": [
+        "Obtenir codi de verificació"
       ],
-      "Next": [
-        "Següent"
+      "Try another method": [
+        "Proveu amb un altre mètode"
       ],
-      "Details": [
-        "Detalls"
+      "Request new code": [
+        "Demana un nou codi"
       ],
-      "Share via link": [
-        "Comparteix via enllaç"
+      "Verify": [
+        "Verificar"
       ],
-      "Sharing options": [
-        "Opcions per a compartir"
+      "Did not receive the code?": [
+        "No has regut el codi?"
       ],
-      "Zoom out": [
-        "Allunyar"
+      "Edit email address": [
+        "Editar l'adreça de correu electrònic"
       ],
-      "Reset zoom": [
-        "Restablir zoom"
-      ],
-      "Zoom in": [
-        "Apropa"
-      ],
-      "Use ${ label } theme": [
-        "Utilitzar el tema ${ label }"
-      ],
-      "OK": [
-        "D'acord"
+      "Edit phone number": [
+        "Editar el número de telèfon"
       ],
       "Save": [
         "Desar"
@@ -161,6 +291,9 @@
       ],
       "Preview contact": [
         "Previsualitzar contacte"
+      ],
+      "Continue": [
+        "Continua"
       ],
       "Delete contact": [
         "Suprimir contacte"
@@ -224,32 +357,32 @@
       "Import": [
         "Importar"
       ],
-      "Continue": [
-        "Continua"
+      "Next": [
+        "Següent"
       ],
-      "Continue import": [
-        ""
+      "Signing out": [
+        "Tancant la sessió"
       ],
-      "Discard": [
-        ""
+      "Details": [
+        "Detalls"
       ],
-      "Reconnect": [
-        ""
+      "Share via link": [
+        "Comparteix via enllaç"
       ],
-      "Start import": [
-        ""
+      "Sharing options": [
+        "Opcions per a compartir"
       ],
-      "Get started": [
-        "Començar"
+      "Zoom out": [
+        "Allunyar"
       ],
-      "Start setup": [
-        "Començar la configuració"
+      "Reset zoom": [
+        "Restablir zoom"
       ],
-      "Skip": [
-        "Ometre"
+      "Zoom in": [
+        "Apropa"
       ],
-      "Back": [
-        "Torna"
+      "Previous": [
+        "Anterior"
       ],
       "Close this banner": [
         "Tancar aquest bàner"
@@ -262,12 +395,6 @@
       ],
       "here": [
         "aquí"
-      ],
-      "refresh the page": [
-        "refresqueu la pàgina"
-      ],
-      "Signing out": [
-        "Tancant la sessió"
       ],
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
@@ -326,44 +453,86 @@
       "Show info": [
         "Mostra informació"
       ],
-      "View invoice": [
-        "Veure factura"
+      "Get started": [
+        "Començar"
       ],
-      "Get verification code": [
-        "Obtenir codi de verificació"
+      "Start setup": [
+        "Començar la configuració"
       ],
-      "Try another method": [
-        "Proveu amb un altre mètode"
+      "Skip": [
+        "Ometre"
       ],
-      "Request new code": [
-        "Demana un nou codi"
+      "Back": [
+        "Torna"
       ],
-      "Verify": [
-        "Verificar"
+      "Use ${ label } theme": [
+        "Utilitzar el tema ${ label }"
       ],
-      "Did not receive the code?": [
-        "No has regut el codi?"
+      "OK": [
+        "D'acord"
       ],
-      "Edit email address": [
-        "Editar l'adreça de correu electrònic"
+      "Continue import": [
+        ""
       ],
-      "Edit phone number": [
-        "Editar el número de telèfon"
+      "Discard": [
+        ""
+      ],
+      "Reconnect": [
+        ""
+      ],
+      "Start import": [
+        ""
       ],
       "Log in": [
         "Inicia la sessió"
       ],
-      "New upload": [
-        "Càrrega nova"
-      ],
       "Delete permanently": [
         "Suprimeix permanentment"
       ],
-      "Restore from trash": [
-        "Recuperar de la paperera"
+      "Undo": [
+        "Desfer"
       ],
-      "Empty trash": [
-        "Buidar paperera"
+      "Maximize transfers": [
+        "Maximitzar les transferències"
+      ],
+      "Minimize transfers": [
+        "Minimitzar les transferències"
+      ],
+      "Close transfers": [
+        "Tancar transferencies"
+      ],
+      "Pause download": [
+        "Pausa la baixada"
+      ],
+      "Pause upload": [
+        "Pausar la càrrega"
+      ],
+      "Resume download": [
+        "Reprèn la baixada"
+      ],
+      "Resume upload": [
+        "Reprèn la càrrega"
+      ],
+      "Cancel download": [
+        "Cancel·la la baixada"
+      ],
+      "Cancel upload": [
+        "Cancel·lar càrrega"
+      ],
+      "Restart download": [
+        "Reinicia totes les descàrregues"
+      ],
+      "Restart upload": [
+        "Reprèn la càrrega"
+      ],
+      "Remove from this list": [
+        "Esborra de la llista"
+      ],
+      "Cancel all uploads": [
+        "Cancel·lar totes les pujades"
+      ],
+      "New upload": [
+        "Càrrega nova"
       ],
       "List layout": [
         "Disseny de llista"
@@ -413,6 +582,12 @@
       "Upload folder": [
         "Carrega Carpeta"
       ],
+      "Restore from trash": [
+        "Recuperar de la paperera"
+      ],
+      "Empty trash": [
+        "Buidar paperera"
+      ],
       "Start recovering": [
         "Començar a recuperar"
       ],
@@ -442,56 +617,11 @@
       ],
       "Create link": [
         "Crea l’enllaç"
-      ],
-      "Maximize transfers": [
-        "Maximitzar les transferències"
-      ],
-      "Minimize transfers": [
-        "Minimitzar les transferències"
-      ],
-      "Close transfers": [
-        "Tancar transferencies"
-      ],
-      "Pause download": [
-        "Pausa la baixada"
-      ],
-      "Pause upload": [
-        "Pausar la càrrega"
-      ],
-      "Resume download": [
-        "Reprèn la baixada"
-      ],
-      "Resume upload": [
-        "Reprèn la càrrega"
-      ],
-      "Cancel download": [
-        "Cancel·la la baixada"
-      ],
-      "Cancel upload": [
-        "Cancel·lar càrrega"
-      ],
-      "Restart download": [
-        "Reinicia totes les descàrregues"
-      ],
-      "Restart upload": [
-        "Reprèn la càrrega"
-      ],
-      "Remove from this list": [
-        "Esborra de la llista"
-      ],
-      "Undo": [
-        "Desfer"
-      ],
-      "Cancel all uploads": [
-        "Cancel·lar totes les pujades"
       ]
     },
     "Title": {
       "Open actions dropdown": [
         "Obrir desplegable d'accions"
-      ],
-      "What's new": [
-        "Novetats"
       ],
       "Upgrade required": [
         "És necessari actualitzar"
@@ -508,8 +638,17 @@
       "Keyboard Shortcuts": [
         "Dreceres de teclat"
       ],
-      "Select a theme": [
-        "Seleccionar un tema"
+      "What's new": [
+        "Novetats"
+      ],
+      "Invalid verification code": [
+        "Codi de verificació no vàlid"
+      ],
+      "Request new verification code": [
+        "Sol·licita un nou codi de verificació"
+      ],
+      "Human verification": [
+        "Verificació humana"
       ],
       "Edit contact group": [
         "Editar grup de contactes"
@@ -593,6 +732,9 @@
       "Merge contacts": [
         "Combinar contactes"
       ],
+      "Deleting contacts": [
+        "Eliminant contactes"
+      ],
       "View contacts": [
         "Veure contactes"
       ],
@@ -620,15 +762,6 @@
       "Import contacts": [
         "Importar contactes"
       ],
-      "Start import process": [
-        ""
-      ],
-      "Import in progress": [
-        ""
-      ],
-      "Beta Access": [
-        "Accés Beta"
-      ],
       "Open help menu": [
         "Obrir el menú d'ajuda"
       ],
@@ -640,6 +773,15 @@
       ],
       "Report a problem": [
         "Avisar d'un problema"
+      ],
+      "Select a theme": [
+        "Seleccionar un tema"
+      ],
+      "Start import process": [
+        ""
+      ],
+      "Import in progress": [
+        ""
       ],
       "${ appName } Keyboard Shortcuts": [
         "Dreceres de teclat de ${ appName }"
@@ -653,14 +795,8 @@
       "Composer mode": [
         "Mode d'editor"
       ],
-      "Invalid verification code": [
-        "Codi de verificació no vàlid"
-      ],
-      "Request new verification code": [
-        "Sol·licita un nou codi de verificació"
-      ],
-      "Human verification": [
-        "Verificació humana"
+      "Beta Access": [
+        "Accés Beta"
       ],
       "Sign in again to continue": [
         "Inicia sessió per continuar"
@@ -674,14 +810,23 @@
       "Enter your password": [
         "Introdueix la teva contrasenya"
       ],
+      "Delete permanently": [
+        "Suprimeix permanentment"
+      ],
+      "Stop sharing": [
+        "Deixa de compartir"
+      ],
+      "Cancel all active transfers": [
+        "Cancel·leu totes les transferències actives"
+      ],
+      "Duplicate folder found": [
+        "Carpeta duplicada trobada"
+      ],
+      "Duplicate file found": [
+        "Trobat un fitxer duplicat"
+      ],
       "Drop to upload": [
         "Arrosega per pujar"
-      ],
-      "Trash": [
-        "Paperera"
-      ],
-      "Empty trash": [
-        "Buidar paperera"
       ],
       "Change layout": [
         "Cambiar la disposició"
@@ -691,6 +836,12 @@
       ],
       "Sort files/folders": [
         "Ordenar fitxers/carpetes"
+      ],
+      "Trash": [
+        "Paperera"
+      ],
+      "Empty trash": [
+        "Buidar paperera"
       ],
       "Drive": [
         "Drive"
@@ -704,12 +855,6 @@
       "You have inaccessible files": [
         "Teniu arxius inaccessibles"
       ],
-      "Rename a folder": [
-        "Reanomenar carpeta"
-      ],
-      "Rename a file": [
-        "Renomenar arxiu"
-      ],
       "My files": [
         "Els meus arxius"
       ],
@@ -718,6 +863,12 @@
       ],
       "You have no files to share": [
         "No tens arxius per compartir"
+      ],
+      "Rename a folder": [
+        "Reanomenar carpeta"
+      ],
+      "Rename a file": [
+        "Renomenar arxiu"
       ],
       "File details": [
         "Detalls de l’arxiu"
@@ -764,12 +915,6 @@
       "Select link expiration time": [
         "Selecciona el temps de caducitat de l'enllaç"
       ],
-      "Discard changes?": [
-        "Descartar els canvis?"
-      ],
-      "Discard": [
-        "Descartar"
-      ],
       "Share via link": [
         "Comparteix via enllaç"
       ],
@@ -782,6 +927,12 @@
       "Stop sharing with everyone?": [
         "Deixar de compartir amb tothom?"
       ],
+      "Discard changes?": [
+        "Descartar els canvis?"
+      ],
+      "Discard": [
+        "Descartar"
+      ],
       "Files details": [
         "Detalls de l’arxiu"
       ],
@@ -790,9 +941,6 @@
       ],
       "Total size": [
         "Mida total"
-      ],
-      "Cancel all active transfers": [
-        "Cancel·leu totes les transferències actives"
       ],
       "Your file is ready to be downloaded": [
         "El vostre fitxer està preparat per descarregar"
@@ -814,26 +962,20 @@
       ],
       "The link either does not exist or has expired": [
         "L’enllaç no existeix o bé ha caducat"
-      ],
-      "Delete permanently": [
-        "Suprimeix permanentment"
-      ],
-      "Stop sharing": [
-        "Deixa de compartir"
-      ],
-      "Deleting contacts": [
-        "Eliminant contactes"
-      ],
-      "Duplicate folder found": [
-        "Carpeta duplicada trobada"
       ]
     },
     "Info": {
       "No results found": [
         "No s'han trobat resultats"
       ],
+      "Loading": [
+        "Carregant"
+      ],
       "No contacts added yet": [
         "Encara no s'han afegit contactes"
+      ],
+      "Week": [
+        "Setmana"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb els navegadors Internet Explorer i Edge. Si esteu segurs de que aquest enllaç és legítim, feu servir un navegador diferent per obrir-lo."
@@ -850,29 +992,38 @@
       "Drop the file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo"
       ],
-      "Week": [
-        "Setmana"
+      "support team": [
+        "equip de suport"
       ],
-      "Loading": [
-        "Carregant"
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Actualment, el vostre compte Proton està en suspensió. Per continuar utilitzant el vostre compte, pagueu qualsevol factura que hagi pendent."
       ],
-      "of": [
-        "de"
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
       ],
-      "Unsupported file": [
-        "Fitxer no compatible"
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Introduïu el codi de verificació que s’ha enviat a ${ destinationText }."
       ],
-      "No preview available": [
-        "No hi ha previsualització disponible"
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
       ],
-      "Preview": [
-        "Vista prèvia"
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquesta adreça de correu electrònic és incorrecta, feu clic a \"Editar\" per corregir-la."
       ],
-      "Loading preview": [
-        "S'està carregant la previsualització"
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
       ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "Aquest navegador no suporta la previsualització de documents PDF. Descarregueu-vos l'arxiu."
+      "To fight spam and abuse, please verify you are human.": [
+        "Per combatre el correu brossa, si us plau verifiqueu que sou humà."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Membre",
@@ -960,8 +1111,8 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Canvieu aquestes funcions només si esteu emprant PGP amb destinataris sense ProtonMail."
       ],
-      "All uploaded keys are expired or revoked! Encryption is automatically disabled.": [
-        "Totes les claus carregades han expirat o s'han revocat! El xifratge s'ha desactivat de forma automàtica."
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        "Cap de les claus carregades és vàlida pel xifratge. S'ha deshabilitat el xifratge automàticament."
       ],
       "Primary": [
         "Primari"
@@ -987,29 +1138,26 @@
         "${ addressCount } adreça de correu electrònic",
         "${ addressCount } adreces de correu electrònic"
       ],
-      "Import contacts": [
-        ""
+      "Loading ${ appName }": [
+        "Carregant ${ appName }"
       ],
-      "Your import has started!": [
-        ""
+      "Unsupported file": [
+        "Fitxer no compatible"
       ],
-      "Your contacts are being imported from": [
-        ""
+      "No preview available": [
+        "No hi ha previsualització disponible"
       ],
-      "to": [
-        ""
+      "Preview": [
+        "Vista prèvia"
       ],
-      "We will notify you once your import is finished.": [
-        ""
+      "Loading preview": [
+        "S'està carregant la previsualització"
       ],
-      "Large imports can take several days to complete.": [
-        ""
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        "Aquest navegador no suporta la previsualització de documents PDF. Descarregueu-vos l'arxiu."
       ],
-      "You can continue using Proton services as usual.": [
-        ""
-      ],
-      "Your import will not be processed.": [
-        ""
+      "of": [
+        "de"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés ha estat restringit. ${ payInvoiceLink }"
@@ -1050,47 +1198,38 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Heu desactivat l'accés a la versió Beta. Cliqueu ${ refreshButton } per utilitzar la versió estable de ${ appName }. Es tornarà a carregar l'aplicació."
       ],
-      "Loading ${ appName }": [
-        "Carregant ${ appName }"
-      ],
       "Screenshot(s) attached": [
         "Captures de pantalla(s) adjuntes"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
+      "Import contacts": [
+        ""
+      ],
+      "Your contacts are being imported from": [
+        ""
+      ],
+      "to": [
+        ""
+      ],
+      "Your import has started!": [
+        ""
+      ],
+      "We will notify you once your import is finished.": [
+        ""
+      ],
+      "Large imports can take several days to complete.": [
+        ""
+      ],
+      "You can continue using Proton services as usual.": [
+        ""
+      ],
+      "Your import will not be processed.": [
+        ""
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navegació bàsica i les accions es mantenen disponibles independentment de que les dreceres de teclat estiguin actives o no a la configuració."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Actualment, el vostre compte Proton està en suspensió. Per continuar utilitzant el vostre compte, pagueu qualsevol factura que hagi pendent."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Introduïu el codi de verificació que s’ha enviat a ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquesta adreça de correu electrònic és incorrecta, feu clic a \"Editar\" per corregir-la."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Per combatre el correu brossa, si us plau verifiqueu que sou humà."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
       ],
       "here": [
         "aquí"
@@ -1109,6 +1248,128 @@
       ],
       "Servers are unreachable.": [
         "Els servidors no són accessibles."
+      ],
+      "Loading folder contents": [
+        "S'estan carregant els continguts de la carpeta"
+      ],
+      "Uploading hundreds of files at once may have a performance impact.": [
+        "La càrrega de centenars de fitxers alhora pot tenir un impacte en el rendiment."
+      ],
+      "Are you sure you want to permanently delete selected item(s) from trash?": [
+        "Esteu segur que voleu suprimir permanentment els elements seleccionats de la paperera?"
+      ],
+      "This will delete the link(s) and remove access to your file(s) for anyone with the link(s).": [
+        "Això suprimirà els enllaç/os i eliminarà l'accés als vostres fitxer/s per a qualsevol persona que tingui els enllaç/os."
+      ],
+      "Moving files": [
+        "S'està movent fitxers"
+      ],
+      "You cannot undo this action.": [
+        "No pots desfer aquesta acció."
+      ],
+      "${ doneCount } Finished": [
+        "${ doneCount } Finalitzat",
+        "${ doneCount } Finalitzats"
+      ],
+      "${ doneUploadsCount } Uploaded": [
+        "${ doneUploadsCount } Carregat",
+        "${ doneUploadsCount } Carregats"
+      ],
+      "${ doneDownloadsCount } Downloaded": [
+        "${ doneDownloadsCount } Descarregat",
+        "${ doneDownloadsCount } Descarregats"
+      ],
+      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
+        "${ activeUploadsCount } Carregant (${ uploadProgress }%)",
+        "${ activeUploadsCount } Carregant (${ uploadProgress }%)"
+      ],
+      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
+        "${ activeDownloadsCount } Descarregant (${ downloadProgress }%)",
+        "${ activeDownloadsCount } Descarregant (${ downloadProgress }%)"
+      ],
+      "${ pausedCount } Paused": [
+        "${ pausedCount } Pausat",
+        "${ pausedCount } Pausats"
+      ],
+      "${ canceledCount } Canceled": [
+        "${ canceledCount } Cancel·lat",
+        "${ canceledCount } Cancel·lats"
+      ],
+      "${ errorCount } Failed": [
+        "${ errorCount } Fallat",
+        "${ errorCount } Fallats"
+      ],
+      "Something went wrong, please try again later.": [
+        "Alguna cosa ha anat malament, siusplau, intenta-ho més tard."
+      ],
+      "Initializing": [
+        "Inicialitzant"
+      ],
+      "Conflict": [
+        "Conflicte"
+      ],
+      "Queued": [
+        "En cua"
+      ],
+      "${ speed }/s": [
+        "${ speed }/s"
+      ],
+      "Paused": [
+        "Pausat"
+      ],
+      "Downloaded": [
+        "Descarregat"
+      ],
+      "Uploaded": [
+        "Carregat"
+      ],
+      "Failed": [
+        "Fallat"
+      ],
+      "Network issue": [
+        "Problema de xarxa"
+      ],
+      "Canceled": [
+        "Cancel·lat"
+      ],
+      "Finalizing": [
+        "Finalitzant"
+      ],
+      "Downloading": [
+        "Descarregant"
+      ],
+      "Uploading": [
+        "Carregant"
+      ],
+      "Closing transfer manager will cancel all active transfers, are you sure?": [
+        "Tancar el gestor de transferències cancel·larà totes les transferències actives, n'esteu segur?"
+      ],
+      "${ uploadName } already exists in this location.": [
+        "${ uploadName } ja existeix en aquesta ubicació."
+      ],
+      "What do you want to do?": [
+        "Què voleu fer?"
+      ],
+      "Folder contents will merge into a single folder": [
+        "Els continguts de la carpeta es combinaran en una sola carpeta"
+      ],
+      "A number will be added to the folder name": [
+        "S'afegirà un número al nom de la carpeta"
+      ],
+      "A number will be added to the filename": [
+        "S'afegirà un número al nom de l'arxiu"
+      ],
+      "This will overwrite the existing folder": [
+        "Se sobreescriurà la carpeta existent"
+      ],
+      "This will overwrite the existing file": [
+        "Se sobreescriurà l'arxiu existent"
+      ],
+      "Folder will not be uploaded": [
+        "No es carregarà la carpeta"
+      ],
+      "File will not be uploaded": [
+        "No es carregarà l'arxiu"
       ],
       "Your files will be encrypted and then saved.": [
         "Els teus arxius serán cifrats i desats."
@@ -1164,8 +1425,8 @@
       "Only the people with the link and the password can access this file.": [
         "Només les persones amb l'enllaç i la contrasenya poden accedir a aquest arxiu."
       ],
-      "You will lose all unsaved changes.": [
-        "Perdreu tots els canvis no desats."
+      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
+        "Aquest enllaç es va crear en una versió anterior i no es pot modificar. Elimineu l'enllaç i creeu-ne un de nou per canviar-ne la configuració."
       ],
       "Your secure, shareable link for ${ boldNameText }:": [
         "El vostre enllaç segur i compartible per ${ boldNameText }:"
@@ -1173,88 +1434,20 @@
       "Failed to generate a secure link. Try again later.": [
         "No s'ha pogut generar un enllaç segur. Torna-ho a provar més tard."
       ],
+      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
+        "Aquest enllaç es deshabilitarà permanentment. Ningú podrà accedir al vostre arxiu amb aquest enllaç. Per tornar a compartir l'arxiu necessitareu un nou enllaç."
+      ],
+      "You will lose all unsaved changes.": [
+        "Perdreu tots els canvis no desats."
+      ],
       "Preparing link to file": [
         "Preparant el enllaç al arxiu"
       ],
       "Creating link to file": [
         "Preparant el enllaç al fitxer"
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Aquest enllaç es deshabilitarà permanentment. Ningú podrà accedir al vostre arxiu amb aquest enllaç. Per tornar a compartir l'arxiu necessitareu un nou enllaç."
-      ],
       "Select an uploaded file and create a link to it.": [
         "Seleccioneu un fitxer carregat i creeu-hi un enllaç."
-      ],
-      "${ doneCount } Finished": [
-        "${ doneCount } Finalitzat",
-        "${ doneCount } Finalitzats"
-      ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } Carregat",
-        "${ doneUploadsCount } Carregats"
-      ],
-      "${ doneDownloadsCount } Downloaded": [
-        "${ doneDownloadsCount } Descarregat",
-        "${ doneDownloadsCount } Descarregats"
-      ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } Carregant (${ uploadProgress }%)",
-        "${ activeUploadsCount } Carregant (${ uploadProgress }%)"
-      ],
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } Descarregant (${ downloadProgress }%)",
-        "${ activeDownloadsCount } Descarregant (${ downloadProgress }%)"
-      ],
-      "${ pausedCount } Paused": [
-        "${ pausedCount } Pausat",
-        "${ pausedCount } Pausats"
-      ],
-      "${ canceledCount } Canceled": [
-        "${ canceledCount } Cancel·lat",
-        "${ canceledCount } Cancel·lats"
-      ],
-      "${ errorCount } Failed": [
-        "${ errorCount } Fallat",
-        "${ errorCount } Fallats"
-      ],
-      "Something went wrong, please try again later.": [
-        "Alguna cosa ha anat malament, siusplau, intenta-ho més tard."
-      ],
-      "Initializing": [
-        "Inicialitzant"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
-      ],
-      "Paused": [
-        "Pausat"
-      ],
-      "Downloaded": [
-        "Descarregat"
-      ],
-      "Uploaded": [
-        "Carregat"
-      ],
-      "Failed": [
-        "Fallat"
-      ],
-      "Network issue": [
-        "Problema de xarxa"
-      ],
-      "Canceled": [
-        "Cancel·lat"
-      ],
-      "Finalizing": [
-        "Finalitzant"
-      ],
-      "Downloading": [
-        "Descarregant"
-      ],
-      "Uploading": [
-        "Carregant"
-      ],
-      "Closing transfer manager will cancel all active transfers, are you sure?": [
-        "Tancar el gestor de transferències cancel·larà totes les transferències actives, n'esteu segur?"
       ],
       "Link expires: ": [
         "L'enllaç caduca el: "
@@ -1271,266 +1464,17 @@
       "Your file is being downloaded.": [
         "S'està baixant el fitxer."
       ],
-      "You cannot undo this action.": [
-        "No pots desfer aquesta acció."
-      ],
-      "Loading folder contents": [
-        "S'estan carregant els continguts de la carpeta"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "La càrrega de centenars de fitxers alhora pot tenir un impacte en el rendiment."
-      ],
-      "Are you sure you want to permanently delete selected item(s) from trash?": [
-        "Esteu segur que voleu suprimir permanentment els elements seleccionats de la paperera?"
-      ],
-      "This will delete the link(s) and remove access to your file(s) for anyone with the link(s).": [
-        "Això suprimirà els enllaç/os i eliminarà l'accés als vostres fitxer/s per a qualsevol persona que tingui els enllaç/os."
-      ],
-      "Moving files": [
-        "S'està movent fitxers"
-      ],
       "Trash": [
         "Paperera"
       ],
       "My Links": [
         "Els meus enllaços"
-      ],
-      "What do you want to do?": [
-        "Què voleu fer?"
-      ],
-      "Folder contents will merge into a single folder": [
-        "Els continguts de la carpeta es combinaran en una sola carpeta"
-      ],
-      "A number will be added to the folder name": [
-        "S'afegirà un número al nom de la carpeta"
-      ],
-      "A number will be added to the filename": [
-        "S'afegirà un número al nom de l'arxiu"
-      ],
-      "This will overwrite the existing folder": [
-        "Se sobreescriurà la carpeta existent"
-      ],
-      "This will overwrite the existing file": [
-        "Se sobreescriurà l'arxiu existent"
-      ],
-      "Folder will not be uploaded": [
-        "No es carregarà la carpeta"
-      ],
-      "File will not be uploaded": [
-        "No es carregarà l'arxiu"
-      ],
-      "Conflict": [
-        "Conflicte"
-      ],
-      "Queued": [
-        "En cua"
-      ]
-    },
-    "Storage": {
-      "Your current storage:": [
-        "El vostre emmagatzematge actual:"
-      ],
-      "Upgrade storage": [
-        "Millora l'emmagatzematge"
-      ],
-      "Release notes": [
-        "Notes de la versió"
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "P. ex., "
-      ],
-      "Start typing an email address": [
-        "Comenceu a escriure una adreça de correu electrònic"
-      ],
-      "Image URL": [
-        "URL de la imatge"
-      ],
-      "Filter groups": [
-        "Filtrar grups"
-      ],
-      "Search for name or email": [
-        "Cercar per nom o correu electrònic"
-      ],
-      "Search for group name": [
-        "Cercar per nom de grup"
-      ],
-      "Name": [
-        "Nom"
-      ],
-      "e.g. Julia Smith": [
-        "ex. Julia Smith"
-      ],
-      "OS name": [
-        "Nom de Sistema Operatiu"
-      ],
-      "OS version": [
-        "Versió de Sistema Operatiu"
-      ],
-      "Proton username": [
-        "Nom d'usuari de Proton"
-      ],
-      "A way to contact you": [
-        "Una manera de contactar amb tu"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Si us plau, descriu el problema i inclou-hi qualsevol missatges d'error"
-      ],
-      "Browser name": [
-        "Nom del navegador"
-      ],
-      "Browser version": [
-        "Versió del navegador"
-      ],
-      "Mailbox password": [
-        "Contrasenya de la bústia"
-      ],
-      "New name": [
-        "Nom nou"
-      ],
-      "Enter a new folder name": [
-        "Introdueix el nom de la nova carpeta"
-      ]
-    },
-    "Error": {
-      "Email address invalid": [
-        "L'adreça de correu electrònic no és vàlida"
-      ],
-      "This field is required": [
-        "Aquest camp és obligatori"
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Aquest missatge pot contenir algunes adreces URL que no es poden obrir amb el vostre navegador actual"
-      ],
-      "Authentication canceled.": [
-        "S'ha cancel·lat l'autenticació."
-      ],
-      "Your import will not be processed.": [
-        "La vostra importació no es processarà."
-      ],
-      "Authentication error.": [
-        "Error d'autenticació."
-      ],
-      "Unknown error": [
-        "Error desconegut"
-      ],
-      "File has no contents to preview": [
-        "L'arxiu no té contingut per previsualitzar"
-      ],
-      "Preferences could not be saved": [
-        "No s'han pogut desar les preferències"
-      ],
-      "Image upload failed": [
-        "La càrrega de la imatge ha fallat"
-      ],
-      "Contact could not be saved": [
-        "El contacte no s'ha pogut desar"
-      ],
-      "Some contacts could not be deleted": [
-        "Alguns contactes no s'han pogut esborrar"
-      ],
-      "Invalid public key file": [
-        "Arxiu de clau pública invàlid"
-      ],
-      "You can't send a mail to more than 100 recipients": [
-        "No podeu enviar un correu a més de 100 destinataris"
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Un dels contactes no té adreça de correu electrònic: ${ noEmailsContactNamesList }",
-        "Alguns contactes no tenen adreça de correu electrònic: ${ noEmailsContactNamesList } "
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "No podeu enviar vCards de més de 10 contactes"
-      ],
-      "There was an error when exporting the contacts vCards": [
-        "Hi ha hagut un error exportant les vCards dels contactes"
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "Un dels grups no té contactes: ${ noContactGroupList }",
-        "Alguns grups no tenen contactes: ${ noContactGroupList } "
-      ],
-      "You must set a name": [
-        "Heu d'establir un nom"
-      ],
-      "A group with this name already exists": [
-        "Ja existeix un grup amb aquest nom"
-      ],
-      "Invalid name": [
-        "Nom no vàlid"
-      ],
-      "We were unable to connect to your service provider.": [
-        ""
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        ""
-      ],
-      "Can't validate email, try again later": [
-        "No es pot validar el correu electrònic, torneu-ho a provar més tard"
-      ],
-      "Can't validate phone, try again later": [
-        "No es pot validar el telèfon, torneu-ho a provar més tard"
-      ],
-      "Enter 6 digits": [
-        "Introduïu 6 dígits"
-      ],
-      "Invalid verification code": [
-        "Codi de verificació no vàlid"
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Contrasenya de bustia incorrecta, si us plau, torneu-ho a provar de nou"
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Credencials de connexió incorrectes. Si us plau, torni-ho a intentar"
-      ],
-      "Missing signature": [
-        "Signatura no trobada"
-      ],
-      "Contact signature not verified": [
-        "Signatura del contacte no verificada"
-      ],
-      "Signature not verified": [
-        "Signatura no verificada"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
-      ],
-      "Email is not valid": [
-        "El correu electrònic no és vàlid"
-      ],
-      "Not a valid number": [
-        "Número no vàlid"
-      ],
-      "Passwords do not match": [
-        "Les contrasenyes no coincideixen"
-      ],
-      "Request timed out.": [
-        "S'ha esgotat el temps d'espera."
-      ],
-      "Signature verification failed": [
-        "Verificació de la signatura fallida"
-      ],
-      "Could not find address ${ email }.": [
-        "No s'ha pogut trobar l'adreça ${ email }."
-      ],
-      "Incorrect password. Please try again.": [
-        "Contrasenya incorrecta, torneu-ho a intentar."
-      ],
-      "No valid address found": [
-        "No s’ha trobat una adreça vàlida"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } hores"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minuts"
       ]
     },
     "Label": {
+      "Copy": [
+        "Copia"
+      ],
       "Reveal password": [
         "Mostra la contrasenya"
       ],
@@ -1558,11 +1502,20 @@
       "Extended address": [
         "Adreça ampliada"
       ],
-      "Copy": [
-        "Copia"
-      ],
       "Do not ask again": [
         "No m'ho torneu a preguntar"
+      ],
+      "Email address": [
+        "Adreça de correu electrònic"
+      ],
+      "Phone number": [
+        "Número de telèfon"
+      ],
+      "Verification code": [
+        "Codi de verificació"
+      ],
+      "Enter the 6-digit code": [
+        "Introduïu el codi de 6 dígits"
       ],
       "Add email address": [
         "Afegir adreça de correu electrònic"
@@ -1600,18 +1553,6 @@
       "Export contacts": [
         "Exportar contactes"
       ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Display name": [
-        "Mostrar el nom"
-      ],
-      "Enable Beta Access": [
-        "Activar Accés Beta"
-      ],
       "Operating system": [
         "Sistema operatiu"
       ],
@@ -1620,9 +1561,6 @@
       ],
       "Proton username": [
         "Nom d'usuari de Proton"
-      ],
-      "Email address": [
-        "Adreça de correu electrònic"
       ],
       "Category": [
         "Categoria"
@@ -1639,6 +1577,15 @@
       "Browser version": [
         "Versió del navegador"
       ],
+      "Display name": [
+        "Mostrar el nom"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
       "Keyboard shortcuts": [
         "Dreceres de teclat"
       ],
@@ -1651,14 +1598,8 @@
       "Select how your composer opens by default.": [
         "Seleccioneu com el vostre editor s'obre per defecte."
       ],
-      "Phone number": [
-        "Número de telèfon"
-      ],
-      "Verification code": [
-        "Codi de verificació"
-      ],
-      "Enter the 6-digit code": [
-        "Introduïu el codi de 6 dígits"
+      "Enable Beta Access": [
+        "Activar Accés Beta"
       ],
       "Cancel": [
         "Cancel·lar"
@@ -1678,6 +1619,30 @@
       "Username or ProtonMail address": [
         "Nom d'usuari o adreça ProtonMail"
       ],
+      "Merge a folder": [
+        "Fusionar una carpeta"
+      ],
+      "Upload anyway": [
+        "Carregar de totes maneres"
+      ],
+      "Replace folder": [
+        "Substituir carpeta"
+      ],
+      "Replace file": [
+        "Substituir fitxer"
+      ],
+      "Skip folder": [
+        "Ometre carpeta"
+      ],
+      "Skip file": [
+        "Ometre fitxer"
+      ],
+      "Apply to all duplicated folders": [
+        "Aplicar a totes les carpetes duplicades"
+      ],
+      "Apply to all duplicated files": [
+        "Aplicar a tots els arxius duplicats"
+      ],
       "Audio file": [
         "Fitxer d’àudio"
       ],
@@ -1692,12 +1657,6 @@
       ],
       "Unknown file": [
         "Fitxer desconegut"
-      ],
-      "Folder name": [
-        "Nom de carpeta"
-      ],
-      "File name": [
-        "Nom d’arxiu"
       ],
       "Folder": [
         "Carpeta"
@@ -1714,6 +1673,12 @@
       "File": [
         "Arxiu"
       ],
+      "Folder name": [
+        "Nom de carpeta"
+      ],
+      "File name": [
+        "Nom d’arxiu"
+      ],
       "Protect with password": [
         "Protegir amb contrasenya"
       ],
@@ -1722,24 +1687,120 @@
       ],
       "Report abuse": [
         "Informeu d'un abús"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "La clau no es pot utilitzar per al xifratge"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Més informació"
       ],
-      "Merge a folder": [
-        "Fusionar una carpeta"
+      "Request an invite": [
+        "Demana una invitació"
       ],
-      "Upload anyway": [
-        "Carregar de totes maneres"
+      "Pay invoice": [
+        "Pagar la factura"
       ],
-      "Apply to all duplicated folders": [
-        "Aplicar a totes les carpetes duplicades"
+      "Upgrade account": [
+        "Millorar el compte"
       ],
-      "Apply to all duplicated files": [
-        "Aplicar a tots els arxius duplicats"
+      "Upgrade": [
+        "Actualitzar"
       ],
-      "Replace folder": [
-        "Substituir carpeta"
+      "Go to subscription plans": [
+        "Anar als plans de subscripció"
       ],
-      "Skip folder": [
-        "Ometre carpeta"
+      "clearing your browser cache": [
+        "buidar la memòria cau del navegador"
+      ],
+      "My files": [
+        "Els meus arxius"
+      ],
+      "Shared": [
+        "Compartit"
+      ],
+      "Trash": [
+        "Paperera"
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "P. ex., "
+      ],
+      "Start typing an email address": [
+        "Comenceu a escriure una adreça de correu electrònic"
+      ],
+      "Image URL": [
+        "URL de la imatge"
+      ],
+      "Filter groups": [
+        "Filtrar grups"
+      ],
+      "Search for name or email": [
+        "Cercar per nom o correu electrònic"
+      ],
+      "Search for group name": [
+        "Cercar per nom de grup"
+      ],
+      "Name": [
+        "Nom"
+      ],
+      "OS name": [
+        "Nom de Sistema Operatiu"
+      ],
+      "OS version": [
+        "Versió de Sistema Operatiu"
+      ],
+      "Proton username": [
+        "Nom d'usuari de Proton"
+      ],
+      "A way to contact you": [
+        "Una manera de contactar amb tu"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Si us plau, descriu el problema i inclou-hi qualsevol missatges d'error"
+      ],
+      "Browser name": [
+        "Nom del navegador"
+      ],
+      "Browser version": [
+        "Versió del navegador"
+      ],
+      "e.g. Julia Smith": [
+        "ex. Julia Smith"
+      ],
+      "Mailbox password": [
+        "Contrasenya de la bústia"
+      ],
+      "New name": [
+        "Nom nou"
+      ],
+      "Enter a new folder name": [
+        "Introdueix el nom de la nova carpeta"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } hores"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minuts"
+      ]
+    },
+    "Storage": {
+      "Your current storage:": [
+        "El vostre emmagatzematge actual:"
+      ],
+      "Upgrade storage": [
+        "Millora l'emmagatzematge"
+      ],
+      "Release notes": [
+        "Notes de la versió"
       ]
     },
     "Tooltip": {
@@ -1872,14 +1933,14 @@
       "Contacts could not be merged": [
         "Els contactes no s’han pogut combinar"
       ],
-      "Are you sure you want to discard your import?": [
-        ""
-      ],
       "Your local date & time settings seem to be out of sync.": [
         "La vostra configuració de data i hora local no sembla estar sincronitzada."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. Si us plau, no envieu informació sensible."
+      ],
+      "Are you sure you want to discard your import?": [
+        ""
       ]
     },
     "Success": {
@@ -1891,6 +1952,12 @@
       ],
       "Address copied to clipboard": [
         "Adreça copiada al porta-retalls"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Codi enviat a ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Èxit de verificació"
       ],
       "Preferences saved": [
         "Preferències desades"
@@ -1912,20 +1979,17 @@
       "Fingerprint copied to clipboard": [
         "Empremta digital copiada al porta-retalls"
       ],
+      "Bug reported": [
+        "Error notificat"
+      ],
       "Preference saved": [
         "Preferències desades"
       ],
       "Keyboard shortcuts preferences updated": [
         "Preferències de les dreceres de teclat actualitzades"
       ],
-      "Bug reported": [
-        "Error notificat"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Codi enviat a ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Èxit de verificació"
+      "Your files were successfully recovered to \"My files\".": [
+        "Els vostres arxius s'han recuperar satisfactòriament a \"Els meus arxius\"."
       ],
       "Recovery has started.": [
         "La recuperació ha començat."
@@ -1938,9 +2002,6 @@
       ],
       "The link to your file was successfully copied.": [
         "El enllaç al seu fitxer s’ha copiat satisfactòriament."
-      ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Els vostres arxius s'han recuperar satisfactòriament a \"Els meus arxius\"."
       ]
     },
     "Hint": {
@@ -1952,36 +2013,26 @@
         "S'han trobat ${ items.length } suggeriments, utilitzeu el teclat per navegar."
       ]
     },
-    "Link": {
-      "Learn more": [
-        "Més informació"
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Factura vençuda"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
-      "Pay invoice": [
-        "Pagar la factura"
+      "Email": [
+        "Correu electrònic"
       ],
-      "Upgrade account": [
-        "Millorar el compte"
+      "SMS": [
+        "SMS"
       ],
-      "Upgrade": [
-        "Actualitzar"
+      "Manual": [
+        "Manual"
       ],
-      "Go to subscription plans": [
-        "Anar als plans de subscripció"
-      ],
-      "clearing your browser cache": [
-        "buidar la memòria cau del navegador"
-      ],
-      "Request an invite": [
-        "Demana una invitació"
-      ],
-      "My files": [
-        "Els meus arxius"
-      ],
-      "Shared": [
-        "Compartit"
-      ],
-      "Trash": [
-        "Paperera"
+      "No verification method available": [
+        "Cap mètode de verificació disponible"
       ]
     },
     "Notification": {
@@ -1991,41 +2042,8 @@
       "Contact group created": [
         "Grup de contactes creat"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Aviat se suprimiran permanentment tots els elements de la paperera"
-      ],
-      "Move ${ movingCount } file": [
-        "Mou ${ movingCount } arxiu",
-        "Mou ${ movingCount } arxius"
-      ],
-      "Move ${ movingCount } folder": [
-        "Mou ${ movingCount } carpeta",
-        "Mou ${ movingCount } carpetes"
-      ],
-      "Move ${ movingCount } item": [
-        "Mou ${ movingCount } article",
-        "Mou ${ movingCount } articles"
-      ],
-      "Move ${ itemsToMoveCount } file": [
-        "Moure ${ itemsToMoveCount } arxiu",
-        "Moure ${ itemsToMoveCount } arxius"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Mou ${ itemsToMoveCount } carpeta",
-        "Mou ${ itemsToMoveCount } carpetes"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Move ${ itemsToMoveCount } element",
-        "Move ${ itemsToMoveCount } elements"
-      ],
-      "Your settings have been changed successfully.": [
-        "Les vostres preferències s'han modificat satisfactòriament."
-      ],
-      "The link to your file was deleted.": [
-        "El enllaç al teu fitxer ha estat esborrat."
-      ],
-      "Failed to move, please try again": [
-        "No s'ha pogut moure, torna-ho a provar"
+      "Not enough space to upload ${ formattedRemaining }": [
+        "No hi ha prou espai per pujar ${ formattedRemaining }"
       ],
       "\"${ firstItemName }\" deleted permanently from trash": [
         "\"${ firstItemName }\" esborrat permanentment de la Paperera"
@@ -2105,6 +2123,9 @@
         "${ failedMovesCount } element ha fallat al moure",
         "${ failedMovesCount } elements han fallat al moure"
       ],
+      "The link to your file was deleted.": [
+        "El enllaç al teu fitxer ha estat esborrat."
+      ],
       "${ deletedCount } link to your file was deleted.": [
         "S'ha suprimit l'enllaç ${ deletedCount } al vostre fitxer.",
         "S'han suprimit els enllaços ${ deletedCount } als vostre fitxers."
@@ -2116,8 +2137,38 @@
         "No s'ha pogut suprimir l'enllaç ${ failedCount } al fitxer.",
         "No s'han pogut suprimir els enllaços ${ failedCount } als fitxers."
       ],
-      "Not enough space to upload ${ formattedRemaining }": [
-        "No hi ha prou espai per pujar ${ formattedRemaining }"
+      "All items will soon be permanently deleted from trash": [
+        "Aviat se suprimiran permanentment tots els elements de la paperera"
+      ],
+      "Move ${ movingCount } file": [
+        "Mou ${ movingCount } arxiu",
+        "Mou ${ movingCount } arxius"
+      ],
+      "Move ${ movingCount } folder": [
+        "Mou ${ movingCount } carpeta",
+        "Mou ${ movingCount } carpetes"
+      ],
+      "Move ${ movingCount } item": [
+        "Mou ${ movingCount } article",
+        "Mou ${ movingCount } articles"
+      ],
+      "Move ${ itemsToMoveCount } file": [
+        "Moure ${ itemsToMoveCount } arxiu",
+        "Moure ${ itemsToMoveCount } arxius"
+      ],
+      "Move ${ itemsToMoveCount } folder": [
+        "Mou ${ itemsToMoveCount } carpeta",
+        "Mou ${ itemsToMoveCount } carpetes"
+      ],
+      "Move ${ itemsToMoveCount } item": [
+        "Move ${ itemsToMoveCount } element",
+        "Move ${ itemsToMoveCount } elements"
+      ],
+      "Your settings have been changed successfully.": [
+        "Les vostres preferències s'han modificat satisfactòriament."
+      ],
+      "Failed to move, please try again": [
+        "No s'ha pogut moure, torna-ho a provar"
       ]
     },
     "Label for contact group name": {
@@ -2145,9 +2196,6 @@
       "Progress: ${ combinedProgress }%": [
         "Progrés: ${ combinedProgress }%"
       ],
-      "No contacts merged.": [
-        "No s'han combinat contactes."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } de ${ totalBeDeleted } contacte eliminat satisfactòriament.",
         "${ model.deleted.length } de ${ totalBeDeleted } contactes eliminats satisfactòriament."
@@ -2155,6 +2203,9 @@
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
         "${ model.submitted.length } de ${ totalBeMerged } contacte fusionat satisfactòriament.",
         "${ model.submitted.length } de ${ totalBeMerged } contactes fusionats satisfactòriament."
+      ],
+      "No contacts merged.": [
+        "No s'han combinat contactes."
       ]
     },
     "Description": {
@@ -2163,6 +2214,9 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
+      ],
+      "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
+        "Eliminant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilitzeu Arrossegar i Deixar anar per classificar la prioritat de combinació entre els contactes. Desmarqueu els contactes que no vulgueu combinar."
@@ -2179,9 +2233,6 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Xifrant i important contactes... això pot tardar una estona. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
-      ],
-      "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Eliminant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
       ]
     },
     "TableHeader": {
@@ -2354,82 +2405,6 @@
         "${ totalImported }/${ totalToImport } contactes xifrats i afegits a la vostra llista de contactes"
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Carregar"
-      ]
-    },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        ""
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        ""
-      ],
-      "Configure Import": [
-        ""
-      ],
-      "Import": [
-        ""
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        ""
-      ]
-    },
-    "Onboarding Proton": {
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Això és el que la gent veurà quan els envieu un correu electrònic, els convideu a un esdeveniment o hi compartiu un arxiu."
-      ],
-      "Choose a display name": [
-        "Trieu un nom de visualització"
-      ],
-      "Select a theme": [
-        "Seleccioneu un tema"
-      ],
-      "You can change this anytime in your settings.": [
-        "Podeu canviar-ho en qualsevol moment a les preferències."
-      ],
-      "Discover all Proton services": [
-        "Descobriu tots els serveis de Proton"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Utilitzeu el selector d'aplicació a dalt a l'esquerra per accedir a altres serveis de Proton, incloent VPN, Calendar i Drive."
-      ],
-      "Welcome to Proton": [
-        "Benvingut/da a Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "La nostra missió és construir una internet on tingueu el control de les vostres dades i la vostra privacitat. Hem actualitzat Proton recentment - benvinguts a una internet segura."
-      ],
-      "Set up your organization": [
-        "Configureu la vostra organització"
-      ],
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Configureu la vostra organització, enllaç al vostre nom de domini, i creeu comptes per assegurar-vos que tots els membres de la vostra organització estan protegits."
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "L'accés Beta us permet utilitzar la versió Beta de ProtonMail, Proton Calendar i Proton Drive abans de que es faci pública. Això vol dir que podeu ser el primer a provar nous productes, rebre noves actualitzacions i utilitzar noves característiques."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Si trobeu problemes, sempre podeu desactivar l'Accés Beta."
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Atenció: el servei es tornarà a carregar quan cliqueu al botó Aplicar."
-      ]
-    },
-    "Message display when a new app version is available": {
-      "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "Hi ha disponible una nova versió de ${ appName }. ${ reloadButton }."
-      ]
-    },
     "Apps dropdown": {
       "Proton applications": [
         "Aplicacions de Proton"
@@ -2454,23 +2429,28 @@
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
       ],
-      "Access denied": [
-        "Accés denegat"
+      "Brace yourself till we get the error fixed.": [
+        "Prepareu-vos fins que no es resolgui l’error."
       ],
-      "Not found": [
-        "No trobat"
+      "You may also ${ refresh } or try again later.": [
+        "També podeu ${ refresh } o tornar-ho a intentar més tard."
       ],
       "Internal server error": [
         "Error intern del servidor"
       ],
-      "Brace yourself till we get the error fixed.": [
-        "Prepareu-vos fins que no es resolgui l’error."
-      ],
       "You may also refresh the page or try again later.": [
         "També podeu actualitzar la pàgina o tornar-la a provar més endavant."
       ],
-      "You may also ${ refresh } or try again later.": [
-        "També podeu ${ refresh } o tornar-ho a intentar més tard."
+      "Not found": [
+        "No trobat"
+      ],
+      "Access denied": [
+        "Accés denegat"
+      ]
+    },
+    "Message display when a new app version is available": {
+      "A new version of ${ appName } is available. ${ reloadButton }.": [
+        "Hi ha disponible una nova versió de ${ appName }. ${ reloadButton }."
       ]
     },
     "Text": {
@@ -2615,6 +2595,77 @@
         "Adjunta captura(es) de pantalla"
       ]
     },
+    "Onboarding Proton": {
+      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
+        "Això és el que la gent veurà quan els envieu un correu electrònic, els convideu a un esdeveniment o hi compartiu un arxiu."
+      ],
+      "Choose a display name": [
+        "Trieu un nom de visualització"
+      ],
+      "Select a theme": [
+        "Seleccioneu un tema"
+      ],
+      "You can change this anytime in your settings.": [
+        "Podeu canviar-ho en qualsevol moment a les preferències."
+      ],
+      "Discover all Proton services": [
+        "Descobriu tots els serveis de Proton"
+      ],
+      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
+        "Utilitzeu el selector d'aplicació a dalt a l'esquerra per accedir a altres serveis de Proton, incloent VPN, Calendar i Drive."
+      ],
+      "Welcome to Proton": [
+        "Benvingut/da a Proton"
+      ],
+      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
+        "La nostra missió és construir una internet on tingueu el control de les vostres dades i la vostra privacitat. Hem actualitzat Proton recentment - benvinguts a una internet segura."
+      ],
+      "Set up your organization": [
+        "Configureu la vostra organització"
+      ],
+      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
+        "Configureu la vostra organització, enllaç al vostre nom de domini, i creeu comptes per assegurar-vos que tots els membres de la vostra organització estan protegits."
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        ""
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        ""
+      ],
+      "Configure Import": [
+        ""
+      ],
+      "Import": [
+        ""
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Carregar"
+      ]
+    },
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "L'accés Beta us permet utilitzar la versió Beta de ProtonMail, Proton Calendar i Proton Drive abans de que es faci pública. Això vol dir que podeu ser el primer a provar nous productes, rebre noves actualitzacions i utilitzar noves característiques."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Si trobeu problemes, sempre podeu desactivar l'Accés Beta."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Atenció: el servei es tornarà a carregar quan cliqueu al botó Aplicar."
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         "Còmode"
@@ -2639,31 +2690,78 @@
         "Maximitzat"
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Factura vençuda"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
+    "Contact field label": {
+      "Name": [
+        "Nom"
+      ],
+      "Compact name": [
+        "Nom curt"
+      ],
+      "Nickname": [
+        "Sobrenom"
       ],
       "Email": [
         "Correu electrònic"
       ],
-      "SMS": [
-        "SMS"
+      "Phone": [
+        "Telèfon"
       ],
-      "Manual": [
-        "Manual"
+      "Address": [
+        "Adreça"
       ],
-      "No verification method available": [
-        "Cap mètode de verificació disponible"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "desconegut/da"
+      "Photo": [
+        "Foto"
+      ],
+      "Organization": [
+        "Organització"
+      ],
+      "Birthday": [
+        "Aniversari"
+      ],
+      "Anniversary": [
+        "Aniversari"
+      ],
+      "Title": [
+        "Títol"
+      ],
+      "Role": [
+        "Rol"
+      ],
+      "Note": [
+        "Nota"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Gender": [
+        "Gènere"
+      ],
+      "Language": [
+        "Idioma"
+      ],
+      "Timezone": [
+        "Fus horari"
+      ],
+      "Geo": [
+        "Geolocalització"
+      ],
+      "Logo": [
+        "Logotip"
+      ],
+      "Member": [
+        "Membre"
+      ],
+      "IMPP": [
+        "IMPP"
+      ],
+      "Related": [
+        "Relacionat"
+      ],
+      "Categories": [
+        "Categories"
+      ],
+      "Sound": [
+        "So"
       ]
     },
     "Contact type label": {
@@ -2787,78 +2885,34 @@
         "Emergència"
       ]
     },
-    "Contact field label": {
-      "Name": [
-        "Nom"
+    "file size format": {
+      "bytes": [
+        "bytes"
       ],
-      "Compact name": [
-        "Nom curt"
+      "KB": [
+        "KB"
       ],
-      "Nickname": [
-        "Sobrenom"
+      "MB": [
+        "MB"
       ],
-      "Email": [
-        "Correu electrònic"
-      ],
-      "Phone": [
-        "Telèfon"
-      ],
-      "Address": [
-        "Adreça"
-      ],
-      "Photo": [
-        "Foto"
-      ],
-      "Organization": [
-        "Organització"
-      ],
-      "Birthday": [
-        "Aniversari"
-      ],
-      "Anniversary": [
-        "Aniversari"
-      ],
-      "Title": [
-        "Títol"
-      ],
-      "Role": [
-        "Rol"
-      ],
-      "Note": [
-        "Nota"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Gender": [
-        "Gènere"
-      ],
-      "Language": [
-        "Idioma"
-      ],
-      "Timezone": [
-        "Fus horari"
-      ],
-      "Geo": [
-        "Geolocalització"
-      ],
-      "Logo": [
-        "Logotip"
-      ],
-      "Member": [
-        "Membre"
-      ],
-      "IMPP": [
-        "IMPP"
-      ],
-      "Related": [
-        "Relacionat"
-      ],
-      "Categories": [
-        "Categories"
-      ],
-      "Sound": [
-        "So"
+      "GB": [
+        "GB"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "La contrasenya ha de contenir com a mínim ${ length } caràcter",
+        "La contrasenya ha de tenir com a mínim ${ length } caràcters"
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Adreça de correu electrònic no trobada entre les identificacions d'usuaris definides a la clau d'enviament (${ keyUserIds })"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "desconegut/da"
       ]
     },
     "Default display name vcard": {
@@ -2900,31 +2954,6 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "S'ha produït un error llegint el fitxer ${ formattedFilename }. El fitxer no té el format adequat."
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "bytes"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "La contrasenya ha de contenir com a mínim ${ length } caràcter",
-        "La contrasenya ha de tenir com a mínim ${ length } caràcters"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Adreça de correu electrònic no trobada entre les identificacions d'usuaris definides a la clau d'enviament (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -3100,26 +3129,6 @@
       ],
       "Show original message": [
         "Mostrar missatge original"
-      ]
-    },
-    "Theme": {
-      "Proton": [
-        "Proton"
-      ],
-      "Carbon": [
-        "Carboni"
-      ],
-      "Snow": [
-        "Neu"
-      ],
-      "Monokai": [
-        "Monokai"
-      ],
-      "Contrast": [
-        "Contrast"
-      ],
-      "Legacy": [
-        "Legacy"
       ]
     },
     "Validation Error": {
