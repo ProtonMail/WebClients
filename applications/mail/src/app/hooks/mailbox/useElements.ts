@@ -143,7 +143,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             return acc;
         }, {});
 
-        setCache({ ...cache, elements });
+        setCache((cache) => ({ ...cache, elements }));
 
         globalCache.delete(ConversationCountsModel.key);
         globalCache.delete(MessageCountsModel.key);
@@ -296,7 +296,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             void incrementSearch(page, setEncryptedSearchResults, shouldLoadMoreES());
         }
         if (!shouldLoadMoreES()) {
-            setCache({ ...cache, page });
+            setCache((cache) => ({ ...cache, page }));
         }
     };
 
@@ -347,7 +347,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
      * @param error: optional error from last request
      */
     const newRetry = (payload: any, error: Error | undefined) => {
-        const count = isDeepEqual(payload, cache.retry.payload) ? cache.retry.count + 1 : 1;
+        const count = error && isDeepEqual(payload, cache.retry.payload) ? cache.retry.count + 1 : 1;
         return { payload, count, error };
     };
 
@@ -505,7 +505,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
                 console.error(message, context);
                 captureMessage(message, { extra: { context } });
             }
-            resetCache(cache.retry, !esEnabled && isSearch(search));
+            resetCache(undefined, !esEnabled && isSearch(search));
         }
     }, [cache.pendingRequest]);
 
