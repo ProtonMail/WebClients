@@ -103,7 +103,6 @@ export const getAllFieldLabels = () => ({
     geo: c('Contact field label').t`Geo`,
     logo: c('Contact field label').t`Logo`,
     member: c('Contact field label').t`Member`,
-    categories: c('Contact field label').t`Categories`,
 });
 
 // ** NOT USED FOR THE MOMENT **
@@ -197,4 +196,5 @@ export const getTypeValues: () => { [key: string]: string[] } = () => ({
     member: [],
     note: [],
     url: [],
+    photo: [],
 });
