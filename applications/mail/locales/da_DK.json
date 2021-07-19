@@ -21,11 +21,14 @@
       "Authentication error.": [
         "Godkendelsesfejl."
       ],
+      "Email address invalid": [
+        "Ugyldig e-mailadresse"
+      ],
       "This field is required": [
         "Feltet er påkrævet"
       ],
-      "Email address invalid": [
-        "Ugyldig e-mailadresse"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Noget gik galt. ${ refresh } venligst siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
       ],
       "The composer failed to load.": [
         "Skriveværktøjet blev ikke indlæst."
@@ -122,9 +125,6 @@
       "Require at least one action": [
         "Kræver mindst en handling"
       ],
-      "Request timed out.": [
-        "Forespørgsel fik timeout."
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dette felt kræver minimum ${ minimumLength } tegn."
       ],
@@ -136,6 +136,9 @@
       ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
+      ],
+      "Request timed out.": [
+        "Forespørgsel fik timeout."
       ],
       "Signature verification failed": [
         "Bekræftelse af signatur mislykkedes"
@@ -294,6 +297,9 @@
       ],
       "Use “${ label }” setting": [
         "Brug “${ label }” indstilling"
+      ],
+      "refresh the page": [
+        "opdater siden"
       ],
       "Remove": [
         "Fjern"
@@ -577,6 +583,18 @@
       "Next": [
         "Næste"
       ],
+      "Clear": [
+        "Ryd"
+      ],
+      "Add screenshot(s)": [
+        "Tilføj skærmfoto(s)"
+      ],
+      "Hide info": [
+        "Skjul info"
+      ],
+      "Show info": [
+        "Vis info"
+      ],
       "Continue import": [
         "Fortsæt import"
       ],
@@ -597,9 +615,6 @@
       ],
       "Signing out": [
         "Logger ud"
-      ],
-      "refresh the page": [
-        "opdater siden"
       ],
       "Log in": [
         "Log ind"
@@ -652,9 +667,6 @@
       "Search": [
         "Søg"
       ],
-      "Clear": [
-        "Ryd"
-      ],
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
       ],
@@ -699,15 +711,6 @@
       ],
       "Composer mode": [
         "Skrivetilstand"
-      ],
-      "Add screenshot(s)": [
-        "Tilføj skærmfoto(s)"
-      ],
-      "Hide info": [
-        "Skjul info"
-      ],
-      "Show info": [
-        "Vis info"
       ],
       "Preview": [
         "Forhåndsvisning"
@@ -1211,6 +1214,9 @@
       "Import contacts": [
         "Importér kontakter"
       ],
+      "Report a problem": [
+        "Anmeld et problem"
+      ],
       "Start import process": [
         "Start importeringsprocessen"
       ],
@@ -1261,9 +1267,6 @@
       ],
       "Give feedback": [
         "Giv feedback"
-      ],
-      "Report a problem": [
-        "Anmeld et problem"
       ],
       "Beta Access": [
         "Beta-adgang"
@@ -1498,6 +1501,9 @@
       ],
       "Loading": [
         "Indlæser"
+      ],
+      "support team": [
+        "supportteam"
       ],
       "No contacts added yet": [
         "Ingen kontakter tilføjet endnu"
@@ -1742,6 +1748,12 @@
         "${ addressCount } e-mailadresse",
         "${ addressCount } e-mailadresser"
       ],
+      "Screenshot(s) attached": [
+        "Skærmfoto(-s) vedhæftet"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
+      ],
       "Import contacts": [
         "Importér kontakter"
       ],
@@ -1837,12 +1849,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Du har deaktiveret Beta-adgang. Klik på ${ refreshButton } for at bruge den stabile version af ${ appName }. Applikationen vil blive genindlæst."
-      ],
-      "Screenshot(s) attached": [
-        "Skærmfoto(-s) vedhæftet"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
       ],
       "Inherited from parent folder": [
         "Nedarvet fra overordnet mappe"
@@ -2434,6 +2440,30 @@
       "Export contacts": [
         "Eksportér kontakter"
       ],
+      "Operating system": [
+        "Operativsystem"
+      ],
+      "Operating system version": [
+        "Operativsystemversion"
+      ],
+      "Proton username": [
+        "Proton-brugernavn"
+      ],
+      "Category": [
+        "Kategori"
+      ],
+      "What happened?": [
+        "Hvad skete der?"
+      ],
+      "System information": [
+        "Systemoplysninger"
+      ],
+      "Browser": [
+        "Browser"
+      ],
+      "Browser version": [
+        "Browser-version"
+      ],
       "From: ${ fromEmailAddress }": [
         "Fra: ${ fromEmailAddress }"
       ],
@@ -2473,38 +2503,8 @@
       "Select how your composer opens by default.": [
         "Vælg hvordan dit skrivevindue åbner som standard."
       ],
-      "0 - Not a fan": [
-        "0 - Ikke fan"
-      ],
-      "10 - Love it!": [
-        "10 - Elsker det!"
-      ],
       "What is the primary reason for this rating?": [
         "Hvad er den primære grund til denne bedømmelse?"
-      ],
-      "Operating system": [
-        "Operativsystem"
-      ],
-      "Operating system version": [
-        "Operativsystemversion"
-      ],
-      "Proton username": [
-        "Proton-brugernavn"
-      ],
-      "Category": [
-        "Kategori"
-      ],
-      "What happened?": [
-        "Hvad skete der?"
-      ],
-      "System information": [
-        "Systemoplysninger"
-      ],
-      "Browser": [
-        "Browser"
-      ],
-      "Browser version": [
-        "Browser-version"
       ],
       "Enable Beta Access": [
         "Aktivér beta-adgang"
@@ -2701,6 +2701,12 @@
       "How would you rate your experience with the new ProtonMail?": [
         "Hvordan vil du bedømme din oplevelse med den nye ProtonMail?"
       ],
+      "0 - Not a fan": [
+        "0 - Ikke fan"
+      ],
+      "10 - Love it!": [
+        "10 - Elsker det!"
+      ],
       "Also archive": [
         "Arkivér også"
       ]
@@ -2717,6 +2723,9 @@
       "Request an invite": [
         "Anmod om invitation"
       ],
+      "clearing your browser cache": [
+        "rydder din browser-cache"
+      ],
       "Pay invoice": [
         "Betal faktura"
       ],
@@ -2728,9 +2737,6 @@
       ],
       "Go to subscription plans": [
         "Gå til abonnementer"
-      ],
-      "clearing your browser cache": [
-        "rydder din browser-cache"
       ],
       "Inbox": [
         "Indbakke"
@@ -2893,15 +2899,6 @@
       "Name": [
         "Navn"
       ],
-      "Mailbox password": [
-        "Postkasseadgangskode"
-      ],
-      "e.g. Julia Smith": [
-        "f.eks. Anne Jensen"
-      ],
-      "Feedback": [
-        "Feedback"
-      ],
       "OS name": [
         "Operativsystem"
       ],
@@ -2922,6 +2919,15 @@
       ],
       "Browser version": [
         "Browser-version"
+      ],
+      "Mailbox password": [
+        "Postkasseadgangskode"
+      ],
+      "e.g. Julia Smith": [
+        "f.eks. Anne Jensen"
+      ],
+      "Feedback": [
+        "Feedback"
       ],
       "Type text or keyword": [
         "Indtast tekst eller nøgleord"
@@ -2999,14 +3005,14 @@
       "Contacts could not be merged": [
         "Kontakter kunne ikke flettes"
       ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
+      ],
       "Are you sure you want to discard your import?": [
         "Er du sikker på, at du vil kassere din import?"
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Det ser ud til, at dine lokale dato- og tidsindstillinger ikke er synkroniseret."
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Vedhæftningens signatur kunne ikke verificeres.\nDu kan stadig downloade denne vedhæftning, men den kan være blevet manipuleret med.",
@@ -3169,14 +3175,14 @@
       "Fingerprint copied to clipboard": [
         "Fingeraftryk kopieret til udklipsholder"
       ],
+      "Bug reported": [
+        "Fejl anmeldt"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Indstillinger for tastaturgenveje opdateret"
       ],
       "Preference saved": [
         "Præferencer gemt"
-      ],
-      "Bug reported": [
-        "Fejl anmeldt"
       ],
       "Message content search activated": [
         "Beskedindholdssøgning aktiveret"
@@ -3594,6 +3600,118 @@
         "${ totalImported }/${ totalToImport } kontakter krypteret og føjet til din kontaktliste"
       ]
     },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Intet billede valgt"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Log ind-problem"
+      ],
+      "Sign up problem": [
+        "Tilmeldingsproblem"
+      ],
+      "Payments problem": [
+        "Betalingsproblem"
+      ],
+      "Custom domain problem": [
+        "Brugerdomæne-problem"
+      ],
+      "Bridge problem": [
+        "Bridge-problem"
+      ],
+      "Import / export problem": [
+        "Import-/eksportproblem"
+      ],
+      "Connection problem": [
+        "Forbindelsesproblem"
+      ],
+      "Slow speed problem": [
+        "Lav hastighed problem"
+      ],
+      "Calendar problem": [
+        "Kalender-problem"
+      ],
+      "Contacts problem": [
+        "Kontakt-problem"
+      ],
+      "Drive problem": [
+        "Drive-problem"
+      ],
+      "Mail problem": [
+        "Mail-problem"
+      ],
+      "VPN problem": [
+        "VPN-problem"
+      ],
+      "Feature request": [
+        "Anmodning om funktionalitet"
+      ],
+      "Other": [
+        "Andet"
+      ],
+      "Signup problem": [
+        "Tilmeldingsproblem"
+      ],
+      "Installation problem": [
+        "Installationsproblem"
+      ],
+      "Update problem": [
+        "Opdateringsproblem"
+      ],
+      "Application problem": [
+        "Applikationsproblem"
+      ],
+      "Speed problem": [
+        "Hastighedsproblem"
+      ],
+      "Manual setup problem": [
+        "Problem ifm. manual opsætning"
+      ],
+      "Website access problem": [
+        "Adgangsproblem på websted"
+      ],
+      "Streaming problem": [
+        "Streaming-problem"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Konto"
+      ],
+      "Apps": [
+        "Apps"
+      ],
+      "Network": [
+        "Netværk"
+      ],
+      "Services": [
+        "Tjenester"
+      ],
+      "Other category": [
+        "Anden kategori"
+      ],
+      "Custom folders": [
+        "Brugerdefinerede mapper"
+      ],
+      "Default folders": [
+        "Standard-mapper"
+      ],
+      "Labels": [
+        "Etiketter"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Vælg"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "Vedhæft skærmfoto(s)"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Forbinder til dine kontakters udbyder"
@@ -3750,118 +3868,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Feedback sendt"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Intet billede valgt"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Log ind-problem"
-      ],
-      "Sign up problem": [
-        "Tilmeldingsproblem"
-      ],
-      "Payments problem": [
-        "Betalingsproblem"
-      ],
-      "Custom domain problem": [
-        "Brugerdomæne-problem"
-      ],
-      "Bridge problem": [
-        "Bridge-problem"
-      ],
-      "Import / export problem": [
-        "Import-/eksportproblem"
-      ],
-      "Connection problem": [
-        "Forbindelsesproblem"
-      ],
-      "Slow speed problem": [
-        "Lav hastighed problem"
-      ],
-      "Calendar problem": [
-        "Kalender-problem"
-      ],
-      "Contacts problem": [
-        "Kontakt-problem"
-      ],
-      "Drive problem": [
-        "Drive-problem"
-      ],
-      "Mail problem": [
-        "Mail-problem"
-      ],
-      "VPN problem": [
-        "VPN-problem"
-      ],
-      "Feature request": [
-        "Anmodning om funktionalitet"
-      ],
-      "Other": [
-        "Andet"
-      ],
-      "Signup problem": [
-        "Tilmeldingsproblem"
-      ],
-      "Installation problem": [
-        "Installationsproblem"
-      ],
-      "Update problem": [
-        "Opdateringsproblem"
-      ],
-      "Application problem": [
-        "Applikationsproblem"
-      ],
-      "Speed problem": [
-        "Hastighedsproblem"
-      ],
-      "Manual setup problem": [
-        "Problem ifm. manual opsætning"
-      ],
-      "Website access problem": [
-        "Adgangsproblem på websted"
-      ],
-      "Streaming problem": [
-        "Streaming-problem"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Konto"
-      ],
-      "Apps": [
-        "Apps"
-      ],
-      "Network": [
-        "Netværk"
-      ],
-      "Services": [
-        "Tjenester"
-      ],
-      "Other category": [
-        "Anden kategori"
-      ],
-      "Custom folders": [
-        "Brugerdefinerede mapper"
-      ],
-      "Default folders": [
-        "Standard-mapper"
-      ],
-      "Labels": [
-        "Etiketter"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Vælg"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Vedhæft skærmfoto(s)"
       ]
     },
     "Beta access description": {

@@ -21,11 +21,14 @@
       "Authentication error.": [
         ""
       ],
+      "Email address invalid": [
+        "E-posta adresi geçersiz"
+      ],
       "This field is required": [
         "Bu alan gereklidir"
       ],
-      "Email address invalid": [
-        "E-posta adresi geçersiz"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        ""
       ],
       "The composer failed to load.": [
         "Oluşturucu yüklenemedi."
@@ -122,9 +125,6 @@
       "Require at least one action": [
         "En az bir işlem gerektirir"
       ],
-      "Request timed out.": [
-        "İstek zaman aşımına uğradı."
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Bu alan en az ${ minimumLength } karakter gerektirir."
       ],
@@ -136,6 +136,9 @@
       ],
       "Passwords do not match": [
         "Parolalar eşleşmiyor"
+      ],
+      "Request timed out.": [
+        "İstek zaman aşımına uğradı."
       ],
       "Signature verification failed": [
         "İmza doğrulaması başarısız oldu"
@@ -294,6 +297,9 @@
       ],
       "Use “${ label }” setting": [
         "“${ label }” ayarını kullan"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ],
       "Remove": [
         "Sil"
@@ -577,6 +583,18 @@
       "Next": [
         "İleri"
       ],
+      "Clear": [
+        "Temizle"
+      ],
+      "Add screenshot(s)": [
+        "Ekran görüntüsü ekle"
+      ],
+      "Hide info": [
+        "Bilgiyi gizle"
+      ],
+      "Show info": [
+        "Bilgiyi göster"
+      ],
       "Continue import": [
         "İçe aktarmaya devam et"
       ],
@@ -597,9 +615,6 @@
       ],
       "Signing out": [
         "Oturumu kapatılıyor"
-      ],
-      "refresh the page": [
-        "sayfayı yenile"
       ],
       "Log in": [
         "Oturum aç"
@@ -652,9 +667,6 @@
       "Search": [
         "Ara"
       ],
-      "Clear": [
-        "Temizle"
-      ],
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
       ],
@@ -699,15 +711,6 @@
       ],
       "Composer mode": [
         "Oluşturucu modu"
-      ],
-      "Add screenshot(s)": [
-        "Ekran görüntüsü ekle"
-      ],
-      "Hide info": [
-        "Bilgiyi gizle"
-      ],
-      "Show info": [
-        "Bilgiyi göster"
       ],
       "Preview": [
         "Önizle"
@@ -1020,7 +1023,7 @@
         "Tüm Yıldızsızlar"
       ],
       "Load more": [
-        ""
+        "Daha fazla yükle"
       ],
       "Previous page": [
         "Önceki sayfa"
@@ -1182,7 +1185,7 @@
         "Kişileri birleştir"
       ],
       "Deleting contacts": [
-        ""
+        "Kişiler siliniyor"
       ],
       "View contacts": [
         "Kişileri görüntüle"
@@ -1210,6 +1213,9 @@
       ],
       "Import contacts": [
         "Kişileri içe aktar"
+      ],
+      "Report a problem": [
+        "Sorun bildir"
       ],
       "Start import process": [
         "İçe aktarma işlemini başlat"
@@ -1261,9 +1267,6 @@
       ],
       "Give feedback": [
         "Geri bildirim bırak"
-      ],
-      "Report a problem": [
-        "Sorun bildir"
       ],
       "Beta Access": [
         "Beta Erişimi"
@@ -1498,6 +1501,9 @@
       ],
       "Loading": [
         "Yükleniyor"
+      ],
+      "support team": [
+        ""
       ],
       "No contacts added yet": [
         "Henüz kişi eklenmedi"
@@ -1742,6 +1748,12 @@
         "${ addressCount } e-posta adresi",
         "${ addressCount } e-posta adresi"
       ],
+      "Screenshot(s) attached": [
+        "Ekran görüntüsü eklendi"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Sayfayı yenilemek ya da ${ link } çoğu sorunu kendiliğinden çözecektir."
+      ],
       "Import contacts": [
         "Kişileri içe aktar"
       ],
@@ -1752,7 +1764,7 @@
         ""
       ],
       "Your import has started!": [
-        ""
+        "İçeri aktarma işleminiz başladı!"
       ],
       "We will notify you once your import is finished.": [
         ""
@@ -1837,12 +1849,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Beta Erişimini devre dışı bıraktınız. ${ appName } uygulamasının stabil sürümünü kullanmak için ${ refreshButton } tıklayın. Uygulama yeniden yüklenecektir."
-      ],
-      "Screenshot(s) attached": [
-        "Ekran görüntüsü eklendi"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Sayfayı yenilemek ya da ${ link } çoğu sorunu kendiliğinden çözecektir."
       ],
       "Inherited from parent folder": [
         "Üst klasörden devralındı"
@@ -2434,6 +2440,30 @@
       "Export contacts": [
         "Kişileri dışa aktar"
       ],
+      "Operating system": [
+        "İşletim sistemi"
+      ],
+      "Operating system version": [
+        "İşletim sistemi sürümü"
+      ],
+      "Proton username": [
+        "Proton kullanıcı adı"
+      ],
+      "Category": [
+        "Kategori"
+      ],
+      "What happened?": [
+        "Ne oldu?"
+      ],
+      "System information": [
+        "Sistem bilgisi"
+      ],
+      "Browser": [
+        "Tarayıcı"
+      ],
+      "Browser version": [
+        "Tarayıcı sürümü"
+      ],
       "From: ${ fromEmailAddress }": [
         "Kimden: ${ fromEmailAddress }"
       ],
@@ -2473,38 +2503,8 @@
       "Select how your composer opens by default.": [
         ""
       ],
-      "0 - Not a fan": [
-        "0 - Hoşuma gitmedi"
-      ],
-      "10 - Love it!": [
-        "10 - Bayıldım!"
-      ],
       "What is the primary reason for this rating?": [
         ""
-      ],
-      "Operating system": [
-        "İşletim sistemi"
-      ],
-      "Operating system version": [
-        "İşletim sistemi sürümü"
-      ],
-      "Proton username": [
-        "Proton kullanıcı adı"
-      ],
-      "Category": [
-        "Kategori"
-      ],
-      "What happened?": [
-        "Ne oldu?"
-      ],
-      "System information": [
-        "Sistem bilgisi"
-      ],
-      "Browser": [
-        "Tarayıcı"
-      ],
-      "Browser version": [
-        "Tarayıcı sürümü"
       ],
       "Enable Beta Access": [
         "Beta Erişimini Etkinleştir"
@@ -2701,6 +2701,12 @@
       "How would you rate your experience with the new ProtonMail?": [
         "Yeni ProtonMail ile deneyiminizi nasıl değerlendirirsiniz?"
       ],
+      "0 - Not a fan": [
+        "0 - Hoşuma gitmedi"
+      ],
+      "10 - Love it!": [
+        "10 - Bayıldım!"
+      ],
       "Also archive": [
         "Ayrıca arşivle"
       ]
@@ -2717,6 +2723,9 @@
       "Request an invite": [
         "Davet iste"
       ],
+      "clearing your browser cache": [
+        "tarayıcınızın önbelleğini temizlemek"
+      ],
       "Pay invoice": [
         "Fatura ödeme"
       ],
@@ -2728,9 +2737,6 @@
       ],
       "Go to subscription plans": [
         "Abonelik tarifelerine git"
-      ],
-      "clearing your browser cache": [
-        "tarayıcınızın önbelleğini temizlemek"
       ],
       "Inbox": [
         "Gelen kutusu"
@@ -2893,15 +2899,6 @@
       "Name": [
         "Ad"
       ],
-      "Mailbox password": [
-        "Posta kutusu parolası"
-      ],
-      "e.g. Julia Smith": [
-        "örn. Ayşe Yılmaz"
-      ],
-      "Feedback": [
-        "Geri bildirim"
-      ],
       "OS name": [
         "İşletim sistemi adı"
       ],
@@ -2922,6 +2919,15 @@
       ],
       "Browser version": [
         "Tarayıcı sürümü"
+      ],
+      "Mailbox password": [
+        "Posta kutusu parolası"
+      ],
+      "e.g. Julia Smith": [
+        "örn. Ayşe Yılmaz"
+      ],
+      "Feedback": [
+        "Geri bildirim"
       ],
       "Type text or keyword": [
         "Metin veya anahtar kelime yazın"
@@ -2999,14 +3005,14 @@
       "Contacts could not be merged": [
         "Kişiler birleştirilemedi"
       ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        ""
+      ],
       "Are you sure you want to discard your import?": [
         ""
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Yerel tarih ve saat ayarlarınız eşit değil gibi görünüyor."
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        ""
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Ek dosyanın imzası doğrulanamadı.\nBu eki yine de indirebilirsiniz, ancak değiştirilmiş olabilir.",
@@ -3169,14 +3175,14 @@
       "Fingerprint copied to clipboard": [
         "Parmak izi panoya kopyalandı"
       ],
+      "Bug reported": [
+        "Hata bildirildi"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Klavye kısayol tercihleri güncellendi"
       ],
       "Preference saved": [
         "Tercih kaydedildi"
-      ],
-      "Bug reported": [
-        "Hata bildirildi"
       ],
       "Message content search activated": [
         "İleti içeriği arama etkinleştirildi"
@@ -3594,6 +3600,118 @@
         ""
       ]
     },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Resim seçilmedi"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Oturum açma sorunu"
+      ],
+      "Sign up problem": [
+        "Kaydolma sorunu"
+      ],
+      "Payments problem": [
+        "Ödeme sorunu"
+      ],
+      "Custom domain problem": [
+        "Özel alan adı sorunu"
+      ],
+      "Bridge problem": [
+        "Köprüleme sorunu"
+      ],
+      "Import / export problem": [
+        "İçe / dışa aktarma sorunu"
+      ],
+      "Connection problem": [
+        "Bağlantı sorunu"
+      ],
+      "Slow speed problem": [
+        "Yavaş hız sorunu"
+      ],
+      "Calendar problem": [
+        "Takvim sorunu"
+      ],
+      "Contacts problem": [
+        "İletişim sorunu"
+      ],
+      "Drive problem": [
+        "Sürücü sorunu"
+      ],
+      "Mail problem": [
+        "Posta sorunu"
+      ],
+      "VPN problem": [
+        "VPN sorunu"
+      ],
+      "Feature request": [
+        "Özellik isteği"
+      ],
+      "Other": [
+        "Diğer"
+      ],
+      "Signup problem": [
+        "Kayıt sorunu"
+      ],
+      "Installation problem": [
+        "Kurulum sorunu"
+      ],
+      "Update problem": [
+        "Güncelleme sorunu"
+      ],
+      "Application problem": [
+        "Uygulama sorunu"
+      ],
+      "Speed problem": [
+        "Hız sorunu"
+      ],
+      "Manual setup problem": [
+        "Manuel kurulum sorunu"
+      ],
+      "Website access problem": [
+        "İnternet sitesi erişim sorunu"
+      ],
+      "Streaming problem": [
+        "Yayın akışı sorunu"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Hesap"
+      ],
+      "Apps": [
+        "Uygulamalar"
+      ],
+      "Network": [
+        "Ağ"
+      ],
+      "Services": [
+        "Hizmetler"
+      ],
+      "Other category": [
+        "Diğer kategori"
+      ],
+      "Custom folders": [
+        "Özel klasörler"
+      ],
+      "Default folders": [
+        "Varsayılan klasörler"
+      ],
+      "Labels": [
+        "Etiketler"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Seç"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "Ekran görüntüsü ekleyin"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Kişi sağlayıcınıza bağlanılıyor"
@@ -3750,118 +3868,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Geri bildirim gönderildi"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Resim seçilmedi"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Oturum açma sorunu"
-      ],
-      "Sign up problem": [
-        "Kaydolma sorunu"
-      ],
-      "Payments problem": [
-        "Ödeme sorunu"
-      ],
-      "Custom domain problem": [
-        "Özel alan adı sorunu"
-      ],
-      "Bridge problem": [
-        "Köprüleme sorunu"
-      ],
-      "Import / export problem": [
-        "İçe / dışa aktarma sorunu"
-      ],
-      "Connection problem": [
-        "Bağlantı sorunu"
-      ],
-      "Slow speed problem": [
-        "Yavaş hız sorunu"
-      ],
-      "Calendar problem": [
-        "Takvim sorunu"
-      ],
-      "Contacts problem": [
-        "İletişim sorunu"
-      ],
-      "Drive problem": [
-        "Sürücü sorunu"
-      ],
-      "Mail problem": [
-        "Posta sorunu"
-      ],
-      "VPN problem": [
-        "VPN sorunu"
-      ],
-      "Feature request": [
-        "Özellik isteği"
-      ],
-      "Other": [
-        "Diğer"
-      ],
-      "Signup problem": [
-        "Kayıt sorunu"
-      ],
-      "Installation problem": [
-        "Kurulum sorunu"
-      ],
-      "Update problem": [
-        "Güncelleme sorunu"
-      ],
-      "Application problem": [
-        "Uygulama sorunu"
-      ],
-      "Speed problem": [
-        "Hız sorunu"
-      ],
-      "Manual setup problem": [
-        "Manuel kurulum sorunu"
-      ],
-      "Website access problem": [
-        "İnternet sitesi erişim sorunu"
-      ],
-      "Streaming problem": [
-        "Yayın akışı sorunu"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Hesap"
-      ],
-      "Apps": [
-        "Uygulamalar"
-      ],
-      "Network": [
-        "Ağ"
-      ],
-      "Services": [
-        "Hizmetler"
-      ],
-      "Other category": [
-        "Diğer kategori"
-      ],
-      "Custom folders": [
-        "Özel klasörler"
-      ],
-      "Default folders": [
-        "Varsayılan klasörler"
-      ],
-      "Labels": [
-        "Etiketler"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Seç"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Ekran görüntüsü ekleyin"
       ]
     },
     "Beta access description": {

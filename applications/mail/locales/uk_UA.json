@@ -21,11 +21,14 @@
       "Authentication error.": [
         "Помилка автентифікації."
       ],
+      "Email address invalid": [
+        "Недійсна адреса електронної пошти"
+      ],
       "This field is required": [
         "Це поле є обов'язковим"
       ],
-      "Email address invalid": [
-        "Недійсна адреса електронної пошти"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
       ],
       "The composer failed to load.": [
         "Не вдалося завантажити редактор."
@@ -46,7 +49,7 @@
         "Недійсний код підтвердження"
       ],
       "Some groups could not be deleted": [
-        ""
+        "Не вдається видалити деякі групи"
       ],
       "Image upload failed": [
         "Не вдалося завантажити зображення"
@@ -126,9 +129,6 @@
       "Require at least one action": [
         "Необхідна принаймні одна дія"
       ],
-      "Request timed out.": [
-        "Час очікування запиту завершився."
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "В цьому полі повинно бути не менше ${ minimumLength } символів."
       ],
@@ -140,6 +140,9 @@
       ],
       "Passwords do not match": [
         "Паролі відрізняються"
+      ],
+      "Request timed out.": [
+        "Час очікування запиту завершився."
       ],
       "Signature verification failed": [
         "Неможливо перевірити підпис"
@@ -211,10 +214,10 @@
         "Зверніться до адміністратора вашої організації, щоб вирішити це."
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
-        "",
-        "",
-        "",
-        ""
+        "Не можна відкрити понад ${ maxActiveComposer } вікно редактора одночасно.",
+        "Не можна відкрити понад ${ maxActiveComposer } вікна редактора одночасно.",
+        "Не можна відкрити понад ${ maxActiveComposer } вікон редактора одночасно.",
+        "Не можна відкрити понад ${ maxActiveComposer } вікон редактора одночасно."
       ],
       "Message needs to be sent first": [
         "Спершу необхідно надіслати повідомлення"
@@ -244,10 +247,10 @@
         "Виникла проблема з пошуком вмісту. Натомість використано типовий пошук"
       ],
       "Removed duplicate recipient: ${ recipents }": [
-        "",
-        "",
-        "",
-        ""
+        "Вилучено дублікат отримувача: ${ recipents }",
+        "Вилучено дублікати отримувачів: ${ recipents }",
+        "Вилучено дублікати отримувачів: ${ recipents }",
+        "Вилучено дублікати отримувачів: ${ recipents }"
       ],
       "Message passwords do not match.": [
         "Паролі повідомлення відрізняються."
@@ -304,6 +307,9 @@
       ],
       "Use “${ label }” setting": [
         "Використовувати налаштування“${ label }”"
+      ],
+      "refresh the page": [
+        "оновити сторінку"
       ],
       "Remove": [
         "Вилучити"
@@ -593,6 +599,18 @@
       "Next": [
         "Далі"
       ],
+      "Clear": [
+        "Очистити"
+      ],
+      "Add screenshot(s)": [
+        "Додати знімки екрана"
+      ],
+      "Hide info": [
+        "Приховати інформацію"
+      ],
+      "Show info": [
+        "Показати інформацію"
+      ],
       "Continue import": [
         "Продовжити імпорт"
       ],
@@ -613,9 +631,6 @@
       ],
       "Signing out": [
         "Вихід"
-      ],
-      "refresh the page": [
-        "оновити сторінку"
       ],
       "Log in": [
         "Увійти"
@@ -668,9 +683,6 @@
       "Search": [
         "Пошук"
       ],
-      "Clear": [
-        "Очистити"
-      ],
       "Copy email to clipboard": [
         "Копіювати е-пошту в буфер обміну"
       ],
@@ -715,15 +727,6 @@
       ],
       "Composer mode": [
         "Режим редактора"
-      ],
-      "Add screenshot(s)": [
-        "Додати знімки екрана"
-      ],
-      "Hide info": [
-        "Приховати інформацію"
-      ],
-      "Show info": [
-        "Показати інформацію"
       ],
       "Preview": [
         "Перегляд"
@@ -771,7 +774,7 @@
         "Ні"
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
-        ""
+        "Додати до ${ CALENDAR_APP_NAME }"
       ],
       "Send anyway": [
         "Все одно надіслати"
@@ -1038,7 +1041,7 @@
         "Усі без зірочки"
       ],
       "Load more": [
-        "Завантажити ще"
+        "Завантажити більше"
       ],
       "Previous page": [
         "Попередня сторінка"
@@ -1208,7 +1211,7 @@
         "Об'єднати контакти"
       ],
       "Deleting contacts": [
-        ""
+        "Видалення контактів"
       ],
       "View contacts": [
         "Переглянути контакти"
@@ -1236,6 +1239,9 @@
       ],
       "Import contacts": [
         "Імпортувати контакти"
+      ],
+      "Report a problem": [
+        "Повідомити про проблему"
       ],
       "Start import process": [
         "Розпочати процес імпортування"
@@ -1288,9 +1294,6 @@
       "Give feedback": [
         "Залишити відгук"
       ],
-      "Report a problem": [
-        "Повідомити про проблему"
-      ],
       "Beta Access": [
         "Бета-доступ"
       ],
@@ -1325,10 +1328,10 @@
         "Повідомлення без теми?"
       ],
       "Invalid recipients": [
-        ""
+        "Недійсні отримувачі"
       ],
       "Invalid recipient": [
-        ""
+        "Недійсний отримувач"
       ],
       "Re-sign contact": [
         "Повторно підписати контакт"
@@ -1532,6 +1535,9 @@
       ],
       "Loading": [
         "Завантаження"
+      ],
+      "support team": [
+        "командою підтримки"
       ],
       "No contacts added yet": [
         "Контактів ще не додано"
@@ -1759,7 +1765,7 @@
         "Змінюйте ці налаштування лише якщо ви використовуєте PGP з отримувачами поза ProtonMail."
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        ""
+        "Жоден із вивантажених ключів не є дійсним для шифрування. Шифрування автоматично вимкнено."
       ],
       "No email address": [
         "Немає адреси е-пошти"
@@ -1787,6 +1793,12 @@
         "${ addressCount } адреси е-пошти",
         "${ addressCount } адрес е-пошти",
         "${ addressCount } адрес е-пошти"
+      ],
+      "Screenshot(s) attached": [
+        "Знімки додано"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
       ],
       "Import contacts": [
         "Імпортувати контакти"
@@ -1883,12 +1895,6 @@
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Ви вимкнули бета-доступ. Натисніть ${ refreshButton }, щоб використовувати стабільну версію ${ appName }. Програму буде перезавантажено."
-      ],
-      "Screenshot(s) attached": [
-        "Знімки додано"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
       ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
@@ -2528,6 +2534,30 @@
       "Export contacts": [
         "Експортувати контакти"
       ],
+      "Operating system": [
+        "Операційна система"
+      ],
+      "Operating system version": [
+        "Версія операційної системи"
+      ],
+      "Proton username": [
+        "Ім'я користувача Proton"
+      ],
+      "Category": [
+        "Категорія"
+      ],
+      "What happened?": [
+        "Що сталося?"
+      ],
+      "System information": [
+        "Інформація про систему"
+      ],
+      "Browser": [
+        "Браузер"
+      ],
+      "Browser version": [
+        "Версія браузера"
+      ],
       "From: ${ fromEmailAddress }": [
         "Від: ${ fromEmailAddress }"
       ],
@@ -2567,38 +2597,8 @@
       "Select how your composer opens by default.": [
         "Оберіть типовий вигляд редактора."
       ],
-      "0 - Not a fan": [
-        "0 - Не подобається"
-      ],
-      "10 - Love it!": [
-        "10 - У захваті!"
-      ],
       "What is the primary reason for this rating?": [
-        ""
-      ],
-      "Operating system": [
-        "Операційна система"
-      ],
-      "Operating system version": [
-        "Версія операційної системи"
-      ],
-      "Proton username": [
-        "Ім'я користувача Proton"
-      ],
-      "Category": [
-        "Категорія"
-      ],
-      "What happened?": [
-        "Що сталося?"
-      ],
-      "System information": [
-        "Інформація про систему"
-      ],
-      "Browser": [
-        "Браузер"
-      ],
-      "Browser version": [
-        "Версія браузера"
+        "Яка основна причина такої оцінки?"
       ],
       "Enable Beta Access": [
         "Увімкнути бета-доступ"
@@ -2795,13 +2795,19 @@
       "How would you rate your experience with the new ProtonMail?": [
         "Як би ви оцінили свої враження від нового ProtonMail?"
       ],
+      "0 - Not a fan": [
+        "0 - Не подобається"
+      ],
+      "10 - Love it!": [
+        "10 - У захваті!"
+      ],
       "Also archive": [
         "Також архівувати"
       ]
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
-        ""
+        "Ключ не можна використовувати для шифрування"
       ]
     },
     "Link": {
@@ -2810,6 +2816,9 @@
       ],
       "Request an invite": [
         "Запитати запрошення"
+      ],
+      "clearing your browser cache": [
+        "очищення кешу браузера"
       ],
       "Pay invoice": [
         "Сплатити рахунок"
@@ -2822,9 +2831,6 @@
       ],
       "Go to subscription plans": [
         "Перейти до тарифних планів"
-      ],
-      "clearing your browser cache": [
-        "очищення кешу браузера"
       ],
       "Inbox": [
         "Вхідні"
@@ -2854,7 +2860,7 @@
         "Вихідні"
       ],
       "You need to activate your calendar keys to add this event": [
-        ""
+        "Щоб додати цю подію, вам необхідно активувати свої ключі календаря"
       ],
       "You need to activate your calendar keys to manage this invitation": [
         "Щоб керувати цим запрошенням, вам необхідно активувати свої ключі календаря"
@@ -2869,7 +2875,7 @@
         "Щоб переглянути оновлене запрошення, вам необхідно активувати свої ключі календаря"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        ""
+        "Цей ICS-файл містить більше однієї події. Будь ласка, завантажте його та імпортуйте події в ${ calendarAppName }"
       ],
       "You need to reactivate your keys to manage this invitation": [
         "Щоб керувати цим запрошенням, вам необхідно повторно активувати свої ключі"
@@ -2881,7 +2887,7 @@
         "Щоб переглянути оновлене запрошення, вам необхідно повторно активувати свої ключі"
       ],
       "Create a new calendar to add this event": [
-        ""
+        "Створити новий календар для додавання цієї події"
       ],
       "Create a new calendar to answer this invitation": [
         "Створити новий календар для відповіді на це запрошення"
@@ -2987,15 +2993,6 @@
       "Name": [
         "Назва"
       ],
-      "Mailbox password": [
-        "Пароль поштової скриньки"
-      ],
-      "e.g. Julia Smith": [
-        "наприклад, Джулія Сміт"
-      ],
-      "Feedback": [
-        "Відгук"
-      ],
       "OS name": [
         "Назва ОС"
       ],
@@ -3016,6 +3013,15 @@
       ],
       "Browser version": [
         "Версія браузера"
+      ],
+      "Mailbox password": [
+        "Пароль поштової скриньки"
+      ],
+      "e.g. Julia Smith": [
+        "наприклад, Джулія Сміт"
+      ],
+      "Feedback": [
+        "Відгук"
       ],
       "Type text or keyword": [
         "Введіть текст чи ключове слово"
@@ -3097,14 +3103,14 @@
       "Contacts could not be merged": [
         "Не вдається об'єднати контакти"
       ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Повідомлення не шифруються наскрізно. Будь ласка, не відправляйте в них будь-яку конфіденційну інформацію."
+      ],
       "Are you sure you want to discard your import?": [
         "Ви дійсно хочете відхилити імпортування?"
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Здається, ваші локальні налаштування дати та часу не синхронізовані."
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Повідомлення не шифруються наскрізно. Будь ласка, не відправляйте в них будь-яку конфіденційну інформацію."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Не вдалося перевірити підпис вкладення.\nВи все одно можете завантажити це вкладення, але воно може бути підробленим.",
@@ -3273,14 +3279,14 @@
       "Fingerprint copied to clipboard": [
         "Цифровий відбиток скопійовано до буфера обміну"
       ],
+      "Bug reported": [
+        "Звіт про помилку надіслано"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Налаштування комбінацій клавіш оновлено"
       ],
       "Preference saved": [
         "Налаштування збережено"
-      ],
-      "Bug reported": [
-        "Звіт про помилку надіслано"
       ],
       "Message content search activated": [
         "Пошук вмісту повідомлень активовано"
@@ -3544,16 +3550,16 @@
         "Перебіг: ${ combinedProgress }%"
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "",
-        "",
-        "",
-        ""
+        "${ model.deleted.length } контакт з ${ totalBeDeleted } успішно видалено.",
+        "${ model.deleted.length } контакти з ${ totalBeDeleted } успішно видалено.",
+        "${ model.deleted.length } контактів з ${ totalBeDeleted } успішно видалено.",
+        "${ model.deleted.length } контактів з ${ totalBeDeleted } успішно видалено."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "",
-        "",
-        "",
-        ""
+        "${ model.submitted.length } контакт з ${ totalBeMerged } успішно об'єднано.",
+        "${ model.submitted.length } контакти з ${ totalBeMerged } успішно об'єднано.",
+        "${ model.submitted.length } контактів з ${ totalBeMerged } успішно об'єднано.",
+        "${ model.submitted.length } контактів з ${ totalBeMerged } успішно об'єднано."
       ],
       "No contacts merged.": [
         "Контакти не об'єднано."
@@ -3567,7 +3573,7 @@
         "Об'єднання контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        ""
+        "Видалення контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
@@ -3748,6 +3754,118 @@
         "${ totalImported }/${ totalToImport } контактів зашифровано та додано до вашого списку контактів"
       ]
     },
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Жодного зображення не вибрано"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Проблема з входом"
+      ],
+      "Sign up problem": [
+        "Проблема з реєстрацією"
+      ],
+      "Payments problem": [
+        "Проблема з оплатою"
+      ],
+      "Custom domain problem": [
+        "Проблема з власним доменом"
+      ],
+      "Bridge problem": [
+        "Проблема з Bridge"
+      ],
+      "Import / export problem": [
+        "Проблема з імпортом / експортом"
+      ],
+      "Connection problem": [
+        "Проблема зі з'єднанням"
+      ],
+      "Slow speed problem": [
+        "Проблема повільної швидкості"
+      ],
+      "Calendar problem": [
+        "Проблема з календарем"
+      ],
+      "Contacts problem": [
+        "Проблема з контактами"
+      ],
+      "Drive problem": [
+        "Проблема з Drive"
+      ],
+      "Mail problem": [
+        "Проблема з поштою"
+      ],
+      "VPN problem": [
+        "Проблема з VPN"
+      ],
+      "Feature request": [
+        "Запит нової функції"
+      ],
+      "Other": [
+        "Інше"
+      ],
+      "Signup problem": [
+        "Проблема з реєстрацією"
+      ],
+      "Installation problem": [
+        "Проблема з встановленням"
+      ],
+      "Update problem": [
+        "Проблема з оновленням"
+      ],
+      "Application problem": [
+        "Проблема з додатком"
+      ],
+      "Speed problem": [
+        "Проблема зі швидкістю"
+      ],
+      "Manual setup problem": [
+        "Проблема з ручними налаштуваннями"
+      ],
+      "Website access problem": [
+        "Проблема доступу до вебсайту"
+      ],
+      "Streaming problem": [
+        "Проблема трансляції"
+      ]
+    },
+    "Group": {
+      "Account": [
+        "Обліковий запис"
+      ],
+      "Apps": [
+        "Програми"
+      ],
+      "Network": [
+        "Мережа"
+      ],
+      "Services": [
+        "Служби"
+      ],
+      "Other category": [
+        "Інша категорія"
+      ],
+      "Custom folders": [
+        "Власні теки"
+      ],
+      "Default folders": [
+        "Типові теки"
+      ],
+      "Labels": [
+        "Мітки"
+      ]
+    },
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Обрати"
+      ]
+    },
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "Додати знімки екрану"
+      ]
+    },
     "Loading info": {
       "Connecting to your contacts provider": [
         "Підключення до вашого постачальника контактів"
@@ -3904,118 +4022,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Відгук надіслано"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Жодного зображення не вибрано"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Проблема з входом"
-      ],
-      "Sign up problem": [
-        "Проблема з реєстрацією"
-      ],
-      "Payments problem": [
-        "Проблема з оплатою"
-      ],
-      "Custom domain problem": [
-        "Проблема з власним доменом"
-      ],
-      "Bridge problem": [
-        "Проблема з Bridge"
-      ],
-      "Import / export problem": [
-        "Проблема з імпортом / експортом"
-      ],
-      "Connection problem": [
-        "Проблема зі з'єднанням"
-      ],
-      "Slow speed problem": [
-        "Проблема повільної швидкості"
-      ],
-      "Calendar problem": [
-        "Проблема з календарем"
-      ],
-      "Contacts problem": [
-        "Проблема з контактами"
-      ],
-      "Drive problem": [
-        "Проблема з Drive"
-      ],
-      "Mail problem": [
-        "Проблема з поштою"
-      ],
-      "VPN problem": [
-        "Проблема з VPN"
-      ],
-      "Feature request": [
-        "Запит нової функції"
-      ],
-      "Other": [
-        "Інше"
-      ],
-      "Signup problem": [
-        "Проблема з реєстрацією"
-      ],
-      "Installation problem": [
-        "Проблема з встановленням"
-      ],
-      "Update problem": [
-        "Проблема з оновленням"
-      ],
-      "Application problem": [
-        "Проблема з додатком"
-      ],
-      "Speed problem": [
-        "Проблема зі швидкістю"
-      ],
-      "Manual setup problem": [
-        "Проблема з ручними налаштуваннями"
-      ],
-      "Website access problem": [
-        "Проблема доступу до вебсайту"
-      ],
-      "Streaming problem": [
-        "Проблема трансляції"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Обліковий запис"
-      ],
-      "Apps": [
-        "Програми"
-      ],
-      "Network": [
-        "Мережа"
-      ],
-      "Services": [
-        "Служби"
-      ],
-      "Other category": [
-        "Інша категорія"
-      ],
-      "Custom folders": [
-        "Власні теки"
-      ],
-      "Default folders": [
-        "Типові теки"
-      ],
-      "Labels": [
-        "Мітки"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Обрати"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Додати знімки екрану"
       ]
     },
     "Beta access description": {
@@ -4444,34 +4450,34 @@
         "Сталася неочікувана помилка. Необхідно перезапустити імпорт."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        ""
+        "Помилка під час вивантаження вашого файлу. Файл не вибрано."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        ""
+        "Виникла помилка під час вивантаження вашого файлу ${ formattedFilename }. Дозволяються лише файли в форматі ICS."
       ],
       "Your file ${ formattedFilename } is empty.": [
-        ""
+        "Ваш файл ${ formattedFilename } порожній."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        ""
+        "Виникла помилка під час вивантаження вашого файлу ${ formattedFilename }. Максимальний розмір файлу ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
-        ""
+        "Ваш файл ${ formattedFilename } не є календарем."
       ],
       "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        ""
+        "${ CALENDAR_APP_NAME } підтримує імпортування календарів лише з iCal версії 2.0."
       ],
       "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        ""
+        "Ваш файл ${ formattedFilename } є запрошенням і його неможливо імпортувати."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        ""
+        "Ваш файл ${ formattedFilename } не містить подій для імпортування."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        ""
+        "Ваш файл ${ formattedFilename } містить понад ${ MAX_IMPORT_EVENTS_STRING } подій."
       ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        ""
+        "Виникла помилка під час прочитання вашого файлу ${ formattedFilename }. Файл має неправильний формат."
       ]
     },
     "Error importing contacts": {
@@ -4674,13 +4680,13 @@
     },
     "Attached ics file error": {
       "Invalid ICS file": [
-        ""
+        "Недійсний файл ICS"
       ],
       "Invalid event": [
-        ""
+        "Недійсна подія"
       ],
       "Unsupported event": [
-        ""
+        "Непідтримувана подія"
       ]
     },
     "Event invitation error": {
@@ -4697,10 +4703,10 @@
         "Непідтримуване запрошення"
       ],
       "Attached ICS file could not be parsed": [
-        ""
+        "Не вдається обробити вкладений ICS-файл"
       ],
       "Attached ICS file could not be decrypted": [
-        ""
+        "Не вдається розшифрувати вкладений ICS-файл"
       ],
       "We could not retrieve the event from your calendar": [
         "Не вдається видобути подію з вашого календаря"
@@ -4723,82 +4729,82 @@
     },
     "Error importing event": {
       "Component with wrong format": [
-        ""
+        "Компонент з неправильним форматом"
       ],
       "Non-Gregorian": [
-        ""
+        "Не григоріанський"
       ],
       "To-do entry": [
-        ""
+        "Запис завдання"
       ],
       "Journal entry": [
-        ""
+        "Запис журналу"
       ],
       "Free-busy time information": [
-        ""
+        "Інформація про доступність та зайнятість"
       ],
       "Custom timezone": [
-        ""
+        "Власний часовий пояс"
       ],
       "Invalid event": [
-        ""
+        "Недійсна подія"
       ],
       "Unsupported event": [
-        ""
+        "Непідтримувана подія"
       ],
       "Malformed all-day event": [
-        ""
+        "Неправильна подія на цілий день"
       ],
       "Missing start time": [
-        ""
+        "Відсутній час початку"
       ],
       "Malformed start time": [
-        ""
+        "Неправильний час початку"
       ],
       "Floating times not supported": [
-        ""
+        "Гнучкий час не підтримується"
       ],
       "Start time out of bounds": [
-        ""
+        "Час початку поза припустимим діапазоном"
       ],
       "Malformed end time": [
-        ""
+        "Неправильний час завершення"
       ],
       "End time out of bounds": [
-        ""
+        "Час завершення поза припустимими межами"
       ],
       "Event duration not supported": [
-        ""
+        "Тривалість події не підтримується"
       ],
       "Calendar timezone not supported": [
-        ""
+        "Часовий пояс календаря не підтримується"
       ],
       "Timezone not supported": [
-        ""
+        "Часовий пояс не підтримується"
       ],
       "Malformed recurring event": [
-        ""
+        "Неправильна повторювана подія"
       ],
       "Recurring rule not supported": [
-        ""
+        "Правило повторення не підтримується"
       ],
       "Edited event not supported": [
-        ""
+        "Відредагована подія не підтримується"
       ],
       "Notification out of bounds": [
-        ""
+        "Сповіщення поза межами"
       ],
       "Event validation failed": [
-        ""
+        "Не вдалося перевірити подію"
       ],
       "Encryption failed": [
-        ""
+        "Не вдалося зашифрувати"
       ],
       "Original recurring event could not be found": [
-        ""
+        "Не вдається знайти оригінальну повторювану подію"
       ],
       "no UID, title or start time": [
-        ""
+        "немає UID, заголовка або часу початку"
       ]
     },
     "Event title": {
@@ -5900,10 +5906,10 @@
     },
     "Import ICS file from Mail": {
       "Calendar event created": [
-        ""
+        "Створено подію календаря"
       ],
       "Creating calendar event failed": [
-        ""
+        "Не вдалося створити подію календаря"
       ]
     },
     "Attachment signature verification": {

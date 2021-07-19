@@ -21,11 +21,14 @@
       "Authentication error.": [
         "Ошибка аутентификации."
       ],
+      "Email address invalid": [
+        "Неверный адрес электронной почты"
+      ],
       "This field is required": [
         "Это обязательное поле"
       ],
-      "Email address invalid": [
-        "Неверный адрес электронной почты"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Что-то пошло не так. Пожалуйста ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, пожалуйста свяжитесь нашей ${ supportTeam }."
       ],
       "The composer failed to load.": [
         "Не удалось загрузить редактор."
@@ -126,9 +129,6 @@
       "Require at least one action": [
         "Требуется как минимум одно действие"
       ],
-      "Request timed out.": [
-        "Истекло время ожидания запроса."
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Минимальная длина для этого поля: ${ minimumLength }."
       ],
@@ -140,6 +140,9 @@
       ],
       "Passwords do not match": [
         "Пароли не совпадают"
+      ],
+      "Request timed out.": [
+        "Истекло время ожидания запроса."
       ],
       "Signature verification failed": [
         "Проверка подписи не удалась"
@@ -304,6 +307,9 @@
       ],
       "Use “${ label }” setting": [
         "Использовать настройку «${ label }»"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ],
       "Remove": [
         "Удалить"
@@ -593,6 +599,18 @@
       "Next": [
         "Далее"
       ],
+      "Clear": [
+        "Очистить"
+      ],
+      "Add screenshot(s)": [
+        "Добавить снимки экрана"
+      ],
+      "Hide info": [
+        "Скрыть информацию"
+      ],
+      "Show info": [
+        "Показать информацию"
+      ],
       "Continue import": [
         "Продолжить импорт"
       ],
@@ -613,9 +631,6 @@
       ],
       "Signing out": [
         "Выход"
-      ],
-      "refresh the page": [
-        "обновить страницу"
       ],
       "Log in": [
         "Войти"
@@ -668,9 +683,6 @@
       "Search": [
         "Поиск"
       ],
-      "Clear": [
-        "Очистить"
-      ],
       "Copy email to clipboard": [
         "Скопировать адрес эл. почты в буфер обмена"
       ],
@@ -715,15 +727,6 @@
       ],
       "Composer mode": [
         "Режим редактора"
-      ],
-      "Add screenshot(s)": [
-        "Добавить снимки экрана"
-      ],
-      "Hide info": [
-        "Скрыть информацию"
-      ],
-      "Show info": [
-        "Показать информацию"
       ],
       "Preview": [
         "Предпросмотр"
@@ -1237,6 +1240,9 @@
       "Import contacts": [
         "Импорт контактов"
       ],
+      "Report a problem": [
+        "Сообщить о проблеме"
+      ],
       "Start import process": [
         "Начать процесс импорта"
       ],
@@ -1288,9 +1294,6 @@
       "Give feedback": [
         "Оставить отзыв"
       ],
-      "Report a problem": [
-        "Сообщить о проблеме"
-      ],
       "Beta Access": [
         "Бета-доступ"
       ],
@@ -1325,10 +1328,10 @@
         "Отправить сообщение без темы?"
       ],
       "Invalid recipients": [
-        ""
+        "Недействительные получатели"
       ],
       "Invalid recipient": [
-        ""
+        "Недействительный получатель"
       ],
       "Re-sign contact": [
         "Повторно подписать контакт"
@@ -1532,6 +1535,9 @@
       ],
       "Loading": [
         "Загрузка"
+      ],
+      "support team": [
+        "служба поддержки"
       ],
       "No contacts added yet": [
         "Контакты ещё не добавлены"
@@ -1759,7 +1765,7 @@
         "Изменяйте эти настройки только в том случае, если применяете PGP для переписки с получателями вне ProtonMail."
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        ""
+        "Ни один из загруженных ключей не годиться для шифрования. Шифрование автоматически отключено."
       ],
       "No email address": [
         "Нет адреса эл. почты"
@@ -1788,29 +1794,35 @@
         "${ addressCount } адресов электронной почты",
         "${ addressCount } адреса электронной почты"
       ],
+      "Screenshot(s) attached": [
+        "Снимки экрана прикреплены"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Обновление страницы или ${ link } автоматически решит большую часть проблем."
+      ],
       "Import contacts": [
-        ""
+        "Импортировать контакты"
       ],
       "Your contacts are being imported from": [
-        ""
+        "Ваши контакты были импортированы из"
       ],
       "to": [
-        ""
+        "кому"
       ],
       "Your import has started!": [
-        ""
+        "Импорт начался!"
       ],
       "We will notify you once your import is finished.": [
-        ""
+        "Мы сообщим вам когда импорт закончится."
       ],
       "Large imports can take several days to complete.": [
-        ""
+        "Импорт данных большого объема может занять несколько дней."
       ],
       "You can continue using Proton services as usual.": [
-        ""
+        "Вы можете продолжить обычное использование сервисов Proton."
       ],
       "Your import will not be processed.": [
-        ""
+        "Импорт ваших данных не будет подвергнут обработке."
       ],
       "Loading ${ appName }": [
         "Загрузка ${ appName }"
@@ -1879,16 +1891,10 @@
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
       ],
       "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
-        ""
+        "Вы включили Beta-доступ. Нажмите на ${ refreshButton } чтобы использовать последнюю версию ${ appName }. Приложение будет перезагружено."
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
-        ""
-      ],
-      "Screenshot(s) attached": [
-        "Снимки экрана прикреплены"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Обновление страницы или ${ link } автоматически решит большую часть проблем."
+        "Вы отключили Beta-доступ. Нажмите на ${ refreshButton } чтобы использовать стабильную версию ${ appName }. Приложение будет перезагружено."
       ],
       "Inherited from parent folder": [
         "Унаследовано от родительской папки"
@@ -2284,13 +2290,13 @@
         "Для сообщений новее, чем ${ oldestDate }"
       ],
       "Turn off content search. Activation progress won't be lost.": [
-        ""
+        "Выключить поиск контактов. Активация будет прервана."
       ],
       "Activation in progress": [
-        ""
+        "Осуществляется активация"
       ],
       "Indexing paused": [
-        ""
+        "Индексирование приостановлено"
       ],
       "Estimating time remaining...": [
         "Оценка оставшегося времени..."
@@ -2528,11 +2534,35 @@
       "Export contacts": [
         "Экспорт контактов"
       ],
+      "Operating system": [
+        "Операционная система"
+      ],
+      "Operating system version": [
+        "Версия операционной системы"
+      ],
+      "Proton username": [
+        "Имя пользователя в Proton"
+      ],
+      "Category": [
+        "Категория"
+      ],
+      "What happened?": [
+        "Что случилось?"
+      ],
+      "System information": [
+        "Сведения о системе"
+      ],
+      "Browser": [
+        "Браузер"
+      ],
+      "Browser version": [
+        "Версия браузера"
+      ],
       "From: ${ fromEmailAddress }": [
-        ""
+        "От: ${ fromEmailAddress }"
       ],
       "To: ${ toEmailAddress }": [
-        ""
+        "Кому: ${ toEmailAddress }"
       ],
       "Cancel": [
         "Отменить"
@@ -2559,46 +2589,16 @@
         "Сочетания клавиш"
       ],
       "Select how your list of messages looks like by default.": [
-        ""
+        "Выберите как будет выглядеть список сообщений по умолчанию."
       ],
       "Select how your mailbox looks like by default.": [
-        ""
+        "Выберите как будет выглядеть ваш почтовый ящик по умолчанию."
       ],
       "Select how your composer opens by default.": [
-        ""
-      ],
-      "0 - Not a fan": [
-        "0 — не понравилось."
-      ],
-      "10 - Love it!": [
-        "10 — очень понравилось!"
+        "Выберите как будет открываться окно составления сообщения по умолчанию."
       ],
       "What is the primary reason for this rating?": [
-        ""
-      ],
-      "Operating system": [
-        "Операционная система"
-      ],
-      "Operating system version": [
-        "Версия операционной системы"
-      ],
-      "Proton username": [
-        "Имя пользователя в Proton"
-      ],
-      "Category": [
-        "Категория"
-      ],
-      "What happened?": [
-        "Что случилось?"
-      ],
-      "System information": [
-        "Сведения о системе"
-      ],
-      "Browser": [
-        "Браузер"
-      ],
-      "Browser version": [
-        "Версия браузера"
+        "Какова основная причина этой оценки?"
       ],
       "Enable Beta Access": [
         "Включить доступ к бета-версии"
@@ -2795,13 +2795,19 @@
       "How would you rate your experience with the new ProtonMail?": [
         "Как бы вы оценили свои впечатления от новой версии ProtonMail?"
       ],
+      "0 - Not a fan": [
+        "0 — не понравилось."
+      ],
+      "10 - Love it!": [
+        "10 — очень понравилось!"
+      ],
       "Also archive": [
         "Перенести в архив"
       ]
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
-        ""
+        "Ключ не может быть использован для шифрования"
       ]
     },
     "Link": {
@@ -2810,6 +2816,9 @@
       ],
       "Request an invite": [
         "Запросить приглашение"
+      ],
+      "clearing your browser cache": [
+        "очистка кэша браузера"
       ],
       "Pay invoice": [
         "Оплатить счёт"
@@ -2822,9 +2831,6 @@
       ],
       "Go to subscription plans": [
         "Перейти на страницу подписки"
-      ],
-      "clearing your browser cache": [
-        "очистка кэша браузера"
       ],
       "Inbox": [
         "Входящие"
@@ -2854,7 +2860,7 @@
         "Исходящие"
       ],
       "You need to activate your calendar keys to add this event": [
-        ""
+        "Вы должны активировать ключи вашего календаря, чтобы добавить это событие"
       ],
       "You need to activate your calendar keys to manage this invitation": [
         "Вам нужно активировать ключи календаря для управления этим приглашением"
@@ -2869,7 +2875,7 @@
         "Вам нужно активировать ключи календаря, чтобы увидеть обновленные приглашения"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        ""
+        "Этот ICS файл календаря содержит более, чем одно событие. Пожалуйста, загрузите его и импортируйте события в ${ calendarAppName }"
       ],
       "You need to reactivate your keys to manage this invitation": [
         "Вам нужно повторно активировать ключи для управления этим приглашением"
@@ -2881,7 +2887,7 @@
         "Вам нужно повторно активировать ключи, чтобы увидеть обновленное приглашение"
       ],
       "Create a new calendar to add this event": [
-        ""
+        "Создайте новый календарь чтобы добавить это событие"
       ],
       "Create a new calendar to answer this invitation": [
         "Создайте новый календарь, чтобы ответить на это приглашение"
@@ -2987,15 +2993,6 @@
       "Name": [
         "Название"
       ],
-      "Mailbox password": [
-        "Пароль почтового ящика"
-      ],
-      "e.g. Julia Smith": [
-        "например, Джулия Смит"
-      ],
-      "Feedback": [
-        "Отзыв"
-      ],
       "OS name": [
         "Название ОС"
       ],
@@ -3016,6 +3013,15 @@
       ],
       "Browser version": [
         "Версия браузера"
+      ],
+      "Mailbox password": [
+        "Пароль почтового ящика"
+      ],
+      "e.g. Julia Smith": [
+        "например, Джулия Смит"
+      ],
+      "Feedback": [
+        "Отзыв"
       ],
       "Type text or keyword": [
         "Введите текст или ключевое слово"
@@ -3097,14 +3103,14 @@
       "Contacts could not be merged": [
         "Контакты не могут быть объединены"
       ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
+      ],
       "Are you sure you want to discard your import?": [
-        ""
+        "Вы уверены, что решили отменить ваш импорт?"
       ],
       "Your local date & time settings seem to be out of sync.": [
         "Ваши локальные параметры даты и времени не синхронизированы."
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Не удалось проверить подпись вложения.\nВы можете загрузить это вложение, но оно могло быть изменено.",
@@ -3273,14 +3279,14 @@
       "Fingerprint copied to clipboard": [
         "Отпечаток скопирован в буфер обмена"
       ],
+      "Bug reported": [
+        "Отчёт об ошибке отправлен"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Настройки сочетаний клавиш обновлены"
       ],
       "Preference saved": [
         "Настройки сохранены"
-      ],
-      "Bug reported": [
-        "Отчёт об ошибке отправлен"
       ],
       "Message content search activated": [
         "Активирован поиск по содержимому сообщения"
@@ -3490,7 +3496,7 @@
         "Контакты"
       ],
       "Contacts, groups and settings": [
-        ""
+        "Контакты, группы и настройки"
       ],
       "Help": [
         "Помощь"
@@ -3544,16 +3550,16 @@
         "Прогресс: ${ combinedProgress } %"
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "",
-        "",
-        "",
-        ""
+        "${ model.deleted.length } из ${ totalBeDeleted } контакта успешно удален.",
+        "${ model.deleted.length } из ${ totalBeDeleted } контактов успешно удалены.",
+        "${ model.deleted.length } из ${ totalBeDeleted } контактов успешно удалены.",
+        "${ model.deleted.length } из ${ totalBeDeleted } контакта успешно удален."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "",
-        "",
-        "",
-        ""
+        "${ model.submitted.length } из ${ totalBeMerged } контакта успешно объединены.",
+        "${ model.submitted.length } из ${ totalBeMerged } контактов успешно объединены.",
+        "${ model.submitted.length } из ${ totalBeMerged } контактов успешно объединены.",
+        "${ model.submitted.length } из ${ totalBeMerged } контакта успешно объединены."
       ],
       "No contacts merged.": [
         "0 контактов было объединено."
@@ -3567,7 +3573,7 @@
         "Выполняется объединение контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        ""
+        "Удаляем контакты... Это может занять несколько минут. Когда процесс завершится, вы можете закрыть это окно."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Перетаскивайте контакты, чтобы задавать им приоритет при объединении. Снимите галочку с контактов, которые вы не хотите объединять."
@@ -3748,164 +3754,6 @@
         "${ totalImported }/${ totalToImport } контактов зашифровано и добавлено в ваш список контактов"
       ]
     },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        ""
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        ""
-      ],
-      "Configure Import": [
-        ""
-      ],
-      "Import": [
-        ""
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        ""
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Приложения Proton"
-      ],
-      "Go to ${ title }": [
-        "Перейти к ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Перейти к ${ vpnName }"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        ""
-      ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        ""
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        ""
-      ],
-      "Maximized": [
-        ""
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Загрузить"
-      ]
-    },
-    "Onboarding Proton": {
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Вот что увидит адресат, когда получит ваше письмо, приглашение на событие или файл."
-      ],
-      "Choose a display name": [
-        "Задайте отображаемое имя"
-      ],
-      "Select a theme": [
-        "Выберите тему"
-      ],
-      "You can change this anytime in your settings.": [
-        "Вы можете изменить это в любой момент в настройках."
-      ],
-      "Discover all Proton services": [
-        "Откройте для себя все сервисы Proton"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Используйте меню приложений в верхнем левом углу для доступа к другим службам Proton, включая VPN, календарь и диск."
-      ],
-      "Welcome to Proton": [
-        "Добро пожаловать в Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Мы стремимся создать интернет-пространство, в котором вы сами управляете своими данными и конфиденциальностью. Добро пожаловать в безопасный интернет с обновленным браузером Proton!"
-      ],
-      "Set up your organization": [
-        "Настройка организации"
-      ],
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Настройте свою организацию, привяжите свое доменное имя и создайте учетные записи, чтобы обеспечить защиту всех членов организации."
-      ]
-    },
-    "Onboarding Beta": {
-      "Got it": [
-        "Понятно"
-      ],
-      "Beta enabled": [
-        "Бета-версия включена"
-      ],
-      "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
-        "Чтобы отключить бета-версию, откройте выпадающее меню настроек и нажмите на опцию «Доступ к Beta»."
-      ]
-    },
-    "Message display when a new app version is available": {
-      "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "Доступна новая версия ${ appName } . ${ reloadButton }."
-      ]
-    },
-    "Text": {
-      "Settings": [
-        "Настройки"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Вкл"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Выкл"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        ""
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        ""
-      ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        ""
-      ],
-      "Normal": [
-        ""
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Поставьте оценку"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Отзыв отправлен"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Изображение не выбрано"
@@ -4016,6 +3864,164 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Приложить снимки экрана"
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        "Подключение к провайдеру календаря"
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        "Аутентифицировать"
+      ],
+      "Configure Import": [
+        "Настроить импорт"
+      ],
+      "Import": [
+        "Импорт"
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        "Выйти из импорта?"
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Приложения Proton"
+      ],
+      "Go to ${ title }": [
+        "Перейти к ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Перейти к ${ vpnName }"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Удобный"
+      ],
+      "Compact": [
+        "Компактный"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Колонка"
+      ],
+      "Row": [
+        "Ряд"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Обычный"
+      ],
+      "Maximized": [
+        "Максимизированный"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Загрузить"
+      ]
+    },
+    "Onboarding Proton": {
+      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
+        "Вот что увидит адресат, когда получит ваше письмо, приглашение на событие или файл."
+      ],
+      "Choose a display name": [
+        "Задайте отображаемое имя"
+      ],
+      "Select a theme": [
+        "Выберите тему"
+      ],
+      "You can change this anytime in your settings.": [
+        "Вы можете изменить это в любой момент в настройках."
+      ],
+      "Discover all Proton services": [
+        "Откройте для себя все сервисы Proton"
+      ],
+      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
+        "Используйте меню приложений в верхнем левом углу для доступа к другим службам Proton, включая VPN, календарь и диск."
+      ],
+      "Welcome to Proton": [
+        "Добро пожаловать в Proton"
+      ],
+      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
+        "Мы стремимся создать интернет-пространство, в котором вы сами управляете своими данными и конфиденциальностью. Добро пожаловать в безопасный интернет с обновленным браузером Proton!"
+      ],
+      "Set up your organization": [
+        "Настройка организации"
+      ],
+      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
+        "Настройте свою организацию, привяжите свое доменное имя и создайте учетные записи, чтобы обеспечить защиту всех членов организации."
+      ]
+    },
+    "Onboarding Beta": {
+      "Got it": [
+        "Понятно"
+      ],
+      "Beta enabled": [
+        "Бета-версия включена"
+      ],
+      "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
+        "Чтобы отключить бета-версию, откройте выпадающее меню настроек и нажмите на опцию «Доступ к Beta»."
+      ]
+    },
+    "Message display when a new app version is available": {
+      "A new version of ${ appName } is available. ${ reloadButton }.": [
+        "Доступна новая версия ${ appName } . ${ reloadButton }."
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Настройки"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Вкл"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Выкл"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Колонка"
+      ],
+      "Row": [
+        "Ряд"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Удобный"
+      ],
+      "Compact": [
+        "Компактный"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "Максимизированный"
+      ],
+      "Normal": [
+        "Обычный"
+      ]
+    },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Поставьте оценку"
+      ]
+    },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Отзыв отправлен"
       ]
     },
     "Beta access description": {
@@ -4444,34 +4450,34 @@
         "Произошла непредвиденная ошибка. Необходимо начать импорт заново."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        ""
+        "Ошибка при загрузке файла. Файл не был выбран."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        ""
+        "Ошибка при загрузке файла ${ formattedFilename }. Разрешены только файлы формата . ics."
       ],
       "Your file ${ formattedFilename } is empty.": [
-        ""
+        "Ваш файл ${ formattedFilename } пуст."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        ""
+        "Ошибка при загрузке файла ${ formattedFilename }. Максимальный размер файла - ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "Your file ${ formattedFilename } is not a calendar.": [
-        ""
+        "Ваш файл ${ formattedFilename } не является файлом календаря."
       ],
       "${ CALENDAR_APP_NAME } only supports importing calendars with iCal version 2.0.": [
-        ""
+        "${ CALENDAR_APP_NAME } поддерживает импорт календарей с iCal версии 2.0."
       ],
       "Your file ${ formattedFilename } is an invitation and cannot be imported.": [
-        ""
+        "Ваш файл ${ formattedFilename } является приглашением и не может быть импортирован."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        ""
+        "Ваш файл ${ formattedFilename } не содержит событий для импорта."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        ""
+        "Ваш файл ${ formattedFilename } содержит более ${ MAX_IMPORT_EVENTS_STRING } событий."
       ],
       "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        ""
+        "Произошла ошибка при чтении вашего файла ${ formattedFilename }. Файл имеет неправильный формат."
       ]
     },
     "Error importing contacts": {
@@ -4674,13 +4680,13 @@
     },
     "Attached ics file error": {
       "Invalid ICS file": [
-        ""
+        "Недопустимый файл ICS"
       ],
       "Invalid event": [
-        ""
+        "Недопустимое событие"
       ],
       "Unsupported event": [
-        ""
+        "Событие не поддерживается"
       ]
     },
     "Event invitation error": {
@@ -4697,10 +4703,10 @@
         "Неподдерживаемое приглашение"
       ],
       "Attached ICS file could not be parsed": [
-        ""
+        "Вложенный файл ICS невозможно проанализировать"
       ],
       "Attached ICS file could not be decrypted": [
-        ""
+        "Вложенный файл ICS невозможно расшифровать"
       ],
       "We could not retrieve the event from your calendar": [
         "Мы не смогли получить событие из вашего календаря"
@@ -4723,82 +4729,82 @@
     },
     "Error importing event": {
       "Component with wrong format": [
-        ""
+        "Неправильный формат компонента"
       ],
       "Non-Gregorian": [
-        ""
+        "Не Грегорианский"
       ],
       "To-do entry": [
-        ""
+        "Запись списка задач"
       ],
       "Journal entry": [
-        ""
+        "Запись журнала"
       ],
       "Free-busy time information": [
-        ""
+        "Информация о свободном и занятом времени"
       ],
       "Custom timezone": [
-        ""
+        "Настроить часовой пояс"
       ],
       "Invalid event": [
-        ""
+        "Недействительное событие"
       ],
       "Unsupported event": [
-        ""
+        "Неподдерживаемое событие"
       ],
       "Malformed all-day event": [
-        ""
+        "Неправильный формант оформление события на весь день"
       ],
       "Missing start time": [
-        ""
+        "Отсутствует время начала импорта"
       ],
       "Malformed start time": [
-        ""
+        "Неправильный формат времени начала"
       ],
       "Floating times not supported": [
-        ""
+        "Плавающий график не поддерживается"
       ],
       "Start time out of bounds": [
-        ""
+        "Время начала находится вне границ"
       ],
       "Malformed end time": [
-        ""
+        "Неправильный формат времени окончания"
       ],
       "End time out of bounds": [
-        ""
+        "Время окончания находится вне границ"
       ],
       "Event duration not supported": [
-        ""
+        "Длительность события не поддерживается"
       ],
       "Calendar timezone not supported": [
-        ""
+        "Часовой пояс календаря не поддерживается"
       ],
       "Timezone not supported": [
-        ""
+        "Часовой пояс не поддерживается"
       ],
       "Malformed recurring event": [
-        ""
+        "Неправильное повторяющееся событие"
       ],
       "Recurring rule not supported": [
-        ""
+        "Правило для повторения не поддерживается"
       ],
       "Edited event not supported": [
-        ""
+        "Отредактированное событие не поддерживается"
       ],
       "Notification out of bounds": [
-        ""
+        "Уведомление находится вне границ"
       ],
       "Event validation failed": [
-        ""
+        "Проверка события не удалась"
       ],
       "Encryption failed": [
-        ""
+        "Ошибка шифрования"
       ],
       "Original recurring event could not be found": [
-        ""
+        "Исходное повторяющееся событие не найдено"
       ],
       "no UID, title or start time": [
-        ""
+        "нет UID, названия или времени начала"
       ]
     },
     "Event title": {
@@ -5835,10 +5841,10 @@
     },
     "Message image": {
       "Image could not be loaded": [
-        ""
+        "Невозможно загрузить рисунок"
       ],
       "Image has not been loaded in order to protect your privacy": [
-        ""
+        "Изображение не было загружено, чтобы защитить вашу приватность"
       ]
     },
     "Alt": {
@@ -5900,10 +5906,10 @@
     },
     "Import ICS file from Mail": {
       "Calendar event created": [
-        ""
+        "Событие календаря создано"
       ],
       "Creating calendar event failed": [
-        ""
+        "Не удалось создать событие календаря"
       ]
     },
     "Attachment signature verification": {

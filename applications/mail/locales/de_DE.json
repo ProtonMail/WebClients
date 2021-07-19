@@ -10,7 +10,7 @@
         "Unbekannter Fehler"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Diese Nachricht kann einige Internetadressen enthalten, die von deinem aktuellen Browser nicht ordnungsgemäß geöffnet werden können"
+        "Diese Nachricht enthält möglicherweise Internetadressen, die von Ihrem aktuellen Browser nicht ordnungsgemäß geöffnet werden können."
       ],
       "Authentication canceled.": [
         "Authentifizierung abgebrochen."
@@ -21,11 +21,14 @@
       "Authentication error.": [
         "Authentifizierungsfehler."
       ],
+      "Email address invalid": [
+        "Ungültige E-Mail-Adresse"
+      ],
       "This field is required": [
         "Pflichtfeld"
       ],
-      "Email address invalid": [
-        "Ungültige E-Mail-Adresse"
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Ein Problem ist aufgetreten. Bitte ${ refresh }, um fortzufahren. Wenn Ihnen diese Fehlermeldung weiterhin angezeigt wird, wenden Sie sich bitte an unser ${ supportTeam }."
       ],
       "The composer failed to load.": [
         "Das Verfassen-Fenster konnte nicht geladen werden."
@@ -122,9 +125,6 @@
       "Require at least one action": [
         "Erfordert mindestens eine Aktion"
       ],
-      "Request timed out.": [
-        "Zeitüberschreitung bei der Anforderung."
-      ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "In dieses Feld müssen mindestens ${ minimumLength } Zeichen eingegeben werden."
       ],
@@ -136,6 +136,9 @@
       ],
       "Passwords do not match": [
         "Die Passwörter stimmen nicht überein"
+      ],
+      "Request timed out.": [
+        "Zeitüberschreitung bei der Anforderung."
       ],
       "Signature verification failed": [
         "Signaturprüfung fehlgeschlagen"
@@ -204,7 +207,7 @@
         "Keine Adresse mit Schlüsseln zum Verfassen einer Nachricht verfügbar."
       ],
       "Contact your organization’s administrator to resolve this.": [
-        "Wende dich an den Administrator deiner Organisation, um dies zu klären."
+        "Wenden Sie sich an den Administrator Ihrer Organisation, um dies zu klären."
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time.": [
         "Sie können nicht mehr als ${ maxActiveComposer } Verfassen-Fenster auf einmal öffnen.",
@@ -252,10 +255,10 @@
         "Dem öffentlichen Schlüssel konnte nicht vertraut werden"
       ],
       "Network error: Please check your connection and try again.": [
-        "Netzwerkfehler: Bitte überprüfe deine Internetverbindung und versuche es erneut."
+        "Netzwerkfehler: Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut."
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
-        "Proton konnte deine Nachricht nicht entschlüsseln. Bitte prüfe, ob alle deine Schlüssel aktiv sind."
+        "Leider konnte Proton Ihre Nachricht nicht entschlüsseln. Bitte prüfen Sie, ob alle Ihre Schlüssel aktiv sind."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Entschlüsselungsfehler: Das Entschlüsseln des verschlüsselten Inhalts dieser Nachricht ist fehlgeschlagen."
@@ -294,6 +297,9 @@
       ],
       "Use “${ label }” setting": [
         "Einstellung \"${ label }\" verwenden"
+      ],
+      "refresh the page": [
+        "Seite aktualisieren"
       ],
       "Remove": [
         "Entfernen"
@@ -577,6 +583,18 @@
       "Next": [
         "Weiter"
       ],
+      "Clear": [
+        "Löschen"
+      ],
+      "Add screenshot(s)": [
+        "Bildschirmfoto(s) hinzufügen"
+      ],
+      "Hide info": [
+        "Info ausblenden"
+      ],
+      "Show info": [
+        "Info zeigen"
+      ],
       "Continue import": [
         "Importvorgang fortsetzen"
       ],
@@ -597,9 +615,6 @@
       ],
       "Signing out": [
         "Abmeldung…"
-      ],
-      "refresh the page": [
-        "Seite aktualisieren"
       ],
       "Log in": [
         "Anmelden"
@@ -652,9 +667,6 @@
       "Search": [
         "Suchen"
       ],
-      "Clear": [
-        "Löschen"
-      ],
       "Copy email to clipboard": [
         "E-Mail in Zwischenablage kopieren"
       ],
@@ -699,15 +711,6 @@
       ],
       "Composer mode": [
         "Verfassen-Modus"
-      ],
-      "Add screenshot(s)": [
-        "Bildschirmfoto(s) hinzufügen"
-      ],
-      "Hide info": [
-        "Info ausblenden"
-      ],
-      "Show info": [
-        "Info zeigen"
       ],
       "Preview": [
         "Vorschau"
@@ -1211,6 +1214,9 @@
       "Import contacts": [
         "Kontakte importieren"
       ],
+      "Report a problem": [
+        "Ein Problem melden"
+      ],
       "Start import process": [
         "Importprozess starten"
       ],
@@ -1261,9 +1267,6 @@
       ],
       "Give feedback": [
         "Feedback geben"
-      ],
-      "Report a problem": [
-        "Ein Problem melden"
       ],
       "Beta Access": [
         "Beta-Zugang"
@@ -1499,11 +1502,14 @@
       "Loading": [
         "Wird geladen"
       ],
+      "support team": [
+        "Support-Team"
+      ],
       "No contacts added yet": [
         "Noch keine Kontakte hinzugefügt"
       ],
       "You can either update your search query or ${ button }": [
-        "Du kannst deine Suchanfrage entweder aktualisieren oder ${ button }"
+        "Sie können Ihre Suchanfrage entweder aktualisieren oder ${ button }."
       ],
       "Week": [
         "Woche"
@@ -1519,7 +1525,7 @@
         "Dieser Link könnte ein homographischer Angriff (Vortäuschung einer falschen Identität) sein. Bitte überprüfe, ob dies der Link ist, den du besuchen möchtest, oder öffne ihn nicht."
       ],
       "You are about to open another browser tab and visit:": [
-        "Du öffnest nun einen neuen Tab in deinem Browser und besuchst:"
+        "Sie öffnen nun eine neuen Tab in Ihrem Browser und besuchen:"
       ],
       "Learn more": [
         "Mehr erfahren"
@@ -1600,7 +1606,7 @@
         "Datei zum Hochladen hierhinein ziehen"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Dein Proton-Konto ist derzeit gesperrt. Um es weiter nutzen zu können, begleiche bitte alle überfälligen Rechnungen."
+        "Ihr Proton-Konto ist derzeit gesperrt. Um Ihr Konto weiterhin nutzen zu können, begleichen Sie bitte alle überfälligen Rechnungen."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Möchtest du einen neuen Verifizierungscode anfordern oder eine alternative Verifizierungsmethode verwenden?"
@@ -1609,7 +1615,7 @@
         "Geben Sie den an ${ destinationText } gesendeten Verifizierungscode ein."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
+        "Sollten Sie die E-Mail nicht in Ihrem Posteingang vorfinden, überprüfen Sie bitte Ihren Spam-Ordner."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Klicke auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese E-Mail-Adresse nicht stimmt, klicke auf „Bearbeiten”, um sie zu korrigieren."
@@ -1621,13 +1627,13 @@
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
       ],
       "Your email will only be used for this one-time verification.": [
-        "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
+        "Ihre E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
+        "Ihre Rufnummer wird nur für diese einmalige Überprüfung verwendet."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
+        "Wenn Sie Probleme bei der Erstellung Ihres Kontos haben, stellen Sie bitte eine Anfrage, und wir werden Ihnen innerhalb eines Werktages antworten."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Bitte beachte, dass die dieser Gruppe zugewiesenen E-Mail-Adressen NICHT gelöscht werden."
@@ -1671,22 +1677,22 @@
         "${ updated } Kontakte erfolgreich aktualisiert."
       ],
       "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Um deine Daten wiederherzustellen, musst du den Kontaktverschlüsselungsschlüssel, der zum Zeitpunkt der Erstellung der Daten verwendet wurde, erneut aktivieren. Dazu brauchst du das Passwort, das bei der Erzeugung des Schlüssels verwendet wurde."
+        "Um Ihre Daten wiederherzustellen, müssen Sie den Kontaktverschlüsselungsschlüssel, der zum Zeitpunkt der Erstellung der Daten verwendet wurde, erneut aktivieren. Dazu müssen Sie sich an das Passwort erinnern, das bei der Erzeugung des Schlüssels verwendet wurde."
       ],
       "Key fingerprint": [
         "Schlüssel-Fingerabdruck"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Du kannst dich nicht mehr an dein Passwort erinnern? Wir können die verschlüsselten Daten aller Kontakte, die mit diesem Schlüssel verschlüsselt wurden, löschen und den Hinweis deaktivieren."
+        "Sie können sich nicht mehr an Ihr Passwort erinnern? Wir können Ihnen helfen, die verschlüsselten Daten aller Kontakte, die mit diesem Schlüssel verschlüsselt wurden, zu löschen und dabei den Alarm zu deaktivieren."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Bitte warte, während nach Kontakten gesucht wird, die mit dem primären Verschlüsselungsschlüssel neu signiert werden können."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Um deine Kontakte neu zu signieren, muss jeder Kontakt mit der Liste der in deinem Konto verfügbaren Verschlüsselungsschlüssel verglichen werden. Wenn keine Übereinstimmung gefunden wird, wird der Kontakt mit dem primären Verschlüsselungsschlüssel neu signiert."
+        "Um Ihre Kontakte neu zu signieren, muss jeder Kontakt mit der Liste der in Ihrem Konto verfügbaren Verschlüsselungsschlüssel verglichen werden. Wenn keine Übereinstimmung gefunden wird, wird Ihr Kontakt mit dem primären Verschlüsselungsschlüssel neu signiert."
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
-        "Bitte beachte, dass dieser Vorgang (je nach Größe deines Adressbuchs) einige Zeit dauern kann."
+        "Bitte beachten Sie, dass dieser Vorgang (je nach Größe Ihres Adressbuchs) einige Zeit dauern kann."
       ],
       "Group assignment applied": [
         "Gruppenzuordnung übernommen"
@@ -1736,11 +1742,17 @@
         "Der Import von CSV-Dateien aus Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora und einigen anderen Anwendungen wird unterstützt. Außerdem ist der Import von vCard 4.0 möglich (UTF-8-Kodierung)."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Die Anwendung muss deine Kontakte lokal entschlüsseln, bevor diese exportiert werden können. Am Ende des Vorgangs wird eine VCF-Datei generiert, die du anschließend herunterladen kannst."
+        "Die Anwendung muss Ihre Kontakte lokal entschlüsseln, bevor diese exportiert werden können. Am Ende des Prozesses wird eine VCF-Datei generiert, die Sie anschließend herunterladen können."
       ],
       "${ addressCount } email address": [
         "${ addressCount } E-Mail-Adresse",
         "${ addressCount } E-Mail-Adressen"
+      ],
+      "Screenshot(s) attached": [
+        "Bildschirmfoto(s) hinzugefügt"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
       "Import contacts": [
         "Kontakte importieren"
@@ -1800,49 +1812,43 @@
         "Grundlegende Navigation und Aktionen bleiben auch dann verfügbar, wenn die Tastaturkürzel in den Einstellungen deaktiviert sind."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wurde eingeschränkt. ${ payInvoiceLink }"
+        "Ihr Konto weist mindestens eine überfällige Rechnung auf. Ihr Zugang wurde eingeschränkt. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
+        "Ihr Konto weist mindestens eine überfällige Rechnung auf. Ihr Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Der Zugriff auf dein Konto wurde aufgrund noch offener Rechnungen eingeschränkt. Bitte wende dich an deinen Administrator."
+        "Der Zugriff auf das Konto wurde aufgrund noch offener Rechnungen eingeschränkt. Bitte wenden Sie sich an Ihren Administrator."
       ],
       "Free up some space or add more storage space.": [
         "Gib etwas Platz frei oder füge zusätzlichen Speicherplatz hinzu."
       ],
       "Free up some space or contact your administrator.": [
-        "Gib etwas Platz frei oder wende dich an deinen Administrator."
+        "Geben Sie etwas Platz frei oder wenden Sie sich an Ihren Administrator."
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du hast 100 % deiner Speicherkapazität aufgebraucht. Du kannst keine neuen E-Mails senden oder empfangen. ${ freeUpMessage } ${ upgradeLink }"
+        "Sie haben 100% Ihrer Speicherkapazität aufgebraucht. Sie können keine neuen E-Mails senden oder empfangen. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du hast ${ spaceDisplayed }% deiner Speicherkapazität aufgebraucht. ${ freeUpMessage } ${ upgradeLink }"
+        "Sie haben ${ spaceDisplayed }% Ihrer Speicherkapazität aufgebraucht. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "Internet connection restored.": [
         "Internetverbindung wiederhergestellt."
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Internetverbindung getrennt. Bitte überprüfe, ob dein Gerät verbunden ist."
+        "Internetverbindung getrennt. Bitte überprüfen Sie die Konnektivität Ihres Geräts."
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }) and have restricted access.": [
         "Du bist derzeit als „${ user.Name }” (${ user.Email }) angemeldet und hast nur eingeschränkten Zugang."
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } benötigt deine Erlaubnis, damit es ${ enableDesktopNotifications } kann."
+        "${ appName } benötigt Ihre Erlaubnis, um ${ enableDesktopNotifications }."
       ],
       "You have enabled Beta Access. Click ${ refreshButton } to use the latest version of ${ appName }. The application will be reloaded.": [
         "Sie haben den Beta-Zugang aktiviert. Klicken Sie ${ refreshButton }, um die neueste Version von ${ appName } zu verwenden. Die Anwendung wird daraufhin neu heruntergeladen."
       ],
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Sie haben den Beta-Zugang deaktiviert. Klicken Sie ${ refreshButton }, um die neueste Version von ${ appName } zu verwenden. Die Anwendung wird daraufhin neu heruntergeladen."
-      ],
-      "Screenshot(s) attached": [
-        "Bildschirmfoto(s) hinzugefügt"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
       ],
       "Inherited from parent folder": [
         "Von übergeordnetem Ordner übernommen"
@@ -1851,7 +1857,7 @@
         "Du kannst Mitteilungen aktivieren, um Benachrichtigungen zu erhalten, sobald neue E-Mail-Nachrichten in diesem Ordner eingehen."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Benenne deinen neuen Ordner und wähle den übergeordneten Ordner, in den du ihn einfügen möchtest. Wenn du keinen übergeordneten Ordner auswählst, wird dieser neue Ordner auf der obersten Ebene erstellt."
+        "Benennen Sie Ihren neuen Ordner und wählen Sie den übergeordneten Ordner, in den Sie ihn einfügen möchten. Wenn Sie keinen übergeordneten Ordner auswählen, wird dieser neue Ordner als übergeordneter Ordner erstellt."
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
         "Filter gelten für eingehende wie auch gesendete E-Mails aus. Jeder Filter muss mindestens einen Namen und ein gültiges Sieve-Skript enthalten."
@@ -1875,10 +1881,10 @@
         "(Filtern, wenn IRGENDEINE der folgenden Bedingungen erfüllt ist)"
       ],
       "All your changes will be lost.": [
-        "Alle deine Änderungen gehen dabei verloren."
+        "Alle Ihre Änderungen gehen dabei verloren."
       ],
       "Are you sure you want to discard your changes?": [
-        "Möchtest du deine Änderungen wirklich verwerfen?"
+        "Möchten Sie Ihre Änderungen wirklich verwerfen?"
       ],
       "Session timed out.": [
         "Zeitüberschreitung der Sitzung."
@@ -1926,10 +1932,10 @@
         "Diese Nachricht verfällt in ${ formattedDelay }"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
-        "Das Senden von Nachrichten von @pm.me-Adressen ist eine kostenpflichtige Funktion. Deine Nachricht wird von deiner Standardadresse ${ email } gesendet."
+        "Das Senden von Nachrichten von der Adresse @pm.me ist eine kostenpflichtige Funktion. Ihre Nachricht wird von Ihrer Standardadresse „${ email }” gesendet."
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
-        "Du hast deinen Speicherplatz zu 100 % aufgebraucht. Gib Speicherplatz frei oder füge deinem Konto zusätzlichen Speicherplatz hinzu, um neue Nachrichten verfassen zu können."
+        "Sie haben Ihren Speicherplatz zu 100% aufgebraucht. Geben Sie Speicherplatz frei oder erweitern Sie Ihr Konto mit zusätzlichem Speicherplatz, um neue Nachrichten verfassen zu können."
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Die ursprüngliche Nachricht, die du weiterleiten/beantworten möchten, wird gerade gesendet. Wenn du fortfährst, kann das Senden der Originalnachricht nicht mehr widerrufen werden."
@@ -1938,7 +1944,7 @@
         "Bitte füge vor dem Senden mindestens einen Empfänger hinzu."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
-        "Du hast für deine E-Mail keinen Betreff angegeben. Möchtest du die Nachricht trotzdem versenden?"
+        "Sie haben in Ihrer E-Mail keinen Betreff angegeben. Möchten Sie die Nachricht trotzdem versenden?"
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "Die Überprüfung von ${ contactName } ist fehlgeschlagen: der Kontakt wurde nicht korrekt signiert.\nDies könnte das Ergebnis einer Passwortzurücksetzung sein.\nDu musst den Kontakt erneut signieren, um eine Nachricht an ${ contactAddress } zu senden oder den Kontakt bearbeiten zu können."
@@ -2156,7 +2162,7 @@
         "Du kannst nicht von der eingeladenen Adresse aus antworten."
       ],
       "All your calendars are disabled.": [
-        "Alle deine Kalender sind deaktiviert."
+        "Alle Ihre Kalender sind deaktiviert."
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "Diese Nachricht ist mit einem Schlüssel signiert, dem noch nicht vertraut wurde."
@@ -2206,7 +2212,7 @@
         "Entwurf wird gespeichert…"
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Durch diese Aktion werden alle Nachrichten heruntergeladen, sodass sie lokal durchsucht werden können. Wenn du deine Browserdaten löschst oder dich abmeldest, wird diese Option wieder deaktiviert."
+        "Durch diese Aktion werden alle Nachrichten heruntergeladen, so dass sie lokal durchsucht werden können. Sobald Sie Ihre Browserdaten löschen, wird diese Option wieder deaktiviert."
       ],
       "For messages newer than ${ oldestDate }": [
         "Für Nachrichten nach dem ${ oldestDate }"
@@ -2283,7 +2289,7 @@
         "${ count } ungelesene Nachrichten"
       ],
       "You can either update your search query or clear it": [
-        "Du kannst deine Suchanfrage entweder aktualisieren oder löschen"
+        "Sie können Ihre Suchanfrage entweder aktualisieren oder löschen"
       ],
       "You do not have any messages here": [
         "Noch keine Nachrichten vorhanden."
@@ -2308,16 +2314,16 @@
         "${ total } Nachrichten"
       ],
       "You have ${ unreadsLabel } in your inbox.": [
-        "Es befinden sich ${ unreadsLabel } in deinem Posteingang."
+        "Es befinden sich ${ unreadsLabel } in Ihrem Posteingang."
       ],
       "You have ${ totalLabel } in your inbox.": [
-        "Es befinden sich ${ totalLabel } in deinem Posteingang."
+        "Es befinden sich ${ totalLabel } in Ihrem Posteingang."
       ],
       "Increase storage space starting at $4/month.": [
         "Mehr Speicherplatz ab 4 $/Monat."
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
-        "Lade unsere mobile App aus deinem bevorzugten App-Store herunter, um auch von unterwegs sicher zu kommunizieren."
+        "Laden Sie unsere mobile App aus Ihrem bevorzugten App-Store herunter, um auch von unterwegs sicher zu kommunizieren."
       ],
       "${ count } conversation": [
         "${ count } Unterhaltung",
@@ -2340,7 +2346,7 @@
         "Du hast ${ countOfConversationOrMessage } mit dieser Kategorie versehen"
       ],
       "Using your mobile device, scan this QR-Code or visit ${ link }.": [
-        "Scanne mit deinem mobilen Gerät diesen QR-Code oder besuche ${ link }."
+        "Lesen Sie mit Ihrem mobilen Gerät diesen QR-Code ein oder besuchen Sie ${ link }."
       ]
     },
     "Label": {
@@ -2434,6 +2440,30 @@
       "Export contacts": [
         "Kontakte exportieren"
       ],
+      "Operating system": [
+        "Betriebssystem"
+      ],
+      "Operating system version": [
+        "Version des Betriebssystems"
+      ],
+      "Proton username": [
+        "Proton-Benutzername"
+      ],
+      "Category": [
+        "Kategorie"
+      ],
+      "What happened?": [
+        "Problembeschreibung"
+      ],
+      "System information": [
+        "Systeminformationen"
+      ],
+      "Browser": [
+        "Browser"
+      ],
+      "Browser version": [
+        "Browserversion"
+      ],
       "From: ${ fromEmailAddress }": [
         "Von: ${ fromEmailAddress }"
       ],
@@ -2473,38 +2503,8 @@
       "Select how your composer opens by default.": [
         "Wählen Sie aus, wie Ihr Verfassen-Fenster standardmäßig geöffnet wird."
       ],
-      "0 - Not a fan": [
-        "0 – Gefällt mir nicht"
-      ],
-      "10 - Love it!": [
-        "10 – Gefällt mir sehr!"
-      ],
       "What is the primary reason for this rating?": [
         "Was ist der Hauptgrund für diese Bewertung?"
-      ],
-      "Operating system": [
-        "Betriebssystem"
-      ],
-      "Operating system version": [
-        "Version des Betriebssystems"
-      ],
-      "Proton username": [
-        "Proton-Benutzername"
-      ],
-      "Category": [
-        "Kategorie"
-      ],
-      "What happened?": [
-        "Problembeschreibung"
-      ],
-      "System information": [
-        "Systeminformationen"
-      ],
-      "Browser": [
-        "Browser"
-      ],
-      "Browser version": [
-        "Browserversion"
       ],
       "Enable Beta Access": [
         "Beta-Zugang aktivieren"
@@ -2699,7 +2699,13 @@
         "Filter"
       ],
       "How would you rate your experience with the new ProtonMail?": [
-        "Wie würdest du deine Erfahrungen mit dem neuen ProtonMail bewerten?"
+        "Wie würden Sie Ihre Erfahrungen mit dem neuen ProtonMail bewerten?"
+      ],
+      "0 - Not a fan": [
+        "0 – Gefällt mir nicht"
+      ],
+      "10 - Love it!": [
+        "10 – Gefällt mir sehr!"
       ],
       "Also archive": [
         "Auch archivieren"
@@ -2717,6 +2723,9 @@
       "Request an invite": [
         "Einladung anfordern"
       ],
+      "clearing your browser cache": [
+        "Leeren des Browser-Cache"
+      ],
       "Pay invoice": [
         "Rechnung bezahlen"
       ],
@@ -2728,9 +2737,6 @@
       ],
       "Go to subscription plans": [
         "Zu den Abonnements"
-      ],
-      "clearing your browser cache": [
-        "Leeren des Browser-Cache"
       ],
       "Inbox": [
         "Posteingang"
@@ -2763,28 +2769,28 @@
         "Sie müssen Ihre Kalenderschlüssel aktivieren, um dieses Ereignis hinzufügen zu können"
       ],
       "You need to activate your calendar keys to manage this invitation": [
-        "Du musst deine Kalenderschlüssel aktivieren, um diese Einladung verwalten zu können"
+        "Sie müssen Ihre Kalenderschlüssel aktivieren, um diese Einladung verwalten zu können"
       ],
       "You need to activate your calendar keys to answer this invitation": [
-        "Du musst deine Kalenderschlüssel aktivieren, um auf diese Einladung antworten zu können"
+        "Sie müssen Ihre Kalenderschlüssel aktivieren, um auf diese Einladung antworten zu können."
       ],
       "You need to activate your calendar keys to see the updated event": [
-        "Du musst deine Kalenderschlüssel aktivieren, um das aktualisierte Ereignis anzeigen zu können"
+        "Sie müssen Ihre Kalenderschlüssel aktivieren, um das aktualisierte Ereignis anzeigen zu können"
       ],
       "You need to activate your calendar keys to see the updated invitation": [
-        "Du musst deine Kalenderschlüssel aktivieren, um die aktualisierte Einladung anzeigen zu können"
+        "Sie müssen Ihre Kalenderschlüssel aktivieren, um die aktualisierte Einladung anzeigen zu können."
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         "Diese ICS-Datei enthält mehr als ein Ereignis. Bitte laden Sie sie herunter und importieren Sie die Ereignisse in ${ calendarAppName }"
       ],
       "You need to reactivate your keys to manage this invitation": [
-        "Du musst deine Schlüssel erneut aktivieren, um diese Einladung verwalten zu können"
+        "Sie müssen Ihre Schlüssel erneut aktivieren, um diese Einladung verwalten zu können"
       ],
       "You need to reactivate your keys to see the updated event": [
-        "Du musst deine Schlüssel erneut aktivieren, um das aktualisierte Ereignis anzeigen zu können"
+        "Sie müssen Ihre Schlüssel erneut aktivieren, um das aktualisierte Ereignis anzeigen zu können"
       ],
       "You need to reactivate your keys to see the updated invitation": [
-        "Du musst deine Schlüssel erneut aktivieren, um die aktualisierte Einladung anzeigen zu können"
+        "Sie müssen Ihre Schlüssel erneut aktivieren, um die aktualisierte Einladung anzeigen zu können"
       ],
       "Create a new calendar to add this event": [
         "Erstellen Sie einen neuen Kalender, um dieses Ereignis hinzufügen zu können"
@@ -2793,7 +2799,7 @@
         "Einen neuen Kalender erstellen, um diese Einladung zu beantworten"
       ],
       "Create a new calendar to manage your invitations": [
-        "Einen neuen Kalender erstellen, um deine Einladungen zu verwalten"
+        "Erstellen Sie einen neuen Kalender, um Ihre Einladungen verwalten zu können"
       ],
       "Open updated event in ${ calendarAppName }": [
         "Aktualisiertes Ereignis in ${ calendarAppName } öffnen"
@@ -2802,31 +2808,31 @@
         "In ${ calendarAppName } öffnen"
       ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Aktiviere die mit diesem Kalender verknüpfte E-Mail-Adresse erneut, um deine Einladungen zu verwalten."
+        "Reaktivieren Sie die mit diesem Kalender verknüpfte E-Mail-Adresse, um Ihre Einladung verwalten zu können."
       ],
       "Re-enable the address linked to this calendar to update your invitation.": [
-        "Aktiviere die mit diesem Kalender verknüpfte E-Mail-Adresse erneut, um deine Einladung zu aktualisieren."
+        "Reaktivieren Sie die mit diesem Kalender verknüpfte E-Mail-Adresse, um Ihre Einladung aktualisieren zu können."
       ],
       "Enable your address to answer this invitation.": [
-        "Aktiviere deine Adresse, um auf diese Einladung zu antworten."
+        "Aktivieren Sie Ihre Adresse, um auf diese Einladung antworten zu können."
       ],
       "Create a calendar linked to an active email address.": [
         "Erstelle einen Kalender, der mit einer aktiven E-Mail-Adresse verknüpft ist."
       ],
       "Enable an email address linked to one of your calendars.": [
-        "Aktiviere eine E-Mail-Adresse, die mit einem deiner Kalender verknüpft ist."
+        "Aktivieren Sie eine E-Mail-Adresse, die mit einem Ihrer Kalender verknüpft ist."
       ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "Oder du kannst einen deiner Kalender löschen und einen neuen erstellen, der mit einer aktiven E-Mail-Adresse verknüpft ist."
+        "Oder Sie löschen einen Ihrer Kalender und erstellen einen neuen Kalender, der mit einer aktiven E-Mail-Adresse verknüpft ist."
       ],
       "Enable your address again to modify your answer.": [
-        "Aktiviere deine Adresse erneut, um deine Antwort zu ändern."
+        "Aktivieren Sie Ihre Adresse erneut, um Ihre Antwort ändern zu können."
       ],
       "Enable the email address linked to the disabled calendar to cancel the event.": [
         "Aktiviere die mit dem deaktivierten Kalender verknüpfte E-Mail-Adresse, um das Ereignis abzusagen."
       ],
       "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Aktiviere die mit dem deaktivierten Kalender verknüpfte E-Mail-Adresse, um deine Antwort zu ändern."
+        "Aktivieren Sie die mit dem deaktivierten Kalender verknüpfte E-Mail-Adresse, um Ihre Antwort ändern zu können."
       ],
       "Add folder": [
         "Ordner hinzufügen"
@@ -2893,15 +2899,6 @@
       "Name": [
         "Name"
       ],
-      "Mailbox password": [
-        "Postfach-Passwort"
-      ],
-      "e.g. Julia Smith": [
-        "z. B. Hans Müller"
-      ],
-      "Feedback": [
-        "Feedback"
-      ],
       "OS name": [
         "Betriebssystem"
       ],
@@ -2922,6 +2919,15 @@
       ],
       "Browser version": [
         "Browserversion"
+      ],
+      "Mailbox password": [
+        "Postfach-Passwort"
+      ],
+      "e.g. Julia Smith": [
+        "z. B. Hans Müller"
+      ],
+      "Feedback": [
+        "Feedback"
       ],
       "Type text or keyword": [
         "Text oder Schlüsselwort eingeben"
@@ -2979,7 +2985,7 @@
         "Möchtest du wirklich ${ count } Kontakte dauerhaft löschen?"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Wenn du dich nicht mehr an dein Passwort erinnern kannst, ist es unmöglich, den Schlüssel wieder zu aktivieren. Wir können den Warnhinweis deaktivieren, aber dabei verlierst du dauerhaft den Zugriff auf alle Daten, die mit diesem Schlüssel verschlüsselt wurden."
+        "Wenn Sie sich nicht mehr an Ihr Passwort erinnern, ist es unmöglich, Ihren Schlüssel wieder zu aktivieren. Wir können Ihnen helfen, den Warnhinweis zu deaktivieren, aber dabei verlieren Sie dauerhaft den Zugriff auf alle Daten, die mit diesem Schlüssel verschlüsselt wurden."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Diese Aktion kann NICHT widerrufen werden. Bitte gib das Wort ${ boldDanger } in das Feld ein, um fortzufahren."
@@ -2999,14 +3005,14 @@
       "Contacts could not be merged": [
         "Die Kontakte konnten nicht zusammengeführt werden"
       ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte sende daher keine sensiblen Informationen."
+      ],
       "Are you sure you want to discard your import?": [
         "Möchten Sie Ihren Import wirklich verwerfen?"
       ],
       "Your local date & time settings seem to be out of sync.": [
-        "Deine lokalen Datums- und Zeiteinstellungen scheinen nicht mehr synchron zu sein."
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte sende daher keine sensiblen Informationen."
+        "Ihre lokalen Datums- und Zeiteinstellungen scheinen nicht mehr synchron zu sein."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Die Signatur des Anhangs konnte nicht verifiziert werden.\nDu kannst diesen Anhang zwar herunterladen, er könnte aber gefälscht worden sein.",
@@ -3088,7 +3094,7 @@
         "Es gab ein Problem bei der Verbindung zu Proton."
       ],
       "Please ${ refresh } or check your connection.": [
-        "Bitte ${ refresh } oder überprüfe deine Verbindung."
+        "Bitte ${ refresh } oder überprüfen Sie Ihre Verbindung."
       ],
       "Error: ${ errorMessage }": [
         "Fehler: ${ errorMessage }"
@@ -3169,14 +3175,14 @@
       "Fingerprint copied to clipboard": [
         "Fingerabdruck in die Zwischenablage kopiert"
       ],
+      "Bug reported": [
+        "Fehler gemeldet"
+      ],
       "Keyboard shortcuts preferences updated": [
         "Tastaturkürzel-Einstellungen aktualisiert"
       ],
       "Preference saved": [
         "Einstellung gespeichert"
-      ],
-      "Bug reported": [
-        "Fehler gemeldet"
       ],
       "Message content search activated": [
         "Suche nach Nachrichteninhalten aktiviert"
@@ -3324,7 +3330,7 @@
     },
     "Hint": {
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Verwende die Pfeiltasten hoch und runter, um die Vorschläge nach der Eingabe aufzurufen und durchzusehen. Bestätige deine Auswahl mit der Eingabetaste oder drücke die Escape-Taste, um das Vorschlagsfeld zu schließen."
+        "Verwenden Sie die Pfeiltasten aufwärts/abwärts, um die Vorschläge nach der Eingabe aufzurufen und zu durchsuchen. Drücken Sie die „Eingabetaste”, um Ihre Auswahl zu bestätigen, oder die „ESC”-Taste, um das Vorschlagsfeld zu schließen."
       ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "${ items.length } Vorschlag gefunden. Verwende die Tastatur zum Navigieren.",
@@ -3333,7 +3339,7 @@
     },
     "Storage": {
       "Your current storage:": [
-        "Dein aktueller Speicherplatz:"
+        "Ihr aktueller Speicherplatz:"
       ],
       "Upgrade storage": [
         "Mehr Speicher hinzufügen"
@@ -3432,8 +3438,8 @@
         "Du kannst Kontakte, die du weder zusammenführen noch behalten willst, zum Löschen vormerken. Das Löschen erfolgt erst, wenn du auf die Schaltfläche „Zusammenführen” klickst."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf.",
-        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
+        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Sollte Ihre Datei größer sein, teilen Sie sie bitte in kleinere Dateien auf.",
+        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthalten. Sollte Ihre Datei größer sein, teilen Sie sie bitte in kleinere Dateien auf."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Die Kontaktliste, die du importieren möchtest, enthält anscheinend Gruppen. Bitte lege fest, wie diese Gruppen importiert werden sollen."
@@ -3577,8 +3583,8 @@
     },
     "Import contacts": {
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Kontakt erfolgreich importiert. Der importierte Kontakte wird nun in deiner Kontaktliste angezeigt.",
-        "Kontakt erfolgreich importiert. Die importierten Kontakte werden nun in deiner Kontaktliste angezeigt."
+        "Kontakt erfolgreich importiert. Der importierte Kontakte wird nun in Ihrer Kontaktliste angezeigt.",
+        "Kontakt erfolgreich importiert. Die importierten Kontakte werden nun in Ihrer Kontaktliste angezeigt."
       ],
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
         "Beim Verschlüsseln und Hinzufügen der Kontakte ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Kontakte erfolgreich importiert."
@@ -3590,166 +3596,8 @@
         "Beim Verschlüsseln und Hinzufügen der Kontakte ist ein Fehler aufgetreten. Kein Kontakt konnte importiert werden."
       ],
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } Kontakt verschlüsselt und zu deiner Kontaktliste hinzugefügt",
-        "${ totalImported }/${ totalToImport } Kontakte verschlüsselt und zu deiner Kontaktliste hinzugefügt"
-      ]
-    },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        "Verbindung zu Ihrem Kontaktanbieter wird aufgebaut"
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        "Authentifizieren"
-      ],
-      "Configure Import": [
-        "Importauftrag konfigurieren"
-      ],
-      "Import": [
-        "Importieren"
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        "Importvorgang abbrechen?"
-      ]
-    },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton-Anwendungen"
-      ],
-      "Go to ${ title }": [
-        "Wechseln zu ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Zu ${ vpnName } gehen"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "Gut lesbar"
-      ],
-      "Compact": [
-        "Kompakt"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "Spalte"
-      ],
-      "Row": [
-        "Zeile"
-      ]
-    },
-    "Label to change composer mode": {
-      "Normal": [
-        "Normal"
-      ],
-      "Maximized": [
-        "Maximiert"
-      ]
-    },
-    "Select files": {
-      "Upload": [
-        "Hochladen"
-      ]
-    },
-    "Onboarding Proton": {
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Dies ist, was andere sehen, wenn du ihnen eine E-Mail sendest, sie zu einer Veranstaltung einlädst oder eine Datei mit ihnen teilst."
-      ],
-      "Choose a display name": [
-        "Anzeigenamen wählen"
-      ],
-      "Select a theme": [
-        "Farbschema auswählen"
-      ],
-      "You can change this anytime in your settings.": [
-        "Dies kann jederzeit in den Einstellungen geändert werden."
-      ],
-      "Discover all Proton services": [
-        "Alle Proton-Dienste kennenlernen"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Nutze die App-Auswahl oben links, um auf andere Proton-Dienste wie VPN, Calendar und Drive zuzugreifen."
-      ],
-      "Welcome to Proton": [
-        "Willkommen bei Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Unsere Mission ist es, ein Internet zu schaffen, in dem du die Kontrolle über deine Daten und deine Privatsphäre hast. Wir haben Proton kürzlich aktualisiert – willkommen im sicheren Internet."
-      ],
-      "Set up your organization": [
-        "Organisation einrichten"
-      ],
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Konfiguriere deine Organisation, verknüpfe deinen Domainnamen und erstelle Konten, um sicherzustellen, dass alle Mitglieder deiner Organisation geschützt sind."
-      ]
-    },
-    "Onboarding Beta": {
-      "Got it": [
-        "Verstanden"
-      ],
-      "Beta enabled": [
-        "Beta aktiviert"
-      ],
-      "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
-        "Um den Beta-Zugang zu deaktivieren, öffne das Einstellungs-Auswahlmenü und klicke auf die Option „Beta-Zugang“."
-      ]
-    },
-    "Message display when a new app version is available": {
-      "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "Eine neue Version von ${ appName } ist verfügbar. ${ reloadButton }."
-      ]
-    },
-    "Text": {
-      "Settings": [
-        "Einstellungen"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Ein"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Aus"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Spalte"
-      ],
-      "Row": [
-        "Zeile"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Gut lesbar"
-      ],
-      "Compact": [
-        "Kompakt"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "Maximiert"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Die Punktzahl ist erforderlich"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Feedback gesendet"
+        "${ totalImported }/${ totalToImport } Kontakt verschlüsselt und zu Ihrer Kontaktliste hinzugefügt",
+        "${ totalImported }/${ totalToImport } Kontakte verschlüsselt und zu Ihrer Kontaktliste hinzugefügt"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -3862,6 +3710,164 @@
     "Label, make it short please": {
       "Attach screenshot(s)": [
         "Bildschirmfoto(s) anhängen"
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        "Verbindung zu Ihrem Kontaktanbieter wird aufgebaut"
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        "Authentifizieren"
+      ],
+      "Configure Import": [
+        "Importauftrag konfigurieren"
+      ],
+      "Import": [
+        "Importieren"
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        "Importvorgang abbrechen?"
+      ]
+    },
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton-Anwendungen"
+      ],
+      "Go to ${ title }": [
+        "Wechseln zu ${ title }"
+      ],
+      "Go to ${ vpnName }": [
+        "Zu ${ vpnName } gehen"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Gut lesbar"
+      ],
+      "Compact": [
+        "Kompakt"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Spalte"
+      ],
+      "Row": [
+        "Zeile"
+      ]
+    },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ],
+      "Maximized": [
+        "Maximiert"
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Hochladen"
+      ]
+    },
+    "Onboarding Proton": {
+      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
+        "Dies ist, was andere sehen, wenn du ihnen eine E-Mail sendest, sie zu einer Veranstaltung einlädst oder eine Datei mit ihnen teilst."
+      ],
+      "Choose a display name": [
+        "Anzeigenamen wählen"
+      ],
+      "Select a theme": [
+        "Farbschema auswählen"
+      ],
+      "You can change this anytime in your settings.": [
+        "Dies kann jederzeit in den Einstellungen geändert werden."
+      ],
+      "Discover all Proton services": [
+        "Alle Proton-Dienste kennenlernen"
+      ],
+      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
+        "Nutze die App-Auswahl oben links, um auf andere Proton-Dienste wie VPN, Calendar und Drive zuzugreifen."
+      ],
+      "Welcome to Proton": [
+        "Willkommen bei Proton"
+      ],
+      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
+        "Unsere Zielsetzung ist es, ein Internet aufzubauen, in dem Sie die Kontrolle über Ihre Daten und Ihre Privatsphäre haben. Wir haben Proton kürzlich aktualisiert - Willkommen im sicheren Internet."
+      ],
+      "Set up your organization": [
+        "Organisation einrichten"
+      ],
+      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
+        "Konfigurieren Sie Ihre Organisation, verknüpfen Sie Ihren Domainnamen und erstellen Sie Konten, um sicherzustellen, dass alle Mitglieder Ihrer Organisation geschützt sind."
+      ]
+    },
+    "Onboarding Beta": {
+      "Got it": [
+        "Verstanden"
+      ],
+      "Beta enabled": [
+        "Beta aktiviert"
+      ],
+      "To disable beta, open the settings dropdown menu and click on the “Beta Access” option.": [
+        "Um den Beta-Zugang zu deaktivieren, öffne das Einstellungs-Auswahlmenü und klicke auf die Option „Beta-Zugang“."
+      ]
+    },
+    "Message display when a new app version is available": {
+      "A new version of ${ appName } is available. ${ reloadButton }.": [
+        "Eine neue Version von ${ appName } ist verfügbar. ${ reloadButton }."
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Einstellungen"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Ein"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Aus"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Spalte"
+      ],
+      "Row": [
+        "Zeile"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Gut lesbar"
+      ],
+      "Compact": [
+        "Kompakt"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "Maximiert"
+      ],
+      "Normal": [
+        "Normal"
+      ]
+    },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Die Punktzahl ist erforderlich"
+      ]
+    },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Feedback gesendet"
       ]
     },
     "Beta access description": {
@@ -4547,19 +4553,19 @@
         "Angehängte ICS-Datei konnte nicht entschlüsselt werden"
       ],
       "We could not retrieve the event from your calendar": [
-        "Das Ereignis konnte nicht aus deinem Kalender abgerufen werden"
+        "Das Ereignis konnte nicht aus Ihrem Kalender ausgelesen werden"
       ],
       "We could not update the event in your calendar": [
-        "Das Ereignis konnte nicht in deinem Kalender aktualisiert werden"
+        "Das Ereignis konnte nicht in Ihrem Kalender aktualisiert werden"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        "Deine Antwort wurde gesendet, aber das Ereignis konnte nicht in deinen Kalender eingetragen werden."
+        "Ihre Antwort wurde gesendet, aber das Ereignis konnte nicht in Ihren Kalender eingetragen werden."
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "Deine Antwort wurde gesendet, aber das Ereignis konnte nicht in deinem Kalender aktualisiert werden."
+        "Ihre Antwort wurde gesendet, aber das Ereignis konnte nicht in Ihrem Kalender aktualisiert werden."
       ],
       "We could not cancel the event in your calendar": [
-        "Das Ereignis in deinem Kalender konnte nicht abgesagt werden"
+        "Das Ereignis in Ihrem Kalender konnte nicht abgesagt werden"
       ],
       "Unexpected error": [
         "Unerwarteter Fehler"
@@ -4712,13 +4718,13 @@
     },
     "Email body for response to invitation": {
       "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } hat deine Einladung zu ${ eventTitle } angenommen"
+        "${ emailAddress } hat Ihre Einladung zu „${ eventTitle }” angenommen"
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } hat deine Einladung zu ${ eventTitle } unter Vorbehalt angenommen"
+        "${ emailAddress } hat Ihre Einladung zu „${ eventTitle }” unter Vorbehalt angenommen"
       ],
       "${ emailAddress } has declined your invitation to ${ eventTitle }": [
-        "${ emailAddress } hat deine Einladung zu ${ eventTitle } abgelehnt"
+        "${ emailAddress } hat Ihre Einladung zu „${ eventTitle }” abgelehnt"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -5305,46 +5311,46 @@
         "Diese Antwort ist nicht mehr gültig. Du hast keine Kalender."
       ],
       "${ participantName } accepted your invitation.": [
-        "${ participantName } hat deine Einladung angenommen."
+        "${ participantName } hat Ihre Einladung bestätigt."
       ],
       "${ participantName } declined your invitation.": [
-        "${ participantName } hat deine Einladung abgelehnt."
+        "${ participantName } hat Ihre Einladung abgelehnt."
       ],
       "${ participantName } tentatively accepted your invitation.": [
-        "${ participantName } hat deine Einladung unter Vorbehalt angenommen."
+        "${ participantName } hat Ihre Einladung unter Vorbehalt angenommen."
       ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
-        "Diese Antwort ist nicht mehr gültig. Das Ereignis gibt es in deinem Kalender nicht mehr."
+        "Diese Antwort ist nicht mehr gültig. Das Ereignis existiert nicht mehr in Ihrem Kalender."
       ],
       " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Diese Antwort stimmt nicht mit den Angaben in deiner Einladung überein. Bitte überprüfe die Einladungsdetails in deinem Kalender."
+        " Diese Antwort stimmt nicht mit Ihren Details der Einladung überein. Bitte überprüfen Sie die Einladungsdetails in Ihrem Kalender."
       ],
       "${ participantName } accepted your invitation to one occurrence of the event.": [
-        "${ participantName } hat deine Einladung zu einem Ereignis angenommen."
+        "${ participantName } hat Ihre Einladung zu einem Ereignis angenommen."
       ],
       "${ participantName } declined your invitation to one occurrence of the event.": [
-        "${ participantName } hat deine Einladung zu einem Ereignis abgelehnt."
+        "${ participantName } hat Ihre Einladung zu einem Ereignis abgelehnt."
       ],
       "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName } hat deine Einladung zu einem Ereignis unter Vorbehalt angenommen."
+        "${ participantName } hat Ihre Einladung zu einem Ereignis unter Vorbehalt angenommen."
       ],
       "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
-        "${ participantName } hat deine Einladung zu einem Termin des Ereignisses zuvor angenommen."
+        "${ participantName } hatte zuvor Ihre Einladung zu einem Termin des Ereignisses angenommen."
       ],
       "${ participantName } had previously accepted your invitation.": [
-        "${ participantName } hat deine Einladung zuvor angenommen."
+        "${ participantName } hat Ihre Einladung bereits angenommen."
       ],
       "${ participantName } had previously declined your invitation to one occurrence of the event.": [
-        "${ participantName } hat deine Einladung zu einem Termin des Ereignisses zuvor abgelehnt."
+        "${ participantName } hatte Ihre Einladung zu einem Termin des Ereignisses bereits abgelehnt."
       ],
       "${ participantName } had previously declined your invitation.": [
-        "${ participantName } hat deine Einladung zuvor abgelehnt."
+        "${ participantName } hat Ihre Einladung bereits abgelehnt."
       ],
       "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName } hat deine Einladung zu einem Termin des Ereignisses zuvor unter Vorbehalt angenommen."
+        "${ participantName } hat Ihre Einladung zu einem Termin des Ereignisses bereits unter Vorbehalt angenommen."
       ],
       "${ participantName } had previously tentatively accepted your invitation.": [
-        "${ participantName } hat deine Einladung zuvor unter Vorbehalt angenommen."
+        "${ participantName } hatte Ihre Einladung bereits unter Vorbehalt angenommen."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } hat eine andere Zeit für einen Termin dieses Ereignisses vorgeschlagen. Dieser Vorschlag ist nicht mehr gültig. Du hast keine Kalender."
@@ -5353,22 +5359,22 @@
         "${ participantName } hat eine andere Zeit für dieses Ereignis vorgeschlagen. Dieser Vorschlag ist nicht mehr gültig. Du hast keine Kalender."
       ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName } hat deine Einladung angenommen und eine andere Zeit für einen Termin dieses Ereignisses vorgeschlagen."
+        "${ participantName } hat Ihre Einladung bestätigt und eine neue Zeit für einen Termin dieses Ereignisses vorgeschlagen."
       ],
       "${ participantName } accepted your invitation and proposed a new time for this event.": [
-        "${ participantName } hat deine Einladung angenommen und eine andere Zeit für dieses Ereignis vorgeschlagen."
+        "${ participantName } hat Ihre Einladung angenommen und eine alternative Zeit für dieses Ereignis vorgeschlagen."
       ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName } hat deine Einladung abgelehnt und eine andere Zeit für einen Termin dieses Ereignisses vorgeschlagen."
+        "${ participantName } hat Ihre Einladung abgelehnt und eine alternative Zeit für einen Termin dieses Ereignisses vorgeschlagen."
       ],
       "${ participantName } declined your invitation and proposed a new time for this event.": [
-        "${ participantName } hat deine Einladung abgelehnt und eine andere Zeit für dieses Ereignis vorgeschlagen."
+        "${ participantName } hat Ihre Einladung abgelehnt und eine alternative Zeit für dieses Ereignis vorgeschlagen."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName } hat deine Einladung unter Vorbehalt angenommen und eine andere Zeit für einen Termin dieses Ereignisses vorgeschlagen."
+        "${ participantName } hat Ihre Einladung unter Vorbehalt angenommen und eine alternative Zeit für einen Termin dieses Ereignisses vorgeschlagen."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for this event.": [
-        "${ participantName } hat deine Einladung unter Vorbehalt angenommen und eine andere Zeit für dieses Ereignis vorgeschlagen."
+        "${ participantName } hat Ihre Einladung unter Vorbehalt angenommen und eine alternative Zeit für dieses Ereignis vorgeschlagen."
       ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } hat eine andere Zeit für einen Termin dieses Ereignisses vorgeschlagen."
@@ -5377,31 +5383,31 @@
         "${ participantName } hat eine andere Zeit für dieses Ereignis vorgeschlagen."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
-        "${ participantName } hat eine andere Zeit für einen Termin dieses Ereignisses vorgeschlagen. Dieser Vorschlag ist nicht mehr gültig. Den Termin gibt es in deinem Kalender nicht mehr."
+        "${ participantName } hatte eine andere Zeit für einen Termin dieses Ereignisses vorgeschlagen. Dieser Vorschlag ist nicht mehr gültig. Der Termin existiert nicht mehr in Ihrem Kalender."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
-        "${ participantName } hat eine andere Zeit für dieses Ereignis vorgeschlagen. Dieser Vorschlag ist nicht mehr gültig. Den Termin gibt es in deinem Kalender nicht mehr."
+        "${ participantName } hatte eine andere Zeit für dieses Ereignis vorgeschlagen. Dieser Vorschlag ist nicht mehr gültig. Der Termin existiert nicht mehr in Ihrem Kalender."
       ],
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Dieser neue Zeitvorschlag stimmt nicht mit den Angaben in deiner Einladung überein. Bitte überprüfe die Einladungsdetails in deinem Kalender."
+        " Dieser neue Terminvorschlag stimmt nicht mit Ihren Angaben zur Einladung überein. Bitte überprüfen Sie die Einladungsdetails in Ihrem Kalender."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } hat deine Einladung angenommen und eine andere Zeit für einen Termin dieses Ereignisses vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } hat deine Einladung angenommen und einen andere Zeit für dieses Ereignis vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
+        "${ participantName } hatte Ihre Einladung bestätigt und einen andere Zeit für dieses Ereignis vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } hat deine Einladung abgelehnt und eine neue Zeit für einen Termin dieses Ereignisses vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
+        "${ participantName } hat Ihre Einladung angenommen und eine alternative Zeit für einen Termin dieses Ereignisses vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
       ],
       "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } hat deine Einladung abgelehnt und eine neue Zeit für dieses Ereignis vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
+        "${ participantName } hatte Ihre Einladung abgelehnt und eine alternative Zeit für dieses Ereignis vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } hat deine Einladung unter Vorbehalt angenommen und eine neue Zeit für einen Termin dieses Ereignisses vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
+        "${ participantName } hatte Ihre Einladung unter Vorbehalt angenommen und eine alternative Zeit für einen Termin dieses Ereignisses vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } hat deine Einladung unter Vorbehalt angenommen und eine andere Zeit für dieses Ereignis vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
+        "${ participantName } hatte Ihre Einladung unter Vorbehalt angenommen und eine alternative Zeit für dieses Ereignis vorgeschlagen. Antwort und Vorschlag sind nicht mehr gültig."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date.": [
         "${ participantName } hat eine andere Zeit für einen Termin dieses Ereignisses vorgeschlagen. Dieser Vorschlag ist nicht mehr gültig."
@@ -5416,7 +5422,7 @@
         "${ participantName } hat nach den neuesten Aktualisierungen des Ereignisses gefragt."
       ],
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
-        "${ participantName } hat nach den letzten Aktualisierungen für ein Ereignis gefragt, das es in deinem Kalender nicht mehr gibt."
+        "${ participantName } fragte nach den letzten Aktualisierungen für ein Ereignis, das nicht mehr in Ihrem Kalender existiert."
       ],
       "This invitation is out of date. The event has been cancelled.": [
         "Diese Einladung ist nicht mehr gültig. Das Ereignis wurde abgesagt."
@@ -5425,28 +5431,28 @@
         "Diese Einladung ist nicht mehr gültig. Das Ereignis wurde aktualisiert."
       ],
       "Your attendance at this event is required.": [
-        "Deine Teilnahme an dieser Veranstaltung ist erforderlich."
+        "Ihre Teilnahme an diesem Ereignis ist erforderlich."
       ],
       "Your attendance at this event is optional.": [
-        "Deine Teilnahme an dieser Veranstaltung ist freiwillig."
+        "Ihre Teilnahme an diesem Ereignis ist freiwillig."
       ],
       "Your attendance at this event is required. You already accepted this invitation.": [
-        "Deine Teilnahme an diesem Ereignis ist erforderlich. Du hast diese Einladung bereits angenommen."
+        "Ihre Teilnahme an diesem Ereignis ist erforderlich. Sie haben diese Einladung bereits angenommen."
       ],
       "Your attendance at this event is optional. You already accepted this invitation.": [
-        "Deine Teilnahme an diesem Ereignis ist freiwillig. Du hast diese Einladung bereits angenommen."
+        "Ihre Teilnahme an diesem Ereignis ist freiwillig. Sie haben diese Einladung bereits angenommen."
       ],
       "Your attendance at this event is required. You already tentatively accepted this invitation.": [
-        "Deine Anwesenheit bei dieser Veranstaltung ist erforderlich. Du hast diese Einladung bereits unter Vorbehalt angenommen."
+        "Ihre Teilnahme zu diesem Ereignis ist erforderlich. Sie haben diese Einladung bereits unter Vorbehalt angenommen."
       ],
       "Your attendance at this event is optional. You already tentatively accepted this invitation.": [
-        "Deine Anwesenheit bei dieser Veranstaltung ist freiwillig. Du hast diese Einladung bereits unter Vorbehalt angenommen."
+        "Ihre Teilnahme zu diesem Ereignis ist freiwillig. Sie haben diese Einladung bereits unter Vorbehalt angenommen."
       ],
       "Your attendance at this event is required. You already declined this invitation.": [
-        "Deine Anwesenheit bei dieser Veranstaltung ist erforderlich. Du hast diese Einladung bereits abgelehnt."
+        "Ihre Teilnahme zu diesem Ereignis ist erforderlich. Sie haben diese Einladung bereits abgelehnt."
       ],
       "Your attendance at this event is optional. You already declined this invitation.": [
-        "Deine Teilnahme an diesem Ereignis ist freiwillig. Du hast diese Einladung bereits abgelehnt."
+        "Ihre Teilnahme an dieser Veranstaltung ist freiwillig. Sie haben diese Einladung bereits abgelehnt."
       ],
       "This event has been cancelled.": [
         "Dieses Ereignis wurde abgesagt."
@@ -5461,7 +5467,7 @@
         "Der Absender dieser E-Mail wurde nicht zu dieser Veranstaltung eingeladen und kann nicht als Teilnehmer hinzugefügt werden."
       ],
       "Your email address is not in the participants list.": [
-        "Deine E-Mail-Adresse ist nicht in der Teilnehmerliste."
+        "Ihre E-Mail-Adresse ist nicht in der Teilnehmerliste enthalten."
       ],
       "Event refreshing is not supported for the moment.": [
         "Das Aktualisieren von Ereignissen wird derzeit nicht unterstützt."
@@ -5558,15 +5564,15 @@
     },
     "Send email with errors": {
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
-        "Es wurden Fehler festgestellt. Deine Nachricht kann aus folgendem Grund nicht an die angegebene E-Mail-Adresse gesendet werden:",
-        "Es wurden Fehler festgestellt. Deine Nachricht kann aus folgendem Grund nicht an die angegebenen E-Mail-Adressen gesendet werden:"
+        "Es wurden Fehler festgestellt. Ihre Nachricht kann aus folgendem Grund nicht an die angegebene E-Mail-Adresse gesendet werden:",
+        "Es wurden Fehler festgestellt. Ihre Nachricht kann aus folgendem Grund nicht an die angegebenen E-Mail-Adressen gesendet werden:"
       ],
       "Please go back to edit the email address you entered.": [
         "Gehe zurück, um die eingegebene E-Mail-Adresse zu bearbeiten.",
         "Gehe zurück, um die eingegebenen E-Mail-Adressen zu bearbeiten."
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
-        "Es wurden einige Fehler festgestellt. Deine Nachricht kann aus den folgenden Gründen nicht an eine oder mehrere der angegebenen E-Mail-Adressen gesendet werden:"
+        "Es wurden einige Fehler festgestellt. Ihre Nachricht kann aus den folgenden Gründen nicht an eine oder mehrere der angegebenen E-Mail-Adressen gesendet werden:"
       ],
       "Do you want to send the email anyway?": [
         "Möchtest du die E-Mail trotzdem abschicken?"
@@ -5756,10 +5762,10 @@
     },
     "Onboarding ProtonMail": {
       "Meet your encrypted mailbox": [
-        "Entdecke dein verschlüsseltes Postfach"
+        "Entdecken Sie Ihr verschlüsseltes Postfach"
       ],
       "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } ist jetzt moderner und anpassbarer. Dabei schützt es deine Daten weiterhin mit fortschrittlicher Verschlüsselung."
+        "${ appName } ist jetzt moderner und anpassbar und schützt Ihre Daten zudem mit fortschrittlicher Verschlüsselung."
       ],
       "Get the ${ appName } mobile app": [
         "Hol dir die mobile App von ${ appName }"
@@ -5768,10 +5774,10 @@
         "Verfügbar für iOS und Android."
       ],
       "Import your messages": [
-        "Deine Nachrichten importieren"
+        "Importieren Sie Ihre Nachrichten"
       ],
       "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Der Import-Assistent überträgt schnell alle deine E-Mails in dein neues verschlüsseltes Postfach."
+        "Der Import-Assistent überträgt schnell alle Ihre E-Mails in Ihr neues verschlüsseltes Postfach."
       ]
     },
     "blackfriday Promo title, need to be short": {

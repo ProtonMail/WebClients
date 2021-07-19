@@ -5,9 +5,162 @@
   },
   "contexts": {
     "": {},
+    "Error": {
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "Acest mesaj poate conține unele legături care nu pot fi deschise corect de navigatorul actual."
+      ],
+      "Authentication canceled.": [
+        "Autentificare anulată."
+      ],
+      "Your import will not be processed.": [
+        "Importarea nu va fi procesată."
+      ],
+      "Authentication error.": [
+        "Eroare autentificare."
+      ],
+      "Unknown error": [
+        "Eroare necunoscută."
+      ],
+      "Email address invalid": [
+        "Adresă de e-mail nevalidă"
+      ],
+      "This field is required": [
+        "Acest câmp este obligatoriu"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
+      ],
+      "Can't validate email, try again later": [
+        "Nu se poate valida adresa de e-mail, reîncercați mai târziu."
+      ],
+      "Can't validate phone, try again later": [
+        "Nu se poate valida telefonul, reîncercați mai târziu."
+      ],
+      "Enter 6 digits": [
+        "Introduceți 6 cifre"
+      ],
+      "Invalid verification code": [
+        "Cod de verificare nevalid"
+      ],
+      "Preferences could not be saved": [
+        "Preferințele nu au putut fi salvate."
+      ],
+      "Some groups could not be deleted": [
+        "Unele grupuri nu s-au putut șterge."
+      ],
+      "Image upload failed": [
+        "Eșuare încărcare imagine"
+      ],
+      "Contact could not be saved": [
+        "Contactul nu a putut fi salvat"
+      ],
+      "Some contacts could not be deleted": [
+        "Unele contacte nu s-au putut șterge"
+      ],
+      "Invalid public key file": [
+        "Cheie publică nevalidă."
+      ],
+      "You can't send a mail to more than 100 recipients": [
+        "Nu puteți trimite un e-mail la mai mult de 100 de destinatari."
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Unul dintre contacte nu are adresă de e-mail: ${ noEmailsContactNamesList }",
+        "Câteva contacte nu au adresă de e-mail: ${ noEmailsContactNamesList }",
+        "Câteva contacte nu au adresă de e-mail: ${ noEmailsContactNamesList }"
+      ],
+      "You can't send vCards of more than 10 contacts": [
+        "Nu puteți trimite cărți de vizită („vCard”) la mai mult de 10 persoane de contact."
+      ],
+      "There was an error when exporting the contacts vCards": [
+        "A apărut o eroare la exportarea cărților de vizită a contactelor („vCards”)."
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Unul dintre grupuri nu are contacte: ${ noContactGroupList }",
+        "Câteva grupuri nu au contacte: ${ noContactGroupList }",
+        "Câteva grupuri nu au contacte: ${ noContactGroupList }"
+      ],
+      "You must set a name": [
+        "Trebuie specificat un nume."
+      ],
+      "A group with this name already exists": [
+        "Un grup cu acest nume există deja."
+      ],
+      "Invalid name": [
+        "Nume nevalid."
+      ],
+      "File has no contents to preview": [
+        "Fișierul nu are conținut de afișat"
+      ],
+      "We were unable to connect to your service provider.": [
+        ""
+      ],
+      "Please try to reauthenticate and make sure the permissions are set correctly.": [
+        ""
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Parolă căsuță mesaje incorectă. Mai reîncercaţi."
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Date de autentificare incorecte. Mai reîncercați."
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Acest câmp necesită un minim de ${ minimumLength } caractere."
+      ],
+      "Email is not valid": [
+        "E-mailul nu este valid"
+      ],
+      "Not a valid number": [
+        "Nu este un număr valid"
+      ],
+      "Passwords do not match": [
+        "Parolele nu coincid"
+      ],
+      "Request timed out.": [
+        "Solicitarea a expirat."
+      ],
+      "Signature verification failed": [
+        "Verificare semnătură eșuată"
+      ],
+      "Could not find address ${ email }.": [
+        "Nu s-a putut găsi adresa ${ email }."
+      ],
+      "Missing signature": [
+        "Semnătură lipsă"
+      ],
+      "Contact signature not verified": [
+        "Semnătura contactului nu a fost verificată"
+      ],
+      "Signature not verified": [
+        "Semnătură neverificată"
+      ],
+      "No valid address found": [
+        "Nu s-a găsit o adresă validă"
+      ],
+      "Incorrect password. Please try again.": [
+        "Parolă incorectă. Reîncercați."
+      ]
+    },
     "Action": {
       "Close": [
         "Închidere"
+      ],
+      "Confirm": [
+        "Confirmare"
+      ],
+      "Cancel": [
+        "Anulare"
+      ],
+      "Close modal": [
+        "Închidere"
+      ],
+      "Submit": [
+        "Trimite"
+      ],
+      "More info: ${ safeTitle }": [
+        "Mai multe informații: ${ safeTitle }"
+      ],
+      "Use “${ label }” setting": [
+        "Folosire setarea „${ label }”"
       ],
       "Close navigation": [
         "Închidere navigare"
@@ -15,8 +168,8 @@
       "Open navigation": [
         "Deschidere navigare"
       ],
-      "Use “${ label }” setting": [
-        "Folosire setarea „${ label }”"
+      "Go to panel ${ index }": [
+        "Salt la panoul ${ index }"
       ],
       "Load image": [
         "Încărcare imagine"
@@ -57,62 +210,41 @@
       "Upload picture": [
         "Încărcare imagine"
       ],
-      "Confirm opening of link ${ link }": [
-        "Confirmați deschiderea legăturii ${ link }"
-      ],
-      "Confirm": [
-        "Confirmare"
-      ],
-      "Go to panel ${ index }": [
-        "Salt la panoul ${ index }"
-      ],
-      "More info: ${ safeTitle }": [
-        "Mai multe informații: ${ safeTitle }"
-      ],
       "Next month": [
         "Luna viitoare"
       ],
       "Previous month": [
         "Luna trecută"
       ],
-      "Cancel": [
-        "Anulare"
+      "Confirm opening of link ${ link }": [
+        "Confirmați deschiderea legăturii ${ link }"
       ],
-      "Close modal": [
-        "Închidere"
+      "refresh the page": [
+        "împrospătați pagina"
       ],
-      "Submit": [
-        "Trimite"
+      "View invoice": [
+        "Afișare factură"
       ],
-      "Previous": [
-        "Anterior"
+      "Get verification code": [
+        "Obținere cod de verificare"
       ],
-      "Next": [
-        "Înainte"
+      "Try another method": [
+        "Încercaţi o altă metodă"
       ],
-      "Details": [
-        "Detalii"
+      "Request new code": [
+        "Solicitare cod nou"
       ],
-      "Share via link": [
-        "Partajare prin legătură"
+      "Verify": [
+        "Verificare"
       ],
-      "Sharing options": [
-        "Opțiuni de partajare"
+      "Did not receive the code?": [
+        "Nu ați primit codul?"
       ],
-      "Zoom out": [
-        "Micșorare"
+      "Edit email address": [
+        "Editare adresă de e-mail"
       ],
-      "Reset zoom": [
-        "Resetare dimensiune"
-      ],
-      "Zoom in": [
-        "Mărire"
-      ],
-      "Use ${ label } theme": [
-        "Folosire tema ${ label }"
-      ],
-      "OK": [
-        "OK"
+      "Edit phone number": [
+        "Editare număr de telefon"
       ],
       "Save": [
         "Salvare"
@@ -161,6 +293,9 @@
       ],
       "Preview contact": [
         "Examinare contact"
+      ],
+      "Continue": [
+        "Continuare"
       ],
       "Delete contact": [
         "Ștergere contact"
@@ -226,32 +361,32 @@
       "Import": [
         "Importare"
       ],
-      "Continue": [
-        "Continuare"
+      "Next": [
+        "Înainte"
       ],
-      "Continue import": [
-        ""
+      "Signing out": [
+        "Deconectare"
       ],
-      "Discard": [
-        ""
+      "Details": [
+        "Detalii"
       ],
-      "Reconnect": [
-        ""
+      "Share via link": [
+        "Partajare prin legătură"
       ],
-      "Start import": [
-        ""
+      "Sharing options": [
+        "Opțiuni de partajare"
       ],
-      "Get started": [
-        "Să începem"
+      "Zoom out": [
+        "Micșorare"
       ],
-      "Start setup": [
-        "Pornire configurare"
+      "Reset zoom": [
+        "Resetare dimensiune"
       ],
-      "Skip": [
-        "Omitere"
+      "Zoom in": [
+        "Mărire"
       ],
-      "Back": [
-        "Înapoi"
+      "Previous": [
+        "Anterior"
       ],
       "Close this banner": [
         "Închidere acest banner"
@@ -264,12 +399,6 @@
       ],
       "here": [
         "aici"
-      ],
-      "refresh the page": [
-        "împrospătați pagina"
-      ],
-      "Signing out": [
-        "Deconectare"
       ],
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
@@ -328,44 +457,86 @@
       "Show info": [
         "Afișare informații"
       ],
-      "View invoice": [
-        "Afișare factură"
+      "Get started": [
+        "Să începem"
       ],
-      "Get verification code": [
-        "Obținere cod de verificare"
+      "Start setup": [
+        "Pornire configurare"
       ],
-      "Try another method": [
-        "Încercaţi o altă metodă"
+      "Skip": [
+        "Omitere"
       ],
-      "Request new code": [
-        "Solicitare cod nou"
+      "Back": [
+        "Înapoi"
       ],
-      "Verify": [
-        "Verificare"
+      "Use ${ label } theme": [
+        "Folosire tema ${ label }"
       ],
-      "Did not receive the code?": [
-        "Nu ați primit codul?"
+      "OK": [
+        "OK"
       ],
-      "Edit email address": [
-        "Editare adresă de e-mail"
+      "Continue import": [
+        ""
       ],
-      "Edit phone number": [
-        "Editare număr de telefon"
+      "Discard": [
+        ""
+      ],
+      "Reconnect": [
+        ""
+      ],
+      "Start import": [
+        ""
       ],
       "Log in": [
         "Conectare"
       ],
-      "New upload": [
-        "Încărcare nouă"
-      ],
       "Delete permanently": [
         "Ștergere permanentă"
       ],
-      "Restore from trash": [
-        "Restaurare din «Gunoi»"
+      "Undo": [
+        "Anulare"
       ],
-      "Empty trash": [
-        "Golire «Gunoi»"
+      "Maximize transfers": [
+        "Maximizare transferuri"
+      ],
+      "Minimize transfers": [
+        "Micșorare transferuri"
+      ],
+      "Close transfers": [
+        "Închidere transferuri"
+      ],
+      "Pause download": [
+        "Suspendare descărcare"
+      ],
+      "Pause upload": [
+        "Suspendare încărcare"
+      ],
+      "Resume download": [
+        "Reluare descărcare"
+      ],
+      "Resume upload": [
+        "Reluare încărcare"
+      ],
+      "Cancel download": [
+        "Anulare descărcare"
+      ],
+      "Cancel upload": [
+        "Anulare încărcare"
+      ],
+      "Restart download": [
+        "Repornire descărcare"
+      ],
+      "Restart upload": [
+        "Repornește încărcarea"
+      ],
+      "Remove from this list": [
+        "Eliminare din listă"
+      ],
+      "Cancel all uploads": [
+        "Anulare toate încărcările"
+      ],
+      "New upload": [
+        "Încărcare nouă"
       ],
       "List layout": [
         "Aspect listă"
@@ -415,6 +586,12 @@
       "Upload folder": [
         "Încărcare folder"
       ],
+      "Restore from trash": [
+        "Restaurare din «Gunoi»"
+      ],
+      "Empty trash": [
+        "Golire «Gunoi»"
+      ],
       "Start recovering": [
         "Pornire recuperare"
       ],
@@ -444,56 +621,11 @@
       ],
       "Create link": [
         "Creare legătură"
-      ],
-      "Maximize transfers": [
-        "Maximizare transferuri"
-      ],
-      "Minimize transfers": [
-        "Micșorare transferuri"
-      ],
-      "Close transfers": [
-        "Închidere transferuri"
-      ],
-      "Pause download": [
-        "Suspendare descărcare"
-      ],
-      "Pause upload": [
-        "Suspendare încărcare"
-      ],
-      "Resume download": [
-        "Reluare descărcare"
-      ],
-      "Resume upload": [
-        "Reluare încărcare"
-      ],
-      "Cancel download": [
-        "Anulare descărcare"
-      ],
-      "Cancel upload": [
-        "Anulare încărcare"
-      ],
-      "Restart download": [
-        "Repornire descărcare"
-      ],
-      "Restart upload": [
-        "Repornește încărcarea"
-      ],
-      "Remove from this list": [
-        "Eliminare din listă"
-      ],
-      "Undo": [
-        "Anulare"
-      ],
-      "Cancel all uploads": [
-        "Anulare toate încărcările"
       ]
     },
     "Title": {
       "Open actions dropdown": [
         "Meniu acțiuni deschidere"
-      ],
-      "What's new": [
-        "Ce este nou"
       ],
       "Upgrade required": [
         "Migrare necesară"
@@ -510,8 +642,17 @@
       "Keyboard Shortcuts": [
         "Combinații de taste"
       ],
-      "Select a theme": [
-        "Selectaţi o temă"
+      "What's new": [
+        "Ce este nou"
+      ],
+      "Invalid verification code": [
+        "Cod de verificare nevalid"
+      ],
+      "Request new verification code": [
+        "Solicitare cod de verificare nou"
+      ],
+      "Human verification": [
+        "Verificare persoană"
       ],
       "Edit contact group": [
         "Editare grup de contacte"
@@ -599,6 +740,9 @@
       "Merge contacts": [
         "Îmbinare contacte"
       ],
+      "Deleting contacts": [
+        "Ștergere contacte"
+      ],
       "View contacts": [
         "Afișare contacte"
       ],
@@ -626,15 +770,6 @@
       "Import contacts": [
         "Importare contacte"
       ],
-      "Start import process": [
-        ""
-      ],
-      "Import in progress": [
-        ""
-      ],
-      "Beta Access": [
-        "Acces la Beta"
-      ],
       "Open help menu": [
         "Deschidere meniu ajutor"
       ],
@@ -646,6 +781,15 @@
       ],
       "Report a problem": [
         "Raportare problemă"
+      ],
+      "Select a theme": [
+        "Selectaţi o temă"
+      ],
+      "Start import process": [
+        ""
+      ],
+      "Import in progress": [
+        ""
       ],
       "${ appName } Keyboard Shortcuts": [
         "Combinații de taste ${ appName }"
@@ -659,14 +803,8 @@
       "Composer mode": [
         "Mod editor mesaje"
       ],
-      "Invalid verification code": [
-        "Cod de verificare nevalid"
-      ],
-      "Request new verification code": [
-        "Solicitare cod de verificare nou"
-      ],
-      "Human verification": [
-        "Verificare persoană"
+      "Beta Access": [
+        "Acces la Beta"
       ],
       "Sign in again to continue": [
         "Reconectați-vă pentru a continua"
@@ -680,14 +818,23 @@
       "Enter your password": [
         "Introduceţi parola"
       ],
+      "Delete permanently": [
+        "Ștergere permanentă"
+      ],
+      "Stop sharing": [
+        "Oprire partajare"
+      ],
+      "Cancel all active transfers": [
+        "Anulare toate transferurile active"
+      ],
+      "Duplicate folder found": [
+        "S-au găsit foldere duplicate"
+      ],
+      "Duplicate file found": [
+        "Fișier duplicat găsit"
+      ],
       "Drop to upload": [
         "Plasare pentru încărcare"
-      ],
-      "Trash": [
-        "Gunoi"
-      ],
-      "Empty trash": [
-        "Golire «Gunoi»"
       ],
       "Change layout": [
         "Schimbare aspect"
@@ -697,6 +844,12 @@
       ],
       "Sort files/folders": [
         "Sortare fișiere/foldere"
+      ],
+      "Trash": [
+        "Gunoi"
+      ],
+      "Empty trash": [
+        "Golire «Gunoi»"
       ],
       "Drive": [
         "Unitate"
@@ -710,12 +863,6 @@
       "You have inaccessible files": [
         "Aveţi fişiere inaccesibile"
       ],
-      "Rename a folder": [
-        "Redenumire folder"
-      ],
-      "Rename a file": [
-        "Redenumire fișier"
-      ],
       "My files": [
         "Fișierele mele"
       ],
@@ -724,6 +871,12 @@
       ],
       "You have no files to share": [
         "Nu aveți fișiere de partajat"
+      ],
+      "Rename a folder": [
+        "Redenumire folder"
+      ],
+      "Rename a file": [
+        "Redenumire fișier"
       ],
       "File details": [
         "Detalii fișier"
@@ -770,12 +923,6 @@
       "Select link expiration time": [
         "Selectați ora expirării legăturii"
       ],
-      "Discard changes?": [
-        "Anulare modificări?"
-      ],
-      "Discard": [
-        "Anulare"
-      ],
       "Share via link": [
         "Partajare prin legătură"
       ],
@@ -788,6 +935,12 @@
       "Stop sharing with everyone?": [
         "Opriți partajarea cu toată lumea?"
       ],
+      "Discard changes?": [
+        "Anulare modificări?"
+      ],
+      "Discard": [
+        "Anulare"
+      ],
       "Files details": [
         "Detalii fișiere"
       ],
@@ -796,9 +949,6 @@
       ],
       "Total size": [
         "Mărime totală"
-      ],
-      "Cancel all active transfers": [
-        "Anulare toate transferurile active"
       ],
       "Your file is ready to be downloaded": [
         "Fișierul este gata de descărcare"
@@ -820,26 +970,20 @@
       ],
       "The link either does not exist or has expired": [
         "Legătura nu există sau a expirat."
-      ],
-      "Delete permanently": [
-        "Ștergere permanentă"
-      ],
-      "Stop sharing": [
-        "Oprire partajare"
-      ],
-      "Deleting contacts": [
-        "Ștergere contacte"
-      ],
-      "Duplicate folder found": [
-        "S-au găsit foldere duplicate"
       ]
     },
     "Info": {
       "No results found": [
         "Nu s-au găsit rezultate"
       ],
+      "Loading": [
+        "Se încarcă"
+      ],
       "No contacts added yet": [
         "Încă nu s-au adăugat contacte"
+      ],
+      "Week": [
+        "Săptămâna"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Această legătură ar putea fi un atac omoglific (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatoarele Internet Explorer și Edge. Dacă aveţi siguranţa că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
@@ -856,29 +1000,38 @@
       "Drop the file here to upload": [
         "Plasați fișierul aici pentru a fi încărcat"
       ],
-      "Week": [
-        "Săptămâna"
+      "support team": [
+        "echipa de suport"
       ],
-      "Loading": [
-        "Se încarcă"
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Contul Proton este momentan suspendat. Pentru a putea să-l utilizați, trebuie să plătiți orice factură restantă."
       ],
-      "of": [
-        "din"
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Doriți să primiți un nou cod de verificare sau să folosiți o metodă alternativă de verificare?"
       ],
-      "Unsupported file": [
-        "Fişier nesuportat"
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
       ],
-      "No preview available": [
-        "Nu e disponibilă examinarea"
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
       ],
-      "Preview": [
-        "Examinare"
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Faceți clic pe „Solicitare cod nou” pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această adresă de e-mail nu este corectă, apăsați pe „Editare” pentru a o corecta."
       ],
-      "Loading preview": [
-        "Se încarcă previzualizarea"
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Faceți clic pe „Solicitare cod nou” pentru a primi un cod nou de verificare trimis la $ { strong }. Dacă această acest număr de telefon nu este corect, apăsați pe „Editare” pentru a-l corecta."
       ],
-      "This browser does not support previewing PDF documents. Please download the file.": [
-        "Acest navigator nu acceptă previzualizarea documentelor PDF. Descărcați fișierul."
+      "To fight spam and abuse, please verify you are human.": [
+        "Pentru a combate mesajele nedorite, dovediți că sunteți o persoană."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "E-mailul va fi folosit doar pentru această verificare unică."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Numărul de telefon va fi folosit doar pentru această verificare unică."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
       ],
       "${ contactEmailsLength } Member": [
         "Un membru",
@@ -968,8 +1121,8 @@
       "Only change these settings if you are using PGP with non-ProtonMail recipients.": [
         "Schimbați aceste setări doar dacă utilizați PGP cu destinatari non-ProtonMail."
       ],
-      "All uploaded keys are expired or revoked! Encryption is automatically disabled.": [
-        "Toate cheile încărcate sunt expirate sau revocate! Criptarea a fost dezactivată automat."
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        "Niciuna dintre cheile încărcate nu este validă pentru criptare. Criptarea este dezactivată automat."
       ],
       "Primary": [
         "Primară"
@@ -998,29 +1151,26 @@
         "${ addressCount } adrese de e-mail",
         "${ addressCount } de adrese de e-mail"
       ],
-      "Import contacts": [
-        ""
+      "Loading ${ appName }": [
+        "Se încarcă ${ appName }"
       ],
-      "Your import has started!": [
-        ""
+      "Unsupported file": [
+        "Fişier nesuportat"
       ],
-      "Your contacts are being imported from": [
-        ""
+      "No preview available": [
+        "Nu e disponibilă examinarea"
       ],
-      "to": [
-        ""
+      "Preview": [
+        "Examinare"
       ],
-      "We will notify you once your import is finished.": [
-        ""
+      "Loading preview": [
+        "Se încarcă previzualizarea"
       ],
-      "Large imports can take several days to complete.": [
-        ""
+      "This browser does not support previewing PDF documents. Please download the file.": [
+        "Acest navigator nu acceptă previzualizarea documentelor PDF. Descărcați fișierul."
       ],
-      "You can continue using Proton services as usual.": [
-        ""
-      ],
-      "Your import will not be processed.": [
-        ""
+      "of": [
+        "din"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură restantă. Accesul a fost restricționat. ${ payInvoiceLink }"
@@ -1061,47 +1211,38 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Ați dezactivat accesul la versiunea Beta. Faceți clic ${ refreshButton } pentru a utiliza versiunea stabilă de ${ appName }. Aplicația va fi reîncărcată."
       ],
-      "Loading ${ appName }": [
-        "Se încarcă ${ appName }"
-      ],
       "Screenshot(s) attached": [
         "Capturi de ecran adăugate"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătați pagina sau ${ link } pentru a rezolva majoritatea problemelor."
       ],
+      "Import contacts": [
+        ""
+      ],
+      "Your contacts are being imported from": [
+        ""
+      ],
+      "to": [
+        ""
+      ],
+      "Your import has started!": [
+        ""
+      ],
+      "We will notify you once your import is finished.": [
+        ""
+      ],
+      "Large imports can take several days to complete.": [
+        ""
+      ],
+      "You can continue using Proton services as usual.": [
+        ""
+      ],
+      "Your import will not be processed.": [
+        ""
+      ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navigarea de bază și acțiunile rămân disponibile indiferent de combinațiile de taste care sunt active sau nu în setări."
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Contul Proton este momentan suspendat. Pentru a putea să-l utilizați, trebuie să plătiți orice factură restantă."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Doriți să primiți un nou cod de verificare sau să folosiți o metodă alternativă de verificare?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Faceți clic pe „Solicitare cod nou” pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această adresă de e-mail nu este corectă, apăsați pe „Editare” pentru a o corecta."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Faceți clic pe „Solicitare cod nou” pentru a primi un cod nou de verificare trimis la $ { strong }. Dacă această acest număr de telefon nu este corect, apăsați pe „Editare” pentru a-l corecta."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Pentru a combate mesajele nedorite, dovediți că sunteți o persoană."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "E-mailul va fi folosit doar pentru această verificare unică."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Numărul de telefon va fi folosit doar pentru această verificare unică."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
       ],
       "here": [
         "aici"
@@ -1120,6 +1261,136 @@
       ],
       "Servers are unreachable.": [
         "Servere sunt inaccesibile."
+      ],
+      "Loading folder contents": [
+        "Se încarcă conținut folder"
+      ],
+      "Uploading hundreds of files at once may have a performance impact.": [
+        "Încărcarea simultană a sute de fișiere poate avea un impact asupra performanței."
+      ],
+      "Are you sure you want to permanently delete selected item(s) from trash?": [
+        "Sigur doriţi să ştergeţi definitiv elementele selectate din folderul «Gunoi»?"
+      ],
+      "This will delete the link(s) and remove access to your file(s) for anyone with the link(s).": [
+        "Această operație va șterge și elimina accesul la fișier(e) pentru oricine are legătura(ile)."
+      ],
+      "Moving files": [
+        "Se mută fișierele"
+      ],
+      "You cannot undo this action.": [
+        "Nu puteți anula această acțiune."
+      ],
+      "${ doneCount } Finished": [
+        "${ doneCount } finalizat",
+        "${ doneCount } finalizate",
+        "${ doneCount } finalizate"
+      ],
+      "${ doneUploadsCount } Uploaded": [
+        "${ doneUploadsCount } încărcat",
+        "${ doneUploadsCount } încărcate",
+        "${ doneUploadsCount } încărcate"
+      ],
+      "${ doneDownloadsCount } Downloaded": [
+        "${ doneDownloadsCount } descărcat",
+        "${ doneDownloadsCount } descărcate",
+        "${ doneDownloadsCount } descărcate"
+      ],
+      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
+        "Se încarcă ${ activeUploadsCount } (${ uploadProgress }%)",
+        "Se încarcă ${ activeUploadsCount } (${ uploadProgress }%)",
+        "Se încarcă ${ activeUploadsCount } (${ uploadProgress }%)"
+      ],
+      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
+        "Se descarcă ${ activeDownloadsCount } (${ downloadProgress }%)",
+        "Se descarcă ${ activeDownloadsCount } (${ downloadProgress }%)",
+        "Se descarcă ${ activeDownloadsCount } (${ downloadProgress }%)"
+      ],
+      "${ pausedCount } Paused": [
+        "${ pausedCount } suspendat",
+        "${ pausedCount } suspendate",
+        "${ pausedCount } suspendate"
+      ],
+      "${ canceledCount } Canceled": [
+        "${ canceledCount } anulat",
+        "${ canceledCount } anulate",
+        "${ canceledCount } anulate"
+      ],
+      "${ errorCount } Failed": [
+        "${ errorCount } eșuat",
+        "${ errorCount } eșuate",
+        "${ errorCount } eșuate"
+      ],
+      "Something went wrong, please try again later.": [
+        "A apărut o problemă. Reîncercați mai târziu."
+      ],
+      "Initializing": [
+        "Se inițializează"
+      ],
+      "Conflict": [
+        "Conflict"
+      ],
+      "Queued": [
+        "În așteptare"
+      ],
+      "${ speed }/s": [
+        "${ speed }/s"
+      ],
+      "Paused": [
+        "Suspendat"
+      ],
+      "Downloaded": [
+        "Descărcat"
+      ],
+      "Uploaded": [
+        "Încărcat"
+      ],
+      "Failed": [
+        "Eșuat"
+      ],
+      "Network issue": [
+        "Problemă de rețea"
+      ],
+      "Canceled": [
+        "Anulat"
+      ],
+      "Finalizing": [
+        "Finalizare"
+      ],
+      "Downloading": [
+        "Se descarcă"
+      ],
+      "Uploading": [
+        "Se incarcă"
+      ],
+      "Closing transfer manager will cancel all active transfers, are you sure?": [
+        "Închizând managerul de transferuri se vor anula toate transferurile active, confirmați?"
+      ],
+      "${ uploadName } already exists in this location.": [
+        "${ uploadName } există deja în această locație."
+      ],
+      "What do you want to do?": [
+        "Ce doriți să faceți?"
+      ],
+      "Folder contents will merge into a single folder": [
+        "Conținutul folderelor se va îmbina într-unul singur"
+      ],
+      "A number will be added to the folder name": [
+        "Va fi adăugată o cifră la numele folderului"
+      ],
+      "A number will be added to the filename": [
+        "Va fi adăugată o cifră la numele fișierelor"
+      ],
+      "This will overwrite the existing folder": [
+        "Aceasta va suprascrie folderul existent"
+      ],
+      "This will overwrite the existing file": [
+        "Aceasta va suprascrie fișierul existent"
+      ],
+      "Folder will not be uploaded": [
+        "Folderul nu va fi încărcat"
+      ],
+      "File will not be uploaded": [
+        "Fișierul nu va fi încărcat"
       ],
       "Your files will be encrypted and then saved.": [
         "Fișierele vor fi criptate și apoi salvate."
@@ -1175,8 +1446,8 @@
       "Only the people with the link and the password can access this file.": [
         "Numai persoanele care au legătura și parola pot accesa acest fișier."
       ],
-      "You will lose all unsaved changes.": [
-        "Veți pierde toate modificările nesalvate."
+      "This link was created in a previous version and can not be modified. Delete this link and create a new one to change the settings.": [
+        "Această legătură a fost creată într-o versiune anterioară și nu poate fi modificată. Ștergeți-o și creați una nouă pentru a schimba setările."
       ],
       "Your secure, shareable link for ${ boldNameText }:": [
         "Legătura securizată și partajabilă pentru ${ boldNameText }:"
@@ -1184,96 +1455,20 @@
       "Failed to generate a secure link. Try again later.": [
         "Generarea legăturii securizate a eșuat. Reîncercați mai târziu."
       ],
+      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
+        "Această legătură va fi dezactivată definitiv. Oricine are această legătură nu va mai putea accesa fişierul. Pentru a repartaja fișierul, veți avea nevoie de o legătură nouă."
+      ],
+      "You will lose all unsaved changes.": [
+        "Veți pierde toate modificările nesalvate."
+      ],
       "Preparing link to file": [
         "Se pregătește legătura către fișier"
       ],
       "Creating link to file": [
         "Se creează legătura către fișier"
       ],
-      "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Această legătură va fi dezactivată definitiv. Oricine are această legătură nu va mai putea accesa fişierul. Pentru a repartaja fișierul, veți avea nevoie de o legătură nouă."
-      ],
       "Select an uploaded file and create a link to it.": [
         "Selectaţi un fişier încărcat şi creaţi o legătură la acesta."
-      ],
-      "${ doneCount } Finished": [
-        "${ doneCount } finalizat",
-        "${ doneCount } finalizate",
-        "${ doneCount } finalizate"
-      ],
-      "${ doneUploadsCount } Uploaded": [
-        "${ doneUploadsCount } încărcat",
-        "${ doneUploadsCount } încărcate",
-        "${ doneUploadsCount } încărcate"
-      ],
-      "${ doneDownloadsCount } Downloaded": [
-        "${ doneDownloadsCount } descărcat",
-        "${ doneDownloadsCount } descărcate",
-        "${ doneDownloadsCount } descărcate"
-      ],
-      "${ activeUploadsCount } Uploading (${ uploadProgress }%)": [
-        "Se încarcă ${ activeUploadsCount } (${ uploadProgress }%)",
-        "Se încarcă ${ activeUploadsCount } (${ uploadProgress }%)",
-        "Se încarcă ${ activeUploadsCount } (${ uploadProgress }%)"
-      ],
-      "${ activeDownloadsCount } Downloading (${ downloadProgress }%)": [
-        "Se descarcă ${ activeDownloadsCount } (${ downloadProgress }%)",
-        "Se descarcă ${ activeDownloadsCount } (${ downloadProgress }%)",
-        "Se descarcă ${ activeDownloadsCount } (${ downloadProgress }%)"
-      ],
-      "${ pausedCount } Paused": [
-        "${ pausedCount } suspendat",
-        "${ pausedCount } suspendate",
-        "${ pausedCount } suspendate"
-      ],
-      "${ canceledCount } Canceled": [
-        "${ canceledCount } anulat",
-        "${ canceledCount } anulate",
-        "${ canceledCount } anulate"
-      ],
-      "${ errorCount } Failed": [
-        "${ errorCount } eșuat",
-        "${ errorCount } eșuate",
-        "${ errorCount } eșuate"
-      ],
-      "Something went wrong, please try again later.": [
-        "A apărut o problemă. Reîncercați mai târziu."
-      ],
-      "Initializing": [
-        "Se inițializează"
-      ],
-      "${ speed }/s": [
-        "${ speed }/s"
-      ],
-      "Paused": [
-        "Suspendat"
-      ],
-      "Downloaded": [
-        "Descărcat"
-      ],
-      "Uploaded": [
-        "Încărcat"
-      ],
-      "Failed": [
-        "Eșuat"
-      ],
-      "Network issue": [
-        "Problemă de rețea"
-      ],
-      "Canceled": [
-        "Anulat"
-      ],
-      "Finalizing": [
-        "Finalizare"
-      ],
-      "Downloading": [
-        "Se descarcă"
-      ],
-      "Uploading": [
-        "Se incarcă"
-      ],
-      "Closing transfer manager will cancel all active transfers, are you sure?": [
-        "Închizând managerul de transferuri se vor anula toate transferurile active, confirmați?"
       ],
       "Link expires: ": [
         "Expirare legătură: "
@@ -1290,270 +1485,17 @@
       "Your file is being downloaded.": [
         "Fișierul este în curs de descărcare."
       ],
-      "You cannot undo this action.": [
-        "Nu puteți anula această acțiune."
-      ],
-      "Loading folder contents": [
-        "Se încarcă conținut folder"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Încărcarea simultană a sute de fișiere poate avea un impact asupra performanței."
-      ],
-      "Are you sure you want to permanently delete selected item(s) from trash?": [
-        "Sigur doriţi să ştergeţi definitiv elementele selectate din folderul «Gunoi»?"
-      ],
-      "This will delete the link(s) and remove access to your file(s) for anyone with the link(s).": [
-        "Această operație va șterge și elimina accesul la fișier(e) pentru oricine are legătura(ile)."
-      ],
-      "Moving files": [
-        "Se mută fișierele"
-      ],
       "Trash": [
         "Gunoi"
       ],
       "My Links": [
         "Legăturile mele"
-      ],
-      "What do you want to do?": [
-        "Ce doriți să faceți?"
-      ],
-      "Folder contents will merge into a single folder": [
-        "Conținutul folderelor se va îmbina într-unul singur"
-      ],
-      "A number will be added to the folder name": [
-        "Va fi adăugată o cifră la numele folderului"
-      ],
-      "A number will be added to the filename": [
-        "Va fi adăugată o cifră la numele fișierelor"
-      ],
-      "This will overwrite the existing folder": [
-        "Aceasta va suprascrie folderul existent"
-      ],
-      "This will overwrite the existing file": [
-        "Aceasta va suprascrie fișierul existent"
-      ],
-      "Folder will not be uploaded": [
-        "Folderul nu va fi încărcat"
-      ],
-      "File will not be uploaded": [
-        "Fișierul nu va fi încărcat"
-      ],
-      "Conflict": [
-        "Conflict"
-      ],
-      "Queued": [
-        "În așteptare"
-      ]
-    },
-    "Storage": {
-      "Your current storage:": [
-        "Spațiu actual:"
-      ],
-      "Upgrade storage": [
-        "Mărire spațiu"
-      ],
-      "Release notes": [
-        "Note de lansare"
-      ]
-    },
-    "Placeholder": {
-      "E.g., ": [
-        "Ex.: "
-      ],
-      "Start typing an email address": [
-        "Introduceți o adresă de e-mail"
-      ],
-      "Image URL": [
-        "URL imagine"
-      ],
-      "Filter groups": [
-        "Filtrare grupuri"
-      ],
-      "Search for name or email": [
-        "Căutare după nume sau e-mail"
-      ],
-      "Search for group name": [
-        "Căutare nume grup"
-      ],
-      "Name": [
-        "Nume"
-      ],
-      "e.g. Julia Smith": [
-        "ex: Iulia Sandu"
-      ],
-      "OS name": [
-        "Sistem de operare"
-      ],
-      "OS version": [
-        "Versiune sistem de operare"
-      ],
-      "Proton username": [
-        "Utilizator Proton"
-      ],
-      "A way to contact you": [
-        "Modalitate de contactare"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Descrieți problema incluzând și mesajele de eroare ce apar"
-      ],
-      "Browser name": [
-        "Nume navigator"
-      ],
-      "Browser version": [
-        "Versiune navigator"
-      ],
-      "Mailbox password": [
-        "Parolă mesaje"
-      ],
-      "New name": [
-        "Nume nou"
-      ],
-      "Enter a new folder name": [
-        "Introducere nume folder nou"
-      ]
-    },
-    "Error": {
-      "Email address invalid": [
-        "Adresă de e-mail nevalidă"
-      ],
-      "This field is required": [
-        "Acest câmp este obligatoriu"
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Acest mesaj poate conține unele legături care nu pot fi deschise corect de navigatorul actual."
-      ],
-      "Authentication canceled.": [
-        "Autentificare anulată."
-      ],
-      "Your import will not be processed.": [
-        "Importarea nu va fi procesată."
-      ],
-      "Authentication error.": [
-        "Eroare autentificare."
-      ],
-      "Unknown error": [
-        "Eroare necunoscută."
-      ],
-      "File has no contents to preview": [
-        "Fișierul nu are conținut de afișat"
-      ],
-      "Preferences could not be saved": [
-        "Preferințele nu au putut fi salvate."
-      ],
-      "Image upload failed": [
-        "Eșuare încărcare imagine"
-      ],
-      "Contact could not be saved": [
-        "Contactul nu a putut fi salvat"
-      ],
-      "Some contacts could not be deleted": [
-        "Unele contacte nu s-au putut șterge"
-      ],
-      "Invalid public key file": [
-        "Cheie publică nevalidă."
-      ],
-      "You can't send a mail to more than 100 recipients": [
-        "Nu puteți trimite un e-mail la mai mult de 100 de destinatari."
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Unul dintre contacte nu are adresă de e-mail: ${ noEmailsContactNamesList }",
-        "Câteva contacte nu au adresă de e-mail: ${ noEmailsContactNamesList }",
-        "Câteva contacte nu au adresă de e-mail: ${ noEmailsContactNamesList }"
-      ],
-      "You can't send vCards of more than 10 contacts": [
-        "Nu puteți trimite cărți de vizită („vCard”) la mai mult de 10 persoane de contact."
-      ],
-      "There was an error when exporting the contacts vCards": [
-        "A apărut o eroare la exportarea cărților de vizită a contactelor („vCards”)."
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "Unul dintre grupuri nu are contacte: ${ noContactGroupList }",
-        "Câteva grupuri nu au contacte: ${ noContactGroupList }",
-        "Câteva grupuri nu au contacte: ${ noContactGroupList }"
-      ],
-      "You must set a name": [
-        "Trebuie specificat un nume."
-      ],
-      "A group with this name already exists": [
-        "Un grup cu acest nume există deja."
-      ],
-      "Invalid name": [
-        "Nume nevalid."
-      ],
-      "We were unable to connect to your service provider.": [
-        ""
-      ],
-      "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        ""
-      ],
-      "Can't validate email, try again later": [
-        "Nu se poate valida adresa de e-mail, reîncercați mai târziu."
-      ],
-      "Can't validate phone, try again later": [
-        "Nu se poate valida telefonul, reîncercați mai târziu."
-      ],
-      "Enter 6 digits": [
-        "Introduceți 6 cifre"
-      ],
-      "Invalid verification code": [
-        "Cod de verificare nevalid"
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Parolă căsuță mesaje incorectă. Mai reîncercaţi."
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Date de autentificare incorecte. Mai reîncercați."
-      ],
-      "Missing signature": [
-        "Semnătură lipsă"
-      ],
-      "Contact signature not verified": [
-        "Semnătura contactului nu a fost verificată"
-      ],
-      "Signature not verified": [
-        "Semnătură neverificată"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "Acest câmp necesită un minim de ${ minimumLength } caractere."
-      ],
-      "Email is not valid": [
-        "E-mailul nu este valid"
-      ],
-      "Not a valid number": [
-        "Nu este un număr valid"
-      ],
-      "Passwords do not match": [
-        "Parolele nu coincid"
-      ],
-      "Request timed out.": [
-        "Solicitarea a expirat."
-      ],
-      "Signature verification failed": [
-        "Verificare semnătură eșuată"
-      ],
-      "Could not find address ${ email }.": [
-        "Nu s-a putut găsi adresa ${ email }."
-      ],
-      "Incorrect password. Please try again.": [
-        "Parolă incorectă. Reîncercați."
-      ],
-      "No valid address found": [
-        "Nu s-a găsit o adresă validă"
-      ]
-    },
-    "Time unit": {
-      "${ hours } hour": [
-        "O oră",
-        "${ hours } ore",
-        "${ hours } de ore"
-      ],
-      "${ minutes } minute": [
-        "Un minut",
-        "${ minutes } minute",
-        "${ minutes } de minute"
       ]
     },
     "Label": {
+      "Copy": [
+        "Copiere"
+      ],
       "Reveal password": [
         "Afișare parolă"
       ],
@@ -1581,11 +1523,20 @@
       "Extended address": [
         "Adresa extinsă"
       ],
-      "Copy": [
-        "Copiere"
-      ],
       "Do not ask again": [
         "Nu mă mai întreba"
+      ],
+      "Email address": [
+        "Adresă e-mail"
+      ],
+      "Phone number": [
+        "Număr de telefon"
+      ],
+      "Verification code": [
+        "Cod de verificare"
+      ],
+      "Enter the 6-digit code": [
+        "Introduceți codul din 6 cifre"
       ],
       "Add email address": [
         "Adăugare adresă de e-mail"
@@ -1623,18 +1574,6 @@
       "Export contacts": [
         "Exportare contacte"
       ],
-      "From: ${ fromEmailAddress }": [
-        ""
-      ],
-      "To: ${ toEmailAddress }": [
-        ""
-      ],
-      "Display name": [
-        "Nume afișat"
-      ],
-      "Enable Beta Access": [
-        "Activare acces la Beta"
-      ],
       "Operating system": [
         "Sistem de operare"
       ],
@@ -1643,9 +1582,6 @@
       ],
       "Proton username": [
         "Utilizator Proton"
-      ],
-      "Email address": [
-        "Adresă e-mail"
       ],
       "Category": [
         "Categoria"
@@ -1662,6 +1598,15 @@
       "Browser version": [
         "Versiune navigator"
       ],
+      "Display name": [
+        "Nume afișat"
+      ],
+      "From: ${ fromEmailAddress }": [
+        ""
+      ],
+      "To: ${ toEmailAddress }": [
+        ""
+      ],
       "Keyboard shortcuts": [
         "Combinații de taste"
       ],
@@ -1674,14 +1619,8 @@
       "Select how your composer opens by default.": [
         "Selectați modul în care se deschide implicit editorul de mesaje."
       ],
-      "Phone number": [
-        "Număr de telefon"
-      ],
-      "Verification code": [
-        "Cod de verificare"
-      ],
-      "Enter the 6-digit code": [
-        "Introduceți codul din 6 cifre"
+      "Enable Beta Access": [
+        "Activare acces la Beta"
       ],
       "Cancel": [
         "Anulare"
@@ -1701,6 +1640,30 @@
       "Username or ProtonMail address": [
         "Nume de utilizator sau e-mail ProtonMail"
       ],
+      "Merge a folder": [
+        "Îmbinare folder"
+      ],
+      "Upload anyway": [
+        "Încărcare așa"
+      ],
+      "Replace folder": [
+        "Înlocuire folder"
+      ],
+      "Replace file": [
+        "Înlocuiți fișierul"
+      ],
+      "Skip folder": [
+        "Omitere folder"
+      ],
+      "Skip file": [
+        "Săriți fișierul"
+      ],
+      "Apply to all duplicated folders": [
+        "Aplicare la toate folderele duplicate"
+      ],
+      "Apply to all duplicated files": [
+        "Aplicare la toate fișierele duplicate"
+      ],
       "Audio file": [
         "Fișier audio"
       ],
@@ -1715,12 +1678,6 @@
       ],
       "Unknown file": [
         "Fișier necunoscut"
-      ],
-      "Folder name": [
-        "Nume folder"
-      ],
-      "File name": [
-        "Nume fișier"
       ],
       "Folder": [
         "Folder"
@@ -1737,6 +1694,12 @@
       "File": [
         "Fișier"
       ],
+      "Folder name": [
+        "Nume folder"
+      ],
+      "File name": [
+        "Nume fișier"
+      ],
       "Protect with password": [
         "Protejare cu parolă"
       ],
@@ -1745,24 +1708,122 @@
       ],
       "Report abuse": [
         "Raportare abuz"
+      ]
+    },
+    "PGP key encryption warning": {
+      "Key cannot be used for encryption": [
+        "Cheia nu poate fi folosită pentru criptare."
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Detalii"
       ],
-      "Merge a folder": [
-        "Îmbinare folder"
+      "Request an invite": [
+        "Solicitați o invitație"
       ],
-      "Upload anyway": [
-        "Încărcare așa"
+      "Pay invoice": [
+        "Plată factură"
       ],
-      "Apply to all duplicated folders": [
-        "Aplicare la toate folderele duplicate"
+      "Upgrade account": [
+        "Migrare cont"
       ],
-      "Apply to all duplicated files": [
-        "Aplicare la toate fișierele duplicate"
+      "Upgrade": [
+        "Migrare"
       ],
-      "Replace folder": [
-        "Înlocuire folder"
+      "Go to subscription plans": [
+        "Accesare planuri abonamente"
       ],
-      "Skip folder": [
-        "Omitere folder"
+      "clearing your browser cache": [
+        "golind bufferul navigatorului"
+      ],
+      "My files": [
+        "Fișierele mele"
+      ],
+      "Shared": [
+        "Partajat"
+      ],
+      "Trash": [
+        "Gunoi"
+      ]
+    },
+    "Placeholder": {
+      "E.g., ": [
+        "Ex.: "
+      ],
+      "Start typing an email address": [
+        "Introduceți o adresă de e-mail"
+      ],
+      "Image URL": [
+        "URL imagine"
+      ],
+      "Filter groups": [
+        "Filtrare grupuri"
+      ],
+      "Search for name or email": [
+        "Căutare după nume sau e-mail"
+      ],
+      "Search for group name": [
+        "Căutare nume grup"
+      ],
+      "Name": [
+        "Nume"
+      ],
+      "OS name": [
+        "Sistem de operare"
+      ],
+      "OS version": [
+        "Versiune sistem de operare"
+      ],
+      "Proton username": [
+        "Utilizator Proton"
+      ],
+      "A way to contact you": [
+        "Modalitate de contactare"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Descrieți problema incluzând și mesajele de eroare ce apar"
+      ],
+      "Browser name": [
+        "Nume navigator"
+      ],
+      "Browser version": [
+        "Versiune navigator"
+      ],
+      "e.g. Julia Smith": [
+        "ex: Iulia Sandu"
+      ],
+      "Mailbox password": [
+        "Parolă mesaje"
+      ],
+      "New name": [
+        "Nume nou"
+      ],
+      "Enter a new folder name": [
+        "Introducere nume folder nou"
+      ]
+    },
+    "Time unit": {
+      "${ hours } hour": [
+        "O oră",
+        "${ hours } ore",
+        "${ hours } de ore"
+      ],
+      "${ minutes } minute": [
+        "Un minut",
+        "${ minutes } minute",
+        "${ minutes } de minute"
+      ]
+    },
+    "Storage": {
+      "Your current storage:": [
+        "Spațiu actual:"
+      ],
+      "Upgrade storage": [
+        "Mărire spațiu"
+      ],
+      "Release notes": [
+        "Note de lansare"
       ]
     },
     "Tooltip": {
@@ -1897,14 +1958,14 @@
       "Contacts could not be merged": [
         "Contactele nu au putut fi îmbinate"
       ],
-      "Are you sure you want to discard your import?": [
-        ""
-      ],
       "Your local date & time settings seem to be out of sync.": [
         "Setările locale de dată și oră par să nu fie sincronizate."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
+      ],
+      "Are you sure you want to discard your import?": [
+        ""
       ]
     },
     "Success": {
@@ -1916,6 +1977,12 @@
       ],
       "Address copied to clipboard": [
         "Adresa a fost copiată în memorie"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Cod trimis la ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Verificare reușită"
       ],
       "Preferences saved": [
         "Preferințe salvate"
@@ -1939,20 +2006,17 @@
       "Fingerprint copied to clipboard": [
         "Amprenta a fost copiată în memorie"
       ],
+      "Bug reported": [
+        "Eroare raportată"
+      ],
       "Preference saved": [
         "Preferințe salvate"
       ],
       "Keyboard shortcuts preferences updated": [
         "Preferințele combinațiilor de taste au fost actualizate"
       ],
-      "Bug reported": [
-        "Eroare raportată"
-      ],
-      "Code sent to ${ methodTo }": [
-        "Cod trimis la ${ methodTo }"
-      ],
-      "Verification successful": [
-        "Verificare reușită"
+      "Your files were successfully recovered to \"My files\".": [
+        "Fișierele au fost recuperate cu succes în „Fișierele mele”."
       ],
       "Recovery has started.": [
         "Recuperarea a început."
@@ -1965,9 +2029,6 @@
       ],
       "The link to your file was successfully copied.": [
         "Legătura către fișier a fost copiată cu succes."
-      ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Fișierele au fost recuperate cu succes în „Fișierele mele”."
       ]
     },
     "Hint": {
@@ -1980,36 +2041,26 @@
         "S-au găsit ${ items.length } de sugestii, folosiți tastatura pentru a naviga."
       ]
     },
-    "Link": {
-      "Learn more": [
-        "Detalii"
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Factură restantă"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
-      "Pay invoice": [
-        "Plată factură"
+      "Email": [
+        "E-mail"
       ],
-      "Upgrade account": [
-        "Migrare cont"
+      "SMS": [
+        "SMS"
       ],
-      "Upgrade": [
-        "Migrare"
+      "Manual": [
+        "Manuală"
       ],
-      "Go to subscription plans": [
-        "Accesare planuri abonamente"
-      ],
-      "clearing your browser cache": [
-        "golind bufferul navigatorului"
-      ],
-      "Request an invite": [
-        "Solicitați o invitație"
-      ],
-      "My files": [
-        "Fișierele mele"
-      ],
-      "Shared": [
-        "Partajat"
-      ],
-      "Trash": [
-        "Gunoi"
+      "No verification method available": [
+        "Nici o metodă de verificare disponibilă"
       ]
     },
     "Notification": {
@@ -2019,47 +2070,8 @@
       "Contact group created": [
         "Grup de contacte creat"
       ],
-      "All items will soon be permanently deleted from trash": [
-        "Toate elementele vor fi eliminate permanent din «Gunoi»"
-      ],
-      "Move ${ movingCount } file": [
-        "Mutare ${ movingCount } fișier",
-        "Mutare ${ movingCount } fișiere",
-        "Mutare ${ movingCount } de fișiere"
-      ],
-      "Move ${ movingCount } folder": [
-        "Mutare ${ movingCount } folder",
-        "Mutare ${ movingCount } foldere",
-        "Mută ${ movingCount } foldere"
-      ],
-      "Move ${ movingCount } item": [
-        "Mutare ${ movingCount } element",
-        "Mutare ${ movingCount } elemente",
-        "Mutare ${ movingCount } de elemente"
-      ],
-      "Move ${ itemsToMoveCount } file": [
-        "Mutare un fișier",
-        "Mutare ${ itemsToMoveCount } fișiere",
-        "Mutare ${ itemsToMoveCount } de fișiere"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Mutare un folder",
-        "Mutare ${ itemsToMoveCount } foldere",
-        "Mutare ${ itemsToMoveCount } de foldere"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Mutare un articol",
-        "Mutare ${ itemsToMoveCount } articole",
-        "Mutare ${ itemsToMoveCount } de articole"
-      ],
-      "Your settings have been changed successfully.": [
-        "Setările au fost modificate cu succes."
-      ],
-      "The link to your file was deleted.": [
-        "Legătura către fișier a fost ștearsă."
-      ],
-      "Failed to move, please try again": [
-        "Mutarea a eșuat, mai reîncercați"
+      "Not enough space to upload ${ formattedRemaining }": [
+        "Nu este suficient spațiu pentru a încărca ${ formattedRemaining }"
       ],
       "\"${ firstItemName }\" deleted permanently from trash": [
         "\"${ firstItemName }\" a fost eliminat permanent din «Gunoi»"
@@ -2154,6 +2166,9 @@
         "${ failedMovesCount } elemente nu au putut fi mutate",
         "${ failedMovesCount } de elemente nu au putut fi mutate"
       ],
+      "The link to your file was deleted.": [
+        "Legătura către fișier a fost ștearsă."
+      ],
       "${ deletedCount } link to your file was deleted.": [
         "A fost ștearsă legătura către un fișier.",
         "Au fost șterse ${ deletedCount } legături către fișiere.",
@@ -2167,8 +2182,44 @@
         "Legăturile către ${ failedCount } fișiere nu au putut fi șterse.",
         "Legăturile către ${ failedCount } de fișiere nu au putut fi șterse."
       ],
-      "Not enough space to upload ${ formattedRemaining }": [
-        "Nu este suficient spațiu pentru a încărca ${ formattedRemaining }"
+      "All items will soon be permanently deleted from trash": [
+        "Toate elementele vor fi eliminate permanent din «Gunoi»"
+      ],
+      "Move ${ movingCount } file": [
+        "Mutare ${ movingCount } fișier",
+        "Mutare ${ movingCount } fișiere",
+        "Mutare ${ movingCount } de fișiere"
+      ],
+      "Move ${ movingCount } folder": [
+        "Mutare ${ movingCount } folder",
+        "Mutare ${ movingCount } foldere",
+        "Mută ${ movingCount } foldere"
+      ],
+      "Move ${ movingCount } item": [
+        "Mutare ${ movingCount } element",
+        "Mutare ${ movingCount } elemente",
+        "Mutare ${ movingCount } de elemente"
+      ],
+      "Move ${ itemsToMoveCount } file": [
+        "Mutare un fișier",
+        "Mutare ${ itemsToMoveCount } fișiere",
+        "Mutare ${ itemsToMoveCount } de fișiere"
+      ],
+      "Move ${ itemsToMoveCount } folder": [
+        "Mutare un folder",
+        "Mutare ${ itemsToMoveCount } foldere",
+        "Mutare ${ itemsToMoveCount } de foldere"
+      ],
+      "Move ${ itemsToMoveCount } item": [
+        "Mutare un articol",
+        "Mutare ${ itemsToMoveCount } articole",
+        "Mutare ${ itemsToMoveCount } de articole"
+      ],
+      "Your settings have been changed successfully.": [
+        "Setările au fost modificate cu succes."
+      ],
+      "Failed to move, please try again": [
+        "Mutarea a eșuat, mai reîncercați"
       ]
     },
     "Label for contact group name": {
@@ -2196,9 +2247,6 @@
       "Progress: ${ combinedProgress }%": [
         "Progres: ${ combinedProgress }%"
       ],
-      "No contacts merged.": [
-        "Nu s-au îmbinat contacte."
-      ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "S-a șters un contact.",
         "S-au șters ${ model.deleted.length } din ${ totalBeDeleted } contacte.",
@@ -2208,6 +2256,9 @@
         "S-a îmbinat un contact.",
         "S-au îmbinat ${ model.submitted.length } din ${ { totalBeMerged }} contacte.",
         "S-au îmbinat ${ model.submitted.length } din ${ { totalBeMerged }} de contacte."
+      ],
+      "No contacts merged.": [
+        "Nu s-au îmbinat contacte."
       ]
     },
     "Description": {
@@ -2216,6 +2267,9 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Se îmbină contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
+      ],
+      "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
+        "Se șterg contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Trageți și plasați prioritatea de îmbinare dintre contacte. Debifați contactele pe care nu doriți să le îmbinați."
@@ -2233,9 +2287,6 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Se criptează și se importă contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
-      ],
-      "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Se șterg contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
       ]
     },
     "TableHeader": {
@@ -2412,82 +2463,6 @@
         "S-au criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } de contacte."
       ]
     },
-    "Select files": {
-      "Upload": [
-        "Încărcare"
-      ]
-    },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        ""
-      ]
-    },
-    "Wizard step": {
-      "Authenticate": [
-        ""
-      ],
-      "Configure Import": [
-        ""
-      ],
-      "Import": [
-        ""
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import?": [
-        ""
-      ]
-    },
-    "Onboarding Proton": {
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Aceasta e ceea ce vor vedea oamenii când le trimiteți un e-mail, îi veți invita la un eveniment sau când le veți partaja un fișier."
-      ],
-      "Choose a display name": [
-        "Alegere nume afișat"
-      ],
-      "Select a theme": [
-        "Selectaţi o temă"
-      ],
-      "You can change this anytime in your settings.": [
-        "Puteți modifica oricând aceasta în setări."
-      ],
-      "Discover all Proton services": [
-        "Descoperiți toate serviciile Proton"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Utilizați selectorul de aplicații din stânga sus pentru a accesa alte servicii Proton, inclusiv VPN, Calendar și Drive."
-      ],
-      "Welcome to Proton": [
-        "Bine ați venit la ProtonMail"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Misiunea noastră este să construim un internet în care aveți controlul și confidențialitatea datelor personale. Am actualizat recent Proton - bine ați venit la un internet securizat."
-      ],
-      "Set up your organization": [
-        "Setați organizația"
-      ],
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Configurați-vă organizația, asociați un nume de domeniu și creați conturi pentru a vă asigura că toți membrii organizației vă sunt protejați."
-      ]
-    },
-    "Beta access description": {
-      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "„Accesul la Beta” vă permite să utilizați versiunea beta a ProtonMail, Proton Calendar și Proton Drive înainte de a fi puse la dispoziția publicului. Asta înseamnă că puteți încerca produse noi, să obțineți actualizări noi și să folosiți funcții noi înaintea celorlalți utilizatori."
-      ],
-      "If you encounter issues, you can always disable Beta Access.": [
-        "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
-      ]
-    },
-    "Refresh on apply warning": {
-      "Note: the service will reload after you click the Apply button.": [
-        "Notă: serviciul se va reîncărca după ce faceți clic pe butonul «Aplicare»."
-      ]
-    },
-    "Message display when a new app version is available": {
-      "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "O versiune nouă a ${ appName } este disponibilă. ${ reloadButton }."
-      ]
-    },
     "Apps dropdown": {
       "Proton applications": [
         "Aplicații Proton"
@@ -2512,23 +2487,28 @@
       "Error: ${ errorMessage }": [
         "Eroare: ${ errorMessage }"
       ],
-      "Access denied": [
-        "Acces respins"
+      "Brace yourself till we get the error fixed.": [
+        "Așteptați până când vom rezolva eroarea."
       ],
-      "Not found": [
-        "Negăsit"
+      "You may also ${ refresh } or try again later.": [
+        "Puteți ${ refresh } sau reîncerca mai târziu."
       ],
       "Internal server error": [
         "Eroare internă server"
       ],
-      "Brace yourself till we get the error fixed.": [
-        "Așteptați până când vom rezolva eroarea."
-      ],
       "You may also refresh the page or try again later.": [
         "Puteți împrospăta pagina sau încercați mai târziu."
       ],
-      "You may also ${ refresh } or try again later.": [
-        "Puteți ${ refresh } sau reîncerca mai târziu."
+      "Not found": [
+        "Negăsit"
+      ],
+      "Access denied": [
+        "Acces respins"
+      ]
+    },
+    "Message display when a new app version is available": {
+      "A new version of ${ appName } is available. ${ reloadButton }.": [
+        "O versiune nouă a ${ appName } este disponibilă. ${ reloadButton }."
       ]
     },
     "Text": {
@@ -2673,6 +2653,77 @@
         "Atașare captură ecran"
       ]
     },
+    "Onboarding Proton": {
+      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
+        "Aceasta e ceea ce vor vedea oamenii când le trimiteți un e-mail, îi veți invita la un eveniment sau când le veți partaja un fișier."
+      ],
+      "Choose a display name": [
+        "Alegere nume afișat"
+      ],
+      "Select a theme": [
+        "Selectaţi o temă"
+      ],
+      "You can change this anytime in your settings.": [
+        "Puteți modifica oricând aceasta în setări."
+      ],
+      "Discover all Proton services": [
+        "Descoperiți toate serviciile Proton"
+      ],
+      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
+        "Utilizați selectorul de aplicații din stânga sus pentru a accesa alte servicii Proton, inclusiv VPN, Calendar și Drive."
+      ],
+      "Welcome to Proton": [
+        "Bine ați venit la ProtonMail"
+      ],
+      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
+        "Misiunea noastră este să construim un internet în care aveți controlul și confidențialitatea datelor personale. Am actualizat recent Proton - bine ați venit la un internet securizat."
+      ],
+      "Set up your organization": [
+        "Setați organizația"
+      ],
+      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
+        "Configurați-vă organizația, asociați un nume de domeniu și creați conturi pentru a vă asigura că toți membrii organizației vă sunt protejați."
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        ""
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        ""
+      ],
+      "Configure Import": [
+        ""
+      ],
+      "Import": [
+        ""
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        ""
+      ]
+    },
+    "Select files": {
+      "Upload": [
+        "Încărcare"
+      ]
+    },
+    "Beta access description": {
+      "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "„Accesul la Beta” vă permite să utilizați versiunea beta a ProtonMail, Proton Calendar și Proton Drive înainte de a fi puse la dispoziția publicului. Asta înseamnă că puteți încerca produse noi, să obțineți actualizări noi și să folosiți funcții noi înaintea celorlalți utilizatori."
+      ],
+      "If you encounter issues, you can always disable Beta Access.": [
+        "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
+      ]
+    },
+    "Refresh on apply warning": {
+      "Note: the service will reload after you click the Apply button.": [
+        "Notă: serviciul se va reîncărca după ce faceți clic pe butonul «Aplicare»."
+      ]
+    },
     "Label to change density": {
       "Comfortable": [
         "Confortabilă"
@@ -2697,31 +2748,78 @@
         "Maximizat"
       ]
     },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Factură restantă"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
+    "Contact field label": {
+      "Name": [
+        "Nume"
+      ],
+      "Compact name": [
+        "Nume scurt"
+      ],
+      "Nickname": [
+        "Porecla"
       ],
       "Email": [
         "E-mail"
       ],
-      "SMS": [
-        "SMS"
+      "Phone": [
+        "Telefon"
       ],
-      "Manual": [
-        "Manuală"
+      "Address": [
+        "Adresa"
       ],
-      "No verification method available": [
-        "Nici o metodă de verificare disponibilă"
-      ]
-    },
-    "Import contact. Contact identifier": {
-      "unknown": [
-        "necunoscut"
+      "Photo": [
+        "Fotografie"
+      ],
+      "Organization": [
+        "Organizația"
+      ],
+      "Birthday": [
+        "Data naşterii"
+      ],
+      "Anniversary": [
+        "Aniversare"
+      ],
+      "Title": [
+        "Adresare"
+      ],
+      "Role": [
+        "Rol"
+      ],
+      "Note": [
+        "Observații"
+      ],
+      "URL": [
+        "URL"
+      ],
+      "Gender": [
+        "Gen"
+      ],
+      "Language": [
+        "Limba"
+      ],
+      "Timezone": [
+        "Fus orar"
+      ],
+      "Geo": [
+        "Coordonate"
+      ],
+      "Logo": [
+        "Sigla"
+      ],
+      "Member": [
+        "Membru"
+      ],
+      "IMPP": [
+        "IMPP"
+      ],
+      "Related": [
+        "Rudă"
+      ],
+      "Categories": [
+        "Categorii"
+      ],
+      "Sound": [
+        "Pronunție"
       ]
     },
     "Contact type label": {
@@ -2845,78 +2943,35 @@
         "De urgență"
       ]
     },
-    "Contact field label": {
-      "Name": [
-        "Nume"
+    "file size format": {
+      "bytes": [
+        "octeți"
       ],
-      "Compact name": [
-        "Nume scurt"
+      "KB": [
+        "KB"
       ],
-      "Nickname": [
-        "Porecla"
+      "MB": [
+        "MB"
       ],
-      "Email": [
-        "E-mail"
-      ],
-      "Phone": [
-        "Telefon"
-      ],
-      "Address": [
-        "Adresa"
-      ],
-      "Photo": [
-        "Fotografie"
-      ],
-      "Organization": [
-        "Organizația"
-      ],
-      "Birthday": [
-        "Data naşterii"
-      ],
-      "Anniversary": [
-        "Aniversare"
-      ],
-      "Title": [
-        "Adresare"
-      ],
-      "Role": [
-        "Rol"
-      ],
-      "Note": [
-        "Observații"
-      ],
-      "URL": [
-        "URL"
-      ],
-      "Gender": [
-        "Gen"
-      ],
-      "Language": [
-        "Limba"
-      ],
-      "Timezone": [
-        "Fus orar"
-      ],
-      "Geo": [
-        "Coordonate"
-      ],
-      "Logo": [
-        "Sigla"
-      ],
-      "Member": [
-        "Membru"
-      ],
-      "IMPP": [
-        "IMPP"
-      ],
-      "Related": [
-        "Rudă"
-      ],
-      "Categories": [
-        "Categorii"
-      ],
-      "Sound": [
-        "Pronunție"
+      "GB": [
+        "GB"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Parola trebuie să conțină cel puțin un caracter",
+        "Parola trebuie să conțină cel puțin ${ length } caractere.",
+        "Parola trebuie să conțină cel puțin ${ length } de caractere."
+      ]
+    },
+    "PGP key warning": {
+      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
+        "Adresa de e-mail nu a fost găsită printre id-urile de utilizatori definite în cheia de trimitere (${ keyUserIds })"
+      ]
+    },
+    "Import contact. Contact identifier": {
+      "unknown": [
+        "necunoscut"
       ]
     },
     "Default display name vcard": {
@@ -2958,32 +3013,6 @@
       ],
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
         "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
-      ]
-    },
-    "file size format": {
-      "bytes": [
-        "octeți"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "GB": [
-        "GB"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Parola trebuie să conțină cel puțin un caracter",
-        "Parola trebuie să conțină cel puțin ${ length } caractere.",
-        "Parola trebuie să conțină cel puțin ${ length } de caractere."
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Adresa de e-mail nu a fost găsită printre id-urile de utilizatori definite în cheia de trimitere (${ keyUserIds })"
       ]
     },
     "Keyboard shortcut section name": {
@@ -3159,26 +3188,6 @@
       ],
       "Show original message": [
         "Afișare mesaj original"
-      ]
-    },
-    "Theme": {
-      "Proton": [
-        "Proton"
-      ],
-      "Carbon": [
-        "Carbon"
-      ],
-      "Snow": [
-        "Zăpadă"
-      ],
-      "Monokai": [
-        "Monokai"
-      ],
-      "Contrast": [
-        "Contrast"
-      ],
-      "Legacy": [
-        "Originală"
       ]
     },
     "Validation Error": {
