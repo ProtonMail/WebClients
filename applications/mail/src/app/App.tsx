@@ -22,18 +22,18 @@ const enhancedConfig = {
 
 sentry(enhancedConfig);
 
+if ('registerProtocolHandler' in navigator) {
+    navigator.registerProtocolHandler(
+        'mailto',
+        `${window.location.origin}${MAILTO_PROTOCOL_HANDLER_PATH}`,
+        'ProtonMail'
+    );
+}
+
 const App = () => {
     const [hasInitialAuth] = useState(() => {
         return !window.location.pathname.startsWith(G_OAUTH_REDIRECT_PATH);
     });
-
-    if ('registerProtocolHandler' in navigator) {
-        navigator.registerProtocolHandler(
-            'mailto',
-            `${window.location.origin}${MAILTO_PROTOCOL_HANDLER_PATH}`,
-            'ProtonMail'
-        );
-    }
 
     return (
         <ProtonApp config={enhancedConfig} hasInitialAuth={hasInitialAuth}>
