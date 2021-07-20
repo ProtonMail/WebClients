@@ -4,6 +4,7 @@ import {
     encryptMessage,
     generateKey,
     binaryStringToArray,
+    stringToUtf8Array,
     signMessage,
     arrayToHexString,
     SHA256,
@@ -99,7 +100,7 @@ export const generateLookupHash = async (name: string, hashKey: string) => {
     const signature = await crypto.subtle.sign(
         { name: 'HMAC', hash: { name: 'SHA-256' } },
         key,
-        binaryStringToArray(name)
+        stringToUtf8Array(name)
     );
     return arrayToHexString(new Uint8Array(signature));
 };
