@@ -24,7 +24,7 @@ interface Props {
 }
 
 const ContactModalLabel = ({ field, uid, type = '', onChange, fixedType = false, filteredTypes = [] }: Props) => {
-    const types: { [key: string]: { text: string; value: string }[] } = getAllTypes();
+    const types = getAllTypes();
     const fieldType = types[field];
 
     const otherInformationFields = getOtherInformationFields();
