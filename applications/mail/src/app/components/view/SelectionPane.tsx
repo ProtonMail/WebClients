@@ -62,9 +62,9 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
         if (checkeds) {
             // translator: the variable is an HTML tag containing the number of conversations selected, already formatted in plural form - ex: 1 conversation, 2 conversations
             return conversationMode
-                ? c('Info').jt`You selected ${countOfConversationOrMessage}  with this label`
+                ? c('Info').jt`You selected ${countOfConversationOrMessage} with this label`
                 : // translator: the variable is an HTML tag containing the number of messages selected, already formatted in plural form - ex: 1 message, 2 messages
-                  c('Info').jt`You selected ${countOfConversationOrMessage}  with this label`;
+                  c('Info').jt`You selected ${countOfConversationOrMessage} with this label`;
         }
         // translator: the variable is an HTML tag containing the number of conversations tagged, already formatted in plural form - ex: 1 conversation, 2 conversations
         return conversationMode
