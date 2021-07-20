@@ -16,7 +16,7 @@ export interface ContactMock {
 export const apiContacts = new Map<string, ContactMock>();
 
 const addApiContactMock = () => {
-    addApiMock('contacts/emails', (args) => {
+    addApiMock('contacts/v4/contacts/emails', (args) => {
         const email = args.params.Email;
         if (apiContacts.has(email)) {
             const contactMock = apiContacts.get(email) as ContactMock;
@@ -31,7 +31,7 @@ addApiContactMock();
 
 export const addApiContact = (contact: ContactMock, key: GeneratedKey) => {
     apiContacts.set(contact.email, contact);
-    addApiMock(`contacts/${contact.contactID}`, async () => {
+    addApiMock(`contacts/v4/contacts/${contact.contactID}`, async () => {
         const group = 'group';
         const properties: ContactProperties = [{ field: 'email', value: contact.email, group }];
         if (contact.pinKey) {

@@ -36,7 +36,7 @@ describe('MailHeader', () => {
         minimalCache();
         addToCache('User', user);
         addApiMock('payments/plans', () => ({}));
-        addApiMock('contacts', () => ({ Contacts: [] }));
+        addApiMock('contacts/v4/contacts', () => ({ Contacts: [] }));
 
         props = getProps();
 
