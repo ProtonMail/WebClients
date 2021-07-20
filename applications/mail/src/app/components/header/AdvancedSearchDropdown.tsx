@@ -31,6 +31,7 @@ import {
     useFeature,
     FeatureCode,
     Tooltip,
+    LinkButton,
 } from '@proton/components';
 import { MAILBOX_LABEL_IDS, SECOND, SHOW_MOVED } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -481,13 +482,12 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
 
     // Button to show advanced search options
     const showMoreTitle = showMore ? c('Action').t`Show less search options` : c('Action').t`Show more search options`;
-    const showMoreText = c('Action').t`Advanced search options`;
+    const showMoreText = showMore ? c('Action').t`Less search options` : c('Action').t`More search options`;
     const showMoreButton = (
-        <div aria-expanded={showMore} className="flex flex-justify-center mb1">
-            <Button shape="ghost" color="norm" onClick={toggleShowMore}>
+        <div className="flex mb1">
+            <LinkButton onClick={toggleShowMore} aria-expanded={showMore} title={showMoreTitle}>
                 {showMoreText}
-                <Icon name="caret" className={classnames(['ml0-5', showMore && 'rotateX-180'])} alt={showMoreTitle} />
-            </Button>
+            </LinkButton>
         </div>
     );
 
@@ -536,7 +536,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                 UNSTABLE_AUTO_HEIGHT
             >
                 {showEncryptedSearch && (
-                    <div className="pl1 pr1 pt1">
+                    <div className="pl1-5 pr1-5 pt1-5">
                         <div className="flex flex-column">
                             <div className="flex flew-nowrap mb0-5 flex-align-items-center">
                                 {esHeader}
@@ -545,8 +545,12 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                             {showSubTitleSection && subTitleSection}
                         </div>
                         {showProgress && (
-                            <div className="mt1 flex flex-column">
-                                <span className="color-weak" aria-live="polite" aria-atomic="true">
+                            <div className="mt0-5 flex flex-column">
+                                <span
+                                    className="color-weak relative advanced-search-progress-status"
+                                    aria-live="polite"
+                                    aria-atomic="true"
+                                >
                                     {progressStatus}
                                 </span>
                                 <div className="flex flex-justify-space-between">
@@ -558,7 +562,7 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                                     aria-live="polite"
                                     aria-atomic="true"
                                     className={classnames([
-                                        'color-weak',
+                                        'color-weak relative advanced-search-time-remaining',
                                         isEstimating || isPaused(user.ID) ? 'visibility-hidden' : undefined,
                                     ])}
                                 >
@@ -571,9 +575,14 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                     </div>
                 )}
                 {showAdvancedSearch && (
-                    <form name="advanced-search" className="p1" onSubmit={handleSubmit} onReset={handleReset}>
-                        <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                            <Label className="advanced-search-label" htmlFor="search-keyword">{c('Label')
+                    <form
+                        name="advanced-search"
+                        className="pl1-5 pr1-5 pt1 pb1"
+                        onSubmit={handleSubmit}
+                        onReset={handleReset}
+                    >
+                        <div className="mb1-5 flex flex-nowrap on-mobile-flex-column">
+                            <Label className="advanced-search-label text-semibold" htmlFor="search-keyword">{c('Label')
                                 .t`Keyword`}</Label>
                             <Input
                                 id="search-keyword"
@@ -582,8 +591,9 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                                 onChange={({ target }) => updateModel({ ...model, keyword: target.value })}
                             />
                         </div>
-                        <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                            <Label className="advanced-search-label" htmlFor="labelID">{c('Label').t`Location`}</Label>
+                        <div className="mb0-5 flex flex-nowrap on-mobile-flex-column">
+                            <Label className="advanced-search-label text-semibold" htmlFor="labelID">{c('Label')
+                                .t`Location`}</Label>
                             <Select
                                 id="labelID"
                                 value={model.labelID}
@@ -591,8 +601,9 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                                 onChange={({ target }) => updateModel({ ...model, labelID: target.value })}
                             />
                         </div>
-                        <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                            <Label className="advanced-search-label" htmlFor="address">{c('Label').t`Address`}</Label>
+                        <div className="mb1-5 flex flex-nowrap on-mobile-flex-column">
+                            <Label className="advanced-search-label text-semibold" htmlFor="address">{c('Label')
+                                .t`Address`}</Label>
                             <Select
                                 id="address"
                                 value={model.address}
@@ -600,10 +611,12 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                                 onChange={({ target }) => updateModel({ ...model, address: target.value })}
                             />
                         </div>
-                        <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                            <Label title={c('Label').t`Sender`} className="advanced-search-label" htmlFor="from">{c(
-                                'Label'
-                            ).t`From`}</Label>
+                        <div className="mb0-5 flex flex-nowrap on-mobile-flex-column">
+                            <Label
+                                title={c('Label').t`Sender`}
+                                className="advanced-search-label text-semibold"
+                                htmlFor="from"
+                            >{c('Label').t`From`}</Label>
                             <div className="flex-item-fluid">
                                 <AddressesInput
                                     id="from"
@@ -613,10 +626,12 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                                 />
                             </div>
                         </div>
-                        <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                            <Label title={c('Label').t`Recipient`} className="advanced-search-label" htmlFor="to">{c(
-                                'Label'
-                            ).t`To`}</Label>
+                        <div className="mb1-5 flex flex-nowrap on-mobile-flex-column">
+                            <Label
+                                title={c('Label').t`Recipient`}
+                                className="advanced-search-label text-semibold"
+                                htmlFor="to"
+                            >{c('Label').t`To`}</Label>
                             <div className="flex-item-fluid">
                                 <AddressesInput
                                     id="to"
@@ -626,8 +641,8 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                                 />
                             </div>
                         </div>
-                        <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                            <Label className="advanced-search-label" htmlFor="begin-date">{c('Label')
+                        <div className="mb0-5 flex flex-nowrap on-mobile-flex-column">
+                            <Label className="advanced-search-label text-semibold" htmlFor="begin-date">{c('Label')
                                 .t`Between`}</Label>
                             <div className="flex-item-fluid">
                                 <DateInput
@@ -651,8 +666,9 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                                 />
                             </div>
                         </div>
-                        <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                            <Label className="advanced-search-label" htmlFor="end-date">{c('Label').t`And`}</Label>
+                        <div className="mb1-5 flex flex-nowrap on-mobile-flex-column">
+                            <Label className="advanced-search-label text-semibold" htmlFor="end-date">{c('Label')
+                                .t`And`}</Label>
                             <div className="flex-item-fluid">
                                 <DateInput
                                     placeholder={c('Placeholder').t`End date`}
@@ -665,9 +681,11 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                                 />
                             </div>
                         </div>
-                        <div className="mb1 flex flex-nowrap on-mobile-flex-column">
-                            <Label className="advanced-search-label" id="advanced-search-attachments-label">{c('Label')
-                                .t`Attachments`}</Label>
+                        <div className="mb0-5 flex flex-nowrap on-mobile-flex-column">
+                            <Label
+                                className="advanced-search-label text-semibold"
+                                id="advanced-search-attachments-label"
+                            >{c('Label').t`Attachments`}</Label>
                             <div className="flex-item-fluid pt0-5">
                                 <Radio
                                     id="advanced-search-attachments-all"
@@ -695,8 +713,9 @@ const AdvancedSearchDropdown = ({ keyword: fullInput = '', isNarrow }: Props) =>
                             </div>
                         </div>
                         <div className="mb2 flex flex-nowrap on-mobile-flex-column">
-                            <Label className="advanced-search-label" id="advanced-search-filter-label">{c('Label')
-                                .t`Filter`}</Label>
+                            <Label className="advanced-search-label text-semibold" id="advanced-search-filter-label">{c(
+                                'Label'
+                            ).t`Filter`}</Label>
                             <div className="flex-item-fluid pt0-5">
                                 <Radio
                                     id="advanced-search-filter-all"
