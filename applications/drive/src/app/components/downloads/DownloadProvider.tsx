@@ -21,7 +21,13 @@ import {
 } from '../../utils/transfer';
 import { SupportedMimeTypes } from '../../utils/MimeTypeParser/constants';
 
-const MAX_DOWNLOAD_LOAD = 10; // 1 load unit = 1 chunk, i.e. block request
+// MAX_DOWNLOAD_LOAD limits the maximum of blocks downloaded at the one time.
+// This limits all downloads combined, whereas MAX_THREADS_PER_DOWNLOAD limits
+// one single file download. See that constant for more info.
+// Each download has a bit of overhead before and after download and decryption
+// and thus openpgpjs workers would not be used to full potential. Therefore we
+// double the size of download load to not slow down many smaller downloads.
+const MAX_DOWNLOAD_LOAD = window.navigator?.hardwareConcurrency * 3 || 1;
 type DownloadStateUpdater = TransferState | ((download: Download | PartialDownload) => TransferState);
 type TransferStateUpdateInfo = { error?: Error; startDate?: Date; force?: boolean };
 
@@ -62,6 +68,12 @@ interface UserProviderProps {
     children: React.ReactNode;
 }
 
+// DownloadProvider is the download queue. File or folder can be added to the
+// queue using addToDownloadQueue or addFolderToDownloadQueue, respectively.
+// useEffect inside the provider ensures only reasonable amount of downloads
+// is ongoing, that is up to MAX_DOWNLOAD_LOAD of blocks.
+// For the info how the download from the API works, see initDownload function.
+// For the info how the download to the file works, see FileSaver class.
 export const DownloadProvider = ({ children }: UserProviderProps) => {
     const api = useApi();
     const callbacks = useRef<{ [id: string]: DownloadCallbacks }>({});
@@ -157,6 +169,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
         delete progresses.current[id];
     };
 
+    // Effect keeping up to MAX_DOWNLOAD_LOAD of ongoing downloads.
     useEffect(() => {
         const allDownloads = [...partialDownloads, ...downloads];
         const downloading = allDownloads.filter(isTransferProgress);
@@ -198,6 +211,7 @@ export const DownloadProvider = ({ children }: UserProviderProps) => {
         }
     }, [downloads, partialDownloads]);
 
+    // addToDownloadQueue adds file to the download queue.
     const addToDownloadQueue = async (meta: TransferMeta, downloadInfo: DownloadInfo, cb: DownloadCallbacks) => {
         return new Promise<ReadableStream<Uint8Array>>((resolve) => {
             const { id, downloadControls } = initDownload({

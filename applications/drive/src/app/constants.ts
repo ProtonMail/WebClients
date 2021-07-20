@@ -9,7 +9,21 @@ export const FOLDER_PAGE_SIZE = 150;
 export const BATCH_REQUEST_SIZE = 150;
 export const FILE_CHUNK_SIZE = 4 * MB;
 export const MEMORY_DOWNLOAD_LIMIT = (isMobile() ? 100 : 1000) * MB;
-export const MAX_THREADS_PER_DOWNLOAD = 3;
+// openpgp.js creates hardwareConcurrency of web workers to do decryption.
+// Using less threads for download means we don't use available potential.
+// Using more threads will not speed things up much because thread in this
+// context is not real thread but concurrently running downloads in the main
+// thread.
+// In the future, with the openpgp.js v5, we will create web workers manually.
+// That will allow us to create more workers and keep download and decryption
+// part in the same thread to save some data exchanges between threads.
+// We could really allow more workers than available CPUs, because decryption
+// is done on the stream as data comes in, i.e., not that heavy operation.
+// Of course, we cannot allow, lets say, twice as many workers per download
+// of one file but for all downloads to not kill user's device. Ideally, we
+// want to make download of one file as fast as possible, but limit it to the
+// same speed with more ongoing downloads or uploads.
+export const MAX_THREADS_PER_DOWNLOAD = window.navigator?.hardwareConcurrency || 1;
 export const MAX_THREADS_PER_REQUEST = 5;
 export const DEFAULT_SORT_FIELD = 'ModifyTime';
 export const DEFAULT_SORT_ORDER = SORT_DIRECTION.DESC;

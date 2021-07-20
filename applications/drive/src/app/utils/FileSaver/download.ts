@@ -16,6 +16,9 @@ import { TransferMeta } from '../../interfaces/transfer';
 export const isUnsupported = () =>
     !('serviceWorker' in navigator) || isSafari() || (isEdge() && !isEdgeChromium()) || isIos();
 
+// createDownloadIframe opens download URL created in service worker to
+// initialize the download in the browser. The response has headers to
+// act as the download. See DownloadServiceWorker for more info.
 function createDownloadIframe(src: string) {
     const iframe = document.createElement('iframe');
     iframe.hidden = true;
