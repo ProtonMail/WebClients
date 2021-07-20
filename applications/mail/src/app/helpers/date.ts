@@ -1,4 +1,11 @@
-import { format, formatDistanceToNow as dateFnsFormatDistanceToNow, isToday, isYesterday, isThisWeek } from 'date-fns';
+import {
+    format,
+    formatDistanceToNow as dateFnsFormatDistanceToNow,
+    isToday,
+    isYesterday,
+    isThisWeek,
+    isTomorrow,
+} from 'date-fns';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { c } from 'ttag';
 
@@ -21,3 +28,21 @@ export const formatDistanceToNow = (date: Date) =>
     dateFnsFormatDistanceToNow(date, { locale: dateLocale, addSuffix: true });
 
 export const formatFileNameDate = (date: Date) => format(date, "yyyy-MM-dd'T'HH_mm_ssxxx", { locale: dateLocale });
+
+export const formatScheduledDate = (date: Date | number) => {
+    const formattedDate = format(date, 'EEEE, iii d');
+    const formattedTime = format(date, 'p');
+
+    // translator: This segment is part of a longer sentence which looks like this "Message will be sent on Tuesday, May 11 at 12:30 PM"
+    let dateString = c('Date label').t`on ${formattedDate}`;
+
+    if (isToday(date)) {
+        dateString = c('Date label').t`today`;
+    }
+
+    if (isTomorrow(date)) {
+        dateString = c('Date label').t`tomorrow`;
+    }
+
+    return { dateString, formattedTime };
+};

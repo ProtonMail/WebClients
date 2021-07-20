@@ -21,8 +21,8 @@ const EmptyView = ({ labelID, isSearch }: Props) => {
     const onCompose = useOnCompose();
 
     const scheduleCTAButton = (
-        <Button title={c('Action').t`Schedule a message`} onClick={() => onCompose({ action: MESSAGE_ACTIONS.NEW })}>
-            {c('Action').t`Schedule a message`}
+        <Button title={c('Action').t`Create new message`} onClick={() => onCompose({ action: MESSAGE_ACTIONS.NEW })}>
+            {c('Action').t`Create new message`}
         </Button>
     );
 
@@ -57,7 +57,7 @@ const EmptyView = ({ labelID, isSearch }: Props) => {
                             : isFolder
                             ? c('Search - no results').t`No messages found`
                             : isScheduled
-                            ? c('Search - no results').t`Looks like you have no scheduled messages.`
+                            ? c('Search - no results').t`No messages scheduled`
                             : c('Search - no results').t`No messages found`}
                     </h3>
                     <p data-if="folder">
