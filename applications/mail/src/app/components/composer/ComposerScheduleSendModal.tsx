@@ -118,6 +118,7 @@ const ComposerScheduleSendModal = ({ onClose, onSubmit }: Props) => {
                     min={minDate}
                     max={maxDate}
                     customInputFormat={formatDateInput}
+                    displayErrorMessages
                 />
             </div>
 

@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { cancelSend } from '@proton/shared/lib/api/messages';
 import { isScheduled } from '@proton/shared/lib/mail/messages';
 import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
-import { formatFullDate } from '../../../helpers/date';
+import { formatScheduledDate } from '../../../helpers/date';
 import { MessageExtended } from '../../../models/message';
 import { useOnCompose } from '../../../containers/ComposeProvider';
 
@@ -22,13 +22,11 @@ const ExtraScheduledMessage = ({ message }: Props) => {
 
     const isScheduledMessage = isScheduled(message.data);
 
-    const beforeSendInterval = message.data ? message.data.Time * 1000 - nowDate.getTime() : 0;
+    const scheduleDate = isScheduledMessage && message.data ? new Date(message.data.Time * 1000) : new Date();
+
+    const beforeSendInterval = scheduleDate.getTime() - nowDate.getTime();
     // Prevent from cancelling a message that is about to be sent 30s before
     const isScheduleSentShortly = beforeSendInterval < PREVENT_CANCEL_SEND_INTERVAL;
-    const formattedDate =
-        isScheduledMessage && message.data
-            ? formatFullDate(new Date(message.data.Time * 1000))
-            : formatFullDate(new Date());
 
     useEffect(() => {
         const handle = setInterval(() => setNowDate(new Date()), 1000);
@@ -50,25 +48,36 @@ const ExtraScheduledMessage = ({ message }: Props) => {
         createModal(
             <ConfirmModal
                 onConfirm={handleUnscheduleMessage}
-                title={c('Confirm modal title').t`Unschedule`}
+                title={c('Confirm modal title').t`Edit and reschedule`}
                 cancel={c('Action').t`Cancel`}
-                confirm={<Button color="norm" type="submit">{c('Action').t`Unschedule`}</Button>}
+                confirm={<Button color="norm" type="submit">{c('Action').t`Edit draft`}</Button>}
             >
                 {c('Info')
-                    .t`In order to edit this message, the scheduling needs to be cancelled first. It will be moved to your Drafts.`}
+                    .t`This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.`}
             </ConfirmModal>
         );
+    };
+
+    const getScheduleBannerMessage = () => {
+        if (isScheduleSentShortly) {
+            return c('Info').t`This message will be sent shortly`;
+        }
+
+        const { dateString, formattedTime } = formatScheduledDate(scheduleDate);
+
+        /*
+         * translator: The variables here are the following.
+         * ${dateString} can be either "on Tuesday, May 11", for example, or "today" or "tomorrow"
+         * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
+         * Full sentence for reference: "Message will be sent on Tuesday, May 11 at 12:30 PM"
+         */
+        return c('Info').t`This message will be sent ${dateString} at ${formattedTime}`;
     };
 
     return (
         <div className="bg-info rounded p0-5 mb0-5 flex flex-nowrap">
             <Icon name="clock" className="mtauto mbauto" />
-            <span className="pl0-5 pr0-5 flex-item-fluid">
-                {isScheduleSentShortly
-                    ? c('Action').t`This message will be sent shortly`
-                    : // The variable is the formatted date on which the message will be sent
-                      c('Action').t`This message will be sent on ${formattedDate}.`}
-            </span>
+            <span className="pl0-5 pr0-5 flex-item-fluid">{getScheduleBannerMessage()}</span>
             {!isScheduleSentShortly ? (
                 <button
                     type="button"

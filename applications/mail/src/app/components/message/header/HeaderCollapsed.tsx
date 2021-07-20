@@ -76,7 +76,7 @@ const HeaderCollapsed = ({
                 {messageLoaded && isDraftMessage && (
                     <span className="badge-label-success ml0-5 flex-item-noshrink">{c('Info').t`Draft`}</span>
                 )}
-                {messageLoaded && isOutboxMessage && (
+                {messageLoaded && isOutboxMessage && !isScheduledMessage && (
                     <span className="badge-label-primary ml0-5 flex-item-noshrink">{c('Info').t`Sending`}</span>
                 )}
                 {messageLoaded && isScheduledMessage && (

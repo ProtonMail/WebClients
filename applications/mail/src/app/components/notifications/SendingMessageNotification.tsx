@@ -1,10 +1,10 @@
 import React, { useState, useRef, useLayoutEffect } from 'react';
 import { c } from 'ttag';
-import { format, isToday, isTomorrow } from 'date-fns';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { AppLink, useIsMounted } from '@proton/components';
 import UndoButton from './UndoButton';
+import { formatScheduledDate } from '../../helpers/date';
 
 export const createSendingMessageNotificationManager = () => {
     const listeners = createListeners();
@@ -61,23 +61,11 @@ const SendingMessageNotification = ({ manager, scheduledAt, conversationID }: Se
         if (scheduledAt) {
             const scheduleDate = scheduledAt * 1000;
 
-            const formattedDate = format(scheduleDate, 'EEEE, iii d');
-            const formattedTime = format(scheduleDate, 'p');
-
-            // translator: This segment is part of a longer sentence which looks like this "Message will be sent on Tuesday, May 11 at 12:30 PM"
-            let dateString = c('Date label').t`on ${formattedDate}`;
-
-            if (isToday(scheduleDate)) {
-                dateString = c('Date label').t`Today`;
-            }
-
-            if (isTomorrow(scheduleDate)) {
-                dateString = c('Date label').t`Tomorrow`;
-            }
+            const { dateString, formattedTime } = formatScheduledDate(scheduleDate);
 
             /*
              * translator: The variables here are the following.
-             * ${dateString} can be either "on Tuesday, May 11", for example, or "Today" or "Tomorrow"
+             * ${dateString} can be either "on Tuesday, May 11", for example, or "today" or "tomorrow"
              * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
              * Full sentence for reference: "Message will be sent on Tuesday, May 11 at 12:30 PM"
              */
