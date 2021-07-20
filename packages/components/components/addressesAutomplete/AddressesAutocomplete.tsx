@@ -1,5 +1,5 @@
 import { canonizeEmail } from '@proton/shared/lib/helpers/email';
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
@@ -19,6 +19,7 @@ import {
     GroupsWithContactsMap,
 } from './helper';
 import Icon from '../icon/Icon';
+import { useCombinedRefs } from '../../hooks';
 
 interface Props extends Omit<InputProps, 'value'> {
     id: string;
@@ -61,6 +62,7 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
     ) => {
         const [input, setInput] = useState('');
         const [emailError, setEmailError] = useState('');
+        const inputRef = useRef<HTMLInputElement>(null);
 
         const [recipientsByAddress, recipientsByGroup] = useMemo(() => {
             return recipients.reduce<[Set<string>, Set<string>]>(
@@ -154,6 +156,7 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
             options: filteredOptions,
             onSelect: handleSelect,
             input,
+            inputRef,
         });
 
         const handleInputChange = (newValue: string) => {
@@ -181,7 +184,7 @@ const AddressesAutocomplete = React.forwardRef<HTMLInputElement, Props>(
                 <Input
                     {...rest}
                     {...inputProps}
-                    ref={ref}
+                    ref={useCombinedRefs(ref, inputRef)}
                     value={input}
                     onChange={(event) => {
                         handleInputChange(event.currentTarget.value.trimStart());

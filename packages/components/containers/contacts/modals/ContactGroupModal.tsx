@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, useRef, useMemo } from 'react';
+import React, { useState, ChangeEvent, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 import { randomIntFromInterval, noop } from '@proton/shared/lib/helpers/function';
 import { diff, orderBy } from '@proton/shared/lib/helpers/array';
@@ -17,7 +17,7 @@ import {
     Autocomplete,
     Button,
 } from '../../../components';
-import { useContactEmails, useContactGroups, useEventListener } from '../../../hooks';
+import { useContactEmails, useContactGroups } from '../../../hooks';
 import useUpdateGroup from '../useUpdateGroup';
 
 interface Props {
@@ -32,7 +32,6 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
     const [contactEmails] = useContactEmails();
     const [value, setValue] = useState('');
     const updateGroup = useUpdateGroup();
-    const autocompleteRef = useRef<HTMLDivElement>(null);
 
     const isValidEmail = useMemo(() => validateEmailAddress(value), [value]);
 
@@ -59,14 +58,6 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
     const handleChangeName = ({ target }: ChangeEvent<HTMLInputElement>) => setModel({ ...model, name: target.value });
     const handleChangeColor = (color: string) => setModel({ ...model, color });
 
-    const handleSelect = (newContactEmail: ContactEmail) => {
-        setModel((model) => ({
-            ...model,
-            contactEmails: [...model.contactEmails, newContactEmail],
-        }));
-        setValue('');
-    };
-
     const handleAdd = () => {
         if (!isValidEmail) {
             return;
@@ -76,6 +67,18 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
             contactEmails: [...model.contactEmails, { Name: value, Email: value } as ContactEmail],
         }));
         setValue('');
+    };
+
+    const handleSelect = (newContactEmail: ContactEmail | string) => {
+        if (typeof newContactEmail === 'string') {
+            handleAdd();
+        } else {
+            setModel((model) => ({
+                ...model,
+                contactEmails: [...model.contactEmails, newContactEmail],
+            }));
+            setValue('');
+        }
     };
 
     const handleDeleteEmail = (contactEmailID: string) => {
@@ -112,21 +115,6 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
         }
     };
 
-    useEventListener(
-        autocompleteRef,
-        'keydown',
-        (event: KeyboardEvent) => {
-            if (event.key === 'Enter') {
-                if (isValidEmail) {
-                    handleAdd();
-                }
-                event.stopPropagation();
-                event.preventDefault();
-            }
-        },
-        [autocompleteRef.current]
-    );
-
     const contactEmailsLength = model.contactEmails.length;
 
     return (
@@ -156,7 +144,7 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
                 </Field>
             </Row>
             {options.length ? (
-                <div ref={autocompleteRef} className="flex flex-nowrap mb1 on-mobile-flex-column">
+                <div className="flex flex-nowrap mb1 on-mobile-flex-column">
                     <Label htmlFor="contactGroupEmail">{c('Label').t`Add email address`}</Label>
                     <Field className="flex-item-fluid">
                         <Autocomplete

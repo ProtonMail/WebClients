@@ -63,7 +63,11 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
             }
 
             if (!icon) {
-                return child;
+                return (
+                    <div className="w100" ref={containerRef}>
+                        {child}
+                    </div>
+                );
             }
 
             return (

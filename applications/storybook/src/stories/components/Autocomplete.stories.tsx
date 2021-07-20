@@ -75,7 +75,8 @@ interface ServiceOption {
 
 export const Custom = () => {
     const [value, setValue] = useState('');
-    const ref = useRef<HTMLInputElement>(null);
+    const containerRef = useRef<HTMLInputElement>(null);
+    const inputRef = useRef<HTMLInputElement>(null);
 
     const options = ['reddit', 'twitter', 'yahoo', 'youtube'].map((service) => {
         return {
@@ -98,6 +99,7 @@ export const Custom = () => {
         options: filteredOptions,
         onSelect: handleSelect,
         input: value,
+        inputRef,
     });
 
     const handleSelectOption = (optionValue: ServiceOption) => {
@@ -110,13 +112,14 @@ export const Custom = () => {
             <Input
                 {...inputProps}
                 placeholder="Service"
-                ref={ref}
+                ref={inputRef}
+                containerRef={containerRef}
                 value={value}
                 onChange={(event) => {
                     setValue(event.currentTarget.value.trimStart());
                 }}
             />
-            <AutocompleteList anchorRef={ref} {...suggestionProps}>
+            <AutocompleteList anchorRef={containerRef} {...suggestionProps}>
                 {filteredOptions.map(({ chunks, text, option }, index) => {
                     return (
                         <Option
