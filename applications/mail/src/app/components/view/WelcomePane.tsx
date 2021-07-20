@@ -1,19 +1,21 @@
 import React from 'react';
 import {
-    useUser,
     AppLink,
-    Href,
-    useImporters,
-    useFeature,
-    FeatureCode,
-    Loader,
     ButtonLike,
-    SettingsLink,
+    FeatureCode,
+    Href,
+    Loader,
+    useFeature,
+    useImporters,
+    usePlans,
+    useTheme,
+    useUser,
+    useUserSettings,
 } from '@proton/components';
 import { c, msgid } from 'ttag';
 import { Location } from 'history';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { MAILBOX_LABEL_IDS, APPS } from '@proton/shared/lib/constants';
+import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { capitalize } from '@proton/shared/lib/helpers/string';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import envelope from '@proton/styles/assets/img/placeholders/welcome-pane.svg';
@@ -22,6 +24,7 @@ import appStore from '@proton/styles/assets/img/shared/app-store.svg';
 import playStore from '@proton/styles/assets/img/shared/play-store.svg';
 
 import { isConversationMode } from '../../helpers/mailSettings';
+import WelcomePaneBanner from './WelcomePaneBanner';
 
 interface ContainerProps {
     children: React.ReactNode;
@@ -45,9 +48,12 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
     );
 
     const [user, loadingUser] = useUser();
+    const [plans = [], loadingPlans] = usePlans();
+    const [theme] = useTheme();
+    const [userSettings, loadingUserSettings] = useUserSettings();
     const [imports = [], importsLoading] = useImporters();
     const hasAlreadyImported = imports.length;
-    const loading = importsLoading || loadingUsedMailMobileApp || loadingUser;
+    const loading = importsLoading || loadingUsedMailMobileApp || loadingUser || loadingPlans || loadingUserSettings;
 
     const unread = labelCount?.Unread || 0;
     const total = labelCount?.Total || 0;
@@ -90,14 +96,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
 
     return (
         <>
-            {user.hasPaidMail ? null : (
-                <div className="bg-primary p1 text-center">
-                    <span className="mr1">{c('Info').jt`Increase storage space starting at $4/month.`}</span>
-                    <SettingsLink path="/dashboard" className="text-bold link align-baseline color-inherit">
-                        {c('Action').t`Upgrade`}
-                    </SettingsLink>
-                </div>
-            )}
+            {user.hasPaidMail ? null : <WelcomePaneBanner plans={plans} userSettings={userSettings} theme={theme} />}
             <Container>
                 <h1>{user.DisplayName ? c('Title').jt`Welcome ${userName}` : c('Title').t`Welcome`}</h1>
                 <p className="text-keep-space">{labelCount ? counterMessage : null}</p>
