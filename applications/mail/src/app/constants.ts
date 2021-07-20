@@ -82,6 +82,12 @@ export enum MESSAGE_ACTIONS {
     FORWARD = 2,
 }
 
+export const MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM = `to`;
+// Path: /inbox/?to=%s
+export const MAILTO_PROTOCOL_HANDLER_PATH = `/${
+    LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]
+}/?${MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM}=%s`;
+
 export const DRAG_ELEMENT_KEY = 'drag-element';
 export const DRAG_ELEMENT_ID_KEY = 'drag-element-id';
 export const DRAG_ADDRESS_KEY = 'drag-address';
