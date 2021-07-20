@@ -22,12 +22,12 @@ function ActionsLabel({ label }: Props) {
     const I18N: { [key: number]: any } = {
         [LABEL_TYPE.MESSAGE_LABEL]: {
             content: c('Info')
-                .t`Please note that emails tagged with this label will NOT be deleted. They can still be found in their respective folder. To permanently delete these emails, open your mailbox, navigate to the label, and select the EMPTY LABEL option from the tool bar.`,
+                .t`Emails tagged with this label will not be deleted and can still be found in the respective folder.`,
             confirm: c('Info').t`Are you sure you want to delete this label?`,
         },
         [LABEL_TYPE.MESSAGE_FOLDER]: {
             content: c('Info')
-                .t`Please note that emails stored in this folder will NOT be deleted. They can still be found in the All Mail folder. To permanently delete these emails, open your mailbox, navigate to the folder, and select the EMPTY FOLDER option from the tool bar.`,
+                .t`Emails stored in this folder will not be deleted and can still be found in the All Mail folder.`,
             confirm: c('Info').t`Are you sure you want to delete this folder?`,
         },
     };
@@ -36,7 +36,11 @@ function ActionsLabel({ label }: Props) {
         return new Promise((resolve, reject) => {
             createModal(
                 <ConfirmModal
-                    title={c('Title').t`Delete ${Name}`}
+                    title={
+                        Type === LABEL_TYPE.MESSAGE_FOLDER
+                            ? c('Title').t`Delete ${Name} folder`
+                            : c('Title').t`Delete ${Name} label`
+                    }
                     onConfirm={resolve as () => void}
                     confirm={<ErrorButton type="submit">{c('Action').t`Delete`}</ErrorButton>}
                     onClose={reject}

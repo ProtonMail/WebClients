@@ -14,7 +14,7 @@ import {
 import { emptyLabel as emptyLabelRequest } from '@proton/shared/lib/api/messages';
 
 import { useOptimisticEmptyLabel } from './optimistic/useOptimisticEmptyLabel';
-import { isCustomLabel, getLabelName } from '../helpers/labels';
+import { isCustomLabel } from '../helpers/labels';
 
 export const useEmptyLabel = () => {
     const { createNotification } = useNotifications();
@@ -28,14 +28,13 @@ export const useEmptyLabel = () => {
     const emptyLabel = useCallback(
         async (labelID: string) => {
             const isLabel = isCustomLabel(labelID, labels);
-            const labelName = getLabelName(labelID, labels, folders);
             await new Promise((resolve, reject) => {
                 createModal(
                     <ConfirmModal
-                        title={c('Title').t`Empty ${labelName}`}
+                        title={c('Title').t`Delete all messages`}
                         confirm={
                             <ErrorButton type="submit" data-testid="confirm-empty-folder">
-                                {c('Action').t`Empty`}
+                                {c('Action').t`Delete`}
                             </ErrorButton>
                         }
                         onConfirm={() => resolve(undefined)}
@@ -43,15 +42,13 @@ export const useEmptyLabel = () => {
                     >
                         <Alert type="info">
                             {isLabel
-                                ? c('Info')
-                                      .t`Please note that if you empty this label, you will permanently delete all the emails with this label.`
-                                : c('Info')
-                                      .t`Please note that if you empty this folder, you will permanently delete all the emails stored in it.`}
+                                ? c('Info').t`All messages stored with this label will be permanently deleted.`
+                                : c('Info').t`All messages stored in this folder will be permanently deleted.`}
                         </Alert>
                         <Alert type="error">
                             {isLabel
-                                ? c('Info').t`Are you sure you want to empty this label?`
-                                : c('Info').t`Are you sure you want to empty this folder?`}
+                                ? c('Info').t`Are you sure you want to delete all messages with this label?`
+                                : c('Info').t`Are you sure you want to delete all messages in this folder?`}
                         </Alert>
                     </ConfirmModal>
                 );
