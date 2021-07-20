@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { escapeRegex, getMatches, MatchChunk } from '@proton/shared/lib/helpers/regex';
+import { useHotkeys } from '../../hooks';
 
 export interface DataWithMatches<T> {
     option: T;
@@ -50,9 +51,10 @@ interface UseAutocompleteProps<V> {
     onSelect: (value: V) => void;
     options: DataWithMatches<V>[];
     input: string;
+    inputRef: React.RefObject<HTMLInputElement>;
 }
 
-export const useAutocomplete = <T>({ id, options, onSelect, input }: UseAutocompleteProps<T>) => {
+export const useAutocomplete = <T>({ id, options, onSelect, input, inputRef }: UseAutocompleteProps<T>) => {
     const [highlightedIndex, setHighlightedIndex] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
 
@@ -90,6 +92,19 @@ export const useAutocomplete = <T>({ id, options, onSelect, input }: UseAutocomp
             setHighlightedIndex(0);
         }
     }, [input]);
+
+    useHotkeys(inputRef, [
+        [
+            'Escape',
+            (e) => {
+                if (isOpen) {
+                    e.preventDefault();
+                    onClose();
+                    e.stopPropagation();
+                }
+            },
+        ],
+    ]);
 
     const handleInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         switch (e.key) {
