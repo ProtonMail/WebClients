@@ -52,6 +52,10 @@ export interface DownloadCallbacks {
     transformBlockStream?: StreamTransformer;
 }
 
+// initDownload prepares download transfer for the DownloadProvider queue.
+// Download is not started right away, it has to be started explicitly by
+// DownloadProvider.
+// How the download itself starts, see start function inside.
 export const initDownload = ({
     getBlocks,
     onStart,
@@ -69,6 +73,13 @@ export const initDownload = ({
     let abortController = new AbortController();
     let paused = false;
 
+    // start fetches blocks of the file and downloads those blocks in parallel.
+    // Note its not real parallelism. This runs in main thread but that's fine
+    // as the main job is to do requests to the API. Decryption (executed in
+    // transformBlockStream) is passed to web workers, currently created by
+    // openpgpjs library. The data exchanges are a bit of downside, therefore
+    // we want create web workers manually  in the future that will do download
+    // and decryption together. See MAX_THREADS_PER_DOWNLOAD for more info.
     const start = async (api: Api) => {
         if (abortController.signal.aborted) {
             throw new TransferCancel({ id });
