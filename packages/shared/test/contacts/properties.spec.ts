@@ -1,5 +1,9 @@
+import Papa from 'papaparse';
+
 import { addGroup, addPref, getContactCategories, getContactEmails } from '../../lib/contacts/properties';
-import { parse } from '../../lib/contacts/vcard';
+import { parse, toICAL } from '../../lib/contacts/vcard';
+import { prepare, readCsv } from '../../lib/contacts/helpers/csv';
+import { toCRLF } from '../calendar/veventHelper.spec';
 
 describe('getContactEmails', () => {
     it('should retrieve contact emails from a vcard contact', () => {
@@ -120,5 +124,67 @@ END:VCARD`)
             )
         );
         expect(getContactCategories(properties)).toEqual([]);
+    });
+});
+
+describe('toICAL', () => {
+    it('should roundtrip', () => {
+        const vcard = toCRLF(`BEGIN:VCARD
+VERSION:4.0
+BDAY:19691203
+END:VCARD`);
+        const properties = parse(vcard);
+        expect(toICAL(properties).toString()).toEqual(vcard);
+    });
+});
+
+describe('readCSV', () => {
+    it('should convert unwanted fields to notes', async () => {
+        const csvData = [{ 'first name': 'name1', nickname: 'nickname1', related: 'related1' }];
+        const csvColumns = ['first name', 'nickname', 'related'];
+        const blob = new Blob([Papa.unparse({ data: csvData, fields: csvColumns })]);
+        const csv = new File([blob], 'csvData.csv');
+
+        const parsedCsvContacts = await readCsv(csv);
+        const preVcardsContacts = prepare(parsedCsvContacts);
+
+        expect(preVcardsContacts[0][0][0].field).toEqual('fn');
+        expect(preVcardsContacts[0][1][0].field).toEqual('note');
+        expect(preVcardsContacts[0][2][0].field).toEqual('note');
+    });
+
+    it('should map once birthday, anniversary and gender', async () => {
+        const csvData = [
+            {
+                'first name': 'name1',
+                birthday: '04/03/2021',
+                birthday2: '03/01/2021',
+                anniversary: '04/03/2021',
+                anniversary2: '03/01/2021',
+                gender: 'M',
+                gender2: 'F',
+            },
+        ];
+        const csvColumns = [
+            'first name',
+            'nickname',
+            'birthday',
+            'birthday',
+            'anniversary',
+            'anniversary',
+            'gender',
+            'gender',
+        ];
+        const blob = new Blob([Papa.unparse({ data: csvData, fields: csvColumns })]);
+        const csv = new File([blob], 'csvData.csv');
+
+        const parsedCsvContacts = await readCsv(csv);
+        const preVcardsContacts = prepare(parsedCsvContacts);
+
+        expect(preVcardsContacts[0][0][0].field).toEqual('fn');
+        expect(preVcardsContacts[0][1][0].field).toEqual('bday');
+        expect(preVcardsContacts[0][2][0].field).toEqual('anniversary');
+        expect(preVcardsContacts[0][3][0].field).toEqual('gender');
+        expect(preVcardsContacts[0].length).toEqual(4);
     });
 });
