@@ -17,6 +17,7 @@ export interface Props {
     divisor?: number;
     suffix?: string;
     prefix?: string;
+    isDisplayedInSentence?: boolean;
 }
 
 const Price = ({
@@ -26,6 +27,7 @@ const Price = ({
     divisor = 100,
     suffix = '',
     prefix = '',
+    isDisplayedInSentence = false,
 }: Props) => {
     const value = humanPrice(amount, divisor);
     const [integer, decimal] = `${value}`.split('.');
@@ -37,8 +39,12 @@ const Price = ({
             {decimal ? <span className="decimal">.{decimal}</span> : null}
         </span>
     );
-    const s = suffix ? <span className="suffix ml0-25">{suffix}</span> : null;
-    const pr = prefix ? <span className="prefix">{prefix}</span> : null;
+    const s = suffix ? (
+        <span className={classnames(['suffix', !isDisplayedInSentence && 'ml0-25'])}>{suffix}</span>
+    ) : null;
+    const pr = prefix ? (
+        <span className={classnames(['prefix', isDisplayedInSentence && 'mr0-25'])}>{prefix}</span>
+    ) : null;
 
     if (currency === 'USD') {
         return (
