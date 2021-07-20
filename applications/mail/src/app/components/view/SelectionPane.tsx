@@ -41,15 +41,39 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
         <strong key="email">{c('Info').ngettext(msgid`${count} message`, `${count} messages`, count)}</strong>
     );
 
-    const folderText = checkeds
-        ? c('Info').jt`You selected ${countOfConversationOrMessage} from this folder`
-        : c('Info').jt`You have ${countOfConversationOrMessage} stored in this folder`;
+    // Need to have 2 similar strings for each case, in order to translate them correctly depending on message and conversation gender
+    const getFolderText = () => {
+        if (checkeds) {
+            // translator: the variable is an HTML tag containing the number of conversations selected, already formatted in plural form - ex: 1 conversation, 2 conversations
+            return conversationMode
+                ? c('Info').jt`You selected ${countOfConversationOrMessage} from this folder`
+                : // translator: the variable is an HTML tag containing the number of messages selected, already formatted in plural form - ex: 1 message, 2 messages
+                  c('Info').jt`You selected ${countOfConversationOrMessage} from this folder`;
+        }
+        // translator: the variable is an HTML tag containing the number of conversations stored, already formatted in plural form - ex: 1 conversation, 2 conversations
+        return conversationMode
+            ? c('Info').jt`You have ${countOfConversationOrMessage} stored in this folder`
+            : // translator: the variable is an HTML tag containing the number of conversations stored, already formatted in plural form - ex: 1 message, 2 messages
+              c('Info').jt`You have ${countOfConversationOrMessage} stored in this folder`;
+    };
 
-    const labelText = checkeds
-        ? c('Info').jt`You selected ${countOfConversationOrMessage} with this label`
-        : c('Info').jt`You have ${countOfConversationOrMessage} tagged with this label`;
+    // Need to have 2 similar strings for each case, in order to translate them correctly depending on message and conversation gender
+    const getLabelText = () => {
+        if (checkeds) {
+            // translator: the variable is an HTML tag containing the number of conversations selected, already formatted in plural form - ex: 1 conversation, 2 conversations
+            return conversationMode
+                ? c('Info').jt`You selected ${countOfConversationOrMessage}  with this label`
+                : // translator: the variable is an HTML tag containing the number of messages selected, already formatted in plural form - ex: 1 message, 2 messages
+                  c('Info').jt`You selected ${countOfConversationOrMessage}  with this label`;
+        }
+        // translator: the variable is an HTML tag containing the number of conversations tagged, already formatted in plural form - ex: 1 conversation, 2 conversations
+        return conversationMode
+            ? c('Info').jt`You have ${countOfConversationOrMessage} tagged with this label`
+            : // translator: the variable is an HTML tag containing the number of messages tagged, already formatted in plural form - ex: 1 message, 2 messages
+              c('Info').jt`You have ${countOfConversationOrMessage} tagged with this label`;
+    };
 
-    const text = isCustomLabel ? labelText : folderText;
+    const text = isCustomLabel ? getLabelText() : getFolderText();
 
     const showText = checkeds || labelCount;
 
