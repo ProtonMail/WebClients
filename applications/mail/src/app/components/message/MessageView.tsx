@@ -339,6 +339,7 @@ const MessageView = (
                         moveDropdownToggleRef={moveDropdownToggleRef}
                         filterDropdownToggleRef={filterDropdownToggleRef}
                         highlightKeywords={highlightKeywords}
+                        parentMessageRef={elementRef}
                     />
                     <MessageBody
                         messageLoaded={messageLoaded}

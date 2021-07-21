@@ -55,6 +55,7 @@ interface Props {
     onToggle: () => void;
     onSourceMode: (sourceMode: boolean) => void;
     breakpoints: Breakpoints;
+    parentMessageRef: React.RefObject<HTMLElement>;
 }
 
 const HeaderMoreDropdown = ({
@@ -66,6 +67,7 @@ const HeaderMoreDropdown = ({
     onToggle,
     onSourceMode,
     breakpoints,
+    parentMessageRef,
 }: Props) => {
     const api = useApi();
     const attachmentsCache = useAttachmentCache();
@@ -89,8 +91,8 @@ const HeaderMoreDropdown = ({
     const handleUnread = async () => {
         closeDropdown.current?.();
         onToggle();
-        onBack();
-        await markAs([message.data as Element], labelID, MARK_AS_STATUS.UNREAD);
+        parentMessageRef.current?.focus();
+        markAs([message.data as Element], labelID, MARK_AS_STATUS.UNREAD);
         await call();
     };
 
