@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import { Button, Title, useLoading, TextLoader, VpnLogo, Href, FullLoader, useApi } from '@proton/components';
 import { c } from 'ttag';
 import { BLACK_FRIDAY, CYCLE } from '@proton/shared/lib/constants';
-import { checkCookie } from '@proton/shared/lib/helpers/cookies';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import AccountStep from './AccountStep/AccountStep';
 import PlanStep from './PlanStep/PlanStep';
 import useSignup from './useSignup';
 import VerificationStep from './VerificationStep/VerificationStep';
 import PaymentStep from './PaymentStep/PaymentStep';
-import { PLAN, VPN_PLANS, BEST_DEAL_PLANS, PLAN_BUNDLES } from './plans';
+import { PLAN, VPN_PLANS, PLAN_BUNDLES } from './plans';
 import PlanDetails from './SelectedPlan/PlanDetails';
 import PlanUpsell from './SelectedPlan/PlanUpsell';
 import useVerification from './VerificationStep/useVerification';
@@ -26,9 +25,6 @@ const SignupState = {
     Payment: 'payment',
     MobileRedirection: 'mobile-redirection',
 };
-
-const BRAVE_COOKIE = '1397';
-const BESTDEAL_COOKIE = 'bestdeal';
 
 // TODO: Flexible urls and plans for reuse between project
 const SignupContainer = ({ match, history, onLogin }) => {
@@ -50,9 +46,7 @@ const SignupContainer = ({ match, history, onLogin }) => {
             cycle: billingCycle,
         });
 
-    const hasCookieOffer = checkCookie('offer', BESTDEAL_COOKIE) || checkCookie('offer', BRAVE_COOKIE);
-    const availablePlans =
-        hasCookieOffer && !redirectToMobileRef.current ? BEST_DEAL_PLANS : PLAN_BUNDLES[preSelectedPlan] || VPN_PLANS;
+    const availablePlans = PLAN_BUNDLES[preSelectedPlan] || VPN_PLANS;
 
     const normalApi = useApi();
     const silentApi = (config) => normalApi({ ...config, silence: true });
