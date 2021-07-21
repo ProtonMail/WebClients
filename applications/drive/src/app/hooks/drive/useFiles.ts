@@ -45,7 +45,7 @@ import {
 import { useDownloadProvider } from '../../components/downloads/DownloadProvider';
 import { initDownload, StreamTransformer } from '../../components/downloads/download';
 import { streamToBuffer } from '../../utils/stream';
-import { HashCheckResult, LinkType, FileLinkMeta, isFolderLinkMeta } from '../../interfaces/link';
+import { HashCheckResult, LinkType, FileLinkMeta, isFolderLinkMeta, LinkMeta } from '../../interfaces/link';
 import { queryCheckAvailableHashes } from '../../api/link';
 import { ValidationError, validateLinkName } from '../../utils/validation';
 import useDriveCrypto from './useDriveCrypto';
@@ -60,6 +60,7 @@ import { mimeTypeFromFile } from '../../utils/MimeTypeParser/MimeTypeParser';
 import useConfirm from '../util/useConfirm';
 import { adjustName, splitLinkName } from '../../utils/link';
 import useTrash from './useTrash';
+import { FileBrowserItem } from '../../components/FileBrowser/interfaces';
 
 const HASH_CHECK_AMOUNT = 10;
 
@@ -916,6 +917,7 @@ function useFiles() {
         folderName: string,
         shareId: string,
         linkId: string,
+        forcedChildren: FileBrowserItem[] | undefined,
         cb: {
             onStartFileTransfer: (file: NestedFileStream) => Promise<void>;
             onStartFolderTransfer: (path: string) => Promise<void>;
@@ -924,6 +926,7 @@ function useFiles() {
         const { addDownload, startDownloads } = addFolderToDownloadQueue(folderName, {
             ShareID: shareId,
             LinkID: linkId,
+            children: forcedChildren,
         });
         const fileStreamPromises: Promise<void>[] = [];
         const abortController = new AbortController();
@@ -933,14 +936,23 @@ function useFiles() {
                 throw Error(`Folder download canceled for ${parentPath}`);
             }
 
-            await fetchAllFolderPages(shareId, linkId);
-            const children = cache.get.childLinkMetas(shareId, linkId);
+            if (parentPath !== '') {
+                cb.onStartFolderTransfer(parentPath).catch((err) => console.error(`Failed to zip folder ${err}`));
+            }
+
+            let children;
+            if (linkId === '' && forcedChildren) {
+                children = forcedChildren;
+            } else {
+                await fetchAllFolderPages(shareId, linkId);
+                children = cache.get.childLinkMetas(shareId, linkId);
+            }
 
             if (!children) {
                 return;
             }
 
-            const promises = children.map(async (child) => {
+            const promises = children.map(async (child: LinkMeta | FileBrowserItem) => {
                 if (child.Type === LinkType.FILE) {
                     const promise = new Promise<void>((resolve, reject) => {
                         addDownload(
@@ -981,9 +993,6 @@ function useFiles() {
                     );
                 } else if (!abortController.signal.aborted) {
                     const folderPath = `${parentPath}/${child.Name}`;
-                    cb.onStartFolderTransfer(folderPath).catch((err) =>
-                        console.error(`Failed to zip empty folder ${err}`)
-                    );
                     await downloadFolder(child.LinkID, folderPath);
                 }
             });
@@ -991,7 +1000,7 @@ function useFiles() {
             await Promise.all(promises);
         };
 
-        await downloadFolder(linkId);
+        await downloadFolder(linkId, folderName);
         await startDownloads();
         await Promise.all(fileStreamPromises);
     };

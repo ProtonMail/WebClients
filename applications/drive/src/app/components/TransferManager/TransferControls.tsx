@@ -84,6 +84,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
                             download.meta.filename,
                             download.downloadInfo.ShareID,
                             download.downloadInfo.LinkID,
+                            download.downloadInfo.children,
                             {
                                 onStartFileTransfer: zipSaver.addFile,
                                 onStartFolderTransfer: zipSaver.addFolder,
