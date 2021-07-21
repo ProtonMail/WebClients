@@ -618,7 +618,6 @@ export const getSupportedEventInvitation = async ({
             hasXWrTimezone,
             calendarTzid,
             guessTzid,
-            dropAlarms: true,
             isEventInvitation: true,
         });
         return {
