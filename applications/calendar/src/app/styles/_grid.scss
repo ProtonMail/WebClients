@@ -4,9 +4,17 @@
 
 		&-number {
 			display: inline-flex;
-			width: 1.75em;
-			height: 1.75em;
 			border-radius: $global-border-radius;
+
+			@include respond-to($breakpoint-small, 'min') {
+				font-size: rem(20);
+				line-height: 1;
+			}
+
+			@include respond-to($breakpoint-small) {
+				width: 1.75em;
+				height: 1.75em;
+			}
 		}
 
 		&:hover &-number {
@@ -16,7 +24,6 @@
 
 		&[aria-current='date'] {
 			color: var(--primary);
-			font-weight: bold;
 		}
 
 		@include respond-to($breakpoint-small) {
@@ -29,6 +36,10 @@
 
 		&-day-shortname {
 			display: none;
+		}
+
+		&-day-fullname {
+			font-weight: 600;
 		}
 	}
 
