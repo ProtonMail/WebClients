@@ -1,8 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { EMAIL_PLACEHOLDER } from '@proton/shared/lib/constants';
 
 import { useApi, useErrorHandler, useLoading, useModals, useNotifications } from '../../hooks';
 import {
@@ -12,19 +13,17 @@ import {
     ChallengeRef,
     ChallengeResult,
     FullLoader,
+    Input,
     Label,
     LinkButton,
+    PasswordInput,
     PrimaryButton,
 } from '../../components';
 import { OnLoginCallback } from '../app/interface';
 
 import AbuseModal from './AbuseModal';
-import LoginPasswordInput from './LoginPasswordInput';
-import LoginUsernameInput from './LoginUsernameInput';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
 import { handleLogin, handleTotp, handleUnlock } from './loginActions';
-import LoginTotpInput from './LoginTotpInput';
-import LoginUnlockInput from './LoginUnlockInput';
 
 const UnlockForm = ({
     onSubmit,
@@ -47,7 +46,19 @@ const UnlockForm = ({
         >
             <Label htmlFor="password">{c('Label').t`Mailbox password`}</Label>
             <div className="mb1">
-                <LoginUnlockInput password={keyPassword} setPassword={loading ? noop : setKeyPassword} id="password" />
+                <PasswordInput
+                    name="password"
+                    autoFocus
+                    autoCapitalize="off"
+                    autoCorrect="off"
+                    id="password"
+                    required
+                    className="w100"
+                    value={keyPassword}
+                    placeholder={c('Placeholder').t`Mailbox password`}
+                    onChange={loading ? noop : ({ target: { value } }) => setKeyPassword(value)}
+                    data-cy-login="mailbox password"
+                />
             </div>
             <div className="flex flex-justify-space-between">
                 {cancelButton}
@@ -79,7 +90,20 @@ const TOTPForm = ({
         >
             <Label htmlFor="twoFa">{c('Label').t`Two-factor authentication code`}</Label>
             <div className="mb1">
-                <LoginTotpInput totp={totp} setTotp={loading ? noop : setTotp} id="twoFa" />
+                <Input
+                    type="text"
+                    name="twoFa"
+                    autoFocus
+                    autoCapitalize="off"
+                    autoCorrect="off"
+                    id="twoFa"
+                    required
+                    value={totp}
+                    className="w100"
+                    placeholder="123456"
+                    onChange={loading ? noop : ({ target: { value } }) => setTotp(value)}
+                    data-cy-login="TOTP"
+                />
             </div>
             <div className="flex flex-justify-space-between">
                 {cancelButton}
@@ -106,8 +130,17 @@ const LoginForm = ({
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const challengeRefLogin = useRef<ChallengeRef>();
+    const usernameRef = useRef<HTMLInputElement>(null);
     const [challengeLoading, setChallengeLoading] = useState(hasChallenge);
     const [challengeError, setChallengeError] = useState(false);
+
+    useEffect(() => {
+        if (challengeLoading) {
+            return;
+        }
+        // Special focus management for challenge
+        usernameRef.current?.focus();
+    }, [challengeLoading]);
 
     if (challengeError) {
         return <ChallengeError />;
@@ -153,20 +186,33 @@ const LoginForm = ({
                 )}
                 <Label htmlFor="login">{c('Label').t`Username or ProtonMail address`}</Label>
                 <div className="mb1">
-                    <LoginUsernameInput
-                        id="login"
+                    <Input
+                        type="text"
+                        name="login"
+                        ref={usernameRef}
+                        autoFocus
+                        autoCapitalize="off"
+                        autoCorrect="off"
                         title={c('Title').t`Enter your username or ProtonMail email address`}
-                        username={username}
-                        setUsername={loading ? noop : setUsername}
+                        id="login"
+                        placeholder={EMAIL_PLACEHOLDER}
+                        required
+                        value={username}
+                        onChange={loading ? noop : ({ target: { value } }) => setUsername(value)}
+                        data-cy-login="username"
                     />
                 </div>
                 <Label htmlFor="password">{c('Label').t`Password`}</Label>
                 <div className="mb1">
-                    <LoginPasswordInput
-                        password={password}
-                        setPassword={loading ? noop : setPassword}
+                    <PasswordInput
+                        name="password"
+                        autoComplete="current-password"
                         id="password"
                         title={c('Title').t`Enter your password`}
+                        required
+                        value={password}
+                        onChange={loading ? noop : ({ target: { value } }) => setPassword(value)}
+                        data-cy-login="password"
                     />
                 </div>
                 <div className="flex flex-justify-space-between">
