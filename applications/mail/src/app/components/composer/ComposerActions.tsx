@@ -13,6 +13,7 @@ import {
     DropdownActions,
     useFeature,
     FeatureCode,
+    useUser,
 } from '@proton/components';
 import { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import { metaKey, shiftKey, altKey } from '@proton/shared/lib/helpers/browser';
@@ -58,6 +59,7 @@ const ComposerActions = ({
     const isExpiration = !!message.expiresIn;
     const sendDisabled = lock;
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
+    const [{ hasPaidMail }] = useUser();
 
     let dateMessage: string | string[];
     if (opening) {
@@ -128,7 +130,7 @@ const ComposerActions = ({
     ) : null;
 
     const { feature, loading: loadingFeature } = useFeature(FeatureCode.ScheduledSend);
-    const hasScheduleSendAccess = !loadingFeature && feature?.Value;
+    const hasScheduleSendAccess = !loadingFeature && feature?.Value && hasPaidMail;
 
     const sendButtonActions: (DropdownActionProps & {
         'data-testid'?: string;

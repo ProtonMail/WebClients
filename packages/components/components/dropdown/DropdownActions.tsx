@@ -74,12 +74,16 @@ const DropdownActions = ({
             ...restButtonProps,
         };
 
-        return isTextString ? (
-            <Button {...buttonProps}>{wrapTooltip(text, tooltip)}</Button>
-        ) : (
-            <Tooltip title={tooltip}>
-                <Button {...buttonProps}>{text}</Button>
-            </Tooltip>
+        return (
+            <ButtonGroup shape={shape} color={color} size={size}>
+                {isTextString ? (
+                    <Button {...buttonProps}>{wrapTooltip(text, tooltip)}</Button>
+                ) : (
+                    <Tooltip title={tooltip}>
+                        <Button {...buttonProps}>{text}</Button>
+                    </Tooltip>
+                )}
+            </ButtonGroup>
         );
     }
 
