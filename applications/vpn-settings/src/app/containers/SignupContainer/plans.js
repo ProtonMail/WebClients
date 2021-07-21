@@ -29,7 +29,6 @@ export const PLAN_BUNDLES = {
 };
 
 export const VPN_PLANS = [PLAN.FREE, PLAN.BASIC, PLAN.PLUS, PLAN.VISIONARY];
-export const BEST_DEAL_PLANS = [PLAN.BASIC, PLAN.PLUS, PLAN.VISIONARY];
 
 const getPlanFeatures = (plan, maxConnections, countries, freeServersCount) => {
     const netflix = <b key={1}>{c('Netflix').t`Netflix`}</b>;
