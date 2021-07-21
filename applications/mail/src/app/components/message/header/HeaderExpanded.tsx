@@ -67,6 +67,7 @@ interface Props {
     moveDropdownToggleRef: React.MutableRefObject<() => void>;
     filterDropdownToggleRef: React.MutableRefObject<() => void>;
     highlightKeywords?: boolean;
+    parentMessageRef: React.RefObject<HTMLElement>;
 }
 
 const HeaderExpanded = ({
@@ -91,6 +92,7 @@ const HeaderExpanded = ({
     moveDropdownToggleRef,
     filterDropdownToggleRef,
     highlightKeywords = false,
+    parentMessageRef,
 }: Props) => {
     const [addresses = []] = useAddresses();
     const [folders = []] = useFolders();
@@ -369,6 +371,7 @@ const HeaderExpanded = ({
                         onSourceMode={onSourceMode}
                         breakpoints={breakpoints}
                         data-testid="message-header-expanded:more-dropdown"
+                        parentMessageRef={parentMessageRef}
                     />
 
                     {!isNarrow && (
