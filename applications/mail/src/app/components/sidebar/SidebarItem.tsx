@@ -119,7 +119,7 @@ const SidebarItem = ({
 
     const totalMessagesCounter = canDisplayTotalMessagesCounter && (
         <span
-            className="navigation-counter-item navigation-counter-item--transparent flex-item-noshrink color-weak "
+            className="navigation-counter-item navigation-counter-item--transparent flex-item-noshrink color-weak text-sm"
             title={getTotalMessagesTitle()}
             data-testid="navigation-link:total-messages-count"
         >

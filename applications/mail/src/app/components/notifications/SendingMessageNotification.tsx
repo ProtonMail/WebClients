@@ -35,6 +35,28 @@ const SendingMessageNotification = ({ manager, scheduledAt, conversationID }: Se
     const onUndoRef = useRef<() => Promise<void> | undefined>();
     const isMounted = useIsMounted();
 
+    const getScheduledNotification = (scheduledAt: number, onUndo: (() => Promise<void> | undefined) | undefined) => {
+        const scheduleDate = scheduledAt * 1000;
+
+        const { dateString, formattedTime } = formatScheduledDate(scheduleDate);
+
+        /*
+         * translator: The variables here are the following.
+         * ${dateString} can be either "on Tuesday, May 11", for example, or "today" or "tomorrow"
+         * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
+         * Full sentence for reference: "Message will be sent on Tuesday, May 11 at 12:30 PM"
+         */
+        const notification = c('Info').t`Message will be sent ${dateString} at ${formattedTime}`;
+
+        return (
+            <>
+                <span className="mr1">{notification}</span>
+                {onUndo && <UndoButton className="mr1" onUndo={onUndo} />}
+                <AppLink to={`/scheduled/${conversationID}`}>{c('Action').t`View message`}</AppLink>
+            </>
+        );
+    };
+
     useLayoutEffect(() => {
         return manager.subscribe(async (promise: Promise<any>, onUndo: () => Promise<void>) => {
             onUndoRef.current = onUndo;
@@ -52,32 +74,14 @@ const SendingMessageNotification = ({ manager, scheduledAt, conversationID }: Se
     }, []);
 
     if (state === SendingStep.sent) {
-        return <>{scheduledAt ? c('Info').t`Message scheduled` : c('Info').t`Message sent`}</>;
+        return <>{scheduledAt ? getScheduledNotification(scheduledAt, undefined) : c('Info').t`Message sent`}</>;
     }
 
     const onUndo = onUndoRef.current;
 
     if (state === SendingStep.sentWithUndo && onUndo) {
         if (scheduledAt) {
-            const scheduleDate = scheduledAt * 1000;
-
-            const { dateString, formattedTime } = formatScheduledDate(scheduleDate);
-
-            /*
-             * translator: The variables here are the following.
-             * ${dateString} can be either "on Tuesday, May 11", for example, or "today" or "tomorrow"
-             * ${formattedTime} is the date formatted in user's locale (e.g. 11:00 PM)
-             * Full sentence for reference: "Message will be sent on Tuesday, May 11 at 12:30 PM"
-             */
-            const notification = c('Info').t`Message will be sent ${dateString} at ${formattedTime}`;
-
-            return (
-                <>
-                    <span className="mr1">{notification}</span>
-                    <UndoButton className="mr1" onUndo={onUndo} />
-                    <AppLink to={`/scheduled/${conversationID}`}>{c('Action').t`View message`}</AppLink>
-                </>
-            );
+            return getScheduledNotification(scheduledAt, onUndo);
         }
         return (
             <>

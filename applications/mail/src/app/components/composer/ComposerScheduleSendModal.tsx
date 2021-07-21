@@ -111,15 +111,17 @@ const ComposerScheduleSendModal = ({ onClose, onSubmit }: Props) => {
 
             <div className="flex flex-nowrap mt2 flex-align-items-center on-mobile-flex-column">
                 <Label htmlFor={`composer-schedule-date-${uid}`}>{c('Label').t`Date`}</Label>
-                <DateInput
-                    id={`composer-schedule-date-${uid}`}
-                    onChange={handleChangeDate}
-                    value={date}
-                    min={minDate}
-                    max={maxDate}
-                    customInputFormat={formatDateInput}
-                    displayErrorMessages
-                />
+                <div className="flex-item-fluid">
+                    <DateInput
+                        id={`composer-schedule-date-${uid}`}
+                        onChange={handleChangeDate}
+                        value={date}
+                        min={minDate}
+                        max={maxDate}
+                        customInputFormat={formatDateInput}
+                        displayErrorMessages
+                    />
+                </div>
             </div>
 
             <div className="flex flex-nowrap mt2 flex-align-items-center on-mobile-flex-column">
