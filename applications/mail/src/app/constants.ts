@@ -155,10 +155,13 @@ export const WELCOME_PANE_OPTIONS_URLS = {
     protonShop: 'https://shop.protonmail.com',
     proton2FA: 'https://protonmail.com/support/knowledge-base/two-factor-authentication/',
     protonBusiness: 'https://protonmail.com/business/',
+    calendar: 'https://calendar.protonmail.com',
+    vpn: 'https://account.protonmail.com/u/6/vpn/vpn-apps',
 };
 
 export const WELCOME_PANE_OPTIONS_CTA_TEXTS = () => ({
     upgrade: c('Action').t`Upgrade`,
     learnMore: c('Action').t`Learn more`,
     openShop: c('Action').t`Open shop`,
+    openCalendar: c('Action').t`Open calendar`,
 });
