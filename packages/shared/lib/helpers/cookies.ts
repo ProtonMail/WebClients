@@ -12,10 +12,6 @@ export const getCookie = (name: string, cookies = document.cookie) => {
     return `; ${cookies}`.match(`;\\s*${name}=([^;]+)`)?.[1];
 };
 
-export const checkCookie = (name: string, value: string) => {
-    return getCookies().some((cookie) => cookie.includes(`${name}=${value}`));
-};
-
 export enum CookieSameSiteAttribute {
     Lax = 'lax',
     Strict = 'strict',
