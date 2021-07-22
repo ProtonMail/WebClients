@@ -1,14 +1,11 @@
-import { differenceInMinutes } from 'date-fns';
+import { MINUTE } from '../constants';
 import { convertUTCDateTimeToZone, fromUTCDate, getTimezoneOffset, toUTCDate } from '../date/timezone';
 import { uniqueBy } from '../helpers/array';
 import { omit } from '../helpers/object';
 import { truncate } from '../helpers/string';
 import {
     NotificationModel,
-    VcalDateOrDateTimeProperty,
-    VcalDateTimeProperty,
     VcalDurationValue,
-    VcalTriggerProperty,
     VcalValarmRelativeComponent,
     VcalVeventComponent,
 } from '../interfaces/calendar';
@@ -16,14 +13,10 @@ import { NOTIFICATION_UNITS, NOTIFICATION_WHEN, SETTINGS_NOTIFICATION_TYPE } fro
 import getAlarmMessageText from './getAlarmMessageText';
 import { getValarmTrigger } from './getValarmTrigger';
 import { getDisplayTitle } from './helper';
+import { normalizeDurationToUnit } from './trigger';
 import { getMillisecondsFromTriggerString } from './vcal';
 import { propertyToUTCDate } from './vcalConverter';
-import { getIsAllDay, getIsPropertyAllDay } from './vcalHelper';
-
-const MINUTE = 60;
-const HOUR = 60 * MINUTE;
-export const DAY = 24 * HOUR;
-const WEEK = 7 * DAY;
+import { getIsAllDay } from './vcalHelper';
 
 /**
  * Given a raw event, (optionally) its starting date, the date now and a timezone id,
@@ -73,7 +66,7 @@ export const getNextEventTime = ({ Occurrence, Trigger, tzid }: Params) => {
     const offsetEventTime = getTimezoneOffset(new Date(eventTime), tzid).offset;
     const offsetDifference = offsetAlarmTime - offsetEventTime;
     // correct eventTime in case we jumped across an odd number of DST changes
-    return eventTime - offsetDifference * MINUTE * 1000;
+    return eventTime - offsetDifference * MINUTE;
 };
 
 /**
@@ -86,60 +79,6 @@ export const filterFutureNotifications = (notifications: NotificationModel[]) =>
         }
         return value === 0;
     });
-};
-
-export const isAbsoluteTrigger = (trigger: VcalTriggerProperty): trigger is VcalDateTimeProperty => {
-    return (trigger as VcalDateTimeProperty).parameters?.type === 'date-time';
-};
-const absoluteToRelative = (trigger: VcalDateTimeProperty, dtstart: VcalDateOrDateTimeProperty) => {
-    const utcStartDate = propertyToUTCDate(dtstart);
-    const triggerDate = propertyToUTCDate(trigger);
-    const durationInMinutes = differenceInMinutes(utcStartDate, triggerDate);
-    const duration = Math.abs(durationInMinutes * MINUTE);
-    const weeks = Math.floor(duration / WEEK);
-    const days = Math.floor((duration % WEEK) / DAY);
-    const hours = Math.floor((duration % DAY) / HOUR);
-    const minutes = Math.floor((duration % HOUR) / MINUTE);
-    return { weeks, days, hours, minutes, seconds: 0, isNegative: durationInMinutes >= 0 };
-};
-
-/**
- * If you import this function, notice unit has to be in seconds, not milliseconds
- */
-export const normalizeDurationToUnit = (duration: Partial<VcalDurationValue>, unit: number) => {
-    const normalizedUnits = [
-        Math.floor(((duration.weeks || 0) * WEEK) / unit),
-        Math.floor(((duration.days || 0) * DAY) / unit),
-        Math.floor(((duration.hours || 0) * HOUR) / unit),
-        Math.floor(((duration.minutes || 0) * MINUTE) / unit),
-        Math.floor((duration.seconds || 0) / unit),
-    ];
-    return normalizedUnits.reduce((acc, curr) => acc + curr, 0);
-};
-
-export const normalizeTrigger = (trigger: VcalTriggerProperty, dtstart: VcalDateOrDateTimeProperty) => {
-    const duration = isAbsoluteTrigger(trigger) ? absoluteToRelative(trigger, dtstart) : trigger.value;
-    const { weeks, days } = duration;
-    if (getIsPropertyAllDay(dtstart)) {
-        // the API admits all trigger components for all-day events,
-        // but we do not support arbitrary combinations non-zero values for weeks and days
-        const mustNormalize = duration.isNegative ? weeks > 0 && days !== 6 : weeks > 0 && days !== 0;
-        return mustNormalize
-            ? { ...duration, weeks: 0, days: days + 7 * weeks, seconds: 0 }
-            : { ...duration, seconds: 0 };
-    }
-    // we only admit one trigger component for part-day events
-    const result = { weeks: 0, days: 0, hours: 0, minutes: 0, seconds: 0, isNegative: duration.isNegative };
-    if (duration.minutes % 60 !== 0) {
-        return { ...result, minutes: normalizeDurationToUnit(duration, MINUTE) };
-    }
-    if (duration.hours % 24 !== 0) {
-        return { ...result, hours: normalizeDurationToUnit(duration, HOUR) };
-    }
-    if (duration.days % 7 !== 0) {
-        return { ...result, days: normalizeDurationToUnit(duration, DAY) };
-    }
-    return { ...result, weeks: normalizeDurationToUnit(duration, WEEK) };
 };
 
 /**

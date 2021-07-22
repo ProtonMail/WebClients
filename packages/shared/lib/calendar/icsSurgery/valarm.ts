@@ -5,8 +5,8 @@ import {
     VcalValarmComponent,
     VcalValarmRelativeComponent,
 } from '../../interfaces/calendar';
-import { DAY, isAbsoluteTrigger, normalizeDurationToUnit, normalizeTrigger } from '../alarms';
 import { MAX_NOTIFICATIONS, NOTIFICATION_UNITS, NOTIFICATION_UNITS_MAX } from '../constants';
+import { getIsAbsoluteTrigger, normalizeDurationToUnit, normalizeTrigger } from '../trigger';
 import { getIsDateTimeValue, getIsPropertyAllDay } from '../vcalHelper';
 
 /**
@@ -21,7 +21,7 @@ export const getIsValidAlarm = (alarm: VcalValarmComponent) => {
         return false;
     }
     // absolute triggers should have the right format
-    if (isAbsoluteTrigger(trigger) && !getIsDateTimeValue(trigger.value as DateTimeValue)) {
+    if (getIsAbsoluteTrigger(trigger) && !getIsDateTimeValue(trigger.value as DateTimeValue)) {
         return false;
     }
     // duration and repeat must be both present or absent
@@ -45,7 +45,7 @@ export const getSupportedAlarm = (
 
     const { trigger } = alarm;
 
-    if (!isAbsoluteTrigger(trigger) && trigger.parameters?.related?.toLocaleLowerCase() === 'end') {
+    if (!getIsAbsoluteTrigger(trigger) && trigger.parameters?.related?.toLocaleLowerCase() === 'end') {
         return;
     }
     if (alarm.action.value === 'EMAIL') {
@@ -56,7 +56,7 @@ export const getSupportedAlarm = (
     const triggerDurationInSeconds = normalizeDurationToUnit(normalizedTrigger, 1);
 
     const inFuture = getIsPropertyAllDay(dtstart)
-        ? !normalizedTrigger.isNegative && triggerDurationInSeconds >= DAY
+        ? !normalizedTrigger.isNegative && triggerDurationInSeconds >= 24 * 60 * 60
         : !normalizedTrigger.isNegative && triggerDurationInSeconds !== 0;
     const nonSupportedTrigger =
         normalizedTrigger.seconds !== 0 ||
