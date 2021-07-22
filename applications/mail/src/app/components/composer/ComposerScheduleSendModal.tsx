@@ -92,6 +92,20 @@ const ComposerScheduleSendModal = ({ onClose, onSubmit }: Props) => {
         return limit <= nextIntervals[0] ? nextIntervals[1] : nextIntervals[0];
     };
 
+    const getTimeInputError = () => {
+        /* If the user chose a time (Hour + minutes) before the hour of the actual day, the time input returns the date for the next day
+         * Ex : This is Jan, 1 2021 at 9:00AM. The user wants to send the scheduled today at 8:00PM, but in the time input he lets 'AM'
+         * => The Time input is returning the date Jan, 2 2021 at 8:00AM
+         * From our side we are using hour + minutes from the returned date of the time input to build the date when we want to send the scheduled
+         * To check if the user is making an error, we need to compare the Time input value with the current date
+         */
+        const timeInputDate = startOfToday().setHours(time.getHours(), time.getMinutes());
+
+        return isToday(date) && timeInputDate <= new Date().getTime()
+            ? c('Error').t`Choose a date in the future`
+            : undefined;
+    };
+
     const disabled = useMemo(() => {
         const min = addSeconds(new Date(), 120);
         return !date || !time || scheduleDateTime < min || scheduleDateTime > endOfDay(maxDate);
@@ -126,13 +140,17 @@ const ComposerScheduleSendModal = ({ onClose, onSubmit }: Props) => {
 
             <div className="flex flex-nowrap mt2 flex-align-items-center on-mobile-flex-column">
                 <Label htmlFor={`composer-schedule-time-${uid}`}>{c('Label').t`Time`}</Label>
-                <TimeInput
-                    id={`composer-schedule-time-${uid}`}
-                    onChange={handleChangeTime}
-                    value={time}
-                    min={getMinTime()}
-                    max={isToday(date) ? endOfDay(new Date()) : undefined}
-                />
+                <div className="flex-item-fluid">
+                    <TimeInput
+                        id={`composer-schedule-time-${uid}`}
+                        onChange={handleChangeTime}
+                        value={time}
+                        min={getMinTime()}
+                        max={isToday(date) ? endOfDay(new Date()) : undefined}
+                        error={getTimeInputError()}
+                        isSubmitted
+                    />
+                </div>
             </div>
         </ComposerInnerModal>
     );
