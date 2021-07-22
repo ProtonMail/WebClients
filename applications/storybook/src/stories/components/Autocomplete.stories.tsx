@@ -119,7 +119,7 @@ export const Custom = () => {
                     setValue(event.currentTarget.value.trimStart());
                 }}
             />
-            <AutocompleteList anchorRef={containerRef} {...suggestionProps}>
+            <AutocompleteList anchorRef={containerRef.current ? containerRef : inputRef} {...suggestionProps}>
                 {filteredOptions.map(({ chunks, text, option }, index) => {
                     return (
                         <Option
