@@ -876,11 +876,11 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Check whether a message is part of the current search results
      */
     const isSearchResult: IsSearchResult = (ID) => {
-        if (!shouldHighlight()) {
+        const { dbExists, esEnabled, permanentResults } = esStatus;
+        if (!(dbExists && esEnabled && isSearch)) {
             return false;
         }
 
-        const { permanentResults } = esStatus;
         return permanentResults.findIndex((result) => result.ID === ID) !== -1;
     };
 
