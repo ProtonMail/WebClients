@@ -15,6 +15,7 @@ import DriveCacheProvider from '../components/DriveCache/DriveCacheProvider';
 import DriveFolderProvider from '../components/Drive/DriveFolderProvider';
 import { UploadProvider } from '../components/uploads/UploadProvider';
 import { DownloadProvider } from '../components/downloads/DownloadProvider';
+import { ThumbnailsDownloadProvider } from '../components/downloads/ThumbnailDownloadProvider';
 import TrashContainer from './TrashContainer/TrashContainer';
 import DriveContainer from './DriveContainer/DriveContainer';
 import TransferManager from '../components/TransferManager/TransferManager';
@@ -96,7 +97,9 @@ const MainContainer = () => {
                     <DriveFolderProvider>
                         <UploadProvider>
                             <DownloadProvider>
-                                <InitContainer />
+                                <ThumbnailsDownloadProvider>
+                                    <InitContainer />
+                                </ThumbnailsDownloadProvider>
                             </DownloadProvider>
                         </UploadProvider>
                     </DriveFolderProvider>
