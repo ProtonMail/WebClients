@@ -1,6 +1,6 @@
 import React, { RefObject } from 'react';
 import { c } from 'ttag';
-import { useHandler, useNotifications } from '@proton/components';
+import { useHandler, useMailSettings, useNotifications } from '@proton/components';
 import { Abortable } from '@proton/components/hooks/useHandler';
 import SendingMessageNotification, {
     createSendingMessageNotificationManager,
@@ -11,6 +11,7 @@ import { useSendMessage } from './useSendMessage';
 import { useSendVerifications } from './useSendVerifications';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { MapSendInfo } from '../../models/crypto';
+import { useMessageCache } from '../../containers/MessageProvider';
 
 export interface UseSendHandlerParameters {
     modelMessage: MessageExtended;
@@ -37,8 +38,11 @@ export const useSendHandler = ({
 
     const { preliminaryVerifications, extendedVerifications } = useSendVerifications();
     const sendMessage = useSendMessage();
+    const [mailSettings] = useMailSettings();
 
     const onCompose = useOnCompose();
+
+    const messageCache = useMessageCache();
 
     const handleSendAfterUploads = useHandler(async (notifManager: SendingMessageNotificationManager) => {
         let verificationResults;
@@ -84,7 +88,9 @@ export const useSendHandler = ({
                 <SendingMessageNotification
                     scheduledAt={scheduledAt}
                     manager={notifManager}
-                    conversationID={modelMessage.data?.ConversationID}
+                    localID={modelMessage.localID}
+                    messageCache={messageCache}
+                    viewMode={mailSettings ? mailSettings?.ViewMode : 0}
                 />
             ),
             expiration: -1,
