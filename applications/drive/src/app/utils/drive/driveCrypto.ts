@@ -94,12 +94,24 @@ export const getPrimaryAddressKeyAsync = async (
     const addressKeys = await getAddressKeys(activeAddress.ID);
     const { privateKey, publicKey } = getPrimaryKey(addressKeys) || {};
 
-    if (!privateKey || !privateKey.isDecrypted()) {
+    if (!privateKey) {
         // Should never happen
-        throw new Error('Primary private key is not decrypted');
+        throw new Error('Primary private key is not available');
     }
 
     return { privateKey, publicKey: publicKey || privateKey.toPublic(), address: activeAddress };
+};
+
+export const getPrimaryAddressKeysAsync = async (
+    getPrimaryAddress: () => Promise<Address>,
+    getAddressKeys: (id: string) => Promise<DecryptedKey[]>
+) => {
+    const activeAddress = await getPrimaryAddress();
+    const addressKeys = await getAddressKeys(activeAddress.ID);
+    return addressKeys.map(({ privateKey, publicKey }) => ({
+        privateKey,
+        publicKey: publicKey || privateKey.toPublic(),
+    }));
 };
 
 export const getOwnAddressKeysAsync = async (

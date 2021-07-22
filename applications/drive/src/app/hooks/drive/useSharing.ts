@@ -30,7 +30,7 @@ import { LinkMeta } from '../../interfaces/link';
 import { useDriveCache } from '../../components/DriveCache/DriveCacheProvider';
 
 function useSharing() {
-    const { getPrimaryAddressKey } = useDriveCrypto();
+    const { getPrimaryAddressKey, getPrimaryAddressKeys } = useDriveCrypto();
     const { createShare, getLinkMeta } = useDrive();
     const cache = useDriveCache();
     const api = useApi();
@@ -298,10 +298,10 @@ function useSharing() {
     };
 
     const decryptSharedLink = async ({ Password, SharePassphraseKeyPacket, SharePasswordSalt, ...rest }: ShareURL) => {
-        const { privateKey } = await getPrimaryAddressKey();
+        const privateKeys = (await getPrimaryAddressKeys()).map(({ privateKey }) => privateKey);
         const decryptedPassword = await decryptUnsigned({
             armoredMessage: Password,
-            privateKey,
+            privateKey: privateKeys,
         });
 
         const sharedLinkPassword: string = await computeKeyPassword(decryptedPassword, SharePasswordSalt);

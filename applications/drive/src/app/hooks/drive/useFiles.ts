@@ -87,7 +87,7 @@ function useFiles() {
     const debouncedRequest = useDebouncedRequest();
     const queuedFunction = useQueuedFunction();
     const { createNotification } = useNotifications();
-    const { getPrimaryAddressKey, sign } = useDriveCrypto();
+    const { getPrimaryAddressKey, getPrimaryAddressKeys, sign } = useDriveCrypto();
     const { getLinkMeta, getLinkKeys, fetchAllFolderPages, createNewFolder } = useDrive();
     const { addToDownloadQueue, addFolderToDownloadQueue } = useDownloadProvider();
     const {
@@ -779,7 +779,7 @@ function useFiles() {
             // if the file was uploaded by a different user, this verification will fail.
 
             // TODO: Fetch addressPublicKey of signer when we start supporting drive volumes with multiple users.
-            const { privateKey: addressPrivateKey } = await getPrimaryAddressKey();
+            const addressPublicKeys = (await getPrimaryAddressKeys()).map(({ publicKey }) => publicKey);
 
             // Thumbnails have attached signature, regular file detached one.
             if (!encSignature) {
@@ -787,7 +787,7 @@ function useFiles() {
                 const { data } = await decryptMessage({
                     message,
                     sessionKeys: keys.sessionKeys,
-                    publicKeys: addressPrivateKey.toPublic(),
+                    publicKeys: addressPublicKeys,
                     streaming: 'web',
                     format: 'binary',
                 });
@@ -809,7 +809,7 @@ function useFiles() {
                 message,
                 signature,
                 sessionKeys: keys.sessionKeys,
-                publicKeys: addressPrivateKey.toPublic(),
+                publicKeys: addressPublicKeys,
                 streaming: 'web',
                 format: 'binary',
             });
