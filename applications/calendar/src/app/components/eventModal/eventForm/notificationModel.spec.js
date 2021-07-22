@@ -76,6 +76,40 @@ describe('properties to model positive trigger', () => {
             at: new Date(2000, 0, 1, 10, 1),
         });
     });
+
+    test('all day trigger at 10:01 a week after', () => {
+        expect(
+            triggerToModel({
+                isAllDay: true,
+                type: DEVICE,
+                trigger: fromTriggerString('PT1W10H1M'),
+            })
+        ).toEqual({
+            isAllDay: true,
+            value: 1,
+            unit: WEEK,
+            type: DEVICE,
+            when: AFTER,
+            at: new Date(2000, 0, 1, 10, 1),
+        });
+    });
+
+    test('all day trigger at 10:01 a week and two days after', () => {
+        expect(
+            triggerToModel({
+                isAllDay: true,
+                type: DEVICE,
+                trigger: fromTriggerString('PT1W2D10H1M'),
+            })
+        ).toEqual({
+            isAllDay: true,
+            value: 9,
+            unit: DAY,
+            type: DEVICE,
+            when: AFTER,
+            at: new Date(2000, 0, 1, 10, 1),
+        });
+    });
 });
 
 describe('properties to model negative trigger', () => {
@@ -111,7 +145,7 @@ describe('properties to model negative trigger', () => {
         });
     });
 
-    test('part day notification 1 day before truncation', () => {
+    test('part day notification 1 day and 15 hours before', () => {
         expect(
             triggerToModel({
                 isAllDay: false,
@@ -120,8 +154,8 @@ describe('properties to model negative trigger', () => {
             })
         ).toEqual({
             isAllDay: false,
-            value: 1,
-            unit: DAY,
+            value: 39,
+            unit: HOURS,
             type: DEVICE,
             when: BEFORE,
         });
@@ -178,7 +212,7 @@ describe('properties to model negative trigger', () => {
         });
     });
 
-    test('all day notification 1 week before truncation', () => {
+    test('all day notification 1 week and 6 days before', () => {
         expect(
             triggerToModel({
                 isAllDay: true,
@@ -187,8 +221,8 @@ describe('properties to model negative trigger', () => {
             })
         ).toEqual({
             isAllDay: true,
-            value: 1,
-            unit: WEEK,
+            value: 13,
+            unit: DAY,
             type: DEVICE,
             when: BEFORE,
             at: new Date(2000, 0, 1, 0, 0),
@@ -229,7 +263,7 @@ describe('properties to model negative trigger', () => {
         });
     });
 
-    test('all day notification 1 week before at 13:50 truncation', () => {
+    test('all day notification 1 week and 6 days before at 13:50', () => {
         expect(
             triggerToModel({
                 isAllDay: true,
@@ -238,11 +272,43 @@ describe('properties to model negative trigger', () => {
             })
         ).toEqual({
             isAllDay: true,
-            value: 1,
-            unit: WEEK,
+            value: 13,
+            unit: DAY,
             type: DEVICE,
             when: BEFORE,
             at: new Date(2000, 0, 1, 13, 50),
+        });
+    });
+
+    test('all day notification 8 days before at 15:35 in two ways', () => {
+        expect(
+            triggerToModel({
+                isAllDay: true,
+                type: DEVICE,
+                trigger: fromTriggerString('-P1WT8H25M'),
+            })
+        ).toEqual({
+            isAllDay: true,
+            value: 8,
+            unit: DAY,
+            type: DEVICE,
+            when: BEFORE,
+            at: new Date(2000, 0, 1, 15, 35),
+        });
+
+        expect(
+            triggerToModel({
+                isAllDay: true,
+                type: DEVICE,
+                trigger: fromTriggerString('-P7DT8H25M'),
+            })
+        ).toEqual({
+            isAllDay: true,
+            value: 8,
+            unit: DAY,
+            type: DEVICE,
+            when: BEFORE,
+            at: new Date(2000, 0, 1, 15, 35),
         });
     });
 });

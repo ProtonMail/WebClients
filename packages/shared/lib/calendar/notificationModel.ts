@@ -1,4 +1,4 @@
-import { transformBeforeAt } from './trigger';
+import { normalizeRelativeTrigger, transformBeforeAt } from './trigger';
 import { NOTIFICATION_UNITS, NOTIFICATION_WHEN, SETTINGS_NOTIFICATION_TYPE } from './constants';
 import { NotificationModel, VcalDurationValue } from '../interfaces/calendar';
 
@@ -75,20 +75,22 @@ interface TriggerToModel {
 export const triggerToModel = ({
     isAllDay,
     type,
-    // eslint-disable-next-line no-unused-vars
-    trigger: { weeks = 0, days = 0, hours = 0, minutes = 0, isNegative = false },
+    trigger: { weeks = 0, days = 0, hours = 0, minutes = 0, seconds = 0, isNegative = false },
 }: TriggerToModel): Omit<NotificationModel, 'id'> => {
     const parsedTrigger = {
         weeks: getInt(weeks),
         days: getInt(days),
         hours: getInt(hours),
         minutes: getInt(minutes),
+        seconds: getInt(seconds),
+        isNegative,
     };
+    const normalizedTrigger = normalizeRelativeTrigger(parsedTrigger, isAllDay);
     const when = isNegative ? NOTIFICATION_WHEN.BEFORE : NOTIFICATION_WHEN.AFTER;
     if (isAllDay) {
-        return allDayTriggerToModel({ type, when, ...parsedTrigger });
+        return allDayTriggerToModel({ type, when, ...normalizedTrigger });
     }
-    return partDayTriggerToModel({ type, when, ...parsedTrigger });
+    return partDayTriggerToModel({ type, when, ...normalizedTrigger });
 };
 
 export const getDeviceNotifications = (notifications: NotificationModel[]) => {
