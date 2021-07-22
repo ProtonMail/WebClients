@@ -21,7 +21,7 @@
         "postinstall": "proton-pack config"
     },
     "dependencies": {
-        "@mattiasbuelens/web-streams-adapter": "0.1.0-alpha.5",
+        "@mattiasbuelens/web-streams-adapter": "0.1.0",
         "@proton/components": "workspace:packages/components",
         "@proton/pack": "workspace:packages/pack",
         "@proton/shared": "workspace:packages/shared",
@@ -37,7 +37,7 @@
         "react-dom": "^16.0.0",
         "react-window": "^1.8.5",
         "ttag": "^1.7.14",
-        "web-streams-polyfill": "^2.1.1",
+        "web-streams-polyfill": "^3.0.3",
         "yetch": "^1.1.0"
     },
     "devDependencies": {

@@ -2779,10 +2779,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mattiasbuelens/web-streams-adapter@npm:0.1.0-alpha.5":
-  version: 0.1.0-alpha.5
-  resolution: "@mattiasbuelens/web-streams-adapter@npm:0.1.0-alpha.5"
-  checksum: ea3cc8b577b50e41f1dbcdf0c25b3097940f9dc726d0f5c64c8f6b2e281b0d2d5bf64c484b9fc480d26454b976e8713eef2c3289cc4462b4dc2e89dfa84a4599
+"@mattiasbuelens/web-streams-adapter@npm:0.1.0":
+  version: 0.1.0
+  resolution: "@mattiasbuelens/web-streams-adapter@npm:0.1.0"
+  checksum: 84c2f6a86f90f960a4299a803dc760be4fe078a87725bdaa3b1aa1ec93acff39e14d1f7cff142bd2e7ac84584bbaf9792150aeef4282a25fb256c0ad953f757a
   languageName: node
   linkType: hard
 
@@ -3900,7 +3900,7 @@ __metadata:
   resolution: "@proton/shared@workspace:packages/shared"
   dependencies:
     "@babel/plugin-transform-runtime": ^7.6.2
-    "@mattiasbuelens/web-streams-adapter": 0.1.0-alpha.5
+    "@mattiasbuelens/web-streams-adapter": 0.1.0
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/get-random-values": "workspace:packages/get-random-values"
     "@proton/i18n": "workspace:packages/i18n"
@@ -3941,7 +3941,7 @@ __metadata:
     ttag: ^1.7.17
     typescript: ^4.0.3
     ua-parser-js: ^0.7.20
-    web-streams-polyfill: ^2.0.6
+    web-streams-polyfill: ^3.0.3
     webpack: ^4.33.0
   peerDependencies:
     "@proton/styles": "*"
@@ -24618,7 +24618,7 @@ fsevents@^1.2.7:
   version: 0.0.0-use.local
   resolution: "proton-drive@workspace:applications/drive"
   dependencies:
-    "@mattiasbuelens/web-streams-adapter": 0.1.0-alpha.5
+    "@mattiasbuelens/web-streams-adapter": 0.1.0
     "@proton/bundler": "workspace:packages/bundler"
     "@proton/components": "workspace:packages/components"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
@@ -24651,7 +24651,7 @@ fsevents@^1.2.7:
     service-worker-loader: ^4.0.2
     ttag: ^1.7.14
     typescript: ^4.0.2
-    web-streams-polyfill: ^2.1.1
+    web-streams-polyfill: ^3.0.3
     yetch: ^1.1.0
   languageName: unknown
   linkType: soft
@@ -30534,14 +30534,7 @@ resolve@1.1.7:
   languageName: node
   linkType: hard
 
-"web-streams-polyfill@npm:^2.0.6, web-streams-polyfill@npm:^2.1.1":
-  version: 2.1.1
-  resolution: "web-streams-polyfill@npm:2.1.1"
-  checksum: 1dac189e0e60a146616ff85c28c20304e9ea6d4dad0996852ea0965d983062bbc2f48d20a8590474dec15f4812b7493b784c6e21cf33d35dd4a10f7c356d581e
-  languageName: node
-  linkType: hard
-
-"web-streams-polyfill@npm:^3.0.0":
+"web-streams-polyfill@npm:^3.0.0, web-streams-polyfill@npm:^3.0.3":
   version: 3.0.3
   resolution: "web-streams-polyfill@npm:3.0.3"
   checksum: e7e0bc4410d89b29a7cece265a907b597ba8dd1681f497efd7c418cfde51d2ef5197310d0b3bcf291262da364a17846eb90c48857c4697c07e31a282a8aaba5a
