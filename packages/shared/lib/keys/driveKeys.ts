@@ -60,7 +60,7 @@ export const getStreamMessage = (stream: ReadableStream<Uint8Array> | PolyfillRe
 
 interface UnsignedDecryptionPayload {
     armoredMessage: string | Uint8Array;
-    privateKey: OpenPGPKey;
+    privateKey: OpenPGPKey | OpenPGPKey[];
 }
 
 /**
