@@ -84,3 +84,13 @@ export interface PartialDownload extends Download {
 }
 
 export type Transfer = Upload | Download;
+
+export interface ThumbnailDownload {
+    id: string;
+    downloadInfo: DownloadInfo;
+    state: TransferState;
+}
+
+export interface ThumbnailMeta {
+    modifyTime: number;
+}
