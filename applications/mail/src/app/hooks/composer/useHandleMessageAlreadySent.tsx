@@ -33,7 +33,7 @@ export const useHandleMessageAlreadySent = ({ modelMessage, onClose }: UseHandle
     const handleMessageAlreadySent = () => {
         duplicateDraft();
         createNotification({
-            text: c('Error').t`Message already sent. Saving your email as a draft`,
+            text: c('Error').t`This message has already been sent. A new draft has been saved.`,
             type: 'error',
         });
         onClose();

@@ -7,14 +7,22 @@ import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 import { c } from 'ttag';
-import { ATTACHMENT_MAX_SIZE } from '../../constants';
+import {
+    ATTACHMENT_MAX_SIZE,
+    MESSAGE_ALREADY_SENT_INTERNAL_ERROR,
+    UPLOAD_ATTACHMENT_ERROR_CODES,
+} from '../../constants';
 import { MessageExtended, MessageExtendedWithData, MessageKeys } from '../../models/message';
 import { generateCid, isEmbeddable } from '../message/messageEmbeddeds';
 import { RequestParams, upload as uploadHelper, Upload } from '../upload';
 
 // Reference: Angular/src/app/attachments/factories/attachmentModel.js
 
-type UploadQueryResult = Promise<{ Attachment: Attachment }>;
+type UploadQueryResult = Promise<{
+    Code: number;
+    Attachment: Attachment;
+    Error?: string;
+}>;
 
 export enum ATTACHMENT_ACTION {
     ATTACHMENT = 'attachment',
@@ -82,6 +90,11 @@ const uploadFile = (
 
     const attachPackets = async () => {
         const result = await upload.resultPromise;
+
+        if (result.Code === UPLOAD_ATTACHMENT_ERROR_CODES.MESSAGE_ALREADY_SENT) {
+            throw new Error(MESSAGE_ALREADY_SENT_INTERNAL_ERROR);
+        }
+
         return { attachment: result.Attachment, packets, addressID: message.data.AddressID };
     };
 

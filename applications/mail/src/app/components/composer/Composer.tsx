@@ -408,7 +408,13 @@ const Composer = (
         handleCancelAddAttachment,
         handleRemoveAttachment,
         handleRemoveUpload,
-    } = useAttachments(modelMessage, handleChange, handleSaveNow, editorActionsRef);
+    } = useAttachments({
+        message: modelMessage,
+        onChange: handleChange,
+        onSaveNow: handleSaveNow,
+        editorActionsRef,
+        onMessageAlreadySent,
+    });
 
     // Manage opening
     useEffect(() => {

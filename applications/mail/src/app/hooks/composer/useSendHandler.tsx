@@ -12,7 +12,7 @@ import { useSendVerifications } from './useSendVerifications';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { MapSendInfo } from '../../models/crypto';
 import { useMessageCache } from '../../containers/MessageProvider';
-import { SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES, SEND_VERIFICATION_ERRORS } from '../../constants';
+import { SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES, MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
 
 export interface UseSendHandlerParameters {
     modelMessage: MessageExtended;
@@ -102,10 +102,10 @@ export const useSendHandler = ({
             try {
                 await preliminaryVerifications(modelMessage as MessageExtendedWithData);
             } catch (error) {
-                if (error.message === SEND_VERIFICATION_ERRORS.MESSAGE_ALREADY_SENT) {
+                if (error.message === MESSAGE_ALREADY_SENT_INTERNAL_ERROR) {
                     onMessageAlreadySent();
-                    throw error;
                 }
+                throw error;
             }
         }
 

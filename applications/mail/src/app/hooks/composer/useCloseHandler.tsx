@@ -110,6 +110,16 @@ export const useCloseHandler = ({
         // Closing the composer instantly, all the save process will be in background
         onClose();
 
+        const messageFromCache = messageCache.get(modelMessage.localID) as MessageExtendedWithData;
+
+        if (messageFromCache.isSentDraft) {
+            createNotification({
+                text: c('Error').t`This message has already been sent.`,
+                type: 'error',
+            });
+            return;
+        }
+
         if (lock) {
             // If the composer was locked, either it could have
             // - failed at loading
