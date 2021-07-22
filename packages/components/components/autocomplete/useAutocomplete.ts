@@ -150,7 +150,7 @@ export const useAutocomplete = <T>({ id, options, onSelect, input, inputRef }: U
         },
         inputProps: {
             id,
-            autoComplete: 'no',
+            autoComplete: 'off',
             'aria-owns': id,
             'aria-activedescendant': getOptionID(highlightedIndex),
             'aria-autocomplete': 'list',
