@@ -23,6 +23,7 @@ const ExtraEventWarning = ({ model }: Props) => {
         isFromFuture,
         timeStatus,
         isPartyCrasher,
+        hasMultipleVevents,
     } = model;
 
     if (isPartyCrasher && !isImport) {
@@ -39,6 +40,7 @@ const ExtraEventWarning = ({ model }: Props) => {
     if ((isOutdated || isFromFuture) && method !== ICAL_METHOD.REFRESH) {
         return null;
     }
+
     if (isOrganizerMode) {
         if (!invitationApi && !hasDecryptionError) {
             return null;
@@ -80,6 +82,9 @@ const ExtraEventWarning = ({ model }: Props) => {
                 {c('Calendar invite info').t`Adding occurrences to an event is not supported for the moment.`}
             </Alert>
         );
+    }
+    if (hasMultipleVevents) {
+        return null;
     }
     if (timeStatus === EVENT_TIME_STATUS.PAST) {
         return (
