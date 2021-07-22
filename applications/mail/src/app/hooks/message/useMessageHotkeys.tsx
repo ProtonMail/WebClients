@@ -2,7 +2,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { useRef, useState } from 'react';
-import { useFolders, useHotkeys, useMailSettings, HotkeyTuple } from '@proton/components';
+import { useFolders, useHotkeys, useMailSettings, HotkeyTuple, useEventManager } from '@proton/components';
 import { isStarred } from '../../helpers/elements';
 import { getFolderName } from '../../helpers/labels';
 import { Element } from '../../models/element';
@@ -62,6 +62,7 @@ export const useMessageHotkeys = (
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
     const [folders] = useFolders();
     const folderNavigationHotkeys = useFolderNavigationHotkeys();
+    const { call } = useEventManager();
 
     const labelDropdownToggleRef = useRef<() => void>(noop);
     const moveDropdownToggleRef = useRef<() => void>(noop);
@@ -224,11 +225,12 @@ export const useMessageHotkeys = (
         ],
         [
             'U',
-            (e) => {
+            async (e) => {
                 if (hotkeysEnabledAndMessageReady) {
                     e.stopPropagation();
-                    markAs([message.data as Element], labelID, MARK_AS_STATUS.UNREAD);
                     setExpanded(false);
+                    markAs([message.data as Element], labelID, MARK_AS_STATUS.UNREAD);
+                    await call();
                 }
             },
         ],
