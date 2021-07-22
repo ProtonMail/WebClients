@@ -88,6 +88,7 @@ export interface EventInvitation {
     originalUniqueIdentifier?: string;
     fileName?: string;
     vevent: VcalVeventComponent;
+    hasMultipleVevents?: boolean;
     calendarEvent?: CalendarEvent;
     method?: ICAL_METHOD;
     vtimezone?: VcalVtimezoneComponent;
@@ -399,7 +400,6 @@ export const parseVcalendar = (data: string): VcalVcalendar | undefined => {
 interface ProcessedInvitation<T> {
     isImport: boolean;
     isOrganizerMode: boolean;
-    hasMultipleVevents: boolean;
     timeStatus: EVENT_TIME_STATUS;
     isAddressActive: boolean;
     isAddressDisabled: boolean;
@@ -411,9 +411,8 @@ export const processEventInvitation = <T>(
     contactEmails: ContactEmail[],
     ownAddresses: Address[]
 ): ProcessedInvitation<T> => {
-    const { originalVcalInvitation, vevent, calendarEvent, method } = invitation;
+    const { vevent, calendarEvent, method } = invitation;
     const isImport = method === ICAL_METHOD.PUBLISH;
-    const hasMultipleVevents = getHasMultipleVevents(originalVcalInvitation);
     const timeStatus = getEventTimeStatus(vevent, Date.now());
     const attendees = vevent.attendee || [];
     const { organizer } = vevent;
@@ -474,7 +473,6 @@ export const processEventInvitation = <T>(
     return {
         isImport,
         isOrganizerMode,
-        hasMultipleVevents,
         timeStatus,
         isAddressActive,
         isAddressDisabled,
@@ -519,19 +517,12 @@ export const getInitialInvitationModel = ({
             error: invitationOrError,
         };
     }
-    const {
-        isOrganizerMode,
-        isImport,
-        hasMultipleVevents,
-        timeStatus,
-        isAddressActive,
-        isAddressDisabled,
-        invitation,
-    } = processEventInvitation(invitationOrError, message, contactEmails, ownAddresses);
+    const { isOrganizerMode, isImport, timeStatus, isAddressActive, isAddressDisabled, invitation } =
+        processEventInvitation(invitationOrError, message, contactEmails, ownAddresses);
     const result: InvitationModel = {
         isOrganizerMode,
         isImport,
-        hasMultipleVevents,
+        hasMultipleVevents: invitation.hasMultipleVevents,
         timeStatus,
         isAddressActive,
         isAddressDisabled,
@@ -589,10 +580,12 @@ export const getSupportedEventInvitation = async ({
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: supportedMethod });
     }
     const completeVevent = withOutsideUIDAndSequence(vevent, vcalComponent);
+    const hasMultipleVevents = getHasMultipleVevents(vcalComponent);
     // To filter potentially equivalent invitation ics's, we have to generate a reliable
     // unique identifier (resistant to format differences, like \n --> \r\n) for the ics if it has no UID
+    const originalUID = completeVevent.uid?.value;
     const originalUniqueIdentifier =
-        completeVevent.uid?.value || (await generateVeventHashUID(serialize(vcalComponent)));
+        hasMultipleVevents || !originalUID ? await generateVeventHashUID(serialize(vcalComponent)) : originalUID;
     if (supportedMethod === ICAL_METHOD.PUBLISH) {
         const sha1Uid = await generateVeventHashUID(icsBinaryString, completeVevent.uid?.value);
         completeVevent.uid = { value: sha1Uid };
@@ -626,6 +619,7 @@ export const getSupportedEventInvitation = async ({
             vtimezone,
             originalVcalInvitation: vcalComponent,
             originalUniqueIdentifier,
+            hasMultipleVevents,
             fileName: icsFileName,
         };
     } catch (error) {
