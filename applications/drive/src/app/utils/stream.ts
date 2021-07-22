@@ -1,9 +1,9 @@
-import { TransformStream, ReadableStream, ReadResult } from 'web-streams-polyfill';
+import { TransformStream, ReadableStream, ReadableStreamDefaultReadResult } from 'web-streams-polyfill';
 
 export const untilStreamEnd = async <T>(stream: ReadableStream<T>, action?: (data: T) => Promise<void>) => {
     const reader = stream.getReader();
 
-    const processResponse = async (result: ReadResult<T>): Promise<any> => {
+    const processResponse = async (result: ReadableStreamDefaultReadResult<T>): Promise<any> => {
         if (result.done) {
             return;
         }

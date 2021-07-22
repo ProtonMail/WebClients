@@ -13,7 +13,3 @@ declare module 'service-worker-loader*' {
     export default register;
     export { ServiceWorkerNoSupportError, scriptUrl };
 }
-
-type UnderlyingByteSource = undefined;
-type ReadableStreamBYOBReader = undefined;
-declare module '@mattiasbuelens/web-streams-adapter';
