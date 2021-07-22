@@ -70,7 +70,7 @@ const Autocomplete = <T,>({
                     }
                 }}
             />
-            <AutocompleteList anchorRef={containerRef} {...suggestionProps}>
+            <AutocompleteList anchorRef={containerRef.current ? containerRef : inputRef} {...suggestionProps}>
                 {filteredOptions.map(({ chunks, text, option }, index) => {
                     return (
                         <Option
