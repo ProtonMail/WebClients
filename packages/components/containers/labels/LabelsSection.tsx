@@ -12,7 +12,7 @@ import { SettingsSection } from '../account';
 import EditLabelModal from './modals/EditLabelModal';
 import LabelSortableList from './LabelSortableList';
 
-const DEBOUNCE_VALUE = 1800;
+const DEBOUNCE_VALUE = 1600;
 
 function LabelsSection() {
     const [labels = [], loadingLabels] = useLabels();
