@@ -226,6 +226,10 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
         );
     }, [messageCounts]);
 
+    // Hide sidebar if the user is not on a paid plan, but allow him to see its scheduled messages if he had some before going to free plan
+    const showScheduled =
+        scheduledFeature?.Value && (user.hasPaidMail || totalMessagesMap[MAILBOX_LABEL_IDS.SCHEDULED] > 0);
+
     if (
         loadingMailSettings ||
         loadingLabels ||
@@ -268,7 +272,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                     id="drafts"
                     onFocus={() => setFocusedItem('drafts')}
                 />
-                {scheduledFeature?.Value ? (
+                {showScheduled ? (
                     <SidebarItem
                         {...getCommonProps(MAILBOX_LABEL_IDS.SCHEDULED)}
                         icon="clock"
