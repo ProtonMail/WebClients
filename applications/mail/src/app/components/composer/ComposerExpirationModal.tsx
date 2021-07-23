@@ -8,7 +8,10 @@ import ComposerInnerModal from './ComposerInnerModal';
 import { MAX_EXPIRATION_TIME } from '../../constants';
 import { MessageChange } from './Composer';
 
-const initValues = ({ expiresIn = 0 }: Partial<MessageExtended> = {}) => {
+// expiresIn value is in seconds and default is 7 days
+const ONE_WEEK = 3600 * 24 * 7;
+
+const initValues = ({ expiresIn = ONE_WEEK }: Partial<MessageExtended> = {}) => {
     const deltaHours = expiresIn / 3600;
     const deltaDays = Math.floor(deltaHours / 24);
 
