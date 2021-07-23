@@ -28,6 +28,7 @@ import {
     HighlightString,
     LastEmail,
     MessageForSearch,
+    IsSearchResult,
 } from '../models/encryptedSearch';
 import { defaultESStatus, ES_MAX_CACHE, PAGE_SIZE } from '../constants';
 import { extractSearchParameters, filterFromUrl, setSortInUrl, sortFromUrl } from '../helpers/mailboxUrl';
@@ -871,6 +872,18 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         return highlightJSX(metadata, normalisedKeywords);
     };
 
+    /**
+     * Check whether a message is part of the current search results
+     */
+    const isSearchResult: IsSearchResult = (ID) => {
+        const { dbExists, esEnabled, permanentResults } = esStatus;
+        if (!(dbExists && esEnabled && isSearch)) {
+            return false;
+        }
+
+        return permanentResults.findIndex((result) => result.ID === ID) !== -1;
+    };
+
     useSubscribeEventManager(async (event: Event) => {
         const { dbExists, isRefreshing, cachedIndexKey } = esStatus;
         // If building is happening, either because of initial indexing or because
@@ -1022,6 +1035,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         highlightString,
         highlightMetadata,
         shouldHighlight,
+        isSearchResult,
     };
 
     return <EncryptedSearchContext.Provider value={esFunctions}>{children}</EncryptedSearchContext.Provider>;
