@@ -16,7 +16,7 @@ const VpnSettingsRouter = () => {
             <Route path={`${path}/open-vpn-ike-v2`}>
                 <VpnOpenVpnIKEv2Settings location={location} />
             </Route>
-            <Redirect to={`${path}/vpn-apps`} />
+            <Redirect to={`${path}/dashboard`} />
         </Switch>
     );
 };

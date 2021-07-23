@@ -74,7 +74,7 @@ const CalendarSettingsRouter = ({ user }: Props) => {
                     user={user}
                 />
             </Route>
-            <Redirect to={`${path}/general`} />
+            <Redirect to={`${path}/dashboard`} />
         </Switch>
     );
 };
