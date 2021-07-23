@@ -1,31 +1,27 @@
 import React from 'react';
 import { c } from 'ttag';
 import { ENCRYPTION_TYPES } from '@proton/shared/lib/constants';
-import { Alert, Radio, Row } from '../../../components';
+import { Radio, Row } from '../../../components';
 
-const { RSA2048, RSA4096, X25519 } = ENCRYPTION_TYPES;
+const { RSA4096, X25519 } = ENCRYPTION_TYPES;
 
 interface Props {
     encryptionType: string;
     setEncryptionType: React.Dispatch<React.SetStateAction<ENCRYPTION_TYPES>>;
 }
 const SelectEncryption = ({ encryptionType, setEncryptionType }: Props) => {
-    const highSecurity = <strong key="1">{c('encryption').t`High security`}</strong>;
-    const highestSecurity = <strong key="2">{c('encryption').t`Highest security`}</strong>;
-    const stateOfTheArt = <strong key="3">{c('encryption').t`State of the art`}</strong>;
+    const stateOfTheArt = <strong key="X25519">{c('encryption').t`State of the art`}</strong>;
+    const highestSecurity = <strong key="RSA4096">{c('encryption').t`Compatibility`}</strong>;
 
     const radios = [
         {
-            label: c('Option').jt`${highSecurity} RSA 2048-bit (Older but faster)`,
-            value: RSA2048,
-        },
-        {
-            label: c('Option').jt`${highestSecurity} RSA 4096-bit (Secure but slow)`,
-            value: RSA4096,
-        },
-        {
-            label: c('Option').jt`${stateOfTheArt} X25519 (Modern, fastest, secure)`,
+            label: c('Option').jt`${stateOfTheArt} X25519 (Fastest, most modern)`,
             value: X25519,
+        },
+        {
+            label: c('Option')
+                .jt`${highestSecurity} RSA 4096-bit (Slower, but increased compatibility with legacy software)`,
+            value: RSA4096,
         },
     ];
 
@@ -46,12 +42,6 @@ const SelectEncryption = ({ encryptionType, setEncryptionType }: Props) => {
                     </Row>
                 );
             })}
-            {encryptionType === RSA4096 && (
-                <Alert>
-                    {c('Warning')
-                        .t`Generating RSA 4096-bit encryption keys may crash or freeze your browser. RSA 4096-bit keys are only recommended for high performance computers - not recommended for tablet and mobile devices.`}
-                </Alert>
-            )}
         </>
     );
 };
