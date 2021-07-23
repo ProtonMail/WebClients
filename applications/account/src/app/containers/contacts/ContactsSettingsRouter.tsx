@@ -16,7 +16,7 @@ const ContactSettingsRouter = () => {
             <Route path={`${path}/import-export`}>
                 <ContactsImportSettings location={location} />
             </Route>
-            <Redirect to={`${path}/general`} />
+            <Redirect to={`${path}/dashboard`} />
         </Switch>
     );
 };

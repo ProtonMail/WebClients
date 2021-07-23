@@ -12,7 +12,7 @@ const DriveSettingsRouter = () => {
             <Route path={`${path}/general`}>
                 <DriveGeneralSettings location={location} />
             </Route>
-            <Redirect to={`${path}/general`} />
+            <Redirect to={`${path}/dashboard`} />
         </Switch>
     );
 };
