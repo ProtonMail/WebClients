@@ -37,7 +37,6 @@ const ContactAdrField = ({ value, onChange }: Props) => {
                     value={address[STREET]}
                     placeholder={c('Label').t`Street address`}
                     onChange={handleChange(STREET)}
-                    autoFocus
                 />
             </div>
             <div className="mb1">

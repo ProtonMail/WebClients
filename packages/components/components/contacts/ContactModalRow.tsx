@@ -107,7 +107,7 @@ const ContactModalRow = (
     }, [field]);
 
     return (
-        <div className="flex flex-nowrap flex-item-noshrink">
+        <div className="flex flex-nowrap flex-item-noshrink" data-contact-property-id={property.uid}>
             {isOrderable ? (
                 <OrderableHandle key="icon">
                     <div className="cursor-row-resize mr0-5 flex flex-item-noshrink mb1">
