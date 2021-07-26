@@ -56,12 +56,22 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
         }
     };
 
+    const handleCancel = () => {
+        onChange({ expiresIn: undefined });
+        onClose();
+    };
+
     const handleSubmit = () => {
         if (Number.isNaN(valueInHours)) {
             createNotification({
                 type: 'error',
                 text: c('Error').t`Invalid expiration time.`,
             });
+            return;
+        }
+
+        if (valueInHours === 0) {
+            handleCancel();
             return;
         }
 
@@ -74,11 +84,6 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
         }
 
         onChange({ expiresIn: valueInHours * 3600 });
-        onClose();
-    };
-
-    const handleCancel = () => {
-        onChange({ expiresIn: undefined });
         onClose();
     };
 
