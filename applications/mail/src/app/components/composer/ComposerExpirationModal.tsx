@@ -82,7 +82,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
         onClose();
     };
 
-    const disabled = valueInHours === 0 || Number.isNaN(valueInHours);
+    const disabled = Number.isNaN(valueInHours);
 
     return (
         <ComposerInnerModal
