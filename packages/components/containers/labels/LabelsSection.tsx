@@ -22,10 +22,11 @@ function LabelsSection() {
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 
-    const labelsOrder = labels.map(({ ID }) => ID).join(',');
-
     const [localLabels, setLocalLabels] = useState(labels);
     const debouncedLabels = useDebounceInput(localLabels, DEBOUNCE_VALUE);
+
+    const labelsOrder = labels.map(({ ID }) => ID).join(',');
+    const debouncedLabelOrder = debouncedLabels.map(({ ID }) => ID).join(',');
 
     /**
      * Refresh the list + update API and call event, it can be slow.
@@ -45,8 +46,6 @@ function LabelsSection() {
     };
 
     useEffect(() => {
-        const debouncedLabelOrder = debouncedLabels.map(({ ID }) => ID).join(',');
-
         if (!debouncedLabelOrder || debouncedLabelOrder === labelsOrder) {
             return;
         }
@@ -60,8 +59,11 @@ function LabelsSection() {
     }, [debouncedLabels]);
 
     useEffect(() => {
+        if (debouncedLabelOrder === labelsOrder) {
+            return;
+        }
         setLocalLabels(labels);
-    }, [labels.length]);
+    }, [labels]);
 
     return (
         <SettingsSection>
