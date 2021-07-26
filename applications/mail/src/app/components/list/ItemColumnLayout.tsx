@@ -1,5 +1,5 @@
 import React from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 
 import ItemStar from './ItemStar';
@@ -12,6 +12,8 @@ import { Element } from '../../models/element';
 import ItemExpiration from './ItemExpiration';
 import ItemAction from './ItemAction';
 import { Breakpoints } from '../../models/utils';
+import { MessageForSearch } from '../../models/encryptedSearch';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 interface Props {
     labelID: string;
@@ -24,6 +26,7 @@ interface Props {
     displayRecipients: boolean;
     loading: boolean;
     breakpoints: Breakpoints;
+    unread: boolean;
 }
 
 const ItemColumnLayout = ({
@@ -37,8 +40,30 @@ const ItemColumnLayout = ({
     displayRecipients,
     loading,
     breakpoints,
+    unread,
 }: Props) => {
+    const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
+    const body = (element as MessageForSearch).decryptedBody;
     const { Subject } = element;
+
+    const sendersContent =
+        !loading && displayRecipients && !senders
+            ? c('Info').t`(No Recipient)`
+            : shouldHighlight()
+            ? highlightMetadata(senders, unread, true).resultJSX
+            : senders;
+    const subjectContent = shouldHighlight() && Subject ? highlightMetadata(Subject, unread, true).resultJSX : Subject;
+
+    let bodyContent: JSX.Element | undefined;
+    let occurrencesInBody = 0;
+    if (body) {
+        ({ resultJSX: bodyContent, numOccurrences: occurrencesInBody } = highlightMetadata(body, unread, true));
+    }
+    const bodyTitle = c('Info').ngettext(
+        msgid`${occurrencesInBody} occurrence found`,
+        `${occurrencesInBody} occurrences found`,
+        occurrencesInBody
+    );
 
     return (
         <div
@@ -52,7 +77,7 @@ const ItemColumnLayout = ({
                         title={addresses}
                         data-testid="message-column:sender-address"
                     >
-                        {!loading && displayRecipients && !senders ? c('Info').t`(No Recipient)` : senders}
+                        {sendersContent}
                     </span>
                     <ItemAction element={element} className="ml0-5 flex-item-noshrink mtauto mbauto" />
                 </div>
@@ -87,7 +112,7 @@ const ItemColumnLayout = ({
                         title={Subject}
                         data-testid="message-column:subject"
                     >
-                        {Subject}
+                        {subjectContent}
                     </span>
                 </div>
 
@@ -102,6 +127,21 @@ const ItemColumnLayout = ({
                     <ItemAttachmentIcon element={element} className="ml0-5 flex-align-self-center" />
                 </div>
             </div>
+
+            {shouldHighlight() && (
+                <div className="flex flex-nowrap flex-align-items-center item-secondline max-w100 no-scroll">
+                    <div className="item-subject flex-item-fluid flex flex-nowrap flex-align-items-center">
+                        <span
+                            role="heading"
+                            aria-level={2}
+                            className="inline-block max-w100 text-ellipsis"
+                            title={bodyTitle}
+                        >
+                            {bodyContent}
+                        </span>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

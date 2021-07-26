@@ -1,11 +1,11 @@
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { localisedForwardFlags } from '../../constants';
-import { CachedMessage, MessageForSearch, NormalisedSearchParams } from '../../models/encryptedSearch';
+import { CachedMessage, ESBaseMessage, MessageForSearch, NormalisedSearchParams } from '../../models/encryptedSearch';
 import { SearchParameters } from '../../models/tools';
 import { isMessageForwarded, prepareMessageMetadata } from './esBuild';
 import { applySearch, getTimeLimits, normaliseSearchParams, sizeOfCache, splitCachedMessage } from './esSearch';
-import { compareMessagesForSearch } from './esSync';
+import { compareESBaseMessages } from './esSync';
 
 describe('encryptedSearch', () => {
     const messageForSearch: MessageForSearch = {
@@ -28,10 +28,10 @@ describe('encryptedSearch', () => {
         ExpirationTime: 0,
         AddressID: 'AddressID',
         LabelIDs: [],
+        decryptedBody: '',
     };
     const cachedMessage: CachedMessage = {
         ...messageForSearch,
-        decryptedBody: '',
         decryptedSubject: '',
         decryptionError: false,
     };
@@ -39,8 +39,29 @@ describe('encryptedSearch', () => {
 
     describe('prepareMessageMetadata', () => {
         it('should select the correct fields of MessageForSearch', () => {
+            const baseMessage: ESBaseMessage = {
+                ID: 'ID',
+                Order: 0,
+                ConversationID: 'ConversationID',
+                Subject: 'Subject',
+                Unread: 0,
+                Sender: { Name: 'Sender', Address: 'SenderAddress' },
+                Flags: 0,
+                IsReplied: 0,
+                IsRepliedAll: 0,
+                IsForwarded: 0,
+                ToList: [],
+                CCList: [],
+                BCCList: [],
+                Time: 0,
+                Size: 0,
+                NumAttachments: 0,
+                ExpirationTime: 0,
+                AddressID: 'AddressID',
+                LabelIDs: [],
+            };
             const message: Message = {
-                ...messageForSearch,
+                ...baseMessage,
                 SenderAddress: 'SenderAddress',
                 SenderName: 'SenderName',
                 Type: 0,
@@ -54,7 +75,7 @@ describe('encryptedSearch', () => {
                 ReplyTos: [],
                 Attachments: [],
             };
-            expect(prepareMessageMetadata(message)).toStrictEqual(messageForSearch);
+            expect(prepareMessageMetadata(message)).toStrictEqual(baseMessage);
         });
     });
 
@@ -67,12 +88,13 @@ describe('encryptedSearch', () => {
         });
     });
 
-    describe('compareMessagesForSearch', () => {
+    describe('compareESBaseMessages', () => {
         it('should check equality between MessageForSearch', () => {
-            const messageForSearch2 = { ...messageForSearch };
-            expect(compareMessagesForSearch(messageForSearch, messageForSearch2)).toStrictEqual(true);
-            messageForSearch2.Order = 1;
-            expect(compareMessagesForSearch(messageForSearch, messageForSearch2)).toStrictEqual(false);
+            const esBaseMessage1 = prepareMessageMetadata(messageForSearch);
+            const esBaseMessage2 = { ...esBaseMessage1 };
+            expect(compareESBaseMessages(esBaseMessage1, esBaseMessage2)).toStrictEqual(true);
+            esBaseMessage2.Order = 1;
+            expect(compareESBaseMessages(esBaseMessage1, esBaseMessage2)).toStrictEqual(false);
         });
     });
 
@@ -233,16 +255,8 @@ describe('encryptedSearch', () => {
 
     describe('splitCachedMessage', () => {
         it('should split a CachedMessage into a MessageForSearch', () => {
-            const {
-                decryptedBody,
-                decryptedSubject,
-                decryptionError,
-                messageForSearch: splitMessage,
-            } = splitCachedMessage(cachedMessage);
+            const splitMessage = splitCachedMessage(cachedMessage);
             expect(splitMessage).toStrictEqual(messageForSearch);
-            expect(decryptedBody).toEqual('');
-            expect(decryptedSubject).toEqual('');
-            expect(decryptionError).toEqual(false);
         });
     });
 

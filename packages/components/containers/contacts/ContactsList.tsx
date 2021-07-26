@@ -56,7 +56,7 @@ const ContactsList = ({
             ref={containerRef}
             className={classnames([
                 isDesktop ? 'items-column-list' : 'items-column-list--mobile',
-                isCompactView && 'is-compact',
+                isCompactView && 'list-compact',
             ])}
         >
             <div className="items-column-list-inner items-column-list-inner--no-border">

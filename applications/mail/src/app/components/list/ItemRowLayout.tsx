@@ -1,5 +1,5 @@
 import React from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { classnames } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -13,6 +13,8 @@ import NumMessages from '../conversation/NumMessages';
 import { Element } from '../../models/element';
 import ItemExpiration from './ItemExpiration';
 import ItemAction from './ItemAction';
+import { MessageForSearch } from '../../models/encryptedSearch';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 interface Props {
     labelID: string;
@@ -39,8 +41,29 @@ const ItemRowLayout = ({
     displayRecipients,
     loading,
 }: Props) => {
+    const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
+    const body = (element as MessageForSearch).decryptedBody;
     const { Subject, Size } = element;
     const size = humanSize(Size);
+
+    const sendersContent =
+        !loading && displayRecipients && !senders
+            ? c('Info').t`(No Recipient)`
+            : shouldHighlight()
+            ? highlightMetadata(senders, unread, true).resultJSX
+            : senders;
+    const subjectContent = shouldHighlight() && Subject ? highlightMetadata(Subject, unread, true).resultJSX : Subject;
+
+    let bodyContent: JSX.Element | undefined;
+    let occurrencesInBody = 0;
+    if (body) {
+        ({ resultJSX: bodyContent, numOccurrences: occurrencesInBody } = highlightMetadata(body, unread, true));
+    }
+    const bodyTitle = c('Info').ngettext(
+        msgid`${occurrencesInBody} occurrence found`,
+        `${occurrencesInBody} occurrences found`,
+        occurrencesInBody
+    );
 
     return (
         <div className="flex-item-fluid flex flex-align-items-center flex-nowrap flex-row item-titlesender">
@@ -50,7 +73,7 @@ const ItemRowLayout = ({
 
             <div className={classnames(['item-senders w20 flex flex-nowrap mauto pr1', unread && 'text-bold'])}>
                 <span className="max-w100 text-ellipsis" title={addresses} data-testid="message-row:sender-address">
-                    {!loading && displayRecipients && !senders ? c('Info').t`(No Recipient)` : senders}
+                    {sendersContent}
                 </span>
                 <ItemAction element={element} className="ml0-5 flex-item-noshrink mtauto mbauto" />
             </div>
@@ -67,15 +90,27 @@ const ItemRowLayout = ({
                         conversation={element}
                     />
                 )}
-                <span
-                    role="heading"
-                    aria-level={2}
-                    className={classnames(['inline-block max-w100 text-ellipsis mr1', unread && 'text-bold'])}
-                    title={Subject}
-                    data-testid="message-row:subject"
-                >
-                    {Subject}
-                </span>
+                <div className="flex flex-column inline-block">
+                    <span
+                        role="heading"
+                        aria-level={2}
+                        className={classnames(['max-w100 text-ellipsis mr1', unread && 'text-bold'])}
+                        title={Subject}
+                        data-testid="message-row:subject"
+                    >
+                        {subjectContent}
+                    </span>
+                    {shouldHighlight() && (
+                        <span
+                            role="heading"
+                            aria-level={2}
+                            className={classnames(['max-w100 text-ellipsis mr1', unread && 'text-bold'])}
+                            title={bodyTitle}
+                        >
+                            {bodyContent}
+                        </span>
+                    )}
+                </div>
             </div>
 
             <ItemLabels
