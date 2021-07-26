@@ -68,7 +68,7 @@ const useSelection = <T>(items: Item<T>[]) => {
 
             setSelectedItems(selected);
         },
-        [multiSelectStartId]
+        [items, multiSelectStartId]
     );
 
     const selectItem = useCallback((id: ItemId) => setSelectedItems([id]), []);
