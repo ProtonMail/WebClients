@@ -192,19 +192,30 @@ const ContactModal = ({
         setAllProperties(allProperties.filter(({ uid }) => uid !== propertyUID));
     };
 
+    const focusOnField = (uid: string) => {
+        const elm = document.querySelector(`[data-contact-property-id="${uid}"]`) as HTMLElement;
+
+        elm?.querySelector('input')?.focus();
+    };
+
     const handleAdd = (field?: string) => () => {
+        const uid = generateUID(UID_PREFIX);
+
         if (!field) {
             // Get random field from other info, but not a limited one
             const filteredOtherInformationFields = otherInformationFields.filter(
                 (field) => !allProperties.find((property) => property.field === field)
             );
+
             const index = randomIntFromInterval(0, filteredOtherInformationFields.length - 1);
-            return setAllProperties([
-                ...allProperties,
-                { field: filteredOtherInformationFields[index], value: '', uid: generateUID(UID_PREFIX) },
-            ]);
+
+            setAllProperties([...allProperties, { field: filteredOtherInformationFields[index], value: '', uid }]);
+            window.setTimeout(() => focusOnField(uid));
+            return;
         }
-        setAllProperties([...allProperties, { field, value: '', uid: generateUID(UID_PREFIX) }]);
+
+        setAllProperties([...allProperties, { field, value: '', uid }]);
+        window.setTimeout(() => focusOnField(uid));
     };
 
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
@@ -289,6 +300,11 @@ const ContactModal = ({
             handleAdd(newField)();
         }
     }, [newField]);
+
+    // Default focus on name field
+    useEffect(() => {
+        nameFieldRef.current?.focus();
+    }, []);
 
     return (
         <FormModal
