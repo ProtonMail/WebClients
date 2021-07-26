@@ -242,7 +242,6 @@ export const createNewDraft = (
         document,
         plainText,
         action,
-        expiresIn: 0,
         originalTo,
         originalAddressID,
         initialized: true,
