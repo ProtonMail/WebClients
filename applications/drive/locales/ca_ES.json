@@ -6,6 +6,9 @@
   "contexts": {
     "": {},
     "Error": {
+      "Unknown error": [
+        "Error desconegut"
+      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Aquest missatge pot contenir algunes adreces URL que no es poden obrir amb el vostre navegador actual"
       ],
@@ -18,8 +21,8 @@
       "Authentication error.": [
         "Error d'autenticació."
       ],
-      "Unknown error": [
-        "Error desconegut"
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "El navegador que utilitzeu no permet l'autorització total del pagament. Si us plau, utilitzeu un navegador diferent o inicieu la sessió mitjançant un ordinador."
       ],
       "Email address invalid": [
         "L'adreça de correu electrònic no és vàlida"
@@ -95,6 +98,66 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
+      "Process aborted": [
+        "Procés anul·lat"
+      ],
+      "Payment process cancelled": [
+        "Procès de pagament cancel·lat"
+      ],
+      "Payment process failed": [
+        "Ha fallat el procés de pagament"
+      ],
+      "Payment process consumed": [
+        "Procés de pagament esgotat"
+      ],
+      "Payment process not supported": [
+        "Procés de pagament no soportat"
+      ],
+      "Unknown payment token status": [
+        "Estat del token de pagament desconegut"
+      ],
+      "Tab closed": [
+        "Pestanya tancada"
+      ],
+      "Name on card required": [
+        "Nom de la targeta requerit"
+      ],
+      "Invalid expiration date": [
+        "Data de caducitat invàlida"
+      ],
+      "Invalid card number": [
+        "Número de targeta no vàlid"
+      ],
+      "Invalid ${ name } code": [
+        "Codi ${ name } no vàlid"
+      ],
+      "Invalid postal code": [
+        "Codi postal no vàlid"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Error en connectar-se a l'API de Bitcoin."
+      ],
+      "Amount below minimum.": [
+        "Quantitat per sota del mínim."
+      ],
+      "Amount above the maximum.": [
+        "Quantitat per sobre del màxim."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "L’import mínim que es pot donar és ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "La quantitat mínima de crèdit que es pot afegir és ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "El pagament mínim que acceptem és ${ _price2 }"
+      ],
+      "Checkout expired, please try again.": [
+        "El pagament ha expirat, si us plau probeu de nou."
+      ],
+      "Invalid code": [
+        "Codi invàlid"
+      ],
       "Incorrect mailbox password. Please try again": [
         "Contrasenya de bustia incorrecta, si us plau, torneu-ho a provar de nou"
       ],
@@ -131,11 +194,11 @@
       "Signature not verified": [
         "Signatura no verificada"
       ],
-      "No valid address found": [
-        "No s’ha trobat una adreça vàlida"
-      ],
       "Incorrect password. Please try again.": [
         "Contrasenya incorrecta, torneu-ho a intentar."
+      ],
+      "No valid address found": [
+        "No s’ha trobat una adreça vàlida"
       ]
     },
     "Action": {
@@ -214,11 +277,11 @@
       "Previous month": [
         "Mes anterior"
       ],
-      "Confirm opening of link ${ link }": [
-        "Confirmeu obrir l'enllaç ${ link }"
-      ],
       "refresh the page": [
         "refresqueu la pàgina"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Confirmeu obrir l'enllaç ${ link }"
       ],
       "View invoice": [
         "Veure factura"
@@ -363,6 +426,18 @@
       "Signing out": [
         "Tancant la sessió"
       ],
+      "Clear": [
+        "Netejar"
+      ],
+      "Add screenshot(s)": [
+        "Afegir captura(es) de pantalla"
+      ],
+      "Hide info": [
+        "Amagar informació"
+      ],
+      "Show info": [
+        "Mostra informació"
+      ],
       "Details": [
         "Detalls"
       ],
@@ -396,20 +471,26 @@
       "here": [
         "aquí"
       ],
+      "Continue import": [
+        ""
+      ],
+      "Discard": [
+        ""
+      ],
+      "Reconnect": [
+        ""
+      ],
+      "Start import": [
+        ""
+      ],
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
       ],
-      "Switch account": [
-        "Canviar de compte"
-      ],
-      "Sign out": [
-        "Tancar la sessió"
+      "${ BRAND_NAME } introduction": [
+        "Introducció ${ BRAND_NAME }"
       ],
       "I have a question": [
         "Tinc una pregunta"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "Introducció ${ BRAND_NAME }"
       ],
       "Request a feature": [
         "Demana una nova característica"
@@ -419,6 +500,12 @@
       ],
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
+      ],
+      "Switch account": [
+        "Canviar de compte"
+      ],
+      "Sign out": [
+        "Tancar la sessió"
       ],
       "Go to settings": [
         "Anar a la configuració"
@@ -441,18 +528,6 @@
       "Composer mode": [
         "Mode d'editor"
       ],
-      "Clear": [
-        "Netejar"
-      ],
-      "Add screenshot(s)": [
-        "Afegir captura(es) de pantalla"
-      ],
-      "Hide info": [
-        "Amagar informació"
-      ],
-      "Show info": [
-        "Mostra informació"
-      ],
       "Get started": [
         "Començar"
       ],
@@ -471,26 +546,62 @@
       "OK": [
         "D'acord"
       ],
-      "Continue import": [
-        ""
+      "Remove bonuses": [
+        "Suprimeix bonus"
       ],
-      "Discard": [
-        ""
+      "Try again": [
+        "Torna-ho a provar"
       ],
-      "Reconnect": [
-        ""
+      "Use a different card": [
+        "Trieu una targeta diferent"
       ],
-      "Start import": [
-        ""
+      "Use a different payment method": [
+        "Utilitzeu un mètode de pagament diferent"
+      ],
+      "Retry": [
+        "Torneu a provar"
+      ],
+      "Loading verification": [
+        "Carregant verificació"
+      ],
+      "Select plan": [
+        "Seleccionar pla"
+      ],
+      "Compare all features": [
+        "Comparar totes les funcionalitats"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "${ boldSave } canviant a la facturació anual"
+      ],
+      "Pay": [
+        "Pagar"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "Obrir ajustos de ${ CALENDAR_APP_NAME }"
+      ],
+      "Remove gift code": [
+        "Esborrar codi regal"
+      ],
+      "annual billing": [
+        "facturació anual"
+      ],
+      "Compare plans": [
+        "Comparar plans"
+      ],
+      "Decrease": [
+        "Redueix"
+      ],
+      "Increase": [
+        "Incrementa"
       ],
       "Log in": [
         "Inicia la sessió"
       ],
-      "Delete permanently": [
-        "Suprimeix permanentment"
+      "Cancel all uploads": [
+        "Cancel·lar totes les pujades"
       ],
-      "Undo": [
-        "Desfer"
+      "New upload": [
+        "Càrrega nova"
       ],
       "Maximize transfers": [
         "Maximitzar les transferències"
@@ -527,12 +638,6 @@
       ],
       "Remove from this list": [
         "Esborra de la llista"
-      ],
-      "Cancel all uploads": [
-        "Cancel·lar totes les pujades"
-      ],
-      "New upload": [
-        "Càrrega nova"
       ],
       "List layout": [
         "Disseny de llista"
@@ -582,14 +687,14 @@
       "Upload folder": [
         "Carrega Carpeta"
       ],
+      "Delete permanently": [
+        "Suprimeix permanentment"
+      ],
       "Restore from trash": [
         "Recuperar de la paperera"
       ],
       "Empty trash": [
         "Buidar paperera"
-      ],
-      "Start recovering": [
-        "Començar a recuperar"
       ],
       "Share": [
         "Compartir"
@@ -603,8 +708,14 @@
       "Stop sharing": [
         "Deixa de compartir"
       ],
+      "Show shared link details": [
+        "Mostrar els detalls de l'enllaç compartit"
+      ],
       "Share file": [
         "Compartir arxius"
+      ],
+      "Start recovering": [
+        "Començar a recuperar"
       ],
       "View more": [
         "Veure més"
@@ -617,6 +728,9 @@
       ],
       "Create link": [
         "Crea l’enllaç"
+      ],
+      "Undo": [
+        "Desfer"
       ]
     },
     "Title": {
@@ -762,6 +876,15 @@
       "Import contacts": [
         "Importar contactes"
       ],
+      "Report a problem": [
+        "Avisar d'un problema"
+      ],
+      "Start import process": [
+        ""
+      ],
+      "Import in progress": [
+        ""
+      ],
       "Open help menu": [
         "Obrir el menú d'ajuda"
       ],
@@ -771,17 +894,110 @@
       "Open settings menu": [
         "Obrir el menú de preferències"
       ],
-      "Report a problem": [
-        "Avisar d'un problema"
-      ],
       "Select a theme": [
         "Seleccionar un tema"
       ],
-      "Start import process": [
-        ""
+      "Confirm loss of Proton bonuses": [
+        "Confirmeu la pèrdua de bonificacions de Proton"
       ],
-      "Import in progress": [
-        ""
+      "Unsupported browser": [
+        "Navegador no soportat"
+      ],
+      "Card verification": [
+        "Verificació de la targeta"
+      ],
+      "Payment verification": [
+        "Verificació de pagament"
+      ],
+      "Processing...": [
+        "Processant..."
+      ],
+      "Card verification in progress": [
+        "Verificació de targeta en curs"
+      ],
+      "Payment verification in progress": [
+        "Verificació de pagament en progres"
+      ],
+      "PayPal verification failed": [
+        "Ha fallat la verificació de PayPal"
+      ],
+      "3-D Secure verification failed": [
+        "Ha fallat la verificació segura en 3-D"
+      ],
+      "Error": [
+        "Error"
+      ],
+      "ZIP / postal code": [
+        "Zip/Codi postal"
+      ],
+      "Payment details": [
+        "Detalls de pagament"
+      ],
+      "Currency": [
+        "Moneda"
+      ],
+      "Billing cycle": [
+        "Cicle de facturació"
+      ],
+      "Current plan": [
+        "Pla actual"
+      ],
+      "Processing": [
+        "En procès"
+      ],
+      "Apply gift code": [
+        "Aplicar el codi regal"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Coupon discount": [
+        "Cupó de descompte"
+      ],
+      "Total (monthly)": [
+        "Total (mensual)"
+      ],
+      "Credits": [
+        "Crèdits"
+      ],
+      "Gift code": [
+        "Codi de regal"
+      ],
+      "Amount due": [
+        "Import degut"
+      ],
+      "Cancel subscription": [
+        "Cancel·lar la subscripció"
+      ],
+      "Network error": [
+        "Error de xarxa"
+      ],
+      "Select a plan": [
+        "Seleccioneu un pla"
+      ],
+      "Customize your plan": [
+        "Personalitzar el vostre pla"
+      ],
+      "Checkout": [
+        "Pagament final"
+      ],
+      "Plan summary": [
+        "Resum del pla"
+      ],
+      "${ appName } customization": [
+        "Personalització de ${ appName }"
+      ],
+      "Sign in again to continue": [
+        "Inicia sessió per continuar"
+      ],
+      "Account suspended": [
+        "Compte suspès"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Introduïu el vostre nom d'usuari o adreça de correu electrònic ProtonMail"
+      ],
+      "Enter your password": [
+        "Introdueix la teva contrasenya"
       ],
       "${ appName } Keyboard Shortcuts": [
         "Dreceres de teclat de ${ appName }"
@@ -798,27 +1014,6 @@
       "Beta Access": [
         "Accés Beta"
       ],
-      "Sign in again to continue": [
-        "Inicia sessió per continuar"
-      ],
-      "Account suspended": [
-        "Compte suspès"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Introduïu el vostre nom d'usuari o adreça de correu electrònic ProtonMail"
-      ],
-      "Enter your password": [
-        "Introdueix la teva contrasenya"
-      ],
-      "Delete permanently": [
-        "Suprimeix permanentment"
-      ],
-      "Stop sharing": [
-        "Deixa de compartir"
-      ],
-      "Cancel all active transfers": [
-        "Cancel·leu totes les transferències actives"
-      ],
       "Duplicate folder found": [
         "Carpeta duplicada trobada"
       ],
@@ -827,6 +1022,9 @@
       ],
       "Drop to upload": [
         "Arrosega per pujar"
+      ],
+      "Cancel all active transfers": [
+        "Cancel·leu totes les transferències actives"
       ],
       "Change layout": [
         "Cambiar la disposició"
@@ -843,8 +1041,38 @@
       "Empty trash": [
         "Buidar paperera"
       ],
+      "My files": [
+        "Els meus arxius"
+      ],
+      "You have no folders yet": [
+        "Encara no tens cap carpeta"
+      ],
+      "You have no files to share": [
+        "No tens arxius per compartir"
+      ],
       "Drive": [
         "Drive"
+      ],
+      "Your file is ready to be downloaded": [
+        "El vostre fitxer està preparat per descarregar"
+      ],
+      "Download completed": [
+        "Descàrrega completa"
+      ],
+      "Download failed": [
+        "Ha fallat la descàrrega"
+      ],
+      "Download canceled": [
+        "Descàrrega cancel·lada"
+      ],
+      "Downloading": [
+        "Descarregant"
+      ],
+      "Enter file password to download": [
+        "Introduïu la contrasenya del fitxer per descarregar-la"
+      ],
+      "The link either does not exist or has expired": [
+        "L’enllaç no existeix o bé ha caducat"
       ],
       "Restore your files": [
         "Restaureu els vostres fitxers"
@@ -854,15 +1082,6 @@
       ],
       "You have inaccessible files": [
         "Teniu arxius inaccessibles"
-      ],
-      "My files": [
-        "Els meus arxius"
-      ],
-      "You have no folders yet": [
-        "Encara no tens cap carpeta"
-      ],
-      "You have no files to share": [
-        "No tens arxius per compartir"
       ],
       "Rename a folder": [
         "Reanomenar carpeta"
@@ -942,26 +1161,11 @@
       "Total size": [
         "Mida total"
       ],
-      "Your file is ready to be downloaded": [
-        "El vostre fitxer està preparat per descarregar"
+      "Delete permanently": [
+        "Suprimeix permanentment"
       ],
-      "Download completed": [
-        "Descàrrega completa"
-      ],
-      "Download failed": [
-        "Ha fallat la descàrrega"
-      ],
-      "Download canceled": [
-        "Descàrrega cancel·lada"
-      ],
-      "Downloading": [
-        "Descarregant"
-      ],
-      "Enter file password to download": [
-        "Introduïu la contrasenya del fitxer per descarregar-la"
-      ],
-      "The link either does not exist or has expired": [
-        "L’enllaç no existeix o bé ha caducat"
+      "Stop sharing": [
+        "Deixa de compartir"
       ]
     },
     "Info": {
@@ -977,6 +1181,9 @@
       "Week": [
         "Setmana"
       ],
+      "support team": [
+        "equip de suport"
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb els navegadors Internet Explorer i Edge. Si esteu segurs de que aquest enllaç és legítim, feu servir un navegador diferent per obrir-lo."
       ],
@@ -991,9 +1198,6 @@
       ],
       "Drop the file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo"
-      ],
-      "support team": [
-        "equip de suport"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Actualment, el vostre compte Proton està en suspensió. Per continuar utilitzant el vostre compte, pagueu qualsevol factura que hagi pendent."
@@ -1141,6 +1345,12 @@
       "Loading ${ appName }": [
         "Carregant ${ appName }"
       ],
+      "Screenshot(s) attached": [
+        "Captures de pantalla(s) adjuntes"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
+      ],
       "Unsupported file": [
         "Fitxer no compatible"
       ],
@@ -1198,12 +1408,6 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Heu desactivat l'accés a la versió Beta. Cliqueu ${ refreshButton } per utilitzar la versió estable de ${ appName }. Es tornarà a carregar l'aplicació."
       ],
-      "Screenshot(s) attached": [
-        "Captures de pantalla(s) adjuntes"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
-      ],
       "Import contacts": [
         ""
       ],
@@ -1228,8 +1432,244 @@
       "Your import will not be processed.": [
         ""
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "La navegació bàsica i les accions es mantenen disponibles independentment de que les dreceres de teclat estiguin actives o no a la configuració."
+      "Since you're a loyal user, your account has additional features enabled.": [
+        "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        "Si baixes a un pla gratuit, perdràs permanentment aquests beneficis, encara que vulguis millorar el pla al futur."
+      ],
+      "+${ bonusSpace } bonus storage": [
+        "+${ bonusSpace } bonificació d'emmagatzematge"
+      ],
+      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } connexió per a ProtonVPN (permet connectar més dispositius a VPN)",
+        "+${ organization.BonusVPN } connexions per a ProtonVPN (permet connectar més dispositius a VPN)"
+      ],
+      "Your bank requires 3-D Secure verification for security purposes.": [
+        "El vostre banc requereix una verificació segura en 3-D amb finalitats de seguretat."
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        "La verificació obrirà una nova pestanya, si us plau, desactiveu els bloquejadors emergents. No se us farà cap càrrec. Qualsevol quantitat utilitzada per verificar la targeta serà retornada immediatament."
+      ],
+      "Verification will open a new tab, please disable any popup blockers.": [
+        "La verificació obrirà una nova pestanya, si us plau, desactiveu els bloquejadors emergents."
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Ben aviat sereu redirigits a PayPal per verificar el pagament."
+      ],
+      "You will be soon redirected to your bank to verify your payment.": [
+        "Ben aviat sereu redirigits al banc per verificar el pagament."
+      ],
+      "Please verify the card in the new tab which was opened.": [
+        "Verifiqueu la targeta a la pestanya nova que s'ha obert."
+      ],
+      "Please verify payment at the new tab which was opened.": [
+        "Verifiqueu el pagament a la pestanya nova que s'ha obert."
+      ],
+      "Verification can take a few minutes.": [
+        "La verificació pot trigar uns minuts."
+      ],
+      "Payment can take a few minutes to fully verify.": [
+        "El pagament pot trigar uns minuts en verificar-se completament."
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        "Torneu-ho a provar, utilitzeu un mètode de pagament diferent o bé contacteu per assistència de PayPal."
+      ],
+      "Please try again, use a different payment method, or call your bank for assistance.": [
+        "Torneu-ho a provar, utilitzeu un mètode de pagament diferent o bé truqueu per assistència al banc."
+      ],
+      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Per a Visa i MasterCard, els 3 dígits a la part posterior de la targeta. Per American Express, els 4 dígits de la part frontal de la targeta."
+      ],
+      "Amount below minimum (${ amount }).": [
+        "Import inferior al mínim (${ amount })."
+      ],
+      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
+        "Les transaccions en Bitcoins poden trigar una estona en ser confirmades (fins a 24 hores). Un cop confirmada, afegirem els crèdits al seu compte. Després de la confirmació podrà efectuar el pagament del rebut amb els crèdits."
+      ],
+      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
+        "Després de fer el pagament amb Bitcoin, seguiu les següents instruccions per actualitzar."
+      ],
+      "Please verify the payment in the new tab.": [
+        "Verifiqueu el pagament a la pestanya nova."
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Us redireccionarem a PayPal en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu bloquejadors emergents, inhabiliteu-los per continuar."
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        "Heu de tenir una targeta de crèdit o un compte bancari enllaçat amb el vostre compte PayPal. Si el vostre compte de PayPal no en té, cliqueu el botó de sota."
+      ],
+      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        "Això permetrà que PayPal s’utilitzi per pagar la vostra subscripció a Proton. Els redirigirem a PayPal en una pestanya nova del navegador. Si utilitzeu bloquejadors emergents, inhabiliteu-los per continuar."
+      ],
+      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
+        "Per afegir-lo com a mètode de pagament, heu de tenir una targeta de crèdit o un compte bancari enllaçat amb el vostre compte PayPal."
+      ],
+      "We use 3-D Secure to protect your payments.": [
+        "Utilitzem 3-D Secure per protegir els teus pagaments."
+      ],
+      "Billed as ${ billedPrice } per year": [
+        "Facturat com ${ billedPrice } anualment"
+      ],
+      "Billed as ${ billedPrice } every 2 years": [
+        "Facturat com ${ billedPrice } cada 2 anys"
+      ],
+      "Included": [
+        "Inclòs"
+      ],
+      "* Customizable features": [
+        "* Funcionalitats personalitzables"
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        "Accediu als vostres serveis de reproducció en línia com ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, sense importar on us trobeu."
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        "Accediu a contingut bloquejat com xarxes socials, notícies, Wikipedia, YouTube i molts d'altres, sense importar on us trobeu."
+      ],
+      "For getting started with private and secure emailing.": [
+        "Per començar a utilitzar correus electrònics privats i segurs."
+      ],
+      "A free and uncensored Internet should be available to all.": [
+        "Una Internet gratuïta i sense censura hauria d'estar disponible per a tothom."
+      ],
+      "Starter VPN service with P2P support.": [
+        "Servei VPN de base amb suport P2P."
+      ],
+      "Full-featured VPN with speed up to 10 Gbps.": [
+        "VPN completa amb velocitat de fins a 10 Gbps."
+      ],
+      "For individuals that need a fully-featured mailbox with advanced protection.": [
+        "Per qui necessita una bústia de correu amb funcions completes i protecció avançada."
+      ],
+      "For professionals that need secure business communications.": [
+        "Per professionals que necessiten comunicacions comercials segures."
+      ],
+      "VPN + ${ mailAppName } bundle for families and small businesses.": [
+        "Pla combinat de VPN + ${ mailAppName } per famílies i petites empreses."
+      ],
+      "For families and small teams; includes both Mail and VPN.": [
+        "Per a famílies i equips petits, inclou correu electrònic i connexions VPN."
+      ],
+      "Save 20%": [
+        "Estalvia un 20%"
+      ],
+      "Your account is being upgraded, this may take up to 30 seconds.": [
+        "El seu compte s'està actualitzant, el que pot arribar a trigar fins a 30 segons."
+      ],
+      "Thank you for supporting our mission.": [
+        "Gràcies per donar suport a la nostra missió."
+      ],
+      "Your account will be updated once the payment is cleared.": [
+        "El vostre compte s’actualitzarà un cop suprimit el pagament."
+      ],
+      "Account successfully updated": [
+        "El compte s'ha actualitzat correctament"
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        "Baixeu l'aplicació favorita avui i prengueu la privadesa amb vosaltres allà on aneu."
+      ],
+      "(Mail + VPN)": [
+        "(Correu + VPN)"
+      ],
+      "${ mailAppName } Free": [
+        "${ mailAppName } Gratuït"
+      ],
+      "${ vpnAppName } Free": [
+        "${ vpnAppName } Gratuït"
+      ],
+      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
+        "Facturat al final del vostre cicle de facturació actual (es renova el ${ renewalDate })"
+      ],
+      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        "Heu d'eliminar qualsevol calendari addicional i qualsevol calendari compartit abans de poder cancel·lar la vostra subscripció. ${ linkButton }"
+      ],
+      "No payment is required at this time.": [
+        "En aquest moment no cal pagar cap pagament."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
+        "Tingueu en compte que quan feu clic al botó \"Confirmar\", el vostre compte restarà crèdit de ${ creditsRemaining }."
+      ],
+      "20% discount applied to your subscription with coupon ${ code }": [
+        "20% de descompte aplicat a la vostra subscripció amb un cupó ${ code }"
+      ],
+      "Black Friday 2018 applied to your subscription": [
+        "Black Friday 2018 aplicat a la teva suscripció"
+      ],
+      "Black Friday 2019 applied to your subscription": [
+        "El Black Friday 2019 aplicat a la vostra subscripció"
+      ],
+      "Black Friday 2020 newcomer discount has been applied": [
+        "S'ha aplicat el descompte per a nouvinguts del Black Friday 2020"
+      ],
+      "Discount applied to your subscription with coupon ${ code }": [
+        "Descompte aplicat a la vostra subscripció amb un cupó ${ code }"
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        "Els pagaments estan protegits amb xifratge TLS i les lleis de privacitat suïsses."
+      ],
+      "30 days money-back guarantee.": [
+        "Garantia de reemborsament de 30 dies."
+      ],
+      "Save extra 20%": [
+        "Estalvieu un 20% addicional"
+      ],
+      "${ save20 } on your subscription by switching to ${ annualBilling }": [
+        "${ save20 } en la vostra subscripció canviant a ${ annualBilling }"
+      ],
+      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
+        "${ saveExtra20 } en Correu i VPN afegint una subscripció de Correu."
+      ],
+      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
+        "${ saveExtra20 } en Correu i VPN afegint una subscripció de VPN."
+      ],
+      "Storage GB": [
+        "Emmagatzematge GB"
+      ],
+      "Users": [
+        "Usuaris"
+      ],
+      "Domains": [
+        "Dominis"
+      ],
+      "Addresses": [
+        "Adreçes"
+      ],
+      "Connections": [
+        "Connexions"
+      ],
+      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Us permet allotjar correus electrònics pels vostres propis dominis a ${ mailAppName }, p. ex. usuari@exemple.cat"
+      ],
+      "Add additional addresses to your account like user2@protonmail.com": [
+        "Afegiu adreces addicionals al vostre compte com ara usuari2@protonmail.cat"
+      ],
+      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
+        "Nombre de connexions VPN que poden ser assignades a usuaris. Cada dispositiu connectat consumeix una connexió VPN."
+      ],
+      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
+        "ProtonMail Plus està limitat a un usuari i comença amb 5 GB d'emmagatzematge."
+      ],
+      "Switch to ${ professionalPlan } to add more users.": [
+        "Canvia a ${ professionalPlan } per afegir més usuaris."
+      ],
+      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } inclou ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } connexió VPN.",
+        "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } inclou ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } connexions VPN."
+      ],
+      "Each additional connection can be assigned to users in your organization.": [
+        "Cada connexió addicional pot ser assignada a usuaris dins la vostra organització."
+      ],
+      "Switch to ${ professionalPlan } to add more connections.": [
+        "Canvieu a ${ professionalPlan } per afegir més connexions."
+      ],
+      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        "${ mailAppName } Professional comença amb un usuari, i cada usuari afegeix 5 GB i 5 adreces de correu electrònic al grup de l'organització."
+      ],
+      "Not customizable": [
+        "No personalitzable"
+      ],
+      "Expired": [
+        "Expirat"
       ],
       "here": [
         "aquí"
@@ -1240,6 +1680,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si creieu que es tracta d'un error, poseu-vos en contacte amb nosaltres ${ contactLink }."
       ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "La navegació bàsica i les accions es mantenen disponibles independentment de que les dreceres de teclat estiguin actives o no a la configuració."
+      ],
       "Session timed out.": [
         "Temps de sessió esgotat."
       ],
@@ -1249,23 +1692,35 @@
       "Servers are unreachable.": [
         "Els servidors no són accessibles."
       ],
-      "Loading folder contents": [
-        "S'estan carregant els continguts de la carpeta"
+      "${ uploadName } already exists in this location.": [
+        "${ uploadName } ja existeix en aquesta ubicació."
       ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "La càrrega de centenars de fitxers alhora pot tenir un impacte en el rendiment."
+      "What do you want to do?": [
+        "Què voleu fer?"
       ],
-      "Are you sure you want to permanently delete selected item(s) from trash?": [
-        "Esteu segur que voleu suprimir permanentment els elements seleccionats de la paperera?"
+      "Folder contents will merge into a single folder": [
+        "Els continguts de la carpeta es combinaran en una sola carpeta"
       ],
-      "This will delete the link(s) and remove access to your file(s) for anyone with the link(s).": [
-        "Això suprimirà els enllaç/os i eliminarà l'accés als vostres fitxer/s per a qualsevol persona que tingui els enllaç/os."
+      "A number will be added to the folder name": [
+        "S'afegirà un número al nom de la carpeta"
       ],
-      "Moving files": [
-        "S'està movent fitxers"
+      "A number will be added to the filename": [
+        "S'afegirà un número al nom de l'arxiu"
       ],
-      "You cannot undo this action.": [
-        "No pots desfer aquesta acció."
+      "This will overwrite the existing folder": [
+        "Se sobreescriurà la carpeta existent"
+      ],
+      "This will overwrite the existing file": [
+        "Se sobreescriurà l'arxiu existent"
+      ],
+      "Folder will not be uploaded": [
+        "No es carregarà la carpeta"
+      ],
+      "File will not be uploaded": [
+        "No es carregarà l'arxiu"
+      ],
+      "Your files will be encrypted and then saved.": [
+        "Els teus arxius serán cifrats i desats."
       ],
       "${ doneCount } Finished": [
         "${ doneCount } Finalitzat",
@@ -1344,53 +1799,8 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Tancar el gestor de transferències cancel·larà totes les transferències actives, n'esteu segur?"
       ],
-      "${ uploadName } already exists in this location.": [
-        "${ uploadName } ja existeix en aquesta ubicació."
-      ],
-      "What do you want to do?": [
-        "Què voleu fer?"
-      ],
-      "Folder contents will merge into a single folder": [
-        "Els continguts de la carpeta es combinaran en una sola carpeta"
-      ],
-      "A number will be added to the folder name": [
-        "S'afegirà un número al nom de la carpeta"
-      ],
-      "A number will be added to the filename": [
-        "S'afegirà un número al nom de l'arxiu"
-      ],
-      "This will overwrite the existing folder": [
-        "Se sobreescriurà la carpeta existent"
-      ],
-      "This will overwrite the existing file": [
-        "Se sobreescriurà l'arxiu existent"
-      ],
-      "Folder will not be uploaded": [
-        "No es carregarà la carpeta"
-      ],
-      "File will not be uploaded": [
-        "No es carregarà l'arxiu"
-      ],
-      "Your files will be encrypted and then saved.": [
-        "Els teus arxius serán cifrats i desats."
-      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Esteu segur que voleu buidar la paperera i suprimir permanentment tots els elements?"
-      ],
-      "Would you like to restore your files?": [
-        "Voleu restaurar els vostres arxius?"
-      ],
-      "Recovery process might take some time.": [
-        "El procés de recuperació pot trigar una estona."
-      ],
-      "More": [
-        "Més"
-      ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        "Els vostres arxius ja no són accessibles a causa d'un restabliment de contrasenya. Torneu a carregar la clau de xifratge antiga per recuperar-ne l'accés. ${ mailSettingsLink }"
-      ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        "Alguns dels vostres arxius ja no són accessibles. Restaureu l'accés als vostres arxius. ${ startRecoveryButton }"
       ],
       "Create your first folder and start moving your files.": [
         "Crea la teva primera carpeta i comença a moure els teus arxius."
@@ -1412,6 +1822,36 @@
       ],
       "Create links and share your files with others.": [
         "Creeu enllaços i compartiu els vostres fitxers amb altres persones."
+      ],
+      "Link expires: ": [
+        "L'enllaç caduca el: "
+      ],
+      "Your file has finished downloading.": [
+        "L’enllaç no existeix o bé ha caducat."
+      ],
+      "Your file failed to download.": [
+        "Ha fallat la descàrrega del vostre fitxer."
+      ],
+      "Your download has been canceled.": [
+        "La vostra descàrrega s'ha cancel·lat."
+      ],
+      "Your file is being downloaded.": [
+        "S'està baixant el fitxer."
+      ],
+      "Would you like to restore your files?": [
+        "Voleu restaurar els vostres arxius?"
+      ],
+      "Recovery process might take some time.": [
+        "El procés de recuperació pot trigar una estona."
+      ],
+      "More": [
+        "Més"
+      ],
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
+        "Els vostres arxius ja no són accessibles a causa d'un restabliment de contrasenya. Torneu a carregar la clau de xifratge antiga per recuperar-ne l'accés. ${ mailSettingsLink }"
+      ],
+      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
+        "Alguns dels vostres arxius ja no són accessibles. Restaureu l'accés als vostres arxius. ${ startRecoveryButton }"
       ],
       "Yes": [
         "Si"
@@ -1449,20 +1889,23 @@
       "Select an uploaded file and create a link to it.": [
         "Seleccioneu un fitxer carregat i creeu-hi un enllaç."
       ],
-      "Link expires: ": [
-        "L'enllaç caduca el: "
+      "Loading folder contents": [
+        "S'estan carregant els continguts de la carpeta"
       ],
-      "Your file has finished downloading.": [
-        "L’enllaç no existeix o bé ha caducat."
+      "Uploading hundreds of files at once may have a performance impact.": [
+        "La càrrega de centenars de fitxers alhora pot tenir un impacte en el rendiment."
       ],
-      "Your file failed to download.": [
-        "Ha fallat la descàrrega del vostre fitxer."
+      "Are you sure you want to permanently delete selected item(s) from trash?": [
+        "Esteu segur que voleu suprimir permanentment els elements seleccionats de la paperera?"
       ],
-      "Your download has been canceled.": [
-        "La vostra descàrrega s'ha cancel·lat."
+      "This will delete the link(s) and remove access to your file(s) for anyone with the link(s).": [
+        "Això suprimirà els enllaç/os i eliminarà l'accés als vostres fitxer/s per a qualsevol persona que tingui els enllaç/os."
       ],
-      "Your file is being downloaded.": [
-        "S'està baixant el fitxer."
+      "Moving files": [
+        "S'està movent fitxers"
+      ],
+      "You cannot undo this action.": [
+        "No pots desfer aquesta acció."
       ],
       "Trash": [
         "Paperera"
@@ -1577,29 +2020,62 @@
       "Browser version": [
         "Versió del navegador"
       ],
-      "Display name": [
-        "Mostrar el nom"
-      ],
       "From: ${ fromEmailAddress }": [
         ""
       ],
       "To: ${ toEmailAddress }": [
         ""
       ],
-      "Keyboard shortcuts": [
-        "Dreceres de teclat"
+      "Display name": [
+        "Mostrar el nom"
       ],
-      "Select how your list of messages looks like by default.": [
-        "Seleccioneu com es veu per defecte la vostra llista de missatges."
+      "Name on card": [
+        "Titular de la targeta"
       ],
-      "Select how your mailbox looks like by default.": [
-        "Seleccioneu com es veu per defecte la vostra bústia de correu."
+      "Card number": [
+        "Número de la targeta de crèdit"
       ],
-      "Select how your composer opens by default.": [
-        "Seleccioneu com el vostre editor s'obre per defecte."
+      "Expiry date": [
+        "Data d'expiració"
       ],
-      "Enable Beta Access": [
-        "Activar Accés Beta"
+      "CVV code": [
+        "Codi CVV"
+      ],
+      "Select your country": [
+        "Seleccioni el seu país"
+      ],
+      "ZIP": [
+        "Codi postal"
+      ],
+      "BTC amount:": [
+        "Import de BTC:"
+      ],
+      "BTC address:": [
+        "Adreça BTC:"
+      ],
+      "Select a method": [
+        "Selecciona un mètode"
+      ],
+      "Total (${ countdown })": [
+        "Total (${ countdown })"
+      ],
+      "Total": [
+        "Total"
+      ],
+      "Proration": [
+        "Prorrateig"
+      ],
+      "Cash": [
+        "Efectiu"
+      ],
+      "Card holder": [
+        "Titular de la targeta"
+      ],
+      "Expires": [
+        "Expira"
+      ],
+      "Payer": [
+        "Pagador"
       ],
       "Cancel": [
         "Cancel·lar"
@@ -1618,6 +2094,21 @@
       ],
       "Username or ProtonMail address": [
         "Nom d'usuari o adreça ProtonMail"
+      ],
+      "Keyboard shortcuts": [
+        "Dreceres de teclat"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "Seleccioneu com es veu per defecte la vostra llista de missatges."
+      ],
+      "Select how your mailbox looks like by default.": [
+        "Seleccioneu com es veu per defecte la vostra bústia de correu."
+      ],
+      "Select how your composer opens by default.": [
+        "Seleccioneu com el vostre editor s'obre per defecte."
+      ],
+      "Enable Beta Access": [
+        "Activar Accés Beta"
       ],
       "Merge a folder": [
         "Fusionar una carpeta"
@@ -1673,6 +2164,9 @@
       "File": [
         "Arxiu"
       ],
+      "Report abuse": [
+        "Informeu d'un abús"
+      ],
       "Folder name": [
         "Nom de carpeta"
       ],
@@ -1684,9 +2178,6 @@
       ],
       "Set expiration date": [
         "Definir data d'expiració"
-      ],
-      "Report abuse": [
-        "Informeu d'un abús"
       ]
     },
     "PGP key encryption warning": {
@@ -1701,6 +2192,9 @@
       "Request an invite": [
         "Demana una invitació"
       ],
+      "clearing your browser cache": [
+        "buidar la memòria cau del navegador"
+      ],
       "Pay invoice": [
         "Pagar la factura"
       ],
@@ -1713,8 +2207,11 @@
       "Go to subscription plans": [
         "Anar als plans de subscripció"
       ],
-      "clearing your browser cache": [
-        "buidar la memòria cau del navegador"
+      "click here": [
+        "feu clic aquí"
+      ],
+      "Add a gift code": [
+        "Afegir un codi regal"
       ],
       "My files": [
         "Els meus arxius"
@@ -1772,6 +2269,15 @@
       "e.g. Julia Smith": [
         "ex. Julia Smith"
       ],
+      "ZIP": [
+        "Codi postal"
+      ],
+      "Postal code": [
+        "Codi postal"
+      ],
+      "Gift code": [
+        "Codi de regal"
+      ],
       "Mailbox password": [
         "Contrasenya de la bústia"
       ],
@@ -1825,8 +2331,59 @@
       "You do not have any contacts to export": [
         "No teniu cap contacte per exportar"
       ],
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "Utilitzeu adreces múltiples / àlies vinculats al vostre compte, p. ex. usuari2@protonmail.com"
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "Allotgeu correus electrònics pels vostres propis dominis a ProtonMail, p. ex. usuari@exemple.cat"
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        "Utilitzeu l'adreça personal usuari@pm.me per enviar correus electrònics"
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "El suport multiusuari només s'aplica a plans amb 2 o més usuaris"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield protegeix el vostre dispositiu i accelera la vostra navegació bloquejant anuncis, rastrejadors i programari maliciós."
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "Suport per a protocols d'intercanvi d'arxius com BitTorrent."
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "Accedeix al contingut geobloquejat (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc.) sense importar on sigueu."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Dirigiu el vostre trànsit d'Internet a través de la xarxa Tor amb un sol clic."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'Internet a través de múltiples servidors."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Obteniu accés a totes les funcions de pagament de ProtonVPN i ProtonMail (el servei de correu electrònic xifrat que milions utilitzen per protegir les seves dades) amb un pla."
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Obteniu accés a totes les funcions de pagament de ${ vpnAppName } i ${ mailAppName } (el servei de correu electrònic xifrat que milions utilitzen per protegir les seves dades) amb un pla."
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Allotgeu correus electrònics pels vostres propis dominis a ${ mailAppName }, p. ex. usuari@exemple.cat"
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        "Creeu múltiples adreces de correu electrònic enllaçades al vostre compte, p. ex. usuari2@protonmail.com"
+      ],
+      "Discount applied for annual billing cycle": [
+        "Descompte aplicat per al cicle de facturació anual"
+      ],
+      "Discount applied for two-year billing cycle": [
+        "Descompte aplicat per al cicle de facturació anual"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Si has comprat un codi de regal o has regut un des del nostre equip de suport, pots ficar-ho aquí."
+      ],
       "Expired sharing link": [
         "Enllaç compartit caducat"
+      ],
+      "Inactive sharing link": [
+        "Enllaç de compartició inactiu"
       ],
       "Active sharing link": [
         "Enllaç compartit actiu"
@@ -1933,14 +2490,17 @@
       "Contacts could not be merged": [
         "Els contactes no s’han pogut combinar"
       ],
-      "Your local date & time settings seem to be out of sync.": [
-        "La vostra configuració de data i hora local no sembla estar sincronitzada."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. Si us plau, no envieu informació sensible."
       ],
+      "Your local date & time settings seem to be out of sync.": [
+        "La vostra configuració de data i hora local no sembla estar sincronitzada."
+      ],
       "Are you sure you want to discard your import?": [
         ""
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Tingueu en compte que escollint aquest mètode de pagament, el vostre compte no es pot actualitzar immediatament. Actualitzarem el vostre compte un cop suprimit el pagament."
       ]
     },
     "Success": {
@@ -1982,14 +2542,14 @@
       "Bug reported": [
         "Error notificat"
       ],
+      "You have successfully unsubscribed": [
+        "Heu anul·lat la subscripció amb èxit"
+      ],
       "Preference saved": [
         "Preferències desades"
       ],
       "Keyboard shortcuts preferences updated": [
         "Preferències de les dreceres de teclat actualitzades"
-      ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Els vostres arxius s'han recuperar satisfactòriament a \"Els meus arxius\"."
       ],
       "Recovery has started.": [
         "La recuperació ha començat."
@@ -2002,6 +2562,9 @@
       ],
       "The link to your file was successfully copied.": [
         "El enllaç al seu fitxer s’ha copiat satisfactòriament."
+      ],
+      "Your files were successfully recovered to \"My files\".": [
+        "Els vostres arxius s'han recuperar satisfactòriament a \"Els meus arxius\"."
       ]
     },
     "Hint": {
@@ -2041,6 +2604,42 @@
       ],
       "Contact group created": [
         "Grup de contactes creat"
+      ],
+      "All items will soon be permanently deleted from trash": [
+        "Aviat se suprimiran permanentment tots els elements de la paperera"
+      ],
+      "Move ${ movingCount } file": [
+        "Mou ${ movingCount } arxiu",
+        "Mou ${ movingCount } arxius"
+      ],
+      "Move ${ movingCount } folder": [
+        "Mou ${ movingCount } carpeta",
+        "Mou ${ movingCount } carpetes"
+      ],
+      "Move ${ movingCount } item": [
+        "Mou ${ movingCount } article",
+        "Mou ${ movingCount } articles"
+      ],
+      "Move ${ itemsToMoveCount } file": [
+        "Moure ${ itemsToMoveCount } arxiu",
+        "Moure ${ itemsToMoveCount } arxius"
+      ],
+      "Move ${ itemsToMoveCount } folder": [
+        "Mou ${ itemsToMoveCount } carpeta",
+        "Mou ${ itemsToMoveCount } carpetes"
+      ],
+      "Move ${ itemsToMoveCount } item": [
+        "Move ${ itemsToMoveCount } element",
+        "Move ${ itemsToMoveCount } elements"
+      ],
+      "Your settings have been changed successfully.": [
+        "Les vostres preferències s'han modificat satisfactòriament."
+      ],
+      "The link to your file was deleted.": [
+        "El enllaç al teu fitxer ha estat esborrat."
+      ],
+      "Failed to move, please try again": [
+        "No s'ha pogut moure, torna-ho a provar"
       ],
       "Not enough space to upload ${ formattedRemaining }": [
         "No hi ha prou espai per pujar ${ formattedRemaining }"
@@ -2123,9 +2722,6 @@
         "${ failedMovesCount } element ha fallat al moure",
         "${ failedMovesCount } elements han fallat al moure"
       ],
-      "The link to your file was deleted.": [
-        "El enllaç al teu fitxer ha estat esborrat."
-      ],
       "${ deletedCount } link to your file was deleted.": [
         "S'ha suprimit l'enllaç ${ deletedCount } al vostre fitxer.",
         "S'han suprimit els enllaços ${ deletedCount } als vostre fitxers."
@@ -2136,39 +2732,6 @@
       "${ failedCount } link to your file failed to be deleted.": [
         "No s'ha pogut suprimir l'enllaç ${ failedCount } al fitxer.",
         "No s'han pogut suprimir els enllaços ${ failedCount } als fitxers."
-      ],
-      "All items will soon be permanently deleted from trash": [
-        "Aviat se suprimiran permanentment tots els elements de la paperera"
-      ],
-      "Move ${ movingCount } file": [
-        "Mou ${ movingCount } arxiu",
-        "Mou ${ movingCount } arxius"
-      ],
-      "Move ${ movingCount } folder": [
-        "Mou ${ movingCount } carpeta",
-        "Mou ${ movingCount } carpetes"
-      ],
-      "Move ${ movingCount } item": [
-        "Mou ${ movingCount } article",
-        "Mou ${ movingCount } articles"
-      ],
-      "Move ${ itemsToMoveCount } file": [
-        "Moure ${ itemsToMoveCount } arxiu",
-        "Moure ${ itemsToMoveCount } arxius"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Mou ${ itemsToMoveCount } carpeta",
-        "Mou ${ itemsToMoveCount } carpetes"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Move ${ itemsToMoveCount } element",
-        "Move ${ itemsToMoveCount } elements"
-      ],
-      "Your settings have been changed successfully.": [
-        "Les vostres preferències s'han modificat satisfactòriament."
-      ],
-      "Failed to move, please try again": [
-        "No s'ha pogut moure, torna-ho a provar"
       ]
     },
     "Label for contact group name": {
@@ -2311,8 +2874,8 @@
       "Contacts, groups and settings": [
         "Contactes, grups i preferències"
       ],
-      "Help": [
-        "Ajuda"
+      "Get help": [
+        "Obtenir ajuda"
       ]
     },
     "Error notification": {
@@ -2448,50 +3011,6 @@
         "Accés denegat"
       ]
     },
-    "Message display when a new app version is available": {
-      "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "Hi ha disponible una nova versió de ${ appName }. ${ reloadButton }."
-      ]
-    },
-    "Text": {
-      "Settings": [
-        "Preferències"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Activat"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Desactivat"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Columna"
-      ],
-      "Row": [
-        "Fila"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Còmode"
-      ],
-      "Compact": [
-        "Compacte"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "Maximitzat"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "No s'ha seleccionat cap imatge"
@@ -2595,6 +3114,71 @@
         "Adjunta captura(es) de pantalla"
       ]
     },
+    "Message display when a new app version is available": {
+      "A new version of ${ appName } is available. ${ reloadButton }.": [
+        "Hi ha disponible una nova versió de ${ appName }. ${ reloadButton }."
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        ""
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        ""
+      ],
+      "Configure Import": [
+        ""
+      ],
+      "Import": [
+        ""
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        ""
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Preferències"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Activat"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Desactivat"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Columna"
+      ],
+      "Row": [
+        "Fila"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Còmode"
+      ],
+      "Compact": [
+        "Compacte"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "Maximitzat"
+      ],
+      "Normal": [
+        "Normal"
+      ]
+    },
     "Onboarding Proton": {
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
         "Això és el que la gent veurà quan els envieu un correu electrònic, els convideu a un esdeveniment o hi compartiu un arxiu."
@@ -2627,25 +3211,451 @@
         "Configureu la vostra organització, enllaç al vostre nom de domini, i creeu comptes per assegurar-vos que tots els membres de la vostra organització estan protegits."
       ]
     },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        ""
+    "Info for cash payment method": {
+      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
+        "Si us plau, contacti amb nosaltres al ${ email } per rebre instruccions per com fer un pagament en efectiu."
       ]
     },
-    "Wizard step": {
-      "Authenticate": [
-        ""
+    "Billing cycle option": {
+      "Monthly": [
+        "Mensualment"
       ],
-      "Configure Import": [
-        ""
+      "Annually": [
+        "Anualment"
       ],
-      "Import": [
-        ""
+      "Two-year": [
+        "Bianual"
+      ],
+      "Annually SAVE 20%": [
+        "ESTALVIA UN 20% anualment"
+      ],
+      "Two years SAVE 33%": [
+        "Pla de 2 anys en què estalvies el 33%"
       ]
     },
-    "Confirm modal title": {
-      "Quit import?": [
-        ""
+    "Suffix for price": {
+      "/ month": [
+        "/mes"
+      ]
+    },
+    "info": {
+      "(beta)": [
+        "(beta)"
+      ]
+    },
+    "Mail feature": {
+      "Users": [
+        "Usuaris"
+      ],
+      "Storage": [
+        "Emmagatzematge"
+      ],
+      "0.5 GB": [
+        "0.5 GB"
+      ],
+      "20 GB": [
+        "20 GB"
+      ],
+      "Addresses": [
+        "Adreces"
+      ],
+      "Custom email addresses": [
+        "Adreces de correu electrònic personalitzades"
+      ],
+      "Messages per day": [
+        "Missatges per dia"
+      ],
+      "Folders / labels": [
+        "Carpetes / etiquetes"
+      ],
+      "Support": [
+        "Suport"
+      ],
+      "Limited": [
+        "Limitat"
+      ],
+      "Priority": [
+        "Prioritat"
+      ],
+      "Encrypted contacts": [
+        "Contactes xifrats"
+      ],
+      "Contact groups": [
+        "Grups de contactes"
+      ],
+      "Address verification": [
+        "Verificació d'adreces"
+      ],
+      "Custom filters": [
+        "Filtres personalitzats"
+      ],
+      "IMAP / SMTP": [
+        "IMAP / SMTP"
+      ],
+      "Autoresponder": [
+        "Autorespondre"
+      ],
+      "Use @pm.me address": [
+        "Utilitza l'adreça @pm.me"
+      ],
+      "Catch-All email": [
+        "Correu electrònic Catch-All"
+      ],
+      "Multi-user support": [
+        "Suport multi-usuari"
+      ]
+    },
+    "Mail feature option": {
+      "5 GB *": [
+        "5 GB *"
+      ],
+      "5 GB / user *": [
+        "5 GB / usuari *"
+      ],
+      "Unlimited **": [
+        "Il·limitat **"
+      ],
+      "Unlimited": [
+        "Il·limitat"
+      ]
+    },
+    "Mail feature option: 5 email addresses / user": {
+      "5 / user *": [
+        "5 / usuari *"
+      ]
+    },
+    "information": {
+      "Included": [
+        "Inclòs"
+      ]
+    },
+    "VPN feature": {
+      "VPN Connections": [
+        "Connexions VPN"
+      ],
+      "Speed": [
+        "Velocitat"
+      ],
+      "VPN servers": [
+        "Servidors VPN"
+      ],
+      "Locations/Countries": [
+        "Localitzacions/Països"
+      ],
+      "Adblocker (NetShield)": [
+        "Bloquejador d'anuncis (NetShield)"
+      ],
+      "P2P/BitTorrent": [
+        "P2P/BitTorrent"
+      ],
+      "Streaming service support": [
+        "Suport de serveis de reproducció en línia"
+      ],
+      "Tor over VPN": [
+        "Tor sobre VPN"
+      ],
+      "Secure Core servers": [
+        "Servidors Secure Core"
+      ],
+      "${ mailAppName } Visionary": [
+        "${ mailAppName } Visionary"
+      ],
+      "Jurisdiction": [
+        "Jurisdicció"
+      ],
+      "Open Source & audited apps": [
+        "Aplicacions de codi font obert i auditades"
+      ],
+      "Access blocked content": [
+        "Accediu al contingut bloquejat"
+      ],
+      "Strict no-logs policy": [
+        "Política estricta de no conservar registres"
+      ],
+      "Volume/bandwidth cap": [
+        "Límit de volum/ample de banda"
+      ],
+      "User data monetization": [
+        "Monetització de dades d'usuari"
+      ],
+      "Platforms supported": [
+        "Plataformes suportades"
+      ],
+      "Languages supported": [
+        "Idiomes suportats"
+      ],
+      "DNS leak prevention": [
+        "Protecció contra fuites de DNS"
+      ],
+      "Kill Switch / Always-on VPN": [
+        "Kill Switch / VPN sempre activa"
+      ],
+      "Perfect Forward Secrecy (PFS)": [
+        "Perfect Forward Secrecy (PFS)"
+      ],
+      "Full Disk Encryption on Servers": [
+        "Xifratge de disc total als servidors"
+      ],
+      "Split tunneling": [
+        "Split tunneling"
+      ],
+      "Custom connection profiles": [
+        "Perfils de connexió personalitzats"
+      ],
+      "Router support": [
+        "Suport per router"
+      ],
+      "30-days money-back guarantee": [
+        "Garantia de reemborsament de 30 dies"
+      ]
+    },
+    "VPN feature option": {
+      "Medium": [
+        "Mitjana"
+      ],
+      "High": [
+        "Alta"
+      ],
+      "Highest (up to 10 Gbps)": [
+        "Màxima (fins a 10 Gbps)"
+      ],
+      "Switzerland": [
+        "Suïssa"
+      ],
+      "None": [
+        "Cap"
+      ],
+      "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
+        "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
+      ],
+      "(Android & Windows only)": [
+        "(només Android i Windows)"
+      ]
+    },
+    "Calendar feature": {
+      "Multiple calendars": [
+        "Diversos calendaris"
+      ],
+      "Calendar import": [
+        "Importació de calendari"
+      ],
+      "Recurring events": [
+        "Esdeveniments recurrents"
+      ],
+      "Invitations": [
+        "Invitacions"
+      ],
+      "Share Calendar via link": [
+        "Compartir un calendari mitjançant un enllaç"
+      ]
+    },
+    "Calendar feature option": {
+      "20 / user *": [
+        "20 / usuari *"
+      ],
+      "20 / user": [
+        "20 / usuari"
+      ]
+    },
+    "Drive feature": {
+      "Access via Web": [
+        "Accés per Web"
+      ],
+      "Upload / download files": [
+        "Carregar / descarregar arxius"
+      ],
+      "Share files via link": [
+        "Compartir arxius amb un enllaç"
+      ]
+    },
+    "Info concerning plan features": {
+      "Customizable features": [
+        "Funcions personalitzables"
+      ],
+      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
+        "ProtonMail no es pot utilitzar per enviar missatges massius o spam. Els correus electrònics legítims són il·limitats."
+      ]
+    },
+    "Plan Feature": {
+      "${ n } VPN connection": [
+        "${ n } connexió VPN",
+        "${ n } connexions VPN"
+      ],
+      "${ n } server": [
+        "${ n } servidor",
+        "${ n } servidors"
+      ]
+    },
+    "Netflix": {
+      "Netflix": [
+        "Netflix"
+      ]
+    },
+    "Disney": {
+      "Disney+": [
+        "Disney+"
+      ]
+    },
+    "Prime Video": {
+      "Prime Video": [
+        "Prime Video"
+      ]
+    },
+    "Many Others": {
+      "and many others": [
+        "i molts d'altres"
+      ]
+    },
+    "Plan feature": {
+      "Built-in Adblocker (NetShield)": [
+        "Bloquejador d'anuncis integrat (NetShield)"
+      ],
+      "Secure Core servers": [
+        "Servidors Secure Core"
+      ],
+      "Streaming service support": [
+        "Suport de serveis de reproducció en línia"
+      ],
+      "Access blocked content": [
+        "Accediu al contingut bloquejat"
+      ],
+      "${ freeServers } in ${ freeCountries } country": [
+        "${ freeServers } a ${ freeCountries } país",
+        "${ freeServers } a ${ freeCountries } països"
+      ],
+      "Medium speed": [
+        "Velocitat mitjana"
+      ],
+      "350+ servers in ${ basicCountries } country": [
+        "Més de 350 servidors a ${ basicCountries } país",
+        "Més de 350 servidors a ${ basicCountries } països"
+      ],
+      "High speed": [
+        "Alta velocitat"
+      ],
+      "1200+ servers in ${ plusCountries } country": [
+        "Més de 1200 servidors a ${ plusCountries } país",
+        "Més de 1200 servidors a ${ plusCountries } països"
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        "Velocitat màxima (fins a 10 Gbps)"
+      ],
+      "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
+        "Totes ${ PLAN_NAMES[PLANS.VPNPLUS] } les opcions del pla"
+      ],
+      "Includes 6 user accounts": [
+        "Inclou 6 comptes d'usuari"
+      ],
+      "Includes Proton Visionary": [
+        "Inclou Proton Visionary"
+      ],
+      "Early access to new products": [
+        "Accés anticipat a nous productes"
+      ],
+      "Custom email addresses": [
+        "Adreces de correu electrònic personalitzades"
+      ],
+      "Access to ${ driveAppName } (beta)": [
+        "Accés a ${ driveAppName } (beta)"
+      ],
+      "1 user": [
+        "1 usuari"
+      ],
+      "0.5 GB storage": [
+        "0.5 GB d'emmagatzematge"
+      ],
+      "1 address": [
+        "1 Adreça"
+      ],
+      "3 folders / labels": [
+        "3 Carpetes / Etiquetes"
+      ],
+      "5 GB storage *": [
+        "5 GB d'emmagatzematge *"
+      ],
+      "5 addresses": [
+        "5 adreces"
+      ],
+      "200 folders / labels": [
+        "200 Carpetes / Etiquetes"
+      ],
+      "1 - 5000 users *": [
+        "1 - 5000 usuaris *"
+      ],
+      "5 GB storage / user": [
+        "5 GB d'emmagatzematge per usuari"
+      ],
+      "5 addresses / user": [
+        "5 adreces per usuari"
+      ],
+      "Unlimited folders / labels": [
+        "Carpetes / Etiquetes Il·limitades"
+      ],
+      "6 users": [
+        "6 Usuaris"
+      ],
+      "20 GB storage": [
+        "20 GB d'emmagatzematge"
+      ],
+      "50 addresses": [
+        "50 Adreces"
+      ]
+    },
+    "Price": {
+      "Free": [
+        "Gratuït"
+      ]
+    },
+    "Countdown unit": {
+      "${ monthsWithYears } month": [
+        "${ monthsWithYears } mes",
+        "${ monthsWithYears } mesos"
+      ],
+      "${ days } day": [
+        "${ days } dia",
+        "${ days } dies"
+      ]
+    },
+    "Addon": {
+      "+ ${ addresses } email address": [
+        "+ ${ addresses } adreça de correu electrònic",
+        "+ ${ addresses } adreces de correu electrònic"
+      ],
+      "+ ${ storage } storage": [
+        "+ ${ storage } emmagatzenament"
+      ],
+      "+ ${ domains } custom domain": [
+        "+ ${ domains } dominis personalitzats",
+        "+ ${ domains } domini personalitzat"
+      ],
+      "+ ${ members } user": [
+        "+ ${ members } usuaris",
+        "+ ${ members } usuari"
+      ],
+      "+ ${ vpn } connection": [
+        "+ ${ vpn } connexions",
+        "+ ${ vpn } connexió"
+      ]
+    },
+    "Plan info": {
+      "(current plan)": [
+        "(pla actual)"
+      ]
+    },
+    "Free price": {
+      "Free": [
+        "Gratuït"
+      ]
+    },
+    "Payment method option": {
+      "New credit/debit card": [
+        "Nova targeta de crèdit/dèbit"
+      ],
+      "PayPal": [
+        "PayPal"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
       ]
     },
     "Select files": {
@@ -2693,12 +3703,6 @@
     "Contact field label": {
       "Name": [
         "Nom"
-      ],
-      "Compact name": [
-        "Nom curt"
-      ],
-      "Nickname": [
-        "Sobrenom"
       ],
       "Email": [
         "Correu electrònic"
@@ -2750,18 +3754,6 @@
       ],
       "Member": [
         "Membre"
-      ],
-      "IMPP": [
-        "IMPP"
-      ],
-      "Related": [
-        "Relacionat"
-      ],
-      "Categories": [
-        "Categories"
-      ],
-      "Sound": [
-        "So"
       ]
     },
     "Contact type label": {
@@ -2791,12 +3783,6 @@
       ]
     },
     "Property type": {
-      "Name": [
-        "Nom"
-      ],
-      "Yomi": [
-        "Yomi"
-      ],
       "Email": [
         "Correu electrònic"
       ],
@@ -2826,63 +3812,6 @@
       ],
       "Address": [
         "Adreça"
-      ],
-      "Contact": [
-        "Contacte"
-      ],
-      "Acquaintance": [
-        "Relació"
-      ],
-      "Friend": [
-        "Amic/ga"
-      ],
-      "Met": [
-        "Conegut/da"
-      ],
-      "Co-worker": [
-        "Company/a de feina"
-      ],
-      "Colleague": [
-        "Company/a"
-      ],
-      "Co-resident": [
-        "Co-resident"
-      ],
-      "Neighbor": [
-        "Veí/Veïna"
-      ],
-      "Child": [
-        "Fill/a"
-      ],
-      "Parent": [
-        "Pare/Mare"
-      ],
-      "Sibling": [
-        "Germà/na"
-      ],
-      "Kin": [
-        "Parentesc"
-      ],
-      "Muse": [
-        "Musa"
-      ],
-      "Crush": [
-        "Enamorament"
-      ],
-      "Date": [
-        "Cita"
-      ],
-      "Sweetheart": [
-        "Amor"
-      ],
-      "Me": [
-        "Jo"
-      ],
-      "Agent": [
-        "Agent"
-      ],
-      "Emergency": [
-        "Emergència"
       ]
     },
     "file size format": {

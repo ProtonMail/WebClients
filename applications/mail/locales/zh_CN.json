@@ -13,13 +13,16 @@
         "此邮件含有浏览器不能打开的链接"
       ],
       "Authentication canceled.": [
-        ""
+        "验证已取消。"
       ],
       "Your import will not be processed.": [
-        ""
+        "此次导入将不会进行。"
       ],
       "Authentication error.": [
-        ""
+        "验证出错。"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
       ],
       "Email address invalid": [
         "邮箱格式不正确"
@@ -28,7 +31,7 @@
         "此项必须填写"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        ""
+        "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
       ],
       "The composer failed to load.": [
         "编辑器加载失败。"
@@ -37,19 +40,19 @@
         "请刷新页面。"
       ],
       "Can't validate email, try again later": [
-        ""
+        "无法验证邮箱，请重试"
       ],
       "Can't validate phone, try again later": [
-        ""
+        "无法验证手机，请稍候再试"
       ],
       "Enter 6 digits": [
-        ""
+        "请输入 6 位验证码"
       ],
       "Invalid verification code": [
         "验证码无效"
       ],
       "Some groups could not be deleted": [
-        ""
+        "无法删除部分群组"
       ],
       "Image upload failed": [
         "图像上传失败"
@@ -67,16 +70,16 @@
         "公钥文件无效"
       ],
       "You can't send a mail to more than 100 recipients": [
-        ""
+        "收件人不能超过 100 个"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        ""
+        "部分联系人没有邮箱地址：${ noEmailsContactNamesList }"
       ],
       "You can't send vCards of more than 10 contacts": [
-        ""
+        "您不能发送超过 10 个联系人的 vCard"
       ],
       "There was an error when exporting the contacts vCards": [
-        ""
+        "导出联系人 vCards 时出错"
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         ""
@@ -104,6 +107,66 @@
       ],
       "File has no contents to preview": [
         "文件没有内容可预览"
+      ],
+      "Process aborted": [
+        ""
+      ],
+      "Payment process cancelled": [
+        ""
+      ],
+      "Payment process failed": [
+        ""
+      ],
+      "Payment process consumed": [
+        ""
+      ],
+      "Payment process not supported": [
+        ""
+      ],
+      "Unknown payment token status": [
+        ""
+      ],
+      "Tab closed": [
+        ""
+      ],
+      "Name on card required": [
+        "必须填写持卡人姓名"
+      ],
+      "Invalid expiration date": [
+        "有效期不正确"
+      ],
+      "Invalid card number": [
+        "卡号无效"
+      ],
+      "Invalid ${ name } code": [
+        "无效的 { name } 码"
+      ],
+      "Invalid postal code": [
+        "无效的邮政编码"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "连接比特币 API 失败。"
+      ],
+      "Amount below minimum.": [
+        "金额太小。"
+      ],
+      "Amount above the maximum.": [
+        "金额太大。"
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "捐款金额不应低于 ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        ""
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        ""
+      ],
+      "Checkout expired, please try again.": [
+        ""
+      ],
+      "Invalid code": [
+        ""
       ],
       "Empty condition": [
         "条件为空"
@@ -662,17 +725,11 @@
       "Copy email to clipboard": [
         ""
       ],
-      "Switch account": [
-        "切换账户"
-      ],
-      "Sign out": [
-        "退出"
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } 简介"
       ],
       "I have a question": [
         ""
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } 简介"
       ],
       "Request a feature": [
         "功能建议"
@@ -682,6 +739,12 @@
       ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
+      ],
+      "Switch account": [
+        "切换账户"
+      ],
+      "Sign out": [
+        "退出"
       ],
       "Go to settings": [
         "前往设置"
@@ -702,6 +765,54 @@
         ""
       ],
       "Composer mode": [
+        ""
+      ],
+      "Remove bonuses": [
+        ""
+      ],
+      "Try again": [
+        "重试"
+      ],
+      "Use a different card": [
+        ""
+      ],
+      "Use a different payment method": [
+        ""
+      ],
+      "Retry": [
+        ""
+      ],
+      "Loading verification": [
+        ""
+      ],
+      "Select plan": [
+        ""
+      ],
+      "Compare all features": [
+        ""
+      ],
+      "${ boldSave } by switching to annual billing": [
+        ""
+      ],
+      "Pay": [
+        ""
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        ""
+      ],
+      "Remove gift code": [
+        ""
+      ],
+      "annual billing": [
+        ""
+      ],
+      "Compare plans": [
+        ""
+      ],
+      "Decrease": [
+        ""
+      ],
+      "Increase": [
         ""
       ],
       "Preview": [
@@ -752,11 +863,17 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         ""
       ],
+      "Learn more": [
+        ""
+      ],
+      "Open shop": [
+        ""
+      ],
+      "Open calendar": [
+        ""
+      ],
       "Send anyway": [
         "仍然发送"
-      ],
-      "Empty": [
-        "清空"
       ],
       "Maximize composer": [
         "最大化编辑器"
@@ -908,9 +1025,6 @@
       "Send receipt": [
         "发送回执"
       ],
-      "Try again": [
-        "重试"
-      ],
       "Accept": [
         "接受"
       ],
@@ -965,8 +1079,11 @@
       "Show more search options": [
         "展开搜索选项"
       ],
-      "Advanced search options": [
-        "高级搜索选项"
+      "Less search options": [
+        ""
+      ],
+      "More search options": [
+        ""
       ],
       "Advanced search": [
         "高级搜索"
@@ -1255,6 +1372,96 @@
       "Give feedback": [
         ""
       ],
+      "Confirm loss of Proton bonuses": [
+        ""
+      ],
+      "Unsupported browser": [
+        ""
+      ],
+      "Card verification": [
+        ""
+      ],
+      "Payment verification": [
+        ""
+      ],
+      "Processing...": [
+        ""
+      ],
+      "Card verification in progress": [
+        ""
+      ],
+      "Payment verification in progress": [
+        ""
+      ],
+      "PayPal verification failed": [
+        ""
+      ],
+      "3-D Secure verification failed": [
+        ""
+      ],
+      "Error": [
+        ""
+      ],
+      "ZIP / postal code": [
+        ""
+      ],
+      "Payment details": [
+        ""
+      ],
+      "Currency": [
+        ""
+      ],
+      "Billing cycle": [
+        ""
+      ],
+      "Current plan": [
+        ""
+      ],
+      "Processing": [
+        ""
+      ],
+      "Apply gift code": [
+        ""
+      ],
+      "Subtotal": [
+        ""
+      ],
+      "Coupon discount": [
+        ""
+      ],
+      "Total (monthly)": [
+        ""
+      ],
+      "Credits": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Amount due": [
+        ""
+      ],
+      "Cancel subscription": [
+        ""
+      ],
+      "Network error": [
+        ""
+      ],
+      "Select a plan": [
+        ""
+      ],
+      "Customize your plan": [
+        ""
+      ],
+      "Checkout": [
+        ""
+      ],
+      "Plan summary": [
+        ""
+      ],
+      "${ appName } customization": [
+        ""
+      ],
       "Beta Access": [
         "测试版功能"
       ],
@@ -1288,10 +1495,7 @@
       "Message without subject?": [
         "发送无主题邮件？"
       ],
-      "Invalid recipients": [
-        ""
-      ],
-      "Invalid recipient": [
+      "No attachment found": [
         ""
       ],
       "Re-sign contact": [
@@ -1321,8 +1525,8 @@
       "Delete ${ count } message": [
         "删除 ${ count } 封邮件"
       ],
-      "Empty ${ labelName }": [
-        "删除所有 ${ labelName } 的邮件"
+      "Delete all messages": [
+        ""
       ],
       "Trust new key?": [
         "信任新密钥？"
@@ -1827,6 +2031,243 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         ""
       ],
+      "Since you're a loyal user, your account has additional features enabled.": [
+        ""
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        ""
+      ],
+      "+${ bonusSpace } bonus storage": [
+        ""
+      ],
+      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
+        ""
+      ],
+      "Your bank requires 3-D Secure verification for security purposes.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers.": [
+        ""
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        ""
+      ],
+      "You will be soon redirected to your bank to verify your payment.": [
+        ""
+      ],
+      "Please verify the card in the new tab which was opened.": [
+        ""
+      ],
+      "Please verify payment at the new tab which was opened.": [
+        ""
+      ],
+      "Verification can take a few minutes.": [
+        ""
+      ],
+      "Payment can take a few minutes to fully verify.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or call your bank for assistance.": [
+        ""
+      ],
+      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        ""
+      ],
+      "Amount below minimum (${ amount }).": [
+        ""
+      ],
+      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
+        ""
+      ],
+      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
+        ""
+      ],
+      "Please verify the payment in the new tab.": [
+        ""
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        ""
+      ],
+      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
+        ""
+      ],
+      "We use 3-D Secure to protect your payments.": [
+        ""
+      ],
+      "Billed as ${ billedPrice } per year": [
+        ""
+      ],
+      "Billed as ${ billedPrice } every 2 years": [
+        ""
+      ],
+      "Included": [
+        ""
+      ],
+      "* Customizable features": [
+        ""
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        ""
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        ""
+      ],
+      "For getting started with private and secure emailing.": [
+        ""
+      ],
+      "A free and uncensored Internet should be available to all.": [
+        ""
+      ],
+      "Starter VPN service with P2P support.": [
+        ""
+      ],
+      "Full-featured VPN with speed up to 10 Gbps.": [
+        ""
+      ],
+      "For individuals that need a fully-featured mailbox with advanced protection.": [
+        ""
+      ],
+      "For professionals that need secure business communications.": [
+        ""
+      ],
+      "VPN + ${ mailAppName } bundle for families and small businesses.": [
+        ""
+      ],
+      "For families and small teams; includes both Mail and VPN.": [
+        ""
+      ],
+      "Save 20%": [
+        ""
+      ],
+      "Your account is being upgraded, this may take up to 30 seconds.": [
+        ""
+      ],
+      "Thank you for supporting our mission.": [
+        ""
+      ],
+      "Your account will be updated once the payment is cleared.": [
+        ""
+      ],
+      "Account successfully updated": [
+        ""
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        ""
+      ],
+      "(Mail + VPN)": [
+        ""
+      ],
+      "${ mailAppName } Free": [
+        ""
+      ],
+      "${ vpnAppName } Free": [
+        ""
+      ],
+      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
+        ""
+      ],
+      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        ""
+      ],
+      "No payment is required at this time.": [
+        ""
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
+        ""
+      ],
+      "20% discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Black Friday 2018 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2019 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2020 newcomer discount has been applied": [
+        ""
+      ],
+      "Discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        ""
+      ],
+      "30 days money-back guarantee.": [
+        ""
+      ],
+      "Save extra 20%": [
+        ""
+      ],
+      "${ save20 } on your subscription by switching to ${ annualBilling }": [
+        ""
+      ],
+      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
+        ""
+      ],
+      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
+        ""
+      ],
+      "Storage GB": [
+        ""
+      ],
+      "Users": [
+        ""
+      ],
+      "Domains": [
+        ""
+      ],
+      "Addresses": [
+        ""
+      ],
+      "Connections": [
+        ""
+      ],
+      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Add additional addresses to your account like user2@protonmail.com": [
+        ""
+      ],
+      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
+        ""
+      ],
+      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more users.": [
+        ""
+      ],
+      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
+        ""
+      ],
+      "Each additional connection can be assigned to users in your organization.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more connections.": [
+        ""
+      ],
+      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        ""
+      ],
+      "Not customizable": [
+        ""
+      ],
+      "Expired": [
+        ""
+      ],
       "Inherited from parent folder": [
         "继承自母文件夹"
       ],
@@ -1923,6 +2364,9 @@
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "您还未填写邮件主题，确定要发送邮件吗？"
       ],
+      "Do you want to send your message anyway?": [
+        ""
+      ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "联系人 ${ contactName } 的签名不正确，未能通过验证，这可能是重置密码导致的。您需要重新对联系人签名或修改联系人信息才能向 ${ contactAddress } 发送邮件。"
       ],
@@ -1953,17 +2397,17 @@
       "Are you sure you want to permanently delete ${ count } message?": [
         "确定要永久删除 ${ count } 封邮件吗？"
       ],
-      "Please note that if you empty this label, you will permanently delete all the emails with this label.": [
-        "请注意，此操作将永久删除所有带此标签的邮件。"
+      "All messages stored with this label will be permanently deleted.": [
+        ""
       ],
-      "Please note that if you empty this folder, you will permanently delete all the emails stored in it.": [
-        "请注意，清空文件夹将永久删除其中的所有邮件。"
+      "All messages stored in this folder will be permanently deleted.": [
+        ""
       ],
-      "Are you sure you want to empty this label?": [
-        "确定要清空带此标签的邮件吗？"
+      "Are you sure you want to delete all messages with this label?": [
+        ""
       ],
-      "Are you sure you want to empty this folder?": [
-        "确定要清空此文件夹吗？"
+      "Are you sure you want to delete all messages in this folder?": [
+        ""
       ],
       "Copied to clipboard": [
         "已复制到剪贴板"
@@ -2256,6 +2700,75 @@
       "Seems like you are all caught up for now": [
         "看来没有要处理的事务了"
       ],
+      "Get more storage and premium features.": [
+        ""
+      ],
+      "Support privacy by upgrading for": [
+        ""
+      ],
+      "/month.": [
+        ""
+      ],
+      "Upgrade to send email from @pm.me addresses.": [
+        ""
+      ],
+      "Upgrade to create more folders, filters, and addresses.": [
+        ""
+      ],
+      "Upgrade to configure a vacation auto-responder.": [
+        ""
+      ],
+      "Upgrade to use ProtonMail with third-party desktop clients.": [
+        ""
+      ],
+      "Proton doesn't make money by abusing privacy.": [
+        ""
+      ],
+      "Upgrade to support privacy and get more features.": [
+        ""
+      ],
+      "Visit our shop to get Proton merchandise.": [
+        ""
+      ],
+      "Increase storage space starting at": [
+        ""
+      ],
+      "For increased security, activate 2FA.": [
+        ""
+      ],
+      "Use keyboard shortcuts to manage your email faster.": [
+        ""
+      ],
+      "Themes can give your inbox a new look.": [
+        ""
+      ],
+      "Upgrade to host emails from your own domain name.": [
+        ""
+      ],
+      "ProtonMail can protect your business as well.": [
+        ""
+      ],
+      "Upgrade to add more addresses to your account.": [
+        ""
+      ],
+      "Upgrade to send emails to contact groups easily.": [
+        ""
+      ],
+      "Upgrade to support a privacy-first internet.": [
+        ""
+      ],
+      "Upgrade to support our mission of privacy for all.": [
+        ""
+      ],
+      "Store and share files securely with Proton Drive.": [
+        ""
+      ],
+      "You can use ProtonVPN for free today.": [
+        ""
+      ],
+      "Use Proton Calendar to keep your agenda private.": [
+        ""
+      ],
       "${ unread } unread conversation": [
         "${ unread } 条未读会话"
       ],
@@ -2274,9 +2787,6 @@
       "You have ${ totalLabel } in your inbox.": [
         "您的收件箱中有 ${ totalLabel }。"
       ],
-      "Increase storage space starting at $4/month.": [
-        "邮箱扩容低至每月 $4。"
-      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "从应用商店下载我们的移动应用即可随时随地安全通信。"
       ],
@@ -2293,7 +2803,7 @@
         "此文件夹中有 ${ countOfConversationOrMessage }"
       ],
       "You selected ${ countOfConversationOrMessage } with this label": [
-        "已选择带此标签的 ${ countOfConversationOrMessage }"
+        ""
       ],
       "You have ${ countOfConversationOrMessage } tagged with this label": [
         "共 ${ countOfConversationOrMessage }带有此标签"
@@ -2457,6 +2967,54 @@
         ""
       ],
       "What is the primary reason for this rating?": [
+        ""
+      ],
+      "Name on card": [
+        ""
+      ],
+      "Card number": [
+        ""
+      ],
+      "Expiry date": [
+        ""
+      ],
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
         ""
       ],
       "Enable Beta Access": [
@@ -2691,6 +3249,12 @@
       "Go to subscription plans": [
         ""
       ],
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
+      ],
       "Inbox": [
         "收件箱"
       ],
@@ -2882,6 +3446,15 @@
       "Feedback": [
         ""
       ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
       "Type text or keyword": [
         "输入文本或关键词"
       ],
@@ -2965,6 +3538,9 @@
       "Your local date & time settings seem to be out of sync.": [
         ""
       ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        ""
+      ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "附件签名验证失败，文件内容可能已被篡改，但您仍然可以继续下载附件。"
       ]
@@ -3018,6 +3594,54 @@
         "上传公钥后方可向其发送端到端加密的邮件"
       ],
       "You do not have any contacts to export": [
+        ""
+      ],
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        ""
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        ""
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        ""
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        ""
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        ""
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        ""
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        ""
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        ""
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        ""
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        ""
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        ""
+      ],
+      "Discount applied for annual billing cycle": [
+        ""
+      ],
+      "Discount applied for two-year billing cycle": [
+        ""
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
         ""
       ],
       "This feature is only available for paid users": [
@@ -3130,6 +3754,9 @@
         ""
       ],
       "Preference saved": [
+        ""
+      ],
+      "You have successfully unsubscribed": [
         ""
       ],
       "Message content search activated": [
@@ -3288,8 +3915,8 @@
       "Contacts, groups and settings": [
         ""
       ],
-      "Help": [
-        "帮助"
+      "Get help": [
+        ""
       ]
     },
     "Delinquent modal title": {
@@ -3793,6 +4420,442 @@
         ""
       ]
     },
+    "Info for cash payment method": {
+      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
+        ""
+      ]
+    },
+    "Billing cycle option": {
+      "Monthly": [
+        ""
+      ],
+      "Annually": [
+        ""
+      ],
+      "Two-year": [
+        ""
+      ],
+      "Annually SAVE 20%": [
+        ""
+      ],
+      "Two years SAVE 33%": [
+        ""
+      ]
+    },
+    "Suffix for price": {
+      "/ month": [
+        ""
+      ]
+    },
+    "info": {
+      "(beta)": [
+        ""
+      ]
+    },
+    "Mail feature": {
+      "Users": [
+        ""
+      ],
+      "Storage": [
+        ""
+      ],
+      "0.5 GB": [
+        ""
+      ],
+      "20 GB": [
+        ""
+      ],
+      "Addresses": [
+        ""
+      ],
+      "Custom email addresses": [
+        ""
+      ],
+      "Messages per day": [
+        ""
+      ],
+      "Folders / labels": [
+        ""
+      ],
+      "Support": [
+        ""
+      ],
+      "Limited": [
+        ""
+      ],
+      "Priority": [
+        ""
+      ],
+      "Encrypted contacts": [
+        ""
+      ],
+      "Contact groups": [
+        ""
+      ],
+      "Address verification": [
+        ""
+      ],
+      "Custom filters": [
+        ""
+      ],
+      "IMAP / SMTP": [
+        ""
+      ],
+      "Autoresponder": [
+        ""
+      ],
+      "Use @pm.me address": [
+        ""
+      ],
+      "Catch-All email": [
+        ""
+      ],
+      "Multi-user support": [
+        ""
+      ]
+    },
+    "Mail feature option": {
+      "5 GB *": [
+        ""
+      ],
+      "5 GB / user *": [
+        ""
+      ],
+      "Unlimited **": [
+        ""
+      ],
+      "Unlimited": [
+        ""
+      ]
+    },
+    "Mail feature option: 5 email addresses / user": {
+      "5 / user *": [
+        ""
+      ]
+    },
+    "information": {
+      "Included": [
+        ""
+      ]
+    },
+    "VPN feature": {
+      "VPN Connections": [
+        ""
+      ],
+      "Speed": [
+        ""
+      ],
+      "VPN servers": [
+        ""
+      ],
+      "Locations/Countries": [
+        ""
+      ],
+      "Adblocker (NetShield)": [
+        ""
+      ],
+      "P2P/BitTorrent": [
+        ""
+      ],
+      "Streaming service support": [
+        ""
+      ],
+      "Tor over VPN": [
+        ""
+      ],
+      "Secure Core servers": [
+        ""
+      ],
+      "${ mailAppName } Visionary": [
+        ""
+      ],
+      "Jurisdiction": [
+        ""
+      ],
+      "Open Source & audited apps": [
+        ""
+      ],
+      "Access blocked content": [
+        ""
+      ],
+      "Strict no-logs policy": [
+        ""
+      ],
+      "Volume/bandwidth cap": [
+        ""
+      ],
+      "User data monetization": [
+        ""
+      ],
+      "Platforms supported": [
+        ""
+      ],
+      "Languages supported": [
+        ""
+      ],
+      "DNS leak prevention": [
+        ""
+      ],
+      "Kill Switch / Always-on VPN": [
+        ""
+      ],
+      "Perfect Forward Secrecy (PFS)": [
+        ""
+      ],
+      "Full Disk Encryption on Servers": [
+        ""
+      ],
+      "Split tunneling": [
+        ""
+      ],
+      "Custom connection profiles": [
+        ""
+      ],
+      "Router support": [
+        ""
+      ],
+      "30-days money-back guarantee": [
+        ""
+      ]
+    },
+    "VPN feature option": {
+      "Medium": [
+        ""
+      ],
+      "High": [
+        ""
+      ],
+      "Highest (up to 10 Gbps)": [
+        ""
+      ],
+      "Switzerland": [
+        ""
+      ],
+      "None": [
+        ""
+      ],
+      "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
+        ""
+      ],
+      "(Android & Windows only)": [
+        ""
+      ]
+    },
+    "Calendar feature": {
+      "Multiple calendars": [
+        ""
+      ],
+      "Calendar import": [
+        ""
+      ],
+      "Recurring events": [
+        ""
+      ],
+      "Invitations": [
+        ""
+      ],
+      "Share Calendar via link": [
+        ""
+      ]
+    },
+    "Calendar feature option": {
+      "20 / user *": [
+        ""
+      ],
+      "20 / user": [
+        ""
+      ]
+    },
+    "Drive feature": {
+      "Access via Web": [
+        ""
+      ],
+      "Upload / download files": [
+        ""
+      ],
+      "Share files via link": [
+        ""
+      ]
+    },
+    "Info concerning plan features": {
+      "Customizable features": [
+        ""
+      ],
+      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
+        ""
+      ]
+    },
+    "Plan Feature": {
+      "${ n } VPN connection": [
+        ""
+      ],
+      "${ n } server": [
+        ""
+      ]
+    },
+    "Netflix": {
+      "Netflix": [
+        ""
+      ]
+    },
+    "Disney": {
+      "Disney+": [
+        ""
+      ]
+    },
+    "Prime Video": {
+      "Prime Video": [
+        ""
+      ]
+    },
+    "Many Others": {
+      "and many others": [
+        ""
+      ]
+    },
+    "Plan feature": {
+      "Built-in Adblocker (NetShield)": [
+        ""
+      ],
+      "Secure Core servers": [
+        ""
+      ],
+      "Streaming service support": [
+        ""
+      ],
+      "Access blocked content": [
+        ""
+      ],
+      "${ freeServers } in ${ freeCountries } country": [
+        ""
+      ],
+      "Medium speed": [
+        ""
+      ],
+      "350+ servers in ${ basicCountries } country": [
+        ""
+      ],
+      "High speed": [
+        ""
+      ],
+      "1200+ servers in ${ plusCountries } country": [
+        ""
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        ""
+      ],
+      "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
+        ""
+      ],
+      "Includes 6 user accounts": [
+        ""
+      ],
+      "Includes Proton Visionary": [
+        ""
+      ],
+      "Early access to new products": [
+        ""
+      ],
+      "Custom email addresses": [
+        ""
+      ],
+      "Access to ${ driveAppName } (beta)": [
+        ""
+      ],
+      "1 user": [
+        ""
+      ],
+      "0.5 GB storage": [
+        ""
+      ],
+      "1 address": [
+        ""
+      ],
+      "3 folders / labels": [
+        ""
+      ],
+      "5 GB storage *": [
+        ""
+      ],
+      "5 addresses": [
+        ""
+      ],
+      "200 folders / labels": [
+        ""
+      ],
+      "1 - 5000 users *": [
+        ""
+      ],
+      "5 GB storage / user": [
+        ""
+      ],
+      "5 addresses / user": [
+        ""
+      ],
+      "Unlimited folders / labels": [
+        ""
+      ],
+      "6 users": [
+        ""
+      ],
+      "20 GB storage": [
+        ""
+      ],
+      "50 addresses": [
+        ""
+      ]
+    },
+    "Price": {
+      "Free": [
+        ""
+      ]
+    },
+    "Countdown unit": {
+      "${ monthsWithYears } month": [
+        ""
+      ],
+      "${ days } day": [
+        ""
+      ]
+    },
+    "Addon": {
+      "+ ${ addresses } email address": [
+        ""
+      ],
+      "+ ${ storage } storage": [
+        ""
+      ],
+      "+ ${ domains } custom domain": [
+        ""
+      ],
+      "+ ${ members } user": [
+        ""
+      ],
+      "+ ${ vpn } connection": [
+        ""
+      ]
+    },
+    "Plan info": {
+      "(current plan)": [
+        ""
+      ]
+    },
+    "Free price": {
+      "Free": [
+        ""
+      ]
+    },
+    "Payment method option": {
+      "New credit/debit card": [
+        ""
+      ],
+      "PayPal": [
+        ""
+      ],
+      "Bitcoin": [
+        ""
+      ]
+    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         ""
@@ -3972,12 +5035,6 @@
       "Name": [
         "姓名"
       ],
-      "Compact name": [
-        "简洁名称"
-      ],
-      "Nickname": [
-        "昵称"
-      ],
       "Email": [
         "邮箱"
       ],
@@ -4028,18 +5085,6 @@
       ],
       "Member": [
         "成员"
-      ],
-      "IMPP": [
-        "IMPP"
-      ],
-      "Related": [
-        "关系"
-      ],
-      "Categories": [
-        "类别"
-      ],
-      "Sound": [
-        "声音"
       ]
     },
     "Contact type label": {
@@ -4069,12 +5114,6 @@
       ]
     },
     "Property type": {
-      "Name": [
-        "姓名"
-      ],
-      "Yomi": [
-        "读音"
-      ],
       "Email": [
         "邮箱"
       ],
@@ -4104,63 +5143,6 @@
       ],
       "Address": [
         "地址"
-      ],
-      "Contact": [
-        "联络人"
-      ],
-      "Acquaintance": [
-        "认识"
-      ],
-      "Friend": [
-        "朋友"
-      ],
-      "Met": [
-        "见过"
-      ],
-      "Co-worker": [
-        "同事"
-      ],
-      "Colleague": [
-        "同行"
-      ],
-      "Co-resident": [
-        "室友"
-      ],
-      "Neighbor": [
-        "邻居"
-      ],
-      "Child": [
-        "子女"
-      ],
-      "Parent": [
-        "父母"
-      ],
-      "Sibling": [
-        "同胞"
-      ],
-      "Kin": [
-        "亲属"
-      ],
-      "Muse": [
-        "灵感来源"
-      ],
-      "Crush": [
-        "热恋对象"
-      ],
-      "Date": [
-        "约会对象"
-      ],
-      "Sweetheart": [
-        "爱人"
-      ],
-      "Me": [
-        "我"
-      ],
-      "Agent": [
-        "代理人"
-      ],
-      "Emergency": [
-        "紧急联系人"
       ]
     },
     "file size format": {
