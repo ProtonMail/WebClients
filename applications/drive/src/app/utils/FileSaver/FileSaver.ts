@@ -11,6 +11,11 @@ import { isTransferCancelError } from '../transfer';
 import { adjustName, adjustWindowsLinkName, splitLinkName } from '../link';
 import { SupportedMimeTypes } from '../MimeTypeParser/constants';
 
+// FileSaver provides functionality to start download to file. This class does
+// not deal with API or anything else. Files which fit the memory (see
+// MEMORY_DOWNLOAD_LIMIT constant) are buffered in browser and then saved in
+// one go. Bigger files are streamed and user can see the progress almost like
+// it would be normal file. See saveViaDownload for more info.
 class FileSaver {
     private useBlobFallback = false;
 
@@ -21,6 +26,18 @@ class FileSaver {
         });
     }
 
+    // saveViaDownload uses service workers to download file without need to
+    // buffer the whole content in memory and open the download in browser as
+    // is done for regular files. To do this, using service worker is used
+    // local new address where is streamed the download and that address is
+    // opened as hidden iframe in the main page to start download in browser.
+    // To have this working, service workers and option to return stream as
+    // the response is needed, which is not supported by all browsers. See
+    // isUnsupported in download.ts for more info. When the support is missing,
+    // it falls back to buffered download.
+    // Ideally, once we update to openpgpjs v5 with custom web workers, would
+    // be great if we could merge this to the same worker (but note the
+    // difference between web and service worker) to reduce data exchanges.
     private async saveViaDownload(stream: ReadableStream<Uint8Array>, meta: TransferMeta) {
         if (this.useBlobFallback) {
             return this.saveViaBuffer(stream, meta);
@@ -37,6 +54,7 @@ class FileSaver {
         }
     }
 
+    // saveViaBuffer reads the stream and downloads the file in one go.
     // eslint-disable-next-line class-methods-use-this
     private async saveViaBuffer(stream: ReadableStream<Uint8Array>, meta: TransferMeta) {
         try {
