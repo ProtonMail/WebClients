@@ -6,10 +6,11 @@ import { OrderableElement, OrderableHandle } from '../orderable';
 
 interface Props {
     index: number;
+    className?: string;
     cells?: React.ReactNode[];
 }
 
-const OrderableTableRow = ({ index, cells = [], ...rest }: Props) => (
+const OrderableTableRow = ({ index, cells = [], className, ...rest }: Props) => (
     <OrderableElement index={index}>
         <TableRow
             cells={[
@@ -20,6 +21,7 @@ const OrderableTableRow = ({ index, cells = [], ...rest }: Props) => (
                 </OrderableHandle>,
                 ...cells,
             ]}
+            className={className}
             {...rest}
         />
     </OrderableElement>
