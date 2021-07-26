@@ -24,9 +24,16 @@ interface Props {
     contactGroupID?: string;
     selectedContactEmails?: ContactEmail[];
     onClose?: () => void;
+    onDelayedSave?: (groupID: string) => void;
 }
 
-const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmails = [], ...rest }: Props) => {
+const ContactGroupModal = ({
+    contactGroupID,
+    onClose = noop,
+    selectedContactEmails = [],
+    onDelayedSave,
+    ...rest
+}: Props) => {
     const [loading, setLoading] = useState(false);
     const [contactGroups = []] = useContactGroups();
     const [contactEmails] = useContactEmails();
@@ -95,9 +102,10 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
         try {
             setLoading(true);
 
-            const toAdd = model.contactEmails.filter(({ ID }) => isTruthy(ID));
-            const toCreate = model.contactEmails.filter(({ ID }) => !isTruthy(ID));
-            const toRemove = contactGroupID ? diff(existingContactEmails, toAdd) : [];
+            // If delayed save, do not save the contact in the new group because the contact does not really exists yet
+            const toAdd = !onDelayedSave ? model.contactEmails.filter(({ ID }) => isTruthy(ID)) : [];
+            const toCreate = !onDelayedSave ? model.contactEmails.filter(({ ID }) => !isTruthy(ID)) : [];
+            const toRemove = !onDelayedSave ? (contactGroupID ? diff(existingContactEmails, toAdd) : []) : [];
 
             await updateGroup({
                 groupID: contactGroupID,
@@ -106,6 +114,7 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
                 toAdd,
                 toRemove,
                 toCreate,
+                onDelayedSave,
             });
 
             onClose();

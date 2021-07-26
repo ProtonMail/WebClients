@@ -133,7 +133,11 @@ const ContactModal = ({
             if (existingModel) {
                 if (existingModel.Email !== email) {
                     const oldEmail = existingModel.Email;
-                    newModelContactEmails[email] = { ...existingModel, Email: email };
+                    newModelContactEmails[email] = {
+                        ...existingModel,
+                        Email: email,
+                        Name: nameProperty.value as string,
+                    };
                     delete newModelContactEmails[oldEmail];
                 }
                 return;
@@ -144,7 +148,12 @@ const ContactModal = ({
             );
 
             if (existingContactEmail) {
-                newModelContactEmails[email] = { ...existingContactEmail, uid, changes: {} };
+                newModelContactEmails[email] = {
+                    ...existingContactEmail,
+                    uid,
+                    changes: {},
+                    Name: nameProperty.value as string,
+                };
                 return;
             }
 
@@ -154,6 +163,7 @@ const ContactModal = ({
                 Email: email,
                 ContactID: contactID || '',
                 LabelIDs: [],
+                Name: nameProperty.value as string,
             };
         });
 
