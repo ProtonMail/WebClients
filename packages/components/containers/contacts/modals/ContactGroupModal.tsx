@@ -39,7 +39,6 @@ const ContactGroupModal = ({
     const [contactEmails] = useContactEmails();
     const [value, setValue] = useState('');
     const updateGroup = useUpdateGroup();
-
     const isValidEmail = useMemo(() => validateEmailAddress(value), [value]);
 
     const contactGroup = contactGroupID && contactGroups.find(({ ID }) => ID === contactGroupID);
@@ -101,11 +100,14 @@ const ContactGroupModal = ({
     const handleSubmit = async () => {
         try {
             setLoading(true);
-
-            // If delayed save, do not save the contact in the new group because the contact does not really exists yet
-            const toAdd = !onDelayedSave ? model.contactEmails.filter(({ ID }) => isTruthy(ID)) : [];
-            const toCreate = !onDelayedSave ? model.contactEmails.filter(({ ID }) => !isTruthy(ID)) : [];
-            const toRemove = !onDelayedSave ? (contactGroupID ? diff(existingContactEmails, toAdd) : []) : [];
+            const toAdd = model.contactEmails.filter(({ ID }) => isTruthy(ID));
+            const toCreate = !onDelayedSave
+                ? model.contactEmails.filter(({ ID }) => !isTruthy(ID))
+                : // If delayed save, the contact we are editing does not really exists yet, so we need to remove it from the to create
+                  model.contactEmails.filter(
+                      (contactEmail) => !isTruthy(contactEmail.ID) && !selectedContactEmails?.includes(contactEmail)
+                  );
+            const toRemove = contactGroupID ? diff(existingContactEmails, toAdd) : [];
 
             await updateGroup({
                 groupID: contactGroupID,
