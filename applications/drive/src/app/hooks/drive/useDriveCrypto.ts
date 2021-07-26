@@ -10,6 +10,7 @@ import {
     decryptSharePassphraseAsync,
     getPrimaryAddressAsync,
     getPrimaryAddressKeyAsync,
+    getPrimaryAddressKeysAsync,
     getOwnAddressKeysAsync,
 } from '../../utils/drive/driveCrypto';
 
@@ -30,8 +31,16 @@ function useDriveCrypto() {
         });
     }, [getAddresses]);
 
+    // getPrimaryAddressKey returns only currently primary key of the primary
+    // address. Use this only for encryption. getPrimaryAddressKeys needs to
+    // be used for decryption, because file could be encrypted with any key.
     const getPrimaryAddressKey = useCallback(async () => {
         return getPrimaryAddressKeyAsync(getPrimaryAddress, getAddressKeys);
+    }, [getPrimaryAddress, getAddressKeys]);
+
+    // getPrimaryAddressKeys returns all keys for primary address.
+    const getPrimaryAddressKeys = useCallback(async () => {
+        return getPrimaryAddressKeysAsync(getPrimaryAddress, getAddressKeys);
     }, [getPrimaryAddress, getAddressKeys]);
 
     const getOwnAddressKeys = useCallback(
@@ -70,7 +79,14 @@ function useDriveCrypto() {
         );
     };
 
-    return { getPrimaryAddressKey, getVerificationKey, getPrimaryAddress, sign, decryptSharePassphrase };
+    return {
+        getPrimaryAddressKey,
+        getPrimaryAddressKeys,
+        getVerificationKey,
+        getPrimaryAddress,
+        sign,
+        decryptSharePassphrase,
+    };
 }
 
 export default useDriveCrypto;
