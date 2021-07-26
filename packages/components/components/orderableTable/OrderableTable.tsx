@@ -9,11 +9,10 @@ interface Props {
     className?: string;
     children?: React.ReactNode;
     caption?: string;
-    useDragHandle?: boolean;
 }
 
-const OrderableTable = ({ children = [], className = '', caption, useDragHandle = true, ...props }: Props) => (
-    <OrderableContainer helperClass="orderableHelper simple-table" useDragHandle={useDragHandle} {...props}>
+const OrderableTable = ({ children = [], className = '', caption, ...props }: Props) => (
+    <OrderableContainer helperClass="orderableHelper simple-table" useDragHandle {...props}>
         <Table caption={caption} className={classnames(['orderableTable', className])}>
             {children}
         </Table>
