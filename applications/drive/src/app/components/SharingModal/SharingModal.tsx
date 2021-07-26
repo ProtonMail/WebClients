@@ -47,7 +47,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
 
     const [password, setPassword] = useState('');
     const [initialExpiration, setInitialExpiration] = useState<number | null>(null);
-    const [error, setError] = useState(false);
+    const [error, setError] = useState('');
     const { events, getShareMetaShort, deleteShare, getShareKeys } = useDrive();
     const { createSharedLink, getSharedURLs, decryptSharedLink, updateSharedLink, deleteSharedLink } = useSharing();
     const { createNotification } = useNotifications();
@@ -93,7 +93,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
         getToken()
             .catch((err) => {
                 console.error(err);
-                setError(true);
+                setError(err);
             })
             .finally(() => {
                 setModalState(SharingModalState.GeneratedLink);
@@ -223,7 +223,7 @@ function SharingModal({ modalTitleID = 'sharing-modal', onClose, shareId, item, 
         }
 
         if (error || !shareUrlInfo || !item) {
-            return <ErrorState modalTitleID={modalTitleID} onClose={onClose} />;
+            return <ErrorState modalTitleID={modalTitleID} onClose={onClose} error={error} isCreationError={!item} />;
         }
 
         if (modalState === SharingModalState.GeneratedLink) {
