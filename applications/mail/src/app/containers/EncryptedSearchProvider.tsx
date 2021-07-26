@@ -861,15 +861,18 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     /**
      * Highlight keywords in metadata. Return the JSX element to be rendered
      */
-    const highlightMetadata: HighlightMetadata = (metadata) => {
+    const highlightMetadata: HighlightMetadata = (metadata, isBold, trim) => {
         const searchParameters = extractSearchParameters(location);
         const { labelID } = esStatus;
         const { normalisedKeywords } = normaliseSearchParams(searchParameters, labelID);
         if (!normalisedKeywords) {
-            return <span>{metadata}</span>;
+            return {
+                numOccurrences: 0,
+                resultJSX: <span>{metadata}</span>,
+            };
         }
 
-        return highlightJSX(metadata, normalisedKeywords);
+        return highlightJSX(metadata, normalisedKeywords, isBold, trim);
     };
 
     /**

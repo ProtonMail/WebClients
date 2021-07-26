@@ -16,7 +16,7 @@ export interface ESMetricsReport {
     isCacheLimited: boolean;
 }
 
-export type MessageForSearch = Pick<
+export type ESBaseMessage = Pick<
     Message,
     | 'ID'
     | 'Order'
@@ -39,11 +39,13 @@ export type MessageForSearch = Pick<
     | 'LabelIDs'
 >;
 
-export interface CachedMessage extends MessageForSearch {
+export interface CachedMessage extends ESBaseMessage {
     decryptedBody?: string;
     decryptedSubject?: string;
     decryptionError: boolean;
 }
+
+export type MessageForSearch = Omit<CachedMessage, 'decryptionError' | 'decryptedSubject'>;
 
 export interface AesGcmCiphertext {
     iv: Uint8Array;
@@ -134,7 +136,11 @@ export type CacheIndexedDB = (force?: boolean) => Promise<{ cachedMessages: Cach
 
 export type HighlightString = (content: string, setAutoScroll: boolean) => string;
 
-export type HighlightMetadata = (metadata: string) => JSX.Element;
+export type HighlightMetadata = (
+    metadata: string,
+    isBold?: boolean,
+    trim?: boolean
+) => { numOccurrences: number; resultJSX: JSX.Element };
 
 export type IsSearchResult = (ID: string) => boolean;
 
