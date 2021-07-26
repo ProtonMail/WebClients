@@ -35,19 +35,11 @@ const ContactFieldProperty = (
         onChange({ value: target.value, uid });
 
     if (field === 'email') {
-        return (
-            <EmailInput
-                value={value as string}
-                placeholder={labels.email}
-                onChange={handleChange}
-                autoFocus
-                {...rest}
-            />
-        );
+        return <EmailInput value={value as string} placeholder={labels.email} onChange={handleChange} {...rest} />;
     }
 
     if (field === 'tel') {
-        return <TelInput value={value} placeholder={labels.tel} onChange={handleChange} autoFocus {...rest} />;
+        return <TelInput value={value} placeholder={labels.tel} onChange={handleChange} {...rest} />;
     }
 
     if (field === 'adr') {
@@ -56,7 +48,7 @@ const ContactFieldProperty = (
     }
 
     if (field === 'note') {
-        return <TextArea value={value} placeholder={labels.note} onChange={handleChange} autoFocus {...rest} />;
+        return <TextArea value={value} placeholder={labels.note} onChange={handleChange} {...rest} />;
     }
 
     if (field === 'bday' || field === 'anniversary') {
@@ -68,7 +60,7 @@ const ContactFieldProperty = (
                 }
                 onChange({ value: formatISO(value, { representation: 'date' }), uid });
             };
-            return <DateInput placeholder={label} value={date} autoFocus onChange={handleSelectDate} {...rest} />;
+            return <DateInput placeholder={label} value={date} onChange={handleSelectDate} {...rest} />;
         }
     }
 
@@ -88,14 +80,13 @@ const ContactFieldProperty = (
                 placeholder={label}
                 onChange={handleChange}
                 isSubmitted={isSubmitted}
-                autoFocus
                 required
                 {...rest}
             />
         );
     }
 
-    return <Input value={value} placeholder={label} onChange={handleChange} autoFocus {...rest} />;
+    return <Input value={value} placeholder={label} onChange={handleChange} {...rest} />;
 };
 
 export default forwardRef(ContactFieldProperty);
