@@ -6,6 +6,9 @@
   "contexts": {
     "": {},
     "Error": {
+      "Unknown error": [
+        "未知错误"
+      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         ""
       ],
@@ -18,8 +21,8 @@
       "Authentication error.": [
         ""
       ],
-      "Unknown error": [
-        "未知错误"
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        ""
       ],
       "Email address invalid": [
         ""
@@ -93,6 +96,66 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
+      "Process aborted": [
+        ""
+      ],
+      "Payment process cancelled": [
+        ""
+      ],
+      "Payment process failed": [
+        ""
+      ],
+      "Payment process consumed": [
+        ""
+      ],
+      "Payment process not supported": [
+        ""
+      ],
+      "Unknown payment token status": [
+        ""
+      ],
+      "Tab closed": [
+        ""
+      ],
+      "Name on card required": [
+        ""
+      ],
+      "Invalid expiration date": [
+        ""
+      ],
+      "Invalid card number": [
+        ""
+      ],
+      "Invalid ${ name } code": [
+        ""
+      ],
+      "Invalid postal code": [
+        ""
+      ],
+      "Error connecting to the Bitcoin API.": [
+        ""
+      ],
+      "Amount below minimum.": [
+        ""
+      ],
+      "Amount above the maximum.": [
+        ""
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        ""
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        ""
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        ""
+      ],
+      "Checkout expired, please try again.": [
+        ""
+      ],
+      "Invalid code": [
+        ""
+      ],
       "Incorrect mailbox password. Please try again": [
         "邮箱密码错误，请重试"
       ],
@@ -129,10 +192,10 @@
       "Signature not verified": [
         ""
       ],
-      "No valid address found": [
+      "Incorrect password. Please try again.": [
         ""
       ],
-      "Incorrect password. Please try again.": [
+      "No valid address found": [
         ""
       ]
     },
@@ -212,11 +275,11 @@
       "Previous month": [
         "上个月"
       ],
-      "Confirm opening of link ${ link }": [
-        "确认打开链接 ${ link }"
-      ],
       "refresh the page": [
         "刷新页面"
+      ],
+      "Confirm opening of link ${ link }": [
+        "确认打开链接 ${ link }"
       ],
       "View invoice": [
         "查看账单"
@@ -359,6 +422,18 @@
       "Signing out": [
         "正在登出"
       ],
+      "Clear": [
+        "清除"
+      ],
+      "Add screenshot(s)": [
+        "添加截图"
+      ],
+      "Hide info": [
+        "隐藏信息"
+      ],
+      "Show info": [
+        "显示信息"
+      ],
       "Details": [
         "详细信息"
       ],
@@ -392,20 +467,26 @@
       "here": [
         "此处"
       ],
+      "Continue import": [
+        ""
+      ],
+      "Discard": [
+        ""
+      ],
+      "Reconnect": [
+        ""
+      ],
+      "Start import": [
+        ""
+      ],
       "Copy email to clipboard": [
         "复制邮箱地址"
       ],
-      "Switch account": [
-        "切换帐户"
-      ],
-      "Sign out": [
-        "登出"
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } 简介"
       ],
       "I have a question": [
         "我有疑问"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } 简介"
       ],
       "Request a feature": [
         "请求功能"
@@ -415,6 +496,12 @@
       ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
+      ],
+      "Switch account": [
+        "切换帐户"
+      ],
+      "Sign out": [
+        "登出"
       ],
       "Go to settings": [
         "前往设置"
@@ -437,18 +524,6 @@
       "Composer mode": [
         "编辑窗模式"
       ],
-      "Clear": [
-        "清除"
-      ],
-      "Add screenshot(s)": [
-        "添加截图"
-      ],
-      "Hide info": [
-        "隐藏信息"
-      ],
-      "Show info": [
-        "显示信息"
-      ],
       "Get started": [
         "入门"
       ],
@@ -467,26 +542,62 @@
       "OK": [
         "确定"
       ],
-      "Continue import": [
+      "Remove bonuses": [
         ""
       ],
-      "Discard": [
+      "Try again": [
         ""
       ],
-      "Reconnect": [
+      "Use a different card": [
         ""
       ],
-      "Start import": [
+      "Use a different payment method": [
+        ""
+      ],
+      "Retry": [
+        ""
+      ],
+      "Loading verification": [
+        ""
+      ],
+      "Select plan": [
+        ""
+      ],
+      "Compare all features": [
+        ""
+      ],
+      "${ boldSave } by switching to annual billing": [
+        ""
+      ],
+      "Pay": [
+        ""
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        ""
+      ],
+      "Remove gift code": [
+        ""
+      ],
+      "annual billing": [
+        ""
+      ],
+      "Compare plans": [
+        ""
+      ],
+      "Decrease": [
+        ""
+      ],
+      "Increase": [
         ""
       ],
       "Log in": [
         "登录"
       ],
-      "Delete permanently": [
-        "永久删除"
+      "Cancel all uploads": [
+        ""
       ],
-      "Undo": [
-        "撤销"
+      "New upload": [
+        "新建上传"
       ],
       "Maximize transfers": [
         "最大化传输窗口"
@@ -523,12 +634,6 @@
       ],
       "Remove from this list": [
         ""
-      ],
-      "Cancel all uploads": [
-        ""
-      ],
-      "New upload": [
-        "新建上传"
       ],
       "List layout": [
         "列表布局"
@@ -578,14 +683,14 @@
       "Upload folder": [
         "上传文件夹"
       ],
+      "Delete permanently": [
+        "永久删除"
+      ],
       "Restore from trash": [
         "从回收站恢复"
       ],
       "Empty trash": [
         "清空回收站"
-      ],
-      "Start recovering": [
-        "开始恢复"
       ],
       "Share": [
         "分享"
@@ -599,8 +704,14 @@
       "Stop sharing": [
         "停止分享"
       ],
+      "Show shared link details": [
+        ""
+      ],
       "Share file": [
         "分享文件"
+      ],
+      "Start recovering": [
+        "开始恢复"
       ],
       "View more": [
         "查看更多"
@@ -613,6 +724,9 @@
       ],
       "Create link": [
         "创建链接"
+      ],
+      "Undo": [
+        "撤销"
       ]
     },
     "Title": {
@@ -754,6 +868,15 @@
       "Import contacts": [
         ""
       ],
+      "Report a problem": [
+        "反馈问题"
+      ],
+      "Start import process": [
+        ""
+      ],
+      "Import in progress": [
+        ""
+      ],
       "Open help menu": [
         "打开帮助菜单"
       ],
@@ -763,17 +886,110 @@
       "Open settings menu": [
         "打开设置菜单"
       ],
-      "Report a problem": [
-        "反馈问题"
-      ],
       "Select a theme": [
         "选择一个主题"
       ],
-      "Start import process": [
+      "Confirm loss of Proton bonuses": [
         ""
       ],
-      "Import in progress": [
+      "Unsupported browser": [
         ""
+      ],
+      "Card verification": [
+        ""
+      ],
+      "Payment verification": [
+        ""
+      ],
+      "Processing...": [
+        ""
+      ],
+      "Card verification in progress": [
+        ""
+      ],
+      "Payment verification in progress": [
+        ""
+      ],
+      "PayPal verification failed": [
+        ""
+      ],
+      "3-D Secure verification failed": [
+        ""
+      ],
+      "Error": [
+        ""
+      ],
+      "ZIP / postal code": [
+        ""
+      ],
+      "Payment details": [
+        ""
+      ],
+      "Currency": [
+        ""
+      ],
+      "Billing cycle": [
+        ""
+      ],
+      "Current plan": [
+        ""
+      ],
+      "Processing": [
+        ""
+      ],
+      "Apply gift code": [
+        ""
+      ],
+      "Subtotal": [
+        ""
+      ],
+      "Coupon discount": [
+        ""
+      ],
+      "Total (monthly)": [
+        ""
+      ],
+      "Credits": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Amount due": [
+        ""
+      ],
+      "Cancel subscription": [
+        ""
+      ],
+      "Network error": [
+        ""
+      ],
+      "Select a plan": [
+        ""
+      ],
+      "Customize your plan": [
+        ""
+      ],
+      "Checkout": [
+        ""
+      ],
+      "Plan summary": [
+        ""
+      ],
+      "${ appName } customization": [
+        ""
+      ],
+      "Sign in again to continue": [
+        "再次登录方可继续"
+      ],
+      "Account suspended": [
+        "账号已被冻结"
+      ],
+      "Enter your username or ProtonMail email address": [
+        ""
+      ],
+      "Enter your password": [
+        "输入您的密码"
       ],
       "${ appName } Keyboard Shortcuts": [
         ""
@@ -790,27 +1006,6 @@
       "Beta Access": [
         "Beta测试版访问权限"
       ],
-      "Sign in again to continue": [
-        "再次登录方可继续"
-      ],
-      "Account suspended": [
-        "账号已被冻结"
-      ],
-      "Enter your username or ProtonMail email address": [
-        ""
-      ],
-      "Enter your password": [
-        "输入您的密码"
-      ],
-      "Delete permanently": [
-        "永久删除"
-      ],
-      "Stop sharing": [
-        ""
-      ],
-      "Cancel all active transfers": [
-        ""
-      ],
       "Duplicate folder found": [
         ""
       ],
@@ -819,6 +1014,9 @@
       ],
       "Drop to upload": [
         "拖拽文件并上传"
+      ],
+      "Cancel all active transfers": [
+        ""
       ],
       "Change layout": [
         "调整布局"
@@ -835,7 +1033,37 @@
       "Empty trash": [
         "清空回收站"
       ],
+      "My files": [
+        "我的文件"
+      ],
+      "You have no folders yet": [
+        ""
+      ],
+      "You have no files to share": [
+        ""
+      ],
       "Drive": [
+        ""
+      ],
+      "Your file is ready to be downloaded": [
+        ""
+      ],
+      "Download completed": [
+        ""
+      ],
+      "Download failed": [
+        ""
+      ],
+      "Download canceled": [
+        ""
+      ],
+      "Downloading": [
+        ""
+      ],
+      "Enter file password to download": [
+        ""
+      ],
+      "The link either does not exist or has expired": [
         ""
       ],
       "Restore your files": [
@@ -845,15 +1073,6 @@
         ""
       ],
       "You have inaccessible files": [
-        ""
-      ],
-      "My files": [
-        "我的文件"
-      ],
-      "You have no folders yet": [
-        ""
-      ],
-      "You have no files to share": [
         ""
       ],
       "Rename a folder": [
@@ -934,25 +1153,10 @@
       "Total size": [
         ""
       ],
-      "Your file is ready to be downloaded": [
-        ""
+      "Delete permanently": [
+        "永久删除"
       ],
-      "Download completed": [
-        ""
-      ],
-      "Download failed": [
-        ""
-      ],
-      "Download canceled": [
-        ""
-      ],
-      "Downloading": [
-        ""
-      ],
-      "Enter file password to download": [
-        ""
-      ],
-      "The link either does not exist or has expired": [
+      "Stop sharing": [
         ""
       ]
     },
@@ -969,6 +1173,9 @@
       "Week": [
         ""
       ],
+      "support team": [
+        ""
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         ""
       ],
@@ -982,9 +1189,6 @@
         ""
       ],
       "Drop the file here to upload": [
-        ""
-      ],
-      "support team": [
         ""
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
@@ -1128,6 +1332,12 @@
       "Loading ${ appName }": [
         ""
       ],
+      "Screenshot(s) attached": [
+        "已附加的屏幕截图"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        ""
+      ],
       "Unsupported file": [
         "不支持文件"
       ],
@@ -1185,12 +1395,6 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         ""
       ],
-      "Screenshot(s) attached": [
-        "已附加的屏幕截图"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        ""
-      ],
       "Import contacts": [
         ""
       ],
@@ -1215,7 +1419,241 @@
       "Your import will not be processed.": [
         ""
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+      "Since you're a loyal user, your account has additional features enabled.": [
+        ""
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        ""
+      ],
+      "+${ bonusSpace } bonus storage": [
+        ""
+      ],
+      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
+        ""
+      ],
+      "Your bank requires 3-D Secure verification for security purposes.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers.": [
+        ""
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        ""
+      ],
+      "You will be soon redirected to your bank to verify your payment.": [
+        ""
+      ],
+      "Please verify the card in the new tab which was opened.": [
+        ""
+      ],
+      "Please verify payment at the new tab which was opened.": [
+        ""
+      ],
+      "Verification can take a few minutes.": [
+        ""
+      ],
+      "Payment can take a few minutes to fully verify.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or call your bank for assistance.": [
+        ""
+      ],
+      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        ""
+      ],
+      "Amount below minimum (${ amount }).": [
+        ""
+      ],
+      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
+        ""
+      ],
+      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
+        ""
+      ],
+      "Please verify the payment in the new tab.": [
+        ""
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        ""
+      ],
+      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
+        ""
+      ],
+      "We use 3-D Secure to protect your payments.": [
+        ""
+      ],
+      "Billed as ${ billedPrice } per year": [
+        ""
+      ],
+      "Billed as ${ billedPrice } every 2 years": [
+        ""
+      ],
+      "Included": [
+        ""
+      ],
+      "* Customizable features": [
+        ""
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        ""
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        ""
+      ],
+      "For getting started with private and secure emailing.": [
+        ""
+      ],
+      "A free and uncensored Internet should be available to all.": [
+        ""
+      ],
+      "Starter VPN service with P2P support.": [
+        ""
+      ],
+      "Full-featured VPN with speed up to 10 Gbps.": [
+        ""
+      ],
+      "For individuals that need a fully-featured mailbox with advanced protection.": [
+        ""
+      ],
+      "For professionals that need secure business communications.": [
+        ""
+      ],
+      "VPN + ${ mailAppName } bundle for families and small businesses.": [
+        ""
+      ],
+      "For families and small teams; includes both Mail and VPN.": [
+        ""
+      ],
+      "Save 20%": [
+        ""
+      ],
+      "Your account is being upgraded, this may take up to 30 seconds.": [
+        ""
+      ],
+      "Thank you for supporting our mission.": [
+        ""
+      ],
+      "Your account will be updated once the payment is cleared.": [
+        ""
+      ],
+      "Account successfully updated": [
+        ""
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        ""
+      ],
+      "(Mail + VPN)": [
+        ""
+      ],
+      "${ mailAppName } Free": [
+        ""
+      ],
+      "${ vpnAppName } Free": [
+        ""
+      ],
+      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
+        ""
+      ],
+      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        ""
+      ],
+      "No payment is required at this time.": [
+        ""
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
+        ""
+      ],
+      "20% discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Black Friday 2018 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2019 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2020 newcomer discount has been applied": [
+        ""
+      ],
+      "Discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        ""
+      ],
+      "30 days money-back guarantee.": [
+        ""
+      ],
+      "Save extra 20%": [
+        ""
+      ],
+      "${ save20 } on your subscription by switching to ${ annualBilling }": [
+        ""
+      ],
+      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
+        ""
+      ],
+      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
+        ""
+      ],
+      "Storage GB": [
+        ""
+      ],
+      "Users": [
+        ""
+      ],
+      "Domains": [
+        ""
+      ],
+      "Addresses": [
+        ""
+      ],
+      "Connections": [
+        ""
+      ],
+      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Add additional addresses to your account like user2@protonmail.com": [
+        ""
+      ],
+      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
+        ""
+      ],
+      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more users.": [
+        ""
+      ],
+      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
+        ""
+      ],
+      "Each additional connection can be assigned to users in your organization.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more connections.": [
+        ""
+      ],
+      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        ""
+      ],
+      "Not customizable": [
+        ""
+      ],
+      "Expired": [
         ""
       ],
       "here": [
@@ -1227,6 +1665,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         ""
       ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        ""
+      ],
       "Session timed out.": [
         "会话已超时。"
       ],
@@ -1236,23 +1677,35 @@
       "Servers are unreachable.": [
         ""
       ],
-      "Loading folder contents": [
-        "正在载入文件夹内容"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
+      "${ uploadName } already exists in this location.": [
         ""
       ],
-      "Are you sure you want to permanently delete selected item(s) from trash?": [
-        "您确定要永久删除这些项目吗？"
-      ],
-      "This will delete the link(s) and remove access to your file(s) for anyone with the link(s).": [
+      "What do you want to do?": [
         ""
       ],
-      "Moving files": [
+      "Folder contents will merge into a single folder": [
         ""
       ],
-      "You cannot undo this action.": [
-        "您无法撤销此操作。"
+      "A number will be added to the folder name": [
+        ""
+      ],
+      "A number will be added to the filename": [
+        ""
+      ],
+      "This will overwrite the existing folder": [
+        ""
+      ],
+      "This will overwrite the existing file": [
+        ""
+      ],
+      "Folder will not be uploaded": [
+        ""
+      ],
+      "File will not be uploaded": [
+        ""
+      ],
+      "Your files will be encrypted and then saved.": [
+        "您的文件将被加密并保存。"
       ],
       "${ doneCount } Finished": [
         "${ doneCount } 已完成"
@@ -1323,53 +1776,8 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         ""
       ],
-      "${ uploadName } already exists in this location.": [
-        ""
-      ],
-      "What do you want to do?": [
-        ""
-      ],
-      "Folder contents will merge into a single folder": [
-        ""
-      ],
-      "A number will be added to the folder name": [
-        ""
-      ],
-      "A number will be added to the filename": [
-        ""
-      ],
-      "This will overwrite the existing folder": [
-        ""
-      ],
-      "This will overwrite the existing file": [
-        ""
-      ],
-      "Folder will not be uploaded": [
-        ""
-      ],
-      "File will not be uploaded": [
-        ""
-      ],
-      "Your files will be encrypted and then saved.": [
-        "您的文件将被加密并保存。"
-      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "您确定要清空回收站并永久删除所有项目吗？"
-      ],
-      "Would you like to restore your files?": [
-        ""
-      ],
-      "Recovery process might take some time.": [
-        ""
-      ],
-      "More": [
-        ""
-      ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        ""
-      ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        ""
       ],
       "Create your first folder and start moving your files.": [
         "创建您的第一个文件夹并开始移动文件。"
@@ -1390,6 +1798,36 @@
         ""
       ],
       "Create links and share your files with others.": [
+        ""
+      ],
+      "Link expires: ": [
+        ""
+      ],
+      "Your file has finished downloading.": [
+        ""
+      ],
+      "Your file failed to download.": [
+        ""
+      ],
+      "Your download has been canceled.": [
+        ""
+      ],
+      "Your file is being downloaded.": [
+        ""
+      ],
+      "Would you like to restore your files?": [
+        ""
+      ],
+      "Recovery process might take some time.": [
+        ""
+      ],
+      "More": [
+        ""
+      ],
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
+        ""
+      ],
+      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
         ""
       ],
       "Yes": [
@@ -1428,20 +1866,23 @@
       "Select an uploaded file and create a link to it.": [
         ""
       ],
-      "Link expires: ": [
+      "Loading folder contents": [
+        "正在载入文件夹内容"
+      ],
+      "Uploading hundreds of files at once may have a performance impact.": [
         ""
       ],
-      "Your file has finished downloading.": [
+      "Are you sure you want to permanently delete selected item(s) from trash?": [
+        "您确定要永久删除这些项目吗？"
+      ],
+      "This will delete the link(s) and remove access to your file(s) for anyone with the link(s).": [
         ""
       ],
-      "Your file failed to download.": [
+      "Moving files": [
         ""
       ],
-      "Your download has been canceled.": [
-        ""
-      ],
-      "Your file is being downloaded.": [
-        ""
+      "You cannot undo this action.": [
+        "您无法撤销此操作。"
       ],
       "Trash": [
         "回收站"
@@ -1556,28 +1997,61 @@
       "Browser version": [
         "浏览器版本"
       ],
-      "Display name": [
-        "显示名称"
-      ],
       "From: ${ fromEmailAddress }": [
         ""
       ],
       "To: ${ toEmailAddress }": [
         ""
       ],
-      "Keyboard shortcuts": [
+      "Display name": [
+        "显示名称"
+      ],
+      "Name on card": [
         ""
       ],
-      "Select how your list of messages looks like by default.": [
+      "Card number": [
         ""
       ],
-      "Select how your mailbox looks like by default.": [
+      "Expiry date": [
         ""
       ],
-      "Select how your composer opens by default.": [
+      "CVV code": [
         ""
       ],
-      "Enable Beta Access": [
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
         ""
       ],
       "Cancel": [
@@ -1597,6 +2071,21 @@
       ],
       "Username or ProtonMail address": [
         "用户名或 ProtonMail 地址"
+      ],
+      "Keyboard shortcuts": [
+        ""
+      ],
+      "Select how your list of messages looks like by default.": [
+        ""
+      ],
+      "Select how your mailbox looks like by default.": [
+        ""
+      ],
+      "Select how your composer opens by default.": [
+        ""
+      ],
+      "Enable Beta Access": [
+        ""
       ],
       "Merge a folder": [
         ""
@@ -1652,6 +2141,9 @@
       "File": [
         "文件"
       ],
+      "Report abuse": [
+        ""
+      ],
       "Folder name": [
         "文件夹名称"
       ],
@@ -1662,9 +2154,6 @@
         ""
       ],
       "Set expiration date": [
-        ""
-      ],
-      "Report abuse": [
         ""
       ]
     },
@@ -1680,6 +2169,9 @@
       "Request an invite": [
         ""
       ],
+      "clearing your browser cache": [
+        ""
+      ],
       "Pay invoice": [
         ""
       ],
@@ -1692,7 +2184,10 @@
       "Go to subscription plans": [
         ""
       ],
-      "clearing your browser cache": [
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
         ""
       ],
       "My files": [
@@ -1751,6 +2246,15 @@
       "e.g. Julia Smith": [
         "例如：Julia Smith"
       ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
       "Mailbox password": [
         "邮箱密码"
       ],
@@ -1802,7 +2306,58 @@
       "You do not have any contacts to export": [
         "您没有任何联系人可导出"
       ],
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        ""
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        ""
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        ""
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        ""
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        ""
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        ""
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        ""
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        ""
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        ""
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        ""
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        ""
+      ],
+      "Discount applied for annual billing cycle": [
+        ""
+      ],
+      "Discount applied for two-year billing cycle": [
+        ""
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        ""
+      ],
       "Expired sharing link": [
+        ""
+      ],
+      "Inactive sharing link": [
         ""
       ],
       "Active sharing link": [
@@ -1908,13 +2463,16 @@
       "Contacts could not be merged": [
         ""
       ],
-      "Your local date & time settings seem to be out of sync.": [
-        ""
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         ""
       ],
+      "Your local date & time settings seem to be out of sync.": [
+        ""
+      ],
       "Are you sure you want to discard your import?": [
+        ""
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         ""
       ]
     },
@@ -1955,13 +2513,13 @@
       "Bug reported": [
         "问题已反馈"
       ],
+      "You have successfully unsubscribed": [
+        ""
+      ],
       "Preference saved": [
         ""
       ],
       "Keyboard shortcuts preferences updated": [
-        ""
-      ],
-      "Your files were successfully recovered to \"My files\".": [
         ""
       ],
       "Recovery has started.": [
@@ -1974,6 +2532,9 @@
         ""
       ],
       "The link to your file was successfully copied.": [
+        ""
+      ],
+      "Your files were successfully recovered to \"My files\".": [
         ""
       ]
     },
@@ -2013,6 +2574,36 @@
       ],
       "Contact group created": [
         ""
+      ],
+      "All items will soon be permanently deleted from trash": [
+        "所有项目将很快从回收站永久删除"
+      ],
+      "Move ${ movingCount } file": [
+        "移动 ${ movingCount } 个文件"
+      ],
+      "Move ${ movingCount } folder": [
+        "移动 ${ movingCount } 个文件夹"
+      ],
+      "Move ${ movingCount } item": [
+        "移动 ${ movingCount } 个项目"
+      ],
+      "Move ${ itemsToMoveCount } file": [
+        "移动 ${ itemsToMoveCount } 个文件"
+      ],
+      "Move ${ itemsToMoveCount } folder": [
+        "移动 ${ itemsToMoveCount } 个文件夹"
+      ],
+      "Move ${ itemsToMoveCount } item": [
+        "移动 ${ itemsToMoveCount } 个文件"
+      ],
+      "Your settings have been changed successfully.": [
+        ""
+      ],
+      "The link to your file was deleted.": [
+        ""
+      ],
+      "Failed to move, please try again": [
+        "无法移动，请重试"
       ],
       "Not enough space to upload ${ formattedRemaining }": [
         "没有足够空间上传${ formattedRemaining }"
@@ -2080,9 +2671,6 @@
       "${ failedMovesCount } item failed to be moved": [
         "${ failedMovesCount } 项移动失败"
       ],
-      "The link to your file was deleted.": [
-        ""
-      ],
       "${ deletedCount } link to your file was deleted.": [
         ""
       ],
@@ -2091,33 +2679,6 @@
       ],
       "${ failedCount } link to your file failed to be deleted.": [
         ""
-      ],
-      "All items will soon be permanently deleted from trash": [
-        "所有项目将很快从回收站永久删除"
-      ],
-      "Move ${ movingCount } file": [
-        "移动 ${ movingCount } 个文件"
-      ],
-      "Move ${ movingCount } folder": [
-        "移动 ${ movingCount } 个文件夹"
-      ],
-      "Move ${ movingCount } item": [
-        "移动 ${ movingCount } 个项目"
-      ],
-      "Move ${ itemsToMoveCount } file": [
-        "移动 ${ itemsToMoveCount } 个文件"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "移动 ${ itemsToMoveCount } 个文件夹"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "移动 ${ itemsToMoveCount } 个文件"
-      ],
-      "Your settings have been changed successfully.": [
-        ""
-      ],
-      "Failed to move, please try again": [
-        "无法移动，请重试"
       ]
     },
     "Label for contact group name": {
@@ -2257,8 +2818,8 @@
       "Contacts, groups and settings": [
         ""
       ],
-      "Help": [
-        "帮助"
+      "Get help": [
+        ""
       ]
     },
     "Error notification": {
@@ -2390,50 +2951,6 @@
         "访问被拒绝"
       ]
     },
-    "Message display when a new app version is available": {
-      "A new version of ${ appName } is available. ${ reloadButton }.": [
-        ""
-      ]
-    },
-    "Text": {
-      "Settings": [
-        ""
-      ]
-    },
-    "Enabled": {
-      "On": [
-        ""
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        ""
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        ""
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        ""
-      ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        ""
-      ],
-      "Normal": [
-        ""
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "未选择图像"
@@ -2537,6 +3054,71 @@
         "添加截图"
       ]
     },
+    "Message display when a new app version is available": {
+      "A new version of ${ appName } is available. ${ reloadButton }.": [
+        ""
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        ""
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        ""
+      ],
+      "Configure Import": [
+        ""
+      ],
+      "Import": [
+        ""
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        ""
+      ]
+    },
+    "Text": {
+      "Settings": [
+        ""
+      ]
+    },
+    "Enabled": {
+      "On": [
+        ""
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        ""
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        ""
+      ],
+      "Row": [
+        ""
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        ""
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        ""
+      ],
+      "Normal": [
+        ""
+      ]
+    },
     "Onboarding Proton": {
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
         ""
@@ -2569,24 +3151,439 @@
         ""
       ]
     },
-    "Loading info": {
-      "Connecting to your contacts provider": [
+    "Info for cash payment method": {
+      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
         ""
       ]
     },
-    "Wizard step": {
-      "Authenticate": [
+    "Billing cycle option": {
+      "Monthly": [
         ""
       ],
-      "Configure Import": [
+      "Annually": [
         ""
       ],
-      "Import": [
+      "Two-year": [
+        ""
+      ],
+      "Annually SAVE 20%": [
+        ""
+      ],
+      "Two years SAVE 33%": [
         ""
       ]
     },
-    "Confirm modal title": {
-      "Quit import?": [
+    "Suffix for price": {
+      "/ month": [
+        ""
+      ]
+    },
+    "info": {
+      "(beta)": [
+        ""
+      ]
+    },
+    "Mail feature": {
+      "Users": [
+        ""
+      ],
+      "Storage": [
+        ""
+      ],
+      "0.5 GB": [
+        ""
+      ],
+      "20 GB": [
+        ""
+      ],
+      "Addresses": [
+        ""
+      ],
+      "Custom email addresses": [
+        ""
+      ],
+      "Messages per day": [
+        ""
+      ],
+      "Folders / labels": [
+        ""
+      ],
+      "Support": [
+        ""
+      ],
+      "Limited": [
+        ""
+      ],
+      "Priority": [
+        ""
+      ],
+      "Encrypted contacts": [
+        ""
+      ],
+      "Contact groups": [
+        ""
+      ],
+      "Address verification": [
+        ""
+      ],
+      "Custom filters": [
+        ""
+      ],
+      "IMAP / SMTP": [
+        ""
+      ],
+      "Autoresponder": [
+        ""
+      ],
+      "Use @pm.me address": [
+        ""
+      ],
+      "Catch-All email": [
+        ""
+      ],
+      "Multi-user support": [
+        ""
+      ]
+    },
+    "Mail feature option": {
+      "5 GB *": [
+        ""
+      ],
+      "5 GB / user *": [
+        ""
+      ],
+      "Unlimited **": [
+        ""
+      ],
+      "Unlimited": [
+        ""
+      ]
+    },
+    "Mail feature option: 5 email addresses / user": {
+      "5 / user *": [
+        ""
+      ]
+    },
+    "information": {
+      "Included": [
+        ""
+      ]
+    },
+    "VPN feature": {
+      "VPN Connections": [
+        ""
+      ],
+      "Speed": [
+        ""
+      ],
+      "VPN servers": [
+        ""
+      ],
+      "Locations/Countries": [
+        ""
+      ],
+      "Adblocker (NetShield)": [
+        ""
+      ],
+      "P2P/BitTorrent": [
+        ""
+      ],
+      "Streaming service support": [
+        ""
+      ],
+      "Tor over VPN": [
+        ""
+      ],
+      "Secure Core servers": [
+        ""
+      ],
+      "${ mailAppName } Visionary": [
+        ""
+      ],
+      "Jurisdiction": [
+        ""
+      ],
+      "Open Source & audited apps": [
+        ""
+      ],
+      "Access blocked content": [
+        ""
+      ],
+      "Strict no-logs policy": [
+        ""
+      ],
+      "Volume/bandwidth cap": [
+        ""
+      ],
+      "User data monetization": [
+        ""
+      ],
+      "Platforms supported": [
+        ""
+      ],
+      "Languages supported": [
+        ""
+      ],
+      "DNS leak prevention": [
+        ""
+      ],
+      "Kill Switch / Always-on VPN": [
+        ""
+      ],
+      "Perfect Forward Secrecy (PFS)": [
+        ""
+      ],
+      "Full Disk Encryption on Servers": [
+        ""
+      ],
+      "Split tunneling": [
+        ""
+      ],
+      "Custom connection profiles": [
+        ""
+      ],
+      "Router support": [
+        ""
+      ],
+      "30-days money-back guarantee": [
+        ""
+      ]
+    },
+    "VPN feature option": {
+      "Medium": [
+        ""
+      ],
+      "High": [
+        ""
+      ],
+      "Highest (up to 10 Gbps)": [
+        ""
+      ],
+      "Switzerland": [
+        ""
+      ],
+      "None": [
+        ""
+      ],
+      "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
+        ""
+      ],
+      "(Android & Windows only)": [
+        ""
+      ]
+    },
+    "Calendar feature": {
+      "Multiple calendars": [
+        ""
+      ],
+      "Calendar import": [
+        ""
+      ],
+      "Recurring events": [
+        ""
+      ],
+      "Invitations": [
+        ""
+      ],
+      "Share Calendar via link": [
+        ""
+      ]
+    },
+    "Calendar feature option": {
+      "20 / user *": [
+        ""
+      ],
+      "20 / user": [
+        ""
+      ]
+    },
+    "Drive feature": {
+      "Access via Web": [
+        ""
+      ],
+      "Upload / download files": [
+        ""
+      ],
+      "Share files via link": [
+        ""
+      ]
+    },
+    "Info concerning plan features": {
+      "Customizable features": [
+        ""
+      ],
+      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
+        ""
+      ]
+    },
+    "Plan Feature": {
+      "${ n } VPN connection": [
+        ""
+      ],
+      "${ n } server": [
+        ""
+      ]
+    },
+    "Netflix": {
+      "Netflix": [
+        ""
+      ]
+    },
+    "Disney": {
+      "Disney+": [
+        ""
+      ]
+    },
+    "Prime Video": {
+      "Prime Video": [
+        ""
+      ]
+    },
+    "Many Others": {
+      "and many others": [
+        ""
+      ]
+    },
+    "Plan feature": {
+      "Built-in Adblocker (NetShield)": [
+        ""
+      ],
+      "Secure Core servers": [
+        ""
+      ],
+      "Streaming service support": [
+        ""
+      ],
+      "Access blocked content": [
+        ""
+      ],
+      "${ freeServers } in ${ freeCountries } country": [
+        ""
+      ],
+      "Medium speed": [
+        ""
+      ],
+      "350+ servers in ${ basicCountries } country": [
+        ""
+      ],
+      "High speed": [
+        ""
+      ],
+      "1200+ servers in ${ plusCountries } country": [
+        ""
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        ""
+      ],
+      "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
+        ""
+      ],
+      "Includes 6 user accounts": [
+        ""
+      ],
+      "Includes Proton Visionary": [
+        ""
+      ],
+      "Early access to new products": [
+        ""
+      ],
+      "Custom email addresses": [
+        ""
+      ],
+      "Access to ${ driveAppName } (beta)": [
+        ""
+      ],
+      "1 user": [
+        ""
+      ],
+      "0.5 GB storage": [
+        ""
+      ],
+      "1 address": [
+        ""
+      ],
+      "3 folders / labels": [
+        ""
+      ],
+      "5 GB storage *": [
+        ""
+      ],
+      "5 addresses": [
+        ""
+      ],
+      "200 folders / labels": [
+        ""
+      ],
+      "1 - 5000 users *": [
+        ""
+      ],
+      "5 GB storage / user": [
+        ""
+      ],
+      "5 addresses / user": [
+        ""
+      ],
+      "Unlimited folders / labels": [
+        ""
+      ],
+      "6 users": [
+        ""
+      ],
+      "20 GB storage": [
+        ""
+      ],
+      "50 addresses": [
+        ""
+      ]
+    },
+    "Price": {
+      "Free": [
+        ""
+      ]
+    },
+    "Countdown unit": {
+      "${ monthsWithYears } month": [
+        ""
+      ],
+      "${ days } day": [
+        ""
+      ]
+    },
+    "Addon": {
+      "+ ${ addresses } email address": [
+        ""
+      ],
+      "+ ${ storage } storage": [
+        ""
+      ],
+      "+ ${ domains } custom domain": [
+        ""
+      ],
+      "+ ${ members } user": [
+        ""
+      ],
+      "+ ${ vpn } connection": [
+        ""
+      ]
+    },
+    "Plan info": {
+      "(current plan)": [
+        ""
+      ]
+    },
+    "Free price": {
+      "Free": [
+        ""
+      ]
+    },
+    "Payment method option": {
+      "New credit/debit card": [
+        ""
+      ],
+      "PayPal": [
+        ""
+      ],
+      "Bitcoin": [
         ""
       ]
     },
@@ -2634,12 +3631,6 @@
     },
     "Contact field label": {
       "Name": [
-        ""
-      ],
-      "Compact name": [
-        ""
-      ],
-      "Nickname": [
         ""
       ],
       "Email": [
@@ -2692,18 +3683,6 @@
       ],
       "Member": [
         ""
-      ],
-      "IMPP": [
-        ""
-      ],
-      "Related": [
-        ""
-      ],
-      "Categories": [
-        ""
-      ],
-      "Sound": [
-        ""
       ]
     },
     "Contact type label": {
@@ -2733,12 +3712,6 @@
       ]
     },
     "Property type": {
-      "Name": [
-        ""
-      ],
-      "Yomi": [
-        ""
-      ],
       "Email": [
         ""
       ],
@@ -2767,63 +3740,6 @@
         ""
       ],
       "Address": [
-        ""
-      ],
-      "Contact": [
-        ""
-      ],
-      "Acquaintance": [
-        ""
-      ],
-      "Friend": [
-        ""
-      ],
-      "Met": [
-        ""
-      ],
-      "Co-worker": [
-        ""
-      ],
-      "Colleague": [
-        ""
-      ],
-      "Co-resident": [
-        ""
-      ],
-      "Neighbor": [
-        ""
-      ],
-      "Child": [
-        ""
-      ],
-      "Parent": [
-        ""
-      ],
-      "Sibling": [
-        ""
-      ],
-      "Kin": [
-        ""
-      ],
-      "Muse": [
-        ""
-      ],
-      "Crush": [
-        ""
-      ],
-      "Date": [
-        ""
-      ],
-      "Sweetheart": [
-        ""
-      ],
-      "Me": [
-        ""
-      ],
-      "Agent": [
-        ""
-      ],
-      "Emergency": [
         ""
       ]
     },

@@ -6,6 +6,9 @@
   "contexts": {
     "": {},
     "Error": {
+      "Unknown error": [
+        "Nepoznata pogreška"
+      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Ova poruka može sadržavati URL poveznice koje trenutačni preglednik ne može ispravno otvoriti"
       ],
@@ -18,8 +21,8 @@
       "Authentication error.": [
         "Pogreška autentikacije."
       ],
-      "Unknown error": [
-        "Nepoznata pogreška"
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        ""
       ],
       "Email address invalid": [
         "Adresa e-pošte nije valjana"
@@ -97,6 +100,66 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Pokušajte ponovno potvrditi identitet i provjeriti jesu li dopuštenja ispravno postavljena."
       ],
+      "Process aborted": [
+        ""
+      ],
+      "Payment process cancelled": [
+        ""
+      ],
+      "Payment process failed": [
+        ""
+      ],
+      "Payment process consumed": [
+        ""
+      ],
+      "Payment process not supported": [
+        ""
+      ],
+      "Unknown payment token status": [
+        ""
+      ],
+      "Tab closed": [
+        ""
+      ],
+      "Name on card required": [
+        ""
+      ],
+      "Invalid expiration date": [
+        ""
+      ],
+      "Invalid card number": [
+        ""
+      ],
+      "Invalid ${ name } code": [
+        ""
+      ],
+      "Invalid postal code": [
+        ""
+      ],
+      "Error connecting to the Bitcoin API.": [
+        ""
+      ],
+      "Amount below minimum.": [
+        ""
+      ],
+      "Amount above the maximum.": [
+        ""
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        ""
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        ""
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        ""
+      ],
+      "Checkout expired, please try again.": [
+        ""
+      ],
+      "Invalid code": [
+        ""
+      ],
       "Incorrect mailbox password. Please try again": [
         "Pogrešna lozinka poštanskog pretinca. Pokušajte ponovno"
       ],
@@ -133,11 +196,11 @@
       "Signature not verified": [
         "Potpis nije ovjeren"
       ],
-      "No valid address found": [
-        "Nije pronađena važeća adresa"
-      ],
       "Incorrect password. Please try again.": [
         "Netočna lozinka. Pokušajte ponovo."
+      ],
+      "No valid address found": [
+        "Nije pronađena važeća adresa"
       ]
     },
     "Action": {
@@ -216,11 +279,11 @@
       "Previous month": [
         "Prethodni mjesec"
       ],
-      "Confirm opening of link ${ link }": [
-        "Potvrdite otvaranje poveznice ${ link }"
-      ],
       "refresh the page": [
         "osvježi stranicu"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Potvrdite otvaranje poveznice ${ link }"
       ],
       "View invoice": [
         "Prikaži fakturu"
@@ -367,6 +430,18 @@
       "Signing out": [
         "Odjavljivanje"
       ],
+      "Clear": [
+        "Očisti"
+      ],
+      "Add screenshot(s)": [
+        "Dodaj snimku(e) zaslona"
+      ],
+      "Hide info": [
+        "Sakrij informacije"
+      ],
+      "Show info": [
+        "Prikaži informacije"
+      ],
       "Details": [
         "Pojedinosti"
       ],
@@ -400,20 +475,26 @@
       "here": [
         "ovdje"
       ],
+      "Continue import": [
+        "Nastavi uvoz"
+      ],
+      "Discard": [
+        "Odbaci"
+      ],
+      "Reconnect": [
+        "Ponovno povezivanje"
+      ],
+      "Start import": [
+        "Započni uvoz"
+      ],
       "Copy email to clipboard": [
         "Kopiraj adresu e-pošte u međuspremnik"
       ],
-      "Switch account": [
-        "Promijeni račun"
-      ],
-      "Sign out": [
-        "Odjava"
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } predstavljanje"
       ],
       "I have a question": [
         "Imam pitanje"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } predstavljanje"
       ],
       "Request a feature": [
         "Zatraži značajku"
@@ -423,6 +504,12 @@
       ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
+      ],
+      "Switch account": [
+        "Promijeni račun"
+      ],
+      "Sign out": [
+        "Odjava"
       ],
       "Go to settings": [
         "Idi na postavke"
@@ -445,18 +532,6 @@
       "Composer mode": [
         "Način rada prozora za novu poruku"
       ],
-      "Clear": [
-        "Očisti"
-      ],
-      "Add screenshot(s)": [
-        "Dodaj snimku(e) zaslona"
-      ],
-      "Hide info": [
-        "Sakrij informacije"
-      ],
-      "Show info": [
-        "Prikaži informacije"
-      ],
       "Get started": [
         "Započnite"
       ],
@@ -475,26 +550,62 @@
       "OK": [
         "U redu"
       ],
-      "Continue import": [
-        "Nastavi uvoz"
+      "Remove bonuses": [
+        ""
       ],
-      "Discard": [
-        "Odbaci"
+      "Try again": [
+        ""
       ],
-      "Reconnect": [
-        "Ponovno povezivanje"
+      "Use a different card": [
+        ""
       ],
-      "Start import": [
-        "Započni uvoz"
+      "Use a different payment method": [
+        ""
+      ],
+      "Retry": [
+        ""
+      ],
+      "Loading verification": [
+        ""
+      ],
+      "Select plan": [
+        ""
+      ],
+      "Compare all features": [
+        ""
+      ],
+      "${ boldSave } by switching to annual billing": [
+        ""
+      ],
+      "Pay": [
+        ""
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        ""
+      ],
+      "Remove gift code": [
+        ""
+      ],
+      "annual billing": [
+        ""
+      ],
+      "Compare plans": [
+        ""
+      ],
+      "Decrease": [
+        ""
+      ],
+      "Increase": [
+        ""
       ],
       "Log in": [
         "Prijavite se"
       ],
-      "Delete permanently": [
-        "Trajno izbriši"
+      "Cancel all uploads": [
+        ""
       ],
-      "Undo": [
-        "Poništi"
+      "New upload": [
+        "Novo učitavanje"
       ],
       "Maximize transfers": [
         "Proširi prijenose"
@@ -531,12 +642,6 @@
       ],
       "Remove from this list": [
         "Ukloni s popisa"
-      ],
-      "Cancel all uploads": [
-        ""
-      ],
-      "New upload": [
-        "Novo učitavanje"
       ],
       "List layout": [
         "Izgled popisa"
@@ -586,14 +691,14 @@
       "Upload folder": [
         "Učitaj mapu"
       ],
+      "Delete permanently": [
+        "Trajno izbriši"
+      ],
       "Restore from trash": [
         "Vrati iz otpada"
       ],
       "Empty trash": [
         "Isprazni otpad"
-      ],
-      "Start recovering": [
-        "Započni oporavak"
       ],
       "Share": [
         "Podijeli"
@@ -607,8 +712,14 @@
       "Stop sharing": [
         "Zaustavi dijeljenje"
       ],
+      "Show shared link details": [
+        ""
+      ],
       "Share file": [
         "Dijeli datoteku"
+      ],
+      "Start recovering": [
+        "Započni oporavak"
       ],
       "View more": [
         "Pogledaj više"
@@ -621,6 +732,9 @@
       ],
       "Create link": [
         "Stvori poveznicu"
+      ],
+      "Undo": [
+        "Poništi"
       ]
     },
     "Title": {
@@ -770,6 +884,15 @@
       "Import contacts": [
         "Uvezi kontakte"
       ],
+      "Report a problem": [
+        "Prijavi problem"
+      ],
+      "Start import process": [
+        "Započni uvoz"
+      ],
+      "Import in progress": [
+        "Uvoz u tijeku"
+      ],
       "Open help menu": [
         "Otvori izbornik pomoći"
       ],
@@ -779,17 +902,110 @@
       "Open settings menu": [
         "Otvori izbornik postavki"
       ],
-      "Report a problem": [
-        "Prijavi problem"
-      ],
       "Select a theme": [
         "Odaberi temu"
       ],
-      "Start import process": [
-        "Započni uvoz"
+      "Confirm loss of Proton bonuses": [
+        ""
       ],
-      "Import in progress": [
-        "Uvoz u tijeku"
+      "Unsupported browser": [
+        ""
+      ],
+      "Card verification": [
+        ""
+      ],
+      "Payment verification": [
+        ""
+      ],
+      "Processing...": [
+        ""
+      ],
+      "Card verification in progress": [
+        ""
+      ],
+      "Payment verification in progress": [
+        ""
+      ],
+      "PayPal verification failed": [
+        ""
+      ],
+      "3-D Secure verification failed": [
+        ""
+      ],
+      "Error": [
+        ""
+      ],
+      "ZIP / postal code": [
+        ""
+      ],
+      "Payment details": [
+        ""
+      ],
+      "Currency": [
+        ""
+      ],
+      "Billing cycle": [
+        ""
+      ],
+      "Current plan": [
+        ""
+      ],
+      "Processing": [
+        ""
+      ],
+      "Apply gift code": [
+        ""
+      ],
+      "Subtotal": [
+        ""
+      ],
+      "Coupon discount": [
+        ""
+      ],
+      "Total (monthly)": [
+        ""
+      ],
+      "Credits": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Amount due": [
+        ""
+      ],
+      "Cancel subscription": [
+        ""
+      ],
+      "Network error": [
+        ""
+      ],
+      "Select a plan": [
+        ""
+      ],
+      "Customize your plan": [
+        ""
+      ],
+      "Checkout": [
+        ""
+      ],
+      "Plan summary": [
+        ""
+      ],
+      "${ appName } customization": [
+        ""
+      ],
+      "Sign in again to continue": [
+        "Ponovno se prijavite da biste nastavili"
+      ],
+      "Account suspended": [
+        "Račun je suspendiran"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Unesite korisničko ime ili ProtonMail adresu e-pošte"
+      ],
+      "Enter your password": [
+        "Unesite vašu lozinku"
       ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } tipkovni prečaci"
@@ -806,27 +1022,6 @@
       "Beta Access": [
         "Beta pristup"
       ],
-      "Sign in again to continue": [
-        "Ponovno se prijavite da biste nastavili"
-      ],
-      "Account suspended": [
-        "Račun je suspendiran"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Unesite korisničko ime ili ProtonMail adresu e-pošte"
-      ],
-      "Enter your password": [
-        "Unesite vašu lozinku"
-      ],
-      "Delete permanently": [
-        "Trajno izbriši"
-      ],
-      "Stop sharing": [
-        "Zaustavi dijeljenje"
-      ],
-      "Cancel all active transfers": [
-        "Otkaži sve aktivne prijenose"
-      ],
       "Duplicate folder found": [
         ""
       ],
@@ -835,6 +1030,9 @@
       ],
       "Drop to upload": [
         "Ispustite za učitati"
+      ],
+      "Cancel all active transfers": [
+        "Otkaži sve aktivne prijenose"
       ],
       "Change layout": [
         "Promijeni izgled"
@@ -851,8 +1049,38 @@
       "Empty trash": [
         "Isprazni otpad"
       ],
+      "My files": [
+        "Moje datoteke"
+      ],
+      "You have no folders yet": [
+        "Nema mapa"
+      ],
+      "You have no files to share": [
+        "Nemate datoteka za dijeljenje"
+      ],
       "Drive": [
         "Drive"
+      ],
+      "Your file is ready to be downloaded": [
+        "Vaša datoteka je spremna za preuzimanje"
+      ],
+      "Download completed": [
+        "Preuzimanje je završeno"
+      ],
+      "Download failed": [
+        "Neuspješno preuzimanje"
+      ],
+      "Download canceled": [
+        "Preuzimanje je otkazano"
+      ],
+      "Downloading": [
+        "Preuzimanje"
+      ],
+      "Enter file password to download": [
+        "Unesite lozinku datoteke za preuzimanje"
+      ],
+      "The link either does not exist or has expired": [
+        "Poveznica ne postoji ili je istekla"
       ],
       "Restore your files": [
         "Vratite vaše datoteke"
@@ -862,15 +1090,6 @@
       ],
       "You have inaccessible files": [
         "Imate nepristupačne datoteke"
-      ],
-      "My files": [
-        "Moje datoteke"
-      ],
-      "You have no folders yet": [
-        "Nema mapa"
-      ],
-      "You have no files to share": [
-        "Nemate datoteka za dijeljenje"
       ],
       "Rename a folder": [
         "Preimenuj mapu"
@@ -950,26 +1169,11 @@
       "Total size": [
         "Ukupna veličina"
       ],
-      "Your file is ready to be downloaded": [
-        "Vaša datoteka je spremna za preuzimanje"
+      "Delete permanently": [
+        "Trajno izbriši"
       ],
-      "Download completed": [
-        "Preuzimanje je završeno"
-      ],
-      "Download failed": [
-        "Neuspješno preuzimanje"
-      ],
-      "Download canceled": [
-        "Preuzimanje je otkazano"
-      ],
-      "Downloading": [
-        "Preuzimanje"
-      ],
-      "Enter file password to download": [
-        "Unesite lozinku datoteke za preuzimanje"
-      ],
-      "The link either does not exist or has expired": [
-        "Poveznica ne postoji ili je istekla"
+      "Stop sharing": [
+        "Zaustavi dijeljenje"
       ]
     },
     "Info": {
@@ -985,6 +1189,9 @@
       "Week": [
         "Tjedan"
       ],
+      "support team": [
+        ""
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ova poveznica može biti homografski napad i ne može je otvoriti preglednik Internet Explorer i Edge. Ako ste sigurni da je poveznica legitimna, upotrijebite drugi preglednik da biste je otvorili."
       ],
@@ -999,9 +1206,6 @@
       ],
       "Drop the file here to upload": [
         "Ispustite datoteku ovdje za prijenos"
-      ],
-      "support team": [
-        ""
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Vaš Proton račun je trenutno na čekanju. Da biste nastavili koristiti svoj račun, uplatite sve neplaćene fakture."
@@ -1154,6 +1358,12 @@
       "Loading ${ appName }": [
         "Učitavanje ${ appName }"
       ],
+      "Screenshot(s) attached": [
+        "Snimka(e) zaslona su pridodane"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
+      ],
       "Unsupported file": [
         "Nepodržana datoteka"
       ],
@@ -1211,12 +1421,6 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Onemogućili ste Beta pristup. Kliknite ${ refreshButton } za korištenje stabilne verzije ${ appName }. Aplikacija će se ponovno učitati."
       ],
-      "Screenshot(s) attached": [
-        "Snimka(e) zaslona su pridodane"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
-      ],
       "Import contacts": [
         "Uvezi kontakte"
       ],
@@ -1241,8 +1445,246 @@
       "Your import will not be processed.": [
         "Vaš uvoz nije moguće obraditi."
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Osnovna navigacija i radnje ostaju dostupni bez obzira jesu li tipkovni prečaci aktivni ili ne u postavkama."
+      "Since you're a loyal user, your account has additional features enabled.": [
+        ""
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        ""
+      ],
+      "+${ bonusSpace } bonus storage": [
+        ""
+      ],
+      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
+        "",
+        "",
+        ""
+      ],
+      "Your bank requires 3-D Secure verification for security purposes.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers.": [
+        ""
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        ""
+      ],
+      "You will be soon redirected to your bank to verify your payment.": [
+        ""
+      ],
+      "Please verify the card in the new tab which was opened.": [
+        ""
+      ],
+      "Please verify payment at the new tab which was opened.": [
+        ""
+      ],
+      "Verification can take a few minutes.": [
+        ""
+      ],
+      "Payment can take a few minutes to fully verify.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or call your bank for assistance.": [
+        ""
+      ],
+      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        ""
+      ],
+      "Amount below minimum (${ amount }).": [
+        ""
+      ],
+      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
+        ""
+      ],
+      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
+        ""
+      ],
+      "Please verify the payment in the new tab.": [
+        ""
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        ""
+      ],
+      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
+        ""
+      ],
+      "We use 3-D Secure to protect your payments.": [
+        ""
+      ],
+      "Billed as ${ billedPrice } per year": [
+        ""
+      ],
+      "Billed as ${ billedPrice } every 2 years": [
+        ""
+      ],
+      "Included": [
+        ""
+      ],
+      "* Customizable features": [
+        ""
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        ""
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        ""
+      ],
+      "For getting started with private and secure emailing.": [
+        ""
+      ],
+      "A free and uncensored Internet should be available to all.": [
+        ""
+      ],
+      "Starter VPN service with P2P support.": [
+        ""
+      ],
+      "Full-featured VPN with speed up to 10 Gbps.": [
+        ""
+      ],
+      "For individuals that need a fully-featured mailbox with advanced protection.": [
+        ""
+      ],
+      "For professionals that need secure business communications.": [
+        ""
+      ],
+      "VPN + ${ mailAppName } bundle for families and small businesses.": [
+        ""
+      ],
+      "For families and small teams; includes both Mail and VPN.": [
+        ""
+      ],
+      "Save 20%": [
+        ""
+      ],
+      "Your account is being upgraded, this may take up to 30 seconds.": [
+        ""
+      ],
+      "Thank you for supporting our mission.": [
+        ""
+      ],
+      "Your account will be updated once the payment is cleared.": [
+        ""
+      ],
+      "Account successfully updated": [
+        ""
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        ""
+      ],
+      "(Mail + VPN)": [
+        ""
+      ],
+      "${ mailAppName } Free": [
+        ""
+      ],
+      "${ vpnAppName } Free": [
+        ""
+      ],
+      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
+        ""
+      ],
+      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        ""
+      ],
+      "No payment is required at this time.": [
+        ""
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
+        ""
+      ],
+      "20% discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Black Friday 2018 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2019 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2020 newcomer discount has been applied": [
+        ""
+      ],
+      "Discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        ""
+      ],
+      "30 days money-back guarantee.": [
+        ""
+      ],
+      "Save extra 20%": [
+        ""
+      ],
+      "${ save20 } on your subscription by switching to ${ annualBilling }": [
+        ""
+      ],
+      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
+        ""
+      ],
+      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
+        ""
+      ],
+      "Storage GB": [
+        ""
+      ],
+      "Users": [
+        ""
+      ],
+      "Domains": [
+        ""
+      ],
+      "Addresses": [
+        ""
+      ],
+      "Connections": [
+        ""
+      ],
+      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Add additional addresses to your account like user2@protonmail.com": [
+        ""
+      ],
+      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
+        ""
+      ],
+      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more users.": [
+        ""
+      ],
+      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
+        "",
+        "",
+        ""
+      ],
+      "Each additional connection can be assigned to users in your organization.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more connections.": [
+        ""
+      ],
+      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        ""
+      ],
+      "Not customizable": [
+        ""
+      ],
+      "Expired": [
+        ""
       ],
       "here": [
         "ovdje"
@@ -1253,6 +1695,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Ako mislite da je ovo pogreška, kontaktirajte nas na ${ contactLink }."
       ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Osnovna navigacija i radnje ostaju dostupni bez obzira jesu li tipkovni prečaci aktivni ili ne u postavkama."
+      ],
       "Session timed out.": [
         "Sesija je istekla."
       ],
@@ -1262,23 +1707,35 @@
       "Servers are unreachable.": [
         "Poslužitelji nisu dostupni."
       ],
-      "Loading folder contents": [
-        "Učitavanje sadržaja mape"
+      "${ uploadName } already exists in this location.": [
+        ""
       ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Učitavanje stotina datoteka odjednom može utjecati na performanse."
+      "What do you want to do?": [
+        ""
       ],
-      "Are you sure you want to permanently delete selected item(s) from trash?": [
-        "Jeste li sigurni da želite trajno izbrisati odabrano iz otpada?"
+      "Folder contents will merge into a single folder": [
+        ""
       ],
-      "This will delete the link(s) and remove access to your file(s) for anyone with the link(s).": [
-        "Ovo će izbrisati poveznicu/e i ukloniti pristup vašoj datoteci ili datotekama svima koji imaju poveznicu."
+      "A number will be added to the folder name": [
+        ""
       ],
-      "Moving files": [
-        "Premještanje datoteka"
+      "A number will be added to the filename": [
+        ""
       ],
-      "You cannot undo this action.": [
-        "Ne možete poništiti ovu radnju."
+      "This will overwrite the existing folder": [
+        ""
+      ],
+      "This will overwrite the existing file": [
+        ""
+      ],
+      "Folder will not be uploaded": [
+        ""
+      ],
+      "File will not be uploaded": [
+        ""
+      ],
+      "Your files will be encrypted and then saved.": [
+        "Vaše datoteke će biti šifrirane i spremljene."
       ],
       "${ doneCount } Finished": [
         "${ doneCount } Dovršeno",
@@ -1365,53 +1822,8 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Zatvaranjem upravitelja prijenosa otkazat će se svi aktivni prijenosi, jeste li sigurni?"
       ],
-      "${ uploadName } already exists in this location.": [
-        ""
-      ],
-      "What do you want to do?": [
-        ""
-      ],
-      "Folder contents will merge into a single folder": [
-        ""
-      ],
-      "A number will be added to the folder name": [
-        ""
-      ],
-      "A number will be added to the filename": [
-        ""
-      ],
-      "This will overwrite the existing folder": [
-        ""
-      ],
-      "This will overwrite the existing file": [
-        ""
-      ],
-      "Folder will not be uploaded": [
-        ""
-      ],
-      "File will not be uploaded": [
-        ""
-      ],
-      "Your files will be encrypted and then saved.": [
-        "Vaše datoteke će biti šifrirane i spremljene."
-      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Jeste li sigurni da želite isprazniti otpad i trajno izbrisati sve stavke?"
-      ],
-      "Would you like to restore your files?": [
-        "Želite li vratiti svoje datoteke?"
-      ],
-      "Recovery process might take some time.": [
-        "Postupak oporavka može potrajati."
-      ],
-      "More": [
-        "Više"
-      ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        "Vaše datoteke više nisu dostupne zbog ponovnog postavljanja lozinke. Ponovno učitajte stari ključ za šifriranje da biste vratili pristup. ${ mailSettingsLink }"
-      ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        "Neke od vaših datoteka više nisu dostupne. Vratite pristup svojim datotekama. ${ startRecoveryButton }"
       ],
       "Create your first folder and start moving your files.": [
         "Stvorite svoju prvu mapu i počnite premještati datoteke."
@@ -1433,6 +1845,36 @@
       ],
       "Create links and share your files with others.": [
         "Stvorite poveznice i dijelite svoje datoteke s drugima."
+      ],
+      "Link expires: ": [
+        "Poveznica istječe: "
+      ],
+      "Your file has finished downloading.": [
+        "Preuzimanje datoteke je dovršeno."
+      ],
+      "Your file failed to download.": [
+        "Neuspješno preuzimanje datoteke."
+      ],
+      "Your download has been canceled.": [
+        "Otkazano je vaše preuzimanje."
+      ],
+      "Your file is being downloaded.": [
+        "Vaša datoteka se preuzima."
+      ],
+      "Would you like to restore your files?": [
+        "Želite li vratiti svoje datoteke?"
+      ],
+      "Recovery process might take some time.": [
+        "Postupak oporavka može potrajati."
+      ],
+      "More": [
+        "Više"
+      ],
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
+        "Vaše datoteke više nisu dostupne zbog ponovnog postavljanja lozinke. Ponovno učitajte stari ključ za šifriranje da biste vratili pristup. ${ mailSettingsLink }"
+      ],
+      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
+        "Neke od vaših datoteka više nisu dostupne. Vratite pristup svojim datotekama. ${ startRecoveryButton }"
       ],
       "Yes": [
         "Da"
@@ -1470,20 +1912,23 @@
       "Select an uploaded file and create a link to it.": [
         "Odaberite prenesenu datoteku i stvorite poveznicu za nju."
       ],
-      "Link expires: ": [
-        "Poveznica istječe: "
+      "Loading folder contents": [
+        "Učitavanje sadržaja mape"
       ],
-      "Your file has finished downloading.": [
-        "Preuzimanje datoteke je dovršeno."
+      "Uploading hundreds of files at once may have a performance impact.": [
+        "Učitavanje stotina datoteka odjednom može utjecati na performanse."
       ],
-      "Your file failed to download.": [
-        "Neuspješno preuzimanje datoteke."
+      "Are you sure you want to permanently delete selected item(s) from trash?": [
+        "Jeste li sigurni da želite trajno izbrisati odabrano iz otpada?"
       ],
-      "Your download has been canceled.": [
-        "Otkazano je vaše preuzimanje."
+      "This will delete the link(s) and remove access to your file(s) for anyone with the link(s).": [
+        "Ovo će izbrisati poveznicu/e i ukloniti pristup vašoj datoteci ili datotekama svima koji imaju poveznicu."
       ],
-      "Your file is being downloaded.": [
-        "Vaša datoteka se preuzima."
+      "Moving files": [
+        "Premještanje datoteka"
+      ],
+      "You cannot undo this action.": [
+        "Ne možete poništiti ovu radnju."
       ],
       "Trash": [
         "Otpad"
@@ -1598,29 +2043,62 @@
       "Browser version": [
         "Verzija preglednika"
       ],
-      "Display name": [
-        "Zaslonski naziv"
-      ],
       "From: ${ fromEmailAddress }": [
         "Od: ${ fromEmailAddress }"
       ],
       "To: ${ toEmailAddress }": [
         "Za: ${ toEmailAddress }"
       ],
-      "Keyboard shortcuts": [
-        "Tipkovni prečaci"
+      "Display name": [
+        "Zaslonski naziv"
       ],
-      "Select how your list of messages looks like by default.": [
-        "Odaberite kako će vaš popis poruka izgledati po zadanom."
+      "Name on card": [
+        ""
       ],
-      "Select how your mailbox looks like by default.": [
-        "Odaberite kako će se vaš prozor za nove poruke otvarati po zadanom."
+      "Card number": [
+        ""
       ],
-      "Select how your composer opens by default.": [
-        "Odaberite kako će se vaš prozor za nove poruke otvarati po zadanom."
+      "Expiry date": [
+        ""
       ],
-      "Enable Beta Access": [
-        "Omogući Beta pristup"
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
+        ""
       ],
       "Cancel": [
         "Poništi"
@@ -1639,6 +2117,21 @@
       ],
       "Username or ProtonMail address": [
         "Korisničko ime ili ProtonMail adresa"
+      ],
+      "Keyboard shortcuts": [
+        "Tipkovni prečaci"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "Odaberite kako će vaš popis poruka izgledati po zadanom."
+      ],
+      "Select how your mailbox looks like by default.": [
+        "Odaberite kako će se vaš prozor za nove poruke otvarati po zadanom."
+      ],
+      "Select how your composer opens by default.": [
+        "Odaberite kako će se vaš prozor za nove poruke otvarati po zadanom."
+      ],
+      "Enable Beta Access": [
+        "Omogući Beta pristup"
       ],
       "Merge a folder": [
         ""
@@ -1694,6 +2187,9 @@
       "File": [
         "Datoteka"
       ],
+      "Report abuse": [
+        "Prijavi zlouporabu"
+      ],
       "Folder name": [
         "Naziv mape"
       ],
@@ -1705,9 +2201,6 @@
       ],
       "Set expiration date": [
         "Postavi datum isteka"
-      ],
-      "Report abuse": [
-        "Prijavi zlouporabu"
       ]
     },
     "PGP key encryption warning": {
@@ -1722,6 +2215,9 @@
       "Request an invite": [
         "Zatraži pozivnicu"
       ],
+      "clearing your browser cache": [
+        "čišćenje predmemorije preglednika"
+      ],
       "Pay invoice": [
         "Plati račun"
       ],
@@ -1734,8 +2230,11 @@
       "Go to subscription plans": [
         "Idi na planove pretplate"
       ],
-      "clearing your browser cache": [
-        "čišćenje predmemorije preglednika"
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
       ],
       "My files": [
         "Moje datoteke"
@@ -1793,6 +2292,15 @@
       "e.g. Julia Smith": [
         "npr. Ana Horvat"
       ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
       "Mailbox password": [
         "Lozinka sandučića e-pošte"
       ],
@@ -1848,8 +2356,59 @@
       "You do not have any contacts to export": [
         "Nemate kontakata za izvoz"
       ],
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        ""
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        ""
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        ""
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        ""
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        ""
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        ""
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        ""
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        ""
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        ""
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        ""
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        ""
+      ],
+      "Discount applied for annual billing cycle": [
+        ""
+      ],
+      "Discount applied for two-year billing cycle": [
+        ""
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        ""
+      ],
       "Expired sharing link": [
         "Istekla poveznica za dijeljenje"
+      ],
+      "Inactive sharing link": [
+        ""
       ],
       "Active sharing link": [
         "Aktivna poveznica za dijeljenje"
@@ -1958,14 +2517,17 @@
       "Contacts could not be merged": [
         "Nije bilo moguće spajanje kontakata"
       ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Vaše lokalne postavke datuma i vremena nisu sinkronizirane."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Izvještaji nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."
       ],
+      "Your local date & time settings seem to be out of sync.": [
+        "Vaše lokalne postavke datuma i vremena nisu sinkronizirane."
+      ],
       "Are you sure you want to discard your import?": [
         "Jeste li sigurni da želite odbaciti vaš uvoz?"
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        ""
       ]
     },
     "Success": {
@@ -2009,14 +2571,14 @@
       "Bug reported": [
         "Problem je prijavljen"
       ],
+      "You have successfully unsubscribed": [
+        ""
+      ],
       "Preference saved": [
         "Postavke su spremljene"
       ],
       "Keyboard shortcuts preferences updated": [
         "Postavke tipkovnih prečaca su ažurirane"
-      ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Vaše datoteke su uspješno vraćene u \"Moje datoteke\"."
       ],
       "Recovery has started.": [
         "Oporavak je započet."
@@ -2029,6 +2591,9 @@
       ],
       "The link to your file was successfully copied.": [
         "Poveznica do vaše datoteke je uspješno kopirana."
+      ],
+      "Your files were successfully recovered to \"My files\".": [
+        "Vaše datoteke su uspješno vraćene u \"Moje datoteke\"."
       ]
     },
     "Hint": {
@@ -2069,6 +2634,48 @@
       ],
       "Contact group created": [
         "Kontaktna grupa je stvorena"
+      ],
+      "All items will soon be permanently deleted from trash": [
+        "Sve stavke će uskoro biti trajno izbrisane iz otpada"
+      ],
+      "Move ${ movingCount } file": [
+        "Premjesti ${ movingCount } datoteku",
+        "Premjesti ${ movingCount } datoteke",
+        "Premjesti ${ movingCount } datoteka"
+      ],
+      "Move ${ movingCount } folder": [
+        "Premjesti ${ movingCount } mapu",
+        "Premjesti ${ movingCount } mape",
+        "Premjesti ${ movingCount } mapa"
+      ],
+      "Move ${ movingCount } item": [
+        "Premjesti ${ movingCount } stavku",
+        "Premjesti ${ movingCount } stavke",
+        "Premjesti ${ movingCount } stavki"
+      ],
+      "Move ${ itemsToMoveCount } file": [
+        "Premjesti ${ itemsToMoveCount } datoteku",
+        "Premjesti ${ itemsToMoveCount } datoteke",
+        "Premjesti ${ itemsToMoveCount } datoteka"
+      ],
+      "Move ${ itemsToMoveCount } folder": [
+        "Premjesti ${ itemsToMoveCount } mapu",
+        "Premjesti ${ itemsToMoveCount } mape",
+        "Premjesti ${ itemsToMoveCount } mapa"
+      ],
+      "Move ${ itemsToMoveCount } item": [
+        "Premjesti ${ itemsToMoveCount } stavku",
+        "Premjesti ${ itemsToMoveCount } stavke",
+        "Premjesti ${ itemsToMoveCount } stavki"
+      ],
+      "Your settings have been changed successfully.": [
+        "Vaše postavke su uspješno promijenjene."
+      ],
+      "The link to your file was deleted.": [
+        "Poveznica do vaše datoteke je izbrisana."
+      ],
+      "Failed to move, please try again": [
+        "Neuspješno premještanje, pokušajte ponovo"
       ],
       "Not enough space to upload ${ formattedRemaining }": [
         "Nema dovoljno prostora za učitavanje ${ formattedRemaining }"
@@ -2166,9 +2773,6 @@
         "${ failedMovesCount } stavke nisu uspješno premještene",
         "${ failedMovesCount } stavki nije uspješno premješteno"
       ],
-      "The link to your file was deleted.": [
-        "Poveznica do vaše datoteke je izbrisana."
-      ],
       "${ deletedCount } link to your file was deleted.": [
         "Uklonjena je ${ deletedCount } poveznica za vaše datoteke.",
         "Uklonjene su ${ deletedCount } poveznice za vaše datoteke.",
@@ -2181,45 +2785,6 @@
         "Neuspješno brisanje ${ failedCount } poveznice do vaše datoteke.",
         "Neuspješno brisanje ${ failedCount } poveznice do vaše datoteke.",
         "Neuspješno brisanje ${ failedCount } poveznica do vaše datoteke."
-      ],
-      "All items will soon be permanently deleted from trash": [
-        "Sve stavke će uskoro biti trajno izbrisane iz otpada"
-      ],
-      "Move ${ movingCount } file": [
-        "Premjesti ${ movingCount } datoteku",
-        "Premjesti ${ movingCount } datoteke",
-        "Premjesti ${ movingCount } datoteka"
-      ],
-      "Move ${ movingCount } folder": [
-        "Premjesti ${ movingCount } mapu",
-        "Premjesti ${ movingCount } mape",
-        "Premjesti ${ movingCount } mapa"
-      ],
-      "Move ${ movingCount } item": [
-        "Premjesti ${ movingCount } stavku",
-        "Premjesti ${ movingCount } stavke",
-        "Premjesti ${ movingCount } stavki"
-      ],
-      "Move ${ itemsToMoveCount } file": [
-        "Premjesti ${ itemsToMoveCount } datoteku",
-        "Premjesti ${ itemsToMoveCount } datoteke",
-        "Premjesti ${ itemsToMoveCount } datoteka"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Premjesti ${ itemsToMoveCount } mapu",
-        "Premjesti ${ itemsToMoveCount } mape",
-        "Premjesti ${ itemsToMoveCount } mapa"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Premjesti ${ itemsToMoveCount } stavku",
-        "Premjesti ${ itemsToMoveCount } stavke",
-        "Premjesti ${ itemsToMoveCount } stavki"
-      ],
-      "Your settings have been changed successfully.": [
-        "Vaše postavke su uspješno promijenjene."
-      ],
-      "Failed to move, please try again": [
-        "Neuspješno premještanje, pokušajte ponovo"
       ]
     },
     "Label for contact group name": {
@@ -2365,8 +2930,8 @@
       "Contacts, groups and settings": [
         "Kontakti, grupe i postavke"
       ],
-      "Help": [
-        "Pomoć"
+      "Get help": [
+        ""
       ]
     },
     "Error notification": {
@@ -2506,50 +3071,6 @@
         "Pristup odbijen"
       ]
     },
-    "Message display when a new app version is available": {
-      "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "Nova verzija ${ appName } je dostupna. ${ reloadButton }."
-      ]
-    },
-    "Text": {
-      "Settings": [
-        "Postavke"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Uključeno"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Isključeno"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Stupac"
-      ],
-      "Row": [
-        "Redak"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Udobno"
-      ],
-      "Compact": [
-        "Kompaktno"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "Maksimizirano"
-      ],
-      "Normal": [
-        "Normalno"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nije odabrana nijedna slika"
@@ -2653,6 +3174,71 @@
         "Dodajte snimku(e) zaslona"
       ]
     },
+    "Message display when a new app version is available": {
+      "A new version of ${ appName } is available. ${ reloadButton }.": [
+        "Nova verzija ${ appName } je dostupna. ${ reloadButton }."
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        "Spajanje s vašim pružateljem kontakata"
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        "Autenticiraj"
+      ],
+      "Configure Import": [
+        "Prilagodite uvoz"
+      ],
+      "Import": [
+        "Uvoz"
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        "Zaustavi uvoz?"
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Postavke"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Uključeno"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Isključeno"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Stupac"
+      ],
+      "Row": [
+        "Redak"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Udobno"
+      ],
+      "Compact": [
+        "Kompaktno"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "Maksimizirano"
+      ],
+      "Normal": [
+        "Normalno"
+      ]
+    },
     "Onboarding Proton": {
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
         "Ovo će ljudi vidjeti kada im pošaljete e-poštu, pozovete ih na događaj ili podijelite datoteku s njima."
@@ -2685,25 +3271,462 @@
         "Postavite vašu organizaciju, povežite naziv domene i stvorite račune kako biste osigurali zaštitu svih članova vaše organizacije."
       ]
     },
-    "Loading info": {
-      "Connecting to your contacts provider": [
-        "Spajanje s vašim pružateljem kontakata"
+    "Info for cash payment method": {
+      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
+        ""
       ]
     },
-    "Wizard step": {
-      "Authenticate": [
-        "Autenticiraj"
+    "Billing cycle option": {
+      "Monthly": [
+        ""
       ],
-      "Configure Import": [
-        "Prilagodite uvoz"
+      "Annually": [
+        ""
       ],
-      "Import": [
-        "Uvoz"
+      "Two-year": [
+        ""
+      ],
+      "Annually SAVE 20%": [
+        ""
+      ],
+      "Two years SAVE 33%": [
+        ""
       ]
     },
-    "Confirm modal title": {
-      "Quit import?": [
-        "Zaustavi uvoz?"
+    "Suffix for price": {
+      "/ month": [
+        ""
+      ]
+    },
+    "info": {
+      "(beta)": [
+        ""
+      ]
+    },
+    "Mail feature": {
+      "Users": [
+        ""
+      ],
+      "Storage": [
+        ""
+      ],
+      "0.5 GB": [
+        ""
+      ],
+      "20 GB": [
+        ""
+      ],
+      "Addresses": [
+        ""
+      ],
+      "Custom email addresses": [
+        ""
+      ],
+      "Messages per day": [
+        ""
+      ],
+      "Folders / labels": [
+        ""
+      ],
+      "Support": [
+        ""
+      ],
+      "Limited": [
+        ""
+      ],
+      "Priority": [
+        ""
+      ],
+      "Encrypted contacts": [
+        ""
+      ],
+      "Contact groups": [
+        ""
+      ],
+      "Address verification": [
+        ""
+      ],
+      "Custom filters": [
+        ""
+      ],
+      "IMAP / SMTP": [
+        ""
+      ],
+      "Autoresponder": [
+        ""
+      ],
+      "Use @pm.me address": [
+        ""
+      ],
+      "Catch-All email": [
+        ""
+      ],
+      "Multi-user support": [
+        ""
+      ]
+    },
+    "Mail feature option": {
+      "5 GB *": [
+        ""
+      ],
+      "5 GB / user *": [
+        ""
+      ],
+      "Unlimited **": [
+        ""
+      ],
+      "Unlimited": [
+        ""
+      ]
+    },
+    "Mail feature option: 5 email addresses / user": {
+      "5 / user *": [
+        ""
+      ]
+    },
+    "information": {
+      "Included": [
+        ""
+      ]
+    },
+    "VPN feature": {
+      "VPN Connections": [
+        ""
+      ],
+      "Speed": [
+        ""
+      ],
+      "VPN servers": [
+        ""
+      ],
+      "Locations/Countries": [
+        ""
+      ],
+      "Adblocker (NetShield)": [
+        ""
+      ],
+      "P2P/BitTorrent": [
+        ""
+      ],
+      "Streaming service support": [
+        ""
+      ],
+      "Tor over VPN": [
+        ""
+      ],
+      "Secure Core servers": [
+        ""
+      ],
+      "${ mailAppName } Visionary": [
+        ""
+      ],
+      "Jurisdiction": [
+        ""
+      ],
+      "Open Source & audited apps": [
+        ""
+      ],
+      "Access blocked content": [
+        ""
+      ],
+      "Strict no-logs policy": [
+        ""
+      ],
+      "Volume/bandwidth cap": [
+        ""
+      ],
+      "User data monetization": [
+        ""
+      ],
+      "Platforms supported": [
+        ""
+      ],
+      "Languages supported": [
+        ""
+      ],
+      "DNS leak prevention": [
+        ""
+      ],
+      "Kill Switch / Always-on VPN": [
+        ""
+      ],
+      "Perfect Forward Secrecy (PFS)": [
+        ""
+      ],
+      "Full Disk Encryption on Servers": [
+        ""
+      ],
+      "Split tunneling": [
+        ""
+      ],
+      "Custom connection profiles": [
+        ""
+      ],
+      "Router support": [
+        ""
+      ],
+      "30-days money-back guarantee": [
+        ""
+      ]
+    },
+    "VPN feature option": {
+      "Medium": [
+        ""
+      ],
+      "High": [
+        ""
+      ],
+      "Highest (up to 10 Gbps)": [
+        ""
+      ],
+      "Switzerland": [
+        ""
+      ],
+      "None": [
+        ""
+      ],
+      "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
+        ""
+      ],
+      "(Android & Windows only)": [
+        ""
+      ]
+    },
+    "Calendar feature": {
+      "Multiple calendars": [
+        ""
+      ],
+      "Calendar import": [
+        ""
+      ],
+      "Recurring events": [
+        ""
+      ],
+      "Invitations": [
+        ""
+      ],
+      "Share Calendar via link": [
+        ""
+      ]
+    },
+    "Calendar feature option": {
+      "20 / user *": [
+        ""
+      ],
+      "20 / user": [
+        ""
+      ]
+    },
+    "Drive feature": {
+      "Access via Web": [
+        ""
+      ],
+      "Upload / download files": [
+        ""
+      ],
+      "Share files via link": [
+        ""
+      ]
+    },
+    "Info concerning plan features": {
+      "Customizable features": [
+        ""
+      ],
+      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
+        ""
+      ]
+    },
+    "Plan Feature": {
+      "${ n } VPN connection": [
+        "",
+        "",
+        ""
+      ],
+      "${ n } server": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "Netflix": {
+      "Netflix": [
+        ""
+      ]
+    },
+    "Disney": {
+      "Disney+": [
+        ""
+      ]
+    },
+    "Prime Video": {
+      "Prime Video": [
+        ""
+      ]
+    },
+    "Many Others": {
+      "and many others": [
+        ""
+      ]
+    },
+    "Plan feature": {
+      "Built-in Adblocker (NetShield)": [
+        ""
+      ],
+      "Secure Core servers": [
+        ""
+      ],
+      "Streaming service support": [
+        ""
+      ],
+      "Access blocked content": [
+        ""
+      ],
+      "${ freeServers } in ${ freeCountries } country": [
+        "",
+        "",
+        ""
+      ],
+      "Medium speed": [
+        ""
+      ],
+      "350+ servers in ${ basicCountries } country": [
+        "",
+        "",
+        ""
+      ],
+      "High speed": [
+        ""
+      ],
+      "1200+ servers in ${ plusCountries } country": [
+        "",
+        "",
+        ""
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        ""
+      ],
+      "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
+        ""
+      ],
+      "Includes 6 user accounts": [
+        ""
+      ],
+      "Includes Proton Visionary": [
+        ""
+      ],
+      "Early access to new products": [
+        ""
+      ],
+      "Custom email addresses": [
+        ""
+      ],
+      "Access to ${ driveAppName } (beta)": [
+        ""
+      ],
+      "1 user": [
+        ""
+      ],
+      "0.5 GB storage": [
+        ""
+      ],
+      "1 address": [
+        ""
+      ],
+      "3 folders / labels": [
+        ""
+      ],
+      "5 GB storage *": [
+        ""
+      ],
+      "5 addresses": [
+        ""
+      ],
+      "200 folders / labels": [
+        ""
+      ],
+      "1 - 5000 users *": [
+        ""
+      ],
+      "5 GB storage / user": [
+        ""
+      ],
+      "5 addresses / user": [
+        ""
+      ],
+      "Unlimited folders / labels": [
+        ""
+      ],
+      "6 users": [
+        ""
+      ],
+      "20 GB storage": [
+        ""
+      ],
+      "50 addresses": [
+        ""
+      ]
+    },
+    "Price": {
+      "Free": [
+        ""
+      ]
+    },
+    "Countdown unit": {
+      "${ monthsWithYears } month": [
+        "",
+        "",
+        ""
+      ],
+      "${ days } day": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "Addon": {
+      "+ ${ addresses } email address": [
+        "",
+        "",
+        ""
+      ],
+      "+ ${ storage } storage": [
+        ""
+      ],
+      "+ ${ domains } custom domain": [
+        "",
+        "",
+        ""
+      ],
+      "+ ${ members } user": [
+        "",
+        "",
+        ""
+      ],
+      "+ ${ vpn } connection": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "Plan info": {
+      "(current plan)": [
+        ""
+      ]
+    },
+    "Free price": {
+      "Free": [
+        ""
+      ]
+    },
+    "Payment method option": {
+      "New credit/debit card": [
+        ""
+      ],
+      "PayPal": [
+        ""
+      ],
+      "Bitcoin": [
+        ""
       ]
     },
     "Select files": {
@@ -2751,12 +3774,6 @@
     "Contact field label": {
       "Name": [
         "Naziv"
-      ],
-      "Compact name": [
-        "Kompaktno ime"
-      ],
-      "Nickname": [
-        "Nadimak"
       ],
       "Email": [
         "E-pošta"
@@ -2808,18 +3825,6 @@
       ],
       "Member": [
         "Član"
-      ],
-      "IMPP": [
-        "IMPP"
-      ],
-      "Related": [
-        "Povezano"
-      ],
-      "Categories": [
-        "Kategorije"
-      ],
-      "Sound": [
-        "Zvuk"
       ]
     },
     "Contact type label": {
@@ -2849,12 +3854,6 @@
       ]
     },
     "Property type": {
-      "Name": [
-        "Naziv"
-      ],
-      "Yomi": [
-        "Yomi"
-      ],
       "Email": [
         "E-pošta"
       ],
@@ -2884,63 +3883,6 @@
       ],
       "Address": [
         "Adresa"
-      ],
-      "Contact": [
-        "Kontakt"
-      ],
-      "Acquaintance": [
-        "Poznanik"
-      ],
-      "Friend": [
-        "Prijatelj"
-      ],
-      "Met": [
-        "Upoznah"
-      ],
-      "Co-worker": [
-        "Kolega"
-      ],
-      "Colleague": [
-        "Kolega"
-      ],
-      "Co-resident": [
-        "Cimer"
-      ],
-      "Neighbor": [
-        "Susjed"
-      ],
-      "Child": [
-        "Dijete"
-      ],
-      "Parent": [
-        "Roditelj"
-      ],
-      "Sibling": [
-        "Braća i sestre"
-      ],
-      "Kin": [
-        "Rođaci"
-      ],
-      "Muse": [
-        "Muza"
-      ],
-      "Crush": [
-        "Simpatija"
-      ],
-      "Date": [
-        "Datum"
-      ],
-      "Sweetheart": [
-        "Draga"
-      ],
-      "Me": [
-        "Ja"
-      ],
-      "Agent": [
-        "Agent"
-      ],
-      "Emergency": [
-        "Hitno"
       ]
     },
     "file size format": {

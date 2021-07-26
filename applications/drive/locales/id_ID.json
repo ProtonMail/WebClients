@@ -6,6 +6,9 @@
   "contexts": {
     "": {},
     "Error": {
+      "Unknown error": [
+        "Galat tak diketahui"
+      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Pesan ini mungkin berisi tautan URL yang tidak dapat dibuka dengan benar oleh peramban Anda saat ini"
       ],
@@ -18,8 +21,8 @@
       "Authentication error.": [
         "Kesalahan otentikasi."
       ],
-      "Unknown error": [
-        "Galat tak diketahui"
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        ""
       ],
       "Email address invalid": [
         "Alamat surel tidak valid"
@@ -93,6 +96,66 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
+      "Process aborted": [
+        ""
+      ],
+      "Payment process cancelled": [
+        ""
+      ],
+      "Payment process failed": [
+        ""
+      ],
+      "Payment process consumed": [
+        ""
+      ],
+      "Payment process not supported": [
+        ""
+      ],
+      "Unknown payment token status": [
+        ""
+      ],
+      "Tab closed": [
+        ""
+      ],
+      "Name on card required": [
+        ""
+      ],
+      "Invalid expiration date": [
+        ""
+      ],
+      "Invalid card number": [
+        ""
+      ],
+      "Invalid ${ name } code": [
+        ""
+      ],
+      "Invalid postal code": [
+        ""
+      ],
+      "Error connecting to the Bitcoin API.": [
+        ""
+      ],
+      "Amount below minimum.": [
+        ""
+      ],
+      "Amount above the maximum.": [
+        ""
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        ""
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        ""
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        ""
+      ],
+      "Checkout expired, please try again.": [
+        ""
+      ],
+      "Invalid code": [
+        ""
+      ],
       "Incorrect mailbox password. Please try again": [
         "Sandi kotak masuk salah. Silakan coba lagi"
       ],
@@ -129,11 +192,11 @@
       "Signature not verified": [
         "Tanda tangan tidak terverifikasi"
       ],
-      "No valid address found": [
-        "Alamat valid tidak ditemukan"
-      ],
       "Incorrect password. Please try again.": [
         "Sandi salah. Silakan coba lagi."
+      ],
+      "No valid address found": [
+        "Alamat valid tidak ditemukan"
       ]
     },
     "Action": {
@@ -212,11 +275,11 @@
       "Previous month": [
         "Bulan lalu"
       ],
-      "Confirm opening of link ${ link }": [
-        "Konfirmasi membuka tautan ${ link }"
-      ],
       "refresh the page": [
         "segarkan halaman"
+      ],
+      "Confirm opening of link ${ link }": [
+        "Konfirmasi membuka tautan ${ link }"
       ],
       "View invoice": [
         "Lihat tagihan"
@@ -359,6 +422,18 @@
       "Signing out": [
         "Keluar"
       ],
+      "Clear": [
+        "Bersihkan"
+      ],
+      "Add screenshot(s)": [
+        "Tambah tangkapan layar"
+      ],
+      "Hide info": [
+        "Sembunyikan info"
+      ],
+      "Show info": [
+        "Tampilkan info"
+      ],
       "Details": [
         "Rincian"
       ],
@@ -392,20 +467,26 @@
       "here": [
         "di sini"
       ],
+      "Continue import": [
+        ""
+      ],
+      "Discard": [
+        ""
+      ],
+      "Reconnect": [
+        ""
+      ],
+      "Start import": [
+        ""
+      ],
       "Copy email to clipboard": [
         "Salin email ke papan klip"
       ],
-      "Switch account": [
-        "Ganti akun"
-      ],
-      "Sign out": [
-        "Keluar"
+      "${ BRAND_NAME } introduction": [
+        "Pengenalan ${ BRAND_NAME }"
       ],
       "I have a question": [
         "Saya memiliki sebuah pertanyaan"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "Pengenalan ${ BRAND_NAME }"
       ],
       "Request a feature": [
         "Minta fitur"
@@ -415,6 +496,12 @@
       ],
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
+      ],
+      "Switch account": [
+        "Ganti akun"
+      ],
+      "Sign out": [
+        "Keluar"
       ],
       "Go to settings": [
         "Ke pengaturan"
@@ -437,18 +524,6 @@
       "Composer mode": [
         "Mode menulis"
       ],
-      "Clear": [
-        "Bersihkan"
-      ],
-      "Add screenshot(s)": [
-        "Tambah tangkapan layar"
-      ],
-      "Hide info": [
-        "Sembunyikan info"
-      ],
-      "Show info": [
-        "Tampilkan info"
-      ],
       "Get started": [
         "Mulai"
       ],
@@ -467,26 +542,62 @@
       "OK": [
         "OK"
       ],
-      "Continue import": [
+      "Remove bonuses": [
         ""
       ],
-      "Discard": [
+      "Try again": [
         ""
       ],
-      "Reconnect": [
+      "Use a different card": [
         ""
       ],
-      "Start import": [
+      "Use a different payment method": [
+        ""
+      ],
+      "Retry": [
+        ""
+      ],
+      "Loading verification": [
+        ""
+      ],
+      "Select plan": [
+        ""
+      ],
+      "Compare all features": [
+        ""
+      ],
+      "${ boldSave } by switching to annual billing": [
+        ""
+      ],
+      "Pay": [
+        ""
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        ""
+      ],
+      "Remove gift code": [
+        ""
+      ],
+      "annual billing": [
+        ""
+      ],
+      "Compare plans": [
+        ""
+      ],
+      "Decrease": [
+        ""
+      ],
+      "Increase": [
         ""
       ],
       "Log in": [
         "Masuk"
       ],
-      "Delete permanently": [
-        "Hapus permanen"
+      "Cancel all uploads": [
+        "Batalkan semua unggahan"
       ],
-      "Undo": [
-        "Urungkan"
+      "New upload": [
+        "Unggah baru"
       ],
       "Maximize transfers": [
         "Perbesar jendela transfer"
@@ -523,12 +634,6 @@
       ],
       "Remove from this list": [
         "Hapus dari daftar ini"
-      ],
-      "Cancel all uploads": [
-        "Batalkan semua unggahan"
-      ],
-      "New upload": [
-        "Unggah baru"
       ],
       "List layout": [
         "Senarai"
@@ -578,14 +683,14 @@
       "Upload folder": [
         "Unggah folder"
       ],
+      "Delete permanently": [
+        "Hapus permanen"
+      ],
       "Restore from trash": [
         "Kembalikan dari kotak sampah"
       ],
       "Empty trash": [
         "Kosongkan kotak sampah"
-      ],
-      "Start recovering": [
-        "Mulai memulihkan"
       ],
       "Share": [
         "Bagikan"
@@ -599,8 +704,14 @@
       "Stop sharing": [
         "Berhenti berbagi"
       ],
+      "Show shared link details": [
+        ""
+      ],
       "Share file": [
         "Bagikan berkas"
+      ],
+      "Start recovering": [
+        "Mulai memulihkan"
       ],
       "View more": [
         "Lihat lainnya"
@@ -613,6 +724,9 @@
       ],
       "Create link": [
         "Buat tautan"
+      ],
+      "Undo": [
+        "Urungkan"
       ]
     },
     "Title": {
@@ -754,6 +868,15 @@
       "Import contacts": [
         "Impor kontak"
       ],
+      "Report a problem": [
+        "Laporkan sebuah masalah"
+      ],
+      "Start import process": [
+        ""
+      ],
+      "Import in progress": [
+        ""
+      ],
       "Open help menu": [
         "Buka menu bantuan"
       ],
@@ -763,17 +886,110 @@
       "Open settings menu": [
         "Buka menu pengaturan"
       ],
-      "Report a problem": [
-        "Laporkan sebuah masalah"
-      ],
       "Select a theme": [
         "Pilih tema"
       ],
-      "Start import process": [
+      "Confirm loss of Proton bonuses": [
         ""
       ],
-      "Import in progress": [
+      "Unsupported browser": [
         ""
+      ],
+      "Card verification": [
+        ""
+      ],
+      "Payment verification": [
+        ""
+      ],
+      "Processing...": [
+        ""
+      ],
+      "Card verification in progress": [
+        ""
+      ],
+      "Payment verification in progress": [
+        ""
+      ],
+      "PayPal verification failed": [
+        ""
+      ],
+      "3-D Secure verification failed": [
+        ""
+      ],
+      "Error": [
+        ""
+      ],
+      "ZIP / postal code": [
+        ""
+      ],
+      "Payment details": [
+        ""
+      ],
+      "Currency": [
+        ""
+      ],
+      "Billing cycle": [
+        ""
+      ],
+      "Current plan": [
+        ""
+      ],
+      "Processing": [
+        ""
+      ],
+      "Apply gift code": [
+        ""
+      ],
+      "Subtotal": [
+        ""
+      ],
+      "Coupon discount": [
+        ""
+      ],
+      "Total (monthly)": [
+        ""
+      ],
+      "Credits": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Amount due": [
+        ""
+      ],
+      "Cancel subscription": [
+        ""
+      ],
+      "Network error": [
+        ""
+      ],
+      "Select a plan": [
+        ""
+      ],
+      "Customize your plan": [
+        ""
+      ],
+      "Checkout": [
+        ""
+      ],
+      "Plan summary": [
+        ""
+      ],
+      "${ appName } customization": [
+        ""
+      ],
+      "Sign in again to continue": [
+        "Masuk lagi untuk melanjutkan"
+      ],
+      "Account suspended": [
+        "Akun ditangguhkan"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Masukkan nama pengguna atau alamat surel ProtonMail"
+      ],
+      "Enter your password": [
+        "Masukkan sandi Anda"
       ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Pintasan Papan Ketik"
@@ -790,27 +1006,6 @@
       "Beta Access": [
         "Akses Beta"
       ],
-      "Sign in again to continue": [
-        "Masuk lagi untuk melanjutkan"
-      ],
-      "Account suspended": [
-        "Akun ditangguhkan"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Masukkan nama pengguna atau alamat surel ProtonMail"
-      ],
-      "Enter your password": [
-        "Masukkan sandi Anda"
-      ],
-      "Delete permanently": [
-        "Hapus permanen"
-      ],
-      "Stop sharing": [
-        "Berhenti berbagi"
-      ],
-      "Cancel all active transfers": [
-        "Batalkan semua transfer aktif"
-      ],
       "Duplicate folder found": [
         "Ditemukan folder duplikat"
       ],
@@ -819,6 +1014,9 @@
       ],
       "Drop to upload": [
         "Taruh untuk mengunggah"
+      ],
+      "Cancel all active transfers": [
+        "Batalkan semua transfer aktif"
       ],
       "Change layout": [
         "Ganti tata letak"
@@ -835,8 +1033,38 @@
       "Empty trash": [
         "Kosongkan sampah"
       ],
+      "My files": [
+        "Berkas saya"
+      ],
+      "You have no folders yet": [
+        "Anda belum memiliki folder"
+      ],
+      "You have no files to share": [
+        "Anda tidak memiliki berkas untuk dibagikan"
+      ],
       "Drive": [
         "Drive"
+      ],
+      "Your file is ready to be downloaded": [
+        "Berkas Anda siap diunduh"
+      ],
+      "Download completed": [
+        "Unduhan selesai"
+      ],
+      "Download failed": [
+        "Unduhan gagal"
+      ],
+      "Download canceled": [
+        "Unduhan dibatalkan"
+      ],
+      "Downloading": [
+        "Sedang mengunduh"
+      ],
+      "Enter file password to download": [
+        "Masukkan sandi berkas untuk mengunduh"
+      ],
+      "The link either does not exist or has expired": [
+        "Tautan tidak ada atau telah kadaluwarsa"
       ],
       "Restore your files": [
         "Pulihkan berkas Anda"
@@ -846,15 +1074,6 @@
       ],
       "You have inaccessible files": [
         "Ada berkas yang tidak bisa diakses"
-      ],
-      "My files": [
-        "Berkas saya"
-      ],
-      "You have no folders yet": [
-        "Anda belum memiliki folder"
-      ],
-      "You have no files to share": [
-        "Anda tidak memiliki berkas untuk dibagikan"
       ],
       "Rename a folder": [
         "Ubah nama folder"
@@ -934,26 +1153,11 @@
       "Total size": [
         "Ukuran total"
       ],
-      "Your file is ready to be downloaded": [
-        "Berkas Anda siap diunduh"
+      "Delete permanently": [
+        "Hapus permanen"
       ],
-      "Download completed": [
-        "Unduhan selesai"
-      ],
-      "Download failed": [
-        "Unduhan gagal"
-      ],
-      "Download canceled": [
-        "Unduhan dibatalkan"
-      ],
-      "Downloading": [
-        "Sedang mengunduh"
-      ],
-      "Enter file password to download": [
-        "Masukkan sandi berkas untuk mengunduh"
-      ],
-      "The link either does not exist or has expired": [
-        "Tautan tidak ada atau telah kadaluwarsa"
+      "Stop sharing": [
+        "Berhenti berbagi"
       ]
     },
     "Info": {
@@ -969,6 +1173,9 @@
       "Week": [
         "Pekan"
       ],
+      "support team": [
+        "tim dukungan"
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Tautan ini mungkin adalah sebuah serangan homograf dan tidak dapat dibuka oleh Internet Explorer dan Edge. Jika Anda yakin tautan tersebut absah, silahkan gunakan peramban lain untuk membukanya."
       ],
@@ -983,9 +1190,6 @@
       ],
       "Drop the file here to upload": [
         "Taruh berkas di sini untuk mengunggah"
-      ],
-      "support team": [
-        "tim dukungan"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Akun Proton Anda sedang dalam masa tenggang. Untuk tetap menggunakan akun Anda, mohon lunasi tagihan yang sudah jatuh tempo."
@@ -1128,6 +1332,12 @@
       "Loading ${ appName }": [
         "Memuat ${ appName }"
       ],
+      "Screenshot(s) attached": [
+        "Tangkapan layar terlampir"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Memuat ulang halaman atau ${ link } akan mengatasi sebagian masalah secara otomatis."
+      ],
       "Unsupported file": [
         "File tidak didukung"
       ],
@@ -1185,12 +1395,6 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Anda telah menonaktifkan Akses Beta. Klik ${ refreshButton } untuk menggunakan versi stabil dari ${ appName }. Aplikasi akan dimuat ulang."
       ],
-      "Screenshot(s) attached": [
-        "Tangkapan layar terlampir"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Memuat ulang halaman atau ${ link } akan mengatasi sebagian masalah secara otomatis."
-      ],
       "Import contacts": [
         ""
       ],
@@ -1215,8 +1419,242 @@
       "Your import will not be processed.": [
         ""
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Navigasi dan tindakan dasar tetap tersedia terlepas pintasan papan ketik aktif atau tidak di pengaturan."
+      "Since you're a loyal user, your account has additional features enabled.": [
+        ""
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        ""
+      ],
+      "+${ bonusSpace } bonus storage": [
+        ""
+      ],
+      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
+        ""
+      ],
+      "Your bank requires 3-D Secure verification for security purposes.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers.": [
+        ""
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        ""
+      ],
+      "You will be soon redirected to your bank to verify your payment.": [
+        ""
+      ],
+      "Please verify the card in the new tab which was opened.": [
+        ""
+      ],
+      "Please verify payment at the new tab which was opened.": [
+        ""
+      ],
+      "Verification can take a few minutes.": [
+        ""
+      ],
+      "Payment can take a few minutes to fully verify.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or call your bank for assistance.": [
+        ""
+      ],
+      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        ""
+      ],
+      "Amount below minimum (${ amount }).": [
+        ""
+      ],
+      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
+        ""
+      ],
+      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
+        ""
+      ],
+      "Please verify the payment in the new tab.": [
+        ""
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        ""
+      ],
+      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
+        ""
+      ],
+      "We use 3-D Secure to protect your payments.": [
+        ""
+      ],
+      "Billed as ${ billedPrice } per year": [
+        ""
+      ],
+      "Billed as ${ billedPrice } every 2 years": [
+        ""
+      ],
+      "Included": [
+        ""
+      ],
+      "* Customizable features": [
+        ""
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        ""
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        ""
+      ],
+      "For getting started with private and secure emailing.": [
+        ""
+      ],
+      "A free and uncensored Internet should be available to all.": [
+        ""
+      ],
+      "Starter VPN service with P2P support.": [
+        ""
+      ],
+      "Full-featured VPN with speed up to 10 Gbps.": [
+        ""
+      ],
+      "For individuals that need a fully-featured mailbox with advanced protection.": [
+        ""
+      ],
+      "For professionals that need secure business communications.": [
+        ""
+      ],
+      "VPN + ${ mailAppName } bundle for families and small businesses.": [
+        ""
+      ],
+      "For families and small teams; includes both Mail and VPN.": [
+        ""
+      ],
+      "Save 20%": [
+        ""
+      ],
+      "Your account is being upgraded, this may take up to 30 seconds.": [
+        ""
+      ],
+      "Thank you for supporting our mission.": [
+        ""
+      ],
+      "Your account will be updated once the payment is cleared.": [
+        ""
+      ],
+      "Account successfully updated": [
+        ""
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        ""
+      ],
+      "(Mail + VPN)": [
+        ""
+      ],
+      "${ mailAppName } Free": [
+        ""
+      ],
+      "${ vpnAppName } Free": [
+        ""
+      ],
+      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
+        ""
+      ],
+      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        ""
+      ],
+      "No payment is required at this time.": [
+        ""
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
+        ""
+      ],
+      "20% discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Black Friday 2018 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2019 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2020 newcomer discount has been applied": [
+        ""
+      ],
+      "Discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        ""
+      ],
+      "30 days money-back guarantee.": [
+        ""
+      ],
+      "Save extra 20%": [
+        ""
+      ],
+      "${ save20 } on your subscription by switching to ${ annualBilling }": [
+        ""
+      ],
+      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
+        ""
+      ],
+      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
+        ""
+      ],
+      "Storage GB": [
+        ""
+      ],
+      "Users": [
+        ""
+      ],
+      "Domains": [
+        ""
+      ],
+      "Addresses": [
+        ""
+      ],
+      "Connections": [
+        ""
+      ],
+      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Add additional addresses to your account like user2@protonmail.com": [
+        ""
+      ],
+      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
+        ""
+      ],
+      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more users.": [
+        ""
+      ],
+      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
+        ""
+      ],
+      "Each additional connection can be assigned to users in your organization.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more connections.": [
+        ""
+      ],
+      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        ""
+      ],
+      "Not customizable": [
+        ""
+      ],
+      "Expired": [
+        ""
       ],
       "here": [
         "di sini"
@@ -1227,6 +1665,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Jika anda yakin ini adalah kesalahan, silakan hubungi kami ${ contactLink }."
       ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        "Navigasi dan tindakan dasar tetap tersedia terlepas pintasan papan ketik aktif atau tidak di pengaturan."
+      ],
       "Session timed out.": [
         "Sesi habis."
       ],
@@ -1236,23 +1677,35 @@
       "Servers are unreachable.": [
         "Server tidak terjangkau."
       ],
-      "Loading folder contents": [
-        "Memuat isi folder"
+      "${ uploadName } already exists in this location.": [
+        "${ uploadName } sudah ada di lokasi ini."
       ],
-      "Uploading hundreds of files at once may have a performance impact.": [
-        "Mengunggah ratusan berkas sekaligus dapat berdampak pada kinerja."
+      "What do you want to do?": [
+        "Apa yang ingin anda lakukan?"
       ],
-      "Are you sure you want to permanently delete selected item(s) from trash?": [
-        "Apakah Anda yakin mau menghapus secara permanen item terpilih dari tempat sampah?"
+      "Folder contents will merge into a single folder": [
+        "Konten folder akan digabungkan jadi satu folder"
       ],
-      "This will delete the link(s) and remove access to your file(s) for anyone with the link(s).": [
-        "Ini akan menghapus tautan dan menghapus akses ke berkas Anda untuk siapapun yang memiliki tautan ke sana."
+      "A number will be added to the folder name": [
+        "Nomor akan ditambahkan ke nama folder"
       ],
-      "Moving files": [
-        "Memindahkan berkas"
+      "A number will be added to the filename": [
+        "Nomor akan ditambahkan ke nama berkas"
       ],
-      "You cannot undo this action.": [
-        "Anda tidak bisa membatalkannya."
+      "This will overwrite the existing folder": [
+        "Ini akan menimpa folder yang sudah ada"
+      ],
+      "This will overwrite the existing file": [
+        "Ini akan menimpa berkas yang sudah ada"
+      ],
+      "Folder will not be uploaded": [
+        "Folder tidak akan diunggah"
+      ],
+      "File will not be uploaded": [
+        "Berkas tidak akan diunggah"
+      ],
+      "Your files will be encrypted and then saved.": [
+        "Berkas Anda akan dienkripsi dan disimpan."
       ],
       "${ doneCount } Finished": [
         "${ doneCount } Selesai"
@@ -1323,53 +1776,8 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         "Menutup jendela transfer akan membatalkan semua transfer yang sedang aktif. Anda yakin?"
       ],
-      "${ uploadName } already exists in this location.": [
-        "${ uploadName } sudah ada di lokasi ini."
-      ],
-      "What do you want to do?": [
-        "Apa yang ingin anda lakukan?"
-      ],
-      "Folder contents will merge into a single folder": [
-        "Konten folder akan digabungkan jadi satu folder"
-      ],
-      "A number will be added to the folder name": [
-        "Nomor akan ditambahkan ke nama folder"
-      ],
-      "A number will be added to the filename": [
-        "Nomor akan ditambahkan ke nama berkas"
-      ],
-      "This will overwrite the existing folder": [
-        "Ini akan menimpa folder yang sudah ada"
-      ],
-      "This will overwrite the existing file": [
-        "Ini akan menimpa berkas yang sudah ada"
-      ],
-      "Folder will not be uploaded": [
-        "Folder tidak akan diunggah"
-      ],
-      "File will not be uploaded": [
-        "Berkas tidak akan diunggah"
-      ],
-      "Your files will be encrypted and then saved.": [
-        "Berkas Anda akan dienkripsi dan disimpan."
-      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Anda yakin ingin mengosongkan kotak sampah dan menghapus semua berkas secara permanen?"
-      ],
-      "Would you like to restore your files?": [
-        "Apa Anda ingin memulihkan berkas Anda?"
-      ],
-      "Recovery process might take some time.": [
-        "Proses pemulihan mungkin membutuhkan waktu."
-      ],
-      "More": [
-        "Lainnya"
-      ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        "Berkas Anda tidak lagi dapat diakses karena pengaturan ulang kata sandi. Unggah kembali kunci enkripsi lama untuk mendapatkan kembali akses. ${ mailSettingsLink }"
-      ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        "Beberapa berkas Anda tidak lagi dapat diakses. Pulihkan akses ke berkas Anda. ${ startRecoveryButton }"
       ],
       "Create your first folder and start moving your files.": [
         "Buat folder pertama Anda dan pindahkan berkas Anda."
@@ -1391,6 +1799,36 @@
       ],
       "Create links and share your files with others.": [
         "Buat tautan dan bagikan berkas Anda dengan yang lain."
+      ],
+      "Link expires: ": [
+        "Tautan kedaluwarsa: "
+      ],
+      "Your file has finished downloading.": [
+        "Berkas Anda telah selesai diunduh."
+      ],
+      "Your file failed to download.": [
+        "Berkas Anda gagal untuk diunduh."
+      ],
+      "Your download has been canceled.": [
+        "Unduhan Anda telah dibatalkan."
+      ],
+      "Your file is being downloaded.": [
+        "Berkas Anda sedang diunduh."
+      ],
+      "Would you like to restore your files?": [
+        "Apa Anda ingin memulihkan berkas Anda?"
+      ],
+      "Recovery process might take some time.": [
+        "Proses pemulihan mungkin membutuhkan waktu."
+      ],
+      "More": [
+        "Lainnya"
+      ],
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
+        "Berkas Anda tidak lagi dapat diakses karena pengaturan ulang kata sandi. Unggah kembali kunci enkripsi lama untuk mendapatkan kembali akses. ${ mailSettingsLink }"
+      ],
+      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
+        "Beberapa berkas Anda tidak lagi dapat diakses. Pulihkan akses ke berkas Anda. ${ startRecoveryButton }"
       ],
       "Yes": [
         "Ya"
@@ -1428,20 +1866,23 @@
       "Select an uploaded file and create a link to it.": [
         "Pilih sebuah berkas yang diunggah dan buat sebuah tautan untuk berkas itu."
       ],
-      "Link expires: ": [
-        "Tautan kedaluwarsa: "
+      "Loading folder contents": [
+        "Memuat isi folder"
       ],
-      "Your file has finished downloading.": [
-        "Berkas Anda telah selesai diunduh."
+      "Uploading hundreds of files at once may have a performance impact.": [
+        "Mengunggah ratusan berkas sekaligus dapat berdampak pada kinerja."
       ],
-      "Your file failed to download.": [
-        "Berkas Anda gagal untuk diunduh."
+      "Are you sure you want to permanently delete selected item(s) from trash?": [
+        "Apakah Anda yakin mau menghapus secara permanen item terpilih dari tempat sampah?"
       ],
-      "Your download has been canceled.": [
-        "Unduhan Anda telah dibatalkan."
+      "This will delete the link(s) and remove access to your file(s) for anyone with the link(s).": [
+        "Ini akan menghapus tautan dan menghapus akses ke berkas Anda untuk siapapun yang memiliki tautan ke sana."
       ],
-      "Your file is being downloaded.": [
-        "Berkas Anda sedang diunduh."
+      "Moving files": [
+        "Memindahkan berkas"
+      ],
+      "You cannot undo this action.": [
+        "Anda tidak bisa membatalkannya."
       ],
       "Trash": [
         "Kotak Sampah"
@@ -1556,29 +1997,62 @@
       "Browser version": [
         "Versi peramban"
       ],
-      "Display name": [
-        "Nama tampilan"
-      ],
       "From: ${ fromEmailAddress }": [
         ""
       ],
       "To: ${ toEmailAddress }": [
         ""
       ],
-      "Keyboard shortcuts": [
-        "Pintasan papan ketik"
+      "Display name": [
+        "Nama tampilan"
       ],
-      "Select how your list of messages looks like by default.": [
-        "Pilih bagaimana daftar pesan Anda akan telihat secara bawaan."
+      "Name on card": [
+        ""
       ],
-      "Select how your mailbox looks like by default.": [
-        "Pilih bagaimana kotak surat Anda akan telihat secara bawaan."
+      "Card number": [
+        ""
       ],
-      "Select how your composer opens by default.": [
-        "Pilih bagaimana komposer Anda tebuka secara bawaan."
+      "Expiry date": [
+        ""
       ],
-      "Enable Beta Access": [
-        "Aktifkan Akses Beta"
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
+        ""
       ],
       "Cancel": [
         "Batal"
@@ -1597,6 +2071,21 @@
       ],
       "Username or ProtonMail address": [
         "Nama pengguna atau alamat ProtonMail"
+      ],
+      "Keyboard shortcuts": [
+        "Pintasan papan ketik"
+      ],
+      "Select how your list of messages looks like by default.": [
+        "Pilih bagaimana daftar pesan Anda akan telihat secara bawaan."
+      ],
+      "Select how your mailbox looks like by default.": [
+        "Pilih bagaimana kotak surat Anda akan telihat secara bawaan."
+      ],
+      "Select how your composer opens by default.": [
+        "Pilih bagaimana komposer Anda tebuka secara bawaan."
+      ],
+      "Enable Beta Access": [
+        "Aktifkan Akses Beta"
       ],
       "Merge a folder": [
         "Gabungkan folder"
@@ -1652,6 +2141,9 @@
       "File": [
         "Berkas"
       ],
+      "Report abuse": [
+        "Laporkan penyalahgunaan"
+      ],
       "Folder name": [
         "Nama folder"
       ],
@@ -1663,9 +2155,6 @@
       ],
       "Set expiration date": [
         "Atur tanggal kedaluwarsa"
-      ],
-      "Report abuse": [
-        "Laporkan penyalahgunaan"
       ]
     },
     "PGP key encryption warning": {
@@ -1680,6 +2169,9 @@
       "Request an invite": [
         "Minta undangan"
       ],
+      "clearing your browser cache": [
+        "membersihkan singgahan peramban Anda"
+      ],
       "Pay invoice": [
         "Bayar tagihan"
       ],
@@ -1692,8 +2184,11 @@
       "Go to subscription plans": [
         "Ke paket langganan"
       ],
-      "clearing your browser cache": [
-        "membersihkan singgahan peramban Anda"
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
       ],
       "My files": [
         "Berkas saya"
@@ -1751,6 +2246,15 @@
       "e.g. Julia Smith": [
         "cth. Dewi Sartika"
       ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
       "Mailbox password": [
         "Kata sandi kotak pesan"
       ],
@@ -1802,8 +2306,59 @@
       "You do not have any contacts to export": [
         "Anda tidak memiliki kontak untuk diekspor"
       ],
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        ""
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        ""
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        ""
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        ""
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        ""
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        ""
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        ""
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        ""
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        ""
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        ""
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        ""
+      ],
+      "Discount applied for annual billing cycle": [
+        ""
+      ],
+      "Discount applied for two-year billing cycle": [
+        ""
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        ""
+      ],
       "Expired sharing link": [
         "Tautan berbagi usang"
+      ],
+      "Inactive sharing link": [
+        ""
       ],
       "Active sharing link": [
         "Tautan berbagi aktif"
@@ -1908,13 +2463,16 @@
       "Contacts could not be merged": [
         "Kontak tidak dapat digabung"
       ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Pengaturan waktu & tanggal lokal Anda sepertinya tidak tersinkronisasi."
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan tidak dienkripsi secara end-to-end, mohon tidak mengirim informasi sensitif apapun."
       ],
+      "Your local date & time settings seem to be out of sync.": [
+        "Pengaturan waktu & tanggal lokal Anda sepertinya tidak tersinkronisasi."
+      ],
       "Are you sure you want to discard your import?": [
+        ""
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         ""
       ]
     },
@@ -1955,14 +2513,14 @@
       "Bug reported": [
         "Bug dilaporkan"
       ],
+      "You have successfully unsubscribed": [
+        ""
+      ],
       "Preference saved": [
         "Preferensi disimpan"
       ],
       "Keyboard shortcuts preferences updated": [
         "Preferensi pintasan papan ketik diperbarui"
-      ],
-      "Your files were successfully recovered to \"My files\".": [
-        "Berkas Anda telah dipulihkan ke \"Berkas saya\"."
       ],
       "Recovery has started.": [
         "Pemulihan dimulai."
@@ -1975,6 +2533,9 @@
       ],
       "The link to your file was successfully copied.": [
         "Tautan ke berkas Anda berhasil disalin."
+      ],
+      "Your files were successfully recovered to \"My files\".": [
+        "Berkas Anda telah dipulihkan ke \"Berkas saya\"."
       ]
     },
     "Hint": {
@@ -2013,6 +2574,36 @@
       ],
       "Contact group created": [
         "Grup kontak telah dibuat"
+      ],
+      "All items will soon be permanently deleted from trash": [
+        "Semua item akan dihapus permanen dari kotak sampah"
+      ],
+      "Move ${ movingCount } file": [
+        "Pindah ${ movingCount } berkas"
+      ],
+      "Move ${ movingCount } folder": [
+        "Pindah ${ movingCount } folder"
+      ],
+      "Move ${ movingCount } item": [
+        "Pindah ${ movingCount } item"
+      ],
+      "Move ${ itemsToMoveCount } file": [
+        "Pindahkan ${ itemsToMoveCount } berkas"
+      ],
+      "Move ${ itemsToMoveCount } folder": [
+        "Pindahkan ${ itemsToMoveCount } folder"
+      ],
+      "Move ${ itemsToMoveCount } item": [
+        "Pindahkan ${ itemsToMoveCount } item"
+      ],
+      "Your settings have been changed successfully.": [
+        "Pengaturan telah disimpan."
+      ],
+      "The link to your file was deleted.": [
+        "Tautan ke berkas Anda dihapus."
+      ],
+      "Failed to move, please try again": [
+        "Pemindahan gagal, silakan coba lagi"
       ],
       "Not enough space to upload ${ formattedRemaining }": [
         "Kapasitas tidak cukup untuk menampung ${ formattedRemaining }"
@@ -2080,9 +2671,6 @@
       "${ failedMovesCount } item failed to be moved": [
         "${ failedMovesCount } item gagal dipindahkan"
       ],
-      "The link to your file was deleted.": [
-        "Tautan ke berkas Anda dihapus."
-      ],
       "${ deletedCount } link to your file was deleted.": [
         "${ deletedCount } tautan ke berkas Anda dihapus."
       ],
@@ -2091,33 +2679,6 @@
       ],
       "${ failedCount } link to your file failed to be deleted.": [
         "${ failedCount } tautan ke berkas Anda gagal dihapus."
-      ],
-      "All items will soon be permanently deleted from trash": [
-        "Semua item akan dihapus permanen dari kotak sampah"
-      ],
-      "Move ${ movingCount } file": [
-        "Pindah ${ movingCount } berkas"
-      ],
-      "Move ${ movingCount } folder": [
-        "Pindah ${ movingCount } folder"
-      ],
-      "Move ${ movingCount } item": [
-        "Pindah ${ movingCount } item"
-      ],
-      "Move ${ itemsToMoveCount } file": [
-        "Pindahkan ${ itemsToMoveCount } berkas"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Pindahkan ${ itemsToMoveCount } folder"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Pindahkan ${ itemsToMoveCount } item"
-      ],
-      "Your settings have been changed successfully.": [
-        "Pengaturan telah disimpan."
-      ],
-      "Failed to move, please try again": [
-        "Pemindahan gagal, silakan coba lagi"
       ]
     },
     "Label for contact group name": {
@@ -2257,8 +2818,8 @@
       "Contacts, groups and settings": [
         "Kontak, grup dan pengaturan"
       ],
-      "Help": [
-        "Bantuan"
+      "Get help": [
+        ""
       ]
     },
     "Error notification": {
@@ -2390,50 +2951,6 @@
         "Akses ditolak"
       ]
     },
-    "Message display when a new app version is available": {
-      "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "Versi baru ${ appName } tersedia. ${ reloadButton }."
-      ]
-    },
-    "Text": {
-      "Settings": [
-        "Pengaturan"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "Aktif"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "Nonaktif"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        "Kolom"
-      ],
-      "Row": [
-        "Baris"
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        "Longgar"
-      ],
-      "Compact": [
-        "Ringkas"
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        "Dimaksimalkan"
-      ],
-      "Normal": [
-        "Normal"
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Tidak ada gambar yang dipilih"
@@ -2537,6 +3054,71 @@
         "Lampirkan tangkapan layar"
       ]
     },
+    "Message display when a new app version is available": {
+      "A new version of ${ appName } is available. ${ reloadButton }.": [
+        "Versi baru ${ appName } tersedia. ${ reloadButton }."
+      ]
+    },
+    "Loading info": {
+      "Connecting to your contacts provider": [
+        ""
+      ]
+    },
+    "Wizard step": {
+      "Authenticate": [
+        ""
+      ],
+      "Configure Import": [
+        ""
+      ],
+      "Import": [
+        ""
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import?": [
+        ""
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "Pengaturan"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "Aktif"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "Nonaktif"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        "Kolom"
+      ],
+      "Row": [
+        "Baris"
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        "Longgar"
+      ],
+      "Compact": [
+        "Ringkas"
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        "Dimaksimalkan"
+      ],
+      "Normal": [
+        "Normal"
+      ]
+    },
     "Onboarding Proton": {
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
         "Ini adalah apa yang orang akan lihat ketika Anda mengirim surel, mengundang ke acara, atau berbagi berkas."
@@ -2569,24 +3151,439 @@
         "Konfigurasi organisasi Anda, tautkan nama domain, dan membuat akun untuk memastikan seluruh anggota organisasi Anda terlindungi."
       ]
     },
-    "Loading info": {
-      "Connecting to your contacts provider": [
+    "Info for cash payment method": {
+      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
         ""
       ]
     },
-    "Wizard step": {
-      "Authenticate": [
+    "Billing cycle option": {
+      "Monthly": [
         ""
       ],
-      "Configure Import": [
+      "Annually": [
         ""
       ],
-      "Import": [
+      "Two-year": [
+        ""
+      ],
+      "Annually SAVE 20%": [
+        ""
+      ],
+      "Two years SAVE 33%": [
         ""
       ]
     },
-    "Confirm modal title": {
-      "Quit import?": [
+    "Suffix for price": {
+      "/ month": [
+        ""
+      ]
+    },
+    "info": {
+      "(beta)": [
+        ""
+      ]
+    },
+    "Mail feature": {
+      "Users": [
+        ""
+      ],
+      "Storage": [
+        ""
+      ],
+      "0.5 GB": [
+        ""
+      ],
+      "20 GB": [
+        ""
+      ],
+      "Addresses": [
+        ""
+      ],
+      "Custom email addresses": [
+        ""
+      ],
+      "Messages per day": [
+        ""
+      ],
+      "Folders / labels": [
+        ""
+      ],
+      "Support": [
+        ""
+      ],
+      "Limited": [
+        ""
+      ],
+      "Priority": [
+        ""
+      ],
+      "Encrypted contacts": [
+        ""
+      ],
+      "Contact groups": [
+        ""
+      ],
+      "Address verification": [
+        ""
+      ],
+      "Custom filters": [
+        ""
+      ],
+      "IMAP / SMTP": [
+        ""
+      ],
+      "Autoresponder": [
+        ""
+      ],
+      "Use @pm.me address": [
+        ""
+      ],
+      "Catch-All email": [
+        ""
+      ],
+      "Multi-user support": [
+        ""
+      ]
+    },
+    "Mail feature option": {
+      "5 GB *": [
+        ""
+      ],
+      "5 GB / user *": [
+        ""
+      ],
+      "Unlimited **": [
+        ""
+      ],
+      "Unlimited": [
+        ""
+      ]
+    },
+    "Mail feature option: 5 email addresses / user": {
+      "5 / user *": [
+        ""
+      ]
+    },
+    "information": {
+      "Included": [
+        ""
+      ]
+    },
+    "VPN feature": {
+      "VPN Connections": [
+        ""
+      ],
+      "Speed": [
+        ""
+      ],
+      "VPN servers": [
+        ""
+      ],
+      "Locations/Countries": [
+        ""
+      ],
+      "Adblocker (NetShield)": [
+        ""
+      ],
+      "P2P/BitTorrent": [
+        ""
+      ],
+      "Streaming service support": [
+        ""
+      ],
+      "Tor over VPN": [
+        ""
+      ],
+      "Secure Core servers": [
+        ""
+      ],
+      "${ mailAppName } Visionary": [
+        ""
+      ],
+      "Jurisdiction": [
+        ""
+      ],
+      "Open Source & audited apps": [
+        ""
+      ],
+      "Access blocked content": [
+        ""
+      ],
+      "Strict no-logs policy": [
+        ""
+      ],
+      "Volume/bandwidth cap": [
+        ""
+      ],
+      "User data monetization": [
+        ""
+      ],
+      "Platforms supported": [
+        ""
+      ],
+      "Languages supported": [
+        ""
+      ],
+      "DNS leak prevention": [
+        ""
+      ],
+      "Kill Switch / Always-on VPN": [
+        ""
+      ],
+      "Perfect Forward Secrecy (PFS)": [
+        ""
+      ],
+      "Full Disk Encryption on Servers": [
+        ""
+      ],
+      "Split tunneling": [
+        ""
+      ],
+      "Custom connection profiles": [
+        ""
+      ],
+      "Router support": [
+        ""
+      ],
+      "30-days money-back guarantee": [
+        ""
+      ]
+    },
+    "VPN feature option": {
+      "Medium": [
+        ""
+      ],
+      "High": [
+        ""
+      ],
+      "Highest (up to 10 Gbps)": [
+        ""
+      ],
+      "Switzerland": [
+        ""
+      ],
+      "None": [
+        ""
+      ],
+      "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
+        ""
+      ],
+      "(Android & Windows only)": [
+        ""
+      ]
+    },
+    "Calendar feature": {
+      "Multiple calendars": [
+        ""
+      ],
+      "Calendar import": [
+        ""
+      ],
+      "Recurring events": [
+        ""
+      ],
+      "Invitations": [
+        ""
+      ],
+      "Share Calendar via link": [
+        ""
+      ]
+    },
+    "Calendar feature option": {
+      "20 / user *": [
+        ""
+      ],
+      "20 / user": [
+        ""
+      ]
+    },
+    "Drive feature": {
+      "Access via Web": [
+        ""
+      ],
+      "Upload / download files": [
+        ""
+      ],
+      "Share files via link": [
+        ""
+      ]
+    },
+    "Info concerning plan features": {
+      "Customizable features": [
+        ""
+      ],
+      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
+        ""
+      ]
+    },
+    "Plan Feature": {
+      "${ n } VPN connection": [
+        ""
+      ],
+      "${ n } server": [
+        ""
+      ]
+    },
+    "Netflix": {
+      "Netflix": [
+        ""
+      ]
+    },
+    "Disney": {
+      "Disney+": [
+        ""
+      ]
+    },
+    "Prime Video": {
+      "Prime Video": [
+        ""
+      ]
+    },
+    "Many Others": {
+      "and many others": [
+        ""
+      ]
+    },
+    "Plan feature": {
+      "Built-in Adblocker (NetShield)": [
+        ""
+      ],
+      "Secure Core servers": [
+        ""
+      ],
+      "Streaming service support": [
+        ""
+      ],
+      "Access blocked content": [
+        ""
+      ],
+      "${ freeServers } in ${ freeCountries } country": [
+        ""
+      ],
+      "Medium speed": [
+        ""
+      ],
+      "350+ servers in ${ basicCountries } country": [
+        ""
+      ],
+      "High speed": [
+        ""
+      ],
+      "1200+ servers in ${ plusCountries } country": [
+        ""
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        ""
+      ],
+      "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
+        ""
+      ],
+      "Includes 6 user accounts": [
+        ""
+      ],
+      "Includes Proton Visionary": [
+        ""
+      ],
+      "Early access to new products": [
+        ""
+      ],
+      "Custom email addresses": [
+        ""
+      ],
+      "Access to ${ driveAppName } (beta)": [
+        ""
+      ],
+      "1 user": [
+        ""
+      ],
+      "0.5 GB storage": [
+        ""
+      ],
+      "1 address": [
+        ""
+      ],
+      "3 folders / labels": [
+        ""
+      ],
+      "5 GB storage *": [
+        ""
+      ],
+      "5 addresses": [
+        ""
+      ],
+      "200 folders / labels": [
+        ""
+      ],
+      "1 - 5000 users *": [
+        ""
+      ],
+      "5 GB storage / user": [
+        ""
+      ],
+      "5 addresses / user": [
+        ""
+      ],
+      "Unlimited folders / labels": [
+        ""
+      ],
+      "6 users": [
+        ""
+      ],
+      "20 GB storage": [
+        ""
+      ],
+      "50 addresses": [
+        ""
+      ]
+    },
+    "Price": {
+      "Free": [
+        ""
+      ]
+    },
+    "Countdown unit": {
+      "${ monthsWithYears } month": [
+        ""
+      ],
+      "${ days } day": [
+        ""
+      ]
+    },
+    "Addon": {
+      "+ ${ addresses } email address": [
+        ""
+      ],
+      "+ ${ storage } storage": [
+        ""
+      ],
+      "+ ${ domains } custom domain": [
+        ""
+      ],
+      "+ ${ members } user": [
+        ""
+      ],
+      "+ ${ vpn } connection": [
+        ""
+      ]
+    },
+    "Plan info": {
+      "(current plan)": [
+        ""
+      ]
+    },
+    "Free price": {
+      "Free": [
+        ""
+      ]
+    },
+    "Payment method option": {
+      "New credit/debit card": [
+        ""
+      ],
+      "PayPal": [
+        ""
+      ],
+      "Bitcoin": [
         ""
       ]
     },
@@ -2635,12 +3632,6 @@
     "Contact field label": {
       "Name": [
         "Nama"
-      ],
-      "Compact name": [
-        "Nama ringkas"
-      ],
-      "Nickname": [
-        "Nama panggilan"
       ],
       "Email": [
         "Surel"
@@ -2692,18 +3683,6 @@
       ],
       "Member": [
         "Anggota"
-      ],
-      "IMPP": [
-        "IMPP"
-      ],
-      "Related": [
-        "Terkait"
-      ],
-      "Categories": [
-        "Kategori"
-      ],
-      "Sound": [
-        "Suara"
       ]
     },
     "Contact type label": {
@@ -2733,12 +3712,6 @@
       ]
     },
     "Property type": {
-      "Name": [
-        "Nama"
-      ],
-      "Yomi": [
-        "Yomi"
-      ],
       "Email": [
         "Surel"
       ],
@@ -2768,63 +3741,6 @@
       ],
       "Address": [
         "Alamat"
-      ],
-      "Contact": [
-        "Kontak"
-      ],
-      "Acquaintance": [
-        "Kenalan"
-      ],
-      "Friend": [
-        "Teman"
-      ],
-      "Met": [
-        "Temu kenal"
-      ],
-      "Co-worker": [
-        "Rekan kerja"
-      ],
-      "Colleague": [
-        "Kolega"
-      ],
-      "Co-resident": [
-        "Teman serumah"
-      ],
-      "Neighbor": [
-        "Tetangga"
-      ],
-      "Child": [
-        "Anak"
-      ],
-      "Parent": [
-        "Orang tua"
-      ],
-      "Sibling": [
-        "Saudara kandung"
-      ],
-      "Kin": [
-        "Kerabat"
-      ],
-      "Muse": [
-        "Inspirasi"
-      ],
-      "Crush": [
-        "Taksiran"
-      ],
-      "Date": [
-        "Pasangan"
-      ],
-      "Sweetheart": [
-        "Tersayang"
-      ],
-      "Me": [
-        "Saya"
-      ],
-      "Agent": [
-        "Agen"
-      ],
-      "Emergency": [
-        "Darurat"
       ]
     },
     "file size format": {
