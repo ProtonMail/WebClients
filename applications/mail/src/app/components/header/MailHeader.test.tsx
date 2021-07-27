@@ -110,7 +110,7 @@ describe('MailHeader', () => {
             const dropdown = await getDropdown();
             const settingsLink = getByText(dropdown, 'settings', { exact: false });
 
-            assertAppLink(settingsLink, '/mail/general');
+            assertAppLink(settingsLink, '/mail');
         });
 
         it('should open user dropdown', async () => {
