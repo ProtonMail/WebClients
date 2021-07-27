@@ -7,7 +7,7 @@ import { Button } from '../button';
 
 interface Props {
     contactEmails: ContactEmail[];
-    onDelete?: (ID: string) => void;
+    onDelete?: (Email: string) => void;
 }
 
 const ContactGroupTable = ({ contactEmails, onDelete }: Props) => {
@@ -39,7 +39,7 @@ const ContactGroupTable = ({ contactEmails, onDelete }: Props) => {
                                     onDelete ? (
                                         <Button
                                             key={ID || Email}
-                                            onClick={() => onDelete(ID)}
+                                            onClick={() => onDelete(Email)}
                                             color="danger"
                                             shape="outline"
                                             size="small"
