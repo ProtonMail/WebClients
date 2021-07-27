@@ -10,9 +10,10 @@
         "start": "proton-pack config && start-storybook -p 6006 -s src/assets/favicons",
         "lint": "eslint src --ext .js,.ts,.tsx --quiet",
         "pretty": "prettier --write $(find . -path ./node_modules -prune -o -path ./src -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+        "deploy": "netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID --dir storybook-static --alias $NETLIFY_ALIAS",
         "deploy:prod": "netlify deploy --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID --prod --dir storybook-static",
         "check-types": "tsc",
-        "build-storybook": "build-storybook -s src/assets/favicons",
+        "build": "build-storybook -s src/assets/favicons",
         "pack": "proton-pack",
         "postinstall": "proton-pack config"
     },
