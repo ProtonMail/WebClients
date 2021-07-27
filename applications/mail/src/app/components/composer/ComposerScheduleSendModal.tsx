@@ -6,17 +6,17 @@ import {
     getHours,
     getMinutes,
     isToday,
-    isTomorrow,
-    format,
     getUnixTime,
-    Locale,
+    format,
     startOfToday,
     endOfDay,
+    isTomorrow,
 } from 'date-fns';
-import { c } from 'ttag';
-import { Alert, DateInput, generateUID, Label, TimeInput } from '@proton/components';
+import { c, msgid } from 'ttag';
+import { Alert, DateInput, ErrorZone, generateUID, Label, TimeInput } from '@proton/components';
 
 import ComposerInnerModal from './ComposerInnerModal';
+import { SCHEDULED_MAX_DATE_DAYS } from '../../constants';
 
 const formatDateInput = (value: Date, locale: Locale) => {
     if (isToday(value)) {
@@ -75,7 +75,7 @@ const ComposerScheduleSendModal = ({ onClose, onSubmit }: Props) => {
     };
 
     const minDate = startOfToday();
-    const maxDate = addDays(minDate, 30);
+    const maxDate = addDays(minDate, SCHEDULED_MAX_DATE_DAYS);
 
     const getMinTime = () => {
         if (!isToday(date)) {
@@ -92,7 +92,22 @@ const ComposerScheduleSendModal = ({ onClose, onSubmit }: Props) => {
         return limit <= nextIntervals[0] ? nextIntervals[1] : nextIntervals[0];
     };
 
-    const getTimeInputError = () => {
+    const errorDate = useMemo(() => {
+        if (date < minDate) {
+            return c('Error').t`Choose a date in the future.`;
+        }
+        if (date > maxDate) {
+            // translator : The variable is the number of days, written in digits
+            return c('Error').ngettext(
+                msgid`Choose a date within the next ${SCHEDULED_MAX_DATE_DAYS} days.`,
+                `Choose a date within the next ${SCHEDULED_MAX_DATE_DAYS} days.`,
+                SCHEDULED_MAX_DATE_DAYS
+            );
+        }
+        return undefined;
+    }, [date]);
+
+    const errorTime = useMemo(() => {
         /* If the user chose a time (Hour + minutes) before the hour of the actual day, the time input returns the date for the next day
          * Ex : This is Jan, 1 2021 at 9:00AM. The user wants to send the scheduled today at 8:00PM, but in the time input he lets 'AM'
          * => The Time input is returning the date Jan, 2 2021 at 8:00AM
@@ -102,9 +117,9 @@ const ComposerScheduleSendModal = ({ onClose, onSubmit }: Props) => {
         const timeInputDate = startOfToday().setHours(time.getHours(), time.getMinutes());
 
         return isToday(date) && timeInputDate <= new Date().getTime()
-            ? c('Error').t`Choose a date in the future`
+            ? c('Error').t`Choose a date in the future.`
             : undefined;
-    };
+    }, [time, date]);
 
     const disabled = useMemo(() => {
         const min = addSeconds(new Date(), 120);
@@ -133,8 +148,11 @@ const ComposerScheduleSendModal = ({ onClose, onSubmit }: Props) => {
                         min={minDate}
                         max={maxDate}
                         customInputFormat={formatDateInput}
-                        displayErrorMessages
+                        preventValueReset
+                        error={errorDate}
+                        errorZoneClassName="hidden"
                     />
+                    {errorDate && <ErrorZone>{errorDate}</ErrorZone>}
                 </div>
             </div>
 
@@ -147,9 +165,11 @@ const ComposerScheduleSendModal = ({ onClose, onSubmit }: Props) => {
                         value={time}
                         min={getMinTime()}
                         max={isToday(date) ? endOfDay(new Date()) : undefined}
-                        error={getTimeInputError()}
+                        error={errorTime}
+                        errorZoneClassName="hidden"
                         isSubmitted
                     />
+                    {errorTime && <ErrorZone>{errorTime}</ErrorZone>}
                 </div>
             </div>
         </ComposerInnerModal>
