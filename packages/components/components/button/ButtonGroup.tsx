@@ -8,7 +8,7 @@ export type Shape = 'solid' | 'outline' | 'ghost';
 
 export type Size = 'small' | 'medium' | 'large';
 
-interface Props extends React.ComponentPropsWithoutRef<'div'> {
+export interface Props extends React.ComponentPropsWithoutRef<'div'> {
     children: React.ReactNode;
     color?: Color;
     shape?: Shape;

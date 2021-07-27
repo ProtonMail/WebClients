@@ -35,7 +35,8 @@ interface Props extends Omit<InputProps, 'min' | 'max' | 'value' | 'onChange'> {
     onChange: (value: Date | undefined) => void;
     // In some cases we want to prevent the 'reset' of the value, if value > max or < min
     preventValueReset?: boolean;
-    customInputFormat?: (value: Date, locale: Locale) => string;
+    fromFormatter?: (value: string, locale: Locale) => Date;
+    toFormatter?: (value: Date, locale: Locale) => string;
 }
 const DateInput = ({
     value,
@@ -51,7 +52,8 @@ const DateInput = ({
     min = DEFAULT_MIN,
     max = DEFAULT_MAX,
     preventValueReset = false,
-    customInputFormat,
+    fromFormatter = fromFormatted,
+    toFormatter = toFormatted,
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
@@ -65,15 +67,7 @@ const DateInput = ({
     }, [value ? +value : undefined]);
 
     const currentInput = useMemo(() => {
-        if (!value) {
-            return '';
-        }
-
-        if (typeof customInputFormat === 'function') {
-            return customInputFormat(value, dateLocale);
-        }
-
-        return toFormatted(value, dateLocale);
+        return value ? toFormatter(value, dateLocale) : '';
     }, [value ? +value : undefined]);
 
     const temporaryValue = useMemo(() => {
@@ -81,7 +75,7 @@ const DateInput = ({
             return;
         }
         try {
-            const newDate = fromFormatted(temporaryInput, dateLocale);
+            const newDate = fromFormatter(temporaryInput, dateLocale);
             if (newDate < min || newDate > max) {
                 /* There are some cases where we do not want to reset the value so that we are able to tell the user
                  *  he made a mistake, by displaying an error.

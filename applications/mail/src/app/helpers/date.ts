@@ -29,20 +29,26 @@ export const formatDistanceToNow = (date: Date) =>
 
 export const formatFileNameDate = (date: Date) => format(date, "yyyy-MM-dd'T'HH_mm_ssxxx", { locale: dateLocale });
 
-export const formatScheduledDate = (date: Date | number) => {
-    const formattedDate = format(date, 'EEEE, MMMM d', { locale: dateLocale });
-    const formattedTime = format(date, 'p', { locale: dateLocale });
-
-    // translator: This segment is part of a longer sentence which looks like this "Message will be sent on Tuesday, May 11 at 12:30 PM"
-    let dateString = c('Date label').t`on ${formattedDate}`;
-
+export const formatScheduledDateString = (date: Date | number) => {
     if (isToday(date)) {
-        dateString = c('Date label').t`today`;
+        return c('Date label').t`today`;
     }
 
     if (isTomorrow(date)) {
-        dateString = c('Date label').t`tomorrow`;
+        return c('Date label').t`tomorrow`;
     }
 
-    return { dateString, formattedTime };
+    // translator: This segment is part of a longer sentence which looks like this "Message will be sent on Tuesday, May 11 at 12:30 PM"
+    return format(date, 'EEEE, MMMM d', { locale: dateLocale });
+};
+
+export const formatScheduledTimeString = (date: Date | number) => {
+    return format(date, 'p', { locale: dateLocale });
+};
+
+export const formatScheduledDate = (date: Date | number) => {
+    return {
+        dateString: formatScheduledDateString(date),
+        formattedTime: formatScheduledTimeString(date),
+    };
 };

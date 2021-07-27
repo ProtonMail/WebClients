@@ -52,9 +52,9 @@ const stringToSort = (string: string | undefined, labelID?: string): Sort => {
         case 'size':
             return { sort: 'Size', desc: false };
         case 'date':
-            return !isScheduledLabel ? { sort: 'Time', desc: false } : { sort: 'Time', desc: true };
+            return { sort: 'Time', desc: !!isScheduledLabel };
         default:
-            return !isScheduledLabel ? { sort: 'Time', desc: true } : { sort: 'Time', desc: false };
+            return { sort: 'Time', desc: !isScheduledLabel };
     }
 };
 

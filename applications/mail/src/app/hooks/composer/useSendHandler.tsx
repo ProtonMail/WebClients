@@ -90,7 +90,7 @@ export const useSendHandler = ({
                     manager={notifManager}
                     localID={modelMessage.localID}
                     messageCache={messageCache}
-                    viewMode={mailSettings ? mailSettings?.ViewMode : 0}
+                    viewMode={mailSettings?.ViewMode || 0}
                 />
             ),
             expiration: -1,

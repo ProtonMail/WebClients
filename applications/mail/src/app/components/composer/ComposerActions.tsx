@@ -10,16 +10,16 @@ import {
     Icon,
     EllipsisLoader,
     useMailSettings,
-    DropdownActions,
     useFeature,
     FeatureCode,
     useUser,
 } from '@proton/components';
-import { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import { metaKey, shiftKey, altKey } from '@proton/shared/lib/helpers/browser';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { formatSimpleDate } from '../../helpers/date';
 import { MessageExtended } from '../../models/message';
 import AttachmentsButton from '../attachment/AttachmentsButton';
+import SendActions from './SendActions';
 
 interface Props {
     className?: string;
@@ -36,6 +36,7 @@ interface Props {
     onDelete: () => Promise<void>;
     addressesBlurRef: MutableRefObject<() => void>;
     attachmentTriggerRef: MutableRefObject<() => void>;
+    loadingScheduleCount: boolean;
 }
 
 const ComposerActions = ({
@@ -53,6 +54,7 @@ const ComposerActions = ({
     onDelete,
     addressesBlurRef,
     attachmentTriggerRef,
+    loadingScheduleCount,
 }: Props) => {
     const isAttachments = getAttachments(message.data).length > 0;
     const isPassword = hasFlag(MESSAGE_FLAGS.FLAG_INTERNAL)(message.data) && message.data?.Password;
@@ -132,37 +134,6 @@ const ComposerActions = ({
     const { feature, loading: loadingFeature } = useFeature(FeatureCode.ScheduledSend);
     const hasScheduleSendAccess = !loadingFeature && feature?.Value && hasPaidMail;
 
-    const sendButtonActions: (DropdownActionProps & {
-        'data-testid'?: string;
-    })[] = [
-        {
-            text: (
-                <>
-                    <Icon name="sent" className="no-desktop no-tablet on-mobile-flex" />
-                    <span className="pl1 pr1 no-mobile">{c('Action').t`Send`}</span>
-                </>
-            ),
-            loading: loadingFeature,
-            onClick: onSend,
-            disabled: sendDisabled,
-            className: 'composer-send-button',
-            tooltip: titleSendButton,
-            'data-testid': 'composer:send-button',
-        },
-    ];
-
-    if (hasScheduleSendAccess) {
-        sendButtonActions.push({
-            text: (
-                <>
-                    <Icon name="clock" />
-                    <span className="pl1 pr1">{c('Action').t`Schedule send`}</span>
-                </>
-            ),
-            onClick: onScheduleSendModal,
-        });
-    }
-
     return (
         <footer
             className={classnames([
@@ -171,12 +142,35 @@ const ComposerActions = ({
             ])}
             onClick={addressesBlurRef.current}
         >
-            <DropdownActions
-                disabled={loadingFeature}
-                loading={loadingFeature}
+            <SendActions
+                disabled={loadingFeature || loadingScheduleCount}
+                loading={loadingFeature || loadingScheduleCount}
                 shape="solid"
                 color="norm"
-                list={sendButtonActions}
+                mainAction={
+                    <Tooltip title={titleSendButton}>
+                        <Button
+                            loading={loadingFeature}
+                            onClick={onSend}
+                            disabled={sendDisabled}
+                            className="composer-send-button"
+                            data-testid="composer:send-button"
+                        >
+                            <Icon name="sent" className="no-desktop no-tablet on-mobile-flex" />
+                            <span className="pl1 pr1 no-mobile">{c('Action').t`Send`}</span>
+                        </Button>
+                    </Tooltip>
+                }
+                secondAction={
+                    hasScheduleSendAccess ? (
+                        <Tooltip>
+                            <DropdownMenuButton className="text-left" onClick={onScheduleSendModal}>
+                                <Icon name="clock" />
+                                <span className="pl1 pr1">{c('Action').t`Schedule send`}</span>
+                            </DropdownMenuButton>
+                        </Tooltip>
+                    ) : undefined
+                }
             />
             <div className="flex flex-item-fluid">
                 <div className="flex">
