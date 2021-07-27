@@ -97,7 +97,7 @@ const MailHeader = ({
             logo={logo}
             backUrl={showBackButton && backUrl ? backUrl : undefined}
             title={labelName}
-            settingsButton={<TopNavbarListItemSettingsDropdown to="/mail/general" toApp={APPS.PROTONACCOUNT} />}
+            settingsButton={<TopNavbarListItemSettingsDropdown to="/mail" toApp={APPS.PROTONACCOUNT} />}
             contactsButton={<TopNavbarListItemContactsDropdown onCompose={handleContactsCompose} onMailTo={onMailTo} />}
             feedbackButton={
                 featureMailFeedbackEnabled?.Value ? (
