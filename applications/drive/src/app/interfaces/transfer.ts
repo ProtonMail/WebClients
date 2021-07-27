@@ -1,3 +1,4 @@
+import { FileBrowserItem } from '../components/FileBrowser/interfaces';
 import { LinkType } from './link';
 
 export enum TransferState {
@@ -62,6 +63,9 @@ export interface Upload {
 export interface DownloadInfo {
     LinkID: string;
     ShareID: string;
+    // children are filled when LinkID is empty to represent list of files
+    // to be downloaded as one zip archive.
+    children?: FileBrowserItem[];
 }
 
 export interface Download {
