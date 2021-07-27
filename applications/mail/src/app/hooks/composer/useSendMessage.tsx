@@ -9,8 +9,9 @@ import { unique } from '@proton/shared/lib/helpers/array';
 import { sendMessage, cancelSend } from '@proton/shared/lib/api/messages';
 import { useApi, useEventManager, useNotifications } from '@proton/components';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { MessageExtendedWithData } from '../../models/message';
 import { generateTopPackages } from '../../helpers/send/sendTopPackages';
 import { attachSubPackages } from '../../helpers/send/sendSubPackages';
@@ -84,6 +85,15 @@ export const useSendMessage = () => {
                 // TODO: handleAttachmentSigs ?
 
                 const emails = unique(getRecipientsAddresses(inputMessage.data));
+
+                const hasHtml = Object.values(mapSendPrefs).some(
+                    (sendPref) => sendPref?.mimeType === MIME_TYPES.DEFAULT
+                );
+                if (hasHtml && message.document === undefined) {
+                    const errorMessage = 'Sending with missing document error';
+                    captureMessage(errorMessage, { extra: { message } });
+                    throw new Error(errorMessage);
+                }
 
                 let packages = await generateTopPackages(message, messageKeys, mapSendPrefs, attachmentCache, api);
                 packages = await attachSubPackages(packages, message, emails, mapSendPrefs, api);
