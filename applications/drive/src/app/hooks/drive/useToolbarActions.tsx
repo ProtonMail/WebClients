@@ -13,7 +13,6 @@ import useSharing from './useSharing';
 import useDrive from './useDrive';
 import FileSaver from '../../utils/FileSaver/FileSaver';
 import { getMetaForTransfer } from '../../utils/transfer';
-import { logSettledErrors } from '../../utils/async';
 import { LinkType } from '../../interfaces/link';
 import { FileBrowserItem } from '../../components/FileBrowser/interfaces';
 import { DriveFolder } from '../../components/Drive/DriveFolderProvider';
@@ -44,31 +43,40 @@ function useToolbarActions() {
     const { openConfirmModal } = useConfirm();
 
     const download = async (shareId: string, itemsToDownload: FileBrowserItem[]) => {
-        const promises = itemsToDownload.map(async (item) => {
-            if (item.Type === LinkType.FILE) {
-                const meta = getMetaForTransfer(item);
-                const fileStream = await startFileTransfer(shareId, item.LinkID, meta);
-                preventLeave(FileSaver.saveAsFile(fileStream, meta)).catch(console.error);
-            } else {
-                const zipSaver = await FileSaver.saveAsZip(item.Name);
+        if (itemsToDownload.length === 1 && itemsToDownload[0].Type === LinkType.FILE) {
+            const item = itemsToDownload[0];
+            const meta = getMetaForTransfer(item);
+            const fileStream = await startFileTransfer(shareId, item.LinkID, meta);
+            preventLeave(FileSaver.saveAsFile(fileStream, meta)).catch(console.error);
+        } else {
+            const { name, linkID, children } =
+                itemsToDownload.length === 1
+                    ? {
+                          name: itemsToDownload[0].Name,
+                          linkID: itemsToDownload[0].LinkID,
+                          children: [],
+                      }
+                    : {
+                          name: `My files ${new Date().toISOString().substring(0, 19)}`,
+                          linkID: '',
+                          children: itemsToDownload,
+                      };
 
-                if (zipSaver) {
-                    try {
-                        await preventLeave(
-                            startFolderTransfer(item.Name, shareId, item.LinkID, {
-                                onStartFileTransfer: zipSaver.addFile,
-                                onStartFolderTransfer: zipSaver.addFolder,
-                            })
-                        );
-                        await zipSaver.close();
-                    } catch (e) {
-                        await zipSaver.abort(e);
-                    }
+            const zipSaver = await FileSaver.saveAsZip(name);
+            if (zipSaver) {
+                try {
+                    await preventLeave(
+                        startFolderTransfer(name, shareId, linkID, children, {
+                            onStartFileTransfer: zipSaver.addFile,
+                            onStartFolderTransfer: zipSaver.addFolder,
+                        })
+                    );
+                    await zipSaver.close();
+                } catch (e) {
+                    await zipSaver.abort(e);
                 }
             }
-        });
-
-        logSettledErrors(await Promise.allSettled(promises));
+        }
     };
 
     const openCreateFolder = async () => {
