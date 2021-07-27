@@ -107,7 +107,7 @@ const ItemRow = ({
         );
     };
 
-    const showShareOnHover = item.Type === LinkType.FILE && item.Trashed === null && !item.SharedUrl;
+    const showShareOnHover = item.Type === LinkType.FILE && item.Trashed === null && !item.SharedUrl && !item.Disabled;
 
     return (
         <>
