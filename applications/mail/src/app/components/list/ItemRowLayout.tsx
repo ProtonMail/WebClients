@@ -101,14 +101,16 @@ const ItemRowLayout = ({
                         {subjectContent}
                     </span>
                     {shouldHighlight() && (
-                        <span
-                            role="heading"
-                            aria-level={2}
-                            className={classnames(['max-w100 text-ellipsis mr1', unread && 'text-bold'])}
-                            title={bodyTitle}
-                        >
-                            {bodyContent}
-                        </span>
+                        <>
+                            <span
+                                className={classnames(['max-w100 text-ellipsis mr1', unread && 'text-bold'])}
+                                title={bodyTitle}
+                                aria-hidden="true"
+                            >
+                                {bodyContent}
+                            </span>
+                            <span className="sr-only">{bodyTitle}</span>
+                        </>
                     )}
                 </div>
             </div>
