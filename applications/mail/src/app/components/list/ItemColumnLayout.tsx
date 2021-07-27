@@ -129,18 +129,19 @@ const ItemColumnLayout = ({
             </div>
 
             {shouldHighlight() && (
-                <div className="flex flex-nowrap flex-align-items-center item-secondline max-w100 no-scroll">
-                    <div className="item-subject flex-item-fluid flex flex-nowrap flex-align-items-center">
-                        <span
-                            role="heading"
-                            aria-level={2}
-                            className="inline-block max-w100 text-ellipsis"
-                            title={bodyTitle}
-                        >
-                            {bodyContent}
-                        </span>
+                <>
+                    <div
+                        className="flex flex-nowrap flex-align-items-center item-secondline max-w100 no-scroll"
+                        aria-hidden="true"
+                    >
+                        <div className="item-subject flex-item-fluid flex flex-nowrap flex-align-items-center">
+                            <span className="inline-block max-w100 text-ellipsis" title={bodyTitle}>
+                                {bodyContent}
+                            </span>
+                        </div>
                     </div>
-                </div>
+                    <div className="sr-only">{bodyTitle}</div>
+                </>
             )}
         </div>
     );
