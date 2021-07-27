@@ -6,6 +6,9 @@
   "contexts": {
     "": {},
     "Error": {
+      "Unknown error": [
+        "不明なエラー"
+      ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         ""
       ],
@@ -18,8 +21,8 @@
       "Authentication error.": [
         ""
       ],
-      "Unknown error": [
-        "不明なエラー"
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        ""
       ],
       "Email address invalid": [
         "無効なメールアドレスです"
@@ -93,6 +96,66 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
+      "Process aborted": [
+        ""
+      ],
+      "Payment process cancelled": [
+        ""
+      ],
+      "Payment process failed": [
+        ""
+      ],
+      "Payment process consumed": [
+        ""
+      ],
+      "Payment process not supported": [
+        ""
+      ],
+      "Unknown payment token status": [
+        ""
+      ],
+      "Tab closed": [
+        ""
+      ],
+      "Name on card required": [
+        ""
+      ],
+      "Invalid expiration date": [
+        ""
+      ],
+      "Invalid card number": [
+        ""
+      ],
+      "Invalid ${ name } code": [
+        ""
+      ],
+      "Invalid postal code": [
+        ""
+      ],
+      "Error connecting to the Bitcoin API.": [
+        ""
+      ],
+      "Amount below minimum.": [
+        ""
+      ],
+      "Amount above the maximum.": [
+        ""
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        ""
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        ""
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        ""
+      ],
+      "Checkout expired, please try again.": [
+        ""
+      ],
+      "Invalid code": [
+        ""
+      ],
       "Incorrect mailbox password. Please try again": [
         ""
       ],
@@ -129,11 +192,11 @@
       "Signature not verified": [
         ""
       ],
-      "No valid address found": [
-        ""
-      ],
       "Incorrect password. Please try again.": [
         "パスワードが正しくありません。もう一度お試しください。"
+      ],
+      "No valid address found": [
+        ""
       ]
     },
     "Action": {
@@ -212,11 +275,11 @@
       "Previous month": [
         "前の月"
       ],
-      "Confirm opening of link ${ link }": [
-        ""
-      ],
       "refresh the page": [
         "ページを更新"
+      ],
+      "Confirm opening of link ${ link }": [
+        ""
       ],
       "View invoice": [
         "請求書を参照"
@@ -359,6 +422,18 @@
       "Signing out": [
         "サインアウトしています"
       ],
+      "Clear": [
+        "クリア"
+      ],
+      "Add screenshot(s)": [
+        "スクリーンショットを追加"
+      ],
+      "Hide info": [
+        "情報を非表示"
+      ],
+      "Show info": [
+        "情報を表示"
+      ],
       "Details": [
         "詳細"
       ],
@@ -392,20 +467,26 @@
       "here": [
         ""
       ],
-      "Copy email to clipboard": [
+      "Continue import": [
         ""
       ],
-      "Switch account": [
-        "アカウントの切り替え"
+      "Discard": [
+        ""
       ],
-      "Sign out": [
-        "サインアウト"
+      "Reconnect": [
+        ""
       ],
-      "I have a question": [
+      "Start import": [
+        ""
+      ],
+      "Copy email to clipboard": [
         ""
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } の紹介"
+      ],
+      "I have a question": [
+        ""
       ],
       "Request a feature": [
         "機能を提案"
@@ -415,6 +496,12 @@
       ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
+      ],
+      "Switch account": [
+        "アカウントの切り替え"
+      ],
+      "Sign out": [
+        "サインアウト"
       ],
       "Go to settings": [
         "設定を開く"
@@ -437,18 +524,6 @@
       "Composer mode": [
         ""
       ],
-      "Clear": [
-        "クリア"
-      ],
-      "Add screenshot(s)": [
-        "スクリーンショットを追加"
-      ],
-      "Hide info": [
-        "情報を非表示"
-      ],
-      "Show info": [
-        "情報を表示"
-      ],
       "Get started": [
         "はじめましょう"
       ],
@@ -467,26 +542,62 @@
       "OK": [
         "OK"
       ],
-      "Continue import": [
+      "Remove bonuses": [
         ""
       ],
-      "Discard": [
+      "Try again": [
         ""
       ],
-      "Reconnect": [
+      "Use a different card": [
         ""
       ],
-      "Start import": [
+      "Use a different payment method": [
+        ""
+      ],
+      "Retry": [
+        ""
+      ],
+      "Loading verification": [
+        ""
+      ],
+      "Select plan": [
+        ""
+      ],
+      "Compare all features": [
+        ""
+      ],
+      "${ boldSave } by switching to annual billing": [
+        ""
+      ],
+      "Pay": [
+        ""
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        ""
+      ],
+      "Remove gift code": [
+        ""
+      ],
+      "annual billing": [
+        ""
+      ],
+      "Compare plans": [
+        ""
+      ],
+      "Decrease": [
+        ""
+      ],
+      "Increase": [
         ""
       ],
       "Log in": [
         "ログイン"
       ],
-      "Delete permanently": [
-        "完全に削除"
+      "Cancel all uploads": [
+        ""
       ],
-      "Undo": [
-        "取り消す"
+      "New upload": [
+        "新規アップロード"
       ],
       "Maximize transfers": [
         "転送一覧を最大化"
@@ -523,12 +634,6 @@
       ],
       "Remove from this list": [
         "この一覧から削除"
-      ],
-      "Cancel all uploads": [
-        ""
-      ],
-      "New upload": [
-        "新規アップロード"
       ],
       "List layout": [
         "一覧表示"
@@ -578,14 +683,14 @@
       "Upload folder": [
         "フォルダーをアップロード"
       ],
+      "Delete permanently": [
+        "完全に削除"
+      ],
       "Restore from trash": [
         "ごみ箱から復元"
       ],
       "Empty trash": [
         "ごみ箱を空にする"
-      ],
-      "Start recovering": [
-        "リカバリーを始める"
       ],
       "Share": [
         "共有"
@@ -599,8 +704,14 @@
       "Stop sharing": [
         "共有を停止"
       ],
+      "Show shared link details": [
+        ""
+      ],
       "Share file": [
         "ファイルを共有する"
+      ],
+      "Start recovering": [
+        "リカバリーを始める"
       ],
       "View more": [
         "続きを見る"
@@ -613,6 +724,9 @@
       ],
       "Create link": [
         "リンクを作成する"
+      ],
+      "Undo": [
+        "取り消す"
       ]
     },
     "Title": {
@@ -754,6 +868,15 @@
       "Import contacts": [
         "連絡先をインポート"
       ],
+      "Report a problem": [
+        "問題を報告"
+      ],
+      "Start import process": [
+        ""
+      ],
+      "Import in progress": [
+        ""
+      ],
       "Open help menu": [
         "ヘルプメニューを開く"
       ],
@@ -763,17 +886,110 @@
       "Open settings menu": [
         "設定メニューを開く"
       ],
-      "Report a problem": [
-        "問題を報告"
-      ],
       "Select a theme": [
         "テーマを選択"
       ],
-      "Start import process": [
+      "Confirm loss of Proton bonuses": [
         ""
       ],
-      "Import in progress": [
+      "Unsupported browser": [
         ""
+      ],
+      "Card verification": [
+        ""
+      ],
+      "Payment verification": [
+        ""
+      ],
+      "Processing...": [
+        ""
+      ],
+      "Card verification in progress": [
+        ""
+      ],
+      "Payment verification in progress": [
+        ""
+      ],
+      "PayPal verification failed": [
+        ""
+      ],
+      "3-D Secure verification failed": [
+        ""
+      ],
+      "Error": [
+        ""
+      ],
+      "ZIP / postal code": [
+        ""
+      ],
+      "Payment details": [
+        ""
+      ],
+      "Currency": [
+        ""
+      ],
+      "Billing cycle": [
+        ""
+      ],
+      "Current plan": [
+        ""
+      ],
+      "Processing": [
+        ""
+      ],
+      "Apply gift code": [
+        ""
+      ],
+      "Subtotal": [
+        ""
+      ],
+      "Coupon discount": [
+        ""
+      ],
+      "Total (monthly)": [
+        ""
+      ],
+      "Credits": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
+      "Amount due": [
+        ""
+      ],
+      "Cancel subscription": [
+        ""
+      ],
+      "Network error": [
+        ""
+      ],
+      "Select a plan": [
+        ""
+      ],
+      "Customize your plan": [
+        ""
+      ],
+      "Checkout": [
+        ""
+      ],
+      "Plan summary": [
+        ""
+      ],
+      "${ appName } customization": [
+        ""
+      ],
+      "Sign in again to continue": [
+        "続行するには再度ログインしてください"
+      ],
+      "Account suspended": [
+        "アカウントが停止されました"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "ユーザー名または ProtonMail アドレスを入力してください"
+      ],
+      "Enter your password": [
+        "パスワードを入力してください"
       ],
       "${ appName } Keyboard Shortcuts": [
         "${ appName } のキーボードショートカット"
@@ -790,27 +1006,6 @@
       "Beta Access": [
         "ベータ版アクセス"
       ],
-      "Sign in again to continue": [
-        "続行するには再度ログインしてください"
-      ],
-      "Account suspended": [
-        "アカウントが停止されました"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "ユーザー名または ProtonMail アドレスを入力してください"
-      ],
-      "Enter your password": [
-        "パスワードを入力してください"
-      ],
-      "Delete permanently": [
-        "完全に削除"
-      ],
-      "Stop sharing": [
-        "共有を停止"
-      ],
-      "Cancel all active transfers": [
-        "現在の全ての転送処理をキャンセル"
-      ],
       "Duplicate folder found": [
         ""
       ],
@@ -819,6 +1014,9 @@
       ],
       "Drop to upload": [
         "ドロップしてアップロード"
+      ],
+      "Cancel all active transfers": [
+        "現在の全ての転送処理をキャンセル"
       ],
       "Change layout": [
         "レイアウトの変更"
@@ -835,8 +1033,38 @@
       "Empty trash": [
         "ごみ箱を空にする"
       ],
+      "My files": [
+        "マイファイル"
+      ],
+      "You have no folders yet": [
+        "フォルダーがありません"
+      ],
+      "You have no files to share": [
+        "共有するファイルがありません"
+      ],
       "Drive": [
         "Drive"
+      ],
+      "Your file is ready to be downloaded": [
+        "ファイルのダウンロード準備完了"
+      ],
+      "Download completed": [
+        "ダウンロード完了"
+      ],
+      "Download failed": [
+        ""
+      ],
+      "Download canceled": [
+        ""
+      ],
+      "Downloading": [
+        "ダウンロード中"
+      ],
+      "Enter file password to download": [
+        "ファイルのパスワードを入力してください"
+      ],
+      "The link either does not exist or has expired": [
+        "リンクが存在しないか有効期限が切れています"
       ],
       "Restore your files": [
         "ファイルを復元"
@@ -846,15 +1074,6 @@
       ],
       "You have inaccessible files": [
         "利用できないファイルがあります"
-      ],
-      "My files": [
-        "マイファイル"
-      ],
-      "You have no folders yet": [
-        "フォルダーがありません"
-      ],
-      "You have no files to share": [
-        "共有するファイルがありません"
       ],
       "Rename a folder": [
         "フォルダー名の変更"
@@ -934,26 +1153,11 @@
       "Total size": [
         "合計サイズ"
       ],
-      "Your file is ready to be downloaded": [
-        "ファイルのダウンロード準備完了"
+      "Delete permanently": [
+        "完全に削除"
       ],
-      "Download completed": [
-        "ダウンロード完了"
-      ],
-      "Download failed": [
-        ""
-      ],
-      "Download canceled": [
-        ""
-      ],
-      "Downloading": [
-        "ダウンロード中"
-      ],
-      "Enter file password to download": [
-        "ファイルのパスワードを入力してください"
-      ],
-      "The link either does not exist or has expired": [
-        "リンクが存在しないか有効期限が切れています"
+      "Stop sharing": [
+        "共有を停止"
       ]
     },
     "Info": {
@@ -969,6 +1173,9 @@
       "Week": [
         "週表示"
       ],
+      "support team": [
+        ""
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         ""
       ],
@@ -982,9 +1189,6 @@
         ""
       ],
       "Drop the file here to upload": [
-        ""
-      ],
-      "support team": [
         ""
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
@@ -1128,6 +1332,12 @@
       "Loading ${ appName }": [
         "${ appName } を読み込み中"
       ],
+      "Screenshot(s) attached": [
+        "スクリーンショットが添付されました"
+      ],
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "ほとんどの問題は、ページを更新するか、 ${ link } することで解決できます。"
+      ],
       "Unsupported file": [
         "非対応のファイル"
       ],
@@ -1185,12 +1395,6 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         ""
       ],
-      "Screenshot(s) attached": [
-        "スクリーンショットが添付されました"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "ほとんどの問題は、ページを更新するか、 ${ link } することで解決できます。"
-      ],
       "Import contacts": [
         ""
       ],
@@ -1215,7 +1419,241 @@
       "Your import will not be processed.": [
         ""
       ],
-      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+      "Since you're a loyal user, your account has additional features enabled.": [
+        ""
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        ""
+      ],
+      "+${ bonusSpace } bonus storage": [
+        ""
+      ],
+      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
+        ""
+      ],
+      "Your bank requires 3-D Secure verification for security purposes.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        ""
+      ],
+      "Verification will open a new tab, please disable any popup blockers.": [
+        ""
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        ""
+      ],
+      "You will be soon redirected to your bank to verify your payment.": [
+        ""
+      ],
+      "Please verify the card in the new tab which was opened.": [
+        ""
+      ],
+      "Please verify payment at the new tab which was opened.": [
+        ""
+      ],
+      "Verification can take a few minutes.": [
+        ""
+      ],
+      "Payment can take a few minutes to fully verify.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        ""
+      ],
+      "Please try again, use a different payment method, or call your bank for assistance.": [
+        ""
+      ],
+      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        ""
+      ],
+      "Amount below minimum (${ amount }).": [
+        ""
+      ],
+      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
+        ""
+      ],
+      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
+        ""
+      ],
+      "Please verify the payment in the new tab.": [
+        ""
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        ""
+      ],
+      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
+        ""
+      ],
+      "We use 3-D Secure to protect your payments.": [
+        ""
+      ],
+      "Billed as ${ billedPrice } per year": [
+        ""
+      ],
+      "Billed as ${ billedPrice } every 2 years": [
+        ""
+      ],
+      "Included": [
+        ""
+      ],
+      "* Customizable features": [
+        ""
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        ""
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        ""
+      ],
+      "For getting started with private and secure emailing.": [
+        ""
+      ],
+      "A free and uncensored Internet should be available to all.": [
+        ""
+      ],
+      "Starter VPN service with P2P support.": [
+        ""
+      ],
+      "Full-featured VPN with speed up to 10 Gbps.": [
+        ""
+      ],
+      "For individuals that need a fully-featured mailbox with advanced protection.": [
+        ""
+      ],
+      "For professionals that need secure business communications.": [
+        ""
+      ],
+      "VPN + ${ mailAppName } bundle for families and small businesses.": [
+        ""
+      ],
+      "For families and small teams; includes both Mail and VPN.": [
+        ""
+      ],
+      "Save 20%": [
+        ""
+      ],
+      "Your account is being upgraded, this may take up to 30 seconds.": [
+        ""
+      ],
+      "Thank you for supporting our mission.": [
+        ""
+      ],
+      "Your account will be updated once the payment is cleared.": [
+        ""
+      ],
+      "Account successfully updated": [
+        ""
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        ""
+      ],
+      "(Mail + VPN)": [
+        ""
+      ],
+      "${ mailAppName } Free": [
+        ""
+      ],
+      "${ vpnAppName } Free": [
+        ""
+      ],
+      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
+        ""
+      ],
+      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        ""
+      ],
+      "No payment is required at this time.": [
+        ""
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
+        ""
+      ],
+      "20% discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Black Friday 2018 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2019 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2020 newcomer discount has been applied": [
+        ""
+      ],
+      "Discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        ""
+      ],
+      "30 days money-back guarantee.": [
+        ""
+      ],
+      "Save extra 20%": [
+        ""
+      ],
+      "${ save20 } on your subscription by switching to ${ annualBilling }": [
+        ""
+      ],
+      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
+        ""
+      ],
+      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
+        ""
+      ],
+      "Storage GB": [
+        ""
+      ],
+      "Users": [
+        ""
+      ],
+      "Domains": [
+        ""
+      ],
+      "Addresses": [
+        ""
+      ],
+      "Connections": [
+        ""
+      ],
+      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Add additional addresses to your account like user2@protonmail.com": [
+        ""
+      ],
+      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
+        ""
+      ],
+      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more users.": [
+        ""
+      ],
+      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
+        ""
+      ],
+      "Each additional connection can be assigned to users in your organization.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more connections.": [
+        ""
+      ],
+      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        ""
+      ],
+      "Not customizable": [
+        ""
+      ],
+      "Expired": [
         ""
       ],
       "here": [
@@ -1227,6 +1665,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "エラーだと思われる場合は ${ contactLink } までご連絡ください。"
       ],
+      "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
+        ""
+      ],
       "Session timed out.": [
         "セッションがタイムアウトしました。"
       ],
@@ -1236,23 +1677,35 @@
       "Servers are unreachable.": [
         "サーバーに接続できません。"
       ],
-      "Loading folder contents": [
-        "フォルダーの内容を読み込み中"
-      ],
-      "Uploading hundreds of files at once may have a performance impact.": [
+      "${ uploadName } already exists in this location.": [
         ""
       ],
-      "Are you sure you want to permanently delete selected item(s) from trash?": [
-        "選択されたアイテムをごみ箱から完全に削除してよろしいですか？"
+      "What do you want to do?": [
+        ""
       ],
-      "This will delete the link(s) and remove access to your file(s) for anyone with the link(s).": [
-        "これにより、リンクが削除され、リンクを持つすべての人へのあなたのファイルへのアクセスが削除されます。"
+      "Folder contents will merge into a single folder": [
+        ""
       ],
-      "Moving files": [
-        "ファイルを移動中"
+      "A number will be added to the folder name": [
+        ""
       ],
-      "You cannot undo this action.": [
-        "この操作は取り消せません。"
+      "A number will be added to the filename": [
+        ""
+      ],
+      "This will overwrite the existing folder": [
+        ""
+      ],
+      "This will overwrite the existing file": [
+        ""
+      ],
+      "Folder will not be uploaded": [
+        ""
+      ],
+      "File will not be uploaded": [
+        ""
+      ],
+      "Your files will be encrypted and then saved.": [
+        "あなたのファイルは暗号化して保存されます。"
       ],
       "${ doneCount } Finished": [
         "${ doneCount } 件完了"
@@ -1323,53 +1776,8 @@
       "Closing transfer manager will cancel all active transfers, are you sure?": [
         ""
       ],
-      "${ uploadName } already exists in this location.": [
-        ""
-      ],
-      "What do you want to do?": [
-        ""
-      ],
-      "Folder contents will merge into a single folder": [
-        ""
-      ],
-      "A number will be added to the folder name": [
-        ""
-      ],
-      "A number will be added to the filename": [
-        ""
-      ],
-      "This will overwrite the existing folder": [
-        ""
-      ],
-      "This will overwrite the existing file": [
-        ""
-      ],
-      "Folder will not be uploaded": [
-        ""
-      ],
-      "File will not be uploaded": [
-        ""
-      ],
-      "Your files will be encrypted and then saved.": [
-        "あなたのファイルは暗号化して保存されます。"
-      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "ごみ箱を空にして、全てのアイテムを完全に削除してもよろしいですか？"
-      ],
-      "Would you like to restore your files?": [
-        ""
-      ],
-      "Recovery process might take some time.": [
-        ""
-      ],
-      "More": [
-        ""
-      ],
-      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
-        ""
-      ],
-      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
-        ""
       ],
       "Create your first folder and start moving your files.": [
         "フォルダーを作成すると、そこにファイルを移動できるようになります。"
@@ -1391,6 +1799,36 @@
       ],
       "Create links and share your files with others.": [
         "リンクを作成し、ファイルを共有します。"
+      ],
+      "Link expires: ": [
+        "リンクの有効期限: "
+      ],
+      "Your file has finished downloading.": [
+        "ファイルのダウンロードが完了しました。"
+      ],
+      "Your file failed to download.": [
+        ""
+      ],
+      "Your download has been canceled.": [
+        ""
+      ],
+      "Your file is being downloaded.": [
+        "ファイルをダウンロード中です。"
+      ],
+      "Would you like to restore your files?": [
+        ""
+      ],
+      "Recovery process might take some time.": [
+        ""
+      ],
+      "More": [
+        ""
+      ],
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ mailSettingsLink }": [
+        ""
+      ],
+      "Some of your files are no longer accessible. Restore the access to your files. ${ startRecoveryButton }": [
+        ""
       ],
       "Yes": [
         "はい"
@@ -1428,20 +1866,23 @@
       "Select an uploaded file and create a link to it.": [
         "アップロードされたファイルを選択してリンクを作成します。"
       ],
-      "Link expires: ": [
-        "リンクの有効期限: "
+      "Loading folder contents": [
+        "フォルダーの内容を読み込み中"
       ],
-      "Your file has finished downloading.": [
-        "ファイルのダウンロードが完了しました。"
-      ],
-      "Your file failed to download.": [
+      "Uploading hundreds of files at once may have a performance impact.": [
         ""
       ],
-      "Your download has been canceled.": [
-        ""
+      "Are you sure you want to permanently delete selected item(s) from trash?": [
+        "選択されたアイテムをごみ箱から完全に削除してよろしいですか？"
       ],
-      "Your file is being downloaded.": [
-        "ファイルをダウンロード中です。"
+      "This will delete the link(s) and remove access to your file(s) for anyone with the link(s).": [
+        "これにより、リンクが削除され、リンクを持つすべての人へのあなたのファイルへのアクセスが削除されます。"
+      ],
+      "Moving files": [
+        "ファイルを移動中"
+      ],
+      "You cannot undo this action.": [
+        "この操作は取り消せません。"
       ],
       "Trash": [
         "ごみ箱"
@@ -1556,29 +1997,62 @@
       "Browser version": [
         "ブラウザのバージョン"
       ],
-      "Display name": [
-        "表示名"
-      ],
       "From: ${ fromEmailAddress }": [
         ""
       ],
       "To: ${ toEmailAddress }": [
         ""
       ],
-      "Keyboard shortcuts": [
-        "キーボードショートカット"
+      "Display name": [
+        "表示名"
       ],
-      "Select how your list of messages looks like by default.": [
+      "Name on card": [
         ""
       ],
-      "Select how your mailbox looks like by default.": [
+      "Card number": [
         ""
       ],
-      "Select how your composer opens by default.": [
+      "Expiry date": [
         ""
       ],
-      "Enable Beta Access": [
-        "ベータ版アクセスを有効にする"
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
+        ""
       ],
       "Cancel": [
         "キャンセル"
@@ -1597,6 +2071,21 @@
       ],
       "Username or ProtonMail address": [
         "ユーザー名または ProtonMail アドレス"
+      ],
+      "Keyboard shortcuts": [
+        "キーボードショートカット"
+      ],
+      "Select how your list of messages looks like by default.": [
+        ""
+      ],
+      "Select how your mailbox looks like by default.": [
+        ""
+      ],
+      "Select how your composer opens by default.": [
+        ""
+      ],
+      "Enable Beta Access": [
+        "ベータ版アクセスを有効にする"
       ],
       "Merge a folder": [
         ""
@@ -1652,6 +2141,9 @@
       "File": [
         "ファイル"
       ],
+      "Report abuse": [
+        "不正利用を報告"
+      ],
       "Folder name": [
         "フォルダー名"
       ],
@@ -1663,9 +2155,6 @@
       ],
       "Set expiration date": [
         "有効期限を設定"
-      ],
-      "Report abuse": [
-        "不正利用を報告"
       ]
     },
     "PGP key encryption warning": {
@@ -1680,6 +2169,9 @@
       "Request an invite": [
         ""
       ],
+      "clearing your browser cache": [
+        "ブラウザのキャッシュを消去"
+      ],
       "Pay invoice": [
         ""
       ],
@@ -1692,8 +2184,11 @@
       "Go to subscription plans": [
         ""
       ],
-      "clearing your browser cache": [
-        "ブラウザのキャッシュを消去"
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
       ],
       "My files": [
         "マイファイル"
@@ -1751,6 +2246,15 @@
       "e.g. Julia Smith": [
         "例: Julia Smith"
       ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
       "Mailbox password": [
         "メールボックスのパスワード"
       ],
@@ -1802,8 +2306,59 @@
       "You do not have any contacts to export": [
         ""
       ],
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        ""
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        ""
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        ""
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        ""
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        ""
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        ""
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        ""
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        ""
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        ""
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        ""
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        ""
+      ],
+      "Discount applied for annual billing cycle": [
+        ""
+      ],
+      "Discount applied for two-year billing cycle": [
+        ""
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        ""
+      ],
       "Expired sharing link": [
         "有効期限切れの共有リンク"
+      ],
+      "Inactive sharing link": [
+        ""
       ],
       "Active sharing link": [
         "有効な共有リンク"
@@ -1908,13 +2463,16 @@
       "Contacts could not be merged": [
         ""
       ],
-      "Your local date & time settings seem to be out of sync.": [
-        ""
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         ""
       ],
+      "Your local date & time settings seem to be out of sync.": [
+        ""
+      ],
       "Are you sure you want to discard your import?": [
+        ""
+      ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         ""
       ]
     },
@@ -1955,13 +2513,13 @@
       "Bug reported": [
         "バグの報告が送信されました。"
       ],
+      "You have successfully unsubscribed": [
+        ""
+      ],
       "Preference saved": [
         ""
       ],
       "Keyboard shortcuts preferences updated": [
-        ""
-      ],
-      "Your files were successfully recovered to \"My files\".": [
         ""
       ],
       "Recovery has started.": [
@@ -1975,6 +2533,9 @@
       ],
       "The link to your file was successfully copied.": [
         "ファイルへのリンクがコピーされました。"
+      ],
+      "Your files were successfully recovered to \"My files\".": [
+        ""
       ]
     },
     "Hint": {
@@ -2012,6 +2573,36 @@
         "連絡先グループが更新されました。"
       ],
       "Contact group created": [
+        ""
+      ],
+      "All items will soon be permanently deleted from trash": [
+        "全てのアイテムは間もなくごみ箱から完全に削除されます"
+      ],
+      "Move ${ movingCount } file": [
+        "${ movingCount } 件のファイルの移動"
+      ],
+      "Move ${ movingCount } folder": [
+        "${ movingCount } 件のフォルダーの移動"
+      ],
+      "Move ${ movingCount } item": [
+        "${ movingCount } 件のアイテムの移動"
+      ],
+      "Move ${ itemsToMoveCount } file": [
+        "${ itemsToMoveCount } 件のファイルを移動"
+      ],
+      "Move ${ itemsToMoveCount } folder": [
+        "${ itemsToMoveCount } 件のフォルダーを移動"
+      ],
+      "Move ${ itemsToMoveCount } item": [
+        "${ itemsToMoveCount } 件のアイテムを移動"
+      ],
+      "Your settings have been changed successfully.": [
+        "設定が変更されました。"
+      ],
+      "The link to your file was deleted.": [
+        "ファイルへのリンクが削除されました。"
+      ],
+      "Failed to move, please try again": [
         ""
       ],
       "Not enough space to upload ${ formattedRemaining }": [
@@ -2080,9 +2671,6 @@
       "${ failedMovesCount } item failed to be moved": [
         "${ failedMovesCount } 件のアイテムの移動に失敗しました"
       ],
-      "The link to your file was deleted.": [
-        "ファイルへのリンクが削除されました。"
-      ],
       "${ deletedCount } link to your file was deleted.": [
         "${ deletedCount } 件のリンクが削除されました。"
       ],
@@ -2091,33 +2679,6 @@
       ],
       "${ failedCount } link to your file failed to be deleted.": [
         "${ failedCount } 件のリンクが削除できませんでした。"
-      ],
-      "All items will soon be permanently deleted from trash": [
-        "全てのアイテムは間もなくごみ箱から完全に削除されます"
-      ],
-      "Move ${ movingCount } file": [
-        "${ movingCount } 件のファイルの移動"
-      ],
-      "Move ${ movingCount } folder": [
-        "${ movingCount } 件のフォルダーの移動"
-      ],
-      "Move ${ movingCount } item": [
-        "${ movingCount } 件のアイテムの移動"
-      ],
-      "Move ${ itemsToMoveCount } file": [
-        "${ itemsToMoveCount } 件のファイルを移動"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "${ itemsToMoveCount } 件のフォルダーを移動"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "${ itemsToMoveCount } 件のアイテムを移動"
-      ],
-      "Your settings have been changed successfully.": [
-        "設定が変更されました。"
-      ],
-      "Failed to move, please try again": [
-        ""
       ]
     },
     "Label for contact group name": {
@@ -2257,8 +2818,8 @@
       "Contacts, groups and settings": [
         ""
       ],
-      "Help": [
-        "ヘルプ"
+      "Get help": [
+        ""
       ]
     },
     "Error notification": {
@@ -2390,50 +2951,6 @@
         "アクセスが拒否されました。"
       ]
     },
-    "Message display when a new app version is available": {
-      "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "${ appName } の新しいバージョンが利用可能です。 ${ reloadButton }"
-      ]
-    },
-    "Text": {
-      "Settings": [
-        "設定"
-      ]
-    },
-    "Enabled": {
-      "On": [
-        "オン"
-      ]
-    },
-    "Disabled": {
-      "Off": [
-        "オフ"
-      ]
-    },
-    "Layout mode": {
-      "Column": [
-        ""
-      ],
-      "Row": [
-        ""
-      ]
-    },
-    "Density mode": {
-      "Comfortable": [
-        ""
-      ],
-      "Compact": [
-        ""
-      ]
-    },
-    "Composer mode": {
-      "Maximized": [
-        ""
-      ],
-      "Normal": [
-        ""
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "画像が選択されていません"
@@ -2537,36 +3054,9 @@
         "スクリーンショットの添付"
       ]
     },
-    "Onboarding Proton": {
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        ""
-      ],
-      "Choose a display name": [
-        ""
-      ],
-      "Select a theme": [
-        "テーマを選択"
-      ],
-      "You can change this anytime in your settings.": [
-        ""
-      ],
-      "Discover all Proton services": [
-        ""
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        ""
-      ],
-      "Welcome to Proton": [
-        "Proton へようこそ"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        ""
-      ],
-      "Set up your organization": [
-        ""
-      ],
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        ""
+    "Message display when a new app version is available": {
+      "A new version of ${ appName } is available. ${ reloadButton }.": [
+        "${ appName } の新しいバージョンが利用可能です。 ${ reloadButton }"
       ]
     },
     "Loading info": {
@@ -2587,6 +3077,513 @@
     },
     "Confirm modal title": {
       "Quit import?": [
+        ""
+      ]
+    },
+    "Text": {
+      "Settings": [
+        "設定"
+      ]
+    },
+    "Enabled": {
+      "On": [
+        "オン"
+      ]
+    },
+    "Disabled": {
+      "Off": [
+        "オフ"
+      ]
+    },
+    "Layout mode": {
+      "Column": [
+        ""
+      ],
+      "Row": [
+        ""
+      ]
+    },
+    "Density mode": {
+      "Comfortable": [
+        ""
+      ],
+      "Compact": [
+        ""
+      ]
+    },
+    "Composer mode": {
+      "Maximized": [
+        ""
+      ],
+      "Normal": [
+        ""
+      ]
+    },
+    "Onboarding Proton": {
+      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
+        ""
+      ],
+      "Choose a display name": [
+        ""
+      ],
+      "Select a theme": [
+        "テーマを選択"
+      ],
+      "You can change this anytime in your settings.": [
+        ""
+      ],
+      "Discover all Proton services": [
+        "全ての Proton サービスがここに"
+      ],
+      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
+        "左上のアプリセレクターを使用して VPN、Calendar、Drive などの Proton サービスにアクセスできます。"
+      ],
+      "Welcome to Proton": [
+        "Proton へようこそ"
+      ],
+      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
+        "私たちの使命は、あなたが自分のデータとプライバシーを自分で管理できるインターネットを作ることです。今回、Proton はアップデートされました。安全なインターネットへようこそ。"
+      ],
+      "Set up your organization": [
+        ""
+      ],
+      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
+        ""
+      ]
+    },
+    "Info for cash payment method": {
+      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
+        ""
+      ]
+    },
+    "Billing cycle option": {
+      "Monthly": [
+        ""
+      ],
+      "Annually": [
+        ""
+      ],
+      "Two-year": [
+        ""
+      ],
+      "Annually SAVE 20%": [
+        ""
+      ],
+      "Two years SAVE 33%": [
+        ""
+      ]
+    },
+    "Suffix for price": {
+      "/ month": [
+        ""
+      ]
+    },
+    "info": {
+      "(beta)": [
+        ""
+      ]
+    },
+    "Mail feature": {
+      "Users": [
+        ""
+      ],
+      "Storage": [
+        ""
+      ],
+      "0.5 GB": [
+        ""
+      ],
+      "20 GB": [
+        ""
+      ],
+      "Addresses": [
+        ""
+      ],
+      "Custom email addresses": [
+        ""
+      ],
+      "Messages per day": [
+        ""
+      ],
+      "Folders / labels": [
+        ""
+      ],
+      "Support": [
+        ""
+      ],
+      "Limited": [
+        ""
+      ],
+      "Priority": [
+        ""
+      ],
+      "Encrypted contacts": [
+        ""
+      ],
+      "Contact groups": [
+        ""
+      ],
+      "Address verification": [
+        ""
+      ],
+      "Custom filters": [
+        ""
+      ],
+      "IMAP / SMTP": [
+        ""
+      ],
+      "Autoresponder": [
+        ""
+      ],
+      "Use @pm.me address": [
+        ""
+      ],
+      "Catch-All email": [
+        ""
+      ],
+      "Multi-user support": [
+        ""
+      ]
+    },
+    "Mail feature option": {
+      "5 GB *": [
+        ""
+      ],
+      "5 GB / user *": [
+        ""
+      ],
+      "Unlimited **": [
+        ""
+      ],
+      "Unlimited": [
+        ""
+      ]
+    },
+    "Mail feature option: 5 email addresses / user": {
+      "5 / user *": [
+        ""
+      ]
+    },
+    "information": {
+      "Included": [
+        ""
+      ]
+    },
+    "VPN feature": {
+      "VPN Connections": [
+        ""
+      ],
+      "Speed": [
+        ""
+      ],
+      "VPN servers": [
+        ""
+      ],
+      "Locations/Countries": [
+        ""
+      ],
+      "Adblocker (NetShield)": [
+        ""
+      ],
+      "P2P/BitTorrent": [
+        ""
+      ],
+      "Streaming service support": [
+        ""
+      ],
+      "Tor over VPN": [
+        ""
+      ],
+      "Secure Core servers": [
+        ""
+      ],
+      "${ mailAppName } Visionary": [
+        ""
+      ],
+      "Jurisdiction": [
+        ""
+      ],
+      "Open Source & audited apps": [
+        ""
+      ],
+      "Access blocked content": [
+        ""
+      ],
+      "Strict no-logs policy": [
+        ""
+      ],
+      "Volume/bandwidth cap": [
+        ""
+      ],
+      "User data monetization": [
+        ""
+      ],
+      "Platforms supported": [
+        ""
+      ],
+      "Languages supported": [
+        ""
+      ],
+      "DNS leak prevention": [
+        ""
+      ],
+      "Kill Switch / Always-on VPN": [
+        ""
+      ],
+      "Perfect Forward Secrecy (PFS)": [
+        ""
+      ],
+      "Full Disk Encryption on Servers": [
+        ""
+      ],
+      "Split tunneling": [
+        ""
+      ],
+      "Custom connection profiles": [
+        ""
+      ],
+      "Router support": [
+        ""
+      ],
+      "30-days money-back guarantee": [
+        ""
+      ]
+    },
+    "VPN feature option": {
+      "Medium": [
+        ""
+      ],
+      "High": [
+        ""
+      ],
+      "Highest (up to 10 Gbps)": [
+        ""
+      ],
+      "Switzerland": [
+        ""
+      ],
+      "None": [
+        ""
+      ],
+      "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
+        ""
+      ],
+      "(Android & Windows only)": [
+        ""
+      ]
+    },
+    "Calendar feature": {
+      "Multiple calendars": [
+        ""
+      ],
+      "Calendar import": [
+        ""
+      ],
+      "Recurring events": [
+        ""
+      ],
+      "Invitations": [
+        ""
+      ],
+      "Share Calendar via link": [
+        ""
+      ]
+    },
+    "Calendar feature option": {
+      "20 / user *": [
+        ""
+      ],
+      "20 / user": [
+        ""
+      ]
+    },
+    "Drive feature": {
+      "Access via Web": [
+        ""
+      ],
+      "Upload / download files": [
+        ""
+      ],
+      "Share files via link": [
+        ""
+      ]
+    },
+    "Info concerning plan features": {
+      "Customizable features": [
+        ""
+      ],
+      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
+        ""
+      ]
+    },
+    "Plan Feature": {
+      "${ n } VPN connection": [
+        ""
+      ],
+      "${ n } server": [
+        ""
+      ]
+    },
+    "Netflix": {
+      "Netflix": [
+        ""
+      ]
+    },
+    "Disney": {
+      "Disney+": [
+        ""
+      ]
+    },
+    "Prime Video": {
+      "Prime Video": [
+        ""
+      ]
+    },
+    "Many Others": {
+      "and many others": [
+        ""
+      ]
+    },
+    "Plan feature": {
+      "Built-in Adblocker (NetShield)": [
+        ""
+      ],
+      "Secure Core servers": [
+        ""
+      ],
+      "Streaming service support": [
+        ""
+      ],
+      "Access blocked content": [
+        ""
+      ],
+      "${ freeServers } in ${ freeCountries } country": [
+        ""
+      ],
+      "Medium speed": [
+        ""
+      ],
+      "350+ servers in ${ basicCountries } country": [
+        ""
+      ],
+      "High speed": [
+        ""
+      ],
+      "1200+ servers in ${ plusCountries } country": [
+        ""
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        ""
+      ],
+      "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
+        ""
+      ],
+      "Includes 6 user accounts": [
+        ""
+      ],
+      "Includes Proton Visionary": [
+        ""
+      ],
+      "Early access to new products": [
+        ""
+      ],
+      "Custom email addresses": [
+        ""
+      ],
+      "Access to ${ driveAppName } (beta)": [
+        ""
+      ],
+      "1 user": [
+        ""
+      ],
+      "0.5 GB storage": [
+        ""
+      ],
+      "1 address": [
+        ""
+      ],
+      "3 folders / labels": [
+        ""
+      ],
+      "5 GB storage *": [
+        ""
+      ],
+      "5 addresses": [
+        ""
+      ],
+      "200 folders / labels": [
+        ""
+      ],
+      "1 - 5000 users *": [
+        ""
+      ],
+      "5 GB storage / user": [
+        ""
+      ],
+      "5 addresses / user": [
+        ""
+      ],
+      "Unlimited folders / labels": [
+        ""
+      ],
+      "6 users": [
+        ""
+      ],
+      "20 GB storage": [
+        ""
+      ],
+      "50 addresses": [
+        ""
+      ]
+    },
+    "Price": {
+      "Free": [
+        ""
+      ]
+    },
+    "Countdown unit": {
+      "${ monthsWithYears } month": [
+        ""
+      ],
+      "${ days } day": [
+        ""
+      ]
+    },
+    "Addon": {
+      "+ ${ addresses } email address": [
+        ""
+      ],
+      "+ ${ storage } storage": [
+        ""
+      ],
+      "+ ${ domains } custom domain": [
+        ""
+      ],
+      "+ ${ members } user": [
+        ""
+      ],
+      "+ ${ vpn } connection": [
+        ""
+      ]
+    },
+    "Plan info": {
+      "(current plan)": [
+        ""
+      ]
+    },
+    "Free price": {
+      "Free": [
+        ""
+      ]
+    },
+    "Payment method option": {
+      "New credit/debit card": [
+        ""
+      ],
+      "PayPal": [
+        ""
+      ],
+      "Bitcoin": [
         ""
       ]
     },
@@ -2626,7 +3623,7 @@
     },
     "Label to change composer mode": {
       "Normal": [
-        ""
+        "標準"
       ],
       "Maximized": [
         ""
@@ -2634,12 +3631,6 @@
     },
     "Contact field label": {
       "Name": [
-        ""
-      ],
-      "Compact name": [
-        ""
-      ],
-      "Nickname": [
         ""
       ],
       "Email": [
@@ -2692,18 +3683,6 @@
       ],
       "Member": [
         "メンバー"
-      ],
-      "IMPP": [
-        "IMPP"
-      ],
-      "Related": [
-        ""
-      ],
-      "Categories": [
-        ""
-      ],
-      "Sound": [
-        ""
       ]
     },
     "Contact type label": {
@@ -2733,12 +3712,6 @@
       ]
     },
     "Property type": {
-      "Name": [
-        ""
-      ],
-      "Yomi": [
-        ""
-      ],
       "Email": [
         ""
       ],
@@ -2767,63 +3740,6 @@
         ""
       ],
       "Address": [
-        ""
-      ],
-      "Contact": [
-        ""
-      ],
-      "Acquaintance": [
-        ""
-      ],
-      "Friend": [
-        ""
-      ],
-      "Met": [
-        ""
-      ],
-      "Co-worker": [
-        ""
-      ],
-      "Colleague": [
-        ""
-      ],
-      "Co-resident": [
-        ""
-      ],
-      "Neighbor": [
-        ""
-      ],
-      "Child": [
-        ""
-      ],
-      "Parent": [
-        ""
-      ],
-      "Sibling": [
-        ""
-      ],
-      "Kin": [
-        ""
-      ],
-      "Muse": [
-        ""
-      ],
-      "Crush": [
-        ""
-      ],
-      "Date": [
-        "日付"
-      ],
-      "Sweetheart": [
-        ""
-      ],
-      "Me": [
-        ""
-      ],
-      "Agent": [
-        ""
-      ],
-      "Emergency": [
         ""
       ]
     },

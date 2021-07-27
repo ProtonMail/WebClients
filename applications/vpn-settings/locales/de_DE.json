@@ -5,6 +5,155 @@
   },
   "contexts": {
     "": {},
+    "Error": {
+      "Unknown error": [
+        "Unbekannter Fehler"
+      ],
+      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
+        "Ein Problem ist aufgetreten. Um fortzufahren ${ refresh }. Wenn Ihnen diese Fehlermeldung weiterhin angezeigt wird, wenden Sie sich bitte an unser ${ supportTeam }."
+      ],
+      "Email address invalid": [
+        "Ungültige E‐Mail‐Adresse"
+      ],
+      "This field is required": [
+        "Dieses Feld muss ausgefüllt werden"
+      ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Der von Ihnen verwendete Browser erlaubt es nicht, die Zahlung vollständig zu autorisieren. Bitte verwenden Sie einen anderen Browser oder melden Sie sich über einen Computer an."
+      ],
+      "Checkout expired, please try again.": [
+        "Kaufabwicklung abgelaufen. Bitte versuchen Sie es noch einmal."
+      ],
+      "Invalid code": [
+        "Ungültiger Schlüssel"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Fehler beim Verbinden mit der Bitcoin-API."
+      ],
+      "Amount below minimum.": [
+        "Mindestbetrag unterschritten"
+      ],
+      "Amount above the maximum.": [
+        "Höchstbetrag überschritten"
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Der Mindestbetrag, der gespendet werden kann, beträgt ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Der Mindestbetrag, der hinzugefügt werden kann, beträgt ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "Die akzeptierte Mindestzahlung beträgt ${ _price2 }"
+      ],
+      "Name on card required": [
+        "Karteninhaber erforderlich"
+      ],
+      "Invalid expiration date": [
+        "Ungültiges Ablaufdatum"
+      ],
+      "Invalid card number": [
+        "Kartennummer ungültig"
+      ],
+      "Invalid ${ name } code": [
+        "Ungültiger ${ name }-Code"
+      ],
+      "Invalid postal code": [
+        "Ungültige Postleitzahl"
+      ],
+      "Process aborted": [
+        "Prozess abgebrochen"
+      ],
+      "Payment process cancelled": [
+        "Zahlungsvorgang abgebrochen"
+      ],
+      "Payment process failed": [
+        "Bezahlvorgang fehlgeschlagen"
+      ],
+      "Payment process consumed": [
+        "Zahlungsvorgang abgebrochen"
+      ],
+      "Payment process not supported": [
+        "Zahlungsvorgang nicht unterstützt"
+      ],
+      "Unknown payment token status": [
+        "Unbekannter Zahlungstoken-Status"
+      ],
+      "Tab closed": [
+        "Tab geschlossen"
+      ],
+      "Incorrect mailbox password. Please try again": [
+        "Ungültiges Postfachpasswort. Bitte versuchen Sie es erneut."
+      ],
+      "Incorrect login credentials. Please try again": [
+        "Ungültige Anmeldedaten. Bitte versuchen Sie es erneut."
+      ],
+      "Can't validate email, try again later": [
+        "E-Mail-Adresse konnte nicht bestätigt werden. Bitte versuchen Sie es später noch einmal."
+      ],
+      "Can't validate phone, try again later": [
+        "Gerät konnte nicht bestätigt werden. Bitte versuchen Sie es später noch einmal."
+      ],
+      "Enter 6 digits": [
+        "6 Ziffern eingeben"
+      ],
+      "Invalid verification code": [
+        "Ungültiger Bestätigungsschlüssel"
+      ],
+      "Please enter '${ dangerWord }'": [
+        "Bitte „${ dangerWord }“ eingeben"
+      ],
+      "Please generate keys before you try to change your password.": [
+        "Bitte erzeugen Sie Schlüssel, bevor Sie versuchen, Ihr Passwort zu ändern."
+      ],
+      "Please set a recovery/notification email first": [
+        "Bitte zuerst eine E-Mail-Adresse für Wiederherstellung/Benachrichtigungen festlegen"
+      ],
+      "Please set a recovery phone number first": [
+        "Bitte zuerst eine Wiederherstellungsrufnummer festlegen"
+      ],
+      "Payments are currently not available, please try again later": [
+        "Zahlungen sind derzeit nicht verfügbar, bitte versuchen Sie es später erneut"
+      ],
+      "You have no invoices.": [
+        "Sie haben keine Rechnungen."
+      ],
+      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
+        "Ihr Konto oder Ihre Organisation enthält derzeit eine überfällige Rechnung. Bitte begleichen Sie alle unbezahlten Rechnungen."
+      ],
+      "File has no contents to preview": [
+        "Vorschau nicht möglich, da die Datei keine Daten enthält"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "In dieses Feld müssen mindestens ${ minimumLength } Zeichen eingegeben werden."
+      ],
+      "Email is not valid": [
+        "E-Mail-Adresse ungültig"
+      ],
+      "Not a valid number": [
+        "Keine gültige Zahl"
+      ],
+      "Passwords do not match": [
+        "Passwörter stimmen nicht überein"
+      ],
+      "Request timed out.": [
+        "Zeitüberschreitung bei Anfrage."
+      ],
+      "Signature verification failed": [
+        "Signaturprüfung fehlgeschlagen"
+      ],
+      "Invalid invitation link": [
+        "Ungültiger Einladungslink"
+      ],
+      "Can't check username, try again later": [
+        "Benutzername kann nicht überprüft werden, bitte versuchen Sie es später erneut"
+      ],
+      "Code wrong or not valid anymore": [
+        "Code falsch oder inzwischen ungültig"
+      ],
+      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
+        "Wenn es zu einer Zeitüberschreitung auf Ihrem Fernsehgerät kommt, Klicken Sie auf Ihrem Fernseher auf „Aktualisieren” und geben Sie den Code erneut ein."
+      ]
+    },
     "Info": {
       "No results found": [
         "Keine Ergebnisse gefunden"
@@ -15,232 +164,27 @@
       "Loading": [
         "Lädt"
       ],
-      "reading our two-factor authentication Guide first": [
-        "lesen Sie zuerst unseren Leitfaden zur Zwei-Faktor-Authentifizierung"
+      "Screenshot(s) attached": [
+        "Bildschirmfoto(s) hinzugefügt"
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "Dieser Assistent aktiviert die Zwei-Faktor-Authentifizierung (2FA) auf Ihrem Proton-Konto. Zwei-Faktor-Authentifizierung wird Ihr Proton-Konto sicherer machen, daher empfehlen wir Ihnen, diese zu aktivieren."
+      "Refreshing the page or ${ link } will automatically resolve most issues.": [
+        "Durch das Aktualisieren der Seite oder des ${ link } werden die meisten Probleme automatisch gelöst."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Wenn Sie Zwei-Faktor-Authentifizierung noch nie zuvor verwendet haben, empfehlen wir Ihnen dringend ${ guideButton }."
+      "Loading ${ appName }": [
+        "${ appName } wird geladen"
       ],
-      "Enter key manually instead": [
-        "Schlüssel stattdessen manuell eingeben"
+      "Since you're a loyal user, your account has additional features enabled.": [
+        "Da Sie ein treuer Benutzer sind, wurden Ihrem Konto zusätzliche Funktionen hinzugefügt."
       ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Scannen Sie diesen Code mit Ihrem Zwei‐Faktor‐Authentifizierungsgerät, um Ihr Konto einzurichten. ${ switchButton }."
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        "Durch das Herabstufen auf das Free-Paket verlieren Sie diese Vorteile dauerhaft, auch wenn Sie in Zukunft erneut zu einem kostenpflichtigen Paket umsteigen sollten."
       ],
-      "Scan QR code instead": [
-        "QR‐Code stattdessen scannen"
+      "+${ bonusSpace } bonus storage": [
+        "${ bonusSpace } zusätzlicher Speicherplatz"
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Geben Sie diese Informationen manuell in Ihr Zwei‐Faktor‐Authentifizierungsgerät ein, um Ihr Konto einzurichten. ${ _switchButton }."
-      ],
-      "Two-factor authentication enabled": [
-        "Zwei‐Faktor‐Authentifizierung aktiviert"
-      ],
-      "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Wichtig: Bitte stellen Sie sicher, dass Sie Ihre Wiederherstellungsschlüssel speichern. Andernfalls können Sie den Zugriff auf Ihr Konto dauerhaft verlieren, wenn Sie Ihr Gerät zur Zwei-Faktor-Authentifizierung verlieren."
-      ],
-      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "Wenn Sie Ihr bestätigtes 2-Faktor-Gerät verlieren, können diese Schlüssel anstelle des 6-stelligen Zwei-Faktor-Authentifizierung-Schlüssels verwendet werden, um sich am Konto anzumelden. Jeder Schlüssel kann nur einmal verwendet werden."
-      ],
-      "Two-factor authentication disabled": [
-        "Zwei‐Faktor‐Authentifizierung deaktiviert"
-      ],
-      "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "Die Zwei-Faktor-Authentifizierung fügt Ihrem Konto eine zusätzliche Sicherheitsebene hinzu, falls Ihr Passwort kompromittiert wird."
-      ],
-      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Ihr Abonnement wird von Mozilla verwaltet. Bitte kontaktieren Sie den Mozilla‐Kundendienst."
-      ],
-      "Emailing preference saved": [
-        "E-Mail-Einstellungen gespeichert"
-      ],
-      "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Um über die neuesten Entwicklungen bei den Proton-Produkten informiert zu werden, können Sie unsere verschiedenen Newsletter abonnieren und von Zeit zu Zeit unseren Blog besuchen."
-      ],
-      "Log in to ProtonMail to activate your address": [
-        "Bei ProtonMail anmelden, um Ihre Adresse zu aktivieren"
-      ],
-      "By leaving now, changes may not be saved": [
-        "Durch das Verlassen werden Änderungen möglicherweise nicht gespeichert."
-      ],
-      "Enter your own password (as organization admin) and this user's new password.": [
-        "Geben Sie Ihr eigenes Passwort (das des Organisationsadmins) und das neue Passwort dieses Benutzers ein."
-      ],
-      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Der Zwei-Passwörter-Modus verwendet getrennte Passwörter für die Anmeldung und die Entschlüsselung des Postfachs. Dies bietet in einigen Situationen einen kleinen Sicherheitsvorteil, wir empfehlen jedoch den Ein-Passwort-Modus für die meisten Benutzer. Um in den Zwei-Passwörter-Modus zu wechseln, legen Sie zuerst ein Anmeldepasswort und dann ein Postfachpasswort fest."
-      ],
-      "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "ProtonMail kann auch mit einem einzigen Passwort verwendet werden, das sowohl das Anmelde- als auch das Postfachpasswort ersetzt. Um in den Einzelpasswort-Modus zu wechseln, geben Sie das gewünschte Einzelpasswort ein und klicken Sie auf „Speichern”."
-      ],
-      "Proton can't help you recover any lost passwords": [
-        "Proton kann Ihnen nicht helfen, verlorene Passwörter wiederherzustellen"
-      ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
-        "Achten Sie darauf, dass Sie sich das Passwort zum Anmelden und Entschlüsseln von E-Mails merken. ${ boldAlert }. Wir empfehlen, zuerst eine Wiederherstellungs-E-Mail-Adresse hinzuzufügen."
-      ],
-      "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Der Modus mit zwei Passwörtern erfordert zwei Passwörter: eines zum Anmelden bei Ihrem Konto und eines zum Entschlüsseln Ihrers Postfachs. (Erweitert)"
-      ],
-      "Warning: deletion is permanent": [
-        "Warnung: Die Löschung ist unwiderruflich."
-      ],
-      "If you wish to delete this account in order to combine it with another one, do NOT delete it.": [
-        "Wenn Sie dieses Konto nur deshalb löschen, um es mit einem anderen zu verknüpfen, dürfen Sie es NICHT löschen."
-      ],
-      "Warning: This also removes access to all connected services and deletes all of your contacts": [
-        "Warnung: Dadurch wird außerdem der Zugriff auf alle verbundenen Dienste entfernt und zudem alle Ihre Kontakte gelöscht"
-      ],
-      "Example: ${ mailAppName }, ${ vpnAppName }, ${ driveAppName }, ${ calendarAppName }": [
-        "Beispiel: ${ mailAppName }, ${ vpnAppName }, ${ driveAppName }, ${ calendarAppName }"
-      ],
-      "Please provide an email address in case we need to contact you.": [
-        "Bitte geben Sie eine E‐Mail‐Adresse an, falls wir Sie kontaktieren müssen."
-      ],
-      "Enter your login password to confirm your identity.": [
-        "Geben Sie zur Bestätigung Ihrer Identität Ihr Anmeldepasswort ein."
-      ],
-      "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Ihre ProtonVPN‐ und ProtonMail‐Konten sind miteinander verknüpft. Um beide zu löschen, melden Sie sich bitte unter ${ loginLink } an und löschen Sie dort Ihr Konto."
-      ],
-      "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
-        "Dadurch wird Ihr Konto und alle zugehörigen Daten dauerhaft gelöscht. Dieses Konto kann dann nicht mehr reaktiviert werden."
-      ],
-      "Server load": [
-        "Serverauslastung"
-      ],
-      "Server is currently down": [
-        "Der Server ist derzeit nicht erreichbar"
-      ],
-      "P2P": [
-        "P2P"
-      ],
-      "Tor": [
-        "Tor"
-      ],
-      "Plus or Visionary subscription required": [
-        "Plus‐ oder Visionary‐Abonnement benötigt"
-      ],
-      "Basic, Plus or Visionary subscription required": [
-        "Basic-, Plus‐ oder Visionary‐Abonnement benötigt"
-      ],
-      "${ number } server": [
-        "${ number } Server",
-        "${ number } Server"
-      ],
-      "${ number } city": [
-        "{ number } $ Stadt",
-        "${ number } Städte"
-      ],
-      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "Mit diesen Konfigurationsdateien können Sie festlegen, mit welchem ProtonVPN-Server Sie sich verbinden möchten, wenn Sie eine VPN-App eines Drittanbieters verwenden oder eine VPN-Verbindung auf einem Router einrichten."
-      ],
-      "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
-        "Installieren Sie eine Secure-Core-Konfigurationsdatei, um einen zusätzlichen Schutz vor VPN-Endpunkt-Kompromittierungen zu erhalten."
-      ],
-      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
-        "ProtonVPN Plus oder Visionary für die Secure-Core-Funktion erforderlich."
-      ],
-      "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "Installieren Sie eine Länderkonfigurationsdatei, um eine Verbindung zu einem zufälligen Server in dem Land Ihrer Wahl herzustellen."
-      ],
-      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
-        "ProtonVPN Basic, Plus oder Visionary für die Verbindung auf Länderebene erforderlich."
-      ],
-      "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "Installieren Sie eine Server-Konfigurationsdatei, um eine Verbindung zu einem bestimmten Server im Land Ihrer Wahl herzustellen."
-      ],
-      "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "Installieren Sie eine freie Server-Konfigurationsdatei, um eine Verbindung zu einem bestimmten Server an einem der drei freien Orte herzustellen."
-      ],
-      "Plan upgrade required": [
-        "Paketaufrüstung erforderlich"
-      ],
-      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "Sie können die folgenden Anmeldedaten verwenden, um sich mit einer Open-Source-VPN-App eines Drittanbieters, wie „Tunnelblick” für macOS oder „OpenVPN” für GNU/Linux, mit einem ProtonVPN-Server zu verbinden."
-      ],
-      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
-        "Lassen Sie sich zeigen, wie Sie sich mit VPN-Anwendungen von Drittanbietern bei ProtonVPN anmelden können."
-      ],
-      "We advise you to use official ProtonVPN applications when possible.": [
-        "Wir empfehlen Ihnen, wenn möglich, die offiziellen ProtonVPN-Anwendungen zu verwenden."
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
-        "Sie können keine OpenVPN/IKEv2-Zugangsdaten verwenden, um sich an ProtonVPN-Anwendungen oder der ProtonVPN-Übersicht anzumelden. ${ learnMore }"
-      ],
-      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Verwenden Sie die folgenden Anmeldedaten, wenn Sie sich ohne Anwendung mit ProtonVPN-Servern verbinden möchten. Beispiele für Anwendungsfälle sind: „Tunnelblick” unter macOS, „OpenVPN” unter GNU/Linux."
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
-        "Verwenden Sie die OpenVPN-/IKEv2-Zugangsdaten NICHT in ProtonVPN-Anwendungen oder auf dem ProtonVPN-Dashboard. ${ learnMore }"
-      ],
-      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
-        "Um Ihre Internetverbindung zu schützen, laden Sie die App ProtonVPN für Ihr Gerät herunter, installieren Sie diese und verbinden Sie sich mit einem ProtonVPN-Server."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Bitte überprüfen Sie die Zahlung im neu geöffneten Tab."
-      ],
-      "Verification can take a few minutes.": [
-        "Die Überprüfung kann einige Minuten dauern."
-      ],
-      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Dadurch kann PayPal zur Bezahlung Ihres Proton-Abonnements verwendet werden. Wir werden Sie in einem neuen Browser-Tab zu PayPal weiterleiten. Wenn Sie Popup-Blocker verwenden, deaktivieren Sie diese bitte, bevor Sie fortfahren."
-      ],
-      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "Ihrem PayPal-Konto muss eine Kreditkarte oder ein Bankkonto zugeordnet sein, um es als Zahlungsmethode hinzufügen zu können."
-      ],
-      "20% discount applied to your subscription with coupon ${ code }": [
-        "20% Rabatt auf Ihr Abonnement mit Gutschein ${ code }"
-      ],
-      "Black Friday 2018 applied to your subscription": [
-        "Black Friday 2018 für Ihr Abonnement beantragt"
-      ],
-      "Black Friday 2019 applied to your subscription": [
-        "Black Friday 2019 für Ihr Abonnement eingelöst"
-      ],
-      "Black Friday 2020 newcomer discount has been applied": [
-        "Black Friday 2020 Rabatt für Neukunden wurde eingelöst"
-      ],
-      "Discount applied to your subscription with coupon ${ code }": [
-        "Rabatt auf Ihr Abonnement mit Gutschein ${ code }"
-      ],
-      "You already have a free account": [
-        "Sie verfügen bereits über ein kostenloses Konto"
-      ],
-      "* Customizable features": [
-        "* Anpassbare Funktionen"
-      ],
-      "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
-        "Ihre Zahlungsinformationen sind durch TLS‐Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
-      ],
-      "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "Laden Sie Ihr Konto mit Guthaben auf, mit dem Sie einen neues Paket abonnieren oder Ihr aktuelles Paket verlängern können. Sie erhalten ein Guthaben für jeden ausgegebenen ${ i18nCurrency }."
-      ],
-      "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
-        "Wenn Ihr Abonnement verlängert wird, werden wir alle verfügbaren Guthaben anrechnen, bevor wir die oben genannte Zahlungsmethode belasten."
-      ],
-      "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
-        "Sobald Sie auf „Zurückstufen” klicken, kann es einige Minuten dauern, bis Ihr Konto auf ein kostenfreies Paket herabgestuft wird. "
-      ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.": [
-        "Wenn Sie mit dem Zurückstufen fortfahren, verlieren Sie den Zugang zu den kostenpflichtigen Funktionen von ProtonMail und ProtonVPN."
-      ],
-      "If you proceed with the downgrade, you will lose access to ProtonMail paid features, including additional storage and filters.": [
-        "Wenn Sie mit dem Zurückstufen fortfahren, verlieren Sie den Zugang zu den kostenpflichtigen Funktionen von ProtonMail, einschließlich zusätzlichem Speicherplatz und Filtern."
-      ],
-      "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
-        "Wenn Sie mit dem Zurückstufen fortfahren, verlieren Sie den Zugang zu kostenpflichtigen ProtonVPN-Funktionen."
-      ],
-      "You must disable or remove any additional ProtonMail users, addresses, and custom domains before you can downgrade.": [
-        "Sie müssen alle zusätzlichen ProtonMail-Benutzer, E-Mail-Adressen und benutzerdefinierten Domains deaktivieren oder entfernen, bevor Sie Ihr Paket zurückstufen können."
-      ],
-      "Downgrading will terminate any connections to paid ProtonVPN servers.": [
-        "Das Zurückstufen beendet alle Verbindungen zu kostenpflichtigen ProtonVPN-Servern."
-      ],
-      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Sie müssen zunächst alle zusätzlichen Kalender und alle freigegebenen Kalenderlinks entfernen, bevor Sie Ihr Abonnement kündigen können. ${ linkButton }"
+      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
+        "${ organization.BonusVPN } zusätzliche Verbindung für ProtonVPN (ermöglicht es Ihnen, weitere Geräte mit VPN zu verbinden)",
+        "${ organization.BonusVPN } zusätzliche Verbindungen für ProtonVPN (ermöglicht es Ihnen, weitere Geräte mit dem VPN zu verbinden)"
       ],
       "Billed as ${ billedPrice } per year": [
         "Abgerechnet mit ${ billedPrice } pro Jahr"
@@ -250,6 +194,9 @@
       ],
       "Included": [
         "Enthalten"
+      ],
+      "* Customizable features": [
+        "* Anpassbare Funktionen"
       ],
       "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
         "Greifen Sie auf Ihre Streaming-Dienste zu, wie ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, egal wo Sie sich aufhalten."
@@ -311,6 +258,9 @@
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "Wird am Ende des aktuellen Abrechnungszyklus abgerechnet (wird erneuert am ${ renewalDate })"
       ],
+      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        "Sie müssen zunächst alle zusätzlichen Kalender und alle freigegebenen Kalenderlinks entfernen, bevor Sie Ihr Abonnement kündigen können. ${ linkButton }"
+      ],
       "No payment is required at this time.": [
         "Zu diesem Zeitpunkt ist keine Zahlung erforderlich."
       ],
@@ -323,11 +273,53 @@
       "Not activated": [
         "Nicht aktiviert"
       ],
+      "You already have a free account": [
+        "Sie verfügen bereits über ein kostenloses Konto"
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Dadurch wird Ihr aktuelles kostenpflichtiges Abonnement aufgehoben und Sie verlieren alle angesammelten Treuevorteile. Der verbleibende Restbetrag Ihres Abonnements wird als Kontoguthaben zurückerstattet."
       ],
-      "If you have a gift code, enter it below to apply your discount.": [
-        "Wenn Sie einen Geschenkgutschein haben, geben Sie den Code unten ein, um Ihren Rabatt einzulösen."
+      "Amount below minimum (${ amount }).": [
+        "Mindestbetrag unterschritten. (${ amount })."
+      ],
+      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
+        "Bitcoin-Transaktionen können einige Zeit in Anspruch nehmen, bis sie bestätigt werden (bis zu 24 Stunden). Sobald die Bestätigung erfolgt ist, werden wir Ihrem Konto Guthaben hinzufügen. Nach der Bestätigung der Transaktion können Sie Ihre Rechnung mit dem Guthaben begleichen."
+      ],
+      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
+        "Nachdem Sie Ihre Bitcoin-Zahlung abgeschlossen haben, befolgen Sie bitte die folgenden Anweisungen, um die Aufrüstung durchzuführen."
+      ],
+      "Please verify the payment in the new tab.": [
+        "Bitte bestätigen Sie die Zahlung im neuen Tab."
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Wir werden Sie in einem neuen Browser-Tab zu PayPal weiterleiten, um diese Zahlung abzuschließen. Wenn Sie Popup-Blocker verwenden, deaktivieren Sie diese bitte, um fortzufahren."
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        "Es muss eine Kreditkarte oder ein Bankkonto mit Ihrem PayPal-Konto verknüpft sein. Um dies nachzuholen klicken Sie bitte auf die nachfolgende Schaltfläche."
+      ],
+      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        "Dadurch kann PayPal zur Bezahlung Ihres Proton-Abonnements verwendet werden. Wir werden Sie in einem neuen Browser-Tab zu PayPal weiterleiten. Wenn Sie Popup-Blocker verwenden, deaktivieren Sie diese bitte, bevor Sie fortfahren."
+      ],
+      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
+        "Ihrem PayPal-Konto muss eine Kreditkarte oder ein Bankkonto zugeordnet sein, um es als Zahlungsmethode hinzufügen zu können."
+      ],
+      "We use 3-D Secure to protect your payments.": [
+        "Wir verwenden 3-D Secure zum Schutz Ihrer Zahlungen."
+      ],
+      "20% discount applied to your subscription with coupon ${ code }": [
+        "20% Rabatt auf Ihr Abonnement mit Gutschein ${ code }"
+      ],
+      "Black Friday 2018 applied to your subscription": [
+        "Black Friday 2018 für Ihr Abonnement beantragt"
+      ],
+      "Black Friday 2019 applied to your subscription": [
+        "Black Friday 2019 für Ihr Abonnement eingelöst"
+      ],
+      "Black Friday 2020 newcomer discount has been applied": [
+        "Black Friday 2020 Rabatt für Neukunden wurde eingelöst"
+      ],
+      "Discount applied to your subscription with coupon ${ code }": [
+        "Rabatt auf Ihr Abonnement mit Gutschein ${ code }"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Zahlungen sind durch TLS-Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
@@ -393,45 +385,44 @@
       "Not customizable": [
         "Nicht änderbar"
       ],
-      "Since you're a loyal user, your account has additional features enabled.": [
-        "Da Sie ein treuer Benutzer sind, wurden Ihrem Konto zusätzliche Funktionen hinzugefügt."
+      "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
+        "Sobald Sie auf „Zurückstufen” klicken, kann es einige Minuten dauern, bis Ihr Konto auf ein kostenfreies Paket herabgestuft wird. "
       ],
-      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Durch das Herabstufen auf das Free-Paket verlieren Sie diese Vorteile dauerhaft, auch wenn Sie in Zukunft erneut zu einem kostenpflichtigen Paket umsteigen sollten."
+      "If you proceed with the downgrade, you will lose access to ProtonMail and ProtonVPN paid features.": [
+        "Wenn Sie mit dem Zurückstufen fortfahren, verlieren Sie den Zugang zu den kostenpflichtigen Funktionen von ProtonMail und ProtonVPN."
       ],
-      "+${ bonusSpace } bonus storage": [
-        "${ bonusSpace } zusätzlicher Speicherplatz"
+      "If you proceed with the downgrade, you will lose access to ProtonMail paid features, including additional storage and filters.": [
+        "Wenn Sie mit dem Zurückstufen fortfahren, verlieren Sie den Zugang zu den kostenpflichtigen Funktionen von ProtonMail, einschließlich zusätzlichem Speicherplatz und Filtern."
       ],
-      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
-        "${ organization.BonusVPN } zusätzliche Verbindung für ProtonVPN (ermöglicht es Ihnen, weitere Geräte mit VPN zu verbinden)",
-        "${ organization.BonusVPN } zusätzliche Verbindungen für ProtonVPN (ermöglicht es Ihnen, weitere Geräte mit dem VPN zu verbinden)"
+      "If you proceed with the downgrade, you will lose access to ProtonVPN paid features.": [
+        "Wenn Sie mit dem Zurückstufen fortfahren, verlieren Sie den Zugang zu kostenpflichtigen ProtonVPN-Funktionen."
+      ],
+      "You must disable or remove any additional ProtonMail users, addresses, and custom domains before you can downgrade.": [
+        "Sie müssen alle zusätzlichen ProtonMail-Benutzer, E-Mail-Adressen und benutzerdefinierten Domains deaktivieren oder entfernen, bevor Sie Ihr Paket zurückstufen können."
+      ],
+      "Downgrading will terminate any connections to paid ProtonVPN servers.": [
+        "Das Zurückstufen beendet alle Verbindungen zu kostenpflichtigen ProtonVPN-Servern."
       ],
       "There are no billing details available for your current subscription.": [
         "Für Ihr aktuelles Abonnement sind keine Zahlungsinformationen verfügbar."
       ],
-      "Amount below minimum (${ amount }).": [
-        "Mindestbetrag unterschritten. (${ amount })."
+      "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
+        "Ihre Zahlungsinformationen sind durch TLS‐Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
       ],
-      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Bitcoin-Transaktionen können einige Zeit in Anspruch nehmen, bis sie bestätigt werden (bis zu 24 Stunden). Sobald die Bestätigung erfolgt ist, werden wir Ihrem Konto Guthaben hinzufügen. Nach der Bestätigung der Transaktion können Sie Ihre Rechnung mit dem Guthaben begleichen."
+      "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
+        "Laden Sie Ihr Konto mit Guthaben auf, mit dem Sie einen neues Paket abonnieren oder Ihr aktuelles Paket verlängern können. Sie erhalten ein Guthaben für jeden ausgegebenen ${ i18nCurrency }."
       ],
-      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Nachdem Sie Ihre Bitcoin-Zahlung abgeschlossen haben, befolgen Sie bitte die folgenden Anweisungen, um die Aufrüstung durchzuführen."
+      "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
+        "Wenn Ihr Abonnement verlängert wird, werden wir alle verfügbaren Guthaben anrechnen, bevor wir die oben genannte Zahlungsmethode belasten."
       ],
-      "Please verify the payment in the new tab.": [
-        "Bitte bestätigen Sie die Zahlung im neuen Tab."
+      "If you have a gift code, enter it below to apply your discount.": [
+        "Wenn Sie einen Geschenkgutschein haben, geben Sie den Code unten ein, um Ihren Rabatt einzulösen."
       ],
-      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Wir werden Sie in einem neuen Browser-Tab zu PayPal weiterleiten, um diese Zahlung abzuschließen. Wenn Sie Popup-Blocker verwenden, deaktivieren Sie diese bitte, um fortzufahren."
+      "Please verify payment at the new tab which was opened.": [
+        "Bitte überprüfen Sie die Zahlung im neu geöffneten Tab."
       ],
-      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Es muss eine Kreditkarte oder ein Bankkonto mit Ihrem PayPal-Konto verknüpft sein. Um dies nachzuholen klicken Sie bitte auf die nachfolgende Schaltfläche."
-      ],
-      "We use 3-D Secure to protect your payments.": [
-        "Wir verwenden 3-D Secure zum Schutz Ihrer Zahlungen."
-      ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Bei Visa, MasterCard und Discover die 3 Ziffern auf der Rückseite Ihrer Karte. Bei American Express die 4 Ziffern auf der Vorderseite Ihrer Karte."
+      "Verification can take a few minutes.": [
+        "Die Überprüfung kann einige Minuten dauern."
       ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "Ihre Bank benötigt aus Sicherheitsgründen eine 3-D-Secure-Überprüfung."
@@ -460,11 +451,89 @@
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Bitte versuchen Sie es erneut, verwenden Sie eine andere Zahlungsmethode oder wenden Sie sich an Ihre Bank."
       ],
-      "You have no saved payment methods.": [
-        "Sie haben keine gespeicherten Zahlungsmethoden."
+      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "Bei Visa und MasterCard — die 3-stellige Ziffer auf der Rückseite Ihrer Karte. Bei American Express — die 4-stellige Ziffer auf der Vorderseite Ihrer Karte."
       ],
       "Expired": [
         "Abgelaufen"
+      ],
+      "You have no saved payment methods.": [
+        "Sie haben keine gespeicherten Zahlungsmethoden."
+      ],
+      "here": [
+        "hier"
+      ],
+      "This account has been suspended due to a potential policy violation.": [
+        "Dieses Konto wurde aufgrund eines möglichen Verstoßes gegen die Richtlinien gesperrt."
+      ],
+      "If you believe this is in error, please contact us ${ contactLink }.": [
+        "Wenn Sie glauben, dass dies ungerechtfertigt ist, kontaktieren Sie uns bitte ${ contactLink }."
+      ],
+      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
+        "Ihr Proton-Konto ist derzeit gesperrt. Um Ihr Konto weiter nutzen zu können, begleichen Sie bitte alle überfälligen Rechnungen."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Möchten Sie einen neuen Bestätigungsschlüssel anfordern oder eine alternative Bestätigungsmethode verwenden?"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Bestätigungscode eingeben, der an ${ destinationText } gesendet wurde."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Sollten Sie die E-Mail nicht in Ihrem Posteingang vorfinden, überprüfen Sie bitte Ihren Spam-Ordner."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
+        "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese die falsche E-Mail-Adresse ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese die falsche Rufnummer ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "Um Spam und Missbrauch zu bekämpfen, wird überprüft, ob Sie ein Mensch sind."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "Ihre E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Ihre Rufnummer wird nur für diese einmalige Überprüfung verwendet."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Wenn Sie Probleme bei der Erstellung Ihres Kontos haben, stellen Sie bitte eine Anfrage, und wir werden Ihnen innerhalb eines Werktages antworten."
+      ],
+      "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
+        "Geben Sie Ihre E-Mail-Adresse für die Wiederherstellung ein und wir senden Ihnen Ihre(n) Benutzernamen zu. (Dies ist in der Regel die E-Mail-Adresse, die Sie bei der Anmeldung angegeben haben.)"
+      ],
+      "Done! We sent a code to ${ destination }": [
+        "Geschafft! Ihnen wurde ein Code an ${ destination } gesendet."
+      ],
+      "This can take a few seconds or a few minutes depending on your device.": [
+        "Dies kann je nach Gerät einige Sekunden oder einige Minuten dauern."
+      ],
+      "Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?": [
+        "Das Zurücksetzen Ihres Passworts bedeutet, dass Ihr altes Passwort nicht mehr funktionieren wird. Möchten Sie Ihr Passwort wirklich zurücksetzen?"
+      ],
+      "We will send a reset code to your recovery email to reset your password.": [
+        "Wir senden Ihnen einen Zurücksetzungsschlüssel an Ihre Wiederherstellungs-E-Mail-Adresse, um Ihr Passwort zurückzusetzen."
+      ],
+      "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
+        "Wir haben einen Schlüssel zum Zurücksetzen an Ihre Wiederherstellungs‐E‐Mail‐Adresse gesendet, der ohne das Anfordern eines weiteren eine Stunde lang gültig ist. Bitte unten eingeben, um fortzufahren."
+      ],
+      "IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it.": [
+        "WICHTIG: Verlassen oder schließen Sie diese Seite nicht. Sie müssen den Zurückstellungscode nach dem Erhalt in das untenstehende Feld eingeben."
+      ],
+      "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
+        "Das Zurücksetzen Ihres Passworts setzt Ihre Verschlüsselungscodes für alle Proton-bezogenen Dienste (Mail und VPN) zurück. Sie werden Ihre bestehenden Nachrichten nicht mehr lesen können. Wenn Sie Ihre ProtonMail-Anmeldeinformationen kennen, setzen Sie diese NICHT zurück. Sie können sich hiermit ${ hereLink } anmelden."
+      ],
+      "ALL YOUR DATA WILL BE LOST!": [
+        "Alle Ihre Daten gehen unwiderruflich verloren!"
+      ],
+      "If you remember your old password later, you can recover your existing messages.": [
+        "Sollten Sie sich später an Ihr altes Passwort erinnern, können Sie Ihre vorhandenen Nachrichten wiederherstellen."
+      ],
+      "Keep this password safe, it cannot be recovered.": [
+        "Bewahren Sie dieses Passwort sicher auf, es kann nicht wiederhergestellt werden."
+      ],
+      "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
+        "Vergessen Sie dieses Passwort NICHT. Sollten Sie es vergessen, können Sie sich weder anmelden noch Ihre Nachrichten entschlüsseln."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Ihr Konto weist mindestens eine überfällige Rechnung auf. Ihr Zugang wurde eingeschränkt. ${ payInvoiceLink }"
@@ -505,8 +574,187 @@
       "Internet connection lost. Please check your device's connectivity.": [
         "Internetverbindung unterbrochen. Bitte überprüfen Sie die Konnektivität Ihres Geräts."
       ],
-      "Loading ${ appName }": [
-        "${ appName } wird geladen"
+      "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
+        "Ihr Abonnement wird von Mozilla verwaltet. Bitte kontaktieren Sie den Mozilla‐Kundendienst."
+      ],
+      "Log in to ProtonMail to activate your address": [
+        "Bei ProtonMail anmelden, um Ihre Adresse zu aktivieren"
+      ],
+      "By leaving now, changes may not be saved": [
+        "Durch das Verlassen werden Änderungen möglicherweise nicht gespeichert."
+      ],
+      "Enter your own password (as organization admin) and this user's new password.": [
+        "Geben Sie Ihr eigenes Passwort (das des Organisationsadmins) und das neue Passwort dieses Benutzers ein."
+      ],
+      "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
+        "Der Zwei-Passwörter-Modus verwendet getrennte Passwörter für die Anmeldung und die Entschlüsselung des Postfachs. Dies bietet in einigen Situationen einen kleinen Sicherheitsvorteil, wir empfehlen jedoch den Ein-Passwort-Modus für die meisten Benutzer. Um in den Zwei-Passwörter-Modus zu wechseln, legen Sie zuerst ein Anmeldepasswort und dann ein Postfachpasswort fest."
+      ],
+      "ProtonMail can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
+        "ProtonMail kann auch mit einem einzigen Passwort verwendet werden, das sowohl das Anmelde- als auch das Postfachpasswort ersetzt. Um in den Einzelpasswort-Modus zu wechseln, geben Sie das gewünschte Einzelpasswort ein und klicken Sie auf „Speichern”."
+      ],
+      "Proton can't help you recover any lost passwords": [
+        "Proton kann Ihnen nicht helfen, verlorene Passwörter wiederherzustellen"
+      ],
+      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert }. We recommend adding a recovery email first.": [
+        "Achten Sie darauf, dass Sie sich das Passwort zum Anmelden und Entschlüsseln von E-Mails merken. ${ boldAlert }. Wir empfehlen, zuerst eine Wiederherstellungs-E-Mail-Adresse hinzuzufügen."
+      ],
+      "reading our two-factor authentication Guide first": [
+        "lesen Sie zuerst unseren Leitfaden zur Zwei-Faktor-Authentifizierung"
+      ],
+      "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
+        "Dieser Assistent aktiviert die Zwei-Faktor-Authentifizierung (2FA) auf Ihrem Proton-Konto. Zwei-Faktor-Authentifizierung wird Ihr Proton-Konto sicherer machen, daher empfehlen wir Ihnen, diese zu aktivieren."
+      ],
+      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
+        "Wenn Sie Zwei-Faktor-Authentifizierung noch nie zuvor verwendet haben, empfehlen wir Ihnen dringend ${ guideButton }."
+      ],
+      "Enter key manually instead": [
+        "Schlüssel stattdessen manuell eingeben"
+      ],
+      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
+        "Scannen Sie diesen Code mit Ihrem Zwei‐Faktor‐Authentifizierungsgerät, um Ihr Konto einzurichten. ${ switchButton }."
+      ],
+      "Scan QR code instead": [
+        "QR‐Code stattdessen scannen"
+      ],
+      "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
+        "Geben Sie diese Informationen manuell in Ihr Zwei‐Faktor‐Authentifizierungsgerät ein, um Ihr Konto einzurichten. ${ _switchButton }."
+      ],
+      "Two-factor authentication enabled": [
+        "Zwei‐Faktor‐Authentifizierung aktiviert"
+      ],
+      "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
+        "Wichtig: Bitte stellen Sie sicher, dass Sie Ihre Wiederherstellungsschlüssel speichern. Andernfalls können Sie den Zugriff auf Ihr Konto dauerhaft verlieren, wenn Sie Ihr Gerät zur Zwei-Faktor-Authentifizierung verlieren."
+      ],
+      "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
+        "Wenn Sie Ihr bestätigtes 2-Faktor-Gerät verlieren, können diese Schlüssel anstelle des 6-stelligen Zwei-Faktor-Authentifizierung-Schlüssels verwendet werden, um sich am Konto anzumelden. Jeder Schlüssel kann nur einmal verwendet werden."
+      ],
+      "Two-factor authentication disabled": [
+        "Zwei‐Faktor‐Authentifizierung deaktiviert"
+      ],
+      "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
+        "Die Zwei-Faktor-Authentifizierung fügt Ihrem Konto eine zusätzliche Sicherheitsebene hinzu, falls Ihr Passwort kompromittiert wird."
+      ],
+      "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
+        "Der Modus mit zwei Passwörtern erfordert zwei Passwörter: eines zum Anmelden bei Ihrem Konto und eines zum Entschlüsseln Ihrers Postfachs. (Erweitert)"
+      ],
+      "Emailing preference saved": [
+        "E-Mail-Einstellungen gespeichert"
+      ],
+      "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
+        "Um über die neuesten Entwicklungen bei den Proton-Produkten informiert zu werden, können Sie unsere verschiedenen Newsletter abonnieren und von Zeit zu Zeit unseren Blog besuchen."
+      ],
+      "Warning: deletion is permanent": [
+        "Warnung: Die Löschung ist unwiderruflich."
+      ],
+      "If you wish to delete this account in order to combine it with another one, do NOT delete it.": [
+        "Wenn Sie dieses Konto nur deshalb löschen, um es mit einem anderen zu verknüpfen, dürfen Sie es NICHT löschen."
+      ],
+      "Warning: This also removes access to all connected services and deletes all of your contacts": [
+        "Warnung: Dadurch wird außerdem der Zugriff auf alle verbundenen Dienste entfernt und zudem alle Ihre Kontakte gelöscht"
+      ],
+      "Example: ${ mailAppName }, ${ vpnAppName }, ${ driveAppName }, ${ calendarAppName }": [
+        "Beispiel: ${ mailAppName }, ${ vpnAppName }, ${ driveAppName }, ${ calendarAppName }"
+      ],
+      "Please provide an email address in case we need to contact you.": [
+        "Bitte geben Sie eine E‐Mail‐Adresse an, falls wir Sie kontaktieren müssen."
+      ],
+      "Enter your login password to confirm your identity.": [
+        "Geben Sie zur Bestätigung Ihrer Identität Ihr Anmeldepasswort ein."
+      ],
+      "Your ProtonVPN and ProtonMail accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
+        "Ihre ProtonVPN‐ und ProtonMail‐Konten sind miteinander verknüpft. Um beide zu löschen, melden Sie sich bitte unter ${ loginLink } an und löschen Sie dort Ihr Konto."
+      ],
+      "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
+        "Dadurch wird Ihr Konto und alle zugehörigen Daten dauerhaft gelöscht. Dieses Konto kann dann nicht mehr reaktiviert werden."
+      ],
+      "You can use the following credentials to connect to a ProtonVPN server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        "Sie können die folgenden Anmeldedaten verwenden, um sich mit einer Open-Source-VPN-App eines Drittanbieters, wie „Tunnelblick” für macOS oder „OpenVPN” für GNU/Linux, mit einem ProtonVPN-Server zu verbinden."
+      ],
+      "Learn how to log in to ProtonVPN with third-party VPN applications.": [
+        "Lassen Sie sich zeigen, wie Sie sich mit VPN-Anwendungen von Drittanbietern bei ProtonVPN anmelden können."
+      ],
+      "We advise you to use official ProtonVPN applications when possible.": [
+        "Wir empfehlen Ihnen, wenn möglich, die offiziellen ProtonVPN-Anwendungen zu verwenden."
+      ],
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ProtonVPN applications or the ProtonVPN dashboard. ${ learnMore }": [
+        "Sie können keine OpenVPN/IKEv2-Zugangsdaten verwenden, um sich an ProtonVPN-Anwendungen oder der ProtonVPN-Übersicht anzumelden. ${ learnMore }"
+      ],
+      "Use the following credentials when connecting to ProtonVPN servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Verwenden Sie die folgenden Anmeldedaten, wenn Sie sich ohne Anwendung mit ProtonVPN-Servern verbinden möchten. Beispiele für Anwendungsfälle sind: „Tunnelblick” unter macOS, „OpenVPN” unter GNU/Linux."
+      ],
+      "Do not use the OpenVPN / IKEv2 credentials in ProtonVPN applications or on the ProtonVPN dashboard. ${ learnMore }": [
+        "Verwenden Sie die OpenVPN-/IKEv2-Zugangsdaten NICHT in ProtonVPN-Anwendungen oder auf dem ProtonVPN-Dashboard. ${ learnMore }"
+      ],
+      "To secure your internet connection, download and install the ProtonVPN application for your device and connect to a ProtonVPN server.": [
+        "Um Ihre Internetverbindung zu schützen, laden Sie die App ProtonVPN für Ihr Gerät herunter, installieren Sie diese und verbinden Sie sich mit einem ProtonVPN-Server."
+      ],
+      "Server load": [
+        "Serverauslastung"
+      ],
+      "Server is currently down": [
+        "Der Server ist derzeit nicht erreichbar"
+      ],
+      "P2P": [
+        "P2P"
+      ],
+      "Tor": [
+        "Tor"
+      ],
+      "Plus or Visionary subscription required": [
+        "Plus‐ oder Visionary‐Abonnement benötigt"
+      ],
+      "Basic, Plus or Visionary subscription required": [
+        "Basic-, Plus‐ oder Visionary‐Abonnement benötigt"
+      ],
+      "${ number } server": [
+        "${ number } Server",
+        "${ number } Server"
+      ],
+      "${ number } city": [
+        "{ number } $ Stadt",
+        "${ number } Städte"
+      ],
+      "These configuration files let you choose which ProtonVPN server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        "Mit diesen Konfigurationsdateien können Sie festlegen, mit welchem ProtonVPN-Server Sie sich verbinden möchten, wenn Sie eine VPN-App eines Drittanbieters verwenden oder eine VPN-Verbindung auf einem Router einrichten."
+      ],
+      "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
+        "Installieren Sie eine Secure-Core-Konfigurationsdatei, um einen zusätzlichen Schutz vor VPN-Endpunkt-Kompromittierungen zu erhalten."
+      ],
+      "ProtonVPN Plus or Visionary required for Secure Core feature.": [
+        "ProtonVPN Plus oder Visionary für die Secure-Core-Funktion erforderlich."
+      ],
+      "Install a Country configuration file to connect to a random server in the country of your choice.": [
+        "Installieren Sie eine Länderkonfigurationsdatei, um eine Verbindung zu einem zufälligen Server in dem Land Ihrer Wahl herzustellen."
+      ],
+      "ProtonVPN Basic, Plus or Visionary required for Country level connection.": [
+        "ProtonVPN Basic, Plus oder Visionary für die Verbindung auf Länderebene erforderlich."
+      ],
+      "Install a Server configuration file to connect to a specific server in the country of your choice.": [
+        "Installieren Sie eine Server-Konfigurationsdatei, um eine Verbindung zu einem bestimmten Server im Land Ihrer Wahl herzustellen."
+      ],
+      "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
+        "Installieren Sie eine freie Server-Konfigurationsdatei, um eine Verbindung zu einem bestimmten Server an einem der drei freien Orte herzustellen."
+      ],
+      "Plan upgrade required": [
+        "Paketaufrüstung erforderlich"
+      ],
+      "Not set": [
+        "Nicht festgelegt"
+      ],
+      "We recommend adding a linked email or phone number so you can recover your account if you lose your password.": [
+        "Wir empfehlen, eine verknüpfte E-Mail-Adresse oder Telefonnummer hinzuzufügen, damit Sie Ihr Konto wiederherstellen können, wenn Sie Ihr Passwort verlieren."
+      ],
+      "We recommend adding a linked email so you can recover your account if you lose your password.": [
+        "Wir empfehlen, eine verknüpfte E-Mail-Adresse hinzuzufügen, damit Sie Ihr Konto wiederherstellen können, wenn Sie Ihr Passwort verlieren."
+      ],
+      "Disabling this will prevent this email from being used for account recovery": [
+        "Wenn Sie dies deaktivieren, wird diese E-Mail nicht für die Kontowiederherstellung verwendet"
+      ],
+      "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
+        "Wenn Benachrichtigungen aktiviert sind, senden wir eine Meldung an Ihre Wiederherstellungs‐/Benachrichtigungsadresse, wenn neue Nachrichten in Ihrem ProtonMail‐Konto vorhanden sind."
+      ],
+      "Disabling this will prevent this phone number from being used for account recovery": [
+        "Wenn Sie dies deaktivieren, kann diese Telefonnummer nicht mehr für die Kontowiederherstellung verwendet werden"
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Sie können Ihre Rechnungen für Abrechnungszwecke anpassen und herunterladen."
@@ -529,105 +777,6 @@
       "of": [
         "von"
       ],
-      "Not set": [
-        "Nicht festgelegt"
-      ],
-      "We recommend adding a linked email or phone number so you can recover your account if you lose your password.": [
-        "Wir empfehlen, eine verknüpfte E-Mail-Adresse oder Telefonnummer hinzuzufügen, damit Sie Ihr Konto wiederherstellen können, wenn Sie Ihr Passwort verlieren."
-      ],
-      "We recommend adding a linked email so you can recover your account if you lose your password.": [
-        "Wir empfehlen, eine verknüpfte E-Mail-Adresse hinzuzufügen, damit Sie Ihr Konto wiederherstellen können, wenn Sie Ihr Passwort verlieren."
-      ],
-      "Disabling this will prevent this email from being used for account recovery": [
-        "Wenn Sie dies deaktivieren, wird diese E-Mail nicht für die Kontowiederherstellung verwendet"
-      ],
-      "When notifications are enabled, we'll send an alert to your recovery/notification address if you have new messages in your ProtonMail account.": [
-        "Wenn Benachrichtigungen aktiviert sind, senden wir eine Meldung an Ihre Wiederherstellungs‐/Benachrichtigungsadresse, wenn neue Nachrichten in Ihrem ProtonMail‐Konto vorhanden sind."
-      ],
-      "Disabling this will prevent this phone number from being used for account recovery": [
-        "Wenn Sie dies deaktivieren, kann diese Telefonnummer nicht mehr für die Kontowiederherstellung verwendet werden"
-      ],
-      "Screenshot(s) attached": [
-        "Bildschirmfoto(s) hinzugefügt"
-      ],
-      "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Durch das Aktualisieren der Seite oder des ${ link } werden die meisten Probleme automatisch gelöst."
-      ],
-      "Done! We sent a code to ${ destination }": [
-        "Geschafft! Ihnen wurde ein Code an ${ destination } gesendet."
-      ],
-      "This can take a few seconds or a few minutes depending on your device.": [
-        "Dies kann je nach Gerät einige Sekunden oder einige Minuten dauern."
-      ],
-      "Resetting your password means your old password and the places it is saved will no longer work. Are you sure you want to reset your password?": [
-        "Das Zurücksetzen Ihres Passworts bedeutet, dass Ihr altes Passwort nicht mehr funktionieren wird. Möchten Sie Ihr Passwort wirklich zurücksetzen?"
-      ],
-      "We will send a reset code to your recovery email to reset your password.": [
-        "Wir senden Ihnen einen Zurücksetzungsschlüssel an Ihre Wiederherstellungs-E-Mail-Adresse, um Ihr Passwort zurückzusetzen."
-      ],
-      "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
-        "Wir haben einen Schlüssel zum Zurücksetzen an Ihre Wiederherstellungs‐E‐Mail‐Adresse gesendet, der ohne das Anfordern eines weiteren eine Stunde lang gültig ist. Bitte unten eingeben, um fortzufahren."
-      ],
-      "IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it.": [
-        "WICHTIG: Verlassen oder schließen Sie diese Seite nicht. Sie müssen den Zurückstellungscode nach dem Erhalt in das untenstehende Feld eingeben."
-      ],
-      "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ProtonMail credentials, do NOT reset. You can log in with them ${ hereLink }.": [
-        "Das Zurücksetzen Ihres Passworts setzt Ihre Verschlüsselungscodes für alle Proton-bezogenen Dienste (Mail und VPN) zurück. Sie werden Ihre bestehenden Nachrichten nicht mehr lesen können. Wenn Sie Ihre ProtonMail-Anmeldeinformationen kennen, setzen Sie diese NICHT zurück. Sie können sich hiermit ${ hereLink } anmelden."
-      ],
-      "ALL YOUR DATA WILL BE LOST!": [
-        "Alle Ihre Daten gehen unwiderruflich verloren!"
-      ],
-      "If you remember your old password later, you can recover your existing messages.": [
-        "Sollten Sie sich später an Ihr altes Passwort erinnern, können Sie Ihre vorhandenen Nachrichten wiederherstellen."
-      ],
-      "Keep this password safe, it cannot be recovered.": [
-        "Bewahren Sie dieses Passwort sicher auf, es kann nicht wiederhergestellt werden."
-      ],
-      "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "Vergessen Sie dieses Passwort NICHT. Sollten Sie es vergessen, können Sie sich weder anmelden noch Ihre Nachrichten entschlüsseln."
-      ],
-      "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
-        "Geben Sie Ihre E-Mail-Adresse für die Wiederherstellung ein und wir senden Ihnen Ihre(n) Benutzernamen zu. (Dies ist in der Regel die E-Mail-Adresse, die Sie bei der Anmeldung angegeben haben.)"
-      ],
-      "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Ihr Proton-Konto ist derzeit gesperrt. Um Ihr Konto weiter nutzen zu können, begleichen Sie bitte alle überfälligen Rechnungen."
-      ],
-      "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Möchten Sie einen neuen Bestätigungsschlüssel anfordern oder eine alternative Bestätigungsmethode verwenden?"
-      ],
-      "Enter the verification code that was sent to ${ destinationText }.": [
-        "Bestätigungscode eingeben, der an ${ destinationText } gesendet wurde."
-      ],
-      "If you don't find the email in your inbox, please check your spam folder.": [
-        "Sollten Sie die E-Mail nicht in Ihrem Posteingang vorfinden, überprüfen Sie bitte Ihren Spam-Ordner."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese die falsche E-Mail-Adresse ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese die falsche Rufnummer ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
-      ],
-      "To fight spam and abuse, please verify you are human.": [
-        "Um Spam und Missbrauch zu bekämpfen, wird überprüft, ob Sie ein Mensch sind."
-      ],
-      "Your email will only be used for this one-time verification.": [
-        "Ihre E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
-      ],
-      "Your phone number will only be used for this one-time verification.": [
-        "Ihre Rufnummer wird nur für diese einmalige Überprüfung verwendet."
-      ],
-      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Wenn Sie Probleme bei der Erstellung Ihres Kontos haben, stellen Sie bitte eine Anfrage, und wir werden Ihnen innerhalb eines Werktages antworten."
-      ],
-      "here": [
-        "hier"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Dieses Konto wurde aufgrund eines möglichen Verstoßes gegen die Richtlinien gesperrt."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Wenn Sie glauben, dass dies ungerechtfertigt ist, kontaktieren Sie uns bitte ${ contactLink }."
-      ],
       "Session timed out.": [
         "Zeitüberschreitung der Sitzung."
       ],
@@ -637,9 +786,6 @@
       "Servers are unreachable.": [
         "Server sind nicht erreichbar."
       ],
-      "Upgrade to a paid plan to access premium features and increase your storage space.": [
-        "Wechseln Sie zu einem kostenpflichtigen Paket, um Premium-Funktionen freizuschalten und Ihren Speicherplatz zu vergrößern."
-      ],
       "billed as ${ billedPrice }": [
         "abgerechnet als ${ billedPrice }"
       ],
@@ -648,6 +794,9 @@
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Leiten Sie Ihren Internetverkehr mit einem einzigen Klick durch das Tor-Netzwerk."
+      ],
+      "Upgrade to a paid plan to access premium features and increase your storage space.": [
+        "Wechseln Sie zu einem kostenpflichtigen Paket, um Premium-Funktionen freizuschalten und Ihren Speicherplatz zu vergrößern."
       ],
       "By clicking Create account you agree to abide by our ${ termsOfServiceLink } and ${ privacyPolicyLink }.": [
         "Durch das Klicken auf Erstellen stimmen unseren ${ termsOfServiceLink } und ${ privacyPolicyLink } zu."
@@ -708,92 +857,35 @@
       "Copy": [
         "Kopieren"
       ],
-      "Key": [
-        "Schlüssel"
+      "Display name": [
+        "Name anzeigen"
       ],
-      "Interval": [
-        "Zeitraum"
+      "Operating system": [
+        "Betriebssystem"
       ],
-      "Digits": [
-        "Ziffern"
+      "Operating system version": [
+        "Version des Betriebssystems"
       ],
-      "Two-factor authentication": [
-        "Zwei‐Faktor‐Authentifizierung"
-      ],
-      "Name": [
-        "Name"
-      ],
-      "ProtonMail address": [
-        "ProtonMail‐Adresse"
+      "Proton username": [
+        "Proton‐Benutzername"
       ],
       "Email address": [
         "E‐Mail‐Adresse"
       ],
-      "Your password (admin)": [
-        "Ihr Passwort (Admin)"
+      "Category": [
+        "Kategorie"
       ],
-      "User's new password": [
-        "Neues Passwort des Benutzers"
+      "What happened?": [
+        "Problembeschreibung"
       ],
-      "Confirm new password": [
-        "Neues Passwort bestätigen"
+      "System information": [
+        "Systeminformationen"
       ],
-      "Old password": [
-        "Altes Passwort"
+      "Browser": [
+        "Browser"
       ],
-      "New password": [
-        "Neues Passwort"
-      ],
-      "Confirm password": [
-        "Passwort bestätigen"
-      ],
-      "Old login password": [
-        "Altes Anmeldepasswort"
-      ],
-      "New login password": [
-        "Neues Anmeldepasswort"
-      ],
-      "Confirm login password": [
-        "Anmeldepasswort bestätigen"
-      ],
-      "New mailbox password": [
-        "Neues Postfach-Passwort"
-      ],
-      "Confirm mailbox password": [
-        "Postfach-Passwort bestätigen"
-      ],
-      "Two-factor authentication code": [
-        "Zwei-Faktor-Authentifizierungsschlüssel"
-      ],
-      "Two-password mode": [
-        "Zwei-Passwort-Modus"
-      ],
-      "Mailbox password": [
-        "Mailbox‐Passwort"
-      ],
-      "What is the main reason you are deleting your account?": [
-        "Welches sind die Hauptgründe für die Löschung Ihres Kontos?"
-      ],
-      "We are sorry to see you go. Please explain why you are leaving to help us to improve.": [
-        "Wir bedauern es sehr, dass Sie ProtonMail nicht mehr nutzen möchten. Bitte teilen Sie uns Ihre Gründe mit, damit Sie uns helfen können, uns zu verbessern."
-      ],
-      "Login password": [
-        "Anmeldepasswort"
-      ],
-      "Yes, I want to permanently delete this account and all its data.": [
-        "Ja, ich möchte dieses Konto und alle enthaltenen Daten endgültig und unwiderruflich löschen."
-      ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN‐/IKEv2‐Benutzername"
-      ],
-      "OpenVPN / IKEv2 password": [
-        "OpenVPN‐/IKEv2‐Passwort"
-      ],
-      "Other amount": [
-        "Anderer Betrag"
-      ],
-      "Amount": [
-        "Betrag"
+      "Browser version": [
+        "Version des Browsers"
       ],
       "Total (${ countdown })": [
         "Gesamt (${ countdown })"
@@ -835,8 +927,14 @@
       "How do you think we could improve our products or service in the future?": [
         "Wie können wir Ihrer Meinung nach unsere Produkte oder unsere Dienste in Zukunft verbessern?"
       ],
-      "Gift code": [
-        "Gutscheincode"
+      "BTC amount:": [
+        "Betrag in Bitcoin:"
+      ],
+      "BTC address:": [
+        "Bitcoin‐Adresse:"
+      ],
+      "Select a method": [
+        "Methode wählen"
       ],
       "extra storage": [
         "Zusätzlicher Speicherplatz"
@@ -850,14 +948,14 @@
       "Discount": [
         "Rabatt"
       ],
-      "BTC amount:": [
-        "Betrag in Bitcoin:"
+      "Other amount": [
+        "Anderer Betrag"
       ],
-      "BTC address:": [
-        "Bitcoin‐Adresse:"
+      "Amount": [
+        "Betrag"
       ],
-      "Select a method": [
-        "Methode wählen"
+      "Gift code": [
+        "Gutscheincode"
       ],
       "Name on card": [
         "Karteninhaber"
@@ -895,18 +993,6 @@
       "Payer": [
         "Zahlungspflichtiger"
       ],
-      "Default language": [
-        "Standardsprache"
-      ],
-      "Credits used": [
-        "Guthaben verwendet"
-      ],
-      "Amount due": [
-        "Fälliger Betrag"
-      ],
-      "Customize invoices": [
-        "Rechnungen anpassen"
-      ],
       "Cancel": [
         "Abbrechen"
       ],
@@ -916,41 +1002,23 @@
       "Password": [
         "Passwort"
       ],
-      "Allow recovery by email": [
-        "Wiederherstellung per E-Mail zulassen"
+      "Mailbox password": [
+        "Mailbox‐Passwort"
       ],
-      "Daily email notifications": [
-        "Tägliche E‐Mail‐Benachrichtigungen"
+      "Two-factor authentication code": [
+        "Zwei-Faktor-Authentifizierungsschlüssel"
       ],
-      "Allow recovery by phone": [
-        "Wiederherstellung per Telefon zulassen"
+      "Username or ProtonMail address": [
+        "Benutzername oder ProtonMail-E-Mail-Adresse"
       ],
-      "Operating system": [
-        "Betriebssystem"
+      "Phone number": [
+        "Rufnummer"
       ],
-      "Operating system version": [
-        "Version des Betriebssystems"
+      "Verification code": [
+        "Verifizierungscode"
       ],
-      "Proton username": [
-        "Proton‐Benutzername"
-      ],
-      "Category": [
-        "Kategorie"
-      ],
-      "What happened?": [
-        "Problembeschreibung"
-      ],
-      "System information": [
-        "Systeminformationen"
-      ],
-      "Browser": [
-        "Browser"
-      ],
-      "Browser version": [
-        "Version des Browsers"
-      ],
-      "Display name": [
-        "Name anzeigen"
+      "Enter the 6-digit code": [
+        "6-stelligen Code eingeben"
       ],
       "Username": [
         "Benutzername"
@@ -964,23 +1032,101 @@
       "Danger": [
         "Achtung"
       ],
-      "Phone number": [
-        "Rufnummer"
+      "New password": [
+        "Neues Passwort"
       ],
-      "Verification code": [
-        "Verifizierungscode"
+      "Confirm password": [
+        "Passwort bestätigen"
       ],
-      "Enter the 6-digit code": [
-        "6-stelligen Code eingeben"
+      "Name": [
+        "Name"
       ],
-      "Username or ProtonMail address": [
-        "Benutzername oder ProtonMail-E-Mail-Adresse"
+      "ProtonMail address": [
+        "ProtonMail‐Adresse"
+      ],
+      "Your password (admin)": [
+        "Ihr Passwort (Admin)"
+      ],
+      "User's new password": [
+        "Neues Passwort des Benutzers"
+      ],
+      "Confirm new password": [
+        "Neues Passwort bestätigen"
+      ],
+      "Old password": [
+        "Altes Passwort"
+      ],
+      "Old login password": [
+        "Altes Anmeldepasswort"
+      ],
+      "New login password": [
+        "Neues Anmeldepasswort"
+      ],
+      "Confirm login password": [
+        "Anmeldepasswort bestätigen"
+      ],
+      "New mailbox password": [
+        "Neues Postfach-Passwort"
+      ],
+      "Confirm mailbox password": [
+        "Postfach-Passwort bestätigen"
+      ],
+      "Key": [
+        "Schlüssel"
+      ],
+      "Interval": [
+        "Zeitraum"
+      ],
+      "Digits": [
+        "Ziffern"
+      ],
+      "Two-factor authentication": [
+        "Zwei‐Faktor‐Authentifizierung"
+      ],
+      "Two-password mode": [
+        "Zwei-Passwort-Modus"
+      ],
+      "What is the main reason you are deleting your account?": [
+        "Welches sind die Hauptgründe für die Löschung Ihres Kontos?"
+      ],
+      "We are sorry to see you go. Please explain why you are leaving to help us to improve.": [
+        "Wir bedauern es sehr, dass Sie ProtonMail nicht mehr nutzen möchten. Bitte teilen Sie uns Ihre Gründe mit, damit Sie uns helfen können, uns zu verbessern."
+      ],
+      "Login password": [
+        "Anmeldepasswort"
+      ],
+      "Yes, I want to permanently delete this account and all its data.": [
+        "Ja, ich möchte dieses Konto und alle enthaltenen Daten endgültig und unwiderruflich löschen."
+      ],
+      "Default language": [
+        "Standardsprache"
+      ],
+      "OpenVPN / IKEv2 username": [
+        "OpenVPN‐/IKEv2‐Benutzername"
+      ],
+      "OpenVPN / IKEv2 password": [
+        "OpenVPN‐/IKEv2‐Passwort"
+      ],
+      "Allow recovery by email": [
+        "Wiederherstellung per E-Mail zulassen"
+      ],
+      "Daily email notifications": [
+        "Tägliche E‐Mail‐Benachrichtigungen"
+      ],
+      "Allow recovery by phone": [
+        "Wiederherstellung per Telefon zulassen"
+      ],
+      "Credits used": [
+        "Guthaben verwendet"
+      ],
+      "Amount due": [
+        "Fälliger Betrag"
+      ],
+      "Customize invoices": [
+        "Rechnungen anpassen"
       ],
       "Back to:": [
         "Zurück zu:"
-      ],
-      "Enter the code displayed on your TV": [
-        "Geben Sie den auf Ihrem Fernseher angezeigten Code ein"
       ],
       "Verification method": [
         "Verifizierungsmethode"
@@ -1011,6 +1157,9 @@
       ],
       "Total price (two-year)": [
         "Gesamtpreis (zweijährig)"
+      ],
+      "Enter the code displayed on your TV": [
+        "Geben Sie den auf Ihrem Fernseher angezeigten Code ein"
       ]
     },
     "Action": {
@@ -1020,104 +1169,92 @@
       "Open navigation": [
         "Menü öffnen"
       ],
-      "Close": [
-        "Schließen"
-      ],
       "More info: ${ safeTitle }": [
         "Weitere Informationen: ${ safeTitle }"
       ],
       "Go to panel ${ index }": [
         "Seitenleiste ${ index } öffnen"
       ],
-      "refresh the page": [
-        "aktualisieren Sie die Seite"
-      ],
-      "Close modal": [
-        "Dialog schließen"
+      "Confirm": [
+        "Bestätigen"
       ],
       "Cancel": [
         "Abbrechen"
       ],
+      "Close modal": [
+        "Dialog schließen"
+      ],
       "Submit": [
         "Absenden"
       ],
-      "Confirm": [
-        "Bestätigen"
+      "refresh the page": [
+        "aktualisieren Sie die Seite"
       ],
-      "Back": [
-        "Zurück"
+      "Close": [
+        "Schließen"
       ],
-      "Download": [
-        "Herunterladen"
+      "Copy email to clipboard": [
+        "E-Mail-Adresse in Zwischenablage kopieren"
       ],
-      "Ok": [
-        "Okay"
+      "${ BRAND_NAME } introduction": [
+        "Einführung in ${ BRAND_NAME }"
+      ],
+      "I have a question": [
+        "Ich habe eine Frage"
+      ],
+      "Request a feature": [
+        "Eine Funktion vorschlagen"
+      ],
+      "Report a problem": [
+        "Ein Problem melden"
+      ],
+      "${ BRAND_NAME } shop": [
+        "${ BRAND_NAME } - Shop"
+      ],
+      "Switch account": [
+        "Konto wechseln"
+      ],
+      "Sign out": [
+        "Abmelden"
+      ],
+      "Get started": [
+        "Erste Schritte"
       ],
       "Next": [
         "Weiter"
       ],
-      "Yes": [
-        "Ja"
+      "Start setup": [
+        "Einrichtung starten"
       ],
-      "Change password": [
-        "Passwort ändern"
+      "Skip": [
+        "Überspringen"
       ],
-      "Save": [
-        "Speichern"
+      "Done": [
+        "Fertig"
       ],
-      "Change mailbox password": [
-        "Postfach-Passwort ändern"
+      "Back": [
+        "Zurück"
       ],
-      "Delete": [
-        "Löschen"
+      "Use ${ label } theme": [
+        "Farbschema „${ label }” verwenden"
       ],
-      "Delete your account": [
-        "Konto löschen"
+      "Clear": [
+        "Leeren"
       ],
-      "Upgrade": [
-        "Umsteigen"
+      "Add screenshot(s)": [
+        "Bildschirmfoto(s) hinzufügen"
       ],
-      "Copy": [
-        "Kopieren"
+      "Hide info": [
+        "Info ausblenden"
       ],
-      "Download all configurations": [
-        "Alle Konfigurationen herunterladen"
+      "Show info": [
+        "Info anzeigen"
       ],
-      "Get ProtonVPN Plus": [
-        "Holen Sie sich ProtonVPN Plus"
+      "Signing out": [
+        "Abmelden …"
       ],
-      "Hide": [
-        "Ausblenden"
-      ],
-      "Show": [
-        "Anzeigen"
-      ],
-      "Reset credentials": [
-        "Anmeldedaten zurücksetzen"
-      ],
-      "Add PayPal payment method": [
-        "PayPal als Zahlungsmethode hinzufügen"
-      ],
-      "Compare plans": [
-        "Pakete vergleichen"
-      ],
-      "Continue": [
-        "Weiter"
-      ],
-      "Top up": [
-        "Aufladen"
-      ],
-      "Add credits": [
-        "Guthaben hinzufügen"
-      ],
-      "Downgrade": [
-        "Zurückstufen"
-      ],
-      "Open ${ CALENDAR_APP_NAME } settings": [
-        "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
-      ],
-      "OK": [
-        "OK"
+      "Remove bonuses": [
+        "Prämien entfernen"
       ],
       "Select plan": [
         "Paket auswählen"
@@ -1128,14 +1265,20 @@
       "${ boldSave } by switching to annual billing": [
         "${ boldSave } durch den Wechsel zur jährlichen Zahlweise"
       ],
+      "Continue": [
+        "Weiter"
+      ],
       "Pay": [
         "Zahlen"
       ],
-      "Done": [
-        "Fertig"
-      ],
       "Apply": [
         "Übernehmen"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
+      ],
+      "OK": [
+        "OK"
       ],
       "Upgrade to Plus": [
         "Zu Plus wechseln"
@@ -1146,11 +1289,11 @@
       "Customize subscription": [
         "Abonnement anpassen"
       ],
-      "Skip": [
-        "Überspringen"
-      ],
       "Cancel subscription": [
         "Abonnement kündigen"
+      ],
+      "Try again": [
+        "Erneut versuchen"
       ],
       "Remove gift code": [
         "Geschenkgutschein entfernen"
@@ -1158,17 +1301,29 @@
       "annual billing": [
         "jährlicher Zahlweise"
       ],
+      "Compare plans": [
+        "Pakete vergleichen"
+      ],
       "Decrease": [
         "Verkleinern"
       ],
       "Increase": [
         "Vergrößern"
       ],
-      "Remove bonuses": [
-        "Prämien entfernen"
+      "Downgrade": [
+        "Zurückstufen"
       ],
-      "Try again": [
-        "Erneut versuchen"
+      "Top up": [
+        "Aufladen"
+      ],
+      "Add credits": [
+        "Guthaben hinzufügen"
+      ],
+      "Save": [
+        "Speichern"
+      ],
+      "Add PayPal payment method": [
+        "PayPal als Zahlungsmethode hinzufügen"
       ],
       "Verify": [
         "Verifizieren"
@@ -1191,11 +1346,50 @@
       "Mark as default": [
         "Als Standard festlegen"
       ],
+      "Delete": [
+        "Löschen"
+      ],
       "Add credit / debit card": [
         "Kredit‐/Debitkarte hinzufügen"
       ],
       "Add PayPal": [
         "PayPal hinzufügen"
+      ],
+      "Log in": [
+        "Anmelden"
+      ],
+      "View invoice": [
+        "Rechnung anzeigen"
+      ],
+      "Get verification code": [
+        "Bestätigungscode abrufen"
+      ],
+      "Try another method": [
+        "Eine weitere Methode verwenden"
+      ],
+      "Request new code": [
+        "Neuen Code anfordern"
+      ],
+      "Did not receive the code?": [
+        "Code nicht erhalten?"
+      ],
+      "Edit email address": [
+        "E-Mail-Adresse bearbeiten"
+      ],
+      "Edit phone number": [
+        "Rufnummer bearbeiten"
+      ],
+      "Email me my username(s)": [
+        "Meine(n) Benutzernamen per E-Mail zusenden"
+      ],
+      "Get a new password": [
+        "Neues Passwort abrufen"
+      ],
+      "Reset password": [
+        "Passwort zurücksetzen"
+      ],
+      "Reset my password": [
+        "Mein Passwort zurücksetzen"
       ],
       "enable desktop notifications": [
         "Desktop-Benachrichtigungen zu aktivieren"
@@ -1209,8 +1403,47 @@
       "Refresh the page": [
         "Seite aktualisieren"
       ],
-      "Signing out": [
-        "Abmelden …"
+      "Change password": [
+        "Passwort ändern"
+      ],
+      "Ok": [
+        "Okay"
+      ],
+      "Download": [
+        "Herunterladen"
+      ],
+      "Yes": [
+        "Ja"
+      ],
+      "Change mailbox password": [
+        "Postfach-Passwort ändern"
+      ],
+      "Delete your account": [
+        "Konto löschen"
+      ],
+      "Hide": [
+        "Ausblenden"
+      ],
+      "Show": [
+        "Anzeigen"
+      ],
+      "Reset credentials": [
+        "Anmeldedaten zurücksetzen"
+      ],
+      "Upgrade": [
+        "Umsteigen"
+      ],
+      "Copy": [
+        "Kopieren"
+      ],
+      "Download all configurations": [
+        "Alle Konfigurationen herunterladen"
+      ],
+      "Get ProtonVPN Plus": [
+        "Holen Sie sich ProtonVPN Plus"
+      ],
+      "Update": [
+        "Aktualisieren"
       ],
       "View": [
         "Ansicht"
@@ -1245,90 +1478,6 @@
       "Previous": [
         "Zurück"
       ],
-      "Update": [
-        "Aktualisieren"
-      ],
-      "Copy email to clipboard": [
-        "E-Mail-Adresse in Zwischenablage kopieren"
-      ],
-      "Switch account": [
-        "Konto wechseln"
-      ],
-      "Sign out": [
-        "Abmelden"
-      ],
-      "I have a question": [
-        "Ich habe eine Frage"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "Einführung in ${ BRAND_NAME }"
-      ],
-      "Request a feature": [
-        "Eine Funktion vorschlagen"
-      ],
-      "Report a problem": [
-        "Ein Problem melden"
-      ],
-      "${ BRAND_NAME } shop": [
-        "${ BRAND_NAME } - Shop"
-      ],
-      "Clear": [
-        "Leeren"
-      ],
-      "Add screenshot(s)": [
-        "Bildschirmfoto(s) hinzufügen"
-      ],
-      "Hide info": [
-        "Info ausblenden"
-      ],
-      "Show info": [
-        "Info anzeigen"
-      ],
-      "Get started": [
-        "Erste Schritte"
-      ],
-      "Start setup": [
-        "Einrichtung starten"
-      ],
-      "Use ${ label } theme": [
-        "Farbschema „${ label }” verwenden"
-      ],
-      "Get a new password": [
-        "Neues Passwort abrufen"
-      ],
-      "Reset password": [
-        "Passwort zurücksetzen"
-      ],
-      "Reset my password": [
-        "Mein Passwort zurücksetzen"
-      ],
-      "Email me my username(s)": [
-        "Meine(n) Benutzernamen per E-Mail zusenden"
-      ],
-      "View invoice": [
-        "Rechnung anzeigen"
-      ],
-      "Get verification code": [
-        "Bestätigungscode abrufen"
-      ],
-      "Try another method": [
-        "Eine weitere Methode verwenden"
-      ],
-      "Request new code": [
-        "Neuen Code anfordern"
-      ],
-      "Did not receive the code?": [
-        "Code nicht erhalten?"
-      ],
-      "Edit email address": [
-        "E-Mail-Adresse bearbeiten"
-      ],
-      "Edit phone number": [
-        "Rufnummer bearbeiten"
-      ],
-      "Log in": [
-        "Anmelden"
-      ],
       "Report bug": [
         "Fehler melden"
       ],
@@ -1340,12 +1489,6 @@
       ],
       "Select": [
         "Auswählen"
-      ],
-      "Verify code again": [
-        "Code erneut bestätigen"
-      ],
-      "Verify code": [
-        "Code bestätigen"
       ],
       "Create account": [
         "Konto erstellen"
@@ -1376,6 +1519,12 @@
       ],
       "Homepage": [
         "Startseite"
+      ],
+      "Verify code again": [
+        "Code erneut bestätigen"
+      ],
+      "Verify code": [
+        "Code bestätigen"
       ]
     },
     "Storage": {
@@ -1389,159 +1538,87 @@
         "Versionshinweise"
       ]
     },
-    "Error": {
-      "Email address invalid": [
-        "Ungültige E‐Mail‐Adresse"
+    "Link": {
+      "Learn more": [
+        "Erfahren Sie mehr"
       ],
-      "This field is required": [
-        "Dieses Feld muss ausgefüllt werden"
+      "Upgrade": [
+        "Umsteigen"
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Ein Problem ist aufgetreten. Um fortzufahren ${ refresh }. Wenn Ihnen diese Fehlermeldung weiterhin angezeigt wird, wenden Sie sich bitte an unser ${ supportTeam }."
+      "Go to subscription plans": [
+        "Zu den Abonnement-Angeboten"
       ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Der von Ihnen verwendete Browser erlaubt es nicht, die Zahlung vollständig zu autorisieren. Bitte verwenden Sie einen anderen Browser oder melden Sie sich über einen Computer an."
+      "clearing your browser cache": [
+        "Browser-Cache leeren"
       ],
-      "Please generate keys before you try to change your password.": [
-        "Bitte erzeugen Sie Schlüssel, bevor Sie versuchen, Ihr Passwort zu ändern."
+      "click here": [
+        "klicken Sie hier"
       ],
-      "Checkout expired, please try again.": [
-        "Kaufabwicklung abgelaufen. Bitte versuchen Sie es noch einmal."
+      "Add a gift code": [
+        "Geschenkgutschein hinzufügen"
       ],
-      "Invalid code": [
-        "Ungültiger Schlüssel"
+      "Request an invite": [
+        "Einladung anfordern"
       ],
-      "Error connecting to the Bitcoin API.": [
-        "Fehler beim Verbinden mit der Bitcoin-API."
+      "Back to login": [
+        "Zurück zur Anmeldung"
       ],
-      "Amount below minimum.": [
-        "Mindestbetrag unterschritten"
+      "here": [
+        "hier"
       ],
-      "Amount above the maximum.": [
-        "Höchstbetrag überschritten"
+      "Pay invoice": [
+        "Rechnung bezahlen"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Der Mindestbetrag, der gespendet werden kann, beträgt ${ price }"
+      "Upgrade account": [
+        "Konto erweitern"
       ],
-      "The minimum amount of credit that can be added is ${ _price }": [
-        "Der Mindestbetrag, der hinzugefügt werden kann, beträgt ${ _price }"
+      "Not activated": [
+        "Nicht aktiviert"
       ],
-      "The minimum payment we accept is ${ _price2 }": [
-        "Die akzeptierte Mindestzahlung beträgt ${ _price2 }"
+      "View guide": [
+        "Anleitung anzeigen"
       ],
-      "Name on card required": [
-        "Karteninhaber erforderlich"
+      "What is the difference between UDP and TCP protocols?": [
+        "Was ist der Unterschied zwischen den Protokollen UDP und TCP?"
       ],
-      "Invalid expiration date": [
-        "Ungültiges Ablaufdatum"
+      "Sign up for free": [
+        "Kostenlos registrieren"
       ],
-      "Invalid card number": [
-        "Kartennummer ungültig"
+      "protonvpn.com": [
+        "protonvpn.com"
       ],
-      "Invalid ${ name } code": [
-        "Ungültiger ${ name }-Code"
+      "Upgrade now": [
+        "Jetzt umsteigen"
       ],
-      "Invalid postal code": [
-        "Ungültige Postleitzahl"
+      "Don't have an account yet? Sign up for free!": [
+        "Sie haben noch kein Konto? Melden Sie sich kostenlos an!"
       ],
-      "Process aborted": [
-        "Prozess abgebrochen"
+      "Reset password": [
+        "Passwort zurücksetzen"
       ],
-      "Payment process cancelled": [
-        "Zahlungsvorgang abgebrochen"
+      "Forgot username?": [
+        "Benutzername vergessen?"
       ],
-      "Payment process failed": [
-        "Bezahlvorgang fehlgeschlagen"
+      "Common login problems": [
+        "Häufige Anmeldeprobleme"
       ],
-      "Payment process consumed": [
-        "Zahlungsvorgang abgebrochen"
+      "Contact support": [
+        "Support kontaktieren"
       ],
-      "Payment process not supported": [
-        "Zahlungsvorgang nicht unterstützt"
+      "Terms of Service": [
+        "Nutzungsbedingungen"
       ],
-      "Unknown payment token status": [
-        "Unbekannter Zahlungstoken-Status"
+      "Privacy Policy": [
+        "Datenschutzerklärung"
       ],
-      "Tab closed": [
-        "Tab geschlossen"
+      "Log in": [
+        "Anmelden"
       ],
-      "Payments are currently not available, please try again later": [
-        "Zahlungen sind derzeit nicht verfügbar, bitte versuchen Sie es später erneut"
-      ],
-      "You have no invoices.": [
-        "Sie haben keine Rechnungen."
-      ],
-      "Your account or organization currently has an overdue invoice. Please pay all unpaid invoices.": [
-        "Ihr Konto oder Ihre Organisation enthält derzeit eine überfällige Rechnung. Bitte begleichen Sie alle unbezahlten Rechnungen."
-      ],
-      "File has no contents to preview": [
-        "Vorschau nicht möglich, da die Datei keine Daten enthält"
-      ],
-      "Please set a recovery/notification email first": [
-        "Bitte zuerst eine E-Mail-Adresse für Wiederherstellung/Benachrichtigungen festlegen"
-      ],
-      "Please set a recovery phone number first": [
-        "Bitte zuerst eine Wiederherstellungsrufnummer festlegen"
-      ],
-      "Please enter '${ dangerWord }'": [
-        "Bitte „${ dangerWord }“ eingeben"
-      ],
-      "Can't validate email, try again later": [
-        "E-Mail-Adresse konnte nicht bestätigt werden. Bitte versuchen Sie es später noch einmal."
-      ],
-      "Can't validate phone, try again later": [
-        "Gerät konnte nicht bestätigt werden. Bitte versuchen Sie es später noch einmal."
-      ],
-      "Enter 6 digits": [
-        "6 Ziffern eingeben"
-      ],
-      "Invalid verification code": [
-        "Ungültiger Bestätigungsschlüssel"
-      ],
-      "Incorrect mailbox password. Please try again": [
-        "Ungültiges Postfachpasswort. Bitte versuchen Sie es erneut."
-      ],
-      "Incorrect login credentials. Please try again": [
-        "Ungültige Anmeldedaten. Bitte versuchen Sie es erneut."
-      ],
-      "Unknown error": [
-        "Unbekannter Fehler"
-      ],
-      "This field requires a minimum of ${ minimumLength } characters.": [
-        "In dieses Feld müssen mindestens ${ minimumLength } Zeichen eingegeben werden."
-      ],
-      "Email is not valid": [
-        "E-Mail-Adresse ungültig"
-      ],
-      "Not a valid number": [
-        "Keine gültige Zahl"
-      ],
-      "Passwords do not match": [
-        "Passwörter stimmen nicht überein"
-      ],
-      "Signature verification failed": [
-        "Signaturprüfung fehlgeschlagen"
-      ],
-      "Request timed out.": [
-        "Zeitüberschreitung bei Anfrage."
-      ],
-      "Code wrong or not valid anymore": [
-        "Code falsch oder inzwischen ungültig"
-      ],
-      "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
-        "Wenn es zu einer Zeitüberschreitung auf Ihrem Fernsehgerät kommt, Klicken Sie auf Ihrem Fernseher auf „Aktualisieren” und geben Sie den Code erneut ein."
-      ],
-      "Invalid invitation link": [
-        "Ungültiger Einladungslink"
-      ],
-      "Can't check username, try again later": [
-        "Benutzername kann nicht überprüft werden, bitte versuchen Sie es später erneut"
+      "Close": [
+        "Schließen"
       ]
     },
     "Title": {
-      "What's new": [
-        "Neue Funktionen"
-      ],
       "Open actions dropdown": [
         "Auswahlliste „Aktionen” öffnen"
       ],
@@ -1554,68 +1631,20 @@
       "Next": [
         "Weiter"
       ],
-      "Set up two-factor authentication": [
-        "Zwei‐Faktor‐Authentifizierung einrichten"
+      "What's new": [
+        "Neue Funktionen"
       ],
-      "Disable two-factor authentication": [
-        "Zwei‐Faktor‐Authentifizierung deaktivieren"
+      "Open help menu": [
+        "Menü Hilfe öffnen"
       ],
-      "Change password for ${ Name } (${ Email })": [
-        "Passwort für ${ Name } (${ Email }) ändern"
+      "Back": [
+        "Zurück"
       ],
-      "Change password": [
-        "Passwort ändern"
+      "Report a problem": [
+        "Ein Problem melden"
       ],
-      "Change login password": [
-        "Anmeldepasswort ändern"
-      ],
-      "Switch to two-password mode": [
-        "Wechseln zum Zwei-Passwörter-Modus"
-      ],
-      "Switch to one-password mode": [
-        "Wechseln zum Ein-Passwort-Modus"
-      ],
-      "Change mailbox password": [
-        "Postfach-Passwort ändern"
-      ],
-      "Password": [
-        "Passwort"
-      ],
-      "Login password": [
-        "Anmeldepasswort"
-      ],
-      "Delete account": [
-        "Konto löschen"
-      ],
-      "1. Select platform": [
-        "1.) Plattform auswählen"
-      ],
-      "2. Select protocol": [
-        "2.) Protokoll auswählen"
-      ],
-      "3. Select config file and download": [
-        "3.) Konfigurationsdatei auswählen und herunterladen"
-      ],
-      "Get ProtonVPN Plus to access all servers": [
-        "Holen Sie sich ProtonVPN Plus, um Zugriff auf alle Server zu erhalten"
-      ],
-      "Edit credit/debit card": [
-        "Kredit-/Debitkarte bearbeiten"
-      ],
-      "Add credit/debit card": [
-        "Kredit-/Debitkarte hinzufügen"
-      ],
-      "Add PayPal payment method": [
-        "PayPal als Zahlungsmethode hinzufügen"
-      ],
-      "Add credits": [
-        "Guthaben hinzufügen"
-      ],
-      "Confirm downgrade": [
-        "Zurückstufen bestätigen"
-      ],
-      "Cancel subscription": [
-        "Abonnement kündigen"
+      "Confirm loss of Proton bonuses": [
+        "Bestätigen Sie den Verzicht auf Proton-Prämien"
       ],
       "Current plan": [
         "Aktuelles Paket"
@@ -1644,6 +1673,9 @@
       "Amount due": [
         "Fälliger Betrag"
       ],
+      "Cancel subscription": [
+        "Abonnement kündigen"
+      ],
       "Network error": [
         "Netzwerkfehler"
       ],
@@ -1656,23 +1688,35 @@
       "Checkout": [
         "Zur Kasse"
       ],
+      "Payment details": [
+        "Zahlungsdetails"
+      ],
       "Plan summary": [
         "Tarifzusammenfassung"
       ],
       "${ appName } customization": [
         "${ appName } anpassen"
       ],
-      "Confirm loss of Proton bonuses": [
-        "Bestätigen Sie den Verzicht auf Proton-Prämien"
+      "Confirm downgrade": [
+        "Zurückstufen bestätigen"
       ],
-      "Payment details": [
-        "Zahlungsdetails"
+      "Add credits": [
+        "Guthaben hinzufügen"
+      ],
+      "Billing cycle": [
+        "Abrechnungszeitraum"
+      ],
+      "Edit credit/debit card": [
+        "Kredit-/Debitkarte bearbeiten"
+      ],
+      "Add credit/debit card": [
+        "Kredit-/Debitkarte hinzufügen"
+      ],
+      "Add PayPal payment method": [
+        "PayPal als Zahlungsmethode hinzufügen"
       ],
       "Currency": [
         "Währung"
-      ],
-      "ZIP / postal code": [
-        "Postleitzahl"
       ],
       "Unsupported browser": [
         "Nicht unterstützter Browser"
@@ -1701,8 +1745,83 @@
       "Error": [
         "Fehler"
       ],
-      "Billing cycle": [
-        "Abrechnungszeitraum"
+      "ZIP / postal code": [
+        "Postleitzahl"
+      ],
+      "Sign in again to continue": [
+        "Melden Sie sich erneut an, um fortzufahren"
+      ],
+      "Account suspended": [
+        "Konto gesperrt"
+      ],
+      "Enter your username or ProtonMail email address": [
+        "Benutzernamen oder Ihre ProtonMail-E-Mail-Adresse eingeben"
+      ],
+      "Enter your password": [
+        "Passwort eingeben"
+      ],
+      "Invalid verification code": [
+        "Ungültiger Bestätigungsschlüssel"
+      ],
+      "Request new verification code": [
+        "Neuen Bestätigungsschlüssel anfordern"
+      ],
+      "Human verification": [
+        "Menschliche Überprüfung"
+      ],
+      "Confirm reset password": [
+        "Passwortzurücksetzung bestätigen"
+      ],
+      "Change password for ${ Name } (${ Email })": [
+        "Passwort für ${ Name } (${ Email }) ändern"
+      ],
+      "Change password": [
+        "Passwort ändern"
+      ],
+      "Change login password": [
+        "Anmeldepasswort ändern"
+      ],
+      "Switch to two-password mode": [
+        "Wechseln zum Zwei-Passwörter-Modus"
+      ],
+      "Switch to one-password mode": [
+        "Wechseln zum Ein-Passwort-Modus"
+      ],
+      "Change mailbox password": [
+        "Postfach-Passwort ändern"
+      ],
+      "Set up two-factor authentication": [
+        "Zwei‐Faktor‐Authentifizierung einrichten"
+      ],
+      "Disable two-factor authentication": [
+        "Zwei‐Faktor‐Authentifizierung deaktivieren"
+      ],
+      "Password": [
+        "Passwort"
+      ],
+      "Login password": [
+        "Anmeldepasswort"
+      ],
+      "Delete account": [
+        "Konto löschen"
+      ],
+      "1. Select platform": [
+        "1.) Plattform auswählen"
+      ],
+      "2. Select protocol": [
+        "2.) Protokoll auswählen"
+      ],
+      "3. Select config file and download": [
+        "3.) Konfigurationsdatei auswählen und herunterladen"
+      ],
+      "Get ProtonVPN Plus to access all servers": [
+        "Holen Sie sich ProtonVPN Plus, um Zugriff auf alle Server zu erhalten"
+      ],
+      "Confirm address": [
+        "Adresse bestätigen"
+      ],
+      "Confirm phone number": [
+        "Rufnummer bestätigen"
       ],
       "Pay invoice": [
         "Rechnung zahlen"
@@ -1725,50 +1844,92 @@
       "Action": [
         "Aktion"
       ],
-      "Sign in again to continue": [
-        "Melden Sie sich erneut an, um fortzufahren"
-      ],
-      "Confirm address": [
-        "Adresse bestätigen"
-      ],
-      "Confirm phone number": [
-        "Rufnummer bestätigen"
-      ],
-      "Open help menu": [
-        "Menü Hilfe öffnen"
-      ],
-      "Back": [
-        "Zurück"
-      ],
-      "Report a problem": [
-        "Ein Problem melden"
-      ],
-      "Confirm reset password": [
-        "Passwortzurücksetzung bestätigen"
-      ],
-      "Invalid verification code": [
-        "Ungültiger Bestätigungsschlüssel"
-      ],
-      "Request new verification code": [
-        "Neuen Bestätigungsschlüssel anfordern"
-      ],
-      "Human verification": [
-        "Menschliche Überprüfung"
-      ],
-      "Account suspended": [
-        "Konto gesperrt"
-      ],
-      "Enter your username or ProtonMail email address": [
-        "Benutzernamen oder Ihre ProtonMail-E-Mail-Adresse eingeben"
-      ],
-      "Enter your password": [
-        "Passwort eingeben"
+      "My subscription": [
+        "Mein Abonnement"
       ],
       "Upgrade": [
         "Umsteigen"
       ],
-      "My subscription": [
-        "Mein Abonnement"
+      "Forgot username": [
+        "Benutzername vergessen"
+      ],
+      "Reset password": [
+        "Passwort zurücksetzen"
+      ],
+      "Log in": [
+        "Anmelden"
+      ],
+      "User log in": [
+        "Benutzeranmeldung"
+      ],
+      "Redeem coupon": [
+        "Gutschein einlösen"
+      ],
+      "Redeem your coupon and start protecting your online privacy": [
+        "Lösen Sie Ihren Gutschein ein und schützen Sie Ihre Online-Privatsphäre"
+      ],
+      "Swiss Based": [
+        "Aus der Schweiz"
+      ],
+      "Secure Core Servers": [
+        "„Secure Core”‐Server"
+      ],
+      "No Logs": [
+        "Keine Protokollierung"
+      ],
+      "Kill Switch": [
+        "Kill Switch (Risiko-Trennung)"
+      ],
+      "DNS leak prevention": [
+        "DNS‐Weitergabeschutz"
+      ],
+      "Strong encryption": [
+        "Starke Verschlüsselung"
+      ],
+      "Checking invitation parameters": [
+        "Einladungsparameter werden überprüft"
+      ],
+      "You already have a Proton account": [
+        "Sie verfügen bereits über ein Proton-Konto"
+      ],
+      "Create an account": [
+        "Konto erstellen"
+      ],
+      "Already have a Proton account?": [
+        "Sie besitzen bereits ein Proton-Konto?"
+      ],
+      "ProtonVPN plan comparison": [
+        "ProtonVPN-Paketvergleiche"
+      ],
+      "Select an account verification method": [
+        "Kontoüberprüfungsmethode auswählen"
+      ],
+      "Resend code": [
+        "Code erneut senden"
+      ],
+      "Enter verification code": [
+        "Bestätigungscode eingeben"
+      ],
+      "Are you human?": [
+        "Sind Sie ein Mensch?"
+      ],
+      "Provide payment details": [
+        "Zahlungsinformationen eingeben"
+      ],
+      "${ title } plan details": [
+        "Details des Pakets „${ title }”"
+      ],
+      "Upgrade and get more": [
+        "Aufrüsten und weitere Vorteile erhalten"
+      ],
+      "Summary": [
+        "Zusammenfassung"
+      ],
+      "Account created": [
+        "Konto erstellt"
+      ],
+      "Sign up": [
+        "Anmelden"
       ],
       "Dashboard": [
         "Übersicht"
@@ -1842,219 +2003,16 @@
       "TV log in": [
         "TV-Anmeldung"
       ],
-      "Forgot username": [
-        "Benutzername vergessen"
-      ],
-      "Reset password": [
-        "Passwort zurücksetzen"
-      ],
-      "Log in": [
-        "Anmelden"
-      ],
-      "User log in": [
-        "Benutzeranmeldung"
-      ],
-      "Redeem coupon": [
-        "Gutschein einlösen"
-      ],
-      "Redeem your coupon and start protecting your online privacy": [
-        "Lösen Sie Ihren Gutschein ein und schützen Sie Ihre Online-Privatsphäre"
-      ],
-      "Swiss Based": [
-        "Aus der Schweiz"
-      ],
-      "Secure Core Servers": [
-        "„Secure Core”‐Server"
-      ],
-      "No Logs": [
-        "Keine Protokollierung"
-      ],
-      "Kill Switch": [
-        "Kill Switch (Not-Trennung)"
-      ],
-      "DNS leak prevention": [
-        "DNS‐Weitergabeschutz"
-      ],
-      "Strong encryption": [
-        "Starke Verschlüsselung"
-      ],
-      "Checking invitation parameters": [
-        "Einladungsparameter werden überprüft"
-      ],
-      "You already have a Proton account": [
-        "Sie verfügen bereits über ein Proton-Konto"
-      ],
-      "Create an account": [
-        "Konto erstellen"
-      ],
-      "Already have a Proton account?": [
-        "Sie besitzen bereits ein Proton-Konto?"
-      ],
-      "ProtonVPN plan comparison": [
-        "ProtonVPN-Paketvergleiche"
-      ],
-      "Select an account verification method": [
-        "Kontoüberprüfungsmethode auswählen"
-      ],
-      "Resend code": [
-        "Code erneut senden"
-      ],
-      "Enter verification code": [
-        "Bestätigungscode eingeben"
-      ],
-      "Are you human?": [
-        "Sind Sie ein Mensch?"
-      ],
-      "Provide payment details": [
-        "Zahlungsinformationen eingeben"
-      ],
-      "${ title } plan details": [
-        "Details des Pakets „${ title }”"
-      ],
-      "Upgrade and get more": [
-        "Aufrüsten und weitere Vorteile erhalten"
-      ],
-      "Summary": [
-        "Zusammenfassung"
-      ],
-      "Account created": [
-        "Konto erstellt"
-      ],
-      "Sign up": [
-        "Anmelden"
-      ],
       "Settings": [
         "Einstellungen"
       ]
     },
-    "Link": {
-      "Learn more": [
-        "Erfahren Sie mehr"
-      ],
-      "Not activated": [
-        "Nicht aktiviert"
-      ],
-      "View guide": [
-        "Anleitung anzeigen"
-      ],
-      "What is the difference between UDP and TCP protocols?": [
-        "Was ist der Unterschied zwischen den Protokollen UDP und TCP?"
-      ],
-      "Add a gift code": [
-        "Geschenkgutschein hinzufügen"
-      ],
-      "click here": [
-        "klicken Sie hier"
-      ],
-      "Pay invoice": [
-        "Rechnung bezahlen"
-      ],
-      "Upgrade account": [
-        "Konto erweitern"
-      ],
-      "Upgrade": [
-        "Umsteigen"
-      ],
-      "Go to subscription plans": [
-        "Zu den Abonnement-Angeboten"
-      ],
-      "clearing your browser cache": [
-        "Browser-Cache leeren"
-      ],
-      "Back to login": [
-        "Zurück zur Anmeldung"
-      ],
-      "here": [
-        "hier"
-      ],
-      "Request an invite": [
-        "Einladung anfordern"
-      ],
-      "Upgrade now": [
-        "Jetzt umsteigen"
-      ],
-      "Sign up for free": [
-        "Kostenlos registrieren"
-      ],
-      "Don't have an account yet? Sign up for free!": [
-        "Sie haben noch kein Konto? Melden Sie sich kostenlos an!"
-      ],
-      "protonvpn.com": [
-        "protonvpn.com"
-      ],
-      "Reset password": [
-        "Passwort zurücksetzen"
-      ],
-      "Forgot username?": [
-        "Benutzername vergessen?"
-      ],
-      "Common login problems": [
-        "Häufige Anmeldeprobleme"
-      ],
-      "Contact support": [
-        "Support kontaktieren"
-      ],
-      "Terms of Service": [
-        "Nutzungsbedingungen"
-      ],
-      "Privacy Policy": [
-        "Datenschutzerklärung"
-      ],
-      "Log in": [
-        "Anmelden"
-      ],
-      "Close": [
-        "Schließen"
-      ]
-    },
-    "Message": {
-      "Are you sure you want to disable two-factor authentication?": [
-        "Sind Sie sicher, dass Sie die Zwei-Faktor-Authentifizierung deaktivieren wollen?"
-      ]
-    },
-    "Label for news": {
-      "Proton company announcements": [
-        "Proton • Firmenankündigungen"
-      ],
-      "Proton product announcements": [
-        "Proton • Produktankündigungen"
-      ],
-      "Proton for Business newsletter": [
-        "ProtonMail für Unternehmen • Newsletter"
-      ],
-      "Proton newsletter": [
-        "Proton Newsletter"
-      ],
-      "Proton beta announcements": [
-        "Proton • Beta-Ankündigungen"
-      ]
-    },
-    "Frequency of news": {
-      "(1 email per quarter)": [
-        "(1 E-Mail pro Quartal)"
-      ],
-      "(1-2 emails per month)": [
-        "(1-2 E-Mails pro Monat)"
-      ],
-      "(1 email per month)": [
-        "(1 E-Mail pro Monat)"
-      ]
-    },
     "Success": {
-      "Password updated": [
-        "Passwort aktualisiert"
+      "Email address copied to clipboard": [
+        "E-Mail-Adresse in Zwischenablage kopiert"
       ],
-      "Account deleted. Logging out...": [
-        "Konto gelöscht. Sie werden abgemeldet …"
-      ],
-      "${ server.Domain } copied in your clipboard": [
-        "${ server.Domain } in die Zwischenablage kopiert"
-      ],
-      "Payment method updated": [
-        "Zahlungsmethode aktualisiert"
-      ],
-      "Payment method added": [
-        "Zahlungsmethode hinzugefügt"
+      "Bug reported": [
+        "Fehler gemeldet"
       ],
       "You have successfully unsubscribed": [
         "Sie haben erfolgreich das Abonnement gekündigt"
@@ -2065,17 +2023,35 @@
       "Gift code applied": [
         "Gutscheincode eingelöst"
       ],
+      "Payment method updated": [
+        "Zahlungsmethode aktualisiert"
+      ],
+      "Payment method added": [
+        "Zahlungsmethode hinzugefügt"
+      ],
       "Payment method deleted": [
         "Zahlungsmethode gelöscht"
+      ],
+      "Code sent to ${ methodTo }": [
+        "Schlüssel gesendet an ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Erfolgreich bestätigt"
+      ],
+      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
+        "Wenn Sie eine gültige Benachrichtigungs-E-Mail-Adresse eingegeben haben, senden wir Ihnen in Kürze eine Nachricht mit Ihren Benutzernamen."
+      ],
+      "Password updated": [
+        "Passwort aktualisiert"
+      ],
+      "Account deleted. Logging out...": [
+        "Konto gelöscht. Sie werden abgemeldet …"
       ],
       "Locale updated": [
         "Sprachdatei aktualisiert"
       ],
-      "Invoice paid": [
-        "Rechnung bezahlt"
-      ],
-      "Invoice customized": [
-        "Rechnung angepasst"
+      "${ server.Domain } copied in your clipboard": [
+        "${ server.Domain } in die Zwischenablage kopiert"
       ],
       "Email updated": [
         "E‐Mail‐Adresse aktualisiert"
@@ -2083,52 +2059,98 @@
       "Phone number updated": [
         "Rufnummer aktualisiert"
       ],
-      "Email address copied to clipboard": [
-        "E-Mail-Adresse in Zwischenablage kopiert"
+      "Invoice paid": [
+        "Rechnung bezahlt"
       ],
-      "Bug reported": [
-        "Fehler gemeldet"
+      "Invoice customized": [
+        "Rechnung angepasst"
+      ]
+    },
+    "Header": {
+      "Get help": [
+        "Hilfe erhalten"
       ],
-      "If you entered a valid notification email we will send you an email with your usernames in the next minute.": [
-        "Wenn Sie eine gültige Benachrichtigungs-E-Mail-Adresse eingegeben haben, senden wir Ihnen in Kürze eine Nachricht mit Ihren Benutzernamen."
+      "Help": [
+        "Hilfe"
       ],
-      "Code sent to ${ methodTo }": [
-        "Schlüssel gesendet an ${ methodTo }"
+      "Simultaneous connections": [
+        "Gleichzeitige Verbindungen"
       ],
-      "Verification successful": [
-        "Erfolgreich bestätigt"
+      "Countries": [
+        "Länder"
+      ],
+      "Speed": [
+        "Geschwindigkeit"
+      ],
+      "P2P filesharing/BitTorrent support": [
+        "P2P-Dateifreigabe/BitTorrent-Unterstützung"
+      ],
+      "Tor over VPN": [
+        "Tor über VPN"
+      ],
+      "Secure Core VPN": [
+        "Secure Core-VPN"
+      ],
+      "Apps for Android / Linux / iOS / Windows": [
+        "Anwendungen für Android/Linus/iOS/Windows"
+      ],
+      "Advanced encryption": [
+        "Fortgeschrittene Verschlüsselung"
+      ],
+      "Kill Switch / Always-on": [
+        "Kill-Switch (Risiko-Trennung)/Dauerhaft aktives VPN"
+      ],
+      "No logs policy": [
+        "Keine Protokollierungsrichtlinie"
+      ],
+      "No data limits": [
+        "Keine Datenbeschränkungen"
+      ],
+      "Access blocked content": [
+        "Zugriff auf gesperrte Inhalte"
+      ],
+      "30-day money-back guarantee": [
+        "30 Tage Geld‐zurück‐Garantie"
+      ],
+      "Streaming service support": [
+        "Unterstützung von Streaming-Diensten"
+      ]
+    },
+    "Onboarding Proton": {
+      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
+        "Dies ist das, was andere sehen werden, wenn Sie diesen eine E-Mail senden, sie zu einer Veranstaltung einladen oder eine Datei mit ihnen teilen."
+      ],
+      "Choose a display name": [
+        "Anzeigenamen wählen"
+      ],
+      "Select a theme": [
+        "Farbschema auswählen"
+      ],
+      "You can change this anytime in your settings.": [
+        "Dies kann jederzeit in Ihren Einstellungen geändert werden."
+      ],
+      "Discover all Proton services": [
+        "Alle Proton Dienste kennenlernen"
+      ],
+      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
+        "Verwenden Sie die App-Auswahl oben links, um auf andere Proton-Dienste zuzugreifen, einschließlich VPN, Kalender und Drive."
+      ],
+      "Welcome to Proton": [
+        "Willkommen bei Proton"
+      ],
+      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
+        "Unsere Zielsetzung ist es, ein Internet aufzubauen, in dem Sie die Kontrolle über Ihre Daten und Ihre Privatsphäre haben. Wir haben Proton kürzlich aktualisiert - Willkommen im sicheren Internet."
+      ],
+      "Set up your organization": [
+        "Organisation einrichten"
+      ],
+      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
+        "Konfigurieren Sie Ihre Organisation, verknüpfen Sie Ihren Domainnamen und erstellen Sie Konten, um sicherzustellen, dass alle Mitglieder Ihrer Organisation geschützt sind."
       ]
     },
     "Placeholder": {
-      "Password": [
-        "Passwort"
-      ],
-      "Two-factor authentication code": [
-        "Zwei-Faktor-Authentifizierungsschlüssel"
-      ],
-      "Confirm": [
-        "Bestätigen"
-      ],
-      "Feedback": [
-        "Feedback"
-      ],
-      "Email address": [
-        "E‐Mail‐Adresse"
-      ],
-      "Other": [
-        "Andere"
-      ],
-      "Gift code": [
-        "Gutscheincode"
-      ],
-      "Add gift code": [
-        "Geschenkgutschein hinzufügen"
-      ],
-      "ZIP": [
-        "PLZ"
-      ],
-      "Postal code": [
-        "Postleitzahl"
+      "e.g. Julia Smith": [
+        "z.B. Hans Mustermann"
       ],
       "OS name": [
         "Betriebssystem"
@@ -2151,8 +2173,29 @@
       "Browser version": [
         "Version des Browsers"
       ],
-      "e.g. Julia Smith": [
-        "z.B. Hans Mustermann"
+      "Gift code": [
+        "Gutscheincode"
+      ],
+      "Feedback": [
+        "Feedback"
+      ],
+      "Other": [
+        "Andere"
+      ],
+      "Add gift code": [
+        "Geschenkgutschein hinzufügen"
+      ],
+      "ZIP": [
+        "PLZ"
+      ],
+      "Postal code": [
+        "Postleitzahl"
+      ],
+      "Mailbox password": [
+        "Mailbox‐Passwort"
+      ],
+      "Email": [
+        "E‐Mail‐Adresse"
       ],
       "Username": [
         "Benutzername"
@@ -2169,11 +2212,17 @@
       "Choose a new password": [
         "Neues Passwort wählen"
       ],
-      "Email": [
-        "E‐Mail‐Adresse"
+      "Password": [
+        "Passwort"
       ],
-      "Mailbox password": [
-        "Mailbox‐Passwort"
+      "Two-factor authentication code": [
+        "Zwei-Faktor-Authentifizierungsschlüssel"
+      ],
+      "Confirm": [
+        "Bestätigen"
+      ],
+      "Email address": [
+        "E‐Mail‐Adresse"
       ],
       "Enter coupon code": [
         "Gutscheincode eingeben"
@@ -2182,259 +2231,167 @@
         "Passwort bestätigen"
       ]
     },
-    "Option": {
-      "Select a reason": [
-        "Wählen Sie einen Grund"
+    "Error notification in the bug report modal when the user upload file": {
+      "No image selected": [
+        "Keine Grafik ausgewählt"
+      ]
+    },
+    "Bug category": {
+      "Sign in problem": [
+        "Registrierungsproblem"
       ],
-      "I use a different Proton account": [
-        "Ich verwende ein anderes Proton-Konto"
+      "Sign up problem": [
+        "Registrierungsproblem"
       ],
-      "It's too expensive": [
-        "Es ist mir zu teuer"
+      "Payments problem": [
+        "Zahlungsproblem"
       ],
-      "It's missing a key feature that I need": [
-        "Es fehlt eine Schlüsselfunktion, die ich benötige"
+      "Custom domain problem": [
+        "Problem mit eigener Domain"
       ],
-      "I found another service that I like better": [
-        "Ich habe einen anderen Dienst gefunden, der mir mehr zusagt"
+      "Bridge problem": [
+        "Problem mit „ProtonMail Bridge”"
       ],
-      "My reason isn't listed": [
-        "Mein Grund ist nicht aufgeführt"
+      "Import / export problem": [
+        "Im-/Exportproblem"
       ],
-      "Android": [
-        "Android"
+      "Connection problem": [
+        "Verbindungsfehler"
       ],
-      "iOS": [
-        "iOS"
+      "Slow speed problem": [
+        "Problem mit langsamer Geschwindigkeit"
       ],
-      "Windows": [
-        "Windows"
+      "Calendar problem": [
+        "Kalenderproblem"
       ],
-      "macOS": [
-        "macOS"
+      "Contacts problem": [
+        "Probleme mit Kontakten"
       ],
-      "GNU/Linux": [
-        "GNU/Linux"
+      "Drive problem": [
+        "Laufwerksproblem"
       ],
-      "Router": [
-        "Router"
+      "Mail problem": [
+        "E-Mail-Problem"
       ],
-      "UDP": [
-        "UDP"
+      "VPN problem": [
+        "VPN‐Problem"
       ],
-      "TCP": [
-        "TCP"
-      ],
-      "Secure Core configs": [
-        "„Secure Core”-Konfigurationen"
-      ],
-      "Country configs": [
-        "Länderkonfigurationen"
-      ],
-      "Standard server configs": [
-        "Standard-Server-Konfigurationen"
-      ],
-      "Free server configs": [
-        "Freie Server-Konfigurationen"
-      ],
-      "It’s temporary, I’ll be back": [
-        "Es ist nur vorübergehend, ich komme zurück"
-      ],
-      "I didn’t understand what I was signing up for": [
-        "Ich habe nicht verstanden, wozu ich mich verpflichtet habe"
-      ],
-      "It’s too expensive": [
-        "Es ist mir zu teuer"
-      ],
-      "I’m unhappy with customer service": [
-        "Ich bin mit dem Kundenservice unzufrieden"
-      ],
-      "Using Proton is too complicated": [
-        "Die Verwendung von Proton ist mir zu kompliziert"
-      ],
-      "I'm switching to a different service": [
-        "Ich wechsle zu einem anderen Produkt"
-      ],
-      "The quality didn't live up to my expectations": [
-        "Die Qualität entsprach nicht meinen Erwartungen"
+      "Feature request": [
+        "Funktionswünsche"
       ],
       "Other": [
-        "Andere"
+        "Weitere"
       ],
-      "Email address": [
-        "E-Mail-Adresse"
+      "Signup problem": [
+        "Registrierungsproblem"
       ],
-      "SMS": [
-        "SMS"
+      "Installation problem": [
+        "Installationsproblem"
+      ],
+      "Update problem": [
+        "Aktualisierungsproblem"
+      ],
+      "Application problem": [
+        "Anwendungsproblem"
+      ],
+      "Speed problem": [
+        "Geschwindigkeitsproblem"
+      ],
+      "Manual setup problem": [
+        "Problem mit der manuellen Einrichtung"
+      ],
+      "Website access problem": [
+        "Zugriffsproblem auf eine Website"
+      ],
+      "Streaming problem": [
+        "Streaming‐Problem"
       ]
     },
-    "CountryInfo": {
-      "(via ${ entryCountryName })": [
-        "(über ${ entryCountryName })"
+    "Group": {
+      "Account": [
+        "Konto"
+      ],
+      "Apps": [
+        "Apps"
+      ],
+      "Network": [
+        "Netzwerk"
+      ],
+      "Services": [
+        "Dienste"
+      ],
+      "Other category": [
+        "Andere Kategorie"
       ]
     },
-    "TableHeader": {
-      "Name": [
-        "Name"
-      ],
-      "Country": [
-        "Land"
-      ],
-      "City": [
-        "Stadt"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "Action": [
-        "Aktion"
+    "Action to select a title for the bug report modal": {
+      "Select": [
+        "Auswählen"
       ]
     },
-    "Feature": {
-      "Access to all countries": [
-        "Zugriff auf alle Länder"
+    "Warning": {
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte senden Sie daher keine sensiblen Informationen."
       ],
-      "Secure Core servers": [
-        "„Secure Core”‐Server"
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Bitte beachten Sie, dass durch die Wahl dieser Zahlungsmethode Ihr Konto nicht sofort erweitert werden kann. Wir werden Ihr Konto aktualisieren, sobald die Zahlung bei uns eingegangen ist."
       ],
-      "Fastest VPN servers": [
-        "Schnellste VPN-Server"
+      "Your local date & time settings seem to be out of sync.": [
+        "Ihre lokalen Datums- und Zeiteinstellungen scheinen nicht synchronisiert zu sein."
       ],
-      "Torrenting support (P2P)": [
-        "Torrent-Unterstützung (P2P)"
+      "By deleting this address, you will no longer be able to recover your account.": [
+        "Wenn Sie diese Adresse löschen, können Sie Ihr Konto nicht mehr wiederherstellen."
       ],
-      "Connection for up to ${ plusVpnConnections } device": [
-        "Verbindung für ${ plusVpnConnections } Gerät",
-        "Verbindung für bis zu ${ plusVpnConnections } Geräte"
+      "By deleting this address, you will no longer be able to receive daily email notifications.": [
+        "Wenn Sie diese Adresse löschen, werden Sie keine täglichen E-Mail-Benachrichtigungen mehr erhalten."
       ],
-      "Secure streaming support": [
-        "Unterstützung für verschlüsseltes Streaming"
+      "By deleting this address, you will no longer be able to recover your account or receive daily email notifications.": [
+        "Wenn Sie diese Adresse löschen, können Sie Ihr Konto nicht mehr wiederherstellen oder tägliche E-Mail-Benachrichtigungen erhalten."
+      ],
+      "Are you sure you want to delete the address?": [
+        "Möchten Sie die Adresse wirklich löschen?"
+      ],
+      "By deleting this phone number, you will no longer be able to recover your account.": [
+        "Wenn Sie diese Rufnummer löschen, können Sie Ihr Konto nicht mehr wiederherstellen."
+      ],
+      "Are you sure you want to delete the phone number?": [
+        "Möchten Sie die Rufnummer wirklich löschen?"
       ]
     },
-    "VPN info": {
-      "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
-        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now und weitere."
+    "Label, make it short please": {
+      "Attach screenshot(s)": [
+        "Bildschirmfoto(s) anhängen"
       ]
     },
-    "Notification": {
-      "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN/IKEv2-Zugangsdaten wiederhergestellt"
+    "Apps dropdown": {
+      "Proton applications": [
+        "Proton-Anwendungen"
       ],
-      "Coupons are temporarily disabled": [
-        "Gutscheine sind vorübergehend deaktiviert"
+      "Go to ${ title }": [
+        "Wechseln zu ${ title }"
       ],
-      "Invites are temporarily disabled": [
-        "Einladungen sind vorübergehend deaktiviert"
-      ],
-      "Verification code successfully sent to ${ destination }": [
-        "Bestätigungscode erfolgreich an ${ destination } gesendet"
+      "Go to ${ vpnName }": [
+        "Wechseln zu ${ vpnName }"
       ]
     },
-    "VPNClient": {
-      "Android": [
-        "Android"
+    "Error message": {
+      "Oops, something went wrong": [
+        "Leider ist ein Problem aufgetreten"
       ],
-      "iOS": [
-        "iOS"
+      "There was a problem connecting to Proton.": [
+        "Es gab ein Problem mit der Verbindung zu Proton."
       ],
-      "Windows": [
-        "Windows"
+      "Please ${ refresh } or check your connection.": [
+        "Bitte ${ refresh } oder überprüfen Sie Ihre Verbindung."
       ],
-      "macOS": [
-        "macOS"
+      "Error: ${ errorMessage }": [
+        "Fehler: ${ errorMessage }"
       ],
-      "GNU/Linux": [
-        "GNU/Linux"
+      "Brace yourself till we get the error fixed.": [
+        "Bitte gedulden Sie sich, bis der Fehler behoben wurde."
       ],
-      "Chromebook": [
-        "Chromebook"
-      ],
-      "Android TV": [
-        "Android TV"
-      ]
-    },
-    "Monetary unit": {
-      "Euro": [
-        "Euro"
-      ],
-      "Swiss franc": [
-        "Schweizer Franken"
-      ],
-      "Dollar": [
-        "Dollar"
-      ]
-    },
-    "Credits": {
-      "Unused credits": [
-        "Zur Verfügung stehendes Guthaben"
-      ]
-    },
-    "Tooltip": {
-      "Discount applied for annual billing cycle": [
-        "Rabatt für jährlichen Abrechnungszeitraum"
-      ],
-      "Discount applied for two-year billing cycle": [
-        "Rabatt für zweijährigen Abrechnungszeitraum"
-      ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Verwenden Sie mehrere E-Mail-Adressen / Aliasnamen, die mit Ihrem Konto verknüpft sind, z. B. nutzername2@protonmail.com"
-      ],
-      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
-        "Hosten Sie E-Mail-Adressen für Ihre eigene(n) Domain(s) bei ProtonMail, z.B. max.musterman@beispiel.de"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Verwenden Sie eine persönliche Adresse benutzername@pm.me um E-Mails zu senden"
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "Die Mehrbenutzerunterstützung ist nur für Abonnements mit 2 oder mehr Benutzern verfügbar"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield schützt Ihr Gerät und beschleunigt Ihr Surfen durch das Sperren von Werbung, Trackern und Schadsoftware."
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Unterstützung für File-Sharing-Protokolle wie BitTorrent."
-      ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Zugriff auf durch Landessperren unzugängliche Inhalte (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube usw.), unabhängig davon, wo Sie sich derzeit aufhalten."
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Leiten Sie Ihren Internetverkehr mit einem einzigen Klick durch das TOR-Netzwerk."
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Schützt vor Bedrohungen der VPN-Sicherheit, indem es Ihren Internetverkehr über mehrere Server leitet."
-      ],
-      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Sie erhalten Zugang zu allen kostenpflichtigen Funktionen sowohl für ProtonVPN als auch für ProtonMail (der verschlüsselte E-Mail-Dienst, den Millionen von Menschen zum Schutz ihrer Daten nutzen) mit einem einzigen Abonnement."
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Sie erhalten Zugriff auf alle kostenpflichtigen Funktionen sowohl für ${ vpnAppName } als auch für ${ mailAppName } (der verschlüsselte E-Mail-Dienst, den Millionen zum Schutz ihrer Daten nutzen) mit einem einzigen Abonnement."
-      ],
-      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
-        "Hosten Sie E-Mail-Adressen für Ihre eigene(n) Domain(s) unter ${ mailAppName }, z. B. max.mustermann@beispiel.de"
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Erstellen Sie mehrere mit Ihrem Konto verknüpfte E-Mail-Adressen, z. B. Benutzername2@protonmail.com"
-      ],
-      "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Wenn Sie einen Geschenkgutschein erworben oder von unserem Support-Team erhalten haben, können Sie ihn hier eingeben."
-      ],
-      "Save 20% when billed annually": [
-        "20 % Rabatt bei jährlichem Abrechnungszeitraum"
-      ],
-      "Provides additional protection against VPN server compromise by routing connections through our Secure Core network": [
-        "Bietet zusätzlichen Schutz gegen VPN-Server-Kompromittierung, indem Verbindungen über unser Secure-Core-Netzwerk geleitet werden"
-      ],
-      "Includes ProtonMail encrypted email with all features": [
-        "Enthält ProtonMail-verschlüsselte E-Mails mit allen Funktionen"
-      ],
-      "Username which is used for all Proton services. This can also be used later to create a secure ProtonMail account.": [
-        "Benutzername, der für alle Proton-Dienste verwendet wird. Dies kann auch später genutzt werden, um ein sicheres ProtonMail-Konto zu erstellen."
-      ],
-      "If you forget your password, you will no longer have access to your account or your data. Please save it someplace safe.": [
-        "Wenn Sie Ihr Passwort vergessen haben, haben Sie keinen Zugriff mehr auf Ihr Konto oder Ihre Daten. Bitte bewahren Sie es an einem sicheren Ort auf."
-      ],
-      "Your email is not shared with third parties and is only used for recovery and account-related questions or communication.": [
-        "Ihre E-Mail-Adresse wird nicht an Dritte weitergegeben und dient nur der Wiederherstellung und kontobezogenen Fragen oder der Kommunikation."
+      "You may also ${ refresh } or try again later.": [
+        "Sie können auch ${ refresh } oder es später noch einmal versuchen."
       ]
     },
     "Suffix for price": {
@@ -2521,6 +2478,74 @@
       ],
       "Unlimited": [
         "Unbegrenzt"
+      ]
+    },
+    "Tooltip": {
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        "Verwenden Sie mehrere E-Mail-Adressen / Aliasnamen, die mit Ihrem Konto verknüpft sind, z. B. nutzername2@protonmail.com"
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        "Hosten Sie E-Mail-Adressen für Ihre eigene(n) Domain(s) bei ProtonMail, z.B. max.musterman@beispiel.de"
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        "Verwenden Sie eine persönliche Adresse benutzername@pm.me um E-Mails zu senden"
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        "Die Mehrbenutzerunterstützung ist nur für Abonnements mit 2 oder mehr Benutzern verfügbar"
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield schützt Ihr Gerät und beschleunigt Ihr Surfen durch das Sperren von Werbung, Trackern und Schadsoftware."
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        "Unterstützung für File-Sharing-Protokolle wie BitTorrent."
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        "Zugriff auf durch Landessperren unzugängliche Inhalte (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube usw.), unabhängig davon, wo Sie sich derzeit aufhalten."
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        "Leiten Sie Ihren Internetverkehr mit einem einzigen Klick durch das TOR-Netzwerk."
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        "Schützt vor Bedrohungen der VPN-Sicherheit, indem es Ihren Internetverkehr über mehrere Server leitet."
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Sie erhalten Zugang zu allen kostenpflichtigen Funktionen sowohl für ProtonVPN als auch für ProtonMail (der verschlüsselte E-Mail-Dienst, den Millionen von Menschen zum Schutz ihrer Daten nutzen) mit einem einzigen Abonnement."
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        "Sie erhalten Zugriff auf alle kostenpflichtigen Funktionen sowohl für ${ vpnAppName } als auch für ${ mailAppName } (der verschlüsselte E-Mail-Dienst, den Millionen zum Schutz ihrer Daten nutzen) mit einem einzigen Abonnement."
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        "Hosten Sie E-Mail-Adressen für Ihre eigene(n) Domain(s) unter ${ mailAppName }, z. B. max.mustermann@beispiel.de"
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        "Erstellen Sie mehrere mit Ihrem Konto verknüpfte E-Mail-Adressen, z. B. Benutzername2@protonmail.com"
+      ],
+      "Discount applied for annual billing cycle": [
+        "Rabatt für jährlichen Abrechnungszeitraum"
+      ],
+      "Discount applied for two-year billing cycle": [
+        "Rabatt für zweijährigen Abrechnungszeitraum"
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Wenn Sie einen Geschenkgutschein erworben oder von unserem Support-Team erhalten haben, können Sie ihn hier eingeben."
+      ],
+      "Save 20% when billed annually": [
+        "20 % Rabatt bei jährlichem Abrechnungszeitraum"
+      ],
+      "Provides additional protection against VPN server compromise by routing connections through our Secure Core network": [
+        "Bietet zusätzlichen Schutz gegen VPN-Server-Kompromittierung, indem Verbindungen über unser Secure-Core-Netzwerk geleitet werden"
+      ],
+      "Includes ProtonMail encrypted email with all features": [
+        "Enthält ProtonMail-verschlüsselte E-Mails mit allen Funktionen"
+      ],
+      "Username which is used for all Proton services. This can also be used later to create a secure ProtonMail account.": [
+        "Benutzername, der für alle Proton-Dienste verwendet wird. Dies kann auch später genutzt werden, um ein sicheres ProtonMail-Konto zu erstellen."
+      ],
+      "If you forget your password, you will no longer have access to your account or your data. Please save it someplace safe.": [
+        "Wenn Sie Ihr Passwort vergessen haben, haben Sie keinen Zugriff mehr auf Ihr Konto oder Ihre Daten. Bitte bewahren Sie es an einem sicheren Ort auf."
+      ],
+      "Your email is not shared with third parties and is only used for recovery and account-related questions or communication.": [
+        "Ihre E-Mail-Adresse wird nicht an Dritte weitergegeben und dient nur der Wiederherstellung und kontobezogenen Fragen oder der Kommunikation."
       ]
     },
     "Mail feature option: 5 email addresses / user": {
@@ -2685,6 +2710,14 @@
         "${ n } VPN-Verbindung",
         "${ n } VPN-Verbindungen"
       ],
+      "${ n } server": [
+        "${ n } Server",
+        "${ n } Server"
+      ],
+      "${ freeServersCount.free_vpn } server": [
+        "${ freeServersCount.free_vpn } Server",
+        "${ freeServersCount.free_vpn } Server"
+      ],
       "350+ servers in ${ countries[PLANS.VPNBASIC].count } country": [
         "Mehr als 350 Server in ${ countries[PLANS.VPNBASIC].count } Land",
         "Mehr als 350 Server in ${ countries[PLANS.VPNBASIC].count } Ländern"
@@ -2695,9 +2728,9 @@
       "Filesharing/P2P support": [
         "Filesharing-/P2P-Unterstützung"
       ],
-      "17 servers in ${ countries.free_vpn.count } country": [
-        "17 Server in ${ countries.free_vpn.count } Land",
-        "17 Server in ${ countries.free_vpn.count } Ländern"
+      "${ nFreeServers } in ${ countries.free_vpn.count } country": [
+        "${ nFreeServers } in ${ countries.free_vpn.count } Land",
+        "${ nFreeServers } in ${ countries.free_vpn.count } Ländern"
       ],
       "${ maxConnections } VPN connection": [
         "${ maxConnections } VPN-Verbindung",
@@ -2765,9 +2798,9 @@
       "Access blocked content": [
         "Zugriff auf gesperrte Inhalte"
       ],
-      "17 servers in ${ freeCountries } country": [
-        "17 Server in ${ freeCountries } Land",
-        "17 Server in ${ freeCountries } Ländern"
+      "${ freeServers } in ${ freeCountries } country": [
+        "${ freeServers } in ${ freeCountries } Land",
+        "${ freeServers } in ${ freeCountries } Ländern"
       ],
       "Medium speed": [
         "Mittlere Geschwindigkeit"
@@ -2921,20 +2954,6 @@
         "+ ${ vpn } Verbindungen"
       ]
     },
-    "Suffix": {
-      "/ month": [
-        "/Monat"
-      ],
-      "/monthly": [
-        "/Monat"
-      ],
-      "/2-year": [
-        "/2 Jahre"
-      ],
-      "/year": [
-        "/Jahr"
-      ]
-    },
     "Mail upsell feature": {
       "Get Multi-user support": [
         "Holen Sie sich Mehrbenutzerunterstützung"
@@ -2970,9 +2989,114 @@
         "${ mailAppName } Free"
       ]
     },
+    "Suffix": {
+      "/ month": [
+        "/Monat"
+      ],
+      "/monthly": [
+        "/Monat"
+      ],
+      "/2-year": [
+        "/2 Jahre"
+      ],
+      "/year": [
+        "/Jahr"
+      ]
+    },
+    "Option": {
+      "Select a reason": [
+        "Wählen Sie einen Grund"
+      ],
+      "It’s temporary, I’ll be back": [
+        "Es ist nur vorübergehend, ich komme zurück"
+      ],
+      "I didn’t understand what I was signing up for": [
+        "Ich habe nicht verstanden, wozu ich mich verpflichtet habe"
+      ],
+      "It’s too expensive": [
+        "Es ist mir zu teuer"
+      ],
+      "I’m unhappy with customer service": [
+        "Ich bin mit dem Kundenservice unzufrieden"
+      ],
+      "Using Proton is too complicated": [
+        "Die Verwendung von Proton ist mir zu kompliziert"
+      ],
+      "I'm switching to a different service": [
+        "Ich wechsle zu einem anderen Produkt"
+      ],
+      "The quality didn't live up to my expectations": [
+        "Die Qualität entsprach nicht meinen Erwartungen"
+      ],
+      "Other": [
+        "Andere"
+      ],
+      "I use a different Proton account": [
+        "Ich verwende ein anderes Proton-Konto"
+      ],
+      "It's too expensive": [
+        "Es ist mir zu teuer"
+      ],
+      "It's missing a key feature that I need": [
+        "Es fehlt eine Schlüsselfunktion, die ich benötige"
+      ],
+      "I found another service that I like better": [
+        "Ich habe einen anderen Dienst gefunden, der mir mehr zusagt"
+      ],
+      "My reason isn't listed": [
+        "Mein Grund ist nicht aufgeführt"
+      ],
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "Router": [
+        "Router"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "TCP": [
+        "TCP"
+      ],
+      "Secure Core configs": [
+        "„Secure Core”-Konfigurationen"
+      ],
+      "Country configs": [
+        "Länderkonfigurationen"
+      ],
+      "Standard server configs": [
+        "Standard-Server-Konfigurationen"
+      ],
+      "Free server configs": [
+        "Freie Server-Konfigurationen"
+      ],
+      "Email address": [
+        "E-Mail-Adresse"
+      ],
+      "SMS": [
+        "SMS"
+      ]
+    },
     "State": {
       "Downgrading your account, please wait": [
         "Ihr Konto wird zurückgestuft, bitte warten …"
+      ]
+    },
+    "Info for cash payment method": {
+      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
+        "Bitte kontaktieren Sie uns unter ${ email } für Anweisungen, wie Sie unsere Rechnung mit Bargeld begleichen können."
       ]
     },
     "Plan info": {
@@ -3024,38 +3148,31 @@
         "${ vpnBonus } Verbindungen"
       ]
     },
-    "Info for cash payment method": {
-      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "Bitte kontaktieren Sie uns unter ${ email } für Anweisungen, wie Sie unsere Rechnung mit Bargeld begleichen können."
+    "Monetary unit": {
+      "Euro": [
+        "Euro"
+      ],
+      "Swiss franc": [
+        "Schweizer Franken"
+      ],
+      "Dollar": [
+        "Dollar"
       ]
     },
-    "Warning": {
-      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Bitte beachten Sie, dass durch die Wahl dieser Zahlungsmethode Ihr Konto nicht sofort erweitert werden kann. Wir werden Ihr Konto aktualisieren, sobald die Zahlung bei uns eingegangen ist."
+    "Credits": {
+      "Unused credits": [
+        "Zur Verfügung stehendes Guthaben"
+      ]
+    },
+    "Payment method option": {
+      "New credit/debit card": [
+        "Neue Kredit-/Debitkarte"
       ],
-      "Your local date & time settings seem to be out of sync.": [
-        "Ihre lokalen Datums- und Zeiteinstellungen scheinen nicht synchronisiert zu sein."
+      "PayPal": [
+        "PayPal"
       ],
-      "By deleting this address, you will no longer be able to recover your account.": [
-        "Wenn Sie diese Adresse löschen, können Sie Ihr Konto nicht mehr wiederherstellen."
-      ],
-      "By deleting this address, you will no longer be able to receive daily email notifications.": [
-        "Wenn Sie diese Adresse löschen, werden Sie keine täglichen E-Mail-Benachrichtigungen mehr erhalten."
-      ],
-      "By deleting this address, you will no longer be able to recover your account or receive daily email notifications.": [
-        "Wenn Sie diese Adresse löschen, können Sie Ihr Konto nicht mehr wiederherstellen oder tägliche E-Mail-Benachrichtigungen erhalten."
-      ],
-      "Are you sure you want to delete the address?": [
-        "Möchten Sie die Adresse wirklich löschen?"
-      ],
-      "By deleting this phone number, you will no longer be able to recover your account.": [
-        "Wenn Sie diese Rufnummer löschen, können Sie Ihr Konto nicht mehr wiederherstellen."
-      ],
-      "Are you sure you want to delete the phone number?": [
-        "Möchten Sie die Rufnummer wirklich löschen?"
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte senden Sie daher keine sensiblen Informationen."
+      "Bitcoin": [
+        "Bitcoin"
       ]
     },
     "Confirmation title": {
@@ -3097,15 +3214,36 @@
         "Sie können eine Zahlungsmethode hinzufügen, um Ihr Abonnement automatisch zu erneuern. Weitere Zahlungsarten sind ebenfalls verfügbar."
       ]
     },
-    "Payment method option": {
-      "New credit/debit card": [
-        "Neue Kredit-/Debitkarte"
+    "Footer": {
+      "Based in Switzerland, available globally.": [
+        "In der Schweiz ansässig und weltweit verfügbar."
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Überfällige Rechnung"
+      ]
+    },
+    "Human verification method": {
+      "CAPTCHA": [
+        "CAPTCHA"
       ],
-      "PayPal": [
-        "PayPal"
+      "Email": [
+        "E-Mail-Adresse"
       ],
-      "Bitcoin": [
-        "Bitcoin"
+      "SMS": [
+        "SMS"
+      ],
+      "Manual": [
+        "Manuell"
+      ],
+      "No verification method available": [
+        "Keine Bestätigungsmethode verfügbar"
+      ]
+    },
+    "Password": {
+      "Confirm new password": [
+        "Neues Passwort bestätigen"
       ]
     },
     "Message display when a new app version is available": {
@@ -3113,35 +3251,127 @@
         "Eine neue Version von ${ appName } ist verfügbar. ${ reloadButton }."
       ]
     },
-    "Apps dropdown": {
-      "Proton applications": [
-        "Proton-Anwendungen"
-      ],
-      "Go to ${ title }": [
-        "Wechseln zu ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Wechseln zu ${ vpnName }"
+    "Message": {
+      "Are you sure you want to disable two-factor authentication?": [
+        "Sind Sie sicher, dass Sie die Zwei-Faktor-Authentifizierung deaktivieren wollen?"
       ]
     },
-    "Error message": {
-      "Oops, something went wrong": [
-        "Leider ist ein Problem aufgetreten"
+    "Label for news": {
+      "Proton company announcements": [
+        "Proton • Firmenankündigungen"
       ],
-      "There was a problem connecting to Proton.": [
-        "Es gab ein Problem mit der Verbindung zu Proton."
+      "Proton product announcements": [
+        "Proton • Produktankündigungen"
       ],
-      "Please ${ refresh } or check your connection.": [
-        "Bitte ${ refresh } oder überprüfen Sie Ihre Verbindung."
+      "Proton for Business newsletter": [
+        "ProtonMail für Unternehmen • Newsletter"
       ],
-      "Error: ${ errorMessage }": [
-        "Fehler: ${ errorMessage }"
+      "Proton newsletter": [
+        "Proton Newsletter"
       ],
-      "Brace yourself till we get the error fixed.": [
-        "Bitte gedulden Sie sich, bis der Fehler behoben wurde."
+      "Proton beta announcements": [
+        "Proton • Beta-Ankündigungen"
+      ]
+    },
+    "Frequency of news": {
+      "(1 email per quarter)": [
+        "(1 E-Mail pro Quartal)"
       ],
-      "You may also ${ refresh } or try again later.": [
-        "Sie können auch ${ refresh } oder es später noch einmal versuchen."
+      "(1-2 emails per month)": [
+        "(1-2 E-Mails pro Monat)"
+      ],
+      "(1 email per month)": [
+        "(1 E-Mail pro Monat)"
+      ]
+    },
+    "Notification": {
+      "OpenVPN / IKEv2 credentials regenerated": [
+        "OpenVPN/IKEv2-Zugangsdaten wiederhergestellt"
+      ],
+      "Coupons are temporarily disabled": [
+        "Gutscheine sind vorübergehend deaktiviert"
+      ],
+      "Invites are temporarily disabled": [
+        "Einladungen sind vorübergehend deaktiviert"
+      ],
+      "Verification code successfully sent to ${ destination }": [
+        "Bestätigungscode erfolgreich an ${ destination } gesendet"
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "Windows": [
+        "Windows"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "Android TV": [
+        "Android TV"
+      ]
+    },
+    "CountryInfo": {
+      "(via ${ entryCountryName })": [
+        "(über ${ entryCountryName })"
+      ]
+    },
+    "TableHeader": {
+      "Name": [
+        "Name"
+      ],
+      "Country": [
+        "Land"
+      ],
+      "City": [
+        "Stadt"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Action": [
+        "Aktion"
+      ]
+    },
+    "Feature": {
+      "Access to all countries": [
+        "Zugriff auf alle Länder"
+      ],
+      "Secure Core servers": [
+        "„Secure Core”‐Server"
+      ],
+      "Fastest VPN servers": [
+        "Schnellste VPN-Server"
+      ],
+      "Torrenting support (P2P)": [
+        "Torrent-Unterstützung (P2P)"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Verbindung für ${ plusVpnConnections } Gerät",
+        "Verbindung für bis zu ${ plusVpnConnections } Geräte"
+      ],
+      "Secure streaming support": [
+        "Unterstützung für verschlüsseltes Streaming"
+      ]
+    },
+    "VPN info": {
+      "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
+        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now und weitere."
+      ]
+    },
+    "label": {
+      "Phone number": [
+        "Rufnummer"
       ]
     },
     "Invoice type display as badge": {
@@ -3208,225 +3438,6 @@
         "ProtonMail‐Rechnung"
       ]
     },
-    "label": {
-      "Phone number": [
-        "Rufnummer"
-      ]
-    },
-    "Header": {
-      "Help": [
-        "Hilfe"
-      ],
-      "Simultaneous connections": [
-        "Gleichzeitige Verbindungen"
-      ],
-      "Countries": [
-        "Länder"
-      ],
-      "Speed": [
-        "Geschwindigkeit"
-      ],
-      "P2P filesharing/BitTorrent support": [
-        "P2P-Dateifreigabe/BitTorrent-Unterstützung"
-      ],
-      "Tor over VPN": [
-        "Tor über VPN"
-      ],
-      "Secure Core VPN": [
-        "Secure Core-VPN"
-      ],
-      "Apps for Android / Linux / iOS / Windows": [
-        "Anwendungen für Android/Linus/iOS/Windows"
-      ],
-      "Advanced encryption": [
-        "Fortgeschrittene Verschlüsselung"
-      ],
-      "Kill Switch / Always-on": [
-        "Kill-Switch (Not-Trennung)/Dauerhaft aktives VPN"
-      ],
-      "No logs policy": [
-        "Keine Protokollierungsrichtlinie"
-      ],
-      "No data limits": [
-        "Keine Datenbeschränkungen"
-      ],
-      "Access blocked content": [
-        "Zugriff auf gesperrte Inhalte"
-      ],
-      "30-day money-back guarantee": [
-        "30 Tage Geld‐zurück‐Garantie"
-      ],
-      "Streaming service support": [
-        "Unterstützung von Streaming-Diensten"
-      ]
-    },
-    "Error notification in the bug report modal when the user upload file": {
-      "No image selected": [
-        "Keine Grafik ausgewählt"
-      ]
-    },
-    "Bug category": {
-      "Sign in problem": [
-        "Registrierungsproblem"
-      ],
-      "Sign up problem": [
-        "Registrierungsproblem"
-      ],
-      "Payments problem": [
-        "Zahlungsproblem"
-      ],
-      "Custom domain problem": [
-        "Problem mit eigener Domain"
-      ],
-      "Bridge problem": [
-        "Problem mit „ProtonMail Bridge”"
-      ],
-      "Import / export problem": [
-        "Im-/Exportproblem"
-      ],
-      "Connection problem": [
-        "Verbindungsfehler"
-      ],
-      "Slow speed problem": [
-        "Problem mit langsamer Geschwindigkeit"
-      ],
-      "Calendar problem": [
-        "Kalenderproblem"
-      ],
-      "Contacts problem": [
-        "Probleme mit Kontakten"
-      ],
-      "Drive problem": [
-        "Laufwerksproblem"
-      ],
-      "Mail problem": [
-        "E-Mail-Problem"
-      ],
-      "VPN problem": [
-        "VPN‐Problem"
-      ],
-      "Feature request": [
-        "Funktionswünsche"
-      ],
-      "Other": [
-        "Weitere"
-      ],
-      "Signup problem": [
-        "Registrierungsproblem"
-      ],
-      "Installation problem": [
-        "Installationsproblem"
-      ],
-      "Update problem": [
-        "Aktualisierungsproblem"
-      ],
-      "Application problem": [
-        "Anwendungsproblem"
-      ],
-      "Speed problem": [
-        "Geschwindigkeitsproblem"
-      ],
-      "Manual setup problem": [
-        "Problem mit der manuellen Einrichtung"
-      ],
-      "Website access problem": [
-        "Zugriffsproblem auf eine Website"
-      ],
-      "Streaming problem": [
-        "Streaming‐Problem"
-      ]
-    },
-    "Group": {
-      "Account": [
-        "Konto"
-      ],
-      "Apps": [
-        "Apps"
-      ],
-      "Network": [
-        "Netzwerk"
-      ],
-      "Services": [
-        "Dienste"
-      ],
-      "Other category": [
-        "Andere Kategorie"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Auswählen"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Bildschirmfoto(s) anhängen"
-      ]
-    },
-    "Onboarding Proton": {
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Dies ist das, was andere sehen werden, wenn Sie diesen eine E-Mail senden, sie zu einer Veranstaltung einladen oder eine Datei mit ihnen teilen."
-      ],
-      "Choose a display name": [
-        "Anzeigenamen wählen"
-      ],
-      "Select a theme": [
-        "Farbschema auswählen"
-      ],
-      "You can change this anytime in your settings.": [
-        "Dies kann jederzeit in Ihren Einstellungen geändert werden."
-      ],
-      "Discover all Proton services": [
-        "Alle Proton Dienste kennenlernen"
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Verwenden Sie die App-Auswahl oben links, um auf andere Proton-Dienste zuzugreifen, einschließlich VPN, Kalender und Drive."
-      ],
-      "Welcome to Proton": [
-        "Willkommen bei Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Unsere Zielsetzung ist es, ein Internet aufzubauen, in dem Sie die Kontrolle über Ihre Daten und Ihre Privatsphäre haben. Wir haben Proton kürzlich aktualisiert - Willkommen im sicheren Internet."
-      ],
-      "Set up your organization": [
-        "Organisation einrichten"
-      ],
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Konfigurieren Sie Ihre Organisation, verknüpfen Sie Ihren Domainnamen und erstellen Sie Konten, um sicherzustellen, dass alle Mitglieder Ihrer Organisation geschützt sind."
-      ]
-    },
-    "Password": {
-      "Confirm new password": [
-        "Neues Passwort bestätigen"
-      ]
-    },
-    "Delinquent modal title": {
-      "Overdue invoice": [
-        "Überfällige Rechnung"
-      ]
-    },
-    "Human verification method": {
-      "CAPTCHA": [
-        "CAPTCHA"
-      ],
-      "Email": [
-        "E-Mail-Adresse"
-      ],
-      "SMS": [
-        "SMS"
-      ],
-      "Manual": [
-        "Manuell"
-      ],
-      "No verification method available": [
-        "Keine Bestätigungsmethode verfügbar"
-      ]
-    },
-    "Footer": {
-      "Based in Switzerland, available globally.": [
-        "In der Schweiz ansässig und weltweit verfügbar."
-      ]
-    },
     "file size format": {
       "bytes": [
         "Bytes"
@@ -3445,26 +3456,6 @@
       "Password must contain at least ${ length } character": [
         "Passwort muss mindestens ${ length } Zeichen enthalten",
         "Das Passwort muss mindestens ${ length } Zeichen enthalten"
-      ]
-    },
-    "Theme": {
-      "Proton": [
-        "Proton"
-      ],
-      "Carbon": [
-        "Anthrazit"
-      ],
-      "Snow": [
-        "Weiß"
-      ],
-      "Monokai": [
-        "Monokai"
-      ],
-      "Contrast": [
-        "Kontrast"
-      ],
-      "Legacy": [
-        "Veraltet"
       ]
     },
     "Plan details": {
