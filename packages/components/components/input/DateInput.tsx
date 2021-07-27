@@ -33,6 +33,8 @@ interface Props extends Omit<InputProps, 'min' | 'max' | 'value' | 'onChange'> {
     min?: Date;
     max?: Date;
     onChange: (value: Date | undefined) => void;
+    // In some cases we want to prevent the 'reset' of the value, if value > max or < min
+    preventValueReset?: boolean;
 }
 const DateInput = ({
     value,
@@ -47,6 +49,7 @@ const DateInput = ({
     weekStartsOn,
     min = DEFAULT_MIN,
     max = DEFAULT_MAX,
+    preventValueReset = false,
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
@@ -70,6 +73,12 @@ const DateInput = ({
         try {
             const newDate = fromFormatted(temporaryInput, dateLocale);
             if (newDate < min || newDate > max) {
+                /* There are some cases where we do not want to reset the value so that we are able to tell the user
+                 *  he made a mistake, by displaying an error.
+                 */
+                if (preventValueReset) {
+                    return newDate;
+                }
                 return;
             }
             if (Number.isNaN(+newDate)) {
