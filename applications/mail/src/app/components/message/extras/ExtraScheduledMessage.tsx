@@ -36,6 +36,11 @@ const ExtraScheduledMessage = ({ message }: Props) => {
     }, []);
 
     const handleUnscheduleMessage = async () => {
+        /* Reset the load retry so that if the user schedules again the message and clicks on the view message link,
+           the body of message can be loaded. Without the reset, the message can have a loadRetry > 3, which will block
+           the loading of the mail body.
+         */
+        message.loadRetry = 0;
         await api(cancelSend(message.data?.ID));
         await call();
         createNotification({

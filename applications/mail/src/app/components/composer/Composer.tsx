@@ -21,20 +21,13 @@ import {
     ConfirmModal,
     ErrorButton,
     Alert,
-    Button,
-    useMessageCounts,
-    useConversationCounts,
-    useMailSettings,
-    Loader,
 } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { setBit, clearBit } from '@proton/shared/lib/helpers/bitset';
 import useIsMounted from '@proton/components/hooks/useIsMounted';
-import { EVENT_ACTIONS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { canonizeEmail } from '@proton/shared/lib/helpers/email';
-import { toMap } from '@proton/shared/lib/helpers/object';
-import { LabelCount } from '@proton/shared/lib/interfaces';
-import { useLocation } from 'react-router-dom';
+import { useScheduleSend } from '@proton/components/hooks/useScheduleSend';
 import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
 import ComposerMeta from './ComposerMeta';
 import ComposerContent from './ComposerContent';
@@ -55,7 +48,7 @@ import { EditorActionsRef } from './editor/SquireEditorWrapper';
 import { useHasScroll } from '../../hooks/useHasScroll';
 import { useReloadSendInfo, useMessageSendInfo } from '../../hooks/useSendInfo';
 import { useDebouncedHandler } from '../../hooks/useDebouncedHandler';
-import { DRAG_ADDRESS_KEY, SCHEDULED_MESSAGES_LIMIT } from '../../constants';
+import { DRAG_ADDRESS_KEY } from '../../constants';
 import { useComposerHotkeys } from '../../hooks/composer/useComposerHotkeys';
 import { updateMessageCache, useMessageCache } from '../../containers/MessageProvider';
 import { ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
@@ -64,8 +57,6 @@ import { useCloseHandler } from '../../hooks/composer/useCloseHandler';
 import { updateKeyPackets } from '../../helpers/attachment/attachment';
 import { Event } from '../../models/event';
 import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
-import { useSendVerifications } from '../../hooks/composer/useSendVerifications';
-import { isConversationMode } from '../../helpers/mailSettings';
 
 enum ComposerInnerModal {
     None,
@@ -119,8 +110,6 @@ const Composer = (
     const { createNotification } = useNotifications();
     const isMounted = useIsMounted();
 
-    const { preliminaryVerifications } = useSendVerifications();
-
     const bodyRef = useRef<HTMLDivElement>(null);
     const [hasVerticalScroll] = useHasScroll(bodyRef);
 
@@ -168,18 +157,6 @@ const Composer = (
     // onClose handler can be called in a async handler
     // Input onClose ref can change in the meantime
     const onClose = useHandler(inputOnClose);
-    const location = useLocation();
-
-    const [mailSettings, loadingMailSettings] = useMailSettings();
-    const [conversationCounts, loadingConversationCounts] = useConversationCounts();
-    const [messageCounts, loadingMessageCounts] = useMessageCounts();
-    const referenceCount = toMap(
-        isConversationMode(MAILBOX_LABEL_IDS.SCHEDULED, mailSettings, location) ? conversationCounts : messageCounts,
-        'LabelID'
-    ) as { [labelID: string]: LabelCount };
-    const scheduleCount = referenceCount[MAILBOX_LABEL_IDS.SCHEDULED];
-
-    const loading = loadingMailSettings || loadingConversationCounts || loadingMessageCounts;
 
     const handleDragEnter = (event: DragEvent) => {
         if (event.dataTransfer?.types.includes(DRAG_ADDRESS_KEY)) {
@@ -457,23 +434,6 @@ const Composer = (
     const handleExpiration = () => {
         setInnerModal(ComposerInnerModal.Expiration);
     };
-    const handleScheduleSendModal = async () => {
-        if (scheduleCount.Total && scheduleCount.Total >= SCHEDULED_MESSAGES_LIMIT) {
-            createModal(
-                <ConfirmModal
-                    title={c('Confirm modal title').t`Message saved to Drafts`}
-                    confirm={<Button color="norm" type="submit">{c('Action').t`Got it`}</Button>}
-                    cancel={null}
-                >
-                    {c('Info')
-                        .t`Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.`}
-                </ConfirmModal>
-            );
-        } else {
-            await preliminaryVerifications(modelMessage as MessageExtendedWithData);
-            setInnerModal(ComposerInnerModal.ScheduleSend);
-        }
-    };
     const handleCloseInnerModal = () => {
         setInnerModal(ComposerInnerModal.None);
     };
@@ -531,13 +491,13 @@ const Composer = (
         onClose,
     });
 
-    const handleScheduleSend = (scheduledAt: number) => {
-        setModelMessage({
-            ...modelMessage,
-            scheduledAt,
-        });
-        setTimeout(handleSend);
-    };
+    const { loadingScheduleCount, handleScheduleSendModal, handleScheduleSend } = useScheduleSend({
+        modelMessage: modelMessage as MessageExtendedWithData,
+        setInnerModal,
+        ComposerInnerModal,
+        setModelMessage,
+        handleSend,
+    });
 
     useImperativeHandle(ref, () => ({
         close: handleClose,
@@ -563,10 +523,6 @@ const Composer = (
         lock: lock || !hasRecipients,
         saving,
     });
-
-    if (loading) {
-        return <Loader />;
-    }
 
     return (
         <div
@@ -646,6 +602,7 @@ const Composer = (
                     onDelete={handleDelete}
                     addressesBlurRef={addressesBlurRef}
                     attachmentTriggerRef={attachmentTriggerRef}
+                    loadingScheduleCount={loadingScheduleCount}
                 />
             </div>
         </div>

@@ -11,6 +11,7 @@ import {
     startOfToday,
     endOfDay,
     isTomorrow,
+    endOfToday,
 } from 'date-fns';
 import { c, msgid } from 'ttag';
 import { Alert, DateInput, ErrorZone, generateUID, Label, TimeInput } from '@proton/components';
@@ -99,7 +100,7 @@ const ComposerScheduleSendModal = ({ onClose, onSubmit }: Props) => {
         if (date > maxDate) {
             // translator : The variable is the number of days, written in digits
             return c('Error').ngettext(
-                msgid`Choose a date within the next ${SCHEDULED_MAX_DATE_DAYS} days.`,
+                msgid`Choose a date within the next ${SCHEDULED_MAX_DATE_DAYS} day.`,
                 `Choose a date within the next ${SCHEDULED_MAX_DATE_DAYS} days.`,
                 SCHEDULED_MAX_DATE_DAYS
             );
@@ -114,11 +115,10 @@ const ComposerScheduleSendModal = ({ onClose, onSubmit }: Props) => {
          * From our side we are using hour + minutes from the returned date of the time input to build the date when we want to send the scheduled
          * To check if the user is making an error, we need to compare the Time input value with the current date
          */
-        const timeInputDate = startOfToday().setHours(time.getHours(), time.getMinutes());
+        const timeInputDate = startOfToday();
+        timeInputDate.setHours(time.getHours(), time.getMinutes());
 
-        return isToday(date) && timeInputDate <= new Date().getTime()
-            ? c('Error').t`Choose a date in the future.`
-            : undefined;
+        return isToday(date) && timeInputDate <= new Date() ? c('Error').t`Choose a date in the future.` : undefined;
     }, [time, date]);
 
     const disabled = useMemo(() => {
@@ -147,7 +147,7 @@ const ComposerScheduleSendModal = ({ onClose, onSubmit }: Props) => {
                         value={date}
                         min={minDate}
                         max={maxDate}
-                        customInputFormat={formatDateInput}
+                        toFormatter={formatDateInput}
                         preventValueReset
                         error={errorDate}
                         errorZoneClassName="hidden"
@@ -164,7 +164,7 @@ const ComposerScheduleSendModal = ({ onClose, onSubmit }: Props) => {
                         onChange={handleChangeTime}
                         value={time}
                         min={getMinTime()}
-                        max={isToday(date) ? endOfDay(new Date()) : undefined}
+                        max={isToday(date) ? endOfToday() : undefined}
                         error={errorTime}
                         errorZoneClassName="hidden"
                         isSubmitted

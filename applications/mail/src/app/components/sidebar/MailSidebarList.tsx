@@ -46,8 +46,8 @@ const formatFolderID = (folderID: string): string => `folder_expanded_state_${fo
 
 const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
     const [user] = useUser();
-    const [conversationCounts, actualLoadingConversationCounts] = useConversationCounts();
-    const [messageCounts, actualLoadingMessageCounts] = useMessageCounts();
+    const [conversationCounts] = useConversationCounts();
+    const [messageCounts] = useMessageCounts();
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const [displayFolders, toggleFolders] = useLocalState(true, `${user.ID}-display-folders`);
     const [displayLabels, toggleLabels] = useLocalState(true, `${user.ID}-display-labels`);
@@ -190,10 +190,6 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
 
     useHotkeys(sidebarRef, shortcutHandlers);
 
-    // We want to show the loader only at inital loading, not on updates
-    const loadingConversationCounts = actualLoadingConversationCounts && conversationCounts?.length === 0;
-    const loadingMessageCounts = actualLoadingMessageCounts && messageCounts?.length === 0;
-
     const { ShowMoved } = mailSettings || { ShowMoved: 0 };
 
     const isConversation = isConversationMode(currentLabelID, mailSettings, location);
@@ -230,14 +226,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
     const showScheduled =
         scheduledFeature?.Value && (user.hasPaidMail || totalMessagesMap[MAILBOX_LABEL_IDS.SCHEDULED] > 0);
 
-    if (
-        loadingMailSettings ||
-        loadingLabels ||
-        loadingFolders ||
-        loadingConversationCounts ||
-        loadingMessageCounts ||
-        loadingScheduledFeature
-    ) {
+    if (loadingMailSettings || loadingLabels || loadingFolders || loadingScheduledFeature) {
         return <Loader />;
     }
 

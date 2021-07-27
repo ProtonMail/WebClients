@@ -107,11 +107,8 @@ export const useSendMessage = () => {
                     ExpiresIn: expiresIn === 0 ? undefined : expiresIn,
                     DelaySeconds: delaySendSeconds, // Once the API receive this request, it calculates how much time the notification needs to be display
                     AutoSaveContacts: autoSaveContacts,
+                    DeliveryTime: scheduledAt || undefined,
                 };
-
-                if (scheduledAt) {
-                    payload.DeliveryTime = scheduledAt;
-                }
 
                 return api<{ Sent: Message }>(sendMessage(message.data?.ID, payload));
             };

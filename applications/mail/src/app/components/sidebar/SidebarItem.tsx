@@ -81,7 +81,7 @@ const SidebarItem = ({
     const active = labelID === currentLabelID;
     const ariaCurrent = active ? 'page' : undefined;
 
-    const canDisplayTotalMessagesCounter = labelID === MAILBOX_LABEL_IDS.SCHEDULED && totalMessagesCount > 0;
+    const canDisplayTotalMessagesCounter = labelID === SCHEDULED && totalMessagesCount > 0;
 
     const handleClick = () => {
         if (history.location.pathname.endsWith(link) && !refreshing) {
