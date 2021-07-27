@@ -21,6 +21,9 @@
       "Authentication error.": [
         "Godkendelsesfejl."
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
+        "Din aktuelle browser tillader ikke fuld godkendelse af betalingen. Benyt en anden browser eller log ind via en computer."
+      ],
       "Email address invalid": [
         "Ugyldig e-mailadresse"
       ],
@@ -106,6 +109,66 @@
       ],
       "File has no contents to preview": [
         "Filen har intet indhold at forhåndsvise"
+      ],
+      "Process aborted": [
+        "Proces afbrudt"
+      ],
+      "Payment process cancelled": [
+        "Betalingproces annulleret"
+      ],
+      "Payment process failed": [
+        "Betalingproces mislykkedes"
+      ],
+      "Payment process consumed": [
+        "Betalingssession udløbet"
+      ],
+      "Payment process not supported": [
+        "Betalingsproces understøttes ikke"
+      ],
+      "Unknown payment token status": [
+        "Ukendt betalings-token status"
+      ],
+      "Tab closed": [
+        "Fane lukket"
+      ],
+      "Name on card required": [
+        "Navn på kort er obligatorisk"
+      ],
+      "Invalid expiration date": [
+        "Ugyldig udløbsdato"
+      ],
+      "Invalid card number": [
+        "Ugyldigt kortnummer"
+      ],
+      "Invalid ${ name } code": [
+        "Ugyldig ${ name }-kode"
+      ],
+      "Invalid postal code": [
+        "Ugyldigt postnummer"
+      ],
+      "Error connecting to the Bitcoin API.": [
+        "Fejl under oprettelse af forbindelse til Bitcoin-API."
+      ],
+      "Amount below minimum.": [
+        "Beløb under minimum."
+      ],
+      "Amount above the maximum.": [
+        "Beløb overstiger maksimum."
+      ],
+      "The minimum amount that can be donated is ${ price }": [
+        "Det mindste beløb, der kan doneres, er ${ price }"
+      ],
+      "The minimum amount of credit that can be added is ${ _price }": [
+        "Det mindste kreditstørrelse, der kan tilføjes, er ${ _price }"
+      ],
+      "The minimum payment we accept is ${ _price2 }": [
+        "Den mindste betaling vi accepterer er ${ _price2 }"
+      ],
+      "Checkout expired, please try again.": [
+        "Checkout udløbet, prøv venligst igen."
+      ],
+      "Invalid code": [
+        "Ugyldig kode"
       ],
       "Empty condition": [
         "Betingelse er tom"
@@ -670,17 +733,11 @@
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
       ],
-      "Switch account": [
-        "Skift konto"
-      ],
-      "Sign out": [
-        "Log ud"
+      "${ BRAND_NAME } introduction": [
+        "${ BRAND_NAME } introduktion"
       ],
       "I have a question": [
         "Jeg har et spørgsmål"
-      ],
-      "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } introduktion"
       ],
       "Request a feature": [
         "Anmod om en funktion"
@@ -690,6 +747,12 @@
       ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } butik"
+      ],
+      "Switch account": [
+        "Skift konto"
+      ],
+      "Sign out": [
+        "Log ud"
       ],
       "Go to settings": [
         "Gå til indstillinger"
@@ -711,6 +774,54 @@
       ],
       "Composer mode": [
         "Skrivetilstand"
+      ],
+      "Remove bonuses": [
+        "Fjern bonusser"
+      ],
+      "Try again": [
+        "Prøv igen"
+      ],
+      "Use a different card": [
+        "Benyt et andet kort"
+      ],
+      "Use a different payment method": [
+        "Benyt en anden betalingsmetode"
+      ],
+      "Retry": [
+        "Prøv igen"
+      ],
+      "Loading verification": [
+        "Indlæser verifikation"
+      ],
+      "Select plan": [
+        "Vælg abonnement"
+      ],
+      "Compare all features": [
+        "Sammenlign alle features"
+      ],
+      "${ boldSave } by switching to annual billing": [
+        "${ boldSave } ved at skifte til årlig fakturering"
+      ],
+      "Pay": [
+        "Betal"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "Åbn ${ CALENDAR_APP_NAME } indstillinger"
+      ],
+      "Remove gift code": [
+        "Fjern gavekode"
+      ],
+      "annual billing": [
+        "årlig fakturering"
+      ],
+      "Compare plans": [
+        "Sammenlign abonnementer"
+      ],
+      "Decrease": [
+        "Formindsk"
+      ],
+      "Increase": [
+        "Forøg"
       ],
       "Preview": [
         "Forhåndsvisning"
@@ -760,11 +871,17 @@
       "Add to ${ CALENDAR_APP_NAME }": [
         "Føj til ${ CALENDAR_APP_NAME }"
       ],
+      "Learn more": [
+        "Få mere at vide"
+      ],
+      "Open shop": [
+        "Åbn butik"
+      ],
+      "Open calendar": [
+        "Åbn kalender"
+      ],
       "Send anyway": [
         "Send alligevel"
-      ],
-      "Empty": [
-        "Tøm"
       ],
       "Maximize composer": [
         "Maksimér skrivevinduet"
@@ -917,9 +1034,6 @@
       "Send receipt": [
         "Send kvittering"
       ],
-      "Try again": [
-        "Prøv igen"
-      ],
       "Accept": [
         "Acceptér"
       ],
@@ -974,8 +1088,11 @@
       "Show more search options": [
         "Vis flere søgemuligheder"
       ],
-      "Advanced search options": [
-        "Avancerede søgemuligheder"
+      "Less search options": [
+        "Færre søgemuligheder"
+      ],
+      "More search options": [
+        "Flere søgemuligheder"
       ],
       "Advanced search": [
         "Avanceret søgning"
@@ -1268,6 +1385,96 @@
       "Give feedback": [
         "Giv feedback"
       ],
+      "Confirm loss of Proton bonuses": [
+        "Bekræft tab af Proton-bonusser"
+      ],
+      "Unsupported browser": [
+        "Browser understøttes ikke"
+      ],
+      "Card verification": [
+        "Kortbekræftelse"
+      ],
+      "Payment verification": [
+        "Betalingsbekræftelse"
+      ],
+      "Processing...": [
+        "Behandler..."
+      ],
+      "Card verification in progress": [
+        "Kortbekræftelse i gang"
+      ],
+      "Payment verification in progress": [
+        "Betalingsbekræftelse i gang"
+      ],
+      "PayPal verification failed": [
+        "PayPal-bekræftelse fejlede"
+      ],
+      "3-D Secure verification failed": [
+        "3-D Secure-bekræftelse mislykkedes"
+      ],
+      "Error": [
+        "Fejl"
+      ],
+      "ZIP / postal code": [
+        "Postnummer"
+      ],
+      "Payment details": [
+        "Betalingsdetaljer"
+      ],
+      "Currency": [
+        "Valuta"
+      ],
+      "Billing cycle": [
+        "Faktureringsperiode"
+      ],
+      "Current plan": [
+        "Nuværende abonnement"
+      ],
+      "Processing": [
+        "Behandler"
+      ],
+      "Apply gift code": [
+        "Tilføj gavekode"
+      ],
+      "Subtotal": [
+        "Subtotal"
+      ],
+      "Coupon discount": [
+        "Rabatkupon"
+      ],
+      "Total (monthly)": [
+        "Total (månedlig)"
+      ],
+      "Credits": [
+        "Kreditter"
+      ],
+      "Gift code": [
+        "Gavekode"
+      ],
+      "Amount due": [
+        "Forfaldent beløb"
+      ],
+      "Cancel subscription": [
+        "Afmeld abonnement"
+      ],
+      "Network error": [
+        "Netværksfejl"
+      ],
+      "Select a plan": [
+        "Vælg et abonnement"
+      ],
+      "Customize your plan": [
+        "Tilpas dit abonnement"
+      ],
+      "Checkout": [
+        "Til kassen"
+      ],
+      "Plan summary": [
+        "Abonnementoversigt"
+      ],
+      "${ appName } customization": [
+        "${ appName } tilpasning"
+      ],
       "Beta Access": [
         "Beta-adgang"
       ],
@@ -1301,11 +1508,8 @@
       "Message without subject?": [
         "Besked uden emne?"
       ],
-      "Invalid recipients": [
-        "Ugyldige modtagere"
-      ],
-      "Invalid recipient": [
-        "Ugyldig modtager"
+      "No attachment found": [
+        "Ingen vedhæftning fundet"
       ],
       "Re-sign contact": [
         "Gensignér kontakt"
@@ -1337,8 +1541,8 @@
         "Slet ${ count } besked",
         "Slet ${ count } beskeder"
       ],
-      "Empty ${ labelName }": [
-        "Tøm ${ labelName }"
+      "Delete all messages": [
+        "Slet alle beskeder"
       ],
       "Trust new key?": [
         "Stol på ny nøgle?",
@@ -1850,6 +2054,245 @@
       "You have disabled Beta Access. Click ${ refreshButton } to use the stable version of ${ appName }. The application will be reloaded.": [
         "Du har deaktiveret Beta-adgang. Klik på ${ refreshButton } for at bruge den stabile version af ${ appName }. Applikationen vil blive genindlæst."
       ],
+      "Since you're a loyal user, your account has additional features enabled.": [
+        "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        "Ved at nedgradere til et Free-abonnement mister du disse fordele permanent, selvom du senere opgraderer igen."
+      ],
+      "+${ bonusSpace } bonus storage": [
+        "+${ bonusSpace } bonuslagerplads"
+      ],
+      "+${ organization.BonusVPN } connection for ProtonVPN (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } forbindelse til ProtonVPN (tillader dig at forbinde flere enheder til VPN)",
+        "+${ organization.BonusVPN } forbindelser til ProtonVPN (tillader dig at forbinde flere enheder til VPN)"
+      ],
+      "Your bank requires 3-D Secure verification for security purposes.": [
+        "Din bank kræver 3-D Secure-bekræftelse af sikkerhedshensyn."
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        "Bekræftelsesprocessen åbner en ny fane. Deaktivér derfor pop-up blockere. Du vil ikke få en opkrævning. Ethvert beløb anvendt til bekræftelse af kortet refunderes straks."
+      ],
+      "Verification will open a new tab, please disable any popup blockers.": [
+        "Bekræftelsesprocessen åbner en ny fane. Deaktivér derfor eventuelle pop-up blockere."
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Du omdirigeres snart til PayPal for at bekræfte din betaling."
+      ],
+      "You will be soon redirected to your bank to verify your payment.": [
+        "Du bliver snart omdirigeret til din bank for at bekræfte din betaling."
+      ],
+      "Please verify the card in the new tab which was opened.": [
+        "Bekræft kortet i den nye fane, der blev åbnet."
+      ],
+      "Please verify payment at the new tab which was opened.": [
+        "Bekræft betalingen i den nye fane, der blev åbnet."
+      ],
+      "Verification can take a few minutes.": [
+        "Bekærftelse kan tage et par minutter."
+      ],
+      "Payment can take a few minutes to fully verify.": [
+        "Betalingen kan tage et par minutter at bekræfte helt."
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        "Forsøg venligst igen, benyt en anden betalingsmetode eller kontakt PayPal for hjælp."
+      ],
+      "Please try again, use a different payment method, or call your bank for assistance.": [
+        "Forsøg igen. Benyt en anden betalingsmetode, eller kontakt din bank for hjælp."
+      ],
+      "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        "For Visa, MasterCard og Discover er det de 3 cifre på bagsiden af dit kort. For American Express, de 4 cifre på forsiden af dit kort."
+      ],
+      "Amount below minimum (${ amount }).": [
+        "Beløb under minimum (${ amount })."
+      ],
+      "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
+        "Bitcoin-transaktioner kan tage noget tid at bekræfte (op til 24 timer). Efter bekræftelsen føjer vi kredit til din konto. Efter transaktionsbekræftelsen kan du betale din faktura med kreditten."
+      ],
+      "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
+        "Når du har foretaget din Bitcoin-betaling, skal du følge anvisningerne nedenfor for at opgradere."
+      ],
+      "Please verify the payment in the new tab.": [
+        "Bekræft venligst betalingen i den nye fane."
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Du omdirigeres til PayPal i en ny browserfane for at gennemføre denne transaktion. Benytter du evt. pop-up blockere, så deaktivér venligst disse for at fortsætte."
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        "Du skal have et kreditkort eller en bankkonto tilknyttet din PayPal-konto. Har din PayPal-konto ikke det, så klik på knappen nedenfor."
+      ],
+      "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
+        ""
+      ],
+      "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
+        ""
+      ],
+      "We use 3-D Secure to protect your payments.": [
+        ""
+      ],
+      "Billed as ${ billedPrice } per year": [
+        ""
+      ],
+      "Billed as ${ billedPrice } every 2 years": [
+        ""
+      ],
+      "Included": [
+        "Inkluderet"
+      ],
+      "* Customizable features": [
+        ""
+      ],
+      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+        ""
+      ],
+      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
+        ""
+      ],
+      "For getting started with private and secure emailing.": [
+        ""
+      ],
+      "A free and uncensored Internet should be available to all.": [
+        ""
+      ],
+      "Starter VPN service with P2P support.": [
+        ""
+      ],
+      "Full-featured VPN with speed up to 10 Gbps.": [
+        ""
+      ],
+      "For individuals that need a fully-featured mailbox with advanced protection.": [
+        ""
+      ],
+      "For professionals that need secure business communications.": [
+        ""
+      ],
+      "VPN + ${ mailAppName } bundle for families and small businesses.": [
+        ""
+      ],
+      "For families and small teams; includes both Mail and VPN.": [
+        ""
+      ],
+      "Save 20%": [
+        ""
+      ],
+      "Your account is being upgraded, this may take up to 30 seconds.": [
+        ""
+      ],
+      "Thank you for supporting our mission.": [
+        ""
+      ],
+      "Your account will be updated once the payment is cleared.": [
+        ""
+      ],
+      "Account successfully updated": [
+        ""
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        ""
+      ],
+      "(Mail + VPN)": [
+        ""
+      ],
+      "${ mailAppName } Free": [
+        ""
+      ],
+      "${ vpnAppName } Free": [
+        ""
+      ],
+      "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
+        ""
+      ],
+      "You must remove any additional calendar and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
+        ""
+      ],
+      "No payment is required at this time.": [
+        ""
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
+        ""
+      ],
+      "20% discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Black Friday 2018 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2019 applied to your subscription": [
+        ""
+      ],
+      "Black Friday 2020 newcomer discount has been applied": [
+        ""
+      ],
+      "Discount applied to your subscription with coupon ${ code }": [
+        ""
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        ""
+      ],
+      "30 days money-back guarantee.": [
+        "30 dages pengene-tilbage-garanti."
+      ],
+      "Save extra 20%": [
+        "Spar 20% ekstra"
+      ],
+      "${ save20 } on your subscription by switching to ${ annualBilling }": [
+        ""
+      ],
+      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
+        ""
+      ],
+      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
+        ""
+      ],
+      "Storage GB": [
+        ""
+      ],
+      "Users": [
+        ""
+      ],
+      "Domains": [
+        ""
+      ],
+      "Addresses": [
+        ""
+      ],
+      "Connections": [
+        ""
+      ],
+      "Allows you to host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Add additional addresses to your account like user2@protonmail.com": [
+        ""
+      ],
+      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
+        ""
+      ],
+      "ProtonMail Plus is limited to one user and starts with 5 GB of storage.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more users.": [
+        ""
+      ],
+      "ProtonVPN ${ PLAN_NAMES[PLANS.VPNPLUS] } includes ${ plansNameMap[PLANS.VPNPLUS].MaxVPN } VPN connection.": [
+        "",
+        ""
+      ],
+      "Each additional connection can be assigned to users in your organization.": [
+        ""
+      ],
+      "Switch to ${ professionalPlan } to add more connections.": [
+        ""
+      ],
+      "${ mailAppName } Professional starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
+        ""
+      ],
+      "Not customizable": [
+        ""
+      ],
+      "Expired": [
+        ""
+      ],
       "Inherited from parent folder": [
         "Nedarvet fra overordnet mappe"
       ],
@@ -1946,6 +2389,9 @@
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Du har ikke givet din e-mail noget emne. Vil du sende beskeden alligevel?"
       ],
+      "Do you want to send your message anyway?": [
+        ""
+      ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "Bekræftelsen af ${ contactName } mislykkedes: Kontakten er ikke signeret korrekt.\nDette kan være resultatet af en nulstilling af adgangskoden.\nDu skal gensignere kontakten for at sende en besked til ${ contactAddress } eller redigere kontakten."
       ],
@@ -1982,17 +2428,17 @@
         "Er du sikker på, at du vil slette ${ count } besked permanent?",
         "Er du sikker på, at du vil slette ${ count } beskeder permanent?"
       ],
-      "Please note that if you empty this label, you will permanently delete all the emails with this label.": [
-        "Bemærk at hvis du tømmer denne etiket, vil du permanent slette alle e-mails med denne etiket."
+      "All messages stored with this label will be permanently deleted.": [
+        ""
       ],
-      "Please note that if you empty this folder, you will permanently delete all the emails stored in it.": [
-        "Bemærk at hvis du tømmer denne mappe, vil du permanent slette alle e-mails lagret i den."
+      "All messages stored in this folder will be permanently deleted.": [
+        ""
       ],
-      "Are you sure you want to empty this label?": [
-        "Er du sikker på, at du vil tømme denne etikette?"
+      "Are you sure you want to delete all messages with this label?": [
+        ""
       ],
-      "Are you sure you want to empty this folder?": [
-        "Er du sikker på, at du vil tømme denne mappe?"
+      "Are you sure you want to delete all messages in this folder?": [
+        ""
       ],
       "Copied to clipboard": [
         "Kopieret til udklipsholder"
@@ -2297,6 +2743,75 @@
       "Seems like you are all caught up for now": [
         "Det ser ud til, at du er nået i bund"
       ],
+      "Get more storage and premium features.": [
+        ""
+      ],
+      "Support privacy by upgrading for": [
+        ""
+      ],
+      "/month.": [
+        ""
+      ],
+      "Upgrade to send email from @pm.me addresses.": [
+        ""
+      ],
+      "Upgrade to create more folders, filters, and addresses.": [
+        ""
+      ],
+      "Upgrade to configure a vacation auto-responder.": [
+        ""
+      ],
+      "Upgrade to use ProtonMail with third-party desktop clients.": [
+        ""
+      ],
+      "Proton doesn't make money by abusing privacy.": [
+        ""
+      ],
+      "Upgrade to support privacy and get more features.": [
+        ""
+      ],
+      "Visit our shop to get Proton merchandise.": [
+        ""
+      ],
+      "Increase storage space starting at": [
+        ""
+      ],
+      "For increased security, activate 2FA.": [
+        ""
+      ],
+      "Use keyboard shortcuts to manage your email faster.": [
+        ""
+      ],
+      "Themes can give your inbox a new look.": [
+        ""
+      ],
+      "Upgrade to host emails from your own domain name.": [
+        ""
+      ],
+      "ProtonMail can protect your business as well.": [
+        ""
+      ],
+      "Upgrade to add more addresses to your account.": [
+        ""
+      ],
+      "Upgrade to send emails to contact groups easily.": [
+        ""
+      ],
+      "Upgrade to support a privacy-first internet.": [
+        ""
+      ],
+      "Upgrade to support our mission of privacy for all.": [
+        ""
+      ],
+      "Store and share files securely with Proton Drive.": [
+        ""
+      ],
+      "You can use ProtonVPN for free today.": [
+        ""
+      ],
+      "Use Proton Calendar to keep your agenda private.": [
+        ""
+      ],
       "${ unread } unread conversation": [
         "${ unread } ulæst samtale",
         "${ unread } ulæste samtaler"
@@ -2319,9 +2834,6 @@
       "You have ${ totalLabel } in your inbox.": [
         "Du har ${ totalLabel } i din indbakke."
       ],
-      "Increase storage space starting at $4/month.": [
-        "Forøg lagerplads fra $4 / måned."
-      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Download vores mobil-app fra din foretrukne app-butik for at kommunikere sikkert på farten."
       ],
@@ -2340,7 +2852,7 @@
         "Du har ${ countOfConversationOrMessage } gemt i denne mappe"
       ],
       "You selected ${ countOfConversationOrMessage } with this label": [
-        "Du valgte ${ countOfConversationOrMessage } med denne etikette"
+        ""
       ],
       "You have ${ countOfConversationOrMessage } tagged with this label": [
         "Du har ${ countOfConversationOrMessage } mærket med denne etikette"
@@ -2505,6 +3017,54 @@
       ],
       "What is the primary reason for this rating?": [
         "Hvad er den primære grund til denne bedømmelse?"
+      ],
+      "Name on card": [
+        ""
+      ],
+      "Card number": [
+        ""
+      ],
+      "Expiry date": [
+        ""
+      ],
+      "CVV code": [
+        ""
+      ],
+      "Select your country": [
+        ""
+      ],
+      "ZIP": [
+        ""
+      ],
+      "BTC amount:": [
+        ""
+      ],
+      "BTC address:": [
+        ""
+      ],
+      "Select a method": [
+        ""
+      ],
+      "Total (${ countdown })": [
+        ""
+      ],
+      "Total": [
+        ""
+      ],
+      "Proration": [
+        ""
+      ],
+      "Cash": [
+        ""
+      ],
+      "Card holder": [
+        ""
+      ],
+      "Expires": [
+        ""
+      ],
+      "Payer": [
+        ""
       ],
       "Enable Beta Access": [
         "Aktivér beta-adgang"
@@ -2738,6 +3298,12 @@
       "Go to subscription plans": [
         "Gå til abonnementer"
       ],
+      "click here": [
+        ""
+      ],
+      "Add a gift code": [
+        ""
+      ],
       "Inbox": [
         "Indbakke"
       ],
@@ -2929,6 +3495,15 @@
       "Feedback": [
         "Feedback"
       ],
+      "ZIP": [
+        ""
+      ],
+      "Postal code": [
+        ""
+      ],
+      "Gift code": [
+        ""
+      ],
       "Type text or keyword": [
         "Indtast tekst eller nøgleord"
       ],
@@ -3014,6 +3589,9 @@
       "Your local date & time settings seem to be out of sync.": [
         "Det ser ud til, at dine lokale dato- og tidsindstillinger ikke er synkroniseret."
       ],
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        ""
+      ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Vedhæftningens signatur kunne ikke verificeres.\nDu kan stadig downloade denne vedhæftning, men den kan være blevet manipuleret med.",
         "Nogle af vedhæftningernes signaturer kunne ikke verificeres.\nDu kan stadig downloade disse vedhæftede filer, men de kan være blevet manipuleret med."
@@ -3069,6 +3647,54 @@
       ],
       "You do not have any contacts to export": [
         "Du har ingen kontakter at eksportere"
+      ],
+      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
+        ""
+      ],
+      "Host emails for your own domain(s) at ProtonMail, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Use the personal address username@pm.me to send emails": [
+        ""
+      ],
+      "Multi-user support is only applicable to plans with 2 or more users": [
+        ""
+      ],
+      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
+        ""
+      ],
+      "Support for file sharing protocols such as BitTorrent.": [
+        ""
+      ],
+      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
+        ""
+      ],
+      "Route your Internet traffic through the Tor network with a single click.": [
+        ""
+      ],
+      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
+        ""
+      ],
+      "Get access to all the paid features for both ProtonVPN and ProtonMail (the encrypted email service that millions use to protect their data) with one plan.": [
+        ""
+      ],
+      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
+        ""
+      ],
+      "Host emails for your own domain(s) at ${ mailAppName }, e.g. john.smith@example.com": [
+        ""
+      ],
+      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
+        ""
+      ],
+      "Discount applied for annual billing cycle": [
+        ""
+      ],
+      "Discount applied for two-year billing cycle": [
+        ""
+      ],
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        ""
       ],
       "This feature is only available for paid users": [
         "Denne funktion er kun tilgængelig for betalende brugere"
@@ -3183,6 +3809,9 @@
       ],
       "Preference saved": [
         "Præferencer gemt"
+      ],
+      "You have successfully unsubscribed": [
+        ""
       ],
       "Message content search activated": [
         "Beskedindholdssøgning aktiveret"
@@ -3358,8 +3987,8 @@
       "Contacts, groups and settings": [
         "Kontakter, grupper og indstillinger"
       ],
-      "Help": [
-        "Hjælp"
+      "Get help": [
+        ""
       ]
     },
     "Delinquent modal title": {
@@ -3870,6 +4499,453 @@
         "Feedback sendt"
       ]
     },
+    "Info for cash payment method": {
+      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
+        ""
+      ]
+    },
+    "Billing cycle option": {
+      "Monthly": [
+        ""
+      ],
+      "Annually": [
+        ""
+      ],
+      "Two-year": [
+        ""
+      ],
+      "Annually SAVE 20%": [
+        ""
+      ],
+      "Two years SAVE 33%": [
+        ""
+      ]
+    },
+    "Suffix for price": {
+      "/ month": [
+        ""
+      ]
+    },
+    "info": {
+      "(beta)": [
+        ""
+      ]
+    },
+    "Mail feature": {
+      "Users": [
+        ""
+      ],
+      "Storage": [
+        ""
+      ],
+      "0.5 GB": [
+        ""
+      ],
+      "20 GB": [
+        ""
+      ],
+      "Addresses": [
+        ""
+      ],
+      "Custom email addresses": [
+        ""
+      ],
+      "Messages per day": [
+        ""
+      ],
+      "Folders / labels": [
+        ""
+      ],
+      "Support": [
+        ""
+      ],
+      "Limited": [
+        ""
+      ],
+      "Priority": [
+        ""
+      ],
+      "Encrypted contacts": [
+        ""
+      ],
+      "Contact groups": [
+        ""
+      ],
+      "Address verification": [
+        ""
+      ],
+      "Custom filters": [
+        ""
+      ],
+      "IMAP / SMTP": [
+        ""
+      ],
+      "Autoresponder": [
+        ""
+      ],
+      "Use @pm.me address": [
+        ""
+      ],
+      "Catch-All email": [
+        ""
+      ],
+      "Multi-user support": [
+        ""
+      ]
+    },
+    "Mail feature option": {
+      "5 GB *": [
+        ""
+      ],
+      "5 GB / user *": [
+        ""
+      ],
+      "Unlimited **": [
+        "Ubegrænset **"
+      ],
+      "Unlimited": [
+        "Ubegrænset"
+      ]
+    },
+    "Mail feature option: 5 email addresses / user": {
+      "5 / user *": [
+        "5 / bruger *"
+      ]
+    },
+    "information": {
+      "Included": [
+        "Inkluderet"
+      ]
+    },
+    "VPN feature": {
+      "VPN Connections": [
+        "VPN-forbindelser"
+      ],
+      "Speed": [
+        "Hastighed"
+      ],
+      "VPN servers": [
+        "VPN-servere"
+      ],
+      "Locations/Countries": [
+        "Steder/Lande"
+      ],
+      "Adblocker (NetShield)": [
+        "Adblocker (Netshield)"
+      ],
+      "P2P/BitTorrent": [
+        "P2P/Bittorrent"
+      ],
+      "Streaming service support": [
+        "Understøttelse af streamingtjeneste"
+      ],
+      "Tor over VPN": [
+        "Tor over VPN"
+      ],
+      "Secure Core servers": [
+        "Secure Core servere"
+      ],
+      "${ mailAppName } Visionary": [
+        "${ mailAppName } Visionary"
+      ],
+      "Jurisdiction": [
+        "Jurisdiktion"
+      ],
+      "Open Source & audited apps": [
+        ""
+      ],
+      "Access blocked content": [
+        ""
+      ],
+      "Strict no-logs policy": [
+        ""
+      ],
+      "Volume/bandwidth cap": [
+        ""
+      ],
+      "User data monetization": [
+        ""
+      ],
+      "Platforms supported": [
+        ""
+      ],
+      "Languages supported": [
+        ""
+      ],
+      "DNS leak prevention": [
+        ""
+      ],
+      "Kill Switch / Always-on VPN": [
+        ""
+      ],
+      "Perfect Forward Secrecy (PFS)": [
+        ""
+      ],
+      "Full Disk Encryption on Servers": [
+        ""
+      ],
+      "Split tunneling": [
+        ""
+      ],
+      "Custom connection profiles": [
+        ""
+      ],
+      "Router support": [
+        ""
+      ],
+      "30-days money-back guarantee": [
+        ""
+      ]
+    },
+    "VPN feature option": {
+      "Medium": [
+        ""
+      ],
+      "High": [
+        ""
+      ],
+      "Highest (up to 10 Gbps)": [
+        ""
+      ],
+      "Switzerland": [
+        ""
+      ],
+      "None": [
+        ""
+      ],
+      "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
+        ""
+      ],
+      "(Android & Windows only)": [
+        ""
+      ]
+    },
+    "Calendar feature": {
+      "Multiple calendars": [
+        ""
+      ],
+      "Calendar import": [
+        "Kalenderimport"
+      ],
+      "Recurring events": [
+        "Tilbagevendende begivenheder"
+      ],
+      "Invitations": [
+        "Invitationer"
+      ],
+      "Share Calendar via link": [
+        "Del kalender via link"
+      ]
+    },
+    "Calendar feature option": {
+      "20 / user *": [
+        "20 / bruger *"
+      ],
+      "20 / user": [
+        "20 / bruger"
+      ]
+    },
+    "Drive feature": {
+      "Access via Web": [
+        "Adgang via Web"
+      ],
+      "Upload / download files": [
+        "Upload / download filer"
+      ],
+      "Share files via link": [
+        "Del filer via link"
+      ]
+    },
+    "Info concerning plan features": {
+      "Customizable features": [
+        "Justérbare features"
+      ],
+      "ProtonMail cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
+        "ProtonMail kan ikke benyttes til masse e-mailing eller spam. Legitime e-mails er ubegrænset."
+      ]
+    },
+    "Plan Feature": {
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ n } server": [
+        "",
+        ""
+      ]
+    },
+    "Netflix": {
+      "Netflix": [
+        ""
+      ]
+    },
+    "Disney": {
+      "Disney+": [
+        ""
+      ]
+    },
+    "Prime Video": {
+      "Prime Video": [
+        ""
+      ]
+    },
+    "Many Others": {
+      "and many others": [
+        ""
+      ]
+    },
+    "Plan feature": {
+      "Built-in Adblocker (NetShield)": [
+        ""
+      ],
+      "Secure Core servers": [
+        ""
+      ],
+      "Streaming service support": [
+        ""
+      ],
+      "Access blocked content": [
+        ""
+      ],
+      "${ freeServers } in ${ freeCountries } country": [
+        "",
+        ""
+      ],
+      "Medium speed": [
+        ""
+      ],
+      "350+ servers in ${ basicCountries } country": [
+        "",
+        ""
+      ],
+      "High speed": [
+        ""
+      ],
+      "1200+ servers in ${ plusCountries } country": [
+        "",
+        ""
+      ],
+      "Highest speed (up to 10 Gbps)": [
+        ""
+      ],
+      "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
+        ""
+      ],
+      "Includes 6 user accounts": [
+        ""
+      ],
+      "Includes Proton Visionary": [
+        ""
+      ],
+      "Early access to new products": [
+        ""
+      ],
+      "Custom email addresses": [
+        ""
+      ],
+      "Access to ${ driveAppName } (beta)": [
+        ""
+      ],
+      "1 user": [
+        ""
+      ],
+      "0.5 GB storage": [
+        ""
+      ],
+      "1 address": [
+        ""
+      ],
+      "3 folders / labels": [
+        ""
+      ],
+      "5 GB storage *": [
+        ""
+      ],
+      "5 addresses": [
+        ""
+      ],
+      "200 folders / labels": [
+        ""
+      ],
+      "1 - 5000 users *": [
+        ""
+      ],
+      "5 GB storage / user": [
+        ""
+      ],
+      "5 addresses / user": [
+        ""
+      ],
+      "Unlimited folders / labels": [
+        ""
+      ],
+      "6 users": [
+        ""
+      ],
+      "20 GB storage": [
+        ""
+      ],
+      "50 addresses": [
+        ""
+      ]
+    },
+    "Price": {
+      "Free": [
+        ""
+      ]
+    },
+    "Countdown unit": {
+      "${ monthsWithYears } month": [
+        "",
+        ""
+      ],
+      "${ days } day": [
+        "",
+        ""
+      ]
+    },
+    "Addon": {
+      "+ ${ addresses } email address": [
+        "",
+        ""
+      ],
+      "+ ${ storage } storage": [
+        ""
+      ],
+      "+ ${ domains } custom domain": [
+        "",
+        ""
+      ],
+      "+ ${ members } user": [
+        "",
+        ""
+      ],
+      "+ ${ vpn } connection": [
+        "",
+        ""
+      ]
+    },
+    "Plan info": {
+      "(current plan)": [
+        ""
+      ]
+    },
+    "Free price": {
+      "Free": [
+        ""
+      ]
+    },
+    "Payment method option": {
+      "New credit/debit card": [
+        ""
+      ],
+      "PayPal": [
+        ""
+      ],
+      "Bitcoin": [
+        ""
+      ]
+    },
     "Beta access description": {
       "Beta Access lets you use the beta version of ProtonMail, Proton Calendar, and Proton Drive before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
         "Beta-adgang giver dig mulighed for at bruge betaversionen af ProtonMail, Proton Calendar, og Proton Drive, før de frigives til offentligheden. Det betyder, at du kan være den første til at prøve nye produkter, få nye opdateringer og bruge nye funktioner."
@@ -4050,12 +5126,6 @@
       "Name": [
         "Navn"
       ],
-      "Compact name": [
-        "Kompakt navn"
-      ],
-      "Nickname": [
-        "Kaldenavn"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -4106,18 +5176,6 @@
       ],
       "Member": [
         "Medlem"
-      ],
-      "IMPP": [
-        "IMPP"
-      ],
-      "Related": [
-        "Relateret"
-      ],
-      "Categories": [
-        "Kategorier"
-      ],
-      "Sound": [
-        "Lyd"
       ]
     },
     "Contact type label": {
@@ -4147,12 +5205,6 @@
       ]
     },
     "Property type": {
-      "Name": [
-        "Navn"
-      ],
-      "Yomi": [
-        "Yomi"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -4182,63 +5234,6 @@
       ],
       "Address": [
         "Adresse"
-      ],
-      "Contact": [
-        "Kontakt"
-      ],
-      "Acquaintance": [
-        "Bekendt"
-      ],
-      "Friend": [
-        "Ven"
-      ],
-      "Met": [
-        "Mødt"
-      ],
-      "Co-worker": [
-        "Medarbejder"
-      ],
-      "Colleague": [
-        "Kollega"
-      ],
-      "Co-resident": [
-        "Sambo"
-      ],
-      "Neighbor": [
-        "Nabo"
-      ],
-      "Child": [
-        "Barn"
-      ],
-      "Parent": [
-        "Forælder"
-      ],
-      "Sibling": [
-        "Søskende"
-      ],
-      "Kin": [
-        "Familie"
-      ],
-      "Muse": [
-        "Muse"
-      ],
-      "Crush": [
-        "Forelskelse"
-      ],
-      "Date": [
-        "Date"
-      ],
-      "Sweetheart": [
-        "Kæreste"
-      ],
-      "Me": [
-        "Mig"
-      ],
-      "Agent": [
-        "Agent"
-      ],
-      "Emergency": [
-        "Nødssituation"
       ]
     },
     "file size format": {
