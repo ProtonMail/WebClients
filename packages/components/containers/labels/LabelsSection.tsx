@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { arrayMove } from 'react-sortable-hoc';
 
 import { orderLabels } from '@proton/shared/lib/api/labels';
+import { Label } from '@proton/shared/lib/interfaces';
 
 import { Loader, Button, useDebounceInput } from '../../components';
 import { useLabels, useEventManager, useModals, useApi, useNotifications, useLoading } from '../../hooks';
@@ -13,6 +14,8 @@ import EditLabelModal from './modals/EditLabelModal';
 import LabelSortableList from './LabelSortableList';
 
 const DEBOUNCE_VALUE = 1600;
+
+const toLabelIDs = (labels: Label[]) => labels.map(({ ID }) => ID).join(',');
 
 function LabelsSection() {
     const [labels = [], loadingLabels] = useLabels();
@@ -25,8 +28,8 @@ function LabelsSection() {
     const [localLabels, setLocalLabels] = useState(labels);
     const debouncedLabels = useDebounceInput(localLabels, DEBOUNCE_VALUE);
 
-    const labelsOrder = labels.map(({ ID }) => ID).join(',');
-    const debouncedLabelOrder = debouncedLabels.map(({ ID }) => ID).join(',');
+    const labelsOrder = toLabelIDs(labels);
+    const debouncedLabelOrder = toLabelIDs(debouncedLabels);
 
     /**
      * Refresh the list + update API and call event, it can be slow.
