@@ -15,7 +15,7 @@ import {
     useUser,
 } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { Calendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 
 import './CalendarSidebarListItems.scss';
@@ -24,11 +24,15 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import { CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
 import { APPS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
+import {
+    getCalendarHasSubscriptionParameters,
+    getCalendarIsSynced,
+    getIsPersonalCalendar,
+} from '@proton/shared/lib/calendar/subscribe/helpers';
 import { getContrastingColor } from '../../helpers/color';
 
 interface Props {
-    calendars?: Calendar[];
+    calendars?: Calendar[] | SubscribedCalendar[];
     loading?: boolean;
     onChangeVisibility: (id: string, checked: boolean) => void;
     actionsDisabled?: boolean;
@@ -93,6 +97,13 @@ const CalendarSidebarListItems = ({
                                 <div className="text-ellipsis" title={Name}>
                                     {Name}
                                 </div>
+                                {!isCalendarDisabled &&
+                                    getCalendarHasSubscriptionParameters(calendar) &&
+                                    !getCalendarIsSynced(calendar) && (
+                                        <div className="flex-item-noshrink">
+                                            &nbsp;({c('Calendar status').t`not synced`})
+                                        </div>
+                                    )}
                                 {isCalendarDisabled && (
                                     <div className="flex-item-noshrink">
                                         &nbsp;({c('Disabled calendar name suffix').t`disabled`})

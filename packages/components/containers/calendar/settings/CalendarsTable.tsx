@@ -69,7 +69,8 @@ const CalendarsTable = ({
                     const isActive = getIsCalendarProbablyActive(calendar);
                     const isDefault = ID === defaultCalendarID;
                     const isSubscribed = getIsSubscribedCalendar(calendar);
-                    const isNotSynced = getCalendarHasSubscriptionParameters(calendar) && getCalendarIsSynced(calendar);
+                    const isNotSynced =
+                        getCalendarHasSubscriptionParameters(calendar) && !getCalendarIsSynced(calendar);
 
                     const list: { text: string; onClick: () => void }[] = [
                         hasNonDelinquentScope && {
