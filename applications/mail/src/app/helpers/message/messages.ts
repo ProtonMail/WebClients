@@ -1,20 +1,36 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { getAttachments } from '@proton/shared/lib/mail/messages';
-
-import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
+import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { attachmentsSize } from '@proton/shared/lib/mail/messages';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { uniqueBy } from '@proton/shared/lib/helpers/array';
+import { MessageExtended, MessageExtendedWithData, MessageImages, PartialMessageExtended } from '../../models/message';
 import { getContent, setContent } from './messageContent';
 import { getEmbeddedImages } from './messageImages';
 
 const { ALL_DRAFTS, ALL_SENT, DRAFTS, SENT, SPAM, INBOX } = MAILBOX_LABEL_IDS;
 
-export const getNumAttachmentByType = (message: MessageExtended): [number, number] => {
-    const attachments = getAttachments(message.data);
-    const numAttachments = attachments.length;
-    const embeddedImages = getEmbeddedImages(message);
-    const numEmbedded = embeddedImages.length;
-    const numPureAttachments = numAttachments - numEmbedded;
-    return [numPureAttachments, numEmbedded];
+export const getAttachmentCounts = (attachments: Attachment[], messageImages: MessageImages | undefined) => {
+    const size = attachmentsSize({ Attachments: attachments } as Message);
+    const sizeLabel = humanSize(size);
+
+    const embeddedImages = getEmbeddedImages({ messageImages });
+    const embeddedAttachmentsWithDups = embeddedImages.map(({ attachment }) => attachment);
+    const embeddedAttachments = uniqueBy(embeddedAttachmentsWithDups, (attachment) => attachment.ID);
+    const pureAttachments = attachments.filter(
+        (attachment) => !embeddedAttachments.find((embeddedAttachment) => attachment.ID === embeddedAttachment.ID)
+    );
+
+    const pureAttachmentsCount = pureAttachments.length;
+    const embeddedAttachmentsCount = embeddedAttachments.length;
+    const attachmentsCount = pureAttachmentsCount + embeddedAttachmentsCount;
+
+    return {
+        size,
+        sizeLabel,
+        pureAttachmentsCount,
+        embeddedAttachmentsCount,
+        attachmentsCount,
+    };
 };
 
 /**

@@ -2,13 +2,13 @@ import { c, msgid } from 'ttag';
 import { Icon, useFolders } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { Label } from '@proton/shared/lib/interfaces/Label';
-
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import { getAttachments } from '@proton/shared/lib/mail/messages';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
 import { MessageExtended } from '../../../models/message';
 import { getCurrentFolders, isCustomLabel } from '../../../helpers/labels';
-import { getNumAttachmentByType } from '../../../helpers/message/messages';
+import { getAttachmentCounts } from '../../../helpers/message/messages';
 import { getSize } from '../../../helpers/elements';
 import { MessageViewIcons } from '../../../helpers/message/icon';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
@@ -31,23 +31,29 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
 
     const sizeText = humanSize(getSize(message.data || {}));
 
-    const [numPureAttachments, numEmbedded] = getNumAttachmentByType(message);
+    const { pureAttachmentsCount, embeddedAttachmentsCount } = getAttachmentCounts(
+        getAttachments(message.data),
+        message.messageImages
+    );
     const attachmentsTexts = [];
-    if (numPureAttachments) {
+    if (pureAttachmentsCount) {
         attachmentsTexts.push(
             c('Info').ngettext(
-                msgid`${numPureAttachments} file attached`,
-                `${numPureAttachments} files attached`,
-                numPureAttachments
+                msgid`${pureAttachmentsCount} file attached`,
+                `${pureAttachmentsCount} files attached`,
+                pureAttachmentsCount
             )
         );
     }
-    if (numEmbedded) {
+    if (embeddedAttachmentsCount) {
         attachmentsTexts.push(
-            c('Info').ngettext(msgid`${numEmbedded} embedded image`, `${numEmbedded} embedded images`, numEmbedded)
+            c('Info').ngettext(
+                msgid`${embeddedAttachmentsCount} embedded image`,
+                `${embeddedAttachmentsCount} embedded images`,
+                embeddedAttachmentsCount
+            )
         );
     }
-
     const attachmentsText = attachmentsTexts.join(', ');
 
     const labelIDs = (message.data?.LabelIDs || []).filter((labelID) => isCustomLabel(labelID, labels));
