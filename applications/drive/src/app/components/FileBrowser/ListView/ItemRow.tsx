@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import {
     TableRow,
@@ -24,6 +24,7 @@ import NameCell from './Cells/NameCell';
 import ShareCell from './Cells/ShareCell';
 import SharedURLIcon from '../SharedURLIcon';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
+import { useThumbnailsDownloadProvider } from '../../downloads/ThumbnailDownloadProvider';
 
 const ItemRow = ({
     item,
@@ -65,10 +66,31 @@ const ItemRow = ({
 
     const { isDesktop } = useActiveBreakpoint();
     const cache = useDriveCache();
+    const thumbnailProvider = useThumbnailsDownloadProvider();
     const shareURL =
         columns.includes('share_num_access') && item.SharedUrl
             ? cache.get.shareURL(shareId, item.SharedUrl?.ShareUrlID)
             : undefined;
+
+    /*
+        We cannot fetch thumbnails for files in these folders
+        (no thumbnail meta from BE), so we disable thumbnails for the completely,
+        until that's fixed
+    */
+    const isInTrash = columns.includes('trashed') && item.Trashed;
+    const isInShared = columns.includes('share_num_access') && item.SharedUrl;
+
+    useEffect(() => {
+        if (item.HasThumbnail) {
+            thumbnailProvider.addToDownloadQueue(
+                { modifyTime: item.ModifyTime },
+                {
+                    ShareID: shareId,
+                    LinkID: item.LinkID,
+                }
+            );
+        }
+    }, [item.ModifyTime]);
 
     const generateExpiresCell = () => {
         const expiredPart = isDesktop ? (
@@ -126,7 +148,15 @@ const ItemRow = ({
                 </TableCell>
 
                 <TableCell className="m0 flex flex-align-items-center flex-nowrap flex-item-fluid">
-                    <FileIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType} alt={iconText} />
+                    {item.CachedThumbnailURL && !isInShared && !isInTrash ? (
+                        <img
+                            src={item.CachedThumbnailURL}
+                            alt={iconText}
+                            className="file-browser-list-item--thumbnail flex-item-noshrink mr0-5"
+                        />
+                    ) : (
+                        <FileIcon mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType} alt={iconText} />
+                    )}
                     <NameCell name={item.Name} />
                     {item.SharedUrl && <SharedURLIcon shareId={shareId} item={item} />}
                     {showShareOnHover && <ShareCell shareId={shareId} item={item} />}
