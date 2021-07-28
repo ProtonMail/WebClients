@@ -2,64 +2,71 @@
 
 .file-browser-list-item td,
 .file-browser-table th {
-    &:first-of-type {
-        // Checkbox cell
-        position: relative; // Because of .increase-click-surface
-        padding-left: 1em;
-        padding-right: 1em;
-        width: calc( #{rem(16)} + 2em);
-    }
+	&:first-of-type {
+		// Checkbox cell
+		position: relative; // Because of .increase-click-surface
+		padding-left: 1em;
+		padding-right: 1em;
+		width: calc(#{rem(16)} + 2em);
+	}
 }
 
 .file-browser-grid-item {
-    position: relative;
-    background-color: var(--background-norm);
+	position: relative;
+	background-color: var(--background-norm);
 
-    &:hover,
-    &:focus {
-        background-color: var(--background-weak);
-    }
+	&:hover,
+	&:focus {
+		background-color: var(--background-weak);
+	}
 }
 
 .file-browser-grid-item.file-browser-grid-item--highlight {
-    background-color: var(--background-strong);
+	background-color: var(--background-strong);
 }
 
 .file-browser-grid-item--thumbnail {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; // To keep original proportion in Safari.
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain; // To keep original proportion in Safari.
 }
 
 .file-browser-list-item--share {
-    display: none;
-    margin: -1em 0 -1em auto;
+	display: none;
+	margin: -1em 0 -1em auto;
 }
 
 .file-browser-grid-item--share {
-    position: absolute;
-    top: 0.2em;
-    right: 0.2em;
-    background-color: var(--background-norm);
-    border-radius: 25%;
+	position: absolute;
+	top: 0.2em;
+	right: 0.2em;
+	background-color: var(--background-norm);
+	border-radius: 25%;
 }
 
 .file-browser-grid-item--select {
-    position: absolute;
-    top: 0.2em;
-    left: 0.2em;
+	position: absolute;
+	top: 0.2em;
+	left: 0.2em;
 }
 
 .file-browser-grid-item--select-hover-only {
-    display: none;
+	display: none;
+}
+
+.file-browser-list-item--thumbnail {
+	height: 1rem;
+	width: 1rem;
+	border-radius: 25%;
+	object-fit: cover;
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .file-browser-list-item:hover .file-browser-list-item--share {
-        display: flex;
-    }
+	.file-browser-list-item:hover .file-browser-list-item--share {
+		display: flex;
+	}
 
-    .file-browser-grid-item:hover .file-browser-grid-item--select-hover-only {
-        display: flex;
-    }
+	.file-browser-grid-item:hover .file-browser-grid-item--select-hover-only {
+		display: flex;
+	}
 }
