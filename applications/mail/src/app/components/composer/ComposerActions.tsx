@@ -165,7 +165,7 @@ const ComposerActions = ({
                 secondAction={
                     hasScheduleSendAccess ? (
                         <Tooltip>
-                            <DropdownMenuButton className="text-left" onClick={onScheduleSendModal}>
+                            <DropdownMenuButton className="text-left" onClick={onScheduleSendModal} data-testid='composer:schedule-send-button'>
                                 <Icon name="clock" />
                                 <span className="pl1 pr1">{c('Action').t`Schedule send`}</span>
                             </DropdownMenuButton>
