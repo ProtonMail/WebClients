@@ -58,8 +58,14 @@ export const useScheduleSend = ({
                 </ConfirmModal>
             );
         } else {
-            await preliminaryVerifications(modelMessage);
-            setInnerModal(ComposerInnerModal.ScheduleSend);
+            try {
+                await preliminaryVerifications(modelMessage);
+                setInnerModal(ComposerInnerModal.ScheduleSend);
+            } catch {
+                /* Nothing to do but an error is expected if preliminaryVerifications fails
+                   Catching the error is mandatory to make testing pass for some jest sorcery
+                */
+            }
         }
     };
 

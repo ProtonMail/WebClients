@@ -27,6 +27,7 @@ import AttachmentProvider from '../../containers/AttachmentProvider';
 import ContactProvider from '../../containers/ContactProvider';
 import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
 import { MailContentRefProvider } from '../../hooks/useClickMailContent';
+import { ComposeProvider } from '../../containers/ComposeProvider';
 
 interface RenderResult extends OriginalRenderResult {
     rerender: (ui: React.ReactElement) => Promise<void>;
@@ -80,11 +81,13 @@ const TestProvider = ({ children }: Props) => {
                                             <FeaturesProvider>
                                                 <ContactProvider cache={contactCache}>
                                                     <MailContentRefProvider mailContentRef={contentRef}>
-                                                        <Router history={history}>
-                                                            <EncryptedSearchProvider>
-                                                                {children}
-                                                            </EncryptedSearchProvider>
-                                                        </Router>
+                                                        <ComposeProvider onCompose={jest.fn()}>
+                                                            <Router history={history}>
+                                                                <EncryptedSearchProvider>
+                                                                    {children}
+                                                                </EncryptedSearchProvider>
+                                                            </Router>
+                                                        </ComposeProvider>
                                                     </MailContentRefProvider>
                                                 </ContactProvider>
                                             </FeaturesProvider>
