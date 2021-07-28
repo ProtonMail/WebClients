@@ -1,3 +1,16 @@
+# [4.0.0-beta.18] - 2021-07-29
+
+## Fixed
+
+-   Uploading files with different Unicode character in the name is prevented
+-   Some interface fixes (colors, tooltip text tweaks; error messages…)
+
+## Added
+
+-   Some performance improvements (better HTTP2 support)
+-   Thumbnails are now visible in list view layout
+-   Downloading multiple files now generates a zip archive that keeps the original folder structure
+
 # [4.0.0-beta.17] - 2021-07-14
 
 With this Proton Drive update we give you more control over how you want to handle duplicates when uploading. Scroll down for other fixes and improvements.
