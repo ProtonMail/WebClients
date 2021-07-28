@@ -7,8 +7,7 @@ import { ItemProps } from '../interfaces';
 import ItemContextMenu from '../ItemContextMenu';
 import SharedURLIcon from '../SharedURLIcon';
 import useFileBrowserItem from '../useFileBrowserItem';
-import useFiles from '../../../hooks/drive/useFiles';
-import useDrive from '../../../hooks/drive/useDrive';
+import { useThumbnailsDownloadProvider } from '../../downloads/ThumbnailDownloadProvider';
 
 export interface Props extends Omit<ItemProps, 'isPreview' | 'showLocation' | 'columns'> {
     style: React.CSSProperties;
@@ -51,19 +50,17 @@ function ItemCell({
         onShiftClick,
     });
 
-    const { downloadDriveFile } = useFiles();
-    const { loadLinkCachedThumbnailURL } = useDrive();
+    const thumbnailProvider = useThumbnailsDownloadProvider();
+
     useEffect(() => {
         if (item.HasThumbnail) {
-            loadLinkCachedThumbnailURL(shareId, item.LinkID, async (downloadUrl: string): Promise<Uint8Array[]> => {
-                const { contents } = await downloadDriveFile(shareId, item.LinkID, [
-                    {
-                        Index: 1,
-                        URL: downloadUrl,
-                    },
-                ]);
-                return contents;
-            }).catch(console.error);
+            thumbnailProvider.addToDownloadQueue(
+                { modifyTime: item.ModifyTime },
+                {
+                    ShareID: shareId,
+                    LinkID: item.LinkID,
+                }
+            );
         }
     }, [item.ModifyTime]); // Reload thumbnail when file changes.
 

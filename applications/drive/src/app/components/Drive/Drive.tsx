@@ -11,6 +11,7 @@ import { FileBrowserItem } from '../FileBrowser/interfaces';
 import useDriveDragMove from '../../hooks/drive/useDriveDragMove';
 import FileBrowser from '../FileBrowser/FileBrowser';
 import useUserSettings from '../../hooks/drive/useUserSettings';
+import { useThumbnailsDownloadProvider } from '../downloads/ThumbnailDownloadProvider';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -22,6 +23,7 @@ function Drive({ activeFolder }: Props) {
     const cache = useDriveCache();
     const { getLinkMeta } = useDrive();
     const { navigateToLink } = useNavigate();
+    const thumbnailDownloadProvider = useThumbnailsDownloadProvider();
     const { loadNextPage, fileBrowserControls, loading, contents, complete, sortParams, setSorting } =
         useDriveContent();
 
@@ -36,6 +38,7 @@ function Drive({ activeFolder }: Props) {
         if (folderName === undefined) {
             getLinkMeta(shareId, linkId).catch(console.error);
         }
+        thumbnailDownloadProvider.cancelDownloads();
     }, [shareId, linkId, folderName]);
 
     const handleScrollEnd = useCallback(() => {
