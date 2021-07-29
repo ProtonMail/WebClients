@@ -52,12 +52,8 @@ function ItemCell({
 
     const thumbnailProvider = useThumbnailsDownloadProvider();
 
-    /*
-        We cannot fetch thumbnails for files in Trash
-        (no thumbnail meta from BE), so we disable thumbnails for the completely,
-        until that's fixed
-    */
-    const isInTrash = item.Trashed;
+    // Backend do not provide thumbnail in shared or trash for now.
+    const isThumbnailDisabled = layoutType === 'trash' || layoutType === 'sharing';
 
     useEffect(() => {
         if (item.HasThumbnail) {
@@ -121,7 +117,7 @@ function ItemCell({
                     <SharedURLIcon shareId={shareId} item={item} className="flex file-browser-grid-item--share" />
                 )}
                 <div className="flex flex-item-fluid flex-justify-center flex-align-items-center">
-                    {item.CachedThumbnailURL && !isInTrash ? (
+                    {item.CachedThumbnailURL && !isThumbnailDisabled ? (
                         <img
                             src={item.CachedThumbnailURL}
                             className="file-browser-grid-item--thumbnail"

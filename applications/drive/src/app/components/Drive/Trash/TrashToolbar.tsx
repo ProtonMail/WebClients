@@ -2,8 +2,7 @@ import React from 'react';
 
 import { Toolbar, ToolbarSeparator } from '@proton/components';
 
-import { DetailsButton, DownloadButton, PreviewButton } from '../../FileBrowser/ToolbarButtons';
-import LayoutDropdown from '../ToolbarButtons/LayoutDropdown';
+import { DetailsButton, DownloadButton, LayoutDropdown, PreviewButton } from '../../FileBrowser/ToolbarButtons';
 import { useTrashContent } from './TrashContentProvider';
 import { DeletePermanentlyButton, RestoreFromTrashButton } from './ToolbarButtons';
 
