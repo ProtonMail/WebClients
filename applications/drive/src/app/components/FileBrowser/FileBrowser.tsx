@@ -28,7 +28,7 @@ const FileBrowser = ({
     setSorting,
     getDragMoveControls,
 }: FileBrowserProps) => {
-    return layout === LayoutSetting.Grid && type !== 'sharing' ? (
+    return layout === LayoutSetting.Grid ? (
         <GridView
             scrollAreaRef={scrollAreaRef}
             shareId={shareId}
