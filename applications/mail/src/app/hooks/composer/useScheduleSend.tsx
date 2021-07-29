@@ -8,10 +8,10 @@ import { c } from 'ttag';
 import React, { Dispatch, SetStateAction } from 'react';
 import { MessageExtended, MessageExtendedWithData } from 'proton-mail/src/app/models/message';
 import { useSendVerifications } from 'proton-mail/src/app/hooks/composer/useSendVerifications';
-import { ConfirmModal } from '../components/modal';
-import { Button } from '../components/button';
-import { useConversationCounts, useMessageCounts, useModals } from './index';
-import { useMailSettings } from './useMailSettings';
+import { ConfirmModal } from '@proton/components/components/modal';
+import { Button } from '@proton/components/components/button';
+import { useConversationCounts, useMessageCounts, useModals } from '@proton/components/hooks';
+import { useMailSettings } from '@proton/components/hooks/useMailSettings';
 
 interface Props {
     modelMessage: MessageExtendedWithData;

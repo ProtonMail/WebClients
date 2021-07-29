@@ -54,7 +54,10 @@ const HeaderExpandedDetails = ({ labelID, labels, message, messageViewIcons, mai
     const labelIDs = (message.data?.LabelIDs || []).filter((labelID) => isCustomLabel(labelID, labels));
 
     return (
-        <div className="message-detailed-header-extra border-top pt0-5">
+        <div
+            className="message-detailed-header-extra border-top pt0-5"
+            data-testid="message:message-expanded-header-extra"
+        >
             {icon && (
                 <div className="mb0-5 flex flex-nowrap flex-align-items-center">
                     <span className="container-to flex flex-justify-center">
