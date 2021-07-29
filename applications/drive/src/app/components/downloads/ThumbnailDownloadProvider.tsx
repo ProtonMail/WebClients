@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useRef } from 'react';
+import React, { createContext, useContext, useEffect, useRef } from 'react';
 
 import { DownloadInfo, ThumbnailMeta } from '../../interfaces/transfer';
 import useDrive from '../../hooks/drive/useDrive';
@@ -7,10 +7,10 @@ import { useDriveCache } from '../DriveCache/DriveCacheProvider';
 import useAsyncQueue from '../../hooks/util/useAsyncQueue';
 import { MAX_THREADS_PER_DOWNLOAD } from '../../constants';
 import { DownloadControls } from './download';
+import useNavigate from '../../hooks/drive/useNavigate';
 
 interface DownloadProviderState {
     addToDownloadQueue: (meta: ThumbnailMeta, downloadInfo: DownloadInfo) => void;
-    cancelDownloads: () => void;
 }
 
 const ThumbnailsDownloadContext = createContext<DownloadProviderState | null>(null);
@@ -28,8 +28,8 @@ const getDownloadIdString = ({
 };
 
 /*
-    ThumbnailsDownloadProvider is used to keep the number of simultaneous requests sent 
-    by a browser under control. Before implementing this, we had all thumbnails request 
+    ThumbnailsDownloadProvider is used to keep the number of simultaneous requests sent
+    by a browser under control. Before implementing this, we had all thumbnails request
     being sent at one single moment, which filled up the browser request queue. Thus, having
     a folder with lots of images, you couldn't make any request, unless ALL thumbnail are
     loaded and the browser queue is freed (Example: one couldn't load a file preview right
@@ -45,6 +45,24 @@ export const ThumbnailsDownloadProvider = ({ children }: any) => {
     const queueLinkCache = useRef<Set<string>>(new Set());
     const controls = useRef<Record<string, DownloadControls>>({});
     const cache = useDriveCache();
+    const navigation = useNavigate();
+
+    const cancelDownloads = () => {
+        queueLinkCache.current.forEach((id) => {
+            controls.current[id]?.cancel();
+        });
+        queueLinkCache.current = new Set();
+
+        asyncQueue.clearQueue();
+    };
+
+    useEffect(() => {
+        const handlerId = navigation.addListener(() => {
+            cancelDownloads();
+        });
+
+        return () => navigation.removeListener(handlerId);
+    }, []);
 
     const handleThumbnailDownload = (shareId: string, linkId: string, downloadId: string) => {
         return loadLinkCachedThumbnailURL(shareId, linkId, async (downloadUrl: string): Promise<Uint8Array[]> => {
@@ -90,20 +108,10 @@ export const ThumbnailsDownloadProvider = ({ children }: any) => {
         });
     };
 
-    const cancelDownloads = () => {
-        queueLinkCache.current.forEach((id) => {
-            controls.current[id]?.cancel();
-        });
-        queueLinkCache.current = new Set();
-
-        asyncQueue.clearQueue();
-    };
-
     return (
         <ThumbnailsDownloadContext.Provider
             value={{
                 addToDownloadQueue,
-                cancelDownloads,
             }}
         >
             {children}
