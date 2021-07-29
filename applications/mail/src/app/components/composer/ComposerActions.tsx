@@ -136,6 +136,7 @@ const ComposerActions = ({
 
     return (
         <footer
+            data-testid="composer:footer"
             className={classnames([
                 'composer-actions flex-item-noshrink flex flex-row-reverse flex-align-self-center w100 pl1 pr1 mb0-5',
                 className,

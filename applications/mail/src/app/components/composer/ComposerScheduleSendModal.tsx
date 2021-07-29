@@ -151,6 +151,7 @@ const ComposerScheduleSendModal = ({ onClose, onSubmit }: Props) => {
                         preventValueReset
                         error={errorDate}
                         errorZoneClassName="hidden"
+                        data-testid="composer:schedule-date-input"
                     />
                     {errorDate && <ErrorZone>{errorDate}</ErrorZone>}
                 </div>
@@ -168,6 +169,7 @@ const ComposerScheduleSendModal = ({ onClose, onSubmit }: Props) => {
                         error={errorTime}
                         errorZoneClassName="hidden"
                         isSubmitted
+                        data-testid="composer:schedule-time-input"
                     />
                     {errorTime && <ErrorZone>{errorTime}</ErrorZone>}
                 </div>

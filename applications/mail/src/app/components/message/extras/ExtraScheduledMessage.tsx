@@ -55,7 +55,10 @@ const ExtraScheduledMessage = ({ message }: Props) => {
                 onConfirm={handleUnscheduleMessage}
                 title={c('Confirm modal title').t`Edit and reschedule`}
                 cancel={c('Action').t`Cancel`}
-                confirm={<Button color="norm" type="submit">{c('Action').t`Edit draft`}</Button>}
+                confirm={
+                    <Button color="norm" type="submit" data-testid="message:modal-edit-draft-button">{c('Action')
+                        .t`Edit draft`}</Button>
+                }
             >
                 {c('Info')
                     .t`This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.`}
@@ -80,7 +83,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
     };
 
     return (
-        <div className="bg-info rounded p0-5 mb0-5 flex flex-nowrap">
+        <div className="bg-info rounded p0-5 mb0-5 flex flex-nowrap" data-testid="message:schedule-banner">
             <Icon name="clock" className="mtauto mbauto" />
             <span className="pl0-5 pr0-5 flex-item-fluid">{getScheduleBannerMessage()}</span>
             {!isScheduleSentShortly ? (
@@ -88,6 +91,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
                     type="button"
                     onClick={handleEditScheduled}
                     className="flex flex-item-noshrink text-underline link mtauto mbauto"
+                    data-testid="message:schedule-banner-edit-button"
                 >{c('Action').t`Edit`}</button>
             ) : null}
         </div>

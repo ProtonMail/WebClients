@@ -232,6 +232,7 @@ const HeaderExpanded = ({
                         'message-header-metas-container flex flex-align-items-center flex-item-noshrink',
                         isNarrow && 'flex-align-self-start',
                     ])}
+                    data-testid="message:message-header-metas"
                 >
                     {messageLoaded && (isOutboxMessage || isSendingMessage) && !isScheduledMessage && (
                         <span className="badge-label-primary mr0-5 flex-item-noshrink">{c('Info').t`Sending`}</span>

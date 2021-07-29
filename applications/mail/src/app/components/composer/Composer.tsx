@@ -27,7 +27,6 @@ import { setBit, clearBit } from '@proton/shared/lib/helpers/bitset';
 import useIsMounted from '@proton/components/hooks/useIsMounted';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { canonizeEmail } from '@proton/shared/lib/helpers/email';
-import { useScheduleSend } from '@proton/components/hooks/useScheduleSend';
 import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../../models/message';
 import ComposerMeta from './ComposerMeta';
 import ComposerContent from './ComposerContent';
@@ -57,6 +56,7 @@ import { useCloseHandler } from '../../hooks/composer/useCloseHandler';
 import { updateKeyPackets } from '../../helpers/attachment/attachment';
 import { Event } from '../../models/event';
 import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
+import { useScheduleSend } from '../../hooks/composer/useScheduleSend';
 
 enum ComposerInnerModal {
     None,
