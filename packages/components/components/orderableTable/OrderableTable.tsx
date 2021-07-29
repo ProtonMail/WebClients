@@ -1,23 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { SortableContainerProps } from 'react-sortable-hoc';
 
 import { Table } from '../table';
 import OrderableContainer from '../orderable/OrderableContainer';
 import './OrderableTable.scss';
 import { classnames } from '../../helpers';
 
-const OrderableTable = ({ children = [], className = '', caption = undefined, ...props }) => (
+interface Props extends SortableContainerProps {
+    className?: string;
+    children?: React.ReactNode;
+    caption?: string;
+}
+
+const OrderableTable = ({ children = [], className = '', caption, ...props }: Props) => (
     <OrderableContainer helperClass="orderableHelper simple-table" useDragHandle {...props}>
         <Table caption={caption} className={classnames(['orderableTable', className])}>
             {children}
         </Table>
     </OrderableContainer>
 );
-
-OrderableTable.propTypes = {
-    className: PropTypes.string,
-    children: PropTypes.node,
-    caption: PropTypes.string,
-};
 
 export default OrderableTable;
