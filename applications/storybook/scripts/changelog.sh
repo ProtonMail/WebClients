@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-git checkout develop
+git fetch origin main:main && git checkout main
 
 LATEST_MERGE_COMMIT="$(git log --skip 1 --merges -n 1 --pretty=format:%H)"
 
