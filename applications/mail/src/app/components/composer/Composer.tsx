@@ -197,6 +197,7 @@ const Composer = (
                 } as Message,
                 messageImages: replaceEmbeddedAttachments(modelMessage, syncedMessage.data?.Attachments),
             };
+
             setModelMessage(newModelMessage);
         } else {
             // Draft update
@@ -235,8 +236,10 @@ const Composer = (
                     ...syncedMessage.data,
                     ...password,
                     ...modelMessage.data,
+                    Attachments: syncedMessage.data?.Attachments,
                 } as Message,
             };
+
             setModelMessage(newModelMessage);
             void reloadSendInfo(messageSendInfo, newModelMessage);
         }
