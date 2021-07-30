@@ -24,15 +24,21 @@ interface Props {
     contactGroupID?: string;
     selectedContactEmails?: ContactEmail[];
     onClose?: () => void;
+    onDelayedSave?: (groupID: string) => void;
 }
 
-const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmails = [], ...rest }: Props) => {
+const ContactGroupModal = ({
+    contactGroupID,
+    onClose = noop,
+    selectedContactEmails = [],
+    onDelayedSave,
+    ...rest
+}: Props) => {
     const [loading, setLoading] = useState(false);
     const [contactGroups = []] = useContactGroups();
     const [contactEmails] = useContactEmails();
     const [value, setValue] = useState('');
     const updateGroup = useUpdateGroup();
-
     const isValidEmail = useMemo(() => validateEmailAddress(value), [value]);
 
     const contactGroup = contactGroupID && contactGroups.find(({ ID }) => ID === contactGroupID);
@@ -94,9 +100,13 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
     const handleSubmit = async () => {
         try {
             setLoading(true);
-
             const toAdd = model.contactEmails.filter(({ ID }) => isTruthy(ID));
-            const toCreate = model.contactEmails.filter(({ ID }) => !isTruthy(ID));
+            const toCreate = !onDelayedSave
+                ? model.contactEmails.filter(({ ID }) => !isTruthy(ID))
+                : // If delayed save, the contact we are editing does not really exists yet, so we need to remove it from the to create
+                  model.contactEmails.filter(
+                      (contactEmail) => !isTruthy(contactEmail.ID) && !selectedContactEmails?.includes(contactEmail)
+                  );
             const toRemove = contactGroupID ? diff(existingContactEmails, toAdd) : [];
 
             await updateGroup({
@@ -106,6 +116,7 @@ const ContactGroupModal = ({ contactGroupID, onClose = noop, selectedContactEmai
                 toAdd,
                 toRemove,
                 toCreate,
+                onDelayedSave,
             });
 
             onClose();

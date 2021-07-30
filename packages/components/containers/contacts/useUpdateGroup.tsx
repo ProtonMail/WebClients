@@ -14,6 +14,7 @@ export type UpdateGroupOptions = {
     toAdd: ContactEmail[];
     toRemove: ContactEmail[];
     toCreate: ContactEmail[];
+    onDelayedSave?: (groupID: string) => void;
 };
 
 const useUpdateGroup = () => {
@@ -22,43 +23,50 @@ const useUpdateGroup = () => {
     const { createNotification } = useNotifications();
     const [userKeysList] = useUserKeys();
 
-    return useCallback(async ({ groupID, name, color, toAdd, toRemove, toCreate }: UpdateGroupOptions) => {
-        // Update contact group
-        const contactGroupParams = { Name: name, Color: color };
-        const {
-            Label: { ID: LabelID },
-        } = await api(groupID ? updateLabel(groupID, contactGroupParams) : createContactGroup(contactGroupParams));
+    return useCallback(
+        async ({ groupID, name, color, toAdd, toRemove, toCreate, onDelayedSave }: UpdateGroupOptions) => {
+            // Update contact group
+            const contactGroupParams = { Name: name, Color: color };
+            const {
+                Label: { ID: LabelID },
+            } = await api(groupID ? updateLabel(groupID, contactGroupParams) : createContactGroup(contactGroupParams));
 
-        // Create new contacts
-        if (toCreate.length) {
-            const properties: ContactProperties[] = toCreate.map(({ Email }) => [
-                { field: 'fn', value: Email },
-                { field: 'email', value: Email, group: 'item1' },
-                { field: 'categories', value: name, group: 'item1' },
-            ]);
-            const Contacts = await prepareContacts(properties, userKeysList[0]);
-            await api(
-                addContacts({
-                    Contacts,
-                    Overwrite: OVERWRITE.THROW_ERROR_IF_CONFLICT,
-                    Labels: CATEGORIES.INCLUDE,
-                })
+            if (onDelayedSave) {
+                onDelayedSave(LabelID);
+            }
+
+            // Create new contacts
+            if (toCreate.length) {
+                const properties: ContactProperties[] = toCreate.map(({ Email }) => [
+                    { field: 'fn', value: Email },
+                    { field: 'email', value: Email, group: 'item1' },
+                    { field: 'categories', value: name, group: 'item1' },
+                ]);
+                const Contacts = await prepareContacts(properties, userKeysList[0]);
+                await api(
+                    addContacts({
+                        Contacts,
+                        Overwrite: OVERWRITE.THROW_ERROR_IF_CONFLICT,
+                        Labels: CATEGORIES.INCLUDE,
+                    })
+                );
+            }
+
+            // Label and unlabel existing contact emails
+            await Promise.all(
+                [
+                    toAdd.length && api(labelContactEmails({ LabelID, ContactEmailIDs: toAdd.map(({ ID }) => ID) })),
+                    toRemove.length &&
+                        api(unLabelContactEmails({ LabelID, ContactEmailIDs: toRemove.map(({ ID }) => ID) })),
+                ].filter(Boolean)
             );
-        }
-
-        // Label and unlabel existing contact emails
-        await Promise.all(
-            [
-                toAdd.length && api(labelContactEmails({ LabelID, ContactEmailIDs: toAdd.map(({ ID }) => ID) })),
-                toRemove.length &&
-                    api(unLabelContactEmails({ LabelID, ContactEmailIDs: toRemove.map(({ ID }) => ID) })),
-            ].filter(Boolean)
-        );
-        await call();
-        createNotification({
-            text: groupID ? c('Notification').t`Contact group updated` : c('Notification').t`Contact group created`,
-        });
-    }, []);
+            await call();
+            createNotification({
+                text: groupID ? c('Notification').t`Contact group updated` : c('Notification').t`Contact group created`,
+            });
+        },
+        []
+    );
 };
 
 export default useUpdateGroup;
