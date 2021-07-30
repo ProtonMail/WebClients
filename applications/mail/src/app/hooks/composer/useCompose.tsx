@@ -137,6 +137,10 @@ export const useCompose = (
 
             const existingMessage = messageCache.get(localID);
 
+            if (existingMessage?.sending) {
+                return;
+            }
+
             if (existingMessage) {
                 // Drafts have a different sanitization as mail content
                 // So we have to restart the sanitization process on a cached draft
