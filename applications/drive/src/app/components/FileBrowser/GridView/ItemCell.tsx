@@ -8,6 +8,7 @@ import { ItemProps } from '../interfaces';
 import ItemContextMenu from '../ItemContextMenu';
 import SharedURLIcon from '../SharedURLIcon';
 import useFileBrowserItem from '../useFileBrowserItem';
+import ShareButton, { shouldRenderShareButton } from '../ShareButton';
 import { useThumbnailsDownloadProvider } from '../../downloads/ThumbnailDownloadProvider';
 
 export interface Props extends Omit<ItemProps, 'isPreview' | 'showLocation' | 'columns'> {
@@ -109,15 +110,16 @@ function ItemCell({
                 >
                     <Checkbox
                         disabled={item.Disabled}
-                        className="increase-click-surface"
+                        className="increase-click-surface file-browser-grid-item-checkbox"
                         checked={isSelected}
                         {...checkboxHandlers}
                     />
                 </div>
                 {item.SharedUrl && (
-                    <SharedURLIcon shareId={shareId} item={item} className="flex file-browser-grid-item--share" />
+                    <SharedURLIcon shareId={shareId} item={item} className="flex file-browser-grid-item--share-icon" />
                 )}
-                <div className="flex flex-item-fluid flex-justify-center flex-align-items-center">
+
+                <div className="flex flex-item-fluid flex-justify-center flex-align-items-center file-browser-grid-item--container">
                     {item.CachedThumbnailURL && !isThumbnailDisabled ? (
                         <img
                             src={item.CachedThumbnailURL}
@@ -130,6 +132,9 @@ function ItemCell({
                             mimeType={item.Type === LinkType.FOLDER ? 'Folder' : item.MIMEType}
                             alt={iconText}
                         />
+                    )}
+                    {shouldRenderShareButton(item) && (
+                        <ShareButton shareId={shareId} item={item} className="file-browser-grid-item--share-button" />
                     )}
                 </div>
                 <div className="w100 pt0-25 pb0-25 pl0-5 pr0-5 flex" title={item.Name}>

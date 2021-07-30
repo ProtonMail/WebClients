@@ -21,7 +21,7 @@ import DescriptiveTypeCell from './Cells/DescriptiveTypeCell';
 import TimeCell from './Cells/TimeCell';
 import SizeCell from './Cells/SizeCell';
 import NameCell from './Cells/NameCell';
-import ShareCell from './Cells/ShareCell';
+import ShareButton, { shouldRenderShareButton } from '../ShareButton';
 import SharedURLIcon from '../SharedURLIcon';
 import { useDriveCache } from '../../DriveCache/DriveCacheProvider';
 import { useThumbnailsDownloadProvider } from '../../downloads/ThumbnailDownloadProvider';
@@ -107,8 +107,6 @@ const ItemRow = ({
         );
     };
 
-    const showShareOnHover = item.Type === LinkType.FILE && item.Trashed === null && !item.SharedUrl && !item.Disabled;
-
     return (
         <>
             {draggable && dragMoveControls && (
@@ -154,7 +152,9 @@ const ItemRow = ({
                     )}
                     <NameCell name={item.Name} />
                     {item.SharedUrl && <SharedURLIcon shareId={shareId} item={item} />}
-                    {showShareOnHover && <ShareCell shareId={shareId} item={item} />}
+                    {shouldRenderShareButton(item) && (
+                        <ShareButton className="file-browser-list-item--share-button" shareId={shareId} item={item} />
+                    )}
                 </TableCell>
 
                 {columns.includes('location') && (
