@@ -133,7 +133,7 @@ const YourPlanSection = ({ permission }: Props) => {
                         ) : hasAddresses ? (
                             c('Plan').t`${mailAppName} Free`
                         ) : (
-                            <Href url="https://mail.protonmail.com/login">{c('Info').t`Not activated`}</Href>
+                            <Href url="https://mail.protonmail.com/login">{c('Info').t`Activate`}</Href>
                         )}
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight className="flex-item-fluid">
