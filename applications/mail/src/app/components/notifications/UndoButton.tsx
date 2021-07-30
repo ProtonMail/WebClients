@@ -4,8 +4,11 @@ import { InlineLinkButton } from '@proton/components';
 
 interface Props {
     onUndo: () => void;
+    className?: string;
 }
 
-const UndoButton = ({ onUndo }: Props) => <InlineLinkButton onClick={onUndo}>{c('Action').t`Undo`}</InlineLinkButton>;
+const UndoButton = ({ onUndo, className }: Props) => (
+    <InlineLinkButton onClick={onUndo} className={className}>{c('Action').t`Undo`}</InlineLinkButton>
+);
 
 export default UndoButton;

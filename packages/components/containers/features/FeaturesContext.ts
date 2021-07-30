@@ -43,6 +43,7 @@ export enum FeatureCode {
     CalendarSubscription = 'CalendarSubscription',
     MailFeedbackEnabled = 'MailFeedbackEnabled',
     CalendarFeedbackEnabled = 'CalendarFeedbackEnabled',
+    ScheduledSend = 'ScheduledSend',
 }
 
 export interface FeaturesContextValue {

@@ -1,6 +1,6 @@
 import React, { RefObject } from 'react';
 import { c } from 'ttag';
-import { useHandler, useNotifications } from '@proton/components';
+import { useHandler, useMailSettings, useNotifications } from '@proton/components';
 import { Abortable } from '@proton/components/hooks/useHandler';
 import SendingMessageNotification, {
     createSendingMessageNotificationManager,
@@ -11,6 +11,7 @@ import { useSendMessage } from './useSendMessage';
 import { useSendVerifications } from './useSendVerifications';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { MapSendInfo } from '../../models/crypto';
+import { useMessageCache } from '../../containers/MessageProvider';
 
 export interface UseSendHandlerParameters {
     modelMessage: MessageExtended;
@@ -37,8 +38,11 @@ export const useSendHandler = ({
 
     const { preliminaryVerifications, extendedVerifications } = useSendVerifications();
     const sendMessage = useSendMessage();
+    const [mailSettings] = useMailSettings();
 
     const onCompose = useOnCompose();
+
+    const messageCache = useMessageCache();
 
     const handleSendAfterUploads = useHandler(async (notifManager: SendingMessageNotificationManager) => {
         let verificationResults;
@@ -70,13 +74,25 @@ export const useSendHandler = ({
     });
 
     const handleSend = useHandler(async () => {
+        const { scheduledAt } = modelMessage;
         const notifManager = createSendingMessageNotificationManager();
 
-        await preliminaryVerifications(modelMessage as MessageExtendedWithData);
+        // If scheduledAt is set we already performed the preliminary verifications
+        if (!scheduledAt) {
+            await preliminaryVerifications(modelMessage as MessageExtendedWithData);
+        }
 
         // Display growler to receive direct feedback (UX) since sendMessage function is added to queue (and other async process could need to complete first)
         notifManager.ID = createNotification({
-            text: <SendingMessageNotification manager={notifManager} />,
+            text: (
+                <SendingMessageNotification
+                    scheduledAt={scheduledAt}
+                    manager={notifManager}
+                    localID={modelMessage.localID}
+                    messageCache={messageCache}
+                    viewMode={mailSettings?.ViewMode || 0}
+                />
+            ),
             expiration: -1,
             disableAutoClose: true,
         });

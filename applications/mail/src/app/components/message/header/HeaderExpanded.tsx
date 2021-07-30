@@ -15,7 +15,7 @@ import {
 } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { isInternal, isOutbox } from '@proton/shared/lib/mail/messages';
+import { isInternal, isOutbox, isScheduled } from '@proton/shared/lib/mail/messages';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 
@@ -101,6 +101,9 @@ const HeaderExpanded = ({
     const currentFolderID = getCurrentFolderID(message.data?.LabelIDs, folders);
     const isSendingMessage = message.sending;
     const isOutboxMessage = isOutbox(message.data);
+
+    const isScheduledMessage = isScheduled(message.data);
+
     const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
 
     const onCompose = useOnCompose();
@@ -229,9 +232,13 @@ const HeaderExpanded = ({
                         'message-header-metas-container flex flex-align-items-center flex-item-noshrink',
                         isNarrow && 'flex-align-self-start',
                     ])}
+                    data-testid="message:message-header-metas"
                 >
-                    {messageLoaded && (isOutboxMessage || isSendingMessage) && (
+                    {messageLoaded && (isOutboxMessage || isSendingMessage) && !isScheduledMessage && (
                         <span className="badge-label-primary mr0-5 flex-item-noshrink">{c('Info').t`Sending`}</span>
+                    )}
+                    {messageLoaded && isScheduledMessage && (
+                        <span className="badge-label-primary ml0-5 flex-item-noshrink">{c('Info').t`Scheduled`}</span>
                     )}
                     {messageLoaded && !showDetails && (
                         <>
@@ -441,39 +448,40 @@ const HeaderExpanded = ({
                         </ButtonGroup>
                     )}
                 </div>
-
-                <ButtonGroup className="mb0-5">
-                    <Tooltip title={titleReply}>
-                        <Button
-                            icon
-                            disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
-                            onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
-                            data-testid="message-view:reply"
-                        >
-                            <Icon name="reply" alt={c('Title').t`Reply`} />
-                        </Button>
-                    </Tooltip>
-                    <Tooltip title={titleReplyAll}>
-                        <Button
-                            icon
-                            disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
-                            onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
-                            data-testid="message-view:reply-all"
-                        >
-                            <Icon name="reply-all" alt={c('Title').t`Reply all`} />
-                        </Button>
-                    </Tooltip>
-                    <Tooltip title={titleForward}>
-                        <Button
-                            icon
-                            disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
-                            onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
-                            data-testid="message-view:forward"
-                        >
-                            <Icon name="forward" alt={c('Title').t`Forward`} />
-                        </Button>
-                    </Tooltip>
-                </ButtonGroup>
+                {!isScheduledMessage && (
+                    <ButtonGroup className="mb0-5">
+                        <Tooltip title={titleReply}>
+                            <Button
+                                icon
+                                disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
+                                onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
+                                data-testid="message-view:reply"
+                            >
+                                <Icon name="reply" alt={c('Title').t`Reply`} />
+                            </Button>
+                        </Tooltip>
+                        <Tooltip title={titleReplyAll}>
+                            <Button
+                                icon
+                                disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
+                                onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
+                                data-testid="message-view:reply-all"
+                            >
+                                <Icon name="reply-all" alt={c('Title').t`Reply all`} />
+                            </Button>
+                        </Tooltip>
+                        <Tooltip title={titleForward}>
+                            <Button
+                                icon
+                                disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
+                                onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
+                                data-testid="message-view:forward"
+                            >
+                                <Icon name="forward" alt={c('Title').t`Forward`} />
+                            </Button>
+                        </Tooltip>
+                    </ButtonGroup>
+                )}
             </div>
             {/* {messageLoaded ? <HeaderAttachmentEvent message={message} /> : null} */}
         </div>

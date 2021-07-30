@@ -139,6 +139,7 @@ const List = (
                     conversationMode={conversationMode}
                     mailSettings={mailSettings}
                     isSearch={isSearch}
+                    labelID={labelID}
                 />
                 {elements.length === 0 ? (
                     <EmptyView labelID={labelID} isSearch={isSearch} />

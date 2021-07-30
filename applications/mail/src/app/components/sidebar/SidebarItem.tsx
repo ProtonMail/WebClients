@@ -18,14 +18,17 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { noop } from '@proton/shared/lib/helpers/function';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { c, msgid } from 'ttag';
 import LocationAside from './LocationAside';
 import { LABEL_IDS_TO_HUMAN } from '../../constants';
 import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
 import { ELEMENTS_CACHE_KEY } from '../../hooks/mailbox/useElementsCache';
 
-const { ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT } = MAILBOX_LABEL_IDS;
+const { ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED } = MAILBOX_LABEL_IDS;
 
-const noDrop: string[] = [ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT];
+const noDrop: string[] = [ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED];
+
+const COUNTER_LIMIT = 9999;
 
 interface Props {
     currentLabelID: string;
@@ -38,6 +41,7 @@ interface Props {
     content?: ReactNode;
     color?: string;
     unreadCount?: number;
+    totalMessagesCount?: number;
     shortcutHandlers?: HotkeyTuple[];
     onFocus?: () => void;
     id?: string;
@@ -54,6 +58,7 @@ const SidebarItem = ({
     color,
     isFolder,
     unreadCount,
+    totalMessagesCount = 0,
     shortcutHandlers = [],
     onFocus = noop,
     id,
@@ -75,6 +80,8 @@ const SidebarItem = ({
 
     const active = labelID === currentLabelID;
     const ariaCurrent = active ? 'page' : undefined;
+
+    const canDisplayTotalMessagesCounter = labelID === SCHEDULED && totalMessagesCount > 0;
 
     const handleClick = () => {
         if (history.location.pathname.endsWith(link) && !refreshing) {
@@ -102,6 +109,24 @@ const SidebarItem = ({
     const elementRef = useRef<HTMLAnchorElement>(null);
     useHotkeys(elementRef, shortcutHandlers);
 
+    const getTotalMessagesTitle = () => {
+        return c('Info').ngettext(
+            msgid`${totalMessagesCount} scheduled message`,
+            `${totalMessagesCount} scheduled messages`,
+            totalMessagesCount
+        );
+    };
+
+    const totalMessagesCounter = canDisplayTotalMessagesCounter && (
+        <span
+            className="navigation-counter-item navigation-counter-item--transparent flex-item-noshrink color-weak text-sm"
+            title={getTotalMessagesTitle()}
+            data-testid="navigation-link:total-messages-count"
+        >
+            {totalMessagesCount > COUNTER_LIMIT ? '9999+' : totalMessagesCount}
+        </span>
+    );
+
     return (
         <SidebarListItem className={classnames([dragOver && 'navigation__dragover'])}>
             <SidebarListItemLink
@@ -121,6 +146,7 @@ const SidebarItem = ({
                     right={<LocationAside unreadCount={unreadCount} active={active} refreshing={refreshing} />}
                 >
                     {content}
+                    {totalMessagesCounter}
                 </SidebarListItemContent>
             </SidebarListItemLink>
         </SidebarListItem>

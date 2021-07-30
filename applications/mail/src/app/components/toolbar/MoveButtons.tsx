@@ -11,7 +11,8 @@ import { useMoveToFolder } from '../../hooks/useApplyLabels';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElementsCache';
 import DeleteButton from './DeleteButton';
 
-const { TRASH, SPAM, DRAFTS, ARCHIVE, SENT, INBOX, ALL_DRAFTS, ALL_SENT, STARRED, ALL_MAIL } = MAILBOX_LABEL_IDS;
+const { TRASH, SPAM, DRAFTS, ARCHIVE, SENT, INBOX, ALL_DRAFTS, ALL_SENT, STARRED, ALL_MAIL, SCHEDULED } =
+    MAILBOX_LABEL_IDS;
 
 interface Props {
     labelID: string;
@@ -170,8 +171,9 @@ const MoveButtons = ({
         buttons = [trashButton, archiveButton, deleteButton];
     } else if (labelID === SENT || labelID === ALL_SENT) {
         buttons = [trashButton, archiveButton, deleteButton];
+    } else if (labelID === SCHEDULED) {
+        buttons = [trashButton, archiveButton];
     } else if (labelID === STARRED) {
-        //
         buttons = [trashButton, archiveButton, spamButton];
     } else if (labelID === ARCHIVE) {
         buttons = [trashButton, inboxButton, spamButton];

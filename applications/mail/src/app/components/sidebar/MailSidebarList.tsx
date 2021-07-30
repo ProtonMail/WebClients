@@ -1,29 +1,31 @@
-import React, { useEffect, useRef, useMemo, useState, useCallback } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { Location } from 'history';
 import {
-    Loader,
-    useMailSettings,
-    useLabels,
-    useFolders,
-    useModals,
-    useConversationCounts,
-    useMessageCounts,
-    useLocalState,
-    useUser,
-    SidebarList,
-    SimpleSidebarListItemHeader,
-    SidebarListItemHeaderLink,
-    useHotkeys,
+    FeatureCode,
     HotkeyTuple,
-    LabelModal,
     Icon,
+    LabelModal,
+    Loader,
+    SidebarList,
+    SidebarListItemHeaderLink,
+    SimpleSidebarListItemHeader,
+    useConversationCounts,
+    useFeature,
+    useFolders,
+    useHotkeys,
+    useLabels,
+    useLocalState,
+    useMailSettings,
+    useMessageCounts,
+    useModals,
+    useUser,
 } from '@proton/components';
-import { SHOW_MOVED, MAILBOX_LABEL_IDS, APPS } from '@proton/shared/lib/constants';
+import { APPS, MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { buildTreeview } from '@proton/shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
-import { setItem, getItem } from '@proton/shared/lib/helpers/storage';
+import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 
 import { getCounterMap } from '../../helpers/elements';
@@ -44,14 +46,15 @@ const formatFolderID = (folderID: string): string => `folder_expanded_state_${fo
 
 const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
     const [user] = useUser();
-    const [conversationCounts, actualLoadingConversationCounts] = useConversationCounts();
-    const [messageCounts, actualLoadingMessageCounts] = useMessageCounts();
+    const [conversationCounts] = useConversationCounts();
+    const [messageCounts] = useMessageCounts();
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const [displayFolders, toggleFolders] = useLocalState(true, `${user.ID}-display-folders`);
     const [displayLabels, toggleLabels] = useLocalState(true, `${user.ID}-display-labels`);
     const [labels, loadingLabels] = useLabels();
     const [folders, loadingFolders] = useFolders();
     const { createModal } = useModals();
+    const { feature: scheduledFeature, loading: loadingScheduledFeature } = useFeature(FeatureCode.ScheduledSend);
 
     const sidebarRef = useRef<HTMLDivElement>(null);
 
@@ -122,6 +125,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
         return [
             'inbox',
             'drafts',
+            'scheduled',
             'sent',
             'starred',
             'archive',
@@ -186,10 +190,6 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
 
     useHotkeys(sidebarRef, shortcutHandlers);
 
-    // We want to show the loader only at inital loading, not on updates
-    const loadingConversationCounts = actualLoadingConversationCounts && conversationCounts?.length === 0;
-    const loadingMessageCounts = actualLoadingMessageCounts && messageCounts?.length === 0;
-
     const { ShowMoved } = mailSettings || { ShowMoved: 0 };
 
     const isConversation = isConversationMode(currentLabelID, mailSettings, location);
@@ -208,7 +208,25 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
         return unreadCounterMap;
     }, [mailSettings, labels, folders, conversationCounts, messageCounts]);
 
-    if (loadingMailSettings || loadingLabels || loadingFolders || loadingConversationCounts || loadingMessageCounts) {
+    const totalMessagesMap = useDeepMemo(() => {
+        if (!messageCounts) {
+            return {};
+        }
+
+        return messageCounts.reduce(
+            (acc: { [labelID: string]: number }, label: { LabelID: string; Total: number; Unread: number }) => {
+                acc[label.LabelID] = label.Total;
+                return acc;
+            },
+            {}
+        );
+    }, [messageCounts]);
+
+    // Hide sidebar if the user is not on a paid plan, but allow him to see its scheduled messages if he had some before going to free plan
+    const showScheduled =
+        scheduledFeature?.Value && (user.hasPaidMail || totalMessagesMap[MAILBOX_LABEL_IDS.SCHEDULED] > 0);
+
+    if (loadingMailSettings || loadingLabels || loadingFolders || loadingScheduledFeature) {
         return <Loader />;
     }
 
@@ -217,6 +235,7 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
         labelID,
         isConversation,
         unreadCount: counterMap[labelID],
+        totalMessagesCount: totalMessagesMap[labelID] || 0,
     });
 
     return (
@@ -242,6 +261,16 @@ const MailSidebarList = ({ labelID: currentLabelID, location }: Props) => {
                     id="drafts"
                     onFocus={() => setFocusedItem('drafts')}
                 />
+                {showScheduled ? (
+                    <SidebarItem
+                        {...getCommonProps(MAILBOX_LABEL_IDS.SCHEDULED)}
+                        icon="clock"
+                        text={c('Link').t`Scheduled`}
+                        isFolder
+                        id="scheduled"
+                        onFocus={() => setFocusedItem('scheduled')}
+                    />
+                ) : null}
                 <SidebarItem
                     {...getCommonProps(
                         ShowMoved & SHOW_MOVED.SENT ? MAILBOX_LABEL_IDS.ALL_SENT : MAILBOX_LABEL_IDS.SENT
