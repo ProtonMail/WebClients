@@ -83,8 +83,9 @@ const SidebarItem = ({
 
     const canDisplayTotalMessagesCounter = labelID === SCHEDULED && totalMessagesCount > 0;
 
-    const handleClick = () => {
+    const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
         if (history.location.pathname.endsWith(link) && !refreshing) {
+            event.preventDefault();
             void withRefreshing(Promise.all([call(), wait(1000)]));
         }
     };
