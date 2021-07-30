@@ -87,8 +87,8 @@ const ContactGroupModal = ({
         }
     };
 
-    const handleDeleteEmail = (contactEmailID: string) => {
-        const index = model.contactEmails.findIndex(({ ID }: ContactEmail) => ID === contactEmailID);
+    const handleDeleteEmail = (contactEmail: string) => {
+        const index = model.contactEmails.findIndex(({ Email }: ContactEmail) => Email === contactEmail);
 
         if (index > -1) {
             const copy = [...model.contactEmails];
