@@ -20,7 +20,7 @@ import SubscriptionModal from './SubscriptionModal';
 import { SUBSCRIPTION_STEPS } from './constants';
 
 const getVpnConnectionsText = (n = 0) => {
-    return c('Label').ngettext(msgid`${n} VPN Connection available`, `${n} VPN Connections available`, n);
+    return c('Label').ngettext(msgid`${n} VPN connection available`, `${n} VPN connections available`, n);
 };
 
 interface Props {
@@ -108,22 +108,38 @@ const YourPlanSection = ({ permission }: Props) => {
         );
     };
 
+    const humanUsedSpace = humanSize(UsedSpace);
+    const humanMaxSpace = humanSize(MaxSpace);
+
     const mailAddons = (
         <>
             <div className="w100 pt0-5">
-                {UsedMembers} {c('x of y').t`of`} {MaxMembers} {c('Label').t`Users`}
+                {c('Label').ngettext(
+                    msgid`${UsedMembers} of ${MaxMembers} user`,
+                    `${UsedMembers} of ${MaxMembers} users`,
+                    MaxMembers
+                )}
             </div>
             <div className="mt1">
-                {UsedAddresses} {c('x of y').t`of`} {MaxAddresses} {c('Label').t`Email addresses`}
+                {c('Label').ngettext(
+                    msgid`${UsedAddresses} of ${MaxAddresses} email address`,
+                    `${UsedAddresses} of ${MaxAddresses} email addresses`,
+                    MaxAddresses
+                )}
+                {c('Label').t`${UsedAddresses} of ${MaxAddresses} email addresses`}
             </div>
             {Boolean(hasPaidMail) && (
                 <div className="mt1">
-                    {UsedDomains} {c('x of y').t`of`} {MaxDomains} {c('Label').t`Custom domains`}
+                    {c('Label').ngettext(
+                        msgid`${UsedDomains} of ${MaxDomains} custom domain`,
+                        `${UsedDomains} of ${MaxDomains} custom domains`,
+                        MaxDomains
+                    )}
                 </div>
             )}
             <div className="mt1">
                 <span id="usedSpaceLabel">
-                    {c('Label').t`Using`} {humanSize(UsedSpace)} {c('x of y').t`of`} {humanSize(MaxSpace)}
+                    {c('Label').t`Using ${humanUsedSpace} of ${humanMaxSpace}`}
                 </span>
                 <Meter
                     className="mt1"
