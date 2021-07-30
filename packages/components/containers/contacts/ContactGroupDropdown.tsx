@@ -77,14 +77,31 @@ const ContactGroupDropdown = ({
     const [uid] = useState(generateUID('contactGroupDropdown'));
     const applyGroups = useApplyGroups();
 
-    const handleAdd = () => {
-        createModal(<ContactGroupModal selectedContactEmails={contactEmails} />);
-        close();
-    };
     const handleCheck =
         (contactGroupID: string) =>
         ({ target }: ChangeEvent<HTMLInputElement>) =>
             setModel({ ...model, [contactGroupID]: +target.checked });
+
+    const handleCreateContactGroup = async (groupID: string) => {
+        // If creating a group with a delayed save, check the associated checkbox
+        handleCheck(groupID);
+
+        // Do the delayed save with the group ID
+        if (onDelayedSave) {
+            onDelayedSave({ [groupID]: true });
+        }
+    };
+
+    const handleAdd = () => {
+        // Should be handled differently with the delayed save, because we need to add the current email to the new group
+        createModal(
+            <ContactGroupModal
+                selectedContactEmails={contactEmails}
+                onDelayedSave={onDelayedSave ? handleCreateContactGroup : undefined}
+            />
+        );
+        close();
+    };
 
     const handleApply = async () => {
         const changes = Object.entries(model).reduce<{ [groupID: string]: boolean }>((acc, [groupID, isChecked]) => {
