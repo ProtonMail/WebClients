@@ -55,9 +55,11 @@ const YourPlanSection = ({ permission }: Props) => {
     const { hasPaidMail, hasPaidVpn, isFree } = user;
 
     /*
-     * For paid users, the feature data is found on their organization,
-     * however free users don't have an organization, therefore we default
-     * to 1 for addresses and users.
+     * Feature data in general (used space, user addresses, etc.) is found
+     * on the organization of a user.
+     *
+     * However, only paid users have organizations, therefore we have to pick
+     * some smart defaults for when those values are missing.
      *
      * For space, that information is found on the user directly (also on
      * the organization if the user has a paid plan)
@@ -67,12 +69,28 @@ const YourPlanSection = ({ permission }: Props) => {
         MaxDomains,
         UsedSpace = user.UsedSpace,
         MaxSpace = user.MaxSpace,
-        UsedAddresses = 1,
-        MaxAddresses = 1,
+        UsedAddresses: OrganizationUsedAddresses,
+        MaxAddresses: OrganizationMaxAddresses,
         UsedMembers = 1,
         MaxMembers = 1,
         MaxVPN,
     } = organization || {};
+
+    /*
+     * For addresses in particular we default to "1" for any falsy values
+     * even "0" (destructuring default assignment would only pick up on the
+     * destructured value being undefined).
+     *
+     * We do this because of the following use-case:
+     * User has paid vpn subscription (and therefore has an organization set up).
+     * User does not have paid mail subscription (and therefore has no bonus addresses).
+     * In the scenario described above, the data on the organization claims that the
+     * user actually has "0" used and/or max addresses, which might be right as part
+     * of the organization but is wrong for the user itself, the user always has at
+     * the very least "1" max address.
+     */
+    const UsedAddresses = hasAddresses ? OrganizationUsedAddresses || 1 : 0;
+    const MaxAddresses = OrganizationMaxAddresses || 1;
 
     const { mailPlan, vpnPlan } = formatPlans(Plans);
     const { Name: mailPlanName } = mailPlan || {};
