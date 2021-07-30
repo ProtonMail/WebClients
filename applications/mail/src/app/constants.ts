@@ -13,8 +13,12 @@ export const ATTACHMENT_MAX_SIZE = 25000000; // bytes -> 25MB
 export const LARGE_KEY_SIZE = 50 * 1024;
 export const LOAD_RETRY_COUNT = 3;
 export const LOAD_RETRY_DELAY = 3000; // in ms => 3s
+export const PREVENT_CANCEL_SEND_INTERVAL = 30000; // Prevent form cancelling a message about to be sent 30s before
 
 export const UNDO_SEND_DELAY = 5000;
+
+export const SCHEDULED_MESSAGES_LIMIT = 100;
+export const SCHEDULED_MAX_DATE_DAYS = 30;
 
 export const ELEMENT_TYPES = {
     MESSAGE: 'message',
@@ -33,6 +37,7 @@ export const LABEL_IDS_TO_HUMAN = {
     [MAILBOX_LABEL_IDS.DRAFTS]: 'drafts',
     [MAILBOX_LABEL_IDS.STARRED]: 'starred',
     [MAILBOX_LABEL_IDS.OUTBOX]: 'outbox',
+    [MAILBOX_LABEL_IDS.SCHEDULED]: 'scheduled',
 };
 
 export const HUMAN_TO_LABEL_IDS = Object.entries(LABEL_IDS_TO_HUMAN).reduce((acc, [key, value]) => {
@@ -52,6 +57,7 @@ export const getLabelIDsToI18N = () => ({
     [MAILBOX_LABEL_IDS.DRAFTS]: c('Link').t`Drafts`,
     [MAILBOX_LABEL_IDS.STARRED]: c('Link').t`Starred`,
     [MAILBOX_LABEL_IDS.OUTBOX]: c('Link').t`Outbox`,
+    [MAILBOX_LABEL_IDS.SCHEDULED]: c('Link').t`Scheduled`,
 });
 
 // List of location where messages are marked automatically as read after moving by the API
@@ -63,6 +69,7 @@ export const LABELS_UNMODIFIABLE_BY_USER = [
     MAILBOX_LABEL_IDS.ALL_SENT,
     MAILBOX_LABEL_IDS.ALL_DRAFTS,
     MAILBOX_LABEL_IDS.OUTBOX,
+    MAILBOX_LABEL_IDS.SCHEDULED,
 ];
 
 export enum ENCRYPTED_STATUS {

@@ -39,16 +39,12 @@ $padding-left-link: rem(20) !default;
 	}
 
 	&:focus::after {
-		border-left: 4px solid
-			var(--navigation-current-item-marker-color, var(--interaction-norm));
+		border-left: 4px solid var(--navigation-current-item-marker-color, var(--interaction-norm));
 	}
 }
 
 [aria-current='page'].navigation-link {
-	background-color: var(
-		--navigation-current-item-background-color,
-		var(--interaction-default-hover)
-	);
+	background-color: var(--navigation-current-item-background-color, var(--interaction-default-hover));
 	color: var(--navigation-current-item-text-color, var(--text-norm));
 	font-weight: bold;
 
@@ -114,6 +110,11 @@ $padding-left-link: rem(20) !default;
 	height: rem(16);
 	font-variant: tabular-nums;
 
+	&--transparent {
+		background: transparent;
+		color: inherit;
+	}
+
 	&:empty {
 		display: none; // removes a bug on Webkit
 	}
@@ -135,8 +136,7 @@ $padding-left-link: rem(20) !default;
 	margin-left: $padding-left-link;
 	overflow: hidden;
 	opacity: 1;
-	transition: visibility 0s ease, transform 0.5s ease, opacity 0.5s ease,
-		max-height 0.5s ease;
+	transition: visibility 0s ease, transform 0.5s ease, opacity 0.5s ease, max-height 0.5s ease;
 	transform-origin: top center;
 	transform: scale(1, 1);
 	max-height: 44em;
@@ -167,13 +167,9 @@ $padding-left-link: rem(20) !default;
 	text-decoration: none;
 
 	&[aria-current='true'] {
-		background-color: var(
-			--navigation-current-item-background-color,
-			var(--interaction-default-hover)
-		);
+		background-color: var(--navigation-current-item-background-color, var(--interaction-default-hover));
 		color: var(--navigation-current-item-text-color, var(--text-norm));
-		border-left: 2px solid
-			var(--navigation-current-item-marker-color, var(--interaction-norm));
+		border-left: 2px solid var(--navigation-current-item-marker-color, var(--interaction-norm));
 		font-weight: bold;
 	}
 }

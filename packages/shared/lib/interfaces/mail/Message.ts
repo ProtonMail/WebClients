@@ -56,7 +56,6 @@ export interface Message {
     ReplyTos: Recipient[];
     Attachments: Attachment[];
     LabelIDs: string[];
-
     Password?: string;
     PasswordHint?: string;
     RightToLeft?: number;

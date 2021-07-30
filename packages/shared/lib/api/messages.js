@@ -61,11 +61,11 @@ export const getMessage = (messageID) => ({
 
 export const sendMessage = (
     messageID,
-    { ExpirationTime, ExpiresIn, AutoSaveContacts, Packages, DelaySeconds = 0 }
+    { ExpirationTime, ExpiresIn, AutoSaveContacts, Packages, DelaySeconds = 0, DeliveryTime }
 ) => ({
     method: 'post',
     url: `mail/v4/messages/${messageID}`,
-    data: { ExpirationTime, ExpiresIn, AutoSaveContacts, Packages, DelaySeconds },
+    data: { ExpirationTime, ExpiresIn, AutoSaveContacts, Packages, DelaySeconds, DeliveryTime },
 });
 
 export const sendMessageDirect = ({

@@ -1,5 +1,6 @@
-import { isReceived } from '@proton/shared/lib/mail/messages';
+import { isReceived, isScheduled } from '@proton/shared/lib/mail/messages';
 import React from 'react';
+import { FeatureCode, useFeature } from '@proton/components';
 import ExtraImages from '../extras/ExtraImages';
 import ExtraUnsubscribe from '../extras/ExtraUnsubscribe';
 import ExtraSpamScore from '../extras/ExtraSpamScore';
@@ -12,6 +13,7 @@ import ExtraAskResign from '../extras/ExtraAskResign';
 import { MessageExtended } from '../../../models/message';
 import ExtraErrors from '../extras/ExtraErrors';
 import ExtraDecryptedSubject from '../extras/ExtraDecryptedSubject';
+import ExtraScheduledMessage from '../extras/ExtraScheduledMessage';
 
 interface Props {
     message: MessageExtended;
@@ -33,6 +35,10 @@ const HeaderExtra = ({
     onLoadEmbeddedImages,
 }: Props) => {
     const received = message.data && isReceived(message.data);
+
+    const { feature: scheduledFeature } = useFeature(FeatureCode.ScheduledSend);
+    const isScheduledMessage = isScheduled(message.data);
+
     return (
         <section className="message-header-extra border-top pt0-5">
             <ExtraExpirationTime message={message} />
@@ -51,6 +57,7 @@ const HeaderExtra = ({
             {!sourceMode && <ExtraImages message={message} type="remote" onLoadImages={onLoadRemoteImages} />}
             {!sourceMode && <ExtraImages message={message} type="embedded" onLoadImages={onLoadEmbeddedImages} />}
             {messageLoaded && received ? <ExtraEvents message={message} /> : null}
+            {isScheduledMessage && scheduledFeature?.Value ? <ExtraScheduledMessage message={message} /> : null}
         </section>
     );
 };

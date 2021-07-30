@@ -2,13 +2,13 @@ import React, { Fragment, ReactElement } from 'react';
 import { classnames } from '../../helpers';
 import { Vr } from '../vr';
 
-type Color = 'norm' | 'weak' | 'danger' | 'warning' | 'success' | 'info';
+export type Color = 'norm' | 'weak' | 'danger' | 'warning' | 'success' | 'info';
 
-type Shape = 'solid' | 'outline' | 'ghost';
+export type Shape = 'solid' | 'outline' | 'ghost';
 
-type Size = 'small' | 'medium' | 'large';
+export type Size = 'small' | 'medium' | 'large';
 
-interface Props extends React.ComponentPropsWithoutRef<'div'> {
+export interface Props extends React.ComponentPropsWithoutRef<'div'> {
     children: React.ReactNode;
     color?: Color;
     shape?: Shape;

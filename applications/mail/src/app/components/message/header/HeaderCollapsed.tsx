@@ -1,4 +1,4 @@
-import { hasAttachments, isDraft, isOutbox } from '@proton/shared/lib/mail/messages';
+import { hasAttachments, isDraft, isOutbox, isScheduled } from '@proton/shared/lib/mail/messages';
 import React, { MouseEvent } from 'react';
 import { c } from 'ttag';
 import { classnames } from '@proton/components';
@@ -48,6 +48,7 @@ const HeaderCollapsed = ({
 
     const isDraftMessage = isDraft(message.data) && !message.sending;
     const isOutboxMessage = isOutbox(message.data) || message.sending;
+    const isScheduledMessage = isScheduled(message.data);
 
     return (
         <div
@@ -75,8 +76,11 @@ const HeaderCollapsed = ({
                 {messageLoaded && isDraftMessage && (
                     <span className="badge-label-success ml0-5 flex-item-noshrink">{c('Info').t`Draft`}</span>
                 )}
-                {messageLoaded && isOutboxMessage && (
+                {messageLoaded && isOutboxMessage && !isScheduledMessage && (
                     <span className="badge-label-primary ml0-5 flex-item-noshrink">{c('Info').t`Sending`}</span>
+                )}
+                {messageLoaded && isScheduledMessage && (
+                    <span className="badge-label-primary ml0-5 flex-item-noshrink">{c('Info').t`Scheduled`}</span>
                 )}
             </div>
             <div className="flex flex-align-items-center flex-nowrap flex-item-noshrink">

@@ -35,6 +35,7 @@ import { mergeMessages } from '../../helpers/message/messages';
 import { getContent, setContent } from '../../helpers/message/messageContent';
 import ComposerPasswordModal from './ComposerPasswordModal';
 import ComposerExpirationModal from './ComposerExpirationModal';
+import ComposerScheduleSendModal from './ComposerScheduleSendModal';
 import { useMessage } from '../../hooks/message/useMessage';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
 import { useSaveDraft, useDeleteDraft } from '../../hooks/message/useSaveDraft';
@@ -55,11 +56,13 @@ import { useCloseHandler } from '../../hooks/composer/useCloseHandler';
 import { updateKeyPackets } from '../../helpers/attachment/attachment';
 import { Event } from '../../models/event';
 import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
+import { useScheduleSend } from '../../hooks/composer/useScheduleSend';
 
 enum ComposerInnerModal {
     None,
     Password,
     Expiration,
+    ScheduleSend,
 }
 
 export type MessageUpdate = PartialMessageExtended | ((message: MessageExtended) => PartialMessageExtended);
@@ -488,6 +491,14 @@ const Composer = (
         onClose,
     });
 
+    const { loadingScheduleCount, handleScheduleSendModal, handleScheduleSend } = useScheduleSend({
+        modelMessage: modelMessage as MessageExtendedWithData,
+        setInnerModal,
+        ComposerInnerModal,
+        setModelMessage,
+        handleSend,
+    });
+
     useImperativeHandle(ref, () => ({
         close: handleClose,
     }));
@@ -531,6 +542,9 @@ const Composer = (
                     onClose={handleCloseInnerModal}
                     onChange={handleChange}
                 />
+            )}
+            {innerModal === ComposerInnerModal.ScheduleSend && (
+                <ComposerScheduleSendModal onClose={handleCloseInnerModal} onSubmit={handleScheduleSend} />
             )}
             <div
                 className={classnames([
@@ -583,10 +597,12 @@ const Composer = (
                     onAddAttachments={handleAddAttachmentsStart}
                     onExpiration={handleExpiration}
                     onPassword={handlePassword}
+                    onScheduleSendModal={handleScheduleSendModal}
                     onSend={handleSend}
                     onDelete={handleDelete}
                     addressesBlurRef={addressesBlurRef}
                     attachmentTriggerRef={attachmentTriggerRef}
+                    loadingScheduleCount={loadingScheduleCount}
                 />
             </div>
         </div>

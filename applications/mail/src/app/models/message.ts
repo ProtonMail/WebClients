@@ -222,6 +222,11 @@ export interface MessageExtended {
      * All data relative to remote and embedded images present in the message
      */
     messageImages?: MessageImages;
+
+    /**
+     * Desired time for schedule send (timestamp)
+     */
+    scheduledAt?: number;
 }
 
 /**

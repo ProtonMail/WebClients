@@ -28,14 +28,14 @@ const AttachmentsButton = (
     }, []);
 
     return (
-        <div className="composer-attachments-button-wrapper flex">
+        <div className="composer-attachments-button-wrapper flex flex-flex-align-items-center">
             <ButtonLike
                 icon
                 role="button"
                 as="label"
                 color={isAttachments ? 'norm' : 'weak'}
                 shape="outline"
-                className={classnames([disabled && 'is-disabled'])}
+                className={classnames(['inline-flex', disabled && 'is-disabled'])}
                 ref={ref}
                 {...rest}
                 data-testid="composer:attachment-button"

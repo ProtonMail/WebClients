@@ -7,7 +7,7 @@ import ToolbarDropdown from './ToolbarDropdown';
 import { useEmptyLabel } from '../../hooks/useEmptyLabel';
 import { labelIncludes } from '../../helpers/labels';
 
-const { DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED } = MAILBOX_LABEL_IDS;
+const { DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED, SCHEDULED } = MAILBOX_LABEL_IDS;
 
 interface Props {
     labelID: string;
@@ -18,7 +18,18 @@ interface Props {
 const MoreDropdown = ({ labelID = '', elementIDs = [], selectedIDs = [] }: Props) => {
     const [loading, withLoading] = useLoading();
     const emptyLabel = useEmptyLabel();
-    const cannotEmpty = labelIncludes(labelID, INBOX, DRAFTS, ALL_DRAFTS, STARRED, SENT, ALL_SENT, ARCHIVE, ALL_MAIL);
+    const cannotEmpty = labelIncludes(
+        labelID,
+        INBOX,
+        DRAFTS,
+        ALL_DRAFTS,
+        STARRED,
+        SENT,
+        ALL_SENT,
+        ARCHIVE,
+        ALL_MAIL,
+        SCHEDULED
+    );
 
     if (cannotEmpty) {
         return null;
