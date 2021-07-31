@@ -24,10 +24,12 @@ const ERROR_CODE_COULD_NOT_IDENTIFY_TARGET = 2000;
 const DownloadSharedContainer = () => {
     const { clearDownloads } = useDownloadProvider();
     const [notFoundError, setNotFoundError] = useState<Error | undefined>();
+    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
+    const [thumbnail, setThumbnail] = useState<string | undefined>();
     const [loading, withLoading] = useLoading(false);
     const [handshakeInfo, setHandshakeInfo] = useState<InitHandshake | null>();
     const [linkInfo, setLinkInfo] = useState<(SharedLinkInfo & { Password: string }) | null>();
-    const { initSRPHandshake, getSharedLinkPayload, startSharedFileTransfer } = usePublicSharing();
+    const { initSRPHandshake, getSharedLinkPayload, startSharedFileTransfer, downloadThumbnail } = usePublicSharing();
     const { hash, pathname } = useLocation();
     const { preventLeave } = usePreventLeave();
     const { createNotification } = useNotifications();
@@ -51,6 +53,24 @@ const DownloadSharedContainer = () => {
                 setHandshakeInfo(null);
             });
     }, [token, password]);
+
+    useEffect(() => {
+        if (!linkInfo?.SessionKey || !linkInfo?.NodeKey || !linkInfo?.ThumbnailURL) {
+            return;
+        }
+
+        const { contents: contentsPromise } = downloadThumbnail(
+            linkInfo.SessionKey,
+            linkInfo.NodeKey,
+            linkInfo.ThumbnailURL
+        );
+        contentsPromise
+            .then((data) => {
+                const urlObject = URL.createObjectURL(new Blob(data, { type: 'image/jpeg' }));
+                setThumbnail(urlObject);
+            })
+            .catch(console.warn);
+    }, [linkInfo]);
 
     const getSharedLinkInfo = useCallback(
         async (password: string) => {

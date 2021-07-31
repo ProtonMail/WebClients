@@ -5,10 +5,12 @@ import { createReadableStreamWrapper } from '@mattiasbuelens/web-streams-adapter
 import { Api } from '@proton/shared/lib/interfaces';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { getIsUnreachableError, getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { noop } from '@proton/shared/lib/helpers/function';
+
 import { DriveFileBlock } from '../../interfaces/file';
 import { queryFileBlock } from '../../api/files';
-import { ObserverStream, untilStreamEnd } from '../../utils/stream';
-import { TransferCancel } from '../../interfaces/transfer';
+import { ObserverStream, streamToBuffer, untilStreamEnd } from '../../utils/stream';
+import { API, TransferCancel } from '../../interfaces/transfer';
 import { waitUntil } from '../../utils/async';
 import {
     MAX_THREADS_PER_DOWNLOAD,
@@ -30,7 +32,7 @@ export type StreamTransformer = (
 ) => Promise<ReadableStream<Uint8Array>>;
 
 export interface DownloadControls {
-    start: (api: (query: any) => any) => Promise<void>;
+    start: (api: API) => Promise<void>;
     cancel: () => void;
     pause: () => Promise<void>;
     resume: () => void;
@@ -52,10 +54,12 @@ export interface DownloadCallbacks {
     transformBlockStream?: StreamTransformer;
 }
 
-// initDownload prepares download transfer for the DownloadProvider queue.
-// Download is not started right away, it has to be started explicitly by
-// DownloadProvider.
-// How the download itself starts, see start function inside.
+/**
+ * initDownload prepares download transfer for the DownloadProvider queue.
+ * Download is not started right away, it has to be started explicitly by
+ * DownloadProvider.
+ * How the download itself starts, see start function inside.
+ */
 export const initDownload = ({
     getBlocks,
     onStart,
@@ -370,4 +374,38 @@ export const initDownload = ({
     };
 
     return { id, downloadControls };
+};
+
+/**
+ * Use startDownload to initialize and start a file download
+ * without tracking or necessarily controlling its progress.
+ *
+ * This function can be utilized when a file need to be downloaded without
+ * being added to Transfer Manager. Such use-cases might be thumbnail
+ * downloads or showing file previews.
+ */
+export const startDownload = (
+    api: API,
+    { getBlocks, transformBlockStream }: Pick<DownloadCallbacks, 'getBlocks' | 'transformBlockStream'>
+) => {
+    let resolve: (value: Promise<Uint8Array[]>) => void = noop;
+    let reject: (reason?: any) => any = noop;
+
+    const contentsPromise = new Promise<Uint8Array[]>((res, rej) => {
+        resolve = res;
+        reject = rej;
+    });
+
+    const { downloadControls } = initDownload({
+        transformBlockStream,
+        getBlocks,
+        onStart: (stream) => resolve(streamToBuffer(stream)),
+    });
+
+    downloadControls.start(api).catch(reject);
+
+    return {
+        contents: contentsPromise,
+        controls: downloadControls,
+    };
 };
