@@ -12,7 +12,6 @@ import {
 } from '@proton/shared/lib/keys/driveKeys';
 import { range, mergeUint8Arrays } from '@proton/shared/lib/helpers/array';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { noop } from '@proton/shared/lib/helpers/function';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import {
@@ -43,8 +42,7 @@ import {
     TransferConflict,
 } from '../../interfaces/transfer';
 import { useDownloadProvider } from '../../components/downloads/DownloadProvider';
-import { initDownload, StreamTransformer } from '../../components/downloads/download';
-import { streamToBuffer } from '../../utils/stream';
+import { startDownload, StreamTransformer } from '../../components/downloads/download';
 import { HashCheckResult, LinkType, FileLinkMeta, isFolderLinkMeta, LinkMeta } from '../../interfaces/link';
 import { queryCheckAvailableHashes } from '../../api/link';
 import { ValidationError, validateLinkName } from '../../utils/validation';
@@ -861,14 +859,6 @@ function useFiles() {
     // downloadDriveFile downloads the file. If driveBlocks are not passed,
     // it automatically fetches all file blocks to be downloaded.
     const downloadDriveFile = async (shareId: string, linkId: string, driveBlocks?: DriveFileBlock[]) => {
-        let resolve: (value: Promise<Uint8Array[]>) => void = noop;
-        let reject: (reason?: any) => any = noop;
-
-        const contentsPromise = new Promise<Uint8Array[]>((res, rej) => {
-            resolve = res;
-            reject = rej;
-        });
-
         const getBlocks = async (
             abortSignal: AbortSignal,
             pagination?: { FromBlockIndex: number; PageSize: number }
@@ -879,18 +869,10 @@ function useFiles() {
             return getFileBlocks(shareId, linkId, abortSignal, pagination);
         };
 
-        const { downloadControls } = initDownload({
-            transformBlockStream: decryptBlockStream(shareId, linkId),
+        return startDownload(api, {
             getBlocks,
-            onStart: (stream) => resolve(streamToBuffer(stream)),
+            transformBlockStream: decryptBlockStream(shareId, linkId),
         });
-
-        downloadControls.start(api).catch(reject);
-
-        return {
-            contents: contentsPromise,
-            controls: downloadControls,
-        };
     };
 
     const saveFileTransferFromBuffer = async (content: Uint8Array[], meta: TransferMeta, info: DownloadInfo) => {
