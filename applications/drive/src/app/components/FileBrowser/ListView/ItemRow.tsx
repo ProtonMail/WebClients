@@ -72,13 +72,8 @@ const ItemRow = ({
             ? cache.get.shareURL(shareId, item.SharedUrl?.ShareUrlID)
             : undefined;
 
-    /*
-        We cannot fetch thumbnails for files in these folders
-        (no thumbnail meta from BE), so we disable thumbnails for the completely,
-        until that's fixed
-    */
-    const isInTrash = columns.includes('trashed') && item.Trashed;
-    const isInShared = columns.includes('share_num_access') && item.SharedUrl;
+    // Backend do not provide thumbnail in shared or trash for now.
+    const isThumbnailDisabled = layoutType === 'trash' || layoutType === 'sharing';
 
     useEffect(() => {
         if (item.HasThumbnail) {
@@ -148,7 +143,7 @@ const ItemRow = ({
                 </TableCell>
 
                 <TableCell className="m0 flex flex-align-items-center flex-nowrap flex-item-fluid">
-                    {item.CachedThumbnailURL && !isInShared && !isInTrash ? (
+                    {item.CachedThumbnailURL && !isThumbnailDisabled ? (
                         <img
                             src={item.CachedThumbnailURL}
                             alt={iconText}
