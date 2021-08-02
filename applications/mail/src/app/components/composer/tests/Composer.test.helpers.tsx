@@ -6,10 +6,20 @@ import { messageCache } from '../../../helpers/test/cache';
 import { addApiKeys, apiKeys } from '../../../helpers/test/crypto';
 import { MessageExtended, MessageExtendedWithData, PartialMessageExtended } from '../../../models/message';
 import Composer from '../Composer';
-import { render, tick } from '../../../helpers/test/render';
+import { render } from '../../../helpers/test/render';
 import { Breakpoints } from '../../../models/utils';
 import { addApiMock } from '../../../helpers/test/api';
-import { waitForEventManagerCall } from '../../../helpers/test/helper';
+import { waitForNoNotification, waitForNotification } from '../../../helpers/test/helper';
+
+// Fake timers fails for the complexe send action
+// These more manual trick is used to skip undo timing
+jest.mock('@proton/shared/lib/helpers/promise', () => {
+    return {
+        wait: jest.fn(() => {
+            return Promise.resolve();
+        }),
+    };
+});
 
 export const getHTML = squire().getHTML as jest.Mock;
 export const setHTML = squire().setHTML as jest.Mock;
@@ -72,16 +82,13 @@ export const clickSend = async (renderResult: RenderResult) => {
     const sendButton = await renderResult.findByTestId('composer:send-button');
     fireEvent.click(sendButton);
 
-    // Wait for the event manager to be called as it's the last step of the sendMessage hook
-    await waitForEventManagerCall();
+    await waitForNotification('Message sent');
 
     const sendRequest = (sendSpy.mock.calls[0] as any[])[0];
 
     expect(sendRequest.method).toBe('post');
 
-    // Blind attempt to solve sending test instabilities
-    jest.useRealTimers();
-    await tick();
+    await waitForNoNotification();
 
     return sendRequest;
 };
