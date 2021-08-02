@@ -54,6 +54,26 @@ export const Basic = () => {
                     {...sharedInputProps}
                 />
             </div>
+            <div className="mb1 mt1">
+                <InputFieldTwo label="Warning" warning="This value might be wrong" hint={hint} {...sharedInputProps} />
+            </div>
+            <div className="mb1 mt1">
+                <InputFieldTwo
+                    label="Warning as boolean"
+                    warning
+                    assistiveText="Should be hidden"
+                    {...sharedInputProps}
+                />
+            </div>
+            <div className="mb1 mt1">
+                <InputFieldTwo
+                    label="Error as boolean"
+                    error
+                    assistiveText="Should be hidden"
+                    hint={hint}
+                    {...sharedInputProps}
+                />
+            </div>
             <div className="mt1">
                 <InputFieldTwo
                     disabled
