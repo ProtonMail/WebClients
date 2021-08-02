@@ -6,7 +6,7 @@ import { classnames, generateUID } from '../../../helpers';
 import { useInstance } from '../../../hooks';
 import Input from '../input/Input';
 
-type ErrorProp = React.ReactNode | boolean;
+type NodeOrBoolean = React.ReactNode | boolean;
 
 // TODO: Add required child props to the as component
 /*
@@ -25,7 +25,8 @@ export interface OwnProps {
     disabled?: boolean;
     bigger?: boolean;
     id?: string;
-    error?: ErrorProp;
+    error?: NodeOrBoolean;
+    warning?: NodeOrBoolean;
     rootClassName?: string;
 }
 
@@ -37,7 +38,18 @@ const InputField: <E extends React.ElementType = typeof defaultElement>(
     props: InputFieldProps<E>
 ) => React.ReactElement | null = React.forwardRef(
     <E extends React.ElementType = typeof defaultElement>(
-        { label, hint, assistiveText, disabled, bigger, error, id: idProp, rootClassName, ...rest }: InputFieldProps<E>,
+        {
+            label,
+            hint,
+            assistiveText,
+            disabled,
+            bigger,
+            error,
+            id: idProp,
+            rootClassName,
+            warning,
+            ...rest
+        }: InputFieldProps<E>,
         ref: typeof rest.ref
     ) => {
         const id = useInstance(() => idProp || generateUID());
@@ -49,6 +61,7 @@ const InputField: <E extends React.ElementType = typeof defaultElement>(
                 rootClassName,
                 disabled && 'inputform-container--disabled',
                 Boolean(error) && 'inputform-container--invalid',
+                !error && Boolean(warning) && 'inputform-container--warning',
                 bigger && 'inputform-container--bigger',
             ]),
             labelContainer: 'flex inputform-label flex-justify-space-between flex-nowrap flex-align-items-end',
@@ -59,10 +72,16 @@ const InputField: <E extends React.ElementType = typeof defaultElement>(
 
         const labelElement = label && <span className="inputform-label-text">{label}</span>;
 
-        const errorElement = error && (
+        const errorElement = error && typeof error !== 'boolean' && (
             <>
                 <Icon name="exclamation-circle-filled" className="aligntop mr0-25" />
                 <span>{error}</span>
+            </>
+        );
+        const warningElement = warning && typeof warning !== 'boolean' && (
+            <>
+                <Icon name="exclamation-circle-filled" className="aligntop mr0-25" />
+                <span>{warning}</span>
             </>
         );
 
@@ -86,7 +105,7 @@ const InputField: <E extends React.ElementType = typeof defaultElement>(
                     />
                 </div>
                 <div className="inputform-assist flex" id={assistiveUid}>
-                    {errorElement || <>{assistiveText}</>}
+                    {errorElement || warningElement || (!error && !warning) && assistiveText}
                 </div>
             </label>
         );
