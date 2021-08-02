@@ -3738,9 +3738,9 @@ __metadata:
     prop-types: ^15.7.2
     push.js: ^1.0.9
     qrcode.react: ^0.9.3
-    react: ^16.13.1
+    react: ^17.0.0
     react-codemirror2: ^6.0.0
-    react-dom: ^16.13.1
+    react-dom: ^17.0.0
     react-router: ^5.2.0
     react-router-dom: ^5.2.0
     react-sortable-hoc: ^1.9.1
@@ -24534,8 +24534,8 @@ fsevents@^1.2.7:
     eslint: ^7.5.0
     jest: ^24.9.0
     prettier: ^2.0.5
-    react: ^16.0.0
-    react-dom: ^16.0.0
+    react: ^17.0.0
+    react-dom: ^17.0.0
     ttag: ^1.7.22
     typescript: ^4.0.3
     yetch: ^1.1.0
@@ -24565,8 +24565,8 @@ fsevents@^1.2.7:
     jest-dom: ^3.2.2
     moment: ^2.29.1
     prettier: ^2.3.2
-    react: ^16.0.0
-    react-dom: ^16.0.0
+    react: ^17.0.0
+    react-dom: ^17.0.0
     react-hooks-testing-library: ^0.5.1
     react-json-view: ^1.19.1
     react-test-renderer: ^16.8.6
@@ -24604,8 +24604,8 @@ fsevents@^1.2.7:
     jest: ^24.9.0
     jest-junit: ^12.0.0
     prettier: ^2.0.5
-    react: ^16.0.0
-    react-dom: ^16.0.0
+    react: ^17.0.0
+    react-dom: ^17.0.0
     react-helmet: ^6.1.0
     tinycolor2: ^1.4.1
     ttag: ^1.7.5
@@ -24644,8 +24644,8 @@ fsevents@^1.2.7:
     mime-types: ^2.1.27
     openpgp: ^4.10.7
     prettier: ^2.0.5
-    react: ^16.0.0
-    react-dom: ^16.0.0
+    react: ^17.0.0
+    react-dom: ^17.0.0
     react-test-renderer: ^16.9.0
     react-window: ^1.8.5
     service-worker-loader: ^4.0.2
@@ -24701,8 +24701,8 @@ fsevents@^1.2.7:
     markdown-it: ^10.0.0
     mimemessage: "github:ProtonMail/mimemessage.js#semver:~v1.1.4"
     prettier: ^2.0.5
-    react: ^16.0.0
-    react-dom: ^16.0.0
+    react: ^17.0.0
+    react-dom: ^17.0.0
     react-refresh: ^0.10.0
     react-test-renderer: ^16.12.0
     ttag: ^1.7.14
@@ -24735,8 +24735,8 @@ fsevents@^1.2.7:
     netlify-cli: ^2.67.4
     prettier: ^2.1.2
     prop-types: 15.7.2
-    react: ^16.0.0
-    react-dom: ^16.0.0
+    react: ^17.0.0
+    react-dom: ^17.0.0
     ts-loader: ^8.0.7
     typescript: ^4.0.5
     webpack: ^4.43.0
@@ -24760,8 +24760,8 @@ fsevents@^1.2.7:
     cross-env: ^7.0.3
     eslint: ^7.5.0
     prettier: ^2.0.5
-    react: ^16.0.0
-    react-dom: ^16.0.0
+    react: ^17.0.0
+    react-dom: ^17.0.0
     ttag: ^1.7.14
     typescript: ^4.0.3
     yetch: ^1.1.0
@@ -25256,17 +25256,16 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^16.0.0, react-dom@npm:^16.13.1":
-  version: 16.14.0
-  resolution: "react-dom@npm:16.14.0"
+"react-dom@npm:^17.0.0":
+  version: 17.0.2
+  resolution: "react-dom@npm:17.0.2"
   dependencies:
     loose-envify: ^1.1.0
     object-assign: ^4.1.1
-    prop-types: ^15.6.2
-    scheduler: ^0.19.1
+    scheduler: ^0.20.2
   peerDependencies:
-    react: ^16.14.0
-  checksum: a13558f0e7c6d1a98684214460bcd4b9005500015b5048fb1b0d2856786b8764dbc713e6b078a5b1a56e17866400e1d862183c7a0a513ae8351de11f6f6749d2
+    react: 17.0.2
+  checksum: 960a74ff6670766846a73097a599115963df1574833c59ca0c2fd909758ebe7a6214cd14f5e6aa63ce846d8f39fde7f3b80474ccfcfadc45dd7f3246364718c6
   languageName: node
   linkType: hard
 
@@ -25611,14 +25610,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react@npm:^16.0.0, react@npm:^16.13.1":
-  version: 16.14.0
-  resolution: "react@npm:16.14.0"
+"react@npm:^17.0.0":
+  version: 17.0.2
+  resolution: "react@npm:17.0.2"
   dependencies:
     loose-envify: ^1.1.0
     object-assign: ^4.1.1
-    prop-types: ^15.6.2
-  checksum: 2769580b22952a52de3b5b2ea0f09cb904030b762d759739f49ab4da0b1f550e5c087ce3728c4be90f423d09481e0c075483c0c30b1ea9c549445c8b12020fd3
+  checksum: 7d0dfebafe1d297503157abb2e9acdb49852185deb8700c16f4a6faad87642f84903ab18cfc16f40b9a0dfe97540f99834982ee953e6d48b39c41608dc3e4b29
   languageName: node
   linkType: hard
 
@@ -26764,6 +26762,16 @@ resolve@1.1.7:
     loose-envify: ^1.1.0
     object-assign: ^4.1.1
   checksum: 804f990b9f370cca6d42b65f3cba2cc2bfed4973ee5623bed1ea36a6627842db8c891e2e5ac003f06f9ee892d1d3396921e27fa077346caf0213af05776e8dee
+  languageName: node
+  linkType: hard
+
+"scheduler@npm:^0.20.2":
+  version: 0.20.2
+  resolution: "scheduler@npm:0.20.2"
+  dependencies:
+    loose-envify: ^1.1.0
+    object-assign: ^4.1.1
+  checksum: 2ba121e53e8a438394598612ec9a8f465b39157042f912d2dd5956af643e0d45ec6937ae4eeb0a807d1945b209515263aed12fc3bca95c7a027ec2a54e76b399
   languageName: node
   linkType: hard
 
