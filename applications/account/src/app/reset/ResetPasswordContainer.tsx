@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { c } from 'ttag';
 import { useHistory } from 'react-router-dom';
 
-import { Button, ButtonLike, GenericError, Href, OnLoginCallback, useMyLocation } from '@proton/components';
-import useResetPassword, { STEPS } from '@proton/components/containers/resetPassword/useResetPassword';
+import {
+    Button,
+    ButtonLike,
+    GenericError,
+    Href,
+    OnLoginCallback,
+    useApi,
+    useErrorHandler,
+    useMyLocation,
+    useNotifications,
+} from '@proton/components';
+import {
+    handleNewPassword,
+    handleRequestRecoveryMethods,
+    handleRequestToken,
+    handleValidateResetToken,
+} from '@proton/components/containers/resetPassword/resetActions';
+import { ResetActionResponse, ResetCacheResult, STEPS } from '@proton/components/containers/resetPassword/interface';
+
 import BackButton from '../public/BackButton';
 import Main from '../public/Main';
 import Header from '../public/Header';
@@ -22,25 +39,57 @@ interface Props {
 
 const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
     const history = useHistory();
-    const {
-        state,
-        setters,
-        reset,
-        handleRequestRecoveryMethods,
-        handleRequest,
-        handleValidateResetToken,
-        handleNewPassword,
-        gotoStep,
-    } = useResetPassword({ onLogin, initialStep: STEPS.REQUEST_RECOVERY_METHODS });
+    const cacheRef = useRef<ResetCacheResult | undefined>(undefined);
+    const errorHandler = useErrorHandler();
+    const normalApi = useApi();
+    const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
+    const { createNotification } = useNotifications();
 
     const [myLocation] = useMyLocation();
     const defaultCountry = myLocation?.Country?.toUpperCase();
 
-    const { step, methods, error } = state;
-
     const handleBack = () => {
         history.push('/login');
     };
+
+    const [step, setStep] = useState(STEPS.REQUEST_RECOVERY_METHODS);
+
+    const handleCancel = () => {
+        const username = cacheRef.current?.username ?? '';
+        cacheRef.current = undefined;
+        cacheRef.current = {
+            username,
+            Methods: [],
+        };
+        setStep(STEPS.REQUEST_RECOVERY_METHODS);
+    };
+
+    const handleResult = (result: ResetActionResponse) => {
+        if (result.to === STEPS.DONE) {
+            return onLogin(result.session);
+        }
+        if (result.to === STEPS.NO_RECOVERY_METHODS) {
+            setStep(result.to);
+            return;
+        }
+        if (result.to === STEPS.VALIDATE_RESET_TOKEN) {
+            const destination = result.cache.value;
+            if (destination) {
+                createNotification({ text: c('Info').t`Done! We sent a code to ${destination}`, expiration: 5000 });
+            }
+        }
+        cacheRef.current = result.cache;
+        setStep(result.to);
+    };
+
+    const handleError = (e: any) => {
+        errorHandler(e);
+        if (step === STEPS.NEW_PASSWORD) {
+            setStep(STEPS.ERROR);
+        }
+    };
+
+    const cache = cacheRef.current;
 
     return (
         <Main>
@@ -51,10 +100,14 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
                         <div className="mb1-75">{c('Info')
                             .t`Enter the email address associated with your Proton Account or your account username.`}</div>
                         <RequestRecoveryForm
-                            state={state}
-                            setters={setters}
-                            onSubmit={() => {
-                                return handleRequestRecoveryMethods();
+                            defaultUsername={cache?.username}
+                            onSubmit={(username) => {
+                                return handleRequestRecoveryMethods({
+                                    username,
+                                    api: silentApi,
+                                })
+                                    .then(handleResult)
+                                    .catch(handleError);
                             }}
                         />
                     </Content>
@@ -83,30 +136,42 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
                     </Content>
                 </>
             )}
-            {step === STEPS.REQUEST_RESET_TOKEN && (
+            {step === STEPS.REQUEST_RESET_TOKEN && cache && (
                 <>
-                    <Header title={c('Title').t`Reset password`} left={<BackButton onClick={reset} />} />
+                    <Header title={c('Title').t`Reset password`} left={<BackButton onClick={handleCancel} />} />
                     <Content>
                         <RequestResetTokenForm
                             defaultCountry={defaultCountry}
-                            onSubmit={() => {
-                                return handleRequest();
+                            defaultMethod={cache.method}
+                            defaultValue={cache.value}
+                            methods={cache.Methods}
+                            onSubmit={({ value, method }) => {
+                                if (!cache) {
+                                    throw new Error('Missing cache');
+                                }
+                                return handleRequestToken({
+                                    cache,
+                                    value,
+                                    method,
+                                    username: cache.username,
+                                    api: silentApi,
+                                })
+                                    .then(handleResult)
+                                    .catch(handleError);
                             }}
-                            state={state}
-                            setters={setters}
                         />
                     </Content>
                 </>
             )}
-            {step === STEPS.VALIDATE_RESET_TOKEN && (
+            {step === STEPS.VALIDATE_RESET_TOKEN && cache?.method && cache?.value && (
                 <>
                     <Header
                         title={c('Title').t`Reset password`}
                         left={
                             <BackButton
                                 onClick={() => {
-                                    gotoStep(
-                                        methods?.includes('login')
+                                    setStep(
+                                        cache.Methods?.includes('login')
                                             ? STEPS.REQUEST_RECOVERY_METHODS
                                             : STEPS.REQUEST_RESET_TOKEN
                                     );
@@ -116,30 +181,52 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
                     />
                     <Content>
                         <ValidateResetTokenForm
-                            onSubmit={() => {
-                                return handleValidateResetToken(STEPS.NEW_PASSWORD);
+                            method={cache.method}
+                            value={cache.value}
+                            onSubmit={(token) => {
+                                return handleValidateResetToken({ api: silentApi, cache, token })
+                                    .then(handleResult)
+                                    .catch(handleError);
                             }}
-                            state={state}
-                            setters={setters}
                             onBack={() => {
-                                gotoStep(
-                                    methods?.includes('login')
+                                setStep(
+                                    cache.Methods?.includes('login')
                                         ? STEPS.REQUEST_RECOVERY_METHODS
                                         : STEPS.REQUEST_RESET_TOKEN
                                 );
                             }}
-                            onRequest={handleRequest}
+                            onRequest={() => {
+                                if (!cache || !cache.method || !cache.value) {
+                                    throw new Error('Missing dep');
+                                }
+                                return handleRequestToken({
+                                    cache,
+                                    method: cache.method,
+                                    value: cache.value,
+                                    username: cache.username,
+                                    api: silentApi,
+                                })
+                                    .then(handleResult)
+                                    .catch(handleError);
+                            }}
                         />
                     </Content>
                 </>
             )}
-            {step === STEPS.NEW_PASSWORD && (
+            {step === STEPS.NEW_PASSWORD && cache && (
                 <>
-                    <Header title={c('Title').t`Reset password`} left={<BackButton onClick={reset} />} />
+                    <Header title={c('Title').t`Reset password`} left={<BackButton onClick={handleCancel} />} />
                     <Content>
                         <SetPasswordForm
                             onSubmit={(newPassword: string) => {
-                                return handleNewPassword(newPassword);
+                                createNotification({
+                                    text: c('Info')
+                                        .t`This can take a few seconds or a few minutes depending on your device.`,
+                                    type: 'info',
+                                });
+                                return handleNewPassword({ password: newPassword, api: silentApi, cache })
+                                    .then(handleResult)
+                                    .catch(handleError);
                             }}
                         />
                     </Content>
@@ -147,18 +234,9 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
             )}
             {step === STEPS.ERROR && (
                 <>
-                    <Header
-                        title={c('Title').t`Error`}
-                        left={
-                            <BackButton
-                                onClick={() => {
-                                    gotoStep(STEPS.REQUEST_RECOVERY_METHODS);
-                                }}
-                            />
-                        }
-                    />
+                    <Header title={c('Title').t`Error`} left={<BackButton onClick={handleCancel} />} />
                     <Content>
-                        {(error && <div>{error}</div>) || <GenericError />}
+                        <GenericError />
                         <Button color="norm" size="large" onClick={handleBack} fullWidth className="mt1-75">{c('Action')
                             .t`Return to login`}</Button>
                         <ButtonLike

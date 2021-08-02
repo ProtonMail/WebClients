@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import React, { useEffect, useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import {
     Button,
     RequestNewCodeModal,
@@ -9,30 +9,25 @@ import {
     ConfirmModal,
     InputFieldTwo,
 } from '@proton/components';
-import { ResetPasswordSetters, ResetPasswordState } from '@proton/components/containers/resetPassword/useResetPassword';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
 
 interface Props {
-    onSubmit: () => Promise<void>;
-    state: ResetPasswordState;
-    setters: ResetPasswordSetters;
+    onSubmit: (token: string) => Promise<void>;
     onBack: () => void;
     onRequest: () => Promise<void>;
+    method: RecoveryMethod;
+    value: string;
 }
 
-const ValidateResetTokenForm = ({ onSubmit, state, setters: stateSetters, onBack, onRequest }: Props) => {
+const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, value }: Props) => {
     const [loading, withLoading] = useLoading();
     const { createModal } = useModals();
     const hasModal = useRef<boolean>(false);
-    const { email, phone, token } = state;
+    const [token, setToken] = useState('');
 
     const { validator, onFormSubmit } = useFormErrors();
-
-    useEffect(() => {
-        // Reset token value when moving to this step again. Do something better.
-        stateSetters.token('');
-    }, []);
 
     const handleSubmit = async () => {
         await new Promise<void>((resolve, reject) => {
@@ -60,13 +55,17 @@ const ValidateResetTokenForm = ({ onSubmit, state, setters: stateSetters, onBack
                 </ConfirmModal>
             );
         });
-        return onSubmit();
+        return onSubmit(token);
     };
 
-    const subTitle = email
-        ? c('Info')
-              .t`Enter the code that was sent to ${email}. If you can't find the message in your inbox, please check your spam folder.`
-        : c('Info').t`Enter the code sent to your phone number ${phone}.`;
+    // To not break translations
+    const email = value;
+    const phone = value;
+    const subTitle =
+        method === 'email'
+            ? c('Info')
+                  .t`Enter the code that was sent to ${email}. If you can't find the message in your inbox, please check your spam folder.`
+            : c('Info').t`Enter the code sent to your phone number ${phone}.`;
 
     return (
         <form
@@ -100,12 +99,12 @@ const ValidateResetTokenForm = ({ onSubmit, state, setters: stateSetters, onBack
                 error={validator([requiredValidator(token)])}
                 disableChange={loading}
                 value={token}
-                onValue={stateSetters.token}
+                onValue={setToken}
                 autoFocus
             />
             <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">{c('Action')
                 .t`Reset password`}</Button>
-            {email || phone ? (
+            {method === 'sms' || method === 'email' ? (
                 <Button
                     size="large"
                     color="norm"
@@ -117,13 +116,11 @@ const ValidateResetTokenForm = ({ onSubmit, state, setters: stateSetters, onBack
                         createModal(
                             <RequestNewCodeModal
                                 verificationModel={{
-                                    method: email ? 'email' : 'sms',
-                                    value: email || 'phone',
+                                    method,
+                                    value,
                                 }}
                                 onEdit={onBack}
                                 onResend={onRequest}
-                                email={email}
-                                phone={phone}
                             />
                         )
                     }
