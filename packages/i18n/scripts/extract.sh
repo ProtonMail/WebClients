@@ -69,7 +69,8 @@ function main {
   wait;
 
   # Extract on top of the extracted code from the bundle
-  yarn dlx -p ttag-cli ttag extract $(getFileList) -o "$1";
+  # Use direct relative path instead of npx or dlx since it doesn't resolve to the installed dependencies
+  ../../node_modules/.bin/ttag extract $(getFileList) -o "$1";
 
   # Remove useless path
   if [[ "$OSTYPE" = "darwin"* ]]; then
