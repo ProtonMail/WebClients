@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import noResultSearchSvg from '@proton/styles/assets/img/placeholders/empty-search.svg';
 import noResultInboxSvg from '@proton/styles/assets/img/placeholders/empty-mailbox.svg';
-import { Button } from '@proton/components';
+import { Button, EmptyViewContainer } from '@proton/components';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { MESSAGE_ACTIONS } from '../../constants';
 
@@ -25,53 +25,43 @@ const EmptyView = ({ labelID, isSearch }: Props) => {
         </Button>
     );
 
-    return (
-        <div className="mauto p1">
-            <figure className="flex-item-fluid text-center p3">
-                {isSearch && (
-                    <img src={noResultSearchSvg} className="hauto" alt={c('Search - no results').t`No results found`} />
-                )}
-                {isFolder && (
-                    <img
-                        src={noResultSearchSvg}
-                        className="hauto"
-                        alt={c('Search - no results').t`No messages found`}
-                    />
-                )}
-                {isInbox && (
-                    <img src={noResultInboxSvg} className="hauto" alt={c('Search - no results').t`No messages found`} />
-                )}
-                {isScheduled && (
-                    <img
-                        src={noResultSearchSvg}
-                        className="hauto"
-                        alt={c('Search - no results').t`No messages found`}
-                    />
-                )}
+    const imageProps = (() => {
+        if (isSearch) {
+            return { src: noResultSearchSvg, alt: c('Search - no results').t`No results found` };
+        }
+        if (isFolder) {
+            return { src: noResultSearchSvg, alt: c('Search - no results').t`No messages found` };
+        }
+        if (isInbox) {
+            return { src: noResultInboxSvg, alt: c('Search - no results').t`No messages found` };
+        }
+        if (isScheduled) {
+            return { src: noResultSearchSvg, alt: c('Search - no results').t`No messages scheduled` };
+        }
+    })();
 
-                <figcaption className="mt2">
-                    <h3 className="text-bold">
-                        {isSearch
-                            ? c('Search - no results').t`No results found`
-                            : isFolder
-                            ? c('Search - no results').t`No messages found`
-                            : isScheduled
-                            ? c('Search - no results').t`No messages scheduled`
-                            : c('Search - no results').t`No messages found`}
-                    </h3>
-                    <p data-if="folder">
-                        {isSearch
-                            ? // TODO: Add a link on clear it when search will work
-                              c('Info').t`You can either update your search query or clear it`
-                            : isFolder
-                            ? c('Info').t`You do not have any messages here`
-                            : isScheduled
-                            ? scheduleCTAButton
-                            : c('Info').t`Seems like you are all caught up for now`}
-                    </p>
-                </figcaption>
-            </figure>
-        </div>
+    return (
+        <EmptyViewContainer imageProps={imageProps}>
+            <h3 className="text-bold">
+                {isSearch
+                    ? c('Search - no results').t`No results found`
+                    : isFolder
+                    ? c('Search - no results').t`No messages found`
+                    : isScheduled
+                    ? c('Search - no results').t`No messages scheduled`
+                    : c('Search - no results').t`No messages found`}
+            </h3>
+            <p data-if="folder">
+                {isSearch
+                    ? // TODO: Add a link on clear it when search will work
+                      c('Info').t`You can either update your search query or clear it`
+                    : isFolder
+                    ? c('Info').t`You do not have any messages here`
+                    : isScheduled
+                    ? scheduleCTAButton
+                    : c('Info').t`Seems like you are all caught up for now`}
+            </p>
+        </EmptyViewContainer>
     );
 };
 
