@@ -101,6 +101,29 @@ describe('Mailbox element list', () => {
             expect(items[0].getAttribute('data-element-id')).toBe(conversations[0].ID);
             expect(items[1].getAttribute('data-element-id')).toBe(conversations[1].ID);
         });
+
+        it('should fallback sorting on Order field', async () => {
+            const conversations = [
+                { ID: 'id1', Labels: [{ ID: labelID, ContextTime: 1 }], LabelIDs: [labelID], Size: 20, Order: 3 },
+                { ID: 'id2', Labels: [{ ID: labelID, ContextTime: 1 }], LabelIDs: [labelID], Size: 20, Order: 2 },
+                { ID: 'id3', Labels: [{ ID: labelID, ContextTime: 1 }], LabelIDs: [labelID], Size: 20, Order: 4 },
+                { ID: 'id4', Labels: [{ ID: labelID, ContextTime: 1 }], LabelIDs: [labelID], Size: 20, Order: 1 },
+            ];
+
+            const correctOrder = (items: HTMLElement[]) => {
+                expect(items.length).toBe(4);
+                expect(items[0].getAttribute('data-element-id')).toBe(conversations[3].ID);
+                expect(items[1].getAttribute('data-element-id')).toBe(conversations[1].ID);
+                expect(items[2].getAttribute('data-element-id')).toBe(conversations[0].ID);
+                expect(items[3].getAttribute('data-element-id')).toBe(conversations[2].ID);
+            };
+
+            const { rerender, getItems } = await setup({ conversations });
+            correctOrder(getItems());
+
+            await rerender({ sort: { sort: 'Size', desc: false } });
+            correctOrder(getItems());
+        });
     });
 
     describe('request effect', () => {
