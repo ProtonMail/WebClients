@@ -2,26 +2,34 @@ import { c } from 'ttag';
 import React, { useState } from 'react';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { Button, Tabs, useLoading, useFormErrors, PhoneInput, InputFieldTwo } from '@proton/components';
-import { ResetPasswordState, ResetPasswordSetters } from '@proton/components/containers/resetPassword/useResetPassword';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { noop } from '@proton/shared/lib/helpers/function';
+import { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
 
 interface Props {
-    onSubmit: () => Promise<void>;
-    state: ResetPasswordState;
-    setters: ResetPasswordSetters;
+    onSubmit: (value: { method: RecoveryMethod; value: string }) => Promise<void>;
     defaultCountry?: string;
+    methods: RecoveryMethod[];
+    defaultMethod?: RecoveryMethod;
+    defaultValue?: string;
 }
 
-const RequestResetTokenForm = ({ onSubmit, defaultCountry, state, setters: stateSetters }: Props) => {
+const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMethod, defaultValue = '' }: Props) => {
     const [loading, withLoading] = useLoading();
-    const { methods } = state;
-    const [tabIndex, setTabIndex] = useState(0);
+    const [tabIndex, setTabIndex] = useState(() => {
+        if (defaultMethod === undefined) {
+            return 0;
+        }
+        const foundMethod = methods.indexOf(defaultMethod);
+        return foundMethod !== -1 ? foundMethod : 0;
+    });
+    const [email, setEmail] = useState(defaultMethod === 'email' ? defaultValue : '');
+    const [phone, setPhone] = useState(defaultMethod === 'sms' ? defaultValue : '');
 
-    const recoveryMethods = [
-        methods?.includes('email') || methods?.includes('login') ? 'email' : undefined,
-        methods?.includes('sms') ? 'sms' : undefined,
+    const recoveryMethods: ('sms' | 'email')[] = [
+        methods?.includes('email') || methods?.includes('login') ? ('email' as const) : undefined,
+        methods?.includes('sms') ? ('sms' as const) : undefined,
     ].filter(isTruthy);
 
     const currentMethod = recoveryMethods[tabIndex];
@@ -36,10 +44,10 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, state, setters: state
             return;
         }
         if (currentMethod === 'email') {
-            stateSetters.email('');
+            setEmail('');
         }
         if (currentMethod === 'sms') {
-            stateSetters.phone('');
+            setPhone('');
         }
         setTabIndex(newIndex);
     };
@@ -52,12 +60,12 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, state, setters: state
                     id="email"
                     bigger
                     label={c('Label').t`Recovery email`}
-                    error={validator(currentMethod === 'email' ? [requiredValidator(state.email)] : [])}
+                    error={validator(currentMethod === 'email' ? [requiredValidator(email)] : [])}
                     disableChange={loading}
                     type="email"
                     autoFocus
-                    value={state.email}
-                    onValue={stateSetters.email}
+                    value={email}
+                    onValue={setEmail}
                 />
             ),
         },
@@ -69,12 +77,12 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, state, setters: state
                     id="phone"
                     bigger
                     label={c('Label').t`Recovery phone`}
-                    error={validator(currentMethod === 'phone' ? [requiredValidator(state.phone)] : [])}
+                    error={validator(currentMethod === 'sms' ? [requiredValidator(phone)] : [])}
                     defaultCountry={defaultCountry}
                     disableChange={loading}
                     autoFocus
-                    value={state.phone}
-                    onChange={stateSetters.phone}
+                    value={phone}
+                    onChange={setPhone}
                 />
             ),
         },
@@ -87,7 +95,12 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, state, setters: state
                 if (loading || !onFormSubmit()) {
                     return;
                 }
-                withLoading(onSubmit()).catch(noop);
+                withLoading(
+                    onSubmit({
+                        method: currentMethod,
+                        value: currentMethod === 'sms' ? phone : email,
+                    })
+                ).catch(noop);
             }}
         >
             <div className="mb1-75">
