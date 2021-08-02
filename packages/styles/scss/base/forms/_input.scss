@@ -23,9 +23,7 @@ select {
 		color: var(--text-weak);
 	}
 	&-label-hint {
-		padding-bottom: rem(
-			1
-		); // just to compensate the difference of text size
+		padding-bottom: rem(1); // just to compensate the difference of text size
 	}
 	&-assist {
 		min-height: 1.9em;
@@ -58,10 +56,7 @@ select {
 		&:hover,
 		&.hover {
 			border-color: var(--field-hover);
-			background-color: var(
-				--field-hover-background-color,
-				var(--background-norm)
-			);
+			background-color: var(--field-hover-background-color, var(--background-norm));
 			color: var(--field-hover-text-color, var(--text-norm));
 		}
 
@@ -69,10 +64,7 @@ select {
 		&.focus,
 		&:focus-within {
 			border-color: var(--interaction-norm);
-			background-color: var(
-				--field-focus-background-color,
-				var(--background-norm)
-			);
+			background-color: var(--field-focus-background-color, var(--background-norm));
 			color: var(--field-focus-text-color, var(--text-norm));
 		}
 
@@ -121,6 +113,16 @@ select {
 
 			&-field {
 				border-color: var(--signal-danger);
+			}
+		}
+	}
+	// global warning state on container
+	&-container--warning {
+		.inputform {
+			&-label-text,
+			&-assist {
+				color: var(--signal-warning);
+				font-weight: 600;
 			}
 		}
 	}
@@ -177,9 +179,7 @@ select {
 		.inputform-icon-container {
 			&-empty {
 				// for drive, to keep the same height
-				min-height: calc(
-					#{rem($bigger-height-fields-inputforms)} + 2px
-				);
+				min-height: calc(#{rem($bigger-height-fields-inputforms)} + 2px);
 			}
 			.inputform-field {
 				height: 100%;
@@ -204,10 +204,7 @@ select {
 			&:hover,
 			&.hover {
 				border-color: var(--field-disabled);
-				background-color: var(
-					--field-disabled-background-color,
-					var(--background-norm)
-				);
+				background-color: var(--field-disabled-background-color, var(--background-norm));
 			}
 		}
 	}
