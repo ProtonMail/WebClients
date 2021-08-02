@@ -99,7 +99,7 @@ const ExpandableRow = ({
                         className="folder-tree-list-item-name flex flex-align-items-center flex-nowrap w100"
                     >
                         <FileIcon mimeType={type === LinkType.FOLDER ? 'Folder' : mimeType} />
-                        <span className="text-ellipsis" title={name}>
+                        <span className="text-ellipsis text-pre" title={name}>
                             {name}
                         </span>
                     </div>

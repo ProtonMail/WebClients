@@ -74,7 +74,7 @@ const RenameModal = ({ shareId, item, onClose, ...rest }: Props) => {
             onSubmit={() => withLoading(handleSubmit()).catch(noop)}
             title={isFolder ? c('Title').t`Rename a folder` : c('Title').t`Rename a file`}
             submit={c('Action').t`Rename`}
-            autoFocusClose={false}
+            autofocusclose="false"
             {...rest}
         >
             <Row className="mt1 mb1">
