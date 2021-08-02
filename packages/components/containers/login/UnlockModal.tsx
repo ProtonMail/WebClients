@@ -41,6 +41,7 @@ const UnlockModal = ({ onClose, onSuccess, ...rest }: Props) => {
             submit={c('Label').t`Submit`}
             loading={loading}
             small
+            noTitleEllipsis
             {...rest}
         >
             <Row>
