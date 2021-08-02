@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { updateEarlyAccess } from '@proton/shared/lib/api/settings';
 import { deleteCookie, getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 
@@ -16,7 +15,6 @@ const getVersionCookieIsValid = (
 ) => versionCookie === undefined || earlyAccessScope?.Options?.includes(versionCookie);
 
 const getTargetEnvironment = (
-    versionCookie: Environment | undefined,
     earlyAccessScope: Feature<Environment> | undefined,
     earlyAccessUserSetting: boolean
 ): Environment | undefined => {
@@ -24,11 +22,7 @@ const getTargetEnvironment = (
         return;
     }
 
-    if (versionCookie === undefined || !getVersionCookieIsValid(versionCookie, earlyAccessScope)) {
-        return earlyAccessScope.Value;
-    }
-
-    return versionCookie;
+    return earlyAccessScope.Value;
 };
 
 const versionCookieAtLoad = getCookie('Version') as Environment | undefined;
@@ -39,21 +33,13 @@ const useEarlyAccess = () => {
     const enabledEarlyAccess = useFeature(FeatureCode.EnabledEarlyAccess);
     const { feature: { Value: maybeEarlyAccess, DefaultValue } = {} } = earlyAccessScope;
     const [loadingUpdate, withLoadingUpdate] = useLoading();
-    const [versionCookie, setVersionCookie] = useState(versionCookieAtLoad);
     const [userSettings, userSettingsLoading] = useUserSettings();
 
     const earlyAccessScopeValue = maybeEarlyAccess || DefaultValue;
     const hasLoaded = !(userSettingsLoading || earlyAccessScope.loading);
 
-    const targetEnvironment = getTargetEnvironment(
-        versionCookie,
-        earlyAccessScope.feature,
-        Boolean(userSettings.EarlyAccess)
-    );
-
     const updateVersionCookie = (environment?: Environment) => {
         if (environment) {
-            setVersionCookie(environment);
             setCookie({
                 cookieName: 'Version',
                 cookieValue: environment,
@@ -71,7 +57,6 @@ const useEarlyAccess = () => {
         }
 
         if (!environment) {
-            setVersionCookie(environment);
             deleteCookie('Version');
         }
     };
@@ -99,6 +84,8 @@ const useEarlyAccess = () => {
     const normalizedVersionCookieAtLoad = getVersionCookieIsValid(versionCookieAtLoad, earlyAccessScope.feature)
         ? versionCookieAtLoad
         : undefined;
+
+    const targetEnvironment = getTargetEnvironment(earlyAccessScope.feature, Boolean(userSettings.EarlyAccess));
 
     const currentEnvironmentMatchesTargetEnvironment = normalizedVersionCookieAtLoad === targetEnvironment;
     const environmentIsDesynchronized = hasLoaded && !currentEnvironmentMatchesTargetEnvironment;
