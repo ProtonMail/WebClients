@@ -19,8 +19,6 @@ const getPort = (basePort) => {
 const writeConfig = async (configFile) => {
     const configPath = path.resolve('./src/app/config.ts');
     await fs.writeFile(configPath, configFile);
-    console.log(configFile);
-    console.log(`✓ generated ${configPath}`);
 };
 
 const addGlobalOptions = (program) => {
