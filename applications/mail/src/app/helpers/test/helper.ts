@@ -99,3 +99,19 @@ export const waitForNotification = (content: string) =>
             timeout: 5000,
         }
     );
+
+export const waitForNoNotification = () =>
+    waitFor(
+        () => {
+            const notifications = document.querySelectorAll('div[role="alert"].notification:not(.notification--out)');
+            if (notifications.length === 0) {
+                return;
+            }
+            const matchingNotification = [...notifications].map((notification) => notification.textContent);
+            throw new Error(`Notification still present with "${matchingNotification.join(', ')}"`);
+        },
+        {
+            interval: 100,
+            timeout: 5000,
+        }
+    );

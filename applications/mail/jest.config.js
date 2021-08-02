@@ -3,6 +3,7 @@ module.exports = {
     moduleDirectories: ['<rootDir>/node_modules', 'node_modules'],
     collectCoverage: true,
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
+    testEnvironment: './jest.env.js',
     transformIgnorePatterns: ['node_modules/(?!(@proton/shared|@proton/components|mutex-browser|pmcrypto)/)'],
     transform: {
         '^.+\\.(js|tsx?)$': '<rootDir>/jest.transform.js',

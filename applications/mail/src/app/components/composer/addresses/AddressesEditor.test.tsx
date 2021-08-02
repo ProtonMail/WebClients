@@ -260,6 +260,8 @@ describe('AddressesEditor', () => {
     });
 
     it('should open create modal when clicking on create contact', async () => {
+        addApiMock('contacts', () => ({ Contacts: [] }));
+
         const { getAllByTestId } = await render(<AddressesEditor {...props} />);
 
         const displayedAddresses = getAllByTestId('composer-addresses-item-label');
@@ -273,7 +275,7 @@ describe('AddressesEditor', () => {
         fireEvent.click(createContactButton);
 
         await act(async () => {
-            const { modal } = await getModal();
+            const { modal } = getModal();
 
             getByText(modal, 'Create contact');
         });
