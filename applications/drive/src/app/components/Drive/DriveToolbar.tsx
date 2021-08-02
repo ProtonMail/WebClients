@@ -10,6 +10,7 @@ import { DriveFolder } from './DriveFolderProvider';
 import {
     DetailsButton,
     DownloadButton,
+    LayoutDropdown,
     PreviewButton,
     RenameButton,
     ShareFileButton,
@@ -19,7 +20,6 @@ import {
     ActionsDropdown,
     BackButton,
     CreateNewFolderButton,
-    LayoutDropdown,
     SortDropdown,
     MoveToTrashButton,
     MoveToFolderButton,

@@ -5,6 +5,7 @@ import { useSharedLinksContent } from './SharedLinksContentProvider';
 import {
     DetailsButton,
     DownloadButton,
+    LayoutDropdown,
     PreviewButton,
     RenameButton,
     ShareLinkButton,
@@ -29,6 +30,10 @@ const SharedLinksToolbar = ({ shareId }: Props) => {
             <ToolbarSeparator />
             <ShareLinkButton shareId={shareId} selectedItems={selectedItems} />
             <StopSharingButton shareId={shareId} disabled={!selectedItems.length} />
+
+            <span className="mlauto flex">
+                <LayoutDropdown />
+            </span>
         </Toolbar>
     );
 };
