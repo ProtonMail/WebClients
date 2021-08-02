@@ -1,5 +1,5 @@
 import { useEffect, createContext, ReactNode, useContext, useLayoutEffect } from 'react';
-import { DRAFT_ID_PREFIX, isSent } from '@proton/shared/lib/mail/messages';
+import { DRAFT_ID_PREFIX, isScheduledSend, isSent } from '@proton/shared/lib/mail/messages';
 import { useInstance, useEventManager } from '@proton/components';
 import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
@@ -69,6 +69,7 @@ const messageEventListener =
             if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
                 const currentValue = cache.get(localID) as MessageExtended;
                 const isSentDraft = isSent(Message);
+                const isScheduled = isScheduledSend(Message);
 
                 if (currentValue.data) {
                     const MessageToUpdate = parseLabelIDsInEvent(
@@ -83,7 +84,7 @@ const messageEventListener =
                     if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
                         removeBody = { initialized: undefined, data: { Body: undefined } };
 
-                        if (isSentDraft) {
+                        if (isSentDraft && !isScheduled) {
                             flags.isSentDraft = true;
                         }
                     }
