@@ -40,6 +40,8 @@ const UnlockModal = ({ onClose, onSuccess, ...rest }: Props) => {
             close={c('Label').t`Cancel`}
             submit={c('Label').t`Submit`}
             loading={loading}
+            small
+            noTitleEllipsis
             {...rest}
         >
             <Row>
