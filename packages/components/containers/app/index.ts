@@ -13,5 +13,6 @@ export { default as SSOForkProducer } from './SSOForkProducer';
 export { default as Signout } from './Signout';
 export { default as StandardSetup } from './StandardSetup';
 export { default as useOnLogout } from './useOnLogout';
+export { default as EmptyViewContainer } from './EmptyViewContainer';
 
 export * from './interface';
