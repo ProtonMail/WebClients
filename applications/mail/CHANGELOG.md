@@ -1,3 +1,26 @@
+Release 4.0.4 - Aug 18, 2021
+
+### Improvements
+
+-   ProtonMail as your default mail handler - set up your browser to open a new ProtonMail composer each time you click onto a mailto: link. Latest versions of Chrome, Brave, Firefox, Opera and Edge are supported.
+-   Attachment reminder - ProtonMail will now remind you to add attachments if certain keywords are detected in your draft. Keyword detection respects your privacy and happens locally in the browser.
+-   Improved the message expiration date experience by setting the default expiration period to 7 days
+-   Marking a single message within a conversation as unread will now keep the conversation in question open
+-   Use keyboard shortcuts in autocomplete suggestions (for example, "Enter" to select and "Esc" to cancel recipient suggestions in the composer)
+-   Updated welcome banner messaging for free accounts
+-   Contacts import - improved handling of some existing contact fields (Organization, Member, Gender, Language, Timezone, Country) and other fields that are not supported by Proton Contacts
+-   Placed the autofocus on the name field when adding new or editing existing contacts
+
+### Bug fixes
+
+-   Fixed an issue where a Draft uploaded from a mobile client would only show on the Web version after a page refresh
+-   Fixed wrong wording for the "Delete all" confirmation modals
+-   Fixed an issue where an auto-reply end date that is before the start date could be entered
+-   Fixed an issue where a newly added remote image would not be displayed in signatures under certain circumstances
+-   Fixed an issue where reordering labels using drag&drop was too slow if having a big amount of labels
+-   Fixed an issue where a dropdown field would sometimes disappear on the contacts import matching screen
+-   Fixed an issue where the contact name would not be displayed if adding a new group while creating a new contact
+
 ## Release 4.0.3 — July 28, 2021
 
 ### Improvements
