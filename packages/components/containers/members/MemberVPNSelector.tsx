@@ -1,4 +1,3 @@
-import React from 'react';
 import { range } from '@proton/shared/lib/helpers/array';
 import { Option, SelectTwo } from '../../components';
 

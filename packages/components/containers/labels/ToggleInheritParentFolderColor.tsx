@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { updateInheritParentFolderColor } from '@proton/shared/lib/api/mailSettings';
 

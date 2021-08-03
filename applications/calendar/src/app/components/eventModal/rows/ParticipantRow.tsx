@@ -2,7 +2,6 @@ import { ICAL_ATTENDEE_ROLE } from '@proton/shared/lib/calendar/constants';
 import { canonizeEmail } from '@proton/shared/lib/helpers/email';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import React from 'react';
 import { c } from 'ttag';
 import { classnames, Icon, Tooltip, Button } from '@proton/components';
 import { AttendeeModel } from '@proton/shared/lib/interfaces/calendar';

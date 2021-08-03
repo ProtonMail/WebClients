@@ -1,6 +1,6 @@
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { getAttachments, hasFlag } from '@proton/shared/lib/mail/messages';
-import React, { MutableRefObject } from 'react';
+import { MutableRefObject } from 'react';
 import { c } from 'ttag';
 import { isToday, isYesterday } from 'date-fns';
 import {

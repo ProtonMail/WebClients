@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, useContext, useState, useEffect, useRef } from 'react';
+import { createContext, ReactNode, useContext, useState, useEffect, useRef } from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 import {

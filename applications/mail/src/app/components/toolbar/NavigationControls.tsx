@@ -1,4 +1,3 @@
-import React from 'react';
 import { Icon, ToolbarButton, useMailSettings } from '@proton/components';
 import { c } from 'ttag';
 import { Location } from 'history';

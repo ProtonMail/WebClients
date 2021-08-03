@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 import { TOKEN_TYPES } from '@proton/shared/lib/constants';
 import { queryCheckVerificationCode, queryVerificationCode } from '@proton/shared/lib/api/user';

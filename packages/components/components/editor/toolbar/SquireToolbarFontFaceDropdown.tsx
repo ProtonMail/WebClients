@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useState, useEffect } from 'react';
+import { MutableRefObject, useState, useEffect } from 'react';
 import { c } from 'ttag';
 
 import DropdownMenu from '../../dropdown/DropdownMenu';

@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import * as React from 'react';
 import * as History from 'history';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import {

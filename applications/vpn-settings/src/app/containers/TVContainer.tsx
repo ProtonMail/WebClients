@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import { VpnLogo, PrimaryButton, Icon, Href, useApi, useLoading, ProminentContainer } from '@proton/components';
 import { pushForkSession } from '@proton/shared/lib/api/auth';

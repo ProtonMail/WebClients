@@ -1,4 +1,3 @@
-import React from 'react';
 import { SortEndHandler, ContainerGetter } from 'react-sortable-hoc';
 import { c } from 'ttag';
 import { OrderableTable, OrderableTableHeader, OrderableTableBody } from '../../components';

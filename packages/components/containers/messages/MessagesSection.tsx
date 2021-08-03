@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 
 import { SHOW_IMAGES } from '@proton/shared/lib/constants';

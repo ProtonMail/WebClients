@@ -1,5 +1,4 @@
 import { c } from 'ttag';
-import React from 'react';
 import { Alert } from '../alert';
 import { InlineLinkButton } from '../button';
 import { BugModal } from '../../containers';

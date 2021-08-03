@@ -1,5 +1,5 @@
 import { MAX_LINKS_PER_CALENDAR } from '@proton/shared/lib/calendar/constants';
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { Calendar, ACCESS_LEVEL, CalendarLink } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';

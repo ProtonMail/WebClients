@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';

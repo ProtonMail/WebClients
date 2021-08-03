@@ -1,4 +1,3 @@
-import React from 'react';
 import { c, msgid } from 'ttag';
 import { PLANS, PLAN_NAMES, APPS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';

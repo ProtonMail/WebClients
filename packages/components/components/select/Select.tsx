@@ -1,4 +1,5 @@
-import React, { Ref, useState } from 'react';
+import { Ref, useState } from 'react';
+import * as React from 'react';
 
 import { generateUID, classnames } from '../../helpers';
 import useInput from '../input/useInput';

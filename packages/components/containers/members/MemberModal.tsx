@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, GIGA, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { createMember, createMemberAddress, updateRole } from '@proton/shared/lib/api/members';

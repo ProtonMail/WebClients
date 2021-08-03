@@ -6,7 +6,6 @@ import { Api } from '@proton/shared/lib/interfaces';
 import { ContactCard, ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
-import React from 'react';
 import { Alert, classnames, FormModal, useApi, useLoading, useNotifications, useUserKeys } from '@proton/components';
 import { c, msgid } from 'ttag';
 

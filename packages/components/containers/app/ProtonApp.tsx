@@ -1,4 +1,5 @@
-import React, { useState, useCallback, useRef, useMemo, useEffect } from 'react';
+import { useState, useCallback, useRef, useMemo, useEffect } from 'react';
+import * as React from 'react';
 import { Router } from 'react-router';
 import { History, createBrowserHistory as createHistory } from 'history';
 import createAuthentication from '@proton/shared/lib/authentication/createAuthenticationStore';

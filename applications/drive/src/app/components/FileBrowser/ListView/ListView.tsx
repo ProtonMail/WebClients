@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
+import * as React from 'react';
 import { TableBody, useActiveBreakpoint, Table, classnames, useElementRect, TableCellBusy } from '@proton/components';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import { buffer } from '@proton/shared/lib/helpers/function';

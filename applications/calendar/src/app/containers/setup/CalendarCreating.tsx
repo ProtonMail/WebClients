@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 import { Alert, FullLoader } from '@proton/components';
-import React from 'react';
 
 const CalendarCreating = () => {
     return (

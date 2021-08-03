@@ -1,4 +1,3 @@
-import React from 'react';
 import { Alert } from '@proton/components';
 import mdx from './Alert.mdx';
 

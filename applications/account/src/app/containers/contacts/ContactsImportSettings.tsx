@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 
 import { SettingsPropsShared, ContactsSettingsExportSection, ContactsSettingsImportSection } from '@proton/components';

@@ -1,6 +1,6 @@
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { unary } from '@proton/shared/lib/helpers/function';
-import React, { useMemo, useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 import {
     useActiveBreakpoint,

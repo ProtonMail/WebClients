@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, memo } from 'react';
+import { useRef, useState, useEffect, memo } from 'react';
 import { c } from 'ttag';
 import { Location, History } from 'history';
 import {

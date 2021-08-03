@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useModals } from '@proton/components';
 
 import DriveOnboardingModal from '../components/onboarding/DriveOnboardingModal';

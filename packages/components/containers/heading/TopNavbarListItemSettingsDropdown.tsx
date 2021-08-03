@@ -1,4 +1,4 @@
-import React, { ComponentPropsWithoutRef } from 'react';
+import { forwardRef, ComponentPropsWithoutRef } from 'react';
 import { c } from 'ttag';
 import { PROTON_THEMES } from '@proton/shared/lib/themes/themes';
 import { APPS, COMPOSER_MODE, DENSITY, VIEW_LAYOUT } from '@proton/shared/lib/constants';
@@ -17,7 +17,7 @@ import MailDensityModal from '../mail/MailDensityModal';
 import MailViewLayoutModal from '../mail/MailViewLayoutModal';
 import MailComposerModeModal from '../mail/MailComposerModeModal';
 
-const TopNavbarListItemSettingsButton = React.forwardRef(
+const TopNavbarListItemSettingsButton = forwardRef(
     (props: Omit<TopNavbarListItemButtonProps<'button'>, 'icon' | 'text' | 'as'>, ref: typeof props.ref) => {
         return (
             <TopNavbarListItemButton

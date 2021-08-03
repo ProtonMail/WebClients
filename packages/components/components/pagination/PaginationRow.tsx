@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { range } from '@proton/shared/lib/helpers/array';
 

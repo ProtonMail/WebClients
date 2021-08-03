@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Toolbar, ToolbarSeparator } from '@proton/components';
 
 import { DetailsButton, DownloadButton, LayoutDropdown, PreviewButton } from '../../FileBrowser/ToolbarButtons';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import onboardingMailWelcome from '@proton/styles/assets/img/onboarding/mail-welcome.svg';
 import onboardingImportAssistant from '@proton/styles/assets/img/onboarding/import-assistant.svg';

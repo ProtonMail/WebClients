@@ -1,4 +1,3 @@
-import React from 'react';
 import { Icon, classnames, useMailSettings } from '@proton/components';
 import { c, msgid } from 'ttag';
 import { VIEW_MODE } from '@proton/shared/lib/constants';

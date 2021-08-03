@@ -9,7 +9,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Calendar, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import {
     Alert,
     Badge,

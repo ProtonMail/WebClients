@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import * as React from 'react';
 import { Input } from '@proton/components';
 import './TVCodeInputs.scss';
 

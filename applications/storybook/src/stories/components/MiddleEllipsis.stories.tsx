@@ -1,4 +1,3 @@
-import React from 'react';
 import { MiddleEllipsis } from '@proton/components';
 
 import mdx from './MiddleEllipsis.mdx';

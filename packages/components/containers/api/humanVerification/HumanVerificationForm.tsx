@@ -1,4 +1,5 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';

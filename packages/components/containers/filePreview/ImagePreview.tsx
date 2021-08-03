@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { c } from 'ttag';
 import ZoomControl from './ZoomControl';
 import useElementRect from '../../hooks/useElementRect';

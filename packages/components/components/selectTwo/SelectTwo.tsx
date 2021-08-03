@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect, useMemo } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
+import * as React from 'react';
 
 import { Dropdown } from '../dropdown';
 import { Props as OptionProps } from '../option/Option';

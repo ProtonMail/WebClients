@@ -37,7 +37,7 @@ import {
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
-import React, {
+import {
     MutableRefObject,
     RefObject,
     useCallback,

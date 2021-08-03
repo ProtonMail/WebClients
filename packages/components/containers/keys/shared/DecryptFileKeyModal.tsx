@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
 import { c } from 'ttag';
 import { Alert, Row, Label, Field, PasswordInput, FormModal } from '../../../components';

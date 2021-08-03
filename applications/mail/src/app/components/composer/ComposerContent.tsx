@@ -1,6 +1,6 @@
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
-import React, { MutableRefObject, DragEvent, useState, DragEventHandler } from 'react';
+import { MutableRefObject, DragEvent, useState, DragEventHandler } from 'react';
 import { c } from 'ttag';
 import { classnames, EllipsisLoader } from '@proton/components';
 

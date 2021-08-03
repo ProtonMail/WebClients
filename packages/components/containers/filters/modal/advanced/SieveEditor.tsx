@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import codemirror, { Annotation, Linter } from 'codemirror';
 import { Controlled as CodeMirror } from 'react-codemirror2';
 import { normalize } from '../../utils';

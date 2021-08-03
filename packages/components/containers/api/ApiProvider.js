@@ -1,4 +1,4 @@
-import React, { useReducer, useRef, useState } from 'react';
+import { useReducer, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import xhr from '@proton/shared/lib/fetch/fetch';
 import configureApi from '@proton/shared/lib/api';

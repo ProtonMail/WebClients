@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 
 import { IMPORT_CALENDAR_FAQ_URL, CALENDAR_APP_NAME } from '@proton/shared/lib/calendar/constants';

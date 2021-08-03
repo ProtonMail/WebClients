@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { Button, Tabs, useLoading, useFormErrors, PhoneInput, InputFieldTwo } from '@proton/components';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';

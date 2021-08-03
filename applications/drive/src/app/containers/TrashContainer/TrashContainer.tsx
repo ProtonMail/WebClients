@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useCallback } from 'react';
+import { useEffect, useMemo, useCallback } from 'react';
 import { PrivateAppContainer, useToggle, MainLogo } from '@proton/components';
 import { Route, Redirect, Switch, RouteComponentProps } from 'react-router-dom';
 import DriveHeader from '../../components/layout/DriveHeader';

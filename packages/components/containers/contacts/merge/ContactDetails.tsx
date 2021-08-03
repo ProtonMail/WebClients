@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, ComponentProps } from 'react';
+import { useState, useEffect, useMemo, ComponentProps } from 'react';
 import { c } from 'ttag';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { getContact } from '@proton/shared/lib/api/contacts';

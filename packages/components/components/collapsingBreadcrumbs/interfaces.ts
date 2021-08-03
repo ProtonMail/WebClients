@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 export interface BreadcrumbInfo
     extends Omit<React.HTMLAttributes<HTMLButtonElement | HTMLLIElement>, 'children' | 'onClick' | 'className'> {

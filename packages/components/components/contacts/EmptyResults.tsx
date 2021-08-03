@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 
 import noResultsImg from '@proton/styles/assets/img/placeholders/empty-search.svg';

@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import { hasMailPlus } from '@proton/shared/lib/helpers/subscription';
 

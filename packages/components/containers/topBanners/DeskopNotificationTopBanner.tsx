@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 import { getStatus, request, Status } from '@proton/shared/lib/helpers/desktopNotification';
 import { APP_NAMES, APPS } from '@proton/shared/lib/constants';

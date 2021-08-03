@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState, useRef, useEffect } from 'react';
+import { ChangeEvent, useState, useRef, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { isMac } from '@proton/shared/lib/helpers/browser';

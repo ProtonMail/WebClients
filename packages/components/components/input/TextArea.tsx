@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect, Ref, ChangeEvent } from 'react';
+import { useState, useRef, useEffect, Ref, ChangeEvent } from 'react';
+import * as React from 'react';
 
 import { generateUID, classnames } from '../../helpers';
 import useAutoGrow from '../../hooks/useAutoGrow';

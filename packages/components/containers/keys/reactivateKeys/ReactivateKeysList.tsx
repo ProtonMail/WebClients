@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { c } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
 import { Badge, Button, LoaderIcon, Table, TableRow, TableHeader, TableBody } from '../../../components';

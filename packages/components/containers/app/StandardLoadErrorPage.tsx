@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { c } from 'ttag';
 import GenericError from '../error/GenericError';
 import { InlineLinkButton, ProminentContainer } from '../../components';

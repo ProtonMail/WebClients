@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { LinkType } from '../../../../interfaces/link';
 import { getMimeTypeDescription } from '../../../Drive/helpers';

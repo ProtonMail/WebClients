@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';

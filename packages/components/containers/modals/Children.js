@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import ModalsContext from './modalsContext';
 import ModalsChildrenContext from './childrenContext';
 import ModalsContainer from './Container';

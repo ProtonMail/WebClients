@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { classnames } from '@proton/components';
 import { HighlightMetadata } from '../../models/encryptedSearch';
 import { ES_MAX_INITIAL_CHARS } from '../../constants';

@@ -1,8 +1,8 @@
-import React from 'react';
+import { useRef } from 'react';
 
 export default function useAsyncQueue<T>(parallelCallLimit: number) {
-    const queue = React.useRef<(() => Promise<T>)[]>([]);
-    const currentLoad = React.useRef<number>(0);
+    const queue = useRef<(() => Promise<T>)[]>([]);
+    const currentLoad = useRef<number>(0);
 
     const run = () => {
         if (queue.current.length === 0 || currentLoad.current >= parallelCallLimit) {

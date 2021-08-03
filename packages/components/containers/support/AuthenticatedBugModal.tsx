@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { useAddresses, useUser } from '../../hooks';
 import BugModal from './BugModal';
 

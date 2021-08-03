@@ -1,4 +1,3 @@
-import React from 'react';
 import { CompatibilityCheckView, getCompatibilityList } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 

@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button, useFormErrors, useLoading, InputFieldTwo } from '@proton/components';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { noop } from '@proton/shared/lib/helpers/function';

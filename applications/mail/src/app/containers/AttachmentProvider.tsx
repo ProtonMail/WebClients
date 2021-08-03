@@ -1,5 +1,5 @@
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import React, { createContext, ReactNode, useContext } from 'react';
+import { createContext, ReactNode, useContext } from 'react';
 import { useInstance } from '@proton/components';
 import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
 import createLRU from '@proton/shared/lib/helpers/lru';

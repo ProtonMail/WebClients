@@ -1,5 +1,6 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import React, { useRef } from 'react';
+import { useRef } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import {
     Icon,

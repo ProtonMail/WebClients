@@ -1,5 +1,4 @@
 import { c } from 'ttag';
-import React from 'react';
 
 import { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';

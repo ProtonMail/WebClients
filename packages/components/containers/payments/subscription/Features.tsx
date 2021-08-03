@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { c } from 'ttag';
 import { PLANS, APP_NAMES, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 
@@ -30,7 +30,7 @@ const Features = ({ appName, onSelect, planLabels, features, activeTab, onSetAct
                 {planLabels.map(({ label, key }) => ({
                     title: label,
                     content: (
-                        <React.Fragment key={key}>
+                        <Fragment key={key}>
                             <div className="mb1">
                                 <PrimaryButton onClick={() => onSelect(key)}>{c('Action')
                                     .t`Select plan`}</PrimaryButton>
@@ -73,7 +73,7 @@ const Features = ({ appName, onSelect, planLabels, features, activeTab, onSetAct
                                     })}
                                 </tbody>
                             </table>
-                        </React.Fragment>
+                        </Fragment>
                     ),
                 }))}
             </Tabs>

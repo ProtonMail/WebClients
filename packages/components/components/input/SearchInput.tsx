@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ChangeEvent } from 'react';
+import { forwardRef, useState, useEffect, ChangeEvent } from 'react';
 import { noop } from '@proton/shared/lib/helpers/function';
 
 import Input, { Props as InputProps } from './Input';
@@ -16,7 +16,7 @@ interface Props extends Omit<InputProps, 'onChange'> {
     value?: string;
 }
 
-const SearchInput = React.forwardRef<HTMLInputElement, Props>(
+const SearchInput = forwardRef<HTMLInputElement, Props>(
     ({ delay = 200, onChange = noop, value = '', ...rest }, ref) => {
         const [keywords, setKeywords] = useState(value);
         const words = useDebounceInput(keywords, delay);

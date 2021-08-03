@@ -1,6 +1,5 @@
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { FREQUENCY, FREQUENCY_INTERVALS_MAX } from '@proton/shared/lib/calendar/constants';
-import React from 'react';
 import { c, msgid } from 'ttag';
 import { IntegerInput, SelectTwo, Option } from '@proton/components';
 

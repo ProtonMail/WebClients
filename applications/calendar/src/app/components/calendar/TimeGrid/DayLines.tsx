@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 
 interface Props {
     days: Date[];
@@ -13,4 +13,4 @@ const DayLines = ({ days }: Props) => {
     );
 };
 
-export default React.memo(DayLines);
+export default memo(DayLines);

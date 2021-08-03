@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback } from 'react';
+import { useMemo, useCallback } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { Switch, Route, Redirect } from 'react-router';
 import { PrivateAppContainer, useToggle, MainLogo } from '@proton/components';

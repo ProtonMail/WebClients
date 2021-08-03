@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { useActiveBreakpoint, ModalsChildren, ErrorBoundary, StandardErrorPage } from '@proton/components';
 

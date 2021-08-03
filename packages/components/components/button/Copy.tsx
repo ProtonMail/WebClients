@@ -1,4 +1,5 @@
-import React, { MouseEvent } from 'react';
+import { MouseEvent } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { c } from 'ttag';
 
 import { Label } from '@proton/shared/lib/interfaces/Label';
@@ -61,7 +61,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                     const label = labels?.find((l) => l.Name === labelName);
 
                     return label ? (
-                        <React.Fragment key={labelName}>
+                        <Fragment key={labelName}>
                             <span className="ml0-5 mr0-5 mb0-5">
                                 <LabelStack
                                     labels={[
@@ -73,7 +73,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                                     ]}
                                 />
                             </span>
-                        </React.Fragment>
+                        </Fragment>
                     ) : null;
                 })}
             </div>

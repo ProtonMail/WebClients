@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { c } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
 import { getRandomString } from '@proton/shared/lib/helpers/string';

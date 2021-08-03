@@ -1,5 +1,4 @@
 import { c } from 'ttag';
-import React from 'react';
 
 import Alert from '../../../components/alert/Alert';
 

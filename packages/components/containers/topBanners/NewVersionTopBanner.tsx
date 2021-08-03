@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { useConfig } from '../../hooks';

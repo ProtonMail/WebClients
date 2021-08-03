@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 const Title = ({ children, ...rest }: React.HTMLAttributes<HTMLHeadingElement>) => <h1 {...rest}>{children}</h1>;
 

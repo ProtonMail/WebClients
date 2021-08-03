@@ -1,5 +1,5 @@
 import { getCalendars } from '@proton/shared/lib/models/calendarsModel';
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { APPS, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES } from '@proton/shared/lib/constants';
 import { checkSubscription, deleteSubscription, subscribe } from '@proton/shared/lib/api/payments';

@@ -1,5 +1,5 @@
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
-import React, { useState, useMemo, ChangeEvent } from 'react';
+import { useState, useMemo, ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { noop } from '@proton/shared/lib/helpers/function';

@@ -1,4 +1,5 @@
-import React, { forwardRef, memo } from 'react';
+import { forwardRef, memo } from 'react';
+import * as React from 'react';
 import { classnames } from '../../helpers';
 
 export interface Props extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {

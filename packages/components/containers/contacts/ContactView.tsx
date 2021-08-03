@@ -1,4 +1,3 @@
-import React from 'react';
 import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import { ContactProperties, ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';

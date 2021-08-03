@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { Alert, FormModal } from '@proton/components';
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';

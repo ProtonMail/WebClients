@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { useLoading, Button } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';

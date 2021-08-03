@@ -1,4 +1,3 @@
-import React from 'react';
 import { Icon } from '@proton/components';
 
 import { MessageExtended } from '../../../models/message';

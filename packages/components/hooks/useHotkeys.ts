@@ -1,4 +1,5 @@
-import React, { /* useEffect, */ useRef } from 'react';
+import { /* useEffect, */ useRef } from 'react';
+import * as React from 'react';
 import { KeyboardKey, KeyboardKeyType } from '@proton/shared/lib/interfaces';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';

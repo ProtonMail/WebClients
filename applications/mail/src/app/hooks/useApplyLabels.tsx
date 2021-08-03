@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { c, msgid } from 'ttag';
 import { useApi, useNotifications, useEventManager, useLabels, classnames } from '@proton/components';
 import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';

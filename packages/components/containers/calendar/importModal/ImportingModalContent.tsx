@@ -4,7 +4,7 @@ import {
     splitErrors,
 } from '@proton/shared/lib/calendar/import/import';
 import { ImportFatalError } from '@proton/shared/lib/calendar/import/ImportFatalError';
-import React, { Dispatch, SetStateAction, useEffect } from 'react';
+import { Dispatch, SetStateAction, useEffect } from 'react';
 import { c } from 'ttag';
 
 import {

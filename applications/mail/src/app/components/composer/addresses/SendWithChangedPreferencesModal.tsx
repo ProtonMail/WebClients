@@ -1,4 +1,3 @@
-import React from 'react';
 import { Alert, classnames, FormModal } from '@proton/components';
 import { c } from 'ttag';
 

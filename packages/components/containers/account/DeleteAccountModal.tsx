@@ -1,4 +1,4 @@
-import React, { useState, useMemo, ChangeEvent } from 'react';
+import { useState, useMemo, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { ACCOUNT_DELETION_REASONS, APPS } from '@proton/shared/lib/constants';
 import { deleteUser, canDelete, unlockPasswordChanges } from '@proton/shared/lib/api/user';

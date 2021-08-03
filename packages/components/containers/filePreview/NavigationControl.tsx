@@ -1,4 +1,4 @@
-import React, { RefObject } from 'react';
+import { RefObject } from 'react';
 import { c } from 'ttag';
 import Icon from '../../components/icon/Icon';
 import { Button } from '../../components';

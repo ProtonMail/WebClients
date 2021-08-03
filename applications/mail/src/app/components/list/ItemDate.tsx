@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 import { getDate } from '../../helpers/elements';
 import { formatSimpleDate, formatFullDate, formatDistanceToNow } from '../../helpers/date';

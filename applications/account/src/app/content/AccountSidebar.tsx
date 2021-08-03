@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { Route, Switch } from 'react-router-dom';
 import { Sidebar, SidebarNav, SidebarList, SidebarListItem, useUser, SidebarBackButton } from '@proton/components';

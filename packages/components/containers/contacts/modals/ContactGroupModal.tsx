@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, useMemo } from 'react';
+import { useState, ChangeEvent, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 import { randomIntFromInterval, noop } from '@proton/shared/lib/helpers/function';
 import { diff, orderBy } from '@proton/shared/lib/helpers/array';

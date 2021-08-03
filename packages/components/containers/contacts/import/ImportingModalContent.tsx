@@ -1,4 +1,4 @@
-import React, { useEffect, Dispatch, SetStateAction } from 'react';
+import { useEffect, Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 
 import {

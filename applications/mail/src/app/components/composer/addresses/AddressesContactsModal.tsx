@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { Table, TableHeader, Checkbox, TableRow, TableBody, FormModal, SearchInput } from '@proton/components';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';

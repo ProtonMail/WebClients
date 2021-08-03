@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 import { ToolbarSeparator, Toolbar, useActiveBreakpoint } from '@proton/components';

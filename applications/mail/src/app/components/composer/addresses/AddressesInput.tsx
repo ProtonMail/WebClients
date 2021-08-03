@@ -1,4 +1,5 @@
-import React, { useState, useEffect, MutableRefObject, useRef, MouseEvent, Fragment } from 'react';
+import { useState, useEffect, MutableRefObject, useRef, MouseEvent, Fragment } from 'react';
+import * as React from 'react';
 import { c, msgid } from 'ttag';
 import {
     AddressesAutocomplete,

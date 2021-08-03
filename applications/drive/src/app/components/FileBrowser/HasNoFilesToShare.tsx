@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 
 import noContentSvg from '@proton/styles/assets/img/placeholders/empty-folder.svg';

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import { VIEW_MODE } from '@proton/shared/lib/constants';
 

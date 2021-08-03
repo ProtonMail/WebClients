@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 
 import { ToolbarButton, Icon } from '@proton/components';

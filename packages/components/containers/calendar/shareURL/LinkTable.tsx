@@ -1,5 +1,5 @@
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import React, { MouseEvent, useMemo } from 'react';
+import { MouseEvent, useMemo } from 'react';
 import { c } from 'ttag';
 import { Nullable, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { ACCESS_LEVEL, CalendarLink } from '@proton/shared/lib/interfaces/calendar';

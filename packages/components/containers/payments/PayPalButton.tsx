@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { doNotWindowOpen } from '@proton/shared/lib/helpers/browser';
 import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT } from '@proton/shared/lib/constants';
 import { c } from 'ttag';

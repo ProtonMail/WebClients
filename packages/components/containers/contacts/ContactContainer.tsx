@@ -1,4 +1,3 @@
-import React from 'react';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { Contact, ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import useContact from './useContact';

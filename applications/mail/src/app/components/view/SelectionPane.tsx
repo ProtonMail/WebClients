@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { Button, useLabels, useFolders } from '@proton/components';
 import { c, msgid } from 'ttag';
 import { MailSettings } from '@proton/shared/lib/interfaces';

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Folder } from '@proton/shared/lib/interfaces/Folder';

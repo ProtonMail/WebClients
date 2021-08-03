@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import * as React from 'react';
 import { noop } from '@proton/shared/lib/helpers/function';
 import ErrorBoundary from '../../containers/app/ErrorBoundary';
 import SettingsPageTitle from '../../containers/account/SettingsPageTitle';

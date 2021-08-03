@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 
 interface Props {
     className?: string;
@@ -20,4 +20,4 @@ const HourTexts = ({ className, hours }: Props) => {
     );
 };
 
-export default React.memo(HourTexts);
+export default memo(HourTexts);

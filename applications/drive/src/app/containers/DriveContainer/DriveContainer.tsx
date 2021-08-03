@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { PrivateAppContainer, useToggle, MainLogo, TopBanners } from '@proton/components';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import DriveHeader from '../../components/layout/DriveHeader';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { c, msgid } from 'ttag';
 import { VPNServer } from '@proton/shared/lib/interfaces/VPNServer';
 

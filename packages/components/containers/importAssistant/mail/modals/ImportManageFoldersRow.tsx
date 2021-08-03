@@ -1,4 +1,5 @@
-import React, { ChangeEvent, useState, useRef, useEffect, useMemo } from 'react';
+import { ChangeEvent, useState, useRef, useEffect, useMemo } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 
 import { Folder } from '@proton/shared/lib/interfaces/Folder';

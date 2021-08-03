@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 
 import { order, getParents } from '@proton/shared/lib/helpers/folder';

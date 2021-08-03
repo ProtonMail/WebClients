@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { resumeMailImportJob, cancelMailImportJob, updateMailImport } from '@proton/shared/lib/api/mailImport';
 

@@ -4,7 +4,7 @@ import {
     isAttachPublicKey as testIsAttachPublicKey,
     isRequestReadReceipt as testIsRequestReadReceipt,
 } from '@proton/shared/lib/mail/messages';
-import React, { memo } from 'react';
+import { memo } from 'react';
 import { DropdownMenuButton, Icon, classnames } from '@proton/components';
 import { c } from 'ttag';
 

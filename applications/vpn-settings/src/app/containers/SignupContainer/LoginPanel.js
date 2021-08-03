@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { Link } from 'react-router-dom';
 import { ButtonLike } from '@proton/components';

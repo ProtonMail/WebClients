@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { Fragment, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { getConditionTypeLabels, getComparatorLabels } from '../constants';
@@ -65,12 +65,12 @@ const FilterPreviewConditions = ({ isOpen, isNarrow, toggleOpen, model }: Props)
                     <strong key={`${v}${i}`}>{v}</strong>
                 );
                 return i > 0 ? (
-                    <React.Fragment key={`preview_condition_${v}${i}`}>
+                    <Fragment key={`preview_condition_${v}${i}`}>
                         {` `}
                         {c('Label').t`or`}
                         {` `}
                         {value}
-                    </React.Fragment>
+                    </Fragment>
                 ) : (
                     value
                 );

@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { Icon, Tooltip, useModals } from '@proton/components';

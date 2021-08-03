@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import * as React from 'react';
 import { format, parse, addDays, Locale } from 'date-fns';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { c } from 'ttag';

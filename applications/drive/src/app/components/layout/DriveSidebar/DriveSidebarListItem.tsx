@@ -1,6 +1,6 @@
 import { noop } from '@proton/shared/lib/helpers/function';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import React from 'react';
+import * as React from 'react';
 import {
     SidebarListItem,
     SidebarListItemContent,

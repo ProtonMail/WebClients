@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from 'react';
+import { HTMLAttributes } from 'react';
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
 import { classnames } from '../../helpers';
 

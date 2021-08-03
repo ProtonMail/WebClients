@@ -1,5 +1,5 @@
 import { getSender, hasAttachments } from '@proton/shared/lib/mail/messages';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { FormModal } from '@proton/components';
 import { c } from 'ttag';
 

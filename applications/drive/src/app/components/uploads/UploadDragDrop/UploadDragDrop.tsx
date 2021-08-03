@@ -1,4 +1,5 @@
-import React, { ReactNode, useState, useCallback, SyntheticEvent } from 'react';
+import { ReactNode, useState, useCallback, SyntheticEvent } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 
 import dragdropImageSvg from '@proton/styles/assets/img/placeholders/drag-and-drop.svg';

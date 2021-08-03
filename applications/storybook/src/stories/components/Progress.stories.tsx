@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Progress } from '@proton/components';
 
 import mdx from './Progress.mdx';

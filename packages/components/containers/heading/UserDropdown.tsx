@@ -1,4 +1,4 @@
-import React, { useState, MouseEvent } from 'react';
+import { useState, MouseEvent } from 'react';
 import { c } from 'ttag';
 import { APPS, BRAND_NAME, APP_NAMES, isSSOMode, PLAN_SERVICES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getAppHref } from '@proton/shared/lib/apps/helper';

@@ -1,5 +1,4 @@
 import { c } from 'ttag';
-import React from 'react';
 
 import { ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';
 

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { Fragment, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
@@ -39,7 +39,7 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
                 return i > 0 ? c('Label').t` and ${l}` : l;
             });
             const labelsElements = actions.labelAs.labels.map((l, i) => (
-                <React.Fragment key={l}>
+                <Fragment key={l}>
                     {i > 0 && c('Label').t` and `}
                     {isOpen ? (
                         <span className="mb0-5">
@@ -56,7 +56,7 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
                     ) : (
                         <strong>{l}</strong>
                     )}
-                </React.Fragment>
+                </Fragment>
             ));
 
             actionsRows.push({

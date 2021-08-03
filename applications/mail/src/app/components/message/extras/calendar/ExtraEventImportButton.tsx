@@ -2,7 +2,7 @@ import { getEventWithCalendarAlarms } from '@proton/shared/lib/calendar/integrat
 import { omit } from '@proton/shared/lib/helpers/object';
 import { RequireSome } from '@proton/shared/lib/interfaces';
 import { ImportedEvent } from '@proton/shared/lib/interfaces/calendar';
-import React, { useCallback, Dispatch, SetStateAction } from 'react';
+import { useCallback, Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 import { useNotifications, AddToCalendarButton } from '@proton/components';
 import { getDisableButtons, InvitationModel, UPDATE_ACTION } from '../../../../helpers/calendar/invite';

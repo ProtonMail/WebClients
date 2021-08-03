@@ -1,4 +1,4 @@
-import React, { ComponentProps } from 'react';
+import { ComponentProps } from 'react';
 import { c } from 'ttag';
 import { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
 

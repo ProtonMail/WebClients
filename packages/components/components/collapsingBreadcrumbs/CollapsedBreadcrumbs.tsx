@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { generateUID, classnames } from '../../helpers';
 import { usePopperAnchor } from '../popper';

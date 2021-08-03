@@ -1,7 +1,7 @@
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { unary } from '@proton/shared/lib/helpers/function';
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import {
     ErrorBoundary,

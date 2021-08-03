@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import { STICKY_LABELS } from '@proton/shared/lib/constants';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { COMPOSER_MODE } from '@proton/shared/lib/constants';
 import { updateComposerMode } from '@proton/shared/lib/api/mailSettings';

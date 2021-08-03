@@ -1,4 +1,3 @@
-import React from 'react';
 import { Icon, DropdownMenu, DropdownMenuButton, ToolbarButton } from '@proton/components';
 import { c } from 'ttag';
 import { useLocation } from 'react-router';

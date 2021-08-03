@@ -1,5 +1,5 @@
 import { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
-import React, { Dispatch, SetStateAction, useCallback, useEffect, useMemo, useState } from 'react';
+import { Dispatch, SetStateAction, useCallback, useEffect, useMemo, useState } from 'react';
 import { Alert, useGetEncryptionPreferences, useModals } from '@proton/components';
 import useIsMounted from '@proton/components/hooks/useIsMounted';
 import { c, msgid } from 'ttag';

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 import { classnames } from '../../helpers';
 

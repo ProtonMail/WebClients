@@ -1,4 +1,3 @@
-import React from 'react';
 import { Icon, useLoading, useLabels, useMailSettings, ToolbarButton, ToolbarSeparator } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';

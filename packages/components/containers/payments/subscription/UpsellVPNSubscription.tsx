@@ -1,4 +1,3 @@
-import React from 'react';
 import { hasVpnBasic, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES, PLANS } from '@proton/shared/lib/constants';

@@ -1,4 +1,4 @@
-import React, { Ref, useMemo } from 'react';
+import { Ref, useMemo } from 'react';
 import { isNextDay } from '@proton/shared/lib/date-fns-utc';
 import { HOUR } from '@proton/shared/lib/constants';
 

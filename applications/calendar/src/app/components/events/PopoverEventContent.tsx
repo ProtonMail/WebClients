@@ -9,7 +9,7 @@ import { getInitials } from '@proton/shared/lib/helpers/string';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Calendar as tsCalendar, EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Icon, Info, Tabs, Tooltip } from '@proton/components';
 import { c, msgid } from 'ttag';
 

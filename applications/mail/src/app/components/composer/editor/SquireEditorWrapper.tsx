@@ -1,6 +1,6 @@
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
-import React, { MutableRefObject, useEffect, useState, useRef, useMemo, useCallback, memo } from 'react';
+import { MutableRefObject, useEffect, useState, useRef, useMemo, useCallback, memo } from 'react';
 import { c } from 'ttag';
 import { SquireEditor, useHandler, useMailSettings, useAddresses } from '@proton/components';
 import { SquireEditorMetadata } from '@proton/components/components/editor/interface';

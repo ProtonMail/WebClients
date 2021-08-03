@@ -1,4 +1,3 @@
-import React from 'react';
 import { FileNameDisplay } from '@proton/components';
 
 interface Props {

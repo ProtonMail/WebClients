@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useRef } from 'react';
+import { createContext, useContext, useEffect, useRef } from 'react';
 
 import { DownloadInfo, ThumbnailMeta } from '../../interfaces/transfer';
 import useDrive from '../../hooks/drive/useDrive';

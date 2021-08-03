@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import { SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { isURL } from '@proton/shared/lib/helpers/validators';

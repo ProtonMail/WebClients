@@ -8,7 +8,7 @@ import {
 } from '@proton/shared/lib/helpers/email';
 import { Address, Recipient } from '@proton/shared/lib/interfaces';
 import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
-import React, { memo, useMemo, useRef } from 'react';
+import { memo, useMemo, useRef } from 'react';
 import { AddressesAutocomplete, Alert, Details, Summary } from '@proton/components';
 import { c, msgid } from 'ttag';
 import { AttendeeModel, EventModel } from '@proton/shared/lib/interfaces/calendar';

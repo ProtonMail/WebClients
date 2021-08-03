@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { PrivateAuthenticationStore, PublicAuthenticationStore } from '../app/interface';
 
 import AuthenticationContext from './authenticationContext';

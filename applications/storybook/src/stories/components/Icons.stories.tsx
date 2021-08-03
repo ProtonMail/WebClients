@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useMemo } from 'react';
 import { Icon, Input, Mark } from '@proton/components';
 import iconSvg from '@proton/styles/_includes/sprite-icons.svg';
 
@@ -8,8 +8,8 @@ export const PrimaryIcons = () => {
     const primaryIconNames: string[] = iconSvg
         .match(/id="shape-([^"]+)/g)
         .map((x: string) => x.replace('id="shape-', ''));
-    const [search, setSearch] = React.useState('');
-    const iconResults = React.useMemo(() => {
+    const [search, setSearch] = useState('');
+    const iconResults = useMemo(() => {
         if (search.length <= 1) {
             return primaryIconNames;
         }

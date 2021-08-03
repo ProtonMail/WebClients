@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Checkbox, Icon, Button, Tooltip } from '../../../components';

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { c, msgid } from 'ttag';
 import { Dropdown } from '../dropdown';
 import { Props as OptionProps } from '../option/Option';

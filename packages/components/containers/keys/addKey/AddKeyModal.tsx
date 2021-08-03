@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 import { algorithmInfo } from 'pmcrypto';
 import { getAlgorithmExists } from '@proton/shared/lib/keys';

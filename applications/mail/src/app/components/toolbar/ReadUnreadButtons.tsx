@@ -1,4 +1,3 @@
-import React from 'react';
 import { MESSAGE_BUTTONS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Icon, useLoading, useMailSettings, ToolbarButton } from '@proton/components';

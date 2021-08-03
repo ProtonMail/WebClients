@@ -1,4 +1,3 @@
-import React from 'react';
 import loudRejection from 'loud-rejection';
 import { fireEvent, getByTestId, getByText } from '@testing-library/dom';
 import { act } from '@testing-library/react';

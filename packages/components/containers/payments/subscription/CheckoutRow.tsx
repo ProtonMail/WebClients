@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import { Currency } from '@proton/shared/lib/interfaces';
 

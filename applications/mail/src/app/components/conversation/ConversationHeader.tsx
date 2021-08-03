@@ -1,4 +1,3 @@
-import React from 'react';
 import { useLabels, classnames } from '@proton/components';
 
 import ItemStar from '../list/ItemStar';

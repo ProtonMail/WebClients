@@ -1,5 +1,5 @@
 import { processInBatches } from '@proton/shared/lib/calendar/export/export';
-import React, { Dispatch, SetStateAction, useEffect } from 'react';
+import { Dispatch, SetStateAction, useEffect } from 'react';
 import { c } from 'ttag';
 
 import {

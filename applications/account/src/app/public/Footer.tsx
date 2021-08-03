@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { classnames } from '@proton/components';
 
 interface Props extends React.HTMLProps<HTMLDivElement> {

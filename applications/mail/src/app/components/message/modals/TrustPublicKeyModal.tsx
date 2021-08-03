@@ -1,5 +1,4 @@
 import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
-import React from 'react';
 import {
     Alert,
     FormModal,

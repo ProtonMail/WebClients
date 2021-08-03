@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { c, msgid } from 'ttag';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { orderBy } from '@proton/shared/lib/helpers/array';

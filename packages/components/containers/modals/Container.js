@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { cloneElement, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import OverlayModal from '../../components/modal/Overlay';
@@ -47,7 +47,7 @@ const ModalsContainer = ({ modals, removeModal, hideModal }) => {
             key: id,
         };
 
-        return <ModalErrorBoundary {...props}>{React.cloneElement(content, props)}</ModalErrorBoundary>;
+        return <ModalErrorBoundary {...props}>{cloneElement(content, props)}</ModalErrorBoundary>;
     });
 
     const handleContainerAnimationEnd = () => {
