@@ -1,9 +1,20 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-git checkout develop
+git fetch origin main:main
+git checkout main
 
-LATEST_MERGE_COMMIT="$(git log --skip 1 --merges -n 1 --pretty=format:%H)"
+# PARENT_DIR relative to location of script of file system
+PARENT_DIR="$(dirname "${BASH_SOURCE[0]}")"
+
+cd "$PARENT_DIR"/..
+
+# Notice the "." at the end
+# We're taking the latest merge commit that affected the current directory
+# We're skipping one of the merge commits since this script is intended to
+# trigger on a merge into the main branch and we don't want to compare with
+# the commit that triggered the script to run in the first place.
+LATEST_MERGE_COMMIT="$(git log --full-history --skip 1 --merges -n 1 --pretty=format:%H .)"
 
 echo "SHA of latest merge commit: $LATEST_MERGE_COMMIT"
 
