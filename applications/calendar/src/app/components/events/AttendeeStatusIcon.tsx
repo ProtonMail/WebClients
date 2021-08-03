@@ -8,17 +8,17 @@ const iconClassName = '';
 
 const IconYes = () => (
     <span className={`${iconContainerClassName} bg-success`}>
-        <Icon name="check" className={iconClassName} size={8} />
+        <Icon name="check" className={iconClassName} size={12} />
     </span>
 );
 const IconMaybe = () => (
     <span className={`${iconContainerClassName} bg-warning`}>
-        <Icon name="question" className={iconClassName} size={8} />
+        <Icon name="question" className={iconClassName} size={12} />
     </span>
 );
 const IconNo = () => (
     <span className={`${iconContainerClassName} bg-danger`}>
-        <Icon name="xmark" className={iconClassName} size={8} />
+        <Icon name="xmark" className={iconClassName} size={12} />
     </span>
 );
 const IconNeedsAction = () => null;
@@ -38,21 +38,21 @@ const ParticipantStatusIcon = ({ partstat }: Props) => {
     if (partstat === ACCEPTED) {
         return (
             <span className={`${iconContainerClassName} bg-success`}>
-                <Icon name="check" className={iconClassName} size={8} />
+                <Icon name="check" className={iconClassName} size={12} />
             </span>
         );
     }
     if (partstat === TENTATIVE) {
         return (
             <span className={`${iconContainerClassName} bg-warning`}>
-                <Icon name="question" className={iconClassName} size={8} />
+                <Icon name="question" className={iconClassName} size={12} />
             </span>
         );
     }
     if (partstat === DECLINED) {
         return (
             <span className={`${iconContainerClassName} bg-danger`}>
-                <Icon name="xmark" className={iconClassName} size={8} />
+                <Icon name="xmark" className={iconClassName} size={12} />
             </span>
         );
     }
