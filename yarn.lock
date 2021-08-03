@@ -3688,6 +3688,7 @@ __metadata:
     mocha: ^5.2.0
     prettier: ^2.0.5
     prop-types: ^15.7.2
+    punycode.js: ^2.1.0
     push.js: ^1.0.9
     qrcode.react: ^0.9.3
     react: ^17.0.0
@@ -24540,6 +24541,13 @@ fsevents@^1.2.7:
     inherits: ^2.0.3
     pump: ^2.0.0
   checksum: c143607284efa8b91baf8e199e90a6560cf599bdb7928686d1f33d3d8bbf71f3bc8c673ed6747ed36b8771982376faa0d5dafc0580eb433c73a825031016aa77
+  languageName: node
+  linkType: hard
+
+"punycode.js@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "punycode.js@npm:2.1.0"
+  checksum: 8db0eff83df530418b7e8ccf283d3950ec3b9056b72dfb698065644f2831720abb89a9f97fb557a8179b4a1f9fc9b65bf8875761bcf6feeff6d2bccc32ac345c
   languageName: node
   linkType: hard
 
