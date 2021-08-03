@@ -139,7 +139,7 @@ function GeneratedLinkState({
     };
 
     const boldNameText = (
-        <b key="name" className="text-break">
+        <b key="name" className="text-break text-pre-wrap">
             {`${itemName}`}
         </b>
     );
