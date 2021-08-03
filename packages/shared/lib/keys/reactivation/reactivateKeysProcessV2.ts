@@ -6,7 +6,7 @@ import { USER_KEY_USERID } from '../userKeys';
 import { getAddressReactivationPayload, getReactivatedAddressesKeys } from './reactivateKeyHelper';
 import { reactivateUserKeyRouteV2, reactiveLegacyAddressKeyRouteV2 } from '../../api/keys';
 import { getHasMigratedAddressKey } from '../keyMigration';
-import { getDecryptedAddressKeys } from '../getDecryptedAddressKeys';
+import { getDecryptedAddressKeysHelper } from '../getDecryptedAddressKeys';
 import { getSignedKeyList } from '../signedKeyList';
 import { generateAddressKeyTokens, reformatAddressKey } from '../addressKeys';
 import { getActiveKeyObject, getActiveKeys, getPrimaryFlag, getReactivatedKeyFlag } from '../getActiveKeys';
@@ -283,14 +283,7 @@ const reactivateKeysProcessV2 = async ({
                 throw new Error('Missing dependency');
             }
 
-            const addressKeys = await getDecryptedAddressKeys({
-                address,
-                addressKeys: address.Keys,
-                user,
-                keyPassword: '',
-                userKeys,
-            });
-
+            const addressKeys = await getDecryptedAddressKeysHelper(address.Keys, user, userKeys, '');
             const activeAddressKeys = await getActiveKeys(address.SignedKeyList, address.Keys, addressKeys);
 
             await reactivateAddressKeysV2({

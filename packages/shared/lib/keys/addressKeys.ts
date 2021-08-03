@@ -87,13 +87,20 @@ interface AddressKeyTokenResult {
     token: string;
     encryptedToken: string;
     signature: string;
+    organizationSignature?: string;
+}
+interface AddressKeyOrgTokenResult extends AddressKeyTokenResult {
+    organizationSignature: string;
 }
 
-export function generateAddressKeyTokens(userKey: OpenPGPKey): Promise<AddressKeyTokenResult>;
 export function generateAddressKeyTokens(
     userKey: OpenPGPKey,
     organizationKey: OpenPGPKey
-): Promise<AddressKeyTokenResult & { organizationSignature: string }>;
+): Promise<AddressKeyOrgTokenResult>;
+export function generateAddressKeyTokens(
+    userKey: OpenPGPKey,
+    organizationKey?: OpenPGPKey
+): Promise<AddressKeyTokenResult>;
 
 export async function generateAddressKeyTokens(userKey: OpenPGPKey, organizationKey?: OpenPGPKey) {
     const randomBytes = getRandomValues(new Uint8Array(32));

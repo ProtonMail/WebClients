@@ -48,6 +48,7 @@ interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
     noModals?: boolean;
     hasPrivateMemberKeyGeneration?: boolean;
     hasReadableMemberKeyActivation?: boolean;
+    hasMemberKeyMigration?: boolean;
     app: () => Promise<{ default: FunctionComponent }>;
 }
 
@@ -62,6 +63,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
     noModals = false,
     hasPrivateMemberKeyGeneration = false,
     hasReadableMemberKeyActivation = false,
+    hasMemberKeyMigration = false,
     app: appFactory,
 }: Props<T, M, E, EvtM>) => {
     const { APP_NAME } = useConfig();
@@ -182,6 +184,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
                         <KeyBackgroundManager
                             hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
                             hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
+                            hasMemberKeyMigration={hasMemberKeyMigration}
                         />
                         <StorageListener />
                         <ForceRefreshProvider>

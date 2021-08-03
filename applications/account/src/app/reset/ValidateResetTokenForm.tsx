@@ -32,7 +32,8 @@ const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, value }: 
     const handleSubmit = async () => {
         await new Promise<void>((resolve, reject) => {
             const loseAllData = (
-                <span className="text-bold">{c('Info').t`lose access to all current encrypted data`}</span>
+                <span className="text-bold" key="lose-access">{c('Info')
+                    .t`lose access to all current encrypted data`}</span>
             );
             createModal(
                 <ConfirmModal

@@ -1,6 +1,6 @@
 import { USER_ROLES, PERMISSIONS } from '@proton/shared/lib/constants';
 import { useUser } from './useUser';
-import useOrganization from './useOrganization';
+import { useOrganization } from './useOrganization';
 
 const { MEMBER_ROLE, ADMIN_ROLE, FREE_ROLE } = USER_ROLES;
 const { MEMBER, ADMIN, FREE, MULTI_USERS, PAID, PAID_MAIL, PAID_VPN, UPGRADER, NOT_SUB_USER } = PERMISSIONS;

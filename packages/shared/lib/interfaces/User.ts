@@ -19,6 +19,7 @@ export interface User {
     OrganizationPrivateKey?: string;
     Keys: Key[];
     DriveEarlyAccess: number;
+    ToMigrate: 0 | 1;
 }
 
 export interface UserModel extends User {

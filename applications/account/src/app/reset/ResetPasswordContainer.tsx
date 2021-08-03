@@ -5,11 +5,13 @@ import { useHistory } from 'react-router-dom';
 import {
     Button,
     ButtonLike,
+    FeatureCode,
     GenericError,
     Href,
     OnLoginCallback,
     useApi,
     useErrorHandler,
+    useFeature,
     useMyLocation,
     useNotifications,
 } from '@proton/components';
@@ -39,6 +41,7 @@ interface Props {
 
 const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
     const history = useHistory();
+    const keyMigrationFeature = useFeature(FeatureCode.KeyMigration);
     const cacheRef = useRef<ResetCacheResult | undefined>(undefined);
     const errorHandler = useErrorHandler();
     const normalApi = useApi();
@@ -218,13 +221,22 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
                     <Header title={c('Title').t`Reset password`} left={<BackButton onClick={handleCancel} />} />
                     <Content>
                         <SetPasswordForm
-                            onSubmit={(newPassword: string) => {
+                            onSubmit={async (newPassword: string) => {
                                 createNotification({
                                     text: c('Info')
                                         .t`This can take a few seconds or a few minutes depending on your device.`,
                                     type: 'info',
                                 });
-                                return handleNewPassword({ password: newPassword, api: silentApi, cache })
+                                const keyMigrationFeatureValue = await keyMigrationFeature
+                                    .get<number>()
+                                    .then(({ Value }) => Value)
+                                    .catch(() => 0);
+                                return handleNewPassword({
+                                    password: newPassword,
+                                    api: silentApi,
+                                    cache,
+                                    keyMigrationFeatureValue,
+                                })
                                     .then(handleResult)
                                     .catch(handleError);
                             }}
