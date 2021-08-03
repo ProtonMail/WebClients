@@ -1,8 +1,8 @@
 import { ReactNode, useEffect, useMemo, useCallback, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { c } from 'ttag';
 
-import { useLoading, LoaderPage, Icon, usePreventLeave, Bordered, useNotifications } from '@proton/components';
+import { useLoading, LoaderPage, Icon, usePreventLeave, useNotifications } from '@proton/components';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { getAppName } from '@proton/shared/lib/apps/helper';
@@ -24,8 +24,6 @@ const ERROR_CODE_COULD_NOT_IDENTIFY_TARGET = 2000;
 const DownloadSharedContainer = () => {
     const { clearDownloads } = useDownloadProvider();
     const [notFoundError, setNotFoundError] = useState<Error | undefined>();
-    /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
-    const [thumbnail, setThumbnail] = useState<string | undefined>();
     const [loading, withLoading] = useLoading(false);
     const [handshakeInfo, setHandshakeInfo] = useState<InitHandshake | null>();
     const [linkInfo, setLinkInfo] = useState<(SharedLinkInfo & { Password: string }) | null>();
@@ -53,24 +51,6 @@ const DownloadSharedContainer = () => {
                 setHandshakeInfo(null);
             });
     }, [token, password]);
-
-    useEffect(() => {
-        if (!linkInfo?.SessionKey || !linkInfo?.NodeKey || !linkInfo?.ThumbnailURL) {
-            return;
-        }
-
-        const { contents: contentsPromise } = downloadThumbnail(
-            linkInfo.SessionKey,
-            linkInfo.NodeKey,
-            linkInfo.ThumbnailURL
-        );
-        contentsPromise
-            .then((data) => {
-                const urlObject = URL.createObjectURL(new Blob(data, { type: 'image/jpeg' }));
-                setThumbnail(urlObject);
-            })
-            .catch(console.warn);
-    }, [linkInfo]);
 
     const getSharedLinkInfo = useCallback(
         async (password: string) => {
@@ -151,6 +131,20 @@ const DownloadSharedContainer = () => {
         }
     }, [getSharedLinkInfo, token, password, handshakeInfo]);
 
+    const downloadLinkThumbnail = useMemo(async () => {
+        if (!linkInfo?.SessionKey || !linkInfo?.NodeKey || !linkInfo?.ThumbnailURL) {
+            return null;
+        }
+
+        const { contents: contentsPromise } = downloadThumbnail(
+            linkInfo.SessionKey,
+            linkInfo.NodeKey,
+            linkInfo.ThumbnailURL
+        );
+        const data = await contentsPromise;
+        return URL.createObjectURL(new Blob(data, { type: 'image/jpeg' }));
+    }, [linkInfo]);
+
     if (loading) {
         return <LoaderPage />;
     }
@@ -163,7 +157,9 @@ const DownloadSharedContainer = () => {
             <DownloadSharedInfo
                 name={linkInfo.Name}
                 size={linkInfo.Size}
+                MIMEType={linkInfo.MIMEType}
                 expirationTime={linkInfo.ExpirationTime}
+                downloadThumbnail={downloadLinkThumbnail}
                 downloadFile={downloadFile}
             />
         );
@@ -174,9 +170,9 @@ const DownloadSharedContainer = () => {
     return (
         content && (
             <>
-                <div className="ui-standard flex flex-column flex-nowrap flex-item-noshrink flex-align-items-center scroll-if-needed h100v">
-                    <Bordered className="bg-norm color-norm flex flex-align-items-center flex-item-noshrink w100 max-w40e mbauto mtauto">
-                        <div className="flex flex-column flex-nowrap flex-align-items-center text-center p2 w100">
+                <div className="ui-standard flex flex-column flex-nowrap flex-item-noshrink flex-align-items-center scroll-if-needed h100v p1">
+                    <div className="bg-norm color-norm flex flex-align-items-center flex-item-noshrink w100 max-w37e mbauto mtauto bordered rounded">
+                        <div className="flex flex-column flex-nowrap flex-align-items-center text-center p2 pb0 w100">
                             <h3>
                                 <span className="flex flex-nowrap flex-align-items-center">
                                     <Icon name="protondrive" className="mr0-25" size={20} />
@@ -185,9 +181,14 @@ const DownloadSharedContainer = () => {
                             </h3>
                             {content}
                         </div>
-                    </Bordered>
-                    <div className="color-weak flex flex-item-noshrink flex-align-items-end on-mobile-pt1">
-                        <div className="text-center opacity-50 mb4">
+                        <div className="flex flex-justify-center w100 m1-5">
+                            <Link to="/" className="text-sm m0" title={c('Label').t`Get your own ProtonDrive`}>
+                                {c('Label').t`Get your own ProtonDrive`}
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="color-weak flex flex-item-noshrink flex-justify-self-end flex-align-items-end on-mobile-pt1">
+                        <div className="text-center opacity-50 mb0-5 mt0-5">
                             <a
                                 className="text-sm signup-footer-link"
                                 href={`mailto:${REPORT_ABUSE_EMAIL}`}
