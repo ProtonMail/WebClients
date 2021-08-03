@@ -110,19 +110,24 @@ describe('Mailbox element list', () => {
                 { ID: 'id4', Labels: [{ ID: labelID, ContextTime: 1 }], LabelIDs: [labelID], Size: 20, Order: 1 },
             ];
 
-            const correctOrder = (items: HTMLElement[]) => {
-                expect(items.length).toBe(4);
-                expect(items[0].getAttribute('data-element-id')).toBe(conversations[3].ID);
-                expect(items[1].getAttribute('data-element-id')).toBe(conversations[1].ID);
-                expect(items[2].getAttribute('data-element-id')).toBe(conversations[0].ID);
-                expect(items[3].getAttribute('data-element-id')).toBe(conversations[2].ID);
+            const expectOrder = (items: HTMLElement[], order: number[]) => {
+                expect(items.length).toBe(order.length);
+                for (const [i, pos] of order.entries()) {
+                    expect(items[i].getAttribute('data-element-id')).toBe(conversations[pos].ID);
+                }
             };
 
             const { rerender, getItems } = await setup({ conversations });
-            correctOrder(getItems());
+            expectOrder(getItems(), [2, 0, 1, 3]);
+
+            await rerender({ sort: { sort: 'Time', desc: false } });
+            expectOrder(getItems(), [3, 1, 0, 2]);
+
+            await rerender({ sort: { sort: 'Size', desc: true } });
+            expectOrder(getItems(), [0, 1, 2, 3]);
 
             await rerender({ sort: { sort: 'Size', desc: false } });
-            correctOrder(getItems());
+            expectOrder(getItems(), [0, 1, 2, 3]);
         });
     });
 
