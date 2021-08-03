@@ -1,7 +1,7 @@
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import { useCallback } from 'react';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
-import { getDecryptedAddressKeys } from '@proton/shared/lib/keys';
+import { getDecryptedAddressKeysHelper } from '@proton/shared/lib/keys';
 
 import useAuthentication from './useAuthentication';
 import useCache from './useCache';
@@ -25,13 +25,7 @@ export const useGetAddressKeysRaw = (): ((id: string) => Promise<DecryptedKey[]>
             if (!address) {
                 return [];
             }
-            return getDecryptedAddressKeys({
-                address,
-                addressKeys: address.Keys,
-                user,
-                userKeys,
-                keyPassword: authentication.getPassword(),
-            });
+            return getDecryptedAddressKeysHelper(address.Keys, user, userKeys, authentication.getPassword());
         },
         [getUser, getAddresses, getUserKeys]
     );

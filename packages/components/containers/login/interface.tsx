@@ -23,6 +23,7 @@ export interface AuthCacheResult {
     username: string;
     loginPassword: string;
     hasGenerateKeys: boolean;
+    keyMigrationFeatureValue: number;
     ignoreUnlock: boolean;
 }
 

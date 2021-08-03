@@ -53,6 +53,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             fallback={<LoaderPage />}
             hasPrivateMemberKeyGeneration
             hasReadableMemberKeyActivation
+            hasMemberKeyMigration
             app={getAppContainer}
         />
     );

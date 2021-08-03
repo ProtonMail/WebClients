@@ -1,4 +1,4 @@
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, hasAddressKeyMigration } from '../constants';
+import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../constants';
 import { Address, AddressKeyPayload, AddressKeyPayloadV2, EncryptionConfig } from '../interfaces';
 import { generateAddressKey, generateAddressKeyTokens } from './addressKeys';
 import { getSignedKeyList } from './signedKeyList';
@@ -108,8 +108,9 @@ export const getResetAddressesKeys = ({
     addresses = [],
     passphrase = '',
     encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
-}: Arguments) => {
-    if (hasAddressKeyMigration || getHasMigratedAddressKeys(addresses)) {
+    hasAddressKeyMigrationGeneration,
+}: Arguments & { hasAddressKeyMigrationGeneration: boolean }) => {
+    if (hasAddressKeyMigrationGeneration || getHasMigratedAddressKeys(addresses)) {
         return getResetAddressesKeysV2({ addresses, passphrase, encryptionConfig });
     }
     return getResetAddressesKeysLegacy({ addresses, passphrase, encryptionConfig });

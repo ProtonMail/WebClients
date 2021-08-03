@@ -1,32 +1,24 @@
 import { decryptPrivateKey } from 'pmcrypto';
 
 import isTruthy from '../helpers/isTruthy';
-import { Address, DecryptedKey, Key as tsKey, KeyPair, KeysPair, User } from '../interfaces';
+import { DecryptedKey, Key as tsKey, KeyPair, KeysPair, User } from '../interfaces';
 import { decryptMemberToken } from './memberToken';
 import { splitKeys } from './keys';
 import { getAddressKeyToken } from './addressKeys';
-import { MEMBER_PRIVATE } from '../constants';
 import { getDecryptedOrganizationKey } from './getDecryptedOrganizationKey';
 import { noop } from '../helpers/function';
 
-interface GetDecryptedAddressKeyArguments {
-    user: User;
-    userKeys: KeysPair;
-    keyPassword: string;
-    organizationKey?: KeyPair;
-}
-
 const getAddressKeyPassword = (
     { Activation, Token, Signature }: tsKey,
-    { user, userKeys, keyPassword, organizationKey }: GetDecryptedAddressKeyArguments
+    userKeys: KeysPair,
+    keyPassword: string,
+    organizationKey?: KeyPair
 ) => {
-    const { OrganizationPrivateKey, Private } = user;
-
-    if (!OrganizationPrivateKey && Private === MEMBER_PRIVATE.READABLE) {
-        // Since the activation process is asynchronous, allow the private key to get decrypted already here so that it can be used
-        if (Activation) {
-            return decryptMemberToken(Activation, userKeys.privateKeys, userKeys.publicKeys);
-        }
+    // If not decrypting the non-private member keys with the organization key, and
+    // because the activation process is asynchronous in the background, allow the
+    // private key to get decrypted already here so that it can be used
+    if (!organizationKey && Activation) {
+        return decryptMemberToken(Activation, userKeys.privateKeys, userKeys.publicKeys);
     }
 
     if (Token) {
@@ -39,13 +31,10 @@ const getAddressKeyPassword = (
         });
     }
 
-    return keyPassword;
+    return Promise.resolve(keyPassword);
 };
 
-const getDecryptedAddressKey = async (addressKey: tsKey, options: GetDecryptedAddressKeyArguments) => {
-    const { ID, PrivateKey } = addressKey;
-
-    const addressKeyPassword = await getAddressKeyPassword(addressKey, options);
+const getDecryptedAddressKey = async ({ ID, PrivateKey }: tsKey, addressKeyPassword: string) => {
     const privateKey = await decryptPrivateKey(PrivateKey, addressKeyPassword);
     return {
         ID,
@@ -54,40 +43,23 @@ const getDecryptedAddressKey = async (addressKey: tsKey, options: GetDecryptedAd
     };
 };
 
-interface Args {
-    address: Address;
-    user: User;
-    userKeys: KeyPair[];
-    keyPassword: string;
-    addressKeys: tsKey[];
-}
-
-export const getDecryptedAddressKeys = async ({
-    addressKeys = [],
-    user,
-    userKeys = [],
-    keyPassword,
-}: Args): Promise<DecryptedKey[]> => {
+export const getDecryptedAddressKeys = async (
+    addressKeys: tsKey[] = [],
+    userKeys: KeyPair[] = [],
+    keyPassword: string,
+    organizationKey?: KeyPair
+): Promise<DecryptedKey[]> => {
     if (!addressKeys.length || !userKeys.length) {
         return [];
     }
-
-    const { OrganizationPrivateKey } = user;
-
-    const organizationKey = OrganizationPrivateKey
-        ? await getDecryptedOrganizationKey(OrganizationPrivateKey, keyPassword).catch(noop)
-        : undefined;
 
     const userKeysPair = splitKeys(userKeys);
 
     const [primaryKey, ...restKeys] = addressKeys;
 
-    const primaryKeyResult = await getDecryptedAddressKey(primaryKey, {
-        userKeys: userKeysPair,
-        keyPassword,
-        organizationKey,
-        user,
-    }).catch(noop);
+    const primaryKeyResult = await getAddressKeyPassword(primaryKey, userKeysPair, keyPassword, organizationKey)
+        .then((password) => getDecryptedAddressKey(primaryKey, password))
+        .catch(noop);
 
     // In case the primary key fails to decrypt, something is broken, so don't even try to decrypt the rest of the keys.
     if (!primaryKeyResult) {
@@ -96,14 +68,33 @@ export const getDecryptedAddressKeys = async ({
 
     const restKeyResults = await Promise.all(
         restKeys.map((restKey) => {
-            return getDecryptedAddressKey(restKey, {
-                userKeys: userKeysPair,
-                keyPassword,
-                organizationKey,
-                user,
-            }).catch(noop);
+            return getAddressKeyPassword(restKey, userKeysPair, keyPassword, organizationKey)
+                .then((password) => getDecryptedAddressKey(restKey, password))
+                .catch(noop);
         })
     );
 
     return [primaryKeyResult, ...restKeyResults].filter(isTruthy);
+};
+export const getDecryptedAddressKeysHelper = async (
+    addressKeys: tsKey[] = [],
+    user: User,
+    userKeys: KeyPair[] = [],
+    keyPassword: string
+): Promise<DecryptedKey[]> => {
+    if (!user.OrganizationPrivateKey) {
+        return getDecryptedAddressKeys(addressKeys, userKeys, keyPassword);
+    }
+
+    const { OrganizationPrivateKey } = user;
+
+    const organizationKey = OrganizationPrivateKey
+        ? await getDecryptedOrganizationKey(OrganizationPrivateKey, keyPassword).catch(noop)
+        : undefined;
+    // When signed into a non-private member, if the organization key can't be decrypted, the rest
+    // of the keys won't be able to get decrypted
+    if (!organizationKey) {
+        return [];
+    }
+    return getDecryptedAddressKeys(addressKeys, userKeys, keyPassword, organizationKey);
 };

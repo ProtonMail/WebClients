@@ -1,9 +1,9 @@
 import { User as tsUser, Key as tsKey, Address as tsAddress, DecryptedKey } from '../../lib/interfaces';
 import {
-    getDecryptedUserKeys,
-    getDecryptedAddressKeys,
     reactivateKeysProcess,
     KeyReactivationRecord,
+    getDecryptedUserKeysHelper,
+    getDecryptedAddressKeysHelper,
 } from '../../lib/keys';
 import { getLegacyAddressKey, getUserKey } from './keyDataHelper';
 
@@ -24,13 +24,13 @@ const getSetup1 = async () => {
         getUserKey('3', oldKeyPassword),
     ]);
     const UserKeys = userKeysFull.map(({ Key }) => Key);
-    const User = ({
+    const User = {
         Keys: UserKeys,
-    } as unknown) as tsUser;
+    } as unknown as tsUser;
     const address1 = 'test@test.com';
     const address2 = 'test2@test.com';
     const address3 = 'test3@test.com';
-    const userKeys = await getDecryptedUserKeys({ user: User, userKeys: UserKeys, keyPassword });
+    const userKeys = await getDecryptedUserKeysHelper(User, keyPassword);
     const addressKeys1Full = await Promise.all([
         getLegacyAddressKey('a', keyPassword, address1),
         getLegacyAddressKey('b', oldKeyPassword, address1),
@@ -47,7 +47,7 @@ const getSetup1 = async () => {
         getLegacyAddressKey('c2', oldKeyPassword, address3),
     ]);
     const AddressKeys3 = addressKeys3Full.map(({ Key }) => Key);
-    const Addresses = ([
+    const Addresses = [
         {
             ID: 'my-address-1',
             Email: address1,
@@ -63,7 +63,7 @@ const getSetup1 = async () => {
             Email: address3,
             Keys: AddressKeys3,
         },
-    ] as unknown) as tsAddress[];
+    ] as unknown as tsAddress[];
     const keyReactivationRecords: KeyReactivationRecord[] = await Promise.all(
         [
             {
@@ -87,13 +87,7 @@ const getSetup1 = async () => {
                 ...r,
                 keysToReactivate: r.keysToReactivate.map(getKeyToReactivate),
                 keys: r.address
-                    ? await getDecryptedAddressKeys({
-                          address: r.address,
-                          addressKeys: r.address.Keys,
-                          user: User,
-                          userKeys,
-                          keyPassword,
-                      })
+                    ? await getDecryptedAddressKeysHelper(r.address.Keys, User, userKeys, keyPassword)
                     : userKeys,
             };
         })

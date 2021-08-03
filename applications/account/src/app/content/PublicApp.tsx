@@ -10,7 +10,7 @@ import { APPS, SSO_PATHS, UNPAID_STATE, isSSOMode, APPS_CONFIGURATION } from '@p
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
-import { ModalsChildren, SSOForkProducer, useApi, useClearPaidCookie } from '@proton/components';
+import { FeaturesProvider, ModalsChildren, SSOForkProducer, useApi, useClearPaidCookie } from '@proton/components';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
@@ -223,44 +223,46 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                         onLogin={handleLogin}
                         onActiveSessions={handleActiveSessions}
                     >
-                        <ForceRefreshContext.Provider value={refresh}>
-                            <Layout toApp={toApp}>
-                                <Switch location={location}>
-                                    <Route path={SSO_PATHS.SWITCH}>
-                                        <SwitchAccountContainer
-                                            activeSessions={activeSessions}
-                                            toApp={toApp}
-                                            onLogin={handleLogin}
-                                            onSignOut={handleSignOut}
-                                            onSignOutAll={handleSignOutAll}
-                                            onAddAccount={handleAddAccount}
-                                        />
-                                    </Route>
-                                    <Route path={SSO_PATHS.SIGNUP}>
-                                        <SignupContainer
-                                            toApp={toApp}
-                                            onLogin={handleLogin}
-                                            onBack={hasBackToSwitch ? () => history.push('/login') : undefined}
-                                            signupParameters={signupSearchParams}
-                                        />
-                                    </Route>
-                                    <Route path={SSO_PATHS.RESET_PASSWORD}>
-                                        <ResetPasswordContainer onLogin={handleLogin} />
-                                    </Route>
-                                    <Route path={SSO_PATHS.FORGOT_USERNAME}>
-                                        <ForgotUsernameContainer />
-                                    </Route>
-                                    <Route path={SSO_PATHS.LOGIN}>
-                                        <LoginContainer
-                                            toApp={toApp}
-                                            onLogin={handleLogin}
-                                            onBack={hasBackToSwitch ? () => history.push('/switch') : undefined}
-                                        />
-                                    </Route>
-                                    <Redirect to={SSO_PATHS.LOGIN} />
-                                </Switch>
-                            </Layout>
-                        </ForceRefreshContext.Provider>
+                        <FeaturesProvider>
+                            <ForceRefreshContext.Provider value={refresh}>
+                                <Layout toApp={toApp}>
+                                    <Switch location={location}>
+                                        <Route path={SSO_PATHS.SWITCH}>
+                                            <SwitchAccountContainer
+                                                activeSessions={activeSessions}
+                                                toApp={toApp}
+                                                onLogin={handleLogin}
+                                                onSignOut={handleSignOut}
+                                                onSignOutAll={handleSignOutAll}
+                                                onAddAccount={handleAddAccount}
+                                            />
+                                        </Route>
+                                        <Route path={SSO_PATHS.SIGNUP}>
+                                            <SignupContainer
+                                                toApp={toApp}
+                                                onLogin={handleLogin}
+                                                onBack={hasBackToSwitch ? () => history.push('/login') : undefined}
+                                                signupParameters={signupSearchParams}
+                                            />
+                                        </Route>
+                                        <Route path={SSO_PATHS.RESET_PASSWORD}>
+                                            <ResetPasswordContainer onLogin={handleLogin} />
+                                        </Route>
+                                        <Route path={SSO_PATHS.FORGOT_USERNAME}>
+                                            <ForgotUsernameContainer />
+                                        </Route>
+                                        <Route path={SSO_PATHS.LOGIN}>
+                                            <LoginContainer
+                                                toApp={toApp}
+                                                onLogin={handleLogin}
+                                                onBack={hasBackToSwitch ? () => history.push('/switch') : undefined}
+                                            />
+                                        </Route>
+                                        <Redirect to={SSO_PATHS.LOGIN} />
+                                    </Switch>
+                                </Layout>
+                            </ForceRefreshContext.Provider>
+                        </FeaturesProvider>
                     </AccountPublicApp>
                 </Route>
             </Switch>

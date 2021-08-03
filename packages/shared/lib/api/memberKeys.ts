@@ -71,3 +71,21 @@ export const createMemberKeyRoute = ({ MemberID, ...data }: CreateMemberKeyPaylo
     method: 'post',
     data,
 });
+
+export interface MigrateMemberAddressKeyPayload {
+    ID: string;
+    Token: string;
+    Signature: string;
+    OrgSignature: string;
+    PrivateKey: string;
+}
+interface MigrateMemberAddressKeysPayload {
+    MemberID: string;
+    AddressKeys: MigrateMemberAddressKeyPayload[];
+    SignedKeyLists: { [key: string]: SignedKeyList };
+}
+export const migrateMembersAddressKeysRoute = ({ MemberID, ...data }: MigrateMemberAddressKeysPayload) => ({
+    url: `members/${MemberID}/keys/migrate`,
+    method: 'post',
+    data,
+});

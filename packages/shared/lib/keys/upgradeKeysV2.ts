@@ -12,14 +12,14 @@ import {
     SignedKeyList,
 } from '../interfaces';
 import { getOrganizationKeys } from '../api/organization';
-import { hasAddressKeyMigration as originalHasAdressKeyMigration, USER_ROLES } from '../constants';
+import { USER_ROLES } from '../constants';
 import { srpVerify } from '../srp';
 import { generateAddressKeyTokens, reformatAddressKey } from './addressKeys';
 import { getCachedOrganizationKey } from './getDecryptedOrganizationKey';
 import { reformatOrganizationKey } from './organizationKeys';
 import { UpgradeAddressKeyPayload, upgradeKeysRoute } from '../api/keys';
-import { getDecryptedUserKeys } from './getDecryptedUserKeys';
-import { getDecryptedAddressKeys } from './getDecryptedAddressKeys';
+import { getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
+import { getDecryptedAddressKeysHelper } from './getDecryptedAddressKeys';
 import { toMap } from '../helpers/object';
 import { USER_KEY_USERID } from './userKeys';
 import { getActiveKeys } from './getActiveKeys';
@@ -222,7 +222,7 @@ interface UpgradeV2KeysHelperArgs {
     keyPassword: string;
     api: Api;
     isOnePasswordMode?: boolean;
-    hasAddressKeyMigration?: boolean;
+    hasAddressKeyMigration: boolean;
 }
 
 export const upgradeV2KeysHelper = async ({
@@ -233,21 +233,15 @@ export const upgradeV2KeysHelper = async ({
     keyPassword,
     isOnePasswordMode,
     api,
-    hasAddressKeyMigration = originalHasAdressKeyMigration,
+    hasAddressKeyMigration,
 }: UpgradeV2KeysHelperArgs) => {
-    const userKeys = await getDecryptedUserKeys({ user, userKeys: user.Keys, keyPassword });
+    const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);
 
     const addressesKeys = await Promise.all(
         addresses.map(async (address) => {
             return {
                 address,
-                keys: await getDecryptedAddressKeys({
-                    user,
-                    userKeys,
-                    address,
-                    addressKeys: address.Keys,
-                    keyPassword,
-                }),
+                keys: await getDecryptedAddressKeysHelper(address.Keys, user, userKeys, keyPassword),
             };
         })
     );

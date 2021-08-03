@@ -28,9 +28,15 @@ interface SetupAddressKeysArgs {
     password: string;
     api: Api;
     username: string;
+    hasAddressKeyMigrationGeneration: boolean;
 }
 
-export const handleSetupAddressKeys = async ({ username, password, api }: SetupAddressKeysArgs) => {
+export const handleSetupAddressKeys = async ({
+    username,
+    password,
+    api,
+    hasAddressKeyMigrationGeneration,
+}: SetupAddressKeysArgs) => {
     const [availableAddresses, availableDomains] = await Promise.all([
         api<{ Addresses: Address[] }>(queryAddresses()).then(({ Addresses }) => Addresses),
         api<{ Domains: string[] }>(queryAvailableDomains()).then(({ Domains }) => Domains),
@@ -41,5 +47,5 @@ export const handleSetupAddressKeys = async ({ username, password, api }: SetupA
             ? availableAddresses
             : await handleSetupAddress({ api, domains: availableDomains, username });
 
-    return handleSetupKeys({ api, addresses: addressesToUse, password });
+    return handleSetupKeys({ api, addresses: addressesToUse, password, hasAddressKeyMigrationGeneration });
 };

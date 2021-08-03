@@ -187,6 +187,9 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
                     </>
                 ),
                 async onSubmit() {
+                    if (!currentMemberID) {
+                        throw new Error('Missing member id');
+                    }
                     await api(updateQuota(currentMemberID, +model.storage));
 
                     if (hasPaidVpn) {
@@ -221,6 +224,9 @@ const SetupOrganizationModal = ({ onClose = () => undefined, ...rest }: Props) =
                     </>
                 ),
                 async onSubmit() {
+                    if (!currentMemberID) {
+                        throw new Error('Missing member id');
+                    }
                     await api(updateVPN(currentMemberID, +model.vpn));
                     await call();
 
