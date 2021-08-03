@@ -10,11 +10,7 @@ import {
     MainLogo,
     TopNavbarListItemSettingsDropdown,
     TopNavbarListItemContactsDropdown,
-    TopNavbarListItemFeedbackButton,
-    FeedbackModal,
     Icon,
-    useFeature,
-    FeatureCode,
 } from '@proton/components';
 import { MAILBOX_LABEL_IDS, APPS } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces';
@@ -52,7 +48,6 @@ const MailHeader = ({
     const oldLabelIDRef = useRef<string>(MAILBOX_LABEL_IDS.INBOX);
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
-    const { feature: featureMailFeedbackEnabled } = useFeature(FeatureCode.MailFeedbackEnabled);
     const { cacheIndexedDB } = useEncryptedSearchContext();
 
     const onCompose = useOnCompose();
@@ -99,24 +94,6 @@ const MailHeader = ({
             title={labelName}
             settingsButton={<TopNavbarListItemSettingsDropdown to="/mail" toApp={APPS.PROTONACCOUNT} />}
             contactsButton={<TopNavbarListItemContactsDropdown onCompose={handleContactsCompose} onMailTo={onMailTo} />}
-            feedbackButton={
-                featureMailFeedbackEnabled?.Value ? (
-                    <TopNavbarListItemFeedbackButton
-                        modal={
-                            <FeedbackModal
-                                feedbackType="v4_migration"
-                                description={c('Info')
-                                    .t`Proton has received a facelift. We would love to hear what you think about it!`}
-                                scaleTitle={c('Label').t`How would you rate your experience with the new ProtonMail?`}
-                                scaleProps={{
-                                    fromLabel: c('Label').t`0 - Not a fan`,
-                                    toLabel: c('Label').t`10 - Love it!`,
-                                }}
-                            />
-                        }
-                    />
-                ) : null
-            }
             searchBox={searchBox}
             searchDropdown={searchDropdown}
             expanded={!!expanded}
