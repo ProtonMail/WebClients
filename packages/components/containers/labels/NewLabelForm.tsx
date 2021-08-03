@@ -105,6 +105,7 @@ function NewLabelForm({ label: labelOrFolder, onChangeColor, onChangeName, onCha
                         }
                         required
                         data-test-id="label/folder-modal:name"
+                        autoFocus
                     />
                 </Field>
             </Row>
