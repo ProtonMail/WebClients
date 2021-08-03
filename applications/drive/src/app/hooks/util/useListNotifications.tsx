@@ -73,7 +73,7 @@ const useListNotifications = () => {
             toDelete.map((item) => item.Type),
             notificationMessages
         );
-        createNotification({ text: notificationText });
+        createNotification({ text: <span className="text-pre-wrap">{notificationText}</span> });
     };
 
     const createTrashLinksNotifications = (toTrash: FileBrowserItem[], trashedIds: string[], undoAction: () => any) => {
@@ -120,7 +120,7 @@ const useListNotifications = () => {
         );
         createNotification({
             type: 'success',
-            text: movedToTrashText,
+            text: <span className="text-pre-wrap">{movedToTrashText}</span>,
         });
     };
 
@@ -171,7 +171,7 @@ const useListNotifications = () => {
                 toRestore.map((item) => item.Type),
                 notificationMessages
             );
-            createNotification({ text: notificationText, type: 'success' });
+            createNotification({ text: <span className="text-pre-wrap">{notificationText}</span>, type: 'success' });
         }
 
         alreadyExisting.forEach((linkId) => {
@@ -240,7 +240,7 @@ const useListNotifications = () => {
 
             createNotification({
                 type: 'success',
-                text: notificationMessage,
+                text: <span className="text-pre-wrap">{notificationMessage}</span>,
             });
         }
 
@@ -283,7 +283,7 @@ const useListNotifications = () => {
         );
         createNotification({
             type: 'error',
-            text: notificationMessage,
+            text: <span className="text-pre-wrap">{notificationMessage}</span>,
         });
     };
 
