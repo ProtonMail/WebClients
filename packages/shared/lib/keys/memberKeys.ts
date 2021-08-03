@@ -16,7 +16,6 @@ import { srpVerify } from '../srp';
 import { createMemberKeyRoute, setupMemberKeyRoute } from '../api/memberKeys';
 import { generateMemberAddressKey } from './organizationKeys';
 import { generateUserKey } from './userKeys';
-import { hasAddressKeyMigration } from '../constants';
 import { getHasMigratedAddressKeys } from './keyMigration';
 
 export const getDecryptedMemberKey = async ({ Token, PrivateKey }: tsKey, organizationKey: OpenPGPKey) => {
@@ -163,7 +162,7 @@ interface SetupMemberKeyArguments extends SetupMemberKeySharedArgumentsS {
     ownerAddresses: tsAddress[];
 }
 export const setupMemberKey = async ({ ownerAddresses, ...rest }: SetupMemberKeyArguments) => {
-    if (hasAddressKeyMigration || getHasMigratedAddressKeys(ownerAddresses)) {
+    if (getHasMigratedAddressKeys(ownerAddresses)) {
         return setupMemberKeyV2(rest);
     }
     return setupMemberKeyLegacy(rest);

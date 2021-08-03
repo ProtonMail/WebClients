@@ -24,23 +24,16 @@ const getDecryptedUserKey = async (Key: tsKey, keyPassword: string, organization
     };
 };
 
-interface Args {
-    user: User;
-    userKeys: tsKey[];
-    keyPassword: string;
-}
-
-export const getDecryptedUserKeys = async ({ user, userKeys = [], keyPassword }: Args): Promise<DecryptedKey[]> => {
+export const getDecryptedUserKeys = async (
+    userKeys: tsKey[] = [],
+    keyPassword: string,
+    organizationKey?: KeyPair
+): Promise<DecryptedKey[]> => {
     if (userKeys.length === 0) {
         return [];
     }
 
-    const { OrganizationPrivateKey } = user;
-
-    const organizationKey = OrganizationPrivateKey
-        ? await getDecryptedOrganizationKey(OrganizationPrivateKey, keyPassword).catch(noop)
-        : undefined;
-
+    // Attempts to first decrypt the primary key. If this fails, there's no reason to continue with the rest because something is broken.
     const [primaryKey, ...restKeys] = userKeys;
     const primaryKeyResult = await getDecryptedUserKey(primaryKey, keyPassword, organizationKey).catch(noop);
     if (!primaryKeyResult) {
@@ -51,4 +44,17 @@ export const getDecryptedUserKeys = async ({ user, userKeys = [], keyPassword }:
         restKeys.map((restKey) => getDecryptedUserKey(restKey, keyPassword, organizationKey).catch(noop))
     );
     return [primaryKeyResult, ...restKeysResult].filter(isTruthy);
+};
+
+export const getDecryptedUserKeysHelper = async (user: User, keyPassword: string): Promise<DecryptedKey[]> => {
+    if (!user.OrganizationPrivateKey) {
+        return getDecryptedUserKeys(user.Keys, keyPassword);
+    }
+    const organizationKey = user.OrganizationPrivateKey
+        ? await getDecryptedOrganizationKey(user.OrganizationPrivateKey, keyPassword).catch(noop)
+        : undefined;
+    if (!organizationKey) {
+        return [];
+    }
+    return getDecryptedUserKeys(user.Keys, keyPassword, organizationKey);
 };

@@ -3,6 +3,7 @@ import {
     Api,
     KeySalt as tsKeySalt,
     Member as tsMember,
+    OrganizationKey,
     User as tsUser,
 } from '@proton/shared/lib/interfaces';
 import { AUTH_VERSION } from '@proton/srp';
@@ -11,7 +12,7 @@ import { srpVerify } from '@proton/shared/lib/srp';
 import { upgradePassword } from '@proton/shared/lib/api/settings';
 import { auth2FA, getInfo, revoke } from '@proton/shared/lib/api/auth';
 import { getUser } from '@proton/shared/lib/api/user';
-import { getKeySalts } from '@proton/shared/lib/api/keys';
+import { getKeySalts, migrateAddressKeysRoute } from '@proton/shared/lib/api/keys';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { InfoResponse } from '@proton/shared/lib/authentication/interface';
 import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallback';
@@ -22,10 +23,13 @@ import { MEMBER_PRIVATE, USER_ROLES } from '@proton/shared/lib/constants';
 import { queryAddresses } from '@proton/shared/lib/api/addresses';
 import { getHasV2KeysToUpgrade, upgradeV2KeysHelper } from '@proton/shared/lib/keys/upgradeKeysV2';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
+import { getOrganizationKeys } from '@proton/shared/lib/api/organization';
 import { getMember } from '@proton/shared/lib/api/members';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys/setupAddressKeys';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { migrateMembersAddressKeysRoute } from '@proton/shared/lib/api/memberKeys';
+import { getHasKeyMigrationRunner, getHasMigratedAddressKeys, migrateAddressKeys } from '@proton/shared/lib/keys';
 
 import { getAuthTypes, handleUnlockKey } from './loginHelper';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
@@ -82,6 +86,95 @@ const finalizeLogin = async ({
     };
 };
 
+const handleKeyMigration = async ({
+    cache,
+    loginPassword,
+    keyPassword,
+    user: maybeUser,
+    addresses: maybeAddresess,
+}: {
+    cache: AuthCacheResult;
+    loginPassword: string;
+    keyPassword?: string;
+    user?: tsUser;
+    addresses?: tsAddress[];
+}) => {
+    const { authApi, hasGenerateKeys, keyMigrationFeatureValue } = cache;
+
+    const [User, Addresses] = await Promise.all([
+        maybeUser || authApi<{ User: tsUser }>(getUser()).then(({ User }) => User),
+        maybeAddresess || hasGenerateKeys
+            ? authApi<{ Addresses: tsAddress[] }>(queryAddresses()).then(({ Addresses }) => Addresses)
+            : undefined,
+    ]);
+
+    if (
+        User.ToMigrate === 1 &&
+        getHasKeyMigrationRunner(keyMigrationFeatureValue) &&
+        // Non-private members are not migrated during sign-in.
+        !(User.Private === MEMBER_PRIVATE.READABLE && User.Role === USER_ROLES.MEMBER_ROLE) &&
+        keyPassword &&
+        Addresses &&
+        !getHasMigratedAddressKeys(Addresses)
+    ) {
+        if (User.Private === MEMBER_PRIVATE.READABLE && User.Role === USER_ROLES.ADMIN_ROLE) {
+            const [selfMember, organizationKey] = await Promise.all([
+                authApi<{ Member: tsMember }>(getMember('me')).then(({ Member }) => Member),
+                authApi<OrganizationKey>(getOrganizationKeys()),
+            ]);
+            const payload = await migrateAddressKeys({
+                user: User,
+                organizationKey,
+                addresses: Addresses,
+                keyPassword,
+            }).catch((e) => {
+                traceError(e);
+                return undefined;
+            });
+            if (payload) {
+                await authApi({
+                    ...migrateMembersAddressKeysRoute({ MemberID: selfMember.ID, ...payload }),
+                    timeout: 60000,
+                }).catch(noop);
+                return finalizeLogin({
+                    cache,
+                    loginPassword,
+                    keyPassword,
+                    user: undefined,
+                    addresses: undefined,
+                });
+            }
+        } else {
+            const payload = await migrateAddressKeys({
+                user: User,
+                addresses: Addresses,
+                keyPassword,
+            }).catch((e) => {
+                traceError(e);
+                return undefined;
+            });
+            if (payload) {
+                await authApi({ ...migrateAddressKeysRoute(payload), timeout: 60000 }).catch(noop);
+                return finalizeLogin({
+                    cache,
+                    loginPassword,
+                    keyPassword,
+                    user: undefined,
+                    addresses: undefined,
+                });
+            }
+        }
+    }
+
+    return finalizeLogin({
+        cache,
+        loginPassword,
+        keyPassword,
+        user: User,
+        addresses: Addresses,
+    });
+};
+
 const handleKeyUpgrade = async ({
     cache,
     loginPassword,
@@ -98,7 +191,7 @@ const handleKeyUpgrade = async ({
     addresses?: tsAddress;
     isOnePasswordMode?: boolean;
 }) => {
-    const { authApi, hasGenerateKeys } = cache;
+    const { authApi, hasGenerateKeys, keyMigrationFeatureValue } = cache;
 
     const [User, Addresses] = await Promise.all([
         maybeUser || authApi<{ User: tsUser }>(getUser()).then(({ User }) => User),
@@ -115,13 +208,14 @@ const handleKeyUpgrade = async ({
             keyPassword,
             clearKeyPassword,
             isOnePasswordMode,
+            hasAddressKeyMigration: User.ToMigrate === 1 && getHasKeyMigrationRunner(keyMigrationFeatureValue),
             api: authApi,
         }).catch((e) => {
             traceError(e);
             return undefined;
         });
         if (newKeyPassword !== undefined) {
-            return finalizeLogin({
+            return handleKeyMigration({
                 cache,
                 loginPassword,
                 keyPassword: newKeyPassword,
@@ -132,7 +226,7 @@ const handleKeyUpgrade = async ({
         }
     }
 
-    return finalizeLogin({
+    return handleKeyMigration({
         cache,
         loginPassword,
         keyPassword,
@@ -184,11 +278,16 @@ export const handleUnlock = async ({
  * Setup keys and address for users that have not setup.
  */
 export const handleSetupPassword = async ({ cache, newPassword }: { cache: AuthCacheResult; newPassword: string }) => {
-    const { authApi, username } = cache;
+    const { userSaltResult, authApi, username, keyMigrationFeatureValue } = cache;
+    if (!userSaltResult) {
+        throw new Error('Invalid state');
+    }
+    const [User] = userSaltResult;
     const keyPassword = await handleSetupAddressKeys({
         api: authApi,
         username,
         password: newPassword,
+        hasAddressKeyMigrationGeneration: User.ToMigrate === 1 && getHasKeyMigrationRunner(keyMigrationFeatureValue),
     });
 
     return finalizeLogin({
@@ -296,6 +395,7 @@ export const handleLogin = async ({
     api,
     ignoreUnlock,
     hasGenerateKeys,
+    keyMigrationFeatureValue,
     payload,
 }: {
     username: string;
@@ -303,6 +403,7 @@ export const handleLogin = async ({
     api: Api;
     ignoreUnlock: boolean;
     hasGenerateKeys: boolean;
+    keyMigrationFeatureValue: number;
     payload?: ChallengeResult;
 }): Promise<AuthActionResponse> => {
     const infoResult = await api<InfoResponse>(getInfo(username));
@@ -325,6 +426,7 @@ export const handleLogin = async ({
         loginPassword: password,
         ignoreUnlock,
         hasGenerateKeys,
+        keyMigrationFeatureValue,
     };
 
     return next({ cache, from: AuthStep.LOGIN });

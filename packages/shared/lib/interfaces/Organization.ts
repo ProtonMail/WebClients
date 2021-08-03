@@ -5,6 +5,7 @@ export interface Organization {
     VPNPlanName: string;
     TwoFactorGracePeriod: number; // If non-null, number of seconds until 2FA setup enforced
     Theme: string;
+    ToMigrate: 0 | 1;
     Email: string;
     MaxDomains: number;
     MaxAddresses: number;

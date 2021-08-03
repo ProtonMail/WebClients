@@ -27,18 +27,20 @@ import { queryAddresses } from '@proton/shared/lib/api/addresses';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { updateLocale } from '@proton/shared/lib/api/settings';
 import { noop } from '@proton/shared/lib/helpers/function';
-import { handleSetupAddress, handleSetupKeys } from '@proton/shared/lib/keys';
+import { getHasKeyMigrationGeneration, handleSetupAddress, handleSetupKeys } from '@proton/shared/lib/keys';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { getUser } from '@proton/shared/lib/api/user';
 import {
     Alert,
     Button,
     ChallengeResult,
+    FeatureCode,
     HumanVerificationForm,
     OnLoginCallback,
     Payment as PaymentComponent,
     PlanSelection,
     SubscriptionCheckout,
+    useFeature,
     useApi,
     useConfig,
     useLoading,
@@ -196,6 +198,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
     const [myLocation] = useMyLocation();
     const [loading, withLoading] = useLoading();
     const [vpnCountries] = useVPNCountriesCount();
+    const keyMigrationFeature = useFeature(FeatureCode.KeyMigration);
 
     const cacheRef = useRef<CacheRef>({});
     const [humanApi] = useState(() => createHumanApi({ api, createModal }));
@@ -274,6 +277,11 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
             cycle,
         } = model;
 
+        const keyMigrationFeatureValue = await keyMigrationFeature
+            .get<number>()
+            .then(({ Value }) => Value)
+            .catch(() => 0);
+
         if (isBuyingPaidPlan && method === PAYMENT_METHOD_TYPES.CARD) {
             const { Payment } = await getCardPayment({
                 currency,
@@ -344,6 +352,7 @@ const SignupContainer = ({ toApp, onLogin, onBack, signupParameters }: Props) =>
                       api: authApi.api,
                       addresses,
                       password,
+                      hasAddressKeyMigrationGeneration: getHasKeyMigrationGeneration(keyMigrationFeatureValue),
                   })
                 : undefined;
 

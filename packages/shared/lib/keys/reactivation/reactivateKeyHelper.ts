@@ -2,7 +2,7 @@ import { User as tsUser, Address as tsAddress, KeyPair, SignedKeyList, Decrypted
 
 import { unique } from '../../helpers/array';
 
-import { getDecryptedAddressKeys } from '../getDecryptedAddressKeys';
+import { getDecryptedAddressKeysHelper } from '../getDecryptedAddressKeys';
 import { getSignedKeyList } from '../signedKeyList';
 import { getActiveKeys, getReactivatedKeyFlag } from '../getActiveKeys';
 
@@ -38,26 +38,14 @@ export const getReactivatedAddressKeys = async ({
         reactivatedKeys: undefined,
         signedKeyList: undefined,
     } as const;
-    const sharedArgs = {
-        user,
-        address,
-        addressKeys: address.Keys,
-        keyPassword,
-    };
 
-    const oldDecryptedAddressKeys = await getDecryptedAddressKeys({
-        ...sharedArgs,
-        userKeys: oldUserKeys,
-    });
+    const oldDecryptedAddressKeys = await getDecryptedAddressKeysHelper(address.Keys, user, oldUserKeys, keyPassword);
 
     // All keys were able to decrypt previously, can just return.
     if (oldDecryptedAddressKeys.length === address.Keys.length) {
         return empty;
     }
-    const newDecryptedAddressKeys = await getDecryptedAddressKeys({
-        ...sharedArgs,
-        userKeys: newUserKeys,
-    });
+    const newDecryptedAddressKeys = await getDecryptedAddressKeysHelper(address.Keys, user, newUserKeys, keyPassword);
 
     // No difference in how many keys were able to get decrypted
     if (oldDecryptedAddressKeys.length === newDecryptedAddressKeys.length) {

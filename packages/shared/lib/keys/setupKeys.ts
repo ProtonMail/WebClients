@@ -2,27 +2,26 @@ import { srpVerify } from '../srp';
 import { setupKeys } from '../api/keys';
 import { Api, Address } from '../interfaces';
 import { generateKeySaltAndPassphrase } from './keys';
-import { getResetAddressesKeys, getResetAddressesKeysV2 } from './resetKeys';
-import { hasAddressKeyMigration } from '../constants';
+import { getResetAddressesKeys } from './resetKeys';
 
 interface Args {
     api: Api;
     addresses: Address[];
     password: string;
+    hasAddressKeyMigrationGeneration: boolean;
 }
 
-export const handleSetupKeys = async ({ api, addresses, password }: Args) => {
+export const handleSetupKeys = async ({ api, addresses, password, hasAddressKeyMigrationGeneration }: Args) => {
     if (!addresses.length) {
         throw new Error('An address is required to setup keys');
     }
     const { passphrase, salt } = await generateKeySaltAndPassphrase(password);
 
-    const { userKeyPayload, addressKeysPayload } = hasAddressKeyMigration
-        ? await getResetAddressesKeysV2({
-              addresses,
-              passphrase,
-          })
-        : await getResetAddressesKeys({ addresses, passphrase });
+    const { userKeyPayload, addressKeysPayload } = await getResetAddressesKeys({
+        addresses,
+        passphrase,
+        hasAddressKeyMigrationGeneration,
+    });
 
     if (!userKeyPayload || !addressKeysPayload) {
         throw new Error('Invalid setup');

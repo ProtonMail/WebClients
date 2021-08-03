@@ -70,7 +70,7 @@ interface ActivateKeyPayloadV2 extends ActivateKeyPayload {
 }
 
 export const activateKeyRouteV2 = ({ ID, ...data }: ActivateKeyPayloadV2) => ({
-    url: `keys/address/${ID}/activate`,
+    url: `keys/address/${ID}`,
     method: 'put',
     data,
 });
@@ -215,6 +215,24 @@ interface UpgradeKeysPayloadV2 {
 
 export const upgradeKeysRoute = (data: UpgradeKeysPayload | UpgradeKeysPayloadV2) => ({
     url: 'keys/private/upgrade',
+    method: 'post',
+    data,
+});
+
+export interface MigrateAddressKeyPayload {
+    ID: string;
+    Token: string;
+    Signature: string;
+    PrivateKey: string;
+}
+
+export interface MigrateAddressKeysPayload {
+    AddressKeys: MigrateAddressKeyPayload[];
+    SignedKeyLists: { [key: string]: SignedKeyList };
+}
+
+export const migrateAddressKeysRoute = (data: MigrateAddressKeysPayload) => ({
+    url: 'keys/migrate',
     method: 'post',
     data,
 });

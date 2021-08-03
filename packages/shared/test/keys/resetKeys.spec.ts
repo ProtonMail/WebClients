@@ -9,6 +9,7 @@ describe('reset keys v1', () => {
             addresses: [],
             passphrase: '',
             encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.X25519],
+            hasAddressKeyMigrationGeneration: false,
         });
         expect(result).toEqual({
             userKeyPayload: undefined,
@@ -19,13 +20,14 @@ describe('reset keys v1', () => {
     it('should return reset keys', async () => {
         const { userKeyPayload, addressKeysPayload } = await getResetAddressesKeys({
             addresses: [
-                ({
+                {
                     ID: '123',
                     Email: '123@123.com',
-                } as unknown) as Address,
+                } as unknown as Address,
             ],
             passphrase: '123',
             encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.X25519],
+            hasAddressKeyMigrationGeneration: false,
         });
         if (!addressKeysPayload?.length) {
             throw new Error('Missing address keys');
@@ -56,10 +58,11 @@ describe('reset keys v1', () => {
 
 describe('reset keys v2', () => {
     it('should return an empty result', async () => {
-        const result = await getResetAddressesKeysV2({
+        const result = await getResetAddressesKeys({
             addresses: [],
             passphrase: '',
             encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.X25519],
+            hasAddressKeyMigrationGeneration: true,
         });
         expect(result).toEqual({
             userKeyPayload: undefined,
@@ -70,10 +73,10 @@ describe('reset keys v2', () => {
     it('should return reset keys', async () => {
         const { userKeyPayload, addressKeysPayload } = await getResetAddressesKeysV2({
             addresses: [
-                ({
+                {
                     ID: '123',
                     Email: '123@123.com',
-                } as unknown) as Address,
+                } as unknown as Address,
             ],
             passphrase: '123',
             encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.X25519],
