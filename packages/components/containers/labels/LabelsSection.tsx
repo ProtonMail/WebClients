@@ -4,6 +4,7 @@ import { arrayMove } from 'react-sortable-hoc';
 
 import { orderLabels } from '@proton/shared/lib/api/labels';
 import { Label } from '@proton/shared/lib/interfaces';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 import { Loader, Button, useDebounceInput } from '../../components';
 import { useLabels, useEventManager, useModals, useApi, useNotifications, useLoading } from '../../hooks';
@@ -62,7 +63,7 @@ function LabelsSection() {
     }, [debouncedLabels]);
 
     useEffect(() => {
-        if (debouncedLabelOrder === labelsOrder) {
+        if (isDeepEqual(debouncedLabels, labels)) {
             return;
         }
         setLocalLabels(labels);
