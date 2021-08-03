@@ -1,5 +1,4 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import React from 'react';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { clearAll, contactCache, render } from '../../../helpers/test/helper';
 import AddressesSummary from './AddressesSummary';

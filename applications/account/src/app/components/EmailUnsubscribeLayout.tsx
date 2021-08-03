@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import protonLogoSvg from '@proton/styles/assets/img/shared/proton-logo.svg';
 import EmailUnsubscribeBorderedContainer from './EmailUnsubscribeBorderedContainer';

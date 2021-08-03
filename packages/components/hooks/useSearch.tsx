@@ -1,4 +1,15 @@
-import React, { RefObject, ReactNode, useCallback, useMemo, useState, KeyboardEvent, useEffect, useRef } from 'react';
+import {
+    RefObject,
+    ReactNode,
+    useCallback,
+    useMemo,
+    useState,
+    KeyboardEvent,
+    useEffect,
+    useRef,
+} from 'react';
+
+import * as React from 'react';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { sanitizeString } from '@proton/shared/lib/sanitize';
 

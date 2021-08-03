@@ -5,7 +5,7 @@ import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/cont
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { isInternal } from '@proton/shared/lib/mail/messages';
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import {
     Button,
     classnames,

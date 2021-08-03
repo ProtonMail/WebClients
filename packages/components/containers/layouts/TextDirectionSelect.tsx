@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 
 import { RIGHT_TO_LEFT } from '@proton/shared/lib/constants';

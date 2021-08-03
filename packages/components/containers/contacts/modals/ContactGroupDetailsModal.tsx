@@ -1,4 +1,3 @@
-import React from 'react';
 import { c, msgid } from 'ttag';
 
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';

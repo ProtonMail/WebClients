@@ -1,4 +1,5 @@
-import React, { useState, createContext, Dispatch, SetStateAction } from 'react';
+import { useState, createContext, Dispatch, SetStateAction } from 'react';
+import * as React from 'react';
 import { UserSettings } from '../../../interfaces/userSettings';
 import { DEFAULT_USER_SETTINGS } from '../../../constants';
 

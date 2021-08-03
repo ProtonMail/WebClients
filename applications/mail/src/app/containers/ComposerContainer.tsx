@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, useEffect, memo, useRef } from 'react';
+import { ReactNode, useState, useEffect, memo, useRef } from 'react';
 import { useWindowSize, useHandler, useBeforeUnload } from '@proton/components';
 import { c } from 'ttag';
 import { useMessageCache } from './MessageProvider';

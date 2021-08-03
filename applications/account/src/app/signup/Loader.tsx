@@ -1,4 +1,3 @@
-import React from 'react';
 import { FullLoader } from '@proton/components';
 
 const Loader = () => {

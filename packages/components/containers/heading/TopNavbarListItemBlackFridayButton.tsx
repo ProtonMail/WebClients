@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { APPS } from '@proton/shared/lib/constants';
 import { PlanIDs, Cycle, Currency, Subscription, Plan } from '@proton/shared/lib/interfaces';

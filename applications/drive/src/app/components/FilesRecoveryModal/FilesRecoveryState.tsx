@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 
 import { HeaderModal, InnerModal, FooterModal, Button, Alert, PrimaryButton } from '@proton/components';

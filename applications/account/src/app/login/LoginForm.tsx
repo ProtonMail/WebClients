@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { noop } from '@proton/shared/lib/helpers/function';
 import {
     useLoading,

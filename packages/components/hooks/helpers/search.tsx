@@ -1,4 +1,3 @@
-import React from 'react';
 import { normalize } from '@proton/shared/lib/helpers/string';
 
 /**

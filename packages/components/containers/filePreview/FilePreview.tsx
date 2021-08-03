@@ -1,4 +1,5 @@
-import React, { forwardRef, Ref, useRef } from 'react';
+import { forwardRef, Ref, useRef } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import Header, { SharedStatus } from './Header';
 import ImagePreview from './ImagePreview';

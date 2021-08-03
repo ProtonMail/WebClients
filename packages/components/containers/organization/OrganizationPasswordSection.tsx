@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { USER_ROLES } from '@proton/shared/lib/constants';
 import { Alert, Block, Button, Loader, Table, TableBody, TableHeader, TableRow } from '../../components';

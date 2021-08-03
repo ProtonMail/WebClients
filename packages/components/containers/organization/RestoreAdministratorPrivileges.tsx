@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { Alert, Block, LearnMore, PrimaryButton } from '../../components';
 import { useModals, useOrganization, useOrganizationKey } from '../../hooks';

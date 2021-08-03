@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, MutableRefObject } from 'react';
+import { useState, ChangeEvent, MutableRefObject } from 'react';
 import { Select, generateUID, useAddresses, useMailSettings } from '@proton/components';
 import { MessageExtended } from '../../../models/message';
 import { getAddressFromEmail, getFromAddresses } from '../../../helpers/addresses';

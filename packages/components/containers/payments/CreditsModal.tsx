@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 import { buyCredit } from '@proton/shared/lib/api/payments';
 import {

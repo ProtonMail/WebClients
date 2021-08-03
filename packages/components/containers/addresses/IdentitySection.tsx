@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState, useMemo } from 'react';
+import { ChangeEvent, useEffect, useState, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { ADDRESS_STATUS, RECEIVE_ADDRESS, SEND_ADDRESS } from '@proton/shared/lib/constants';

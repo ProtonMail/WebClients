@@ -1,6 +1,5 @@
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
-import React from 'react';
 import { Alert } from '@proton/components';
 import { c } from 'ttag';
 import { APPS } from '@proton/shared/lib/constants';

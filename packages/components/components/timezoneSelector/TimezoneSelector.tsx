@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { getTimeZoneOptions } from '@proton/shared/lib/date/timezone';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { c, msgid } from 'ttag';
 
 const useAutocompleteAriaProps = ({ baseId, selectedSuggest }: { baseId: string; selectedSuggest?: number }) => {

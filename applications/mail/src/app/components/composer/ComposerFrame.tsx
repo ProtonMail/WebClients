@@ -1,4 +1,4 @@
-import React, { useEffect, DragEvent, useState, useRef } from 'react';
+import { useEffect, DragEvent, useState, useRef } from 'react';
 import { classnames, useToggle, useMailSettings, useHandler, ErrorBoundary } from '@proton/components';
 import { COMPOSER_MODE } from '@proton/shared/lib/constants';
 import ComposerTitleBar from './ComposerTitleBar';

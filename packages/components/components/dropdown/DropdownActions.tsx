@@ -1,4 +1,4 @@
-import React, { MouseEvent, ReactNode } from 'react';
+import { MouseEvent, ReactNode } from 'react';
 import { c } from 'ttag';
 import { Info } from '../link';
 

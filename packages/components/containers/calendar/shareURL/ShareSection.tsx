@@ -1,5 +1,5 @@
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import React, { MouseEvent, useState } from 'react';
+import { MouseEvent, useState } from 'react';
 import { c } from 'ttag';
 import { Calendar, ACCESS_LEVEL, CalendarUrlResponse } from '@proton/shared/lib/interfaces/calendar';
 

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState, useRef } from 'react';
+import { ChangeEvent, useState, useRef } from 'react';
 import { c } from 'ttag';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import { Address } from '@proton/shared/lib/interfaces';

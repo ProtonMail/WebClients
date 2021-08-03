@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { endOfWeek, startOfWeek } from '@proton/shared/lib/date-fns-utc';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';

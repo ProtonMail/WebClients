@@ -1,4 +1,3 @@
-import React from 'react';
 import { c, msgid } from 'ttag';
 import { PLAN_NAMES, CYCLE, APPS, PLANS } from '@proton/shared/lib/constants';
 import { unique } from '@proton/shared/lib/helpers/array';

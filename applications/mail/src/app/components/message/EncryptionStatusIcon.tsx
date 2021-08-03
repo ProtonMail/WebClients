@@ -1,4 +1,3 @@
-import React from 'react';
 import { classnames, Href, Icon, Loader, Tooltip } from '@proton/components';
 import { getSendIconHref, getStatusIconName } from '../../helpers/message/icon';
 import { StatusIcon } from '../../models/crypto';

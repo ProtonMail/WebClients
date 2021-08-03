@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { TableRowSticky, TableHeaderCell, Checkbox, useActiveBreakpoint } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { c } from 'ttag';

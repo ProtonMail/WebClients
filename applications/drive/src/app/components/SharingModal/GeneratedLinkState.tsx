@@ -1,4 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import { getUnixTime } from 'date-fns';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';

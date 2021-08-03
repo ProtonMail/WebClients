@@ -1,4 +1,4 @@
-import React, { useState, Dispatch, SetStateAction } from 'react';
+import { useState, Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 
 import { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';

@@ -2,7 +2,7 @@ import { CALENDAR_APP_NAME } from '@proton/shared/lib/calendar/constants';
 import { ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { CalendarWidgetData, ImportedEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { c } from 'ttag';
 import { processInBatches } from '@proton/shared/lib/calendar/import/encryptAndSubmit';
 import { Button } from '../../components';

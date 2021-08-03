@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { SETTINGS_LOG_AUTH_STATE } from '@proton/shared/lib/interfaces';
 import { AuthLog, AUTH_LOG_EVENTS } from '@proton/shared/lib/authlog';

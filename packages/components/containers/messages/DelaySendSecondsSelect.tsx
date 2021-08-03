@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { updateDelaySend } from '@proton/shared/lib/api/mailSettings';
 import { c } from 'ttag';
 

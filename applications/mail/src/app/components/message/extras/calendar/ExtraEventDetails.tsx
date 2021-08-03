@@ -1,5 +1,5 @@
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
-import React from 'react';
+import * as React from 'react';
 import { classnames } from '@proton/components';
 import { c } from 'ttag';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { c } from 'ttag';
 import { updateBackupKey } from '@proton/shared/lib/api/organization';
 import { getBackupKeyData } from '@proton/shared/lib/keys';

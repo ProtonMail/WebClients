@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { c, msgid } from 'ttag';
 import { queryVPNLogicalServerInfo, getVPNServerConfig } from '@proton/shared/lib/api/vpn';
 import { groupWith } from '@proton/shared/lib/helpers/array';

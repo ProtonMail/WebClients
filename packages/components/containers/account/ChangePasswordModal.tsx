@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ChangeEvent } from 'react';
+import { useState, useEffect, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import { InfoAuthedResponse, TwoFaResponse } from '@proton/shared/lib/authentication/interface';

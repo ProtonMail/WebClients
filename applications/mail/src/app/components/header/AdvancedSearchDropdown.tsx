@@ -1,4 +1,4 @@
-import React, { useState, useEffect, FormEvent, useRef } from 'react';
+import { useState, useEffect, FormEvent, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import { c, msgid } from 'ttag';
 import { getUnixTime, fromUnixTime, isBefore, isAfter, add } from 'date-fns';

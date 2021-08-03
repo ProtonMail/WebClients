@@ -1,4 +1,3 @@
-import React from 'react';
 import { CatchAllSection, DomainsSection, SettingsPropsShared } from '@proton/components';
 import { c } from 'ttag';
 import PrivateMainSettingsAreaWithPermissions from '../../components/PrivateMainSettingsAreaWithPermissions';

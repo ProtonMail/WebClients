@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { c } from 'ttag';
 

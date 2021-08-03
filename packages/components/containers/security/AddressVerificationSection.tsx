@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
 import { Info, Toggle } from '../../components';

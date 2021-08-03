@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { memo, useEffect } from 'react';
 
 import {
     TableRow,
@@ -213,7 +213,7 @@ const ItemRow = ({
     );
 };
 
-export default React.memo(ItemRow, (a, b) => {
+export default memo(ItemRow, (a, b) => {
     if (isEquivalent(a, b)) {
         return true;
     }

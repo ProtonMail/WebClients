@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Price } from '@proton/components';
 import { CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE } from '@proton/shared/lib/constants';

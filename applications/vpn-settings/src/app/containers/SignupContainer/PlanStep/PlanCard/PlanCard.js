@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { classnames, Button, Tooltip, Badge } from '@proton/components';
 import { c } from 'ttag';

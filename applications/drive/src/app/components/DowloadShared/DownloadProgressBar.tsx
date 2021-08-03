@@ -1,4 +1,3 @@
-import React from 'react';
 import { Progress } from '@proton/components';
 
 import { TransfersStats } from '../TransferManager/interfaces';

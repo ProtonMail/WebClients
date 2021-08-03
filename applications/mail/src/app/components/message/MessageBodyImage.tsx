@@ -1,4 +1,4 @@
-import React, { CSSProperties, RefObject, useEffect, useRef, useState } from 'react';
+import { CSSProperties, RefObject, useEffect, useRef, useState } from 'react';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { classnames, Icon, Loader, Tooltip } from '@proton/components';
 import { createPortal } from 'react-dom';

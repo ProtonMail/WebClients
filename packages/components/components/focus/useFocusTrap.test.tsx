@@ -1,4 +1,5 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
+import * as React from 'react';
 import { wait, render, fireEvent } from '@testing-library/react';
 import useFocusTrap from './useFocusTrap';
 

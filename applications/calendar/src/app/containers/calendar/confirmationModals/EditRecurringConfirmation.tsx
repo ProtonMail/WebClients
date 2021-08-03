@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Alert, ConfirmModal, FormModal } from '@proton/components';
 import { c } from 'ttag';
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';

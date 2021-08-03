@@ -1,4 +1,5 @@
-import React, { ChangeEvent, KeyboardEvent, useRef, ReactNode } from 'react';
+import { ChangeEvent, KeyboardEvent, useRef, ReactNode } from 'react';
+import * as React from 'react';
 import { classnames } from '../../helpers';
 import { useCombinedRefs } from '../../hooks';
 

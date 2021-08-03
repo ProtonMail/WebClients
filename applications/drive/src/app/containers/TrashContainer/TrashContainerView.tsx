@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { PrivateMainArea, useAppTitle } from '@proton/components';
 import TrashToolbar from '../../components/Drive/Trash/TrashToolbar';

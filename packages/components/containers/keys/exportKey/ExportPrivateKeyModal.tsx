@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { OpenPGPKey, encryptPrivateKey } from 'pmcrypto';
 import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';

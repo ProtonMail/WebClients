@@ -8,7 +8,7 @@ import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
     Icon,
     InlineLinkButton,

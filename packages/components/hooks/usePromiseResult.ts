@@ -1,4 +1,5 @@
-import React, { useEffect, useReducer, useRef, Reducer } from 'react';
+import { useEffect, useReducer, useRef, Reducer } from 'react';
+import * as React from 'react';
 import { STATUS } from '@proton/shared/lib/models/cache';
 
 type ResolvedRecord<T> = {

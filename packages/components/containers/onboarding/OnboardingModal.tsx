@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import { useHistory, useLocation } from 'react-router';
 import { updateAddress } from '@proton/shared/lib/api/addresses';

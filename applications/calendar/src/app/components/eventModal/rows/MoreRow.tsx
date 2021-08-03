@@ -1,6 +1,6 @@
 import { Label, LinkButton, Row } from '@proton/components';
 import { c } from 'ttag';
-import React from 'react';
+import * as React from 'react';
 
 interface Props {
     children?: React.ReactNode;

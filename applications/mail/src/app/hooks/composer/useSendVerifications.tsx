@@ -2,7 +2,7 @@ import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
 import { getRecipients, getRecipientsAddresses } from '@proton/shared/lib/mail/messages';
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { c, msgid } from 'ttag';
 import { unique } from '@proton/shared/lib/helpers/array';
 import { useGetEncryptionPreferences, useModals, ConfirmModal, Alert, useNotifications } from '@proton/components';

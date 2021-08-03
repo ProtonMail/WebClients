@@ -1,4 +1,4 @@
-import React, { forwardRef, Ref } from 'react';
+import { forwardRef, Ref } from 'react';
 import { CountryOptionData } from './helper';
 import { DropdownMenuButton } from '../../dropdown';
 import { classnames } from '../../../helpers';

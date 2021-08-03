@@ -1,6 +1,5 @@
 import { Alert } from '@proton/components';
 import { c } from 'ttag';
-import React from 'react';
 import calendarSvg from '@proton/styles/assets/img/onboarding/calendar-unlock.svg';
 
 const CalendarReady = () => {

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import Tooltip from '../../tooltip/Tooltip';
 import { classnames } from '../../../helpers';

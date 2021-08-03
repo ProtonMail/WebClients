@@ -1,4 +1,5 @@
-import React, { useState, createContext, useEffect, useContext, useRef, useCallback } from 'react';
+import { useState, createContext, useEffect, useContext, useRef, useCallback } from 'react';
+import * as React from 'react';
 import { useSortedList } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import useSelection from '../../../hooks/util/useSelection';

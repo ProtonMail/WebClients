@@ -1,4 +1,3 @@
-import React from 'react';
 import { Currency } from '@proton/shared/lib/interfaces';
 
 import { Button, ButtonProps, Price } from '../../components';

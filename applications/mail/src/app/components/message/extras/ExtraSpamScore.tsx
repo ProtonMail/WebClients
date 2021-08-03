@@ -1,6 +1,5 @@
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import React from 'react';
 import {
     Icon,
     Href,

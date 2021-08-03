@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Icon } from '../../components';
 import { usePermissions } from '../../hooks';
 import { classnames } from '../../helpers';

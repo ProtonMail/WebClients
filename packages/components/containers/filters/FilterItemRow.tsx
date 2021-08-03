@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';

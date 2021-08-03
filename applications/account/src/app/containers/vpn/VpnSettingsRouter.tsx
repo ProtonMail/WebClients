@@ -1,4 +1,3 @@
-import React from 'react';
 import { Route, Redirect, Switch, useRouteMatch, useLocation } from 'react-router-dom';
 
 import VpnDownloadSettings from './VpnDownloadSettings';

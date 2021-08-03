@@ -1,4 +1,4 @@
-import React, { CSSProperties, Ref } from 'react';
+import { CSSProperties, Ref } from 'react';
 import { classnames } from '@proton/components';
 
 import formatUTC from '@proton/shared/lib/date-fns-utc/format';

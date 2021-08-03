@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { FixedSizeGrid, GridChildComponentProps } from 'react-window';
 import { classnames, Loader, useElementRect } from '@proton/components';
 import { buffer } from '@proton/shared/lib/helpers/function';

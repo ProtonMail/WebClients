@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { getAppName } from '@proton/shared/lib/apps/helper';

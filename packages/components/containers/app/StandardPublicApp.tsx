@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import * as React from 'react';
 import { loadOpenPGP } from '@proton/shared/lib/openpgp';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';

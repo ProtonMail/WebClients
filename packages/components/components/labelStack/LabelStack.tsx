@@ -1,4 +1,4 @@
-import React, { MouseEvent } from 'react';
+import { MouseEvent } from 'react';
 import { c } from 'ttag';
 import { classnames } from '../../helpers';
 import Tooltip from '../tooltip/Tooltip';

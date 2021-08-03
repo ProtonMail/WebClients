@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { resizeImage, toImage } from '@proton/shared/lib/helpers/image';

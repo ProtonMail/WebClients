@@ -1,5 +1,4 @@
 import { c } from 'ttag';
-import React from 'react';
 
 import { OnboardingContent, OnboardingModal, OnboardingStep, EarlyAccessModal, useModals } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';

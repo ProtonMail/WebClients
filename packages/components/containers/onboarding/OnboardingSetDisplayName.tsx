@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import onboardingDisplayName from '@proton/styles/assets/img/onboarding/display-name.svg';
 

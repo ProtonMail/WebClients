@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import * as React from 'react';
 import { c } from 'ttag';
 import { Href, MailShortcutsModal, Price, SettingsLink, useModals } from '@proton/components';
 import ThemesModal from '@proton/components/containers/themes/ThemesModal';

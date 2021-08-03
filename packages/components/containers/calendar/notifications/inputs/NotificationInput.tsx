@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 
 import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';

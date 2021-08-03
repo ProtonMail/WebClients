@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
 import { dateLocaleCode } from '@proton/shared/lib/i18n';

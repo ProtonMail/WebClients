@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 import { useLoading, Button, useFormErrors, InputFieldTwo } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';

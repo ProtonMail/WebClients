@@ -1,4 +1,5 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import * as React from 'react';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { escapeRegex, getMatches, MatchChunk } from '@proton/shared/lib/helpers/regex';
 import { useHotkeys } from '../../hooks';

@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 import { noop } from '@proton/shared/lib/helpers/function';

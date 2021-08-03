@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { PLANS } from '@proton/shared/lib/constants';

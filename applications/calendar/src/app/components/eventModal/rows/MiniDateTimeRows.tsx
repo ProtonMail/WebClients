@@ -1,6 +1,5 @@
 import { MAXIMUM_DATE, MINIMUM_DATE, DATE_INPUT_ID } from '@proton/shared/lib/calendar/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import React from 'react';
 import { DateInput, TimeInput } from '@proton/components';
 import { c } from 'ttag';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';

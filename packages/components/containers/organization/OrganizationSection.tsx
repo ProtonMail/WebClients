@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { Organization } from '@proton/shared/lib/interfaces';
 import { APPS, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';

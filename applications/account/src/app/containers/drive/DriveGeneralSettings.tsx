@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';

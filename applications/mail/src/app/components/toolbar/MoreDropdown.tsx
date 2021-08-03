@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { Icon, DropdownMenu, DropdownMenuButton, ToolbarSeparator, useLoading } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 import { isSameDay } from '@proton/shared/lib/date-fns-utc';
 
 interface Props {
@@ -32,6 +32,6 @@ const DayButtons = ({ days, now, date, formattedDates, onClickDate }: Props) => 
     );
 };
 
-const MemoedDayButtons = React.memo(DayButtons);
+const MemoedDayButtons = memo(DayButtons);
 
 export default MemoedDayButtons;

@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { getEmailMismatchWarning } from '@proton/shared/lib/keys/publicKeys';
 

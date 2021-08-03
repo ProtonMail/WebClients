@@ -1,5 +1,5 @@
 import { hasAttachments, isDraft, isOutbox, isScheduled } from '@proton/shared/lib/mail/messages';
-import React, { MouseEvent } from 'react';
+import { MouseEvent } from 'react';
 import { c } from 'ttag';
 import { classnames } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';

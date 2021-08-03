@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 
 import { ROOT_FOLDER } from '@proton/shared/lib/constants';

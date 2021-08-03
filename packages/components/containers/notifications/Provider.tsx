@@ -1,4 +1,5 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
+import * as React from 'react';
 import NotificationsContext from './notificationsContext';
 import NotificationsContainer from './Container';
 import createNotificationManager from './manager';

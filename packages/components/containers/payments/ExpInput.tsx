@@ -1,4 +1,3 @@
-import React from 'react';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 
 import Input, { Props as InputProps } from '../../components/input/Input';

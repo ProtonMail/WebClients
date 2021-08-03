@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
 import { updateWeekStart } from '@proton/shared/lib/api/settings';

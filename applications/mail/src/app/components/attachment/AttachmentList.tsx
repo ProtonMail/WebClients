@@ -1,6 +1,6 @@
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { attachmentsSize } from '@proton/shared/lib/mail/messages';
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 import { Icon, classnames, CircleLoader } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';

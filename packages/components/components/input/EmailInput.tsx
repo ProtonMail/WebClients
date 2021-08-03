@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { EMAIL_PLACEHOLDER } from '@proton/shared/lib/constants';

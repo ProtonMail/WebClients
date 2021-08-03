@@ -1,5 +1,4 @@
 import { SETTINGS_NOTIFICATION_TYPE } from '@proton/shared/lib/calendar/constants';
-import React from 'react';
 import { c } from 'ttag';
 import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import { EventModelErrors } from '@proton/shared/lib/interfaces/calendar';

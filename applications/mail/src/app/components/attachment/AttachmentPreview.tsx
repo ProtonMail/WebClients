@@ -1,5 +1,5 @@
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import React, { forwardRef, MutableRefObject, Ref, useEffect, useState, useRef } from 'react';
+import { forwardRef, MutableRefObject, Ref, useEffect, useState, useRef } from 'react';
 import { FilePreview, NavigationControl } from '@proton/components';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { MessageExtendedWithData } from '../../models/message';

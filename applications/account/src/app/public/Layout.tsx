@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { c } from 'ttag';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Autocomplete, { Props as AutocompleteProps } from './Autocomplete';
 
 interface Props extends Omit<AutocompleteProps<string>, 'getData' | 'onSelect'> {}

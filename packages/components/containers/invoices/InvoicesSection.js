@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { c } from 'ttag';
 
 import { queryInvoices, getInvoice } from '@proton/shared/lib/api/payments';

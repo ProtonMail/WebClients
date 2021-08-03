@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { truncateMore } from '@proton/shared/lib/helpers/string';
 import { MAX_UID_CHARS_DISPLAY } from '@proton/shared/lib/calendar/constants';

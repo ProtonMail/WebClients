@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { c } from 'ttag';
 import { ButtonLike, Card, SettingsLink } from '../../components';
 import { classnames } from '../../helpers';

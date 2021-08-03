@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { AutoResponder } from '@proton/shared/lib/interfaces';

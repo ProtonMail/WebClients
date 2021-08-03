@@ -1,4 +1,3 @@
-import React from 'react';
 import { useConfig } from '../../hooks';
 
 import Logo, { LogoProps } from './Logo';

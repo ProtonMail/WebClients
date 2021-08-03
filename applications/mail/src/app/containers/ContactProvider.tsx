@@ -1,5 +1,5 @@
 import { canonizeEmail } from '@proton/shared/lib/helpers/email';
-import React, { createContext, ReactNode, useContext, useMemo } from 'react';
+import { createContext, ReactNode, useContext, useMemo } from 'react';
 import { useContactEmails, useContactGroups } from '@proton/components';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { toMap } from '@proton/shared/lib/helpers/object';

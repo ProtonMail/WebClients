@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+import * as React from 'react';
 import { Cache } from '@proton/shared/lib/helpers/cache';
 import CacheContext from './cacheContext';
 

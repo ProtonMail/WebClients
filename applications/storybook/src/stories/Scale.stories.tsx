@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Scale } from '@proton/components';
 
 import mdx from './Scale.mdx';

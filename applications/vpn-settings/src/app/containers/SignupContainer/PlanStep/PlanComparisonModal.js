@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { DialogModal, HeaderModal, InnerModal, usePlans } from '@proton/components';
 import { c } from 'ttag';

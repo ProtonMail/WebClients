@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useEffect } from 'react';
+import { MutableRefObject, useEffect } from 'react';
 import { LoaderPage, useNotifications, useApi, useCache } from '@proton/components';
 import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';

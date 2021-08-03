@@ -1,4 +1,3 @@
-import React from 'react';
 import { Icons, NotificationsProvider, ModalsProvider, ModalsChildren, CacheProvider } from "@proton/components";
 import ApiProvider from "@proton/components/containers/api/ApiProvider";
 import ConfigProvider from "@proton/components/containers/config/Provider";

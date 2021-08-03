@@ -1,4 +1,3 @@
-import React from 'react';
 import { CURRENCIES, DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import { Currency } from '@proton/shared/lib/interfaces';

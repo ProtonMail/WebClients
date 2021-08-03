@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, createContext, ReactNode, useContext } from 'react';
+import { useEffect, useRef, createContext, ReactNode, useContext } from 'react';
 import { useApi } from '@proton/components';
 import eventManager, { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 

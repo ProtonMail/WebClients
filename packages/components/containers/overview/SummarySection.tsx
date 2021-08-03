@@ -1,4 +1,3 @@
-import React from 'react';
 import { c, msgid } from 'ttag';
 import { UserModel, UserSettings, Organization, Subscription, Plan } from '@proton/shared/lib/interfaces';
 import { getInitials } from '@proton/shared/lib/helpers/string';

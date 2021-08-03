@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { classnames } from '../../helpers';
 import { Box, PolymorphicComponent } from '../../helpers/react-polymorphic-box';
 import { Href } from '../link';

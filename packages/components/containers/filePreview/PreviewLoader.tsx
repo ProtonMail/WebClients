@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import FullLoader from '../../components/loader/FullLoader';
 import TextLoader from '../../components/loader/TextLoader';

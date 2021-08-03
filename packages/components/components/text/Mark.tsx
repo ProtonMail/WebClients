@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { memo, ReactNode } from 'react';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
 import Marks from './Marks';
@@ -19,4 +19,4 @@ const Mark = ({ children: text, value: search }: Props) => {
     return <Marks chunks={chunks}>{text}</Marks>;
 };
 
-export default React.memo(Mark);
+export default memo(Mark);

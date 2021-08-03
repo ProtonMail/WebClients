@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import earlyAccessSvg from '@proton/styles/assets/img/onboarding/early-access.svg';
 import { noop } from '@proton/shared/lib/helpers/function';

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/shared/lib/constants';
 import { getTokenStatus, createToken } from '@proton/shared/lib/api/payments';
 import { Api } from '@proton/shared/lib/interfaces';

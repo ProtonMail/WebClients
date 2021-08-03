@@ -1,4 +1,3 @@
-import React from 'react';
 import { c, msgid } from 'ttag';
 import { HeaderModal, Button } from '@proton/components';
 import { ATTACHMENT_ACTION } from '../../../helpers/attachment/attachmentUploader';

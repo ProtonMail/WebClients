@@ -1,4 +1,3 @@
-import React from 'react';
 import creditCardType from 'credit-card-type';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 

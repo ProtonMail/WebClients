@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import sentry from '@proton/shared/lib/helpers/sentry';

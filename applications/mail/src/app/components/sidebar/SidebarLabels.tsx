@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 
 import { Label } from '@proton/shared/lib/interfaces/Label';
 

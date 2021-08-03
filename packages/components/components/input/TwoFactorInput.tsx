@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Input, { Props } from './Input';
 
 /**

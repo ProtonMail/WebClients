@@ -1,4 +1,4 @@
-import React, { useState, useMemo, FormEvent, useEffect } from 'react';
+import { useState, useMemo, FormEvent, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { createCalendarImport, startCalendarImportJob } from '@proton/shared/lib/api/calendarImport';

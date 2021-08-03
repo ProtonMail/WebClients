@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { APPS, PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import mailThanksSvg from '@proton/styles/assets/img/pm-images/thank-you-mail.svg';

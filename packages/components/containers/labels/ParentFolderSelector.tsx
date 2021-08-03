@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 
 import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';

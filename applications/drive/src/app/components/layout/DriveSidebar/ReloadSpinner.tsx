@@ -1,4 +1,3 @@
-import React from 'react';
 import { Icon, classnames } from '@proton/components';
 
 interface Props {

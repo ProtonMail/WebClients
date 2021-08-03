@@ -1,5 +1,4 @@
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
-import React from 'react';
 import {
     ButtonLike,
     CalendarImportSection,

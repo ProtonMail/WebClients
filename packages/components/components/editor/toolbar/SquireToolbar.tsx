@@ -1,4 +1,12 @@
-import React, { MutableRefObject, useEffect, useState, ReactNode, useMemo, useCallback, memo } from 'react';
+import {
+    MutableRefObject,
+    useEffect,
+    useState,
+    ReactNode,
+    useMemo,
+    useCallback,
+    memo,
+} from 'react';
 import { c } from 'ttag';
 import { classnames } from '../../../helpers';
 import { useHandler, useIsMounted, useModals } from '../../../hooks';

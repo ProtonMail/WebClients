@@ -1,4 +1,3 @@
-import React from 'react';
 import { c, msgid } from 'ttag';
 import { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar';
 import { extractTotals } from '@proton/shared/lib/calendar/import/encryptAndSubmit';

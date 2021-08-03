@@ -1,5 +1,4 @@
 import { c } from 'ttag';
-import React from 'react';
 import { BugModal, DropdownMenuButton, DropdownMenuLink, Icon, useModals } from '@proton/components';
 import { Link } from 'react-router-dom';
 import SupportDropdown from '../public/SupportDropdown';

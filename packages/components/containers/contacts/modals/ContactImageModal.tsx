@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { resizeImage } from '@proton/shared/lib/helpers/image';

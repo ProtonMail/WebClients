@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Title, useLoading, TextLoader, VpnLogo, Href, FullLoader, useApi } from '@proton/components';
 import { c } from 'ttag';

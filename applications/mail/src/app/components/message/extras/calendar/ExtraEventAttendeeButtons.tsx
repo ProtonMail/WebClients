@@ -12,7 +12,7 @@ import {
     EventInvitationError,
     getErrorMessage,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
-import React, { useCallback, Dispatch, SetStateAction } from 'react';
+import { useCallback, Dispatch, SetStateAction } from 'react';
 import {
     Icon,
     InlineLinkButton,

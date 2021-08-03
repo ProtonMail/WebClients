@@ -1,4 +1,4 @@
-import React, { RefObject } from 'react';
+import { RefObject } from 'react';
 import { c } from 'ttag';
 import { useHandler, useMailSettings, useNotifications } from '@proton/components';
 import { Abortable } from '@proton/components/hooks/useHandler';

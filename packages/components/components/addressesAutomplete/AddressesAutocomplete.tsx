@@ -1,5 +1,6 @@
 import { canonizeEmail } from '@proton/shared/lib/helpers/email';
-import React, { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
+import * as React from 'react';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { inputToRecipient } from '@proton/shared/lib/mail/recipient';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { FileBrowserProps } from './interfaces';
 import ListView from './ListView/ListView';
 import GridView from './GridView/GridView';

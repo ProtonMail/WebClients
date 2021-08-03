@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import { setupTotp, TOTP_WRONG_ERROR } from '@proton/shared/lib/api/settings';
 import { srpAuth } from '@proton/shared/lib/srp';

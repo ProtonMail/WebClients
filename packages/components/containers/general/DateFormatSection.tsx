@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces';
 import { updateDateFormat } from '@proton/shared/lib/api/settings';

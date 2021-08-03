@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, ConfirmModal, Icon, useApi, useEventManager, useModals, useNotifications } from '@proton/components';
 import { c } from 'ttag';
 import { cancelSend } from '@proton/shared/lib/api/messages';

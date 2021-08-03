@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import { Box, PolymorphicComponentProps } from '../../../helpers/react-polymorphic-box';
 import Icon from '../../icon/Icon';

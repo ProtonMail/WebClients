@@ -1,4 +1,3 @@
-import React from 'react';
 import { LayoutsSection, ThemesSection, AppearanceOtherSection, SettingsPropsShared } from '@proton/components';
 import { c } from 'ttag';
 

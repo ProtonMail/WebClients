@@ -1,4 +1,3 @@
-import React from 'react';
 import { c } from 'ttag';
 import { Table, TableCell, TableRow, TableBody } from '../../components/table';
 import Copy from '../../components/button/Copy';
