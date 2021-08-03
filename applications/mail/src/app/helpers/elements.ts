@@ -105,10 +105,11 @@ export const sort = (elements: Element[], sort: Sort, labelID: string) => {
         Size: getSize,
     }[sort.sort] as any;
     const compare = (a: Element, b: Element) => {
-        const valueA = getValue(a, labelID);
-        const valueB = getValue(b, labelID);
-        if (valueA === valueB) {
-            return (a.Order || 0) - (b.Order || 0);
+        let valueA = getValue(a, labelID);
+        let valueB = getValue(b, labelID);
+        if (valueA === valueB && sort.sort === 'Time') {
+            valueA = a.Order || 0;
+            valueB = b.Order || 0;
         }
         return sort.desc ? valueB - valueA : valueA - valueB;
     };
