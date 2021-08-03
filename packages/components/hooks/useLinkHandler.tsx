@@ -1,5 +1,7 @@
 import { useEffect, useState, RefObject } from 'react';
 import { c } from 'ttag';
+import punycode from 'punycode.js';
+
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { isIE11, isEdge } from '@proton/shared/lib/helpers/browser';
@@ -71,8 +73,6 @@ export const useLinkHandler = (wrapperRef: RefObject<HTMLDivElement>, onMailTo?:
             Then when we detect there is no encoding done, we use the lib.
          */
         if (noEncoding) {
-            const { punycode } = await import(/* webpackChunkName: "vendorEncoder.module" */ './helpers/vendorEncoder');
-
             // Sometimes there is a queryParam with https:// inside so, we need to add them too :/
             const [protocol, url = '', ...tracking] = raw.split('://');
 
