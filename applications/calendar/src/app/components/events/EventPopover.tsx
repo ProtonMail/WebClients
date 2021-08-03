@@ -3,6 +3,7 @@ import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 
+import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/integration/getFrequencyString';
 import { format as formatUTC } from '@proton/shared/lib/date-fns-utc';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -13,17 +14,13 @@ import { useMemo } from 'react';
 import {
     Alert,
     Badge,
-    Button,
     classnames,
-    Dropdown,
-    DropdownButton,
-    DropdownMenu,
-    DropdownMenuButton,
     Loader,
-    Tooltip,
     useLoading,
-    usePopperAnchor,
     CalendarInviteButtons,
+    ButtonLike,
+    Icon,
+    Tooltip,
 } from '@proton/components';
 import { c } from 'ttag';
 import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
@@ -44,70 +41,6 @@ import PopoverHeader from './PopoverHeader';
 import useReadEvent from './useReadEvent';
 
 const { ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
-
-const MoreButtons = ({
-    onEdit,
-    onDelete,
-    loadingAction,
-    isCalendarDisabled,
-    hideDelete = false,
-}: {
-    onEdit?: () => void;
-    onDelete?: () => void;
-    loadingAction?: boolean;
-    isCalendarDisabled?: boolean;
-    hideDelete?: boolean;
-}) => {
-    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const emptyContent = '';
-    return (
-        <>
-            <Tooltip title={c('Title').t`More options`}>
-                <DropdownButton
-                    title={c('Title').t`More options`}
-                    ref={anchorRef}
-                    isOpen={isOpen}
-                    onClick={toggle}
-                    hasCaret
-                    caretClassName=""
-                    loading={loadingAction && !isOpen}
-                    size="small"
-                >
-                    {emptyContent}
-                </DropdownButton>
-            </Tooltip>
-            <Dropdown
-                id="popover-more-options"
-                originalPlacement="bottom"
-                isOpen={isOpen}
-                anchorRef={anchorRef}
-                onClose={close}
-                autoClose={false}
-            >
-                <DropdownMenu>
-                    <DropdownMenuButton
-                        data-test-id="event-popover:edit"
-                        disabled={loadingAction || isCalendarDisabled}
-                        className="text-left"
-                        onClick={onEdit}
-                    >
-                        {c('Action').t`Edit`}
-                    </DropdownMenuButton>
-                    {!hideDelete && (
-                        <DropdownMenuButton
-                            data-test-id="event-popover:delete"
-                            className="text-left"
-                            onClick={loadingAction ? noop : onDelete}
-                            loading={loadingAction}
-                        >
-                            {c('Action').t`Delete`}
-                        </DropdownMenuButton>
-                    )}
-                </DropdownMenu>
-            </Dropdown>
-        </>
-    );
-};
 
 interface Props {
     formatTime: (date: Date) => string;
@@ -220,24 +153,35 @@ const EventPopover = ({
         );
     }, [start, end, isAllDay]);
 
-    const editButton = (
-        <Button
-            data-test-id="event-popover:edit"
-            onClick={handleEdit}
-            disabled={loadingAction || isCalendarDisabled}
-            className="ml1"
-        >
-            {c('Action').t`Edit`}
-        </Button>
+    const editButton = !isCalendarDisabled && (
+        <Tooltip title={c('Event edit button tooltip').t`Edit event`}>
+            <ButtonLike
+                data-test-id="event-popover:edit"
+                shape="ghost"
+                onClick={handleEdit}
+                loading={loadingAction}
+                icon
+                size="small"
+                title={c('Action').t`Edit`}
+            >
+                <Icon name="pen" />
+            </ButtonLike>
+        </Tooltip>
     );
     const deleteButton = !isSubscribedCalendar && (
-        <Button
-            data-test-id="event-popover:delete"
-            onClick={loadingAction ? noop : handleDelete}
-            loading={loadingAction}
-        >
-            {c('Action').t`Delete`}
-        </Button>
+        <Tooltip title={c('Event delete button tooltip').t`Delete event`}>
+            <ButtonLike
+                data-test-id="event-popover:delete"
+                shape="ghost"
+                onClick={loadingAction ? noop : handleDelete}
+                loading={loadingAction}
+                icon
+                size="small"
+                title={c('Action').t`Delete`}
+            >
+                <Icon name="trash" />
+            </ButtonLike>
+        </Tooltip>
     );
 
     const actions = {
@@ -249,14 +193,32 @@ const EventPopover = ({
     };
 
     const mergedClassName = classnames([
-        'eventpopover pt2 pl1-5 pr1-5 pb1 flex flex-column flex-nowrap',
+        'eventpopover flex flex-column flex-nowrap',
         isNarrow && 'eventpopover--full-width',
     ]);
     const mergedStyle = isNarrow ? undefined : style;
+    const frequencyString = useMemo(() => {
+        const [{ veventComponent: eventComponent }] = eventReadResult?.result || [{}];
+        if (!eventComponent) {
+            return;
+        }
+        return getTimezonedFrequencyString(eventComponent.rrule, eventComponent.dtstart, {
+            currentTzid: tzid,
+            weekStartsOn,
+            locale: dateLocale,
+        });
+    }, [eventReadResult, tzid]);
+
     if (eventReadError) {
         return (
             <PopoverContainer style={mergedStyle} className={mergedClassName} ref={popoverRef}>
-                <PopoverHeader onClose={onClose} className="flex-item-noshrink">
+                <PopoverHeader
+                    onClose={onClose}
+                    className="flex-item-noshrink"
+                    actions={
+                        !isSubscribedCalendar && <div className="flex flex-nowrap flex-justify-end">{deleteButton}</div>
+                    }
+                >
                     <h1 className="h3">{c('Error').t`Error`}</h1>
                 </PopoverHeader>
                 <Alert className="mb1" type="error">
@@ -277,50 +239,57 @@ const EventPopover = ({
 
     return (
         <PopoverContainer style={mergedStyle} className={mergedClassName} ref={popoverRef}>
-            <PopoverHeader className="flex-item-noshrink" onClose={onClose}>
-                <div className="color-weak">{dateHeader}</div>
+            <PopoverHeader
+                className="flex-item-noshrink"
+                onClose={onClose}
+                actions={
+                    !isSubscribedCalendar && (
+                        <>
+                            {editButton}
+                            {deleteButton}
+                        </>
+                    )
+                }
+            >
                 {isCancelled && (
-                    <Badge type="error" tooltip={c('Calendar invite info').t`This event has been cancelled`}>
-                        {c('Title').t`CANCELLED`}
+                    <Badge
+                        type="light"
+                        tooltip={c('Calendar invite info').t`This event has been cancelled`}
+                        className="mb0-4"
+                    >
+                        <span className="text-uppercase">{c('Event cancelled status badge').t`cancelled`}</span>
                     </Badge>
                 )}
                 <h1 className="eventpopover-title lh-rg text-hyphens scroll-if-needed mb0-25" title={eventTitleSafe}>
                     {eventTitleSafe}
                 </h1>
+                <div className="mb2">
+                    <div className="text-lg m0">{dateHeader}</div>
+                    {!!frequencyString && <div className="color-weak">{frequencyString}</div>}
+                </div>
             </PopoverHeader>
             <div className="scroll-if-needed mb1">
                 <PopoverEventContent
                     key={targetEvent.id}
                     calendar={calendarData}
-                    event={targetEvent}
-                    tzid={tzid}
-                    weekStartsOn={weekStartsOn}
                     model={model}
                     formatTime={formatTime}
                     displayNameEmailMap={displayNameEmailMap}
                 />
             </div>
             {!isSubscribedCalendar && (
-                <PopoverFooter className="flex-item-noshrink" key={targetEvent.id}>
-                    {isCancelled || model.isOrganizer ? (
+                <PopoverFooter
+                    className="flex-item-noshrink flex-align-items-center flex-justify-space-between"
+                    key={targetEvent.id}
+                >
+                    {!(isCancelled || model.isOrganizer) && (
                         <>
-                            {deleteButton}
-                            {editButton}
-                        </>
-                    ) : (
-                        <>
+                            <div className="text-bold">{c('Calendar invite buttons label').t`Attending?`}</div>
                             <CalendarInviteButtons
                                 className="mr1"
                                 actions={actions}
                                 partstat={userPartstat}
                                 disabled={isCalendarDisabled || !isSelfAddressActive}
-                            />
-                            <MoreButtons
-                                onEdit={handleEdit}
-                                onDelete={handleDelete}
-                                loadingAction={loadingAction}
-                                isCalendarDisabled={isCalendarDisabled}
-                                hideDelete={isSubscribedCalendar}
                             />
                         </>
                     )}

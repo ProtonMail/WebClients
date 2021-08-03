@@ -1,25 +1,34 @@
 import * as React from 'react';
-import { Tooltip } from '@proton/components';
+import { classnames, Tooltip } from '@proton/components';
 
 interface Props {
     icon: React.ReactNode;
     text: string;
+    extraText?: string;
     title: string;
     initials: string;
     tooltip: string;
+    className?: string;
 }
 
-const Participant = ({ icon, text, title, tooltip, initials }: Props) => {
+const Participant = ({ icon, text, title, tooltip, initials, extraText, className }: Props) => {
     return (
-        <div className="participant flex flex-nowrap flex-align-items-center">
+        <div className={classnames(['participant flex flex-nowrap flex-align-items-center', className])}>
             <Tooltip title={tooltip}>
-                <div className="participant-display item-icon relative flex flex-item-noshrink flex-align-items-center flex-justify-center bordered">
+                <div className="participant-display item-icon relative flex flex-item-noshrink flex-align-items-center flex-justify-center">
                     <div className="item-abbr">{initials}</div>
                     <span className="participant-status">{icon}</span>
                 </div>
             </Tooltip>
             <Tooltip title={title}>
-                <div className="max-w100 inline-block text-ellipsis ml1 participant-text text-ellipsis">{text}</div>
+                <div className="ml1">
+                    <div className="max-w100 text-ellipsis participant-text text-ellipsis">{text}</div>
+                    {!!extraText && (
+                        <div className="max-w100 text-ellipsis participant-extra-text color-weak text-sm m0">
+                            {extraText}
+                        </div>
+                    )}
+                </div>
             </Tooltip>
         </div>
     );

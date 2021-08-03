@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { Button, Icon } from '@proton/components';
+import { Button, Icon, Tooltip } from '@proton/components';
 
 interface Props {
     onClose: () => void;
@@ -7,16 +7,11 @@ interface Props {
 
 const PopoverCloseButton = ({ onClose }: Props) => {
     return (
-        <Button
-            icon
-            shape="ghost"
-            size="small"
-            className="modal-close"
-            title={c('Action').t`Close popover`}
-            onClick={onClose}
-        >
-            <Icon name="xmark" alt={c('Action').t`Close popover`} />
-        </Button>
+        <Tooltip title={c('Event popover close button').t`Close popover`}>
+            <Button icon shape="ghost" size="small" title={c('Action').t`Close popover`} onClick={onClose}>
+                <Icon name="xmark" alt={c('Action').t`Close event popover`} />
+            </Button>
+        </Tooltip>
     );
 };
 
