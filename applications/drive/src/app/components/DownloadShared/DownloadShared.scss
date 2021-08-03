@@ -1,0 +1,6 @@
+$max-thumbnail-size: 256px;
+
+.download-shared-info--preview-image {
+	max-width: $max-thumbnail-size;
+	max-height: $max-thumbnail-size;
+}

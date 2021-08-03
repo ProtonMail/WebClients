@@ -81,7 +81,7 @@ export interface SharedLinkInfo {
     NodeKey: OpenPGPKey;
     SessionKey: SessionKey;
     Blocks: DriveFileBlock[];
-    ThumbnailURL?: string;
+    ThumbnailURL: string | null;
 }
 
 export interface SharedLinkPayload {
@@ -96,7 +96,7 @@ export interface SharedLinkPayload {
     SharePassphrase: string;
     SharePasswordSalt: string;
     Blocks: string[];
-    ThumbnailURL?: string;
+    ThumbnailURL: string | null;
 }
 
 export interface SharedURLSessionKeyPayload {
