@@ -2,7 +2,7 @@ import { decryptPrivateKey, generateKey } from 'pmcrypto';
 import { upgradeV2KeysHelper } from '../../lib/keys/upgradeKeysV2';
 import { Modulus } from '../authentication/login.data';
 import { User as tsUser, Address as tsAddress } from '../../lib/interfaces';
-import { getDecryptedAddressKeys, getDecryptedUserKeys } from '../../lib/keys';
+import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '../../lib/keys';
 
 const DEFAULT_EMAIL = 'test@test.com';
 const DEFAULT_KEYPASSWORD = '1';
@@ -83,18 +83,16 @@ describe('upgrade keys v2', () => {
             }
             expect(api.calls.all().length).toBe(2);
             const newKeysArgs = api.calls.all()[1].args[0];
-            const decryptedUserKeys = await getDecryptedUserKeys({
-                user: User,
-                userKeys: newKeysArgs.data.UserKeys,
-                keyPassword: newKeyPassword,
-            });
-            const decryptedAddressesKeys = await getDecryptedAddressKeys({
-                address: Addresses[0],
-                addressKeys: newKeysArgs.data.AddressKeys,
-                user: User,
-                userKeys: decryptedUserKeys,
-                keyPassword: '',
-            });
+            const decryptedUserKeys = await getDecryptedUserKeysHelper(
+                { ...User, Keys: newKeysArgs.data.UserKeys },
+                newKeyPassword
+            );
+            const decryptedAddressesKeys = await getDecryptedAddressKeysHelper(
+                newKeysArgs.data.AddressKeys,
+                User,
+                decryptedUserKeys,
+                ''
+            );
             expect(decryptedUserKeys.every((key) => key.privateKey.isDecrypted())).toBe(true);
             expect(decryptedUserKeys.length).toBe(2 as any);
             expect(decryptedAddressesKeys.every((key) => key.privateKey.isDecrypted())).toBe(true);

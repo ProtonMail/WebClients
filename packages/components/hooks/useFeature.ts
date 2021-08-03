@@ -2,11 +2,13 @@ import { useContext, useEffect } from 'react';
 
 import { FeatureCode, FeaturesContext } from '../containers/features';
 
-const useFeature = (code: FeatureCode) => {
+const useFeature = (code: FeatureCode, prefetch = true) => {
     const { features, loading, get, put } = useContext(FeaturesContext);
 
     useEffect(() => {
-        get(code);
+        if (prefetch) {
+            get(code);
+        }
     }, []);
 
     return {

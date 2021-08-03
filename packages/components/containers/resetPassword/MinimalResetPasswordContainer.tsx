@@ -332,7 +332,12 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
                             text: c('Info').t`This can take a few seconds or a few minutes depending on your device.`,
                             type: 'info',
                         });
-                        return handleNewPassword({ password: newPassword, api: silentApi, cache })
+                        return handleNewPassword({
+                            password: newPassword,
+                            api: silentApi,
+                            cache,
+                            keyMigrationFeatureValue: 0, // not supported on vpn
+                        })
                             .then(handleResult)
                             .catch(handleError);
                     }}

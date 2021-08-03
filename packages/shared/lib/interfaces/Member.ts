@@ -5,6 +5,7 @@ export interface Member {
     Role: number;
     Private: number;
     Type: number;
+    ToMigrate: 0 | 1;
     MaxSpace: number;
     MaxVPN: number;
     Name: string;

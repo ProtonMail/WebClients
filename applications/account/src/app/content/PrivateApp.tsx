@@ -59,6 +59,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
             eventModels={EVENT_MODELS}
             hasPrivateMemberKeyGeneration
             hasReadableMemberKeyActivation
+            hasMemberKeyMigration
             app={getAppContainer}
         />
     );

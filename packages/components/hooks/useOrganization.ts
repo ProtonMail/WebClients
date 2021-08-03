@@ -1,17 +1,16 @@
 import { useCallback } from 'react';
-import { Organization as tsOrganizationModel } from '@proton/shared/lib/interfaces';
+import { Organization } from '@proton/shared/lib/interfaces';
 import { FREE_ORGANIZATION } from '@proton/shared/lib/constants';
 import { OrganizationModel } from '@proton/shared/lib/models/organizationModel';
 import { UserModel } from '@proton/shared/lib/models/userModel';
 
-import useCachedModelResult from './useCachedModelResult';
+import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
 import useApi from './useApi';
 import useCache from './useCache';
 
-const useOrganization = (): [tsOrganizationModel, boolean, Error] => {
-    const cache = useCache();
+export const useGetOrganization = (): (() => Promise<Organization>) => {
     const api = useApi();
-
+    const cache = useCache();
     const miss = useCallback(() => {
         // Not using use user since it's better to read from the cache
         // It will be updated from the event manager.
@@ -21,8 +20,13 @@ const useOrganization = (): [tsOrganizationModel, boolean, Error] => {
         }
         return Promise.resolve(FREE_ORGANIZATION);
     }, [api, cache]);
-
-    return useCachedModelResult(cache, OrganizationModel.key, miss);
+    return useCallback(() => {
+        return getPromiseValue(cache, OrganizationModel.key, miss);
+    }, [cache, miss]);
 };
 
-export default useOrganization;
+export const useOrganization = (): [Organization, boolean, any] => {
+    const cache = useCache();
+    const miss = useGetOrganization();
+    return useCachedModelResult(cache, OrganizationModel.key, miss);
+};

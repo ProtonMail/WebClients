@@ -5,7 +5,7 @@ import { queryAddresses } from '../api/addresses';
 import { updateUsername } from '../api/settings';
 import { handleSetupAddress } from './setupAddressKeys';
 import { getHasMigratedAddressKeys } from './keyMigration';
-import { getDecryptedUserKeys } from './getDecryptedUserKeys';
+import { getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
 import { getPrimaryKey } from './getPrimaryKey';
 import { createAddressKeyLegacy, createAddressKeyV2 } from './add';
 
@@ -44,11 +44,7 @@ export const handleCreateInternalAddressAndKey = async ({ username, keyPassword,
     const [Address] = await handleSetupAddress({ api, domains: [domain], username: actualUsername });
 
     if (getHasMigratedAddressKeys(addresses)) {
-        const userKeys = await getDecryptedUserKeys({
-            user,
-            userKeys: user.Keys,
-            keyPassword,
-        });
+        const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);
         const primaryUserKey = getPrimaryKey(userKeys)?.privateKey;
         if (!primaryUserKey) {
             throw new Error('Missing primary user key');

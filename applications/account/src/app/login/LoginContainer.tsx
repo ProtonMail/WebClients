@@ -16,8 +16,10 @@ import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelpe
 
 import {
     AbuseModal,
+    FeatureCode,
     OnLoginCallback,
     OnLoginCallbackArguments,
+    useFeature,
     useApi,
     useErrorHandler,
     useModals,
@@ -52,6 +54,7 @@ interface Props {
 const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
     const { createModal } = useModals();
     const errorHandler = useErrorHandler();
+    const keyMigrationFeature = useFeature(FeatureCode.KeyMigration);
 
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -149,12 +152,17 @@ const LoginContainer = ({ onLogin, onBack, toApp }: Props) => {
                     <Content>
                         <LoginForm
                             defaultUsername={previousUsernameRef.current}
-                            onSubmit={(username, password, payload) => {
+                            onSubmit={async (username, password, payload) => {
+                                const keyMigrationFeatureValue = await keyMigrationFeature
+                                    .get<number>()
+                                    .then(({ Value }) => Value)
+                                    .catch(() => 0);
                                 return handleLogin({
                                     username,
                                     password,
                                     api: silentApi,
                                     hasGenerateKeys: true,
+                                    keyMigrationFeatureValue,
                                     ignoreUnlock: false,
                                     payload,
                                 })

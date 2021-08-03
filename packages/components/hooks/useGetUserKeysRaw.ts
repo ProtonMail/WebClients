@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { getDecryptedUserKeys } from '@proton/shared/lib/keys';
+import { getDecryptedUserKeys, getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 
 import useAuthentication from './useAuthentication';
 import { useGetUser } from './useUser';
@@ -9,10 +9,7 @@ export const useGetUserKeysRaw = (): (() => ReturnType<typeof getDecryptedUserKe
     const getUser = useGetUser();
     return useCallback(async () => {
         const user = await getUser();
-        return getDecryptedUserKeys({
-            user,
-            userKeys: user.Keys,
-            keyPassword: authentication.getPassword(),
-        });
+        const keyPassword = authentication.getPassword();
+        return getDecryptedUserKeysHelper(user, keyPassword);
     }, [getUser]);
 };
