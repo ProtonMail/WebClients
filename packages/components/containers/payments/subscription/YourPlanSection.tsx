@@ -126,7 +126,6 @@ const YourPlanSection = ({ permission }: Props) => {
                     `${UsedAddresses} of ${MaxAddresses} email addresses`,
                     MaxAddresses
                 )}
-                {c('Label').t`${UsedAddresses} of ${MaxAddresses} email addresses`}
             </div>
             {Boolean(hasPaidMail) && (
                 <div className="mt1">
@@ -138,9 +137,7 @@ const YourPlanSection = ({ permission }: Props) => {
                 </div>
             )}
             <div className="mt1">
-                <span id="usedSpaceLabel">
-                    {c('Label').t`Using ${humanUsedSpace} of ${humanMaxSpace}`}
-                </span>
+                <span id="usedSpaceLabel">{c('Label').t`Using ${humanUsedSpace} of ${humanMaxSpace}`}</span>
                 <Meter
                     className="mt1"
                     aria-labelledby="usedSpaceLabel"
