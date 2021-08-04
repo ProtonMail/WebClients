@@ -1,19 +1,16 @@
-import { useState, MouseEvent, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { generateMnemonicFromBase64RandomBytes, generateMnemonicBase64RandomBytes } from '@proton/shared/lib/mnemonic';
 import { updateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
-import { encryptPrivateKey } from 'pmcrypto';
-import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { noop } from '@proton/shared/lib/helpers/function';
-import { srpAuth, srpGetVerify } from '@proton/shared/lib/srp';
-import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { srpAuth } from '@proton/shared/lib/srp';
+import { generateMnemonicPayload, generateMnemonicWithSalt, MnemonicData } from '@proton/shared/lib/mnemonic';
 
-import { Button, FormModal, InputFieldTwo, Loader, TextAreaTwo } from '../../components';
-import { useApi, useGetUserKeys, useNotifications, useUser } from '../../hooks';
+import { Button, FormModal, Loader } from '../../components';
+import { useApi, useGetUserKeys, useUser } from '../../hooks';
 import { PasswordTotpInputs, useAskAuth } from '../password';
+import { MnemonicPhraseStepButtons, MnemonicPhraseStepContent } from './MnemonicPhraseStep';
 
 enum STEPS {
     CONFIRM,
@@ -31,8 +28,6 @@ const GenerateMnemonicModal = (props: Props) => {
     const { confirmStep = false, onClose, onSuccess, ...rest } = props;
     const [step, setStep] = useState(confirmStep ? STEPS.CONFIRM : STEPS.AUTH);
 
-    const { createNotification } = useNotifications();
-
     const api = useApi();
     const [submittingAuth, setSubmittingAuth] = useState(false);
     const [authError, setAuthError] = useState('');
@@ -43,25 +38,15 @@ const GenerateMnemonicModal = (props: Props) => {
     const [{ Name }] = useUser();
     const [hasTOTPEnabled, isLoadingAuth] = useAskAuth();
 
-    const [mnemonicData, setMnemonicData] = useState<{
-        randomBytes: string;
-        salt: string;
-        mnemonicWords: string;
-    }>();
+    const [mnemonicData, setMnemonicData] = useState<MnemonicData>();
 
     useEffect(() => {
         const generateMnemonicData = async () => {
-            const randomBytes = generateMnemonicBase64RandomBytes();
-            const salt = generateKeySalt();
-            const mnemonicWords = await generateMnemonicFromBase64RandomBytes(randomBytes);
-            setMnemonicData({
-                randomBytes,
-                salt,
-                mnemonicWords,
-            });
+            const data = await generateMnemonicWithSalt();
+            setMnemonicData(data);
         };
 
-        generateMnemonicData();
+        void generateMnemonicData();
     }, []);
 
     const { section, ...modalProps } = (() => {
@@ -99,36 +84,14 @@ const GenerateMnemonicModal = (props: Props) => {
                 try {
                     setSubmittingAuth(true);
 
-                    const [hashedPassphrase, userKeys] = await Promise.all([
-                        computeKeyPassword(mnemonicData.randomBytes, mnemonicData.salt),
-                        getUserKeys(),
-                    ]);
-                    const reEncryptedKeys = await Promise.all(
-                        userKeys.map(async ({ ID, privateKey }) => {
-                            const PrivateKey = await encryptPrivateKey(privateKey, hashedPassphrase);
-                            return {
-                                ID,
-                                PrivateKey,
-                            };
-                        })
-                    );
-
-                    const { Auth } = await srpGetVerify({
-                        api,
-                        credentials: {
-                            username: Name,
-                            password: mnemonicData.randomBytes,
-                        },
-                    });
+                    const userKeys = await getUserKeys();
+                    const { randomBytes, salt } = mnemonicData;
+                    const payload = await generateMnemonicPayload({ randomBytes, salt, userKeys, api, username: Name });
 
                     await srpAuth({
                         api,
                         credentials: { password, totp },
-                        config: updateMnemonicPhrase({
-                            MnemonicUserKeys: reEncryptedKeys,
-                            MnemonicSalt: mnemonicData.salt,
-                            MnemonicAuth: Auth,
-                        }),
+                        config: updateMnemonicPhrase(payload),
                     });
 
                     onSuccess();
@@ -174,53 +137,12 @@ const GenerateMnemonicModal = (props: Props) => {
         }
 
         if (step === STEPS.MNEMONIC_PHRASE) {
-            const { mnemonicWords } = mnemonicData;
-            const handleDownload = async () => {
-                const blob = new Blob([mnemonicWords], { type: 'data:text/plain;charset=utf-8;' });
-                downloadFile(blob, `recovery_phrase-${Name}.txt`);
-            };
-
-            const handleCopy = (event: MouseEvent<HTMLButtonElement>) => {
-                event.stopPropagation();
-                textToClipboard(mnemonicWords, event.currentTarget);
-                createNotification({ text: c('Info').t`Recovery phrase copied to clipboard` });
-            };
+            const { mnemonic } = mnemonicData;
 
             return {
                 title: c('Info').t`Your recovery phrase`,
-                section: (
-                    <>
-                        <p className="mt0">
-                            {c('Info').t`Your recovery phrase is a series of 12 words in a specific order.`}
-                        </p>
-                        <p>
-                            {c('Info')
-                                .t`Please write your recovery phrase down in the order it appears and keep it somewhere safe. Your recovery phrase can be used to fully recover access to your account and your encrypted messages.`}
-                        </p>
-
-                        <InputFieldTwo
-                            id="mnemonic"
-                            bigger
-                            as={TextAreaTwo}
-                            rows={3}
-                            readOnly
-                            label={c('Label').t`Recovery phrase`}
-                            placeholder={c('Label').t`Your recovery phrase`}
-                            value={mnemonicWords}
-                            autoFocus
-                        />
-                    </>
-                ),
-                footer: (
-                    <div className="w100">
-                        <Button onClick={handleDownload} fullWidth color="norm">
-                            {c('Action').t`Download`}
-                        </Button>
-                        <Button className="mt1" onClick={handleCopy} fullWidth>
-                            {c('Action').t`Copy to clipboard`}
-                        </Button>
-                    </div>
-                ),
+                section: <MnemonicPhraseStepContent mnemonic={mnemonic} />,
+                footer: <MnemonicPhraseStepButtons mnemonic={mnemonic} />,
             };
         }
 
