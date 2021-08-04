@@ -1,3 +1,10 @@
+## Release: 4.0.3 — August 4, 2021
+
+### Improvements
+
+-   General design & UI/UX enhancements
+-   Improved Plan summary and information banners for added clarity
+
 ## Release: 4.0.2 — July 21, 2021
 
 ### Improvements
