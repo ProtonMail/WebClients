@@ -31,10 +31,10 @@ const ContextMenu = ({ anchorRef, children, isOpen, position, close, autoClose =
             }
         };
 
-        document.addEventListener('contextmenu', handleContextMenu);
+        document.addEventListener('contextmenu', handleContextMenu, { capture: true });
 
         return () => {
-            document.removeEventListener('contextmenu', handleContextMenu);
+            document.removeEventListener('contextmenu', handleContextMenu, { capture: true });
         };
     }, [isOpen, autoClose, close]);
 
